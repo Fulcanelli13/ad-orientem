@@ -16,6 +16,8 @@ import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "../../src/mass/reader-icon-bank.j
 
 const params=new URLSearchParams(location.search);
 const lang=params.get("lang")==="fr"?"fr":"en";
+const requestedMode=String(params.get("mode")||"LIVE").toUpperCase();
+const mode=["MISSAL","SIMPLE","LIVE"].includes(requestedMode)?requestedMode:"LIVE";
 const t=(lat,en,fr)=>lang==="fr"?({lat,en:"",fr}):({lat,en,fr:""});
 const proper={
   sourcePath:"Sancti/10-07",
@@ -43,7 +45,7 @@ const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:"2026-10-04",
   form:requestedForm,
-  presentationMode:"LIVE",
+  presentationMode:mode,
   actualCelebration:{id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
   calendarCelebration:{id:"Tempora/Pent18-0",type:"CALENDAR",title:"Sunday"},
   explicitlySelectedCelebration:params.get("print")!=="1",
@@ -68,7 +70,7 @@ const prepared={
     },
   },
   readerPreferences:{
-    mode:"LIVE",
+    mode,
     language:lang,
     secondConfiteor:params.get("secondConfiteor")==="1",
     postureProfile:"FOLLOW_CONGREGATION",

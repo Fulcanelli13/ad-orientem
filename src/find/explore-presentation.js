@@ -103,6 +103,20 @@ function illustratedGuideHtml(profile,language){
  const cite=(url,label)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(label||L(language,"Original source","Source originale"))+' ↗</a>';
  let html='<section class="aoExploreIllustratedGuide" data-explore-place-chapter="guide" aria-label="'+esc(L(language,"Pilgrimage guide","Guide du pèlerin"))+'">';
  html+='<header class="aoExploreGuideIntro"><small>'+esc(L(language,"PILGRIMAGE GUIDE","GUIDE DU PÈLERIN"))+'</small><h3>'+esc(loc(guide,"subtitle"))+'</h3><p>'+esc(loc(guide,"region"))+'</p><div class="aoExploreStoryEvidence">'+cite(guide.official_url,L(language,"Official website","Site officiel"))+'</div></header>';
+
+ if(arr(profile.gallery).length){
+  html+='<section class="aoExploreGuideGallery" data-explore-place-chapter="gallery" aria-label="'+esc(L(language,"Photographs of this pilgrimage place","Photographies de ce lieu de pèlerinage"))+'">'
+    +'<h4>'+esc(L(language,"The place in photographs","Le lieu en images"))+'</h4><div class="aoExploreGalleryGrid">';
+  for(const image of profile.gallery){
+    html+='<figure class="aoExploreGalleryImage" data-gallery-image="'+esc(image.media_id)+'">'
+      +'<img loading="lazy" decoding="async" src="'+esc(image.asset_path)+'" alt="'+esc(loc(image,"alt"))+'">'
+      +'<figcaption><strong>'+esc(loc(image,"label"))+'</strong><span>'+esc(image.credit)+' · '+esc(image.license)+'</span>'
+      +'<span class="aoExploreGalleryCredits">'+cite(image.source_url,L(language,"Photo source","Source de la photographie"))
+      +cite(image.license_url,L(language,"Licence","Licence"))+'</span>'
+      +'<small>'+esc(loc(image,"changes"))+'</small></figcaption></figure>';
+  }
+  html+='</div></section>';
+ }
  for(const section of arr(guide.sections)){
   html+='<section class="aoExploreGuideSection"><h4>'+esc(loc(section,"title"))+'</h4>';
   for(const row of arr(section.paragraphs))html+='<article class="aoExploreGuideParagraph"><p>'+esc(row?.[language]||row?.en||"")+'</p><div class="aoExploreStoryEvidence">'+cite(row?.source_url,L(language,"Historical source","Source historique"))+'</div></article>';
@@ -166,6 +180,7 @@ function placeSheet(vm){
   if(profile.editorial_feature||chapters.length||hasGuide){
     html+='<nav class="aoExplorePlaceChapters" aria-label="'+esc(L(vm.language,"Explore this place","Explorer ce lieu"))+'">';
     if(chapters.length||synopsis)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
+    if(hasGuide&&arr(profile.gallery).length)html+='<button type="button" data-explore-place-jump="gallery">'+esc(L(vm.language,"Photographs","Photographies"))+'</button>';
     if(hasGuide)html+='<button type="button" data-explore-place-jump="guide">'+esc(L(vm.language,"Pilgrimage guide","Guide du pèlerin"))+'</button>';
     if(hasNovenas)html+='<button type="button" data-explore-place-jump="pray">'+esc(L(vm.language,"Pray","Prier"))+'</button>';
     if(hasCalendar)html+='<button type="button" data-explore-place-jump="calendar">'+esc(L(vm.language,"Calendar","Calendrier"))+'</button>';

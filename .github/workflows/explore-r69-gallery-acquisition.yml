@@ -1,0 +1,28 @@
+name: Explore R69 read-only approved gallery audit
+
+on:
+  push:
+    branches:
+      - feature/explore-r69-france-sacred-art-photo-galleries-20261011
+    paths:
+      - .github/workflows/explore-r69-gallery-acquisition.yml
+      - data/geography/approved-place-gallery.v1.json
+      - tests/explore-r69-gallery-file-audit.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verified-gallery-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Verify source, local assets, six hashes, licensing and exact physical Place IDs
+        run: python tests/explore-r69-gallery-file-audit.py

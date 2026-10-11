@@ -883,6 +883,54 @@
       "codes": {
         "iso_alpha2": "VN"
       }
+    },
+    {
+      "geo_area_id": "geo:country:SG",
+      "name": {
+        "official": "Singapore",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SG"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:MA",
+      "name": {
+        "official": "Morocco",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MA"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:ZM",
+      "name": {
+        "official": "Zambia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "ZM"
+      }
     }
   ],
   "places": [
@@ -9248,6 +9296,240 @@
         "SG-R65-IE-BRIGID-CENTRE",
         "SG-R65-IE-BRIGID-PILGRIMAGE",
         "SG-R65-IE-BRIGID-OSM"
+      ]
+    },
+    {
+      "place_id": "place:SG:church-our-lady-of-lourdes-ophir",
+      "name": {
+        "official": "Church of Our Lady of Lourdes, Singapore",
+        "aliases": [
+          "Church of Our Lady of Lourdes, Ophir Road"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:SG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 1.30317,
+        "lng": 103.8559,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/191010553",
+        "source_ref": "osm:way/191010553",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "SG",
+        "verified_at": "2026-10-11"
+      },
+      "address": {
+        "line1": "50 Ophir Road",
+        "line2": null,
+        "postal_code": "188690",
+        "city": "Singapore",
+        "region": null,
+        "country_code": "SG",
+        "country": "Singapore",
+        "formatted": "50 Ophir Road, 188690 Singapore, Singapore"
+      },
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0680",
+        "SG-R70-GEO-SG-INV-0680"
+      ]
+    },
+    {
+      "place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "name": {
+        "official": "Church of the Nativity of the Blessed Virgin Mary, Hougang",
+        "aliases": [
+          "Nativity Church, Hougang"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:SG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 1.37348,
+        "lng": 103.89847,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/32922403",
+        "source_ref": "osm:way/32922403",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "SG",
+        "verified_at": "2026-10-11"
+      },
+      "address": {
+        "line1": "1259 Upper Serangoon Road",
+        "line2": null,
+        "postal_code": "534795",
+        "city": "Singapore",
+        "region": null,
+        "country_code": "SG",
+        "country": "Singapore",
+        "formatted": "1259 Upper Serangoon Road, 534795 Singapore, Singapore"
+      },
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0681",
+        "SG-R70-GEO-SG-INV-0681"
+      ]
+    },
+    {
+      "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "name": {
+        "official": "Cathédrale Saint-Pierre de Rabat",
+        "aliases": [
+          "Saint Peter's Cathedral, Rabat"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:MA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 34.01788,
+        "lng": -6.83134,
+        "precision": "complex_anchor",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/236725316",
+        "source_ref": "osm:way/236725316",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "MA",
+        "verified_at": "2026-10-11"
+      },
+      "address": {
+        "line1": "Place du Golan",
+        "line2": null,
+        "postal_code": "10000",
+        "city": "Rabat",
+        "region": null,
+        "country_code": "MA",
+        "country": "Morocco",
+        "formatted": "Place du Golan, 10000 Rabat, Morocco"
+      },
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0705",
+        "SG-R70-GEO-SG-INV-0705"
+      ]
+    },
+    {
+      "place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "name": {
+        "official": "Église Notre-Dame de Lourdes, Casablanca",
+        "aliases": [
+          "Notre-Dame de Lourdes Church, Casablanca"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:MA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 33.5827,
+        "lng": -7.61574,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/13365630026",
+        "source_ref": "osm:node/13365630026",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "MA",
+        "verified_at": "2026-10-11"
+      },
+      "address": {
+        "line1": "Rond-point d’Europe",
+        "line2": null,
+        "postal_code": "20100",
+        "city": "Casablanca",
+        "region": null,
+        "country_code": "MA",
+        "country": "Morocco",
+        "formatted": "Rond-point d’Europe, 20100 Casablanca, Morocco"
+      },
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0706",
+        "SG-R70-GEO-SG-INV-0706"
+      ]
+    },
+    {
+      "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "name": {
+        "official": "Bishop Velychkovsky National Martyr's Shrine",
+        "aliases": [
+          "Blessed Vasyl Velychkovsky Shrine, Winnipeg"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.93431,
+        "lng": -97.12205,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/3183027127",
+        "source_ref": "osm:node/3183027127",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CA",
+        "verified_at": "2026-10-11"
+      },
+      "address": {
+        "line1": "250 Jefferson Avenue",
+        "line2": null,
+        "postal_code": "R2V 0M6",
+        "city": "Winnipeg",
+        "region": null,
+        "country_code": "CA",
+        "country": "Canada",
+        "formatted": "250 Jefferson Avenue, R2V 0M6 Winnipeg, Canada"
+      },
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0422",
+        "SG-R70-GEO-SG-INV-0422"
+      ]
+    },
+    {
+      "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
+      "name": {
+        "official": "Archdiocese of Lusaka Marian Shrine",
+        "aliases": [
+          "Marian Shrine of Our Lady of Lusaka"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:ZM"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -15.3713,
+        "lng": 28.40766,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/4468672099",
+        "source_ref": "osm:node/4468672099",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "ZM",
+        "verified_at": "2026-10-11"
+      },
+      "address": {
+        "line1": "Great East Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Lusaka",
+        "region": null,
+        "country_code": "ZM",
+        "country": "Zambia",
+        "formatted": "Great East Road, Lusaka, Zambia"
+      },
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0724",
+        "SG-R70-GEO-SG-INV-0724"
       ]
     }
   ],

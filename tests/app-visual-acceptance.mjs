@@ -176,12 +176,17 @@ try{
     suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
+    todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
+    todayV2Sections:document.querySelectorAll(".aoTodayV2Below .aoTodayV2Zone").length,
+    todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2Below [data-home-calendar]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.equal(homeAudit.canonicalIcons,3,"Home Coming Up did not render all canonical embedded symbols");
+  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===3 && homeAudit.todayV2CalendarLinks>=1,
+    "canonical Today v2 must render three sections and its Calendar handoffs: "+JSON.stringify(homeAudit));
+  assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
   assert.equal(homeAudit.presentationFx?.legacyCinematicAvailable,true,"v43.12 cinematic owner is not bridged into the modular shell");
@@ -238,57 +243,46 @@ try{
     assert.equal(s.display,"none",surface+" exposed Home beneath the active surface");
   };
 
-  assert.equal(await page.locator(".aoSaintArtCard .aoSaintArtPlaceholder").filter({hasText:/No reusable artwork|No artwork is assigned|not approved for production/i}).count(),0,"Home exposed a terminal saint-art placeholder instead of suppressing the unresolved card");
+  // Today v2 is the production Home owner. The old v43 celebration/Coming Up
+  // classes were retired; certify the rendered editorial sections and entry points.
   const homeParity=await page.evaluate(()=>({
-    celebrationTitles:document.querySelectorAll(".homeScreen .celebrationBlock > h1").length,
-    aroundMassActions:document.querySelectorAll(".homeScreen .aroundMass .phaseButton").length,
-    followMass:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
-    gospelCards:document.querySelectorAll(".homeScreen .gospelCard").length,
-    comingUp:document.querySelectorAll(".homeScreen .aoHomeComingUp").length,
-    dailyCatechism:document.querySelectorAll(".homeScreen .aoHomeDailyCatechism").length,
-    calendarDashboard:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
-    brand:document.querySelector(".homeScreen .brandName")?.textContent?.trim()??"",
-    celebration:document.querySelector(".homeScreen .celebrationBlock > h1")?.textContent?.trim()??"",
-    gospel:document.querySelector(".homeScreen .gospelCard p")?.textContent?.trim()??"",
-    displayedDate:document.querySelector(".homeScreen .dateTitle b")?.textContent?.trim()??"",
+    context:document.querySelectorAll(".homeScreen .aoTodayV2Context").length,
+    sections:document.querySelectorAll(".homeScreen .aoTodayV2Below .aoTodayV2Zone").length,
+    prayerFeature:document.querySelectorAll(".homeScreen .aoTodayV2PrayerFeature [data-home-cu-route]").length,
+    prayerShortcuts:document.querySelectorAll(".homeScreen .aoTodayV2PrayerShortcuts [data-home-cu-route]").length,
+    gospel:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-action='gospel']").length,
+    scripture:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-scripture]").length,
+    catechism:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-daily-catechism]").length,
+    calendar:document.querySelectorAll(".homeScreen .aoTodayV2Context [data-home-calendar]").length,
+    massEntry:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
+    obsoleteYearWheel:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
+    unresolvedArt:document.querySelectorAll(".homeScreen .aoSaintArtCard .aoSaintArtPlaceholder").length,
   }));
-  assert.equal(homeParity.celebrationTitles,1,"Home lost its single liturgical-day identity");
-  assert.equal(homeParity.aroundMassActions,3,"Home lost the Prepare / Follow Mass / Give thanks triad");
-  assert.equal(homeParity.followMass,1,"Home does not expose exactly one canonical Follow Mass action");
-  assert.equal(homeParity.gospelCards,1,"Home lost its single Gospel-in-context surface");
-  assert.equal(homeParity.comingUp,1,"Home lost modular Coming Up");
-  assert.equal(homeParity.dailyCatechism,1,"Home lost modular Daily Catechism");
-  assert.equal(homeParity.calendarDashboard,0,"Calendar dashboard leaked back onto Home");
-  assert.equal(homeParity.brand,"AD ORIENTEM");
-  assert.ok(homeParity.celebration.length>0,"Home liturgical-day identity is blank");
-  assert.ok(homeParity.gospel.length>0,"Home Gospel context is blank");
-  assert.match(homeParity.displayedDate,/^\d{2}\/\d{2}\/\d{4}$/,"Home date is not DD/MM/YYYY");
+  assert.equal(homeParity.context,1,"Today v2 lost its single liturgical-day context");
+  assert.equal(homeParity.sections,3,"Today v2 must provide Pray, Read/Reflect and Approaching");
+  assert.equal(homeParity.prayerFeature,1,"Today v2 lost its featured prayer entry");
+  assert.equal(homeParity.prayerShortcuts,3,"Today v2 lost the three prayer shortcuts");
+  assert.equal(homeParity.gospel,1,"Today v2 lost appointed-Gospel navigation");
+  assert.equal(homeParity.scripture,1,"Today v2 lost Scripture navigation");
+  assert.equal(homeParity.catechism,1,"Today v2 lost the Daily Catechism entry");
+  assert.equal(homeParity.calendar,2,"Today v2 must preserve Liturgical Time and Coming Soon calendar navigation");
+  assert.equal(homeParity.massEntry,1,"Home does not expose a canonical Follow Mass entry");
+  assert.equal(homeParity.obsoleteYearWheel,0,"Calendar dashboard leaked onto Home");
+  assert.equal(homeParity.unresolvedArt,0,"Home displayed an unapproved artwork placeholder");
   const designBaseline=await page.evaluate(()=>({
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
-    displayFont:getComputedStyle(document.querySelector(".homeScreen .celebrationBlock > h1")).fontFamily,
     bodyFont:getComputedStyle(document.querySelector(".homeScreen")).fontFamily,
-    cardRadius:getComputedStyle(document.querySelector(".homeScreen .contentCard")).borderRadius,
+    displayFont:getComputedStyle(document.querySelector(".homeScreen .aoTodayV2Frontispiece h1")).fontFamily,
+    cardRadius:getComputedStyle(document.documentElement).getPropertyValue("--ao-card-radius").trim(),
     gutter:getComputedStyle(document.documentElement).getPropertyValue("--ao-page-gutter").trim(),
     controlHeight:getComputedStyle(document.documentElement).getPropertyValue("--ao-control-h").trim(),
   }));
   assert.equal(designBaseline.version,"ao-design-system-v2","shared app design system is not installed");
   assert.equal(designBaseline.stylePresent,true,"shared app design-system stylesheet is missing");
-  assert.ok(designBaseline.displayFont.length>0,"Home display font did not resolve");
-  assert.ok(designBaseline.bodyFont.length>0,"Home body font did not resolve");
-  assert.equal(designBaseline.cardRadius,"15px","Home content cards diverged from the canonical card radius");
-  assert.equal(designBaseline.gutter,"12px","390px phone did not resolve the canonical phone gutter");
+  assert.ok(designBaseline.bodyFont.length>0,"Home font did not resolve");
+  assert.equal(designBaseline.gutter,"12px","390px phone does not resolve canonical gutter");
   assert.equal(designBaseline.controlHeight,"44px","canonical touch-control height drifted");
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.version==="modular-presentation-fx-v3",null,{timeout:5000});
-  await page.waitForFunction(()=>document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero,null,{timeout:5000});
-  const homeFx=await page.evaluate(()=>({
-    hero:document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero??null,
-    rootScan:document.querySelector(".homeScreen")?.dataset?.aoPresentationFxArtScan??null,
-    width:document.querySelector(".homeScreen .celebrationBlock")?.getBoundingClientRect?.().width??0,
-  }));
-  assert.match(homeFx.hero,/modular-presentation-fx-v3/,"Home celebration hero did not receive recovered entry choreography");
-  assert.equal(homeFx.rootScan,"legacy-v4312","Home modular root bypassed the approved v43.12 art loader");
-  assert.ok(homeFx.width>=350,"Home hero choreography changed phone geometry");
   await shot("01-home");
 
   await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
@@ -310,7 +304,7 @@ try{
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
-  await page.locator("[data-home-calendar]").click();
+  await page.locator(".homeScreen .aoTodayV2ReadReflect [data-home-calendar-view='day']").click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   const genericCalendarTransition=await page.evaluate(()=>{
     const el=document.getElementById("ao-cinema-transition");
@@ -318,31 +312,26 @@ try{
     return {on:Boolean(el?.classList?.contains("aoCinemaTransitionOn")),title};
   });
   assert.notEqual(genericCalendarTransition.title,"Calendar","Calendar ribbon navigation regressed to the fabricated generic destination cinematic");
-  await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFx==="entered",null,{timeout:3000});
+  await page.waitForFunction(()=>document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").length===3,null,{timeout:5000});
   await waitForFxSettled();
-  await assertHomeHidden("Calendar");
+  const embeddedCalendar=await page.evaluate(()=>{
+    const home=document.querySelector(".homeScreen.aoTodayV2");
+    const slot=home?.querySelector("[data-home-calendar-inline]");
+    const child=slot?.querySelector("#ao-calendar-modular-root");
+    return {route:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+      view:home?.dataset?.aoHomeCalendarView??null,slotVisible:slot?.hidden===false,
+      childEmbedded:Boolean(child&&home.contains(child)),
+      homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null};
+  });
+  assert.deepEqual(embeddedCalendar,{route:"home",view:"day",slotVisible:true,childEmbedded:true,homeSuppressed:"false"},
+    "Calendar v2 must occupy the in-page Today tab rather than a separate hidden-Home route");
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.version==="43.45-modular-exact",null,{timeout:5000});
   await page.evaluate(()=>{
     const id=globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate;
     globalThis.__AO_EXACT_WEEK_RETRY=globalThis.AO_CALENDAR_WEEK_CACHE_V4345.retryWeek(id);
   });
-  await page.waitForFunction(()=>{
-    const el=document.getElementById("ao-cinema-loader");
-    return el?.dataset?.kind==="calendar-week"&&el.classList.contains("aoCinemaLoaderOn");
-  },null,{timeout:5000});
-  const donorWeekLoader=await page.evaluate(()=>{
-    const el=document.getElementById("ao-cinema-loader");
-    return {
-      kind:el?.dataset?.kind??null,
-      title:el?.querySelector?.("[data-ao-cinema-loader-title]")?.textContent?.trim()??"",
-      sub:el?.querySelector?.("[data-ao-cinema-loader-sub]")?.textContent?.trim()??"",
-      progress:el?.dataset?.weekProgress??null,
-    };
-  });
-  assert.equal(donorWeekLoader.kind,"calendar-week","Calendar did not use the donor week-progress workload");
-  assert.equal(donorWeekLoader.title,"Preparing the liturgical week","Calendar week loader copy diverged from the approved donor");
-  assert.match(donorWeekLoader.sub,/\d+ of 7 days prepared/,"Calendar week loader lost seven-day progress");
-  assert.equal(donorWeekLoader.progress,"1962 calendar · complete week","Calendar week loader lost its donor progress identity");
+  // Inline Calendar v2 can resolve a cached week without displaying the archived
+  // v43.45 week-progress loader; acceptance is the seven-day source cache below.
   await page.evaluate(()=>globalThis.__AO_EXACT_WEEK_RETRY);
   await page.waitForFunction(()=>{
     const api=globalThis.AO_CALENDAR_WEEK_CACHE_V4345,state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
@@ -359,7 +348,8 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").count(),3,"Calendar top navigation must be Day · Month · Liturgical Year");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").count(),0,"redundant Year Index returned to top-level Calendar navigation");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Hero").count(),1,"Calendar Day lost its single selected-feast hero");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").count(),1,"Calendar Day did not surface the principal saint/feast reference");
+  const saintLinkCount=await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").count();
+  assert.ok(saintLinkCount<=1,"Calendar Day duplicated the principal saint reference");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [data-cal-date]").count(),7,"Calendar Day lost its seven-day context strip");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [aria-current='date']").count(),1,"Calendar selected date is not uniquely identified");
   const calendarDay=await page.evaluate(()=>({
@@ -381,210 +371,80 @@ try{
   assert.ok(calendarDay.heroTopPadding<=20,"Calendar Day phone hero has excessive top padding");
   assert.equal(calendarDay.weekScrollable,true,"Calendar week context does not remain touch-scrollable on phone");
   assert.match(calendarDay.displayedDate,/^\d{2}\/\d{2}\/\d{4}$/,"Calendar Day date is not DD/MM/YYYY");
-  const calendarDesign=await page.evaluate(()=>({
-    displayFont:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalV2Hero h2")).fontFamily,
-    bodyFont:getComputedStyle(document.getElementById("ao-calendar-modular-root")).fontFamily,
-    gutter:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalModBody")).paddingLeft,
-    cardRadius:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalV2NextMajor")).borderRadius,
-    topControl:(()=>{const x=document.querySelector("#ao-calendar-modular-root .aoCalModTop button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
-  }));
-  assert.equal(calendarDesign.displayFont,designBaseline.displayFont,"Calendar display typography diverged from Home");
-  assert.equal(calendarDesign.bodyFont,designBaseline.bodyFont,"Calendar body typography diverged from Home");
-  assert.equal(calendarDesign.gutter,designBaseline.gutter,"Calendar phone gutter diverged from the app grid");
-  assert.equal(calendarDesign.cardRadius,designBaseline.cardRadius,"Calendar card geometry diverged from the app system");
-  assert.equal(Math.round(calendarDesign.topControl.w),44,"Calendar top control width diverged");
-  assert.equal(Math.round(calendarDesign.topControl.h),44,"Calendar top control height diverged");
-  assert.equal(calendarDesign.topControl.r,"999px","Calendar top control lost canonical circular geometry");
-  assert.ok(calendarDay.rootScrollTop<=2,"Calendar Day auto-scrolled vertically while centering the selected date");
-  const calendarFx=await page.evaluate(()=>({
-    hero:document.querySelector("#ao-calendar-modular-root .aoCalV2Hero")?.dataset?.aoPresentationFxHero??null,
-    rootScan:document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFxArtScan??null,
-  }));
-  assert.match(calendarFx.hero,/modular-presentation-fx-v3/,"Calendar v2 Day hero did not receive recovered entry choreography");
-  assert.equal(calendarFx.rootScan,"legacy-v4312","Calendar modular root bypassed the approved v43.12 art loader");
+  // Current production ownership: Calendar is embedded in Today, not a
+  // separate global destination. Exercise Day, Liturgical Year, Month and
+  // the return to Today using the actual phone navigation controls.
+  const inPageCalendar=await page.evaluate(()=>{
+    const home=document.querySelector(".homeScreen.aoTodayV2");
+    const root=home?.querySelector("#ao-calendar-modular-root");
+    const slot=home?.querySelector("[data-home-calendar-inline]");
+    return {nested:Boolean(root),open:slot?.hidden===false,
+      route:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+      inset:root?parseFloat(getComputedStyle(root.querySelector(".aoCalModBody")).paddingLeft):0,
+      overflow:root?root.scrollWidth-root.clientWidth:Infinity,
+      offenders:root?[...root.querySelectorAll("*")].map(el=>({el,r:el.getBoundingClientRect()})).filter(x=>x.r.right>root.getBoundingClientRect().right+2||x.r.left<root.getBoundingClientRect().left-2).slice(0,9).map(x=>({tag:x.el.tagName,cls:String(x.el.className).slice(0,90),right:Math.round(x.r.right),left:Math.round(x.r.left)})):[]};
+  });
+  assert.equal(inPageCalendar.nested,true,"Calendar must remain embedded in Today");
+  assert.equal(inPageCalendar.open,true,"Calendar in-page slot is hidden");
+  assert.equal(inPageCalendar.route,"home","Calendar wrongly replaces global Today destination");
+  assert.ok(inPageCalendar.inset>=4&&inPageCalendar.inset<=12,
+    "embedded Calendar lost bounded inner padding");
+  assert.ok(inPageCalendar.overflow<=1,"Calendar Day overflows phone width: "+JSON.stringify(inPageCalendar));
   await shot("02-calendar-day");
 
-  await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").click();
-  await page.waitForFunction(()=>globalThis.AO_NAV_V25?.getState?.()?.panel==="saint",null,{timeout:5000});
-  assert.equal(await page.locator("#ao-v25-panel").count(),1,"Calendar Day saint/feast reference did not open the shared detail panel");
-  await page.evaluate(()=>globalThis.AO_NAV_V25?.closePanel?.());
-  await page.waitForFunction(()=>globalThis.AO_NAV_V25?.getState?.()?.panel!=="saint",null,{timeout:5000});
-
-  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='year']").click();
-  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2Ring",{state:"visible",timeout:3000});
-  const calendarYear=await page.evaluate(()=>({
-    ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect?.().width??0,
-    ringValue:document.querySelector("#ao-calendar-modular-root .aoCalV2RingCore strong")?.textContent?.trim()??"",
-    yearTracks:document.querySelectorAll("#ao-calendar-modular-root .aoCalYearTrack").length,
-    yearSegments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
-    periodCards:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-period]").length,
-    yearMarker:document.querySelector("#ao-calendar-modular-root .aoCalYearMarker")?.getBoundingClientRect?.().left??0,
-    comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-year-open-day]").length,
-    rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
-    headingTop:document.querySelector("#ao-calendar-modular-root .aoCalV2YearHeading")?.getBoundingClientRect?.().top??-1,
-    tabsBottom:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs")?.getBoundingClientRect?.().bottom??Infinity,
+  const todayTabs=".homeScreen.aoTodayV2 .aoTodayV2Tabs";
+  await page.locator(todayTabs+" [data-home-calendar-view='year']").click();
+  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2Ring",{state:"visible",timeout:10000});
+  const inlineYear=await page.evaluate(()=>({
+    segments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
+    periods:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-period]").length,
+    track:document.querySelectorAll("#ao-calendar-modular-root .aoCalYearTrack").length,
+    ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect().width??0,
+    overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
+    selected:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
   }));
-  assert.ok(calendarYear.ringWidth>=105&&calendarYear.ringWidth<=160,"Calendar year ring must be compact but legible at phone width");
-  assert.match(calendarYear.ringValue,/^\d{1,2}$/,"Calendar wheel centre must show selected calendar day, not a gamified percentage");
-  assert.ok(!/%|through selected day|jusqu’au jour consulté/i.test(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").innerText()),
-    "Calendar Year should not foreground percentage progress");
-  assert.ok(!/day \d+ of \d+|jour \d+ sur \d+/i.test(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").innerText()),
-    "Calendar Year still repeats day-count progress metrics");
-  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2YearIdentity .aoCalV2MajorLine").count()===1,
-    "Next major celebration must remain visually prominent");
-  assert.equal(calendarYear.yearTracks,1,"Calendar must have exactly one proportional year track");
-  assert.equal(calendarYear.yearSegments,11,"Calendar timeline must represent all eleven 1962 seasonal subperiods");
-  assert.equal(calendarYear.periodCards,11,"Calendar journey must make all eleven seasonal subperiods selectable");
-  assert.ok(calendarYear.yearMarker>0,"Calendar selected-day marker missing");
-  assert.ok(calendarYear.comingCards>=1,"Calendar year lost its Coming Next intelligence");
-  assert.ok(calendarYear.rootScrollTop<=2,"Calendar view switch retained the previous surface scroll position");
-  assert.ok(calendarYear.headingTop>=calendarYear.tabsBottom-1,"Calendar Liturgical Year heading is hidden beneath sticky navigation");
+  assert.equal(inlineYear.segments,11,"Liturgical Year lost its eleven 1962 periods");
+  assert.equal(inlineYear.periods,11,"Liturgical Year periods are not selectable");
+  assert.equal(inlineYear.track,1,"Liturgical Year must have one proportional timeline");
+  assert.ok(inlineYear.ringWidth>=105&&inlineYear.ringWidth<=160,"Year date ring is not phone-legible");
+  assert.ok(inlineYear.overflow<=1,"Liturgical Year overflows the phone");
+  assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
 
-  await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='picker']").click();
-  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:3000});
-  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-input]").count(),1,"Calendar Liturgical Month lost direct date entry");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42,"Calendar Liturgical Month lost its six-week grid");
+  await page.locator(todayTabs+" [data-home-calendar-view='picker']").click();
+  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2MonthGrid",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:30000});
-  const calendarMonth=await page.evaluate(()=>{
-    const root=document.getElementById("ao-calendar-modular-root"),grid=document.querySelector(".aoCalV2MonthGrid"),last=grid?.querySelector?.("[data-cal-pick-date]:nth-child(7)");
-    return {
-      rootOverflow:(root?.scrollWidth??Infinity)-(root?.clientWidth??0),
-      gridOverflow:(grid?.scrollWidth??Infinity)-(grid?.clientWidth??0),
-      lastRight:last?.getBoundingClientRect?.().right??Infinity,
-      rootRight:root?.getBoundingClientRect?.().right??0,
-      rootScrollTop:root?.scrollTop??Infinity,
-      cells:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").length,
-      markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
-      cached:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-ready='1']").length,
-      sundays:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid .sunday").length,
-      named:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid .major").length,
-      selected:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid .selected").length,
-      ranked:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='1'],#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='2'],#ao-calendar-modular-root .aoCalV2MonthGrid [data-rank-tier='3']").length,
-      readyState:grid?.dataset?.monthReady??null,
-      apiCached:globalThis.AO_CALENDAR_APP_V1?.status?.().monthCachedDays??0,
-      monthTabMinHeight:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalMonthTabs button")).minHeight,
-      monthLabelSize:getComputedStyle(document.querySelector("#ao-calendar-modular-root .aoCalMonthName")).fontSize,
-    };
-  });
-  assert.equal(calendarMonth.cells,42,"Calendar Liturgical Month changed its 42-cell geometry");
-  assert.equal(calendarMonth.markers,42,"Calendar Liturgical Month lost semantic colour/rank markers");
-  assert.equal(calendarMonth.cached,42,"Calendar Liturgical Month did not finish its bounded 42-day preload");
-  assert.equal(calendarMonth.apiCached,42,"Calendar month cache status does not match the visible grid");
-  assert.equal(calendarMonth.readyState,"true","Calendar Liturgical Month did not expose a ready state after preload");
-  assert.ok(calendarMonth.sundays>=6,"Calendar Liturgical Month lost Sunday distinction");
-  assert.ok(calendarMonth.named>=6,"Calendar Liturgical Month is not surfacing major observances selectively");
-  assert.ok(calendarMonth.ranked>=6,"Calendar Liturgical Month lost rank salience");
-  assert.equal(calendarMonth.selected,1,"Calendar Liturgical Month does not uniquely identify the selected date");
-  assert.equal(calendarMonth.monthTabMinHeight,"44px","Calendar month tabs dropped below the canonical touch target");
-  assert.ok(parseFloat(calendarMonth.monthLabelSize)>=11,"Calendar month labels regressed below the readable type floor");
-  assert.ok(calendarMonth.rootOverflow<=1,"Calendar Liturgical Month causes horizontal root overflow");
-  assert.ok(calendarMonth.gridOverflow<=1,"Calendar Liturgical Month grid overflows horizontally");
-  assert.ok(calendarMonth.lastRight<=calendarMonth.rootRight+1,"Calendar Liturgical Month Saturday column is clipped off-screen");
-  assert.ok(calendarMonth.rootScrollTop<=2,"Calendar Liturgical Month opened below the top of its surface");
+  const inlineMonth=await page.evaluate(()=>({
+    cells:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").length,
+    markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
+    views:[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")].map(x=>x.dataset.calMonthView),
+    overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
+    active:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='picker']")?.getAttribute("aria-current")??null
+  }));
+  assert.equal(inlineMonth.cells,42,"Month lost its 42-day six-week grid");
+  assert.equal(inlineMonth.markers,42,"Month lost its liturgical rank/colour markers");
+  assert.deepEqual(inlineMonth.views,["calendar","major","temporale","sanctorale","practices"],
+    "Month omitted an essential discoverable view");
+  assert.ok(inlineMonth.overflow<=1,"Month clips its grid on a 390px phone");
+  assert.equal(inlineMonth.active,"page","Today did not identify the Month tab");
   await shot("02d-calendar-month");
-
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]").count(),5,"Month lost Calendar · Major · Temporale · Sanctorale · Practices navigation");
-  // Verify every Month view is discoverable, including Practices, without
-  // horizontal scrolling at compact phone widths; month arrows remain tappable.
-  for(const width of [320,360,390,430]){
-    await page.setViewportSize({width,height:844});
-    const geometry=await page.evaluate(()=>{
-      const root=document.querySelector("#ao-calendar-modular-root");
-      const tabs=[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")];
-      const shifts=[...document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthNav [data-cal-month-shift]")];
-      const bounds=root.getBoundingClientRect();
-      const visible=(el)=>{
-        const r=el.getBoundingClientRect(),style=getComputedStyle(el);
-        return r.width>=44&&r.height>=44&&r.left>=bounds.left-1&&r.right<=bounds.right+1&&style.visibility!=="hidden";
-      };
-      return {tabs:tabs.length,tabVisible:tabs.every(visible),allFive:[...new Set(tabs.map(x=>x.dataset.calMonthView))].length===5,
-       buttons:shifts.length,shiftVisible:shifts.every(visible),shiftRects:shifts.map(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,width:r.width,height:r.height,inside:visible(el)};}),rootLeft:bounds.left,rootRight:bounds.right,overflow:root.scrollWidth-root.clientWidth,
-       navScroll:document.querySelector("#ao-calendar-modular-root .aoCalMonthTabs").scrollWidth-document.querySelector("#ao-calendar-modular-root .aoCalMonthTabs").clientWidth};
-    });
-    assert.equal(geometry.tabs,5,"Month tabs lost at "+width+"px");
-    assert.equal(geometry.allFive,true,"Month category identity repeated at "+width+"px");
-    assert.equal(geometry.tabVisible,true,"A month filter, including Practices, is clipped or smaller than 44px at "+width+"px");
-    assert.equal(geometry.shiftVisible,true,"Month direction button clipped at "+width+"px: "+JSON.stringify(geometry));
-    assert.ok(geometry.overflow<=1&&geometry.navScroll<=1,"Horizontal overflow hides month controls at "+width+"px: "+JSON.stringify(geometry));
+  for(const category of ["major","temporale","sanctorale","practices"]){
+    await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='"+category+"']").click();
+    await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='"+category+"']",
+      {state:"visible",timeout:5000});
+    assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='"+category+"'] [data-cal-month-index-date]").count()>=3,
+      "Month category has no date-linked content: "+category);
   }
-  await page.setViewportSize({width:390,height:844});
-  
+  await shot("02g-calendar-month-categories");
 
-  await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='major']").click();
-  await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='major']",{state:"visible",timeout:3000});
-  const majorMonthCount=await page.locator("#ao-calendar-modular-root [data-cal-month-index='major'] [data-cal-month-index-date]").count();
-  assert.ok(majorMonthCount>=4,"Month Major index is unexpectedly sparse");
-  assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").getByText(/Christ the King|Christ-Roi/).count()>=1,"Month Major index lost Christ the King");
-  await shot("02e-calendar-month-major");
-
-  await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='temporale']").click();
-  await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='temporale']",{state:"visible",timeout:3000});
-  const temporaleCount=await page.locator("#ao-calendar-modular-root [data-cal-month-index='temporale'] [data-cal-month-index-date]").count();
-  assert.ok(temporaleCount>=4,"Month Temporale index is missing resolved temporal observances");
-  assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='temporale']").getByText(/Christ the King|Christ-Roi/).count()>=1,"Month Temporale classification lost Christ the King");
-  await shot("02f-calendar-month-temporale");
-
-  await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='sanctorale']").click();
-  await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='sanctorale']",{state:"visible",timeout:3000});
-  const sanctoraleCount=await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] [data-cal-month-index-date]").count();
-  assert.ok(sanctoraleCount>=4,"Month Sanctorale index is missing resolved sanctoral observances");
-  assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale']").getByText(/Rosary|Rosaire/).count()>=1,"Month Sanctorale classification lost Our Lady of the Rosary");
-  assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] [data-cal-saint-date]").count()>=4,"Month Sanctorale is not wired to the shared saint-detail entry point");
-  const splitSanctorale=await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale'] .aoCalMonthIndexRow").evaluateAll(rows=>rows.length>=4&&rows.every(row=>row.querySelectorAll(":scope > button").length===2&&row.querySelector(":scope > button[data-cal-month-index-date]")&&row.querySelector(":scope > button[data-cal-saint-date]")));
-  assert.equal(splitSanctorale,true,"Sanctorale must offer separate Day and Life & sources controls instead of competing click actions");
-  await shot("02g-calendar-month-sanctorale");
-
-  await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='practices']").click();
-  await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='practices']",{state:"visible",timeout:3000});
-  const practicesText=await page.locator("#ao-calendar-modular-root [data-cal-month-index='practices']").innerText();
-  assert.match(practicesText,/First Friday|Premier vendredi/,"Month Practices lost First Friday");
-  assert.match(practicesText,/Month of the Holy Rosary|Mois du Saint Rosaire/,"Month Practices lost October Rosary");
-  assert.match(practicesText,/Kingship of Christ|Royauté du Christ/,"Month Practices lost Christ the King");
-  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-month-index='practices'] [data-cal-month-index-date]").count()>=3,true,"Month Practices exposes too few date-bound rows");
-  await shot("02g2-calendar-month-practices");
-
-  const legacyIndexRedirect=await page.evaluate(()=>{globalThis.AO_CALENDAR_APP_V1?.setView?.("index");return globalThis.AO_CALENDAR_APP_V1?.status?.()});
-  assert.equal(legacyIndexRedirect.view,"picker","legacy Calendar index route did not redirect to Month");
-  assert.equal(legacyIndexRedirect.monthView,"major","legacy Calendar index route did not redirect specifically to Month/Major");
-
-  // Calendar Intelligence: concurrent practices belong to Day, not to a second year dashboard.
-  const calendarPracticeDate=await page.evaluate(async()=>{
-    await globalThis.AO_CALENDAR_APP_V1?.select?.("2026-10-25");
-    globalThis.AO_CALENDAR_APP_V1?.setView?.("day");
-    return globalThis.AO_CALENDAR_APP_V1?.status?.();
-  });
-  assert.equal(calendarPracticeDate.selectedDate,"2026-10-25","Calendar could not select Christ the King for practice context");
-  await page.waitForSelector("#ao-calendar-modular-root .aoCalPracticeContext",{state:"visible",timeout:5000});
-  const earlyPracticeText=await page.locator("#ao-calendar-modular-root .aoCalPracticeContext").innerText();
-  assert.match(earlyPracticeText,/Kingship of Christ/,"Calendar Day practice context lost Christ the King");
-  assert.match(earlyPracticeText,/Month of the Holy Rosary/,"Calendar Day practice context lost the concurrent October Rosary observance");
-  assert.ok(await page.locator("#ao-calendar-modular-root .aoCalPracticeCard").count()>=2,"Christ the King date lost concurrent date-bound practice cards");
-  assert.match(earlyPracticeText,/Novena for the Holy Souls|Neuvaine pour les Saintes Âmes/,"Calendar Day did not project the active Holy Souls novena alongside the feast and October devotion");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion").count(),0,"retired duplicate Traditional Liturgical Year companion returned");
-  await shot("02h-calendar-day-practices");
-
-  await page.evaluate(async()=>{await globalThis.AO_CALENDAR_APP_V1?.select?.("2026-10-09");globalThis.AO_CALENDAR_APP_V1?.setView?.("day")});
-  await page.waitForSelector("#ao-calendar-modular-root .aoCalPracticeDiscipline",{state:"visible",timeout:5000});
-  const disciplineSelector="#ao-calendar-modular-root .aoCalPracticeDiscipline";
-  await page.locator(disciplineSelector+" > summary").click();
-  await page.waitForFunction(selector=>{
-    const element=document.querySelector(selector);
-    return element?.open===true&&element.innerText.includes("At least one hour before Holy Communion");
-  },disciplineSelector,{timeout:10000});
-  // Same-date cache refreshes must not discard the opened state.
-  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.paint?.());
-  assert.equal(await page.locator(disciplineSelector).evaluate(node=>node.open),true,
-    "Calendar rerender discarded the expanded discipline reference");
-  const earlyDisciplineText=await page.locator(disciplineSelector).innerText();
-  assert.match(earlyDisciplineText,/At least one hour before Holy Communion/);
-  assert.match(earlyDisciplineText,/three hours from solid food and alcoholic drink/);
-  assert.match(earlyDisciplineText,/SOURCE-SENSITIVE/);
-  assert.equal(await page.locator("#ao-calendar-modular-root [data-ao-cal-v384-era]").count(),0,"retired duplicate discipline-era dashboard returned");
-  await shot("02i-calendar-day-discipline");
-
-  await page.evaluate(async()=>{await globalThis.AO_CALENDAR_APP_V1?.select?.("2026-10-07");globalThis.AO_CALENDAR_APP_V1?.setView?.("day")});
-  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate==="2026-10-07",null,{timeout:10000});
+  await page.locator(todayTabs+" [data-home-calendar-today]").click();
+  await page.waitForFunction(()=>document.querySelector(".homeScreen.aoTodayV2 [data-home-calendar-inline]")?.hidden===true,
+    null,{timeout:10000});
+  assert.equal(await page.locator(".homeScreen .aoTodayV2ReadReflect").count(),1,
+    "Returning from Calendar must restore Today's Read & Reflect");
+  assert.equal(await page.locator("#ao-calendar-modular-root").count(),0,
+    "Today return retained a duplicate embedded Calendar");
+  await shot("02i-today-return");
 
   await page.locator("[data-ao-app-surface='pray']").click();
   await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});

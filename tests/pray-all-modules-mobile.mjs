@@ -289,6 +289,9 @@ try{
    assert.ok(sources.every(x=>x.href.startsWith("https://")&&x.rel.includes("noreferrer")),"Unsafe historical witness link in "+route);
    const disclosure=page.locator(box+" details.aoP435930Source").last();
    await disclosure.locator("summary").tap();
+   await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open details.aoP435930Source").length>0 &&
+     [...document.querySelectorAll("#aoPray435930.open details.aoP435930Source")].at(-1).open===true,
+     null,{timeout:4500}).catch(()=>{});
    assert.equal(await disclosure.getAttribute("open"),"","Historical witness drawer cannot be opened on touch: "+route);
  }
 

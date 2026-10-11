@@ -44,7 +44,7 @@ assert.match(CSE_DEBATE_MAP.CSE010.opposition[0],/any arbitrary end/);
 assert.match(CSE_DEBATE_MAP.CSE012.catholicCase[0],/1 Cor 6/);
 assert.match(CSE_DEBATE_MAP.CSE013.catholicCase[0],/1 Thessalonians 4/);
 assert.match(CSE_DEBATE_MAP.CSE020.breakpoint[0],/drug addiction cannot establish/);
-assert.match(CSE_DEBATE_MAP.CSE021.opposition[0],/1915/);
+assert.match(CSE_DEBATE_MAP.CSE021.opposition[0],/Freud's 1908 essay/);
 assert.match(CSE_DEBATE_MAP.CSE021.response[1],/clinique/);
 for(const id of ["CSE055","CSE056","CSE058"])assert.ok(!seen.size||!ledger.records.some(x=>x.id===id),"archived debate restored");
 console.log("PASS 25 live English/French revisions in 10 Sexual Ethics moral authority debates, exact source citation chains, original-opponent limits, zero false publication approvals.");

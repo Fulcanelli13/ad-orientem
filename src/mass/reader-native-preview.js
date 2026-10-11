@@ -2248,7 +2248,9 @@ export async function mountNativeReaderPreview({
   function focusCueAtReaderLine(cueId){
     if(!cueId)return false;
     const scroll=host.querySelector?.(".ao-prayer-card");
-    const target=scroll?.querySelector?.('[data-cue-id="'+String(cueId)+'"]');
+    const target=scroll?.querySelector?.('[data-cue-id="'+String(cueId)+'"]')
+      ??[...(scroll?.querySelectorAll?.("[data-source-cue-ids]")??[])].find(row=>
+        String(row.dataset?.sourceCueIds??"").split(" ").includes(String(cueId)));
     if(!scroll||!target)return false;
     const cr=scroll.getBoundingClientRect?.();
     const tr=target.getBoundingClientRect?.();
@@ -2297,7 +2299,15 @@ export async function mountNativeReaderPreview({
 
     if(!(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)){
       showCard(current);
-      if(cueStillPresent)focusCueAtReaderLine(desiredCue);
+      // A two-column Missal changes page geometry, not source/cue identity.
+      if(cueStillPresent){
+        activeCueId=desiredCue;
+        ready.scholaState.syncCue(desiredCue);
+        transientGuard.resolveCue(desiredCue);
+        focusCueAtReaderLine(desiredCue);
+        root.dataset.r17NativeCue=desiredCue;
+        queue();
+      }
     }
     return Object.freeze({
       mode:rebuilt.mode,
@@ -2411,6 +2421,9 @@ export async function mountNativeReaderPreview({
       win,
       onChange:(cueId)=>{
         if(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)return;
+        // The classical Missal is a static reading view. Scrolling must not
+        // move the underlying source cue or trigger LIVE cinematics.
+        if(root.querySelector?.("[data-ao-reader-shell]")?.dataset?.mode==="MISSAL")return;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
