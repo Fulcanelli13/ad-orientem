@@ -191,6 +191,52 @@ try{
    assert.match(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet a").first().getAttribute("href"),/^https:\/\/www\.montfort\.org\//);
   }
  }
+
+ // Newly exposed source-bound Rosary methods, exercised through real phone controls.
+ for(const method of ["montfort_short","scriptural"]){
+  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
+  const button=page.locator("#aoPray435930.open [data-p435930-rosary-method-launch='"+method+"']");
+  await button.waitFor({timeout:12000});
+  await button.evaluate(el=>el.click());
+  await page.waitForFunction(m=>globalThis.AO_ROSARY_V381?.getMethod?.()===m &&
+   !!document.querySelector("#aoPrayerBookRoot.open"),method,{timeout:14000});
+  const choose=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
+  await choose.waitFor({timeout:12000});
+  await choose.evaluate(el=>el.click());
+  await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:10000});
+  if(method==="montfort_short"){
+   const first=await page.evaluate(()=>{
+    const api=globalThis.AO_ROSARY_V381,steps=api.steps(),idx=steps.findIndex(x=>x.key==="ave"&&x.bead===1);
+    api.setStep(idx);return idx;
+   });
+   assert.ok(first>0);
+   const latin=await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet [data-pb-latin]").first().innerText();
+   const vern=await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet [data-pb-vern]").first().textContent();
+   assert.match(latin,/Iesus incarnatus/,"Latin clause absent after Jesus");
+   assert.match(vern,/Jésus incarné,|Jesus incarnate\./,"Vernacular Montfort clause absent");
+   const graceIndex=await page.evaluate(()=>globalThis.AO_ROSARY_V381.steps().findIndex(x=>x.kind==="montfort-short-grace"));
+   assert.ok(graceIndex>first);
+   await page.evaluate(n=>globalThis.AO_ROSARY_V381.setStep(n),graceIndex);
+   assert.match(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet").innerText(),
+    /Grâce des mystères joyeux|Grace of the Joyful Mysteries/);
+   assert.match(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet a").first().getAttribute("href"),/montfort\.org.*#page=3/);
+  }else{
+   const result=await page.evaluate(()=>{
+    const api=globalThis.AO_ROSARY_V381,steps=api.steps(),idx=steps.findIndex(x=>x.cue);
+    api.setStep(idx-1);return {index:idx,count:steps.filter(x=>x.key==="ave"&&x.bead).length}
+   });
+   assert.equal(result.count,50,"Scriptural method changed ordinary decade prayer counts");
+   assert.ok(result.index>0);
+   await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").evaluate(el=>el.click());
+   await page.waitForSelector("#aoPrayerBookRoot.open [data-ao-rosary-guided-bead]",{timeout:9000});
+   const note=page.locator("#aoPrayerBookRoot.open [data-ao-rosary-guided-bead]");
+   assert.equal(await note.getAttribute("data-ao-rosary-source-type"),"SCRIPTURAL_PARAPHRASE");
+   assert.match(await note.locator("a[data-ao-rosary-meditation-source]").getAttribute("href"),
+    /^https:\/\/(?:www\.biblegateway\.com\/passage|fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\/)/);
+   assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-cue").count(),0);
+  }
+ }
+
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null})),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_ROSARY_V381.getMethod()),"ordinary","Method preference leaked into standard Rosary");
  const normalSet=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
