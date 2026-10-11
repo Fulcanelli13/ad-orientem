@@ -35,6 +35,8 @@ assert.match(runtime,/if\(ADOR\.mode==='open'\)content=/);
 assert.doesNotMatch(runtime,/readerStageIndicator\(.*ADOR\.mode==='open'/);
 assert.match(css,/\.aoReaderStageIndicator/);
 assert.match(css,/\.aoReaderStageTrack/);
+assert.match(css,/font:500 14px\/1\.35/,"Guided stage title must remain legible at the shared 14px scale");
+assert.match(css,/-webkit-line-clamp:2/,"Long devotional stage titles must wrap to two lines");
 assert.match(css,/\.aoReaderStageRail>button/);
 assert.match(css,/\.aoReaderMacroRail/);
 assert.match(css,/\.aoP435930PrayerHead h3/);
