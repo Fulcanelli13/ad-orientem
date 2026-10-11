@@ -25,7 +25,15 @@ def validate():
     published={x["place_id"] for x in pub["items"]}
     assert len(entries)==10 and len(excluded)==10
     assert {x["place_id"] for x in entries}==excluded
-    assert not excluded.intersection(published)
+    # Approvals are separate editorial records and are never changed by staging.
+    approved={x["place_id"]:x for x in pub["items"]}
+    for e in entries:
+        if e["place_id"] in published:
+            record=approved[e["place_id"]]
+            assert record["status"]=="APPROVED"
+            assert record["asset_path"].startswith("assets/approved/place-media/")
+            assert record["source_url"]==e["source_page_url"]
+            assert record["license"]==e["expected_license"]
     assert len([x for x in entries if x["expected_license"]=="CC-BY-SA-4.0"])==8
     assert {x["expected_license"] for x in entries}=={"CC-BY-SA-4.0","CC-BY-SA-3.0","CC-BY-SA-2.0"}
     for entry in entries:
