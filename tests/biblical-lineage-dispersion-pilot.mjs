@@ -30,6 +30,9 @@ assert.deepEqual(B,bridgeRegistry,"Source-pinned chronology bridge must match ed
 assert.equal(B.milestones.length,151);
 assert.deepEqual(B.milestones.map((x,i)=>x.index),Array.from({length:151},(_,i)=>i));
 assert.equal(B.anchors.genesisNodeId.jacob.milestoneIndex,13);
+assert.equal(Object.keys(B.anchors.missionEventId).length,17);
+assert.ok(!B.anchors.missionEventId[D.events.find(e=>e.person==="philip-evangelist"&&e.place==="samaria").id],"No false Acts 8 Samaria–Ethiopian baptism link");
+assert.ok(B.anchors.missionEventId[D.events.find(e=>e.person==="john"&&e.reference.startsWith("Acts 3:")).id]);
 assert.equal(B.anchors.missionProfileId.paul.milestoneIndex,130);
 assert.ok(B.policy.some(x=>x.includes("narrative")));
 assert.equal(D.profiles.length,20);
@@ -100,7 +103,9 @@ try{
   assert.ok((await page.locator("#detailSources a").getAttribute("href")).includes("newadvent.org"));
   await page.locator('[data-index="2"]').click();
   assert.match(await page.locator("#detailEvidence").innerText(),/EARLY CHRISTIAN TESTIMONY/);
-  assert.equal(await page.locator("#atlasBridge").isVisible(),true,"profile contextual anchor should be offered");
+  assert.equal(await page.locator("#atlasBridge").isVisible(),false,"Patristic Ephesus must not inherit a Jerusalem event anchor");
+  await page.locator('[data-index="0"]').click();
+  assert.equal(await page.locator("#atlasBridge").isVisible(),true,"John at Jerusalem matches Acts 3 milestone");
   await page.locator('[data-profile="mary"]').click();
   await page.locator('[data-index="9"]').click();
   assert.match(await page.locator("#detailEvidence").innerText(),/LATER TRADITION/);
@@ -124,6 +129,7 @@ try{
   await page.locator('[data-profile="philip-evangelist"]').click();
   assert.match(await page.locator("#sceneTitle").innerText(),/Philip the Evangelist/);
   assert.equal(await page.locator("#detailEvidence").innerText(),"SCRIPTURE · DOCUMENTED");
+  assert.equal(await page.locator("#atlasBridge").isVisible(),false,"Philip Samaria is not the Ethiopian baptism Atlas scene");
   await page.locator('[data-profile="bartholomew"]').click();
   assert.equal(await page.locator("#pinsLayer circle").count(),0,"no fabricated Bartholomew journey");
   await page.locator("#lang").click();
