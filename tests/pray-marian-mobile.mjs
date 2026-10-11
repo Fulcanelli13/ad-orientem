@@ -133,6 +133,19 @@ try{
    }));
    assert.equal(stageInfo.mystery,String(mi),"Visual scene drifted from canonical mystery");
    observed.push(stageInfo);
+   // Observe settled devotional composition: a prior app-level splash can
+   // otherwise sit above the genuine mystery surface during an instant jump.
+   await page.waitForTimeout(1600);
+   const visual=await page.locator(cinema).evaluate(node=>{
+     const nav=node.querySelector(".aoRosaryCinemaTimeline"),title=node.querySelector(".aoRosaryCinemaTitle"),img=node.querySelector(".aoRosaryCinemaImage");
+     const rect=node.getBoundingClientRect(),top=document.elementFromPoint(rect.left+rect.width/2,rect.top+Math.min(70,rect.height/2));
+     return {visible:node.getClientRects().length>0,navHeight:nav?.getBoundingClientRect().height,
+       title:title?.textContent,art:node.querySelector(".aoRosaryCinemaStage")?.dataset.artwork,
+       imageSrc:img?.getAttribute("src"),hit:top?.tagName+"."+(top?.className||"").toString().slice(0,110)};
+   });
+   console.log("Rosary settled cinema "+(mi+1)+": "+JSON.stringify(visual));
+   assert.ok(visual.navHeight>=36,"Rosary timeline has no visible navigation");
+   assert.ok(visual.title?.length>=5,"Rosary art transition has no mystery title");
    await page.locator(cinema).screenshot({
      path:resolve(root,"reviews/captures/rosary-cinema/390-mystery-"+(mi+1)+".png"),
      animations:"disabled"
