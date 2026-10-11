@@ -79,6 +79,7 @@ export function renderTodayV2Sections(model,vm){
       ${row(saintTitle,saintDetail,'data-home-calendar data-home-calendar-view="day"')}
       ${row(txt("The Gospel of the Mass","Évangile de la messe"),gospelDetail,'data-action="gospel"')}
       ${row(cateTitle,cateDetail,'data-home-daily-catechism')}
+      ${row(txt("Sacred Scripture","Sainte Écriture"),txt("Read the traditional Catholic Bible","Lire la Bible catholique traditionnelle"),'data-home-scripture')}
     </section>
     <section class="aoTodayV2Zone aoTodayV2Approaching"><div class="aoTodayV2SectionHead"><div><small>${esc(txt("THE COMING DAYS","LES PROCHAINS JOURS"))}</small><h2>${esc(txt("Approaching","À venir"))}</h2></div><button type="button" ${monthLink}>${esc(txt("Full calendar","Calendrier complet"))} →</button></div>
       <div class="aoTodayV2Upcoming">${calendarDates||'<p>'+esc(txt("Browse the full calendar","Consulter le calendrier complet"))+'</p>'}</div>
