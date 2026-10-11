@@ -2071,6 +2071,14 @@ export async function mountNativeReaderPreview({
 
   function visibleCardAllowed(card){
     if(!card)return false;
+    // This prayer survived only as a local/older practice; its C0235-C0241
+    // source paragraphs remain auditable in the 65-card review, but are
+    // never inserted into the ordinary faithful's swipe path by default.
+    const isOptionalCommunionConfiteor=card.curatedPresentationReview===true &&
+      (card.blocks??[]).some(block=>block.blockId==="AO.SM.B077") &&
+      (card.blocks??[]).every(block=>["AO.SM.B077","AO.SM.B078","AO.SM.B079"].includes(block.blockId));
+    if(isOptionalCommunionConfiteor &&
+       prepared?.readerPreferences?.secondConfiteor!==true)return false;
     if(prepared?.session?.plan?.normalLastGospel===false && isLastGospelCard(card))return false;
     return Boolean(planAwareCard(card));
   }
