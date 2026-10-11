@@ -3,6 +3,28 @@
 // actor ownership; it only restores the fixed text that follows the Proper cue.
 
 export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
+  // The source's Collect/Postcommunion Proper blocks contain response
+  // cues but no printed words for them. Materialise those canonical
+  // R. Amen cues after the resolved prayer text, as already done for
+  // Deo gratias at the Epistle and Laus tibi after the Gospel.
+  // Additional commemorations with separate conclusions require their
+  // own sourced structure before additional responses may be inserted.
+  "AO.SM.B019": Object.freeze([
+    Object.freeze({
+      id:"AO.SM.C0074",kind:"RESPONSE",latin:"℟. Amen.",
+      vernacular:Object.freeze({en:"℟. Amen.",fr:"℟. Amen."}),
+      role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+      speakerEvidence:"CANONICAL_PROPER_RESPONSE_CUE",
+    }),
+  ]),
+  "AO.SM.B088": Object.freeze([
+    Object.freeze({
+      id:"AO.SM.C0255",kind:"RESPONSE",latin:"℟. Amen.",
+      vernacular:Object.freeze({en:"℟. Amen.",fr:"℟. Amen."}),
+      role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+      speakerEvidence:"CANONICAL_PROPER_RESPONSE_CUE",
+    }),
+  ]),
   "AO.SM.B020": Object.freeze([
     Object.freeze({
       id:"AO.SM.C0076",
