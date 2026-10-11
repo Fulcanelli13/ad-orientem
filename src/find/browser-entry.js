@@ -560,7 +560,7 @@ export function createFindOwner(win=globalThis){
       if(state.selectedPlaceId){if(state.expandPlace){state.expandPlace=false;void paint({selectionOnly:true});return;}state.selectedPlaceId=null;void paint({selectionOnly:true});return;}
       if(state.selectedId){if(state.expandDetail){state.expandDetail=false;void paint({selectionOnly:true});return;}state.selectedId=null;void paint({selectionOnly:true});return;}
       if(state.lens!=="heritage"){setFilter("lens","heritage");return;}
-      close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return;
+      close();void (win?.AO_APP_SHELL_V1?.back?.()??win?.AO_APP_SHELL_V1?.navigate?.("home"));return;
     }
     // Backdrops may be clicked to dismiss, but clicks *inside* the sheet
     // must reach their own Place, Calendar, novena and source-link actions.
