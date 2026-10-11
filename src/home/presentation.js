@@ -146,6 +146,7 @@ ${resume?
 </section></div></section>
 ${status}${translationStatus}
 ${renderTodayV2Sections(buildTodayV2Sections(state,vm,enrichers),vm)}
+<div class="aoTodayExploreFoot"><button type="button" data-home-find><strong>${esc(vm.language==="fr"?"Explorer les lieux sacrés":"Explore sacred places")}</strong><small>${esc(vm.language==="fr"?"Messes traditionnelles, sanctuaires, coutumes et pèlerinages":"Traditional Masses, shrines, customs and pilgrimages")}</small></button></div>
 <div class="homeSpacer"></div></main>`;
 }
 
