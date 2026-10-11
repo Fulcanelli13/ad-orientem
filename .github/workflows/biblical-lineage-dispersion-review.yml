@@ -6,6 +6,9 @@ on:
       - "data/geography/research/biblical-atlas-lineage-chronology-bridge-20261011.v1.json"
       - "data/geography/research/biblical-atlas-151-181-crosswalk-20261011.v1.json"
       - "data/geography/research/mass-scripture-source-extractions-20261011.v1.json"
+      - "data/geography/research/mass-scripture-primary-controls-batch02-20261011.v1.json"
+      - "docs/research/MASS-SCRIPTURE-PRIMARY-CONTROLS-BATCH02-20261011.md"
+      - "tests/mass-scripture-primary-controls-batch02.mjs"
       - "docs/research/MASS-SCRIPTURE-SOURCES-LITERATURE-CENSUS-20261011.md"
       - "docs/research/MASS-SCRIPTURE-CRITICAL-EXTRACTION-BATCH01-20261011.md"
       - "tests/mass-scripture-extraction-batch01.mjs"
@@ -26,6 +29,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Validate Mass–Scripture critical research source ownership
         run: node tests/mass-scripture-extraction-batch01.mjs
+      - name: Validate ancient-text source controls and bibliographic boundary
+        run: node tests/mass-scripture-primary-controls-batch02.mjs
       - name: Validate mobile and source evidence in actual Chromium
         run: node tests/biblical-lineage-dispersion-pilot.mjs
       - uses: actions/upload-artifact@v4
