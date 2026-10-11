@@ -1,0 +1,32 @@
+name: Biblical Genealogy Data + Phone Review
+on:
+  pull_request:
+    paths:
+      - "data/geography/research/biblical-people-network-2026-10-11.v1.json"
+      - "data/geography/research/biblical-geography-network-2026-10-11.v1.json"
+      - "data/geography/research/biblical-person-place-covertex-2026-10-11.v1.json"
+      - "reviews/biblical-genealogy-research-prototype-20261011.html"
+      - "tests/biblical-genealogy-research-prototype.mjs"
+      - ".github/workflows/biblical-genealogy-review.yml"
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  viewer-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - name: Install test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run lineage and provenance phone regression
+        run: node tests/biblical-genealogy-research-prototype.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: biblical-genealogy-phone-review
+          path: artifacts/biblical-genealogy/
+          if-no-files-found: ignore
