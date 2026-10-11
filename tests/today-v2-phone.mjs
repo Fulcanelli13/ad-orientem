@@ -1,0 +1,73 @@
+import assert from "node:assert/strict";
+import http from "node:http";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { resolve, sep, extname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { chromium } from "@playwright/test";
+
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const dir=resolve(root,"artifacts/today-v2-phone");
+await mkdir(dir,{recursive:true});
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
+  ".mjs":"text/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",
+  ".png":"image/png",".jpg":"image/jpeg",".jpeg":"image/jpeg",".webp":"image/webp"};
+const server=http.createServer(async(req,res)=>{
+  try{
+    const file=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname));
+    if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return}
+    const body=await readFile(file);
+    res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});
+    res.end(body);
+  }catch(err){res.writeHead(err?.code==="ENOENT"?404:500);res.end(String(err?.message||err))}
+});
+await new Promise(ok=>server.listen(4194,"127.0.0.1",ok));
+let browser;
+const report=[];
+try{
+  browser=await chromium.launch({headless:true});
+  for(const [width,height] of [[320,660],[360,740],[390,844],[430,932],[1100,840]]){
+    const context=await browser.newContext({viewport:{width,height},locale:"en-GB",isMobile:width<700,hasTouch:width<700});
+    const page=await context.newPage(),errors=[];
+    page.on("pageerror",e=>errors.push(String(e?.message||e)));
+    await page.goto("http://127.0.0.1:4194/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
+    await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:45000});
+    await page.waitForSelector(".homeScreen.aoTodayV2PrayNow",{state:"visible",timeout:12000});
+    const info=await page.evaluate(()=>{
+      const root=document.querySelector(".homeScreen"),hero=root?.querySelector(".aoTodayV2Frontispiece"),
+        art=hero?.querySelector(".aoTodayV2Art"),title=art?.querySelector("h1"),
+        cta=hero?.querySelector(".aoTodayV2PrimaryMass"),rect=cta?.getBoundingClientRect(),
+        bottom=cta?.getBoundingClientRect().bottom,sections=[...root.querySelectorAll(".aoTodayV2Zone")].map(x=>x.className);
+      return {vw:innerWidth,scrollWidth:document.documentElement.scrollWidth,artWidth:art?.getBoundingClientRect().width,
+        heroWidth:hero?.getBoundingClientRect().width,cta:!!cta,ctaHeight:rect?.height,ctaBottom:bottom,
+        artworkTitle:title?.textContent?.trim(),sections,
+        prayCount:root.querySelectorAll(".aoTodayV2PrayerFeature").length,
+        massCount:root.querySelectorAll(".aoTodayV2PrimaryMass").length,
+        scriptureCount:root.querySelectorAll("[data-home-scripture]").length,
+        periodCount:root.querySelectorAll(".aoTodayV2Context").length,
+        dayTabs:root.querySelectorAll(".aoTodayV2Tabs button").length,
+        dateLinks:root.querySelectorAll(".aoTodayV2Event[data-home-calendar-date]").length};
+    });
+    assert.equal(info.cta,true,"Mass CTA missing at "+width);
+    assert.equal(info.massCount,1,"Duplicate primary Mass entry at "+width);
+    assert.ok(info.ctaHeight>=44,"Mass CTA touch target too small at "+width);
+    assert.ok(info.scrollWidth<=width+3,"Home horizontal overflow at "+width+": "+JSON.stringify(info));
+    assert.ok(info.artWidth>0&&info.heroWidth>0,"Artwork/frontispiece collapsed at "+width);
+    assert.ok(info.artworkTitle?.length>0,"Liturgical identity missing at "+width);
+    assert.equal(info.prayCount,1,"Duplicate Prayer now at "+width);
+    assert.equal(info.scriptureCount,1,"Scripture direct access not preserved at "+width);
+    assert.equal(info.periodCount,1,"Calendar context duplicate at "+width);
+    assert.equal(info.dayTabs,2,"Month/Year Calendar tabs missing at "+width);
+    assert.equal(info.dateLinks,2,"Approaching list missing linked dates at "+width);
+    assert.equal(info.sections.length,3,"Expected Pray now, Read & reflect and Approaching at "+width);
+    if(width<700)assert.ok(info.ctaBottom<=height-30,"Primary Mass action below the first mobile viewport at "+width+": "+info.ctaBottom);
+    assert.deepEqual(errors,[],"Page errors at "+width+": "+JSON.stringify(errors));
+    await page.screenshot({path:resolve(dir,"today-v2-"+width+".png"),fullPage:true});
+    report.push({width,height,...info,errors});
+    await context.close();
+  }
+  await writeFile(resolve(dir,"report.json"),JSON.stringify(report,null,2));
+  console.log("PASS Today v2 phone acceptance: 320/360/390/430 + desktop",JSON.stringify(report.map(r=>({width:r.width,ctaBottom:r.ctaBottom,sections:r.sections.length}))));
+}finally{
+  await browser?.close();
+  await new Promise(resolve=>server.close(resolve));
+}
