@@ -136,7 +136,7 @@ writeFileSync(outdir+"/saint-visual-coverage.v1.json",JSON.stringify({
  status:"RESEARCH_ONLY_NO_PORTRAIT_OR_DATE_CERTIFICATION",
  distinction:"A saint tagged as a figure in a painting is not automatically its principal subject, an authentic lifetime portrait, or a valid 1962 day hero.",
  summary:saintVisualSummary,persons:saintDepictionCoverage
-},null,2)+"\\n");
+},null,2)+"\n");
 const report={schema:"AO_SACRED_ART_ALL_MODULE_COVERAGE_AUDIT_V2",date:"2026-10-10",
  warnings:[
  "SourceOriginalsAvailable != museum-grade beauty, crop quality, reliable subject attribution or publication approval.",
