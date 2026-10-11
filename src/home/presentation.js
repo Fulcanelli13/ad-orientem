@@ -125,7 +125,8 @@ export function renderHomeToString(state,win=globalThis){
   const week=vm.week.map(c=>`<button class="dayCell${c.selected?" selected":""}${c.today?" today":""}" data-date="${esc(c.date)}" aria-pressed="${c.selected}"><span>${esc(c.day)}</span><b>${esc(c.number)}</b></button>`).join("");
   const meta=[vm.rank,vm.colour?`${t("colour")} · ${vm.colour}`:"",vm.formularyLabel,vm.commemorationLabel].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("");
   const chooser=vm.formularies.length?`<div class="formularyChooser" role="group" aria-label="${esc(t("formulary"))}">${vm.formularies.map(x=>`<button data-formulary="${x.index}" class="${x.selected?"selected":""}" aria-pressed="${x.selected}">${esc(x.label)}</button>`).join("")}</div>`:"";
-  const art=win?.AO_PHASE1_ART?.homeMarkup?.(state,vm.language)||"";
+  // Artwork is mounted into its own DOM island by renderHome.
+  // Donor markup must not rebalance the Home/Mass hero structure.
   const resume=readNativeMassResume(win);
   const resumeMeta=resume?[
     resume.date?formatDisplayDate(resume.date):"",
@@ -134,7 +135,7 @@ export function renderHomeToString(state,win=globalThis){
   return `<style data-ao-today-v2-style>${TODAY_V2_CSS}</style><main class="homeScreen aoTodayV2" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
 <header class="homeHeader aoTodayV2Header"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><button type="button" class="iconButton homeUtilityButton" data-home-settings aria-label="${esc(vm.language==="fr"?"Réglages":"Settings")}">${assetIcon("ao-ui-settings")}</button></div>
 <nav class="aoTodayV2Tabs" aria-label="Calendar views"><span aria-current="page">${esc(vm.language==="fr"?"Aujourd’hui":"Today")}</span><button type="button" data-home-calendar data-home-calendar-view="picker">${esc(vm.language==="fr"?"Mois":"Month")}</button><button type="button" data-home-calendar data-home-calendar-view="year">${esc(vm.language==="fr"?"Année liturgique":"Liturgical Year")}</button></nav><div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div><div class="aoHomeCalendarAccess"><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div></header>
-<section class="celebrationBlock aoEditorialHero aoTodayV2Frontispiece"><div class="aoTodayV2Art">${art||'<div class="aoTodayV2NoArt" aria-label="Artwork awaiting editorial approval"></div>'}<div class="aoTodayV2ArtOverlay"><span class="eyebrow aoEditorialKicker">CALENDARIUM ROMANUM · 1962</span><h1 class="aoEditorialTitle">${esc(vm.celebration)}</h1></div></div><div class="aoTodayV2HeroActions"><div class="metaLine aoEditorialMeta">${meta}</div>${chooser}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}<section class="homeSection aroundMass aoEditorialSection aoTodayV2Mass">
+<section class="celebrationBlock aoEditorialHero aoTodayV2Frontispiece"><div class="aoTodayV2Art"><div class="aoTodayV2ArtSource" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="Artwork awaiting editorial approval"></div></div><div class="aoTodayV2ArtOverlay"><span class="eyebrow aoEditorialKicker">CALENDARIUM ROMANUM · 1962</span><h1 class="aoEditorialTitle">${esc(vm.celebration)}</h1></div></div><div class="aoTodayV2HeroActions"><div class="metaLine aoEditorialMeta">${meta}</div>${chooser}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}<section class="homeSection aroundMass aoEditorialSection aoTodayV2Mass">
 <div class="sectionLabel">${esc(t("aroundMass"))}</div>
 ${resume?
 `<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-resume-mass data-ao-resume-owner="${resume.source}">
@@ -151,5 +152,13 @@ ${renderTodayV2Sections(buildTodayV2Sections(state,vm,enrichers),vm)}
 export function renderHome(root,state,win=globalThis){
   if(!root||state?.route!=="home")return false;
   root.innerHTML=renderHomeToString(state,win);
+  const slot=root.querySelector?.("[data-ao-home-art-slot]");
+  if(slot){
+    const language=state?.language==="fr"?"fr":"en";
+    let art="";
+    try{art=win?.AO_PHASE1_ART?.homeMarkup?.(state,language)||""}
+    catch(error){win?.console?.warn?.("Approved Today artwork unavailable",error)}
+    if(art)slot.innerHTML=art;
+  }
   return true;
 }
