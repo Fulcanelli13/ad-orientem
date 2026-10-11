@@ -90,3 +90,56 @@ UI after certification should have two entry routes:
 Distinct scroll progressions must be maintained: Mass order ≠ Bible chronology ≠ Gospel harmony ≠ liturgical-calendar cycle. Using one timeline as a substitute for all four would lead to a misleading historical composition.
 
 **Source position:** [Alphonsus/Dujardin structured registry](../../data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json), [54 prior attributed commentary links](../../data/geography/research/mass-scripture-source-extractions-20261011.v1.json), [24 early/historical controls](../../data/geography/research/mass-scripture-primary-controls-batch02-20261011.v1.json), [30 Fortescue research links](../../data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json). No duplicate Mass module and no scriptural text/cinematic promotion.
+
+## Source-critical edition pass: 22 + 22 authorial loci, October 11
+
+**Primary linked printed work:** [St Alphonsus / Grimm, volume XIII PDF](https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf). **Inspectable digitised text:** [full 1889 English transcription, scanned printed page references](https://www.scribd.com/document/401813611/alphonsusworks13-pdf). The primary PDF is approximately 30.9 MB and could not be opened by the external PDF fetcher or downloaded by the working environment. **No PDF page-image certification is claimed**. The transcript *was* read over the 22 full Dujardin sections and 22 selected St Alphonsus passages; exact text-view line spans and printed-page descriptions are saved in the [existing JSON register](../../data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json).
+
+### Dujardin is verifiably a complete sequence, not a reference dictionary
+
+Dujardin's [original meditations, printed pp.17–21](https://www.scribd.com/document/401813611/alphonsusworks13-pdf), text lines 934–1163, contain exactly **22 successive heading-level units**, each now indexed to its original paragraph. From the *Preparation* and *Beginning of the Mass* he depicts Creation and the Fall; *Kyrie* anticipates the Messiah; *Gloria* contemplates Bethlehem; Collect links to Christ's hidden life and retreat; Epistle and Gospel to prophets, precursor and Christ preaching; Credo to faith. The Offertory, *Lavabo*, *Orate fratres*, Preface and Canon move through the Last Supper, washing of feet, thanksgiving, Gethsemane, Israel's sacrificial custom and Calvary. The remaining passages meditate on Christ's descent to the dead, tomb, Resurrection, sacramental/spiritual Communion, Ascension, Pentecost and worldwide missionary preaching.
+
+**Important source-ownership precision:** Dujardin does **not** supply the precise modern chapter-and-verse references typed into our earlier draft. Those labels are our editorial *research suggestions*. The registry now flags every one `AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE`. What Dujardin actually mentions is a Bible scene or doctrine; the corresponding biblical passage must be established separately from the Bible. **Do not claim the 22 editorial Scripture citations are Dujardin's own footnotes.**
+
+### 22 identified St Alphonsus arguments
+
+Twenty-two **selected original-commentary locations** are now indexed in the same research register, with both printed pages and web-text line ranges. These are **not 22 newly certified doctrines or runtime cards**; most are a short argument linked to one or more original Scripture passages, and several expressly distinguish an author he quotes from the saint's own conclusion.
+
+| Printed pages in Grimm XIII | Selected material | Verifiable anchors and exact relation |
+|---|---|---|
+| 27–29 | Scapegoat / suffering servant / Christ outside camp | Lev 16:8; Isa 53:6; Heb 13:13; author's sacrifice typology |
+| 28–31 | Five sacrificial conditions; Noah and Passover | Heb 10:5–10, Gen 8:20–21, Ex 12:3; St Alphonsus's *theological scheme*, not a biblical five-condition checklist |
+| 31–33 | Incarnation, self-oblation and priesthood | John 10:36; Luke 1:35; Heb 10:5–10; Ps 109:4 (Vulgate); direct authorial citations with typological application |
+| 32 | Daniel's 1,290 days | Dan 12:11; author's apocalyptic reading **under explicit review hold**, not a modern Mass forecast |
+| 33–36 | Disagreement with unnamed French predecessor | Anonymous author explains sacrificial consumption through glorification at Resurrection and communion in heaven; St Alphonsus expressly prefers their fulfilment in Eucharistic Sacrifice citing Trent. **Two distinct arguments.** |
+| 38–39 | Six-part layout of Mass | A practical commentary scheme; claims about an ancient canonical boundary must be checked by Fortescue and Jungmann |
+| 42–45 | Gloria, seasonal Collect, Offertory | Luke 2:14 direct hymn opening; Collect tied to actual day/feast; bread/wine discussed by anticipation; water/wine symbolism as later interpretation |
+| 46 | `In spiritu humilitatis`, `Lavabo` | Original Latin phrases, Bona and French source historical comments; Daniel/Psalm numbering requires comparison |
+| 50–51 | `Hanc igitur` / laying on of hands | Explicit authorial Old Law analogy; Leviticus 1:4 is **modern editorial biblical context**, not his cited verse |
+| 55–57 | `Supra quae`, `Supplices` | Three actual named Canon figures; attributions and competing angel explanations from Thomas / anonymous French source carefully separated |
+| 58–59 | `Pater noster` and adoption | Matt 6 and expressly 1 John 3:1, Rom 8:15 |
+| 65–67 | `Quid retribuam`, `Calicem salutaris`, Last Gospel | Vulgate Ps 115:12–13, Rom 8:32 and John 1; history of Last Gospel remains separate |
+
+All examples above are sourced from the [1889 volume's text transcription](https://www.scribd.com/document/401813611/alphonsusworks13-pdf). The editable registry retains individual text line coordinates `webTextWitness` and never silently upgrades a context verse to an author-attributed quotation.
+
+### No false second crucifixion or chronology
+
+A future **Meditate the Life of Christ** traversal may legitimately follow Dujardin's 22 contemplations from Mass to Mass step. However, even where his English translation says the separate Eucharistic species represent Christ's death, the user interface must say **symbolise**, not imply a repeated historical execution. In his printed pp.20–21, Christ's descent into 'Limbo and Purgatory', the phrase about Christ no longer being on the altar after Communion, and the 4,000-year estimate are **historically attributable devotional wording needing doctrinal or scientific qualification**, not material for literal map or timeline pins. St Alphonsus's reading of Daniel 12:11 as a 1,290-day suspension of Mass also stays under review, not a forecast.
+
+### The broad Bible should not be reduced to devotional allegory
+
+The same [structured JSON register](../../data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json) now provides **28 selected evidence-linked horizons** from the Creation and Fall to Isaiah, Daniel, the Gospels, Hebrews, apostolic mission and Revelation, each cross-referenced to actual Dujardin, Alphonsus, Fortescue, Guéranger or patristic research IDs. They include different relation grades: **explicit named Canon figure**, **actual biblical wording**, **patristic Eucharistic interpretation**, **medieval allegory**, or **attributed meditation**.
+
+Examples of why this distinction matters: Gen 8's Noah sacrifice is expounded by St Alphonsus but is **not named in `Supra quae`**; Lev 1's victim hand-imposition is a later symbolic comparison with `Hanc igitur`, **not a documented historical origin**; Revelation's heavenly altar is an interpretative parallel, **not a physical location**; John 1 directly supplies the Last Gospel in ordinary contexts, subject to exact 1962 form and its special-day exceptions.
+
+**Coverage warning:** 28 selected horizons are not equivalent to having covered all 73 canonical books of Scripture. The Mass's variable **1962 Propers** are the legitimate way for additional Bible books to appear. Their reference should come from each actually resolved date/feast/rite, **never** be inferred from a symbolic history of the Ordinary. A book without a demonstrated Ordinary textual/typological relation must remain unmatched rather than receiving an invented connection.
+
+### The next certification work is bibliographic, not cinematic
+
+1. Inspect the physical/printed facsimile pages of the 1889 volume if accessible and compare transcription differences; retain authorship labels for Grimm editorial footnotes.
+2. Verify every *exact* Bible reference and Psalm/Daniel versification against the project's Clementine Vulgate, Crampon and Douay–Rheims policies.
+3. Establish stable 1962 Order-of-Mass text anchors from canonical R17 source (including Solemn/Low variants, Last Gospel exceptions and the Communion of faithful), never a card number.
+4. Make Scripture-anchored explanations accessible in existing [`learn.mass`](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/learn/mass-formation.js) only *after* approved source and text collation; keep Dujardin a clearly identified optional meditative layer.
+5. Reuse the existing strict Proper reading bridge without corrupting it; Ordinary/typology navigation must use its own evidence-linked relation to the in-app Scripture reader.
+
+**Status:** still research-only. No production source/gestures, calendar Propers, genealogies, atlas scenes or artwork assets changed.
