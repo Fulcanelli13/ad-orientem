@@ -19,10 +19,10 @@
     "PASS_HISTORIC_SEMANTIC": 41,
     "PASS_WITH_EXPLICIT_CAVEAT": 30,
     "PASS_AFTER_CORRECTED_PASSAGE": 8,
-    "INCOMPLETE_ACTION": 1,
     "EXCLUDE_STRICT_1962": 1,
     "HISTORICAL_VARIANT_NOT_CERTIFIED": 9,
-    "REJECT_POSITIVE_ACTION": 1
+    "REJECT_POSITIVE_ACTION": 1,
+    "RESEARCH_SUMMARY_INCOMPLETE": 1
   },
   "criticalCorrections": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "id": "ALPH.BK2.070",
-      "finding": "Per ipsum has five crosses in book: 3 at Per ipsum/cum ipso/in ipso plus 2 later"
+      "finding": "Existing canonical matrix already maps 3 crosses at C0202 and 2 at C0203; amend incomplete research summary only."
     },
     {
       "id": "ALPH.BK2.108",
@@ -1107,13 +1107,15 @@
       "bookPage": 164,
       "bookFile": "the_holy_mass.pdf",
       "originalEvidenceExcerpt": "1 64 The Ceremonies of the Mass. circa nodum infra cuppam, signal ter a labio ad labium, dicens, Per ipq?sum, et cum ^ ipso, et in ip^so. Similiter cum Hostia signal bis inter Calicem et pectus, incipiens a labio Calicis, el dicit, est tibi Deo Pa^tri omnipotenti in unitate Spiritus^ sancti. Deinde lene",
-      "reviewCode": "EXPAND_FIVE_CROSSES",
-      "semanticStatus": "INCOMPLETE_ACTION",
-      "reviewFinding": "Book p164 contains three crosses with Host over chalice at Per ipsum, cum ipso, in ipso AND two more between chalice and breast at the following words. The candidate action covers only 3/5; do not declare full doxology mapped.",
+      "reviewCode": "C0202_THREE_PLUS_C0203_TWO_ALREADY_IN_SOT",
+      "semanticStatus": "RESEARCH_SUMMARY_INCOMPLETE",
+      "reviewFinding": "The supplied Alphonsus book describes 5 crosses. Existing canonical gesture matrix already maps 3 at C0202 and 2 at C0203; only the newer research summary was incomplete. No additional runtime gesture is warranted.",
       "requiresExisting1962FormGate": true,
       "exactRuntimeTriggerCertified": false,
       "faithfulPostureDerived": false,
-      "runtimeChanged": false
+      "runtimeChanged": false,
+      "canonicalCorrectionNeeded": false,
+      "researchOnlyDescriptionCorrectionNeeded": true
     },
     {
       "id": "AO.BOOKS.SEM.071",
