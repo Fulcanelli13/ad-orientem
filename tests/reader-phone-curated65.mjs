@@ -234,6 +234,72 @@ try{
         "Native LIVE cue tracker failed to focus the priest intonation "+state.first);
       assert.equal(state.active,"true","Combined intonation was not visually focused");
     }
+    // Actual phone focus/rail rehearsal at critical source words, not
+    // only registry projections. Source-only cases should project no
+    // elevation gesture before the consecrated species is raised.
+    if(width===390&&lang==="en"&&!secondConfiteor){
+      const ritualFocus=await page.evaluate(async()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const cues=[
+          "AO.SM.C0071", // Collect: Et cum spiritu tuo
+          "AO.SM.C0173", // Host: words of consecration
+          "AO.SM.C0174", // Host: elevation
+          "AO.SM.C0179", // Chalice: words of consecration
+          "AO.SM.C0181", // Chalice: elevation
+          "AO.SM.C0265", // final blessing cross
+          "AO.SM.C0273", // Last Gospel: Et Verbum caro
+        ];
+        const observed=[];
+        const nextFrame=()=>new Promise(done=>requestAnimationFrame(()=>
+          requestAnimationFrame(done)));
+        for(const cueId of cues){
+          const card=api.model.cards.find(c=>c.paragraphs.some(p=>
+            p.sourceCueIds?.includes(cueId)));
+          api.showSequence(card.sequence);
+          await nextFrame();
+          const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+          const node=[...scroller.querySelectorAll(".ao-reader-paragraph[data-cue-id]")]
+            .find(n=>n.dataset.cueId===cueId);
+          if(!node){observed.push({cueId,missing:true});continue;}
+          const rect=node.getBoundingClientRect(),root=scroller.getBoundingClientRect();
+          const center=rect.top-root.top+scroller.scrollTop+rect.height/2;
+          scroller.scrollTop=Math.max(0,center-scroller.clientHeight*.39);
+          scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+          await nextFrame();
+          await nextFrame();
+          const state=api.getCueState();
+          observed.push({
+            cueId,focused:api.getActiveCue(),
+            response:state?.response?.text??null,
+            gesture:state?.gesture?.action??null,
+            priestAction:state?.priestAction?.label??null,
+            nativeCue:api.getNativeEventState()?.nativeCueId??null,
+          });
+        }
+        return observed;
+      });
+      const gate={
+        "AO.SM.C0071":{response:/Et cum spíritu tuo/},
+        "AO.SM.C0173":{noGesture:true},
+        "AO.SM.C0174":{action:/ELEVATES HOST/,gesture:/Sacred Host/},
+        "AO.SM.C0179":{noGesture:true},
+        "AO.SM.C0181":{action:/ELEVATES CHALICE/,gesture:/Chalice/},
+        "AO.SM.C0265":{action:/BLESSES PEOPLE/,gesture:/Sign of the Cross/},
+        "AO.SM.C0273":{action:/GENUFLECTS/,gesture:/Genuflect/},
+      };
+      for(const state of ritualFocus){
+        assert.equal(state.missing,undefined,
+          "No actual DOM cue paragraph for "+state.cueId);
+        assert.equal(state.focused,state.cueId,
+          "User scroll could not place "+state.cueId+" into exact LIVE cue focus");
+        const expected=gate[state.cueId];
+        if(expected.response)assert.match(state.response??"",expected.response);
+        if(expected.noGesture)assert.equal(state.gesture,null,
+          state.cueId+": elevation gesture fired prematurely on formula");
+        if(expected.action)assert.match(state.priestAction??"",expected.action);
+        if(expected.gesture)assert.match(state.gesture??"",expected.gesture);
+      }
+    }
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
     const guides=await page.evaluate(()=>{
