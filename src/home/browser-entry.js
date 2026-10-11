@@ -1,5 +1,4 @@
 import { HOME_PRESENTATION_VERSION, renderHome } from "./presentation.js";
-import "./today-v2.css";
 
 const VERSION="modular-home-v2";
 
