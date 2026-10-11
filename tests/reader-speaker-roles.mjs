@@ -30,9 +30,12 @@ assert.equal(resolveOrdinarySpeaker(sungUnits.get("AO.SM.C0133")).role,"PRIEST",
 
 const t=(lat,en)=>({lat,en});
 const properToSlots=properToReaderSlots({
-  introit:t("Introitus","Introit"),gradual:t("Graduale","Gradual"),
-  sequence:t("Sequentia","Sequence"),offertory:t("Offertorium","Offertory"),
-  communion:t("Communio","Communion"),
+  introit:t("Introitus","Introit"),collect:t("Collecta","Collect"),
+  epistle:t("Epistola","Epistle"),gradual:t("Graduale","Gradual"),
+  sequence:t("Sequentia","Sequence"),gospel:t("Evangelium","Gospel"),
+  offertory:t("Offertorium","Offertory"),secret:t("Secreta","Secret"),
+  preface:t("Praefatio","Preface"),communion:t("Communio","Communion"),
+  postcommunion:t("Postcommunio","Postcommunion"),
 });
 const tracks=buildNativeScholaTracks({sungCorpus:sung,properSlots:properToSlots,
   prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}}}});
