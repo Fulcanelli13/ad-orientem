@@ -269,6 +269,8 @@ try{
  assert.equal(await chooser.locator("[data-p435930-rosary-decades='15']").getAttribute("aria-pressed"),"true");
  await chooser.locator("[data-p435930-rosary-begin]").evaluate(x=>x.click());
  await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful" &&
+   document.querySelector("#aoPrayerBookRoot.open")?.dataset?.aoRosaryActiveRoot==="true" &&
+   document.querySelector("#aoPrayerBookRoot.open .pbShell")?.dataset?.aoRosaryExactDonor==="v3.4.14" &&
    !!document.querySelector("#aoPrayerBookRoot.open [data-lab-rosary-next]"),null,{timeout:14000});
  const wholeRosary=await page.evaluate(()=>{
   const api=globalThis.AO_ROSARY_V381;
