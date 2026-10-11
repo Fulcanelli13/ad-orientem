@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { buildTodayV2Sections, renderTodayV2Sections } from "../src/home/today-v2-sections.js";
 import { renderHomeToString } from "../src/home/presentation.js";
+import { TODAY_V2_CSS } from "../src/home/today-v2-styles.js";
 
 const selectedDate="2026-10-10";
 const state={route:"home",selectedDate,language:"en",resolving:false,resolution:{
@@ -66,4 +67,8 @@ assert.doesNotMatch(primary,/class="contentCard findCard/);
 assert.doesNotMatch(primary,/aoHomeComingUp/);
 assert.equal((primary.match(/data-home-scripture/g)||[]).length,1,"Scripture must retain one compact native entry without duplicate cards");
 assert.doesNotMatch(primary,/data-resume-mass/);
+assert.match(TODAY_V2_CSS, /\.aoTodayV2ArtMissing \.aoTodayV2Art\{height:clamp\(138px,36vw,175px\)!important/,
+  "No-art celebration fallback must be compact instead of reserving a large blank painting");
+assert.match(TODAY_V2_CSS, /\.aoTodayV2Art\{position:relative;height:clamp\(235px,67vw,355px\)/,
+  "Approved sacred artwork must retain the immersive original hero");
 console.log("PASS Today v2 lower-half: one prayer, sourced calendar leads, canonically routed reading, no duplicate cards");
