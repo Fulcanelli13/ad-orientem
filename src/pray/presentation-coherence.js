@@ -30,7 +30,7 @@ function oneLayer(){
 }
 function viewOf(root){return root?.querySelector('.aoP435930Mount')?.dataset.aoPrayView||''}
 function needsRecitation(root){
-  const v=viewOf(root);if(['rosary','confession','firstFriday','firstSaturday','fsMeditation'].includes(v))return false;
+  const v=viewOf(root);if(['rosary','angelus','confession','firstFriday','firstSaturday','fsMeditation'].includes(v))return false; // Angelus owns its own individual/group preference, no second chooser.
   if(v==='library')return !!root.querySelector('.aoP435930Prayer');
   return !!root.querySelector('.aoP435930Prayer,.aoP435930LitCard,.aoP435930AppendixFlip');
 }

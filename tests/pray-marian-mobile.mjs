@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, mkdir } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
@@ -30,6 +30,41 @@ try{
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{timeout:12000});
+ // Tanner cinematic acceptance: one offline painting, four explicit stages,
+ // retained prayer cards, mobile crops, nonblocking translation and no interstitial.
+ const seq="#aoPray435930.open .aoP435930AngelusSequence";
+ await page.waitForSelector(seq+" .aoAngelusCinemaTimeline",{timeout:12000});
+ assert.equal(await page.locator(seq+" .aoAngelusCinemaMilestone").count(),4,"Angelus four-part timeline missing");
+ assert.equal(await page.locator(seq+" .aoP435930PrayerUnit").count(),8,"Original Angelus prayer units were dropped");
+ await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoAngelusCinemaArtwork")?.naturalWidth>=1500,null,{timeout:14000});
+ assert.equal(await page.locator(seq+" .aoAngelusCinemaArtwork").getAttribute("src"),"assets/pray/angelus/tanner-annunciation-1898.webp");
+ await page.locator(seq+" .aoAngelusCinemaArtwork").evaluate(img=>{window.__angelusCanvas=img});
+ await mkdir(resolve(root,"reviews/captures/angelus-tanner"),{recursive:true});
+ for(let stage=0;stage<4;stage++){
+   await page.locator(seq+" [data-ao-angelus-goto='"+stage+"']").evaluate(x=>x.click());
+   assert.equal(await page.locator(seq).getAttribute("data-ao-cinematic-step"),String(stage));
+   assert.equal(await page.locator(seq+" .aoAngelusCinemaChapter:not([hidden]) .aoP435930PrayerUnit").count(),2);
+   assert.equal(await page.locator(seq+" .aoAngelusCinemaArtwork").evaluate(img=>img===window.__angelusCanvas),true,
+     "Camera movement replaced the original canvas");
+   assert.equal(await page.locator("#aoPray435930 .aoAngelusCinemaInterstitial").count(),0,
+     "Single painting should not produce an opaque interstitial");
+   const zoom=await page.locator(seq+" .aoAngelusCinemaFrame").evaluate(x=>Number(x.style.getPropertyValue("--ao-tanner-zoom")));
+   assert.ok(zoom>=1&&zoom<=1.4,"Tanner camera framing out of contract");
+   await page.locator("#aoPray435930 .aoP435930Sheet").screenshot({
+     path:resolve(root,"reviews/captures/angelus-tanner/390-stage-"+(stage+1)+".png"),animations:"disabled"
+   });
+ }
+ const stage3=seq+" [data-ao-angelus-goto='2']";
+ await page.locator(stage3).evaluate(x=>x.click());
+ const incarnationFlip=page.locator(seq+" .aoAngelusCinemaChapter:not([hidden]) [data-p435930-card-flip]").first();
+ await incarnationFlip.evaluate(x=>x.click());
+ assert.equal(await incarnationFlip.locator("[data-face-la]").evaluate(x=>x.hidden),false,
+   "Angelus Latin replacement is broken");
+ assert.equal(await page.locator(seq).getAttribute("data-ao-cinematic-step"),"2",
+   "Language face tap advanced the cinematic stage");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-ritual-module='angelus']").count(),1,
+   "Canonical posture/gesture rail disappeared");
+
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection a[href^='https://']").count(),5);
  await page.locator("#aoPray435930 .aoAngelusGuide>summary").evaluate(x=>x.click());
@@ -65,6 +100,8 @@ try{
  assert.equal(await flip.locator("[data-face-la]").evaluate(x=>x.hidden),false,"Latin replacement did not open");
  await page.locator("#aoPray435930 [data-p435930-seg='regina']").first().evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"regina");
+ assert.equal(await page.locator("#aoPray435930 .aoAngelusCinemaFrame").getAttribute("data-ao-master-art"),"","Tanner incorrectly applied to Regina Caeli");
+ assert.equal(await page.locator("#aoPray435930 .aoAngelusCinemaArtwork").count(),0,"Regina Caeli must not inherit Angelus painting");
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),4);
  assert.equal(await page.locator("#aoPray435930 [data-p435930-angelus-appendix]").count(),0,"Angelus-only appendix leaked into Regina Caeli");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null}));
