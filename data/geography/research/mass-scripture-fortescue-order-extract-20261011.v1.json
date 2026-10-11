@@ -5,10 +5,10 @@
   "source": {
     "author": "Adrian Fortescue",
     "title": "The Mass: A Study of the Roman Liturgy",
-    "edition": "Longmans Green 1912; supplied Internet Archive digitisation",
+    "edition": "Longmans, Green & Co., 1914 NEW EDITION, revised after the first edition (1912); the user-supplied Internet Archive OCR title page expressly states 1914, with second-edition preface dated 1913.",
     "originalOcrUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
     "scanPdfUrl": "https://dn760108.eu.archive.org/0/items/massstudyofroman00fort/massstudyofroman00fort_bw.pdf",
-    "inspection": "Part I chapter I, Part II relevant sections and page-labeled OCR passages; remaining book and 1912 footnotes not exhaustively audited",
+    "inspection": "Inspected user-supplied 1914 OCR: title page and prefaces; Part I ch.I, Part II the specified sections; page and OCR line ranges supplied per record. Not a complete book transcription or independent collation of all footnotes.",
     "note": "Printed-page loci not PDF-image index. OCR line windows are text-source locators, not verbatim text quotes."
   },
   "constraints": [
@@ -956,5 +956,11 @@
   "corrections": [
     "Source links are book/chapter-only; Vulgate/Douay/Crampon numbering concordance remains pending.",
     "No semicolon inside an editorial parenthesis may create a phantom Scripture reference. Psalm/Daniel/Revelation qualifiers live in authorial explanations and evidence classes."
-  ]
+  ],
+  "editionCorrection": {
+    "firstEdition": "1912",
+    "inspectedDigitisation": "1914 new edition",
+    "basis": "Archive OCR title page 'NEW EDITION' / '1914', preface to second edition 1913; web source OCR lines 207–240 and 415–511",
+    "mustNotUse1912PaginationWithoutCheck": true
+  }
 }
