@@ -31,3 +31,5 @@ jobs:
         run: node tests/ritus-1962-solemn-ministers-batch02.mjs
       - name: Latin phrase-level Offertory and Canon batch 03
         run: node tests/ritus-1962-latin-phrase-batch03.mjs
+      - name: Faithful posture custom-profile and observed-state batch 04
+        run: node tests/ritus-1962-faithful-posture-batch04.mjs
