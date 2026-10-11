@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-ceremonial-research-contract-v2",
-  "version": "2.3.0-book-scoped",
+  "version": "2.4.0-book-only-full-chapter-pass",
   "status": "RESEARCH_NOT_RUNTIME",
   "sourceOfAuthority": {
     "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -111,11 +111,11 @@
     "The matrix's existing 1962 form rules are preserved; do not infer unsupported variants"
   ],
   "priorities": [
-    "Extract all relevant ceremonial directions from both supplied books in large batches with PDF and printed page locators",
-    "Join each described action to existing AO.SM.C canonical cue or mark unanchored ceremonial state",
-    "Compare Low, Missa Cantata and Solemn branches using existing workbook and repository form contracts",
-    "Verify French rubrics using book passages and do not elevate pre-1962 descriptions to 1962 universal law",
-    "Close actor and branch tests, then propose runtime changes separately"
+    "Reconcile 113 located Alphonsus actions and 27 Fortescue historical contexts with existing source of truth, working in grouped chapters",
+    "For the 16 Low/Sung donor action differences, determine whether difference is valid by form, not necessarily an error",
+    "Mark historical exceptions (Requiem, second Confiteor, bishop present, exposed Sacrament) as 1962-inapplicable or 1962-review-needed",
+    "Derive short and long French priest rubrics only from directly checked passages with direct source page and correct actor",
+    "Keep faithful posture customs observational and independent of priest gestures; preserve canonical 48-card LIVE"
   ],
   "correctionsSinceV2": [
     "C0163 opening Quam oblationem precedes crosses; C0164 three crosses on benedictam, adscriptam, ratam; C0165 Corpus-only, C0166 Sanguis-only.",
@@ -136,6 +136,20 @@
     "noExternalSourceSearches": true,
     "doNotRequireMoreFacsimiles": true,
     "workbookSource": "Ad_Orientem_1962_Sung_Mass_CANONICAL_BLUEPRINT_v1.1_PROTOTYPE_READY.xlsx",
-    "directBookEvidenceFile": "data/mass/alphonsus-fortescue-direct-book-evidence.v1.json"
+    "directBookEvidenceFile": "data/mass/alphonsus-fortescue-direct-book-evidence.v1.json",
+    "fullBookEvidenceRegistry": "data/mass/alphonsus-fortescue-direct-book-evidence-batch02.v1.json",
+    "moreSourcesNeeded": false,
+    "unresolvedHistorical1962Difference": "FLAG_IN_EXISTING_MATRIX_AND_DEFER"
+  },
+  "bookOnlyEvidenceBatch02": {
+    "file": "data/mass/alphonsus-fortescue-direct-book-evidence-batch02.v1.json",
+    "companionWorkbook": "Ad_Orientem_Two_Book_Ceremonial_Page_Audit_Batch02.xlsx",
+    "alphonsusActionLocators": 113,
+    "fortescueHistoricalLocators": 27,
+    "distinctCanonicalCueIds": 91,
+    "lowSungDonorActionDifferences": 16,
+    "sourceEvidenceStatus": "ALL_113_PAGE_EXCERPTS_LOCATED_SEMANTIC_AND_1962_APPLICABILITY_OPEN",
+    "externalSourcesConsulted": false,
+    "priestGuideTextAutomaticallyPromoted": false
   }
 }
