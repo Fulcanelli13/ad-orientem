@@ -24,5 +24,7 @@ assert.ok(C.holds.find(x=>x.code==='G1885_CANON_UNCHANGED'));
 assert.ok(C.holds.find(x=>x.code==='D13_EMMAUS_NOT_ORIGIN'));
 assert.ok(C.holds.find(x=>x.code==='D13_MY_FEIDEI'));
 const anchorNames=C.records.map(x=>x.liturgicalAnchor.toLowerCase()).join('|');
-assert.ok(anchorNames.includes('domine non sum dignus') && anchorNames.includes('supra')===false || C.records.some(x=>x.id==='MS033'&&x.phase==='CANON_SUPRA_QUAE'));
+assert.ok(anchorNames.includes('domine non sum dignus'));
+assert.ok(C.records.some(x=>x.id==='MS033'&&x.phase==='CANON_SUPRA_QUAE'));
+assert.ok(C.records.filter(x=>x.relationType==='LITURGICAL_EXPLICIT_FIGURE').every(x=>x.phase==='CANON_SUPRA_QUAE'));
 console.log('PASS research Mass–Scripture extraction:',C.records.length,'attributed records,',C.primarySources.length,'identified sources,',C.holds.length,'editorial holds; no publication approvals');
