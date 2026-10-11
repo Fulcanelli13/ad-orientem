@@ -108,8 +108,9 @@ for(const [placeId,origin,pilgrim] of pairs){
  }));
  assert.match(html,/aoExploreSourcedStory/);
  assert.match(html,/aoExplorePlaceChapters/,"Nonfeatured source-complete site needs reader navigation");
- assert.ok(html.includes(origin),"Expected source-owned French site introduction "+placeId);
- assert.ok(html.includes(pilgrim),"Expected source-owned French pilgrimage witness "+placeId);
+ const visibleText=html.replace(/&#039;|&#39;/g,"'").replace(/&amp;/g,"&");
+ assert.ok(visibleText.includes(origin),"Expected source-owned French site introduction "+placeId);
+ assert.ok(visibleText.includes(pilgrim),"Expected source-owned French pilgrimage witness "+placeId);
  assert.match(html,/aoExploreStoryEvidence/);
  assert.match(html,/Sources de ce paragraphe/);
  assert.match(html,/data-explore-place-jump="sources"/);
