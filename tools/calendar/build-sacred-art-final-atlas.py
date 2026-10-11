@@ -39,6 +39,20 @@ def create(args):
               "principal":d["observedPrincipalId"],
               "tier":alt["tier"],"evidence":alt.get("evidence") or ""})
     missing=[];items=[]
+    metadata_only=[]
+    acquired_ids={a["id"] for a in acquired}
+    for a in reg["artworks"]:
+        if a["id"] not in acquired_ids:
+            metadata_only.append({"id":a["id"],"title":a.get("title"),"artist":a.get("artist"),
+              "museum":a.get("museum"),"source":(a.get("source") or {}).get("objectUrl"),
+              "rights":(a.get("source") or {}).get("rights"),"reason":"ORIGINAL_NOT_ACQUIRED"})
+    primary=ROOT/"data/calendar/sacred-art-primary-museum-leads-20261011.v1.json"
+    additional_leads=[]
+    if primary.is_file():
+        for a in read(primary).get("items",[]):
+            additional_leads.append({"id":a.get("id"),"title":a.get("title"),"artist":a.get("artist"),
+              "museum":a.get("museum"),"source":a.get("museumObjectUrl"),
+              "rights":a.get("reproductionRights"),"reason":"PRIMARY_MUSEUM_LEAD_NOT_ACQUIRED"})
     for a in acquired:
         sha=a["acquisition"]["originalSha256"]
         f=images.get(a["id"])
@@ -73,7 +87,7 @@ def create(args):
              "summary":{"acquired":len(acquired),"records":len(reg["artworks"]),
                         "yearDates":len(dates),"sourceAlternatives":sum(len(a["uses"]) for a in items),
                         "previewMissing":len(missing),"fullYearCoverage":indexed.get("summary",{})},
-             "items":items,"days":dates}
+             "items":items,"days":dates,"pendingSourceLinks":metadata_only+additional_leads}
     safe=json.dumps(payload,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")
     html=PAGE.replace("__PAYLOAD__",safe)
     args.output.parent.mkdir(parents=True,exist_ok=True)
@@ -107,7 +121,7 @@ main{max-width:1500px;margin:auto;padding:20px 18px 80px}.note{padding:14px 0 20
 .image{height:315px;background:#05080d;display:grid;place-items:center}.image img{max-height:100%;max-width:100%;object-fit:contain;cursor:zoom-in}
 .notloaded{padding:15px;color:var(--warn)}.info{padding:15px}.muted{color:var(--muted)}.rights{font-size:11px;color:var(--gold);letter-spacing:.035em}
 a{color:#dbc99f}.tags{font-size:12px;margin:9px 0;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.flag.active{border-color:#d99a88;background:#673e3d}.investigate.active{border-color:#e6c081;background:#645333}
+.flag.active{border-color:#d99a88;background:#673e3d}.approve{border-color:#487b6b;color:#b6e1cf}.approve.active{background:#173e35;border-color:#78af95;color:#d3fae6}.pending{padding:12px 14px;border:1px solid var(--line);border-radius:8px;margin:9px 0}.pending a,.source-url{overflow-wrap:anywhere;font-size:11px;display:block;margin-top:5px}.meta-label{font-size:11px;color:var(--warn)}.investigate.active{border-color:#e6c081;background:#645333}
 textarea{width:100%;min-height:52px;resize:vertical;padding:8px;font-size:12px}
 details{border-top:1px solid var(--line);margin-top:14px;padding-top:11px}summary{cursor:pointer;color:var(--gold)}
 .use{display:grid;grid-template-columns:90px minmax(0,1fr);column-gap:9px;padding:10px 0;border-bottom:1px solid #26323e}
@@ -118,20 +132,21 @@ details{border-top:1px solid var(--line);margin-top:14px;padding-top:11px}summar
 @media(max-width:650px){header{position:relative}.grid{grid-template-columns:1fr}main{padding:14px}.stat{gap:8px 15px}}
 </style></head><body>
 <header><div class="eyebrow">1962 Calendar · Complete Sacred Art Review</div><h1>Artwork &amp; liturgical placement</h1>
-<p>Only flag exceptions. Unflagged works and placements are accepted editorially; image rights, cropping and technical publication checks remain separate.</p>
+<p>Approve, reject or investigate paintings, and flag incorrect Calendar placements. Only explicit approvals count as reviewed. Image rights, cropping and technical publication checks remain separate.</p>
 <div class="stat" id="stats"></div>
-<nav><button id="showArt">Artworks</button><button id="showCalendar">Calendar</button>
+<nav><button id="showArt">Artworks</button><button id="showCalendar">Calendar</button><button id="showPending">Unacquired source links</button>
 <input id="search" type="search" placeholder="Find artwork, artist, feast or Gospel" aria-label="Search">
 <select id="rank"><option value="">Every class</option><option value="1">Class I</option><option value="2">Class II</option><option value="3">Class III</option><option value="4">Class IV</option></select>
 <select id="tier"><option value="specific">Specific/event proposals</option><option value="all">All associations, including seasonal &amp; generic</option></select>
 <select id="rights"><option value="">All rights labels</option><option value="CC0">CC0 only</option><option value="held">Rights held</option></select>
-<button class="primary" id="export">Export exceptions JSON</button>
+<button class="primary" id="export">Export review JSON</button>
 <button id="importBtn">Import previous review</button><input type="file" id="importFile" accept=".json,application/json" hidden>
 </nav>
 </header>
-<main><p class="note">One source original is shown once, with all its proposed calendar uses listed below. Select any date to inspect the observed 1962 principal and association type. Red flags reject an image globally or mark an individual use as misplaced; amber flags request further investigation. Do not flag accepted items.</p>
+<main><p class="note">One source original per card, with its verified museum URL and proposed Calendar uses. Approve or reject image quality; use “Misplaced” if a specific date association is incorrect. Your decisions are saved locally and can be exported or imported.</p>
 <section id="art"><div class="grid" id="gallery"></div></section>
 <section id="calendar"><div id="days"></div></section>
+<section id="pending" style="display:none"><h2>Unacquired artworks and museum leads</h2><p>These source records lack acquired and checksum-verified image previews; open their museum URLs before making artistic decisions.</p><div id="pendingList"></div></section>
 </main>
 <dialog id="zoom"><button id="closeZoom">Close</button><div><img id="zoomImg" alt="Artwork enlarged"></div></dialog>
 <script id="dataset" type="application/json">__PAYLOAD__</script>
@@ -143,17 +158,31 @@ const $=id=>document.getElementById(id);
 const catalog=new Map(data.items.map(x=>[x.id,x]));
 const acceptedTiers=new Set(["STRICT_DAY_SOURCE_LINK","VERIFIED_CONTEXTUAL_LEDGER","OBSERVED_ID_TAG_UNREVIEWED","TITULAR_PERSON_OR_EVENT_CANDIDATE","APPOINTED_GOSPEL_SCENE_CANDIDATE"]);
 const exceptions=new Map();
+const approvals=new Map();
 const storageKey="ao-sacred-art-exceptions-2026-"+data.summary.acquired;
+const approvalStorageKey="ao-sacred-art-approvals-2026-"+data.summary.acquired;
 const escape=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const key=(id,date,principal,type)=>[id,date||"*",principal||"*",type].join("|");
 function restore(){
  try{const stored=JSON.parse(localStorage.getItem(storageKey)||"[]");
  for(const x of stored) if(catalog.has(x.artworkId)&&catalog.get(x.artworkId).sha===x.originalSha256)
  exceptions.set(key(x.artworkId,x.date,x.observedPrincipalId,x.kind),x);
+ const approved=JSON.parse(localStorage.getItem(approvalStorageKey)||"[]");
+ for(const x of approved) if(catalog.has(x.artworkId)&&catalog.get(x.artworkId).sha===x.originalSha256)
+ approvals.set(x.artworkId,x);
  }catch(e){console.warn("Could not restore local editorial flags");}
 }
-function save(){try{localStorage.setItem(storageKey,JSON.stringify([...exceptions.values()]))}catch(e){}}
+function save(){try{localStorage.setItem(storageKey,JSON.stringify([...exceptions.values()]));
+ localStorage.setItem(approvalStorageKey,JSON.stringify([...approvals.values()]));}catch(e){}}
 function toggle(kind,a,u){
+ if(kind==="APPROVE_ARTWORK_EDITORIALLY"){
+  if(approvals.has(a.id))approvals.delete(a.id);
+  else{approvals.set(a.id,{artworkId:a.id,originalSha256:a.sha,status:"EDITORIALLY_APPROVED_ONLY"});
+   exceptions.delete(key(a.id,null,null,"REJECT_ARTWORK_GLOBALLY"));
+   exceptions.delete(key(a.id,null,null,"INVESTIGATE_FURTHER"));}
+  save();draw();return;
+ }
+ if(kind==="REJECT_ARTWORK_GLOBALLY")approvals.delete(a.id);
  const date=u?.date||null,principal=u?.principal||null;
  const k=key(a.id,date,principal,kind);
  if(exceptions.has(k))exceptions.delete(k);
@@ -176,7 +205,8 @@ function filtered(x){
  return true;
 }
 function flags(a,u){
- return '<button class="flag '+(has("REJECT_ARTWORK_GLOBALLY",a)?"active":"")+'" data-kind="REJECT_ARTWORK_GLOBALLY">Reject globally</button>'+
+ return '<button class="approve '+(approvals.has(a.id)?"active":"")+'" data-kind="APPROVE_ARTWORK_EDITORIALLY">'+(approvals.has(a.id)?"Approved ✓":"Approve image")+'</button>'+
+ '<button class="flag '+(has("REJECT_ARTWORK_GLOBALLY",a)?"active":"")+'" data-kind="REJECT_ARTWORK_GLOBALLY">Reject globally</button>'+
  '<button class="investigate '+(has("INVESTIGATE_FURTHER",a,u)?"active":"")+'" data-kind="INVESTIGATE_FURTHER"'+(u?' data-date="'+escape(u.date)+'" data-principal="'+escape(u.principal)+'"':'')+'>Investigate</button>';
 }
 function draw(){
@@ -189,14 +219,14 @@ function draw(){
   card.dataset.id=a.id;
   const matches=a.uses.filter(relevant);
   const activeReject=has("REJECT_ARTWORK_GLOBALLY",a);
-  const phot=a.preview?'<img class="preview" alt="'+escape(a.title)+'" src="'+a.preview+'">'
+  const phot=a.preview?'<img loading="lazy" decoding="async" class="preview" alt="'+escape(a.title)+'" src="'+a.preview+'">'
    :'<div class="notloaded">Original preview missing — technical hold. Source must be acquired before final audit.</div>';
   let html='<div class="image">'+phot+'</div><div class="info">'+
     '<div class="eyebrow">'+escape(a.museum)+'</div><h2>'+escape(a.title)+'</h2>'+
     '<div class="muted">'+escape(a.artist)+' · '+escape(a.dateCreated)+'</div>'+
     '<div class="rights">'+escape(a.rights)+(a.rights==="CC0"?"":" · SEPARATE RIGHTS REVIEW")+'</div>'+
     '<div class="tags">'+escape(a.subjectTags.slice(0,8).join(" · "))+'</div>'+
-    '<a target="_blank" rel="noreferrer" href="'+escape(a.source)+'">Museum provenance</a>'+
+    '<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(a.source)+'">'+escape(a.source)+'</a>'+
     '<div class="actions">'+flags(a,null)+'</div>'+
     '<label>Notes on this artwork <textarea data-note="'+escape(a.id)+'" placeholder="Only needed when flagging"></textarea></label>'+
     '<details><summary>'+matches.length+' matching date assignments'+(activeReject?" · globally rejected":"")+'</summary>';
@@ -226,10 +256,12 @@ function draw(){
   };
  }
  const count=[...exceptions.values()].length;
+ const approved=approvals.size;
  $("stats").innerHTML="<span><strong>"+data.summary.acquired+"</strong> originals</span>"+
  "<span><strong>"+data.summary.sourceAlternatives+"</strong> proposed date uses</span>"+
  "<span><strong>"+data.summary.previewMissing+"</strong> missing previews</span>"+
  "<span><strong>"+count+"</strong> flagged exceptions</span>"+
+ "<span><strong>"+approved+"</strong> explicitly approved</span>"+
  "<span><strong>"+view.length+"</strong> shown</span>";
 }
 function drawDays(){
@@ -251,26 +283,39 @@ function drawDays(){
  }
 }
 function update(){draw();if($("calendar").style.display==="block")drawDays()}
+function drawPending(){
+ const list=$("pendingList");list.replaceChildren();
+ for(const p of data.pendingSourceLinks||[]){
+  const card=document.createElement("article");card.className="pending";
+  card.innerHTML='<div class="meta-label">'+escape(p.reason)+'</div><h2>'+escape(p.title)+'</h2>'+
+   '<p>'+escape(p.artist)+' · '+escape(p.museum)+' · '+escape(p.rights)+'</p>'+
+   (p.source?'<a target="_blank" rel="noopener noreferrer" href="'+escape(p.source)+'">'+escape(p.source)+'</a>':'<p>Source URL unavailable</p>');
+  list.append(card);
+ }
+}
 for(const id of ["search","rank","tier","rights"])$(id).addEventListener("input",update);
-$("showArt").onclick=()=>{$("art").style.display="block";$("calendar").style.display="none"};
-$("showCalendar").onclick=()=>{$("art").style.display="none";$("calendar").style.display="block";drawDays()};
+$("showArt").onclick=()=>{$("art").style.display="block";$("calendar").style.display="none";$("pending").style.display="none"};
+$("showCalendar").onclick=()=>{$("art").style.display="none";$("calendar").style.display="block";$("pending").style.display="none";drawDays()};
+$("showPending").onclick=()=>{$("art").style.display="none";$("calendar").style.display="none";$("pending").style.display="block";drawPending()};
 $("closeZoom").onclick=()=>$("zoom").close();
 $("export").onclick=()=>{
- const payload={schema:"AO_SACRED_ART_NEGATIVE_EXCEPTIONS_V1",
+ const payload={schema:"AO_SACRED_ART_CURATOR_REVIEW_V2",
   reviewYear:data.year,exportedAt:new Date().toISOString(),
-  rule:"Unflagged means editorially accepted only; independent legal, crop, offline and app QA still required",
+  rule:"Only explicit approval is editorial acceptance; independent legal, crop, offline and app QA still required",
   baselineUniqueSHA:data.summary.acquired,
-  exceptions:[...exceptions.values()]};
+  approvals:[...approvals.values()],exceptions:[...exceptions.values()]};
  const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));
- const link=document.createElement("a");link.href=url;link.download="sacred-art-negative-exceptions.json";link.click();
+ const link=document.createElement("a");link.href=url;link.download="sacred-art-curator-review.json";link.click();
  setTimeout(()=>URL.revokeObjectURL(url),1500);
 };
 $("importBtn").onclick=()=>$("importFile").click();
 $("importFile").onchange=async e=>{
  try{
   const imported=JSON.parse(await e.target.files[0].text());
-  if(imported.schema!=="AO_SACRED_ART_NEGATIVE_EXCEPTIONS_V1")throw Error("Wrong format");
-  exceptions.clear();
+  if(!["AO_SACRED_ART_NEGATIVE_EXCEPTIONS_V1","AO_SACRED_ART_CURATOR_REVIEW_V2"].includes(imported.schema))throw Error("Wrong format");
+  exceptions.clear();approvals.clear();
+  for(const x of imported.approvals||[])if(catalog.has(x.artworkId)&&catalog.get(x.artworkId).sha===x.originalSha256)
+    approvals.set(x.artworkId,x);
   for(const x of imported.exceptions||[])if(catalog.has(x.artworkId)&&catalog.get(x.artworkId).sha===x.originalSha256)
     exceptions.set(key(x.artworkId,x.date,x.observedPrincipalId,x.kind),x);
   save();draw();if($("calendar").style.display==="block")drawDays();
