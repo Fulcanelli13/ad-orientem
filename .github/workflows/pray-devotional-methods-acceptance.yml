@@ -1,0 +1,42 @@
+name: Divine Mercy and Rosary methods acceptance
+on:
+  pull_request:
+    paths:
+      - "src/pray/devotional-methods.js"
+      - "src/pray/devotional-method-styles.js"
+      - "src/pray/mercy-reader.js"
+      - "src/pray/rosary-methods-ui.js"
+      - "src/pray/presentation-runtime.js"
+      - "ao-inline-a45824678e308933fad5.js"
+      - "tests/devotional-methods-*.mjs"
+      - "package.json"
+      - ".github/workflows/pray-devotional-methods-acceptance.yml"
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+permissions:
+  contents: read
+jobs:
+  devotional-methods-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Verify prayer source and model contract
+        run: npm run test:devotional-methods
+      - run: npx playwright install --with-deps chromium
+      - name: Verify actual mobile Divine Mercy and full Rosary methods
+        run: timeout --signal=TERM --kill-after=5s 175s node tests/devotional-methods-mobile.mjs
+      - name: Preserve reader phone acceptance captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: divine-mercy-and-rosary-methods-${{ github.run_id }}
+          path: reviews/captures/devotional-methods/*.png
+          if-no-files-found: ignore
+          retention-days: 14
