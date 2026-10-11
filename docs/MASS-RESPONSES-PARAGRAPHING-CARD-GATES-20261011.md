@@ -153,44 +153,27 @@ Machine-readable authority: [reader-source-only-cues.js](../src/mass/reader-sour
 **Before enabling these events:** match each to its actual priest-side ceremonial event, retain explicit sung/solemn distinctions (particularly Epistle/Gospel proclaimers), and require the relevant posture/customary conditions for the Gloria/Credo sedilia states. Synchronization between independent Schola and priest clocks must be validated in a real service. These are **15 documented event-alignment tasks**, not 28 unaccounted text defects and not a reason to increase the ordinary LIVE card count.
 
 
-## Priest-side event reconciliation — 10 / 15 event-identified
+## Priest-side event reconciliation — 15/15 explicitly bound (11 October)
 
-The independent priest-event bridge now identifies **10 of 15** original source-only cues against named canonical MC events; **five remain fail-closed**. These numbers denote *registered event bindings*, **not automated ceremony detection**. Real-time execution requires an independent priest observer; scrolling or the Schola's chant never triggers a movement.
+All **15/15** source-only priest cues are now accounted for by exact priest-side event identities. **Ten** use pre-existing, independently reportable MC graph events. **Five** are *new, observer-only* `MC-OBS-*` event IDs, separately registered in [reader-priest-pending-observations.js](../src/mass/reader-priest-pending-observations.js), intentionally **excluded from the six-file objective Mass traversal** and from auto-firing Schola/navigation clocks. This is an **event binding and strict input contract**, not a claim of machine recognition or real-Mass field certification.
 
-Three additions to the previous seven bindings:
+The first ten: C0043 → MC-INT-020 (quiet priest Introit recitation); C0075 → MC-EPI-020 (Missa Cantata, separately proven actor PRIEST plus READ/SUNG delivery, never unspecified lector); C0086 → MC-GSP-060 (Missa Cantata celebrant only, never a Solemn deacon); C0134 → MC-SEC-010; C0144 → MC-PREF-040; C0249 → MC-END-010 (quiet Communion antiphon after ablutions, **not** MC-COM-305 Schola Communion); and conditional Gloria/Credo sedilia and return pairs C0276/C0277/C0278/C0279.
 
-| Canonical cue | Exact MC event | Form/trigger | What may project |
+| Source cue | New observer-only MC event | Mandatory independently reported evidence | Rubrical authority |
 |---|---|---|---|
-| C0043 | MC-INT-020 | Independently observed priest's Introit recitation | Quiet priest voice and persistent physically sourced position from C0042, never from Schola's MC-INT-010 |
-| C0075 | MC-EPI-020 | Only Missa Cantata **and** confirmed priest (rather than lector) **and** independently reported READ or SUNG delivery | Reads Epistle action; voice reflects observed spoken/sung delivery, no guessed position or faithful posture |
-| C0249 | MC-END-010 | Independently observed priest's Communion antiphon **after ablutions** | Quiet recitation; **suppress** PRIEST_TRACK_ASYNC, which is a scheduling placeholder and not a location; no activation from Schola's MC-COM-305 |
+| C0042 | `MC-OBS-INT-POS` | Priest physically at `ALTAR_EPISTLE_MISSAL`; never when Schola starts Introit | [1962 *Ritus servandus* III.7–8](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) |
+| C0077 | `MC-OBS-GRADUAL` | **Solemn** celebrant independently reported READ of Gradual; not an automatic Schola/Gospel handoff; Missa Cantata not yet licensed for this cue | [*Ritus servandus* VI.4](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) |
+| C0109 | `MC-OBS-OFFERTORY` | Celebrant READ of Offertory antiphon; independent of Oremus, choir chant or Host preparation | [*Ritus servandus* VII.1–2](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) |
+| C0250 | `MC-OBS-PC-TURN` | Priest physically `TURN_TO_PEOPLE` after Communion antiphon and altar kiss, **before** Postcommunion greeting | [*Ritus servandus* XI.1](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) |
+| C0256 | `MC-OBS-DISMISS-TURN` | Priest `TURN_TO_PEOPLE` after Postcommunion(s); if `ORATIO_SUPER_POPULUM_PRESENT`, must separately declare `ORATIO_SUPER_POPULUM_COMPLETED` | [*Ritus servandus* XI.1–3](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) |
 
-The 1962 [*Ritus servandus* VI.8](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) explicitly allows the Epistle to be sung by a minister; otherwise the celebrant may read it or sing it. See also [*Rubricae generales Missalis Romani*, 514](https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html). Accordingly, the generic MC-EPI-020 actor RESOLVED_READER **does not by itself certify a priest action**. The bridge requires separately observed celebrant identity and delivery. This is essential for the Low/Missa Cantata/Solemn distinction.
+**Event safety rules:**
+- Every new MC-OBS event requires `independentlyObserved===true`, `observedActor:"PRIEST"`, the exact observed `position`, `delivery`, or `action` parameter, correct LIVE source section, licensed Mass form, and matching source cue identity. No `observedAction`/other proof, no event.
+- Reader swipe, current card, scroll focus, Schola chant/progress, proximity to prayer, nearby `Dominus vobiscum`, or other MC events **cannot** impersonate these new observations. Invalid/unknown IDs fail closed.
+- C0109 is also tagged `SIT` in the faithful-posture registry; **none of these priest events may change faithful posture or gestures**. Bells, cinematics, text and choir progress are likewise excluded.
+- For physical-turn cues C0250/C0256, `ALTAR_FACES_PEOPLE` suppresses the turn icon: the 1962 rubric does not prescribe a physical turn in that orientation. Conditional Solemn minister roles and Lenten *Oratio super populum* are preserved.
+- The source-only register remains metadata with `automatedIconAllowed:false`. Explicit observed priest action is permissible without authorizing **automatic** detection or nearest-text binding.
 
-Five unresolved cases that must **not** be auto-mapped:
+**Automated gates:** `tests/reader-priest-event-alignment.mjs` audits 15 bindings (10 graph + five observer-only), exact witness/actor/form/section guards and proxy rejection; `tests/reader-phone-curated65.mjs` checks actual browser phone display and Schola independence. The original certified MC graph and 48-card default are unchanged. The revised 64/65-card reader remains opt-in and PR #1026 stays draft.
 
-| Cue | Reason for retaining explicit pending status |
-|---|---|
-| C0042 | Physical transfer to the Epistle-side Missal lacks a separately identifiable canonical movement event; the valid position is inherited at the independently observed C0043 recitation, not fired during Schola's Introit |
-| C0077 | Gradual is a Schola chant; the priest's asynchronous side activity is not synchronized to the Schola start or end |
-| C0109 | Proper Offertory is Schola material; the celebrant's independent change into quiet Offertory prayers has no matching exact public canonical action |
-| C0250 | Turning from Communion antiphon toward the congregation for Postcommunion greeting needs an explicit turning event; MC-END-020 only records returning to the centre, while MC-END-030 records a spoken greeting |
-| C0256 | Turning after Postcommunion toward the final dismissal needs an explicit priest-turn event; the final Dominus vobiscum is not proof of the exact preceding turn |
-
-Regression gates: repository `tests/reader-priest-event-alignment.mjs` pins **10 event-identified and five pending** cues, denies unresolved lector/celebrant actors and unobserved movement; Chromium `tests/reader-phone-curated65.mjs` exercises the true priest Introit, Epistle and Communion tracks, Schola independence and correct source-only position suppression. No new prayer card or source text was created, and production 48 remains the default. The unresolved five require a new independently certified MC action/movement event or human input, not another textual cue grouping.
-
-## Five guarded movements: source-backed observation definitions (11 October)
-
-These **complete the observational descriptions**, not the canonical MC-event crosswalk: **10/15 source-only cues remain event-bound and 5/15 remain fail-closed**. Machine-readable acceptance predicates: [reader-priest-pending-observations.js](../src/mass/reader-priest-pending-observations.js). No synthetic IDs are admitted into the runtime adapter.
-
-| Cue | Independent observation required | Exact primary rubric | Disallowed shortcut |
-|---|---|---|---|
-| C0042 | Celebrant physically reaches the Epistle-side Missal for Introit; Solemn incensation may precede this movement | [1962 *Ritus servandus* III.2, III.4](https://1962ordo.today/1962-rubrics/) | Schola Introit start or priest's later Introit recitation |
-| C0077 | Celebrant *himself* privately recites Gradual; Solemn Mass explicitly attested, Missa Cantata applicability to be separately certified | [*Ritus servandus* VI.4, VI.8](https://1962ordo.today/1962-rubrics/) | Schola Gradual/Alleluia start, Epistle finishing |
-| C0109 | Celebrant reads Offertory antiphon at altar before preparing the gifts | [*Ritus servandus* VII.1–2](https://1962ordo.today/1962-rubrics/) | Schola Offertory chant, `Oremus`, or `Suscipe sancte Pater`/host preparation |
-| C0250 | Celebrant returns to centre after Communion antiphon, kisses altar and **turns toward people** before the first Postcommunion greeting | [*Ritus servandus* XI.1](https://1962ordo.today/1962-rubrics/) | Mere return to centre (`MC-END-020`) or hearing `Dominus vobiscum` (`MC-END-030`) |
-| C0256 | Following all Postcommunions and any prescribed Lenten *Oratio super populum*, celebrant returns to centre, kisses altar and **turns toward people** before the final greeting | [*Ritus servandus* XI.1–2](https://1962ordo.today/1962-rubrics/) | Completion of Postcommunions (`MC-END-050`), optional prayer (`MC-END-060`), or final greeting (`MC-END-070`) |
-
-**Mandatory ownership exclusions:** Gradual and Offertory chant are Schola-lane events; they cannot serve as priest-side observations. C0109 also contains a faithful-posture `SIT` registry entry; that faithful state must **not** activate as a side-effect of any priest observation. A voice or movement observation may alter only its independently supported priest lane. Physical turns must not be inferred merely from words heard, since those are distinct instants and form-dependent exceptions apply.
-
-**Next implementation gate:** certify distinct priest-side MC event identities for each observation against the source graph, with phase/actor/form/condition metadata; add positive and negative mobile acceptance for a separately reporting human observer, including Solemn minister variants and Lenten `Oratio super populum`. Until then, `eventId:null` and `SPECIFIED_UNBOUND_NO_TRIGGER` are intentional. Do not change the opt-in status, production 48 cards, or the independent Schola clock.
+**Outstanding release gate:** real Solemn and Missa Cantata field acceptance, actual priest-observer integration and minister/lector timing verification, French/English visual and exceptional-rite review. **15/15 event identities does not mean automated priest motion detection or liturgical release approval.**
