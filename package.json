@@ -46,6 +46,7 @@
     "test:reader-rail-ownership": "node tests/reader-rail-ownership.mjs",
     "test:reader-guide": "node tests/reader-guide.mjs",
     "test:reader-schola": "node tests/reader-schola.mjs",
+    "test:phone-curated65": "node tests/reader-phone-curated65.mjs",
     "test:mass-speaking-roles": "node tests/reader-speaker-roles.mjs && node tests/reader-chant-line-layout.mjs && node tests/reader-mode-switch.mjs && node tests/reader-schola.mjs && node tests/reader-schola-curated.mjs",
     "test:mass-customs-missal": "node tests/mass-customs-missal-presentation.mjs",
     "test:gloria-credo-faithful": "node tests/gloria-credo-faithful.mjs",
