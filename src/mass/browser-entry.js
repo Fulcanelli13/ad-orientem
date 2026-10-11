@@ -779,6 +779,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onOpenSourceProper:()=>state.observedSource?.open?.(),
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
          getCalendarState:()=>runtimeState(),
+         subscribeCalendarState:notify=>runtime()?.store?.subscribe?.(notify)??null,
          onOpenCalendar:async date=>{
            // Navigate only to the actual selected Mass day. Never replace the
            // celebration, selected Proper or reader preferences.
