@@ -243,57 +243,44 @@ try{
     assert.equal(s.display,"none",surface+" exposed Home beneath the active surface");
   };
 
-  assert.equal(await page.locator(".aoSaintArtCard .aoSaintArtPlaceholder").filter({hasText:/No reusable artwork|No artwork is assigned|not approved for production/i}).count(),0,"Home exposed a terminal saint-art placeholder instead of suppressing the unresolved card");
+  // Today v2 is the production Home owner. The old v43 celebration/Coming Up
+  // classes were retired; certify the rendered editorial sections and entry points.
   const homeParity=await page.evaluate(()=>({
-    celebrationTitles:document.querySelectorAll(".homeScreen .celebrationBlock > h1").length,
-    aroundMassActions:document.querySelectorAll(".homeScreen .aroundMass .phaseButton").length,
-    followMass:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
-    gospelCards:document.querySelectorAll(".homeScreen .gospelCard").length,
-    comingUp:document.querySelectorAll(".homeScreen .aoHomeComingUp").length,
-    dailyCatechism:document.querySelectorAll(".homeScreen .aoHomeDailyCatechism").length,
-    calendarDashboard:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
-    brand:document.querySelector(".homeScreen .brandName")?.textContent?.trim()??"",
-    celebration:document.querySelector(".homeScreen .celebrationBlock > h1")?.textContent?.trim()??"",
-    gospel:document.querySelector(".homeScreen .gospelCard p")?.textContent?.trim()??"",
-    displayedDate:document.querySelector(".homeScreen .dateTitle b")?.textContent?.trim()??"",
+    context:document.querySelectorAll(".homeScreen .aoTodayV2Context").length,
+    sections:document.querySelectorAll(".homeScreen .aoTodayV2Below .aoTodayV2Zone").length,
+    prayerFeature:document.querySelectorAll(".homeScreen .aoTodayV2PrayerFeature [data-home-cu-route]").length,
+    prayerShortcuts:document.querySelectorAll(".homeScreen .aoTodayV2PrayerShortcuts [data-home-cu-route]").length,
+    gospel:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-action='gospel']").length,
+    scripture:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-scripture]").length,
+    catechism:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-daily-catechism]").length,
+    calendar:document.querySelectorAll(".homeScreen .aoTodayV2Context [data-home-calendar]").length,
+    massEntry:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
+    obsoleteYearWheel:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
+    unresolvedArt:document.querySelectorAll(".homeScreen .aoSaintArtCard .aoSaintArtPlaceholder").length,
   }));
-  assert.equal(homeParity.celebrationTitles,1,"Home lost its single liturgical-day identity");
-  assert.equal(homeParity.aroundMassActions,3,"Home lost the Prepare / Follow Mass / Give thanks triad");
-  assert.equal(homeParity.followMass,1,"Home does not expose exactly one canonical Follow Mass action");
-  assert.equal(homeParity.gospelCards,1,"Home lost its single Gospel-in-context surface");
-  assert.equal(homeParity.comingUp,1,"Home lost modular Coming Up");
-  assert.equal(homeParity.dailyCatechism,1,"Home lost modular Daily Catechism");
-  assert.equal(homeParity.calendarDashboard,0,"Calendar dashboard leaked back onto Home");
-  assert.equal(homeParity.brand,"AD ORIENTEM");
-  assert.ok(homeParity.celebration.length>0,"Home liturgical-day identity is blank");
-  assert.ok(homeParity.gospel.length>0,"Home Gospel context is blank");
-  assert.match(homeParity.displayedDate,/^\d{2}\/\d{2}\/\d{4}$/,"Home date is not DD/MM/YYYY");
+  assert.equal(homeParity.context,1,"Today v2 lost its single liturgical-day context");
+  assert.equal(homeParity.sections,3,"Today v2 must provide Pray, Read/Reflect and Approaching");
+  assert.equal(homeParity.prayerFeature,1,"Today v2 lost its featured prayer entry");
+  assert.equal(homeParity.prayerShortcuts,3,"Today v2 lost the three prayer shortcuts");
+  assert.equal(homeParity.gospel,1,"Today v2 lost appointed-Gospel navigation");
+  assert.equal(homeParity.scripture,1,"Today v2 lost Scripture navigation");
+  assert.equal(homeParity.catechism,1,"Today v2 lost the Daily Catechism entry");
+  assert.equal(homeParity.calendar,2,"Today v2 must preserve Liturgical Time and Coming Soon calendar navigation");
+  assert.equal(homeParity.massEntry,1,"Home does not expose a canonical Follow Mass entry");
+  assert.equal(homeParity.obsoleteYearWheel,0,"Calendar dashboard leaked onto Home");
+  assert.equal(homeParity.unresolvedArt,0,"Home displayed an unapproved artwork placeholder");
   const designBaseline=await page.evaluate(()=>({
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
-    displayFont:getComputedStyle(document.querySelector(".homeScreen .celebrationBlock > h1")).fontFamily,
     bodyFont:getComputedStyle(document.querySelector(".homeScreen")).fontFamily,
-    cardRadius:getComputedStyle(document.querySelector(".homeScreen .contentCard")).borderRadius,
     gutter:getComputedStyle(document.documentElement).getPropertyValue("--ao-page-gutter").trim(),
     controlHeight:getComputedStyle(document.documentElement).getPropertyValue("--ao-control-h").trim(),
   }));
   assert.equal(designBaseline.version,"ao-design-system-v2","shared app design system is not installed");
   assert.equal(designBaseline.stylePresent,true,"shared app design-system stylesheet is missing");
-  assert.ok(designBaseline.displayFont.length>0,"Home display font did not resolve");
-  assert.ok(designBaseline.bodyFont.length>0,"Home body font did not resolve");
-  assert.equal(designBaseline.cardRadius,"15px","Home content cards diverged from the canonical card radius");
-  assert.equal(designBaseline.gutter,"12px","390px phone did not resolve the canonical phone gutter");
+  assert.ok(designBaseline.bodyFont.length>0,"Home font did not resolve");
+  assert.equal(designBaseline.gutter,"12px","390px phone does not resolve canonical gutter");
   assert.equal(designBaseline.controlHeight,"44px","canonical touch-control height drifted");
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.version==="modular-presentation-fx-v3",null,{timeout:5000});
-  await page.waitForFunction(()=>document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero,null,{timeout:5000});
-  const homeFx=await page.evaluate(()=>({
-    hero:document.querySelector(".homeScreen .celebrationBlock")?.dataset?.aoPresentationFxHero??null,
-    rootScan:document.querySelector(".homeScreen")?.dataset?.aoPresentationFxArtScan??null,
-    width:document.querySelector(".homeScreen .celebrationBlock")?.getBoundingClientRect?.().width??0,
-  }));
-  assert.match(homeFx.hero,/modular-presentation-fx-v3/,"Home celebration hero did not receive recovered entry choreography");
-  assert.equal(homeFx.rootScan,"legacy-v4312","Home modular root bypassed the approved v43.12 art loader");
-  assert.ok(homeFx.width>=350,"Home hero choreography changed phone geometry");
   await shot("01-home");
 
   await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
