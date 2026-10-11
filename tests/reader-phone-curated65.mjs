@@ -28,18 +28,20 @@ await new Promise((resolve,reject)=>{server.once("error",reject);server.listen(4
 let browser;
 try{
   browser=await chromium.launch({headless:true});
-  for(const {width,height,lang} of [
+  for(const {width,height,lang,secondConfiteor=false} of [
     {width:320,height:740,lang:"en"},
     {width:390,height:844,lang:"en"},
     {width:768,height:1024,lang:"en"},
     {width:390,height:844,lang:"fr"},
+    {width:390,height:844,lang:"en",secondConfiteor:true},
   ]){
     const context=await browser.newContext({viewport:{width,height},isMobile:width<600,
       hasTouch:width<600,deviceScaleFactor:1,locale:lang==="fr"?"fr-FR":"en-GB"});
     const page=await context.newPage();
     const errors=[];
     page.on("pageerror",e=>errors.push(String(e?.message??e)));
-    await page.goto("http://127.0.0.1:4282/tests/fixtures/reader-phone-harness.html?aoLiveCards=65&lang="+lang,
+    await page.goto("http://127.0.0.1:4282/tests/fixtures/reader-phone-harness.html?aoLiveCards=65&lang="+lang+
+      (secondConfiteor?"&secondConfiteor=1":""),
       {waitUntil:"networkidle",timeout:45000});
     await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
     const summary=await page.evaluate(()=>{
@@ -102,6 +104,55 @@ try{
       if(title==="Sanctus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
       if(title==="Benedictus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
     }
+    // Walk every liturgical card in source order, not merely selected screenshots.
+    // A local second Confiteor is present in source audit, but absent from
+    // the default navigation path unless explicitly requested.
+    const walked=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const optionalTitle="Second Confiteor · Optional Local Custom";
+      const skipped=[],visited=[],defects=[];
+      const optional=api.model.cards.find(c=>c.title===optionalTitle);
+      for(const card of api.model.cards){
+        const shown=api.showSequence(card.sequence);
+        if(!shown){
+          skipped.push(card.title);
+          continue;
+        }
+        const actual=api.getCurrentCard();
+        const shell=document.querySelector('[data-ao-reader-shell]');
+        const progress=document.querySelector('[data-role="progress"]')?.textContent?.trim();
+        const rows=document.querySelectorAll('.ao-reader-paragraph').length;
+        if(actual?.sectionId!==card.sectionId)defects.push("wrong card "+card.title);
+        if(!rows && card.paragraphs.length)defects.push("blank rendered card "+card.title);
+        if(shell && shell.scrollWidth>shell.clientWidth+3)defects.push("overflow "+card.title);
+        if(!/^[0-9]+ \/ [0-9]+$/.test(progress??""))defects.push("invalid progress "+card.title+": "+progress);
+        visited.push({title:card.title,progress,sequence:card.sequence});
+      }
+      const finalProgress=document.querySelector('[data-role="progress"]')?.textContent?.trim();
+      if(optional){
+        const pre=api.model.cards[optional.sequence-2];
+        const post=api.model.cards[optional.sequence];
+        api.showSequence(pre.sequence);
+        document.querySelector('[data-reader-nav="next"]')?.click();
+        const after=api.getCurrentCard()?.sectionId;
+        if(after!==post.sectionId && after!==optional.sectionId){
+          defects.push("next from Communion Confiteor boundary navigates incorrectly");
+        }
+      }
+      return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null};
+    });
+    const expectedVisible=secondConfiteor?65:64;
+    assert.equal(walked.visited.length,expectedVisible,
+      "The optional local Confiteor must not be shown by default");
+    assert.deepEqual(walked.skipped,secondConfiteor?[]:["Second Confiteor · Optional Local Custom"]);
+    assert.deepEqual(walked.defects,[],"full 65-card field rehearsal revealed runtime defects");
+    assert.equal(walked.finalProgress,expectedVisible+" / "+expectedVisible,
+      "visible LIVE progress may not display a skipped optional card");
+    if(!secondConfiteor){
+      const before=walked.visited.find(x=>x.sequence===walked.optionalSeq-1);
+      const after=walked.visited.find(x=>x.sequence===walked.optionalSeq+1);
+      assert.ok(before&&after,"Optional Confiteor interrupted the navigation stream");
+    }
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
     const guides=await page.evaluate(()=>{
@@ -112,11 +163,11 @@ try{
       return {label};
     });
     assert.ok(guides.label!=null,"Guide did not render");
-    await page.screenshot({path:resolve(out,lang+"-"+width+"-credo.png"),fullPage:false});
+    await page.screenshot({path:resolve(out,lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-credo.png"),fullPage:false});
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
   }
-  console.log("Curated 65 phone: PASS — 320/390/768px EN and 390px FR; 65 source-based LIVE cards, Schola, Guide and no horizontal overflow.");
+  console.log("Curated 65 phone: PASS — complete 64 visible/65 optional LIVE sequence at 320/390/768px EN and 390px FR; Schola, Guide, no card overflow.");
 }finally{
   await browser?.close();
   await new Promise(done=>server.close(()=>done()));
