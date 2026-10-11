@@ -54,3 +54,11 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: npm run test:phone
+      - name: Retain bilingual Missal book-view phone evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bilingual-missal-phone-book
+          path: artifacts/missal-phone-review/
+          if-no-files-found: warn
+          retention-days: 30
