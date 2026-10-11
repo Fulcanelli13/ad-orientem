@@ -1,0 +1,31 @@
+name: Mass source bulk research audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/research/mass-source-bulk-audit.mjs'
+      - 'data/geography/research/mass-1962-uninspected-source-triage-20261011.v1.json'
+      - '.github/workflows/mass-source-bulk-research.yml'
+jobs:
+  inspect-sources:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate extractor syntax
+        run: node --check scripts/research/mass-source-bulk-audit.mjs
+      - name: Research-only extraction of 426 non-Sanctoral uninspected paths
+        run: node scripts/research/mass-source-bulk-audit.mjs artifacts/mass-source-seasonal-raw-section-audit.json
+        env:
+          MASS_AUDIT_CONCURRENCY: '6'
+      - name: Upload evidence as non-published artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-seasonal-raw-section-audit
+          path: artifacts/mass-source-seasonal-raw-section-audit.json
+          if-no-files-found: warn
