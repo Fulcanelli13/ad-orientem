@@ -1,0 +1,31 @@
+name: Today v2 — independent phone acceptance
+on:
+  pull_request:
+    paths:
+      - "src/home/**"
+      - "tests/today-v2-phone.mjs"
+      - ".github/workflows/today-v2-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Art-led Today v2 — 5 widths and error/overflow checks
+        run: node tests/today-v2-phone.mjs
+      - name: Screenshots and geometry
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: today-v2-phone-geometry
+          path: artifacts/today-v2-phone/
+          if-no-files-found: warn
+          retention-days: 30
