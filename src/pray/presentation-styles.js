@@ -707,6 +707,23 @@ const PRAY_ORG_ENTRY_CSS=`
   #aoPray435930 .aoP435930RootGroupDoors{grid-template-columns:1fr}
   #aoPray435930 .aoP435930RootGroupDoors .aoP435930FamilyDoor{min-height:98px}
 }
+/* Only the canonical Prayer hub: replace donor micro-captions with legible
+   type without modifying prayer, ritual, rubric, Rosary or text semantics. */
+#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind{
+  font-size:11px!important;line-height:1.35!important;letter-spacing:.07em!important
+}
+#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription{
+  font-size:13px!important;line-height:1.48!important
+}
+#aoPray435930 .aoP435930RootOrganised .aoP435930FamilyDoor b{
+  font-size:16px!important;line-height:1.3!important
+}
+#aoPray435930 .aoP435930Head small{
+  font-size:11px!important;line-height:1.25!important
+}
+#aoPray435930 .aoP435930RootOrganised .aoP435930HomeIntro>small{
+  font-size:11px!important;line-height:1.3!important
+}
 `;
 
 export function installPrayPresentationStyles(doc=globalThis.document){
