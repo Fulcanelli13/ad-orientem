@@ -9,6 +9,8 @@ on:
       - "data/mass/alphonsus-fortescue-semantic-reconciliation-remaining97.v1.json"
       - "tests/ritus-1962-*.mjs"
       - "tests/mass-ceremonial-cue-owner-reconciliation13.mjs"
+      - "tests/mass-priest-owner-independent-clock-preview.mjs"
+      - "tools/mass/priest-owner-independent-clock-preview.mjs"
       - "tests/mass-book-only-evidence-v1.mjs"
       - "tests/mass-two-books-source-evidence-batch02.mjs"
       - "tests/mass-two-books-form-differences-adjudication.mjs"
@@ -20,6 +22,8 @@ on:
       - "data/mass/ritus-1962-*.json"
       - "tests/ritus-1962-*.mjs"
       - "tests/mass-ceremonial-cue-owner-reconciliation13.mjs"
+      - "tests/mass-priest-owner-independent-clock-preview.mjs"
+      - "tools/mass/priest-owner-independent-clock-preview.mjs"
   workflow_dispatch:
 
 permissions:
@@ -52,3 +56,5 @@ jobs:
         run: node tests/mass-two-books-semantic-remaining97.mjs
       - name: Guard 13 ceremonial actor and cue owner reconciliations
         run: node tests/mass-ceremonial-cue-owner-reconciliation13.mjs
+      - name: Verify priest observation is not advanced by concurrent Schola chanting
+        run: node tests/mass-priest-owner-independent-clock-preview.mjs
