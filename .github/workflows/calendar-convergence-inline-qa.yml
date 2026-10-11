@@ -26,6 +26,10 @@ jobs:
       - name: ESM source syntax
         run: |
           node --check src/calendar/calendar-runtime.js
+          node --check src/calendar/year-colour-wheel.js
+          node --check src/calendar/year-journey.js
+          node --check src/app/liturgical-theme.js
+          node --check src/mass/reader-liturgical-theme.js
           node --check src/calendar/browser-entry.js
           node --check src/home/browser-entry.js
           node --check src/home/presentation.js
@@ -36,6 +40,8 @@ jobs:
       - name: Calendar and Mass ownership
         run: |
           node tests/calendar-liturgical-year.mjs
+          node tests/app-liturgical-theme.mjs
+          node tests/mass-batch-a-theme-icons.mjs
           node tests/full-mass-preflight.mjs
           node tests/app-shell-contract.mjs
       - run: npx playwright install --with-deps chromium
