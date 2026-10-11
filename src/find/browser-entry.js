@@ -414,15 +414,18 @@ export function createFindOwner(win=globalThis){
           },
         });
         if(importTimer!==undefined)win.clearTimeout?.(importTimer);
-        if(importStalled||token!==paintToken||!openState){
+        if(token!==paintToken||!openState){
+          nextHandle?.destroy?.();return false;
+        }
+        if(importStalled){
           nextHandle?.destroy?.();
-          // A delayed CDN response may have erased the recovery panel while
-          // completing MapLibre construction; restore it only on current route.
-          if(importStalled)showMapRecovery();
-          return false;
+          // A delayed CDN response may have erased the recovery panel.
+          // The Explore route still opened successfully: search remains usable.
+          showMapRecovery();return true;
         }
         if(!nextHandle){
-          showMapRecovery();return false;
+          // Having zero publishable map pins is not a failed Explore route.
+          showMapRecovery();return true;
         }
         mapHandle=nextHandle;
       }catch(error){
