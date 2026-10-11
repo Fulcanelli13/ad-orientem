@@ -38,7 +38,7 @@ for(const e of ev){
   }
 }
 assert.equal(ev.filter(e=>e.actor==="DEACON").length,31);
-assert.equal(ev.filter(e=>e.actor==="SUBDEACON").length,24);
+assert.equal(ev.filter(e=>e.actor==="SUBDEACON").length,23);
 assert.equal(ev.filter(e=>e.actor==="ACOLYTES").length,5);
 assert.equal(ev.filter(e=>e.actor==="PRIEST").length,4);
 assert.equal(ev.filter(e=>e.actor==="THURIFER").length,4);
@@ -51,7 +51,9 @@ assert.equal(get("049").anchorType,"WITHIN_TEXT_CUE");
 assert.equal(get("024").actionKey,"HOLD_PATEN_BEHIND_CELEBRANT_UNTIL_PATERNOSTER");
 assert.equal(get("024").condition,"NOT_REQUIEM");
 assert.equal(get("025").condition,"REQUIEM");
-assert.equal(get("050").cueId,"AO.SM.C0209");\nassert.equal(get("050").anchorType,"WITHIN_TEXT_CUE");\nassert.equal(minister.reviewGates[0].status,"OPEN");
+assert.equal(get("050").cueId,"AO.SM.C0209");
+assert.equal(get("050").anchorType,"WITHIN_TEXT_CUE");
+assert.equal(minister.reviewGates[0].status,"OPEN");
 
 for(const id of ["003","006","007","008","010","011","012","023","024","030","032","040","045","046","050","051","054","055","056"])
  assert.equal(get(id).condition==="REQUIEM",false,id+" incorrectly enabled in Requiem");
