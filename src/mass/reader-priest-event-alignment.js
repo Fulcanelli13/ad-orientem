@@ -1,21 +1,22 @@
 import { ORDINARY_SUNG_SOURCE_ONLY_CUES } from "./reader-source-only-cues.js";
+import { ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS, ORDINARY_SUNG_PRIEST_OBSERVER_EVENTS } from "./reader-priest-pending-observations.js";
 
 // Canonical MC-event identity, NOT card number or audible Schola phrase, is
 // the only accepted synchronization boundary for source-only priest states.
 // The event bridge is inert until an independent ceremonial observer reports
 // the exact MC-* event. In particular, a swipe cannot trigger the priest.
 const ROWS=Object.freeze([
-  ["AO.SM.C0042",null,null,null,null,"PARALLEL_INTOIT_POSITION_UNRESOLVED"],
+  ["AO.SM.C0042","MC-OBS-INT-POS","INTROIT","PRIEST",null,"OBSERVER_POSITION_ONLY"],
   ["AO.SM.C0043","MC-INT-020","INTROIT","PRIEST","proper.introit","INDEPENDENT_INTROIT_PRIEST_RECITATION"],
   ["AO.SM.C0075","MC-EPI-020","EPISTLE","RESOLVED_READER","proper.epistle","CELEBRANT_EPISTLE_OBSERVED"],
-  ["AO.SM.C0077",null,null,null,null,"ASYNCHRONOUS_GRADUAL_UNRESOLVED"],
+  ["AO.SM.C0077","MC-OBS-GRADUAL","CHANT","PRIEST","proper.gradual","OBSERVER_GRADUAL_SOLEMN"],
   ["AO.SM.C0086","MC-GSP-060","GOSPEL","PRIEST","proper.gospel","MISSA_CANTATA_ONLY"],
-  ["AO.SM.C0109",null,null,null,null,"ASYNCHRONOUS_OFFERTORY_UNRESOLVED"],
+  ["AO.SM.C0109","MC-OBS-OFFERTORY","OFFERTORY","PRIEST","proper.offertory","OBSERVER_OFFERTORY_RECITATION"],
   ["AO.SM.C0134","MC-SEC-010","SECRET","PRIEST","proper.secrets[]","PRIEST_EVENT_EXACT"],
   ["AO.SM.C0144","MC-PREF-040","PREFACE","PRIEST","proper.preface","PRIEST_EVENT_EXACT"],
   ["AO.SM.C0249","MC-END-010","CONCLUSION","PRIEST","proper.communion","PRIEST_COMMUNION_ANTIPHON_AFTER_ABLUTIONS"],
-  ["AO.SM.C0250",null,null,null,null,"PRIEST_TURN_EVENT_UNRESOLVED"],
-  ["AO.SM.C0256",null,null,null,null,"POSTCOMMUNION_TURN_UNRESOLVED"],
+  ["AO.SM.C0250","MC-OBS-PC-TURN","CONCLUSION","PRIEST",null,"OBSERVER_FIRST_TURN"],
+  ["AO.SM.C0256","MC-OBS-DISMISS-TURN","CONCLUSION","PRIEST",null,"OBSERVER_FINAL_TURN"],
   ["AO.SM.C0276","MC-GLR-040","GLORIA","PRIEST","ordinary.gloria","SEDILIA_DURING_CHANT"],
   ["AO.SM.C0277","MC-GLR-060","GLORIA","PRIEST",null,"SEDILIA_RETURN"],
   ["AO.SM.C0278","MC-CRD-040","CREDO","PRIEST","ordinary.credo","SEDILIA_DURING_CHANT"],
@@ -24,13 +25,17 @@ const ROWS=Object.freeze([
 export const ORDINARY_SUNG_PRIEST_EVENT_ALIGNMENT=Object.freeze(ROWS.map(
   ([cueId,eventId,phase,actor,contentRef,gate])=>Object.freeze({
     cueId,eventId,phase,actor,contentRef,gate,
-    activation:eventId?"EXPLICIT_INDEPENDENT_EVENT":"UNRESOLVED_NO_EVENT_TRIGGER",
+    activation:ORDINARY_SUNG_PRIEST_OBSERVER_EVENTS.some(e=>e.id===eventId)
+      ?"EXPLICIT_OBSERVER_EVENT_ONLY":eventId?"EXPLICIT_INDEPENDENT_EVENT":"UNRESOLVED_NO_EVENT_TRIGGER",
   })
 ));
 const FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const MISSA_CANTATA=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"]);
 const rowByEvent=new Map(ORDINARY_SUNG_PRIEST_EVENT_ALIGNMENT.filter(x=>x.eventId)
   .map(x=>[x.eventId,x]));
+const observerEventsById=new Map(ORDINARY_SUNG_PRIEST_OBSERVER_EVENTS.map(e=>[e.id,e]));
+const observerSpecsById=new Map(ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS.map(e=>[e.eventId,e]));
+
 
 /** Invariant: all 15 sources accounted for, no duplicate/event alias, and
  * exact source graph metadata (phase, actor, content, priest voice) matches. */
@@ -43,20 +48,28 @@ export function auditOrdinarySungPriestEventAlignment(events){
      expected.size!==15)throw Error("Source-only priest event mapping no longer covers exactly 15 cues");
   const index=new Map(events.map(e=>[e.id,e]));
   if(index.size!==events.length)throw Error("Duplicate canonical MC event");
-  if(rowByEvent.size!==10)throw Error("Expected ten event-identifiable ceremonial boundaries");
+  if(rowByEvent.size!==15 || observerEventsById.size!==5 ||
+     observerSpecsById.size!==5)throw Error("Expected ten graph events and five independent observer-only events");
   for(const row of rows.filter(x=>x.eventId)){
-    const e=index.get(row.eventId);
+    const e=index.get(row.eventId)??observerEventsById.get(row.eventId);
     if(!e||e.phase!==row.phase||e.actor!==row.actor||
       (e.contentRef??null)!==row.contentRef)
       throw Error(row.cueId+": mismatched canonical ceremonial event "+row.eventId);
-    if(["MC-GLR-060","MC-CRD-070"].includes(e.id)){
+    if(observerEventsById.has(e.id)){
+      if(!e.observerOnly || e.automaticActivation!==false ||
+         e.sourceCueId!==row.cueId ||
+         e.voice?.speechAudibility!==((row.gate==="OBSERVER_GRADUAL_SOLEMN"||
+          row.gate==="OBSERVER_OFFERTORY_RECITATION")?"LOW_VOICE":"NONE"))
+        throw Error(e.id+": invalid independently observed priest event authority");
+    } else if(["MC-GLR-060","MC-CRD-070"].includes(e.id)){
       if(e.voice?.speechAudibility!=="NONE")
         throw Error(e.id+": altar return is not a spoken priest phrase");
     }else if(e.voice?.speechAudibility==="NONE")
       throw Error(e.id+": expected an independently reported priest prayer/event");
   }
   return Object.freeze({schema:"ao-ordinary-sung-priest-event-alignment-v1",
-    sourceOnlyCues:15,eventMatched:10,pending:5,
+    sourceOnlyCues:15,eventMatched:15,pending:0,
+    graphEventBindings:10,observerOnlyBindings:5,
     matchedEvents:Object.freeze(rows.filter(x=>x.eventId).map(x=>x.eventId)),
     pendingCueIds:Object.freeze(rows.filter(x=>!x.eventId).map(x=>x.cueId)),
   });
@@ -68,6 +81,11 @@ function hasConditions(row,conditions){
     return conditionsSet.has("SEDILIA_USED") &&
       conditionsSet.has("SEDILIA_USED_AND_CHANT_CONTINUES");
   if(row.gate==="SEDILIA_RETURN")return conditionsSet.has("SEDILIA_USED");
+  if(row.gate==="OBSERVER_FINAL_TURN" &&
+      conditionsSet.has("ORATIO_SUPER_POPULUM_PRESENT") &&
+      !conditionsSet.has("ORATIO_SUPER_POPULUM_COMPLETED"))return false;
+  if(["OBSERVER_FIRST_TURN","OBSERVER_FINAL_TURN"].includes(row.gate) &&
+     conditionsSet.has("ALTAR_FACES_PEOPLE"))return false;
   return true;
 }
 /**
@@ -81,6 +99,7 @@ export function projectObservedOrdinaryPriestEvent({
   form=null,conditions=[],sourceSectionId=null,
   eventIndex=null,cueController=null,
   observedActor=null,observedDelivery=null,
+  observedPosition=null,observedAction=null,
 }={}){
   if(independentlyObserved!==true)return null;
   if(!FORMS.has(String(form??"")))return null;
@@ -95,6 +114,20 @@ export function projectObservedOrdinaryPriestEvent({
     if(!MISSA_CANTATA.has(form) || observedActor!=="PRIEST" ||
        !["READ","SUNG"].includes(observedDelivery))return null;
   }
+  const observation=observerSpecsById.get(row.eventId);
+  if(observation){
+    // The explicit event identity alone cannot prove that its namesake
+    // movement occurred. Require priest identity AND separately reported
+    // physical position, action, or private delivery.
+    if(observedActor!=="PRIEST")return null;
+    if(observation.requiredWitness==="observedPosition" &&
+       observedPosition!==observation.requiredValue)return null;
+    if(observation.requiredWitness==="observedDelivery" &&
+       observedDelivery!==observation.requiredValue)return null;
+    if(observation.requiredWitness==="observedAction" &&
+       observedAction!==observation.requiredValue)return null;
+    if(row.gate==="OBSERVER_GRADUAL_SOLEMN" && form!=="SOLEMN")return null;
+  }
   if(!hasConditions(row,conditions))return null;
   const block=ORDINARY_SUNG_SOURCE_ONLY_CUES.find(x=>x.cueId===row.cueId);
   const sourceSection=block?.blockId==="AO.SM.B016"?"AO.CARD.003"
@@ -103,10 +136,13 @@ export function projectObservedOrdinaryPriestEvent({
     :block?.blockId==="AO.SM.B014"?"AO.CARD.001"
     :block?.blockId==="AO.SM.B020"?"AO.CARD.005"
     :block?.blockId==="AO.SM.B085"?"AO.CARD.026"
+    :block?.blockId==="AO.SM.B021"?"AO.CARD.006"
+    :block?.blockId==="AO.SM.B030"?"AO.CARD.010"
+    :block?.blockId==="AO.SM.B088"?"AO.CARD.027"
     :block?.blockId==="AO.SM.B040"?"AO.CARD.011"
     :block?.blockId==="AO.SM.B045"?"AO.CARD.012":null;
   if(!sourceSection || sourceSection!==sourceSectionId)return null;
-  const event=eventIndex?.get?.(row.eventId);
+  const event=eventIndex?.get?.(row.eventId)??observerEventsById.get(row.eventId);
   if(!event || event.actor!==row.actor || event.phase!==row.phase ||
      (event.contentRef??null)!==row.contentRef)return null;
   const cue=cueController?.project?.(row.cueId,{conditions})??null;
@@ -125,7 +161,11 @@ export function projectObservedOrdinaryPriestEvent({
       ? Object.freeze({label:observedDelivery==="READ"?"READS EPISTLE":"SINGS EPISTLE",
         value:observedDelivery==="READ"?"READ / NOT SUNG":"SUNG / CLEAR",
         owner:"1962_RUBRIC_514_OBSERVED_PRIEST_DELIVERY"})
-      : cue.priestVoice??null,
+      : observation && observation.priestChannel==="PRIEST_VOICE"
+        ? Object.freeze({label:row.gate==="OBSERVER_GRADUAL_SOLEMN"
+            ?"PRIEST READS GRADUAL QUIETLY":"PRIEST READS OFFERTORY QUIETLY",
+          value:"LOW_VOICE",owner:"INDEPENDENTLY_OBSERVED_1962_RUBRIC"})
+        : observation ? null : cue.priestVoice??null,
     priestAction:cue.priestAction??null,
     priestPosture:null,faithfulPosture:null,faithfulGesture:null,
     bell:null,cinematic:null,
