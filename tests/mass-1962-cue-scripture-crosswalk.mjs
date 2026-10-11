@@ -36,4 +36,17 @@ const actual=a.blocks.filter(block=>block.Proper_Slot).map(block=>({blockId:bloc
 assert.deepEqual(d.variableProperSlots.map(row=>({blockId:row.blockId,slot:row.slot,cueIds:row.cueIds})),actual);
 assert.ok(d.variableProperSlots.every(row=>row.universalBibleRef===null));
 assert.ok(d.variableProperSlots.filter(row=>row.readerResolution==="EXISTING_EXACT_SOURCE_PATH_AND_LATIN_INCIPIT_VERIFICATION").map(row=>row.slot).join(",")==="EPISTLE_OR_LESSON,GOSPEL");
+const properIndex=read("data/mass/scripture-reading-witness-register.v1.json");
+const feastIndex=read("data/mass/scripture-feast-reading-supplement.v1.json");
+const segmentedIndex=read("data/mass/scripture-segmented-proper.v1.json");
+const inv=d.currentProperEvidenceInventory;
+assert.equal(inv.standaloneVerifiedProperPaths,105);
+assert.equal(inv.witnessedProperPathSlotPairs,210);
+assert.equal(inv.segmentedDiscontinuousReadingCount,15);
+assert.equal(inv.segmentedSlotDistribution.GOSPEL,4);
+assert.equal(inv.segmentedSlotDistribution.EPISTLE_OR_LESSON,11);
+assert.equal(inv.uniqueProperPathCount,105);
+assert.equal(inv.baseRegisterExplicitHeldSlots,5);
+assert.equal(inv.allTheseReferencesRequireResolvedLatinText,true);
+assert.ok(inv.denominatorCaution.includes("NOT the count of all days"));
 console.log("PASS Mass 1962 cue/Bible research crosswalk: 45 exact Low/Sung Latin phrase locations, 41 stable cues, 11 separately resolved Proper slots.");
