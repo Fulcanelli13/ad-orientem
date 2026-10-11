@@ -156,8 +156,19 @@ try{
     await overlay.waitFor({state:"visible",timeout:15000});
     assert.equal((await overlay.locator(".aoScriptureContextTitle").innerText()).includes(reference),true);
     assert.equal(await overlay.locator(".aoScriptureReading h3").innerText(),firstPassage);
-    assert.equal(await overlay.locator(".aoScriptureVerse").count(),0,
-      "Uncleared local Bible editions cannot leak through the native rite");
+    // Separate Scripture study is allowed to display *labelled uncollated*
+    // historical witness transcriptions. The actual 1962 Mass reading may
+    // never inherit this text or silently certify its edition status.
+    const scriptureVerses=await overlay.locator(".aoScriptureVerse").count();
+    if(scriptureVerses>0){
+      const pendingWitness=overlay.locator("[data-scripture-witness-unreviewed]");
+      await pendingWitness.waitFor({state:"visible",timeout:10000});
+      assert.match(await pendingWitness.innerText(),/not yet collated/i,
+        "Unreviewed Catholic Bible source witness has no collation warning");
+    }
+    assert.equal(await page.locator(
+      "#ao-r17-native-reader-preview .aoScriptureVerse").count(),0,
+      "Uncollated Bible witness leaked into the native 1962 Mass reading");
     await overlay.locator("[data-scripture-close]").click();
     await overlay.waitFor({state:"hidden",timeout:8000});
     await page.evaluate(id=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToEasterVigilRecord(
