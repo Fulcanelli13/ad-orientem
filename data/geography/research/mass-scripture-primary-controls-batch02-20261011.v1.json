@@ -1,0 +1,821 @@
+{
+  "schema": "MASS_SCRIPTURE_PRIMARY_CONTROLS_BATCH02_V1",
+  "date": "2026-10-11",
+  "status": "EDITORIAL_RESEARCH_ONLY",
+  "repositoryBase": "PR#1018 study; PR#998 Atlas production untouched; 1962 LIVE reader untouched",
+  "sourceRegistry": {
+    "latin": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+    "dtcEarly": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+    "dtcRoman": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_10._La_liturgie_romaine",
+    "dtcCanon": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/CANON_DE_LA_MESSE",
+    "dictBible": "https://fr.wikisource.org/wiki/Dictionnaire_de_la_Bible/Melchis%C3%A9dech",
+    "leBrun": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/15",
+    "leBrunMethod": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
+    "gihrTOC": "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+    "gihrExcerpt": "https://isidore.co/misc/Res%20pro%20Deo/Pope%20St.%20Pius%20X%20%26%E2%81%84or%20SSPX/The%20Angelus/HTMLs/4389.html"
+  },
+  "commentary": "24 dossiers of ancient text, later French historical scholarship and clearly identified secondary Gihr quotation; these are controls and cross-references to first-batch records rather than 24 additional fully reviewed liturgical slots.",
+  "criticalHolds": [
+    {
+      "id": "AUTH_DE_SAC",
+      "note": "De sacramentis attributed to Ambrose in manuscript tradition; ancient/modern scholarship debates authorship. Cite as late-4th-century text transmitted under Ambrose, not proven Mass by St Ambrose or the whole historical Roman Canon.",
+      "sources": [
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+        "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise"
+      ]
+    },
+    {
+      "id": "GEN14_MELCH",
+      "note": "Hebrew Genesis 14:18 'brought forth' cannot itself prove sacrificial offering of bread/wine, despite Catholic patristic interpretation and wording in Roman Canon.",
+      "sources": [
+        "https://fr.wikisource.org/wiki/Dictionnaire_de_la_Bible/Melchis%C3%A9dech",
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)"
+      ]
+    },
+    {
+      "id": "CANON_SEQUENCE",
+      "note": "Early text has heavenly-altar angelic petition and named patriarchal sacrifices in one form; received Canon reverses and separates the distinct material. No assumption of unchanging prayer text.",
+      "sources": [
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+        "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise"
+      ]
+    },
+    {
+      "id": "GIHR_FULLTEXT_NOT_YET_READ",
+      "note": "Google Books verifies the printed 1902 text/TOC; 2021 Angelus cites excerpts. Treat as SECONDARY_QUOTATION pending full printed-page validation; no chapter-level interpretation cleared.",
+      "sources": [
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+        "https://isidore.co/misc/Res%20pro%20Deo/Pope%20St.%20Pius%20X%20%26%E2%81%84or%20SSPX/The%20Angelus/HTMLs/4389.html"
+      ]
+    },
+    {
+      "id": "DTC_1929_HISTORY_NOT_PROOF",
+      "note": "DTC 1929 reconstructions about time of elevations, epiclesis, Gelasian and Gregorian reforms must be compared with independent manuscript-based modern scholarship.",
+      "sources": [
+        "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_10._La_liturgie_romaine",
+        "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/CANON_DE_LA_MESSE"
+      ]
+    },
+    {
+      "id": "COMMUNION_AMEN_DISTINCTION",
+      "note": "De sacramentis 4.5.25 proves an early Communion Amen response in its historical setting; this does not resolve the 1962 low-vs-sung-Mass assignment of every specific response.",
+      "sources": [
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+        "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise"
+      ]
+    },
+    {
+      "id": "ARTWORK_AND_MAP",
+      "note": "Patristic types and heavenly liturgy must not create invented historical routes, positions or cinematic claims. Artistic association cannot be promoted as documentary geography.",
+      "sources": [
+        "https://fr.wikisource.org/wiki/Dictionnaire_de_la_Bible/Melchis%C3%A9dech",
+        "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/15"
+      ]
+    }
+  ],
+  "dossiers": [
+    {
+      "id": "H001",
+      "theme": "early_roman_canon",
+      "title": "Institution narrative already witnessed",
+      "liturgicalAnchor": "CANON_CONSECRATION",
+      "researchRecordIds": [
+        "MS030",
+        "MS031"
+      ],
+      "scripture": [
+        "Matthew 26:26–28",
+        "Luke 22:19–20",
+        "1 Corinthians 11:23–26"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis IV.5.21–22 quotes a Eucharistic institution formula with repeated references to bread and chalice, differing from the 1962 Roman text. The fourth-century author stresses consecration by Christ's words.",
+      "claimType": "EARLY_TEXTUAL_WITNESS",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book IV ch.5 §§21–22",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        },
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.7 (1929), early fourth-century textual comparison",
+          "exactLocator": "comparison of Quam oblationem and institution narrative, p.37",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H002",
+      "theme": "early_roman_canon",
+      "title": "Anamnesis in early witness",
+      "liturgicalAnchor": "CANON_UNDE_ET_MEMORES",
+      "researchRecordIds": [
+        "MS032"
+      ],
+      "scripture": [
+        "1 Corinthians 11:26"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis IV.6.26–27 cites commemoration of Christ's passion, resurrection and ascension immediately before the list of ancient sacrifices. This is actual early Eucharistic prayer testimony, but not the entire received Roman Canon.",
+      "claimType": "EARLY_TEXTUAL_WITNESS",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book IV ch.6 §§26–27",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        },
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.7 (1929), early fourth-century textual comparison",
+          "exactLocator": "old and received anamnesis compared, p.37–38",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H003",
+      "theme": "early_roman_canon",
+      "title": "Abel Abraham Melchizedek in fourth-century prayer",
+      "liturgicalAnchor": "CANON_SUPRA_QUAE",
+      "researchRecordIds": [
+        "MS033",
+        "MS034",
+        "MS035"
+      ],
+      "scripture": [
+        "Genesis 4:4",
+        "Genesis 22:1–19",
+        "Genesis 14:18–20"
+      ],
+      "carefullyQualifiedClaim": "The names occur together in De sacramentis IV.6.27. This early witness substantiates the continuity of the named triad; it does not establish an unchanged 1962 Canon or that Genesis narrates bread-and-wine immolation explicitly.",
+      "claimType": "EARLY_TEXTUAL_WITNESS",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book IV ch.6 §27",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        },
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.7 (1929), early fourth-century textual comparison",
+          "exactLocator": "two texts parallel, p.37–38",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        },
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_la_Bible/Melchis%C3%A9dech",
+          "work": "Dictionnaire de la Bible, Melchisédech, Henri Lesêtre (1912)",
+          "exactLocator": "Melchisédech, §2, discussion of Genesis 14",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H004",
+      "theme": "early_roman_canon",
+      "title": "Heavenly altar precedes naming sacrifices in earlier witness",
+      "liturgicalAnchor": "CANON_SUPPLICES",
+      "researchRecordIds": [
+        "MS036"
+      ],
+      "scripture": [
+        "Revelation 8:3–4"
+      ],
+      "carefullyQualifiedClaim": "In De sacramentis IV.6.27 the appeal that the offering be received at the heavenly altar through angels occurs in one continuous petition before Abel/Abraham/Melchizedek. In received Canon the prayers are separated, reordered, and use singular angel language. These must be represented as textual development, not a single unaltered fourth-century wording.",
+      "claimType": "TEXTUAL_VARIANT_HISTORY",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book IV ch.6 §27",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        },
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.7 (1929), early fourth-century textual comparison",
+          "exactLocator": "side-by-side wording and discussion, p.37–38",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H005",
+      "theme": "eucharistic_typology",
+      "title": "Manna compared explicitly with Eucharist",
+      "liturgicalAnchor": "EUCHARISTIC_TYPES",
+      "researchRecordIds": [
+        "MS046"
+      ],
+      "scripture": [
+        "Exodus 16:13–36",
+        "John 6:49–51"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis IV.5.24 contrasts manna eaten by Israel with the enduring life offered in Christ's Body. The speaker presents manna as prefiguration, not a ritual origin.",
+      "claimType": "PATRISTIC_TYPOLOGY",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book IV ch.5 §24",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H006",
+      "theme": "eucharistic_participation",
+      "title": "Congregational Amen at Communion",
+      "liturgicalAnchor": "COMMUNION",
+      "researchRecordIds": [],
+      "scripture": [
+        "1 Corinthians 11:26"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis IV.5.25 explicitly describes the minister saying 'Corpus Christi' and the communicating Christian answering 'Amen'. This witnesses an early liturgical response but does NOT by itself prove the later 1962 Latin response/distribution words are identical.",
+      "claimType": "EARLY_TEXTUAL_WITNESS",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book IV ch.5 §25",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        },
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.7 (1929), early fourth-century textual comparison",
+          "exactLocator": "comment on §25, p.38",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H007",
+      "theme": "eucharistic_typology",
+      "title": "Melchizedek linked to Christ before later commentators",
+      "liturgicalAnchor": "CANON_SUPRA_QUAE",
+      "researchRecordIds": [
+        "MS035",
+        "MS047"
+      ],
+      "scripture": [
+        "Genesis 14:18–20",
+        "Hebrews 7:1–17"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis V.1.1 describes Melchizedek's priesthood and offering as a figure preceding Eucharistic reality, using Hebrews 7. The source is an early theological interpretation, not a direct statement by Genesis that Eucharistic sacrifice had yet occurred.",
+      "claimType": "PATRISTIC_TYPOLOGY",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book V ch.1 §1",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H008",
+      "theme": "eucharistic_typology",
+      "title": "Water from rock applied to Eucharistic chalice",
+      "liturgicalAnchor": "OFFERTORY_WATER_WINE",
+      "researchRecordIds": [
+        "MS015",
+        "MS016"
+      ],
+      "scripture": [
+        "Exodus 17:6",
+        "1 Corinthians 10:4"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis V.1.2–3 makes the Moses striking the rock a symbolic context for water mixed with wine and the people drinking Christ's gifts. This adds a named ancient interpretation to, without replacing, Cyprian's cup theology.",
+      "claimType": "PATRISTIC_TYPOLOGY",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book V ch.1 §§2–3",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H009",
+      "theme": "eucharistic_typology",
+      "title": "Christ's pierced side interpreted in water-and-wine catechesis",
+      "liturgicalAnchor": "OFFERTORY_WATER_WINE",
+      "researchRecordIds": [
+        "MS015",
+        "MS016"
+      ],
+      "scripture": [
+        "John 19:33–34"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis V.1.4 expressly links water and blood issuing from the pierced side of Christ with cleansing and redemption in its discussion of the chalice. It must not be portrayed as a scriptural narrative describing the medieval Roman mixing rite.",
+      "claimType": "PATRISTIC_TYPOLOGY",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book V ch.1 §4",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H010",
+      "theme": "eucharistic_typology",
+      "title": "Psalm 22 Vulgate explained at Eucharistic table",
+      "liturgicalAnchor": "COMMUNION",
+      "researchRecordIds": [],
+      "scripture": [
+        "Psalms 22:1–5 (Vulgate); modern numbering Psalm 23"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis V.3.12–13 reads the Good Shepherd's pasture, table and chalice as imagery for Eucharistic grace. These Psalms do not become a universal fixed text of the 1962 Communion Proper.",
+      "claimType": "PATRISTIC_TYPOLOGY",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book V ch.3 §§12–13",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H011",
+      "theme": "eucharistic_typology",
+      "title": "Song of Songs allegory of Christ and Church at altar",
+      "liturgicalAnchor": "COMMUNION",
+      "researchRecordIds": [],
+      "scripture": [
+        "Song of Songs 1:1–3",
+        "Song of Songs 5:1"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis V.2.5–8 and V.3.14–17 gives the bridal banquet of the Canticle a Eucharistic ecclesial meaning. This is an explicit early Christian allegorical reading, not a literal Gospel quotation or map event.",
+      "claimType": "PATRISTIC_TYPOLOGY",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book V ch.2 §§5–8; ch.3 §§14–17",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H012",
+      "theme": "eucharistic_participation",
+      "title": "Our Father in Eucharistic catechesis",
+      "liturgicalAnchor": "PATER_NOSTER",
+      "researchRecordIds": [
+        "MS039"
+      ],
+      "scripture": [
+        "Luke 11:1–4"
+      ],
+      "carefullyQualifiedClaim": "De sacramentis V.4.18–20 expounds the Lord's Prayer in the context of newly initiated communicants. Its actual placement in the fourth-century rite is a historical question; the author does not specify the entire later Roman transition.",
+      "claimType": "EARLY_COMMENTARY",
+      "evidence": [
+        {
+          "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+          "work": "De sacramentis, Migne PL 16 Latin text, attributed to Ambrose",
+          "exactLocator": "Book V ch.4 §§18–20",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        },
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.7 (1929), early fourth-century textual comparison",
+          "exactLocator": "caution concerning where Pater was recited, p.38",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H013",
+      "theme": "melchizedek_exegesis",
+      "title": "Hebrew original means brought out, not explicitly sacrificed",
+      "liturgicalAnchor": "CANON_SUPRA_QUAE",
+      "researchRecordIds": [
+        "MS035",
+        "MS047"
+      ],
+      "scripture": [
+        "Genesis 14:18–20"
+      ],
+      "carefullyQualifiedClaim": "The French Dictionnaire de la Bible explains that the Hebrew verb for 'brought out' bread and wine does not by itself denote a sacrificial offering to God; it nevertheless argues that Melchizedek's priestly title and later tradition support a sacrificial interpretation. Distinguish philology, interpretation and Roman Canon's explicit offering language.",
+      "claimType": "LEXICAL_CAUTION",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_la_Bible/Melchis%C3%A9dech",
+          "work": "Dictionnaire de la Bible, Melchisédech, Henri Lesêtre (1912)",
+          "exactLocator": "vol.IV pp.939–942 §2, Hebrew hiphil and Catholic interpretation",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H014",
+      "theme": "melchizedek_exegesis",
+      "title": "Salem location identification not fully established by mention alone",
+      "liturgicalAnchor": "CANON_SUPRA_QUAE",
+      "researchRecordIds": [
+        "MS035"
+      ],
+      "scripture": [
+        "Genesis 14:18–20"
+      ],
+      "carefullyQualifiedClaim": "The Dictionnaire identifies Salem with Jerusalem following many commentators, but this is an identification advanced by scholarship and tradition. Genesis 14 does not furnish GPS coordinates for the meeting or sacrifice; no new pin should be created automatically.",
+      "claimType": "GEOGRAPHIC_CAUTION",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_la_Bible/Melchis%C3%A9dech",
+          "work": "Dictionnaire de la Bible, Melchisédech, Henri Lesêtre (1912)",
+          "exactLocator": "vol.IV pp.939–942 §1 Salem/Jerusalem identification",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H015",
+      "theme": "historical_roman_canon",
+      "title": "Distinguish De sacramentis quotation from full Mass ordo",
+      "liturgicalAnchor": "CANON_SUPRA_QUAE",
+      "researchRecordIds": [
+        "MS033",
+        "MS034",
+        "MS035"
+      ],
+      "scripture": [],
+      "carefullyQualifiedClaim": "The Dictionnaire explicitly warns that De sacramentis quotes only selected prayer material for catechetical argument, not a full fourth-century missal. The absence of Te igitur and commemorations in the quoted material is not proof they did not exist elsewhere in worship.",
+      "claimType": "HISTORICAL_SOURCE_CRITICISM",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.7 (1929), early fourth-century textual comparison",
+          "exactLocator": "p.37–38, remarks after old/new prayer parallel",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H016",
+      "theme": "historical_roman_canon",
+      "title": "Solemn elevations and bells are medieval developments",
+      "liturgicalAnchor": "CANON_CONSECRATION",
+      "researchRecordIds": [
+        "MS030",
+        "MS031"
+      ],
+      "scripture": [],
+      "carefullyQualifiedClaim": "The Dictionnaire's liturgical history assigns the associated display of the Host, accompanying prostrations, incense, candles and bells to medieval developments, with developments differing by gesture. The wording cited is a secondary historical claim to check in medieval ordinal and sacramentary evidence, not apostolic origin.",
+      "claimType": "SECONDARY_HISTORICAL_CLAIM",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_10._La_liturgie_romaine",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.10 (1929), historical Roman liturgy",
+          "exactLocator": "pp.46–55: institution narrative/elevations paragraph",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H017",
+      "theme": "historical_roman_canon",
+      "title": "The late Canon Amen was congregational",
+      "liturgicalAnchor": "CANON_END",
+      "researchRecordIds": [],
+      "scripture": [],
+      "carefullyQualifiedClaim": "The Dictionnaire distinguishes the congregation's Amen after the Eucharistic doxology as an early response witnessed by Justin. This historical claim does not establish that all answers after every Canon phrase in a 1962 Mass are congregational.",
+      "claimType": "SECONDARY_HISTORICAL_CLAIM",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_10._La_liturgie_romaine",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.10 (1929), historical Roman liturgy",
+          "exactLocator": "pp.46–55: final doxology and congregational Amen",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H018",
+      "theme": "historical_roman_canon",
+      "title": "Per quem haec omnia and blessing produce",
+      "liturgicalAnchor": "CANON_PER_QUEM",
+      "researchRecordIds": [
+        "MS038"
+      ],
+      "scripture": [],
+      "carefullyQualifiedClaim": "The Dictionnaire discusses the apparent discontinuity at Per quem haec omnia and the former blessing of honey, milk or first fruits. It presents explanations as historical reconstructions supported by comparisons; no chronology date or cause is yet approved.",
+      "claimType": "HISTORICAL_HYPOTHESIS",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_10._La_liturgie_romaine",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.10 (1929), historical Roman liturgy",
+          "exactLocator": "pp.46–55: paragraph Per quem haec omnia and produce",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        },
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/CANON_DE_LA_MESSE",
+          "work": "Dictionnaire de théologie catholique, Canon de la Messe (1909), early textual criticism",
+          "exactLocator": "1909 Canon article, analysis of Per quem",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H019",
+      "theme": "historical_roman_canon",
+      "title": "1962 Canon crosses are not individual blessing of Christ",
+      "liturgicalAnchor": "CANON_END",
+      "researchRecordIds": [],
+      "scripture": [],
+      "carefullyQualifiedClaim": "The Dictionnaire cautions that post-consecration multiple signs of the Cross should not be interpreted as a priest giving a new blessing to Christ's Body and Blood; instead it attributes a symbolic emphasis to the ceremonial wording. Treat this as a historical-liturgical interpretation pending rubric comparison.",
+      "claimType": "SECONDARY_HISTORICAL_CLAIM",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_10._La_liturgie_romaine",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.10 (1929), historical Roman liturgy",
+          "exactLocator": "pp.46–55: paragraph on crosses at doxology",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H020",
+      "theme": "historical_roman_canon",
+      "title": "Sanctus from Isaiah; Benedictus Palm Sunday acclamation",
+      "liturgicalAnchor": "SANCTUS",
+      "researchRecordIds": [
+        "MS023",
+        "MS024",
+        "MS025"
+      ],
+      "scripture": [
+        "Isaiah 6:3",
+        "Matthew 21:9"
+      ],
+      "carefullyQualifiedClaim": "The Dictionnaire separates angelic Trisagion from the accompanying Benedictus associated with Jerusalem's acclamation of Christ; the two distinct Bible narratives remain distinct rather than one scene in the map.",
+      "claimType": "TEXTUAL_LITURGICAL_ANALYSIS",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_10._La_liturgie_romaine",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.10 (1929), historical Roman liturgy",
+          "exactLocator": "pp.46–55: paragraph following Preface, Sanctus and Benedictus",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H021",
+      "theme": "historical_liturgy",
+      "title": "Roman chant, prayers and Canon were formed through stages",
+      "liturgicalAnchor": "ROMAN_MASS_HISTORY",
+      "researchRecordIds": [],
+      "scripture": [],
+      "carefullyQualifiedClaim": "The Dictionnaire describes varying liturgical families and documents relevant to the Roman rite, including the Old Gelasian, Gregorian and Roman Ordines; the 1962 Missal cannot be retrojected wholesale to the apostolic age. Distinguish author hypotheses from present scholarly consensus.",
+      "claimType": "SECONDARY_HISTORICAL_CLAIM",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_10._La_liturgie_romaine",
+          "work": "Dictionnaire de théologie catholique, Messe VIII.10 (1929), historical Roman liturgy",
+          "exactLocator": "pp.46–55: introduction and sixth-to-eleventh-century developments",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H022",
+      "theme": "historical_liturgy",
+      "title": "Le Brun's original French framing of celestial liturgy",
+      "liturgicalAnchor": "CANON_SUPPLICES",
+      "researchRecordIds": [
+        "MS036"
+      ],
+      "scripture": [
+        "Revelation 5:6",
+        "Revelation 8:3–4"
+      ],
+      "carefullyQualifiedClaim": "Le Brun's preface explicitly links the worshipping Church on earth to the Lamb in heaven and to St John's incense-bearing angel and altar. This is a direct original French theologian's analogy, not a historical claim that literal heavenly geography can be mapped.",
+      "claimType": "DEVOTIONAL_ANALOGY",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/15",
+          "work": "Pierre Le Brun, Explication vol.I (1843 facsimile)",
+          "exactLocator": "Preface, scanned page /15",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H023",
+      "theme": "historical_liturgy",
+      "title": "Le Brun rejects dramatic Passion-mime reduction",
+      "liturgicalAnchor": "LITURGICAL_GESTURE_GENERAL",
+      "researchRecordIds": [],
+      "scripture": [],
+      "carefullyQualifiedClaim": "Le Brun criticises Dom de Vert's explanation of kneeling at the Passion death as physical imitation of dying; he challenges forcing ceremonial postures into this one dramaturgical theory. His critique is an attributed French scholarly position, not a proof that all symbols are illegitimate.",
+      "claimType": "SOURCE_CRITICAL_METHOD",
+      "evidence": [
+        {
+          "url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
+          "work": "Pierre Le Brun, Explication vol.I (1843 facsimile)",
+          "exactLocator": "Preface, scanned page /30",
+          "access": "ORIGINAL_TEXT_LOCATED"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": true,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    },
+    {
+      "id": "H024",
+      "theme": "gihr_control",
+      "title": "Gihr's Te igitur/Memento in modern quoted edition",
+      "liturgicalAnchor": "CANON_TE_IGITUR",
+      "researchRecordIds": [
+        "MS026",
+        "MS027"
+      ],
+      "scripture": [],
+      "carefullyQualifiedClaim": "A 2021 Angelus article reproduces material attributed to Gihr on Te igitur, Memento, Communicantes and congregational participation in the offering. This is a SECONDARY EXCERPT not independent inspection of the 1902 Gihr chapter; use his Google Books contents for book-and-page navigation but keep Gihr authorial text unverified in corpus.",
+      "claimType": "SECONDARY_QUOTATION_NEEDS_ORIGINAL",
+      "evidence": [
+        {
+          "url": "https://isidore.co/misc/Res%20pro%20Deo/Pope%20St.%20Pius%20X%20%26%E2%81%84or%20SSPX/The%20Angelus/HTMLs/4389.html",
+          "work": "Fr Christopher Danel (2021), article presenting Gihr excerpts",
+          "exactLocator": "The Canon—Part Two, Te Igitur through Memento",
+          "access": "SECONDARY_QUOTATION"
+        },
+        {
+          "url": "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+          "work": "Nikolaus Gihr, The Holy Sacrifice of the Mass (1902), 778 pp.",
+          "exactLocator": "contents: The First Prayer of Canon before Consecration begins p.586",
+          "access": "BIBLIOGRAPHIC_TOC_ONLY"
+        }
+      ],
+      "certification": {
+        "originalAuthorTextInspected": false,
+        "secondaryHistoricalClaimsRequireIndependentManuscriptReview": true,
+        "latin1962PhraseChecked": false,
+        "publishable": false
+      },
+      "productRisk": "RESEARCH_ONLY; no automatic link, genealogy, geolocation, historic date, artistic narrative or change to Mass source ownership."
+    }
+  ]
+}
