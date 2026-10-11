@@ -58,6 +58,69 @@ assert.equal(expandedReview.presentationModel.totalCards,65,
   "curated LIVE should have precisely 65 cards for the standard Sung Ordinary");
 assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(expandedReview.presentationModel.sourceAuthorityModel,expandedReview.sourceModel);
+
+const cueRegistryNames={
+  gestures:"reader-gestures.v1.json",
+  responses:"reader-responses.v1.json",
+  postures:"reader-postures.v1.json",
+  positions:"reader-priest-positions.v1.json",
+  voices:"reader-priest-voices.v1.json",
+  actions:"reader-priest-actions.v1.json",
+};
+const projectedCueCards=new Map();
+const projectedCueIndexes=new Map();
+for(const card of expandedReview.presentationModel.cards){
+  card.paragraphs.forEach((paragraph,rowIndex)=>{
+    for(const cueId of paragraph.sourceCueIds??[]){
+      if(!/^AO\.SM\.C\d{4}$/.test(cueId))continue;
+      assert.equal(projectedCueCards.has(cueId),false,
+        cueId+" appears on multiple curated LIVE cards");
+      projectedCueCards.set(cueId,card);
+      projectedCueIndexes.set(cueId,{sequence:card.sequence,rowIndex});
+    }
+  });
+}
+const sourceCueSet=new Set(expandedReview.sourceModel.cards.flatMap(card=>
+  card.paragraphs.flatMap(paragraph=>paragraph.sourceCueIds??[])).filter(cue=>
+    /^AO\.SM\.C\d{4}$/.test(cue)));
+assert.deepEqual([...projectedCueCards.keys()].sort(),[...sourceCueSet].sort(),
+  "LIVE rearrangement lost original canonical cue ownership");
+for(const [family,file] of Object.entries(cueRegistryNames)){
+  const rows=load("../data/presentation/"+file).items;
+  for(const row of rows){
+    if(!row.cueId)continue; // Posture may be an observational state, not a textual cue.
+    assert.ok(projectedCueCards.has(row.cueId),
+      family+" source cue "+row.cueId+" disappeared from the curated prayer stream");
+  }
+}
+const transitionRegistry=load("../data/presentation/reader-responses.v1.json").items;
+for(const item of transitionRegistry){
+  const cueId=item.cueId;
+  const owner=projectedCueCards.get(cueId);
+  assert.ok(owner,cueId+" response has no prayer card");
+  assert.ok(owner.paragraphs.some(p=>(p.sourceCueIds??[]).includes(cueId)),
+    cueId+" response must remain with its source paragraph");
+}
+for(const [preceding,response] of [
+  ["AO.SM.C0073","AO.SM.C0074"], // Collect and its Amen
+  ["AO.SM.C0131","AO.SM.C0132"], // Orate fratres and Suscipiat
+  ["AO.SM.C0254","AO.SM.C0255"], // Postcommunion and its Amen
+]){
+  assert.equal(projectedCueCards.get(preceding),projectedCueCards.get(response),
+    "Short liturgical response "+response+" should not create an extra swipe");
+}
+for(const [words,action] of [
+  ["AO.SM.C0173","AO.SM.C0174"],
+  ["AO.SM.C0179","AO.SM.C0181"],
+]){
+  assert.equal(projectedCueCards.get(words),projectedCueCards.get(action),
+    "Consecration and its sourced elevation must remain on the same LIVE card");
+  const a=projectedCueIndexes.get(words),b=projectedCueIndexes.get(action);
+  assert.ok(b.rowIndex>a.rowIndex,"Elevation must occur after Consecration words");
+}
+console.log("Curated LIVE liturgical registry coverage: PASS — 6 registries, "+
+  projectedCueCards.size+" distinct source cues, replies and elevations retained.");
+
 assert.equal(expandedReview.presentationModel.cardForEvent,undefined,
   "review cards cannot claim canonical event ownership");
 const inputParagraphIds=expandedReview.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id));
