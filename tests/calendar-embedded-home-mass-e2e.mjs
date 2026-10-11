@@ -18,6 +18,16 @@ const server=http.createServer(async(req,res)=>{
  }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error?.message||error))}
 });
 await new Promise(ok=>server.listen(0,"127.0.0.1",ok));
+async function waitForWeekLoader(page){
+ await page.waitForFunction(()=>{
+   const el=document.getElementById("ao-cinema-loader");
+   if(!el)return true;
+   const cs=getComputedStyle(el);
+   return !el.classList.contains("aoCinemaLoaderOn")||el.getAttribute("aria-hidden")==="true"||
+     cs.display==="none"||cs.visibility==="hidden";
+ },null,{timeout:25000});
+ await page.waitForTimeout(180);
+}
 let browser;
 try{
  browser=await chromium.launch({headless:true});
@@ -51,7 +61,7 @@ try{
   }));
   assert.match(wheel.gradient,/conic-gradient/,"Daily wheel must be sourced from real 1962 dates");
   assert.match(wheel.season,/conic-gradient/,"Inner seasons must remain independent from daily Mass colours");
-  await page.screenshot({path:resolve(shots,"today-year-"+width+".png"),fullPage:true});
+
   await page.waitForFunction(()=>{
     const home=document.querySelector(".homeScreen.aoTodayV2");
     const slot=home?.querySelector("[data-home-calendar-inline]");
@@ -73,6 +83,10 @@ try{
     throw error;
   });
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalYearTrack').count(),1,"The canonical liturgical-year timeline must be retained");
+  await waitForWeekLoader(page);
+  assert.equal(await page.locator(".aoTodayExploreFoot").isVisible(),false,
+    "Old Today editorials must be hidden while viewing the Calendar");
+  await page.screenshot({path:resolve(shots,"today-year-"+width+".png"),fullPage:true});
   assert.equal(await page.locator('#ao-calendar-modular-root[aria-modal="true"]').count(),0,"Embedded calendar cannot be an independent modal");
   assert.equal(await page.locator('.aoTodayV2CalendarInline [data-cal-body]').count(),1);
   await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
@@ -100,6 +114,7 @@ try{
   await page.waitForSelector('[data-mass-calendar-host] #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
   assert.equal(await page.locator('[data-mass-calendar-host] .aoCalV2Ring').count(),1,"Calendar year must render within Mass preparation");
   assert.equal(await page.locator("[data-mass-calendar-host] .aoCalYearDailyTrack").count(),1);
+  await waitForWeekLoader(page);
   await page.screenshot({path:resolve(shots,"mass-calendar-year-"+width+".png"),fullPage:true});
   await page.locator('[data-mass-calendar-view="picker"]').click();
   await page.waitForSelector('[data-mass-calendar-host] #ao-calendar-modular-root[data-ao-calendar-view="picker"]',{timeout:15000});
