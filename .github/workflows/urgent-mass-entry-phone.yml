@@ -1,0 +1,20 @@
+name: Urgent Mass entry — real phone preflight
+on:
+  push:
+    branches: [hotfix/mass-opens-preparation-not-resume-20261011]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mass-entry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: node tests/app-shell-contract.mjs
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/mass-preflight-entry-phone.mjs
