@@ -15,6 +15,28 @@ on:
       - "data/geography/research/mass-variable-chant-bible-batch01-20261011.v1.json"
       - "data/geography/research/mass-variable-chant-bible-batch02-20261011.v1.json"
       - "data/geography/research/mass-variable-chant-bible-batch03-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b04-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b05-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b06-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b07-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b08-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b09-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b10-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b11-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b12-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b13-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b14-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b15-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b16-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b17-20261011.v1.json"
+      - "data/geography/research/mass-chant-source-index-segment-a-20261011.v1.json"
+      - "data/geography/research/mass-chant-source-index-segment-b-20261011.v1.json"
+      - "data/geography/research/mass-chant-source-index-segment-c-20261011.v1.json"
+      - "data/geography/research/mass-1962-105-source-path-chant-index-20261011.v1.json"
+      - "data/geography/research/mass-1962-chant-inheritance-source-traces-20261011.v1.json"
+      - "docs/research/MASS-1962-105-PROPER-CHANT-COVERAGE-CENSUS-20261011.md"
+      - "tests/mass-1962-105-source-path-chant-index.mjs"
+      - "tests/mass-1962-chant-inheritance-source-traces.mjs"
       - "data/geography/research/mass-ember-passion-lesson-order-batch01-20261011.v1.json"
       - "tests/mass-ember-passion-lesson-order-batch01.mjs"
       - "docs/research/MASS-VARIABLE-CHANT-SCRIPTURE-INDEX-BATCH01-20261011.md"
@@ -70,6 +92,10 @@ jobs:
         run: node tests/mass-proper-chant-bible-batch01.mjs
       - name: Validate source-ordered Ember and Palm Passion reading disagreement
         run: node tests/mass-ember-passion-lesson-order-batch01.mjs
+      - name: Validate complete 105-witness source-path chant inventory
+        run: node tests/mass-1962-105-source-path-chant-index.mjs
+      - name: Validate 42 inherited-source references and eight review holds
+        run: node tests/mass-1962-chant-inheritance-source-traces.mjs
       - name: Validate mobile and source evidence in actual Chromium
         run: node tests/biblical-lineage-dispersion-pilot.mjs
       - uses: actions/upload-artifact@v4
