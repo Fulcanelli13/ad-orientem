@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import { readFile } from "node:fs/promises";
+import { mkdir, readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const captures=resolve(root,"artifacts/pray-marian-mobile");
+await mkdir(captures,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp"};
 const server=http.createServer(async(req,res)=>{
  try{
@@ -31,6 +33,7 @@ try{
  // Native Divine Mercy: actual Prayer reader, not merely a model contract.
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open .aoMercyReader",{timeout:9000});
+ await page.screenshot({path:resolve(captures,"01-divine-mercy-390.png"),fullPage:false,animations:"disabled"});
  assert.equal(await page.locator("#aoPray435930 .aoMercyControls button").count(),2);
  assert.match(await page.locator("#aoPray435930 .aoMercyPrayer").innerText(),/Au nom du Père|In the name of the Father/);
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/1 \/ 62/);
@@ -222,6 +225,7 @@ try{
     api.setStep(idx);return idx;
    });
    assert.ok(first>0);
+    await page.screenshot({path:resolve(captures,"02-montfort-clausule-390.png"),fullPage:false,animations:"disabled"});
    const latin=await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet [data-pb-latin]").first().innerText();
    const vern=await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet [data-pb-vern]").first().textContent();
    assert.match(latin,/Iesus incarnatus/,"Latin clause absent after Jesus");
@@ -267,11 +271,17 @@ try{
  await chooser.locator("[data-p435930-rosary-choose='ordinary']").evaluate(x=>x.click());
  await chooser.locator("[data-p435930-rosary-decades='15']").evaluate(x=>x.click());
  assert.equal(await chooser.locator("[data-p435930-rosary-decades='15']").getAttribute("aria-pressed"),"true");
- await chooser.locator("[data-p435930-rosary-begin]").evaluate(x=>x.click());
+  await page.screenshot({path:resolve(captures,"03-rosary-chooser-390.png"),fullPage:false,animations:"disabled"});
+  await page.setViewportSize({width:320,height:720});
+  await page.screenshot({path:resolve(captures,"04-rosary-chooser-320.png"),fullPage:false,animations:"disabled"});
+  await page.setViewportSize({width:390,height:844});
+  // Exercise an actual touch gesture on the primary Begin button.
+  await chooser.locator("[data-p435930-rosary-begin]").tap();
  await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful" &&
    document.querySelector("#aoPrayerBookRoot.open")?.dataset?.aoRosaryActiveRoot==="true" &&
    document.querySelector("#aoPrayerBookRoot.open .pbShell")?.dataset?.aoRosaryExactDonor==="v3.4.14" &&
    !!document.querySelector("#aoPrayerBookRoot.open [data-lab-rosary-next]"),null,{timeout:14000});
+  await page.screenshot({path:resolve(captures,"05-fifteen-decade-opening-390.png"),fullPage:false,animations:"disabled"});
  const wholeRosary=await page.evaluate(()=>{
   const api=globalThis.AO_ROSARY_V381;
   const expected=['joyful','sorrowful','glorious'],seen=[],crossings=[];
@@ -321,6 +331,7 @@ try{
  assert.equal(wholeRosary.reversePasses,2);
  assert.equal(wholeRosary.endSet,"glorious");
  assert.equal(wholeRosary.endKind,"conclusion");
+  await page.screenshot({path:resolve(captures,"06-fifteen-decade-conclusion-390.png"),fullPage:false,animations:"disabled"});
 
  assert.equal(pageErrors.filter(x=>/angelus-guide|rosary-guide|presentation-runtime|undefined/i.test(x)).length,0,"Marian reader threw a runtime error: "+pageErrors.join(" | "));
  console.log("PASS Marian Angelus/Regina Caeli and Rosary mobile Guide acceptance");
