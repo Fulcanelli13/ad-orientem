@@ -36,10 +36,13 @@ const withAsperges=rite==="asperges";
 const withPalm=rite==="palm";
 const withAsh=rite==="ash";
 const precedingRites=withAsperges?["ASPERGES"]:withPalm?["PALM"]:withAsh?["ASH"]:[];
+const requestedForm=String(params.get("form")??"MISSA_CANTATA_INCENSE").toUpperCase();
+const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
+if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:"2026-10-04",
-  form:"MISSA_CANTATA_INCENSE",
+  form:requestedForm,
   presentationMode:"LIVE",
   actualCelebration:{id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
   calendarCelebration:{id:"Tempora/Pent18-0",type:"CALENDAR",title:"Sunday"},
