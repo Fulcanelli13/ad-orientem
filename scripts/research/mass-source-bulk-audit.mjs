@@ -33,7 +33,7 @@ async function worker() {
       const response = await fetch(url, {headers: {"User-Agent":"ad-orientem-mass-research"}});
       if (!response.ok) throw new Error("HTTP " + response.status);
       const bytes = Buffer.from(await response.arrayBuffer());
-      const digest = createHash("sha1").update("blob " + bytes.length + "\\0").update(bytes).digest("hex");
+      const digest = createHash("sha1").update("blob " + bytes.length + "\0").update(bytes).digest("hex");
       if (digest !== r.sourceBlobSha) throw new Error("CENSUS_GIT_BLOB_MISMATCH expected=" + r.sourceBlobSha + " actual=" + digest);
       const sections = splitSections(bytes.toString("utf8"));
       rows[i] = {sourcePath:r.sourcePath,sourceFamily:r.sourceFamily,sourceUrl:url,sourceBlobShaAtCensus:r.sourceBlobSha,sourceBlobVerified:true,
