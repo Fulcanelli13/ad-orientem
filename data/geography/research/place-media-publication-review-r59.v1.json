@@ -1,0 +1,81 @@
+{
+  "schema": "AO_EXPLORE_PLACE_MEDIA_PUBLICATION_REVIEW_R59_V1",
+  "version": "1.0.0",
+  "reviewed_at": "2026-10-11",
+  "source_manifest": "data/geography/research/place-media-candidates-r59.v1.json",
+  "source_stage_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38111469567",
+  "scope": "R58's eight weak photo candidates and two older-licence holds; no geography or source-ownership changes.",
+  "counts": {
+    "existing_approved": 10,
+    "newly_approved": 8,
+    "total_approved": 18,
+    "secondary_or_held": 2,
+    "curated_sites": 20
+  },
+  "review_method": "Commons current imageinfo SHA1, creator and exact CC licence page verified during source download. Visual inspection of all ten real WebPs at original preview and contact-sheet sizes; selected exact buildings and readable mobile compositions; hashed reviewed derivatives committed into local approved assets.",
+  "approved": [
+    {
+      "place_id": "place:FR:chartres-notre-dame",
+      "status": "APPROVED_R59",
+      "rationale": "The cathedral west facade and twin spires fill the frame; correct replacement for statue-detail photograph.",
+      "asset_path": "assets/approved/place-media/FR-chartres-notre-dame.webp"
+    },
+    {
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "status": "APPROVED_R59",
+      "rationale": "Whole basilica, lawn and exterior pilgrimage grounds clearly visible.",
+      "asset_path": "assets/approved/place-media/FR-sainte-anne-d-auray.webp"
+    },
+    {
+      "place_id": "place:FR:rue-du-bac",
+      "status": "APPROVED_R59",
+      "rationale": "Recognisable brighter interior, Marian altar framed; no misleading claim of a facade view.",
+      "asset_path": "assets/approved/place-media/FR-rue-du-bac.webp"
+    },
+    {
+      "place_id": "place:PL:jasna-gora",
+      "status": "APPROVED_R59",
+      "rationale": "Wide complex and identifiable monastery bell tower, better geographic overview than isolated rooftop.",
+      "asset_path": "assets/approved/place-media/PL-jasna-gora.webp"
+    },
+    {
+      "place_id": "place:IE:knock-shrine",
+      "status": "APPROVED_R59",
+      "rationale": "Entire basilica facade and distinctive spire lit at blue hour; recognisable, notwithstanding dusk lighting.",
+      "asset_path": "assets/approved/place-media/IE-knock-shrine.webp"
+    },
+    {
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "status": "APPROVED_R59",
+      "rationale": "Green-roof Gnadenkapelle exterior matches the chapel described by the Altötting pilgrimage authority.",
+      "asset_path": "assets/approved/place-media/DE-altoetting-gnadenkapelle.webp"
+    },
+    {
+      "place_id": "place:UG:namugongo-martyrs",
+      "status": "APPROVED_R59",
+      "rationale": "Recognisable angular roof of the Catholic Martyrs Basilica shown from above; not Anglican site.",
+      "asset_path": "assets/approved/place-media/UG-namugongo-martyrs.webp"
+    },
+    {
+      "place_id": "place:BR:aparecida-national-shrine",
+      "status": "APPROVED_R59",
+      "rationale": "Pilgrimage basilica body and tower visible together from the square, in daylight.",
+      "asset_path": "assets/approved/place-media/BR-aparecida-national-shrine.webp"
+    }
+  ],
+  "held": [
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "status": "HOLD_SECONDARY_DOCUMENTARY_ONLY",
+      "license": "CC-BY-SA-3.0",
+      "reason": "Photograph shows visitors praying at the tomb but lacks clear architecture and has only 676px original width. Older migrated CC/GFDL source requires an explicit release decision; do not use as the hero image."
+    },
+    {
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "status": "HOLD_SECONDARY_DOCUMENTARY_ONLY",
+      "license": "CC-BY-SA-2.0",
+      "reason": "Source identifies exact Catholic Slipper Chapel but candidate depicts an interior altar/window rather than the exterior; unsuitable for hero. Source is an older Geograph CC BY-SA 2.0 work; retain photographer attribution and licence if later used."
+    }
+  ],
+  "release_gate": "No automatic approval; publication registry contains only eight separately inspected CC BY-SA 4.0 additions. The two older-licence files remain outside the public approved asset tree."
+}
