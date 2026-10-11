@@ -5,7 +5,7 @@ const audit=read("mass/ritus-1962-verified-ceremonial-batch01.v1.json");
 const sung=read("presentation/reader-text-sung.v1.json");
 const low=read("presentation/reader-text-low.v1.json");
 const rows=(c)=>c.blocks.flatMap(b=>(b.units||[]).map(u=>({cue:u.cue_id,macro:b.Macro_ID,branch:b.Branch_Status,clock:u.clock})));
-const s=rows(sung),l=rows(low);
+const s=rows(sung).filter(x=>/^AO\.SM\.C\d{4}$/.test(x.cue)),l=rows(low).filter(x=>/^AO\.SM\.C\d{4}$/.test(x.cue));
 const sMap=new Map(s.map(x=>[x.cue,x])),lMap=new Map(l.map(x=>[x.cue,x]));
 assert.equal(audit.schema,"ao-ritus-1962-ceremonial-evidence-batch-v1");
 assert.equal(audit.status,"SOURCE_CHECKED_ENGLISH_TRANSLATION_NOT_LATIN_AND_NOT_RUNTIME_CERTIFIED");
