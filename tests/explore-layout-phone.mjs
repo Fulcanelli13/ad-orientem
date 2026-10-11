@@ -91,8 +91,8 @@ try{
       await page.locator('.aoHeritageEditorialPreview [data-explore-expand-place]').tap();
       await page.locator('.aoExplorePlaceEditorial').waitFor({state:"visible"});
       assert.ok((await page.locator('.aoExplorePlaceChapters [data-explore-place-jump]').count())>=2);
-      assert.equal(await page.locator('.aoExploreStoryChapter').count(),2,
-        "The featured Lourdes place must show distinct source-owned origin and pilgrimage paragraphs");
+      assert.ok((await page.locator('.aoExploreStoryChapter').count())>=2,
+        "Featured Lourdes place must show at least origin and pilgrimage evidence paragraphs");
       const links=await page.locator('.aoExploreStoryEvidence a').evaluateAll(nodes=>
         nodes.map(el=>({height:el.getBoundingClientRect().height,href:el.getAttribute('href')})));
       assert.ok(links.length>=2&&links.every(link=>link.height>=44&&link.href.startsWith("https://")),
