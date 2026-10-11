@@ -175,19 +175,21 @@ try{
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
     suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
-    // Embedded symbols and canonical mask assets are both valid rendered
-    // icons. Count the actual Coming Up rows, not only one SVG renderer.
-    comingUpRows:document.querySelectorAll(".aoHomeComingUp .aoHomeCuRow").length,
-    canonicalIcons:document.querySelectorAll('.aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="embedded"], .aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="mask"]').length,
-    fallbackIcons:document.querySelectorAll(".aoHomeComingUp .aoHomeCuIconMissing, .aoHomeComingUp .aoHomeCuIconFallback").length,
+    todayV2:document.querySelectorAll(".homeScreen.aoTodayV2").length,
+    prayNow:document.querySelectorAll(".homeScreen .aoTodayV2PrayNow").length,
+    readReflect:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect").length,
+    upcoming:document.querySelectorAll(".homeScreen .aoTodayV2Upcoming").length,
+    scriptureShortcuts:document.querySelectorAll(".homeScreen [data-home-scripture]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.equal(homeAudit.comingUpRows,3,"Home Coming Up must show the three canonical destinations");
-  assert.equal(homeAudit.canonicalIcons,homeAudit.comingUpRows,"Every Coming Up row must render canonical SVG or mask artwork");
-  assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
+  assert.equal(homeAudit.todayV2,1,"Today V2 must own the current Home surface");
+  assert.equal(homeAudit.prayNow,1,"Today V2 lacks Pray Now");
+  assert.equal(homeAudit.readReflect,1,"Today V2 lacks Read & Reflect");
+  assert.equal(homeAudit.upcoming,1,"Today V2 lacks Approaching");
+  assert.equal(homeAudit.scriptureShortcuts,1,"Today V2 lost the canonical Scripture action");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
   assert.equal(homeAudit.presentationFx?.legacyCinematicAvailable,true,"v43.12 cinematic owner is not bridged into the modular shell");
   assert.equal(homeAudit.presentationFx?.transitionPresent,true,"route-transition cinematic surface is missing");
@@ -245,16 +247,16 @@ try{
 
   assert.equal(await page.locator(".aoSaintArtCard .aoSaintArtPlaceholder").filter({hasText:/No reusable artwork|No artwork is assigned|not approved for production/i}).count(),0,"Home exposed a terminal saint-art placeholder instead of suppressing the unresolved card");
   const homeParity=await page.evaluate(()=>({
-    celebrationTitles:document.querySelectorAll(".homeScreen .celebrationBlock > h1").length,
-    aroundMassActions:document.querySelectorAll(".homeScreen .aroundMass .phaseButton").length,
+    celebrationTitles:document.querySelectorAll(".homeScreen .aoEditorialTitle").length,
+    aroundMassActions:document.querySelectorAll('.homeScreen .aoTodayV2Mass [data-home-mass-entry],.homeScreen .aoTodayV2Mass [data-action="prepare"],.homeScreen .aoTodayV2Mass [data-action="thanks"]').length,
     followMass:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
-    gospelCards:document.querySelectorAll(".homeScreen .gospelCard").length,
-    comingUp:document.querySelectorAll(".homeScreen .aoHomeComingUp").length,
-    dailyCatechism:document.querySelectorAll(".homeScreen .aoHomeDailyCatechism").length,
+    gospelCards:document.querySelectorAll('.homeScreen .aoTodayV2ReadReflect [data-action="gospel"]').length,
+    comingUp:document.querySelectorAll(".homeScreen .aoTodayV2Upcoming").length,
+    dailyCatechism:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-daily-catechism]").length,
     calendarDashboard:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
     brand:document.querySelector(".homeScreen .brandName")?.textContent?.trim()??"",
-    celebration:document.querySelector(".homeScreen .celebrationBlock > h1")?.textContent?.trim()??"",
-    gospel:document.querySelector(".homeScreen .gospelCard p")?.textContent?.trim()??"",
+    celebration:document.querySelector(".homeScreen .aoEditorialTitle")?.textContent?.trim()??"",
+    gospel:document.querySelector('.homeScreen .aoTodayV2ReadReflect [data-action="gospel"] strong')?.textContent?.trim()??"",
     displayedDate:document.querySelector(".homeScreen .dateTitle b")?.textContent?.trim()??"",
   }));
   assert.equal(homeParity.celebrationTitles,1,"Home lost its single liturgical-day identity");
@@ -271,9 +273,9 @@ try{
   const designBaseline=await page.evaluate(()=>({
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
-    displayFont:getComputedStyle(document.querySelector(".homeScreen .celebrationBlock > h1")).fontFamily,
+    displayFont:getComputedStyle(document.querySelector(".homeScreen .aoEditorialTitle")).fontFamily,
     bodyFont:getComputedStyle(document.querySelector(".homeScreen")).fontFamily,
-    cardRadius:getComputedStyle(document.querySelector(".homeScreen .contentCard")).borderRadius,
+    cardRadius:getComputedStyle(document.documentElement).getPropertyValue("--ao-card-radius").trim(),
     gutter:getComputedStyle(document.documentElement).getPropertyValue("--ao-page-gutter").trim(),
     controlHeight:getComputedStyle(document.documentElement).getPropertyValue("--ao-control-h").trim(),
   }));
@@ -315,7 +317,7 @@ try{
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
-  await page.locator("[data-home-calendar]").click();
+  await page.evaluate(async()=>await globalThis.AO_APP_SHELL_V1.navigate("calendar"));
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   const genericCalendarTransition=await page.evaluate(()=>{
     const el=document.getElementById("ao-cinema-transition");
