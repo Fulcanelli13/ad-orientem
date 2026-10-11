@@ -149,6 +149,13 @@ export function sourceBoundPlaceChapters(related){
       // Never promise a complete French editorial paragraph if the underlying
       // source owner has only the original English. Record details stay readable.
       if(!summary_en||!summary_fr||summary_en===summary_fr)continue;
+      // Some research-side Apparition/Relic entries deliberately carry a
+      // generic evidence-scoping sentence rather than historical prose.
+      // Preserve these in the source-owned records, not as devotional copy.
+      if(!["ORIGIN","PILGRIMAGE"].includes(kind)&&(
+        /^(the linked institution records|the linked source records|documented source|this entry records|the record identifies|a source (?:records|identifies))/i.test(summary_en)||
+        /(?:at the indicated site|the linked institution|as reported in the source)/i.test(summary_en)
+      ))continue;
       const sources=arr(item?.source_links).filter(source=>/^https:\/\/[^\s]+$/i.test(text(source?.url)));
       if(!sources.length)continue;
       const fingerprint=summary_en.toLowerCase().replace(/\W+/g," ").trim();
