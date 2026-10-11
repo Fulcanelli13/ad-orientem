@@ -8,6 +8,33 @@ const sung=JSON.parse(readFileSync(new URL("../data/presentation/reader-text-sun
 const low=JSON.parse(readFileSync(new URL("../data/presentation/reader-text-low.v1.json",import.meta.url),"utf8"));
 const byCue=corpus=>new Map(corpus.blocks.flatMap(block=>(block.units??[]).map(u=>[u.cue_id,u])));
 const sungUnits=byCue(sung),lowUnits=byCue(low);
+const audit=JSON.parse(readFileSync(new URL("../data/mass/ordinary-sung-speaker-audit.v1.json",import.meta.url),"utf8"));
+assert.equal(audit.schema,"ao-ordinary-sung-speaker-audit-v1");
+assert.equal(audit.records.length,280,"all 280 canonical Sung cues must have records");
+assert.equal(new Set(audit.records.map(r=>r.cueId)).size,280);
+assert.equal(new Set(audit.records.map(r=>r.blockId)).size,96);
+assert.equal(audit.rawSha256,sung.source.rawSha256,"the actor audit must be tied to immutable donor hash");
+const registry=new Map(audit.records.map(r=>[r.cueId,r]));
+for(const block of sung.blocks){
+  for(const unit of block.units??[]){
+    const record=registry.get(unit.cue_id);
+    assert.ok(record,unit.cue_id+": missing speaker record");
+    assert.equal(record.blockId,block.Block_ID);
+    assert.equal(record.sourceClock,unit.clock);
+    assert.notEqual(record.role,"UNRESOLVED");
+    const projected=resolveOrdinarySpeaker(unit,{form:"SUNG",blockId:block.Block_ID});
+    assert.equal(projected.role,record.role,unit.cue_id+": registry diverges from runtime actor projection");
+  }
+}
+assert.equal(registry.get("AO.SM.C0235").optionality,"LOCAL_CUSTOM_PRE1960_SURVIVAL",
+  "second Confiteor must remain optional");
+assert.equal(registry.get("AO.SM.C0235").role,"MINISTERS");
+assert.equal(registry.get("AO.SM.C0238").role,"PRIEST");
+assert.equal(registry.get("AO.SM.C0082").role,"GOSPEL_PROCLAIMER",
+  "Solemn Gospel minister must not be hard-coded as the celebrant");
+assert.equal(registry.get("AO.SM.C0259").role,"DISMISSAL_MINISTER",
+  "Solemn dismissal must be form-sensitive");
+
 for(const [cue,role,marker] of [
   ["AO.SM.C0020","PRIEST","S."],
   ["AO.SM.C0025","MINISTERS","M."],
@@ -44,4 +71,4 @@ assert.equal(tracks.tracks.find(t=>t.id==="CREDO").segments[0].cueId,"AO.SM.C009
 assert.ok(tracks.tracks.find(t=>t.id==="GLORIA").segments.every(s=>s.cueId!=="AO.SM.C0054"));
 assert.ok(tracks.tracks.find(t=>t.id==="CREDO").segments.every(s=>s.cueId!=="AO.SM.C0090"));
 
-console.log("Mass line ownership: PASS — preparatory Amens, intonations, responders and Schola entrance.");
+console.log("Mass line ownership: PASS — all 280 cues assigned; preparatory Amens, intonations, conditional actors and Schola entrance.");
