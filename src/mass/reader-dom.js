@@ -251,6 +251,8 @@ const SHELL_STYLE = `
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:8px;font-size:.60em;color:#b8c2b9}
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-primary,
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-secondary{white-space:pre-line}
+.ao-speaker-turn{display:block;margin:0 0 6px;font:650 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
+.ao-reader-shell:not([data-mode="LIVE"]) .ao-speaker-turn{display:none}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:14px;border-left:2px solid rgba(200,217,233,.50);color:#dbe5ee}
 .ao-ritual-trigger{border-radius:.18em;background:linear-gradient(transparent 72%,color-mix(in srgb,var(--ao-mass-accent) 18%,transparent) 72%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .ao-ritual-trigger-live{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--ao-mass-accent) 38%,transparent) 62%);text-shadow:0 0 12px color-mix(in srgb,var(--ao-mass-accent) 10%,transparent);animation:aoRitualWordCue 1.25s ease-out both}
@@ -2269,6 +2271,7 @@ export function createReaderDomAdapter({
       const doc=body.ownerDocument ?? globalThis.document;
       if(doc?.createElement){
         let openingSet=false;
+        let previousSpeakerRole=null;
         const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
         for(const p of current.paragraphs){
           const node=doc.createElement("p");
@@ -2294,6 +2297,24 @@ export function createReaderDomAdapter({
               node.setAttribute("aria-expanded","false");
             }
           }
+          // A role-change caption is shown only in LIVE, and only when the
+          // liturgical source has not already supplied S., M., V. or R.
+          // Do not label action-only or rubric paragraphs as spoken prayers.
+          const speakerRole=String(p.speakerRole??"");
+          const ownerLabels=String(prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr")
+            ? {PRIEST:"Prêtre",MINISTERS:"Servants",RESPONDERS:"Réponse",SCHOLA:"Schola",
+               GOSPEL_PROCLAIMER:"Ministre de l'Évangile",DISMISSAL_MINISTER:"Ministre du renvoi"}
+            : {PRIEST:"Priest",MINISTERS:"Servers",RESPONDERS:"Response",SCHOLA:"Schola",
+               GOSPEL_PROCLAIMER:"Gospel minister",DISMISSAL_MINISTER:"Dismissal minister"};
+          if(speakerRole && speakerRole!==previousSpeakerRole && ownerLabels[speakerRole] &&
+             p.kind!=="RUBRIC" && !/^(?:[SMVR]\\.|℣\\.|℟\\.)\\s*/u.test(String(p.primary??""))){
+            const speakerTag=doc.createElement("small");
+            speakerTag.className="ao-speaker-turn";
+            speakerTag.textContent=ownerLabels[speakerRole];
+            node.append(speakerTag);
+          }
+          if(speakerRole&&speakerRole!=="PRIEST_ACTION"&&speakerRole!=="EDITORIAL_GUIDE")
+            previousSpeakerRole=speakerRole;
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
           const exactCueIds=(p.sourceCueIds??[]).filter(id=>
             /^(?:AO\.SM\.C\d{4}|GF-SOP-\d\d-[KR]|GF-X-52[123])$/.test(String(id)));
