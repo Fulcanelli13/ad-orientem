@@ -604,7 +604,7 @@ export function createFindOwner(win=globalThis){
       if(chapter){
         const details=chapter.matches?.("details")?chapter:chapter.querySelector?.("details");
         if(details)details.open=true;
-        chapter.scrollIntoView?.({block:"start",behavior:win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"instant":"smooth"});
+        chapter.scrollIntoView?.({block:"start",behavior:win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"auto":"smooth"});
       }
       return;
     }
