@@ -72,6 +72,34 @@ export function rosaryJourneyTransition(events,index){
  return Object.freeze({current:events[index],previous:events[index-1]??null,next:events[index+1]??null,
   complete:index===events.length-1});
 }
+/** Fail-closed adapter for the existing canonical Rosary player.
+ * The caller must supply set selection and a verifiable set-specific start.
+ * Never guess native step indexes or replace the native player.
+ */
+export function createContinuousRosaryBridge(donor,{selectSet,beginSet}={}){
+ if(!donor||typeof donor.state!=="function"||typeof donor.steps!=="function"||
+  typeof donor.setStep!=="function"||typeof selectSet!=="function"||typeof beginSet!=="function")
+  return Object.freeze({supported:false,reason:"canonical-donor-transition-api-unavailable"});
+ const journey=rosaryJourney({decades:15});
+ let index=0,started=false,finished=false;
+ return Object.freeze({
+  supported:true,
+  state:()=>Object.freeze({index,started,finished,mystery:journey[index]}),
+  start:()=>{
+   if(started)return false;
+   if(selectSet(journey[0].set)!==true||beginSet(journey[0])!==true)return false;
+   started=true;return true;
+  },
+  advance:()=>{
+   if(!started||finished)return false;
+   if(index===journey.length-1){finished=true;return true;}
+   const next=journey[index+1];
+   if(next.set!==journey[index].set&&selectSet(next.set)!==true)return false;
+   if(beginSet(next)!==true)return false;
+   index++;return true;
+  }
+ });
+}
 export const MERCY_WITNESSES=Object.freeze({
  en:"https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html",
  fr:"https://www.vaticannews.va/fr/priere/chapelet-de-la-divine-misericorde.html"
