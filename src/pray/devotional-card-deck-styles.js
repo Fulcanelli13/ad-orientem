@@ -34,6 +34,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoDevoCardScroll .aoAngelusDialogueLine{display:flex;align-items:flex-start;gap:9px;padding:8px 2px;border:0!important;background:none!important}
 #aoPray435930 .aoDevoCardScroll .ao-liturgical-speaker{flex:0 0 26px;font:600 18px/1.5 Georgia,serif;color:var(--liturgical,#d8bd7d)}
 #aoPray435930 .aoDevoParagraph{opacity:var(--ao-devo-focus,.5)!important;transition:opacity .22s ease!important}
+#aoPray435930 .aoDevoCardScroll .aoP435930PrayerUnit.aoDevoParagraph{opacity:var(--ao-devo-focus,.5)!important}
 #aoPray435930 .aoDevoParagraph[data-ao-devo-active="true"]{color:var(--text,#f1e7d7)!important}
 #aoPray435930 .aoDevoCardScroll .aoDevoAppendixLine{display:block;padding:8px 0}
 #aoPray435930 .aoDevoCardScroll .aoDevoAppendixUnit [data-face-v],#aoPray435930 .aoDevoCardScroll .aoDevoAppendixUnit [data-face-la]{display:block}
