@@ -175,6 +175,11 @@ try{
  // rather than existing only as metadata in the catalogue.
  for(const method of ["dominican","montfort"]){
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
+  // Advanced method choices are now intentionally collapsed by default.
+  // Open their explicit, accessible controller before method-specific tests.
+  await page.locator("#aoPray435930.open [data-p435930-rosary-customize]").evaluate(el=>{
+    if(el.getAttribute("aria-expanded")==="false")el.click();
+  });
   const button=page.locator("#aoPray435930.open [data-p435930-rosary-choose='"+method+"']");
   await button.waitFor({timeout:12000});
   await button.evaluate(x=>x.click());
@@ -219,6 +224,11 @@ try{
  // Newly exposed source-bound Rosary methods, exercised through real phone controls.
  for(const method of ["montfort_short","scriptural"]){
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
+  // Advanced method choices are now intentionally collapsed by default.
+  // Open their explicit, accessible controller before method-specific tests.
+  await page.locator("#aoPray435930.open [data-p435930-rosary-customize]").evaluate(el=>{
+    if(el.getAttribute("aria-expanded")==="false")el.click();
+  });
   const button=page.locator("#aoPray435930.open [data-p435930-rosary-choose='"+method+"']");
   await button.waitFor({timeout:12000});
   await button.evaluate(el=>el.click());
@@ -283,6 +293,9 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
  const chooser=page.locator("#aoPray435930.open [data-ao-rosary-chooser]");
  await chooser.waitFor({timeout:12000});
+ await chooser.locator("[data-p435930-rosary-customize]").evaluate(el=>{
+   if(el.getAttribute("aria-expanded")==="false")el.click();
+ });
  assert.equal(await chooser.locator("[data-p435930-rosary-choose]").count(),5,"One coherent method chooser is required");
  assert.equal(await chooser.locator("[data-p435930-rosary-begin]").count(),1,"Only one start action");
  await chooser.locator("[data-p435930-rosary-choose='ordinary']").evaluate(x=>x.click());
