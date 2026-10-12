@@ -1,0 +1,52 @@
+name: Sacred art — liturgical runtime bridge
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "src/calendar/sacred-art-2026-curation.js"
+      - "src/calendar/sacred-art-liturgical-bridge.js"
+      - "src/calendar/sacred-art-selection.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/home/presentation.js"
+      - "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json"
+      - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+      - "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json"
+      - "data/calendar/sacred-art-liturgical-reuse-legacy-salvage-20261012.v1.json"
+      - "tests/calendar-sacred-art-liturgical-bridge.mjs"
+      - ".github/workflows/sacred-art-runtime-bridge.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/calendar/sacred-art-2026-curation.js"
+      - "src/calendar/sacred-art-liturgical-bridge.js"
+      - "src/calendar/sacred-art-selection.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/home/presentation.js"
+      - "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json"
+      - "data/calendar/sacred-art-liturgical-reuse-legacy-salvage-20261012.v1.json"
+      - "tests/calendar-sacred-art-liturgical-bridge.mjs"
+      - ".github/workflows/sacred-art-runtime-bridge.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  release-bridge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Strict syntax and selection contract
+        run: |
+          node --check src/calendar/sacred-art-2026-curation.js
+          node --check src/calendar/sacred-art-liturgical-bridge.js
+          node --check src/calendar/calendar-runtime.js
+          node --check src/home/presentation.js
+          node --check tests/calendar-sacred-art-liturgical-bridge.mjs
+          node tests/calendar-sacred-art-liturgical-bridge.mjs
+      - name: No unreviewed painting promotion
+        run: |
+          node tests/calendar-sacred-art-selection.mjs
+          node tests/calendar-sacred-art-home-masterpiece-occasions.mjs
