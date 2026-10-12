@@ -60,6 +60,7 @@ import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
+import { resolvePriestChantAction, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
@@ -1147,6 +1148,14 @@ export async function mountNativeReaderPreview({
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
+  // Explicit external observation only; neither scroll focus nor Schola audio
+  // may invent the priest's private Sanctus/Benedictus recitation.
+  let observedPriestEvent=null;
+  const sourceCueClocks=new Map(
+    (ready.data?.sungCorpus?.blocks??[])
+      .flatMap(block=>block.units??[])
+      .map(unit=>[unit.cue_id,unit.clock])
+  );
   let scheduled=false;
   let initialCardRender=true;
   let partCinematic=null;
@@ -1388,6 +1397,22 @@ export async function mountNativeReaderPreview({
       : postureResolved.posture;
 
     const scholaProjection=ready.scholaState.project();
+    const rubricAction=rubricProjection?.primaryPriestAction??null;
+    const matrixAction=gestureMatrixProjection?.primaryPriestAction??null;
+    // Matrix text wins, but the same-cue rubric retains an authoritative
+    // icon identity if the matrix has not bound its icon yet.
+    const resolvedMatrixAction=matrixAction && !matrixAction.iconKey &&
+      matrixAction.iconStatus!=="PENDING_EXACT_MASTER" &&
+      rubricAction?.iconKey && rubricAction.cueId===matrixAction.cueId
+      ? Object.freeze({...matrixAction,iconKey:rubricAction.iconKey})
+      : matrixAction;
+    const originalPriestAction=cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
+    const priestLane=resolvePriestChantAction({
+      form,cueId:activeCueId,sourceClock:sourceCueClocks.get(activeCueId)??null,
+      observation:observedPriestEvent,gestureMatrix:ready.data?.gestureMatrix,
+      ordinaryAction:originalPriestAction
+    });
+    const priestAction=priestLane.priestAction;
     const ownership=Object.freeze({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
@@ -1404,26 +1429,19 @@ export async function mountNativeReaderPreview({
               : transientProjection.ownership.cinematic,
       posture:focusedFaithful ? focusedFaithful.source : postureResolved.owner,
       schola:scholaProjection.ownership,
-      priestAction:cueProjection?.priestAction
-        ? cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED"
-        : gestureMatrixProjection?.primaryPriestAction
-          ? "GESTURE_MATRIX_SOT"
-          : rubricProjection?.primaryPriestAction
-            ? "R17_RUBRIC_EVENT_OVERLAY"
-            : "R18_CUE_WAITING_FAIL_CLOSED",
+      priestAction:priestLane.owner==="INDEPENDENT_PRIEST_OBSERVATION"
+        ? "INDEPENDENT_PRIEST_OBSERVATION"
+        : priestLane.owner==="PRIEST_EVENT_UNOBSERVED"
+          ? "PRIEST_EVENT_UNOBSERVED_FAIL_CLOSED"
+          : cueProjection?.priestAction
+            ? cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED"
+            : gestureMatrixProjection?.primaryPriestAction
+              ? "GESTURE_MATRIX_SOT"
+              : rubricProjection?.primaryPriestAction
+                ? "R17_RUBRIC_EVENT_OVERLAY"
+                : "R18_CUE_WAITING_FAIL_CLOSED",
       sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
-
-    const rubricAction=rubricProjection?.primaryPriestAction??null;
-    const matrixAction=gestureMatrixProjection?.primaryPriestAction??null;
-    // Matrix text wins, but the same-cue rubric retains an authoritative
-    // icon identity if the matrix has not bound its icon yet.
-    const resolvedMatrixAction=matrixAction && !matrixAction.iconKey &&
-      matrixAction.iconStatus!=="PENDING_EXACT_MASTER" &&
-      rubricAction?.iconKey && rubricAction.cueId===matrixAction.cueId
-      ? Object.freeze({...matrixAction,iconKey:rubricAction.iconKey})
-      : matrixAction;
-    const priestAction=cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
     const attention=readerAttentionForState({priestVoice,response});
     // A native source transition may animate the selected posture owner.
     // Never issue a conflicting instruction when a local/observed profile
@@ -2129,6 +2147,7 @@ export async function mountNativeReaderPreview({
     initialCardRender=false;
     armPartCinematic(partCinema);
     if(changed){
+      observedPriestEvent=null;
       activeCueId=null;
       clearEventCinematic({resetCue:true});
       transientGuard.begin();
@@ -2218,6 +2237,7 @@ export async function mountNativeReaderPreview({
     const cueStillPresent=Boolean(desiredCue && (current.paragraphs??[]).some(paragraph=>
       (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(desiredCue))
     ));
+    observedPriestEvent=null;
     activeCueId=cueStillPresent ? desiredCue : null;
     if(activeCueId)transientGuard.resolveCue(activeCueId);
     ready.scholaState.activateForCard(current.sourceSequence??current.guideSequence??current.sequence);
@@ -2306,6 +2326,7 @@ export async function mountNativeReaderPreview({
   }
 
   function destroy(){
+    observedPriestEvent=null;
     clearScheduledTimer(partCinemaTimer);
     clearScheduledTimer(eventCinemaTimer);
     partCinemaTimer=null;
@@ -2353,6 +2374,7 @@ export async function mountNativeReaderPreview({
         // The classical Missal is a static reading view. Scrolling must not
         // move the underlying source cue or trigger LIVE cinematics.
         if(root.querySelector?.("[data-ao-reader-shell]")?.dataset?.mode==="MISSAL")return;
+        if(activeCueId!==cueId)observedPriestEvent=null;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
@@ -2415,6 +2437,25 @@ export async function mountNativeReaderPreview({
       return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
     },
     syncState:queue,
+    // This optional hook is for explicit priest observations from a caller.
+    // It is not microphone recognition and does not listen to the Schola.
+    observePriestEvent:event=>{
+      const form=ready.prepared?.session?.resolvedMass?.form;
+      if(!validatePriestChantObservation(event,activeCueId,form)){
+        return Object.freeze({accepted:false,reason:"UNSUPPORTED_OR_UNOBSERVED_PRIEST_EVENT"});
+      }
+      observedPriestEvent=Object.freeze({
+        actor:"PRIEST",observed:true,source:"EXPLICIT_OBSERVATION",
+        eventType:event.eventType,atCueId:activeCueId
+      });
+      queue();
+      return Object.freeze({accepted:true,eventType:event.eventType,atCueId:activeCueId});
+    },
+    clearPriestObservation:()=>{
+      observedPriestEvent=null;
+      queue();
+      return true;
+    },
     getPresentationMode:()=>reader.getMode(),
     setPresentationMode:mode=>reader.setMode(mode),
     destroy,

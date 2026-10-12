@@ -1,0 +1,96 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {resolvePriestChantAction,validatePriestChantObservation,
+  PRIEST_SANCTUS_OBSERVATION_TYPES} from "../src/mass/reader-priest-chant-owner.js";
+
+const load=p=>JSON.parse(readFileSync(new URL("../data/"+p,import.meta.url),"utf8"));
+const matrix=load("mass/gesture-matrix.v1.json");
+const sung=load("presentation/reader-text-sung.v1.json");
+const corpusById=new Map(sung.blocks.flatMap(b=>b.units.map(u=>[u.cue_id,u])));
+const forms=["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"];
+assert.deepEqual(PRIEST_SANCTUS_OBSERVATION_TYPES,
+ ["PRIEST_SANCTUS_RECITATION","PRIEST_BENEDICTUS_RECITATION"]);
+for(const form of forms){
+  for(const id of ["AO.SM.C0145","AO.SM.C0148"]){
+    assert.equal(corpusById.get(id).clock,"SCHOLA_PUBLIC");
+    const rogue={label:"SHOULD NOT BE DISPLAYED"};
+    const closed=resolvePriestChantAction({
+      form,cueId:id,sourceClock:"SCHOLA_PUBLIC",
+      gestureMatrix:matrix,ordinaryAction:rogue});
+    assert.equal(closed.priestAction,null);
+    assert.equal(closed.owner,"PRIEST_EVENT_UNOBSERVED");
+    assert.equal(closed.reason,"SCHOLA_PUBLIC_CUE_NOT_PRIEST_ACTION");
+  }
+  for(const [type,source] of [
+    ["PRIEST_SANCTUS_RECITATION","GM.P.C0145.01"],
+    ["PRIEST_BENEDICTUS_RECITATION","GM.P.C0148.01"]
+  ]){
+    // An actual observed priest moment may occur while the choir is on a different phrase.
+    const currentChoir="AO.SM.C0145";
+    const observed={actor:"PRIEST",observed:true,source:"EXPLICIT_OBSERVATION",
+      eventType:type,atCueId:currentChoir};
+    assert.equal(validatePriestChantObservation(observed,currentChoir,form),true);
+    const result=resolvePriestChantAction({
+      form,cueId:currentChoir,sourceClock:"SCHOLA_PUBLIC",
+      gestureMatrix:matrix,observation:observed});
+    assert.equal(result.priestAction.sourceGestureId,source);
+    assert.equal(result.priestAction.owner,"INDEPENDENT_PRIEST_OBSERVATION");
+    assert.equal(result.priestAction.cueId,currentChoir);
+    assert.equal(result.owner,"INDEPENDENT_PRIEST_OBSERVATION");
+    assert.equal(result.observed,true);
+    // Navigation invalidates an old observation; no gesture persists across reader cues.
+    const expired=resolvePriestChantAction({
+      form,cueId:"AO.SM.C0148",sourceClock:"SCHOLA_PUBLIC",
+      gestureMatrix:matrix,observation:observed});
+    assert.equal(expired.priestAction,null);
+  }
+  const unobserved=resolvePriestChantAction({
+    form,cueId:"AO.SM.C0145",sourceClock:"SCHOLA_PUBLIC",
+    gestureMatrix:matrix,observation:{
+      actor:"SCHOLA",observed:true,source:"EXPLICIT_OBSERVATION",
+      eventType:"PRIEST_SANCTUS_RECITATION",atCueId:"AO.SM.C0145"
+    }});
+  assert.equal(unobserved.priestAction,null);
+  assert.equal(validatePriestChantObservation({
+    actor:"PRIEST",observed:false,source:"EXPLICIT_OBSERVATION",
+    eventType:"PRIEST_SANCTUS_RECITATION"
+  },"AO.SM.C0145",form),false);
+  assert.equal(validatePriestChantObservation({
+    actor:"PRIEST",observed:true,source:"SCHOLA_ADVANCE",
+    eventType:"PRIEST_SANCTUS_RECITATION"
+  },"AO.SM.C0145",form),false);
+  assert.equal(validatePriestChantObservation({
+    actor:"PRIEST",observed:true,source:"EXPLICIT_OBSERVATION",
+    eventType:"MC-SAN-030"
+  },"AO.SM.C0145",form),false);
+  assert.equal(validatePriestChantObservation({
+    actor:"PRIEST",observed:true,source:"EXPLICIT_OBSERVATION",
+    eventType:"PRIEST_SANCTUS_RECITATION"
+  },"AO.SM.C0160",form),false);
+  assert.equal(resolvePriestChantAction({
+    form,cueId:"AO.SM.C0145",sourceClock:"SCHOLA_PUBLIC",
+    gestureMatrix:{items:[]},observation:{
+      actor:"PRIEST",observed:true,source:"EXPLICIT_OBSERVATION",
+      eventType:"PRIEST_SANCTUS_RECITATION",atCueId:"AO.SM.C0145"
+    }
+  }).priestAction,null);
+  // An unrelated canonical action remains owned by the existing cue/rubric matrix.
+  const otherAction={label:"GENUFLECTS",cueId:"AO.SM.C0181"};
+  assert.equal(resolvePriestChantAction({
+    form,cueId:"AO.SM.C0181",sourceClock:"PRIEST_ACTION",
+    ordinaryAction:otherAction
+  }).priestAction,otherAction);
+  assert.equal(resolvePriestChantAction({
+    form,cueId:"AO.SM.C0151",sourceClock:"PRIEST_PRIVATE",
+    ordinaryAction:otherAction
+  }).priestAction,otherAction);
+}
+const low={label:"PRIEST RECITES SANCTUS"};
+assert.equal(resolvePriestChantAction({
+  form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT",ordinaryAction:low
+}).priestAction,low,"Low Mass priest gesture was wrongly suppressed");
+assert.equal(resolvePriestChantAction({
+  form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT"
+}).owner,"UNCHANGED_FORM");
+// Explicit input is not a claim of automatic sensing, camera, or audio recognition.
+console.log("PASS priest/Schola owner guard: three Sung form variants fail closed; explicit priest observations only; Low, Canon and faithful lanes unchanged.");

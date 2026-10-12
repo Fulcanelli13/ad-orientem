@@ -215,6 +215,28 @@ export function mapFitBounds(features){
   if(bounds[1][0]-bounds[0][0]>300||bounds[1][1]-bounds[0][1]>140)return null;
   return bounds;
 }
+// A phone cannot display an almost global Place corpus at zoom 1: clusters
+// at the sides become half-circles with no usable touch centre. Use a bounded,
+// one-copy geographic overview with explicit space for the largest 35px halo.
+// Coordinates and per-place publication authority are never changed.
+export function explorePhoneOverview(features,width){
+  if(!Number.isFinite(width)||width<250||width>430)return null;
+  const points=(Array.isArray(features)?features:[]).map(f=>f?.geometry?.coordinates)
+    .filter(p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite));
+  if(points.length<2)return null;
+  const west=Math.min(...points.map(p=>p[0])),east=Math.max(...points.map(p=>p[0]));
+  // Only wide-world collections need this exception; regional maps retain
+  // their existing automatic fit or previously restored camera.
+  if(east-west<=300)return null;
+  const south=Math.min(...points.map(p=>p[1])),north=Math.max(...points.map(p=>p[1]));
+  const edge=width<=350?52:width<=400?54:58;
+  return {
+    bounds:[[Math.max(-179.99,west),Math.max(-85,south)],
+      [Math.min(179.99,east),Math.min(85,north)]],
+    fit:{padding:{left:edge,right:edge,top:76,bottom:86},
+      maxZoom:10,duration:0},
+  };
+}
 export function mapViewport(map){
   const center=map?.getCenter?.(),zoom=map?.getZoom?.();
   if(!center||!Number.isFinite(center.lng)||!Number.isFinite(center.lat)||!Number.isFinite(zoom))return null;
@@ -229,12 +251,26 @@ export async function mountExploreMap(container,items,{
   const maplibre=await loadMapLibre(win);
   container.innerHTML="";
   const reducedMotion=win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches===true;
+  const phoneWidth=Number(container.getBoundingClientRect?.().width||container.clientWidth||0);
+  const phoneOverview=!initialViewport?explorePhoneOverview(features,phoneWidth):null;
+  // An overview on a narrow screen needs a negative zoom to fit the finite
+  // world into 320px. Retain a single world (renderWorldCopies:false); widen
+  // only the phone camera clamp enough for the edge halo and label clearance.
+  const camera=boundedWorldMapOptions(initialViewport);
+  if(phoneOverview){
+    camera.minZoom=-2;
+    camera.maxBounds=[[-259.99,-89],[259.99,89]];
+  }
+  const compactAttribution=phoneWidth>0&&phoneWidth<=430&&typeof maplibre.AttributionControl==="function";
   const map=new maplibre.Map({
     container,
     style:win.AO_EXPLORE_MAP_STYLE_URL||win.AO_DIRECTORY_MAP_STYLE_URL||DEFAULT_STYLE,
-    ...boundedWorldMapOptions(initialViewport),
-    attributionControl:true,
+    ...camera,
+    attributionControl:!compactAttribution,
   });
+  // Keep copyright/provider credit reachable and independent of the bottom
+  // right "Near me" action. The compact control expands on explicit tap.
+  if(compactAttribution)map.addControl?.(new maplibre.AttributionControl({compact:true}),"bottom-left");
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
   if(maplibre.FullscreenControl)map.addControl?.(new maplibre.FullscreenControl({pseudo:true}),"top-right");
   const visualStatus=attachExploreMapStatus(container,map,{win});
@@ -273,7 +309,8 @@ export async function mountExploreMap(container,items,{
         "text-halo-width":1.4,"text-opacity":0.92}});
     if(!initialViewport){
       const bounds=mapFitBounds(features);
-      if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration:0});
+      if(phoneOverview)map.fitBounds(phoneOverview.bounds,phoneOverview.fit);
+      else if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration:0});
       else if(features.length===1)map.jumpTo({center:features[0].geometry.coordinates,zoom:9});
     }
     map.on("click",prefix+"-points",event=>{
