@@ -132,7 +132,7 @@ try{
  await page.waitForSelector(reader+" [data-ao-scripture-content='unavailable']",{timeout:12000});
  assert.equal(await page.locator(reader+" [data-p435930-scripture-retry='gospel']").count(),1);
  await page.evaluate(()=>{globalThis.AO_RUNTIME_V8.scriptureService.load=async()=>({
-  reference:"Luke 23:34",englishChapter:[{verse:34,text:"TEST GOSPEL SOURCE FORMAT ONLY"}],
+  reference:{start:34,end:34},englishChapter:[{verse:34,text:"TEST GOSPEL SOURCE FORMAT ONLY"}],
   frenchChapter:[{verse:34,text:"TEST FORMAT FR"}],latinChapter:[]});});
  await page.locator(reader+" [data-p435930-scripture-retry='gospel']").tap();
  await page.waitForSelector(reader+" [data-ao-scripture-content='ready']",{timeout:10000});
