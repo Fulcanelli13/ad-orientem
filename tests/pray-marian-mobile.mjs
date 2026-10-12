@@ -72,7 +72,7 @@ try{
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").count(),1);
- assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").count(),3);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),3);
  const devotionalScroll=page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll");
  assert.equal(await devotionalScroll.evaluate(x=>getComputedStyle(x).overflowY),"auto");
  await devotionalScroll.evaluate(x=>{x.scrollTop=80;x.dispatchEvent(new Event("scroll"))});
