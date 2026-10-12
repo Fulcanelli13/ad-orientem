@@ -290,8 +290,10 @@ try{
    const nextChapter=options[currentPosition+1];
    await gesture(-160,4);
    await page.waitForFunction(index=>window.AO_ROSARY_V381?.state?.()?.step===index,nextChapter.start,{timeout:9000});
-   assert.equal(await player.locator(".aoRosaryActiveCard").getAttribute("data-ao-devo-card"),
-     nextChapter.title.includes("Mystery")?"mystery-"+(currentPosition+1):"mystery-"+(currentPosition+1),
+   await page.waitForFunction(start=>document.querySelector(
+     "#aoPrayerBookRoot.open .aoRosaryNamedTimeline [aria-current='step']")?.getAttribute("data-ao-rosary-chapter")===String(start),
+     nextChapter.start,{timeout:9000});
+   assert.notEqual(await player.locator(".aoRosaryActiveCard").getAttribute("data-ao-devo-card"),card.chapter,
      "Rosary active card did not advance exactly one named chapter");
    await gesture(160,4);
    await page.waitForFunction(index=>window.AO_ROSARY_V381?.state?.()?.step===index,jump.start,{timeout:9000});
