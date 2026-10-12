@@ -1,0 +1,40 @@
+name: 1962 Ordo 2025-2026 dated row research
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/calendar/ordo-2025-2026-row-index.mjs'
+      - '.github/workflows/ordo-2025-2026-row-index.yml'
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install PDF tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+      - name: Download linked 2025-2026 Ordo with page provenance
+        run: |
+          mkdir -p artifacts
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 --silent --show-error \
+            https://extraordinaryform.org/ordo/2025-2026Ordo.pdf -o artifacts/ordo.pdf
+          pdfinfo artifacts/ordo.pdf | grep '^Pages:'
+          pdftotext -layout -enc UTF-8 artifacts/ordo.pdf artifacts/ordo.txt
+      - name: Build dated reference register (no liturgical approval)
+        run: |
+          node tools/calendar/ordo-2025-2026-row-index.mjs artifacts/ordo.txt \
+            data/calendar/audits/1962-ordo-2025-2026-printed-row-index.v1.json
+      - name: Upload original text-layer research register
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ordo-2025-2026-printed-date-rows
+          path: data/calendar/audits/1962-ordo-2025-2026-printed-row-index.v1.json
+          if-no-files-found: warn
