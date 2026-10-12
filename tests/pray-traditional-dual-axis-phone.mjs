@@ -277,6 +277,27 @@ try{
  assert.match(await page.locator("#aoPray435930 .aoTP381Section").first().innerText(),
    /Appelez un prêtre maintenant|Call a priest now/,
    "Bedside destination no longer puts obtaining a priest first");
+ await page.setViewportSize({width:390,height:844});
+ await open("pray.dying_companion");
+ const pastoral=await snapshot();
+ assert.equal(pastoral.route,"pray.dying_companion");
+ assert.equal(pastoral.kind,"dyingCompanion");assert.equal(pastoral.stops,3);
+ assert.equal(pastoral.id,"dying-now");
+ assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),/prêtre/i);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-dying-context]").evaluate(x=>x.open),false);
+ await page.screenshot({path:resolve(captures,"dying-call-priest-390-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 .aoDevoStop").nth(1).evaluate(x=>x.click());
+ assert.equal((await snapshot()).id,"dying-pray");
+ assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),/prière|priez|contrition/i);
+ await page.screenshot({path:resolve(captures,"dying-pray-390-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 .aoDevoStop").nth(2).evaluate(x=>x.click());
+ assert.equal((await snapshot()).id,"dying-commend");
+ assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),/âme|mourant/i);
+ await page.screenshot({path:resolve(captures,"dying-commend-390-fr.png"),animations:"disabled"});
+ await swipe(0,-130);
+ assert.equal((await snapshot()).id,"dying-commend","Bedside vertical reading changed stage");
+ await page.setViewportSize({width:320,height:720});
+ assert.equal((await snapshot()).overflow,"auto");
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
  console.log("PASS French 390/320px traditional Prayer plus nine Good Death source-owned cards and priest-first bedside handoff");
  await page.close();
