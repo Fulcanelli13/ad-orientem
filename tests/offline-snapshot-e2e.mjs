@@ -131,8 +131,10 @@ try{
  // The historical six-section Guide is part of the first-use Rosary reader.
  // Its links can remain remote, but the entire bilingual Guide must render
  // while disconnected without displacing the active prayer.
+ const prep=page.locator("#aoPrayerBookRoot.open .aoRosaryPreparation");
+ if(await prep.count())await prep.evaluate(el=>{if(!el.open)el.open=true});
  const offlineGuide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
- await offlineGuide.waitFor({timeout:12000});
+ await offlineGuide.waitFor({state:"visible",timeout:12000});
  assert.equal(await offlineGuide.locator(".aoRosaryGuideSection").count(),6,
   "Offline Rosary Guide lost its six source-linked sections");
  assert.equal(await offlineGuide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
