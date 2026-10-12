@@ -353,6 +353,7 @@ export function createHomeOwner(win=globalThis){
     const dynamic=target?.closest?.("[data-home-cu-dynamic]");
     if(dynamic){
       event.preventDefault?.();
+      event.stopImmediatePropagation?.();
       const id=dynamic.dataset?.homeCuDynamic;
       if(id==="dynamic.free"){void openRoute("pray.library",{trigger:dynamic});return;}
       // A daily Marian prayer is a launch into one canonical reader, not a
@@ -369,6 +370,7 @@ export function createHomeOwner(win=globalThis){
     const stat=target?.closest?.("[data-home-cu-static]");
     if(stat){
       event.preventDefault?.();
+      event.stopImmediatePropagation?.();
       const id=stat.dataset?.homeCuStatic||"";
       // All Home daily-prayer shortcuts have the same canonical reader as
       // the Prayers catalogue. AO_RULE_V411.openStatic() presents a competing
