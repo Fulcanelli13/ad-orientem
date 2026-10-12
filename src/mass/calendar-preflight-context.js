@@ -40,16 +40,19 @@ function calendarDay(legacy,state,date){
 // separate selected Mass; it supplies additional orations to the primary Mass.
 function namedCommemorations(confirmed,fr){
   if(!confirmed)return Object.freeze([]);
-  const candidates=[confirmed.day?.main?.commemorations,
-    confirmed.day?.commemorations,confirmed.commemorations];
-  const raw=candidates.find(value=>Array.isArray(value)&&value.length) ??
-    candidates.find(value=>value!=null) ?? [];
-  const entries=Array.isArray(raw)?raw:[raw];
-  const names=entries.map(value=>typeof value==="string"?value:
-    fr?text(value?.nameFr)||text(value?.titleFr)||text(value?.name)||text(value?.title):
-       text(value?.name)||text(value?.title)||text(value?.nameFr)||text(value?.titleFr))
-    .map(text).filter(value=>value&&/[A-Za-zÀ-ÿ]/.test(value));
-  return Object.freeze([...new Set(names)]);
+  // In the live 1962 resolver, day.main.commemorations may be a structural
+  // token list with no display names, while day.commemorations has canonical
+  // titled observances. Prefer the first SOURCE collection with real names.
+  for(const raw of [confirmed.day?.commemorations,
+    confirmed.day?.main?.commemorations,confirmed.commemorations]){
+    const entries=Array.isArray(raw)?raw:raw==null?[]:[raw];
+    const names=entries.map(value=>typeof value==="string"?value:
+      fr?text(value?.nameFr)||text(value?.titleFr)||text(value?.name)||text(value?.title):
+         text(value?.name)||text(value?.title)||text(value?.nameFr)||text(value?.titleFr))
+      .map(text).filter(value=>value&&/[A-Za-zÀ-ÿ]/.test(value));
+    if(names.length)return Object.freeze([...new Set(names)]);
+  }
+  return Object.freeze([]);
 }
 function properOrationReadiness(proper,expected,fr){
   if(!proper||typeof proper!=="object")return Object.freeze({status:"PENDING",counts:null});
