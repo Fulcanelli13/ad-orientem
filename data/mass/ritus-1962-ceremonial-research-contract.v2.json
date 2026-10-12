@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-ceremonial-research-contract-v2",
-  "version": "2.6.0-13-cue-reconciliation-with-priest-clock-poc",
+  "version": "2.7.0-post-integration-deduplicated",
   "status": "RESEARCH_NOT_RUNTIME",
   "sourceOfAuthority": {
     "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -111,11 +111,11 @@
     "The matrix's existing 1962 form rules are preserved; do not infer unsupported variants"
   ],
   "priorities": [
-    "Prevent unobserved priest gesture inference from Schola chant in source-backed LIVE/Priest Mode as first future production integration",
-    "Correct priest altar-kiss phrase boundary only when existing 1962 source-control approval confirms the historical source timing",
-    "Implement distinct Low priest paten movement and Solemn sacred-minister handoff, never as a single universal cue",
-    "Close historical pre-opening, Requiem water and Epistle response role predicates",
-    "Run source/voice/posture/gesture matrix parity and physical-phone checks before merging code into main"
+    "Resolve only actual priest-entry/reverence events before C0001 using observed tabernacle/arrival state, not fabricated cues",
+    "Develop a trusted independent source for priest Sanctus/Benedictus observation after the merged PR #1059 fail-closed guard; not Schola timing",
+    "Resolve Epistle Deo gratias response actor under form-specific choir/minister ownership",
+    "Defer source micro-timing for water/wine and paten actions until a supported nontext actor event; current C0212 form split is already correct",
+    "Do not introduce a second Te igitur kiss: GM.P.C0151.01 already represents the exact after-petimus cue boundary"
   ],
   "correctionsSinceV2": [
     "C0163 opening Quam oblationem precedes crosses; C0164 three crosses on benedictam, adscriptam, ratam; C0165 Corpus-only, C0166 Sanguis-only.",
@@ -196,13 +196,14 @@
   "priestCueOwnerReconciliation": {
     "file": "data/mass/ritus-1962-priest-cue-owner-reconciliation13.v1.json",
     "total": 13,
-    "alreadyCoveredInCanonical": 4,
-    "partiallyCovered": 3,
-    "needsAdditionalReviewOrImplementation": 6,
+    "alreadyCoveredInCanonical": 6,
+    "partiallyCovered": 5,
+    "needsAdditionalReviewOrImplementation": 2,
     "mostImportant": [
-      "Prevent SCHOLA_PUBLIC cues C0145 and C0148 from automatically driving priest gestures",
-      "Correct altar kiss after petimus at end of C0150 rather than opening of C0151, after existing 1962 SOT acceptance",
-      "Resolve pre-Mass entrance reverence nontext triggers, recipient/minister response and form-specific paten actions"
+      "Source gesture GM.P.C0151.01 is ALREADY correctly anchored to the boundary after C0150 petimus and before C0151 uti accepta; do not move it earlier.",
+      "Low priest paten action at C0212 and Solemn SMIN-012 sacred-minister handoff at C0212 are ALREADY distinct; no duplicate object transfer event.",
+      "PR #1059 merged the fail-closed Schola/celebrant separation; independent observation source remains to be implemented.",
+      "Entrance and reservation-conditioned reverence occur BEFORE C0001 and require actual nontext state."
     ],
     "previewModule": "tools/mass/priest-owner-independent-clock-preview.mjs",
     "previewTest": "tests/mass-priest-owner-independent-clock-preview.mjs",
@@ -217,6 +218,12 @@
       "Three priest Communion breast strikes C0229-0231",
       "Chalice-elevation microevents already under C0181; historical book timing nuance remains open"
     ],
-    "bookOnlyPolicy": true
+    "bookOnlyPolicy": true,
+    "priestChantGuardMergedIntoMain": true,
+    "priestChantGuardMergeCommit": "f952d5b7caa79de90b13935d2d8b51deef8d9925",
+    "runtimeGuardIntroduced": true,
+    "automaticPriestMotionDetectionIntroduced": false,
+    "existing1962CueBoundaryPreserved": true,
+    "patenFormSplitVerified": true
   }
 }

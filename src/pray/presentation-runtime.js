@@ -205,7 +205,7 @@ let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
 let MERCY={step:0,includeClosing:false,guide:'guided'};
 let ROSARY_FIFTEEN={active:false};
-let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple'};
+let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false};
@@ -1563,15 +1563,34 @@ function renderRosaryMethods(){
  }).join('');
  const size=[5,15].map(count=>'<button type="button" data-p435930-rosary-decades="'+count+'" aria-pressed="'+(decades===count)+'"'+(count===15&&method!=='ordinary'?' disabled':'')+'>'+esc(count===5?L('Five decades','Cinq dizaines'):L('Fifteen decades','Quinze dizaines'))+'</button>').join('');
  const depths=['simple','guided'].map(mode=>'<button type="button" data-p435930-rosary-guidance="'+mode+'" aria-pressed="'+(ROSARY_CHOOSER.guide===mode)+'"'+(method==='scriptural'&&mode==='simple'?' disabled':'')+'>'+esc(mode==='simple'?L('Simple','Simple'):L('Guided','Guidé'))+'</button>').join('');
+ const chosenDepth=ROSARY_CHOOSER.guide==='guided'?L('Guided reading','Lecture guidée'):L('Simple reading','Lecture simple');
  return `${head(L('Holy Rosary','Saint Rosaire'),L('Choose how to pray','Choisissez comment prier'))}
  <main class="aoP435930Body aoMercyMethods aoRosaryChooser" data-ao-rosary-chooser>
+  <section class="aoRosaryReady" aria-label="${esc(L('Selected Rosary prayer','Rosaire choisi'))}">
+    <p class="aoMercyKicker">${esc(L('Ready to pray','Prêt à prier'))}</p>
+    <h2>${esc(choices[method][0])}</h2>
+    <p class="aoRosaryReadyChoice">${esc(decades===15?L('Fifteen decades','Quinze dizaines'):L('Five decades','Cinq dizaines'))} · ${esc(chosenDepth)}</p>
+    <p class="aoRosaryReadyDescription">${esc(choices[method][1])}</p>
+    <button type="button" class="aoRosaryBegin" data-p435930-rosary-begin>${esc(L('Begin Rosary','Commencer le Rosaire'))}</button>
+  </section>
+  <p class="aoRosarySourceCurrent"><a href="${esc(methodData.source)}" target="_blank" rel="noopener noreferrer">${esc(L('Source for the chosen method','Source de la méthode choisie'))} ↗</a>${method==='montfort'?'<small>'+esc(L('Adapted devotional wording; not a literal translation.','Formulation dévotionnelle adaptée, non traduction littérale.'))+'</small>':''}</p>
+  <button type="button" class="aoRosaryCustomizeToggle" data-p435930-rosary-customize aria-expanded="${ROSARY_CHOOSER.optionsOpen?'true':'false'}" aria-controls="ao-rosary-chooser-options">${esc(L('Change method, duration or reading','Changer méthode, durée ou lecture'))}<span aria-hidden="true">${ROSARY_CHOOSER.optionsOpen?'−':'+'}</span></button>
+  <div id="ao-rosary-chooser-options" class="aoRosaryCustomPanel" ${ROSARY_CHOOSER.optionsOpen?'':'hidden'}>
   <section><p class="aoMercyKicker">${esc(L('Prayer method','Méthode de prière'))}</p><div class="aoRosaryChoiceGrid" role="group" aria-label="${esc(L('Rosary method','Méthode du Rosaire'))}">${methods}</div></section>
   <section class="aoRosaryChooserOptions"><p class="aoMercyKicker">${esc(L('Duration','Durée'))}</p><div class="aoMercyOptions" role="group" aria-label="${esc(L('Number of decades','Nombre de dizaines'))}">${size}</div>${method!=='ordinary'?'<small>'+esc(L('The complete fifteen-decade journey is available with Traditional for now.','Le parcours de quinze dizaines est pour l’instant disponible avec Traditionnel.'))+'</small>':''}</section>
   <section class="aoRosaryChooserOptions"><p class="aoMercyKicker">${esc(L('Reading','Lecture'))}</p><div class="aoMercyOptions" role="group" aria-label="${esc(L('Reading guidance','Accompagnement'))}">${depths}</div></section>
-  <p class="aoMercySource"><a href="${esc(methodData.source)}" target="_blank" rel="noopener noreferrer">${esc(L('Source for the chosen method','Source de la méthode choisie'))} ↗</a>${method==='montfort'?'<small>'+esc(L('Adapted devotional wording; not a literal translation.','Formulation dévotionnelle adaptée, non traduction littérale.'))+'</small>':''}</p>
-  <button type="button" class="aoRosaryBegin" data-p435930-rosary-begin>${esc(L('Begin Rosary','Commencer le Rosaire'))} · ${decades}</button>
   <details class="aoRosaryHeld"><summary>${esc(L('Other historical clausules','Autres clausules historiques'))}</summary><p>${esc(L('Separate editions are still being collated and are not yet available as a live method.','Les autres éditions sont en cours de vérification et ne sont pas encore disponibles en lecture.'))} <a href="${esc(ROSARY_METHODS.clausules.source)}" target="_blank" rel="noopener noreferrer">${esc(L('Research source','Source de recherche'))} ↗</a></p></details>
+  </div>
  </main>`;
+}
+// Keep customization visible and keyboard focus on the same native control
+// when the chooser rerenders after a method, decade or reading change.
+function refreshRosaryChoiceFocus(attribute,value){
+ render();
+ queueMicrotask(()=>{
+  const host=mount(),node=host?.querySelector?.('['+attribute+'="'+value+'"]');
+  node?.focus?.({preventScroll:true});
+ });
 }
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
@@ -1623,9 +1642,15 @@ function onClick(e){
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
  if(b.hasAttribute('data-p435930-mercy-open')){view='mercy';MERCY.step=0;navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-methods')){view='rosaryMethods';navStack=[];return render()}
- if(b.hasAttribute('data-p435930-rosary-choose')){const id=b.dataset.p435930RosaryChoose;if(!['ordinary','dominican','montfort','montfort_short','scriptural'].includes(id))return;ROSARY_CHOOSER.method=id;if(id!=='ordinary')ROSARY_CHOOSER.decades=5;if(id==='scriptural')ROSARY_CHOOSER.guide='guided';return render()}
- if(b.hasAttribute('data-p435930-rosary-decades')){const n=Number(b.dataset.p435930RosaryDecades);if(![5,15].includes(n)||n===15&&ROSARY_CHOOSER.method!=='ordinary')return;ROSARY_CHOOSER.decades=n;return render()}
- if(b.hasAttribute('data-p435930-rosary-guidance')){const mode=b.dataset.p435930RosaryGuidance;if(!['simple','guided'].includes(mode)||ROSARY_CHOOSER.method==='scriptural'&&mode==='simple')return;ROSARY_CHOOSER.guide=mode;return render()}
+ if(b.hasAttribute('data-p435930-rosary-customize')){
+  ROSARY_CHOOSER.optionsOpen=!ROSARY_CHOOSER.optionsOpen;
+  render();
+  queueMicrotask(()=>mount()?.querySelector?.('[data-p435930-rosary-customize]')?.focus?.({preventScroll:true}));
+  return;
+ }
+ if(b.hasAttribute('data-p435930-rosary-choose')){const id=b.dataset.p435930RosaryChoose;if(!['ordinary','dominican','montfort','montfort_short','scriptural'].includes(id))return;ROSARY_CHOOSER.method=id;if(id!=='ordinary')ROSARY_CHOOSER.decades=5;if(id==='scriptural')ROSARY_CHOOSER.guide='guided';return refreshRosaryChoiceFocus('data-p435930-rosary-choose',id)}
+ if(b.hasAttribute('data-p435930-rosary-decades')){const n=Number(b.dataset.p435930RosaryDecades);if(![5,15].includes(n)||n===15&&ROSARY_CHOOSER.method!=='ordinary')return;ROSARY_CHOOSER.decades=n;return refreshRosaryChoiceFocus('data-p435930-rosary-decades',String(n))}
+ if(b.hasAttribute('data-p435930-rosary-guidance')){const mode=b.dataset.p435930RosaryGuidance;if(!['simple','guided'].includes(mode)||ROSARY_CHOOSER.method==='scriptural'&&mode==='simple')return;ROSARY_CHOOSER.guide=mode;return refreshRosaryChoiceFocus('data-p435930-rosary-guidance',mode)}
  if(b.hasAttribute('data-p435930-rosary-begin')){S.rosary.mode=ROSARY_CHOOSER.guide;save();return ROSARY_CHOOSER.method==='ordinary'&&ROSARY_CHOOSER.decades===15?launchFifteenRosary():launchTraditionalRosaryMethod(ROSARY_CHOOSER.method)}
  if(b.hasAttribute('data-p435930-rosary-original'))return launchTraditionalRosaryMethod('ordinary');
  if(b.hasAttribute('data-p435930-rosary-method-launch'))return launchTraditionalRosaryMethod(b.dataset.p435930RosaryMethodLaunch);
