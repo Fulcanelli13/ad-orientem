@@ -41,6 +41,14 @@ try{
  assert.match(await page.locator(base+' [data-ao-mass-bible-study]').innerText(),/source-linked research preview/i);
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row="MB18"]').count(),1);
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row="MB24"]').count(),1);
+ const scriptureButton=page.locator(base+' [data-ao-mass-bible-row="MB18"] [data-ao-scripture-context]');
+ assert.equal(await scriptureButton.count(),1,"Genesis 22 source context should use shared reader");
+ await scriptureButton.scrollIntoViewIfNeeded();await page.waitForTimeout(360);await scriptureButton.tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true,null,{timeout:15000});
+ await page.locator('#ao-scripture-overlay [data-scripture-close]').first().tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===false,null,{timeout:15000});
+ assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),26,"Mass formation survives Scripture return");
+ assert.equal(await page.locator(base+' [data-ao-mass-bible-row="MB01"] [data-ao-scripture-context]').count(),0,"Psalm cross-edition link correctly held");
  await page.locator(base+' [data-ao-mf-bible-filter-select]').selectOption("names");
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),3);
  await page.locator(base+' [data-ao-mf-bible-filter-select]').selectOption("all");
