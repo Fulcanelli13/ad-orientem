@@ -81,7 +81,9 @@ try{
    const readiness=await cache.match(new URL("__ao_bootstrap_completed__",base));
    const meta=await readiness.json();
    const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
-     "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js"];
+     "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
+     "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
+     "assets/pray/angelus/tanner-annunciation-1898.webp"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
    return {...meta,missing};
