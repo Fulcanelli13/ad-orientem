@@ -537,4 +537,33 @@ const missingRich=createDonorRichMaskLoader(async()=>{throw new Error("offline")
 expect(await missingRich("unreachable.svg").promise===null,
   "offline rich master must permit visible SVG transport fallback");
 
+
+// A Low Mass compound action need not have a single priest-action rail icon,
+// but a certified C0174/C0181 elevation cinematic must use its existing
+// 1962 source-owned master rather than an empty black ritual backdrop.
+for(const [cue,expected] of [
+  ["AO.SM.C0174","priest_elevation"],
+  ["AO.SM.C0181","priest_elevate_chalice_rich"],
+]){
+  const moment=normalizeReaderMoment({id:"source-"+cue,cardTitle:"Canon",
+    cinematic:{kind:"ELEVATION",cueId:cue,owner:"R17_EXACT_ELEVATION_CINEMATIC"},
+    priestActionIconKey:null});
+  expect(moment.priestActionIconKey===expected,
+    cue+" failed to project its certified elevation art when compound action has no icon");
+  const direct=normalizeReaderMoment({id:"direct-"+cue,cardTitle:"Canon",
+    cinematic:{kind:"ELEVATION",cueId:cue,owner:"R17_EXACT_ELEVATION_CINEMATIC"},
+    priestActionIconKey:"approved-explicit-action-icon"});
+  expect(direct.priestActionIconKey==="approved-explicit-action-icon",
+    cue+" illegally overrode the already source-owned priest-action icon");
+}
+for(const invalid of [
+  {kind:"ELEVATION",cueId:"AO.SM.C0174",owner:"UNVERIFIED"},
+  {kind:"ELEVATION",cueId:"AO.SM.C0204",owner:"R17_EXACT_ELEVATION_CINEMATIC"},
+  {kind:"BELL",cueId:"AO.SM.C0174",owner:"R17_EXACT_ELEVATION_CINEMATIC"},
+]){
+  expect(normalizeReaderMoment({id:"unsafe",cardTitle:"Canon",cinematic:invalid})
+    .priestActionIconKey===null,
+    "unverified or unrelated ritual source manufactured priest-elevation art");
+}
+
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
