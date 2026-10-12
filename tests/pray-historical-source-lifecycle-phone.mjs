@@ -55,6 +55,21 @@ try{
   service:typeof globalThis.AO_RUNTIME_V8?.scriptureService?.load
  }));
  console.log("UNMOCKED_PRODUCTION_SCRIPTURE_SERVICE "+JSON.stringify(baseline));
+ const originalProbe=await page.evaluate(async()=>{
+  const svc=globalThis.AO_RUNTIME_V8?.scriptureService;
+  if(typeof svc?.load!=="function")return {state:"no-service"};
+  try{
+   const document=await Promise.race([
+    svc.load("psalm",{en:"Psalms 6:1",fr:"Psalms 6:1",lat:"Psalms 6:1"}),
+    new Promise((_,reject)=>setTimeout(()=>reject(Error("SRC_PROBE_TIMEOUT")),9000))
+   ]);
+   return {state:"resolved",reference:document?.reference||null,
+    en:Array.isArray(document?.englishChapter)?document.englishChapter.length:0,
+    fr:Array.isArray(document?.frenchChapter)?document.frenchChapter.length:0,
+    la:Array.isArray(document?.latinChapter)?document.latinChapter.length:0};
+  }catch(e){return {state:"error",reason:String(e?.message||e).slice(0,220)}}
+ });
+ console.log("UNMOCKED_CANONICAL_SCRIPTURE_TEXT "+JSON.stringify(originalProbe));
  // A test fixture is installed ONLY after the unmocked production owner is
  // inspected, so this regression can exercise fail-closed UI even when the
  // unrelated upstream Scripture service is not yet provided on first launch.
@@ -100,7 +115,10 @@ try{
  await page.locator(reader+" [data-p435930-scripture-retry='psalm']").tap();
  await page.waitForSelector(reader+" [data-ao-scripture-content='ready']",{timeout:10000});
  assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),2);
- assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse[data-ao-devo-active='true']").count()>0,true);
+ await page.waitForFunction(()=>document.querySelector(
+  "#aoPray435930.open .aoP435930DevotionalGuidedReader .aoP435930ScriptureVerse[data-ao-devo-active='true']"
+ )!==null,null,{timeout:8000});
+ assert.ok(await page.locator(reader+" .aoP435930ScriptureVerse[data-ao-devo-active='true']").count()>0);
  await page.screenshot({path:resolve(artifact,"psalm-settled-fixture-390.png"),animations:"disabled"});
  await page.evaluate(()=>{globalThis.AO_RUNTIME_V8.scriptureService.load=async()=>{throw Error("TEST_FORCED_NETWORK_FAILURE")};});
  assert.equal(await open("pray.seven_words"),true);
