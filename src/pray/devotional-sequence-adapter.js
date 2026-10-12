@@ -75,7 +75,7 @@ export function installSequentialDevotionalReader({
   const card=mount?.querySelector(".aoDevoCard");
   const body=card?.querySelector(".aoDevoCardScroll");
   if(!doc||!card||!body||!Array.isArray(chapters)||!chapters.length)return null;
-  if(!["stations","mercy","novena","library","daily","examen","benediction","adoration"].includes(kind))throw new RangeError("Unexpected sequence owner");
+  if(!["stations","mercy","novena","library","daily","examen","benediction","adoration","confession"].includes(kind))throw new RangeError("Unexpected sequence owner");
   const index=Math.max(0,Math.min(chapters.length-1,Number(activeIndex)||0));
   const parent=kind==="stations"?mount.querySelector(".aoP435930StationRail"):
     kind==="mercy"?mount.querySelector(".aoMercyReader"):
@@ -83,6 +83,7 @@ export function installSequentialDevotionalReader({
     kind==="daily"||kind==="examen"?mount.querySelector(".aoTP381DonorBody"):
     kind==="benediction"?mount.querySelector(".aoP435930BenedictionReader"):
     kind==="adoration"?mount.querySelector(".aoP435930AdorationReader"):
+    kind==="confession"?mount.querySelector(".aoP435930ConfessionReader"):
     mount.querySelector(".aoP435930LibraryReader");
   if(!parent)return null;
   let timeline;
