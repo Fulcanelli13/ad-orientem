@@ -245,7 +245,18 @@ try{
      });
    await page.waitForFunction(()=>document.querySelector(
      "#aoPrayerBookRoot.open [data-ao-rosary-chapter='1']")?.getAttribute("aria-current")==="step",
-     null,{timeout:9000});
+     null,{timeout:9000}).catch(async error=>{
+       const diag=await page.evaluate(()=>({
+         state:window.AO_ROSARY_V381?.state?.(),
+         rootOpen:document.querySelectorAll("#aoPrayerBookRoot.open").length,
+         shell:document.querySelector("#aoPrayerBookRoot.open .pbShell")?.dataset.aoRosaryStep,
+         title:document.querySelector("#aoPrayerBookRoot.open .aoRosaryCardTitle")?.textContent,
+         chapter:document.querySelector("#aoPrayerBookRoot.open .aoRosaryCardScroll")?.dataset.aoRosaryCard,
+         stops:[...document.querySelectorAll("#aoPrayerBookRoot.open .aoRosaryChapterStop")].map(x=>({title:x.textContent.trim(),current:x.getAttribute("aria-current")})),
+         first:window.AO_ROSARY_V381?.steps?.()?.findIndex(x=>x.kind==="mystery"&&x.phase==="decade")
+       }));
+       throw new Error("Rosary chapter aria did not follow canonical cursor: "+JSON.stringify(diag)+"; "+error);
+     });
    assert.equal(await player.locator(".aoRosaryChapterTitle").count(),0,
      "Parallel mystery title surfaces must not be created");
    await player.locator('[data-ao-rosary-chapter="0"]').click();
