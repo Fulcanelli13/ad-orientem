@@ -255,6 +255,95 @@ try{
      "Rosary named timeline failed to follow canonical step jump");
    assert.equal(await player.locator(".pbShell").count(),1,
      "Chapter jump replaced canonical Rosary donor");
+   // A mystery opens in the canonical contemplation surface. This is a
+   // distinct kind of source-owned card, not an invented bead prayer.
+   await page.waitForFunction(()=>document.querySelector(
+     "#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-card-kind='contemplation']"),
+     null,{timeout:9000});
+   const beadTarget=await page.evaluate(start=>{
+     const steps=globalThis.AO_ROSARY_V381.steps();
+     return steps.findIndex((entry,i)=>i>start&&entry.mi===steps[start].mi&&entry.kind!=='mystery');
+   },jump.start);
+   assert.ok(beadTarget>jump.start,"Rosary mystery has no following prayer step");
+   // Use the actual Next control, not setStep() directly: the canonical
+   // donor's real click handler also owns the repaint/decorate lifecycle.
+   for(let bead=jump.start;bead<beadTarget;bead++){
+     await player.locator("[data-lab-rosary-next]").click();
+     await page.waitForFunction(target=>globalThis.AO_ROSARY_V381?.state?.()?.step===target,
+       bead+1,{timeout:9000});
+   }
+   await page.waitForFunction(()=>document.querySelector(
+     "#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-card-kind='prayer'] .aoRosaryPrayerScroll"),
+     null,{timeout:9000}).catch(async error=>{
+      const diag=await page.evaluate(()=>{
+       const root=document.querySelector("#aoPrayerBookRoot.open");
+       const sheet=root?.querySelector(".lab-prayer-sheet");
+       const flip=root?.querySelector(".lab-prayer-flip");
+       const all=[...root?.querySelectorAll(".aoRosaryActiveCard")||[]];
+       return {step:globalThis.AO_ROSARY_V381?.state?.()?.step,kind:root?.querySelector(".pbShell")?.dataset?.aoRosaryKind,
+         cardKinds:all.map(x=>x.dataset.aoRosaryCardKind),inside:!!sheet?.contains(flip),
+         sheet:sheet?.outerHTML?.slice(0,2700),flip:flip?.outerHTML?.slice(0,1800),
+         contemplation:root?.querySelector(".lab-contemplation")?.outerHTML?.slice(0,800)};
+      });
+      throw new Error("ROSARY_PRAYER_STAGE_DIAGNOSTIC "+JSON.stringify(diag)+"; "+error);
+     });
+   // The same canonical donor is now the one titled, locally scrolling card.
+   await page.waitForFunction(()=>{
+     const sheet=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard");
+     return sheet?.querySelector(".aoRosaryPrayerScroll")&&
+       sheet.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length===1;
+   },null,{timeout:9000}).catch(async error=>{
+     const diag=await page.evaluate(()=>{
+       const root=document.querySelector("#aoPrayerBookRoot.open");
+       const sheet=root?.querySelector(".lab-prayer-sheet");
+       const flip=root?.querySelector(".lab-prayer-flip");
+       return {sheet:sheet?.outerHTML?.slice(0,3200),flip:flip?.outerHTML?.slice(0,1400),
+         inside:!!sheet?.contains(flip),sheetClass:sheet?.className,
+         flipClass:flip?.className,active:root?.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length,
+         step:globalThis.AO_ROSARY_V381?.state?.()?.step,
+         named:root?.querySelectorAll(".aoRosaryNamedTimeline").length};
+     });
+     throw new Error("ROSARY_CARD_FOCUS_DIAGNOSTIC "+JSON.stringify(diag)+"; "+error);
+   });
+   const card=await page.evaluate(()=>{
+     const sheet=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard");
+     const flip=sheet.querySelector(".aoRosaryPrayerScroll");
+     return {count:document.querySelectorAll("#aoPrayerBookRoot.open .aoRosaryActiveCard").length,
+       chapter:sheet.dataset.aoDevoCard,active:sheet.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length,
+       scroll:getComputedStyle(flip).overflowY,title:sheet.querySelector("h2.aoDevoCardTitle")?.textContent?.trim(),
+       flip:flip.hasAttribute("data-pb-flip"),next:!!document.querySelector("#aoPrayerBookRoot.open [data-lab-rosary-next]"),
+       rawStep:window.AO_ROSARY_V381.state().step};
+   });
+   assert.equal(card.count,1,"Rosary created a second prayer card instead of decorating the donor");
+   assert.equal(card.active,1,"Rosary card failed to illuminate exactly one visible prayer passage");
+   assert.equal(card.scroll,"auto","Rosary prayer text does not have its own vertical scroll");
+   assert.ok(card.title?.length>3&&card.flip&&card.next,
+     "Rosary card lost title, source-owned translation toggle or bead controls");
+   const gesture=async(dx,dy)=>{
+     await player.locator(".aoRosaryPrayerScroll").evaluate((node,{dx,dy})=>{
+       const t=(x,y)=>new Touch({identifier:24,target:node,clientX:x,clientY:y});
+       node.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,cancelable:true,touches:[t(235,350)],changedTouches:[t(235,350)]}));
+       node.dispatchEvent(new TouchEvent("touchend",{bubbles:true,cancelable:true,touches:[],changedTouches:[t(235+dx,350+dy)]}));
+     },{dx,dy});
+   };
+   await gesture(5,-135);
+   assert.equal(await page.evaluate(()=>window.AO_ROSARY_V381.state().step),card.rawStep,
+     "Vertical prayer scroll incorrectly advanced a Rosary bead or mystery");
+   const currentPosition=options.findIndex(ch=>ch.start===jump.start);
+   assert.ok(currentPosition>=0&&currentPosition<options.length-1,"No following mystery for swipe test");
+   const nextChapter=options[currentPosition+1];
+   await gesture(-160,4);
+   await page.waitForFunction(index=>window.AO_ROSARY_V381?.state?.()?.step===index,nextChapter.start,{timeout:9000});
+   await page.waitForFunction(start=>document.querySelector(
+     "#aoPrayerBookRoot.open .aoRosaryNamedTimeline [aria-current='step']")?.getAttribute("data-ao-rosary-chapter")===String(start),
+     nextChapter.start,{timeout:9000});
+   assert.notEqual(await player.locator(".aoRosaryActiveCard").getAttribute("data-ao-devo-card"),card.chapter,
+     "Rosary active card did not advance exactly one named chapter");
+   await gesture(160,4);
+   await page.waitForFunction(index=>window.AO_ROSARY_V381?.state?.()?.step===index,jump.start,{timeout:9000});
+   await page.waitForFunction(()=>document.querySelectorAll(
+      "#aoPrayerBookRoot.open .aoRosaryActiveCard .aoDevoParagraph[data-ao-devo-active='true']").length===1,
+     null,{timeout:9000});
    assert.deepEqual(errors,[],"Uncaught reader errors: "+errors.slice(0,5).join("; "));
    console.log("PASS "+width+"px canonical Rosary: 44px controls, source, guide, no overflow/state mutation");
   }finally{await page.close();}

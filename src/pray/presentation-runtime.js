@@ -14,6 +14,7 @@ import {renderTenebraeBody} from "./tenebrae-presentation.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { rosaryGuideSections } from "./rosary-guide-data.js";
 import { rosaryNamedChapters,rosaryCurrentChapter } from "./rosary-card-chapters.js";
+import {installRosaryActiveCard} from "./rosary-active-card.js";
 import { divineMercySteps, mercyStepText, MERCY_WITNESSES, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
@@ -1235,6 +1236,19 @@ function decorateRosary(){
  prepareRosaryActive(r);
  declutterRosaryDonor(r);
  installRosaryNamedTimeline(r);
+ const info=rosaryLiveInfo();
+ if(info?.steps?.length){
+  const titles=FS_MYSTERIES[info.set]?.items?.[isFr()?"fr":"en"]||[];
+  installRosaryActiveCard({
+   root:r,stepIndex:info.index,
+   chapters:rosaryNamedChapters(info.steps,{set:info.set,french:isFr(),titles}),
+   navigate:start=>{
+    const api=window.AO_ROSARY_V381;
+    if(typeof api?.setStep==="function"&&api.setStep(start)!==false)
+     setTimeout(decorateRosary,0);
+   }
+  });
+ }
 }
 function confessionModeLabel(path){
  const p=confessionPath(path);
