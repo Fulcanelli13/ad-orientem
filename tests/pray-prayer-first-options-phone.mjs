@@ -67,6 +67,8 @@ try{
    assert.equal(stDetails.count,1);
    assert.ok(stDetails.summaryHeight>=44&&stDetails.prayerText?.length>20&&stDetails.originalNav===1,
     "Station prayer or previous/next unavailable");
+   assert.equal(await page.locator("#aoPray435930.open .aoP435930Stations [data-ao-recitation-control]").count(),0,
+     "Global coherence is duplicating the canonical Stations recitation choice");
    await checkDoc("Stations opening");
    assert.equal(await st.locator('[data-p435930-seg="simple"]').isVisible(),false,
      "Stations controls are visible through a closed preferences drawer");
@@ -125,18 +127,10 @@ try{
      "Angelus recitation controls leak through the closed preferences drawer");
    assert.equal(await ag.locator('[data-p435930-seg="regina"]').isVisible(),false,
      "Angelus form controls leak through the closed preferences drawer");
-   if(width===390)console.log("ANGELUS ON-SCREEN HIT TEST "+JSON.stringify(await page.evaluate(()=>{
-     return [[90,195],[150,204],[190,208],[90,180],[130,225],[90,276]].map(([x,y])=>{
-       const hit=document.elementFromPoint(x,y);
-       const ancestors=[];let n=hit;
-       while(n&&ancestors.length<7){
-         ancestors.push({tag:n.tagName,cls:String(n.className||"").slice(0,130),
-           text:(n.textContent||"").trim().slice(0,100),html:n.outerHTML?.slice(0,290)});
-         n=n.parentElement;
-       }
-       return {x,y,ancestors};
-     });
-   })));
+   assert.equal(await page.locator("#aoPray435930.open .aoP435930AngelusReader [data-ao-recitation-control]").count(),0,
+     "Global coherence is duplicating the canonical Angelus Individual/Group choice");
+   assert.equal(await ag.locator('[data-p435930-seg="group"]').isVisible(),false,
+     "Angelus recitation choice is visible outside its closed disclosure");
    await page.screenshot({path:resolve(shots,"angelus-first-"+width+".png"),animations:"disabled"});
    await ag.locator(":scope > summary").click();
    await expanded(angelus);
