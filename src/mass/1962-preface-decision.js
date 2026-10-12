@@ -2,7 +2,7 @@
 // When source metadata is incomplete, return UNRESOLVED rather than Common.
 // The actual calendar/proper source owner must supply an authenticated identity.
 const OWNERS=Object.freeze({
-  "tempora:Pasc7-0":"SPIRITU",
+  "tempora:pasc7-0":"SPIRITU",
   "sancti:10-07":"MARIA",
   "sancti:12-08":"MARIA",
   "sancti:02-02":"NATIVITATE"
