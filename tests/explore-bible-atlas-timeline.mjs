@@ -40,7 +40,7 @@ assert.equal(GOSPEL_NARRATIVE_PRECEDENCES.length,6);
 const byId=id=>stops.find(s=>s.sourceEventId===id);
 for(const rule of GOSPEL_NARRATIVE_PRECEDENCES){
  const scene=byId(rule.eventId),anchor=byId(rule.anchorId);
- assert.ok(scene&&anchor&&rule.source,/missing evidence for /+rule.eventId);
+ assert.ok(scene&&anchor&&rule.source,"missing evidence for "+rule.eventId);
  assert.equal(scene.era,"PUBLIC");assert.equal(anchor.era,"PUBLIC");
  assert.ok(rule.side==="before"?scene.index<anchor.index:scene.index>anchor.index,
   "broken intra-Gospel precedence: "+rule.eventId+" / "+rule.anchorId);
