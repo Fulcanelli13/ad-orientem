@@ -3,9 +3,10 @@
   "createdOn": "2026-10-12",
   "purpose": "Aesthetic reset: museum-identified iconic masterpieces FIRST. Do not acquire low-impact substitute paintings to fill 1962 dates.",
   "parentOccasions": "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json",
-  "researchStatus": "PRIMARY_OBJECTS_MUSEUM_VERIFIED_NO_ORIGINAL_PIXELS_ACQUIRED_THIS_BATCH",
+  "researchStatus": "HISTORICAL_PRESELECTION_ARCHIVE_DO_NOT_RECOMMEND_BLOCKED_WORKS",
   "proposalLimit": "13 works, concentrated on 11 major subject lanes; show a few at a time and ask curator for aesthetic judgement before original-image retrieval.",
   "rules": [
+    "Fra Angelico and Fra Angelico-like artwork style are excluded from active Ad Orientem hero recommendations. El Greco remains excluded. Prior research may remain in this historical file only.",
     "No painting per ordinary saint or civil date.",
     "Keep same superior artwork for a week or more where appropriate.",
     "Previously viewed user-approved weak archive art is NOT implicitly approved for new masterpiece collection.",
@@ -19,7 +20,9 @@
     "candidateMasterpieces": 13,
     "subjects": 11,
     "originalImagesAcquiredInBatch": 0,
-    "userApprovedInBatch": 0
+    "userApprovedInBatch": 0,
+    "stylisticallyExcludedHistoricalLeads": 3,
+    "activeHistoricalLeads": 10
   },
   "leads": [
     {
@@ -36,7 +39,7 @@
       "curatorialTier": "MASTERPIECE_PRIMARY",
       "reason": "Theatrical nocturnal light; visionary late El Greco; purpose-painted for a religious chapel.",
       "phoneCompositionCaveat": "Tall altarpiece; prepare respectful portrait crop of illuminated Virgin and Child.",
-      "canonicalReviewStatus": "NEW_MASTERPIECE_AESTHETIC_PRESELECTION_NOT_USER_APPROVED",
+      "canonicalReviewStatus": "SUPERSEDED_USER_STYLE_EXCLUDED_HISTORY_ONLY",
       "previousCollectionAutoPromotion": false,
       "originalImageDownloaded": false,
       "originalImageSha256": null,
@@ -44,7 +47,8 @@
       "phoneCropApproved": false,
       "userApproved": false,
       "productionApproved": false,
-      "dateIconographyPolicy": "SCENE_VERIFIED_SEPARATE_LITURGICAL_APPOINTMENT_CHECK"
+      "dateIconographyPolicy": "SCENE_VERIFIED_SEPARATE_LITURGICAL_APPOINTMENT_CHECK",
+      "editorialBlock": "USER_STYLE_REJECTION"
     },
     {
       "priority": 2,
@@ -84,7 +88,7 @@
       "curatorialTier": "MASTERPIECE_PRIMARY",
       "reason": "One of Fra Angelico's early masterpieces and an iconic work of theology in art.",
       "phoneCompositionCaveat": "Present full main panel to preserve Gabriel–Mary relationship.",
-      "canonicalReviewStatus": "NEW_MASTERPIECE_AESTHETIC_PRESELECTION_NOT_USER_APPROVED",
+      "canonicalReviewStatus": "SUPERSEDED_USER_STYLE_EXCLUDED_HISTORY_ONLY",
       "previousCollectionAutoPromotion": false,
       "originalImageDownloaded": false,
       "originalImageSha256": null,
@@ -92,7 +96,8 @@
       "phoneCropApproved": false,
       "userApproved": false,
       "productionApproved": false,
-      "dateIconographyPolicy": "SCENE_VERIFIED_SEPARATE_LITURGICAL_APPOINTMENT_CHECK"
+      "dateIconographyPolicy": "SCENE_VERIFIED_SEPARATE_LITURGICAL_APPOINTMENT_CHECK",
+      "editorialBlock": "USER_STYLE_REJECTION"
     },
     {
       "priority": 4,
@@ -324,7 +329,7 @@
       "curatorialTier": "MASTERPIECE_THEMATIC",
       "reason": "Recognized masterpiece of Marian triumph by Fra Angelico.",
       "phoneCompositionCaveat": "Crowning of Mary, distinct from the Assumption; usable as visually relevant Marian theme with correct caption.",
-      "canonicalReviewStatus": "NEW_MASTERPIECE_AESTHETIC_PRESELECTION_NOT_USER_APPROVED",
+      "canonicalReviewStatus": "SUPERSEDED_USER_STYLE_EXCLUDED_HISTORY_ONLY",
       "previousCollectionAutoPromotion": false,
       "originalImageDownloaded": false,
       "originalImageSha256": null,
@@ -332,7 +337,8 @@
       "phoneCropApproved": false,
       "userApproved": false,
       "productionApproved": false,
-      "dateIconographyPolicy": "THEMATIC_ONLY_NOT_EXACT_FEAST"
+      "dateIconographyPolicy": "THEMATIC_ONLY_NOT_EXACT_FEAST",
+      "editorialBlock": "USER_STYLE_REJECTION"
     }
   ]
 }
