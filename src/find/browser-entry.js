@@ -161,6 +161,12 @@ export function createFindOwner(win=globalThis){
     }
   }
 
+  function onBibleViewportResize(){
+    if(!openState||!state.bibleAtlas||state.bibleReview.surface==="timeline")return;
+    const sync=()=>centerResearchSelection(getRoot(win));
+    if(typeof win?.requestAnimationFrame==="function")win.requestAnimationFrame(sync);else sync();
+  }
+
   async function ensureLineageReview(){
     if(lineageReview)return lineageReview;
     if(!lineagePromise)lineagePromise=loadBiblicalLineageReview().then(data=>{
@@ -976,6 +982,7 @@ export function createFindOwner(win=globalThis){
     setFilter(field.dataset.atlasFilter,field.value);
   }
 
+  win?.addEventListener?.("resize",onBibleViewportResize);
   win?.document?.addEventListener?.("scroll",onBibleTimelineScroll,true);
   win?.document?.addEventListener?.("click",onClick,true);
   win?.document?.addEventListener?.("input",onInput,true);
@@ -1011,6 +1018,7 @@ export function createFindOwner(win=globalThis){
     }),
     dispose(){
       close();
+      win?.removeEventListener?.("resize",onBibleViewportResize);
       win?.document?.removeEventListener?.("scroll",onBibleTimelineScroll,true);
       win?.document?.removeEventListener?.("click",onClick,true);
       win?.document?.removeEventListener?.("input",onInput,true);
