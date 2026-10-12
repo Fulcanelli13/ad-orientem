@@ -44,7 +44,7 @@ const fr=renderMassBibleStudy(corpus,{language:"fr",category:"all",stage:"COMMUN
 assert.equal((en.match(/data-ao-mass-bible-row=/g)||[]).length,3);
 assert.ok(en.includes("Melchisedech"));
 assert.ok(en.includes("Genesis 14:18–20"));
-assert.ok(en.includes("not interchangeable"));
+assert.match(en,/Source-linked research preview/);
 assert.match(fr,/La Bible|Agneau de Dieu|sacro|prière|Notre Père/i);
 assert.doesNotMatch(en,/<img\b|<canvas\b|data-live-card=/,"learn.mass only");
 assert.match(massBibleStudyCss(),/aoMBConnection/);
