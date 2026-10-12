@@ -5,12 +5,16 @@ on:
     paths:
       - "tools/calendar/build-sacred-art-final-atlas.py"
       - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+      - "data/calendar/sacred-art-editorial-style-holds-20261012.v1.json"
+      - "tests/calendar-sacred-art-editorial-style-holds.mjs"
       - "tests/test_sacred_art_final_atlas.py"
       - ".github/workflows/sacred-art-final-atlas-qa.yml"
   pull_request:
     paths:
       - "tools/calendar/build-sacred-art-final-atlas.py"
       - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+      - "data/calendar/sacred-art-editorial-style-holds-20261012.v1.json"
+      - "tests/calendar-sacred-art-editorial-style-holds.mjs"
       - "tests/test_sacred_art_final_atlas.py"
       - ".github/workflows/sacred-art-final-atlas-qa.yml"
 
@@ -32,3 +36,5 @@ jobs:
         run: python -m py_compile tools/calendar/build-sacred-art-final-atlas.py tools/calendar/reconcile-sacred-art-full-harvest.py tools/calendar/acquire-artic-bulk.py tests/test_sacred_art_final_atlas.py
       - name: 365-day offline gallery smoke test and JavaScript syntax check
         run: python tests/test_sacred_art_final_atlas.py
+      - name: Prior curator style conflict and source-original replacement holds
+        run: node tests/calendar-sacred-art-editorial-style-holds.mjs
