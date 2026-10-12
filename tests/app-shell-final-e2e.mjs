@@ -279,9 +279,11 @@ async function exerciseRealShellSpecialRite(browser,spec){
         "Last Gospel source remains auditable even if suppressed in the Palm ceremony");
       const switchback=await page.evaluate(()=>{
         const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
-        const missal=api.setPresentationMode("MISSAL");
-        const live=api.setPresentationMode("LIVE");
-        return {missal:missal?.mode,live:live?.mode,
+        api.setPresentationMode("MISSAL");
+        const missal=api.getPresentationMode();
+        api.setPresentationMode("LIVE");
+        const live=api.getPresentationMode();
+        return {missal,live,
           source:api.sourceModel.totalCards,
           model:api.model.totalCards,
           first:api.model.cards[0].title,
