@@ -47,8 +47,24 @@ try{
  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
  const errors=[];page.on("pageerror",e=>errors.push(e.message));
  await page.goto("http://127.0.0.1:4299/index.html",{waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function"&&
-   typeof globalThis.AO_RUNTIME_V8?.scriptureService?.load==="function",null,{timeout:30000});
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+ const baseline=await page.evaluate(()=>({
+  runtime:typeof globalThis.AO_RUNTIME_V8,
+  service:typeof globalThis.AO_RUNTIME_V8?.scriptureService?.load
+ }));
+ console.log("UNMOCKED_PRODUCTION_SCRIPTURE_SERVICE "+JSON.stringify(baseline));
+ // A test fixture is installed ONLY after the unmocked production owner is
+ // inspected, so this regression can exercise fail-closed UI even when the
+ // unrelated upstream Scripture service is not yet provided on first launch.
+ await page.evaluate(()=>{
+  if(!globalThis.AO_RUNTIME_V8)globalThis.AO_RUNTIME_V8={
+   store:{getState:()=>({language:"en"})}
+  };
+  if(!globalThis.AO_RUNTIME_V8.scriptureService)
+   globalThis.AO_RUNTIME_V8.scriptureService={
+    load:async()=>{throw Error("TEST_UNMOCKED_SERVICE_MISSING")}
+   };
+ });
  // Never place this deliberately SYNTHETIC test witness in a shipping data file.
  // It exercises source bounding, 18-line pagination and actual touch focus,
  // NOT the accuracy or completeness of the external historical edition.
