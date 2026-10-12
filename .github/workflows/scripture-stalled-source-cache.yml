@@ -1,0 +1,26 @@
+name: Scripture stalled-source persistent-cache recovery
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "tests/scripture-persistent-cache-timeout.mjs"
+      - ".github/workflows/scripture-stalled-source-cache.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tests/scripture-persistent-cache-timeout.mjs
+      - run: node tests/pwa-installability-contract.mjs
+      - run: node tests/pray-presentation.mjs
