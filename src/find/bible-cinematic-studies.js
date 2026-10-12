@@ -94,7 +94,9 @@ export function cinematicExactAtlasTarget(study,atlasStops=[]){
 }
 const button=(attr,value,label,active=false)=>'<button type="button" '+attr+'="'+esc(value)+'"'+(active?' aria-pressed="true"':"")+'>'+esc(label)+'</button>';
 export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",scene=0,atlasStops=[]}={}){
- const lang=language==="fr"?"fr":"en",valid=validateCinematicStudies(data);
+ // Production reader must reject a stale 181-scene crosswalk after any
+ // canonical 151-stop migration; test-only checks are not sufficient.
+ const lang=language==="fr"?"fr":"en",valid=validateCinematicCrosswalk(data,atlasStops);
  const head='<div class="aoBibleStudyTop"><button type="button" data-bible-atlas-close aria-label="'+esc(L(lang,"Back to Explore","Retour à Explorer"))+'">←</button>'+
  '<div><small>'+esc(L(lang,"EXPLORE · SCRIPTURE","EXPLORER · ÉCRITURE"))+'</small><h1>'+esc(L(lang,"Biblical Atlas","Atlas biblique"))+'</h1></div></div>'+
  '<nav class="aoBibleStudyTabs" aria-label="'+esc(L(lang,"Biblical Atlas views","Vues de l’Atlas biblique"))+'">'+
