@@ -57,6 +57,11 @@ for(const root of ["adam","noah","abraham","jacob","joseph"]){
  assert.match(graph,/https:\/\/|https:&amp;/,"original source URLs remain present");
  assert.doesNotMatch(graph,/data-bible-map|lat=|lng=|<canvas/,"genealogy is not an ancient geographic map");
  assert.match(graph,/Généalogie sourcée/);
+ const rootCard=graph.match(/<g class="aoBibleKinRoot"[^>]*><rect x="22" y="([0-9.]+)"/);
+ assert.ok(rootCard,"the selected ancestor must be rendered as the first column");
+ assert.ok(Number(rootCard[1])<=100,
+  "the selected ancestor must remain within the initial viewport, not below all descendants");
+
 }
 assert.equal(renderGenesisAncestryDiagram([]),"","empty family evidence must not fabricate nodes");
 
