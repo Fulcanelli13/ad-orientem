@@ -1,14 +1,35 @@
-# Original Ad Orientem apologetics questions — historical conversation excerpts
+# Original Ad Orientem Apologetics questions — recovered prior conversations
 
-**Source extraction 12 October 2026:** 380 individually numbered original-question excerpts, 48 witnessed original bank prefixes, 10 complete 25-question lists from prior chat search excerpts.
+Recovery date: 12 October 2026 · **446 individually numbered historical question excerpts** · **48 original bank prefixes** · **13 complete indexed question lists** (counting known-size 14- and 16-question banks).
 
-**Source limitation:** Question wording and reply timestamps come from *indexed excerpts* of earlier ChatGPT assistant messages. They have not been independently matched against complete exported original chat transcripts. This is not the current 282-record source-file dossier inventory and not a published doctrinal teaching corpus. Missing IDs must remain missing; never invent replacements.
+**Evidence status: provisional.** The original question strings were obtained from indexed excerpts of earlier ChatGPT assistant messages, with dated response witnesses. These are not complete downloadable original transcripts with stable message permalinks; the exact message content has not been independently byte-compared. Never fabricate missing question titles.
 
-## Recovered original question wording
+The 282 source records already on GitHub are **separate current canonical/research objects**, not replacements for these original questions, and must not be added as distinct historical-question totals.
+
+## All retrieved historical question titles, retaining their original bank IDs
+
+### AI — Artificial intelligence
+
+*Earlier chat reply:* 2026-10-07T19:14:32Z · *Retrieved:* 14/14
+
+- **AI-001** Is artificial intelligence intrinsically evil?
+- **AI-002** Is an AI actually a person or a human-like mind?
+- **AI-003** Can an AI become morally responsible for its decisions?
+- **AI-004** Is using ChatGPT or another AI for school, study or work morally wrong?
+- **AI-005** Is making an AI deepfake or fake image always harmless because “it isn't real”?
+- **AI-006** Do I have a duty to check AI-generated information before spreading it?
+- **AI-007** Can an AI be my friend, girlfriend, boyfriend, therapist or spiritual companion?
+- **AI-008** Is there something morally wrong with becoming emotionally attached to an AI?
+- **AI-009** Should AI replace human workers whenever it is cheaper?
+- **AI-010** Can AI make medical decisions instead of doctors?
+- **AI-011** Is AI surveillance morally neutral?
+- **AI-012** Can AI decide who should be killed in war?
+- **AI-013** Can AI determine what is morally right for me?
+- **AI-014** Can AI be used for Catholic formation or evangelization?
 
 ### ANG — Anglicanism
 
-Historical assistant response: 2026-10-07T15:31:02Z | Excerpts found: 23/25
+*Earlier chat reply:* 2026-10-07T15:31:02Z · *Retrieved:* 23/25
 
 - **ANG-001** What exactly is ‘Anglican doctrine’?
 - **ANG-002** Is Anglicanism simply Catholicism without the pope?
@@ -36,7 +57,7 @@ Historical assistant response: 2026-10-07T15:31:02Z | Excerpts found: 23/25
 
 ### ATH — Atheism, agnosticism, naturalism and materialism
 
-Historical assistant response: 2026-10-07T13:34:41Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T13:34:41Z · *Retrieved:* 25/25
 
 - **ATH-001** What are atheism, agnosticism, naturalism and materialism?
 - **ATH-002** Can God's existence be known without revelation?
@@ -66,7 +87,7 @@ Historical assistant response: 2026-10-07T13:34:41Z | Excerpts found: 25/25
 
 ### BAP-EV — Baptist / evangelical / non-denominational
 
-Historical assistant response: 2026-10-07T15:34:51Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T15:34:51Z · *Retrieved:* 25/25
 
 - **BAP-EV-001** What does ‘evangelical’ mean?
 - **BAP-EV-002** What specifically makes a church Baptist?
@@ -94,9 +115,30 @@ Historical assistant response: 2026-10-07T15:34:51Z | Excerpts found: 25/25
 - **BAP-EV-024** What about Pentecostal evangelicals and speaking in tongues?
 - **BAP-EV-025** What is the deepest Catholic–Baptist/evangelical divide?
 
+### BIO — Bioethics
+
+*Earlier chat reply:* 2026-10-07T19:31:31Z · *Retrieved:* 16/16
+
+- **BIO-001** When does a human embryo acquire moral dignity?
+- **BIO-002** Can direct abortion become morally permissible to solve a grave problem?
+- **BIO-003** Why does the Church distinguish contraception from periodic abstinence/NFP?
+- **BIO-004** Are sterilization and medical treatment that causes infertility morally identical?
+- **BIO-005** Is every artificial fertility treatment forbidden?
+- **BIO-006** Is IVF acceptable if only the husband's sperm and wife's egg are used?
+- **BIO-007** What is wrong with freezing embryos?
+- **BIO-008** Can abandoned frozen embryos simply be ‘adopted’ to solve the problem?
+- **BIO-009** Is ‘embryo reduction’ different from abortion?
+- **BIO-010** Is preimplantation genetic diagnosis acceptable if intended to prevent severe disease?
+- **BIO-011** Are all stem-cell therapies morally objectionable?
+- **BIO-012** Does use of an abortion-derived cell line make a medicine or vaccine automatically forbidden?
+- **BIO-013** Is genetic engineering intrinsically wrong?
+- **BIO-014** Is human cloning objectionable only because present technology is unsafe?
+- **BIO-015** Is surrogacy acceptable if altruistic and no money changes hands?
+- **BIO-016** Is euthanasia morally different from refusing burdensome treatment?
+
 ### ERR — Condemned errors and ideological movements
 
-Historical assistant response: 2026-10-07T13:57:26Z | Excerpts found: 24/25
+*Earlier chat reply:* 2026-10-07T13:57:26Z · *Retrieved:* 24/25
 
 - **ERR-001** Is Freemasonry properly a “heresy”?
 - **ERR-002** Why did the Church condemn Freemasonry?
@@ -125,14 +167,14 @@ Historical assistant response: 2026-10-07T13:57:26Z | Excerpts found: 24/25
 
 ### HUM — Secular humanism
 
-Historical assistant response: 2026-10-07T16:02:45Z | Excerpts found: 2/range unknown
+*Earlier chat reply:* 2026-10-07T16:02:45Z · *Retrieved:* 2/unspecified original size
 
 - **HUM-001** Is secular humanism simply ‘being humane’ or caring about humans?
 - **HUM-002** Does Catholicism have to deny everything humanists say about reason, science, dignity or ethical responsibility?
 
 ### ISL — Islam
 
-Historical assistant response: 2026-10-07T13:38:54Z | Excerpts found: 14/25
+*Earlier chat reply:* 2026-10-07T13:38:54Z · *Retrieved:* 14/25
 
 - **ISL-001** What does “Islam” mean for apologetic purposes?
 - **ISL-002** Is Muhammad himself historically doubtful?
@@ -151,7 +193,7 @@ Historical assistant response: 2026-10-07T13:38:54Z | Excerpts found: 14/25
 
 ### ISR — Biblical Israel, Second Temple Judaism, Rabbinic Judaism, Old and New Covenants, Romans 9–11
 
-Historical assistant response: 2026-10-07T14:31:33Z | Excerpts found: 10/25
+*Earlier chat reply:* 2026-10-07T14:31:33Z · *Retrieved:* 10/25
 
 - **ISR-001** Is contemporary Judaism simply ‘the religion of the Old Testament’?
 - **ISR-002** Was biblical Israel’s religion centered on synagogue and rabbis?
@@ -166,7 +208,7 @@ Historical assistant response: 2026-10-07T14:31:33Z | Excerpts found: 10/25
 
 ### JUD — Judaism
 
-Historical assistant response: 2026-10-07T13:53:01Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T13:53:01Z · *Retrieved:* 25/25
 
 - **JUD-001** What does ‘Judaism’ mean here?
 - **JUD-002** What does traditional rabbinic Judaism expect of the Messiah?
@@ -194,9 +236,36 @@ Historical assistant response: 2026-10-07T13:53:01Z | Excerpts found: 25/25
 - **JUD-024** Does ‘chosen people’ mean Jews alone can be saved?
 - **JUD-025** Is Christianity’s reading of the Hebrew Bible just a collection of mistranslated proof-texts?
 
+### LIT — Liturgical reform / Novus Ordo
+
+*Earlier chat reply:* 2026-10-07T13:27:54Z · *Retrieved:* 22/unspecified original size
+
+- **LIT-005** Did the 1969/70 reform weaken expression of the propitiatory sacrifice?
+- **LIT-006** Did it weaken expression of the Real Presence?
+- **LIT-007** Did it blur ministerial priesthood versus common priesthood?
+- **LIT-008** What exactly changed in the Offertory and why?
+- **LIT-009** Why were multiple Eucharistic Prayers introduced, especially EP II?
+- **LIT-010** What changed in the words/context of consecration and mysterium fidei?
+- **LIT-011** Did the General Instruction originally contain a defective definition of the Mass, and was it subsequently corrected?
+- **LIT-012** What role did Bugnini and the Consilium actually have, as opposed to traditionalist mythology around them?
+- **LIT-013** Protestant observers: what did they actually do, and did they influence doctrinal content?
+- **LIT-014** How much of the final reform has direct precedent in ancient Roman liturgy versus scholarly reconstruction or newly composed material?
+- **LIT-053** Did Vatican II itself legislate the exact 1969/70 Missal?
+- **LIT-054** Did Vatican II abolish Latin?
+- **LIT-055** Did Vatican II abolish Gregorian chant?
+- **LIT-056** Did ‘active participation’ mean everyone must constantly speak, sing or perform a ministry?
+- **LIT-057** Did Vatican II authorize unlimited liturgical experimentation?
+- **LIT-058** Did radical Roman liturgical reform begin only after Vatican II?
+- **LIT-059** Was the postconciliar change merely a light revision of the 1962 Missal?
+- **LIT-060** Was the traditional Roman Offertory substantially changed?
+- **LIT-061** Did the new Preparation of the Gifts remove all sacrificial language from the Mass?
+- **LIT-062** What was controversial about the original 1969 GIRM §7?
+- **LIT-063** Did Rome leave GIRM §7 unchanged after criticism?
+- **LIT-064** Does the 1969 GIRM controversy prove that the new Mass formally denied sacrifice or the Real Presence?
+
 ### LUT — Lutheranism
 
-Historical assistant response: 2026-10-07T15:21:26Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T15:21:26Z · *Retrieved:* 25/25
 
 - **LUT-001** What counts as ‘Lutheran doctrine’?
 - **LUT-002** What is the central Lutheran doctrine of justification?
@@ -226,7 +295,7 @@ Historical assistant response: 2026-10-07T15:21:26Z | Excerpts found: 25/25
 
 ### MAR — Marian apologetics
 
-Historical assistant response: 2026-10-07T15:16:56Z | Excerpts found: 20/25
+*Earlier chat reply:* 2026-10-07T15:16:56Z · *Retrieved:* 20/25
 
 - **MAR-001** Why call Mary “Mother of God”? Did she create God?
 - **MAR-002** Is “Mother of God” a late Marian exaggeration?
@@ -249,9 +318,28 @@ Historical assistant response: 2026-10-07T15:16:56Z | Excerpts found: 20/25
 - **MAR-019** Do Catholics worship Mary?
 - **MAR-020** Why ask Mary to pray for us if Christ is the one Mediator?
 
+### MOR — Moral reasoning
+
+*Earlier chat reply:* 2026-10-07T19:31:31Z · *Retrieved:* 14/14
+
+- **MOR-001** What makes a human act morally good?
+- **MOR-002** Does a good intention justify a bad means?
+- **MOR-003** Are some acts always morally wrong regardless of circumstances?
+- **MOR-004** Does Catholic morality accept consequentialism or proportionalism?
+- **MOR-005** Does “choose the lesser evil” mean that I may deliberately do a smaller evil?
+- **MOR-006** What is the principle of double effect?
+- **MOR-007** Does conscience determine what is objectively right and wrong?
+- **MOR-008** Must a person obey an erroneous conscience?
+- **MOR-009** Are all forms of cooperation with another person's wrongdoing equally sinful?
+- **MOR-010** Is suicide objectively gravely wrong?
+- **MOR-011** Does someone who commits suicide automatically go to hell?
+- **MOR-012** Is assisted suicide morally different because the person asks for it?
+- **MOR-013** Is refusing extraordinary treatment a form of suicide?
+- **MOR-014** Is sacrificing one's life for another person suicide?
+
 ### NEW — New Age
 
-Historical assistant response: 2026-10-07T16:02:45Z | Excerpts found: 4/range unknown
+*Earlier chat reply:* 2026-10-07T16:02:45Z · *Retrieved:* 4/unspecified original size
 
 - **NEW-001** What is ‘New Age’?
 - **NEW-002** Does every meditation, yoga exercise, crystal, alternative therapy or interest in ‘wellness’ automatically count as New Age?
@@ -260,7 +348,7 @@ Historical assistant response: 2026-10-07T16:02:45Z | Excerpts found: 4/range un
 
 ### ORTH — Eastern Orthodoxy
 
-Historical assistant response: 2026-10-07T13:27:54Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T13:27:54Z · *Retrieved:* 25/25
 
 - **ORTH-001** What is ‘Eastern Orthodoxy’?
 - **ORTH-002** Do Catholics and Orthodox share the first seven ecumenical councils?
@@ -290,7 +378,7 @@ Historical assistant response: 2026-10-07T13:27:54Z | Excerpts found: 25/25
 
 ### PEN — Pentecostal / Charismatic
 
-Historical assistant response: 2026-10-07T15:42:35Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T15:42:35Z · *Retrieved:* 25/25
 
 - **PEN-001** What is Pentecostalism historically?
 - **PEN-002** Is Pentecostalism one denomination?
@@ -320,7 +408,7 @@ Historical assistant response: 2026-10-07T15:42:35Z | Excerpts found: 25/25
 
 ### PROT — Generic Protestant apologetics
 
-Historical assistant response: 2026-10-07T12:36:04Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T12:36:04Z · *Retrieved:* 25/25
 
 - **PROT-001** What does “Protestant” mean?
 - **PROT-002** Is sola Scriptura simply “Catholics don't believe the Bible”?
@@ -350,7 +438,7 @@ Historical assistant response: 2026-10-07T12:36:04Z | Excerpts found: 25/25
 
 ### REF — Reformed / Calvinist
 
-Historical assistant response: 2026-10-07T15:28:59Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T15:28:59Z · *Retrieved:* 25/25
 
 - **REF-001** What counts as ‘Reformed’ or ‘Calvinist’ doctrine?
 - **REF-002** What is Reformed justification?
@@ -380,7 +468,7 @@ Historical assistant response: 2026-10-07T15:28:59Z | Excerpts found: 25/25
 
 ### REST — Restorationist movements incl. Jehovah's Witnesses
 
-Historical assistant response: 2026-10-07T14:22:31Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T14:22:31Z · *Retrieved:* 25/25
 
 - **REST-001** Are Jehovah’s Witnesses Trinitarian Christians?
 - **REST-002** What do Jehovah’s Witnesses believe Jesus is?
@@ -410,7 +498,7 @@ Historical assistant response: 2026-10-07T14:22:31Z | Excerpts found: 25/25
 
 ### SAN — Saints, relics, images, Purgatory, indulgences
 
-Historical assistant response: 2026-10-07T15:19:12Z | Excerpts found: 10/25
+*Earlier chat reply:* 2026-10-07T15:19:12Z · *Retrieved:* 10/25
 
 - **SAN-001** What does ‘communion of saints’ actually mean?
 - **SAN-002** Are the saints ‘dead’ in a way that prevents Christian fellowship with them?
@@ -425,7 +513,7 @@ Historical assistant response: 2026-10-07T15:19:12Z | Excerpts found: 10/25
 
 ### SCR — Scripture / Tradition / biblical canon
 
-Historical assistant response: 2026-10-07T14:58:44Z | Excerpts found: 23/25
+*Earlier chat reply:* 2026-10-07T14:58:44Z · *Retrieved:* 23/25
 
 - **SCR-001** Is divine Revelation identical with the Bible?
 - **SCR-002** Is new public revelation still being added?
@@ -453,7 +541,7 @@ Historical assistant response: 2026-10-07T14:58:44Z | Excerpts found: 23/25
 
 ### WES — Methodist / Wesleyan
 
-Historical assistant response: 2026-10-07T15:39:53Z | Excerpts found: 25/25
+*Earlier chat reply:* 2026-10-07T15:39:53Z · *Retrieved:* 25/25
 
 - **WES-001** What is Methodism historically?
 - **WES-002** Is ‘Methodist’ synonymous with the United Methodist Church?
@@ -481,28 +569,17 @@ Historical assistant response: 2026-10-07T15:39:53Z | Excerpts found: 25/25
 - **WES-024** What is the ‘Wesleyan Quadrilateral’?
 - **WES-025** What is the deepest Catholic–Wesleyan dispute?
 
-## Eight original A-series phrases lacking verified per-item IDs
+## Bank-by-bank completeness
 
-- A001–A025: Can human reason really know that God exists? — witness 2026-10-07T20:31:08Z
-- A001–A025: If everything needs a cause, who caused God? — witness 2026-10-07T20:31:08Z
-- A001–A025: Did Jesus of Nazareth really exist? — witness 2026-10-07T20:31:08Z
-- A001–A025: Is the Resurrection presented as a real historical event or merely as a symbol of faith? — witness 2026-10-07T20:31:08Z
-- A026–A050: Why did Jesus have to die? — witness 2026-10-07T21:38:57Z
-- A026–A050: How do we know which books belong in the Bible? — witness 2026-10-07T21:38:57Z
-- A026–A050: Is sola Scriptura taught in Scripture? — witness 2026-10-07T21:38:57Z
-- A026–A050: Can Catholic doctrine develop without changing its meaning? — witness 2026-10-07T21:38:57Z
-
-## Original bank-by-bank coverage
-
-| Original prefix | Audience/topic | Recovered question texts | Range size | Historical response |
+| Prefix | Category | Question texts recovered | Previously declared bank size | Historical response |
 |---|---|---:|---:|---|
-| `AI` | Artificial intelligence | 0 | 14 | 2026-10-07T19:14:32Z |
+| `AI` | Artificial intelligence | 14 | 14 | 2026-10-07T19:14:32Z |
 | `ANG` | Anglicanism | 23 | 25 | 2026-10-07T15:31:02Z |
 | `ANTH` | Anthroposophy | 0 | Unknown | 2026-10-07T16:02:45Z |
 | `ATH` | Atheism, agnosticism, naturalism and materialism | 25 | 25 | 2026-10-07T13:34:41Z |
 | `BAH` | Baháʼí | 0 | Unknown | 2026-10-07T15:45:51Z |
 | `BAP-EV` | Baptist / evangelical / non-denominational | 25 | 25 | 2026-10-07T15:34:51Z |
-| `BIO` | Bioethics | 0 | 16 | 2026-10-07T19:31:31Z |
+| `BIO` | Bioethics | 16 | 16 | 2026-10-07T19:31:31Z |
 | `CHR` | Chinese popular religion | 0 | Unknown | 2026-10-07T15:45:51Z |
 | `CONF` | Confucian traditions | 0 | Unknown | 2026-10-07T15:45:51Z |
 | `DAO` | Daoism | 0 | Unknown | 2026-10-07T15:45:51Z |
@@ -517,11 +594,11 @@ Historical assistant response: 2026-10-07T15:39:53Z | Excerpts found: 25/25
 | `ISR` | Biblical Israel, Second Temple Judaism, Rabbinic Judaism, Old and New Covenants, Romans 9–11 | 10 | 25 | 2026-10-07T14:31:33Z |
 | `JAIN` | Jainism | 0 | Unknown | 2026-10-07T15:45:51Z |
 | `JUD` | Judaism | 25 | 25 | 2026-10-07T13:53:01Z |
-| `LIT` | Liturgical reform / Novus Ordo | 0 | Unknown | 2026-10-07T13:27:54Z |
+| `LIT` | Liturgical reform / Novus Ordo | 22 | Unknown | 2026-10-07T13:27:54Z |
 | `LUT` | Lutheranism | 25 | 25 | 2026-10-07T15:21:26Z |
 | `MAR` | Marian apologetics | 20 | 25 | 2026-10-07T15:16:56Z |
 | `MIN` | Combined smaller religions | 0 | 25 | 2026-10-07T15:19:12Z |
-| `MOR` | Moral reasoning | 0 | 14 | 2026-10-07T19:31:31Z |
+| `MOR` | Moral reasoning | 14 | 14 | 2026-10-07T19:31:31Z |
 | `NEW` | New Age | 4 | Unknown | 2026-10-07T16:02:45Z |
 | `ORTH` | Eastern Orthodoxy | 25 | 25 | 2026-10-07T13:27:54Z |
 | `PAP` | Papacy historical topical bank | 0 | 20 | 2026-10-07T19:31:31Z |
@@ -545,18 +622,30 @@ Historical assistant response: 2026-10-07T15:39:53Z | Excerpts found: 25/25
 | `WES` | Methodist / Wesleyan | 25 | 25 | 2026-10-07T15:39:53Z |
 | `ZOR` | Zoroastrianism | 0 | Unknown | 2026-10-07T15:45:51Z |
 
-## Unresolved truncated fragments
+## Original question fragments with no complete numerical attribution
 
-The following titles are NOT counted as complete original questions:
+- A001–A025 — Can human reason really know that God exists? (original reply 2026-10-07T20:31:08Z)
+- A001–A025 — If everything needs a cause, who caused God? (original reply 2026-10-07T20:31:08Z)
+- A001–A025 — Did Jesus of Nazareth really exist? (original reply 2026-10-07T20:31:08Z)
+- A001–A025 — Is the Resurrection presented as a real historical event or merely as a symbol of faith? (original reply 2026-10-07T20:31:08Z)
+- A026–A050 — Why did Jesus have to die? (original reply 2026-10-07T21:38:57Z)
+- A026–A050 — How do we know which books belong in the Bible? (original reply 2026-10-07T21:38:57Z)
+- A026–A050 — Is sola Scriptura taught in Scripture? (original reply 2026-10-07T21:38:57Z)
+- A026–A050 — Can Catholic doctrine develop without changing its meaning? (original reply 2026-10-07T21:38:57Z)
 
-- `ERR-023` — What is ‘Liberal Catholicism?… — complete original wording not available
-- `ANG-024` — What did the English Reformation… — complete original wording not available
-- `MAR-021` — Is Mary really ‘M… — complete original wording not available
-- `SCR-024` — Do manuscript variants and copyist… — complete original wording not available
+## Truncated source excerpts — excluded from complete question count
 
-## Recovery rules
+- `ERR-023`: What is ‘Liberal Catholicism?… (source excerpt truncated; **not recovered complete**)
+- `ANG-024`: What did the English Reformation… (source excerpt truncated; **not recovered complete**)
+- `MAR-021`: Is Mary really ‘M… (source excerpt truncated; **not recovered complete**)
+- `SCR-024`: Do manuscript variants and copyist… (source excerpt truncated; **not recovered complete**)
 
-- Historical IDs, original bank, question wording, earliest known assistant-reply timestamp and provenance/confidence flags are all retained.
-- All recovered strings are excerpt witnesses, not byte-certified transcript exports.
-- The original A001–318 and C001–233 corpora are separate forensic ledgers; their unsourced placeholders must not be counted as recovered questions.
-- No automatic publishing, merging or replacement of app Formation source-of-truth.
+## Conflicting historical numbering
+
+The 18:42 UTC MOR-001–014 moral-reasoning bank differs from an earlier 13:40 UTC Sexual Ethics draft that also uses MOR identifiers. The two original reply versions are **not** silently conflated or treated as duplicates with identical text; see `HISTORICAL_ID_COLLISIONS.md`.
+
+## Archival obligations
+
+- `HISTORICAL_QUESTION_GAPS.csv` enumerates unresolved question positions only for bank sizes confirmed from earlier replies. It does not infer an original total for banks of unknown size.
+- A/C historical recovery placeholders are handled separately and not claimed recovered.
+- No theological answer/publication status or app reader behavior is altered by this archive.
