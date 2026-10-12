@@ -62,8 +62,12 @@ def main():
         meta=inf.get("extmetadata") or {}
         license_=(meta.get("LicenseShortName") or {}).get("value","")
         license_url=(meta.get("LicenseUrl") or {}).get("value","")
-        if "cc0" not in license_.lower() and "publicdomain/zero" not in license_url.lower():
-            raise ValueError("No specific Commons CC0 assertion for sourced museum image")
+        declared=(license_+" "+license_url).lower()
+        # Commons may label a 2-D museum-CC0 reproduction with PD Mark rather
+        # than CC0; the originating museum separately identifies image as CC0.
+        # Keep BOTH claims; never misreport Commons PD-Mark as Commons CC0.
+        if not any(tag in declared for tag in ("cc0", "publicdomain/zero", "publicdomain/mark", "public domain")):
+            raise ValueError("No public-domain/CC0 declaration in Commons image metadata")
         raw=get(url)
         digest=hashlib.sha256(raw).hexdigest()
         if hashlib.sha1(raw).hexdigest()!=inf["sha1"]:raise ValueError("Acquired original differs from MediaWiki file SHA-1")
@@ -80,7 +84,7 @@ def main():
              sourceFileUrl=url,sha256=digest,commonsSha1=inf["sha1"],
              width=19178,height=19721,bytes=len(raw),declaredCommonsLicense=license_,
              declaredCommonsLicenseUrl=license_url,
-             sourceRightsEvidence="KMSKA first party collection says Image CC0; Wikimedia Commons file licenses CC0; original from official KMSKA IIIF service",
+             sourceRightsEvidence="KMSKA institutional collection labels image CC0; Commons declares its recorded public-domain/CC0 image status separately; file originally sourced from official KMSKA IIIF service",
              scope="FULL_SOURCED_ORIGINAL_BYTES_ARCHIVED_FOR_REVIEW_ONLY",
              publicationRightsApproved=False,paintingFrameFreeVerified=False)
     except Exception as exc:
