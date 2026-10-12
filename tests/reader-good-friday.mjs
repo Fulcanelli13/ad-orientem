@@ -84,6 +84,24 @@ assert.ok(!jewishSurface.paragraphs.some(x=>/plenitudine gentium/.test(x.latin))
 const later=buildGoodFridayReader({graph,payload,jewishPrayerVariant:"HOLY_SEE_2008"});
 const laterJewish=later.steps.find(x=>x.recordId==="GF-SOP-08-K");
 assert.ok(laterJewish.paragraphs.some(x=>/plenitudine gentium/.test(x.latin)),"explicit 2008 overlay did not resolve");
+// Holy See Secretariat of State 4 February 2008 is the PRIMARY authority
+// for the optional later formula; the printed 1962 prayer stays independent.
+// https://www.vatican.va/roman_curia/secretariat_state/2008/documents/rc_seg-st_20080204_nota-missale-romanum_en.html
+const original1962=payload.solemnPrayers[7].variants.PRINTED_1962;
+const official2008=payload.solemnPrayers[7].variants.HOLY_SEE_2008;
+assert.equal(official2008.intention,
+  "Oremus et pro Iudaeis. Ut Deus et Dominus noster illuminet corda eorum, ut agnoscant Iesum Christum salvatorem omnium hominum.");
+assert.equal(official2008.prayer,
+  "Omnipotens sempiterne Deus, qui vis ut omnes homines salvi fiant et ad agnitionem veritatis veniant, concede propitius, ut plenitudine gentium in Ecclesiam tuam intrante omnis Israel salvus fiat. Per Christum Dominum nostrum. Amen.");
+assert.ok(!official2008.prayer.includes("Per eundem Dominum nostrum"),
+  "2008 Vatican oration must not inherit the printed 1962 conclusion");
+assert.ok(original1962.prayer.includes("qui Iudaeos etiam a tua misericordia non repellis"));
+assert.ok(original1962.prayer.endsWith("per omnia saecula saeculorum. Amen."),
+  "Primary-source correction must never overwrite original 1962 prayer");
+assert.equal(laterJewish.paragraphs.find(x=>x.id==="GF-SOP-08-P").latin,official2008.prayer,
+  "Native Good Friday 2008 reader must show the exact issued conclusion");
+assert.equal(jewishSurface.paragraphs.find(x=>x.id==="GF-SOP-08-P").latin,original1962.prayer,
+  "Native Good Friday printed reader must remain original 1962");
 
 for(const n of [1,2,3]){
   const k=built.steps.find(x=>x.recordId===`GF-X-52${n}`);
