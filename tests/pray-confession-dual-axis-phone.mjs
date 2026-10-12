@@ -93,8 +93,12 @@ try{
   await page.locator(sel+" [data-p435930-conf-path='"+path+"']").tap();
   await page.locator(sel+" [data-p435930-conf-next]").tap();
   await page.waitForSelector(timeline);
+  await page.waitForFunction(()=>document.querySelector(
+   "#aoPray435930.open .aoP435930ConfessionReader .aoDevoCardScroll .aoDevoParagraph[data-ao-devo-active='true']"
+  )!==null,null,{timeout:8000});
   const x=await state();
-  assert.equal(x.stops,count);assert.equal(x.id,id);assert.ok(x.active>=1);
+  assert.equal(x.stops,count);assert.equal(x.id,id);assert.ok(x.active>=1,
+   "Canonical exam step has no illuminated paragraph after paint");
   assert.equal(await page.locator(sel+" .aoP435930ConfOneCard input").count(),0,"Never record answers to examination questions");
   await open();
  }
