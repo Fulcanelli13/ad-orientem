@@ -83,8 +83,15 @@ const prepared={
 };
 
 try{
-  window.__AO_PHONE_PREVIEW=await mountNativeReaderPreview({doc:document,prepared,
-    iconResolver:createHostIconResolver({assets:R17_FROZEN_ACTIVE_ICON_ASSETS})});
+  if(params.get("production")==="1"){
+    // Exercise the actual app entry/default-card selection, not a mock mode.
+    const {mountR17Preview}=await import("../../src/mass/browser-entry.js");
+    const mounted=await mountR17Preview({doc:document,prepared});
+    window.__AO_PHONE_PREVIEW=mounted.preview;
+  }else{
+    window.__AO_PHONE_PREVIEW=await mountNativeReaderPreview({doc:document,prepared,
+      iconResolver:createHostIconResolver({assets:R17_FROZEN_ACTIVE_ICON_ASSETS})});
+  }
   document.documentElement.dataset.harnessReady="true";
 }catch(error){
   window.__AO_PHONE_HARNESS_ERROR=String(error?.stack??error);
