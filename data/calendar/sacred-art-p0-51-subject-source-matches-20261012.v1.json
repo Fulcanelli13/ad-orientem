@@ -19,15 +19,16 @@
     "p0Unresolved": 51,
     "devotions": 9,
     "calendarSaints": 42,
-    "museumOrArchiveSourceMatchedSubjects": 18,
-    "verifiedObjectProposalAssignments": 22,
-    "canonicalDistinctArtworkLeads": 20,
-    "p0WithoutNewObjectMatch": 33,
+    "museumOrArchiveSourceMatchedSubjects": 23,
+    "verifiedObjectProposalAssignments": 27,
+    "canonicalDistinctArtworkLeads": 24,
+    "p0WithoutNewObjectMatch": 28,
     "rubensApostlePanelMatches": 7,
     "humanSelectionsUnchanged": 101,
     "additionalHumanSelections": 0,
     "sourceImagesAcquired": 0,
-    "imagesReleased": 0
+    "imagesReleased": 0,
+    "sharedMarkLukeOriginalPaintings": 1
   },
   "rows": [
     {
@@ -572,8 +573,24 @@
         "ART-rancisco-ans-abot-aint-ark"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-juan-ribalta-p002965",
+          "artist": "Juan Ribalta",
+          "title": "Saint Mark and Saint Luke",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P002965",
+          "relation": "BOTH_NAMED_EVANGELISTS_IN_SAME_PAINTED_PANEL",
+          "note": "Prado 1625 oil-on-canvas predella with Saint Mark and Saint Luke depicted together writing their Gospels; both named saints are shown, not two separate portrait paintings. Source verifies original's identity; compare small-predella composition aesthetically before selection.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -590,8 +607,24 @@
         "ART-orkshop-of-uinten-assys-aint-uke-ainting-the-irgin"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-juan-ribalta-p002965",
+          "artist": "Juan Ribalta",
+          "title": "Saint Mark and Saint Luke",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P002965",
+          "relation": "BOTH_NAMED_EVANGELISTS_IN_SAME_PAINTED_PANEL",
+          "note": "Prado 1625 oil-on-canvas predella with Saint Mark and Saint Luke depicted together writing their Gospels; both named saints are shown, not two separate portrait paintings. Source verifies original's identity; compare small-predella composition aesthetically before selection.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -843,8 +876,24 @@
           "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
         }
       ],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "louvre-crespi-inv259",
+          "artist": "Giuseppe Maria Crespi",
+          "title": "L'Immaculée Conception avec saint Anselme et saint Martin",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010064462",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "INV 259",
+          "relation": "CONTEXTUAL_NAMED_SAINT_ANSELM_IN_MARIAN_GROUP",
+          "note": "Louvre oil-on-canvas 1730–37 explicitly identifies Anselm and Martin; a Marian devotional altarpiece, NOT an individual saint portrait. Avoid claiming authentic appearance of Anselm.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -949,8 +998,24 @@
           "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
         }
       ],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "italy-banchero-0700031704",
+          "artist": "Angelo Giacinto Banchero",
+          "title": "San Lorenzo da Brindisi",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "0700031704",
+          "relation": "EXACT_NAMED_SAINT_LAWRENCE_BRINDISI",
+          "note": "Official Italian national painting catalogue, 1750–99 oil canvas, named saint with skull/book/pen. Govt catalogue notes animated broad and rapid brushstrokes, but masterpiece calibre still uncertain; no approval.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -1268,8 +1333,24 @@
         "ART-uan-icente-asip-he-artyrdom-of-aint-gnes"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rizi-p007637",
+          "artist": "Francisco Rizi",
+          "title": "Santa Inés (Saint Agnes)",
+          "sourceUrl": "https://www.museodelprado.es/coleccion/obra-de-arte/santa-ines/0f8c1439-ae5c-47d6-bad3-757d086389fd",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P007637",
+          "relation": "EXACT_NAMED_SAINT_AGNES",
+          "note": "Prado c.1665 oil-on-canvas 95 x 41 cm by Francisco Rizi; vivid dynamic Baroque brushwork, likely predella or small retable side; still needs artistic selection.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -1308,5 +1389,6 @@
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
     }
-  ]
+  ],
+  "additionalBatch": "Prado Juan Ribalta joint evangelists, Rizi Saint Agnes, Louvre Crespi named Anselm and Italian Banchero Saint Lawrence; user visual review still required; no artwork downloaded."
 }
