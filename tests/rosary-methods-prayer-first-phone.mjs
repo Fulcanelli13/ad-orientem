@@ -92,9 +92,11 @@ try{
    await toggle.click();
    assert.equal(await panel.isVisible(),false);
    await chooser.locator("[data-p435930-rosary-begin]").click();
-   await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot")?.dataset?.aoRosaryActiveRoot==="true",
+   await page.waitForFunction(()=>
+     window.AO_ROSARY_V381?.getMethod?.()==="ordinary" &&
+     !!document.querySelector("#aoPrayerBookRoot.open .pbShell"),
      null,{timeout:18000});
-   assert.ok(await page.locator("#aoPrayerBookRoot .pbShell").count()>=1,
+   assert.ok(await page.locator("#aoPrayerBookRoot.open .pbShell").count()>=1,
      "Begin must open canonical Rosary donor, not a second prayer engine");
    assert.deepEqual(errors,[],"Uncaught Rosary errors: "+errors.slice(0,5).join("; "));
    console.log("PASS "+width+"px Rosary first-action, all methods, 5/15, reading, provenance, donor");
