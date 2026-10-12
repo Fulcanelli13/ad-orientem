@@ -18,7 +18,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoDevoCardTitle{font:500 clamp(23px,5.6vw,30px)/1.18 Georgia,serif;color:var(--text,#f1e7d7);margin:4px 0}
 #aoPray435930 .aoDevoCardLatin{font:italic 12px/1.45 Georgia,serif;color:var(--muted,#aeb2b8);margin:0}
 #aoPray435930 .aoDevoCardScroll{height:min(55dvh,540px);min-height:min(320px,48dvh);overflow-y:auto;overscroll-behavior-y:contain;scrollbar-width:thin;padding:22px 14px 26dvh;box-sizing:border-box;display:flex;flex-direction:column;gap:22px}
-#aoPray435930 .aoDevoCardScroll .aoP435930PrayerUnit{flex:0 0 auto;min-height:0;opacity:1!important;transform:none!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoDevoCardScroll .aoP435930PrayerUnit{flex:0 0 auto;min-height:0;opacity:1!important;transform:none!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important}
 #aoPray435930 .aoDevoCardScroll .aoP435930PrayerUnit>small{display:none!important}
 #aoPray435930 .aoDevoCardScroll .aoP435930PrayerUnit button{font:400 clamp(17px,4.4vw,21px)/1.6 Georgia,serif!important;text-align:left}
 #aoPray435930 .aoDevoCardScroll .aoAngelusDialogueLine{display:flex;align-items:flex-start;gap:9px;padding:8px 2px;border:0!important;background:none!important}
