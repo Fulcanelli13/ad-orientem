@@ -124,16 +124,22 @@ export function installRosaryDualAxisReader({
  // sheet between canonical beads while retaining our timeline node.
  timeline._aoRosaryJump=jump;
  timeline._aoRosaryCurrent=selected;
- if(!timeline.dataset.aoRosaryDispatchBound){
-  timeline.dataset.aoRosaryDispatchBound="1";
-  // Click listener above always dispatches through latest closure below.
-  timeline.addEventListener("click",e=>{
-   const b=e.target.closest("[data-ao-rosary-chapter],[data-ao-rosary-move]");
-   if(!b)return;
-   const i=b.dataset.aoRosaryChapter!==undefined?Number(b.dataset.aoRosaryChapter):
-    Number(timeline._aoRosaryCurrent)+Number(b.dataset.aoRosaryMove);
-   timeline._aoRosaryJump?.(i);
-  });
+ const win=doc.defaultView;
+ // The archived player captures clicks high in the tree. Delegate named-card
+ // selection at window capture and stop only a matched timeline control.
+ if(!win.__aoRosaryChapterCaptureBound){
+  win.__aoRosaryChapterCaptureBound=true;
+  win.addEventListener("click",event=>{
+   const button=event.target.closest?.("#aoPrayerBookRoot.open [data-ao-rosary-chapter],#aoPrayerBookRoot.open [data-ao-rosary-move]");
+   if(!button)return;
+   const host=button.closest("[data-ao-rosary-timeline]");
+   if(!host)return;
+   event.preventDefault();event.stopImmediatePropagation();
+   const next=button.dataset.aoRosaryChapter!==undefined?
+    Number(button.dataset.aoRosaryChapter):
+    Number(host._aoRosaryCurrent)+Number(button.dataset.aoRosaryMove);
+   host._aoRosaryJump?.(next);
+  },true);
  }
  const focus=()=>{
   const all=[...sheet.querySelectorAll("[data-pb-vern],[data-pb-latin],.lab-prayer-sheet p,.lab-prayer-sheet blockquote")]
