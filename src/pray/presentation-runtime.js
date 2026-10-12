@@ -1563,7 +1563,41 @@ function scriptureFlip(d,full=false){
  return `<button type="button" class="aoP435930ScriptureFlip" data-p435930-card-flip aria-label="${esc(L('Switch Scripture language','Changer la langue de l’Écriture'))}"><span data-face-v>${ve}</span><span data-face-la hidden>${la}</span><i>LA ↔ ${isFr()?'FR':'EN'}</i></button>`
 }
 async function loadScriptureInto(selector,kind,ref,full,guard){
- const token=guard();try{const svc=runtime()?.scriptureService;if(!svc)throw new Error('Scripture service unavailable');const d=await svc.load(kind,{en:ref,fr:ref,lat:ref});if(token!==guard())return;const box=document.querySelector(selector);if(!box)return;box.innerHTML=scriptureFlip(d,full)}catch(e){if(token!==guard())return;const box=document.querySelector(selector);if(box)box.innerHTML=callout(esc(L('Scripture text could not be loaded.','Le texte de l’Écriture n’a pas pu être chargé.')),'warn')}
+ const token=guard();
+ let deadline=null;
+ try{
+  const svc=runtime()?.scriptureService;
+  if(!svc||typeof svc.load!=='function')throw new Error('Canonical Scripture service unavailable');
+  // A silent upstream Scripture request must not leave the prayer on
+  // "Loading…" indefinitely. The deadline changes UI state, not the source
+  // or edition; late responses are ignored rather than installed.
+  const d=await Promise.race([
+   Promise.resolve().then(()=>svc.load(kind,{en:ref,fr:ref,lat:ref})),
+   new Promise((_,reject)=>{deadline=setTimeout(
+    ()=>reject(new Error('Canonical Scripture source request timed out')),12000)})
+  ]);
+  if(token!==guard())return;
+  const box=document.querySelector(selector);
+  if(!box)return;
+  // The service may resolve a valid reference shell without text. Never
+  // treat an empty bilingual response as a successfully loaded Psalm/Gospel.
+  if(!scriptureRows(d,'vernacular',full).length&&!scriptureRows(d,'la',full).length)
+   throw new Error('No original Scripture verses in resolved source');
+  box.innerHTML=scriptureFlip(d,full);
+  box.dataset.aoScriptureContent='ready';
+  box.dataset.aoScriptureSource=kind;
+ }catch(e){
+  if(token!==guard())return;
+  const box=document.querySelector(selector);
+  if(!box)return;
+  box.dataset.aoScriptureContent='unavailable';
+  box.dataset.aoScriptureSource=kind;
+  box.innerHTML=callout(esc(L('Scripture text could not be loaded. This passage has not been replaced by a paraphrase.','Le texte de l’Écriture n’a pas pu être chargé. Aucun texte de remplacement n’a été inventé.')),'warn')+
+   `<button class="aoP435930Secondary" type="button" data-p435930-scripture-retry="${esc(kind)}">${esc(L('Retry original Scripture text','Réessayer de charger le texte biblique'))}</button>`;
+  console.warn('Canonical Prayer Scripture source unavailable',kind,ref,String(e?.message||e));
+ }finally{
+  if(deadline!==null)clearTimeout(deadline);
+ }
 }
 async function guidedWsText(title,key,language='en'){
  const ck='ao2:v435930:ws:'+language+':'+key;try{const c=localStorage.getItem(ck);if(c)return c}catch{}
@@ -1651,9 +1685,20 @@ async function ensureLitany(){
  const token=++LIT.token;
  const witness=LITANY_SOURCE_WITNESSES[lang()]||LITANY_SOURCE_WITNESSES.en;
  try{
-  const raw=await guidedWsText(witness.title,witness.cacheKey,lang());
+  const language=lang();
+  const raw=await guidedWsText(witness.title,witness.cacheKey,language);
   if(token!==LIT.token)return;
-  LIT.sections=paginateLitanyProper(extractLitanyProper(raw,lang()),lang());
+  let proper;
+  try{
+   proper=extractLitanyProper(raw,language);
+   LIT.sections=paginateLitanyProper(proper,language);
+  }catch(error){
+   // A malformed downloaded transcript must never be kept forever in the
+   // offline/local witness cache. Evict only this exact historical witness,
+   // so Retry is able to fetch and validate it anew on the next attempt.
+   try{localStorage.removeItem('ao2:v435930:ws:'+language+':'+witness.cacheKey)}catch{}
+   throw error;
+  }
   LIT.step=0;LIT.loading=false;render();
  }catch(error){
   if(token!==LIT.token)return;
@@ -2219,6 +2264,18 @@ function onClick(e){
  if(b.dataset.p435930LibCat!=null){LIB.cat=b.dataset.p435930LibCat;return render()}
  if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;return render()}
  if(b.matches('[data-p435930-lib-back]')){LIB.open=null;return render()}
+ if(b.dataset.p435930ScriptureRetry){
+  // Retry only the exact currently displayed source identity, never switch
+  // translation or fetch an alternative unsourced prayer text silently.
+  if(view==='penitential'&&b.dataset.p435930ScriptureRetry==='psalm'){
+   const ref='Psalms '+PEN_PSALMS[Math.max(0,Math.min(6,PEN.step))].trad+':1';
+   ++PEN.token;loadScriptureInto('[data-p435930-pen-scripture]','psalm',ref,true,()=>PEN.token);
+  }else if(view==='sevenWords'&&b.dataset.p435930ScriptureRetry==='gospel'){
+   const ref=WORD_REFS[Math.max(0,Math.min(6,SEVEN.step))];
+   ++SEVEN.scriptToken;loadScriptureInto('[data-p435930-word-scripture]','gospel',ref,false,()=>SEVEN.scriptToken);
+  }
+  return;
+ }
  if(b.dataset.p435930PenStep!=null){PEN.step=Math.max(0,Math.min(6,+b.dataset.p435930PenStep));return render()}
  if(b.matches('[data-p435930-pen-prev]')){PEN.step=Math.max(0,PEN.step-1);return render()}
  if(b.matches('[data-p435930-pen-next]')){PEN.step=Math.min(6,PEN.step+1);return render()}
