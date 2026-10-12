@@ -49,7 +49,15 @@ async function focusCue(page,cueId){
  },cueId);
  assert(status.found,"source cue "+cueId+" has no real rendered paragraph for "+result.section);
  await page.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getActiveCue()===id,cueId,{timeout:4500}).catch(()=>{});
- return {status,active:await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue())};
+ const active=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue());
+ if(active===cueId){
+   // Cue focus updates before renderMoment's next frame; source-owned bell and
+   // voice checks must read the rendered snapshot, not the preceding one.
+   await page.waitForFunction(id=>
+     window.__AO_PHONE_PREVIEW.getNativeEventState()?.nativeCueId===id,
+     cueId,{timeout:4500});
+ }
+ return {status,active};
 }
 try{
  await mkdir(artifactDir,{recursive:true});
