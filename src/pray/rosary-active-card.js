@@ -78,7 +78,8 @@ export function installRosaryActiveCard({root,stepIndex,chapters,navigate}={}){
  if(!mounted.has(flip)){
   flip.addEventListener("scroll",queue,{passive:true});
   flip.addEventListener("touchstart",event=>{
-   if(event.touches.length!==1||event.target.closest("button,a,summary")){
+   const control=event.target.closest?.("button,a,summary");
+   if(event.touches.length!==1||(control&&control!==flip)){
     state.touch=null;return;
    }
    state.touch={x:event.touches[0].clientX,y:event.touches[0].clientY};
