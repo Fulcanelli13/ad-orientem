@@ -15,8 +15,15 @@ const validFile = image => image
   && image.colour === true && image.museumOriginal === true
   && image.frameFree === true && image.glareFree === true;
 
+// Curator hard exclusions apply to ALL consumers of the canonical release
+// gate (Calendar, Home, Prayer). Similar-looking works still require human
+// aesthetic review: names alone cannot identify visual style reliably.
+export const EXCLUDED_SACRED_ART_ARTISTS = Object.freeze(["Fra Angelico", "El Greco"]);
+const curatorRejectedArtist = artist => EXCLUDED_SACRED_ART_ARTISTS.some(name =>
+  new RegExp("\\b" + name.replace(/ /g,"[ -]+") + "\\b","i").test(String(artist||"")));
+
 export function eligibleSacredArtwork(work) {
-  return !!work && work.medium === "painting"
+  return !!work && !curatorRejectedArtist(work.artist) && work.medium === "painting"
     && work.source?.rights === "CC0"
     && /^(?:https:\/\/www\.metmuseum\.org\/art\/collection\/search\/\d+|https:\/\/www\.artic\.edu\/artworks\/\d+|https:\/\/www\.nga\.gov\/artworks\/\d+-[a-z0-9-]+|https:\/\/clevelandart\.org\/art\/[\d.a-z]+)$/.test(work.source?.objectUrl || "")
     && ["OBJECT_PAGE_CHECKED","MUSEUM_API_CC0_VERIFIED","NGA_OBJECT_PAGE","MUSEUM_API_PUBLIC_DOMAIN_VERIFIED"].includes(work.review?.source)
