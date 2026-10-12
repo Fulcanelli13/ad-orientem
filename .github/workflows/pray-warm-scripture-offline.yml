@@ -3,6 +3,7 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - "index.html"
       - "tests/pray-warm-original-scripture-offline-phone.mjs"
       - "src/pray/presentation-runtime.js"
       - ".github/workflows/pray-warm-scripture-offline.yml"
