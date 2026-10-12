@@ -33,13 +33,21 @@ def main():
                       "days":days,"summary":{"dates":365}}
         (base/"registry.json").write_text(json.dumps(registry),encoding="utf8")
         (base/"association.json").write_text(json.dumps(associations),encoding="utf8")
+        decisions={"schema":"AO_SACRED_ART_CURATOR_RECONCILIATION_V1",
+                   "status":"USER_EDITORIAL_REVIEW_ONLY_NOT_PUBLISHED",
+                   "selections":[{"targetId":"rosary.joy1","artworkId":"test-1","originalSha256":sha}],
+                   "refusals":[{"targetId":"devotion.adoration","artworkId":"test-1","originalSha256":sha}]}
+        (base/"decisions.json").write_text(json.dumps(decisions),encoding="utf8")
         html=base/"atlas.html"
         subprocess.run([sys.executable,str(BUILDER),"--registry",str(base/"registry.json"),
                         "--associations",str(base/"association.json"),
+                        "--decisions",str(base/"decisions.json"),
                         "--images-root",str(originals),"--output",str(html),"--strict-images"],check=True)
         content=html.read_text(encoding="utf8")
         for required in ("AO_SACRED_ART_FULL_YEAR_NEGATIVE_EXCEPTION_REVIEW_V1",
                          "sacred-art-curator-review.json","APPROVE_ARTWORK_EDITORIALLY",
+                         "AO_SACRED_ART_CURATOR_NEGATIVE_REVIEW_V3","reviewComplete",
+                         "sourceFingerprints","DRAFT_NO_INFERRED_APPROVAL",
                          "AO_SACRED_ART_CURATOR_REVIEW_V2","MISPLACED_ON_DAY",
                          "REJECT_ARTWORK_GLOBALLY","INVESTIGATE_FURTHER",
                          "2026-01-01","Test Painting","Unacquired Painting",
@@ -49,6 +57,21 @@ def main():
         assert report["artworks"]==1 and report["calendarDates"]==365
         assert report["linkedArtworkDayAssociations"]==1
         assert not report["missingPreviews"]
+        import re
+        embedded=re.search(r'<script id="dataset" type="application/json">(.+?)</script>',content,re.S)
+        assert embedded, "One canonical offline payload required"
+        payload=json.loads(embedded.group(1))
+        assert payload["policy"]["unflagged"]=="DRAFT_UNTIL_COMPLETION_CONFIRMED"
+        assert payload["priorCuratorReview"]["selectionCount"]==1
+        assert payload["priorCuratorReview"]["refusalCount"]==1
+        assert payload["items"][0]["selectedSubjectKeys"]==["rosary.joy1"]
+        assert payload["items"][0]["refusedSubjectKeys"]==["devotion.adoration"]
+        assert payload["items"][0]["publicationApproved"] is False
+        assert payload["summary"]["previewMissing"]==0
+        assert len(payload["sourceFingerprints"]["originalsSha256"])==64
+        assert len(payload["sourceFingerprints"]["dateAssociationsSha256"])==64
+        assert 'UNFLAGGED_EDITORIALLY_ACCEPTED_EXCEPT_POLICY_EXCLUSIONS' in content
+        assert 'published' not in payload["priorCuratorReview"]["status"].lower()
         script=content.rsplit("<script>",1)[1].split("</script>",1)[0]
         js=base/"atlas.js"
         js.write_text(script,encoding="utf8")
