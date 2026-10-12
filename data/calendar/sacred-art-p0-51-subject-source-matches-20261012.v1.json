@@ -19,10 +19,10 @@
     "p0Unresolved": 51,
     "devotions": 9,
     "calendarSaints": 42,
-    "museumOrArchiveSourceMatchedSubjects": 40,
-    "verifiedObjectProposalAssignments": 44,
-    "canonicalDistinctArtworkLeads": 40,
-    "p0WithoutNewObjectMatch": 11,
+    "museumOrArchiveSourceMatchedSubjects": 44,
+    "verifiedObjectProposalAssignments": 48,
+    "canonicalDistinctArtworkLeads": 44,
+    "p0WithoutNewObjectMatch": 7,
     "rubensApostlePanelMatches": 7,
     "humanSelectionsUnchanged": 101,
     "additionalHumanSelections": 0,
@@ -31,7 +31,8 @@
     "sharedMarkLukeOriginalPaintings": 1,
     "verifiedLisieuxCelineLikenessSharedBetweenTwoSubjects": 1,
     "completeBertinGreekDoctorsFromVersailles": 3,
-    "sourceAuthenticatedNewAssignmentsInThisTurn": 12
+    "sourceAuthenticatedNewAssignmentsInThisTurn": 12,
+    "researchedCandidatesAddedThisTurn": 9
   },
   "rows": [
     {
@@ -1084,8 +1085,23 @@
           "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
         }
       ],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "italy-l0060-albert",
+          "artist": "Giuseppe Franchi",
+          "title": "Portrait of Saint Albert the Great",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0060-00113_R03",
+          "inventory": "L0060-00113_R03",
+          "relation": "EXACT_SAINT_PROVISIONAL_CATALOGUE",
+          "note": "Existing Italian national catalogue lead; medium and full object record still need independent detail inspection. Not masterwork-certified.",
+          "origin": "INSTITUTIONAL_ART_RESEARCH",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -1502,8 +1518,23 @@
         "ART-ernard-n-zet-pparition-of-the-acred-eart-to-argaret-ary"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "france-PM74001769-margaretmary",
+          "artist": "Bénédict Masson",
+          "title": "Apparition du Sacré-Cœur à sainte Marguerite-Marie Alacoque",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM74001769",
+          "inventory": "PM74001769",
+          "relation": "EXACT_NAMED_SAINT_APPARITION",
+          "note": "French protected oil painting signed 1879; apparition to Margaret Mary, not a standalone Sacred Heart icon.",
+          "origin": "INSTITUTIONAL_ART_RESEARCH",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -1519,8 +1550,23 @@
         "ART-aul-orel-ainted-pisodes-from-ife-of-ur-of-rs"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "france-PM01002671-vianney",
+          "artist": "Unidentified 19th-century painter",
+          "title": "Guérison de saint Jean-Marie Vianney, curé d'Ars",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+          "inventory": "PM01002671",
+          "relation": "EXACT_NAMED_SAINT_HISTORICAL_SCENE",
+          "note": "French state protected 1843 oil original at Ars basilica, showing sickbed with Saint Philomena; not an individual portrait.",
+          "origin": "INSTITUTIONAL_ART_RESEARCH",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -1671,8 +1717,23 @@
         "ART-nonymous-after-imon-ran-ois-aint-incent-de-aul"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "vesoul-984-6-1-gerome-vincent",
+          "artist": "Jean-Léon Gérôme",
+          "title": "Saint Vincent de Paul",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Vincent_de_Paule_-_Gerome.jpg",
+          "inventory": "Musée Jean-Léon-Gérôme, Vesoul 984.6.1",
+          "relation": "EXACT_NAMED_SAINT_FRENCH_CHARITY_SCENE",
+          "note": "1847 174×136 cm oil: museum accession and image source on Commons; corroborated by physical museum documentation, but official first-party museum object catalogue still pending. Photo reuse and artwork style not approved.",
+          "origin": "MUSEUM_OBJECT_SECONDARY_PHOTOGRAPHIC_SOURCE",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
