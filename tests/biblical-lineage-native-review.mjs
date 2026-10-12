@@ -52,6 +52,12 @@ for(const root of ["adam","noah","abraham","jacob","joseph"]){
  const sourceRows=genesisGenerationRows(data,{root,depth:6});
  const graph=renderGenesisAncestryDiagram(sourceRows,{root,language:"fr"});
  assert.match(graph,/data-bible-kin-diagram/);
+ assert.match(graph,/data-bible-kin-zoom="in"/);
+ assert.match(graph,/data-bible-kin-zoom="out"/);
+ assert.match(graph,/data-bible-kin-zoom="reset"/);
+ assert.match(graph,/data-bible-kin-base-width="/);
+ assert.match(graph,/data-bible-kin-zoom-value[^>]*>100%</);
+
  assert.equal((graph.match(/<path d=/g)||[]).length,sourceRows.length,
   "every source-backed family edge must have exactly one visual connector: "+root);
  assert.match(graph,/https:\/\/|https:&amp;/,"original source URLs remain present");
