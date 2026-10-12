@@ -1,0 +1,300 @@
+{
+  "schema": "AO_MR1962_HOLY_WEEK_B09_VATICAN_IMAGE_WITNESS_V1",
+  "version": 1,
+  "editorialDate": "2026-10-12",
+  "governingIssue": 894,
+  "source": {
+    "edition": "1962 Vatican Missale Romanum",
+    "imageIndex": "https://gregobase.selapa.net/source.php?id=42&images=1",
+    "attribution": "Scans supplied by Church Music Association of America; hosted in GregoBase source no. 42.",
+    "use": "Research hyperlinks only; image bytes NOT copied into Ad Orientem, no redistributable rights inferred.",
+    "printedPagination": "Original Missale Romanum printed Arabic-numbered pages, NOT 2019 July PDF numbering.",
+    "imageInspection": "Direct page image reviewed at stated source image URL; limited visually located extracts, not line-by-line diplomatic collation."
+  },
+  "ancestor": {
+    "B04": "data/mass/independent-1962-holy-week-b04.v1.json",
+    "B05": "data/mass/independent-1962-holy-week-b05-text-audit.v1.json",
+    "policy": "These ledgers remain authoritative for open textual completeness defects; B09 only adds original printed-image evidence."
+  },
+  "domain": "1962 restored Holy Week; 1955/1962 ritual, NOT pre-1955",
+  "rites": [
+    "PALM_1962",
+    "HOLY_THURSDAY_1962",
+    "GOOD_FRIDAY_1962",
+    "EASTER_VIGIL_1962"
+  ],
+  "dates2026": {
+    "PALM_1962": "2026-03-29",
+    "HOLY_THURSDAY_1962": "2026-04-02",
+    "GOOD_FRIDAY_1962": "2026-04-03",
+    "EASTER_VIGIL_1962": "2026-04-04"
+  },
+  "witnesses": [
+    {
+      "id": "BEGIN_PALM_BLESSING",
+      "rite": "PALM_1962",
+      "printedPage": 130,
+      "scanId": 212,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/212.png",
+      "reading": "printed heading DOMINICA II PASSIONIS SEU IN PALMIS; DE SOLEMNI PALMARUM PROCESSIONE",
+      "runtimePath": null,
+      "evidenceClass": "visually-observed-rubrical-structure",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "PALM_OPENING_ANTIPHON",
+      "rite": "PALM_1962",
+      "printedPage": 130,
+      "scanId": 212,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/212.png",
+      "reading": "Hosanna filio David",
+      "runtimePath": "palm.texts.openingAntiphon",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "PALM_BLESSING_ORATION",
+      "rite": "PALM_1962",
+      "printedPage": 130,
+      "scanId": 212,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/212.png",
+      "reading": "Benedic quaesumus Domine hos palmarum ramos",
+      "runtimePath": "palm.texts.blessingPrayer",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "PALM_GOSPEL_MATTHEW_21",
+      "rite": "PALM_1962",
+      "printedPage": 132,
+      "scanId": 214,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/214.png",
+      "reading": "In illo tempore Cum appropinquasset Iesus Ierosolymis",
+      "runtimePath": "palm.texts.gospel",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "PALM_PROCEED",
+      "rite": "PALM_1962",
+      "printedPage": 133,
+      "scanId": 215,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/215.png",
+      "reading": "Procedamus in pace",
+      "runtimePath": "palm.texts.procedamus",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "PALM_GLORIA_LAUS",
+      "rite": "PALM_1962",
+      "printedPage": 133,
+      "scanId": 215,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/215.png",
+      "reading": "Gloria laus et honor tibi sit",
+      "runtimePath": "palm.texts.gloriaLaus",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "CHRISM_MASS_DISTINCT",
+      "rite": "HOLY_THURSDAY_1962",
+      "printedPage": 153,
+      "scanId": 235,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/235.png",
+      "reading": "DE MISSA CHRISMATIS",
+      "runtimePath": null,
+      "evidenceClass": "visually-observed-rubrical-structure",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": "Chrism Mass MUST NOT be treated as the Holy Thursday evening Mass."
+    },
+    {
+      "id": "EVENING_MASS_DISTINCT",
+      "rite": "HOLY_THURSDAY_1962",
+      "printedPage": 154,
+      "scanId": 236,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/236.png",
+      "reading": "DE MISSA SOLEMNI VESPERTINA IN CENA DOMINI",
+      "runtimePath": null,
+      "evidenceClass": "visually-observed-rubrical-structure",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "HOLY_THURSDAY_INTROIT",
+      "rite": "HOLY_THURSDAY_1962",
+      "printedPage": 154,
+      "scanId": 236,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/236.png",
+      "reading": "Nos autem gloriari oportet in Cruce Domini nostri Iesu Christi",
+      "runtimePath": "resolvedProper.introit.lat",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "GOOD_FRIDAY_NOT_AN_ORDINARY_MASS",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 161,
+      "scanId": 243,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/243.png",
+      "reading": "DE SOLEMNI ACTIONE LITURGICA POSTMERIDIANA IN PASSIONE ET MORTE DOMINI",
+      "runtimePath": null,
+      "evidenceClass": "visually-observed-rubrical-structure",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_CHURCH",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 167,
+      "scanId": 249,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/249.png",
+      "reading": "Oremus dilectissimi nobis pro Ecclesia sancta Dei",
+      "runtimePath": "friday.solemnPrayers[0].intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_NEEDS",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 172,
+      "scanId": 254,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/254.png",
+      "reading": "Oremus dilectissimi nobis Deum Patrem omnipotentem",
+      "runtimePath": "friday.solemnPrayers[5].intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "CROSS_UNVEILING",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 176,
+      "scanId": 258,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/258.png",
+      "reading": "Ecce lignum Crucis in quo salus mundi pependit",
+      "runtimePath": "friday.cross.unveiling.versicle",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "CROSS_BEFORE_COMMUNION",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 179,
+      "scanId": 261,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/261.png",
+      "reading": "DE QUARTA PARTE ACTIONIS LITURGICAE SEU DE COMMUNIONE",
+      "runtimePath": null,
+      "evidenceClass": "visually-observed-rubrical-structure",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "FRIDAY_PATERNOSTER",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 180,
+      "scanId": 262,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/262.png",
+      "reading": "Pater noster qui es in caelis sanctificetur nomen tuum",
+      "runtimePath": "friday.communion.pater",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "FRIDAY_EMBOLISM",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 180,
+      "scanId": 262,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/262.png",
+      "reading": "Libera nos quaesumus Domine ab omnibus malis",
+      "runtimePath": "friday.communion.libera",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "VIGIL_BLESSING_FIRE",
+      "rite": "EASTER_VIGIL_1962",
+      "printedPage": 182,
+      "scanId": 264,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/264.png",
+      "reading": "Deus qui per Filium tuum angularem scilicet lapidem",
+      "runtimePath": "vigil.donor.newFire.lat",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "VIGIL_HEADING",
+      "rite": "EASTER_VIGIL_1962",
+      "printedPage": 182,
+      "scanId": 264,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/264.png",
+      "reading": "SABBATO SANCTO DE VIGILIA PASCHALI",
+      "runtimePath": null,
+      "evidenceClass": "visually-observed-rubrical-structure",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "EXSULTET_O_FELIX_CULPA",
+      "rite": "EASTER_VIGIL_1962",
+      "printedPage": 190,
+      "scanId": 272,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/272.png",
+      "reading": "O felix culpa quae talem ac tantum meruit habere Redemptorem",
+      "runtimePath": "vigil.donor.exsultet.lat",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "EXSULTET_O_VERE_BEATA",
+      "rite": "EASTER_VIGIL_1962",
+      "printedPage": 192,
+      "scanId": 274,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/274.png",
+      "reading": "O vere beata nox quae exspoliavit Aegyptios",
+      "runtimePath": "vigil.donor.exsultet.lat",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "FONT_BLESSING_EXTENDED",
+      "rite": "EASTER_VIGIL_1962",
+      "printedPage": 205,
+      "scanId": 287,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/287.png",
+      "reading": "Qui te de paradisi fonte manare fecit",
+      "runtimePath": null,
+      "evidenceClass": "visually-observed-rubrical-structure",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": "Font blessing source is lengthy; do not certify its full words from a single page."
+    }
+  ],
+  "certification": {
+    "status": "PARTIAL_IMAGE_ANCHORS_ONLY",
+    "notCertified": [
+      "every Latin word",
+      "all Holy Week folios",
+      "all liturgical instructions",
+      "speaker/chant role attribution",
+      "approved French/English translations",
+      "optional sacrament ceremonies",
+      "all 1962 Calendar dates"
+    ],
+    "B05OpenItemsUnchanged": 17,
+    "prohibition": "No Holy Week textual-completion or functional-release certification from image incipit agreements; keep already identified omissions explicitly open."
+  }
+}
