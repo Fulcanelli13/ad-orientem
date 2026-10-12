@@ -13,6 +13,9 @@ const READY=new URL("__ao_bootstrap_completed__",BASE).href;
 const MAX_ITEMS=320,MAX_BYTES=35_000_000;
 let stagedJob=null,activeVersion=null;
 const liveClients=new Map();
+ // Only the first-use Prayer graph is promoted from a lazy module graph into
+ // the committed bootstrap. Other routes retain normal on-demand caching.
+const OFFLINE_CRITICAL_LAZY_OWNER=new URL("src/pray/browser-entry.js",BASE).href;
 
 const scoped=url=>{
  try{const u=new URL(url,BASE);return u.origin===BASE.origin&&u.pathname.startsWith(BASE.pathname)&&!u.search&&!u.hash?u.href:null}
@@ -64,6 +67,14 @@ const staticDeps=(text,url)=>{
   // Static ESM graph only; deliberately omit first-use dynamic imports.
   const rx=/\b(?:import|export)\s+(?:(?:[^;]{0,500}?)\s+from\s+)?["'](\.{1,2}\/[^"']+)["']/g;
   for(const m of text.matchAll(rx)){try{const u=scoped(new URL(m[1],url).href);if(u)result.push(u)}catch{}}
+  if(url===OFFLINE_CRITICAL_LAZY_OWNER){
+   // Prayer loads four first-use entry points via literal import(). Cache
+   // their static descendants for offline Rosary; do not widen other routes.
+   const lazy=/\bimport\s*\(\s*["'](\.{1,2}\/[^"']+)["']\s*\)/g;
+   for(const m of text.matchAll(lazy)){
+    try{const u=scoped(new URL(m[1],url).href);if(u)result.push(u)}catch{}
+   }
+  }
  }else if(/\.css$/.test(new URL(url).pathname)){
   for(const m of text.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/g)){
    try{const u=scoped(new URL(m[1],url).href);if(u)result.push(u)}catch{}
