@@ -115,8 +115,10 @@ assert.ok(runtime.includes('[data-ao-recitation="${prefs.recitation}"]'),
   "Rosary handoff stopped driving the preserved player's native recitation owner");
 assert.match(runtime,/function launchRosaryPlayer\(resume=captureResume\(\)\)[\s\S]*const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
   "Rosary direct launcher stopped snapshotting canonical preferences before donor mount");
-assert.match(runtime,/if\(b\.dataset\.p435930Own\)\{if\(b\.dataset\.p435930Own==='pray\.rosary'\)\{launchRosaryPlayer\(captureResume\(\)\)/,
+assert.match(runtime,/if\(b\.dataset\.p435930Own\)[\s\S]{0,180}if\(id==='pray\.rosary'\)\{launchRosaryPlayer\(captureResume\(\)\)/,
   "Rosary card no longer bypasses the redundant modular chooser");
+assert.match(runtime,/if\(!internalPrayerView\(id\)\)return showInternalPrayerRouteError\(b,id\)/,
+  "Unknown Prayer route no longer fails closed before changing the Back stack");
 assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitationMode\(seg\)/,
   "Rosary chooser stopped synchronizing recitation through the canonical setter");
 assert.match(runtime,/function applySettingsPreferences\(raw=\{\}\)/,
