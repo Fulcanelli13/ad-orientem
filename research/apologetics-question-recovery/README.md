@@ -21,3 +21,14 @@ Forensic original-question gap report: https://github.com/Fulcanelli13/ad-orient
 Run `node research/apologetics-question-recovery/validate.mjs` at the repository root. The validator checks 282 records and protects the distinction between 576 unresolved historical positions and genuine recovered questions. It does not certify theological contents or links.
 
 Current historical-chat evidence: `HISTORICAL_CONVERSATIONS_MASTER_QUESTION_INDEX.md` and `ORIGINAL_QUESTION_BANK_EVIDENCE.v1.json` (264 indexed original-ID question excerpts, 48 evidenced original bank prefixes; eight complete 25-question lists). Full chat-export verification remains outstanding.
+
+
+## Historical conversation recovery — latest
+
+- `HISTORICAL_CONVERSATIONS_MASTER_QUESTION_INDEX.md`: **380 individually indexed earlier-chat question excerpts**, 48 original bank prefixes, 10 complete 25-question lists. These are *excerpt-recovered*, not independently compared against a full exported ChatGPT transcript.
+- `ORIGINAL_QUESTION_BANK_EVIDENCE.v1.json`: the corresponding attributed source snippets with historical message timestamps.
+- `HISTORICAL_QUESTION_GAPS.csv`: 589 positions in known-size original banks (374 excerpt-recovered question titles; 4 truncated snippets; 211 missing full question texts). Other original banks have unknown source size; do not extrapolate totals.
+- `HISTORICAL_QUESTION_GAPS.md`: readable gaps by original bank.
+- `validate-historical.mjs`: structural check; run with `node research/apologetics-question-recovery/validate-historical.mjs`. This checks archival integrity, not theological certification or export-verbatim fidelity.
+
+The older `ORIGINAL_QUESTION_BANK_RECOVERY.md` and `..._BATCH_B.md` are retained as intermediate snapshots; prefer the current historical master and evidence JSON. The historical original-bank corpus does not replace the separate **282-item GitHub source-file catalogue**. No app release/publication or merge is implied.
