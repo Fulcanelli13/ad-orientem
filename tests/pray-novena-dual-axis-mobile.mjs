@@ -49,6 +49,11 @@ try{
     await page.locator("#aoPray435930.open [data-n1-mode='guided']").evaluate(el=>el.click());
     await page.locator("#aoPray435930.open [data-n1-begin]").evaluate(el=>el.click());
     await page.waitForSelector("#aoPray435930.open .aoN1Reader[data-ao-novena-deck='guided'] .aoDevoSequenceTimeline",{timeout:9000});
+    // Paragraph illumination is committed on the next animation frame;
+    // assert its actual visible state rather than racing the first paint.
+    await page.waitForFunction(()=>document.querySelectorAll(
+      "#aoPray435930.open .aoN1Reader .aoDevoParagraph[data-ao-devo-active='true']").length===1,
+      null,{timeout:3500});
     const n=NOVENA_CORPUS_V4[id];
     const expected=novenaStageChapters({pattern:n.pattern||(id==="immaculate_conception"?"OPENING_DAY_COMMON_CLOSE":"STANDARD"),sharedClosing:!!n.sharedClosingText});
     const state=await page.evaluate(()=>({
