@@ -39,7 +39,7 @@ function readyEnvelope(slot,value,{language="en"}={}){
     const composed=slot==="COLLECT_SET"?row.oneConclusion:null;
     if(composed){
       const latin=composed.segments?.lat,trans=composed.segments?.[language];
-      const rejoin=segment=>segment?.principal+"\\n\\n"+segment?.mission+"\\n"+segment?.conclusion;
+      const rejoin=segment=>segment?.principal+"\n\n"+segment?.mission+"\n"+segment?.conclusion;
       if(composed.status!=="CERTIFIED"||!latin||!trans||
         rejoin(latin)!==String(row.lat??row.la)||
         rejoin(trans)!==vernacularValue(row,language))
@@ -54,8 +54,8 @@ function readyEnvelope(slot,value,{language="en"}={}){
       }));
       paragraphs.push(Object.freeze({
         id:slot+"."+(index+1)+".MISSION",kind:"TEXT",
-        latin:latin.mission+"\\n"+latin.conclusion,
-        vernacular:trans.mission+"\\n"+trans.conclusion,
+        latin:latin.mission+"\n"+latin.conclusion,
+        vernacular:trans.mission+"\n"+trans.conclusion,
         liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
         sourcePath:composed.sourcePath,
       }));
