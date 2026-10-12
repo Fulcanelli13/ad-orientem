@@ -1,6 +1,6 @@
 {
   "schema": "AO_MASS_BIBLE_CERTIFICATION_QUEUE_V1",
-  "version": "2026-10-12-audited-disjoint-scope-batch-3b",
+  "version": "2026-10-12-source-context-batch-4",
   "status": "RESEARCH_ONLY_ZERO_PRINTED_1962_AND_SCRIPTURE_JOINT_CERTIFICATION",
   "sourceOwnership": "Main owns 105 Proper identities; PR #1018 owns 420 upstream chant-source positions; this research ledger only joins source IDs and review statuses; no chant, Bible verse or artwork texts copied.",
   "sourceLinks": [
@@ -66,7 +66,10 @@
     "priorityPacketOverlapWith105": 4,
     "priorityPacketOutside105": 96,
     "printedClusterOverlapWith105": 0,
-    "globalMissalSourcePathCandidates": 1052
+    "globalMissalSourcePathCandidates": 1052,
+    "fortescuePassageLocationsIncludingFT010": 30,
+    "fortescueOriginalPageFacsimilesCertified": 0,
+    "upstreamChantVsVulgateSpotcheckDiscrepancies": 1
   },
   "rows": [
     {
@@ -4877,5 +4880,6 @@
       "complete1962EditionCertification": false,
       "approvedForPublication": false
     }
-  ]
+  ],
+  "additionalEvidenceFile": "data/learn/mass-bible-direct-witness-spotchecks.v1.json"
 }
