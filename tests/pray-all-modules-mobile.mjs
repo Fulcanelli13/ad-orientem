@@ -290,9 +290,20 @@ try{
    const disclosure=page.locator(box+" details.aoP435930Source").last();
    // Wait out native scrolling before a deliberate touch; the global gesture
    // guard correctly rejects synthetic navigation clicks immediately after swipes.
-   await disclosure.locator("summary").scrollIntoViewIfNeeded();
+   // A source drawer can be re-rendered during scroll. Resolve its
+   // selector afresh for each retry, preserving the actual touch interaction.
+   await disclosure.locator("summary").evaluate(node=>node.scrollIntoView({block:"center"}));
    await page.waitForTimeout(350);
-   await disclosure.locator("summary").tap();
+   for(let attempt=0;attempt<3;attempt++){
+     try{
+       await page.locator(box+" details.aoP435930Source").last()
+         .locator("summary").tap({timeout:2200});
+       break;
+     }catch(error){
+       if(attempt===2)throw error;
+       await page.waitForTimeout(150);
+     }
+   }
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open details.aoP435930Source").length>0 &&
      [...document.querySelectorAll("#aoPray435930.open details.aoP435930Source")].at(-1).open===true,
      null,{timeout:4500}).catch(()=>{});
