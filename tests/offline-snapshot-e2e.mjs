@@ -80,6 +80,26 @@ try{
  const offline=await page.evaluate(()=>({screen:!!document.querySelector(".homeScreen"),sw:!!navigator.serviceWorker.controller,version:globalThis.AO_OFFLINE_APP_V1?.status?.version}));
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
+ // The Rosary is a core devotional pilot journey: it must open on a first
+ // offline launch after a completed bootstrap, even before it was opened online.
+ // This exercises the actual first-use dynamic Prayer module graph, not just Home.
+ const offlinePrayOpened=await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open());
+ if(!offlinePrayOpened){
+   console.error("OFFLINE_PRAY_FIRST_USE_DIAGNOSTIC="+JSON.stringify(await page.evaluate(()=>({
+     status:globalThis.AO_PRAY_APP_V1?.status?.(),
+     offline:globalThis.AO_OFFLINE_APP_V1?.status,
+     cacheNames:null,
+     visibleApp:globalThis.AO_APP_SHELL_V1?.status?.()
+   }))));
+ }
+ assert.equal(offlinePrayOpened,true,"Core Rosary reader cannot open on first offline use");
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null})),true,
+  "Ordinary Rosary cannot open from offline Prayer hub");
+ await page.waitForSelector("#aoPrayerBookRoot.open [data-lab-rosary-next]",{timeout:12000});
+ await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").first().tap();
+ assert.ok(await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step>0),
+  "Offline Rosary cannot advance past first prayer");
+ console.log("PASS core Rosary opens and advances on first offline use");
  await context.setOffline(false);
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
  // Open the real Rosary through its production Prayer owner before staging the next release.
