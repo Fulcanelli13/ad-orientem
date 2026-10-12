@@ -167,15 +167,34 @@ try{
   globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66&&
   /Annunciation/.test(document.querySelector("#ao-find-modular-root [data-bible-detail] h2")?.textContent||""),null,{timeout:15000});
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-step]').count(),151);
+ // Regression: the migrated John 2 cleansing stays in public-ministry source
+ // order and retains reversible passage-based navigation from the 181 scenes.
+ await page.locator('#ao-find-modular-root [data-bible-review-surface="cinematic"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="cinematic"&&
+  document.querySelector('#ao-find-modular-root [data-bible-cinematic-review]'),null,{timeout:20000});
+ await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("MINISTRY");
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="69"]'),null,{timeout:15000});
+ for(let i=70;i<=74;i++){
+  await page.locator('#ao-find-modular-root [data-bible-study-direction="1"]').tap({timeout:15000});
+  await page.waitForFunction((index)=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="'+index+'"]'),i,{timeout:15000});
+ }
+ assert.match(await page.locator('#ao-find-modular-root [data-bible-cinematic-review]').innerText(),/Johannine narrative order/);
+ const john2jump=page.locator('#ao-find-modular-root [data-bible-review-jump="82"]');
+ assert.equal(await john2jump.count(),1);
+ await john2jump.tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
+  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===82&&
+  /Temple/.test(document.querySelector("#ao-find-modular-root [data-bible-detail] h2")?.textContent||""),null,{timeout:15000});
+ assert.match(await page.locator('#ao-find-modular-root [data-bible-detail]').innerText(),/John narrates this cleansing/);
 
  await page.locator('#ao-find-modular-root [data-bible-review-surface="timeline"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
   document.querySelectorAll("#ao-find-modular-root [data-bible-step]").length===151,null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="66"]').getAttribute("aria-pressed"),"true","selected Atlas reference restored after research views");
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="82"]').getAttribute("aria-pressed"),"true","migrated John 2 source reference restored after cinematic study");
  await page.locator("#ao-find-modular-root [data-bible-atlas-close]").tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===false&&
   document.querySelector('[data-find-view="map"][data-explore-lens="heritage"]'),null,{timeout:15000});
  assert.equal(errors.length,0,"Uncaught runtime errors: "+errors.join(" | "));
- console.log("PASS Biblical Atlas 390px phone: continuous scroll, milestone-to-event, no invented vision pin, Scripture roundtrip and Explore return");
+ console.log("PASS Biblical Atlas 390px phone: 151 events, John 2 cinematic-to-PUBLIC migration, native Scripture, research holds and Explore return");
  await context.close();
 }finally{await browser?.close().catch(()=>{});await new Promise(ok=>server.close(ok))}
