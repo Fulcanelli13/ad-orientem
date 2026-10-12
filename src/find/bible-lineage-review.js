@@ -22,11 +22,17 @@ export function validateLineageReviewCorpus(data){
     arr(matthew).length!==41||arr(luke).length!==76||
     arr(edges).length!==90||arr(data.profiles).length!==20||arr(data.events).length!==55||
     arr(data.guards).length<10)return false;
- const pairIds=new Set(),edgeIds=new Set(),parents=new Map();
+ const pairIds=new Set(),edgeIds=new Set(),parents=new Map(),personNames=new Map();
  for(const e of edges){
   if(!e.id||edgeIds.has(e.id)||!e.parentId||!e.childId||e.parentId===e.childId||
      !e.parent||!e.child||e.kind!=="scripture-parentage"||
      !e.reference||!url(e.url))return false;
+  // One stable person ID must not secretly name different ancestors.
+  // Different IDs may legitimately share a name (two Enochs, two Lamechs).
+  for(const [personId,name] of [[e.parentId,e.parent],[e.childId,e.child]]){
+   if(personNames.has(personId)&&personNames.get(personId)!==name)return false;
+   personNames.set(personId,name);
+  }
   const pair=e.parentId+" -> "+e.childId;
   if(pairIds.has(pair))return false;
   pairIds.add(pair);edgeIds.add(e.id);
