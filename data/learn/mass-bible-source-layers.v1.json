@@ -1,10 +1,10 @@
 {
   "schema": "AO_MASS_BIBLE_SOURCE_LAYERS_V1",
-  "version": "2026-10-12-batch-1",
+  "version": "2026-10-12-source-corrections-batch-2",
   "status": "EDITORIAL_STUDY_PREVIEW_NOT_1962_WORD_FOR_WORD_CERTIFIED",
   "sourcePolicy": {
     "missalRole": "1962 norm for liturgical wording; wording, variants and cited printed pages await original Latin collation",
-    "bibleRole": "Context chapter, not guaranteed verse-for-verse Latin/Crampon mapping",
+    "bibleRole": "Chapter/verse context checked against specified edition and numbering; Vulgate Psalm split/merge conventions and wording variants are explicit, not assumed equivalent to the 1962 printed Missal",
     "properPolicy": "105 separately source-path-and-Latin-gated Proper identities live in the existing Mass Scripture Context; this study must never override actual readings",
     "meaningPolicy": "Exact/adapted liturgical words, named Scripture figures, doctrinal analogy, typology and private meditations are separate evidence types",
     "rightAndCanon": "No automatically published Bible edition text, no fabricated alignment to R17 LIVE 48 cards or historic Dujardin meditations; native Scripture button available only for 20 unambiguous contextual verse references (with precise source-page link); Vulgate Psalms and Proper examples are held"
@@ -142,7 +142,7 @@
       "id": "MB05",
       "formationStage": "MF01",
       "liturgicalMoment": "Gloria",
-      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
       "liturgicalCue": "Gloria in excelsis Deo",
       "scriptureReference": "Luke 2:14",
       "sourceLinks": [
@@ -156,10 +156,10 @@
         }
       ],
       "reading": {
-        "en": "The opening words echo the angelic hymn at Bethlehem; the remainder of the Mass Gloria is a larger ecclesial hymn.",
-        "fr": "Les premiers mots reprennent le chant des anges à Bethléem ; la suite du Gloria est une hymne ecclésiale plus développée."
+        "en": "The opening of the Mass Gloria takes up the angels’ hymn of Luke 2:14, but the printed Vulgate reads 'Gloria in altissimis Deo', not the liturgical 'Gloria in excelsis Deo'. Only the opening is biblically related; the whole hymn is a later liturgical composition.",
+        "fr": "Le début du Gloria de la Messe reprend le cantique angélique de Luc 2,14, mais la Vulgate donne « Gloria in altissimis Deo », non la formule liturgique « Gloria in excelsis Deo ». Le reste appartient à une hymne liturgique plus développée."
       },
-      "qualification": "OPENING_WORDS_ONLY",
+      "qualification": "ALTISSIMIS_VULGATE_VERSUS_EXCELSIS_MISSAL_NOT_WORD_FOR_WORD",
       "group": "PREPARATION",
       "scriptureReaderRef": "Luke 2:14"
     },
@@ -225,7 +225,7 @@
         },
         {
           "role": "BIBLICAL_CONTEXT",
-          "url": "https://www.newadvent.org/bible/jhn001.htm"
+          "url": "https://www.newadvent.org/bible/joh001.htm"
         }
       ],
       "reading": {
@@ -503,10 +503,10 @@
         }
       ],
       "reading": {
-        "en": "The Canon names Melchisedech, whose offering of bread and wine appears in Genesis. Distinguish this textual reference from later Eucharistic typology.",
-        "fr": "Le Canon nomme Melchisédech, qui apporte du pain et du vin dans la Genèse. Il faut distinguer cette mention explicite de la typologie eucharistique."
+        "en": "Genesis 14:18 identifies Melchisedech as priest of the Most High God and says that he brought forth bread and wine. It does not explicitly narrate a sacrificial offering of those elements. The Roman Canon names Melchisedech and interprets his gift sacrificially; this liturgical theology must not be presented as a direct biblical quotation.",
+        "fr": "Genèse 14,18 nomme Melchisédech prêtre du Dieu Très-Haut et dit qu’il apporta du pain et du vin, sans décrire explicitement un sacrifice de ces espèces. Le Canon romain le nomme et donne à son geste une interprétation sacrificielle qu’il faut distinguer du récit biblique."
       },
-      "qualification": "EXPLICIT_NAME_TYPICAL_MEANING_SEPARATE",
+      "qualification": "GENESIS_PROFERENS_NOT_EXPLICIT_BREAD_WINE_SACRIFICE",
       "group": "CANON",
       "scriptureReaderRef": "Genesis 14:18–20"
     },
@@ -599,7 +599,7 @@
         },
         {
           "role": "BIBLICAL_CONTEXT",
-          "url": "https://www.newadvent.org/bible/jhn001.htm"
+          "url": "https://www.newadvent.org/bible/joh001.htm"
         }
       ],
       "reading": {
@@ -641,7 +641,7 @@
       "liturgicalMoment": "Priest's Communion prayer",
       "classification": "DIRECT_SCRIPTURAL_WORDING",
       "liturgicalCue": "Quid retribuam Domino",
-      "scriptureReference": "Psalm 115:12–13 (Vulgate; 116:12–13 modern)",
+      "scriptureReference": "Psalm 115:3–4 (Clementine Vulgate; Psalm 116:12–13 in modern numbering)",
       "sourceLinks": [
         {
           "role": "1962_MISSAL_ORDER_AND_TEXT",
@@ -649,14 +649,14 @@
         },
         {
           "role": "BIBLICAL_CONTEXT",
-          "url": "https://www.newadvent.org/bible/psa115.htm"
+          "url": "https://vulgate.org/ot/psalms_115.htm"
         }
       ],
       "reading": {
-        "en": "The priest's Communion texts include the psalmic thanksgiving and the chalice of salvation; retain the numbering distinction.",
-        "fr": "La Communion du prêtre comporte l’action de grâces et le calice du salut du psaume. La numérotation doit être précisée."
+        "en": "The priest’s 'Quid retribuam' and 'Calicem salutaris accipiam' derive from the second part of Psalm 116 in modern numbering. In the Clementine Vulgate's separate Psalm 115, these are verses 3–4; some merged-chapter Latin displays number them 12–13. Do not present the merged numbering as the Clementine verse index.",
+        "fr": "Le « Quid retribuam » et le « Calicem salutaris accipiam » viennent de la seconde partie du psaume 116 selon la numérotation moderne. Dans le psaume 115 distinct de la Vulgate clémentine, il s’agit des versets 3–4 ; certaines éditions latines regroupées les numérotent 12–13. Ne pas confondre ces systèmes."
       },
-      "qualification": "VULGATE_PSALM_NUMBERING",
+      "qualification": "CLEMENTINE_115_3_4_MODERN_116_12_13",
       "group": "COMMUNION"
     },
     {
@@ -673,7 +673,7 @@
         },
         {
           "role": "BIBLICAL_CONTEXT",
-          "url": "https://www.newadvent.org/bible/jhn001.htm"
+          "url": "https://www.newadvent.org/bible/joh001.htm"
         }
       ],
       "reading": {
