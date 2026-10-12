@@ -86,7 +86,9 @@ try{
    assert.equal(initial.form,form);
    assert.equal(initial.formScenario.family,family);
    assert.equal(initial.mode,"LIVE");
-   assert.equal(initial.productCards,48,"source-first LIVE 48-card product lost for "+form+"/"+family);
+   const expectedCards=form==="LOW"?39:48;
+   assert.equal(initial.productCards,expectedCards,
+     "form-specific LIVE card count lost for "+form+"/"+family);
    assert(!initial.overflow && initial.rootWidth<=initial.viewportWidth+1,"phone horizontal overflow");
    assert(initial.noImplicitReverence,"the app inferred a pretext priest reverence");
    const samples={};
@@ -128,7 +130,7 @@ try{
     }
     samples[cue]={...state,scroll:focus.status,exactFocusReached:state.focus===cue};
     if(cue==="AO.SM.C0174" && family==="VOTIVE"){
-      const filename=form.toLowerCase()+"-host-elevation-390px.png";
+      const filename=form.toLowerCase()+"-host-elevation-"+viewport.width+"px.png";
       await page.screenshot({path:resolve(artifactDir,filename),animations:"disabled"});
     }
    }
@@ -141,11 +143,12 @@ try{
  }
  const summary={schema:"ao-mass-live-batch4-acceptance-matrix-v1",total:results.length,
   formCount:forms.length,scenarioCount:families.length,
+  explicitPresentationRule:"LOW_SOURCE_39__SUNG_LIVE_PRODUCT_48",
   distinctSourceCueSamples:["C0075","C0112","C0174","C0181","C0212"],
   emulatorNotPhysicalDevice:true,syntheticProperNotLiturgicalCertification:true,
   results};
  await writeFile(resolve(artifactDir,"acceptance-matrix.json"),JSON.stringify(summary,null,2)+"\n");
- console.log("PASS Batch 4: "+results.length+" rendered four-form × Votive/Requiem phone scenarios; 48-card state, source channels, no invented ministers, phone geometry; screenshots and structured manifest retained.");
+ console.log("PASS Batch 4: "+results.length+" four-form × Votive/Requiem phone scenarios; Low=39 and Sung=48, source-owned channels, no invented ministers, phone geometry; screenshots and manifest retained.");
 } finally {
  await browser?.close();
  await new Promise(ok=>server.close(ok));
