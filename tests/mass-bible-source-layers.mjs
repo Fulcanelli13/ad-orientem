@@ -5,6 +5,7 @@ import {
  renderMassBibleStudy,renderMassProperWitnessStudy,massBibleStudyCss
 } from "../src/learn/mass-bible-study.js";
 import {MASS_FORMATION_ROUTE,MASS_FORMATION_VERSION} from "../src/learn/mass-formation.js";
+import {parseScriptureContext} from "../src/scripture/context.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const corpus=read("data/learn/mass-bible-source-layers.v1.json");
 const first=read("data/mass/scripture-reading-witness-register.v1.json");
@@ -22,6 +23,9 @@ assert.deepEqual([...new Set(corpus.rows.map(x=>x.formationStage))].sort(),forma
 const classes=["DIRECT_SCRIPTURAL_WORDING","SCRIPTURAL_WORDING_ADAPTED","EXPLICIT_BIBLICAL_FIGURE","VARIABLE_PROPER_READING","VARIABLE_RITE_SCRIPTURE_READING","NARRATIVE_SCRIPTURE_CONNECTION","DOCTRINAL_SCRIPTURE_CONNECTION","SCRIPTURAL_PARALLEL_NOT_QUOTATION","INTERPRETIVE_BIBLICAL_TYPOLOGY"];
 for(const c of classes)assert.ok(corpus.rows.some(x=>x.classification===c),c);
 assert.equal(massBibleRows(corpus,{category:"all"}).length,26);
+assert.equal(corpus.rows.filter(r=>Boolean(r.scriptureReaderRef)).length,20,"only unambiguous context-handoff references are exposed");
+assert.ok(corpus.rows.filter(r=>r.scriptureReaderRef).every(r=>parseScriptureContext(r.scriptureReaderRef)),"native links must resolve Catholic book/chapter");
+assert.ok(["MB01","MB02","MB06","MB07","MB09","MB25"].every(id=>!corpus.rows.find(r=>r.id===id).scriptureReaderRef),"held Psalm-numbering and Proper examples are external-source only");
 assert.equal(massBibleRows(corpus,{category:"names"}).length,3);
 assert.equal(massBibleRows(corpus,{category:"text"}).length,10);
 assert.equal(massBibleRows(corpus,{category:"variable"}).length,3);
