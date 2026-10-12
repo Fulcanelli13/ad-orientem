@@ -43,6 +43,12 @@ assert.ok(!checked.get("presentation").verifiedSourceUrl.includes("fine-arts-mus
   "Dijon 1628 must not be silently replaced with Brussels 1648");
 assert.equal(checked.get("nativity").verifiedInventory,"RF 1983 92");
 assert.equal(checked.get("trinity").verifiedInventory,"KMSKA 314");
+assert.equal(checked.get("trinity").iiif.manifestUrl,"https://iiif.kmska.be/iiif/2/28958/manifest.json");
+assert.ok(checked.get("trinity").iiif.reportedMaxWidth>19000);
+assert.ok(checked.get("trinity").iiif.reportedMaxHeight>19000);
+assert.equal(checked.get("trinity").iiif.manifestLicense,"https://creativecommons.org/publicdomain/mark/1.0/");
+assert.equal(checked.get("trinity").iiif.originalBytesAcquired,false,
+  "Cataloguing an IIIF manifest is NOT acquiring a full-resolution original");
 assert.equal(checked.get("passiontide").verifiedInventory,"KMSKA 297");
 assert.equal(checked.get("pentecost").verifiedInventory,"INV 20303");
 assert.equal(checked.get("holy-thursday").verifiedInventory,"INV 1125");
