@@ -729,6 +729,34 @@ export function createFindOwner(win=globalThis){
     }
     if(state.bibleAtlas){
       const current=state.bibleReview;
+      // Zoom only the evidence diagram, preserving its source links and
+      // internal viewport midpoint; never scale the full application surface.
+      const kinZoom=target?.closest?.("[data-bible-kin-zoom]");
+      if(kinZoom&&current.surface==="genealogies"&&current.lineage==="genesis"){
+        event.preventDefault?.();
+        const owner=kinZoom.closest(".aoBibleReview");
+        const viewport=owner?.querySelector("[data-bible-kin-diagram]");
+        const graphic=viewport?.querySelector("svg[data-bible-kin-base-width]");
+        const output=owner?.querySelector("[data-bible-kin-zoom-value]");
+        if(graphic&&viewport){
+          const width=Number(graphic.dataset.bibleKinBaseWidth);
+          const height=Number(graphic.dataset.bibleKinBaseHeight);
+          const previous=Number(viewport.dataset.bibleKinScale||1);
+          const mode=kinZoom.dataset.bibleKinZoom;
+          const next=mode==="reset"?1:Math.min(1.8,Math.max(0.6,Math.round((previous+(mode==="in"?0.2:mode==="out"?-0.2:0))*10)/10));
+          if(Number.isFinite(width)&&width>0&&Number.isFinite(height)&&height>0&&next!==previous){
+            const centerX=viewport.scrollLeft+viewport.clientWidth/2;
+            const centerY=viewport.scrollTop+viewport.clientHeight/2;
+            graphic.setAttribute("width",String(Math.round(width*next)));
+            graphic.setAttribute("height",String(Math.round(height*next)));
+            viewport.dataset.bibleKinScale=String(next);
+            viewport.scrollLeft=centerX*(next/previous)-viewport.clientWidth/2;
+            viewport.scrollTop=centerY*(next/previous)-viewport.clientHeight/2;
+          }
+          if(output)output.textContent=Math.round((Number(viewport.dataset.bibleKinScale)||1)*100)+"%";
+        }
+        return;
+      }
       const surfaceButton=target?.closest?.("[data-bible-review-surface]");
       if(surfaceButton){
         event.preventDefault?.();const next=surfaceButton.dataset.bibleReviewSurface;
