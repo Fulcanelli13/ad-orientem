@@ -50,6 +50,17 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 
 
 /* Shared daily/examen presentation: one source-owned stage per named card. */
+#aoPray435930 .aoTP381DaypartStrip{display:flex;gap:8px;align-items:center;padding:8px 12px 6px}
+#aoPray435930 .aoTP381DaypartStrip button{min-height:38px;padding:7px 14px;font:500 .79rem/1.3 var(--ao-font-display,Georgia,serif);border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.16));background:transparent;color:var(--muted,#aeb2b8)}
+#aoPray435930 .aoTP381DaypartStrip button[aria-pressed="true"]{border-color:var(--liturgical,#c7ae6d);color:var(--text,#f1e7d7)}
+#aoPray435930 .aoTP381DonorBody .aoTP381SecondaryOptions{margin:10px 14px 4px;border-top:1px solid var(--border,rgba(255,255,255,.15));font-size:.86rem;color:var(--muted,#aeb2b8)}
+#aoPray435930 .aoTP381SecondaryOptions>summary{min-height:44px;display:flex;align-items:center;cursor:pointer}
+#aoPray435930 .aoTP381SecondaryOptionsBody{padding:3px 0 14px;display:grid;gap:12px;line-height:1.5}
+#aoPray435930 .aoTP381SecondaryOptionsBody>p{margin:0}
+#aoPray435930 .aoTP381DonorBody .aoTP381Glossary{margin:6px 14px 16px;align-self:start}
+#aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381GuideCard>h2:focus,
+#aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381GuideCard>h2:focus-visible{outline:none!important;box-shadow:none!important;border:0!important}
+
 #aoPray435930 .aoTP381DonorBody .aoDevoCard{min-width:0;max-width:100%}
 #aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381GuideCard{margin:0;padding:4px 0 20px;border:0;border-radius:0;background:none;box-shadow:none;gap:14px}
 #aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381GuideCard>h2{font-size:clamp(22px,5vw,30px);line-height:1.25}
