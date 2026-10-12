@@ -157,6 +157,39 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStopNumber{font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.12em}
 #aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStopTitle{font:500 12px/1.25 Georgia,serif;white-space:normal}
 
+
+/* The canonical Rosary donor retains its prayer heading, flip, and bead
+ * controls. The visible prayer face scrolls locally inside the titled card. */
+#aoPrayerBookRoot.open .lab-prayer-sheet.aoRosaryActiveCard{
+ width:100%;min-width:0;max-width:100%;box-sizing:border-box;
+ border:1px solid var(--border,rgba(255,255,255,.16));
+ border-radius:12px;background:var(--surface-1,rgba(15,22,30,.88));
+ overflow:hidden;padding:18px 14px 12px;
+}
+#aoPrayerBookRoot.open .aoRosaryActiveCard > h2.aoDevoCardTitle{
+ font:500 clamp(22px,5.5vw,30px)/1.24 Georgia,serif;
+ margin:0 0 13px;letter-spacing:.015em;
+}
+#aoPrayerBookRoot.open .aoRosaryActiveCard .aoRosaryPrayerScroll{
+ display:block;box-sizing:border-box;min-width:0;width:100%;
+ min-height:min(245px,39dvh);max-height:min(49dvh,530px);
+ overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;
+ -webkit-overflow-scrolling:touch;touch-action:pan-y;
+ padding:12px 7px 25dvh 3px;scrollbar-width:thin;
+}
+#aoPrayerBookRoot.open .aoRosaryActiveCard .aoDevoParagraph{
+ transition:opacity .24s ease;opacity:.42;
+}
+#aoPrayerBookRoot.open .aoRosaryActiveCard .aoDevoParagraph[data-ao-devo-active="true"]{
+ opacity:1;
+}
+#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-dual-axis="v1"]{
+ scroll-margin-block-start:100px;
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPrayerBookRoot.open .aoRosaryActiveCard .aoDevoParagraph{transition:none!important}
+}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
