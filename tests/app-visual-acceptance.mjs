@@ -1280,6 +1280,12 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-ao-dying-companion-options]").evaluate(el=>el.open),false,
     "Pastoral explanations must not displace urgent priest-first guidance");
   await shot("03i3-pray-dying-companion-priest-first");
+  // Leaving the full-screen Prayer owner must use its native Home control.
+  // Attempting to click the app dock through an open modal is not a supported
+  // navigation path and is correctly blocked by the backdrop.
+  await page.locator("#aoPray435930 [data-tp381-home]").click();
+  await page.waitForFunction(()=>!document.querySelector("#aoPray435930")?.classList?.contains("open"),null,{timeout:7000});
+
 
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
