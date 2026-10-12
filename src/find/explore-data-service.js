@@ -21,6 +21,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   relatedPlaces:moduleUrl("../../data/geography/related-places.v1.json"),
   biblePlaces:moduleUrl("../../data/explore/bible-places-compact.v1.json"),
   biblicalLineageReview:moduleUrl("../../data/explore/biblical-lineage-curated-review.v1.json"),
+  bibleCinematicStudies:moduleUrl("../../data/explore/biblical-cinematic-studies-review.v1.json"),
   customs:moduleUrl("../../data/customs/customs-atlas-seed.v1.json"),
   customSources:moduleUrl("../../data/customs/source-registry.v1.json"),
   shrines:moduleUrl("../../data/shrines/shrines-pilgrimages-seed.v1.json"),
@@ -98,4 +99,9 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
 // Lazy-load review-only genealogy; ordinary Explore does not fetch this research payload.
 export async function loadBiblicalLineageReview({fetchImpl=fetch}={}){
   return await fetchJson(EXPLORE_DATA_URLS.biblicalLineageReview,{fetchImpl,optional:true});
+}
+
+// Four-journey / 181-scene crosswalk stays review-only, fetched when specifically opened.
+export async function loadBibleCinematicStudies({fetchImpl=fetch}={}){
+  return await fetchJson(EXPLORE_DATA_URLS.bibleCinematicStudies,{fetchImpl,optional:true});
 }
