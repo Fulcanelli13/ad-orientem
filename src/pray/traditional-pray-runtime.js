@@ -93,7 +93,7 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null;
-let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
+let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
 
 function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false,returnButton=""}){
  const label=guidedStepLabel(step,total,isFr()?"fr":"en");
@@ -272,30 +272,28 @@ function renderCommunionTreasury(){
   const options=`<details class="aoTP381SecondaryOptions" data-ao-communion-options><summary>${esc(L("Sources and guidance","Sources et conseils"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A sourced treasury of prayers long printed before and after Mass in the Roman-Missal tradition, retained only where the French Catholic tradition is also attested.","Un trésor de prières sourcées, longtemps imprimées avant et après la Messe dans la tradition du Missel romain, retenues seulement lorsqu’elles sont également attestées dans la tradition catholique française."))}</p><p>${esc(context)}</p>${traditionalContextGuide("communion")}${formation}${indulgence}${source(L("French & Latin traditional prayer witness","Témoin traditionnel français & latin"),commonSource)}</div></details>`;
   return `${head(L("Traditional Communion Prayers","Prières traditionnelles de Communion"))}<main class="aoP435930Body aoTP381DonorBody">${tabs}${card}${options}</main>`;
 }
+const GOOD_DEATH_STAGES=Object.freeze([
+  ["devotion_litany_st_joseph","Litany of Saint Joseph","Litanies de saint Joseph"],
+  ["devotion_ad_te_beate_ioseph","To Thee, O Blessed Joseph","À vous, bienheureux Joseph"],
+  ["devotion_memorare_st_joseph","Memorare to St Joseph","Souvenez-vous à saint Joseph"],
+  ["foundations_act_of_faith","Act of Faith","Acte de foi"],
+  ["foundations_act_of_hope","Act of Hope","Acte d’espérance"],
+  ["foundations_act_of_love","Act of Charity","Acte de charité"],
+  ["sacrament_act_of_contrition","Act of Contrition","Acte de contrition"],
+  ["foundations_hail_mary","Hail Mary","Je vous salue Marie"],
+  ["aspirations","Traditional aspirations","Invocations traditionnelles"]
+]);
 function renderGoodDeath(){
   const d=GOOD_DEATH_DYING_V384;
-  return `${head(L("Preparation for a Good Death","Préparation à une bonne mort"),L("St Joseph · perseverance · readiness","Saint Joseph · persévérance · préparation"))}<main class="aoP435930Body aoTP381DonorBody">
-    <p class="aoTP381Intro">${esc(L("This is an ordinary devotional treasury for preparing throughout life for a holy death. It is not an emergency checklist and it does not replace the sacraments or the ministry of a priest.","Il s’agit d’un trésor dévotionnel ordinaire pour se préparer, durant la vie, à une sainte mort. Ce n’est pas une liste d’urgence et il ne remplace ni les sacrements ni le ministère d’un prêtre."))}</p>
-    ${traditionalContextGuide("goodDeath")}
-    <section class="aoTP381Section"><h2>${esc(L("St Joseph · patron of the dying","Saint Joseph · patron des mourants"))}</h2><p>${esc(L("Traditional Roman prayers for the dying invoke St Joseph as patron of the dying. His litany and familiar prayers may be recited in preparation for a holy death.","Les prières romaines pour les mourants invoquent saint Joseph comme patron des mourants. Ses litanies et les prières qui lui sont consacrées aident à se préparer à une sainte mort."))}</p></section>
-    ${prayerRows([
-      ["devotion_litany_st_joseph",L("Litany of Saint Joseph","Litanies de saint Joseph"),L("Includes the invocation Patron of the dying","Comprend l’invocation Patron des mourants")],
-      ["devotion_ad_te_beate_ioseph",L("To Thee, O Blessed Joseph","À vous, bienheureux Joseph"),L("Traditional prayer asking for a happy death","Prière traditionnelle demandant une bonne mort")],
-      ["devotion_memorare_st_joseph",L("Memorare to St Joseph","Souvenez-vous à saint Joseph"),L("Traditional recourse to St Joseph","Recours traditionnel à saint Joseph")]
-    ])}
-    <section class="aoTP381Section"><h2>${esc(L("Final perseverance and readiness","Persévérance finale et préparation"))}</h2><p>${esc(L("The traditional preparation for death is not a separate spiritual life. It deepens the ordinary acts of faith, hope, charity, contrition and confidence in Our Lady at the hour of death.","La préparation traditionnelle à la mort n’est pas une vie spirituelle séparée. Elle approfondit les actes ordinaires de foi, d’espérance, de charité, de contrition et la confiance en Notre-Dame à l’heure de la mort."))}</p></section>
-    ${prayerRows([
-      ["foundations_act_of_faith",L("Act of Faith","Acte de foi"),L("Renew faith","Renouveler la foi")],
-      ["foundations_act_of_hope",L("Act of Hope","Acte d’espérance"),L("Renew hope","Renouveler l’espérance")],
-      ["foundations_act_of_love",L("Act of Charity","Acte de charité"),L("Renew charity","Renouveler la charité")],
-      ["sacrament_act_of_contrition",L("Act of Contrition","Acte de contrition"),L("Sorrow for sin and purpose of amendment","Contrition et ferme propos")],
-      ["foundations_hail_mary",L("Hail Mary","Je vous salue Marie"),L("Pray for us now and at the hour of our death","Priez pour nous maintenant et à l’heure de notre mort")]
-    ])}
-    ${sourcedPrayerCard(d.aspirations,L(d.aspirations.title,d.aspirations.titleFr))}
-    ${source("Acta Apostolicae Sedis · 1922 · Ordo Commendationis Animae",GOOD_DEATH_DYING_SOURCES_V384.romanJoseph1922)}
-    ${source(L("Current customary invocations · Apostolic Penitentiary","Invocations usuelles actuelles · Pénitencerie apostolique"),GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}
-    <div class="aoTP381PrayerList"><button type="button" data-tp381-route="learn.rites.sick"><span><b>${esc(L("Serious illness · understand the sacraments","Maladie grave · comprendre les sacrements"))}</b><small>${esc(L("The priest and sacramental care belong to the Church, not to this devotion.","Le prêtre et les soins sacramentels relèvent de l’Église, non de cette dévotion."))}</small></span><i aria-hidden="true">→</i></button><button type="button" data-tp381-route="pray.dying_companion"><span><b>${esc(L("Someone may be dying now","Une personne est peut-être mourante maintenant"))}</b><small>${esc(L("Open the bedside Dying Companion","Ouvrir l’accompagnement au chevet du mourant"))}</small></span><i aria-hidden="true">→</i></button></div>
-  </main>`;
+  const step=Math.max(0,Math.min(GOOD_DEATH_STAGES.length-1,Number(S.goodDeathStep)||0));
+  const [id,en,fr]=GOOD_DEATH_STAGES[step];
+  const prayer=id==="aspirations"?
+    sourcedPrayerCard(d.aspirations,L(d.aspirations.title,d.aspirations.titleFr),{focusParagraphs:true}):
+    prayerCard(id,{focusParagraphs:true});
+  const card=`<section class="aoDevoCard" data-ao-devo-card="good-death-${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L(en,fr))}">${prayer}</div></section>`;
+  const urgent=`<div class="aoTP381PrayerList aoTP381PastoralShortcut"><button type="button" data-tp381-route="pray.dying_companion"><span><b>${esc(L("Someone may be dying now","Une personne est peut-être mourante maintenant"))}</b><small>${esc(L("Open the bedside guide and seek a priest immediately.","Ouvrez le guide au chevet et contactez un prêtre sans tarder."))}</small></span><i aria-hidden="true">→</i></button></div>`;
+  const options=`<details class="aoTP381SecondaryOptions" data-ao-good-death-options><summary>${esc(L("Practice, pastoral guidance and historical sources","Pratique, accompagnement et sources historiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("This is an ordinary devotional treasury for preparing throughout life for a holy death. It is not an emergency checklist and it does not replace the sacraments or the ministry of a priest.","Il s’agit d’un trésor dévotionnel ordinaire pour se préparer, durant la vie, à une sainte mort. Ce n’est pas une liste d’urgence et il ne remplace ni les sacrements ni le ministère d’un prêtre."))}</p>${traditionalContextGuide("goodDeath")}<p>${esc(L("Traditional Roman prayers for the dying invoke St Joseph as patron of the dying. His litany and familiar prayers may be recited in preparation for a holy death.","Les prières romaines pour les mourants invoquent saint Joseph comme patron des mourants. Ses litanies et les prières qui lui sont consacrées aident à se préparer à une sainte mort."))}</p><p>${esc(L("Final perseverance and readiness deepen the ordinary acts of faith, hope, charity, contrition and confidence in Our Lady at the hour of death.","La persévérance finale et la préparation approfondissent les actes ordinaires de foi, d’espérance, de charité, de contrition et la confiance en Notre-Dame à l’heure de la mort."))}</p>${source("Acta Apostolicae Sedis · 1922 · Ordo Commendationis Animae",GOOD_DEATH_DYING_SOURCES_V384.romanJoseph1922)}${source(L("Current customary invocations · Apostolic Penitentiary","Invocations usuelles actuelles · Pénitencerie apostolique"),GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}<div class="aoTP381PrayerList"><button type="button" data-tp381-route="learn.rites.sick"><span><b>${esc(L("Serious illness · understand the sacraments","Maladie grave · comprendre les sacrements"))}</b><small>${esc(L("The priest and sacramental care belong to the Church, not to this devotion.","Le prêtre et les soins sacramentels relèvent de l’Église, non de cette dévotion."))}</small></span><i aria-hidden="true">→</i></button></div></div></details>`;
+  return `${head(L("Preparation for a Good Death","Préparation à une bonne mort"))}<main class="aoP435930Body aoTP381DonorBody">${urgent}${card}${options}</main>`;
 }
 function dyingCompanionStepNav(tab){
   const index=DYING_COMPANION_STAGES.indexOf(tab);
@@ -367,7 +365,7 @@ function injectGlossaryAction(){
   const button=document.createElement("button");
   button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
   button.textContent=L("Terms & explanations","Termes & explications");
-  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns"].includes(S.route))body.append(button);
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.good_death"].includes(S.route))body.append(button);
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
@@ -442,6 +440,16 @@ function render(){
     });
     if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
   }
+  if(S.screen==="module"&&S.route==="pray.good_death"){
+    const chapters=GOOD_DEATH_STAGES.map(([id,en,fr])=>({id:"good-death-"+id,title:L(en,fr)}));
+    const reader=installSequentialDevotionalReader({
+      mount:m,kind:"goodDeath",chapters,activeIndex:S.goodDeathStep,
+      paragraphSelector:".aoTP381TextParagraph",
+      onNavigate:i=>{S.goodDeathStep=i;render()},
+      timelineLabel:L("Prayer timeline","Chronologie des prières")
+    });
+    if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
+  }
   injectGlossaryAction();
   m.scrollTop=0;
   queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.({preventScroll:true})});
@@ -455,6 +463,7 @@ function open(route,opts={}){
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
     ...(route==="pray.dying_companion"?{dying:"now"}:{}),
     ...(route==="pray.sacred_hymns"?{hymn:"te_deum",hymnLang:null}:{}),
+    ...(route==="pray.good_death"?{goodDeathStep:0}:{}),
     ...(route==="pray.meal_prayers"?{mealStep:0}:{}),
     ...(route==="pray.sacred_heart"?{sacredHeart:"litany"}:{}),
     ...(route==="pray.communion_treasury"?{communion:"before",communionStep:0}:{}),
