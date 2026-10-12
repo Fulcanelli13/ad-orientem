@@ -1,15 +1,5 @@
 // Non-owning shared devotional card layout, loaded after legacy PRAY CSS.
 export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
-/* Preferences remain available before prayer, but do not occupy the reader. */
-#aoPray435930 .aoAngelusPreferences{border:1px solid var(--border,rgba(255,255,255,.14));background:var(--surface-1,#151b22);border-radius:11px;margin:7px 10px 15px;overflow:hidden}
-#aoPray435930 .aoAngelusPreferences>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;cursor:pointer;padding:10px 13px;color:var(--text,#f1e7d7);font:600 13px/1.25 system-ui,sans-serif}
-#aoPray435930 .aoAngelusPreferences>summary::marker{content:""}
-#aoPray435930 .aoAngelusPreferences>summary::-webkit-details-marker{display:none}
-#aoPray435930 .aoAngelusPreferences>summary span:before{content:"⚙";margin-right:9px;color:var(--muted,#9da39d)}
-#aoPray435930 .aoAngelusPreferences>summary small{font:500 11px/1.25 system-ui,sans-serif;color:var(--muted,#9da39d);text-align:right}
-#aoPray435930 .aoAngelusPreferencesBody{padding:4px 10px 12px;display:grid;gap:8px}
-#aoPray435930 .aoAngelusPreferencesBody .aoP435930Seg{margin:0;min-height:46px}
-#aoPray435930 .aoAngelusPreferencesBody .aoP435930Seg button{min-height:43px}
 #aoPray435930 .aoDevoDeck{display:block!important;width:100%;min-width:0;gap:0!important}
 #aoPray435930 .aoDevoTimeline{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:5px;align-items:center;min-height:58px;padding:6px 2px;background:var(--bg,#080c12);border-block:1px solid var(--border,rgba(255,255,255,.12));position:sticky;top:74px;z-index:16}
 #aoPray435930 .aoDevoStops{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain;scroll-snap-type:x proximity}
