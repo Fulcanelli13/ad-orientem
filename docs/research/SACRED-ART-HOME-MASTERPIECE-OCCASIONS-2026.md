@@ -2,6 +2,8 @@
 
 **Editorial reset, 12 October 2026.** This document supersedes all earlier coverage-first, daily-saint, and "one exact art original for every observed Class I date" acquisition obligations **for the homepage**. The source-audit corpus and the user's previous review are retained as historical research, **not as endorsements of the visual quality**. Do **not** resume bulk museum acquisition from this document. First agree the list of occasions; only then curate masterpieces.
 
+**Updated supplement (12 October):** The first list of 53 Class I + 17 selective other dates is now expanded with 29 Apostolic / Evangelist / mystical / angelic candidates. Of these, 23 are observed principal feasts in 2026 and 6 fall on higher-ranking liturgies or are commemorated. The union covers **98 distinct civil dates** with potential editorial art associations, but only **93 principal-event or selected-day slots**. This is still **not a painting-per-saint quota**.
+
 **Canonical data:** [2026 homepage occasion manifest](../../data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json). Its 53 Class I entries come directly from [2026 resolved Class I calendar enumeration](../../data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json), anchored to actual observed principal IDs. The list is **universal** 1962 Roman, before territorial patrons, church dedication, or local solemnities are checked. Rank is never a claim of current holy-day obligation.
 
 ## I. Every Class I occasion in 2026 — 53 actual dates
@@ -68,3 +70,64 @@ A source can be famous and still unsuitable for a small phone hero; an important
 5. Add local Class I patronal/dedication observances only after the relevant territorial/institute liturgical calendar and precedence are documented; this 2026 universal listing does not purport to include them.
 
 **Decision to confirm:** This is the occasion list, **not** an image-gallery request. No new artwork has been retrieved or approved under the reset.
+
+## V. Essential Apostles, Evangelists, mystics and archangels — additional spotlight shortlist
+
+This corrects a material omission in the first 17-extra-date list. The **four Evangelists, the apostolic cycle, important mystics, and the angelic celebrations** deserve consideration. These are **eligible occasions**, not promised daily hero-image changes. In 2026, fixed sanctorale days sometimes yield to higher-ranking Sundays or a Class I day; the source of truth for today's Mass remains the actual observed principal.
+
+**Already covered in Section I (Class I, not added a second time):** **29 June — Saints Peter and Paul**; **29 September — Saint Michael the Archangel**. **Already covered in Section II:** **22 July — Saint Mary Magdalene**; **3 October — Saint Thérèse of the Child Jesus**.
+
+### A. Apostles and four Evangelists
+
+| Date | Nominal 1962 observance | Class | 2026 relationship |
+|---|---|---:|---|
+| 25 Jan | Conversion of Saint Paul | III | **Not principal:** Third Sunday after Epiphany |
+| 22 Feb | Chair of Saint Peter | II | **Not principal:** First Sunday of Lent (Class I) |
+| 24 Feb | Saint Matthias, Apostle | II | Observed |
+| 25 Apr | **Saint Mark, Evangelist** | II | Observed; Greater Litanies distinct |
+| 11 May | Saints Philip and James, Apostles | II | Observed; 1962 uses May 11 |
+| 11 Jun | Saint Barnabas, Apostle | III | Observed |
+| 30 Jun | Commemoration of Saint Paul | III | Observed |
+| 25 Jul | Saint James the Greater | II | Observed |
+| 24 Aug | Saint Bartholomew | II | Observed |
+| 21 Sep | **Saint Matthew, Apostle and Evangelist** | II | Observed |
+| 18 Oct | **Saint Luke, Evangelist** | II | **Commemorated:** XXI Sunday after Pentecost principal |
+| 28 Oct | Saints Simon and Jude | II | Observed |
+| 30 Nov | Saint Andrew | II | Observed |
+| 21 Dec | Saint Thomas | II | Observed |
+| 27 Dec | **Saint John, Apostle and Evangelist** | II | **Commemorated:** Sunday within Christmas Octave principal |
+
+Only the very best Apostolic and Evangelist artworks qualify. Significant candidates might depict the Calling of Matthew, St Peter and Paul, St John, or the Twelve Apostles collectively. A collective masterpiece can cover several names without inventing individual portraits.
+
+### B. Mystics, spiritual doctors and contemplative saints
+
+| Date | Saint | Class | 2026 relationship |
+|---|---|---:|---|
+| 29 Jan | Saint Francis de Sales | III | Observed |
+| 30 Apr | Saint Catherine of Siena | III | Observed |
+| 4 Aug | Saint Dominic | III | Observed; major Rosary/devotional founder |
+| 19 Aug | Saint John Eudes | III | Observed; Sacred Hearts |
+| 20 Aug | Saint Bernard of Clairvaux | III | Observed |
+| 4 Oct | Saint Francis of Assisi | III | **Not principal:** XIX Sunday after Pentecost |
+| 8 Oct | Saint Bridget of Sweden | III | Observed |
+| 15 Oct | Saint Teresa of Ávila | III | Observed |
+| 17 Oct | Saint Margaret Mary Alacoque | III | Observed; Paray-le-Monial |
+| 16 Nov | Saint Gertrude the Great | III | Observed |
+| 24 Nov | Saint John of the Cross | III | Observed, **1962 date** (not modern December 14) |
+
+Saint Dominic and Saint John Eudes are present for their monumental devotional relevance rather than an unqualified assertion that every founder or Doctor is a mystic. **Saint Margaret Mary and Saint Thérèse** deserve special consideration in the French Catholic context. Preserve the aesthetic gate: an obscure or weak saint portrait must never replace a major masterpiece merely because the date has arrived.
+
+### C. Angels
+
+| Date | Celebration | Class | 2026 relationship |
+|---|---|---:|---|
+| 24 Mar | Saint Gabriel the Archangel | III | Commemorated during Passiontide; **not principal** |
+| **29 Sep** | **Saint Michael the Archangel** | **I** | **Already in the mandatory Class I list** |
+| 2 Oct | Holy Guardian Angels | III | Observed |
+| 24 Oct | Saint Raphael the Archangel | III | Observed |
+
+Saint Michael is a prime candidate for a truly outstanding masterpiece and should **not** be obscured within a generic saint list.
+
+Sources: [1962 calendar for the observed 2026 year](https://gcatholic.org/calendar/2026/Extraordinary-en), the application's independent [2026 calendar witness checks](../../data/calendar/1962-year-independent-checks-2026.v1.json), and the [canonical exact Class I list](../../data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json). The additional proposals are machine-readable at `apostolicMysticAngelicSpotlights` in the canonical homepage-occasion manifest.
+
+**Holding behaviour unchanged:** no visual switch is required for any of these 29 new candidates, nor when a saint's fixed feast is commemorated or superseded. We should first choose major works that cover several significant themes, then use exceptional individual saints' masterpieces when actually warranted.
