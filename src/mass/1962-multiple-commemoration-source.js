@@ -21,14 +21,24 @@ function isPrivilegedAdventFeria(entry,source){
 }
 function sourceMatched(entry,source){
   const named=canon(entry?.path),sourcePath=canon(source?.path),prayerPath=canon(source?.prayerSourcePath??source?.path);
-  if(!named||named!==sourcePath)return false;
+  if(!named||named!==sourcePath||
+    !(/^sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(named)||
+      /^tempora\/adv[1-4]-[1-6]$/.test(named)))return false;
   if(isPrivilegedAdventFeria(entry,source))return true;
   return prayerPath===named;
 }
 function exactPrincipal(principal,proper){
   if(![3,4].includes(Number(principal?.rank)))return false;
   const own=canon(principal.path),source=canon(proper.sourcePath);
-  if(own)return own===source;
+  if(own){
+    // A fabricated or unrelated Proper that happens to share an arbitrary
+    // main.path cannot establish Roman liturgical source ownership.
+    const temporal=/^tempora\/(?:adv|epi|quad|pasc|pent)[0-9]+-[0-6]$/.test(own)&&
+      /^tempora:/i.test(String(principal.id??""));
+    const sanctoral=/^sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(own)&&
+      /^sancti:/i.test(String(principal.id??""));
+    return (temporal||sanctoral)&&own===source;
+  }
   // A generic IV-class weekday inherits its Sunday's proper; the running
   // 1962 resolver is responsible for exact temporal-cycle/week selection.
   return Number(principal.rank)===4&&
