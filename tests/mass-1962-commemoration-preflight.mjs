@@ -22,6 +22,14 @@ const legacy={date:"2026-10-11",celebrationType:"CALENDAR",celebrationId:"mass_o
  actualCelebration:{title:"20th Sunday after Pentecost"},proper:{status:"READY",data:proper},canStart:true};
 const en=massCalendarPreflightContext(legacy,state,"en");
 assert.deepEqual(en.commemorations,["Maternity of the Blessed Virgin Mary"]);
+const structuralOnly={...state,resolution:{...state.resolution,day:{
+  ...state.resolution.day,main:{...main,commemorations:[{id:"sancti:10-11:2:w"}]},
+  commemorations:[commem]
+}}};
+assert.deepEqual(massCalendarPreflightContext(legacy,structuralOnly,"en").commemorations,
+  ["Maternity of the Blessed Virgin Mary"],
+  "Canonical named day commemoration must override unnamed main tokens");
+
 assert.equal(en.commemorationApplies,true,"Different Sunday title spelling must not hide commemoration");
 assert.equal(en.commemorationOrations.status,"COMPLETE");
 assert.deepEqual(en.commemorationOrations.counts,[2,2,2]);
