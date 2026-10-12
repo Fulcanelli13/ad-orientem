@@ -133,8 +133,17 @@ try{
       assert.equal(state.priestAction,null,"Requiem Low Mass blesses the water");
       assert(state.priestVoice,"Low Requiem lost quiet prayer voice");
      }
-     if(cue==="AO.SM.C0174")assert.equal(state.bell,"ELEVATION BELL",
-       form+"/"+family+" Host elevation lost its bell");
+     if(cue==="AO.SM.C0174"&&state.bell!=="ELEVATION BELL"){
+       const diagnostic=await page.evaluate(()=>{
+         const api=window.__AO_PHONE_PREVIEW;
+         return {nativeCue:api.getNativeEventState()?.nativeCueId,
+           transient:api.getTransientState(),
+           transitionPending:api.getTransientTransitionPending(),
+           activeCue:api.getActiveCue()};
+       });
+       assert.equal(state.bell,"ELEVATION BELL",
+         form+"/"+family+" Host elevation lost its bell: "+JSON.stringify(diagnostic));
+     }
     }
     samples[cue]={...state,scroll:focus.status,exactFocusReached:state.focus===cue};
     if(cue==="AO.SM.C0174" && family==="VOTIVE"){
