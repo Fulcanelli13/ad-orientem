@@ -201,6 +201,9 @@ export function installSequentialDevotionalReader({
   parent.addEventListener("click",event=>{
     if(event.target?.closest?.("[data-tp381-flip]"))doc.defaultView?.queueMicrotask?.(queue);
   });
+  // Set the first visible paragraph before the first paint for these short
+  // prayer cards; a deferred-only focus briefly mutes the whole prayer.
+  if(kind==="meals"||kind==="holyName")focus();
   queue();
   return Object.freeze({
     schema:SEQUENTIAL_DEVOTIONAL_SCHEMA,kind,index,
