@@ -108,6 +108,19 @@ const staticRosary=new Element("button");staticRosary.dataset.homeCuStatic="rosa
 calls.length=0;
 await fire(staticRosary);
 assert.deepEqual(calls,["registry:pray.rosary"],"Home Rosary must preserve canonical engine ownership");
+for(const [quickId,canonical] of [["morning","pray.morning_evening"],["evening","pray.morning_evening"],["examen","pray.nightly_examen"]]){
+  const shortcut=new Element("button");shortcut.dataset.homeCuStatic=quickId;screen.appendChild(shortcut);
+  calls.length=0;
+  await fire(shortcut);
+  assert.deepEqual(calls,["registry:"+canonical],quickId+" reopened legacy Daily Rule instead of a canonical Prayer module");
+}
+const otherPrayer=new Element("button");
+otherPrayer.dataset.homeCuDynamic="custom.rule";
+otherPrayer.dataset.homeCuRoute="pray.morning_evening";
+screen.appendChild(otherPrayer);
+calls.length=0;await fire(otherPrayer);
+assert.deepEqual(calls,["registry:pray.morning_evening"],
+  "Home contextual Prayer route unexpectedly opened a second reader");
 routeOk=false;calls.length=0;
 await fire(staticAngelus);
 assert.deepEqual(calls,["registry:pray.angelus_regina","direct:pray.angelus_regina"]);
