@@ -32,6 +32,7 @@ try{
   {label:"rollback48",query:"production=1&aoLiveCards=48",cards:48,visible:48,curated:"false"},
   {label:"asperges64",query:"production=1&rite=asperges",cards:65,visible:64,curated:"true",rite:"ORDINARY"},
   {label:"asperges65",query:"production=1&rite=asperges&secondConfiteor=1",cards:65,visible:65,curated:"true",rite:"ORDINARY"},
+  {label:"asperges64-fr",query:"production=1&rite=asperges&lang=fr",cards:65,visible:64,curated:"true",rite:"ORDINARY",lang:"fr"},
   {label:"vidi-aquam64",query:"production=1&rite=asperges&date=2026-04-12",cards:65,visible:64,curated:"true",rite:"PASCHAL"},
   {label:"passiontide64",query:"production=1&rite=asperges&date=2026-03-22",cards:65,visible:64,curated:"true",rite:"ORDINARY",omitGloria:true},
   {label:"asperges-rollback48",query:"production=1&rite=asperges&aoLiveCards=48",cards:48,visible:48,curated:"false",rite:"ORDINARY"},
@@ -61,8 +62,15 @@ try{
   if(option.rite){
     const initial=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
+      const root=document.querySelector("#ao-r17-native-reader-preview");
+      const rubric=root?.querySelector('.ao-reader-paragraph[data-kind="RUBRIC"]');
       return {state:api.getNativeEventState(),asperges:api.getAspergesState(),
-        title:api.getCurrentCard()?.title};
+        title:api.getCurrentCard()?.title,
+        renderedTitle:root?.querySelector('[data-role="section-title"]')?.textContent?.trim()??"",
+        guidance:rubric?.textContent?.trim()??"",
+        guideCount:root?.querySelectorAll('.ao-reader-paragraph[data-kind="RUBRIC"]').length??0,
+        fontPx:rubric?parseFloat(getComputedStyle(rubric).fontSize):0,
+        cueId:rubric?.dataset.cueId??null};
     });
     assert.equal(initial.state.specialRite,"ASPERGES",option.label+" must begin in independent R20 rite");
     assert.equal(initial.asperges.formulaState.formula,option.rite,
@@ -70,6 +78,13 @@ try{
     assert.equal(initial.asperges.formulaState.omitGloriaPatri,option.omitGloria===true,
       option.label+" must preserve Passiontide omission");
     assert.equal(initial.asperges.card.id,"ASP-R01",option.label+" must preserve original pre-Mass first record");
+    assert.equal(initial.renderedTitle,option.lang==="fr"?"Aspersion dominicale":"Sunday Aspersion",
+      option.label+" requires the exact localized prayer-card title");
+    assert.equal(initial.guideCount,1,option.label+" source-backed preparatory rubric must be visible");
+    assert.ok(initial.guidance.includes(option.lang==="fr"?"Restez debout":"Stand for the Sunday"),
+      option.label+" opening must show existing guidance in the selected language");
+    assert.ok(initial.fontPx>=16,option.label+" opening rubric must be legible on phone");
+    assert.equal(initial.cueId,null,option.label+" guide must not fabricate a liturgical source cue");
     assert.equal(initial.asperges.total,5,"five reader screens hold six R20 source events");
     await page.screenshot({path:resolve(out,"production-"+option.label+"-prelude-390.png"),
       animations:"disabled"});
@@ -80,7 +95,17 @@ try{
       for(let n=0;n<20;n++){
         const a=api.getAspergesState(),special=api.getNativeEventState()?.specialRite;
         if(special!=="ASPERGES")break;
-        seen.push({record:a.card?.id,sourceRecords:a.card?.sourceRecordIds??[],formula:a.formulaState.formula});
+        const ui=document.querySelector("#ao-r17-native-reader-preview");
+        const rows=[...(ui?.querySelectorAll('.ao-reader-paragraph')??[])];
+        const onlyGuide=(a.card?.paragraphs??[]).length===0;
+        if(onlyGuide && !rows.some(row=>row.dataset.kind==="RUBRIC"&&row.textContent.trim()))
+          errors.push("blank source-guide ritual stage "+a.card?.id);
+        if(!onlyGuide && rows.every(row=>row.dataset.kind==="RUBRIC"))
+          errors.push("actual chant/response was replaced by rubric "+a.card?.id);
+        if(onlyGuide && rows.some(row=>row.dataset.cueId))
+          errors.push("invented source cue on action-only stage "+a.card?.id);
+        seen.push({record:a.card?.id,sourceRecords:a.card?.sourceRecordIds??[],
+          formula:a.formulaState.formula,guideOnly:onlyGuide});
         next.click();
       }
       const after={title:api.getCurrentCard()?.title,progress:
@@ -91,6 +116,9 @@ try{
       return {seen,after,errors};
     });
     assert.equal(traversed.seen.length,5,option.label+" five R20 reader screens must precede Mass");
+    assert.deepEqual(traversed.seen.filter(x=>x.guideOnly).map(x=>x.record),
+      ["ASP-R01","ASP-R03","ASP-R05"],
+      option.label+" only the three nonspoken R20 screens may show editorial rubrics");
     assert.deepEqual(traversed.seen.flatMap(x=>x.sourceRecords),
       ["ASP-010","ASP-020","ASP-030","ASP-040","ASP-050","ASP-060"],
       option.label+" all six original source events must be conserved");
