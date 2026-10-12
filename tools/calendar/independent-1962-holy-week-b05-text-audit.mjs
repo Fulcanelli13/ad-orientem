@@ -8,7 +8,7 @@ import {resolve} from "node:path";
 const root=resolve(fileURLToPath(new URL("../..",import.meta.url)));
 const read=path=>readFile(resolve(root,path),"utf8");
 const json=async path=>JSON.parse(await read(path));
-const [register,b04,palm,thursday,friday,vigil,prophecies,gfReader,evReader,htReader,ordinary]=await Promise.all([
+const [register,b04,palm,thursday,friday,vigil,prophecies,gfReader,evReader,htReader,ordinary,voices,domReader]=await Promise.all([
  json("data/mass/independent-1962-holy-week-b05-text-audit.v1.json"),
  json("data/mass/independent-1962-holy-week-b04.v1.json"),
  json("data/presentation/reader-palm.v1.json"),
@@ -19,7 +19,9 @@ const [register,b04,palm,thursday,friday,vigil,prophecies,gfReader,evReader,htRe
  read("src/mass/reader-good-friday.js"),
  read("src/mass/reader-easter-vigil.js"),
  read("src/mass/reader-holy-thursday-post.js"),
- json("data/presentation/reader-text-sung.v1.json")
+ json("data/presentation/reader-text-sung.v1.json"),
+ json("data/mass/good-friday-passion-voice-anchors.v1.json"),
+ read("src/mass/reader-dom.js")
 ]);
 const strict=process.argv.includes("--strict");
 const checks=[];
@@ -37,7 +39,15 @@ check("Holy-Thursday-Mandatum-owned-within-Mass-and-still-textually-partial",!JS
 check("Holy-Thursday-Canon-proper-restored-not-original-printed-certified",itemById.get("THURSDAY_CANON")?.status==="B08_SOURCE_MAPPED_READER_VARIANTS__PRINTED_FACSIMILE_UNCOLLATED");
 check("Good-Friday-nine-intentions-and-prayers",friday.solemnPrayers.length===9&&friday.solemnPrayers.every(x=>x.variants?.PRINTED_1962||x.intention?.length>50&&x.prayer?.length>130));
 check("Good-Friday-Passion-body-present",friday.passion.preDeath.length===24&&friday.passion.postDeath.length===4&&friday.passion.preDeath.join(" ").length>6500);
-check("Good-Friday-Passion-renderer-has-no-speaker-roles",gfReader.includes('rows("GF-PASS-A",payload.passion.preDeath')&&gfReader.includes('rows("GF-PASS-B",payload.passion.postDeath')&&itemById.get("FRIDAY_PASSION_SPEAKERS")?.status==="ROLE_ANNOTATIONS_MISSING");
+check("Good-Friday-49-Passion-speech-anchors-partial",
+  voices.schema==="AO_MR1962_GOOD_FRIDAY_PASSION_VOICE_ANCHORS_V1"&&
+  voices.anchors.length===49&&
+  voices.anchors.filter(x=>x.role==="CHRISTUS").length===16&&
+  voices.anchors.filter(x=>x.role==="SYNAGOGA").length===33&&
+  gfReader.includes('passionRows("GF-PASS-A"')&&
+  domReader.includes("decorateGoodFridayScriptureVoices")&&
+  itemById.get("FRIDAY_PASSION_SPEAKERS")?.status===
+    "B11_49_EXACT_DIALOGUE_VOICE_SPANS__FULL_ROLE_SEGMENTATION_OPEN");
 const ministers=ordinary.blocks.find(x=>x.Block_ID==="AO.SM.B007")?.units??[];
 const gfConf=friday.communion.deaconConfiteor;
 check("Good-Friday-full-deacon-Confiteor-from-1962-Ordinary",
