@@ -16,7 +16,7 @@ export function temporal1962PrefaceChoice(day,{allowLocalAdventPreface=false}={}
  const cycle=buildLiturgicalYear(date);
  const period=cycle.currentPeriod?.id??"";
  const mainId=String(day?.day?.main?.id??"");
- const feast=/^sancti:(\d\d-\d\d):/i.exec(mainId)?.[1]??null;
+ const feast=/^sancti:(\d\d-\d\d)[a-z]*:/i.exec(mainId)?.[1]??null;
 
  // A major proper feast outranks the seasonal Preface (including Lent).
  if(feast&&ST_JOSEPH_1962_FEAST_IDS.has(feast))return {section:"Joseph",formulary:feast,reason:"ST_JOSEPH_PROPER"};
