@@ -748,6 +748,8 @@ try{
       headOverflow:(head?.scrollWidth??0)-(head?.clientWidth??0),
       recitationButtonWidths,
       recitationRight:recRect?.right??0,
+      recitationLeft:recRect?.left??0,
+      phoneViewportWidth:window.innerWidth,
       headRight:headRect?.right??0,
     };
   });
@@ -771,7 +773,9 @@ try{
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
   assert.ok(rosaryOpening.headOverflow<=1,"Rosary phone header still overflows horizontally");
   assert.ok(rosaryOpening.recitationButtonWidths.length===2&&rosaryOpening.recitationButtonWidths.every(width=>width>=52),"Rosary Individual / Group controls are visibly truncated");
-  assert.ok(rosaryOpening.recitationRight<=rosaryOpening.headRight+1,"Rosary recitation control clips outside the phone header");
+  // Recitation controls now live beneath the header in the expanded Prayer options.
+  assert.ok(rosaryOpening.recitationLeft>=-1&&rosaryOpening.recitationRight<=rosaryOpening.phoneViewportWidth+1,
+    "Rosary options controls exceed the phone viewport: "+JSON.stringify(rosaryOpening));
 
   // Reproduce the user-visible failure mode explicitly: Group recitation. The late
   // preserved donor had to collapse common-prayer leader/response grids to full-width
