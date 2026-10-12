@@ -46,6 +46,33 @@ function selectedWork(subjectId, works, context, curation) {
 }
 
 function liveRegistry(works) { return Array.isArray(works) ? works : []; }
+const approvedRelations = new Set([
+  "EXACT_FEAST_SUBJECT", "APPOINTED_GOSPEL", "APPOINTED_EPISTLE"
+]);
+const isWitnessUrl = url => /^https:\/\/[^\s/]+\/\S+$/i.test(String(url || ""));
+function sourceLinkedOccasion(entry, subjectId, date, observedId) {
+  return entry?.date === date && entry?.subjectId === subjectId
+    && entry?.observedPrincipalId === observedId
+    && approvedRelations.has(entry?.relationship)
+    && isWitnessUrl(entry?.liturgicalWitnessUrl)
+    && isWitnessUrl(entry?.iconographyWitnessUrl);
+}
+function verifiedReleaseChoices({ date, observedId, works, curation, context, homeSpotlight = false }) {
+  const out = [];
+  for (const work of liveRegistry(works)) {
+    for (const entry of Array.isArray(work?.release?.verifiedOccasions)
+      ? work.release.verifiedOccasions : []) {
+      if (homeSpotlight && entry.homeSpotlight !== true) continue;
+      if (!sourceLinkedOccasion(entry, entry.subjectId, date, observedId)) continue;
+      const selected = selectedWork(entry.subjectId, [work], context, curation);
+      if (selected) out.push({ ...selected, anchorDate: date,
+        observedPrincipalId: observedId, held: false,
+        relation: entry.relationship });
+    }
+  }
+  return out;
+}
+
 function possibleOccasions(date, curation) {
   if (!isDay(date) || date.slice(0,4) !== String(curation?.year)) return [];
   return (curation?.occasions || []).filter(row => row.date === date
@@ -61,9 +88,7 @@ function clearedOccasion(row, artwork, subjectId, date, currentObservedId) {
   // required; an existing nominal/date title never asserts an observance.
   const certified = artwork?.release?.verifiedOccasions;
   return Array.isArray(certified) && certified.some(entry =>
-    entry.date === row.date && entry.subjectId === subjectId
-      && typeof entry.observedPrincipalId === "string"
-      && !!entry.observedPrincipalId
+    sourceLinkedOccasion(entry, subjectId, row.date, entry.observedPrincipalId)
       && (date !== row.date || entry.observedPrincipalId === currentObservedId));
 }
 
@@ -80,7 +105,13 @@ export function selectReleasedCalendarArtwork({
         observedPrincipalId: observedId, held: false, relation: "OBSERVED_PRINCIPAL_SUBJECT" };
     }
   }
-  return null;
+  // The ordinary II-class Sundays and appointed-Gospel dates are absent
+  // from the major-occasion shortlist. They can still display a painting,
+  // but ONLY through a separately source-certified proper/Scripture link.
+  const verified = verifiedReleaseChoices({
+    date, observedId, works, curation, context: "calendar"
+  });
+  return verified[0] || null;
 }
 
 /**
@@ -109,7 +140,24 @@ export function selectReleasedHomeArtwork({
         relation: row.date === date ? "OBSERVED_PRINCIPAL_SUBJECT" : "HELD_PREVIOUS_MASTERPIECE" };
     }
   }
-  return null;
+  // A separately approved Sunday/Gospel masterpiece can become a new
+  // Home anchor. The switch is opt-in, never an automatic weekly rotation.
+  const verifiedAnchors = [];
+  for (const work of liveRegistry(works)) {
+    for (const entry of Array.isArray(work?.release?.verifiedOccasions)
+      ? work.release.verifiedOccasions : []) {
+      if (entry.homeSpotlight !== true || !isDay(entry.date)
+          || entry.date > date || entry.date.slice(0,4) !== String(curation.year)) continue;
+      if (entry.date === date && entry.observedPrincipalId !== observedId) continue;
+      if (!sourceLinkedOccasion(entry, entry.subjectId, entry.date, entry.observedPrincipalId)) continue;
+      const selected = selectedWork(entry.subjectId, [work], "home", curation);
+      if (selected) verifiedAnchors.push({ ...selected, anchorDate: entry.date,
+        observedPrincipalId: entry.observedPrincipalId, held: entry.date !== date,
+        relation: entry.date === date ? entry.relationship : "HELD_PREVIOUS_MASTERPIECE" });
+    }
+  }
+  verifiedAnchors.sort((a,b) => b.anchorDate.localeCompare(a.anchorDate));
+  return verifiedAnchors[0] || null;
 }
 
 /**
