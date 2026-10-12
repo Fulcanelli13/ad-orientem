@@ -188,6 +188,8 @@ function focusUnits(root){
 }
 function updateFocus(){
   const root=document.getElementById(ROOT),mount=root?.querySelector('.aoP435930Mount');if(!root||!mount||!root.classList.contains('open'))return;
+  // Card-local focus replaces the legacy mount-level focus in the Angelus deck.
+  if(root.querySelector('[data-ao-devotional-deck]'))return;
   if(v3410SpecialFocus(root,mount))return;
   const units=[...root.querySelectorAll('.aoP435930FluidUnit')].filter(x=>x.offsetParent!==null);if(!units.length)return;
   const box=mount.getBoundingClientRect(),focusY=box.top+Math.min(box.height,window.innerHeight)*.43,band=Math.max(150,Math.min(box.height,window.innerHeight)*.39);
