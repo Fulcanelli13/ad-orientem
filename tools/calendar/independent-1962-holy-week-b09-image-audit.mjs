@@ -28,8 +28,8 @@ const fold=v=>String(v??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").toLowerCase().replace(/j/g,"i")
  .replace(/[^a-z0-9]+/g," ").replace(/\s+/g," ").trim();
 assert.equal(manifest.schema,"AO_MR1962_HOLY_WEEK_B09_VATICAN_IMAGE_WITNESS_V1");
-assert.equal(manifest.witnesses.length,21,"Image witness must not silently lose an entry");
-assert.equal(new Set(manifest.witnesses.map(x=>x.imageUrl)).size,15);
+assert.equal(manifest.witnesses.length,29,"Image witness must not silently lose an entry");
+assert.equal(new Set(manifest.witnesses.map(x=>x.imageUrl)).size,21);
 assert.equal(new Set(manifest.witnesses.map(x=>x.id)).size,21);
 assert.equal(manifest.certification.status,"PARTIAL_IMAGE_ANCHORS_ONLY");
 assert.equal(b05.auditItems.length,17,"Separate 17 uncollated B05 issues remain visible");
@@ -82,6 +82,26 @@ assert.ok(before("GF-PASS-310","GF-SOP-400"));
 assert.ok(before("GF-SOP-09-R","GF-X-510"));
 assert.ok(before("GF-VEN-600","GF-COM-800"));
 assert.equal(friday.solemnPrayers.length,9);
+const allNineIds=[
+ "SOLEMN_PRAYER_FOR_CHURCH","SOLEMN_PRAYER_FOR_POPE",
+ "SOLEMN_PRAYER_FOR_ORDERS","SOLEMN_PRAYER_FOR_MAGISTRATES",
+ "SOLEMN_PRAYER_FOR_CATECHUMENS","SOLEMN_PRAYER_FOR_NEEDS",
+ "SOLEMN_PRAYER_FOR_CHURCH_UNITY","SOLEMN_PRAYER_1962_FOR_JEWS",
+ "SOLEMN_PRAYER_FOR_NONCHRISTIANS",
+];
+assert.equal(allNineIds.length,9);
+for(const id of allNineIds){
+ const x=results.find(x=>x.id===id);
+ assert.equal(x?.status,"IMAGE_LATIN_INCIPIT_AGREES",
+   "Source image must corroborate each of the NINE 1962 Solemn Prayer incipits: "+id);
+}
+assert.equal(results.find(x=>x.id==="SOLEMN_PRAYER_1962_FOR_JEWS_COLLECT")?.status,
+ "IMAGE_LATIN_INCIPIT_AGREES");
+assert.ok(fold(friday.solemnPrayers[7].variants.PRINTED_1962.prayer)
+ .includes(fold("qui Iudaeos etiam a tua misericordia non repellis")));
+assert.ok(!fold(friday.solemnPrayers[7].variants.HOLY_SEE_2008.prayer)
+ .includes(fold("qui Iudaeos etiam a tua misericordia non repellis")),
+ "The 2008 edition cannot substitute for the original 1962 printed Jewish prayer.");
 assert.equal(friday.cross.unveiling.repetitions,3);
 const mime={".html":"text/html",".js":"text/javascript",".mjs":"text/javascript",
  ".css":"text/css",".json":"application/json",".svg":"image/svg+xml",
@@ -124,8 +144,8 @@ const discrepancies=results.filter(x=>x.runtimePath&&x.status!=="IMAGE_LATIN_INC
 const report={
  schema:"AO_MR1962_HOLY_WEEK_B09_IMAGE_ANCHORS_RUNTIME_REPORT",
  witness:manifest.source.imageIndex,sourceEdition:manifest.source.edition,
- scope:"21 image-located anchors on 15 printed leaves / four 1962 Holy Week rites",
- imageWitnesses:15,expectedClaims:21,
+ scope:"29 image-located anchors on 21 printed leaves / four 1962 Holy Week rites",
+ imageWitnesses:21,expectedClaims:29,
  textClaims:results.filter(x=>x.runtimePath).length,
  textMatches:results.filter(x=>x.status==="IMAGE_LATIN_INCIPIT_AGREES").length,
  evidenceOnlyRubricClaims:results.filter(x=>!x.runtimePath).length,
@@ -138,7 +158,7 @@ const report={
 await mkdir(resolve(base,"artifacts"),{recursive:true});
 await writeFile(resolve(base,"artifacts/mass-1962-holy-week-b09-printed-image-report.json"),
  JSON.stringify(report,null,2)+"\n");
-console.log("MR62_B09_SUMMARY "+JSON.stringify({imageLeaves:15,claims:21,
+console.log("MR62_B09_SUMMARY "+JSON.stringify({imageLeaves:21,claims:29,
  textClaims:report.textClaims,textMatches:report.textMatches,
  failed:discrepancies.length,structuralClaims:report.evidenceOnlyRubricClaims,
  b05OpenTextDefects:17,fullHolyWeekCertified:false}));
