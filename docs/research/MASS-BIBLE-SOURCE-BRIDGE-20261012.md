@@ -195,53 +195,53 @@ This is a **complete 44/44 research triage**, not an inspection of the facsimile
 
 - **undefined** have a candidate page heading broadly consistent with a feast/date or thematic formulary but still require boundaries, original image, full Latin and Scripture checks.
 - **undefined** remain ambiguous due to adjacency, date boundaries, common-formulary reuse, variant suffixes or extra-local sections.
-- **44** show a direct calendar/season mismatch in candidate page headings. Those candidate matches must not become exact Mass witnesses.
+- **9** show a direct calendar/season mismatch in candidate page headings. Those candidate matches must not become exact Mass witnesses.
 
 | Source path | Preliminary triage | Candidate PDF pages |
 | --- | --- | --- |
-| `Commune/Coronatio` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 876, 877 |
-| `Commune/Propaganda` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 894, 895 |
+| `Commune/Coronatio` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 876, 877 |
+| `Commune/Propaganda` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 894, 895 |
 | `Sancti/01-20` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 688 |
 | `Sancti/01-25` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 652 |
-| `Sancti/01-31` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 543 |
-| `Sancti/02-01` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 544 |
-| `Sancti/02-11` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 656, 555 |
-| `Sancti/02-27` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 563, 625 |
-| `Sancti/03-19` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 572, 573 |
-| `Sancti/03-19t` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 572, 573 |
+| `Sancti/01-31` | BOUNDARY_OR_VARIANT_REQUIRES_ADJUDICATION | 543 |
+| `Sancti/02-01` | BOUNDARY_OR_VARIANT_REQUIRES_ADJUDICATION | 544 |
+| `Sancti/02-11` | BOUNDARY_OR_VARIANT_REQUIRES_ADJUDICATION | 656, 555 |
+| `Sancti/02-27` | BOUNDARY_OR_VARIANT_REQUIRES_ADJUDICATION | 563, 625 |
+| `Sancti/03-19` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 572, 573 |
+| `Sancti/03-19t` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 572, 573 |
 | `Sancti/03-24` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 751, 752 |
-| `Sancti/03-27` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 578, 579 |
-| `Sancti/03-28` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 579, 580 |
-| `Sancti/04-28` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 594, 595 |
-| `Sancti/05-13` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 610, 611 |
+| `Sancti/03-27` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 578, 579 |
+| `Sancti/03-28` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 579, 580 |
+| `Sancti/04-28` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 594, 595 |
+| `Sancti/05-13` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 610, 611 |
 | `Sancti/06-02` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 704, 705 |
-| `Sancti/06-05` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 627 |
+| `Sancti/06-05` | BOUNDARY_OR_VARIANT_REQUIRES_ADJUDICATION | 627 |
 | `Sancti/06-28` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 659 |
-| `Sancti/06-30` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 652, 653 |
-| `Sancti/07-05` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 660, 661 |
-| `Sancti/07-13pl` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 1029, 1030 |
-| `Sancti/07-20` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 674, 675 |
-| `Sancti/08-02` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 692 |
-| `Sancti/08-08` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 700 |
+| `Sancti/06-30` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 652, 653 |
+| `Sancti/07-05` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 660, 661 |
+| `Sancti/07-13pl` | BOUNDARY_OR_VARIANT_REQUIRES_ADJUDICATION | 1029, 1030 |
+| `Sancti/07-20` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 674, 675 |
+| `Sancti/08-02` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 692 |
+| `Sancti/08-08` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 700 |
 | `Sancti/08-16` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 544 |
-| `Sancti/08-22` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 714, 715 |
-| `Sancti/09-09n` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 1008, 1009 |
-| `Sancti/09-18` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 742, 743 |
-| `Sancti/10-02` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 751, 752, 754, 755 |
-| `Sancti/10-03` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 755, 756, 757 |
-| `Sancti/10-09` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 763, 764 |
-| `Sancti/10-17` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 769 |
-| `Sancti/10-20` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 774 |
-| `Sancti/10-DU` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 779 |
-| `Sancti/12-08` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 519 |
-| `Sancti/12-27` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 107 |
-| `Tempora/Pasc0-1` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 412, 413 |
+| `Sancti/08-22` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 714, 715 |
+| `Sancti/09-09n` | BOUNDARY_OR_VARIANT_REQUIRES_ADJUDICATION | 1008, 1009 |
+| `Sancti/09-18` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 742, 743 |
+| `Sancti/10-02` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 751, 752, 754, 755 |
+| `Sancti/10-03` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 755, 756, 757 |
+| `Sancti/10-09` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 763, 764 |
+| `Sancti/10-17` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 769 |
+| `Sancti/10-20` | BOUNDARY_OR_VARIANT_REQUIRES_ADJUDICATION | 774 |
+| `Sancti/10-DU` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 779 |
+| `Sancti/12-08` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 519 |
+| `Sancti/12-27` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 107 |
+| `Tempora/Pasc0-1` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 412, 413 |
 | `Tempora/Pasc0-2` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 415, 416 |
-| `Tempora/Pasc0-3` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 416, 417 |
-| `Tempora/Pasc0-5` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 420 |
-| `Tempora/Pasc0-5t` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 420 |
+| `Tempora/Pasc0-3` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 416, 417 |
+| `Tempora/Pasc0-5` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 420 |
+| `Tempora/Pasc0-5t` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 420 |
 | `Tempora/Pasc7-6t` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 157, 158, 159 |
-| `Tempora/Quad4-3t` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 191, 193 |
+| `Tempora/Quad4-3t` | HEADING_CONTEXT_PLAUSIBLE_NOT_VISUALLY_VERIFIED | 191, 193 |
 | `Tempora/Quad5-5` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 737, 739 |
 
 **Important:** “plausible” is a routing category for further source inspection, not approval. All 44 remain `printedPageVisuallyVerified:false`, `latinCompleteCertified:false`, `approved:false`; the 100 original edition packets still show zero completed certifications. No change to 1962 calendar, player, chant or reader. Source is the immutable [44-cluster extracted research register](https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json). The next step must open each page image and confirm the actual heading and complete formulary before citing any Latin wording as authentic printed 1962 text.
