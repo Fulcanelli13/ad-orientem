@@ -4,6 +4,7 @@ import { hammerHistoricalDayWitness } from "./novena-hammer-day-witness.v1.js";
 import { hammerHistoricalDayText } from "./novena-hammer-original-texts.v1.js";
 import { NOVENA_CONTEXT_V1, novenaContext } from "./novena-context-v1.js";
 import { installNovenaStyles } from "./novena-styles.js";
+import { installSequentialDevotionalReader,novenaStageChapters } from "./devotional-sequence-adapter.js";
 import { novenaStatusFor } from "../calendar/intelligence.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
@@ -30,6 +31,10 @@ const n1UiIcon=id=>{
  return "";
 };
 const nl=v=>esc(v).replace(/\n/g,'<br>');
+// Preserve original paragraph boundaries; single newlines remain deliberate line breaks.
+const novenaParagraphs=v=>String(v??'').replace(/\r\n/g,'\n')
+ .split(/\n[ \t]*\n+/).filter(x=>x.trim())
+ .map(x=>'<p class="aoN1PrayerParagraph">'+nl(x)+'</p>').join('');
 const isFr=()=>{try{const x=JSON.parse(localStorage.getItem('ao2:settings:v1')||'{}');return x.language==='fr'}catch{return false}};
 const L=(en,fr)=>isFr()?fr:en;
 const txt=o=>o?(isFr()?o.fr:o.en)||o.en||o.fr||'':'';
@@ -90,7 +95,7 @@ function sourceWitness(text,label){
    else witnessLabel='TRADUCTION FRANÇAISE · ALIGNÉE SUR LA SOURCE';
  }
  const toggle=isFr()&&en&&fr?`<button type="button" class="aoP435930Secondary" data-n1-show-en>${esc(showEnglish?'Revenir au français':'Voir le témoin anglais')}</button>`:'';
- return `<article class="aoN1SourceText"><small>${esc(witnessLabel)}</small><p>${nl(value)}</p>${toggle}</article>`;
+ return `<article class="aoN1SourceText"><small>${esc(witnessLabel)}</small>${novenaParagraphs(value)}${toggle}</article>`;
 }
 function canonicalPrayer(id,count=1){const p=prayerData()[id];if(!p)return `<div class="aoN1FailClosed">${esc(L('Canonical prayer record unavailable in this build.','Prière canonique indisponible dans cette version.'))}</div>`;const v=(isFr()?p.fr:p.en)||'',la=p.la||'',title=isFr()?(p.titleFr||p.title):p.title;return `<article class="aoN1Canon"><div class="aoN1CanonHead"><b>${esc(title||id)}</b><span>${count>1?count+'×':''}</span></div>${la&&v?`<button type="button" data-n1-flip><span data-face-v>${nl(v)}</span><span data-face-la hidden>${nl(la)}</span></button>`:`<div>${nl(v||la)}</div>`}</article>`}
 function commonPrayers(n){return (n.commonPrayers||[]).map(x=>canonicalPrayer(x[0],x[1])).join('')}
@@ -138,9 +143,21 @@ function renderDay(n){const d=n.days[N.day-1]||n.days[0],p=novenaPattern(n);if(N
  if(p==='HAMMER_MARIAN')body=`${sourceWitness(n.opening,L('Preparatory prayer','Prière préparatoire'))}${hammerChurchStage(n)}${sourceWitness(daySource(n,d),L('Proper prayer of the day','Prière propre du jour'))}${hammerSourceDayDetails(n)}${hammerTailStage(n)}`;
  else if(p==='COMMON_BEFORE_REPEAT')body=`${commonPrayers(n)}${sourceWitness(daySource(n,d),L('Historical prayer','Prière historique'))}`;
  else body=`${p==='OPENING_DAY_COMMON_CLOSE'?sourceWitness(n.opening,L('Common opening','Ouverture commune'))+commonPrayers(n):''}${sourceWitness(daySource(n,d),L('Historical prayer','Prière historique'))}${p==='OPENING_DAY_COMMON_CLOSE'?'':commonPrayers(n)}${n.sharedClosingText?sourceWitness(n.sharedClosingText,txt(n.sharedClosingLabel||{en:'Common closing prayer',fr:'Prière commune de conclusion'})):''}${n.closingCanonical?canonicalPrayer(n.closingCanonical,1):''}`;
- return `${head(`${L('Day','Jour')} ${N.day} · ${txt(d.theme)}`,txt(n.title))}<main class="aoP435930Body">${modeNav()}${body}${sourceDetails(n)}<div class="aoN1Nav"><button type="button" data-n1-day-prev ${N.day===1?'disabled':''}>← ${esc(L('Previous day','Jour précédent'))}</button><button type="button" class="primary" data-n1-day-next>${esc(N.day===9?L('Return to novena','Retour à la neuvaine'):L('Next day','Jour suivant'))} →</button></div></main>`}
- const total=stages(n);return `${head(`${L('Day','Jour')} ${N.day} · ${txt(d.theme)}`,txt(n.title))}<main class="aoP435930Body">${modeNav()}${stageRail(n)}${stageContent(n,d)}<div class="aoN1Nav"><button type="button" data-n1-stage-prev ${N.stage===0?'disabled':''}>← ${esc(L('Back','Retour'))}</button><button type="button" class="primary" data-n1-stage-next>${esc(N.stage===total-1?L('Finish this day','Terminer ce jour'):L('Continue','Continuer'))} →</button></div></main>`}
-function render(){const m=mount();if(!m)return;const n=N.id?CORPUS[N.id]:null;let h=N.screen==='overview'?renderOverview():N.screen==='detail'&&n?renderDetail(n):N.screen==='day'&&n?renderDay(n):renderOverview();m.dataset.aoPrayView='novenas';m.dataset.aoN1='true';m.classList.toggle('aoP435930FocusRunway',N.screen==='day'&&N.mode==='guided');m.innerHTML=h;m.scrollTop=0;queueMicrotask(()=>m.querySelector('button,[href],summary,[tabindex]:not([tabindex="-1"])')?.focus?.())}
+ return `${head(`${L('Day','Jour')} ${N.day} · ${txt(d.theme)}`,txt(n.title))}<main class="aoP435930Body aoN1Reader" data-ao-novena-deck="simple">${modeNav()}<section class="aoDevoCard" data-ao-devo-card="day-${N.day}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${esc(L('Day','Jour'))} ${N.day} / 9</small><h2 class="aoDevoCardTitle">${esc(txt(d.theme))}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(txt(d.theme))}">${body}</div></section>${sourceDetails(n)}<div class="aoN1Nav"><button type="button" data-n1-day-prev ${N.day===1?'disabled':''}>← ${esc(L('Previous day','Jour précédent'))}</button><button type="button" class="primary" data-n1-day-next>${esc(N.day===9?L('Return to novena','Retour à la neuvaine'):L('Next day','Jour suivant'))} →</button></div></main>`}
+ const total=stages(n);const chapter=novenaStageChapters({pattern:p,sharedClosing:!!n.sharedClosingText},{french:isFr()})[N.stage];return `${head(`${L('Day','Jour')} ${N.day} · ${txt(d.theme)}`,txt(n.title))}<main class="aoP435930Body aoN1Reader" data-ao-novena-deck="guided">${modeNav()}<section class="aoDevoCard" data-ao-devo-card="${esc(chapter.id)}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${N.stage+1} / ${total}</small><h2 class="aoDevoCardTitle">${esc(chapter.title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(chapter.title)}">${stageContent(n,d)}</div></section><div class="aoN1Nav"><button type="button" data-n1-stage-prev ${N.stage===0?'disabled':''}>← ${esc(L('Back','Retour'))}</button><button type="button" class="primary" data-n1-stage-next>${esc(N.stage===total-1?L('Finish this day','Terminer ce jour'):L('Continue','Continuer'))} →</button></div></main>`}
+function render(){const m=mount();if(!m)return;const n=N.id?CORPUS[N.id]:null;let h=N.screen==='overview'?renderOverview():N.screen==='detail'&&n?renderDetail(n):N.screen==='day'&&n?renderDay(n):renderOverview();m.dataset.aoPrayView='novenas';m.dataset.aoN1='true';m.classList.toggle('aoP435930FocusRunway',N.screen==='day'&&N.mode==='guided');m.innerHTML=h;m.scrollTop=0;queueMicrotask(()=>{
+  if(N.screen==='day'&&n&&m.querySelector('.aoN1Reader')){
+   const guided=N.mode==='guided';
+   const chapters=guided?novenaStageChapters({pattern:novenaPattern(n),sharedClosing:!!n.sharedClosingText},{french:isFr()}):
+    [{id:'day-'+N.day,title:L('Day ','Jour ')+N.day+' · '+txt((n.days[N.day-1]||n.days[0]).theme)}];
+   installSequentialDevotionalReader({mount:m,kind:'novena',chapters,activeIndex:guided?N.stage:0,
+    paragraphSelector:'.aoN1PrayerParagraph,.aoN1Canon,.aoN1Info > p,.aoN1Calendar',
+    timelineLabel:L('Prayer stages','Étapes de la prière'),
+    onNavigate:idx=>{if(!guided)return;N.stage=idx;render()}
+   });
+  }
+  m.querySelector('button,[href],summary,[tabindex]:not([tabindex="-1"])')?.focus?.();
+ })}
 function open(opts={}){
  OPEN_RECEIPT=captureObservedModuleOrigin(window,"pray");
  OPEN_OPTS={...opts};N.stage=0;N.showEnglish=false;
