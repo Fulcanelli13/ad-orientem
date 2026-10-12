@@ -33,8 +33,10 @@ try{
    await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.().visibleOwner===true,null,{timeout:45000});
    const nav=await page.evaluate(()=>window.AO_APP_SHELL_V1.navigate("pray"));
    assert.equal(nav?.ok,true,"Prayer destination did not open");
-   const launch=await page.evaluate(()=>window.AO_MODULES?.open?.("pray.rosary_methods"));
-   assert.equal(launch?.ok,true,"Canonical Rosary Methods route unavailable");
+   // Rosary Methods is an internal route of the canonical Prayer donor, not
+   // an AO_MODULES public route. Exercise the real installed presentation owner.
+   const launch=await page.evaluate(()=>window.AO_PRAY_V435930?.open?.("pray.rosary_methods"));
+   assert.equal(launch,true,"Canonical Prayer Rosary Methods screen unavailable");
    const chooser=page.locator('#aoPray435930 [data-ao-rosary-chooser]');
    await chooser.waitFor({state:"visible",timeout:15000});
    const first=await chooser.evaluate(root=>{
