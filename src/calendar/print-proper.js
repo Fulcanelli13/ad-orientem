@@ -23,6 +23,8 @@ function sectionsFromProper(p,lang){
       kind,title:titleFor(kind,lang)+(items.length>1?" "+(index+1):"")+
         (x?.oneConclusion?.status==="CERTIFIED"&&x.oneConclusion.kind==="INSEPARABLE_APOSTLES"?
           (lang==="fr"?" · Pierre et Paul (conclusion unique)":" · Peter and Paul (single conclusion)"):
+          x?.oneConclusion?.status==="CERTIFIED"&&x.oneConclusion.kind==="MULTIPLE_COMMEMORATIONS"?
+            (lang==="fr"?" · Deux commémoraisons (conclusion unique)":" · Two commemorations (single conclusion)"):
           kind==="collect"&&x?.oneConclusion?.status==="CERTIFIED"?
             (lang==="fr"?" · Missions (conclusion unique)":" · Missions (single conclusion)"):""),
       ...pair(x,lang)
@@ -82,7 +84,7 @@ export function renderPrintableProperHtml(resolved,{language="en",massForm=null}
     '</small><p>',escapeHtml(x.vernacular),'</p></div></div></section>'
   ].join("")).join("");
   const comm=(p.commemorationFormDecision?.status==="CERTIFIED"?p.appliedCommemorations:(p.calendarCommemorations||[])).map(x=>[
-    '<li>',escapeHtml(x.name),' · ',escapeHtml(x.path),
+    '<li>',escapeHtml(x.name??x.title??x.id),' · ',escapeHtml(x.path),
     x.prayerSourcePath&&x.prayerSourcePath!==x.path?" · "+escapeHtml(x.prayerSourcePath):"","</li>"
   ].join("")).join("");
   const css='@page{size:A4;margin:14mm}*{box-sizing:border-box}html{background:#f5f3ef;color:#161616}body{font-family:Georgia,serif;max-width:930px;margin:auto;padding:26px 20px}header{border-bottom:2px solid #252525;padding-bottom:13px;margin-bottom:22px}header small,.cols small{font:700 9px/1.4 system-ui,sans-serif;letter-spacing:.12em}header h1{font-size:24px;margin:8px 0}header p{margin:5px 0}header .note{font-size:12px;color:#555}.item{margin-bottom:22px;break-inside:avoid-page}.item h2{font-size:15px;border-bottom:1px solid #aaa;padding-bottom:5px}.cols{display:grid;grid-template-columns:1fr 1fr;gap:17px}.cols p{font-size:11pt;line-height:1.45;white-space:pre-line;overflow-wrap:anywhere;margin:7px 0}.cols small{color:#666}footer{font-size:11px;border-top:1px solid #888;padding-top:10px;overflow-wrap:anywhere}.toolbar{margin-bottom:16px}.toolbar button{background:#222;color:white;border:0;border-radius:4px;padding:10px 16px;cursor:pointer}@media print{html{background:white}body{padding:0;max-width:none}.toolbar{display:none}}@media(max-width:550px){.cols{grid-template-columns:1fr}.item{break-inside:auto}}';
