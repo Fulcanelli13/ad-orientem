@@ -1,0 +1,109 @@
+{
+  "schema": "AO_SACRED_ART_SELECTED_ORIGINAL_VISUAL_QA_V1",
+  "date": "2026-10-12",
+  "branch": "platform/885-sacred-art-candidates",
+  "evidence": {
+    "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38251551187",
+    "artifactId": 11748365622,
+    "artifactName": "selected-masterpieces-12oct-qa-originals-and-gallery",
+    "sourceMethod": "Downloaded official museum images, SHA-256 verified and visually inspected all 3 originals plus 9 generated compare previews",
+    "humanAestheticApproval": "NOT_RECORDED",
+    "imagesPublishedToApp": 0
+  },
+  "policy": {
+    "artistExclusions": [
+      "El Greco",
+      "Fra Angelico"
+    ],
+    "defaultDisplay": "COMPLETE_COMPOSITION_OBJECT_FIT_CONTAIN",
+    "portraitCoverCropsPermittedForRelease": false,
+    "alternatePhoneCropping": "REQUIRES_SEPARATE_EXPLICIT_COMPOSITION_APPROVAL",
+    "noReproductionFrameOrWallPhotos": true,
+    "subjectApprovedDoesNotEqualHomepageApproved": true,
+    "rightsAndObjectMetadataNotImageReleaseApproval": true
+  },
+  "summary": {
+    "requested": 3,
+    "acquiredForReview": 3,
+    "metArchiveShaMatches": 2,
+    "kmskaIIIF4000PixelReviewDerivatives": 1,
+    "iconographicallySafePortraitCoverCropsApproved": 0,
+    "productionImageAssetsApproved": 0
+  },
+  "works": [
+    {
+      "key": "met-438724",
+      "subjectId": "ROS-01",
+      "secondarySubjectId": "DEV-07",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "originalWidth": 3741,
+      "originalHeight": 3658,
+      "sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "historicalShaMatches": true,
+      "sourceType": "MET_API_FULL_ORIGINAL",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/438724",
+      "rightsEvidence": "https://www.metmuseum.org/hubs/open-access",
+      "rightsSummary": "Met object marked Public Domain and included in Open Access",
+      "visualReview": "The source image has a narrow brown support-edge border; do not certify frame-free until a conservative edge trim is inspected. Narrow 9:16 cover crops exclude parts of Mary's lectern and Gabriel/angel wings. Complete composition is essential.",
+      "safeDisplayProposal": "FULL_COMPOSITION_CONTAIN",
+      "edgeTrimReview": "INSPECT_1_TO_2_PERCENT_PER_SIDE_MAINTAIN_PAINTING",
+      "phoneCoverApproved": false,
+      "frameFreeCertified": false,
+      "glareFreeCertified": false,
+      "homeArtistApproved": false,
+      "appPublicationApproved": false
+    },
+    {
+      "key": "met-437524",
+      "subjectId": "ROS-15",
+      "artist": "Peter Paul Rubens",
+      "title": "The Coronation of the Virgin (oil sketch)",
+      "originalWidth": 3036,
+      "originalHeight": 3716,
+      "sha256": "9416f3a1f193c5fb5cf9e65bc329feb73fbc07187d0a11b09e5087579d0c9ab6",
+      "historicalShaMatches": true,
+      "sourceType": "MET_API_FULL_ORIGINAL",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437524",
+      "rightsEvidence": "https://www.metmuseum.org/hubs/open-access",
+      "rightsSummary": "Met object API marked Public Domain (CC0 policy)",
+      "visualReview": "Narrow portrait cover crop discards outer red-and-gold figures/robes and peripheral cherubs. Source is an oil sketch and must be captioned as such. Preserve the full Trinitarian Coronation grouping.",
+      "safeDisplayProposal": "FULL_COMPOSITION_CONTAIN",
+      "edgeTrimReview": "REVIEW_VISIBLE_PANEL_MARGIN",
+      "phoneCoverApproved": false,
+      "frameFreeCertified": false,
+      "glareFreeCertified": false,
+      "homeArtistApproved": false,
+      "appPublicationApproved": false
+    },
+    {
+      "key": "kmska-314",
+      "subjectId": "DEV-18",
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Trinity",
+      "originalWidth": 4000,
+      "originalHeight": 4113,
+      "sha256": "5996132846d655eeaecbf0baf8887989c6ec2a57348a08db59cac5f54a3964b9",
+      "historicalShaMatches": null,
+      "sourceType": "4000_PX_IIIF_REVIEW_DERIVATIVE_NOT_19K_ORIGINAL",
+      "sourcePage": "https://vlaamsekunstcollectie.be/en/collection/314",
+      "iiifManifest": "https://iiif.kmska.be/iiif/2/28958/manifest.json",
+      "rightsSummary": "Institutional collection lists image CC0; IIIF manifestation reports Public Domain Mark 1.0",
+      "visualReview": "Portrait cover cuts flanking putti/angels and instruments of Passion. Father, slain Son and Holy Spirit must stay together; 9:16 center/high previews are not independent useful crop proposals. The master 19k original remains to be fetched separately.",
+      "safeDisplayProposal": "FULL_COMPOSITION_CONTAIN",
+      "edgeTrimReview": "INSPECT_SOURCE_BOUNDARY",
+      "phoneCoverApproved": false,
+      "frameFreeCertified": false,
+      "glareFreeCertified": false,
+      "homeArtistApproved": false,
+      "appPublicationApproved": false
+    }
+  ],
+  "nextActions": [
+    "Retain the ZIP originals/review gallery as research artifact; do not turn preview crops into production asset automatically.",
+    "Inspect 1–2% edge trim candidate for Annunciation and review full frame-free boundaries of all three originals.",
+    "Download KMSKA full 19,178×19,721 master from authenticated CC0/PD image source if storage and reproduction policies permit, verify SHA and crop.",
+    "Run a cross-module visual review before approving Home hero placement; subject approvals remain authoritative without new selections.",
+    "Resolve PR #887 merge conflicts with concurrent app work before production integration."
+  ]
+}
