@@ -178,8 +178,13 @@ export function apply1962PrefaceSelection(day,registry){
   const choice=choose1962PrefaceForDay(day);
   if(!choice)return day;
   const original=currentPreface(day);
-  // Existing proper/seasonal Prefaces must outrank source recovery.
-  if(!isCommon(original))return day;
+  // A prior proper/seasonal Preface normally wins. Exception: the
+  // source sometimes ships raw Paschal alternatives in a single text.
+  // A rendered Preface must contain ONE rubric-selected day/night clause.
+  const rawPaschalAlternative=choice.sourceSection==="Pasch"&&
+    /\(sed tempore Passionis\)|\(sed octava Paschæ\)|\(à la Messe de la Vigile pascale\)/i
+      .test(String(original?.lat??original?.la??"")+" "+String(original?.fr??""));
+  if(!isCommon(original)&&!rawPaschalAlternative)return day;
   const selected=materialize1962Preface(choice,registry);
   return Object.freeze({...day,
    proper:Object.freeze({...day.proper,data:Object.freeze({...day.proper.data,preface:selected})}),
