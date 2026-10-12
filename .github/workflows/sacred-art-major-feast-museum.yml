@@ -1,0 +1,35 @@
+name: Sacred art — major-feast museum originals
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-major-feast-museum-paintings.py"
+      - "data/calendar/sacred-art-major-feast-research-leads.v1.json"
+      - ".github/workflows/sacred-art-major-feast-museum.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-major-feast-museum
+  cancel-in-progress: true
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install lossless image source validator
+        run: pip install Pillow numpy
+      - name: Download museum/foundation originals with hash and explicit rights holds
+        run: python tools/calendar/acquire-major-feast-museum-paintings.py
+      - name: Keep research originals and contact sheets for manual reconciliation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-major-feast-museum
+          path: artifacts/sacred-art-major-feast/
+          retention-days: 30
+          if-no-files-found: warn

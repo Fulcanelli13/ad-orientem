@@ -1,0 +1,48 @@
+name: Sacred art — remaining Calendar Met originals
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-sacred-art-unselected-met.py"
+      - "data/calendar/sacred-art-unselected-acquisition-leads.v1.json"
+      - ".github/workflows/sacred-art-unselected-met-acquisition.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-remaining-calendar-met
+  cancel-in-progress: true
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow numpy
+      - name: Verify original museum object and preserve hash
+        run: python tools/calendar/acquire-sacred-art-unselected-met.py
+      - name: Check recovered image bytes and editorial holds
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          root=Path("artifacts/sacred-art-unselected-museum")
+          data=json.loads((root/"acquisition.json").read_text())
+          for i in data["results"]:
+            if i["status"]=="ORIGINAL_ACQUIRED_REVIEW_ONLY":
+              original=root/i["filename"]
+              assert hashlib.sha256(original.read_bytes()).hexdigest()==i["originalSha256"]
+              assert i["publicationApproved"] is False and i["artCuratorApproved"] is False
+            else:print("NOT_ACQUIRED",i["id"],i.get("holdReason",i["status"]))
+          PY
+      - name: Upload held originals for source-integrity audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-all-saints-met-original
+          path: artifacts/sacred-art-unselected-museum/
+          retention-days: 30
+          if-no-files-found: warn

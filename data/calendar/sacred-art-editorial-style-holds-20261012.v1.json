@@ -1,0 +1,88 @@
+{
+  "schema": "AO_SACRED_ART_EDITORIAL_STYLE_HOLDS_V1",
+  "date": "2026-10-12",
+  "ownerPR": 887,
+  "status": "SOURCE_CANDIDATES_ONLY_NOT_EDITED_IN_PUBLISHED_APP",
+  "linkedSource": "data/calendar/sacred-art-curator-decisions-20261011.v1.json",
+  "policy": "Historical subject choices remain intact; previously expressed artwork-style exclusion prevents automatic publication. A new explicit curator exception/selection is necessary, and each alternate needs crop and rights clearance. No user replacement is implied by these candidate IDs.",
+  "affected": [
+    {
+      "targetId": "calendar.good-friday",
+      "previousSelectionId": "met-459087",
+      "previousSelectionStatus": "PRESERVED_HISTORICAL_USER_CHOICE_BUT_STYLISTIC_CONFLICT_HOLD",
+      "status": "REPLACEMENT_NOT_SELECTED",
+      "candidates": [
+        {
+          "artworkId": "met-439977",
+          "relation": "SAME_NARRATIVE_CARRYING_CROSS",
+          "acquiredOriginalSha256": "ccc9e8353e3b9803a02852cab64e8d8d1dad6711f23af5b91e8b84448e556111",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        },
+        {
+          "artworkId": "nga-41667",
+          "relation": "SAME_NARRATIVE_CARRYING_CROSS",
+          "acquiredOriginalSha256": "aa6811b8cf2a30934849e75ee21859b6ddbba3269d5580379498a3cd902a760b",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        },
+        {
+          "artworkId": "met-436098",
+          "relation": "DIFFERENT_PASSION_EPISODE_CRUCIFIXION",
+          "acquiredOriginalSha256": "5a6de0cc6c1a3e16c9a52d2bbe39dde87202fd678f3f029aeef472bdab5881fb",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "targetId": "rosary.sor4",
+      "previousSelectionId": "met-459087",
+      "previousSelectionStatus": "PRESERVED_HISTORICAL_USER_CHOICE_BUT_STYLISTIC_CONFLICT_HOLD",
+      "status": "REPLACEMENT_NOT_SELECTED",
+      "candidates": [
+        {
+          "artworkId": "met-439977",
+          "relation": "EXACT_CARRYING_CROSS",
+          "acquiredOriginalSha256": "ccc9e8353e3b9803a02852cab64e8d8d1dad6711f23af5b91e8b84448e556111",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        },
+        {
+          "artworkId": "nga-41667",
+          "relation": "EXACT_CARRYING_CROSS",
+          "acquiredOriginalSha256": "aa6811b8cf2a30934849e75ee21859b6ddbba3269d5580379498a3cd902a760b",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        },
+        {
+          "artworkId": "nga-137505",
+          "relation": "EXACT_CARRYING_CROSS",
+          "acquiredOriginalSha256": "698cb5de63454dbced72c21716ae6101e156ea49031210653d7b5252a478c580",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        }
+      ]
+    },
+    {
+      "targetId": "rosary.sor5",
+      "previousSelectionId": "cma-129386",
+      "previousSelectionStatus": "PRESERVED_HISTORICAL_USER_CHOICE_BUT_STYLISTIC_CONFLICT_HOLD",
+      "status": "REPLACEMENT_NOT_SELECTED",
+      "candidates": [
+        {
+          "artworkId": "met-436098",
+          "relation": "EXACT_CRUCIFIXION",
+          "acquiredOriginalSha256": "5a6de0cc6c1a3e16c9a52d2bbe39dde87202fd678f3f029aeef472bdab5881fb",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        },
+        {
+          "artworkId": "met-652416",
+          "relation": "EXACT_CRUCIFIXION",
+          "acquiredOriginalSha256": "dc5b87d8f35213f971f5baea844a43aaef6d05b1eacd5eeea3e7442a52f0116f",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        },
+        {
+          "artworkId": "cma-119698",
+          "relation": "EXACT_CRUCIFIXION",
+          "acquiredOriginalSha256": "5fbf39792f104c04a9327100e65cf4628db32fd9909e235a1704246bb4154c05",
+          "review": "SUBJECT_AND_ARTISTIC_REVIEW_REQUIRED"
+        }
+      ]
+    }
+  ]
+}

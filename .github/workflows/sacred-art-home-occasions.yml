@@ -1,0 +1,35 @@
+name: Sacred art — masterpiece occasion list validation
+on:
+  pull_request:
+    paths:
+      - "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json"
+      - "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
+      - "data/calendar/1962-year-independent-checks-2026.v1.json"
+      - "tests/calendar-sacred-art-home-masterpiece-occasions.mjs"
+      - "data/calendar/sacred-art-masterpiece-first-wave-2026.v1.json"
+      - "tests/calendar-sacred-art-masterpiece-shortlist.mjs"
+      - ".github/workflows/sacred-art-home-occasions.yml"
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json"
+      - "tests/calendar-sacred-art-home-masterpiece-occasions.mjs"
+      - "data/calendar/sacred-art-masterpiece-first-wave-2026.v1.json"
+      - "tests/calendar-sacred-art-masterpiece-shortlist.mjs"
+      - ".github/workflows/sacred-art-home-occasions.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate 2026 major liturgical artwork occasions, without downloading images
+        run: |
+          node tests/calendar-sacred-art-home-masterpiece-occasions.mjs
+          node tests/calendar-sacred-art-masterpiece-shortlist.mjs

@@ -7,6 +7,17 @@ on:
       - "src/calendar/**"
       - "data/calendar/1962-year-independent-checks-*.json"
       - "tests/calendar-1962-full-year-audit.mjs"
+      - "tools/calendar/report-sacred-art-liturgical-priorities.mjs"
+      - "tools/calendar/build-sacred-art-reuse-index.mjs"
+      - "tools/calendar/build-sacred-art-rank-ii-iv-firstpass.mjs"
+      - "tools/calendar/build-sacred-art-full-year-associations.mjs"
+      - "tools/calendar/group-sacred-art-gaps.mjs"
+      - "tools/calendar/build-sacred-art-staedel-source-crosswalk.mjs"
+      - "data/calendar/sacred-art-staedel-painting-leads.v1.json"
+      - "data/calendar/sacred-art-liturgical-priorities.v1.json"
+      - "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
+      - "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json"
+      - "data/calendar/sacred-art-2026-i-class-contextual-reuse.v1.json"
       - ".github/workflows/calendar-1962-year-audit.yml"
   workflow_dispatch:
 
@@ -28,6 +39,37 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Exhaustive 2026 production resolver sweep and independent checkpoints
         run: node tests/calendar-1962-full-year-audit.mjs
+      - name: Match each actual 1962 observed day to source-linked artwork
+        if: always()
+        run: |
+          node tools/calendar/audit-sacred-art-modules.mjs
+          if [ -f artifacts/calendar-oracle/1962-2026-full-year-audit.json ]; then
+            node tools/calendar/report-sacred-art-liturgical-priorities.mjs --year-audit artifacts/calendar-oracle/1962-2026-full-year-audit.json
+            node tools/calendar/build-sacred-art-reuse-index.mjs
+            node tools/calendar/build-sacred-art-rank-ii-iv-firstpass.mjs
+            node tools/calendar/build-sacred-art-full-year-associations.mjs
+            node tools/calendar/group-sacred-art-gaps.mjs
+            node tools/calendar/build-sacred-art-staedel-source-crosswalk.mjs
+          else
+            node tools/calendar/report-sacred-art-liturgical-priorities.mjs
+          fi
+      - name: Upload rank-by-rank sacred-art coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-1962-artwork-coverage
+          path: |
+            artifacts/sacred-art-coverage/liturgical-priority-v1.json
+            artifacts/sacred-art-coverage/liturgical-priority-v1.md
+            artifacts/sacred-art-coverage/rank-ii-iv-firstpass-v1.json
+            artifacts/sacred-art-coverage/rank-ii-iv-firstpass-v1.md
+            artifacts/sacred-art-coverage/full-year-multiple-associations.v1.json
+            artifacts/sacred-art-coverage/full-year-multiple-associations.v1.md
+            artifacts/sacred-art-coverage/bulk-gospel-gap-backlog.v1.json
+            artifacts/sacred-art-coverage/bulk-gospel-gap-backlog.v1.md
+            artifacts/sacred-art-coverage/staedel-source-lead-associations.v1.json
+            artifacts/sacred-art-coverage/staedel-source-lead-associations.v1.md
+          if-no-files-found: warn
       - name: Publish findings even if audit fails
         if: always()
         uses: actions/upload-artifact@v4

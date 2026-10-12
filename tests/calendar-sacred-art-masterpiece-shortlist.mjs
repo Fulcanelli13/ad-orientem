@@ -1,0 +1,31 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const read=p=>JSON.parse(readFileSync(p,"utf8"));
+const art=read("data/calendar/sacred-art-masterpiece-first-wave-2026.v1.json");
+const calendar=read("data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json");
+assert.equal(art.schema,"AO_SACRED_ART_MASTERPIECE_FIRST_WAVE_SHORTLIST_V1");
+assert.equal(art.leads.length,13);
+assert.equal(art.summary.candidateMasterpieces,art.leads.length);
+assert.equal(art.summary.originalImagesAcquiredInBatch,0);
+assert.equal(art.summary.userApprovedInBatch,0);
+const keys=new Set(calendar.masterpieceAcquisitionBrief.initialArtSubjectSlots.map(x=>x.id));
+const knownSubjects=new Set([...keys,"transfiguration","our-lady"]);
+const identities=new Set();
+for(const a of art.leads){
+ assert.ok(knownSubjects.has(a.subject),"Unknown iconographic theme "+a.subject);
+ assert.match(a.officialSourceUrl,/^https:\/\//);
+ assert.ok(a.museum.length>5&&a.artist.length>4&&a.title.length>5);
+ assert.ok(a.reason.length>35&&a.phoneCompositionCaveat.length>20);
+ assert.ok(!identities.has(a.officialSourceUrl),"Same museum object duplicated");
+ identities.add(a.officialSourceUrl);
+ for(const field of ["previousCollectionAutoPromotion","originalImageDownloaded","reuseRightsVerified","phoneCropApproved","userApproved","productionApproved"])assert.equal(a[field],false);
+ assert.equal(a.originalImageSha256,null);
+ assert.equal(a.canonicalReviewStatus,"NEW_MASTERPIECE_AESTHETIC_PRESELECTION_NOT_USER_APPROVED");
+ if(a.curatorialTier==="MASTERPIECE_THEMATIC")assert.equal(a.dateIconographyPolicy,"THEMATIC_ONLY_NOT_EXACT_FEAST");
+}
+assert.ok(art.leads.some(x=>x.subject==="saint-michael"&&x.artist==="Bartolomé Bermejo"));
+assert.ok(art.leads.some(x=>x.artist==="Fra Angelico"&&x.subject==="annunciation"));
+assert.ok(art.leads.some(x=>x.artist==="Raphael"&&x.subject==="transfiguration"));
+assert.ok(art.leads.some(x=>x.artist==="El Greco"&&x.subject==="nativity"));
+assert.ok(art.leads.some(x=>x.artist==="Titian"&&x.subject==="assumption"));
+console.log("PASS: 13 primary-custodian masterpiece leads, 11 subjects, no art download/reuse/publication promotion");

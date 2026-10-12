@@ -1,0 +1,34 @@
+name: Sacred art — Stadel museum image discovery
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-staedel-originals.py"
+      - "data/calendar/sacred-art-staedel-painting-leads.v1.json"
+      - ".github/workflows/sacred-art-staedel-originals.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install JPEG and PNG inspector
+        run: pip install Pillow
+      - name: Acquire direct museum-hosted image originals where licensed download is exposed
+        run: python tools/calendar/acquire-staedel-originals.py
+      - name: Archive original bytes, SHA, licence holds and source discovery diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-staedel-research-images-held
+          path: artifacts/sacred-art-staedel/
+          if-no-files-found: error
+          retention-days: 30

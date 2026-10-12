@@ -1,0 +1,33 @@
+name: Sacred art — exact-subject Commons original research
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-commons-exact-gaps.py"
+      - ".github/workflows/sacred-art-commons-exact-gaps.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-commons-exact-gaps
+  cancel-in-progress: true
+jobs:
+  source-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow numpy
+      - name: Acquire exact-subject public-domain Commons originals; retain all source and license evidence
+        run: python tools/calendar/acquire-commons-exact-gaps.py
+      - name: Preserve original JPEGs, metadata, rejection logs and research contact sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-commons-gap-batch
+          path: artifacts/sacred-art-commons-gap2/
+          retention-days: 30
+          if-no-files-found: warn

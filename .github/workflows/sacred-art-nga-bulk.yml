@@ -1,0 +1,33 @@
+name: Sacred art — NGA bulk open-access painting discovery
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-nga-bulk-open-data.py"
+      - ".github/workflows/sacred-art-nga-bulk.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Image dimensions verification
+        run: pip install Pillow
+      - name: Search the complete NGA object dataset; require true Painting and open-access-image flag
+        run: python tools/calendar/acquire-nga-bulk-open-data.py
+      - name: Preserve image originals and per-object provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-nga-bulk-official-originals
+          path: artifacts/sacred-art-nga-bulk/
+          if-no-files-found: warn
+          retention-days: 30

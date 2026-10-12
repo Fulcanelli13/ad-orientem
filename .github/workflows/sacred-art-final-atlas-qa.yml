@@ -1,0 +1,40 @@
+name: Sacred art — full-year atlas integrity
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/build-sacred-art-final-atlas.py"
+      - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+      - "data/calendar/sacred-art-editorial-style-holds-20261012.v1.json"
+      - "tests/calendar-sacred-art-editorial-style-holds.mjs"
+      - "tests/test_sacred_art_final_atlas.py"
+      - ".github/workflows/sacred-art-final-atlas-qa.yml"
+  pull_request:
+    paths:
+      - "tools/calendar/build-sacred-art-final-atlas.py"
+      - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+      - "data/calendar/sacred-art-editorial-style-holds-20261012.v1.json"
+      - "tests/calendar-sacred-art-editorial-style-holds.mjs"
+      - "tests/test_sacred_art_final_atlas.py"
+      - ".github/workflows/sacred-art-final-atlas-qa.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install thumbnail image library
+        run: python -m pip install Pillow
+      - name: Python syntax gate
+        run: python -m py_compile tools/calendar/build-sacred-art-final-atlas.py tools/calendar/reconcile-sacred-art-full-harvest.py tools/calendar/acquire-artic-bulk.py tests/test_sacred_art_final_atlas.py
+      - name: 365-day offline gallery smoke test and JavaScript syntax check
+        run: python tests/test_sacred_art_final_atlas.py
+      - name: Prior curator style conflict and source-original replacement holds
+        run: node tests/calendar-sacred-art-editorial-style-holds.mjs

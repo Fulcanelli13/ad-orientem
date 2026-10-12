@@ -1,0 +1,351 @@
+/**
+ * Research-only acquisition coverage, ordered by the observed 1962 liturgical calendar.
+ * Never treats nominal feast dates, generic seasons or current obligations as
+ * evidence for an exact first-class day image.
+ *
+ * Normal: node tools/calendar/audit-sacred-art-modules.mjs
+ *         node tools/calendar/report-sacred-art-liturgical-priorities.mjs
+ * With observed full-year sweep:
+ *         node tools/calendar/report-sacred-art-liturgical-priorities.mjs
+ *              --year-audit artifacts/calendar-oracle/1962-2026-full-year-audit.json
+ */
+import assert from "node:assert/strict";
+import {existsSync,mkdirSync,readFileSync,writeFileSync} from "node:fs";
+import {resolve} from "node:path";
+
+const read=p=>JSON.parse(readFileSync(p,"utf8"));
+const config=read("data/calendar/sacred-art-liturgical-priorities.v1.json");
+const subjectReport=read("artifacts/sacred-art-coverage/all-modules-v2.json");
+const originals=read("data/calendar/sacred-art-candidates.v1.json");
+assert.equal(config.schema,"AO_SACRED_ART_LITURGICAL_PRIORITY_V1");
+assert.equal(subjectReport.schema,"AO_SACRED_ART_ALL_MODULE_COVERAGE_AUDIT_V2");
+const argv=process.argv;
+const i=argv.indexOf("--year-audit");
+if(i>=0)assert.ok(argv[i+1],"--year-audit requires the full-year production resolver artifact path");
+const yearPath=i>=0?argv[i+1]:null;
+const subjectById=new Map(subjectReport.subjects.map(s=>[s.id,s]));
+const major=config.majorCalendarSubjectIds.map(id=>{
+ const t=subjectById.get(id);
+ assert.ok(t,"Unknown canonical calendar target "+id);
+ return {id,title:t.title,required:t.required,downloadedOriginals:t.downloadedOriginals,
+  sourceCandidates:t.sourceCandidates,missingToMinimum:t.missingToMinimum,approvalStatus:t.approvalStatus};
+});
+const feastSet=new Set(config.majorFeastsAndPrincipalDays);
+const seasonSet=new Set(config.majorSeasonSupport);
+assert.equal(feastSet.size+seasonSet.size,major.length);
+assert.ok(major.every(t=>feastSet.has(t.id)||seasonSet.has(t.id)));
+const majorFeasts=major.filter(t=>feastSet.has(t.id));
+const seasonSupport=major.filter(t=>seasonSet.has(t.id));
+const minor=subjectReport.subjects.filter(s=>!config.majorCalendarSubjectIds.includes(s.id));
+const percentage=(n,d)=>d?Math.round(1000*n/d)/10:null;
+const summ=(rows)=>{
+ const met=rows.filter(x=>x.missingToMinimum===0).length;
+ const atLeastOne=rows.filter(x=>x.downloadedOriginals>0).length;
+ return {targets:rows.length,firstPassAtLeastOneOriginal:atLeastOne,firstPassCoveragePct:percentage(atLeastOne,rows.length),
+  meetingOriginalMinimum:met,meetingOriginalMinimumPct:percentage(met,rows.length),
+ belowMinimum:rows.length-met,belowMinimumPct:percentage(rows.length-met,rows.length),
+ missingSourceSlots:rows.reduce((n,x)=>n+x.missingToMinimum,0),
+ zeroAcquiredOriginals:rows.filter(x=>x.downloadedOriginals===0).length,
+ zeroExplicitSourceCandidates:rows.filter(x=>x.sourceCandidates===0).length};
+};
+const shaOk=a=>/^[a-f0-9]{64}$/i.test(String(a.acquisition?.originalSha256||""))&&!!a.acquisition?.archiveOriginal;
+const validOriginals=originals.artworks.filter(shaOk);
+const byObservedId=new Map();
+for(const artwork of validOriginals){
+ for(const identifier of artwork.tags?.observed1962Identifiers||[]){
+  if(!byObservedId.has(identifier))byObservedId.set(identifier,[]);
+  byObservedId.get(identifier).push(artwork);
+ }
+}
+function normalizedRank(value){
+ const v=String(value??"").trim().toUpperCase();
+ if(/^[1-4]$/.test(v))return Number(v);
+ // Accept Roman canonical ranks, including I class, II cl. and I.
+ const roman=/^(IV|III|II|I)(?:\b|[.\s])/i.exec(v);
+ if(roman)return {I:1,II:2,III:3,IV:4}[roman[1]];
+ const english=/^([1-4])(?:ST|ND|RD|TH)?\s*(?:CLASS|CLASSE|KL)(?:\b|\.)/i.exec(v);
+ return english?Number(english[1]):null;
+}
+function auditedDays(input){
+ assert.ok(Array.isArray(input.rows),"Expected rows from production calendar resolver year audit");
+ const rows=input.rows;
+ const seen=new Set();
+ const all=rows.map(r=>{
+  assert.match(r.date||"",/^\d{4}-\d{2}-\d{2}$/);
+  assert.ok(!seen.has(r.date),"Duplicate observed date "+r.date);seen.add(r.date);
+  const rank=r.failed?null:normalizedRank(r.rawRank);
+  const id=String(r.mainId||"").trim();
+  const proven=id.startsWith("tempora:")||id.startsWith("sancti:")||id.startsWith("commune:");
+  const matches=proven?(byObservedId.get(id)||[]):[];
+  const acquired=matches.length;
+  const globallyCleared=matches.filter(a=>a.source?.rights==="CC0"&&a.tags?.artCuratorApproval===true
+   &&a.tags?.phoneHeroCropApproval===true).length;
+  const sunday=new Date(r.date+"T12:00:00Z").getUTCDay()===0;
+  return {date:r.date,observedPrincipalId:id||null,title:r.title||null,rank,
+   status:r.failed||!id||rank===null?"UNRESOLVED_SOURCE_DAY":acquired?
+   "SOURCE_ID_MATCH_ONLY_ART_REVIEW_REQUIRED":"EXACT_DAY_ORIGINAL_GAP",
+   acquiredExplicitObservedPrincipalOriginals:acquired,
+   approvedOriginals:globallyCleared,
+   obligation:{sundayUniversal:sunday,otherFeastTerritorialStatus:"NOT_ASSESSED"},
+   note:!proven&&id?"Principal identity is not a canonical source ID; no exact image credit":null};
+ });
+ assert.ok(rows.length===365||rows.length===366,"Require complete one-calendar-year sweep, got "+rows.length);
+ return all;
+}
+const report={
+ schema:"AO_SACRED_ART_LITURGICAL_PRIORITY_AUDIT_V1",
+ evidenceDate:"2026-10-10",ownerIssue:config.ownerIssue,
+ policy:config.editorialSequence,
+ warning:"Acquired original != beautiful masterpiece, source-verified subject/Proper association, global commercial reuse permission, or publication approval.",
+ calendarMajorSubjectPool:{...summ(major),subjects:major},
+ majorFeastsAndPrincipalDays:{...summ(majorFeasts),subjects:majorFeasts},
+ seasonalSupport:{...summ(seasonSupport),subjects:seasonSupport},
+ moduleCoverage:Object.fromEntries(["rosary","station","devotion","scripture","person","formation"].map(key=>[
+  key,summ(minor.filter(x=>x.id.startsWith(key+".")))])),
+ traditionalRosary:{...summ(minor.filter(x=>/^rosary\.(?:joy|sor|glo)/.test(x.id)))},
+ allOtherSubjectPool:{...summ(minor),subjectsBelowMinimum:minor.filter(x=>x.missingToMinimum>0).map(s=>({id:s.id,missing:s.missingToMinimum}))},
+ obligationCandidateCount:config.obligationCandidates.length,
+ obligationCoverage:{status:"NOT_AUDITABLE_WITHOUT_JURISDICTION",universalSundays:"REQUIRES_2026_OBSERVED_YEAR_ARTWORK_MAPPING",
+  possibleWeekdayCategories:config.obligationCandidates.filter(x=>x.key!=="sunday").length,
+  locallyVerifiedWeekdayCategories:null,locallyCoveredPct:null,
+  note:"Not 0%: denominator of binding non-Sunday obligations must be determined from each local Church's rules."},
+ obligationRules:"Sundays universally obligatory. No locally obligatory weekday can be labelled until territorial norms are sourced. Civil-date feast candidate is never sufficient.",
+ observedYear:{status:"NOT_AUDITED",note:"Missing dated production DayResolver sweep. Calendar target minimum coverage does not establish all I-class days have artwork.",yearFile:null},
+ releaseApprovedOriginals:0
+};
+if(yearPath){
+ assert.ok(existsSync(yearPath),"Observed-year artifact not found: "+yearPath);
+ const input=read(resolve(yearPath));
+ const days=auditedDays(input);
+ const perClass=Object.fromEntries([1,2,3,4].map(rank=>{
+  const subset=days.filter(d=>d.rank===rank);
+  return [String(rank),{
+   observedDays:subset.length,
+   explicitOriginalMappedDays:subset.filter(d=>d.acquiredExplicitObservedPrincipalOriginals>=1).length,
+   explicitOriginalMappedPct:percentage(subset.filter(d=>d.acquiredExplicitObservedPrincipalOriginals>=1).length,subset.length),
+   stillMissingOrUnresolved:subset.filter(d=>d.acquiredExplicitObservedPrincipalOriginals<1).length,
+   approvedDays:subset.filter(d=>d.approvedOriginals>=1).length
+  }];
+ }));
+ report.observedYear={status:days.some(d=>d.status==="UNRESOLVED_SOURCE_DAY")?"PARTIAL_RESOLVER_EVIDENCE":"COMPLETE_SOURCE_SWEEP_NOT_ART_CERTIFICATION",
+  yearFile:yearPath,days:days.length,unresolvedDays:days.filter(d=>d.status==="UNRESOLVED_SOURCE_DAY").length,
+  classCounts:perClass,
+  completeYearArtworkIdsMapped:days.filter(d=>d.acquiredExplicitObservedPrincipalOriginals>0).length,
+  completeYearArtworkIdsMappedPct:percentage(days.filter(d=>d.acquiredExplicitObservedPrincipalOriginals>0).length,days.length),
+  classIStillMissing:days.filter(d=>d.rank===1&&d.acquiredExplicitObservedPrincipalOriginals===0),
+  sundayObligationDays:days.filter(d=>d.obligation.sundayUniversal).length,
+  days};
+}
+// Every strict ID-linked acquired original must have a real 2026 DayResolver
+// identity, museum/foundation object provenance, a matching original hash, and
+// a curated research-only link. No implicit date/title mapping is permitted.
+if(report.observedYear.days&&report.observedYear.days[0]?.date.startsWith("2026-")){
+ const curated=read("data/calendar/sacred-art-1962-exact-feast-source-links.v1.json");
+ assert.equal(curated.schema,"AO_SACRED_ART_1962_EXACT_FEAST_SOURCE_LINKS_V1");
+ assert.equal(curated.linkCount,curated.links.length);
+ const artworkById=new Map(validOriginals.map(a=>[a.id,a]));
+ const dayById=new Map(report.observedYear.days.filter(d=>d.rank===1).map(d=>[d.observedPrincipalId,d]));
+ const used=new Set();
+ for(const link of curated.links){
+  const name=link.artworkId+"|"+link.observedPrincipalId;
+  assert.ok(!used.has(name),"Duplicate researched exact-feast source link "+name);
+  used.add(name);
+  assert.ok(["EXACT_FEAST_SUBJECT","EXACT_APPOINTED_GOSPEL","EXACT_TITULAR_SAINT"].includes(link.association),"Unexpected verified A relationship "+link.association);
+  assert.equal(link.approvedForProduction,false,"Source research is not production approval");
+  const item=artworkById.get(link.artworkId);
+  assert.ok(item,"Missing physically acquired/sha256 referenced original "+link.artworkId);
+  assert.equal(link.originalSha256,item.acquisition.originalSha256,"Pinned source SHA-256 mismatch");
+  assert.equal(link.museumObjectUrl,item.source.objectUrl,"Official artwork page mismatch");
+  assert.ok(item.tags?.observed1962Identifiers?.includes(link.observedPrincipalId),"Canonical observed source ID absent from original "+name);
+  const day=dayById.get(link.observedPrincipalId);
+  assert.ok(day,"Source is not a 2026 first-class principal "+name);
+  assert.equal(link.observedDate2026,day.date);
+  assert.ok(link.evidence?.length>12,"Missing subject-to-feast evidence");
+ }
+ for(const a of validOriginals){
+  for(const id of a.tags?.observed1962Identifiers||[]){
+   if(dayById.has(id))assert.ok(used.has(a.id+"|"+id),"Observed first-class source ID has no curated acquisition evidence "+a.id+" "+id);
+  }
+ }
+ report.observedYear.curatedSourceAssociations={
+  exactSourceOriginalLinks:curated.links.length,
+  distinctObservedClassIDays:new Set(curated.links.map(l=>l.observedPrincipalId)).size,
+  coveragePct:percentage(new Set(curated.links.map(l=>l.observedPrincipalId)).size,dayById.size),
+  rightsHeldSourceOriginalLinks:curated.links.filter(l=>l.sourceRights!=="CC0").length,
+  publicationApprovedDays:0,
+  status:"SUBJECT_LINKS_RESEARCH_ONLY_NOT_VISUAL_OR_RIGHTS_CERTIFICATION"
+ };
+
+ // Grade-B is an explicit, separate ledger. An octave/feast theme is NOT an
+ // observed principal A link, and must never be promoted into exact tags.
+ const contextual=read("data/calendar/sacred-art-2026-i-class-contextual-reuse.v1.json");
+ assert.equal(contextual.schema,"AO_SACRED_ART_2026_I_CLASS_CONTEXTUAL_REUSE_V1");
+ assert.equal(contextual.year,2026);
+ const gradeAByDay=new Map();
+ for(const link of curated.links){
+  if(!gradeAByDay.has(link.observedPrincipalId))gradeAByDay.set(link.observedPrincipalId,[]);
+  gradeAByDay.get(link.observedPrincipalId).push(link.artworkId);
+ }
+ const gradeBByDay=new Map();
+ for(const link of contextual.entries){
+  assert.equal(link.grade,"B_CONTEXTUAL");
+  assert.equal(link.approval,"RESEARCH_ONLY_NOT_ART_CROP_OR_RIGHTS_CLEARED");
+  assert.ok(!gradeAByDay.has(link.observedPrincipalId),"Never downgrade an A-linked day to grade B");
+  assert.ok(!gradeBByDay.has(link.observedPrincipalId),"One explicit B decision per observed day");
+  const item=artworkById.get(link.artworkId);
+  assert.ok(item,"B proposal artwork must have acquired hashed original");
+  assert.equal(link.originalSha256,item.acquisition.originalSha256,"B original hash changed");
+  assert.equal(link.museumObjectUrl,item.source.objectUrl,"B museum object URL mismatch");
+  assert.equal(link.rights,item.source.rights,"B image rights changed");
+  assert.ok(!item.tags?.observed1962Identifiers?.includes(link.observedPrincipalId),
+   "B context cannot appear as a strict observed principal A source tag");
+  const observed=dayById.get(link.observedPrincipalId);
+  assert.ok(observed,"B reuse day must be observed I-class in 2026");
+  assert.equal(link.date2026,observed.date);
+  assert.equal(link.observedTitle,observed.title);
+  assert.ok(link.rationale?.length>=35,"B contextual decision requires specific caveat");
+  gradeBByDay.set(link.observedPrincipalId,link);
+ }
+ const readCrosswalkById=new Map(read("data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json").days.map(x=>[x.observedPrincipalId,x]));
+ const decisionRows=[...dayById.entries()].map(([id,day])=>{
+  const a=gradeAByDay.get(id)||[],b=gradeBByDay.get(id);
+  const targetId=readCrosswalkById.get(id)?.researchTargetId||null;
+  const target=subjectById.get(targetId);
+  const relatedCandidates=(target?.images||[]).filter(artId=>artworkById.has(artId)).slice(0,12);
+  const grade=a.length?"A_EXACT_LITURGICAL_SUBJECT":b?"B_CONTEXTUAL_ASSOCIATION":"C_RESEARCH_NOT_YET_COVERED";
+  return {date:day.date,observedPrincipalId:id,title:day.title,
+   grade,artworkIds:a.length?a:b?[b.artworkId]:[],
+   originalRights:a.length?a.map(x=>artworkById.get(x).source.rights):b?[b.rights]:[],
+   contextKind:b?.contextKind||null,
+   contextCaveat:b?.rationale||null,
+   suggestedTargetId:targetId,unverifiedOriginalCandidates:grade.startsWith("C_")?relatedCandidates:[],
+   artApproved:false,rightsAndCropApproved:false};
+ });
+ const aRows=decisionRows.filter(x=>x.grade.startsWith("A_"));
+ const bRows=decisionRows.filter(x=>x.grade.startsWith("B_"));
+ const cRows=decisionRows.filter(x=>x.grade.startsWith("C_"));
+ assert.equal(decisionRows.length,dayById.size,"A/B/C report must cover every first-class principal");
+ assert.equal(aRows.length,report.observedYear.classCounts["1"].explicitOriginalMappedDays,"Strict A sources must equal observed resolver matches");
+ report.observedYear.bulkReuse={
+  year:2026,gradeA:aRows.length,gradeB:bRows.length,gradeC:cRows.length,total:decisionRows.length,
+  aPlusBProvisionalCount:aRows.length+bRows.length,
+  aPlusBProvisionalPct:percentage(aRows.length+bRows.length,decisionRows.length),
+  heldRightsDayCount:decisionRows.filter(x=>x.originalRights.some(r=>r!=="CC0")).length,
+  artisticallyApproved:0,
+  warning:"Grade B is explicitly contextual, not appointed-Gospel verified; Grade C pool candidates are only research leads. No acquired original has human art, crop and legal publication approval.",
+  decisions:decisionRows
+ };
+
+}
+// This research crosswalk is an observed-source priority worklist,
+// never a licence to infer appointed Scripture or assign final day coverage.
+if(report.observedYear.days&&report.observedYear.days[0]?.date.startsWith("2026-")){
+ const cross=read("data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json");
+ assert.equal(cross.schema,"AO_SACRED_ART_FIRST_CLASS_2026_RESEARCH_CROSSWALK_V1");
+ const principal=report.observedYear.days.filter(d=>d.rank===1);
+ assert.equal(cross.days.length,principal.length,"Research checklist must include all resolved I-class days");
+ const worklist=cross.days.map((r,i)=>{
+  const day=principal[i];
+  assert.equal(r.date,day.date,"I-class research date must match observed source");
+  assert.equal(r.observedPrincipalId,day.observedPrincipalId,"I-class research ID must match actual source");
+  const target=subjectById.get(r.researchTargetId);
+  assert.ok(target,"I-class worklist target must exist: "+r.researchTargetId);
+  const candidateIds=(target.images||[]).filter(id=>validOriginals.some(a=>a.id===id));
+  assert.equal(candidateIds.length,target.downloadedOriginals,"Candidate image list should have the audited original count");
+  return {date:r.date,id:r.observedPrincipalId,title:r.observedTitle,
+   associationTier:r.associationTier,researchTargetId:r.researchTargetId,
+   candidateOriginalIds: candidateIds,
+   candidateEligibility:"RESEARCH_ONLY_NO_VISUAL_RIGHTS_OR_SCRIPTURE_CERTIFICATION",
+   acquiredOriginalsInSubjectPool:target.downloadedOriginals,
+   contextualOrUnverifiedPoolOriginals:target.downloadedOriginals,
+   directObservedIdentityOriginals:day.acquiredExplicitObservedPrincipalOriginals,
+   status:target.downloadedOriginals?"POOL_HAS_SOURCE_ORIGINALS_LINK_UNREVIEWED":"NO_DIRECT_POOL_SOURCE_ORIGINAL"};
+ });
+ const subjectPoolDays=worklist.filter(x=>x.acquiredOriginalsInSubjectPool>0).length;
+ const exactTiers=new Set(["EXACT_FEAST","EXACT_DEVOTION"]);
+ const exact=worklist.filter(x=>exactTiers.has(x.associationTier));
+ report.firstClassResearchTriage={
+  year:2026,rankOneDays:worklist.length,
+  daysWithPotentiallyRelevantPoolOriginals:subjectPoolDays,
+  poolCoveragePct:percentage(subjectPoolDays,worklist.length),
+  exactFeastTargetDays:exact.length,
+  exactFeastTargetPoolWithOriginals:exact.filter(x=>x.acquiredOriginalsInSubjectPool>0).length,
+  noSubjectPoolOriginals:worklist.filter(x=>x.acquiredOriginalsInSubjectPool===0),
+  warning:"Subject-pool originals are NOT date-mapped, curator-approved, appointed-Gospel-certified, or guaranteed accurate. The observed ID direct count remains the only valid strict coverage metric.",
+  worklist
+ };
+}
+if(report.observedYear.days){
+ console.log("FIRST_CLASS_OBSERVED_IDENTITIES="+JSON.stringify(
+  report.observedYear.days.filter(x=>x.rank===1).map(x=>({
+   date:x.date,id:x.observedPrincipalId,title:x.title,acquired:x.acquiredExplicitObservedPrincipalOriginals
+  }))
+ ));
+}
+const outdir="artifacts/sacred-art-coverage";
+mkdirSync(outdir,{recursive:true});
+writeFileSync(outdir+"/liturgical-priority-v1.json",JSON.stringify(report,null,2)+"\n");
+const L=[
+ "# Liturgical-first sacred-art acquisition audit",
+ "",
+ "Priority: major feasts and solemn seasons → obligation (territorial-law overlay) → **every other observed I-class day** → app modules → observed II → III → IV class.",
+ "",
+ "Major feast/Triduum subjects: "+majorFeasts.length+"; "+report.majorFeastsAndPrincipalDays.firstPassAtLeastOneOriginal+" have one or more sources ("+report.majorFeastsAndPrincipalDays.firstPassCoveragePct+"%); "+report.majorFeastsAndPrincipalDays.meetingOriginalMinimum+" meet optional depth minimum; "+report.majorFeastsAndPrincipalDays.belowMinimum+" below depth target.",
+ "Secondary seasonal support: "+seasonSupport.length+"; "+report.seasonalSupport.meetingOriginalMinimum+" meet acquisition minimum; "+report.seasonalSupport.belowMinimum+" under target.",
+ "All canonical calendar subject targets: "+major.length+".",
+ "",
+ "## Module source-original acquisition (not curator approval)",
+ ...Object.entries(report.moduleCoverage).map(([key,m])=>"- "+key+": "+m.meetingOriginalMinimum+"/"+m.targets+" targets ("+m.meetingOriginalMinimumPct+"%), "+m.missingSourceSlots+" missing subject-original slots."),
+ "Traditional Rosary: "+report.traditionalRosary.meetingOriginalMinimum+"/"+report.traditionalRosary.targets+" targets meet required originals ("+report.traditionalRosary.meetingOriginalMinimumPct+"%).",
+ "",
+ "Other module and supplemental targets: "+minor.length+"; "+report.allOtherSubjectPool.belowMinimum+" under target.",
+ "",
+ "**This is a source-only audit. No original is approved for publication.**",
+ "",
+ "## Observed 1962 rank-by-rank sweep",
+ ...(report.observedYear.status==="NOT_AUDITED"
+ ?["No dated source-first production resolver artifact provided. All class-specific day coverage remains **NOT AUDITED**; 168 subject target totals cannot replace it."]
+ :[
+  "Source dates: "+report.observedYear.days+"; unresolved: "+report.observedYear.unresolvedDays+".",
+  ...(report.observedYear.bulkReuse?["Batch A source reuse: "+report.observedYear.bulkReuse.gradeA+" exact (A); "+report.observedYear.bulkReuse.gradeB+" context-only (B); "+report.observedYear.bulkReuse.gradeC+" unresolved (C). Preliminary A+B subject relevance "+report.observedYear.bulkReuse.aPlusBProvisionalCount+"/"+report.observedYear.bulkReuse.total+" ("+report.observedYear.bulkReuse.aPlusBProvisionalPct+"%). Zero artworks approved; B is NOT exact gospel or rights approval."]:[]),
+  ...(report.firstClassResearchTriage?[
+   "I-class research pools: "+report.firstClassResearchTriage.daysWithPotentiallyRelevantPoolOriginals+"/"+report.firstClassResearchTriage.rankOneDays+" have at least one source original under a RELATED TARGET (not direct 1962 artwork mapping).",
+   "Exact-feast research pools: "+report.firstClassResearchTriage.exactFeastTargetPoolWithOriginals+"/"+report.firstClassResearchTriage.exactFeastTargetDays+" contain originals requiring day association review.",
+   "These are research leads ONLY; do not compare these pool percentages with the strict 0% linked-principal-ID result."
+  ]:[]),
+  ...[1,2,3,4].map(rank=>{
+   const x=report.observedYear.classCounts[rank];
+   return "Class "+rank+": "+x.explicitOriginalMappedDays+"/"+x.observedDays+" days ("+x.explicitOriginalMappedPct+"%) have acquired originals linked to **the actual observed source ID**; approved "+x.approvedDays+".";
+  }),
+  "",
+  "### I-class days missing direct observed-source artwork associations",
+  ...report.observedYear.classIStillMissing.map(d=>"- "+d.date+" | "+d.observedPrincipalId+" | "+d.title)
+ ]),
+ "",
+ "## Open high-priority calendar subject minima",
+ ...major.filter(x=>x.missingToMinimum).map(x=>"- "+x.id+": "+x.downloadedOriginals+"/"+x.required+" originals"),
+ "",
+ "## Obligation gate",
+ "Sundays apply universally; non-Sunday obligations require a verified diocese/country and valid norms for the civil year. Canon 1246 is not a blanket local calendar.",
+ ];
+writeFileSync(outdir+"/liturgical-priority-v1.md",L.join("\n")+"\n");
+console.log(JSON.stringify({
+ majorFeastsAndPrincipalDays:majorFeasts.length,majorFeastTargetsBelowMinimum:report.majorFeastsAndPrincipalDays.belowMinimum,
+ seasonalSupportTargets:seasonSupport.length,seasonalSupportBelowMinimum:report.seasonalSupport.belowMinimum,
+ majorFeastTargetsMeetingPct:report.majorFeastsAndPrincipalDays.meetingOriginalMinimumPct,
+ majorFeastFirstPassPct:report.majorFeastsAndPrincipalDays.firstPassCoveragePct,
+ majorFeastFirstPassCount:report.majorFeastsAndPrincipalDays.firstPassAtLeastOneOriginal,
+ modulePercentages:Object.fromEntries(Object.entries(report.moduleCoverage).map(([k,v])=>[k,v.meetingOriginalMinimumPct])),
+ majorCalendarTargets:major.length,majorTargetsBelowMinimum:report.calendarMajorSubjectPool.belowMinimum,
+ otherTargets:minor.length,otherBelowMinimum:report.allOtherSubjectPool.belowMinimum,
+ observedYearStatus:report.observedYear.status,observedClassCounts:report.observedYear.classCounts||null,
+ curatedExactSourceAssociations:report.observedYear.curatedSourceAssociations||null,
+ bulkReusePhaseA:report.observedYear.bulkReuse?{A:report.observedYear.bulkReuse.gradeA,B:report.observedYear.bulkReuse.gradeB,C:report.observedYear.bulkReuse.gradeC,provisionalAB:report.observedYear.bulkReuse.aPlusBProvisionalCount,provisionalPct:report.observedYear.bulkReuse.aPlusBProvisionalPct,heldRightsDays:report.observedYear.bulkReuse.heldRightsDayCount}:null,
+ firstClassResearchPotentialSourcePools:report.firstClassResearchTriage?{
+  withOriginals:report.firstClassResearchTriage.daysWithPotentiallyRelevantPoolOriginals,
+  total:report.firstClassResearchTriage.rankOneDays,
+  exactFeastPoolsWithOriginals:report.firstClassResearchTriage.exactFeastTargetPoolWithOriginals,
+  exactFeastPoolsTotal:report.firstClassResearchTriage.exactFeastTargetDays
+ }:null,
+ rightsAndArtStatus:"REVIEW_ONLY_NOT_PRODUCTION"
+},null,2));

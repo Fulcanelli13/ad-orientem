@@ -1,0 +1,381 @@
+{
+  "schema": "AO_SACRED_ART_FORMATION_TARGETS_V1",
+  "createdOn": "2026-10-10",
+  "ownerIssue": 885,
+  "rationale": "Original source audit of learn/formation routes (rites, Catechism, Mass, Spiritual Life). Research paintings reused across Prayer and Calendar; not a parallel app asset bank.",
+  "targetIdentityPolicy": "Do not infer sacramental ceremonies from unrelated religious paintings. Direct scene is preferred; related sacramental narrative must be captioned as contextual.",
+  "targets": [
+    {
+      "id": "formation.baptism",
+      "title": "Baptism and initiation",
+      "queries": [
+        "Baptism of Christ",
+        "Baptism of the Neophytes"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.rites.baptism",
+        "pray.adoration"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.confirmation",
+      "title": "Confirmation and the Holy Ghost",
+      "queries": [
+        "Pentecost",
+        "Descent of the Holy Spirit",
+        "Confirmation"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.rites.confirmation"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.first-communion",
+      "title": "First Holy Communion",
+      "queries": [
+        "Last Communion of Saint Jerome",
+        "Last Supper",
+        "Communion of the Apostles"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.rites.first_communion",
+        "pray.communion_treasury"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.holy-orders",
+      "title": "Holy Orders",
+      "queries": [
+        "Ordination of Saint Stephen",
+        "Ordination of Saint Lawrence",
+        "The Consecration of a Bishop"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.rites.holy_orders"
+      ],
+      "type": "formation_scene",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.matrimony",
+      "title": "Holy Matrimony",
+      "queries": [
+        "Marriage at Cana",
+        "The Wedding at Cana"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.rites.matrimony"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.sick",
+      "title": "Anointing and Viaticum",
+      "queries": [
+        "Last Communion of Saint Jerome",
+        "Anointing of the Sick",
+        "Death of Saint Joseph"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.rites.sick",
+        "pray.dying_companion"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.scapular",
+      "title": "Brown Scapular of Our Lady",
+      "queries": [
+        "Our Lady of Mount Carmel",
+        "Virgin of Carmel with Saint Simon Stock"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.scapular"
+      ],
+      "type": "formation_scene",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.confession",
+      "title": "Sacrament of Penance",
+      "queries": [
+        "Return of the Prodigal Son",
+        "Penitent Magdalene",
+        "The Tears of Saint Peter"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.confession",
+        "learn.spiritual_life"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.mass",
+      "title": "Holy Mass and the Eucharist",
+      "queries": [
+        "Mass of Saint Gregory",
+        "The Last Supper",
+        "Triumph of the Eucharist"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "learn.mass",
+        "pray.communion_treasury"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.serve-mass",
+      "title": "Serve the Roman Mass",
+      "queries": [
+        "Mass of Saint Gregory",
+        "The Elevation of the Host"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.serve_mass.responses"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.catechism",
+      "title": "Teaching the Faith",
+      "queries": [
+        "Christ Teaching",
+        "Christ and the Doctors",
+        "Christ Blessing the Children"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.catechism",
+        "learn.catechism.daily"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.spiritual-life",
+      "title": "Interior Life and Contemplation",
+      "queries": [
+        "Saint Teresa of Avila",
+        "Saint Benedict",
+        "Christ in the House of Mary and Martha"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.spiritual_life"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.works-mercy",
+      "title": "Works of Mercy",
+      "queries": [
+        "The Good Samaritan",
+        "Saint Martin Dividing His Cloak",
+        "The Seven Works of Mercy"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.spiritual_life",
+        "learn.traditional_life"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.eucharistic-saint",
+      "title": "Eucharistic Devotion in the Saints",
+      "queries": [
+        "Saint Peter Julian Eymard",
+        "The Last Communion of Saint Jerome"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.adoration",
+        "learn.mass"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.sacrament-all-seven",
+      "title": "Seven Sacraments",
+      "queries": [
+        "The Seven Sacraments",
+        "Seven Sacraments Altarpiece"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.rites.baptism",
+        "learn.rites.confirmation",
+        "learn.rites.matrimony",
+        "learn.mass"
+      ],
+      "type": "formation_scene",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.fatherhood",
+      "title": "Holy Family and Christian Family",
+      "queries": [
+        "The Holy Family",
+        "Saint Joseph with the Christ Child"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.sexual_ethics",
+        "learn.rites.matrimony"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.trinity",
+      "title": "Doctrinal Trinity",
+      "queries": [
+        "The Trinity",
+        "Holy Trinity"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.catechism"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.original-sin",
+      "title": "Original Sin and Redemption",
+      "queries": [
+        "Adam and Eve",
+        "Expulsion from Paradise"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.catechism"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.death-judgment",
+      "title": "Last Things",
+      "queries": [
+        "Last Judgment",
+        "Resurrection of the Dead"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.catechism",
+        "pray.good_death"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.papacy",
+      "title": "Papacy and Continuity",
+      "queries": [
+        "Pope Pius X",
+        "Pope Leo XIII",
+        "Pope Gregory the Great"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.catechism",
+        "learn.mass"
+      ],
+      "type": "formation_scene",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.charity",
+      "title": "Christian Charity",
+      "queries": [
+        "Saint Martin and the Beggar",
+        "The Good Samaritan"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.spiritual_life"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.marian-dogmas",
+      "title": "Marian Dogmas",
+      "queries": [
+        "Immaculate Conception",
+        "Assumption of the Virgin"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "learn.catechism"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    },
+    {
+      "id": "formation.doctor-church",
+      "title": "Doctors and Preaching",
+      "queries": [
+        "Saint Thomas Aquinas",
+        "Saint Augustine",
+        "Saint Jerome"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "learn.spiritual_life",
+        "learn.catechism"
+      ],
+      "type": "formation_scene",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT_REQUIRE_CURATOR"
+    }
+  ],
+  "heldPortraitRule": "Contemporary likenesses (St Pius X etc.) require artist/photo reproduction rights and authenticated historical identity; medieval saint portraits are iconographic, never presented as life portraits."
+}

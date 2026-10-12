@@ -1,0 +1,49 @@
+name: Sacred art — curator-rejected subject alternatives
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-sacred-art-curator-met.py"
+      - "data/calendar/sacred-art-user-refusal-replacements.v1.json"
+      - ".github/workflows/sacred-art-curator-replacement-acquisition.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-curator-replacements
+  cancel-in-progress: true
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow numpy
+      - name: Museum-authenticated Met public-domain original acquisition
+        run: python tools/calendar/acquire-sacred-art-curator-met.py
+      - name: Verify original hashing and report counts
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          root=Path("artifacts/sacred-art-curator-replacements")
+          report=json.loads((root/"acquisition.json").read_text())
+          for image in report["results"]:
+            if image["status"]=="ORIGINAL_ACQUIRED_REVIEW_ONLY":
+              file=root/image["filename"]
+              assert file.exists()
+              assert hashlib.sha256(file.read_bytes()).hexdigest()==image["originalSha256"]
+            else: print("REVIEW_HOLD",image["id"],image.get("holdReason",image["status"]))
+          print("CURATOR_REPLACEMENT_ORIGINAL_QA_OK",sum(x["status"]=="ORIGINAL_ACQUIRED_REVIEW_ONLY" for x in report["results"]))
+          PY
+      - name: Preserve research-only museum image originals and source audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-curator-replacement-met-originals
+          path: artifacts/sacred-art-curator-replacements/
+          retention-days: 30
+          if-no-files-found: warn

@@ -1,0 +1,44 @@
+name: Sacred art — 145-subject acquisition audit
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-sacred-art-wide.py"
+      - "data/calendar/sacred-art-subject-targets.v2.json"
+      - ".github/workflows/sacred-art-wide-acquisition.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-art-wide-145-subjects
+  cancel-in-progress: true
+
+jobs:
+  acquire:
+    name: Research originals — ${{ matrix.group }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      max-parallel: 3
+      fail-fast: false
+      matrix:
+        group: [rosary, devotion, calendar, scripture, persons]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image inspector
+        run: pip install Pillow numpy
+      - name: Acquire official CC0 original paintings, tag by subject and module
+        run: python tools/calendar/acquire-sacred-art-wide.py --group ${{ matrix.group }} --max-originals 80
+      - name: Preserve originals + source evidence + no-hit reporting + contact sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-wide-${{ matrix.group }}
+          path: artifacts/sacred-art-wide/${{ matrix.group }}/
+          if-no-files-found: warn
+          retention-days: 30

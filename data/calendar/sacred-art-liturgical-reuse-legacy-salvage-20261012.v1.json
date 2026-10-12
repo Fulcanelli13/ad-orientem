@@ -1,0 +1,3405 @@
+{
+  "schema": "AO_SACRED_ART_LITURGICAL_REUSE_AND_LEGACY_SALVAGE_20261012_V1",
+  "createdOn": "2026-10-12",
+  "ownerPR": 887,
+  "sources": [
+    "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+    "data/calendar/sacred-art-curator-decisions-20261011.v1.json",
+    "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json"
+  ],
+  "publicationRule": "No candidates or historical approvals are released. Do not supersede the 101 selected user decisions. Differentiate user-approved subject choice from liturgical day association; preserve observed proper, caption iconography, rights, acquisition/crop checks.",
+  "homepageRule": "Hold one excellent approved masterpiece across dates/seasons until an equally suitable verified work replaces it. Do not force swaps for every Class I or Sunday. Ordinary Sundays use production DayResolver with optional Scripture-linked painting; never invent exact matching or calendar status.",
+  "summary": {
+    "currentSubjectSelections": 101,
+    "historicalPlacements": 44,
+    "historicalUniqueAcquiredOriginals": 35,
+    "historicalPlacementsWithExactUrlInNewSelections": 2,
+    "datedOccasionEntries": 99,
+    "uniqueOccasionDates": 98,
+    "classI": 53,
+    "otherHighlights": 17,
+    "apostolicMysticAngelicHighlights": 29,
+    "classIOccasionsWithDirectSelectedArt": 30,
+    "classIOccasionsWithoutDirectSelectedArt": 23,
+    "currentArtSubjectKeysWithDirectCandidates": 26,
+    "historicalDistinctOriginalsReusedByUrlInNewSelections": 1
+  },
+  "historicalApprovedOriginalPlacements": [
+    {
+      "legacySubjectId": "calendar.christmas",
+      "legacyArtworkId": "cma-143784",
+      "sourceOriginalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "sourceUrl": "https://clevelandart.org/art/1968.22",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.epiphany",
+      "legacyArtworkId": "met-436984",
+      "sourceOriginalSha256": "254e94beee4b50c8d61e9f214cfee1663bb31bedd0cc51a47164a3717c1515c7",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436984",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.annunciation",
+      "legacyArtworkId": "met-438724",
+      "sourceOriginalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [
+        "ROS-01",
+        "DEV-07"
+      ],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.holy-thursday",
+      "legacyArtworkId": "met-459131",
+      "sourceOriginalSha256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459131",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.palm-sunday",
+      "legacyArtworkId": "kress-k2017",
+      "sourceOriginalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "sourceRightsAtReview": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.candlemas",
+      "legacyArtworkId": "nga-46127",
+      "sourceOriginalSha256": "f2fa7157db6d5c2b210cff8cfb960f51a7c691f0fe77a7a5c91bbb00c1d277a5",
+      "sourceUrl": "https://www.nga.gov/artworks/46127-presentation-in-the-temple",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.good-friday",
+      "legacyArtworkId": "met-459087",
+      "sourceOriginalSha256": "2220c79ddf9ae2ccc23a9853a8055217079a52e6c1eb8f921a627eb8a858ee26",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459087",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.holy-saturday",
+      "legacyArtworkId": "met-437156",
+      "sourceOriginalSha256": "6825656670d25b88c12aa833984db007876698c7d6fbdbdadeb6d020cf1bbb67",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437156",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.easter",
+      "legacyArtworkId": "cma-78982",
+      "sourceOriginalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "sourceUrl": "https://clevelandart.org/art/2017.192",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.ascension",
+      "legacyArtworkId": "met-436835",
+      "sourceOriginalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436835",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.pentecost",
+      "legacyArtworkId": "commons-baroncelli-pentecost",
+      "sourceOriginalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg",
+      "sourceRightsAtReview": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.trinity",
+      "legacyArtworkId": "cma-136507",
+      "sourceOriginalSha256": "161aa1edd73d63709ed835e5e20e3ee5e7a175358d0a52a00a8c0ea86840a050",
+      "sourceUrl": "https://clevelandart.org/art/1960.79",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.corpus-christi",
+      "legacyArtworkId": "met-437722",
+      "sourceOriginalSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437722",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.sacred-heart",
+      "legacyArtworkId": "commons-morlete-sacred-heart-1759",
+      "sourceOriginalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceRightsAtReview": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.assumption",
+      "legacyArtworkId": "nga-46131",
+      "sourceOriginalSha256": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+      "sourceUrl": "https://www.nga.gov/artworks/46131-assumption-of-the-virgin",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.immaculate-conception",
+      "legacyArtworkId": "cma-135659",
+      "sourceOriginalSha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "sourceUrl": "https://clevelandart.org/art/1959.189",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.holy-rosary",
+      "legacyArtworkId": "met-437336",
+      "sourceOriginalSha256": "934a14aa1e9c3efe31a9170825f24bf37b5bd6083953ebeb5c91cdc7265baf27",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437336",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.our-lady-sorrows",
+      "legacyArtworkId": "met-437342",
+      "sourceOriginalSha256": "1ee5a9ab525bb63b42b49d346dd1b6029a3d4f50cd8bcf268e92dabc764602f0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437342",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.saint-joseph",
+      "legacyArtworkId": "cma-160143",
+      "sourceOriginalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "sourceUrl": "https://clevelandart.org/art/1998.10",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.st-john-baptist",
+      "legacyArtworkId": "met-437738",
+      "sourceOriginalSha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437738",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "calendar.holy-innocents",
+      "legacyArtworkId": "kress-k1782",
+      "sourceOriginalSha256": "09cd71f37399cf68435086b2bee3df1f8ef90d074d6d4c94b52875914d9b9c27",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f65fe27049161fdc04c5696d3b01d6c1f5a32680a87bfcb99d76bf69b39b7cb0",
+      "sourceRightsAtReview": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.joy2",
+      "legacyArtworkId": "nga-505",
+      "sourceOriginalSha256": "f3a7a3e350821593959bba5441953d9684810243d2db8b6848d47dd1ba01c014",
+      "sourceUrl": "https://www.nga.gov/artworks/505-visitation-saint-nicholas-and-saint-anthony-abbot",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.joy1",
+      "legacyArtworkId": "met-438724",
+      "sourceOriginalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [
+        "ROS-01",
+        "DEV-07"
+      ],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.joy3",
+      "legacyArtworkId": "cma-143784",
+      "sourceOriginalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "sourceUrl": "https://clevelandart.org/art/1968.22",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.joy5",
+      "legacyArtworkId": "nga-41656",
+      "sourceOriginalSha256": "3b3b11cba6e16eff2535fdd9655d598f617c29f7f9e50d9356972681c2f1e4e6",
+      "sourceUrl": "https://www.nga.gov/artworks/41656-christ-among-doctors",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.joy4",
+      "legacyArtworkId": "nga-46127",
+      "sourceOriginalSha256": "f2fa7157db6d5c2b210cff8cfb960f51a7c691f0fe77a7a5c91bbb00c1d277a5",
+      "sourceUrl": "https://www.nga.gov/artworks/46127-presentation-in-the-temple",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.sor1",
+      "legacyArtworkId": "met-442488",
+      "sourceOriginalSha256": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442488",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.sor3",
+      "legacyArtworkId": "met-436721",
+      "sourceOriginalSha256": "69fe6aae9e565c621b05515ed4205044b216be63a5bcff6d7fe87163deb97623",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436721",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.sor2",
+      "legacyArtworkId": "met-438466",
+      "sourceOriginalSha256": "b7d5f85771e4e270adb5fae5e01061f52004d195278c8705bde2482e8f0341c6",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438466",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.sor4",
+      "legacyArtworkId": "met-459087",
+      "sourceOriginalSha256": "2220c79ddf9ae2ccc23a9853a8055217079a52e6c1eb8f921a627eb8a858ee26",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459087",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.sor5",
+      "legacyArtworkId": "cma-129386",
+      "sourceOriginalSha256": "a495cd94f5477d47f86a0ae9ed72c9c4bbf085c246ea7c2c5f0f0e93ca307505",
+      "sourceUrl": "https://clevelandart.org/art/1952.222",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.glo1",
+      "legacyArtworkId": "cma-78982",
+      "sourceOriginalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "sourceUrl": "https://clevelandart.org/art/2017.192",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.glo2",
+      "legacyArtworkId": "met-436835",
+      "sourceOriginalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436835",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.glo5",
+      "legacyArtworkId": "cma-124076",
+      "sourceOriginalSha256": "5477d80f450d3e4b4f22fec263bcbb7482094f61412a8a12e0e77c927854a6fc",
+      "sourceUrl": "https://clevelandart.org/art/1944.79",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.glo4",
+      "legacyArtworkId": "nga-46131",
+      "sourceOriginalSha256": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+      "sourceUrl": "https://www.nga.gov/artworks/46131-assumption-of-the-virgin",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "rosary.glo3",
+      "legacyArtworkId": "commons-baroncelli-pentecost",
+      "sourceOriginalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg",
+      "sourceRightsAtReview": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "devotion.immaculate-heart",
+      "legacyArtworkId": "met-437423",
+      "sourceOriginalSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437423",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "devotion.sacred-heart",
+      "legacyArtworkId": "commons-morlete-sacred-heart-1759",
+      "sourceOriginalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceRightsAtReview": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "devotion.confession",
+      "legacyArtworkId": "met-436839",
+      "sourceOriginalSha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436839",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "person.paul",
+      "legacyArtworkId": "met-442491",
+      "sourceOriginalSha256": "68d501d009183a6aca17628e8323a8edaedf676cc4d7293b97f1afa3380470bc",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442491",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "person.peter",
+      "legacyArtworkId": "met-441971",
+      "sourceOriginalSha256": "d3575d5455b46be66e0fc14e7ee1e7daf9194d2e8f68bd29d99608fea4a6e68e",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/441971",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "person.benedict",
+      "legacyArtworkId": "met-437970",
+      "sourceOriginalSha256": "79a8500d9cca058ac4c68160a6f401ba7920244a70bb3271072a017f22701d61",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437970",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "person.francis-assisi",
+      "legacyArtworkId": "cma-142293",
+      "sourceOriginalSha256": "4dcee3822142655e6b1cb7286c7fe68f5f4d036bf6951a0ed1be8b3f9534cb02",
+      "sourceUrl": "https://clevelandart.org/art/1966.125",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    },
+    {
+      "legacySubjectId": "person.dominic",
+      "legacyArtworkId": "met-436054",
+      "sourceOriginalSha256": "cc552dd61308c10b3b12d85771ffc882ea609aff4cbe6a208eaeb0ab9218f7b5",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436054",
+      "sourceRightsAtReview": "CC0",
+      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
+    }
+  ],
+  "datedOccasionEditorialReuse": [
+    {
+      "group": "observedClassI",
+      "date": "2026-01-01",
+      "observedPrincipalId": "sancti:01-01:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Octave Day of Christmas",
+      "heroSubjectKey": "nativity",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-03",
+          "selectedSubject": "Nativity",
+          "artworkId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+          "artist": "Jean-Léon Gérôme",
+          "title": "The Age of Augustus: Birth of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-01-06",
+      "observedPrincipalId": "sancti:01-06:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Epiphany of the Lord",
+      "heroSubjectKey": "epiphany",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "BIB-G01",
+          "selectedSubject": "Adoration of the Magi",
+          "artworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+          "artist": "Peter Paul Rubens",
+          "title": "Adoration of the Magi",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-02-18",
+      "observedPrincipalId": "tempora:Quadp3-3:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Ash Wednesday",
+      "heroSubjectKey": "ash-wednesday",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-02-22",
+      "observedPrincipalId": "tempora:Quad1-0:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "I Sunday of Lent",
+      "heroSubjectKey": "lent",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "ROS-06",
+          "selectedSubject": "Agony in the Garden",
+          "artworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "sourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-01",
+      "observedPrincipalId": "tempora:Quad2-0:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "II Sunday of Lent",
+      "heroSubjectKey": "lent",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "ROS-06",
+          "selectedSubject": "Agony in the Garden",
+          "artworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "sourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-08",
+      "observedPrincipalId": "tempora:Quad3-0:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "III Sunday of Lent",
+      "heroSubjectKey": "lent",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "ROS-06",
+          "selectedSubject": "Agony in the Garden",
+          "artworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "sourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-15",
+      "observedPrincipalId": "tempora:Quad4-0:1:pv",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "IV Sunday of Lent",
+      "heroSubjectKey": "lent",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "ROS-06",
+          "selectedSubject": "Agony in the Garden",
+          "artworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "sourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-19",
+      "observedPrincipalId": "sancti:03-19:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "heroSubjectKey": "saint-joseph",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "BIB-G02",
+          "selectedSubject": "Joseph’s Dream",
+          "artworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-22",
+      "observedPrincipalId": "tempora:Quad5-0:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Passion Sunday",
+      "heroSubjectKey": "passiontide",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "ROS-06",
+          "selectedSubject": "Agony in the Garden",
+          "artworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "sourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-25",
+      "observedPrincipalId": "sancti:03-25:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Annunciation of the Blessed Virgin Mary",
+      "heroSubjectKey": "annunciation",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-01",
+          "selectedSubject": "Annunciation",
+          "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "artist": "Philippe de Champaigne",
+          "title": "The Annunciation",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-29",
+      "observedPrincipalId": "tempora:Quad6-0r:1:rv",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Palm Sunday",
+      "heroSubjectKey": "palm-sunday",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-30",
+      "observedPrincipalId": "tempora:Quad6-1:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Feria II of Holy Week",
+      "heroSubjectKey": "palm-sunday",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-03-31",
+      "observedPrincipalId": "tempora:Quad6-2:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Feria III of Holy Week",
+      "heroSubjectKey": "palm-sunday",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-01",
+      "observedPrincipalId": "tempora:Quad6-3:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Feria IV of Holy Week",
+      "heroSubjectKey": "palm-sunday",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-02",
+      "observedPrincipalId": "tempora:Quad6-4r:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Holy Thursday",
+      "heroSubjectKey": "holy-thursday",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "BIB-G24",
+          "selectedSubject": "Last Supper / Institution of Eucharist",
+          "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-03",
+      "observedPrincipalId": "tempora:Quad6-5r:1:bv",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Good Friday",
+      "heroSubjectKey": "crucifixion",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-10",
+          "selectedSubject": "Crucifixion",
+          "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-04",
+      "observedPrincipalId": "tempora:Quad6-6r:1:vw",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Holy Saturday",
+      "heroSubjectKey": "holy-saturday",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "STN-14",
+          "selectedSubject": "Station 14: Burial of Christ",
+          "artworkId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+          "artist": "Giandomenico Tiepolo",
+          "title": "Burial of Christ — Prado Passion series",
+          "sourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000362",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-05",
+      "observedPrincipalId": "tempora:Pasc0-0:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Easter Sunday",
+      "heroSubjectKey": "resurrection",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-11",
+          "selectedSubject": "Resurrection",
+          "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-06",
+      "observedPrincipalId": "tempora:Pasc0-1:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Monday in the Octave of Easter",
+      "heroSubjectKey": "resurrection",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-11",
+          "selectedSubject": "Resurrection",
+          "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-07",
+      "observedPrincipalId": "tempora:Pasc0-2:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Tuesday in the Octave of Easter",
+      "heroSubjectKey": "resurrection",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-11",
+          "selectedSubject": "Resurrection",
+          "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-08",
+      "observedPrincipalId": "tempora:Pasc0-3:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Wednesday in the Octave of Easter",
+      "heroSubjectKey": "resurrection",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-11",
+          "selectedSubject": "Resurrection",
+          "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-09",
+      "observedPrincipalId": "tempora:Pasc0-4:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Thursday in the Octave of Easter",
+      "heroSubjectKey": "resurrection",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-11",
+          "selectedSubject": "Resurrection",
+          "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-10",
+      "observedPrincipalId": "tempora:Pasc0-5:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Friday in the Octave of Easter",
+      "heroSubjectKey": "resurrection",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-11",
+          "selectedSubject": "Resurrection",
+          "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-11",
+      "observedPrincipalId": "tempora:Pasc0-6:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Saturday in the Octave of Easter",
+      "heroSubjectKey": "resurrection",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-11",
+          "selectedSubject": "Resurrection",
+          "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-04-12",
+      "observedPrincipalId": "tempora:Pasc1-0:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Low Sunday",
+      "heroSubjectKey": "resurrection",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-11",
+          "selectedSubject": "Resurrection",
+          "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-01",
+      "observedPrincipalId": "sancti:05-01r:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "St. Joseph the Workman",
+      "heroSubjectKey": "saint-joseph",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "BIB-G02",
+          "selectedSubject": "Joseph’s Dream",
+          "artworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-14",
+      "observedPrincipalId": "tempora:Pasc5-4:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Ascension of the Lord",
+      "heroSubjectKey": "ascension",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-12",
+          "selectedSubject": "Ascension",
+          "artworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+          "artist": "Artus Wolffort",
+          "title": "Ascension — Antwerp Rosary cycle",
+          "sourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-23",
+      "observedPrincipalId": "tempora:Pasc6-6:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Vigil of Pentecost",
+      "heroSubjectKey": "ascension",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-12",
+          "selectedSubject": "Ascension",
+          "artworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+          "artist": "Artus Wolffort",
+          "title": "Ascension — Antwerp Rosary cycle",
+          "sourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-24",
+      "observedPrincipalId": "tempora:Pasc7-0:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Pentecost Sunday",
+      "heroSubjectKey": "pentecost",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-13",
+          "selectedSubject": "Pentecost",
+          "artworkId": "ART-ean-estout-entecost",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "sourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-25",
+      "observedPrincipalId": "tempora:Pasc7-1:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Monday after Pentecost",
+      "heroSubjectKey": "pentecost",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-13",
+          "selectedSubject": "Pentecost",
+          "artworkId": "ART-ean-estout-entecost",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "sourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-26",
+      "observedPrincipalId": "tempora:Pasc7-2:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Tuesday after Pentecost",
+      "heroSubjectKey": "pentecost",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-13",
+          "selectedSubject": "Pentecost",
+          "artworkId": "ART-ean-estout-entecost",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "sourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-27",
+      "observedPrincipalId": "tempora:Pasc7-3:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Ember Wednesday of Pentecost",
+      "heroSubjectKey": "pentecost",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-13",
+          "selectedSubject": "Pentecost",
+          "artworkId": "ART-ean-estout-entecost",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "sourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-28",
+      "observedPrincipalId": "tempora:Pasc7-4:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Thursday after Pentecost",
+      "heroSubjectKey": "pentecost",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-13",
+          "selectedSubject": "Pentecost",
+          "artworkId": "ART-ean-estout-entecost",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "sourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-29",
+      "observedPrincipalId": "tempora:Pasc7-5:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Ember Friday of Pentecost",
+      "heroSubjectKey": "pentecost",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-13",
+          "selectedSubject": "Pentecost",
+          "artworkId": "ART-ean-estout-entecost",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "sourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-30",
+      "observedPrincipalId": "tempora:Pasc7-6:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Ember Saturday of Pentecost",
+      "heroSubjectKey": "pentecost",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-13",
+          "selectedSubject": "Pentecost",
+          "artworkId": "ART-ean-estout-entecost",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "sourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-05-31",
+      "observedPrincipalId": "tempora:Pent01-0r:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Trinity Sunday",
+      "heroSubjectKey": "trinity",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "DEV-18",
+          "selectedSubject": "Most Holy Trinity",
+          "artworkId": "ART-eter-aul-ubens-he-oly-rinity",
+          "artist": "Peter Paul Rubens",
+          "title": "The Holy Trinity",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-06-04",
+      "observedPrincipalId": "tempora:Pent01-4:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Corpus Christi",
+      "heroSubjectKey": "corpus-christi",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "BIB-G24",
+          "selectedSubject": "Last Supper / Institution of Eucharist",
+          "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène",
+          "sourceUrl": null,
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-06-12",
+      "observedPrincipalId": "tempora:Pent02-5:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Sacred Heart of Jesus",
+      "heroSubjectKey": "sacred-heart",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-06-24",
+      "observedPrincipalId": "sancti:06-24:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Nativity of St. John the Baptist",
+      "heroSubjectKey": "nativity-john-baptist",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "SNT-OT-04",
+          "selectedSubject": "Saint John the Baptist",
+          "artworkId": "ART-ierre-ignard-aint-ohn-the-aptist",
+          "artist": "Pierre Mignard",
+          "title": "Saint John the Baptist",
+          "sourceUrl": null,
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-06-29",
+      "observedPrincipalId": "sancti:06-29:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Sts. Peter & Paul",
+      "heroSubjectKey": "peter-and-paul",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-AP-01",
+          "selectedSubject": "Saint Peter",
+          "artworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Peter — Apostolate",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        },
+        {
+          "subjectId": "SNT-AP-12",
+          "selectedSubject": "Saint Paul",
+          "artworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Paul — Apostolate",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-07-01",
+      "observedPrincipalId": "sancti:07-01:1:r",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "The Precious Blood of Our Lord Jesus Christ",
+      "heroSubjectKey": "precious-blood",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "ROS-10",
+          "selectedSubject": "Crucifixion",
+          "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourceUrl": null,
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-08-15",
+      "observedPrincipalId": "sancti:08-15:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Assumption of the Blessed Virgin Mary",
+      "heroSubjectKey": "assumption",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-14",
+          "selectedSubject": "Assumption",
+          "artworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+          "artist": "Peter Paul Rubens",
+          "title": "Assumption of the Virgin",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-09-29",
+      "observedPrincipalId": "sancti:09-29:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Dedication of St. Michael the Archangel",
+      "heroSubjectKey": "saint-michael",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-OT-02",
+          "selectedSubject": "Saint Michael Archangel",
+          "artworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-10-25",
+      "observedPrincipalId": "sancti:10-DU:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Christ the King",
+      "heroSubjectKey": "christ-king",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-11-01",
+      "observedPrincipalId": "sancti:11-01:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "All Saints",
+      "heroSubjectKey": "all-saints",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "SNT-DC-01",
+          "selectedSubject": "Saint Ambrose",
+          "artworkId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Ambrose Barring Theodosius",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-11-02",
+      "observedPrincipalId": "sancti:11-02m1:1:b",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Commemoration of All Souls",
+      "heroSubjectKey": "all-souls",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-11-29",
+      "observedPrincipalId": "tempora:Adv1-0:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "I Sunday of Advent",
+      "heroSubjectKey": "advent",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-12-06",
+      "observedPrincipalId": "tempora:Adv2-0:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "II Sunday of Advent",
+      "heroSubjectKey": "advent",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-12-08",
+      "observedPrincipalId": "sancti:12-08:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Immaculate Conception of the Blessed Virgin Mary",
+      "heroSubjectKey": "immaculate-conception",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "DEV-06",
+          "selectedSubject": "Immaculate Conception",
+          "artworkId": "ART-eter-aul-ubens-mmaculate-onception",
+          "artist": "Peter Paul Rubens",
+          "title": "Immaculate Conception",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-12-13",
+      "observedPrincipalId": "tempora:Adv3-0:1:pv",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "III Sunday of Advent",
+      "heroSubjectKey": "advent",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-12-20",
+      "observedPrincipalId": "tempora:Adv4-0:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "IV Sunday of Advent",
+      "heroSubjectKey": "advent",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-12-24",
+      "observedPrincipalId": "sancti:12-24:1:v",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "Vigil of Christmas",
+      "heroSubjectKey": "nativity",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-03",
+          "selectedSubject": "Nativity",
+          "artworkId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+          "artist": "Jean-Léon Gérôme",
+          "title": "The Age of Augustus: Birth of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "observedClassI",
+      "date": "2026-12-25",
+      "observedPrincipalId": "sancti:12-25m1:1:w",
+      "observedRelationship": null,
+      "rank": 1,
+      "title": "The Nativity of Our Lord",
+      "heroSubjectKey": "nativity",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-03",
+          "selectedSubject": "Nativity",
+          "artworkId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+          "artist": "Jean-Léon Gérôme",
+          "title": "The Age of Augustus: Birth of Christ",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-01-04",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Most Holy Name of Jesus",
+      "heroSubjectKey": "holy-name",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-01-11",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Holy Family",
+      "heroSubjectKey": "holy-family",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-01-13",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Commemoration of the Baptism of Our Lord",
+      "heroSubjectKey": "baptism",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-02-01",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Septuagesima Sunday",
+      "heroSubjectKey": "septuagesima",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-02-02",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Purification of the BVM / Presentation of the Lord (Candlemas)",
+      "heroSubjectKey": "presentation",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-04",
+          "selectedSubject": "Presentation of Jesus",
+          "artworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+          "artist": "Philippe de Champaigne",
+          "title": "Presentation of Jesus at the Temple",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-02-11",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 3,
+      "title": "Our Lady of Lourdes",
+      "heroSubjectKey": "our-lady-lourdes",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-07-02",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Visitation of the Blessed Virgin Mary",
+      "heroSubjectKey": "visitation",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "ROS-02",
+          "selectedSubject": "Visitation",
+          "artworkId": "ART-aphael-and-iulio-omano-he-isitation",
+          "artist": "Raphael and Giulio Romano",
+          "title": "The Visitation",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-visitation/c02d195f-fdc4-4c61-bedf-e19216dd7335",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-07-22",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 3,
+      "title": "St. Mary Magdalene",
+      "heroSubjectKey": "magdalene",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-OT-25",
+          "selectedSubject": "Saint Mary Magdalene",
+          "artworkId": "ART-uido-eni-aint-ary-agdalene",
+          "artist": "Guido Reni",
+          "title": "Saint Mary Magdalene",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/guido-reni-saint-mary-magdalene",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-08-06",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Transfiguration of Our Lord",
+      "heroSubjectKey": "transfiguration",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-09-08",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Nativity of the Blessed Virgin Mary",
+      "heroSubjectKey": "nativity-mary",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-09-14",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Exaltation of the Holy Cross",
+      "heroSubjectKey": "exaltation-cross",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "ROS-10",
+          "selectedSubject": "Crucifixion",
+          "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "sourceUrl": null,
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-09-15",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Seven Sorrows of the Blessed Virgin Mary",
+      "heroSubjectKey": "mater-dolorosa",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "DEV-09",
+          "selectedSubject": "Seven Sorrows of Mary",
+          "artworkId": "ART-nthony-van-yck-amentation-of-hrist",
+          "artist": "Anthony van Dyck",
+          "title": "Lamentation of Christ",
+          "sourceUrl": null,
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-10-03",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 3,
+      "title": "St. Thérèse of the Child Jesus",
+      "heroSubjectKey": "therese-lisieux",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-10-07",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Our Lady of the Rosary",
+      "heroSubjectKey": "our-lady-rosary",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "ROS-01",
+          "selectedSubject": "Annunciation",
+          "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+          "artist": "Philippe de Champaigne",
+          "title": "The Annunciation",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-11-09",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Dedication of the Lateran Archbasilica",
+      "heroSubjectKey": "lateran-dedication",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-11-22",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Last Sunday after Pentecost",
+      "heroSubjectKey": "last-sunday",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "otherHighlights",
+      "date": "2026-12-28",
+      "observedPrincipalId": null,
+      "observedRelationship": null,
+      "rank": 2,
+      "title": "Holy Innocents",
+      "heroSubjectKey": "holy-innocents",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-01-25",
+      "observedPrincipalId": null,
+      "observedRelationship": "NOMINAL_DATE_SUPERSEDED",
+      "rank": 3,
+      "title": "Conversion of Saint Paul",
+      "heroSubjectKey": "paul-conversion",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "BIB-A05",
+          "selectedSubject": "Conversion of Saul",
+          "artworkId": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "Conversion of Saint Paul",
+          "sourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000984",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-02-22",
+      "observedPrincipalId": null,
+      "observedRelationship": "NOMINAL_DATE_SUPERSEDED",
+      "rank": 2,
+      "title": "Chair of Saint Peter",
+      "heroSubjectKey": "peter-chair",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-02-24",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint Matthias, Apostle",
+      "heroSubjectKey": "matthias",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-AP-11",
+          "selectedSubject": "Saint Matthias",
+          "artworkId": "ART-eter-aul-ubens-aint-atthias-postolate",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Matthias — Apostolate",
+          "sourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20Rubens%20Saint%20Matthias%20Duke%20of%20Lerma%20Apostolado",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-04-25",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint Mark, Evangelist",
+      "heroSubjectKey": "mark",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-05-11",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saints Philip and James, Apostles",
+      "heroSubjectKey": "philip-james",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-06-11",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Barnabas, Apostle",
+      "heroSubjectKey": "barnabas",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-06-30",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Commemoration of Saint Paul, Apostle",
+      "heroSubjectKey": "paul",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-AP-12",
+          "selectedSubject": "Saint Paul",
+          "artworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Paul — Apostolate",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-07-25",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint James the Greater, Apostle",
+      "heroSubjectKey": "james-major",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-08-24",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint Bartholomew, Apostle",
+      "heroSubjectKey": "bartholomew",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-09-21",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint Matthew, Apostle and Evangelist",
+      "heroSubjectKey": "matthew",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-AP-08",
+          "selectedSubject": "Saint Matthew",
+          "artworkId": "ART-aravaggio-nspiration-of-aint-atthew",
+          "artist": "Caravaggio",
+          "title": "Inspiration of Saint Matthew",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-10-18",
+      "observedPrincipalId": null,
+      "observedRelationship": "COMMEMORATED_NOT_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint Luke, Evangelist",
+      "heroSubjectKey": "luke",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-10-28",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saints Simon and Jude, Apostles",
+      "heroSubjectKey": "simon-jude",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [
+        {
+          "subjectId": "SNT-AP-13",
+          "selectedSubject": "Saint Jude Thaddeus",
+          "artworkId": "ART-usepe-de-ibera-aint-udas-haddeus",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Judas Thaddeus",
+          "sourceUrl": null,
+          "relation": "RELATED_CONTEXT_NOT_EXACT_FEAST_IMAGE",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-11-30",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint Andrew, Apostle",
+      "heroSubjectKey": "andrew",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-AP-02",
+          "selectedSubject": "Saint Andrew",
+          "artworkId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+          "artist": "Peter Paul Rubens",
+          "title": "Martyrdom of Saint Andrew",
+          "sourceUrl": "https://www.fcamberes.org/en/-the-martyrdom-of-saint-andrew",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": true,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-12-21",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint Thomas, Apostle",
+      "heroSubjectKey": "thomas",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-12-27",
+      "observedPrincipalId": null,
+      "observedRelationship": "COMMEMORATED_NOT_PRINCIPAL",
+      "rank": 2,
+      "title": "Saint John, Apostle and Evangelist",
+      "heroSubjectKey": "john-evangelist",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-01-29",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Francis de Sales",
+      "heroSubjectKey": "francis-de-sales",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-04-30",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Catherine of Siena",
+      "heroSubjectKey": "catherine-siena",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-DC-09",
+          "selectedSubject": "Saint Catherine of Siena",
+          "artworkId": "ART-iambattista-iepolo-aint-atherine-of-iena",
+          "artist": "Giambattista Tiepolo",
+          "title": "Saint Catherine of Siena",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-08-04",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Dominic",
+      "heroSubjectKey": "dominic",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-OT-13",
+          "selectedSubject": "Saint Dominic",
+          "artworkId": "ART-laudio-oello-aint-ominic-of-uzm-n",
+          "artist": "Claudio Coello",
+          "title": "Saint Dominic of Guzmán",
+          "sourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000662",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-08-19",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint John Eudes",
+      "heroSubjectKey": "john-eudes",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-08-20",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Bernard of Clairvaux",
+      "heroSubjectKey": "bernard-clairvaux",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-10-04",
+      "observedPrincipalId": null,
+      "observedRelationship": "NOMINAL_DATE_SUPERSEDED",
+      "rank": 3,
+      "title": "Saint Francis of Assisi",
+      "heroSubjectKey": "francis-assisi",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "SNT-OT-12",
+          "selectedSubject": "Saint Francis of Assisi",
+          "artworkId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Francis in Ecstasy",
+          "sourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001478",
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-10-08",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Bridget of Sweden",
+      "heroSubjectKey": "bridget-sweden",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-10-15",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Teresa of Avila",
+      "heroSubjectKey": "teresa-avila",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-10-17",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Margaret Mary Alacoque",
+      "heroSubjectKey": "margaret-mary-alacoque",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-11-16",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Gertrude the Great",
+      "heroSubjectKey": "gertrude-great",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-11-24",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint John of the Cross",
+      "heroSubjectKey": "john-cross",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-03-24",
+      "observedPrincipalId": null,
+      "observedRelationship": "COMMEMORATED_NOT_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Gabriel, Archangel",
+      "heroSubjectKey": "gabriel",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-10-02",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Holy Guardian Angels",
+      "heroSubjectKey": "guardian-angels",
+      "existingNewlySelectedSubjectArt": [
+        {
+          "subjectId": "DEV-17",
+          "selectedSubject": "Guardian Angel",
+          "artworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+          "artist": "Pietro da Cortona",
+          "title": "The Guardian Angel",
+          "sourceUrl": null,
+          "relation": "DIRECT_NARRATIVE_OR_PERSON_SUBJECT_REUSE_REQUIRES_OBSERVED_DAY_QA",
+          "sourceVerifiedInNewExport": false,
+          "editorialDecision": "SELECTED_FOR_SUBJECT_ONLY",
+          "calendarPlacementApproved": false,
+          "originalAcquisitionVerifiedAgainstLegacyRegistry": false,
+          "homeCropApproved": false,
+          "publicationRightsCleared": false
+        }
+      ],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": false,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    },
+    {
+      "group": "apostolicMysticAngelicHighlights",
+      "date": "2026-10-24",
+      "observedPrincipalId": null,
+      "observedRelationship": "OBSERVED_PRINCIPAL",
+      "rank": 3,
+      "title": "Saint Raphael, Archangel",
+      "heroSubjectKey": "raphael",
+      "existingNewlySelectedSubjectArt": [],
+      "relatedSelectedArtOnly": [],
+      "needsNewMasterpiece": true,
+      "homepageMustSwitchArtwork": false,
+      "liturgicalHeadlineIndependent": true
+    }
+  ],
+  "additionalSundayRule": "Not enumerated in this editorial file: ALL 2026 non-Class-I Sundays, including II-class Sundays after Pentecost and Epiphany, must resolve from actual 1962 DayResolver and receive liturgical metadata. They are not artwork quotas. A Gospel-linked artwork is optional and must be source-verified; otherwise keep appropriate previously chosen anchor artwork with truthful caption.",
+  "caveats": [
+    "Explicit selected-source URL matching is conservative. Blank/new catalogue research URLs may conceal additional overlap; do not infer zero physical overlap.",
+    "Source-original hashes in the 2026-10-11 ledger have not been re-hashed in this reconciliation.",
+    "Related themes and fallback seasonal images are not exact Proper or feast artwork.",
+    "Never infer a canonical holy day of obligation solely from a liturgical rank or Class I.",
+    "El Greco and other previously rejected styles are historical records only and excluded from future proposals."
+  ],
+  "sunday2026": {
+    "allSundayCivilDates": 52,
+    "observedClassIPrincipalSundays": 16,
+    "otherSundaysRequiringNormalDayResolver": 36,
+    "sourceOfSundayDates": "2026 Gregorian UTC day-of-week; calendar principal not guessed",
+    "sundayIndex": [
+      {
+        "date": "2026-01-04",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Most Holy Name of Jesus",
+            "observance2026": "CHECK_DAYRESOLVER",
+            "heroSubjectKey": "holy-name"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-01-11",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Holy Family",
+            "observance2026": "CHECK_DAYRESOLVER",
+            "heroSubjectKey": "holy-family"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-01-18",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-01-25",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Conversion of Saint Paul",
+            "observance2026": "NOMINAL_DATE_SUPERSEDED",
+            "heroSubjectKey": "paul-conversion"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-02-01",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Septuagesima Sunday",
+            "observance2026": "CHECK_DAYRESOLVER",
+            "heroSubjectKey": "septuagesima"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-02-08",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-02-15",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-02-22",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad1-0:1:v",
+          "title": "I Sunday of Lent"
+        },
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Chair of Saint Peter",
+            "observance2026": "NOMINAL_DATE_SUPERSEDED",
+            "heroSubjectKey": "peter-chair"
+          }
+        ],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-01",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad2-0:1:v",
+          "title": "II Sunday of Lent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-08",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad3-0:1:v",
+          "title": "III Sunday of Lent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-15",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad4-0:1:pv",
+          "title": "IV Sunday of Lent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-22",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad5-0:1:v",
+          "title": "Passion Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-29",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad6-0r:1:rv",
+          "title": "Palm Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-04-05",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Pasc0-0:1:w",
+          "title": "Easter Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "SELECTED_SUBJECT_ART_OPTION_WITH_TECHNICAL_GATES",
+        "subjectArtPlacements": [
+          {
+            "subjectId": "ROS-11",
+            "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist"
+          }
+        ],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-04-12",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Pasc1-0:1:w",
+          "title": "Low Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "SELECTED_SUBJECT_ART_OPTION_WITH_TECHNICAL_GATES",
+        "subjectArtPlacements": [
+          {
+            "subjectId": "ROS-11",
+            "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist"
+          }
+        ],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-04-19",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-04-26",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-03",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-10",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-17",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-24",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Pasc7-0:1:r",
+          "title": "Pentecost Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "SELECTED_SUBJECT_ART_OPTION_WITH_TECHNICAL_GATES",
+        "subjectArtPlacements": [
+          {
+            "subjectId": "ROS-13",
+            "artworkId": "ART-ean-estout-entecost"
+          }
+        ],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-31",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Pent01-0r:1:w",
+          "title": "Trinity Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "SELECTED_SUBJECT_ART_OPTION_WITH_TECHNICAL_GATES",
+        "subjectArtPlacements": [
+          {
+            "subjectId": "DEV-18",
+            "artworkId": "ART-eter-aul-ubens-he-oly-rinity"
+          }
+        ],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-06-07",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-06-14",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-06-21",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-06-28",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-07-05",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-07-12",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-07-19",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-07-26",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-02",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-09",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-16",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-23",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-30",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-09-06",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-09-13",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-09-20",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-09-27",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-10-04",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Saint Francis of Assisi",
+            "observance2026": "NOMINAL_DATE_SUPERSEDED",
+            "heroSubjectKey": "francis-assisi"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-10-11",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-10-18",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Saint Luke, Evangelist",
+            "observance2026": "COMMEMORATED_NOT_PRINCIPAL",
+            "heroSubjectKey": "luke"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-10-25",
+        "sourcePrincipalIfClassI": {
+          "id": "sancti:10-DU:1:w",
+          "title": "Christ the King"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-01",
+        "sourcePrincipalIfClassI": {
+          "id": "sancti:11-01:1:w",
+          "title": "All Saints"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-08",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-15",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-22",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Last Sunday after Pentecost",
+            "observance2026": "CHECK_DAYRESOLVER",
+            "heroSubjectKey": "last-sunday"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-29",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Adv1-0:1:v",
+          "title": "I Sunday of Advent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-12-06",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Adv2-0:1:v",
+          "title": "II Sunday of Advent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-12-13",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Adv3-0:1:pv",
+          "title": "III Sunday of Advent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-12-20",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Adv4-0:1:v",
+          "title": "IV Sunday of Advent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-12-27",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Saint John, Apostle and Evangelist",
+            "observance2026": "COMMEMORATED_NOT_PRINCIPAL",
+            "heroSubjectKey": "john-evangelist"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      }
+    ],
+    "policy": "All Sundays have correct 1962 Proper and observance resolved by app DayResolver. I/II rubric independently checked. A major feast or 1962 exception may displace a nominal Sunday; historical nominal spotlight never overrides actual principal. Gospel painting only when source identity and iconographic relationship independently validated; otherwise hold outstanding licensed artwork without false exact-feast claim."
+  }
+}

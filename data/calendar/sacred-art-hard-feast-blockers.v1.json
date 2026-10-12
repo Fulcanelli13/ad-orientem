@@ -1,0 +1,97 @@
+{
+  "schema": "AO_SACRED_ART_HARD_FEAST_RESEARCH_BLOCKERS_V1",
+  "createdOn": "2026-10-10",
+  "ownerIssue": 885,
+  "scope": "Source investigations only; excludes candidates that fail pixel, medium or reuse gates. They must not increase acquired-original totals.",
+  "targets": [
+    {
+      "id": "calendar.sacred-heart",
+      "observed2026": "tempora:Pent02-5:1:w",
+      "exactAcquiredOriginals": 0,
+      "minimum": 2,
+      "leads": [
+        {
+          "name": "Le Sacré-Cœur et l'Eucharistie",
+          "artist": "Pietro Tedeschi",
+          "date": "18th century",
+          "medium": "oil on canvas",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/01760000072",
+          "status": "OBJECT_VERIFIED_PHOTO_RIGHTS_AND_ORIGINAL_FILE_UNRESOLVED",
+          "reason": "Paray-le-Monial Musée du Hiéron; French museum record authenticates devotional painting but no reusable >=2500px photograph established."
+        },
+        {
+          "name": "Le Cœur de Jésus",
+          "artist": "Maurice Denis",
+          "date": "1930",
+          "medium": "oil on canvas",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/01760000111",
+          "status": "SOURCE_PHOTO_RIGHTS_RESTRICTED",
+          "reason": "Official French cultural inventory credits photograph © Laurent Chaintreuil. Original painting does not authorize third-party photographic reproduction."
+        },
+        {
+          "name": "Sacred Heart of Jesus",
+          "artist": "Pompeo Batoni",
+          "date": "1767",
+          "medium": "oil on canvas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:SacredHeartBatoni.jpg",
+          "status": "ORIGINAL_FILE_TOO_SMALL",
+          "reason": "Commons original only 1034×1441, fails 2500px threshold."
+        },
+        {
+          "name": "Sacred Heart of Jesus, Gesu Church, Rome",
+          "artist": "Pompeo Batoni",
+          "date": "1767",
+          "medium": "oil on canvas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_of_Jesus,_Gesu_Church,_Rome.jpg",
+          "status": "REPRODUCTION_RIGHTS_CONFLICT",
+          "reason": "High-resolution file claims PD mark yet embedded EXIF says copyright holder Catholic News Service, independent commercial reuse clearance required before original acquisition or publication."
+        },
+        {
+          "name": "Sagrado Corazon",
+          "artist": "Caban group",
+          "date": "19th/20th century",
+          "sourceUrl": "https://americanart.si.edu/artwork/sagrado-corazon-35465",
+          "status": "WRONG_MEDIUM",
+          "reason": "Official Smithsonian classification is carved painted wood sculpture, not a painting."
+        }
+      ]
+    },
+    {
+      "id": "calendar.christ-king",
+      "observed2026": "sancti:10-DU:1:w",
+      "exactAcquiredOriginals": 0,
+      "minimum": 2,
+      "leads": [
+        {
+          "name": "Triumph of Christ the King with the Four Continents",
+          "artist": "Cusco School, unknown",
+          "date": "18th century",
+          "medium": "oil on canvas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_Triumph_of_Christ_the_King_with_the_four_continents_-_overall.jpg",
+          "status": "ORIGINAL_FILE_TOO_SMALL_AND_MONOCHROME",
+          "reason": "Brooklyn 41.1254; Commons source file only 768×673, black-and-white despite painting being coloured."
+        },
+        {
+          "name": "Christ the King",
+          "artist": "Alexander Bogardy",
+          "date": "1963",
+          "medium": "oil on canvas board",
+          "sourceUrl": "https://americanart.si.edu/artwork/christ-king-111005",
+          "status": "COPYRIGHT_REPRODUCTION_RESTRICTION",
+          "reason": "Smithsonian describes official image as usage conditions apply; modern artist died 1992; not an open-access original for publication."
+        },
+        {
+          "name": "Christ in Glory",
+          "artist": "Russian (Novgorod?) Painter",
+          "date": "late 15th century",
+          "medium": "tempera on wood",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437578",
+          "status": "ACQUIRED_CONTEXTUAL_ONLY_NOT_EXACT",
+          "canonicalArtworkId": "met-437578",
+          "reason": "CC0 original acquired, but generic Christ in Glory cannot be presented as direct 1962 feast-specific proof."
+        }
+      ]
+    }
+  ],
+  "rule": "Do not substitute public-domain age of the underlying painting for rights in its photograph; do not relax colour/resolution merely to make quota. Continue alternate museum/permission research."
+}
