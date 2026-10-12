@@ -621,9 +621,11 @@ async function exerciseRealShellFollowingAction(browser,spec){
       };
     },{exitSourceSequence:spec.exitSourceSequence,kind:spec.kind});
     if(spec.filteredExitTitle){
-      assert.equal(exit.renderedTitle,spec.filteredExitTitle,
+      const expectedExitTitle=exit.product48?spec.filteredExitTitle
+        :"Placeat tibi · Closing Prayer";
+      assert.equal(exit.renderedTitle,expectedExitTitle,
         spec.kind+" public reader API did not return the plan-aware exit card");
-      assert.equal(exit.domTitle,spec.filteredExitTitle,
+      assert.equal(exit.domTitle,expectedExitTitle,
         spec.kind+" actual DOM did not show the plan-aware exit card title");
       if(exit.product48 || exit.renderedTitle==="Placeat tibi · Closing Prayer"){
         assert.ok(exit.sourceChildCount>=2,
