@@ -21,6 +21,10 @@ const count=manifest.cases.reduce((n,x)=>n+x.assertions.length,0);
 assert.equal(count,34,"Image-witness register lost expected assertions");
 assert.equal(manifest.cases.length,8);
 const fieldNames=new Set(["introit","gradual","offertory","secret","postcommunion"]);
+const fold=value=>String(value??"").normalize("NFKD")
+  .replace(/[\u0300-\u036f]/g,"").replace(/æ/gi,"ae").replace(/œ/gi,"oe")
+  .toLowerCase().replace(/j/g,"i").replace(/[^a-z0-9]+/g," ").trim()
+  .replace(/\s+/g," ");
 const pageSet=new Set(),distinct=new Set();
 for(const row of manifest.cases){
   assert.ok(priorByDay.has(row.date),"B04 case missing B01 canonical rank/source: "+row.date);
@@ -59,10 +63,6 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise(done=>server.listen(0,"127.0.0.1",done));
 let browser;
-const fold=value=>String(value??"").normalize("NFKD")
-  .replace(/[\u0300-\u036f]/g,"").replace(/æ/gi,"ae").replace(/œ/gi,"oe")
-  .toLowerCase().replace(/j/g,"i").replace(/[^a-z0-9]+/g," ").trim()
-  .replace(/\s+/g," ");
 const results=[];
 try{
   browser=await chromium.launch({headless:true});
