@@ -1,0 +1,26 @@
+name: 1962 multiple commemoration source audit
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tests/mass-1962-multiple-commemorations-year-audit.mjs'
+      - '.github/workflows/mass-1962-multi-commemoration-source-audit.yml'
+  push:
+    paths:
+      - 'tests/mass-1962-multiple-commemorations-year-audit.mjs'
+      - '.github/workflows/mass-1962-multi-commemoration-source-audit.yml'
+jobs:
+  entire-calendar-witness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Inspect actual 2026 source calendar for multiple commemorations
+        run: node tests/mass-1962-multiple-commemorations-year-audit.mjs
