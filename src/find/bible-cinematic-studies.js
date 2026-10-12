@@ -17,11 +17,13 @@ export function validateCinematicStudies(data){
  if(arr(data.chapters).length!==14||arr(data.scenes).length!==181||
    data.counts?.canonicalTimeline!==151)return false;
  const counts={EXACT_REFERENCE:0,PASSAGE_OVERLAP_REVIEW_ONLY:0,NO_DIRECT_PASSAGE_MATCH:0};
- const seen=new Set();
+ const seen=new Set(),sceneKeys=new Set();
  for(const [position,s] of data.scenes.entries()){
   // Indices address the array directly in the reader. A shuffled 181-scene
   // dataset must not silently display a different scene on a chapter jump.
-  if(!Number.isInteger(s.index)||s.index!==position||seen.has(s.index)||!Object.hasOwn(counts,s.status)||
+  if(!Number.isInteger(s.index)||s.index!==position||seen.has(s.index)||
+   !/^biblical:scene:(abraham|moses|christ|paul):[0-9]{3}$/.test(s.sceneKey||"")||
+   sceneKeys.has(s.sceneKey)||!Object.hasOwn(counts,s.status)||
    !s.reference||!s.title_en||!s.title_fr||!s.synopsis_en||!s.synopsis_fr||
    !s.evidence_en||!s.evidence_fr||s.citationOnly!==true||!Array.isArray(s.candidates)||
    (Boolean(s.sourceNote_en)!==Boolean(s.sourceNote_fr)))return false;
@@ -41,7 +43,7 @@ export function validateCinematicStudies(data){
    if(candidate.relation==="EXACT_REFERENCE"&&ref(candidate.reference)!==ref(s.reference))return false;
    keys.add(candidate.atlasIndex);keys.add(candidate.atlasEventKey);
   }
-  counts[s.status]++;seen.add(s.index);
+  counts[s.status]++;seen.add(s.index);sceneKeys.add(s.sceneKey);
  }
  if(counts.EXACT_REFERENCE!==65||counts.PASSAGE_OVERLAP_REVIEW_ONLY!==29||counts.NO_DIRECT_PASSAGE_MATCH!==87)return false;
  const sceneIds=new Set(data.scenes.map(s=>s.index));
@@ -114,7 +116,7 @@ export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",
  '<div class="aoBibleStudyChapters" role="group" aria-label="'+esc(L(lang,"Story chapters","Chapitres du récit"))+'">'+
  data.chapters.map(ch=>'<button type="button" data-bible-study-chapter="'+esc(ch.id)+'" aria-pressed="'+String(ch.id===c.id)+'">'+esc(L(lang,ch.label_en,ch.label_fr))+'</button>').join("")+'</div>';
  const sc='<article class="aoBibleStudyScene" data-bible-study-scene="'+s.index+'" data-bible-scene-stage>'+
- '<div class="aoBibleStageHeader"><span class="aoBibleStudyCount">'+
+ '<div class="aoBibleStageHeader" data-bible-scene-key="'+esc(s.sceneKey)+'"><span class="aoBibleStudyCount">'+
  esc(L(lang,"Scene","Scène"))+' '+(n+1)+' / '+len+'</span>'+
  '<span class="aoBibleStudyReference">'+esc(s.reference)+'</span></div>'+
  '<div class="aoBibleStageReading"><h2>'+esc(L(lang,s.title_en,s.title_fr))+'</h2>'+
