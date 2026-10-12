@@ -75,7 +75,7 @@ export function installSequentialDevotionalReader({
   const card=mount?.querySelector(".aoDevoCard");
   const body=card?.querySelector(".aoDevoCardScroll");
   if(!doc||!card||!body||!Array.isArray(chapters)||!chapters.length)return null;
-  if(!["stations","mercy","novena","library","daily","examen","benediction","adoration","confession"].includes(kind))throw new RangeError("Unexpected sequence owner");
+  if(!["stations","mercy","novena","library","daily","examen","benediction","adoration","confession","penitential","litany","sevenWords","fortyHours"].includes(kind))throw new RangeError("Unexpected sequence owner");
   const index=Math.max(0,Math.min(chapters.length-1,Number(activeIndex)||0));
   const parent=kind==="stations"?mount.querySelector(".aoP435930StationRail"):
     kind==="mercy"?mount.querySelector(".aoMercyReader"):
@@ -84,6 +84,7 @@ export function installSequentialDevotionalReader({
     kind==="benediction"?mount.querySelector(".aoP435930BenedictionReader"):
     kind==="adoration"?mount.querySelector(".aoP435930AdorationReader"):
     kind==="confession"?mount.querySelector(".aoP435930ConfessionReader"):
+    ["penitential","litany","sevenWords","fortyHours"].includes(kind)?mount.querySelector(".aoP435930DevotionalGuidedReader"):
     mount.querySelector(".aoP435930LibraryReader");
   if(!parent)return null;
   let timeline;
@@ -134,9 +135,10 @@ export function installSequentialDevotionalReader({
     (stops.clientWidth-selected.clientWidth)/2);
   card.dataset.aoDevoCard=chapters[index].id;
   card.dataset.aoDevoIndex=String(index);
-  const paragraphs=[...body.querySelectorAll(paragraphSelector)]
+  const selectParagraphs=()=>[...body.querySelectorAll(paragraphSelector)]
     .filter(el=>!el.closest("details:not([open])"))
     .filter(el=>!el.closest(".aoP435930VRLine")||el.classList.contains("aoP435930VRLine"));
+  let paragraphs=selectParagraphs();
   paragraphs.forEach(p=>p.classList.add("aoDevoParagraph"));
   let last=null,frame=0,userScrolled=false;
   function focus(){
@@ -198,6 +200,20 @@ export function installSequentialDevotionalReader({
       go(index+(dx<0?1:-1));
   },{passive:true});
   body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
+  // The canonical Scripture service inserts real psalm/Gospel verses after
+  // the shell has mounted. Reconcile only source-owned DOM additions; do not
+  // synthesize verses or replace the Scripture text with a second copy.
+  if(["penitential","sevenWords"].includes(kind)&&doc.defaultView?.MutationObserver){
+    const observer=new doc.defaultView.MutationObserver(()=>{
+      if(!card.isConnected){observer.disconnect();return}
+      const current=selectParagraphs();
+      if(current.length===paragraphs.length&&current.every((p,i)=>p===paragraphs[i]))return;
+      paragraphs=current;
+      paragraphs.forEach(p=>p.classList.add("aoDevoParagraph"));
+      queue();
+    });
+    observer.observe(body,{childList:true,subtree:true});
+  }
   queue();
   return Object.freeze({
     schema:SEQUENTIAL_DEVOTIONAL_SCHEMA,kind,index,

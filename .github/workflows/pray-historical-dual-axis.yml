@@ -1,0 +1,38 @@
+name: Historical guided devotion dual-axis acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/devotional-sequence-adapter.js"
+      - "src/pray/devotional-card-deck-styles.js"
+      - "tests/pray-guided-historical-dual-axis-phone.mjs"
+      - ".github/workflows/pray-historical-dual-axis.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: node tests/pray-presentation.mjs
+      - run: node tests/pray-guided-cards.mjs
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/pray-guided-historical-dual-axis-phone.mjs
+      - name: Preserve four-guide 320/390px mobile evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-guides-dual-axis-phone
+          path: artifacts/pray-historical-dual-axis
+          if-no-files-found: warn
+          retention-days: 21
