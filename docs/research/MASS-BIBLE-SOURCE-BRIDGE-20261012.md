@@ -10,8 +10,8 @@ The production `SOURCE_FIRST_LIVE_PRODUCT_48` remains exactly 48 presentation ca
 
 | Stratum | Current batch | Authority and limits |
 | --- | --- | --- |
-| Direct biblical wording in the Missal | 6 examples | Actual prayer-phrase anchors, *not* a blanket 1962 word-by-word collation. Psalm numbers use Vulgate and modern numbering explicitly. |
-| Biblical wording adapted by the Roman rite | 4 | The Gospel source does not equal the entire liturgical formula. `Sanctus`, `Agnus Dei`, `Domine non sum dignus` explicitly qualified. |
+| Direct biblical wording in the Missal | 5 examples | Actual prayer-phrase anchors, *not* a blanket 1962 word-by-word collation. Psalm numbers use Vulgate and modern numbering explicitly. |
+| Biblical wording adapted by the Roman rite | 5 | The Gospel source does not equal the entire liturgical formula. `Sanctus`, `Agnus Dei`, `Domine non sum dignus` explicitly qualified. |
 | Biblical persons explicitly named in the Canon | 3 | Abel (Genesis 4), Abraham (Genesis 22), Melchisedech (Genesis 14) are literally named in `Supra quae`; they are **not** read aloud as Genesis lessons at that point. |
 | Distinct variable readings and exceptions | 3 | A Propers example is never assumed to be today's Mass; Last Gospel may vary or be omitted in some rites. |
 | Narrative, doctrinal, penitential and typological interpretation | 10 | Not presented as word-for-word Missal quotations. Melchisedech/Hebrews 7 is a theological typology; Gospel parallels to `Confiteor` and `Libera nos` remain comparisons. |
@@ -58,3 +58,49 @@ The larger Proper work including chant/antiphon Scripture references and origina
 `tests/mass-bible-study-phone.mjs` opens the actual Learn Mass reader, browses evidence filters and 105 witnessed source paths, verifies original stage return, tests absence of document overflow at 320/390/768px, and uploads source-labelled screenshots for editorial review.
 
 **Merge gate:** This branch remains draft until original source, rights, doctrine, and mobile visual review; a green CI is not endorsement of every candidate as printed-1962 verified.
+
+## Source-editor check — 12 October 2026, batch 2 (Bible context, not printed-Missal collation)
+
+This pass manually opened **20 distinct biblical-context destinations** covering all **26** linked Mass moments. Three broken `jhn001.htm` destinations were replaced with the actual [John 1](https://www.newadvent.org/bible/joh001.htm) page. All contexts now have a reachable biblical chapter or, for Psalm 115, an explicit Latin Clementine text. Checking that a chapter resolves is **not** proof that a 1962 Missal word-for-word quotation matches the printed edition.
+
+Four corrections affect the truthfulness of the claims:
+
+1. **Gloria — MB05**: `Gloria in excelsis Deo` is the Roman liturgical phrase; the [Vulgate Luke 2:14](https://www.newadvent.org/bible/luk002.htm) says `Gloria in altissimis Deo`. Move MB05 from **direct words** to **adapted wording**, in both English and French. It is not an exact printed Vulgate quote.
+2. **Melchisedech — MB19**: [Genesis 14:18–20](https://www.newadvent.org/bible/gen014.htm) says he brought forth bread and wine, and calls him priest; it does **not** explicitly report their sacrificial oblation. The *Supra quae* develops the typological sacrificial understanding, without turning that understanding into Genesis' literal wording.
+3. **Priest's Communion Psalm — MB25**: [Clementine Psalm 115](https://vulgate.org/ot/psalms_115.htm) gives `Quid retribuam` / `Calicem salutaris` as **115:3–4**; modern combined Psalm 116 numbers them **116:12–13**. The previous New Advent `psa115.htm` URL redirected to a page containing only the earlier Latin portion, not these verses. The direct Clementine-context URL has replaced it. Some merged Latin verse-index conventions label these 115:12–13; do not mix conventions without specifying the witness.
+4. **John source pages — MB08, MB23, MB26**: all now use `joh001.htm`, not the broken `jhn001.htm`.
+
+### Complete 26-link source ledger
+
+Every record retains an original-Missal **edition-level** URL (not a newly invented page number), a biblical-context URL and English/French classification. The categories below are *editorial relationships*, not a word-level verified 1962/Latin collation.
+
+| Record | Mass point | Classified relationship | Source chapter |
+| --- | --- | --- | --- |
+| MB01 | /P/r/a/y/e/r/s/ /a/t/ /t/h/e/ /f/o/o/t/ /o/f/ /t/h/e/ /a/l/t/a/r/ | DIRECT_SCRIPTURAL_WORDING | [/P/s/a/l/m/ /4/2/:/4/ /(/V/u/l/g/a/t/e/;/ /4/3/:/4/ /i/n/ /m/o/s/t/ /m/o/d/e/r/n/ /n/u/m/b/e/r/i/n/g/)/](https://www.newadvent.org/bible/psa042.htm) |
+| MB02 | /P/s/a/l/m/ /J/u/d/i/c/a/ /m/e/ | DIRECT_SCRIPTURAL_WORDING | [/P/s/a/l/m/ /4/2/:/1/–/5/ /(/V/u/l/g/a/t/e/;/ /4/3/:/1/–/5/ /m/o/d/e/r/n/)/](https://www.newadvent.org/bible/psa042.htm) |
+| MB03 | /C/o/n/f/i/t/e/o/r/ | SCRIPTURAL_PARALLEL_NOT_QUOTATION | [/L/u/k/e/ /1/8/:/1/3/](https://www.newadvent.org/bible/luk018.htm) |
+| MB04 | /K/y/r/i/e/ | SCRIPTURAL_PARALLEL_NOT_QUOTATION | [/M/a/t/t/h/e/w/ /2/0/:/3/0/–/3/1/](https://www.newadvent.org/bible/mat020.htm) |
+| MB05 | /G/l/o/r/i/a/ | SCRIPTURAL_WORDING_ADAPTED | [/L/u/k/e/ /2/:/1/4/](https://www.newadvent.org/bible/luk002.htm) |
+| MB06 | /E/p/i/s/t/l/e/ /o/r/ /L/e/s/s/o/n/ | VARIABLE_PROPER_READING | [/1/ /C/o/r/i/n/t/h/i/a/n/s/ /1/2/:/2/–/1/1/ /(/e/x/a/m/p/l/e/:/ /P/e/n/t/e/c/o/s/t/ /X/ /o/n/l/y/)/](https://www.newadvent.org/bible/1co012.htm) |
+| MB07 | /G/o/s/p/e/l/ | VARIABLE_PROPER_READING | [/L/u/k/e/ /1/8/:/9/–/1/4/ /(/e/x/a/m/p/l/e/:/ /P/e/n/t/e/c/o/s/t/ /X/ /o/n/l/y/)/](https://www.newadvent.org/bible/luk018.htm) |
+| MB08 | /C/r/e/d/o/,/ /I/n/c/a/r/n/a/t/i/o/n/ | DOCTRINAL_SCRIPTURE_CONNECTION | [/J/o/h/n/ /1/:/1/4/](https://www.newadvent.org/bible/joh001.htm) |
+| MB09 | /L/a/v/a/b/o/ | DIRECT_SCRIPTURAL_WORDING | [/P/s/a/l/m/ /2/5/:/6/–/1/2/ /(/V/u/l/g/a/t/e/;/ /2/6/:/6/–/1/2/ /m/o/d/e/r/n/)/](https://www.newadvent.org/bible/psa025.htm) |
+| MB10 | /O/r/a/t/e/ /f/r/a/t/r/e/s/ | DOCTRINAL_SCRIPTURE_CONNECTION | [/R/o/m/a/n/s/ /1/2/:/1/](https://www.newadvent.org/bible/rom012.htm) |
+| MB11 | /S/a/n/c/t/u/s/ | SCRIPTURAL_WORDING_ADAPTED | [/I/s/a/i/a/h/ /6/:/3/](https://www.newadvent.org/bible/isa006.htm) |
+| MB12 | /B/e/n/e/d/i/c/t/u/s/ /a/n/d/ /H/o/s/a/n/n/a/ | SCRIPTURAL_WORDING_ADAPTED | [/M/a/t/t/h/e/w/ /2/1/:/9/](https://www.newadvent.org/bible/mat021.htm) |
+| MB13 | /T/e/ /i/g/i/t/u/r/ /i/n/t/e/r/c/e/s/s/i/o/n/s/ | SCRIPTURAL_PARALLEL_NOT_QUOTATION | [/1/ /T/i/m/o/t/h/y/ /2/:/1/–/2/](https://www.newadvent.org/bible/1ti002.htm) |
+| MB14 | /C/o/n/s/e/c/r/a/t/i/o/n/ /o/f/ /t/h/e/ /H/o/s/t/ | NARRATIVE_SCRIPTURE_CONNECTION | [/1/ /C/o/r/i/n/t/h/i/a/n/s/ /1/1/:/2/3/–/2/6/](https://www.newadvent.org/bible/1co011.htm) |
+| MB15 | /C/o/n/s/e/c/r/a/t/i/o/n/ /o/f/ /t/h/e/ /C/h/a/l/i/c/e/ | NARRATIVE_SCRIPTURE_CONNECTION | [/L/u/k/e/ /2/2/:/2/0/](https://www.newadvent.org/bible/luk022.htm) |
+| MB16 | /U/n/d/e/ /e/t/ /m/e/m/o/r/e/s/ | DOCTRINAL_SCRIPTURE_CONNECTION | [/1/ /C/o/r/i/n/t/h/i/a/n/s/ /1/1/:/2/6/](https://www.newadvent.org/bible/1co011.htm) |
+| MB17 | /S/u/p/r/a/ /q/u/a/e/ /—/ /A/b/e/l/ | EXPLICIT_BIBLICAL_FIGURE | [/G/e/n/e/s/i/s/ /4/:/4/](https://www.newadvent.org/bible/gen004.htm) |
+| MB18 | /S/u/p/r/a/ /q/u/a/e/ /—/ /A/b/r/a/h/a/m/ | EXPLICIT_BIBLICAL_FIGURE | [/G/e/n/e/s/i/s/ /2/2/:/1/–/1/9/](https://www.newadvent.org/bible/gen022.htm) |
+| MB19 | /S/u/p/r/a/ /q/u/a/e/ /—/ /M/e/l/c/h/i/s/e/d/e/c/h/ | EXPLICIT_BIBLICAL_FIGURE | [/G/e/n/e/s/i/s/ /1/4/:/1/8/–/2/0/](https://www.newadvent.org/bible/gen014.htm) |
+| MB20 | /M/e/l/c/h/i/s/e/d/e/c/h/ /a/n/d/ /p/r/i/e/s/t/h/o/o/d/ | INTERPRETIVE_BIBLICAL_TYPOLOGY | [/H/e/b/r/e/w/s/ /7/:/1/–/1/7/](https://www.newadvent.org/bible/heb007.htm) |
+| MB21 | /P/a/t/e/r/ /n/o/s/t/e/r/ | DIRECT_SCRIPTURAL_WORDING | [/M/a/t/t/h/e/w/ /6/:/9/–/1/3/](https://www.newadvent.org/bible/mat006.htm) |
+| MB22 | /L/i/b/e/r/a/ /n/o/s/ | SCRIPTURAL_PARALLEL_NOT_QUOTATION | [/M/a/t/t/h/e/w/ /6/:/1/3/](https://www.newadvent.org/bible/mat006.htm) |
+| MB23 | /A/g/n/u/s/ /D/e/i/ | SCRIPTURAL_WORDING_ADAPTED | [/J/o/h/n/ /1/:/2/9/](https://www.newadvent.org/bible/joh001.htm) |
+| MB24 | /D/o/m/i/n/e/ /n/o/n/ /s/u/m/ /d/i/g/n/u/s/ | SCRIPTURAL_WORDING_ADAPTED | [/M/a/t/t/h/e/w/ /8/:/8/](https://www.newadvent.org/bible/mat008.htm) |
+| MB25 | /P/r/i/e/s/t/'/s/ /C/o/m/m/u/n/i/o/n/ /p/r/a/y/e/r/ | DIRECT_SCRIPTURAL_WORDING | [/P/s/a/l/m/ /1/1/5/:/3/–/4/ /(/C/l/e/m/e/n/t/i/n/e/ /V/u/l/g/a/t/e/;/ /P/s/a/l/m/ /1/1/6/:/1/2/–/1/3/ /i/n/ /m/o/d/e/r/n/ /n/u/m/b/e/r/i/n/g/)/](https://vulgate.org/ot/psalms_115.htm) |
+| MB26 | /L/a/s/t/ /G/o/s/p/e/l/ /(/w/h/e/n/ /p/r/e/s/c/r/i/b/e/d/)/ | VARIABLE_RITE_SCRIPTURE_READING | [/J/o/h/n/ /1/:/1/–/1/4/](https://www.newadvent.org/bible/joh001.htm) |
+
+**Separate work that cannot be certified by these chapter links:** original 1962 printed Mass passage/page collation; the full 105-source-path Proper and 195 lessons/Gospels against actual adopted missal edition; 15 discontinuous-reading boundaries; 420 chant positions and 398 earlier candidate Scripture labels; 54 Fortescue typological leads; 22 Dujardin devotional passages and attribution locators. Zero external original-page packets may be labelled certified merely because the runtime has Latin source guards. All four existing `reviewHolds` remain non-public and fail closed.

@@ -1,0 +1,37 @@
+name: Prayer historical source lifecycle phone acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/litany-source.js"
+      - "tests/pray-historical-source-lifecycle-phone.mjs"
+      - ".github/workflows/pray-source-lifecycle-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-lifecycle-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: node tests/pray-presentation.mjs
+      - run: node tests/pray-guided-cards.mjs
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/pray-historical-source-lifecycle-phone.mjs
+      - name: Preserve source-state mobile screenshots (TEST FIXTURES ONLY)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-source-lifecycle-test-fixtures
+          path: artifacts/pray-source-lifecycle
+          if-no-files-found: warn
+          retention-days: 21

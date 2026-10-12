@@ -607,8 +607,15 @@ try{
   assert.equal(adorationArrival.pointer,"none","Adoration rails intercept touch");
   await shot("03e-pray-adoration-arrival");
 
-  await page.locator("#aoPray435930 [data-p435930-visit-next]").click();
-  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-refined-silence",null,{timeout:3000});
+  // The guided Visit now uses a seven-stage source-owned timeline; the old
+  // Continue button is intentionally hidden except on the final Finish card.
+  const visitTimeline="#aoPray435930.open .aoP435930AdorationReader .aoDevoSequenceTimeline";
+  await page.waitForSelector(visitTimeline,{state:"visible",timeout:12000});
+  assert.equal(await page.locator(visitTimeline+" [data-ao-devo-chapter]").count(),7,
+    "Visit to the Blessed Sacrament lost its seven named source-owned stages");
+  await page.locator(visitTimeline+" [data-ao-devo-chapter='1']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930AdorationReader")?.dataset?.aoAdorationStep==="1",null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-refined-silence",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel='persistent']").count(),1,"Adoration did not settle into the persistent silence rail");
   await shot("03f-pray-adoration-silence");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
@@ -623,17 +630,31 @@ try{
   await page.locator("#aoPray435930 [data-p435930-own='pray.benediction']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-rich-adoration']").count(),1,"Benediction Exposition rail lost its Eucharistic owner");
-  for(let i=0;i<3;i++)await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
+  // The seven-card dual-axis reader supersedes the hidden legacy Continue controls.
+  // Test the actual visible timeline; do not bypass the user gesture contract.
+  const benReader="#aoPray435930 .aoP435930BenedictionReader";
+  const benTimeline=benReader+" .aoDevoSequenceTimeline";
+  await page.waitForSelector(benTimeline,{state:"visible",timeout:5000});
+  assert.equal(await page.locator(benTimeline+" .aoDevoStop").count(),7,
+    "Benediction must expose seven source-owned public-rite cards");
+  assert.equal(await page.locator(benReader+" .aoP435930GuideNav").isVisible(),false,
+    "Competing legacy Continue controls must remain hidden");
+  await page.locator(benTimeline+" [data-ao-devo-chapter='3']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930BenedictionReader")?.dataset?.aoBenedictionStep==="3",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-response",null,{timeout:3000});
   const benPrayer=await page.evaluate(()=>({
     left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
     right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
-    macro:document.querySelector("#aoPray435930 .aoP435930BenMacroRail [aria-current='step']")?.textContent?.trim()??"",
+    activeStage:document.querySelector("#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline .aoDevoStop[aria-current='step']")?.textContent?.trim()??"",
+    activeCount:document.querySelectorAll("#aoPray435930 .aoP435930BenedictionReader .aoDevoStop[aria-current='step']").length,
   }));
   assert.equal(benPrayer.left,"ao-live-response","Benediction versicle/collect lost its congregational response cue");
   assert.equal(benPrayer.right,"ao-live-response","Benediction stage rail no longer follows the response moment");
-  assert.match(benPrayer.macro,/Benediction|Bénédiction/,"Benediction public-rite macro did not track the visible Continue path");
-  await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
+  assert.equal(benPrayer.activeCount,1,"Canonical Benediction timeline must expose exactly one current stage");
+  assert.match(benPrayer.activeStage,/Versicle|collect|Verset|oraison/i,
+    "Benediction timeline failed to label its actual versicle and collect stage");
+  await page.locator(benTimeline+" [data-ao-devo-chapter='4']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930BenedictionReader")?.dataset?.aoBenedictionStep==="4",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Benediction blessing retained an unrelated left cue");
   // Measure the stable rail geometry after the transient cue-enter scale animation.
@@ -667,7 +688,18 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-next]").isDisabled(),true,
     "Confession must require a preparation-path choice before continuing");
   await page.locator("#aoPray435930 [data-p435930-conf-path='regular']").click();
-  for(let i=0;i<6;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  // Consent to the regular preparation path is the one visible Continue.
+  // Thereafter the canonical source cards own navigation, not hidden Next.
+  await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  const confessionTimeline="#aoPray435930.open .aoP435930ConfessionReader .aoDevoSequenceTimeline";
+  await page.waitForSelector(confessionTimeline,{state:"visible",timeout:12000});
+  assert.equal(await page.locator(confessionTimeline+" [data-ao-devo-chapter]").count(),5,
+    "Regular examination must retain five source-owned stages");
+  await page.locator(confessionTimeline+" [data-ao-devo-chapter='4']").click();
+  await page.waitForSelector("#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-final='true']",{timeout:5000});
+  // Only the final examination card reveals the real Continue to the rite.
+  await page.locator("#aoPray435930 .aoP435930ConfessionReader [data-p435930-conf-next]").click();
+  await page.waitForSelector("#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-section='2'] "+".aoDevoSequenceTimeline",{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-sign-cross",null,{timeout:3000});
   const confessionRail=await page.evaluate(()=>({
     left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
@@ -680,7 +712,8 @@ try{
   // Preserve the historical visual-acceptance artifact name used by donor comparison.
   await shot("03h-pray-confession-in-confessional");
   // Once the first rehearsal card is past, the transient cross cue disappears.
-  await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  await page.locator(confessionTimeline+" [data-ao-devo-chapter='1']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930ConfessionReader .aoDevoCard")?.dataset?.aoDevoCard==="say-sins",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Sign-of-Cross cue must not persist throughout rehearsal");
   assert.equal(await page.locator("#aoPray435930 [data-ao-confession-card='say-sins']").count(),1);
   await page.locator("#aoPray435930 [data-p435930-back]").click();
@@ -696,11 +729,24 @@ try{
   await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
   const standard=page.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
-  if(await standard.count())await standard.click();
+  if(await standard.count()){
+    if(await standard.isVisible())await standard.click();
+    else assert.equal(await standard.evaluate(el=>el.classList.contains("active")),true,
+      "collapsed Rosary options must already select standard form");
+  }
   await page.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-next]",{state:"visible",timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot .lab-decade-bar",{state:"visible",timeout:5000});
-  await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",{state:"visible",timeout:5000});
+  // Production Rosary starts prayer-first: recitation controls live in one collapsed disclosure.
+  const activeRosaryOptions=page.locator("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
+  await activeRosaryOptions.waitFor({state:"visible",timeout:5000});
+  assert.equal(await activeRosaryOptions.evaluate(el=>el.open),false,
+    "Rosary options obstruct the opening prayer");
+  assert.equal(await page.locator("#aoPrayerBookRoot .r29-head-recitation").isVisible(),false,
+    "legacy recitation row competes with prayer while options are collapsed");
+  await activeRosaryOptions.locator(":scope > summary").click();
+  await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",
+    {state:"visible",timeout:5000});
   const rosaryOpening=await page.evaluate(()=>{
     const roots=[...document.querySelectorAll("#aoPrayerBookRoot")],active=roots.find(root=>root.dataset.aoRosaryActiveRoot==="true")||roots.find(root=>root.classList.contains("open"));
     const shell=active?.querySelector(".pbShell"),head=shell?.querySelector(".lab-view-head"),recitation=shell?.querySelector(".r29-head-recitation");
@@ -735,6 +781,8 @@ try{
       headOverflow:(head?.scrollWidth??0)-(head?.clientWidth??0),
       recitationButtonWidths,
       recitationRight:recRect?.right??0,
+      recitationLeft:recRect?.left??0,
+      phoneViewportWidth:window.innerWidth,
       headRight:headRect?.right??0,
     };
   });
@@ -758,7 +806,9 @@ try{
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
   assert.ok(rosaryOpening.headOverflow<=1,"Rosary phone header still overflows horizontally");
   assert.ok(rosaryOpening.recitationButtonWidths.length===2&&rosaryOpening.recitationButtonWidths.every(width=>width>=52),"Rosary Individual / Group controls are visibly truncated");
-  assert.ok(rosaryOpening.recitationRight<=rosaryOpening.headRight+1,"Rosary recitation control clips outside the phone header");
+  // Recitation controls now live beneath the header in the expanded Prayer options.
+  assert.ok(rosaryOpening.recitationLeft>=-1&&rosaryOpening.recitationRight<=rosaryOpening.phoneViewportWidth+1,
+    "Rosary options controls exceed the phone viewport: "+JSON.stringify(rosaryOpening));
 
   // Reproduce the user-visible failure mode explicitly: Group recitation. The late
   // preserved donor had to collapse common-prayer leader/response grids to full-width
@@ -1087,7 +1137,7 @@ try{
   await page.locator("#aoPray435930 [data-p435930-lib-open='sacrament_act_of_contrition']").click();
   await page.waitForSelector("#aoPray435930 .aoP435930Prayer",{timeout:5000});
   await page.waitForFunction(()=>globalThis.AO_PRAY_COHERENCE_V435930?.audit?.().readerContract==="fluid-v1",null,{timeout:5000});
-  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930 [data-ao-pray-focus='active']").length===1,null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoLibraryLine[data-ao-devo-active='true']").length===1,null,{timeout:5000});
   const prayReader=await page.evaluate(()=>{
     const audit=globalThis.AO_PRAY_COHERENCE_V435930?.audit?.()??{};
     const flip=document.querySelector("#aoPray435930 .aoP435930Flip");
@@ -1096,10 +1146,12 @@ try{
     return {
       ...audit,
       recitationButtons:document.querySelectorAll("#aoPray435930 [data-p435930-global-recitation]").length,
-      prayerTitle:document.querySelector("#aoPray435930 .aoP435930Prayer h3")?.textContent?.trim()??"",
+      prayerTitle:document.querySelector("#aoPray435930 .aoP435930LibraryReader .aoDevoCardTitle")?.textContent?.trim()??"",
+      libraryCards:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoCard").length,
+      titleStops:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoStop").length,
       latinHidden:latin?.hidden??null,
       vernHidden:vern?.hidden??null,
-      activeFocus:document.querySelectorAll("#aoPray435930 [data-ao-pray-focus='active']").length,
+      activeFocus:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoLibraryLine[data-ao-devo-active='true']").length,
       legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
     };
   });
@@ -1109,7 +1161,9 @@ try{
   assert.equal(prayReader.stackedTranslationPairs,0,"PRAY stacked Latin and vernacular instead of one-language-at-a-time presentation");
   assert.ok(prayReader.fluidUnits>0,"PRAY reader lost fluid focus units");
   assert.equal(prayReader.readerContract,"fluid-v1");
-  assert.equal(prayReader.activeFocus,1,"PRAY fluid reader does not expose exactly one active focus unit");
+  assert.equal(prayReader.libraryCards,1,"Prayer Library no longer presents a single named prayer card");
+  assert.equal(prayReader.titleStops,1,"Prayer Library lost its named card timeline");
+  assert.equal(prayReader.activeFocus,1,"PRAY card reader does not expose exactly one active paragraph");
   assert.ok(prayReader.prayerTitle.length>0,"PRAY prayer title is blank");
   assert.notEqual(prayReader.latinHidden,prayReader.vernHidden,"PRAY translation pair does not expose exactly one visible language");
   assert.equal(prayReader.legacyOpen,false,"legacy Prayer Book reopened inside prayer reading");
@@ -1141,12 +1195,40 @@ try{
     assert.equal(await page.locator("#aoPray435930 [data-tp381-home]").count(),1,route+" lost explicit global Home");
     assert.equal(await page.locator("#aoPray435930 [data-tp381-close]").count(),0,route+" regressed to ambiguous Close");
     assert.equal(await page.locator("#aoPray435930 .aoTP381Hero").count(),0,route+" regained a non-donor hero card");
-    assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,route+" lost its v38.1 donor introduction");
+    if(route==="pray.morning_evening"){
+      // The old introduction is retained as optional guidance after the prayer,
+      // never restored as a first-screen text block.
+      const details=page.locator("#aoPray435930 [data-ao-daily-options]");
+      assert.equal(await details.count(),1,"Morning guidance disclosure missing");
+      assert.equal(await details.evaluate(el=>el.open),false,"Morning guide must not obscure opening prayer");
+      assert.match(await details.textContent(),/traditional daily rule|règle quotidienne traditionnelle/i,
+        "Original prayer-context guidance was discarded rather than relocated");
+    }else if(["pray.meal_prayers","pray.holy_name_litany"].includes(route)){
+      // These readers preserve the sourced donor context as an unobtrusive
+      // disclosure beneath the active prayer, not as an opening-page block.
+      const selector=route==="pray.meal_prayers"?"[data-ao-meal-options]":"[data-ao-holy-name-options]";
+      const guide=page.locator("#aoPray435930 "+selector);
+      assert.equal(await guide.count(),1,route+" lost its source-context guide");
+      assert.equal(await guide.evaluate(el=>el.open),false,route+" guide obscures the opening prayer");
+      const context=(await guide.textContent()).trim();
+      assert.match(context,route==="pray.meal_prayers"?/ordinary table prayers|prières ordinaires des repas/i
+        :/Historical approved Roman form|Forme romaine historique/i,
+        route+" original prayer-context guidance was lost");
+      assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop").count(),
+        route==="pray.meal_prayers"?2:7,route+" lost canonical named-card navigation");
+    }else{
+      assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,
+        route+" lost its v38.1 donor introduction");
+    }
     if(route==="pray.morning_evening"){
        assert.equal(await page.locator("#aoPray435930 [data-ao-pray-guide-card]").count(),1,
          "Morning/Evening must open as a single guided prayer card");
        assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='guided']").getAttribute("aria-pressed"),"true");
        await shot("03g-pray-morning-guided");
+       const details=page.locator("#aoPray435930 [data-ao-daily-options]");
+       await details.locator("summary").click();
+       assert.equal(await details.evaluate(el=>el.open),true,
+         "Secondary options cannot be opened from the finished prayer card");
        await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").click();
       const rowGeometry=await page.evaluate(()=>{
         const row=document.querySelector("#aoPray435930 .aoTP381PrayerList button");
@@ -1423,7 +1505,11 @@ try{
   await wide.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
   await wide.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
   const wideStandard=wide.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
-  if(await wideStandard.count())await wideStandard.click();
+  if(await wideStandard.count()){
+    if(await wideStandard.isVisible())await wideStandard.click();
+    else assert.equal(await wideStandard.evaluate(el=>el.classList.contains("active")),true,
+      "wide Rosary options must retain the standard default while collapsed");
+  }
   await wide.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await wide.waitForSelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]",{state:"visible",timeout:5000});
   const wideOurFatherTarget=await wide.evaluate(()=>{

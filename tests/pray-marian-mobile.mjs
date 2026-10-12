@@ -43,6 +43,29 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open .aoMercyReader",{timeout:9000});
  await page.screenshot({path:resolve(captures,"01-divine-mercy-390.png"),fullPage:false,animations:"disabled"});
+ // A single chapter displays many canonical bead prayers; vertical movement
+ // retains the chapter, horizontal movement advances exactly one named card.
+ await page.waitForSelector("#aoPray435930 .aoMercyReader .aoDevoSequenceTimeline",{timeout:9000});
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoStop").count(),7);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoMercyLine").count(),4);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoParagraph[data-ao-devo-active='true']").count(),1);
+ await page.emulateMedia({reducedMotion:"reduce"});
+ const gesture=async(dx,dy)=>{
+  await page.locator("#aoPray435930 .aoDevoCardScroll").evaluate((node,{dx,dy})=>{
+   const t=(x,y)=>new Touch({identifier:9,target:node,clientX:x,clientY:y});
+   node.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(240,350)],changedTouches:[t(240,350)]}));
+   node.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(240+dx,350+dy)]}));
+  },{dx,dy});
+ };
+ await gesture(6,-145);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoCard").getAttribute("data-ao-devo-card"),"opening");
+ await gesture(-170,5);
+ await page.waitForSelector("#aoPray435930 .aoMercyReader .aoDevoCard[data-ao-devo-card='decade-1']");
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoMercyLine").count(),11);
+ await gesture(170,5);
+ await page.waitForSelector("#aoPray435930 .aoMercyReader .aoDevoCard[data-ao-devo-card='opening']");
+ await page.emulateMedia({reducedMotion:"no-preference"});
+
  assert.equal(await page.locator("#aoPray435930 .aoMercyControls button").count(),2);
  assert.match(await page.locator("#aoPray435930 .aoMercyPrayer").innerText(),/Au nom du Père|In the name of the Father/);
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/1 \/ 62/);
@@ -61,8 +84,132 @@ try{
  assert.ok(["https://www.vaticannews.va/fr/priere/chapelet-de-la-divine-misericorde.html",
   "https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html"].includes(
   await page.locator("#aoPray435930 .aoMercySource a").getAttribute("href")));
+  // The same title/paragraph navigation contract now applies to Stations.
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations",{returnContext:null})),true);
+ await page.waitForSelector("#aoPray435930 .aoP435930Stations .aoDevoCardScroll",{timeout:9000});
+ await page.waitForSelector("#aoPray435930 .aoP435930StationRail.aoDevoSequenceTimeline",{timeout:9000});
+ assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail .aoDevoStop").count(),14);
+ assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail [aria-current='step']").count(),1);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
+ await page.screenshot({path:resolve(captures,"02-stations-dual-axis-390.png"),fullPage:false,animations:"disabled"});
+ await page.emulateMedia({reducedMotion:"reduce"});
+ await gesture(7,-155);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
+ await gesture(-170,4);
+ const stationTouchState=await page.evaluate(()=>({
+  card:document.querySelector("#aoPray435930 .aoDevoCard")?.dataset.aoDevoCard,
+  title:document.querySelector("#aoPray435930 .aoDevoCardTitle")?.textContent,
+  currentStop:document.querySelector("#aoPray435930 .aoP435930StationRail [aria-current='step']")?.getAttribute("data-p435930-station-step"),
+  mounted:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset.aoPrayView,
+  errors:globalThis.__AO_DEVOTIONAL_NAV_ERROR||null
+ }));
+ console.log("STATIONS_SWIPE_DIAGNOSTIC "+JSON.stringify(stationTouchState)+" page-errors="+JSON.stringify(pageErrors.slice(-5)));
+ await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-2']",{timeout:4000});
+ assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail [aria-current='step']").count(),1);
+ await page.locator("#aoPray435930 [data-p435930-station-step='0']").evaluate(x=>x.click());
+ await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-1']");
+ await page.emulateMedia({reducedMotion:"no-preference"});
+
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true);
- await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{timeout:12000});
+ await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{state:"attached",timeout:12000});
+ // Two navigation axes: timeline moves named cards, card-local scroll focuses
+ // V/R paragraphs; native Prayer texts and translation controls stay intact.
+ await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),4);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),4);
+ // Actual mobile presentation evidence: same current card at three widths.
+ for(const [width,height] of [[320,700],[390,844],[430,932]]){
+   await page.setViewportSize({width,height});
+   await page.screenshot({path:resolve(captures,"09-angelus-dual-axis-"+width+".png"),
+    fullPage:false,animations:"disabled"});
+   const x=await page.evaluate(()=>({
+    overflow:document.documentElement.scrollWidth-innerWidth,
+    timeline:!!document.querySelector("#aoPray435930.open .aoDevoTimeline"),
+    cards:document.querySelectorAll("#aoPray435930.open .aoDevoCard").length
+   }));
+   assert.ok(x.overflow<=1,"Dual-axis Angelus document overflow at "+width+"px: "+JSON.stringify(x));
+ }
+ await page.setViewportSize({width:390,height:844});
+ assert.match(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) h2").innerText(),/Announcement|Annonce/);
+ await page.waitForFunction(()=>[...document.querySelectorAll("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph")]
+  .filter(x=>x.getClientRects().length).some(x=>x.dataset.aoDevoActive==="true"),null,{timeout:9000});
+ const paragraphEnergy=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>
+  nodes.filter(x=>x.getClientRects().length).map(x=>({active:x.dataset.aoDevoActive,opacity:Number(getComputedStyle(x).opacity)})));
+ assert.equal(paragraphEnergy.length,3,"Angelus first chapter must expose V/R and one Hail Mary");
+ assert.ok(paragraphEnergy[0].opacity>paragraphEnergy[1].opacity,
+  "Active V. must be brighter than its muted R.: "+JSON.stringify(paragraphEnergy));
+ assert.ok(paragraphEnergy[1].opacity>paragraphEnergy[2].opacity,
+  "Upcoming Hail Mary must also be muted, not full-bright: "+JSON.stringify(paragraphEnergy));
+ // Distinct axes: diagonal/vertical motion must not advance cards;
+ // deliberate horizontal touch swipe must advance exactly one named card.
+ const swipe=async(dx,dy)=>{
+   await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
+     const touch=(x,y)=>new Touch({identifier:1,target:el,clientX:x,clientY:y});
+     el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[touch(250,340)],changedTouches:[touch(250,340)]}));
+     el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[touch(250+dx,340+dy)]}));
+   },{dx,dy});
+ };
+ await swipe(10,-170);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"announcement",
+  "Vertical scroll must not change the prayer card");
+ await swipe(-160,9);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"fiat",
+  "Horizontal swipe failed to advance exactly one card");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").getAttribute("data-ao-devo-jump"),"1",
+  "Timeline did not follow the one-card forward swipe");
+ await swipe(160,4);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"announcement",
+  "Reverse swipe failed to restore previous card");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").getAttribute("data-ao-devo-jump"),"0",
+  "Timeline did not return to the original prayer card");
+ await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
+ const shot=page.locator("body > .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation']");
+ await shot.waitFor({state:"attached",timeout:2000});
+ const shotStatus=await shot.evaluate(el=>({art:el.dataset.aoSceneArt,one:el.parentElement.querySelectorAll(".aoDevoCinematicInterstitial").length}));
+ assert.deepEqual(shotStatus,{art:"tanner",one:1},"Cinematic overlay must reuse the single approved Tanner painting");
+ await page.waitForFunction(()=>{
+  const x=document.querySelector("body > .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation'] img");
+  return x?.complete&&x.naturalWidth>=1900;
+ },null,{timeout:2500});
+ // Capture the *visible midpoint* of the real CSS interstitial, rather
+ // than an arbitrary fade-out frame influenced by CI screenshot timing.
+ await shot.evaluate(el=>{
+   for(const animation of el.getAnimations({subtree:true})){
+     const duration=Number(animation.effect?.getTiming()?.duration)||1900;
+     animation.currentTime=duration*.5;
+     animation.pause();
+   }
+ });
+ await page.screenshot({path:resolve(captures,"11-angelus-incarnation-cinematic-390.png"),fullPage:false});
+ await shot.waitFor({state:"detached",timeout:5000});
+ await page.emulateMedia({reducedMotion:"reduce"});
+ await page.locator("#aoPray435930 [data-ao-devo-jump='3']").evaluate(x=>x.click());
+ assert.equal(await page.locator("body > .aoDevoCinematicInterstitial").count(),0,
+  "Reduced-motion preference must suppress prayer-card cinematic transitions");
+ await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
+ await page.emulateMedia({reducedMotion:"no-preference"});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").count(),1);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),3);
+ const devotionalScroll=page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll");
+ assert.equal(await devotionalScroll.evaluate(x=>getComputedStyle(x).overflowY),"auto");
+ await devotionalScroll.evaluate(x=>{x.scrollTop=80;x.dispatchEvent(new Event("scroll"))});
+ await page.waitForFunction(()=>!!document.querySelector("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph[data-ao-devo-active='true']"),null,{timeout:9000});
+ await page.locator("#aoPray435930 [data-ao-devo-move='-1']").evaluate(x=>x.click());
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"fiat");
+ await page.locator("#aoPray435930 [data-ao-devo-jump='0']").evaluate(x=>x.click());
+ const historicalConclusion=page.locator("#aoPray435930 [data-p435930-angelus-appendix]");
+ await historicalConclusion.evaluate(x=>x.click());
+ await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===7,null,{timeout:10000});
+ assert.deepEqual(await page.locator("#aoPray435930 .aoDevoCard").evaluateAll(nodes=>nodes.slice(4).map(x=>x.dataset.aoDevoCard)),
+  ["doxology","faithful-departed","divine-assistance"]);
+ await page.locator("#aoPray435930 [data-ao-devo-jump='5']").evaluate(x=>x.click());
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),2,
+  "Faithful departed card lost its Latin/French leader/response pair");
+ await page.screenshot({path:resolve(captures,"10-angelus-optional-souls-390.png"),
+  fullPage:false,animations:"disabled"});
+ await historicalConclusion.evaluate(x=>x.click());
+ await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===4,null,{timeout:10000});
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection a[href^='https://']").count(),5);
  await page.locator("#aoPray435930 .aoAngelusGuide>summary").evaluate(x=>x.click());

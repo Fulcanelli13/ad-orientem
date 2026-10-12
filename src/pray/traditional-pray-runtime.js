@@ -2,6 +2,7 @@ import "./traditional-pray-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
+import {installSequentialDevotionalReader} from "./devotional-sequence-adapter.js";
 import {
   SACRED_HYMNS_V381,
   MORNING_PRAYER_SEQUENCE_V381,
@@ -36,6 +37,9 @@ const ROUTES=Object.freeze({
 
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const nl=v=>esc(v).replace(/\n/g,"<br>");
+// Subdivide source text without changing words, line breaks or language ownership.
+const prayerParagraphs=v=>String(v??"").split(/\n\s*\n/).filter(x=>x.trim())
+  .map(x=>'<p class="aoTP381TextParagraph">'+nl(x)+'</p>').join("");
 const data=()=>globalThis.AO_PRAY_CANONICAL_DATA_V435930||{prayers:{}};
 const isFr=()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||String(document.documentElement.lang||"").toLowerCase().startsWith("fr");
 const L=(en,fr)=>isFr()?(fr||en):en;
@@ -77,19 +81,19 @@ function prayerTitle(p,id){
   if(!p)return id;
   return isFr()?(p.titleFr||p.title||id):(p.title||id);
 }
-function prayerCard(id){
+function prayerCard(id,{focusParagraphs=false}={}){
   const p=data().prayers?.[id];
   if(!p)return `<div class="aoTP381Fail">${esc(L("This canonical prayer is unavailable in the current corpus.","Cette prière canonique n’est pas disponible dans le corpus actuel."))}</div>`;
   const vern=isFr()?(p.fr||p.en||p.la):(p.en||p.fr||p.la),latin=p.la||"",both=!!(vern&&latin);
   const prov=p.provenance||{};
-  return `<article class="aoTP381PrayerCard"><h3>${esc(prayerTitle(p,id))}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}</article>`;
+  return `<article class="aoTP381PrayerCard"><h3>${esc(prayerTitle(p,id))}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${focusParagraphs?prayerParagraphs(vern):nl(vern)}</span><span data-face-la hidden>${focusParagraphs?prayerParagraphs(latin):nl(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}</article>`;
 }
 function prayerRows(rows){
   return `<div class="aoTP381PrayerList">${rows.map(([id,title,note])=>`<button type="button" ${id.includes(".")?`data-tp381-route="${esc(id)}"`:`data-tp381-prayer="${esc(id)}"`}><span><b>${esc(title)}</b><small>${esc(note)}</small></span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null;
-let S={litanyMode:"full",litanyStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
+let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
 
 function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false,returnButton=""}){
  const label=guidedStepLabel(step,total,isFr()?"fr":"en");
@@ -106,14 +110,19 @@ function renderDailyGuided(rows){
  const row=rows[step];
  const body=step===total?"":row.kind==="examination"
    ?`<p>${esc(L("Review the day before God: your duties towards Him, your neighbour, and yourself. This is a brief daily examen, not sacramental Confession.","Revoyez la journée devant Dieu : vos devoirs envers Lui, le prochain et vous-même. Il s’agit d’un bref examen quotidien, non d’une Confession sacramentelle."))}</p><button type="button" class="aoTP381GuideSubroute" data-tp381-daily-examen>${esc(L("Open guided nightly examination","Ouvrir l’examen du soir guidé"))}</button>`
-   :prayerCard(row.id);
- return guidedCardFrame({id:step===total?"daily-finished":row.id,title:step===total?"":(row.kind==="examination"?L("Nightly Examination","Examen du soir"):prayerTitle(data().prayers?.[row.id],row.id)),
+   :prayerCard(row.id,{focusParagraphs:true});
+ const id=step===total?"daily-finished":row.id;
+ const content=guidedCardFrame({id,title:step===total?"":(row.kind==="examination"?L("Nightly Examination","Examen du soir"):prayerTitle(data().prayers?.[row.id],row.id)),
    step,total,body,onStep:"daily"});
+ return `<section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L("Daily prayer card","Carte de prière quotidienne"))}">${content}</div></section>`;
 }
 function renderMorningEvening(){
  const rows=guidedDailyCards(S.daypart);
  const intro=L("A traditional daily rule of prayer built from sourced Catholic forms. Foundational prayers may recur later in the Rosary or another devotion; that repetition belongs to the devotion and is not an error to be optimized away.","Une règle quotidienne traditionnelle bâtie à partir de formes catholiques sourcées. Les prières fondamentales peuvent revenir ensuite dans le Rosaire ou une autre dévotion ; cette répétition appartient à la dévotion et n’est pas une erreur à supprimer.");
- return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(intro)}</p><div class="aoTP381Tabs"><button type="button" data-tp381-daypart="morning" class="${S.daypart==="morning"?"active":""}">${esc(L("Morning","Matin"))}</button><button type="button" data-tp381-daypart="evening" class="${S.daypart==="evening"?"active":""}">${esc(L("Evening","Soir"))}</button></div><div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Prayer view","Présentation des prières"))}"><button type="button" data-tp381-daily-mode="guided" aria-pressed="${S.dailyMode==="guided"}">${esc(L("Guided · one card at a time","Guidé · une carte à la fois"))}</button><button type="button" data-tp381-daily-mode="list" aria-pressed="${S.dailyMode==="list"}">${esc(L("All prayers","Toutes les prières"))}</button></div>${S.dailyMode==="guided"?renderDailyGuided(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${source("Baltimore Manual · Morning Prayers",TRADITIONAL_PRAY_SOURCES_V381.morning)}${source("Baltimore Manual · Evening Prayers",TRADITIONAL_PRAY_SOURCES_V381.evening)}</main>`;
+ const guided=S.dailyMode==="guided";
+ const choice=`<nav class="aoTP381DaypartStrip" aria-label="${esc(L("Time of prayer","Moment de prière"))}"><button type="button" data-tp381-daypart="morning" aria-pressed="${S.daypart==="morning"}" class="${S.daypart==="morning"?"active":""}">${esc(L("Morning","Matin"))}</button><button type="button" data-tp381-daypart="evening" aria-pressed="${S.daypart==="evening"}" class="${S.daypart==="evening"?"active":""}">${esc(L("Evening","Soir"))}</button></nav>`;
+ const options=`<details class="aoTP381SecondaryOptions" data-ao-daily-options><summary>${esc(L("Reading options and guidance","Options de lecture et guide"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(intro)}</p><div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Prayer view","Présentation des prières"))}"><button type="button" data-tp381-daily-mode="guided" aria-pressed="${guided}">${esc(L("Guided","Guidé"))}</button><button type="button" data-tp381-daily-mode="list" aria-pressed="${!guided}">${esc(L("All prayers","Toutes les prières"))}</button></div></div></details>`;
+ return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${guided?renderDailyGuided(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${options}${source("Baltimore Manual · Morning Prayers",TRADITIONAL_PRAY_SOURCES_V381.morning)}${source("Baltimore Manual · Evening Prayers",TRADITIONAL_PRAY_SOURCES_V381.evening)}</main>`;
 }
 function renderHymns(){
   const h=SACRED_HYMNS_V381[S.hymn]||SACRED_HYMNS_V381.te_deum;
@@ -152,20 +161,27 @@ function traditionalContextGuide(kind){
 }
 const HOLY_NAME_SECTION_LABELS=Object.freeze([["Opening invocations","Invocations initiales"],["The Holy Trinity","La Sainte Trinité"],["Names and attributes of Jesus","Noms et titres de Jésus"],["Deliver us, O Jesus","Délivrez-nous, ô Jésus"],["Lamb of God","Agneau de Dieu"],["Versicles and responses","Versets et réponses"],["Concluding prayer","Oraison finale"]]);
 function holyNameSections(value){return String(value||"").trim().split(/\n\s*\n/).map(part=>part.trim()).filter(Boolean)}
+function litanyVerseMarkup(raw){
+  return String(raw||"").split(/\n/).map(line=>
+    `<p class="aoTP381LitanyLine">${line.trim()?esc(line):"&#160;"}</p>`).join("");
+}
 function renderHolyName(){
   const vern=isFr()?HOLY_NAME_LITANY_V381.fr:HOLY_NAME_LITANY_V381.en,latin=HOLY_NAME_LITANY_V381.la;
   const enParts=holyNameSections(HOLY_NAME_LITANY_V381.en),frParts=holyNameSections(HOLY_NAME_LITANY_V381.fr),laParts=holyNameSections(latin);
-  const aligned=enParts.length===7&&frParts.length===7&&laParts.length===7,guided=aligned&&S.litanyMode==="guided",step=Math.max(0,Math.min(6,Number(S.litanyStep)||0));
+  const aligned=enParts.length===7&&frParts.length===7&&laParts.length===7;
+  const guided=aligned&&S.litanyMode==="guided",step=Math.max(0,Math.min(6,Number(S.litanyStep)||0));
   const current=guided?(isFr()?frParts[step]:enParts[step]):vern,currentLatin=guided?laParts[step]:latin;
-  const mode=aligned?`<div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Litany view","Présentation des litanies"))}"><button type="button" data-tp381-litany-mode="full" aria-pressed="${!guided}">${esc(L("Full text","Texte intégral"))}</button><button type="button" data-tp381-litany-mode="guided" aria-pressed="${guided}">${esc(L("Guided · one section at a time","Guidé · une section à la fois"))}</button></div>`:"";
-  const card=`<article class="aoTP381PrayerCard"><h3>${esc(guided?L(...HOLY_NAME_SECTION_LABELS[step]):L(HOLY_NAME_LITANY_V381.title,HOLY_NAME_LITANY_V381.titleFr))}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${nl(current)}</span><span data-face-la hidden>${nl(currentLatin)}</span></button></article>`;
-  const nav=guided?`<nav class="aoTP381GuideNav" aria-label="${esc(L("Litany sections","Sections des litanies"))}"><button type="button" data-tp381-litany-step="${step-1}" ${step===0?"disabled":""}>${esc(L("Previous","Précédent"))}</button><button type="button" data-tp381-litany-step="${step+1<7?step+1:0}">${esc(step===6?L("Return to beginning","Revenir au début"):L("Next","Suivant"))}</button></nav>`:"";
-  return `${head(L("Litany of the Holy Name of Jesus","Litanies du Saint Nom de Jésus"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("Historical approved Roman form, stored locally for complete offline prayer. Tap the text to replace the vernacular with Latin.","Forme romaine historique approuvée, conservée localement pour une prière entièrement hors ligne. Touchez le texte pour remplacer le français par le latin."))}</p>${status(L("Traditional · sourced · offline","Traditionnelle · sourcée · hors ligne"))}${traditionalContextGuide("holyName")}${mode}${guided?`<p class="aoTP381GuideCount" aria-live="polite">${esc(L("Section "+(step+1)+" of 7","Section "+(step+1)+" sur 7"))}</p>`:""}${card}${nav}${source("Rituale Romanum · 1925",HOLY_NAME_LITANY_V381.sources.latin)}${source("French traditional witness · Litanies du Saint Nom de Jésus",HOLY_NAME_LITANY_V381.sources.french)}</main>`;
+  const title=guided?L(...HOLY_NAME_SECTION_LABELS[step]):L(HOLY_NAME_LITANY_V381.title,HOLY_NAME_LITANY_V381.titleFr);
+  const text=`<article class="aoTP381PrayerCard"><h3>${esc(title)}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${guided?litanyVerseMarkup(current):nl(current)}</span><span data-face-la hidden>${guided?litanyVerseMarkup(currentLatin):nl(currentLatin)}</span></button></article>`;
+  const card=guided?`<section class="aoDevoCard" data-ao-devo-card="holy-name-${step+1}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${text}</div></section>`:text;
+  const mode=aligned?`<div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Litany view","Présentation des litanies"))}"><button type="button" data-tp381-litany-mode="full" aria-pressed="${!guided}">${esc(L("Full text","Texte intégral"))}</button><button type="button" data-tp381-litany-mode="guided" aria-pressed="${guided}">${esc(L("Guided","Guidé"))}</button></div>`:"";
+  const guidance=`<details class="aoTP381SecondaryOptions" data-ao-holy-name-options><summary>${esc(L("Reading options and guide","Options de lecture et guide"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Historical approved Roman form, stored locally for complete offline prayer. Tap the text to replace the vernacular with Latin.","Forme romaine historique, avec témoins latin et français. Touchez la prière pour remplacer le français par le latin."))}</p>${mode}${traditionalContextGuide("holyName")}</div></details>`;
+  return `${head(L("Litany of the Holy Name of Jesus","Litanies du Saint Nom de Jésus"))}<main class="aoP435930Body aoTP381DonorBody">${card}${guidance}${source("Rituale Romanum · 1925",HOLY_NAME_LITANY_V381.sources.latin)}${source("French traditional witness · Litanies du Saint Nom de Jésus",HOLY_NAME_LITANY_V381.sources.french)}</main>`;
 }
 function renderNightlyExamen(){
  const steps=NIGHTLY_EXAMEN_CARDS,step=clampPrayerCardStep(S.examenStep,steps.length),item=steps[step];
  const focus=step===steps.length?"":`<p>${esc(isFr()?item.bodyFr:item.bodyEn)}</p>`;
- const prayer=(item?.id==="resolve"&&!S.returnToDaily)?prayerCard("sacrament_act_of_contrition"):"";
+ const prayer=(item?.id==="resolve"&&!S.returnToDaily)?prayerCard("sacrament_act_of_contrition",{focusParagraphs:true}):"";
  const after=step===steps.length
   ?S.returnToDaily
     ?`<button type="button" data-tp381-examen-return>${esc(L("Continue Evening Prayer","Poursuivre les prières du soir"))}</button>`
@@ -173,10 +189,15 @@ function renderNightlyExamen(){
   :"";
  const card=guidedCardFrame({id:item?.id||"examen-finished",title:item?isFr()?item.titleFr:item.titleEn:"",
   step,total:steps.length,body:focus+prayer,onStep:"examen",returnButton:after});
- return `${head(L("Nightly Examination","Examen du soir"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("Review the day before God in silence. This brief examen does not replace preparation for sacramental Confession; no answers are collected.","Examinez votre journée devant Dieu, dans le silence. Cet examen bref ne remplace pas la préparation à la Confession sacramentelle ; aucune réponse n’est recueillie."))}</p>${card}<div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.confession"><span><b>${esc(L("Preparing for sacramental Confession?","Vous préparez-vous à la Confession sacramentelle ?"))}</b><small>${esc(L("Open the full Confession examination","Ouvrir l’examen complet de Confession"))}</small></span><i aria-hidden="true">→</i></button></div></main>`;
+ return `${head(L("Nightly Examination","Examen du soir"))}<main class="aoP435930Body aoTP381DonorBody"><section class="aoDevoCard" data-ao-devo-card="${esc(item?.id||"examen-finished")}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L("Examination of conscience","Examen de conscience"))}">${card}</div></section><details class="aoTP381SecondaryOptions" data-ao-examen-options><summary>${esc(L("About this examination","À propos de cet examen"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Review the day before God in silence. This brief examen does not replace preparation for sacramental Confession; no answers are collected.","Examinez votre journée devant Dieu, dans le silence. Cet examen bref ne remplace pas la préparation à la Confession sacramentelle ; aucune réponse n’est recueillie."))}</p></div></details><div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.confession"><span><b>${esc(L("Preparing for sacramental Confession?","Vous préparez-vous à la Confession sacramentelle ?"))}</b><small>${esc(L("Open the full Confession examination","Ouvrir l’examen complet de Confession"))}</small></span><i aria-hidden="true">→</i></button></div></main>`;
 }
 function renderMealPrayers(){
-  return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("The ordinary Catholic table prayers already present in the canonical prayer corpus, surfaced here for daily use.","Les prières catholiques ordinaires des repas déjà présentes dans le corpus canonique, présentées ici pour l’usage quotidien."))}</p>${prayerCard("foundations_grace_before_meals")}${prayerCard("foundations_grace_after_meals")}</main>`;
+  const before=S.mealStep!==1;
+  const id=before?"foundations_grace_before_meals":"foundations_grace_after_meals";
+  const title=before?L("Before meals","Avant le repas"):L("After meals","Après le repas");
+  const card=`<section class="aoDevoCard" data-ao-devo-card="${before?"meal-before":"meal-after"}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${prayerCard(id,{focusParagraphs:true})}</div></section>`;
+  const context=`<details class="aoTP381SecondaryOptions" data-ao-meal-options><summary>${esc(L("About these prayers","À propos de ces prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("These are the ordinary table prayers from the canonical Catholic prayer corpus.","Il s’agit des prières ordinaires des repas issues du corpus canonique de prières catholiques."))}</p></div></details>`;
+  return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody">${card}${context}</main>`;
 }
 function sourcedPrayerCard(item,label){
   const vern=isFr()?(item?.fr||item?.en||item?.la):(item?.en||item?.fr||item?.la),latin=item?.la||"",both=!!(vern&&latin);
@@ -318,16 +339,61 @@ function injectGlossaryAction(){
   const button=document.createElement("button");
   button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
   button.textContent=L("Terms & explanations","Termes & explications");
-  body.insertAdjacentElement("afterbegin",button);return true;
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany"].includes(S.route))body.append(button);
+  else body.insertAdjacentElement("afterbegin",button);
+  return true;
 }
 function render(){
   const m=mount();if(!m)return false;
   m.dataset.aoPrayView="traditional-pray";
+  // A route change or Full Text mode must not inherit another reader’s stage owner.
+  delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
+    const daily=S.route==="pray.morning_evening";
+    const rows=daily?guidedDailyCards(S.daypart):NIGHTLY_EXAMEN_CARDS;
+    if(!daily||S.dailyMode==="guided"){
+      const chapters=rows.map((row,i)=>({
+        id:row.id||"examen-"+(i+1),
+        title:daily?(row.kind==="examination"?L("Nightly Examination","Examen du soir"):prayerTitle(data().prayers?.[row.id],row.id))
+          :(isFr()?row.titleFr:row.titleEn)
+      }));
+      chapters.push({id:daily?"daily-finished":"examen-finished",title:L("Prayer completed","Prière terminée")});
+      const index=daily?S.dailyStep:S.examenStep;
+      const reader=installSequentialDevotionalReader({
+        mount:m,kind:daily?"daily":"examen",chapters,activeIndex:index,
+        paragraphSelector:".aoTP381GuideCard>p,.aoTP381TextParagraph",
+        onNavigate:i=>{if(daily)S.dailyStep=i;else S.examenStep=i;render()},
+        timelineLabel:L("Prayer timeline","Chronologie des prières")
+      });
+      if(reader){
+        m.dataset.aoTraditionalDualAxis=reader.kind;
+        if(index<rows.length){
+          const legacy=m.querySelector(".aoTP381GuideCard .aoTP381GuideNav");
+          if(legacy)legacy.style.display="none";
+        }
+      }
+    }
+  }
+  if(S.screen==="module"&&(S.route==="pray.meal_prayers"||(S.route==="pray.holy_name_litany"&&S.litanyMode==="guided"))){
+    const meals=S.route==="pray.meal_prayers";
+    const chapters=meals?[
+      {id:"meal-before",title:L("Before meals","Avant le repas")},
+      {id:"meal-after",title:L("After meals","Après le repas")}
+    ]:HOLY_NAME_SECTION_LABELS.map(([en,fr],i)=>({id:"holy-name-"+(i+1),title:L(en,fr)}));
+    const reader=installSequentialDevotionalReader({
+      mount:m,kind:meals?"meals":"holyName",chapters,
+      activeIndex:meals?S.mealStep:S.litanyStep,
+      paragraphSelector:meals?".aoTP381TextParagraph":".aoTP381LitanyLine",
+      onNavigate:i=>{if(meals)S.mealStep=i;else S.litanyStep=i;render()},
+      timelineLabel:L("Prayer timeline","Chronologie des prières")
+    });
+    if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
+  }
   injectGlossaryAction();
   m.scrollTop=0;
-  queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.()});
+  queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.({preventScroll:true})});
   return true;
 }
 function open(route,opts={}){
@@ -336,7 +402,9 @@ function open(route,opts={}){
   OPEN_OPTS={...opts};S={...S,route,screen:"module",prayerId:null,guidedFromList:false,
     ...(route==="pray.morning_evening"?{dailyMode:"guided",dailyStep:0,returnToDaily:false}:{})
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
-    ...(route==="pray.dying_companion"?{dying:"now"}:{})};
+    ...(route==="pray.dying_companion"?{dying:"now"}:{}),
+    ...(route==="pray.meal_prayers"?{mealStep:0}:{}),
+    ...(route==="pray.holy_name_litany"?{litanyMode:"guided",litanyStep:0}:{})};
   BASE_OPEN("pray.hub",opts);
   render();return true;
 }

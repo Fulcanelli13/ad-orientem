@@ -2,6 +2,37 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "../src/pray/angelus-guide-data.js";
+import {angelusCardPlan,DEVOTIONAL_CARD_SCHEMA} from "../src/pray/devotional-card-deck.js";
+import {mercyChapters,SEQUENTIAL_DEVOTIONAL_SCHEMA} from "../src/pray/devotional-sequence-adapter.js";
+import {divineMercySteps} from "../src/pray/devotional-methods-v1.js";
+import {devotionalInterludePlan,DEVOTIONAL_CINEMATIC_VERSION} from "../src/pray/devotional-cinematic.js";
+assert.equal(DEVOTIONAL_CINEMATIC_VERSION,"devotional-card-interstitial-v1");
+const paintedShot=devotionalInterludePlan({form:"angelus",card:{id:"incarnation",title:"L’Incarnation",latin:"Et Verbum"}});
+assert.equal(paintedShot.image,"assets/pray/angelus/tanner-annunciation-1898.webp");
+assert.equal(paintedShot.shot.effect,"light");
+assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}).image,null);
+assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"faithful-departed",title:"Pour les fidèles défunts"}}).image,null);
+assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"missing",title:""}}),null);
+assert.equal(DEVOTIONAL_CARD_SCHEMA,"dual-axis-devotional-cards-v1");
+assert.equal(SEQUENTIAL_DEVOTIONAL_SCHEMA,"dual-axis-sequential-devotional-v1");
+const mercyMain=mercyChapters(divineMercySteps(),{french:true});
+assert.deepEqual(mercyMain.map(c=>c.id),["opening","decade-1","decade-2","decade-3","decade-4","decade-5","conclusion"]);
+assert.deepEqual(mercyMain.map(c=>c.entries.length),[4,11,11,11,11,11,3]);
+assert.equal(mercyMain[1].title,"Dizaine 1");
+assert.equal(mercyMain[1].start,4);
+assert.equal(mercyMain.at(-1).start,59);
+assert.equal(mercyChapters(divineMercySteps({includeClosing:true})).at(-1).id,"optional-conclusion");
+assert.equal(mercyChapters(divineMercySteps({includeClosing:true})).reduce((sum,c)=>sum+c.entries.length,0),63);
+
+const angelusCardModel=angelusCardPlan({form:"angelus",language:"fr"});
+assert.deepEqual(angelusCardModel.map(x=>x.id),["announcement","fiat","incarnation","intercession"]);
+assert.deepEqual(angelusCardModel.map(x=>x.unitIndices),[[0,1],[2,3],[4,5],[6,7]]);
+assert.equal(angelusCardModel[2].ritual,"profound-bow");
+assert.deepEqual(angelusCardPlan({form:"angelus",language:"fr",historicalConclusion:true}).slice(4).map(x=>x.id),
+ ["doxology","faithful-departed","divine-assistance"]);
+assert.deepEqual(angelusCardPlan({form:"regina",language:"fr"}).map(x=>x.id),
+ ["rejoice","resurrection","intercession","collect"]);
+assert.throws(()=>angelusCardPlan({form:"undefined"}),/Unknown canonical/);
 import { rosaryGuideSections } from "../src/pray/rosary-guide-data.js";
 import { directChildAnchor } from "../src/pray/dom-anchor.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "../src/pray/devotional-ux-contract.js";
@@ -23,6 +54,9 @@ assert.ok(devotionalUx.groupCapable.includes("pray.stations"));
 assert.ok(devotionalUx.swipeCapable.includes("programme.first_saturday"));
 
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
+assert.match(runtime,/installSequentialDevotionalReader/,"Stations/Mercy are not connected to the shared reader");
+assert.match(runtime,/data-ao-mercy-deck="chapters-v1"/,"Divine Mercy still uses isolated bead-only pages");
+assert.match(runtime,/data-ao-devo-card="station-\$\{i\+1\}"/,"Stations are not title-bearing prayer cards");
 const coherence=readFileSync("src/pray/presentation-coherence.js","utf8");
 const styles=readFileSync("src/pray/presentation-styles.js","utf8");
 assert.match(runtime,/43\.59\.30-pray-acceptance/);
@@ -81,8 +115,10 @@ assert.ok(runtime.includes('[data-ao-recitation="${prefs.recitation}"]'),
   "Rosary handoff stopped driving the preserved player's native recitation owner");
 assert.match(runtime,/function launchRosaryPlayer\(resume=captureResume\(\)\)[\s\S]*const prefs=syncRosaryPrefs\(\{\.\.\.S\.rosary\}\)/,
   "Rosary direct launcher stopped snapshotting canonical preferences before donor mount");
-assert.match(runtime,/if\(b\.dataset\.p435930Own\)\{if\(b\.dataset\.p435930Own==='pray\.rosary'\)\{launchRosaryPlayer\(captureResume\(\)\)/,
+assert.match(runtime,/if\(b\.dataset\.p435930Own\)[\s\S]{0,180}if\(id==='pray\.rosary'\)\{launchRosaryPlayer\(captureResume\(\)\)/,
   "Rosary card no longer bypasses the redundant modular chooser");
+assert.match(runtime,/if\(!internalPrayerView\(id\)\)return showInternalPrayerRouteError\(b,id\)/,
+  "Unknown Prayer route no longer fails closed before changing the Back stack");
 assert.match(runtime,/\['individual','group'\]\.includes\(seg\)\)\{setRecitationMode\(seg\)/,
   "Rosary chooser stopped synchronizing recitation through the canonical setter");
 assert.match(runtime,/function applySettingsPreferences\(raw=\{\}\)/,

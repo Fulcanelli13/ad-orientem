@@ -1,0 +1,28 @@
+name: Home Prayer single-reader parity
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/home/browser-entry.js"
+      - "tests/home-pray-single-reader-e2e.mjs"
+      - "tests/home-exact-shortcut-retry.mjs"
+      - ".github/workflows/home-pray-single-reader.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  one-reader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/home-exact-shortcut-retry.mjs
+      - run: node tests/home-pray-single-reader-e2e.mjs

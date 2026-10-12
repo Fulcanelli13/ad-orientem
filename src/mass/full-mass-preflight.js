@@ -143,6 +143,7 @@ export function mountFullMassPreflight({
         '<small data-mass-calendar-commemoration-label></small>'+ 
         '<strong data-mass-calendar-commemoration-name></strong>'+ 
         '<p data-mass-calendar-commemoration-prayers></p></div>'+ 
+        '<p data-mass-calendar-mission class="aoMassMissionSundaySource" hidden></p>'+ 
         '<p data-mass-calendar-source class="aoMassLiturgicalSource"></p>'+
         '<p data-mass-calendar-error role="alert" hidden></p></section>'+
         '<details data-mass-calendar-details class="aoMassCalendarEmbeddedDetails"><summary data-mass-calendar-details-label>Explore the liturgical calendar</summary>'+
@@ -241,7 +242,7 @@ export function mountFullMassPreflight({
       target.insertAdjacentElement("beforebegin",root);
     }
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
-    const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},language());
+    const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},language(),{form:summary.form});
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
     const detailsLabel=root.querySelector("[data-mass-calendar-details-label]");
     if(detailsLabel)detailsLabel.textContent=fr?"Explorer le calendrier liturgique":"Explore the liturgical calendar";

@@ -1,3 +1,4 @@
+import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
 const REQUIRED_SLOTS = Object.freeze([
   "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
   "GOSPEL","OFFERTORY","SECRET_SET","PREFACE","COMMUNION","POSTCOMMUNION_SET"
@@ -33,17 +34,52 @@ function readyEnvelope(slot,value,{language="en"}={}){
   // vernacular or Latin text; filtering valid neighbours silently loses Mass text.
   const incomplete=Array.isArray(value)&&value.some(row=>!usable(row,language));
   if(!rows.length||incomplete) return Object.freeze({status:"MISSING",slot,data:null});
-  return Object.freeze({
-    status:"READY",
-    slot,
-    data:Object.freeze({
-      paragraphs:Object.freeze(rows.map((row,index)=>Object.freeze({
-        id:slot+"."+(index+1),
+  const paragraphs=[];
+  for(const [index,row] of rows.entries()){
+    const composed=["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(slot)?row.oneConclusion:null;
+    if(composed){
+      const latin=composed.segments?.lat,trans=composed.segments?.[language];
+      const extra=segment=>segment?.additional??segment?.mission;
+      const rejoin=segment=>segment?.principal+"\n\n"+extra(segment)+"\n"+segment?.conclusion;
+      if(composed.status!=="CERTIFIED"||!latin||!trans||
+        rejoin(latin)!==String(row.lat??row.la)||
+        rejoin(trans)!==vernacularValue(row,language))
+        return Object.freeze({status:"MISSING",slot,data:null,
+          reason:"Unverified one-conclusion Collect composition"});
+      // Two illuminated text paragraphs but ONE liturgical prayer group.
+      // The shared ending belongs to the second, source-identified prayer.
+      paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1)+".PRINCIPAL",kind:"TEXT",
+        latin:latin.principal,vernacular:trans.principal,
+        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+      }));
+      paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1)+(composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
         kind:"TEXT",
-        latin:String(row.lat??row.la),
-        vernacular:vernacularValue(row,language),
-      })))
-    })
+        latin:extra(latin)+"\n"+latin.conclusion,
+        vernacular:extra(trans)+"\n"+trans.conclusion,
+        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+        sourcePath:composed.sourcePath,
+      }));
+      // When a separate St Luke commemoration follows in Low Mass, its
+      // conclusion is independent. The fixed end-of-block ℟. Amen covers
+      // that final prayer; emit this first Amen at the missionary conclusion.
+      if(slot==="COLLECT_SET"&&index<rows.length-1)paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1)+".MISSION_AMEN",kind:"RESPONSE",
+        latin:"℟. Amen.",vernacular:"℟. Amen.",
+        role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+      }));
+    }else{
+      paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1),kind:"TEXT",
+        latin:String(row.lat??row.la),vernacular:vernacularValue(row,language),
+      }));
+    }
+  }
+  return Object.freeze({
+    status:"READY",slot,
+    data:Object.freeze({paragraphs:Object.freeze(paragraphs)})
   });
 }
 
@@ -51,6 +87,9 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
   if(!proper || typeof proper!=="object") throw new TypeError("Resolved Proper object required");
   const locale=String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
   const opts={language:locale};
+
+  const principalId=proper.principalCelebrationId??proper.mainId??proper.main?.id??null;
+  const prefaceDecision=principalId?inspect1962PrefaceSelection({principalCelebrationId:principalId,selectedPreface:proper.preface,requestedCelebrationId:proper.requestedCelebrationId??null}):null;
 
   const slots={
     INTROIT:readyEnvelope("INTROIT",proper.introit,opts),
@@ -65,11 +104,55 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
 
+  if(proper.inseparableOrationsDecision?.status==="UNVERIFIED"){
+    for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+      slots[slot]=Object.freeze({status:"MISSING",slot,data:null,
+        reason:"Inseparable Peter-Paul oration source unverified: "+
+          proper.inseparableOrationsDecision.reason});
+    }
+  }
+
+  // Two or more Calendar commemorations may exceed the permitted count
+  // or demand seasonal precedence. An unresolved source selection must not
+  // become apparently READY just because legacy Proper arrays have text.
+  if(proper.commemorationFormDecision?.status==="UNVERIFIED"&&
+     proper.commemorationFormDecision?.reason===
+       "MULTIPLE_COMMEMORATIONS_SOURCE_PRIORITY_PENDING"){
+    for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+      slots[slot]=Object.freeze({status:"MISSING",slot,data:null,
+        reason:"1962 multiple commemorations: Mass-form priority and "+
+          "oration selection not source-certified."});
+    }
+  }
+
+  // Missing/competing §453 source or conclusion: never render a
+  // source-incomplete Mission Sunday as a certified ready Collect.
+  if(proper.missionSundayCollectDecision?.status==="UNVERIFIED"){
+    slots.COLLECT_SET=Object.freeze({status:"MISSING",slot:"COLLECT_SET",data:null,
+      reason:"Mission Sunday Collect source/precedence unverified: "+
+        proper.missionSundayCollectDecision.reason});
+  }
+
+  // A source contradiction must not be displayed as a certified ready Preface.
+  // This is a reader safety gate, NOT a substitute for repairing source selection.
+  if(prefaceDecision && ["CONTRADICTION","MISSING_PREFACE","NEEDS_SELECTED_FORMULARY"].includes(prefaceDecision.status)){
+    slots.PREFACE=Object.freeze({status:"MISSING",slot:"PREFACE",data:null,
+      reason:"1962 Preface source decision: "+prefaceDecision.status,
+      requiredId:prefaceDecision.requiredId,actualId:prefaceDecision.actualId});
+  }
+
   // The source Calendar lists commemorations separately from the prayer
   // arrays. A one-prayer fallback is NOT a complete Proper when an identified
   // commemoration still requires its own Collect, Secret and Postcommunion.
-  const extra=(Array.isArray(proper.calendarCommemorations)?
-    proper.calendarCommemorations:[]).filter(row=>row&&!row.inseparable).length;
+  const selection=proper.commemorationFormDecision;
+  const effectiveCommemorations=selection?.status==="CERTIFIED"&&
+    selection?.source==="1962_PROPER_RESOLVER"&&
+    Number.isInteger(selection.appliedCount)&&
+    Array.isArray(proper.appliedCommemorations)&&
+    selection.appliedCount===proper.appliedCommemorations.length
+      ?proper.appliedCommemorations:proper.calendarCommemorations;
+  const extra=(Array.isArray(effectiveCommemorations)?
+    effectiveCommemorations:[]).filter(row=>row&&!row.inseparable).length;
   const minimum=1+extra;
   if(extra>0){
     for(const [slot,plural,singular] of [

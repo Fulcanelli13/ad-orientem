@@ -5,6 +5,7 @@ on:
       - "src/pray/**"
       - "tests/pray-presentation.mjs"
       - "tests/pray-marian-mobile.mjs"
+      - "tests/pray-internal-route-fail-closed.mjs"
       - "tests/pray-all-modules-mobile.mjs"
       - ".github/workflows/pray-marian-acceptance.yml"
   workflow_dispatch:
@@ -25,6 +26,10 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run test:pray-owner
       - run: npx playwright install --with-deps chromium
+      - name: All sixteen Novenas — dual-axis guided and simple phone acceptance
+        run: timeout --signal=TERM --kill-after=5s 165s node tests/pray-novena-dual-axis-mobile.mjs
+      - name: Verify Prayer route ownership fails closed
+        run: node tests/pray-internal-route-fail-closed.mjs
       - name: Angelus and Rosary real mobile Guide
         run: timeout --signal=TERM --kill-after=5s 160s node tests/pray-marian-mobile.mjs
       - name: All devotional routes and canonical Prayer Library mobile

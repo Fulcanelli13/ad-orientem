@@ -97,25 +97,37 @@ try{
  // original paragraphs and must preserve Latin replacement in each stage.
  const litanyOpen=await page.evaluate(async()=>await globalThis.AO_MODULES.open("pray.holy_name_litany",{returnContext:null}));
  assert.notEqual(litanyOpen?.ok,false,"Holy Name litany is not reachable through the canonical module registry");
- await page.waitForSelector("#aoPray435930.open [data-tp381-litany-mode='guided']",{state:"visible",timeout:12000});
+ await page.waitForSelector("#aoPray435930.open .aoDevoSequenceTimeline",{state:"visible",timeout:12000});
  const litany="#aoPray435930.open";
- assert.equal(await page.locator(litany+" [data-tp381-litany-mode='full']").getAttribute("aria-pressed"),"true");
- await page.locator(litany+" [data-tp381-litany-mode='guided']").tap();
+ assert.equal(await page.locator(litany+" [data-ao-holy-name-options]").evaluate(el=>el.open),false,
+   "Holy Name options must not displace the litany at opening");
  assert.equal(await page.locator(litany+" [data-tp381-litany-mode='guided']").getAttribute("aria-pressed"),"true");
- assert.match(await page.locator(litany+" .aoTP381GuideCount").innerText(),/Section 1 of 7/);
- assert.equal(await page.locator(litany+" [data-tp381-litany-step='-1']").isDisabled(),true);
+ assert.equal(await page.locator(litany+" .aoDevoStop").count(),7,"Litany lost seven named source sections");
+ assert.equal(await page.locator(litany+" .aoDevoCard").getAttribute("data-ao-devo-card"),"holy-name-1");
+ assert.equal(await page.locator(litany+" .aoDevoParagraph[data-ao-devo-active='true']").count(),1,
+   "Litany is not illuminating exactly one visible source line");
  await page.locator(litany+" [data-tp381-flip]").tap();
  assert.equal(await page.locator(litany+" [data-face-la]").isVisible(),true,"Guided Litany Latin replacement is not visible");
  assert.equal(await page.locator(litany+" [data-face-v]").isVisible(),false,"Litany shows Latin and vernacular simultaneously");
  for(let step=2;step<=7;step++){
-   await page.locator(litany+" [data-tp381-litany-step='"+(step-1)+"']").tap();
-   assert.match(await page.locator(litany+" .aoTP381GuideCount").innerText(),new RegExp("Section "+step+" of 7"));
+   await page.locator(litany+" .aoDevoStop").nth(step-1).evaluate(x=>x.click());
+   assert.equal(await page.locator(litany+" .aoDevoCard").getAttribute("data-ao-devo-card"),"holy-name-"+step);
+   assert.equal(await page.locator(litany+" .aoDevoSequenceTimeline [aria-current='step']").count(),1);
  }
- await page.locator(litany+" [data-tp381-litany-mode='full']").tap();
- assert.equal(await page.locator(litany+" .aoTP381GuideCount").count(),0,"Full Holy Name Litany retained guided section count");
+ await page.locator(litany+" [data-ao-holy-name-options] > summary").click();
+ await page.locator(litany+" [data-tp381-litany-mode='full']").click();
+ assert.equal(await page.locator(litany+" .aoDevoSequenceTimeline").count(),0,"Full Holy Name must preserve its alternate complete text reader");
  assert.match(await page.locator(litany+" .aoTP381PrayerCard").innerText(),/Jesus|Lord/i,"Full Holy Name text is incomplete");
+ const mealOpen=await page.evaluate(async()=>await globalThis.AO_MODULES.open("pray.meal_prayers",{returnContext:null}));
+ assert.notEqual(mealOpen?.ok,false,"Meal Prayers did not open");
+ await page.waitForSelector(litany+" .aoDevoSequenceTimeline",{state:"visible",timeout:12000});
+ assert.equal(await page.locator(litany+" .aoDevoStop").count(),2);
+ assert.equal(await page.locator(litany+" .aoDevoCard").getAttribute("data-ao-devo-card"),"meal-before");
+ await page.locator(litany+" .aoDevoStop").nth(1).evaluate(x=>x.click());
+ assert.equal(await page.locator(litany+" .aoDevoCard").getAttribute("data-ao-devo-card"),"meal-after");
+ assert.equal(await page.locator(litany+" .aoDevoSequenceTimeline [aria-current='step']").count(),1);
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
- console.log("PASS Holy Name guided Litany: seven original-source sections, reversible Latin, complete text retained");
+ console.log("PASS Holy Name seven-source-card and Meal two-card reader: single active timeline, Latin replacement and alternate full text");
 
 
  // Confession paths must remain under one sacramental owner, with no sins entered.
@@ -124,8 +136,26 @@ try{
  assert.equal(await page.locator(conf+" [data-p435930-conf-path]").count(),3);
  assert.equal(await page.locator(conf+" [data-p435930-conf-next]").isDisabled(),true);
  const press=async selector=>{
-   const pressed=await page.evaluate(s=>{const el=document.querySelector(s);if(!el)return false;el.click();return true},selector);
-   assert.equal(pressed,true,"Missing Confession step button: "+selector);
+   const pressed=await page.evaluate(s=>{
+     // The canonical shared timeline replaces hidden legacy Previous/Next for
+     // the interior examination cards. Test the button a visitor can touch.
+     if(s.includes("[data-p435930-conf-next]")){
+       const reader=document.querySelector("#aoPray435930.open .aoP435930ConfessionReader");
+       const timeline=reader?.querySelector(".aoDevoSequenceTimeline");
+       const card=reader?.querySelector(".aoDevoCard");
+       const index=Number(card?.dataset.aoDevoIndex);
+       const count=timeline?.querySelectorAll(".aoDevoStop").length||0;
+       if(count>1&&index<count-1){
+         const next=timeline.querySelector('[data-ao-devo-sequence-move="1"]');
+         if(!next||next.disabled)return false;
+         next.click();return true;
+       }
+     }
+     const el=document.querySelector(s);if(!el)return false;
+     if(el.getClientRects().length===0)return false;
+     el.click();return true;
+   },selector);
+   assert.equal(pressed,true,"Missing visible Confession navigation: "+selector);
  };
  await page.locator(conf+" [data-p435930-conf-path='regular']").tap();
  assert.equal(await page.locator(conf+" [data-p435930-conf-path='regular']").getAttribute("aria-pressed"),"true");
@@ -196,14 +226,25 @@ try{
  assert.equal(await page.locator(daily+" .aoTP381PrayerCard").count(),1,"Guidance must display complete canonical prayer");
  assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 11");
  assert.equal(await page.locator(daily+" [data-tp381-daily-step='-1']").isDisabled(),true);
+ // Exercise the visible canonical card timeline. The previous/next buttons
+ // remain in the source frame only as a fallback and are hidden when the
+ // shared dual-axis reader is installed; tapping those hidden controls
+ // would certify a path the user cannot reach.
  async function tapStep(control,expected){
-  try{await page.locator(control).tap({timeout:6500})}
-  catch(error){
-    const current=await page.locator(daily).getAttribute("data-guide-step").catch(()=>null);
-    if(current===String(expected))return;
-    await page.locator(control).scrollIntoViewIfNeeded();
-    await page.locator(control).tap({timeout:9000});
-  }
+   assert.match(control,/data-tp381-(daily|examen)-step/,
+     "Unexpected traditional prayer owner");
+   const target=page.locator("#aoPray435930.open .aoDevoSequenceTimeline [data-ao-devo-chapter='"+expected+"']");
+   assert.equal(await target.count(),1,"Missing visible source-owned timeline stage "+expected);
+   const current=await page.locator(daily).getAttribute("data-guide-step");
+   if(current!==String(expected))await target.tap({timeout:12000});
+   await page.waitForFunction(step=>{
+     const shell=document.querySelector("#aoPray435930.open");
+     const guide=shell?.querySelector("[data-ao-pray-guide-card]");
+     const card=shell?.querySelector(".aoDevoCard");
+     return guide?.dataset.guideStep===String(step)&&
+       card?.dataset.aoDevoIndex===String(step)&&
+       shell.querySelectorAll(".aoDevoSequenceTimeline [aria-current='step']").length===1;
+   },expected,{timeout:9000});
  }
  for(let step=1;step<=11;step++){
    await tapStep("#aoPray435930.open [data-tp381-daily-step='"+step+"']",step);
@@ -227,8 +268,15 @@ try{
  await page.locator("#aoPray435930.open [data-tp381-examen-return]").tap();
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9","Examen must resume Evening Prayer at contrition");
  assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"sacrament_act_of_contrition");
+ const dailyOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
+ await dailyOptions.locator("summary").tap();
+ assert.equal(await dailyOptions.evaluate(node=>node.open),true,
+   "Real phone cannot expand secondary daily prayer options");
  await page.locator("#aoPray435930.open [data-tp381-daily-mode='list']").tap();
  assert.equal(await page.locator("#aoPray435930.open .aoTP381PrayerList button").count(),13,"Traditional unabridged overview must survive guided mode");
+ const reopenedOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
+ await reopenedOptions.locator("summary").tap();
+ assert.equal(await reopenedOptions.evaluate(node=>node.open),true);
  await page.locator("#aoPray435930.open [data-tp381-daily-mode='guided']").tap();
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9");
  const phoneOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
@@ -288,7 +336,16 @@ try{
    assert.ok(sources.some(x=>x.href.includes(witness)),"Missing direct historical witness from "+route+": "+JSON.stringify(sources));
    assert.ok(sources.every(x=>x.href.startsWith("https://")&&x.rel.includes("noreferrer")),"Unsafe historical witness link in "+route);
    const disclosure=page.locator(box+" details.aoP435930Source").last();
-   await disclosure.locator("summary").tap();
+   // A pending async source load may replace the disclosure between render
+   // and touch. Use a live locator, let Playwright perform the real tap and
+   // verify that the replacement disclosure is actually open.
+   await page.waitForTimeout(350);
+   try{
+     await disclosure.locator("summary").tap({timeout:12000});
+   }catch(error){
+     const opened=await disclosure.getAttribute("open").catch(()=>null);
+     if(opened!=="")throw error; // Do not bypass an unperformed touch.
+   }
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open details.aoP435930Source").length>0 &&
      [...document.querySelectorAll("#aoPray435930.open details.aoP435930Source")].at(-1).open===true,
      null,{timeout:4500}).catch(()=>{});
@@ -303,17 +360,52 @@ try{
  const novenaIds=await page.locator("#aoPray435930.open [data-n1-select]").evaluateAll(nodes=>nodes.map(x=>x.dataset.n1Select));
  assert.equal(novenaIds.length,16,"Novenas home no longer lists all sixteen source-backed targets");
  for(const id of novenaIds){
+   // Require actual overview restoration before each independent touch test.
+   await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==='overview',null,{timeout:10000});
+   await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").waitFor({state:'visible',timeout:10000});
    // A successful touch navigation replaces the selection card immediately;
    // Playwright may observe the card detached after the action has succeeded.
    // Require the real canonical Novena detail state or rethrow the tap error.
    try{
      await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:9000});
    }catch(error){
-     const selected=await page.evaluate(id=>{
+     let selected=await page.evaluate(id=>{
        const state=globalThis.AO_NOVENAS_V3?.state?.();
        return state?.id===id&&state?.screen==="detail";
      },id);
-     if(!selected)throw error;
+     // The canonical overview can be re-rendered during asynchronous
+     // calendar/module updates; retry the genuine phone tap on its new node.
+     // Never manufacture a click or accept the test without detail navigation.
+     for(let retry=0;!selected&&retry<2;retry++){
+       await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").waitFor({state:"visible",timeout:6000});
+       try{
+         await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:6000});
+       }catch(retryError){
+         // Only a verified canonical detail transition counts as success.
+       }
+       selected=await page.evaluate(id=>{
+         const state=globalThis.AO_NOVENAS_V3?.state?.();
+         return state?.id===id&&state?.screen==="detail";
+       },id);
+     }
+     if(!selected){
+       const hit=await page.evaluate(id=>{
+         const target=document.querySelector("#aoPray435930.open [data-n1-select='"+id+"']");
+         const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+         const rect=target?.getBoundingClientRect();
+         const x=rect?Math.max(0,Math.min(innerWidth-1,rect.left+rect.width/2)):null;
+         const y=rect?Math.max(0,Math.min(innerHeight-1,rect.top+rect.height/2)):null;
+         const top=x===null?null:document.elementFromPoint(x,y);
+         return {id,screen:globalThis.AO_NOVENAS_V3?.state?.()?.screen,
+           rect:rect?{x:rect.x,y:rect.y,width:rect.width,height:rect.height}:null,
+           viewport:{width:innerWidth,height:innerHeight},scrollTop:mount?.scrollTop,
+           hit:top?{tag:top.tagName,className:String(top.className).slice(0,120),
+             selector:top.getAttribute('data-n1-select'),closest:top.closest('[data-ao-pray-view]')?.getAttribute('data-ao-pray-view')}:null,
+           targetConnected:target?.isConnected??false};
+       },id);
+       console.error("NOVENA_TOUCH_HIT_DIAGNOSTIC "+JSON.stringify(hit));
+       throw error;
+     }
    }
    assert.equal(await page.evaluate(id=>{
      const state=globalThis.AO_NOVENAS_V3?.state?.();
@@ -346,6 +438,9 @@ try{
      await detail.locator("[data-n1-back]").tap();
    }
    await detail.locator("[data-n1-back]").tap({timeout:9000});
+   await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==="overview",null,{timeout:10000});
+   assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
+     "A detail Back tap must restore the source-backed Novena overview: "+id);
  }
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
@@ -369,6 +464,36 @@ try{
      });
      throw new Error("Prayer reading did not render for "+id+": "+JSON.stringify(diag)+"; "+String(failure));
    });
+   await page.waitForFunction(()=>{
+     const reader=document.querySelector("#aoPray435930.open .aoP435930LibraryReader");
+     return Boolean(reader?.querySelector(".aoDevoSequenceTimeline")&&
+       reader?.querySelector(".aoDevoCardScroll .aoLibraryLine[data-ao-devo-active='true']"));
+   },null,{timeout:4500}).catch(async error=>{
+     const diag=await page.evaluate(()=>{
+       const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
+       const reader=m?.querySelector(".aoP435930LibraryReader");
+       return {view:m?.dataset.aoPrayView,library:!!reader,
+         card:reader?.querySelector(".aoDevoCard")?.outerHTML?.slice(0,1800),
+         timeline:reader?.querySelectorAll(".aoDevoSequenceTimeline").length,
+         lines:reader?.querySelectorAll(".aoLibraryLine").length,
+         active:reader?.querySelectorAll(".aoLibraryLine[data-ao-devo-active='true']").length,
+         sourceNode:reader?.querySelector(".aoP435930Text,[data-face-v]")?.outerHTML?.slice(0,900)};
+     });
+     throw new Error("Library dual-axis card missing for "+id+": "+JSON.stringify(diag)+"; "+error);
+   });
+   const libraryDeck=await page.evaluate(()=>{
+     const reader=document.querySelector("#aoPray435930.open .aoP435930LibraryReader");
+     const scroll=reader?.querySelector(".aoDevoCardScroll");
+     return {card:reader?.querySelectorAll(".aoDevoCard").length,
+       stops:reader?.querySelectorAll(".aoDevoStop").length,
+       current:reader?.querySelectorAll(".aoDevoStop[aria-current='step']").length,
+       active:reader?.querySelectorAll(".aoLibraryLine[data-ao-devo-active='true']").length,
+       title:reader?.querySelector(".aoDevoCardTitle")?.textContent?.trim(),
+       scroll:getComputedStyle(scroll).overflowY};
+   });
+   assert.ok(libraryDeck.card===1&&libraryDeck.stops===1&&libraryDeck.current===1&&
+     libraryDeck.active===1&&libraryDeck.title?.length>2&&libraryDeck.scroll==="auto",
+     "Library prayer is not a named, locally scrolling illuminated card: "+id+" "+JSON.stringify(libraryDeck));
    const prayer=await page.evaluate(()=>{
      const root=document.querySelector("#aoPray435930.open"),card=root?.querySelector(".aoP435930Prayer");
      return {text:card?.textContent?.trim()||"",body:card?.querySelector(".aoP435930Text,.aoP435930Flip")?.textContent?.trim()||"",

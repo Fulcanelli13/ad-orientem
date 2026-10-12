@@ -1,6 +1,7 @@
 // Printable *Propers only*, from the resolved native 1962 day.
 // Never represent a Proper extract as the complete Mass or Missal.
 import {calendarMassColour} from "./colour-projection.js";
+import {select1962CommemorationsForMassForm} from "../mass/1962-commemoration-form-source.js";
 
 const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 const pair=(value,language)=>({
@@ -19,7 +20,11 @@ function sectionsFromProper(p,lang){
   const section=(kind,values)=>{
     const items=(Array.isArray(values)?values:[values]).filter(Boolean);
     return items.map((x,index)=>({
-      kind,title:titleFor(kind,lang)+(items.length>1?" "+(index+1):""),
+      kind,title:titleFor(kind,lang)+(items.length>1?" "+(index+1):"")+
+        (x?.oneConclusion?.status==="CERTIFIED"&&x.oneConclusion.kind==="INSEPARABLE_APOSTLES"?
+          (lang==="fr"?" · Pierre et Paul (conclusion unique)":" · Peter and Paul (single conclusion)"):
+          kind==="collect"&&x?.oneConclusion?.status==="CERTIFIED"?
+            (lang==="fr"?" · Missions (conclusion unique)":" · Missions (single conclusion)"):""),
       ...pair(x,lang)
     }));
   };
@@ -36,10 +41,18 @@ function sectionsFromProper(p,lang){
     ...section("postcommunion",p.postcommunions)
   ].filter(x=>x.latin||x.vernacular);
 }
-export function assessPrintableProper(resolved,{language="en"}={}){
+export function assessPrintableProper(resolved,{language="en",massForm=null}={}){
   if(!["en","fr"].includes(language))return {ok:false,reason:"Unsupported vernacular"};
-  const p=resolved?.proper?.status==="ready"?resolved.proper.data:null;
-  if(resolved?.status==="failed"||!resolved?.day?.main||!p)return {ok:false,reason:"Resolved Proper unavailable"};
+  const raw=resolved?.proper?.status==="ready"?resolved.proper.data:null;
+  if(resolved?.status==="failed"||!resolved?.day?.main||!raw)return {ok:false,reason:"Resolved Proper unavailable"};
+  const selected=massForm?select1962CommemorationsForMassForm({
+    proper:raw,calendarResolution:resolved,form:massForm,
+    celebrationId:"mass_of_day",
+  }):null;
+  if(massForm&&Array.isArray(resolved?.day?.commemorations)&&
+    resolved.day.commemorations.length>0&&selected?.status!=="CERTIFIED")
+    return {ok:false,reason:"Form-specific commemoration rules not yet source-certified"};
+  const p=selected?.proper??raw;
   if(!["ordinary_mass","ordinary_mass_1962"].includes(String(p.riteProfile||"ordinary_mass").toLowerCase())||
     (p.preparatoryLessons||[]).length||(p.specialSections||[]).length)
     return {ok:false,reason:"Special structure requires the native Missal reader"};
@@ -52,8 +65,8 @@ export function assessPrintableProper(resolved,{language="en"}={}){
   if(!String(p.sourcePath||"").trim())return {ok:false,reason:"Canonical source identity unavailable"};
   return {ok:true,reason:null,sections,proper:p};
 }
-export function renderPrintableProperHtml(resolved,{language="en"}={}){
-  const audit=assessPrintableProper(resolved,{language});
+export function renderPrintableProperHtml(resolved,{language="en",massForm=null}={}){
+  const audit=assessPrintableProper(resolved,{language,massForm});
   if(!audit.ok)throw new Error("Print withheld: "+audit.reason+(audit.missing?": "+audit.missing.join(", "):""));
   const p=audit.proper,fr=language==="fr";
   const date=String(resolved.date||"");
@@ -68,7 +81,7 @@ export function renderPrintableProperHtml(resolved,{language="en"}={}){
     '</p></div><div lang="',language,'"><small>',fr?"FRANÇAIS":"ENGLISH",
     '</small><p>',escapeHtml(x.vernacular),'</p></div></div></section>'
   ].join("")).join("");
-  const comm=(p.calendarCommemorations||[]).map(x=>[
+  const comm=(p.commemorationFormDecision?.status==="CERTIFIED"?p.appliedCommemorations:(p.calendarCommemorations||[])).map(x=>[
     '<li>',escapeHtml(x.name),' · ',escapeHtml(x.path),
     x.prayerSourcePath&&x.prayerSourcePath!==x.path?" · "+escapeHtml(x.prayerSourcePath):"","</li>"
   ].join("")).join("");

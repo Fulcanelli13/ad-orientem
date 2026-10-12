@@ -353,8 +353,18 @@ export function createHomeOwner(win=globalThis){
     const dynamic=target?.closest?.("[data-home-cu-dynamic]");
     if(dynamic){
       event.preventDefault?.();
+      event.stopImmediatePropagation?.();
       const id=dynamic.dataset?.homeCuDynamic;
       if(id==="dynamic.free"){void openRoute("pray.library",{trigger:dynamic});return;}
+      // Contextual Prayer actions use the same canonical reader as the
+      // Prayers catalogue. The legacy Daily Rule is a tracking service,
+      // not a second devotional rendering owner.
+      const canonicalRoute=dynamic.dataset?.homeCuRoute||
+        (/^angelus\.(morning|noon|evening)$/.test(id)?"pray.angelus_regina":null);
+      if(String(canonicalRoute??"").startsWith("pray.")){
+        void openRoute(canonicalRoute,{trigger:dynamic});
+        return;
+      }
       try{if(win?.AO_RULE_V411?.openDynamic?.(id))return;}catch{}
       void openRoute(dynamic.dataset?.homeCuRoute,{trigger:dynamic});
       return;
@@ -362,30 +372,28 @@ export function createHomeOwner(win=globalThis){
     const stat=target?.closest?.("[data-home-cu-static]");
     if(stat){
       event.preventDefault?.();
+      event.stopImmediatePropagation?.();
       const id=stat.dataset?.homeCuStatic||"";
-      const fallback=()=>{
-        // The rule sheet is a legacy service; the modular Home must never
-        // display an inert daily-practice control when that service is absent.
-        const routes={
-          rosary:"pray.rosary",
-          angelus:"pray.angelus_regina",
-          morning:"pray.morning_evening",
-          evening:"pray.morning_evening",
-          examen:"pray.nightly_examen",
-        };
-        return routes[id]?openRoute(routes[id],{trigger:stat}):win?.AO_APP_SHELL_V1?.navigate?.("pray");
+      // All Home daily-prayer shortcuts have the same canonical reader as
+      // the Prayers catalogue. AO_RULE_V411.openStatic() presents a competing
+      // legacy sheet and must not intercept a devotional reading session.
+      const routes={
+        rosary:"pray.rosary",
+        angelus:"pray.angelus_regina",
+        morning:"pray.morning_evening",
+        evening:"pray.morning_evening",
+        examen:"pray.nightly_examen",
       };
-      const openStatic=win?.AO_RULE_V411?.openStatic;
-      if(typeof openStatic!=="function"){void fallback();return;}
-      try{
-        const opened=openStatic.call(win.AO_RULE_V411,id);
-        if(opened&&typeof opened.then==="function"){
-          void Promise.resolve(opened).then(value=>value===false?fallback():true)
-            .catch(error=>{win?.console?.error?.("Home Daily Rule unavailable",error);return fallback()});
-        }else if(opened===false)void fallback();
-      }catch(error){
-        win?.console?.error?.("Home Daily Rule unavailable",error);
-        void fallback();
+      const canonical=routes[id];
+      if(canonical){
+        void openRoute(canonical,{trigger:stat});
+      }else{
+        // Unknown practice is not a prayer route; retain its original
+        // tracking action rather than opening an unrelated Prayer hub.
+        try{win?.AO_RULE_V411?.openStatic?.(id)}catch(error){
+          win?.console?.error?.("Home Daily Rule unavailable",error);
+          showRouteError(id,stat);
+        }
       }
       return;
     }

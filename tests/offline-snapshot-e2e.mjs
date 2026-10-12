@@ -7,14 +7,15 @@ import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".js":"text/javascript; charset=utf-8",".html":"text/html; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".jpg":"image/jpeg",".woff2":"font/woff2",".webmanifest":"application/manifest+json"};
-let variant=1,failedPath=null,served=0;
+let variant=1,failedPath=null,served=0,failedHits=0,assetHits=[];
 const server=http.createServer(async(req,res)=>{
  try{
   let pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
   if(pathname.startsWith("/ad-orientem/"))pathname=pathname.slice("/ad-orientem".length);
   if(pathname==="/"||!pathname)pathname="/index.html";
   if(pathname.startsWith("/__ao_offline_test_")){
-   if(failedPath===pathname){res.writeHead(503);res.end("deliberately broken release");return}
+   assetHits.push(pathname);
+   if(failedPath===pathname){failedHits++;res.writeHead(503);res.end("deliberately broken release");return}
    res.writeHead(200,{"content-type":"text/javascript"});res.end("globalThis.AO_OFFLINE_TEST_ASSET="+JSON.stringify(variant)+";");return;
   }
   const file=resolve(root,"."+pathname);
@@ -81,7 +82,9 @@ try{
    const readiness=await cache.match(new URL("__ao_bootstrap_completed__",base));
    const meta=await readiness.json();
    const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
-     "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js"];
+     "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
+     "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
+     "assets/pray/angelus/tanner-annunciation-1898.webp"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
    return {...meta,missing};
@@ -129,14 +132,15 @@ try{
  // The historical six-section Guide is part of the first-use Rosary reader.
  // Its links can remain remote, but the entire bilingual Guide must render
  // while disconnected without displacing the active prayer.
+ const readingOptions=page.locator("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
+ await readingOptions.waitFor({state:"attached",timeout:12000});
+ await readingOptions.evaluate(el=>{if(!el.open)el.open=true});
  const offlineGuide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
- await offlineGuide.waitFor({timeout:12000});
+ await offlineGuide.waitFor({state:"visible",timeout:12000});
  assert.equal(await offlineGuide.locator(".aoRosaryGuideSection").count(),6,
-  "Offline Rosary Guide lost its six source-linked sections");
+   "Offline Rosary Guide lost its six source-linked sections");
  assert.equal(await offlineGuide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
  const guideStep=await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step);
- // The Guide may asynchronously rerender during Rosary navigation. Measure
- // its mobile scroll box only in the expanded state, not while closed.
  await offlineGuide.evaluate(el=>{el.open=true});
  await page.waitForFunction(()=>{
    const el=document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide[open] .aoRosaryGuideBody");
@@ -148,10 +152,11 @@ try{
  });
  assert.equal(guideLayout.overflow,"auto","Expanded offline Guide must scroll internally on phones");
  assert.ok(guideLayout.height<=Math.min(guideLayout.viewport*.34,290)+2,
-  "Offline Guide obscures the current prayer: "+JSON.stringify(guideLayout));
- assert.ok(guideLayout.scroll>guideLayout.height,"Offline Guide sections are clipped");
+   "Offline Rosary Guide obscures the active prayer: "+JSON.stringify(guideLayout));
+ assert.ok(guideLayout.scroll>guideLayout.height,"Offline Guide historical sections are clipped");
  assert.equal(await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step),guideStep,
-  "Reading the offline Guide advanced the Rosary unexpectedly");
+   "Opening the native Reading options / Guide advanced Rosary beads");
+ console.log("PASS six historic Rosary Guide sections accessible offline from native Reading options");
  // Switch the *application* language, not merely the browser locale; start
  // Divine Mercy for the first time only after airplane-mode launch.
  await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"fr"}));
@@ -270,6 +275,10 @@ try{
  // A deliberately incomplete release must NOT replace a usable version.
  variant=3;failedPath="/__ao_offline_test_3.js";
  const failed=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
+ if(failed.ok!==false)console.error("OFFLINE_REJECT_DIAGNOSTIC="+JSON.stringify({
+   variant,failedPath,failedHits,assetHits:assetHits.slice(-12),served,failed,
+   active:await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status)
+ }));
  assert.equal(failed.ok,false,"Broken update unexpectedly committed");
  const afterFail=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(afterFail.version,original.version,"Failed staging invalidated old snapshot");

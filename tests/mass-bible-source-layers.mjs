@@ -34,7 +34,11 @@ assert.ok(massBibleRows(corpus,{stage:"CANON"}).every(r=>r.group==="CANON"));
 for(const row of corpus.rows){
  assert.ok(row.sourceLinks.some(x=>x.role==="1962_MISSAL_ORDER_AND_TEXT"),"source Missal "+row.id);
  assert.ok(row.sourceLinks.some(x=>x.role==="BIBLICAL_CONTEXT"),"source Bible "+row.id);
- assert.match(row.sourceLinks.find(x=>x.role==="BIBLICAL_CONTEXT").url,/^https:\/\/www\.newadvent\.org\/bible\//,row.id);
+ const srcUrl=row.sourceLinks.find(x=>x.role==="BIBLICAL_CONTEXT").url;
+ if(row.id==="MB25")assert.equal(srcUrl,"https://vulgate.org/ot/psalms_115.htm",
+  "Clementine Psalm 115 must not point to an English merged Psalm 116 page");
+ else assert.match(srcUrl,/^https:\/\/www\.newadvent\.org\/bible\//,row.id);
+ assert.doesNotMatch(srcUrl,/\/jhn001\.htm$/,row.id+" bad John abbreviation");
  assert.ok(row.reading.fr.length>28&&row.reading.en.length>28,"bilingual actual exposition "+row.id);
  assert.ok(!Object.hasOwn(row,"liveCardId"),"no fictional 48-card mapping "+row.id);
  assert.ok(!Object.hasOwn(row,"mapPin"),"no imagined GPS "+row.id);
@@ -43,6 +47,20 @@ assert.ok(corpus.rows.find(x=>x.id==="MB18").qualification==="ISAAC_NOT_KILLED")
 assert.ok(corpus.rows.find(x=>x.id==="MB15").qualification.includes("MYSTERIUM_FIDEI"));
 assert.ok(corpus.rows.find(x=>x.id==="MB24").qualification.includes("PUER_MEUS"));
 assert.ok(corpus.rows.find(x=>x.id==="MB26").classification==="VARIABLE_RITE_SCRIPTURE_READING");
+const byId=id=>corpus.rows.find(x=>x.id===id);
+assert.equal(byId("MB05").classification,"SCRIPTURAL_WORDING_ADAPTED",
+ "Luke's Vulgate 'altissimis' cannot be represented as literal 'excelsis'");
+assert.match(byId("MB05").reading.en,/altissimis.*excelsis/);
+assert.match(byId("MB19").qualification,/GENESIS_PROFERENS/);
+assert.match(byId("MB19").reading.en,/does not explicitly narrate a sacrificial offering/);
+assert.match(byId("MB25").scriptureReference,/115:3–4.*116:12–13/);
+assert.match(byId("MB25").qualification,/CLEMENTINE_115_3_4/);
+for(const id of ["MB08","MB23","MB26"]){
+ assert.equal(byId(id).sourceLinks.find(x=>x.role==="BIBLICAL_CONTEXT").url,
+  "https://www.newadvent.org/bible/joh001.htm");
+}
+assert.equal(corpus.rows.filter(r=>r.classification==="DIRECT_SCRIPTURAL_WORDING").length,5);
+assert.equal(corpus.rows.filter(r=>r.classification==="SCRIPTURAL_WORDING_ADAPTED").length,5);
 const en=renderMassBibleStudy(corpus,{language:"en",category:"names"});
 const fr=renderMassBibleStudy(corpus,{language:"fr",category:"all",stage:"COMMUNION"});
 assert.equal((en.match(/data-ao-mass-bible-row=/g)||[]).length,3);

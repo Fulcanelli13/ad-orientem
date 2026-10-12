@@ -41,6 +41,23 @@ export const NOVENA_N3_CSS=String.raw`
 #aoPray435930 .aoN1Fine{color:var(--muted,#9ba7b0);font-size:.78rem;line-height:1.45}
 #aoPray435930 .aoN1FailClosed{padding:16px;border:1px solid color-mix(in srgb,#c49a6c 55%,transparent);border-radius:14px;background:rgba(180,120,70,.07);color:var(--muted,#b7bec5);line-height:1.5}
 #aoPray435930 .aoN1InsertedSection .aoP435930ModuleCard svg{width:32px;height:32px;color:var(--liturgical,#d8bd7d);margin-bottom:3px}
+
+/* Canonical Novena day reader adopts the shared title/timeline/paragraph model. */
+#aoPray435930 .aoN1Reader{min-width:0}
+#aoPray435930 .aoN1Reader .aoDevoSequenceTimeline{margin:8px 0 0}
+#aoPray435930 .aoN1Reader .aoDevoCard{min-width:0}
+#aoPray435930 .aoN1Reader .aoDevoCardScroll{display:block;padding:18px 15px 30dvh;min-height:min(350px,52dvh)}
+#aoPray435930 .aoN1Reader .aoDevoCardScroll>.aoN1SourceText,
+#aoPray435930 .aoN1Reader .aoDevoCardScroll>.aoN1Canon,
+#aoPray435930 .aoN1Reader .aoDevoCardScroll>.aoN1Info,
+#aoPray435930 .aoN1Reader .aoDevoCardScroll>.aoN1Calendar{margin-bottom:20px}
+#aoPray435930 .aoN1Reader .aoN1SourceText{background:transparent;border:0;border-radius:0;padding:8px 0}
+#aoPray435930 .aoN1Reader .aoN1SourceText .aoN1PrayerParagraph{margin:0 0 22px;color:var(--text,#f3ead7);font:400 clamp(18px,4.5vw,22px)/1.66 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoN1Reader .aoN1SourceText .aoN1PrayerParagraph:last-of-type{margin-bottom:8px}
+#aoPray435930 .aoN1Reader .aoN1Canon{background:transparent}
+#aoPray435930 .aoN1Reader .aoN1Nav{margin:16px 0 26px}
+#aoPray435930 .aoN1Reader .aoDevoCardScroll details:not([open]) .aoDevoParagraph{opacity:1!important}
+
 @media(max-width:560px){#aoPray435930 .aoN1Grid{grid-template-columns:1fr}#aoPray435930 .aoN1DayGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 `;
 

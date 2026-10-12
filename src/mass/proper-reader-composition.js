@@ -3,6 +3,28 @@
 // actor ownership; it only restores the fixed text that follows the Proper cue.
 
 export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
+  // The source's Collect/Postcommunion Proper blocks contain response
+  // cues but no printed words for them. Materialise those canonical
+  // R. Amen cues after the resolved prayer text, as already done for
+  // Deo gratias at the Epistle and Laus tibi after the Gospel.
+  // Additional commemorations with separate conclusions require their
+  // own sourced structure before additional responses may be inserted.
+  "AO.SM.B019": Object.freeze([
+    Object.freeze({
+      id:"AO.SM.C0074",kind:"RESPONSE",latin:"℟. Amen.",
+      vernacular:Object.freeze({en:"℟. Amen.",fr:"℟. Amen."}),
+      role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+      speakerEvidence:"CANONICAL_PROPER_RESPONSE_CUE",
+    }),
+  ]),
+  "AO.SM.B088": Object.freeze([
+    Object.freeze({
+      id:"AO.SM.C0255",kind:"RESPONSE",latin:"℟. Amen.",
+      vernacular:Object.freeze({en:"℟. Amen.",fr:"℟. Amen."}),
+      role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+      speakerEvidence:"CANONICAL_PROPER_RESPONSE_CUE",
+    }),
+  ]),
   "AO.SM.B020": Object.freeze([
     Object.freeze({
       id:"AO.SM.C0076",
@@ -12,7 +34,7 @@ export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
         en:"℟. Thanks be to God.",
         fr:"℟. Nous rendons grâces à Dieu.",
       }),
-      role:"FIXED_RESPONSE",
+      role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
     }),
   ]),
   "AO.SM.B026": Object.freeze([
@@ -24,7 +46,7 @@ export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
         en:"℟. Praise be to Thee, O Christ.",
         fr:"℟. Louange à vous, ô Christ.",
       }),
-      role:"FIXED_RESPONSE",
+      role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
     }),
     Object.freeze({
       id:"AO.SM.C0088",
@@ -34,7 +56,7 @@ export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
         en:"By the words of the Gospel may our sins be blotted out.",
         fr:"Que par les paroles de l’Évangile nos péchés soient effacés.",
       }),
-      role:"PRIEST_PRIVATE",
+      role:"PRIEST_PRIVATE",speakerRole:"PRIEST",
     }),
   ]),
 });
