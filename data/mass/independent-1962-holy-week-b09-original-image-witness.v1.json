@@ -9,7 +9,8 @@
     "attribution": "Scans supplied by Church Music Association of America; hosted in GregoBase source no. 42.",
     "use": "Research hyperlinks only; image bytes NOT copied into Ad Orientem, no redistributable rights inferred.",
     "printedPagination": "Original Missale Romanum printed Arabic-numbered pages, NOT 2019 July PDF numbering.",
-    "imageInspection": "Direct page image reviewed at stated source image URL; limited visually located extracts, not line-by-line diplomatic collation."
+    "imageInspection": "Direct page image reviewed at stated source image URL; limited visually located extracts, not line-by-line diplomatic collation.",
+    "goodFridaySolemnPrayers": "Original printed leaves pp. 167–175; image readings distinguish the 1962 text, with specific 2008 alternative retained separately."
   },
   "ancestor": {
     "B04": "data/mass/independent-1962-holy-week-b04.v1.json",
@@ -281,6 +282,102 @@
       "evidenceClass": "visually-observed-rubrical-structure",
       "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
       "note": "Font blessing source is lengthy; do not certify its full words from a single page."
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_POPE",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 168,
+      "scanId": 250,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/250.png",
+      "reading": "Oremus et pro beatissimo Papa nostro N",
+      "runtimePath": "friday.solemnPrayers[1].intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_ORDERS",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 169,
+      "scanId": 251,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/251.png",
+      "reading": "Oremus et pro omnibus Episcopis Presbyteris Diaconibus",
+      "runtimePath": "friday.solemnPrayers[2].intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_MAGISTRATES",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 170,
+      "scanId": 252,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/252.png",
+      "reading": "Oremus et pro omnibus res publicas moderantibus",
+      "runtimePath": "friday.solemnPrayers[3].intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_CATECHUMENS",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 171,
+      "scanId": 253,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/253.png",
+      "reading": "Oremus et pro catechumenis nostris",
+      "runtimePath": "friday.solemnPrayers[4].intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_CHURCH_UNITY",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 173,
+      "scanId": 255,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/255.png",
+      "reading": "Oremus et pro haereticis et schismaticis",
+      "runtimePath": "friday.solemnPrayers[6].intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
+    },
+    {
+      "id": "SOLEMN_PRAYER_1962_FOR_JEWS",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 173,
+      "scanId": 255,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/255.png",
+      "reading": "Oremus et pro Iudaeis ut Deus et Dominus noster auferat velamen de cordibus eorum",
+      "runtimePath": "friday.solemnPrayers[7].variants.PRINTED_1962.intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": "Original printed 1962 form only. Later 2008 Holy See alternative is a separate textual authority and must NOT be used to certify this image witness."
+    },
+    {
+      "id": "SOLEMN_PRAYER_1962_FOR_JEWS_COLLECT",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 174,
+      "scanId": 256,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/256.png",
+      "reading": "Omnipotens sempiterne Deus qui Iudaeos etiam a tua misericordia non repellis",
+      "runtimePath": "friday.solemnPrayers[7].variants.PRINTED_1962.prayer",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": "Original printed 1962 form only. Later 2008 Holy See alternative is a separate textual authority and must NOT be used to certify this image witness."
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_NONCHRISTIANS",
+      "rite": "GOOD_FRIDAY_1962",
+      "printedPage": 174,
+      "scanId": 256,
+      "imageUrl": "https://gregobase.selapa.net/sources/42/256.png",
+      "reading": "Oremus et pro paganis ut Deus omnipotens auferat iniquitatem a cordibus eorum",
+      "runtimePath": "friday.solemnPrayers[8].intention",
+      "evidenceClass": "visually-observed-Latin-phrase",
+      "comparisonStatus": "IMAGE_OBSERVED__RUNTIME_COMPARISON_PENDING",
+      "note": null
     }
   ],
   "certification": {
@@ -292,7 +389,8 @@
       "speaker/chant role attribution",
       "approved French/English translations",
       "optional sacrament ceremonies",
-      "all 1962 Calendar dates"
+      "all 1962 Calendar dates",
+      "full wording of each Good Friday Solemn Prayer; only registered beginnings have been visually collated"
     ],
     "B05OpenItemsUnchanged": 17,
     "prohibition": "No Holy Week textual-completion or functional-release certification from image incipit agreements; keep already identified omissions explicitly open."
