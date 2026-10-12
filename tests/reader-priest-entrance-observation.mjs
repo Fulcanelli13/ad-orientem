@@ -21,6 +21,8 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   assert.equal(observedProjected.iconKey,"genuflect");
   assert.equal(observedProjected.cueId,null);
   assert.equal(observedProjected.owner,"OBSERVED_PREMASS_PRIEST");
+  assert.equal(projectObservedPreMassPriestAction({state:controller.project(),preMassVisualWindowOpen:false}),null,
+    "pre-Mass action reappeared after first native cue was already seen");
   assert.equal(projectObservedPreMassPriestAction({state:controller.project(),activeCueId:"AO.SM.C0001"}),null,
     "priest entrance gesture incorrectly continued at In nomine");
 
