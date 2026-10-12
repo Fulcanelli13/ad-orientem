@@ -192,58 +192,32 @@ try{
    await page.screenshot({path:resolve(captures,"rosary-active-after-start-"+width+".png"),
      fullPage:false,animations:"disabled"});
 
-   const clickDebug=await page.evaluate(()=>{
-     const node=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
-     const summary=node.querySelector(":scope > summary");
-     const events=[];
-     const oldStop=Event.prototype.stopImmediatePropagation;
-     Event.prototype.stopImmediatePropagation=function(...args){
-       if(this.type==="click"&&this.target?.closest?.(".aoRosaryActiveOptions"))
-          events.push({kind:"stopped",stack:new Error("STOP CAPTURE").stack.slice(0,1200)});
-       return oldStop.apply(this,args);
-     };
-     const oldPrevent=Event.prototype.preventDefault;
-     Event.prototype.preventDefault=function(...args){
-       if(this.type==="click"&&this.target?.closest?.(".aoRosaryActiveOptions"))
-          events.push({kind:"prevented",stack:new Error("PREVENT").stack.slice(0,900)});
-       return oldPrevent.apply(this,args);
-     };
-     node.addEventListener("click",e=>events.push({kind:"click",tag:e.target.tagName,open:node.open}),true);
-     node.addEventListener("toggle",()=>events.push({kind:"toggle",open:node.open}));
-     const box=summary.getBoundingClientRect();
-     const ancestorInfo=[...function*(n){while(n&&n!==document){yield {
-       tag:n.tagName,id:n.id,cls:String(n.className||"").slice(0,70),
-       inert:n.inert,attrInert:n.hasAttribute?.("inert"),
-       disabled:n.disabled,
-       detailClosed:n.tagName==="DETAILS"&&!n.open
-     };n=n.parentElement}}(summary)].slice(0,10);
-     const before={open:node.open,connected:node.isConnected,html:summary.outerHTML.slice(0,280),
-       ancestorInfo,hit:document.elementFromPoint(box.x+box.width/2,box.y+box.height/2)?.outerHTML?.slice(0,180)};
-     summary.click();
-     const summaryClickIsNative=summary.click===HTMLElement.prototype.click;
-     const afterClick={open:node.open,connected:node.isConnected};
-     const synthetic=new MouseEvent("click",{bubbles:true,cancelable:true,detail:1,clientX:box.x+3,clientY:box.y+3});
-     const dispatchResult=summary.dispatchEvent(synthetic);
-     const afterDispatch={open:node.open,dispatchResult,defaultPrevented:synthetic.defaultPrevented};
-     Event.prototype.stopImmediatePropagation=oldStop;
-     Event.prototype.preventDefault=oldPrevent;
-     return {before,afterClick,afterDispatch,summaryClickIsNative,events};
-   });
-   const clickSettled=await page.evaluate(async()=>{
-     await new Promise(ok=>setTimeout(ok,120));
-     const n=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
-     return {exists:!!n,open:n?.open,text:n?.querySelector(":scope>summary")?.textContent,
-       count:document.querySelectorAll("#aoPrayerBookRoot.open .aoRosaryActiveOptions").length,
-       main:document.querySelector("#aoPrayerBookRoot.open")?.dataset?.aoRosaryActiveRoot};
-   });
-   console.log("ACTIVE OPTIONS DEBUG "+width+" "+JSON.stringify({clickDebug,clickSettled}));
-   assert.equal(clickSettled.open,true,"Active settings did not expand");
+   // A shell telemetry collision once caused the legacy bead dispatcher
+   // to cancel every descendant click before it reached the real control.
+   const shellData=await player.locator(".pbShell").evaluate(shell=>({
+     buttonMarker:shell.hasAttribute("data-ao-rosary-bead"),
+     current:shell.dataset.aoRosaryCurrentBead,
+     actualBeads:shell.querySelectorAll(".lab-bead-stage [data-ao-rosary-bead]").length
+   }));
+   assert.equal(shellData.buttonMarker,false,"Shell is masquerading as a clickable bead");
+   assert.ok(shellData.current!==undefined,"Canonical shell bead telemetry was lost");
+   assert.ok(shellData.actualBeads>0,"True bead buttons disappeared");
+   await activeOptions.locator(":scope > summary").click();
+   await page.waitForFunction(()=>document.querySelector(
+     "#aoPrayerBookRoot.open .aoRosaryActiveOptions")?.open===true,null,{timeout:10000});
+   assert.equal(await activeOptions.evaluate(x=>x.open),true,"Active settings did not expand");
    assert.equal(await activeOptions.locator('[data-p435930-rosary-depth]').count(),2,
      "Simple/Guided disappeared from original reader");
    assert.ok(await activeOptions.locator('[data-p435930-recitation]').count()>=2,
      "Individual/Group disappeared from original reader");
    assert.equal(await activeOptions.locator(".aoRosaryGuideSection a[href^='https://']").count(),6,
      "Guide source links missing from active reader");
+   const liveGuide=activeOptions.locator(".aoRosaryGuide");
+   await liveGuide.locator(":scope > summary").click();
+   assert.equal(await liveGuide.evaluate(el=>el.open),true,
+     "Legacy bead interception still prevents opening the active Guide");
+   await liveGuide.locator(":scope > summary").click();
+
    await activeOptions.locator('[data-p435930-rosary-depth="guided"]').click();
    await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveOptionsState")?.textContent?.includes("Guided"),null,{timeout:10000});
    assert.equal(await activeOptions.evaluate(x=>x.open),true,
