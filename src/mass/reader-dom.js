@@ -464,7 +464,7 @@ button.ao-schola-control{cursor:pointer}
   position:absolute;top:calc(100% + 14px);white-space:nowrap;font:600 10px/1.2 var(--ao-font-display,Cinzel,Georgia,serif);
   letter-spacing:.14em;text-transform:uppercase;color:rgba(238,235,217,.74)
 }
-@keyframes aoElevation{0%{opacity:0;transform:translateY(28px) scale(.72)}16%{opacity:1;transform:translateY(0) scale(1.03)}72%{opacity:1;transform:translateY(-5px) scale(1)}100%{opacity:0;transform:translateY(-16px) scale(.96)}}
+@keyframes aoElevation{0%{opacity:0;transform:translateY(28px) scale(.72)}16%{opacity:1;transform:translateY(0) scale(1.03)}72%{opacity:1;transform:translateY(-5px) scale(1)}100%{opacity:1;transform:translateY(-5px) scale(1)}}
 
 .ao-guide-popover{
   position:absolute;inset:0;z-index:35;background:rgba(1,4,2,.74);backdrop-filter:blur(7px);
@@ -2377,7 +2377,19 @@ export function createReaderDomAdapter({
       cinematic.dataset.kind=kind;
       setText(root,"cinematic-title",visible ? current.cinematic.title : null);
       setText(root,"cinematic-sub",visible ? current.cinematic.subtitle : null);
-      applyIcon(root,"cinematic",visible && kind==="ELEVATION" ? current.priestActionIconKey : null,iconResolver);
+      // The cinematic represents its *own* certified elevation cue, not a
+      // free-text heuristic over Low Mass action labels. Low's compound
+      // "genuflects, elevates ..." action has no one-to-one rail icon, but
+      // C0174 and C0181 do have exact frozen Host/chalice masters.
+      const elevationCue=visible && kind==="ELEVATION"
+        ? current.cinematic?.cueId : null;
+      const elevationKey=elevationCue==="AO.SM.C0174"
+        ? "priest_elevation"
+        : elevationCue==="AO.SM.C0181"
+          ? "priest_elevate_chalice_rich"
+          : null;
+      applyIcon(root,"cinematic",visible && kind==="ELEVATION"
+        ? (current.priestActionIconKey??elevationKey) : null,iconResolver);
     }
 
     const guideButton=root.querySelector('[data-role="guide-button"]');
