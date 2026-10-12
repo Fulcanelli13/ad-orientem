@@ -75,12 +75,12 @@ export function installSequentialDevotionalReader({
   const card=mount?.querySelector(".aoDevoCard");
   const body=card?.querySelector(".aoDevoCardScroll");
   if(!doc||!card||!body||!Array.isArray(chapters)||!chapters.length)return null;
-  if(!["stations","mercy","novena","library","daily","examen","benediction","adoration","confession","penitential","litany","sevenWords","fortyHours","meals","holyName","sacredHeart","communion","hymns","goodDeath"].includes(kind))throw new RangeError("Unexpected sequence owner");
+  if(!["stations","mercy","novena","library","daily","examen","benediction","adoration","confession","penitential","litany","sevenWords","fortyHours","meals","holyName","sacredHeart","communion","hymns","goodDeath","dyingCompanion"].includes(kind))throw new RangeError("Unexpected sequence owner");
   const index=Math.max(0,Math.min(chapters.length-1,Number(activeIndex)||0));
   const parent=kind==="stations"?mount.querySelector(".aoP435930StationRail"):
     kind==="mercy"?mount.querySelector(".aoMercyReader"):
     kind==="novena"?mount.querySelector(".aoN1Reader"):
-    ["daily","examen","meals","holyName","sacredHeart","communion","hymns","goodDeath"].includes(kind)?mount.querySelector(".aoTP381DonorBody"):
+    ["daily","examen","meals","holyName","sacredHeart","communion","hymns","goodDeath","dyingCompanion"].includes(kind)?mount.querySelector(".aoTP381DonorBody"):
     kind==="benediction"?mount.querySelector(".aoP435930BenedictionReader"):
     kind==="adoration"?mount.querySelector(".aoP435930AdorationReader"):
     kind==="confession"?mount.querySelector(".aoP435930ConfessionReader"):
@@ -217,7 +217,7 @@ export function installSequentialDevotionalReader({
     });
     observer.observe(body,{childList:true,subtree:true});
   }
-  if(["meals","holyName","sacredHeart","communion","hymns","goodDeath"].includes(kind))focus();
+  if(["meals","holyName","sacredHeart","communion","hymns","goodDeath","dyingCompanion"].includes(kind))focus();
   queue();
   return Object.freeze({
     schema:SEQUENTIAL_DEVOTIONAL_SCHEMA,kind,index,
