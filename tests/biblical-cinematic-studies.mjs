@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {buildBibleAtlas} from "../src/find/bible-atlas.js";
+import {approvedBibleSceneArtwork} from "../src/find/bible-scene-art-gate.js";
 import {
  validateCinematicStudies,validateCinematicCrosswalk,studyChapter,studyScene,studyStep,
  cinematicExactAtlasTarget,renderCinematicStudies
@@ -15,6 +16,13 @@ assert.equal(validateCinematicCrosswalk(source,stops),true,
 
 assert.deepEqual(source.chapters.map(c=>c.group).filter((g,i,a)=>i===0||g!==a[i-1]),["ABRAHAM","MOSES","CHRIST","PAUL"]);
 assert.equal(source.chapters.reduce((n,c)=>n+c.sceneIndices.length,0),181);
+assert.equal(new Set(source.scenes.map(s=>s.sceneKey)).size,181,
+ "all study scenes carry stable source identities separate from numbered display order");
+assert.equal(source.scenes[74].sceneKey,"biblical:scene:christ:074");
+const duplicateKey=structuredClone(source);
+duplicateKey.scenes[1].sceneKey=duplicateKey.scenes[0].sceneKey;
+assert.equal(validateCinematicStudies(duplicateKey),false,"duplicate study scene identity is prohibited");
+
 const counts=Object.fromEntries(["EXACT_REFERENCE","PASSAGE_OVERLAP_REVIEW_ONLY","NO_DIRECT_PASSAGE_MATCH"].map(k=>[k,source.scenes.filter(s=>s.status===k).length]));
 assert.deepEqual(counts,{EXACT_REFERENCE:65,PASSAGE_OVERLAP_REVIEW_ONLY:29,NO_DIRECT_PASSAGE_MATCH:87});
 const linked=source.scenes.filter(s=>cinematicExactAtlasTarget(s,stops)!==null);
@@ -46,6 +54,43 @@ assert.equal(studyScene(source,"DELIVERANCE",-1).index,25);
 assert.equal(studyStep(source,"PATRIARCHS",0,1),1);
 assert.equal(studyStep(source,"PATRIARCHS",0,-1),0);
 assert.equal(studyStep(source,"PATRIARCHS",24,1),24);
+
+const noArt=renderCinematicStudies(source,{language:"en",chapter:"MINISTRY",scene:74,atlasStops:stops});
+assert.doesNotMatch(noArt,/data-bible-scene-artwork=|<img\b/,
+ "research-only paintings must never enter the production study reader");
+const syntheticApproval={
+ owner:"SACRED_ART_CANONICAL",status:"PUBLICATION_APPROVED",
+ association:{status:"APPROVED",relationship:"EXACT_EPISODE",sceneKey:source.scenes[74].sceneKey,
+  reference:"John 2:13–22",eventKey:"biblical:event:jerusalem-temple-e3"},
+ artwork:{id:"museum-example-001",medium:"painting",title:"Synthetic test painting",
+  artist:"Example Artist",source:{rights:"CC0",objectUrl:"https://museum.example.org/object/1"},
+  review:{status:"APPROVED",artistic:"APPROVED",image:"PASS",crop:"PASS"},
+  image:{path:"assets/sacred-art/test-original.webp",width:3200,height:2900,
+   sha256:"a".repeat(64),colour:true,museumOriginal:true,frameFree:true,glareFree:true}}
+};
+assert.equal(approvedBibleSceneArtwork(source.scenes[74],syntheticApproval)?.id,"museum-example-001",
+ "synthetic fixture demonstrates the contract only, not an approved real painting");
+const artHtml=renderCinematicStudies(source,{language:"en",chapter:"MINISTRY",scene:74,atlasStops:stops,artSelection:syntheticApproval});
+assert.match(artHtml,/data-bible-scene-artwork="museum-example-001"/);
+assert.match(artHtml,/loading="lazy" decoding="async"/);
+for(const [name,change] of [
+ ["research candidate",x=>x.status="RESEARCH_CANDIDATES_ONLY"],
+ ["wrong biblical scene",x=>x.association.sceneKey="biblical:scene:christ:131"],
+ ["wrong Gospel episode",x=>x.association.reference="Mark 11:15–18"],
+ ["unapproved subject association",x=>x.association.relationship="GENERAL_CONTEXT"],
+ ["mismatched canonical event",x=>x.association.eventKey="biblical:event:christ-tomb-e2"],
+ ["unapproved crop",x=>x.artwork.review.crop="PENDING"],
+ ["non-original low resolution",x=>x.artwork.image.width=900],
+ ["non original image",x=>x.artwork.image.museumOriginal=false],
+ ["provisional external image",x=>x.artwork.image.path="https://example.org/thumb.jpg"],
+ ["unapproved rights",x=>x.artwork.source.rights="UNKNOWN"],
+ ["excluded artist",x=>x.artwork.artist="El Greco"]
+]){
+ const changed=structuredClone(syntheticApproval);change(changed);
+ assert.equal(approvedBibleSceneArtwork(source.scenes[74],changed),null,name);
+ assert.doesNotMatch(renderCinematicStudies(source,{language:"en",chapter:"MINISTRY",scene:74,atlasStops:stops,artSelection:changed}),/<img\b/,name);
+}
+
 const en=renderCinematicStudies(source,{language:"en",chapter:"PATRIARCHS",scene:21,atlasStops:stops});
 const fr=renderCinematicStudies(source,{language:"fr",chapter:"INCARNATION",scene:68,atlasStops:stops});
 const extra=renderCinematicStudies(source,{language:"en",chapter:"DELIVERANCE",scene:35,atlasStops:stops});
