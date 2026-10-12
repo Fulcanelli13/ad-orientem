@@ -6,6 +6,8 @@ import { createMassReaderModel } from "./reader-model.js";
 import {loadMandatumSource, createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
+import { projectCuratedOrdinaryLiveCards } from "./reader-live-curated-cards.js";
+import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
@@ -201,6 +203,7 @@ export function createCardTransitionTransientGuard(){
 
 export async function prepareNativeReaderPreview({
   prepared,
+  reviewCuratedCards=false,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
@@ -354,7 +357,20 @@ export async function prepareNativeReaderPreview({
     holyThursdayMandatumSource:mandatumSource,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  const presentationModel=projectSourceFirst48Presentation(model);
+  // The 65-card visual acceptance is explicitly opt-in, ordinary Sung only.
+  // Every structural special rite, Low/Missal mode and unsupported overlay
+  // retains the certified existing production projection.
+  const curatedEligible=reviewCuratedCards===true &&
+    model.totalCards===39 &&
+    String(model.corpusFamily)==="SUNG" &&
+    String(model.presentationMode)==="LIVE" &&
+    !preceding.length && !following.length &&
+    (plan?.overlayGraphs??[]).every(id=>id==="VOTIVE_PROPER");
+  const presentationModel=curatedEligible
+    ? projectCuratedOrdinaryLiveCards(model)
+    : projectSourceFirst48Presentation(model);
+  // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
+  if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
   const cueState=createReaderFormCueStateController({
@@ -412,7 +428,7 @@ export async function prepareNativeReaderPreview({
     : null;
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
-    prepared,data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
+    prepared,curatedEligible,data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
   });
@@ -421,6 +437,7 @@ export async function prepareNativeReaderPreview({
 export async function mountNativeReaderPreview({
   doc=globalThis.document,
   prepared,
+  reviewCuratedCards=false,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
@@ -462,8 +479,10 @@ export async function mountNativeReaderPreview({
   if(!doc?.body || !doc?.createElement) throw new TypeError("Document/body required");
 
   // Validate everything before adding a single preview node.
+  const reviewEnabled=reviewCuratedCards===true ||
+    /(?:^|[?&])aoLiveCards=65(?:&|$)/.test(String(doc?.defaultView?.location?.search??""));
   const ready=await prepareNativeReaderPreview({
-    prepared,presentationData,loadPresentationData,eventData,loadEventData,
+    prepared,reviewCuratedCards:reviewEnabled,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
     candlemasData,loadCandlemasData,rogationsData,loadRogationsData,
@@ -478,6 +497,7 @@ export async function mountNativeReaderPreview({
   const root=doc.createElement("section");
   root.id=ROOT_ID;
   root.setAttribute("aria-label","Ad Orientem Mass reader");
+  root.dataset.r17CuratedReview=String(ready.curatedEligible===true);
   root.dataset.r17TextOwner="R17_VERIFIED_CORPUS";
   root.dataset.r17CardOwner="R17_READER_MODEL";
   root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
@@ -1162,6 +1182,8 @@ export async function mountNativeReaderPreview({
       .flatMap(block=>block.units??[])
       .map(unit=>[unit.cue_id,unit.clock])
   );
+  let observedCuratedPriestEvent=null;
+  const priestEventIndex=new Map(ready.events.map(e=>[e.id,e]));
   let scheduled=false;
   let initialCardRender=true;
   let partCinematic=null;
@@ -1311,6 +1333,23 @@ export async function mountNativeReaderPreview({
     eventCinemaTimer=later(()=>{eventCinematic=null;eventCinemaTimer=null;queue();},next.durationMs??1350);
   }
 
+  function currentObservedCuratedPriestEvent(){
+    if(!ready.curatedEligible || !readerModel?.curatedPresentationReview ||
+       !observedCuratedPriestEvent || !current)return null;
+    return projectObservedOrdinaryPriestEvent({
+      observedEventId:observedCuratedPriestEvent.eventId,
+      independentlyObserved:true,
+      form:prepared?.session?.resolvedMass?.form,
+      conditions:[...(ready.cueState.conditions??[]),...observedCuratedPriestEvent.conditions],
+      sourceSectionId:current.sourceSectionId??current.sectionId,
+      eventIndex:priestEventIndex,cueController:ready.cueState,
+      observedActor:observedCuratedPriestEvent.observedActor??null,
+      observedDelivery:observedCuratedPriestEvent.observedDelivery??null,
+      observedPosition:observedCuratedPriestEvent.observedPosition??null,
+      observedAction:observedCuratedPriestEvent.observedAction??null,
+    });
+  }
+
   function projectedState(){
     const legacy=typeof readLegacyActive==="function"
       ? legacyReaderStateSnapshot(doc,{postureOnly:ready.cueState.supported})
@@ -1332,6 +1371,7 @@ export async function mountNativeReaderPreview({
     // response, action, position, voice and posture source may project. The
     // eventAllowed flag only controls legacy event-state fallback above.
     const cueProjection=activeCueId ? ready.cueState.project(activeCueId) : null;
+    const observedPriest=currentObservedCuratedPriestEvent();
     const gestureProfile=customaryPrefs.gestureProfile;
     const owned=resolveCueOwnedChannels({
       cueControllerSupported:ready.cueState.supported,
@@ -1378,12 +1418,13 @@ export async function mountNativeReaderPreview({
     const response=transient.response;
     const bell=transient.bell;
     const cinematic=partCinematic ?? transient.cinematic;
-    const {priestVoice}=owned;
-    const priestPosition=focusedFaithful?.conditionalSedilia
+    const priestVoice=observedPriest?.priestVoice ?? owned.priestVoice;
+    const priestPosition=observedPriest?.priestPosition ??
+      (focusedFaithful?.conditionalSedilia
       ? Object.freeze({station:"SEDILIA",label:"AT SEDILIA",
           value:"SEDILIA",owner:"CUSTOMARY_SEDILIA_WITNESS",
           sourceCueId:focusedFaithful.priestStateWitness})
-      : owned.priestPosition;
+      : owned.priestPosition);
 
     // Posture ownership is profile-aware. FOLLOW_CONGREGATION remains an
     // observed rollback channel; sourced/local profiles never silently inherit it.
@@ -1423,7 +1464,7 @@ export async function mountNativeReaderPreview({
       state:priestEntrance,activeCueId,
       preMassVisualWindowOpen:!enteredCanonicalCueSequence && current?.sequence===1
     });
-    const priestAction=preMassPriestAction??priestLane.priestAction;
+    const priestAction=observedPriest?.priestAction??preMassPriestAction??priestLane.priestAction;
     const ownership=Object.freeze({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
@@ -1441,7 +1482,9 @@ export async function mountNativeReaderPreview({
       posture:focusedFaithful ? focusedFaithful.source : postureResolved.owner,
       schola:scholaProjection.ownership,
       priestEntrance:priestEntrance.sourceOwner,
-      priestAction:preMassPriestAction
+      priestVoice:observedPriest?.priestVoice ? "EXPLICIT_SOURCE_PRIEST_EVENT" : owned.ownership.priestVoice,
+      priestPosition:observedPriest?.priestPosition ? "EXPLICIT_SOURCE_PRIEST_EVENT" : owned.ownership.priestPosition,
+      priestAction:observedPriest?.priestAction ? "EXPLICIT_SOURCE_PRIEST_EVENT" : preMassPriestAction
         ? "OBSERVED_PREMASS_PRIEST"
         : priestLane.owner==="INDEPENDENT_PRIEST_OBSERVATION"
         ? "INDEPENDENT_PRIEST_OBSERVATION"
@@ -1517,6 +1560,8 @@ export async function mountNativeReaderPreview({
       }),
       ...iconKeys,
       nativeEventId:eventState?.canonicalEventId??null,
+      independentlyObservedPriestEvent:observedPriest?.eventId??null,
+      sourceOnlyPriestCue:observedPriest?.cueId??null,
       nativeCueId:activeCueId,
       cueProjectionSupported:cueNative,
       cueProjectionReason:cueProjection?.reason??null,
@@ -1592,7 +1637,9 @@ export async function mountNativeReaderPreview({
 
 
   function introitOnlyCard(){
-    const card=readerModel.cardBySequence(1);
+    // Curated Introit is a dedicated source block, not sequence 1.
+    const card=readerModel.cards.find(value=>
+      value.blocks?.some(block=>block.blockId==="AO.SM.B014"));
     if(!card)return null;
     const block=card.blocks?.find?.(value=>value.blockId==="AO.SM.B014");
     if(!block || block.firstParagraphIndex==null || !block.paragraphCount){
@@ -2086,8 +2133,22 @@ export async function mountNativeReaderPreview({
 
   function visibleCardAllowed(card){
     if(!card)return false;
+    // This prayer survived only as a local/older practice; its C0235-C0241
+    // source paragraphs remain auditable in the 65-card review, but are
+    // never inserted into the ordinary faithful's swipe path by default.
+    const isOptionalCommunionConfiteor=card.curatedPresentationReview===true &&
+      (card.blocks??[]).some(block=>block.blockId==="AO.SM.B077") &&
+      (card.blocks??[]).every(block=>["AO.SM.B077","AO.SM.B078","AO.SM.B079"].includes(block.blockId));
+    if(isOptionalCommunionConfiteor &&
+       prepared?.readerPreferences?.secondConfiteor!==true)return false;
     if(prepared?.session?.plan?.normalLastGospel===false && isLastGospelCard(card))return false;
     return Boolean(planAwareCard(card));
+  }
+
+  function visibleProgress(card){
+    const visible=readerModel.cards.filter(visibleCardAllowed);
+    const at=visible.findIndex(candidate=>candidate.sectionId===card?.sectionId);
+    return at<0 ? null : String(at+1)+" / "+String(visible.length);
   }
 
   function nextVisibleCard(from,direction){
@@ -2155,6 +2216,10 @@ export async function mountNativeReaderPreview({
     syncRiteChoice(null,null);
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
+    // Explicit priest-side state persists between Gloria/Credo subcards but
+    // must not leak into an unrelated source Mass section.
+    if(previous && (previous.sourceSectionId??previous.sectionId)!==
+       (card.sourceSectionId??card.sectionId))observedCuratedPriestEvent=null;
     // A direct section/sequence jump is navigation, not a liturgical
     // procession between adjacent cards. Preserve donor cinematics during
     // linear reading only; never mask a manually selected destination.
@@ -2170,7 +2235,7 @@ export async function mountNativeReaderPreview({
       root.dataset.r17NativeCue="unresolved";
     }
     current=card;
-    ready.scholaState.activateForCard(card.sourceSequence??card.guideSequence??card.sequence);
+    ready.scholaState.activateForCard(visibleCard);
     const state=projectedState();
     reader.renderMoment({
       id:visibleCard.sectionId,
@@ -2178,7 +2243,7 @@ export async function mountNativeReaderPreview({
       cardTitle:visibleCard.title,
       cardUpdate:true,
       paragraphs:visibleCard.paragraphs,
-      progress:visibleCard.sequence+" / "+readerModel.totalCards,
+      progress:visibleProgress(visibleCard),
       guide:guideForCurrent(visibleCard),
       ...state,
     });
@@ -2231,12 +2296,15 @@ export async function mountNativeReaderPreview({
   }
 
   function switchPresentationMode(nextMode){
+    // Mode switch invalidates the curated independent-event adapter.
+    observedCuratedPriestEvent=null;
     const anchor=captureReaderModeAnchor(current,{activeCueId});
     const desiredCue=anchor.cueId;
     const rebuilt=buildReaderModeModels({
       prepared:ready.prepared,
       data:ready.data,
       mode:nextMode,
+      reviewExpandedCards:ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
     });
     sourceModel=rebuilt.sourceModel;
     readerModel=rebuilt.presentationModel;
@@ -2257,7 +2325,7 @@ export async function mountNativeReaderPreview({
     observedPriestEvent=null;
     activeCueId=cueStillPresent ? desiredCue : null;
     if(activeCueId)transientGuard.resolveCue(activeCueId);
-    ready.scholaState.activateForCard(current.sourceSequence??current.guideSequence??current.sequence);
+    ready.scholaState.activateForCard(current);
 
     root.dataset.r17PresentationMode=rebuilt.mode;
     root.dataset.r17SourceModelCards=String(sourceModel.totalCards);
@@ -2315,7 +2383,7 @@ export async function mountNativeReaderPreview({
       id:current?.sectionId ?? "",
       sectionTitle:current?.title ?? "",
       cardUpdate:false,
-      progress:current ? current.sequence+" / "+readerModel.totalCards : null,
+      progress:current ? visibleProgress(current) : null,
       guide:guideForCurrent(current),
       ...state,
     });
@@ -2499,6 +2567,25 @@ export async function mountNativeReaderPreview({
     getCurrentCard:()=>inGenericProcession ? ready.genericProcessionController?.project?.().card??null : inHolyThursdayPost ? ready.holyThursdayPostController?.project?.().card??null : inCorpusChristi ? ready.corpusChristiController?.project?.().card??null : inRequiemAbsolution ? ready.requiemAbsolutionController?.project?.().card??null : inRogations ? ready.rogationsController?.project?.().card??null : inCandlemas ? ready.candlemasController?.project?.().card??null : inPalm ? ready.palmController?.project?.().card??null : inAsh ? ready.ashController?.project?.().card??null : inAsperges ? ready.aspergesController?.project?.().card??null : current,
     getNativeEventState:()=>globalThis.AO_R17_NATIVE_READER_STATE??null,
     getActiveCue:()=>activeCueId,
+    // Priest-mode adapter. A caller must independently observe a canonical
+    // MC event; swiping a card or changing Schola lyrics never calls this.
+    // Invalid/unmatched form, source section or conditional sedilia events
+    // fail closed. Production 48 and special rites do not accept events.
+    observePriestCeremonialEvent:(eventId,{
+      conditions=[],observedActor=null,observedDelivery=null,
+      observedPosition=null,observedAction=null,
+    }={})=>{
+      if(!ready.curatedEligible || !eventId || !Array.isArray(conditions)){
+        observedCuratedPriestEvent=null;queue();return false;
+      }
+      observedCuratedPriestEvent={eventId:String(eventId),conditions:[...conditions],
+        observedActor,observedDelivery,observedPosition,observedAction};
+      const matched=currentObservedCuratedPriestEvent();
+      if(!matched){observedCuratedPriestEvent=null;queue();return false;}
+      queue();return true;
+    },
+    clearObservedPriestEvent:()=>{observedCuratedPriestEvent=null;queue();return true;},
+    getObservedPriestEvent:()=>currentObservedCuratedPriestEvent(),
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
     getScholaState:()=>ready.scholaState.project(),
     getTransientState:()=>activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null),

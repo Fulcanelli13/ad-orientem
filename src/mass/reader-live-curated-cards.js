@@ -1,0 +1,240 @@
+import { ORDINARY_SUNG_SOURCE_ONLY_CUES } from "./reader-source-only-cues.js";
+// Curated LIVE prayer-card presentation: one card per meaningful moment,
+// not per donor block. All source paragraphs, cue IDs and events are preserved.
+// Opt-in review only: source-first production 48 remains the default.
+//
+// A "block" cut ends after the entire canonical block. A "cue" cut ends
+// after the specified exact paragraph, never in the middle of a cue.
+// Short speaker responses and gestures remain inside the prayer card.
+const GROUPS=Object.freeze({
+  "AO.CARD.001":Object.freeze({
+    titles:["At the Foot of the Altar · Opening and Psalm 42",
+      "Confiteor of the Celebrant","Confiteor of the Servers",
+      "Versicles and Ascent of the Altar","Introit"],
+    after:[{block:"B004"},{block:"B006"},{block:"B009"},{block:"B013"}],
+  }),
+  "AO.CARD.003":Object.freeze({
+    titles:["Gloria · The Celebrant's Intonation",
+      "Gloria · Praise and Supplication","Gloria · Doxology"],
+    after:[{cue:54},{cue:65}],
+  }),
+  "AO.CARD.007":Object.freeze({
+    titles:["Preparation for the Gospel","Proclamation of the Holy Gospel"],
+    after:[{block:"B023"}],
+  }),
+  "AO.CARD.009":Object.freeze({
+    titles:["Credo · The Celebrant's Intonation",
+      "Credo · The Father and the Son",
+      "Credo · Incarnation, Passion and Resurrection",
+      "Credo · The Holy Spirit, Church and Life Eternal"],
+    after:[{cue:90},{cue:94},{cue:98}],
+  }),
+  "AO.CARD.010":Object.freeze({
+    titles:["Offertory · Invitation and Antiphon",
+      "Offertory · Offering of the Bread and Chalice",
+      "Offertory · Humility and Invocation",
+      "Offertory · Incensation",
+      "Offertory · Lavabo and Offering to the Trinity"],
+    after:[{block:"B030"},{block:"B033"},{block:"B035"},{block:"B036"}],
+  }),
+  "AO.CARD.011":Object.freeze({
+    titles:["Orate, fratres · Prayer and Response",
+      "Secret Prayer and Conclusion"],
+    after:[{block:"B039"}],
+  }),
+  "AO.CARD.013":Object.freeze({
+    titles:["Sanctus","Benedictus"],
+    after:[{cue:147}],
+  }),
+  "AO.CANON.06":Object.freeze({
+    titles:["Consecration of the Host · Preparation",
+      "Words of Consecration and Elevation · Host"],
+    after:[{cue:172}],
+  }),
+  "AO.CANON.07":Object.freeze({
+    titles:["Consecration of the Chalice · Preparation",
+      "Words of Consecration and Elevation · Chalice"],
+    after:[{cue:178}],
+  }),
+  "AO.CARD.020":Object.freeze({
+    titles:["Libera nos · Prayer and Conclusion",
+      "Pax Domini","Commingling of the Sacred Species"],
+    after:[{block:"B065"},{block:"B066"}],
+  }),
+  "AO.CARD.022":Object.freeze({
+    titles:["Prayers before the Priest's Communion",
+      "Domine, non sum dignus · Celebrant"],
+    after:[{block:"B072"}],
+  }),
+  "AO.CARD.023":Object.freeze({
+    titles:["The Priest receives the Sacred Host",
+      "The Priest receives the Precious Blood"],
+    after:[{block:"B075"}],
+  }),
+  "AO.CARD.024":Object.freeze({
+    titles:["Second Confiteor · Optional Local Custom",
+      "Ecce Agnus Dei · Preparation of the Faithful"],
+    after:[{block:"B079"}],
+  }),
+  "AO.CARD.026":Object.freeze({
+    titles:["Ablutions","Communion Antiphon"],
+    after:[{block:"B084"}],
+  }),
+  "AO.CARD.029":Object.freeze({
+    titles:["Placeat tibi · Closing Prayer","Final Blessing"],
+    after:[{block:"B091"}],
+  }),
+  "AO.CARD.030":Object.freeze({
+    titles:["Last Gospel · Prologue of St John",
+      "Last Gospel · The Word Made Flesh"],
+    after:[{cue:272}],
+  }),
+});
+
+const cueId=n=>"AO.SM.C"+String(n).padStart(4,"0");
+const blockId=id=>"AO.SM."+id;
+
+function freezeCard(card){
+  return Object.freeze({...card,
+    paragraphs:Object.freeze([...(card.paragraphs??[])]),
+    blocks:Object.freeze([...(card.blocks??[])]),
+    eventIds:Object.freeze([...(card.eventIds??[])]),
+    sourceEventIds:Object.freeze([...(card.sourceEventIds??[])])
+  });
+}
+function sourceId(card){return String(card.sectionId);}
+function canonicalSourceId(card){return String(card.sourceSectionId??card.sectionId);}
+function boundaryIndex(card,marker){
+  if(marker.cue!=null){
+    const target=cueId(marker.cue);
+    const matches=card.paragraphs.map((p,i)=>
+      (p.sourceCueIds??[]).includes(target)?i:null).filter(i=>i!==null);
+    if(matches.length!==1)throw new Error(sourceId(card)+": expected one paragraph for "+target);
+    return matches[0];
+  }
+  const id=blockId(marker.block);
+  const matches=(card.blocks??[]).filter(b=>b.blockId===id);
+  if(matches.length!==1)throw new Error(sourceId(card)+": expected one source block "+id);
+  const b=matches[0];
+  if(b.firstParagraphIndex==null||!b.paragraphCount)
+    throw new Error(sourceId(card)+": proposed cut has no prayer paragraph "+id);
+  return b.firstParagraphIndex+b.paragraphCount-1;
+}
+function blocksInRange(card,first,last){
+  const included=[];
+  for(const meta of card.blocks??[]){
+    if(meta.firstParagraphIndex==null||!meta.paragraphCount){
+      // Editorially blank placeholders stay in the nearest following
+      // section, never inventing a display paragraph or ritual event.
+      const next=(card.blocks??[]).find(x=>x.firstParagraphIndex!=null&&
+        (card.blocks??[]).indexOf(x)>(card.blocks??[]).indexOf(meta));
+      const position=next?.firstParagraphIndex??card.paragraphs.length-1;
+      if(position>=first&&position<=last){
+        included.push({...meta,firstParagraphIndex:null,paragraphCount:0});
+      }
+      continue;
+    }
+    const start=meta.firstParagraphIndex;
+    const end=start+meta.paragraphCount-1;
+    if(end<first||start>last)continue;
+    const overlapStart=Math.max(start,first);
+    const overlapEnd=Math.min(end,last);
+    included.push({...meta,firstParagraphIndex:overlapStart-first,
+      paragraphCount:overlapEnd-overlapStart+1});
+  }
+  return included;
+}
+function curated(card){
+  const spec=GROUPS[sourceId(card)];
+  if(!spec)return [Object.freeze({title:card.title,paragraphs:card.paragraphs,
+    blocks:card.blocks,ordinal:1})];
+  if(spec.titles.length!==spec.after.length+1)throw new Error(sourceId(card)+": bad card specification");
+  const ends=spec.after.map(cut=>boundaryIndex(card,cut));
+  ends.push(card.paragraphs.length-1);
+  let previous=-1;
+  return ends.map((last,i)=>{
+    if(last<=previous)throw new Error(sourceId(card)+": empty or reordered curated prayer group "+i);
+    const first=previous+1;
+    const paragraphs=card.paragraphs.slice(first,last+1);
+    const blocks=blocksInRange(card,first,last);
+    if(!paragraphs.length)throw new Error(sourceId(card)+": empty curated LIVE card");
+    previous=last;
+    return Object.freeze({title:spec.titles[i],paragraphs,blocks,ordinal:i+1});
+  });
+}
+
+export function projectCuratedOrdinaryLiveCards(model){
+  if(!model||!Array.isArray(model.cards))throw new TypeError("source-first LIVE model required");
+  if(String(model.presentationMode).toUpperCase()!=="LIVE"||
+     String(model.corpusFamily).toUpperCase()!=="SUNG")return model;
+  if(!String(model.structureOwner??"").includes("SOURCE_FIRST"))
+    throw new Error("Curated LIVE requires source-first authority");
+  // Special-day ownership is not interchangeable with the plain 39 steps.
+  // Leave all such forms untouched until individually validated.
+  if(model.totalCards!==39)return model;
+
+  const result=[];
+  const visited=new Set();
+  for(const sourceCard of model.cards){
+    const id=sourceId(sourceCard);
+    visited.add(id);
+    const chunks=sourceCard.paragraphs.length?curated(sourceCard):
+      [{title:sourceCard.title,paragraphs:[],blocks:sourceCard.blocks,ordinal:1}];
+    if(JSON.stringify(chunks.flatMap(chunk=>chunk.paragraphs.map(p=>p.id)))!==
+      JSON.stringify(sourceCard.paragraphs.map(p=>p.id)))
+      throw new Error(id+": card projection omitted or duplicated source paragraphs");
+    for(const chunk of chunks){
+      result.push(freezeCard({
+        ...sourceCard,
+        sectionId:"AO.LIVECURATED."+id.replace(/[^A-Za-z0-9.-]/g,"-")+"."+chunk.ordinal,
+        title:chunk.title,
+        sequence:result.length+1,
+        paragraphs:chunk.paragraphs,
+        blocks:chunk.blocks,
+        sourceSectionId:canonicalSourceId(sourceCard),
+        sourceSequence:sourceCard.sourceSequence??sourceCard.guideSequence??sourceCard.sequence,
+        guideSequence:sourceCard.guideSequence??sourceCard.sourceSequence??sourceCard.sequence,
+        sourceEventIds:[...(sourceCard.eventIds??[])],
+        eventIds:[],
+        curatedPresentationReview:true,
+        provenance:Object.freeze({
+          ...(sourceCard.provenance??{}),
+          productPresentation:"SOURCE_FIRST_CURATED_65_REVIEW",
+          canonicalTextMutation:false,
+        }),
+      }));
+    }
+  }
+  for(const key of Object.keys(GROUPS)){
+    if(!visited.has(key))throw new Error("Curated section not found: "+key);
+  }
+  if(result.length!==65)throw new Error("Ordinary curated LIVE expected 65 cards; found "+result.length);
+  const cards=Object.freeze(result);
+  const lookup=new Map(cards.map(c=>[c.sectionId,c]));
+  if(lookup.size!==cards.length)throw new Error("Curated cards have duplicate IDs");
+  const bySequence=n=>Number.isInteger(Number(n))?cards[Number(n)-1]??null:null;
+  const neighbor=(id,delta)=>{
+    const card=lookup.get(String(id));
+    return card?bySequence(card.sequence+delta):null;
+  };
+  return Object.freeze({
+    ...model,
+    schema:"ao-mass-reader-presentation-model-v1",
+    structureOwner:"SOURCE_FIRST_LIVE_CURATED_65_REVIEW",
+    sourceStructureOwner:model.structureOwner,
+    sourceModelTotalCards:model.totalCards,
+    productParity48:false,
+    cards,totalCards:cards.length,
+    cardBySequence:bySequence,
+    previousCard:id=>neighbor(id,-1),
+    nextCard:id=>neighbor(id,1),
+    cardForEvent:undefined,
+    sourceAuthorityModel:model,
+    // Source-only priest/Proper clock cues have NO prayer paragraph.
+    // Retain them as audit metadata, never as an inferred spoken line,
+    // movement, or automatic gesture/position/sound trigger.
+    sourceOnlyCueRegister:ORDINARY_SUNG_SOURCE_ONLY_CUES,
+    curatedPresentationReview:true,
+  });
+}
+export const CURATED_LIVE_GROUPS=GROUPS;

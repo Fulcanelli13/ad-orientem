@@ -2,6 +2,7 @@ import { projectResolvedReaderText } from "./reader-projection.js";
 import { composeProperReaderParagraphs } from "./proper-reader-composition.js";
 import { composeOrdinaryReaderParagraphs } from "./ordinary-reader-composition.js";
 import { applyCanonicalTextCorrection } from "./canonical-text-corrections.js";
+import { resolveOrdinarySpeaker, correctSungPreparatoryAmen, applySungSpeakerPrefix } from "./reader-speaker-roles.js";
 
 const EXPECTED = Object.freeze({
   LOW:Object.freeze({
@@ -120,6 +121,7 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
     .filter(unit=>Boolean(String(unit?.latin??"").trim() || String(unit?.english??"").trim()))
     .map(unit=>{
       const variant=ordinaryVariants?.[unit.cue_id]??null;
+      const speaker=resolveOrdinarySpeaker(unit,{form,blockId:block.Block_ID});
       let vernacular=variant ? (locale==="fr"?variant.fr:variant.en) : unit.english;
       if(locale==="fr"&&!variant){
         const sourced=String(frenchByCue?.[unit.cue_id]??"").trim();
@@ -132,16 +134,26 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
       // in translated presentation, without altering the corpus itself.
       if(["AO.SM.C0068","AO.SM.C0104"].includes(unit.cue_id) &&
         !String(vernacular??"").includes("✠"))vernacular=String(vernacular??"")+" ✠";
+      const latin=applySungSpeakerPrefix(unit.cue_id,correctSungPreparatoryAmen(unit.cue_id,variant?.lat??unit.latin,{form}),{form});
+      // The three opening Amens lost their speaker prefixes in the Sung
+      // donor. Restore them in both language surfaces, not the raw corpus.
+      if(speaker.prefix && /^Amen\.$/iu.test(String(vernacular??"").trim())){
+        vernacular=speaker.prefix+" "+String(vernacular).trim();
+      }
+      vernacular=applySungSpeakerPrefix(unit.cue_id,vernacular,{form});
       return {
         id:unit.cue_id,
-        kind:unitKind(unit),
-        latin:variant?.lat??unit.latin,
+        kind:speaker.kind??unitKind(unit),
+        latin,
         vernacular,
+        speakerRole:speaker.role,
+        speakerEvidence:speaker.evidence,
         sourceCueIds:Object.freeze([unit.cue_id]),
       };
     });
   const composed=composeOrdinaryReaderParagraphs(block,raw,{language:locale});
   const byCue=new Map((block.units??[]).map(u=>[u.cue_id,String(u.clock??"").toUpperCase()]));
+  const speakersByCue=new Map((block.units??[]).map(u=>[u.cue_id,resolveOrdinarySpeaker(u,{form,blockId:block.Block_ID})]));
   const sungForm=String(form??"").toUpperCase()==="SUNG";
   return Object.freeze(composed.map(p=>{
     const cues=p.sourceCueIds??[p.id];
@@ -151,7 +163,14 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
       (SUNG_PUBLIC_PRAYER_BLOCKS.has(block.Block_ID)&&clocks.includes("PUBLIC_TEXT"))
     );
     const isPrivate=clocks.includes("PRIEST_PRIVATE");
-    return Object.freeze({...p,displayLanguage:isSung?"LATIN":isPrivate?"VERNACULAR":null});
+    const speakers=cues.map(id=>speakersByCue.get(id)).filter(Boolean);
+    const agreed=speakers.length && speakers.every(x=>x.role===speakers[0].role);
+    return Object.freeze({
+      ...p,
+      speakerRole:agreed?speakers[0].role:"MIXED_OR_UNRESOLVED",
+      speakerEvidence:agreed?speakers.map(x=>x.evidence).join(";"):"MULTIPLE_OR_MISSING",
+      displayLanguage:isSung?"LATIN":isPrivate?"VERNACULAR":null,
+    });
   }));
 }
 

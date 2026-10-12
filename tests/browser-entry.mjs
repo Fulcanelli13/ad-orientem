@@ -264,6 +264,19 @@ assert.equal(nativeChoice.preview.kind,"native");
 assert.equal(nativeChoice.preview.hasLegacyDonor,false,"native production reader still received legacy-active donor");
 assert.equal(nativeChoice.fallbackReason,null);
 
+const defaultCurated=await mountR17Preview({
+  doc:{defaultView:{location:{search:""}}},prepared:{},iconAssets,
+  nativeMount:({reviewCuratedCards})=>({curated:reviewCuratedCards}),
+});
+assert.equal(defaultCurated.preview.curated,true,
+  "production entry must show the curated 64/65-card Ordinary Sung LIVE reader by default");
+const rollback48=await mountR17Preview({
+  doc:{defaultView:{location:{search:"?aoLiveCards=48"}}},prepared:{},iconAssets,
+  nativeMount:({reviewCuratedCards})=>({curated:reviewCuratedCards}),
+});
+assert.equal(rollback48.preview.curated,false,
+  "legacy source-first 48 projection must remain explicitly available for rollback");
+
 await assert.rejects(
   ()=>mountR17Preview({
     doc:{},
