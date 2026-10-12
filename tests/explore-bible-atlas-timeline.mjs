@@ -66,6 +66,14 @@ assert.equal(atlasMapItems(stops,by("PUBLIC","capernaum").index).length,2,"Johan
 assert.equal(atlasMapItems(stops,by("APOSTLES","rome").index).length,15,"apostolic sites progressively appear");
 assert.equal(atlasIndexForPin(stops,by("APOSTLES","rome").index,"atlas:corinth"),by("APOSTLES","corinth").index);
 assert.match(atlasDetail(by("INFANCY","jerusalem-temple"),"en"),/City-level reference/);
+assert.match(atlasDetail(by("INFANCY","nazareth"),"en"),/Settlement marker only/);
+assert.match(atlasDetail(by("ISRAEL","carmel"),"en"),/Mountain-region context only/);
+assert.match(atlasDetail(by("PUBLIC","bethesda"),"en"),/Site-level location is provisional/);
+assert.match(atlasDetail(by("INFANCY","bethlehem"),"en"),/Traditional site/);
+assert.match(atlasDetail(by("PUBLIC","bethesda"),"fr"),/Localisation du site provisoire/);
+assert.deepEqual(new Set(Object.values(ATLAS_GEO).map(g=>g.kind)),
+ new Set(["city_context","traditional","settlement","mountain_region","site"]),
+ "all known source-confidence classes have an explicit UI qualification");
 assert.match(atlasDetail(by("EXODUS","sinai"),"fr"),/repère/);
 assert.match(atlasDetail(by("APOSTLES","rome"),"en"),/data-ao-scripture-context="Acts 28:16–31"/);
 const capIdx=by("PUBLIC","capernaum").index;
