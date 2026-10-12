@@ -958,7 +958,11 @@ function decorateRosaryExact(r){
  shell.dataset.aoRosaryKind=String(info.step?.kind||'');
  shell.dataset.aoRosaryKey=String(info.step?.key||'');
  shell.dataset.aoRosaryPhase=String(info.step?.phase||'');
- shell.dataset.aoRosaryBead=String(Number(info.step?.bead||0));
+ // This is shell *state*, not a tappable bead. The historical donor's
+ // click dispatcher reserves [data-ao-rosary-bead] for actual bead buttons;
+ // reusing it on the shell swallowed every descendant click via preventDefault.
+ shell.removeAttribute('data-ao-rosary-bead');
+ shell.dataset.aoRosaryCurrentBead=String(Number(info.step?.bead||0));
  shell.dataset.aoRosaryCue=info.step?.cue?'true':'false';
  shell.dataset.aoRosaryFinalCross=info.step?.finalCross?'true':'false';
  r.querySelectorAll('.rosary-decade-bar-v15[data-ao-exact-donor-progress]').forEach(node=>node.remove());
