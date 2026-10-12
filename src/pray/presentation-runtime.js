@@ -1583,6 +1583,15 @@ function renderRosaryMethods(){
   </div>
  </main>`;
 }
+// Keep customization visible and keyboard focus on the same native control
+// when the chooser rerenders after a method, decade or reading change.
+function refreshRosaryChoiceFocus(attribute,value){
+ render();
+ queueMicrotask(()=>{
+  const host=mount(),node=host?.querySelector?.('['+attribute+'="'+value+'"]');
+  node?.focus?.({preventScroll:true});
+ });
+}
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
@@ -1639,9 +1648,9 @@ function onClick(e){
   queueMicrotask(()=>mount()?.querySelector?.('[data-p435930-rosary-customize]')?.focus?.({preventScroll:true}));
   return;
  }
- if(b.hasAttribute('data-p435930-rosary-choose')){const id=b.dataset.p435930RosaryChoose;if(!['ordinary','dominican','montfort','montfort_short','scriptural'].includes(id))return;ROSARY_CHOOSER.method=id;if(id!=='ordinary')ROSARY_CHOOSER.decades=5;if(id==='scriptural')ROSARY_CHOOSER.guide='guided';return render()}
- if(b.hasAttribute('data-p435930-rosary-decades')){const n=Number(b.dataset.p435930RosaryDecades);if(![5,15].includes(n)||n===15&&ROSARY_CHOOSER.method!=='ordinary')return;ROSARY_CHOOSER.decades=n;return render()}
- if(b.hasAttribute('data-p435930-rosary-guidance')){const mode=b.dataset.p435930RosaryGuidance;if(!['simple','guided'].includes(mode)||ROSARY_CHOOSER.method==='scriptural'&&mode==='simple')return;ROSARY_CHOOSER.guide=mode;return render()}
+ if(b.hasAttribute('data-p435930-rosary-choose')){const id=b.dataset.p435930RosaryChoose;if(!['ordinary','dominican','montfort','montfort_short','scriptural'].includes(id))return;ROSARY_CHOOSER.method=id;if(id!=='ordinary')ROSARY_CHOOSER.decades=5;if(id==='scriptural')ROSARY_CHOOSER.guide='guided';return refreshRosaryChoiceFocus('data-p435930-rosary-choose',id)}
+ if(b.hasAttribute('data-p435930-rosary-decades')){const n=Number(b.dataset.p435930RosaryDecades);if(![5,15].includes(n)||n===15&&ROSARY_CHOOSER.method!=='ordinary')return;ROSARY_CHOOSER.decades=n;return refreshRosaryChoiceFocus('data-p435930-rosary-decades',String(n))}
+ if(b.hasAttribute('data-p435930-rosary-guidance')){const mode=b.dataset.p435930RosaryGuidance;if(!['simple','guided'].includes(mode)||ROSARY_CHOOSER.method==='scriptural'&&mode==='simple')return;ROSARY_CHOOSER.guide=mode;return refreshRosaryChoiceFocus('data-p435930-rosary-guidance',mode)}
  if(b.hasAttribute('data-p435930-rosary-begin')){S.rosary.mode=ROSARY_CHOOSER.guide;save();return ROSARY_CHOOSER.method==='ordinary'&&ROSARY_CHOOSER.decades===15?launchFifteenRosary():launchTraditionalRosaryMethod(ROSARY_CHOOSER.method)}
  if(b.hasAttribute('data-p435930-rosary-original'))return launchTraditionalRosaryMethod('ordinary');
  if(b.hasAttribute('data-p435930-rosary-method-launch'))return launchTraditionalRosaryMethod(b.dataset.p435930RosaryMethodLaunch);
