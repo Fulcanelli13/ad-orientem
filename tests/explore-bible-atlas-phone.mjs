@@ -31,7 +31,7 @@ try{
  await page.waitForSelector('[data-ao-app-surface="find"]',{state:"visible",timeout:30000});
  await page.locator('[data-ao-app-surface="find"]').tap();
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready",null,{timeout:60000});
- await page.locator("#ao-find-modular-root .aoHeritageMore summary").tap({timeout:15000});
+ await page.locator("#ao-find-modular-root details.aoHeritageMore > summary").tap({timeout:15000});
  await page.locator("#ao-find-modular-root .aoHeritageMore[open] [data-bible-atlas-open]").waitFor({state:"visible",timeout:15000});
  // Wait past the swipe guard's 280ms suppression window after the Browse reveal.
  await page.waitForTimeout(360);
