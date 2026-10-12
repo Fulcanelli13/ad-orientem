@@ -1,0 +1,932 @@
+{
+  "schema": "AO_SACRED_ART_RECOVERED_ORIGINALS_CROSS_MODULE_SELECTION_PROPOSALS_V1",
+  "dated": "2026-10-13",
+  "branch": "platform/885-sacred-art-candidates",
+  "ownerPR": 887,
+  "sourceImages": [
+    "data/calendar/sacred-art-acquired-exact-visual-review-20261012.v1.json",
+    "data/calendar/sacred-art-acquired-second-image-batch-20261012.v1.json"
+  ],
+  "sourceResearch": "data/calendar/sacred-art-134-existing-originals-reuse-20261012.v2.json",
+  "sourceUserSelections": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+  "immutableUserSelectedSubjects": 101,
+  "rules": [
+    "Preserve 101 current selected subjects; historical 35 acquired choices not silently discarded",
+    "Prefer existing source original once per image hash across calendar/devotions/Bible, not cloned per module",
+    "Bible Theatre lives in another pipeline: do not invent numerical event identifiers; scripture references require event ID reconciliation",
+    "1912? No: 1962 DayResolver calendar selects contextual use only when liturgical identity / appointed Gospel warrants it",
+    "An Emmaus supper scene is not the road scene; a Flight rest scene is not exact departure; Christ and Sacred Heart medallion differs from Host Exposition",
+    "Exclusions El Greco and Fra Angelico respected in new shortlist",
+    "No new downloads, user approvals, crop approvals, or publishing"
+  ],
+  "summary": {
+    "outstandingSubjects": 134,
+    "withAcquiredSourceResearchLead": 27,
+    "visuallyAssessedFrom50": 45,
+    "exactImageVisualPending": 5,
+    "priorityArtworksFromPreviouslyReviewed": 12,
+    "explicitSubjectSelectionsRecommendedByAssistant": 10,
+    "distinctOutstandingSubjectsWithEditorialRecommendations": 11,
+    "distinctPhysicalSourceImagesInProposals": 13,
+    "historicalSelectedArtworksReused": 3,
+    "existingUserSelectionsModified": 0,
+    "actualPublishing": 0
+  },
+  "originalProposals": [
+    {
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "subjectCategory": "Calendar saints",
+      "artworkId": "met-437970",
+      "originalSha256": "79a8500d9cca058ac4c68160a6f401ba7920244a70bb3271072a017f22701d61",
+      "artist": "Francisco de Zurbarán",
+      "title": "Saint Benedict",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437970",
+      "relation": "EXACT_SAINT",
+      "proposedEditorialUse": "PREFERRED",
+      "justification": "Historical Benedictine saint image and feast page; no new choice automatically final.",
+      "scriptureReference": null,
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_APPLICABLE",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [
+        "person.benedict"
+      ],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "subjectCategory": "Calendar saints",
+      "artworkId": "nga-12209",
+      "originalSha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b",
+      "artist": "Francisco de Zurbarán",
+      "title": "Saint Lucy",
+      "sourceUrl": "https://www.nga.gov/artworks/12209-saint-lucy",
+      "relation": "EXACT_SAINT",
+      "proposedEditorialUse": "PREFERRED",
+      "justification": "Primary strong painterly Lucy portrait; one physical file shared across saint and feast contexts.",
+      "scriptureReference": null,
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_APPLICABLE",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "subjectCategory": "Calendar saints",
+      "artworkId": "nga-46147",
+      "originalSha256": "a29bad9c8b788982ea97609894d8d9cf6c9a6d5ec0d23ac4527956e17bcfd8c5",
+      "artist": "Veronese; Gabriele Caliari",
+      "title": "Saint Lucy and a Donor",
+      "sourceUrl": "https://www.nga.gov/artworks/46147-saint-lucy-and-a-donor",
+      "relation": "EXACT_SAINT_WITH_DONOR",
+      "proposedEditorialUse": "ALTERNATIVE",
+      "justification": "Substantial Renaissance colour; preserve saint and donor in full framing.",
+      "scriptureReference": null,
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_APPLICABLE",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "BIB-G08",
+      "subject": "Samaritan Woman",
+      "subjectCategory": "Bible Atlas",
+      "artworkId": "met-702752",
+      "originalSha256": "855b6176890e6dde6bac386b28aaea39470725df5ae74b1b234b7cd8f40ec910",
+      "artist": "Benedetto Luti",
+      "title": "Christ and the Woman of Samaria",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/702752",
+      "relation": "EXACT_NARRATIVE",
+      "proposedEditorialUse": "PREFERRED",
+      "justification": "Christ and the Samaritan Woman at Jacob's well, John 4:4–26.",
+      "scriptureReference": "John 4:4–26",
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_LINKED_PENDING_CURRENT_BIBLE_PIPELINE_ID",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "BIB-G22",
+      "subject": "Road to Emmaus",
+      "subjectCategory": "Bible Atlas",
+      "artworkId": "met-437871",
+      "originalSha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
+      "artist": "Diego Velázquez",
+      "title": "The Supper at Emmaus",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437871",
+      "relation": "NARRATIVE_SUBEVENT_EXACT",
+      "proposedEditorialUse": "PREFERRED",
+      "justification": "Supper recognition at Emmaus Luke 24:28–35, NOT walk on the road.",
+      "scriptureReference": "Luke 24:28–35",
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_LINKED_PENDING_CURRENT_BIBLE_PIPELINE_ID",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "BIB-G22",
+      "subject": "Road to Emmaus",
+      "subjectCategory": "Bible Atlas",
+      "artworkId": "cma-112626",
+      "originalSha256": "8e839b5a58229decac79b7f6d9458f6713043c0fc5c9ca6dbf565839d0746d48",
+      "artist": "Giovanni Battista Piazzetta",
+      "title": "The Supper at Emmaus",
+      "sourceUrl": "https://clevelandart.org/art/1931.245",
+      "relation": "NARRATIVE_SUBEVENT_EXACT",
+      "proposedEditorialUse": "ALTERNATIVE",
+      "justification": "Piazzetta renders the same supper/recognition subevent. One of two alternative images, not a second event.",
+      "scriptureReference": "Luke 24:28–35",
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_LINKED_PENDING_CURRENT_BIBLE_PIPELINE_ID",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "BIB-G06",
+      "subject": "Calling the Fishermen",
+      "subjectCategory": "Bible Atlas",
+      "artworkId": "nga-96688",
+      "originalSha256": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+      "artist": "Jacopo Bassano",
+      "title": "The Miraculous Draught of Fishes",
+      "sourceUrl": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+      "relation": "EXACT_NARRATIVE",
+      "proposedEditorialUse": "PREFERRED",
+      "justification": "Luke 5:1–11 miraculous catch and call of fishermen. Wide painting; object-fit contain.",
+      "scriptureReference": "Luke 5:1–11",
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_LINKED_PENDING_CURRENT_BIBLE_PIPELINE_ID",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "BIB-G03",
+      "subject": "Flight into Egypt",
+      "subjectCategory": "Bible Atlas",
+      "artworkId": "met-816629",
+      "originalSha256": "61630e0254184d4bf79c36a24d6cf1707b9aa60fbc308584436b7955fd0bd9c7",
+      "artist": "Carlo Maratti",
+      "title": "The Flight into Egypt",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/816629",
+      "relation": "EXACT_NARRATIVE",
+      "proposedEditorialUse": "PREFERRED",
+      "justification": "Flight into Egypt Matthew 2:13–15; whole scene without forced phone cover crop.",
+      "scriptureReference": "Matthew 2:13–15",
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_LINKED_PENDING_CURRENT_BIBLE_PIPELINE_ID",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "BIB-G03",
+      "subject": "Flight into Egypt",
+      "subjectCategory": "Bible Atlas",
+      "artworkId": "cma-143138",
+      "originalSha256": "36fcfd50c6b19294fb5f240fcf5ec9953d91a60c82baa7d9f535ee62c876bf5d",
+      "artist": "Guercino",
+      "title": "Rest on the Flight into Egypt",
+      "sourceUrl": "https://clevelandart.org/art/1967.123",
+      "relation": "RELATED_SUBEVENT",
+      "proposedEditorialUse": "RELATED_BACKUP",
+      "justification": "Rest on the Flight, not the initial departure; contextual Bible page only.",
+      "scriptureReference": "Matthew 2:13–15",
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_LINKED_PENDING_CURRENT_BIBLE_PIPELINE_ID",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "BIB-G04",
+      "subject": "Baptism of Christ",
+      "subjectCategory": "Bible Atlas",
+      "artworkId": "met-435755",
+      "originalSha256": "44529c53ef6f8d3643a391a9b49f28b01145fed9fd6fd2abe451265ff1b9e32a",
+      "artist": "Sébastien Bourdon",
+      "title": "The Baptism of Christ",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/435755",
+      "relation": "EXACT_NARRATIVE",
+      "proposedEditorialUse": "PREFERRED",
+      "justification": "Baptism of Christ Matthew 3:13–17; no automatic Church calendar feast claim without date-specific Propers.",
+      "scriptureReference": "Matthew 3:13–17",
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_LINKED_PENDING_CURRENT_BIBLE_PIPELINE_ID",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "DEV-10",
+      "subject": "Saint Joseph",
+      "subjectCategory": "Devotions",
+      "artworkId": "cma-160143",
+      "originalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "artist": "Gaetano Gandolfi",
+      "title": "The Holy Family",
+      "sourceUrl": "https://clevelandart.org/art/1998.10",
+      "relation": "NAMED_SAINT_IN_HOLY_FAMILY",
+      "proposedEditorialUse": "PREFERRED_SUBJECT_GROUP",
+      "justification": "Already a historically chosen image; suitable devotion to Joseph as part of Holy Family, not an isolated Joseph portrait.",
+      "scriptureReference": null,
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_APPLICABLE",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [
+        "calendar.saint-joseph"
+      ],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "subjectCategory": "Calendar saints",
+      "artworkId": "cma-160143",
+      "originalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "artist": "Gaetano Gandolfi",
+      "title": "The Holy Family",
+      "sourceUrl": "https://clevelandart.org/art/1998.10",
+      "relation": "NAMED_SAINT_IN_HOLY_FAMILY",
+      "proposedEditorialUse": "PREFERRED_SUBJECT_GROUP",
+      "justification": "Reuse same Gandolfi source for Saint Joseph calendar where a grouped Holy Family is appropriate.",
+      "scriptureReference": null,
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_APPLICABLE",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [
+        "calendar.saint-joseph"
+      ],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "DEV-05",
+      "subject": "Blessed Sacrament / Eucharistic Adoration",
+      "subjectCategory": "Devotions",
+      "artworkId": "met-438434",
+      "originalSha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "artist": "Jean Auguste Dominique Ingres",
+      "title": "The Virgin Adoring the Host",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+      "relation": "EXACT_DEVOTIONAL_HOST_ADORATION",
+      "proposedEditorialUse": "PREFERRED",
+      "justification": "Ingres: Our Lady adores the Host. Not a literal monstrance exposition scene.",
+      "scriptureReference": null,
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_APPLICABLE",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    },
+    {
+      "subjectId": "DEV-01",
+      "subject": "Sacred Heart of Jesus",
+      "subjectCategory": "Devotions",
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "originalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Jesus",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "relation": "EXACT_DEVOTION",
+      "proposedEditorialUse": "HISTORICALLY_CHOSEN_DEVOTIONAL_HOLD",
+      "justification": "Earlier user Sacred Heart selection maintained; rich but medallion-filled, not default homepage hero.",
+      "scriptureReference": null,
+      "bibleTheatreEventId": null,
+      "bibleTheatreEventJoinState": "NOT_APPLICABLE",
+      "calendarReuseRule": "ONLY_WHEN_EXACT_DAYRESOLVER_PRINCIPAL_SUBJECT_OR_APPOINTED_GOSPEL_MATCHES; NEVER_GLOBAL_DEFAULT",
+      "alreadyHistoricalSelectedFor": [
+        "calendar.sacred-heart",
+        "devotion.sacred-heart"
+      ],
+      "newSelectionsCurrentlyUsingSameSource": [],
+      "sourceImageReviewTier": "SECONDARY_EXACT_DEVOTION",
+      "technicalReleaseState": "NOT_READY_FULL_PIXELS_CROP_AND_RIGHTS_GATE_OPEN",
+      "editorialState": "ASSISTANT_SUGGESTION_ONLY_NOT_USER_ACCEPTED",
+      "noProductionMutation": true
+    }
+  ],
+  "remainingAwaitingImageVerification": [
+    {
+      "artworkId": "nga-41644",
+      "sourceUrl": "https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph",
+      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
+    },
+    {
+      "artworkId": "met-442750",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442750",
+      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
+    },
+    {
+      "artworkId": "nga-50726",
+      "sourceUrl": "https://www.nga.gov/artworks/50726-temptation-christ",
+      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
+    },
+    {
+      "artworkId": "met-436302",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436302",
+      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
+    },
+    {
+      "artworkId": "kress-k2017",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
+    }
+  ],
+  "outstandingSubjectNoVerifiedAcquiredLead": [
+    {
+      "subjectId": "DEV-02",
+      "subject": "Immaculate Heart of Mary",
+      "category": "Devotions"
+    },
+    {
+      "subjectId": "DEV-12",
+      "subject": "Our Lady of Perpetual Help",
+      "category": "Devotions"
+    },
+    {
+      "subjectId": "DEV-13",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Devotions"
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "category": "Calendar saints"
+    },
+    {
+      "subjectId": "BIB-OR04",
+      "subject": "The Flood",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-OR05",
+      "subject": "God’s Covenant with Noah",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-PA01",
+      "subject": "Calling of Abram",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-PA04",
+      "subject": "Covenant with Abraham",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-PA05",
+      "subject": "Birth of Isaac",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-PA09",
+      "subject": "Joseph Is Sold",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-PA10",
+      "subject": "Joseph Governs Egypt",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-PA11",
+      "subject": "Joseph Forgives His Brothers",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-PA12",
+      "subject": "Israel Settles in Egypt",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX03",
+      "subject": "The Plagues Begin",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX04",
+      "subject": "First Passover",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX05",
+      "subject": "Departure from Egypt",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX06",
+      "subject": "Crossing of the Red Sea",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX07",
+      "subject": "Manna in the Wilderness",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX08",
+      "subject": "Moses Strikes the Rock",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX09",
+      "subject": "Covenant at Sinai / Ten Commandments",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX10",
+      "subject": "The Golden Calf",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX11",
+      "subject": "The Tabernacle",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX13",
+      "subject": "Moses on Mount Nebo",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX14",
+      "subject": "Joshua Crosses the Jordan",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-EX15",
+      "subject": "Fall of Jericho",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS01",
+      "subject": "Hannah and Samuel",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS02",
+      "subject": "Samuel Anoints Saul",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS04",
+      "subject": "David Becomes King",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS05",
+      "subject": "Solomon Dedicates Temple",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS06",
+      "subject": "Division of the Kingdom",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS07",
+      "subject": "Elijah at Mount Carmel",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS09",
+      "subject": "Isaiah’s Calling",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS10",
+      "subject": "Jeremiah Warns Jerusalem",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS11",
+      "subject": "Judgment of Solomon",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS12",
+      "subject": "Fall of Samaria",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-IS13",
+      "subject": "Josiah Renews Covenant",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL01",
+      "subject": "Destruction of Jerusalem",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL02",
+      "subject": "Tobit at Nineveh",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL03",
+      "subject": "Tobias and Raphael",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL04",
+      "subject": "Daniel in Babylon",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL06",
+      "subject": "Ezekiel’s Vision",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL10",
+      "subject": "Song of the Three Youths",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL11",
+      "subject": "Return from Exile",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL12",
+      "subject": "Rebuilding of the Temple",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL13",
+      "subject": "The Maccabean Resistance",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-XL14",
+      "subject": "Martyrdom of Seven Brothers",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G10",
+      "subject": "Sermon on the Mount",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G11",
+      "subject": "Raising the Widow’s Son at Nain",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G12",
+      "subject": "Calming the Storm",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G13",
+      "subject": "Walking on Water",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G18",
+      "subject": "The Prodigal Son",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G19",
+      "subject": "Christ and Martha and Mary",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G20",
+      "subject": "Peter’s Confession",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G21",
+      "subject": "Christ and Doubting Thomas",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G23",
+      "subject": "Christ Feeds Peter’s Sheep",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-G26",
+      "subject": "Washing of the Feet",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A02",
+      "subject": "Peter Heals the Lame Man",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A04",
+      "subject": "Philip Baptises the Ethiopian",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A06",
+      "subject": "Peter Raises Tabitha",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A07",
+      "subject": "Conversion of Cornelius",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A08",
+      "subject": "Disciples at Antioch",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A09",
+      "subject": "Paul at Lystra",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A10",
+      "subject": "Council of Jerusalem",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A11",
+      "subject": "Lydia at Philippi",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A12",
+      "subject": "Paul in Thessalonica",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A13",
+      "subject": "Paul at the Areopagus",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A14",
+      "subject": "Paul at Corinth",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A16",
+      "subject": "Paul at Troas — Eutychus",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A17",
+      "subject": "Farewell at Miletus",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A18",
+      "subject": "Shipwreck on Malta",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A19",
+      "subject": "Paul Arrives in Rome",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-A20",
+      "subject": "Peter Commissioned by Risen Christ",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-V01",
+      "subject": "Vision of Saint John",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-V02",
+      "subject": "Heavenly Liturgy",
+      "category": "Bible Atlas"
+    },
+    {
+      "subjectId": "BIB-V03",
+      "subject": "New Jerusalem",
+      "category": "Bible Atlas"
+    }
+  ]
+}
