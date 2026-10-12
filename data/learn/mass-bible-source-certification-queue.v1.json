@@ -1,6 +1,6 @@
 {
   "schema": "AO_MASS_BIBLE_CERTIFICATION_QUEUE_V1",
-  "version": "2026-10-12",
+  "version": "2026-10-12-audited-disjoint-scope-batch-3b",
   "status": "RESEARCH_ONLY_ZERO_PRINTED_1962_AND_SCRIPTURE_JOINT_CERTIFICATION",
   "sourceOwnership": "Main owns 105 Proper identities; PR #1018 owns 420 upstream chant-source positions; this research ledger only joins source IDs and review statuses; no chant, Bible verse or artwork texts copied.",
   "sourceLinks": [
@@ -62,12 +62,16 @@
     "fortescueObservations": 30,
     "dujardinMeditationPositions": 22,
     "independentlyPrintedAndBibleCertified": 0,
-    "publishable": 0
+    "publishable": 0,
+    "priorityPacketOverlapWith105": 4,
+    "priorityPacketOutside105": 96,
+    "printedClusterOverlapWith105": 0,
+    "globalMissalSourcePathCandidates": 1052
   },
   "rows": [
     {
       "sourcePath": "Tempora/Pent10-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -106,7 +110,7 @@
     },
     {
       "sourcePath": "Tempora/Pent11-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -145,7 +149,7 @@
     },
     {
       "sourcePath": "Tempora/Pent15-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -184,7 +188,7 @@
     },
     {
       "sourcePath": "Tempora/Pent18-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -223,7 +227,7 @@
     },
     {
       "sourcePath": "Tempora/Pent19-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -262,7 +266,7 @@
     },
     {
       "sourcePath": "Tempora/Pent20-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -301,7 +305,7 @@
     },
     {
       "sourcePath": "Tempora/Pent21-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -340,7 +344,7 @@
     },
     {
       "sourcePath": "Tempora/Pent24-0",
-      "priority": "100_PRIORITY_PRINTED_SOURCE_PACKET",
+      "priority": "HAS_SEPARATE_PRIORITY_1962_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -379,7 +383,7 @@
     },
     {
       "sourcePath": "Tempora/Adv1-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -418,7 +422,7 @@
     },
     {
       "sourcePath": "Tempora/Adv2-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -457,7 +461,7 @@
     },
     {
       "sourcePath": "Tempora/Adv3-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -496,7 +500,7 @@
     },
     {
       "sourcePath": "Tempora/Adv4-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -535,7 +539,7 @@
     },
     {
       "sourcePath": "Tempora/Nat1-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -574,7 +578,7 @@
     },
     {
       "sourcePath": "Tempora/Nat2-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -613,7 +617,7 @@
     },
     {
       "sourcePath": "Tempora/Epi1-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -652,7 +656,7 @@
     },
     {
       "sourcePath": "Tempora/Epi2-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -691,7 +695,7 @@
     },
     {
       "sourcePath": "Tempora/Epi3-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -730,7 +734,7 @@
     },
     {
       "sourcePath": "Tempora/Epi4-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -769,7 +773,7 @@
     },
     {
       "sourcePath": "Tempora/Epi5-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -808,7 +812,7 @@
     },
     {
       "sourcePath": "Tempora/Epi6-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -847,7 +851,7 @@
     },
     {
       "sourcePath": "Tempora/Quadp1-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -886,7 +890,7 @@
     },
     {
       "sourcePath": "Tempora/Quadp2-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -925,7 +929,7 @@
     },
     {
       "sourcePath": "Tempora/Quadp3-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -964,7 +968,7 @@
     },
     {
       "sourcePath": "Tempora/Quad3-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1003,7 +1007,7 @@
     },
     {
       "sourcePath": "Tempora/Quad5-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1042,7 +1046,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc1-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1081,7 +1085,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc2-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1120,7 +1124,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc3-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1159,7 +1163,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc4-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1198,7 +1202,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc5-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1237,7 +1241,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc6-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1276,7 +1280,7 @@
     },
     {
       "sourcePath": "Tempora/Pent02-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1315,7 +1319,7 @@
     },
     {
       "sourcePath": "Tempora/Pent04-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1354,7 +1358,7 @@
     },
     {
       "sourcePath": "Tempora/Pent05-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1393,7 +1397,7 @@
     },
     {
       "sourcePath": "Tempora/Pent06-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1432,7 +1436,7 @@
     },
     {
       "sourcePath": "Tempora/Pent07-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1471,7 +1475,7 @@
     },
     {
       "sourcePath": "Tempora/Pent08-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1510,7 +1514,7 @@
     },
     {
       "sourcePath": "Tempora/Pent09-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1549,7 +1553,7 @@
     },
     {
       "sourcePath": "Tempora/Pent12-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1588,7 +1592,7 @@
     },
     {
       "sourcePath": "Tempora/Pent13-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1627,7 +1631,7 @@
     },
     {
       "sourcePath": "Tempora/Pent14-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1666,7 +1670,7 @@
     },
     {
       "sourcePath": "Tempora/Pent16-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1705,7 +1709,7 @@
     },
     {
       "sourcePath": "Tempora/Pent17-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1744,7 +1748,7 @@
     },
     {
       "sourcePath": "Tempora/Pent22-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1783,7 +1787,7 @@
     },
     {
       "sourcePath": "Tempora/Pent23-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1822,7 +1826,7 @@
     },
     {
       "sourcePath": "Tempora/Pent03-0",
-      "priority": "100_PRIORITY_PRINTED_SOURCE_PACKET",
+      "priority": "HAS_SEPARATE_PRIORITY_1962_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1861,7 +1865,7 @@
     },
     {
       "sourcePath": "Tempora/PentEpi3-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1900,7 +1904,7 @@
     },
     {
       "sourcePath": "Tempora/PentEpi4-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1939,7 +1943,7 @@
     },
     {
       "sourcePath": "Tempora/PentEpi5-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -1978,7 +1982,7 @@
     },
     {
       "sourcePath": "Tempora/PentEpi6-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2017,7 +2021,7 @@
     },
     {
       "sourcePath": "Tempora/Quad1-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2056,7 +2060,7 @@
     },
     {
       "sourcePath": "Tempora/Quad2-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2095,7 +2099,7 @@
     },
     {
       "sourcePath": "Tempora/Quad4-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2134,7 +2138,7 @@
     },
     {
       "sourcePath": "Tempora/Quad6-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2173,7 +2177,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc0-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2212,7 +2216,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc5-4",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2251,7 +2255,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc7-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2290,7 +2294,7 @@
     },
     {
       "sourcePath": "Tempora/Pent01-0",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2329,7 +2333,7 @@
     },
     {
       "sourcePath": "Tempora/Pent01-4",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2368,7 +2372,7 @@
     },
     {
       "sourcePath": "Tempora/Pent02-5",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2407,7 +2411,7 @@
     },
     {
       "sourcePath": "Sancti/01-06",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2446,7 +2450,7 @@
     },
     {
       "sourcePath": "Sancti/02-02",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2485,7 +2489,7 @@
     },
     {
       "sourcePath": "Sancti/03-25",
-      "priority": "100_PRIORITY_PRINTED_SOURCE_PACKET",
+      "priority": "HAS_SEPARATE_PRIORITY_1962_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2524,7 +2528,7 @@
     },
     {
       "sourcePath": "Tempora/Quad6-1",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2563,7 +2567,7 @@
     },
     {
       "sourcePath": "Tempora/Quad6-2",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2602,7 +2606,7 @@
     },
     {
       "sourcePath": "Tempora/Quad6-4",
-      "priority": "100_PRIORITY_PRINTED_SOURCE_PACKET",
+      "priority": "HAS_SEPARATE_PRIORITY_1962_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2641,7 +2645,7 @@
     },
     {
       "sourcePath": "Tempora/Quad6-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2680,7 +2684,7 @@
     },
     {
       "sourcePath": "Tempora/093-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2719,7 +2723,7 @@
     },
     {
       "sourcePath": "Tempora/093-5",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2758,7 +2762,7 @@
     },
     {
       "sourcePath": "Tempora/093-6",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2797,7 +2801,7 @@
     },
     {
       "sourcePath": "Tempora/Adv3-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2836,7 +2840,7 @@
     },
     {
       "sourcePath": "Tempora/Adv3-5",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2875,7 +2879,7 @@
     },
     {
       "sourcePath": "Tempora/Adv3-6",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2914,7 +2918,7 @@
     },
     {
       "sourcePath": "Tempora/Quad1-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2953,7 +2957,7 @@
     },
     {
       "sourcePath": "Tempora/Quad1-5",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -2992,7 +2996,7 @@
     },
     {
       "sourcePath": "Tempora/Quad1-6",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3031,7 +3035,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc7-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3070,7 +3074,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc7-5",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3109,7 +3113,7 @@
     },
     {
       "sourcePath": "Tempora/Pasc7-6",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3148,7 +3152,7 @@
     },
     {
       "sourcePath": "Tempora/Quad1-1",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3187,7 +3191,7 @@
     },
     {
       "sourcePath": "Tempora/Quad1-2",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3226,7 +3230,7 @@
     },
     {
       "sourcePath": "Tempora/Quad1-4",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3265,7 +3269,7 @@
     },
     {
       "sourcePath": "Tempora/Quad2-1",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3304,7 +3308,7 @@
     },
     {
       "sourcePath": "Tempora/Quad2-2",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3343,7 +3347,7 @@
     },
     {
       "sourcePath": "Tempora/Quad2-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3382,7 +3386,7 @@
     },
     {
       "sourcePath": "Tempora/Quad2-4",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3421,7 +3425,7 @@
     },
     {
       "sourcePath": "Tempora/Quad2-5",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3460,7 +3464,7 @@
     },
     {
       "sourcePath": "Tempora/Quad2-6",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3499,7 +3503,7 @@
     },
     {
       "sourcePath": "Tempora/Quad3-1",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3538,7 +3542,7 @@
     },
     {
       "sourcePath": "Tempora/Quad3-2",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3577,7 +3581,7 @@
     },
     {
       "sourcePath": "Tempora/Quad3-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3616,7 +3620,7 @@
     },
     {
       "sourcePath": "Tempora/Quad3-4",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3655,7 +3659,7 @@
     },
     {
       "sourcePath": "Tempora/Quad3-5",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3694,7 +3698,7 @@
     },
     {
       "sourcePath": "Tempora/Quad3-6",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3733,7 +3737,7 @@
     },
     {
       "sourcePath": "Tempora/Quad4-1",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3772,7 +3776,7 @@
     },
     {
       "sourcePath": "Tempora/Quad4-2",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3811,7 +3815,7 @@
     },
     {
       "sourcePath": "Tempora/Quad4-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3850,7 +3854,7 @@
     },
     {
       "sourcePath": "Tempora/Quad4-4",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3889,7 +3893,7 @@
     },
     {
       "sourcePath": "Tempora/Quad4-5",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3928,7 +3932,7 @@
     },
     {
       "sourcePath": "Tempora/Quad4-6",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -3967,7 +3971,7 @@
     },
     {
       "sourcePath": "Tempora/Quad5-1",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -4006,7 +4010,7 @@
     },
     {
       "sourcePath": "Tempora/Quad5-2",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -4045,7 +4049,7 @@
     },
     {
       "sourcePath": "Tempora/Quad5-3",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -4084,7 +4088,7 @@
     },
     {
       "sourcePath": "Tempora/Quad5-4",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -4123,7 +4127,7 @@
     },
     {
       "sourcePath": "Tempora/Quad5-6",
-      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "priority": "NO_FIRST_100_PRIORITY_PRINT_PACKET",
       "independentEditionCertified": false,
       "chantSlots": [
         {
@@ -4168,5 +4172,710 @@
     "4. Independently collate Clementine/Crampon/Douay verse numbers and wording rather than copying annotation guesses",
     "5. Release only reviewed exact-quotation and doctrine/typology separately; no modifications to the 48-card LIVE or calendar inference"
   ],
-  "noReleaseIfUncertified": true
+  "noReleaseIfUncertified": true,
+  "policy": {
+    "ownerBoundary": "105 current Proper identities and 420 4-slot annotations are one scope; 100 priority original-edition packets derive from the larger 1052-path global corpus and are not equal to the 105 path list. 44 printed-page clusters belong to that 100-path external scope."
+  },
+  "printedEditionQueue": [
+    {
+      "sourcePath": "Commune/Coronatio",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Commune/Propaganda",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-03n",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-18",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-19",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-20",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-21",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-25",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-25r",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-26",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-27",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-28t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/01-31",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/02-01",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/02-05",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/02-06",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/02-11",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/02-12",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/02-22",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/02-24",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/02-27",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/03-19",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/03-19t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/03-24",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/03-25",
+      "alsoIn105ProperRegistry": true,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/03-27",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/03-28",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/04-14",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/04-28",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/05-13",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/05-20",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/05-26",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/05-28",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/05-31",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-02",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-04",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-05",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-09",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-18t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-21",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-24",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-28",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/06-30",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/07-01",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/07-03r",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/07-05",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/07-10",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/07-13pl",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/07-15pl",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/07-20",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/07-24pl",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/08-02",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/08-08",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/08-16",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/08-22",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/09-01pl",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/09-03",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/09-09n",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/09-15",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/09-18",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-02",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-03",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-04",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-07",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-09",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-17",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-20",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-21pl",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-24",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/10-DU",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/11-11",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/12-08",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/12-21",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/12-26",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/12-27",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/12-28",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Sancti/12-31",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-1",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-2",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-2t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-3",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-3t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-4",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-4t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-5",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-5t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-6",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-6t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-1",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-2",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-4",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-4t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-5t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pent02-5o",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pent03-0",
+      "alsoIn105ProperRegistry": true,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Pent24-0",
+      "alsoIn105ProperRegistry": true,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Quad4-3t",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Quad5-5",
+      "alsoIn105ProperRegistry": false,
+      "has44PageCluster": true,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    },
+    {
+      "sourcePath": "Tempora/Quad6-4",
+      "alsoIn105ProperRegistry": true,
+      "has44PageCluster": false,
+      "complete1962EditionCertification": false,
+      "approvedForPublication": false
+    }
+  ]
 }
