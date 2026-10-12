@@ -1,0 +1,58 @@
+name: Mass Bible Source-Layer Acceptance
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/learn/mass-bible-study.js"
+      - "src/learn/mass-formation.js"
+      - "data/learn/mass-bible-source-layers.v1.json"
+      - "tests/mass-bible-source-layers.mjs"
+      - "tests/mass-bible-study-phone.mjs"
+      - ".github/workflows/mass-bible-study-source-bridge.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Source-owner syntax
+        run: |
+          node --check src/learn/mass-bible-study.js
+          node --check src/learn/mass-formation.js
+      - name: Source classifications, original Proper registry and unresolved holds
+        run: node tests/mass-bible-source-layers.mjs
+      - name: Preserve current learn.mass formation and LIVE card contracts
+        run: |
+          node tests/mass-formation.mjs
+          node tests/reader-live-product48.mjs
+          node tests/native-rite-scripture-context.mjs
+  phone:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Mass formation biblical source views on phone
+        run: node tests/mass-bible-study-phone.mjs
+      - name: Archive source-labelled phone review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-bible-source-phone-review
+          path: test-output/mass-bible-source/*.png
+          if-no-files-found: ignore
+          retention-days: 14
