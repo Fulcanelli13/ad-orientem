@@ -1,0 +1,29 @@
+name: Litany historical witness provenance and print-collation gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/litany-source.js"
+      - "src/pray/presentation-runtime.js"
+      - "tests/pray-litany-witness-collation-gate.mjs"
+      - "docs/research/PRAY-LITANY-PRINT-COLLATION-20261012.md"
+      - ".github/workflows/pray-litany-print-collation.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-collation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: node tests/pray-litany-witness-collation-gate.mjs
+      - run: node tests/pray-presentation.mjs
+      - run: node tests/pray-guided-cards.mjs
