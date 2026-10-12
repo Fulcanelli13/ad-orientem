@@ -704,7 +704,16 @@ try{
   await page.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-next]",{state:"visible",timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot .lab-decade-bar",{state:"visible",timeout:5000});
-  await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",{state:"visible",timeout:5000});
+  // Production Rosary starts prayer-first: recitation controls live in one collapsed disclosure.
+  const activeRosaryOptions=page.locator("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
+  await activeRosaryOptions.waitFor({state:"visible",timeout:5000});
+  assert.equal(await activeRosaryOptions.evaluate(el=>el.open),false,
+    "Rosary options obstruct the opening prayer");
+  assert.equal(await page.locator("#aoPrayerBookRoot .r29-head-recitation").isVisible(),false,
+    "legacy recitation row competes with prayer while options are collapsed");
+  await activeRosaryOptions.locator(":scope > summary").click();
+  await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",
+    {state:"visible",timeout:5000});
   const rosaryOpening=await page.evaluate(()=>{
     const roots=[...document.querySelectorAll("#aoPrayerBookRoot")],active=roots.find(root=>root.dataset.aoRosaryActiveRoot==="true")||roots.find(root=>root.classList.contains("open"));
     const shell=active?.querySelector(".pbShell"),head=shell?.querySelector(".lab-view-head"),recitation=shell?.querySelector(".r29-head-recitation");
