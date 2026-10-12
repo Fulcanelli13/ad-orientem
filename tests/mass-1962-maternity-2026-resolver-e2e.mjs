@@ -39,7 +39,8 @@ try{
     '<span data-mass-calendar-commemoration-label></span></div>';
   fillMassCalendarPreflight(section,context);
   const comms=(result?.day?.commemorations||main?.commemorations||[]).map(x=>({id:x.id,title:x.title||x.name,path:x.path,inseparable:x.inseparable}));
-  return {status:result?.status,properStatus:result?.proper?.status,main:{id:main?.id,title:main?.title,rank:main?.rank,color:main?.color},
+  return {resolutionDate:result?.date,dayDate:result?.day?.date,contextCalendar:context.calendar,
+    status:result?.status,properStatus:result?.proper?.status,main:{id:main?.id,title:main?.title,rank:main?.rank,color:main?.color},
     commemorations:comms,selectedCommemoration:context.commemorations,
     active:context.commemorationApplies,prayerStatus:context.commemorationOrations.status,
     counts:context.commemorationOrations.counts,
