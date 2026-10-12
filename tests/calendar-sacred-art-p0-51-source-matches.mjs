@@ -55,7 +55,7 @@ for(const row of results.rows){
     assert.equal(actual.acquisition.originalSha256,p.sha256);
   }else{
     assert.equal(p.origin,"INSTITUTIONAL_OBJECT");
-    assert.match(p.sourceUrl,/^https:\/\/(?:www\.)?(?:museodelprado\.es|collections\.louvre\.fr|metmuseum\.org|boijmans\.nl|collections\.augustins\.toulouse\.fr|emuseum\.mfah\.org)\//);
+    assert.match(p.sourceUrl,/^https:\/\/(?:www\.)?(?:museodelprado\.es|collections\.louvre\.fr|metmuseum\.org|boijmans\.nl|collections\.augustins\.toulouse\.fr|emuseum\.mfah\.org|catalogo\.beniculturali\.it)\//);
   }
  }
 }
