@@ -8,7 +8,7 @@ const missing=fs.readFileSync(path.join(dir,"HISTORICAL_UNRECOVERED_POSITIONS.cs
 const audience=fs.readFileSync(path.join(dir,"BY_INTERLOCUTOR.md"),"utf8");
 const master=fs.readFileSync(path.join(dir,"ALL_QUESTIONS.md"),"utf8");
 function assert(ok,message){ if(!ok) throw Error(message); }
-assert(manifest.records===264 && questions.length===264,"Source record count changed; review and update manifest deliberately");
+assert(manifest.records===282 && questions.length===282,"Source record count changed; review and update manifest deliberately");
 assert(new Set(questions.map(q=>q.id)).size===questions.length,"Duplicated record ID");
 assert(questions.every(q=>q.en && q.source_url.startsWith("https://github.com/Fulcanelli13/ad-orientem/") && q.audience_tags.length && q.provenance_status),"Missing question, source or editorial context");
 assert(questions.filter(q=>q.id.startsWith("APOL-")).length===60,"Canonical Apologetics count drift");
@@ -16,9 +16,12 @@ assert(questions.filter(q=>q.id.startsWith("CR-")).length===81,"Canonical Church
 assert(questions.filter(q=>q.id.startsWith("BAQ-")).length===26,"BAQ count drift");
 assert(questions.filter(q=>q.id.startsWith("SDV-")).length===8,"SDV count drift");
 assert(questions.filter(q=>q.id.startsWith("TLM")).length===50,"Traditional Mass sourced-objection count drift");
-assert(csv.trimEnd().split("\n").length===265,"Unexpected flat CSV row count");
+assert(questions.filter(q=>/^AQ0[1-8]$/.test(q.id)).length===8,"Live AQ count drift");
+assert(questions.filter(q=>/^AQ(09|1[0-8])$/.test(q.id)).length===10,"Proposed AQ count drift");
+assert(questions.filter(q=>q.record_status==="PROPOSED_NOT_LIVE").length===10,"Proposed status must remain unpublished");
+assert(csv.trimEnd().split("\n").length===283,"Unexpected flat CSV row count");
 assert(missing.trimEnd().split("\n").length===577,"Unrecovered historical positions miscounted");
-assert(questions.every(q=>master.includes(q.id+" — "+q.en)),"Master document missing recovered entry");
+assert(questions.every(q=>master.includes(q.id+" — "+q.en)),"Master document missing sourced entry");
 assert([...new Set(questions.flatMap(q=>q.audience_tags))].every(a=>audience.includes("## "+a+" (")),"Interlocutor index missing category");
 assert(!questions.some(q=>q.id==="A001"||q.id==="C001"||q.id==="TLM001"),"Historical placeholder wrongly treated as a recovered question");
-console.log("PASS: 264 provenance-linked source records, 576 non-question historical positions, 9 non-additive editorial interlocutor facets; publication status remains editorial.");
+console.log("PASS: 282 provenance-linked source records, 576 non-question historical positions, 9 non-additive editorial interlocutor facets; publication status remains editorial.");
