@@ -36,12 +36,12 @@
     "themeCount": 23,
     "primaryUserSelected": 13,
     "primaryArchiveSalvage": 4,
-    "primaryNewCustodianLeads": 5,
-    "extraReviewAlternatives": 8,
+    "primaryNewCustodianLeads": 6,
+    "extraReviewAlternatives": 9,
     "rightNowProductionReady": 0,
     "subjectsUserSelectedTotal": 101,
     "minPublicationsRequiredPerDate": 0,
-    "unfilledPrimaryThemes": 1,
+    "unfilledPrimaryThemes": 0,
     "historicalStyleExcludedWorks": 2
   },
   "themes": [
@@ -695,12 +695,16 @@
       ],
       "relation": "HEAVENLY_COURT_ICONOGRAPHY_NOT_LITURGICAL_GOSPEL",
       "primary": {
-        "kind": "OPEN_CURATORIAL_GAP",
-        "artist": null,
-        "title": null,
-        "sourceUrl": null,
-        "objectIdentitySource": null,
-        "description": "Fra Angelico candidates explicitly rejected for style; keep All Saints opening unfilled until a new painting consistent with approved painterly aesthetic has been properly sourced. Do not default to unrelated Last Judgment.",
+        "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+        "provisionalLeadId": "boijmans-1738-ok",
+        "artist": "Peter Paul Rubens",
+        "title": "All Saints",
+        "sourceUrl": "https://www.boijmans.nl/en/collection/artworks/2721/all-saints",
+        "objectInventory": "1738 (OK)",
+        "medium": "oil painting",
+        "associationTier": "EXACT_ALL_SAINTS_SUBJECT",
+        "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+        "description": "Museum-verified c.1614 oil-on-panel All Saints sketch; exact feast subject. Small study, not automatically great phone hero. Replaces rejected Fra Angelico lead only as a candidate, with no human approval.",
         "userSelectedForSubject": false,
         "userSelectedForHomeMasterpiece": false,
         "homePublicationApproved": false,
@@ -708,7 +712,26 @@
         "rightsCleared": false,
         "mobileCropApproved": false
       },
-      "additional": [],
+      "additional": [
+        {
+          "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+          "provisionalLeadId": "prado-giaquinto-glory-saints",
+          "artist": "Corrado Giaquinto",
+          "title": "The Glory of Saints",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-glory-of-saints/522ac2bb-22ac-4f25-8903-b96ae539da80",
+          "objectInventory": "PRADO_CATALOGUE",
+          "medium": "oil painting",
+          "associationTier": "EXACT_ALL_SAINTS_SUBJECT",
+          "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+          "description": "1755–56 Baroque oil on canvas, selected figures of saintly glory; subject is not a comprehensive depiction of every saint. Aesthetic review required.",
+          "userSelectedForSubject": false,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageAcquired": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ],
       "priority": "P0",
       "historicallyRejectedCandidates": [
         {
@@ -726,7 +749,7 @@
           "preservedForAuditOnly": true
         }
       ],
-      "status": "UNFILLED_USER_STYLE_RESTRICTION"
+      "status": "EXACT_SUBJECT_MUSEUM_CANDIDATES_AWAITING_CURATORIAL_SELECTION"
     },
     {
       "key": "all-souls",
