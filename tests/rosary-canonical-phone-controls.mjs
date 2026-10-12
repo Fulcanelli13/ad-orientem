@@ -40,6 +40,37 @@ try{
    const player=page.locator('#aoPrayerBookRoot.open');
    await player.waitFor({state:"visible",timeout:20000});
    await player.locator('.aoP435930RosaryBar').waitFor({state:"attached",timeout:20000});
+   const prep=player.locator('.aoRosaryPreparation');
+   const hero=player.locator('.pbShell>.lab-rosary-hero');
+   await prep.waitFor({state:"visible",timeout:12000});
+   const layout=await page.evaluate(()=>{
+     const shell=document.querySelector("#aoPrayerBookRoot.open .pbShell");
+     const h=shell.querySelector(":scope > .lab-view-head"),
+      hero=shell.querySelector(":scope > .lab-rosary-hero"),
+      d=shell.querySelector(":scope > .aoRosaryPreparation"),
+      btn=hero.querySelector("[data-lab-rosary-today]");
+     return {first:h?.nextElementSibling===hero,second:hero?.nextElementSibling===d,
+       closed:!d.open,summaryHeight:d.querySelector("summary")?.getBoundingClientRect().height,
+       mainHeight:btn?.getBoundingClientRect().height,mainTop:btn?.getBoundingClientRect().top,
+       optionsTop:d?.getBoundingClientRect().top,
+       methods:shell.querySelectorAll("[data-v38-rosary-form]").length,
+       mysteries:shell.querySelectorAll("[data-pb-rosary-set]").length,
+       overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   assert.ok(layout.first&&layout.second,"Original recommended mystery not immediately below header");
+   assert.equal(layout.closed,true,"Unnecessary setup controls cover initial prayer action");
+   assert.ok(layout.mainHeight>=44&&layout.summaryHeight>=44,
+     "Start or optional settings below touch minimum: "+JSON.stringify(layout));
+   assert.ok(layout.mainTop<layout.optionsTop,
+     "Main prayer CTA is below the configuration controls");
+   assert.equal(layout.methods,2,"Traditional/Devotional forms replaced or removed");
+   assert.equal(layout.mysteries,4,"Canonical four available mystery categories lost");
+   assert.ok(layout.overflow<=1,"Opening caused document overflow");
+   await page.screenshot({path:resolve(captures,"rosary-first-action-"+width+".png"),
+     fullPage:false,animations:"disabled"});
+   await prep.locator("summary").first().click();
+   await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot.open .aoRosaryPreparation")?.open===true,
+     null,{timeout:10000});
    const metric=await page.evaluate(()=>{
     const root=document.querySelector('#aoPrayerBookRoot.open');
     const get=(selector)=>[...root.querySelectorAll(selector)].filter(x=>x.getClientRects().length>0).map(x=>{
@@ -59,22 +90,6 @@ try{
     };
    });
    console.log("OPENING DOM "+width+"px "+JSON.stringify(metric));
-   // Temporary acceptance instrumentation: report the original donor DOM
-   // hierarchy before reordering any controls or replacing any donor node.
-   if(width===320)console.log("DONOR ENTRY TOPOLOGY "+JSON.stringify(await page.evaluate(()=>{
-    const root=document.querySelector("#aoPrayerBookRoot.open");
-    const shell=root?.querySelector(".pbShell");
-    const today=[...root.querySelectorAll("button")].find(x=>/Pray today.s mysteries/i.test(x.textContent||""));
-    const ancestors=[];let node=today;while(node&&node!==root&&ancestors.length<9){
-      ancestors.push({tag:node.tagName,cls:node.className,txt:(node.textContent||"").trim().slice(0,130)});
-      node=node.parentElement;
-    }
-    const children=[...shell?.children||[]].map(x=>({tag:x.tagName,cls:x.className,text:(x.textContent||"").trim().slice(0,100),html:x.outerHTML.slice(0,280)}));
-    const buttons=[...root.querySelectorAll("button")].slice(0,24).map(x=>({text:(x.textContent||"").trim().slice(0,60),
-      attrs:[...x.attributes].filter(a=>a.name.startsWith("data-")).map(a=>[a.name,a.value]),
-      parent:x.parentElement?.className}));
-    return {today:today?.outerHTML.slice(0,480),ancestors,children,buttons};
-   })));
    assert.equal(metric.playerCount,1,"Duplicate canonical Rosary active root");
    assert.equal(metric.depth.length,2,"Missing simple/guided options");
    assert.ok(metric.recitation.length>=2,"Missing individual/group options");
@@ -84,6 +99,13 @@ try{
    assert.ok(metric.recitation.every(x=>x.height>=44&&x.font>=12),
      "Recitation touch/label size below accessibility floor: "+JSON.stringify(metric.recitation));
    assert.ok(metric.guide.every(x=>x.height>=44),"Guide summary not reachable");
+   const guide=prep.locator(".aoRosaryGuide");
+   await guide.locator("summary").click();
+   const guideLinks=await guide.locator(".aoRosaryGuideSection a").evaluateAll(nodes=>
+     nodes.map(x=>x.getAttribute("href")));
+   assert.equal(guideLinks.length,6,"Guide lost one of six source-linked sections");
+   assert.ok(guideLinks.every(url=>url?.startsWith("https://")),"Historical Guide source URL lost");
+   await guide.locator("summary").click();
    assert.ok(metric.sources.every(x=>x.height>=44),"Source action too small");
    assert.ok(metric.overflow<=1,"Canonical Rosary caused horizontal document overflow");
    await page.screenshot({path:resolve(captures,"rosary-phone-controls-"+width+".png"),
@@ -104,6 +126,23 @@ try{
    assert.equal(after.step,metric.state,"Changing recitation depth advanced Rosary bead");
    assert.equal(after.method,metric.method,"Changing view mode changed historical method");
    assert.equal(after.visible,1,"Canonical Rosary donor replaced by competing reader");
+   assert.equal(await prep.evaluate(node=>node.open),true,
+     "Preference repaint unexpectedly closed Rosary options");
+   assert.match(await prep.locator(".aoRosaryPreparationState").textContent(),/Group/,
+     "Collapsed summary failed to reflect real recitation preference");
+   await prep.locator("summary").first().click();
+   await hero.locator("[data-lab-rosary-today]").click();
+   await page.waitForFunction(()=>
+     document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']")!=null &&
+     document.querySelector("#aoPrayerBookRoot.open")?.dataset?.aoRosaryActiveRoot==="true",
+      null,{timeout:20000});
+   const live=await page.evaluate(()=>({method:window.AO_ROSARY_V381?.getMethod?.(),
+     roots:document.querySelectorAll("#aoPrayerBookRoot.open").length,
+     active:document.querySelector("#aoPrayerBookRoot.open")?.dataset?.aoRosaryActiveRoot}));
+   assert.equal(live.method,"ordinary","Start replaced the canonical Rosary method");
+   assert.equal(live.roots,1,"Start created a competing Rosary root");
+   await page.screenshot({path:resolve(captures,"rosary-active-after-start-"+width+".png"),
+     fullPage:false,animations:"disabled"});
    assert.deepEqual(errors,[],"Uncaught reader errors: "+errors.slice(0,5).join("; "));
    console.log("PASS "+width+"px canonical Rosary: 44px controls, source, guide, no overflow/state mutation");
   }finally{await page.close();}
