@@ -19,6 +19,16 @@ export const MISSION_SUNDAY_SOURCE=Object.freeze({
     fr:"Seigneur qui voulez que tous les hommes soient sauvés et arrivent à la connaissance de la vérité, envoyez, nous vous en supplions, des ouvriers évangéliques pour faire votre moisson, et accordez-leur d’annoncer en toute confiance votre divine parole, de manière à ce qu’elle se propage rapidement, qu’elle brille d’un vif éclat et que toutes les nations vous reconnaissent pour le Dieu véritable, ainsi que Celui que vous nous avez envoyé, Jésus-Christ votre Fils Notre-Seigneur.",
   }),
   translationProvenance:Object.freeze({la:"DIVINUM_1962",en:"DIVINUM_TRADITIONAL",fr:"LE_PRECURSEUR_1921_PUBLIC_DOMAIN"}),
+  // O'Connell, The Celebration of Mass (1962): when the principal Collect
+  // receives a second prayer under one conclusion, the conclusion belongs
+  // to the SECOND prayer. Propaganda ends with "$Qui tecum", not "$Per Dominum".
+  // https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf
+  // https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Ordo/Ordo.txt
+  conclusion:Object.freeze({
+    lat:"Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+    en:"Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+    fr:"Qui vit et règne avec vous dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il.",
+  }),
 });
 const ISO=/^\d{4}-\d{2}-\d{2}$/;
 const validDay=date=>ISO.test(String(date??""))&&!Number.isNaN(Date.parse(date+"T12:00:00Z"));
@@ -90,16 +100,16 @@ export function applyMissionSundayCollect({
     status:"CERTIFIED",rule:"1960_MISSAL_444_446_453",
     sourcePath:MISSION_SUNDAY_SOURCE.sourcePath,
     requiredOn:date,form,parts:Object.freeze(["PRINCIPAL_MASS","PRO_FIDEI_PROPAGATIONE"]),
-    conclusionOwner:"PRINCIPAL_MASS",
+    conclusionOwner:"PRO_FIDEI_PROPAGATIONE",
     segments:Object.freeze(["lat","en","fr"].reduce((acc,lang)=>{
       acc[lang]=Object.freeze({principal:parts[lang].body,mission:texts[lang],
-        conclusion:parts[lang].conclusion});return acc;
+        conclusion:MISSION_SUNDAY_SOURCE.conclusion[lang]});return acc;
     },{})),
   });
   const combined=Object.freeze({...original,
-    lat:parts.lat.body+"\n\n"+texts.lat+"\n"+parts.lat.conclusion,
-    en:parts.en.body+"\n\n"+texts.en+"\n"+parts.en.conclusion,
-    fr:parts.fr.body+"\n\n"+texts.fr+"\n"+parts.fr.conclusion,
+    lat:parts.lat.body+"\n\n"+texts.lat+"\n"+MISSION_SUNDAY_SOURCE.conclusion.lat,
+    en:parts.en.body+"\n\n"+texts.en+"\n"+MISSION_SUNDAY_SOURCE.conclusion.en,
+    fr:parts.fr.body+"\n\n"+texts.fr+"\n"+MISSION_SUNDAY_SOURCE.conclusion.fr,
     oneConclusion,
   });
   const selected=Object.freeze({...data,
