@@ -1,0 +1,405 @@
+{
+  "schema": "AO_PRINTED_1962_JULY_B04_IMAGE_COLLATION_V1",
+  "version": 1,
+  "status": "image-inspected-evidence-with-tracked-orthographic-divergences",
+  "editorialDate": "2026-10-12",
+  "scope": "Adds non-B01 text fields, not full-year or full-Missal certification.",
+  "witness": {
+    "work": "Missale Romanum, editio typica 1962, printed July sample",
+    "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+    "landing": "https://propria.org/additional/",
+    "printedPageRange": [
+      533,
+      543
+    ],
+    "pdfPageRange": [
+      1,
+      11
+    ],
+    "pageImagesInspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "visualMethod": "Actual rendered page images inspected; assertions manually transcribed independently of AO Proper source. Do not confuse machine text agreement with independent page inspection.",
+    "reproduction": "Do not bundle source PDF/images into app."
+  },
+  "comparand": {
+    "scope": "AO canonical native Proper Latin; runtime checks source owner/rank from B01 and compares newly image-observed incipits.",
+    "fields": [
+      "introit",
+      "gradual",
+      "offertory",
+      "secret",
+      "postcommunion"
+    ],
+    "normalization": "fold accents, ligatures, j/i, typography and whitespace; no permission to normalize away substantive words",
+    "rules": "Three explicitly listed word-division or ae/oe variants are reported as NON-VERBATIM; do not silently normalize these away or promote them to exact matches."
+  },
+  "cases": [
+    {
+      "date": "2026-07-01",
+      "assertions": [
+        {
+          "field": "introit",
+          "index": 0,
+          "page": 1,
+          "latinIncipit": "Redemisti nos Domine in sanguine tuo",
+          "printedPage": 533,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=1",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "gradual",
+          "index": 0,
+          "page": 1,
+          "latinIncipit": "Hic est qui venit per aquam et sanguinem",
+          "printedPage": 533,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=1",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "offertory",
+          "index": 0,
+          "page": 2,
+          "latinIncipit": "Calix benedictionis cui benedicimus",
+          "printedPage": 534,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=2",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "secret",
+          "index": 0,
+          "page": 2,
+          "latinIncipit": "Per haec divina mysteria ad novi",
+          "printedPage": 534,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=2",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "postcommunion",
+          "index": 0,
+          "page": 2,
+          "latinIncipit": "Ad sacram Domine mensam admissi",
+          "printedPage": 534,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=2",
+          "visualInspection": "page-image-observed-2026-10-12"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "assertions": [
+        {
+          "field": "introit",
+          "index": 0,
+          "page": 2,
+          "latinIncipit": "Salve sancta parens enixa puerpera Regem",
+          "printedPage": 534,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=2",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "gradual",
+          "index": 0,
+          "page": 3,
+          "latinIncipit": "Benedicta et venerabilis es Virgo Maria",
+          "printedPage": 535,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "offertory",
+          "index": 0,
+          "page": 3,
+          "latinIncipit": "Beata es Virgo Maria quae omnium portasti",
+          "printedPage": 535,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "secret",
+          "index": 0,
+          "page": 3,
+          "latinIncipit": "Unigeniti tui Domine nobis succurrat humanitas",
+          "printedPage": 535,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "secret",
+          "index": 1,
+          "page": 3,
+          "latinIncipit": "Suscipe Domine preces et munera",
+          "printedPage": 535,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "postcommunion",
+          "index": 0,
+          "page": 3,
+          "latinIncipit": "Sumpsimus Domine celebritatis annuae votiva",
+          "printedPage": 535,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3",
+          "visualInspection": "page-image-observed-2026-10-12",
+          "editorialNote": "Manual correction of an image transcription: printed text uses annuæ, not annua."
+        },
+        {
+          "field": "postcommunion",
+          "index": 1,
+          "page": 4,
+          "latinIncipit": "Corporis sacri et pretiosi sanguinis",
+          "printedPage": 536,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=4",
+          "visualInspection": "page-image-observed-2026-10-12"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "assertions": [
+        {
+          "field": "introit",
+          "index": 0,
+          "page": 5,
+          "latinIncipit": "Lex veritatis fuit in ore eius",
+          "printedPage": 537,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=5",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "gradual",
+          "index": 0,
+          "page": 5,
+          "latinIncipit": "Propter fratres meos et proximos meos",
+          "printedPage": 537,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=5",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "offertory",
+          "index": 0,
+          "page": 6,
+          "latinIncipit": "Doctrinam quasi antelucanum illumino",
+          "printedPage": 538,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6",
+          "visualInspection": "page-image-observed-2026-10-12",
+          "runtimeLatinVariant": "Doctrinam quasi ante lucanum illumino",
+          "varianceType": "edition-word-division",
+          "editorialNote": "Printed scan has antelucánum as one word; existing runtime separates ante lucanum. NOT an exact printed-text agreement."
+        },
+        {
+          "field": "secret",
+          "index": 0,
+          "page": 6,
+          "latinIncipit": "Deus qui credentes in te populos",
+          "printedPage": 538,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "postcommunion",
+          "index": 0,
+          "page": 6,
+          "latinIncipit": "Deus auctor pacis et amator",
+          "printedPage": 538,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6",
+          "visualInspection": "page-image-observed-2026-10-12"
+        }
+      ]
+    },
+    {
+      "date": "2027-07-05",
+      "assertions": [
+        {
+          "field": "introit",
+          "index": 0,
+          "page": 6,
+          "latinIncipit": "Sermo meus et praedicatio mea",
+          "printedPage": 538,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "gradual",
+          "index": 0,
+          "page": 6,
+          "latinIncipit": "Testis mihi est Deus quo modo cupiam",
+          "printedPage": 538,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "offertory",
+          "index": 0,
+          "page": 7,
+          "latinIncipit": "In conspectu Angelorum psallam tibi",
+          "printedPage": 539,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=7",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "secret",
+          "index": 0,
+          "page": 7,
+          "latinIncipit": "Ad mensam caelestis convivii fac nos Domine",
+          "printedPage": 539,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=7",
+          "visualInspection": "page-image-observed-2026-10-12",
+          "runtimeLatinVariant": "Ad mensam coelestis convivii fac nos Domine",
+          "varianceType": "edition-ae-vs-oe-spelling",
+          "editorialNote": "Printed scan has cælestis; runtime has cœléstis. Retain source discrepancy for independent textual collation."
+        },
+        {
+          "field": "postcommunion",
+          "index": 0,
+          "page": 7,
+          "latinIncipit": "Caelesti dape qua pasti sumus",
+          "printedPage": 539,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=7",
+          "visualInspection": "page-image-observed-2026-10-12",
+          "runtimeLatinVariant": "Coelesti dape qua pasti sumus",
+          "varianceType": "edition-ae-vs-oe-spelling",
+          "editorialNote": "Printed scan has Cælésti; runtime has Cœlésti. Not accepted as a verbatim edition agreement."
+        }
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "assertions": [
+        {
+          "field": "introit",
+          "index": 0,
+          "page": 7,
+          "latinIncipit": "Sacerdotes tui Domine induant iustitiam",
+          "printedPage": 539,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=7",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "gradual",
+          "index": 0,
+          "page": 8,
+          "latinIncipit": "Sacerdotes eius induam salutari",
+          "printedPage": 540,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=8",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "offertory",
+          "index": 0,
+          "page": 8,
+          "latinIncipit": "Mirabilis Deus in sanctis suis",
+          "printedPage": 540,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=8",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "secret",
+          "index": 0,
+          "page": 9,
+          "latinIncipit": "Preces nostras quaesumus Domine et tuorum",
+          "printedPage": 541,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "postcommunion",
+          "index": 0,
+          "page": 9,
+          "latinIncipit": "Quaesumus omnipotens Deus ut qui nobis munera",
+          "printedPage": 541,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9",
+          "visualInspection": "page-image-observed-2026-10-12"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "assertions": [
+        {
+          "field": "secret",
+          "index": 0,
+          "page": 9,
+          "latinIncipit": "Accepta tibi sit Domine sacratae plebis oblatio",
+          "printedPage": 541,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "postcommunion",
+          "index": 0,
+          "page": 9,
+          "latinIncipit": "Satiasti Domine familiam tuam muneribus sacris",
+          "printedPage": 541,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9",
+          "visualInspection": "page-image-observed-2026-10-12"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "assertions": [
+        {
+          "field": "introit",
+          "index": 0,
+          "page": 9,
+          "latinIncipit": "Laudate pueri Dominum laudate nomen Domini",
+          "printedPage": 541,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "secret",
+          "index": 0,
+          "page": 10,
+          "latinIncipit": "Sacrificiis praesentibus quaesumus Domine intende placatus",
+          "printedPage": 542,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=10",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "postcommunion",
+          "index": 0,
+          "page": 10,
+          "latinIncipit": "Quaesumus omnipotens Deus ut intercedentibus Sanctis",
+          "printedPage": 542,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=10",
+          "visualInspection": "page-image-observed-2026-10-12"
+        }
+      ]
+    },
+    {
+      "date": "2027-07-12",
+      "assertions": [
+        {
+          "field": "introit",
+          "index": 0,
+          "page": 11,
+          "latinIncipit": "Os iusti meditabitur sapientiam",
+          "printedPage": 543,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=11",
+          "visualInspection": "page-image-observed-2026-10-12"
+        },
+        {
+          "field": "gradual",
+          "index": 0,
+          "page": 11,
+          "latinIncipit": "Domine praevenisti eum in benedictionibus",
+          "printedPage": 543,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=11",
+          "visualInspection": "page-image-observed-2026-10-12"
+        }
+      ]
+    }
+  ]
+}
