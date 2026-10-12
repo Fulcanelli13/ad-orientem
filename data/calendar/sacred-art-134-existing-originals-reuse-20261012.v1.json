@@ -12,11 +12,11 @@
   ],
   "summary": {
     "outstandingSubjects": 134,
-    "existingAssetMatchRows": 14,
-    "distinctOutstandingSubjectsWithAtLeastOneExistingLead": 10,
-    "distinctArtworkIds": 13,
-    "remainingWithoutThisFocusedMatch": 124,
-    "acquiredSourceRows": 14
+    "existingAssetMatchRows": 11,
+    "distinctOutstandingSubjectsWithAtLeastOneExistingLead": 9,
+    "distinctArtworkIds": 10,
+    "remainingWithoutThisFocusedMatch": 125,
+    "acquiredSourceRows": 11
   },
   "matches": [
     {
@@ -28,21 +28,6 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
       "acquiredSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
       "sourceMatch": "EXACT",
-      "assetAlreadyAcquired": true,
-      "priorEditorialStatus": "PREVIOUSLY_SELECTED_FOR_OTHER_OR_SAME_CONTEXT",
-      "decision": "REVIEW_EXISTING_ASSET_NO_NEW_SEARCH",
-      "visualApproval": false,
-      "productionApproval": false
-    },
-    {
-      "subjectId": "DEV-02",
-      "subject": "Immaculate Heart of Mary",
-      "artworkId": "met-437423",
-      "title": "The Immaculate Conception",
-      "artist": "Guido Reni",
-      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437423",
-      "acquiredSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
-      "sourceMatch": "CHECK_ICONOGRAPHY",
       "assetAlreadyAcquired": true,
       "priorEditorialStatus": "PREVIOUSLY_SELECTED_FOR_OTHER_OR_SAME_CONTEXT",
       "decision": "REVIEW_EXISTING_ASSET_NO_NEW_SEARCH",
@@ -187,21 +172,6 @@
     {
       "subjectId": "SNT-OT-22",
       "subject": "Saint Agnes",
-      "artworkId": "nga-505",
-      "title": "The Visitation with Saint Nicholas and Saint Anthony Abbot",
-      "artist": "Piero di Cosimo",
-      "sourceUrl": "https://www.nga.gov/artworks/505-visitation-saint-nicholas-and-saint-anthony-abbot",
-      "acquiredSha256": "f3a7a3e350821593959bba5441953d9684810243d2db8b6848d47dd1ba01c014",
-      "sourceMatch": "SECONDARY_SAINT_IDENTITY_CHECK",
-      "assetAlreadyAcquired": true,
-      "priorEditorialStatus": "PREVIOUSLY_SELECTED_FOR_OTHER_OR_SAME_CONTEXT",
-      "decision": "REVIEW_EXISTING_ASSET_NO_NEW_SEARCH",
-      "visualApproval": false,
-      "productionApproval": false
-    },
-    {
-      "subjectId": "SNT-OT-22",
-      "subject": "Saint Agnes",
       "artworkId": "cma-150955",
       "title": "Saints Presenting a Devout Woman to the Virgin and Child",
       "artist": "Giovanni Battista Pittoni",
@@ -213,21 +183,12 @@
       "decision": "REVIEW_EXISTING_ASSET_NO_NEW_SEARCH",
       "visualApproval": false,
       "productionApproval": false
-    },
-    {
-      "subjectId": "DEV-02",
-      "subject": "Immaculate Heart of Mary",
-      "artworkId": "cma-135659",
-      "title": "The Immaculate Conception",
-      "artist": "Bartolomé Esteban Murillo",
-      "sourceUrl": "https://clevelandart.org/art/1959.189",
-      "acquiredSha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
-      "sourceMatch": "LEGACY_SUBJECT_SELECTION_REQUIRES_CURRENT_ICONOGRAPHIC_REVALIDATION",
-      "assetAlreadyAcquired": true,
-      "priorEditorialStatus": "PREVIOUSLY_USER_SELECTED",
-      "decision": "REVIEW_EXISTING_ASSET_NO_NEW_SEARCH",
-      "visualApproval": false,
-      "productionApproval": false
     }
+  ],
+  "supersededBy": "data/calendar/sacred-art-134-existing-originals-reuse-20261012.v2.json",
+  "status": "SUPERSEDED_CORRECTED_FALSE_IDENTITY_LINKS",
+  "corrections": [
+    "Immaculate Conception is not Immaculate Heart; removed met-437423 and cma-135659 from DEV-02.",
+    "The Visitation with Nicholas and Anthony Abbot is not Saint Agnes; v2 excludes the false association."
   ]
 }
