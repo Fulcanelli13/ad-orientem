@@ -20,6 +20,12 @@ for(const issue of registry.holds){
  assert.equal(issue.resolution,"HOLD","no silent editorial approval in the research branch");
  assert.match(issue.source,/^https:\/\//);
  assert.ok(issue.issue.length>30&&issue.requiredAction.length>30);
+ assert.equal(issue.presentationDecision?.status,"DOCUMENTED_RESEARCH_VIEW_ONLY",
+  "bounded display decisions must never be misreported as historical approval");
+ assert.ok(issue.presentationDecision.displayRule.length>70);
+ assert.ok(issue.presentationDecision.withheldClaim.length>30);
+ assert.ok(issue.presentationDecision.sources.length>=2&&issue.presentationDecision.sources.every(url=>/^https:\/\//.test(url)));
+ assert.equal(issue.resolution,"HOLD","documenting a display decision cannot waive its historical/rights hold");
  assert.ok(study.scenes[issue.sceneIndex]?.reference);
  assert.ok(issue.atlasIndices.length>0&&issue.atlasIndices.every(i=>atlas[i]?.reference));
  assert.ok(issue.passages.every(p=>typeof p==="string"&&p.length>5));
@@ -35,6 +41,14 @@ assert.equal(study.scenes[74].candidates[0].atlasIndex,82);
 assert.deepEqual(by("JOHN2_PASSION_PLACEMENT").atlasIndices,[82]);
 assert.equal(by("JOHN2_PASSION_PLACEMENT").sourceOrderCorrection,"IMPLEMENTED_2026_10_12");
 assert.equal(by("JOHN2_PASSION_PLACEMENT").resolution,"HOLD","historical equivalence remains unresolved");
+assert.match(study.scenes[63].sourceNote_en,/not determine a precise sequence/);
+assert.match(study.scenes[63].sourceNote_fr,/date commune/);
+assert.match(study.scenes[64].sourceNote_en,/not a proved dated Gospel harmony/);
+assert.match(study.scenes[64].sourceNote_fr,/chronologie évangélique datée/);
+assert.doesNotMatch(study.scenes[64].evidence_en,/line on the map/);
+assert.match(study.scenes[68].sourceNote_en,/return to Nazareth/);
+assert.match(study.scenes[74].sourceNote_en,/one or two historical cleansings/);
+assert.match(study.scenes[131].sourceNote_en,/not an eyewitness description/);
 assert.equal(atlas[120].reference,"John 20:1–18");
 assert.match(study.scenes[131].title_en,/empty tomb/i);
 assert.doesNotMatch(study.scenes[131].title_en,/^The Resurrection$/);
