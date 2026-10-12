@@ -165,6 +165,11 @@ try{
  // Restore the baseline language before the existing Rosary-update test.
  await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"en"}));
  await context.setOffline(false);
+ // The original staged-update test assumes a fresh Prayer navigation. Separate
+ // it from the Mercy route so a retained overlapping devotional sheet cannot
+ // make the second chooser physically hidden.
+ await page.reload({waitUntil:"domcontentloaded",timeout:90000});
+ await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
  // Open the real Rosary through its production Prayer owner before staging the next release.
  // A staged update must never navigate away or move a bead without user consent.
