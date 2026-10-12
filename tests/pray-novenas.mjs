@@ -144,7 +144,8 @@ assert.match(runtime,/n1UiIcon\('ao-ui-back'\)/,"Novena header lost canonical Ba
 assert.match(runtime,/n1UiIcon\('ao-nav-home'\)/,"Novena header lost canonical Home utility artwork");
 assert.match(runtime,/function goHome\(\)/,"Novena global Home action is missing");
 assert.match(runtime,/if\(N\.screen===\'day\'\).*N\.screen=\'detail\'/,"Novena Back no longer returns Day to Novena detail");
-assert.match(runtime,/if\(N\.screen===\'detail\'\).*N\.screen=\'overview\'/,"Novena Back no longer returns detail to Novena overview");
+assert.match(runtime,/if\(N\.screen===\'detail\'&&detailFromOverview\)/,"Visited Novena overview must remain a valid Back destination");
+assert.match(runtime,/returnToObservedModuleOrigin\(window,OPEN_RECEIPT/,"Direct Novena detail must Back to its real origin, not an invented overview");
 assert.match(runtime,/noCompletionTracking:true/,"Novenas privacy rule for completion tracking changed");
 assert.match(runtime,/noIntentStorage:true/,"Novenas privacy rule for intentions changed");
 assert.match(runtime,/TRADUCTION FRANÇAISE · ALIGNÉE SUR LA SOURCE/,"French editorial translation provenance label disappeared");
