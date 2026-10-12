@@ -8,6 +8,7 @@ import { compileMassPlan, makeResolvedMass } from "../src/mass/session-engine.js
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const core=load("../data/mass/special-days-core.v1.1.json");
 const payload=load("../data/presentation/reader-good-friday.v1.json");
+const ordinary=load("../data/presentation/reader-text-sung.v1.json");
 const graph=core.graphs.GF;
 
 assert.equal(graph.length,56);
@@ -124,7 +125,7 @@ const communicant=buildGoodFridayReader({graph,payload,willReceiveCommunion:true
 // assumption that the celebrant alone says the entire Pater noster.
 const expectedCommunionSpeakers=[
   ["GF-COM-830",["CELEBRANT","ALL","CELEBRANT","ALL"]],
-  ["GF-COM-840",["CELEBRANT","CELEBRANT","CELEBRANT",undefined,"CELEBRANT","ALL","CELEBRANT","ALL","CELEBRANT","CELEBRANT"]],
+  ["GF-COM-840",["CELEBRANT","CELEBRANT","CELEBRANT",undefined,"DEACON","DEACON","DEACON","CELEBRANT","ALL","CELEBRANT","ALL","CELEBRANT","CELEBRANT"]],
   ["GF-COM-850",[undefined]],
 ];
 for(const [recordId,expected] of expectedCommunionSpeakers){
@@ -143,7 +144,7 @@ assert.deepEqual(receive.paragraphs.map(row=>row.id),["GF-COM-850-T"],
   "personal Communion card repeats the common Ecce / Domine non sum dignus");
 assert.equal(receive.paragraphs[0].kind,"RUBRIC");
 const preparation=communicant.steps.find(x=>x.recordId==="GF-COM-840");
-assert.equal(preparation.paragraphs.length,10);
+assert.equal(preparation.paragraphs.length,13);
 for(const id of ["GF-COM-DNSD","GF-COM-FDNSD"])
   assert.equal(preparation.paragraphs.find(row=>row.id===id).repetitions,3,
     id+" lost the triple repetition in the Good Friday order");
@@ -152,6 +153,35 @@ assert.deepEqual(preparation.paragraphs.filter(row=>row.kind==="RESPONSE").map(r
   ["GF-COM-IND-R","Amen.","ALL"],
 ],"faithful responses to Misereatur and Indulgentiam were omitted");
 assert.equal(preparation.paragraphs.find(row=>row.id==="GF-COM-CONF").kind,"RUBRIC");
+const ordinaryMinister=ordinary.blocks.find(x=>x.Block_ID==="AO.SM.B007");
+assert.deepEqual(payload.communion.deaconConfiteor.parts.map(x=>x.cueId),
+  ["AO.SM.C0021","AO.SM.C0022","AO.SM.C0023"]);
+assert.deepEqual(payload.communion.deaconConfiteor.parts.map(x=>x.latin),
+  ordinaryMinister.units.map(x=>x.latin),
+  "Good Friday Confiteor must equal authoritative 1962 Ordinary ministers' words");
+assert.deepEqual(payload.communion.deaconConfiteor.parts.map(x=>x.english),
+  ordinaryMinister.units.map(x=>x.english));
+const confRows=preparation.paragraphs.filter(x=>/^GF-COM-CONF-[123]$/.test(x.id));
+assert.equal(confRows.length,3);
+assert.deepEqual(confRows.map(x=>x.latin),ordinaryMinister.units.map(x=>x.latin));
+assert.ok(confRows.every(x=>x.speaker==="DEACON"));
+assert.ok(confRows[0].latin.includes("et tibi, pater"));
+assert.ok(confRows[2].latin.includes("et te, pater"));
+assert.ok(!confRows.map(x=>x.latin).join(" ").includes("et vobis, fratres"));
+assert.ok(preparation.paragraphs.findIndex(x=>x.id==="GF-COM-CONF-3")<
+  preparation.paragraphs.findIndex(x=>x.id==="GF-COM-MIS"));
+for(const [description,mutated] of [
+  ["wrong deacon addressee",{...payload,communion:{...payload.communion,
+    deaconConfiteor:{...payload.communion.deaconConfiteor,
+      parts:payload.communion.deaconConfiteor.parts.map((x,i)=>
+        i===0?{...x,latin:x.latin.replace("et tibi, pater","et vobis, fratres")}:x)}}}],
+  ["missing prayer",{...payload,communion:{...payload.communion,
+    deaconConfiteor:{...payload.communion.deaconConfiteor,parts:[]}}}],
+]){
+  assert.throws(()=>buildGoodFridayReader({graph,payload:mutated}),
+    /deacon Confiteor/,description);
+}
+
 assert.equal(receive.actorScope,"COMMUNICANT");
 assert.equal(receive.personalOnly,true);
 assert.equal(receive.posture,"KNEEL");
