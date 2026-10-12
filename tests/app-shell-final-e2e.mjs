@@ -235,9 +235,21 @@ async function exerciseRealShellSpecialRite(browser,spec){
 
     await advanceToId(spec.handoffId);
     await tapNext();
-    await page.waitForFunction(()=>
-      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId==="AO.CARD.001",
-      null,{timeout:5000});
+    await page.waitForFunction(()=>{
+      const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+      // The 64/65 presentation keeps AO.CARD.001 as its source owner;
+      // split prayer cards have independent display IDs by design.
+      return (card?.sourceSectionId??card?.sectionId)==="AO.CARD.001";
+    },null,{timeout:5000});
+    if(spec.kind==="ASPERGES"){
+      const readerIdentity=await page.evaluate(()=>({
+        total:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards,
+        source:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.totalCards,
+        curated:document.getElementById("ao-r17-native-reader-preview")?.dataset.r17CuratedReview,
+      }));
+      assert.deepEqual(readerIdentity,{total:65,source:39,curated:"true"},
+        "real-shell Asperges must return to curated 64/65 cards without changing 39 original Mass source steps");
+    }
     const handoffTitle=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim()??"";
     assert.notEqual(handoffTitle,"",spec.kind+" real-shell handoff mounted a blank Mass card");
     if(spec.massTitle)assert.equal(
