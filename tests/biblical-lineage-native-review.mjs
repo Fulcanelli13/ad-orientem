@@ -64,6 +64,10 @@ assert.equal(validateLineageReviewCorpus(noSource),false,"every rendered family 
 const circular=structuredClone(data);
 circular.genealogies.genesis.edges[0].parentId="seth";
 assert.equal(validateLineageReviewCorpus(circular),false,"an ancestor must not become the child of a descendant");
+const wrongIdentity=structuredClone(data);
+wrongIdentity.genealogies.genesis.edges[1].parent="Noah";
+assert.equal(validateLineageReviewCorpus(wrongIdentity),false,
+ "A stable Genesis person ID cannot acquire a different person's name");
 const sameEdge=structuredClone(data);
 sameEdge.genealogies.genesis.edges[1].id=sameEdge.genealogies.genesis.edges[0].id;
 assert.equal(validateLineageReviewCorpus(sameEdge),false,"duplicated source-edge identities are refused");
