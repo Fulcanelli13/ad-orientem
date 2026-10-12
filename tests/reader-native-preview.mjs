@@ -126,10 +126,20 @@ const aspergesCuratedAttempt=await prepareNativeReaderPreview({
   prepared:aspergesPrepared,reviewCuratedCards:true,
   presentationData:data,eventData,cueRegistries,guideData,aspergesData,
 });
-assert.equal(aspergesCuratedAttempt.curatedEligible,false,
-  "opt-in curated Ordinary may not flatten a preceding Asperges rite");
-assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,48,
-  "Asperges should fall back to the production model");
+assert.equal(aspergesCuratedAttempt.curatedEligible,true,
+  "an independently sourced Asperges must be allowed to precede curated Sung LIVE");
+assert.equal(aspergesCuratedAttempt.model.totalCards,39,
+  "Asperges cannot alter canonical Mass source ownership");
+assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,65,
+  "Asperges must hand off to the same 65-card curated projection");
+assert.equal(aspergesCuratedAttempt.presentationModel.cards[0].title,
+  "At the Foot of the Altar · Opening and Psalm 42",
+  "Asperges must neither flatten into nor omit the opening prayer cards");
+assert.equal(aspergesCuratedAttempt.aspergesController.project().card.id,"ASP-R01",
+  "the pre-Mass six-record R20 rite must remain the opening surface");
+assert.equal(aspergesReady.curatedEligible,false,
+  "the explicitly non-curated direct native preview remains source-first 48");
+assert.equal(aspergesReady.presentationModel.totalCards,48);
 
 assert.equal(aspergesReady.aspergesController.project().card.id,"ASP-R01");
 assert.equal(aspergesReady.aspergesController.project().formulaState.formula,"ORDINARY");
