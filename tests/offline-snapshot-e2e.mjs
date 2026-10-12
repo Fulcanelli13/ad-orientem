@@ -122,16 +122,39 @@ try{
  const afterFail=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(afterFail.version,original.version,"Failed staging invalidated old snapshot");
  await assertRosaryUninterrupted("failed staging");
+ // The update prompt must match the French language selected in the real app.
+ await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"fr"}));
+ await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr",null,{timeout:10000});
+ await assertRosaryUninterrupted("French language selection");
  variant=2;failedPath=null;
  const update=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
  assert.equal(update.ok,true,"Valid second release did not stage: "+JSON.stringify(update));
  assert.equal(update.updateAvailable,true,"New content did not offer an explicit update");
  assert.notEqual(update.version,original.version,"Update version not fingerprinted");
  await page.waitForSelector("#ao-offline-update-ready",{timeout:10000});
+ const prompt=page.locator("#ao-offline-update-ready");
+ assert.match(await prompt.getAttribute("aria-label"),/Mise à jour de l.application disponible/);
+ assert.match(await prompt.locator("span").first().innerText(),/Une mise à jour est disponible/);
+ assert.equal((await prompt.locator("button").allInnerTexts()).join(" / "),"Plus tard / Mettre à jour",
+  "French UI must not leak English update controls");
  const old=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(old.version,original.version,"Staged update changed the active tab before user confirmation");
  await assertRosaryUninterrupted("ready prompt");
- await page.locator("#ao-offline-update-ready button").last().tap();
+ // Simulate eviction of the staged (not active) version. A failed touch update
+ // must display an accessible error, leave the old snapshot active and retain the bead.
+ assert.equal(await page.evaluate(version=>caches.delete("ao-bootstrap-snapshot-v1-"+version),update.version),true);
+ await prompt.locator("button").last().tap();
+ await page.waitForFunction(()=>document.querySelector("#ao-offline-update-ready [role='alert']")?.hidden===false,null,{timeout:12000});
+ assert.match(await prompt.locator("[role='alert']").innerText(),/La mise à jour n.a pas pu être appliquée/);
+ assert.equal(await prompt.locator("button").last().isEnabled(),true,"Failed update must allow retry");
+ assert.equal((await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status)).version,original.version);
+ await assertRosaryUninterrupted("rejected update");
+ // A valid restaging makes Retry/Update safe again without clearing all site data.
+ const retried=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
+ assert.equal(retried.ok,true,"Restaging after failed consent must recover");
+ assert.equal(retried.version,update.version,"Restaged release changed unexpectedly");
+ await assertRosaryUninterrupted("restaged update");
+ await prompt.locator("button").last().tap();
  await page.waitForFunction(()=>globalThis.AO_OFFLINE_TEST_ASSET===2,null,{timeout:60000});
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,update.version,{timeout:20000});
  const now=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
@@ -141,7 +164,7 @@ try{
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
  assert.equal(await page.evaluate(()=>globalThis.AO_OFFLINE_TEST_ASSET),2,"New release not available offline after consent");
  assert.deepEqual(errs.filter(x=>/SyntaxError|ReferenceError|TypeError/.test(x)),[],"Offline/update script error");
- console.log("PASS offline Home fallback, failed staging with active Rosary preserved, touch-consent update, project prefix and offline reload");
+ console.log("PASS offline Home fallback, French update prompt, recoverable failed consent, Rosary state preserved, and explicit offline update");
  console.log("OFFLINE_RESULTS="+JSON.stringify({original:original.version,update:update.version,failed:failed.error,cacheCount:cachesNames.length,networkRequests:served}));
  await context.close();
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
