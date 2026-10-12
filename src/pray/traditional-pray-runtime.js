@@ -341,7 +341,8 @@ function renderDyingCompanion(){
       <details class="aoTP381Source"><summary>${esc(L("At the point of death · current indulgence","À l’article de la mort · indulgence actuelle"))}</summary><p>${esc(isFr()?d.currentIndulgence.fr:d.currentIndulgence.en)}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>
       <details class="aoTP381Source"><summary>${esc(L("Why Viaticum matters","Pourquoi le Viatique est important"))}</summary><p>${esc(L("The Church gives the Eucharist as Viaticum to those about to leave this life. Together with Penance and Anointing of the Sick, it belongs to the sacraments that complete the Christian’s earthly pilgrimage.","L’Église donne l’Eucharistie en Viatique à ceux qui sont sur le point de quitter cette vie. Avec la Pénitence et l’Onction des malades, il appartient aux sacrements qui achèvent le pèlerinage terrestre du chrétien."))}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.viaticum)}" target="_blank" rel="noopener">${esc(L("Catechism · Viaticum","Catéchisme · Viatique"))} ↗</a></p></details>`;
   }
-  return `${head(L("Dying Companion","Accompagnement du mourant"),L("Priest · prayer · commendation","Prêtre · prière · recommandation"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-dying="now" class="${tab==="now"?"active":""}">${esc(L("Now","Maintenant"))}</button><button type="button" data-tp381-dying="pray" class="${tab==="pray"?"active":""}">${esc(L("Pray","Prier"))}</button><button type="button" data-tp381-dying="commend" class="${tab==="commend"?"active":""}">${esc(L("Commend","Recommander"))}</button></div>${body}${dyingCompanionStepNav(tab)}</main>`;
+  const staged=`<section class="aoDevoCard" data-ao-devo-card="dying-${esc(tab)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(tab==="now"?L("Contact a priest","Contacter un prêtre"):tab==="pray"?L("Prayer at the bedside","Prière au chevet"):L("Commendation of the Soul","Recommandation de l’âme"))}">${body}</div></section>`;
+  return `${head(L("Dying Companion","Accompagnement du mourant"),L("Priest · prayer · commendation","Prêtre · prière · recommandation"))}<main class="aoP435930Body aoTP381DonorBody"><div class="aoTP381Tabs"><button type="button" data-tp381-dying="now" class="${tab==="now"?"active":""}">${esc(L("Now","Maintenant"))}</button><button type="button" data-tp381-dying="pray" class="${tab==="pray"?"active":""}">${esc(L("Pray","Prier"))}</button><button type="button" data-tp381-dying="commend" class="${tab==="commend"?"active":""}">${esc(L("Commend","Recommander"))}</button></div>${staged}<details class="aoTP381SecondaryOptions" data-ao-dying-context><summary>${esc(L("Bedside context and guidance","Contexte et conseils au chevet"))}</summary><p>${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p></details></main>`;
 }
 function renderPrayer(){
   const p=data().prayers?.[S.prayerId];
@@ -447,6 +448,18 @@ function render(){
       paragraphSelector:".aoTP381TextParagraph",
       onNavigate:i=>{S.goodDeathStep=i;render()},
       timelineLabel:L("Prayer timeline","Chronologie des prières")
+    });
+    if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
+  }
+  if(S.screen==="module"&&S.route==="pray.dying_companion"){
+    const chapters=DYING_COMPANION_STAGES.map(id=>({
+      id:"dying-"+id,title:id==="now"?L("Call a priest","Appeler un prêtre"):id==="pray"?L("Pray","Prier"):L("Commend","Recommander")
+    }));
+    const reader=installSequentialDevotionalReader({
+      mount:m,kind:"dyingCompanion",chapters,activeIndex:DYING_COMPANION_STAGES.indexOf(S.dying),
+      paragraphSelector:".aoTP381Section>p,.aoTP381Intro,.aoTP381TextParagraph",
+      onNavigate:i=>{S.dying=DYING_COMPANION_STAGES[i];render()},
+      timelineLabel:L("Bedside stages","Étapes au chevet")
     });
     if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
   }
