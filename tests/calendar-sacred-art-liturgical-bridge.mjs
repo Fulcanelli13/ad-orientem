@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import { sacredArt2026Curation } from "../src/calendar/sacred-art-2026-curation.js";
+import { renderHomeToString } from "../src/home/presentation.js";
 import {
   selectReleasedHomeArtwork, selectReleasedCalendarArtwork, renderReleasedLiturgicalArtwork
 } from "../src/calendar/sacred-art-liturgical-bridge.js";
@@ -234,6 +235,31 @@ const noWitness=good({...sundayWork,release:{
 assert.equal(selectReleasedCalendarArtwork({
   date:sunday,observedId:"resolved-principal-sunday",works:[noWitness]
 }),null,"No publication on merely asserted Sunday association");
+
+// Exercise the actual Home string renderer, not only the art helper. In the
+// production app the old artist card must not appear beside a cleared new hero.
+const homeState={
+  route:"home",selectedDate:"2026-03-25",language:"en",resolving:false,
+  resolution:{
+    date:"2026-03-25",status:"ready",
+    day:{main:{id:exact.observedId,title:"Annunciation of the Blessed Virgin Mary",
+      rank:1,color:"White"}},
+    proper:{status:"idle"}
+  }
+};
+const newHome=renderHomeToString(homeState,{
+  AO_SACRED_ART_RELEASE_V1:{artworks:[art]},
+  AO_PHASE1_ART:{homeMarkup:()=>'<div data-legacy-art="yes">legacy art</div>'}
+});
+assert.match(newHome,/class="aoLitArtReleased"/);
+assert.doesNotMatch(newHome,/data-legacy-art="yes"/,
+  "Only one Home artwork owner may render");
+const oldHome=renderHomeToString(homeState,{
+  AO_PHASE1_ART:{homeMarkup:()=>'<div data-legacy-art="yes">legacy art</div>'}
+});
+assert.match(oldHome,/data-legacy-art="yes"/,
+  "Prior Home must remain usable without a production-eligible artwork");
+assert.doesNotMatch(oldHome,/class="aoLitArtReleased"/);
 
 // Wiring into the currently owned Home and Calendar surfaces, not a parallel
 // UI. Actual live image deployment awaits the release registry and packaged art.
