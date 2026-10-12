@@ -33,7 +33,8 @@
     "observedClassIDays": 53,
     "curatedAdditionalNonClassIDays": 17,
     "totalListedDates": 70,
-    "distinctProposedArtThemes": 44
+    "distinctProposedArtThemes": 44,
+    "initialMasterpieceSubjectSlots": 24
   },
   "rules": {
     "homepageArtNotSaintOfTheDay": true,
@@ -823,5 +824,188 @@
       "mustSwitchArtwork": false,
       "status": "SOURCE_VERIFIED_SUGGESTED_NON_I_HIGHLIGHT"
     }
-  ]
+  ],
+  "masterpieceAcquisitionBrief": {
+    "status": "SUBJECT_LIST_ONLY_NO_ACQUISITION",
+    "firstWaveMaximumArtworks": 25,
+    "initialArtworksAreOptional": "Never commission or acquire a weak painting just to satisfy a slot. Reuse a truly great painting with honest iconography; priority is 15–25 superb works TOTAL initially.",
+    "initialArtSubjectSlots": [
+      {
+        "id": "nativity",
+        "title": "Nativity and Christmastide",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "epiphany",
+        "title": "Epiphany / Adoration of the Magi",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "presentation",
+        "title": "Presentation in the Temple / Candlemas",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "lent",
+        "title": "Lent, penitence and Christ in the wilderness",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "saint-joseph",
+        "title": "Saint Joseph",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "annunciation",
+        "title": "Annunciation",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "passion-palm",
+        "title": "Passiontide and Palm Sunday",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "holy-thursday",
+        "title": "Holy Thursday / Last Supper",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "crucifixion",
+        "title": "Crucifixion / Precious Blood / Exaltation",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "resurrection",
+        "title": "Resurrection and the Easter Octave",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "ascension",
+        "title": "Ascension",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "pentecost",
+        "title": "Pentecost and its Octave",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "trinity",
+        "title": "Holy Trinity",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "corpus-christi",
+        "title": "Corpus Christi / Eucharist",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "sacred-heart",
+        "title": "Sacred Heart",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "nativity-john-baptist",
+        "title": "Saint John the Baptist",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "peter-and-paul",
+        "title": "Saints Peter and Paul",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "assumption",
+        "title": "Assumption of the BVM",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "immaculate-conception",
+        "title": "Immaculate Conception",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "saint-michael",
+        "title": "Saint Michael",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "christ-king",
+        "title": "Christ the King",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "saints-and-souls",
+        "title": "All Saints / All Souls",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "advent",
+        "title": "Advent",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      },
+      {
+        "id": "rosary",
+        "title": "Our Lady of the Rosary",
+        "mandatorySeparateImage": false,
+        "selectedArtworkId": null,
+        "artisticApproval": "NOT_STARTED"
+      }
+    ],
+    "exclusions": [
+      "ordinary daily saint portraits",
+      "365-day coverage quotas",
+      "minimum originals per Class I date",
+      "automatic art rotation",
+      "museum quantity as quality proxy",
+      "previous 44 source-only editorial approvals promoted to masterpiece approval"
+    ]
+  }
 }
