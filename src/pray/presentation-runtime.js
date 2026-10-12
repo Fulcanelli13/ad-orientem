@@ -1353,7 +1353,7 @@ function renderLibrary(){
   const missing=['en','fr','la'].filter(k=>!p[k]),hasUi=!!p[lang()];
   const missingUi=!hasUi?callout(`${esc(L('No vernacular translation is available in the current UI language.','Aucune traduction vernaculaire n’est disponible dans la langue actuelle de l’interface.'))} ${esc(L('The available source text is shown without fabricating a substitute.','Le texte source disponible est affiché sans fabriquer de traduction de substitution.'))}`,'rubric'):'';
   const category=isFr()?(DATA.categories?.[p.category]?.fr||p.category):(DATA.categories?.[p.category]?.en||p.category),langs=['en','fr','la'].filter(k=>p[k]).map(k=>k.toUpperCase()).join(' · ');
-  return `${head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))}<main class="aoP435930Body"><button class="aoP435930InlineBack" data-p435930-lib-back>${assetIcon('ao-ui-back')} ${esc(L('Prayer Library','Livre de prières'))}</button>${missingUi}${prayerBlock(LIB.open,{scriptureContext:true})}${libraryContextMarkup(p)}<div class="aoP435930Meta"><span>${esc(L('Category','Catégorie'))}: <b>${esc(category)}</b></span><span>${esc(L('Languages','Langues'))}: <b>${esc(langs||L('Source language only','Langue source seulement'))}</b></span>${missing.length?`<span>${esc(L('Not available','Non disponible'))}: <b>${missing.map(x=>x.toUpperCase()).join(' · ')}</b></span>`:''}</div></main>`
+  return `${head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-lib-back>${assetIcon('ao-ui-back')} ${esc(L('Prayer Library','Livre de prières'))}</button>${missingUi}<section class="aoDevoCard" data-ao-devo-card="${esc(LIB.open)}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${esc(L("Prayer Library","Livre de prières"))}</small><h2 class="aoDevoCardTitle">${esc(isFr()?(p.titleFr||p.title):p.title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(isFr()?(p.titleFr||p.title):p.title)}">${prayerBlock(LIB.open,{scriptureContext:true})}</div></section>${libraryContextMarkup(p)}<div class="aoP435930Meta"><span>${esc(L('Category','Catégorie'))}: <b>${esc(category)}</b></span><span>${esc(L('Languages','Langues'))}: <b>${esc(langs||L('Source language only','Langue source seulement'))}</b></span>${missing.length?`<span>${esc(L('Not available','Non disponible'))}: <b>${missing.map(x=>x.toUpperCase()).join(' · ')}</b></span>`:''}</div></main>`
  }
  const q=LIB.q.trim().toLowerCase();let rows=Object.values(DATA.prayers||{}).filter(p=>LIB.cat==='all'||p.category===LIB.cat);if(q)rows=rows.filter(p=>[p.title,p.titleFr,p.en,p.fr,p.la,p.id].join(' ').toLowerCase().includes(q));
  const cats=[['all',L('All','Toutes')],...Object.entries(DATA.categories||{}).map(([id,v])=>[id,isFr()?v.fr:v.en])];
@@ -1417,7 +1417,7 @@ function renderFSMeditation(){
  const mystery=selectedMystery();
  return `${head(L('First Saturday meditation','Méditation du premier samedi'),L('Fifteen minutes with one or more Rosary mysteries · distinct from the five decades','Quinze minutes avec un ou plusieurs mystères du Rosaire · distinctes des cinq dizaines'))}<main class="aoP435930Body"><section class="aoP435930MeditationIntro"><small>${esc(L('CHOOSE A MYSTERY','CHOISISSEZ UN MYSTÈRE'))}</small><h2>${esc(mystery)}</h2><p>${esc(L('You may remain with this mystery for the whole period or deliberately move to another mystery. Do not turn this into another decade of vocal prayer.','Vous pouvez demeurer avec ce mystère pendant toute la période ou passer délibérément à un autre mystère. Ne transformez pas cela en une nouvelle dizaine de prière vocale.'))}</p></section>${mysterySetButtons()}${mysteryButtons()}<section class="aoP435930MeditationFlow"><div>${guideNow(L('Place the mystery before you','Placez le mystère devant vous'),L('Recall the Gospel event simply. Who is present? What is happening? Do not rush to applications yet.','Rappelez simplement l’événement évangélique. Qui est présent ? Que se passe-t-il ? Ne vous hâtez pas encore vers les applications.'))}</div><div>${guideNow(L('Stay with Our Lady’s place in the mystery','Demeurez avec la place de Notre-Dame dans le mystère'),L('Consider what Mary receives, does, suffers, offers, or witnesses here. Remain with what belongs to this mystery rather than inventing a separate scene.','Considérez ce que Marie reçoit, fait, souffre, offre ou contemple ici. Demeurez avec ce qui appartient à ce mystère plutôt que d’inventer une scène distincte.'))}</div><div>${guideNow(L('Turn the mystery toward your own life','Tournez le mystère vers votre propre vie'),L('Ask what grace, conversion, imitation, patience, faith, charity, or fidelity this mystery calls for in you today.','Demandez quelle grâce, conversion, imitation, patience, foi, charité ou fidélité ce mystère appelle en vous aujourd’hui.'))}</div><div>${guideNow(L('Speak briefly, then remain silent','Parlez brièvement, puis demeurez en silence'),L('Speak to God or Our Lady in your own words, then stop adding words and remain with the mystery. Return gently when distracted.','Parlez à Dieu ou à Notre-Dame avec vos propres mots, puis cessez d’ajouter des paroles et demeurez avec le mystère. Revenez-y doucement en cas de distraction.'))}</div></section>${ADOR.timerEnd?timerMarkup():`<div class="aoP435930Timer aoP435930MeditationTimer"><b>${esc(L('15-minute timer aid','Minuteur de 15 minutes'))}</b><span>${esc(L('Start it when you are ready to begin the actual meditation. It never marks the act complete automatically.','Démarrez-le lorsque vous êtes prêt à commencer la méditation proprement dite. Il ne valide jamais automatiquement l’acte.'))}</span><button type="button" data-p435930-timer="15">15 min</button></div>`}<div class="aoP435930MeditationActions"><button class="aoP435930Primary" data-p435930-fs-meditation-complete>${esc(L('I completed fifteen minutes · return','J’ai accompli quinze minutes · retour'))}</button><button class="aoP435930Secondary" data-p435930-fs-meditation-return>${esc(L('Return without marking complete','Retour sans marquer comme accompli'))}</button></div></main>`
 }
-function renderPrayerOnly(id){const p=P(id);return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),L('Prayer Library','Livre de prières'))}<main class="aoP435930Body"><button class="aoP435930InlineBack" data-p435930-prayer-return>${assetIcon('ao-ui-back')} ${esc(L('Return','Retour'))}</button>${prayerBlock(id,{scriptureContext:true})}${p?libraryContextMarkup(p):""}</main>`}
+function renderPrayerOnly(id){const p=P(id);return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-prayer-return>${assetIcon('ao-ui-back')} ${esc(L('Return','Retour'))}</button><section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${esc(L('Prayer','Prière'))}</small><h2 class="aoDevoCardTitle">${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
 let prayerReturnView=null,prayerId=null;
 function pushView(v=view){if(v)navStack.push(v);return navStack.length}
 function popView(fallback='home'){view=navStack.length?navStack.pop():fallback;return view}
@@ -1738,6 +1738,35 @@ function refreshRosaryChoiceFocus(attribute,value){
   node?.focus?.({preventScroll:true});
  });
 }
+function installLibraryParagraphFocus(m,id){
+ const card=m.querySelector(".aoP435930LibraryReader .aoDevoCard");
+ if(!card||!id)return;
+ // The canonical prayer text remains untouched in DATA; split only its
+ // already-escaped render-time lines, retaining the existing Latin flip owner.
+ for(const face of card.querySelectorAll(".aoP435930Text,[data-face-v],[data-face-la]")){
+  const lines=face.innerHTML.split(/<br\s*\/?>/gi);
+  if(!lines.length)continue;
+  face.replaceChildren(...lines.map(line=>{
+   const node=document.createElement("span");
+   node.className=line.trim()?"aoLibraryLine aoDevoParagraph":"aoLibraryBreak";
+   if(line.trim())node.innerHTML=line;
+   else node.setAttribute("aria-hidden","true");
+   return node;
+  }));
+ }
+ const p=P(id);
+ const title=p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière');
+ const reader=installSequentialDevotionalReader({
+  mount:m,kind:"library",chapters:[{id,title}],
+  activeIndex:0,paragraphSelector:".aoLibraryLine",
+  timelineLabel:L('Prayer timeline','Parcours de la prière')
+ });
+ m.addEventListener("click",event=>{
+  if(event.target.closest("[data-p435930-flip]"))
+   queueMicrotask(()=>reader?.focus?.());
+ },{once:false});
+}
+
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);
  if(view==='angelus')queueMicrotask(()=>{
@@ -1762,6 +1791,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   });
   if(!cardDeck)bindAngelusExactRail();
  });else stopAngelusExactRail();
+ if((view==='library'&&LIB.open)||(view==='prayerOnly'&&prayerId))queueMicrotask(()=>installLibraryParagraphFocus(m,view==='library'?LIB.open:prayerId));
  if(view==='stations')queueMicrotask(()=>{
   const titles=STATION_DATA.stationTitles?.[lang()]||STATION_DATA.stationTitles?.en||[];
   const chapters=Array.from({length:14},(_,i)=>({id:'station-'+(i+1),
