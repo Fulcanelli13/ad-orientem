@@ -1102,6 +1102,48 @@ function prepareRosaryOpening(r){
  disclosure.open=rosaryPreparationOpen;
  return true;
 }
+// Reading preferences belong behind one optional control during the
+// active Rosary. Reparent the *existing* donor controls; the canonical bead
+// engine continues to own recitation, Scripture, history and progression.
+let rosaryActiveOptionsOpen=false;
+function prepareRosaryActive(r){
+ const shell=r?.querySelector?.('.pbShell');
+ if(!shell||shell.querySelector(':scope > .lab-rosary-hero')||
+    !shell.querySelector('[data-lab-rosary-next]'))return false;
+ const rail=shell.querySelector(':scope > .aoRosaryFaithfulRail');
+ const header=shell.querySelector(':scope > .lab-view-head');
+ const after=rail||header;if(!after)return false;
+ let options=shell.querySelector(':scope > .aoRosaryActiveOptions');
+ if(!options){
+   options=document.createElement('details');
+   options.className='aoRosaryActiveOptions';
+   options.dataset.aoRosaryActiveOptions='';
+   const summary=document.createElement('summary');
+   summary.append(document.createTextNode(L('Reading options','Options de lecture')));
+   const state=document.createElement('span');
+   state.className='aoRosaryActiveOptionsState';
+   summary.appendChild(state);
+   const body=document.createElement('div');
+   body.className='aoRosaryActiveOptionsBody';
+   options.append(summary,body);
+   options.addEventListener('toggle',()=>{rosaryActiveOptionsOpen=options.open===true});
+ }
+ if(after.nextElementSibling!==options)after.insertAdjacentElement('afterend',options);
+ const body=options.querySelector('.aoRosaryActiveOptionsBody');
+ const reading=shell.querySelector('.aoP435930RosaryBar');
+ const recitation=shell.querySelector('.r29-head-recitation,.lab-recitation-mode');
+ const guide=shell.querySelector('.aoRosaryGuide');
+ for(const control of [reading,recitation,guide]){
+   if(control&&control.parentElement!==body)body.appendChild(control);
+ }
+ const state=options.querySelector('.aoRosaryActiveOptionsState');
+ if(state)state.textContent=[
+   S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'),
+   S.rosary.recitation==='group'?L('Group','Groupe'):L('Individual','Individuel')
+ ].join(' · ');
+ options.open=rosaryActiveOptionsOpen;
+ return true;
+}
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  // Montfort's historical methods cover fifteen traditional mysteries only.
@@ -1126,6 +1168,7 @@ function decorateRosary(){
  decorateRosaryExact(r);
  ensureRosaryGuide(r);
  prepareRosaryOpening(r);
+ prepareRosaryActive(r);
  declutterRosaryDonor(r);
 }
 function confessionModeLabel(path){
