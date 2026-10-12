@@ -7,16 +7,16 @@
 | Measure | Count |
 |---|---:|
 | P0 requirements audited | **51** |
-| Subjects with an identifiable source painting or documented contextual candidate | **35** |
-| Still requiring credible matched primary artwork research | **16** |
-| Subject-to-painting candidate assignments | **39** |
-| Distinct canonical proposed painting originals | **35** |
+| Subjects with an identifiable source painting or documented contextual candidate | **44** |
+| Still requiring credible matched primary artwork research | **7** |
+| Subject-to-painting candidate assignments | **48** |
+| Distinct canonical proposed painting originals | **44** |
 | Human approvals made in this work | **0** |
 | Images acquired or released in this work | **0** |
 
-The counts represent **documented options, not 35 visually approved masterpieces**. A weak or context-only source is not an acceptable final selection. The next selection step is the user's artistic evaluation, particularly for miniatures, studies, posthumous Thérèse portraiture and paintings that show the named saint only in a group.
+The counts represent **documented options, not 44 visually approved masterpieces**. A weak or context-only source is not an acceptable final selection. The next selection step is the user's artistic evaluation, particularly for miniatures, studies, posthumous Thérèse portraiture and paintings that show the named saint only in a group.
 
-## Painting options for 35 P0 subject requirements
+## Painting options for 44 P0 subject requirements
 
 | Subject | Source-linked primary painting | Relationship and editorial qualification | Additional option |
 |---|---|---|---|
@@ -56,6 +56,16 @@ The counts represent **documented options, not 35 visually approved masterpieces
 | `SNT-OT-22` Saint Agnes | [Francisco Rizi — Santa Inés (Saint Agnes)](https://www.museodelprado.es/coleccion/obra-de-arte/santa-ines/0f8c1439-ae5c-47d6-bad3-757d086389fd) | exact named saint agnes | — |
 | `SNT-OT-27` Saint Denis of Paris | [Joseph-Marie Vien — Saint Denis prêchant la foi en France](https://utpictura18.univ-amu.fr/notice/762-saint-denis-prechant-foi-en-france-joseph-marie-vien) | exact named saint denis of paris preaching tradition | — |
 
+| SNT-DC-10 Saint John of the Cross | [Céline Martin — Saint John of the Cross](https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/) | exact devotional painting | — |
+| SNT-DC-11 Saint Alphonsus Liguori | [Antonio Marini — Sant'Alfonso Maria de Liguori](https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548) | exact saint painting | — |
+| SNT-DC-12 Saint Francis de Sales | [Benoît Alhoste (attributed) — Le Bon Pasteur, saint François de Sales et sainte Madeleine](https://pop.culture.gouv.fr/notice/joconde/000PE032930) | named saint in group | — |
+| SNT-DC-20 Saint Peter Damian | [Venanzio l'Eremita — San Pier Damiano](https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano) | exact saint painting | — |
+| SNT-DC-21 Saint Albert the Great | [Giuseppe Franchi — Portrait of Saint Albert the Great](https://www.catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0060-00113_R03) | exact saint provisional catalogue | — |
+| SNT-DC-22 Saint Robert Bellarmine | [Carlo Perotti (attributed) — Ritratto di Roberto Bellarmino](https://www.lombardiabeniculturali.it/opere-arte/schede/L0050-00042/) | exact named saint portrait uncertain date | — |
+| SNT-OT-17 Saint Margaret Mary Alacoque | [Bénédict Masson — Apparition du Sacré-Cœur à sainte Marguerite-Marie Alacoque](https://pop.culture.gouv.fr/notice/palissy/PM74001769) | exact named saint apparition | — |
+| SNT-OT-18 Saint Jean Vianney | [Unidentified 19th-century painter — Guérison de saint Jean-Marie Vianney, curé d'Ars](https://pop.culture.gouv.fr/notice/palissy/PM01002671) | exact named saint historical scene | — |
+| SNT-OT-28 Saint Vincent de Paul | [Jean-Léon Gérôme — Saint Vincent de Paul](https://commons.wikimedia.org/wiki/File:Saint_Vincent_de_Paule_-_Gerome.jpg) | exact named saint french charity scene | — |
+
 ## High-value canonical reuse
 
 The Prado's Rubens *Apostolado del duque de Lerma* supplies seven separate coherent Apostle paintings, each with its own identity and museum record. **Juan Ribalta's Mark and Luke** is one original painting serving two separate evangelist subjects. **Céline Martin's 1925 *Thérèse aux roses*** is one documented posthumous painted likeness serving both Thérèse's Calendar and Devotion requirements. **Georges de La Tour's Joseph** likewise serves the Calendar and the Saint Joseph devotional module; **Rubens workshop's Teresa intercession** can legitimately serve both Teresa and Purgatory with truthful captions. **Rubens's All Saints** remains a common possible original for the All Saints homepage occasion and the Devotion.
@@ -73,17 +83,23 @@ The new Louvre source reconciliation joins three painted Greek Fathers originall
 - **Eucharistic Adoration:** Ingres directly depicts adoration of the Host; Rubens's Eucharistic paintings are often theological allegory. Do not call a Last Supper, Eucharistic allegory or Communion scene literal Adoration/Benediction.
 - **Aesthetic prohibitions:** Fra Angelico and El Greco remain excluded; miniature predella treatment and similarly flat archaizing paintings must be visually screened even when by different painters.
 
-## Remaining 16 priority gaps, deliberately not filled with inferior options
+## Remaining 7 priority gaps, deliberately not filled with inferior options
 
 **Devotions (2)** — Immaculate Heart of Mary (`DEV-02`); Our Lady of Perpetual Help (`DEV-12`).
 
-**Calendar saints (14)** — Saint John of the Cross (`SNT-DC-10`); Saint Alphonsus Liguori (`SNT-DC-11`); Saint Francis de Sales (`SNT-DC-12`); Saint Bede the Venerable (`SNT-DC-18`); Saint Peter Damian (`SNT-DC-20`); Saint Albert the Great (`SNT-DC-21`); Saint Robert Bellarmine (`SNT-DC-22`); Saint Peter Canisius (`SNT-DC-23`); Saint Cyril of Alexandria (`SNT-DC-25`); Saint Cyril of Jerusalem (`SNT-DC-26`); Saint Ephrem (`SNT-DC-27`); Saint Margaret Mary Alacoque (`SNT-OT-17`); Saint Jean Vianney (`SNT-OT-18`); Saint Vincent de Paul (`SNT-OT-28`).
+**Calendar saints (5)** — Saint Bede the Venerable (`SNT-DC-18`); Saint Peter Canisius (`SNT-DC-23`); Saint Cyril of Alexandria (`SNT-DC-25`); Saint Cyril of Jerusalem (`SNT-DC-26`); Saint Ephrem (`SNT-DC-27`).
 
 These may retain historical provisional leads; they are **not** automatically sufficient to satisfy this high-quality painting selection. Investigate substantial French, Flemish, Italian and Spanish originals, or explicitly record no painting suitable rather than inflate coverage.
 
+## Remaining-gap accuracy notes
+
+The surviving seven are not seven paintings awaiting download. Our Lady of Perpetual Help is an exact original Byzantine icon requiring an explicit style exception; the Bowers Museum Heart of Mary illustrates Seven Sorrows rather than exact Immaculate Heart iconography; Saint Cyril of Alexandria's Italian portrait is catalogued as a stereotyped minor work, and the Saint Cyril of Jerusalem lead is a small fresco, not a grand oil painting. The existing Canisius image is chiefly Marian, the Bede cycle is insufficiently identified, and Saint Ephrem has no suitably sourced painterly lead.
+
+Bellarmine's Ambrosiana portrait attribution and date contradict; do not call it a lifetime likeness. The Vincent de Paul Gérôme record currently depends on photographic and museum-inventory evidence, pending an individual first-party collection record.
+
 ## Working sources, ownership and test links
 
-- [Canonical 51-subject working match register](../../data/calendar/sacred-art-p0-51-subject-source-matches-20261012.v1.json) — 39 distinct subject-to-work suggestions using 35 artworks.
+- [Canonical 51-subject working match register](../../data/calendar/sacred-art-p0-51-subject-source-matches-20261012.v1.json) — 48 subject-to-work candidate assignments using 44 distinct canonical artworks.
 - [Immutable user's 235-subject decisions (101 selected)](../../data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json).
 - [23 high-impact Calendar feast/Sunday masterpiece research lanes](../../data/calendar/sacred-art-masterpiece-anchor-wave-20261012.v1.json).
 - [GitHub CI source-integrity and style gate](https://github.com/Fulcanelli13/ad-orientem/actions/workflows/sacred-art-runtime-bridge.yml).
