@@ -58,3 +58,21 @@ export function createObservedPriestEntranceController({form}={}){
     reset(){phase="UNOBSERVED";arrival=null;reverence=null;return state()}
   });
 }
+
+// Existing right-rail priest-action surface can show a truly observed gesture
+// while NO canonical Mass cue is yet active. It must not retain it at C0001.
+export function projectObservedPreMassPriestAction({state=null,activeCueId=null}={}){
+  if(activeCueId!=null || state?.phase!=="REVERENCE_OBSERVED" ||
+     state?.reverence?.observed!==true)return null;
+  const type=state.reverence.kind;
+  if(type==="SIMPLE_GENUFLECTION")return Object.freeze({
+    label:"GENUFLECTS",action:"GENUFLECTS",iconKey:"genuflect",
+    cueId:null,owner:"OBSERVED_PREMASS_PRIEST",transient:true
+  });
+  if(type==="PROFOUND_BOW")return Object.freeze({
+    label:"BOWS PROFOUNDLY",action:"BOWS PROFOUNDLY",
+    iconKey:"priest_profound_bow_rich",
+    cueId:null,owner:"OBSERVED_PREMASS_PRIEST",transient:true
+  });
+  return null;
+}
