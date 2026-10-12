@@ -1,0 +1,54 @@
+name: Sacred art — Rubens Trinity 19k original review
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-rubens-trinity-full-master.py"
+      - "data/calendar/sacred-art-masterpiece-selected-source-triage-20261012.v1.json"
+      - ".github/workflows/sacred-art-rubens-trinity-full-master.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-master-source-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install Pillow requests
+      - name: Verify metadata and acquire Rubens Trinity full original
+        run: |
+          python -m py_compile tools/calendar/acquire-rubens-trinity-full-master.py
+          python tools/calendar/acquire-rubens-trinity-full-master.py
+      - name: Verify original SHA and release hold
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          p=Path('artifacts/sacred-art-kmska-trinity-full')
+          if not (p/'report.json').exists():raise SystemExit('No evidence report')
+          j=json.loads((p/'report.json').read_text())
+          assert not j['publishedToApp'] and not j['cropApproved']
+          assert not j['aestheticHomeMasterpieceApproved']
+          if j['status']=='FULL_MUSEUM_DERIVED_COMMONS_ORIGINAL_ACQUIRED_FOR_REVIEW':
+              b=(p/'kmska-314-full-original.jpg').read_bytes()
+              assert hashlib.sha256(b).hexdigest()==j['sha256']
+              assert hashlib.sha1(b).hexdigest()==j['commonsSha1']
+              assert j['width']==19178 and j['height']==19721
+              assert (p/'review-master-fit.webp').is_file()
+              assert j['publicationRightsApproved'] is False
+              print('PASS 19k source image, CC0 declaration, SHA1+SHA256, no app promotion')
+          else:print('HELD',j.get('holdReason',''))
+          PY
+      - name: Preserve full original and QA record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rubens-trinity-19k-full-original-research-only
+          path: artifacts/sacred-art-kmska-trinity-full/
+          retention-days: 30
+          if-no-files-found: warn
