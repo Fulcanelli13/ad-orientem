@@ -1039,6 +1039,48 @@ function ensureRosaryGuide(r){
  rosaryGuideOpen=guide.open===true;
  return guide;
 }
+let rosaryPreparationOpen=false;
+// A Rosary opening is prayer-first: move the preserved recommendation ahead of
+// presentation options without changing the donor's buttons, event handlers or
+// historical form selection. The active-bead screen has no hero and is untouched.
+function prepareRosaryOpening(r){
+ const shell=r?.querySelector?.('.pbShell');
+ const hero=shell?.querySelector?.(':scope > .lab-rosary-hero');
+ if(!hero)return false;
+ const header=shell.querySelector(':scope > .lab-view-head');
+ let disclosure=shell.querySelector(':scope > .aoRosaryPreparation');
+ if(!disclosure){
+  disclosure=document.createElement('details');
+  disclosure.className='aoRosaryPreparation';
+  disclosure.dataset.aoRosaryPreparation='';
+  disclosure.addEventListener('toggle',()=>{rosaryPreparationOpen=disclosure.open===true});
+  const summary=document.createElement('summary');
+  summary.append(document.createTextNode(L('Reading and recitation options','Options de lecture et de récitation')));
+  const state=document.createElement('span');
+  state.className='aoRosaryPreparationState';summary.append(state);
+  const body=document.createElement('div');
+  body.className='aoRosaryPreparationBody';
+  disclosure.append(summary,body);
+ }
+ // Keep a stable, meaningful order for a first-time visitor, retaining
+ // the exact source-owned action as the first prominent card.
+ if(header&&hero.previousElementSibling!==header)header.insertAdjacentElement('afterend',hero);
+ if(disclosure.previousElementSibling!==hero)hero.insertAdjacentElement('afterend',disclosure);
+ const body=disclosure.querySelector('.aoRosaryPreparationBody');
+ const bar=shell.querySelector('.aoP435930RosaryBar');
+ const recitation=shell.querySelector('.lab-recitation-mode,.r29-head-recitation');
+ const guide=shell.querySelector('.aoRosaryGuide');
+ for(const node of [bar,recitation,guide]){
+  if(node&&node.parentElement!==body)body.appendChild(node);
+ }
+ const state=disclosure.querySelector('.aoRosaryPreparationState');
+ if(state)state.textContent=[
+  S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'),
+  S.rosary.recitation==='group'?L('Group','Groupe'):L('Individual','Individuel')
+ ].join(' · ');
+ disclosure.open=rosaryPreparationOpen;
+ return true;
+}
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  // Montfort's historical methods cover fifteen traditional mysteries only.
@@ -1062,6 +1104,7 @@ function decorateRosary(){
  if(S.rosary.mode==='guided'&&!r.querySelector('.aoP435930SilencePrompt')){const target=r.querySelector('.lab-contemplation');if(target){const n=document.createElement('div');n.className='aoP435930SilencePrompt';n.textContent=L('Silence · remain with the mystery before moving on.','Silence · demeurez avec le mystère avant de poursuivre.');target.appendChild(n)}}
  decorateRosaryExact(r);
  ensureRosaryGuide(r);
+ prepareRosaryOpening(r);
  declutterRosaryDonor(r);
 }
 function confessionModeLabel(path){
