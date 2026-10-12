@@ -64,6 +64,24 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930LibraryReader .aoP435930Source{margin-top:20px}
 #aoPray435930 .aoP435930LibraryReader .aoDevoSequenceTimeline{margin:7px 0}
 
+/* Public Benediction reuses source-owned seven stages as prayer-first cards.
+   The user, not an automatic clock, advances with the actual ceremonial. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll{
+ display:block;padding:18px 16px 26dvh;min-height:min(350px,52dvh)}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll>*{margin-block:0 22px}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideNow h2{display:none!important}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930Prayer{
+ border:0!important;background:transparent!important;box-shadow:none!important}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930Flip{
+ max-width:100%;white-space:normal}
+#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"] .aoP435930GuideNav{display:none!important}
+#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-step="6"] .aoP435930GuideNav{display:flex!important}
+#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-step="6"] [data-p435930-ben-prev]{display:none!important}
+#aoPray435930 .aoP435930BenedictionReader [data-ao-benediction-guide]{
+ margin:12px 0 8px}
+#aoPray435930 .aoP435930BenedictionReader [data-ao-benediction-guide]>summary{
+ min-height:44px;display:flex;align-items:center;color:var(--muted,#aeb2b8);font-size:13px}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
