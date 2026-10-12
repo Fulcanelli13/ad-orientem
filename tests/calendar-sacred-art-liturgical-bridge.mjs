@@ -153,6 +153,45 @@ assert.equal(home?.held,false);
 assert.equal(home?.artworkTitle,sacredArt2026Curation.selections["ROS-11"].title);
 assert.ok(!renderReleasedLiturgicalArtwork(home).includes("Saint Joseph"));
 
+// A Class II major feast can acquire artwork only after the separate release
+// explicitly verifies that date's observed principal. Nominal dates never
+// activate images from a title match alone.
+const presentation=sacredArt2026Curation.occasions.find(x=>
+  x.date==="2026-02-02" && x.group==="otherHighlights");
+assert.ok(presentation?.selectedSubjects.includes("ROS-04"));
+const presentationWork=good({
+  id:"met-777777",
+  source:{rights:"CC0",objectUrl:"https://www.metmuseum.org/art/collection/search/777777"},
+  editorial:{subjectIds:["ROS-04"],
+    selectedArtworkId:sacredArt2026Curation.selections["ROS-04"].artworkId},
+  image:{...art.image,path:"assets/sacred-art/met-777777.webp"}
+});
+const candlemas={date:"2026-02-02",observedId:"certified-purification-principal"};
+assert.equal(selectReleasedCalendarArtwork({...candlemas,works:[presentationWork]}),null);
+const verifiedPresentation={
+ ...presentationWork,
+ release:{...presentationWork.release,verifiedOccasions:[{
+   date:candlemas.date,subjectId:"ROS-04",
+   observedPrincipalId:candlemas.observedId
+ }]}
+};
+assert.equal(selectReleasedCalendarArtwork({
+ ...candlemas,works:[verifiedPresentation]
+})?.subjectId,"ROS-04");
+assert.equal(selectReleasedCalendarArtwork({
+ ...candlemas,observedId:"wrong-mass",works:[verifiedPresentation]
+}),null);
+assert.equal(selectReleasedHomeArtwork({
+ date:"2026-02-03",observedId:"resolved-next-day",works:[verifiedPresentation]
+})?.anchorDate,"2026-02-02");
+
+// Even an exact editorial ID cannot override a known different museum object.
+assert.equal(selectReleasedCalendarArtwork({...exact,works:[good({
+ source:{rights:"CC0",objectUrl:"https://www.metmuseum.org/art/collection/search/123456"},
+ editorial:{subjectIds:["ROS-01"],
+   selectedArtworkId:sacredArt2026Curation.selections["ROS-01"].artworkId}
+})]}),null,"Known museum source is a hard identity check");
+
 // Wiring into the currently owned Home and Calendar surfaces, not a parallel
 // UI. Actual live image deployment awaits the release registry and packaged art.
 const homeSource=readFileSync("src/home/presentation.js","utf8");
