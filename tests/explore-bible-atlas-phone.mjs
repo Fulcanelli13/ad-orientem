@@ -181,6 +181,8 @@ try{
  assert.match(await page.locator('#ao-find-modular-root [data-bible-cinematic-review]').innerText(),/Johannine narrative order/);
  const john2jump=page.locator('#ao-find-modular-root [data-bible-review-jump="82"]');
  assert.equal(await john2jump.count(),1);
+ assert.equal(await john2jump.getAttribute("data-bible-review-event-key"),
+  "biblical:event:jerusalem-temple-e3","the cinematic jump must retain its stable event identity");
  await john2jump.tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
   globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===82&&
