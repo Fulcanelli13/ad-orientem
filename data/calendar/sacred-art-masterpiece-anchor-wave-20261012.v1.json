@@ -25,7 +25,7 @@
     "primaryUserSelected": 13,
     "primaryArchiveSalvage": 4,
     "primaryNewCustodianLeads": 6,
-    "extraReviewAlternatives": 7,
+    "extraReviewAlternatives": 8,
     "rightNowProductionReady": 0,
     "subjectsUserSelectedTotal": 101,
     "minPublicationsRequiredPerDate": 0
@@ -534,8 +534,27 @@
         "mobileCropApproved": false
       },
       "priority": "P0",
-      "blocker": "No worthy high-resolution directly licensed selected Sacred Heart painting; historical Morlete image has pending PD-Art jurisdiction review. Batoni high-resolution reproduction under unresolved third-party photograph copyright.",
-      "status": "BLOCKED_RIGHTS_AND_ARTISTIC_SELECTION"
+      "blocker": "Two acquired/researched primary paths are not yet release-ready: Morlete Ruiz source original has outstanding Commons PD-Art jurisdiction/image crop approval; Batoni painting at Voltaggio is verified by national cultural catalogue but licensed high-resolution pixels and mobile crop are unknown. No user-approved high-resolution Sacred Heart image.",
+      "status": "BLOCKED_RIGHTS_AND_ARTISTIC_SELECTION",
+      "additional": [
+        {
+          "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+          "provisionalLeadId": "catalogo-0100449134",
+          "artist": "Pompeo Girolamo Batoni",
+          "title": "Sacro Cuore di Gesù",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0100449134",
+          "medium": "oil on canvas",
+          "associationTier": "EXACT_SACRED_HEART_ICONOGRAPHY",
+          "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+          "description": "Italian national cultural heritage catalogue lists painting by Pompeo Batoni in the Capuchin Pinacoteca at Voltaggio. Do not confuse this painting, or attribute its photograph, to Batoni's better-known Gesù Church painting. Artwork pixel access, custodian permission and quality unresolved.",
+          "userSelectedForSubject": false,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageAcquired": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ]
     },
     {
       "key": "assumption",
