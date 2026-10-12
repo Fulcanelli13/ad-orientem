@@ -11,6 +11,8 @@ on:
       - "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json"
       - "data/calendar/sacred-art-masterpiece-anchor-wave-20261012.v1.json"
       - "tests/calendar-sacred-art-masterpiece-anchor-wave.mjs"
+      - "data/calendar/sacred-art-p0-51-subject-source-matches-20261012.v1.json"
+      - "tests/calendar-sacred-art-p0-51-source-matches.mjs"
       - "data/calendar/sacred-art-masterpiece-first-wave-2026.v1.json"
       - "tests/calendar-sacred-art-masterpiece-shortlist.mjs"
       - "tests/calendar-sacred-art-selection.mjs"
@@ -34,6 +36,8 @@ on:
       - "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json"
       - "data/calendar/sacred-art-masterpiece-anchor-wave-20261012.v1.json"
       - "tests/calendar-sacred-art-masterpiece-anchor-wave.mjs"
+      - "data/calendar/sacred-art-p0-51-subject-source-matches-20261012.v1.json"
+      - "tests/calendar-sacred-art-p0-51-source-matches.mjs"
       - "data/calendar/sacred-art-masterpiece-first-wave-2026.v1.json"
       - "tests/calendar-sacred-art-masterpiece-shortlist.mjs"
       - "tests/calendar-sacred-art-selection.mjs"
@@ -65,6 +69,7 @@ jobs:
           node --check tests/calendar-sacred-art-liturgical-bridge.mjs
           node tests/calendar-sacred-art-liturgical-bridge.mjs
           node tests/calendar-sacred-art-masterpiece-anchor-wave.mjs
+          node tests/calendar-sacred-art-p0-51-source-matches.mjs
           node tests/calendar-sacred-art-masterpiece-shortlist.mjs
           node tests/calendar-sacred-art-selected-source-triage.mjs
           node tests/calendar-sacred-art-acquired-image-batch-summary.mjs
