@@ -1,0 +1,35 @@
+name: Mass 1962 printed July image collation B04
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/mass/printed-1962-july-image-collation-b04.v1.json'
+      - 'tools/calendar/printed-1962-july-image-b04.mjs'
+      - '.github/workflows/mass-1962-printed-july-image-b04.yml'
+  push:
+    paths:
+      - 'data/mass/printed-1962-july-image-collation-b04.v1.json'
+      - 'tools/calendar/printed-1962-july-image-b04.mjs'
+      - '.github/workflows/mass-1962-printed-july-image-b04.yml'
+jobs:
+  independent-image-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Compare 34 independently image-transcribed July assertions to actual 1962 Proper
+        run: node tools/calendar/printed-1962-july-image-b04.mjs
+      - name: Preserve traceable per-page discrepancy report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-july-image-b04
+          path: artifacts/mass-printed-1962-july-image-b04.json
+          if-no-files-found: warn
