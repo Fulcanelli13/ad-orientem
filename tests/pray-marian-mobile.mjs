@@ -93,6 +93,10 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-p435930-angelus-appendix]").count(),0,"Angelus-only appendix leaked into Regina Caeli");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null}));
  await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:18000});
+ // The canonical opening now intentionally hides optional explanation.
+ // Expand the native preparation disclosure before requesting the Guide.
+ const prep=page.locator("#aoPrayerBookRoot.open .aoRosaryPreparation");
+ if(await prep.count())await prep.locator("summary").first().click();
  const guide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
  assert.equal(await guide.locator(".aoRosaryGuideSection").count(),6);
  assert.equal(await guide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
