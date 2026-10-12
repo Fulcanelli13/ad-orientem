@@ -3,6 +3,7 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - "index.html"
       - "tests/pray-scripture-offline-reload-phone.mjs"
       - "src/pray/presentation-runtime.js"
       - "src/app/offline-boot.js"
