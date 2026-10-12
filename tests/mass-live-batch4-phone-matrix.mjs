@@ -4,6 +4,7 @@ import {mkdir,readFile,writeFile} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {inflateSync} from "node:zlib";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const artifactDir=resolve(root,"artifacts/mass-live-batch4");
@@ -21,6 +22,51 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(4187,"127.0.0.1",ok)});
 let browser;
+
+// Screenshots are acceptance evidence, not decorative files. Fail if a
+// supposedly visible elevation produces only the dark cinematic backdrop.
+// Chromium currently emits RGB8 PNGs; explicitly reject unknown formats.
+function brightPixelCount(png,threshold=110){
+ let width=0,height=0,channels=0,offset=8;
+ const idat=[];
+ while(offset+12<=png.length){
+  const n=png.readUInt32BE(offset),kind=png.toString("ascii",offset+4,offset+8);
+  const start=offset+8;
+  if(kind==="IHDR"){
+   width=png.readUInt32BE(start);height=png.readUInt32BE(start+4);
+   const depth=png[start+8],color=png[start+9];
+   if(depth!==8||![2,6].includes(color))throw Error("Unsupported screenshot PNG format");
+   channels=color===2?3:4;
+  }
+  if(kind==="IDAT")idat.push(png.subarray(start,start+n));
+  offset=start+n+4;
+  if(kind==="IEND")break;
+ }
+ if(!width||!height||!idat.length)throw Error("PNG screenshot missing image data");
+ const raw=inflateSync(Buffer.concat(idat));
+ const stride=width*channels;
+ let previous=Buffer.alloc(stride),position=0,count=0;
+ for(let y=0;y<height;y++){
+  const filter=raw[position++],row=Buffer.alloc(stride);
+  if(filter>4)throw Error("Unsupported PNG filter "+filter);
+  for(let i=0;i<stride;i++){
+   const value=raw[position++],left=i>=channels?row[i-channels]:0,
+    above=previous[i],upperLeft=i>=channels?previous[i-channels]:0;
+   const predictor=left+above-upperLeft;
+   const paeth=Math.abs(predictor-left)<=Math.abs(predictor-above) &&
+     Math.abs(predictor-left)<=Math.abs(predictor-upperLeft) ? left
+     : Math.abs(predictor-above)<=Math.abs(predictor-upperLeft) ? above : upperLeft;
+   row[i]=(value+(filter===1?left:filter===2?above:filter===3?Math.floor((left+above)/2):filter===4?paeth:0))&255;
+  }
+  for(let x=0;x<width;x++){
+   const k=x*channels;
+   if(Math.max(row[k],row[k+1],row[k+2])>threshold)count++;
+  }
+  previous=row;
+ }
+ return count;
+}
+
 const results=[];
 const forms=["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"];
 const families=["VOTIVE","REQUIEM"];
@@ -148,7 +194,26 @@ try{
     samples[cue]={...state,scroll:focus.status,exactFocusReached:state.focus===cue};
     if(cue==="AO.SM.C0174" && family==="VOTIVE"){
       const filename=form.toLowerCase()+"-host-elevation-"+viewport.width+"px.png";
-      await page.screenshot({path:resolve(artifactDir,filename),animations:"disabled"});
+      const cinematic=await page.evaluate(()=>{
+        const layer=document.querySelector('.ao-cinematic[data-kind="ELEVATION"]');
+        const icon=layer?.querySelector('[data-icon-slot="cinematic"]');
+        return {visible:!!layer&&!layer.hidden,iconVisible:!!icon&&!icon.hidden,
+          iconMask:icon?getComputedStyle(icon).maskImage:null,
+          iconImage:icon?getComputedStyle(icon).backgroundImage:null,
+          subtitle:layer?.querySelector('[data-role="cinematic-sub"]')?.textContent??null};
+      });
+      assert(cinematic.visible && cinematic.iconVisible,
+        form+" Host elevation has a black cinematic overlay without source icon: "+
+        JSON.stringify(cinematic));
+      assert(cinematic.iconMask!=="none" || cinematic.iconImage!=="none",
+        form+" Host elevation source icon has no rendered artwork: "+JSON.stringify(cinematic));
+      const image=await page.screenshot({path:resolve(artifactDir,filename),
+        animations:"disabled"});
+      const bright=brightPixelCount(image);
+      assert(bright>300,
+        form+" Host elevation screenshot is visually blank ("+bright+
+        " bright pixels), despite passing source cue/bell checks");
+      samples[cue].visualEvidence={brightPixels:bright,cinematic};
     }
    }
    assert(!errorMessages.length,form+"/"+family+" browser errors: "+errorMessages.join(" | "));
