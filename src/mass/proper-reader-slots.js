@@ -59,6 +59,15 @@ function readyEnvelope(slot,value,{language="en"}={}){
         liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
         sourcePath:composed.sourcePath,
       }));
+      // When a separate St Luke commemoration follows in Low Mass, its
+      // conclusion is independent. The fixed end-of-block ℟. Amen covers
+      // that final prayer; emit this first Amen at the missionary conclusion.
+      if(index<rows.length-1)paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1)+".MISSION_AMEN",kind:"RESPONSE",
+        latin:"℟. Amen.",vernacular:"℟. Amen.",
+        role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+      }));
     }else{
       paragraphs.push(Object.freeze({
         id:slot+"."+(index+1),kind:"TEXT",
