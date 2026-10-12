@@ -1,0 +1,749 @@
+{
+  "schema": "AO_SACRED_ART_2026_MASTERPIECE_ANCHOR_WAVE_V1",
+  "asOf": "2026-10-12",
+  "ownerPR": 887,
+  "phase": "RESEARCH_AND_REUSE_NOT_ACQUISITION_OR_PUBLICATION",
+  "sourceDecisions": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+  "sourceArchive": "data/calendar/sacred-art-candidates.v1.json",
+  "sourceLiturgicalCalendar": "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json",
+  "purpose": "23 high-salience seasonal and liturgical hero themes, NOT one image per Sunday/feast. Primary candidates may be old curator picks, already acquired research originals, or verified new custodial leads. User-approved subject paintings are not automatically homepage masterpieces.",
+  "policy": {
+    "existingUserChoicesImmutable": true,
+    "onlyOldMasterGreatWorks": true,
+    "elGrecoExcluded": true,
+    "allFeastHeadlinesFromDayResolver": true,
+    "sceneCaptionAlwaysTrue": true,
+    "optionalReuseAcrossDevotionsAndBible": true,
+    "releaseRightsGate": true,
+    "mobileCropApprovalRequired": true,
+    "mustSwitchByDate": false,
+    "holdUntilBetterReleasedArtwork": true,
+    "oldAcquisitionDoesNotImplyNewApproval": true
+  },
+  "summary": {
+    "themeCount": 23,
+    "primaryUserSelected": 13,
+    "primaryArchiveSalvage": 4,
+    "primaryNewCustodianLeads": 6,
+    "extraReviewAlternatives": 7,
+    "rightNowProductionReady": 0,
+    "subjectsUserSelectedTotal": 101,
+    "minPublicationsRequiredPerDate": 0
+  },
+  "themes": [
+    {
+      "key": "advent",
+      "name": "Advent",
+      "dates": [
+        "2026-11-29",
+        "2026-12-06",
+        "2026-12-13",
+        "2026-12-20"
+      ],
+      "relation": "SEASONAL_BAPTIST_NARRATIVE_NOT_EACH_SUNDAY_EXACT_GOSPEL",
+      "primary": {
+        "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+        "provisionalLeadId": "ng-6480",
+        "artist": "Raphael",
+        "title": "Saint John the Baptist Preaching",
+        "sourceUrl": "https://www.nationalgallery.org.uk/paintings/raphael-saint-john-the-baptist-preaching",
+        "medium": "oil on poplar",
+        "associationTier": "BAPTIST_PREACHING",
+        "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+        "description": "Wilderness preaching. Exact appointed passage must be separately checked; horizontal predella may be hard to frame on phone.",
+        "userSelectedForSubject": false,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageAcquired": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "additional": [
+        {
+          "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+          "provisionalLeadId": "ng-69",
+          "artist": "Pier Francesco Mola",
+          "title": "Saint John the Baptist preaching in the Wilderness",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/pier-francesco-mola-saint-john-the-baptist-preaching-in-the-wilderness",
+          "medium": "oil on canvas",
+          "associationTier": "BAPTIST_PREACHING",
+          "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+          "description": "Alternative with a tighter composition.",
+          "userSelectedForSubject": false,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageAcquired": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "key": "nativity",
+      "name": "Christmas and Octave",
+      "dates": [
+        "2026-12-25",
+        "2026-01-01"
+      ],
+      "relation": "NATIVITY_THEMATIC_WORK_TITLE_MUST_BE_TRUTHFUL",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "ROS-03",
+        "artworkSelectionId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+        "artist": "Jean-Léon Gérôme",
+        "title": "The Age of Augustus: Birth of Christ",
+        "sourceUrl": null,
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "epiphany",
+      "name": "Epiphany",
+      "dates": [
+        "2026-01-06"
+      ],
+      "relation": "SAME_GOSPEL_EVENT",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "BIB-G01",
+        "artworkSelectionId": "ART-eter-aul-ubens-doration-of-the-agi",
+        "artist": "Peter Paul Rubens",
+        "title": "Adoration of the Magi",
+        "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "presentation",
+      "name": "Candlemas / Presentation",
+      "dates": [
+        "2026-02-02"
+      ],
+      "relation": "SAME_TEMPLE_EVENT",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "ROS-04",
+        "artworkSelectionId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+        "artist": "Philippe de Champaigne",
+        "title": "Presentation of Jesus at the Temple",
+        "sourceUrl": null,
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "lent-temptation",
+      "name": "First Sunday of Lent",
+      "dates": [
+        "2026-02-22"
+      ],
+      "relation": "APPOINTED_GOSPEL_TEMPTATION_SUBJECT_PENDING_VERIFICATION",
+      "primary": {
+        "kind": "EXISTING_ACQUIRED_ARCHIVE_ORIGINAL",
+        "canonicalArchiveId": "nga-50726",
+        "artist": "Juan de Flandes",
+        "title": "The Temptation of Christ",
+        "sourceUrl": "https://www.nga.gov/artworks/50726-temptation-christ",
+        "sourceRights": "CC0",
+        "originalSha256": "a9225bb7ebdcabbd9b8610d88576b8d24aa7e382173078e7181ae192be34d9a6",
+        "pixelDimensions": {
+          "width": 3087,
+          "height": 4096
+        },
+        "provenance": "2026_10_REUSE_ALREADY_ACQUIRED_NGA_ORIGINAL",
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "lent-transfiguration",
+      "name": "Second Sunday of Lent",
+      "dates": [
+        "2026-03-01"
+      ],
+      "relation": "TRANSFIGURATION_SUBJECT_APPOINTED_GOSPEL_PENDING_VERIFICATION",
+      "primary": {
+        "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+        "provisionalLeadId": "vatican-raphael-transfiguration",
+        "artist": "Raphael",
+        "title": "The Transfiguration",
+        "sourceUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html",
+        "medium": "oil on wood",
+        "associationTier": "GOSPEL_TRANSFIGURATION",
+        "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+        "description": "Vatican Pinacoteca authenticated masterpiece; tall two-scene painting; image licensing to investigate.",
+        "userSelectedForSubject": false,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageAcquired": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "saint-joseph",
+      "name": "Saint Joseph / Saint Joseph the Worker",
+      "dates": [
+        "2026-03-19",
+        "2026-05-01"
+      ],
+      "relation": "SAINT_JOSEPH_WITH_CHILD_CONTEXTUAL_NOT_EXACT_RITUAL",
+      "primary": {
+        "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+        "provisionalLeadId": "louvre-rf1948-27",
+        "artist": "Georges de La Tour",
+        "title": "Saint Joseph charpentier",
+        "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010063817",
+        "medium": "oil on canvas",
+        "associationTier": "SAINT_JOSEPH_DEVOTION",
+        "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+        "description": "Masterpiece showing Joseph as artisan with Child Jesus. Louvre object identity documented; image licence and original pixels not cleared.",
+        "userSelectedForSubject": false,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageAcquired": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "additional": [
+        {
+          "kind": "USER_SELECTED_20261012",
+          "subjectId": "BIB-G02",
+          "artworkSelectionId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+          "provenance": "12_OCT_USER_SELECTION",
+          "userSelectedForSubject": true,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageVerified": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "key": "annunciation",
+      "name": "Annunciation",
+      "dates": [
+        "2026-03-25"
+      ],
+      "relation": "EXACT_GOSPEL_EVENT",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "ROS-01",
+        "artworkSelectionId": "ART-hilippe-de-hampaigne-he-nnunciation",
+        "artist": "Philippe de Champaigne",
+        "title": "The Annunciation",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "palm-sunday",
+      "name": "Palm Sunday and procession",
+      "dates": [
+        "2026-03-29"
+      ],
+      "relation": "ENTRY_JERUSALEM_NOT_HOLY_WEEK_FERIAS_EXACT",
+      "primary": {
+        "kind": "EXISTING_ACQUIRED_ARCHIVE_ORIGINAL",
+        "canonicalArchiveId": "kress-k2017",
+        "artist": "Maestro Bartolomé",
+        "title": "The Entry into Jerusalem",
+        "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+        "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+        "originalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+        "pixelDimensions": {
+          "width": 5510,
+          "height": 7700
+        },
+        "provenance": "EARLIER_APPROVED_20261011_STILL_NEW_REVIEW_REQUIRED",
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "passiontide",
+      "name": "Passiontide / Good Friday",
+      "dates": [
+        "2026-03-22",
+        "2026-04-03"
+      ],
+      "relation": "PASSION_NARRATIVE_CONTEXTUAL_NOT_ALL_PROPER_SCENES",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "ROS-10",
+        "artworkSelectionId": "ART-nthony-van-yck-he-ance-hrust",
+        "artist": "Anthony van Dyck",
+        "title": "The Lance Thrust",
+        "sourceUrl": null,
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "additional": [
+        {
+          "kind": "USER_SELECTED_20261012",
+          "subjectId": "DEV-09",
+          "artworkSelectionId": "ART-nthony-van-yck-amentation-of-hrist",
+          "artist": "Anthony van Dyck",
+          "title": "Lamentation of Christ",
+          "sourceUrl": null,
+          "provenance": "12_OCT_USER_SELECTION",
+          "userSelectedForSubject": true,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageVerified": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "key": "holy-thursday",
+      "name": "Holy Thursday institution",
+      "dates": [
+        "2026-04-02"
+      ],
+      "relation": "INSTITUTION_LAST_SUPPER_THEMATIC",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "BIB-G24",
+        "artworkSelectionId": "ART-hilippe-de-hampaigne-a-etite-ne",
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "sourceUrl": null,
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "easter",
+      "name": "Easter and Octave",
+      "dates": [
+        "2026-04-05",
+        "2026-04-06",
+        "2026-04-12"
+      ],
+      "relation": "RESURRECTION_NARRATIVE_THEMATIC",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "ROS-11",
+        "artworkSelectionId": "ART-eter-aul-ubens-esurrection-of-hrist",
+        "artist": "Peter Paul Rubens",
+        "title": "Resurrection of Christ",
+        "sourceUrl": null,
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "ascension",
+      "name": "Ascension",
+      "dates": [
+        "2026-05-14"
+      ],
+      "relation": "ASCENSION_GOSPEL_EVENT",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "ROS-12",
+        "artworkSelectionId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+        "artist": "Artus Wolffort",
+        "title": "Ascension — Antwerp Rosary cycle",
+        "sourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "pentecost",
+      "name": "Pentecost and Octave",
+      "dates": [
+        "2026-05-24",
+        "2026-05-30"
+      ],
+      "relation": "DESCENT_HOLY_SPIRIT_THEMATIC",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "ROS-13",
+        "artworkSelectionId": "ART-ean-estout-entecost",
+        "artist": "Jean Restout",
+        "title": "Pentecost",
+        "sourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "trinity",
+      "name": "Holy Trinity",
+      "dates": [
+        "2026-05-31"
+      ],
+      "relation": "TRINITARIAN_DEVOTIONAL_ICONOGRAPHY",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "DEV-18",
+        "artworkSelectionId": "ART-eter-aul-ubens-he-oly-rinity",
+        "artist": "Peter Paul Rubens",
+        "title": "The Holy Trinity",
+        "sourceUrl": null,
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "corpus-christi",
+      "name": "Corpus Christi",
+      "dates": [
+        "2026-06-04"
+      ],
+      "relation": "EUCHARISTIC_THEOLOGICAL_ALLEGORY_NOT_GOSPEL_SCENE",
+      "primary": {
+        "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+        "provisionalLeadId": "prado-rubens-triumph-eucharist-idolatry",
+        "artist": "Peter Paul Rubens",
+        "title": "The Triumph of the Eucharist over Idolatry",
+        "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-triumph-of-the-eucharist-over-idolatry/0c02b2a6-1562-45b0-b921-428a1a9941c0",
+        "medium": "oil on panel",
+        "associationTier": "EUCHARISTIC_ALLEGORY",
+        "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+        "description": "Prado original from major commissioned Catholic Eucharistic tapestry programme.",
+        "userSelectedForSubject": false,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageAcquired": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "additional": [
+        {
+          "kind": "USER_SELECTED_20261012",
+          "subjectId": "BIB-G24",
+          "artworkSelectionId": "ART-hilippe-de-hampaigne-a-etite-ne",
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène",
+          "sourceUrl": null,
+          "provenance": "12_OCT_USER_SELECTION",
+          "userSelectedForSubject": true,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageVerified": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "key": "sacred-heart",
+      "name": "Most Sacred Heart of Jesus",
+      "dates": [
+        "2026-06-12"
+      ],
+      "relation": "EXACT_DEVOTIONAL_IMAGE_RIGHTS_REVIEW_BLOCKED",
+      "primary": {
+        "kind": "EXISTING_ACQUIRED_ARCHIVE_ORIGINAL",
+        "canonicalArchiveId": "commons-morlete-sacred-heart-1759",
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+        "originalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+        "pixelDimensions": {
+          "width": 2345,
+          "height": 3045
+        },
+        "provenance": "HISTORICAL_ACQUIRED_ORIGINAL_RIGHTS_HOLD_NO_NEW_APPROVAL",
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0",
+      "blocker": "No worthy high-resolution directly licensed selected Sacred Heart painting; historical Morlete image has pending PD-Art jurisdiction review. Batoni high-resolution reproduction under unresolved third-party photograph copyright.",
+      "status": "BLOCKED_RIGHTS_AND_ARTISTIC_SELECTION"
+    },
+    {
+      "key": "assumption",
+      "name": "Assumption",
+      "dates": [
+        "2026-08-15"
+      ],
+      "relation": "EXACT_MARIAN_MYSTERY",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "ROS-14",
+        "artworkSelectionId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+        "artist": "Peter Paul Rubens",
+        "title": "Assumption of the Virgin",
+        "sourceUrl": null,
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "immaculate-conception",
+      "name": "Immaculate Conception",
+      "dates": [
+        "2026-12-08"
+      ],
+      "relation": "EXACT_MARIAN_DEVOTIONAL_TITLE",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "DEV-06",
+        "artworkSelectionId": "ART-eter-aul-ubens-mmaculate-onception",
+        "artist": "Peter Paul Rubens",
+        "title": "Immaculate Conception",
+        "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "saint-michael",
+      "name": "Saint Michael",
+      "dates": [
+        "2026-09-29"
+      ],
+      "relation": "EXACT_SAINT_DEVOTIONAL_SCENE",
+      "primary": {
+        "kind": "USER_SELECTED_20261012",
+        "subjectId": "SNT-OT-02",
+        "artworkSelectionId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+        "artist": "Guido Reni",
+        "title": "Archangel Michael Defeating Satan",
+        "sourceUrl": null,
+        "provenance": "12_OCT_USER_SELECTION",
+        "userSelectedForSubject": true,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageVerified": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "additional": [
+        {
+          "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+          "provisionalLeadId": "ng-6553",
+          "artist": "Bartolomé Bermejo",
+          "title": "Saint Michael Triumphs over the Devil",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/bartolome-bermejo-saint-michael-triumphs-over-the-devil",
+          "medium": "oil on wood",
+          "associationTier": "SAINT_MICHAEL_BATTLE",
+          "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+          "description": "Already researched in older first-wave shortlist; do not displace Guido Reni without approval.",
+          "userSelectedForSubject": false,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageAcquired": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "key": "christ-king",
+      "name": "Christ the King",
+      "dates": [
+        "2026-10-25"
+      ],
+      "relation": "GOSPEL_BEFORE_PILATE_PROPER_TO_VERIFY",
+      "primary": {
+        "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+        "provisionalLeadId": "prado-osona-christ-pilate",
+        "artist": "Rodrigo and Francisco de Osona",
+        "title": "Christ before Pilate",
+        "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-before-pilate/db04e20e-635b-4ed4-b30a-6851fe7bc969",
+        "medium": "oil on panel",
+        "associationTier": "BEFORE_PILATE",
+        "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+        "description": "Prado authenticated painting, exact biblical episode; 1962 Christ the King Gospel association needs independent proper witness and image inspection.",
+        "userSelectedForSubject": false,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageAcquired": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "priority": "P0"
+    },
+    {
+      "key": "all-saints",
+      "name": "All Saints",
+      "dates": [
+        "2026-11-01"
+      ],
+      "relation": "HEAVENLY_COURT_ICONOGRAPHY_NOT_LITURGICAL_GOSPEL",
+      "primary": {
+        "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+        "provisionalLeadId": "ng-663-1",
+        "artist": "Fra Angelico",
+        "title": "Christ Glorified in the Court of Heaven",
+        "sourceUrl": "https://www.nationalgallery.org.uk/paintings/fra-angelico-christ-glorified-in-the-court-of-heaven",
+        "medium": "tempera on wood",
+        "associationTier": "HEAVENLY_COURT",
+        "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+        "description": "Central predella panel; lateral panels NG663.2 and NG663.3 depict the Saints in the celestial court. Copyright/high-quality reproduction/crop review required.",
+        "userSelectedForSubject": false,
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "originalImageAcquired": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "additional": [
+        {
+          "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+          "provisionalLeadId": "ng-663-3",
+          "artist": "Fra Angelico",
+          "title": "The Forerunners of Christ with Saints and Martyrs",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/fra-angelico-the-forerunners-of-christ-with-saints-and-martyrs",
+          "medium": "tempera on wood",
+          "associationTier": "SAINTS_AND_MARTYRS",
+          "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+          "description": "Companion panel, not a separate Home compulsory work.",
+          "userSelectedForSubject": false,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageAcquired": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "key": "all-souls",
+      "name": "Commemoration of All Souls",
+      "dates": [
+        "2026-11-02"
+      ],
+      "relation": "LAST_JUDGMENT_CONTEXTUAL_NOT_PURGATORY_OR_APPOINTED_GOSPEL",
+      "primary": {
+        "kind": "EXISTING_ACQUIRED_ARCHIVE_ORIGINAL",
+        "canonicalArchiveId": "kress-k2027",
+        "artist": "Fernando Gallego and Workshop",
+        "title": "The Last Judgment",
+        "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/5cfc10f4fb81dd90a2088e868b50f68a66c11fc3525daa2e5b3c7530fa82d82f",
+        "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+        "originalSha256": "691f5f14d4a5242e6e316db34304301e170c42732f92dbf01f739775cb015ff7",
+        "pixelDimensions": {
+          "width": 5530,
+          "height": 7620
+        },
+        "provenance": "HISTORICAL_SOURCE_ACQUIRED_NOT_SUITABILITY_APPROVED",
+        "userSelectedForHomeMasterpiece": false,
+        "homePublicationApproved": false,
+        "rightsCleared": false,
+        "mobileCropApproved": false
+      },
+      "additional": [
+        {
+          "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+          "provisionalLeadId": "prado-correa-lastjudgment",
+          "artist": "Juan Correa de Vivar",
+          "title": "The Last Judgment",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-last-judgment/86c50482-a38e-4a2b-b677-fafad12fb157",
+          "medium": "oil on panel",
+          "associationTier": "FINAL_JUDGMENT_CONTEXTUAL_ONLY",
+          "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+          "description": "Prado object with resurrection of dead; All Souls and Last Judgment are not identical subjects.",
+          "userSelectedForSubject": false,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageAcquired": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        }
+      ],
+      "priority": "P0"
+    }
+  ]
+}
