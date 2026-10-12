@@ -9,6 +9,8 @@ on:
       - "src/calendar/calendar-runtime.js"
       - "src/home/presentation.js"
       - "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json"
+      - "data/calendar/sacred-art-masterpiece-anchor-wave-20261012.v1.json"
+      - "tests/calendar-sacred-art-masterpiece-anchor-wave.mjs"
       - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
       - "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json"
       - "data/calendar/sacred-art-liturgical-reuse-legacy-salvage-20261012.v1.json"
@@ -23,6 +25,8 @@ on:
       - "src/calendar/calendar-runtime.js"
       - "src/home/presentation.js"
       - "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json"
+      - "data/calendar/sacred-art-masterpiece-anchor-wave-20261012.v1.json"
+      - "tests/calendar-sacred-art-masterpiece-anchor-wave.mjs"
       - "data/calendar/sacred-art-liturgical-reuse-legacy-salvage-20261012.v1.json"
       - "tests/calendar-sacred-art-liturgical-bridge.mjs"
       - ".github/workflows/sacred-art-runtime-bridge.yml"
@@ -46,6 +50,7 @@ jobs:
           node --check src/home/presentation.js
           node --check tests/calendar-sacred-art-liturgical-bridge.mjs
           node tests/calendar-sacred-art-liturgical-bridge.mjs
+          node tests/calendar-sacred-art-masterpiece-anchor-wave.mjs
       - name: No unreviewed painting promotion
         run: |
           node tests/calendar-sacred-art-selection.mjs
