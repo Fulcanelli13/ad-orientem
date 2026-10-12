@@ -9,6 +9,7 @@ on:
       - "tests/biblical-lineage-native-review.mjs"
       - "tests/biblical-cinematic-studies.mjs"
       - "tests/biblical-cinematic-original-181-lock.mjs"
+      - "tests/biblical-151-183-coverage-audit.mjs"
       - "data/explore/biblical-cinematic-studies-review.v1.json"
       - "data/explore/biblical-lineage-curated-review.v1.json"
       - "data/explore/biblical-atlas-editorial-holds.v1.json"
@@ -51,9 +52,11 @@ jobs:
         run: node tests/biblical-cinematic-studies.mjs
       - name: Cryptographic freeze of the complete original 181 Theatre scenes
         run: node tests/biblical-cinematic-original-181-lock.mjs
+      - name: Canonical 151-event to 183-scene research coverage and missing-episode audit
+        run: node tests/biblical-151-183-coverage-audit.mjs
       - name: Source-critical 151-to-181 release holds
         run: node tests/biblical-atlas-editorial-holds.mjs
-      - name: Canonical art-to-181 Theatre subjects — 44 reviewed subject positions
+      - name: Canonical art-to-183 Theatre subjects — 44 reviewed subject positions
         run: node tests/biblical-theatre-art-subject-crosswalk.mjs
       - name: Crampon/Douay original witness verse-slot coverage and exceptions
         run: node tests/biblical-atlas-scripture-witness-coverage.mjs
