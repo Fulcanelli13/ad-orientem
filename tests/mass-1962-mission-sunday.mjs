@@ -37,11 +37,15 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   assert.equal(result.postcommunions.length,expected,"Postcommunion must not be inserted");
   assert.equal(result.calendarCommemorations.length,1,"St Luke remains in Calendar");
   assert.ok(result.collects[0].oneConclusion?.segments?.fr?.mission.startsWith("Seigneur"));
+  assert.equal(result.collects[0].oneConclusion.conclusionOwner,"PRO_FIDEI_PROPAGATIONE");
   for(const lang of ["lat","en","fr"]){
     const final=result.collects[0][lang];
     assert.ok(final.includes(MISSION_SUNDAY_SOURCE.texts[lang]),lang);
-    assert.equal(final.split(ending[lang]).length,2,lang+" duplicates/loses conclusion");
-    assert.ok(final.indexOf(MISSION_SUNDAY_SOURCE.texts[lang])<final.indexOf(ending[lang]));
+    assert.equal(final.split(MISSION_SUNDAY_SOURCE.conclusion[lang]).length,2,
+      lang+" duplicates/loses Mission prayer's Qui tecum conclusion");
+    assert.ok(!final.includes(ending[lang]),lang+" improperly retains principal Per Dominum");
+    assert.ok(final.indexOf(MISSION_SUNDAY_SOURCE.texts[lang])<
+      final.indexOf(MISSION_SUNDAY_SOURCE.conclusion[lang]));
   }
   const fr=properToReaderSlots(result,{language:"fr"});
   const en=properToReaderSlots(result,{language:"en"});
