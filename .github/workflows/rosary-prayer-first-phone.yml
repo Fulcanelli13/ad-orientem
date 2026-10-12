@@ -6,6 +6,10 @@ on:
     branches: [main]
     paths:
       - "src/pray/presentation-runtime.js"
+      - "src/pray/rosary-card-chapters.js"
+      - "src/pray/devotional-card-deck-styles.js"
+      - "tests/rosary-named-timeline.mjs"
+      - "tests/rosary-canonical-phone-controls.mjs"
       - "src/pray/devotional-methods-styles.js"
       - "tests/rosary-methods-prayer-first-phone.mjs"
       - ".github/workflows/rosary-prayer-first-phone.yml"
@@ -22,6 +26,10 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: Source-first Rosary named chapter boundaries
+        run: node tests/rosary-named-timeline.mjs
+      - name: 320/390/430 canonical Rosary timeline and bead ownership
+        run: node tests/rosary-canonical-phone-controls.mjs
       - name: 320/390/430 prayer-first method, preserved source and canonical donor
         run: node tests/rosary-methods-prayer-first-phone.mjs
       - uses: actions/upload-artifact@v4
