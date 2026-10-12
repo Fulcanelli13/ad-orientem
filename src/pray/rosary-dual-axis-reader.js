@@ -115,7 +115,7 @@ export function installRosaryDualAxisReader({
    (track.clientWidth-selectedStop.clientWidth)/2);
 
  const jump=index=>{
-  if(!Number.isInteger(index)||index<0||index>=chapters.length||index===selected)return false;
+  if(!Number.isInteger(index)||index<0||index>=chapters.length||index===Number(timeline._aoRosaryCurrent))return false;
   // A chapter click delegates to the canonical bead API. No alternative
   // prayer state, navigation history or progress registry is created.
   if(onChapter(chapters[index].start,chapters[index],index)===false)return false;
