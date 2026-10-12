@@ -93,7 +93,7 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null;
-let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
+let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
 
 function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false,returnButton=""}){
  const label=guidedStepLabel(step,total,isFr()?"fr":"en");
@@ -199,50 +199,66 @@ function renderMealPrayers(){
   const context=`<details class="aoTP381SecondaryOptions" data-ao-meal-options><summary>${esc(L("About these prayers","À propos de ces prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("These are the ordinary table prayers from the canonical Catholic prayer corpus.","Il s’agit des prières ordinaires des repas issues du corpus canonique de prières catholiques."))}</p></div></details>`;
   return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody">${card}${context}</main>`;
 }
-function sourcedPrayerCard(item,label){
+function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false}={}){
   const vern=isFr()?(item?.fr||item?.en||item?.la):(item?.en||item?.fr||item?.la),latin=item?.la||"",both=!!(vern&&latin);
-  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}</article>`;
+  const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):focusParagraphs?prayerParagraphs(v):nl(v);
+  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${show(vern)}</span><span data-face-la hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader">${show(vern||latin)}</div>`}</article>`;
 }
+const HEART_STAGES=Object.freeze(["litany","reparation","consecration"]);
+function heartTitle(id){return id==="litany"?L("Litany","Litanies"):id==="reparation"?L("Reparation","Réparation"):L("Consecration","Consécration")}
 function renderSacredHeart(){
-  const d=SACRED_HEART_DEVOTIONS_V382,tab=S.sacredHeart||"litany";
-  let body="";
+  const d=SACRED_HEART_DEVOTIONS_V382,tab=HEART_STAGES.includes(S.sacredHeart)?S.sacredHeart:"litany";
+  let prayer="",notes="";
   if(tab==="reparation"){
-    body=`${prayerCard("sacred_heart_short_prayer")}${source("Pius XI · Miserentissimus Redemptor · 1928","https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html")}`;
+    prayer=prayerCard("sacred_heart_short_prayer",{focusParagraphs:true});
+    notes=source("Pius XI · Miserentissimus Redemptor · 1928","https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html");
   }else if(tab==="consecration"){
     const c=d.humanRaceConsecration;
-    body=`${sourcedPrayerCard(c,L(c.title,c.titleFr))}<p class="aoTP381Intro">${esc(L("This is the traditional form associated with Christ the King in the pontificate of Pius XI. The current Enchiridion prints an abbreviated form; the historical form is given here.","Il s’agit de la forme traditionnelle associée au Christ-Roi sous Pie XI. L’Enchiridion actuel donne une forme abrégée ; le texte historique figure ici."))}</p>${source("Acta Apostolicae Sedis · 1927 · Latin",c.sources.latin)}${source("La Porte Latine · traditional French form",c.sources.french)}`;
+    prayer=sourcedPrayerCard(c,L(c.title,c.titleFr),{focusParagraphs:true});
+    notes=`<p class="aoTP381Intro">${esc(L("This is the traditional form associated with Christ the King in the pontificate of Pius XI. The current Enchiridion prints an abbreviated form; the historical form is given here.","Il s’agit de la forme traditionnelle associée au Christ-Roi sous Pie XI. L’Enchiridion actuel donne une forme abrégée ; le texte historique figure ici."))}</p>${source("Acta Apostolicae Sedis · 1927 · Latin",c.sources.latin)}${source("La Porte Latine · traditional French form",c.sources.french)}`;
   }else{
     const l=d.litany;
-    body=`${sourcedPrayerCard(l,L(l.title,l.titleFr))}${source("La Porte Latine · French & Latin traditional form",l.sources.frenchLatin)}`;
+    prayer=sourcedPrayerCard(l,L(l.title,l.titleFr),{verseFocus:true});
+    notes=source("La Porte Latine · French & Latin traditional form",l.sources.frenchLatin);
   }
-  return `${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"),L("Litany · reparation · consecration","Litanies · réparation · consécration"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("Pray the Litany, the Act of Reparation, or the consecration according to the time available. Their historical forms are identified in the source notes.","Récitez les Litanies, l’Acte de réparation ou la consécration selon le temps disponible. Leurs formes historiques sont identifiées dans les sources."))}</p>${traditionalContextGuide("heart")}<div class="aoTP381Tabs"><button type="button" data-tp381-heart="litany" class="${tab==="litany"?"active":""}">${esc(L("Litany","Litanies"))}</button><button type="button" data-tp381-heart="reparation" class="${tab==="reparation"?"active":""}">${esc(L("Reparation","Réparation"))}</button><button type="button" data-tp381-heart="consecration" class="${tab==="consecration"?"active":""}">${esc(L("Consecration","Consécration"))}</button></div>${body}</main>`;
+  const card=`<section class="aoDevoCard" data-ao-devo-card="heart-${esc(tab)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(heartTitle(tab))}">${prayer}</div></section>`;
+  const options=`<details class="aoTP381SecondaryOptions" data-ao-heart-options><summary>${esc(L("Sources and reading options","Sources et options de lecture"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Pray the Litany, the Act of Reparation, or the consecration according to the time available. Their historical forms are identified in the source notes.","Récitez les Litanies, l’Acte de réparation ou la consécration selon le temps disponible. Leurs formes historiques sont identifiées dans les sources."))}</p>${traditionalContextGuide("heart")}<div class="aoTP381Tabs">${`<button type="button" data-tp381-heart="litany" class="${tab==="litany"?"active":""}">${esc(heartTitle("litany"))}</button><button type="button" data-tp381-heart="reparation" class="${tab==="reparation"?"active":""}">${esc(heartTitle("reparation"))}</button><button type="button" data-tp381-heart="consecration" class="${tab==="consecration"?"active":""}">${esc(heartTitle("consecration"))}</button>`}</div>${notes}</div></details>`;
+  return `${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"))}<main class="aoP435930Body aoTP381DonorBody">${card}${options}</main>`;
 }
+const COMMUNION_BEFORE=Object.freeze([
+  ["sacrament_come_holy_spirit","Come, Holy Ghost","Venez, Esprit Saint"],
+  ["foundations_act_of_faith","Act of Faith","Acte de foi"],
+  ["foundations_act_of_hope","Act of Hope","Acte d'espérance"],
+  ["foundations_act_of_love","Act of Charity","Acte de charité"],
+  ["sacrament_act_of_contrition","Act of Contrition","Acte de contrition"],
+  ["beforeThomas","St Thomas Aquinas","Saint Thomas d'Aquin"],
+  ["beforeAmbrose","St Ambrose","Saint Ambroise"]
+]);
+const COMMUNION_AFTER=Object.freeze([
+  ["adoration_anima_christi","Anima Christi","Anima Christi"],
+  ["afterThomas","St Thomas Aquinas","Saint Thomas d'Aquin"],
+  ["afterBonaventure","St Bonaventure","Saint Bonaventure"],
+  ["enEgo","En ego","En ego"]
+]);
+function communionStages(){return S.communion==="after"?COMMUNION_AFTER:COMMUNION_BEFORE}
 function renderCommunionTreasury(){
   const d=COMMUNION_TREASURY_V383,tab=S.communion==="after"?"after":"before";
+  const stages=communionStages(),index=Math.max(0,Math.min(stages.length-1,Number(S.communionStep)||0));
+  const [id,titleEn,titleFr]=stages[index];
+  // Reuse exactly one canonical prayer. Do not reproduce all prayer rows on
+  // every stage or substitute a fabricated text for missing source content.
+  const prayer=data().prayers?.[id]?prayerCard(id,{focusParagraphs:true}):
+    sourcedPrayerCard(d[id],L(d[id]?.title||titleEn,d[id]?.titleFr||titleFr),{focusParagraphs:true});
+  const card=`<section class="aoDevoCard" data-ao-devo-card="communion-${tab}-${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L(titleEn,titleFr))}">${prayer}</div></section>`;
+  const context=tab==="before"?
+    L("Choose what helps you prepare. These are traditional preparations, not a checklist to be completed before every Communion.","Choisissez ce qui vous aide à vous préparer. Ce sont des préparations traditionnelles, non une liste à accomplir avant chaque Communion."):
+    L("Dwell in thanksgiving after Communion. Choose a prayer and leave time for silence.","Demeurez en action de grâces après la Communion. Choisissez une prière et gardez du temps pour le silence.");
   const commonSource=tab==="before"?d.sources.beforeFrenchLatin:d.sources.afterFrenchLatin;
-  let body="";
-  if(tab==="before"){
-    body=`<p class="aoTP381Intro">${esc(L("Choose what helps you prepare. These are traditional preparations, not a checklist to be completed before every Communion.","Choisissez ce qui vous aide à vous préparer. Ce sont des préparations traditionnelles, non une liste à accomplir avant chaque Communion."))}</p>
-      ${prayerRows([
-        ["sacrament_come_holy_spirit",L("Come, Holy Ghost","Venez, Esprit Saint"),L("Invocation for light and recollection","Invocation pour la lumière et le recueillement")],
-        ["foundations_act_of_faith",L("Act of Faith","Acte de foi"),L("Traditional act","Acte traditionnel")],
-        ["foundations_act_of_hope",L("Act of Hope","Acte d'espérance"),L("Traditional act","Acte traditionnel")],
-        ["foundations_act_of_love",L("Act of Charity","Acte de charité"),L("Traditional act","Acte traditionnel")],
-        ["sacrament_act_of_contrition",L("Act of Contrition","Acte de contrition"),L("Traditional act","Acte traditionnel")]
-      ])}
-      ${sourcedPrayerCard(d.beforeThomas,L(d.beforeThomas.title,d.beforeThomas.titleFr))}
-      ${sourcedPrayerCard(d.beforeAmbrose,L(d.beforeAmbrose.title,d.beforeAmbrose.titleFr))}
-      ${source(L("French & Latin traditional prayer witness","Témoin traditionnel français & latin"),commonSource)}`;
-  }else{
-    body=`<p class="aoTP381Intro">${esc(L("Dwell in thanksgiving after Communion. Choose a prayer and leave time for silence.","Demeurez en action de grâces après la Communion. Choisissez une prière et gardez du temps pour le silence."))}</p>
-      ${prayerRows([["adoration_anima_christi","Anima Christi",L("Traditional Eucharistic thanksgiving","Action de grâces eucharistique traditionnelle")]])}
-      ${sourcedPrayerCard(d.afterThomas,L(d.afterThomas.title,d.afterThomas.titleFr))}
-      ${sourcedPrayerCard(d.afterBonaventure,L(d.afterBonaventure.title,d.afterBonaventure.titleFr))}
-      ${sourcedPrayerCard(d.enEgo,L(d.enEgo.title,d.enEgo.titleFr))}
-      <details class="aoTP381Source"><summary>${esc(L("Indulgences · current discipline","Indulgences · discipline actuelle"))}</summary><p>${esc(L("The current Enchiridion grants a partial indulgence for an approved act of thanksgiving after Communion and expressly gives Anima Christi and En ego as examples. It grants a plenary indulgence for devoutly reciting En ego before an image of Christ crucified after Communion on any Friday of Lent, under the usual conditions. Historical days-or-years grants printed in old missals are not the current way indulgences are measured.","L’Enchiridion actuel accorde une indulgence partielle pour une formule pieuse approuvée d’action de grâces après la Communion et donne expressément comme exemples l’Anima Christi et l’En ego. Il accorde une indulgence plénière à qui récite pieusement l’En ego devant une image du Christ crucifié après la Communion, un vendredi du Carême, aux conditions habituelles. Les anciennes concessions exprimées en jours ou en années dans les vieux missels ne constituent plus la manière actuelle de mesurer les indulgences."))}</p><p><a href="${esc(d.sources.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>
-      ${source(L("French & Latin traditional thanksgiving witness","Témoin traditionnel français & latin de l’action de grâces"),commonSource)}`;
-  }
-  return `${head(L("Traditional Communion Prayers","Prières traditionnelles de Communion"),L("Preparation · thanksgiving","Préparation · action de grâces"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A sourced treasury of prayers long printed before and after Mass in the Roman-Missal tradition, retained only where the French Catholic tradition is also attested.","Un trésor de prières sourcées, longtemps imprimées avant et après la Messe dans la tradition du Missel romain, retenues seulement lorsqu’elles sont également attestées dans la tradition catholique française."))}</p>${traditionalContextGuide("communion")}${tab==="before"?`<div class="aoTP381PrayerList"><button type="button" data-tp381-route="learn.rites.first_communion"><span><b>${esc(L("Preparing a child for First Communion?","Préparez-vous un enfant à la première Communion ?"))}</b><small>${esc(L("Open the sacramental formation guide; these private prayers are not a substitute.","Ouvrir le guide de formation sacramentelle ; ces prières privées ne le remplacent pas."))}</small></span><i aria-hidden="true">→</i></button></div>`:""}<div class="aoTP381Tabs"><button type="button" data-tp381-communion="before" class="${tab==="before"?"active":""}">${esc(L("Before Communion","Avant la Communion"))}</button><button type="button" data-tp381-communion="after" class="${tab==="after"?"active":""}">${esc(L("After Communion","Après la Communion"))}</button></div>${body}</main>`;
+  const formation=tab==="before"?`<div class="aoTP381PrayerList"><button type="button" data-tp381-route="learn.rites.first_communion"><span><b>${esc(L("Preparing a child for First Communion?","Préparez-vous un enfant à la première Communion ?"))}</b><small>${esc(L("Open the sacramental formation guide; these private prayers are not a substitute.","Ouvrir le guide de formation sacramentelle ; ces prières privées ne le remplacent pas."))}</small></span><i aria-hidden="true">→</i></button></div>`:"";
+  const indulgence=tab==="after"?`<details class="aoTP381Source"><summary>${esc(L("Indulgences · current discipline","Indulgences · discipline actuelle"))}</summary><p>${esc(L("The current Enchiridion grants a partial indulgence for an approved act of thanksgiving after Communion and expressly gives Anima Christi and En ego as examples. It grants a plenary indulgence for devoutly reciting En ego before an image of Christ crucified after Communion on any Friday of Lent, under the usual conditions. Historical days-or-years grants printed in old missals are not the current way indulgences are measured.","L’Enchiridion actuel accorde une indulgence partielle pour une formule pieuse approuvée d’action de grâces après la Communion et donne expressément comme exemples l’Anima Christi et l’En ego. Il accorde une indulgence plénière à qui récite pieusement l’En ego devant une image du Christ crucifié après la Communion, un vendredi du Carême, aux conditions habituelles. Les anciennes concessions exprimées en jours ou en années dans les vieux missels ne constituent plus la manière actuelle de mesurer les indulgences."))}</p><p><a href="${esc(d.sources.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>`:"";
+  const tabs=`<nav class="aoTP381DaypartStrip" aria-label="${esc(L("Communion prayer phase","Temps de prière de Communion"))}"><button type="button" data-tp381-communion="before" aria-pressed="${tab==="before"}" class="${tab==="before"?"active":""}">${esc(L("Before Communion","Avant la Communion"))}</button><button type="button" data-tp381-communion="after" aria-pressed="${tab==="after"}" class="${tab==="after"?"active":""}">${esc(L("After Communion","Après la Communion"))}</button></nav>`;
+  const options=`<details class="aoTP381SecondaryOptions" data-ao-communion-options><summary>${esc(L("Sources and guidance","Sources et conseils"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A sourced treasury of prayers long printed before and after Mass in the Roman-Missal tradition, retained only where the French Catholic tradition is also attested.","Un trésor de prières sourcées, longtemps imprimées avant et après la Messe dans la tradition du Missel romain, retenues seulement lorsqu’elles sont également attestées dans la tradition catholique française."))}</p><p>${esc(context)}</p>${traditionalContextGuide("communion")}${formation}${indulgence}${source(L("French & Latin traditional prayer witness","Témoin traditionnel français & latin"),commonSource)}</div></details>`;
+  return `${head(L("Traditional Communion Prayers","Prières traditionnelles de Communion"))}<main class="aoP435930Body aoTP381DonorBody">${tabs}${card}${options}</main>`;
 }
 function renderGoodDeath(){
   const d=GOOD_DEATH_DYING_V384;
@@ -339,7 +355,7 @@ function injectGlossaryAction(){
   const button=document.createElement("button");
   button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
   button.textContent=L("Terms & explanations","Termes & explications");
-  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany"].includes(S.route))body.append(button);
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury"].includes(S.route))body.append(button);
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
@@ -391,6 +407,19 @@ function render(){
     });
     if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
   }
+  if(S.screen==="module"&&["pray.sacred_heart","pray.communion_treasury"].includes(S.route)){
+    const heart=S.route==="pray.sacred_heart";
+    const chapters=heart?HEART_STAGES.map(id=>({id:"heart-"+id,title:heartTitle(id)})):
+      communionStages().map(([id,en,fr])=>({id:"communion-"+S.communion+"-"+id,title:L(en,fr)}));
+    const index=heart?HEART_STAGES.indexOf(S.sacredHeart):S.communionStep;
+    const reader=installSequentialDevotionalReader({
+      mount:m,kind:heart?"sacredHeart":"communion",chapters,activeIndex:index,
+      paragraphSelector:".aoTP381TextParagraph",
+      onNavigate:i=>{if(heart)S.sacredHeart=HEART_STAGES[i];else S.communionStep=i;render()},
+      timelineLabel:L("Prayer timeline","Chronologie des prières")
+    });
+    if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
+  }
   injectGlossaryAction();
   m.scrollTop=0;
   queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.({preventScroll:true})});
@@ -404,6 +433,8 @@ function open(route,opts={}){
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
     ...(route==="pray.dying_companion"?{dying:"now"}:{}),
     ...(route==="pray.meal_prayers"?{mealStep:0}:{}),
+    ...(route==="pray.sacred_heart"?{sacredHeart:"litany"}:{}),
+    ...(route==="pray.communion_treasury"?{communion:"before",communionStep:0}:{}),
     ...(route==="pray.holy_name_litany"?{litanyMode:"guided",litanyStep:0}:{})};
   BASE_OPEN("pray.hub",opts);
   render();return true;
@@ -468,7 +499,7 @@ function handleClick(e){
   if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
   if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
-  if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";return render()}
+  if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";S.communionStep=0;return render()}
   if(b.dataset.tp381Dying){S.dying=DYING_COMPANION_STAGES.includes(b.dataset.tp381Dying)?b.dataset.tp381Dying:"now";return render()}
   if(b.dataset.tp381DyingStep){const stage=nextDyingCompanionStage(S.dying,b.dataset.tp381DyingStep);if(stage){S.dying=stage;return render()}return;}
   if(b.dataset.tp381Prayer){S.prayerId=b.dataset.tp381Prayer;S.screen="prayer";return render()}

@@ -50,6 +50,14 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 
 
 /* Shared daily/examen presentation: one source-owned stage per named card. */
+
+/* Sacred Heart and Eucharistic preparations share the one-card prayer-first surface. */
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="sacredHeart"] .aoDevoSequenceTimeline .aoDevoStops{gap:3px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="sacredHeart"] .aoDevoSequenceTimeline .aoDevoStop{min-width:85px;flex:1 1 0;max-width:none;padding:7px 4px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="communion"] .aoTP381DaypartStrip{padding-top:4px;padding-bottom:6px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="communion"] .aoTP381DaypartStrip button{min-width:0;flex:1;text-align:center}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="communion"] .aoDevoSequenceTimeline .aoDevoStops{min-width:0}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="communion"] .aoTP381SecondaryOptions{margin-top:12px}
 /* Holy Name and meal stages reuse the same quiet source-owned reader. */
 /* With only two meal stops, both should be fully readable on a 320px phone. */
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="meals"] .aoDevoSequenceTimeline .aoDevoStop{flex:1 1 0!important;min-width:0;max-width:none;padding-inline:6px}
