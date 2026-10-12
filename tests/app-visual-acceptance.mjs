@@ -607,8 +607,15 @@ try{
   assert.equal(adorationArrival.pointer,"none","Adoration rails intercept touch");
   await shot("03e-pray-adoration-arrival");
 
-  await page.locator("#aoPray435930 [data-p435930-visit-next]").click();
-  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-refined-silence",null,{timeout:3000});
+  // The guided Visit now uses a seven-stage source-owned timeline; the old
+  // Continue button is intentionally hidden except on the final Finish card.
+  const visitTimeline="#aoPray435930.open .aoP435930AdorationReader .aoDevoSequenceTimeline";
+  await page.waitForSelector(visitTimeline,{state:"visible",timeout:12000});
+  assert.equal(await page.locator(visitTimeline+" [data-ao-devo-chapter]").count(),7,
+    "Visit to the Blessed Sacrament lost its seven named source-owned stages");
+  await page.locator(visitTimeline+" [data-ao-devo-chapter='1']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930AdorationReader")?.dataset?.aoAdorationStep==="1",null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-refined-silence",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel='persistent']").count(),1,"Adoration did not settle into the persistent silence rail");
   await shot("03f-pray-adoration-silence");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
