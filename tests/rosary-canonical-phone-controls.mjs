@@ -260,7 +260,19 @@ try{
      const sheet=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard");
      return sheet?.querySelector(".aoRosaryPrayerScroll")&&
        sheet.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length===1;
-   },null,{timeout:9000});
+   },null,{timeout:9000}).catch(async error=>{
+     const diag=await page.evaluate(()=>{
+       const root=document.querySelector("#aoPrayerBookRoot.open");
+       const sheet=root?.querySelector(".lab-prayer-sheet");
+       const flip=root?.querySelector(".lab-prayer-flip");
+       return {sheet:sheet?.outerHTML?.slice(0,3200),flip:flip?.outerHTML?.slice(0,1400),
+         inside:!!sheet?.contains(flip),sheetClass:sheet?.className,
+         flipClass:flip?.className,active:root?.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length,
+         step:globalThis.AO_ROSARY_V381?.state?.()?.step,
+         named:root?.querySelectorAll(".aoRosaryNamedTimeline").length};
+     });
+     throw new Error("ROSARY_CARD_FOCUS_DIAGNOSTIC "+JSON.stringify(diag)+"; "+error);
+   });
    const card=await page.evaluate(()=>{
      const sheet=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard");
      const flip=sheet.querySelector(".aoRosaryPrayerScroll");
