@@ -29,6 +29,11 @@ for(const s of source.scenes){
  assert.equal(Object.hasOwn(s,"imageUrl"),false);
  if(s.status!=="EXACT_REFERENCE")assert.equal(cinematicExactAtlasTarget(s,stops),null,"overlap or unmatched never jumps");
 }
+assert.equal(source.scenes[74].candidates[0].atlasIndex,82,"John 2 source reference migrates into PUBLIC");
+assert.match(renderCinematicStudies(source,{language:"en",chapter:"MINISTRY",scene:74,atlasStops:stops}),/John places this episode near the beginning/);
+assert.match(renderCinematicStudies(source,{language:"fr",chapter:"RISEN",scene:131,atlasStops:stops}),/Le tombeau vide et Marie-Madeleine/);
+assert.match(source.scenes[131].sourceNote_en,/not an eyewitness description/);
+assert.equal(source.scenes[68].candidates[1].atlasIndex,77,"Luke 2 hidden-life overlap stays separate");
 assert.equal(studyChapter(source,"PATRIARCHS").sceneIndices.length,25);
 assert.equal(studyChapter(source,"MINISTRY").sceneIndices.length,46);
 assert.equal(studyChapter(source,"TO_ROME").sceneIndices.length,11);
