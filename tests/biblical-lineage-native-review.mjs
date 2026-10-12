@@ -1,11 +1,19 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
- BIBLE_REVIEW_DEFAULT,validateLineageReviewCorpus,lineageSequence,
+ BIBLE_REVIEW_DEFAULT,validateLineageReviewCorpus,lineageSequence,exactAtlasReferenceIndex,
  genesisGenerationRows,apostolicProfile,renderLineageReview
 } from "../src/find/bible-lineage-review.js";
+import {buildBibleAtlas} from "../src/find/bible-atlas.js";
 const data=JSON.parse(readFileSync(new URL("../data/explore/biblical-lineage-curated-review.v1.json",import.meta.url),"utf8"));
 assert.equal(validateLineageReviewCorpus(data),true,"the reviewed donor status and expected counts are mandatory");
+const compact=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact.v1.json",import.meta.url),"utf8"));
+const atlasStops=buildBibleAtlas(compact.entries);
+assert.equal(atlasStops.length,151);
+const apostolicMatches=data.events.filter(e=>e.kind==="scripture"&&exactAtlasReferenceIndex(atlasStops,e.reference)!==null);
+assert.equal(apostolicMatches.length,11,"only 11 unique exact-reference links are currently supported");
+assert.equal(exactAtlasReferenceIndex(atlasStops,"Genesis 1:1–31"),0);
+assert.equal(exactAtlasReferenceIndex(atlasStops,"John 19:25–27"),null,"passage-overlap must not imply an exact event link");
 assert.equal(BIBLE_REVIEW_DEFAULT.surface,"timeline");
 const matt=lineageSequence(data,"matthew"),luke=lineageSequence(data,"luke");
 assert.equal(matt.length,41);assert.equal(luke.length,76);
@@ -33,13 +41,14 @@ for(const p of data.profiles){const e=apostolicProfile(data,p.id);assert.equal(e
 const genesis=renderLineageReview(data,{language:"en",lineage:"genesis",root:"adam",depth:3});
 const math=renderLineageReview(data,{language:"en",lineage:"matthew",page:3});
 const luc=renderLineageReview(data,{language:"fr",lineage:"luke",page:6});
-const apostolic=renderLineageReview(data,{language:"en",surface:"apostles",apostle:"mary"});
+const apostolic=renderLineageReview(data,{language:"en",surface:"apostles",apostle:"mary",atlasStops});
 const philip=renderLineageReview(data,{language:"en",surface:"apostles",apostle:"philip-evangelist"});
 assert.match(genesis,/Generation 1/);assert.match(genesis,/data-bible-review-depth/);
 assert.match(math,/legal\/putative/i);assert.match(math,/Joseph/);
 assert.match(luc,/Luc 3/);assert.match(luc,/Joseph/);
 assert.match(apostolic,/Research preview/);assert.match(apostolic,/Jerusalem Dormition/);assert.match(apostolic,/Competing Ephesus/);
-assert.match(apostolic,/data-evidence-kind="later"/);assert.match(apostolic,/data-ao-scripture-context="Luke 1:26/);
+assert.match(apostolic,/data-evidence-kind="later"/);assert.match(apostolic,/data-bible-review-jump="66"/);
+assert.doesNotMatch(apostolic,/data-bible-review-jump="0"/);assert.match(apostolic,/data-ao-scripture-context="Luke 1:26/);
 assert.match(philip,/Philip the Evangelist/);
 for(const html of [genesis,math,luc,apostolic,philip]){
  assert.match(html,/data-bible-review-surface="timeline"/);
