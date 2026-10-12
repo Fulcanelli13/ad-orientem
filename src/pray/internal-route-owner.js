@@ -25,3 +25,9 @@ export const INTERNAL_PRAYER_VIEWS=Object.freeze({
 export function internalPrayerView(id){
   return Object.hasOwn(INTERNAL_PRAYER_VIEWS,String(id??""))?INTERNAL_PRAYER_VIEWS[id]:null;
 }
+
+// The Rosary is the one supported direct route whose display is delegated to
+// the bead engine rather than one of the in-reader presentation views.
+export function supportedDirectPrayerRoute(id){
+  return id==="pray.rosary"||internalPrayerView(id)!==null;
+}
