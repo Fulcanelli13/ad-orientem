@@ -976,7 +976,16 @@ export function createFindOwner(win=globalThis){
   }
 
   function onChange(event){
-    if(!openState||state.lens!=="traditions")return;
+    if(!openState)return;
+    const cinematicSelect=event?.target?.closest?.("[data-bible-study-chapter-select]");
+    if(cinematicSelect&&state.bibleAtlas&&state.bibleReview.surface==="cinematic"){
+      const chosen=studyChapter(cinematicReview,cinematicSelect.value);
+      if(chosen&&chosen.id===cinematicSelect.value){
+        state.bibleReview={...state.bibleReview,chapter:chosen.id,scene:chosen.sceneIndices[0]};void paint();
+      }
+      return;
+    }
+    if(state.lens!=="traditions")return;
     const field=event?.target?.closest?.("[data-atlas-filter]");
     if(!field)return;
     setFilter(field.dataset.atlasFilter,field.value);
