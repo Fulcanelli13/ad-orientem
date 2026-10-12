@@ -63,6 +63,23 @@ try{
   await page.locator("#aoPray435930 .aoMercySource a").getAttribute("href")));
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{timeout:12000});
+ // Two navigation axes: timeline moves named cards, card-local scroll focuses
+ // V/R paragraphs; native Prayer texts and translation controls stay intact.
+ await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),4);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),4);
+ assert.match(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) h2").innerText(),/Announcement|Annonce/);
+ await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").count(),1);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").count(),3);
+ const devotionalScroll=page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll");
+ assert.equal(await devotionalScroll.evaluate(x=>getComputedStyle(x).overflowY),"auto");
+ await devotionalScroll.evaluate(x=>{x.scrollTop=80;x.dispatchEvent(new Event("scroll"))});
+ await page.waitForFunction(()=>!!document.querySelector("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph[data-ao-devo-active='true']"),null,{timeout:9000});
+ await page.locator("#aoPray435930 [data-ao-devo-move='-1']").evaluate(x=>x.click());
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"fiat");
+ await page.locator("#aoPray435930 [data-ao-devo-jump='0']").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection a[href^='https://']").count(),5);
  await page.locator("#aoPray435930 .aoAngelusGuide>summary").evaluate(x=>x.click());
