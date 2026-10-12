@@ -68,6 +68,8 @@ try{
    assert.ok(stDetails.summaryHeight>=44&&stDetails.prayerText?.length>20&&stDetails.originalNav===1,
     "Station prayer or previous/next unavailable");
    await checkDoc("Stations opening");
+   assert.equal(await st.locator('[data-p435930-seg="simple"]').isVisible(),false,
+     "Stations controls are visible through a closed preferences drawer");
    await page.screenshot({path:resolve(shots,"stations-first-"+width+".png"),animations:"disabled"});
    await st.locator(":scope > summary").click();
    await expanded(stations);
@@ -119,15 +121,10 @@ try{
     "Angelus canonical prayer hierarchy damaged: "+JSON.stringify(angelusDom));
    assert.ok([4,5].includes(angelusDom.guideSources),
     "Angelus/Regina source-linked Guide was removed");
-   if(width===320)console.log("ANGELUS DUPLICATE DOM "+JSON.stringify(await page.evaluate(()=>{
-      const root=document.querySelector("#aoPray435930.open .aoP435930AngelusReader");
-      return [...root.querySelectorAll('[data-p435930-seg="individual"],[data-p435930-seg="group"]')].map(n=>({
-        label:n.textContent?.trim(),visible:n.getClientRects().length>0,
-        insideOptions:!!n.closest('[data-ao-angelus-options]'),
-        parent:n.parentElement?.outerHTML?.slice(0,600),
-        parentParent:n.parentElement?.parentElement?.outerHTML?.slice(0,400)
-      }));
-   })));
+   assert.equal(await ag.locator('[data-p435930-seg="group"]').isVisible(),false,
+     "Angelus recitation controls leak through the closed preferences drawer");
+   assert.equal(await ag.locator('[data-p435930-seg="regina"]').isVisible(),false,
+     "Angelus form controls leak through the closed preferences drawer");
    await page.screenshot({path:resolve(shots,"angelus-first-"+width+".png"),animations:"disabled"});
    await ag.locator(":scope > summary").click();
    await expanded(angelus);
@@ -148,6 +145,8 @@ try{
    assert.equal(await ag.locator(".aoAngelusGuideSection a[href^='https://']").count(),4);
    await ag.locator(":scope > summary").click();
    assert.equal(await ag.getAttribute("open"),null);
+   assert.equal(await ag.locator('[data-p435930-seg="group"]').isVisible(),false,
+     "Collapsed Regina settings still occupy prayer reading space");
    assert.ok(await page.locator("#aoPray435930.open [data-ao-angelus-voice=response]").count()>0);
    await page.screenshot({path:resolve(shots,"regina-first-"+width+".png"),animations:"disabled"});
    await checkDoc("Regina Cæli prayer");
