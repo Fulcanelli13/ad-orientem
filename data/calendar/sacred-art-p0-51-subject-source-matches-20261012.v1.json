@@ -19,10 +19,10 @@
     "p0Unresolved": 51,
     "devotions": 9,
     "calendarSaints": 42,
-    "museumOrArchiveSourceMatchedSubjects": 35,
-    "verifiedObjectProposalAssignments": 39,
-    "canonicalDistinctArtworkLeads": 35,
-    "p0WithoutNewObjectMatch": 16,
+    "museumOrArchiveSourceMatchedSubjects": 40,
+    "verifiedObjectProposalAssignments": 44,
+    "canonicalDistinctArtworkLeads": 40,
+    "p0WithoutNewObjectMatch": 11,
     "rubensApostlePanelMatches": 7,
     "humanSelectionsUnchanged": 101,
     "additionalHumanSelections": 0,
@@ -782,8 +782,23 @@
         "ART-oman-school-aint-ohn-of-the-ross"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "celine-1894-john-cross",
+          "artist": "Céline Martin",
+          "title": "Saint John of the Cross",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/",
+          "inventory": "1894, 92 × 76 cm",
+          "relation": "EXACT_DEVOTIONAL_PAINTING",
+          "note": "Original Carmel catalogue describes Céline's 1894 oil painting; image rights and aesthetic quality pending.",
+          "origin": "INSTITUTIONAL_ART_RESEARCH",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -799,8 +814,23 @@
         "ART-ttributed-to-onadio-aint-lphonsus-iguori"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "italy-0900119548",
+          "artist": "Antonio Marini",
+          "title": "Sant'Alfonso Maria de Liguori",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+          "inventory": "0900119548",
+          "relation": "EXACT_SAINT_PAINTING",
+          "note": "Italian national register documents 1838 oil, distinguish original from 1855 copy.",
+          "origin": "INSTITUTIONAL_ART_RESEARCH",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -816,8 +846,23 @@
         "ART-chool-of-hilippe-de-hampaigne-aint-rancis-de-ales"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "brou-982243",
+          "artist": "Benoît Alhoste (attributed)",
+          "title": "Le Bon Pasteur, saint François de Sales et sainte Madeleine",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/000PE032930",
+          "inventory": "982.243",
+          "relation": "NAMED_SAINT_IN_GROUP",
+          "note": "Musée de Brou 1658 oil; Saint Francis appears with Good Shepherd and Magdalene, not independent portrait.",
+          "origin": "INSTITUTIONAL_ART_RESEARCH",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -1000,8 +1045,23 @@
         "ART-acopo-di-ione-and-workshop-aint-eter-amian-proposed-identification"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "zeri-45874-peter-damian",
+          "artist": "Venanzio l'Eremita",
+          "title": "San Pier Damiano",
+          "sourceUrl": "https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano",
+          "inventory": "Zeri 45874",
+          "relation": "EXACT_SAINT_PAINTING",
+          "note": "Seventeenth-century Camaldoli oil, 180×130 cm; previously attributed to Antiveduto Gramatica. Reproduction unresolved.",
+          "origin": "INSTITUTIONAL_ART_RESEARCH",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
@@ -1041,8 +1101,23 @@
         "ART-arlo-erotti-catalogue-attribution-ortrait-of-aint-obert-ellarmine"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "ambrosiana-L0050-00042",
+          "artist": "Carlo Perotti (attributed)",
+          "title": "Ritratto di Roberto Bellarmino",
+          "sourceUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0050-00042/",
+          "inventory": "L0050-00042",
+          "relation": "EXACT_NAMED_SAINT_PORTRAIT_UNCERTAIN_DATE",
+          "note": "Ambrosiana oil portrait; date 1590s conflicts with eighteenth-century artist attribution. Life likeness unverified.",
+          "origin": "INSTITUTIONAL_ART_RESEARCH",
+          "medium": "painting",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
