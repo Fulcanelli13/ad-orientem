@@ -71,7 +71,13 @@ function collectParagraphs(body,id){
  const all=[];
  for(const unit of body.querySelectorAll(".aoP435930PrayerUnit")){
   const voice=[...unit.querySelectorAll('[data-face-v] [data-ao-angelus-voice]')];
+  const latin=[...unit.querySelectorAll('[data-face-la] [data-ao-angelus-voice]')];
   const paragraphs=voice.length?voice:[unit];
+  // Focus the actual visible translation, not only the vernacular face.
+  latin.forEach((line,i)=>{line.classList.add("aoDevoParagraph");
+   line.dataset.aoDevoParagraph=String(all.length+i);
+   if(id==="incarnation"&&i===0)line.dataset.aoDevoCue="profound-bow";
+  });
   for(let i=0;i<paragraphs.length;i++){
    const p=paragraphs[i];
    p.classList.add("aoDevoParagraph");
@@ -150,6 +156,8 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
    const distance=y<rect.top?rect.top-y:y>rect.bottom?y-rect.bottom:0;
    if(distance<best){active=i;best=distance}
   });
+  // Opening a card starts with its opening sentence, not paragraph two.
+  if(body.scrollTop<2)active=0;
   all.forEach((p,i)=>{
    p.style.setProperty("--ao-devo-focus",i===active?"1":Math.abs(i-active)===1?".56":".30");
    p.dataset.aoDevoActive=i===active?"true":"false";
@@ -190,6 +198,8 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
    go(index+(dx<0?1:-1));
  },{passive:true});
  host.addEventListener("click",e=>{
+  if(e.target.closest("[data-p435930-card-flip]"))
+   queueMicrotask(queue);
   const b=e.target.closest("[data-ao-devo-jump],[data-ao-devo-move]");
   if(!b)return;e.preventDefault();e.stopPropagation();
   if(b.dataset.aoDevoJump!==undefined)go(+b.dataset.aoDevoJump);
