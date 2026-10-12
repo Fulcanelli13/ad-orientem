@@ -10,6 +10,7 @@ import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper
 import { observedCycle } from "./observed-cycle.js";
 import {calendarScriptureContexts} from "./scripture-handoff.js";
 import { calendarObservanceAlias } from "./observance-title.js";
+import { selectReleasedCalendarArtwork, renderReleasedLiturgicalArtwork } from "./sacred-art-liturgical-bridge.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -591,12 +592,19 @@ function calendarScriptureStyles(){
 function daySurface(selected,r){
   const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected),cm=commemorations(r),saint=principalSaintContext(r,selected);
   const season=periodName(p),properReady=!!properOf(r),printReady=assessPrintableProper(r,{language:fr()?"fr":"en"}).ok;
+  const releasedArt=(r?.date===selected && r?.day?.main?.id && r?.status!=="failed")
+    ? selectReleasedCalendarArtwork({
+        date:selected,observedId:r.day.main.id,
+        works:globalThis.AO_SACRED_ART_RELEASE_V1?.artworks
+      })
+    : null;
   return `
     ${dayNavigator(selected)}
     <section class="aoCalV2Hero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
       <small class="aoCalV2Eyebrow">${esc(L("CALENDARIUM ROMANUM · 1962","CALENDARIUM ROMANUM · 1962"))}</small>
       <h2>${esc(titleOf(r))}</h2>
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
+      ${releasedArt?renderReleasedLiturgicalArtwork(releasedArt,{french:fr()}):""}
       ${sourceStatus(r)}
       ${daySourceDetails(r)}
       ${calendarScriptureControls(selected,r)}
