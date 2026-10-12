@@ -1039,7 +1039,7 @@ function ensureRosaryGuide(r){
  rosaryGuideOpen=guide.open===true;
  return guide;
 }
-let rosaryPreparationOpen=false;
+let rosaryPreparationOpen=false,rosaryMysteriesOpen=false;
 // A Rosary opening is prayer-first: move the preserved recommendation ahead of
 // presentation options without changing the donor's buttons, event handlers or
 // historical form selection. The active-bead screen has no hero and is untouched.
@@ -1070,9 +1070,30 @@ function prepareRosaryOpening(r){
  const bar=shell.querySelector('.aoP435930RosaryBar');
  const recitation=shell.querySelector('.lab-recitation-mode,.r29-head-recitation');
  const guide=shell.querySelector('.aoRosaryGuide');
- for(const node of [bar,recitation,guide]){
+ const form=shell.querySelector('.v38RosaryForm');
+ const options=shell.querySelector('.lab-option-bar');
+ for(const node of [bar,recitation,form,options,guide]){
   if(node&&node.parentElement!==body)body.appendChild(node);
  }
+ // The original four mystery buttons stay interactive and source-owned.
+ // They should not repeat today's recommended mystery until requested.
+ let mysteries=shell.querySelector(':scope > .aoRosaryOtherMysteries');
+ if(!mysteries){
+   mysteries=document.createElement('details');
+   mysteries.className='aoRosaryOtherMysteries';
+   mysteries.dataset.aoRosaryOtherMysteries='';
+   const summary=document.createElement('summary');
+   summary.textContent=L('Choose different mysteries','Choisir d’autres mystères');
+   const content=document.createElement('div');
+   content.className='aoRosaryMysteryChoices';
+   mysteries.append(summary,content);
+   mysteries.addEventListener('toggle',()=>{rosaryMysteriesOpen=mysteries.open===true});
+ }
+ if(mysteries.previousElementSibling!==disclosure)disclosure.insertAdjacentElement('afterend',mysteries);
+ const grid=shell.querySelector('.lab-mystery-grid');
+ const target=mysteries.querySelector('.aoRosaryMysteryChoices');
+ if(grid&&grid.parentElement!==target)target.appendChild(grid);
+ mysteries.open=rosaryMysteriesOpen;
  const state=disclosure.querySelector('.aoRosaryPreparationState');
  if(state)state.textContent=[
   S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'),
