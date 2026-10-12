@@ -31,7 +31,7 @@ try{
     {name:"optional65",query:"production=1&secondConfiteor=1",cards:65,visible:65},
     {name:"rollback48",query:"production=1&aoLiveCards=48",cards:48,visible:48},
   ];
-  for(const variant of configurations)for(const width of [320,390]){
+  for(const variant of configurations)for(const width of [320,360,390]){
     const context=await browser.newContext({
       viewport:{width,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2
     });
@@ -123,7 +123,7 @@ try{
     await context.close();
   }
   assert(sampledActive>0,"No active icon cue was sampled; test did not exercise semantic labelling");
-  console.log("PASS LIVE rails 320/390px: production 64, optional 65 and rollback 48; inactive icons vanish, active cues remain accessible and progress denominators match.");
+  console.log("PASS LIVE rails 320/360/390px: production 64, optional 65 and rollback 48; inactive icons vanish, active cues remain accessible and progress denominators match.");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
