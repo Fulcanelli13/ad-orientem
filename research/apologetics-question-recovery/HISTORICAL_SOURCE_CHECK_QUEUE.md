@@ -1,8 +1,8 @@
 # Historical original-message recovery queue
 
-These are exactly missing ID positions in dated original question-bank replies. Their original question wording remains unknown. A question cannot be called verbatim recovered from an indexed topic synopsis.
+These are 190 positions without complete source-excerpt question text: 186 entirely missing and four with truncated-only fragments. Their original question wording remains unknown. A question cannot be called verbatim recovered from an indexed topic synopsis.
 
-## Shortest remaining bank gaps
+## Shortest remaining incomplete-question gaps
 
 ### ERR — 1 missing
 
