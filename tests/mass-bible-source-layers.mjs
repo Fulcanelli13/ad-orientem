@@ -55,6 +55,7 @@ assert.match(byId("MB19").qualification,/GENESIS_PROFERENS/);
 assert.match(byId("MB19").reading.en,/does not explicitly narrate a sacrificial offering/);
 assert.match(byId("MB25").scriptureReference,/115:3–4.*116:12–13/);
 assert.match(byId("MB25").qualification,/CLEMENTINE_115_3_4/);
+assert.match(byId("MB11").qualification,/VULGATE_EXERCITUUM_VERSUS_LITURGICAL_SABAOTH/);
 for(const id of ["MB08","MB23","MB26"]){
  assert.equal(byId(id).sourceLinks.find(x=>x.role==="BIBLICAL_CONTEXT").url,
   "https://www.newadvent.org/bible/joh001.htm");
@@ -92,4 +93,25 @@ assert.match(properHtml,/select data-ao-mf-bible-proper/);
 assert.doesNotMatch(properHtml,/data-live-card|data-bible-step|<canvas/);
 const mutate=structuredClone(first);mutate.celebrations[0].readings.GOSPEL.latinIncipit="";
 assert.equal(validateProperWitnesses(mutate,second,segmented),false,"source Latin identity is essential");
+
+const sourceQueue=read("data/learn/mass-bible-source-certification-queue.v1.json");
+assert.equal(sourceQueue.schema,"AO_MASS_BIBLE_CERTIFICATION_QUEUE_V1");
+assert.equal(sourceQueue.rows.length,105);
+assert.equal(sourceQueue.stats.sourcePositions,420);
+assert.equal(sourceQueue.stats.sourceMarkerPositions,364);
+assert.equal(sourceQueue.stats.unannotatedPositions,56);
+assert.equal(sourceQueue.stats.inheritedPositions,42);
+assert.equal(sourceQueue.stats.printedPriorityPackets,100);
+assert.equal(sourceQueue.stats.candidatePrintedPageClusters,44);
+assert.equal(sourceQueue.stats.sourceTypedInterpretations,54);
+assert.equal(sourceQueue.stats.fortescueObservations,30);
+assert.equal(sourceQueue.stats.dujardinMeditationPositions,22);
+assert.equal(sourceQueue.stats.independentlyPrintedAndBibleCertified,0);
+assert.equal(sourceQueue.rows.flatMap(z=>z.chantSlots).length,420);
+assert.equal(new Set(sourceQueue.rows.map(z=>z.sourcePath)).size,105);
+assert.deepEqual(sourceQueue.rows.map(z=>z.sourcePath).sort(),lookup.map(z=>z.sourcePath).sort());
+assert.ok(sourceQueue.rows.every(x=>x.chantSlots.length===4&&!x.independentEditionCertified&&x.chantSlots.every(y=>!y.originalMissalAndBibleWordsCertified&&!y.publishable)));
+assert.equal(sourceQueue.rows.flatMap(x=>x.chantSlots).filter(y=>y.upstreamBibleAnnotationCount>0).length,364);
+assert.equal(sourceQueue.rows.filter(x=>x.priority==="PRINTED_PAGE_CLUSTER_REQUIRES_ADJUDICATION").length,44);
+assert.equal(sourceQueue.rows.filter(x=>x.priority!=="NOT_IN_FIRST_100_PACKET_LIST").length,100);
 console.log("PASS Mass–Bible bridge: 26 bilingual classified/cited connections, eight-stage learn.mass, 105 original-source Proper identities and 195 reading slots, 15 disjoint guards; no R17 mutation");

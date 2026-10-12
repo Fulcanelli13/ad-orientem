@@ -1,6 +1,6 @@
 {
   "schema": "AO_MASS_BIBLE_SOURCE_LAYERS_V1",
-  "version": "2026-10-12-source-corrections-batch-2",
+  "version": "2026-10-12-full-source-queue-batch-3",
   "status": "EDITORIAL_STUDY_PREVIEW_NOT_1962_WORD_FOR_WORD_CERTIFIED",
   "sourcePolicy": {
     "missalRole": "1962 norm for liturgical wording; wording, variants and cited printed pages await original Latin collation",
@@ -303,10 +303,10 @@
         }
       ],
       "reading": {
-        "en": "The threefold acclamation evokes Isaiah's vision. The Missal's Sabaoth wording is not a letter-for-letter copy of every Vulgate edition of Isaiah.",
-        "fr": "La triple acclamation évoque la vision d’Isaïe. Le texte liturgique de Sabaoth n’est pas identique à toutes les éditions latines d’Isaïe."
+        "en": "The threefold Sanctus draws upon Isaiah 6:3. The Clementine Vulgate reads 'Dominus, Deus exercituum', whereas the liturgical Sanctus reads 'Dominus Deus Sabaoth'. The wording is adapted, not a letter-for-letter quotation.",
+        "fr": "Le triple Sanctus vient d’Isaïe 6,3. La Vulgate clémentine donne « Dominus, Deus exercituum », tandis que le Sanctus liturgique dit « Dominus Deus Sabaoth ». Il s’agit d’une adaptation, non d’une citation littérale."
       },
-      "qualification": "LITURGICAL_VERSUS_BIBLICAL_WORDING",
+      "qualification": "VULGATE_EXERCITUUM_VERSUS_LITURGICAL_SABAOTH",
       "group": "CANON",
       "scriptureReaderRef": "Isaiah 6:3"
     },

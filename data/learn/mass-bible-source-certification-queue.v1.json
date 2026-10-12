@@ -1,0 +1,4172 @@
+{
+  "schema": "AO_MASS_BIBLE_CERTIFICATION_QUEUE_V1",
+  "version": "2026-10-12",
+  "status": "RESEARCH_ONLY_ZERO_PRINTED_1962_AND_SCRIPTURE_JOINT_CERTIFICATION",
+  "sourceOwnership": "Main owns 105 Proper identities; PR #1018 owns 420 upstream chant-source positions; this research ledger only joins source IDs and review statuses; no chant, Bible verse or artwork texts copied.",
+  "sourceLinks": [
+    {
+      "repository": "Fulcanelli13/ad-orientem",
+      "commit": "e8c3947154531be18f011834fdc9f2ae625b6e38",
+      "path": "data/geography/research/mass-1962-105-source-path-chant-index-20261011.v1.json",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-1962-105-source-path-chant-index-20261011.v1.json"
+    },
+    {
+      "repository": "Fulcanelli13/ad-orientem",
+      "commit": "e8c3947154531be18f011834fdc9f2ae625b6e38",
+      "path": "data/geography/research/mass-1962-high-priority-100-evidence-packets-20261011.v1.json",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-1962-high-priority-100-evidence-packets-20261011.v1.json"
+    },
+    {
+      "repository": "Fulcanelli13/ad-orientem",
+      "commit": "e8c3947154531be18f011834fdc9f2ae625b6e38",
+      "path": "data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json"
+    },
+    {
+      "repository": "Fulcanelli13/ad-orientem",
+      "commit": "e8c3947154531be18f011834fdc9f2ae625b6e38",
+      "path": "data/geography/research/mass-scripture-source-extractions-20261011.v1.json",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-scripture-source-extractions-20261011.v1.json"
+    },
+    {
+      "repository": "Fulcanelli13/ad-orientem",
+      "commit": "e8c3947154531be18f011834fdc9f2ae625b6e38",
+      "path": "data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json"
+    },
+    {
+      "repository": "Fulcanelli13/ad-orientem",
+      "commit": "e8c3947154531be18f011834fdc9f2ae625b6e38",
+      "path": "data/geography/research/mass-dujardin-1962-order-bridge-20261011.v1.json",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-dujardin-1962-order-bridge-20261011.v1.json"
+    }
+  ],
+  "stats": {
+    "sourcePaths": 105,
+    "sourcePositions": 420,
+    "sourceMarkerPositions": 364,
+    "unannotatedPositions": 56,
+    "inheritedPositions": 42,
+    "absentSourceSections": 13,
+    "sourceStatusCounts": {
+      "CITATION_PRINTED_IN_WITNESS": 81,
+      "INHERITED_SOURCE_REQUIRES_RESOLUTION": 6,
+      "SECTION_ABSENT": 13,
+      "SOURCE_ANNOTATION_PRESENT": 283,
+      "INHERITED_UNRESOLVED": 36,
+      "NOT_ANNOTATED": 1
+    },
+    "printedPriorityPackets": 100,
+    "candidatePrintedPageClusters": 44,
+    "sourceTypedInterpretations": 54,
+    "fortescueObservations": 30,
+    "dujardinMeditationPositions": 22,
+    "independentlyPrintedAndBibleCertified": 0,
+    "publishable": 0
+  },
+  "rows": [
+    {
+      "sourcePath": "Tempora/Pent10-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent11-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent15-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent18-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent19-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent20-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent21-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent24-0",
+      "priority": "100_PRIORITY_PRINTED_SOURCE_PACKET",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Adv1-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Adv2-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Adv3-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Adv4-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Nat1-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Nat2-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi1-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi2-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi3-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi4-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi5-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi6-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quadp1-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quadp2-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quadp3-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad3-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad5-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc1-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc2-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc3-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc4-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc5-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc6-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent02-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent04-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent05-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent06-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent07-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent08-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent09-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent12-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent13-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent14-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent16-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent17-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent22-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent23-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent03-0",
+      "priority": "100_PRIORITY_PRINTED_SOURCE_PACKET",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/PentEpi4-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/PentEpi5-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/PentEpi6-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad1-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad2-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad6-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc5-4",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent01-0",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent01-4",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pent02-5",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Sancti/01-06",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Sancti/02-02",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_SOURCE_REQUIRES_RESOLUTION",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_SOURCE_REQUIRES_RESOLUTION",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Sancti/03-25",
+      "priority": "100_PRIORITY_PRINTED_SOURCE_PACKET",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "INHERITED_SOURCE_REQUIRES_RESOLUTION",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_SOURCE_REQUIRES_RESOLUTION",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_SOURCE_REQUIRES_RESOLUTION",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad6-1",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad6-2",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad6-4",
+      "priority": "100_PRIORITY_PRINTED_SOURCE_PACKET",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SECTION_ABSENT",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad6-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/093-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/093-5",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/093-6",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Adv3-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_SOURCE_REQUIRES_RESOLUTION",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Adv3-5",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Adv3-6",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad1-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad1-5",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad1-6",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "NOT_ANNOTATED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-5",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad1-1",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad1-2",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad1-4",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad2-1",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad2-2",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad2-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad2-4",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad2-5",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad2-6",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad3-1",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad3-2",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad3-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad3-4",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad3-5",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "CITATION_PRINTED_IN_WITNESS",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad3-6",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-1",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 4,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-2",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-4",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-5",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "INHERITED_UNRESOLVED",
+          "upstreamBibleAnnotationCount": 0,
+          "requiresParentResolution": true,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-6",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad5-1",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad5-2",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad5-3",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 3,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad5-4",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad5-6",
+      "priority": "NOT_IN_FIRST_100_PACKET_LIST",
+      "independentEditionCertified": false,
+      "chantSlots": [
+        {
+          "slot": "INTROIT",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 2,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "GRADUAL",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "OFFERTORY",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        },
+        {
+          "slot": "COMMUNION",
+          "sourceStatus": "SOURCE_ANNOTATION_PRESENT",
+          "upstreamBibleAnnotationCount": 1,
+          "requiresParentResolution": false,
+          "originalMissalAndBibleWordsCertified": false,
+          "publishable": false
+        }
+      ]
+    }
+  ],
+  "nextCertificationOrder": [
+    "1. Resolve inheritance directives and missing upstream chant sections without inventing zero chants",
+    "2. Establish source path celebration identity in the adopted 1962 Missal including common/feast/season applicable rubrics",
+    "3. Collate Latin chant incipit, full scope, seasonal Alleluia/Tract/Sequence substitutions and ordered lessons in printed 1962 witness",
+    "4. Independently collate Clementine/Crampon/Douay verse numbers and wording rather than copying annotation guesses",
+    "5. Release only reviewed exact-quotation and doctrine/typology separately; no modifications to the 48-card LIVE or calendar inference"
+  ],
+  "noReleaseIfUncertified": true
+}
