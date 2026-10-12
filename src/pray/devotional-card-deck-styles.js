@@ -67,7 +67,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 /* Public Benediction reuses source-owned seven stages as prayer-first cards.
    The user, not an automatic clock, advances with the actual ceremonial. */
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll{
- display:block;padding:18px 16px 26dvh;min-height:min(350px,52dvh)}
+ display:block;padding:18px min(52px,16vw) 26dvh 16px;min-height:min(350px,52dvh)}
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll>*{margin-block:0 22px}
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideNow h2{display:none!important}
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930Prayer{
