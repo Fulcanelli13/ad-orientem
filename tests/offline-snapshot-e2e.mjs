@@ -74,6 +74,22 @@ try{
  assert.equal(original.pendingVersion,null,"First install should not offer an update");
  let cachesNames=await page.evaluate(()=>caches.keys());
  assert.ok(cachesNames.some(x=>x.startsWith("ao-bootstrap-snapshot-v1-")),"Missing committed startup snapshot");
+ const firstSnapshot=await page.evaluate(async()=>{
+   const version=globalThis.AO_OFFLINE_APP_V1.status.version;
+   const cache=await caches.open("ao-bootstrap-snapshot-v1-"+version);
+   const base=new URL("/ad-orientem/",location.origin);
+   const readiness=await cache.match(new URL("__ao_bootstrap_completed__",base));
+   const meta=await readiness.json();
+   const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
+     "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js"];
+   const missing=[];
+   for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
+   return {...meta,missing};
+ });
+ assert.deepEqual(firstSnapshot.missing,[],"First-use Prayer lazy entry modules not in completed snapshot");
+ assert.ok(firstSnapshot.files<=320 && firstSnapshot.bytes<=35000000,
+  "Offline Rosary change exceeded transactional bootstrap limits");
+ console.log("OFFLINE_FIRST_USE_SNAPSHOT="+JSON.stringify(firstSnapshot));
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
