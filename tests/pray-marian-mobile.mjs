@@ -68,6 +68,19 @@ try{
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),4);
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),4);
+ // Actual mobile presentation evidence: same current card at three widths.
+ for(const [width,height] of [[320,700],[390,844],[430,932]]){
+   await page.setViewportSize({width,height});
+   await page.screenshot({path:resolve(captures,"09-angelus-dual-axis-"+width+".png"),
+    fullPage:false,animations:"disabled"});
+   const x=await page.evaluate(()=>({
+    overflow:document.documentElement.scrollWidth-innerWidth,
+    timeline:!!document.querySelector("#aoPray435930.open .aoDevoTimeline"),
+    cards:document.querySelectorAll("#aoPray435930.open .aoDevoCard").length
+   }));
+   assert.ok(x.overflow<=1,"Dual-axis Angelus document overflow at "+width+"px: "+JSON.stringify(x));
+ }
+ await page.setViewportSize({width:390,height:844});
  assert.match(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) h2").innerText(),/Announcement|Annonce/);
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
@@ -80,6 +93,18 @@ try{
  await page.locator("#aoPray435930 [data-ao-devo-move='-1']").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"fiat");
  await page.locator("#aoPray435930 [data-ao-devo-jump='0']").evaluate(x=>x.click());
+ const historicalConclusion=page.locator("#aoPray435930 [data-p435930-angelus-appendix]");
+ await historicalConclusion.evaluate(x=>x.click());
+ await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===7,null,{timeout:10000});
+ assert.deepEqual(await page.locator("#aoPray435930 .aoDevoCard").evaluateAll(nodes=>nodes.slice(4).map(x=>x.dataset.aoDevoCard)),
+  ["doxology","faithful-departed","divine-assistance"]);
+ await page.locator("#aoPray435930 [data-ao-devo-jump='5']").evaluate(x=>x.click());
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),2,
+  "Faithful departed card lost its Latin/French leader/response pair");
+ await page.screenshot({path:resolve(captures,"10-angelus-optional-souls-390.png"),
+  fullPage:false,animations:"disabled"});
+ await historicalConclusion.evaluate(x=>x.click());
+ await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===4,null,{timeout:10000});
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection a[href^='https://']").count(),5);
  await page.locator("#aoPray435930 .aoAngelusGuide>summary").evaluate(x=>x.click());
