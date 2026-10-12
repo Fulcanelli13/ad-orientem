@@ -31,6 +31,7 @@ function oneLayer(){
 function viewOf(root){return root?.querySelector('.aoP435930Mount')?.dataset.aoPrayView||''}
 function needsRecitation(root){
   const v=viewOf(root);if(['rosary','angelus','confession','firstFriday','firstSaturday','fsMeditation'].includes(v))return false;
+  if(v==='stations'&&root.querySelector('[data-ao-stations-options] [data-p435930-seg="individual"]'))return false;
   if(v==='library')return !!root.querySelector('.aoP435930Prayer');
   return !!root.querySelector('.aoP435930Prayer,.aoP435930LitCard,.aoP435930AppendixFlip');
 }
