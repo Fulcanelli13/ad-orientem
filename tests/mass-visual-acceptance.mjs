@@ -32,7 +32,9 @@ try{
   const page=await context.newPage();
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
-  // This historical v1.80 visual donor suite certifies the explicit 48-card rollback.\n  // The current 64/65-card production default has dedicated LIVE and phone gates.\n  await page.goto("http://127.0.0.1:4190/index.html?aoR17Reader=native&aoLiveCards=48",{waitUntil:"domcontentloaded",timeout:90000});
+  // This historical v1.80 visual donor suite certifies the explicit 48-card rollback.
+  // The current 64/65-card production default has dedicated LIVE and phone gates.
+  await page.goto("http://127.0.0.1:4190/index.html?aoR17Reader=native&aoLiveCards=48",{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true,null,{timeout:30000});
 
   const setup=await page.evaluate(async()=>{
@@ -653,6 +655,8 @@ try{
       scholaDock:document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset?.active??null,
       leftActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left [data-active='true']").length,
       rightActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-right [data-active='true']").length,
+      leftTransientActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left .ao-rail-item[data-active='true']:not([data-channel='posture'])").length,
+      rightTransientActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-right .ao-rail-item[data-active='true']:not([data-channel='posture'])").length,
       guideDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-button']")?.disabled??null,
       progress:document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent?.trim()??"",
       totalCards:preview?.model?.totalCards??cards.length,
@@ -667,8 +671,11 @@ try{
   assert.ok(consecration.secondaryTexts.some(x=>/THIS IS MY BODY/i.test(x)),"Host Consecration lost vernacular support beneath Latin");
   assert.ok(consecration.rubricCount>=1,"elevation action still renders as ordinary prayer prose");
   assert.ok(consecration.consecrationWordsCount>=1,"Words of Consecration lost dedicated salience");
-  assert.equal(consecration.stageLeft,"true","donor LIVE faithful rail disappeared when no transient cue was active");
-  assert.equal(consecration.stageRight,"true","donor LIVE audio rail disappeared at the Consecration");
+  // Rail surfaces exist only for active transient cues; posture is owned by the top ribbon.
+  assert.equal(consecration.stageLeft,String(consecration.leftTransientActive>0),
+    "faithful rail visibility contradicts active transient cues");
+  assert.equal(consecration.stageRight,String(consecration.rightTransientActive>0),
+    "priest rail visibility contradicts active transient cues");
   const rubricPresentation=await page.evaluate(()=>{
     const rubric=[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-kind='RUBRIC']")]
       .find(el=>getComputedStyle(el).display!=="none");
@@ -1076,6 +1083,10 @@ try{
       cardBoxShadow:cs?.boxShadow??null,
       leftRailDisplay:left?getComputedStyle(left).display:null,
       rightRailDisplay:right?getComputedStyle(right).display:null,
+      leftRailVisible:left?.dataset.visible??null,
+      rightRailVisible:right?.dataset.visible??null,
+      leftTransientCueCount:left?.querySelectorAll('.ao-rail-item[data-active="true"]:not([data-channel="posture"])').length??0,
+      rightTransientCueCount:right?.querySelectorAll('.ao-rail-item[data-active="true"]:not([data-channel="posture"])').length??0,
       nonActiveOpacityMin:nonActive.length?Math.min(...nonActive):null,
     };
   });
@@ -1085,8 +1096,12 @@ try{
   assert.equal(wide.cardBorderTop,"0px","giant bordered prayer card chrome returned");
   assert.equal(wide.cardBackgroundImage,"none","giant panel background returned behind prayer text");
   assert.equal(wide.cardBoxShadow,"none","giant card shadow returned");
-  assert.equal(wide.leftRailDisplay,"flex","left ritual rail is not persistent in LIVE");
-  assert.equal(wide.rightRailDisplay,"flex","right ritual rail is not persistent in LIVE");
+  // Wide LIVE retains rail positioning, not permanently painted empty cue columns.
+  for(const side of ["left","right"]){
+    const hasCue=wide[side+"TransientCueCount"]>0;
+    assert.equal(wide[side+"RailVisible"],String(hasCue),side+" rail visibility drifted from cue ownership");
+    assert.equal(wide[side+"RailDisplay"],hasCue?"flex":"none",side+" rail renders inactive ghost space");
+  }
   if(wide.nonActiveOpacityMin!=null)assert.ok(wide.nonActiveOpacityMin>=0.39,
     "surrounding prayer text became unreadably dark again: "+JSON.stringify(wide));
   await page.screenshot({path:resolve(out,"13-mass-wide-donor-shell.png"),fullPage:false});

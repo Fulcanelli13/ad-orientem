@@ -696,11 +696,24 @@ try{
   await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
   const standard=page.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
-  if(await standard.count())await standard.click();
+  if(await standard.count()){
+    if(await standard.isVisible())await standard.click();
+    else assert.equal(await standard.evaluate(el=>el.classList.contains("active")),true,
+      "collapsed Rosary options must already select standard form");
+  }
   await page.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-next]",{state:"visible",timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot .lab-decade-bar",{state:"visible",timeout:5000});
-  await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",{state:"visible",timeout:5000});
+  // Production Rosary starts prayer-first: recitation controls live in one collapsed disclosure.
+  const activeRosaryOptions=page.locator("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
+  await activeRosaryOptions.waitFor({state:"visible",timeout:5000});
+  assert.equal(await activeRosaryOptions.evaluate(el=>el.open),false,
+    "Rosary options obstruct the opening prayer");
+  assert.equal(await page.locator("#aoPrayerBookRoot .r29-head-recitation").isVisible(),false,
+    "legacy recitation row competes with prayer while options are collapsed");
+  await activeRosaryOptions.locator(":scope > summary").click();
+  await page.waitForSelector("#aoPrayerBookRoot .r29-head-recitation[data-ao-exact-donor-recitation='v3.4.14']",
+    {state:"visible",timeout:5000});
   const rosaryOpening=await page.evaluate(()=>{
     const roots=[...document.querySelectorAll("#aoPrayerBookRoot")],active=roots.find(root=>root.dataset.aoRosaryActiveRoot==="true")||roots.find(root=>root.classList.contains("open"));
     const shell=active?.querySelector(".pbShell"),head=shell?.querySelector(".lab-view-head"),recitation=shell?.querySelector(".r29-head-recitation");
@@ -735,6 +748,8 @@ try{
       headOverflow:(head?.scrollWidth??0)-(head?.clientWidth??0),
       recitationButtonWidths,
       recitationRight:recRect?.right??0,
+      recitationLeft:recRect?.left??0,
+      phoneViewportWidth:window.innerWidth,
       headRight:headRect?.right??0,
     };
   });
@@ -758,7 +773,9 @@ try{
   assert.ok(rosaryOpening.shellWidth>=360,"Rosary exact donor presentation collapsed phone reading width");
   assert.ok(rosaryOpening.headOverflow<=1,"Rosary phone header still overflows horizontally");
   assert.ok(rosaryOpening.recitationButtonWidths.length===2&&rosaryOpening.recitationButtonWidths.every(width=>width>=52),"Rosary Individual / Group controls are visibly truncated");
-  assert.ok(rosaryOpening.recitationRight<=rosaryOpening.headRight+1,"Rosary recitation control clips outside the phone header");
+  // Recitation controls now live beneath the header in the expanded Prayer options.
+  assert.ok(rosaryOpening.recitationLeft>=-1&&rosaryOpening.recitationRight<=rosaryOpening.phoneViewportWidth+1,
+    "Rosary options controls exceed the phone viewport: "+JSON.stringify(rosaryOpening));
 
   // Reproduce the user-visible failure mode explicitly: Group recitation. The late
   // preserved donor had to collapse common-prayer leader/response grids to full-width
@@ -1423,7 +1440,11 @@ try{
   await wide.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
   await wide.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
   const wideStandard=wide.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
-  if(await wideStandard.count())await wideStandard.click();
+  if(await wideStandard.count()){
+    if(await wideStandard.isVisible())await wideStandard.click();
+    else assert.equal(await wideStandard.evaluate(el=>el.classList.contains("active")),true,
+      "wide Rosary options must retain the standard default while collapsed");
+  }
   await wide.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await wide.waitForSelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]",{state:"visible",timeout:5000});
   const wideOurFatherTarget=await wide.evaluate(()=>{
