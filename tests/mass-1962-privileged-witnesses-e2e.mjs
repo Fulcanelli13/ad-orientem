@@ -79,7 +79,7 @@ try{
      assert.equal(actual.status,"CERTIFIED",row.date+"/"+form+": "+actual.reason);
      assert.equal(actual.applied,expected[row.date][index]);
      assert.deepEqual(actual.prayerCounts,[n,n,n]);
-     assert.equal(actual.readerCollects,n+(row.date==="2026-10-18"?1:0),row.date+"/"+form+" LIVE paragraph focus");
+     assert.equal(actual.readerCollects,n+(row.date==="2026-10-18"?(form==="LOW"?2:1):0),row.date+"/"+form+" LIVE paragraph focus");
      if(row.date==="2026-10-18"){
        assert.equal(actual.missionCollect,"CERTIFIED",form+" must include Mission Sunday under one conclusion");
        assert.equal(actual.missionUnderOneConclusion,"CERTIFIED");
