@@ -4,6 +4,7 @@ import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
+import {showDevotionalInterlude,showDevotionalParagraphCue} from "./devotional-cinematic.js";
 import "./devotional-methods-styles.js";
 import "./tenebrae-styles.js";
 import {loadTenebraeHour} from "./tenebrae-1960.js";
@@ -1676,12 +1677,10 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    initialIndex:ANGELUS_CARD_INDEX,
    onCardChange:(card,index)=>{
     ANGELUS_CARD_INDEX=index;
-    const fx=window.AO_CINEMATIC_V4312||window.AO_CINEMATIC_V4311;
-    if(!fx?.isReducedMotion?.())
-     fx?.showTransition?.({kicker:form==='angelus'?'ANGELUS':'REGINA CÆLI',
-      title:card.title,hold:430});
+    showDevotionalInterlude({mount:m,form,card,language:lang(),win:window});
    },
    onCue:cue=>{
+    showDevotionalParagraphCue({mount:m,cue:cue==='profound-bow'&&posture.stand?cue:null});
     const rail=m.querySelector('[data-ao-ritual-module="angelus"]');
     if(!rail)return;
     rail.querySelectorAll('[data-channel="gesture"]').forEach(el=>el.remove());
