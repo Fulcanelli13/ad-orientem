@@ -116,6 +116,38 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930ConfessionReader[data-ao-confession-dual-axis="true"][data-ao-confession-final="true"] .aoP435930GuideNav .aoP435930Secondary{
  display:none!important}
 
+/* Four historical source-owning devotions use the same prayer-first deck.
+   Only canonical final actions are retained; the chapter timeline replaces
+   redundant Previous/Next controls. The public rite is never auto-timed. */
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll{
+ display:block;padding:18px min(52px,16vw) 26dvh 16px;min-height:min(350px,52dvh)}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll>*{
+ margin-block:0 22px}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930GuideNow h2{
+ display:none!important}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930WordHero h2{
+ display:none!important}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930Prayer{
+ border:0!important;background:transparent!important;box-shadow:none!important}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930LitanyVerses{
+ display:grid;gap:10px}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930LitanyLine{
+ margin:0;font:400 1rem/1.67 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930WitnessParagraph{
+ font:400 1rem/1.67 var(--ao-font-liturgical,Georgia,serif);margin:0 0 14px}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930ScriptureVerse{
+ display:inline-block;margin:5px 3px 8px 0}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930ScriptureFlip{
+ max-width:100%;white-space:normal}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-dual-axis="true"] .aoP435930GuideNav{
+ display:none!important}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-dual-axis="true"][data-ao-devotional-final="true"] .aoP435930GuideNav{
+ display:flex!important}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-dual-axis="true"][data-ao-devotional-final="true"] .aoP435930GuideNav .aoP435930Secondary{
+ display:none!important}
+#aoPray435930 .aoP435930DevotionalGuidedReader .aoP435930GuidedContext>summary{
+ display:flex;align-items:center;min-height:44px;color:var(--muted,#aeb2b8);font-size:13px}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;

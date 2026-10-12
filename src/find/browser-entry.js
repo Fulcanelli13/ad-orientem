@@ -114,6 +114,8 @@ function installStyle(win){
 }
 
 export function createFindOwner(win=globalThis){
+  // Explicit non-public research opt-in. Public Atlas stays chronology-only.
+  const bibleResearchPreview=new URLSearchParams(String(win?.location?.search??"")).get("biblicalReview")==="1";
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let lineageReview=null,lineagePromise=null,cinematicReview=null,cinematicPromise=null;
   let paintToken=0,lastLoadError=null;
@@ -336,7 +338,7 @@ export function createFindOwner(win=globalThis){
     // A focused map-first view over the current Explore owner; do not
     // replace the bounded-world map or recreate it on every timeline event.
     if(state.bibleAtlas){
-      if(state.bibleReview.surface==="cinematic"){
+      if(bibleResearchPreview&&state.bibleReview.surface==="cinematic"){
         const review=await ensureCinematicStudies();
         if(token!==paintToken||!openState||!state.bibleAtlas||state.bibleReview.surface!=="cinematic")return false;
         mapHandle?.destroy?.();mapHandle=null;
@@ -346,7 +348,7 @@ export function createFindOwner(win=globalThis){
         node.dataset.open="true";node.dataset.aoFindLoadState="ready";node.dataset.exploreLens=state.lens;
         return true;
       }
-      if(state.bibleReview.surface!=="timeline"){
+      if(bibleResearchPreview&&state.bibleReview.surface!=="timeline"){
         const review=await ensureLineageReview();
         if(token!==paintToken||!openState||!state.bibleAtlas)return false;
         mapHandle?.destroy?.();mapHandle=null;
@@ -357,7 +359,7 @@ export function createFindOwner(win=globalThis){
         return true;
       }
       const atlasStops=buildBibleAtlas(data?.biblePlaces?.entries??[]);
-      node.innerHTML=renderBibleAtlasToString({language:language(win),atlasStops,atlasIndex:state.bibleIndex});
+      node.innerHTML=renderBibleAtlasToString({language:language(win),atlasStops,atlasIndex:state.bibleIndex,researchPreview:bibleResearchPreview});
       // Place the selected source stop under the timeline cursor before async map
       // loading; the initial scroll origin must never nominate Creation by mistake.
       centerBibleMilestone(state.bibleIndex);
@@ -727,7 +729,7 @@ export function createFindOwner(win=globalThis){
     if(target?.closest?.("[data-bible-atlas-close]")&&state.bibleAtlas){
       event.preventDefault?.();state.bibleAtlas=false;state.bibleIndex=0;state.bibleReview={...BIBLE_REVIEW_DEFAULT};mapHandle?.destroy?.();mapHandle=null;lastMapView=null;lastMapLens=null;void paint();return;
     }
-    if(state.bibleAtlas){
+    if(state.bibleAtlas&&bibleResearchPreview){
       const current=state.bibleReview;
       // Zoom only the evidence diagram, preserving its source links and
       // internal viewport midpoint; never scale the full application surface.
@@ -1063,6 +1065,7 @@ export function createFindOwner(win=globalThis){
       view:state.view,
       bibleAtlas:state.bibleAtlas,
       bibleIndex:state.bibleIndex,
+      bibleResearchPreview,
       bibleReviewSurface:state.bibleReview.surface,
       bibleReviewLineage:state.bibleReview.lineage,
       bibleReviewApostle:state.bibleReview.apostle,

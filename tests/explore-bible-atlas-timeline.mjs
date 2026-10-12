@@ -142,7 +142,9 @@ const oldJerusalem=atlasPinEpisodes(stops,data.entries,"jerusalem",by("ISRAEL","
 assert.doesNotMatch(oldJerusalem,/The Presentation of Jesus/,"ancient kingdom pin must not leak later infancy events");
 
 assert.match(atlasEraOverlay("EXODUS","fr"),/L&#39;Exode/);
-const en=renderBibleAtlasToString({language:"en",atlasStops:stops,atlasIndex:0});
+const en=renderBibleAtlasToString({language:"en",atlasStops:stops,atlasIndex:0,researchPreview:true});
+const publicChronology=renderBibleAtlasToString({language:"en",atlasStops:stops,atlasIndex:0});
+assert.doesNotMatch(publicChronology,/data-bible-review-surface=/,"public chronology must not expose research tabs");
 const fr=renderBibleAtlasToString({language:"fr",atlasStops:stops,atlasIndex:71});
 assert.match(en,/data-bible-track/);
 assert.match(en,/repeat\(4,minmax\(0,1fr\)\)/,

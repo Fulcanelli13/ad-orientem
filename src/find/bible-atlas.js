@@ -177,8 +177,8 @@ export function buildBibleAtlas(records){
   const eventKey=eventId?"biblical:event:"+eventId:"biblical:passage:"+stablePassage;
   return Object.freeze({index,eventKey,sourceEventId:eventId??null,era,placeId,geo:ATLAS_GEO[placeId]??null,title_en:event?.title_en??en,title_fr:event?.title_fr??fr,
    reference,place_en:place?.title_en??"",place_fr:place?.title_fr??"",
-   summary_en:s[6]??(event?place?.summary_en:(en?en+". "+passage+".":ERAS[era][2])),
-   summary_fr:s[7]??(event?place?.summary_fr:(fr?fr+". "+passage+".":ERAS[era][3]))});
+   summary_en:s[6]??(event?(event.summary_en??""):(en?en+". "+passage+".":ERAS[era][2])),
+   summary_fr:s[7]??(event?(event.summary_fr??""):(fr?fr+". "+passage+".":ERAS[era][3]))});
  });
  if(stops.some(s=>!s.eventKey)||new Set(stops.map(s=>s.eventKey)).size!==stops.length)
   throw new Error("Atlas stable event key collision");
@@ -219,7 +219,7 @@ export function atlasDetail(s,lang){
  return '<div class="aoBibleAtlasEyebrow">'+esc(L(lang,ERAS[s.era][0],ERAS[s.era][1]))+' · '+(s.index+1)+'</div>'+
  '<h2>'+esc(L(lang,s.title_en,s.title_fr))+'</h2>'+
  (s.placeId?'<p class="aoBibleAtlasPlace">'+esc(L(lang,s.place_en,s.place_fr))+'</p>':"")+
- '<p>'+esc(L(lang,s.summary_en,s.summary_fr))+'</p>'+
+ (L(lang,s.summary_en,s.summary_fr)?'<p>'+esc(L(lang,s.summary_en,s.summary_fr))+'</p>':"")+
  (qualification?'<small class="aoBibleAtlasQualification">'+esc(qualification)+'</small>':"")+
  (sourceQualification?'<small class="aoBibleAtlasQualification">'+esc(sourceQualification)+'</small>':"")+
  (witnessNote?'<details class="aoBibleAtlasSourceNote"><summary>'+esc(L(lang,"Scripture edition note","Note sur l'édition biblique"))+'</summary><p>'+esc(L(lang,witnessNote.en,witnessNote.fr))+'</p><a href="'+esc(witnessNote.source)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Compare source","Comparer la source"))+' ↗</a></details>':"")+
@@ -258,15 +258,15 @@ export function renderBibleAtlasToString(vm){
  if(!s)return "";
  let html='<section class="aoFindSurface aoBibleAtlasSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-bible-atlas>'+
  '<header class="aoBibleAtlasHeader"><button type="button" data-bible-atlas-close aria-label="'+esc(L(lang,"Back to Explore","Retour à Explorer"))+'">←</button>'+
- '<div><small>'+esc(L(lang,"EXPLORE · SCRIPTURE","EXPLORER · ÉCRITURE"))+'</small><h1>'+esc(L(lang,"Biblical Atlas","Atlas biblique"))+'</h1></div>'+
- '<button type="button" data-bible-follow aria-label="'+esc(L(lang,"Return to active pin","Revenir au repère actif"))+'">⌖</button></header>'+
- '<nav class="aoBibleAtlasViewTabs" aria-label="'+esc(L(lang,"Biblical Atlas views","Vues de l’Atlas biblique"))+'">'+
+ '<div><small>'+esc(L(lang,"EXPLORE · SCRIPTURE PREVIEW","EXPLORER · ÉCRITURE · APERÇU"))+'</small><h1>'+esc(L(lang,"Biblical Atlas","Atlas biblique"))+'</h1></div>'+
+ '<button type="button" data-bible-follow aria-label="'+esc(L(lang,"Centre selected event","Recentrer l’étape sélectionnée"))+'">⌖</button></header>'+
+ (vm.researchPreview?( '<nav class="aoBibleAtlasViewTabs" aria-label="'+esc(L(lang,"Biblical Atlas views","Vues de l’Atlas biblique"))+'">'+
  '<button type="button" data-bible-review-surface="timeline" aria-pressed="true">'+esc(L(lang,"Chronology","Chronologie"))+'</button>'+
  '<button type="button" data-bible-review-surface="genealogies" aria-pressed="false">'+esc(L(lang,"Genealogies","Généalogies"))+'</button>'+
  '<button type="button" data-bible-review-surface="apostles" aria-pressed="false">'+esc(L(lang,"Apostolic lives","Vies apostoliques"))+'</button>'+ 
- '<button type="button" data-bible-review-surface="cinematic" aria-pressed="false">'+esc(L(lang,"Scene studies","Études des scènes"))+'</button></nav>'+
+ '<button type="button" data-bible-review-surface="cinematic" aria-pressed="false">'+esc(L(lang,"Scene studies","Études des scènes"))+'</button></nav>'):'')+
  '<div class="aoBibleAtlasEraHeader"><span data-bible-era-name>'+esc(L(lang,ERAS[s.era][0],ERAS[s.era][1]))+'</span>'+
- '<small>'+esc(L(lang,"Swipe milestones · selected Gospel narrative, not a dated harmony","Faites défiler les étapes · récit évangélique choisi, non une chronologie datée"))+'</small></div>'+
+ '<small>'+esc(L(lang,"Swipe events · selected reading sequence, not a dated history","Parcourez les épisodes · parcours choisi, non une chronologie datée"))+'</small></div>'+
  '<div class="aoBibleAtlasTimeline"><div class="aoBibleAtlasCursor" aria-hidden="true"></div><div class="aoBibleAtlasTrack" data-bible-track aria-label="'+esc(L(lang,"Continuous biblical chronology","Chronologie biblique continue"))+'"><div class="aoBibleAtlasTrackPad" aria-hidden="true"></div>';
  for(const step of steps){
   const boundary=step.index===0||steps[step.index-1].era!==step.era;
