@@ -514,7 +514,9 @@ function back(){
   });
 }
 function goHome(){
-  BASE_CLOSE();
+  // Explicit Home overrides any deep-link return owner. A normal close may
+  // asynchronously restore the previous Prayer context and reopen this sheet.
+  BASE_CLOSE({silent:true});
   const p=window.AO_APP_SHELL_V1?.navigate?.("home");
   if(p&&typeof p.catch==="function")p.catch(()=>window.AO_NAV_V362?.openHome?.());
   else if(!p)window.AO_NAV_V362?.openHome?.();
