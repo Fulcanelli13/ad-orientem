@@ -355,6 +355,13 @@ export function createHomeOwner(win=globalThis){
       event.preventDefault?.();
       const id=dynamic.dataset?.homeCuDynamic;
       if(id==="dynamic.free"){void openRoute("pray.library",{trigger:dynamic});return;}
+      // A daily Marian prayer is a launch into one canonical reader, not a
+      // legacy Daily Rule sheet. The rule service may track completion but
+      // must not own the prayer presentation.
+      if(/^angelus\.(morning|noon|evening)$/.test(id)){
+        void openRoute("pray.angelus_regina",{trigger:dynamic});
+        return;
+      }
       try{if(win?.AO_RULE_V411?.openDynamic?.(id))return;}catch{}
       void openRoute(dynamic.dataset?.homeCuRoute,{trigger:dynamic});
       return;
@@ -363,29 +370,26 @@ export function createHomeOwner(win=globalThis){
     if(stat){
       event.preventDefault?.();
       const id=stat.dataset?.homeCuStatic||"";
-      const fallback=()=>{
-        // The rule sheet is a legacy service; the modular Home must never
-        // display an inert daily-practice control when that service is absent.
-        const routes={
-          rosary:"pray.rosary",
-          angelus:"pray.angelus_regina",
-          morning:"pray.morning_evening",
-          evening:"pray.morning_evening",
-          examen:"pray.nightly_examen",
-        };
-        return routes[id]?openRoute(routes[id],{trigger:stat}):win?.AO_APP_SHELL_V1?.navigate?.("pray");
+      // All Home daily-prayer shortcuts have the same canonical reader as
+      // the Prayers catalogue. AO_RULE_V411.openStatic() presents a competing
+      // legacy sheet and must not intercept a devotional reading session.
+      const routes={
+        rosary:"pray.rosary",
+        angelus:"pray.angelus_regina",
+        morning:"pray.morning_evening",
+        evening:"pray.morning_evening",
+        examen:"pray.nightly_examen",
       };
-      const openStatic=win?.AO_RULE_V411?.openStatic;
-      if(typeof openStatic!=="function"){void fallback();return;}
-      try{
-        const opened=openStatic.call(win.AO_RULE_V411,id);
-        if(opened&&typeof opened.then==="function"){
-          void Promise.resolve(opened).then(value=>value===false?fallback():true)
-            .catch(error=>{win?.console?.error?.("Home Daily Rule unavailable",error);return fallback()});
-        }else if(opened===false)void fallback();
-      }catch(error){
-        win?.console?.error?.("Home Daily Rule unavailable",error);
-        void fallback();
+      const canonical=routes[id];
+      if(canonical){
+        void openRoute(canonical,{trigger:stat});
+      }else{
+        // Unknown practice is not a prayer route; retain its original
+        // tracking action rather than opening an unrelated Prayer hub.
+        try{win?.AO_RULE_V411?.openStatic?.(id)}catch(error){
+          win?.console?.error?.("Home Daily Rule unavailable",error);
+          showRouteError(id,stat);
+        }
       }
       return;
     }
