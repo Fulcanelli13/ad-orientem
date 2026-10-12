@@ -133,3 +133,19 @@ The pinned [global edition-source census](https://github.com/Fulcanelli13/ad-ori
 There are thus three explicitly different denominators: (a) 1,052 upstream candidate formulary paths, (b) 105 presently source-gated Proper identifiers in the Mass study (with 420 basic chant positions), and (c) 100 priority original-print collation dossiers drawn from the wider list, **only four overlapping the 105**. The priority queue and its 44 page clusters are not evidence that a single candidate has passed entire printed-1962 verification. Both ritual eligibility and edition/verse collation remain `false` on **all 1,052**.
 
 Fortescue digitization bibliography correction: the [Cornell 1912 original](https://archive.org/details/cu31924029398553) differs from the [1914 reprint](https://archive.org/details/massstudyofroman00fort); the earlier generic archive link was wrongly treated as the 1912 original. The FT010 paragraph was located by digital text, *not* by an independent facsimile-page review.
+
+
+## A14 — direct biblical witness validation and integration checkpoint (13 October 2026)
+
+**Scope:** Reopened the linked primary biblical chapter witnesses for Luke 2, Isaiah 6, Genesis 14 and Clementine Psalm 24. This is an independent *Bible-context spotcheck*, NOT a direct original printed-1962 Missal page or chant facsimile check; no release/certification booleans are changed.
+
+| ID | Primary context | Verified distinction | Editorial result |
+| --- | --- | --- | --- |
+| MB05 | [Luke 2:14](https://www.newadvent.org/bible/luk002.htm) | Latin display reads `Gloria in altissimis Deo`, while Mass Gloria says `Gloria in excelsis Deo`. | Retain `SCRIPTURAL_WORDING_ADAPTED`; do not promote to literal Vulgate quotation. |
+| MB11 | [Isaiah 6:3](https://www.newadvent.org/bible/isa006.htm) | Isaiah's threefold Sanctus is biblical context; the Missal's `Sabaoth` and Clementine biblical `exercituum` are not identical. | Retain adapted wording, not independently certified 1962 wording. |
+| MB19 | [Genesis 14:18–20](https://www.newadvent.org/bible/gen014.htm) | Scripture calls Melchisedech priest and describes bread and wine brought forth; no explicit offering of those elements is narrated. | Retain explicit person named, distinguish the Roman Canon's sacrificial theology from the Genesis wording. |
+| Introit `Tempora/Adv1-0` | [Psalm 24:3 Clementine](https://www.newadvent.org/bible/psa024.htm) and [upstream Proper](https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt) | Research queue records `exspectant` versus `sustinent`; a shared verse locator does not certify exact Latin wording. | Retain `originalPrinted1962ChantChecked:false` and `publishable:false`; confirm directly in printed Missal before deciding text edition. |
+
+**Integration constraint checked against GitHub refs:** `main...feature/mass-bible-study-source-bridge-20261012` is divergent (branch 23 commits ahead and 36 behind at inspection); PR #1082 reports `mergeable:false`. Do not bypass protected owner or merge on stale green CI. Resolve changes in `src/learn/mass-formation.js` against the current eight-stage formation and independently test existing reader, source and phone suites before merging. No changes to Mass player, Proper resolver, 48-card source-first presentation, 65-card production layout, biblical Atlas or Sacred Art ownership in this A14 checkpoint.
+
+**Next certification batch:** first printed-edition original-page packets; separate 105 source-gated production Proper paths from the 100 historical priority paths (only four shared); verify actual text, date eligibility, inherited chants, and Scripture edition verse mapping per path. Keep all 1,052 candidate paths, all 420 chant positions and 100 priority packets uncertified until their *individual* original-edition checks pass.
