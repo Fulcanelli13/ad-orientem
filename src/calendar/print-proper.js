@@ -20,7 +20,11 @@ function sectionsFromProper(p,lang){
   const section=(kind,values)=>{
     const items=(Array.isArray(values)?values:[values]).filter(Boolean);
     return items.map((x,index)=>({
-      kind,title:titleFor(kind,lang)+(items.length>1?" "+(index+1):"")+(kind==="collect"&&x?.oneConclusion?.status==="CERTIFIED"?(lang==="fr"?" · Missions (conclusion unique)":" · Missions (single conclusion)"):""),
+      kind,title:titleFor(kind,lang)+(items.length>1?" "+(index+1):"")+
+        (x?.oneConclusion?.status==="CERTIFIED"&&x.oneConclusion.kind==="INSEPARABLE_APOSTLES"?
+          (lang==="fr"?" · Pierre et Paul (conclusion unique)":" · Peter and Paul (single conclusion)"):
+          kind==="collect"&&x?.oneConclusion?.status==="CERTIFIED"?
+            (lang==="fr"?" · Missions (conclusion unique)":" · Missions (single conclusion)"):""),
       ...pair(x,lang)
     }));
   };

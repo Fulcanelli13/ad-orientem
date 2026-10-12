@@ -86,7 +86,7 @@ for(const [date,mainPath,mainId,mainRank,commPath,commId,commRank,scope] of priv
 for(const [change,reason] of [
   [{date:"2026-10-12"},"RUBRICAL_CLASSIFICATION_PENDING"],
   [{day:{main:{...day.day.main,rank:1},commemorations:day.day.commemorations}},"RUBRICAL_CLASSIFICATION_PENDING"],
-  [{day:{main:day.day.main,commemorations:[...day.day.commemorations,...day.day.commemorations]}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{day:{main:day.day.main,commemorations:[...day.day.commemorations,...day.day.commemorations]}},"MULTIPLE_COMMEMORATIONS_SOURCE_PRIORITY_PENDING"],
 ]){
   const blocked=select({proper:base,calendarResolution:{...day,...change},form:"LOW"});
   assert.equal(blocked.status,"UNVERIFIED");assert.equal(blocked.reason,reason);

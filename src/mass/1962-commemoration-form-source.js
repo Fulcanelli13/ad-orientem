@@ -1,4 +1,5 @@
 import {applyMissionSundayCollect} from "./1962-mission-sunday-source.js";
+import {projectJune30InseparableApostles} from "./1962-inseparable-apostles-source.js";
 // Shared source-first 1962 Mass-form oration projection.
 // Certified scope: source-identified single II-class Sunday feast and privileged Sunday / Advent feria.
 // Never infer universal privileges from feast titles, colours or typography.
@@ -49,6 +50,37 @@ export function select1962CommemorationsForMassForm({
     return untouched(proper,"PROPER_SOURCE_UNAVAILABLE");
   const comms=array(day.commemorations);
   if(comms.length===0)return untouched(proper,"NO_COMMEMORATIONS");
+  // Do not equate complete-looking source arrays with certified Mass prayers.
+  // §§111-114 restrict the number, priority and form applicability of
+  // multiple commemorations; a Source day may have more entries than a Mass.
+  // Until the source resolver has matched and prioritized each entry, leave
+  // its Calendar inventory and raw texts intact but explicitly block the
+  // reader's claim that this form's oration sets are complete.
+  if(comms.length>1){
+    const decision=Object.freeze({
+      status:"UNVERIFIED",source:"1962_PROPER_RESOLVER",
+      form:normalizedForm,calendarCount:comms.length,
+      reason:"MULTIPLE_COMMEMORATIONS_SOURCE_PRIORITY_PENDING",
+      authorities:Object.freeze(["1960_GENERAL_RUBRICS_110_114",
+        "1960_MISSAL_RUBRICS_433_438"]),
+    });
+    const blocked=Object.freeze({...data,commemorationFormDecision:decision});
+    return untouched(envelope?Object.freeze({...envelope,data:blocked}):blocked,
+      decision.reason);
+  }
+  // §110: a reciprocal St Peter/Paul commemoration belongs INSIDE
+  // each source oration group and counts as a single prayer. Handle before
+  // the ordinary one-to-one calendar/oration matching logic.
+  if(comms.some(c=>c?.inseparable)){
+    const projected=projectJune30InseparableApostles({proper,calendarResolution,
+      form:normalizedForm});
+    if(projected.status==="CERTIFIED")return projected;
+    const blocked=Object.freeze({...data,
+      inseparableOrationsDecision:Object.freeze({status:"UNVERIFIED",
+        reason:projected.reason,source:"1960_GENERAL_RUBRICS_110"})});
+    return untouched(envelope?Object.freeze({...envelope,data:blocked}):blocked,
+      "INSEPARABLE_"+projected.reason);
+  }
   const sunday=new Date(String(calendarResolution.date)+"T12:00:00Z").getUTCDay()===0;
   const only=comms[0],sources=array(data.calendarCommemorations).filter(x=>!x?.inseparable);
   // Calendar identity is the named weekday path, NOT necessarily its

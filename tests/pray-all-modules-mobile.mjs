@@ -124,8 +124,26 @@ try{
  assert.equal(await page.locator(conf+" [data-p435930-conf-path]").count(),3);
  assert.equal(await page.locator(conf+" [data-p435930-conf-next]").isDisabled(),true);
  const press=async selector=>{
-   const pressed=await page.evaluate(s=>{const el=document.querySelector(s);if(!el)return false;el.click();return true},selector);
-   assert.equal(pressed,true,"Missing Confession step button: "+selector);
+   const pressed=await page.evaluate(s=>{
+     // The canonical shared timeline replaces hidden legacy Previous/Next for
+     // the interior examination cards. Test the button a visitor can touch.
+     if(s.includes("[data-p435930-conf-next]")){
+       const reader=document.querySelector("#aoPray435930.open .aoP435930ConfessionReader");
+       const timeline=reader?.querySelector(".aoDevoSequenceTimeline");
+       const card=reader?.querySelector(".aoDevoCard");
+       const index=Number(card?.dataset.aoDevoIndex);
+       const count=timeline?.querySelectorAll(".aoDevoStop").length||0;
+       if(count>1&&index<count-1){
+         const next=timeline.querySelector('[data-ao-devo-sequence-move="1"]');
+         if(!next||next.disabled)return false;
+         next.click();return true;
+       }
+     }
+     const el=document.querySelector(s);if(!el)return false;
+     if(el.getClientRects().length===0)return false;
+     el.click();return true;
+   },selector);
+   assert.equal(pressed,true,"Missing visible Confession navigation: "+selector);
  };
  await page.locator(conf+" [data-p435930-conf-path='regular']").tap();
  assert.equal(await page.locator(conf+" [data-p435930-conf-path='regular']").getAttribute("aria-pressed"),"true");
@@ -196,14 +214,25 @@ try{
  assert.equal(await page.locator(daily+" .aoTP381PrayerCard").count(),1,"Guidance must display complete canonical prayer");
  assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 11");
  assert.equal(await page.locator(daily+" [data-tp381-daily-step='-1']").isDisabled(),true);
+ // Exercise the visible canonical card timeline. The previous/next buttons
+ // remain in the source frame only as a fallback and are hidden when the
+ // shared dual-axis reader is installed; tapping those hidden controls
+ // would certify a path the user cannot reach.
  async function tapStep(control,expected){
-  try{await page.locator(control).tap({timeout:6500})}
-  catch(error){
-    const current=await page.locator(daily).getAttribute("data-guide-step").catch(()=>null);
-    if(current===String(expected))return;
-    await page.locator(control).scrollIntoViewIfNeeded();
-    await page.locator(control).tap({timeout:9000});
-  }
+   assert.match(control,/data-tp381-(daily|examen)-step/,
+     "Unexpected traditional prayer owner");
+   const target=page.locator("#aoPray435930.open .aoDevoSequenceTimeline [data-ao-devo-chapter='"+expected+"']");
+   assert.equal(await target.count(),1,"Missing visible source-owned timeline stage "+expected);
+   const current=await page.locator(daily).getAttribute("data-guide-step");
+   if(current!==String(expected))await target.tap({timeout:12000});
+   await page.waitForFunction(step=>{
+     const shell=document.querySelector("#aoPray435930.open");
+     const guide=shell?.querySelector("[data-ao-pray-guide-card]");
+     const card=shell?.querySelector(".aoDevoCard");
+     return guide?.dataset.guideStep===String(step)&&
+       card?.dataset.aoDevoIndex===String(step)&&
+       shell.querySelectorAll(".aoDevoSequenceTimeline [aria-current='step']").length===1;
+   },expected,{timeout:9000});
  }
  for(let step=1;step<=11;step++){
    await tapStep("#aoPray435930.open [data-tp381-daily-step='"+step+"']",step);
@@ -227,8 +256,15 @@ try{
  await page.locator("#aoPray435930.open [data-tp381-examen-return]").tap();
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9","Examen must resume Evening Prayer at contrition");
  assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"sacrament_act_of_contrition");
+ const dailyOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
+ await dailyOptions.locator("summary").tap();
+ assert.equal(await dailyOptions.evaluate(node=>node.open),true,
+   "Real phone cannot expand secondary daily prayer options");
  await page.locator("#aoPray435930.open [data-tp381-daily-mode='list']").tap();
  assert.equal(await page.locator("#aoPray435930.open .aoTP381PrayerList button").count(),13,"Traditional unabridged overview must survive guided mode");
+ const reopenedOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
+ await reopenedOptions.locator("summary").tap();
+ assert.equal(await reopenedOptions.evaluate(node=>node.open),true);
  await page.locator("#aoPray435930.open [data-tp381-daily-mode='guided']").tap();
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9");
  const phoneOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
@@ -312,6 +348,9 @@ try{
  const novenaIds=await page.locator("#aoPray435930.open [data-n1-select]").evaluateAll(nodes=>nodes.map(x=>x.dataset.n1Select));
  assert.equal(novenaIds.length,16,"Novenas home no longer lists all sixteen source-backed targets");
  for(const id of novenaIds){
+   // Require actual overview restoration before each independent touch test.
+   await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==='overview',null,{timeout:10000});
+   await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").waitFor({state:'visible',timeout:10000});
    // A successful touch navigation replaces the selection card immediately;
    // Playwright may observe the card detached after the action has succeeded.
    // Require the real canonical Novena detail state or rethrow the tap error.
@@ -387,6 +426,9 @@ try{
      await detail.locator("[data-n1-back]").tap();
    }
    await detail.locator("[data-n1-back]").tap({timeout:9000});
+   await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==="overview",null,{timeout:10000});
+   assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
+     "A detail Back tap must restore the source-backed Novena overview: "+id);
  }
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});

@@ -623,17 +623,31 @@ try{
   await page.locator("#aoPray435930 [data-p435930-own='pray.benediction']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset='ao-rich-adoration']").count(),1,"Benediction Exposition rail lost its Eucharistic owner");
-  for(let i=0;i<3;i++)await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
+  // The seven-card dual-axis reader supersedes the hidden legacy Continue controls.
+  // Test the actual visible timeline; do not bypass the user gesture contract.
+  const benReader="#aoPray435930 .aoP435930BenedictionReader";
+  const benTimeline=benReader+" .aoDevoSequenceTimeline";
+  await page.waitForSelector(benTimeline,{state:"visible",timeout:5000});
+  assert.equal(await page.locator(benTimeline+" .aoDevoStop").count(),7,
+    "Benediction must expose seven source-owned public-rite cards");
+  assert.equal(await page.locator(benReader+" .aoP435930GuideNav").isVisible(),false,
+    "Competing legacy Continue controls must remain hidden");
+  await page.locator(benTimeline+" [data-ao-devo-chapter='3']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930BenedictionReader")?.dataset?.aoBenedictionStep==="3",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-response",null,{timeout:3000});
   const benPrayer=await page.evaluate(()=>({
     left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
     right:document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
-    macro:document.querySelector("#aoPray435930 .aoP435930BenMacroRail [aria-current='step']")?.textContent?.trim()??"",
+    activeStage:document.querySelector("#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline .aoDevoStop[aria-current='step']")?.textContent?.trim()??"",
+    activeCount:document.querySelectorAll("#aoPray435930 .aoP435930BenedictionReader .aoDevoStop[aria-current='step']").length,
   }));
   assert.equal(benPrayer.left,"ao-live-response","Benediction versicle/collect lost its congregational response cue");
   assert.equal(benPrayer.right,"ao-live-response","Benediction stage rail no longer follows the response moment");
-  assert.match(benPrayer.macro,/Benediction|Bénédiction/,"Benediction public-rite macro did not track the visible Continue path");
-  await page.locator("#aoPray435930 [data-p435930-ben-next]").click();
+  assert.equal(benPrayer.activeCount,1,"Canonical Benediction timeline must expose exactly one current stage");
+  assert.match(benPrayer.activeStage,/Versicle|collect|Verset|oraison/i,
+    "Benediction timeline failed to label its actual versicle and collect stage");
+  await page.locator(benTimeline+" [data-ao-devo-chapter='4']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930BenedictionReader")?.dataset?.aoBenedictionStep==="4",null,{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.right [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-blessing",null,{timeout:3000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Benediction blessing retained an unrelated left cue");
   // Measure the stable rail geometry after the transient cue-enter scale animation.
@@ -1162,12 +1176,27 @@ try{
     assert.equal(await page.locator("#aoPray435930 [data-tp381-home]").count(),1,route+" lost explicit global Home");
     assert.equal(await page.locator("#aoPray435930 [data-tp381-close]").count(),0,route+" regressed to ambiguous Close");
     assert.equal(await page.locator("#aoPray435930 .aoTP381Hero").count(),0,route+" regained a non-donor hero card");
-    assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,route+" lost its v38.1 donor introduction");
+    if(route==="pray.morning_evening"){
+      // The old introduction is retained as optional guidance after the prayer,
+      // never restored as a first-screen text block.
+      const details=page.locator("#aoPray435930 [data-ao-daily-options]");
+      assert.equal(await details.count(),1,"Morning guidance disclosure missing");
+      assert.equal(await details.evaluate(el=>el.open),false,"Morning guide must not obscure opening prayer");
+      assert.match(await details.textContent(),/traditional daily rule|règle quotidienne traditionnelle/i,
+        "Original prayer-context guidance was discarded rather than relocated");
+    }else{
+      assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,
+        route+" lost its v38.1 donor introduction");
+    }
     if(route==="pray.morning_evening"){
        assert.equal(await page.locator("#aoPray435930 [data-ao-pray-guide-card]").count(),1,
          "Morning/Evening must open as a single guided prayer card");
        assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='guided']").getAttribute("aria-pressed"),"true");
        await shot("03g-pray-morning-guided");
+       const details=page.locator("#aoPray435930 [data-ao-daily-options]");
+       await details.locator("summary").click();
+       assert.equal(await details.evaluate(el=>el.open),true,
+         "Secondary options cannot be opened from the finished prayer card");
        await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").click();
       const rowGeometry=await page.evaluate(()=>{
         const row=document.querySelector("#aoPray435930 .aoTP381PrayerList button");

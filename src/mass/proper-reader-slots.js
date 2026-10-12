@@ -36,33 +36,35 @@ function readyEnvelope(slot,value,{language="en"}={}){
   if(!rows.length||incomplete) return Object.freeze({status:"MISSING",slot,data:null});
   const paragraphs=[];
   for(const [index,row] of rows.entries()){
-    const composed=slot==="COLLECT_SET"?row.oneConclusion:null;
+    const composed=["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(slot)?row.oneConclusion:null;
     if(composed){
       const latin=composed.segments?.lat,trans=composed.segments?.[language];
-      const rejoin=segment=>segment?.principal+"\n\n"+segment?.mission+"\n"+segment?.conclusion;
+      const extra=segment=>segment?.additional??segment?.mission;
+      const rejoin=segment=>segment?.principal+"\n\n"+extra(segment)+"\n"+segment?.conclusion;
       if(composed.status!=="CERTIFIED"||!latin||!trans||
         rejoin(latin)!==String(row.lat??row.la)||
         rejoin(trans)!==vernacularValue(row,language))
         return Object.freeze({status:"MISSING",slot,data:null,
           reason:"Unverified one-conclusion Collect composition"});
-      // Two illuminated text paragraphs but ONE liturgical Collect, with
-      // the shared conclusion ONLY after the missionary prayer.
+      // Two illuminated text paragraphs but ONE liturgical prayer group.
+      // The shared ending belongs to the second, source-identified prayer.
       paragraphs.push(Object.freeze({
         id:slot+"."+(index+1)+".PRINCIPAL",kind:"TEXT",
         latin:latin.principal,vernacular:trans.principal,
         liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
       }));
       paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1)+".MISSION",kind:"TEXT",
-        latin:latin.mission+"\n"+latin.conclusion,
-        vernacular:trans.mission+"\n"+trans.conclusion,
+        id:slot+"."+(index+1)+(composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
+        kind:"TEXT",
+        latin:extra(latin)+"\n"+latin.conclusion,
+        vernacular:extra(trans)+"\n"+trans.conclusion,
         liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
         sourcePath:composed.sourcePath,
       }));
       // When a separate St Luke commemoration follows in Low Mass, its
       // conclusion is independent. The fixed end-of-block ℟. Amen covers
       // that final prayer; emit this first Amen at the missionary conclusion.
-      if(index<rows.length-1)paragraphs.push(Object.freeze({
+      if(slot==="COLLECT_SET"&&index<rows.length-1)paragraphs.push(Object.freeze({
         id:slot+"."+(index+1)+".MISSION_AMEN",kind:"RESPONSE",
         latin:"℟. Amen.",vernacular:"℟. Amen.",
         role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
@@ -101,6 +103,27 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     COMMUNION:readyEnvelope("COMMUNION",proper.communion,opts),
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
+
+  if(proper.inseparableOrationsDecision?.status==="UNVERIFIED"){
+    for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+      slots[slot]=Object.freeze({status:"MISSING",slot,data:null,
+        reason:"Inseparable Peter-Paul oration source unverified: "+
+          proper.inseparableOrationsDecision.reason});
+    }
+  }
+
+  // Two or more Calendar commemorations may exceed the permitted count
+  // or demand seasonal precedence. An unresolved source selection must not
+  // become apparently READY just because legacy Proper arrays have text.
+  if(proper.commemorationFormDecision?.status==="UNVERIFIED"&&
+     proper.commemorationFormDecision?.reason===
+       "MULTIPLE_COMMEMORATIONS_SOURCE_PRIORITY_PENDING"){
+    for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+      slots[slot]=Object.freeze({status:"MISSING",slot,data:null,
+        reason:"1962 multiple commemorations: Mass-form priority and "+
+          "oration selection not source-certified."});
+    }
+  }
 
   // Missing/competing §453 source or conclusion: never render a
   // source-incomplete Mission Sunday as a certified ready Collect.
