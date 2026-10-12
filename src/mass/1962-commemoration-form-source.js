@@ -50,10 +50,19 @@ export function select1962CommemorationsForMassForm({
   if(comms.length===0)return untouched(proper,"NO_COMMEMORATIONS");
   const sunday=new Date(String(calendarResolution.date)+"T12:00:00Z").getUTCDay()===0;
   const only=comms[0],sources=array(data.calendarCommemorations).filter(x=>!x?.inseparable);
+  // Calendar identity is the named weekday path, NOT necessarily its
+  // prayer text's inherited Sunday template (e.g. Advent Adv1-1 / Adv1-0).
+  // Require the actual observance paths to match before considering aliases.
+  const namedSource=sources[0]??null;
+  const observedPath=canonical(only?.path);
+  const prayerPath=canonical(namedSource?.prayerSourcePath??namedSource?.path);
+  const inSeasonAlias=/^tempora\/adv[1-4]-[1-6]$/.test(observedPath)&&
+    prayerPath===observedPath.replace(/-[1-6]$/,"-0");
+  const admissiblePrayerSource=prayerPath===observedPath||inSeasonAlias;
   const identified=comms.length===1&&sources.length===1&&
-    canonical(rowPath(sources[0]))===canonical(rowPath(only))&&
+    canonical(namedSource.path)===observedPath&&admissiblePrayerSource&&
     canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path)&&
-    !only.inseparable&&!sources[0].inseparable;
+    !only.inseparable&&!namedSource.inseparable;
   if(!identified)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   const mainId=String(main.id??""),commId=String(only.id??"");
   const ordinarySunday=sunday&&Number(main.rank)===2&&Number(only.rank)===2&&
