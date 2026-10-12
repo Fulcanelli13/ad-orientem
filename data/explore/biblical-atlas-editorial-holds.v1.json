@@ -27,7 +27,16 @@
       "commentarySource": "https://bible.usccb.org/bible/john/2",
       "atlasEventKeys": [
         "biblical:event:jerusalem-temple-e3"
-      ]
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Display John 2:13–22 after Cana only as John's narrative order, without asserting whether a separate historical cleansing occurred.",
+        "withheldClaim": "One-cleansing or two-cleansing harmonisation, precise historical date, and Passion-era relocation.",
+        "sources": [
+          "https://www.newadvent.org/bible/joh002.htm",
+          "https://bible.usccb.org/bible/john/2"
+        ]
+      }
     },
     {
       "id": "JOHN20_RESURRECTION_VS_EMPTY_TOMB",
@@ -46,7 +55,16 @@
       "textCorrection": "IMPLEMENTED_2026_10_12",
       "atlasEventKeys": [
         "biblical:event:christ-tomb-e2"
-      ]
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Illustrate the empty tomb and risen Christ appearing to Mary Magdalene; do not depict an eyewitness view of the instant of Resurrection as John 20:1–18.",
+        "withheldClaim": "Scripture-backed depiction of the exact moment of Resurrection, and unlicensed art publication.",
+        "sources": [
+          "https://www.newadvent.org/bible/joh020.htm",
+          "https://bible.usccb.org/bible/john/20"
+        ]
+      }
     },
     {
       "id": "LUKE2_TEMPLE_EXACT_AND_OVERLAP",
@@ -67,7 +85,16 @@
       "atlasEventKeys": [
         "biblical:event:jerusalem-temple-e2",
         "biblical:event:nazareth-additional-006"
-      ]
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Use Luke 2:41–52 for the finding in the Temple and Luke 2:51–52 for the overlapping return to Nazareth. Retain separate IDs and suppress an automatic multi-candidate scene jump.",
+        "withheldClaim": "Treating Luke 2:51–52 as an independent second Temple finding or one unambiguous scene identity.",
+        "sources": [
+          "https://www.newadvent.org/bible/luk002.htm",
+          "https://bible.usccb.org/bible/luke/2"
+        ]
+      }
     },
     {
       "id": "MAGI_PRESENTATION_GOSPEL_HARMONY",
@@ -88,7 +115,16 @@
       "atlasEventKeys": [
         "biblical:event:bethlehem-e2",
         "biblical:event:jerusalem-temple-e1"
-      ]
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Keep the Magi (Matthew 2) and the Presentation (Luke 2) as distinct Evangelist narratives; state that visual succession is reading order, not an established dated harmony.",
+        "withheldClaim": "A date-certain itinerary or Gospel-proven relative timing for Magi versus Presentation.",
+        "sources": [
+          "https://www.newadvent.org/bible/mat002.htm",
+          "https://bible.usccb.org/bible/luke/2"
+        ]
+      }
     },
     {
       "id": "PUBLIC_MINISTRY_ORDER_HARMONIZATION",
@@ -130,7 +166,16 @@
         "biblical:event:bethany-additional-057",
         "biblical:event:jericho-e2",
         "biblical:event:bethany-e1"
-      ]
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Preserve cited within-Gospel narrative precedence and the stable 151 event keys, without imposing one dated global Matthew–Mark–Luke–John chronology.",
+        "withheldClaim": "Full historical cross-Gospel harmonisation, source-free chronology, or conflating event identities by passage overlap.",
+        "sources": [
+          "https://bible.usccb.org/bible/john/2",
+          "https://www.newadvent.org/bible/joh004.htm"
+        ]
+      }
     }
   ]
 }
