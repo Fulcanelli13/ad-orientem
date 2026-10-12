@@ -1,17 +1,10 @@
-# Historical question-bank gaps — exact-ID recovery
+# Unrecovered original questions — exact historical IDs
 
-Archival discovery as of 12 October 2026. **Search-excerpt question text is not full-original-transcript verified.** Known slot totals count only original source banks with an explicit `original_range_count`. Original A001–A318, C001–C233 and TLM historical positions are catalogued separately in `HISTORICAL_UNRECOVERED_POSITIONS.csv` and must not be added to these totals as though they were distinct topics.
+**12 October 2026:** Among 589 historical slots in banks whose original range size was stated, 374 are recovered as prior-chat search excerpts, 4 have only an incomplete fragment, and 211 have no recovered individual original wording. The other 6 recovered extracts belong to historically attested banks with no reliable original total; do not extrapolate a denominator.
 
-## Original question-bank slot census
+This counts known-size interlocutor banks only. The A001–318 and C001–233 separate forensic placeholders are not added here.
 
-- Banks with stated source range: 25
-- Known historical positions across those banks: 589
-- Individually named question excerpts in these banks: 304
-- Incomplete search snippets: 1
-- Missing individual question wording: 284
-- Additional indexed question excerpts in banks whose full range is unknown: 6
-
-## Per-bank uncovered historical original IDs
+## Missing IDs by bank
 
 ### AI — Artificial intelligence
 
@@ -32,26 +25,16 @@ Archival discovery as of 12 October 2026. **Search-excerpt question text is not 
 
 ### ANG — Anglicanism
 
-- `ANG-014` — MISSING_ORIGINAL_TEXT
-- `ANG-015` — MISSING_ORIGINAL_TEXT
-- `ANG-016` — MISSING_ORIGINAL_TEXT
-- `ANG-017` — MISSING_ORIGINAL_TEXT
-- `ANG-018` — MISSING_ORIGINAL_TEXT
-- `ANG-019` — MISSING_ORIGINAL_TEXT
-- `ANG-020` — MISSING_ORIGINAL_TEXT
-- `ANG-021` — MISSING_ORIGINAL_TEXT
-- `ANG-022` — MISSING_ORIGINAL_TEXT
-- `ANG-023` — MISSING_ORIGINAL_TEXT
-- `ANG-024` — MISSING_ORIGINAL_TEXT
+- `ANG-024` — PARTIAL_EXCERPT_NOT_COMPLETE (observed: What did the English Reformation…)
 - `ANG-025` — MISSING_ORIGINAL_TEXT
 
 ### ATH — Atheism, agnosticism, naturalism and materialism
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### BAP-EV — Baptist / evangelical / non-denominational
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### BIO — Bioethics
 
@@ -102,7 +85,7 @@ No missing original ID positions in the stated range
 
 ### ERR — Condemned errors and ideological movements
 
-- `ERR-023` — PARTIAL_EXCERPT_NOT_COMPLETE — observed: What is ‘Liberal Catholicism?
+- `ERR-023` — PARTIAL_EXCERPT_NOT_COMPLETE (observed: What is ‘Liberal Catholicism?…)
 
 ### ISL — Islam
 
@@ -120,16 +103,6 @@ No missing original ID positions in the stated range
 
 ### ISR — Biblical Israel, Second Temple Judaism, Rabbinic Judaism, Old and New Covenants, Romans 9–11
 
-- `ISR-001` — MISSING_ORIGINAL_TEXT
-- `ISR-002` — MISSING_ORIGINAL_TEXT
-- `ISR-003` — MISSING_ORIGINAL_TEXT
-- `ISR-004` — MISSING_ORIGINAL_TEXT
-- `ISR-005` — MISSING_ORIGINAL_TEXT
-- `ISR-006` — MISSING_ORIGINAL_TEXT
-- `ISR-007` — MISSING_ORIGINAL_TEXT
-- `ISR-008` — MISSING_ORIGINAL_TEXT
-- `ISR-009` — MISSING_ORIGINAL_TEXT
-- `ISR-010` — MISSING_ORIGINAL_TEXT
 - `ISR-011` — MISSING_ORIGINAL_TEXT
 - `ISR-012` — MISSING_ORIGINAL_TEXT
 - `ISR-013` — MISSING_ORIGINAL_TEXT
@@ -148,41 +121,15 @@ No missing original ID positions in the stated range
 
 ### JUD — Judaism
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### LUT — Lutheranism
 
-- `LUT-018` — MISSING_ORIGINAL_TEXT
-- `LUT-019` — MISSING_ORIGINAL_TEXT
-- `LUT-020` — MISSING_ORIGINAL_TEXT
-- `LUT-021` — MISSING_ORIGINAL_TEXT
-- `LUT-022` — MISSING_ORIGINAL_TEXT
-- `LUT-023` — MISSING_ORIGINAL_TEXT
-- `LUT-024` — MISSING_ORIGINAL_TEXT
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### MAR — Marian apologetics
 
-- `MAR-001` — MISSING_ORIGINAL_TEXT
-- `MAR-002` — MISSING_ORIGINAL_TEXT
-- `MAR-003` — MISSING_ORIGINAL_TEXT
-- `MAR-004` — MISSING_ORIGINAL_TEXT
-- `MAR-005` — MISSING_ORIGINAL_TEXT
-- `MAR-006` — MISSING_ORIGINAL_TEXT
-- `MAR-007` — MISSING_ORIGINAL_TEXT
-- `MAR-008` — MISSING_ORIGINAL_TEXT
-- `MAR-009` — MISSING_ORIGINAL_TEXT
-- `MAR-010` — MISSING_ORIGINAL_TEXT
-- `MAR-011` — MISSING_ORIGINAL_TEXT
-- `MAR-012` — MISSING_ORIGINAL_TEXT
-- `MAR-013` — MISSING_ORIGINAL_TEXT
-- `MAR-014` — MISSING_ORIGINAL_TEXT
-- `MAR-015` — MISSING_ORIGINAL_TEXT
-- `MAR-016` — MISSING_ORIGINAL_TEXT
-- `MAR-017` — MISSING_ORIGINAL_TEXT
-- `MAR-018` — MISSING_ORIGINAL_TEXT
-- `MAR-019` — MISSING_ORIGINAL_TEXT
-- `MAR-020` — MISSING_ORIGINAL_TEXT
-- `MAR-021` — MISSING_ORIGINAL_TEXT
+- `MAR-021` — PARTIAL_EXCERPT_NOT_COMPLETE (observed: Is Mary really ‘M…)
 - `MAR-022` — MISSING_ORIGINAL_TEXT
 - `MAR-023` — MISSING_ORIGINAL_TEXT
 - `MAR-024` — MISSING_ORIGINAL_TEXT
@@ -235,7 +182,7 @@ No missing original ID positions in the stated range
 
 ### ORTH — Eastern Orthodoxy
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### PAP — Papacy historical topical bank
 
@@ -318,19 +265,19 @@ No missing original ID positions in the stated range
 
 ### PEN — Pentecostal / Charismatic
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### PROT — Generic Protestant apologetics
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### REF — Reformed / Calvinist
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### REST — Restorationist movements incl. Jehovah's Witnesses
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
 ### SAN — Saints, relics, images, Purgatory, indulgences
 
@@ -352,36 +299,13 @@ No missing original ID positions in the stated range
 
 ### SCR — Scripture / Tradition / biblical canon
 
-- `SCR-001` — MISSING_ORIGINAL_TEXT
-- `SCR-002` — MISSING_ORIGINAL_TEXT
-- `SCR-003` — MISSING_ORIGINAL_TEXT
-- `SCR-004` — MISSING_ORIGINAL_TEXT
-- `SCR-005` — MISSING_ORIGINAL_TEXT
-- `SCR-006` — MISSING_ORIGINAL_TEXT
-- `SCR-007` — MISSING_ORIGINAL_TEXT
-- `SCR-008` — MISSING_ORIGINAL_TEXT
-- `SCR-009` — MISSING_ORIGINAL_TEXT
-- `SCR-010` — MISSING_ORIGINAL_TEXT
-- `SCR-011` — MISSING_ORIGINAL_TEXT
-- `SCR-012` — MISSING_ORIGINAL_TEXT
-- `SCR-013` — MISSING_ORIGINAL_TEXT
-- `SCR-014` — MISSING_ORIGINAL_TEXT
-- `SCR-015` — MISSING_ORIGINAL_TEXT
-- `SCR-016` — MISSING_ORIGINAL_TEXT
-- `SCR-017` — MISSING_ORIGINAL_TEXT
-- `SCR-018` — MISSING_ORIGINAL_TEXT
-- `SCR-019` — MISSING_ORIGINAL_TEXT
-- `SCR-020` — MISSING_ORIGINAL_TEXT
-- `SCR-021` — MISSING_ORIGINAL_TEXT
-- `SCR-022` — MISSING_ORIGINAL_TEXT
-- `SCR-023` — MISSING_ORIGINAL_TEXT
-- `SCR-024` — MISSING_ORIGINAL_TEXT
+- `SCR-024` — PARTIAL_EXCERPT_NOT_COMPLETE (observed: Do manuscript variants and copyist…)
 - `SCR-025` — MISSING_ORIGINAL_TEXT
 
 ### WES — Methodist / Wesleyan
 
-No missing original ID positions in the stated range
+All original IDs in the indicated range have a search-index title excerpt.
 
-## Work required to certify original
+## Recovery limit
 
-Find the complete assistant response for each dated original bank, recover every question exactly as written (including punctuation and any duplicates), and compare to extracted search excerpts. A thematic gist must never be substituted for lost text.
+Source search results sometimes paraphrase or truncate; quoted fragments are not complete transcripts. No unverified wording has been generated. Full original chat export or message-level retrieval remains necessary for independent certification.
