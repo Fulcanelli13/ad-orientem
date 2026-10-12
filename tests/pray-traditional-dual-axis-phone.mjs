@@ -228,11 +228,11 @@ try{
  assert.equal((await snapshot()).id,"hymn-te_deum","Vertical hymn scroll changed the card");
  await swipe(-175,4);
  assert.equal((await snapshot()).id,"hymn-veni_creator","Hymn horizontal swipe skipped a source chapter");
- await page.locator("#aoPray435930 [data-ao-hymn-options] summary").evaluate(b=>b.click());
+ await page.locator("#aoPray435930 [data-ao-hymn-options] > summary").evaluate(b=>b.click());
  await page.locator("#aoPray435930 [data-tp381-hymn-lang='en']").evaluate(b=>b.click());
  assert.equal(await renderedLines(frame+" [data-face-v]"),sourceLineation(SACRED_HYMNS_V381.veni_creator.en),
   "English hymn witness was changed or language selector failed");
- await page.locator("#aoPray435930 [data-ao-hymn-options] summary").evaluate(b=>b.click());
+ await page.locator("#aoPray435930 [data-ao-hymn-options] > summary").evaluate(b=>b.click());
  await page.locator("#aoPray435930 [data-tp381-hymn-lang='la']").evaluate(b=>b.click());
  assert.equal(await renderedLines(frame+" .aoTP381Reader"),sourceLineation(SACRED_HYMNS_V381.veni_creator.la),
   "Explicit Latin reading is not using the original hymn witness");
