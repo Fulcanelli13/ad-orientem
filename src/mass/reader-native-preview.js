@@ -1126,6 +1126,10 @@ export async function mountNativeReaderPreview({
     });
     massPrintControl=print;
   }
+  // Pre-Mass actions are independently witnessed, never inferred from C0001.
+  const priestEntranceState=createObservedPriestEntranceController({
+    form:ready.prepared.session.resolvedMass.form
+  });
   let sourceModel=ready.model;
   let readerModel=ready.presentationModel??ready.model;
   const mandatumController=ready.model?.mandatumSource
@@ -1412,7 +1416,11 @@ export async function mountNativeReaderPreview({
       observation:observedPriestEvent,gestureMatrix:ready.data?.gestureMatrix,
       ordinaryAction:originalPriestAction
     });
-    const priestAction=priestLane.priestAction;
+    const priestEntrance=priestEntranceState.project();
+    const preMassPriestAction=projectObservedPreMassPriestAction({
+      state:priestEntrance,activeCueId
+    });
+    const priestAction=preMassPriestAction??priestLane.priestAction;
     const ownership=Object.freeze({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
@@ -1429,7 +1437,10 @@ export async function mountNativeReaderPreview({
               : transientProjection.ownership.cinematic,
       posture:focusedFaithful ? focusedFaithful.source : postureResolved.owner,
       schola:scholaProjection.ownership,
-      priestAction:priestLane.owner==="INDEPENDENT_PRIEST_OBSERVATION"
+      priestEntrance:priestEntrance.sourceOwner,
+      priestAction:preMassPriestAction
+        ? "OBSERVED_PREMASS_PRIEST"
+        : priestLane.owner==="INDEPENDENT_PRIEST_OBSERVATION"
         ? "INDEPENDENT_PRIEST_OBSERVATION"
         : priestLane.owner==="PRIEST_EVENT_UNOBSERVED"
           ? "PRIEST_EVENT_UNOBSERVED_FAIL_CLOSED"
@@ -1482,6 +1493,7 @@ export async function mountNativeReaderPreview({
       priestVoice,
       schola:scholaProjection.schola,
       priestAction,
+      priestEntrance,
       sacredMinister:cueProjection?.sacredMinister??null,
       sacredMinisterAdvisory:cueProjection?.sacredMinisterAdvisory??null,
       rubricEvents:rubricProjection?.events??Object.freeze([]),
@@ -2175,6 +2187,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerPosture=state.ownership?.posture??"UNRESOLVED";
     root.dataset.r17OwnerSchola=state.ownership?.schola??"UNRESOLVED";
     root.dataset.r17OwnerPriestAction=state.ownership?.priestAction??"UNRESOLVED";
+    root.dataset.r17OwnerPriestEntrance=state.ownership?.priestEntrance??"UNRESOLVED";
     root.dataset.r17OwnerSacredMinister=state.ownership?.sacredMinister??"UNRESOLVED";
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
@@ -2311,6 +2324,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerPosture=state.ownership?.posture??"UNRESOLVED";
     root.dataset.r17OwnerSchola=state.ownership?.schola??"UNRESOLVED";
     root.dataset.r17OwnerPriestAction=state.ownership?.priestAction??"UNRESOLVED";
+    root.dataset.r17OwnerPriestEntrance=state.ownership?.priestEntrance??"UNRESOLVED";
     root.dataset.r17OwnerSacredMinister=state.ownership?.sacredMinister??"UNRESOLVED";
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
@@ -2326,6 +2340,7 @@ export async function mountNativeReaderPreview({
   }
 
   function destroy(){
+    priestEntranceState.reset();
     observedPriestEvent=null;
     clearScheduledTimer(partCinemaTimer);
     clearScheduledTimer(eventCinemaTimer);
@@ -2437,6 +2452,23 @@ export async function mountNativeReaderPreview({
       return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
     },
     syncState:queue,
+    // Optional observational inputs; not a liturgical norm or required tap.
+    observePriestArrival:observation=>{
+      const result=priestEntranceState.observeArrival(observation??{});
+      if(result.accepted)queue();
+      return result;
+    },
+    observePriestReverence:observation=>{
+      const result=priestEntranceState.observeReverence(observation??{});
+      if(result.accepted)queue();
+      return result;
+    },
+    beginObservedMass:()=>{
+      const result=priestEntranceState.beginMass();
+      queue();
+      return result;
+    },
+    getPriestEntranceState:()=>priestEntranceState.project(),
     // This optional hook is for explicit priest observations from a caller.
     // It is not microphone recognition and does not listen to the Schola.
     observePriestEvent:event=>{
