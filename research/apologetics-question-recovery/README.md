@@ -1,39 +1,54 @@
-# Apologetics question recovery repository (working archive)
+# Ad Orientem — Original Apologetics Question Recovery
 
-**IMPORTANT:** Recovery workspace *within the existing Ad Orientem source repository*, not a new standalone GitHub repository. It is intentionally placed on a review branch until source-integrity checks and user acceptance.
+**Editorial archive · 12 October 2026 · DRAFT / NOT MERGED / NOT PUBLISHED**
 
-- `ALL_QUESTIONS.md` — readable master document listing all 282 extracted source records/dossier titles and documented objections.
-- `questions.json` — 282 normalized source-file question records with provenance, original-owner references and editorial interlocutor facets.
-- `APOSTOLATE_QUESTION_RECOVERY.md` — 8 existing live AQ titles and 10 proposed-only AQ titles, with provenance and explicit nonhistorical status.
-- `questions.csv` — flat export usable for review/import.
-- `manifest.json` — counts, checks and unresolved historical range census.
-- `BY_INTERLOCUTOR.md` — 9 audience/category views into the same source records; editorial categorisation, not original recovered audience membership.
-- `HISTORICAL_UNRECOVERED_POSITIONS.csv` — 576 A/C/TLM historical ID slots with clear missing/verbatim-evidence status, **not 576 recovered questions**.
-- `CONVERSATION_SOURCE_LEADS.md` — dated previous-chat retrieval pointers whose complete verbatim question lists remain unavailable; excluded from record counts.
+One recovery workspace inside the existing Ad Orientem GitHub repository. The aim is to find questions from the actual earlier conversations and source files, **not** replace them with simplified or newly invented questions.
 
-Derived only from current version-controlled source files, not from the inaccessible text of earlier conversations. The legacy 318 / 233 projected lists are **NOT** falsely filled in with surrogate questions. Every record includes a canonical source-file link. Intra-bank duplication and overlap are not silently deleted.
+## Source classes — do not add or conflate
 
-Current count: 282 source records, 12 banks. Publication/theology/French independent certification is outstanding.
+| Source class | Records | Provenance / what it proves |
+|---|---:|---|
+| Earlier-conversation indexed question-text candidates | **452** | Original bank IDs and dated search-excerpt wording. **Zero raw-chat transcripts directly verified.** |
+| Current GitHub question/dossier/debate records | **282** | Exact text from current version-controlled files; not necessarily the earlier historical wording. |
+| Historical A/C/TLM original ID placeholders | **576** | Known missing-original positions; **not question text**. |
+| Historical bank prefixes | **50** | Categories attested in prior conversational summaries; **not 50 fully recovered banks**. |
+| Complete indexed lists at their stated sizes | **13** | All item IDs/phrases found in excerpts; **not raw-transcript byte certification**. |
 
-Forensic original-question gap report: https://github.com/Fulcanelli13/ad-orientem/blob/main/docs/FORMATION-FORENSIC-RECOVERY-2026-10-08.md
-## Validate
+Among **614 known original ID slots** across source-sized historical interlocutor banks: **424** currently have indexed question wording, **4** have incomplete question snippets, and **186** lack complete original wording. The 452 title candidates include 28 from bank families whose total size has not been determined. Do not add these 614 slots to the separate A/C/TLM placeholders as though the topics were necessarily unique.
 
-Run `node research/apologetics-question-recovery/validate.mjs` at the repository root. The validator checks 282 records and protects the distinction between 576 unresolved historical positions and genuine recovered questions. It does not certify theological contents or links.
+## Start here
 
-Current historical-chat evidence: `HISTORICAL_CONVERSATIONS_MASTER_QUESTION_INDEX.md` and `ORIGINAL_QUESTION_BANK_EVIDENCE.v1.json` (264 indexed original-ID question excerpts, 50 evidenced original bank prefixes; eight complete 25-question lists). Full chat-export verification remains outstanding.
+- `HISTORICAL_CONVERSATIONS_MASTER_QUESTION_INDEX.md` — readable 452-question historical-excerpt master with original IDs, banks, and dated response witnesses.
+- `ORIGINAL_QUESTION_BANK_EVIDENCE.v1.json` — structured historical excerpt records and source-certification flags.
+- `HISTORICAL_QUESTION_GAPS.csv` / `.md` — unresolved exact IDs by known-size interlocutor bank; never fabricate missing wording.
+- `HISTORICAL_SOURCE_CHECK_QUEUE.md` — high-priority original-message retrieval queue, currently 186 missing titles and 4 truncated question snippets.
+- `ORIGINAL_CONVERSATION_PROVENANCE_AUDIT.md` / `.json` — **none of the 452 excerpts has a full raw-chat transcript certification**. Search excerpts are not independently verified verbatim originals.
 
+## Alternative historical evidence — never merge silently
 
-## Historical conversation recovery — latest
+- `HISTORICAL_A_SERIES_ALTERNATE_BANDS.md` / `.json` — an earlier 14-section A001–270 topical schema conflicting with GitHub's later A001–075 batch segmentation. No per-item question sentences follow from a topical map.
+- `HISTORICAL_CRISIS_Q_SERIES_WITNESSES.md` / `.json` — a Q-numbered earlier Crisis sequence through Q250, not reconciled to C001–233.
+- `HISTORICAL_HER_SUBJECTS_ONLY.md` / `.json` — 25 numbered heresy/error subject leads, **not full question sentences**.
+- `HISTORICAL_PAP_SUBJECTS_ONLY.md` / `.json` — 20 numbered papal-crisis subject leads, **not full question sentences**.
+- `HISTORICAL_AQ_LIVE_WORDING_VARIANTS.md` / `.json` — eight prior-chat AQ01–08 wording candidates compared with exact current live app titles.
+- `HISTORICAL_AQ_WORDING_VARIANTS.md` / `.json` — eight AQ09–16 earlier wording candidates compared with later proposed-only GitHub titles.
+- `HISTORICAL_ID_COLLISIONS.md` — MOR-001–014 reused in two dated prior assistant replies for different subject matter.
+- `HISTORICAL_LIT_UNNUMBERED_QUOTES.md` — 13 liturgical-reform question sentences with individual IDs not independently established; excluded from the 452 indexed count.
 
-- `HISTORICAL_CONVERSATIONS_MASTER_QUESTION_INDEX.md`: **452 individually indexed earlier-chat question excerpts**, 50 original bank prefixes, 10 complete 25-question lists. These are *excerpt-recovered*, not independently compared against a full exported ChatGPT transcript.
-- `ORIGINAL_QUESTION_BANK_EVIDENCE.v1.json`: the corresponding attributed source snippets with historical message timestamps.
-- `HISTORICAL_QUESTION_GAPS.csv`: 614 positions in known-size original banks (374 excerpt-recovered question titles; 4 truncated snippets; 211 missing full question texts). Other original banks have unknown source size; do not extrapolate totals.
-- `HISTORICAL_QUESTION_GAPS.md`: readable gaps by original bank.
-- `validate-historical.mjs`: structural check; run with `node research/apologetics-question-recovery/validate-historical.mjs`. This checks archival integrity, not theological certification or export-verbatim fidelity.
+## Current GitHub record census — kept separately
 
-- `HISTORICAL_ID_COLLISIONS.md` preserves an earlier, different original MOR-001–014 Sexual Ethics list alongside the current Moral Reasoning questions.
-- `HISTORICAL_LIT_UNNUMBERED_QUOTES.md` preserves 13 exact liturgical-reform question sentences without inventing per-item IDs.
+- `ALL_QUESTIONS.md`, `questions.json`, `questions.csv` — **282** exact current source-file question/dossier/objection records from 12 source files.
+- `BY_INTERLOCUTOR.md` — editorial nine-audience tags for the 282 GitHub records; not recovered original audience assignments.
+- `APOSTOLATE_QUESTION_RECOVERY.md` — eight live AQ titles and ten proposed-but-not-live titles, with separate statuses.
+- `HISTORICAL_UNRECOVERED_POSITIONS.csv` — **576** unresolved legacy A/C/TLM positions; not recovered question sentences.
+- `RESEARCH_LEDGER_102_RECONCILIATION.md` — all 102 source-file research ledger titles already occur exactly in the 282 records; don't duplicate them.
+- `CONVERSATION_SOURCE_LEADS.md`, `ORIGINAL_QUESTION_BANK_RECOVERY.md`, `ORIGINAL_QUESTION_BANK_RECOVERY_BATCH_B.md`, `RECOVERY_BATCH_20261012_116.md` — research leads and snapshots; the main historical master supersedes snapshot counts.
 
-The older `ORIGINAL_QUESTION_BANK_RECOVERY.md` and `..._BATCH_B.md` are retained as intermediate snapshots; prefer the current historical master and evidence JSON. The historical original-bank corpus does not replace the separate **282-item GitHub source-file catalogue**. No app release/publication or merge is implied.
+## Validation and release gates
 
-Latest question-by-question census: **452 individually numbered original-chat source excerpts**, **50 original bank prefixes**, **13 complete original-size indexed lists**. In **614 known original ID positions**, **424 question texts are excerpt-recovered**, **4 truncated**, **186 still missing**. Do not conflate these with the 282 present-day source-file records or claim full original transcript verification. This count includes only recoverable original IDs, not the separate A/C-series forensic placeholders.
+- `validate.mjs` and `validate-historical.mjs` are source-controlled Node validation scripts. Local/CI execution is **not certified here**; structural readback consistency was independently checked via connectors.
+- Original conversation text is certified only after comparison to the complete original raw message or a user-provided conversation export, including its original message/time reference.
+- User-facing doctrinal content needs separate original-source citations, theological scrutiny, French parity and publication review.
+- Preserve earlier-source variants and clashes rather than choosing a convenient normalized title. No production app change, PR merge or release follows automatically.
+
+See [draft PR #1101](https://github.com/Fulcanelli13/ad-orientem/pull/1101), [historical work issue #342](https://github.com/Fulcanelli13/ad-orientem/issues/342), and [main-branch original forensic audit](https://github.com/Fulcanelli13/ad-orientem/blob/main/docs/FORMATION-FORENSIC-RECOVERY-2026-10-08.md).
