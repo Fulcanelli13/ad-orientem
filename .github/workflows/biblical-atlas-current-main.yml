@@ -1,0 +1,57 @@
+name: Biblical Atlas Current-Main Acceptance
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/find/**"
+      - "data/explore/bible-places-*.json"
+      - "tests/explore-bible-atlas-*.mjs"
+      - ".github/workflows/biblical-atlas-current-main.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Current-shell and Atlas syntax
+        run: |
+          node --check src/find/browser-entry.js
+          node --check src/find/bible-atlas.js
+          node --check src/find/bible-atlas-expanded-milestones.js
+          node --check src/find/explore-data-service.js
+          node --check src/find/map-runtime.js
+          node --check src/find/heritage-presentation.js
+      - name: Canonical 151 milestones, references and no invented pins
+        run: npm run test:explore-bible-atlas
+      - name: Existing Explore and sacred place regression
+        run: |
+          node tests/explore-surface.mjs
+          node tests/find-surface.mjs
+          node tests/explore-place-preview-r54.mjs
+          node tests/explore-touch-navigation-r53.mjs
+  phone:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Native Bible reader roundtrip on phone
+        run: npm run test:explore-bible-atlas-phone
+      - name: Mainline Explore touch and layout preserved
+        run: |
+          node tests/explore-reachability-phone.mjs
+          node tests/explore-layout-phone.mjs
