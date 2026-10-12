@@ -15,6 +15,7 @@ const sung=load("presentation/reader-text-sung.v1.json");
 const low=load("presentation/reader-text-low.v1.json");
 const b1=load("mass/ritus-1962-verified-ceremonial-batch01.v1.json");
 const b2=load("mass/ritus-1962-solemn-ministers-batch02.v1.json");
+const formState=load("presentation/reader-form-state.v1.json");
 
 const units=corpus=>new Map(corpus.blocks.flatMap(b=>(b.units??[])
  .filter(x=>/^AO\.SM\.C\d{4}$/.test(x.cue_id))
@@ -23,7 +24,7 @@ const s=units(sung),l=units(low),byEvidence=new Map(historic.items.map(e=>[e.id,
 const review=new Map([...a.items,...b.items].map(e=>[e.id,e]));
 const byRec=new Map(r.items.map(e=>[e.id,e]));
 assert.equal(s.size,279);assert.equal(l.size,275);
-assert.deepEqual(r.counts,{alreadyCovered:4,partiallyCovered:3,stillRequiresIntegration:6});
+assert.deepEqual(r.counts,{alreadyCovered:6,partiallyCovered:5,stillRequiresIntegration:2});
 assert.equal(r.items.length,13);
 assert.equal(new Set(r.items.map(e=>e.id)).size,13);
 assert.equal(r.policy.noRuntimeChange,true);
@@ -55,7 +56,11 @@ assert.equal(b1.events.find(x=>x.id==="B01-015").condition,"REQUIEM");
 assert.match(s.get("AO.SM.C0150").unit.latin,/pétimus/i);
 assert.match(s.get("AO.SM.C0151").unit.latin,/uti accepta/i);
 assert.equal(gm.items.find(x=>x.id==="GM.P.C0151.01").triggerLatin,"uti accepta habeas et benedícas");
-assert.equal(get(5).status,"REQUIRES_CUE_REANCHOR");
+assert.equal(get(5).status,"ALREADY_MODELED_AT_NEXT_CUE_BOUNDARY");
+assert.equal(get(5).canonicalBoundary.afterCueId,"AO.SM.C0150");
+assert.equal(get(5).canonicalBoundary.beforeCueId,"AO.SM.C0151");
+assert.equal(get(5).canonicalBoundary.alreadyPresentGestureId,"GM.P.C0151.01");
+assert.equal(get(5).canonicalBoundary.requiresNewAction,false);
 const chal=gm.items.filter(x=>x.cueId==="AO.SM.C0181"&&x.actor==="PRIEST");
 assert(chal.some(x=>x.gesture==="GENUFLECT"));
 assert.equal(b1.events.filter(x=>x.cueId==="AO.SM.C0181"&&x.actor==="PRIEST"&&Number.isInteger(x.microOrder)).length,4);
@@ -82,5 +87,12 @@ for(const cue of ["AO.SM.C0229","AO.SM.C0230","AO.SM.C0231"]){
  assert(actions.items.some(x=>x.cueId===cue&&x.label==="STRIKES BREAST"));
 }
 assert.equal(get(13).status,"ALREADY_MODELED_TRIPLE_GESTURE");
-assert.equal(r.highestImpactUnresolved.length,5);
-console.log("PASS Mass owner reconciliation: 13 sourced issues = 4 already handled, 3 partial, 6 requiring integration; 2 Schola clock hazards and 1 altar-kiss reanchor.");
+assert.equal(get(9).status,"PARTIALLY_IMPLEMENTED_OBSERVATION_GATE");
+assert.equal(get(10).status,"PARTIALLY_IMPLEMENTED_OBSERVATION_GATE");
+assert.equal(get(9).productionResolution.independentAutoDetection,false);
+assert.equal(get(12).status,"ALREADY_MODELED_FORM_SPLIT_NEEDS_MICRO_TIMING");
+assert.match(formState.low.cueStates.find(x=>x.cueId==="AO.SM.C0212").priestAction,/paten upright/i);
+assert.equal(formState.solemn.ministerEvents.find(x=>x.id==="SMIN-012").cue,"AO.SM.C0212");
+assert.equal(formState.solemn.ministerEvents.find(x=>x.id==="SMIN-012").actor,"SUBDEACON → DEACON");
+assert.equal(r.highestImpactUnresolved.length,4);
+console.log("PASS Mass owner reconciliation: 13 historical issues = 6 already in SOT, 5 partly implemented, 2 genuine pre-text gates; no duplicate kiss or paten actions.");
