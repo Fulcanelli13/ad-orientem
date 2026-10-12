@@ -155,7 +155,8 @@ export function renderGenesisAncestryDiagram(rows,{root="adam",language="en"}={}
   depth=Math.max(depth,level);
   const descendants=children.get(id)||[];
   const ys=descendants.map(k=>assign(k,level+1));
-  const y=ys.length?(ys[0]+ys.at(-1))/2:(leaf++*step+40);
+  // Anchor parents close to the first source-linked child rather than below the phone viewport.
+  const y=ys.length?ys[0]+Math.min(step/2,(ys.at(-1)-ys[0])/2):(leaf++*step+40);
   coordinates.set(id,{x:22+level*column,y});
   return y;
  };
@@ -218,7 +219,7 @@ export function renderLineageReview(data,{language="en",surface="genealogies",li
    const rows=genesisGenerationRows(data,{root,depth});
    body+='<h2>'+esc(L(lang,"Families of Genesis","Familles de la Genèse"))+'</h2><p>'+
    esc(L(lang,"90 source-referenced family links in this reviewed subset.","90 liens familiaux référencés dans cette sélection en cours de vérification."))+'</p>'+
-   '<div class="aoBibleReviewChoices" role="group" aria-label="'+esc(L(lang,"Choose family","Choisir une famille"))+'">'+
+   '<div class="aoBibleReviewChoices aoBibleReviewFamilyChoices" role="group" aria-label="'+esc(L(lang,"Choose family","Choisir une famille"))+'">'+
    [["adam","Adam","Adam"],["noah","Noah","Noé"],["abraham","Abraham","Abraham"],["jacob","Jacob","Jacob"],["joseph","Joseph","Joseph"]]
     .map(([k,en,fr])=>BUTTON("data-bible-review-root",k,k===root,L(lang,en,fr))).join("")+'</div>';
    body+='<div class="aoBibleReviewControls"><span>'+esc(L(lang,"Generations","Générations"))+': '+Number(depth||3)+'</span>'+
@@ -260,7 +261,7 @@ export function renderLineageReview(data,{language="en",surface="genealogies",li
     (e.kind==="scripture"&&exactAtlasReferenceIndex(atlasStops,e.reference)!==null?'<button type="button" data-bible-review-jump="'+exactAtlasReferenceIndex(atlasStops,e.reference)+'">'+esc(L(lang,"Related chronology reference","Référence dans la chronologie"))+'</button>':"")+'</li>';
   }).join("")+'</ol>';
  }
- return wrapper(warning+body);
+ return wrapper(body+warning);
 }
 const CSS=[
 ".aoBibleReview{height:100%;min-height:0;display:flex;flex-direction:column;background:#080c12;color:#ede4d2;font-family:Georgia,serif;overflow:hidden}",
@@ -281,6 +282,7 @@ const CSS=[
 ".aoBibleReviewList strong{font:500 16px/1.25 Georgia,serif;color:#f0e3cf}.aoBibleReviewList small{font:11px/1.4 system-ui;color:#baa98d}.aoBibleReviewList a{font:12px/1.5 system-ui;color:#dec28a;width:max-content;max-width:100%;overflow-wrap:anywhere}",
 ".aoBibleKinHelp{font:12px/1.4 system-ui!important;color:#b8aa91!important;max-width:760px;margin:8px 0}.aoBibleKinDiagram{width:100%;max-width:100%;max-height:min(58vh,530px);min-height:260px;box-sizing:border-box;overflow:auto;overscroll-behavior:contain;touch-action:pan-x pan-y;border:1px solid #c9ae7540;border-radius:12px;background:radial-gradient(ellipse at 30% 12%,#1d2430,#0d131c 75%);scrollbar-width:thin;margin:9px 0 10px}.aoBibleKinDiagram svg{display:block;max-width:none;overflow:visible}.aoBibleKinLines path{fill:none;stroke:#bda474;stroke-width:1.6;opacity:.72}.aoBibleKinLines path.aoBibleKinEdgeSecondary{stroke-dasharray:5 4;opacity:.6}.aoBibleKinNodes rect{fill:#1b2630;stroke:#bda47488;stroke-width:1.2}.aoBibleKinNodes .aoBibleKinRoot rect{fill:#3a3023;stroke:#dfc18d}.aoBibleKinNodes a:hover rect,.aoBibleKinNodes a:focus-visible rect{stroke:#f0d5a0;stroke-width:2;fill:#343228}.aoBibleKinPerson{font:16px Georgia,serif;fill:#f0e3cf}.aoBibleKinSource{font:10px system-ui;fill:#c9b08a}.aoBibleKinPersonLink{cursor:pointer}.aoBibleKinPersonLink:focus-visible{outline:none}.aoBibleKinSourceList{max-width:800px;margin:12px 0 20px;font:12px/1.5 system-ui;color:#ccbb97}.aoBibleKinSourceList summary{cursor:pointer;min-height:36px;padding:8px 0;color:#dac69f}.aoBibleKinSourceList .aoBibleFamilyTree{margin-top:8px}",
 ".aoBibleFamilyTree{max-width:780px;overflow-x:auto;margin:15px 0 25px;padding:5px 2px 12px}.aoBibleFamilyTree ul{list-style:none;margin:0 0 0 16px;padding:0 0 0 17px;border-left:1px solid #c9ae755a}.aoBibleFamilyTree li{position:relative;list-style:none;margin:9px 0 0;min-width:0}.aoBibleFamilyTree li:before{content:'';position:absolute;left:-17px;top:23px;width:17px;border-top:1px solid #c9ae755a}.aoBibleFamilyRoot,.aoBibleFamilyNode{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 13px;background:#111923;border:1px solid #d9c59a35;border-radius:10px;padding:11px 13px;max-width:630px;min-width:0}.aoBibleFamilyRoot{background:#2a271f;border-color:#c9ae757e}.aoBibleFamilyRoot strong,.aoBibleFamilyNode strong{font:500 17px Georgia,serif;color:#f0e3cf}.aoBibleFamilyRoot small,.aoBibleFamilyNode small{font:10px/1.3 system-ui;color:#baa98d}.aoBibleFamilyNode a{font:12px system-ui;color:#dec28a;margin-left:auto}.aoBibleFamilyNode a:focus-visible{outline:2px solid #e6c47b;outline-offset:2px}",
+".aoBibleReviewFamilyChoices{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;overscroll-behavior-inline:contain}.aoBibleReviewFamilyChoices button{flex:none;min-height:42px;padding:6px 10px}.aoBibleKinDiagram:focus-visible{outline:2px solid #d4b67c;outline-offset:2px}",
 ".aoBibleReviewFamily{margin-left:calc(min(var(--generation),4)*5px)}.aoBibleReviewEvidence{font:600 10px system-ui;letter-spacing:.06em;text-transform:uppercase;color:#a99472}",
 ".aoBibleReviewList p{font:12px/1.5 system-ui;margin:2px 0;color:#bcb1a0}.aoBibleReviewList button{align-self:flex-start;min-height:44px;border:1px solid #d0b87966;border-radius:8px;background:#22251d;color:#edd09a;padding:8px 13px;font:600 12px system-ui}.aoBibleReviewEmpty{padding:16px;border:1px dashed #a0895f77;border-radius:10px;max-width:700px}",
 "@media(max-width:480px){.aoBibleReviewTop{padding:8px 12px}.aoBibleReviewTabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;overflow:visible;padding:6px 8px}.aoBibleReviewTabs button{min-width:0;min-height:49px;white-space:normal;line-height:1.13;font-size:10px;padding:5px 3px;border-radius:6px}.aoBibleReviewScroll{padding:12px 14px 32px}.aoBibleReview h2{font-size:21px}.aoBibleReviewPeople{grid-template-columns:1fr 1fr}.aoBibleReviewPeople button{font-size:11px}}",
