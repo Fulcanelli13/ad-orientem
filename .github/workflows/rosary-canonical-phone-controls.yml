@@ -1,0 +1,32 @@
+name: Canonical Rosary phone accessibility
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "src/pray/presentation-styles.js"
+      - "tests/rosary-canonical-phone-controls.mjs"
+      - ".github/workflows/rosary-canonical-phone-controls.yml"
+  workflow_dispatch:
+
+jobs:
+  rosary-touch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Real 320/390/430px Rosary touch, state and source regression
+        run: node tests/rosary-canonical-phone-controls.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rosary-canonical-phone-controls
+          path: artifacts/rosary-canonical-phone-controls/
+          if-no-files-found: warn
+          retention-days: 30
