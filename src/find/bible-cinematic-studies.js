@@ -121,7 +121,7 @@ export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",
  (s.sourceNote_en?'<p class="aoBibleStudyQualification">'+esc(L(lang,s.sourceNote_en,s.sourceNote_fr))+'</p>':"")+
  (s.location_en||s.location_fr?'<details class="aoBibleStudyNotes"><summary>'+esc(L(lang,"Location qualification","Précision sur le lieu"))+'</summary><p>'+esc(L(lang,"Uncertified location context; no itinerary is inferred.","Lieu non certifié ; aucun itinéraire n’est inféré."))+' '+esc(L(lang,s.location_en,s.location_fr))+'</p></details>':"")+
  '<div class="aoBibleStudyActions"><button type="button" data-ao-scripture-context="'+esc(s.reference)+'">'+esc(L(lang,"Read passage","Lire le passage"))+'</button>'+
- (link!==null?'<button type="button" data-bible-review-jump="'+link+'">'+esc(L(lang,"Related 151-event chronology reference","Référence dans la chronologie à 151 étapes"))+'</button>':"")+'</div></article>';
+ (link!==null?'<button type="button" data-bible-review-jump="'+link+'" data-bible-review-event-key="'+esc(atlasStops[link].eventKey)+'">'+esc(L(lang,"Related 151-event chronology reference","Référence dans la chronologie à 151 étapes"))+'</button>':"")+'</div></article>';
  const control='<div class="aoBibleStudyTransport">'+
  '<button type="button" data-bible-study-direction="-1" '+(n===0?'disabled':'')+'>'+esc(L(lang,"Previous scene","Scène précédente"))+'</button>'+
  '<span>'+esc(L(lang,c.label_en,c.label_fr))+' · '+(n+1)+' / '+len+'</span>'+
