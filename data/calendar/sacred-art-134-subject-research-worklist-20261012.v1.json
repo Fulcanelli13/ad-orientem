@@ -9,8 +9,8 @@
     "total": 134,
     "priorNoCandidate": 64,
     "priorRejectedOrUnapproved": 70,
-    "postExportLeadSubjects": 14,
-    "noCandidateAfterNewLeads": 52,
+    "postExportLeadSubjects": 19,
+    "noCandidateAfterNewLeads": 50,
     "byCollection": {
       "Bible Atlas": {
         "total": 83,
@@ -1806,7 +1806,18 @@
       "previousCandidateArtworkIds": [
         "ART-eter-aul-ubens-he-rodigal-on"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-rembrandt-hermitage-prodigal",
+          "artist": "Rembrandt van Rijn",
+          "title": "The Return of the Prodigal Son",
+          "sourceUrl": "https://www.hermitagefoundation.co.uk/prodigal-son-rembrandt",
+          "matchNotes": "Exactly the return/reconciliation episode Luke 15:20–24, not entire parable. Source institutional UK Hermitage Foundation; 2020 image photograph credited to State Hermitage and reproduction rights HELD. Large painterly masterpiece, full composition check needed.",
+          "reviewStatus": "OFFICIAL_OR_INSTITUTIONAL_SOURCE_CONFIRMED_ARTISTIC_UNAPPROVED",
+          "acquired": false,
+          "imageReuseCleared": false
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1828,6 +1839,16 @@
           "sourceUrl": "https://www.nationalgallery.org.uk/paintings/joachim-beuckelaer-the-four-elements-fire",
           "matchNotes": "Martha and Mary with Christ appear as a small background scene",
           "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+        },
+        {
+          "artworkId": "ART-research-20261013-velazquez-martha-mary-ng1375",
+          "artist": "Diego Velázquez",
+          "title": "Christ in the House of Martha and Mary",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/diego-velazquez-christ-in-the-house-of-martha-and-mary",
+          "matchNotes": "National Gallery NG1375 exact Luke 10:38–42 appears as SMALL BACKGROUND vignette in kitchen genre painting; remarkable quality but narratively weak mobile crop. Do not label foreground kitchen women the historical sisters automatically. Reproduction image rights pending.",
+          "reviewStatus": "OFFICIAL_OR_INSTITUTIONAL_SOURCE_CONFIRMED_ARTISTIC_UNAPPROVED",
+          "acquired": false,
+          "imageReuseCleared": false
         }
       ],
       "needsFirstResearchLead": false,
@@ -1859,7 +1880,18 @@
       "previousCandidateArtworkIds": [
         "ART-eter-aul-ubens-ncredulity-of-aint-homas"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-crabeth-incredulity-sk-a-1965",
+          "artist": "Wouter Pietersz II Crabeth",
+          "title": "The Incredulity of St Thomas",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Incredulity-of-St-Thomas--ba245dd27df1192fbf11cc9e8797cfb7",
+          "matchNotes": "Rijksmuseum SK-A-1965, c.1626–30, exact John 20:24–29 encounter in Baroque oil, public domain. Museum reports substantial surface abrasion, losses, discolored varnish; technical colour/quality check before artistic promotion. No Caravaggio attribution.",
+          "reviewStatus": "OFFICIAL_OR_INSTITUTIONAL_SOURCE_CONFIRMED_ARTISTIC_UNAPPROVED",
+          "acquired": false,
+          "imageReuseCleared": false
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1889,7 +1921,18 @@
       "context": "John 21:15–19",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-raphael-charge-peter-va-cartoon",
+          "artist": "Raphael",
+          "title": "Christ's Charge to Peter",
+          "sourceUrl": "https://www.vam.ac.uk/articles/the-raphael-cartoons-christs-charge-to-peter/",
+          "matchNotes": "V&A Royal Loans.3 painted tapestry cartoon c.1515–16, exact Risen Christ commissioning Peter John 21:15–17 with sheep and Peter. NOT standard oil canvas. Royal Collection Trust reproduction rights and format held; extraordinary relevance for biblical doctrine, full image and textile-cartoon category required.",
+          "reviewStatus": "OFFICIAL_OR_INSTITUTIONAL_SOURCE_CONFIRMED_ARTISTIC_UNAPPROVED",
+          "acquired": false,
+          "imageReuseCleared": false
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1917,7 +1960,18 @@
       "context": "John 13:1–17",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-tintoretto-prado-washing-p002824",
+          "artist": "Jacopo Robusti Tintoretto",
+          "title": "The Washing of the Feet",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-washing-of-the-feet/77d1fd63-1918-40b7-a79e-6d427e19bed8",
+          "matchNotes": "Prado inventory P002824 autograph Tintoretto, 1548–49. Exact John 13:1–17 washing scene, but enormous 210×533cm panorama with Christ/Peter at far right: strong museum painting unsuitable for centered phone hero. Prado reproduction rights held.",
+          "reviewStatus": "OFFICIAL_OR_INSTITUTIONAL_SOURCE_CONFIRMED_ARTISTIC_UNAPPROVED",
+          "acquired": false,
+          "imageReuseCleared": false
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1933,7 +1987,18 @@
       "previousCandidateArtworkIds": [
         "ART-aphael-and-workshop-eter-ealing-the-ame-an-tapestry-cartoon"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-poussin-met437330-healing-lame",
+          "artist": "Nicolas Poussin",
+          "title": "Saints Peter and John Healing the Lame Man",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437330",
+          "matchNotes": "Met object 437330, 1655 oil on canvas, exact Acts 3:1–10 and temple step composition, public-domain object with Met Open Access. Prefer source-exact Poussin over inaccurate generic Acts illustration; final full-quality and crop checks pending.",
+          "reviewStatus": "OFFICIAL_OR_INSTITUTIONAL_SOURCE_CONFIRMED_ARTISTIC_UNAPPROVED",
+          "acquired": false,
+          "imageReuseCleared": false
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
