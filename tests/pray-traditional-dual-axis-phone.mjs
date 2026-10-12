@@ -138,7 +138,62 @@ try{
  assert.ok(mealLabels.every(x=>x.left>=x.trackLeft-1&&x.right<=x.trackRight+1),
    "A 320px phone clipped one of two meal prayer stop titles: "+JSON.stringify(mealLabels));
  await page.screenshot({path:resolve(captures,"meal-after-320-fr.png"),animations:"disabled"});
+ // Sacred Heart and Communion must render the same named-card reader, not a catalogue of duplicate texts.
+ await page.setViewportSize({width:390,height:844});
+ await open("pray.sacred_heart");
+ const heart=await snapshot();
+ assert.equal(heart.route,"pray.sacred_heart");
+ assert.equal(heart.kind,"sacredHeart");assert.equal(heart.stops,3);assert.equal(heart.active,1);
+ assert.equal(heart.id,"heart-litany");assert.equal(heart.overflow,"auto");
+ assert.ok(heart.paragraphCount>=20,"Sacred Heart litany lost line-by-line reading focus");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-heart-options]").evaluate(el=>el.open),false);
+ await page.screenshot({path:resolve(captures,"sacred-heart-litany-390-fr.png"),animations:"disabled"});
+ await swipe(0,-146);
+ assert.equal((await snapshot()).id,"heart-litany","Vertical Sacred Heart reading advanced a card");
+ await swipe(-165,5);
+ assert.equal((await snapshot()).id,"heart-reparation","Sacred Heart horizontal swipe skipped a stage");
+ await page.locator("#aoPray435930 .aoDevoStop").nth(2).evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"heart-consecration");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline [aria-current='step']").count(),1);
+ assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>150,"Consecration text missing");
+ await page.locator("#aoPray435930 [data-tp381-flip]").first().evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-face-la]").isVisible(),true);
+ await page.screenshot({path:resolve(captures,"sacred-heart-consecration-la-390.png"),animations:"disabled"});
+ await open("pray.communion_treasury");
+ const before=await snapshot();
+ assert.equal(before.route,"pray.communion_treasury");
+ assert.equal(before.kind,"communion");assert.equal(before.stops,7);
+ assert.equal(before.id,"communion-before-sacrament_come_holy_spirit");
+ assert.equal(before.overflow,"auto");assert.equal(before.active,1);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-communion-options]").evaluate(el=>el.open),false);
+ await page.screenshot({path:resolve(captures,"communion-before-390-fr.png"),animations:"disabled"});
+ const beforeIds=["sacrament_come_holy_spirit","foundations_act_of_faith","foundations_act_of_hope","foundations_act_of_love","sacrament_act_of_contrition","beforeThomas","beforeAmbrose"];
+ for(let i=0;i<beforeIds.length;i++){
+  await page.locator("#aoPray435930 .aoDevoStop").nth(i).evaluate(el=>el.click());
+  const stage=await snapshot();
+  assert.equal(stage.id,"communion-before-"+beforeIds[i],"Wrong Communion preparation prayer on step "+i);
+  assert.equal(stage.active,1);
+  assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>30,"Empty canonical preparation text "+beforeIds[i]);
+ }
+ await page.locator("#aoPray435930 [data-tp381-communion='after']").evaluate(el=>el.click());
+ const after=await snapshot();
+ assert.equal(after.stops,4);assert.equal(after.index,0);
+ assert.equal(after.id,"communion-after-adoration_anima_christi");
+ await page.screenshot({path:resolve(captures,"communion-after-390-fr.png"),animations:"disabled"});
+ const afterIds=["adoration_anima_christi","afterThomas","afterBonaventure","enEgo"];
+ for(let i=0;i<afterIds.length;i++){
+  await page.locator("#aoPray435930 .aoDevoStop").nth(i).evaluate(el=>el.click());
+  const stage=await snapshot();
+  assert.equal(stage.id,"communion-after-"+afterIds[i]);
+  assert.equal(stage.active,1);
+  assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>30,"Missing canonical thanksgiving "+afterIds[i]);
+ }
+ await swipe(5,-135);
+ assert.equal((await snapshot()).id,"communion-after-enEgo","Vertical scroll changed Communion prayer");
+ await page.setViewportSize({width:320,height:720});
+ assert.equal((await snapshot()).overflow,"auto");
+ await page.screenshot({path:resolve(captures,"communion-after-320-fr.png"),animations:"disabled"});
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
- console.log("PASS French 390/320px Morning Evening, Examen, Holy Name and Meals share named-card timeline, local focus and swipe contract");
+ console.log("PASS French 390/320px traditional Prayer: Daily, Examen, Holy Name, Meals, Sacred Heart and Communion canonical cards and timelines");
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
