@@ -39,7 +39,7 @@ try{
   const root=document.querySelector("#aoPray435930.open");
   const deck=root?.querySelector('[data-ao-devotional-deck="v1"]');
   const current=deck?.querySelector('.aoDevoCard:not([hidden])');
-  return {owner:root?.dataset?.aoPrayView??null,deck:deck?.dataset?.aoDevotionalDeck??null,
+  return {owner:root?.querySelector(".aoP435930Mount")?.dataset?.aoPrayView??null,deck:deck?.dataset?.aoDevotionalDeck??null,
    cards:deck?.querySelectorAll('.aoDevoCard')?.length??0,
    timeline:deck?.querySelectorAll('.aoDevoStop')?.length??0,
    first:current?.dataset?.aoDevoCard??null,
