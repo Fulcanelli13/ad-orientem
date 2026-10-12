@@ -75,8 +75,8 @@ for(const cue of ["AO.SM.C0145","AO.SM.C0148"]){
  assert(gm.items.some(x=>x.cueId===cue&&x.actor==="PRIEST"&&x.displayPrimary),
  "Need independent priest clock at "+cue);
 }
-assert.equal(get(9).status,"REQUIRES_INDEPENDENT_PRIEST_CLOCK");
-assert.equal(get(10).status,"REQUIRES_INDEPENDENT_PRIEST_CLOCK");
+assert.equal(get(9).status,"PARTIALLY_IMPLEMENTED_OBSERVATION_GATE");
+assert.equal(get(10).status,"PARTIALLY_IMPLEMENTED_OBSERVATION_GATE");
 assert.equal(voices.items.find(x=>x.cueId==="AO.SM.C0196").voice,"BRIEFLY AUDIBLE / THEN LOW");
 assert.equal(voices.items.find(x=>x.cueId==="AO.SM.C0196").scope,"EVENT_ONLY");
 assert.equal(s.get("AO.SM.C0211").unit.latin,"Amen.");
