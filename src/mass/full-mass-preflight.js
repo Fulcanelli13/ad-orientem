@@ -143,6 +143,7 @@ export function mountFullMassPreflight({
         '<small data-mass-calendar-commemoration-label></small>'+ 
         '<strong data-mass-calendar-commemoration-name></strong>'+ 
         '<p data-mass-calendar-commemoration-prayers></p></div>'+ 
+        '<p data-mass-calendar-mission class="aoMassMissionSundaySource" hidden></p>'+ 
         '<p data-mass-calendar-source class="aoMassLiturgicalSource"></p>'+
         '<p data-mass-calendar-error role="alert" hidden></p></section>'+
         '<details data-mass-calendar-details class="aoMassCalendarEmbeddedDetails"><summary data-mass-calendar-details-label>Explore the liturgical calendar</summary>'+

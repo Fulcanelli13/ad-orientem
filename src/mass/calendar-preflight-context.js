@@ -110,6 +110,10 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
     isConventual:legacy?.conventualMass??false,observedSource:alternate
   });
   const proper=sourceSelection.proper?.data??sourceSelection.proper??selectedSource;
+  const missionSunday=proper?.missionSundayCollectDecision?.status==="CERTIFIED"?
+    Object.freeze({status:"CERTIFIED",source:"1960_MISSAL_453",underOneConclusion:true}):
+    String(sourceSelection.reason??"").startsWith("MISSION_SUNDAY_")?
+      Object.freeze({status:"UNVERIFIED",reason:sourceSelection.reason}):null;
   const differs=alternate||!["CALENDAR","GOOD_FRIDAY"].includes(kind)||
     Boolean(actualTitle&&calendar.title&&actualTitle!==calendar.title);
   const actualColour=text(proper?.color)||text(proper?.colour)||
@@ -153,6 +157,7 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
     actual:Object.freeze({kind,title:actualTitle,colour:actualColour,
       gospel:gospelReference(proper),canStart:legacy?.canStart===true}),
     commemorations,commemorationOrations,commemorationApplies,commemorationPrayerApplies,
+    missionSunday,
     form:selectedForm,
     differs,sourceDate:alternate?text(legacy?.sourceDiagnostics?.actualMassSourceDate):null,
     openable:calendarState?.selectedDate===date
@@ -207,6 +212,18 @@ export function fillMassCalendarPreflight(root,context){
     t("The commemoration adds a Collect, Secret and Postcommunion. The selected Proper is still being resolved.",
       "La commémoraison ajoute une collecte, une secrète et une postcommunion. Le propre est encore en cours de résolution.");
   field("commemoration-prayers",prayerMessage);
+  const missionBlock=root.querySelector("[data-mass-calendar-mission]");
+  if(missionBlock){
+    const verified=context.missionSunday?.status==="CERTIFIED";
+    const pending=context.missionSunday?.status==="UNVERIFIED";
+    missionBlock.hidden=!verified&&!pending;
+    missionBlock.textContent=verified?
+      t("Mission Sunday: the Collect for the Propagation of the Faith is joined to the principal Collect under one conclusion; no extra Secret or Postcommunion.",
+        "Dimanche des Missions : la collecte pour la propagation de la foi est jointe à la collecte principale sous une seule conclusion, sans secrète ni postcommunion supplémentaire.") :
+      pending?t("Mission Sunday Collect awaits source/precedence verification.",
+        "La collecte du dimanche des Missions attend la vérification des sources et de la préséance."):"";
+    missionBlock.dataset.massMissionSundayStatus=verified?"CERTIFIED":pending?"UNVERIFIED":"NOT_APPLICABLE";
+  }
   if(commemorationBlock)commemorationBlock.dataset.massCommemorationReadiness=prayerStatus??"NOT_APPLICABLE";
   field("source",context.sourceDate?
     t("Proper from feast date ","Propre de la fête du ")+context.sourceDate:

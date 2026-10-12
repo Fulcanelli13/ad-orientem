@@ -20,7 +20,7 @@ function sectionsFromProper(p,lang){
   const section=(kind,values)=>{
     const items=(Array.isArray(values)?values:[values]).filter(Boolean);
     return items.map((x,index)=>({
-      kind,title:titleFor(kind,lang)+(items.length>1?" "+(index+1):""),
+      kind,title:titleFor(kind,lang)+(items.length>1?" "+(index+1):"")+(kind==="collect"&&x?.oneConclusion?.status==="CERTIFIED"?(lang==="fr"?" · Missions (conclusion unique)":" · Missions (single conclusion)"):""),
       ...pair(x,lang)
     }));
   };

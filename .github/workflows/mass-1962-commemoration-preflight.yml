@@ -5,12 +5,15 @@ on:
     paths:
       - 'src/mass/calendar-preflight-context.js'
       - 'src/mass/1962-commemoration-form-source.js'
+      - 'src/mass/1962-mission-sunday-source.js'
       - 'src/mass/full-mass-preflight.js'
       - 'src/mass/full-mass-preflight-styles.js'
       - 'src/mass/proper-reader-slots.js'
       - 'tests/mass-1962-commemoration-preflight.mjs'
       - 'tests/mass-1962-form-source-selection.mjs'
       - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
+      - 'tests/mass-1962-mission-source-probe-e2e.mjs'
+      - 'tests/mass-1962-mission-sunday.mjs'
       - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
       - 'tests/mass-1962-maternity-phone-preflight-e2e.mjs'
       - '.github/workflows/mass-1962-commemoration-preflight.yml'
@@ -18,12 +21,15 @@ on:
     paths:
       - 'src/mass/calendar-preflight-context.js'
       - 'src/mass/1962-commemoration-form-source.js'
+      - 'src/mass/1962-mission-sunday-source.js'
       - 'src/mass/full-mass-preflight.js'
       - 'src/mass/full-mass-preflight-styles.js'
       - 'src/mass/proper-reader-slots.js'
       - 'tests/mass-1962-commemoration-preflight.mjs'
       - 'tests/mass-1962-form-source-selection.mjs'
       - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
+      - 'tests/mass-1962-mission-source-probe-e2e.mjs'
+      - 'tests/mass-1962-mission-sunday.mjs'
       - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
       - 'tests/mass-1962-maternity-phone-preflight-e2e.mjs'
       - '.github/workflows/mass-1962-commemoration-preflight.yml'
@@ -41,6 +47,7 @@ jobs:
       - run: node --check src/mass/full-mass-preflight.js
       - run: node tests/mass-1962-commemoration-preflight.mjs
       - run: node tests/mass-1962-form-source-selection.mjs
+      - run: node tests/mass-1962-mission-sunday.mjs
       - run: node tests/full-mass-preflight.mjs
       - run: node tests/proper-reader-slots.mjs
   production-resolver-oct11:
@@ -59,6 +66,8 @@ jobs:
         run: node tests/mass-1962-maternity-2026-resolver-e2e.mjs
       - name: Independently log verified 1962 privileged/October source witnesses
         run: node tests/mass-1962-privileged-witnesses-e2e.mjs
+      - name: Verify mission collect source identity and conclusion boundaries
+        run: node tests/mass-1962-mission-source-probe-e2e.mjs
       - name: Accept 1962 Marian commemoration in actual 320px and 390px phone preflight
         run: node tests/mass-1962-maternity-phone-preflight-e2e.mjs
       - name: Retain phone screenshots of Marian commemoration
