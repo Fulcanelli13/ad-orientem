@@ -71,7 +71,7 @@ try{
  });
  assert.ok(opening.cardTop<390&&opening.optionsAfter&&opening.glossaryAfter,
    "Prayer must precede secondary descriptions and controls: "+JSON.stringify(opening));
- assert.match(await page.locator("#aoPray435930 .aoTP381DaypartStrip").innerText(),/Matin.*Soir/);
+ assert.match(await page.locator("#aoPray435930 .aoTP381DaypartStrip").innerText(),/Matin\s+Soir/);
  assert.equal(first.kind,"daily");
  assert.ok(first.stops>=4,"No titled daily prayer card timeline");
  assert.equal(first.index,0);assert.equal(first.active,1);assert.equal(first.overflow,"auto");
