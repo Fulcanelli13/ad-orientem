@@ -8,6 +8,7 @@ on:
       - 'src/mass/full-mass-preflight-styles.js'
       - 'src/mass/proper-reader-slots.js'
       - 'tests/mass-1962-commemoration-preflight.mjs'
+      - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
       - '.github/workflows/mass-1962-commemoration-preflight.yml'
   pull_request:
     paths:
@@ -16,6 +17,7 @@ on:
       - 'src/mass/full-mass-preflight-styles.js'
       - 'src/mass/proper-reader-slots.js'
       - 'tests/mass-1962-commemoration-preflight.mjs'
+      - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
       - '.github/workflows/mass-1962-commemoration-preflight.yml'
 jobs:
   source-confirmed-commemorations:
@@ -32,3 +34,17 @@ jobs:
       - run: node tests/mass-1962-commemoration-preflight.mjs
       - run: node tests/full-mass-preflight.mjs
       - run: node tests/proper-reader-slots.mjs
+  production-resolver-oct11:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Check real 2026-10-11 Marian commemoration, all prayers and pre-Mass banner
+        run: node tests/mass-1962-maternity-2026-resolver-e2e.mjs
