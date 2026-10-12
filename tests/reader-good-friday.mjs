@@ -255,7 +255,7 @@ const changing=createGoodFridayReaderController({graph,payload,willReceiveCommun
 changing.goToRecord("GF-COM-840");
 assert.equal(changing.project().willReceiveCommunion,false);
 assert.equal(changing.project().posture,"KNEEL");
-assert.equal(changing.project().card.paragraphs.length,10);
+assert.equal(changing.project().card.paragraphs.length,13);
 changing.setWillReceiveCommunion(true);
 assert.equal(changing.project().step.recordId,"GF-COM-840",
   "changing personal Communion choice unexpectedly restarted the rite");
