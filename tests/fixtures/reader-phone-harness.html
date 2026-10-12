@@ -42,9 +42,11 @@ const precedingRites=withAsperges?["ASPERGES"]:withPalm?["PALM"]:withAsh?["ASH"]
 const requestedForm=String(params.get("form")??"MISSA_CANTATA_INCENSE").toUpperCase();
 const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
 if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
+const fixtureDate=params.get("date")||"2026-10-04";
+if(!/^2026-\d{2}-\d{2}$/.test(fixtureDate))throw new Error("Invalid test fixture date");
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
-  date:"2026-10-04",
+  date:fixtureDate,
   form:requestedForm,
   presentationMode:mode,
   actualCelebration:{id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
