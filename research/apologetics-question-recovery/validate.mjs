@@ -10,6 +10,7 @@ const master=fs.readFileSync(path.join(dir,"ALL_QUESTIONS.md"),"utf8");
 function assert(ok,message){ if(!ok) throw Error(message); }
 assert(manifest.records===282 && questions.length===282,"Source record count changed; review and update manifest deliberately");
 assert(new Set(questions.map(q=>q.id)).size===questions.length,"Duplicated record ID");
+assert(manifest.source_files.length===12,"Source manifest count mismatch");
 assert(questions.every(q=>q.en && q.source_url.startsWith("https://github.com/Fulcanelli13/ad-orientem/") && q.audience_tags.length && q.provenance_status),"Missing question, source or editorial context");
 assert(questions.filter(q=>q.id.startsWith("APOL-")).length===60,"Canonical Apologetics count drift");
 assert(questions.filter(q=>q.id.startsWith("CR-")).length===81,"Canonical Church Crisis count drift");
