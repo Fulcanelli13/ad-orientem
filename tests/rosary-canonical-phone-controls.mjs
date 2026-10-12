@@ -231,7 +231,18 @@ try{
    assert.ok(firstMystery>0,"Rosary donor lost its first canonical mystery");
    await player.locator('[data-ao-rosary-chapter="1"]').click();
    await page.waitForFunction(index=>window.AO_ROSARY_V381?.state?.()?.step===index,
-     firstMystery,{timeout:9000});
+     firstMystery,{timeout:9000}).catch(async error=>{
+       const diag=await page.evaluate(()=>({
+         step:window.AO_ROSARY_V381?.state?.()?.step,
+         method:window.AO_ROSARY_V381?.getMethod?.(),
+         first:window.AO_ROSARY_V381?.steps?.()?.findIndex(x=>x.kind==="mystery"&&x.phase==="decade"),
+         selected:[...document.querySelectorAll("#aoPrayerBookRoot.open .aoRosaryChapterStop[aria-current='step']")].map(x=>x.textContent.trim()),
+         timeline:document.querySelector("#aoPrayerBookRoot.open [data-ao-rosary-timeline]")?.outerHTML?.slice(0,1100),
+         root:document.querySelector("#aoPrayerBookRoot.open")?.dataset.aoRosaryActiveRoot,
+         errors:window.__AO_DEVOTIONAL_NAV_ERROR||null
+       }));
+       throw new Error("Named Rosary chapter tap did not move the canonical bead: "+JSON.stringify(diag)+"; "+error);
+     });
    await page.waitForFunction(()=>document.querySelector(
      "#aoPrayerBookRoot.open [data-ao-rosary-chapter='1']")?.getAttribute("aria-current")==="step",
      null,{timeout:9000});
