@@ -72,6 +72,37 @@ try{
  assert.equal(await page.locator("#ao-find-modular-root [data-ao-bible-atlas]").count(),1);
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(overflow<=1,"Biblical Atlas causes horizontal page overflow at 390px");
+ // Review-only native genealogy is a second Atlas view, not a replacement for 151 events.
+ await page.locator('#ao-find-modular-root [data-bible-review-surface="genealogies"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="genealogies"&&
+  document.querySelector("#ao-find-modular-root [data-ao-bible-review]"),null,{timeout:20000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-lineage]').count(),3);
+ assert.ok(await page.locator('#ao-find-modular-root').getByText("Research preview", {exact:false}).count()>=1);
+ await page.locator('#ao-find-modular-root [data-bible-review-lineage="matthew"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewLineage==="matthew",null,{timeout:15000});
+ assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/St Matthew.s textual genealogy/);
+ for(let i=0;i<3;i++)await page.locator('#ao-find-modular-root [data-bible-review-page="1"]').tap({timeout:15000});
+ assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Joseph/);
+ assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/legal\/putative/i);
+ await page.locator('#ao-find-modular-root [data-bible-review-lineage="luke"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewLineage==="luke",null,{timeout:15000});
+ assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/St Luke.s textual genealogy/);
+ await page.locator('#ao-find-modular-root [data-bible-review-lineage="genesis"]').tap({timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-review-root="noah"]').tap({timeout:15000});
+ assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Noah/);
+ await page.locator('#ao-find-modular-root [data-bible-review-surface="apostles"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="apostles",null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-apostle]').count(),20);
+ assert.ok(await page.locator('#ao-find-modular-root [data-evidence-kind="later"]').count()>=2,"Marian rival traditions clearly classified");
+ const philip=page.locator('#ao-find-modular-root [data-bible-review-apostle="philip-evangelist"]');
+ await philip.scrollIntoViewIfNeeded();await page.waitForTimeout(360);await philip.tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewApostle==="philip-evangelist",null,{timeout:15000});
+ assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Philip the Evangelist/);
+ assert.equal(await page.locator("#ao-find-modular-root [data-bible-map]").count(),0,"unverified research locations must not become pins");
+ await page.locator('#ao-find-modular-root [data-bible-review-surface="timeline"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
+  document.querySelectorAll("#ao-find-modular-root [data-bible-step]").length===151,null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="3"]').getAttribute("aria-pressed"),"true","timeline index restored after research views");
  await page.locator("#ao-find-modular-root [data-bible-atlas-close]").tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===false&&
   document.querySelector('[data-find-view="map"][data-explore-lens="heritage"]'),null,{timeout:15000});
