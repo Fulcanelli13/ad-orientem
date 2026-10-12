@@ -114,20 +114,11 @@ try{
  const offlineChooser=page.locator("#aoPray435930.open [data-ao-rosary-chooser]");
  await offlineChooser.waitFor({timeout:12000});
  const offlineMethod=offlineChooser.locator("[data-p435930-rosary-choose='ordinary']");
- if(!await offlineMethod.isVisible()){
-   console.error("OFFLINE_CHOOSER_VISIBILITY="+JSON.stringify(await page.evaluate(()=>({
-     route:globalThis.AO_PRAY_V435930?.state?.(),
-     prayer:globalThis.AO_PRAY_APP_V1?.status?.(),
-     root:[...document.querySelectorAll("#aoPray435930.open [data-ao-rosary-chooser]")].map(el=>({
-       html:el.outerHTML.slice(0,1800),style:getComputedStyle(el).display,rect:el.getBoundingClientRect().toJSON()
-     })),
-     matches:[...document.querySelectorAll("[data-p435930-rosary-choose='ordinary']")].map(el=>({
-       display:getComputedStyle(el).display,visibility:getComputedStyle(el).visibility,
-       rect:el.getBoundingClientRect().toJSON(),ancestors:[el.parentElement,el.parentElement?.parentElement].map(x=>({cls:x?.className,display:getComputedStyle(x).display}))
-     }))
-   }))));
- }
- await offlineMethod.tap();
+ const offlineCustomize=offlineChooser.locator("[data-p435930-rosary-customize]");
+ await offlineCustomize.tap();
+ assert.equal(await offlineCustomize.getAttribute("aria-expanded"),"true",
+  "Offline Rosary options did not expand before selecting the fifteen-decade mode");
+  await offlineMethod.tap();
  await offlineChooser.locator("[data-p435930-rosary-decades='15']").tap();
  await offlineChooser.locator("[data-p435930-rosary-begin]").tap();
  await page.waitForSelector("#aoPrayerBookRoot.open [data-lab-rosary-next]",{timeout:12000});
@@ -193,6 +184,10 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
  const chooser=page.locator("#aoPray435930.open [data-ao-rosary-chooser]");
  await chooser.waitFor({timeout:10000});
+ const customize=chooser.locator("[data-p435930-rosary-customize]");
+ await customize.tap();
+ assert.equal(await customize.getAttribute("aria-expanded"),"true",
+  "Rosary options did not expand for the staged-update regression");
  await chooser.locator("[data-p435930-rosary-choose='ordinary']").tap();
  await chooser.locator("[data-p435930-rosary-decades='15']").tap();
  await chooser.locator("[data-p435930-rosary-begin]").tap();
