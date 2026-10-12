@@ -80,7 +80,7 @@ for(const [name,change] of [
  ["unapproved subject association",x=>x.association.relationship="GENERAL_CONTEXT"],
  ["mismatched canonical event",x=>x.association.eventKey="biblical:event:christ-tomb-e2"],
  ["unapproved crop",x=>x.artwork.review.crop="PENDING"],
- ["non-original low resolution",x=>x.artwork.image.width=900],
+ ["low-resolution thumbnail",x=>{x.artwork.image.width=900;x.artwork.image.height=900;}],
  ["non original image",x=>x.artwork.image.museumOriginal=false],
  ["provisional external image",x=>x.artwork.image.path="https://example.org/thumb.jpg"],
  ["unapproved rights",x=>x.artwork.source.rights="UNKNOWN"],
