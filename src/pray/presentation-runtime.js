@@ -13,6 +13,7 @@ import {loadTenebraeHour} from "./tenebrae-1960.js";
 import {renderTenebraeBody} from "./tenebrae-presentation.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { rosaryGuideSections } from "./rosary-guide-data.js";
+import { rosaryNamedChapters,rosaryCurrentChapter } from "./rosary-card-chapters.js";
 import { divineMercySteps, mercyStepText, MERCY_WITNESSES, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
@@ -1162,6 +1163,51 @@ function prepareRosaryActive(r){
  ].join(' · ');
  return true;
 }
+function installRosaryNamedTimeline(r){
+ const info=rosaryLiveInfo(),shell=r?.querySelector(".pbShell");
+ if(!info?.steps?.length||!shell||!shell.querySelector("[data-lab-rosary-next]"))return false;
+ const titles=FS_MYSTERIES[info.set]?.items?.[isFr()?"fr":"en"]||[];
+ const chapters=rosaryNamedChapters(info.steps,{set:info.set,french:isFr(),titles});
+ const selected=rosaryCurrentChapter(chapters,info.index);
+ let timeline=shell.querySelector(":scope > .aoRosaryNamedTimeline");
+ if(!timeline){
+  timeline=document.createElement("nav");timeline.className="aoDevoTimeline aoRosaryNamedTimeline";
+  timeline.dataset.aoRosaryNamedTimeline="1";
+  timeline.setAttribute("aria-label",L("Rosary prayer cards","Cartes du Rosaire"));
+  timeline.addEventListener("click",event=>{
+   const button=event.target.closest("[data-ao-rosary-chapter]");
+   if(!button)return;
+   const start=Number(button.dataset.aoRosaryChapter);
+   const state=rosaryLiveInfo();
+   if(!state||!Number.isInteger(start)||start<0||start>=state.steps.length)return;
+   event.preventDefault();event.stopPropagation();
+   if(window.AO_ROSARY_V381?.setStep?.(start)!==true)return;
+   setTimeout(decorateRosary,0);
+  });
+ }
+ const key=info.set+":"+lang()+":"+chapters.map(c=>c.id+":"+c.start).join("|");
+ if(timeline.dataset.aoRosaryPlan!==key){
+  timeline.dataset.aoRosaryPlan=key;
+  const stops=document.createElement("div");stops.className="aoDevoStops";
+  chapters.forEach((chapter,index)=>{
+   const button=document.createElement("button");button.type="button";button.className="aoDevoStop";
+   button.dataset.aoRosaryChapter=String(chapter.start);
+   const number=document.createElement("span");number.className="aoDevoStopNumber";number.textContent=String(index+1).padStart(2,"0");
+   const title=document.createElement("span");title.className="aoDevoStopTitle";title.textContent=chapter.title;
+   button.append(number,title);stops.append(button);
+  });
+  timeline.replaceChildren(stops);
+ }
+ [...timeline.querySelectorAll("[data-ao-rosary-chapter]")].forEach((b,i)=>{
+  b.classList.toggle("active",i===selected);
+  b.setAttribute("aria-current",i===selected?"step":"false");
+ });
+ const options=shell.querySelector(":scope > .aoRosaryActiveOptions");
+ const head=shell.querySelector(":scope > .lab-view-head");
+ const after=options||shell.querySelector(":scope > .aoRosaryFaithfulRail")||head;
+ if(after&&timeline.previousElementSibling!==after)after.insertAdjacentElement("afterend",timeline);
+ return true;
+}
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  // Montfort's historical methods cover fifteen traditional mysteries only.
@@ -1188,6 +1234,7 @@ function decorateRosary(){
  prepareRosaryOpening(r);
  prepareRosaryActive(r);
  declutterRosaryDonor(r);
+ installRosaryNamedTimeline(r);
 }
 function confessionModeLabel(path){
  const p=confessionPath(path);
