@@ -63,8 +63,9 @@ const syntheticApproval={
  association:{status:"APPROVED",relationship:"EXACT_EPISODE",sceneKey:source.scenes[74].sceneKey,
   reference:"John 2:13–22",eventKey:"biblical:event:jerusalem-temple-e3"},
  artwork:{id:"museum-example-001",medium:"painting",title:"Synthetic test painting",
-  artist:"Example Artist",source:{rights:"CC0",objectUrl:"https://museum.example.org/object/1"},
-  review:{status:"APPROVED",artistic:"APPROVED",image:"PASS",crop:"PASS"},
+  artist:"Example Artist",source:{rights:"CC0",objectUrl:"https://www.metmuseum.org/art/collection/search/438724"},
+  review:{status:"APPROVED",source:"MUSEUM_API_CC0_VERIFIED",rights:"MUSEUM_API_CC0_VERIFIED",
+   artistic:"APPROVED",image:"PASS",crop:"PASS"},
   image:{path:"assets/sacred-art/test-original.webp",width:3200,height:2900,
    sha256:"a".repeat(64),colour:true,museumOriginal:true,frameFree:true,glareFree:true}}
 };
@@ -84,6 +85,9 @@ for(const [name,change] of [
  ["non original image",x=>x.artwork.image.museumOriginal=false],
  ["provisional external image",x=>x.artwork.image.path="https://example.org/thumb.jpg"],
  ["unapproved rights",x=>x.artwork.source.rights="UNKNOWN"],
+ ["unverified museum",x=>x.artwork.source.objectUrl="https://unverified.example.net/art/1"],
+ ["rights-review still held",x=>x.artwork.review.rights="PENDING"],
+ ["museum object source not corroborated",x=>x.artwork.review.source="SEARCH_SNIPPET"],
  ["excluded artist",x=>x.artwork.artist="El Greco"]
 ]){
  const changed=structuredClone(syntheticApproval);change(changed);
