@@ -54,8 +54,16 @@ def main():
          "selectionId":rec["selected_artwork_id"],"museumSource":item["source"],"inventory":item["inventory"],"commonsFile":item["file"],
          "publicationApproved":False,"cropApproved":False,"commerceRightsCleared":False,"status":"PENDING_SOURCE_AUDIT"}
     try:
-      assert rec["selected_artwork"].get("source_url") and rec["selected_artwork"]["source_url"]==item["source"]
+      exported=rec["selected_artwork"].get("source_url") or ""
+      # The earlier Restout export points to a Google search rather than its
+      # actual Louvre object. Do not confuse a search link with object identity.
+      # The source-triage ledger established exact Louvre INV 20303.
+      if exported.startswith("https://") and "google.com/search" not in exported:
+        assert exported==item["source"], "User's known direct object URL differs"
       assert item["source"]==objectrows[item["subjectId"]]["verifiedSourceUrl"]
+      assert item["inventory"]==objectrows[item["subjectId"]]["verifiedInventory"] or (
+        item["subjectId"]=="BIB-G01" and objectrows[item["subjectId"]]["verifiedInventory"]=="PRADO_OBJECT_PAGE") or (
+        item["subjectId"]=="DEV-06" and objectrows[item["subjectId"]]["verifiedInventory"]=="PRADO_OBJECT_PAGE")
       assert not re.search("El Greco|Fra Angelico",row["artist"],re.I)
       js,_=get(API+"?action=query&format=json&prop=imageinfo&iiprop=url%7Csize%7Csha1%7Cextmetadata&titles=File%3A"+requests.utils.quote(item["file"],safe=""),True)
       pages=list(js["query"]["pages"].values())
