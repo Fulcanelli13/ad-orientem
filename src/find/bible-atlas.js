@@ -118,15 +118,24 @@ export const ATLAS_GEO=Object.freeze({
 export function buildBibleAtlas(records){
  const extraPlaces=Object.entries(ATLAS_PLACE_LABELS).map(([id,titles])=>({id,title_en:titles[0],title_fr:titles[1]}));
  const byId=new Map([...((Array.isArray(records)?records:[])),...extraPlaces].map(row=>[row.id,row]));
- return SEQUENCE_ALL.map((s,index)=>{
+ // Stable content identity survives insertions and story reordering. Numeric
+ // indices are presentation positions, NEVER a source key for artwork or people.
+ const stops=SEQUENCE_ALL.map((s,index)=>{
   const [era,placeId,eventId,en,fr,passage]=s,place=byId.get(placeId),event=place?.events?.find(e=>e.id===eventId);
   if(placeId&&!place)throw new Error("Atlas missing place "+placeId);
   if(eventId&&!event)throw new Error("Atlas missing episode "+eventId);
-  return Object.freeze({index,era,placeId,geo:ATLAS_GEO[placeId]??null,title_en:event?.title_en??en,title_fr:event?.title_fr??fr,
-   reference:event?.reference??passage,place_en:place?.title_en??"",place_fr:place?.title_fr??"",
+  const reference=event?.reference??passage;
+  const stablePassage=String(reference??"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  if(!stablePassage)throw new Error("Atlas episode lacks stable Scripture identity");
+  const eventKey=eventId?"biblical:event:"+eventId:"biblical:passage:"+stablePassage;
+  return Object.freeze({index,eventKey,sourceEventId:eventId??null,era,placeId,geo:ATLAS_GEO[placeId]??null,title_en:event?.title_en??en,title_fr:event?.title_fr??fr,
+   reference,place_en:place?.title_en??"",place_fr:place?.title_fr??"",
    summary_en:s[6]??(event?place?.summary_en:(en?en+". "+passage+".":ERAS[era][2])),
    summary_fr:s[7]??(event?place?.summary_fr:(fr?fr+". "+passage+".":ERAS[era][3]))});
  });
+ if(stops.some(s=>!s.eventKey)||new Set(stops.map(s=>s.eventKey)).size!==stops.length)
+  throw new Error("Atlas stable event key collision");
+ return stops;
 }
 export function atlasMapItems(stops,index){
  const active=stops[index],seen=new Map();if(!active)return [];
