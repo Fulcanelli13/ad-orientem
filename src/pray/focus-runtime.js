@@ -102,6 +102,8 @@ function sync(){
   raf=0;
   const {mount,main,view}=context();
   if(!mount||!main||!["angelus","stations"].includes(view))return;
+  // A dual-axis card owns its own paragraph scroll and focus territory.
+  if(view==="angelus"&&main.querySelector('[data-ao-devotional-deck]'))return;
   mount.dataset.aoFocusContract="v3.4.10";
   if(view==="angelus")angelus(main,mount);
   else stations(main,mount);
