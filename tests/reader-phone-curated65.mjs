@@ -72,18 +72,22 @@ try{
     // a prayer card; horizontal gestures must move EXACTLY one card each way.
     // Historical 48-card touch coverage cannot certify the new curated model.
     if(width===390 && lang==="en" && !secondConfiteor){
-      const target=await page.evaluate(()=>{
-        const api=window.__AO_PHONE_PREVIEW,rows=api.model.cards;
-        for(let i=8;i<rows.length-4;i++){
-          api.showSequence(rows[i].sequence);
-          const el=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
-          if(el&&el.scrollHeight-el.clientHeight>100)
-            return {index:i,sequence:rows[i].sequence};
-        }
-        return null;
+      // Allow each card's DOM to settle before measuring it. Sampling
+      // several showSequence calls within one evaluate sees stale card geometry.
+      const candidates=await page.evaluate(()=>{
+        const rows=window.__AO_PHONE_PREVIEW.model.cards;
+        return rows.slice(8,-4).map((card,index)=>({index:index+8,sequence:card.sequence}));
       });
+      let target=null;
+      for(const candidate of candidates){
+        await page.evaluate(seq=>window.__AO_PHONE_PREVIEW.showSequence(seq),candidate.sequence);
+        await page.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
+        const measure=await page.locator("#ao-r17-native-reader-preview .ao-prayer-card")
+          .evaluate(el=>({max:el.scrollHeight-el.clientHeight,client:el.clientHeight}));
+        if(measure.max>100){target=candidate;break;}
+      }
       assert.ok(target,"Curated production model has no vertically scrollable prayer card");
-      await page.waitForTimeout(300);
+      await page.waitForTimeout(250);
       const scroller=page.locator("#ao-r17-native-reader-preview .ao-prayer-card");
       const bounds=await scroller.boundingBox();
       assert.ok(bounds&&bounds.width>180&&bounds.height>180,"No phone prayer swipe territory");
