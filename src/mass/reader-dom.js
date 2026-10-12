@@ -881,6 +881,23 @@ button.ao-schola-control{cursor:pointer}
 }
 
 
+/* Discoverable yet subdued horizontal prayer navigation. At .34 and .42
+   opacity the real phone arrows/counter disappeared into the dark canvas.
+   Scope to curated LIVE + prelude; MISSAL retains its book-specific chrome. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-nav button,
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-shell .ao-reader-nav button{
+  color:#c1bcaf;opacity:.60
+}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-progress,
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-shell .ao-reader-progress{
+  color:#c1b7a3;opacity:.80;font-size:10px
+}
+
+
 `;
 
 function esc(value){
