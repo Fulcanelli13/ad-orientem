@@ -161,7 +161,7 @@ try{
  await page.locator("#aoPray435930.open .aoMercyReader").waitFor({timeout:12000});
  assert.match(await page.locator("#aoPray435930.open .aoMercyPrayer").innerText(),/Au nom du Père/,
   "First-use offline Divine Mercy did not render French opening prayer");
- assert.match(await page.locator("#aoPray435930.open .aoMercyKicker").innerText(),/Prière 1 \/ 62/,
+ assert.match(await page.locator("#aoPray435930.open .aoMercyKicker").innerText(),/Prière 1 \/ 62/i,
   "First-use offline Divine Mercy lost its French prayer counter");
  await page.locator("#aoPray435930.open [data-p435930-mercy-next]").first().evaluate(el=>el.click());
  assert.match(await page.locator("#aoPray435930.open .aoMercyControls").innerText(),/2 \/ 62/,
