@@ -29,6 +29,25 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoDevoCardScroll .aoDevoAppendixLine{display:block;padding:8px 0}
 #aoPray435930 .aoDevoCardScroll .aoDevoAppendixUnit [data-face-v],#aoPray435930 .aoDevoCardScroll .aoDevoAppendixUnit [data-face-la]{display:block}
 #aoPray435930 .aoDevoCardScroll [data-face-v][hidden],#aoPray435930 .aoDevoCardScroll [data-face-la][hidden]{display:none!important}
+
+/* Shared Stations/Mercy reader: the prayer text scrolls, never the title rail. */
+#aoPray435930 .aoDevoSequenceTimeline{display:grid!important;grid-template-columns:44px minmax(0,1fr) 44px!important;gap:5px!important;align-items:center;max-width:100%;width:100%;min-width:0;overflow:visible!important;position:sticky;top:74px;z-index:19;background:var(--bg,#080c12);padding:5px 2px!important;border-block:1px solid var(--border,rgba(255,255,255,.14))}
+#aoPray435930 .aoDevoSequenceTimeline .aoDevoStops{min-width:0;display:flex!important;overflow-x:auto!important;max-width:100%;padding:0!important}
+#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop{flex:0 0 max(116px,42%)!important;min-height:54px;max-width:none;margin:0!important;display:grid!important;align-content:center}
+#aoPray435930 .aoDevoSequenceTimeline .aoDevoStopTitle{font:500 12px/1.22 Georgia,serif;white-space:normal}
+#aoPray435930 .aoDevoSequenceTimeline .aoDevoStopNumber{font:600 10px/1.1 system-ui,sans-serif}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll{padding:18px 16px 27dvh;display:block;min-height:min(350px,52dvh)}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll>*{margin-block:0 22px}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930Flip{max-width:100%;white-space:normal}
+#aoPray435930 .aoMercyReader .aoDevoCardScroll{gap:18px;padding:18px 14px 30dvh;min-height:min(350px,52dvh)}
+#aoPray435930 .aoMercyLine{display:block;flex:0 0 auto;min-width:0;margin:0!important;padding:18px 8px;border-bottom:1px solid var(--border,rgba(255,255,255,.10));background:transparent!important;box-shadow:none!important;transform:none!important;min-height:unset!important;border-radius:0!important;text-align:left}
+#aoPray435930 .aoMercyLine p{font:400 clamp(18px,4.5vw,22px)/1.62 Georgia,serif;margin:8px 0 0;color:var(--text,#f1e7d7)}
+#aoPray435930 .aoMercyLine small{font:600 11px/1.4 system-ui,sans-serif;letter-spacing:.08em;color:var(--liturgical,#d8bd7d)}
+#aoPray435930 .aoMercyReader .aoMercyCurrentGroup{font:500 13px/1.5 Georgia,serif;color:var(--muted,#aeb2b8);margin:6px 0 10px}
+#aoPray435930 .aoMercyReader .aoMercyKicker{font-size:11px;margin:4px 0}
+#aoPray435930 .aoMercyReader .aoDevoCardTitle{font-size:clamp(23px,5.6vw,30px)}
+@media(prefers-reduced-motion:reduce){#aoPray435930 .aoMercyLine{transition:none!important}}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
