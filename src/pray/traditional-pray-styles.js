@@ -51,6 +51,10 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 
 /* Shared daily/examen presentation: one source-owned stage per named card. */
 /* Holy Name and meal stages reuse the same quiet source-owned reader. */
+/* With only two meal stops, both should be fully readable on a 320px phone. */
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="meals"] .aoDevoSequenceTimeline .aoDevoStop{flex:1 1 0!important;min-width:0;max-width:none;padding-inline:6px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="meals"] .aoDevoSequenceTimeline .aoDevoStops{width:100%;gap:4px}
+
 #aoPray435930 .aoTP381DonorBody .aoTP381LitanyLine{margin:0 0 9px;font:400 clamp(16px,4.1vw,20px)/1.62 var(--ao-font-liturgical,Georgia,serif)}
 #aoPray435930 .aoTP381DonorBody .aoTP381LitanyLine:has(+.aoTP381LitanyLine){min-height:1.4em}
 #aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381PrayerCard{border:0;margin:0;padding:8px 0 12px}
