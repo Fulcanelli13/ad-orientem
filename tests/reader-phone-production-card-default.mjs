@@ -95,8 +95,11 @@ try{
       ["ASP-010","ASP-020","ASP-030","ASP-040","ASP-050","ASP-060"],
       option.label+" all six original source events must be conserved");
     assert.deepEqual(traversed.errors,[],option.label+" R20 handoff error");
-    assert.equal(traversed.after.title,"At the Foot of the Altar · Opening and Psalm 42",
-      option.label+" must resume entire source-first foot-of-altar, not skip to Introit");
+    const firstMassTitle=option.curated==="true"
+      ? "At the Foot of the Altar · Opening and Psalm 42"
+      : "Introit & Preparatory Prayers";
+    assert.equal(traversed.after.title,firstMassTitle,
+      option.label+" must resume its form-appropriate first Mass card");
     assert.match(traversed.after.progress,new RegExp("1 / "+option.visible+"$"),
       option.label+" must display live card count after R20 handoff");
     assert.notEqual(traversed.after.state.specialRite,"ASPERGES",
@@ -112,7 +115,8 @@ try{
     });
     assert.equal(roundtrip.returned.rite,"ASPERGES",option.label+" Previous must reenter R20");
     assert.equal(roundtrip.returned.id,"ASP-R05",option.label+" backward handoff lands on closing rite card");
-    assert.equal(roundtrip.title,"At the Foot of the Altar · Opening and Psalm 42");
+    assert.equal(roundtrip.title,firstMassTitle,
+      option.label+" previous/next must retain the selected presentation model");
     assert.match(roundtrip.progress,new RegExp("1 / "+option.visible+"$"));
     // Enter a named source paragraph card and verify that the active ritual
     // remains owned by the ordinary reader, with no rite state contamination.
