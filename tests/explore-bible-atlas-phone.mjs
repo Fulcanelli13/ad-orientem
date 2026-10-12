@@ -34,6 +34,16 @@ try{
      await page.waitForTimeout(120);
      const geometry=await page.evaluate(()=>({width:innerWidth,documentWidth:document.documentElement.scrollWidth,rootWidth:document.querySelector("#ao-find-modular-root")?.getBoundingClientRect().width}));
      assert.ok(geometry.documentWidth<=geometry.width+1,name+" page overflow at "+size+"px: "+JSON.stringify(geometry));
+     if(name==="cinematic-incarnation"||name==="genesis-branch-tree"){
+       const visibility=await page.evaluate(()=>{
+         const selectors=[".aoBibleStudyTabs [aria-pressed=true]",".aoBibleStudyChapters [aria-pressed=true]",".aoBibleReviewTabs [aria-pressed=true]"];
+         return selectors.map(selector=>document.querySelector("#ao-find-modular-root "+selector)).filter(Boolean).map(button=>{
+           const outer=button.parentElement.getBoundingClientRect(),inner=button.getBoundingClientRect();
+           return {label:button.textContent,visible:inner.left>=outer.left-2&&inner.right<=outer.right+2};
+         });
+       });
+       assert.ok(visibility.length>=1&&visibility.every(x=>x.visible),name+" active tab/chapter not visible at "+size+": "+JSON.stringify(visibility));
+     }
      await page.screenshot({path:resolve(screenshotFolder,name+"-"+size+".png"),fullPage:false,animations:"disabled"});
    }
    await page.setViewportSize({width:390,height:844});
