@@ -54,8 +54,9 @@ assert.match(en,/data-bible-scene-stage/,"Theatre renders an actual scene-focuse
 assert.match(en,/aoBibleStageReading/,"narrative is visually isolated from source metadata");
 assert.match(en,/aoBibleStageEvidence/,"source qualification stays available on stage");
 assert.match(en,/Chapter context/,"chapter background stays accessible but not repeated in the hero");
-assert.ok(en.indexOf("data-bible-study-timeline")<en.indexOf("data-bible-scene-stage"),
- "scene navigation precedes the focused reading region");
+const theatreMarkup=en.slice(en.indexOf('<section class="aoFindSurface aoBibleStudy"'));
+assert.ok(theatreMarkup.indexOf('<nav class="aoBibleStudySceneTimeline"')<theatreMarkup.indexOf('<article class="aoBibleStudyScene"'),
+ "scene navigation precedes the focused reading region (ignore earlier CSS selectors)");
 assert.ok(en.indexOf("data-bible-scene-stage")<en.indexOf("Research comparison"),
  "technical editorial notice must no longer dominate the top of the phone reader");
 assert.match(en,/prefers-reduced-motion:reduce/,"stage motion respects user settings");
