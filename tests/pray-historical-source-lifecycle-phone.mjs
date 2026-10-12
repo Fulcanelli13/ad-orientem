@@ -124,8 +124,24 @@ try{
   globalThis.AO_RUNTIME_V8.scriptureService.load=globalThis.__TEST_originalScriptureLoad;
   localStorage.removeItem("ao2:v435930:ws:en:litany-saints-1883-en-v2");
  });
+ // A truncated saved historical transcript must not strand users in a
+ // permanent error loop: source bounding rejects it and clears the cache key.
+ const invalid=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
+ await invalid.goto("http://127.0.0.1:4299/index.html",{waitUntil:"domcontentloaded"});
+ await invalid.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function");
+ await invalid.evaluate(()=>{
+  localStorage.setItem("ao2:v435930:ws:en:litany-saints-1883-en-v2",
+   "The Litany of the Saints.\\nLord, have mercy on us.\\nHoly Mary, pray for us.\\nSt. Peter, pray for us.");
+  globalThis.AO_PRAY_V435930.open("pray.litany_saints",{returnContext:null});
+ });
+ await invalid.waitForSelector("#aoPray435930.open [data-p435930-lit-retry]",{timeout:12000});
+ assert.equal(await invalid.evaluate(()=>localStorage.getItem("ao2:v435930:ws:en:litany-saints-1883-en-v2")),null,
+  "Truncated historical Litany cache poisons every subsequent Retry");
+ assert.equal(await invalid.locator(".aoDevoCard[data-ao-devo-card^='litany-']").count(),0,
+  "Truncated historical witness incorrectly rendered as a prayer");
+ await invalid.close();
  assert.deepEqual(errors,[],"Browser exceptions: "+errors.join(" | "));
- console.log("PASS strict source statuses, same-source recovery, dynamic focus and historical Litany pagination with EXPLICIT TEST FIXTURES");
+ console.log("PASS strict source statuses, same-source recovery, dynamic focus, Litany pagination and malformed-cache eviction with EXPLICIT TEST FIXTURES");
  console.log("NOT_CERTIFIED genuine Litany witness, Scripture original edition, offline fresh-install availability");
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done));}
