@@ -1,0 +1,93 @@
+{
+  "schema": "AO_SACRED_ART_SELECTED_COMMONS_VISUAL_QA_V1",
+  "reviewDate": "2026-10-12",
+  "provenance": {
+    "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38252699382",
+    "artifactId": 11748477515,
+    "artifactName": "selected-commons-12oct-originals-license-hold",
+    "researchScope": "Three original exact selected paintings from Wikimedia Commons; API photo rights and original SHA-1/SHA-256 checked against downloaded bytes. Rights claims remain under jurisdiction-specific and platform release review."
+  },
+  "summary": {
+    "acquiredSourceReferenceFiles": 3,
+    "releaseReady": 0,
+    "visuallyBlocked": 1,
+    "photoLicensesGloballyCleared": 0,
+    "photoCropsApproved": 0
+  },
+  "works": [
+    {
+      "subjectId": "BIB-G01",
+      "archiveCandidateId": "commons-rubens-prado-epiphany-20261012",
+      "artist": "Peter Paul Rubens",
+      "title": "The Adoration of the Magi",
+      "museum": "Museo del Prado",
+      "museumInventory": "P001638",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens,_Prado).jpg",
+      "width": 3051,
+      "height": 2131,
+      "sha256": "b2f6afdaed9a31f351a44aede5cdf7621d10847cbafa39f7f1e4fa23333f2ded",
+      "sourceImageRights": "WIKIMEDIA_PD_ART_PDM_CROSS_JURISDICTION_HOLD",
+      "photoImageUsability": "EDITORIAL_REVIEW_REQUIRED",
+      "visualFinding": "Excellent densely populated horizontal work with the complete central Magi narrative; a 9:16 cover crop would eliminate essential actors. Full aspect ratio required for phone and desktop.",
+      "defaultDisplay": "FULL_COMPOSITION_CONTAIN",
+      "frameFreeCertified": false,
+      "glareFreeCertified": false,
+      "rightsCleared": false,
+      "appPublicationApproved": false
+    },
+    {
+      "subjectId": "DEV-06",
+      "archiveCandidateId": "commons-rubens-prado-immaculate-20261012",
+      "artist": "Peter Paul Rubens",
+      "title": "The Immaculate Conception",
+      "museum": "Museo del Prado",
+      "museumInventory": "P01627",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Immaculate_Conception_(Prado).jpg",
+      "width": 2166,
+      "height": 3189,
+      "sha256": "201df794fff9663520c1b23123052ecb5ac87012548336ebc4ea34f55aff78fa",
+      "sourceImageRights": "WIKIMEDIA_PD_ART_PDM_CROSS_JURISDICTION_HOLD",
+      "photoImageUsability": "EDITORIAL_REVIEW_REQUIRED",
+      "visualFinding": "Composition is naturally portrait and can be preserved without cropping. Remains a source-image candidate until optical quality, frame-free and app usage rights are signed off.",
+      "defaultDisplay": "FULL_COMPOSITION_CONTAIN",
+      "frameFreeCertified": false,
+      "glareFreeCertified": false,
+      "rightsCleared": false,
+      "appPublicationApproved": false
+    },
+    {
+      "subjectId": "ROS-13",
+      "archiveCandidateId": "commons-restout-louvre-pentecost-20261012",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "museum": "Musée du Louvre",
+      "museumInventory": "INV 20303",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Restout_-_La_Pentec%C3%B4te_01.jpg",
+      "width": 4037,
+      "height": 2444,
+      "sha256": "c32547f474f4908331c9e7a013809076a65bbbcdc2f8cec6c5b6af2f7e6a1b09",
+      "sourceImageRights": "WIKIMEDIA_PD_ART_PDM_CROSS_JURISDICTION_HOLD",
+      "photoImageUsability": "REJECT_FOR_APP_PHOTOGRAPHIC_GLARE_AND_VISIBLE_FRAME",
+      "visualFinding": "Actual photograph shows a prominent gold picture frame and strongly uneven light/glare across the top center of painting, contrary to curatorial reproduction requirements. The selected Restout artwork remains approved by user as a subject; only this photographic reproduction is rejected. Find clean museum studio reproduction of the exact INV 20303.",
+      "defaultDisplay": "NONE_PENDING_STUDIO_REPRODUCTION",
+      "frameFreeCertified": false,
+      "glareFreeCertified": false,
+      "rightsCleared": false,
+      "appPublicationApproved": false
+    }
+  ],
+  "policy": {
+    "artworkSubjectDecisionUnchanged": true,
+    "noPhotoSubstitutionForPainting": true,
+    "excludePictureFrames": true,
+    "excludeWallExhibitionImagesAndGlare": true,
+    "retainProvenanceForRejectedPhoto": true,
+    "doNotPromoteEvenHighResolutionResearchFiles": true
+  },
+  "nextSteps": [
+    "Search Louvre/RMN for clean original Restout INV 20303 with commercial image permission; no upload of the current framed museum gallery photograph.",
+    "Find official Prado studio images of both user-selected Rubens paintings with explicit applicable reproduction licenses; Commons PD-Art data alone is not museum licensing.",
+    "Preserve true original-image aspect ratio for Epiphany; use contain rather than portrait cover.",
+    "Do not add any of these to the production asset manifest before copyright and final visual acceptance."
+  ]
+}
