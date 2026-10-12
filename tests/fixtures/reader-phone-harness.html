@@ -19,6 +19,11 @@ const params=new URLSearchParams(location.search);
 const lang=params.get("lang")==="fr"?"fr":"en";
 const requestedMode=String(params.get("mode")||"LIVE").toUpperCase();
 const mode=["MISSAL","SIMPLE","LIVE"].includes(requestedMode)?requestedMode:"LIVE";
+const requestedFamily=String(params.get("family")??"VOTIVE").toUpperCase();
+const family=requestedFamily==="REQUIEM"?"REQUIEM":"VOTIVE";
+const isPrint=params.get("print")==="1";
+const isRequiem=!isPrint&&family==="REQUIEM";
+const selectedOverlay=isPrint?[]:[isRequiem?"REQUIEM":"VOTIVE_PROPER"];
 const t=(lat,en,fr)=>lang==="fr"?({lat,en:"",fr}):({lat,en,fr:""});
 const proper={
   sourcePath:"Sancti/10-07",
@@ -49,11 +54,13 @@ const resolvedMass={
   date:fixtureDate,
   form:requestedForm,
   presentationMode:mode,
-  actualCelebration:{id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
+  actualCelebration:isRequiem
+    ? {id:"requiem",type:"REQUIEM",title:"Requiem"}
+    : {id:"holy_rosary",type:isPrint?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
   calendarCelebration:{id:"Tempora/Pent18-0",type:"CALENDAR",title:"Sunday"},
-  explicitlySelectedCelebration:params.get("print")!=="1",
+  explicitlySelectedCelebration:!isPrint,
   proper:{status:"READY",data:proper,sourcePath:"Sancti/10-07"},
-  overlays:params.get("print")==="1"?[]:["VOTIVE_PROPER"],
+  overlays:selectedOverlay,
   precedingRites,
   followingActions:[],
   distinctRite:null,
@@ -63,13 +70,13 @@ const prepared={
   schema:"ao-mass-entry-prepared-v1",
   session:{
     resolvedMass,
-    plan:(requestedForm==="SOLEMN"||requestedForm==="LOW")
+    plan:(requestedForm==="SOLEMN"||requestedForm==="LOW"||isRequiem)
       ? compileMassPlan(resolvedMass)
       : {
       kind:"MASS",
       precedingGraphs:precedingRites,
       followingGraphs:[],
-      overlayGraphs:params.get("print")==="1"?[]:["VOTIVE_PROPER"],
+      overlayGraphs:selectedOverlay,
       massEntry:(withPalm||withAsh)?"INTROIT":"FOOT_CLUSTER",
       normalLastGospel:withPalm?false:true,
     },
@@ -85,6 +92,7 @@ const prepared={
 };
 
 try{
+  window.__AO_PHONE_SCENARIO=Object.freeze({form:requestedForm,family:isPrint?"CALENDAR":family,rite,mode});
   if(params.get("production")==="1"){
     // Exercise the actual app entry/default-card selection, not a mock mode.
     const {mountR17Preview}=await import("../../src/mass/browser-entry.js");

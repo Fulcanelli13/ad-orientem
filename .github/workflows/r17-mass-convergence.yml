@@ -58,6 +58,13 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: npm run test:phone
+      - name: Retain Batch 4 four-form LIVE phone acceptance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-live-batch4-phone-review
+          path: artifacts/mass-live-batch4/
+          if-no-files-found: ignore
 
   curated65-phone:
     # Deliberately independent of the broad npm test job: an unrelated

@@ -1074,6 +1074,16 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
 
+  // The 1962 elevation itself has a certified exact cue and frozen master.
+  // Low Mass may lack a single icon for its compound priest-action label.
+  // That must not leave the elevation cinematic empty: use the exact event's
+  // existing icon only when its independently certified cinematic owns it.
+  const exactElevationArtwork=moment.cinematic?.owner==="R17_EXACT_ELEVATION_CINEMATIC" &&
+    moment.cinematic?.kind==="ELEVATION"
+    ? (moment.cinematic.cueId==="AO.SM.C0174" ? "priest_elevation"
+      : moment.cinematic.cueId==="AO.SM.C0181" ? "priest_elevate_chalice_rich" : null)
+    : null;
+
   const schola = persist(moment.schola, previous.schola);
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
   const guide = moment.guide?.registryAvailable === true && moment.guide?.text
@@ -1113,7 +1123,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     scholaVisible:!sharedTextWithSchola && Boolean(textValue(schola)),
     guide,
     priestPositionIconKey:moment.priestPositionIconKey ?? null,
-    priestActionIconKey:moment.priestActionIconKey ?? null,
+    priestActionIconKey:moment.priestActionIconKey ?? exactElevationArtwork,
     postureIconKey:moment.postureIconKey ?? null,
     postureChangeIconKey:moment.postureChangeIconKey ?? null,
     gestureIconKey:moment.gestureIconKey ?? null,
