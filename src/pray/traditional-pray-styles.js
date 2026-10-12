@@ -51,6 +51,12 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 
 /* Shared daily/examen presentation: one source-owned stage per named card. */
 
+/* Immediate pastoral recourse remains discoverable; devotional reading is optional. */
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="goodDeath"] .aoTP381PastoralShortcut{margin:4px 12px 8px;border:0}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="goodDeath"] .aoTP381PastoralShortcut button{padding:7px 4px 11px;border-bottom:1px solid var(--liturgical-border,rgba(199,174,109,.4))}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="goodDeath"] .aoTP381PastoralShortcut b{font-size:.9rem;color:var(--liturgical,#c7ae6d)}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="goodDeath"] .aoTP381PastoralShortcut small{font-size:.73rem}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="goodDeath"] .aoTP381SecondaryOptions{margin-top:16px}
 /* Hymns retain authentic versification in an uncluttered source-owned card. */
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="hymns"] .aoTP381HymnSubtitle{margin:0 0 18px;color:var(--muted,#aeb2b8);font:italic 400 .93rem/1.45 var(--ao-font-liturgical,Georgia,serif)}
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="hymns"] .aoTP381HymnStanza{margin:0 0 22px}
