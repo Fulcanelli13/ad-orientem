@@ -225,6 +225,20 @@ const SHELL_STYLE = `
   content:"RUBRIC";display:block;margin-bottom:5px;font:800 7px/1 var(--ao-font-ui,system-ui,sans-serif);
   letter-spacing:.14em;color:#738278
 }
+/* R20's three source-owned action-only screens have no prayer words.
+   Center the existing participation guide like a restrained interlude,
+   clearly distinct from liturgical Latin and without a fabricated cue. */
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-paragraph[data-kind="RUBRIC"]:only-child{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:min(42vh,360px);max-width:36ch;margin:0 auto;padding:30px 18px;
+  border:0;border-radius:0;background:transparent;text-align:center;
+  color:var(--ao-text-primary,#e8dfcb);
+  font:italic 500 clamp(1.05rem,4vw,1.35rem)/1.62 var(--ao-font-liturgical,Georgia,serif);
+  letter-spacing:.015em;opacity:1
+}
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-paragraph[data-kind="RUBRIC"]:only-child::before{content:none}
 .ao-reader-paragraph[data-kind="RUBRIC"][data-state-duplicate="true"]{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"][data-state-duplicate="true"]{display:block}
 .ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"] .ao-line-primary{
@@ -864,6 +878,23 @@ button.ao-schola-control{cursor:pointer}
      was 69px too tall on phone Chromium). Header/ribbon is 120px; the
      48px residual margin keeps the real scroller above the floating dock. */
   height:calc(100dvh - var(--ao-schola-reserve) - 168px)!important
+}
+
+
+/* Discoverable yet subdued horizontal prayer navigation. At .34 and .42
+   opacity the real phone arrows/counter disappeared into the dark canvas.
+   Scope to curated LIVE + prelude; MISSAL retains its book-specific chrome. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-nav button,
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-shell .ao-reader-nav button{
+  color:#c1bcaf;opacity:.60
+}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-progress,
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-shell .ao-reader-progress{
+  color:#c1b7a3;opacity:.80;font-size:10px
 }
 
 

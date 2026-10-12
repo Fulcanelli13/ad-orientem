@@ -98,12 +98,14 @@ export function buildAspergesPayload({graph,payload,riteContext={}}={}){
     formulaState,
     cards:freeze([
       freeze({
-        id:"ASP-R01",title:"Sunday Aspersion",sourceRecordIds:freeze(["ASP-010"]),
+        id:"ASP-R01",title:"Sunday Aspersion",titleFr:"Aspersion dominicale",sourceRecordIds:freeze(["ASP-010"]),
         actorScope:"ALL_FAITHFUL",posture:"STAND",paragraphs:freeze([]),
-        guide:"Stand for the Sunday sprinkling rite."
+        guide:"Stand for the Sunday sprinkling rite.",
+        guideFr:"Restez debout pour l'aspersion dominicale."
       }),
       freeze({
         id:"ASP-R02",title:formulaState.formula==="PASCHAL"?"Vidi aquam":"Asperges me",
+        titleFr:formulaState.formula==="PASCHAL"?"Vidi aquam":"Asperges me",
         sourceRecordIds:freeze(["ASP-020","ASP-030"]),
         actorScope:"ALL_FAITHFUL",posture:"STAND",paragraphs:freeze(chantRows),
         ministerOnly:freeze({
@@ -112,20 +114,22 @@ export function buildAspergesPayload({graph,payload,riteContext={}}={}){
         })
       }),
       freeze({
-        id:"ASP-R03",title:"When you are sprinkled",sourceRecordIds:freeze(["ASP-040"]),
+        id:"ASP-R03",title:"When you are sprinkled",titleFr:"Lorsque vous recevez l'aspersion",sourceRecordIds:freeze(["ASP-040"]),
         actorScope:"FAITHFUL_RECIPIENT",posture:"STAND",paragraphs:freeze([]),
         personalTrigger:"ACTUALLY_SPRINKLED",gesture:"MAKE_FULL_SIGN_OF_CROSS",
-        guide:"Make the Sign of the Cross when you are actually sprinkled."
+        guide:"Make the Sign of the Cross when you are actually sprinkled.",
+        guideFr:"Faites le signe de croix lorsque vous recevez effectivement l'aspersion."
       }),
       freeze({
-        id:"ASP-R04",title:"Versicles and Prayer",sourceRecordIds:freeze(["ASP-050"]),
+        id:"ASP-R04",title:"Versicles and Prayer",titleFr:"Versets et oraison",sourceRecordIds:freeze(["ASP-050"]),
         actorScope:"ALL_FAITHFUL",posture:"STAND",paragraphs:freeze(versicleRows),
-        guide:"Make the appointed responses."
+        guide:"Make the appointed responses.",guideFr:"Répondez aux versets prescrits."
       }),
       freeze({
-        id:"ASP-R05",title:"Mass begins",sourceRecordIds:freeze(["ASP-060"]),
+        id:"ASP-R05",title:"Mass begins",titleFr:"Début de la Messe",sourceRecordIds:freeze(["ASP-060"]),
         actorScope:"ALL",posture:"INHERIT",paragraphs:freeze([]),
-        handoff:"FOOT_CLUSTER",guide:"The Asperges is complete; the ordinary Mass begins at the Prayers at the Foot."
+        handoff:"FOOT_CLUSTER",guide:"The Asperges is complete; the ordinary Mass begins at the Prayers at the Foot.",
+        guideFr:"L'aspersion est terminée ; la Messe commence par les prières au bas de l'autel."
       }),
     ])
   });
