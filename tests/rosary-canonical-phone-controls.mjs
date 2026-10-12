@@ -198,7 +198,15 @@ try{
      const events=[];
      node.addEventListener("click",e=>events.push({kind:"click",tag:e.target.tagName,open:node.open}),true);
      node.addEventListener("toggle",()=>events.push({kind:"toggle",open:node.open}));
-     const before={open:node.open,connected:node.isConnected,html:summary.outerHTML.slice(0,280)};
+     const box=summary.getBoundingClientRect();
+     const ancestorInfo=[...function*(n){while(n&&n!==document){yield {
+       tag:n.tagName,id:n.id,cls:String(n.className||"").slice(0,70),
+       inert:n.inert,attrInert:n.hasAttribute?.("inert"),
+       disabled:n.disabled,
+       detailClosed:n.tagName==="DETAILS"&&!n.open
+     };n=n.parentElement}}(summary)].slice(0,10);
+     const before={open:node.open,connected:node.isConnected,html:summary.outerHTML.slice(0,280),
+       ancestorInfo,hit:document.elementFromPoint(box.x+box.width/2,box.y+box.height/2)?.outerHTML?.slice(0,180)};
      summary.click();
      return {before,after:{open:node.open,connected:node.isConnected},events};
    });
