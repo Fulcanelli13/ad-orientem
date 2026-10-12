@@ -370,7 +370,7 @@ export async function prepareNativeReaderPreview({
       Boolean(loadedRogations));
   const compatiblePrelude=preceding.length===0 ||
     (preceding.length===1 && preceding[0]==="ASPERGES" && Boolean(loadedAsperges) &&
-      String(plan?.massEntry??"").toUpperCase()==="FOOT_CLUSTER") ||
+      String(plan?.massEntry??"FOOT_CLUSTER").toUpperCase()==="FOOT_CLUSTER") ||
     explicitIntroitEntry;
   // Requiem and Holy Thursday retain their special-form reading ownership.
   // Generic following processions change no Ordinary Mass ending. Corpus
