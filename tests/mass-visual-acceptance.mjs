@@ -32,7 +32,7 @@ try{
   const page=await context.newPage();
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
-  await page.goto("http://127.0.0.1:4190/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
+  // This historical v1.80 visual donor suite certifies the explicit 48-card rollback.\n  // The current 64/65-card production default has dedicated LIVE and phone gates.\n  await page.goto("http://127.0.0.1:4190/index.html?aoR17Reader=native&aoLiveCards=48",{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true,null,{timeout:30000});
 
   const setup=await page.evaluate(async()=>{
