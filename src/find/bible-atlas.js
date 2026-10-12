@@ -148,6 +148,11 @@ export function atlasEraOverlay(era,lang){
 export function atlasDetail(s,lang){
  if(!s)return "";
  const geo=s.geo;
+ // A Gospel narrative's placement does not decide the disputed identity or
+ // historical timing of its parallels in the other Evangelists.
+ const sourceQualification=s.reference==="John 2:13–22"
+  ?L(lang,"John narrates this cleansing near the beginning of his Gospel. Its relationship to the Synoptic Passion accounts remains disputed.","Saint Jean raconte cette purification au début de son Évangile. Son rapport aux récits synoptiques de la Passion reste discuté.")
+  :"";
  const qualification=geo?.kind==="traditional"?L(lang,"Traditional site, not proof of the exact event location.","Site traditionnel, sans certitude sur le lieu exact de cet épisode.")
   :geo?.kind==="city_context"?L(lang,"City-level reference only, not the scene's precise location.","Repère de ville seulement, non le lieu précis de la scène.")
   :!geo?(s.placeId?L(lang,"A map pin has not yet been certified for this location.","Le repère de ce lieu reste à vérifier."):L(lang,"No earthly location is assigned to this episode.","Aucun lieu terrestre n’est attribué à cet épisode.")):"";
@@ -156,6 +161,7 @@ export function atlasDetail(s,lang){
  (s.placeId?'<p class="aoBibleAtlasPlace">'+esc(L(lang,s.place_en,s.place_fr))+'</p>':"")+
  '<p>'+esc(L(lang,s.summary_en,s.summary_fr))+'</p>'+
  (qualification?'<small class="aoBibleAtlasQualification">'+esc(qualification)+'</small>':"")+
+ (sourceQualification?'<small class="aoBibleAtlasQualification">'+esc(sourceQualification)+'</small>':"")+
  '<div class="aoBibleAtlasActions"><button type="button" data-ao-scripture-context="'+esc(s.reference)+'">'+esc(L(lang,"Read Scripture","Lire le passage"))+' · '+esc(s.reference)+'</button>'+
  (geo?'<a target="_blank" rel="noopener noreferrer" href="'+esc(geo.url)+'">'+esc(L(lang,"Map evidence","Source géographique"))+' ↗</a>':"")+'</div>';
 }
