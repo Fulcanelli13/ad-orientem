@@ -49,5 +49,8 @@ for(const issue of registry.holds){
  assert.equal(issue.passages.length,issue.atlasIndices.length,"every held canonical passage has an indexed citation");
  for(let i=0;i<issue.passages.length;i++)
   assert.equal(atlas[issue.atlasIndices[i]].reference,issue.passages[i],"held source must follow index migration: "+issue.id);
+ for(let i=0;i<issue.atlasIndices.length;i++)
+  assert.equal(atlas[issue.atlasIndices[i]].eventKey,issue.atlasEventKeys[i],
+   "stable event identity must survive chronology migration: "+issue.id);
 }
 console.log("PASS Atlas editorial hold registry: 5 source-bound release blockers; no false release sign-off");
