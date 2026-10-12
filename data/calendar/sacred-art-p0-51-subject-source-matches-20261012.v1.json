@@ -32,7 +32,11 @@
     "verifiedLisieuxCelineLikenessSharedBetweenTwoSubjects": 1,
     "completeBertinGreekDoctorsFromVersailles": 3,
     "sourceAuthenticatedNewAssignmentsInThisTurn": 12,
-    "researchedCandidatesAddedThisTurn": 9
+    "researchedCandidatesAddedThisTurn": 9,
+    "p0UnresolvedWithStrongNewSourceCandidates": 44,
+    "p0StillNeedingMasterpieceQualityOrIconException": 7,
+    "userApprovedNewSubjectSelections": 0,
+    "reproductionWorkInitiatedInCurrentPhase": 0
   },
   "rows": [
     {
@@ -81,10 +85,19 @@
       ],
       "priorUnverifiedLeads": [],
       "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "status": "OPEN_PAINTING_RESEARCH_QUALITY_GATE",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "gapTriage": {
+        "issue": "NO_MASTERPIECE_EXACT_IMMACULATE_HEART",
+        "lead": "https://www.mks-sticna.si/eng/collections/digital-collections/banner",
+        "reason": "Slovene Museum of Christianity documents a painted Immaculate Heart banner (early 18th century), but is textile processional painting not automatically a first-rank devotional hero; Bowers 1750 Heart of Mary is specifically Seven Sorrows, not same iconographic subject.",
+        "doNotSubstitute": [
+          "Bowers Museum Heart of Mary (Seven Sorrows)",
+          "Modern ornamental commercial reproductions"
+        ]
+      }
     },
     {
       "subjectId": "DEV-05",
@@ -246,10 +259,19 @@
       ],
       "priorUnverifiedLeads": [],
       "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "status": "OPEN_PAINTING_RESEARCH_QUALITY_GATE",
       "specialEditorialGate": "ORIGINAL_ICON_VISUAL_EXCEPTION_UNDECIDED",
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "gapTriage": {
+        "issue": "CANONICAL_ORIGINAL_IS_AN_ICON_AND_STYLE_EXCEPTION_UNAPPROVED",
+        "lead": "https://redemptorists.net/perpetual-help-center",
+        "reason": "Redemptorists preserve the actual original Byzantine icon at Sant'Alfonso; selecting an invented oil painting would be misleading, while publishing flat icon style without user permission would contradict the artist exclusion. Decide on explicitly documented canonical icon exception.",
+        "doNotSubstitute": [
+          "Generic Baroque Virgin and Child labelled Perpetual Help",
+          "Unlicensed shrine photograph"
+        ]
+      }
     },
     {
       "subjectId": "DEV-13",
@@ -990,10 +1012,18 @@
         }
       ],
       "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "status": "OPEN_PAINTING_RESEARCH_QUALITY_GATE",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "gapTriage": {
+        "issue": "SAINT_BEDE_DIRECT_PAINTING_QUALITY_UNRESOLVED",
+        "lead": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200230125-0",
+        "reason": "Preexisting Italian catalogue lead for a historical cycle is not a confidently isolated, impressive Bede painting. Modern mock-old-master or computer-generated illustrations are not historically sourced fine art.",
+        "doNotSubstitute": [
+          "AI-made or modern fake historical Bede oil portrait"
+        ]
+      }
     },
     {
       "subjectId": "SNT-DC-19",
@@ -1157,10 +1187,18 @@
         }
       ],
       "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "status": "OPEN_PAINTING_RESEARCH_QUALITY_GATE",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "gapTriage": {
+        "issue": "ONLY_TINY_CONTEXTUAL_CANISIUS_GROUP_SCENE",
+        "lead": "https://artsandculture.google.com/asset/glorification-of-the-immaculate-conception/UAG7iiXG4ZAo5A?hl=en",
+        "reason": "Vallejo's Immaculate Conception includes Canisius as one among many figures and is mainly Marian subject. Not accepted as a suitable saint illustration.",
+        "doNotSubstitute": [
+          "Immaculate Conception miscaptioned as Canisius portrait"
+        ]
+      }
     },
     {
       "subjectId": "SNT-DC-24",
@@ -1221,10 +1259,18 @@
         }
       ],
       "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "status": "OPEN_PAINTING_RESEARCH_QUALITY_GATE",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "gapTriage": {
+        "issue": "PAINTING_IDENTIFIED_BUT_OFFICIAL_CATALOGUE_FLAGS_STEREOTYPED_EXECUTION",
+        "lead": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700018145",
+        "reason": "Italian national catalogue explicitly calls the 18th century Cyril of Alexandria oil a minor portrait with stereotyped non-face treatment; do not promote merely to fill a quota.",
+        "doNotSubstitute": [
+          "Anonymous Ligurian minor portrait from monastery"
+        ]
+      }
     },
     {
       "subjectId": "SNT-DC-26",
@@ -1245,10 +1291,18 @@
         }
       ],
       "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "status": "OPEN_PAINTING_RESEARCH_QUALITY_GATE",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "gapTriage": {
+        "issue": "ONLY_SMALL_FLAT_FRESCO_IN_PREVIOUS_LEADS",
+        "lead": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900117888A-1",
+        "reason": "Nannoni attributed Cyril of Jerusalem image is a 1637 oil-free 74×69 cm fresco within Carmelite saint cycle, not a compelling separate oil painting; reject automatic substitution for a painterly hero.",
+        "doNotSubstitute": [
+          "Tiny Carmelite wall fresco treated as full oil painting"
+        ]
+      }
     },
     {
       "subjectId": "SNT-DC-27",
@@ -1260,10 +1314,19 @@
       "oldCandidateIds": [],
       "priorUnverifiedLeads": [],
       "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "status": "OPEN_PAINTING_RESEARCH_QUALITY_GATE",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "gapTriage": {
+        "issue": "NO_SOURCE_VERIFIED_PAINTING_WORTH_SHORTLISTING",
+        "lead": null,
+        "reason": "No authenticated full painterly depiction of Saint Ephrem meeting current artistic standard established in searched museum and heritage records. Distinguish Ephrem the Syrian from unrelated saints named Ephrem and from anonymous flat icons.",
+        "doNotSubstitute": [
+          "Unattributed generic Syriac monk icon",
+          "Modern imaginary old-master paintings"
+        ]
+      }
     },
     {
       "subjectId": "SNT-OT-01",
@@ -1739,5 +1802,14 @@
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
     }
   ],
-  "additionalBatch": "Second P0 research batch: Lisieux Carmel's original Céline Thérèse painting shared across devotion and calendar, Tintoretto's Christ before Pilate as contextual only, original Murillo Seville Anthony, Jouvenet Louis, Barry Patrick oil sketch, Fray Juan Rizi Benedict and National Gallery Veronese Nicholas. 8 additional requirements; zero user approvals, zero image downloads. Institutional verification of B 744/B 745/B 746 Nicolas Bertin Greek Doctors and university-catalogued Vien Saint Denis preaching. All additions remain unapproved."
+  "additionalBatch": "Second P0 research batch: Lisieux Carmel's original Céline Thérèse painting shared across devotion and calendar, Tintoretto's Christ before Pilate as contextual only, original Murillo Seville Anthony, Jouvenet Louis, Barry Patrick oil sketch, Fray Juan Rizi Benedict and National Gallery Veronese Nicholas. 8 additional requirements; zero user approvals, zero image downloads. Institutional verification of B 744/B 745/B 746 Nicolas Bertin Greek Doctors and university-catalogued Vien Saint Denis preaching. All additions remain unapproved.",
+  "remainingSevenCuratorialGaps": [
+    "DEV-02",
+    "DEV-12",
+    "SNT-DC-18",
+    "SNT-DC-23",
+    "SNT-DC-25",
+    "SNT-DC-26",
+    "SNT-DC-27"
+  ]
 }
