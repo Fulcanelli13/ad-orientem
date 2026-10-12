@@ -25,7 +25,7 @@
     "primaryUserSelected": 13,
     "primaryArchiveSalvage": 4,
     "primaryNewCustodianLeads": 6,
-    "extraReviewAlternatives": 8,
+    "extraReviewAlternatives": 9,
     "rightNowProductionReady": 0,
     "subjectsUserSelectedTotal": 101,
     "minPublicationsRequiredPerDate": 0
@@ -746,6 +746,23 @@
       "additional": [
         {
           "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
+          "provisionalLeadId": "augustins-2004-1-218",
+          "artist": "Philippe de Champaigne",
+          "title": "Les Âmes du Purgatoire",
+          "sourceUrl": "https://collections.augustins.toulouse.fr/fr/notice/2004-1-218-les-ames-du-purgatoire-b35ce3cd-498e-4a7f-a4d9-4ed873b8270f",
+          "medium": "oil on canvas",
+          "associationTier": "EXACT_PURGATORY_INTERCESSION_ICONOGRAPHY",
+          "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
+          "description": "Musée des Augustins, Toulouse, inventory 2004 1 218, c.1652; once intended for Saint-Louis Jesuit Church Paris. More directly relevant to All Souls than generic Last Judgment. Museum photographs credited Daniel Martin and STC; image reuse rights/crop unresolved. Retain Gallego Last Judgment as context.",
+          "userSelectedForSubject": false,
+          "userSelectedForHomeMasterpiece": false,
+          "homePublicationApproved": false,
+          "originalImageAcquired": false,
+          "rightsCleared": false,
+          "mobileCropApproved": false
+        },
+        {
+          "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
           "provisionalLeadId": "prado-correa-lastjudgment",
           "artist": "Juan Correa de Vivar",
           "title": "The Last Judgment",
@@ -762,7 +779,8 @@
           "mobileCropApproved": false
         }
       ],
-      "priority": "P0"
+      "priority": "P0",
+      "status": "EXACT_ICONOGRAPHY_RESEARCH_IDENTIFIED_WITH_PHOTO_RIGHTS_HOLD"
     }
   ]
 }
