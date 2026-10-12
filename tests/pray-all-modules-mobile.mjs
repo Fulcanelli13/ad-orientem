@@ -318,10 +318,25 @@ try{
    try{
      await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:9000});
    }catch(error){
-     const selected=await page.evaluate(id=>{
+     let selected=await page.evaluate(id=>{
        const state=globalThis.AO_NOVENAS_V3?.state?.();
        return state?.id===id&&state?.screen==="detail";
      },id);
+     // The canonical overview can be re-rendered during asynchronous
+     // calendar/module updates; retry the genuine phone tap on its new node.
+     // Never manufacture a click or accept the test without detail navigation.
+     for(let retry=0;!selected&&retry<2;retry++){
+       await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").waitFor({state:"visible",timeout:6000});
+       try{
+         await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:6000});
+       }catch(retryError){
+         // Only a verified canonical detail transition counts as success.
+       }
+       selected=await page.evaluate(id=>{
+         const state=globalThis.AO_NOVENAS_V3?.state?.();
+         return state?.id===id&&state?.screen==="detail";
+       },id);
+     }
      if(!selected){
        const hit=await page.evaluate(id=>{
          const target=document.querySelector("#aoPray435930.open [data-n1-select='"+id+"']");
