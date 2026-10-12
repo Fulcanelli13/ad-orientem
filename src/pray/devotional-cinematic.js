@@ -19,7 +19,7 @@ export function devotionalInterludePlan({form="angelus",card}={}){
  return Object.freeze({id:card.id,title:card.title,latin:card.latin||"",
   image:shot?TANNER_ANGELUS_MASTER.localPath:null,
   shot:shot?Object.freeze({focus:shot.focus,begin:shot.begin,effect:shot.effect}):null,
-  durationMs:shot?shot.durationMs:950});
+  durationMs:shot?Math.max(1900,shot.durationMs):1100});
 }
 function create(doc,tag,cls,text){
  const el=doc.createElement(tag);el.className=cls;
@@ -32,7 +32,7 @@ export function showDevotionalInterlude({mount,form="angelus",card,language="en"
  if(!sheet||!scene||reduced(win))return false;
  const previous=timers.get(sheet);
  if(previous){win.clearTimeout(previous.timer);previous.node.remove();}
- sheet.querySelectorAll(":scope > .aoDevoCinematicInterstitial").forEach(n=>n.remove());
+ sheet.ownerDocument.body.querySelectorAll(":scope > .aoDevoCinematicInterstitial").forEach(n=>n.remove());
  const doc=sheet.ownerDocument;
  const sceneNode=create(doc,"section","aoDevoCinematicInterstitial");
  sceneNode.dataset.aoDevotionalScene=scene.id;
@@ -58,7 +58,7 @@ export function showDevotionalInterlude({mount,form="angelus",card,language="en"
   heading.append(create(doc,"small","aoDevoCinematicCredit",
    "Henry Ossawa Tanner · The Annunciation (1898) · Philadelphia Museum of Art"));
  sceneNode.append(imageZone,heading);
- sheet.append(sceneNode);
+ doc.body.append(sceneNode);
  const timer=win.setTimeout(()=>{
   if(timers.get(sheet)?.node!==sceneNode)return;
   timers.delete(sheet);sceneNode.remove();
