@@ -46,9 +46,24 @@ function exactPrincipal(principal,proper){
     /^tempora\/(?:epi|pent)[0-9]+-0$/.test(source);
 }
 function split(row,language){
-  const t=String(row?.[language]??"").trim(),index=t.lastIndexOf("\n");
-  if(index<8)return null;
-  const body=t.slice(0,index).trim(),ending=t.slice(index+1).trim();
+  const t=String(row?.[language]??"").trim();
+  let index=t.lastIndexOf("\n"),advance=1;
+  if(index<8){
+    // A minority of original English/French Missal witnesses (e.g. St
+    // Barbara, 4 Dec 2026) print a legitimate conclusion on the *same*
+    // line as the prayer. Detect ONLY exact historic conclusion incipits
+    // near the end; never infer a separator from an arbitrary final dot.
+    const markers=language==="fr"?
+      ["Lui qui vit et règne avec vous","Vous qui vivez et régnez avec Dieu le Père",
+       "Par Notre-Seigneur Jésus-Christ"]:
+      language==="en"?
+      ["Who liveth and reigneth with Thee","Who livest and reignest with God the Father",
+       "Through our Lord Jesus Christ"]:[],
+      candidates=markers.map(s=>t.lastIndexOf(s)).filter(i=>i>15&&i>=t.length-260);
+    if(!candidates.length)return null;
+    index=Math.max(...candidates);advance=0;
+  }
+  const body=t.slice(0,index).trim(),ending=t.slice(index+advance).trim();
   if(body.length<16||ending.length<28)return null;
   if(language==="fr"?!/(?:Ainsi soit-il|Amen)\.$/i.test(ending):!/Amen\.$/i.test(ending))return null;
   return Object.freeze({body,ending});
