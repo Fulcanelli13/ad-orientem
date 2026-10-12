@@ -14,3 +14,6 @@ Derived only from current version-controlled source files, not from the inaccess
 Current count: 264 source records, 10 banks. Publication/theology/French independent certification is outstanding.
 
 Forensic original-question gap report: https://github.com/Fulcanelli13/ad-orientem/blob/main/docs/FORMATION-FORENSIC-RECOVERY-2026-10-08.md
+## Validate
+
+Run `node research/apologetics-question-recovery/validate.mjs` at the repository root. The validator checks 264 records and protects the distinction between 576 unresolved historical positions and genuine recovered questions. It does not certify theological contents or links.
