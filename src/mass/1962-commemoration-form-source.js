@@ -1,5 +1,6 @@
 import {applyMissionSundayCollect} from "./1962-mission-sunday-source.js";
 import {projectJune30InseparableApostles} from "./1962-inseparable-apostles-source.js";
+import {project1962TwoCommemorations} from "./1962-multiple-commemoration-source.js";
 // Shared source-first 1962 Mass-form oration projection.
 // Certified scope: source-identified single II-class Sunday feast and privileged Sunday / Advent feria.
 // Never infer universal privileges from feast titles, colours or typography.
@@ -57,10 +58,13 @@ export function select1962CommemorationsForMassForm({
   // its Calendar inventory and raw texts intact but explicitly block the
   // reader's claim that this form's oration sets are complete.
   if(comms.length>1){
+    const verified=project1962TwoCommemorations({proper,calendarResolution,form:normalizedForm});
+    if(verified.status==="CERTIFIED")return verified;
     const decision=Object.freeze({
       status:"UNVERIFIED",source:"1962_PROPER_RESOLVER",
       form:normalizedForm,calendarCount:comms.length,
       reason:"MULTIPLE_COMMEMORATIONS_SOURCE_PRIORITY_PENDING",
+      detail:verified.reason,
       authorities:Object.freeze(["1960_GENERAL_RUBRICS_110_114",
         "1960_MISSAL_RUBRICS_433_438"]),
     });
