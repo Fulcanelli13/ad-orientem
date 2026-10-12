@@ -1,0 +1,61 @@
+name: Mass 1962 commemoration preflight
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/mass/calendar-preflight-context.js'
+      - 'src/mass/full-mass-preflight.js'
+      - 'src/mass/full-mass-preflight-styles.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'tests/mass-1962-commemoration-preflight.mjs'
+      - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
+      - 'tests/mass-1962-maternity-phone-preflight-e2e.mjs'
+      - '.github/workflows/mass-1962-commemoration-preflight.yml'
+  pull_request:
+    paths:
+      - 'src/mass/calendar-preflight-context.js'
+      - 'src/mass/full-mass-preflight.js'
+      - 'src/mass/full-mass-preflight-styles.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'tests/mass-1962-commemoration-preflight.mjs'
+      - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
+      - 'tests/mass-1962-maternity-phone-preflight-e2e.mjs'
+      - '.github/workflows/mass-1962-commemoration-preflight.yml'
+jobs:
+  source-confirmed-commemorations:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/mass/calendar-preflight-context.js
+      - run: node --check src/mass/full-mass-preflight.js
+      - run: node tests/mass-1962-commemoration-preflight.mjs
+      - run: node tests/full-mass-preflight.mjs
+      - run: node tests/proper-reader-slots.mjs
+  production-resolver-oct11:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Check real 2026-10-11 Marian commemoration, all prayers and pre-Mass banner
+        run: node tests/mass-1962-maternity-2026-resolver-e2e.mjs
+      - name: Accept 1962 Marian commemoration in actual 320px and 390px phone preflight
+        run: node tests/mass-1962-maternity-phone-preflight-e2e.mjs
+      - name: Retain phone screenshots of Marian commemoration
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-marian-commemoration-phone
+          path: artifacts/mass-commemoration-phone-20261011/
+          if-no-files-found: warn
