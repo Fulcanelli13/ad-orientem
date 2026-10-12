@@ -958,7 +958,11 @@ function decorateRosaryExact(r){
  shell.dataset.aoRosaryKind=String(info.step?.kind||'');
  shell.dataset.aoRosaryKey=String(info.step?.key||'');
  shell.dataset.aoRosaryPhase=String(info.step?.phase||'');
- shell.dataset.aoRosaryBead=String(Number(info.step?.bead||0));
+ // This is shell *state*, not a tappable bead. The historical donor's
+ // click dispatcher reserves [data-ao-rosary-bead] for actual bead buttons;
+ // reusing it on the shell swallowed every descendant click via preventDefault.
+ shell.removeAttribute('data-ao-rosary-bead');
+ shell.dataset.aoRosaryCurrentBead=String(Number(info.step?.bead||0));
  shell.dataset.aoRosaryCue=info.step?.cue?'true':'false';
  shell.dataset.aoRosaryFinalCross=info.step?.finalCross?'true':'false';
  r.querySelectorAll('.rosary-decade-bar-v15[data-ao-exact-donor-progress]').forEach(node=>node.remove());
@@ -1102,6 +1106,51 @@ function prepareRosaryOpening(r){
  disclosure.open=rosaryPreparationOpen;
  return true;
 }
+// Reading preferences belong behind one optional control during the
+// active Rosary. Reparent the *existing* donor controls; the canonical bead
+// engine continues to own recitation, Scripture, history and progression.
+let rosaryActiveOptionsOpen=false;
+function prepareRosaryActive(r){
+ const shell=r?.querySelector?.('.pbShell');
+ if(!shell||shell.querySelector(':scope > .lab-rosary-hero')||
+    !shell.querySelector('[data-lab-rosary-next]'))return false;
+ const rail=shell.querySelector(':scope > .aoRosaryFaithfulRail');
+ const header=shell.querySelector(':scope > .lab-view-head');
+ const after=rail||header;if(!after)return false;
+ let options=shell.querySelector(':scope > .aoRosaryActiveOptions');
+ if(!options){
+   options=document.createElement('details');
+   options.className='aoRosaryActiveOptions';
+   options.dataset.aoRosaryActiveOptions='';
+   const summary=document.createElement('summary');
+   summary.append(document.createTextNode(L('Reading options','Options de lecture')));
+   const state=document.createElement('span');
+   state.className='aoRosaryActiveOptionsState';
+   summary.appendChild(state);
+   const body=document.createElement('div');
+   body.className='aoRosaryActiveOptionsBody';
+   options.append(summary,body);
+   // Initial state is restored only on a newly recreated donor sheet.
+   // Never override a native details click on an already mounted control;
+   // the donor repaints asynchronously and its toggle event may be pending.
+   options.open=rosaryActiveOptionsOpen;
+   options.addEventListener('toggle',()=>{rosaryActiveOptionsOpen=options.open===true});
+ }
+ if(after.nextElementSibling!==options)after.insertAdjacentElement('afterend',options);
+ const body=options.querySelector('.aoRosaryActiveOptionsBody');
+ const reading=shell.querySelector('.aoP435930RosaryBar');
+ const recitation=shell.querySelector('.r29-head-recitation,.lab-recitation-mode');
+ const guide=shell.querySelector('.aoRosaryGuide');
+ for(const control of [reading,recitation,guide]){
+   if(control&&control.parentElement!==body)body.appendChild(control);
+ }
+ const state=options.querySelector('.aoRosaryActiveOptionsState');
+ if(state)state.textContent=[
+   S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'),
+   S.rosary.recitation==='group'?L('Group','Groupe'):L('Individual','Individuel')
+ ].join(' · ');
+ return true;
+}
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  // Montfort's historical methods cover fifteen traditional mysteries only.
@@ -1126,6 +1175,7 @@ function decorateRosary(){
  decorateRosaryExact(r);
  ensureRosaryGuide(r);
  prepareRosaryOpening(r);
+ prepareRosaryActive(r);
  declutterRosaryDonor(r);
 }
 function confessionModeLabel(path){

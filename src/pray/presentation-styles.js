@@ -617,7 +617,9 @@ const ROSARY_PHONE_CONTROLS_CSS=`
 #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation{
   height:auto!important;min-height:44px!important;
 }
-#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation button,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
   height:auto!important;min-height:44px!important;
   padding:8px 12px!important;font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
 }
@@ -708,6 +710,42 @@ const ROSARY_PHONE_CONTROLS_CSS=`
 #aoPrayerBookRoot.open .aoRosaryPreparation>summary:focus-visible{
  outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
 }
+/* Canonical active-bead view: prayer focus precedes configuration.
+   The native selected state remains visible on the disclosure summary. */
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions{
+ display:block;width:100%;min-width:0;max-width:100%;
+ margin:0 0 10px;border:1px solid var(--border,rgba(255,255,255,.17));
+ border-radius:12px;background:var(--surface-1,#151c24);
+ box-sizing:border-box;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions>summary{
+ display:flex;align-items:center;justify-content:space-between;gap:10px;
+ min-height:48px;padding:10px 12px;cursor:pointer;
+ color:var(--text,#f3ead7);
+ font:600 13px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsState{
+ color:var(--liturgical,#d8bd7d);text-align:right;
+ font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody{
+ display:grid;gap:10px;padding:0 11px 12px;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions:not([open])>.aoRosaryActiveOptionsBody{display:none!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody>.aoP435930RosaryBar,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody>.aoRosaryGuide{
+ margin:0!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody>.r29-head-recitation{
+ margin:0!important;min-width:0!important;max-width:100%!important;width:100%!important;
+ display:flex!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody>.r29-head-recitation button{
+ flex:1 1 50%!important;min-width:0!important;min-height:44px!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions>summary:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
+}
 @media(max-width:560px){
   /* Prevent a 44px recitation pair from stealing width from the mystery
      heading: keep it a separate phone row, with the prayer controls below. */
@@ -719,7 +757,9 @@ const ROSARY_PHONE_CONTROLS_CSS=`
     min-width:0!important;max-width:none!important;width:100%!important;
     margin:0!important;
   }
-  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head .r29-head-recitation button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head .r29-head-recitation button,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
     flex:1 1 50%!important;min-width:0!important;
   }
 }
