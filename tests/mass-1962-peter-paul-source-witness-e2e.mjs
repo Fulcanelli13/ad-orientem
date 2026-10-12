@@ -21,6 +21,9 @@ out.push({date,status:r?.status,properStatus:r?.proper?.status,
 main:{id:r?.day?.main?.id,path:r?.day?.main?.path,title:r?.day?.main?.title,rank:r?.day?.main?.rank},
 comms:r?.day?.commemorations?.map(q=>({id:q.id,path:q.path,title:q.title,rank:q.rank,inseparable:q.inseparable})),
 source:p?.sourcePath,sourceComms:p?.calendarCommemorations?.map(q=>({name:q.name,path:q.path,prayerSourcePath:q.prayerSourcePath,inseparable:q.inseparable})),
+fullCollectLatin:date==="2026-06-30"?p?.collects?.[0]?.lat:null,
+fullCollectEnglish:date==="2026-06-30"?p?.collects?.[0]?.en:null,
+fullCollectFrench:date==="2026-06-30"?p?.collects?.[0]?.fr:null,
 groups:["collects","secrets","postcommunions"].map(k=>({name:k,count:p?.[k]?.length,rows:p?.[k]?.map((x,i)=>({id:i,latin:String(x?.lat??"").slice(0,140),latinEnding:String(x?.lat??"").slice(-145),enOk:!!x?.en,frOk:!!x?.fr}))})),
 warnings:r?.diagnostic?.warnings?.slice(0,3)??[]});
 }return out});
