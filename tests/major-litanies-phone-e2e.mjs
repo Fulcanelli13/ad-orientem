@@ -200,8 +200,19 @@ try{
    }
    const handoff=await next.boundingBox();assert.ok(handoff&&handoff.height>=44);
    await page.touchscreen.tap(handoff.x+handoff.width/2,handoff.y+handoff.height/2);
-   await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId==="AO.CARD.001",
-    null,{timeout:7000});
+   await page.waitForFunction(()=>{
+     const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+     return (c?.sourceSectionId??c?.sectionId)==="AO.CARD.001";
+    },null,{timeout:7000});
+   const atIntroit=await page.evaluate(()=>{
+     const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+     return {title:api.getCurrentCard()?.title,total:api.model.totalCards,
+       canonical:api.sourceModel.totalCards,curated:api.model.preMassHandoff==="INTROIT",
+       first:api.model.cards[0].title};
+   });
+   assert.deepEqual(atIntroit,{
+     title:"Introit",total:61,canonical:39,curated:true,first:"Introit",
+   },"Greater Litanies R17 must enter sourced 61-card Introit presentation");
    assert.equal((await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim(),"Introit");
    const bb=await back.boundingBox();assert.ok(bb&&bb.height>=44);
    await page.touchscreen.tap(bb.x+bb.width/2,bb.y+bb.height/2);
@@ -215,58 +226,36 @@ try{
       ...(state.credo?["AO.CARD.009"]:[]),"AO.CARD.010"
     ];
     const visited=[];
+    let previousSource=null;
+    const displaySteps=[];
     for(const sectionId of expected){
-      const box=await next.boundingBox();assert.ok(box&&box.height>=44);
-      // Locator tap waits for the dynamically rendered phone control to
-      // become stable after each card-arrival transition.
-      await next.tap({timeout:5000});
-      // Match the previously certified Minor Rogation phone journey:
-      // let the 120ms post-touch card repaint settle before sampling R17.
-      await page.waitForTimeout(120);
-      try{
-        await page.waitForFunction(expectedId=>{
-          const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
-          return (card?.sourceSectionId??card?.sectionId)===expectedId;
-        },sectionId,{timeout:5000});
-      }catch(error){
+      let reached=false;
+      for(let tries=0;tries<10;tries++){
+        const box=await next.boundingBox();assert.ok(box&&box.height>=44);
+        await next.tap({timeout:5000});
+        await page.waitForTimeout(120);
         const card=await page.evaluate(()=>{
           const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
-          return {id:c?.id,sectionId:c?.sectionId,sourceSectionId:c?.sourceSectionId,title:c?.title};
+          return {sectionId:c?.sectionId,sourceSectionId:c?.sourceSectionId??c?.sectionId,
+            sequence:c?.sequence,title:c?.title};
         });
-        const navDetails=await page.evaluate(()=>{
-          const api=globalThis.AO_R17_NATIVE_READER_PREVIEW,root=api?.root;
-          const b=root?.querySelector('[data-reader-nav="next"]');
-          const rect=b?.getBoundingClientRect?.();
-          const center=rect?{x:rect.x+rect.width/2,y:rect.y+rect.height/2}:null;
-          const hit=center?document.elementFromPoint(center.x,center.y):null;
-          return {
-            rootNavInput:root?.dataset?.aoLastNavInput,
-            rootNavResult:root?.dataset?.aoLastNavResult,
-            buttonOuter:b?.outerHTML?.slice(0,520),buttonDisabled:b?.disabled,
-            center,hitTag:hit?.tagName,hitClass:hit?.className,
-            hitMarkup:hit?.outerHTML?.slice(0,450),
-            pointerEvents:b?getComputedStyle(b).pointerEvents:null,
-            effectiveNav:api?.reader?.getState?.()?.id,
-            lifecycleState:root?.dataset?.r17StateOwner
-          };
-        });
-        const clickResponse=await page.evaluate(()=>{
-          const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
-          const button=api?.root?.querySelector('[data-reader-nav="next"]');
-          button?.click();
-          const c=api?.getCurrentCard?.();
-          return {card:c?.sectionId??c?.id,navInput:api?.root?.dataset?.aoLastNavInput,
-            navResult:api?.root?.dataset?.aoLastNavResult};
-        });
-        throw new Error("ROGATION_NAV_EXPECTED_"+sectionId+" got "+
-          JSON.stringify(card)+" after "+JSON.stringify(visited)+
-          " browserErrors="+JSON.stringify(errors)+
-          " navDetails="+JSON.stringify(navDetails)+
-          " syntheticClick="+JSON.stringify(clickResponse)+"; "+
-          String(error?.message??error));
+        assert.ok(card.sequence>0,"Rogation handoff lost Mass card sequence");
+        displaySteps.push(card);
+        if(card.sourceSectionId===sectionId){reached=true;break;}
+        if(card.sourceSectionId!==previousSource){
+          throw new Error("Rogation unexpected source while seeking "+
+            sectionId+"; now "+JSON.stringify(card)+"; previous="+previousSource);
+        }
       }
+      assert.equal(reached,true,"Unable to traverse to source "+sectionId);
+      previousSource=sectionId;
       visited.push(sectionId);
     }
+    assert.ok(displaySteps.length>=visited.length,"Curated card traversal too short");
+    assert.equal(displaySteps.some(c=>c.sourceSectionId==="AO.CARD.003"),false,
+      "Rogation votive incorrectly displayed the Gloria");
+    assert.equal(displaySteps.some(c=>c.sourceSectionId==="AO.CARD.009"),state.credo,
+      "Sunday Creed decision was ignored");
    }
    assert.deepEqual(errors,[],"Browser errors on "+date);
    console.log("ACTUAL_MAJOR_LITANY_MASS",JSON.stringify({

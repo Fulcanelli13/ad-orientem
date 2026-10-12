@@ -190,49 +190,53 @@ try{
    }
    const handoffBox=await next.boundingBox();assert.ok(handoffBox&&handoffBox.height>=44);
    await page.touchscreen.tap(handoffBox.x+handoffBox.width/2,handoffBox.y+handoffBox.height/2);
-   await page.waitForFunction(()=>
-    globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId==="AO.CARD.001",
-    null,{timeout:7000});
+   await page.waitForFunction(()=>{
+    const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+    return (c?.sourceSectionId??c?.sectionId)==="AO.CARD.001";
+   },null,{timeout:7000});
+   const identity=await page.evaluate(()=>{
+    const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+    return {source:api.sourceModel.totalCards,total:api.model.totalCards,
+      first:api.model.cards[0].title,owner:api.model.preMassHandoff};
+   });
+   assert.deepEqual(identity,{source:39,total:61,first:"Introit",owner:"INTROIT"});
    const title=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim();
    assert.equal(title,"Introit","Rogations must hand off directly to Introit, not foot prayers");
    const backBox=await back.boundingBox();assert.ok(backBox&&backBox.height>=44);
    await page.touchscreen.tap(backBox.x+backBox.width/2,backBox.y+backBox.height/2);
    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ROG-R06",
     null,{timeout:5000});
-   // Release gate: this violet II-class Mass must never display Gloria/Credo.
-   const takeNext=async expectedSource=>{
-    const before=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId);
-    const box=await next.boundingBox();assert.ok(box&&box.height>=44);
-    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-    await page.waitForTimeout(120);
-    try {
-     await page.waitForFunction(expected=>
-      (globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sourceSectionId ??
-       globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId)===expected,
-      expectedSource,{timeout:4500});
-    }catch(error){
-     const diagnostic=await page.evaluate(()=>{
-      const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()??null;
-      const mass=globalThis.AO_R17_ACTIVE_MASS??null;
-      const reader=globalThis.AO_R17_NATIVE_READER_PREVIEW??null;
-      return {
-       card:{sectionId:card?.sectionId,sourceSectionId:card?.sourceSectionId,title:card?.title},
-       actualCelebration:mass?.session?.resolvedMass?.actualCelebration??mass?.resolvedMass?.actualCelebration??null,
-       provenance:mass?.session?.resolvedMass?.provenance??null,
-       sectionIds:reader?.root?.querySelectorAll?.("[data-reader-section]")?.length??0,
-       rootData:reader?.root?.dataset?{...reader.root.dataset}:null
-      };
-     });
-     throw new Error("ROGATION_NEXT_FAILED from "+before+" to "+expectedSource+
-       "; active="+JSON.stringify(diagnostic)+"; original="+String(error));
-    }
-   };
-   await takeNext("AO.CARD.001");
-   await takeNext("AO.CARD.002");
-   await takeNext("AO.CARD.004"); // Kyrie -> Collect: no Gloria
-   for(const id of ["AO.CARD.005","AO.CARD.006","AO.CARD.007","AO.CARD.008","AO.CARD.010"]){
-    await takeNext(id);
+   // Preserve one gesture per curated display card, but validate the
+   // canonical 39-source order instead of assuming old unsplit IDs.
+   const expected=[
+     "AO.CARD.001","AO.CARD.002","AO.CARD.004","AO.CARD.005",
+     "AO.CARD.006","AO.CARD.007","AO.CARD.008","AO.CARD.010",
+   ];
+   let previousSource=null;
+   const visited=[];
+   for(const source of expected){
+     let found=false;
+     for(let attempt=0;attempt<12;attempt++){
+       const box=await next.boundingBox();assert.ok(box&&box.height>=44);
+       await next.tap({timeout:5000});
+       await page.waitForTimeout(120);
+       const state=await page.evaluate(()=>{
+         const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+         return {source:c?.sourceSectionId??c?.sectionId,sequence:c?.sequence,
+           title:c?.title,sectionId:c?.sectionId};
+       });
+       visited.push(state);
+       if(state.source===source){found=true;break;}
+       assert.equal(state.source,previousSource,
+         "Rogation jumped to unexpected canonical text "+JSON.stringify(state));
+     }
+     assert.equal(found,true,"Rogation could not advance to "+source);
+     previousSource=source;
    }
+   assert.equal(visited.some(c=>["AO.CARD.003","AO.CARD.009"].includes(c.source)),false,
+     "The II-class violet Rogation votive may display neither Gloria nor Credo");
+   assert.ok(visited.some(c=>c.title?.startsWith("Offertory")),
+     "Expected final source group should reach named Offertory");
    const card=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.());
    assert.match(card.title,/Offertory/i);
    assert.deepEqual(errors,[],language+" produced a browser exception");

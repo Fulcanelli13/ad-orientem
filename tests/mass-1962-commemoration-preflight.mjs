@@ -95,4 +95,43 @@ assert.match(fakeRootHtml,/data-mass-calendar-commemoration-name/);
 assert.match(fakeRootHtml,/data-mass-calendar-commemoration-prayers/);
 assert.match(fakeRootHtml,/data-mass-calendar-commemoration-label/);
 assert.ok(!fakeRootHtml.includes("2026-10-11"),"No date-specific forcing in production UI");
+// Form-specific decisions are owned by the central 1962 Proper resolver.
+// A complete 2/2/2 source count alone must NOT certify a Sung/Solemn Mass.
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const unverified=massCalendarPreflightContext(legacy,state,"en",{form});
+  assert.equal(unverified.commemorationOrations.status,"FORM_RULES_UNVERIFIED",form);
+  assert.equal(unverified.commemorationPrayerApplies,null,form);
+  assert.deepEqual(unverified.commemorations,["Maternity of the Blessed Virgin Mary"],form);
+  fillMassCalendarPreflight(root,unverified);
+  assert.match(fields.get("commemoration-prayers").textContent,/not yet verified/,form);
+}
+const decision=(form,appliedCount)=>({
+  status:"CERTIFIED",source:"1962_PROPER_RESOLVER",form,appliedCount,calendarCount:1
+});
+const certifiedLow=massCalendarPreflightContext({
+  ...legacy,proper:{status:"READY",data:{...proper,commemorationFormDecision:decision("LOW",1)}}
+},state,"fr",{form:"LOW"});
+assert.equal(certifiedLow.commemorationOrations.status,"COMPLETE");
+assert.equal(certifiedLow.commemorationPrayerApplies,true);
+const single={...proper,collects:[proper.collects[0]],secrets:[proper.secrets[0]],
+  postcommunions:[proper.postcommunions[0]]};
+const certifiedSung=massCalendarPreflightContext({
+  ...legacy,proper:{status:"READY",data:{...single,
+    commemorationFormDecision:decision("MISSA_CANTATA_INCENSE",0)}}
+},state,"en",{form:"MISSA_CANTATA_INCENSE"});
+assert.equal(certifiedSung.commemorationOrations.status,"NOT_APPLIED_TO_FORM");
+assert.equal(certifiedSung.commemorationPrayerApplies,false);
+fillMassCalendarPreflight(root,certifiedSung);
+assert.match(fields.get("commemoration-prayers").textContent,/does not include/);
+const foreignDecision=massCalendarPreflightContext({
+  ...legacy,proper:{status:"READY",data:{...proper,commemorationFormDecision:decision("LOW",1)}}
+},state,"en",{form:"SOLEMN"});
+assert.equal(foreignDecision.commemorationOrations.status,"FORM_RULES_UNVERIFIED",
+  "Never reuse a Low Mass certificate in Solemn Mass");
+const mismatchedSource=massCalendarPreflightContext({
+  ...legacy,proper:{status:"READY",data:{...proper,commemorationFormDecision:{
+    ...decision("LOW",1),source:"INFERRED_FROM_ORDO_TYPOGRAPHY"}}}
+},state,"en",{form:"LOW"});
+assert.equal(mismatchedSource.commemorationOrations.status,"FORM_RULES_UNVERIFIED");
+
 console.log("PASS: Oct 11 Marian commemoration preflight, EN/FR, all three extra orations, fail-closed missing sources and negative date/votive gates.");

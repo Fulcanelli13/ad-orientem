@@ -75,7 +75,7 @@ async function focusCue(page,cueId){
   const api=window.__AO_PHONE_PREVIEW;
   const card=api.model.cards.find(row=>(row.paragraphs??[]).some(p=>(p.sourceCueIds??[]).includes(id)));
   if(!card)return {error:"MISSING_SOURCE_CUE",cueId:id};
-  api.showSection(card.sectionId);
+  api.showSequence(card.sequence);
   return {section:card.sectionId};
  },cueId);
  assert(!result.error,JSON.stringify(result));
@@ -115,7 +115,7 @@ try{
    const page=await context.newPage();
    const errorMessages=[];
    page.on("pageerror",e=>errorMessages.push(e.message));
-   const url="http://127.0.0.1:4187/tests/fixtures/reader-phone-harness.html?form="+form+"&family="+family;
+   const url="http://127.0.0.1:4187/tests/fixtures/reader-phone-harness.html?production=1&form="+form+"&family="+family;
    await page.goto(url,{waitUntil:"networkidle"});
    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
     null,{timeout:20000}).catch(async()=>{throw Error(form+"/"+family+" reader mount failed: "+
@@ -140,9 +140,10 @@ try{
    assert.equal(initial.form,form);
    assert.equal(initial.formScenario.family,family);
    assert.equal(initial.mode,"LIVE");
-   const expectedCards=form==="LOW"?39:48;
+   const sung=form==="MISSA_CANTATA_SIMPLE"||form==="MISSA_CANTATA_INCENSE";
+   const expectedCards=form==="LOW"?39:(sung&&family==="VOTIVE"?65:48);
    assert.equal(initial.productCards,expectedCards,
-     "form-specific LIVE card count lost for "+form+"/"+family);
+     "production form-specific LIVE card count lost for "+form+"/"+family);
    assert(!initial.overflow && initial.rootWidth<=initial.viewportWidth+1,"phone horizontal overflow");
    assert(initial.noImplicitReverence,"the app inferred a pretext priest reverence");
    const samples={};
@@ -207,8 +208,10 @@ try{
         JSON.stringify(cinematic));
       assert(cinematic.iconMask!=="none" || cinematic.iconImage!=="none",
         form+" Host elevation source icon has no rendered artwork: "+JSON.stringify(cinematic));
+      // Capture a real visible instant, not the finished 100% opacity:0
+      // endpoint caused by Playwright fast-forwarding CSS animations.
       const image=await page.screenshot({path:resolve(artifactDir,filename),
-        animations:"disabled"});
+        animations:"allow"});
       const bright=brightPixelCount(image);
       assert(bright>300,
         form+" Host elevation screenshot is visually blank ("+bright+
@@ -225,12 +228,12 @@ try{
  }
  const summary={schema:"ao-mass-live-batch4-acceptance-matrix-v1",total:results.length,
   formCount:forms.length,scenarioCount:families.length,
-  explicitPresentationRule:"LOW_SOURCE_39__SUNG_LIVE_PRODUCT_48",
+  explicitPresentationRule:"LOW_39__ORDINARY_SUNG_VOTIVE_65__SOLEMN_OR_REQUIEM_48",
   distinctSourceCueSamples:["C0075","C0112","C0174","C0181","C0212"],
   emulatorNotPhysicalDevice:true,syntheticProperNotLiturgicalCertification:true,
   results};
  await writeFile(resolve(artifactDir,"acceptance-matrix.json"),JSON.stringify(summary,null,2)+"\n");
- console.log("PASS Batch 4: "+results.length+" four-form × Votive/Requiem phone scenarios; Low=39 and Sung=48, source-owned channels, no invented ministers, phone geometry; screenshots and manifest retained.");
+ console.log("PASS Batch 4: "+results.length+" real-production four-form × Votive/Requiem phone scenarios; Low 39, ordinary Sung Votive 65, Solemn/Requiem source-first 48; source-owned channels, no invented ministers, phone geometry; screenshots and manifest retained.");
 } finally {
  await browser?.close();
  await new Promise(ok=>server.close(ok));

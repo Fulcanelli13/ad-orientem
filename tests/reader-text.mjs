@@ -179,6 +179,25 @@ assert.equal(gloriaOpening.alternate,"Glory to God in the highest.",
   "Gloria English opening lost its exact replace-in-place translation");
 assert.equal(gloriaOpening.secondary,null,"sung Gloria should not add translation underneath");
 assert.equal(gloriaOpening.replaceOnToggle,true);
+assert.equal(gloriaOpening.speakerRole,"PRIEST",
+  "Gloria's entire intonation must be owned by the celebrant");
+const foot=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO.CARD.001"),properSlots});
+for(const [cue,prefix,actor] of [
+  ["AO.SM.C0001","S.","PRIEST"],
+  ["AO.SM.C0016","S.","PRIEST"],
+  ["AO.SM.C0019","M.","MINISTERS"],
+  ["AO.SM.C0020","S.","PRIEST"],
+  ["AO.SM.C0021","M.","MINISTERS"],
+  ["AO.SM.C0024","S.","PRIEST"],
+  ["AO.SM.C0025","M.","MINISTERS"],
+  ["AO.SM.C0026","S.","PRIEST"],
+  ["AO.SM.C0027","M.","MINISTERS"],
+]){
+  const p=foot.paragraphs.find(p=>p.sourceCueIds?.includes(cue));
+  assert.ok(p,cue+": missing opening dialogue");
+  assert.ok(p.primary.startsWith(prefix+" "),cue+": opening speaker initial lost");
+  assert.equal(p.speakerRole,actor,cue+": speaker metadata does not match 1962 dialogue");
+}
 
 for(const corpus of [low,sung]){
   const offertoryCard=buildReaderSectionCard({
@@ -213,6 +232,11 @@ const agnus=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO
 assert.match(agnus.paragraphs[0].primary,/Agnus Dei/i);
 const credoOpening=credo.paragraphs.find(p=>p.sourceCueIds.includes("AO.SM.C0089"));
 assert.match(credoOpening.primary,/^Credo/);
+assert.deepEqual(credoOpening.sourceCueIds,["AO.SM.C0089","AO.SM.C0090"],
+  "Credo intonation should preserve priest-owned two-cue source identity");
+assert.equal(credoOpening.primary,"Credo in unum Deum.");
+assert.equal(credoOpening.speakerRole,"PRIEST");
+
 assert.equal(credoOpening.displayLanguage,"LATIN");
 const silent=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO.CARD.014"),properSlots});
 const teIgitur=silent.paragraphs.find(p=>p.id==="AO.SM.C0150");

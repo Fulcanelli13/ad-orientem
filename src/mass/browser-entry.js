@@ -596,9 +596,16 @@ export async function mountR17Preview({
   if(!iconAudit.complete){
     throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
   }
+  // Production: use the source-curated 64/65 Ordinary Sung LIVE reader.
+  // The verified 48-step projector remains explicitly selectable for rollback.
+  // Structural special rites, non-Sung forms and non-LIVE modes retain their
+  // independent form-authoritative presentations inside the native owner.
+  const query=String(doc?.defaultView?.location?.search??"");
+  const rollback48=/(?:^|[?&])aoLiveCards=48(?:&|$)/.test(query);
   const preview=await Promise.resolve(nativeMount({
     doc,
     prepared,
+    reviewCuratedCards:!rollback48,
     iconResolver:createHostIconResolver({assets}),
   }));
   return Object.freeze({
@@ -679,6 +686,16 @@ export async function resumePersistedMass({
   });
 }
 
+// Only the ordinary calendar Mass may inherit its principal calendar identity.
+// Explicit votives and observed alternate formularies require their own owner.
+export function ordinaryMassPrefaceOwner(resolvedMass,{observed=false}={}){
+  if(observed || !resolvedMass ||
+     (resolvedMass.requestedCelebrationId && resolvedMass.requestedCelebrationId!=="mass_of_day") ||
+     (resolvedMass.celebrationId && resolvedMass.celebrationId!=="mass_of_day") ||
+     !["CALENDAR","MASS_OF_DAY",""].includes(String(resolvedMass.celebrationType??"").toUpperCase()))return null;
+  return resolvedMass.calendarDay?.id??null;
+}
+
 export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null}={}) {
   const api = celebrationApi();
   if (!api?.getResolvedMass) throw new Error("AO_CELEBRATION_API is not ready");
@@ -708,6 +725,7 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
         api.getResolvedMass():null)??null;
       const proper=await recoverReaderProperOmissions(observed?.proper??options.proper,{
         hostResolver:runtime()?.resolver?.properResolver,
+        principalCelebrationId:ordinaryMassPrefaceOwner(resolvedMass,{observed:Boolean(observed)}),
       });
       const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
       const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;

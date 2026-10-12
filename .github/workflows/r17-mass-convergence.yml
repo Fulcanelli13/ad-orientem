@@ -26,6 +26,7 @@ on:
       - "tests/source-transport-compat.mjs"
       - "tests/sacred-geography-profiles-editorial.mjs"
       - "tests/fixtures/reader-phone-harness.html"
+      - "tests/reader-phone-production-card-default.mjs"
       - "index.html"
       - ".github/workflows/required-main-gate.yml"
       - "tests/required-main-gate-contract.mjs"
@@ -64,6 +65,28 @@ jobs:
           name: mass-live-batch4-phone-review
           path: artifacts/mass-live-batch4/
           if-no-files-found: ignore
+
+  curated65-phone:
+    # Deliberately independent of the broad npm test job: an unrelated
+    # Shrine corpus assertion must not suppress Mass phone acceptance.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/reader-phone-acceptance.mjs
+      - run: npm run test:phone-curated65
+      - run: node tests/reader-phone-production-card-default.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: curated65-mass-phone-screenshots
+          path: artifacts/curated65-phone/*.png
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Retain bilingual Missal book-view phone evidence
         if: always()
         uses: actions/upload-artifact@v4

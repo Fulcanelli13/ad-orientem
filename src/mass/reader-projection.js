@@ -18,6 +18,8 @@ function normalizeParagraphSource(paragraph, fallbackKind="TEXT"){
     vernacular:paragraph.vernacular ?? paragraph.translation ?? paragraph.en ?? null,
     active:paragraph.active === true,
     displayLanguage:paragraph.displayLanguage ?? null,
+    speakerRole:paragraph.speakerRole ?? null,
+    speakerEvidence:paragraph.speakerEvidence ?? null,
     sourceCueIds:Object.freeze([...(paragraph.sourceCueIds ?? (paragraph.id ? [paragraph.id] : []))].map(String)),
   });
 }
@@ -47,7 +49,7 @@ export function projectResolvedReaderText(resolvedText){
         primary:String(p.latin),secondary:null,
         alternate:p.vernacular == null ? null : String(p.vernacular),
         replaceOnToggle:Boolean(p.vernacular),
-        active:p.active,sourceCueIds:p.sourceCueIds,
+        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,sourceCueIds:p.sourceCueIds,
         displayLanguage:"LATIN",languageOwner:"SOURCE_SUNG_PRAYER",
       });
     }
@@ -58,7 +60,7 @@ export function projectResolvedReaderText(resolvedText){
         primary:String(p.vernacular),secondary:null,
         alternate:p.latin == null ? null : String(p.latin),
         replaceOnToggle:Boolean(p.latin),
-        active:p.active,sourceCueIds:p.sourceCueIds,
+        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,sourceCueIds:p.sourceCueIds,
         displayLanguage:"VERNACULAR",languageOwner:"SOURCE_PRIVATE_OR_PROPER",
       });
     }
@@ -71,7 +73,7 @@ export function projectResolvedReaderText(resolvedText){
         secondary:p.vernacular == null ? null : String(p.vernacular),
         alternate:null,
         replaceOnToggle:false,
-        active:p.active,
+        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,
         sourceCueIds:p.sourceCueIds,
       });
     }
@@ -83,7 +85,7 @@ export function projectResolvedReaderText(resolvedText){
       secondary:null,
       alternate:p.latin == null ? null : String(p.latin),
       replaceOnToggle:Boolean(p.latin),
-      active:p.active,
+      active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,
       sourceCueIds:p.sourceCueIds,
     });
   }));

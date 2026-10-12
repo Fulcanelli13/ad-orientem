@@ -5,7 +5,7 @@
 ## Confirmed repository baselines before Batch 4
 
 - Native R17 is the production Mass reader; LEGACY is not a supported production fallback.
-- **Sung LIVE has 48 presentation cards** over its 39-card source model. **Low LIVE intentionally remains 39 source cards** (the 48-card decomposition is explicitly Sung-only in `reader-live-product48.js`). Acceptance must guard this distinction, not expand Low implicitly.
+- **Ordinary Sung LIVE defaults to 65 curated presentation cards** over the same 39 canonical source sections (64 normally visible, or 65 with the expressly optional second Confiteor). **Low LIVE intentionally remains 39 source cards**; Solemn and unsupported form overlays—including Requiem—remain on form-authoritative projection rather than inheriting ordinary Sung cards. The historical 48-card Sung projection is retained through an explicit rollback setting and for excluded forms.
 - Low, Missa Cantata Simple, Missa Cantata with incense and Solemn use the four-form registry. Sacred ministers must **never** be assigned to Low or Missa Cantata.
 - Requiem omission of the blessing over the water is conditioned separately from the `Deus qui humanae` prayer.
 - Schola's public clock does not automatically own celebrant actions at the Sanctus/Benedictus; a separately observed priest event is required.
@@ -17,7 +17,7 @@
 | Area | Automated evidence | Scope and limitation |
 |---|---|---|
 | Canonical form/special structure | `tests/mass-form-special-integration.mjs`, `tests/reader-form-state-parity.mjs` | All four form source registrations; DAY, VOTIVE, REQUIEM, NUPTIAL; native prelude and following-action graph projection. **Not** a real 2-hour Mass run |
-| Actual rendered phone reader | `tests/mass-live-batch4-phone-matrix.mjs` | Four forms × two fixture families; 320/390px; sample Epistle, Offertory water, Host/Chalice elevation and paten handling; browser JS errors; 39-card Low / 48-card Sung presentation invariants; artifacts persisted |
+| Actual rendered phone reader | `tests/mass-live-batch4-phone-matrix.mjs` | Four forms × two fixture families; 320/390px; sample Epistle, Offertory water, Host/Chalice elevation and paten handling; browser JS errors; 39-card Low / curated 65-card ordinary Sung Votive / source-first 48-card excluded form and Requiem invariants; artifacts persisted |
 | LIVE focus / icons / Schola | `tests/reader-phone-acceptance.mjs`, `tests/reader-live-rails-phone.mjs`, `tests/reader-priest-chant-phone.mjs` | Paragraph territory, rail visibility/accessible ownership, Schola/celebrant clock separation in mobile Chromium |
 | Priest entrance / form exceptions | `tests/reader-priest-entrance-phone.mjs`, `tests/mass-form-ceremonial-batch2.mjs` | Optional pre-Mass observation, no repeated genuflection, Requiem water action omitted but prayer retained |
 | Special liturgical structures | Existing Palm, Ash, Candlemas, Rogations, Requiem Absolution, Corpus Christi, Good Friday, Holy Thursday, Easter Vigil and Nuptial controllers/tests | Per-controller / integration cases have different degrees of phone evidence; not all have a full in-person rite demonstration |
@@ -25,11 +25,11 @@
 
 ## Defect discovered by expanding phone coverage
 
-The original test harness was artificially Sung-only and passed a hand-built Mass plan without `objectiveContext`; Low and Solemn require the real `compileMassPlan` output. The harness now uses that production compiler.
+The original test harness was artificially Sung-only and passed a hand-built Mass plan without `objectiveContext`; Low and Solemn require the real `compileMassPlan` output. The harness now uses that production compiler for Low, Solemn and Requiem and preserves the supported ordinary Sung path.
 
-The intentional source vs product distinction is locked: **Low LIVE = 39 cards; Sung LIVE = 48 presentation cards**.
+The intentional source vs product distinction is locked: **Low LIVE = 39 cards; ordinary Sung Votive LIVE = 65 curated cards (64 normally visible); Solemn and Requiem test cases = source-first form-specific projections (48)**.
 
-The first genuinely missing LIVE cue was then revealed at the Epistle: dynamically resolved Proper paragraphs had no `sourceCueIds` even though their 11 Proper blocks already have canonical source cues. As a result, the display text was disconnected from the native cue-focus tracker. The fix uses the **first authentic non-response source cue already registered on each Proper block**, not newly invented timing or a minister's reply. Thus the Epistle text belongs to `C0075`, not the separate server `C0076`; the Gospel text belongs to `C0086`, not the `C0087` response. This is tested in `tests/reader-text.mjs` in both Low and Sung and for a two-paragraph Epistle. Source completeness demands **one** canonical `sourceCueIds` occurrence per Proper block, so only the first display paragraph owns that source event. All paragraphs retain the same `properCueScopeId` as presentation-only scroll territory; `reader-cue-focus.js` highlights **one** paragraph at a time. This is not word-by-word priest timing certification.
+The first genuinely missing LIVE cue was then revealed at the Epistle: dynamically resolved Proper paragraphs had no `sourceCueIds` even though their 11 Proper blocks already have canonical source cues. As a result, the display text was disconnected from the native cue-focus tracker. The fix uses the **first authentic non-response source cue already registered on each Proper block**, not newly invented timing or a minister's reply. Thus the Epistle text belongs to `C0075`, not the separate server `C0076`; the Gospel text belongs to `C0086`, not the `C0087` response. This is tested in `tests/reader-text.mjs` in both Low and Sung and for a two-paragraph Epistle, without changing the canonical text or priest-event clock. Source completeness demands **one** canonical `sourceCueIds` occurrence per Proper block, so only the first display paragraph owns that source event. All paragraphs retain the same `properCueScopeId` as presentation-only scroll territory; `reader-cue-focus.js` highlights **one** paragraph at a time. This is not word-by-word priest timing certification.
 
 ## Critical interpretation of the matrix
 
@@ -47,7 +47,7 @@ A browser screenshot is review evidence, not automatically a visual-quality acce
 
 ## Release decision discipline
 
-- **Automated/browser gate PASS** only if all required CI and the new matrix pass, including the deliberate Low=39 / Sung=48 separation.
+- **Automated/browser gate PASS** only if all required CI and the new production-entry matrix pass, including the deliberate Low=39 / ordinary Sung Votive=65 / Solemn and Requiem source-first=48 separation.
 - **Complete 1962 Mass field-certificate** remains **PENDING** until the items above have been directly verified.
 - CI artifacts: `mass-live-batch4-phone-review` (screenshots + structured case manifest).
 - The present batch adds tests, fixtures and evidence; it does not assert an unobserved physical-phone release.

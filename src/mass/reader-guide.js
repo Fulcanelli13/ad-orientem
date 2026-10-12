@@ -94,7 +94,8 @@ export function guideForPresentationCard(registry,card){
   const sequence=card.guideSequence??card.sourceSequence??card.sequence;
   const inherited=guideForSequence(registry,sequence);
   if(!inherited)return null;
-  const isSplit=card.productPresentation48===true||card.liveSourceSegment===true;
+  const isSplit=card.productPresentation48===true||card.liveSourceSegment===true||
+    card.curatedPresentationReview===true;
   return Object.freeze({
     ...inherited,
     moment:isSplit ? String(card.title||inherited.moment) : inherited.moment,
