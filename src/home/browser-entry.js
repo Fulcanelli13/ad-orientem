@@ -356,11 +356,13 @@ export function createHomeOwner(win=globalThis){
       event.stopImmediatePropagation?.();
       const id=dynamic.dataset?.homeCuDynamic;
       if(id==="dynamic.free"){void openRoute("pray.library",{trigger:dynamic});return;}
-      // A daily Marian prayer is a launch into one canonical reader, not a
-      // legacy Daily Rule sheet. The rule service may track completion but
-      // must not own the prayer presentation.
-      if(/^angelus\.(morning|noon|evening)$/.test(id)){
-        void openRoute("pray.angelus_regina",{trigger:dynamic});
+      // Contextual Prayer actions use the same canonical reader as the
+      // Prayers catalogue. The legacy Daily Rule is a tracking service,
+      // not a second devotional rendering owner.
+      const canonicalRoute=dynamic.dataset?.homeCuRoute||
+        (/^angelus\.(morning|noon|evening)$/.test(id)?"pray.angelus_regina":null);
+      if(String(canonicalRoute??"").startsWith("pray.")){
+        void openRoute(canonicalRoute,{trigger:dynamic});
         return;
       }
       try{if(win?.AO_RULE_V411?.openDynamic?.(id))return;}catch{}
