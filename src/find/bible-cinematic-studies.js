@@ -1,3 +1,4 @@
+import {approvedBibleSceneArtwork} from "./bible-scene-art-gate.js";
 // Cinematic comparison studies; source-owned 151-event timeline is never overwritten.
 // Curated from #1018 crosswalk of #1010's four cinematic journeys. No images or GPS.
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -97,7 +98,7 @@ export function cinematicExactAtlasTarget(study,atlasStops=[]){
  return hits.length===1&&hits[0].index===c.atlasIndex?c.atlasIndex:null;
 }
 const button=(attr,value,label,active=false)=>'<button type="button" '+attr+'="'+esc(value)+'"'+(active?' aria-pressed="true"':"")+'>'+esc(label)+'</button>';
-export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",scene=0,atlasStops=[]}={}){
+export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",scene=0,atlasStops=[],artSelection=null}={}){
  // Production reader must reject a stale 181-scene crosswalk after any
  // canonical 151-stop migration; test-only checks are not sufficient.
  const lang=language==="fr"?"fr":"en",valid=validateCinematicCrosswalk(data,atlasStops);
@@ -111,6 +112,12 @@ export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",
  const c=studyChapter(data,chapter),s=studyScene(data,c.id,scene);
  const n=c.sceneIndices.indexOf(s.index),len=c.sceneIndices.length,link=cinematicExactAtlasTarget(s,atlasStops);
  const status=L(lang,...CINEMATIC_REVIEW_STATUS[s.status]);
+ const approvedArt=approvedBibleSceneArtwork(s,artSelection);
+ const artFigure=approvedArt?'<figure class="aoBibleStageArtwork" data-bible-scene-artwork="'+esc(approvedArt.id)+'">'+
+  '<img src="'+esc(approvedArt.src)+'" alt="'+esc(approvedArt.title+" — "+approvedArt.artist)+'" loading="lazy" decoding="async" width="'+approvedArt.width+'" height="'+approvedArt.height+'"/>'+
+  '<figcaption>'+esc(approvedArt.title+" · "+approvedArt.artist)+' · '+
+   '<a href="'+esc(approvedArt.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Museum original · CC0","Original du musée · CC0"))+' ↗</a></figcaption></figure>':"";
+
  const nav='<label class="aoBibleStudyChapterPicker"><span>'+esc(L(lang,"Chapter","Chapitre"))+'</span><select data-bible-study-chapter-select aria-label="'+esc(L(lang,"Choose story chapter","Choisir un chapitre"))+'">'+
  data.chapters.map(ch=>'<option value="'+esc(ch.id)+'"'+(ch.id===c.id?' selected':'')+'>'+esc(L(lang,ch.label_en,ch.label_fr))+'</option>').join("")+'</select></label>'+
  '<div class="aoBibleStudyChapters" role="group" aria-label="'+esc(L(lang,"Story chapters","Chapitres du récit"))+'">'+
@@ -119,7 +126,7 @@ export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",
  '<div class="aoBibleStageHeader" data-bible-scene-key="'+esc(s.sceneKey)+'"><span class="aoBibleStudyCount">'+
  esc(L(lang,"Scene","Scène"))+' '+(n+1)+' / '+len+'</span>'+
  '<span class="aoBibleStudyReference">'+esc(s.reference)+'</span></div>'+
- '<div class="aoBibleStageReading"><h2>'+esc(L(lang,s.title_en,s.title_fr))+'</h2>'+
+ artFigure+'<div class="aoBibleStageReading"><h2>'+esc(L(lang,s.title_en,s.title_fr))+'</h2>'+
  '<p class="aoBibleStudySynopsis">'+esc(L(lang,s.synopsis_en,s.synopsis_fr))+'</p></div>'+
  '<div class="aoBibleStageEvidence"><p class="aoBibleStudyEvidence">'+esc(status)+'</p>'+
  (s.sourceNote_en?'<p class="aoBibleStudyQualification">'+esc(L(lang,s.sourceNote_en,s.sourceNote_fr))+'</p>':"")+
@@ -157,6 +164,7 @@ const CSS=[
 ".aoBibleStudyScene{max-width:770px;margin:10px auto 0;background:radial-gradient(ellipse at 25% 0%,#27303b,#121922 58%);border:1px solid #d9c59a40;border-radius:16px;padding:clamp(18px,5vw,35px);box-shadow:0 18px 48px #0007}",
 ".aoBibleStudyCount{font:600 10px system-ui;letter-spacing:.12em;text-transform:uppercase;color:#c4a773}.aoBibleStageHeader .aoBibleStudyReference{margin:0;font:600 12px system-ui}.aoBibleStudyScene h2{font:500 clamp(24px,4.8vw,38px)/1.15 Georgia,serif;color:#f3e5cd;margin:14px 0}.aoBibleStudySynopsis{font:17px/1.55 Georgia,serif;color:#ddd0bc;max-width:620px}",
 ".aoBibleStudyNotes{margin:13px 0;color:#b6a98d;font:12px/1.5 system-ui}.aoBibleStudyNotes summary{cursor:pointer;color:#d1bd94}.aoBibleStudyNotes p{margin:8px 0}.aoBibleStudyReference{font:600 12px system-ui;color:#e7c58c;margin:20px 0 10px}.aoBibleStudyEvidence{font:600 11px/1.4 system-ui;color:#c4b395;text-transform:uppercase;letter-spacing:.03em}.aoBibleStudyQualification,.aoBibleStudyLocation{font:12px/1.5 system-ui;color:#aea390;margin:10px 0}",
+".aoBibleStageArtwork{margin:12px 0 0;display:flex;flex-direction:column;gap:8px;align-items:center}.aoBibleStageArtwork img{display:block;width:auto;max-width:100%;height:auto;max-height:min(52vh,650px);object-fit:contain;border:none;box-shadow:0 13px 35px #0008}.aoBibleStageArtwork figcaption{font:11px/1.4 system-ui;color:#b4a48b;text-align:center}.aoBibleStageArtwork a{color:#dbc18c}",
 ".aoBibleStageHeader{padding-bottom:8px}.aoBibleStageEvidence p{max-width:680px}",
 ".aoBibleStudyActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.aoBibleStudyActions button{background:#2c291e;color:#ecd2a1;white-space:normal;text-align:left}.aoBibleStudyTransport{display:flex;gap:12px;justify-content:space-between;align-items:center;max-width:770px;margin:15px auto}.aoBibleStudyTransport span{font:11px/1.3 system-ui;color:#ae9e80;text-align:center}",
 "@media(max-width:480px){.aoBibleStudyTop{padding:8px 12px}.aoBibleStudyTabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;overflow:visible;padding:6px 8px}.aoBibleStudyTabs button{min-width:0;min-height:49px;white-space:normal;line-height:1.13;font-size:10px;padding:5px 3px;border-radius:6px}.aoBibleStudyChapterPicker{display:grid}.aoBibleStudyChapters{display:none}.aoBibleStudyScroll{padding:10px 12px 26px}.aoBibleStudyNotice{padding:8px 10px;margin:0 0 9px}.aoBibleStudyChapterTitle{margin:5px 0 10px}.aoBibleStudyChapterTitle h2{font-size:22px;line-height:1.12;margin:3px 0}.aoBibleStudyChapterTitle p{font-size:12px;line-height:1.4;margin:5px 0}.aoBibleStudyChapters{padding:0 0 8px}.aoBibleStudyChapters button{font-size:11px;max-width:150px}.aoBibleStudyScene{padding:16px 15px}.aoBibleStudyScene h2{font-size:27px;margin:10px 0}.aoBibleStudySynopsis{font-size:15px;line-height:1.45}.aoBibleStudyTransport button{padding:7px 9px;font-size:11px}}",
