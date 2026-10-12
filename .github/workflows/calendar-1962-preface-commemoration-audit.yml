@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:
-      contents: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -41,13 +41,3 @@ jobs:
           name: calendar-1962-preface-ten-date-runtime-audit
           path: data/calendar/audits/1962-2026-preface-runtime-10-date-audit.v1.json
           if-no-files-found: warn
-      - name: Commit non-production audit in PR branch
-        if: success() && github.ref == 'refs/heads/fix/1962-calendar-commemorations-preface-20261012'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/calendar/audits/1962-2026-preface-runtime-10-date-audit.v1.json
-          if ! git diff --staged --quiet; then
-            git commit -m "data(research): record 10-date actual Missal Preface runtime audit"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
