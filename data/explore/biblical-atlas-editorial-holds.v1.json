@@ -14,15 +14,17 @@
       "priority": "P0",
       "sceneIndex": 74,
       "atlasIndices": [
-        110
+        82
       ],
       "passages": [
         "John 2:13–22"
       ],
-      "issue": "John 2 cleansing/First Passover is located in canonical PASSION-era sequence although John's Gospel narrates it near the beginning of the public ministry.",
+      "issue": "The John 2 Temple cleansing has been moved into PUBLIC in its Johannine narrative position after Cana. Whether it is a distinct historical cleansing or the same episode as the Synoptic Passion accounts remains an unresolved exegetical question.",
       "resolution": "HOLD",
-      "requiredAction": "Decide Johannine/Synoptic cleansing relation and, if correcting 151-stop ordering, migrate every dependent index, join, and test.",
-      "source": "https://www.newadvent.org/bible/joh002.htm"
+      "requiredAction": "Keep the PUBLIC placement explicitly qualified as Johannine narrative order, not proof of precise historical dating or one-versus-two cleansings. Review the source relationship before theatre publication.",
+      "source": "https://www.newadvent.org/bible/joh002.htm",
+      "sourceOrderCorrection": "IMPLEMENTED_2026_10_12",
+      "commentarySource": "https://bible.usccb.org/bible/john/2"
     },
     {
       "id": "JOHN20_RESURRECTION_VS_EMPTY_TOMB",
@@ -34,10 +36,11 @@
       "passages": [
         "John 20:1–18"
       ],
-      "issue": "Study title Resurrection must not be conflated with the canonical empty-tomb/Magdalene appearance narrative; John 20 does not narrate an eyewitness view of the instant of Resurrection.",
+      "issue": "The John 20 cinematic scene now describes the empty tomb and appearance to Mary Magdalene. Artwork must not imply John 20 narrates an eyewitness account of the instant of Resurrection.",
       "resolution": "HOLD",
-      "requiredAction": "Correct title/synopsis/cinematic imagery relationship with source-congruent qualification before scene certification.",
-      "source": "https://www.newadvent.org/bible/joh020.htm"
+      "requiredAction": "Review depiction and licensing of any cinematic artwork against John 20:1–18 and keep the source-note visible.",
+      "source": "https://www.newadvent.org/bible/joh020.htm",
+      "textCorrection": "IMPLEMENTED_2026_10_12"
     },
     {
       "id": "LUKE2_TEMPLE_EXACT_AND_OVERLAP",
@@ -78,15 +81,15 @@
       "priority": "P1",
       "sceneIndex": 74,
       "atlasIndices": [
-        110,
-        92,
         82,
-        94,
-        88,
-        107,
-        102,
-        105,
-        101
+        93,
+        83,
+        95,
+        89,
+        108,
+        103,
+        106,
+        102
       ],
       "passages": [
         "John 2:13–22",
@@ -99,9 +102,9 @@
         "Luke 19:1–10",
         "John 11:1–44"
       ],
-      "issue": "Several exact-reference pairs in the cinematic study and canonical timeline are ordered differently; some result from differing Gospel sequence and one from a misplaced era.",
+      "issue": "The Johannine cleansing is now in PUBLIC, but selected public-ministry chapters retain differences between the canonical chronology and the 181-scene study order across Gospel narratives.",
       "resolution": "HOLD",
-      "requiredAction": "Review source-aware temporal ordering for each chapter; do not market 181 scene sequence as certified chronological dates.",
+      "requiredAction": "Review chronology and source-specific narrative order without imposing unsupported cross-Gospel dates or identifying distinct Gospel accounts by citation similarity.",
       "source": "https://www.newadvent.org/bible/joh004.htm"
     }
   ]
