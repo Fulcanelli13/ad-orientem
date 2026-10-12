@@ -172,6 +172,8 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   const nextIndex=Math.max(0,Math.min(cards.length-1,Number(target)||0));
   if(!initial&&nextIndex===index)return false;
   index=nextIndex;lastParagraph=null;lastCue=null;
+  // A transient Incarnation bow cannot leak into the next prayer card.
+  onCue(null,{card:plan[index],paragraph:null});
   cards.forEach((x,i)=>{x.hidden=i!==index;x.setAttribute("aria-hidden",i===index?"false":"true")});
   [...stops.children].forEach((x,i)=>{
    x.classList.toggle("active",i===index);
