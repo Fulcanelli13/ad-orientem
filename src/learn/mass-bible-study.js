@@ -50,7 +50,7 @@ export function validateMassBibleStudy(data){
 export function massBibleRows(data,{category="all",stage=""}={}){
  if(!validateMassBibleStudy(data))return [];
  const selected=OPTIONS.some(x=>x[0]===category)?category:"all";
- return data.rows.filter(row=>(selected==="all"||CLASSES[row.classification][2]===selected)&&(!stage||row.formationStage===stage));
+ return data.rows.filter(row=>(selected==="all"||CLASSES[row.classification][2]===selected)&&(!stage||row.group===stage));
 }
 export function validateProperWitnesses(first,second,segmented){
  const all=[...arr(first?.celebrations),...arr(second?.celebrations)];
