@@ -114,10 +114,14 @@ export function select1962CommemorationsForMassForm({
     competingUnderOneConclusion:Array.isArray(data.oneConclusionCollects)?
       data.oneConclusionCollects:[],
   });
-  if(mission.status==="UNVERIFIED")return untouched(
-    envelope?Object.freeze({...envelope,data:selected}):selected,
-    "MISSION_SUNDAY_"+mission.reason
-  );
+  if(mission.status==="UNVERIFIED"){
+    const blocked=Object.freeze({...selected,
+      missionSundayCollectDecision:Object.freeze({status:"UNVERIFIED",
+        reason:mission.reason,source:"1960_MISSAL_453",
+        date:calendarResolution.date,form:normalizedForm})});
+    return untouched(envelope?Object.freeze({...envelope,data:blocked}):blocked,
+      "MISSION_SUNDAY_"+mission.reason);
+  }
   const selectedWithMission=mission.status==="APPLIED"?mission.proper:selected;
   const result=envelope?Object.freeze({...envelope,data:selectedWithMission}):selectedWithMission;
   return Object.freeze({status:"CERTIFIED",reason:null,proper:result,decision,
