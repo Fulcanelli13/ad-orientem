@@ -1320,7 +1320,15 @@ function renderBenediction(){
  if(id==='blessing')body=`${guideNow(L('Receive the Eucharistic blessing','Recevez la bénédiction eucharistique'),L('Stop interacting with the phone. Attend to the blessing being given with the Blessed Sacrament.','Cessez d’interagir avec le téléphone. Soyez attentif à la bénédiction donnée avec le Saint-Sacrement.'))}${guideCue(L('WAIT UNTIL IT ENDS','ATTENDEZ LA FIN'),L('Do not advance during the blessing. Continue only after it has ended and the service moves on.','N’avancez pas pendant la bénédiction. Continuez seulement lorsqu’elle est terminée et que l’office se poursuit.'))}`;
  if(id==='praises')body=`${guideNow(L('Follow what is actually prayed next','Suivez ce qui est réellement prié ensuite'),L('If the Divine Praises are said here, pray them with the church. If they are omitted, leave them off and continue when Reposition begins.','Si les Louanges divines sont récitées ici, priez-les avec l’assemblée. Si elles sont omises, ne les ajoutez pas et continuez lorsque commence la reposition.'))}<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-praises ${BEN.divinePraises?'checked':''}><span><b>${esc(L('The Divine Praises are being said','Les Louanges divines sont récitées'))}</b><small>${esc(L('Show the text only when it belongs to this service','Afficher le texte seulement lorsqu’il appartient à cet office'))}</small></span></label>${BEN.divinePraises?prayerBlock('benediction_divine_praises',{kicker:L('Pray with the church','Prier avec l’assemblée')}):''}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the Blessed Sacrament is being returned to the tabernacle.','Avancez lorsque le Saint-Sacrement est reporté au tabernacle.'))}`;
  if(id==='reposition')body=`${guideNow(L('Follow the Reposition','Suivez la reposition'),L('Follow the chant and movement actually used as the Blessed Sacrament is returned to the tabernacle. The app does not force Psalm 116 or another local custom.','Suivez le chant et le mouvement réellement utilisés lorsque le Saint-Sacrement est reporté au tabernacle. L’application n’impose ni le psaume 116 ni un autre usage local.'))}${guideCue(L('FINISH WHEN','TERMINEZ LORSQUE'),L('The Blessed Sacrament has been reposed and the public service has actually ended.','Le Saint-Sacrement a été replacé au tabernacle et l’office public est réellement terminé.'))}`;
- return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}${benMacroRail(i)}<main class="aoP435930Body">${devotionalGuide('benediction')}${callout(esc(L('Do not use Next because the app is ready. Move only when the public rite has reached the next moment.','N’utilisez pas Suivant parce que l’application est prête. Avancez seulement lorsque le rite public a atteint le moment suivant.')),'rubric')}${body}${guideNav('ben',i,BEN_STAGES.length,L('Finish after Reposition','Terminer après la reposition'))}</main>`;
+ return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-benediction-step="${i}">
+ <section class="aoDevoCard" data-ao-devo-card="${esc(id)}">
+  <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / ${BEN_STAGES.length}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></header>
+  <div class="aoDevoCardScroll" role="region" aria-label="${esc(titles[i])}">${body}</div>
+ </section>
+ <details class="aoP435930PrayerOptions" data-ao-benediction-guide><summary>${esc(L('Rite guidance and sources','Guide du rite et sources'))}</summary>
+ ${callout(esc(L('Advance only when the public rite actually reaches the next moment. Never use the app as a timer or substitute for the clergy.','Avancez seulement lorsque le rite public atteint réellement l’étape suivante. Ne remplacez ni le clergé ni le déroulement de l’office par un minuteur.')),'rubric')}${devotionalGuide('benediction')}</details>
+ ${guideNav('ben',i,BEN_STAGES.length,L('Finish after Reposition','Terminer après la reposition'))}
+ </main>`;
 }
 function presenceBar(){return nav(L('Presence','Présence'),[['reserved','Reserved in tabernacle','Réservé au tabernacle'],['exposed','Exposed','Exposé']],adorationPresence())}
 function timerMarkup(){
@@ -1847,6 +1855,18 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   if(!cardDeck)bindAngelusExactRail();
  });else stopAngelusExactRail();
  if((view==='library'&&LIB.open)||(view==='prayerOnly'&&prayerId))queueMicrotask(()=>installLibraryParagraphFocus(m,view==='library'?LIB.open:prayerId));
+ if(view==='benediction')queueMicrotask(()=>{
+  const titles=BEN_STAGES.map(stage=>L(stage[1],stage[2]));
+  const chapters=BEN_STAGES.map((stage,i)=>({id:stage[0],title:titles[i]}));
+  const reader=installSequentialDevotionalReader({
+   mount:m,kind:'benediction',chapters,activeIndex:BEN.step,
+   paragraphSelector:'.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930Prayer .aoP435930Flip,.aoP435930Prayer .aoP435930Text',
+   timelineLabel:L('Benediction stages','Étapes de la Bénédiction'),
+   onNavigate:i=>{BEN.step=i;render()}
+  });
+  if(reader)m.querySelector('.aoP435930BenedictionReader')?.setAttribute('data-ao-benediction-dual-axis','true');
+ });
+
  if(view==='stations')queueMicrotask(()=>{
   const titles=STATION_DATA.stationTitles?.[lang()]||STATION_DATA.stationTitles?.en||[];
   const chapters=Array.from({length:14},(_,i)=>({id:'station-'+(i+1),
