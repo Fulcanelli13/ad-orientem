@@ -3,6 +3,7 @@
 // source remains authoritative for the Mass actually followed.
 import { buildLiturgicalYear } from "../calendar/liturgical-year.js";
 import { calendarMassColour } from "../calendar/colour-projection.js";
+import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
 
 const ISO=/^\d{4}-\d{2}-\d{2}$/;
 const text=value=>typeof value==="string"&&value.trim()?value.trim():null;
@@ -87,8 +88,28 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
   const actualTitle=text(legacy?.actualCelebration?.title)||
     text(legacy?.celebrationTitle)||
     (kind==="CALENDAR"?calendar.title:null);
-  const proper=properOf(legacy);
   const alternate=legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY";
+  const selectedForm=form==null?null:String(form).trim().toUpperCase();
+  const confirmed=validResolution(calendarState,date);
+  const hostProper=properOf(legacy);
+  // The host preflight may still be loading while the same-date Calendar
+  // resolver has already returned its canonical trilingual Proper. For the
+  // unmodified Mass of the day only, use that authoritative source for the
+  // informational prayer-applicability banner; never unlock Mass start here.
+  const actualId=text(legacy?.actualCelebration?.id);
+  const calendarOwner=confirmed?.day?.main?.id;
+  const calendarOnly=kind==="CALENDAR"&&!alternate&&
+    [null,"","mass_of_day",calendarOwner].includes(text(legacy?.celebrationId))&&
+    [null,"","mass_of_day",calendarOwner].includes(actualId);
+  const resolvedCalendarProper=calendarOnly&&confirmed?.proper?.status==="ready"?
+    confirmed.proper.data:null;
+  const selectedSource=hostProper??resolvedCalendarProper;
+  const sourceSelection=select1962CommemorationsForMassForm({
+    proper:selectedSource,calendarResolution:confirmed,
+    form:selectedForm,celebrationId:legacy?.celebrationId??"mass_of_day",
+    isConventual:legacy?.conventualMass??false,observedSource:alternate
+  });
+  const proper=sourceSelection.proper?.data??sourceSelection.proper??selectedSource;
   const differs=alternate||!["CALENDAR","GOOD_FRIDAY"].includes(kind)||
     Boolean(actualTitle&&calendar.title&&actualTitle!==calendar.title);
   const actualColour=text(proper?.color)||text(proper?.colour)||
@@ -106,7 +127,6 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
   // Counting source orations is NOT a rubrical decision. The 1962 Proper
   // source owner must certify which commemorations apply to the chosen Mass
   // form; this read-only context may never infer it from calendar names.
-  const selectedForm=form==null?null:String(form).trim().toUpperCase();
   const sourceDecision=proper?.commemorationFormDecision;
   const certified=Boolean(selectedForm&&sourceDecision?.status==="CERTIFIED"&&
     sourceDecision?.source==="1962_PROPER_RESOLVER"&&
