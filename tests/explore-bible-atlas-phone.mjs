@@ -77,10 +77,17 @@ try{
  assert.ok(width.scroll>width.client*3,"timeline is not horizontally scrollable");
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-map]").count(),1);
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-era-overlay]").count(),1);
+ assert.equal(await page.locator("#ao-find-modular-root [data-bible-unlocated=true]").count(),1,
+  "Creation has no geographic pin and must not display a large map-loading panel");
+ assert.equal(await page.locator("#ao-find-modular-root [data-bible-unlocated-note]").isVisible(),true);
+ assert.equal(await page.locator("#ao-find-modular-root [data-bible-detail] [data-ao-scripture-context]").count(),1,
+  "Creation remains Scripture-readable without an invented GPS point");
  await captureView("canonical-chronology");
  // Tapping a remote milestone should move the selected event, geography, and ribbon.
  await page.locator('#ao-find-modular-root [data-bible-step="71"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===71,null,{timeout:15000});
+ assert.equal(await page.locator("#ao-find-modular-root [data-bible-unlocated=false]").count(),1,
+  "Infancy source anchors must restore the normal geographic map");
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="71"]').getAttribute("aria-pressed"),"true");
  const nearby=await track.evaluate(el=>{const middle=el.getBoundingClientRect().left+el.clientWidth/2;const card=el.querySelector('[data-bible-step="71"]').getBoundingClientRect();return Math.abs(card.left+card.width/2-middle)});
  assert.ok(nearby<125,"selected milestone should remain close to timeline centre");
