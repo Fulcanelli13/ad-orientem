@@ -19,16 +19,17 @@
     "p0Unresolved": 51,
     "devotions": 9,
     "calendarSaints": 42,
-    "museumOrArchiveSourceMatchedSubjects": 23,
-    "verifiedObjectProposalAssignments": 27,
-    "canonicalDistinctArtworkLeads": 24,
-    "p0WithoutNewObjectMatch": 28,
+    "museumOrArchiveSourceMatchedSubjects": 31,
+    "verifiedObjectProposalAssignments": 35,
+    "canonicalDistinctArtworkLeads": 31,
+    "p0WithoutNewObjectMatch": 20,
     "rubensApostlePanelMatches": 7,
     "humanSelectionsUnchanged": 101,
     "additionalHumanSelections": 0,
     "sourceImagesAcquired": 0,
     "imagesReleased": 0,
-    "sharedMarkLukeOriginalPaintings": 1
+    "sharedMarkLukeOriginalPaintings": 1,
+    "verifiedLisieuxCelineLikenessSharedBetweenTwoSubjects": 1
   },
   "rows": [
     {
@@ -258,11 +259,30 @@
         "ART-armelite-devotional-artist-aint-h-r-se-of-isieux-traditional-painted-portrait"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "carmel-lisieux-1925-therese-aux-roses",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux roses (1925)",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "1925 original, 86 × 65 cm",
+          "relation": "POSTHUMOUS_DEVOTIONAL_PAINTED_LIKENESS_SOURCE_AUTHENTICATED",
+          "note": "Lisieux Carmel's own archive reproduces Céline's notes that this is a painted portrait of Thérèse, made in 1925 after Thérèse's death. NOT a life portrait; photograph-supported devotional likeness; rights strictly retained by custodian. Painting style requires user-specific decision, not default approval.",
+          "medium": "painting",
+          "sourceEvidence": "ORIGINAL_CARMEL_ARCHIVE_FIRST_PARTY",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false,
+          "artistStyleGate": "POSTHUMOUS_20C_DEVOTIONAL_PAINTING_NOT_A_BAROQUE_MASTERPIECE",
+          "portraitAuthenticity": "POSTHUMOUS_RELATIVE_PAINTED_LIKENESS_NOT_LIFE_SITTING"
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": "MODERN_SAINT_HISTORICAL_PORTRAIT_AUTHENTICITY_REQUIRED",
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_VERIFIED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "DEV-15",
@@ -275,11 +295,29 @@
         "ART-eter-aul-ubens-hristus-alvator-undi"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "venice-tintoretto-1566-christ-before-pilate",
+          "artist": "Jacopo Tintoretto",
+          "title": "Christ before Pilate",
+          "sourceUrl": "https://www.scuolagrandesanrocco.org/en/tintoretto/sala-dellalbergo/",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "Scuola Grande di San Rocco, Sala dell’Albergo, 1566–67",
+          "relation": "CHRIST_KING_RELATED_PILATE_CONTEXT_NOT_EXACT_GOSPEL_SCENE",
+          "note": "Monumental oil-on-canvas dramatic Christ-before-Pilate. The depicted washing-of-hands incident corresponds to Matthew 27, which is LATER than the dialogue John 18:33–37 appointed on Christ the King under 1962 calendar. Do NOT claim this exact Christ King Gospel; thematic royal-suffering linkage only, no dedicated crowned Christ-king subject. Style aligns with Venetian high Renaissance but image quality unknown.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_OR_ORIGINAL_CUSTODIAN_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false,
+          "observedGospelRelationship": "THEMATIC_NOT_APPOINTED_EVENT_VERIFIED"
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_VERIFIED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "DEV-19",
@@ -1161,11 +1199,30 @@
         "ART-armelite-devotional-artist-aint-h-r-se-of-isieux-traditional-painted-portrait"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "carmel-lisieux-1925-therese-aux-roses",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux roses (1925)",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "1925 original, 86 × 65 cm",
+          "relation": "POSTHUMOUS_DEVOTIONAL_PAINTED_LIKENESS_SOURCE_AUTHENTICATED",
+          "note": "Lisieux Carmel's own archive reproduces Céline's notes that this is a painted portrait of Thérèse, made in 1925 after Thérèse's death. NOT a life portrait; photograph-supported devotional likeness; rights strictly retained by custodian. Painting style requires user-specific decision, not default approval.",
+          "medium": "painting",
+          "sourceEvidence": "ORIGINAL_CARMEL_ARCHIVE_FIRST_PARTY",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false,
+          "artistStyleGate": "POSTHUMOUS_20C_DEVOTIONAL_PAINTING_NOT_A_BAROQUE_MASTERPIECE",
+          "portraitAuthenticity": "POSTHUMOUS_RELATIVE_PAINTED_LIKENESS_NOT_LIFE_SITTING"
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": "MODERN_SAINT_HISTORICAL_PORTRAIT_AUTHENTICITY_REQUIRED",
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_VERIFIED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-OT-06",
@@ -1178,11 +1235,28 @@
         "ART-artolom-steban-urillo-ision-of-aint-nthony-of-adua"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "sevilla-murillo-vision-san-antonio",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "La visión de san Antonio de Padua",
+          "sourceUrl": "https://www.catedraldesevilla.es/la-vision-de-san-antonio-la-historia-secreta-de-una-obra-maestra-de-murillo/",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "Catedral de Sevilla, Murillo altarpiece",
+          "relation": "EXACT_NAMED_ANTHONY_VISION_OF_CHILD_JESUS",
+          "note": "Cathedral's own account authenticates monumental Murillo canvas, Saint Anthony receives the Child Jesus in a dramatic heaven-and-earth Baroque composition. Older option name now anchored to exact custodian record; poor phone hero if crop forces upper/lower split. No rights or user aesthetic approval.",
+          "medium": "painting",
+          "sourceEvidence": "OWNING_CATHEDRAL_FIRST_PARTY",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_VERIFIED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-OT-08",
@@ -1196,11 +1270,28 @@
         "ART-uillaume-uillon-ethi-re-aint-ouis-isiting-the-lague-tricken"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "versailles-jouvenet-inv5501",
+          "artist": "Jean-Baptiste Jouvenet",
+          "title": "Saint Louis soignant les blessés après la bataille de Mansourah (1250)",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/000PE006521",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "MV 8363; INV 5501; AC 1873",
+          "relation": "EXACT_NAMED_SAINT_LOUIS_HISTORICAL_NARRATIVE",
+          "note": "French Ministry of Culture museum catalogue confirms 1709 painting commissioned by Louis XIV for altar of Saint Louis in Versailles royal chapel. Named saint and charitable subject, not reliquary Crown of Thorns image or historical portrait.",
+          "medium": "painting",
+          "sourceEvidence": "FRANCE_NATIONAL_MUSEUM_CATALOGUE",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_VERIFIED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-OT-09",
@@ -1213,11 +1304,29 @@
         "ART-ames-arry-aint-atrick-aptising-an-rish-ing"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "ngi-4623-barry-st-patrick-cashel",
+          "artist": "James Barry",
+          "title": "The Baptism of the King of Cashel by Saint Patrick",
+          "sourceUrl": "https://onlinecollection.nationalgallery.ie/objects/8798",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "NGI.4623",
+          "relation": "EXACT_NAMED_SAINT_PATRICK_BAPTISING_KING",
+          "note": "National Gallery of Ireland confirms c.1800–1801 oil on paper laid on canvas, 62 × 63 cm, as an UNFINISHED artist oil sketch from a larger original composition. Authentically links Saint Patrick and Cashel baptism but reject automatic masterpiece status until comparison with finished work.",
+          "medium": "painting",
+          "sourceEvidence": "NATIONAL_GALLERY_IRELAND_CATALOGUE",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false,
+          "artisticQualityGate": "UNFINISHED_SMALL_OIL_SKETCH_VISUAL_REVIEW"
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_VERIFIED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-OT-14",
@@ -1230,11 +1339,28 @@
         "ART-orenzo-onaco-aint-enedict-dmitting-aurus-and-lacidus"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rizi-saint-benedict-idols",
+          "artist": "Fray Juan Andrés Rizi",
+          "title": "Saint Benedict Destroying Idols",
+          "sourceUrl": "https://www.museodelprado.es/en/whats-on/exhibition/meta-painting-a-journey-to-the-idea-of-art/1d0500f9-5f3c-4ad0-a345-5626e65fa702",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "Prado 17th-century series (individual accession pending)",
+          "relation": "EXACT_NAMED_SAINT_BENEDICT_HAGIOGRAPHIC_EVENT",
+          "note": "Prado exhibition identifies Fray Juan Andrés Rizi's large pre-1662 oil on canvas, Saint Benedict destroying idols. Separate original object landing page/inventory still to find. NOT equivalent to portraits, and final artist suitability remains open.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_EXHIBITION_SOURCE_INDIVIDUAL_OBJECT_PENDING",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_VERIFIED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-OT-17",
@@ -1282,11 +1408,28 @@
         "ART-aolo-eronese-onsecration-of-aint-icholas"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "ng-26-veronese-nicholas",
+          "artist": "Paolo Veronese",
+          "title": "The Consecration of Saint Nicholas",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/paolo-veronese-the-consecration-of-saint-nicholas",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "NG26",
+          "relation": "EXACT_NAMED_SAINT_NICHOLAS_BISHOP_CONSECRATION",
+          "note": "National Gallery directly authenticates the 1562 oil-on-canvas original commissioned for San Benedetto Po, 286.5 × 175.3 cm, Vasari-attested master Veronese. Existing 11 October candidate now source-reconciled; no substitute new painting ID.",
+          "medium": "painting",
+          "sourceEvidence": "NATIONAL_GALLERY_ORIGINAL_OBJECT_CATALOGUE",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_VERIFIED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-OT-21",
@@ -1390,5 +1533,5 @@
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
     }
   ],
-  "additionalBatch": "Prado Juan Ribalta joint evangelists, Rizi Saint Agnes, Louvre Crespi named Anselm and Italian Banchero Saint Lawrence; user visual review still required; no artwork downloaded."
+  "additionalBatch": "Second P0 research batch: Lisieux Carmel's original Céline Thérèse painting shared across devotion and calendar, Tintoretto's Christ before Pilate as contextual only, original Murillo Seville Anthony, Jouvenet Louis, Barry Patrick oil sketch, Fray Juan Rizi Benedict and National Gallery Veronese Nicholas. 8 additional requirements; zero user approvals, zero image downloads."
 }
