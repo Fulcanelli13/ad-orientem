@@ -230,11 +230,16 @@ export function explorePhoneOverview(features,width){
   if(east-west<=240)return null;
   const south=Math.min(...points.map(p=>p[1])),north=Math.max(...points.map(p=>p[1]));
   const edge=width<=350?52:width<=400?54:58;
+  // MapLibre fitBounds may choose the *short* route across the date line
+  // for a nearly global west/east pair. Compute a nonwrapping camera instead.
+  // 512 CSS pixels is the world width at zoom 0 in Web Mercator.
+  const usable=Math.max(1,width-2*edge);
+  const zoom=Math.log2(usable*360/(512*(east-west)));
   return {
-    bounds:[[Math.max(-179.99,west),Math.max(-85,south)],
-      [Math.min(179.99,east),Math.min(85,north)]],
-    fit:{padding:{left:edge,right:edge,top:76,bottom:86},
-      maxZoom:10,duration:0},
+    center:[(west+east)/2,(south+north)/2],
+    zoom:Math.max(-2,Math.min(10,zoom)),
+    edge,
+    west,east,
   };
 }
 export function mapViewport(map){
@@ -260,6 +265,8 @@ export async function mountExploreMap(container,items,{
   if(phoneOverview){
     camera.minZoom=-2;
     camera.maxBounds=[[-259.99,-89],[259.99,89]];
+    camera.center=phoneOverview.center;
+    camera.zoom=phoneOverview.zoom;
   }
   const compactAttribution=phoneWidth>0&&phoneWidth<=430&&typeof maplibre.AttributionControl==="function";
   const map=new maplibre.Map({
@@ -309,8 +316,7 @@ export async function mountExploreMap(container,items,{
         "text-halo-width":1.4,"text-opacity":0.92}});
     if(!initialViewport){
       const bounds=mapFitBounds(features);
-      if(phoneOverview)map.fitBounds(phoneOverview.bounds,phoneOverview.fit);
-      else if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration:0});
+      if(!phoneOverview&&bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration:0});
       else if(features.length===1)map.jumpTo({center:features[0].geometry.coordinates,zoom:9});
     }
     map.on("click",prefix+"-points",event=>{
