@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-cue-owner-reconciliation13-v1",
-  "version": "1.0.0",
-  "status": "RESEARCH_SOT_RECONCILED_WITH_OPEN_RUNTIME_GATES",
+  "version": "1.1.0-post-pr1059-deduplicated",
+  "status": "BOOK_REVIEW_RECONCILED_WITH_CURRENT_MAIN_NO_DUPLICATE_PRIEST_ACTIONS",
   "sources": {
     "historicalBooks": [
       "the_holy_mass.pdf",
@@ -29,65 +29,59 @@
     "original1962RuleRemainsExistingSot": true
   },
   "counts": {
-    "alreadyCovered": 4,
-    "partiallyCovered": 3,
-    "stillRequiresIntegration": 6
+    "alreadyCovered": 6,
+    "partiallyCovered": 5,
+    "stillRequiresIntegration": 2
   },
   "statusCounts": {
     "REQUIRES_NON_TEXT_EVENT": 1,
     "REQUIRES_CONDITIONAL_EVENT": 1,
     "PARTIALLY_MODELED_IN_RESEARCH": 2,
-    "REQUIRES_CUE_REANCHOR": 1,
+    "ALREADY_MODELED_AT_NEXT_CUE_BOUNDARY": 1,
     "ALREADY_MODELED_REQUIRE_TIMING_CHECK": 1,
     "PARTIALLY_MODELED_ROLE_NEEDS_REVIEW": 1,
     "ALREADY_MODELED_TWO_STATIONS": 1,
-    "REQUIRES_INDEPENDENT_PRIEST_CLOCK": 2,
+    "PARTIALLY_IMPLEMENTED_OBSERVATION_GATE": 2,
     "ALREADY_MODELED_VOICE_SPAN": 1,
-    "REQUIRES_FORM_OWNED_OBJECT_EVENT": 1,
+    "ALREADY_MODELED_FORM_SPLIT_NEEDS_MICRO_TIMING": 1,
     "ALREADY_MODELED_TRIPLE_GESTURE": 1
   },
   "highestImpactUnresolved": [
     {
-      "key": "PRIEST_SCHOLA_COLLISION",
+      "key": "PRIEST_CHANT_OBSERVATION_DRIVER",
       "ids": [
         "AO.CER.REC.09",
         "AO.CER.REC.10"
       ],
-      "severity": "HIGH",
-      "runtimeImpact": "Priest actions may be shown at public Schola Sanctus/Benedictus time, potentially wrong when chants are prolonged or deferred."
+      "severity": "MEDIUM",
+      "runtimeImpact": "Fail-closed code is now on main; a trusted independent priest-event input still needs a realistic user/source workflow. No automatic movement recognition exists."
     },
     {
-      "key": "CANON_ALTAR_KISS_ONE_CUE_LATE",
-      "ids": [
-        "AO.CER.REC.05"
-      ],
-      "severity": "HIGH",
-      "runtimeImpact": "Priest altar kiss presently linked to C0151, although book identifies the boundary after C0150 petimus."
-    },
-    {
-      "key": "DEO_GRATIAS_ACTOR_AMBIGUITY",
+      "key": "DEO_GRATIAS_ROLE",
       "ids": [
         "AO.CER.REC.07"
       ],
       "severity": "MEDIUM",
-      "runtimeImpact": "Sung USER_RESPONSE donor type is not enough to name the responsible minister; R17 response registry lacks exact C0076 row."
+      "runtimeImpact": "LOW already identifies the minister response. Sung USER_RESPONSE clock still needs role-specific review where ministers/choir supply Deo gratias."
     },
     {
-      "key": "PATEN_OBJECT_TRANSFER_MISSING",
+      "key": "OFFERTORY_AND_PATEN_MICRO_TIMING",
       "ids": [
+        "AO.CER.REC.03",
+        "AO.CER.REC.04",
         "AO.CER.REC.12"
       ],
-      "severity": "MEDIUM",
-      "runtimeImpact": "Low priest paten object action and Solemn deacon/subdeacon handoff must remain separate."
+      "severity": "LOW",
+      "runtimeImpact": "Source actions are form-separated; precise object transfer/pouring timing cannot be inferred from one text cue."
     },
     {
-      "key": "OPENING_REVERENCE_NON_TEXT_EVENT",
+      "key": "PREMASS_NON_TEXT_REVERENCE",
       "ids": [
         "AO.CER.REC.01",
         "AO.CER.REC.02"
       ],
       "severity": "LOW",
-      "runtimeImpact": "Opening is not the trigger for all approach gestures; position and genuflection state depend on actual arrival/altar."
+      "runtimeImpact": "Actual entry, tabernacle reservation and observed priest gesture precede C0001; no fabricated universal action."
     }
   ],
   "items": [
@@ -194,10 +188,10 @@
       "originalCanonicalCue": "AO.SM.C0151",
       "actor": "PRIEST",
       "expectedOwner": "ALTAR_KISS_TE_IGITUR",
-      "status": "REQUIRES_CUE_REANCHOR",
+      "status": "ALREADY_MODELED_AT_NEXT_CUE_BOUNDARY",
       "stage": "AFTER_PETIMUS_C0150_BEFORE_C0151",
-      "finding": "Alphonsus printed p146 places the kiss after petimus in C0150 and before uti accepta C0151; canonical gesture matrix currently attaches it to C0151.",
-      "nextAction": "Change priest gesture trigger to end-of-C0150 in separate source-controlled runtime PR after 1962 SOT acceptance; no Latin text changes.",
+      "finding": "Alphonsus p.146 places the kiss immediately after ac pétimus (C0150) and before uti accepta (C0151). The existing canonical priest action GM.P.C0151.01 begins precisely at the next cue C0151; moving it to the START of C0150 would make it premature. No new cue or duplicate action is required.",
+      "nextAction": "Preserve GM.P.C0151.01 at opening of C0151 as the cue-boundary representation. If subcue timing is ever needed, annotate the after-C0150 / before-C0151 boundary; do not change the canonical gesture ID.",
       "sourceBook": "the_holy_mass.pdf",
       "sourcePrintedPage": 146,
       "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
@@ -209,7 +203,14 @@
       ],
       "notApprovedForLive": true,
       "congregationMandate": false,
-      "cueTextMutation": false
+      "cueTextMutation": false,
+      "canonicalBoundary": {
+        "afterCueId": "AO.SM.C0150",
+        "beforeCueId": "AO.SM.C0151",
+        "representedAtCueId": "AO.SM.C0151",
+        "alreadyPresentGestureId": "GM.P.C0151.01",
+        "requiresNewAction": false
+      }
     },
     {
       "id": "AO.CER.REC.06",
@@ -290,10 +291,10 @@
       "originalCanonicalCue": "AO.SM.C0145",
       "actor": "PRIEST",
       "expectedOwner": "SANCTUS_PRIEST_BOW",
-      "status": "REQUIRES_INDEPENDENT_PRIEST_CLOCK",
+      "status": "PARTIALLY_IMPLEMENTED_OBSERVATION_GATE",
       "stage": "PRIEST_PRIVATE_SANCTUS_NOT_SCHOLA_C0145",
-      "finding": "Sung C0145 is SCHOLA_PUBLIC but GM.P.C0145.01 is a priest action on that cue. A public-chant clock may not trigger the priest's quiet recitation bow.",
-      "nextAction": "Add independent priest event ownership and only then display action. Faithful gestures remain profile-specific and separate.",
+      "finding": "Sung C0145 is SCHOLA_PUBLIC but GM.P.C0145.01 is a priest action on that cue. A public-chant clock may not trigger the priest's quiet recitation bow. Production guard merged in PR #1059 prevents Schola C0145/C0148 from automatically triggering a priest action; only explicit observed priest event input can now show the source gesture.",
+      "nextAction": "Keep the merged fail-closed guard. An actual independent, trusted priest event driver or clearly visible manual observation workflow remains unimplemented; do not infer it from the choir or silently force a gesture.",
       "sourceBook": "the_holy_mass.pdf",
       "sourcePrintedPage": 142,
       "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
@@ -305,7 +306,13 @@
       ],
       "notApprovedForLive": true,
       "congregationMandate": false,
-      "cueTextMutation": false
+      "cueTextMutation": false,
+      "productionResolution": {
+        "pr": 1059,
+        "mergeCommit": "f952d5b7caa79de90b13935d2d8b51deef8d9925",
+        "scope": "GUARD_SCHOLA_WITH_EXPLICIT_PRIEST_OBSERVATION",
+        "independentAutoDetection": false
+      }
     },
     {
       "id": "AO.CER.REC.10",
@@ -314,10 +321,10 @@
       "originalCanonicalCue": "AO.SM.C0148",
       "actor": "PRIEST",
       "expectedOwner": "BENEDICTUS_PRIEST_CROSS",
-      "status": "REQUIRES_INDEPENDENT_PRIEST_CLOCK",
+      "status": "PARTIALLY_IMPLEMENTED_OBSERVATION_GATE",
       "stage": "PRIEST_PRIVATE_BENEDICTUS_NOT_SCHOLA_C0148",
-      "finding": "Sung C0148 is SCHOLA_PUBLIC but GM.P.C0148.01 is a priest cross at his own Benedictus. Deferred Schola Benedictus can substantially lag priest recitation.",
-      "nextAction": "Do not bind priest cross to schola C0148; require observed priest prayer timing and separate faithful profile rule.",
+      "finding": "Sung C0148 is SCHOLA_PUBLIC but GM.P.C0148.01 is a priest cross at his own Benedictus. Deferred Schola Benedictus can substantially lag priest recitation. Production guard merged in PR #1059 prevents Schola C0145/C0148 from automatically triggering a priest action; only explicit observed priest event input can now show the source gesture.",
+      "nextAction": "Keep the merged fail-closed guard. An actual independent, trusted priest event driver or clearly visible manual observation workflow remains unimplemented; do not infer it from the choir or silently force a gesture.",
       "sourceBook": "the_holy_mass.pdf",
       "sourcePrintedPage": 142,
       "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
@@ -329,7 +336,13 @@
       ],
       "notApprovedForLive": true,
       "congregationMandate": false,
-      "cueTextMutation": false
+      "cueTextMutation": false,
+      "productionResolution": {
+        "pr": 1059,
+        "mergeCommit": "f952d5b7caa79de90b13935d2d8b51deef8d9925",
+        "scope": "GUARD_SCHOLA_WITH_EXPLICIT_PRIEST_OBSERVATION",
+        "independentAutoDetection": false
+      }
     },
     {
       "id": "AO.CER.REC.11",
@@ -362,10 +375,10 @@
       "originalCanonicalCue": "AO.SM.C0211",
       "actor": "PRIEST_OR_SACRED_MINISTERS",
       "expectedOwner": "PATEN_HANDOFF_BEFORE_LIBERA_NOS",
-      "status": "REQUIRES_FORM_OWNED_OBJECT_EVENT",
+      "status": "ALREADY_MODELED_FORM_SPLIT_NEEDS_MICRO_TIMING",
       "stage": "AFTER_C0211_BEFORE_C0212_LOW",
-      "finding": "In Low Mass, priest cleans/takes paten between the secret Amen and Libera nos; in Solemn Mass subdeacon and deacon transfer the paten on a separate lane near end Pater.",
-      "nextAction": "Do not reuse Low priest object event for Solemn ministers; preserve C0209 conditional handoff with timing review open.",
+      "finding": "Existing Low form state at C0212 already instructs the priest to hold the paten upright while praying Libera nos. Existing Solemn sacred-minister state SMIN-012 at C0212 separately describes the subdeacon-to-deacon-to-celebrant paten handoff. Form ownership is already distinct; precise subcue transfer timing remains an observational/1962 review issue.",
+      "nextAction": "Do not create another universal PATEN_HANDOFF event. Preserve existing Low priest and Solemn sacred-minister action lanes at C0212; address only exact physical timing if independently observed and certified.",
       "sourceBook": "the_holy_mass.pdf",
       "sourcePrintedPage": 167,
       "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
@@ -377,7 +390,23 @@
       ],
       "notApprovedForLive": true,
       "congregationMandate": false,
-      "cueTextMutation": false
+      "cueTextMutation": false,
+      "existingImplementations": [
+        {
+          "form": "LOW",
+          "source": "data/presentation/reader-form-state.v1.json",
+          "cueId": "AO.SM.C0212",
+          "actor": "PRIEST",
+          "state": "Holds the paten upright while praying."
+        },
+        {
+          "form": "SOLEMN",
+          "source": "data/presentation/reader-form-state.v1.json",
+          "ministerEventId": "SMIN-012",
+          "cueId": "AO.SM.C0212",
+          "actor": "SUBDEACON → DEACON"
+        }
+      ]
     },
     {
       "id": "AO.CER.REC.13",
@@ -403,5 +432,13 @@
       "congregationMandate": false,
       "cueTextMutation": false
     }
-  ]
+  ],
+  "currentMainReconciliation": {
+    "priestChantGuardMerged": true,
+    "priestChantMergeCommit": "f952d5b7caa79de90b13935d2d8b51deef8d9925",
+    "altarKissAlreadyCorrectBoundary": true,
+    "patenLowAndSolemnAlreadyDifferentActors": true,
+    "remainingRealIntegrationCount": 2,
+    "unfinishedIndependentObservationDriver": true
+  }
 }
