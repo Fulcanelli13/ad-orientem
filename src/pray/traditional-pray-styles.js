@@ -50,6 +50,13 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 
 
 /* Shared daily/examen presentation: one source-owned stage per named card. */
+/* Holy Name and meal stages reuse the same quiet source-owned reader. */
+#aoPray435930 .aoTP381DonorBody .aoTP381LitanyLine{margin:0 0 9px;font:400 clamp(16px,4.1vw,20px)/1.62 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoTP381DonorBody .aoTP381LitanyLine:has(+.aoTP381LitanyLine){min-height:1.4em}
+#aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381PrayerCard{border:0;margin:0;padding:8px 0 12px}
+#aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381PrayerCard>h3{font-size:clamp(20px,4.7vw,28px);line-height:1.27}
+#aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381LitanyLine.aoDevoParagraph{opacity:var(--ao-devo-focus,.5)!important}
+
 #aoPray435930 .aoTP381DaypartStrip{display:flex;gap:8px;align-items:center;padding:8px 12px 6px}
 #aoPray435930 .aoTP381DaypartStrip button{min-height:38px;padding:7px 14px;font:500 .79rem/1.3 var(--ao-font-display,Georgia,serif);border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.16));background:transparent;color:var(--muted,#aeb2b8)}
 #aoPray435930 .aoTP381DaypartStrip button[aria-pressed="true"]{border-color:var(--liturgical,#c7ae6d);color:var(--text,#f1e7d7)}
