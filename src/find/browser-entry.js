@@ -668,7 +668,9 @@ export function createFindOwner(win=globalThis){
   }
   function centerBibleMilestone(index){
     const target=getRoot(win)?.querySelector?.('[data-bible-step="'+index+'"]');
-    target?.scrollIntoView?.({block:"nearest",inline:"center",behavior:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"instant":"smooth"});
+    // Exact Scripture jumps must arrive at one stable scene, not sweep the interim cards.
+    // User-driven swipes retain their native scrolling behaviour.
+    target?.scrollIntoView?.({block:"nearest",inline:"center",behavior:"instant"});
   }
   let bibleScrollFrame=0;
   function onBibleTimelineScroll(event){
