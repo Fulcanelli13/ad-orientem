@@ -25,6 +25,15 @@ try{
  browser=await chromium.launch({headless:true,channel:"chromium"});
  const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"fr-FR"});
  const page=await context.newPage();
+ // Historical mystery buttons now live under one explicit disclosure.
+ // Tests must exercise the same accessible user path instead of clicking
+ // hidden DOM buttons or assuming the old crowded opening.
+ const expandMysteryChoices=async()=>{
+  const disclosure=page.locator("#aoPrayerBookRoot.open .aoRosaryOtherMysteries");
+  if(await disclosure.count())await disclosure.evaluate(node=>{
+   if(!node.open)node.querySelector("summary")?.click();
+  });
+ };
  const pageErrors=[];page.on("pageerror",e=>pageErrors.push(String(e?.message??e)));
  await page.goto("http://127.0.0.1:4196/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
@@ -119,6 +128,7 @@ try{
  assert.equal(await page.locator("#aoPrayerBookRoot.open .aoRosaryGuide").evaluate(x=>x.open),true,"reopened Rosary player lost Guide state");
  // The 200 inherited English cue extracts are archived for verification, not
  // rendered as authoritative Scripture in the actively selected decade.
+ await expandMysteryChoices();
  const setButton=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
  if(await setButton.count())await setButton.evaluate(x=>x.click());
  await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:12000});
@@ -195,6 +205,7 @@ try{
    const el=document.querySelector("#aoPrayerBookRoot.open [data-pb-rosary-set='luminous']");
    return !!el&&el.disabled&&el.hidden;
   },null,{timeout:10000});
+ await expandMysteryChoices();
   const select=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
   await select.waitFor({timeout:12000});
   await select.evaluate(x=>x.click());
@@ -244,6 +255,7 @@ try{
    const el=document.querySelector("#aoPrayerBookRoot.open [data-pb-rosary-set='luminous']");
    return !!el&&el.disabled&&el.hidden;
   },null,{timeout:10000});
+ await expandMysteryChoices();
   const choose=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
   await choose.waitFor({timeout:12000});
   await choose.evaluate(el=>el.click());
@@ -286,6 +298,7 @@ try{
 
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null})),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_ROSARY_V381.getMethod()),"ordinary","Method preference leaked into standard Rosary");
+ await expandMysteryChoices();
  const normalSet=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
  await normalSet.waitFor({timeout:10000});
  await normalSet.evaluate(x=>x.click());
