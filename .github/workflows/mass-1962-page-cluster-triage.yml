@@ -10,6 +10,8 @@ on:
       - 'tests/mass-1962-visual-page-spotchecks.mjs'
       - 'tests/mass-1962-44-calendar-heading-reconciliation.mjs'
       - 'data/geography/research/mass-1962-44-cluster-calendar-heading-reconciliation-20261012.v1.json'
+      - 'data/geography/research/mass-1962-visual-13-calendar-edge-case-adjudications-20261012.v1.json'
+      - 'tests/mass-1962-visual-13-calendar-edge-cases.mjs'
 jobs:
   build-conservative-page-queue:
     runs-on: ubuntu-latest
@@ -28,6 +30,8 @@ jobs:
         run: node tests/mass-1962-visual-page-spotchecks.mjs
       - name: Check the 44 headed-page triages and seven discordant-month holds
         run: node tests/mass-1962-44-calendar-heading-reconciliation.mjs
+      - name: Check 13 visually adjudicated calendar exceptions and regional scope
+        run: node tests/mass-1962-visual-13-calendar-edge-cases.mjs
       - name: Upload review queue for per-page checking
         if: always()
         uses: actions/upload-artifact@v4
