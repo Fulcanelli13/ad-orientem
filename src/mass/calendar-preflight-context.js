@@ -92,7 +92,14 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
     text(legacy?.massColor)||(kind==="CALENDAR"&&!differs?calendar.colour:null);
   const period=buildLiturgicalYear(date).currentPeriod;
   const commemorations=namedCommemorations(validResolution(calendarState,date),fr);
-  const commemorationApplies=commemorations.length>0&&kind==="CALENDAR"&&!differs;
+  // Source calendar and Mass owner use distinct display-title conventions.
+  // A wording difference alone must never suppress an actual commemoration.
+  const selectedOwner=text(legacy?.actualCelebration?.id)||
+    text(legacy?.celebrationId);
+  const sameOwner=!selectedOwner||selectedOwner==="mass_of_day"||
+    !calendar.principalId||selectedOwner===calendar.principalId;
+  const commemorationApplies=commemorations.length>0&&kind==="CALENDAR"&&
+    !alternate&&sameOwner;
   const commemorationOrations=commemorationApplies?
     properOrationReadiness(proper,commemorations.length+1,fr):
     Object.freeze({status:"NOT_APPLICABLE",counts:null});
