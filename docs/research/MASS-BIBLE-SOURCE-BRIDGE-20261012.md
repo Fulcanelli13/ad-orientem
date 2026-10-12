@@ -165,3 +165,25 @@ Fortescue digitization bibliography correction: the [Cornell 1912 original](http
 **Sequencing rule for the 100:** (A) locate printed 1962 title, exact feast and candidate page for the 44 cluster-linked cases; (B) recover original pages for 52 unlocated non-preview cases; (C) validate the 4 preview overlaps against *both* existing Proper Latin witness and actual printed source. Independently certify chant inheritance, calendar selection, complete Latin words and Scripture edition/verse numbering. Continue to keep liturgical words distinct from direct Scripture quotations or subsequent typology. Full 1,052 candidate universe and 420 chant positions remain untouched.
 
 **Data conservation:** No registry entries were duplicated, no source-path memberships changed, no Scripture text or source citations presumed exact, and no UI/Mass/Atlas/Art release flags altered. This audit is research-triage only. Source review remains draft pending direct printed-page evidence.
+
+
+## A16 — printed-page cluster false-positive audit (13 October 2026)
+
+**Source of evidence:** the pre-existing [44-cluster page-snippet register](https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json), with preserved original PDF source at https://media.musicasacra.com/pdf/missale62.pdf . This pass reviewed snippet headings, **not the facsimile images**: the 82MB PDF was rejected by the browser retriever for size and could not be downloaded in the processing environment. No flags are promoted.
+
+### Specific false-positive candidates to reject as exact source identity
+
+| Research source path | Candidate PDF page | Reported heading context | Why a hit is not an identified formulary |
+| --- | ---: | --- | --- |
+| `Sancti/01-20` | 688 | Festa iulii (30), Ss. Abdon et Sennen | January 20 source path cannot be certified from a July 30 feast heading. |
+| `Sancti/08-16` | 544 | Festa februarii (1) | August 16 vs February 1; shared chant phrase only. |
+| `Sancti/06-02` | 704 | Festa augusti (11) | June 2 vs August 11; not page identity. |
+| `Sancti/03-24` | 751–752 | Festa septembris (29) | March 24 vs September 29; contextual false positive. |
+| `Sancti/06-28` | 659 | Festa iulii (3) | June 28 vs July 3; cannot assert exact feast identity. |
+| `Tempora/Pasc7-6t` | 157–159 | Sabbato Quatuor Temporum Quadragesimae | Pascal-time label vs Lenten Ember Saturday heading. Do not resolve inherited chant/season by this hit. |
+| `Tempora/Quad5-5` | 737,739 | Festa septembris (15) | Lenten temporal vs September sanctoral page. |
+| `Tempora/Pasc0-2` | 415–416 | Feria IV infra octavam Paschae | Tuesday-shaped source path candidate vs Wednesday heading; exact path convention must be separately established. |
+
+**Additional caution:** `Commune/Coronatio` spans a Pope's coronation-anniversary page and the following episcopal consecration page; `Commune/Propaganda` crosses into *pro Ecclesiae defensione*. Repeated `Tu es Petrus` or `Laudate Dominum` cannot establish celebration identity without printed section boundaries.
+
+**Certification decision:** 44/44 candidate-cluster source paths remain unadjudicated and publication-ineligible; none of 66 candidate pages was independently visually inspected. The wrong-context examples above are **rejected as exact proposed matches**, not corrections to the canonical Mass calendar or chants. The 100 priority packets, 105 Proper preview, 420 chant positions and global 1,052 source-path candidate universe retain their distinct denominators and their existing non-publication gates. Next evidence must be printed heading + rubric + full original Latin section and actual verse citation from the same source leaf, then separate biblical-edition collation. No UI, source registry, Mass card, Art or Atlas data touched.
