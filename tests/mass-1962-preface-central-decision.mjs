@@ -101,6 +101,14 @@ assert.match(josephMay.lat,/Solemnitáte beáti Joseph/);
 const advent=day("tempora:Adv1-0:1:v",ordinary,[],"2025-11-30");
 assert.equal(choose1962PrefaceForDay(advent),null);
 assert.equal(choose1962PrefaceForDay(advent,{allowLocalAdventPreface:true})?.sourceSection,"Adv");
+const bvmSaturday=day("commune:C10b:4:w",ordinary,[],"2026-01-10");
+assert.equal(choose1962PrefaceForDay(bvmSaturday)?.sourceSection,"Maria");
+assert.equal(apply1962PrefaceSelection(bvmSaturday,registry).proper.data.preface.selected1962PrefaceId,"BVM");
+assert.equal(choose1962PrefaceForDay(day(":feria:4:w",ordinary,[],"2026-07-16")),null,
+ "A ferial principal Mass must not inherit an optional Marian feast's Preface");
+assert.equal(choose1962PrefaceForDay(day("sancti:05-11r:2:r",ordinary,[],"2026-05-11"))?.sourceSection,"Apostolis");
+assert.equal(choose1962PrefaceForDay(day("sancti:05-01r:1:w",ordinary,[],"2026-05-01"))?.sourceSection,"Joseph");
+
 assert.equal(apply1962PrefaceSelection(advent,registry),advent);
 // Commemoration of a Marian feast must not change the principal Mass
 // even if the day falls in Advent or a season with another Preface.
