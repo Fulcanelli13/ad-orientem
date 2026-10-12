@@ -72,6 +72,20 @@ try{
       actor:"PRIEST",observed:true,kind:"PROFOUND_BOW",blessedSacramentReserved:false
     }));
     assert.equal(rejected.accepted,false,"post-Mass entry appended a stale priest reverence");
+    const nav=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      api.showSection("AO.CANON.06");
+      const element=document.getElementById("ao-r17-native-reader-preview");
+      return {
+        priestOwner:element?.dataset?.r17OwnerPriestAction,
+        section:api.getCurrentCard()?.sectionId,
+        cards:api.model.totalCards
+      };
+    });
+    assert.equal(nav.section,"AO.CANON.06");
+    assert.equal(nav.cards,48);
+    assert.notEqual(nav.priestOwner,"OBSERVED_PREMASS_PRIEST",
+      "old entrance reverence flashed in priest rail during card transition");
     await ctx.close();
   }
   // Opening the reader without a priest observer cannot block Mass.
