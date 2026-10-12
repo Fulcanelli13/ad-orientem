@@ -997,6 +997,50 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
   return matched;
 }
 
+// The three voice labels of the 1962 St John Passion belong to individual
+// *spoken source phrases*, not the entire narrator/other-voices paragraph.
+// Decorate only literal, source-validated spans. Keep unassigned text,
+ // death-trigger DOM words and prayer-card scroll travel untouched.
+function decorateGoodFridayScriptureVoices(target,raw,spans){
+  if(!Array.isArray(spans)||!spans.length||!target)return false;
+  const doc=target.ownerDocument;
+  if(!doc?.createDocumentFragment||!doc.createTextNode||
+     target.childElementCount!==0||target.textContent!==raw)return false;
+  let cursor=0;
+  for(const span of spans){
+    if(!Number.isInteger(span.start)||!Number.isInteger(span.end)||
+       span.start<cursor||span.end>raw.length||
+       raw.slice(span.start,span.end)!==span.phrase||
+       !["CHRISTUS","SYNAGOGA"].includes(span.role))return false;
+    cursor=span.end;
+  }
+  const fragment=doc.createDocumentFragment();
+  cursor=0;
+  for(const span of spans){
+    if(span.start>cursor)fragment.append(doc.createTextNode(raw.slice(cursor,span.start)));
+    const token=doc.createElement("span");
+    token.className="ao-good-friday-passion-voice";
+    token.dataset.scriptureVoice=span.role;
+    token.dataset.sourceRole=span.sourceRole;
+    token.textContent=span.phrase;
+    token.title=span.role==="CHRISTUS"?
+      "Christus — words of Our Lord":"Synagoga — other voices of the Passion";
+    if(span.role==="CHRISTUS"){
+      token.style.fontWeight="600";
+      token.style.textDecoration="underline";
+      token.style.textDecorationColor="rgba(185,164,120,.6)";
+      token.style.textUnderlineOffset=".15em";
+    }else{
+      token.style.fontStyle="italic";
+    }
+    fragment.append(token);
+    cursor=span.end;
+  }
+  if(cursor<raw.length)fragment.append(doc.createTextNode(raw.slice(cursor)));
+  target.replaceChildren(fragment);
+  return true;
+}
+
 // Cue changes update state chrome without rebuilding the prayer card.
 // Update just the changed Latin anchor span so rails, focus, and the text cue
 // remain driven by the same canonical AO.SM.C.... identity. Never replace
@@ -1070,6 +1114,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       active:p.active === true,
       speakerRole:p.speakerRole??null,
       speakerEvidence:p.speakerEvidence??null,
+      scriptureVoiceSpans:Array.isArray(p.scriptureVoiceSpans)?Object.freeze([...p.scriptureVoiceSpans]):null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
@@ -2624,6 +2669,9 @@ export function createReaderDomAdapter({
           // native scroll tracking starts. Cue highlighting follows the live
           // DOM focus and the *same* projected gesture as the rail below.
           renderReaderText(primary,p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary);
+          if(p.kind==="TEXT"&&p.id.startsWith("GF-PASS-")&&
+             decorateGoodFridayScriptureVoices(primary,p.primary,p.scriptureVoiceSpans))
+            node.dataset.passionVoiceEvidence="PARTIAL_SOURCE_ANCHORS";
           node.append(primary);
           const parallel=p.kind==="RUBRIC"?p.secondary:(p.secondary??p.alternate);
           if(parallel){
