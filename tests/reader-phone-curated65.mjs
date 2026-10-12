@@ -87,11 +87,21 @@ try{
       const scroller=page.locator("#ao-r17-native-reader-preview .ao-prayer-card");
       const bounds=await scroller.boundingBox();
       assert.ok(bounds&&bounds.width>180&&bounds.height>180,"No phone prayer swipe territory");
-      const before=await scroller.evaluate(el=>el.scrollTop);
+      const start=await scroller.evaluate(el=>{
+        el.scrollTop=0;
+        return {top:el.scrollTop,max:el.scrollHeight-el.clientHeight};
+      });
+      assert.ok(start.max>100,"Curated card has no real scroll travel");
       const cdp=await context.newCDPSession(page);
       const x=Math.round(bounds.x+bounds.width*.52);
-      const startY=Math.round(bounds.y+bounds.height*.75);
-      const endY=Math.round(bounds.y+bounds.height*.23);
+      const startY=Math.round(bounds.y+bounds.height*.52);
+      const endY=Math.round(bounds.y+bounds.height*.15);
+      const hit=await page.evaluate(({x,y})=>{
+        const node=document.elementFromPoint(x,y);
+        return {inside:!!node?.closest(".ao-prayer-card"),
+          target:node?.className??node?.tagName??null};
+      },{x,y:startY});
+      assert.ok(hit.inside,"Vertical gesture target is obscured: "+JSON.stringify(hit));
       await cdp.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x,y:startY}]});
       for(let i=1;i<=8;i++){
         const y=Math.round(startY+(endY-startY)*i/8);
@@ -99,8 +109,9 @@ try{
       }
       await cdp.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
       await page.waitForTimeout(260);
-      assert.ok((await scroller.evaluate(el=>el.scrollTop))>before,
-        "Vertical finger gesture did not scroll curated prayer paragraphs");
+      const after=await scroller.evaluate(el=>el.scrollTop);
+      assert.ok(after>start.top,
+        "Vertical finger gesture did not scroll curated prayer paragraphs: "+JSON.stringify({start,after,hit}));
       assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sequence),target.sequence,
         "Vertical finger gesture incorrectly changed curated prayer cards");
       async function horizontal(direction){
