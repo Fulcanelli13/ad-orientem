@@ -65,6 +65,11 @@ try{
      "Main prayer CTA is below the configuration controls");
    assert.equal(layout.methods,2,"Traditional/Devotional forms replaced or removed");
    assert.equal(layout.mysteries,4,"Canonical four available mystery categories lost");
+   const other=player.locator(".aoRosaryOtherMysteries");
+   assert.equal(await other.getAttribute("open"),null,
+     "Original mystery catalogue should not repeat the selected mystery at startup");
+   assert.equal(await other.locator("[data-pb-rosary-set]").count(),4,
+     "A historical mystery category was deleted or replaced");
    assert.ok(layout.overflow<=1,"Opening caused document overflow");
    await page.screenshot({path:resolve(captures,"rosary-first-action-"+width+".png"),
      fullPage:false,animations:"disabled"});
@@ -94,6 +99,10 @@ try{
    assert.equal(metric.depth.length,2,"Missing simple/guided options");
    assert.ok(metric.recitation.length>=2,"Missing individual/group options");
    assert.equal(metric.guide.length,1,"Historical guide lost");
+   assert.equal(await prep.locator("[data-v38-rosary-form]").count(),2,
+     "Traditional and Devotional Rosary forms missing from options");
+   assert.equal(await prep.locator("[data-pb-fatima]").count(),1,
+     "Optional Fatima prayer setting no longer reachable");
    assert.ok(metric.depth.every(x=>x.height>=44&&x.font>=12),
      "Simple/Guided touch/label size below accessibility floor: "+JSON.stringify(metric.depth));
    assert.ok(metric.recitation.every(x=>x.height>=44&&x.font>=12),
@@ -131,6 +140,10 @@ try{
    assert.match(await prep.locator(".aoRosaryPreparationState").textContent(),/Group/,
      "Collapsed summary failed to reflect real recitation preference");
    await prep.locator("summary").first().click();
+   await other.locator("summary").click();
+   assert.equal(await other.locator("[data-pb-rosary-set]:visible").count(),4,
+     "All mystery sets must be visibly reachable when explicitly requested");
+   await other.locator("summary").click();
    await hero.locator("[data-lab-rosary-today]").click();
    await page.waitForFunction(()=>
      document.querySelector("#aoPrayerBookRoot.open .pbShell[data-ao-rosary-exact-donor='v3.4.14']")!=null &&
