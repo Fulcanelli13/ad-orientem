@@ -71,10 +71,37 @@ const SEQUENCE=[
 // Registered Sacred Geography site anchors or OpenBible identified ancient settlements.
 // Traditional site pin is never proof of exact event geography. Jerusalem uses a city-level
 // reference for events with different or disputed local settings.
-const SEQUENCE_ALL=SEQUENCE.flatMap(s=>{
+// Correct only demonstrable *within-Gospel textual* reversals introduced by
+// grouping source records by place. These precedences do NOT assert a historical
+// cross-Gospel harmony, exact year, itinerary, or one-to-one event identity.
+// Named source records, not 151-array offsets, own each change.
+export const GOSPEL_NARRATIVE_PRECEDENCES=Object.freeze([
+ Object.freeze({eventId:"galilee-sea-e1",anchorId:"capernaum-e1",side:"before",source:"Mark 1:16–28"}),
+ Object.freeze({eventId:"beatitudes-e2",anchorId:"galilee-sea-e2",side:"before",source:"Matthew 5:13–48; 14:22–33"}),
+ Object.freeze({eventId:"cana-miracle-02",anchorId:"sychar-additional-013",side:"after",source:"John 4:39–54"}),
+ Object.freeze({eventId:"bethesda-miracle-18",anchorId:"cana-miracle-02",side:"after",source:"John 4:46–54; 5:1–15"}),
+ Object.freeze({eventId:"capernaum-e3",anchorId:"tabgha-e1",side:"after",source:"John 6:1–59"}),
+ Object.freeze({eventId:"siloam-miracle-26",anchorId:"bethany-e1",side:"before",source:"John 9:1–12; 11:1–44"})
+]);
+function applyGospelNarrativePrecedences(source){
+ const sequence=[...source];
+ const position=id=>{
+  const hits=sequence.flatMap((row,i)=>row[2]===id?[i]:[]);
+  if(hits.length!==1)throw new Error("Atlas narrative source ID must occur once: "+id);
+  return hits[0];
+ };
+ for(const rule of GOSPEL_NARRATIVE_PRECEDENCES){
+  const from=position(rule.eventId);
+  const [record]=sequence.splice(from,1);
+  const target=position(rule.anchorId);
+  sequence.splice(target+(rule.side==="after"?1:0),0,record);
+ }
+ return sequence;
+}
+const SEQUENCE_ALL=applyGospelNarrativePrecedences(SEQUENCE.flatMap(s=>{
  const key=s[2]??s[3];
  return [...(BEFORE_MILESTONES[key]??[]),s,...(AFTER_MILESTONES[key]??[])];
-});
+}));
 export const ATLAS_GEO=Object.freeze({
  "carmel":{key:"carmel",lat:32.6725,lng:35.023333,kind:"mountain_region",source_record_id:"mf9b7d7",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
  "ein-karem":{key:"ein-karem",lat:31.764483,lng:35.159454,kind:"traditional",source_record_id:"mc853b5",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
