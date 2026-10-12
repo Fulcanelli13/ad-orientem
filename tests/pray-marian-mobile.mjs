@@ -96,7 +96,15 @@ try{
  await gesture(7,-155);
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
  await gesture(-170,4);
- await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-2']");
+ const stationTouchState=await page.evaluate(()=>({
+  card:document.querySelector("#aoPray435930 .aoDevoCard")?.dataset.aoDevoCard,
+  title:document.querySelector("#aoPray435930 .aoDevoCardTitle")?.textContent,
+  currentStop:document.querySelector("#aoPray435930 .aoP435930StationRail [aria-current='step']")?.getAttribute("data-p435930-station-step"),
+  mounted:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset.aoPrayView,
+  errors:globalThis.__AO_DEVOTIONAL_NAV_ERROR||null
+ }));
+ console.log("STATIONS_SWIPE_DIAGNOSTIC "+JSON.stringify(stationTouchState)+" page-errors="+JSON.stringify(pageErrors.slice(-5)));
+ await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-2']",{timeout:4000});
  assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail [aria-current='step']").count(),1);
  await page.locator("#aoPray435930 [data-p435930-station-step='0']").evaluate(x=>x.click());
  await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-1']");
