@@ -98,6 +98,9 @@ try{
  page=await context.newPage();wire(page);
  await page.goto(origin,{waitUntil:"domcontentloaded",timeout:35000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ // Offline bridge initialises on window load, after the Home shell appears.
+ // Wait for its real STATUS handshake with the existing installed worker.
+ await page.waitForFunction(()=>globalThis.AO_OFFLINE_APP_V1?.status?.ready===true,null,{timeout:25000});
  const cold=await page.evaluate(()=>({
   controller:!!navigator.serviceWorker.controller,
   app:globalThis.AO_OFFLINE_APP_V1?.status||null,
