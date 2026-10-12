@@ -1,0 +1,65 @@
+name: Sacred art — selected masterpieces image review
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-selected-masterpiece-review.py"
+      - "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json"
+      - "data/calendar/sacred-art-masterpiece-selected-source-triage-20261012.v1.json"
+      - ".github/workflows/sacred-art-selected-masterpiece-acquisition.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: selected-masterpiece-art-acquisition
+  cancel-in-progress: true
+jobs:
+  acquire-selected-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dependencies
+        run: python -m pip install --disable-pip-version-check Pillow requests
+      - name: Parse check and source-locked art acquisition
+        run: |
+          python -m py_compile tools/calendar/acquire-selected-masterpiece-review.py
+          python tools/calendar/acquire-selected-masterpiece-review.py
+      - name: Verify source bytes and no publication promotion
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          p=Path("artifacts/sacred-art-selected-review")
+          f=p/"acquisition-report.json"
+          if not f.exists(): raise SystemExit("No acquisition report was produced")
+          j=json.loads(f.read_text())
+          assert j["summary"]["requested"]==3
+          assert j["status"]=="REVIEW_ARCHIVE_ONLY_NO_PRODUCTION_APPROVAL"
+          assert j["summary"]["productionApproved"]==0
+          for row in j["results"]:
+              assert row["productionApproved"] is False
+              assert row["phoneCropApproved"] is False
+              assert row["homeMasterpieceApproved"] is False
+              if row["status"]!="SOURCE_IMAGE_ACQUIRED_REVIEW_ONLY": continue
+              data=(p/row["imageFilename"]).read_bytes()
+              assert hashlib.sha256(data).hexdigest()==row["imageSha256"]
+              assert len(data)==row["imageBytes"]
+              assert row["width"]>=800 and row["height"]>=800
+              assert len(row["previews"])==3
+              for v in row["previews"].values(): assert (p/v).exists()
+          assert (p/"review-gallery.html").exists()
+          print("PASS selected original evidence, image hashes, explicit unapproved crop/release status")
+          PY
+      - name: Upload originals and visual review gallery (not public app assets)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selected-masterpieces-12oct-qa-originals-and-gallery
+          path: artifacts/sacred-art-selected-review/
+          retention-days: 30
+          if-no-files-found: warn
