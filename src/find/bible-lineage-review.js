@@ -155,8 +155,8 @@ export function renderGenesisAncestryDiagram(rows,{root="adam",language="en"}={}
   depth=Math.max(depth,level);
   const descendants=children.get(id)||[];
   const ys=descendants.map(k=>assign(k,level+1));
-  // Anchor parents close to the first source-linked child rather than below the phone viewport.
-  const y=ys.length?ys[0]+Math.min(step/2,(ys.at(-1)-ys[0])/2):(leaf++*step+40);
+  // Align every ancestor with the first documented descendant so the root is always initially visible.
+  const y=ys.length?ys[0]:(leaf++*step+40);
   coordinates.set(id,{x:22+level*column,y});
   return y;
  };
