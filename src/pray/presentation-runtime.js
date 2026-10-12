@@ -1181,7 +1181,7 @@ function installRosaryNamedTimeline(r){
    const state=rosaryLiveInfo();
    if(!state||!Number.isInteger(start)||start<0||start>=state.steps.length)return;
    event.preventDefault();event.stopPropagation();
-   if(window.AO_ROSARY_V381?.setStep?.(start)!==true)return;
+   if(typeof window.AO_ROSARY_V381?.setStep!=="function"||window.AO_ROSARY_V381.setStep(start)===false)return;
    setTimeout(decorateRosary,0);
   });
  }
