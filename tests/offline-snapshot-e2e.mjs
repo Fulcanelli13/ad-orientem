@@ -93,8 +93,13 @@ try{
    }))));
  }
  assert.equal(offlinePrayOpened,true,"Core Rosary reader cannot open on first offline use");
- assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null})),true,
-  "Ordinary Rosary cannot open from offline Prayer hub");
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true,
+  "Rosary method chooser cannot open from offline Prayer hub");
+ const offlineChooser=page.locator("#aoPray435930.open [data-ao-rosary-chooser]");
+ await offlineChooser.waitFor({timeout:12000});
+ await offlineChooser.locator("[data-p435930-rosary-choose='ordinary']").tap();
+ await offlineChooser.locator("[data-p435930-rosary-decades='15']").tap();
+ await offlineChooser.locator("[data-p435930-rosary-begin]").tap();
  await page.waitForSelector("#aoPrayerBookRoot.open [data-lab-rosary-next]",{timeout:12000});
  await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").first().tap();
  assert.ok(await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step>0),
