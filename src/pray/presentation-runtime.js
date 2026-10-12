@@ -1163,6 +1163,42 @@ function prepareRosaryActive(r){
  ].join(' · ');
  return true;
 }
+let rosaryDeckObservedRoot=null,rosaryDeckMutationObserver=null,rosaryDeckPending=false;
+function projectRosaryDeck(r){
+ const info=rosaryLiveInfo();if(!info?.steps?.length||!r?.classList?.contains("open"))return false;
+ installRosaryDualAxisReader({
+  root:r,steps:info.steps,currentStep:info.index,french:isFr(),
+  onChapter:target=>{
+   const api=window.AO_ROSARY_V381;
+   if(typeof api?.setStep!=="function"||api.setStep(target)===false)return false;
+   setTimeout(decorateRosary,0);
+   setTimeout(decorateRosary,70);
+   return true;
+  }
+ });
+ return true;
+}
+function watchRosaryDeck(r){
+ if(rosaryDeckObservedRoot===r&&rosaryDeckMutationObserver)return;
+ rosaryDeckMutationObserver?.disconnect();
+ rosaryDeckObservedRoot=r;
+ rosaryDeckMutationObserver=new MutationObserver(()=>{
+  if(rosaryDeckPending||!r.classList.contains("open"))return;
+  const shell=r.querySelector(".pbShell");
+  const sheet=shell?.querySelector(".lab-prayer-sheet");
+  const info=rosaryLiveInfo();
+  if(!sheet||!info?.steps?.length||!shell.querySelector("[data-lab-rosary-next]"))return;
+  const missing=!shell.querySelector("[data-ao-rosary-timeline]");
+  const stale=sheet.dataset.aoRosarySourceStep!==String(info.index);
+  if(!missing&&!stale)return;
+  rosaryDeckPending=true;
+  requestAnimationFrame(()=>{
+   rosaryDeckPending=false;
+   if(r.classList.contains("open"))projectRosaryDeck(r);
+  });
+ });
+ rosaryDeckMutationObserver.observe(r,{subtree:true,childList:true});
+}
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  // Montfort's historical methods cover fifteen traditional mysteries only.
@@ -1189,22 +1225,8 @@ function decorateRosary(){
  prepareRosaryOpening(r);
  prepareRosaryActive(r);
  declutterRosaryDonor(r);
- const info=rosaryLiveInfo();
- if(info?.steps?.length){
-  installRosaryDualAxisReader({
-   root:r,steps:info.steps,currentStep:info.index,french:isFr(),
-   onChapter:target=>{
-    // The archived Rosary remains the sole owner of every bead and method.
-    const api=window.AO_ROSARY_V381;
-    if(typeof api?.setStep!=="function"||api.setStep(target)===false)return false;
-    // The historical donor repaints after its cursor changes. Keep the
-    // chapter projection in sync with that native repaint (no second cursor).
-    setTimeout(decorateRosary,0);
-    setTimeout(decorateRosary,70);
-    return true;
-   }
-  });
- }
+ projectRosaryDeck(r);
+ watchRosaryDeck(r);
 }
 function confessionModeLabel(path){
  const p=confessionPath(path);
