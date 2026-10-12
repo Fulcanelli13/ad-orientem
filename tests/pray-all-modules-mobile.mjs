@@ -288,6 +288,10 @@ try{
    assert.ok(sources.some(x=>x.href.includes(witness)),"Missing direct historical witness from "+route+": "+JSON.stringify(sources));
    assert.ok(sources.every(x=>x.href.startsWith("https://")&&x.rel.includes("noreferrer")),"Unsafe historical witness link in "+route);
    const disclosure=page.locator(box+" details.aoP435930Source").last();
+   // Wait out native scrolling before a deliberate touch; the global gesture
+   // guard correctly rejects synthetic navigation clicks immediately after swipes.
+   await disclosure.locator("summary").scrollIntoViewIfNeeded();
+   await page.waitForTimeout(350);
    await disclosure.locator("summary").tap();
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open details.aoP435930Source").length>0 &&
      [...document.querySelectorAll("#aoPray435930.open details.aoP435930Source")].at(-1).open===true,
