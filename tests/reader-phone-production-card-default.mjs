@@ -30,6 +30,11 @@ try{
   {label:"ordinary64",query:"production=1",cards:65,visible:64,curated:"true"},
   {label:"optional65",query:"production=1&secondConfiteor=1",cards:65,visible:65,curated:"true"},
   {label:"rollback48",query:"production=1&aoLiveCards=48",cards:48,visible:48,curated:"false"},
+  {label:"asperges64",query:"production=1&rite=asperges",cards:65,visible:64,curated:"true",rite:"ORDINARY"},
+  {label:"asperges65",query:"production=1&rite=asperges&secondConfiteor=1",cards:65,visible:65,curated:"true",rite:"ORDINARY"},
+  {label:"vidi-aquam64",query:"production=1&rite=asperges&date=2026-04-12",cards:65,visible:64,curated:"true",rite:"PASCHAL"},
+  {label:"passiontide64",query:"production=1&rite=asperges&date=2026-03-22",cards:65,visible:64,curated:"true",rite:"ORDINARY",omitGloria:true},
+  {label:"asperges-rollback48",query:"production=1&rite=asperges&aoLiveCards=48",cards:48,visible:48,curated:"false",rite:"ORDINARY"},
  ]){
   const context=await browser.newContext({viewport:{width:390,height:844},
     isMobile:true,hasTouch:true,deviceScaleFactor:1,locale:"en-GB"});
@@ -53,7 +58,80 @@ try{
   assert.equal(result.source,39,option.label);
   assert.equal(result.model,option.cards,option.label);
   assert.equal(result.curator,option.curated,option.label);
-  assert.match(result.progress,new RegExp("1 / "+option.visible+"$"),option.label+" visible-card progress");
+  if(option.rite){
+    const initial=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      return {state:api.getNativeEventState(),asperges:api.getAspergesState(),
+        title:api.getCurrentCard()?.title};
+    });
+    assert.equal(initial.state.specialRite,"ASPERGES",option.label+" must begin in independent R20 rite");
+    assert.equal(initial.asperges.formulaState.formula,option.rite,
+      option.label+" must use the actual seasonal Asperges/Vidi aquam formula");
+    assert.equal(initial.asperges.formulaState.omitGloriaPatri,option.omitGloria===true,
+      option.label+" must preserve Passiontide omission");
+    assert.equal(initial.asperges.card.id,"ASP-R01",option.label+" must preserve original pre-Mass first record");
+    await page.screenshot({path:resolve(out,"production-"+option.label+"-prelude-390.png"),
+      animations:"disabled"});
+    const traversed=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW,seen=[],errors=[];
+      const next=document.querySelector('[data-reader-nav="next"]');
+      if(!next)throw new Error("R20 next navigation absent");
+      for(let n=0;n<20;n++){
+        const a=api.getAspergesState(),special=api.getNativeEventState()?.specialRite;
+        if(special!=="ASPERGES")break;
+        seen.push({record:a.card?.id,formula:a.formulaState.formula});
+        next.click();
+      }
+      const after={title:api.getCurrentCard()?.title,progress:
+        document.querySelector('[data-role="progress"]')?.textContent||"",
+        state:api.getNativeEventState(),count:api.model.totalCards,
+        first:api.model.cards[0].title};
+      if(api.getNativeEventState()?.specialRite==="ASPERGES")errors.push("failed to hand off");
+      return {seen,after,errors};
+    });
+    assert.equal(traversed.seen.length,6,option.label+" 6 R20 source records must precede Mass");
+    assert.deepEqual(traversed.errors,[],option.label+" R20 handoff error");
+    assert.equal(traversed.after.title,"At the Foot of the Altar · Opening and Psalm 42",
+      option.label+" must resume entire source-first foot-of-altar, not skip to Introit");
+    assert.match(traversed.after.progress,new RegExp("1 / "+option.visible+"$"),
+      option.label+" must display live card count after R20 handoff");
+    assert.notEqual(traversed.after.state.specialRite,"ASPERGES",
+      option.label+" stale prelude must not leak to the Mass state");
+    // Return to the actual preceding rite and back without losing the card model.
+    const roundtrip=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      document.querySelector('[data-reader-nav="previous"]').click();
+      const returned={id:api.getCurrentCard()?.id,rite:api.getNativeEventState()?.specialRite};
+      document.querySelector('[data-reader-nav="next"]').click();
+      return {returned,title:api.getCurrentCard()?.title,
+        progress:document.querySelector('[data-role="progress"]')?.textContent??""};
+    });
+    assert.equal(roundtrip.returned.rite,"ASPERGES",option.label+" Previous must reenter R20");
+    assert.equal(roundtrip.returned.id,"ASP-R05",option.label+" backward handoff lands on closing rite card");
+    assert.equal(roundtrip.title,"At the Foot of the Altar · Opening and Psalm 42");
+    assert.match(roundtrip.progress,new RegExp("1 / "+option.visible+"$"));
+    // Enter a named source paragraph card and verify that the active ritual
+    // remains owned by the ordinary reader, with no rite state contamination.
+    const massCard=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const next=api.model.cards.find(c=>c.title==="Gloria · Praise and Supplication");
+      if(!next)throw new Error("No curated Gloria source group");
+      api.showSequence(next.sequence);
+      const root=document.querySelector("#ao-r17-native-reader-preview");
+      return {title:api.getCurrentCard()?.title,state:api.getNativeEventState(),
+        textCount:root.querySelectorAll(".ao-reader-paragraph").length,
+        source:api.sourceModel.totalCards};
+    });
+    if(option.curated==="true"){
+      assert.equal(massCard.title,"Gloria · Praise and Supplication");
+      assert.ok(massCard.textCount>0,option.label+" no Mass prayer paragraphs");
+      assert.equal(massCard.source,39);
+      assert.notEqual(massCard.state.specialRite,"ASPERGES");
+    }
+  }else{
+    assert.match(result.progress,new RegExp("1 / "+option.visible+"$"),
+      option.label+" visible-card progress");
+  }
   assert.equal(result.overflow,false,option.label+" horizontal overflow");
   assert.ok(result.title,option.label+" must have a named prayer card");
   await page.screenshot({path:resolve(out,"production-"+option.label+"-390.png"),
@@ -61,7 +139,7 @@ try{
   assert.equal(errors.length,0,option.label+": "+errors.join(" | "));
   await context.close();
  }
- console.log("PASS LIVE production default: 64 ordinary / 65 optional second Confiteor; exact source and visible counts, explicit 48 rollback on real 390px mobile app entry");
+ console.log("PASS LIVE production: 64/65 standard, 6-record Asperges/Vidi aquam and Passiontide rite handoffs, precise priest source/card progress and reversible 48 rollback on 390px phone");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
