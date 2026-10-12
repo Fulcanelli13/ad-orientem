@@ -1,5 +1,5 @@
 // 1962 Vatican Missal printed IMAGE witness, not an app-source self-comparison.
-// 21 editorial text/structure anchors on 15 page images courtesy CMMA,
+// 29 editorial text/structure anchors on 21 page images courtesy CMMA,
 // surfaced through GregoBase; B05's 17 full-text holds remain OPEN.
 // Never infer that a matching incipit equals full Latin/EN/FR rite certification.
 import assert from "node:assert/strict";
@@ -30,7 +30,7 @@ const fold=v=>String(v??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
 assert.equal(manifest.schema,"AO_MR1962_HOLY_WEEK_B09_VATICAN_IMAGE_WITNESS_V1");
 assert.equal(manifest.witnesses.length,29,"Image witness must not silently lose an entry");
 assert.equal(new Set(manifest.witnesses.map(x=>x.imageUrl)).size,21);
-assert.equal(new Set(manifest.witnesses.map(x=>x.id)).size,21);
+assert.equal(new Set(manifest.witnesses.map(x=>x.id)).size,29);
 assert.equal(manifest.certification.status,"PARTIAL_IMAGE_ANCHORS_ONLY");
 assert.equal(b05.auditItems.length,17,"Separate 17 uncollated B05 issues remain visible");
 assert.equal(b05.certification,"NOT_CERTIFIED");
