@@ -1,0 +1,31 @@
+name: Non-Mass observed Back acceptance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "src/app/observed-module-return.js"
+      - "src/pray/novena-runtime.js"
+      - "src/pray/traditional-pray-runtime.js"
+      - "tests/nonmass-observed-module-return.mjs"
+      - "tests/nonmass-observed-return-phone.mjs"
+      - ".github/workflows/nonmass-observed-back.yml"
+  workflow_dispatch:
+
+jobs:
+  nonmass-back:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: node tests/nonmass-observed-module-return.mjs
+      - run: node tests/pray-novenas.mjs
+      - run: node tests/pray-traditional-life.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Phone exact return — Calendar/Pray/Home
+        run: node tests/nonmass-observed-return-phone.mjs
