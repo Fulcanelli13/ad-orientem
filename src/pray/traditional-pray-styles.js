@@ -72,6 +72,9 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="communion"] .aoTP381SecondaryOptions{margin-top:12px}
 
 /* The bedside companion opens with a real pastoral action, not a rite simulation. */
+#aoPray435930 .aoP435930Mount[data-ao-traditional-pray-route="pray.dying_companion"] .aoP435930Head h1{font-size:clamp(17px,4.7vw,22px);line-height:1.22;letter-spacing:.005em;overflow-wrap:normal;word-break:normal}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-pray-route="pray.dying_companion"] .aoP435930Head>div{min-width:0}
+
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoSequenceTimeline .aoDevoStop{min-width:81px;flex:1 1 0;max-width:none;padding-inline:5px}
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoSequenceTimeline .aoDevoStops{gap:3px}
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoCardScroll .aoTP381Section{margin:0 0 20px;padding:0;background:none;border:0}
