@@ -313,6 +313,12 @@ try{
  await page.screenshot({path:resolve(captures,"dying-commendation-320-fr.png"),animations:"disabled"});
  await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(el=>el.click());
  assert.equal((await snapshot()).id,"dying-now");
+ // Explicit Home must win over any stored deep-link return context.
+ // The normal close() path may queue a return-to-Prayer callback.
+ await page.locator("#aoPray435930 [data-tp381-home]").evaluate(el=>el.click());
+ await page.waitForFunction(()=>!document.querySelector("#aoPray435930")?.classList?.contains("open"),null,{timeout:8000});
+ assert.equal(await page.locator("#aoPray435930.open").count(),0,
+   "Traditional Prayer Home reopened its donor sheet instead of reaching Home");
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
  console.log("PASS Good Death nine source-owned prayers and distinct priest-first Dying Companion three-stage reader on French phones");
  await page.close();
