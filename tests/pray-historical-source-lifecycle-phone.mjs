@@ -115,10 +115,17 @@ try{
  await page.locator(reader+" [data-p435930-scripture-retry='psalm']").tap();
  await page.waitForSelector(reader+" [data-ao-scripture-content='ready']",{timeout:10000});
  assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),2);
- await page.waitForFunction(()=>document.querySelector(
-  "#aoPray435930.open .aoP435930DevotionalGuidedReader .aoP435930ScriptureVerse[data-ao-devo-active='true']"
- )!==null,null,{timeout:8000});
- assert.ok(await page.locator(reader+" .aoP435930ScriptureVerse[data-ao-devo-active='true']").count()>0);
+ await page.waitForFunction(()=>{
+   const verse=document.querySelector(
+    "#aoPray435930.open .aoP435930DevotionalGuidedReader .aoP435930ScriptureVerse.aoDevoParagraph"
+   );
+   const active=document.querySelector(
+    "#aoPray435930.open .aoP435930DevotionalGuidedReader .aoDevoParagraph[data-ao-devo-active='true']"
+   );
+   return Boolean(verse&&active);
+ },null,{timeout:8000});
+ assert.ok(await page.locator(reader+" .aoP435930ScriptureVerse.aoDevoParagraph").count()>0,
+  "Newly inserted original-text verse was not enrolled in vertical focus");
  await page.screenshot({path:resolve(artifact,"psalm-settled-fixture-390.png"),animations:"disabled"});
  await page.evaluate(()=>{globalThis.AO_RUNTIME_V8.scriptureService.load=async()=>{throw Error("TEST_FORCED_NETWORK_FAILURE")};});
  assert.equal(await open("pray.seven_words"),true);
