@@ -50,6 +50,16 @@ const en=renderCinematicStudies(source,{language:"en",chapter:"PATRIARCHS",scene
 const fr=renderCinematicStudies(source,{language:"fr",chapter:"INCARNATION",scene:68,atlasStops:stops});
 const extra=renderCinematicStudies(source,{language:"en",chapter:"DELIVERANCE",scene:35,atlasStops:stops});
 assert.match(en,/data-bible-study-scene="21"/);
+assert.match(en,/data-bible-scene-stage/,"Theatre renders an actual scene-focused stage");
+assert.match(en,/aoBibleStageReading/,"narrative is visually isolated from source metadata");
+assert.match(en,/aoBibleStageEvidence/,"source qualification stays available on stage");
+assert.match(en,/Chapter context/,"chapter background stays accessible but not repeated in the hero");
+assert.ok(en.indexOf("data-bible-study-timeline")<en.indexOf("data-bible-scene-stage"),
+ "scene navigation precedes the focused reading region");
+assert.ok(en.indexOf("data-bible-scene-stage")<en.indexOf("Research comparison"),
+ "technical editorial notice must no longer dominate the top of the phone reader");
+assert.match(en,/prefers-reduced-motion:reduce/,"stage motion respects user settings");
+
 assert.match(en,/data-bible-study-timeline/);
 assert.match(en,/data-bible-study-jump="21" aria-pressed="true"/);
 assert.equal((en.match(/data-bible-study-jump="/g)||[]).length,25,
