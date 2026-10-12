@@ -269,7 +269,19 @@ try{
      "Canonical bead navigation rejected a prayer step");
    await page.waitForFunction(()=>document.querySelector(
      "#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-card-kind='prayer'] .aoRosaryPrayerScroll"),
-     null,{timeout:9000});
+     null,{timeout:9000}).catch(async error=>{
+      const diag=await page.evaluate(()=>{
+       const root=document.querySelector("#aoPrayerBookRoot.open");
+       const sheet=root?.querySelector(".lab-prayer-sheet");
+       const flip=root?.querySelector(".lab-prayer-flip");
+       const all=[...root?.querySelectorAll(".aoRosaryActiveCard")||[]];
+       return {step:globalThis.AO_ROSARY_V381?.state?.()?.step,kind:root?.querySelector(".pbShell")?.dataset?.aoRosaryKind,
+         cardKinds:all.map(x=>x.dataset.aoRosaryCardKind),inside:!!sheet?.contains(flip),
+         sheet:sheet?.outerHTML?.slice(0,2700),flip:flip?.outerHTML?.slice(0,1800),
+         contemplation:root?.querySelector(".lab-contemplation")?.outerHTML?.slice(0,800)};
+      });
+      throw new Error("ROSARY_PRAYER_STAGE_DIAGNOSTIC "+JSON.stringify(diag)+"; "+error);
+     });
    // The same canonical donor is now the one titled, locally scrolling card.
    await page.waitForFunction(()=>{
      const sheet=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard");
