@@ -255,6 +255,21 @@ try{
      "Rosary named timeline failed to follow canonical step jump");
    assert.equal(await player.locator(".pbShell").count(),1,
      "Chapter jump replaced canonical Rosary donor");
+   // A mystery opens in the canonical contemplation surface. This is a
+   // distinct kind of source-owned card, not an invented bead prayer.
+   await page.waitForFunction(()=>document.querySelector(
+     "#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-card-kind='contemplation']"),
+     null,{timeout:9000});
+   const beadTarget=await page.evaluate(start=>{
+     const steps=globalThis.AO_ROSARY_V381.steps();
+     return steps.findIndex((entry,i)=>i>start&&entry.mi===steps[start].mi&&entry.kind!=='mystery');
+   },jump.start);
+   assert.ok(beadTarget>jump.start,"Rosary mystery has no following prayer step");
+   assert.notEqual(await page.evaluate(target=>globalThis.AO_ROSARY_V381.setStep(target),beadTarget),false,
+     "Canonical bead navigation rejected a prayer step");
+   await page.waitForFunction(()=>document.querySelector(
+     "#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-card-kind='prayer'] .aoRosaryPrayerScroll"),
+     null,{timeout:9000});
    // The same canonical donor is now the one titled, locally scrolling card.
    await page.waitForFunction(()=>{
      const sheet=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveCard");
