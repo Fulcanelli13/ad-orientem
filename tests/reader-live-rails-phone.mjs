@@ -26,19 +26,27 @@ let browser;
 try{
   browser=await chromium.launch({headless:true});
   let sampledActive=0,sampledEmpty=0;
-  for(const width of [320,360,390]){
+  const configurations=[
+    {name:"production64",query:"production=1",cards:65,visible:64},
+    {name:"optional65",query:"production=1&secondConfiteor=1",cards:65,visible:65},
+    {name:"rollback48",query:"production=1&aoLiveCards=48",cards:48,visible:48},
+  ];
+  for(const variant of configurations)for(const width of [320,390]){
     const context=await browser.newContext({
       viewport:{width,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2
     });
     const page=await context.newPage();
-    await page.goto("http://127.0.0.1:4185/tests/fixtures/reader-phone-harness.html",{waitUntil:"networkidle"});
+    await page.goto("http://127.0.0.1:4185/tests/fixtures/reader-phone-harness.html?"+variant.query,{waitUntil:"networkidle"});
     await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
-    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),48);
-    for(const sectionId of [null,"AO.CANON.06","AO.CANON.07","AO.CARD.013"]){
-      if(sectionId){
-        await page.evaluate(id=>window.__AO_PHONE_PREVIEW.showSection(id),sectionId);
-        await page.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId===id,sectionId,{timeout:4000});
-      }
+    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),variant.cards);
+    const checkpoints=await page.evaluate(()=>{
+      const cards=window.__AO_PHONE_PREVIEW.model.cards;
+      return [...new Set([0,.18,.4,.62,.84].map(p=>cards[Math.floor(p*(cards.length-1))]?.sequence))].filter(x=>x!=null);
+    });
+    assert.ok(checkpoints.length>=4,"Not enough curated or rollback card checkpoints");
+    for(const sequence of checkpoints){
+      await page.evaluate(seq=>window.__AO_PHONE_PREVIEW.showSequence(seq),sequence);
+      await page.waitForFunction(seq=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.sequence===seq,sequence,{timeout:4000});
       await page.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
       const snap=await page.evaluate(()=>{
         const root=document.querySelector('[data-ao-reader-shell]');
@@ -72,11 +80,14 @@ try{
           title:root.querySelector('[data-role="section-title"]')?.textContent?.trim()??"",
           card:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
           count:window.__AO_PHONE_PREVIEW.model.totalCards,
+          progress:root.querySelector('[data-role="progress"]')?.textContent??"",
           scrollCard:root.querySelector(".ao-prayer-card")?.scrollHeight??0
         };
       });
       assert.equal(snap.mode,"LIVE");
-      assert.equal(snap.count,48);
+      assert.equal(snap.count,variant.cards,variant.name);
+      assert.match(snap.progress,new RegExp("/\\s*"+variant.visible+"$"),
+        variant.name+" visible-card progress must use production/rollback denominator");
       assert(snap.title.length>1,"active card title vanished from top jump");
       assert.equal(snap.rails.length,2);
       assert(snap.scrollCard>0);
@@ -112,7 +123,7 @@ try{
     await context.close();
   }
   assert(sampledActive>0,"No active icon cue was sampled; test did not exercise semantic labelling");
-  console.log("PASS LIVE rails 320/360/390px: inactive transient icons and empty containers vanish, active icons retain dynamic accessible meaning, top title and 48 cards preserved.");
+  console.log("PASS LIVE rails 320/390px: production 64, optional 65 and rollback 48; inactive icons vanish, active cues remain accessible and progress denominators match.");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
