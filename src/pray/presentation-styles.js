@@ -645,6 +645,43 @@ const ROSARY_PHONE_CONTROLS_CSS=`
 ):focus-visible{
   outline:2px solid var(--liturgical,#d8bd7d)!important;outline-offset:2px!important;
 }
+/* Canonical opening only. The suggested mystery remains the donor's own
+   interactive first-action card; all reader controls are still operable. */
+#aoPrayerBookRoot.open .pbShell>.lab-rosary-hero{
+ margin:5px 0 12px!important;
+ border-color:color-mix(in srgb,var(--liturgical,#d8bd7d) 45%,var(--border,rgba(255,255,255,.12)))!important;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation{
+ display:block;min-width:0;margin:0 0 13px;
+ border:1px solid var(--border,rgba(255,255,255,.17));
+ border-radius:12px;background:var(--surface-1,#151c24);
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation>summary{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ min-height:48px;padding:12px 14px;cursor:pointer;
+ color:var(--text,#f3ead7);
+ font:650 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation .aoRosaryPreparationState{
+ text-align:right;flex:0 0 auto;
+ color:var(--liturgical,#d8bd7d);font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody{
+ display:grid;gap:10px;padding:0 12px 12px;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation:not([open])>.aoRosaryPreparationBody{display:none!important}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.aoP435930RosaryBar{
+ margin:0!important;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.lab-recitation-mode{
+ margin:0!important;width:100%;max-width:100%;box-sizing:border-box;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.aoRosaryGuide{
+ margin:0!important;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation>summary:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
+}
 @media(max-width:560px){
   /* Prevent a 44px recitation pair from stealing width from the mystery
      heading: keep it a separate phone row, with the prayer controls below. */
