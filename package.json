@@ -230,7 +230,9 @@
     "test:mass-batch4-release": "node tests/mass-batch4-release-acceptance.mjs",
     "test:1962-form-commemorations": "node tests/mass-1962-form-source-selection.mjs",
     "test:1962-mission-sunday": "node tests/mass-1962-mission-sunday.mjs",
-    "test:1962-multi-failclosed": "node tests/mass-1962-multiple-commemoration-failclosed.mjs"
+    "test:1962-multi-failclosed": "node tests/mass-1962-multiple-commemoration-failclosed.mjs",
+    "test:explore-bible-atlas-151": "node tests/explore-bible-atlas-151.mjs",
+    "test:explore-bible-atlas-151-phone": "node tests/explore-bible-atlas-151-phone.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
