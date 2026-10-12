@@ -12,6 +12,8 @@ on:
       - "data/explore/biblical-lineage-curated-review.v1.json"
       - "data/explore/biblical-atlas-editorial-holds.v1.json"
       - "tests/biblical-atlas-editorial-holds.mjs"
+      - "tests/biblical-atlas-scripture-witness-coverage.mjs"
+      - "data/scripture/witness/**"
       - ".github/workflows/biblical-atlas-current-main.yml"
   workflow_dispatch:
 permissions:
@@ -46,6 +48,8 @@ jobs:
         run: node tests/biblical-cinematic-studies.mjs
       - name: Source-critical 151-to-181 release holds
         run: node tests/biblical-atlas-editorial-holds.mjs
+      - name: Crampon/Douay original witness verse-slot coverage and exceptions
+        run: node tests/biblical-atlas-scripture-witness-coverage.mjs
       - name: Existing Explore and sacred place regression
         run: |
           node tests/explore-surface.mjs
