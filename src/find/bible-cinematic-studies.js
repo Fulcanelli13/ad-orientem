@@ -108,6 +108,12 @@ export function cinematicExactAtlasTarget(study,atlasStops=[]){
  const hits=arr(atlasStops).filter(s=>s.eventKey===c.atlasEventKey&&ref(s.reference)===ref(study.reference));
  return hits.length===1&&hits[0].index===c.atlasIndex?c.atlasIndex:null;
 }
+// Exact, reciprocal 151→scene citations in the opt-in research reader.
+ // Overlaps and duplicated candidates cannot yield a navigable event.
+export function cinematicExactScenesForAtlasStop(data,atlasStops=[],index){
+ if(!Number.isInteger(index)||!atlasStops[index]||!validateCinematicCrosswalk(data,atlasStops))return [];
+ return data.scenes.filter(scene=>cinematicExactAtlasTarget(scene,atlasStops)===index);
+}
 const button=(attr,value,label,active=false)=>'<button type="button" '+attr+'="'+esc(value)+'"'+(active?' aria-pressed="true"':"")+'>'+esc(label)+'</button>';
 export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",scene=0,atlasStops=[],artSelection=null}={}){
  // Production reader must reject a stale 183-scene crosswalk after any
