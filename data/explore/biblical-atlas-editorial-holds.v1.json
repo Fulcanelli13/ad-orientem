@@ -24,7 +24,10 @@
       "requiredAction": "Keep the PUBLIC placement explicitly qualified as Johannine narrative order, not proof of precise historical dating or one-versus-two cleansings. Review the source relationship before theatre publication.",
       "source": "https://www.newadvent.org/bible/joh002.htm",
       "sourceOrderCorrection": "IMPLEMENTED_2026_10_12",
-      "commentarySource": "https://bible.usccb.org/bible/john/2"
+      "commentarySource": "https://bible.usccb.org/bible/john/2",
+      "atlasEventKeys": [
+        "biblical:event:jerusalem-temple-e3"
+      ]
     },
     {
       "id": "JOHN20_RESURRECTION_VS_EMPTY_TOMB",
@@ -40,7 +43,10 @@
       "resolution": "HOLD",
       "requiredAction": "Review depiction and licensing of any cinematic artwork against John 20:1–18 and keep the source-note visible.",
       "source": "https://www.newadvent.org/bible/joh020.htm",
-      "textCorrection": "IMPLEMENTED_2026_10_12"
+      "textCorrection": "IMPLEMENTED_2026_10_12",
+      "atlasEventKeys": [
+        "biblical:event:christ-tomb-e2"
+      ]
     },
     {
       "id": "LUKE2_TEMPLE_EXACT_AND_OVERLAP",
@@ -57,7 +63,11 @@
       "issue": "A single scene has an exact citation plus a secondary overlapping hidden-life citation; not one automatic canonical identity.",
       "resolution": "HOLD",
       "requiredAction": "Adjudicate exact Temple episode and overlapping hidden-life transition independently.",
-      "source": "https://www.newadvent.org/bible/luk002.htm"
+      "source": "https://www.newadvent.org/bible/luk002.htm",
+      "atlasEventKeys": [
+        "biblical:event:jerusalem-temple-e2",
+        "biblical:event:nazareth-additional-006"
+      ]
     },
     {
       "id": "MAGI_PRESENTATION_GOSPEL_HARMONY",
@@ -74,7 +84,11 @@
       "issue": "The Magi and Presentation chronology compares different Evangelists; narrative order is not an explicitly supplied single-Gospel dating.",
       "resolution": "HOLD",
       "requiredAction": "Specify conservative harmony basis or avoid asserted precise order/dates.",
-      "source": "https://www.newadvent.org/bible/mat002.htm"
+      "source": "https://www.newadvent.org/bible/mat002.htm",
+      "atlasEventKeys": [
+        "biblical:event:bethlehem-e2",
+        "biblical:event:jerusalem-temple-e1"
+      ]
     },
     {
       "id": "PUBLIC_MINISTRY_ORDER_HARMONIZATION",
@@ -105,7 +119,18 @@
       "issue": "The Johannine cleansing is now in PUBLIC, but selected public-ministry chapters retain differences between the canonical chronology and the 181-scene study order across Gospel narratives.",
       "resolution": "HOLD",
       "requiredAction": "Review chronology and source-specific narrative order without imposing unsupported cross-Gospel dates or identifying distinct Gospel accounts by citation similarity.",
-      "source": "https://www.newadvent.org/bible/joh004.htm"
+      "source": "https://www.newadvent.org/bible/joh004.htm",
+      "atlasEventKeys": [
+        "biblical:event:jerusalem-temple-e3",
+        "biblical:event:sychar-e1",
+        "biblical:event:cana-miracle-02",
+        "biblical:event:nain-e1",
+        "biblical:event:galilee-sea-e2",
+        "biblical:event:siloam-miracle-26",
+        "biblical:event:bethany-additional-057",
+        "biblical:event:jericho-e2",
+        "biblical:event:bethany-e1"
+      ]
     }
   ]
 }
