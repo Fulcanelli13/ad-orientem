@@ -47,8 +47,8 @@ function namedCommemorations(confirmed,fr){
     confirmed.day?.main?.commemorations,confirmed.commemorations]){
     const entries=Array.isArray(raw)?raw:raw==null?[]:[raw];
     const names=entries.map(value=>typeof value==="string"?value:
-      fr?text(value?.nameFr)||text(value?.titleFr)||text(value?.name)||text(value?.title):
-         text(value?.name)||text(value?.title)||text(value?.nameFr)||text(value?.titleFr))
+      fr?text(value?.titleFr)||text(value?.nameFr)||text(value?.title)||text(value?.name):
+         text(value?.title)||text(value?.titleFr)||text(value?.name)||text(value?.nameFr))
       .map(text).filter(value=>value&&/[A-Za-zÀ-ÿ]/.test(value));
     if(names.length)return Object.freeze([...new Set(names)]);
   }
