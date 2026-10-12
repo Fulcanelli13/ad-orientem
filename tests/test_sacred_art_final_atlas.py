@@ -71,7 +71,7 @@ def main():
         assert len(payload["sourceFingerprints"]["originalsSha256"])==64
         assert len(payload["sourceFingerprints"]["dateAssociationsSha256"])==64
         assert 'UNFLAGGED_EDITORIALLY_ACCEPTED_EXCEPT_POLICY_EXCLUSIONS' in content
-        assert 'published' not in payload["priorCuratorReview"]["status"].lower()
+        assert payload["priorCuratorReview"]["status"]=="USER_EDITORIAL_REVIEW_ONLY_NOT_PUBLISHED"
         script=content.rsplit("<script>",1)[1].split("</script>",1)[0]
         js=base/"atlas.js"
         js.write_text(script,encoding="utf8")
