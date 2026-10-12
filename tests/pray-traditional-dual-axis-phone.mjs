@@ -128,6 +128,15 @@ try{
  await page.screenshot({path:resolve(captures,"meal-after-390-fr.png"),animations:"disabled"});
  await page.setViewportSize({width:320,height:720});
  assert.equal((await snapshot()).overflow,"auto","Meals do not fit narrow local card");
+ const mealLabels=await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop")
+   .evaluateAll(nodes=>{
+     const track=nodes[0]?.parentElement?.getBoundingClientRect();
+     return nodes.map(el=>({left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,
+       trackLeft:track?.left,trackRight:track?.right}));
+   });
+ assert.equal(mealLabels.length,2,"Both meal prayer timeline stops must remain present");
+ assert.ok(mealLabels.every(x=>x.left>=x.trackLeft-1&&x.right<=x.trackRight+1),
+   "A 320px phone clipped one of two meal prayer stop titles: "+JSON.stringify(mealLabels));
  await page.screenshot({path:resolve(captures,"meal-after-320-fr.png"),animations:"disabled"});
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
  console.log("PASS French 390/320px Morning Evening, Examen, Holy Name and Meals share named-card timeline, local focus and swipe contract");
