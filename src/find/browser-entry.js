@@ -313,7 +313,8 @@ export function createFindOwner(win=globalThis){
         const review=await ensureLineageReview();
         if(token!==paintToken||!openState||!state.bibleAtlas)return false;
         mapHandle?.destroy?.();mapHandle=null;
-        node.innerHTML=renderLineageReview(review,{language:language(win),...state.bibleReview});
+        node.innerHTML=renderLineageReview(review,{language:language(win),...state.bibleReview,
+          atlasStops:buildBibleAtlas(data?.biblePlaces?.entries??[])});
         node.dataset.open="true";node.dataset.aoFindLoadState="ready";node.dataset.exploreLens=state.lens;
         return true;
       }
@@ -680,6 +681,16 @@ export function createFindOwner(win=globalThis){
       if(surfaceButton){
         event.preventDefault?.();const next=surfaceButton.dataset.bibleReviewSurface;
         if(["timeline","genealogies","apostles"].includes(next)&&next!==current.surface){state.bibleReview={...current,surface:next};void paint();}
+        return;
+      }
+      const jump=target?.closest?.("[data-bible-review-jump]");
+      if(jump){
+        event.preventDefault?.();const stops=buildBibleAtlas(dataset?.biblePlaces?.entries??[]);
+        const index=Number(jump.dataset.bibleReviewJump);
+        if(Number.isInteger(index)&&index>=0&&index<stops.length){
+          state.bibleIndex=index;state.bibleReview={...current,surface:"timeline"};
+          void paint().then(ok=>{if(ok&&state.bibleAtlas&&state.bibleReview.surface==="timeline")centerBibleMilestone(index);});
+        }
         return;
       }
       const lineage=target?.closest?.("[data-bible-review-lineage]");
