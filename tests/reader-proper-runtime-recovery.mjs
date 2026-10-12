@@ -171,7 +171,7 @@ const prefaceResolver={async resolveSource(path,language){
  return {map:prefaceSource[language]};
 }};
 const full={...authoritative,data:{...authoritative.data,
- preface:{lat:"Communis\\nVere dignum",en:"Common",fr:"Commune"}}};
+ preface:{lat:"Communis\nVere dignum",en:"Common",fr:"Commune"}}};
 for(const [id,expected,clause] of [
  ["tempora:Pasc7-0:1:r","Spiritu",/promíssum Spíritum/],
  ["sancti:10-07:2:w","Maria",/festivitáte/],
