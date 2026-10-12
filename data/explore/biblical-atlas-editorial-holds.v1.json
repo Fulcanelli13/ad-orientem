@@ -1,0 +1,108 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_EDITORIAL_HOLDS_V1",
+  "status": "REVIEW_NOT_PUBLISHED",
+  "policy": {
+    "canonicalChronologyProtected": true,
+    "citationEqualityNotEventIdentity": true,
+    "noSpeculativeGeo": true,
+    "noArtworkRightsAssumed": true,
+    "releaseRequiresHumanSourceReview": true
+  },
+  "holds": [
+    {
+      "id": "JOHN2_PASSION_PLACEMENT",
+      "priority": "P0",
+      "sceneIndex": 74,
+      "atlasIndices": [
+        110
+      ],
+      "passages": [
+        "John 2:13–22"
+      ],
+      "issue": "John 2 cleansing/First Passover is located in canonical PASSION-era sequence although John's Gospel narrates it near the beginning of the public ministry.",
+      "resolution": "HOLD",
+      "requiredAction": "Decide Johannine/Synoptic cleansing relation and, if correcting 151-stop ordering, migrate every dependent index, join, and test.",
+      "source": "https://www.newadvent.org/bible/joh002.htm"
+    },
+    {
+      "id": "JOHN20_RESURRECTION_VS_EMPTY_TOMB",
+      "priority": "P0",
+      "sceneIndex": 131,
+      "atlasIndices": [
+        120
+      ],
+      "passages": [
+        "John 20:1–18"
+      ],
+      "issue": "Study title Resurrection must not be conflated with the canonical empty-tomb/Magdalene appearance narrative; John 20 does not narrate an eyewitness view of the instant of Resurrection.",
+      "resolution": "HOLD",
+      "requiredAction": "Correct title/synopsis/cinematic imagery relationship with source-congruent qualification before scene certification.",
+      "source": "https://www.newadvent.org/bible/joh020.htm"
+    },
+    {
+      "id": "LUKE2_TEMPLE_EXACT_AND_OVERLAP",
+      "priority": "P0",
+      "sceneIndex": 68,
+      "atlasIndices": [
+        76,
+        77
+      ],
+      "passages": [
+        "Luke 2:41–52",
+        "Luke 2:51–52"
+      ],
+      "issue": "A single scene has an exact citation plus a secondary overlapping hidden-life citation; not one automatic canonical identity.",
+      "resolution": "HOLD",
+      "requiredAction": "Adjudicate exact Temple episode and overlapping hidden-life transition independently.",
+      "source": "https://www.newadvent.org/bible/luk002.htm"
+    },
+    {
+      "id": "MAGI_PRESENTATION_GOSPEL_HARMONY",
+      "priority": "P1",
+      "sceneIndex": 63,
+      "atlasIndices": [
+        72,
+        71
+      ],
+      "passages": [
+        "Matthew 2:1–12",
+        "Luke 2:22–38"
+      ],
+      "issue": "The Magi and Presentation chronology compares different Evangelists; narrative order is not an explicitly supplied single-Gospel dating.",
+      "resolution": "HOLD",
+      "requiredAction": "Specify conservative harmony basis or avoid asserted precise order/dates.",
+      "source": "https://www.newadvent.org/bible/mat002.htm"
+    },
+    {
+      "id": "PUBLIC_MINISTRY_ORDER_HARMONIZATION",
+      "priority": "P1",
+      "sceneIndex": 74,
+      "atlasIndices": [
+        110,
+        92,
+        82,
+        94,
+        88,
+        107,
+        102,
+        105,
+        101
+      ],
+      "passages": [
+        "John 2:13–22",
+        "John 4:4–26",
+        "John 4:46–54",
+        "Luke 7:11–17",
+        "Mark 4:35–41",
+        "John 9:1–12",
+        "Luke 10:38–42",
+        "Luke 19:1–10",
+        "John 11:1–44"
+      ],
+      "issue": "Several exact-reference pairs in the cinematic study and canonical timeline are ordered differently; some result from differing Gospel sequence and one from a misplaced era.",
+      "resolution": "HOLD",
+      "requiredAction": "Review source-aware temporal ordering for each chapter; do not market 181 scene sequence as certified chronological dates.",
+      "source": "https://www.newadvent.org/bible/joh004.htm"
+    }
+  ]
+}
