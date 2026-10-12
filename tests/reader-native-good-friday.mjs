@@ -5,6 +5,7 @@ import { prepareNativeReaderPreview, goodFridayFormulaAtFocus } from "../src/mas
 
 const core=JSON.parse(readFileSync(new URL("../data/mass/special-days-core.v1.1.json",import.meta.url),"utf8"));
 const payload=JSON.parse(readFileSync(new URL("../data/presentation/reader-good-friday.v1.json",import.meta.url),"utf8"));
+const voiceAnchors=JSON.parse(readFileSync(new URL("../data/mass/good-friday-passion-voice-anchors.v1.json",import.meta.url),"utf8"));
 
 const resolvedMass=makeResolvedMass({
   date:"2027-03-26",
@@ -22,7 +23,7 @@ const prepared={
 let ordinaryLoads=0;
 const ready=await prepareNativeReaderPreview({
   prepared,
-  goodFridayData:{graph:core.graphs.GF,payload},
+  goodFridayData:{graph:core.graphs.GF,payload,voiceAnchors},
   loadPresentationData:()=>{ordinaryLoads+=1;throw new Error("ordinary presentation must not load");},
   loadEventData:()=>{ordinaryLoads+=1;throw new Error("ordinary events must not load");},
   loadCueRegistries:()=>{ordinaryLoads+=1;throw new Error("ordinary cue registries must not load");},
@@ -31,6 +32,10 @@ const ready=await prepareNativeReaderPreview({
 
 assert.equal(ordinaryLoads,0);
 assert.equal(ready.distinctRite,"GOOD_FRIDAY");
+const sourcePassion=ready.goodFridayController.built.steps.find(x=>x.recordId==="GF-PASS-310");
+assert.ok(sourcePassion.paragraphs.some(x=>x.scriptureVoiceSpans?.length),
+  "Good Friday native entry lost the independently sourced Passion voice annotations");
+assert.equal(sourcePassion.paragraphs.flatMap(x=>x.scriptureVoiceSpans??[]).length,49);
 assert.equal(ready.model,null);
 assert.ok(ready.goodFridayController);
 let state=ready.goodFridayController.project();
