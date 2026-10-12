@@ -6,9 +6,11 @@ on:
     branches: [main]
     paths:
       - "src/pray/presentation-runtime.js"
+      - "src/pray/presentation-coherence.js"
       - "src/pray/presentation-styles.js"
       - "tests/pray-prayer-first-options-phone.mjs"
       - "tests/pray-marian-mobile.mjs"
+      - "tests/pray-all-modules-mobile.mjs"
       - ".github/workflows/pray-prayer-first-phone.yml"
   workflow_dispatch:
 
