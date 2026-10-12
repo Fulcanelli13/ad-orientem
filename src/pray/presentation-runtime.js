@@ -6,6 +6,7 @@ import "./presentation-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
+import {installRosaryDualAxisReader} from "./rosary-dual-axis-reader.js";
 import {showDevotionalInterlude,showDevotionalParagraphCue} from "./devotional-cinematic.js";
 import "./devotional-methods-styles.js";
 import "./tenebrae-styles.js";
@@ -1188,6 +1189,19 @@ function decorateRosary(){
  prepareRosaryOpening(r);
  prepareRosaryActive(r);
  declutterRosaryDonor(r);
+ const info=rosaryLiveInfo();
+ if(info?.steps?.length){
+  installRosaryDualAxisReader({
+   root:r,steps:info.steps,currentStep:info.index,french:isFr(),
+   onChapter:target=>{
+    // The archived Rosary remains the sole owner of every bead and method.
+    const api=window.AO_ROSARY_V381;
+    if(api?.setStep?.(target)===false)return false;
+    setTimeout(decorateRosary,0);
+    return true;
+   }
+  });
+ }
 }
 function confessionModeLabel(path){
  const p=confessionPath(path);
