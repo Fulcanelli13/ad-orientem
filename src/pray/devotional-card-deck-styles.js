@@ -38,6 +38,8 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoDevoSequenceTimeline .aoDevoStopNumber{font:600 10px/1.1 system-ui,sans-serif}
 #aoPray435930 .aoP435930Stations .aoDevoCardScroll{padding:18px 16px 27dvh;display:block;min-height:min(350px,52dvh)}
 #aoPray435930 .aoP435930Stations .aoDevoCardScroll>*{margin-block:0 22px}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideNow h2{display:none!important}
+#aoPray435930 .aoMercyStepType{display:block;margin:4px 14px;color:var(--muted,#aeb2b8);font:500 12px/1.4 Georgia,serif}
 #aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930Flip{max-width:100%;white-space:normal}
 #aoPray435930 .aoMercyReader .aoDevoCardScroll{gap:18px;padding:18px 14px 30dvh;min-height:min(350px,52dvh)}
 #aoPray435930 .aoMercyLine{display:block;flex:0 0 auto;min-width:0;margin:0!important;padding:18px 8px;border-bottom:1px solid var(--border,rgba(255,255,255,.10));background:transparent!important;box-shadow:none!important;transform:none!important;min-height:unset!important;border-radius:0!important;text-align:left}
