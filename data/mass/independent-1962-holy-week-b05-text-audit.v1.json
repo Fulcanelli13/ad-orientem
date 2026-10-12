@@ -120,9 +120,11 @@
       "rite": "GOOD_FRIDAY_1962",
       "appPath": "src/mass/reader-good-friday.js",
       "surface": "Passion Latin spoken/sung roles",
-      "status": "ROLE_ANNOTATIONS_MISSING",
-      "evidence": "The Good Friday reader turns undifferentiated Latin Passion paragraphs into TEXT rows; performer/voice ownership (Christus, Chronista, Synagoga) is not represented in the payload.",
-      "source": "FRIDAY_EDITORIAL"
+      "status": "B11_49_EXACT_DIALOGUE_VOICE_SPANS__FULL_ROLE_SEGMENTATION_OPEN",
+      "evidence": "B11 adds 49 phrase-specific Christus/Synagoga textual voice anchors in 1962 John 18–19, linked to 1962-based Cantus Passionis three-part scores. The native Good Friday reader exposes exact immutable source spans and renders only covered phrases with a restrained distinction. Uncovered dialogue and narrator passages are NOT auto-labelled; complete 1962 original printed line-by-line role coverage and singer/minister mapping remain open.",
+      "source": "FRIDAY_EDITORIAL",
+      "voiceRegistry": "data/mass/good-friday-passion-voice-anchors.v1.json",
+      "witnessRoleScores": "https://forum.musicasacra.com/forum/discussion/13567/passion-of-st.-john-chants-1962-missal/p1"
     },
     {
       "id": "FRIDAY_NINE_PRAYERS",
