@@ -61,6 +61,7 @@ import { createReaderTransientController, partTransitionCinematic } from "./read
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { resolvePriestChantAction, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
+import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
