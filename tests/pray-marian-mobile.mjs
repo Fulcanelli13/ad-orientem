@@ -43,6 +43,29 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open .aoMercyReader",{timeout:9000});
  await page.screenshot({path:resolve(captures,"01-divine-mercy-390.png"),fullPage:false,animations:"disabled"});
+ // A single chapter displays many canonical bead prayers; vertical movement
+ // retains the chapter, horizontal movement advances exactly one named card.
+ await page.waitForSelector("#aoPray435930 .aoMercyReader .aoDevoSequenceTimeline",{timeout:9000});
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoStop").count(),7);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoMercyLine").count(),4);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoParagraph[data-ao-devo-active='true']").count(),1);
+ await page.emulateMedia({reducedMotion:"reduce"});
+ const gesture=async(dx,dy)=>{
+  await page.locator("#aoPray435930 .aoDevoCardScroll").evaluate((node,{dx,dy})=>{
+   const t=(x,y)=>new Touch({identifier:9,target:node,clientX:x,clientY:y});
+   node.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(240,350)],changedTouches:[t(240,350)]}));
+   node.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(240+dx,350+dy)]}));
+  },{dx,dy});
+ };
+ await gesture(6,-145);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoCard").getAttribute("data-ao-devo-card"),"opening");
+ await gesture(-170,5);
+ await page.waitForSelector("#aoPray435930 .aoMercyReader .aoDevoCard[data-ao-devo-card='decade-1']");
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoMercyLine").count(),11);
+ await gesture(170,5);
+ await page.waitForSelector("#aoPray435930 .aoMercyReader .aoDevoCard[data-ao-devo-card='opening']");
+ await page.emulateMedia({reducedMotion:"no-preference"});
+
  assert.equal(await page.locator("#aoPray435930 .aoMercyControls button").count(),2);
  assert.match(await page.locator("#aoPray435930 .aoMercyPrayer").innerText(),/Au nom du Père|In the name of the Father/);
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/1 \/ 62/);
@@ -61,6 +84,24 @@ try{
  assert.ok(["https://www.vaticannews.va/fr/priere/chapelet-de-la-divine-misericorde.html",
   "https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html"].includes(
   await page.locator("#aoPray435930 .aoMercySource a").getAttribute("href")));
+  // The same title/paragraph navigation contract now applies to Stations.
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations",{returnContext:null})),true);
+ await page.waitForSelector("#aoPray435930 .aoP435930Stations .aoDevoCardScroll",{timeout:9000});
+ await page.waitForSelector("#aoPray435930 .aoP435930StationRail.aoDevoSequenceTimeline",{timeout:9000});
+ assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail .aoDevoStop").count(),14);
+ assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail [aria-current='step']").count(),1);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
+ await page.screenshot({path:resolve(captures,"02-stations-dual-axis-390.png"),fullPage:false,animations:"disabled"});
+ await page.emulateMedia({reducedMotion:"reduce"});
+ await gesture(7,-155);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
+ await gesture(-170,4);
+ await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-2']");
+ assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail [aria-current='step']").count(),1);
+ await page.locator("#aoPray435930 [data-p435930-station-step='0']").evaluate(x=>x.click());
+ await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-1']");
+ await page.emulateMedia({reducedMotion:"no-preference"});
+
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{state:"attached",timeout:12000});
  // Two navigation axes: timeline moves named cards, card-local scroll focuses
