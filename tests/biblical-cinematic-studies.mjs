@@ -4,7 +4,7 @@ import {buildBibleAtlas} from "../src/find/bible-atlas.js";
 import {approvedBibleSceneArtwork} from "../src/find/bible-scene-art-gate.js";
 import {
  validateCinematicStudies,validateCinematicCrosswalk,studyChapter,studyScene,studyStep,
- cinematicExactAtlasTarget,renderCinematicStudies
+ cinematicExactAtlasTarget,cinematicExactScenesForAtlasStop,renderCinematicStudies
 } from "../src/find/bible-cinematic-studies.js";
 const source=JSON.parse(readFileSync(new URL("../data/explore/biblical-cinematic-studies-review.v1.json",import.meta.url),"utf8"));
 const atlasData=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact.v1.json",import.meta.url),"utf8"));
@@ -31,6 +31,15 @@ const counts=Object.fromEntries(["EXACT_REFERENCE","PASSAGE_OVERLAP_REVIEW_ONLY"
 assert.deepEqual(counts,{EXACT_REFERENCE:67,PASSAGE_OVERLAP_REVIEW_ONLY:29,NO_DIRECT_PASSAGE_MATCH:87});
 const linked=source.scenes.filter(s=>cinematicExactAtlasTarget(s,stops)!==null);
 assert.equal(linked.length,66,"64 original uniquely matched citations plus two new sources link to canonical milestones");
+const reversed=stops.flatMap(stop=>cinematicExactScenesForAtlasStop(source,stops,stop.index)
+ .map(scene=>({scene,stop})));
+assert.equal(reversed.length,66,"reverse links must cover exactly the same 66 unambiguous scenes");
+assert.ok(reversed.every(({scene,stop})=>cinematicExactAtlasTarget(scene,stops)===stop.index));
+assert.deepEqual(cinematicExactScenesForAtlasStop(source,stops,82).map(scene=>scene.index).filter(i=>i===74),[74],
+ "John 2 scene links back only to its exact source stop");
+assert.deepEqual(cinematicExactScenesForAtlasStop(source,stops,0).map(scene=>scene.index).filter(i=>i===0),[],
+ "Creation overview is not a false one-to-one scenic correspondence");
+
 assert.equal(source.scenes[68].status,"EXACT_REFERENCE");
 assert.equal(source.scenes[68].candidates.length,2,"one exact scene also has an overlap candidate");
 assert.equal(cinematicExactAtlasTarget(source.scenes[68],stops),null,"ambiguous #68 cannot auto-link");
