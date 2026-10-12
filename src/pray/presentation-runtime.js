@@ -1826,7 +1826,11 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     render()
    }
   });
-  if(reader)m.querySelector('.aoP435930AdorationReader')?.setAttribute('data-ao-adoration-dual-axis','true');
+  if(reader){
+   const host=m.querySelector('.aoP435930AdorationReader');
+   host?.setAttribute('data-ao-adoration-dual-axis','true');
+   host?.setAttribute('data-ao-adoration-final',String(index===steps.length-1));
+  }
  });
  if(view==='benediction')queueMicrotask(()=>{
   const titles=BEN_STAGES.map(stage=>L(stage[1],stage[2]));
