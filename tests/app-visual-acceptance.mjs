@@ -1203,6 +1203,16 @@ try{
       assert.equal(await details.evaluate(el=>el.open),false,"Morning guide must not obscure opening prayer");
       assert.match(await details.textContent(),/traditional daily rule|règle quotidienne traditionnelle/i,
         "Original prayer-context guidance was discarded rather than relocated");
+    }else if(["pray.meal_prayers","pray.holy_name_litany"].includes(route)){
+      // These readers preserve the sourced donor context as an unobtrusive
+      // disclosure beneath the active prayer, not as an opening-page block.
+      const selector=route==="pray.meal_prayers"?"[data-ao-meal-options]":"[data-ao-holy-name-options]";
+      const guide=page.locator("#aoPray435930 "+selector);
+      assert.equal(await guide.count(),1,route+" lost its source-context guide");
+      assert.equal(await guide.evaluate(el=>el.open),false,route+" guide obscures the opening prayer");
+      assert.ok((await guide.textContent()).trim().length>100,route+" donor context was discarded");
+      assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop").count(),
+        route==="pray.meal_prayers"?2:7,route+" lost canonical named-card navigation");
     }else{
       assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,
         route+" lost its v38.1 donor introduction");
