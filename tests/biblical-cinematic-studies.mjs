@@ -31,6 +31,9 @@ for(const s of source.scenes){
 }
 assert.equal(source.scenes[74].candidates[0].atlasIndex,82,"John 2 source reference migrates into PUBLIC");
 assert.equal(source.scenes[74].candidates[0].atlasEventKey,"biblical:event:jerusalem-temple-e3");
+assert.match(source.scenes[32].title_en,/first plague/);
+assert.match(source.scenes[32].sourceNote_en,/not all ten plagues/);
+assert.match(source.scenes[176].sourceNote_en,/Acts 28:1/);
 assert.equal(stops[82].eventKey,"biblical:event:jerusalem-temple-e3");
 assert.match(renderCinematicStudies(source,{language:"en",chapter:"MINISTRY",scene:74,atlasStops:stops}),/John places this episode near the beginning/);
 assert.match(renderCinematicStudies(source,{language:"fr",chapter:"RISEN",scene:131,atlasStops:stops}),/Le tombeau vide et Marie-Madeleine/);
