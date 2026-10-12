@@ -71,8 +71,9 @@ const certified=await page.evaluate(async()=>{
      paragraphs:["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].map(k=>slots.slots[k].data?.paragraphs?.length??null),
      prayerGroupCount:selected.decision?.prayerGroupCount??null,
      conclusionOwner:proper?.collects?.[0]?.oneConclusion?.conclusionOwner??null,
-     printed:assessPrintableProper({...resolution,proper:{status:"ready",data:proper}},
-       {language:"fr"}).ok,
+     print:assessPrintableProper({...resolution,proper:{status:"ready",data:proper}},
+       {language:"fr"}),
+     originalPrint:assessPrintableProper(resolution,{language:"fr"}).reason??"READY",
    };
  }
  return outputs;
@@ -87,7 +88,13 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
  assert.deepEqual(result.paragraphs,[2,2,2],form+" must show both apostolic prayers, one conclusion");
  assert.equal(result.conclusionOwner,"SAINT_PETER");
  assert.equal(result.prayerGroupCount,1);
- assert.equal(result.printed,true);
+ if(result.originalPrint==="READY"){
+   assert.equal(result.print.ok,true,"No new printed-Proper regression: "+result.print.reason);
+ }else{
+   assert.equal(result.print.ok,false,"Print must remain withheld if source was already incomplete");
+   assert.equal(result.print.reason,result.originalPrint,
+     "Inseparable prayer projection must not change unrelated print blockers");
+ }
 }
 
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
