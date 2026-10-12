@@ -514,6 +514,11 @@ export const AFTER_MILESTONES={
   "cana-e1": [
     [
       "PUBLIC",
+      "jerusalem-temple",
+      "jerusalem-temple-e3"
+    ],
+    [
+      "PUBLIC",
       "cana",
       "cana-miracle-02"
     ]
@@ -604,13 +609,6 @@ export const AFTER_MILESTONES={
       "PUBLIC",
       "siloam",
       "siloam-miracle-26"
-    ]
-  ],
-  "olives-e1": [
-    [
-      "PASSION",
-      "jerusalem-temple",
-      "jerusalem-temple-e3"
     ]
   ],
   "cenacle-e1": [
