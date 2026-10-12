@@ -1,0 +1,1431 @@
+{
+  "schema": "AO_SACRED_ART_P0_20261012_VISUAL_CURATOR_TRIAGE_V1",
+  "dated": "2026-10-12",
+  "branch": "platform/885-sacred-art-candidates",
+  "source": "data/calendar/sacred-art-p0-51-subject-source-matches-20261012.v1.json",
+  "sourceUserDecisions": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+  "method": "PAINTING_IDENTITY_FIRST_MATCHED_WEB_PREVIEWS_AND_SOURCE_LEDGER; CONSERVATIVE_PASS_1",
+  "status": "ASSISTANT_PRELIMINARY_VISUAL_TRIAGE_NOT_USER_ACCEPTANCE",
+  "policy": {
+    "humanChosenCurrentSelectionsImmutable": 101,
+    "noAutoApprovals": true,
+    "noAutoRejectionsOfPreviouslySelectedArtwork": true,
+    "noProductionMutation": true,
+    "noImageAcquisition": true,
+    "exactIconographicRelationRequired": true,
+    "excludeArtists": [
+      "El Greco",
+      "Fra Angelico"
+    ],
+    "noFallbackToSimilarFlattenedStyles": true,
+    "heroQualityMoreRestrictiveThanSaintCard": true,
+    "sourceOnlyIsNotVisualApproval": true
+  },
+  "inspectedCanonicalObjects": [
+    "louvre-rf-1948-27",
+    "venice-tintoretto-1566-christ-before-pilate",
+    "boijmans-1738-ok",
+    "prado-giaquinto-glory-saints",
+    "prado-rubens-p001648",
+    "prado-rubens-p001652",
+    "prado-ribalta-p002804",
+    "louvre-b746-athanasius-bertin",
+    "louvre-inv-1736",
+    "prado-rizi-saint-benedict-idols",
+    "ng-26-veronese-nicholas",
+    "nga-12209",
+    "vesoul-984-6-1-gerome-vincent"
+  ],
+  "subjectCards": [
+    {
+      "subjectId": "DEV-01",
+      "subject": "Sacred Heart of Jesus",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "commons-morlete-sacred-heart-1759",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "iconographicRelation": "EXACT_DEVOTIONAL_SACRED_HEART",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "DEV-02",
+      "subject": "Immaculate Heart of Mary",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "ARTWORK_SUBJECT_GAP",
+      "options": [],
+      "existingGapReason": "Slovene Museum of Christianity documents a painted Immaculate Heart banner (early 18th century), but is textile processional painting not automatically a first-rank devotional hero; Bowers 1750 Heart of Mary is specifically Seven Sorrows, not same iconographic subject.",
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "DEV-05",
+      "subject": "Blessed Sacrament / Eucharistic Adoration",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "met-438434",
+          "artist": "Jean Auguste Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+          "iconographicRelation": "DIRECT_HOST_ADORATION",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        },
+        {
+          "canonicalProposalId": "met-437527",
+          "artist": "Peter Paul Rubens",
+          "title": "The Glorification of the Eucharist",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437527",
+          "iconographicRelation": "EUCHARISTIC_ALLEGORY_CONTEXTUAL",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "DEV-10",
+      "subject": "Saint Joseph",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "louvre-rf-1948-27",
+          "artist": "Georges de La Tour",
+          "title": "Saint Joseph charpentier",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010063817",
+          "iconographicRelation": "EXACT_NAMED_JOSEPH_CHILD",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Dark tenebrist nocturne, focal candle and intimate two-figure composition; entire subject visible; strong match for Joseph devotion and calendar, not automatically an illustration of any Gospel.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        },
+        {
+          "canonicalProposalId": "mfah-96-1565",
+          "artist": "Guido Reni",
+          "title": "Saint Joseph and the Christ Child",
+          "sourceUrl": "https://emuseum.mfah.org/objects/36092/saint-joseph-and-the-christ-child",
+          "iconographicRelation": "EXACT_NAMED_JOSEPH_CHILD",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "DEV-11",
+      "subject": "Holy Souls in Purgatory",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "met-437542",
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437542",
+          "iconographicRelation": "INTERCESSION_PURGATORY_NAMED_TERESA",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        },
+        {
+          "canonicalProposalId": "augustins-2004-1-218",
+          "artist": "Philippe de Champaigne",
+          "title": "Les Âmes du Purgatoire",
+          "sourceUrl": "https://collections.augustins.toulouse.fr/fr/notice/2004-1-218-les-ames-du-purgatoire-b35ce3cd-498e-4a7f-a4d9-4ed873b8270f",
+          "iconographicRelation": "EXACT_PURGATORY_SCENE",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "DEV-12",
+      "subject": "Our Lady of Perpetual Help",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "ARTWORK_SUBJECT_GAP",
+      "options": [],
+      "existingGapReason": "Redemptorists preserve the actual original Byzantine icon at Sant'Alfonso; selecting an invented oil painting would be misleading, while publishing flat icon style without user permission would contradict the artist exclusion. Decide on explicitly documented canonical icon exception.",
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "DEV-13",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "carmel-lisieux-1925-therese-aux-roses",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux roses (1925)",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "iconographicRelation": "POSTHUMOUS_DEVOTIONAL_PAINTED_LIKENESS_SOURCE_AUTHENTICATED",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "DEV-15",
+      "subject": "Christ the King",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "venice-tintoretto-1566-christ-before-pilate",
+          "artist": "Jacopo Tintoretto",
+          "title": "Christ before Pilate",
+          "sourceUrl": "https://www.scuolagrandesanrocco.org/en/tintoretto/sala-dellalbergo/",
+          "iconographicRelation": "CHRIST_KING_RELATED_PILATE_CONTEXT_NOT_EXACT_GOSPEL_SCENE",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST_CONTEXTUAL_ONLY",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Architectural monumental Tintoretto, solemn white figure in contrast with crimson Pilate, multiple expressive bystanders; strong sacred historical art but depicted handwashing ≠ Christ the King appointed John 18 scene.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "DEV-19",
+      "subject": "All Saints",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "boijmans-1738-ok",
+          "artist": "Peter Paul Rubens",
+          "title": "All Saints",
+          "sourceUrl": "https://www.boijmans.nl/en/collection/artworks/2721/all-saints",
+          "iconographicRelation": "EXACT_ALL_SAINTS",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "SECONDARY_SMALL_STUDY_NOT_HOMEPAGE_DEFAULT",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Rubens energetic All Saints oil sketch, but strongly abbreviated/loosely brushed 38 × 58 cm panel; iconic content crowded and indistinct at small display, poor first-choice Home masterpiece despite eminent artist.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        },
+        {
+          "canonicalProposalId": "prado-giaquinto-glory-saints",
+          "artist": "Corrado Giaquinto",
+          "title": "The Glory of Saints",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-glory-of-saints/522ac2bb-22ac-4f25-8903-b96ae539da80",
+          "iconographicRelation": "CONTEXTUAL_HEAVENLY_SAINTS",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "SECONDARY_ROCOCO_STYLE_HOLD",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Broad, pale Rococo celestial group with light pastel wash and scattered figures; genre/iconography broadly related but weaker fit to the solemn, high-definition Baroque look sought; not accepted.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rubens-p001648",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Greater",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-greater/72f76d59-fab7-4cea-8214-af0fb98fc293",
+          "iconographicRelation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Rubens dynamic half-length figure with strong red cloak and facial presence; directly named apostle and cohesive cycle; portrait without historical likeness claim.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rubens-p001647",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint John the Evangelist",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-the-evangelist/29bfd358-bfd3-43b4-a894-b57f6eb2d81f",
+          "iconographicRelation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rubens-p001650",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Philip",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-philip/a0e78920-8f28-47f5-8cd5-f50ba1dfa8c5",
+          "iconographicRelation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rubens-p001652",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Bartholomew",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/f49d896e-547c-40bd-ac5d-4cb537e429d8",
+          "iconographicRelation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Rubens expressive Bartholomew with dark green cloak and luminous face; convincingly painterly, clear solo apostle identity.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rubens-p001654",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Thomas",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/629fe4f7-9fdd-4b8f-af15-653882a62493",
+          "iconographicRelation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rubens-p001651",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Less",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-less/02ef9e0d-b544-48cb-bcd0-89611b37f55b",
+          "iconographicRelation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rubens-p001655",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Simon",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/0679cee8-ea16-47dc-81f8-179530faaa68",
+          "iconographicRelation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "category": "Calendar saints",
+      "group": "Evangelists",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-juan-ribalta-p002965",
+          "artist": "Juan Ribalta",
+          "title": "Saint Mark and Saint Luke",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "iconographicRelation": "BOTH_NAMED_EVANGELISTS_IN_SAME_PAINTED_PANEL",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "category": "Calendar saints",
+      "group": "Evangelists",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-juan-ribalta-p002965",
+          "artist": "Juan Ribalta",
+          "title": "Saint Mark and Saint Luke",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "iconographicRelation": "BOTH_NAMED_EVANGELISTS_IN_SAME_PAINTED_PANEL",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rubens-defenders",
+          "artist": "Peter Paul Rubens",
+          "title": "The Defenders of the Eucharist",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-defenders-of-the-eucharist/c6a0ed37-f1ba-4781-9258-8eabd87ff1c2",
+          "iconographicRelation": "CONTEXTUAL_NAMED_GREGORY_IN_GROUP",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-ribalta-p002804",
+          "artist": "Francisco Ribalta",
+          "title": "Christ embracing Saint Bernard",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+          "iconographicRelation": "EXACT_BERNARD_WITH_CHRIST",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Substantial dramatic Baroque Christ/Bernard embrace, concentrated faces, tenebrism; exact named mystic scene; much stronger than generic saint portraits.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "met-437542",
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437542",
+          "iconographicRelation": "NAMED_TERESA_IN_PURGATORY_INTERCESSION",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "celine-1894-john-cross",
+          "artist": "Céline Martin",
+          "title": "Saint John of the Cross",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/",
+          "iconographicRelation": "EXACT_DEVOTIONAL_PAINTING",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "italy-0900119548",
+          "artist": "Antonio Marini",
+          "title": "Sant'Alfonso Maria de Liguori",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+          "iconographicRelation": "EXACT_SAINT_PAINTING",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "brou-982243",
+          "artist": "Benoît Alhoste (attributed)",
+          "title": "Le Bon Pasteur, saint François de Sales et sainte Madeleine",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/000PE032930",
+          "iconographicRelation": "NAMED_SAINT_IN_GROUP",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "louvre-b746-athanasius-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Athanase",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057996",
+          "iconographicRelation": "EXACT_SAINT_ATHANASIUS_THEOLOGIAN_PAINTED_TONDO",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "SECONDARY_SMALL_TONDO_PAINTING",
+          "reviewConfidence": "MEDIUM",
+          "visualAssessment": "Athanasius in expressive oval, bright drapery and hand pose; source preview includes oval border and decorative space, not a grand standalone altarpiece; may work as a restrained secondary saint vignette. Museum attribution should be checked carefully.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "louvre-b745-gregory-nazianzen-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Grégoire (de Nazianze)",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057995",
+          "iconographicRelation": "EXACT_SAINT_GREGORY_NAZIANZEN_GREEK_FATHER_PAINTED_TONDO",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "louvre-b744-chrysostom-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Chrysostome",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057998",
+          "iconographicRelation": "EXACT_SAINT_JOHN_CHRYSOSTOM_GREEK_FATHER_PAINTED_TONDO",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "ARTWORK_SUBJECT_GAP",
+      "options": [],
+      "existingGapReason": "Preexisting Italian catalogue lead for a historical cycle is not a confidently isolated, impressive Bede painting. Modern mock-old-master or computer-generated illustrations are not historically sourced fine art.",
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "louvre-crespi-inv259",
+          "artist": "Giuseppe Maria Crespi",
+          "title": "L'Immaculée Conception avec saint Anselme et saint Martin",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010064462",
+          "iconographicRelation": "CONTEXTUAL_NAMED_SAINT_ANSELM_IN_MARIAN_GROUP",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "zeri-45874-peter-damian",
+          "artist": "Venanzio l'Eremita",
+          "title": "San Pier Damiano",
+          "sourceUrl": "https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano",
+          "iconographicRelation": "EXACT_SAINT_PAINTING",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "italy-l0060-albert",
+          "artist": "Giuseppe Franchi",
+          "title": "Portrait of Saint Albert the Great",
+          "sourceUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0060-00113/",
+          "iconographicRelation": "EXACT_SAINT_PROVISIONAL_CATALOGUE",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "ambrosiana-L0050-00042",
+          "artist": "Carlo Perotti (attributed)",
+          "title": "Ritratto di Roberto Bellarmino",
+          "sourceUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0050-00042/",
+          "iconographicRelation": "EXACT_NAMED_SAINT_PORTRAIT_UNCERTAIN_DATE",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "ARTWORK_SUBJECT_GAP",
+      "options": [],
+      "existingGapReason": "Vallejo's Immaculate Conception includes Canisius as one among many figures and is mainly Marian subject. Not accepted as a suitable saint illustration.",
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "italy-banchero-0700031704",
+          "artist": "Angelo Giacinto Banchero",
+          "title": "San Lorenzo da Brindisi",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+          "iconographicRelation": "EXACT_NAMED_SAINT_LAWRENCE_BRINDISI",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "ARTWORK_SUBJECT_GAP",
+      "options": [],
+      "existingGapReason": "Italian national catalogue explicitly calls the 18th century Cyril of Alexandria oil a minor portrait with stereotyped non-face treatment; do not promote merely to fill a quota.",
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "ARTWORK_SUBJECT_GAP",
+      "options": [],
+      "existingGapReason": "Nannoni attributed Cyril of Jerusalem image is a 1637 oil-free 74×69 cm fresco within Carmelite saint cycle, not a compelling separate oil painting; reject automatic substitution for a painterly hero.",
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "status": "ARTWORK_SUBJECT_GAP",
+      "options": [],
+      "existingGapReason": "No authenticated full painterly depiction of Saint Ephrem meeting current artistic standard established in searched museum and heritage records. Distinguish Ephrem the Syrian from unrelated saints named Ephrem and from anonymous flat icons.",
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "louvre-rf-1948-27",
+          "artist": "Georges de La Tour",
+          "title": "Saint Joseph charpentier",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010063817",
+          "iconographicRelation": "EXACT_NAMED_JOSEPH_CHILD",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Dark tenebrist nocturne, focal candle and intimate two-figure composition; entire subject visible; strong match for Joseph devotion and calendar, not automatically an illustration of any Gospel.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "louvre-inv-1736",
+          "artist": "Rembrandt",
+          "title": "L'Archange Raphaël quittant la famille de Tobie",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010062024",
+          "iconographicRelation": "NARRATIVE_TOBIT_12_RAPHAEL_NAMED",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Rembrandt atmospheric archangel departing Tobias, dramatic ascending winged figure and grounded family group; scene is Tobit 12, not a generic angel portrait.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "carmel-lisieux-1925-therese-aux-roses",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux roses (1925)",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "iconographicRelation": "POSTHUMOUS_DEVOTIONAL_PAINTED_LIKENESS_SOURCE_AUTHENTICATED",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "sevilla-murillo-vision-san-antonio",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "La visión de san Antonio de Padua",
+          "sourceUrl": "https://www.catedraldesevilla.es/la-vision-de-san-antonio-la-historia-secreta-de-una-obra-maestra-de-murillo/",
+          "iconographicRelation": "EXACT_NAMED_ANTHONY_VISION_OF_CHILD_JESUS",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "versailles-jouvenet-inv5501",
+          "artist": "Jean-Baptiste Jouvenet",
+          "title": "Saint Louis soignant les blessés après la bataille de Mansourah (1250)",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/000PE006521",
+          "iconographicRelation": "EXACT_NAMED_SAINT_LOUIS_HISTORICAL_NARRATIVE",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "ngi-4623-barry-st-patrick-cashel",
+          "artist": "James Barry",
+          "title": "The Baptism of the King of Cashel by Saint Patrick",
+          "sourceUrl": "https://onlinecollection.nationalgallery.ie/objects/8798",
+          "iconographicRelation": "EXACT_NAMED_SAINT_PATRICK_BAPTISING_KING",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rizi-saint-benedict-idols",
+          "artist": "Fray Juan Andrés Rizi",
+          "title": "Saint Benedict Destroying Idols",
+          "sourceUrl": "https://www.museodelprado.es/coleccion/obra-de-arte/san-benito-destruyendo-los-idolos/9df62082-273c-45fb-b107-e0f5025f086f",
+          "iconographicRelation": "EXACT_NAMED_SAINT_BENEDICT_HAGIOGRAPHIC_EVENT",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Grounded narrative of Benedict using Cross against idols, convincing Baroque composition and habit; full painting not icon, strong exact hagiographic match.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "france-PM74001769-margaretmary",
+          "artist": "Bénédict Masson",
+          "title": "Apparition du Sacré-Cœur à sainte Marguerite-Marie Alacoque",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM74001769",
+          "iconographicRelation": "EXACT_NAMED_SAINT_APPARITION",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "france-PM01002671-vianney",
+          "artist": "Unidentified 19th-century painter",
+          "title": "Guérison de saint Jean-Marie Vianney, curé d'Ars",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+          "iconographicRelation": "EXACT_NAMED_SAINT_HISTORICAL_SCENE",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "ng-26-veronese-nicholas",
+          "artist": "Paolo Veronese",
+          "title": "The Consecration of Saint Nicholas",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/paolo-veronese-the-consecration-of-saint-nicholas",
+          "iconographicRelation": "EXACT_NAMED_SAINT_NICHOLAS_BISHOP_CONSECRATION",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Full-length complex 1562 multi-figure bishop consecration with strong fabric, colour and spatial construction; specific saint event; entire scene required, no phone cover.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "nga-12209",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Lucy",
+          "sourceUrl": "https://www.nga.gov/artworks/12209-saint-lucy",
+          "iconographicRelation": "EXACT_LUCY_SAINT_ICONOGRAPHY",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST",
+          "reviewConfidence": "MEDIUM",
+          "visualAssessment": "Zurbarán's Saint Lucy against dark ground, luminous drapery and close portrait identity with eyes on platter; strong potential, actual NGA original still governs attribution.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "prado-rizi-p007637",
+          "artist": "Francisco Rizi",
+          "title": "Santa Inés (Saint Agnes)",
+          "sourceUrl": "https://www.museodelprado.es/coleccion/obra-de-arte/santa-ines/0f8c1439-ae5c-47d6-bad3-757d086389fd",
+          "iconographicRelation": "EXACT_NAMED_SAINT_AGNES",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "paris-st-roch-vien-st-denis-1767",
+          "artist": "Joseph-Marie Vien",
+          "title": "Saint Denis prêchant la foi en France",
+          "sourceUrl": "https://utpictura18.univ-amu.fr/notice/762-saint-denis-prechant-foi-en-france-joseph-marie-vien",
+          "iconographicRelation": "EXACT_NAMED_SAINT_DENIS_OF_PARIS_PREACHING_TRADITION",
+          "previewInspection": "INDIVIDUAL_PAINTING_NOT_VISUALLY_EXAMINED",
+          "preliminaryCuratorialTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "reviewConfidence": "NONE",
+          "visualAssessment": "Institutional or archival record establishes a candidate painting, but composition and painting quality have not been inspected in a reliable matching image in this pass. No artistic ranking inferred from artist name alone.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "status": "CANDIDATE_VISUAL_REVIEW",
+      "options": [
+        {
+          "canonicalProposalId": "vesoul-984-6-1-gerome-vincent",
+          "artist": "Jean-Léon Gérôme",
+          "title": "Saint Vincent de Paul",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Vincent_de_Paule_-_Gerome.jpg",
+          "iconographicRelation": "EXACT_NAMED_SAINT_FRENCH_CHARITY_SCENE",
+          "previewInspection": "MATCHED_IMAGE_PREVIEW_EXAMINED",
+          "preliminaryCuratorialTier": "PRIORITY_VISUAL_SHORTLIST_PHOTO_HOLD",
+          "reviewConfidence": "HIGH",
+          "visualAssessment": "Gérôme polished academic portrait narrative of Vincent holding foundling, painterly French social charity; available visual reference photographed in gold frame with glare, so art candidate strong but photo unusable.",
+          "candidatesAreNotUserSelections": true,
+          "homeHeroApproved": false,
+          "subjectArtworkApproved": false,
+          "separateReleaseRequirementsStillOutstanding": true
+        }
+      ],
+      "existingGapReason": null,
+      "selectionStatus": "UNSELECTED_USER_REVIEW_REQUIRED",
+      "noWorkAutoPromoted": true
+    }
+  ],
+  "counts": {
+    "subjectCards": 51,
+    "cardsWithCandidates": 44,
+    "genuineSourceGaps": 7,
+    "assignments": 48,
+    "uniqueCandidateWorks": 44,
+    "previewInspectedWorks": 13,
+    "previewInspectedSubjectAssignments": 14,
+    "sourceOnlyWorks": 31,
+    "shortlistWorks": 10,
+    "secondaryStudyOrStyleHolds": 3,
+    "additionalHumanSelections": 0,
+    "imagesDownloaded": 0
+  }
+}
