@@ -105,10 +105,16 @@ try{
   assert.match(examText,/no answers or sins are recorded|aucune réponse ni aucun péché/i,"Guided Confession must be reflective and private");
   assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i);
 
-  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null}));
-  await page.waitForSelector("#aoPray435930 .aoP435930BenMacroRail",{timeout:5000});
-  assert.equal(await page.locator("#aoPray435930 .aoP435930BenMacroRail span").count(),4,"D4 does not expose four macro service phases");
-  assert.equal(await page.locator("#aoPray435930 .aoP435930BenMacroRail span.active").count(),1);
+  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null})),true,
+    "D4 must open the canonical public Benediction reader");
+  const benRoot="#aoPray435930.open .aoP435930BenedictionReader";
+  await page.waitForSelector(benRoot+"[data-ao-benediction-dual-axis='true'] .aoDevoSequenceTimeline",{timeout:12000});
+  assert.equal(await page.locator(benRoot+" [data-ao-devo-chapter]").count(),7,
+    "Benediction must retain seven distinct original-source ritual stages");
+  assert.equal(await page.locator(benRoot+" .aoDevoStop[aria-current='step']").count(),1,
+    "Benediction must identify exactly one current stage");
+  assert.equal(await page.locator(benRoot+"[data-ao-benediction-step='0'] [data-ao-devo-card='exposition']").count(),1,
+    "Benediction must open at Exposition without silently advancing");
 
   await page.evaluate(async()=>{globalThis.AO_PRAY_V435930.close({silent:true});await globalThis.AO_APP_SHELL_V1?.navigate?.("settings")});
   await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
