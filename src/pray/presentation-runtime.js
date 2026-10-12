@@ -1188,8 +1188,10 @@ function watchRosaryDeck(){
   const active=rosaryDonorRoot();
   if(!active?.classList?.contains("open"))return;
   const shell=active.querySelector(".pbShell");
-  const sheet=shell?.querySelector(".lab-prayer-sheet");
   const info=rosaryLiveInfo();
+  const sheet=info?.step?.kind==="mystery"?
+   (shell?.querySelector(".lab-contemplation")||shell?.querySelector(".lab-prayer-sheet")):
+   (shell?.querySelector(".lab-prayer-sheet")||shell?.querySelector(".lab-contemplation"));
   if(!sheet||!info?.steps?.length||!shell.querySelector("[data-lab-rosary-next]"))return;
   const missing=!shell.querySelector("[data-ao-rosary-timeline]");
   const stale=sheet.dataset.aoRosarySourceStep!==String(info.index);
