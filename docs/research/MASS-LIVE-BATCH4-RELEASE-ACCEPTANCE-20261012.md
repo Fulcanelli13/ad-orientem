@@ -5,7 +5,7 @@
 ## Confirmed repository baselines before Batch 4
 
 - Native R17 is the production Mass reader; LEGACY is not a supported production fallback.
-- Sung LIVE has **48 presentation cards** over a smaller source model; the separate Low form owns its own source cue mapping. Cardinality must be measured, not inferred from shared cue IDs.
+- **Sung LIVE has 48 presentation cards** over its 39-card source model. **Low LIVE intentionally remains 39 source cards** (the 48-card decomposition is explicitly Sung-only in `reader-live-product48.js`). Acceptance must guard this distinction, not expand Low implicitly.
 - Low, Missa Cantata Simple, Missa Cantata with incense and Solemn use the four-form registry. Sacred ministers must **never** be assigned to Low or Missa Cantata.
 - Requiem omission of the blessing over the water is conditioned separately from the `Deus qui humanae` prayer.
 - Schola's public clock does not automatically own celebrant actions at the Sanctus/Benedictus; a separately observed priest event is required.
@@ -17,7 +17,7 @@
 | Area | Automated evidence | Scope and limitation |
 |---|---|---|
 | Canonical form/special structure | `tests/mass-form-special-integration.mjs`, `tests/reader-form-state-parity.mjs` | All four form source registrations; DAY, VOTIVE, REQUIEM, NUPTIAL; native prelude and following-action graph projection. **Not** a real 2-hour Mass run |
-| Actual rendered phone reader | `tests/mass-live-batch4-phone-matrix.mjs` | Four forms × two fixture families; 320/390px; sample Epistle, Offertory water, Host/Chalice elevation and paten handling; browser JS errors; 48 presentation-card invariant where supported; artifacts persisted |
+| Actual rendered phone reader | `tests/mass-live-batch4-phone-matrix.mjs` | Four forms × two fixture families; 320/390px; sample Epistle, Offertory water, Host/Chalice elevation and paten handling; browser JS errors; 39-card Low / 48-card Sung presentation invariants; artifacts persisted |
 | LIVE focus / icons / Schola | `tests/reader-phone-acceptance.mjs`, `tests/reader-live-rails-phone.mjs`, `tests/reader-priest-chant-phone.mjs` | Paragraph territory, rail visibility/accessible ownership, Schola/celebrant clock separation in mobile Chromium |
 | Priest entrance / form exceptions | `tests/reader-priest-entrance-phone.mjs`, `tests/mass-form-ceremonial-batch2.mjs` | Optional pre-Mass observation, no repeated genuflection, Requiem water action omitted but prayer retained |
 | Special liturgical structures | Existing Palm, Ash, Candlemas, Rogations, Requiem Absolution, Corpus Christi, Good Friday, Holy Thursday, Easter Vigil and Nuptial controllers/tests | Per-controller / integration cases have different degrees of phone evidence; not all have a full in-person rite demonstration |
@@ -39,7 +39,7 @@ A browser screenshot is review evidence, not automatically a visual-quality acce
 
 ## Release decision discipline
 
-- **Automated/browser gate PASS** only if all required CI and the new matrix pass.
+- **Automated/browser gate PASS** only if all required CI and the new matrix pass, including the deliberate Low=39 / Sung=48 separation.
 - **Complete 1962 Mass field-certificate** remains **PENDING** until the items above have been directly verified.
 - CI artifacts: `mass-live-batch4-phone-review` (screenshots + structured case manifest).
 - The present batch adds tests, fixtures and evidence; it does not assert an unobserved physical-phone release.
