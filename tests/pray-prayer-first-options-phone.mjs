@@ -119,6 +119,15 @@ try{
     "Angelus canonical prayer hierarchy damaged: "+JSON.stringify(angelusDom));
    assert.ok([4,5].includes(angelusDom.guideSources),
     "Angelus/Regina source-linked Guide was removed");
+   if(width===320)console.log("ANGELUS DUPLICATE DOM "+JSON.stringify(await page.evaluate(()=>{
+      const root=document.querySelector("#aoPray435930.open .aoP435930AngelusReader");
+      return [...root.querySelectorAll('[data-p435930-seg="individual"],[data-p435930-seg="group"]')].map(n=>({
+        label:n.textContent?.trim(),visible:n.getClientRects().length>0,
+        insideOptions:!!n.closest('[data-ao-angelus-options]'),
+        parent:n.parentElement?.outerHTML?.slice(0,600),
+        parentParent:n.parentElement?.parentElement?.outerHTML?.slice(0,400)
+      }));
+   })));
    await page.screenshot({path:resolve(shots,"angelus-first-"+width+".png"),animations:"disabled"});
    await ag.locator(":scope > summary").click();
    await expanded(angelus);
