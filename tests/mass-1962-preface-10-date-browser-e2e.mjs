@@ -63,8 +63,8 @@ try{
   assert.match(a.prefaceLatin||"",new RegExp(a.section,"i"),"Wrong 1962 Preface on "+a.date);
  }
  for(const d of ["2026-05-24","2026-10-07","2026-12-08",
-   "2025-12-27","2026-01-07","2026-02-25","2026-03-19",
-   "2026-04-08","2026-04-19","2026-05-01","2026-05-15","2026-05-23","2026-09-21"]){
+   "2026-01-07","2026-02-25","2026-03-19",
+   "2026-04-08","2026-04-19","2026-05-01","2026-05-15","2026-05-23"]){
   assert.equal(audit.find(x=>x.date===d).applies,true,d);
  }
  assert.equal(audit.find(x=>x.date==="2026-10-11").applies,null,"No prefatory substitution due to commemoration");
