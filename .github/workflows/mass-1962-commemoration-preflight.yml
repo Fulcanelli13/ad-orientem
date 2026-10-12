@@ -12,6 +12,7 @@ on:
       - 'tests/mass-1962-commemoration-preflight.mjs'
       - 'tests/mass-1962-form-source-selection.mjs'
       - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
+      - 'tests/mass-1962-peter-paul-source-witness-e2e.mjs'
       - 'tests/mass-1962-mission-source-probe-e2e.mjs'
       - 'tests/mass-1962-mission-sunday.mjs'
       - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
@@ -28,6 +29,7 @@ on:
       - 'tests/mass-1962-commemoration-preflight.mjs'
       - 'tests/mass-1962-form-source-selection.mjs'
       - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
+      - 'tests/mass-1962-peter-paul-source-witness-e2e.mjs'
       - 'tests/mass-1962-mission-source-probe-e2e.mjs'
       - 'tests/mass-1962-mission-sunday.mjs'
       - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
@@ -66,6 +68,8 @@ jobs:
         run: node tests/mass-1962-maternity-2026-resolver-e2e.mjs
       - name: Independently log verified 1962 privileged/October source witnesses
         run: node tests/mass-1962-privileged-witnesses-e2e.mjs
+      - name: Verify St Peter / St Paul inseparable source witness days
+        run: node tests/mass-1962-peter-paul-source-witness-e2e.mjs
       - name: Verify mission collect source identity and conclusion boundaries
         run: node tests/mass-1962-mission-source-probe-e2e.mjs
       - name: Accept 1962 Marian commemoration in actual 320px and 390px phone preflight
