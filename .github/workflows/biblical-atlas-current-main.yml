@@ -11,6 +11,8 @@ on:
       - "data/explore/biblical-cinematic-studies-review.v1.json"
       - "data/explore/biblical-lineage-curated-review.v1.json"
       - "data/explore/biblical-atlas-editorial-holds.v1.json"
+      - "data/explore/biblical-theatre-art-subject-crosswalk.v1.json"
+      - "tests/biblical-theatre-art-subject-crosswalk.mjs"
       - "tests/biblical-atlas-editorial-holds.mjs"
       - "tests/biblical-atlas-scripture-witness-coverage.mjs"
       - "data/scripture/witness/**"
@@ -48,6 +50,8 @@ jobs:
         run: node tests/biblical-cinematic-studies.mjs
       - name: Source-critical 151-to-181 release holds
         run: node tests/biblical-atlas-editorial-holds.mjs
+      - name: Canonical art-to-181 Theatre subjects — 44 reviewed subject positions
+        run: node tests/biblical-theatre-art-subject-crosswalk.mjs
       - name: Crampon/Douay original witness verse-slot coverage and exceptions
         run: node tests/biblical-atlas-scripture-witness-coverage.mjs
       - name: Existing Explore and sacred place regression
