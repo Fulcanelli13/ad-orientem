@@ -23,7 +23,7 @@ import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetU
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
-import { LITANY_SOURCE_WITNESSES, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
+import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import { prayCollationNotice } from "./source-collation-notices.v1.js";
@@ -1692,6 +1692,7 @@ async function ensureLitany(){
   try{
    proper=extractLitanyProper(raw,language);
    LIT.sections=paginateLitanyProper(proper,language);
+   LIT.review=reviewLitanyTranscription(proper,language);
   }catch(error){
    // A malformed downloaded transcript must never be kept forever in the
    // offline/local witness cache. Evict only this exact historical witness,
@@ -1707,12 +1708,19 @@ async function ensureLitany(){
 }
 function litanySourceDisclosure(){
  const witness=LITANY_SOURCE_WITNESSES[lang()]||LITANY_SOURCE_WITNESSES.en;
- return `<details class="aoP435930Source"><summary>${esc(L('Historical text and edition','Texte historique et édition'))}</summary><p><a href="${esc(witness.url)}" target="_blank" rel="noopener noreferrer">${esc(witness.label)} ↗</a></p><p>${esc(L('Historical transcription, not collated against a 1962 liturgical edition. Only the Litany proper is shown; the source also contains an appended psalm and prayers.','Transcription historique non collationnée sur une édition liturgique de 1962. Seules les litanies proprement dites sont affichées ; la source comprend également un psaume et des oraisons.'))}</p></details>`;
+ const audit=LITANY_WITNESS_REVIEW_V1[lang()]||LITANY_WITNESS_REVIEW_V1.en;
+ const suspect=LIT.review?.suspectedReadings||[];
+ const note=suspect.length?`<p class="aoP435930SourceNote" data-ao-litany-suspect-readings="${suspect.length}">${esc(L('This historical web transcription contains readings awaiting comparison with the printed facsimile. The original words are shown without silent correction.','Cette transcription historique contient des leçons à vérifier sur le fac-similé imprimé. Le texte est conservé sans correction silencieuse.'))}</p>`:'';
+ return `<details class="aoP435930Source"><summary>${esc(L('Historical text and edition','Texte historique et édition'))}</summary>
+ <p><a href="${esc(witness.url)}" target="_blank" rel="noopener noreferrer">${esc(witness.label)} ↗</a></p>
+ <p><a href="${esc(audit.transcriptionRevision)}" target="_blank" rel="noopener noreferrer">${esc(L('Reviewed transcription revision','Révision du texte consultée'))} ↗</a>${audit.printFacsimile?` · <a href="${esc(audit.printFacsimile)}" target="_blank" rel="noopener noreferrer">${esc(L('1862 printed facsimile','Fac-similé imprimé de 1862'))} ↗</a>`:''}</p>
+ <p>${esc(L('Distinct historical witness; not a certified 1962 liturgical edition. Only the Litany proper is displayed, excluding the appended psalm and collects.','Témoin historique distinct ; il ne s’agit pas d’une édition liturgique de 1962 certifiée. Seules les litanies sont affichées, sans le psaume ni les oraisons qui suivent.'))}</p>
+ ${note}</details>`;
 }
 function renderLitany(){
  // A preference change must not retain the other language's historical edition.
  if(LIT.language!==lang()){
-  LIT.language=lang();LIT.token++;LIT.sections=null;LIT.loading=false;LIT.error='';LIT.step=0;
+  LIT.language=lang();LIT.token++;LIT.sections=null;LIT.review=null;LIT.loading=false;LIT.error='';LIT.step=0;
  }
  if(!LIT.sections&&!LIT.loading&&!LIT.error)setTimeout(ensureLitany,0);
  if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${callout(esc(L('The historical text could not be verified or loaded. No substitute is displayed.','Le texte historique n’a pas pu être chargé ou vérifié. Aucun remplacement n’est affiché.')),'warn')}<button type="button" class="aoP435930Secondary" data-p435930-lit-retry>${esc(L('Try again','Réessayer'))}</button>${litanySourceDisclosure()}</main>`;

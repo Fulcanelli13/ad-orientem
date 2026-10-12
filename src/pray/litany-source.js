@@ -20,6 +20,46 @@ export const LITANY_SOURCE_WITNESSES=Object.freeze({
   status:"HISTORICAL_TRANSCRIPTION_UNCOLLATED"
  })
 });
+// Editorial evidence refers to *historical witnesses*, never to a
+// certified 1962 Roman Ritual or one harmonised English/French litany.
+// Revision links pin the reviewed web transcription, not the live API fetch.
+export const LITANY_WITNESS_REVIEW_V1=Object.freeze({
+ en:Object.freeze({
+  edition:"1883 Catholic Prayer Book and Manual of Meditations",
+  transcriptionRevision:"https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+  printFacsimile:null,
+  collation:"UNCOLLATED_WITH_PRINT",
+  readingScope:"English 1883 original: not interchangeable with the French 1862 list"
+ }),
+ fr:Object.freeze({
+  edition:"Pierre Corneille, Œuvres, ed. Ch. Marty-Laveaux, Hachette, tome IX (1862)",
+  transcriptionRevision:"https://fr.wikisource.org/w/index.php?title=Œuvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_pénitentiaux&oldid=14794744",
+  printFacsimile:"https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_Œuvres,_Marty-Laveaux,_1862,_tome_9.djvu/293",
+  collation:"PARTIAL_SCAN_CROSSCHECK_PENDING",
+  readingScope:"Separate French and Latin witnesses in one 1862 volume; do not merge with English 1883",
+  suspectReadings:Object.freeze([
+   Object.freeze({id:"CORNEILLE-1862-JEAN-INTERCESSION",
+    literal:"Saint Jean, riez pour nous.",
+    reason:"French Wikisource transcription has a suspicious missing initial letter; requires facsimile check before emendation."}),
+   Object.freeze({id:"CORNEILLE-1862-CHRIST-MERCY",
+    literal:"Jésus-Christ, avez pitié de nous.",
+    reason:"The French opening is unusual; compare the exact scanned French page before correcting."})
+  ])
+ })
+});
+export function reviewLitanyTranscription(raw,language="en"){
+ if(language!=="fr"&&language!=="en")throw Error("Unsupported historical Litany witness language");
+ const record=LITANY_WITNESS_REVIEW_V1[language];
+ const text=String(raw||"").normalize("NFC");
+ const suspect=(record.suspectReadings||[]).filter(x=>text.includes(x.literal))
+  .map(x=>Object.freeze({id:x.id,literal:x.literal,reason:x.reason}));
+ return Object.freeze({
+  language,edition:record.edition,sourceStatus:record.collation,
+  suspectedReadings:Object.freeze(suspect),
+  canCertify1962:false,
+  safeToSilentlyEmend:false
+ });
+}
 export function extractLitanyProper(raw,language="en"){
  const text=String(raw||"").replace(/\r/g,"").replace(/[\u200b\u00ad]/g,"");
  const french=language==="fr";
