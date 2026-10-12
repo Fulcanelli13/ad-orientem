@@ -17,6 +17,10 @@ assert.equal(stops[0].title_en,"Creation");
 assert.equal(stops[0].reference,"Genesis 1:1–31");
 assert.equal(stops.at(-1).era,"REVELATION");
 assert.equal(stops.at(-1).geo,null);
+const shipwreck=stops.find(s=>s.reference==="Acts 27:13–44");
+assert.equal(shipwreck.title_en,"Paul's shipwreck at sea",
+ "Malta is named explicitly in Acts 28:1, not the cited chapter 27");
+assert.equal(shipwreck.geo,null,"do not fabricate a shipwreck coordinate");
 assert.ok(named("Letters to the four churches").index<named("Letters to the three churches").index&&named("Letters to the three churches").index<named("The heavenly liturgy").index,"Revelation sequence");
 assert.ok(named("Paul heals a man in Lystra").index<named("Council of Jerusalem").index,"Acts 14 before Acts 15");
 assert.ok(named("The seven brothers' witness").index<named("The Maccabean resistance").index,"Maccabean witness precedes revolt and restoration");
