@@ -6,6 +6,8 @@
 - `questions.json` — normalized question records with provenance, original-owner references and editorial interlocutor facets.
 - `questions.csv` — flat export usable for review/import.
 - `manifest.json` — counts, checks and unresolved historical range census.
+- `BY_INTERLOCUTOR.md` — 9 audience/category views into the same source records; editorial categorisation, not original recovered audience membership.
+- `HISTORICAL_UNRECOVERED_POSITIONS.csv` — 576 A/C/TLM historical ID slots with clear missing/verbatim-evidence status, **not 576 recovered questions**.
 
 Derived only from current version-controlled source files, not from the inaccessible text of earlier conversations. The legacy 318 / 233 projected lists are **NOT** falsely filled in with surrogate questions. Every record includes a canonical source-file link. Intra-bank duplication and overlap are not silently deleted.
 
