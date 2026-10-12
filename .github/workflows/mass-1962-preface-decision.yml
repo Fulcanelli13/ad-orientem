@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - 'src/mass/1962-preface-decision.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'tests/reader-proper-runtime-recovery.mjs'
       - 'tests/mass-1962-preface-decision.mjs'
       - '.github/workflows/mass-1962-preface-decision.yml'
 jobs:
@@ -19,3 +22,4 @@ jobs:
       - run: node --check src/mass/1962-preface-decision.js
       - run: node tests/mass-1962-preface-decision.mjs
       - run: node tests/proper-reader-slots.mjs
+      - run: node tests/reader-proper-runtime-recovery.mjs
