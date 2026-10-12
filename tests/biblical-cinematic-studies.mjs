@@ -30,6 +30,8 @@ for(const s of source.scenes){
  if(s.status!=="EXACT_REFERENCE")assert.equal(cinematicExactAtlasTarget(s,stops),null,"overlap or unmatched never jumps");
 }
 assert.equal(source.scenes[74].candidates[0].atlasIndex,82,"John 2 source reference migrates into PUBLIC");
+assert.equal(source.scenes[74].candidates[0].atlasEventKey,"biblical:event:jerusalem-temple-e3");
+assert.equal(stops[82].eventKey,"biblical:event:jerusalem-temple-e3");
 assert.match(renderCinematicStudies(source,{language:"en",chapter:"MINISTRY",scene:74,atlasStops:stops}),/John places this episode near the beginning/);
 assert.match(renderCinematicStudies(source,{language:"fr",chapter:"RISEN",scene:131,atlasStops:stops}),/Le tombeau vide et Marie-Madeleine/);
 assert.match(source.scenes[131].sourceNote_en,/not an eyewitness description/);
@@ -71,6 +73,12 @@ assert.equal(validateCinematicCrosswalk(staleCandidate,stops),false,
  "A stale candidate passage must never pass the 151-to-181 evidence gate");
 assert.doesNotMatch(renderCinematicStudies(staleCandidate,{atlasStops:stops}),/data-bible-study-scene=/,
  "The actual cinematic reader must refuse stale source/candidate indices");
+const staleEventIdentity=structuredClone(source);
+staleEventIdentity.scenes[74].candidates[0].atlasEventKey="biblical:event:cana-e1";
+assert.equal(validateCinematicCrosswalk(staleEventIdentity,stops),false,
+ "A candidate cannot use the right reference and index with another event's stable identity");
+assert.doesNotMatch(renderCinematicStudies(staleEventIdentity,{atlasStops:stops}),/data-bible-study-scene=/,
+ "The phone reader must refuse a wrong stable identity");
 const staleIndex=structuredClone(source);
 staleIndex.scenes[70].candidates[0].atlasIndex=0;
 assert.equal(validateCinematicCrosswalk(staleIndex,stops),false,
