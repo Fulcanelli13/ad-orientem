@@ -16,6 +16,8 @@ on:
       - "tests/calendar-sacred-art-selection.mjs"
       - "data/calendar/sacred-art-masterpiece-selected-source-triage-20261012.v1.json"
       - "tests/calendar-sacred-art-selected-source-triage.mjs"
+      - "data/calendar/sacred-art-selected-image-batch-summary-20261012.v1.json"
+      - "tests/calendar-sacred-art-acquired-image-batch-summary.mjs"
       - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
       - "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json"
       - "data/calendar/sacred-art-liturgical-reuse-legacy-salvage-20261012.v1.json"
@@ -37,6 +39,8 @@ on:
       - "tests/calendar-sacred-art-selection.mjs"
       - "data/calendar/sacred-art-masterpiece-selected-source-triage-20261012.v1.json"
       - "tests/calendar-sacred-art-selected-source-triage.mjs"
+      - "data/calendar/sacred-art-selected-image-batch-summary-20261012.v1.json"
+      - "tests/calendar-sacred-art-acquired-image-batch-summary.mjs"
       - "data/calendar/sacred-art-liturgical-reuse-legacy-salvage-20261012.v1.json"
       - "tests/calendar-sacred-art-liturgical-bridge.mjs"
       - ".github/workflows/sacred-art-runtime-bridge.yml"
@@ -63,6 +67,7 @@ jobs:
           node tests/calendar-sacred-art-masterpiece-anchor-wave.mjs
           node tests/calendar-sacred-art-masterpiece-shortlist.mjs
           node tests/calendar-sacred-art-selected-source-triage.mjs
+          node tests/calendar-sacred-art-acquired-image-batch-summary.mjs
       - name: No unreviewed painting promotion
         run: |
           node tests/calendar-sacred-art-selection.mjs
