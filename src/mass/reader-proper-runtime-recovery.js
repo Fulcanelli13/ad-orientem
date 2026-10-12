@@ -188,7 +188,11 @@ export async function recoverReaderProperOmissions(proper,{
     ["postcommunions","postcommunion","Postcommunio"],
   ];
   const missingOrations=orationGroups.some(([plural,single])=>incompleteOrations(data,plural,single));
-  if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface)return proper;
+  const peterPaulOwner=path==="Sancti/06-30"&&
+    /^sancti:06-30:3:/i.test(String(principalCelebrationId??data.principalCelebrationId??data.mainId??""));
+  const needsApostolicSource=peterPaulOwner&&
+    data.inseparableApostolicSources?.status!=="SOURCE_VERIFIED";
+  if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface&&!needsApostolicSource)return proper;
 
   const next={...data};
   if(recoveredPreface)next.preface=recoveredPreface;
@@ -203,6 +207,37 @@ export async function recoverReaderProperOmissions(proper,{
   if(needs.postcommunions){
     const value=await recoverText(hostResolver,path,["Postcommunio"],diagnostic);
     if(textUsable(value)){next.postcommunions=Object.freeze([value]);next.postcommunion=value}
+  }
+
+  // June 30 contains Paul's prayer followed by Peter's inseparable text.
+  // The historical host normalizer keeps only Paul's Secret/Postcommunion.
+  // Recover the *other apostle's exact named source sections* in all languages
+  // rather than silently inventing or dropping their second clauses.
+  // Pinned canonical source: Sancti/06-30 => Sancti/02-22 [* Petri].
+  if(needsApostolicSource){
+    const apostolic={status:"SOURCE_VERIFIED",
+      principal:"Sancti/06-30",companion:"Sancti/02-22"};
+    let complete=true;
+    for(const [field,section] of [
+      ["collects","Oratio Petri"],["secrets","Secreta Petri"],
+      ["postcommunions","Postcommunio Petri"]]){
+      const resolved=await recoverText(hostResolver,"Sancti/02-22",[section],diagnostic);
+      // The Collect's '$Qui vivis' is intentionally retained in the
+      // reference *metadata*: production combined source already owns its
+      // translated Qui vivis ending, which is validated during projection.
+      const sourceOk=field==="collects"?
+        hasThreeLanguages(resolved)&&
+        ["lat","en","fr"].every(lang=>{
+          const prefix=String(resolved[lang]??"").split("\n")[0].slice(0,50);
+          return prefix.length>=25&&String(data.collects?.[0]?.[lang]??"").includes(prefix);
+        }):
+        hasThreeLanguages(resolved)&&
+        ["lat","en","fr"].every(lang=>sourceTextComplete(resolved[lang]));
+      if(!sourceOk){complete=false;break;}
+      apostolic[field]=Object.freeze(resolved);
+    }
+    if(complete)next.inseparableApostolicSources=Object.freeze(apostolic);
+    else next.inseparableApostolicSourceStatus="UNVERIFIED_NAMED_ORATION_TEXT";
   }
 
   // Compose exactly the source-owned prayer count: principal Proper followed
