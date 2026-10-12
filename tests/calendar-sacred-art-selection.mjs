@@ -56,6 +56,15 @@ const mock = (id,subjectKeys=[],seasonIds=[],observedIds=[]) => ({
   image:{path:"assets/sacred-art/met-"+id+".webp",width:3000,height:4000,
     sha256:"a".repeat(64),colour:true,museumOriginal:true,frameFree:true,glareFree:true}
 });
+// Curator refusal applies across Home, Calendar and Prayer even if a work
+// otherwise receives every technical and licensing clearance.
+for(const artist of ["Fra Angelico","El Greco","Fra Angelico and workshop","The School of El Greco"]){
+  const declined={...mock("995",["annunciation"],["advent"],[]),artist};
+  assert.equal(eligibleSacredArtwork(declined),false,
+    "User-excluded sacred-art style/artist must never appear via old registries");
+  assert.equal(selectDailySacredArt({date:"2026-03-25",observedSubjectKeys:["annunciation"]},[declined]),null);
+}
+
 const works = [
   mock("1",["annunciation","angelus"],["advent"],["sancti:03-25:1:w"]),
   mock("2",["resurrection","regina-caeli"],["easter"]),
