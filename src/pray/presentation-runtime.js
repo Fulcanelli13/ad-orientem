@@ -4,6 +4,7 @@ import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
+import {internalPrayerView} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
 import {showDevotionalInterlude,showDevotionalParagraphCue} from "./devotional-cinematic.js";
 import "./devotional-methods-styles.js";
@@ -1804,7 +1805,40 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
 }
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
 function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;ADOR.timer=setInterval(()=>{if(Date.now()>=ADOR.timerEnd){stopTimer();render()}else render()},30000);render()}
-function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.tenebrae'?'tenebrae':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';if(view==='stations')lastStationsFxStep=null;render()}
+function routeOwn(id){
+ const next=internalPrayerView(id);
+ if(!next)return false;
+ view=next;
+ if(next==='stations'){STATIONS.step=0;lastStationsFxStep=null}
+ if(next==='angelus')ANGELUS_CARD_INDEX=0;
+ if(next==='mercy')MERCY.step=0;
+ if(next==='rosaryMethods')ROSARY_CHOOSER.optionsOpen=false;
+ if(id==='pray.visit_blessed_sacrament')ADOR.mode='visit';
+ if(id==='pray.de_profundis'||id==='pray.eternal_rest'){
+  prayerReturnView='home';
+  prayerId=id==='pray.de_profundis'?'dead_de_profundis':'foundations_eternal_rest';
+ }
+ render();
+ return true;
+}
+function clearInternalPrayerRouteErrors(){mount()?.querySelectorAll?.('[data-p435930-internal-route-error]')?.forEach?.(el=>el.remove())}
+function showInternalPrayerRouteError(button,id){
+ clearInternalPrayerRouteErrors();
+ const panel=document.createElement('div');
+ panel.dataset.p435930InternalRouteError=id;
+ panel.setAttribute('role','alert');
+ panel.style.cssText='padding:12px;margin:8px 0;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:10px';
+ const message=document.createElement('p');
+ message.textContent=L('This prayer could not be opened. Its original screen is unchanged.','Impossible d’ouvrir cette prière. L’écran précédent est conservé.');
+ const retry=document.createElement('button');
+ retry.type='button';
+ retry.dataset.p435930RetryInternal=id;
+ retry.textContent=L('Retry','Réessayer');
+ retry.style.cssText='min-height:44px;padding:8px 16px;background:transparent;color:inherit;border:1px solid currentColor;border-radius:8px';
+ panel.append(message,retry);
+ button?.insertAdjacentElement?.('afterend',panel);
+ return false;
+}
 function openPrayerOnly(id){prayerReturnView=view;prayerId=id;view='prayerOnly';render()}
 let externalFamilyEpoch=0;
 function clearExternalFamilyError(){
@@ -1984,7 +2018,23 @@ function onClick(e){
  if(b.matches('[data-p435930-forty-ben]')){pushView();view='benediction';BEN.step=0;return render()}
  if(b.dataset.p435930FortyOwn){const id=b.dataset.p435930FortyOwn;if(id==='pray.rosary'){launchRosaryPlayer(captureResume());return}pushView();if(id==='pray.adoration'){view='adoration';ADOR.mode=b.dataset.p435930FortyAdor||'open'}else if(id==='pray.litany_saints'){view='litany';LIT.step=0}else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=b.dataset.p435930FortyPsalm!=null?+b.dataset.p435930FortyPsalm:0};return render()}
  if(b.dataset.p435930Handoff)return handoff(b.dataset.p435930Handoff);
- if(b.dataset.p435930Own){if(b.dataset.p435930Own==='pray.rosary'){launchRosaryPlayer(captureResume());return}pushView();routeOwn(b.dataset.p435930Own);return}
+ if(b.dataset.p435930RetryInternal){
+  const id=b.dataset.p435930RetryInternal;
+  const original=b.closest('[data-p435930-internal-route-error]')?.previousElementSibling;
+  if(original?.dataset?.p435930Own===id){
+   if(!internalPrayerView(id))return showInternalPrayerRouteError(original,id);
+   clearInternalPrayerRouteErrors();pushView();routeOwn(id);
+  }
+  return;
+ }
+ if(b.dataset.p435930Own){
+  const id=b.dataset.p435930Own;
+  if(id==='pray.rosary'){launchRosaryPlayer(captureResume());return}
+  // Validation must precede pushView: unknown targets must never become Angelus.
+  if(!internalPrayerView(id))return showInternalPrayerRouteError(b,id);
+  clearInternalPrayerRouteErrors();
+  pushView();routeOwn(id);return;
+ }
  if(b.matches('[data-p435930-ador-mode-direct]')){view='adoration';ADOR.mode=b.dataset.p435930AdorModeDirect;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;return render()}
  if(b.dataset.p435930FfStage!=null){FF.step=Math.max(0,Math.min(FF_STAGES.length-1,+b.dataset.p435930FfStage));return render()}
  if(b.matches('[data-p435930-ff-prev]')){FF.step=Math.max(0,FF.step-1);return render()}
