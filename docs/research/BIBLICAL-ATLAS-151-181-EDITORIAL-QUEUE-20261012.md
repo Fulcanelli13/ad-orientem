@@ -82,7 +82,7 @@ Indices are zero-based UI positions, subject to change; event keys and Scripture
 | 29 | DELIVERANCE | Moses returns to Egypt — Exodus 4:18–31 | None | Additional episode · HOLD |
 | 30 | DELIVERANCE | Let my people go — Exodus 5:1–23 | None | Additional episode · HOLD |
 | 31 | DELIVERANCE | The staff and the magicians — Exodus 7:8–13 | None | Additional episode · HOLD |
-| 32 | DELIVERANCE | The plagues of Egypt — Exodus 7:14–25 | #20 The plagues begin (same citation; biblical:passage:exodus-7-14-25) | Check scene identity · HOLD |
+| 32 | DELIVERANCE | The first plague: the Nile turns to blood — Exodus 7:14–25 | #20 The plagues begin (same citation; biblical:passage:exodus-7-14-25) | Check scene identity · HOLD |
 | 33 | DELIVERANCE | The first Passover — Exodus 12:1–28 | #21 The first Passover (same citation; biblical:passage:exodus-12-1-28) | Check scene identity · HOLD |
 | 34 | DELIVERANCE | The departure from Rameses — Exodus 12:31–42 | #22 The departure from Egypt (same citation; biblical:passage:exodus-12-31-42) | Check scene identity · HOLD |
 | 35 | DELIVERANCE | The pillar of cloud and fire — Exodus 13:17–22 | None | Additional episode · HOLD |
@@ -226,11 +226,16 @@ Indices are zero-based UI positions, subject to change; event keys and Scripture
 | 173 | TO_ROME | Before Felix at Caesarea — Acts 24:1–27 | None | Additional episode · HOLD |
 | 174 | TO_ROME | Paul appeals to Caesar — Acts 25:1–12 | None | Additional episode · HOLD |
 | 175 | TO_ROME | The long voyage from Caesarea — Acts 27:1–12 | None | Additional episode · HOLD |
-| 176 | TO_ROME | A storm on the sea — Acts 27:13–44 | #144 Shipwreck on Malta (same citation; biblical:passage:acts-27-13-44) | Check scene identity · HOLD |
+| 176 | TO_ROME | A storm on the sea — Acts 27:13–44 | #144 Paul's shipwreck at sea (same citation; biblical:passage:acts-27-13-44) | Check scene identity · HOLD |
 | 177 | TO_ROME | Shipwreck and hospitality on Malta — Acts 28:1–10 | None | Additional episode · HOLD |
 | 178 | TO_ROME | Syracuse and Puteoli — Acts 28:11–14 | None | Additional episode · HOLD |
 | 179 | TO_ROME | The Italian mainland — Acts 28:13–14 | None | Additional episode · HOLD |
 | 180 | TO_ROME | Paul arrives in Rome — Acts 28:16–31 | #145 St Paul in Rome (same citation; biblical:passage:acts-28-16-31) | Check scene identity · HOLD |
+
+## Two further source-congruence corrections
+
+- Scene #32 now presents **the first Egyptian plague — water turned to blood**, not the complete series of ten, since its reference is Exodus 7:14–25. The cinematic source note remains explicitly limited.
+- Acts 27:13–44 is now titled **Paul's shipwreck at sea**, avoiding the implication that the same chapter gives Malta by name. That identification occurs in Acts 28:1; neither chapter proves an exact point of wreckage or a GPS location. [Acts 28](https://bible.usccb.org/bible/acts/28).
 
 ## Acceptance still outstanding
 
