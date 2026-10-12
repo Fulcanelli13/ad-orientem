@@ -1,0 +1,31 @@
+name: Prayer 23-route single-reader parity
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-23-route-owner-parity-phone.mjs"
+      - "data/app/content-reachability-audit.v1.json"
+      - "src/pray/browser-entry.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/traditional-pray-runtime.js"
+      - "src/pray/novena-runtime.js"
+      - "src/pray/lazy-module-registry.js"
+      - ".github/workflows/pray-23-route-parity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/pray-23-route-owner-parity-phone.mjs
