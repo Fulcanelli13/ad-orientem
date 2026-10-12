@@ -69,6 +69,8 @@ const staleCandidate=structuredClone(source);
 staleCandidate.scenes[70].candidates[0].reference="Matthew 4:12–17";
 assert.equal(validateCinematicCrosswalk(staleCandidate,stops),false,
  "A stale candidate passage must never pass the 151-to-181 evidence gate");
+assert.doesNotMatch(renderCinematicStudies(staleCandidate,{atlasStops:stops}),/data-bible-study-scene=/,
+ "The actual cinematic reader must refuse stale source/candidate indices");
 const staleIndex=structuredClone(source);
 staleIndex.scenes[70].candidates[0].atlasIndex=0;
 assert.equal(validateCinematicCrosswalk(staleIndex,stops),false,
