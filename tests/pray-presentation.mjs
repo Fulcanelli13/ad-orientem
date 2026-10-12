@@ -2,6 +2,25 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "../src/pray/angelus-guide-data.js";
+import {angelusCardPlan,DEVOTIONAL_CARD_SCHEMA} from "../src/pray/devotional-card-deck.js";
+import {devotionalInterludePlan,DEVOTIONAL_CINEMATIC_VERSION} from "../src/pray/devotional-cinematic.js";
+assert.equal(DEVOTIONAL_CINEMATIC_VERSION,"devotional-card-interstitial-v1");
+const paintedShot=devotionalInterludePlan({form:"angelus",card:{id:"incarnation",title:"L’Incarnation",latin:"Et Verbum"}});
+assert.equal(paintedShot.image,"assets/pray/angelus/tanner-annunciation-1898.webp");
+assert.equal(paintedShot.shot.effect,"light");
+assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}).image,null);
+assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"faithful-departed",title:"Pour les fidèles défunts"}}).image,null);
+assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"missing",title:""}}),null);
+assert.equal(DEVOTIONAL_CARD_SCHEMA,"dual-axis-devotional-cards-v1");
+const angelusCardModel=angelusCardPlan({form:"angelus",language:"fr"});
+assert.deepEqual(angelusCardModel.map(x=>x.id),["announcement","fiat","incarnation","intercession"]);
+assert.deepEqual(angelusCardModel.map(x=>x.unitIndices),[[0,1],[2,3],[4,5],[6,7]]);
+assert.equal(angelusCardModel[2].ritual,"profound-bow");
+assert.deepEqual(angelusCardPlan({form:"angelus",language:"fr",historicalConclusion:true}).slice(4).map(x=>x.id),
+ ["doxology","faithful-departed","divine-assistance"]);
+assert.deepEqual(angelusCardPlan({form:"regina",language:"fr"}).map(x=>x.id),
+ ["rejoice","resurrection","intercession","collect"]);
+assert.throws(()=>angelusCardPlan({form:"undefined"}),/Unknown canonical/);
 import { rosaryGuideSections } from "../src/pray/rosary-guide-data.js";
 import { directChildAnchor } from "../src/pray/dom-anchor.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "../src/pray/devotional-ux-contract.js";
