@@ -1,0 +1,45 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const load=p=>JSON.parse(readFileSync(p,"utf8"));
+const j=load("data/calendar/sacred-art-selected-image-batch-summary-20261012.v1.json");
+const user=load("data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json");
+const archive=load("data/calendar/sacred-art-candidates.v1.json");
+const choices=new Map(user.decisions.filter(x=>x.decision==="selected").map(x=>[x.subject_id,x]));
+const workHash=new Map(archive.artworks.filter(x=>x.acquisition?.originalSha256).map(x=>[x.id,x.acquisition.originalSha256]));
+assert.equal(j.schema,"AO_SACRED_ART_SELECTED_IMAGE_BATCH_SUMMARY_20261012_V1");
+assert.equal(j.counts.uniqueUserSelectedSubjectsWithSourceImages,6);
+assert.equal(j.counts.sourceImageVariantsAcquired,7);
+assert.equal(j.counts.fullOriginalImageVariants,6);
+assert.equal(j.counts.reviewDerivatives,1);
+assert.equal(j.counts.exactMetArchiveByteHashMatches,2);
+assert.equal(j.counts.verified19kMuseumOriginMasterImages,1);
+assert.equal(j.counts.sourcePhotographsRejectedForQuality,1);
+assert.equal(j.counts.productionApprovedImages,0);
+assert.equal(j.counts.completedReleaseRightsCropGates,0);
+assert.equal(j.variants.length,7);
+const runIds=new Set(j.runs.map(x=>x.id));
+assert.equal(runIds.size,3);
+for(const w of j.variants){
+ assert.ok(runIds.has(w.reviewRunId),"No acquired variant without provenance run");
+ assert.ok(choices.has(w.subjectId),"No images from superseded/research-only user decisions");
+ assert.match(w.sha256,/^[a-f0-9]{64}$/);
+ assert.ok(w.width>=800&&w.height>=800);
+ assert.equal(w.publicationApproved,false);
+ assert.doesNotMatch(w.artist,/El Greco|Fra Angelico/i);
+}
+const met=j.variants.filter(x=>x.source==="MET_API_ORIGINAL");
+assert.equal(met.length,2);
+for(const w of met)assert.equal(w.sha256,workHash.get(w.object),"Archive original bytes drifted from prior acquisition");
+const t=j.variants.filter(x=>x.object==="kmska-314");
+assert.equal(t.length,2);
+const high=t.find(x=>x.source==="KMSKA_IIIF_FULL_MASTER_COMMONS_COPY");
+assert.deepEqual([high.width,high.height],[19178,19721]);
+assert.equal(high.bytes,56200164);
+assert.notEqual(high.sha256,t.find(x=>x.source==="KMSKA_IIIF_4000_DERIVATIVE").sha256);
+assert.equal(j.variants.find(x=>x.subjectId==="ROS-13").visualStatus,
+ "REJECTED_SOURCE_PHOTOGRAPH_VISIBLE_FRAME_AND_GLARE");
+assert.ok(j.gates.commercialPhotoRightsGloballyCleared===false);
+assert.ok(j.gates.allCropsReviewed===false);
+assert.ok(j.gates.appAssetsPhysicallyPackaged===false);
+assert.ok(j.gates.pr887ConflictResolved===false);
+console.log("PASS: 6 exact user selections; 7 verified source variants incl 19k master; 1 frame/glare photo rejected; no image release");
