@@ -149,3 +149,19 @@ Fortescue digitization bibliography correction: the [Cornell 1912 original](http
 **Integration constraint checked against GitHub refs:** `main...feature/mass-bible-study-source-bridge-20261012` is divergent (branch 23 commits ahead and 36 behind at inspection); PR #1082 reports `mergeable:false`. Do not bypass protected owner or merge on stale green CI. Resolve changes in `src/learn/mass-formation.js` against the current eight-stage formation and independently test existing reader, source and phone suites before merging. No changes to Mass player, Proper resolver, 48-card source-first presentation, 65-card production layout, biblical Atlas or Sacred Art ownership in this A14 checkpoint.
 
 **Next certification batch:** first printed-edition original-page packets; separate 105 source-gated production Proper paths from the 100 historical priority paths (only four shared); verify actual text, date eligibility, inherited chants, and Scripture edition verse mapping per path. Keep all 1,052 candidate paths, all 420 chant positions and 100 priority packets uncertified until their *individual* original-edition checks pass.
+
+
+## A15 — priority printed-Missal packet triage and direct facsimile access boundary (13 October 2026)
+
+**Verified programmatic queue partition:** All 100 high-priority printed-edition dossiers were inspected by their stable `sourcePath` against the 105 source-gated Proper identities; this is queue triage, not text certification.
+
+- **44** packets have a candidate printed-page cluster and are outside the 105 production preview.
+- **52** packets have no candidate printed-page cluster and are outside the preview.
+- **4** overlap the production 105, and none of these has a candidate 44-page-cluster match: `Sancti/03-25`, `Tempora/Pent03-0`, `Tempora/Pent24-0`, `Tempora/Quad6-4`.
+- These disjoint groups total **100** unique priority packets. All remain `complete1962EditionCertification:false` and `approvedForPublication:false`.
+
+**Primary-reproduction locations identified (not page-checked):** [1962 Missal searchable reproduction, Mercaba](https://www.mercaba.org/LITURGIA/Tridentino/missale-romanum-1962.pdf); [edition reproduction overview, Propria](https://propria.org/additional/); [research's original edition-level witness](https://archive.org/details/sp07mr62-editio-typica). The Mercaba PDF's searchable index was returned, but direct full-file loading for page screenshot/collation was blocked by source size. Therefore **zero** packet headings, actual printed incipits, line variants, leaf pages or feast applicability are claimed inspected in this batch. These accessible descriptions must not be used to mark either PDF provenance or textual match `certified`.
+
+**Sequencing rule for the 100:** (A) locate printed 1962 title, exact feast and candidate page for the 44 cluster-linked cases; (B) recover original pages for 52 unlocated non-preview cases; (C) validate the 4 preview overlaps against *both* existing Proper Latin witness and actual printed source. Independently certify chant inheritance, calendar selection, complete Latin words and Scripture edition/verse numbering. Continue to keep liturgical words distinct from direct Scripture quotations or subsequent typology. Full 1,052 candidate universe and 420 chant positions remain untouched.
+
+**Data conservation:** No registry entries were duplicated, no source-path memberships changed, no Scripture text or source citations presumed exact, and no UI/Mass/Atlas/Art release flags altered. This audit is research-triage only. Source review remains draft pending direct printed-page evidence.
