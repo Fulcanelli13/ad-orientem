@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -26,6 +26,19 @@ try{
  browser=await chromium.launch({headless:true});
  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2,locale:"en-GB"});
  const page=await context.newPage(),errors=[];
+ const screenshotFolder=resolve(root,"test-output/biblical-atlas-a3");
+ async function captureView(name){
+   await mkdir(screenshotFolder,{recursive:true});
+   for(const size of [320,390,768,1280]){
+     await page.setViewportSize({width:size,height:844});
+     await page.waitForTimeout(120);
+     const geometry=await page.evaluate(()=>({width:innerWidth,documentWidth:document.documentElement.scrollWidth,rootWidth:document.querySelector("#ao-find-modular-root")?.getBoundingClientRect().width}));
+     assert.ok(geometry.documentWidth<=geometry.width+1,name+" page overflow at "+size+"px: "+JSON.stringify(geometry));
+     await page.screenshot({path:resolve(screenshotFolder,name+"-"+size+".png"),fullPage:false,animations:"disabled"});
+   }
+   await page.setViewportSize({width:390,height:844});
+ }
+
  page.on("pageerror",error=>errors.push(String(error?.message??error)));
  await page.goto("http://127.0.0.1:4275/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForSelector('[data-ao-app-surface="find"]',{state:"visible",timeout:30000});
@@ -49,6 +62,7 @@ try{
  assert.ok(width.scroll>width.client*3,"timeline is not horizontally scrollable");
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-map]").count(),1);
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-era-overlay]").count(),1);
+ await captureView("canonical-chronology");
  // Tapping a remote milestone should move the selected event, geography, and ribbon.
  await page.locator('#ao-find-modular-root [data-bible-step="71"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===71,null,{timeout:15000});
@@ -95,6 +109,7 @@ try{
  assert.ok(await page.locator('#ao-find-modular-root [data-bible-family-person="shem"]').count()>=1);
  const treeOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(treeOverflow<=1,"Genesis tree does not expand the whole document");
+ await captureView("genesis-branch-tree");
  await page.locator('#ao-find-modular-root [data-bible-review-surface="apostles"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="apostles",null,{timeout:15000});
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-apostle]').count(),20);
@@ -130,6 +145,7 @@ try{
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').count(),1);
  const visualOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(visualOverflow<=1,"study view causes no horizontal page overflow");
+ await captureView("cinematic-incarnation");
  await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
   globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66,null,{timeout:15000});
