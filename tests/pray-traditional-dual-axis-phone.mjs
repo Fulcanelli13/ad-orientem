@@ -291,6 +291,14 @@ try{
  assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),
    /Viatique|Viaticum/,
    "Urgent bedside card lost sacramental request guidance");
+ const headerBounds=await page.evaluate(()=>{
+   const title=document.querySelector("#aoPray435930 .aoP435930Head h1")?.getBoundingClientRect();
+   const home=document.querySelector("#aoPray435930 [data-tp381-home]")?.getBoundingClientRect();
+   return {titleRight:title?.right,homeLeft:home?.left,titleBottom:title?.bottom,homeTop:home?.top};
+ });
+ assert.ok(headerBounds.titleRight<=headerBounds.homeLeft+2||
+   headerBounds.titleBottom<headerBounds.homeTop,
+   "Narrow French bedside title overlaps the Home control: "+JSON.stringify(headerBounds));
  await page.screenshot({path:resolve(captures,"dying-call-priest-320-fr.png"),animations:"disabled"});
  await swipe(5,-142);assert.equal((await snapshot()).index,0,
    "Scrolling urgent bedside instructions accidentally advanced a card");
@@ -306,6 +314,10 @@ try{
  const commend=await snapshot();
  assert.equal(commend.id,"dying-commend");assert.equal(commend.index,2);
  assert.ok(commend.paragraphCount>0,"Commendation lacks paragraph-level focus");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll").evaluate(card=>{
+   const prayer=card.querySelector(".aoTP381PrayerCard"),notes=card.querySelector(".aoTP381Intro");
+   return !!(prayer&&notes&&(prayer.compareDocumentPosition(notes)&Node.DOCUMENT_POSITION_FOLLOWING));
+ }),true,"Proficiscere must precede explanatory context on the prayer card");
  assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),
    /recommandation de l’âme|Commendation of the Soul/i);
  assert.equal(await page.locator("#aoPray435930 [data-tp381-prayer='dead_de_profundis']").count(),1,
