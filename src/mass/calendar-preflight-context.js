@@ -36,6 +36,31 @@ function calendarDay(legacy,state,date){
   }
   return Object.freeze({source:"PENDING",title:null,rank:null,colour:null,principalId:null,ready:false});
 }
+// Use only the resolved, same-date 1962 calendar. A commemoration is NOT a
+// separate selected Mass; it supplies additional orations to the primary Mass.
+function namedCommemorations(confirmed,fr){
+  if(!confirmed)return Object.freeze([]);
+  const candidates=[confirmed.day?.main?.commemorations,
+    confirmed.day?.commemorations,confirmed.commemorations];
+  const raw=candidates.find(value=>Array.isArray(value)&&value.length) ??
+    candidates.find(value=>value!=null) ?? [];
+  const entries=Array.isArray(raw)?raw:[raw];
+  const names=entries.map(value=>typeof value==="string"?value:
+    fr?text(value?.nameFr)||text(value?.titleFr)||text(value?.name)||text(value?.title):
+       text(value?.name)||text(value?.title)||text(value?.nameFr)||text(value?.titleFr))
+    .map(text).filter(value=>value&&/[A-Za-zÀ-ÿ]/.test(value));
+  return Object.freeze([...new Set(names)]);
+}
+function properOrationReadiness(proper,expected,fr){
+  if(!proper||typeof proper!=="object")return Object.freeze({status:"PENDING",counts:null});
+  const fields=[["collects","collect"],["secrets","secret"],["postcommunions","postcommunion"]];
+  const groups=fields.map(([plural,singular])=>Array.isArray(proper[plural])&&proper[plural].length?
+    proper[plural]:proper[singular]?[proper[singular]]:[]);
+  const counts=Object.freeze(groups.map(rows=>rows.length));
+  const complete=groups.every(rows=>rows.length>=expected && rows.every(row=>
+    Boolean(text(row?.lat??row?.la)&&text(row?.[fr?"fr":"en"]))));
+  return Object.freeze({status:complete?"COMPLETE":"INCOMPLETE",counts});
+}
 function gospelReference(proper){
   const g=proper?.gospel;
   const entry=text(proper?.gospelReference)||text(proper?.gospelCitation)||
@@ -49,7 +74,8 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
   if(!date||!ISO.test(date))return Object.freeze({date:date??"",fr,
     season:null,calendar:Object.freeze({source:"PENDING",title:null,ready:false}),
     actual:Object.freeze({kind:"UNKNOWN",title:null,colour:null,gospel:null}),
-    differs:false,sourceDate:null,openable:false});
+    commemorations:Object.freeze([]),commemorationOrations:Object.freeze({status:"NOT_APPLICABLE",counts:null}),
+    commemorationApplies:false,differs:false,sourceDate:null,openable:false});
   const calendar=calendarDay(legacy,calendarState,date);
   const selectedKind=String(legacy?.celebrationType??"CALENDAR").trim().toUpperCase();
   const exceptional=String(legacy?.exceptionalProfile??legacy?.distinctRite??"").toLowerCase();
@@ -65,10 +91,16 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
   const actualColour=text(proper?.color)||text(proper?.colour)||
     text(legacy?.massColor)||(kind==="CALENDAR"&&!differs?calendar.colour:null);
   const period=buildLiturgicalYear(date).currentPeriod;
+  const commemorations=namedCommemorations(validResolution(calendarState,date),fr);
+  const commemorationApplies=commemorations.length>0&&kind==="CALENDAR"&&!differs;
+  const commemorationOrations=commemorationApplies?
+    properOrationReadiness(proper,commemorations.length+1,fr):
+    Object.freeze({status:"NOT_APPLICABLE",counts:null});
   return Object.freeze({
     date,fr,season:period?fr?period.fr:period.en:null,calendar,
     actual:Object.freeze({kind,title:actualTitle,colour:actualColour,
       gospel:gospelReference(proper),canStart:legacy?.canStart===true}),
+    commemorations,commemorationOrations,commemorationApplies,
     differs,sourceDate:alternate?text(legacy?.sourceDiagnostics?.actualMassSourceDate):null,
     openable:calendarState?.selectedDate===date
   });
@@ -98,6 +130,25 @@ export function fillMassCalendarPreflight(root,context){
     t("Mass colour: ","Couleur de la messe : ")+context.actual.colour:null);
   field("gospel",context.actual.gospel?
     t("Selected Gospel: ","Évangile choisi : ")+context.actual.gospel:null);
+  const names=context.commemorations??[];
+  const commemorationBlock=root.querySelector("[data-mass-calendar-commemoration]");
+  if(commemorationBlock)commemorationBlock.hidden=names.length===0;
+  field("commemoration-label",t("Also commemorated today","Également commémorée aujourd’hui"));
+  field("commemoration-name",names.join(" · "));
+  const prayerStatus=context.commemorationOrations?.status;
+  const prayerMessage=!context.commemorationApplies?
+    t("The selected celebration differs from the calendar Mass; these additional prayers are not automatically included.",
+      "La célébration choisie diffère de la messe du jour ; ces prières ne sont pas ajoutées automatiquement.") :
+    prayerStatus==="COMPLETE"?
+    t("After the principal Collect, Secret and Postcommunion, the priest also says the corresponding commemoration prayers.",
+      "Après la collecte, la secrète et la postcommunion du jour, le prêtre dit également celles de la commémoraison.") :
+    prayerStatus==="INCOMPLETE"?
+    t("The commemoration requires additional Collect, Secret and Postcommunion prayers, but their complete Latin and translation are not yet available in the selected Proper.",
+      "La commémoraison exige une collecte, une secrète et une postcommunion supplémentaires, mais leurs textes latins et traduits sont incomplets dans le propre choisi.") :
+    t("The commemoration adds a Collect, Secret and Postcommunion. The selected Proper is still being resolved.",
+      "La commémoraison ajoute une collecte, une secrète et une postcommunion. Le propre est encore en cours de résolution.");
+  field("commemoration-prayers",prayerMessage);
+  if(commemorationBlock)commemorationBlock.dataset.massCommemorationReadiness=prayerStatus??"NOT_APPLICABLE";
   field("source",context.sourceDate?
     t("Proper from feast date ","Propre de la fête du ")+context.sourceDate:
     (context.calendar.source==="MASS_HOST_CALENDAR"?
