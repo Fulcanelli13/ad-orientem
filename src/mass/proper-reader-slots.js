@@ -65,6 +65,28 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
 
+  // The source Calendar lists commemorations separately from the prayer
+  // arrays. A one-prayer fallback is NOT a complete Proper when an identified
+  // commemoration still requires its own Collect, Secret and Postcommunion.
+  const extra=(Array.isArray(proper.calendarCommemorations)?
+    proper.calendarCommemorations:[]).filter(row=>row&&!row.inseparable).length;
+  const minimum=1+extra;
+  if(extra>0){
+    for(const [slot,plural,singular] of [
+      ["COLLECT_SET","collects","collect"],
+      ["SECRET_SET","secrets","secret"],
+      ["POSTCOMMUNION_SET","postcommunions","postcommunion"]]){
+      const group=Array.isArray(proper[plural])&&proper[plural].length?
+        proper[plural]:proper[singular]?[proper[singular]]:[];
+      if(group.length<minimum){
+        slots[slot]=Object.freeze({
+          status:"MISSING",slot,data:null,
+          reason:"Source-owned commemoration orations are incomplete.",
+        });
+      }
+    }
+  }
+
   const explicitNA=new Set((notApplicableSlots??[]).map(String));
   for(const slot of explicitNA){
     if(!REQUIRED_SLOTS.includes(slot))throw new Error("Unknown not-applicable Proper slot: "+slot);
