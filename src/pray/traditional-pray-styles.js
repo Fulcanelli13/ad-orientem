@@ -48,6 +48,17 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoTP381GuideCard .aoTP381Source{margin:8px 0}
 @media(max-width:390px){#aoPray435930 .aoTP381GuideCard{padding-inline:13px}#aoPray435930 .aoTP381GuideNav{gap:6px}#aoPray435930 .aoTP381GuideNav button{padding-inline:5px}}
 
+
+/* Shared daily/examen presentation: one source-owned stage per named card. */
+#aoPray435930 .aoTP381DonorBody .aoDevoCard{min-width:0;max-width:100%}
+#aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381GuideCard{margin:0;padding:4px 0 20px;border:0;border-radius:0;background:none;box-shadow:none;gap:14px}
+#aoPray435930 .aoTP381DonorBody .aoDevoCardScroll .aoTP381GuideCard>h2{font-size:clamp(22px,5vw,30px);line-height:1.25}
+#aoPray435930 .aoTP381DonorBody .aoTP381TextParagraph{margin:0 0 17px;font:400 clamp(17px,4.2vw,21px)/1.72 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoTP381DonorBody .aoDevoParagraph{opacity:var(--ao-devo-focus,.5)!important;transition:opacity .22s ease}
+#aoPray435930 .aoTP381DonorBody .aoDevoParagraph[data-ao-devo-active="true"]{color:var(--text,#f1e7d7)}
+#aoPray435930 .aoTP381DonorBody .aoDevoTimeline{top:74px}
+@media(prefers-reduced-motion:reduce){#aoPray435930 .aoTP381DonorBody .aoDevoParagraph{transition:none!important}}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){
