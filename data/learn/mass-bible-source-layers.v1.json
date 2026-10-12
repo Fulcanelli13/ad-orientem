@@ -7,7 +7,7 @@
     "bibleRole": "Context chapter, not guaranteed verse-for-verse Latin/Crampon mapping",
     "properPolicy": "105 separately source-path-and-Latin-gated Proper identities live in the existing Mass Scripture Context; this study must never override actual readings",
     "meaningPolicy": "Exact/adapted liturgical words, named Scripture figures, doctrinal analogy, typology and private meditations are separate evidence types",
-    "rightAndCanon": "No automatically published Bible edition text, no fabricated alignment to R17 LIVE 48 cards or historic Dujardin meditations"
+    "rightAndCanon": "No automatically published Bible edition text, no fabricated alignment to R17 LIVE 48 cards or historic Dujardin meditations; native Scripture button available only for 20 unambiguous contextual verse references (with precise source-page link); Vulgate Psalms and Proper examples are held"
   },
   "liturgicalWitness": {
     "name": "Missale Romanum 1962",
@@ -110,7 +110,8 @@
         "fr": "La prière du publicain éclaire la pénitence, mais le Confiteor ne reproduit pas intégralement ce verset."
       },
       "qualification": "COMPARATIVE_NOT_LITURGICAL_CITATION",
-      "group": "PREPARATION"
+      "group": "PREPARATION",
+      "scriptureReaderRef": "Luke 18:13"
     },
     {
       "id": "MB04",
@@ -134,7 +135,8 @@
         "fr": "L’appel à la miséricorde apparaît dans les Évangiles. Le Kyrie n’est pas attribuable à une seule scène évangélique."
       },
       "qualification": "COMPARATIVE_NOT_SINGLE_EXACT_QUOTE",
-      "group": "PREPARATION"
+      "group": "PREPARATION",
+      "scriptureReaderRef": "Matthew 20:30–31"
     },
     {
       "id": "MB05",
@@ -158,7 +160,8 @@
         "fr": "Les premiers mots reprennent le chant des anges à Bethléem ; la suite du Gloria est une hymne ecclésiale plus développée."
       },
       "qualification": "OPENING_WORDS_ONLY",
-      "group": "PREPARATION"
+      "group": "PREPARATION",
+      "scriptureReaderRef": "Luke 2:14"
     },
     {
       "id": "MB06",
@@ -230,7 +233,8 @@
         "fr": "Le Credo professe que le Verbe s’est fait chair ; Jean 1,14 soutient la doctrine sans être le texte littéral du Credo."
       },
       "qualification": "NOT_VERBATIM_CREED_TEXT",
-      "group": "WORD"
+      "group": "WORD",
+      "scriptureReaderRef": "John 1:14"
     },
     {
       "id": "MB09",
@@ -278,7 +282,8 @@
         "fr": "La distinction des offrandes dans l’Orate fratres est liturgique ; Romains 12,1 concerne l’offrande spirituelle, sans être la source littérale de la prière."
       },
       "qualification": "THEOLOGICAL_CONNECTION_NOT_LITERAL",
-      "group": "OFFERTORY"
+      "group": "OFFERTORY",
+      "scriptureReaderRef": "Romans 12:1"
     },
     {
       "id": "MB11",
@@ -302,7 +307,8 @@
         "fr": "La triple acclamation évoque la vision d’Isaïe. Le texte liturgique de Sabaoth n’est pas identique à toutes les éditions latines d’Isaïe."
       },
       "qualification": "LITURGICAL_VERSUS_BIBLICAL_WORDING",
-      "group": "CANON"
+      "group": "CANON",
+      "scriptureReaderRef": "Isaiah 6:3"
     },
     {
       "id": "MB12",
@@ -326,7 +332,8 @@
         "fr": "L’acclamation rappelle l’entrée du Christ à Jérusalem. Le texte liturgique intègre ces expressions au Sanctus."
       },
       "qualification": "LITURGICAL_COMPOSITION",
-      "group": "CANON"
+      "group": "CANON",
+      "scriptureReaderRef": "Matthew 21:9"
     },
     {
       "id": "MB13",
@@ -350,7 +357,8 @@
         "fr": "La recommandation paulinienne de prier pour tous éclaire les intercessions du Canon ; elle n’en est pas la transcription."
       },
       "qualification": "COMPARATIVE_NOT_EXACT_QUOTATION",
-      "group": "CANON"
+      "group": "CANON",
+      "scriptureReaderRef": "1 Timothy 2:1–2"
     },
     {
       "id": "MB14",
@@ -374,7 +382,8 @@
         "fr": "Saint Paul rapporte l’institution de l’Eucharistie. Il ne faut pas substituer silencieusement le texte de l’épître à la formule liturgique du Missel."
       },
       "qualification": "NO_WORD_FOR_WORD_EQUIVALENCE",
-      "group": "CONSECRATION"
+      "group": "CONSECRATION",
+      "scriptureReaderRef": "1 Corinthians 11:23–26"
     },
     {
       "id": "MB15",
@@ -398,7 +407,8 @@
         "fr": "La prière sur le calice renvoie au récit de la Cène. La formule liturgique comporte aussi des mots absents de ce seul verset."
       },
       "qualification": "MYSTERIUM_FIDEI_NOT_PROVEN_AS_EXACT_GOSPEL_WORDS",
-      "group": "CONSECRATION"
+      "group": "CONSECRATION",
+      "scriptureReaderRef": "Luke 22:20"
     },
     {
       "id": "MB16",
@@ -422,7 +432,8 @@
         "fr": "L’enseignement de saint Paul sur l’annonce de la mort du Seigneur éclaire l’anamnèse ; ce lien n’est pas une citation littérale."
       },
       "qualification": "THEOLOGICAL_CONNECTION_NOT_LITERAL",
-      "group": "CANON"
+      "group": "CANON",
+      "scriptureReaderRef": "1 Corinthians 11:26"
     },
     {
       "id": "MB17",
@@ -446,7 +457,8 @@
         "fr": "Le Canon nomme expressément Abel parmi les sacrifices agréés par Dieu ; il ne lit pas ici le texte de la Genèse."
       },
       "qualification": "NAME_IN_MISSAL_NOT_READING",
-      "group": "CANON"
+      "group": "CANON",
+      "scriptureReaderRef": "Genesis 4:4"
     },
     {
       "id": "MB18",
@@ -470,7 +482,8 @@
         "fr": "Le Canon évoque expressément le sacrifice d’Abraham. Dans la Genèse, Dieu empêche la mort d’Isaac ; il ne faut pas prétendre qu’Isaac a été immolé."
       },
       "qualification": "ISAAC_NOT_KILLED",
-      "group": "CANON"
+      "group": "CANON",
+      "scriptureReaderRef": "Genesis 22:1–19"
     },
     {
       "id": "MB19",
@@ -494,7 +507,8 @@
         "fr": "Le Canon nomme Melchisédech, qui apporte du pain et du vin dans la Genèse. Il faut distinguer cette mention explicite de la typologie eucharistique."
       },
       "qualification": "EXPLICIT_NAME_TYPICAL_MEANING_SEPARATE",
-      "group": "CANON"
+      "group": "CANON",
+      "scriptureReaderRef": "Genesis 14:18–20"
     },
     {
       "id": "MB20",
@@ -518,7 +532,8 @@
         "fr": "L’épître aux Hébreux présente Melchisédech comme figure du sacerdoce du Christ. Ce n’est pas une citation d’Hébreux 7 dans le Canon."
       },
       "qualification": "INTERPRETATION_NOT_MISSAL_WORDING",
-      "group": "CANON"
+      "group": "CANON",
+      "scriptureReaderRef": "Hebrews 7:1–17"
     },
     {
       "id": "MB21",
@@ -542,7 +557,8 @@
         "fr": "Le Notre Père vient de l’enseignement du Christ. Sa conclusion liturgique doit être distinguée du texte biblique."
       },
       "qualification": "LITURGICAL_FORMULA_AND_EDITION_VARIANTS",
-      "group": "COMMUNION"
+      "group": "COMMUNION",
+      "scriptureReaderRef": "Matthew 6:9–13"
     },
     {
       "id": "MB22",
@@ -566,7 +582,8 @@
         "fr": "L’embolisme développe la dernière demande du Notre Père ; ce n’est pas la suite du texte de Matthieu."
       },
       "qualification": "LITURGICAL_EMBOLISM",
-      "group": "COMMUNION"
+      "group": "COMMUNION",
+      "scriptureReaderRef": "Matthew 6:13"
     },
     {
       "id": "MB23",
@@ -590,7 +607,8 @@
         "fr": "Jean-Baptiste désigne Jésus comme l’Agneau de Dieu. La triple invocation de la Messe développe cette parole."
       },
       "qualification": "MASS_INVOCATION_EXTENDS_VERSE",
-      "group": "COMMUNION"
+      "group": "COMMUNION",
+      "scriptureReaderRef": "John 1:29"
     },
     {
       "id": "MB24",
@@ -614,7 +632,8 @@
         "fr": "La parole du centurion est appliquée à la Communion. L’Évangile demande la guérison de son serviteur ; la Messe demande celle de l’âme du communiant."
       },
       "qualification": "PUER_MEUS_VERSUS_ANIMA_MEA",
-      "group": "COMMUNION"
+      "group": "COMMUNION",
+      "scriptureReaderRef": "Matthew 8:8"
     },
     {
       "id": "MB25",
@@ -662,7 +681,8 @@
         "fr": "Le dernier Évangile ordinaire est le Prologue de saint Jean ; certaines Messes le modifient ou l’omettent. Il ne faut jamais le forcer dans tous les rites."
       },
       "qualification": "RITE_DEPENDENT_NOT_UNCONDITIONAL",
-      "group": "CONCLUSION"
+      "group": "CONCLUSION",
+      "scriptureReaderRef": "John 1:1–14"
     }
   ]
 }
