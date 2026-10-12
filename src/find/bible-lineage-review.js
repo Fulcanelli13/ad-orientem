@@ -128,6 +128,67 @@ export function renderGenesisBranchTree(rows,{root="adam",language="en"}={}){
   '<strong>'+esc(L(lang,...names[start]))+'</strong></div>'+
   children(start,new Set([start]))+'</div>';
 }
+// Source-anchored graphical projection of the already-reviewed Genesis edges.
+// Every solid or dotted connector corresponds to an actual cited parentage row;
+// no spouse, step-parent, or extra biological link is inferred from surnames.
+export function renderGenesisAncestryDiagram(rows,{root="adam",language="en"}={}){
+ const lang=language==="fr"?"fr":"en";
+ const names={adam:["Adam","Adam"],noah:["Noah","Noé"],abraham:["Abraham","Abraham"],jacob:["Jacob","Jacob"],joseph:["Joseph","Joseph"]};
+ const start=Object.hasOwn(names,root)?root:"adam",edges=arr(rows);
+ if(!edges.length)return "";
+ const people=new Map([[start,{name:L(lang,...names[start]),source:null}]]);
+ const mainParent=new Map(),children=new Map();
+ for(const edge of edges){
+  if(!edge.parentId||!edge.childId||!url(edge.url)||!edge.reference)continue;
+  if(!people.has(edge.parentId))people.set(edge.parentId,{name:edge.parent,source:null});
+  if(!people.has(edge.childId))people.set(edge.childId,{name:edge.child,source:edge});
+  if(!mainParent.has(edge.childId)){
+   mainParent.set(edge.childId,edge.parentId);
+   if(!children.has(edge.parentId))children.set(edge.parentId,[]);
+   children.get(edge.parentId).push(edge.childId);
+  }
+ }
+ const coordinates=new Map(),step=76,cardWidth=172,cardHeight=58,column=220;
+ let leaf=0,depth=0;
+ const assign=(id,level)=>{
+  if(coordinates.has(id))return coordinates.get(id).y;
+  depth=Math.max(depth,level);
+  const descendants=children.get(id)||[];
+  const ys=descendants.map(k=>assign(k,level+1));
+  const y=ys.length?(ys[0]+ys.at(-1))/2:(leaf++*step+40);
+  coordinates.set(id,{x:22+level*column,y});
+  return y;
+ };
+ assign(start,0);
+ const width=48+depth*column+cardWidth,height=Math.max(120,leaf*step+32);
+ const edgesSvg=edges.map(e=>{
+  const a=coordinates.get(e.parentId),b=coordinates.get(e.childId);
+  if(!a||!b)return "";
+  const x1=a.x+cardWidth,x2=b.x,y1=a.y+cardHeight/2,y2=b.y+cardHeight/2;
+  // Alternate known parentage is drawn separately; it is never turned into
+  // another implied ancestor in the layout tree.
+  const secondary=mainParent.get(e.childId)!==e.parentId;
+  const d="M "+x1+" "+y1+" C "+(x1+30)+" "+y1+", "+(x2-30)+" "+y2+", "+x2+" "+y2;
+  return '<path d="'+d+'" class="'+(secondary?"aoBibleKinEdgeSecondary":"aoBibleKinEdge")+'"><title>'+esc(e.parent+" → "+e.child+" · "+e.reference)+'</title></path>';
+ }).join("");
+ const vertices=[...coordinates.entries()].map(([id,p])=>{
+  const person=people.get(id),incoming=person.source;
+  const label=person.name||id,short=label.length>23?label.slice(0,21)+"…":label;
+  const source=incoming&&url(incoming.url);
+  const box='<rect x="'+p.x+'" y="'+p.y+'" width="'+cardWidth+'" height="'+cardHeight+'" rx="8" />'+
+   '<text class="aoBibleKinPerson" x="'+(p.x+12)+'" y="'+(p.y+25)+'">'+esc(short)+'</text>'+
+   '<text class="aoBibleKinSource" x="'+(p.x+12)+'" y="'+(p.y+44)+'">'+
+    esc(source?incoming.reference:L(lang,"Selected ancestor","Ancêtre choisi"))+'</text>'+
+   '<title>'+esc(label+(source?" · "+incoming.reference:""))+'</title>';
+  return source?'<a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer" tabindex="0" class="aoBibleKinPersonLink" data-bible-kin-person="'+esc(id)+'">'+box+'</a>':
+   '<g class="aoBibleKinRoot" data-bible-kin-person="'+esc(id)+'">'+box+'</g>';
+ }).join("");
+ return '<div class="aoBibleKinDiagram" data-bible-kin-diagram role="region" tabindex="0" aria-label="'+
+  esc(L(lang,"Source-linked genealogy: pan horizontally or vertically to explore","Généalogie sourcée : faites défiler horizontalement ou verticalement"))+'">'+
+  '<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="'+height+'" viewBox="0 0 '+width+' '+height+
+   '" role="group" aria-label="'+esc(L(lang,"Reviewed family relationships","Relations familiales vérifiées"))+'">'+
+  '<g class="aoBibleKinLines">'+edgesSvg+'</g><g class="aoBibleKinNodes">'+vertices+'</g></svg></div>';
+}
 export function apostolicProfile(data,id){
  if(!validateLineageReviewCorpus(data))return null;
  const profile=data.profiles.find(p=>p.id===id)||data.profiles[0];
@@ -163,7 +224,10 @@ export function renderLineageReview(data,{language="en",surface="genealogies",li
    body+='<div class="aoBibleReviewControls"><span>'+esc(L(lang,"Generations","Générations"))+': '+Number(depth||3)+'</span>'+
    '<button type="button" data-bible-review-depth="-1" '+(Number(depth)<=1?'disabled':'')+'>−</button>'+
    '<button type="button" data-bible-review-depth="1" '+(Number(depth)>=6?'disabled':'')+'>+</button></div>';
-   body+=renderGenesisBranchTree(rows,{root,language:lang});
+   body+='<p class="aoBibleKinHelp">'+esc(L(lang,"Explore each generation by panning the diagram. Select a person to consult the original Scripture source.","Parcourez les générations dans le schéma. Sélectionnez une personne pour consulter la source biblique originale."))+'</p>'+
+    renderGenesisAncestryDiagram(rows,{root,language:lang})+
+    '<details class="aoBibleKinSourceList"><summary>'+esc(L(lang,"Accessible source relationship list","Liste accessible des filiations sourcées"))+'</summary>'+
+    renderGenesisBranchTree(rows,{root,language:lang})+'</details>';
    if(!rows.length)body+='<p class="aoBibleReviewEmpty">'+esc(L(lang,"No source-linked descendants at this depth.","Aucun descendant référencé à ce niveau."))+'</p>';
   }else{
    const seq=lineageSequence(data,key),pg=Math.max(0,Math.min(Math.ceil(seq.length/12)-1,Number(page)||0)),first=pg*12;
