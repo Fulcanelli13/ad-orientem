@@ -248,6 +248,8 @@ try{
    assert.ok(jump,"No named Rosary mystery chapter");
    await chapterRail.locator('[data-ao-rosary-chapter="'+jump.start+'"]').click();
    await page.waitForFunction(target=>window.AO_ROSARY_V381?.state?.()?.step===target,jump.start,{timeout:9000});
+   await page.waitForFunction(()=>document.querySelectorAll("#aoPrayerBookRoot.open .aoRosaryNamedTimeline [aria-current='step']").length===1,
+     null,{timeout:9000});
    assert.equal(await player.locator(".aoRosaryNamedTimeline [aria-current='step']").count(),1,
      "Rosary named timeline failed to follow canonical step jump");
    assert.equal(await player.locator(".pbShell").count(),1,
