@@ -89,6 +89,11 @@ try{
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
   "Narrow phone has horizontal document overflow");
  assert.equal((await snapshot()).overflow,"auto");
+ const safeLine=await page.locator(rootSel+" .aoDevoCardScroll .aoP435930GuideNow p").evaluate(el=>({
+  right:el.getBoundingClientRect().right,viewport:innerWidth
+ }));
+ assert.ok(safeLine.right<=safeLine.viewport-46,
+  "Ritual gesture icon overlaps the 320px prayer text: "+JSON.stringify(safeLine));
  await page.screenshot({path:resolve(captures,"benediction-320-reposition.png"),animations:"disabled"});
  assert.deepEqual(errors,[],"Browser exceptions: "+errors.join(" | "));
  console.log("PASS canonical seven-stage Benediction: timeline, vertical focus, horizontal swipe, conditional Praises and manual ritual pace");
