@@ -357,25 +357,39 @@ export async function prepareNativeReaderPreview({
     holyThursdayMandatumSource:mandatumSource,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  // A standalone Asperges/Vidi aquam prelude has its own R20 reader and
-  // completion handoff. It is not part of the Ordinary card projector, so
-  // the 64/65-card LIVE presentation can safely follow it without changing
-  // the six R20 rite records or their original source-owned formula states.
-  // Palm, Ash, Candlemas, Rogations, composite preludes and following actions
-  // remain on their separately verified form-specific fallback until audited.
+  // Only explicit, independently sourced pre-Mass and post-Mass actions
+  // can accompany the ordinary Sung projection. Do not infer ceremonies
+  // from dates, feast names or a later requested Mass. The four Foot-of-
+  // Altar cards are suppressed only after an INTROIT-owned preceding rite.
   const introEntryKind=preceding.length===1 ? preceding[0] : null;
-  const explicitIntroitEntry=["PALM","ASH","CANDLEMAS"].includes(introEntryKind) &&
+  const explicitIntroitEntry=["PALM","ASH","CANDLEMAS","ROGATIONS"].includes(introEntryKind) &&
     String(plan?.massEntry??"").toUpperCase()==="INTROIT" &&
     (introEntryKind==="PALM" ? Boolean(loadedPalm) :
-      introEntryKind==="ASH" ? Boolean(loadedAsh) : Boolean(loadedCandlemas));
+      introEntryKind==="ASH" ? Boolean(loadedAsh) :
+      introEntryKind==="CANDLEMAS" ? Boolean(loadedCandlemas) :
+      Boolean(loadedRogations));
   const compatiblePrelude=preceding.length===0 ||
-    (preceding.length===1 && preceding[0]==="ASPERGES" && Boolean(loadedAsperges)) ||
+    (preceding.length===1 && preceding[0]==="ASPERGES" && Boolean(loadedAsperges) &&
+      String(plan?.massEntry??"").toUpperCase()==="FOOT_CLUSTER") ||
     explicitIntroitEntry;
+  // Requiem and Holy Thursday retain their special-form reading ownership.
+  // Generic following processions change no Ordinary Mass ending. Corpus
+  // Christi has a sourced Benedicamus, blessing/Last Gospel suppression.
+  // No mixed preceding+following graph is automatically certified here.
+  const singleFollowing=following.length===1 ? following[0] : null;
+  const compatibleFollowing=following.length===0 ||
+    (preceding.length===0 && singleFollowing==="GENERIC_PROCESSION" &&
+      Boolean(loadedGenericProcession) && plan?.blessingAllowed!==false &&
+      plan?.normalLastGospel!==false) ||
+    (preceding.length===0 && singleFollowing==="CORPUS_CHRISTI_PROCESSION" &&
+      Boolean(loadedCorpusChristi) && plan?.blessingAllowed===false &&
+      plan?.normalLastGospel===false && plan?.dismissal==="BENEDICAMUS_DOMINO");
   const curatedEligible=reviewCuratedCards===true &&
+    plan?.kind==="MASS" &&
     model.totalCards===39 &&
     String(model.corpusFamily)==="SUNG" &&
     String(model.presentationMode)==="LIVE" &&
-    compatiblePrelude && !following.length &&
+    compatiblePrelude && compatibleFollowing &&
     (plan?.overlayGraphs??[]).every(id=>id==="VOTIVE_PROPER");
   const curatedOrdinary=curatedEligible
     ? projectCuratedOrdinaryLiveCards(model):null;
