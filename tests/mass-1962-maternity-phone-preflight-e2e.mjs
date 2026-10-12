@@ -73,6 +73,22 @@ try{
     await page.screenshot({path:resolve(out,"preflight-error-oct11-"+width+".png"),fullPage:true});
     throw error;
   });
+  const sourceDiagnostic=await page.evaluate(async()=>{
+    const calendar=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+    const legacy=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+    const source=legacy?.proper?.data??legacy?.proper??null;
+    const {select1962CommemorationsForMassForm}=await import("/src/mass/1962-commemoration-form-source.js");
+    const form=document.querySelector('input[name="ao-native-mass-form"]:checked')?.value??"MISSA_CANTATA_INCENSE";
+    const probe=select1962CommemorationsForMassForm({proper:source,calendarResolution:calendar?.resolution,form});
+    return {form,reason:probe.reason,status:probe.status,
+      legacyMassType:legacy?.celebrationType,legacyId:legacy?.celebrationId,
+      properSource:source?.sourcePath??null,prayerCounts:["collects","secrets","postcommunions"].map(k=>source?.[k]?.length??null),
+      sourceCommem:source?.calendarCommemorations?.map(x=>({path:x.path,name:x.name})),
+      calendarStatus:calendar?.resolution?.status,calendarCount:calendar?.resolution?.day?.commemorations?.length,
+      sourceDayProperPath:calendar?.resolution?.proper?.data?.sourcePath,
+      sourceDayCommemCount:calendar?.resolution?.proper?.data?.calendarCommemorations?.length};
+  });
+  console.log("OCT11_PHONE_SOURCE_"+width,JSON.stringify(sourceDiagnostic));
   assert.match(await block.locator("[data-mass-calendar-commemoration-name]").innerText(),/Maternity of the Blessed Virgin Mary|Maternit/i);
   assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),/prayers|prières|orations|oraisons|Collect|collecte|secrète|postcommunion/i);
   assert.equal(await block.isVisible(),true,"Commemoration visually hidden on phone");
