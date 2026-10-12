@@ -4,6 +4,7 @@ import {
   mapLegacyFollowMode,
   mapInsertedRites,
   deriveHostOptions,
+  ordinaryMassPrefaceOwner,
   stampMassReaderUi,
   mountR17Preview,
   ACTIVE_MASS_STORAGE_KEY,
@@ -298,3 +299,10 @@ await assert.rejects(
 );
 
 console.log("browser-entry native production cutover: PASS");
+
+const ordinaryPrefaceCase={calendarDay:{id:"tempora:Pasc7-0:1:r"},requestedCelebrationId:"mass_of_day",celebrationType:"CALENDAR"};
+assert.equal(ordinaryMassPrefaceOwner(ordinaryPrefaceCase),"tempora:Pasc7-0:1:r");
+assert.equal(ordinaryMassPrefaceOwner(ordinaryPrefaceCase,{observed:true}),null);
+assert.equal(ordinaryMassPrefaceOwner({...ordinaryPrefaceCase,requestedCelebrationId:"rosary-votive"}),null);
+assert.equal(ordinaryMassPrefaceOwner({...ordinaryPrefaceCase,celebrationType:"VOTIVE"}),null);
+assert.equal(ordinaryMassPrefaceOwner({...ordinaryPrefaceCase,calendarDay:{title:"Pentecost"}}),null);

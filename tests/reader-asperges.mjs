@@ -35,6 +35,17 @@ assert.equal(built.cards[1].ministerOnly.posture,"KNEEL");
 assert.equal(built.cards[1].posture,"STAND","minister kneeling leaked to faithful posture");
 assert.equal(built.cards[2].personalTrigger,"ACTUALLY_SPRINKLED");
 assert.equal(built.cards[4].handoff,"FOOT_CLUSTER");
+for(const card of built.cards){
+  assert.ok(card.titleFr,"R20 prayer/ritual cards must have a French section-jump title");
+  if(card.guide){
+    assert.ok(card.guideFr,"R20 source-owned participation guide must be available in French");
+    assert.ok(card.guideFr.length>12,"French rubric must be meaningful");
+  }
+}
+assert.ok(built.cards.filter(card=>card.paragraphs.length===0&&card.guide).length===3,
+  "the three action-only stages must stay source-empty; their guide is a visible RUBRIC, not prayer text");
+assert.equal(built.cards.flatMap(card=>card.sourceRecordIds).length,6,
+  "visual source-guidance enhancement must not invent extra ASP source records");
 
 built=buildAspergesPayload({graph,payload,riteContext:{omitGloriaPatri:true}});
 assert.equal(built.cards[1].paragraphs.length,3,"Passiontide Gloria Patri omission not applied");

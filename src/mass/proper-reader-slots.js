@@ -1,3 +1,4 @@
+import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
 const REQUIRED_SLOTS = Object.freeze([
   "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
   "GOSPEL","OFFERTORY","SECRET_SET","PREFACE","COMMUNION","POSTCOMMUNION_SET"
@@ -52,6 +53,9 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
   const locale=String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
   const opts={language:locale};
 
+  const principalId=proper.principalCelebrationId??proper.mainId??proper.main?.id??null;
+  const prefaceDecision=principalId?inspect1962PrefaceSelection({principalCelebrationId:principalId,selectedPreface:proper.preface,requestedCelebrationId:proper.requestedCelebrationId??null}):null;
+
   const slots={
     INTROIT:readyEnvelope("INTROIT",proper.introit,opts),
     COLLECT_SET:readyEnvelope("COLLECT_SET",proper.collects?.length?proper.collects:proper.collect,opts),
@@ -65,11 +69,26 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
 
+  // A source contradiction must not be displayed as a certified ready Preface.
+  // This is a reader safety gate, NOT a substitute for repairing source selection.
+  if(prefaceDecision && ["CONTRADICTION","MISSING_PREFACE","NEEDS_SELECTED_FORMULARY"].includes(prefaceDecision.status)){
+    slots.PREFACE=Object.freeze({status:"MISSING",slot:"PREFACE",data:null,
+      reason:"1962 Preface source decision: "+prefaceDecision.status,
+      requiredId:prefaceDecision.requiredId,actualId:prefaceDecision.actualId});
+  }
+
   // The source Calendar lists commemorations separately from the prayer
   // arrays. A one-prayer fallback is NOT a complete Proper when an identified
   // commemoration still requires its own Collect, Secret and Postcommunion.
-  const extra=(Array.isArray(proper.calendarCommemorations)?
-    proper.calendarCommemorations:[]).filter(row=>row&&!row.inseparable).length;
+  const selection=proper.commemorationFormDecision;
+  const effectiveCommemorations=selection?.status==="CERTIFIED"&&
+    selection?.source==="1962_PROPER_RESOLVER"&&
+    Number.isInteger(selection.appliedCount)&&
+    Array.isArray(proper.appliedCommemorations)&&
+    selection.appliedCount===proper.appliedCommemorations.length
+      ?proper.appliedCommemorations:proper.calendarCommemorations;
+  const extra=(Array.isArray(effectiveCommemorations)?
+    effectiveCommemorations:[]).filter(row=>row&&!row.inseparable).length;
   const minimum=1+extra;
   if(extra>0){
     for(const [slot,plural,singular] of [
