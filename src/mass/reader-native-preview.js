@@ -1581,19 +1581,30 @@ export async function mountNativeReaderPreview({
     const state=ready.aspergesController?.project?.();
     const card=state?.card;
     if(!card)return null;
+    const french=String(prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr");
+    const displayTitle=String((french?card.titleFr:card.title)??card.title);
+    const displayGuide=String((french?card.guideFr:card.guide)??card.guide??"");
+    const spokenRows=(card.paragraphs??[]).map(row=>Object.freeze({
+      id:row.id,
+      kind:row.kind,
+      primary:row.latin,
+      sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
+    }));
+    // Three R20 action/transition cards legitimately have no spoken prayer.
+    // Surface their existing guidance as an explicitly nonspoken RUBRIC,
+    // without assigning a source cue or inventing a liturgical text.
+    const visibleRows=spokenRows.length?spokenRows:displayGuide
+      ? [Object.freeze({id:card.id+".guide",kind:"RUBRIC",primary:displayGuide,
+          active:true,sourceCueIds:Object.freeze([])})]
+      : [];
     return Object.freeze({
       state,
       moment:Object.freeze({
         id:card.id,
-        sectionTitle:"Asperges",
-        cardTitle:card.title,
+        sectionTitle:displayTitle,
+        cardTitle:displayTitle,
         cardUpdate:true,
-        paragraphs:Object.freeze((card.paragraphs??[]).map(row=>Object.freeze({
-          id:row.id,
-          kind:row.kind,
-          primary:row.latin,
-          sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
-        }))),
+        paragraphs:Object.freeze(visibleRows),
         progress:String(state.index+1)+" / "+String(state.total)+" · Asperges",
         posture:card.posture && card.posture!=="INHERIT" ? {label:card.posture} : null,
         gesture:state.faithfulGesture ? {label:state.faithfulGesture} : null,
@@ -1603,7 +1614,7 @@ export async function mountNativeReaderPreview({
         priestPosition:null,
         priestVoice:null,
         schola:null,
-        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+        guide:displayGuide ? {registryAvailable:true,text:displayGuide} : null,
       }),
     });
   }
