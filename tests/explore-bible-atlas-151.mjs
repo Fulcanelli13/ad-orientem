@@ -123,6 +123,13 @@ assert.equal(atlasMapItems(stops,by("PUBLIC","capernaum").index).length,2,"Johan
 assert.equal(atlasMapItems(stops,by("APOSTLES","rome").index).length,15,"apostolic sites progressively appear");
 assert.equal(atlasIndexForPin(stops,by("APOSTLES","rome").index,"atlas:corinth"),by("APOSTLES","corinth").index);
 assert.match(atlasDetail(by("INFANCY","jerusalem-temple"),"en"),/City-level reference/);
+const presentation=stops.find(stop=>stop.reference==="Luke 2:22–38");
+const presentationHTML=atlasDetail(presentation,"en");
+assert.ok(presentation&&presentation.sourceEventId==="jerusalem-temple-e1");
+assert.doesNotMatch(presentationHTML,/finding of the child|later teaching/,
+ "selected Presentation must not inherit other Temple episodes from place synopsis");
+assert.match(presentationHTML,/data-ao-scripture-context="Luke 2:22–38"/);
+assert.ok(!presentation.summary_en||!/finding of the child|later teaching/i.test(presentation.summary_en));
 assert.match(atlasDetail(by("INFANCY","nazareth"),"en"),/Settlement marker only/);
 assert.match(atlasDetail(by("ISRAEL","carmel"),"en"),/Mountain-region context only/);
 assert.match(atlasDetail(by("PUBLIC","bethesda"),"en"),/Site-level location is provisional/);
