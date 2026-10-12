@@ -93,7 +93,7 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null;
-let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
+let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
 
 function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false,returnButton=""}){
  const label=guidedStepLabel(step,total,isFr()?"fr":"en");
@@ -199,9 +199,10 @@ function renderMealPrayers(){
   const context=`<details class="aoTP381SecondaryOptions" data-ao-meal-options><summary>${esc(L("About these prayers","À propos de ces prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("These are the ordinary table prayers from the canonical Catholic prayer corpus.","Il s’agit des prières ordinaires des repas issues du corpus canonique de prières catholiques."))}</p></div></details>`;
   return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody">${card}${context}</main>`;
 }
-function sourcedPrayerCard(item,label){
+function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false}={}){
   const vern=isFr()?(item?.fr||item?.en||item?.la):(item?.en||item?.fr||item?.la),latin=item?.la||"",both=!!(vern&&latin);
-  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}</article>`;
+  const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):focusParagraphs?prayerParagraphs(v):nl(v);
+  return \`<article class="aoTP381PrayerCard"><h3>\${esc(label)}</h3>\${both?\`<button type="button" data-tp381-flip aria-label="\${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>\${show(vern)}</span><span data-face-la hidden>\${show(latin)}</span></button>\`:\`<div class="aoTP381Reader">\${show(vern||latin)}</div>\`}</article>\`;
 }
 function renderSacredHeart(){
   const d=SACRED_HEART_DEVOTIONS_V382,tab=S.sacredHeart||"litany";
