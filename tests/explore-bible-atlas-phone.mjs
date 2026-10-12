@@ -137,6 +137,10 @@ try{
  }));
  assert.ok(geometry.arcs>=2&&geometry.persons>=3,
   "genealogy must show cited connectors and distinct family nodes");
+ const firstAncestor=await page.locator('#ao-find-modular-root [data-bible-kin-diagram] .aoBibleKinRoot rect').getAttribute("y");
+ assert.ok(Number(firstAncestor)<=100,"first visible genealogy canvas must show its ancestor");
+ assert.equal(await page.locator('#ao-find-modular-root .aoBibleReviewFamilyChoices').count(),1,
+  "family roots should use one internally scrollable control row");
  assert.ok(geometry.box<=geometry.viewport+1&&geometry.scrollWidth>geometry.box,
   "genealogy may pan internally without widening the phone viewport");
  assert.equal(await page.locator('#ao-find-modular-root .aoBibleKinSourceList').count(),1,
