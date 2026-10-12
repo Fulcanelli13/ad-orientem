@@ -70,6 +70,7 @@ try{
     assert.equal(initial.asperges.formulaState.omitGloriaPatri,option.omitGloria===true,
       option.label+" must preserve Passiontide omission");
     assert.equal(initial.asperges.card.id,"ASP-R01",option.label+" must preserve original pre-Mass first record");
+    assert.equal(initial.asperges.total,5,"five reader screens hold six R20 source events");
     await page.screenshot({path:resolve(out,"production-"+option.label+"-prelude-390.png"),
       animations:"disabled"});
     const traversed=await page.evaluate(()=>{
@@ -79,7 +80,7 @@ try{
       for(let n=0;n<20;n++){
         const a=api.getAspergesState(),special=api.getNativeEventState()?.specialRite;
         if(special!=="ASPERGES")break;
-        seen.push({record:a.card?.id,formula:a.formulaState.formula});
+        seen.push({record:a.card?.id,sourceRecords:a.card?.sourceRecordIds??[],formula:a.formulaState.formula});
         next.click();
       }
       const after={title:api.getCurrentCard()?.title,progress:
@@ -89,7 +90,10 @@ try{
       if(api.getNativeEventState()?.specialRite==="ASPERGES")errors.push("failed to hand off");
       return {seen,after,errors};
     });
-    assert.equal(traversed.seen.length,6,option.label+" 6 R20 source records must precede Mass");
+    assert.equal(traversed.seen.length,5,option.label+" five R20 reader screens must precede Mass");
+    assert.deepEqual(traversed.seen.flatMap(x=>x.sourceRecords),
+      ["ASP-010","ASP-020","ASP-030","ASP-040","ASP-050","ASP-060"],
+      option.label+" all six original source events must be conserved");
     assert.deepEqual(traversed.errors,[],option.label+" R20 handoff error");
     assert.equal(traversed.after.title,"At the Foot of the Altar · Opening and Psalm 42",
       option.label+" must resume entire source-first foot-of-altar, not skip to Introit");
@@ -112,17 +116,17 @@ try{
     assert.match(roundtrip.progress,new RegExp("1 / "+option.visible+"$"));
     // Enter a named source paragraph card and verify that the active ritual
     // remains owned by the ordinary reader, with no rite state contamination.
-    const massCard=await page.evaluate(()=>{
-      const api=window.__AO_PHONE_PREVIEW;
-      const next=api.model.cards.find(c=>c.title==="Gloria · Praise and Supplication");
-      if(!next)throw new Error("No curated Gloria source group");
-      api.showSequence(next.sequence);
-      const root=document.querySelector("#ao-r17-native-reader-preview");
-      return {title:api.getCurrentCard()?.title,state:api.getNativeEventState(),
-        textCount:root.querySelectorAll(".ao-reader-paragraph").length,
-        source:api.sourceModel.totalCards};
-    });
     if(option.curated==="true"){
+      const massCard=await page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const next=api.model.cards.find(c=>c.title==="Gloria · Praise and Supplication");
+        if(!next)throw new Error("No curated Gloria source group");
+        api.showSequence(next.sequence);
+        const root=document.querySelector("#ao-r17-native-reader-preview");
+        return {title:api.getCurrentCard()?.title,state:api.getNativeEventState(),
+          textCount:root.querySelectorAll(".ao-reader-paragraph").length,
+          source:api.sourceModel.totalCards};
+      });
       assert.equal(massCard.title,"Gloria · Praise and Supplication");
       assert.ok(massCard.textCount>0,option.label+" no Mass prayer paragraphs");
       assert.equal(massCard.source,39);
