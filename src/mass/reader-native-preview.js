@@ -247,6 +247,7 @@ export async function prepareNativeReaderPreview({
     const goodFridayController=createGoodFridayReaderController({
       graph:loadedGoodFriday?.graph,
       payload:loadedGoodFriday?.payload,
+      voiceAnchors:loadedGoodFriday?.voiceAnchors??null,
       jewishPrayerVariant:ctx.jewishPrayerVariant??"PRINTED_1962",
       venerationMode:ctx.venerationMode??"PERSONAL",
       willReceiveCommunion:ctx.willReceiveCommunion===true,
@@ -848,6 +849,8 @@ export async function mountNativeReaderPreview({
           kind:row.kind,
           primary:row.latin,
           secondary:row.vernacular??row.english??null,
+          // Textual Christus/Synagoga: not a celebrant/faithful voice cue.
+          scriptureVoiceSpans:row.scriptureVoiceSpans??null,
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
