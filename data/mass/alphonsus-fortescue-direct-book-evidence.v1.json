@@ -1,0 +1,523 @@
+{
+  "schema": "ao-mass-book-only-ceremonial-verification-v1",
+  "version": "1.0.0",
+  "status": "BOOK_PAGE_EVIDENCE_CHECKED_NOT_NEW_1962_AUTHORITY",
+  "purpose": "Proceed with user-provided St Alphonsus and Fortescue only; verify action-to-cue mappings before modifying LIVE. No external sources to be searched.",
+  "books": [
+    {
+      "id": "ALPHONSUS_HOLY_MASS",
+      "title": "The Holy Mass, The Ceremonies of the Mass",
+      "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+      "role": "BOOK_BASED_PROCEDURAL_EVIDENCE"
+    },
+    {
+      "id": "FORTESCUE_MASS_1914",
+      "title": "The Mass: A Study of the Roman Liturgy",
+      "url": "https://archive.org/details/massstudyofroman00fort",
+      "role": "BOOK_BASED_HISTORICAL_CONTEXT"
+    }
+  ],
+  "existingTemplate": "Ad_Orientem_1962_Sung_Mass_CANONICAL_BLUEPRINT_v1.1_PROTOTYPE_READY.xlsx",
+  "authorityBoundary": "The books precede 1962. They verify described historical actions and offer explanatory context, but cannot alone adjudicate 1962 omissions. Do not consult new external sources; use the existing 1962 SOT and mark unresolved differences.",
+  "noExternalSources": true,
+  "noNewSourceDownloads": true,
+  "liveRuntimeChanged": false,
+  "items": [
+    {
+      "id": "BOOKS1962.001",
+      "cueId": "AO.SM.C0010",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD",
+      "trigger": "Judica me — Gloria Patri",
+      "sourceStatement": "Alphonsus says the priest bows to the cross at the Gloria Patri of Judica me; omission of the psalm is a separate form/calendar condition.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "104–105",
+        "pdfPages": {
+          "from": 104,
+          "to": 105
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.002",
+      "cueId": "AO.SM.C0110",
+      "actor": "PRIEST",
+      "action": "RAISE_PATEN_HOST",
+      "trigger": "Suscipe sancte Pater",
+      "sourceStatement": "Two hands raise the paten with the Host to chest height at the beginning of the Offertory.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "132–134",
+        "pdfPages": {
+          "from": 132,
+          "to": 134
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.003",
+      "cueId": "AO.SM.C0112",
+      "actor": "PRIEST",
+      "action": "BLESS_WATER",
+      "trigger": "Deus qui humanae",
+      "sourceStatement": "Blesses the water cruet with a cross and mixes water into the chalice; historic Requiem exception noted.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "135–136",
+        "pdfPages": {
+          "from": 135,
+          "to": 136
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.004",
+      "cueId": "AO.SM.C0114",
+      "actor": "PRIEST",
+      "action": "OFFER_CHALICE",
+      "trigger": "Offerimus tibi Domine",
+      "sourceStatement": "Raises the chalice using both hands during its offering.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "135–138",
+        "pdfPages": {
+          "from": 135,
+          "to": 138
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.005",
+      "cueId": "AO.SM.C0119",
+      "actor": "PRIEST",
+      "action": "SIGN_OVER_OBLATIONS",
+      "trigger": "et bene ✠ dic",
+      "sourceStatement": "With right hand traces a cross over chalice and Host together at benedic.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "138–139",
+        "pdfPages": {
+          "from": 138,
+          "to": 139
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.006",
+      "cueId": "AO.SM.C0125",
+      "actor": "PRIEST",
+      "action": "WASH_FINGERTIPS",
+      "trigger": "Lavabo inter innocentes",
+      "sourceStatement": "Washes ends of both thumbs and index fingers; the ancient doxology omission must be treated as a form/calendar condition.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "140",
+        "pdfPages": {
+          "from": 140,
+          "to": 140
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.007",
+      "cueId": "AO.SM.C0130",
+      "actor": "PRIEST",
+      "action": "TURN_TO_PEOPLE",
+      "trigger": "Orate fratres",
+      "sourceStatement": "After kissing altar, turns toward people for Orate fratres; returns while privately reciting continuation.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "140–141",
+        "pdfPages": {
+          "from": 140,
+          "to": 141
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.008",
+      "cueId": "AO.SM.C0152",
+      "actor": "PRIEST",
+      "action": "THREE_CROSSES_OVER_OBLATIONS",
+      "trigger": "haec dona / haec munera / haec sancta sacrificia",
+      "sourceStatement": "Makes three crosses over the Host and chalice together at the three corresponding formulae.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "146",
+        "pdfPages": {
+          "from": 146,
+          "to": 146
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.009",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "action": "SPREAD_HANDS_OVER_OBLATIONS",
+      "trigger": "Hanc igitur oblationem",
+      "sourceStatement": "Extends the open palms over both Host and chalice throughout Hanc igitur.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "151–152",
+        "pdfPages": {
+          "from": 151,
+          "to": 152
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.010",
+      "cueId": "AO.SM.C0164",
+      "actor": "PRIEST",
+      "action": "THREE_CROSSES_OVER_OBLATIONS",
+      "trigger": "benedictam / adscriptam / ratam",
+      "sourceStatement": "Three distinct crosses over Host and chalice at the three words; Fortescue discusses the prayer's liturgical history, not the physical gesture.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "151–153",
+        "pdfPages": {
+          "from": 151,
+          "to": 153
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": {
+        "bookId": "FORTESCUE_MASS_1914",
+        "printedPages": "333–335",
+        "pdfPageApproximate": 355,
+        "url": "https://archive.org/details/massstudyofroman00fort",
+        "evidenceClass": "HISTORICAL_CONTEXT_NOT_GESTURE_LAW"
+      },
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.011",
+      "cueId": "AO.SM.C0165",
+      "actor": "PRIEST",
+      "action": "CROSS_HOST_ONLY",
+      "trigger": "Corpus",
+      "sourceStatement": "One cross over the Host alone at Corpus.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "152–153",
+        "pdfPages": {
+          "from": 152,
+          "to": 153
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.012",
+      "cueId": "AO.SM.C0166",
+      "actor": "PRIEST",
+      "action": "CROSS_CHALICE_ONLY",
+      "trigger": "Sanguis",
+      "sourceStatement": "One cross over the chalice alone at Sanguis.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "152–153",
+        "pdfPages": {
+          "from": 152,
+          "to": 153
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.013",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "action": "GENUFLECT_ELEVATE_REPLACE_GENUFLECT",
+      "trigger": "After Hoc est enim Corpus meum",
+      "sourceStatement": "First adores, elevates the Host, replaces it, then genuflects; Fortescue analyses historical development of elevations and genuflections.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "154–157",
+        "pdfPages": {
+          "from": 154,
+          "to": 157
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": {
+        "bookId": "FORTESCUE_MASS_1914",
+        "printedPages": "337–343",
+        "pdfPageApproximate": 359,
+        "url": "https://archive.org/details/massstudyofroman00fort",
+        "evidenceClass": "HISTORICAL_CONTEXT_NOT_GESTURE_LAW"
+      },
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.014",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "action": "GENUFLECT_ELEVATE_REPLACE_GENUFLECT",
+      "trigger": "After calix consecration",
+      "sourceStatement": "After chalice consecration, adores, elevates, replaces the chalice, then genuflects. Fortescue describes the later introduction of the chalice elevation.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "158–160",
+        "pdfPages": {
+          "from": 158,
+          "to": 160
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": {
+        "bookId": "FORTESCUE_MASS_1914",
+        "printedPages": "337–343",
+        "pdfPageApproximate": 359,
+        "url": "https://archive.org/details/massstudyofroman00fort",
+        "evidenceClass": "HISTORICAL_CONTEXT_NOT_GESTURE_LAW"
+      },
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.015",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "action": "STRIKE_BREAST",
+      "trigger": "Nobis quoque peccatoribus",
+      "sourceStatement": "Alphonsus places a single breast strike at Nobis quoque, with the formula voiced a little more loudly.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "164",
+        "pdfPages": {
+          "from": 164,
+          "to": 164
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.016",
+      "cueId": "AO.SM.C0200",
+      "actor": "PRIEST",
+      "action": "THREE_CROSSES",
+      "trigger": "sanctificas / vivificas / benedicis",
+      "sourceStatement": "Makes three crosses conjointly over the Host and chalice at those three words.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "164",
+        "pdfPages": {
+          "from": 164,
+          "to": 164
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.017",
+      "cueId": "AO.SM.C0202",
+      "actor": "PRIEST",
+      "action": "THREE_CROSSES_WITH_HOST_OVER_CHALICE",
+      "trigger": "Per ipsum / cum ipso / in ipso",
+      "sourceStatement": "Holding the Host, traces three crosses over the chalice.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "164",
+        "pdfPages": {
+          "from": 164,
+          "to": 164
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": null,
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.018",
+      "cueId": "AO.SM.C0222",
+      "actor": "PRIEST",
+      "action": "BREAST_STRIKE_ONE",
+      "trigger": "Agnus Dei — first miserere nobis",
+      "sourceStatement": "First breast strike at the first miserere nobis; Fortescue gives Agnus Dei historical development.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "168–170",
+        "pdfPages": {
+          "from": 168,
+          "to": 170
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": {
+        "bookId": "FORTESCUE_MASS_1914",
+        "printedPages": "385–388",
+        "pdfPageApproximate": 407,
+        "url": "https://archive.org/details/massstudyofroman00fort",
+        "evidenceClass": "HISTORICAL_CONTEXT_NOT_GESTURE_LAW"
+      },
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.019",
+      "cueId": "AO.SM.C0223",
+      "actor": "PRIEST",
+      "action": "BREAST_STRIKE_TWO",
+      "trigger": "Agnus Dei — second miserere nobis",
+      "sourceStatement": "Second breast strike at the second miserere nobis.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "168–170",
+        "pdfPages": {
+          "from": 168,
+          "to": 170
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": {
+        "bookId": "FORTESCUE_MASS_1914",
+        "printedPages": "385–388",
+        "pdfPageApproximate": 407,
+        "url": "https://archive.org/details/massstudyofroman00fort",
+        "evidenceClass": "HISTORICAL_CONTEXT_NOT_GESTURE_LAW"
+      },
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    },
+    {
+      "id": "BOOKS1962.020",
+      "cueId": "AO.SM.C0224",
+      "actor": "PRIEST",
+      "action": "BREAST_STRIKE_THREE",
+      "trigger": "Agnus Dei — dona nobis pacem",
+      "sourceStatement": "Third breast strike at dona nobis pacem. Requiem ritual differences require separate 1962 form resolution.",
+      "directCeremonialEvidence": {
+        "bookId": "ALPHONSUS_HOLY_MASS",
+        "section": "The Ceremonies of the Mass",
+        "printedPages": "168–170",
+        "pdfPages": {
+          "from": 168,
+          "to": 170
+        },
+        "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+      },
+      "fortescueContext": {
+        "bookId": "FORTESCUE_MASS_1914",
+        "printedPages": "385–388",
+        "pdfPageApproximate": 407,
+        "url": "https://archive.org/details/massstudyofroman00fort",
+        "evidenceClass": "HISTORICAL_CONTEXT_NOT_GESTURE_LAW"
+      },
+      "existing1962SotRequired": true,
+      "sourceClass": "HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION",
+      "publicationGate": "RECONCILE_EXISTING_1962_SOT",
+      "autonomy": "BOOKS_ONLY_NO_EXTERNAL_RESEARCH"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const read=p=>JSON.parse(readFileSync(new URL("../data/"+p,import.meta.url),"utf8"));
+const book=read("mass/alphonsus-fortescue-direct-book-evidence.v1.json");
+const sung=read("presentation/reader-text-sung.v1.json");
+const low=read("presentation/reader-text-low.v1.json");
+const contracts=read("mass/ritus-1962-ceremonial-research-contract.v2.json");
+const cues=corpus=>new Set(corpus.blocks.flatMap(b=>b.units.map(u=>u.cue_id)).filter(x=>/^AO\.SM\.C\d{4}$/.test(x)));
+const sungCues=cues(sung),lowCues=cues(low);
+assert.equal(book.items.length,20);
+assert.equal(book.noExternalSources,true);
+assert.equal(book.noNewSourceDownloads,true);
+assert.equal(book.liveRuntimeChanged,false);
+assert.equal(contracts.userSourceRestriction.noExternalSourceSearches,true);
+assert.equal(contracts.userSourceRestriction.unresolved1962Differences,"FLAG_AND_DEFER_NOT_SEARCH");
+assert.deepEqual(book.books.map(x=>x.id),["ALPHONSUS_HOLY_MASS","FORTESCUE_MASS_1914"]);
+assert.deepEqual([sungCues.size,lowCues.size],[279,275]);
+const ids=new Set();
+for(const item of book.items){
+ assert(!ids.has(item.id),"duplicate "+item.id);ids.add(item.id);
+ assert(sungCues.has(item.cueId),"missing sung cue "+item.cueId);
+ assert(lowCues.has(item.cueId),"missing low cue "+item.cueId);
+ assert.equal(item.directCeremonialEvidence.bookId,"ALPHONSUS_HOLY_MASS");
+ assert(Number.isInteger(item.directCeremonialEvidence.pdfPages.from));
+ assert(item.directCeremonialEvidence.pdfPages.from<=item.directCeremonialEvidence.pdfPages.to);
+ assert.equal(item.sourceClass,"HISTORICAL_BOOK_DIRECTLY_SUPPORTS_DESCRIBED_ACTION");
+ assert.equal(item.existing1962SotRequired,true);
+ assert.equal(item.publicationGate,"RECONCILE_EXISTING_1962_SOT");
+ assert.equal(item.autonomy,"BOOKS_ONLY_NO_EXTERNAL_RESEARCH");
+ if(item.fortescueContext)assert.equal(item.fortescueContext.evidenceClass,"HISTORICAL_CONTEXT_NOT_GESTURE_LAW");
+}
+const actionAt=cue=>book.items.find(x=>x.cueId==="AO.SM."+cue)?.action;
+assert.equal(actionAt("C0164"),"THREE_CROSSES_OVER_OBLATIONS");
+assert.equal(actionAt("C0165"),"CROSS_HOST_ONLY");
+assert.equal(actionAt("C0166"),"CROSS_CHALICE_ONLY");
+assert.equal(actionAt("C0224"),"BREAST_STRIKE_THREE");
+assert.equal(actionAt("C0174"),"GENUFLECT_ELEVATE_REPLACE_GENUFLECT");
+console.log("PASS book-only Mass evidence: 20 cues verified against existing corpus; no outside source requirements.");
