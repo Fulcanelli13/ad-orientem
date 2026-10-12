@@ -33,3 +33,25 @@ Before approved art associations, the Theatre uses a source-based **typographic 
 When the art team certifies its canonical joined selection, add a **read-only consumer adapter** owned by the shared art service: it will take `eventKey`/source verse/scene relation and return one approved artwork object with canonical ID, local high-quality asset URI, licence, source provenance and crop; it must never write back independent copies of art objects into the Atlas scene JSON. Re-run 320/390/768/1280 screenshots, source-matching and rights tests on the selected painting before enabling it.
 
 **Explicit non-claims:** This integration specification does not approve a painting, date a Gospel harmony, geolocate a scene, close issue #885, or unblock publication of #1069.
+
+## A9 implementation — consumer-only, default-off artwork slot
+
+The Chronicle and the scene studies now retain **151 `eventKey` identities** and **181 `sceneKey` identities** (e.g. `biblical:scene:christ:074`). A scene may move to a new chapter position without losing its scene identity; every 151-event exact-citation candidate still stores the distinct canonical `eventKey`.
+
+`src/find/bible-scene-art-gate.js` is a **read-only presentation predicate**, not a second art decision engine. The future Sacred Art owner must supply one `artSelection` for the current scene with:
+
+- `owner: "SACRED_ART_CANONICAL"`, `status: "PUBLICATION_APPROVED"`.
+- `association: {status:"APPROVED", relationship:"EXACT_EPISODE", sceneKey, reference, eventKey}`; exact-citation timeline scenes must match their own canonical `atlasEventKey`, and scenes without such a unique exact event must provide `eventKey:null`.
+- The artwork record from the **existing museum-original registry** with source object page, CC0 reproduction rights, explicit artistic/image/crop APPROVED/PASS decisions, actual local `assets/sacred-art/` original image of minimum 2500px on one axis, original-image SHA-256, colour, museum-original, glare-free and frame-free evidence.
+
+`renderCinematicStudies(...,{artSelection:null})` is the current **default** and generates **no image**. An art-selection result passing the checks will render one respectfully sized `<figure>` with the original artwork, artist/title, and museum source link. It never downloads artwork or infers a new scene–art relationship. Synthetic approval fixtures in `tests/biblical-cinematic-studies.mjs` demonstrate the contract but do not constitute real artwork approval, acquisition, or deployment.
+
+The gate **fails closed** for unapproved association, wrong Gospel or event identity, general-context artwork, unreviewed crop, questionable rights, missing original hash, provisional Internet thumbnails, low-resolution images, and excluded El Greco. The actual cross-module *producer* must remain Sacred Art PR #887, whose year-wide master gallery and exception decisions are independently required before it supplies any `artSelection` at runtime.
+
+**Important interface choice:** a matching verse reference alone cannot approve pictorial event depiction; exact relation is an explicit curatorial decision. This is particularly important for the John 2 Temple cleansing and the John 20 empty tomb.
+
+## A9 Genesis navigation
+
+The five curated Genesis family roots now expose **+ / − / Reset** magnification for their linked SVG. Magnification scales the real scrollable SVG width and height without introducing new relationships; the scroll centre is preserved. Keyboard users can reach the controls and the original source-citation list remains available. On the current 390px phone journey this must pass a real-browser test showing 120%, then return to 100%, with the number of cited edges unchanged.
+
+This is still a genealogical **research diagram**, not a verified universal family tree and not an ancient map.
