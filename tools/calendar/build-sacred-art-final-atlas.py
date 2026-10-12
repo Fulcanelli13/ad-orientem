@@ -95,7 +95,7 @@ def create(args):
           "preview":preview,"uses":uses.get(a["id"],[]),
           "selectedSubjectKeys":selections_by_id[a["id"]],
           "refusedSubjectKeys":refusals_by_id[a["id"]],
-          "policyExcluded":bool(re.search(r"\\bel[ -]?greco\\b",a.get("artist") or "",re.I)),
+          "policyExcluded":bool(re.search(r"\bel[ -]?greco\b",a.get("artist") or "",re.I)),
           "publicationApproved":False
         })
     if args.strict_images and missing:
@@ -103,7 +103,7 @@ def create(args):
     # Stable fingerprints prevent a saved exception-only review from silently
     # applying to new originals or changed date associations on a later build.
     source_fingerprints={
-        "originalsSha256":hashlib.sha256("\\n".join(sorted(a["id"]+":"+a["acquisition"]["originalSha256"]
+        "originalsSha256":hashlib.sha256("\n".join(sorted(a["id"]+":"+a["acquisition"]["originalSha256"]
              for a in acquired)).encode()).hexdigest(),
         "dateAssociationsSha256":hashlib.sha256(json.dumps(indexed["days"],
              sort_keys=True,separators=(",",":"),ensure_ascii=False).encode()).hexdigest()
@@ -161,11 +161,11 @@ details{border-top:1px solid var(--line);margin-top:14px;padding-top:11px}summar
 .use strong{font-size:12px}.use .evidence{color:var(--muted);font-size:11px;margin:4px 0}
 .tier{font-size:11px;color:var(--gold)}.use button{grid-column:2;justify-self:start;margin-top:5px;font-size:12px;min-height:30px}
 #calendar{display:none}.day{padding:16px 0;border-bottom:1px solid var(--line)}.day h2{margin:0 0 5px}.day .artref{display:inline-block;margin:5px 6px 3px 0;padding:7px 9px;border:1px solid var(--line);border-radius:5px}
-.more{color:var(--muted);font-size:12px}.warning{color:var(--warn)}dialog{max-width:95vw;max-height:96vh;background:#070b10;color:var(--text);border:1px solid #666}dialog img{max-width:87vw;max-height:85vh;object-fit:contain}
+.review-confirm{display:flex;align-items:center;gap:8px;max-width:540px;padding:5px 9px;border:1px solid var(--line);border-radius:6px}.review-confirm input{flex:none}.review-policy-block{color:#efad96;border-left:3px solid #d78d77;padding-left:8px;margin:8px 0}.prior-selection{color:#c9d4bb;font-size:12px;margin:8px 0}.prior-refusal{color:#d7b596;font-size:11px;margin:5px 0}.more{color:var(--muted);font-size:12px}.warning{color:var(--warn)}dialog{max-width:95vw;max-height:96vh;background:#070b10;color:var(--text);border:1px solid #666}dialog img{max-width:87vw;max-height:85vh;object-fit:contain}
 @media(max-width:650px){header{position:relative}.grid{grid-template-columns:1fr}main{padding:14px}.stat{gap:8px 15px}}
 </style></head><body>
 <header><div class="eyebrow">1962 Calendar · Complete Sacred Art Review</div><h1>Artwork &amp; liturgical placement</h1>
-<p>Approve, reject or investigate paintings, and flag incorrect Calendar placements. Only explicit approvals count as reviewed. Image rights, cropping and technical publication checks remain separate.</p>
+<p>One complete exception-only editorial review. Flag unsuitable artwork or incorrect uses; unflagged items count as editorially accepted only after you explicitly mark the entire gallery reviewed. Rights, cropping, edition and publication remain separate.</p>
 <div class="stat" id="stats"></div>
 <nav><button id="showArt">Artworks</button><button id="showCalendar">Calendar</button><button id="showPending">Unacquired source links</button>
 <input id="search" type="search" placeholder="Find artwork, artist, feast or Gospel" aria-label="Search">
@@ -173,10 +173,12 @@ details{border-top:1px solid var(--line);margin-top:14px;padding-top:11px}summar
 <select id="tier"><option value="specific">Specific/event proposals</option><option value="all">All associations, including seasonal &amp; generic</option></select>
 <select id="rights"><option value="">All rights labels</option><option value="CC0">CC0 only</option><option value="held">Rights held</option></select>
 <button class="primary" id="export">Export review JSON</button>
+<label class="review-confirm"><input id="reviewComplete" type="checkbox"> I have reviewed every displayed source original and all proposed day placements (not merely the filtered view)</label>
 <button id="importBtn">Import previous review</button><input type="file" id="importFile" accept=".json,application/json" hidden>
 </nav>
 </header>
-<main><p class="note">One source original per card, with its verified museum URL and proposed Calendar uses. Approve or reject image quality; use “Misplaced” if a specific date association is incorrect. Your decisions are saved locally and can be exported or imported.</p>
+<main><p class="note">One source original per card, with museum URL and every proposed Calendar use. Flag a globally unsuitable painting, a misplaced date or an item needing investigation. Existing subject-scoped selections are shown but do not approve unrelated uses. The export remains a draft until the full, unfiltered review is explicitly completed.</p>
+<p class="warning" id="completionStatus" role="status">Draft review: no broad editorial acceptance is implied.</p>
 <section id="art"><div class="grid" id="gallery"></div></section>
 <section id="calendar"><div id="days"></div></section>
 <section id="pending" style="display:none"><h2>Unacquired artworks and museum leads</h2><p>These source records lack acquired and checksum-verified image previews; open their museum URLs before making artistic decisions.</p><div id="pendingList"></div></section>
@@ -192,8 +194,9 @@ const catalog=new Map(data.items.map(x=>[x.id,x]));
 const acceptedTiers=new Set(["STRICT_DAY_SOURCE_LINK","VERIFIED_CONTEXTUAL_LEDGER","OBSERVED_ID_TAG_UNREVIEWED","TITULAR_PERSON_OR_EVENT_CANDIDATE","APPOINTED_GOSPEL_SCENE_CANDIDATE"]);
 const exceptions=new Map();
 const approvals=new Map();
-const storageKey="ao-sacred-art-exceptions-2026-"+data.summary.acquired;
-const approvalStorageKey="ao-sacred-art-approvals-2026-"+data.summary.acquired;
+const fingerprint=data.sourceFingerprints?.originalsSha256||"unknown";
+const storageKey="ao-sacred-art-exceptions-2026-"+fingerprint;
+const approvalStorageKey="ao-sacred-art-approvals-2026-"+fingerprint;
 const escape=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const key=(id,date,principal,type)=>[id,date||"*",principal||"*",type].join("|");
 function restore(){
@@ -238,8 +241,7 @@ function filtered(x){
  return true;
 }
 function flags(a,u){
- return '<button class="approve '+(approvals.has(a.id)?"active":"")+'" data-kind="APPROVE_ARTWORK_EDITORIALLY">'+(approvals.has(a.id)?"Approved ✓":"Approve image")+'</button>'+
- '<button class="flag '+(has("REJECT_ARTWORK_GLOBALLY",a)?"active":"")+'" data-kind="REJECT_ARTWORK_GLOBALLY">Reject globally</button>'+
+ return '<button class="flag '+(has("REJECT_ARTWORK_GLOBALLY",a)?"active":"")+'" data-kind="REJECT_ARTWORK_GLOBALLY">Reject globally</button>'+
  '<button class="investigate '+(has("INVESTIGATE_FURTHER",a,u)?"active":"")+'" data-kind="INVESTIGATE_FURTHER"'+(u?' data-date="'+escape(u.date)+'" data-principal="'+escape(u.principal)+'"':'')+'>Investigate</button>';
 }
 function draw(){
@@ -259,6 +261,9 @@ function draw(){
     '<div class="muted">'+escape(a.artist)+' · '+escape(a.dateCreated)+'</div>'+
     '<div class="rights">'+escape(a.rights)+(a.rights==="CC0"?"":" · SEPARATE RIGHTS REVIEW")+'</div>'+
     '<div class="tags">'+escape(a.subjectTags.slice(0,8).join(" · "))+'</div>'+
+    (a.selectedSubjectKeys.length?'<div class="prior-selection">Previously selected for: '+escape(a.selectedSubjectKeys.join(" · "))+' (subject only)</div>':'')+
+    (a.refusedSubjectKeys.length?'<div class="prior-refusal">Previously unsuitable for: '+escape(a.refusedSubjectKeys.join(" · "))+'</div>':'')+
+    (a.policyExcluded?'<div class="review-policy-block">Excluded artist: do not publish or infer approval from an old subject selection; replacement requires a separate source review.</div>':'')+
     '<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(a.source)+'">'+escape(a.source)+'</a>'+
     '<div class="actions">'+flags(a,null)+'</div>'+
     '<label>Notes on this artwork <textarea data-note="'+escape(a.id)+'" placeholder="Only needed when flagging"></textarea></label>'+
@@ -294,7 +299,8 @@ function draw(){
  "<span><strong>"+data.summary.sourceAlternatives+"</strong> proposed date uses</span>"+
  "<span><strong>"+data.summary.previewMissing+"</strong> missing previews</span>"+
  "<span><strong>"+count+"</strong> flagged exceptions</span>"+
- "<span><strong>"+approved+"</strong> explicitly approved</span>"+
+ "<span><strong>"+data.priorCuratorReview.selectionCount+"</strong> pre-reviewed subject choices</span>"+
+ "<span><strong>"+approved+"</strong> legacy image approvals</span>"+
  "<span><strong>"+view.length+"</strong> shown</span>";
 }
 function drawDays(){
@@ -331,10 +337,31 @@ $("showArt").onclick=()=>{$("art").style.display="block";$("calendar").style.dis
 $("showCalendar").onclick=()=>{$("art").style.display="none";$("calendar").style.display="block";$("pending").style.display="none";drawDays()};
 $("showPending").onclick=()=>{$("art").style.display="none";$("calendar").style.display="none";$("pending").style.display="block";drawPending()};
 $("closeZoom").onclick=()=>$("zoom").close();
+function completionState(){
+ const requested=$("reviewComplete").checked;
+ const hasAllPreviews=data.summary.previewMissing===0;
+ const hasAssociations=data.days.length===365&&data.summary.sourceAlternatives>0;
+ const complete=requested&&hasAllPreviews&&hasAssociations;
+ const excluded=data.items.filter(a=>a.policyExcluded).map(a=>a.id);
+ $("completionStatus").textContent=complete
+  ?"Full-gallery editorial review confirmed. Exceptions apply; publication rights and crop gates remain closed."
+  :requested&&!hasAllPreviews?"Cannot complete: one or more original-image previews are missing."
+  :"Draft review only. Existing subject selections remain scoped; all new artwork/date associations are still unreviewed.";
+ return {complete,excluded};
+}
+$("reviewComplete").addEventListener("change",completionState);
 $("export").onclick=()=>{
- const payload={schema:"AO_SACRED_ART_CURATOR_REVIEW_V2",
+ const {complete,excluded}=completionState();
+ const payload={schema:"AO_SACRED_ART_CURATOR_NEGATIVE_REVIEW_V3",
   reviewYear:data.year,exportedAt:new Date().toISOString(),
-  rule:"Only explicit approval is editorial acceptance; independent legal, crop, offline and app QA still required",
+  reviewCompleted:complete,
+  reviewScope:"ALL_ACQUIRED_ORIGINALS_AND_ALL_2026_DATED_ASSOCIATIONS",
+  rule:complete?"UNFLAGGED_EDITORIALLY_ACCEPTED_EXCEPT_POLICY_EXCLUSIONS":"DRAFT_NO_INFERRED_APPROVAL",
+  publicationApproved:false,technicalRightsAndCropCertification:false,
+  sourceFingerprints:data.sourceFingerprints,
+  reviewedCounts:{artworks:data.summary.acquired,dates:data.days.length,proposedUses:data.summary.sourceAlternatives,missingPreviews:data.summary.previewMissing},
+  excludedArtworkIds:excluded,
+  priorCuratorReview:data.priorCuratorReview,
   baselineUniqueSHA:data.summary.acquired,
   approvals:[...approvals.values()],exceptions:[...exceptions.values()]};
  const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));
@@ -345,16 +372,21 @@ $("importBtn").onclick=()=>$("importFile").click();
 $("importFile").onchange=async e=>{
  try{
   const imported=JSON.parse(await e.target.files[0].text());
-  if(!["AO_SACRED_ART_NEGATIVE_EXCEPTIONS_V1","AO_SACRED_ART_CURATOR_REVIEW_V2"].includes(imported.schema))throw Error("Wrong format");
+  if(!["AO_SACRED_ART_NEGATIVE_EXCEPTIONS_V1","AO_SACRED_ART_CURATOR_REVIEW_V2","AO_SACRED_ART_CURATOR_NEGATIVE_REVIEW_V3"].includes(imported.schema))throw Error("Wrong format");
+  if(imported.schema==="AO_SACRED_ART_CURATOR_NEGATIVE_REVIEW_V3"&&
+    (imported.sourceFingerprints?.originalsSha256!==data.sourceFingerprints.originalsSha256||
+     imported.sourceFingerprints?.dateAssociationsSha256!==data.sourceFingerprints.dateAssociationsSha256))
+    throw Error("Source originals or date assignments changed; review cannot be reused without reinspection");
   exceptions.clear();approvals.clear();
+  $("reviewComplete").checked=imported.schema==="AO_SACRED_ART_CURATOR_NEGATIVE_REVIEW_V3"&&imported.reviewCompleted===true;
   for(const x of imported.approvals||[])if(catalog.has(x.artworkId)&&catalog.get(x.artworkId).sha===x.originalSha256)
     approvals.set(x.artworkId,x);
   for(const x of imported.exceptions||[])if(catalog.has(x.artworkId)&&catalog.get(x.artworkId).sha===x.originalSha256)
     exceptions.set(key(x.artworkId,x.date,x.observedPrincipalId,x.kind),x);
-  save();draw();if($("calendar").style.display==="block")drawDays();
+  save();draw();completionState();if($("calendar").style.display==="block")drawDays();
  }catch(err){alert("Review import rejected: "+err.message)}
 };
-restore();draw();
+restore();draw();completionState();
 })();
 </script></body></html>'''
 if __name__=="__main__":
