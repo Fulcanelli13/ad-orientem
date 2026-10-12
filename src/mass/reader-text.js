@@ -178,8 +178,13 @@ function properTextCueId(block){
 }
 function annotateProperParagraphs(block,rows){
   const sourceCueId=properTextCueId(block);
-  return rows.map(row=>Object.freeze({
-    ...row,sourceCueIds:Object.freeze([sourceCueId]),displayLanguage:"VERNACULAR"
+  return rows.map((row,index)=>Object.freeze({
+    ...row,
+    // Exactly one canonical owner per source cue. Other paragraphs extend its
+    // displayed scroll territory, but are not duplicate canonical events.
+    sourceCueIds:Object.freeze(index===0?[sourceCueId]:[]),
+    properCueScopeId:sourceCueId,
+    displayLanguage:"VERNACULAR"
   }));
 }
 function properParagraphs(block,properSlots,{language="en"}={}){
@@ -241,7 +246,12 @@ export function buildReaderSectionCard({
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");
     }
-    const projected=raw.length ? projectResolvedReaderText({status:"READY",paragraphs:raw}) : [];
+    const projected=raw.length
+      ? projectResolvedReaderText({status:"READY",paragraphs:raw}).map((p,index)=>
+        block.Proper_Slot && raw[index]?.properCueScopeId
+          ? Object.freeze({...p,properCueScopeId:raw[index].properCueScopeId})
+          : p)
+      : [];
     paragraphs.push(...projected);
     blockMeta.push(Object.freeze({
       blockId:block.Block_ID,
