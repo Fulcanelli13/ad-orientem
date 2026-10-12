@@ -53,12 +53,18 @@ try{
     curator:node?.dataset.r17CuratedReview,
     title:app?.getCurrentCard?.()?.title,
     progress:node?.querySelector('[data-role="progress"]')?.textContent??"",
+    navOpacity:parseFloat(getComputedStyle(node.querySelector('[data-reader-nav="next"]')).opacity),
+    progressOpacity:parseFloat(getComputedStyle(node.querySelector('[data-role="progress"]')).opacity),
     overflow:document.documentElement.scrollWidth>innerWidth+1};
   });
   assert.equal(result.error,null,option.label+": "+result.error);
   assert.equal(result.source,39,option.label);
   assert.equal(result.model,option.cards,option.label);
   assert.equal(result.curator,option.curated,option.label);
+  if(option.curated==="true"||option.rite){
+    assert.ok(result.navOpacity>=.59,option.label+" touch arrows must be discoverable in low light");
+    assert.ok(result.progressOpacity>=.79,option.label+" card counter must remain legible in low light");
+  }
   if(option.rite){
     const initial=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
