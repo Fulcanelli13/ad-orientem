@@ -89,7 +89,8 @@ export function renderLineageReview(data,{language="en",surface="genealogies",li
  '<nav class="aoBibleReviewTabs" aria-label="'+esc(L(lang,"Biblical Atlas views","Vues de l’Atlas biblique"))+'">'+tabs+'</nav>';
  const wrapper=body=>'<style>'+CSS+'</style><section class="aoFindSurface aoBibleReview" data-ao-find-owner="AO_FIND_APP_V1" data-ao-bible-review>'+head+'<div class="aoBibleReviewScroll">'+body+'</div></section>';
  if(!review)return wrapper('<p class="aoBibleReviewEmpty">'+esc(L(lang,"The reviewed genealogical evidence is unavailable. The 151-event chronology is unaffected.","Les données généalogiques ne sont pas disponibles. La chronologie de 151 étapes reste intacte."))+'</p>');
- const warning='<p class="aoBibleReviewNotice" role="note"><strong>'+esc(L(lang,"Research preview — not approved for publication.","Aperçu de recherche — publication non autorisée."))+'</strong> '+esc(L(lang,"Scripture, patristic witnesses and later traditions are classified separately. Location names do not certify GPS or historical routes.","Les Écritures, les témoignages patristiques et les traditions tardives sont distingués. Les lieux ne certifient aucune coordonnée ni route historique."))+'</p>';
+ const warning='<details class="aoBibleReviewNotice"><summary>'+esc(L(lang,"Research preview — not approved for publication.","Aperçu de recherche — publication non autorisée."))+'</summary>'+ 
+ '<p>'+esc(L(lang,"Scripture, patristic witnesses and later traditions are classified separately. Location names do not certify GPS or historical routes.","Les Écritures, les témoignages patristiques et les traditions tardives sont distingués. Les lieux ne certifient aucune coordonnée ni route historique."))+'</p></details>';
  let body="";
  if(surface==="genealogies"){
   const key=["genesis","matthew","luke"].includes(lineage)?lineage:"genesis";
@@ -99,7 +100,7 @@ export function renderLineageReview(data,{language="en",surface="genealogies",li
   if(key==="genesis"){
    const rows=genesisGenerationRows(data,{root,depth});
    body+='<h2>'+esc(L(lang,"Families of Genesis","Familles de la Genèse"))+'</h2><p>'+
-   esc(L(lang,"90 source-referenced family links in the curated review set; the full 3,231-person index is not an approved family tree.","90 liens familiaux référencés dans la sélection ; l’index des 3 231 personnes n’est pas un arbre généalogique validé."))+'</p>'+
+   esc(L(lang,"90 source-referenced family links in this reviewed subset.","90 liens familiaux référencés dans cette sélection en cours de vérification."))+'</p>'+
    '<div class="aoBibleReviewChoices" role="group" aria-label="'+esc(L(lang,"Choose family","Choisir une famille"))+'">'+
    [["adam","Adam","Adam"],["noah","Noah","Noé"],["abraham","Abraham","Abraham"],["jacob","Jacob","Jacob"],["joseph","Joseph","Joseph"]]
     .map(([k,en,fr])=>BUTTON("data-bible-review-root",k,k===root,L(lang,en,fr))).join("")+'</div>';
@@ -153,6 +154,7 @@ const CSS=[
 ".aoBibleReviewScroll{padding:14px clamp(14px,3vw,30px) 35px;overflow-y:auto;overscroll-behavior:contain;min-height:0;flex:1}",
 ".aoBibleReview h2{font:500 24px/1.2 Georgia,serif;margin:22px 0 8px}.aoBibleReview h3{font:500 20px Georgia,serif;margin:20px 0 10px}.aoBibleReview p{font:14px/1.55 Georgia,serif;color:#d1c5ae;max-width:750px}",
 ".aoBibleReviewNotice{border-left:2px solid #927a4d;padding:8px 11px;margin:0 0 15px!important;background:#14191e;color:#c4b8a4!important;font:12px/1.5 system-ui!important}",
+".aoBibleReviewNotice summary{cursor:pointer;color:#ead3a3;font:600 12px/1.4 system-ui}.aoBibleReviewNotice p{color:#c4b8a4;font:12px/1.5 system-ui;margin:8px 0 0}",
 ".aoBibleReviewNotice strong{display:block;color:#ead3a3}.aoBibleReviewChoices{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.aoBibleReviewPeople{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr))}",
 ".aoBibleReviewPeople button{white-space:normal;text-align:left;max-width:100%;min-height:48px}.aoBibleReviewControls{display:flex;gap:9px;align-items:center;margin:15px 0;color:#baa983;font:12px system-ui}.aoBibleReviewControls span{flex:1}",
 ".aoBibleReviewList{display:grid;gap:8px;list-style:none;padding:0;margin:16px 0;max-width:830px}.aoBibleReviewList li{display:flex;flex-direction:column;gap:5px;padding:11px 12px;background:#111923;border:1px solid #d9c59a2a;border-radius:10px;min-width:0}",
