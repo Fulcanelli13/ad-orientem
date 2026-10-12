@@ -609,36 +609,36 @@ const ROSARY_GUIDE_CSS=`
    microtype. Scoped to the *active* v3.4.14 player, not Mass, not the
    Rosary Methods chooser, and never to other devotional screens. */
 const ROSARY_PHONE_CONTROLS_CSS=`
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .pbShell[data-ao-rosary-exact-donor="v3.4.14"] .aoP435930RosaryBar button{
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoP435930RosaryBar button{
   min-height:44px!important;
   padding:10px 12px!important;
   font:650 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
 }
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .r29-head-recitation{
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation{
   height:auto!important;min-height:44px!important;
 }
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .r29-head-recitation button{
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
   height:auto!important;min-height:44px!important;
   padding:8px 12px!important;font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
 }
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuide>summary{
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryGuide>summary{
   min-height:48px!important;
   font-size:13px!important;
 }
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening a,
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]{
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryScriptureOpening a,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]{
   display:inline-flex!important;align-items:center!important;
   min-height:44px!important;padding:8px 0!important;
   font-size:12px!important;line-height:1.4!important;
 }
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] :is(
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) :is(
   [data-lab-rosary-today],[data-pb-rosary-set],[data-v38-rosary-form],
   [data-lab-rosary-next],[data-lab-rosary-prev],
   [data-pb-rosary-change],[data-lab-rosary-change]
 ){
   min-height:44px!important;touch-action:manipulation;
 }
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] :is(
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) :is(
   .aoP435930RosaryBar button,.r29-head-recitation button,
   .aoRosaryGuide>summary,[data-lab-rosary-next],[data-lab-rosary-prev],
   [data-pb-rosary-set],[data-v38-rosary-form]
@@ -648,15 +648,15 @@ const ROSARY_PHONE_CONTROLS_CSS=`
 @media(max-width:560px){
   /* Prevent a 44px recitation pair from stealing width from the mystery
      heading: keep it a separate phone row, with the prayer controls below. */
-  #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head{
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head{
     grid-template-columns:44px minmax(0,1fr)!important;
   }
-  #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .r29-head-recitation{
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head .r29-head-recitation{
     grid-column:1/-1!important;justify-self:stretch!important;
     min-width:0!important;max-width:none!important;width:100%!important;
     margin:0!important;
   }
-  #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-view-head .r29-head-recitation button{
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head .r29-head-recitation button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
     flex:1 1 50%!important;min-width:0!important;
   }
 }
