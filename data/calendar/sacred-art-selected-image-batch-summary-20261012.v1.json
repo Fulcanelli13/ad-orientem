@@ -1,0 +1,175 @@
+{
+  "schema": "AO_SACRED_ART_SELECTED_IMAGE_BATCH_SUMMARY_20261012_V1",
+  "asOf": "2026-10-12",
+  "branch": "platform/885-sacred-art-candidates",
+  "ownerPR": 887,
+  "purpose": "Immutable evidence digest across three successful, source-locked QA acquisition runs. Do not silently promote research files to release assets, alter selected painting identities, or mistake public-domain claims for universal commercial-rights sign-off.",
+  "historicalUserSelectionsProtected": true,
+  "counts": {
+    "uniqueUserSelectedSubjectsWithSourceImages": 6,
+    "sourceImageVariantsAcquired": 7,
+    "fullOriginalImageVariants": 6,
+    "reviewDerivatives": 1,
+    "exactMetArchiveByteHashMatches": 2,
+    "originalsAbove2500pxLongSide": 6,
+    "verified19kMuseumOriginMasterImages": 1,
+    "sourcePhotographsRejectedForQuality": 1,
+    "productionApprovedImages": 0,
+    "completedReleaseRightsCropGates": 0
+  },
+  "runs": [
+    {
+      "id": 38251551187,
+      "htmlUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38251551187",
+      "artifactId": 11748365622,
+      "artifactName": "selected-masterpieces-12oct-qa-originals-and-gallery",
+      "status": "SUCCESS",
+      "subjects": [
+        "ROS-01",
+        "ROS-15",
+        "DEV-18"
+      ],
+      "assertion": "3/3 hash-verified for review; 2 byte-identical to prior archive; KMSKA 4k derivative."
+    },
+    {
+      "id": 38252699382,
+      "htmlUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38252699382",
+      "artifactId": 11748477515,
+      "artifactName": "selected-commons-12oct-originals-license-hold",
+      "status": "SUCCESS",
+      "subjects": [
+        "BIB-G01",
+        "DEV-06",
+        "ROS-13"
+      ],
+      "assertion": "3/3 Commons original-file SHA-1/SHA-256 and size verified; global PD-Art rights pending."
+    },
+    {
+      "id": 38253733275,
+      "htmlUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38253733275",
+      "artifactId": 11748963911,
+      "artifactName": "rubens-trinity-19k-full-original-research-only",
+      "status": "SUCCESS",
+      "subjects": [
+        "DEV-18"
+      ],
+      "assertion": "Full 19,178 x 19,721 JPEG downloaded from Commons museum-IIIF provenance, SHA-1 and SHA-256 validated."
+    }
+  ],
+  "variants": [
+    {
+      "object": "met-438724",
+      "subjectId": "ROS-01",
+      "secondarySubjectId": "DEV-07",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "source": "MET_API_ORIGINAL",
+      "sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "width": 3741,
+      "height": 3658,
+      "reviewRunId": 38251551187,
+      "rightsEvidence": "Met public domain object and open-access CC0 policy",
+      "visualStatus": "FULL_COMPOSITION_REVIEW_PENDING_NARROW_PANEL_EDGE",
+      "publicationApproved": false
+    },
+    {
+      "object": "met-437524",
+      "subjectId": "ROS-15",
+      "artist": "Peter Paul Rubens",
+      "title": "The Coronation of the Virgin (oil sketch)",
+      "source": "MET_API_ORIGINAL",
+      "sha256": "9416f3a1f193c5fb5cf9e65bc329feb73fbc07187d0a11b09e5087579d0c9ab6",
+      "width": 3036,
+      "height": 3716,
+      "reviewRunId": 38251551187,
+      "rightsEvidence": "Met public-domain object and Open Access CC0 policy",
+      "visualStatus": "FULL_COMPOSITION_REVIEW_PENDING",
+      "publicationApproved": false
+    },
+    {
+      "object": "kmska-314",
+      "subjectId": "DEV-18",
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Trinity",
+      "source": "KMSKA_IIIF_4000_DERIVATIVE",
+      "sha256": "5996132846d655eeaecbf0baf8887989c6ec2a57348a08db59cac5f54a3964b9",
+      "width": 4000,
+      "height": 4113,
+      "reviewRunId": 38251551187,
+      "rightsEvidence": "Museum Image CC0; manifest PD Mark",
+      "visualStatus": "NOT_ORIGINAL_REPLACED_BY_FULL_KMSKA_MASTER",
+      "publicationApproved": false
+    },
+    {
+      "object": "kmska-314",
+      "subjectId": "DEV-18",
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Trinity",
+      "source": "KMSKA_IIIF_FULL_MASTER_COMMONS_COPY",
+      "sha256": "cd3477e583cf55ca2bd651aad191b916ec84a4af73b3ed36dc7e4e48b9c0ef38",
+      "width": 19178,
+      "height": 19721,
+      "bytes": 56200164,
+      "reviewRunId": 38253733275,
+      "rightsEvidence": "KMSKA first-party marks Image CC0; Commons original file PD-mark linked to institutional IIIF",
+      "visualStatus": "FULL_MASTER_HASHED_RIGHTS_CONTEXT_AND_FINAL_CROP_PENDING",
+      "publicationApproved": false
+    },
+    {
+      "object": "commons-prado-adoration",
+      "subjectId": "BIB-G01",
+      "artist": "Peter Paul Rubens",
+      "title": "The Adoration of the Magi",
+      "source": "COMMONS_PD_ART_FULL_ORIGINAL",
+      "sha256": "b2f6afdaed9a31f351a44aede5cdf7621d10847cbafa39f7f1e4fa23333f2ded",
+      "width": 3051,
+      "height": 2131,
+      "reviewRunId": 38252699382,
+      "rightsEvidence": "Commons PD Art / PDM; not museum CC0",
+      "visualStatus": "FULL_ASPECT_ONLY_RIGHTS_REVIEW_PENDING",
+      "publicationApproved": false
+    },
+    {
+      "object": "commons-prado-immaculate",
+      "subjectId": "DEV-06",
+      "artist": "Peter Paul Rubens",
+      "title": "The Immaculate Conception",
+      "source": "COMMONS_PD_ART_FULL_ORIGINAL",
+      "sha256": "201df794fff9663520c1b23123052ecb5ac87012548336ebc4ea34f55aff78fa",
+      "width": 2166,
+      "height": 3189,
+      "reviewRunId": 38252699382,
+      "rightsEvidence": "Commons PD Art / PDM; not museum CC0",
+      "visualStatus": "FULL_COMPOSITION_RIGHTS_REVIEW_PENDING",
+      "publicationApproved": false
+    },
+    {
+      "object": "commons-restout-pentecost",
+      "subjectId": "ROS-13",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "source": "COMMONS_PD_ART_FULL_ORIGINAL",
+      "sha256": "c32547f474f4908331c9e7a013809076a65bbbcdc2f8cec6c5b6af2f7e6a1b09",
+      "width": 4037,
+      "height": 2444,
+      "reviewRunId": 38252699382,
+      "rightsEvidence": "Commons PD Art / PDM; not museum CC0",
+      "visualStatus": "REJECTED_SOURCE_PHOTOGRAPH_VISIBLE_FRAME_AND_GLARE",
+      "publicationApproved": false
+    }
+  ],
+  "gates": {
+    "commercialPhotoRightsGloballyCleared": false,
+    "allImagesFrameAndGlareFree": false,
+    "allCropsReviewed": false,
+    "userHomepageArtworkApprovals": false,
+    "appAssetsPhysicallyPackaged": false,
+    "pr887ConflictResolved": false
+  },
+  "requiredNext": [
+    "Acquire a clean uncropped studio image of user's selected Restout INV 20303 instead of uploading source photograph with frame and glare.",
+    "Finish face/edge/frame QA for selected source images and store an explicit crop acceptance record; 9:16 cover is prohibited as a default.",
+    "Determine commercial photo-reuse rights for Prado/Louvre Commons PD-Art images in intended distribution markets; no false CC0 assumption.",
+    "Generate production webp from actually approved source bytes and connect to the existing fail-closed canonical selection system after PR conflict resolution."
+  ]
+}
