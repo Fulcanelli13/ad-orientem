@@ -1104,7 +1104,7 @@ try{
   await page.locator("#aoPray435930 [data-p435930-lib-open='sacrament_act_of_contrition']").click();
   await page.waitForSelector("#aoPray435930 .aoP435930Prayer",{timeout:5000});
   await page.waitForFunction(()=>globalThis.AO_PRAY_COHERENCE_V435930?.audit?.().readerContract==="fluid-v1",null,{timeout:5000});
-  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930 [data-ao-pray-focus='active']").length===1,null,{timeout:5000});
+  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoLibraryLine[data-ao-devo-active='true']").length===1,null,{timeout:5000});
   const prayReader=await page.evaluate(()=>{
     const audit=globalThis.AO_PRAY_COHERENCE_V435930?.audit?.()??{};
     const flip=document.querySelector("#aoPray435930 .aoP435930Flip");
@@ -1113,10 +1113,12 @@ try{
     return {
       ...audit,
       recitationButtons:document.querySelectorAll("#aoPray435930 [data-p435930-global-recitation]").length,
-      prayerTitle:document.querySelector("#aoPray435930 .aoP435930Prayer h3")?.textContent?.trim()??"",
+      prayerTitle:document.querySelector("#aoPray435930 .aoP435930LibraryReader .aoDevoCardTitle")?.textContent?.trim()??"",
+      libraryCards:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoCard").length,
+      titleStops:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoStop").length,
       latinHidden:latin?.hidden??null,
       vernHidden:vern?.hidden??null,
-      activeFocus:document.querySelectorAll("#aoPray435930 [data-ao-pray-focus='active']").length,
+      activeFocus:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoLibraryLine[data-ao-devo-active='true']").length,
       legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
     };
   });
@@ -1126,7 +1128,9 @@ try{
   assert.equal(prayReader.stackedTranslationPairs,0,"PRAY stacked Latin and vernacular instead of one-language-at-a-time presentation");
   assert.ok(prayReader.fluidUnits>0,"PRAY reader lost fluid focus units");
   assert.equal(prayReader.readerContract,"fluid-v1");
-  assert.equal(prayReader.activeFocus,1,"PRAY fluid reader does not expose exactly one active focus unit");
+  assert.equal(prayReader.libraryCards,1,"Prayer Library no longer presents a single named prayer card");
+  assert.equal(prayReader.titleStops,1,"Prayer Library lost its named card timeline");
+  assert.equal(prayReader.activeFocus,1,"PRAY card reader does not expose exactly one active paragraph");
   assert.ok(prayReader.prayerTitle.length>0,"PRAY prayer title is blank");
   assert.notEqual(prayReader.latinHidden,prayReader.vernHidden,"PRAY translation pair does not expose exactly one visible language");
   assert.equal(prayReader.legacyOpen,false,"legacy Prayer Book reopened inside prayer reading");

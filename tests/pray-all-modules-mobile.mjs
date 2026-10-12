@@ -410,6 +410,36 @@ try{
      });
      throw new Error("Prayer reading did not render for "+id+": "+JSON.stringify(diag)+"; "+String(failure));
    });
+   await page.waitForFunction(()=>{
+     const reader=document.querySelector("#aoPray435930.open .aoP435930LibraryReader");
+     return Boolean(reader?.querySelector(".aoDevoSequenceTimeline")&&
+       reader?.querySelector(".aoDevoCardScroll .aoLibraryLine[data-ao-devo-active='true']"));
+   },null,{timeout:4500}).catch(async error=>{
+     const diag=await page.evaluate(()=>{
+       const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
+       const reader=m?.querySelector(".aoP435930LibraryReader");
+       return {view:m?.dataset.aoPrayView,library:!!reader,
+         card:reader?.querySelector(".aoDevoCard")?.outerHTML?.slice(0,1800),
+         timeline:reader?.querySelectorAll(".aoDevoSequenceTimeline").length,
+         lines:reader?.querySelectorAll(".aoLibraryLine").length,
+         active:reader?.querySelectorAll(".aoLibraryLine[data-ao-devo-active='true']").length,
+         sourceNode:reader?.querySelector(".aoP435930Text,[data-face-v]")?.outerHTML?.slice(0,900)};
+     });
+     throw new Error("Library dual-axis card missing for "+id+": "+JSON.stringify(diag)+"; "+error);
+   });
+   const libraryDeck=await page.evaluate(()=>{
+     const reader=document.querySelector("#aoPray435930.open .aoP435930LibraryReader");
+     const scroll=reader?.querySelector(".aoDevoCardScroll");
+     return {card:reader?.querySelectorAll(".aoDevoCard").length,
+       stops:reader?.querySelectorAll(".aoDevoStop").length,
+       current:reader?.querySelectorAll(".aoDevoStop[aria-current='step']").length,
+       active:reader?.querySelectorAll(".aoLibraryLine[data-ao-devo-active='true']").length,
+       title:reader?.querySelector(".aoDevoCardTitle")?.textContent?.trim(),
+       scroll:getComputedStyle(scroll).overflowY};
+   });
+   assert.ok(libraryDeck.card===1&&libraryDeck.stops===1&&libraryDeck.current===1&&
+     libraryDeck.active===1&&libraryDeck.title?.length>2&&libraryDeck.scroll==="auto",
+     "Library prayer is not a named, locally scrolling illuminated card: "+id+" "+JSON.stringify(libraryDeck));
    const prayer=await page.evaluate(()=>{
      const root=document.querySelector("#aoPray435930.open"),card=root?.querySelector(".aoP435930Prayer");
      return {text:card?.textContent?.trim()||"",body:card?.querySelector(".aoP435930Text,.aoP435930Flip")?.textContent?.trim()||"",
