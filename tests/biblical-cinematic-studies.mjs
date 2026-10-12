@@ -57,7 +57,7 @@ assert.match(en,/Chapter context/,"chapter background stays accessible but not r
 const theatreMarkup=en.slice(en.indexOf('<section class="aoFindSurface aoBibleStudy"'));
 assert.ok(theatreMarkup.indexOf('<nav class="aoBibleStudySceneTimeline"')<theatreMarkup.indexOf('<article class="aoBibleStudyScene"'),
  "scene navigation precedes the focused reading region (ignore earlier CSS selectors)");
-assert.ok(en.indexOf("data-bible-scene-stage")<en.indexOf("Research comparison"),
+assert.ok(theatreMarkup.indexOf('<article class="aoBibleStudyScene"')<theatreMarkup.indexOf("Research comparison"),
  "technical editorial notice must no longer dominate the top of the phone reader");
 assert.match(en,/prefers-reduced-motion:reduce/,"stage motion respects user settings");
 
