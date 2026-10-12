@@ -1126,6 +1126,10 @@ function prepareRosaryActive(r){
    const body=document.createElement('div');
    body.className='aoRosaryActiveOptionsBody';
    options.append(summary,body);
+   // Initial state is restored only on a newly recreated donor sheet.
+   // Never override a native details click on an already mounted control;
+   // the donor repaints asynchronously and its toggle event may be pending.
+   options.open=rosaryActiveOptionsOpen;
    options.addEventListener('toggle',()=>{rosaryActiveOptionsOpen=options.open===true});
  }
  if(after.nextElementSibling!==options)after.insertAdjacentElement('afterend',options);
@@ -1141,7 +1145,6 @@ function prepareRosaryActive(r){
    S.rosary.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'),
    S.rosary.recitation==='group'?L('Group','Groupe'):L('Individual','Individuel')
  ].join(' · ');
- options.open=rosaryActiveOptionsOpen;
  return true;
 }
 function decorateRosary(){
