@@ -10,6 +10,8 @@ on:
       - "tests/biblical-cinematic-studies.mjs"
       - "data/explore/biblical-cinematic-studies-review.v1.json"
       - "data/explore/biblical-lineage-curated-review.v1.json"
+      - "data/explore/biblical-atlas-editorial-holds.v1.json"
+      - "tests/biblical-atlas-editorial-holds.mjs"
       - ".github/workflows/biblical-atlas-current-main.yml"
   workflow_dispatch:
 permissions:
@@ -42,6 +44,8 @@ jobs:
         run: node tests/biblical-lineage-native-review.mjs
       - name: Cinematic 181-to-151 evidence crosswalk
         run: node tests/biblical-cinematic-studies.mjs
+      - name: Source-critical 151-to-181 release holds
+        run: node tests/biblical-atlas-editorial-holds.mjs
       - name: Existing Explore and sacred place regression
         run: |
           node tests/explore-surface.mjs
