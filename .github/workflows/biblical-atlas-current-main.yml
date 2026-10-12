@@ -8,6 +8,7 @@ on:
       - "tests/explore-bible-atlas-*.mjs"
       - "tests/biblical-lineage-native-review.mjs"
       - "tests/biblical-cinematic-studies.mjs"
+      - "tests/biblical-cinematic-original-181-lock.mjs"
       - "data/explore/biblical-cinematic-studies-review.v1.json"
       - "data/explore/biblical-lineage-curated-review.v1.json"
       - "data/explore/biblical-atlas-editorial-holds.v1.json"
@@ -48,6 +49,8 @@ jobs:
         run: node tests/biblical-lineage-native-review.mjs
       - name: Cinematic 181-to-151 evidence crosswalk
         run: node tests/biblical-cinematic-studies.mjs
+      - name: Cryptographic freeze of the complete original 181 Theatre scenes
+        run: node tests/biblical-cinematic-original-181-lock.mjs
       - name: Source-critical 151-to-181 release holds
         run: node tests/biblical-atlas-editorial-holds.mjs
       - name: Canonical art-to-181 Theatre subjects — 44 reviewed subject positions
