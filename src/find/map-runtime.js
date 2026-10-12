@@ -264,7 +264,10 @@ export async function mountExploreMap(container,items,{
   const camera=boundedWorldMapOptions(initialViewport);
   if(phoneOverview){
     camera.minZoom=-2;
-    camera.maxBounds=[[-259.99,-89],[259.99,89]];
+    // A bounds clamp wider than a world can still force the opposite
+    // MapLibre world copy at negative zoom. Do not install maxBounds for this
+    // overview; apply a finite centre clamp on moveend instead.
+    delete camera.maxBounds;
     camera.center=phoneOverview.center;
     camera.zoom=phoneOverview.zoom;
   }
@@ -278,6 +281,18 @@ export async function mountExploreMap(container,items,{
   // Keep copyright/provider credit reachable and independent of the bottom
   // right "Near me" action. The compact control expands on explicit tap.
   if(compactAttribution)map.addControl?.(new maplibre.AttributionControl({compact:true}),"bottom-left");
+  if(phoneOverview){
+    // Preserve one bounded logical world without snapping the camera to the
+    // dateline during a global, negative-zoom overview.
+    map.on?.("moveend",()=>{
+      const position=map.getCenter?.();
+      if(!position)return;
+      const lng=clamp(position.lng,-179.99,179.99);
+      const lat=clamp(position.lat,-85,85);
+      if(Math.abs(lng-position.lng)>0.01||Math.abs(lat-position.lat)>0.01)
+        map.jumpTo?.({center:[lng,lat],zoom:map.getZoom?.()});
+    });
+  }
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
   if(maplibre.FullscreenControl)map.addControl?.(new maplibre.FullscreenControl({pseudo:true}),"top-right");
   const visualStatus=attachExploreMapStatus(container,map,{win});
