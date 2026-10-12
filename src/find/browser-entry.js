@@ -155,7 +155,9 @@ export function createFindOwner(win=globalThis){
   function centerResearchSelection(node){
     for(const selector of [".aoBibleReviewTabs [aria-pressed=true]",".aoBibleStudyTabs [aria-pressed=true]",".aoBibleStudyChapters [aria-pressed=true]",".aoBibleStudySceneTimeline [aria-pressed=true]"]){
       const active=node?.querySelector?.(selector),track=active?.parentElement;
-      if(!track||track.scrollWidth<=track.clientWidth)return;
+      // A non-scrollable or missing earlier tab rail must not prevent
+      // the active scene's horizontal timeline from being centered.
+      if(!track||track.scrollWidth<=track.clientWidth)continue;
       const trackRect=track.getBoundingClientRect(),activeRect=active.getBoundingClientRect();
       track.scrollLeft+=activeRect.left+activeRect.width/2-trackRect.left-trackRect.width/2;
     }
