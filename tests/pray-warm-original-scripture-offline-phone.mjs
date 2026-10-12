@@ -27,6 +27,10 @@ try{
  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
  const page=await context.newPage();
  const errors=[];page.on("pageerror",e=>errors.push(e.message));
+ page.on("console",m=>{
+  if(m.type()==="warning"||m.type()==="error")
+   console.log("SOURCE_BROWSER_"+m.type().toUpperCase()+" "+m.text().slice(0,700));
+ });
  await page.goto("http://127.0.0.1:4301/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
