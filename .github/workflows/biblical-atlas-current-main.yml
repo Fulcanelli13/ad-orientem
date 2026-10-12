@@ -6,6 +6,8 @@ on:
       - "src/find/**"
       - "data/explore/bible-places-*.json"
       - "tests/explore-bible-atlas-*.mjs"
+      - "tests/biblical-lineage-native-review.mjs"
+      - "data/explore/biblical-lineage-curated-review.v1.json"
       - ".github/workflows/biblical-atlas-current-main.yml"
   workflow_dispatch:
 permissions:
@@ -27,11 +29,14 @@ jobs:
           node --check src/find/browser-entry.js
           node --check src/find/bible-atlas.js
           node --check src/find/bible-atlas-expanded-milestones.js
+          node --check src/find/bible-lineage-review.js
           node --check src/find/explore-data-service.js
           node --check src/find/map-runtime.js
           node --check src/find/heritage-presentation.js
       - name: Canonical 151 milestones, references and no invented pins
         run: npm run test:explore-bible-atlas
+      - name: Review-only lineage and apostolic evidence
+        run: node tests/biblical-lineage-native-review.mjs
       - name: Existing Explore and sacred place regression
         run: |
           node tests/explore-surface.mjs
