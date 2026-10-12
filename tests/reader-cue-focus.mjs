@@ -56,30 +56,4 @@ markActiveCue(simulated,"AO.SM.C0001");
 assert.equal(writes.length,1,"unchanged focus state rewrote live DOM attributes");
 markActiveCue(simulated,"AO.SM.C0002");
 assert.deepEqual(writes,[["AO.SM.C0001","active","true"],["AO.SM.C0001","active","false"],["AO.SM.C0002","active","true"]]);
-// Multiple display paragraphs of the *same* Proper lesson share one source
-// event, but only the paragraph nearest the moving 39% reading line lights up.
-// Do not create duplicate canonical C0075 events or pull C0076 forward.
-const makeProper=(offset,id)=>{
-  const el={dataset:{cueId:id,properCueScope:id,active:"false"}};
-  el.getBoundingClientRect=()=>({
-    top:offset-scoped.scrollTop,bottom:offset+100-scoped.scrollTop,height:100
-  });
-  return el;
-};
-const scoped={scrollTop:0,scrollHeight:320,clientHeight:100,
-  getBoundingClientRect:()=>({top:0,bottom:100,height:100}),
-  querySelectorAll:()=>properRows
-};
-const properRows=[makeProper(0,"AO.SM.C0075"),makeProper(110,"AO.SM.C0075")];
-markActiveCue(scoped,"AO.SM.C0075");
-assert.deepEqual(properRows.map(p=>p.dataset.active),["true","false"],
-  "opening of Epistle lost first lit paragraph");
-scoped.scrollTop=80;
-markActiveCue(scoped,"AO.SM.C0075");
-assert.deepEqual(properRows.map(p=>p.dataset.active),["false","true"],
-  "second Epistle paragraph did not light without inventing another cue");
-markActiveCue(scoped,"AO.SM.C0076");
-assert.deepEqual(properRows.map(p=>p.dataset.active),["false","false"],
-  "Epistle illumination leaked into server response");
-
 console.log("reader cue focus: PASS — 39% focus zone and no redundant DOM mutations.");

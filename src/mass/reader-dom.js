@@ -1071,7 +1071,6 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       speakerRole:p.speakerRole??null,
       speakerEvidence:p.speakerEvidence??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
-      properCueScopeId:p.properCueScopeId??null,
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
 
@@ -2555,12 +2554,6 @@ export function createReaderDomAdapter({
           // its source-record cue; other GF records must never acquire an
           // identity from a shared card's source list.
           if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
-          // Sourced Proper paragraphs may share one canonical text cue
-          // without duplicating an event; the scope is presentation-only.
-          if(p.properCueScopeId && /^AO\.SM\.C\d{4}$/.test(p.properCueScopeId)){
-            node.dataset.cueId=p.properCueScopeId;
-            node.dataset.properCueScope=p.properCueScopeId;
-          }
           // Sung Gloria and Credo intonations pair a canonical incipit cue
           // with its priestly completion on one legible paragraph. Both
           // source IDs remain on data-source-cue-ids; the opening cue owns

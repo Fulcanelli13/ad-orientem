@@ -183,29 +183,6 @@ function stateOnlyBlock(block){
   );
 }
 
-// Proper words are resolved dynamically, but their liturgical slot is already
-// owned by an exact canonical text cue in each Low/Sung corpus. Without that
-// source ID the visible Proper is ignored by the LIVE 39%-line cue tracker.
-function properTextCueId(block){
-  const candidate=(block?.units??[]).find(unit=>
-    /^AO\.SM\.C\d{4}$/.test(String(unit?.cue_id??"")) &&
-    String(unit?.clock??"").toUpperCase()!=="MINISTER_RESPONSE" &&
-    String(unit?.clock??"").toUpperCase()!=="USER_RESPONSE"
-  );
-  if(!candidate)throw new Error((block?.Block_ID??"PROPER")+": canonical Proper text cue missing");
-  return candidate.cue_id;
-}
-function annotateProperParagraphs(block,rows){
-  const sourceCueId=properTextCueId(block);
-  return rows.map((row,index)=>Object.freeze({
-    ...row,
-    // Exactly one canonical owner per source cue. Other paragraphs extend its
-    // displayed scroll territory, but are not duplicate canonical events.
-    sourceCueIds:Object.freeze(index===0?[sourceCueId]:[]),
-    properCueScopeId:sourceCueId,
-    displayLanguage:"VERNACULAR"
-  }));
-}
 function properParagraphs(block,properSlots,{language="en"}={}){
   const slot=block.Proper_Slot;
   const envelope=properSlots?.[slot] ?? null;
@@ -221,18 +198,18 @@ function properParagraphs(block,properSlots,{language="en"}={}){
       latin:p.latin ?? p.lat ?? null,
       vernacular:p.vernacular ?? p.english ?? p.en ?? null,
     }));
-    return annotateProperParagraphs(block,
-      composeProperReaderParagraphs(block.Block_ID,resolved,{language}));
+    return composeProperReaderParagraphs(block.Block_ID,resolved,{language})
+      .map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
   }
   const latin=data.latin ?? data.Latin_Text ?? null;
   const english=data.vernacular ?? data.english ?? data.English_Text ?? null;
   if(!latin || !english) throw new Error(block.Block_ID+": Proper slot "+slot+" lacks bilingual resolved text");
-  return annotateProperParagraphs(block,composeProperReaderParagraphs(block.Block_ID,[{
+  return composeProperReaderParagraphs(block.Block_ID,[{
     id:block.Block_ID+".proper",
     kind:"TEXT",
     latin,
     vernacular:english,
-  }],{language}));
+  }],{language}).map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
 }
 
 export function buildReaderSectionCard({
@@ -265,12 +242,7 @@ export function buildReaderSectionCard({
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");
     }
-    const projected=raw.length
-      ? projectResolvedReaderText({status:"READY",paragraphs:raw}).map((p,index)=>
-        block.Proper_Slot && raw[index]?.properCueScopeId
-          ? Object.freeze({...p,properCueScopeId:raw[index].properCueScopeId})
-          : p)
-      : [];
+    const projected=raw.length ? projectResolvedReaderText({status:"READY",paragraphs:raw}) : [];
     paragraphs.push(...projected);
     blockMeta.push(Object.freeze({
       blockId:block.Block_ID,

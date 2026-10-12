@@ -71,40 +71,8 @@ export function activeCueFromScrollContainer(container,options={}){
 
 export function markActiveCue(container,cueId){
   if(!container?.querySelectorAll)return;
-  const nodes=[...container.querySelectorAll(".ao-reader-paragraph[data-cue-id]")];
-  const matching=nodes.filter(node=>cueId && node.dataset.cueId===cueId);
-  // Several Proper paragraphs can share ONE canonical source event. Pick one
-  // visually focused paragraph, without creating a second C0075/C0086 cue.
-  const scoped=matching.length>1 &&
-    matching.every(node=>node.dataset.properCueScope===cueId);
-  let currentParagraph=null;
-  if(scoped){
-    currentParagraph=matching[0];
-    const viewport=Math.max(1,Number(container.clientHeight)||1);
-    const scrollTop=Math.max(0,Number(container.scrollTop)||0);
-    const extent=Math.max(viewport,Number(container.scrollHeight)||viewport);
-    if(scrollTop>=Math.max(0,extent-viewport-8)){
-      currentParagraph=matching.at(-1);
-    }else if(scrollTop>8){
-      const rootRect=container.getBoundingClientRect?.();
-      if(rootRect && matching.every(node=>node.getBoundingClientRect)){
-        const rects=matching.map(node=>node.getBoundingClientRect());
-        const firstCenter=rects[0].top-rootRect.top+scrollTop+rects[0].height/2;
-        const steadyOffset=viewport*.39;
-        const offset=Math.min(steadyOffset,Math.max(24,firstCenter+scrollTop*.8));
-        const focusLine=rootRect.top+offset;
-        let distance=Infinity;
-        for(let i=0;i<matching.length;i++){
-          const rect=rects[i];
-          const delta=Math.abs((rect.top+rect.bottom)/2-focusLine);
-          if(delta<distance){distance=delta;currentParagraph=matching[i];}
-        }
-      }
-    }
-  }
-  for(const node of nodes){
-    const active=String(Boolean(cueId && node.dataset.cueId===cueId &&
-      (!scoped || node===currentParagraph)));
+  for(const node of container.querySelectorAll(".ao-reader-paragraph[data-cue-id]")){
+    const active=String(Boolean(cueId && node.dataset.cueId===cueId));
     // The cue tracker may refresh on scroll, resize, and Schola resize.
     // Avoid unnecessary DOM writes / style invalidation at every frame.
     if(node.dataset.active!==active)node.dataset.active=active;

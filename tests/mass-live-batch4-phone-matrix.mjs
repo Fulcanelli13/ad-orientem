@@ -146,8 +146,23 @@ try{
      "production form-specific LIVE card count lost for "+form+"/"+family);
    assert(!initial.overflow && initial.rootWidth<=initial.viewportWidth+1,"phone horizontal overflow");
    assert(initial.noImplicitReverence,"the app inferred a pretext priest reverence");
-   const samples={};
-   for(const cue of ["AO.SM.C0075","AO.SM.C0112","AO.SM.C0174","AO.SM.C0181","AO.SM.C0212"]){
+   // The canonical Proper event C0075 is source-only, owned by a priest
+   // event ledger rather than a fabricated paragraph clock.
+   const epistle=await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const card=api.model.cards.find(c=>(c.blocks??[]).some(b=>b.properSlot==="EPISTLE_OR_LESSON"));
+     if(!card)return {error:"EPISTLE_PROPER_MISSING"};
+     api.showSequence(card.sequence);
+     const root=document.querySelector("#ao-r17-native-reader-preview");
+     return {text:root?.querySelector('[data-role="paragraphs"]')?.textContent??"",
+       falselyCued:!!root?.querySelector('.ao-reader-paragraph[data-cue-id="AO.SM.C0075"]') ||
+         card.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0075"))};
+   });
+   assert(!epistle.error,"Missing source-resolved Epistle "+form+"/"+family);
+   assert(epistle.text.length>0,"Blank Epistle "+form+"/"+family);
+   assert(!epistle.falselyCued,"Source-only priest cue C0075 was fabricated by text scrolling");
+   const samples={EPISTLE_PROPER:epistle};
+   for(const cue of ["AO.SM.C0112","AO.SM.C0174","AO.SM.C0181","AO.SM.C0212"]){
     const focus=await focusCue(page,cue);
     const state=await page.evaluate(()=>{
       const a=window.__AO_PHONE_PREVIEW;
@@ -229,7 +244,8 @@ try{
  const summary={schema:"ao-mass-live-batch4-acceptance-matrix-v1",total:results.length,
   formCount:forms.length,scenarioCount:families.length,
   explicitPresentationRule:"LOW_39__ORDINARY_SUNG_VOTIVE_65__SOLEMN_OR_REQUIEM_48",
-  distinctSourceCueSamples:["C0075","C0112","C0174","C0181","C0212"],
+  distinctSourceCueSamples:["C0112","C0174","C0181","C0212"],
+  separatelyProtectedSourceOnlyCues:["C0075"],
   emulatorNotPhysicalDevice:true,syntheticProperNotLiturgicalCertification:true,
   results};
  await writeFile(resolve(artifactDir,"acceptance-matrix.json"),JSON.stringify(summary,null,2)+"\n");
