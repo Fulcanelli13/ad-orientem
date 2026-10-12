@@ -49,9 +49,9 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   }
   const fr=properToReaderSlots(result,{language:"fr"});
   const en=properToReaderSlots(result,{language:"en"});
-  assert.equal(fr.slots.COLLECT_SET.data.paragraphs.length,expected+1,
+  assert.equal(fr.slots.COLLECT_SET.data.paragraphs.length,expected+1+(form==="LOW"?1:0),
     form+" needs separate main/Mission focus segments plus separate St Luke if Low");
-  assert.equal(en.slots.COLLECT_SET.data.paragraphs.length,expected+1);
+  assert.equal(en.slots.COLLECT_SET.data.paragraphs.length,expected+1+(form==="LOW"?1:0));
   assert.equal(fr.slots.COLLECT_SET.data.paragraphs[0].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
   assert.equal(fr.slots.COLLECT_SET.data.paragraphs[1].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
   const audit=assessPrintableProper(day,{massForm:form,language:"fr"});
