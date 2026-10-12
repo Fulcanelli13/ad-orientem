@@ -1440,7 +1440,11 @@ try{
   await wide.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
   await wide.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
   const wideStandard=wide.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
-  if(await wideStandard.count())await wideStandard.click();
+  if(await wideStandard.count()){
+    if(await wideStandard.isVisible())await wideStandard.click();
+    else assert.equal(await wideStandard.evaluate(el=>el.classList.contains("active")),true,
+      "wide Rosary options must retain the standard default while collapsed");
+  }
   await wide.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await wide.waitForSelector("#aoPrayerBookRoot[data-ao-rosary-active-root='true'] [data-lab-rosary-next]",{state:"visible",timeout:5000});
   const wideOurFatherTarget=await wide.evaluate(()=>{
