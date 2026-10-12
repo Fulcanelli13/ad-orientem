@@ -196,7 +196,8 @@ export function renderBibleAtlasToString(vm){
  '<nav class="aoBibleAtlasViewTabs" aria-label="'+esc(L(lang,"Biblical Atlas views","Vues de l’Atlas biblique"))+'">'+
  '<button type="button" data-bible-review-surface="timeline" aria-pressed="true">'+esc(L(lang,"Chronology","Chronologie"))+'</button>'+
  '<button type="button" data-bible-review-surface="genealogies" aria-pressed="false">'+esc(L(lang,"Genealogies · review","Généalogies · recherche"))+'</button>'+
- '<button type="button" data-bible-review-surface="apostles" aria-pressed="false">'+esc(L(lang,"Apostolic lives · review","Vies apostoliques · recherche"))+'</button></nav>'+
+ '<button type="button" data-bible-review-surface="apostles" aria-pressed="false">'+esc(L(lang,"Apostolic lives · review","Vies apostoliques · recherche"))+'</button>'+ 
+ '<button type="button" data-bible-review-surface="cinematic" aria-pressed="false">'+esc(L(lang,"Scene studies · review","Études des scènes · recherche"))+'</button></nav>'+
  '<div class="aoBibleAtlasEraHeader"><span data-bible-era-name>'+esc(L(lang,ERAS[s.era][0],ERAS[s.era][1]))+'</span>'+
  '<small>'+esc(L(lang,"Scroll horizontally through the milestones","Faites défiler les étapes horizontalement"))+'</small></div>'+
  '<div class="aoBibleAtlasTimeline"><div class="aoBibleAtlasCursor" aria-hidden="true"></div><div class="aoBibleAtlasTrack" data-bible-track aria-label="'+esc(L(lang,"Continuous biblical chronology","Chronologie biblique continue"))+'"><div class="aoBibleAtlasTrackPad" aria-hidden="true"></div>';
