@@ -148,6 +148,15 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930DevotionalGuidedReader .aoP435930GuidedContext>summary{
  display:flex;align-items:center;min-height:44px;color:var(--muted,#aeb2b8);font-size:13px}
 
+
+/* Rosary exact donor is a separate shell: shared chapter rail styling is scoped there. */
+#aoPrayerBookRoot.open .aoRosaryNamedTimeline{display:grid;grid-template-columns:minmax(0,1fr);width:100%;min-width:0;max-width:100%;padding:7px 8px;box-sizing:border-box;border-block:1px solid var(--border,rgba(255,255,255,.14));background:var(--bg,#080c12);position:sticky;top:65px;z-index:15}
+#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStops{display:flex;min-width:0;max-width:100%;gap:6px;overflow-x:auto;scrollbar-width:thin;scroll-snap-type:x proximity}
+#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStop{flex:0 0 min(46%,180px);min-height:52px;padding:8px 10px;display:grid;gap:3px;scroll-snap-align:center;text-align:left;border:1px solid var(--border,rgba(255,255,255,.15));border-radius:9px;background:var(--surface-1,#141a20);color:var(--muted,#aeb2b8)}
+#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStop[aria-current="step"]{border-color:var(--liturgical,#d8bd7d);color:var(--text,#f1e7d7)}
+#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStopNumber{font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.12em}
+#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStopTitle{font:500 12px/1.25 Georgia,serif;white-space:normal}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;

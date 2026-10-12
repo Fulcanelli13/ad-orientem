@@ -14,8 +14,9 @@ const server=http.createServer(async(req,res)=>{
  try{
  const p=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname));
  if(p!==root&&!p.startsWith(root+sep)){res.writeHead(403);res.end("Forbidden");return;}
+ const body=await readFile(p);
  res.writeHead(200,{"content-type":mime[extname(p)]||"application/octet-stream","cache-control":"no-store"});
- res.end(await readFile(p));
+ res.end(body);
  }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message||e))}
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
@@ -233,6 +234,27 @@ try{
      "Active preferences missing after next canonical bead");
    assert.match(await player.locator(".aoRosaryActiveOptionsState").textContent(),/Guided/,
      "Reading choice lost after advancing actual Rosary");
+   // The chapter rail is a non-owning view of the preserved bead engine.
+   const chapterRail=player.locator(".aoRosaryNamedTimeline");
+   await chapterRail.waitFor({state:"visible",timeout:9000});
+   const options=await chapterRail.locator("[data-ao-rosary-chapter]").evaluateAll(nodes=>nodes.map(b=>({
+     start:Number(b.dataset.aoRosaryChapter),title:b.querySelector(".aoDevoStopTitle")?.textContent||"",
+     active:b.getAttribute("aria-current")==="step"
+   })));
+   assert.ok(options.length>=5&&options.filter(x=>x.active).length===1,
+     "Rosary title timeline missing the five mysteries or unique current chapter");
+   assert.ok(options.every((x,i)=>x.title&&Number.isInteger(x.start)&&
+      (i===0||x.start>options[i-1].start)), "Rosary timeline chapters must follow source steps");
+   const jump=options.find(x=>x.title.includes("Mystery")||/Annunciation|Visitation|Nativity|Agony|Résurrection|Annonciation|Visitation/.test(x.title));
+   assert.ok(jump,"No named Rosary mystery chapter");
+   await chapterRail.locator('[data-ao-rosary-chapter="'+jump.start+'"]').click();
+   await page.waitForFunction(target=>window.AO_ROSARY_V381?.state?.()?.step===target,jump.start,{timeout:9000});
+   await page.waitForFunction(()=>document.querySelectorAll("#aoPrayerBookRoot.open .aoRosaryNamedTimeline [aria-current='step']").length===1,
+     null,{timeout:9000});
+   assert.equal(await player.locator(".aoRosaryNamedTimeline [aria-current='step']").count(),1,
+     "Rosary named timeline failed to follow canonical step jump");
+   assert.equal(await player.locator(".pbShell").count(),1,
+     "Chapter jump replaced canonical Rosary donor");
    assert.deepEqual(errors,[],"Uncaught reader errors: "+errors.slice(0,5).join("; "));
    console.log("PASS "+width+"px canonical Rosary: 44px controls, source, guide, no overflow/state mutation");
   }finally{await page.close();}
