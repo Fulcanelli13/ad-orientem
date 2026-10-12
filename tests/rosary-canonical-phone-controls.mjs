@@ -265,6 +265,11 @@ try{
    await page.screenshot({path:resolve(captures,"rosary-dual-axis-"+width+".png"),
      fullPage:false,animations:"disabled"});
 
+   // Native Rosary repaint follows the canonical cursor update; require real
+   // bead buttons to be restored before evaluating their click ownership.
+   await page.waitForFunction(()=>document.querySelectorAll(
+     "#aoPrayerBookRoot.open .lab-bead-stage [data-ao-rosary-bead]").length>0,
+     null,{timeout:9000});
    // A shell telemetry collision once caused the legacy bead dispatcher
    // to cancel every descendant click before it reached the real control.
    const shellData=await player.locator(".pbShell").evaluate(shell=>({
