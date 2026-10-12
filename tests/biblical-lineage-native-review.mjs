@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
  BIBLE_REVIEW_DEFAULT,validateLineageReviewCorpus,lineageSequence,exactAtlasReferenceIndex,
- genesisGenerationRows,apostolicProfile,renderLineageReview
+ genesisGenerationRows,renderGenesisAncestryDiagram,apostolicProfile,renderLineageReview
 } from "../src/find/bible-lineage-review.js";
 import {buildBibleAtlas} from "../src/find/bible-atlas.js";
 const data=JSON.parse(readFileSync(new URL("../data/explore/biblical-lineage-curated-review.v1.json",import.meta.url),"utf8"));
@@ -44,6 +44,22 @@ const luc=renderLineageReview(data,{language:"fr",lineage:"luke",page:6});
 const apostolic=renderLineageReview(data,{language:"en",surface:"apostles",apostle:"mary",atlasStops});
 const philip=renderLineageReview(data,{language:"en",surface:"apostles",apostle:"philip-evangelist"});
 assert.match(genesis,/Generation 1/);assert.match(genesis,/data-bible-review-depth/);
+assert.match(genesis,/data-bible-kin-diagram/,"reviewed Genesis data must have a real graphical network");
+assert.match(genesis,/<svg[^>]+role="group"/,"real SVG family graph");
+assert.match(genesis,/aoBibleKinEdge/,"source parentage connectors");
+assert.match(genesis,/Accessible source relationship list/,"accessible original edge list remains available");
+for(const root of ["adam","noah","abraham","jacob","joseph"]){
+ const sourceRows=genesisGenerationRows(data,{root,depth:6});
+ const graph=renderGenesisAncestryDiagram(sourceRows,{root,language:"fr"});
+ assert.match(graph,/data-bible-kin-diagram/);
+ assert.equal((graph.match(/<path d=/g)||[]).length,sourceRows.length,
+  "every source-backed family edge must have exactly one visual connector: "+root);
+ assert.match(graph,/https:\/\/|https:&amp;/,"original source URLs remain present");
+ assert.doesNotMatch(graph,/data-bible-map|lat=|lng=|<canvas/,"genealogy is not an ancient geographic map");
+ assert.match(graph,/Généalogie sourcée/);
+}
+assert.equal(renderGenesisAncestryDiagram([]),"","empty family evidence must not fabricate nodes");
+
 assert.match(math,/legal\/putative/i);assert.match(math,/Joseph/);
 assert.match(luc,/Luc 3/);assert.match(luc,/Joseph/);
 assert.match(apostolic,/Research preview/);assert.match(apostolic,/Jerusalem Dormition/);assert.match(apostolic,/Competing Ephesus/);
