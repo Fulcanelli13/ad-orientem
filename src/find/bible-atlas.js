@@ -259,9 +259,9 @@ export function renderBibleAtlasToString(vm){
  let html='<section class="aoFindSurface aoBibleAtlasSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-bible-atlas>'+
  '<header class="aoBibleAtlasHeader"><button type="button" data-bible-atlas-close aria-label="'+esc(L(lang,"Back to Explore","Retour à Explorer"))+'">←</button>'+
  '<div><small>'+esc(L(lang,"EXPLORE · SCRIPTURE PREVIEW","EXPLORER · ÉCRITURE · APERÇU"))+'</small><h1>'+esc(L(lang,"Biblical Atlas","Atlas biblique"))+'</h1></div>'+
- '<button type="button" data-bible-follow aria-label="'+esc(L(lang,"Return to active pin","Revenir au repère actif"))+'">⌖</button></header>'+
+ '<button type="button" data-bible-follow aria-label="'+esc(L(lang,"Centre selected event","Recentrer l’étape sélectionnée"))+'">⌖</button></header>'+
  '<div class="aoBibleAtlasEraHeader"><span data-bible-era-name>'+esc(L(lang,ERAS[s.era][0],ERAS[s.era][1]))+'</span>'+
- '<small>'+esc(L(lang,"Swipe milestones · selected Gospel narrative, not a dated harmony","Faites défiler les étapes · récit évangélique choisi, non une chronologie datée"))+'</small></div>'+
+ '<small>'+esc(L(lang,"Swipe events · selected reading sequence, not a dated history","Parcourez les épisodes · parcours choisi, non une chronologie datée"))+'</small></div>'+
  '<div class="aoBibleAtlasTimeline"><div class="aoBibleAtlasCursor" aria-hidden="true"></div><div class="aoBibleAtlasTrack" data-bible-track aria-label="'+esc(L(lang,"Continuous biblical chronology","Chronologie biblique continue"))+'"><div class="aoBibleAtlasTrackPad" aria-hidden="true"></div>';
  for(const step of steps){
   const boundary=step.index===0||steps[step.index-1].era!==step.era;
