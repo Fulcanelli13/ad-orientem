@@ -1,0 +1,284 @@
+{
+  "schema": "MASS_1962_ZACCARIA_PRINTED_SOURCE_RECONCILIATION_V1",
+  "date": "2026-10-11",
+  "sourcePath": "Sancti/07-05",
+  "celebration": "S_ANTONII_MARIAE_ZACCARIA_CONFESSORIS_III_CLASSIS",
+  "scope": "Printed sample pp. 538–539 visually examined against Divinum Officium Sancti/07-05. This does not certify full 1962 volume provenance, every Bible verse word or celebration across rubrical contexts.",
+  "witnessUrls": {
+    "printedSample": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+    "latinSource": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt"
+  },
+  "stats": {
+    "distinctLiturgicalSegmentsExamined": 9,
+    "printedPagesReviewed": 2,
+    "conditionalChantAlternatives": 2,
+    "fullyEditionCertified": 0,
+    "publicationApproved": 0
+  },
+  "contextualRules": [
+    {
+      "when": "DEFAULT_FEAST",
+      "sequence": "Graduale + Alleluia",
+      "observedInPrintedSource": true
+    },
+    {
+      "when": "VOTIVE_AFTER_SEPTUAGESIMA",
+      "sequence": "Graduale + Tractus replacing Alleluia and its verse",
+      "observedInPrintedSource": true
+    },
+    {
+      "when": "VOTIVE_EASTERTIDE",
+      "sequence": "Two Alleluia verses replacing Graduale",
+      "observedInPrintedSource": true
+    }
+  ],
+  "rows": [
+    {
+      "slot": "INTROIT",
+      "context": "DEFAULT_FEAST",
+      "printedReferences": "1 Cor 2:4; Ps 110:1",
+      "printedLatinIncipit": "Sermo meus et praedicatio mea",
+      "upstreamSection": "Introitus",
+      "printedMissalPage": 538,
+      "facsimilePdfPage": 5,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 538,
+          "pdfPage": 5
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "Introitus"
+        }
+      ]
+    },
+    {
+      "slot": "EPISTLE",
+      "context": "DEFAULT_FEAST",
+      "printedReferences": "1 Tim 4:8-16",
+      "printedLatinIncipit": "Pietas ad omnia utilis est",
+      "upstreamSection": "Lectio",
+      "printedMissalPage": 538,
+      "facsimilePdfPage": 5,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 538,
+          "pdfPage": 5
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "Lectio"
+        }
+      ]
+    },
+    {
+      "slot": "GRADUAL",
+      "context": "DEFAULT_FEAST",
+      "printedReferences": "Philipp 1:8-10",
+      "printedLatinIncipit": "Testis mihi est Deus",
+      "upstreamSection": "Graduale",
+      "printedMissalPage": 538,
+      "facsimilePdfPage": 5,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 538,
+          "pdfPage": 5
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "Graduale"
+        }
+      ]
+    },
+    {
+      "slot": "ALLELUIA_VERSE",
+      "context": "DEFAULT_FEAST",
+      "printedReferences": "Philipp 1:11",
+      "printedLatinIncipit": "Repleti fructu justitiae",
+      "upstreamSection": "Graduale",
+      "printedMissalPage": 539,
+      "facsimilePdfPage": 6,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 539,
+          "pdfPage": 6
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "Graduale"
+        }
+      ]
+    },
+    {
+      "slot": "TRACT",
+      "context": "VOTIVE_AFTER_SEPTUAGESIMA",
+      "printedReferences": "2 Cor 10:17-18; Gal 6:14; Philipp 1:21",
+      "printedLatinIncipit": "Qui gloriatur in Domino glorietur",
+      "upstreamSection": "Tractus",
+      "printedMissalPage": 539,
+      "facsimilePdfPage": 6,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 539,
+          "pdfPage": 6
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "Tractus"
+        }
+      ]
+    },
+    {
+      "slot": "EASTERTIDE_TWO_ALLELUIAS",
+      "context": "VOTIVE_EASTERTIDE",
+      "printedReferences": "2 Cor 7:4; 2 Cor 6:13",
+      "printedLatinIncipit": "Repletus sum consolatione",
+      "upstreamSection": "GradualeP",
+      "printedMissalPage": 539,
+      "facsimilePdfPage": 6,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 539,
+          "pdfPage": 6
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "GradualeP"
+        }
+      ]
+    },
+    {
+      "slot": "GOSPEL",
+      "context": "DEFAULT_FEAST",
+      "printedReferences": "Marc 10:15-21",
+      "printedLatinIncipit": "Quisquis non receperit regnum Dei",
+      "upstreamSection": "Evangelium",
+      "printedMissalPage": 539,
+      "facsimilePdfPage": 6,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 539,
+          "pdfPage": 6
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "Evangelium"
+        }
+      ]
+    },
+    {
+      "slot": "OFFERTORY",
+      "context": "DEFAULT_FEAST",
+      "printedReferences": "Ps 137:1-2",
+      "printedLatinIncipit": "In conspectu Angelorum psallam tibi",
+      "upstreamSection": "Offertorium",
+      "printedMissalPage": 539,
+      "facsimilePdfPage": 6,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 539,
+          "pdfPage": 6
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "Offertorium"
+        }
+      ]
+    },
+    {
+      "slot": "COMMUNION",
+      "context": "DEFAULT_FEAST",
+      "printedReferences": "Philipp 3:17",
+      "printedLatinIncipit": "Imitatores mei estote fratres",
+      "upstreamSection": "Communio",
+      "printedMissalPage": 539,
+      "facsimilePdfPage": 6,
+      "correlation": "PRINTED_LATIN_AND_SOURCE_SECTION_MATCH",
+      "printedPageVisuallyReviewed": true,
+      "upstreamLatinSectionRead": true,
+      "bibleEditionWordByWordChecked": false,
+      "editionFullVolumeProvenanceChecked": false,
+      "publicReleaseApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "printedPage": 539,
+          "pdfPage": 6
+        },
+        {
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-05.txt",
+          "section": "Communio"
+        }
+      ]
+    }
+  ],
+  "publicationStatus": "RESEARCH_ONLY",
+  "holds": [
+    {
+      "kind": "BIBLE_WORD_BY_WORD_EDITION",
+      "reason": "Exact verse text and numbering not yet collated with Clementine, Crampon and Douay for all nine rows.",
+      "approved": false
+    },
+    {
+      "kind": "1962_FULL_VOLUME_AUTHENTICATION",
+      "reason": "The two-page sample has not been authenticated against the full edition title/decree and rubrical setting.",
+      "approved": false
+    }
+  ]
+}

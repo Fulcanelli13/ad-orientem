@@ -1,0 +1,1272 @@
+{
+  "schema": "MASS_1962_SOURCE_CUE_SCRIPTURE_CROSSWALK_V1",
+  "status": "1962_REPO_LATIN_CUE_CHECKED_BIBLE_AND_HISTORY_NOT_CERTIFIED",
+  "date": "2026-10-11",
+  "sourcePaths": {
+    "sung": "data/presentation/reader-text-sung.v1.json",
+    "low": "data/presentation/reader-text-low.v1.json",
+    "formation": "data/learn/mass-formation-campion.v1.json",
+    "properResolver": "src/mass/scripture-reading-context.js",
+    "model": "src/mass/reader-model.js"
+  },
+  "sourcePolicy": "Research links keyed to normalized phrases in both real canonical form corpora; source cue is authority, 48 LIVE cards are presentation; Bible references and author interpretations require separate text/edition review.",
+  "records": [
+    {
+      "id": "AO.MSB.001",
+      "cueId": "AO.SM.C0002",
+      "blockId": "AO.SM.B002",
+      "latinPhraseAnchor": "Introibo ad altare Dei",
+      "scriptureResearchReference": "Psalms 42:4 (Vulgate)",
+      "evidenceClass": "DIRECT_PSALM_TEXT",
+      "priorResearchIds": [
+        "MS001"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.002",
+      "cueId": "AO.SM.C0004",
+      "blockId": "AO.SM.B003",
+      "latinPhraseAnchor": "Iudica me Deus",
+      "scriptureResearchReference": "Psalms 42 (Vulgate)",
+      "evidenceClass": "DIRECT_PSALM_TEXT",
+      "priorResearchIds": [
+        "MS001",
+        "MS048"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.003",
+      "cueId": "AO.SM.C0017",
+      "blockId": "AO.SM.B005",
+      "latinPhraseAnchor": "mea culpa mea culpa mea maxima culpa",
+      "scriptureResearchReference": "Luke 18:13",
+      "evidenceClass": "AUTHORIAL_DEVOTIONAL_ANALOGY",
+      "priorResearchIds": [
+        "MS002"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.004",
+      "cueId": "AO.SM.C0022",
+      "blockId": "AO.SM.B007",
+      "latinPhraseAnchor": "mea culpa mea culpa mea maxima culpa",
+      "scriptureResearchReference": "Luke 18:13",
+      "evidenceClass": "AUTHORIAL_DEVOTIONAL_ANALOGY",
+      "priorResearchIds": [
+        "MS002"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.005",
+      "cueId": "AO.SM.C0030",
+      "blockId": "AO.SM.B010",
+      "latinPhraseAnchor": "Ostende nobis Domine misericordiam tuam",
+      "scriptureResearchReference": "Psalms 84:8 (Vulgate)",
+      "evidenceClass": "DIRECT_PSALM_TEXT",
+      "priorResearchIds": [
+        "MS003"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.006",
+      "cueId": "AO.SM.C0037",
+      "blockId": "AO.SM.B011",
+      "latinPhraseAnchor": "ad Sancta sanctorum puris mereamur mentibus introire",
+      "scriptureResearchReference": "Exodus 26:33; Hebrews 9:3",
+      "evidenceClass": "AUTHORIAL_SANCTUARY_ANALOGY",
+      "priorResearchIds": [
+        "MS004"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.007",
+      "cueId": "AO.SM.C0053",
+      "blockId": "AO.SM.B016",
+      "latinPhraseAnchor": "Gloria in excelsis",
+      "scriptureResearchReference": "Luke 2:14",
+      "evidenceClass": "DIRECT_GOSPEL_WORDS",
+      "priorResearchIds": [
+        "MS008",
+        "FT011"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.008",
+      "cueId": "AO.SM.C0055",
+      "blockId": "AO.SM.B016",
+      "latinPhraseAnchor": "Et in terra pax hominibus bonae voluntatis",
+      "scriptureResearchReference": "Luke 2:14",
+      "evidenceClass": "DIRECT_GOSPEL_WORDS",
+      "priorResearchIds": [
+        "MS008",
+        "FT011"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.009",
+      "cueId": "AO.SM.C0079",
+      "blockId": "AO.SM.B023",
+      "latinPhraseAnchor": "labia Isaiae Prophetae calculo mundasti ignito",
+      "scriptureResearchReference": "Isaiah 6:6–7",
+      "evidenceClass": "EXPLICIT_BIBLICAL_EVENT_IN_PRAYER",
+      "priorResearchIds": [],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.010",
+      "cueId": "AO.SM.C0110",
+      "blockId": "AO.SM.B031",
+      "latinPhraseAnchor": "hanc immaculatam hostiam",
+      "scriptureResearchReference": "1 Peter 1:19",
+      "evidenceClass": "THEOLOGICAL_VICTIM_TYPOLOGY_NOT_WORD_ORIGIN",
+      "priorResearchIds": [
+        "MS014",
+        "ALPX14"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.011",
+      "cueId": "AO.SM.C0112",
+      "blockId": "AO.SM.B032",
+      "latinPhraseAnchor": "humanae substantiae dignitatem mirabiliter condidisti",
+      "scriptureResearchReference": "Genesis 1:26–27",
+      "evidenceClass": "AUTHORIAL_CREATION_TYPOLOGY",
+      "priorResearchIds": [
+        "MS015",
+        "ALPX15"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.012",
+      "cueId": "AO.SM.C0113",
+      "blockId": "AO.SM.B032",
+      "latinPhraseAnchor": "divinitatis esse consortes",
+      "scriptureResearchReference": "2 Peter 1:4",
+      "evidenceClass": "BIBLICAL_THEOLOGICAL_WORDING_CANDIDATE",
+      "priorResearchIds": [
+        "MS015",
+        "ALPX15"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.013",
+      "cueId": "AO.SM.C0114",
+      "blockId": "AO.SM.B033",
+      "latinPhraseAnchor": "calicem salutaris",
+      "scriptureResearchReference": "Psalms 115:4 (Vulgate)",
+      "evidenceClass": "DIRECT_PSALM_PHRASE_CANDIDATE",
+      "priorResearchIds": [
+        "MS017"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.014",
+      "cueId": "AO.SM.C0116",
+      "blockId": "AO.SM.B034",
+      "latinPhraseAnchor": "In spiritu humilitatis et in animo contrito",
+      "scriptureResearchReference": "Daniel 3:39–40 (Catholic additions)",
+      "evidenceClass": "DIRECT_DANIEL_TEXT_ADAPTATION",
+      "priorResearchIds": [
+        "MS018",
+        "FT013"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.015",
+      "cueId": "AO.SM.C0122",
+      "blockId": "AO.SM.B036",
+      "latinPhraseAnchor": "Dirigatur Domine oratio mea sicut incensum",
+      "scriptureResearchReference": "Psalms 140:2–4 (Vulgate)",
+      "evidenceClass": "DIRECT_PSALM_TEXT",
+      "priorResearchIds": [
+        "MS020",
+        "FT014"
+      ],
+      "liturgicalBranch": "CONDITIONAL_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.016",
+      "cueId": "AO.SM.C0125",
+      "blockId": "AO.SM.B037",
+      "latinPhraseAnchor": "Lavabo inter innocentes manus meas",
+      "scriptureResearchReference": "Psalms 25:6–12 (Vulgate)",
+      "evidenceClass": "DIRECT_PSALM_TEXT",
+      "priorResearchIds": [
+        "MS021",
+        "FT015"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.017",
+      "cueId": "AO.SM.C0128",
+      "blockId": "AO.SM.B038",
+      "latinPhraseAnchor": "ob memoriam passionis resurrectionis et ascensionis",
+      "scriptureResearchReference": "Luke 22:19; Acts 1:9",
+      "evidenceClass": "LITURGICAL_MEMORIAL_THEMES",
+      "priorResearchIds": [
+        "MS019"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.018",
+      "cueId": "AO.SM.C0145",
+      "blockId": "AO.SM.B046",
+      "latinPhraseAnchor": "Sanctus Sanctus Sanctus Dominus Deus Sabaoth",
+      "scriptureResearchReference": "Isaiah 6:3",
+      "evidenceClass": "DIRECT_PROPHETIC_TEXT",
+      "priorResearchIds": [
+        "MS023",
+        "FT017"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.019",
+      "cueId": "AO.SM.C0145",
+      "blockId": "AO.SM.B046",
+      "latinPhraseAnchor": "Sanctus Sanctus Sanctus Dominus Deus Sabaoth",
+      "scriptureResearchReference": "Revelation 4:8",
+      "evidenceClass": "HEAVENLY_WORSHIP_TYPOLOGICAL_PARALLEL",
+      "priorResearchIds": [
+        "MS024",
+        "H020"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.020",
+      "cueId": "AO.SM.C0148",
+      "blockId": "AO.SM.B046",
+      "latinPhraseAnchor": "Benedictus qui venit in nomine Domini",
+      "scriptureResearchReference": "Matthew 21:9; Psalms 117:26 (Vulgate)",
+      "evidenceClass": "DIRECT_GOSPEL_PSALM_WORDS",
+      "priorResearchIds": [
+        "MS025",
+        "FT018"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.021",
+      "cueId": "AO.SM.C0153",
+      "blockId": "AO.SM.B047",
+      "latinPhraseAnchor": "pro Ecclesia tua sancta catholica",
+      "scriptureResearchReference": "John 17:21",
+      "evidenceClass": "AUTHORIAL_UNITY_PRAYER_PARALLEL",
+      "priorResearchIds": [
+        "MS026"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.022",
+      "cueId": "AO.SM.C0154",
+      "blockId": "AO.SM.B048",
+      "latinPhraseAnchor": "Memento Domine famulorum famularumque tuarum",
+      "scriptureResearchReference": "1 Timothy 2:1–2",
+      "evidenceClass": "THEMATIC_INTERCESSION_NOT_QUOTATION",
+      "priorResearchIds": [
+        "MS027"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.023",
+      "cueId": "AO.SM.C0161",
+      "blockId": "AO.SM.B050",
+      "latinPhraseAnchor": "Hanc igitur oblationem",
+      "scriptureResearchReference": "Leviticus 1:4",
+      "evidenceClass": "AUTHORIAL_GESTURE_TYPOLOGY_NOT_RITUAL_ORIGIN",
+      "priorResearchIds": [
+        "MS028",
+        "ALPX17"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.024",
+      "cueId": "AO.SM.C0164",
+      "blockId": "AO.SM.B051",
+      "latinPhraseAnchor": "rationabilem acceptabilemque",
+      "scriptureResearchReference": "Romans 12:1",
+      "evidenceClass": "FORTESCUE_SCRIPTURAL_IDIOM",
+      "priorResearchIds": [
+        "MS029",
+        "FT019"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.025",
+      "cueId": "AO.SM.C0173",
+      "blockId": "AO.SM.B052",
+      "latinPhraseAnchor": "Hoc est enim Corpus meum",
+      "scriptureResearchReference": "Matthew 26:26; Luke 22:19",
+      "evidenceClass": "INSTITUTION_WORDS_LITURGICALLY_ADAPTED",
+      "priorResearchIds": [
+        "MS030",
+        "FT008"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.026",
+      "cueId": "AO.SM.C0179",
+      "blockId": "AO.SM.B053",
+      "latinPhraseAnchor": "Hic est enim calix sanguinis mei",
+      "scriptureResearchReference": "Matthew 26:28; Mark 14:24; Luke 22:20; 1 Corinthians 11:25",
+      "evidenceClass": "INSTITUTION_WORDS_LITURGICALLY_ADAPTED",
+      "priorResearchIds": [
+        "MS031",
+        "FT008"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.027",
+      "cueId": "AO.SM.C0179",
+      "blockId": "AO.SM.B053",
+      "latinPhraseAnchor": "Mysterium fidei",
+      "scriptureResearchReference": "Matthew 26:28; Mark 14:24",
+      "evidenceClass": "ROMAN_FORMULA_NOT_VERBATIM_GOSPEL",
+      "priorResearchIds": [
+        "MS052"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.028",
+      "cueId": "AO.SM.C0180",
+      "blockId": "AO.SM.B053",
+      "latinPhraseAnchor": "in mei memoriam facietis",
+      "scriptureResearchReference": "Luke 22:19; 1 Corinthians 11:25",
+      "evidenceClass": "INSTITUTION_ANAMNESIS_TEXT",
+      "priorResearchIds": [
+        "MS030",
+        "FT009"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.029",
+      "cueId": "AO.SM.C0182",
+      "blockId": "AO.SM.B054",
+      "latinPhraseAnchor": "passionis nec non et ab inferis resurrectionis sed et in coelos gloriosae ascensionis",
+      "scriptureResearchReference": "Luke 22:19; 1 Corinthians 11:26",
+      "evidenceClass": "ANAMNESIS_BIBLICAL_MYSTERIES",
+      "priorResearchIds": [
+        "MS032",
+        "H002"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.030",
+      "cueId": "AO.SM.C0183",
+      "blockId": "AO.SM.B054",
+      "latinPhraseAnchor": "de tuis donis ac datis",
+      "scriptureResearchReference": "1 Chronicles 29:14",
+      "evidenceClass": "FORTESCUE_TENTATIVE_ALLUSION",
+      "priorResearchIds": [
+        "FT020"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.031",
+      "cueId": "AO.SM.C0186",
+      "blockId": "AO.SM.B055",
+      "latinPhraseAnchor": "munera pueri tui iusti Abel",
+      "scriptureResearchReference": "Genesis 4:4",
+      "evidenceClass": "EXPLICIT_ROMAN_CANON_BIBLICAL_FIGURE",
+      "priorResearchIds": [
+        "MS033",
+        "FT021",
+        "H003",
+        "ALPX18"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.032",
+      "cueId": "AO.SM.C0186",
+      "blockId": "AO.SM.B055",
+      "latinPhraseAnchor": "sacrificium Patriarchae nostri Abrahae",
+      "scriptureResearchReference": "Genesis 22:1–19",
+      "evidenceClass": "EXPLICIT_ROMAN_CANON_BIBLICAL_FIGURE",
+      "priorResearchIds": [
+        "MS034",
+        "FT022",
+        "H003",
+        "ALPX18"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.033",
+      "cueId": "AO.SM.C0186",
+      "blockId": "AO.SM.B055",
+      "latinPhraseAnchor": "obtulit summus sacerdos tuus Melchisedech",
+      "scriptureResearchReference": "Genesis 14:18–20; Hebrews 7",
+      "evidenceClass": "EXPLICIT_ROMAN_CANON_BIBLICAL_FIGURE",
+      "priorResearchIds": [
+        "MS035",
+        "FT023",
+        "H003",
+        "ALPX18"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.034",
+      "cueId": "AO.SM.C0187",
+      "blockId": "AO.SM.B056",
+      "latinPhraseAnchor": "per manus sancti Angeli tui in sublime altare tuum",
+      "scriptureResearchReference": "Revelation 8:3–4",
+      "evidenceClass": "COMMENTATOR_HEAVENLY_ALTAR_ANALOGY",
+      "priorResearchIds": [
+        "MS036",
+        "H004",
+        "ALPX19"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.035",
+      "cueId": "AO.SM.C0192",
+      "blockId": "AO.SM.B057",
+      "latinPhraseAnchor": "Memento etiam Domine famulorum famularumque tuarum",
+      "scriptureResearchReference": "2 Maccabees 12:44–46",
+      "evidenceClass": "THEOLOGICAL_PRAYER_FOR_DEAD_NOT_QUOTATION",
+      "priorResearchIds": [
+        "MS037"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.036",
+      "cueId": "AO.SM.C0209",
+      "blockId": "AO.SM.B063",
+      "latinPhraseAnchor": "Pater noster qui es in caelis",
+      "scriptureResearchReference": "Matthew 6:9–13; Luke 11:2–4",
+      "evidenceClass": "DIRECT_LORDS_PRAYER_WORDS",
+      "priorResearchIds": [
+        "MS039",
+        "FT025"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.037",
+      "cueId": "AO.SM.C0221",
+      "blockId": "AO.SM.B067",
+      "latinPhraseAnchor": "Haec commixtio et consecratio Corporis et Sanguinis",
+      "scriptureResearchReference": "Luke 24:30–35",
+      "evidenceClass": "DURANDUS_EMMAUS_FRACTION_MEDIEVAL_ALLEGORY",
+      "priorResearchIds": [
+        "MS040",
+        "MS050"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.038",
+      "cueId": "AO.SM.C0222",
+      "blockId": "AO.SM.B068",
+      "latinPhraseAnchor": "Agnus Dei qui tollis peccata mundi",
+      "scriptureResearchReference": "John 1:29",
+      "evidenceClass": "DIRECT_GOSPEL_WORDS",
+      "priorResearchIds": [
+        "MS041",
+        "FT028"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.039",
+      "cueId": "AO.SM.C0225",
+      "blockId": "AO.SM.B069",
+      "latinPhraseAnchor": "Pacem relinquo vobis pacem meam do vobis",
+      "scriptureResearchReference": "John 14:27",
+      "evidenceClass": "DIRECT_GOSPEL_WORDS",
+      "priorResearchIds": [
+        "MS042"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.040",
+      "cueId": "AO.SM.C0229",
+      "blockId": "AO.SM.B073",
+      "latinPhraseAnchor": "Domine non sum dignus ut intres sub tectum meum",
+      "scriptureResearchReference": "Matthew 8:8",
+      "evidenceClass": "DIRECT_GOSPEL_WORDS_ADAPTED",
+      "priorResearchIds": [
+        "MS043",
+        "FT027"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.041",
+      "cueId": "AO.SM.C0233",
+      "blockId": "AO.SM.B075",
+      "latinPhraseAnchor": "Quid retribuam Domino pro omnibus quae retribuit mihi",
+      "scriptureResearchReference": "Psalms 115:12–13 (Vulgate)",
+      "evidenceClass": "DIRECT_PSALM_TEXT",
+      "priorResearchIds": [
+        "ALPX21"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.042",
+      "cueId": "AO.SM.C0242",
+      "blockId": "AO.SM.B080",
+      "latinPhraseAnchor": "Ecce Agnus Dei ecce qui tollit peccata mundi",
+      "scriptureResearchReference": "John 1:29",
+      "evidenceClass": "DIRECT_GOSPEL_WORDS_ADAPTED",
+      "priorResearchIds": [
+        "MS041",
+        "FT030"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.043",
+      "cueId": "AO.SM.C0243",
+      "blockId": "AO.SM.B081",
+      "latinPhraseAnchor": "Domine non sum dignus ut intres sub tectum meum",
+      "scriptureResearchReference": "Matthew 8:8",
+      "evidenceClass": "DIRECT_GOSPEL_WORDS_ADAPTED",
+      "priorResearchIds": [
+        "MS043",
+        "FT030"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.044",
+      "cueId": "AO.SM.C0271",
+      "blockId": "AO.SM.B095",
+      "latinPhraseAnchor": "In principio erat Verbum et Verbum erat apud Deum",
+      "scriptureResearchReference": "John 1:1–5",
+      "evidenceClass": "DIRECT_GOSPEL_TEXT",
+      "priorResearchIds": [
+        "MS044",
+        "FT029"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    },
+    {
+      "id": "AO.MSB.045",
+      "cueId": "AO.SM.C0273",
+      "blockId": "AO.SM.B095",
+      "latinPhraseAnchor": "ET VERBUM CARO FACTUM EST",
+      "scriptureResearchReference": "John 1:14",
+      "evidenceClass": "DIRECT_GOSPEL_TEXT_AND_DEVOTIONAL_GESTURE",
+      "priorResearchIds": [
+        "MS045",
+        "FT029"
+      ],
+      "liturgicalBranch": "NORMATIVE_1962",
+      "proof": {
+        "sungLatinMatched": true,
+        "lowLatinMatched": true,
+        "mode": "ACCENT_FOLDED_EXACT_PHRASE",
+        "textOwnership": "Canonical 1962 repository cue (not product LIVE card)"
+      },
+      "publicationGate": {
+        "scriptureOriginalEditionVerified": false,
+        "independentMissalFacsimileVerified": false,
+        "primaryAuthorInterpretationCertified": false,
+        "readyForProduction": false
+      }
+    }
+  ],
+  "variableProperSlots": [
+    {
+      "blockId": "AO.SM.B014",
+      "slot": "INTROIT",
+      "cueIds": [
+        "AO.SM.C0042",
+        "AO.SM.C0043"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B019",
+      "slot": "COLLECT_SET",
+      "cueIds": [
+        "AO.SM.C0073",
+        "AO.SM.C0074"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B020",
+      "slot": "EPISTLE_OR_LESSON",
+      "cueIds": [
+        "AO.SM.C0075",
+        "AO.SM.C0076"
+      ],
+      "readerResolution": "EXISTING_EXACT_SOURCE_PATH_AND_LATIN_INCIPIT_VERIFICATION",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B021",
+      "slot": "GRADUAL",
+      "cueIds": [
+        "AO.SM.C0077"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B022",
+      "slot": "ALLELUIA_TRACT_SEQUENCE",
+      "cueIds": [
+        "AO.SM.C0078"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B026",
+      "slot": "GOSPEL",
+      "cueIds": [
+        "AO.SM.C0086",
+        "AO.SM.C0087",
+        "AO.SM.C0088"
+      ],
+      "readerResolution": "EXISTING_EXACT_SOURCE_PATH_AND_LATIN_INCIPIT_VERIFICATION",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B030",
+      "slot": "OFFERTORY",
+      "cueIds": [
+        "AO.SM.C0109"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B040",
+      "slot": "SECRET_SET",
+      "cueIds": [
+        "AO.SM.C0134"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B045",
+      "slot": "PREFACE",
+      "cueIds": [
+        "AO.SM.C0144"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B085",
+      "slot": "COMMUNION",
+      "cueIds": [
+        "AO.SM.C0249",
+        "AO.SM.C0250"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    },
+    {
+      "blockId": "AO.SM.B088",
+      "slot": "POSTCOMMUNION_SET",
+      "cueIds": [
+        "AO.SM.C0254",
+        "AO.SM.C0255",
+        "AO.SM.C0256"
+      ],
+      "readerResolution": "REQUIRES_ACTUAL_1962_RESOLVED_PROPER_AND_ITS_SOURCE_WITNESS",
+      "universalBibleRef": null
+    }
+  ],
+  "publicationInvariants": [
+    "No Ordinary Bible link can be passed as the current Gospel/Epistle Proper in the strict resolver.",
+    "Conditional incensation requires its own ceremony condition; second Confiteor is local older custom and not universal 1962.",
+    "Last Gospel depends on the actual Mass occasion and may be replaced or omitted; never assume John 1 is universal.",
+    "Same cue may have multiple Bible events and alternative traditional interpretations; never collapse them.",
+    "No new Atlas pins for narrative typology, heavenly liturgy or works of sacred art.",
+    "Original Latin, gestures, prayer units, section model, 48-card presentation and variable Proper content unchanged."
+  ],
+  "currentProperEvidenceInventory": {
+    "indexSourcePaths": [
+      "src/mass/scripture-reading-witness-index.js",
+      "src/mass/scripture-feast-reading-index.js",
+      "src/mass/scripture-segmented-reading-index.js"
+    ],
+    "inspectedAt": "2026-10-11",
+    "standaloneVerifiedProperPaths": 105,
+    "classifiedSourcePaths": {
+      "basic": 50,
+      "feast": 55,
+      "segmented": 15
+    },
+    "witnessedProperPathSlotPairs": 210,
+    "segmentedDiscontinuousReadingCount": 15,
+    "segmentedSlotDistribution": {
+      "GOSPEL": 4,
+      "EPISTLE_OR_LESSON": 11
+    },
+    "baseRegisterExplicitHeldSlots": 5,
+    "uniqueProperPathCount": 105,
+    "allTheseReferencesRequireResolvedLatinText": true,
+    "denominatorCaution": "105 witness-confirmed Proper source paths and 210 source+reading-slot references are NOT the count of all days and feasts in the 1962 liturgical year; no general canon coverage ratio is asserted.",
+    "design": "The strict Gospel/Epistle resolver requires source path, textual Latin incipit (and segmented passage order) and vetoes conflicting references; other Proper slots remain date/rite-dependent without fabricated universal chapter:verse."
+  }
+}

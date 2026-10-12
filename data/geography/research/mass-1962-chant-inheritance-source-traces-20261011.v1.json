@@ -1,0 +1,734 @@
+{
+  "schema": "MASS_CHANT_SOURCE_INHERITANCE_RESOLUTION_V1",
+  "date": "2026-10-11",
+  "scope": "42 inherited SOURCE ANNOTATION paths among 420 chant slots; only source paths already in witnessed 105 used for direct candidate source resolution",
+  "method": "Follow exact @sourcePath[:sourceSection] in 1962 candidate Divinum Officium Latin files; only reuse original note where located source section matches; never infer from celebration name.",
+  "parentMaster": "data/geography/research/mass-1962-105-source-path-chant-index-20261011.v1.json",
+  "sourceLinkCandidates": [
+    {
+      "sourcePath": "Sancti/02-02",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Pent08-0",
+      "parentSourcePath": "Tempora/Pent08-0",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "v. Suscépimus, Deus, misericórdiam tuam in médio templi tui: secúndum nomen tuum, Deus, ita et laus tua in fines terræ: justítia plena est déxtera tua",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent08-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 47:10-11.",
+        "Ps 47:2."
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/02-02",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Commune/C6b",
+      "parentSourcePath": "Commune/C6b",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX",
+      "parentLatinIncipitWitness": null,
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Commune/C6b.txt",
+      "parentCandidateAnnotations": [],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/03-25",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Commune/C10b",
+      "parentSourcePath": "Commune/C10b",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX",
+      "parentLatinIncipitWitness": null,
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Commune/C10b.txt",
+      "parentCandidateAnnotations": [],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/03-25",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Commune/C10",
+      "parentSourcePath": "Commune/C10",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX",
+      "parentLatinIncipitWitness": null,
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Commune/C10.txt",
+      "parentCandidateAnnotations": [],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/03-25",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Commune/C10a",
+      "parentSourcePath": "Commune/C10a",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX",
+      "parentLatinIncipitWitness": null,
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Commune/C10a.txt",
+      "parentCandidateAnnotations": [],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Adv3-3",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Commune/C10a:Communio",
+      "parentSourcePath": "Commune/C10a",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX",
+      "parentLatinIncipitWitness": null,
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Commune/C10a.txt",
+      "parentCandidateAnnotations": [],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi4-0",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Epi3-0:Introitus",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "v. Adoráte Deum, omnes Angeli ejus: audívit, et lætáta est Sion: et exsultavérunt fíliæ Judæ.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 96:7-8",
+        "Ps 96:1"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi4-0",
+      "properSlot": "GRADUAL",
+      "originalDirective": "@Tempora/Epi3-0:Graduale",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Graduale",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Timébunt gentes nomen tuum, Dómine, et omnes reges terræ glóriam tuam.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 101:16-17",
+        "Ps 96:1"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi4-0",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Tempora/Epi3-0:Offertorium",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Déxtera Dómini fecit virtutem, déxtera Dómini exaltávit me: non móriar, sed vivam, et narrábo ópera Dómini.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 117:16; 117:17"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi4-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Epi3-0:Communio",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Mirabántur omnes de his, quæ procedébant de ore Dei.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Luc 4:22"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi5-0",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Epi3-0:Introitus",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "v. Adoráte Deum, omnes Angeli ejus: audívit, et lætáta est Sion: et exsultavérunt fíliæ Judæ.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 96:7-8",
+        "Ps 96:1"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi5-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Epi3-0:Communio",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Mirabántur omnes de his, quæ procedébant de ore Dei.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Luc 4:22"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi6-0",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Epi3-0:Introitus",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "v. Adoráte Deum, omnes Angeli ejus: audívit, et lætáta est Sion: et exsultavérunt fíliæ Judæ.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 96:7-8",
+        "Ps 96:1"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi6-0",
+      "properSlot": "GRADUAL",
+      "originalDirective": "@Tempora/Epi3-0:Graduale",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Graduale",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Timébunt gentes nomen tuum, Dómine, et omnes reges terræ glóriam tuam.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 101:16-17",
+        "Ps 96:1"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Epi6-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Epi3-0:Communio",
+      "parentSourcePath": "Tempora/Epi3-0",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Mirabántur omnes de his, quæ procedébant de ore Dei.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "parentCandidateAnnotations": [
+        "Luc 4:22"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent15-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Quad1-4:Communio",
+      "parentSourcePath": "Tempora/Quad1-4",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Panis, quem ego dédero, caro mea est pro sǽculi vita.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-4.txt",
+      "parentCandidateAnnotations": [
+        "Joann 6:52"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent20-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Quad5-4:Communio",
+      "parentSourcePath": "Tempora/Quad5-4",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Meménto verbi tui servo tuo, Dómine, in quo mihi spem dedísti: hæc me consoláta est in humilitáte mea.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-4.txt",
+      "parentCandidateAnnotations": [
+        "Ps 118:49-50"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Pent23-0:Introitus",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "v. Dicit Dóminus: Ego cógito cogitatiónes pacis, et non afflictiónis: invocábitis me, et ego exáudiam vos: et redúcam captivitátem vestram de cunctis ",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Jer 29:11; 29:12; 29:14",
+        "Ps 84:2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "properSlot": "GRADUAL",
+      "originalDirective": "@Tempora/Pent23-0:Graduale",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Graduale",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Liberásti nos, Dómine, ex affligéntibus nos: et eos, qui nos odérunt, confudísti.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 43:8-9",
+        "Ps 129:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Tempora/Pent23-0:Offertorium",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "De profúndis clamávi ad te, Dómine: Dómine, exáudi oratiónem meam: de profúndis clamávi ad te, Dómine.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 129:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Pent23-0:Communio",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Amen, dico vobis, quidquid orántes pétitis, crédite, quia accipiétis, et fiet vobis.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Marc 11:24"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Adv4-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Commune/C10a:Communio",
+      "parentSourcePath": "Commune/C10a",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX",
+      "parentLatinIncipitWitness": null,
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Commune/C10a.txt",
+      "parentCandidateAnnotations": [],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Quadp2-0",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Tempora/Pent06-0",
+      "parentSourcePath": "Tempora/Pent06-0",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Pérfice gressus meos in sémitis tuis, ut non moveántur vestígia mea: inclína aurem tuam, et exáudi verba mea: mirífica misericórdias tuas, qui salvos ",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent06-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 16:5; 16:6-7"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Quad3-0",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Tempora/Pent09-0",
+      "parentSourcePath": "Tempora/Pent09-0",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Justítiæ Dómini rectæ, lætificántes corda, et judícia ejus dulcióra super mel et favum: nam et servus tuus custódit ea.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent09-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 18:9, 10, 11, 12"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi4-0",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Pent23-0:Introitus",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "v. Dicit Dóminus: Ego cógito cogitatiónes pacis, et non afflictiónis: invocábitis me, et ego exáudiam vos: et redúcam captivitátem vestram de cunctis ",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Jer 29:11; 29:12; 29:14",
+        "Ps 84:2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi4-0",
+      "properSlot": "GRADUAL",
+      "originalDirective": "@Tempora/Pent23-0:Graduale",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Graduale",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Liberásti nos, Dómine, ex affligéntibus nos: et eos, qui nos odérunt, confudísti.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 43:8-9",
+        "Ps 129:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi4-0",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Tempora/Pent23-0:Offertorium",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "De profúndis clamávi ad te, Dómine: Dómine, exáudi oratiónem meam: de profúndis clamávi ad te, Dómine.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 129:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi4-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Pent23-0:Communio",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Amen, dico vobis, quidquid orántes pétitis, crédite, quia accipiétis, et fiet vobis.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Marc 11:24"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi5-0",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Pent23-0:Introitus",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "v. Dicit Dóminus: Ego cógito cogitatiónes pacis, et non afflictiónis: invocábitis me, et ego exáudiam vos: et redúcam captivitátem vestram de cunctis ",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Jer 29:11; 29:12; 29:14",
+        "Ps 84:2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi5-0",
+      "properSlot": "GRADUAL",
+      "originalDirective": "@Tempora/Pent23-0:Graduale",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Graduale",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Liberásti nos, Dómine, ex affligéntibus nos: et eos, qui nos odérunt, confudísti.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 43:8-9",
+        "Ps 129:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi5-0",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Tempora/Pent23-0:Offertorium",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "De profúndis clamávi ad te, Dómine: Dómine, exáudi oratiónem meam: de profúndis clamávi ad te, Dómine.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 129:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi5-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Pent23-0:Communio",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Amen, dico vobis, quidquid orántes pétitis, crédite, quia accipiétis, et fiet vobis.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Marc 11:24"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi6-0",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Pent23-0:Introitus",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "v. Dicit Dóminus: Ego cógito cogitatiónes pacis, et non afflictiónis: invocábitis me, et ego exáudiam vos: et redúcam captivitátem vestram de cunctis ",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Jer 29:11; 29:12; 29:14",
+        "Ps 84:2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi6-0",
+      "properSlot": "GRADUAL",
+      "originalDirective": "@Tempora/Pent23-0:Graduale",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Graduale",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Liberásti nos, Dómine, ex affligéntibus nos: et eos, qui nos odérunt, confudísti.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 43:8-9",
+        "Ps 129:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi6-0",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Tempora/Pent23-0:Offertorium",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "De profúndis clamávi ad te, Dómine: Dómine, exáudi oratiónem meam: de profúndis clamávi ad te, Dómine.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 129:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi6-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Pent23-0:Communio",
+      "parentSourcePath": "Tempora/Pent23-0",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Amen, dico vobis, quidquid orántes pétitis, crédite, quia accipiétis, et fiet vobis.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "parentCandidateAnnotations": [
+        "Marc 11:24"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Quad2-0",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Quad1-3:Communio",
+      "parentSourcePath": "Tempora/Quad1-3",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Intéllege clamórem meum: inténde voci oratiónis meæ, Rex meus et Deus meus: quóniam ad te orábo, Dómine.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-3.txt",
+      "parentCandidateAnnotations": [
+        "Ps 5:2-4"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent01-0",
+      "properSlot": "INTROIT",
+      "originalDirective": "@Tempora/Pent01-0r:Introitus",
+      "parentSourcePath": "Tempora/Pent01-0r",
+      "parentSection": "Introitus",
+      "lookupStatus": "PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX",
+      "parentLatinIncipitWitness": null,
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent01-0r.txt",
+      "parentCandidateAnnotations": [],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/093-5",
+      "properSlot": "GRADUAL",
+      "originalDirective": "@Tempora/Quad1-6:GradualeL3",
+      "parentSourcePath": "Tempora/Quad1-6",
+      "parentSection": "GradualeL3",
+      "lookupStatus": "NONSTANDARD_LITURGICAL_SECTION_HOLD",
+      "parentLatinIncipitWitness": null,
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-6.txt",
+      "parentCandidateAnnotations": [],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/093-6",
+      "properSlot": "GRADUAL",
+      "originalDirective": "@Tempora/Quad1-6:Graduale",
+      "parentSourcePath": "Tempora/Quad1-6",
+      "parentSection": "Graduale",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Laudáte Dóminum, omnes gentes: et collaudáte eum, omnes pópuli.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-6.txt",
+      "parentCandidateAnnotations": [
+        "Ps 116:1-2"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Quad2-4",
+      "properSlot": "COMMUNION",
+      "originalDirective": "@Tempora/Pent09-0",
+      "parentSourcePath": "Tempora/Pent09-0",
+      "parentSection": "Communio",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Qui mandúcat meam carnem et bibit meum sánguinem, in me manet et ego in eo, dicit Dóminus.",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent09-0.txt",
+      "parentCandidateAnnotations": [
+        "Joann 6:57"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Quad4-5",
+      "properSlot": "OFFERTORY",
+      "originalDirective": "@Tempora/Pent08-0",
+      "parentSourcePath": "Tempora/Pent08-0",
+      "parentSection": "Offertorium",
+      "lookupStatus": "PARENT_FOUND_BIBLE_NOTES_CANDIDATE",
+      "parentLatinIncipitWitness": "Pópulum húmilem salvum fácies, Dómine, et óculos superbórum humiliábis: quóniam quis Deus præter te, Dómine?",
+      "parentSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent08-0.txt",
+      "parentCandidateAnnotations": [
+        "Ps 17:28; 17:32"
+      ],
+      "provenanceType": "SECONDARY_DIRECT_INHERITANCE_FROM_EXISTING_RAW_SOURCE",
+      "facsimile1962Verified": false,
+      "bibleEditionVerified": false,
+      "publishable": false
+    }
+  ],
+  "counts": {
+    "PARENT_FOUND_BIBLE_NOTES_CANDIDATE": 34,
+    "PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX": 7,
+    "NONSTANDARD_LITURGICAL_SECTION_HOLD": 1
+  },
+  "restrictions": [
+    "A parent Biblical source annotation is a traceable candidate, not an independent 1962 Missal or Bible-edition certification.",
+    "An inherited chant may have calendar or proper-version exceptions; do not automatically show it in LIVE or replace source texts.",
+    "Never use [Graduale] as substitute for special [GradualeL3] or vice versa.",
+    "Other externally owned Commune/Common source paths are not in the witnessed 105 and stay unresolved.",
+    "These parent link candidates do NOT increase the count of 364 directly annotated positions in the master."
+  ],
+  "publishable": false
+}

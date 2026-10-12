@@ -1,0 +1,37 @@
+name: Missal discordant-page visual research
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/mass-1962-discordant-page-visual.yml'
+jobs:
+  render-calendar-edge-cases:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PDF renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+      - name: Download exact CMAA scan and verify known SHA256
+        run: |
+          mkdir -p artifacts/printed-page-proofs
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 480 --silent --show-error \
+            https://media.musicasacra.com/pdf/missale62.pdf -o artifacts/missale62.pdf
+          echo "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a  artifacts/missale62.pdf" | sha256sum --check
+      - name: Render mismatched months, special editions and adjacent feast boundaries
+        run: |
+          for p in 157 543 544 555 563 625 652 688 704 705 737 751 752 774 779 1008 1029; do
+            pdftoppm -f "$p" -l "$p" -singlefile -scale-to 1600 -png \
+              artifacts/missale62.pdf "artifacts/printed-page-proofs/page-$p"
+          done
+          ls artifacts/printed-page-proofs/*.png | wc -l | grep -qx 17
+      - name: Upload non-published visual source proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-17-edge-case-page-proofs
+          path: artifacts/printed-page-proofs/*.png
+          if-no-files-found: error

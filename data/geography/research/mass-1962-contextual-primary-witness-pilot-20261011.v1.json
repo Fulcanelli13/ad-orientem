@@ -1,0 +1,210 @@
+{
+  "schema": "MASS_1962_CONTEXTUAL_PRINTED_WITNESS_RECONCILIATION_V1",
+  "date": "2026-10-11",
+  "scope": "One visually reviewed 1962-labelled printed Missal page, one independently located 1962 OCR rubric, upstream Divinum Officium Latin and Clementine Latin; no claim of entire 1962 edition certification",
+  "provenance": {
+    "facsimilePage": "https://forum.musicasacra.com/forum/uploads/FileUpload/f4/45596d0f68969c8accaa131c17db57.pdf",
+    "missalEditionDeclared": "1962",
+    "fullVolumeTitleAndDecreePageInspected": false,
+    "publisherApproval": "RESEARCH_ONLY"
+  },
+  "stats": {
+    "witnessedLiturgicalUsages": 4,
+    "withClementineLatinVerseMatch": 2,
+    "uniqueBiblePassages": 1,
+    "conditionalHolds": 2,
+    "publicationApprovals": 0
+  },
+  "usageRecords": [
+    {
+      "id": "MR62-ROSARY-OCT07-FEAST-INTROIT",
+      "sourcePath": "Sancti/10-07",
+      "celebration": "B_MARIAE_VIRGINIS_A_ROSARIO",
+      "occasion": "OCTOBER_07_FIXED_FEAST",
+      "liturgicalSlot": "INTROIT",
+      "actualLatinIncipit": "Gaudeamus omnes in Domino",
+      "textOriginClass": "LITURGICAL_TEXT_NOT_DIRECT_BIBLE_QUOTE",
+      "scriptureCitation": null,
+      "embeddedBibleVerseId": "MR62-ROSARY-FEAST-PS44V2",
+      "rubricCondition": "Fixed feast of 7 October, as named in the 1962-labelled page",
+      "witnesses": [
+        {
+          "kind": "PRINTED_MISSAL_PAGE_IMAGE",
+          "url": "https://forum.musicasacra.com/forum/uploads/FileUpload/f4/45596d0f68969c8accaa131c17db57.pdf",
+          "printedPage": "677",
+          "evidence": "Die 7 octobris; BMV a Rosario; Gaudeamus omnes in Domino"
+        },
+        {
+          "kind": "DO_SOURCE_TRANSCRIPTION",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/10-07.txt",
+          "section": "Introitus"
+        }
+      ],
+      "sourceTextCompare": "MATCH_IN_OPENING_WORDS",
+      "printedPageChecked": true,
+      "missalEditionProvenanceIndependentlyCertified": false,
+      "scriptureVerseCollated": false,
+      "frenchCramponChecked": false,
+      "approvedForApp": false
+    },
+    {
+      "id": "MR62-ROSARY-VOTIVE-INTROIT",
+      "sourcePath": "Sancti/10-07",
+      "celebration": "B_MARIAE_VIRGINIS_A_ROSARIO",
+      "occasion": "VOTIVE_MASS_CONDITION",
+      "liturgicalSlot": "INTROIT",
+      "actualLatinIncipit": "Salve sancta parens",
+      "textOriginClass": "EXTRABIBLICAL_POETIC_SEDULIUS",
+      "scriptureCitation": null,
+      "embeddedBibleVerseId": "MR62-ROSARY-VOTIVE-PS44V2",
+      "rubricCondition": "In Missis votivis, per printed page; do not assume all external solemnity cases without rubric-specific determination",
+      "witnesses": [
+        {
+          "kind": "PRINTED_MISSAL_PAGE_IMAGE",
+          "url": "https://forum.musicasacra.com/forum/uploads/FileUpload/f4/45596d0f68969c8accaa131c17db57.pdf",
+          "printedPage": "677",
+          "evidence": "In Missis votivis; Antiphona ad Introitum; Sedulius; Salve sancta parens"
+        },
+        {
+          "kind": "DO_SOURCE_COMPARISON",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/10-07.txt",
+          "section": "Introitus",
+          "evidence": "DO 10-07 has Gaudeamus, not the separately printed votive replacement"
+        }
+      ],
+      "sourceTextCompare": "CONTEXTUAL_VARIANT_NOT_IN_DIRECT_SOURCE",
+      "printedPageChecked": true,
+      "missalEditionProvenanceIndependentlyCertified": false,
+      "scriptureVerseCollated": false,
+      "frenchCramponChecked": false,
+      "approvedForApp": false
+    },
+    {
+      "id": "MR62-ROSARY-FEAST-PS44V2",
+      "sourcePath": "Sancti/10-07",
+      "celebration": "B_MARIAE_VIRGINIS_A_ROSARIO",
+      "occasion": "OCTOBER_07_FIXED_FEAST",
+      "liturgicalSlot": "INTROIT_PSALM_VERSE",
+      "actualLatinIncipit": "Eructavit cor meum verbum bonum",
+      "textOriginClass": "SCRIPTURAL_DIRECT_QUOTATION",
+      "scriptureCitation": {
+        "edition": "VULGATE_CLEMENTINE",
+        "book": "PSALMS",
+        "chapter": 44,
+        "verseStart": 2,
+        "verseEnd": 2,
+        "numbering": "VULGATE_LATIN"
+      },
+      "rubricCondition": "Attached Psalm verse after Gaudeamus Introit",
+      "witnesses": [
+        {
+          "kind": "PRINTED_MISSAL_PAGE_IMAGE",
+          "url": "https://forum.musicasacra.com/forum/uploads/FileUpload/f4/45596d0f68969c8accaa131c17db57.pdf",
+          "printedPage": "677",
+          "evidence": "Ps. 44, 2 Eructavit cor meum verbum bonum"
+        },
+        {
+          "kind": "DO_SOURCE_TRANSCRIPTION",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/10-07.txt",
+          "section": "Introitus",
+          "evidence": "!Ps 44:2 and same Latin verse"
+        },
+        {
+          "kind": "BIBLE_CLEMENTINE_LATIN",
+          "url": "https://la.wikisource.org/wiki/Vulgata_Clementina/Liber_Psalmorum",
+          "section": "Psalm 44:2",
+          "evidence": "Eructavit cor meum verbum bonum; dico ego opera mea regi"
+        }
+      ],
+      "sourceTextCompare": "LATIN_PHRASE_AND_REFERENCE_MATCH",
+      "printedPageChecked": true,
+      "missalEditionProvenanceIndependentlyCertified": false,
+      "scriptureVerseCollated": true,
+      "frenchCramponChecked": false,
+      "approvedForApp": false
+    },
+    {
+      "id": "MR62-ROSARY-VOTIVE-PS44V2",
+      "sourcePath": "Sancti/10-07",
+      "celebration": "B_MARIAE_VIRGINIS_A_ROSARIO",
+      "occasion": "VOTIVE_MASS_CONDITION",
+      "liturgicalSlot": "INTROIT_PSALM_VERSE",
+      "actualLatinIncipit": "Eructavit cor meum verbum bonum",
+      "textOriginClass": "SCRIPTURAL_DIRECT_QUOTATION",
+      "scriptureCitation": {
+        "edition": "VULGATE_CLEMENTINE",
+        "book": "PSALMS",
+        "chapter": 44,
+        "verseStart": 2,
+        "verseEnd": 2,
+        "numbering": "VULGATE_LATIN"
+      },
+      "rubricCondition": "Attached Psalm verse after Salve sancta parens, rather than separate Bible passage",
+      "witnesses": [
+        {
+          "kind": "PRINTED_MISSAL_PAGE_IMAGE",
+          "url": "https://forum.musicasacra.com/forum/uploads/FileUpload/f4/45596d0f68969c8accaa131c17db57.pdf",
+          "printedPage": "677",
+          "evidence": "Votive Introit also prints Ps. 44,2"
+        },
+        {
+          "kind": "BIBLE_CLEMENTINE_LATIN",
+          "url": "https://la.wikisource.org/wiki/Vulgata_Clementina/Liber_Psalmorum",
+          "section": "Psalm 44:2"
+        }
+      ],
+      "sourceTextCompare": "LATIN_PHRASE_AND_REFERENCE_MATCH",
+      "printedPageChecked": true,
+      "missalEditionProvenanceIndependentlyCertified": false,
+      "scriptureVerseCollated": true,
+      "frenchCramponChecked": false,
+      "approvedForApp": false
+    }
+  ],
+  "conditionHolds": [
+    {
+      "id": "MR62-ROSARY-EXTERNAL-SOLEMNITY-INTOIT",
+      "celebration": "B_MARIAE_VIRGINIS_A_ROSARIO",
+      "occasion": "FIRST_SUNDAY_OF_OCTOBER_EXTERNAL_SOLEMNITY",
+      "appliesToSourcePath": "Sancti/10-07",
+      "decision": "RUBRICAL_INTERPRETATION_HOLD",
+      "reason": "Rubrics 356-360 classify external solemnities with votive Masses; the 7 October Proper explicitly replaces Gaudeamus with Salve for votive Masses. Published discussion shows contrary liturgical interpretations, and typical-edition/ordo conditions need reconciliation. Do not force one Introit as universal.",
+      "witnesses": [
+        {
+          "url": "https://forum.musicasacra.com/forum/uploads/FileUpload/f4/45596d0f68969c8accaa131c17db57.pdf",
+          "kind": "PRINTED_MISSAL_PAGE_IMAGE"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Pagina:Missale_Romanum_1962.pdf/24",
+          "kind": "RUBRIC_SECTION_356_TO_358"
+        },
+        {
+          "url": "https://forum.musicasacra.com/forum/discussion/9694/external-solemnity-of-our-lady-of-the-rosary-ef-introit-question/p1",
+          "kind": "OPPOSING_INTERPRETATIONS_NOT_AUTHORITY"
+        }
+      ],
+      "approvedForApp": false
+    },
+    {
+      "id": "MR62-ADVENT-WEEKDAY-ALLELUIA-OMISSION",
+      "occasion": "ADVENT_FERIA_USING_PRECEDING_SUNDAY_MASS",
+      "liturgicalSlot": "ALLELUIA_AND_VERSE",
+      "decision": "EXPLICIT_EDITORIAL_OMISSION_CONDITION_SOURCE_WITNESSED",
+      "reason": "1962-labelled Missal source explicitly says to omit Alleluia and ensuing verse when the Sunday Mass is resumed on Advent ferias, retaining Gradual. Requires application only when actual liturgical celebration selection confirms this condition.",
+      "witnesses": [
+        {
+          "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+          "kind": "1962_MISSAL_OCR_WITNESS",
+          "evidence": "Dominica II Adventus, rubric after Graduale"
+        },
+        {
+          "url": "https://forum.musicasacra.com/forum/discussion/14393/rubrical-source-for-omission-of-alleluia-verse-on-advent-ferias-where-sunday-mass-is-resumed/p1",
+          "kind": "SECONDARY_RUBRIC_QUOTATION"
+        }
+      ],
+      "printedPageChecked": false,
+      "approvedForApp": false
+    }
+  ],
+  "releaseGate": "CLOSED_UNTIL_COMPLETE_EDITION_AUTHENTICATION_CALENDAR_RUBRICS_AND_TRANSLATION_COLLATION"
+}

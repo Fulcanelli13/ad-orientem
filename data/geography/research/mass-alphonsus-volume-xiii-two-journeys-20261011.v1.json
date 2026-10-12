@@ -1,0 +1,1765 @@
+{
+  "schema": "MASS_ALPHONSUS_XIII_DUAL_READING_V1",
+  "status": "RESEARCH_SOURCE_INDEX_NO_PRODUCT_IMPLEMENTATION",
+  "date": "2026-10-11",
+  "edition": {
+    "volume": "The Complete Ascetical Works of St. Alphonsus, Volume XIII: The Holy Mass",
+    "editor": "Rev. Eugene Grimm, C.SS.R.",
+    "imprint": "Benziger English Centenary Edition 1889",
+    "primaryPdf": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+    "textMirror": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+    "separateAlphonsusTreatiseWikisource": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ",
+    "accessCaveat": "The user-provided PDF is too large for web-page fetch and failed independent download; full-volume 1889 printed-text witness inspected through transcription at Scribd, with line-level ranges recorded for Dujardin and selected Alphonsus passages; facsimile images not independently reviewed.",
+    "fullBodyTextWitness": {
+      "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+      "verification": "Twenty-two meditation paragraphs and selected St Alphonsus argument passages examined against transcription in printed 1889 pagination; primary linked PDF oversized and not page-image cross-checked.",
+      "publicationHold": "NO_USER_QUOTED_EXACT_WORDING_UNLESS_1889_FACSIMILE_REVIEWED"
+    }
+  },
+  "editorialOwnership": {
+    "dujardin": "Only editorial preface meditation §III is Dujardin. It is NOT written by St Alphonsus.",
+    "alphonsus": "The Sacrifice of Jesus Christ, Short Explanation, major practical/ascetical treatises originate with St Alphonsus; verify Grimm additions and later contributors individually.",
+    "anonymousFrenchAuthor": "St Alphonsus expressly acknowledges adapting a learned French author's work; Grimm speculates on Pierre de Condren/derivative published by Quesnel but does NOT conclusively identify original.",
+    "sourceDistinction": "Dujardin's Passion/Salvation-allegory is a voluntary meditation; Alphonsus biblical sacrifice is a theological synthesis; Fortescue is a historical-liturgical external check."
+  },
+  "sourceUnits": [
+    {
+      "id": "V13_PREFACE_DUJARDIN",
+      "title": "Mass considered in its Relations to the Life of Jesus Christ, to the Ecclesiastical Year, and to the Universal History of Religion",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "editionPosition": "Grimm editorial Preface §III",
+      "printedPages": "17–21",
+      "contentKind": "AUTHORIAL_DEVOTIONAL_ALLEGORY",
+      "theme": "Mass gestures contemplated as episodes of salvation history, Christ's life and ecclesiastical year",
+      "use": "OPTIONAL_CHRIST_LIFE_MEDITATION",
+      "doNot": "Do not assign the text to St Alphonsus or infer historical origin of ceremonies",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    },
+    {
+      "id": "V13_ALPHONSUS_SACRIFICE",
+      "title": "The Sacrifice of Jesus Christ",
+      "author": "St Alphonsus Maria de Liguori",
+      "editionPosition": "Treatise part I, sections I–II",
+      "printedPages": "25–37",
+      "contentKind": "ASCETICAL_SACRIFICIAL_TYPOLOGY",
+      "theme": "Four purposes of sacrifice, five characteristics of Old Law victims, fulfilment in Incarnation, Calvary, sacramental Eucharist and heavenly life",
+      "use": "BIBLICAL_SALVATION_HISTORY_AND_THEOLOGY",
+      "doNot": "This adaptation acknowledges an unidentified earlier French author; Grimm raises Condren as a possible underlying source but leaves identity unresolved",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ"
+      ]
+    },
+    {
+      "id": "V13_ALPHONSUS_PRAYER_EXPLANATION",
+      "title": "Short Explanation of the Prayers of Mass",
+      "author": "St Alphonsus Maria de Liguori",
+      "editionPosition": "After Sacrifice treatise, six segments",
+      "printedPages": "38–67",
+      "contentKind": "LITURGICAL_PRAYER_COMMENTARY_WITH_SOME_HISTORICAL_CLAIMS",
+      "theme": "Foot of altar; Introit–Credo; Offertory–Preface; Canon; Pater noster–Communion; thanksgiving",
+      "use": "SOURCE_CLAIMS_TO_LEARN_MASS_PRAYER_ANCHORS",
+      "doNot": "Historical dates/assignments must be compared with Fortescue/Jungmann and 1962 wording",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ"
+      ]
+    },
+    {
+      "id": "V13_EDITOR_MIRACLE",
+      "title": "Account of a striking miracle: Hosts discovered near Naples (1772)",
+      "author": "Editorial addition to Grimm's edition",
+      "editionPosition": "Between prayer exposition and ceremonial treatise",
+      "printedPages": "68–76",
+      "contentKind": "EDITORIAL_DEVOTIONAL_HISTORICAL_ACCOUNT",
+      "theme": "Eucharistic miracle story",
+      "use": "OPTIONAL_HAGIOGRAPHICAL_RESEARCH_ONLY",
+      "doNot": "Not a Scriptural typology, not automatic production miracle claim; individual factual verification required",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    },
+    {
+      "id": "V13_ALPHONSUS_CEREMONIES",
+      "title": "The Ceremonies of the Mass",
+      "author": "St Alphonsus Maria de Liguori, with editor-supplied appendix and notes",
+      "editionPosition": "Part II, chapters I–XVII, appendix and related dissertation",
+      "printedPages": "79–265",
+      "contentKind": "PRACTICAL_CEREMONIAL_HISTORICAL_REFERENCE",
+      "theme": "Priest's preparation, celebrant's gestures, rubrical order, Requiem, Communion, ceremony irregularities and nineteenth-century editorial apparatus",
+      "use": "COMPARE_GESTURES_WITH_1962_RITUS_SERVANDUS",
+      "doNot": "Not an authoritative 1962 norm; nineteenth-century footnotes/editorial prescriptions differ from 1962",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    },
+    {
+      "id": "V13_PREPARATION_THANKSGIVING",
+      "title": "Preparation for Mass and Thanksgiving after It",
+      "author": "Compilations of St Alphonsus's works and attributed prayers, with historical contributors",
+      "editionPosition": "Part III, three component parts",
+      "printedPages": "267–415",
+      "contentKind": "DEVOTIONAL_PRAYERS_AND_MEDITATIONS",
+      "theme": "Before/after Mass, weekly considerations, Passion meditations, before/after Communion and attributed traditional prayers",
+      "use": "PRAYER_LIBRARY_AND_PRE_POST_MASS_DEVOTION",
+      "doNot": "Do not attribute every included prayer to St Alphonsus (e.g. St Thomas, St Bonaventure and St Francis de Sales are named)",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    },
+    {
+      "id": "V13_HURRIED_MASS_OFFICE",
+      "title": "The Mass and the Office that are Hurriedly Said",
+      "author": "St Alphonsus Maria de Liguori",
+      "editionPosition": "Part IV",
+      "printedPages": "417–464",
+      "contentKind": "ASCETICAL_PASTORAL_EXHORTATION",
+      "theme": "Attention, dignity, priestly dispositions and reverent celebration",
+      "use": "PRIEST_FORMATION_OR_CELEBRANT_CONTEXT_NOT_MAIN_BIBLE_ATLAS",
+      "doNot": "Not a Bible chronology or proof of ceremony origins",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    }
+  ],
+  "dujardinMeditativeStations": [
+    {
+      "id": "DJ01",
+      "sequence": 1,
+      "sourceSection": "Preface §III, printed p.17–18",
+      "printedHeading": "Preparation",
+      "prayerAnchor": "PREPARATION",
+      "authorialMeditationSummary": "Creation, angels and redemption",
+      "bibleResearchSuggestions": "Genesis 1–2; Revelation 5",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 1, printed pp. 17–21",
+        "webTextStartLine": 934,
+        "webTextEndLine": 947,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "RECAPITULATED_SALVATION_HISTORY",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ02",
+      "sequence": 2,
+      "sourceSection": "Preface §III, printed p.17–18",
+      "printedHeading": "The beginning of Mass",
+      "prayerAnchor": "PRAYERS_AT_FOOT",
+      "authorialMeditationSummary": "Adam's homage, reception of God's law, the Fall, repentance and promised Redeemer",
+      "bibleResearchSuggestions": "Genesis 1–3",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 2, printed pp. 17–21",
+        "webTextStartLine": 948,
+        "webTextEndLine": 970,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "RECAPITULATED_SALVATION_HISTORY",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ03",
+      "sequence": 3,
+      "sourceSection": "Preface §III, printed p.17–18",
+      "printedHeading": "Kyrie eleison",
+      "prayerAnchor": "KYRIE",
+      "authorialMeditationSummary": "Patriarchs and prophets longing for Messiah",
+      "bibleResearchSuggestions": "Genesis 12; Isaiah 9",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 3, printed pp. 17–21",
+        "webTextStartLine": 972,
+        "webTextEndLine": 983,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "MESSIANIC_EXPECTATION",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ04",
+      "sequence": 4,
+      "sourceSection": "Preface §III, printed p.17–18",
+      "printedHeading": "Gloria",
+      "prayerAnchor": "GLORIA",
+      "authorialMeditationSummary": "Angels and shepherds at the Nativity",
+      "bibleResearchSuggestions": "Luke 2:8–14",
+      "evidenceClass": "LITURGICAL_WORDS_AND_MEDITATION",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 4, printed pp. 17–21",
+        "webTextStartLine": 984,
+        "webTextEndLine": 990,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "CHRIST_LIFE_BIBLICAL_EVENT",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ05",
+      "sequence": 5,
+      "sourceSection": "Preface §III, printed p.18–19",
+      "printedHeading": "Prayer / Collect",
+      "prayerAnchor": "COLLECT",
+      "authorialMeditationSummary": "Christ's hidden life and fast in the wilderness",
+      "bibleResearchSuggestions": "Luke 2:39–52; Matthew 4:1–11",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 5, printed pp. 17–21",
+        "webTextStartLine": 991,
+        "webTextEndLine": 999,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "CHRIST_LIFE_BIBLICAL_EVENT",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ06",
+      "sequence": 6,
+      "sourceSection": "Preface §III, printed p.18–19",
+      "printedHeading": "Epistle",
+      "prayerAnchor": "EPISTLE",
+      "authorialMeditationSummary": "Prophets and precursor preparing the people for Christ",
+      "bibleResearchSuggestions": "Isaiah 40:3; Mark 1:1–8",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 6, printed pp. 17–21",
+        "webTextStartLine": 1000,
+        "webTextEndLine": 1009,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "PROPHETIC_EXPECTATION",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ07",
+      "sequence": 7,
+      "sourceSection": "Preface §III, printed p.18–19",
+      "printedHeading": "Gospel",
+      "prayerAnchor": "GOSPEL",
+      "authorialMeditationSummary": "Christ instructing the faithful in the Gospels",
+      "bibleResearchSuggestions": "Matthew 5–7",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 7, printed pp. 17–21",
+        "webTextStartLine": 1011,
+        "webTextEndLine": 1022,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "GOSPEL_PROCLAMATION",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ08",
+      "sequence": 8,
+      "sourceSection": "Preface §III, printed p.18–19",
+      "printedHeading": "Credo",
+      "prayerAnchor": "CREDO",
+      "authorialMeditationSummary": "Profession of revealed truths and conciliar symbol",
+      "bibleResearchSuggestions": "—",
+      "evidenceClass": "NON_EPISODIC_CHURCH_DOCTRINE",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 8, printed pp. 17–21",
+        "webTextStartLine": 1023,
+        "webTextEndLine": 1030,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "CREED_NON_EPISODIC",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ09",
+      "sequence": 9,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Offertory",
+      "prayerAnchor": "OFFERTORY",
+      "authorialMeditationSummary": "Last Supper and transition from Old Covenant figures to New sacrifice",
+      "bibleResearchSuggestions": "Luke 22:7–20; Exodus 12",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 9, printed pp. 17–21",
+        "webTextStartLine": 1033,
+        "webTextEndLine": 1039,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "SACRAMENTAL_MEDITATION",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ10",
+      "sequence": 10,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Lavabo",
+      "prayerAnchor": "LAVABO",
+      "authorialMeditationSummary": "Washing of apostles' feet",
+      "bibleResearchSuggestions": "John 13:1–17",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 10, printed pp. 17–21",
+        "webTextStartLine": 1040,
+        "webTextEndLine": 1047,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "AUTHORIAL_GESTURE_ALLEGORY",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ11",
+      "sequence": 11,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Orate fratres",
+      "prayerAnchor": "ORATE_FRATRES",
+      "authorialMeditationSummary": "Faithful united with the priest's intercession",
+      "bibleResearchSuggestions": "—",
+      "evidenceClass": "NON_EPISODIC_DEVOTIONAL_INSTRUCTION",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 11, printed pp. 17–21",
+        "webTextStartLine": 1048,
+        "webTextEndLine": 1053,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "PRAYER_INSTRUCTION_NON_EPISODIC",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ12",
+      "sequence": 12,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Preface",
+      "prayerAnchor": "PREFACE",
+      "authorialMeditationSummary": "Christ giving thanks before institution of Eucharist",
+      "bibleResearchSuggestions": "Matthew 26:26–27",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 12, printed pp. 17–21",
+        "webTextStartLine": 1054,
+        "webTextEndLine": 1061,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "AUTHORIAL_GESTURE_ALLEGORY",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ13",
+      "sequence": 13,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Memento for living",
+      "prayerAnchor": "CANON_MEMENTO_VIVOS",
+      "authorialMeditationSummary": "Christ's intercession leaving Upper Room for Gethsemane",
+      "bibleResearchSuggestions": "John 17; Luke 22:39–46",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 13, printed pp. 17–21",
+        "webTextStartLine": 1062,
+        "webTextEndLine": 1071,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "CHRIST_LIFE_BIBLICAL_EVENT",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ14",
+      "sequence": 14,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Hanc igitur",
+      "prayerAnchor": "CANON_HANC_IGITUR",
+      "authorialMeditationSummary": "Old Law laying on of hands over sacrificial victim",
+      "bibleResearchSuggestions": "Leviticus 1:4",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 14, printed pp. 17–21",
+        "webTextStartLine": 1073,
+        "webTextEndLine": 1086,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "AUTHORIAL_GESTURE_ALLEGORY",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ15",
+      "sequence": 15,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Consecration",
+      "prayerAnchor": "CANON_CONSECRATION",
+      "authorialMeditationSummary": "Crucifixion, death and elevation contemplated with Eucharistic mystery",
+      "bibleResearchSuggestions": "John 19:16–30",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 15, printed pp. 17–21",
+        "webTextStartLine": 1088,
+        "webTextEndLine": 1101,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "CALVARY_MEDITATION_NOT_REPEATED_SACRIFICE",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ16",
+      "sequence": 16,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Memento for dead",
+      "prayerAnchor": "CANON_MEMENTO_DEFUNCTORUM",
+      "authorialMeditationSummary": "Christ's death and descent among the dead as devotional rationale for prayers for deceased",
+      "bibleResearchSuggestions": "1 Peter 3:18–20; 1 Peter 4:6",
+      "evidenceClass": "DOCTRINAL_REVIEW_REQUIRED",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 16, printed pp. 17–21",
+        "webTextStartLine": 1102,
+        "webTextEndLine": 1112,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "DESCENT_TO_DEAD_DOCTRINAL_REVIEW",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ17",
+      "sequence": 17,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Pater noster",
+      "prayerAnchor": "PATER_NOSTER",
+      "authorialMeditationSummary": "Tomb of Christ and the Lord's prayer",
+      "bibleResearchSuggestions": "Matthew 6:9–13; John 19:38–42",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 17, printed pp. 17–21",
+        "webTextStartLine": 1113,
+        "webTextEndLine": 1116,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "CHRIST_LIFE_BIBLICAL_EVENT",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ18",
+      "sequence": 18,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Pax Domini",
+      "prayerAnchor": "PAX_DOMINI",
+      "authorialMeditationSummary": "Resurrection represented by commingling",
+      "bibleResearchSuggestions": "John 20:19–23",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 18, printed pp. 17–21",
+        "webTextStartLine": 1117,
+        "webTextEndLine": 1124,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "RESURRECTION_GESTURE_ALLEGORY",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ19",
+      "sequence": 19,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Agnus Dei",
+      "prayerAnchor": "AGNUS_DEI",
+      "authorialMeditationSummary": "Lamb of God and reception or spiritual Communion",
+      "bibleResearchSuggestions": "John 1:29",
+      "evidenceClass": "LITURGICAL_WORDS_AND_MEDITATION",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 19, printed pp. 17–21",
+        "webTextStartLine": 1125,
+        "webTextEndLine": 1141,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "DIRECT_JOHN_TEXT_WITH_SPIRITUAL_COMMUNION",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ20",
+      "sequence": 20,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Post-Communion",
+      "prayerAnchor": "POSTCOMMUNION",
+      "authorialMeditationSummary": "Ascension and apostles with Mary in Cenacle",
+      "bibleResearchSuggestions": "Acts 1:9–14",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 20, printed pp. 17–21",
+        "webTextStartLine": 1144,
+        "webTextEndLine": 1152,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "ASCENSION_AND_PENTECOST_EXPECTATION",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ21",
+      "sequence": 21,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Blessing",
+      "prayerAnchor": "BLESSING",
+      "authorialMeditationSummary": "Descent of Holy Ghost at Pentecost",
+      "bibleResearchSuggestions": "Acts 2:1–4",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 21, printed pp. 17–21",
+        "webTextStartLine": 1154,
+        "webTextEndLine": 1156,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "PENTECOST",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    },
+    {
+      "id": "DJ22",
+      "sequence": 22,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Last Gospel",
+      "prayerAnchor": "LAST_GOSPEL",
+      "authorialMeditationSummary": "Preaching of Gospel to nations; light against darkness",
+      "bibleResearchSuggestions": "John 1:1–14; Matthew 28:18–20",
+      "evidenceClass": "LITURGICAL_WORDS_AND_MEDITATION",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false,
+      "verifiedAuthorHeading": true,
+      "authorialPassageInspectedInTranscription": true,
+      "sourceTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 22, printed pp. 17–21",
+        "webTextStartLine": 1157,
+        "webTextEndLine": 1163,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "connectionMode": "MISSION_AND_JOHANNINE_LIGHT",
+      "referenceScope": "BIBLICAL_EVENT_OR_THEOLOGICAL_THEME_EXPLICIT_IN_AUTHOR_PROSE_BUT_EXACT_VERSE_IS_MODERN_EDITORIAL_ASSOCIATION",
+      "scripturalSourceStatus": "AUTHOR_DID_NOT_SUPPLY_EXACT_CHAPTER_AND_VERSE",
+      "owner": "DUJARDIN_NOT_ST_ALPHONSUS",
+      "appliesTo1962SourceText": "PENDING_LITURGICAL_PRAYER_ANCHOR_MATCH"
+    }
+  ],
+  "alphonsusResearchTopics": [
+    {
+      "id": "ALP01",
+      "section": "Sacrifice of Jesus Christ §I, printed 27–31",
+      "topic": "Four Old Law sacrificial ends: peace, thanksgiving, expiation, impetration",
+      "biblicalSources": [
+        "Leviticus 16",
+        "Isaiah 53:6",
+        "Hebrews 13:12",
+        "Hebrews 10:5–10"
+      ],
+      "status": "SAINT_ALPHONSUS_EXPLICIT_THEME_BUT_VERSE_CONCORDANCE_PENDING"
+    },
+    {
+      "id": "ALP02",
+      "section": "Sacrifice of Jesus Christ §I, printed 28–31",
+      "topic": "Five conditions: sanctification, oblation, immolation, consumption and participation",
+      "biblicalSources": [
+        "Deuteronomy 15:21",
+        "John 1:29",
+        "Hebrews 10:5–10"
+      ],
+      "status": "SAINT_ALPHONSUS_TYPOLOGICAL_FRAMEWORK"
+    },
+    {
+      "id": "ALP03",
+      "section": "Sacrifice of Jesus Christ §II, printed 31–37",
+      "topic": "Christ's consecration as victim through Incarnation",
+      "biblicalSources": [
+        "John 10:36",
+        "Luke 1:35",
+        "Hebrews 10:5–10"
+      ],
+      "status": "SAINT_ALPHONSUS_EXPLICIT_BIBLICAL_ARGUMENT"
+    },
+    {
+      "id": "ALP04",
+      "section": "Sacrifice of Jesus Christ §II, printed 32–35",
+      "topic": "Eternal priesthood in order of Melchizedek",
+      "biblicalSources": [
+        "Psalms 109:4 (Vulgate)",
+        "Hebrews 7"
+      ],
+      "status": "SAINT_ALPHONSUS_EXPLICIT_BIBLICAL_ARGUMENT"
+    },
+    {
+      "id": "ALP05",
+      "section": "Sacrifice of Jesus Christ §II, printed 33–37",
+      "topic": "Cross, Resurrection, Eucharist and heavenly participation: author argues with his anonymous French predecessor",
+      "biblicalSources": [
+        "John 17:5",
+        "1 Corinthians 11:26"
+      ],
+      "status": "DISTINGUISH_SAINT_AUTHORS_VIEW_FROM_ANONYMOUS_FRENCH_SOURCE_AND_GRIMM_FOOTNOTE"
+    },
+    {
+      "id": "ALP06",
+      "section": "Short Explanation, printed 38–41",
+      "topic": "Prayers at foot: Psalm Judica and ascent to altar",
+      "biblicalSources": [
+        "Psalms 42:4 (Vulgate)"
+      ],
+      "status": "SCRIPTURAL_TEXT_AND_OLDER_HISTORICAL_ASSERTIONS_TO_VERIFY"
+    },
+    {
+      "id": "ALP07",
+      "section": "Short Explanation, printed 41–43",
+      "topic": "Gloria's angelic opening versus Church's later hymn text",
+      "biblicalSources": [
+        "Luke 2:14"
+      ],
+      "status": "DIRECT_TEXT_SOURCE_AND_COMPOSITION_HISTORY"
+    },
+    {
+      "id": "ALP08",
+      "section": "Short Explanation, printed 44–47",
+      "topic": "Offertory gifts; water and wine and Incarnation / participation",
+      "biblicalSources": [
+        "2 Peter 1:4"
+      ],
+      "status": "AUTHORIAL_SYMBOLISM_NOT_HISTORICAL_ORIGIN"
+    },
+    {
+      "id": "ALP09",
+      "section": "Short Explanation, printed 44–47",
+      "topic": "Offertory penitence, Lavabo, prayer of sacrifice",
+      "biblicalSources": [
+        "Daniel 3:39–40",
+        "Psalms 25:6–12 (Vulgate)"
+      ],
+      "status": "LITURGICAL_BIBLICAL_LANGUAGE_EDITION_COLLECT_PENDING"
+    },
+    {
+      "id": "ALP10",
+      "section": "Short Explanation, printed 47–55",
+      "topic": "Preface, Canon, the Last Supper, sacrifice and saints",
+      "biblicalSources": [
+        "Matthew 26:26–28",
+        "Luke 22:19–20",
+        "Genesis 4:4",
+        "Genesis 14:18–20",
+        "Genesis 22:1–19"
+      ],
+      "status": "PRAYER_LEVEL_SEGMENTATION_PENDING"
+    }
+  ],
+  "publicationConstraints": [
+    "An original Mass ceremony is not necessarily instituted to dramatize a Bible event; no ritual-history causal claim from Dujardin's analogies.",
+    "The Eucharistic Sacrifice makes present the once-for-all offering of Christ sacramentally; do not claim that it repeats all of Scripture or literally re-performs all biblical events.",
+    "'Full Bible' means a curated Scripture-horizon reaching from Genesis through Revelation, not a forced link for every biblical book or verse.",
+    "Dujardin's dates (e.g. 4000 years) are meditation rhetoric not defensible scientific timeline.",
+    "Dujardin's descent to Limbo/Purgatory and remarks about Jesus not being on altar after Communion require Catholic doctrinal and 1962 rubric review before any presentation.",
+    "St Alphonsus's eighteenth-century rubrical notes and Grimm's nineteenth-century annotations may not describe 1962 practice.",
+    "Edition-aware Latin Vulgate/English Douay/French Crampon links and canonical 1962 prayer IDs required before publish.",
+    "Reproduce no full copyright-encumbered modern text; original-source links and attribution maintained; no external navigation substituting for existing Scripture reader."
+  ],
+  "alphonsusPassageClaims": [
+    {
+      "id": "ALPX01",
+      "workSection": "Sacrifice treatise §I",
+      "printedLocation": "printed p.27–28",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1252,
+        "endLine": 1286,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Leviticus 16:8",
+        "Isaiah 53:6",
+        "Hebrews 13:13"
+      ],
+      "sourceRelation": "EXPLICIT_PATRISTIC_ASCETICAL_TYPOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Typology of scapegoat and Christ bearing sins outside the camp; first is sacrificial foreshadowing, not the historical origin of a named Roman gesture.",
+      "originalResearchId": "MS032",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX02",
+      "workSection": "Sacrifice treatise §I",
+      "printedLocation": "printed p.28–29",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1298,
+        "endLine": 1341,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Hebrews 10:5–10"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Old sacrificial categories superseded in the obedience of Christ; the author quotes Hebrews 10 directly.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX03",
+      "workSection": "Sacrifice treatise §I",
+      "printedLocation": "printed p.29",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1318,
+        "endLine": 1370,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Deuteronomy 15:21"
+      ],
+      "sourceRelation": "THEOLOGICAL_SYNTHESIS_NO_DIRECT_BIBLE_EQUATION",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Five sacrificial conditions listed by Alphonsus: sanctification, offering, immolation, consumption, participation; schema is the author's theological classification, not a law-text quotation naming all five.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX04",
+      "workSection": "Sacrifice treatise §I",
+      "printedLocation": "printed p.30",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1391,
+        "endLine": 1440,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Genesis 8:20–21",
+        "Exodus 12:3–14"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_TYPOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Noah's sweet-smelling holocaust and the Paschal Lamb are named for the sacrificial framework.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX05",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.31–32",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1443,
+        "endLine": 1489,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "John 10:36",
+        "Luke 1:35",
+        "Hebrews 10:5"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_TYPOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "The author treats the Incarnation as consecration of Christ the victim, with direct biblical citations of Jesus as sanctified by the Father and the Annunciation.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX06",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.32",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1491,
+        "endLine": 1539,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Hebrews 10:8–10"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_THEOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Christ's once-for-all self-offering; distinguishes the Incarnation as commencement of an offering from its sacrificial fulfilment.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX07",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.32",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1511,
+        "endLine": 1547,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Daniel 12:11"
+      ],
+      "sourceRelation": "ESCATHOLOGICAL_PRIVATE_INTERPRETATION_HOLD",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Alphonsus applies the 1290 days without the continual sacrifice to a future suspension of the Mass; this is an **historical interpretive claim under theological/eschatological review**, not a literal 1962 Mass passage or a chronology for the Atlas.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX08",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.33",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1548,
+        "endLine": 1595,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Psalms 109:4 (Vulgate",
+        "Psalm 110 modern)",
+        "John 17:5"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_TYPOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Christ's eternal priesthood according to Melchizedek; author draws on Davidic psalm and Christ's prayer for glorification.",
+      "originalResearchId": "MS047",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX09",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.33–34",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1560,
+        "endLine": 1601,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "John 17:5"
+      ],
+      "sourceRelation": "REPORTED_THIRD_PARTY_VIEW",
+      "attributedVoice": "ANONYMOUS_FRENCH_SOURCE_REPORTED_BY_ALPHONSUS",
+      "paraphrase": "Anonymous French source (as narrated by Alphonsus) interprets glorification at Resurrection as consumption and communion of sacrifice as beatific participation; **not** Alphonsus's preferred conclusion.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX10",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.34–36",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1602,
+        "endLine": 1668,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Luke 22:19",
+        "1 Corinthians 11:25"
+      ],
+      "sourceRelation": "ALPHONSUS_RESPONSE_TO_SOURCE_AND_MAGISTERIAL_CITATION",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Alphonsus explicitly prefers fulfilment of sacrificial consumption and Communion in the Eucharistic Sacrifice, quoting Trent XXII; distinction from anonymous French source must be preserved.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX11",
+      "workSection": "Short Explanation preface",
+      "printedLocation": "printed p.38–39",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1792,
+        "endLine": 1834,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "AUTHORIAL_LITURGICAL_STRUCTURE_HISTORICAL_HOLD",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Alphonsus divides exposition into six parts including Canon+Pater noster; this is his explanatory structure, not a certified historical classification or present 1962 card count.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX12",
+      "workSection": "Short Explanation part II",
+      "printedLocation": "printed p.42–43",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2048,
+        "endLine": 2077,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Luke 2:14"
+      ],
+      "sourceRelation": "DIRECT_LITURGICAL_TEXT_SOURCE_AND_VARIABLE_PROPER",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "The angelic wording grounds the Gloria; the Collect reflects a feast/day, an important tie to source-owned Propers.",
+      "originalResearchId": "MS008",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX13",
+      "workSection": "Short Explanation part II",
+      "printedLocation": "printed p.43–44",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2100,
+        "endLine": 2125,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "ATTRIBUTED_LATER_LITURGICAL_ALLEGORY_HOLD",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Gospel procession from one side to the other is allegorically linked by author to Jews and Gentiles; not an objective causal history of movement or general claim about Jews.",
+      "originalResearchId": "MS012",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX14",
+      "workSection": "Short Explanation part III",
+      "printedLocation": "printed p.44–45",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2143,
+        "endLine": 2180,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "EXPLANATORY_THEOLOGICAL_DISTINCTION",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Offerings before consecration are discussed anticipatorily; do not suggest that ordinary bread and wine are already consecrated by saying Suscipe sancte Pater.",
+      "originalResearchId": "MS014",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX15",
+      "workSection": "Short Explanation part III",
+      "printedLocation": "printed p.45",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2181,
+        "endLine": 2213,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "ATTRIBUTED_SYMBOLISM_AND_MAGISTERIAL_CONTEXT",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Water and wine as humanity/divinity and Christian communion; expressly distinguishes ecclesiastical precept from divine institution and quotes Trent XXII ch.7.",
+      "originalResearchId": "MS015",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX16",
+      "workSection": "Short Explanation part III",
+      "printedLocation": "printed p.46",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2219,
+        "endLine": 2249,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "HISTORICAL_REPORT_AND_LITURGICAL_WORDS",
+      "attributedVoice": "ST_ALPHONSUS_REPORTING_BONA_AND_FRENCH_AUTHOR",
+      "paraphrase": "Cardinal Bona and an anonymous French source provide historical explanations for evolving Offertory prayers; Alphonsus identifies In spiritu humilitatis and the Lavabo text; dates and underlying sources unverified.",
+      "originalResearchId": "MS018",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX17",
+      "workSection": "Short Explanation part IV",
+      "printedLocation": "printed p.50–51",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2475,
+        "endLine": 2504,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Leviticus 1:4 (editorial comparison only)"
+      ],
+      "sourceRelation": "AUTHORIAL_TYPOLOGY_EDITORIAL_BIBLE_CONTEXT",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Hanc igitur hand extension interpreted through laying hands on victim; page itself does not cite Lev 1:4 chapter and verse.",
+      "originalResearchId": "MS028",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX18",
+      "workSection": "Short Explanation part IV",
+      "printedLocation": "printed p.55–56",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2759,
+        "endLine": 2809,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Genesis 4:4",
+        "Genesis 22:1–19",
+        "Genesis 14:18–20"
+      ],
+      "sourceRelation": "CANON_EXPLICIT_FIGURES_AND_REPORTED_SCHOLASTIC_ALTERNATIVES",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Alphonsus names the three biblical sacrifices and gives a Christological typology; he also contrasts Innocent III and Aquinas on post-consecration signs of Cross.",
+      "originalResearchId": "MS033",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX19",
+      "workSection": "Short Explanation part IV",
+      "printedLocation": "printed p.56–57",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2810,
+        "endLine": 2841,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Revelation 8:3–4 (editorial parallel only)"
+      ],
+      "sourceRelation": "DISPUTED_AUTHORIAL_INTERPRETATION",
+      "attributedVoice": "ALPHONSUS_COMPARING_THOMAS_AND_FRENCH_SOURCE",
+      "paraphrase": "Supplices angel: French predecessor favours identifying Christ as Angel of Great Counsel; Alphonsus prefers Thomas's explanation of angelic presentation of church prayers. Do not falsely portray angel lifting physical hosts.",
+      "originalResearchId": "MS036",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX20",
+      "workSection": "Short Explanation part IV",
+      "printedLocation": "printed p.58–59",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2899,
+        "endLine": 2951,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "1 John 3:1",
+        "Romans 8:15",
+        "Matthew 6:9–13"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_PRAYER_COMMENTARY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Our Father understood through seven petitions and filial adoption; 1 John 3:1 directly cited, Romans 8:15 mentioned in commentary.",
+      "originalResearchId": "MS039",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX21",
+      "workSection": "Short Explanation part VI",
+      "printedLocation": "printed p.65–66",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 3307,
+        "endLine": 3332,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Psalms 115:12–13 (Vulgate)",
+        "Romans 8:32"
+      ],
+      "sourceRelation": "DIRECT_PSALM_WORDS_PLUS_EPISTLE_THEMATIC",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "After-Communion thanksgiving Quid retribuam and Calicem salutaris draw on Psalm 115 and Romans 8:32, adding biblical source to a fixed post-Communion prayer.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX22",
+      "workSection": "Short Explanation part VI",
+      "printedLocation": "printed p.67",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 3384,
+        "endLine": 3400,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "John 1:1–14"
+      ],
+      "sourceRelation": "DIRECT_BIBLE_TEXT_AND_HISTORICAL_ORIGIN_HOLD",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Last Gospel is John 1; reported claim that Pius V made it universal should be historically checked (earlier late-medieval usages attest the text).",
+      "originalResearchId": "MS044",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    }
+  ],
+  "highPriorityHolds": [
+    {
+      "id": "D20",
+      "issue": "Dujardin DJ20 says 'Jesus is no longer on the altar' after Communion; this cannot imply that Christ is absent from a tabernacle or other consecrated hosts. Quote only in full historical context with doctrinal annotation.",
+      "sourceRange": [
+        1144,
+        1152
+      ]
+    },
+    {
+      "id": "D16",
+      "issue": "Dujardin DJ16 describes Christ's descent to Limbo and Purgatory; do not imply unqualified doctrine that Christ delivered the souls in Purgatory. Review Catholic dogmatic distinctions concerning limbus patrum before using.",
+      "sourceRange": [
+        1102,
+        1112
+      ]
+    },
+    {
+      "id": "D03",
+      "issue": "Dujardin DJ03 gives the 'four thousand years' chronology; meditation time idiom, not verified biblical dating.",
+      "sourceRange": [
+        972,
+        983
+      ]
+    },
+    {
+      "id": "D15",
+      "issue": "Dujardin DJ15 uses elevations as a depiction of the crucifixion and separate species as representing Christ's death. Safeguard: the Sacrifice is made present sacramentally and not repeated as new bloody crucifixion.",
+      "sourceRange": [
+        1088,
+        1101
+      ]
+    },
+    {
+      "id": "A07",
+      "issue": "Alphonsus ALPX07 reads Daniel 12:11's 1,290 days as a future suspension of Holy Mass. Not accepted as a verifiable literal apocalyptic timeline; no map/calendar dating.",
+      "sourceRange": [
+        1511,
+        1547
+      ]
+    },
+    {
+      "id": "A13",
+      "issue": "Alphonsus ALPX13 characterizes altar-side movements as Jewish rejection and Gentile acceptance. Attribute historical symbolic interpretation; don't turn into a negative generalization about Jewish people or the origins of the gesture.",
+      "sourceRange": [
+        2100,
+        2125
+      ]
+    },
+    {
+      "id": "A09",
+      "issue": "Alphonsus ALPX09 reports the anonymous predecessor's view then offers his own different conclusion. Split author identity and quote attribution.",
+      "sourceRange": [
+        1560,
+        1609
+      ]
+    },
+    {
+      "id": "A19",
+      "issue": "Alphonsus ALPX19 compares competing views of the Angel in Supplices; do not present one source's angelic physical transport claim as doctrinal or historical fact.",
+      "sourceRange": [
+        2810,
+        2841
+      ]
+    },
+    {
+      "id": "V13_ORIGIN",
+      "issue": "Full linked PDF could not be downloaded and page screenshot in browsing environment; text witnesses are independently transcribed 1889 pages, not image-facsimile certified.",
+      "sourceRange": [
+        900,
+        1260
+      ]
+    }
+  ],
+  "sourceMethodology": {
+    "sourceHierarchy": [
+      "exact 1962 Missal",
+      "Bible text (Clementine Vulgate/Crampon/Douay with crosswalk)",
+      "patristic witnesses",
+      "critically inspected source commentaries",
+      "author-specific meditative methods"
+    ],
+    "modes": [
+      "MEDITATE_CHRIST_LIFE",
+      "DISCOVER_BIBLICAL_RECIPROCITIES",
+      "ACTUAL_CALENDAR_PROPERS"
+    ],
+    "publishedDataOwner": "learn.mass existing eight-stage reader and merged Scripture context overlay, no new full-app module"
+  },
+  "biblicalHorizonCrosswalk": [
+    {
+      "id": "HORIZON_CREATION",
+      "biblicalReference": "Genesis 1–2",
+      "massAnchor": "PRAYERS_AT_FOOT",
+      "supportingClaimIds": [
+        "DJ01",
+        "DJ02"
+      ],
+      "evidenceClass": "AUTHORIAL_MEDITATION",
+      "qualification": "Creation and first humanity are meditated during preparatory ceremonies, not quoted in the Ordo",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_FALL",
+      "biblicalReference": "Genesis 3",
+      "massAnchor": "PRAYERS_AT_FOOT",
+      "supportingClaimIds": [
+        "DJ02"
+      ],
+      "evidenceClass": "AUTHORIAL_MEDITATION",
+      "qualification": "Fall, contrition and promised Redemption",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ABEL",
+      "biblicalReference": "Genesis 4:4",
+      "massAnchor": "CANON_SUPRA_QUAE",
+      "supportingClaimIds": [
+        "ALPX18",
+        "MS033"
+      ],
+      "evidenceClass": "EXPLICIT_CANON_PERSON",
+      "qualification": "Abel named in Supra quae",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_NOAH",
+      "biblicalReference": "Genesis 8:20–21",
+      "massAnchor": "OFFERTORY",
+      "supportingClaimIds": [
+        "ALPX04"
+      ],
+      "evidenceClass": "THEOLOGICAL_SACRIFICIAL_TYPE",
+      "qualification": "Noah's holocaust used by Alphonsus in wider sacrificial theology, not explicitly named in the fixed Roman Canon",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ABRAHAM",
+      "biblicalReference": "Genesis 22:1–19",
+      "massAnchor": "CANON_SUPRA_QUAE",
+      "supportingClaimIds": [
+        "ALPX18",
+        "MS034"
+      ],
+      "evidenceClass": "EXPLICIT_CANON_PERSON",
+      "qualification": "Abraham named in Supra quae",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_MELCHIZEDEK",
+      "biblicalReference": "Genesis 14:18–20",
+      "massAnchor": "CANON_SUPRA_QUAE",
+      "supportingClaimIds": [
+        "ALPX18",
+        "MS035"
+      ],
+      "evidenceClass": "EXPLICIT_CANON_PERSON",
+      "qualification": "Melchizedek named in Supra quae; Genesis does not itself explicitly call bread and wine a sacrificial immolation",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PASSOVER",
+      "biblicalReference": "Exodus 12:3–14",
+      "massAnchor": "CANON_CONSECRATION",
+      "supportingClaimIds": [
+        "ALPX04",
+        "ALPX10"
+      ],
+      "evidenceClass": "THEOLOGICAL_PASSOVER_TYPOLOGY",
+      "qualification": "Passover lamb and Eucharist linked theologically in the treatise",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_MANNA",
+      "biblicalReference": "Exodus 16:13–36",
+      "massAnchor": "EUCHARISTIC_TYPES",
+      "supportingClaimIds": [
+        "MS046",
+        "H005"
+      ],
+      "evidenceClass": "PATRISTIC_EUCHARISTIC_TYPOLOGY",
+      "qualification": "Manna read as figure of Eucharistic bread in late antique Christian commentary",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ATONEMENT",
+      "biblicalReference": "Leviticus 16:8–22",
+      "massAnchor": "CANON_UNDE_ET_MEMORES",
+      "supportingClaimIds": [
+        "ALPX01"
+      ],
+      "evidenceClass": "SAINT_AUTHOR_SACRIFICIAL_TYPOLOGY",
+      "qualification": "Scapegoat, Isaiah's suffering servant and Christ outside camp",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_LAYING_HANDS",
+      "biblicalReference": "Leviticus 1:4",
+      "massAnchor": "CANON_HANC_IGITUR",
+      "supportingClaimIds": [
+        "DJ14",
+        "ALPX17"
+      ],
+      "evidenceClass": "AUTHORIAL_GESTURE_ALLEGORY",
+      "qualification": "Ritual laying-on comparison; the authors did not certify Roman historical origin",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PS_JUDICA",
+      "biblicalReference": "Psalms 42:4 (Vulgate)",
+      "massAnchor": "PRAYERS_AT_FOOT",
+      "supportingClaimIds": [
+        "MS001"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Psalm quoted at foot of altar in relevant forms",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PS_LAVABO",
+      "biblicalReference": "Psalms 25:6–12 (Vulgate)",
+      "massAnchor": "OFFERTORY_LAVABO",
+      "supportingClaimIds": [
+        "MS021"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Psalm 25 during Lavabo; practical handwashing remains distinct",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PS_INCENSE",
+      "biblicalReference": "Psalms 140:2 (Vulgate)",
+      "massAnchor": "OFFERTORY_INCENSE",
+      "supportingClaimIds": [
+        "MS020"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Dirigatur sicut incensum words",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_MESSIANIC",
+      "biblicalReference": "Isaiah 53:6",
+      "massAnchor": "CANON_UNDE_ET_MEMORES",
+      "supportingClaimIds": [
+        "ALPX01"
+      ],
+      "evidenceClass": "THEOLOGICAL_PROPHECY_FULFILMENT",
+      "qualification": "Christ bearing sins as the suffering servant",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ISAIAH_SANCTUS",
+      "biblicalReference": "Isaiah 6:3",
+      "massAnchor": "SANCTUS",
+      "supportingClaimIds": [
+        "MS023"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Threefold Sanctus",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_DANIEL_CONTRITION",
+      "biblicalReference": "Daniel 3:39–40 (Catholic additions)",
+      "massAnchor": "OFFERTORY",
+      "supportingClaimIds": [
+        "MS018"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "In spiritu humilitatis; Catholic versification concordance needed",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_LUKE_GLORIA",
+      "biblicalReference": "Luke 2:14",
+      "massAnchor": "GLORIA",
+      "supportingClaimIds": [
+        "DJ04",
+        "ALPX12",
+        "MS008"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_AND_MEDITATION",
+      "qualification": "Angelic opening distinct from entire later Christian hymn",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_JOHN_BAPTIST",
+      "biblicalReference": "John 1:29",
+      "massAnchor": "AGNUS_DEI",
+      "supportingClaimIds": [
+        "MS041"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Agnus Dei from Baptist, not the whole later liturgical refrain",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_CENTURION",
+      "biblicalReference": "Matthew 8:8",
+      "massAnchor": "COMMUNION_PREPARATION",
+      "supportingClaimIds": [
+        "MS043"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_ADAPTATION_CANDIDATE",
+      "qualification": "Centurion words adapted to healing of the soul",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_INSTITUTION",
+      "biblicalReference": "Luke 22:19–20; 1 Corinthians 11:23–26",
+      "massAnchor": "CANON_CONSECRATION",
+      "supportingClaimIds": [
+        "ALPX10",
+        "MS030",
+        "MS031"
+      ],
+      "evidenceClass": "INSTITUTION_TEXT_AND_DOCTRINE",
+      "qualification": "Roman formula not verbatim a single NT account",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ROMANS_REASONABLE",
+      "biblicalReference": "Romans 12:1",
+      "massAnchor": "CANON_QUAM_OBLATIONEM",
+      "supportingClaimIds": [
+        "MS029",
+        "FT019"
+      ],
+      "evidenceClass": "SPECIFIC_SCRIPTURAL_IDIOM",
+      "qualification": "Rationabilem as a biblical sacrificial term in scholarly historical comparison",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PRIESTHOOD",
+      "biblicalReference": "Hebrews 7; Psalms 109:4 (Vulgate)",
+      "massAnchor": "CANON_SUPRA_QUAE",
+      "supportingClaimIds": [
+        "ALPX08"
+      ],
+      "evidenceClass": "BIBLICAL_PRIESTHOOD_THEOLOGY",
+      "qualification": "Priesthood of Melchizedek as type of Christ, not the origin of each gesture",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_EMMAUS",
+      "biblicalReference": "Luke 24:30–35",
+      "massAnchor": "FRACTION",
+      "supportingClaimIds": [
+        "MS050"
+      ],
+      "evidenceClass": "MEDIEVAL_ALLEGORY_ONLY",
+      "qualification": "Durandus links Eucharistic fraction to Emmaus; historical origin not proved",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_RESURRECTION",
+      "biblicalReference": "John 20:19–23",
+      "massAnchor": "PAX_DOMINI",
+      "supportingClaimIds": [
+        "DJ18"
+      ],
+      "evidenceClass": "AUTHORIAL_MEDITATION",
+      "qualification": "Dujardin's commixture/resurrection allegory",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PENTECOST",
+      "biblicalReference": "Acts 2:1–4",
+      "massAnchor": "BLESSING",
+      "supportingClaimIds": [
+        "DJ21"
+      ],
+      "evidenceClass": "AUTHORIAL_MEDITATION",
+      "qualification": "The blessing prompts recollection of Pentecost, not a claim the rite depicts a historical event",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_REVELATION_SANCTUS",
+      "biblicalReference": "Revelation 4:8",
+      "massAnchor": "SANCTUS",
+      "supportingClaimIds": [
+        "MS024"
+      ],
+      "evidenceClass": "THEOLOGICAL_HEAVENLY_PARALLEL",
+      "qualification": "Vision of four living creatures separate from Isaiah 6",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_HEAVENLY_ALTAR",
+      "biblicalReference": "Revelation 8:3–4",
+      "massAnchor": "CANON_SUPPLICES",
+      "supportingClaimIds": [
+        "MS036",
+        "ALPX19"
+      ],
+      "evidenceClass": "COMMENTATOR_PARALLEL_NOT_PHYSICAL_LOCATION",
+      "qualification": "Prayer invokes heavenly altar; no coordinates or literal transfer of species",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_JOHN_PROLOGUE",
+      "biblicalReference": "John 1:1–14",
+      "massAnchor": "LAST_GOSPEL",
+      "supportingClaimIds": [
+        "DJ22",
+        "ALPX22",
+        "MS044"
+      ],
+      "evidenceClass": "DIRECT_GOSPEL_TEXT_AND_AUTHORIAL_MEDITATION",
+      "qualification": "John Prologue as Last Gospel, later placement at end of Mass",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    }
+  ],
+  "biblicalHorizonScope": {
+    "status": "SELECTED_SOURCED_EXAMPLES_NOT_COMPLETE_COVERAGE_OF_BIBLE",
+    "sourceMethods": [
+      "actual Latin wording of ordinary Mass",
+      "author-attributed Dujardin meditation",
+      "specific Alphonsus argument",
+      "documented patristic/medieval typology",
+      "actual calendar Proper (must be looked up at Mass date independently)"
+    ],
+    "nonExclusivePerspectives": true,
+    "uncoveredBooksMustNotReceiveInventedOrdinaryLinks": true
+  }
+}

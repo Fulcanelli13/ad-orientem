@@ -1,0 +1,26 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+
+const b=JSON.parse(readFileSync(new URL("../data/geography/research/mass-scripture-primary-controls-batch02-20261011.v1.json",import.meta.url),"utf8"));
+const a=JSON.parse(readFileSync(new URL("../data/geography/research/mass-scripture-source-extractions-20261011.v1.json",import.meta.url),"utf8"));
+assert.equal(b.schema,"MASS_SCRIPTURE_PRIMARY_CONTROLS_BATCH02_V1");
+assert.equal(b.status,"EDITORIAL_RESEARCH_ONLY");
+assert.equal(b.dossiers.length,24);
+assert.equal(b.criticalHolds.length,7);
+assert.equal(new Set(b.dossiers.map(x=>x.id)).size,24);
+const originalIds=new Set(a.records.map(x=>x.id));
+assert.ok(b.dossiers.every(x=>x.id.startsWith("H") && x.researchRecordIds.every(id=>originalIds.has(id))),"Cross-ref existing 54 research records rather than duplicating them");
+assert.ok(b.dossiers.every(x=>x.evidence?.length && x.evidence.every(s=>s.url.startsWith("https://") && s.exactLocator && s.access)));
+assert.ok(b.dossiers.every(x=>x.certification.publishable===false && x.certification.latin1962PhraseChecked===false && x.certification.secondaryHistoricalClaimsRequireIndependentManuscriptReview===true));
+assert.ok(b.dossiers.every(x=>x.productRisk.includes("no automatic link")));
+assert.ok(b.dossiers.find(x=>x.id==="H003").evidence.some(x=>x.url.includes("De_sacramentis")));
+assert.ok(b.dossiers.find(x=>x.id==="H004").carefullyQualifiedClaim.includes("singular angel language"));
+assert.ok(b.dossiers.find(x=>x.id==="H013").claimType==="LEXICAL_CAUTION");
+assert.ok(b.dossiers.find(x=>x.id==="H023").evidence.some(x=>x.url.includes("Lebrun")));
+const gihr=b.dossiers.find(x=>x.id==="H024");
+assert.equal(gihr.claimType,"SECONDARY_QUOTATION_NEEDS_ORIGINAL");
+assert.equal(gihr.certification.originalAuthorTextInspected,false,"never claim direct original Gihr page inspection from secondary extracts");
+assert.ok(b.criticalHolds.some(x=>x.id==="AUTH_DE_SAC"));
+assert.ok(b.criticalHolds.some(x=>x.id==="GEN14_MELCH"));
+assert.ok(b.criticalHolds.some(x=>x.id==="GIHR_FULLTEXT_NOT_YET_READ"));
+console.log("PASS Mass–Scripture batch 2:",b.dossiers.length,"original/source-critical controls, 7 holds; 1962 Mass UI untouched");

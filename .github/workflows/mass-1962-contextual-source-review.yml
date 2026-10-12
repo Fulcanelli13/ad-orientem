@@ -1,0 +1,20 @@
+name: Mass 1962 contextual source review
+on:
+  push:
+    paths:
+      - 'data/geography/research/mass-1962-contextual-primary-witness-pilot-20261011.v1.json'
+      - 'tests/mass-1962-contextual-primary-witness-pilot.mjs'
+      - '.github/workflows/mass-1962-contextual-source-review.yml'
+  workflow_dispatch:
+jobs:
+  validate-missal-conditions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check tests/mass-1962-contextual-primary-witness-pilot.mjs
+      - run: node tests/mass-1962-contextual-primary-witness-pilot.mjs

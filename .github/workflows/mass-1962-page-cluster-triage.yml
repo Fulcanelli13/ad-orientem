@@ -1,0 +1,51 @@
+name: Mass 1962 printed-page multi-section review queue
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/research/mass-1962-ocr-cluster-review-queue.mjs'
+      - 'tests/mass-1962-printed-page-cluster-review.mjs'
+      - '.github/workflows/mass-1962-page-cluster-triage.yml'
+      - 'data/geography/research/mass-1962-cmaa-visual-10-page-source-spotchecks-20261011.v1.json'
+      - 'tests/mass-1962-visual-page-spotchecks.mjs'
+      - 'tests/mass-1962-44-calendar-heading-reconciliation.mjs'
+      - 'data/geography/research/mass-1962-44-cluster-calendar-heading-reconciliation-20261012.v1.json'
+      - 'data/geography/research/mass-1962-visual-13-calendar-edge-case-adjudications-20261012.v1.json'
+      - 'tests/mass-1962-visual-13-calendar-edge-cases.mjs'
+jobs:
+  build-conservative-page-queue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build page clusters from committed high-priority OCR candidate dataset
+        run: node scripts/research/mass-1962-ocr-cluster-review-queue.mjs
+      - name: Validate unambiguous coverage and closed publication gates
+        run: node tests/mass-1962-printed-page-cluster-review.mjs
+      - name: Validate ten visually inspected PDF pages and the August commemoration hold
+        run: node tests/mass-1962-visual-page-spotchecks.mjs
+      - name: Check the 44 headed-page triages and seven discordant-month holds
+        run: node tests/mass-1962-44-calendar-heading-reconciliation.mjs
+      - name: Check 13 visually adjudicated calendar exceptions and regional scope
+        run: node tests/mass-1962-visual-13-calendar-edge-cases.mjs
+      - name: Upload review queue for per-page checking
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-page-cluster-review
+          path: data/geography/research/mass-1962-printed-page-cluster-review-queue-20261011.v1.json
+          if-no-files-found: warn
+      - name: Commit research-only page cluster queue
+        if: success() && github.ref == 'refs/heads/research/biblical-people-genealogy-explorer-20261011'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/geography/research/mass-1962-printed-page-cluster-review-queue-20261011.v1.json
+          if ! git diff --staged --quiet; then
+            git commit -m "data(research): rank full-Missal printed page candidates for 100 source paths"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

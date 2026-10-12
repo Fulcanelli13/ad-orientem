@@ -1,0 +1,800 @@
+{
+  "schema": "MASS_VARIABLE_CHANT_BIBLE_DISCOVERY_V1",
+  "status": "SOURCE_NOTES_EXTRACTED_NO_1962_FACSIMILE_OR_BIBLE_TEXT_CERT",
+  "batch": 1,
+  "date": "2026-10-11",
+  "method": "Read original Latin Divinum Officium proper-source files; extract literal !citation annotations in [Introitus],[Graduale],[Offertorium],[Communio]. Preserve alleluia/tract/sequence structural markers and source inheritance; these are the source editor's citations, not independent Bible text verification.",
+  "scripturalIndexLeads": [
+    {
+      "author": "Matthew P. Hazell",
+      "title": "Scripture Index of Chants and Readings in the 1962 Missale Romanum",
+      "edition": "2013",
+      "url": "https://catholiclectionary.blogspot.com/2013/06/scripture-index-for-1962-mr-and-some.html",
+      "role": "Independent printed 1962 Missal index to crosscheck before any publication; original blog points to PDF; content not reproduced."
+    }
+  ],
+  "sourcePaths": [
+    "Tempora/Adv1-0",
+    "Tempora/Adv3-0",
+    "Tempora/Nat1-0",
+    "Tempora/Quadp1-0",
+    "Tempora/Quad1-0",
+    "Tempora/Quad4-0",
+    "Tempora/Quad5-0",
+    "Tempora/Quad6-0"
+  ],
+  "chants": [
+    {
+      "sourcePath": "Tempora/Adv1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt",
+      "sourceSection": "Introitus",
+      "properSlot": "INTROIT",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "v. Ad te levávi ánimam meam: Deus meus, in te confído, non erubéscam: neque irrídeant me inimíci mei: étenim univérsi, qui te exspéctant, non confundéntur.",
+      "biblicalCitationNotes": [
+        "Ps 24:1-3",
+        "Ps 24:4"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt",
+      "sourceSection": "Graduale",
+      "properSlot": "GRADUAL",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Univérsi, qui te exspéctant, non confundéntur, Dómine.",
+      "biblicalCitationNotes": [
+        "Ps 24:3; 24:4",
+        "Ps 84:8."
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt",
+      "sourceSection": "Offertorium",
+      "properSlot": "OFFERTORY",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Ad te levávi ánimam meam: Deus meus, in te confído, non erubéscam: neque irrídeant me inimíci mei: étenim univérsi, qui te exspéctant, non confundéntur.",
+      "biblicalCitationNotes": [
+        "Ps 24:1-3."
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt",
+      "sourceSection": "Communio",
+      "properSlot": "COMMUNION",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Dóminus dabit benignitátem: et terra nostra dabit fructum suum.",
+      "biblicalCitationNotes": [
+        "Ps 84:13."
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv3-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-0.txt",
+      "sourceSection": "Introitus",
+      "properSlot": "INTROIT",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "v. Gaudéte in Dómino semper: íterum dico, gaudéte. Modéstia vestra nota sit ómnibus homínibus: Dóminus enim prope est. Nihil sollíciti sitis: sed in omni oratióne petitiónes vestræ",
+      "biblicalCitationNotes": [
+        "Phil 4:4-6",
+        "Ps 84:2"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv3-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-0.txt",
+      "sourceSection": "Graduale",
+      "properSlot": "GRADUAL",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Qui sedes, Dómine, super Chérubim, éxcita poténtiam tuam, et veni.",
+      "biblicalCitationNotes": [
+        "Ps 79:2; 79:3; 79:2"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv3-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-0.txt",
+      "sourceSection": "Offertorium",
+      "properSlot": "OFFERTORY",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Benedixísti, Dómine, terram tuam: avertísti captivitátem Jacob: remisísti iniquitatem plebis tuæ.",
+      "biblicalCitationNotes": [
+        "Ps 84:2"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Adv3-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-0.txt",
+      "sourceSection": "Communio",
+      "properSlot": "COMMUNION",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Dícite: pusillánimes, confortámini et nolíte timére: ecce, Deus noster véniet et salvábit nos.",
+      "biblicalCitationNotes": [
+        "Is 35:4."
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Nat1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat1-0.txt",
+      "sourceSection": "Introitus",
+      "properSlot": "INTROIT",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "v. Dum médium siléntium tenérent ómnia, et nox in suo cursu médium iter háberet, omnípotens Sermo tuus, Dómine, de cœlis a regálibus sédibus venit.",
+      "biblicalCitationNotes": [
+        "Sap 18:14-15.",
+        "Ps 92:1"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Nat1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat1-0.txt",
+      "sourceSection": "Graduale",
+      "properSlot": "GRADUAL",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Speciósus forma præ fíliis hóminum: diffúsa est grátia in lábiis tuis.",
+      "biblicalCitationNotes": [
+        "Ps 44:3; 44:2",
+        "Ps 92:1."
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Nat1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat1-0.txt",
+      "sourceSection": "Offertorium",
+      "properSlot": "OFFERTORY",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Deus firmávit orbem terræ, qui non commovébitur: paráta sedes tua, Deus, ex tunc, a sǽculo tu es.",
+      "biblicalCitationNotes": [
+        "Ps 92:1-2"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Nat1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat1-0.txt",
+      "sourceSection": "Communio",
+      "properSlot": "COMMUNION",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Tolle Púerum et Matrem ejus, et vade in terram Israël: defúncti sunt enim, qui quærébant ánimam Púeri.",
+      "biblicalCitationNotes": [
+        "Matt 2:20"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quadp1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt",
+      "sourceSection": "Introitus",
+      "properSlot": "INTROIT",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "v. Circumdedérunt me gémitus mortis, dolóres inférni circumdedérunt me: et in tribulatióne mea invocávi Dóminum, et exaudívit de templo sancto suo vocem meam.",
+      "biblicalCitationNotes": [
+        "Ps 17:5; 17:6; 17:7",
+        "Ps 17:2-3"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quadp1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt",
+      "sourceSection": "Graduale",
+      "properSlot": "GRADUAL",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Adjútor in opportunitátibus, in tribulatióne: sperent in te, qui novérunt te: quóniam non derelínquis quæréntes te, Dómine,",
+      "biblicalCitationNotes": [
+        "Ps 9:10-11; 9:19-20",
+        "Ps 129:1-4"
+      ],
+      "sectionBoundaryNotes": [
+        "Tractus"
+      ],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quadp1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt",
+      "sourceSection": "Offertorium",
+      "properSlot": "OFFERTORY",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Bonum est confitéri Dómino, et psállere nómini tuo, Altíssime.",
+      "biblicalCitationNotes": [
+        "Ps 91:2"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quadp1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt",
+      "sourceSection": "Communio",
+      "properSlot": "COMMUNION",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Illúmina fáciem tuam super servum tuum, et salvum me fac in tua misericórdia: Dómine, non confúndar, quóniam invocávi te.",
+      "biblicalCitationNotes": [
+        "Ps 30:17-18"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-0.txt",
+      "sourceSection": "Introitus",
+      "properSlot": "INTROIT",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "v. Invocábit me, et ego exáudiam eum: erípiam eum, et glorificábo eum: longitúdine diérum adimplébo eum.",
+      "biblicalCitationNotes": [
+        "Ps 90:15; 90:16",
+        "Ps 90:1"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-0.txt",
+      "sourceSection": "Graduale",
+      "properSlot": "GRADUAL",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Angelis suis Deus mandávit de te, ut custódiant te in ómnibus viis tuis.",
+      "biblicalCitationNotes": [
+        "Ps 90:11-12",
+        "Ps 90:1-7; 90:11-16"
+      ],
+      "sectionBoundaryNotes": [
+        "Tractus"
+      ],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-0.txt",
+      "sourceSection": "Offertorium",
+      "properSlot": "OFFERTORY",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Scápulis suis obumbrábit tibi Dóminus, et sub pennis ejus sperábis: scuto circúmdabit te véritas ejus.",
+      "biblicalCitationNotes": [
+        "Ps 90:4-5"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad1-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-0.txt",
+      "sourceSection": "Communio",
+      "properSlot": "COMMUNION",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Scápulis suis obumbrábit tibi Dóminus, et sub pennis ejus sperábis: scuto circúmdabit te véritas ejus.",
+      "biblicalCitationNotes": [
+        "Ps 90:4-5"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad4-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-0.txt",
+      "sourceSection": "Introitus",
+      "properSlot": "INTROIT",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "v. Lætáre, Jerúsalem: et convéntum fácite, omnes qui dilígitis eam: gaudéte cum lætítia, qui in tristítia fuístis: ut exsultétis, et satiémini ab ubéribus consolatiónis vestræ.",
+      "biblicalCitationNotes": [
+        "Is 66:10 et 11",
+        "Ps 121:1."
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad4-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-0.txt",
+      "sourceSection": "Graduale",
+      "properSlot": "GRADUAL",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Lætátus sum in his, quæ dicta sunt mihi: in domum Dómini íbimus.",
+      "biblicalCitationNotes": [
+        "Ps 121:1, 7",
+        "Ps 124:1-2"
+      ],
+      "sectionBoundaryNotes": [
+        "Tractus"
+      ],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad4-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-0.txt",
+      "sourceSection": "Offertorium",
+      "properSlot": "OFFERTORY",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Laudáte Dóminum, quia benígnus est: psállite nómini ejus, quóniam suávis est: ómnia, quæcúmque vóluit, fecit in cœlo et in terra.",
+      "biblicalCitationNotes": [
+        "Ps 134:3, 6"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad4-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-0.txt",
+      "sourceSection": "Communio",
+      "properSlot": "COMMUNION",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Jerúsalem, quæ ædificátur ut cívitas, cujus participátio ejus in idípsum: illuc enim ascendérunt tribus, tribus Dómini, ad confiténdum nómini tuo, Dómine.",
+      "biblicalCitationNotes": [
+        "Ps 121:3-4"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad5-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-0.txt",
+      "sourceSection": "Introitus",
+      "properSlot": "INTROIT",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "v. Júdica me, Deus, et discérne causam meam de gente non sancta: ab hómine iníquo et dolóso éripe me: quia tu es Deus meus et fortitúdo mea.",
+      "biblicalCitationNotes": [
+        "Ps 42:1-2.",
+        "Ps 42:3"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad5-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-0.txt",
+      "sourceSection": "Graduale",
+      "properSlot": "GRADUAL",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Eripe me, Dómine, de inimícis meis: doce me fácere voluntátem tuam",
+      "biblicalCitationNotes": [
+        "Ps 142:9, 10",
+        "Ps 17:48-49",
+        "Ps 128:1-4"
+      ],
+      "sectionBoundaryNotes": [
+        "Tractus"
+      ],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad5-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-0.txt",
+      "sourceSection": "Offertorium",
+      "properSlot": "OFFERTORY",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Confitébor tibi, Dómine, in toto corde meo: retríbue servo tuo: vivam, et custódiam sermónes tuos: vivífica me secúndum verbum tuum, Dómine.",
+      "biblicalCitationNotes": [
+        "Ps 9:1, 118:17, 107"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad5-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-0.txt",
+      "sourceSection": "Communio",
+      "properSlot": "COMMUNION",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Hoc corpus, quod pro vobis tradétur: hic calix novi Testaménti est in meo sánguine, dicit Dóminus: hoc fácite, quotiescúmque súmitis, in meam commemoratiónem.",
+      "biblicalCitationNotes": [
+        "1 Cor 11:24, 25"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad6-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-0.txt",
+      "sourceSection": "Introitus",
+      "properSlot": "INTROIT",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "v. Dómine, ne longe fácias auxílium tuum a me, ad defensiónem meam áspice: líbera me de ore leónis, et a córnibus unicórnium humilitátem meam.",
+      "biblicalCitationNotes": [
+        "Ps 21:20 et 22.",
+        "Ps 21:2"
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad6-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-0.txt",
+      "sourceSection": "Graduale",
+      "properSlot": "GRADUAL",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Tenuísti manum déxteram meam: et in voluntáte tua deduxísti me: et cum glória assumpsísti me.",
+      "biblicalCitationNotes": [
+        "Ps 72:24 et 1-3"
+      ],
+      "sectionBoundaryNotes": [
+        "Tractus 21:2-9, 18, 19, 22, 24, 32"
+      ],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad6-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-0.txt",
+      "sourceSection": "Offertorium",
+      "properSlot": "OFFERTORY",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Impropérium exspectávit cor meum et misériam: et sustínui, qui simul mecum contristarétur, et non fuit: consolántem me quæsívi, et non invéni: et dedérunt in escam meam fel, et in ",
+      "biblicalCitationNotes": [
+        "Ps 68:21-22."
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad6-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-0.txt",
+      "sourceSection": "Communio",
+      "properSlot": "COMMUNION",
+      "sourceSectionPresent": true,
+      "latinIncipitWitness": "Pater, si non potest hic calix transíre, nisi bibam illum: fiat volúntas tua.",
+      "biblicalCitationNotes": [
+        "Matt 26:42."
+      ],
+      "sectionBoundaryNotes": [],
+      "inheritedSourceDirectives": [],
+      "citationStatus": "CITATION_PRINTED_IN_WITNESS",
+      "hasNonEmptyLatinText": true,
+      "verification": {
+        "sourceFileInspected": true,
+        "verseMatchesBibleEdition": false,
+        "comparedAgainstFacsimile1962": false,
+        "resolvedThroughExistingAppProper": false,
+        "approvedForApp": false
+      }
+    }
+  ],
+  "holds": [
+    {
+      "sourcePath": "Tempora/Quadp1-0",
+      "slot": "GRADUAL",
+      "status": "CITATION_PRINTED_IN_WITNESS",
+      "transitions": [
+        "Tractus"
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad1-0",
+      "slot": "GRADUAL",
+      "status": "CITATION_PRINTED_IN_WITNESS",
+      "transitions": [
+        "Tractus"
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad4-0",
+      "slot": "GRADUAL",
+      "status": "CITATION_PRINTED_IN_WITNESS",
+      "transitions": [
+        "Tractus"
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad5-0",
+      "slot": "GRADUAL",
+      "status": "CITATION_PRINTED_IN_WITNESS",
+      "transitions": [
+        "Tractus"
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad6-0",
+      "slot": "GRADUAL",
+      "status": "CITATION_PRINTED_IN_WITNESS",
+      "transitions": [
+        "Tractus 21:2-9, 18, 19, 22, 24, 32"
+      ]
+    }
+  ],
+  "productionNote": "This is an unmerged research-only manuscript; never inject source-note Scripture references into actual resolved Proper, LIVE, or Atlas without a current rite+sourcePath+Latin incipit match."
+}

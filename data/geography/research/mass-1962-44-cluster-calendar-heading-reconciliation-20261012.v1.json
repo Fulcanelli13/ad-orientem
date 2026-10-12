@@ -1,0 +1,1567 @@
+{
+  "schema": "MASS_1962_44_CLUSTER_CALENDAR_HEADING_Triage_V1",
+  "date": "2026-10-12",
+  "sourcePdfUrl": "https://media.musicasacra.com/pdf/missale62.pdf",
+  "sourcePdfSHA256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+  "sourceFile": "data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json",
+  "methodology": "Extract feast-month/day words from short initial OCR page samples; compare to Sanctoral filename date only as a falsification/review flag. Page continuation, substitutions, transfers and Commons can legitimately differ. No liturgical identity is certified.",
+  "stats": {
+    "total": 44,
+    "byClassification": {
+      "COMMON_VOTIVE_RUBRIC_REVIEW": 2,
+      "PAGE_HEADER_MONTH_DISCORDANCE_HOLD": 7,
+      "PRINTED_SAME_MONTH_OR_CONTINUATION": 5,
+      "PRINTED_SAME_DATE_HEADING_CANDIDATE": 17,
+      "KNOWN_CALENDAR_ALIAS_JUL03_IRENAEUS": 1,
+      "LOCAL_OR_SUPPLEMENT_FORMULARY_REVIEW": 2,
+      "NON_DATE_CODE_RUBRIC_REVIEW": 1,
+      "PRINTED_HEADER_UNREADABLE": 1,
+      "TEMPORAL_SEQUENCE_REVIEW": 8
+    },
+    "discordantPageMonthCount": 7,
+    "publicationApproved": 0
+  },
+  "rows": [
+    {
+      "sourcePath": "Commune/Coronatio",
+      "classification": "COMMON_VOTIVE_RUBRIC_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 876,
+          "printedPageCandidate": 795,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "[68] Missa votiva in die coronationis Papae et in eius anniversario 2. In die coronationis Papae tur. Benedictus Deus et Pater Domini et in eius anniversario nostri Iesu Christi, qui secundum mi- sericordiam su",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 877,
+          "printedPageCandidate": 796,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Missa votiva in consecratione Episcopi [69] mirabilia eius filiis hominum. Alleluia. Ant. ad Communionem Mt. 16, 18 4709 V. Matth. 16, 18 Tu es Petrus, et su- Tu es Petrus, et super hanc petram per hanc petram ",
+          "matchedSourceSections": [
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Commune/Propaganda",
+      "classification": "COMMON_VOTIVE_RUBRIC_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 894,
+          "printedPageCandidate": 813,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "[86] Missa votiva pro Fidei propagatione Oratio qui habitant terram, quia t u es Deus 4833 THVeus, qui omnes homines vis sal- conspector saeculorum. JLJ VOS fieri et ad agnitionem veri- Graduate Ps. 66, 6-8 tat",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 895,
+          "printedPageCandidate": 814,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Missa votiva pro Ecclesiae defensione [87] lis suis: Messis quidem multa, operarii quillam vitam agamus, in omni pieta- autem pauci. Rogate ergo Dominum te et castitate; hoc enim bonum est messis, ut mittat ope",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/01-20",
+      "classification": "PAGE_HEADER_MONTH_DISCORDANCE_HOLD",
+      "sourceCalendarMonth": 1,
+      "sourceCalendarDay": 20,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 688,
+          "printedPageCandidate": 607,
+          "headerMonth": "iulii",
+          "headerDay": 30,
+          "headerExcerpt": "Festa iulii (30) 607 Die 30 iulii semper autem gaudentes: sicut egentes, Ss. Abdon et Sennen Mm. multos autem locupletantes: tamquam Commemoratio nihil habentes, et omnia possidentes. 3214 Antiphona ad Introitu",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Inspect adjacent printed pages and compare source calendar alias, Common reuse, and beginning/end of formularies; do not reject or approve from page-header month alone.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/01-25",
+      "classification": "PAGE_HEADER_MONTH_DISCORDANCE_HOLD",
+      "sourceCalendarMonth": 1,
+      "sourceCalendarDay": 25,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 652,
+          "printedPageCandidate": 571,
+          "headerMonth": "iunii",
+          "headerDay": 30,
+          "headerExcerpt": "Festa iunii (30) 571 Postcommunio eius auxilio, a peccatorum nostrorum 2920 Q uos caelesti, Domine, alimento sa- nexibus liberemur: Qui vivis et regnas tiasti: apostolicis intercessioni- cum Deo Patre in imitat",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Inspect adjacent printed pages and compare source calendar alias, Common reuse, and beginning/end of formularies; do not reject or approve from page-header month alone.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/01-31",
+      "classification": "PAGE_HEADER_MONTH_DISCORDANCE_HOLD",
+      "sourceCalendarMonth": 1,
+      "sourceCalendarDay": 31,
+      "priorVisualSpotcheck": true,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 543,
+          "printedPageCandidate": 462,
+          "headerMonth": "februarii",
+          "headerDay": null,
+          "headerExcerpt": "462 Festa februarii (i) Graduale Ps. 36, 3-5 gno caelorum. Et qui susceperit unum 2074 Spera in Domino et fac bonitatem et parvulum talem in nomine meo, me inhabita terram, et pasceris in divitiis suscipit. eiu",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Inspect adjacent printed pages and compare source calendar alias, Common reuse, and beginning/end of formularies; do not reject or approve from page-header month alone.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/02-01",
+      "classification": "PRINTED_SAME_MONTH_OR_CONTINUATION",
+      "sourceCalendarMonth": 2,
+      "sourceCalendarDay": 1,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 544,
+          "printedPageCandidate": 463,
+          "headerMonth": "februarii",
+          "headerDay": null,
+          "headerExcerpt": "Festa februarii (i) 463 Oratio ^ In Missis votivis tempore paschali 2084 \"T nfirmitatem nostram respice, omnipo- omittitur graduale, et eius loco dicitur: JL tens Deus: et, quia pondus propriae Alleluia, allelu",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/02-11",
+      "classification": "PRINTED_SAME_MONTH_OR_CONTINUATION",
+      "sourceCalendarMonth": 2,
+      "sourceCalendarDay": 11,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 656,
+          "printedPageCandidate": 575,
+          "headerMonth": "iulii",
+          "headerDay": 2,
+          "headerExcerpt": "Festa iulii (2) 575 Oratio netrix, quern totus non capit orbis, in 2950 \"pamulis tuis, quaesumus, Domine, tua se clausit viscera factus homo. XT caelestis gratiae munus impertire: Alleluia, alleluia. V. Felix e",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 555,
+          "printedPageCandidate": 474,
+          "headerMonth": "februarii",
+          "headerDay": null,
+          "headerExcerpt": "474 Festa februarii (n) Lectio libri Apocalypsis beati Ioannis i\"T\"iSequentia sancti Evangelii secun- Apostoli. Apoc. I I , 19; 12, 1 et 10 ' 1 ' dum Lucam. Luc. 1, 26-31 2166 Apertum est templum Dei in caelo: ",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/02-27",
+      "classification": "PAGE_HEADER_MONTH_DISCORDANCE_HOLD",
+      "sourceCalendarMonth": 2,
+      "sourceCalendarDay": 27,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 563,
+          "printedPageCandidate": 482,
+          "headerMonth": "martii",
+          "headerDay": 4,
+          "headerExcerpt": "482 Festa martii (4) ab Angelis: gloria et honore coro- habebis thesaurum in caelo: et veni, nasti eum: et constituisti eum super sequere me. opera manuum tuarum. Alleluia. Ant. ad Offertorium Ps. 115, 16-17 ^ ",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 625,
+          "printedPageCandidate": 544,
+          "headerMonth": "iunii",
+          "headerDay": 4,
+          "headerExcerpt": "544 Festa iunii (4) Lectio libri Sapientiae. vos similes hominibus exspectantibus Sap. 4, 7-14 dominum suum, quando revertatur a 2713 T u s t u s , si morte praeoccupatus fuerit, nuptiis: ut, cum venerit, et pu",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Inspect adjacent printed pages and compare source calendar alias, Common reuse, and beginning/end of formularies; do not reject or approve from page-header month alone.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/03-19",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 3,
+      "sourceCalendarDay": 19,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 572,
+          "printedPageCandidate": 491,
+          "headerMonth": "martii",
+          "headerDay": 19,
+          "headerExcerpt": "AUTEM GENU1T IOSEPH VIRUM MARIAE DE QUA NATVS EST IESVS Die 19 martii S. IOSEPH SPONSI B. MARLE V. CONF. ET ECCLESI^E UNIVERSE PATRONI I classis Ant. ad Introitum Ps. 91, 13-14 Lectio libri Sapientiae. 2297 ust",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 573,
+          "printedPageCandidate": 492,
+          "headerMonth": "martii",
+          "headerDay": 21,
+          "headerExcerpt": "492 Festa martii (21) V. Vitam petiit a te, et tribuisti ei lon- Secreta gitudinem dierum in saeculum saeculi. Tractus Ps. 111, 1-3 D ebitum tibi, Domine, nostrae red- 2305 dimus servitutis, suppliciter ex- ora",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/03-19t",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 3,
+      "sourceCalendarDay": 19,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 572,
+          "printedPageCandidate": 491,
+          "headerMonth": "martii",
+          "headerDay": 19,
+          "headerExcerpt": "AUTEM GENU1T IOSEPH VIRUM MARIAE DE QUA NATVS EST IESVS Die 19 martii S. IOSEPH SPONSI B. MARLE V. CONF. ET ECCLESI^E UNIVERSE PATRONI I classis Ant. ad Introitum Ps. 91, 13-14 Lectio libri Sapientiae. 2297 ust",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 573,
+          "printedPageCandidate": 492,
+          "headerMonth": "martii",
+          "headerDay": 21,
+          "headerExcerpt": "492 Festa martii (21) V. Vitam petiit a te, et tribuisti ei lon- Secreta gitudinem dierum in saeculum saeculi. Tractus Ps. 111, 1-3 D ebitum tibi, Domine, nostrae red- 2305 dimus servitutis, suppliciter ex- ora",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/03-24",
+      "classification": "PAGE_HEADER_MONTH_DISCORDANCE_HOLD",
+      "sourceCalendarMonth": 3,
+      "sourceCalendarDay": 24,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 751,
+          "printedPageCandidate": 670,
+          "headerMonth": "septembris",
+          "headerDay": 29,
+          "headerExcerpt": "670 Festa septembris (29) Secreta C Postcommunio C 3724 Ik yTuneribus nostris, quaesumus, D6- i, qusesumus, Domine Deus no- 3725 JLVJL mine, precibusque susceptis: et D ster: ut, sicut tuorum comme- caelestibus",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 752,
+          "printedPageCandidate": 671,
+          "headerMonth": "septembris",
+          "headerDay": 29,
+          "headerExcerpt": "Festa septembris (29) 671 cans Iesus parvulum, statuit eum in niente sufFragio, et placatus accipias, medio eorum, et dixit: Amen dico vo- et ad salutem nostram provenire con- bis, nisi conversi fueritis, et ef",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Inspect adjacent printed pages and compare source calendar alias, Common reuse, and beginning/end of formularies; do not reject or approve from page-header month alone.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/03-27",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 3,
+      "sourceCalendarDay": 27,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 578,
+          "printedPageCandidate": 497,
+          "headerMonth": "martii",
+          "headerDay": 27,
+          "headerExcerpt": "Festa martii (27) 497 Oratio Tractus Ibid., 38, 39 et 50 2335 /'\"\"Vmnipotens sempiterne Deus, qui, Persequar inimicos meos, et com- 2338 V^y ad cultum sacrarum imaginum prehendam illos. V. Confringam illos, ass",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 579,
+          "printedPageCandidate": 498,
+          "headerMonth": "martii",
+          "headerDay": 28,
+          "headerExcerpt": "498 Festa martii (28) insipientia, et colloquebantur ad invi- spiritualium hostium, eius intercessio- cem, quidnam facerent Iesu. ne, superatis insidiis, coronam iustitiae Ant. ad Offertorium lob 14, 7 a te acc",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/03-28",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 3,
+      "sourceCalendarDay": 28,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 579,
+          "printedPageCandidate": 498,
+          "headerMonth": "martii",
+          "headerDay": 28,
+          "headerExcerpt": "498 Festa martii (28) insipientia, et colloquebantur ad invi- spiritualium hostium, eius intercessio- cem, quidnam facerent Iesu. ne, superatis insidiis, coronam iustitiae Ant. ad Offertorium lob 14, 7 a te acc",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 580,
+          "printedPageCandidate": 499,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Feria VI post dominicam I Passionis 499 meus, et refugium meum in die tribu- Ant. ad Communionem Sap. 10, 20 lationis meae. Alleluia. Decantaverunt, Domine, nomen 2356 •[ In Missis votivis ante Septuagesi- sanc",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/04-28",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 4,
+      "sourceCalendarDay": 28,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 594,
+          "printedPageCandidate": 513,
+          "headerMonth": "aprilis",
+          "headerDay": 28,
+          "headerExcerpt": "Festa aprilis (28) 513 tus est. Scriptum est enim: Perdam sa- Post Septuagesimam, omissis Alle- pientiam sapientium, et prudentiam luia et versu sequenti, dicitur prudentium reprobabo. Ubi sapiens? Tractus 1 Pe",
+          "matchedSourceSections": [
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 595,
+          "printedPageCandidate": 514,
+          "headerMonth": "aprilis",
+          "headerDay": 29,
+          "headerExcerpt": "514 Festa aprilis (29) Ant. ad Offertorium Ephes. 5, 2 Oratio 2466 Ambulate in dilectione, sicut et Chri- stus dilexit nos, et tradidit semetipsum pro nobis oblationem, et hostiam Deo P raesta,quaesumus,omnipot",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/05-13",
+      "classification": "PRINTED_SAME_MONTH_OR_CONTINUATION",
+      "sourceCalendarMonth": 5,
+      "sourceCalendarDay": 13,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 610,
+          "printedPageCandidate": 529,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Festa m a i i (13) 529 Oratio Stella? in perpetuas aeternitates. Alle- 2587 D eus, qui ad errorum insidias repel- lendas et Apostolicae Sedis iura propugnanda beatum Robertum, Pon- luia. Extra tempus paschale: ",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 611,
+          "printedPageCandidate": 530,
+          "headerMonth": "maii",
+          "headerDay": null,
+          "headerExcerpt": "530 Festa maii (14, 15) apex non praeteribit a lege, donee omnia Oratio P fiant. Qui ergo solvent unum de man- datis istis minimis, et docuerit sic ho- mines, minimus vocabitur in regno cae- D a, qusesumus, omn",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/06-02",
+      "classification": "PAGE_HEADER_MONTH_DISCORDANCE_HOLD",
+      "sourceCalendarMonth": 6,
+      "sourceCalendarDay": 2,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 704,
+          "printedPageCandidate": 623,
+          "headerMonth": "augusti",
+          "headerDay": null,
+          "headerExcerpt": "Festa augusti (n) 623 3348 Alleluia, alleluia. V. Levita Lau- vincula et carceres: lapidati sunt, secti rentius bonum opus operatus est: sunt, tentati sunt, in occisione gladii qui per signum crucis caecos illu",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 705,
+          "printedPageCandidate": 624,
+          "headerMonth": "augusti",
+          "headerDay": null,
+          "headerExcerpt": "624 Festa augusti (12, 13) Nolite ergo timere: multis passeribus Secreta C pluris estis vos. Dico autem vobis: A ccepta tibi sit, Domine, sacratae 3360 Omnis quicumque confessus fuerit me l \\ plebis oblatio pro",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Inspect adjacent printed pages and compare source calendar alias, Common reuse, and beginning/end of formularies; do not reject or approve from page-header month alone.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/06-05",
+      "classification": "PRINTED_SAME_MONTH_OR_CONTINUATION",
+      "sourceCalendarMonth": 6,
+      "sourceCalendarDay": 5,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 627,
+          "printedPageCandidate": 546,
+          "headerMonth": "iunii",
+          "headerDay": 6,
+          "headerExcerpt": "546 Festa iunii (6) Sequentia sancti Evangelii seciin- sedi cum Patre meo in throno eius. dum Matthaeum. Mt. 5, 1-12 (T. P. Alleluia.) 2728 J n illo tempore: Videns Iesus turbas, Postcommunio JL ascendit in mon",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/06-28",
+      "classification": "KNOWN_CALENDAR_ALIAS_JUL03_IRENAEUS",
+      "sourceCalendarMonth": 6,
+      "sourceCalendarDay": 28,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 659,
+          "printedPageCandidate": 578,
+          "headerMonth": "iulii",
+          "headerDay": 3,
+          "headerExcerpt": "578 Festa iulii (3) opportune, importune: argue, obsecra, Sequentia sancti Evangelii secun- 2979 increpa in omni patientia et doctrina. dum Matthaeum. Mt. 10, 28-33 Erit enim tempus, cum sanam doctri- nam non s",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Preserve Sancti/07-03r → Sancti/06-28, verify July 3 feast in printed edition.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/06-30",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 6,
+      "sourceCalendarDay": 30,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 652,
+          "printedPageCandidate": 571,
+          "headerMonth": "iunii",
+          "headerDay": 30,
+          "headerExcerpt": "Festa iunii (30) 571 Postcommunio eius auxilio, a peccatorum nostrorum 2920 Q uos caelesti, Domine, alimento sa- nexibus liberemur: Qui vivis et regnas tiasti: apostolicis intercessioni- cum Deo Patre in imitat",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 653,
+          "printedPageCandidate": 572,
+          "headerMonth": "iunii",
+          "headerDay": 30,
+          "headerExcerpt": "572 Festa iunii (30) 2927 Alleluia, alleluia. V. Sancte Paule afficient: et eritis odio omnibus propter Apostole, praedicator veritatis et doctor nomen meum: qui autem perseverave- gentium, intercede pro nobis.",
+          "matchedSourceSections": [
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/07-05",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 7,
+      "sourceCalendarDay": 5,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": true,
+      "pageEvidence": [
+        {
+          "pdfPage": 660,
+          "printedPageCandidate": 579,
+          "headerMonth": "iulii",
+          "headerDay": 5,
+          "headerExcerpt": "Festa iulii (5) 579 Die 5 iulii et doctrinae: insta in illis. Hoc enim S. Antonii Mariae Zaccaria faciens, et teipsum salvum fades, et eos qui te audiunt. Confessoris III classis Graduale Philipp. 1, 8-9 2984 A",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 661,
+          "printedPageCandidate": 580,
+          "headerMonth": "iulii",
+          "headerDay": 7,
+          "headerExcerpt": "580 Festa iulii (7) illud. Et complexans parvulos, et im- extulit ad victoriam: Qui vivis et re- ponens manus super illos, benedicebat gnas cum Deo Patre in unitate. eos. Et cum egressus esset in viam, procurre",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/07-13pl",
+      "classification": "LOCAL_OR_SUPPLEMENT_FORMULARY_REVIEW",
+      "sourceCalendarMonth": 7,
+      "sourceCalendarDay": 13,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 1029,
+          "printedPageCandidate": 948,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "COMMUNE PLURIUM CONFESSORUM NON PONTIFICUM Ant. /vm. ad aa Introitum Ps. 144,10-11 Quis enim permansit in mandatis eius, c 5846 # ^onfiteantur tibi, Domine, omnia opera tua, et Sancti tui bene- dicant tibi: glo",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 1030,
+          "printedPageCandidate": 949,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "[222] Comm. Sanct. pro aliquibus locis (Comm. plur. Conf. non Pont.) Sequentia sancti Evangelii secun- sacrificium tibi placitum nobisque pro- dum Lucam. Luc. 12, 35-40 ficuum immolemus. Per Dominum. 5854 T n i",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Confirm local/supplement status and geographic/calendar eligibility; do not auto-import worldwide.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/07-20",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 7,
+      "sourceCalendarDay": 20,
+      "priorVisualSpotcheck": true,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 674,
+          "printedPageCandidate": 593,
+          "headerMonth": "iulii",
+          "headerDay": 20,
+          "headerExcerpt": "Festa iulii (20) 593 3102 Postcommunio ris nudum, operi eum, et carnem tuam Q uaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedente beato Vincentio Confes- ne despexeris. Tune erumpet q",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 675,
+          "printedPageCandidate": 594,
+          "headerMonth": "iulii",
+          "headerDay": null,
+          "headerExcerpt": "594 Festa iulii (20, 21) Iesus vero ait eis: Sinite parvulos, et Ant. ad Communionem lac. 1, 27 3114 nolite eos prohibere ad me venire: ta- Religio munda et immaculata apud lium est enim regnum caelorum. Et cum",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/08-02",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 8,
+      "sourceCalendarDay": 2,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 692,
+          "printedPageCandidate": 611,
+          "headerMonth": "augusti",
+          "headerDay": 2,
+          "headerExcerpt": "Festa augusti (2) 611 Et fit commemoratio S. Stephani I Pa- Tractus Ps. 34, 133250 pae et Martyris: Ego autem, cum mihi molesti es- 3246 Oratio sent, induebar cilicio: humiliabam in regem tuum, Pastor aeterne, ",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/08-08",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 8,
+      "sourceCalendarDay": 8,
+      "priorVisualSpotcheck": true,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 700,
+          "printedPageCandidate": 619,
+          "headerMonth": "augusti",
+          "headerDay": 8,
+          "headerExcerpt": "Festa augusti (8) 619 Eodem die 8 augusti Graduale Ps. 33, 10 et 113314 Ss. Cyriaci, Largi et Smaragdi Timete Dominum, omnes sancti eius: quoniam nihil deest timentibus eum. Martyrum V. Inquirentes autem Dominu",
+          "matchedSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/08-16",
+      "classification": "PAGE_HEADER_MONTH_DISCORDANCE_HOLD",
+      "sourceCalendarMonth": 8,
+      "sourceCalendarDay": 16,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 544,
+          "printedPageCandidate": 463,
+          "headerMonth": "februarii",
+          "headerDay": null,
+          "headerExcerpt": "Festa februarii (i) 463 Oratio ^ In Missis votivis tempore paschali 2084 \"T nfirmitatem nostram respice, omnipo- omittitur graduale, et eius loco dicitur: JL tens Deus: et, quia pondus propriae Alleluia, allelu",
+          "matchedSourceSections": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Inspect adjacent printed pages and compare source calendar alias, Common reuse, and beginning/end of formularies; do not reject or approve from page-header month alone.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/08-22",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 8,
+      "sourceCalendarDay": 22,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 714,
+          "printedPageCandidate": 633,
+          "headerMonth": "augusti",
+          "headerDay": 22,
+          "headerExcerpt": "Festa augusti (22) 633 3422 Postcommunio P Lectio libri SapiSntiae. Eccli. 24, 23-31 S piritum nobis, Domine, tuae carita- tis infunde: ut, quos caelestis pa- nis virtiite satiasti, beata Ioanna Fran- E go quas",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 715,
+          "printedPageCandidate": 634,
+          "headerMonth": "augusti",
+          "headerDay": 22,
+          "headerExcerpt": "634 Festa augusti (22) ostii mei. V.Qui me invenerit, inveniet Ant. ad Communionem Io. 19, 26-27 3435 vitam, et hauriet salutem a Domino. Dixit Iesus matri suse: Mulier, ecce Tempore autem paschali omittitur gr",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/09-09n",
+      "classification": "LOCAL_OR_SUPPLEMENT_FORMULARY_REVIEW",
+      "sourceCalendarMonth": 9,
+      "sourceCalendarDay": 9,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 1008,
+          "printedPageCandidate": 927,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "[200] Missse pro aliquibus locis (S. Petti Claver Conf.) Postcommunio C animam tuam, et animam afHictam re- 5687 Oatiasti, Domine, familiam tuam pleveris, ori6tur in tenebris lux tua, et O muneribus sacris: eiu",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 1009,
+          "printedPageCandidate": 928,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Missae pro aliquibus locis (S. Catharine Fliscae Adurnae Viduas) [201] quidam descendebat ab Iernsalem in cit Dominus Deus. Quod perierat re- Iericho, et incidit in latrones, qui etiam quiram, et quod abiectum ",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Confirm local/supplement status and geographic/calendar eligibility; do not auto-import worldwide.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/09-18",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 9,
+      "sourceCalendarDay": 18,
+      "priorVisualSpotcheck": true,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 742,
+          "printedPageCandidate": 661,
+          "headerMonth": "septembris",
+          "headerDay": 18,
+          "headerExcerpt": "Festa septembris (18) 661 3652 Secreta Lectio Epistolae beati Pauli Apostoli M iinera tibi, Domine, dicata sancti- fica: et, intercedente beato Fran- cisco, ab omni nos culparum labe pu- F ad Corinthios. 1 Cor.",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 743,
+          "printedPageCandidate": 662,
+          "headerMonth": "septembris",
+          "headerDay": 19,
+          "headerExcerpt": "662 Festa septembris (19) et exaltavit caput eius. Alleluia. Ant. ad OfFertorium Ps. 34, 13 3662 V. Eccli. 45, 9 Amavit eum Domi- Ego autem, cum mihi molesti essent, nus, et ornavit eum: stolam gloriae induebar",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/10-02",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 10,
+      "sourceCalendarDay": 2,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 751,
+          "printedPageCandidate": 670,
+          "headerMonth": "septembris",
+          "headerDay": 29,
+          "headerExcerpt": "670 Festa septembris (29) Secreta C Postcommunio C 3724 Ik yTuneribus nostris, quaesumus, D6- i, qusesumus, Domine Deus no- 3725 JLVJL mine, precibusque susceptis: et D ster: ut, sicut tuorum comme- caelestibus",
+          "matchedSourceSections": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 752,
+          "printedPageCandidate": 671,
+          "headerMonth": "septembris",
+          "headerDay": 29,
+          "headerExcerpt": "Festa septembris (29) 671 cans Iesus parvulum, statuit eum in niente sufFragio, et placatus accipias, medio eorum, et dixit: Amen dico vo- et ad salutem nostram provenire con- bis, nisi conversi fueritis, et ef",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 754,
+          "printedPageCandidate": 673,
+          "headerMonth": "octobris",
+          "headerDay": 2,
+          "headerExcerpt": "Festa octobris (2) 673 ducat in locum, quern paravi. Observa Sequentia sancti Evangelii secun- eum, et audi vocem eius, nee contem- dum Matthseum. Mt. 18, 1-10 nendum putes: quia non dimittet cum peccaveris, et",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 755,
+          "printedPageCandidate": 674,
+          "headerMonth": "octobris",
+          "headerDay": 3,
+          "headerExcerpt": "674 Festa octobris (3) Secreta Lectio Isaiae Prophetae. 3759 3754Q[uscipe, Domine, miinera, quae pro Isai. 66, 12-14 O sanctorum Angelorum tuorum ve- neratione deferimus: et concede propi- tius; ut, perpetuis e",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/10-03",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 10,
+      "sourceCalendarDay": 3,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 755,
+          "printedPageCandidate": 674,
+          "headerMonth": "octobris",
+          "headerDay": 3,
+          "headerExcerpt": "674 Festa octobris (3) Secreta Lectio Isaiae Prophetae. 3759 3754Q[uscipe, Domine, miinera, quae pro Isai. 66, 12-14 O sanctorum Angelorum tuorum ve- neratione deferimus: et concede propi- tius; ut, perpetuis e",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 756,
+          "printedPageCandidate": 675,
+          "headerMonth": "octobris",
+          "headerDay": 4,
+          "headerExcerpt": "Festa octobris (4) 675 3763 Alleluia, alleluia. V. Eccli. 39,17-19 oculi sui. Sicut aquila expandit alas Quasi rosa plantata super rivos aqua- suas, et assumpsit earn, atque portavit rum fructificate: quasi Lib",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 757,
+          "printedPageCandidate": 676,
+          "headerMonth": "octobris",
+          "headerDay": 5,
+          "headerExcerpt": "676 Festa octobris (5) cordia, et super Israel Dei. De cetero Ant. ad Offertorium Ps. 88, 25 3776 nemo mihi molestus sit: ego enim Veritas mea et misericordia mea stigmata Domini Iesu in corpore meo cum ipso: e",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/10-09",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 10,
+      "sourceCalendarDay": 9,
+      "priorVisualSpotcheck": true,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 763,
+          "printedPageCandidate": 682,
+          "headerMonth": "octobris",
+          "headerDay": 9,
+          "headerExcerpt": "682 Festa octobris (9) lantes in astutia, neque adulterantes ^ In Missis votivis post Septuagesi- verbum Dei, sed in manifestatione ve- mam, omissis Alleluia et versu sequenti, dicitur ritatis commendantes nosm",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 764,
+          "printedPageCandidate": 683,
+          "headerMonth": "octobris",
+          "headerDay": 9,
+          "headerExcerpt": "Festa octobris (9) 683 transire de domo in domum. Et in stico et Eleutherio, ad redemptionis quamcumque civitatem intraveritis, et aeternae proficiamus augmentum. Per susceperint vos, manducate quae ap- Dominum",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/10-17",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 10,
+      "sourceCalendarDay": 17,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 769,
+          "printedPageCandidate": 688,
+          "headerMonth": "octobris",
+          "headerDay": 17,
+          "headerExcerpt": "688 Festa octobris (17) Oratio P diligentes, iugem in eodem Corde tuo 3867 T^\\eus, qui beatam Hedwigem a sae- mansionem habere mereamur: Qui vi- JLJ culi pompa ad humilem tuae Cru- vis et regnas cum Deo Patre i",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/10-20",
+      "classification": "PRINTED_SAME_MONTH_OR_CONTINUATION",
+      "sourceCalendarMonth": 10,
+      "sourceCalendarDay": 20,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 774,
+          "printedPageCandidate": 693,
+          "headerMonth": "octobris",
+          "headerDay": 21,
+          "headerExcerpt": "Festa octobris (21) 693 bus dominum suum, quando reverta- Die 21 octobris tur a nuptiis: ut, cum venerit et pul- S. Hilarionis Abbatis saverit, confestim aperiant ei. Beati ser- Commemoratio vi illi, quos, cum ",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/10-DU",
+      "classification": "NON_DATE_CODE_RUBRIC_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 779,
+          "printedPageCandidate": 698,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "698 Festa octobris (dominica ultima) nitudinem inhabitare: et per eum re- tus: Numquid ego Iudaeus sum? Gens conciliare omnia in ipsum, pacificans tua et pontinces tradiderunt te mini: per sanguinem crucis eius",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/12-08",
+      "classification": "PRINTED_SAME_DATE_HEADING_CANDIDATE",
+      "sourceCalendarMonth": 12,
+      "sourceCalendarDay": 8,
+      "priorVisualSpotcheck": true,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 519,
+          "printedPageCandidate": 438,
+          "headerMonth": "decembris",
+          "headerDay": 8,
+          "headerExcerpt": "438 Festa decembris (8) quando circumdabat mari terminum Sequentia sancti Evangelii secun- suum, et legem ponebat aquis ne trans- dum Lucam. Luc. 1, 26-28 irent fines suos: quando appendebat n illo tempore: Mis",
+          "matchedSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Sancti/12-27",
+      "classification": "PRINTED_HEADER_UNREADABLE",
+      "sourceCalendarMonth": 12,
+      "sourceCalendarDay": 27,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 107,
+          "printedPageCandidate": 26,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "26 S. Ioannis Ap. et Ev. sultationem thesaurizabit super ilium, set Petrus, dixit Iesu: Domine, hie au- et nomine aeterno hereditabit ilium, Do- tem quid? Dicit ei Iesus: Sic eum volo minus Deus noster. manere,",
+          "matchedSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-1",
+      "classification": "TEMPORAL_SEQUENCE_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 412,
+          "printedPageCandidate": 331,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "FERIA II INFRA OCTAVAM PASCH^E I classis Statio ad S. Petrum Ant. ad Introitum Ex. 13, 5 et 9 testibus praeordinatis a Deo: nobis, qui ntroduxit vos Dominus manducavimus et bibimus cum illo, in terram fluentem ",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 413,
+          "printedPageCandidate": 332,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "332 Feria II infra octavam Paschae Sequentia sancti Evangelii secun- omnibus Scripturis, quae de ipso erant. dum Lucam. Luc. 24, 13-35 Et appropinquaverunt castello, quo 1157 J n illo tempore: Duo ex discfpulis",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-2",
+      "classification": "TEMPORAL_SEQUENCE_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 415,
+          "printedPageCandidate": 334,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "334 Feria IV infra octavam Paschae bati vero et conterriti, existimabant se Ant. ad Offertorium Ps. 17, 14 et 16 spiritum videre. Et dixit eis: Quid tur- Intonuit de caelo Dominus, et Altis- 1169 bati estis, et",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 416,
+          "printedPageCandidate": 335,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Feria IV infra octavam Paschae 335 Lectio Actuum Apostolorum. Scimus Christum surrexisse a mor- Act. 3, 13-15 et 17-19 tuis vere: tu nobis, victor Rex, miserere. U75 T n diebus illis: Aperiens Petrus os Amen. A",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-3",
+      "classification": "TEMPORAL_SEQUENCE_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 416,
+          "printedPageCandidate": 335,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Feria IV infra octavam Paschae 335 Lectio Actuum Apostolorum. Scimus Christum surrexisse a mor- Act. 3, 13-15 et 17-19 tuis vere: tu nobis, victor Rex, miserere. U75 T n diebus illis: Aperiens Petrus os Amen. A",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 417,
+          "printedPageCandidate": 336,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "336 Feria V infra octavam Paschae eum: Tu quis es? scientes, quia Domi- Per Dominum nostrum Iesum Chri- nus est. Et venit Iesus, et accipit pa- stum, Filium tuum: Qui tecum vivit et nem, et dat eis, et piscem s",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-5",
+      "classification": "TEMPORAL_SEQUENCE_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 420,
+          "printedPageCandidate": 339,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Sabbato in albis 339 Sequentia mandavi vobis. Et ecce ego vobiscum 1200 X Tictimae paschali laudes immolent sum omnibus diebus, usque ad con- V Christiani. summationem saeculi. Credo. Agnus redemit oves: Christ",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-5t",
+      "classification": "TEMPORAL_SEQUENCE_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 420,
+          "printedPageCandidate": 339,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Sabbato in albis 339 Sequentia mandavi vobis. Et ecce ego vobiscum 1200 X Tictimae paschali laudes immolent sum omnibus diebus, usque ad con- V Christiani. summationem saeculi. Credo. Agnus redemit oves: Christ",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6t",
+      "classification": "TEMPORAL_SEQUENCE_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 157,
+          "printedPageCandidate": 76,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "76 Sabbato Quatuor Temporum Quadragesima? rubim, intuens abyssos. Et laudabilis, stinguere. Prophetias nolite spernere. et gloriosus in saecula. Omnia autem probate: quod bonum est Benedictus es, qui ambulas su",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 158,
+          "printedPageCandidate": 77,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "Sabbato Quatuor Temporum Quadragesimae 77 513 Ant. ad Offertorium Ps. 87, 2-3 Post Kyrie, eleison, dicitur: Oremus. Domine, Deus salutis meae, in die cla- Flectamus genua. — Levate. mavi, et nocte coram t e : i",
+          "matchedSourceSections": [
+            "Offertorium"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 159,
+          "printedPageCandidate": 78,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "78 Sabbato Quatuor Temporum Quadragesima; Graduate Ps. 78, 9 et 10 cordia eius: et veritas Domini manet in 521 Propitius esto, Domine, peccatis no- aeternum. stris: ne quando dicant gentes: Ubi est Deus eorum ?",
+          "matchedSourceSections": [
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Tempora/Quad4-3t",
+      "classification": "TEMPORAL_SEQUENCE_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": true,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 191,
+          "printedPageCandidate": 110,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "110 Feria IV post dominicam IV in Quadragesima stis in medio earum: ut sciant gentes, quiescite agere perverse, discite bene- quia ego Dominus, cum sanctificatus facere: quaerite iudicium, subvenite op- fuero i",
+          "matchedSourceSections": [
+            "GradualeL1",
+            "Graduale"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 193,
+          "printedPageCandidate": 112,
+          "headerMonth": null,
+          "headerDay": null,
+          "headerExcerpt": "112 Feria V post dominicam IV in Quadragesima tecum, ipse est. At ille ait: Credo, Do- Feria quinta mine. (Hie genuflectitur) Et procidens III classis adoravit eum. Statio ad Ss. Silvestrum et Martinum 717 Ant.",
+          "matchedSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "sourcePath": "Tempora/Quad5-5",
+      "classification": "TEMPORAL_SEQUENCE_REVIEW",
+      "sourceCalendarMonth": null,
+      "sourceCalendarDay": null,
+      "priorVisualSpotcheck": false,
+      "priorDetailedComparison": false,
+      "pageEvidence": [
+        {
+          "pdfPage": 737,
+          "printedPageCandidate": 656,
+          "headerMonth": "septembris",
+          "headerDay": 15,
+          "headerExcerpt": "656 Festa septembris (15) Die 15 septembris Lectio libri Iudith. Iudith 13, 22 et 23-25 SEPTEM DOLORUM BEAT;E MARLE VIRGINIS II classis B enedixit te Dominus in virtute sua, 3619 quia per te ad nihilum redegit ",
+          "matchedSourceSections": [
+            "Graduale",
+            "GradualeA"
+          ],
+          "pageHeaderVisuallyChecked": false
+        },
+        {
+          "pdfPage": 739,
+          "printedPageCandidate": 658,
+          "headerMonth": "septembris",
+          "headerDay": 15,
+          "headerExcerpt": "658 Festa septembris (15, 16) 3626 Ant. ad Offertorium Ierem. 18, 20 Eodem die 15 septembris Recordare, Virgo Mater Dei, dum S. Nicomedis Mart. steteris in conspectu Domini, ut loqua- Commemoratio ris pro nobis",
+          "matchedSourceSections": [
+            "Communio"
+          ],
+          "pageHeaderVisuallyChecked": false
+        }
+      ],
+      "reviewInstruction": "Visually inspect feast/rubrical heading, complete chant order, and exact 1962 edition before assigning biblical text.",
+      "status": "OCR_PAGE_HEADING_TRIAGE_ONLY",
+      "textualBibleCertification": false,
+      "wholeMissalEditionCertified": false,
+      "publicationApproved": false
+    }
+  ]
+}

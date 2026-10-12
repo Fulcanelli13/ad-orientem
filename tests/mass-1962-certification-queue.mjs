@@ -1,0 +1,26 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const d=JSON.parse(readFileSync(new URL("../data/geography/research/mass-1962-edition-certification-priority-queue-20261011.v1.json",import.meta.url),"utf8"));
+assert.equal(d.schema,"MASS_1962_EDITION_CERTIFICATION_SOURCE_QUEUE_V1");
+assert.equal(d.rows.length,1052);
+assert.equal(new Set(d.rows.map(x=>x.sourcePath)).size,1052);
+assert.equal(d.stats.sourcePaths,1052);
+assert.equal(d.stats.previouslyWitnessed,105);
+assert.equal(d.stats.sectionExtracted,947);
+assert.equal(d.stats.high+d.stats.medium+d.stats.baseline,1052);
+assert.equal(d.stats.nonEnumeratedCommonUses,6);
+assert.equal(d.outstandingNonEnumeratedCommonUses.length,6);
+assert.equal(d.contextualRubricHolds.length,2);
+assert.ok(d.contextualRubricHolds.some(x=>x.decision==="RUBRICAL_INTERPRETATION_HOLD"));
+assert.equal(d.stats.certifiedEligibility,0);
+assert.equal(d.stats.appApproved,0);
+assert.ok(d.rows.every(x=>x.approvedForApp===false && x.is1962Eligible===null &&
+  x.wholeMissalTextCompared===false && x.bibleTextCompared===false && x.frenchCramponCompared===false));
+assert.ok(d.rows.every(x=>["HIGH","MEDIUM","BASELINE"].includes(x.priority) && x.reasons.length>0));
+assert.ok(d.rows.every(x=>/^[a-f0-9]{40}$/.test(x.sourceBlobSha)));
+assert.ok(d.rows.every(x=>x.sourceUrl.startsWith("https://github.com/DivinumOfficium/")));
+const rosary=d.rows.find(x=>x.sourcePath==="Sancti/10-07");
+assert.ok(rosary && rosary.priority==="HIGH" && rosary.reasons.includes("PRINTED_FEAST_VOTIVE_VARIANT_WITNESSED"));
+assert.ok(d.outstandingNonEnumeratedCommonUses.some(x=>x.requiredParent==="Commune/C10a"));
+assert.ok(d.outstandingNonEnumeratedCommonUses.every(x=>x.editionVerified===false));
+console.log("PASS: 1052 reviewable source paths; 6 unresolved Common uses; 2 contextual rubrics; source identity and publication gates preserved.");

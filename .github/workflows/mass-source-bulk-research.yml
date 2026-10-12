@@ -1,0 +1,54 @@
+name: Mass source bulk research audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/research/mass-source-bulk-audit.mjs'
+      - 'data/geography/research/mass-1962-uninspected-source-triage-20261011.v1.json'
+      - '.github/workflows/mass-source-bulk-research.yml'
+      - 'tests/mass-source-bulk-audit-947.mjs'
+jobs:
+  inspect-sources:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate extraction syntax
+        run: node --check scripts/research/mass-source-bulk-audit.mjs
+      - name: Extract 426 non-Sanctoral paths
+        run: node scripts/research/mass-source-bulk-audit.mjs data/geography/research/mass-seasonal-bulk-source-audit-20261011.v1.json
+        env:
+          MASS_AUDIT_FAMILY: NON_SANCTORAL
+          MASS_AUDIT_CONCURRENCY: '6'
+      - name: Extract 521 Sanctoral paths
+        run: node scripts/research/mass-source-bulk-audit.mjs data/geography/research/mass-sanctoral-bulk-source-audit-20261011.v1.json
+        env:
+          MASS_AUDIT_FAMILY: SANCTORAL_FIXED_DATE_SOURCE
+          MASS_AUDIT_CONCURRENCY: '6'
+      - name: Validate 947-file source population and fail-closed publication gates
+        run: node tests/mass-source-bulk-audit-947.mjs
+      - name: Upload raw research results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-947-source-section-audit
+          path: |
+            data/geography/research/mass-seasonal-bulk-source-audit-20261011.v1.json
+            data/geography/research/mass-sanctoral-bulk-source-audit-20261011.v1.json
+          if-no-files-found: warn
+      - name: Persist non-production research evidence to this branch
+        if: success() && github.ref == 'refs/heads/research/biblical-people-genealogy-explorer-20261011'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/geography/research/mass-seasonal-bulk-source-audit-20261011.v1.json data/geography/research/mass-sanctoral-bulk-source-audit-20261011.v1.json
+          if ! git diff --staged --quiet; then
+            git commit -m "data(research): record complete 947-path source sections; uncertified"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

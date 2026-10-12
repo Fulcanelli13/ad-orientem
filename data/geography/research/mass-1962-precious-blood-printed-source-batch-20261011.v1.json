@@ -1,0 +1,389 @@
+{
+  "schema": "MASS_1962_PRECIOUS_BLOOD_PRINTED_SOURCE_WITNESS_BATCH_V1",
+  "date": "2026-10-11",
+  "scope": "1 July Precious Blood Mass, 1962-labelled printed Missal sample pp. 533-534 compared manually to upstream Latin Divinum Officium. The facsimile excerpt alone does not authenticate the complete full-volume title/decree or license wholesale publication.",
+  "sourcePrinted": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+  "sourceDO": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt",
+  "stats": {
+    "printedPagesReviewed": 2,
+    "matchingLiturgicalSegmentReferences": 9,
+    "contextualConditions": 3,
+    "editionCertified": false,
+    "releaseApproved": 0
+  },
+  "rubricConditions": [
+    {
+      "id": "DEFAULT_JULY_01",
+      "condition": "FEAST_DEFAULT",
+      "use": [
+        "INTROIT",
+        "EPISTLE",
+        "GRADUAL",
+        "ALLELUIA_VERSE",
+        "GOSPEL",
+        "OFFERTORY",
+        "COMMUNION"
+      ],
+      "evidencePage": 533,
+      "warning": "Only within correct liturgical celebration context; not transferred to unrelated votives."
+    },
+    {
+      "id": "VOTIVE_AFTER_SEPTUAGESIMA",
+      "condition": "VOTIVE_AFTER_SEPTUAGESIMA",
+      "omit": [
+        "ALLELUIA_VERSE"
+      ],
+      "substitute": [
+        "TRACT"
+      ],
+      "retain": [
+        "GRADUAL"
+      ],
+      "evidencePage": 533,
+      "warning": "Printed phrase expressly applies to votive Masses after Septuagesima. Must not be generalized to every occurrence of this saint/festival source."
+    },
+    {
+      "id": "VOTIVE_EASTERTIDE",
+      "condition": "VOTIVE_EASTERTIDE",
+      "omit": [
+        "GRADUAL"
+      ],
+      "substitute": [
+        "EASTERTIDE_TWO_ALLELUIAS"
+      ],
+      "evidencePage": 534,
+      "warning": "Two Alleluia verses are in GradualeP, not generic Graduale; verify rubrical contextual scope."
+    },
+    {
+      "id": "VOTIVE_COLLECT_WORD_OMISSION",
+      "condition": "VOTIVE_ANY",
+      "omitExactCollectWords": [
+        "solemni cultu"
+      ],
+      "evidencePage": 533,
+      "warning": "Prayer text variant, not biblical chant citation. Preserve as distinct conditional prayer-text correction."
+    }
+  ],
+  "rows": [
+    {
+      "slot": "INTROIT",
+      "condition": "FEAST_DEFAULT",
+      "printedCitation": "Apoc. 5,9-10 + Ps. 88,2",
+      "printedLatinIncipit": "Redemisti nos, Domine",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "Introitus",
+      "sourceNotes": [
+        "Apoc 5:9-10",
+        "Ps 88:2"
+      ],
+      "printedPage": 533,
+      "printedPDFPageIndex": 0,
+      "sourceComparison": "MATCHED_LATIN_INCIPIT_AND_PRINTED_REFERENCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "NONE",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 0,
+          "printedPage": 533
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt"
+        }
+      ]
+    },
+    {
+      "slot": "EPISTLE",
+      "condition": "FEAST_DEFAULT",
+      "printedCitation": "Hebr. 9,11-15",
+      "printedLatinIncipit": "Christus assistens pontifex",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "Lectio inherited from Tempora/Quad5-0",
+      "sourceNotes": [
+        "Hebr 9:11-15"
+      ],
+      "printedPage": 533,
+      "printedPDFPageIndex": 0,
+      "sourceComparison": "MATCHED_AFTER_EXACT_PARENT_SECTION_INHERITANCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "NONE",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 0,
+          "printedPage": 533
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-0.txt"
+        }
+      ]
+    },
+    {
+      "slot": "GRADUAL",
+      "condition": "FEAST_DEFAULT",
+      "printedCitation": "1 Ioann. 5,6 et 7-8",
+      "printedLatinIncipit": "Hic est qui venit per aquam et sanguinem",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "Graduale",
+      "sourceNotes": [
+        "1 Joann 5:6-8"
+      ],
+      "printedPage": 533,
+      "printedPDFPageIndex": 0,
+      "sourceComparison": "MATCHED_LATIN_INCIPIT_AND_PRINTED_REFERENCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "COMMA_JOHANNEUM_CLEMENTINE_AND_MODERN_EDITION_VERSE_CONTENT_DIFFER",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 0,
+          "printedPage": 533
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt"
+        }
+      ]
+    },
+    {
+      "slot": "ALLELUIA_VERSE",
+      "condition": "FEAST_DEFAULT",
+      "printedCitation": "Ibid. 9",
+      "printedLatinIncipit": "Si testimonium hominum accipimus",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "Graduale (embedded Alleluia)",
+      "sourceNotes": [
+        "1 Joann 5:9"
+      ],
+      "printedPage": 533,
+      "printedPDFPageIndex": 0,
+      "sourceComparison": "MATCHED_LATIN_INCIPIT_AND_PRINTED_REFERENCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "NONE",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 0,
+          "printedPage": 533
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt"
+        }
+      ]
+    },
+    {
+      "slot": "TRACT",
+      "condition": "VOTIVE_AFTER_SEPTUAGESIMA",
+      "printedCitation": "Ephes. 1,6-8 + Rom. 3,24-25",
+      "printedLatinIncipit": "Gratificavit nos Deus",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "Tractus",
+      "sourceNotes": [
+        "Ephes 1:6-8",
+        "Rom 3:24-25"
+      ],
+      "printedPage": 533,
+      "printedPDFPageIndex": 0,
+      "sourceComparison": "MATCHED_LATIN_INCIPIT_AND_PRINTED_REFERENCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "NONE",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 0,
+          "printedPage": 533
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt"
+        }
+      ]
+    },
+    {
+      "slot": "EASTERTIDE_TWO_ALLELUIAS",
+      "condition": "VOTIVE_EASTERTIDE",
+      "printedCitation": "Apoc. 5,9 + Exodi 12,13",
+      "printedLatinIncipit": "Dignus es Domine accipere librum",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "GradualeP",
+      "sourceNotes": [
+        "Apoc 5:9",
+        "Exod 12:13"
+      ],
+      "printedPage": 534,
+      "printedPDFPageIndex": 1,
+      "sourceComparison": "MATCHED_LATIN_INCIPIT_AND_PRINTED_REFERENCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "NONE",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 1,
+          "printedPage": 534
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt"
+        }
+      ]
+    },
+    {
+      "slot": "GOSPEL",
+      "condition": "FEAST_DEFAULT",
+      "printedCitation": "Ioann. 19,30-35",
+      "printedLatinIncipit": "Cum accepisset Iesus acetum",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "Evangelium",
+      "sourceNotes": [
+        "Joann 19:30-35"
+      ],
+      "printedPage": 534,
+      "printedPDFPageIndex": 1,
+      "sourceComparison": "MATCHED_LATIN_INCIPIT_AND_PRINTED_REFERENCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "NONE",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 1,
+          "printedPage": 534
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt"
+        }
+      ]
+    },
+    {
+      "slot": "OFFERTORY",
+      "condition": "FEAST_DEFAULT",
+      "printedCitation": "1 Cor. 10,16",
+      "printedLatinIncipit": "Calix benedictionis",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "Offertorium",
+      "sourceNotes": [
+        "1 Cor 10:16"
+      ],
+      "printedPage": 534,
+      "printedPDFPageIndex": 1,
+      "sourceComparison": "MATCHED_LATIN_INCIPIT_AND_PRINTED_REFERENCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "NONE",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 1,
+          "printedPage": 534
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt"
+        }
+      ]
+    },
+    {
+      "slot": "COMMUNION",
+      "condition": "FEAST_DEFAULT",
+      "printedCitation": "Hebr. 9,28",
+      "printedLatinIncipit": "Christus semel oblatus est",
+      "sourcePath": "Sancti/07-01",
+      "sourceSection": "Communio",
+      "sourceNotes": [
+        "Hebr 9:28"
+      ],
+      "printedPage": 534,
+      "printedPDFPageIndex": 1,
+      "sourceComparison": "MATCHED_LATIN_INCIPIT_AND_PRINTED_REFERENCE",
+      "sourceQuoteChecked": true,
+      "printedRubricChecked": true,
+      "printedEditionFullTitleAndDecreeCertified": false,
+      "scriptureEditionTextCertified": false,
+      "frenchCramponTextCertified": false,
+      "versionSensitiveHold": "NONE",
+      "releaseApproved": false,
+      "witnesses": [
+        {
+          "kind": "PRINTED_1962_MISSAL_SAMPLE_PAGE",
+          "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+          "pageIndex": 1,
+          "printedPage": 534
+        },
+        {
+          "kind": "ORIGINAL_LATIN_SOURCE",
+          "url": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-01.txt"
+        }
+      ]
+    }
+  ],
+  "holds": [
+    {
+      "id": "PRECIOUS_BLOOD_1JOHN5_7",
+      "kind": "TEXTUAL_EDITION_DIFFERENCE",
+      "source": "1 Joann 5:7-8",
+      "reason": "1962 Latin printed Gradual includes 'Tres sunt qui testimonium dant in caelo: Pater, Verbum, et Spiritus Sanctus'; Clementine Vulgate contains this longer Johannine wording, but modern biblical editions and translations differ. Do not normalize/replace the 1962 chant or assume edition-identical French-English verse.",
+      "urls": [
+        "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+        "https://www.bibliacatolica.com.br/en/vulgata-clementina-vs-neo-vulgata-latina/epistula-i-ioannis/5/"
+      ],
+      "approved": false
+    },
+    {
+      "id": "PRECIOUS_BLOOD_PRINT_WITNESS_AUTHENTICITY",
+      "kind": "SOURCE_EDITION_PROVENANCE",
+      "reason": "A 1962 edition sample pages 533-534 has been visually inspected but its complete volume title, decree and pagination correspondences are not independently checked.",
+      "approved": false
+    }
+  ],
+  "publicationStatus": "RESEARCH_ONLY"
+}

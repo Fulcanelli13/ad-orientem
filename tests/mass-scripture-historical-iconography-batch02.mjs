@@ -1,0 +1,16 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const D=JSON.parse(readFileSync(new URL("../data/geography/research/mass-scripture-historical-iconography-batch02-20261011.v1.json",import.meta.url),"utf8"));
+assert.equal(D.schema,"MASS_SCRIPTURE_ICONOGRAPHY_BATCH02_V1");
+assert.equal(D.artworks.length,3);
+assert.equal(new Set(D.artworks.map(x=>x.id)).size,3);
+assert.ok(D.artworks.every(x=>x.massResearchAnchors.includes("CANON_SUPRA_QUAE")));
+assert.ok(D.artworks.every(x=>x.historicalEvidence.length>0&&x.historicalEvidence.every(s=>s.url.startsWith("https://"))));
+assert.ok(D.artworks.every(x=>x.approval!=="PRODUCTION_APPROVED"));
+const sv=D.artworks.find(x=>x.id==="ART_MASS_001"),sa=D.artworks.find(x=>x.id==="ART_MASS_002");
+assert.ok(sv.historicalEvidence.some(x=>x.url.includes("cultura.gov.it")));
+assert.ok(sv.imageCandidates.some(x=>x.license==="CC BY-SA 4.0"&&x.requiredCredit?.includes("Ribeiro")));
+assert.ok(sv.imageCandidates.some(x=>x.type==="HISTORICAL_ARCHIVE_PHOTO_RIGHTS_UNCLEAR"&&x.approval==="NOT_APPROVED"));
+assert.ok(sa.dateRange.includes("restored")&&sa.imageCandidates.length===0);
+assert.ok(D.publicationGates.some(x=>x.includes("Bible event")));
+console.log("PASS 3 original early-Christian artwork research objects; rights and location constraints preserved");

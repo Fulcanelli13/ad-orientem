@@ -1,0 +1,37 @@
+name: Mass 1962 printed evidence page previews
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/mass-1962-printed-evidence-previews.yml'
+jobs:
+  selected-page-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Poppler utilities
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+      - name: Download complete PDF locally without committing it
+        run: |
+          mkdir -p artifacts/previews
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 480 --silent --show-error \
+            "https://media.musicasacra.com/pdf/missale62.pdf" -o artifacts/full.pdf
+          echo "sha256 $(sha256sum artifacts/full.pdf)"
+      - name: Render ten targeted candidate pages (PDF page numbers, not printed page numbers)
+        run: |
+          for n in 191 519 543 655 659 660 674 700 742 763; do
+            pdftoppm -f "$n" -l "$n" -singlefile -scale-to 1300 -png \
+              artifacts/full.pdf "artifacts/previews/pdf-page-$n"
+          done
+          ls -lh artifacts/previews
+      - name: Upload only research page previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-10-page-visual-proof
+          path: artifacts/previews/*.png
+          if-no-files-found: error

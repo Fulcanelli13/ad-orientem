@@ -1,0 +1,286 @@
+{
+  "schema": "MASS_1962_VISUAL_ADJUDICATION_CALENDAR_EDGE_CASES_V1",
+  "date": "2026-10-12",
+  "sourcePdfUrl": "https://media.musicasacra.com/pdf/missale62.pdf",
+  "sourcePdfSHA256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+  "renderWorkflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38201883028",
+  "scope": "13 distinct source paths across 14 visually reviewed pages. Outcomes adjudicate why a raw source phrase matches a printed page; they do NOT certify whole 1962 formularies, Bible editions, or global calendar use.",
+  "stats": {
+    "reviewedSourcePaths": 13,
+    "reviewedPdfPageCount": 14,
+    "universal1962CelebrationCertifications": 0,
+    "verseEditionCertifications": 0,
+    "appApprovals": 0
+  },
+  "visuallyReviewedPdfPages": [
+    157,
+    543,
+    544,
+    563,
+    625,
+    652,
+    688,
+    704,
+    737,
+    751,
+    774,
+    779,
+    1008,
+    1029
+  ],
+  "decisions": [
+    {
+      "sourcePath": "Sancti/01-20",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 688,
+          "printedPage": 607,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=688"
+        }
+      ],
+      "printedContext": "30 July: SS. Abdon and Sennen, Commemoratio",
+      "disposition": "SHARED_MARTYR_WORDING_DIFFERENT_CELEBRATION",
+      "observedEvidence": "Source file names SS. Fabian and Sebastian (20 January); OCR hit is a distinctly titled July 30 commemoration. Matching Gradual/Tract cannot license January calendar assignment.",
+      "remainingReview": "Locate printed Jan 20 and establish 1962 commemoration status; compare chants separately.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/01-20.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-25",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 652,
+          "printedPage": 571,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=652"
+        }
+      ],
+      "printedContext": "30 June: In Commemoratione S. Pauli Apostoli, III classis",
+      "disposition": "EXPLICIT_SOURCE_PARENT_REUSE",
+      "observedEvidence": "Source for Conversion of St Paul (Jan 25) includes ex Sancti/06-30 in its Rank. The printed June 30 St Paul Mass confirms an actual Pauline text source at that location; reuse is purposeful, not an independent January page match.",
+      "remainingReview": "Verify January 25 printed Proper, current 1962 rank and section substitutions before endorsing verse occurrence.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/01-25.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-31",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 543,
+          "printedPage": 462,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=543"
+        }
+      ],
+      "printedContext": "Printed 462: St John Bosco formulary continues from January 31, followed by heading for 1 February St Ignatius",
+      "disposition": "PAGE_BREAK_CARRYOVER_EXPLAINS_MONTH_HEADER",
+      "observedEvidence": "Gradual Ps 36, Tract Ps 60, Offertory Ps 33 and Communion Rom 4 belong to the preceding John Bosco Mass despite February 1 running header.",
+      "remainingReview": "Locate start of Jan 31 feast and match full Proper; confirm edition and biblical words.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/01-31.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-27",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 563,
+          "printedPage": 482,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=563"
+        },
+        {
+          "pdfPage": 625,
+          "printedPage": 544,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=625"
+        }
+      ],
+      "printedContext": "Printed 482: St Gabriel's Mass conclusion followed by March 4 St Casimir; printed 544: June 4 other feast",
+      "disposition": "MIXED_CONTINUATION_AND_UNRELATED_REUSE",
+      "observedEvidence": "St Gabriel source belongs to February 27; printed March 4 top page includes Gabriel Collect/Secreta/Communion and Gospel before St Casimir begins below. June 4 page carries a different Mass and overlapping strings.",
+      "remainingReview": "Differentiate every fragment by its printed section and feast title before assigning Gabriel verses.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/02-27.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/03-24",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 751,
+          "printedPage": 670,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=751"
+        }
+      ],
+      "printedContext": "29 September: In Dedicatione S. Michaelis Archangeli, I classis",
+      "disposition": "SHARED_ANGELIC_TEXT_NOT_DATE_MATCH",
+      "observedEvidence": "Source names St Gabriel Archangel on March 24, whereas scanned page 670 is explicitly the September 29 St Michael dedication. Angelic text may be shared; no direct proof of March 24 Mass use.",
+      "remainingReview": "Inspect 1962 calendar and printed text for March 24; distinguish omitted/commemorated vs transferred rubrics.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/03-24.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-02",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 704,
+          "printedPage": 623,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=704"
+        }
+      ],
+      "printedContext": "11 August: SS. Tiburtii and Susannae Virg., Martyrum; Commemoratio",
+      "disposition": "SHARED_MARTYR_TEXT_NOT_DATE_MATCH",
+      "observedEvidence": "Source names SS. Marcellinus, Peter and Erasmus for June 2, contains inherited Common C3 directives; matched page is an August 11 martyrs' commemoration, not June 2.",
+      "remainingReview": "Resolve Common C3 authentic printed source and June 2 status independently.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/06-02.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/08-16",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 544,
+          "printedPage": 463,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=544"
+        }
+      ],
+      "printedContext": "1 February: St Ignatius Bishop and Martyr, III classis",
+      "disposition": "SHARED_TEXT_DIFFERENT_SAINT",
+      "observedEvidence": "Source labels St Joachim, Father of the BVM, on August 16; PDF page 463 names St Ignatius on February 1. Tract/Offertory string match cannot prove a St Joachim Mass.",
+      "remainingReview": "Check 1962 placement of St Joachim and printed proper/Commons.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/08-16.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-13pl",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 1029,
+          "printedPage": 948,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=1029"
+        }
+      ],
+      "printedContext": "Commune plurium confessorum non pontificum",
+      "disposition": "GENERIC_COMMON_NOT_DATED_FEAST",
+      "observedEvidence": "Source suffix -pl corresponds to a Common of multiple non-bishop confessors in a supplemental section, not a dated July 13 celebration.",
+      "remainingReview": "Resolve source type, edition appendix and corresponding celebration references.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/07-13pl.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/09-09n",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 1008,
+          "printedPage": 927,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=1008"
+        }
+      ],
+      "printedContext": "[200] Missae pro aliquibus locis: 9 September S. Petri Claver Confessoris",
+      "disposition": "LOCAL_SUPPLEMENT_CALENDAR_GATE",
+      "observedEvidence": "Printed location is explicitly under Masses for certain places. Presence in scan does not authorize universal observance.",
+      "remainingReview": "Confirm local proper applicability for geography/ordo separately; no universal-calendar import.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/09-09n.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-DU",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 779,
+          "printedPage": 698,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=779"
+        }
+      ],
+      "printedContext": "Festa octobris (dominica ultima), printed 698; Gospel John 18:33-37",
+      "disposition": "RULE_BASED_LAST_SUNDAY_OCTOBER_CONTEXT",
+      "observedEvidence": "Printed continuation includes Kingship texts, distinct seasonal chant options and 'Et non fit commemoratio dominicae'. Treat 10-DU as an ordinal Sunday rule, not a fixed calendar date.",
+      "remainingReview": "Inspect preceding printed heading and 1962 rubrics for Christ the King before dynamic-date selection.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/10-DU.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-20",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 774,
+          "printedPage": 693,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=774"
+        }
+      ],
+      "printedContext": "Printed 693 under 21 October; previous St John formulary ends before St Hilarion commemoration begins",
+      "disposition": "DATE_HEADER_NEXT_FEAST_CARRYOVER",
+      "observedEvidence": "The visible left column carries the preceding St John's Offertory/Communion and prayers; right column begins Oct 21 St Hilarion with Commemoratio.",
+      "remainingReview": "Inspect beginning of October 20 Proper and isolate exact text transition.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/10-20.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Quad5-5",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 737,
+          "printedPage": 656,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=737"
+        }
+      ],
+      "printedContext": "15 September: Seven Sorrows of the Blessed Virgin Mary, II classis",
+      "disposition": "SAME_DEVOTIONAL_FORMULA_NOT_TEMPORAL_ASSIGNMENT",
+      "observedEvidence": "PDF page 656 is the September feast of Our Lady of Sorrows; overlap with a Passiontide source is not direct proof that this page witnesses the Friday of Passion week.",
+      "remainingReview": "Check actual Passiontide Friday proper, Tract and Alleluia conditions at its original printed page.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-5.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6t",
+      "printedPageEvidence": [
+        {
+          "pdfPage": 157,
+          "printedPage": 76,
+          "scanUrl": "https://media.musicasacra.com/pdf/missale62.pdf#page=157"
+        }
+      ],
+      "printedContext": "Sabbato Quatuor Temporum Quadragesimae, printed 76",
+      "disposition": "EXTENDED_EMBER_SOURCE_CROSS_SEASON_HOLD",
+      "observedEvidence": "The page clearly belongs to Lenten Ember Saturday with additional prayers/lessons and the Transfiguration Gospel. A Pasc-prefixed source cannot inherit this liturgical date by coincident words.",
+      "remainingReview": "Verify source alias/GradualeL boundary and correct Ember lesson order; do not infer a Paschal occurrence.",
+      "sourceLink": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-6t.txt",
+      "renderedPageVisuallyRead": true,
+      "bibleLatinTextEditionCollated": false,
+      "full1962CalendarUseCertified": false,
+      "approvedForApp": false
+    }
+  ],
+  "releaseGate": "CLOSED"
+}

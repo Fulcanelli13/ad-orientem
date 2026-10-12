@@ -1,0 +1,41 @@
+name: Mass 1962 certification queue
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/research/mass-1962-certification-queue.mjs'
+      - 'tests/mass-1962-certification-queue.mjs'
+      - '.github/workflows/mass-1962-certification-queue.yml'
+      - 'data/geography/research/mass-1962-contextual-primary-witness-pilot-20261011.v1.json'
+jobs:
+  build-review-queue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check scripts/research/mass-1962-certification-queue.mjs
+      - name: Derive canonical research triage (no publication approval)
+        run: node scripts/research/mass-1962-certification-queue.mjs
+      - name: Check no missing or invented certification
+        run: node tests/mass-1962-certification-queue.mjs
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-certification-source-queue
+          path: data/geography/research/mass-1962-edition-certification-priority-queue-20261011.v1.json
+          if-no-files-found: warn
+      - name: Persist reviewed source queue to research branch
+        if: success() && github.ref == 'refs/heads/research/biblical-people-genealogy-explorer-20261011'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/geography/research/mass-1962-edition-certification-priority-queue-20261011.v1.json
+          if ! git diff --staged --quiet; then
+            git commit -m "data(research): derive 1052-source Missal certification review queue"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

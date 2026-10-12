@@ -1,0 +1,172 @@
+{
+  "schema": "MASS_1962_IRENAEUS_CALENDAR_SOURCE_ALIAS_V1",
+  "date": "2026-10-11",
+  "liturgicalIdentity": "S_IRENAEI_EPISCOPI_ET_MARTYRIS",
+  "printedCalendarDay": "JULY_03_1962",
+  "printedClass": "III",
+  "scope": "Two printed page images (537-538) of a 1962-labelled Missal visually inspected; source aliases read from DO. Not a full 1962 volume provenance / Vulgate-Crampon certification.",
+  "resolution": {
+    "requestedCalendarDateSource": "Sancti/07-03",
+    "requestedCalendarDateSourceReality": "ST_LEO_OLDER_OR_DIFFERENT_RUBRICAL_FILE",
+    "correctIrenaeusDateAlias": "Sancti/07-03r",
+    "correctIrenaeusParent": "Sancti/06-28",
+    "exactDirective": "@Sancti/06-28",
+    "status": "PRINTED_JULY03_RECONCILED_WITH_SOURCE_INHERITANCE",
+    "sourcePrinted": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+    "sourceUrls": [
+      "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/07-03.txt",
+      "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/07-03r.txt",
+      "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/06-28.txt"
+    ],
+    "fullEditionCertified": false
+  },
+  "stats": {
+    "sourcePathsReconciled": 3,
+    "printedPagesExamined": 2,
+    "segmentsCompared": 9,
+    "independentBibleEditionCertifications": 0,
+    "publicationApprovals": 0
+  },
+  "conditionalUsageRules": [
+    {
+      "condition": "JULY_03_NORMAL",
+      "sequence": "Graduale plus Alleluia",
+      "fromPrintedPage": 537
+    },
+    {
+      "condition": "VOTIVE_AFTER_SEPTUAGESIMA",
+      "sequence": "Graduale plus Tractus in place of Alleluia",
+      "fromPrintedPage": 537
+    },
+    {
+      "condition": "VOTIVE_EASTERTIDE",
+      "sequence": "Graduale omitted, two Alleluia verses",
+      "fromPrintedPage": 537
+    }
+  ],
+  "rows": [
+    {
+      "part": "INTROIT",
+      "printedCitation": "Malach 2:6; Ps 77:1",
+      "latinIncipit": "Lex veritatis fuit in ore eius",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "Introitus",
+      "printedPage": 537,
+      "pdfPageIndex": 4,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "part": "EPISTLE",
+      "printedCitation": "2 Tim 3:14-17; 4:1-5",
+      "latinIncipit": "Permane in iis quae didicisti",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "Lectio",
+      "printedPage": 537,
+      "pdfPageIndex": 4,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "part": "GRADUAL",
+      "printedCitation": "Ps 121:8; Ps 36:37",
+      "latinIncipit": "Propter fratres meos",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "Graduale",
+      "printedPage": 537,
+      "pdfPageIndex": 4,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "part": "ALLELUIA",
+      "printedCitation": "Eccli 6:35",
+      "latinIncipit": "In multitudine presbyterorum prudentium",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "Graduale",
+      "printedPage": 537,
+      "pdfPageIndex": 4,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "part": "TRACT",
+      "printedCitation": "Ps 36:23; 36:30-31",
+      "latinIncipit": "Apud Dominum gressus hominis dirigentur",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "Tractus",
+      "printedPage": 537,
+      "pdfPageIndex": 4,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "part": "EASTERTIDE_TWO_ALLELUIAS",
+      "printedCitation": "Ps 36:37; Eccli 6:35",
+      "latinIncipit": "Custodi innocentiam",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "GradualeP",
+      "printedPage": 537,
+      "pdfPageIndex": 4,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "part": "GOSPEL",
+      "printedCitation": "Matt 10:28-33",
+      "latinIncipit": "Nolite timere eos qui occidunt corpus",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "Evangelium",
+      "printedPage": 537,
+      "pdfPageIndex": 4,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "part": "OFFERTORY",
+      "printedCitation": "Eccli 24:44",
+      "latinIncipit": "Doctrinam quasi antelucanum illumino",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "Offertorium",
+      "printedPage": 538,
+      "pdfPageIndex": 5,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    },
+    {
+      "part": "COMMUNION",
+      "printedCitation": "Eccli 24:47",
+      "latinIncipit": "Videte quoniam non soli mihi laboravi",
+      "sourceFileForText": "Sancti/06-28",
+      "sourceSection": "Communio",
+      "printedPage": 538,
+      "pdfPageIndex": 5,
+      "printedTextAndReferenceCompared": true,
+      "bibleEditionTextWordByWordCertified": false,
+      "publicationApproved": false
+    }
+  ],
+  "holds": [
+    {
+      "type": "1962_CALENDAR_SOURCE_FILE_SELECTION",
+      "reason": "Do not select Sancti/07-03 solely by date; it is not Irenaeus in the examined DO source corpus. Consult the date-specific edition-aware alias and original printed edition.",
+      "resolvedForThisPrintedSample": true,
+      "releaseApproved": false
+    },
+    {
+      "type": "LATIN_BIBLE_EDITION_COLLATION",
+      "reason": "Printed citations and source incipits examined but complete Clementine, Crampon and Douay text certification pending.",
+      "resolvedForThisPrintedSample": false,
+      "releaseApproved": false
+    }
+  ],
+  "publicationStatus": "RESEARCH_ONLY"
+}

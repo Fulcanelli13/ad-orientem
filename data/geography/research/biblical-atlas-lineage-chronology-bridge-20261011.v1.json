@@ -1,0 +1,1593 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_CHRONOLOGY_BRIDGE_V1",
+  "status": "REVIEW_SNAPSHOT_NO_PRODUCTION_WRITE",
+  "origin": {
+    "pr": 998,
+    "branch": "feature/biblical-atlas-main-convergence-20261011",
+    "sourceCommit": "99656bf2c7057c5169df34be82b774c0a0cfb725",
+    "sequenceModule": "src/find/bible-atlas.js",
+    "expansionModule": "src/find/bible-atlas-expanded-milestones.js",
+    "eventSource": "data/explore/bible-places-compact.v1.json"
+  },
+  "milestones": [
+    {
+      "index": 0,
+      "era": "ORIGINS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Creation",
+      "title_fr": "La Création",
+      "reference": "Genesis 1:1–31"
+    },
+    {
+      "index": 1,
+      "era": "ORIGINS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The Fall",
+      "title_fr": "La Chute",
+      "reference": "Genesis 3:1–24"
+    },
+    {
+      "index": 2,
+      "era": "ORIGINS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Cain and Abel",
+      "title_fr": "Caïn et Abel",
+      "reference": "Genesis 4:1–16"
+    },
+    {
+      "index": 3,
+      "era": "ORIGINS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The Flood",
+      "title_fr": "Le Déluge",
+      "reference": "Genesis 7:1–24"
+    },
+    {
+      "index": 4,
+      "era": "ORIGINS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "God's covenant with Noah",
+      "title_fr": "L'Alliance avec Noé",
+      "reference": "Genesis 9:8–17"
+    },
+    {
+      "index": 5,
+      "era": "ORIGINS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The tower of Babel",
+      "title_fr": "La tour de Babel",
+      "reference": "Genesis 11:1–9"
+    },
+    {
+      "index": 6,
+      "era": "PATRIARCHS",
+      "placeId": "ur",
+      "eventId": null,
+      "title_en": "Abraham's family leaves Ur",
+      "title_fr": "La famille d'Abraham quitte Ur",
+      "reference": "Genesis 11:31"
+    },
+    {
+      "index": 7,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The call of Abram",
+      "title_fr": "L'appel d'Abram",
+      "reference": "Genesis 12:1–9"
+    },
+    {
+      "index": 8,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Melchizedek blesses Abram",
+      "title_fr": "Melchisédech bénit Abram",
+      "reference": "Genesis 14:18–20"
+    },
+    {
+      "index": 9,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "God's covenant with Abram",
+      "title_fr": "L'Alliance avec Abram",
+      "reference": "Genesis 15:1–21"
+    },
+    {
+      "index": 10,
+      "era": "PATRIARCHS",
+      "placeId": "hebron",
+      "eventId": null,
+      "title_en": "Abraham at Mamre",
+      "title_fr": "Abraham à Mambré",
+      "reference": "Genesis 18:1–8"
+    },
+    {
+      "index": 11,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Birth of Isaac",
+      "title_fr": "La naissance d'Isaac",
+      "reference": "Genesis 21:1–7"
+    },
+    {
+      "index": 12,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The sacrifice of Isaac",
+      "title_fr": "Le sacrifice d'Isaac",
+      "reference": "Genesis 22:1–19"
+    },
+    {
+      "index": 13,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Jacob's dream",
+      "title_fr": "Le songe de Jacob",
+      "reference": "Genesis 28:10–22"
+    },
+    {
+      "index": 14,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Jacob wrestles",
+      "title_fr": "La lutte de Jacob",
+      "reference": "Genesis 32:24–32"
+    },
+    {
+      "index": 15,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Joseph is sold",
+      "title_fr": "Joseph est vendu",
+      "reference": "Genesis 37:18–36"
+    },
+    {
+      "index": 16,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Joseph governs Egypt",
+      "title_fr": "Joseph gouverne l'Égypte",
+      "reference": "Genesis 41:37–45"
+    },
+    {
+      "index": 17,
+      "era": "PATRIARCHS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Israel settles in Egypt",
+      "title_fr": "Israël s'établit en Égypte",
+      "reference": "Genesis 46:1–7"
+    },
+    {
+      "index": 18,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The birth of Moses",
+      "title_fr": "La naissance de Moïse",
+      "reference": "Exodus 2:1–10"
+    },
+    {
+      "index": 19,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The burning bush",
+      "title_fr": "Le buisson ardent",
+      "reference": "Exodus 3:1–15"
+    },
+    {
+      "index": 20,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The plagues begin",
+      "title_fr": "Le début des plaies",
+      "reference": "Exodus 7:14–25"
+    },
+    {
+      "index": 21,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The first Passover",
+      "title_fr": "La première Pâque",
+      "reference": "Exodus 12:1–28"
+    },
+    {
+      "index": 22,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The departure from Egypt",
+      "title_fr": "La sortie d'Égypte",
+      "reference": "Exodus 12:31–42"
+    },
+    {
+      "index": 23,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The crossing of the sea",
+      "title_fr": "Le passage de la mer",
+      "reference": "Exodus 14:15–31"
+    },
+    {
+      "index": 24,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Manna in the wilderness",
+      "title_fr": "La manne au désert",
+      "reference": "Exodus 16:1–36"
+    },
+    {
+      "index": 25,
+      "era": "EXODUS",
+      "placeId": "sinai",
+      "eventId": null,
+      "title_en": "The Covenant at Sinai",
+      "title_fr": "L'Alliance au Sinaï",
+      "reference": "Exodus 19:16–20"
+    },
+    {
+      "index": 26,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The Ten Commandments",
+      "title_fr": "Les dix commandements",
+      "reference": "Exodus 20:1–17"
+    },
+    {
+      "index": 27,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The golden calf",
+      "title_fr": "Le veau d'or",
+      "reference": "Exodus 32:1–35"
+    },
+    {
+      "index": 28,
+      "era": "EXODUS",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The Tabernacle",
+      "title_fr": "Le Tabernacle",
+      "reference": "Exodus 40:1–38"
+    },
+    {
+      "index": 29,
+      "era": "EXODUS",
+      "placeId": "nebo",
+      "eventId": null,
+      "title_en": "Moses sees the Promised Land",
+      "title_fr": "Moïse voit la Terre promise",
+      "reference": "Deuteronomy 34:1–6"
+    },
+    {
+      "index": 30,
+      "era": "EXODUS",
+      "placeId": "jericho",
+      "eventId": null,
+      "title_en": "Crossing the Jordan near Jericho",
+      "title_fr": "Le passage du Jourdain près de Jéricho",
+      "reference": "Joshua 3:1–17"
+    },
+    {
+      "index": 31,
+      "era": "EXODUS",
+      "placeId": "jericho",
+      "eventId": null,
+      "title_en": "The fall of Jericho",
+      "title_fr": "La chute de Jéricho",
+      "reference": "Joshua 6:1–27"
+    },
+    {
+      "index": 32,
+      "era": "ISRAEL",
+      "placeId": "shiloh",
+      "eventId": null,
+      "title_en": "Hannah and Samuel",
+      "title_fr": "Anne et Samuel",
+      "reference": "1Samuel 1:9–20"
+    },
+    {
+      "index": 33,
+      "era": "ISRAEL",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Samuel anoints Saul",
+      "title_fr": "Samuel sacre Saül",
+      "reference": "1Samuel 10:1–8"
+    },
+    {
+      "index": 34,
+      "era": "ISRAEL",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "David and Goliath",
+      "title_fr": "David et Goliath",
+      "reference": "1Samuel 17:1–54"
+    },
+    {
+      "index": 35,
+      "era": "ISRAEL",
+      "placeId": "hebron",
+      "eventId": null,
+      "title_en": "David becomes king at Hebron",
+      "title_fr": "David devient roi à Hébron",
+      "reference": "2Samuel 2:1–4"
+    },
+    {
+      "index": 36,
+      "era": "ISRAEL",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "David takes Jerusalem",
+      "title_fr": "David prend Jérusalem",
+      "reference": "2Samuel 5:6–10"
+    },
+    {
+      "index": 37,
+      "era": "ISRAEL",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Solomon dedicates the Temple",
+      "title_fr": "Salomon dédie le Temple",
+      "reference": "1Kings 8:1–66"
+    },
+    {
+      "index": 38,
+      "era": "ISRAEL",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Division of the kingdom",
+      "title_fr": "La division du royaume",
+      "reference": "1Kings 12:1–24"
+    },
+    {
+      "index": 39,
+      "era": "ISRAEL",
+      "placeId": "carmel",
+      "eventId": null,
+      "title_en": "Elijah on Mount Carmel",
+      "title_fr": "Élie au mont Carmel",
+      "reference": "1Kings 18:19–39"
+    },
+    {
+      "index": 40,
+      "era": "ISRAEL",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Elijah at Horeb",
+      "title_fr": "Élie à l'Horeb",
+      "reference": "1Kings 19:1–18"
+    },
+    {
+      "index": 41,
+      "era": "ISRAEL",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Isaiah's call",
+      "title_fr": "La vocation d'Isaïe",
+      "reference": "Isaiah 6:1–13"
+    },
+    {
+      "index": 42,
+      "era": "ISRAEL",
+      "placeId": "samaria",
+      "eventId": null,
+      "title_en": "Fall of Samaria",
+      "title_fr": "La chute de Samarie",
+      "reference": "2Kings 17:1–18"
+    },
+    {
+      "index": 43,
+      "era": "ISRAEL",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Josiah renews the covenant",
+      "title_fr": "Josias renouvelle l'Alliance",
+      "reference": "2Kings 23:1–25"
+    },
+    {
+      "index": 44,
+      "era": "ISRAEL",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Jeremiah warns Jerusalem",
+      "title_fr": "Jérémie avertit Jérusalem",
+      "reference": "Jeremiah 7:1–15"
+    },
+    {
+      "index": 45,
+      "era": "EXILE",
+      "placeId": "nineveh",
+      "eventId": null,
+      "title_en": "Tobit in Nineveh",
+      "title_fr": "Tobie à Ninive",
+      "reference": "Tobit 1:10"
+    },
+    {
+      "index": 46,
+      "era": "EXILE",
+      "placeId": "babylon",
+      "eventId": null,
+      "title_en": "Daniel in Babylon",
+      "title_fr": "Daniel à Babylone",
+      "reference": "Daniel 1:1–21"
+    },
+    {
+      "index": 47,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Ezekiel's vision by the Chebar",
+      "title_fr": "La vision d'Ézéchiel au Chobar",
+      "reference": "Ezekiel 1:1–28"
+    },
+    {
+      "index": 48,
+      "era": "EXILE",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Destruction of Jerusalem",
+      "title_fr": "La destruction de Jérusalem",
+      "reference": "2Kings 25:1–12"
+    },
+    {
+      "index": 49,
+      "era": "EXILE",
+      "placeId": "babylon",
+      "eventId": null,
+      "title_en": "The exile in Babylon",
+      "title_fr": "L'exil à Babylone",
+      "reference": "2Kings 25:8–12"
+    },
+    {
+      "index": 50,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Judith saves her people",
+      "title_fr": "Judith sauve son peuple",
+      "reference": "Judith 13:1–20"
+    },
+    {
+      "index": 51,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Esther intercedes",
+      "title_fr": "Esther intercède",
+      "reference": "Esther 4:1–17"
+    },
+    {
+      "index": 52,
+      "era": "EXILE",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Return from exile",
+      "title_fr": "Le retour d'exil",
+      "reference": "Ezra 1:1–11"
+    },
+    {
+      "index": 53,
+      "era": "EXILE",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "The Temple is rebuilt",
+      "title_fr": "Le Temple est rebâti",
+      "reference": "Ezra 6:13–22"
+    },
+    {
+      "index": 54,
+      "era": "EXILE",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Ezra proclaims the Law",
+      "title_fr": "Esdras proclame la Loi",
+      "reference": "Nehemiah 8:1–12"
+    },
+    {
+      "index": 55,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The prayer of Esther",
+      "title_fr": "La prière d'Esther",
+      "reference": "Esther 14:1–19"
+    },
+    {
+      "index": 56,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Baruch's promise to Jerusalem",
+      "title_fr": "La promesse de Baruch à Jérusalem",
+      "reference": "Baruch 5:1–9"
+    },
+    {
+      "index": 57,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The song of the three youths",
+      "title_fr": "Le cantique des trois jeunes gens",
+      "reference": "Daniel 3:24–90"
+    },
+    {
+      "index": 58,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Susanna is vindicated",
+      "title_fr": "Suzanne est innocentée",
+      "reference": "Daniel 13:1–64"
+    },
+    {
+      "index": 59,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Daniel exposes the idol of Bel",
+      "title_fr": "Daniel dénonce l'idole de Bel",
+      "reference": "Daniel 14:1–22"
+    },
+    {
+      "index": 60,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Daniel and the dragon",
+      "title_fr": "Daniel et le dragon",
+      "reference": "Daniel 14:23–42"
+    },
+    {
+      "index": 61,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The praise of divine Wisdom",
+      "title_fr": "La louange de la Sagesse divine",
+      "reference": "Sirach 24:1–22"
+    },
+    {
+      "index": 62,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The seven brothers' witness",
+      "title_fr": "Le témoignage des sept frères",
+      "reference": "2Maccabees 7:1–42"
+    },
+    {
+      "index": 63,
+      "era": "EXILE",
+      "placeId": "modein",
+      "eventId": null,
+      "title_en": "The Maccabean resistance",
+      "title_fr": "La résistance des Maccabées",
+      "reference": "1Maccabees 2:1–5"
+    },
+    {
+      "index": 64,
+      "era": "EXILE",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "The Temple is rededicated",
+      "title_fr": "La dédicace du Temple",
+      "reference": "1Maccabees 4:36–59"
+    },
+    {
+      "index": 65,
+      "era": "EXILE",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The gift of Wisdom",
+      "title_fr": "Le don de la Sagesse",
+      "reference": "Wisdom 7:7–14"
+    },
+    {
+      "index": 66,
+      "era": "INFANCY",
+      "placeId": "nazareth",
+      "eventId": "nazareth-e1",
+      "title_en": "The Annunciation",
+      "title_fr": "L’Annonciation",
+      "reference": "Luke 1:26–38"
+    },
+    {
+      "index": 67,
+      "era": "INFANCY",
+      "placeId": "nazareth",
+      "eventId": "nazareth-additional-001",
+      "title_en": "An angel speaks to Joseph in a dream",
+      "title_fr": "Un ange parle en songe à Joseph",
+      "reference": "Matthew 1:18–25"
+    },
+    {
+      "index": 68,
+      "era": "INFANCY",
+      "placeId": "ein-karem",
+      "eventId": "ein-karem-e1",
+      "title_en": "The Visitation",
+      "title_fr": "La Visitation",
+      "reference": "Luke 1:39–56"
+    },
+    {
+      "index": 69,
+      "era": "INFANCY",
+      "placeId": "bethlehem",
+      "eventId": "bethlehem-e1",
+      "title_en": "Birth of Jesus and adoration of the shepherds",
+      "title_fr": "Naissance de Jésus et adoration des bergers",
+      "reference": "Luke 2:1–20"
+    },
+    {
+      "index": 70,
+      "era": "INFANCY",
+      "placeId": "bethlehem",
+      "eventId": "bethlehem-additional-002",
+      "title_en": "Jesus is circumcised and named",
+      "title_fr": "Jésus est circoncis et reçoit son nom",
+      "reference": "Luke 2:21–21"
+    },
+    {
+      "index": 71,
+      "era": "INFANCY",
+      "placeId": "jerusalem-temple",
+      "eventId": "jerusalem-temple-e1",
+      "title_en": "The Presentation of Jesus",
+      "title_fr": "La Présentation de Jésus",
+      "reference": "Luke 2:22–38"
+    },
+    {
+      "index": 72,
+      "era": "INFANCY",
+      "placeId": "bethlehem",
+      "eventId": "bethlehem-e2",
+      "title_en": "The visit of the Magi",
+      "title_fr": "La visite des Mages",
+      "reference": "Matthew 2:1–12"
+    },
+    {
+      "index": 73,
+      "era": "INFANCY",
+      "placeId": "bethlehem",
+      "eventId": "bethlehem-additional-003",
+      "title_en": "Herod orders the massacre of the Innocents",
+      "title_fr": "Hérode ordonne le massacre des Innocents",
+      "reference": "Matthew 2:16–18"
+    },
+    {
+      "index": 74,
+      "era": "INFANCY",
+      "placeId": "egypt",
+      "eventId": "egypt-e1",
+      "title_en": "The flight into Egypt",
+      "title_fr": "La fuite en Égypte",
+      "reference": "Matthew 2:13–15"
+    },
+    {
+      "index": 75,
+      "era": "INFANCY",
+      "placeId": "egypt",
+      "eventId": "egypt-e2",
+      "title_en": "Return from Egypt",
+      "title_fr": "Le retour d’Égypte",
+      "reference": "Matthew 2:19–23"
+    },
+    {
+      "index": 76,
+      "era": "INFANCY",
+      "placeId": "jerusalem-temple",
+      "eventId": "jerusalem-temple-e2",
+      "title_en": "The twelve-year-old Jesus in the Temple",
+      "title_fr": "Jésus à douze ans au Temple",
+      "reference": "Luke 2:41–52"
+    },
+    {
+      "index": 77,
+      "era": "INFANCY",
+      "placeId": "nazareth",
+      "eventId": "nazareth-additional-006",
+      "title_en": "Jesus grows in wisdom and grace",
+      "title_fr": "Jésus grandit en sagesse et en grâce",
+      "reference": "Luke 2:51–52"
+    },
+    {
+      "index": 78,
+      "era": "PUBLIC",
+      "placeId": "jordan-baptism",
+      "eventId": "jordan-baptism-e1",
+      "title_en": "Baptism of Jesus",
+      "title_fr": "Le Baptême de Jésus",
+      "reference": "Matthew 3:13–17"
+    },
+    {
+      "index": 79,
+      "era": "PUBLIC",
+      "placeId": "jordan-east-bank",
+      "eventId": "jordan-east-bank-additional-008",
+      "title_en": "The first disciples follow Jesus",
+      "title_fr": "Les premiers disciples suivent Jésus",
+      "reference": "John 1:35–51"
+    },
+    {
+      "index": 80,
+      "era": "PUBLIC",
+      "placeId": "judean-wilderness",
+      "eventId": "judean-wilderness-e1",
+      "title_en": "The forty-day fast and temptations",
+      "title_fr": "Le jeûne de quarante jours et les tentations",
+      "reference": "Matthew 4:1–11"
+    },
+    {
+      "index": 81,
+      "era": "PUBLIC",
+      "placeId": "cana",
+      "eventId": "cana-e1",
+      "title_en": "The wedding at Cana",
+      "title_fr": "Les noces de Cana",
+      "reference": "John 2:1–11"
+    },
+    {
+      "index": 82,
+      "era": "PUBLIC",
+      "placeId": "cana",
+      "eventId": "cana-miracle-02",
+      "title_en": "Healing of a royal official's son at a distance",
+      "title_fr": "Guérison à distance du fils d’un officier royal",
+      "reference": "John 4:46–54"
+    },
+    {
+      "index": 83,
+      "era": "PUBLIC",
+      "placeId": "capernaum",
+      "eventId": "capernaum-e1",
+      "title_en": "Teaching and exorcism in the synagogue",
+      "title_fr": "Enseignement et exorcisme à la synagogue",
+      "reference": "Mark 1:21–28"
+    },
+    {
+      "index": 84,
+      "era": "PUBLIC",
+      "placeId": "capernaum",
+      "eventId": "capernaum-miracle-04",
+      "title_en": "Healing of Peter's mother-in-law",
+      "title_fr": "Guérison de la belle-mère de Pierre",
+      "reference": "Mark 1:29–31"
+    },
+    {
+      "index": 85,
+      "era": "PUBLIC",
+      "placeId": "capernaum",
+      "eventId": "capernaum-e2",
+      "title_en": "The healing of a paralytic",
+      "title_fr": "La guérison du paralytique",
+      "reference": "Mark 2:1–12"
+    },
+    {
+      "index": 86,
+      "era": "PUBLIC",
+      "placeId": "capernaum",
+      "eventId": "capernaum-e3",
+      "title_en": "The discourse on the Bread of Life",
+      "title_fr": "Le discours sur le Pain de vie",
+      "reference": "John 6:24–59"
+    },
+    {
+      "index": 87,
+      "era": "PUBLIC",
+      "placeId": "galilee-sea",
+      "eventId": "galilee-sea-e1",
+      "title_en": "The call of the fishermen",
+      "title_fr": "L’appel des pêcheurs",
+      "reference": "Mark 1:16–20"
+    },
+    {
+      "index": 88,
+      "era": "PUBLIC",
+      "placeId": "galilee-sea",
+      "eventId": "galilee-sea-e2",
+      "title_en": "Jesus calms the storm",
+      "title_fr": "Jésus apaise la tempête",
+      "reference": "Mark 4:35–41"
+    },
+    {
+      "index": 89,
+      "era": "PUBLIC",
+      "placeId": "galilee-sea",
+      "eventId": "galilee-sea-e3",
+      "title_en": "Jesus walks upon the water",
+      "title_fr": "Jésus marche sur les eaux",
+      "reference": "Matthew 14:22–33"
+    },
+    {
+      "index": 90,
+      "era": "PUBLIC",
+      "placeId": "beatitudes",
+      "eventId": "beatitudes-e2",
+      "title_en": "The Sermon on the Mount",
+      "title_fr": "Le Sermon sur la montagne",
+      "reference": "Matthew 5:13–48"
+    },
+    {
+      "index": 91,
+      "era": "PUBLIC",
+      "placeId": "beatitudes",
+      "eventId": "beatitudes-additional-021",
+      "title_en": "The choosing of the Twelve Apostles",
+      "title_fr": "Le choix des douze Apôtres",
+      "reference": "Luke 6:12–16"
+    },
+    {
+      "index": 92,
+      "era": "PUBLIC",
+      "placeId": "sychar",
+      "eventId": "sychar-e1",
+      "title_en": "Jesus and the Samaritan woman",
+      "title_fr": "Jésus et la Samaritaine",
+      "reference": "John 4:4–26"
+    },
+    {
+      "index": 93,
+      "era": "PUBLIC",
+      "placeId": "sychar",
+      "eventId": "sychar-additional-013",
+      "title_en": "Samaritans welcome Jesus for two days",
+      "title_fr": "Les Samaritains accueillent Jésus pendant deux jours",
+      "reference": "John 4:39–42"
+    },
+    {
+      "index": 94,
+      "era": "PUBLIC",
+      "placeId": "nain",
+      "eventId": "nain-e1",
+      "title_en": "The raising of the widow's son",
+      "title_fr": "La résurrection du fils de la veuve",
+      "reference": "Luke 7:11–17"
+    },
+    {
+      "index": 95,
+      "era": "PUBLIC",
+      "placeId": "tabgha",
+      "eventId": "tabgha-e1",
+      "title_en": "The feeding of the multitude",
+      "title_fr": "La multiplication des pains",
+      "reference": "John 6:1–15"
+    },
+    {
+      "index": 96,
+      "era": "PUBLIC",
+      "placeId": "bethsaida",
+      "eventId": "bethsaida-miracle-25",
+      "title_en": "Healing of a blind man at Bethsaida",
+      "title_fr": "Guérison d’un aveugle à Bethsaïde",
+      "reference": "Mark 8:22–26"
+    },
+    {
+      "index": 97,
+      "era": "PUBLIC",
+      "placeId": "caesarea-philippi",
+      "eventId": "caesarea-philippi-e1",
+      "title_en": "Peter's confession of faith",
+      "title_fr": "La confession de foi de Pierre",
+      "reference": "Matthew 16:13–20"
+    },
+    {
+      "index": 98,
+      "era": "PUBLIC",
+      "placeId": "caesarea-philippi",
+      "eventId": "caesarea-philippi-additional-044",
+      "title_en": "Jesus first foretells his Passion",
+      "title_fr": "Jésus annonce pour la première fois sa Passion",
+      "reference": "Matthew 16:21–28"
+    },
+    {
+      "index": 99,
+      "era": "PUBLIC",
+      "placeId": "transfiguration",
+      "eventId": "transfiguration-e1",
+      "title_en": "The Transfiguration",
+      "title_fr": "La Transfiguration",
+      "reference": "Matthew 17:1–8"
+    },
+    {
+      "index": 100,
+      "era": "PUBLIC",
+      "placeId": "transfiguration",
+      "eventId": "transfiguration-additional-045",
+      "title_en": "Jesus descends from the mount of the Transfiguration",
+      "title_fr": "Jésus descend de la montagne de la Transfiguration",
+      "reference": "Matthew 17:9–13"
+    },
+    {
+      "index": 101,
+      "era": "PUBLIC",
+      "placeId": "bethany",
+      "eventId": "bethany-e1",
+      "title_en": "The raising of Lazarus",
+      "title_fr": "La résurrection de Lazare",
+      "reference": "John 11:1–44"
+    },
+    {
+      "index": 102,
+      "era": "PUBLIC",
+      "placeId": "bethany",
+      "eventId": "bethany-additional-057",
+      "title_en": "Jesus visits Martha and Mary",
+      "title_fr": "Jésus rend visite à Marthe et Marie",
+      "reference": "Luke 10:38–42"
+    },
+    {
+      "index": 103,
+      "era": "PUBLIC",
+      "placeId": "bethany",
+      "eventId": "bethany-e2",
+      "title_en": "The anointing at Bethany",
+      "title_fr": "L’onction à Béthanie",
+      "reference": "John 12:1–8"
+    },
+    {
+      "index": 104,
+      "era": "PUBLIC",
+      "placeId": "jericho",
+      "eventId": "jericho-e1",
+      "title_en": "The healing of the blind man",
+      "title_fr": "La guérison de l’aveugle",
+      "reference": "Luke 18:35–43"
+    },
+    {
+      "index": 105,
+      "era": "PUBLIC",
+      "placeId": "jericho",
+      "eventId": "jericho-e2",
+      "title_en": "The conversion of Zacchaeus",
+      "title_fr": "La conversion de Zachée",
+      "reference": "Luke 19:1–10"
+    },
+    {
+      "index": 106,
+      "era": "PUBLIC",
+      "placeId": "bethesda",
+      "eventId": "bethesda-miracle-18",
+      "title_en": "Healing at the Pool of Bethesda",
+      "title_fr": "Guérison à la piscine de Bethesda",
+      "reference": "John 5:1–15"
+    },
+    {
+      "index": 107,
+      "era": "PUBLIC",
+      "placeId": "siloam",
+      "eventId": "siloam-miracle-26",
+      "title_en": "Healing of the man born blind at Siloam",
+      "title_fr": "Guérison de l’aveugle-né à Siloé",
+      "reference": "John 9:1–12"
+    },
+    {
+      "index": 108,
+      "era": "PASSION",
+      "placeId": "bethphage",
+      "eventId": "bethphage-e1",
+      "title_en": "Preparation for entry into Jerusalem",
+      "title_fr": "Préparatifs de l’entrée à Jérusalem",
+      "reference": "Matthew 21:1–7"
+    },
+    {
+      "index": 109,
+      "era": "PASSION",
+      "placeId": "olives",
+      "eventId": "olives-e1",
+      "title_en": "The triumphal entry into Jerusalem",
+      "title_fr": "L’entrée triomphale à Jérusalem",
+      "reference": "Luke 19:37–44"
+    },
+    {
+      "index": 110,
+      "era": "PASSION",
+      "placeId": "jerusalem-temple",
+      "eventId": "jerusalem-temple-e3",
+      "title_en": "Jesus purifies the Temple",
+      "title_fr": "Jésus purifie le Temple",
+      "reference": "John 2:13–22"
+    },
+    {
+      "index": 111,
+      "era": "PASSION",
+      "placeId": "cenacle",
+      "eventId": "cenacle-e1",
+      "title_en": "The Last Supper and institution of the Eucharist",
+      "title_fr": "La dernière Cène et l’institution de l’Eucharistie",
+      "reference": "Luke 22:7–20"
+    },
+    {
+      "index": 112,
+      "era": "PASSION",
+      "placeId": "cenacle",
+      "eventId": "cenacle-e2",
+      "title_en": "The washing of the feet",
+      "title_fr": "Le lavement des pieds",
+      "reference": "John 13:1–17"
+    },
+    {
+      "index": 113,
+      "era": "PASSION",
+      "placeId": "gethsemane",
+      "eventId": "gethsemane-e1",
+      "title_en": "The agony in the garden",
+      "title_fr": "L’agonie au jardin",
+      "reference": "Matthew 26:36–46"
+    },
+    {
+      "index": 114,
+      "era": "PASSION",
+      "placeId": "gethsemane",
+      "eventId": "gethsemane-e2",
+      "title_en": "The arrest of Jesus",
+      "title_fr": "L’arrestation de Jésus",
+      "reference": "Matthew 26:47–56"
+    },
+    {
+      "index": 115,
+      "era": "PASSION",
+      "placeId": "jerusalem-trial",
+      "eventId": "jerusalem-trial-e2",
+      "title_en": "Jesus before Pilate",
+      "title_fr": "Jésus devant Pilate",
+      "reference": "Matthew 27:11–26"
+    },
+    {
+      "index": 116,
+      "era": "PASSION",
+      "placeId": "jerusalem-trial",
+      "eventId": "jerusalem-trial-e3",
+      "title_en": "The scourging and crowning with thorns",
+      "title_fr": "La flagellation et le couronnement d’épines",
+      "reference": "John 19:1–16"
+    },
+    {
+      "index": 117,
+      "era": "PASSION",
+      "placeId": "golgotha",
+      "eventId": "golgotha-e2",
+      "title_en": "The Crucifixion and death of Jesus",
+      "title_fr": "La Crucifixion et la mort de Jésus",
+      "reference": "John 19:17–30"
+    },
+    {
+      "index": 118,
+      "era": "PASSION",
+      "placeId": "golgotha",
+      "eventId": "golgotha-e3",
+      "title_en": "Jesus and the good thief",
+      "title_fr": "Jésus et le bon larron",
+      "reference": "Luke 23:39–43"
+    },
+    {
+      "index": 119,
+      "era": "PASSION",
+      "placeId": "christ-tomb",
+      "eventId": "christ-tomb-e1",
+      "title_en": "The burial of Jesus",
+      "title_fr": "La sépulture de Jésus",
+      "reference": "John 19:38–42"
+    },
+    {
+      "index": 120,
+      "era": "RESURRECTION",
+      "placeId": "christ-tomb",
+      "eventId": "christ-tomb-e2",
+      "title_en": "The empty tomb and Mary Magdalene",
+      "title_fr": "Le tombeau vide et Marie-Madeleine",
+      "reference": "John 20:1–18"
+    },
+    {
+      "index": 121,
+      "era": "RESURRECTION",
+      "placeId": "christ-tomb",
+      "eventId": "christ-tomb-e3",
+      "title_en": "The angel announces the Resurrection",
+      "title_fr": "L’ange annonce la Résurrection",
+      "reference": "Matthew 28:1–10"
+    },
+    {
+      "index": 122,
+      "era": "RESURRECTION",
+      "placeId": "emmaus",
+      "eventId": "emmaus-e1",
+      "title_en": "The risen Jesus walks to Emmaus",
+      "title_fr": "Le Ressuscité marche vers Emmaüs",
+      "reference": "Luke 24:13–35"
+    },
+    {
+      "index": 123,
+      "era": "RESURRECTION",
+      "placeId": "cenacle",
+      "eventId": "cenacle-e3",
+      "title_en": "The risen Lord appears to the Apostles",
+      "title_fr": "Le Ressuscité apparaît aux Apôtres",
+      "reference": "John 20:19–29"
+    },
+    {
+      "index": 124,
+      "era": "RESURRECTION",
+      "placeId": "galilee-sea",
+      "eventId": "galilee-sea-e4",
+      "title_en": "The risen Jesus appears by the lake",
+      "title_fr": "Jésus ressuscité apparaît au bord du lac",
+      "reference": "John 21:1–14"
+    },
+    {
+      "index": 125,
+      "era": "RESURRECTION",
+      "placeId": "olives",
+      "eventId": "olives-e3",
+      "title_en": "The Ascension of Our Lord",
+      "title_fr": "L’Ascension de Notre-Seigneur",
+      "reference": "Acts 1:6–12"
+    },
+    {
+      "index": 126,
+      "era": "APOSTLES",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Pentecost",
+      "title_fr": "La Pentecôte",
+      "reference": "Acts 2:1–41"
+    },
+    {
+      "index": 127,
+      "era": "APOSTLES",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Peter heals the lame man",
+      "title_fr": "Pierre guérit l'infirme",
+      "reference": "Acts 3:1–10"
+    },
+    {
+      "index": 128,
+      "era": "APOSTLES",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Martyrdom of Stephen",
+      "title_fr": "Le martyre d'Étienne",
+      "reference": "Acts 7:54–60"
+    },
+    {
+      "index": 129,
+      "era": "APOSTLES",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Philip baptizes the Ethiopian",
+      "title_fr": "Philippe baptise l'Éthiopien",
+      "reference": "Acts 8:26–40"
+    },
+    {
+      "index": 130,
+      "era": "APOSTLES",
+      "placeId": "damascus",
+      "eventId": null,
+      "title_en": "Conversion of Saul",
+      "title_fr": "Conversion de Saul",
+      "reference": "Acts 9:1–22"
+    },
+    {
+      "index": 131,
+      "era": "APOSTLES",
+      "placeId": "tarsus",
+      "eventId": null,
+      "title_en": "Saul returns to Tarsus",
+      "title_fr": "Saul retourne à Tarse",
+      "reference": "Acts 9:29–30"
+    },
+    {
+      "index": 132,
+      "era": "APOSTLES",
+      "placeId": "joppa",
+      "eventId": null,
+      "title_en": "Peter raises Tabitha at Joppa",
+      "title_fr": "Pierre ressuscite Tabitha à Joppé",
+      "reference": "Acts 9:36–43"
+    },
+    {
+      "index": 133,
+      "era": "APOSTLES",
+      "placeId": "caesarea-maritima",
+      "eventId": null,
+      "title_en": "Conversion of Cornelius",
+      "title_fr": "La conversion de Corneille",
+      "reference": "Acts 10:1–48"
+    },
+    {
+      "index": 134,
+      "era": "APOSTLES",
+      "placeId": "antioch",
+      "eventId": null,
+      "title_en": "The disciples at Antioch",
+      "title_fr": "Les disciples à Antioche",
+      "reference": "Acts 11:19–26"
+    },
+    {
+      "index": 135,
+      "era": "APOSTLES",
+      "placeId": "lystra",
+      "eventId": null,
+      "title_en": "Paul heals a man in Lystra",
+      "title_fr": "Paul guérit un homme à Lystres",
+      "reference": "Acts 14:8–18"
+    },
+    {
+      "index": 136,
+      "era": "APOSTLES",
+      "placeId": "jerusalem-temple",
+      "eventId": null,
+      "title_en": "Council of Jerusalem",
+      "title_fr": "Le concile de Jérusalem",
+      "reference": "Acts 15:1–29"
+    },
+    {
+      "index": 137,
+      "era": "APOSTLES",
+      "placeId": "philippi",
+      "eventId": null,
+      "title_en": "Paul meets Lydia in Philippi",
+      "title_fr": "Paul rencontre Lydie à Philippes",
+      "reference": "Acts 16:11–15"
+    },
+    {
+      "index": 138,
+      "era": "APOSTLES",
+      "placeId": "thessalonica",
+      "eventId": null,
+      "title_en": "Paul in Thessalonica",
+      "title_fr": "Paul à Thessalonique",
+      "reference": "Acts 17:1–9"
+    },
+    {
+      "index": 139,
+      "era": "APOSTLES",
+      "placeId": "athens",
+      "eventId": null,
+      "title_en": "Paul speaks in Athens",
+      "title_fr": "Paul parle à Athènes",
+      "reference": "Acts 17:16–34"
+    },
+    {
+      "index": 140,
+      "era": "APOSTLES",
+      "placeId": "corinth",
+      "eventId": null,
+      "title_en": "St Paul in Corinth",
+      "title_fr": "Saint Paul à Corinthe",
+      "reference": "Acts 18:1–18"
+    },
+    {
+      "index": 141,
+      "era": "APOSTLES",
+      "placeId": "ephesus",
+      "eventId": null,
+      "title_en": "Paul teaches in Ephesus",
+      "title_fr": "Paul enseigne à Éphèse",
+      "reference": "Acts 19:1–20"
+    },
+    {
+      "index": 142,
+      "era": "APOSTLES",
+      "placeId": "troas",
+      "eventId": null,
+      "title_en": "Paul in Troas",
+      "title_fr": "Paul à Troas",
+      "reference": "Acts 20:7–12"
+    },
+    {
+      "index": 143,
+      "era": "APOSTLES",
+      "placeId": "miletus",
+      "eventId": null,
+      "title_en": "Paul's farewell at Miletus",
+      "title_fr": "Les adieux de Paul à Milet",
+      "reference": "Acts 20:17–38"
+    },
+    {
+      "index": 144,
+      "era": "APOSTLES",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Shipwreck on Malta",
+      "title_fr": "Le naufrage à Malte",
+      "reference": "Acts 27:13–44"
+    },
+    {
+      "index": 145,
+      "era": "APOSTLES",
+      "placeId": "rome",
+      "eventId": null,
+      "title_en": "St Paul in Rome",
+      "title_fr": "Saint Paul à Rome",
+      "reference": "Acts 28:16–31"
+    },
+    {
+      "index": 146,
+      "era": "REVELATION",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "St John's vision",
+      "title_fr": "La vision de saint Jean",
+      "reference": "Revelation 1:9–20"
+    },
+    {
+      "index": 147,
+      "era": "REVELATION",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Letters to the four churches",
+      "title_fr": "Lettres aux quatre Églises",
+      "reference": "Revelation 2:1–29"
+    },
+    {
+      "index": 148,
+      "era": "REVELATION",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "Letters to the three churches",
+      "title_fr": "Lettres aux trois Églises",
+      "reference": "Revelation 3:1–22"
+    },
+    {
+      "index": 149,
+      "era": "REVELATION",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The heavenly liturgy",
+      "title_fr": "La liturgie céleste",
+      "reference": "Revelation 4:1–11"
+    },
+    {
+      "index": 150,
+      "era": "REVELATION",
+      "placeId": null,
+      "eventId": null,
+      "title_en": "The new Jerusalem",
+      "title_fr": "La Jérusalem nouvelle",
+      "reference": "Revelation 21:1–27"
+    }
+  ],
+  "anchors": {
+    "genesisNodeId": {
+      "adam": {
+        "milestoneIndex": 0,
+        "era": "ORIGINS",
+        "reference": "Genesis 1:1–31",
+        "kind": "era-context"
+      },
+      "cain": {
+        "milestoneIndex": 2,
+        "era": "ORIGINS",
+        "reference": "Genesis 4:1–16",
+        "kind": "scriptural-context"
+      },
+      "abel": {
+        "milestoneIndex": 2,
+        "era": "ORIGINS",
+        "reference": "Genesis 4:1–16",
+        "kind": "scriptural-context"
+      },
+      "noah": {
+        "milestoneIndex": 3,
+        "era": "ORIGINS",
+        "reference": "Genesis 7:1–24",
+        "kind": "scriptural-context"
+      },
+      "abraham": {
+        "milestoneIndex": 6,
+        "era": "PATRIARCHS",
+        "reference": "Genesis 11:31",
+        "kind": "scriptural-context"
+      },
+      "isaac": {
+        "milestoneIndex": 11,
+        "era": "PATRIARCHS",
+        "reference": "Genesis 21:1–7",
+        "kind": "scriptural-context"
+      },
+      "jacob": {
+        "milestoneIndex": 13,
+        "era": "PATRIARCHS",
+        "reference": "Genesis 28:10–22",
+        "kind": "scriptural-context"
+      },
+      "joseph": {
+        "milestoneIndex": 15,
+        "era": "PATRIARCHS",
+        "reference": "Genesis 37:18–36",
+        "kind": "scriptural-context"
+      },
+      "david": {
+        "milestoneIndex": 35,
+        "era": "ISRAEL",
+        "reference": "2Samuel 2:1–4",
+        "kind": "scriptural-context"
+      },
+      "solomon": {
+        "milestoneIndex": 37,
+        "era": "ISRAEL",
+        "reference": "1Kings 8:1–66",
+        "kind": "scriptural-context"
+      }
+    },
+    "missionProfileId": {
+      "mary": {
+        "milestoneIndex": 66,
+        "era": "INFANCY",
+        "reference": "Luke 1:26–38",
+        "kind": "scriptural-context"
+      },
+      "john": {
+        "milestoneIndex": 127,
+        "era": "APOSTLES",
+        "reference": "Acts 3:1–10",
+        "kind": "scriptural-context"
+      },
+      "peter": {
+        "milestoneIndex": 127,
+        "era": "APOSTLES",
+        "reference": "Acts 3:1–10",
+        "kind": "scriptural-context"
+      },
+      "paul": {
+        "milestoneIndex": 130,
+        "era": "APOSTLES",
+        "reference": "Acts 9:1–22",
+        "kind": "scriptural-context"
+      },
+      "philip-evangelist": {
+        "milestoneIndex": 129,
+        "era": "APOSTLES",
+        "reference": "Acts 8:26–40",
+        "kind": "scriptural-context"
+      },
+      "barnabas": {
+        "milestoneIndex": 134,
+        "era": "APOSTLES",
+        "reference": "Acts 11:19–26",
+        "kind": "scriptural-context"
+      },
+      "james-alphaeus": {
+        "milestoneIndex": 126,
+        "era": "APOSTLES",
+        "reference": "Acts 2:1–41",
+        "kind": "era-context"
+      }
+    },
+    "missionEventId": {
+      "event-17": {
+        "milestoneIndex": 132,
+        "era": "APOSTLES",
+        "reference": "Acts 9:36–43",
+        "kind": "episode-neighborhood"
+      },
+      "event-18": {
+        "milestoneIndex": 133,
+        "era": "APOSTLES",
+        "reference": "Acts 10:1–48",
+        "kind": "episode-neighborhood"
+      },
+      "event-19": {
+        "milestoneIndex": 136,
+        "era": "APOSTLES",
+        "reference": "Acts 15:1–29",
+        "kind": "episode-neighborhood"
+      },
+      "event-36": {
+        "milestoneIndex": 130,
+        "era": "APOSTLES",
+        "reference": "Acts 9:1–22",
+        "kind": "episode-neighborhood"
+      },
+      "event-38": {
+        "milestoneIndex": 137,
+        "era": "APOSTLES",
+        "reference": "Acts 16:11–15",
+        "kind": "episode-neighborhood"
+      },
+      "event-39": {
+        "milestoneIndex": 139,
+        "era": "APOSTLES",
+        "reference": "Acts 17:16–34",
+        "kind": "episode-neighborhood"
+      },
+      "event-40": {
+        "milestoneIndex": 140,
+        "era": "APOSTLES",
+        "reference": "Acts 18:1–18",
+        "kind": "episode-neighborhood"
+      },
+      "event-41": {
+        "milestoneIndex": 141,
+        "era": "APOSTLES",
+        "reference": "Acts 19:1–20",
+        "kind": "episode-neighborhood"
+      },
+      "event-42": {
+        "milestoneIndex": 145,
+        "era": "APOSTLES",
+        "reference": "Acts 28:16–31",
+        "kind": "episode-neighborhood"
+      },
+      "event-33": {
+        "milestoneIndex": 134,
+        "era": "APOSTLES",
+        "reference": "Acts 11:19–26",
+        "kind": "episode-neighborhood"
+      },
+      "event-1": {
+        "milestoneIndex": 66,
+        "era": "INFANCY",
+        "reference": "Luke 1:26–38",
+        "kind": "episode-neighborhood"
+      },
+      "event-2": {
+        "milestoneIndex": 68,
+        "era": "INFANCY",
+        "reference": "Luke 1:39–56",
+        "kind": "episode-neighborhood"
+      },
+      "event-3": {
+        "milestoneIndex": 69,
+        "era": "INFANCY",
+        "reference": "Luke 2:1–20",
+        "kind": "episode-neighborhood"
+      },
+      "event-4": {
+        "milestoneIndex": 71,
+        "era": "INFANCY",
+        "reference": "Luke 2:22–38",
+        "kind": "episode-neighborhood"
+      },
+      "event-5": {
+        "milestoneIndex": 74,
+        "era": "INFANCY",
+        "reference": "Matthew 2:13–15",
+        "kind": "episode-neighborhood"
+      },
+      "event-9": {
+        "milestoneIndex": 127,
+        "era": "APOSTLES",
+        "reference": "Acts 3:1–10",
+        "kind": "episode-neighborhood"
+      },
+      "event-14": {
+        "milestoneIndex": 126,
+        "era": "APOSTLES",
+        "reference": "Acts 2:1–41",
+        "kind": "episode-neighborhood"
+      }
+    }
+  },
+  "policy": [
+    "Source milestone order is narrative, not absolute chronological dates.",
+    "An episode-neighborhood does not prove that the selected person attended every referenced scene.",
+    "No patristic or later tradition is elevated to a Scriptural historical route.",
+    "Integration requires source-commit reconciliation and editorial review.",
+    "Apostolic event links require the person and actual narrated episode to overlap with the Atlas milestone; neighboring but different Acts 8 scenes must not be identified.",
+    "When a selected mission event lacks an episode-matched chronology anchor, omit the link rather than defaulting to an unrelated personal biography context."
+  ]
+}

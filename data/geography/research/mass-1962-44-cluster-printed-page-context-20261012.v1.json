@@ -1,0 +1,2983 @@
+{
+  "schema": "MASS_1962_44_CLUSTER_PRINTED_PAGE_CONTEXT_V1",
+  "date": "2026-10-12",
+  "sourcePdfUrl": "https://media.musicasacra.com/pdf/missale62.pdf",
+  "sourcePdfSHA256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+  "inputClustering": "data/geography/research/mass-1962-printed-page-cluster-review-queue-20261011.v1.json",
+  "evidenceClass": "PAGE_TEXT_SNIPPETS_TO_SUPPORT_HUMAN_PRINTED_HEADING_REVIEW_NOT_CERTIFICATION",
+  "scopeWarning": "An anchor is a text coincidence; even a multi-section page can be a Common or older/alternate calendar source. Scan pages must be viewed to verify actual headings. Page excerpts normalized to match words, not critical Latin reproductions.",
+  "stats": {
+    "clusteredSourcePaths": 44,
+    "previouslySpottedAmongClusters": 7,
+    "previouslyDetailedAmongClusters": 1,
+    "distinctCandidatePages": 66,
+    "stillUnadjudicatedPaths": 44,
+    "publicationApproved": 0
+  },
+  "candidatePdfPages": [
+    107,
+    157,
+    158,
+    159,
+    191,
+    193,
+    412,
+    413,
+    415,
+    416,
+    417,
+    420,
+    519,
+    543,
+    544,
+    555,
+    563,
+    572,
+    573,
+    578,
+    579,
+    580,
+    594,
+    595,
+    610,
+    611,
+    625,
+    627,
+    652,
+    653,
+    656,
+    659,
+    660,
+    661,
+    674,
+    675,
+    688,
+    692,
+    700,
+    704,
+    705,
+    714,
+    715,
+    737,
+    739,
+    742,
+    743,
+    751,
+    752,
+    754,
+    755,
+    756,
+    757,
+    763,
+    764,
+    769,
+    774,
+    779,
+    876,
+    877,
+    894,
+    895,
+    1008,
+    1009,
+    1029,
+    1030
+  ],
+  "rows": [
+    {
+      "sourcePath": "Commune/Coronatio",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 876,
+          "pdfPageEnd": 878,
+          "score": 37,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 876,
+              "printedPageIfStandardArabicOffset": 795,
+              "topOfPageSample": "[68] Missa votiva in die coronationis Papae et in eius anniversario 2. In die coronationis Papae tur. Benedictus Deus et Pater Domini et in eius anniversario nostri Iesu Christi, qui secundum mi- sericordiam suam magnam regeneravit T In die coronationis Papae et in eius anniversario, pro Missa conventuali, in nos in sp",
+              "bottomOfPageSample": " dicitur: tiam, et aspersionem sanguinis Iesu Alleluia, alleluia. V. Ps. 106, 8 Con- 4705 Christi: gratia vobis et pax multiplice- fiteantur Domino misericordiae eius, et",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Exáltent eum in ecclésia plebis: et in cáthedra seniórum laudent eum.",
+                  "phrase": "exaltent eum in ecclesia plebis et in",
+                  "relativePosition": 48,
+                  "excerpt": "i domini nostri mansuetudinis eius graduate ps et u gloria patri exaltent eum in ecclesia plebis et in et dicitur gloria in excelsis cathedra seniorum laudent eum u conoratio fiteantur domino misericord"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 877,
+              "printedPageIfStandardArabicOffset": 796,
+              "topOfPageSample": "Missa votiva in consecratione Episcopi [69] mirabilia eius filiis hominum. Alleluia. Ant. ad Communionem Mt. 16, 18 4709 V. Matth. 16, 18 Tu es Petrus, et su- Tu es Petrus, et super hanc petram per hanc petram aedificabo Ecclesiam aedificabo Ecclesiam meam. (T. P. Alle- meam. Alleluia. luia.) Postcommunio Sequentia san",
+              "bottomOfPageSample": "Domine, munera, quae tibi 4713 offerimus pro me famulo tuo: ut ^sse voluisti, assidua protectione gu- propitius in me tua dona custodias. berna. Per Dominum. Per Dominum.",
+              "anchorMatches": [
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Tu es Petrus, et super hanc petram ædificábo Ecclésiam meam.",
+                  "phrase": "tu es petrus et super hanc petram aedificabo ecclesiam",
+                  "relativePosition": 75,
+                  "excerpt": "itate in caelis secreta ant ad ortertorium mt coinsecratqr dicit tu es petrus et super hanc petram aedificabo ecclesiam meam et portae s uscipe domine munera quac tibi offerimus pro hoc famulo tuo ut inferi non praeuale"
+                },
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Tu es Petrus, et super hanc petram ædificábo Ecclésiam meam: et portæ ínferi non prævalébunt advérsus eam: et tibi dabo claves reg",
+                  "phrase": "tu es petrus et super hanc petram aedificabo ecclesiam",
+                  "relativePosition": 75,
+                  "excerpt": "itate in caelis secreta ant ad ortertorium mt coinsecratqr dicit tu es petrus et super hanc petram aedificabo ecclesiam meam et portae s uscipe domine munera quac tibi offerimus pro hoc famulo tuo ut inferi non praeuale"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Tu es Petrus, et super hanc petram ædificábo Ecclésiam meam. (Allelúja.)",
+                  "phrase": "tu es petrus et super hanc petram aedificabo ecclesiam",
+                  "relativePosition": 75,
+                  "excerpt": "itate in caelis secreta ant ad ortertorium mt coinsecratqr dicit tu es petrus et super hanc petram aedificabo ecclesiam meam et portae s uscipe domine munera quac tibi offerimus pro hoc famulo tuo ut inferi non praeuale"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Commune/Propaganda",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 894,
+          "pdfPageEnd": 896,
+          "score": 18,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 894,
+              "printedPageIfStandardArabicOffset": 813,
+              "topOfPageSample": "[86] Missa votiva pro Fidei propagatione Oratio qui habitant terram, quia t u es Deus 4833 THVeus, qui omnes homines vis sal- conspector saeculorum. JLJ VOS fieri et ad agnitionem veri- Graduate Ps. 66, 6-8 tatis venire: mitte, quaesumus, opera- Confiteantur tibi populi, Deus: con- 4835 rios in messem tuam, et da eis c",
+              "bottomOfPageSample": "s est eis: quia nem Aaron de populo tuo, et dirige erant vexati, et iacentes sicut oves non nos in viam iustitiae, et sciant omnes, habentes pastorem. Tune dicit discipu-",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Confiteántur tibi pópuli, Deus: confiteántur tibi pópuli omnes: terra dedit fructum suum.",
+                  "phrase": "confiteantur tibi populi deus",
+                  "relativePosition": 8,
+                  "excerpt": "d agnitionem ueri graduate ps tatis uenire mitte quaesumus opera confiteantur tibi populi deus con rios in messem tuam et da eis cum fiteantur tibi populi omnes terra deomni fiducia loqui uerbum"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Annuntiáte inter gentes glóriam Dómini, in ómnibus pópulis mirabília ejus.",
+                  "phrase": "annuntiate inter gentes gloriam",
+                  "relativePosition": 36,
+                  "excerpt": "tende nobis lu tractus p s cem miserationum t u a r u m et immit annuntiate inter gentes gloriam do te timorem t u u m super gentes quae mini in omnibus populis mirabilia non exquisierunt te u t c"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 895,
+              "printedPageIfStandardArabicOffset": 814,
+              "topOfPageSample": "Missa votiva pro Ecclesiae defensione [87] lis suis: Messis quidem multa, operarii quillam vitam agamus, in omni pieta- autem pauci. Rogate ergo Dominum te et castitate; hoc enim bonum est messis, ut mittat operarios in messem et acceptum coram Salvatore nostro suam. Deo, qui omnes homines vult salvos Ant. ad Offertori",
+              "bottomOfPageSample": "ibus et omnibus qui I n diebus illis: Oravit Mardochaus ad 4847 Dominum, dicens: Domine, Domi- in sublimitate sunt, ut quietam et tran- ne Rex omnipotens, in dicione enim",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Laudáte Dóminum, omnes gentes: laudáte eum, omnes pópuli: quóniam confirmáta est super nos misericórdia ejus, et véritas Dómini ma",
+                  "phrase": "laudate dominum omnes gentes",
+                  "relativePosition": 56,
+                  "excerpt": "ceris tribulationem nostram adhaesit in terra uenter noster exsurlaudate dominum omnes gentes ge domine adiuua nos et libera nos laudate eum omnes populi quoniam t p alleluia alleluia ps ibid c"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/01-20",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 688,
+          "pdfPageEnd": 690,
+          "score": 24,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 688,
+              "printedPageIfStandardArabicOffset": 607,
+              "topOfPageSample": "Festa iulii (30) 607 Die 30 iulii semper autem gaudentes: sicut egentes, Ss. Abdon et Sennen Mm. multos autem locupletantes: tamquam Commemoratio nihil habentes, et omnia possidentes. 3214 Antiphona ad Introitum Graduale Exodi 15, 113217 Ps. 78, 11, 12 et 10 Gloriosus Deus in Sanctis suis: mi- rabilis in maiestate, fac",
+              "bottomOfPageSample": "suis: Deus quasi morientes, et ecce vivimus: ut ca- Israel, ipse dabit virtutem et fortitu- stigati, et non mortificati: quasi tristes, dinem plebi suse: benedictus Deus.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Gloriósus Deus in Sanctis suis: mirábilis in majestáte, fáciens prodígia.",
+                  "phrase": "gloriosus deus in sanctis suis mirabilis in maiestate faciens",
+                  "relativePosition": 8,
+                  "excerpt": "et omnia possidentes antiphona ad introitum graduale exodi ps et gloriosus deus in sanctis suis mirabilis in maiestate faciens prodigia intret in conspectu tuo domine gemitus compeditorum redde uicinis nostris septuplum in sin"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Gloriósus Deus in Sanctis suis: mirábilis in majestáte, fáciens prodígia.",
+                  "phrase": "gloriosus deus in sanctis suis mirabilis in maiestate faciens",
+                  "relativePosition": 8,
+                  "excerpt": "et omnia possidentes antiphona ad introitum graduale exodi ps et gloriosus deus in sanctis suis mirabilis in maiestate faciens prodigia intret in conspectu tuo domine gemitus compeditorum redde uicinis nostris septuplum in sin"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/01-25",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 652,
+          "pdfPageEnd": 654,
+          "score": 16,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 652,
+              "printedPageIfStandardArabicOffset": 571,
+              "topOfPageSample": "Festa iunii (30) 571 Postcommunio eius auxilio, a peccatorum nostrorum 2920 Q uos caelesti, Domine, alimento sa- nexibus liberemur: Qui vivis et regnas tiasti: apostolicis intercessioni- cum Deo Patre in imitate. bus ab omni adversitate custodi. Pro S. Paulo Postcommunio Lectio Epistolae beati Pauli Apostoli 2921 TJerc",
+              "bottomOfPageSample": "ntificium data est mihi. V. 1 Cor. 15, 10 Gratia Dei in me vacua non fuit: sed gratia tradidisti: concede; ut, intercessions eius semper in me manet. 42 - Missale Romanum",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Qui operátus est Petro in apostolátum, operátus est ei mihi inter gentes: et cognovérunt grátiam Dei, quæ data est mihi.",
+                  "phrase": "qui operatus est petro in",
+                  "relativePosition": 85,
+                  "excerpt": "t fit commemoratio s petri ap sub graduale gal unica conclusione qui operatus est petro in apostola oratio turn operatus est et mihi inter geneus qui beato petro apostolo tes et cognouerunt "
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Qui operátus est Petro in apostolátum, operátus est ei mihi inter gentes: et cognovérunt grátiam Dei, quæ data est mihi.",
+                  "phrase": "qui operatus est petro in",
+                  "relativePosition": 85,
+                  "excerpt": "t fit commemoratio s petri ap sub graduale gal unica conclusione qui operatus est petro in apostola oratio turn operatus est et mihi inter geneus qui beato petro apostolo tes et cognouerunt "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/01-31",
+      "previouslySpotchecked": true,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 543,
+          "pdfPageEnd": 545,
+          "score": 30,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 543,
+              "printedPageIfStandardArabicOffset": 462,
+              "topOfPageSample": "462 Festa februarii (i) Graduale Ps. 36, 3-5 gno caelorum. Et qui susceperit unum 2074 Spera in Domino et fac bonitatem et parvulum talem in nomine meo, me inhabita terram, et pasceris in divitiis suscipit. eius. V. Delectare in Domino, et dabit Ant. ad Offertorium Ps. 33, 12 tibi petitiones cordis tui: revela Do- Veni",
+              "bottomOfPageSample": "num caelo- Ps. 131, 1 Memento, Domine, David: rum. Quiciimque ergo humiliaverit se et omnis mansuetudinis eius. «icut parvulus iste, hie est maior in re- V. Gloria Patri.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Spera in Dómino, et fac bonitátem, et inhábita terram, et pascéris in divítiis ejus.",
+                  "phrase": "spera in domino et fac bonitatem et",
+                  "relativePosition": 3,
+                  "excerpt": "esta februarii i graduale ps gno caelorum et qui susceperit unum spera in domino et fac bonitatem et paruulum talem in nomine meo me inhabita terram et pasceris in diuitiis suscipit eius u delectare i"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Factus es spes mea, Dómine: turris fortitúdinis a fácie inimíci.",
+                  "phrase": "factus es spes mea",
+                  "relativePosition": 33,
+                  "excerpt": "minum nostrum iesum tractus ps christum filium tuum qui tecum ui factus es spes mea d o m i n e turris uit et regnat in unitate fortitudinis a facie inimici u inhabitabo in tabernacul"
+                },
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Veníte, fílii, audíte me: timórem Dómini docébo vos.",
+                  "phrase": "uenite filii audite me timorem",
+                  "relativePosition": 13,
+                  "excerpt": "dabit ant ad offertorium ps tibi petitiones cordis tui reuela do uenite filii audite me timorem do mino uiam tuam et spera in eum et mini docebo uos ipse faciet secreta alleluia alleluia u p s p "
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Contra spem in spem crédidit, ut fíeret pater multárum géntium, secúndum quod dictum est ei.",
+                  "phrase": "contra spem in spem credidit",
+                  "relativePosition": 42,
+                  "excerpt": "rote ant ad communionem rom gar in uelamento alarum tuarum u quo contra spem in spem credidit ut niam tu deus exaudisti orationem fieret pater multarum gentium seciinmeam dedisti hereditatem ti"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/02-01",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 544,
+          "pdfPageEnd": 546,
+          "score": 17,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 544,
+              "printedPageIfStandardArabicOffset": 463,
+              "topOfPageSample": "Festa februarii (i) 463 Oratio ^ In Missis votivis tempore paschali 2084 \"T nfirmitatem nostram respice, omnipo- omittitur graduale, et eius loco dicitur: JL tens Deus: et, quia pondus propriae Alleluia, alleluia. V. Gal. 2, 19-20 actionis gravat, beati Ignatii Martyris Christo confixus sum Cruci: vivo 2089 tui atque P",
+              "bottomOfPageSample": " in be- Frumentum Christi sum: dentibus 2093 nedictionibus dulcedinis. V. Posuisti in bestiarum molar, ut panis mundus in- capite eius coronam de lapide pretioso. veniar.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Ecce sacérdos magnus, qui in diébus suis plácuit Deo.",
+                  "phrase": "ecce sacerdos magnus qui in",
+                  "relativePosition": 63,
+                  "excerpt": "sto iesu domino nostro meus graduale eccli ant ad offertorium ps ecce sacerdos magnus qui in diebus gloria et honore coronasti eum et suis placuit deo u ibid non est constituisti eum super per"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Ecce sacérdos magnus, qui in diébus suis plácuit Deo.",
+                  "phrase": "ecce sacerdos magnus qui in",
+                  "relativePosition": 63,
+                  "excerpt": "sto iesu domino nostro meus graduale eccli ant ad offertorium ps ecce sacerdos magnus qui in diebus gloria et honore coronasti eum et suis placuit deo u ibid non est constituisti eum super per"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Fruméntum Christi sum: déntibus bestiárum molar, ut panis mundus invéniar.",
+                  "phrase": "frumentum christi sum dentibus",
+                  "relativePosition": 94,
+                  "excerpt": "sti antiphona ad communionem eum u quoniam praeuenisti eum in be frumentum christi sum dentibus nedictionibus dulcedinis u posuisti in bestiarum molar ut panis mundus incapite eius coronam de lap"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/02-11",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 656,
+          "pdfPageEnd": 658,
+          "score": 20,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 656,
+              "printedPageIfStandardArabicOffset": 575,
+              "topOfPageSample": "Festa iulii (2) 575 Oratio netrix, quern totus non capit orbis, in 2950 \"pamulis tuis, quaesumus, Domine, tua se clausit viscera factus homo. XT caelestis gratiae munus impertire: Alleluia, alleluia. V. Felix es, sacra 2954 ut, quibus beatae Virginis partus exsti- Virgo Maria, et omni laude dignis- tit salutis exordium",
+              "bottomOfPageSample": "ram tibi faciat acceptam Maria: quae sine tactu pudoris inventa Iesus Christus Dominus noster: Qui es mater Salvatoris. V. Virgo Dei Ge- tecum vivit et regnat in unitate.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Flores apparuérunt in terra nostra, tempus putatiónis advénit, vox túrturis audíta est in terra nostra.",
+                  "phrase": "flores apparuerunt in terra nostra tempus putationis",
+                  "relativePosition": 67,
+                  "excerpt": " transiit imber meus in deo salutari meo credo abiit et recessit flores apparuerunt in terra nostra tempus putationis adue antiphona ad offertorium nit uox turturis audita est in terra no beata es uirgo maria quae omn"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Flores apparuérunt in terra nostra, tempus putatiónis advénit, vox túrturis audíta est in terra nostra.",
+                  "phrase": "flores apparuerunt in terra nostra tempus putationis",
+                  "relativePosition": 67,
+                  "excerpt": " transiit imber meus in deo salutari meo credo abiit et recessit flores apparuerunt in terra nostra tempus putationis adue antiphona ad offertorium nit uox turturis audita est in terra no beata es uirgo maria quae omn"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        },
+        {
+          "pdfPageStart": 555,
+          "pdfPageEnd": 557,
+          "score": 19,
+          "sourceSectionCandidates": [
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 555,
+              "printedPageIfStandardArabicOffset": 474,
+              "topOfPageSample": "474 Festa februarii (n) Lectio libri Apocalypsis beati Ioannis i\"T\"iSequentia sancti Evangelii secun- Apostoli. Apoc. I I , 19; 12, 1 et 10 ' 1 ' dum Lucam. Luc. 1, 26-31 2166 Apertum est templum Dei in caelo: XJL et visa est area testamenti eius in templo eius, et facta sunt fulgura, et I n illo tempore: Missus est An",
+              "bottomOfPageSample": "t. 4, 7 Tota pulchra es, patriam, ipsa adiuvante, pervenire me- Maria: et macula originalis non est reamur: Qui vivis et regnas cum Deo in te. Alleluia. Patre in imitate.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Ave, grátia plena; Dóminus tecum: benedícta tu in muliéribus.",
+                  "phrase": "aue gratia plena dominus tecum benedicta tu in mulieribus",
+                  "relativePosition": 49,
+                  "excerpt": "uc et ueni columba mea in foraminibus petrae in cauerna maceriae aue gratia plena dominus tecum benedicta tu in mulieribus alleluia alleluia u ostende mihi faciem tuam sonet uox tua in auribus secreta meis uox enim tua dul"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Visitásti terram et inebriásti eam, multiplicásti locupletáre eam.",
+                  "phrase": "uisitasti terram et inebriasti",
+                  "relativePosition": 79,
+                  "excerpt": " dignis ant ad communionem ps sima quae serpentis caput uirgineo uisitasti terram et inebriasti earn pede contriuisti multipliersti locupletare earn in missis uotiuis tempore paschali omittitur g"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/02-27",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 563,
+          "pdfPageEnd": 565,
+          "score": 20,
+          "sourceSectionCandidates": [
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 563,
+              "printedPageIfStandardArabicOffset": 482,
+              "topOfPageSample": "482 Festa martii (4) ab Angelis: gloria et honore coro- habebis thesaurum in caelo: et veni, nasti eum: et constituisti eum super sequere me. opera manuum tuarum. Alleluia. Ant. ad Offertorium Ps. 115, 16-17 ^ Tempore autem paschali, omissis graduali et tractu, dicitur: O Domine, quia ego servus tuus, et 2234 2232 Alle",
+              "bottomOfPageSample": "Os iusti, de Communi Confes- xit ei: Unum tibi deest: vade, quaecum- soris non Pontificis I loco [24], praeter ora- que habes vende et da pauperibus, et tionem sequentem:",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "O Dómine, quia ego servus tuus, et fílius ancíllæ tuæ: dirupísti víncula mea, tibi sacrificábo hóstiam laudis.",
+                  "phrase": "o domine quia ego seruus tuus et",
+                  "relativePosition": 10,
+                  "excerpt": "ium ps tempore autem paschali omissis graduali et tractu dicitur o domine quia ego seruus tuus et alleluia alleluia u ps mi filius ancillae tuae dirupisti uincula nuisti eum domine paulo minus mea "
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Ecce, sto ad óstium et pulso: si quis audiérit vocem meam, et aperúerit mihi jánuam, intrábo ad illum, et cenábo cum illo, et ipse",
+                  "phrase": "ecce sto ad ostium et pulso si",
+                  "relativePosition": 42,
+                  "excerpt": " ant ad communionem apoc il uulos ut tangeret illos discipuli au ecce sto ad ostium et pulso si tem comminabantur offerentibus quos quis audierit uocem meam et aperuerit cum uideret iesus indigne"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        },
+        {
+          "pdfPageStart": 625,
+          "pdfPageEnd": 627,
+          "score": 14,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 625,
+              "printedPageIfStandardArabicOffset": 544,
+              "topOfPageSample": "544 Festa iunii (4) Lectio libri Sapientiae. vos similes hominibus exspectantibus Sap. 4, 7-14 dominum suum, quando revertatur a 2713 T u s t u s , si morte praeoccupatus fuerit, nuptiis: ut, cum venerit, et pulsaverit, JL in refrigerio erit. Sen6ctus enim ve- confestim aperiant ei. Beati servi illi, nerabilis est non ",
+              "bottomOfPageSample": "is Dominum nostrum Iesum Christum, L suis: Sint lumbi vestri praecincti, et Filium tuum: Qui tecum vivit et re- luc^rnae ardentes in manibus vestris, et gnat in unit ate.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Quam magna multitúdo dulcédinis tuæ, Dómine, quam abscondísti timéntibus te!",
+                  "phrase": "quam magna multitudo dulcedinis",
+                  "relativePosition": 73,
+                  "excerpt": "li omittitur graduale et ant ad communionem ps eius loco dicitur quam magna multitudo dulcedinis alleluia alleluia u p s beatus tuae domine quam abscondisti timenquern elegisti et assumpsisti inha"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Quam magna multitúdo dulcédinis tuæ, Dómine, quam abscondísti timéntibus te!",
+                  "phrase": "quam magna multitudo dulcedinis",
+                  "relativePosition": 73,
+                  "excerpt": "li omittitur graduale et ant ad communionem ps eius loco dicitur quam magna multitudo dulcedinis alleluia alleluia u p s beatus tuae domine quam abscondisti timenquern elegisti et assumpsisti inha"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/03-19",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 572,
+          "pdfPageEnd": 574,
+          "score": 14,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 572,
+              "printedPageIfStandardArabicOffset": 491,
+              "topOfPageSample": "AUTEM GENU1T IOSEPH VIRUM MARIAE DE QUA NATVS EST IESVS Die 19 martii S. IOSEPH SPONSI B. MARLE V. CONF. ET ECCLESI^E UNIVERSE PATRONI I classis Ant. ad Introitum Ps. 91, 13-14 Lectio libri Sapientiae. 2297 ustus utpalma florebit: Eccli. 45, 1-6 sicut cedrus Libani multiplicabitur: plan- tatus in domo Domi- D ilectus D",
+              "bottomOfPageSample": "um in bene- 2300 Et, tempore quadragesimali, fit comme- dictionibus dulcedinis: posuisti in ca- moratio feriae. pite eius coronam de lapide pretioso. )7 - Missale Romanum",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Dómine, prævenísti eum in benedictiónibus dulcédinis: posuísti in cápite ejus corónam de lápide pretióso.",
+                  "phrase": "domine praeuenisti eum in",
+                  "relativePosition": 86,
+                  "excerpt": "onetur qui uiuis et regnas cum deo pa graduale ps tre in unitate domine praeuenisti eum in bene et tempore quadragesimali fit comme dictionibus dulcedinis posuisti in camoratio feriae pite e"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 573,
+              "printedPageIfStandardArabicOffset": 492,
+              "topOfPageSample": "492 Festa martii (21) V. Vitam petiit a te, et tribuisti ei lon- Secreta gitudinem dierum in saeculum saeculi. Tractus Ps. 111, 1-3 D ebitum tibi, Domine, nostrae red- 2305 dimus servitutis, suppliciter ex- orantes: u t , sufFragiis beati Ioseph, 2301 Beatus vir, qui timet Dominum: in Sponsi Genetricis Filii tui Iesu C",
+              "bottomOfPageSample": " det: ut, quod nostris meritis non vale- cum ipso: et in nomine m e o exaltabi- mus, eius patrocinio assequamur. Per tur cornu eius. ( T . P . Alleluia.) Dominum nostrum.",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Joseph, fili David, noli timére accípere Maríam cónjugem tuam: quod enim in ea natum est, de Spíritu Sancto est. (Allelúja.)",
+                  "phrase": "ioseph fili dauid noli timere accipere mariam",
+                  "relativePosition": 74,
+                  "excerpt": "as lus domini apparuit in somnis ei di circa finem missalis cens ioseph fili dauid noli timere accipere mariam coniugem t u a m die martii quod enim in ea n a t u m est d e spiritu s benedicti abbatis sancto es"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/03-19t",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 572,
+          "pdfPageEnd": 574,
+          "score": 14,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 572,
+              "printedPageIfStandardArabicOffset": 491,
+              "topOfPageSample": "AUTEM GENU1T IOSEPH VIRUM MARIAE DE QUA NATVS EST IESVS Die 19 martii S. IOSEPH SPONSI B. MARLE V. CONF. ET ECCLESI^E UNIVERSE PATRONI I classis Ant. ad Introitum Ps. 91, 13-14 Lectio libri Sapientiae. 2297 ustus utpalma florebit: Eccli. 45, 1-6 sicut cedrus Libani multiplicabitur: plan- tatus in domo Domi- D ilectus D",
+              "bottomOfPageSample": "um in bene- 2300 Et, tempore quadragesimali, fit comme- dictionibus dulcedinis: posuisti in ca- moratio feriae. pite eius coronam de lapide pretioso. )7 - Missale Romanum",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Dómine, prævenísti eum in benedictiónibus dulcédinis: posuísti in cápite ejus corónam de lápide pretióso.",
+                  "phrase": "domine praeuenisti eum in",
+                  "relativePosition": 86,
+                  "excerpt": "onetur qui uiuis et regnas cum deo pa graduale ps tre in unitate domine praeuenisti eum in bene et tempore quadragesimali fit comme dictionibus dulcedinis posuisti in camoratio feriae pite e"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 573,
+              "printedPageIfStandardArabicOffset": 492,
+              "topOfPageSample": "492 Festa martii (21) V. Vitam petiit a te, et tribuisti ei lon- Secreta gitudinem dierum in saeculum saeculi. Tractus Ps. 111, 1-3 D ebitum tibi, Domine, nostrae red- 2305 dimus servitutis, suppliciter ex- orantes: u t , sufFragiis beati Ioseph, 2301 Beatus vir, qui timet Dominum: in Sponsi Genetricis Filii tui Iesu C",
+              "bottomOfPageSample": " det: ut, quod nostris meritis non vale- cum ipso: et in nomine m e o exaltabi- mus, eius patrocinio assequamur. Per tur cornu eius. ( T . P . Alleluia.) Dominum nostrum.",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Joseph, fili David, noli timére accípere Maríam cónjugem tuam: quod enim in ea natum est, de Spíritu Sancto est. (Allelúja.)",
+                  "phrase": "ioseph fili dauid noli timere accipere mariam",
+                  "relativePosition": 74,
+                  "excerpt": "as lus domini apparuit in somnis ei di circa finem missalis cens ioseph fili dauid noli timere accipere mariam coniugem t u a m die martii quod enim in ea n a t u m est d e spiritu s benedicti abbatis sancto es"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/03-24",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 751,
+          "pdfPageEnd": 753,
+          "score": 23,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 751,
+              "printedPageIfStandardArabicOffset": 670,
+              "topOfPageSample": "670 Festa septembris (29) Secreta C Postcommunio C 3724 Ik yTuneribus nostris, quaesumus, D6- i, qusesumus, Domine Deus no- 3725 JLVJL mine, precibusque susceptis: et D ster: ut, sicut tuorum comme- caelestibus nos munda mysteriis, et cle- moratione Sanctorum temporali gra- menter exaudi. Per Dominum nostrum tulamur of",
+              "bottomOfPageSample": "risti, quaecumque vi- I n illo tempore: Accesserunt discipuh\" ad Iesum, dicentes: Quis, putas, dit. Beatus qui legit, et audit verba maior est in regno caelorum? Et advo-",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Benedícite Dóminum, omnes Angeli ejus: poténtes virtúte, qui fácitis verbum ejus.",
+                  "phrase": "benedicite dominum omnes angeli",
+                  "relativePosition": 56,
+                  "excerpt": "nguine suo oratio graduate ps et d eus qui miro ordine angelorum benedicite dominum omnes angeli ministeria hominumque dispen eius potentes uirtute qui facitis uersas concede propitius ut a quibus"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Benedícite Dóminum, omnes Angeli ejus: poténtes virtúte, qui fácitis verbum ejus.",
+                  "phrase": "benedicite dominum omnes angeli",
+                  "relativePosition": 56,
+                  "excerpt": "nguine suo oratio graduate ps et d eus qui miro ordine angelorum benedicite dominum omnes angeli ministeria hominumque dispen eius potentes uirtute qui facitis uersas concede propitius ut a quibus"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 752,
+              "printedPageIfStandardArabicOffset": 671,
+              "topOfPageSample": "Festa septembris (29) 671 cans Iesus parvulum, statuit eum in niente sufFragio, et placatus accipias, medio eorum, et dixit: Amen dico vo- et ad salutem nostram provenire con- bis, nisi conversi fueritis, et efficiami- cedas. Per Dominum. ni sicut parvuli, non intrabitis in re- gnum caelorum. Quicumque ergo hu- Ant. ad",
+              "bottomOfPageSample": "audis ofFeri- mus, suppliciter deprecantes: ut easdem, angelico pro nobis interve- sum est mare et contremuit terra, ubi Archangelus Michael descendit de caelo. Alleluia.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Stetit Angelus juxta aram templi, habens thuríbulum áureum in manu sua, et data sunt ei incénsa multa: et ascéndit fumus aromátum ",
+                  "phrase": "stetit angelus iuxta aram templi",
+                  "relativePosition": 79,
+                  "excerpt": "tionis eius benedic ani ant ad offertorium apoc et ma mea domino stetit angelus iuxta aram templi tempore autem paschali omittitur grahabens thuribulum aureum in manu duale et eius loco dicitur sua"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Benedícite, omnes Angeli Dómini, Dóminum: hymnum dícite et superexaltáte eum in sǽcula. (Allelúja.)",
+                  "phrase": "benedicite omnes angeli domini",
+                  "relativePosition": 14,
+                  "excerpt": "ant ad communionem dan miliauerit se sicut paruulus iste hie est benedicite omnes angeli domini maior in regno caelorum et qui susce dominum hymnum dicite et superperit unum paruulum talem in nom"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/03-27",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 578,
+          "pdfPageEnd": 580,
+          "score": 24,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 578,
+              "printedPageIfStandardArabicOffset": 497,
+              "topOfPageSample": "Festa martii (27) 497 Oratio Tractus Ibid., 38, 39 et 50 2335 /'\"\"Vmnipotens sempiterne Deus, qui, Persequar inimicos meos, et com- 2338 V^y ad cultum sacrarum imaginum prehendam illos. V. Confringam illos, asserendum, beatum Ioannem caelesti nee poterunt stare: cadent subtus pe- doctrina et admirabili spiritus fortitu",
+              "bottomOfPageSample": " homini: Extende docet manus meas ad prdelium: et po- manum tuam. Et extendit: et restituta suisti, ut arcum sereum, bracchia mea. est manus eius. Ipsi autem repleti sunt",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Deus, qui præcínxit me virtúte: et pósuit immaculátam viam meam.",
+                  "phrase": "deus qui praecinxit me uirtute",
+                  "relativePosition": 89,
+                  "excerpt": "o uos si licet graduate ps et sabbatis benefacere an male animam deus qui praecinxit me uirtute et saluam facere an perdere et circumposuit immaculatam uiam meam u qui spectis omnibus dixit homin"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Deus, qui præcínxit me virtúte: et pósuit immaculátam viam meam.",
+                  "phrase": "deus qui praecinxit me uirtute",
+                  "relativePosition": 89,
+                  "excerpt": "o uos si licet graduate ps et sabbatis benefacere an male animam deus qui praecinxit me uirtute et saluam facere an perdere et circumposuit immaculatam uiam meam u qui spectis omnibus dixit homin"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 579,
+              "printedPageIfStandardArabicOffset": 498,
+              "topOfPageSample": "498 Festa martii (28) insipientia, et colloquebantur ad invi- spiritualium hostium, eius intercessio- cem, quidnam facerent Iesu. ne, superatis insidiis, coronam iustitiae Ant. ad Offertorium lob 14, 7 a te accipere mereamur. Per eundem 2342 Lignum habet spem, si praecisum Dominum nostrum. fuerit, rursum virescit, et r",
+              "bottomOfPageSample": "rtitudinem tuam: et nominis Iesu de Crucis inimicis trium- exsultabo mane misericordiam tuam. phare fecisti: praesta, quaesumus; ut, Alleluia. V. Quia factus es susceptor",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Lignum habet spem: si præcísum fúerit, rursum viréscit, et rami ejus púllulant.",
+                  "phrase": "lignum habet spem si praecisum",
+                  "relativePosition": 9,
+                  "excerpt": "stitiae ant ad offertorium lob a te accipere mereamur per eundem lignum habet spem si praecisum dominum nostrum fuerit rursum uirescit et rami eius lectio libri sapientise pullulant t p alleluia "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/03-28",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 579,
+          "pdfPageEnd": 581,
+          "score": 26,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 579,
+              "printedPageIfStandardArabicOffset": 498,
+              "topOfPageSample": "498 Festa martii (28) insipientia, et colloquebantur ad invi- spiritualium hostium, eius intercessio- cem, quidnam facerent Iesu. ne, superatis insidiis, coronam iustitiae Ant. ad Offertorium lob 14, 7 a te accipere mereamur. Per eundem 2342 Lignum habet spem, si praecisum Dominum nostrum. fuerit, rursum virescit, et r",
+              "bottomOfPageSample": "rtitudinem tuam: et nominis Iesu de Crucis inimicis trium- exsultabo mane misericordiam tuam. phare fecisti: praesta, quaesumus; ut, Alleluia. V. Quia factus es susceptor",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Qui timétis Dóminum, laudáte eum: univérsum semen Jacob, glorificáte eum.",
+                  "phrase": "qui timetis dominum laudate eum",
+                  "relativePosition": 58,
+                  "excerpt": "ffragio cumula graduale ps ta quorum imagines euicit in ecclesia qui timetis dominum laudate eum esse uenerandas per dominum uniuersum semen iacob glorificate eum u timeat eum omne semen die marti"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Qui timétis Dóminum, laudáte eum: univérsum semen Jacob, glorificáte eum.",
+                  "phrase": "qui timetis dominum laudate eum",
+                  "relativePosition": 58,
+                  "excerpt": "ffragio cumula graduale ps ta quorum imagines euicit in ecclesia qui timetis dominum laudate eum esse uenerandas per dominum uniuersum semen iacob glorificate eum u timeat eum omne semen die marti"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 580,
+              "printedPageIfStandardArabicOffset": 499,
+              "topOfPageSample": "Feria VI post dominicam I Passionis 499 meus, et refugium meum in die tribu- Ant. ad Communionem Sap. 10, 20 lationis meae. Alleluia. Decantaverunt, Domine, nomen 2356 •[ In Missis votivis ante Septuagesi- sanctum tuum, et victricem manum mam vel post Pentecosten, graduate ut tuam laudaverunt. (T. P. Alleluia.) supra, ",
+              "bottomOfPageSample": "idias nos fectum felicem consequamur: Qui vivis in tuae protectionis securitate consti- et regnas cum Deo Patre in unitate. tuat. Per Dominum. Et fit commemoratio feriae.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Invocávit Altíssimum poténtem in oppugnándo inimícos úndique, et audívit illum magnus et sanctus Deus.",
+                  "phrase": "inuocauit altissimum potentem in oppugnando inimicos undique",
+                  "relativePosition": 71,
+                  "excerpt": "em ecce mater tua u gloria patri ant ad offertorium eccli oratio inuocauit altissimum potentem in oppugnando inimicos undique et au d eus in simeonis cuius passione secundum prophetiam diuit ilium magnus et sanctus deus mam a"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/04-28",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 594,
+          "pdfPageEnd": 596,
+          "score": 20,
+          "sourceSectionCandidates": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 594,
+              "printedPageIfStandardArabicOffset": 513,
+              "topOfPageSample": "Festa aprilis (28) 513 tus est. Scriptum est enim: Perdam sa- Post Septuagesimam, omissis Alle- pientiam sapientium, et prudentiam luia et versu sequenti, dicitur prudentium reprobabo. Ubi sapiens? Tractus 1 Petri 4, 1 ubi scriba ? ubi conquisitor huius ssecu- Christo igitur passo in carne, et 2464 li? Nonne stultam fe",
+              "bottomOfPageSample": "quae apponuntur vobis: et curate relinquens exemplum, ut sequamini infirmos, qui in ilia sunt, et dicite illis: vestigia eius. Alleluia. Appropinquavit in vos regnum Dei.",
+              "anchorMatches": [
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Christo ígitur passo in carne, et vos eádem cogitatióne armámini: quia, qui passus est in carne, désiit a peccátis.",
+                  "phrase": "christo igitur passo in carne",
+                  "relativePosition": 8,
+                  "excerpt": "ubi sapiens tractus petri ubi scriba ubi conquisitor huius ssecu christo igitur passo in carne et li nonne stultam fecit deus sapien uos eadem cogitatione armamini tiam huius mundi nam quia in d"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 595,
+              "printedPageIfStandardArabicOffset": 514,
+              "topOfPageSample": "514 Festa aprilis (29) Ant. ad Offertorium Ephes. 5, 2 Oratio 2466 Ambulate in dilectione, sicut et Chri- stus dilexit nos, et tradidit semetipsum pro nobis oblationem, et hostiam Deo P raesta,quaesumus,omnipotensDeus: 2471 ut beati Petri Martyris tui fidem congrua devotione sectemur; qui, pro in odorem suavitatis. (T.",
+              "bottomOfPageSample": "m deprecor: meus agricola est. Omnem palmitem a timore inimici eripe animam meam. in me non ferentem fructum, toilet V. Gloria Patri. eum: et omnem qui fert fructum, pur-",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Ambuláte in dilectióne, sicut et Christus diléxit nos, et trádidit semetípsum pro nobis oblatiónem et hóstiam Deo in odórem suavit",
+                  "phrase": "ambulate in dilectione sicut et christus dilexit nos et",
+                  "relativePosition": 2,
+                  "excerpt": "festa aprilis ant ad offertorium ephes oratio ambulate in dilectione sicut et christus dilexit nos et tradidit semetipsum pro nobis oblationem et hostiam deo p raesta quaesumus omnipotensdeus ut beati "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/05-13",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 610,
+          "pdfPageEnd": 612,
+          "score": 17,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 610,
+              "printedPageIfStandardArabicOffset": 529,
+              "topOfPageSample": "Festa m a i i (13) 529 Oratio Stella? in perpetuas aeternitates. Alle- 2587 D eus, qui ad errorum insidias repel- lendas et Apostolicae Sedis iura propugnanda beatum Robertum, Pon- luia. Extra tempus paschale: Graduate Eccli. 44, 16 et 17 tificem tuum atque Doctorem, mira Ecce sacerdos magnus, qui in diebus 2590 erudit",
+              "bottomOfPageSample": "re, sed adimplere. dor firmamenti. Alleluia. V. Ibid. Qui Amen quippe dico vobis, donee trans- ad iustitiam erudiunt multos, quasi eat caelum et terra, iota unum aut unus",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Ecce sacérdos magnus, qui in diébus suis plácuit Deo.",
+                  "phrase": "ecce sacerdos magnus qui in",
+                  "relativePosition": 9,
+                  "excerpt": "mpus paschale graduate eccli et tificem tuum atque doctorem mira ecce sacerdos magnus qui in diebus eruditione et uirtute decorasti eius suis placuit deo et inuentus est iustus meritis et inte"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 611,
+              "printedPageIfStandardArabicOffset": 530,
+              "topOfPageSample": "530 Festa maii (14, 15) apex non praeteribit a lege, donee omnia Oratio P fiant. Qui ergo solvent unum de man- datis istis minimis, et docuerit sic ho- mines, minimus vocabitur in regno cae- D a, qusesumus, omnipotens Deus: 2598 ut, qui beati Bonifatii Martyris tui solemnia colimus, eius apud te inter- lorum: qui autem",
+              "bottomOfPageSample": "Extra tempus paschale, Missa In virtute, de Communi unius Martyris III loco [6], in cadis coronae participes fieri valea- item cum orationibus ut infra. mus. Per Dominum.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Mihi autem adhærére Deo bonum est, pónere in Dómino Deo spem meam: ut annúntiem omnes prædicatiónes tuas in portis fíliæ Sion, all",
+                  "phrase": "mihi autem adhaerere deo bonum est ponere in domino",
+                  "relativePosition": 18,
+                  "excerpt": "gnus uocabitur in regno caelorum secreta c ant ad offertorium ps mihi autem adhaerere deo bonum est ponere in domino deo spem meam m uneribus nostris qusesumus do mine precibusque susceptis et caelestibus nos munda m"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/06-02",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 704,
+          "pdfPageEnd": 706,
+          "score": 16,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 704,
+              "printedPageIfStandardArabicOffset": 623,
+              "topOfPageSample": "Festa augusti (n) 623 3348 Alleluia, alleluia. V. Levita Lau- vincula et carceres: lapidati sunt, secti rentius bonum opus operatus est: sunt, tentati sunt, in occisione gladii qui per signum crucis caecos illu- mortui sunt: circuierunt in melotis, in minavit. Alleluia. V. Ps. 20, 4 Posui- pellibus caprmis, egentes, an",
+              "bottomOfPageSample": "illis non invenirent resurrectionem: alii vero lu- est in oblivione coram Deo ? Sed et ca- dibria et verbera experti, insuper et pilli capitis vestri omnes numerati sunt.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Clamavérunt justi, et Dóminus exaudívit eos: et ex ómnibus tribulatiónibus eórum liberávit eos.",
+                  "phrase": "clamauerunt iusti et dominus",
+                  "relativePosition": 25,
+                  "excerpt": "i et susannae uirg mino nostro martyrum commemoratio graduale ps clamauerunt iusti et dominus ex ant ad introitum ps audiuit eos et ex omnibus tribulas alus autem iustorum a domino et protector"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 705,
+              "printedPageIfStandardArabicOffset": 624,
+              "topOfPageSample": "624 Festa augusti (12, 13) Nolite ergo timere: multis passeribus Secreta C pluris estis vos. Dico autem vobis: A ccepta tibi sit, Domine, sacratae 3360 Omnis quicumque confessus fuerit me l \\ plebis oblatio pro tuorum honore coram hominibus, et Filius hominis Sanctorum: quorum se meritis de tri- confitebitur ilium cora",
+              "bottomOfPageSample": "tuae v 3 communio sumpta nos salvet: et festivitate gaudemus; ita piae devotio- in tuae veritatis luce confirmet. Per nis erudiamur afFectu. Per Dominum. Dominum nostrum.",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Justórum ánimæ in manu Dei sunt, et non tanget illos torméntum malítiæ visi sunt óculis insipiéntium mori: illi autem sunt in pace",
+                  "phrase": "iustorum animae in manu dei sunt et non tanget",
+                  "relativePosition": 25,
+                  "excerpt": "it et regnat in imitate ant ad offertorium sap et postcommunio c iustorum animae in manu dei sunt et non tanget illos tormentum malitiae uisi sunt oculis insipientium mori illi s atiasti domine familiam tuam mun"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/06-05",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 627,
+          "pdfPageEnd": 629,
+          "score": 20,
+          "sourceSectionCandidates": [
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 627,
+              "printedPageIfStandardArabicOffset": 546,
+              "topOfPageSample": "546 Festa iunii (6) Sequentia sancti Evangelii seciin- sedi cum Patre meo in throno eius. dum Matthaeum. Mt. 5, 1-12 (T. P. Alleluia.) 2728 J n illo tempore: Videns Iesus turbas, Postcommunio JL ascendit in montem, et cum sedis- set, accesserunt ad eum discipuli eius, et aperiens os suum, docebat eos, di- S anctificati",
+              "bottomOfPageSample": "te beato Norber- 2731 Qui vicerit, dabo ei sedere mecum to Confessore tuo atque Pontifice, bene- in throno meo: sicut et ego vici, et ficia potiora sumaimus. Per Dominum.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Benedícam Dóminum, qui tríbuit mihi intelléctum: providébam Deum in conspéctu meo semper, quóniam a dextris est mihi ne commóvear.",
+                  "phrase": "benedicam dominum qui tribuit mihi intellectum prouidebam deum in",
+                  "relativePosition": 63,
+                  "excerpt": "mul et opere docuit te adiuuante exercere ualeamus per dominum nobenedicam dominum qui tribuit mihi intellectum prouidebam deum in strum iesum christum filium tuum conspectu meo semper quoniam a qui tecum uiuit et regnat in unitat"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Qui vícerit, dabo ei sedére mecum in throno meo: sicut et ego vici et sedi cum Patre meo in throno ejus. (Allelúja.)",
+                  "phrase": "qui uicerit dabo ei sedere",
+                  "relativePosition": 94,
+                  "excerpt": "ptis muneribus gratias apoc exhibentes intercedente beato norber qui uicerit dabo ei sedere mecum to confessore tuo atque pontifice benein throno meo sicut et ego uici et ficia potiora sumaim"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/06-28",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 659,
+          "pdfPageEnd": 661,
+          "score": 20,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Tractus",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 659,
+              "printedPageIfStandardArabicOffset": 578,
+              "topOfPageSample": "578 Festa iulii (3) opportune, importune: argue, obsecra, Sequentia sancti Evangelii secun- 2979 increpa in omni patientia et doctrina. dum Matthaeum. Mt. 10, 28-33 Erit enim tempus, cum sanam doctri- nam non sustinebunt, sed ad sua desi- deria coacervabunt sibi magistros, pru- I n illo tempore: Dixit Iesus discipulis ",
+              "bottomOfPageSample": "eati Irensei Martyris tui de coniungere, ut omnem narratio- atque Pontificis intercessione, nullius nem Dei possis audire. Alleluia. hostilitatis arma timeamus. Per Dnum.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Propter fratres meos et próximos meos loquébar pacem de te.",
+                  "phrase": "propter fratres meos et proximos",
+                  "relativePosition": 28,
+                  "excerpt": "e uestro uestri graduale ps autem capilli capitis omnes numerati propter fratres meos et proximos me sunt nolite ergo timere multis pasos loquebar pacem de te u ps seribus meliores estis uos omnis "
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Apud Dóminum gressus hóminis dirigéntur: et viam ejus volet.",
+                  "phrase": "apud dominum gressus hominis",
+                  "relativePosition": 60,
+                  "excerpt": " eus qui credentes in te populos nullis sinis concuti terroribus apud dominum gressus hominis dignare preces et hostias dicatae tibi dirigentur et uiam eius uolet u os plebis suscipere ut pax a"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Vidéte, quóniam non soli mihi laborávi, sed ómnibus exquiréntibus veritátem.",
+                  "phrase": "uidete quoniam non soli mihi",
+                  "relativePosition": 74,
+                  "excerpt": "ius et non supplantabuntur gressus eius ant ad communionem eccli uidete quoniam non soli mihi laboratempore autem paschali omittitur gra ui sed omnibus exquirentibus ueritaduale et eius loco di"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/06-30",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 652,
+          "pdfPageEnd": 654,
+          "score": 16,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 652,
+              "printedPageIfStandardArabicOffset": 571,
+              "topOfPageSample": "Festa iunii (30) 571 Postcommunio eius auxilio, a peccatorum nostrorum 2920 Q uos caelesti, Domine, alimento sa- nexibus liberemur: Qui vivis et regnas tiasti: apostolicis intercessioni- cum Deo Patre in imitate. bus ab omni adversitate custodi. Pro S. Paulo Postcommunio Lectio Epistolae beati Pauli Apostoli 2921 TJerc",
+              "bottomOfPageSample": "ntificium data est mihi. V. 1 Cor. 15, 10 Gratia Dei in me vacua non fuit: sed gratia tradidisti: concede; ut, intercessions eius semper in me manet. 42 - Missale Romanum",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Qui operátus est Petro in apostolátum, operátus est et mihi inter gentes: et cognovérunt grátiam Dei, quæ data est mihi.",
+                  "phrase": "qui operatus est petro in",
+                  "relativePosition": 85,
+                  "excerpt": "t fit commemoratio s petri ap sub graduale gal unica conclusione qui operatus est petro in apostola oratio turn operatus est et mihi inter geneus qui beato petro apostolo tes et cognouerunt "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 653,
+              "printedPageIfStandardArabicOffset": 572,
+              "topOfPageSample": "572 Festa iunii (30) 2927 Alleluia, alleluia. V. Sancte Paule afficient: et eritis odio omnibus propter Apostole, praedicator veritatis et doctor nomen meum: qui autem perseverave- gentium, intercede pro nobis. Alleluia. rit usque in finem, hie salvus erit. ^ In Missis votivis post Septuagesi- Ant. ad Offertorium Ps. 1",
+              "bottomOfPageSample": " mirabilem praedicamus; sic per trem in mortem, et pater filium: et in- ilium tuae sumamus indulgentiae lar- surgent filii in parentes, et morte eos gitatem. Per Dominum.",
+              "anchorMatches": [
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Tu es vas electiónis, sancte Paule Apóstole: vere digne es glorificándus.",
+                  "phrase": "tu es uas electionis sancte",
+                  "relativePosition": 16,
+                  "excerpt": "nimis honorati sunt amitractus ci tui deus nimis confortatus est tu es uas electionis sancte paule principatus eorum apostole uere digne es glorifican secreta dus u praedicator ueritatis et do"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/07-05",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": true,
+      "clusters": [
+        {
+          "pdfPageStart": 660,
+          "pdfPageEnd": 662,
+          "score": 20,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 660,
+              "printedPageIfStandardArabicOffset": 579,
+              "topOfPageSample": "Festa iulii (5) 579 Die 5 iulii et doctrinae: insta in illis. Hoc enim S. Antonii Mariae Zaccaria faciens, et teipsum salvum fades, et eos qui te audiunt. Confessoris III classis Graduale Philipp. 1, 8-9 2984 Ant. ad Introitum 1 Cor. 2, 4 Testis mihi est Deus, quo modo 2987 cupiam omnes vos in visceribus Iesu S ermo me",
+              "bottomOfPageSample": "o: ut profectus tuus I n illo tempore: Dixit Iesus discipulis suis: Quisquis non receperit regnum manifestus sit omnibus. Attende tibi Dei velut parvulus, non intrabit in",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Testis mihi est Deus, quo modo cúpiam omnes vos in viscéribus Jesu Christi. Et hoc oro, ut cáritas vestra magis ac magis abúndet i",
+                  "phrase": "testis mihi est deus quo modo cupiam omnes uos",
+                  "relativePosition": 8,
+                  "excerpt": "nt confessoris iii classis graduale philipp ant ad introitum cor testis mihi est deus quo modo cupiam omnes uos in uisceribus iesu s ermo meus et praedicatio mea non in persuasibilibus humans sapientiae uerbis s"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 661,
+              "printedPageIfStandardArabicOffset": 580,
+              "topOfPageSample": "580 Festa iulii (7) illud. Et complexans parvulos, et im- extulit ad victoriam: Qui vivis et re- ponens manus super illos, benedicebat gnas cum Deo Patre in unitate. eos. Et cum egressus esset in viam, procurrens quidam, genu flexo ante Die 7 iulii eum, rogabat eum: Magister bone, Ss. Cyrilli et Methodii quid faciam, u",
+              "bottomOfPageSample": "lsior caelis fac- beatus Antonius Maria salutaris hostiae tus: qui non habet necessitatem coti- vexillum, contra Ecclesiae tuae hostes, die, quemadmodum sacerdotes, prius",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Imitatóres mei estóte, fratres, et observáte eos, qui ita ámbulant, sicut habétis formam nostram.",
+                  "phrase": "imitatores mei estote fratres et",
+                  "relativePosition": 75,
+                  "excerpt": "ma ant ad communionem philipp neat in aeternum sempiternum habet imitatores mei estote fratres et ob sacerdotium unde et saluare in perseruate eos qui ita ambulant sicut ha petuum potest accedentes"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/07-13pl",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 1029,
+          "pdfPageEnd": 1031,
+          "score": 30,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 1029,
+              "printedPageIfStandardArabicOffset": 948,
+              "topOfPageSample": "COMMUNE PLURIUM CONFESSORUM NON PONTIFICUM Ant. /vm. ad aa Introitum Ps. 144,10-11 Quis enim permansit in mandatis eius, c 5846 # ^onfiteantur tibi, Domine, omnia opera tua, et Sancti tui bene- dicant tibi: gloriam regni tui dicent, et potentiam tuam loquentur. (T. P . Alleluia, alleluia.) P s . ibid., 1 et derelictus ",
+              "bottomOfPageSample": "e, filii, na- confitebuntur nomini tuo, Domine: tiones hominum: et scitote quia nullus et habitabunt recti cum vultu tuo. Al- speravit in Domino, et confusus est. leluia.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Diligite Dominum, omnes Sancti eius, quoniam veritatem requiret Dominus, et retribuet abundanter facientibus superbiam.",
+                  "phrase": "diligite dominum omnes sancti",
+                  "relativePosition": 25,
+                  "excerpt": "uo in saeculum et in graduate ps sseculum saeculi u gloria patri diligite dominum omnes sancti oratio eius quoniam ueritatem requiret do o n c d e qusesumus omnipotens minus et retribuet abundan"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Gustate et videte quoniam suavis est Dominus: beatus vir, qui sperat in eo.",
+                  "phrase": "gustate et uidete quoniam suauis",
+                  "relativePosition": 59,
+                  "excerpt": "eos beneficia po tractus ps scimus dono tuae gratiae consequamur gustate et uidete quoniam suauis est per dominum dominus beatus uir qui sperat in eo u timete dominum omnes sancti lectio libri sapi"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 1030,
+              "printedPageIfStandardArabicOffset": 949,
+              "topOfPageSample": "[222] Comm. Sanct. pro aliquibus locis (Comm. plur. Conf. non Pont.) Sequentia sancti Evangelii secun- sacrificium tibi placitum nobisque pro- dum Lucam. Luc. 12, 35-40 ficuum immolemus. Per Dominum. 5854 T n illo tempore: Dixit Iesus discipulis 2 Altera secreta X. suis: Sint lumbi vestri praecincti, et lucernae ardent",
+              "bottomOfPageSample": "Confessoribus tuis, tibi etiam placitis soribus tuis infudisti: ut pura mente ac moribus dignanter tribuas deservire. fervido corde rei sacrae attendamus, et Per Dominum.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Iusti epulentur, et exsultent in conspectu Dei, et delectentur in laetitia. (T. P. Alleluia.)",
+                  "phrase": "iusti epulentur et exsultent in",
+                  "relativePosition": 73,
+                  "excerpt": "atis munant ad offertorium ps ditiam obseruemus in corpore et lu iusti epulentur et exsultent in con men ueritatis exhibeamus in opere per spectu dei et delectentur in laetitia dominum nostrum t p"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Beati servi illi, quos, cum venerit Dominus, invenerit vigilantes: amen dico vobis, quod praecinget se, et faciet illos discumbere",
+                  "phrase": "beati serui illi quos cum uenerit dominus",
+                  "relativePosition": 29,
+                  "excerpt": " cum uenerit et pul da per dominum sauerit confestim aperiant ei beati serui illi quos cum uenerit dominus ant ad communionem luc in uenerit uigilantes amen dico uobis beati serui illi quos cum uenerit quod"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/07-20",
+      "previouslySpotchecked": true,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 674,
+          "pdfPageEnd": 676,
+          "score": 18,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 674,
+              "printedPageIfStandardArabicOffset": 593,
+              "topOfPageSample": "Festa iulii (20) 593 3102 Postcommunio ris nudum, operi eum, et carnem tuam Q uaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedente beato Vincentio Confes- ne despexeris. Tune erumpet quasi ma- ne lumen tuum, et sanitas tua citius orietur, et anteibit faciem tuam iustitia sore tuo, per haec con",
+              "bottomOfPageSample": "m, et egenos vagos- I n illo tempore: Oblati sunt Iesu par- vuli, ut manus eis imponeret, et ora- que indue in domum tuam: cum vide- ret. Discipuli autem increpabant eos.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Derivéntur fontes tui foras, et in platéis aquas tuas divide.",
+                  "phrase": "deriuentur fontes tui foras et",
+                  "relativePosition": 46,
+                  "excerpt": "m laudate nomen do cient aquae mini u gloria patri graduale prou deriuentur fontes tui foras et in pla oratio teis aquas tuas diuide u ps d eus misericordiarum pater per iucundus homo qui miseret"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 675,
+              "printedPageIfStandardArabicOffset": 594,
+              "topOfPageSample": "594 Festa iulii (20, 21) Iesus vero ait eis: Sinite parvulos, et Ant. ad Communionem lac. 1, 27 3114 nolite eos prohibere ad me venire: ta- Religio munda et immaculata apud lium est enim regnum caelorum. Et cum Deum et Patrem, haec est: Visitare pu- imposuisset eis manus, abiit inde. Et pillos et viduas in tribulatione",
+              "bottomOfPageSample": "salute beato Laurentio, Confes- ad perp£tuum nobis tribue prove- sori tuo atque Doctori, spiritum sa- nire subsidium. Per Dominum. pientiae et fortitudinis contulisti: da",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Quando orábas cum lácrimis, et sepeliébas mórtuos, et derelinquébas prándium tuum, et mórtuos abscondébas per diem in domo tua, et",
+                  "phrase": "quando orabas cum lacrimis et",
+                  "relativePosition": 58,
+                  "excerpt": "articipatione uiuamus per dominum nostrum ant ad offertorium tob quando orabas cum lacrimis et sepe eodem die iulii liebas mortuos et derelinquebas prandium tuum et mortuos abscond bas s margari"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Relígio munda et immaculáta apud Deum et Patrem hæc est: Visitáre pupíllos et víduas in tribulatióne eórum, et immaculátum se cust",
+                  "phrase": "religio munda et immaculata apud",
+                  "relativePosition": 5,
+                  "excerpt": "s et ant ad communionem lac nolite eos prohibere ad me uenire ta religio munda et immaculata apud lium est enim regnum caelorum et cum deum et patrem haec est uisitare puimposuisset eis manus abiit"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/08-02",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 692,
+          "pdfPageEnd": 694,
+          "score": 13,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 692,
+              "printedPageIfStandardArabicOffset": 611,
+              "topOfPageSample": "Festa augusti (2) 611 Et fit commemoratio S. Stephani I Pa- Tractus Ps. 34, 133250 pae et Martyris: Ego autem, cum mihi molesti es- 3246 Oratio sent, induebar cilicio: humiliabam in regem tuum, Pastor aeterne, pla- G catus intende: et per beatum Stephanum, Martyrem tuum atque ieiunio animam meam: et oratio mea in sinu ",
+              "bottomOfPageSample": "ur. In eadem T In Missis votivis post Septuagesimam, autem domo manete, edentes et bi- omissis Alleluia et versu sequenti, dicitur bentes quae apud illos sunt: dignus est",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Memor fui judiciórum tuórum a sǽculo, Dómine, et consolátus sum: deféctio ténuit me pro peccatóribus derelinquéntibus legem tuam.",
+                  "phrase": "memor fui iudiciorum tuorum a",
+                  "relativePosition": 61,
+                  "excerpt": " septuaginta duos et misit illos binos ante faciem suam in omnem memor fui iudiciorum tuorum a saecu ciuitatem et locum quo erat ipse uentulo domine et consolatus sum defec rus et dicebat illis "
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Ego autem, cum mihi molésti essent, induébar cilício: humiliábam in jejúnio ánimam meam: et orátio mea in sinu meo convertátur.",
+                  "phrase": "ego autem cum mihi molesti",
+                  "relativePosition": 3,
+                  "excerpt": "i et fit commemoratio s stephani i pa tractus ps pae et martyris ego autem cum mihi molesti es oratio sent induebar cilicio humiliabam in regem tuum pastor aeterne plag catus intende et per b"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/08-08",
+      "previouslySpotchecked": true,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 700,
+          "pdfPageEnd": 702,
+          "score": 19,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 700,
+              "printedPageIfStandardArabicOffset": 619,
+              "topOfPageSample": "Festa augusti (8) 619 Eodem die 8 augusti Graduale Ps. 33, 10 et 113314 Ss. Cyriaci, Largi et Smaragdi Timete Dominum, omnes sancti eius: quoniam nihil deest timentibus eum. Martyrum V. Inquirentes autem Dominum, non 3311 Commemoratio deficient omni bono. Ant. ad Introitum Ps. 33, 10-11 Alleluia, alleluia. V. Sap. 3, 7",
+              "bottomOfPageSample": "sequentur: impleant peccata sua semper: pervenit daemonia eicient: super aegros manus enim ira Dei super illos usque in finem. imponent, et bene habebunt. Missale Romanum",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Timéte Dóminum, omnes sancti ejus: quóniam nihil deest timéntibus eum. v. Inquiréntes autem Dóminum, non defícient omni bono.",
+                  "phrase": "timete dominum omnes sancti eius quoniam nihil deest timentibus",
+                  "relativePosition": 3,
+                  "excerpt": "ti eodem die augusti graduale ps et ss cyriaci largi et smaragdi timete dominum omnes sancti eius quoniam nihil deest timentibus eum martyrum u inquirentes autem dominum non commemoratio deficient omni bono ant ad introitum ps a"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Signa autem eos, qui in me credunt, hæc sequéntur: dæmónia ejícient: super ægros manus impónent, et bene habébunt.",
+                  "phrase": "signa autem eos qui",
+                  "relativePosition": 39,
+                  "excerpt": "ate laetificas conuus erit qui uero non crediderit condemnabitur signa autem eos qui crecede propitius ut quorum natalicia co diderint haec sequentur in nomine limus uirtutem quoque pa"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/08-16",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 544,
+          "pdfPageEnd": 546,
+          "score": 17,
+          "sourceSectionCandidates": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 544,
+              "printedPageIfStandardArabicOffset": 463,
+              "topOfPageSample": "Festa februarii (i) 463 Oratio ^ In Missis votivis tempore paschali 2084 \"T nfirmitatem nostram respice, omnipo- omittitur graduale, et eius loco dicitur: JL tens Deus: et, quia pondus propriae Alleluia, alleluia. V. Gal. 2, 19-20 actionis gravat, beati Ignatii Martyris Christo confixus sum Cruci: vivo 2089 tui atque P",
+              "bottomOfPageSample": " in be- Frumentum Christi sum: dentibus 2093 nedictionibus dulcedinis. V. Posuisti in bestiarum molar, ut panis mundus in- capite eius coronam de lapide pretioso. veniar.",
+              "anchorMatches": [
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Desidérium ánimæ ejus tribuísti ei: et voluntáte labiórum ejus non fraudásti eum.",
+                  "phrase": "desiderium animae eius tribuisti ei et uoluntate labiorum eius",
+                  "relativePosition": 88,
+                  "excerpt": "stum filium tuum qui tecum uitractus ps uit et regnat in unitate desiderium animae eius tribuisti ei et uoluntate labiorum eius non fraudasti antiphona ad communionem eum u quoniam praeuenisti eum in be frumentum christi sum de"
+                },
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Glória et honóre coronásti eum: et constituísti eum super ópera mánuum tuárum, Dómine.",
+                  "phrase": "gloria et honore coronasti eum",
+                  "relativePosition": 65,
+                  "excerpt": "e eccli ant ad offertorium ps ecce sacerdos magnus qui in diebus gloria et honore coronasti eum et suis placuit deo u ibid non est constituisti eum super pera manuum inuentus similis illi qui con"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/08-22",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 714,
+          "pdfPageEnd": 716,
+          "score": 18,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 714,
+              "printedPageIfStandardArabicOffset": 633,
+              "topOfPageSample": "Festa augusti (22) 633 3422 Postcommunio P Lectio libri SapiSntiae. Eccli. 24, 23-31 S piritum nobis, Domine, tuae carita- tis infunde: ut, quos caelestis pa- nis virtiite satiasti, beata Ioanna Fran- E go quasi vitis fructificavi suavita-3426 tern odoris: et flores mei, fructus cisca intercedente, facias terrena de- h",
+              "bottomOfPageSample": "icere earn. V. Beatus homo riano, dexteram super nos tuae pro- qui audit me, et qui vigilat ad fores pitiationis extende. Per Dominum. meas cotidie, et observat ad postes",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Exsultábit cor meum in salutári tuo: cantábo Dómino, qui bona tríbuit mihi: et psallam nómini Dómini altíssimi.",
+                  "phrase": "exsultabit cor meum in salutari",
+                  "relativePosition": 48,
+                  "excerpt": "tune ps eructauit cor graduate ps meum uerbum bonum dico ego ope exsultabit cor meum in salutari ra mea regi u gloria patri tuo cantabo domino qui bona tribuit oratio mihi et psallam nomini domini"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 715,
+              "printedPageIfStandardArabicOffset": 634,
+              "topOfPageSample": "634 Festa augusti (22) ostii mei. V.Qui me invenerit, inveniet Ant. ad Communionem Io. 19, 26-27 3435 vitam, et hauriet salutem a Domino. Dixit Iesus matri suse: Mulier, ecce Tempore autem paschali omittitur gra- filius tuus: deinde dixit discipulo: Ec- duale, et eius loco dicitur: ce mater tua. Et ex ilia hora accepit",
+              "bottomOfPageSample": "auxilium. Per Dominum. Sanctorum: quorum se meritis de tri- Praefatio de beata Maria Virgine Et te in bulatione percepisse cognoscit auxi- festivitate. lium. Per Dominum.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Exsultávit spíritus meus in Deo salutári meo; quia fecit mihi magna qui potens est, et sanctum nomen ejus.",
+                  "phrase": "exsultauit spiritus meus in deo salutari meo",
+                  "relativePosition": 15,
+                  "excerpt": "n discipulus in sua magnificat anima mea dominum et postcommunio exsultauit spiritus meus in deo salutari meo alleluia u beatam me dicent omnes generationes quia ancild iuinis refecti muneribus te do mine supp"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/09-09n",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 1008,
+          "pdfPageEnd": 1010,
+          "score": 36,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 1008,
+              "printedPageIfStandardArabicOffset": 927,
+              "topOfPageSample": "[200] Missse pro aliquibus locis (S. Petti Claver Conf.) Postcommunio C animam tuam, et animam afHictam re- 5687 Oatiasti, Domine, familiam tuam pleveris, ori6tur in tenebris lux tua, et O muneribus sacris: eius, quaesumus, tenebrae tuae erunt sicut meridies. semper interventione nos refove, cuius Graduale Ps. 71, 12-1",
+              "bottomOfPageSample": "stificare seipsum, dixit ad Dominus exaudiet: clamabis, et dicet: Iesum: Et quis est meus proximus? Ecce adsum. Cum effuderis esurienti Suscipiens autem Iesus dixit: Homo",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Liberábit páuperem a poténte, et páuperem cui non erat adiútor: parcet páuperi et ínopi, et ánimas páuperum salvas fáciet.",
+                  "phrase": "liberabit pauperem a potente et pauperem cui non erat",
+                  "relativePosition": 13,
+                  "excerpt": "one nos refoue cuius graduale ps solemnia celebramus per dominum liberabit pauperem a potente et pauperem cui non erat adiutor pardie septembris cet pauperi et inopi et animas paupes petri clauer conf rum saluas faciet"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Liberábit páuperem a poténte, et páuperem cui non erat adiútor: parcet páuperi et ínopi, et ánimas páuperum salvas fáciet.",
+                  "phrase": "liberabit pauperem a potente et pauperem cui non erat",
+                  "relativePosition": 13,
+                  "excerpt": "one nos refoue cuius graduale ps solemnia celebramus per dominum liberabit pauperem a potente et pauperem cui non erat adiutor pardie septembris cet pauperi et inopi et animas paupes petri clauer conf rum saluas faciet"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 1009,
+              "printedPageIfStandardArabicOffset": 928,
+              "topOfPageSample": "Missae pro aliquibus locis (S. Catharine Fliscae Adurnae Viduas) [201] quidam descendebat ab Iernsalem in cit Dominus Deus. Quod perierat re- Iericho, et incidit in latrones, qui etiam quiram, et quod abiectum erat redu- despoliav6runt eum: et plagis imposi- cam, et quod confractum fuerat alli- tis abierunt, semivivo r",
+              "bottomOfPageSample": "biliter dextera tua. Ezech. 34, 15-16 Ego pascam oves Alleluia, alleluia. V. Ps. 72, 25-26 5703 meas: et ego eas accubare faciam, di- Quid mihi est in caelo? et a te quid",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Eo quod liberássem páuperem vociferántem, et pupíllum, cui non esset adiútor, benedíctio peritúri super me veniébat, et cor víduæ ",
+                  "phrase": "eo quod liberassem pauperem uociferantem et pupillum cui non",
+                  "relativePosition": 60,
+                  "excerpt": " deus u gloria patri antiphona ad offertorium oratio lob e t i i eo quod liberassem pauperem uociferantem et pupillum cui non esset adiutor bened eus qui beatam catharinam in contemplanda filii tui passione diuini amoris igne"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/09-18",
+      "previouslySpotchecked": true,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 742,
+          "pdfPageEnd": 744,
+          "score": 17,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 742,
+              "printedPageIfStandardArabicOffset": 661,
+              "topOfPageSample": "Festa septembris (18) 661 3652 Secreta Lectio Epistolae beati Pauli Apostoli M iinera tibi, Domine, dicata sancti- fica: et, intercedente beato Fran- cisco, ab omni nos culparum labe pu- F ad Corinthios. 1 Cor. 13, 1-8 atres: Si linguis hominum Ioquar3657 et Angelorum, caritatem autem rifica. Per Dominum. non habeam, f",
+              "bottomOfPageSample": "r- Alleluia, alleluia. V. Eccli. 11, 13 3660 venire mereamur: Qui tecum vivit et Oculus Dei respexit ilium in bono, regnat in unitate. et erexit eum ab humilitate ipsius,",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Dómine, prævenísti eum in benedictiónibus dulcédinis: posuísti in cápite ejus corónam de lápide pretióso.",
+                  "phrase": "domine praeuenisti eum in",
+                  "relativePosition": 66,
+                  "excerpt": "one magnalium suorum ps quam dilecta tabernacula tua graduate ps domine praeuenisti eum in bene dictionibus dulcedinis posuisti in capite eius coronam de lapide pretioso domine uirtutum conc"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 743,
+              "printedPageIfStandardArabicOffset": 662,
+              "topOfPageSample": "662 Festa septembris (19) et exaltavit caput eius. Alleluia. Ant. ad OfFertorium Ps. 34, 13 3662 V. Eccli. 45, 9 Amavit eum Domi- Ego autem, cum mihi molesti essent, nus, et ornavit eum: stolam gloriae induebar cilicio. Humiliabam in ieiii- induit eum. Alleluia. nio animam meam: et oratio mea in sinu meo convertetur. 3",
+              "bottomOfPageSample": "iores: ibi aemulari in malignantibus: neque zela- erit fletus et stridor dentium. Multi veris facientes iniquitatem. enim sunt vocati, pauci vero electi. V. Gloria Patri.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Ego autem, cum mihi molésti essent, induébar cilício. Humiliábam in jejúnio ánimam meam: et orátio mea in sinu meo convertétur.",
+                  "phrase": "ego autem cum mihi molesti",
+                  "relativePosition": 4,
+                  "excerpt": "aput eius alleluia ant ad offertorium ps u eccli amauit eum domi ego autem cum mihi molesti essent nus et ornauit eum stolam gloriae induebar cilicio humiliabam in ieiiiinduit eum alleluia ni"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Ego sum pauper et dolens: salus tua, Deus, suscépit me. Laudábo nomen Dei cum cantico: et magnificábo eum in laude.",
+                  "phrase": "ego sum pauper et dolens",
+                  "relativePosition": 39,
+                  "excerpt": "lti ant ad communionem ps lia occisa sunt et omnia parata uenite ego sum pauper et dolens salus ad nuptias illi autem neglexerunt et tua deus suscepit me laudabo noabierunt alius in uillam "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/10-02",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 751,
+          "pdfPageEnd": 753,
+          "score": 18,
+          "sourceSectionCandidates": [
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 751,
+              "printedPageIfStandardArabicOffset": 670,
+              "topOfPageSample": "670 Festa septembris (29) Secreta C Postcommunio C 3724 Ik yTuneribus nostris, quaesumus, D6- i, qusesumus, Domine Deus no- 3725 JLVJL mine, precibusque susceptis: et D ster: ut, sicut tuorum comme- caelestibus nos munda mysteriis, et cle- moratione Sanctorum temporali gra- menter exaudi. Per Dominum nostrum tulamur of",
+              "bottomOfPageSample": "risti, quaecumque vi- I n illo tempore: Accesserunt discipuh\" ad Iesum, dicentes: Quis, putas, dit. Beatus qui legit, et audit verba maior est in regno caelorum? Et advo-",
+              "anchorMatches": [
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Benedícite Dóminum, omnes Angeli ejus: poténtes virtúte, qui fácitis verbum ejus.",
+                  "phrase": "benedicite dominum omnes angeli",
+                  "relativePosition": 56,
+                  "excerpt": "nguine suo oratio graduate ps et d eus qui miro ordine angelorum benedicite dominum omnes angeli ministeria hominumque dispen eius potentes uirtute qui facitis uersas concede propitius ut a quibus"
+                },
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Benedícite Dóminum, omnes Angeli ejus: minístri ejus, qui fácitis verbum ejus, ad audiéndam vocem sermónum ejus.",
+                  "phrase": "benedicite dominum omnes angeli",
+                  "relativePosition": 56,
+                  "excerpt": "nguine suo oratio graduate ps et d eus qui miro ordine angelorum benedicite dominum omnes angeli ministeria hominumque dispen eius potentes uirtute qui facitis uersas concede propitius ut a quibus"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 752,
+              "printedPageIfStandardArabicOffset": 671,
+              "topOfPageSample": "Festa septembris (29) 671 cans Iesus parvulum, statuit eum in niente sufFragio, et placatus accipias, medio eorum, et dixit: Amen dico vo- et ad salutem nostram provenire con- bis, nisi conversi fueritis, et efficiami- cedas. Per Dominum. ni sicut parvuli, non intrabitis in re- gnum caelorum. Quicumque ergo hu- Ant. ad",
+              "bottomOfPageSample": "audis ofFeri- mus, suppliciter deprecantes: ut easdem, angelico pro nobis interve- sum est mare et contremuit terra, ubi Archangelus Michael descendit de caelo. Alleluia.",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Benedícite, omnes Angeli Dómini, Dóminum: hymnum dícite et superexaltáte eum in sǽcula.",
+                  "phrase": "benedicite omnes angeli domini",
+                  "relativePosition": 14,
+                  "excerpt": "ant ad communionem dan miliauerit se sicut paruulus iste hie est benedicite omnes angeli domini maior in regno caelorum et qui susce dominum hymnum dicite et superperit unum paruulum talem in nom"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        },
+        {
+          "pdfPageStart": 754,
+          "pdfPageEnd": 756,
+          "score": 14,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 754,
+              "printedPageIfStandardArabicOffset": 673,
+              "topOfPageSample": "Festa octobris (2) 673 ducat in locum, quern paravi. Observa Sequentia sancti Evangelii secun- eum, et audi vocem eius, nee contem- dum Matthseum. Mt. 18, 1-10 nendum putes: quia non dimittet cum peccaveris, et est nomen meum in illo. Quod si audieris vocem eius, et feceris I n illo tempore: Accesserunt discipuli 3752 ",
+              "bottomOfPageSample": " mini descendit de caelo, et accedens li eius: ministri eius, qui facitis verbum revolvit lapidem, et sedebat super eius, ad audiendam vocem sermonum eum. Alleluia. eius.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Angelis suis Deus mandávit de te, ut custódiant te in ómnibus viis tuis.",
+                  "phrase": "angelis suis deus mandauit de te ut",
+                  "relativePosition": 24,
+                  "excerpt": "fficiamini sicut graduale ps paruuli non intrabitis in regnum caeangelis suis deus mandauit de te ut lorum quiciimque ergo humiliauerit custodiant te in omnibus uiis tuis u in se sicut paruulus iste h"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 755,
+              "printedPageIfStandardArabicOffset": 674,
+              "topOfPageSample": "674 Festa octobris (3) Secreta Lectio Isaiae Prophetae. 3759 3754Q[uscipe, Domine, miinera, quae pro Isai. 66, 12-14 O sanctorum Angelorum tuorum ve- neratione deferimus: et concede propi- tius; ut, perpetuis eorum praesidiis, a H aec dicit D o m i n u s : Ecce ego de- clinabo super earn quasi fluvium pacis, et quasi t",
+              "bottomOfPageSample": "ctari, u t praemia consequamur serans tui. aeterna: Q u i vivis et regnas c u m D e o Tempore autem paschali omittitur gra- Patre in unitate. duale, et eius loco dicitur:",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Benedícite, omnes Angeli Dómini, Dóminum: hymnum dícite et superexaltáte eum in sǽcula.",
+                  "phrase": "benedicite omnes angeli domini",
+                  "relativePosition": 25,
+                  "excerpt": " c o m m u n i o n e m d a n uos et in ierusalem consolabimini uibenedicite omnes angeli domini debitis et gaudebit cor uestrum et d o m i n u m h y m n u m dicite et super ossa uestra quasi herb"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/10-03",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 755,
+          "pdfPageEnd": 757,
+          "score": 14,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 755,
+              "printedPageIfStandardArabicOffset": 674,
+              "topOfPageSample": "674 Festa octobris (3) Secreta Lectio Isaiae Prophetae. 3759 3754Q[uscipe, Domine, miinera, quae pro Isai. 66, 12-14 O sanctorum Angelorum tuorum ve- neratione deferimus: et concede propi- tius; ut, perpetuis eorum praesidiis, a H aec dicit D o m i n u s : Ecce ego de- clinabo super earn quasi fluvium pacis, et quasi t",
+              "bottomOfPageSample": "ctari, u t praemia consequamur serans tui. aeterna: Q u i vivis et regnas c u m D e o Tempore autem paschali omittitur gra- Patre in unitate. duale, et eius loco dicitur:",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Confíteor tibi, Pater, Dómine cœli et terræ, quia abscondísti hæc a sapiéntibus, et prudéntibus, et revelásti ea párvulis.",
+                  "phrase": "confiteor tibi pater domine",
+                  "relativePosition": 38,
+                  "excerpt": "iuina myste graduale matth w ria sanctorum angelorum t u o r u m confiteor tibi pater domine cadi festiuitate laetantes quaesumus u t eo et terrae quia abscondisti haec a sar u m protectione a"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 756,
+              "printedPageIfStandardArabicOffset": 675,
+              "topOfPageSample": "Festa octobris (4) 675 3763 Alleluia, alleluia. V. Eccli. 39,17-19 oculi sui. Sicut aquila expandit alas Quasi rosa plantata super rivos aqua- suas, et assumpsit earn, atque portavit rum fructificate: quasi Libanus odo- in humeris suis. Dominus solus dux rem suavitatis habete: florete, flores, eius fuit. quasi lilium, ",
+              "bottomOfPageSample": ", sed nova crea- Deut. 32, 10-12 Circumdiixit earn, et tura. Et quicumque hanc regulam se- docuit: et custodivit quasi .pupillam ciiti fuerint, pax super illos et miseri-",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Magníficat ánima mea Dóminum: et exsultávit spíritus meus in Deo salutári meo: quia respéxit humilitátem ancíllæ suæ: fecit mihi m",
+                  "phrase": "magnificat anima mea dominum et exsultauit spiritus",
+                  "relativePosition": 58,
+                  "excerpt": "oria patri regno caelorum oratio antiphona ad offertorium luc et magnificat anima mea dominum et exsultauit spiritus d eus qui ecclesiam tuam beati francisci meritis fetu nouae prolis amplificas tribue nobis ex eius "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 757,
+              "printedPageIfStandardArabicOffset": 676,
+              "topOfPageSample": "676 Festa octobris (5) cordia, et super Israel Dei. De cetero Ant. ad Offertorium Ps. 88, 25 3776 nemo mihi molestus sit: ego enim Veritas mea et misericordia mea stigmata Domini Iesu in corpore meo cum ipso: et in nomine meo exaltabi- porto. Gratia Domini nostri Iesu Chri- tur cornu eius. sti cum spiritu vestro, fratr",
+              "bottomOfPageSample": " pro tuo- rum tibi grata sint honore iustorum, animabus vestris. Iugum enim meum et nobis salutaria, te miserante, red- suave est, et onus meum leve. dantur. Per Dominum.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Confíteor tibi, Pater, Dómine cœli et terræ, quia abscondísti hæc a sapiéntibus, et prudéntibus, et revelásti ea párvulis.",
+                  "phrase": "confiteor tibi pater domine",
+                  "relativePosition": 60,
+                  "excerpt": "martyrum comtnemoratio tn illo tempore respondens iesus il dixit confiteor tibi pater domine missa salus autem de communi plurimorum maftyrum iii loco cum oracaeli et terrae quia abscondisti h"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/10-09",
+      "previouslySpotchecked": true,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 763,
+          "pdfPageEnd": 765,
+          "score": 20,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 763,
+              "printedPageIfStandardArabicOffset": 682,
+              "topOfPageSample": "682 Festa octobris (9) lantes in astutia, neque adulterantes ^ In Missis votivis post Septuagesi- verbum Dei, sed in manifestatione ve- mam, omissis Alleluia et versu sequenti, dicitur ritatis commendantes nosmetipsos ad omnem conscientiam hominum coram Tractus Ps. 54, 3-4 et 17 3824 Deo. Quod si etiam opertum est Evan",
+              "bottomOfPageSample": "m domo manete, edentes et biben- quam prodigium factus sum multis: tes quae apud illos sunt: dignus est et tu adiutor fortis. Alleluia. enim operarius mercede sua. Nolite",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Inflammátum est cor meum, et renes mei commutáti sunt: zelus domus tuæ comédit me.",
+                  "phrase": "inflammatum est cor meum et",
+                  "relativePosition": 78,
+                  "excerpt": "s inter lupos noligraduale ps te portare saeculum neque peram ne inflammatum est cor meum et re que calceamenta et neminem per uiam nes mei commutati sunt zelus domus salutaueritis in quamcumq"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Contristátus sum in exercitatióne mea: et conturbátus sum a voce inimíci, et a tribulatióne peccatóris.",
+                  "phrase": "contristatus sum in exercitatione",
+                  "relativePosition": 10,
+                  "excerpt": "m hominum coram tractus ps et deo quod si etiam opertum est euan contristatus sum in exercitatione gelium nostrum in iis qui pereunt est mea et conturbatus sum a uoce iniopertum in quibus deus huius"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 764,
+              "printedPageIfStandardArabicOffset": 683,
+              "topOfPageSample": "Festa octobris (9) 683 transire de domo in domum. Et in stico et Eleutherio, ad redemptionis quamcumque civitatem intraveritis, et aeternae proficiamus augmentum. Per susceperint vos, manducate quae ap- Dominum nostrum. poniintur vobis: et curate infirmos, qui in ilia sunt, et dicite illis: Appropin- Eodem die 9 octobr",
+              "bottomOfPageSample": " quaesumus: ut, intercedentibus in eo sunt, hie caeli et terrae cum sit Do- beatis Martyribus tuis Dionysio, Rii- minus, non in manufactis templis ha- 49 - Missale Romai,",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Christi factus sum ego miníster secúndum dispensatiónem Dei, quæ data est mihi, ut ímpleam verbum Dómini.",
+                  "phrase": "christi factus sum ego minister",
+                  "relativePosition": 17,
+                  "excerpt": "i ss dionysii ep ant ad offertorium col rustici et eleutherii mm christi factus sum ego minister se commemoratio cundum dispensationem dei quae data est mihi ut impleam uerbum do ant ad introitum "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/10-17",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 769,
+          "pdfPageEnd": 771,
+          "score": 14,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 769,
+              "printedPageIfStandardArabicOffset": 688,
+              "topOfPageSample": "688 Festa octobris (17) Oratio P diligentes, iugem in eodem Corde tuo 3867 T^\\eus, qui beatam Hedwigem a sae- mansionem habere mereamur: Qui vi- JLJ culi pompa ad humilem tuae Cru- vis et regnas cum Deo Patre in imitate. cis sequelam toto corde transire docui- sti: concede; ut eius meritis et exemplo Lectio Epistolae b",
+              "bottomOfPageSample": "r Tractus Ps. 83, 3-43875 revelasti: da nobis eius meritis et imita- Cor meum et caro mea exsulta- tione; ut, te in omnibus et super omnia verunt in Deum vivum. V. Etenim",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Aquæ multæ non potuérunt exstínguere caritátem, nec flúmina óbruent illam.",
+                  "phrase": "aquae multae non potuerunt",
+                  "relativePosition": 68,
+                  "excerpt": "enitudinem dei iii classis graduate cant s ant ad introitum cant aquae multae non potuerunt exstin u b umbra illius quern desideraue guere caritatem nee flumina obruent ram sedi et fructus ei"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Aquæ multæ non potuérunt exstínguere caritátem, nec flúmina óbruent illam.",
+                  "phrase": "aquae multae non potuerunt",
+                  "relativePosition": 68,
+                  "excerpt": "enitudinem dei iii classis graduate cant s ant ad introitum cant aquae multae non potuerunt exstin u b umbra illius quern desideraue guere caritatem nee flumina obruent ram sedi et fructus ei"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/10-20",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 774,
+          "pdfPageEnd": 776,
+          "score": 16,
+          "sourceSectionCandidates": [
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 774,
+              "printedPageIfStandardArabicOffset": 693,
+              "topOfPageSample": "Festa octobris (21) 693 bus dominum suum, quando reverta- Die 21 octobris tur a nuptiis: ut, cum venerit et pul- S. Hilarionis Abbatis saverit, confestim aperiant ei. Beati ser- Commemoratio vi illi, quos, cum venerit dominus, in- Missa Os iusti, de Communi Abba- venerit vigilantes: amen dico vobis, tum [27]. quod prae",
+              "bottomOfPageSample": "o- ris. Per Dominum nostrum Iesum res efFecti, consortes simus et gloria?: Christum, Filium tuum: Qui tecum Qui vivis et regnas cum Deo Patre. vivit et regnat in unitate.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Justítia indútus sum, et vestívi me, sicut vestiménto et diadémate, judício meo. Oculus fui cæco et pes claudo: pater eram páuperu",
+                  "phrase": "iustitia indutus sum et uestiui",
+                  "relativePosition": 40,
+                  "excerpt": "umus domine ant ad offertorium lob il deus noster sanctarum uirgiiustitia indutus sum et uestiui me num et martyrum tuarum ursulas sicut uestimento et diademate iudicio et sociarum eius palmas inc"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Date, et dábitur vobis: mensúram bonam et confértam et coagitátam et supereffluéntem dabunt in sinum vestrum.",
+                  "phrase": "date et dabitur uobis mensuram",
+                  "relativePosition": 70,
+                  "excerpt": "utem nobis prouenire ant ad communionem luc deposcat per dominum date et dabitur uobis mensuram pro ss uirginibus et martyribus bonam et confertam et coagitatam et secreta supereffluentem dabunt "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/10-DU",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 779,
+          "pdfPageEnd": 781,
+          "score": 26,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 779,
+              "printedPageIfStandardArabicOffset": 698,
+              "topOfPageSample": "698 Festa octobris (dominica ultima) nitudinem inhabitare: et per eum re- tus: Numquid ego Iudaeus sum? Gens conciliare omnia in ipsum, pacificans tua et pontinces tradiderunt te mini: per sanguinem crucis eius, sive quae quidfecisti? Respondit Iesus: Regnum in terris, sive quae in caelis sunt, in meum non est de hoc m",
+              "bottomOfPageSample": "pso, in caelesti sede, iiigiter regnare possimus: Q u i t e c u m vivit et r e g n a t in unitate. dixerunt tibi de me? Respondit Pila- Et non fit commemoratio dominicae.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Dominábitur a mari usque ad mare, et a flúmine usque ad términos orbis terrárum.",
+                  "phrase": "dominabitur a mari usque ad",
+                  "relativePosition": 18,
+                  "excerpt": "utique decertarent ut non traderer iudams nunc autem regnum meum dominabitur a mari usque ad mare non est hinc dixit itaque ei pilatus et a flumine usque ad terminos orbis ergo rex es tu respo"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Ipse invocábit me; Pater meus es tu: Deus meus, et suscéptor salútis meæ.",
+                  "phrase": "ipse inuocabit me pater meus",
+                  "relativePosition": 44,
+                  "excerpt": "editatem tuam et possessionem tuam tractus ps et terminos terrae ipse inuocabit me pater meus es secreta tu deus meus et susceptor salutis meae u et ego primogenitum po h ostiam tibi d o m i n "
+                },
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Póstula a me, et dabo tibi gentes hereditátem tuam, et possessiónem tuam términos terræ.",
+                  "phrase": "postula a me et dabo tibi gentes",
+                  "relativePosition": 40,
+                  "excerpt": "siant ad offertorium ps m a m omissis alleluia et uersu sequenti postula a me et dabo tibi gentes he dicitur reditatem tuam et possessionem tuam tractus ps et terminos terrae ipse inuocabit me pate"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/12-08",
+      "previouslySpotchecked": true,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 519,
+          "pdfPageEnd": 521,
+          "score": 22,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 519,
+              "printedPageIfStandardArabicOffset": 438,
+              "topOfPageSample": "438 Festa decembris (8) quando circumdabat mari terminum Sequentia sancti Evangelii secun- suum, et legem ponebat aquis ne trans- dum Lucam. Luc. 1, 26-28 irent fines suos: quando appendebat n illo tempore: Missus est Angelus 1879 fundamenta terrae. Cum eo eram cunc- ta componens: et delectabar per sin- I Gabriel a Deo",
+              "bottomOfPageSample": "a. V. Cant. 4, 7 Tota pul- singulariter praeservasti. Per Domi- chra es, Maria: et macula originalis num nostrum. non est in te. Alleluia. Et fit commemoratio feriae 425.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Benedícta es tu. Virgo María, a Dómino, Deo excélso, præ ómnibus muliéribus super terram.",
+                  "phrase": "benedicta es tu uirgo maria",
+                  "relativePosition": 42,
+                  "excerpt": "a plena dominus graduale iudith tecum benedicta tu in mulieribus benedicta es tu uirgo maria a do alleluia mino deo excelso prae omnibus mu secreta lieribus super terram u ibid tu gloria ierus"
+                },
+                {
+                  "section": "Tractus",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Fundaménta ejus in móntibus sanctis: díligit Dóminus portas Sion super ómnia tabernácula Jacob.",
+                  "phrase": "fundamenta eius in montibus",
+                  "relativePosition": 68,
+                  "excerpt": "ibus liberemur per dominum tractus ps et fit commemoratio feriae fundamenta eius in montibus sanc praefatio de beata maria uirgine et te tis diligit dominus portas sion super in conceptione im"
+                },
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Ave, María, grátia plena; Dóminus tecum: benedícta tu in muliéribus, allelúja.",
+                  "phrase": "aue maria gratia plena dominus",
+                  "relativePosition": 39,
+                  "excerpt": "ueniet uitam et hau ant ad offertorium luc riet salutem a domino aue maria gratia plena dominus graduale iudith tecum benedicta tu in mulieribus benedicta es tu uirgo maria a do alleluia mino deo"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Gloriósa dicta sunt de te, María: quia fecit tibi magna qui potens est.",
+                  "phrase": "gloriosa dicta sunt de te",
+                  "relativePosition": 76,
+                  "excerpt": "maculata omnia tabernacula iacob u ibid antiphona ad communionem gloriosa dicta sunt de te ciuitas dei gloriosa dicta sunt de te maria u ibid homo natus est in ea et ipse fundauit earn altis"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Sancti/12-27",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 107,
+          "pdfPageEnd": 109,
+          "score": 24,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 107,
+              "printedPageIfStandardArabicOffset": 26,
+              "topOfPageSample": "26 S. Ioannis Ap. et Ev. sultationem thesaurizabit super ilium, set Petrus, dixit Iesu: Domine, hie au- et nomine aeterno hereditabit ilium, Do- tem quid? Dicit ei Iesus: Sic eum volo minus Deus noster. manere, donee veniam, quid ad te? tu 170 Graduate Ioann. 21, 23 et 22 me sequere. Exiit ergo sermo iste inter fratres",
+              "bottomOfPageSample": "u- ut, in cuius haec commemoratione per- per pectus eius, et dixit: Domine, quis cepimus, eius muniamur et precibus. est qui tradet te ? Hunc ergo cum vidis- Per Dominum.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Exiit sermo inter fratres, quod discípulus ille non móritur: et non dixit Jesus: Non móritur,",
+                  "phrase": "exiit sermo inter fratres quod discipulus ille non moritur",
+                  "relativePosition": 77,
+                  "excerpt": "cut cedrus libanimul ant ad communionem io tiplicabitur alleluia exiit sermo inter fratres quod discipulus ille non moritur et non dixit l isequentia sancti euangelii seciin iesus non moritur sed sic eum uolo r x dum ioanne"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 9,
+                  "latinAnchor": "Exiit sermo inter fratres, quod discípulus ille non móritur: et non dixit Jesus: Non móritur; sed: Sic eum volo manére, donec véni",
+                  "phrase": "exiit sermo inter fratres quod discipulus ille non moritur",
+                  "relativePosition": 77,
+                  "excerpt": "cut cedrus libanimul ant ad communionem io tiplicabitur alleluia exiit sermo inter fratres quod discipulus ille non moritur et non dixit l isequentia sancti euangelii seciin iesus non moritur sed sic eum uolo r x dum ioanne"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-1",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 412,
+          "pdfPageEnd": 414,
+          "score": 20,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 412,
+              "printedPageIfStandardArabicOffset": 331,
+              "topOfPageSample": "FERIA II INFRA OCTAVAM PASCH^E I classis Statio ad S. Petrum Ant. ad Introitum Ex. 13, 5 et 9 testibus praeordinatis a Deo: nobis, qui ntroduxit vos Dominus manducavimus et bibimus cum illo, in terram fluentem lac postquam resurrexit a mortuis. Et et mel, alleluia: et ut praecepit nobis praedicare populo, et lex Domini",
+              "bottomOfPageSample": "isse a mor- Deus suscitavit tertia die, et dedit eum tuis vere: tu nobis, victor Rex, miserere. manif6stum fieri, non omni populo, sed Amen. Alleluia. 27 - MissaU Romanum",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Hæc dies, quam fecit Dóminus: exsultémus et lætémur in ea.",
+                  "phrase": "haec dies quam fecit dominus",
+                  "relativePosition": 31,
+                  "excerpt": "eius u gloria patri nes qui credunt in eum oratio graduate ps et haec dies quam fecit dominus ex d eus qui solemnitate paschali mundo remedia contulisti populum tuum quaesumus caelesti dono sul"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 413,
+              "printedPageIfStandardArabicOffset": 332,
+              "topOfPageSample": "332 Feria II infra octavam Paschae Sequentia sancti Evangelii secun- omnibus Scripturis, quae de ipso erant. dum Lucam. Luc. 24, 13-35 Et appropinquaverunt castello, quo 1157 J n illo tempore: Duo ex discfpulis Ie- ibant: et ipse se finxit longius ire. Et JL su ibant ipsa die in castellum, quod coegerunt ilium, dic^nte",
+              "bottomOfPageSample": "tis paschalibus satiasti, tua facias pie- suam? Et incipieos a Moyse, et omni- tate Concordes. Per Dominum ... in bus prophetis, interpretabatur illis in imitate eiusdem.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Angelus Dómini descéndit de cœlo, et dixit muliéribus: Quem quǽritis, surréxit, sicut dixit, allelúja.",
+                  "phrase": "angelus domini descendit de",
+                  "relativePosition": 57,
+                  "excerpt": " ant ad offertorium mt et tes et principes nostri in damnationem angelus domini descendit de caelo mortis et crucifixerunt eum nos autem et dixit mulieribus quern quaeritis sursperabamus quia "
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Surréxit Dóminus, et appáruit Petro, allelúja.",
+                  "phrase": "surrexit dominus et apparuit petro",
+                  "relativePosition": 85,
+                  "excerpt": "runt ant ad communionem luc ipsum uero non inuenerunt et ipse di surrexit dominus et apparuit petro xit ad eos o stulti et tardi corde ad a u e l i a postcommunio crcdendum in mnibus quae locuti pkit"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-2",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 415,
+          "pdfPageEnd": 417,
+          "score": 13,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 415,
+              "printedPageIfStandardArabicOffset": 334,
+              "topOfPageSample": "334 Feria IV infra octavam Paschae bati vero et conterriti, existimabant se Ant. ad Offertorium Ps. 17, 14 et 16 spiritum videre. Et dixit eis: Quid tur- Intonuit de caelo Dominus, et Altis- 1169 bati estis, et cogitationes ascendunt in simus dedit vocem suam: et apparue- corda vestra? Videte manus meas et runt fontes ",
+              "bottomOfPageSample": "ereamur. Per eun- canticum novum: cantate Domino, om- dem Dominum nostrum Iesum Chri- nis terra. stum, Filium tuum: Qui tecum vivit et V. Gloria Patri. regnat in unitate.",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Si consurrexístis cum Christo, quæ sursum sunt quǽrite, ubi Christus est in déxtera Dei sedens, allelúja: quæ sursum sunt sápite, ",
+                  "phrase": "si consurrexistis cum christo quae",
+                  "relativePosition": 50,
+                  "excerpt": "eri ant ad communionem col omnia quae scripta sunt in lege moysi si consurrexistis cum christo quae et proph is et psalmis de me tune sursum sunt quserite ubi christus est aperuit illis sensum ut int"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 416,
+              "printedPageIfStandardArabicOffset": 335,
+              "topOfPageSample": "Feria IV infra octavam Paschae 335 Lectio Actuum Apostolorum. Scimus Christum surrexisse a mor- Act. 3, 13-15 et 17-19 tuis vere: tu nobis, victor Rex, miserere. U75 T n diebus illis: Aperiens Petrus os Amen. Alleluia. JL suum, dixit: Viri Israelite, et qui ti- metis Deum, audite. Deus Abraham, .\"T\" .Sequentia sancti E",
+              "bottomOfPageSample": ". tanti essent, non est scissum rete. Dicit Surrexit Christus spes mea: praecedet eis Iesus: Venite, prandete. Et nemo vos in Galilaeam. audebat discumbentium interrogare",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Hæc dies, quam fecit Dóminus: exsultémus et lætémur in ea.",
+                  "phrase": "haec dies quam fecit dominus",
+                  "relativePosition": 55,
+                  "excerpt": "uigii rete et graduate ps et inuenietis miserunt ergo et iam non haec dies quam fecit dominus exualebant illud trahere prae multitudine sultemus et laetemur in ea u dextera piscium dixit ergo d"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-3",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 416,
+          "pdfPageEnd": 418,
+          "score": 13,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 416,
+              "printedPageIfStandardArabicOffset": 335,
+              "topOfPageSample": "Feria IV infra octavam Paschae 335 Lectio Actuum Apostolorum. Scimus Christum surrexisse a mor- Act. 3, 13-15 et 17-19 tuis vere: tu nobis, victor Rex, miserere. U75 T n diebus illis: Aperiens Petrus os Amen. Alleluia. JL suum, dixit: Viri Israelite, et qui ti- metis Deum, audite. Deus Abraham, .\"T\" .Sequentia sancti E",
+              "bottomOfPageSample": ". tanti essent, non est scissum rete. Dicit Surrexit Christus spes mea: praecedet eis Iesus: Venite, prandete. Et nemo vos in Galilaeam. audebat discumbentium interrogare",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Hæc dies, quam fecit Dóminus: exsultémus et lætémur in ea.",
+                  "phrase": "haec dies quam fecit dominus",
+                  "relativePosition": 55,
+                  "excerpt": "uigii rete et graduate ps et inuenietis miserunt ergo et iam non haec dies quam fecit dominus exualebant illud trahere prae multitudine sultemus et laetemur in ea u dextera piscium dixit ergo d"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 417,
+              "printedPageIfStandardArabicOffset": 336,
+              "topOfPageSample": "336 Feria V infra octavam Paschae eum: Tu quis es? scientes, quia Domi- Per Dominum nostrum Iesum Chri- nus est. Et venit Iesus, et accipit pa- stum, Filium tuum: Qui tecum vivit et nem, et dat eis, et piscem similiter. regnat in imitate. Hoc iam tertio manifestatus est Iesus Praefatio, Communicantes et Hanc igi- disci",
+              "bottomOfPageSample": "utem Philippus, audivit eum legen- stum, Filium tuum: Qui tecum vivit et tem Isaiam prophetam, et dixit: Putas- regnat in unitate. ne, intellegis, quae legis? Qui ait: Et",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Christus resúrgens ex mórtuis jam non móritur, allelúja: mors illi ultra non dominábitur, allelúja, allelúja.",
+                  "phrase": "christus resurgens ex mortuis iam",
+                  "relativePosition": 22,
+                  "excerpt": " ps ant ad communionem rom portas caeli aperuit dominus et pluit christus resurgens ex mortuis iam illis manna ut ederent panem caeli de non moritur alleluia mors illi ultra dit eis panem angelorum "
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-5",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 420,
+          "pdfPageEnd": 422,
+          "score": 13,
+          "sourceSectionCandidates": [
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 420,
+              "printedPageIfStandardArabicOffset": 339,
+              "topOfPageSample": "Sabbato in albis 339 Sequentia mandavi vobis. Et ecce ego vobiscum 1200 X Tictimae paschali laudes immolent sum omnibus diebus, usque ad con- V Christiani. summationem saeculi. Credo. Agnus redemit oves: Christus in- Ant. ad Offertorium Exodi 12, 14 nocens Patri reconciliavit peccatores. Erit vobis haec dies memorialis",
+              "bottomOfPageSample": "ni Domino, et invocate nomen eius: minum nostrum Iesum Christum, Fi- annuntiate inter gentes opera eius. y. Gloria Patri. lium tuum: Qui tecum vivit et regnat in imitate.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Erit vobis hæc dies memoriális, allelúja: et diem festum celebrábitis solémnem Dómino in progénies vestras: legítimum sempitérnum ",
+                  "phrase": "erit uobis haec dies memorialis",
+                  "relativePosition": 12,
+                  "excerpt": "n ant ad offertorium exodi nocens patri reconciliauit peccatores erit uobis haec dies memorialis alle mors et uita duello conflixere miran luia et diem festum celebrabitis sodo dux uitae mortuus r"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Data est mihi omnis potéstas in cœlo et in terra, allelúja: eúntes, docéte omnes gentes, baptizántes eos in nómine Patris, et Fíli",
+                  "phrase": "data est mihi omnis potestas",
+                  "relativePosition": 47,
+                  "excerpt": "ia sancti euangelii secun ant ad communionem mt dum matthaeum mt data est mihi omnis potestas in cae tn iuo tempore undecim discipuli lo et in terra alleluia euntes docete il abierunt in galila"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-5t",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 420,
+          "pdfPageEnd": 422,
+          "score": 13,
+          "sourceSectionCandidates": [
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 420,
+              "printedPageIfStandardArabicOffset": 339,
+              "topOfPageSample": "Sabbato in albis 339 Sequentia mandavi vobis. Et ecce ego vobiscum 1200 X Tictimae paschali laudes immolent sum omnibus diebus, usque ad con- V Christiani. summationem saeculi. Credo. Agnus redemit oves: Christus in- Ant. ad Offertorium Exodi 12, 14 nocens Patri reconciliavit peccatores. Erit vobis haec dies memorialis",
+              "bottomOfPageSample": "ni Domino, et invocate nomen eius: minum nostrum Iesum Christum, Fi- annuntiate inter gentes opera eius. y. Gloria Patri. lium tuum: Qui tecum vivit et regnat in imitate.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Erit vobis hæc dies memoriális, allelúja: et diem festum celebrábitis solémnem Dómino in progénies vestras: legítimum sempitérnum ",
+                  "phrase": "erit uobis haec dies memorialis",
+                  "relativePosition": 12,
+                  "excerpt": "n ant ad offertorium exodi nocens patri reconciliauit peccatores erit uobis haec dies memorialis alle mors et uita duello conflixere miran luia et diem festum celebrabitis sodo dux uitae mortuus r"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Data est mihi omnis potéstas in cœlo et in terra, allelúja: eúntes, docéte omnes gentes, baptizántes eos in nómine Patris, et Fíli",
+                  "phrase": "data est mihi omnis potestas",
+                  "relativePosition": 47,
+                  "excerpt": "ia sancti euangelii secun ant ad communionem mt dum matthaeum mt data est mihi omnis potestas in cae tn iuo tempore undecim discipuli lo et in terra alleluia euntes docete il abierunt in galila"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6t",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 157,
+          "pdfPageEnd": 159,
+          "score": 15,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 157,
+              "printedPageIfStandardArabicOffset": 76,
+              "topOfPageSample": "76 Sabbato Quatuor Temporum Quadragesima? rubim, intuens abyssos. Et laudabilis, stinguere. Prophetias nolite spernere. et gloriosus in saecula. Omnia autem probate: quod bonum est Benedictus es, qui ambulas super tenete. Ab omni specie mala abstinete pennas ventorum, et super undas ma- vos. Ipse autem Deuspacis sancti",
+              "bottomOfPageSample": "aec est eis Iesus, dicens: Nemini dixeritis vi- enim voliintas Dei in Christo Iesu in sionem, donee Filius hominis a mortuis omnibus vobis. Spiritum nolite ex- resiirgat.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Laudáte Dóminum, omnes gentes: et collaudáte eum, omnes pópuli.",
+                  "phrase": "laudate dominum omnes gentes et",
+                  "relativePosition": 22,
+                  "excerpt": "ti seruetur saecula tractus ps benedicant te caeli terra mare et laudate dominum omnes gentes et omnia quae in eis sunt et laudent te et collaudate eum omnes populi u quoglorificent in saecula nia"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 158,
+              "printedPageIfStandardArabicOffset": 77,
+              "topOfPageSample": "Sabbato Quatuor Temporum Quadragesimae 77 513 Ant. ad Offertorium Ps. 87, 2-3 Post Kyrie, eleison, dicitur: Oremus. Domine, Deus salutis meae, in die cla- Flectamus genua. — Levate. mavi, et nocte coram t e : intret oratio Oratio mea in conspectu tuo, Domine. X)6pulum tuum, quaesumus, Domine, 519 Secreta JL propitius r",
+              "bottomOfPageSample": "rem cunctis gentibus, quas creavit in laudem, et nomen, et glo- riam suam: ut sis populus sanctus Do- mini Dei tui, sicut locutus est. et nocte coram te. V. Gloria Patri.",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 7,
+                  "latinAnchor": "Dómine, Deus salútis meæ, in die clamávi et nocte coram te: intret orátio mea in conspéctu tuo, Dómine, allelúja.",
+                  "phrase": "domine deus salutis meae in die clamaui",
+                  "relativePosition": 90,
+                  "excerpt": "n conspectu tuo inclina aurem tuam ad precem meam domine ps ibid domine deus salutis meae in die clamaui dias omnia praecepta illius et faciat te excelsiorem cunctis gentibus quas creauit in laudem et nom"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 159,
+              "printedPageIfStandardArabicOffset": 78,
+              "topOfPageSample": "78 Sabbato Quatuor Temporum Quadragesima; Graduate Ps. 78, 9 et 10 cordia eius: et veritas Domini manet in 521 Propitius esto, Domine, peccatis no- aeternum. stris: ne quando dicant gentes: Ubi est Deus eorum ? V. Adiuva nos, Deus salu- Sequentia sancti Evangelii secun- 525 taris noster: et propter honorem nomi- d u m ",
+              "bottomOfPageSample": "gentes: et extrinsecus, interius operetur. P e r Do- collaudate eum, omnes populi. V. Quo- minum nostrum. niam confirmata est super nos miseri- Praefatio de Quadragesima.",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Laudáte Dóminum, omnes gentes: et collaudáte eum, omnes pópuli.",
+                  "phrase": "laudate dominum omnes gentes et",
+                  "relativePosition": 93,
+                  "excerpt": "tra sanctifica tractus p s ut quod obseruantia nostra profitetur laudate dominum omnes gentes et extrinsecus interius operetur p e r docollaudate eum omnes populi u quo minum nostrum niam confirma"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Quad4-3t",
+      "previouslySpotchecked": true,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 191,
+          "pdfPageEnd": 193,
+          "score": 22,
+          "sourceSectionCandidates": [
+            "GradualeL1",
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 191,
+              "printedPageIfStandardArabicOffset": 110,
+              "topOfPageSample": "110 Feria IV post dominicam IV in Quadragesima stis in medio earum: ut sciant gentes, quiescite agere perverse, discite bene- quia ego Dominus, cum sanctificatus facere: quaerite iudicium, subvenite op- fuero in vobis coram eis. Tollam quip- presso, iudicate pupillo, defendite vi- pe vos de gentibus, et congregabo vos ",
+              "bottomOfPageSample": "estentur opera Dei in ni, mundi estote, auferte malum illo. Me oportet operari opera eius, qui cogitationum vestrarum ab oculis meis: misit me, donee dies est: venit nox,",
+              "anchorMatches": [
+                {
+                  "section": "GradualeL1",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Veníte, fílii, audíte me: timórem Dómini docébo vos.",
+                  "phrase": "uenite filii audite me timorem",
+                  "relativePosition": 55,
+                  "excerpt": "tras retribuas nobis graduate ps et u ps domine ne memineris ini uenite filii audite me timorem do quitatum nostrarum antiquarum cito mini docebo uos u accedite ad eum anticipent nos misericordia"
+                },
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Beáta gens, cujus est Dóminus Deus eórum: pópulus, quem elégit Dóminus in hereditátem sibi.",
+                  "phrase": "beata gens cuius est dominus",
+                  "relativePosition": 32,
+                  "excerpt": "estri et aufe graduale ps et ram cor lapideum de carne uestra et beata gens cuius est dominus deus dabo uobis cor carneum et spiritum eorum populus quem elegit dominus meum ponam in medio uestr"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 193,
+              "printedPageIfStandardArabicOffset": 112,
+              "topOfPageSample": "112 Feria V post dominicam IV in Quadragesima tecum, ipse est. At ille ait: Credo, Do- Feria quinta mine. (Hie genuflectitur) Et procidens III classis adoravit eum. Statio ad Ss. Silvestrum et Martinum 717 Ant. ad Offertorium Ps. 65, 8-9 et 20 Benedicite, gentes, Dominum Deum Ant. ad Introitum Ps. 104, 3-4 nostrum, et ",
+              "bottomOfPageSample": "it tibi homo, non salutes eum: et eos, quae tibi sunt placita, postulare. si salutaverit te quispiam, non respon- Per D o m i n u m . deas illi: et pones baculum meum su-",
+              "anchorMatches": [
+                {
+                  "section": "Offertorium",
+                  "matchStrengthWords": 4,
+                  "latinAnchor": "Benedícite, gentes, Dóminum, Deum nostrum, et obaudíte vocem laudis ejus: qui pósuit ánimam meam ad vitam, et non dedit commovéri ",
+                  "phrase": "benedicite gentes dominum deum",
+                  "relativePosition": 9,
+                  "excerpt": "eum statio ad ss siluestrum et martinum ant ad offertorium ps et benedicite gentes dominum deum ant ad introitum ps nostrum et obaudite uocem laudis eius qui posuit animam meam ad uitam et non de"
+                },
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Lutum fecit ex sputo Dóminus, et linívit óculos meos: et ábii, et lavi, et vidi, et crédidi Deo.",
+                  "phrase": "lutum fecit ex sputo dominus",
+                  "relativePosition": 49,
+                  "excerpt": "unamitis ant ad communionem io l ad eliseum in montem carmeli cumlutum fecit ex sputo dominus et li que uidisset earn uir dei e contra ait niuit oculos meos et abii et laui et ui ad giezi pueru"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Quad5-5",
+      "previouslySpotchecked": false,
+      "previouslyDetailedPrintedComparison": false,
+      "clusters": [
+        {
+          "pdfPageStart": 737,
+          "pdfPageEnd": 739,
+          "score": 18,
+          "sourceSectionCandidates": [
+            "Graduale",
+            "GradualeA",
+            "Communio"
+          ],
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "pageDetails": [
+            {
+              "pdfPage": 737,
+              "printedPageIfStandardArabicOffset": 656,
+              "topOfPageSample": "656 Festa septembris (15) Die 15 septembris Lectio libri Iudith. Iudith 13, 22 et 23-25 SEPTEM DOLORUM BEAT;E MARLE VIRGINIS II classis B enedixit te Dominus in virtute sua, 3619 quia per te ad nihilum redegit inimicos nostros. Benedicta es tu, filia, 3615 Ant. ad Introitum Io. 19, 25 a Domino Deo excelso, prae omnibus",
+              "bottomOfPageSample": " in duale, et eius loco dicitur: hora tuae passionis doloris gladius Alleluia, alleluia. V. Stabat sancta 3623 pertransivit: Qui vivis. Maria, caeli Regina et mundi Domi-",
+              "anchorMatches": [
+                {
+                  "section": "Graduale",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Dolorósa et lacrimábilis es, Virgo María, stans juxta Crucem Dómini Jesu, Fílii tui, Redemptóris.",
+                  "phrase": "dolorosa et lacrimabilis es uirgo",
+                  "relativePosition": 39,
+                  "excerpt": "prophetiam dulcissi graduale mam animam gloriosae uirginis et ma dolorosa et lacrimabilis es uirgo tris mariae doloris gladius pertransiuit maria stans iuxta crucem domini concede propitius ut qui d"
+                },
+                {
+                  "section": "GradualeA",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Dolorósa et lacrimábilis es, Virgo María, stans juxta Crucem Dómini Jesu, Fílii tui, Redemptóris.",
+                  "phrase": "dolorosa et lacrimabilis es uirgo",
+                  "relativePosition": 39,
+                  "excerpt": "prophetiam dulcissi graduale mam animam gloriosae uirginis et ma dolorosa et lacrimabilis es uirgo tris mariae doloris gladius pertransiuit maria stans iuxta crucem domini concede propitius ut qui d"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            },
+            {
+              "pdfPage": 739,
+              "printedPageIfStandardArabicOffset": 658,
+              "topOfPageSample": "658 Festa septembris (15, 16) 3626 Ant. ad Offertorium Ierem. 18, 20 Eodem die 15 septembris Recordare, Virgo Mater Dei, dum S. Nicomedis Mart. steteris in conspectu Domini, ut loqua- Commemoratio ris pro nobis bona, et ut avertat indi- gnationem suam a nobis. Missa In virtiite, de Communi unius Martyris III loco [6], ",
+              "bottomOfPageSample": "dente beato Nicomede Martyre Per Dominum. tuo, a cunctis efficiant vitiis absolu- Et fit commemoratio Ss. Euphemiae tos. Per Dominum. Virg., Luciae et Geminiani Martyrum:",
+              "anchorMatches": [
+                {
+                  "section": "Communio",
+                  "matchStrengthWords": 5,
+                  "latinAnchor": "Felices sensus beátæ Maríæ Vírginis, qui sine morte meruérunt martýrii palmam sub Cruce Dómini.",
+                  "phrase": "felices sensus beatae mariae uirginis",
+                  "relativePosition": 62,
+                  "excerpt": " antiphona ad communionem tis efficiant uitiis absolutos per domifelices sensus beatae mariae uirginis num nostrum qui sine morte meruerunt martyrii palmam sub cruce domini die septembris postcommunio s"
+                }
+              ],
+              "printedHeadingVisuallyVerified": false
+            }
+          ]
+        }
+      ],
+      "decision": "PENDING_PAGE_AND_CELEBRATION_ADJUDICATION",
+      "matchingLatinDoesNotProveFeast": true,
+      "full1962EditionConfirmed": false,
+      "bibleTextChecked": false,
+      "publishable": false
+    }
+  ]
+}

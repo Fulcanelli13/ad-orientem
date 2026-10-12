@@ -1,0 +1,106 @@
+name: Biblical Lineage & Apostolic Dispersion Review
+on:
+  pull_request:
+    paths:
+      - "data/geography/research/biblical-curated-lineage-dispersion-20261011.v1.json"
+      - "data/geography/research/biblical-atlas-lineage-chronology-bridge-20261011.v1.json"
+      - "data/geography/research/biblical-atlas-151-181-crosswalk-20261011.v1.json"
+      - "data/geography/research/mass-scripture-source-extractions-20261011.v1.json"
+      - "data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json"
+      - "data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json"
+      - "data/geography/research/mass-1962-cue-scripture-crosswalk-20261011.v1.json"
+      - "data/geography/research/mass-proper-chant-bible-witnesses-batch01-20261011.v1.json"
+      - "docs/research/MASS-PROPER-CHANT-SCRIPTURE-BATCH01-20261011.md"
+      - "tests/mass-proper-chant-bible-batch01.mjs"
+      - "data/geography/research/mass-variable-chant-bible-batch01-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-batch02-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-batch03-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b04-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b05-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b06-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b07-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b08-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b09-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b10-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b11-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b12-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b13-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b14-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b15-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b16-20261011.v1.json"
+      - "data/geography/research/mass-variable-chant-bible-expansion-b17-20261011.v1.json"
+      - "data/geography/research/mass-chant-source-index-segment-a-20261011.v1.json"
+      - "data/geography/research/mass-chant-source-index-segment-b-20261011.v1.json"
+      - "data/geography/research/mass-chant-source-index-segment-c-20261011.v1.json"
+      - "data/geography/research/mass-1962-105-source-path-chant-index-20261011.v1.json"
+      - "data/geography/research/mass-1962-chant-inheritance-source-traces-20261011.v1.json"
+      - "docs/research/MASS-1962-105-PROPER-CHANT-COVERAGE-CENSUS-20261011.md"
+      - "tests/mass-1962-105-source-path-chant-index.mjs"
+      - "tests/mass-1962-chant-inheritance-source-traces.mjs"
+      - "data/geography/research/mass-ember-passion-lesson-order-batch01-20261011.v1.json"
+      - "tests/mass-ember-passion-lesson-order-batch01.mjs"
+      - "docs/research/MASS-VARIABLE-CHANT-SCRIPTURE-INDEX-BATCH01-20261011.md"
+      - "tests/mass-variable-chant-scripture-discovery.mjs"
+      - "data/geography/research/mass-dujardin-1962-order-bridge-20261011.v1.json"
+      - "docs/research/MASS-1962-LATIN-SOURCE-CUE-BIBLE-ALIGNMENT-20261011.md"
+      - "tests/mass-1962-cue-scripture-crosswalk.mjs"
+      - "tests/mass-dujardin-1962-order-bridge.mjs"
+      - "docs/research/MASS-ALPHONSUS-DUJARDIN-TWO-JOURNEYS-20261011.md"
+      - "tests/mass-alphonsus-xiii-two-journeys.mjs"
+      - "docs/research/MASS-SCRIPTURE-FORTESCUE-PRIMARY-EXTRACTION-20261011.md"
+      - "tests/mass-scripture-fortescue-order-extract.mjs"
+      - "data/geography/research/mass-scripture-primary-controls-batch02-20261011.v1.json"
+      - "data/geography/research/mass-scripture-historical-iconography-batch02-20261011.v1.json"
+      - "tests/mass-scripture-historical-iconography-batch02.mjs"
+      - "docs/research/MASS-SCRIPTURE-PRIMARY-CONTROLS-BATCH02-20261011.md"
+      - "tests/mass-scripture-primary-controls-batch02.mjs"
+      - "docs/research/MASS-SCRIPTURE-SOURCES-LITERATURE-CENSUS-20261011.md"
+      - "docs/research/MASS-SCRIPTURE-CRITICAL-EXTRACTION-BATCH01-20261011.md"
+      - "tests/mass-scripture-extraction-batch01.mjs"
+      - "reviews/biblical-lineage-apostolic-dispersion-cinematic-20261011.html"
+      - "tests/biblical-lineage-dispersion-pilot.mjs"
+      - ".github/workflows/biblical-lineage-dispersion-review.yml"
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  historical-interaction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Validate Mass–Scripture critical research source ownership
+        run: node tests/mass-scripture-extraction-batch01.mjs
+      - name: Validate ancient-text source controls and bibliographic boundary
+        run: node tests/mass-scripture-primary-controls-batch02.mjs
+      - name: Validate historical artwork sources and licensing gates
+        run: node tests/mass-scripture-historical-iconography-batch02.mjs
+      - name: Validate Fortescue 1914 evidence and existing learn.mass ownership
+        run: node tests/mass-scripture-fortescue-order-extract.mjs
+      - name: Validate St Alphonsus volume and meditative/Scripture ownership
+        run: node tests/mass-alphonsus-xiii-two-journeys.mjs
+      - name: Validate 1962 source-owned Latin phrase and Scripture crosswalk
+        run: node tests/mass-1962-cue-scripture-crosswalk.mjs
+      - name: Validate all Dujardin meditative positions without forged Propers
+        run: node tests/mass-dujardin-1962-order-bridge.mjs
+      - name: Validate variable Mass chant Bible source citations and inheritance holds
+        run: node tests/mass-variable-chant-scripture-discovery.mjs
+      - name: Validate actual source-marked Mass Proper chants
+        run: node tests/mass-proper-chant-bible-batch01.mjs
+      - name: Validate source-ordered Ember and Palm Passion reading disagreement
+        run: node tests/mass-ember-passion-lesson-order-batch01.mjs
+      - name: Validate complete 105-witness source-path chant inventory
+        run: node tests/mass-1962-105-source-path-chant-index.mjs
+      - name: Validate 42 inherited-source references and eight review holds
+        run: node tests/mass-1962-chant-inheritance-source-traces.mjs
+      - name: Validate mobile and source evidence in actual Chromium
+        run: node tests/biblical-lineage-dispersion-pilot.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: biblical-lineage-dispersion-phone
+          path: artifacts/biblical-lineage-dispersion/
+          if-no-files-found: ignore
