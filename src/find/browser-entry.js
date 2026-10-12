@@ -1,7 +1,8 @@
 import { filterDirectoryRecords } from "./data-service.js";
 import { createScrollTapGuard } from "../app/scroll-tap-guard.js";
 import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49 } from "./preliminary-directory-r49.js";
-import { loadExploreDataset, loadBiblicalLineageReview } from "./explore-data-service.js";
+import { loadExploreDataset, loadBiblicalLineageReview, loadBibleCinematicStudies } from "./explore-data-service.js";
+import { renderCinematicStudies, studyChapter, studyStep } from "./bible-cinematic-studies.js";
 import { BIBLE_REVIEW_DEFAULT, renderLineageReview } from "./bible-lineage-review.js";
 import {
   EXPLORE_LENSES,
@@ -114,7 +115,7 @@ function installStyle(win){
 
 export function createFindOwner(win=globalThis){
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
-  let lineageReview=null,lineagePromise=null;
+  let lineageReview=null,lineagePromise=null,cinematicReview=null,cinematicPromise=null;
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
   // Ephemeral ranked results only. Device location is never stored or persisted.
@@ -147,7 +148,7 @@ export function createFindOwner(win=globalThis){
     displayLimit:24,
     bibleAtlas:false,
     bibleIndex:0,
-    bibleReview:{...BIBLE_REVIEW_DEFAULT},
+    bibleReview:{...BIBLE_REVIEW_DEFAULT,chapter:"PATRIARCHS",scene:0},
   };
 
   async function ensureLineageReview(){
@@ -156,6 +157,14 @@ export function createFindOwner(win=globalThis){
       lineageReview=data;return data;
     }).finally(()=>{lineagePromise=null;});
     return lineagePromise;
+  }
+
+  async function ensureCinematicStudies(){
+    if(cinematicReview)return cinematicReview;
+    if(!cinematicPromise)cinematicPromise=loadBibleCinematicStudies().then(data=>{
+      cinematicReview=data;return data;
+    }).finally(()=>{cinematicPromise=null;});
+    return cinematicPromise;
   }
 
   function glossaryTerms(){
@@ -309,6 +318,15 @@ export function createFindOwner(win=globalThis){
     // A focused map-first view over the current Explore owner; do not
     // replace the bounded-world map or recreate it on every timeline event.
     if(state.bibleAtlas){
+      if(state.bibleReview.surface==="cinematic"){
+        const review=await ensureCinematicStudies();
+        if(token!==paintToken||!openState||!state.bibleAtlas||state.bibleReview.surface!=="cinematic")return false;
+        mapHandle?.destroy?.();mapHandle=null;
+        node.innerHTML=renderCinematicStudies(review,{language:language(win),...state.bibleReview,
+          atlasStops:buildBibleAtlas(data?.biblePlaces?.entries??[])});
+        node.dataset.open="true";node.dataset.aoFindLoadState="ready";node.dataset.exploreLens=state.lens;
+        return true;
+      }
       if(state.bibleReview.surface!=="timeline"){
         const review=await ensureLineageReview();
         if(token!==paintToken||!openState||!state.bibleAtlas)return false;
@@ -680,7 +698,24 @@ export function createFindOwner(win=globalThis){
       const surfaceButton=target?.closest?.("[data-bible-review-surface]");
       if(surfaceButton){
         event.preventDefault?.();const next=surfaceButton.dataset.bibleReviewSurface;
-        if(["timeline","genealogies","apostles"].includes(next)&&next!==current.surface){state.bibleReview={...current,surface:next};void paint();}
+        if(["timeline","genealogies","apostles","cinematic"].includes(next)&&next!==current.surface){state.bibleReview={...current,surface:next};void paint();}
+        return;
+      }
+      const chapterButton=target?.closest?.("[data-bible-study-chapter]");
+      if(chapterButton&&cinematicReview){
+        event.preventDefault?.();const chosen=studyChapter(cinematicReview,chapterButton.dataset.bibleStudyChapter);
+        if(chosen&&chosen.id===chapterButton.dataset.bibleStudyChapter){
+          state.bibleReview={...current,chapter:chosen.id,scene:chosen.sceneIndices[0]};void paint();
+        }
+        return;
+      }
+      const sceneButton=target?.closest?.("[data-bible-study-direction]");
+      if(sceneButton&&cinematicReview){
+        event.preventDefault?.();const direction=Number(sceneButton.dataset.bibleStudyDirection);
+        if([-1,1].includes(direction)){
+          const next=studyStep(cinematicReview,current.chapter,current.scene,direction);
+          if(Number.isInteger(next)){state.bibleReview={...current,scene:next};void paint();}
+        }
         return;
       }
       const jump=target?.closest?.("[data-bible-review-jump]");
@@ -949,6 +984,8 @@ export function createFindOwner(win=globalThis){
       bibleReviewSurface:state.bibleReview.surface,
       bibleReviewLineage:state.bibleReview.lineage,
       bibleReviewApostle:state.bibleReview.apostle,
+      bibleReviewChapter:state.bibleReview.chapter,
+      bibleReviewScene:state.bibleReview.scene,
       selectedPlaceId:state.selectedPlaceId,
       counts:state.lens==="tlm"?{tlm:PRELIMINARY_R49_TOTAL}:projection?.counts??{},
       loadedProviders:dataset?.directory?.loadedProviders??[],
