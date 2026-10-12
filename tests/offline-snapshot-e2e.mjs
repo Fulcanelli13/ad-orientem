@@ -7,14 +7,15 @@ import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".js":"text/javascript; charset=utf-8",".html":"text/html; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".jpg":"image/jpeg",".woff2":"font/woff2",".webmanifest":"application/manifest+json"};
-let variant=1,failedPath=null,served=0;
+let variant=1,failedPath=null,served=0,failedHits=0,assetHits=[];
 const server=http.createServer(async(req,res)=>{
  try{
   let pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
   if(pathname.startsWith("/ad-orientem/"))pathname=pathname.slice("/ad-orientem".length);
   if(pathname==="/"||!pathname)pathname="/index.html";
   if(pathname.startsWith("/__ao_offline_test_")){
-   if(failedPath===pathname){res.writeHead(503);res.end("deliberately broken release");return}
+   assetHits.push(pathname);
+   if(failedPath===pathname){failedHits++;res.writeHead(503);res.end("deliberately broken release");return}
    res.writeHead(200,{"content-type":"text/javascript"});res.end("globalThis.AO_OFFLINE_TEST_ASSET="+JSON.stringify(variant)+";");return;
   }
   const file=resolve(root,"."+pathname);
@@ -274,6 +275,10 @@ try{
  // A deliberately incomplete release must NOT replace a usable version.
  variant=3;failedPath="/__ao_offline_test_3.js";
  const failed=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
+ if(failed.ok!==false)console.error("OFFLINE_REJECT_DIAGNOSTIC="+JSON.stringify({
+   variant,failedPath,failedHits,assetHits:assetHits.slice(-12),served,failed,
+   active:await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status)
+ }));
  assert.equal(failed.ok,false,"Broken update unexpectedly committed");
  const afterFail=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(afterFail.version,original.version,"Failed staging invalidated old snapshot");
