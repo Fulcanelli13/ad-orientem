@@ -97,25 +97,37 @@ try{
  // original paragraphs and must preserve Latin replacement in each stage.
  const litanyOpen=await page.evaluate(async()=>await globalThis.AO_MODULES.open("pray.holy_name_litany",{returnContext:null}));
  assert.notEqual(litanyOpen?.ok,false,"Holy Name litany is not reachable through the canonical module registry");
- await page.waitForSelector("#aoPray435930.open [data-tp381-litany-mode='guided']",{state:"visible",timeout:12000});
+ await page.waitForSelector("#aoPray435930.open .aoDevoSequenceTimeline",{state:"visible",timeout:12000});
  const litany="#aoPray435930.open";
- assert.equal(await page.locator(litany+" [data-tp381-litany-mode='full']").getAttribute("aria-pressed"),"true");
- await page.locator(litany+" [data-tp381-litany-mode='guided']").tap();
+ assert.equal(await page.locator(litany+" [data-ao-holy-name-options]").evaluate(el=>el.open),false,
+   "Holy Name options must not displace the litany at opening");
  assert.equal(await page.locator(litany+" [data-tp381-litany-mode='guided']").getAttribute("aria-pressed"),"true");
- assert.match(await page.locator(litany+" .aoTP381GuideCount").innerText(),/Section 1 of 7/);
- assert.equal(await page.locator(litany+" [data-tp381-litany-step='-1']").isDisabled(),true);
+ assert.equal(await page.locator(litany+" .aoDevoStop").count(),7,"Litany lost seven named source sections");
+ assert.equal(await page.locator(litany+" .aoDevoCard").getAttribute("data-ao-devo-card"),"holy-name-1");
+ assert.equal(await page.locator(litany+" .aoDevoParagraph[data-ao-devo-active='true']").count(),1,
+   "Litany is not illuminating exactly one visible source line");
  await page.locator(litany+" [data-tp381-flip]").tap();
  assert.equal(await page.locator(litany+" [data-face-la]").isVisible(),true,"Guided Litany Latin replacement is not visible");
  assert.equal(await page.locator(litany+" [data-face-v]").isVisible(),false,"Litany shows Latin and vernacular simultaneously");
  for(let step=2;step<=7;step++){
-   await page.locator(litany+" [data-tp381-litany-step='"+(step-1)+"']").tap();
-   assert.match(await page.locator(litany+" .aoTP381GuideCount").innerText(),new RegExp("Section "+step+" of 7"));
+   await page.locator(litany+" .aoDevoStop").nth(step-1).evaluate(x=>x.click());
+   assert.equal(await page.locator(litany+" .aoDevoCard").getAttribute("data-ao-devo-card"),"holy-name-"+step);
+   assert.equal(await page.locator(litany+" .aoDevoSequenceTimeline [aria-current='step']").count(),1);
  }
- await page.locator(litany+" [data-tp381-litany-mode='full']").tap();
- assert.equal(await page.locator(litany+" .aoTP381GuideCount").count(),0,"Full Holy Name Litany retained guided section count");
+ await page.locator(litany+" [data-ao-holy-name-options] > summary").click();
+ await page.locator(litany+" [data-tp381-litany-mode='full']").click();
+ assert.equal(await page.locator(litany+" .aoDevoSequenceTimeline").count(),0,"Full Holy Name must preserve its alternate complete text reader");
  assert.match(await page.locator(litany+" .aoTP381PrayerCard").innerText(),/Jesus|Lord/i,"Full Holy Name text is incomplete");
+ const mealOpen=await page.evaluate(async()=>await globalThis.AO_MODULES.open("pray.meal_prayers",{returnContext:null}));
+ assert.notEqual(mealOpen?.ok,false,"Meal Prayers did not open");
+ await page.waitForSelector(litany+" .aoDevoSequenceTimeline",{state:"visible",timeout:12000});
+ assert.equal(await page.locator(litany+" .aoDevoStop").count(),2);
+ assert.equal(await page.locator(litany+" .aoDevoCard").getAttribute("data-ao-devo-card"),"meal-before");
+ await page.locator(litany+" .aoDevoStop").nth(1).evaluate(x=>x.click());
+ assert.equal(await page.locator(litany+" .aoDevoCard").getAttribute("data-ao-devo-card"),"meal-after");
+ assert.equal(await page.locator(litany+" .aoDevoSequenceTimeline [aria-current='step']").count(),1);
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
- console.log("PASS Holy Name guided Litany: seven original-source sections, reversible Latin, complete text retained");
+ console.log("PASS Holy Name seven-source-card and Meal two-card reader: single active timeline, Latin replacement and alternate full text");
 
 
  // Confession paths must remain under one sacramental owner, with no sins entered.

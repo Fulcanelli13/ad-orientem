@@ -102,7 +102,43 @@ try{
  await page.setViewportSize({width:320,height:720});
  assert.equal((await snapshot()).overflow,"auto","Narrow phone cannot scroll within the prayer card");
  await page.screenshot({path:resolve(captures,"examen-320-fr.png"),animations:"disabled"});
+ // Holy Name and Meal Prayers reuse precisely the same in-card gesture model.
+ await page.setViewportSize({width:390,height:844});
+ await open("pray.holy_name_litany");
+ await page.waitForSelector("#aoPray435930 .aoDevoParagraph[data-ao-devo-active='true']",{timeout:12000});
+ const holy=await snapshot();
+ assert.equal(holy.kind,"holyName");assert.equal(holy.index,0);assert.equal(holy.stops,7);
+ assert.equal(holy.active,1);assert.equal(holy.overflow,"auto");
+ assert.ok(holy.paragraphCount>=2,"Litany still lacks individual active prayer lines");
+ assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/Jésus|Seigneur/);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-holy-name-options]").evaluate(el=>el.open),false);
+ await page.screenshot({path:resolve(captures,"holy-name-390-fr.png"),animations:"disabled"});
+ await swipe(5,-145);assert.equal((await snapshot()).index,0);
+ await swipe(-160,5);assert.equal((await snapshot()).index,1);
+ await page.locator("#aoPray435930 [data-tp381-flip]").evaluate(b=>b.click());
+ assert.equal(await page.locator("#aoPray435930 [data-face-la]").isVisible(),true);
+ assert.equal(await page.locator("#aoPray435930 [data-face-v]").isVisible(),false);
+ await open("pray.meal_prayers");
+ const beforeMeal=await snapshot();
+ assert.equal(beforeMeal.kind,"meals");assert.equal(beforeMeal.stops,2);
+ assert.equal(beforeMeal.id,"meal-before");assert.equal(beforeMeal.active,1);
+ await page.screenshot({path:resolve(captures,"meal-before-390-fr.png"),animations:"disabled"});
+ await swipe(-155,3);
+ const afterMeal=await snapshot();assert.equal(afterMeal.index,1);assert.equal(afterMeal.id,"meal-after");
+ await page.screenshot({path:resolve(captures,"meal-after-390-fr.png"),animations:"disabled"});
+ await page.setViewportSize({width:320,height:720});
+ assert.equal((await snapshot()).overflow,"auto","Meals do not fit narrow local card");
+ const mealLabels=await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop")
+   .evaluateAll(nodes=>{
+     const track=nodes[0]?.parentElement?.getBoundingClientRect();
+     return nodes.map(el=>({left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,
+       trackLeft:track?.left,trackRight:track?.right}));
+   });
+ assert.equal(mealLabels.length,2,"Both meal prayer timeline stops must remain present");
+ assert.ok(mealLabels.every(x=>x.left>=x.trackLeft-1&&x.right<=x.trackRight+1),
+   "A 320px phone clipped one of two meal prayer stop titles: "+JSON.stringify(mealLabels));
+ await page.screenshot({path:resolve(captures,"meal-after-320-fr.png"),animations:"disabled"});
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
- console.log("PASS French 390/320px Morning Evening and Examen share named-card timeline, local focus and swipe contract");
+ console.log("PASS French 390/320px Morning Evening, Examen, Holy Name and Meals share named-card timeline, local focus and swipe contract");
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
