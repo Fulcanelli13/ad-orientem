@@ -27,3 +27,22 @@ Sources:
 
 ## Testing
 `tests/explore-bible-atlas-timeline.mjs` and `tests/explore-bible-atlas-phone.mjs` were ported from #998. Their current-main execution is governed by `.github/workflows/biblical-atlas-current-main.yml`. The pre-existing Explore R53/R54 suites must remain green. Until workflow results are available, do not claim they passed on this new branch.
+
+## Review-only genealogy and Apostolic Dispersion (12 October, next batch)
+
+**Implementation:** src/find/bible-lineage-review.js and data/explore/biblical-lineage-curated-review.v1.json are a pinned, lazy-loaded copy of explicitly held evidence from [PR #1018](https://github.com/Fulcanelli13/ad-orientem/pull/1018). The existing Explore owner exposes a single Atlas with three native modes: **Chronology**, **Genealogies**, **Apostolic lives**. The 151-event mode is never replaced. Research modes visibly say **Research preview — not approved for publication**.
+
+- **Genesis:** 90 source-linked family relations with progressive generation reveal, plus focus on Adam, Noah, Abraham, Jacob and Joseph. Homonymous people keep their distinct source IDs; mother annotations do not silently become paternal ancestry.
+- **Matthew 1 and Luke 3:** separate 41/76-place textual lists, paginated to 12 records per view. St Joseph is shown as legal/putative father; associated women do not become new paternal ancestors.
+- **Apostolic Dispersion:** 20 curated people/55 original-source entries. Scripture, patristic witnesses, qualified identification and later traditions have different explicit statuses. Philip the Evangelist remains distinct from Philip the Apostle, Marian Jerusalem/Ephesus traditions are competing claims, and Revelation's John has an authorial-identification qualification. Held itineraries do not receive invented travel.
+- **No research pins:** the 25 imported candidate locations are not map-published; place names are text context only, not precise GPS.
+- **Eleven exact canonical-reference joins** are currently available from apostolic entries to one of the 151 timeline references. These are called *related chronology references*, not identity certification. Partial overlap, person similarity and shared cities create no joins.
+- The bulk 3,231-person STEP donor stays outside application UI; the smaller 115 kB curated JSON is lazy fetched only on entering research modes.
+
+**Contracts:** tests/biblical-lineage-native-review.mjs covers the schema release hold, Genesis edge citations, Matthew/Luke legal father safeguards, apostolic source classification and unique exact citation joins. The 390px browser journey adds genealogy mode switching, review qualifiers, passage jump and return to 151-event chronology. Full CI must be green before treating this draft as verified.
+
+### Still blocked before release
+1. Original-edition Vulgate/Crampon/Douay verse/name audit, including omitted generations and Matthew/Luke differences.
+2. Screenshot and physical-device review at 320/390/768 and desktop; automated checks are not aesthetic approval.
+3. Event-by-event evaluation of PR #1010's 181 design scenes against PR #998's 151 source events before porting improvements.
+4. Separate editorial approval for lineage claims, historical location identities, apostolic traditions and live public scope.
