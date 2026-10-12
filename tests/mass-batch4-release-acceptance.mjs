@@ -41,7 +41,6 @@ for(const family of ["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS",
 for(const [name,script] of Object.entries({
  production:"node tests/reader-phone-production-card-default.mjs",
  curated:"npm run test:phone-curated65",
- forms:"npm run test:mass-integration-grid",
  realShell:"node tests/app-shell-final-e2e.mjs",
  nuptial:"node tests/app-shell-nuptial-e2e.mjs",
  vigil:"node tests/app-shell-easter-vigil-e2e.mjs",
@@ -50,6 +49,7 @@ for(const [name,script] of Object.entries({
  entrance:"npm run test:priest-entrance-phone"
 }))claim(pkg.scripts["test:phone"]?.includes(script)||workflow.includes(script),
  "Production phone CI misses "+name+": "+script);
+claim(pkg.scripts["test"]?.includes("npm run test:mass-integration-grid"),"Four-form integration matrix is absent from Node CI");
 claim(workflow.includes("phone-browser:")&&workflow.includes("curated65-phone:"),
  "R17 CI lacks independent default and curated phone jobs");
 claim(entry.includes("observePriestEvent")&&entry.includes("observePriestReverence"),"Independent observation APIs missing");
