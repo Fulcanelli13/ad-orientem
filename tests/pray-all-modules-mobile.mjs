@@ -196,14 +196,25 @@ try{
  assert.equal(await page.locator(daily+" .aoTP381PrayerCard").count(),1,"Guidance must display complete canonical prayer");
  assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 11");
  assert.equal(await page.locator(daily+" [data-tp381-daily-step='-1']").isDisabled(),true);
+ // Exercise the visible canonical card timeline. The previous/next buttons
+ // remain in the source frame only as a fallback and are hidden when the
+ // shared dual-axis reader is installed; tapping those hidden controls
+ // would certify a path the user cannot reach.
  async function tapStep(control,expected){
-  try{await page.locator(control).tap({timeout:6500})}
-  catch(error){
-    const current=await page.locator(daily).getAttribute("data-guide-step").catch(()=>null);
-    if(current===String(expected))return;
-    await page.locator(control).scrollIntoViewIfNeeded();
-    await page.locator(control).tap({timeout:9000});
-  }
+   assert.match(control,/data-tp381-(daily|examen)-step/,
+     "Unexpected traditional prayer owner");
+   const target=page.locator("#aoPray435930.open .aoDevoSequenceTimeline [data-ao-devo-chapter='"+expected+"']");
+   assert.equal(await target.count(),1,"Missing visible source-owned timeline stage "+expected);
+   const current=await page.locator(daily).getAttribute("data-guide-step");
+   if(current!==String(expected))await target.tap({timeout:12000});
+   await page.waitForFunction(step=>{
+     const shell=document.querySelector("#aoPray435930.open");
+     const guide=shell?.querySelector("[data-ao-pray-guide-card]");
+     const card=shell?.querySelector(".aoDevoCard");
+     return guide?.dataset.guideStep===String(step)&&
+       card?.dataset.aoDevoIndex===String(step)&&
+       shell.querySelectorAll(".aoDevoSequenceTimeline [aria-current='step']").length===1;
+   },expected,{timeout:9000});
  }
  for(let step=1;step<=11;step++){
    await tapStep("#aoPray435930.open [data-tp381-daily-step='"+step+"']",step);
@@ -227,8 +238,15 @@ try{
  await page.locator("#aoPray435930.open [data-tp381-examen-return]").tap();
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9","Examen must resume Evening Prayer at contrition");
  assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"sacrament_act_of_contrition");
+ const dailyOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
+ await dailyOptions.locator("summary").tap();
+ assert.equal(await dailyOptions.evaluate(node=>node.open),true,
+   "Real phone cannot expand secondary daily prayer options");
  await page.locator("#aoPray435930.open [data-tp381-daily-mode='list']").tap();
  assert.equal(await page.locator("#aoPray435930.open .aoTP381PrayerList button").count(),13,"Traditional unabridged overview must survive guided mode");
+ const reopenedOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
+ await reopenedOptions.locator("summary").tap();
+ assert.equal(await reopenedOptions.evaluate(node=>node.open),true);
  await page.locator("#aoPray435930.open [data-tp381-daily-mode='guided']").tap();
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9");
  const phoneOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
