@@ -20,12 +20,17 @@ for(const a of art.leads){
  identities.add(a.officialSourceUrl);
  for(const field of ["previousCollectionAutoPromotion","originalImageDownloaded","reuseRightsVerified","phoneCropApproved","userApproved","productionApproved"])assert.equal(a[field],false);
  assert.equal(a.originalImageSha256,null);
- assert.equal(a.canonicalReviewStatus,"NEW_MASTERPIECE_AESTHETIC_PRESELECTION_NOT_USER_APPROVED");
+ if(/^(?:Fra Angelico|El Greco)$/.test(a.artist)){
+  assert.equal(a.canonicalReviewStatus,"SUPERSEDED_USER_STYLE_EXCLUDED_HISTORY_ONLY");
+  assert.equal(a.editorialBlock,"USER_STYLE_REJECTION");
+ }else assert.equal(a.canonicalReviewStatus,"NEW_MASTERPIECE_AESTHETIC_PRESELECTION_NOT_USER_APPROVED");
  if(a.curatorialTier==="MASTERPIECE_THEMATIC")assert.equal(a.dateIconographyPolicy,"THEMATIC_ONLY_NOT_EXACT_FEAST");
 }
 assert.ok(art.leads.some(x=>x.subject==="saint-michael"&&x.artist==="Bartolomé Bermejo"));
-assert.ok(art.leads.some(x=>x.artist==="Fra Angelico"&&x.subject==="annunciation"));
+assert.ok(art.leads.some(x=>x.artist==="Fra Angelico"&&x.subject==="annunciation"&&x.editorialBlock==="USER_STYLE_REJECTION"));
 assert.ok(art.leads.some(x=>x.artist==="Raphael"&&x.subject==="transfiguration"));
-assert.ok(art.leads.some(x=>x.artist==="El Greco"&&x.subject==="nativity"));
+assert.ok(art.leads.some(x=>x.artist==="El Greco"&&x.subject==="nativity"&&x.editorialBlock==="USER_STYLE_REJECTION"));
 assert.ok(art.leads.some(x=>x.artist==="Titian"&&x.subject==="assumption"));
-console.log("PASS: 13 primary-custodian masterpiece leads, 11 subjects, no art download/reuse/publication promotion");
+assert.equal(art.summary.stylisticallyExcludedHistoricalLeads,3);
+assert.equal(art.summary.activeHistoricalLeads,10);
+console.log("PASS: 13 historical source leads, 3 style-excluded and blocked, 10 still historical/research only");
