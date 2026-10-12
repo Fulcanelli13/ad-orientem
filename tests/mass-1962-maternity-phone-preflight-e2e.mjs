@@ -102,7 +102,11 @@ try{
   });
   assert.equal(data.overflowX,false,"Horizontal overflow in Mass preflight at "+width+": "+JSON.stringify(data));
   assert.ok(data.rect.left>=-2&&data.rect.right<=width+2,"Commemoration clipped at "+width+": "+JSON.stringify(data));
-  assert.ok(["COMPLETE","PENDING","INCOMPLETE","FORM_RULES_UNVERIFIED","NOT_APPLIED_TO_FORM"].includes(data.readiness));
+  assert.equal(data.readiness,"NOT_APPLIED_TO_FORM",
+    "The sourced II-class Sunday ordinary commemoration is omitted at non-conventual Sung Mass");
+  assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),
+    /does not include|ne sont pas retenues/i,
+    "Phone preflight must distinguish the Calendar feast from prayers said at the selected Mass");
   if(data.readiness==="FORM_RULES_UNVERIFIED"){
     assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),
       /not yet verified|pas encore vérifiée/i,
