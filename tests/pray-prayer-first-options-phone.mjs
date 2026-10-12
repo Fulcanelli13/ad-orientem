@@ -125,6 +125,22 @@ try{
      "Angelus recitation controls leak through the closed preferences drawer");
    assert.equal(await ag.locator('[data-p435930-seg="regina"]').isVisible(),false,
      "Angelus form controls leak through the closed preferences drawer");
+   if(width===320)console.log("ANGELUS VISIBLE CHOICES "+JSON.stringify(await page.evaluate(()=>{
+     const root=document.querySelector("#aoPray435930.open");
+     return [...root.querySelectorAll("button")].filter(b=>{
+       const t=(b.textContent||"").trim().toLowerCase();
+       return t==="individual"||t==="group";
+     }).map(b=>{
+       const path=[];let p=b;
+       for(let i=0;i<6&&p;i++,p=p.parentElement)path.push({
+         cls:String(p.className||"").slice(0,120),
+         tag:p.tagName,
+         attrs:[...p.attributes].filter(a=>a.name.startsWith("data-")).map(a=>a.name+"="+a.value).slice(0,6)
+       });
+       return {name:b.textContent.trim(),hasRect:b.getClientRects().length>0,
+         display:getComputedStyle(b).display,top:b.getBoundingClientRect().top,path};
+     });
+   })));
    await page.screenshot({path:resolve(shots,"angelus-first-"+width+".png"),animations:"disabled"});
    await ag.locator(":scope > summary").click();
    await expanded(angelus);
