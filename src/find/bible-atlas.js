@@ -16,6 +16,26 @@ const ERAS={
  APOSTLES:["The Apostolic Church","L'Église apostolique","The Gospel reaches the nations","L'Évangile parvient aux nations"],
  REVELATION:["The Apocalypse","L'Apocalypse","St John's vision, not an earthly future itinerary","La vision de saint Jean, non un itinéraire terrestre futur"]
 };
+// Observed *witness transcription/numbering* exceptions, not proposed
+// substitutions in the canonical Catholic Scripture reader. These witnesses
+// are UNCOLLATED: a gap is a research warning, not permission to change a Bible.
+export const ATLAS_WITNESS_EXCEPTIONS=Object.freeze({
+ "Mark 4:35–41":Object.freeze({
+  en:"The imported witnesses merge the final verse into 4:40. Printed Crampon has 4:41; original-text collation is still required.",
+  fr:"Les témoins importés regroupent le dernier verset sous 4,40. L'édition Crampon présente 4,41 ; une collation reste nécessaire.",
+  source:"https://www.newadvent.org/bible/mar004.htm"
+ }),
+ "Acts 7:54–60":Object.freeze({
+  en:"Stephen's final prayer is numbered 7:60 in Crampon, but 7:59 in the imported Challoner witness. Do not assume verse-number equivalence.",
+  fr:"La dernière prière d'Étienne est numérotée 7,60 chez Crampon, mais 7,59 dans le témoin Challoner. Les numéros ne coïncident pas.",
+  source:"https://www.newadvent.org/bible/act007.htm"
+ }),
+ "Exodus 40:1–38":Object.freeze({
+  en:"This chapter has 38 numbered verses in the imported Crampon witness and 36 in Challoner. Closing verse boundaries differ by edition.",
+  fr:"Ce chapitre compte 38 versets dans le témoin Crampon et 36 dans Challoner. Le découpage final diffère selon l'édition.",
+  source:"https://www.newadvent.org/bible/exo040.htm"
+ })
+});
 // [era, corpus place id, corpus event id, EN fallback title, FR fallback title, Scripture]
 // Selected major milestones are explicitly sequenced: not an exhaustive harmony.
 const SEQUENCE=[
@@ -183,7 +203,7 @@ export function atlasEraOverlay(era,lang){
 }
 export function atlasDetail(s,lang){
  if(!s)return "";
- const geo=s.geo;
+ const geo=s.geo,witnessNote=ATLAS_WITNESS_EXCEPTIONS[s.reference]??null;
  // A Gospel narrative's placement does not decide the disputed identity or
  // historical timing of its parallels in the other Evangelists.
  const sourceQualification=s.reference==="John 2:13–22"
@@ -202,6 +222,7 @@ export function atlasDetail(s,lang){
  '<p>'+esc(L(lang,s.summary_en,s.summary_fr))+'</p>'+
  (qualification?'<small class="aoBibleAtlasQualification">'+esc(qualification)+'</small>':"")+
  (sourceQualification?'<small class="aoBibleAtlasQualification">'+esc(sourceQualification)+'</small>':"")+
+ (witnessNote?'<details class="aoBibleAtlasSourceNote"><summary>'+esc(L(lang,"Scripture edition note","Note sur l'édition biblique"))+'</summary><p>'+esc(L(lang,witnessNote.en,witnessNote.fr))+'</p><a href="'+esc(witnessNote.source)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Compare source","Comparer la source"))+' ↗</a></details>':"")+
  '<div class="aoBibleAtlasActions"><button type="button" data-ao-scripture-context="'+esc(s.reference)+'">'+esc(L(lang,"Read Scripture","Lire le passage"))+' · '+esc(s.reference)+'</button>'+
  (geo?'<a target="_blank" rel="noopener noreferrer" href="'+esc(geo.url)+'">'+esc(L(lang,"Map evidence","Source géographique"))+' ↗</a>':"")+'</div>';
 }
