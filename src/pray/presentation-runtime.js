@@ -1048,6 +1048,14 @@ function decorateRosary(){
   });
  }
  r.querySelectorAll('.flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]').forEach(n=>{n.hidden=true;n.setAttribute('aria-hidden','true')});
+ // Existing donor's Individual / Group options visually tracked the mode
+ // but had no pressed-state semantics. Keep the canonical controls; annotate
+ // them from the single Prayer preference owner after each donor repaint.
+ r.querySelectorAll('[data-ao-recitation]').forEach(button=>{
+   const mode=button.dataset.aoRecitation;
+   if(mode==='individual'||mode==='group')
+     button.setAttribute('aria-pressed',String(S.rosary.recitation===mode));
+ });
  r.classList.toggle('aoP435930RosarySimple',S.rosary.mode==='simple');r.classList.toggle('aoP435930RosaryGuided',S.rosary.mode==='guided');
  let bar=r.querySelector('.aoP435930RosaryBar');if(!bar){bar=document.createElement('div');bar.className='aoP435930RosaryBar';bar.setAttribute('aria-label',L('Rosary reading depth','Profondeur du Rosaire'));const h=r.querySelector('.lab-view-head,.pbTop,.pbHead,header');h?.insertAdjacentElement('afterend',bar)}
  if(bar)bar.innerHTML=`<button type="button" data-p435930-rosary-depth="simple" class="${S.rosary.mode==='simple'?'active':''}" aria-pressed="${S.rosary.mode==='simple'}">${esc(L('Simple','Simple'))}</button><button type="button" data-p435930-rosary-depth="guided" class="${S.rosary.mode==='guided'?'active':''}" aria-pressed="${S.rosary.mode==='guided'}">${esc(L('Guided','Guidé'))}</button>`;

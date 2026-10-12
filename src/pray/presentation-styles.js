@@ -605,6 +605,63 @@ const ROSARY_GUIDE_CSS=`
 #aoPrayerBookRoot.open .aoRosaryGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
 `;
 
+/* Rosary canonical donor mobile controls: touch accessibility and prayer-first
+   microtype. Scoped to the *active* v3.4.14 player, not Mass, not the
+   Rosary Methods chooser, and never to other devotional screens. */
+const ROSARY_PHONE_CONTROLS_CSS=`
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoP435930RosaryBar button{
+  min-height:44px!important;
+  padding:10px 12px!important;
+  font:650 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation{
+  height:auto!important;min-height:44px!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
+  height:auto!important;min-height:44px!important;
+  padding:8px 12px!important;font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryGuide>summary{
+  min-height:48px!important;
+  font-size:13px!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryScriptureOpening a,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]{
+  display:inline-flex!important;align-items:center!important;
+  min-height:44px!important;padding:8px 0!important;
+  font-size:12px!important;line-height:1.4!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) :is(
+  [data-lab-rosary-today],[data-pb-rosary-set],[data-v38-rosary-form],
+  [data-lab-rosary-next],[data-lab-rosary-prev],
+  [data-pb-rosary-change],[data-lab-rosary-change]
+){
+  min-height:44px!important;touch-action:manipulation;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) :is(
+  .aoP435930RosaryBar button,.r29-head-recitation button,
+  .aoRosaryGuide>summary,[data-lab-rosary-next],[data-lab-rosary-prev],
+  [data-pb-rosary-set],[data-v38-rosary-form]
+):focus-visible{
+  outline:2px solid var(--liturgical,#d8bd7d)!important;outline-offset:2px!important;
+}
+@media(max-width:560px){
+  /* Prevent a 44px recitation pair from stealing width from the mystery
+     heading: keep it a separate phone row, with the prayer controls below. */
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head{
+    grid-template-columns:44px minmax(0,1fr)!important;
+  }
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head .r29-head-recitation{
+    grid-column:1/-1!important;justify-self:stretch!important;
+    min-width:0!important;max-width:none!important;width:100%!important;
+    margin:0!important;
+  }
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head .r29-head-recitation button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,\n#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
+    flex:1 1 50%!important;min-width:0!important;
+  }
+}
+`;
+
 const ROSARY_SCRIPTURE_POLICY_CSS=`
 /* Hide legacy fragment cards synchronously, including the frame before JS decoration. */
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-sheet .lab-scripture-cue,
@@ -732,6 +789,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-devotional-ux-contract-style",DEVOTIONAL_UX_CSS);
   ensureStyle(doc,"ao-pray-angelus-guide-ritual-style",ANGELUS_GUIDE_RITUAL_CSS);
   ensureStyle(doc,"ao-pray-rosary-guide-style",ROSARY_GUIDE_CSS);
+  ensureStyle(doc,"ao-pray-rosary-phone-controls-style",ROSARY_PHONE_CONTROLS_CSS);
   ensureStyle(doc,"ao-pray-rosary-scripture-policy-style",ROSARY_SCRIPTURE_POLICY_CSS);
   ensureStyle(doc,"ao-pray-modular-shell-integration-style",MODULAR_SHELL_CSS);
   ensureStyle(doc,"ao-pray-exact-ritual-rail-style",EXACT_RITUAL_RAIL_CSS);
