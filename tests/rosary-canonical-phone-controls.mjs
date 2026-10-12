@@ -59,6 +59,22 @@ try{
     };
    });
    console.log("OPENING DOM "+width+"px "+JSON.stringify(metric));
+   // Temporary acceptance instrumentation: report the original donor DOM
+   // hierarchy before reordering any controls or replacing any donor node.
+   if(width===320)console.log("DONOR ENTRY TOPOLOGY "+JSON.stringify(await page.evaluate(()=>{
+    const root=document.querySelector("#aoPrayerBookRoot.open");
+    const shell=root?.querySelector(".pbShell");
+    const today=[...root.querySelectorAll("button")].find(x=>/Pray today.s mysteries/i.test(x.textContent||""));
+    const ancestors=[];let node=today;while(node&&node!==root&&ancestors.length<9){
+      ancestors.push({tag:node.tagName,cls:node.className,txt:(node.textContent||"").trim().slice(0,130)});
+      node=node.parentElement;
+    }
+    const children=[...shell?.children||[]].map(x=>({tag:x.tagName,cls:x.className,text:(x.textContent||"").trim().slice(0,100),html:x.outerHTML.slice(0,280)}));
+    const buttons=[...root.querySelectorAll("button")].slice(0,24).map(x=>({text:(x.textContent||"").trim().slice(0,60),
+      attrs:[...x.attributes].filter(a=>a.name.startsWith("data-")).map(a=>[a.name,a.value]),
+      parent:x.parentElement?.className}));
+    return {today:today?.outerHTML.slice(0,480),ancestors,children,buttons};
+   })));
    assert.equal(metric.playerCount,1,"Duplicate canonical Rosary active root");
    assert.equal(metric.depth.length,2,"Missing simple/guided options");
    assert.ok(metric.recitation.length>=2,"Missing individual/group options");
