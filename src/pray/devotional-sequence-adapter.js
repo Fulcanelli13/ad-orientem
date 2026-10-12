@@ -108,7 +108,7 @@ export function installSequentialDevotionalReader({
     .filter(el=>!el.closest("details:not([open])"))
     .filter(el=>!el.closest(".aoP435930VRLine")||el.classList.contains("aoP435930VRLine"));
   paragraphs.forEach(p=>p.classList.add("aoDevoParagraph"));
-  let last=null,frame=0;
+  let last=null,frame=0,userScrolled=false;
   function focus(){
     frame=0;
     const shown=paragraphs.filter(visible);
@@ -121,14 +121,19 @@ export function installSequentialDevotionalReader({
       const d=y<r.top?r.top-y:y>r.bottom?y-r.bottom:0;
       if(d<best){best=d;found=i}
     });
-    if(body.scrollTop<2)found=0;
+    // On initial mount the canonical bead cursor is authoritative. Moving
+    // to the next bead must not be undone by the viewport focus heuristics.
+    if(!userScrolled&&Number.isInteger(restoreStep)){
+      const selected=shown.findIndex(p=>Number(p.dataset.aoMercyStep)===restoreStep);
+      if(selected>=0)found=selected;
+    }else if(body.scrollTop<2)found=0;
     shown.forEach((p,i)=>{
       const power=i===found?"1":Math.abs(i-found)===1?".56":".30";
       p.style.setProperty("--ao-devo-focus",power);
       p.style.setProperty("opacity",power,"important");
       p.dataset.aoDevoActive=i===found?"true":"false";
     });
-    if(last!==shown[found]){last=shown[found];onFocus(last)}
+    if(last!==shown[found]){last=shown[found];if(userScrolled)onFocus(last)}
   }
   const queue=()=>{if(!frame)frame=doc.defaultView.requestAnimationFrame(focus)};
   if(Number.isInteger(restoreStep)&&restoreStep>=0){
@@ -162,7 +167,7 @@ export function installSequentialDevotionalReader({
     if(ms<=1300&&Math.abs(dx)>=72&&Math.abs(dx)>Math.abs(dy)*1.35)
       go(index+(dx<0?1:-1));
   },{passive:true});
-  body.addEventListener("scroll",queue,{passive:true});
+  body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
   queue();
   return Object.freeze({
     schema:SEQUENTIAL_DEVOTIONAL_SCHEMA,kind,index,
