@@ -277,7 +277,43 @@ try{
  assert.match(await page.locator("#aoPray435930 .aoTP381Section").first().innerText(),
    /Appelez un prêtre maintenant|Call a priest now/,
    "Bedside destination no longer puts obtaining a priest first");
+ // Urgent bedside companion is separate from ordinary Good Death devotion.
+ // The first card MUST display priest-first action before any guided prayer.
+ const dying=await snapshot();
+ assert.equal(dying.route,"pray.dying_companion");
+ assert.equal(dying.kind,"dyingCompanion");assert.equal(dying.stops,3);
+ assert.equal(dying.active,1);assert.equal(dying.index,0);assert.equal(dying.id,"dying-now");
+ assert.equal(dying.overflow,"auto");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-dying-companion-options]").evaluate(x=>x.open),false);
+ assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),
+   /Appelez un prêtre maintenant|Call a priest now/,
+   "Dying Companion must put obtaining a priest in its reading card");
+ assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),
+   /Viatique|Viaticum/,
+   "Urgent bedside card lost sacramental request guidance");
+ await page.screenshot({path:resolve(captures,"dying-call-priest-320-fr.png"),animations:"disabled"});
+ await swipe(5,-142);assert.equal((await snapshot()).index,0,
+   "Scrolling urgent bedside instructions accidentally advanced a card");
+ await swipe(-180,5);
+ const prayerStage=await snapshot();
+ assert.equal(prayerStage.id,"dying-pray");assert.equal(prayerStage.index,1);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline [aria-current='step']").count(),1);
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-prayer='foundations_act_of_faith']").count(),1);
+ assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>80,
+   "Dying Companion has lost traditional aspirations");
+ await page.screenshot({path:resolve(captures,"dying-quiet-prayers-320-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 .aoDevoStop").nth(2).evaluate(el=>el.click());
+ const commend=await snapshot();
+ assert.equal(commend.id,"dying-commend");assert.equal(commend.index,2);
+ assert.ok(commend.paragraphCount>0,"Commendation lacks paragraph-level focus");
+ assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),
+   /recommandation de l’âme|Commendation of the Soul/i);
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-prayer='dead_de_profundis']").count(),1,
+   "Transition to prayer for a deceased person was removed");
+ await page.screenshot({path:resolve(captures,"dying-commendation-320-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"dying-now");
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
- console.log("PASS French 390/320px traditional Prayer plus nine Good Death source-owned cards and priest-first bedside handoff");
+ console.log("PASS Good Death nine source-owned prayers and distinct priest-first Dying Companion three-stage reader on French phones");
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
