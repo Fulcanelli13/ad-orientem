@@ -50,8 +50,8 @@ export const ROSARY_DUAL_AXIS_CSS=String.raw`
 }
 #aoPrayerBookRoot.open .lab-prayer-sheet.aoRosaryCardScroll{
  display:block;min-width:0;box-sizing:border-box;
- min-height:min(300px,45dvh);height:min(52dvh,520px);
- overflow-y:auto;overscroll-behavior-y:contain;scrollbar-width:thin;
+ min-height:min(300px,45dvh)!important;height:min(52dvh,520px)!important;
+ overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior-y:contain;scrollbar-width:thin;
  padding:20px 15px 25dvh
 }
 #aoPrayerBookRoot.open .aoRosaryCardScroll .aoRosaryParagraph{
