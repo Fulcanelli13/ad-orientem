@@ -49,7 +49,7 @@ async function loadData(fetchImpl=globalThis.fetch){
 
 function sourceMap(data){return Object.fromEntries((data?.sources??[]).map(source=>[source.id,source]));}
 function top(win,title){
-  return '<style data-ao-mf-style>'+css()+'</style><header class="aoMFTop"><button type="button" data-ao-mf-back aria-label="'+esc(isFr(win)?"Retour":"Back")+'">'+uiIcon("ao-ui-back")+'</button><div><small>FORMATION</small><strong>'+esc(title)+'</strong></div><button type="button" data-ao-mf-close aria-label="'+esc(isFr(win)?"Fermer":"Close")+'">'+uiIcon("ao-ui-close")+'</button></header>';
+  return '<style data-ao-mf-style>'+css()+'</style><header class="aoMFTop"><button type="button" data-ao-mf-back aria-label="'+esc(isFr(win)?"Retour":"Back")+'">'+uiIcon("ao-ui-back")+'</button><div><small>FORMATION</small><strong>'+esc(title)+'</strong></div><button type="button" data-ao-mf-close aria-label="'+esc(isFr(win)?"Fermer":"Close")+'">'+'×'+'</button></header>';
 }
 function listHtml(win,data){
   const rows=data.stages.map(stage=>'<button type="button" class="aoMFStageRow" data-ao-mf-stage="'+esc(stage.id)+'"><span class="n">'+esc(stage.order)+'</span><span><strong>'+esc(pick(win,stage.title))+'</strong><p>'+esc(pick(win,stage.summary))+'</p></span></button>').join("");
@@ -125,6 +125,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     });
     node.addEventListener("change",event=>{
       const el=event.target;
+      if(el?.matches?.("[data-ao-mf-bible-filter-select]")){state.bibleFilter=el.value;render();return;}
       if(el?.matches?.("[data-ao-mf-bible-stage]")){state.bibleGroup=el.value;render();return;}
       if(el?.matches?.("[data-ao-mf-bible-proper]")){state.properPath=el.value;render();return;}
     });
@@ -143,7 +144,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
           '<p role="status">'+esc(isFr(win)?"Chargement des sources…":"Loading sources…")+'</p>')+'</main>';
     }else node.innerHTML=state.view==="stage"&&stage?stageHtml(win,state.data,stage):listHtml(win,state.data);
     node.hidden=false;node.removeAttribute("aria-hidden");node.scrollTop=0;
-    installFormationNavigation(win,node);
+    if(state.view==="stage"||state.view==="bible")installFormationNavigation(win,node);
     queueMicrotask(()=>node.querySelector("button,a[href]")?.focus?.({preventScroll:true}));
     return true;
   }
