@@ -1,10 +1,10 @@
-# Biblical Atlas — 151↔181 editorial adjudication queue
+# Biblical Atlas — 151↔183 editorial adjudication queue (181 originals preserved)
 
-**12 October 2026 — A6 source-first chronology and bilingual Bible witness audit.** Derived snapshot; the source-owned JSON and JS remain authoritative. Not approval for public release.
+**12 October 2026 — A12/A13 source-first editorial register.** The 151-event canonical chronology is unchanged; 181 original scenes are retained exactly and two further Scripture-anchored scenes are appended. This register is research-only, not a publication approval.
 
 ## Corrected editorial boundaries
 
-- 151 selected events and 11 eras are preserved. The 181 scene studies remain independently organised into 14 chapters; neither corpus is a complete chronology of all 73 books.
+- 151 selected events and 11 eras are preserved. The 183 scene studies (181 original records + 2 append-only episodes) remain in the original 14 chapters; neither corpus is a complete chronology of all 73 books.
 - The selected PUBLIC timeline now applies six explicitly named within-Gospel textual precedence rules; it does not force one historical timetable across Matthew, Mark, Luke and John. Source citations: [Matthew 5](https://www.newadvent.org/bible/mat005.htm), [Matthew 14](https://www.newadvent.org/bible/mat014.htm), [Mark 1](https://www.newadvent.org/bible/mar001.htm), [John 4](https://www.newadvent.org/bible/joh004.htm), [John 5](https://www.newadvent.org/bible/joh005.htm), [John 6](https://www.newadvent.org/bible/joh006.htm), [John 9](https://www.newadvent.org/bible/joh009.htm), [John 11](https://www.newadvent.org/bible/joh011.htm).
 - Scene #74 corresponds to the unique John 2:13–22 event at canonical #82 in **John's narrative placement** after Cana. Its identity with the cleansing in the Synoptic Passion accounts remains an editorial hold. [John 2](https://bible.usccb.org/bible/john/2) warns that Gospel order is sometimes thematic, not strictly chronological.
 - The A6 moves affect 21 displayed stop positions; 16 of 97 cinematic *candidate* links moved to new indices by their stable event keys. Every candidate and historical hold must still match the current event key **and** Scripture reference, not just the screen position.
@@ -33,20 +33,20 @@
 | MOSES | The wilderness | 1 | 0 | 4 |
 | MOSES | The covenant | 3 | 0 | 3 |
 | MOSES | Toward the promised land | 1 | 1 | 6 |
-| CHRIST | The Incarnation | 9 | 2 | 1 |
+| CHRIST | The Incarnation | 10 | 2 | 1 |
 | CHRIST | Public Ministry | 23 | 2 | 21 |
 | CHRIST | The Passion | 6 | 3 | 7 |
 | CHRIST | The Resurrection | 3 | 3 | 1 |
-| PAUL | The Apostolic Age | 1 | 4 | 0 |
+| PAUL | The Apostolic Age | 2 | 4 | 0 |
 | PAUL | First missionary journey | 1 | 1 | 8 |
 | PAUL | Second missionary journey | 4 | 2 | 5 |
 | PAUL | Third missionary journey | 3 | 1 | 2 |
 | PAUL | The journey to Rome | 2 | 0 | 9 |
-| **Total** | **14 chapters** | **65** | **29** | **87** |
+| **Total** | **14 chapters** | **67** | **29** | **87** |
 
-## All 181 scenes — A6 stable-key validated candidate register
+## All 183 scenes — A12 stable-key validated candidate register
 
-Indices are zero-based UI positions, subject to change; event keys and Scripture references are canonical identities. Citation identity is *not* proof of historical event identity. All semantic dispositions remain on HOLD until reviewed.
+Indices are zero-based data positions, not chapter reading order or external identities. The original indices 0–180 are unchanged. New indices 181 (Holy Innocents) and 182 (Pentecost) are appended to the array and positioned correctly in their chapters. Scripture references and stable event keys—not numbered scene positions—are canonical identities. An exact citation still does *not* prove a particular artistic depiction. All semantic dispositions remain on HOLD.
 
 | Scene | Chapter | Scene and Scripture | Current canonical candidate(s) | Editorial action |
 |---:|---|---|---|---|
@@ -231,6 +231,16 @@ Indices are zero-based UI positions, subject to change; event keys and Scripture
 | 178 | TO_ROME | Syracuse and Puteoli — Acts 28:11–14 | None | Additional episode · HOLD |
 | 179 | TO_ROME | The Italian mainland — Acts 28:13–14 | None | Additional episode · HOLD |
 | 180 | TO_ROME | Paul arrives in Rome — Acts 28:16–31 | #145 St Paul in Rome (same citation; biblical:passage:acts-28-16-31) | Check scene identity · HOLD |
+| 181 | INCARNATION | The massacre of the Holy Innocents — Matthew 2:16–18 | #73 Herod orders the massacre of the Innocents (same citation; biblical:event:bethlehem-additional-003) | Newly added source episode · depiction review HOLD |
+| 182 | APOSTLES | Pentecost: the Holy Spirit descends — Acts 2:1–41 | #126 Pentecost (same citation; biblical:passage:acts-2-1-41) | Newly added source episode · depiction review HOLD |
+
+## Source-only extension: two recovered major episodes
+
+- **Holy Innocents**: source Matthew 2:16–18. One exact canonical source is #73 (`biblical:event:bethlehem-additional-003`). The Theatre record is appended as `biblical:scene:christ:181` but appears between the Flight and the Return within chapter Incarnation, respecting Matthew 2's textual sequence. No historical date or specific building is claimed; the original 181 scene records remain untouched.
+- **Pentecost**: source Acts 2:1–41. One exact canonical source is #126 (`biblical:passage:acts-2-1-41`). The Theatre record is appended as `biblical:scene:paul:182`, opening the *Apostolic Age* chapter, explicitly before Saul's conversion. Its `PAUL` chapter family label is an inherited UI grouping, not a theological attribution to St Paul.
+- **Citation classes**: 67 exact reference cases, 29 passage overlaps, 87 unmatched cases. Of the 67 exact cases, one Luke 2 source remains doubly associated and withheld from automatic navigation; **66 source-only reversible jumps** are valid against the unchanged 151-event timeline.
+- **Original record immutability**: `tests/biblical-cinematic-original-181-lock.mjs` checks the Git blob SHA-1 of the complete 181 pre-extension scene objects and original 14 chapter memberships against the original branch state. A deliberate source correction must be reviewed and its lock updated explicitly.
+- **Sacred art**: Calendar Pentecost, Rosary Third Glorious Mystery, and Holy Innocents are now *research* scene associations. They are not cleared to render an artwork; original painting quality, iconographic content, licence and crop remain separately gated by Sacred Art #887.
 
 ## Two further source-congruence corrections
 
