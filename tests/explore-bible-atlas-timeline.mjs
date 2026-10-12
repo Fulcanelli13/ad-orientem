@@ -145,6 +145,10 @@ assert.match(atlasEraOverlay("EXODUS","fr"),/L&#39;Exode/);
 const en=renderBibleAtlasToString({language:"en",atlasStops:stops,atlasIndex:0});
 const fr=renderBibleAtlasToString({language:"fr",atlasStops:stops,atlasIndex:71});
 assert.match(en,/data-bible-track/);
+assert.match(en,/repeat\(4,minmax\(0,1fr\)\)/,
+ "Chronology shares the four-across mobile Atlas view switcher");
+assert.match(en,/Genealogies/);
+assert.doesNotMatch(en,/Genealogies · review/,"do not repeat review labels on every Atlas tab");
 assert.match(en,/data-bible-event-key="biblical:passage:genesis-1-1-31"/);
 assert.match(en,/data-bible-event-key="biblical:event:jerusalem-temple-e3"/);
 assert.match(en,/data-bible-map/);
