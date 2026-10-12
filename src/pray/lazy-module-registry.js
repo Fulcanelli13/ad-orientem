@@ -17,6 +17,7 @@ const TRADITIONAL=[
 ];
 const PROVISIONAL=Object.freeze(Object.fromEntries([
   ...TRADITIONAL,
+  ["pray.angelus_regina","Angelus / Regina Cæli","daily-prayer"],
   ["pray.novenas","Novenas","traditional-devotion"]
 ].map(([id,title,category])=>[id,Object.freeze({id,title,category,type:"module",domain:"pray"})])));
 const ALIASES=Object.freeze({novenas:"pray.novenas",novena:"pray.novenas"});

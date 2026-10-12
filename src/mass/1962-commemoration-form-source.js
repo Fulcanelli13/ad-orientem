@@ -1,3 +1,4 @@
+import {applyMissionSundayCollect} from "./1962-mission-sunday-source.js";
 // Shared source-first 1962 Mass-form oration projection.
 // Certified scope: source-identified single II-class Sunday feast and privileged Sunday / Advent feria.
 // Never infer universal privileges from feast titles, colours or typography.
@@ -105,6 +106,24 @@ export function select1962CommemorationsForMassForm({
     omittedCommemorations:Object.freeze(omitted.map(x=>Object.freeze({...x}))),
     commemorationFormDecision:decision,
   });
-  const result=envelope?Object.freeze({...envelope,data:selected}):selected;
-  return Object.freeze({status:"CERTIFIED",reason:null,proper:result,decision});
+  // The §453 missionary Collect is NOT a Calendar commemoration. It joins
+  // the *first selected Collect* under one conclusion, before any separate
+  // privileged/ordinary commemoration; never adds Secret/Postcommunion.
+  const mission=applyMissionSundayCollect({
+    proper:selected,calendarResolution,form:normalizedForm,celebrationId,
+    competingUnderOneConclusion:Array.isArray(data.oneConclusionCollects)?
+      data.oneConclusionCollects:[],
+  });
+  if(mission.status==="UNVERIFIED"){
+    const blocked=Object.freeze({...selected,
+      missionSundayCollectDecision:Object.freeze({status:"UNVERIFIED",
+        reason:mission.reason,source:"1960_MISSAL_453",
+        date:calendarResolution.date,form:normalizedForm})});
+    return untouched(envelope?Object.freeze({...envelope,data:blocked}):blocked,
+      "MISSION_SUNDAY_"+mission.reason);
+  }
+  const selectedWithMission=mission.status==="APPLIED"?mission.proper:selected;
+  const result=envelope?Object.freeze({...envelope,data:selectedWithMission}):selectedWithMission;
+  return Object.freeze({status:"CERTIFIED",reason:null,proper:result,decision,
+    missionSunday:mission.status==="APPLIED"?mission.decision:null});
 }

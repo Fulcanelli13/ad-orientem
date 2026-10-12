@@ -34,17 +34,50 @@ function readyEnvelope(slot,value,{language="en"}={}){
   // vernacular or Latin text; filtering valid neighbours silently loses Mass text.
   const incomplete=Array.isArray(value)&&value.some(row=>!usable(row,language));
   if(!rows.length||incomplete) return Object.freeze({status:"MISSING",slot,data:null});
+  const paragraphs=[];
+  for(const [index,row] of rows.entries()){
+    const composed=slot==="COLLECT_SET"?row.oneConclusion:null;
+    if(composed){
+      const latin=composed.segments?.lat,trans=composed.segments?.[language];
+      const rejoin=segment=>segment?.principal+"\n\n"+segment?.mission+"\n"+segment?.conclusion;
+      if(composed.status!=="CERTIFIED"||!latin||!trans||
+        rejoin(latin)!==String(row.lat??row.la)||
+        rejoin(trans)!==vernacularValue(row,language))
+        return Object.freeze({status:"MISSING",slot,data:null,
+          reason:"Unverified one-conclusion Collect composition"});
+      // Two illuminated text paragraphs but ONE liturgical Collect, with
+      // the shared conclusion ONLY after the missionary prayer.
+      paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1)+".PRINCIPAL",kind:"TEXT",
+        latin:latin.principal,vernacular:trans.principal,
+        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+      }));
+      paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1)+".MISSION",kind:"TEXT",
+        latin:latin.mission+"\n"+latin.conclusion,
+        vernacular:trans.mission+"\n"+trans.conclusion,
+        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+        sourcePath:composed.sourcePath,
+      }));
+      // When a separate St Luke commemoration follows in Low Mass, its
+      // conclusion is independent. The fixed end-of-block ℟. Amen covers
+      // that final prayer; emit this first Amen at the missionary conclusion.
+      if(index<rows.length-1)paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1)+".MISSION_AMEN",kind:"RESPONSE",
+        latin:"℟. Amen.",vernacular:"℟. Amen.",
+        role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+      }));
+    }else{
+      paragraphs.push(Object.freeze({
+        id:slot+"."+(index+1),kind:"TEXT",
+        latin:String(row.lat??row.la),vernacular:vernacularValue(row,language),
+      }));
+    }
+  }
   return Object.freeze({
-    status:"READY",
-    slot,
-    data:Object.freeze({
-      paragraphs:Object.freeze(rows.map((row,index)=>Object.freeze({
-        id:slot+"."+(index+1),
-        kind:"TEXT",
-        latin:String(row.lat??row.la),
-        vernacular:vernacularValue(row,language),
-      })))
-    })
+    status:"READY",slot,
+    data:Object.freeze({paragraphs:Object.freeze(paragraphs)})
   });
 }
 
@@ -68,6 +101,14 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     COMMUNION:readyEnvelope("COMMUNION",proper.communion,opts),
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
+
+  // Missing/competing §453 source or conclusion: never render a
+  // source-incomplete Mission Sunday as a certified ready Collect.
+  if(proper.missionSundayCollectDecision?.status==="UNVERIFIED"){
+    slots.COLLECT_SET=Object.freeze({status:"MISSING",slot:"COLLECT_SET",data:null,
+      reason:"Mission Sunday Collect source/precedence unverified: "+
+        proper.missionSundayCollectDecision.reason});
+  }
 
   // A source contradiction must not be displayed as a certified ready Preface.
   // This is a reader safety gate, NOT a substitute for repairing source selection.

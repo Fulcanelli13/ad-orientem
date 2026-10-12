@@ -45,6 +45,8 @@ try{
          scope:result.decision?.scope??null,applied:result.decision?.appliedCount??null,
          prayerCounts:["collects","secrets","postcommunions"].map(k=>selected?.[k]?.length??null),
          readerCollects:slots.slots.COLLECT_SET.data?.paragraphs?.length??null,
+         missionCollect:selected?.missionSundayCollectDecision?.status??null,
+         missionUnderOneConclusion:selected?.collects?.[0]?.oneConclusion?.status??null,
          printed:print.ok,printReason:print.reason??null,
          preservedCalendarCount:selected?.calendarCommemorations?.length??null}];
      }));
@@ -77,7 +79,13 @@ try{
      assert.equal(actual.status,"CERTIFIED",row.date+"/"+form+": "+actual.reason);
      assert.equal(actual.applied,expected[row.date][index]);
      assert.deepEqual(actual.prayerCounts,[n,n,n]);
-     assert.equal(actual.readerCollects,n,row.date+"/"+form+" LIVE text");
+     assert.equal(actual.readerCollects,n+(row.date==="2026-10-18"?(form==="LOW"?2:1):0),row.date+"/"+form+" LIVE paragraph focus");
+     if(row.date==="2026-10-18"){
+       assert.equal(actual.missionCollect,"CERTIFIED",form+" must include Mission Sunday under one conclusion");
+       assert.equal(actual.missionUnderOneConclusion,"CERTIFIED");
+     }else{
+       assert.equal(actual.missionCollect,null,"Mission Sunday cannot leak to another date");
+     }
      assert.equal(actual.printed,true,row.date+"/"+form+" print: "+actual.printReason);
      assert.equal(actual.preservedCalendarCount,1,row.date+"/"+form);
    }

@@ -7,6 +7,30 @@ import "./devotional-card-deck-styles.js";
 
 export const SEQUENTIAL_DEVOTIONAL_SCHEMA = "dual-axis-sequential-devotional-v1";
 
+/** The Novena stages are source-owned; this merely names their presentation. */
+export function novenaStageChapters({pattern="STANDARD",sharedClosing=false}={}, {french=false}={}){
+ const labels={
+  prepare:["Recollection","Recueillement"],opening:["Opening prayer","Prière d’ouverture"],
+  church:["Prayer of the Church","Prière de l’Église"],
+  common:["Common prayers","Prières communes"],day:["Prayer of the day","Prière du jour"],
+  invocation:["Invocation and prayers","Invocation et prières"],
+  shared:["Closing prayer","Prière de conclusion"],
+  close:["Conclusion","Conclusion"]
+ };
+ const keys=pattern==="HAMMER_MARIAN"
+   ?["prepare","opening","church","day","invocation","close"]
+   :pattern==="OPENING_DAY_COMMON_CLOSE"
+   ?["prepare","opening","common","day","close"]
+   :pattern==="COMMON_BEFORE_REPEAT"
+   ?["prepare","common","day","close"]
+   :sharedClosing?["prepare","day","common","shared","close"]
+   :["prepare","day","common","close"];
+ return Object.freeze(keys.map((id,i)=>Object.freeze({
+  id,title:labels[id][french?1:0],start:i
+ })));
+}
+
+
 const make=(doc,tag,klass,text)=>{
   const el=doc.createElement(tag);
   el.className=klass;
@@ -45,16 +69,17 @@ export function mercyChapters(steps,{french=false}={}){
 
 export function installSequentialDevotionalReader({
   mount,kind,chapters,activeIndex=0,onNavigate=()=>{},paragraphSelector,
-  onFocus=()=>{},restoreStep=null
+  onFocus=()=>{},restoreStep=null,timelineLabel=null
 }={}){
   const doc=mount?.ownerDocument;
   const card=mount?.querySelector(".aoDevoCard");
   const body=card?.querySelector(".aoDevoCardScroll");
   if(!doc||!card||!body||!Array.isArray(chapters)||!chapters.length)return null;
-  if(!["stations","mercy"].includes(kind))throw new RangeError("Unexpected sequence owner");
+  if(!["stations","mercy","novena","library"].includes(kind))throw new RangeError("Unexpected sequence owner");
   const index=Math.max(0,Math.min(chapters.length-1,Number(activeIndex)||0));
   const parent=kind==="stations"?mount.querySelector(".aoP435930StationRail"):
-    mount.querySelector(".aoMercyReader");
+    kind==="mercy"?mount.querySelector(".aoMercyReader"):
+    kind==="novena"?mount.querySelector(".aoN1Reader"):mount.querySelector(".aoP435930LibraryReader");
   if(!parent)return null;
   let timeline;
   if(kind==="stations"){
@@ -85,7 +110,7 @@ export function installSequentialDevotionalReader({
   }
   timeline.classList.add("aoDevoTimeline","aoDevoSequenceTimeline");
   timeline.dataset.aoDevotionalDeck=SEQUENTIAL_DEVOTIONAL_SCHEMA;
-  timeline.setAttribute("aria-label",kind==="stations"?"Station timeline":"Prayer timeline");
+  timeline.setAttribute("aria-label",timelineLabel||(kind==="stations"?"Station timeline":"Prayer timeline"));
   const stops=timeline.querySelector(".aoDevoStops");
   const prev=make(doc,"button","aoDevoNavArrow","←");
   const next=make(doc,"button","aoDevoNavArrow","→");
