@@ -200,6 +200,37 @@ try{
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').count(),1);
  const visualOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(visualOverflow<=1,"study view causes no horizontal page overflow");
+ // The two A12 additions must be real reader states, not entries that exist
+ // only in a research spreadsheet; each must navigate to its own 151-event ID.
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-jump]').count(),13);
+ const innocents=page.locator('#ao-find-modular-root [data-bible-study-jump="181"]');
+ await innocents.scrollIntoViewIfNeeded();
+ await innocents.tap({timeout:15000});
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="181"]'),null,{timeout:15000});
+ assert.match(await page.locator('#ao-find-modular-root [data-bible-scene-stage]').innerText(),/Matthew 2:16/);
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump="73"]').count(),1);
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-event-key]').getAttribute("data-bible-review-event-key"),
+  "biblical:event:bethlehem-additional-003");
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-scene-artwork]').count(),0,"no unapproved imagery");
+ await page.locator('#ao-find-modular-root [data-bible-review-jump="73"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
+   globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===73,null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-review-surface="cinematic"]').tap({timeout:15000});
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-cinematic-review]'),null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("APOSTLES");
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="182"]'),null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-jump]').count(),6);
+ assert.match(await page.locator('#ao-find-modular-root [data-bible-scene-stage]').innerText(),/Acts 2:1/);
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-event-key]').getAttribute("data-bible-review-event-key"),
+  "biblical:passage:acts-2-1-41");
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-scene-artwork]').count(),0);
+ await page.locator('#ao-find-modular-root [data-bible-review-jump="126"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
+   globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===126,null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-review-surface="cinematic"]').tap({timeout:15000});
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-cinematic-review]'),null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("INCARNATION");
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="57"]'),null,{timeout:15000});
  await captureView("cinematic-incarnation");
  await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
