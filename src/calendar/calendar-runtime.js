@@ -384,10 +384,30 @@ function profileOf(r){
   const map={extended_readings_mass:["Extended readings","Lectures étendues"],requiem_mass_1962:["Requiem","Requiem"],requiem:["Requiem","Requiem"],palm_sunday_mass:["Palm Sunday","Dimanche des Rameaux"],holy_thursday_mass:["Holy Thursday","Jeudi saint"],easter_vigil_mass:["Easter Vigil","Vigile pascale"]};
   return map[k]?(fr()?map[k][1]:map[k][0]):"";
 }
-function commemorations(r){
-  const d=r?.day,raw=d?.main?.commemorations||d?.commemorations||r?.commemorations||[];
-  return (Array.isArray(raw)?raw:[raw]).map(x=>typeof x==="string"?x:(fr()?(x?.nameFr||x?.titleFr||x?.name||x?.title):(x?.name||x?.title))).map(x=>String(x||"").trim()).filter(x=>x&&/[A-Za-zÀ-ÿ]/.test(x)&&!/^\d{1,2}[-_/]\d{2,4}$/.test(x));
+// The source resolver has canonical named day.commemorations as well as
+// day.main.commemorations, which can contain only opaque date codes. Choose
+// the first collection with human titles, not the first truthy array.
+export function calendarCommemorationNames(r,{language="en"}={}){
+  const french=String(language).toLowerCase().startsWith("fr");
+  for(const raw of [r?.day?.commemorations,r?.day?.main?.commemorations,r?.commemorations]){
+    const entries=Array.isArray(raw)?raw:raw==null?[]:[raw];
+    const names=entries.map(item=>{
+      if(typeof item==="string")return item.trim();
+      const title=item?.title;
+      const candidates=french?
+        [item?.titleFr,item?.nameFr,typeof title==="object"?title?.fr:null,
+         typeof title==="string"?title:null,item?.name,typeof title==="object"?title?.en:null]:
+        [typeof title==="string"?title:null,typeof title==="object"?title?.en:null,
+         item?.titleEn,item?.nameEn,typeof title==="object"?title?.fr:null,item?.name];
+      return candidates.map(x=>String(x??"").trim()).find(Boolean)||"";
+    }).filter(name=>name&&/[A-Za-zÀ-ÿ]/.test(name)&&
+      !/^\d{1,2}[-_/]\d{1,4}$/.test(name));
+    if(names.length)return [...new Set(names)];
+  }
+  return [];
 }
+function commemorations(r){return calendarCommemorationNames(r,{language:fr()?"fr":"en"});}
+
 function coverage(r,lang){const c=properOf(r)?.languageCoverage?.[lang];return c?{complete:!!c.complete}:null}
 function badge(lang,c){return `<span class="aoCalModBadge ${c?.complete?"ok":"warn"}">${lang.toUpperCase()} · ${esc(c?.complete?L("available","disponible"):L("unavailable","indisponible"))}</span>`}
 function fallbackWeekIds(selected){
