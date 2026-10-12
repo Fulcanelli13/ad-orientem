@@ -59,6 +59,14 @@
       "transcript_export_confirmed": false
     },
     {
+      "prefix": "BUD",
+      "topic": "Buddhism: Four Noble Truths, no-self, salvation and Catholic engagement",
+      "original_range_count": 12,
+      "witness": "2026-10-07T14:26:27Z",
+      "provenance": "ORIGINAL_ASSISTANT_RESPONSE_EXCERPT",
+      "transcript_export_confirmed": false
+    },
+    {
       "prefix": "CHR",
       "topic": "Chinese popular religion",
       "original_range_count": null,
@@ -104,6 +112,14 @@
       "original_range_count": null,
       "witness": "2026-10-07T16:02:45Z",
       "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "HIN",
+      "topic": "Hinduism: plurality of traditions, Brahman, Atman and Hindu-Christian theology",
+      "original_range_count": 13,
+      "witness": "2026-10-07T13:27:58Z",
+      "provenance": "ORIGINAL_ASSISTANT_RESPONSE_EXCERPT",
       "transcript_export_confirmed": false
     },
     {
@@ -1316,6 +1332,33 @@
       "fully_verified_against_original_chat_export": false
     },
     {
+      "id": "BUD-001",
+      "question": "Is Buddhism simply atheism?",
+      "bank": "BUD",
+      "original_message_timestamp_utc": "2026-10-07T14:26:27Z",
+      "witness_kind": "NUMBERED_ORIGINAL_QUESTION_QUOTED_FROM_PRIOR_ASSISTANT_RESPONSE",
+      "confidence": "SOURCE_EXCERPT_INDEXED_ORIGINAL_ASSISTANT_TEXT_NOT_CHAT_EXPORT_VERIFIED",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "BUD-002",
+      "question": "What are the Four Noble Truths?",
+      "bank": "BUD",
+      "original_message_timestamp_utc": "2026-10-07T14:26:27Z",
+      "witness_kind": "NUMBERED_ORIGINAL_QUESTION_QUOTED_FROM_PRIOR_ASSISTANT_RESPONSE",
+      "confidence": "SOURCE_EXCERPT_INDEXED_ORIGINAL_ASSISTANT_TEXT_NOT_CHAT_EXPORT_VERIFIED",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "BUD-003",
+      "question": "What does ‘no-self’ actually mean?",
+      "bank": "BUD",
+      "original_message_timestamp_utc": "2026-10-07T14:26:27Z",
+      "witness_kind": "NUMBERED_ORIGINAL_QUESTION_QUOTED_FROM_PRIOR_ASSISTANT_RESPONSE",
+      "confidence": "SOURCE_EXCERPT_INDEXED_ORIGINAL_ASSISTANT_TEXT_NOT_CHAT_EXPORT_VERIFIED",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
       "id": "ERR-001",
       "question": "Is Freemasonry properly a “heresy”?",
       "bank": "ERR",
@@ -1529,6 +1572,33 @@
       "original_message_timestamp_utc": "2026-10-07T13:57:26Z",
       "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXPLICIT_QUOTED_TITLE_FROM_PERSONAL_CONTEXT_RETRIEVAL_20261012",
       "confidence": "QUESTION_QUOTED_IN_SEARCH_RESULT_FULL_ORIGINAL_MESSAGE_NOT_EXPORTED",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "HIN-001",
+      "question": "Is Hinduism simply polytheism?",
+      "bank": "HIN",
+      "original_message_timestamp_utc": "2026-10-07T13:27:58Z",
+      "witness_kind": "NUMBERED_ORIGINAL_QUESTION_QUOTED_FROM_PRIOR_ASSISTANT_RESPONSE",
+      "confidence": "SOURCE_EXCERPT_INDEXED_ORIGINAL_ASSISTANT_TEXT_NOT_CHAT_EXPORT_VERIFIED",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "HIN-002",
+      "question": "What is Brahman?",
+      "bank": "HIN",
+      "original_message_timestamp_utc": "2026-10-07T13:27:58Z",
+      "witness_kind": "NUMBERED_ORIGINAL_QUESTION_QUOTED_FROM_PRIOR_ASSISTANT_RESPONSE",
+      "confidence": "SOURCE_EXCERPT_INDEXED_ORIGINAL_ASSISTANT_TEXT_NOT_CHAT_EXPORT_VERIFIED",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "HIN-003",
+      "question": "What is *ātman*?",
+      "bank": "HIN",
+      "original_message_timestamp_utc": "2026-10-07T13:27:58Z",
+      "witness_kind": "NUMBERED_ORIGINAL_QUESTION_QUOTED_FROM_PRIOR_ASSISTANT_RESPONSE",
+      "confidence": "SOURCE_EXCERPT_INDEXED_ORIGINAL_ASSISTANT_TEXT_NOT_CHAT_EXPORT_VERIFIED",
       "fully_verified_against_original_chat_export": false
     },
     {
