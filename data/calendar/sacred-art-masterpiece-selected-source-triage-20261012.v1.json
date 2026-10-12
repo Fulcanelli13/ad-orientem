@@ -240,11 +240,25 @@
       "objectIdentificationMatchesUserChoice": "YES_SOURCE_AND_USER_LOCATION_MATCH",
       "museumArchiveOriginalsAcquired": [],
       "pixelsAcquiredInThisBatch": false,
-      "rightsState": "FLEMISH_COLLECTION_IMAGE_CC0_DECLARATION_CHECK_WITH_SOURCE_FILE_AND_TERMS",
+      "rightsState": "INSTITUTION_IIIF_MANIFEST_PD_MARK_AND_CC0_ATTRIBUTION; TECHNICAL_FILE_DOWNLOAD_AND_APP_QA_PENDING",
       "reproductionLicenseVerified": false,
       "homeCropApproved": false,
       "homeAestheticApproved": false,
-      "description": "User location and KMSKA inventory 314 confirm object; institutional IIIF/TIFF available in principle, still need verify pixels and publication gate."
+      "description": "User location and KMSKA inventory 314 confirm object; institutional IIIF/TIFF available in principle, still need verify pixels and publication gate.",
+      "iiif": {
+        "manifestUrl": "https://iiif.kmska.be/iiif/2/28958/manifest.json",
+        "imageServiceId": "https://iiif.kmska.be/c/iiif/2/public@28958.tif",
+        "reportedMaxWidth": 19178,
+        "reportedMaxHeight": 19721,
+        "manifestLicense": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "attributionTextRightsLabel": "CC0, CC0, Public domain",
+        "originalPhotographer": "The J. Paul Getty Museum",
+        "originalBytesAcquired": false,
+        "actualFileHash": null,
+        "phoneCropApproved": false,
+        "rightsMetadataReconciled": true,
+        "note": "KMSKA/VKC first-party collection record displays CC0 and IIIF public-domain mark. These dimensions are manifest metadata, not a downloaded or personally inspected local image. Do not promote to production until hashed local source and crop/frame QA."
+      }
     },
     {
       "anchorTheme": "assumption",
