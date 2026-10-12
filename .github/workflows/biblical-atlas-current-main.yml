@@ -7,6 +7,8 @@ on:
       - "data/explore/bible-places-*.json"
       - "tests/explore-bible-atlas-*.mjs"
       - "tests/biblical-lineage-native-review.mjs"
+      - "tests/biblical-cinematic-studies.mjs"
+      - "data/explore/biblical-cinematic-studies-review.v1.json"
       - "data/explore/biblical-lineage-curated-review.v1.json"
       - ".github/workflows/biblical-atlas-current-main.yml"
   workflow_dispatch:
@@ -30,6 +32,7 @@ jobs:
           node --check src/find/bible-atlas.js
           node --check src/find/bible-atlas-expanded-milestones.js
           node --check src/find/bible-lineage-review.js
+          node --check src/find/bible-cinematic-studies.js
           node --check src/find/explore-data-service.js
           node --check src/find/map-runtime.js
           node --check src/find/heritage-presentation.js
@@ -37,6 +40,8 @@ jobs:
         run: npm run test:explore-bible-atlas
       - name: Review-only lineage and apostolic evidence
         run: node tests/biblical-lineage-native-review.mjs
+      - name: Cinematic 181-to-151 evidence crosswalk
+        run: node tests/biblical-cinematic-studies.mjs
       - name: Existing Explore and sacred place regression
         run: |
           node tests/explore-surface.mjs
