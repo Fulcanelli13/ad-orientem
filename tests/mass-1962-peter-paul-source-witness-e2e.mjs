@@ -28,4 +28,23 @@ groups:["collects","secrets","postcommunions"].map(k=>({name:k,count:p?.[k]?.len
 warnings:r?.diagnostic?.warnings?.slice(0,3)??[]});
 }return out});
 for(const row of rows){console.log("PETER_PAUL_1962_WITNESS="+JSON.stringify(row));assert.equal(row.status,"ready",row.date)}
+const hostSections=await page.evaluate(async()=>{
+ const host=globalThis.AO_RUNTIME_V8.resolver.properResolver;
+ const out={};
+ for(const language of ["la","en","fr"]){
+  for(const source of ["Sancti/02-22","Sancti/06-30"]){
+    try{
+      const parsed=await host.resolveSource(source,language,{
+        requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],
+        structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]
+      });
+      const wanted=["Oratio Petri","Secreta Petri","Postcommunio Petri",
+        "Oratio","Secreta","Postcommunio"];
+      out[source+"|"+language]=Object.fromEntries(wanted.map(k=>[k,
+        parsed?.map?.get(k)?.map(s=>s.slice(0,140))??null]));
+    }catch(e){out[source+"|"+language]={error:String(e?.message??e)}}
+  }
+ }return out;
+});
+console.log("PETER_PAUL_SOURCE_SECTIONS="+JSON.stringify(hostSections));
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
