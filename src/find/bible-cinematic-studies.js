@@ -18,11 +18,27 @@ export function validateCinematicStudies(data){
    data.counts?.canonicalTimeline!==151)return false;
  const counts={EXACT_REFERENCE:0,PASSAGE_OVERLAP_REVIEW_ONLY:0,NO_DIRECT_PASSAGE_MATCH:0};
  const seen=new Set();
- for(const s of data.scenes){
-  if(!Number.isInteger(s.index)||s.index<0||s.index>180||seen.has(s.index)||!Object.hasOwn(counts,s.status)||
-   !s.reference||!s.title_en||!s.title_fr||!arr(s.candidates))return false;
+ for(const [position,s] of data.scenes.entries()){
+  // Indices address the array directly in the reader. A shuffled 181-scene
+  // dataset must not silently display a different scene on a chapter jump.
+  if(!Number.isInteger(s.index)||s.index!==position||seen.has(s.index)||!Object.hasOwn(counts,s.status)||
+   !s.reference||!s.title_en||!s.title_fr||!s.synopsis_en||!s.synopsis_fr||
+   !s.evidence_en||!s.evidence_fr||s.citationOnly!==true||!Array.isArray(s.candidates))return false;
   if(Object.hasOwn(s,"geo")||Object.hasOwn(s,"coordinates")||Object.hasOwn(s,"art")||
      Object.hasOwn(s,"imageUrl")||Object.hasOwn(s,"sourceHasCoordinate"))return false;
+  const exact=s.candidates.filter(c=>c?.relation==="EXACT_REFERENCE");
+  if((s.status==="EXACT_REFERENCE"&&exact.length!==1)||
+     (s.status!=="EXACT_REFERENCE"&&exact.length!==0)||
+     (s.status==="NO_DIRECT_PASSAGE_MATCH"&&s.candidates.length!==0)||
+     (s.status==="PASSAGE_OVERLAP_REVIEW_ONLY"&&!s.candidates.length))return false;
+  const keys=new Set();
+  for(const candidate of s.candidates){
+   if(!Number.isInteger(candidate?.atlasIndex)||candidate.atlasIndex<0||candidate.atlasIndex>=151||
+      !["EXACT_REFERENCE","PASSAGE_OVERLAP_REVIEW_ONLY"].includes(candidate.relation)||
+      !candidate.reference||keys.has(candidate.atlasIndex))return false;
+   if(candidate.relation==="EXACT_REFERENCE"&&ref(candidate.reference)!==ref(s.reference))return false;
+   keys.add(candidate.atlasIndex);
+  }
   counts[s.status]++;seen.add(s.index);
  }
  if(counts.EXACT_REFERENCE!==65||counts.PASSAGE_OVERLAP_REVIEW_ONLY!==29||counts.NO_DIRECT_PASSAGE_MATCH!==87)return false;
@@ -38,6 +54,19 @@ export function validateCinematicStudies(data){
   }
  }
  return referenced.length===181&&new Set(referenced).size===181;
+}
+// Cross-reference index integrity, NOT historical/event identity certification.
+// This prevents an obsolete 151-event index or stale passage from appearing as a
+// valid editorial candidate after the chronology evolves.
+export function validateCinematicCrosswalk(data,atlasStops=[]){
+ if(!validateCinematicStudies(data)||!Array.isArray(atlasStops)||atlasStops.length!==151)return false;
+ for(const s of data.scenes){
+  for(const candidate of s.candidates){
+   const stop=atlasStops[candidate.atlasIndex];
+   if(!stop||stop.index!==candidate.atlasIndex||ref(stop.reference)!==ref(candidate.reference))return false;
+  }
+ }
+ return true;
 }
 export function studyChapter(data,key){
  if(!validateCinematicStudies(data))return null;
