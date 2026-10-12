@@ -75,6 +75,46 @@ for(const corpus of [low,sung]){
   }
 }
 
+// Dynamic Proper text is not static corpus text, but every Proper block has
+// a canonical source-owned text cue. The resolved paragraph must be focusable
+// in LIVE without borrowing the adjoining minister/server response cue.
+for(const corpus of [low,sung]){
+  for(const block of corpus.blocks.filter(b=>b.Proper_Slot)){
+    const section=sections.sections.find(x=>x.sequence===Number(block.Macro_ID.slice(-2)));
+    const resolved=buildReaderSectionCard({corpus,section,properSlots});
+    const sourcedCue=block.units.find(u=>u.clock!=="MINISTER_RESPONSE"&&u.clock!=="USER_RESPONSE")?.cue_id;
+    const properRows=resolved.paragraphs.filter(p=>p.primary==="ENGLISH "+block.Proper_Slot);
+    assert(properRows.length>0,corpus.form+"/"+block.Proper_Slot+" proper disappeared");
+    for(const p of properRows){
+      assert.deepEqual([...p.sourceCueIds],[sourcedCue],
+        corpus.form+"/"+block.Proper_Slot+" proper lost original canonical focus cue");
+    }
+    if(block.Proper_Slot==="EPISTLE_OR_LESSON"){
+      assert(!properRows.some(p=>p.sourceCueIds.includes("AO.SM.C0076")),
+        "the Epistle Proper was incorrectly assigned the server Deo gratias response cue");
+    }
+    if(block.Proper_Slot==="GOSPEL"){
+      assert(!properRows.some(p=>p.sourceCueIds.includes("AO.SM.C0087")),
+        "the Gospel Proper was incorrectly assigned Laus tibi response cue");
+    }
+  }
+}
+const multiProper={...properSlots,
+  EPISTLE_OR_LESSON:{
+    status:"READY",data:{paragraphs:[
+      {id:"lesson-a",latin:"Lectio prima",english:"First lesson"},
+      {id:"lesson-b",latin:"Lectio secunda",english:"Second lesson"}
+    ]}
+  }
+};
+const multiEpistle=buildReaderSectionCard({
+  corpus:low,section:sections.sectionById("AO.CARD.005"),properSlots:multiProper
+});
+for(const p of multiEpistle.paragraphs.filter(p=>["lesson-a","lesson-b"].includes(p.id))){
+  assert.deepEqual([...p.sourceCueIds],["AO.SM.C0075"],
+    "multi-paragraph Epistle must preserve one authentic canonical source cue");
+}
+
 const introit=buildReaderSectionCard({
   corpus:low,
   section:sections.sectionById("AO.CARD.001"),
