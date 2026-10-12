@@ -73,7 +73,7 @@ assert.equal(root.dataset.massCalendarSource,"1962_RESOLVER");
 assert.equal(block.dataset.massCommemorationReadiness,"COMPLETE");
 fillMassCalendarPreflight(root,bad);
 assert.equal(block.dataset.massCommemorationReadiness,"INCOMPLETE");
-assert.match(fields.get("commemoration-prayers").textContent,/not yet available/);
+assert.match(fields.get("commemoration-prayers").textContent,/incomplets dans le propre choisi/);
 fillMassCalendarPreflight(root,hostile);
 assert.equal(fields.get("commemoration-name").textContent,"<script>bad()</script>");
 const fakeRootHtml=readFileSync(new URL("../src/mass/full-mass-preflight.js",import.meta.url),"utf8");
