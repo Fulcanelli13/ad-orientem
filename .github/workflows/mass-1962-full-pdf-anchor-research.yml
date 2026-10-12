@@ -5,6 +5,8 @@ on:
     paths:
       - 'scripts/research/mass-1962-pdf-anchor-discovery.mjs'
       - 'tests/mass-1962-pdf-anchor-discovery.mjs'
+      - 'scripts/research/mass-1962-cluster-page-context.mjs'
+      - 'tests/mass-1962-cluster-page-context.mjs'
       - '.github/workflows/mass-1962-full-pdf-anchor-research.yml'
 jobs:
   compare-printed-ocr:
@@ -44,19 +46,27 @@ jobs:
             data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json
       - name: Check candidate accounting and no publication claims
         run: node tests/mass-1962-pdf-anchor-discovery.mjs
+      - name: Build 44 source-to-page heading dossiers
+        run: |
+          node scripts/research/mass-1962-cluster-page-context.mjs artifacts/missale62.txt \
+            data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json
+      - name: Validate 44-page contextual dossiers and closed edition gates
+        run: node tests/mass-1962-cluster-page-context.mjs
       - name: Upload only compact research concordance (not the whole PDF)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mass-1962-full-pdf-100-anchor-review
-          path: data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json
+          path: |
+            data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json
+            data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json
           if-no-files-found: warn
       - name: Commit research-only concordance into the existing PR branch
         if: success() && github.ref == 'refs/heads/research/biblical-people-genealogy-explorer-20261011'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json
+          git add data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json
           if ! git diff --staged --quiet; then
             git commit -m "data(research): compare 100 high-priority paths with full 1962 Missal OCR page candidates"
             git push origin "HEAD:${GITHUB_REF_NAME}"
