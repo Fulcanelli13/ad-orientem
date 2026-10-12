@@ -4,7 +4,7 @@ import {readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
-import {internalPrayerView,INTERNAL_PRAYER_VIEWS} from "../src/pray/internal-route-owner.js";
+import {internalPrayerView,INTERNAL_PRAYER_VIEWS,supportedDirectPrayerRoute} from "../src/pray/internal-route-owner.js";
 
 assert.equal(internalPrayerView("pray.angelus_regina"),"angelus");
 assert.equal(internalPrayerView("pray.stations"),"stations");
@@ -13,6 +13,10 @@ assert.equal(internalPrayerView("pray.novenas"),null,"Registry-owned Novenas can
 assert.equal(internalPrayerView("pray.morning_evening"),null,"Traditional reader cannot be stolen");
 assert.equal(internalPrayerView("pray.whatever_missing"),null,"No unknown route may silently become Angelus");
 assert.ok(Object.isFrozen(INTERNAL_PRAYER_VIEWS));
+assert.equal(supportedDirectPrayerRoute("pray.rosary"),true,"Rosary's bead owner is a supported direct launch");
+assert.equal(supportedDirectPrayerRoute("pray.angelus_regina"),true);
+assert.equal(supportedDirectPrayerRoute("pray.novenas"),false,"External Novena reader must not be captured by the direct own-reader API");
+assert.equal(supportedDirectPrayerRoute("pray.fake_missing_route"),false);
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".webp":"image/webp"};
@@ -48,6 +52,11 @@ try{
  });
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"home",
    "Unknown in-reader route replaced current view");
+ // Direct API calls must also preserve route and Back context on failure.
+ const invalid=await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.fake_missing_route",{returnContext:{surface:"calendar"}}));
+ assert.equal(invalid,false);
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"home",
+   "Unknown direct Prayer API launch changed the active view");
  assert.equal(await page.locator('#aoPray435930 [data-p435930-internal-route-error="pray.fake_missing_route"]').count(),1,
    "Exact missing-route failure must be visible, not silently return Angelus");
  assert.equal(await page.locator("#aoPray435930 .aoP435930AngelusSequence").count(),0);
