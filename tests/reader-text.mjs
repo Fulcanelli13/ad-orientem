@@ -85,9 +85,11 @@ for(const corpus of [low,sung]){
     const sourcedCue=block.units.find(u=>u.clock!=="MINISTER_RESPONSE"&&u.clock!=="USER_RESPONSE")?.cue_id;
     const properRows=resolved.paragraphs.filter(p=>p.primary==="ENGLISH "+block.Proper_Slot);
     assert(properRows.length>0,corpus.form+"/"+block.Proper_Slot+" proper disappeared");
-    for(const p of properRows){
-      assert.deepEqual([...p.sourceCueIds],[sourcedCue],
-        corpus.form+"/"+block.Proper_Slot+" proper lost original canonical focus cue");
+    for(const [index,p] of properRows.entries()){
+      assert.deepEqual([...p.sourceCueIds],index===0?[sourcedCue]:[],
+        corpus.form+"/"+block.Proper_Slot+" duplicated the canonical Proper source cue");
+      assert.equal(p.properCueScopeId,sourcedCue,
+        corpus.form+"/"+block.Proper_Slot+" lost Proper paragraph focus scope");
     }
     if(block.Proper_Slot==="EPISTLE_OR_LESSON"){
       assert(!properRows.some(p=>p.sourceCueIds.includes("AO.SM.C0076")),
@@ -110,10 +112,13 @@ const multiProper={...properSlots,
 const multiEpistle=buildReaderSectionCard({
   corpus:low,section:sections.sectionById("AO.CARD.005"),properSlots:multiProper
 });
-for(const p of multiEpistle.paragraphs.filter(p=>["lesson-a","lesson-b"].includes(p.id))){
-  assert.deepEqual([...p.sourceCueIds],["AO.SM.C0075"],
-    "multi-paragraph Epistle must preserve one authentic canonical source cue");
-}
+const multiRows=multiEpistle.paragraphs.filter(p=>["lesson-a","lesson-b"].includes(p.id));
+assert.equal(multiRows.length,2);
+assert.deepEqual([...multiRows[0].sourceCueIds],["AO.SM.C0075"]);
+assert.deepEqual([...multiRows[1].sourceCueIds],[],
+  "second reading paragraph duplicated canonical Epistle event");
+assert(multiRows.every(p=>p.properCueScopeId==="AO.SM.C0075"),
+  "multi-paragraph Epistle lost its shared presentation-only cue territory");
 
 const introit=buildReaderSectionCard({
   corpus:low,
