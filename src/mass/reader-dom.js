@@ -297,7 +297,10 @@ const SHELL_STYLE = `
 }
 .ao-rail-left{left:max(5px,calc((100% - 1080px)/2))}
 .ao-rail-right{right:max(5px,calc((100% - 1080px)/2))}
-.ao-rail[data-visible="false"]{display:flex}
+.ao-rail[data-visible="false"]{display:none}
+/* Only currently applicable transient instructions occupy either LIVE rail.
+   Persistent posture/position belong to the upper ribbon, not ghost rail boxes. */
+.ao-rail .ao-rail-item[data-active="false"]{display:none}
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-rail{display:none}
 .ao-rail-item{
   position:relative;flex:0 0 auto;width:52px;height:52px;min-height:52px;padding:0;
@@ -1242,8 +1245,25 @@ function setChannel(root, channel, value){
   // The top state cell and its hidden persistent rail counterpart may share
   // a semantic channel. Update both states: the top cell remains the only
   // persistent visual owner, while transient rails have their own channel.
+  const label=textValue(value);
+  const active=Boolean(label);
   for(const item of root.querySelectorAll?.(`[data-channel="${channel}"]`)??[]){
-    item.dataset.active=String(Boolean(textValue(value)));
+    item.dataset.active=String(active);
+    // The icons are intentionally label-free visually, but remain meaningful
+    // for screen readers and for long-press/hover; never leave stale labels
+    // on a later inactive cue or a different priest action.
+    if(!item.classList?.contains("ao-rail-item"))continue;
+    if(active){
+      item.setAttribute("role","img");
+      item.setAttribute("aria-label",label);
+      item.removeAttribute("aria-hidden");
+      item.title=label;
+    }else{
+      item.removeAttribute("role");
+      item.removeAttribute("aria-label");
+      item.setAttribute("aria-hidden","true");
+      item.removeAttribute("title");
+    }
   }
 }
 
@@ -1254,10 +1274,16 @@ function syncRailVisibility(root){
   const live=String(shell?.dataset?.mode??"LIVE").toUpperCase()==="LIVE";
   const left=root.querySelector(".ao-rail-left");
   const right=root.querySelector(".ao-rail-right");
-  if(left)left.dataset.visible=String(live);
-  if(right)right.dataset.visible=String(live);
-  stage.dataset.leftRail=String(live);
-  stage.dataset.rightRail=String(live);
+  // The left persistent posture is already owned by the top ribbon; only
+  // transient faithful cues count when deciding if the left rail exists.
+  const hasVisibleCue=rail=>Boolean(rail?.querySelector?.(
+    '.ao-rail-item[data-active="true"]:not([data-channel="posture"])'
+  ));
+  const leftActive=live&&hasVisibleCue(left),rightActive=live&&hasVisibleCue(right);
+  if(left)left.dataset.visible=String(leftActive);
+  if(right)right.dataset.visible=String(rightActive);
+  stage.dataset.leftRail=String(leftActive);
+  stage.dataset.rightRail=String(rightActive);
 }
 
 // The v1.80 bank uses SVG transport wrappers for 57 PNG alpha payloads,
