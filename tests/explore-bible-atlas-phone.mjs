@@ -90,6 +90,11 @@ try{
  await page.locator('#ao-find-modular-root [data-bible-review-lineage="genesis"]').tap({timeout:15000});
  await page.locator('#ao-find-modular-root [data-bible-review-root="noah"]').tap({timeout:15000});
  assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Noah/);
+ assert.equal(await page.locator('#ao-find-modular-root [role="tree"]').count(),1,"Genesis has a connected source hierarchy");
+ assert.ok(await page.locator('#ao-find-modular-root [data-bible-family-edge]').count()>=2);
+ assert.ok(await page.locator('#ao-find-modular-root [data-bible-family-person="shem"]').count()>=1);
+ const treeOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+ assert.ok(treeOverflow<=1,"Genesis tree does not expand the whole document");
  await page.locator('#ao-find-modular-root [data-bible-review-surface="apostles"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="apostles",null,{timeout:15000});
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-apostle]').count(),20);
@@ -107,6 +112,29 @@ try{
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewApostle==="philip-evangelist",null,{timeout:15000});
  assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Philip the Evangelist/);
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-map]").count(),0,"unverified research locations must not become pins");
+ // Four cinematic journeys are an evidence-classified study, not a replacement
+ // of the 151-event canonical chronology. Research pins and artwork stay out.
+ await page.locator('#ao-find-modular-root [data-bible-review-surface="cinematic"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="cinematic"&&
+  document.querySelector('#ao-find-modular-root [data-bible-cinematic-review]'),null,{timeout:20000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-chapter]').count(),14);
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-scene="0"]').count(),1);
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump]').count(),0,"overlap cannot become a jump");
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-map]').count(),0,"no research map pins");
+ await page.locator('#ao-find-modular-root [data-bible-study-chapter="DELIVERANCE"]').tap({timeout:15000});
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="25"]'),null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-study-direction="1"]').tap({timeout:15000});
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="26"]'),null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-study-chapter="INCARNATION"]').tap({timeout:15000});
+ await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="57"]'),null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').count(),1);
+ const visualOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+ assert.ok(visualOverflow<=1,"study view causes no horizontal page overflow");
+ await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
+  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66,null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-step]').count(),151);
+
  await page.locator('#ao-find-modular-root [data-bible-review-surface="timeline"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
   document.querySelectorAll("#ao-find-modular-root [data-bible-step]").length===151,null,{timeout:15000});
