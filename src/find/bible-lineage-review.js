@@ -3,6 +3,14 @@ const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const L=(lang,en,fr)=>lang==="fr"?fr:en;
 const url=v=>typeof v==="string"&&/^https:\/\/[a-z0-9.-]+\//i.test(v)?v:null;
 const arr=v=>Array.isArray(v)?v:[];
+const passageKey=v=>String(v??"").toLowerCase().replace(/[–—]/g,"-").replace(/\s+/g," ").trim();
+// Textual reference equality only. It neither equates two historical scenes nor certifies a place.
+export function exactAtlasReferenceIndex(milestones,reference){
+ const wanted=passageKey(reference);
+ if(!wanted)return null;
+ const hits=arr(milestones).filter(m=>passageKey(m.reference)===wanted);
+ return hits.length===1&&Number.isInteger(hits[0].index)?hits[0].index:null;
+}
 export const BIBLE_REVIEW_DEFAULT=Object.freeze({surface:"timeline",lineage:"genesis",root:"adam",depth:3,page:0,apostle:"mary"});
 export function validateLineageReviewCorpus(data){
  const g=data?.genealogies??{};
@@ -44,7 +52,7 @@ export function apostolicProfile(data,id){
   .map(e=>({...e,source:url(e.source),location:data.locations.find(l=>l.id===e.place)||null}))};
 }
 const BUTTON=(attr,k,active,label)=>'<button type="button" '+attr+'="'+esc(k)+'" aria-pressed="'+String(active)+'">'+esc(label)+'</button>';
-export function renderLineageReview(data,{language="en",surface="genealogies",lineage="genesis",root="adam",depth=3,page=0,apostle="mary"}={}){
+export function renderLineageReview(data,{language="en",surface="genealogies",lineage="genesis",root="adam",depth=3,page=0,apostle="mary",atlasStops=[]}={}){
  const lang=language==="fr"?"fr":"en",review=validateLineageReviewCorpus(data);
  const tabs=[["timeline","Chronology","Chronologie"],["genealogies","Genealogies","Généalogies"],["apostles","Apostolic lives","Vies apostoliques"]]
   .map(([k,en,fr])=>BUTTON("data-bible-review-surface",k,k===surface,L(lang,en,fr))).join("");
@@ -102,7 +110,8 @@ export function renderLineageReview(data,{language="en",surface="genealogies",li
     (e.location?.name?'<small>'+esc(e.location.name)+' · '+esc(e.location.kind)+'</small>':"")+
     (e.note?'<p>'+esc(e.note)+'</p>':"")+
     (e.source?'<a href="'+esc(e.source)+'" rel="noopener noreferrer" target="_blank">'+esc(e.reference||L(lang,"Original source","Source originale"))+' ↗</a>':"")+
-    (e.kind==="scripture"&&/^[1-3]?[A-Za-z]+(?:\s+[A-Za-z]+)*\s+\d+:\d+/.test(e.reference||"")?'<button type="button" data-ao-scripture-context="'+esc(e.reference)+'">'+esc(L(lang,"Read Scripture","Lire les Écritures"))+'</button>':"")+'</li>';
+    (e.kind==="scripture"&&/^[1-3]?[A-Za-z]+(?:\s+[A-Za-z]+)*\s+\d+:\d+/.test(e.reference||"")?'<button type="button" data-ao-scripture-context="'+esc(e.reference)+'">'+esc(L(lang,"Read Scripture","Lire les Écritures"))+'</button>':"")+
+    (e.kind==="scripture"&&exactAtlasReferenceIndex(atlasStops,e.reference)!==null?'<button type="button" data-bible-review-jump="'+exactAtlasReferenceIndex(atlasStops,e.reference)+'">'+esc(L(lang,"Related chronology reference","Référence dans la chronologie"))+'</button>':"")+'</li>';
   }).join("")+'</ol>';
  }
  return wrapper(warning+body);
