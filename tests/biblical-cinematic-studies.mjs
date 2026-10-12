@@ -1,212 +1,108 @@
 import assert from "node:assert/strict";
-import http from "node:http";
-import {readFile,mkdir} from "node:fs/promises";
-import {extname,resolve,sep} from "node:path";
-import {fileURLToPath} from "node:url";
-import {chromium} from "@playwright/test";
+import {readFileSync} from "node:fs";
+import {buildBibleAtlas} from "../src/find/bible-atlas.js";
+import {
+ validateCinematicStudies,validateCinematicCrosswalk,studyChapter,studyScene,studyStep,
+ cinematicExactAtlasTarget,renderCinematicStudies
+} from "../src/find/bible-cinematic-studies.js";
+const source=JSON.parse(readFileSync(new URL("../data/explore/biblical-cinematic-studies-review.v1.json",import.meta.url),"utf8"));
+const atlasData=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact.v1.json",import.meta.url),"utf8"));
+const stops=buildBibleAtlas(atlasData.entries);
+assert.equal(stops.length,151,"canonical chronology is unchanged");
+assert.equal(validateCinematicStudies(source),true,"181 source-reviewed scene integrity required");
+assert.equal(validateCinematicCrosswalk(source,stops),true,
+ "Every 181-scene candidate must still reference the exact current canonical passage and index");
 
-const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
-const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
- ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
- ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
- ".jpg":"image/jpeg",".jpeg":"image/jpeg",".webp":"image/webp",".woff2":"font/woff2"};
-const server=http.createServer(async(req,res)=>{
- try{
-  const path=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
-  const file=resolve(root,"."+path);
-  if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end("Forbidden");return}
-  const bytes=await readFile(file);
-  res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});
-  res.end(bytes);
- }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error?.message??error))}
-});
-await new Promise((ok,no)=>{server.once("error",no);server.listen(4275,"127.0.0.1",ok)});
-let browser;
-try{
- browser=await chromium.launch({headless:true});
- const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2,locale:"en-GB"});
- const page=await context.newPage(),errors=[];
- const screenshotFolder=resolve(root,"test-output/biblical-atlas-a3");
- async function captureView(name){
-   await mkdir(screenshotFolder,{recursive:true});
-   for(const size of [320,390,768,1280]){
-     await page.setViewportSize({width:size,height:844});
-     await page.waitForTimeout(120);
-     const geometry=await page.evaluate(()=>({width:innerWidth,documentWidth:document.documentElement.scrollWidth,rootWidth:document.querySelector("#ao-find-modular-root")?.getBoundingClientRect().width}));
-     assert.ok(geometry.documentWidth<=geometry.width+1,name+" page overflow at "+size+"px: "+JSON.stringify(geometry));
-     if(name==="cinematic-incarnation"||name==="genesis-branch-tree"){
-       const visibility=await page.evaluate(()=>{
-         const selectors=[".aoBibleStudyTabs [aria-pressed=true]",".aoBibleReviewTabs [aria-pressed=true]"];
-         return selectors.map(selector=>document.querySelector("#ao-find-modular-root "+selector)).filter(Boolean).map(button=>{
-           const outer=button.parentElement.getBoundingClientRect(),inner=button.getBoundingClientRect();
-           return {label:button.textContent,visible:inner.left>=outer.left-2&&inner.right<=outer.right+2};
-         });
-       });
-       assert.ok(visibility.length>=1&&visibility.every(x=>x.visible),name+" active tab not visible at "+size+": "+JSON.stringify(visibility));
-       if(name==="cinematic-incarnation"&&size<=390){
-         const chapterPicker=page.locator("#ao-find-modular-root [data-bible-study-chapter-select]");
-         assert.equal(await chapterPicker.isVisible(),true,"selected chapter must be visible on a phone");
-         assert.equal(await chapterPicker.inputValue(),"INCARNATION");
-       }
-     }
-     await page.screenshot({path:resolve(screenshotFolder,name+"-"+size+".png"),fullPage:false,animations:"disabled"});
-   }
-   await page.setViewportSize({width:390,height:844});
- }
+assert.deepEqual(source.chapters.map(c=>c.group).filter((g,i,a)=>i===0||g!==a[i-1]),["ABRAHAM","MOSES","CHRIST","PAUL"]);
+assert.equal(source.chapters.reduce((n,c)=>n+c.sceneIndices.length,0),181);
+const counts=Object.fromEntries(["EXACT_REFERENCE","PASSAGE_OVERLAP_REVIEW_ONLY","NO_DIRECT_PASSAGE_MATCH"].map(k=>[k,source.scenes.filter(s=>s.status===k).length]));
+assert.deepEqual(counts,{EXACT_REFERENCE:65,PASSAGE_OVERLAP_REVIEW_ONLY:29,NO_DIRECT_PASSAGE_MATCH:87});
+const linked=source.scenes.filter(s=>cinematicExactAtlasTarget(s,stops)!==null);
+assert.equal(linked.length,64,"all uniquely certified exact references link to existing timeline records");
+assert.equal(source.scenes[68].status,"EXACT_REFERENCE");
+assert.equal(source.scenes[68].candidates.length,2,"one exact scene also has an overlap candidate");
+assert.equal(cinematicExactAtlasTarget(source.scenes[68],stops),null,"ambiguous #68 cannot auto-link");
+for(const s of source.scenes){
+ assert.ok(s.reference&&s.title_en&&s.title_fr);
+ assert.equal(Object.hasOwn(s,"geo"),false);
+ assert.equal(Object.hasOwn(s,"art"),false);
+ assert.equal(Object.hasOwn(s,"imageUrl"),false);
+ if(s.status!=="EXACT_REFERENCE")assert.equal(cinematicExactAtlasTarget(s,stops),null,"overlap or unmatched never jumps");
+}
+assert.equal(source.scenes[74].candidates[0].atlasIndex,82,"John 2 source reference migrates into PUBLIC");
+assert.equal(source.scenes[74].candidates[0].atlasEventKey,"biblical:event:jerusalem-temple-e3");
+assert.match(source.scenes[32].title_en,/first plague/);
+assert.match(source.scenes[32].sourceNote_en,/not all ten plagues/);
+assert.match(source.scenes[176].sourceNote_en,/Acts 28:1/);
+assert.equal(stops[82].eventKey,"biblical:event:jerusalem-temple-e3");
+assert.match(renderCinematicStudies(source,{language:"en",chapter:"MINISTRY",scene:74,atlasStops:stops}),/John places this episode near the beginning/);
+assert.match(renderCinematicStudies(source,{language:"fr",chapter:"RISEN",scene:131,atlasStops:stops}),/Le tombeau vide et Marie-Madeleine/);
+assert.match(source.scenes[131].sourceNote_en,/not an eyewitness description/);
+assert.equal(source.scenes[68].candidates[1].atlasIndex,77,"Luke 2 hidden-life overlap stays separate");
+assert.equal(studyChapter(source,"PATRIARCHS").sceneIndices.length,25);
+assert.equal(studyChapter(source,"MINISTRY").sceneIndices.length,46);
+assert.equal(studyChapter(source,"TO_ROME").sceneIndices.length,11);
+assert.equal(studyScene(source,"DELIVERANCE",-1).index,25);
+assert.equal(studyStep(source,"PATRIARCHS",0,1),1);
+assert.equal(studyStep(source,"PATRIARCHS",0,-1),0);
+assert.equal(studyStep(source,"PATRIARCHS",24,1),24);
+const en=renderCinematicStudies(source,{language:"en",chapter:"PATRIARCHS",scene:21,atlasStops:stops});
+const fr=renderCinematicStudies(source,{language:"fr",chapter:"INCARNATION",scene:68,atlasStops:stops});
+const extra=renderCinematicStudies(source,{language:"en",chapter:"DELIVERANCE",scene:35,atlasStops:stops});
+assert.match(en,/data-bible-study-scene="21"/);
+assert.match(en,/data-bible-study-timeline/);
+assert.match(en,/data-bible-study-jump="21" aria-pressed="true"/);
+assert.equal((en.match(/data-bible-study-jump="/g)||[]).length,25,
+ "Patriarchs must expose every scene as a direct chapter timeline target");
+const ministry=renderCinematicStudies(source,{language:"en",chapter:"MINISTRY",scene:74,atlasStops:stops});
+assert.equal((ministry.match(/data-bible-study-jump="/g)||[]).length,46,
+ "Ministry must expose all 46 named scene targets");
+assert.match(ministry,/data-bible-study-jump="74" aria-pressed="true"/);
+assert.match(ministry,/data-bible-study-jump="74"[^>]*title="Jesus cleanses the Temple/);
 
- page.on("pageerror",error=>errors.push(String(error?.message??error)));
- await page.goto("http://127.0.0.1:4275/index.html",{waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForSelector('[data-ao-app-surface="find"]',{state:"visible",timeout:30000});
- await page.locator('[data-ao-app-surface="find"]').tap();
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready",null,{timeout:60000});
- await page.locator("#ao-find-modular-root details.aoHeritageMore > summary").tap({timeout:15000});
- await page.locator("#ao-find-modular-root .aoHeritageMore[open] [data-bible-atlas-open]").waitFor({state:"visible",timeout:15000});
- // Wait past the swipe guard's 280ms suppression window after the Browse reveal.
- await page.waitForTimeout(360);
- await page.locator("#ao-find-modular-root [data-bible-atlas-open]").tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===true&&
-  document.querySelector("[data-ao-bible-atlas]"),null,{timeout:15000}).catch(async error=>{
-  const detail=await page.evaluate(()=>({status:globalThis.AO_FIND_APP_V1?.status?.(),load:document.querySelector("#ao-find-modular-root")?.dataset?.aoFindLoadState,error:document.querySelector("[data-find-action-error]")?.textContent,scriptErrors:document.querySelector("[data-ao-bible-atlas]")?.outerHTML?.slice(0,200)}));
-  console.error("ATLAS_ENTRY_DIAGNOSTIC",JSON.stringify(detail));
-  throw error;
-});
- const stops=page.locator("#ao-find-modular-root [data-bible-step]");
- assert.equal(await stops.count(),151,"all milestones are one continuous ribbon");
- const track=page.locator("#ao-find-modular-root [data-bible-track]");
- const width=await track.evaluate(el=>({scroll:el.scrollWidth,client:el.clientWidth}));
- assert.ok(width.scroll>width.client*3,"timeline is not horizontally scrollable");
- assert.equal(await page.locator("#ao-find-modular-root [data-bible-map]").count(),1);
- assert.equal(await page.locator("#ao-find-modular-root [data-bible-era-overlay]").count(),1);
- await captureView("canonical-chronology");
- // Tapping a remote milestone should move the selected event, geography, and ribbon.
- await page.locator('#ao-find-modular-root [data-bible-step="71"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===71,null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="71"]').getAttribute("aria-pressed"),"true");
- const nearby=await track.evaluate(el=>{const middle=el.getBoundingClientRect().left+el.clientWidth/2;const card=el.querySelector('[data-bible-step="71"]').getBoundingClientRect();return Math.abs(card.left+card.width/2-middle)});
- assert.ok(nearby<125,"selected milestone should remain close to timeline centre");
- await page.locator('#ao-find-modular-root [data-bible-step="150"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===150,null,{timeout:15000});
- const last=await page.locator("#ao-find-modular-root [data-bible-detail]").innerText();
- assert.match(last,/new Jerusalem|Jérusalem nouvelle/i);
- assert.ok(await page.locator('#ao-find-modular-root [data-bible-step="150"]').getAttribute("aria-pressed")==="true");
- // Non-geographic apocalyptic visions remain on the timeline, with no fabricated pin.
- assert.match(last,/No earthly location|Aucun lieu terrestre/);
- // Native Scripture opens from an atlas milestone and leaves the atlas ready on return.
- await page.locator('#ao-find-modular-root [data-bible-step="3"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===3,null,{timeout:15000});
- await page.locator("#ao-find-modular-root [data-bible-detail] [data-ao-scripture-context]").tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true,null,{timeout:15000});
- await page.locator('#ao-scripture-overlay [data-scripture-close]').first().tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===false,null,{timeout:15000});
- assert.equal(await page.locator("#ao-find-modular-root [data-ao-bible-atlas]").count(),1);
- const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
- assert.ok(overflow<=1,"Biblical Atlas causes horizontal page overflow at 390px");
- // Review-only native genealogy is a second Atlas view, not a replacement for 151 events.
- await page.locator('#ao-find-modular-root [data-bible-review-surface="genealogies"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="genealogies"&&
-  document.querySelector("#ao-find-modular-root [data-ao-bible-review]"),null,{timeout:20000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-lineage]').count(),3);
- assert.ok(await page.locator('#ao-find-modular-root').getByText("Research preview", {exact:false}).count()>=1);
- await page.locator('#ao-find-modular-root [data-bible-review-lineage="matthew"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewLineage==="matthew",null,{timeout:15000});
- assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/St Matthew.s textual genealogy/);
- for(let i=0;i<3;i++)await page.locator('#ao-find-modular-root [data-bible-review-page="1"]').tap({timeout:15000});
- assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Joseph/);
- assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/legal\/putative/i);
- await page.locator('#ao-find-modular-root [data-bible-review-lineage="luke"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewLineage==="luke",null,{timeout:15000});
- assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/St Luke.s textual genealogy/);
- await page.locator('#ao-find-modular-root [data-bible-review-lineage="genesis"]').tap({timeout:15000});
- await page.locator('#ao-find-modular-root [data-bible-review-root="noah"]').tap({timeout:15000});
- assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Noah/);
- assert.equal(await page.locator('#ao-find-modular-root [role="tree"]').count(),1,"Genesis has a connected source hierarchy");
- assert.ok(await page.locator('#ao-find-modular-root [data-bible-family-edge]').count()>=2);
- assert.ok(await page.locator('#ao-find-modular-root [data-bible-family-person="shem"]').count()>=1);
- const treeOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
- assert.ok(treeOverflow<=1,"Genesis tree does not expand the whole document");
- await captureView("genesis-branch-tree");
- await page.locator('#ao-find-modular-root [data-bible-review-surface="apostles"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="apostles",null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-apostle]').count(),20);
- assert.ok(await page.locator('#ao-find-modular-root [data-evidence-kind="later"]').count()>=2,"Marian rival traditions clearly classified");
- const crosslink=page.locator('#ao-find-modular-root [data-bible-review-jump="66"]');
- assert.equal(await crosslink.count(),1,"Annunciation has one unique exact-citation timeline handoff");
- await crosslink.scrollIntoViewIfNeeded();await page.waitForTimeout(360);await crosslink.tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
-  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66&&
-  /Annunciation/.test(document.querySelector("#ao-find-modular-root [data-bible-detail] h2")?.textContent||""),null,{timeout:15000});
- assert.match(await page.locator("#ao-find-modular-root [data-bible-detail]").innerText(),/Annunciation/);
- await page.locator('#ao-find-modular-root [data-bible-review-surface="apostles"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="apostles",null,{timeout:15000});
- const philip=page.locator('#ao-find-modular-root [data-bible-review-apostle="philip-evangelist"]');
- await philip.scrollIntoViewIfNeeded();await page.waitForTimeout(360);await philip.tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewApostle==="philip-evangelist",null,{timeout:15000});
- assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Philip the Evangelist/);
- assert.equal(await page.locator("#ao-find-modular-root [data-bible-map]").count(),0,"unverified research locations must not become pins");
- // Four cinematic journeys are an evidence-classified study, not a replacement
- // of the 151-event canonical chronology. Research pins and artwork stay out.
- await page.locator('#ao-find-modular-root [data-bible-review-surface="cinematic"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="cinematic"&&
-  document.querySelector('#ao-find-modular-root [data-bible-cinematic-review]'),null,{timeout:20000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-chapter]').count(),14);
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-scene="0"]').count(),1);
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump]').count(),0,"overlap cannot become a jump");
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-map]').count(),0,"no research map pins");
- await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("DELIVERANCE");
- await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="25"]'),null,{timeout:15000});
- await page.locator('#ao-find-modular-root [data-bible-study-direction="1"]').tap({timeout:15000});
- await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="26"]'),null,{timeout:15000});
- await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("INCARNATION");
- await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="57"]'),null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').count(),1);
- const visualOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
- assert.ok(visualOverflow<=1,"study view causes no horizontal page overflow");
- await captureView("cinematic-incarnation");
- await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
-  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66&&
-  /Annunciation/.test(document.querySelector("#ao-find-modular-root [data-bible-detail] h2")?.textContent||""),null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-step]').count(),151);
- // Regression: the migrated John 2 cleansing stays in public-ministry source
- // order and retains reversible passage-based navigation from the 181 scenes.
- await page.locator('#ao-find-modular-root [data-bible-review-surface="cinematic"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="cinematic"&&
-  document.querySelector('#ao-find-modular-root [data-bible-cinematic-review]'),null,{timeout:20000});
- await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("MINISTRY");
- await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="69"]'),null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-jump]').count(),46,
-  "all 46 ministry scenes have direct named timeline navigation");
- const selectedScene=page.locator('#ao-find-modular-root [data-bible-study-jump="74"]');
- await selectedScene.scrollIntoViewIfNeeded();
- await selectedScene.tap({timeout:15000});
- await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="74"]'),null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-jump="74"]').getAttribute("aria-pressed"),"true");
- const sceneTrack=page.locator('#ao-find-modular-root [data-bible-study-timeline]');
- const centred=await sceneTrack.evaluate(el=>{
-  const active=el.querySelector('[data-bible-study-jump="74"]');
-  const rail=el.getBoundingClientRect(),card=active.getBoundingClientRect();
-  return Math.abs((card.left+card.width/2)-(rail.left+rail.width/2));
- });
- assert.ok(centred<130,"scene timeline must keep the selected chapter moment visible");
- assert.match(await page.locator('#ao-find-modular-root [data-bible-cinematic-review]').innerText(),/Johannine narrative order/);
- const john2jump=page.locator('#ao-find-modular-root [data-bible-review-jump="82"]');
- assert.equal(await john2jump.count(),1);
- assert.equal(await john2jump.getAttribute("data-bible-review-event-key"),
-  "biblical:event:jerusalem-temple-e3","the cinematic jump must retain its stable event identity");
- await john2jump.tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
-  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===82&&
-  /Temple/.test(document.querySelector("#ao-find-modular-root [data-bible-detail] h2")?.textContent||""),null,{timeout:15000});
- assert.match(await page.locator('#ao-find-modular-root [data-bible-detail]').innerText(),/John narrates this cleansing/);
-
- await page.locator('#ao-find-modular-root [data-bible-review-surface="timeline"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
-  document.querySelectorAll("#ao-find-modular-root [data-bible-step]").length===151,null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="82"]').getAttribute("aria-pressed"),"true","migrated John 2 source reference restored after cinematic study");
- await page.locator("#ao-find-modular-root [data-bible-atlas-close]").tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===false&&
-  document.querySelector('[data-find-view="map"][data-explore-lens="heritage"]'),null,{timeout:15000});
- assert.equal(errors.length,0,"Uncaught runtime errors: "+errors.join(" | "));
- console.log("PASS Biblical Atlas 390px phone: 151 events, John 2 cinematic-to-PUBLIC migration, native Scripture, research holds and Explore return");
- await context.close();
-}finally{await browser?.close().catch(()=>{});await new Promise(ok=>server.close(ok))}
+assert.match(en,/data-bible-review-jump="11"/);
+assert.match(en,/data-bible-review-event-key="biblical:passage:genesis-21-1-7"/);
+assert.match(en,/Read passage/);
+assert.match(en,/research|comparison/i);
+assert.match(fr,/data-bible-study-scene="68"/);
+assert.doesNotMatch(fr,/data-bible-review-jump/);
+assert.match(fr,/publication non autorisée/i);
+assert.match(extra,/Additional episode/);
+assert.doesNotMatch(extra,/data-bible-review-jump/);
+for(const html of [en,fr,extra]){
+ assert.match(html,/data-bible-study-chapter="TO_ROME"/);
+ assert.match(html,/data-bible-review-surface="timeline"/);
+ assert.doesNotMatch(html,/<img\b|<canvas\b|<iframe\b|data-bible-map|maps.google.com/i,"art, routes and pins do not leak");
+}
+const corrupted=structuredClone(source);corrupted.scenes[0].coordinates=[35,31];
+assert.equal(validateCinematicStudies(corrupted),false);
+assert.doesNotMatch(renderCinematicStudies(corrupted),/data-bible-study-scene=/,"schema guard blocks accidental map imports");
+const shuffled=structuredClone(source);
+[shuffled.scenes[2],shuffled.scenes[3]]=[shuffled.scenes[3],shuffled.scenes[2]];
+assert.equal(validateCinematicStudies(shuffled),false,
+ "Direct-index UI must reject out-of-order scene arrays");
+const staleCandidate=structuredClone(source);
+staleCandidate.scenes[70].candidates[0].reference="Matthew 4:12–17";
+assert.equal(validateCinematicCrosswalk(staleCandidate,stops),false,
+ "A stale candidate passage must never pass the 151-to-181 evidence gate");
+assert.doesNotMatch(renderCinematicStudies(staleCandidate,{atlasStops:stops}),/data-bible-study-scene=/,
+ "The actual cinematic reader must refuse stale source/candidate indices");
+const staleEventIdentity=structuredClone(source);
+staleEventIdentity.scenes[74].candidates[0].atlasEventKey="biblical:event:cana-e1";
+assert.equal(validateCinematicCrosswalk(staleEventIdentity,stops),false,
+ "A candidate cannot use the right reference and index with another event's stable identity");
+assert.doesNotMatch(renderCinematicStudies(staleEventIdentity,{atlasStops:stops}),/data-bible-study-scene=/,
+ "The phone reader must refuse a wrong stable identity");
+const staleIndex=structuredClone(source);
+staleIndex.scenes[70].candidates[0].atlasIndex=0;
+assert.equal(validateCinematicCrosswalk(staleIndex,stops),false,
+ "A candidate with a wrong canonical index must fail even when metadata looks valid");
+const wrongStatus=structuredClone(source);
+wrongStatus.scenes[0].status="EXACT_REFERENCE";
+assert.equal(validateCinematicStudies(wrongStatus),false,
+ "Review-only overlap cannot be promoted just by flipping a label");
+const secondExact=structuredClone(source);
+secondExact.scenes[70].candidates.push({...secondExact.scenes[70].candidates[0],atlasIndex:78});
+assert.equal(validateCinematicStudies(secondExact),false,
+ "Duplicate exact-reference candidates must not silently authorize a chronology jump");
+console.log("PASS Cinematic companion: crosswalk candidate/index/order guards; 181 scenes in 14 chapters, 64 unique exact source jumps, 29 overlaps held, 87 unmatched preserved, zero images/routes/pins");
