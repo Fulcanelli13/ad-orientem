@@ -108,6 +108,21 @@ assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-27").paintings[0].origin
  "ACADEMIC_DOCUMENTED_CHURCH_PAINTING");
 assert.equal(results.summary.sourceAuthenticatedNewAssignmentsInThisTurn,12);
 assert.equal(results.summary.researchedCandidatesAddedThisTurn,9);
+assert.equal(results.summary.p0UnresolvedWithStrongNewSourceCandidates,44);
+assert.equal(results.summary.p0StillNeedingMasterpieceQualityOrIconException,7);
+assert.equal(results.summary.userApprovedNewSubjectSelections,0);
+assert.equal(results.summary.reproductionWorkInitiatedInCurrentPhase,0);
+assert.deepEqual(new Set(results.remainingSevenCuratorialGaps),
+ new Set(["DEV-02","DEV-12","SNT-DC-18","SNT-DC-23",
+         "SNT-DC-25","SNT-DC-26","SNT-DC-27"]));
+for(const id of results.remainingSevenCuratorialGaps) {
+ const row=results.rows.find(x=>x.subjectId===id);
+ assert.equal(row.status,"OPEN_PAINTING_RESEARCH_QUALITY_GATE");
+ assert.equal(row.paintings.length,0);
+ assert.ok(row.gapTriage.issue && row.gapTriage.reason);
+ assert.ok(row.gapTriage.doNotSubstitute.length);
+}
+
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-10").paintings[0].inventory,"1894, 92 × 76 cm");
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-11").paintings[0].inventory,"0900119548");
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-12").paintings[0].inventory,"982.243");
