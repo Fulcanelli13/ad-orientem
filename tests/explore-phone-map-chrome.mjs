@@ -9,13 +9,14 @@ const features=[
 for(const width of [320,390,430]){
  const fit=explorePhoneOverview(features,width);
  assert.ok(fit,width+"px wide-world fit missing");
- assert.ok(fit.fit.padding.left>=52&&fit.fit.padding.right>=52,
-   width+"px halo and touch-target safety margin missing");
- assert.equal(fit.fit.duration,0);
- assert.ok(fit.bounds[0][0]<-170&&fit.bounds[1][0]>170,
-   "Must show both geographic ends, not suppress distant places");
- assert.ok(width-fit.fit.padding.left-fit.fit.padding.right>=200,
-   "Do not squeeze usable phone map below 200px");
+ assert.ok(fit.edge>=52,width+"px halo/touch edge missing");
+ assert.ok(fit.center[0]>-10&&fit.center[0]<10,
+   "Global centre must not wrap across date line");
+ const ppd=512*Math.pow(2,fit.zoom)/360;
+ const westX=width/2+(fit.west-fit.center[0])*ppd;
+ const eastX=width/2+(fit.east-fit.center[0])*ppd;
+ assert.ok(westX>=fit.edge-.2&&eastX<=width-fit.edge+.2,
+   width+"px west/east edges must remain fully visible: "+[westX,eastX]);
 }
 // The actual published Place seed spans about 297° (-121.92° to +175.14°):
 // the previous >300° gate never entered the phone overview at any width.
@@ -37,7 +38,10 @@ assert.deepEqual(camera.maxBounds,EXPLORE_WORLD_BOUNDS,
   "Normal/restored camera constraints must not be changed");
 const source=readFileSync(new URL("../src/find/map-runtime.js",import.meta.url),"utf8");
 const styles=readFileSync(new URL("../src/find/heritage-style.js",import.meta.url),"utf8");
-assert.match(source,/if\(phoneOverview\)map\.fitBounds\(phoneOverview\.bounds,phoneOverview\.fit\)/);
+assert.match(source,/camera\.center=phoneOverview\.center/);
+assert.match(source,/camera\.zoom=phoneOverview\.zoom/);
+assert.doesNotMatch(source,/map\.fitBounds\(phoneOverview\.bounds/,
+  "Never allow MapLibre to choose a wrapped short path across the date line");
 assert.match(source,/new maplibre\.AttributionControl\(\{compact:true\}\),"bottom-left"/);
 assert.match(source,/attributionControl:!compactAttribution/);
 assert.match(styles,/\.aoFindMap \.maplibregl-ctrl-bottom-left/);
