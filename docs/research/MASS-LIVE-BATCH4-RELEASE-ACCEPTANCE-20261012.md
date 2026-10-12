@@ -23,6 +23,14 @@
 | Special liturgical structures | Existing Palm, Ash, Candlemas, Rogations, Requiem Absolution, Corpus Christi, Good Friday, Holy Thursday, Easter Vigil and Nuptial controllers/tests | Per-controller / integration cases have different degrees of phone evidence; not all have a full in-person rite demonstration |
 | Physical-phone / devotional experience | **Not automatable here** | Needs actual 320–430px Android screen review, dark/light church conditions, haptics/touch, gesture legibility, French text proofing, elevation salience and bells at real speed |
 
+## Defect discovered by expanding phone coverage
+
+The original test harness was artificially Sung-only and passed a hand-built Mass plan without `objectiveContext`; Low and Solemn require the real `compileMassPlan` output. The harness now uses that production compiler.
+
+The intentional source vs product distinction is locked: **Low LIVE = 39 cards; Sung LIVE = 48 presentation cards**.
+
+The first genuinely missing LIVE cue was then revealed at the Epistle: dynamically resolved Proper paragraphs had no `sourceCueIds` even though their 11 Proper blocks already have canonical source cues. As a result, the display text was disconnected from the native cue-focus tracker. The fix uses the **first authentic non-response source cue already registered on each Proper block**, not newly invented timing or a minister's reply. Thus the Epistle text belongs to `C0075`, not the separate server `C0076`; the Gospel text belongs to `C0086`, not the `C0087` response. This is tested in `tests/reader-text.mjs` in both Low and Sung and for a two-paragraph Epistle. Multiple paragraphs may share one block-level cue: this is not word-by-word timing certification.
+
 ## Critical interpretation of the matrix
 
 The ordinary harness includes sample Votive Proper content, **not an authenticated Proper for each date**. In `family=REQUIEM` the overlay and celebration type are explicitly selected, but the proper fixture remains synthetic. Therefore **do not** claim Requiem liturgical-text completeness merely because its state/projections pass.
