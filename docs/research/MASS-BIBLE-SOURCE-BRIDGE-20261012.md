@@ -245,3 +245,44 @@ This is a **complete 44/44 research triage**, not an inspection of the facsimile
 | `Tempora/Quad5-5` | HEADING_CONFLICT_OR_WRONG_CONTEXT | 737, 739 |
 
 **Important:** “plausible” is a routing category for further source inspection, not approval. All 44 remain `printedPageVisuallyVerified:false`, `latinCompleteCertified:false`, `approved:false`; the 100 original edition packets still show zero completed certifications. No change to 1962 calendar, player, chant or reader. Source is the immutable [44-cluster extracted research register](https://github.com/Fulcanelli13/ad-orientem/blob/e8c3947154531be18f011834fdc9f2ae625b6e38/data/geography/research/mass-1962-44-cluster-printed-page-context-20261012.v1.json). The next step must open each page image and confirm the actual heading and complete formulary before citing any Latin wording as authentic printed 1962 text.
+
+
+## A18 — 27 plausible clusters: section-level printed-page evidence matrix (13 October 2026)
+
+**Scope and outcome:** 27 previously triaged plausible source paths were revisited against their **existing extracted 1962 PDF page-snippet** records, with candidate PDF page numbers and chant-section anchor types listed individually below. This narrows the physical original-page review workload; it **does not verify the scanned pages or certify any Mass**. The 82,815,941-byte MusicaSacra PDF [source](https://media.musicasacra.com/pdf/missale62.pdf) again exceeded the web PDF fetch size ceiling; external PDF acquisition was unavailable. No claim of a page screenshot or image check is made.
+
+| Research sourcePath | Candidate PDF page(s) | Text-matched sections (not verified rubrics) | Snippet state |
+| --- | --- | --- | --- |
+| `Commune/Coronatio` | 876, 877 | Graduale, Tractus, Offertorium, Communio | Header extracted; boundaries unverified |
+| `Commune/Propaganda` | 894, 895 | Graduale, Tractus, Communio | Header extracted; boundaries unverified |
+| `Sancti/03-19` | 572, 573 | Graduale, Communio | Header extracted; boundaries unverified |
+| `Sancti/03-19t` | 572, 573 | Graduale, Communio | Header extracted; boundaries unverified |
+| `Sancti/03-27` | 578, 579 | Graduale, Tractus, Offertorium | Header extracted; boundaries unverified |
+| `Sancti/03-28` | 579, 580 | Graduale, Tractus, Offertorium | Header extracted; boundaries unverified |
+| `Sancti/04-28` | 594, 595 | Tractus, Offertorium | Header extracted; boundaries unverified |
+| `Sancti/05-13` | 610, 611 | Graduale, Offertorium | Header extracted; boundaries unverified |
+| `Sancti/06-30` | 652, 653 | Graduale, Tractus | Header extracted; boundaries unverified |
+| `Sancti/07-05` | 660, 661 | Graduale, Communio | Header extracted; boundaries unverified |
+| `Sancti/07-20` | 674, 675 | Graduale, Offertorium, Communio | Header extracted; boundaries unverified |
+| `Sancti/08-02` | 692 | Graduale, Tractus | Header extracted; boundaries unverified |
+| `Sancti/08-08` | 700 | Graduale, Communio | Header extracted; boundaries unverified |
+| `Sancti/08-22` | 714, 715 | Graduale, Offertorium | Header extracted; boundaries unverified |
+| `Sancti/09-18` | 742, 743 | Graduale, Offertorium, Communio | Header extracted; boundaries unverified |
+| `Sancti/10-02` | 751, 752, 754, 755 | Tractus, Offertorium, Communio, Graduale | Header extracted; boundaries unverified |
+| `Sancti/10-03` | 755, 756, 757 | Graduale, Offertorium | Header extracted; boundaries unverified |
+| `Sancti/10-09` | 763, 764 | Graduale, Tractus, Offertorium | Header extracted; boundaries unverified |
+| `Sancti/10-17` | 769 | Graduale, Tractus | Header extracted; boundaries unverified |
+| `Sancti/10-DU` | 779 | Graduale, Tractus, Offertorium | Header extracted; boundaries unverified |
+| `Sancti/12-08` | 519 | Graduale, Tractus, Offertorium, Communio | Header extracted; boundaries unverified |
+| `Sancti/12-27` | 107 | Graduale, Communio | Heading unresolved |
+| `Tempora/Pasc0-1` | 412, 413 | Graduale, Offertorium, Communio | Header extracted; boundaries unverified |
+| `Tempora/Pasc0-3` | 416, 417 | Graduale, Communio | Header extracted; boundaries unverified |
+| `Tempora/Pasc0-5` | 420 | Offertorium, Communio | Header extracted; boundaries unverified |
+| `Tempora/Pasc0-5t` | 420 | Offertorium, Communio | Header extracted; boundaries unverified |
+| `Tempora/Quad4-3t` | 191, 193 | GradualeL1, Graduale, Offertorium, Communio | Header extracted; boundaries unverified |
+
+**Two mandatory source-discrimination controls:** (1) source paths ending `t` (e.g. `Sancti/03-19t`, `Tempora/Pasc0-5t`) must not inherit identical Mass/season identity just because another path has the same PDF-page hit; (2) page-to-page transitions may lead into a different celebration even when the index returns the same Latin words (especially `Commune/Coronatio`, `Commune/Propaganda`, and `Sancti/10-02`). The source snippet is two-column OCR/text, not a complete printed-proper transcription.
+
+**Remaining physical inspection checklist per sourcePath:** inspect facsimile page image, identify precise heading and eligibility rubric, delimit where the actual celebration begins/ends, compare the entire Latin chant and Scripture citation, resolve seasonal alternatives/inheritance and original verse numbering, then record provenance with exact page and separate Bible original witness. A confidence score or a nine-word phrase match is not a substitute.
+
+**Gate:** page images examined **0/27**, full printed edition/Scripture joint certifications **0/27**, release approvals **0/27**. Retain all global 1,052 source-path and 100 priority packet approvals false. No user-facing Mass, Atlas or Sacred Art changes.
