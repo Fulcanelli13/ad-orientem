@@ -1,0 +1,65 @@
+name: Biblical Atlas 151-Event Scoped Acceptance
+on:
+  pull_request:
+    paths:
+      - "src/find/**"
+      - "data/explore/bible-places-compact.v1.json"
+      - "tests/explore-bible-atlas-151*.mjs"
+      - ".github/workflows/biblical-atlas-151-release.yml"
+      - "package.json"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  chronology-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Syntax and no research-module imports
+        run: |
+          node --check src/find/browser-entry.js
+          node --check src/find/bible-atlas.js
+          node --check src/find/bible-atlas-expanded-milestones.js
+          node --check src/find/explore-data-service.js
+          node tests/explore-bible-atlas-151-scope.mjs
+      - name: 151 bilingual sources and 35 qualified map anchors
+        run: npm run test:explore-bible-atlas-151
+      - name: Two edition witnesses, with five withheld verse slots
+        run: node tests/explore-bible-atlas-151-witness.mjs
+      - name: Existing Explore non-browser surface regression
+        run: |
+          node tests/explore-surface.mjs
+          node tests/find-surface.mjs
+          node tests/explore-touch-navigation-r53.mjs
+  chronology-phone:
+    needs: chronology-source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: 390px native Scripture, no-pin Creation, map recovery and preview-only scope
+        run: npm run test:explore-bible-atlas-151-phone
+      - name: Existing Explore reachability and layout
+        run: |
+          node tests/explore-reachability-phone.mjs
+          node tests/explore-layout-phone.mjs
+      - name: Capture 320, 390, 768 and 1280px evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biblical-atlas-151-scoped-responsive
+          path: test-output/biblical-atlas-151/*.png
+          if-no-files-found: ignore
+          retention-days: 14
