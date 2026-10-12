@@ -31,3 +31,17 @@ assert.equal(inspect1962PrefaceSelection({principalCelebrationId:"sancti:10-07:2
 assert.equal(inspect1962PrefaceSelection({principalCelebrationId:"sancti:10-07:2:w",selectedPreface:{lat:"Communis"},requestedCelebrationId:"other-votive"}).status,"NEEDS_SELECTED_FORMULARY");
 assert.equal(PREFACE_SELECTION_WITNESSES.verifiedOwnerKeys.length,4);
 console.log("PASS: detects 3/10 wrong Preface owners in real 2026 runtime; no fabricated substitutions; Purification exception protected.");
+
+// Reader projection must fail closed on an authenticated contradictory owner.
+import {properToReaderSlots} from "../src/mass/proper-reader-slots.js";
+const fakeText={lat:"Communis\\nVere dignum",en:"Common Preface",fr:"Préface commune"};
+const wrong={mainId:"tempora:Pasc7-0:1:r",preface:fakeText};
+const blocked=properToReaderSlots(wrong);
+assert.equal(blocked.slots.PREFACE.status,"MISSING");
+assert.equal(blocked.slots.PREFACE.reason,"1962 Preface source decision: CONTRADICTION");
+const correctReader=properToReaderSlots({...wrong,preface:{...fakeText,lat:"de Spiritu Sancto\\nVere dignum"}});
+assert.equal(correctReader.slots.PREFACE.status,"READY");
+const protectedPurification=properToReaderSlots({...wrong,mainId:"sancti:02-02:2:w",preface:{...fakeText,lat:"de Nativitate Domini\\nVere dignum"}});
+assert.equal(protectedPurification.slots.PREFACE.status,"READY");
+const unknown=properToReaderSlots({...wrong,mainId:"tempora:Pasc8-0:2:w"});
+assert.equal(unknown.slots.PREFACE.status,"READY","Unknown source should not be silently reclassified");
