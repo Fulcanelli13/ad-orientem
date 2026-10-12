@@ -113,7 +113,21 @@ try{
   "Rosary method chooser cannot open from offline Prayer hub");
  const offlineChooser=page.locator("#aoPray435930.open [data-ao-rosary-chooser]");
  await offlineChooser.waitFor({timeout:12000});
- await offlineChooser.locator("[data-p435930-rosary-choose='ordinary']").tap();
+ const offlineMethod=offlineChooser.locator("[data-p435930-rosary-choose='ordinary']");
+ if(!await offlineMethod.isVisible()){
+   console.error("OFFLINE_CHOOSER_VISIBILITY="+JSON.stringify(await page.evaluate(()=>({
+     route:globalThis.AO_PRAY_V435930?.state?.(),
+     prayer:globalThis.AO_PRAY_APP_V1?.status?.(),
+     root:[...document.querySelectorAll("#aoPray435930.open [data-ao-rosary-chooser]")].map(el=>({
+       html:el.outerHTML.slice(0,1800),style:getComputedStyle(el).display,rect:el.getBoundingClientRect().toJSON()
+     })),
+     matches:[...document.querySelectorAll("[data-p435930-rosary-choose='ordinary']")].map(el=>({
+       display:getComputedStyle(el).display,visibility:getComputedStyle(el).visibility,
+       rect:el.getBoundingClientRect().toJSON(),ancestors:[el.parentElement,el.parentElement?.parentElement].map(x=>({cls:x?.className,display:getComputedStyle(x).display}))
+     }))
+   }))));
+ }
+ await offlineMethod.tap();
  await offlineChooser.locator("[data-p435930-rosary-decades='15']").tap();
  await offlineChooser.locator("[data-p435930-rosary-begin]").tap();
  await page.waitForSelector("#aoPrayerBookRoot.open [data-lab-rosary-next]",{timeout:12000});
