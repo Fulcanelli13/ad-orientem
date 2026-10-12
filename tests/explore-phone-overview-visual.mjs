@@ -86,6 +86,8 @@ try{
       "Map hint occludes attribution on "+language+" "+width);
     assert.ok(!overlaps(metrics.nearby,metrics.attribution),
       "Near me button occludes attribution on "+language+" "+width);
+    assert.ok(!overlaps(metrics.hint,metrics.nearby),
+      "Map hint overlaps Near me on "+language+" "+width);
     assert.ok(metrics.overflow<=1,"Horizontal page overflow on "+language+" "+width);
     assert.deepEqual(errors,[],"Browser errors: "+errors.slice(0,3).join("; "));
     const name=language+"-"+width+"-explore.png";
