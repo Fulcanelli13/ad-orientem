@@ -20,4 +20,4 @@ Forensic original-question gap report: https://github.com/Fulcanelli13/ad-orient
 
 Run `node research/apologetics-question-recovery/validate.mjs` at the repository root. The validator checks 282 records and protects the distinction between 576 unresolved historical positions and genuine recovered questions. It does not certify theological contents or links.
 
-Original chat excerpt evidence: `ORIGINAL_QUESTION_BANK_RECOVERY.md` (62 texts, 45 prefixes).
+Current historical-chat evidence: `HISTORICAL_CONVERSATIONS_MASTER_QUESTION_INDEX.md` and `ORIGINAL_QUESTION_BANK_EVIDENCE.v1.json` (264 indexed original-ID question excerpts, 48 evidenced original bank prefixes; eight complete 25-question lists). Full chat-export verification remains outstanding.
