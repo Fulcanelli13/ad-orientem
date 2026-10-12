@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {buildBibleAtlas} from "../src/find/bible-atlas.js";
 import {
- validateCinematicStudies,studyChapter,studyScene,studyStep,
+ validateCinematicStudies,validateCinematicCrosswalk,studyChapter,studyScene,studyStep,
  cinematicExactAtlasTarget,renderCinematicStudies
 } from "../src/find/bible-cinematic-studies.js";
 const source=JSON.parse(readFileSync(new URL("../data/explore/biblical-cinematic-studies-review.v1.json",import.meta.url),"utf8"));
@@ -10,6 +10,9 @@ const atlasData=JSON.parse(readFileSync(new URL("../data/explore/bible-places-co
 const stops=buildBibleAtlas(atlasData.entries);
 assert.equal(stops.length,151,"canonical chronology is unchanged");
 assert.equal(validateCinematicStudies(source),true,"181 source-reviewed scene integrity required");
+assert.equal(validateCinematicCrosswalk(source,stops),true,
+ "Every 181-scene candidate must still reference the exact current canonical passage and index");
+
 assert.deepEqual(source.chapters.map(c=>c.group).filter((g,i,a)=>i===0||g!==a[i-1]),["ABRAHAM","MOSES","CHRIST","PAUL"]);
 assert.equal(source.chapters.reduce((n,c)=>n+c.sceneIndices.length,0),181);
 const counts=Object.fromEntries(["EXACT_REFERENCE","PASSAGE_OVERLAP_REVIEW_ONLY","NO_DIRECT_PASSAGE_MATCH"].map(k=>[k,source.scenes.filter(s=>s.status===k).length]));
@@ -53,4 +56,24 @@ for(const html of [en,fr,extra]){
 const corrupted=structuredClone(source);corrupted.scenes[0].coordinates=[35,31];
 assert.equal(validateCinematicStudies(corrupted),false);
 assert.doesNotMatch(renderCinematicStudies(corrupted),/data-bible-study-scene=/,"schema guard blocks accidental map imports");
-console.log("PASS Cinematic companion: 181 scenes in 14 chapters, 64 unique exact source jumps, 29 overlaps held, 87 unmatched preserved, zero images/routes/pins");
+const shuffled=structuredClone(source);
+[shuffled.scenes[2],shuffled.scenes[3]]=[shuffled.scenes[3],shuffled.scenes[2]];
+assert.equal(validateCinematicStudies(shuffled),false,
+ "Direct-index UI must reject out-of-order scene arrays");
+const staleCandidate=structuredClone(source);
+staleCandidate.scenes[70].candidates[0].reference="Matthew 4:12–17";
+assert.equal(validateCinematicCrosswalk(staleCandidate,stops),false,
+ "A stale candidate passage must never pass the 151-to-181 evidence gate");
+const staleIndex=structuredClone(source);
+staleIndex.scenes[70].candidates[0].atlasIndex=0;
+assert.equal(validateCinematicCrosswalk(staleIndex,stops),false,
+ "A candidate with a wrong canonical index must fail even when metadata looks valid");
+const wrongStatus=structuredClone(source);
+wrongStatus.scenes[0].status="EXACT_REFERENCE";
+assert.equal(validateCinematicStudies(wrongStatus),false,
+ "Review-only overlap cannot be promoted just by flipping a label");
+const secondExact=structuredClone(source);
+secondExact.scenes[70].candidates.push({...secondExact.scenes[70].candidates[0],atlasIndex:78});
+assert.equal(validateCinematicStudies(secondExact),false,
+ "Duplicate exact-reference candidates must not silently authorize a chronology jump");
+console.log("PASS Cinematic companion: crosswalk candidate/index/order guards; 181 scenes in 14 chapters, 64 unique exact source jumps, 29 overlaps held, 87 unmatched preserved, zero images/routes/pins");
