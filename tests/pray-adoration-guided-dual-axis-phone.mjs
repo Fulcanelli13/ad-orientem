@@ -85,6 +85,19 @@ try{
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
   "Guided Adoration overflows narrow phone width");
  assert.equal((await snapshot()).overflow,"auto");
+ const railCollision=await page.evaluate(()=>{
+  const timeline=document.querySelector("#aoPray435930.open .aoP435930AdorationReader .aoDevoSequenceTimeline");
+  const t=timeline?.getBoundingClientRect();
+  if(!t)return {missingTimeline:true};
+  const icons=[...document.querySelectorAll("#aoPray435930 [data-ao-pray-rail-channel]")];
+  const intersections=icons.filter(el=>{
+   const r=el.getBoundingClientRect();
+   return r.width>0&&r.height>0&&r.left<t.right&&r.right>t.left&&r.top<t.bottom&&r.bottom>t.top;
+  });
+  return {iconCount:icons.length,intersections:intersections.length};
+ });
+ assert.equal(railCollision.intersections,0,
+  "Gesture/posture icon collides with a 320px timeline button: "+JSON.stringify(railCollision));
  await page.screenshot({path:resolve(captures,"four-ends-320.png"),animations:"disabled"});
  assert.deepEqual(errors,[],"Browser errors: "+errors.join(" | "));
  console.log("PASS guided Adoration 7/8/5 cards: source stages, swipe, paragraph focus, true silence mode and finish/return");
