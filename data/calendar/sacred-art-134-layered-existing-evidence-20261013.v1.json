@@ -18,9 +18,9 @@
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 10,
-    "withPreviousUnapprovedOptionOnly": 21,
-    "withNoRecordedSourceOrOlderOption": 47,
+    "additionalResearchLeadSubjects": 15,
+    "withPreviousUnapprovedOptionOnly": 18,
+    "withNoRecordedSourceOrOlderOption": 45,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
@@ -47,7 +47,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "Historical MUNAL companion painting to selected 1759 Heart of Jesus; Marian Heart bears lilies and sword; examine actual high-quality reproduction and rights separately. Google Arts creation date '1000' is erroneous, must NOT import. Do not conflate traditional Immaculate Heart with Immaculate Conception. Existing selected 101 artworks untouched."
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -542,7 +543,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "individual Saint Bede component of a documented cycle; object link pending"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -633,7 +635,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "exact saint portrait"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -687,7 +690,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "Saint Peter Canisius appears among many figures; contextual group scene"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -739,7 +743,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "exact saint portrait"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -765,7 +770,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "exact saint portrait, small fresco"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -1224,7 +1230,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "exact Exodus 14 scene"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -1299,7 +1306,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "exact Exodus 32 scene"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -1430,7 +1438,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "exact subject; monumental French 4.3 × 8 m composition"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -1756,7 +1765,8 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "exact storm narrative; moment before Christ calms the sea"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -1785,12 +1795,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Luke 15:11–32",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [
         "ART-eter-aul-ubens-he-rodigal-on"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-rembrandt-hermitage-prodigal",
+          "sourceUrl": "https://www.hermitagefoundation.co.uk/prodigal-son-rembrandt",
+          "artist": "Rembrandt van Rijn",
+          "title": "The Return of the Prodigal Son",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "Exactly the return/reconciliation episode Luke 15:20–24, not entire parable. Source institutional UK Hermitage Foundation; 2020 image photograph credited to State Hermitage and reproduction rights HELD. Large painterly masterpiece, full composition check needed."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -1814,7 +1836,19 @@
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
-          "decision": "UNAPPROVED_RESEARCH_ONLY"
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "Martha and Mary with Christ appear as a small background scene"
+        },
+        {
+          "artworkId": "ART-research-20261013-velazquez-martha-mary-ng1375",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/diego-velazquez-christ-in-the-house-of-martha-and-mary",
+          "artist": "Diego Velázquez",
+          "title": "Christ in the House of Martha and Mary",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "National Gallery NG1375 exact Luke 10:38–42 appears as SMALL BACKGROUND vignette in kitchen genre painting; remarkable quality but narratively weak mobile crop. Do not label foreground kitchen women the historical sisters automatically. Reproduction image rights pending."
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -1843,12 +1877,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "John 20:24–29",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [
         "ART-eter-aul-ubens-ncredulity-of-aint-homas"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-crabeth-incredulity-sk-a-1965",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Incredulity-of-St-Thomas--ba245dd27df1192fbf11cc9e8797cfb7",
+          "artist": "Wouter Pietersz II Crabeth",
+          "title": "The Incredulity of St Thomas",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "Rijksmuseum SK-A-1965, c.1626–30, exact John 20:24–29 encounter in Baroque oil, public domain. Museum reports substantial surface abrasion, losses, discolored varnish; technical colour/quality check before artistic promotion. No Caravaggio attribution."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -1860,10 +1906,22 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "John 21:15–19",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-raphael-charge-peter-va-cartoon",
+          "sourceUrl": "https://www.vam.ac.uk/articles/the-raphael-cartoons-christs-charge-to-peter/",
+          "artist": "Raphael",
+          "title": "Christ's Charge to Peter",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "V&A Royal Loans.3 painted tapestry cartoon c.1515–16, exact Risen Christ commissioning Peter John 21:15–17 with sheep and Peter. NOT standard oil canvas. Royal Collection Trust reproduction rights and format held; extraordinary relevance for biblical doctrine, full image and textile-cartoon category required."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -1875,10 +1933,22 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "John 13:1–17",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-tintoretto-prado-washing-p002824",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-washing-of-the-feet/77d1fd63-1918-40b7-a79e-6d427e19bed8",
+          "artist": "Jacopo Robusti Tintoretto",
+          "title": "The Washing of the Feet",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "Prado inventory P002824 autograph Tintoretto, 1548–49. Exact John 13:1–17 washing scene, but enormous 210×533cm panorama with Christ/Peter at far right: strong museum painting unsuitable for centered phone hero. Prado reproduction rights held."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -1890,12 +1960,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 3:1–10",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [
         "ART-aphael-and-workshop-eter-ealing-the-ame-an-tapestry-cartoon"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-poussin-met437330-healing-lame",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437330",
+          "artist": "Nicolas Poussin",
+          "title": "Saints Peter and John Healing the Lame Man",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "matchNotes": "Met object 437330, 1655 oil on canvas, exact Acts 3:1–10 and temple step composition, public-domain object with Met Open Access. Prefer source-exact Poussin over inaccurate generic Acts illustration; final full-quality and crop checks pending."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -2177,5 +2259,7 @@
       "artisticAcceptance": false,
       "publicationAcceptance": false
     }
-  ]
+  ],
+  "updated": "2026-10-13",
+  "recentSourceWave": "BIB-G18, BIB-G19, BIB-G21, BIB-G23, BIB-G26, BIB-A02 exact institutional originals and material/rights holds, still not acquired"
 }
