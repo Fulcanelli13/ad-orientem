@@ -6,6 +6,7 @@ import { NOVENA_CONTEXT_V1, novenaContext } from "./novena-context-v1.js";
 import { installNovenaStyles } from "./novena-styles.js";
 import { novenaStatusFor } from "../calendar/intelligence.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 // Bilingual completion layer over the exact v43.59.33 Guided Novenas N3 donor.
@@ -20,7 +21,7 @@ const PR=window.AO_PRAY_V435930;
 if(!PR?.open||!PR?.close)return;
 const BASE_OPEN=PR.open.bind(PR),BASE_CLOSE=PR.close.bind(PR);
 const STORE_MODE='ao:novenas:n1:mode';
-let OPEN_OPTS={};
+let OPEN_OPTS={},OPEN_RECEIPT=null,detailFromOverview=false;
 let N={screen:'overview',id:null,day:1,mode:(()=>{try{return localStorage.getItem(STORE_MODE)==='simple'?'simple':'guided'}catch{return'guided'}})(),stage:0,showEnglish:false};
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const n1UiIcon=id=>{
@@ -141,7 +142,9 @@ function renderDay(n){const d=n.days[N.day-1]||n.days[0],p=novenaPattern(n);if(N
  const total=stages(n);return `${head(`${L('Day','Jour')} ${N.day} · ${txt(d.theme)}`,txt(n.title))}<main class="aoP435930Body">${modeNav()}${stageRail(n)}${stageContent(n,d)}<div class="aoN1Nav"><button type="button" data-n1-stage-prev ${N.stage===0?'disabled':''}>← ${esc(L('Back','Retour'))}</button><button type="button" class="primary" data-n1-stage-next>${esc(N.stage===total-1?L('Finish this day','Terminer ce jour'):L('Continue','Continuer'))} →</button></div></main>`}
 function render(){const m=mount();if(!m)return;const n=N.id?CORPUS[N.id]:null;let h=N.screen==='overview'?renderOverview():N.screen==='detail'&&n?renderDetail(n):N.screen==='day'&&n?renderDay(n):renderOverview();m.dataset.aoPrayView='novenas';m.dataset.aoN1='true';m.classList.toggle('aoP435930FocusRunway',N.screen==='day'&&N.mode==='guided');m.innerHTML=h;m.scrollTop=0;queueMicrotask(()=>m.querySelector('button,[href],summary,[tabindex]:not([tabindex="-1"])')?.focus?.())}
 function open(opts={}){
+ OPEN_RECEIPT=captureObservedModuleOrigin(window,"pray");
  OPEN_OPTS={...opts};N.stage=0;N.showEnglish=false;
+ detailFromOverview=false;
  const requested=String(opts?.novenaId||'');
  if(requested&&CORPUS[requested]){
   N.id=requested;N.screen='detail';
@@ -152,9 +155,23 @@ function open(opts={}){
  }
  BASE_OPEN('pray.hub',opts);render();return true
 }
-function back(){if(N.screen==='day'){N.screen='detail';N.stage=0;N.showEnglish=false;return render()}if(N.screen==='detail'){N.screen='overview';N.id=null;return render()}BASE_OPEN('pray.hub',OPEN_OPTS);if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);return true}
+function back(){
+ if(N.screen==='day'){N.screen='detail';N.stage=0;N.showEnglish=false;return render()}
+ // A direct Calendar/Today deep link has not visited the Novena overview.
+ if(N.screen==='detail'&&detailFromOverview){
+  N.screen='overview';N.id=null;detailFromOverview=false;return render()
+ }
+ return returnToObservedModuleOrigin(window,OPEN_RECEIPT,{
+  close:()=>BASE_CLOSE(),
+  restoreParent:()=>{
+   BASE_OPEN('pray.hub',OPEN_OPTS);
+   if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);
+   return true;
+  }
+ });
+}
 function goHome(){BASE_CLOSE();const p=window.AO_APP_SHELL_V1?.navigate?.('home');if(p&&typeof p.catch==='function')p.catch(()=>window.AO_NAV_V362?.openHome?.());else if(!p)window.AO_NAV_V362?.openHome?.();return true}
-function onClick(e){const b=e.target.closest?.('button,[data-n1-flip]');if(!b)return;if(!b.matches('[data-n1-open],[data-n1-back],[data-n1-home],[data-n1-select],[data-n1-day],[data-n1-begin],[data-n1-mode],[data-n1-show-en],[data-n1-flip],[data-n1-stage-prev],[data-n1-stage-next],[data-n1-day-prev],[data-n1-day-next],[data-n1-explore]'))return;e.preventDefault();e.stopImmediatePropagation();if(b.matches('[data-n1-open]'))return open({trigger:b});if(b.matches('[data-n1-home]'))return goHome();if(b.matches('[data-n1-back]'))return back();if(b.matches('[data-n1-explore]')){const id=b.dataset.n1Explore||N.id,n=CORPUS[id],query=txt(n?.title)||id;void Promise.resolve(window.AO_APP_SHELL_V1?.navigate?.('find')).then(result=>result?.ok===true?window.AO_FIND_APP_V1?.open?.({lens:'traditions',view:'list',query}):false).catch(error=>console.error('Novena Explore navigation failed',error));return}if(b.dataset.n1Select){N.id=b.dataset.n1Select;N.screen='detail';N.day=calStatus(CORPUS[N.id]).kind==='active'?calStatus(CORPUS[N.id]).day:1;N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Day){N.day=+b.dataset.n1Day;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Begin){N.day=+b.dataset.n1Begin;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Mode){N.mode=b.dataset.n1Mode==='simple'?'simple':'guided';try{localStorage.setItem(STORE_MODE,N.mode)}catch{}N.stage=0;return render()}if(b.matches('[data-n1-show-en]')){N.showEnglish=!N.showEnglish;return render()}if(b.matches('[data-n1-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}if(b.matches('[data-n1-stage-prev]')){N.stage=Math.max(0,N.stage-1);return render()}if(b.matches('[data-n1-stage-next]')){const n=CORPUS[N.id],last=stages(n)-1;if(N.stage>=last){N.screen='detail';N.stage=0;N.showEnglish=false}else N.stage++;return render()}if(b.matches('[data-n1-day-prev]')){N.day=Math.max(1,N.day-1);N.showEnglish=false;return render()}if(b.matches('[data-n1-day-next]')){if(N.day>=9){N.screen='detail';N.stage=0}else{N.day++;N.showEnglish=false}return render()}}
+function onClick(e){const b=e.target.closest?.('button,[data-n1-flip]');if(!b)return;if(!b.matches('[data-n1-open],[data-n1-back],[data-n1-home],[data-n1-select],[data-n1-day],[data-n1-begin],[data-n1-mode],[data-n1-show-en],[data-n1-flip],[data-n1-stage-prev],[data-n1-stage-next],[data-n1-day-prev],[data-n1-day-next],[data-n1-explore]'))return;e.preventDefault();e.stopImmediatePropagation();if(b.matches('[data-n1-open]'))return open({trigger:b});if(b.matches('[data-n1-home]'))return goHome();if(b.matches('[data-n1-back]'))return back();if(b.matches('[data-n1-explore]')){const id=b.dataset.n1Explore||N.id,n=CORPUS[id],query=txt(n?.title)||id;void Promise.resolve(window.AO_APP_SHELL_V1?.navigate?.('find')).then(result=>result?.ok===true?window.AO_FIND_APP_V1?.open?.({lens:'traditions',view:'list',query}):false).catch(error=>console.error('Novena Explore navigation failed',error));return}if(b.dataset.n1Select){detailFromOverview=N.screen==='overview';N.id=b.dataset.n1Select;N.screen='detail';N.day=calStatus(CORPUS[N.id]).kind==='active'?calStatus(CORPUS[N.id]).day:1;N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Day){N.day=+b.dataset.n1Day;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Begin){N.day=+b.dataset.n1Begin;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Mode){N.mode=b.dataset.n1Mode==='simple'?'simple':'guided';try{localStorage.setItem(STORE_MODE,N.mode)}catch{}N.stage=0;return render()}if(b.matches('[data-n1-show-en]')){N.showEnglish=!N.showEnglish;return render()}if(b.matches('[data-n1-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}if(b.matches('[data-n1-stage-prev]')){N.stage=Math.max(0,N.stage-1);return render()}if(b.matches('[data-n1-stage-next]')){const n=CORPUS[N.id],last=stages(n)-1;if(N.stage>=last){N.screen='detail';N.stage=0;N.showEnglish=false}else N.stage++;return render()}if(b.matches('[data-n1-day-prev]')){N.day=Math.max(1,N.day-1);N.showEnglish=false;return render()}if(b.matches('[data-n1-day-next]')){if(N.day>=9){N.screen='detail';N.stage=0}else{N.day++;N.showEnglish=false}return render()}}
 document.addEventListener('click',onClick,true);
 const oldOpen=PR.open.bind(PR);PR.open=function(id,opts={}){if(id==='pray.novenas'||id==='novenas'||id==='novena')return open(opts);return oldOpen(id,opts)};
 const MOD=window.AO_MODULES;

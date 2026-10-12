@@ -248,6 +248,28 @@ export function learnPresentationCss(){
 @media(max-width:350px){.aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:126px}.aoLearnFamilyGrid .aoLearnFamilyDoor p{display:none}}
 @media(max-width:430px){#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard,#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:155px!important}}
 @media(max-width:350px){#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard,#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:126px!important}}
+/* Phone subject discovery: readable full-width rows instead of truncated 2-up tiles.
+   Preserve family route IDs and their descriptions, including at 320px. */
+@media(max-width:430px){
+  #ao-learn-modular-root .aoLearnModGrid.aoLearnFamilyGrid{grid-template-columns:minmax(0,1fr)}
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard,
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:106px!important}
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor,
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor.iconized{
+    justify-content:center;align-items:flex-start;gap:6px;
+    padding:15px 14px 15px 65px;
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnModIcon{
+    top:19px;left:15px;width:35px;height:35px
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor strong{
+    font-size:1.08rem;line-height:1.26;overflow-wrap:anywhere
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor p{
+    display:block;-webkit-line-clamp:unset;overflow:visible;
+    font-size:.84rem;line-height:1.46
+  }
+}
 
 .aoLearnDossierReview{margin-top:14px}.aoLearnDossierReviewNote{margin:0 0 12px;color:var(--ao-text-muted,#a9a5a0);font:500 .77rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnDossierReview .aoLearnModCardMain{min-height:100px}
  .aoLearnQuestionsBridge{min-height:94px}.aoLearnQuestionsBridge:focus-visible,.aoLearnApostolateBridge:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}

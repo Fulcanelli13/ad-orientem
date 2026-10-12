@@ -587,13 +587,182 @@ const ANGELUS_GUIDE_RITUAL_CSS=`
 
 
 const ROSARY_GUIDE_CSS=`
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuide{margin:0 0 12px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:13px;background:var(--surface-1,#151c24);position:relative;z-index:2;overflow:hidden}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuide>summary{display:flex;align-items:center;min-height:44px;padding:10px 12px;cursor:pointer;color:var(--liturgical,#d8bd7d);font:650 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideBody{padding:0 13px 5px}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection{padding:11px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection h3{font:650 14px/1.3 var(--ao-font-display,Georgia,serif);margin:0 0 5px;color:var(--text,#f3ead7)}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection p{font:400 13px/1.55 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aeb2b8);margin:0}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
+#aoPrayerBookRoot.open .aoRosaryGuide{margin:0 0 12px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:13px;background:var(--surface-1,#151c24);position:relative;z-index:2;overflow:hidden}
+#aoPrayerBookRoot.open .aoRosaryGuide>summary{display:flex;align-items:center;min-height:44px;padding:10px 12px;cursor:pointer;color:var(--liturgical,#d8bd7d);font:650 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPrayerBookRoot.open .aoRosaryGuideBody{padding:0 13px 5px}
+@media(max-width:560px){
+  /* Preserve six source-linked sections without letting the guide displace the prayer. */
+  #aoPrayerBookRoot.open .aoRosaryGuide[open] .aoRosaryGuideBody{
+    max-height:min(34dvh,290px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+#aoPrayerBookRoot.open .aoRosaryGuideSection{padding:11px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}
+#aoPrayerBookRoot.open .aoRosaryGuideSection h3{font:650 14px/1.3 var(--ao-font-display,Georgia,serif);margin:0 0 5px;color:var(--text,#f3ead7)}
+#aoPrayerBookRoot.open .aoRosaryGuideSection p{font:400 13px/1.55 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aeb2b8);margin:0}
+#aoPrayerBookRoot.open .aoRosaryGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
+`;
+
+/* Rosary canonical donor mobile controls: touch accessibility and prayer-first
+   microtype. Scoped to the *active* v3.4.14 player, not Mass, not the
+   Rosary Methods chooser, and never to other devotional screens. */
+const ROSARY_PHONE_CONTROLS_CSS=`
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoP435930RosaryBar button{
+  min-height:44px!important;
+  padding:10px 12px!important;
+  font:650 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation{
+  height:auto!important;min-height:44px!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .r29-head-recitation button,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
+  height:auto!important;min-height:44px!important;
+  padding:8px 12px!important;font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryGuide>summary{
+  min-height:48px!important;
+  font-size:13px!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryScriptureOpening a,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]{
+  display:inline-flex!important;align-items:center!important;
+  min-height:44px!important;padding:8px 0!important;
+  font-size:12px!important;line-height:1.4!important;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) :is(
+  [data-lab-rosary-today],[data-pb-rosary-set],[data-v38-rosary-form],
+  [data-lab-rosary-next],[data-lab-rosary-prev],
+  [data-pb-rosary-change],[data-lab-rosary-change]
+){
+  min-height:44px!important;touch-action:manipulation;
+}
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) :is(
+  .aoP435930RosaryBar button,.r29-head-recitation button,
+  .aoRosaryGuide>summary,[data-lab-rosary-next],[data-lab-rosary-prev],
+  [data-pb-rosary-set],[data-v38-rosary-form]
+):focus-visible{
+  outline:2px solid var(--liturgical,#d8bd7d)!important;outline-offset:2px!important;
+}
+/* Canonical opening only. The suggested mystery remains the donor's own
+   interactive first-action card; all reader controls are still operable. */
+#aoPrayerBookRoot.open .pbShell>.lab-rosary-hero{
+ margin:5px 0 12px!important;
+ border-color:color-mix(in srgb,var(--liturgical,#d8bd7d) 45%,var(--border,rgba(255,255,255,.12)))!important;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation{
+ display:block;min-width:0;margin:0 0 13px;
+ border:1px solid var(--border,rgba(255,255,255,.17));
+ border-radius:12px;background:var(--surface-1,#151c24);
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation>summary{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ min-height:48px;padding:12px 14px;cursor:pointer;
+ color:var(--text,#f3ead7);
+ font:650 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation .aoRosaryPreparationState{
+ text-align:right;flex:0 0 auto;
+ color:var(--liturgical,#d8bd7d);font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody{
+ display:grid;gap:10px;padding:0 12px 12px;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation:not([open])>.aoRosaryPreparationBody{display:none!important}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.aoP435930RosaryBar{
+ margin:0!important;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.lab-recitation-mode{
+ margin:0!important;width:100%;max-width:100%;box-sizing:border-box;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.aoRosaryGuide{
+ margin:0!important;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.v38RosaryForm,
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.lab-option-bar{
+ margin:0!important;width:100%;max-width:100%;box-sizing:border-box;
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries{
+ min-width:0;margin:0 0 14px;
+ border:1px solid var(--border,rgba(255,255,255,.16));border-radius:12px;
+ background:rgba(255,255,255,.018);
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries>summary{
+ display:flex;align-items:center;min-height:48px;
+ padding:11px 14px;cursor:pointer;color:var(--text,#f3ead7);
+ font:650 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries .aoRosaryMysteryChoices{
+ padding:0 10px 12px;min-width:0;
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries .lab-mystery-grid{
+ margin:0!important;min-width:0;max-width:100%;
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries:not([open])>.aoRosaryMysteryChoices{
+ display:none!important;
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries>summary:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
+}
+#aoPrayerBookRoot.open .aoRosaryPreparation>summary:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
+}
+/* Canonical active-bead view: prayer focus precedes configuration.
+   The native selected state remains visible on the disclosure summary. */
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions{
+ display:block;width:100%;min-width:0;max-width:100%;
+ margin:0 0 10px;border:1px solid var(--border,rgba(255,255,255,.17));
+ border-radius:12px;background:var(--surface-1,#151c24);
+ box-sizing:border-box;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions>summary{
+ display:flex;align-items:center;justify-content:space-between;gap:10px;
+ min-height:48px;padding:10px 12px;cursor:pointer;
+ color:var(--text,#f3ead7);
+ font:600 13px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsState{
+ color:var(--liturgical,#d8bd7d);text-align:right;
+ font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody{
+ display:grid;gap:10px;padding:0 11px 12px;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions:not([open])>.aoRosaryActiveOptionsBody{display:none!important}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody>.aoP435930RosaryBar,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody>.aoRosaryGuide{
+ margin:0!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody>.r29-head-recitation{
+ margin:0!important;min-width:0!important;max-width:100%!important;width:100%!important;
+ display:flex!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptionsBody>.r29-head-recitation button{
+ flex:1 1 50%!important;min-width:0!important;min-height:44px!important;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions>summary:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
+}
+@media(max-width:560px){
+  /* Prevent a 44px recitation pair from stealing width from the mystery
+     heading: keep it a separate phone row, with the prayer controls below. */
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head{
+    grid-template-columns:44px minmax(0,1fr)!important;
+  }
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head .r29-head-recitation{
+    grid-column:1/-1!important;justify-self:stretch!important;
+    min-width:0!important;max-width:none!important;width:100%!important;
+    margin:0!important;
+  }
+  #aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-view-head .r29-head-recitation button,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) .lab-recitation-mode button,
+#aoPrayerBookRoot.open:has(.aoP435930RosaryBar) [data-ao-recitation]{
+    flex:1 1 50%!important;min-width:0!important;
+  }
+}
 `;
 
 const ROSARY_SCRIPTURE_POLICY_CSS=`
@@ -698,6 +867,23 @@ const PRAY_ORG_ENTRY_CSS=`
   #aoPray435930 .aoP435930RootGroupDoors{grid-template-columns:1fr}
   #aoPray435930 .aoP435930RootGroupDoors .aoP435930FamilyDoor{min-height:98px}
 }
+/* Only the canonical Prayer hub: replace donor micro-captions with legible
+   type without modifying prayer, ritual, rubric, Rosary or text semantics. */
+#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind{
+  font-size:11px!important;line-height:1.35!important;letter-spacing:.07em!important
+}
+#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription{
+  font-size:13px!important;line-height:1.48!important
+}
+#aoPray435930 .aoP435930RootOrganised .aoP435930FamilyDoor b{
+  font-size:16px!important;line-height:1.3!important
+}
+#aoPray435930 .aoP435930Head small{
+  font-size:11px!important;line-height:1.25!important
+}
+#aoPray435930 .aoP435930RootOrganised .aoP435930HomeIntro>small{
+  font-size:11px!important;line-height:1.3!important
+}
 `;
 
 export function installPrayPresentationStyles(doc=globalThis.document){
@@ -706,6 +892,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-devotional-ux-contract-style",DEVOTIONAL_UX_CSS);
   ensureStyle(doc,"ao-pray-angelus-guide-ritual-style",ANGELUS_GUIDE_RITUAL_CSS);
   ensureStyle(doc,"ao-pray-rosary-guide-style",ROSARY_GUIDE_CSS);
+  ensureStyle(doc,"ao-pray-rosary-phone-controls-style",ROSARY_PHONE_CONTROLS_CSS);
   ensureStyle(doc,"ao-pray-rosary-scripture-policy-style",ROSARY_SCRIPTURE_POLICY_CSS);
   ensureStyle(doc,"ao-pray-modular-shell-integration-style",MODULAR_SHELL_CSS);
   ensureStyle(doc,"ao-pray-exact-ritual-rail-style",EXACT_RITUAL_RAIL_CSS);

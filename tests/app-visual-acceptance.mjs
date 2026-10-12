@@ -1215,7 +1215,12 @@ try{
     await page.locator("#ao-learn-modular-root [data-ao-learn-back]").click();
     await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
   }
-  for(const card of learnParity.cards){assert.ok(card.w>=130,"Formation two-column subject card collapsed below usable phone width");assert.ok(card.h>=120,"Formation subject card collapsed below approved tap/readability height: "+JSON.stringify(learnParity.cards));}
+  // Nine family cards are now single-column, source-preserving phone rows:
+  // confirm width and readable tap territory instead of enforcing obsolete tiles.
+  for(const card of learnParity.cards){
+    assert.ok(card.w>=340,"Formation subject row lost phone reading width: "+JSON.stringify(learnParity.cards));
+    assert.ok(card.h>=100,"Formation subject row collapsed below full-width readability threshold: "+JSON.stringify(learnParity.cards));
+  }
   await page.locator("#ao-learn-modular-root [data-ao-learn-family='spiritual-moral']").click();
   await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="spiritual-moral",null,{timeout:5000});
   const spiritualIcon=page.locator("#ao-learn-modular-root [data-ao-learn-card='learn.spiritual_life'] .aoLearnModIcon[data-ao-asset-id='ao-refined-spiritual-life']");

@@ -1,0 +1,444 @@
+{
+  "schema": "ao-mass-cue-owner-reconciliation13-v1",
+  "version": "1.1.0-post-pr1059-deduplicated",
+  "status": "BOOK_REVIEW_RECONCILED_WITH_CURRENT_MAIN_NO_DUPLICATE_PRIEST_ACTIONS",
+  "sources": {
+    "historicalBooks": [
+      "the_holy_mass.pdf",
+      "massstudyofroman00fort_bw.pdf"
+    ],
+    "review97": "data/mass/alphonsus-fortescue-semantic-reconciliation-remaining97.v1.json",
+    "review16": "data/mass/alphonsus-fortescue-low-sung-differences-adjudicated.v1.json",
+    "canonicalSot": [
+      "data/mass/gesture-matrix.v1.json",
+      "data/presentation/reader-priest-positions.v1.json",
+      "data/presentation/reader-priest-voices.v1.json",
+      "data/presentation/reader-text-sung.v1.json",
+      "data/presentation/reader-text-low.v1.json",
+      "data/mass/form-registry.v2.json"
+    ]
+  },
+  "policy": {
+    "canonicalCueIdsStable": true,
+    "noMoreSources": true,
+    "formatProfilesMustRemainSeparate": true,
+    "priestClockIndependentOfSchola": true,
+    "doNotDeriveCongregationGestures": true,
+    "noRuntimeChange": true,
+    "noNewPerIpsumOrDomineNonSumDignusGestures": true,
+    "original1962RuleRemainsExistingSot": true
+  },
+  "counts": {
+    "alreadyCovered": 6,
+    "partiallyCovered": 5,
+    "stillRequiresIntegration": 2
+  },
+  "statusCounts": {
+    "REQUIRES_NON_TEXT_EVENT": 1,
+    "REQUIRES_CONDITIONAL_EVENT": 1,
+    "PARTIALLY_MODELED_IN_RESEARCH": 2,
+    "ALREADY_MODELED_AT_NEXT_CUE_BOUNDARY": 1,
+    "ALREADY_MODELED_REQUIRE_TIMING_CHECK": 1,
+    "PARTIALLY_MODELED_ROLE_NEEDS_REVIEW": 1,
+    "ALREADY_MODELED_TWO_STATIONS": 1,
+    "PARTIALLY_IMPLEMENTED_OBSERVATION_GATE": 2,
+    "ALREADY_MODELED_VOICE_SPAN": 1,
+    "ALREADY_MODELED_FORM_SPLIT_NEEDS_MICRO_TIMING": 1,
+    "ALREADY_MODELED_TRIPLE_GESTURE": 1
+  },
+  "highestImpactUnresolved": [
+    {
+      "key": "PRIEST_CHANT_OBSERVATION_DRIVER",
+      "ids": [
+        "AO.CER.REC.09",
+        "AO.CER.REC.10"
+      ],
+      "severity": "MEDIUM",
+      "runtimeImpact": "Fail-closed code is now on main; a trusted independent priest-event input still needs a realistic user/source workflow. No automatic movement recognition exists."
+    },
+    {
+      "key": "DEO_GRATIAS_ROLE",
+      "ids": [
+        "AO.CER.REC.07"
+      ],
+      "severity": "MEDIUM",
+      "runtimeImpact": "LOW already identifies the minister response. Sung USER_RESPONSE clock still needs role-specific review where ministers/choir supply Deo gratias."
+    },
+    {
+      "key": "OFFERTORY_AND_PATEN_MICRO_TIMING",
+      "ids": [
+        "AO.CER.REC.03",
+        "AO.CER.REC.04",
+        "AO.CER.REC.12"
+      ],
+      "severity": "LOW",
+      "runtimeImpact": "Source actions are form-separated; precise object transfer/pouring timing cannot be inferred from one text cue."
+    },
+    {
+      "key": "PREMASS_NON_TEXT_REVERENCE",
+      "ids": [
+        "AO.CER.REC.01",
+        "AO.CER.REC.02"
+      ],
+      "severity": "LOW",
+      "runtimeImpact": "Actual entry, tabernacle reservation and observed priest gesture precede C0001; no fabricated universal action."
+    }
+  ],
+  "items": [
+    {
+      "id": "AO.CER.REC.01",
+      "idFromBookReview": "AO.BOOKS.SEM.001",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.001",
+      "originalCanonicalCue": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "expectedOwner": "PRE_MASS_APPROACH",
+      "status": "REQUIRES_NON_TEXT_EVENT",
+      "stage": "BEFORE_C0001",
+      "finding": "The biretta is removed and the celebrant reaches the foot before the opening Sign of the Cross. No C0001 text-triggered movement may be implied.",
+      "nextAction": "Non-text arrival event must be owned by procession/approach state; form and actual wearing of biretta remain conditions.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 96,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    },
+    {
+      "id": "AO.CER.REC.02",
+      "idFromBookReview": "AO.BOOKS.SEM.002",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.002",
+      "originalCanonicalCue": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "expectedOwner": "PRE_MASS_REVERENCE",
+      "status": "REQUIRES_CONDITIONAL_EVENT",
+      "stage": "BEFORE_C0001",
+      "finding": "A bow or genuflection is conditional on tabernacle reservation and historical ceremonial context. C0001 sign of cross does not establish a universal genuflection.",
+      "nextAction": "Use observed Blessed-Sacrament-at-altar and 1962 profile gate; no universal forced knee action.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 102,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    },
+    {
+      "id": "AO.CER.REC.03",
+      "idFromBookReview": "AO.BOOKS.SEM.032",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.032",
+      "originalCanonicalCue": "AO.SM.C0112",
+      "actor": "PRIEST_OR_DEACON",
+      "expectedOwner": "WINE_INTO_CHALICE",
+      "status": "PARTIALLY_MODELED_IN_RESEARCH",
+      "stage": "BEFORE_C0112",
+      "finding": "The wine is already poured before Deus, qui humanae. The Solemn research register assigns this pour to the deacon, while the supplied Low Mass book describes the priest.",
+      "nextAction": "Respect LOW=PRIEST, MISSA_CANTATA=PRIEST (no deacon), SOLEMN=DEACON; candidate still requires profile runtime test.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 136,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    },
+    {
+      "id": "AO.CER.REC.04",
+      "idFromBookReview": "AO.BOOKS.SEM.033",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.033",
+      "originalCanonicalCue": "AO.SM.C0112",
+      "actor": "PRIEST",
+      "expectedOwner": "BLESS_WATER",
+      "status": "PARTIALLY_MODELED_IN_RESEARCH",
+      "stage": "AT_C0112_BEGINNING",
+      "finding": "Book says that the priest blesses the water and says Deus, qui humanae at the same time; do not treat the sign as a universally earlier, separately spoken formula. Requiem suppresses gesture, not the prayer.",
+      "nextAction": "B01-014 and B01-015 already distinguish Requiem. Phrase-specific timing and form overlays not runtime tested.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 136,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    },
+    {
+      "id": "AO.CER.REC.05",
+      "idFromBookReview": "AO.BOOKS.SEM.047",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.047",
+      "originalCanonicalCue": "AO.SM.C0151",
+      "actor": "PRIEST",
+      "expectedOwner": "ALTAR_KISS_TE_IGITUR",
+      "status": "ALREADY_MODELED_AT_NEXT_CUE_BOUNDARY",
+      "stage": "AFTER_PETIMUS_C0150_BEFORE_C0151",
+      "finding": "Alphonsus p.146 places the kiss immediately after ac pétimus (C0150) and before uti accepta (C0151). The existing canonical priest action GM.P.C0151.01 begins precisely at the next cue C0151; moving it to the START of C0150 would make it premature. No new cue or duplicate action is required.",
+      "nextAction": "Preserve GM.P.C0151.01 at opening of C0151 as the cue-boundary representation. If subcue timing is ever needed, annotate the after-C0150 / before-C0151 boundary; do not change the canonical gesture ID.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 146,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false,
+      "canonicalBoundary": {
+        "afterCueId": "AO.SM.C0150",
+        "beforeCueId": "AO.SM.C0151",
+        "representedAtCueId": "AO.SM.C0151",
+        "alreadyPresentGestureId": "GM.P.C0151.01",
+        "requiresNewAction": false
+      }
+    },
+    {
+      "id": "AO.CER.REC.06",
+      "idFromBookReview": "AO.BOOKS.SEM.063",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.063",
+      "originalCanonicalCue": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "expectedOwner": "CHALICE_FIRST_GENUFLECTION",
+      "status": "ALREADY_MODELED_REQUIRE_TIMING_CHECK",
+      "stage": "C0180_TO_C0181_BOUNDARY",
+      "finding": "Book p160 describes replacing the chalice and genuflecting during Haec quotiescumque. The canonical source places microstep 1 in C0181 and explicitly tests no premature elevation at C0180.",
+      "nextAction": "Preserve existing five-step action cue until SOT boundary adjudicated; never manufacture a duplicate genuflection at C0180.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 160,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    },
+    {
+      "id": "AO.CER.REC.07",
+      "idFromBookReview": "AO.BOOKS.DIFF.020",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.020",
+      "originalCanonicalCue": "AO.SM.C0076",
+      "actor": "MINISTER_OR_SCHOLA",
+      "expectedOwner": "DEO_GRATIAS_EPISTLE",
+      "status": "PARTIALLY_MODELED_ROLE_NEEDS_REVIEW",
+      "stage": "C0076",
+      "finding": "Low text clock is MINISTER_RESPONSE; sung text clock is USER_RESPONSE, not PRIEST. The response registry has no explicit C0076 row; avoid emitting priest voice for Deo gratias.",
+      "nextAction": "Resolve response-provider differences per form; leave priest/listens state separate. Do not force direct priest response.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 124,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    },
+    {
+      "id": "AO.CER.REC.08",
+      "idFromBookReview": "AO.BOOKS.DIFF.022",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.022",
+      "originalCanonicalCue": "AO.SM.C0081",
+      "actor": "PRIEST",
+      "expectedOwner": "MOVE_TO_GOSPEL_SIDE",
+      "status": "ALREADY_MODELED_TWO_STATIONS",
+      "stage": "C0081_ROUTE_TO_C0082_ARRIVAL",
+      "finding": "C0081 has route MOVE_CENTER_TO_GOSPEL_MISSAL while state still ALTAR_CENTER; C0082 transitions to ALTAR_GOSPEL_MISSAL facing the Missal.",
+      "nextAction": "Already records both phases. Keep them, and do not add a second route merely because book phrase describes arrival.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 126,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    },
+    {
+      "id": "AO.CER.REC.09",
+      "idFromBookReview": "AO.BOOKS.DIFF.044",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.044",
+      "originalCanonicalCue": "AO.SM.C0145",
+      "actor": "PRIEST",
+      "expectedOwner": "SANCTUS_PRIEST_BOW",
+      "status": "PARTIALLY_IMPLEMENTED_OBSERVATION_GATE",
+      "stage": "PRIEST_PRIVATE_SANCTUS_NOT_SCHOLA_C0145",
+      "finding": "Sung C0145 is SCHOLA_PUBLIC but GM.P.C0145.01 is a priest action on that cue. A public-chant clock may not trigger the priest's quiet recitation bow. Production guard merged in PR #1059 prevents Schola C0145/C0148 from automatically triggering a priest action; only explicit observed priest event input can now show the source gesture.",
+      "nextAction": "Keep the merged fail-closed guard. An actual independent, trusted priest event driver or clearly visible manual observation workflow remains unimplemented; do not infer it from the choir or silently force a gesture.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 142,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false,
+      "productionResolution": {
+        "pr": 1059,
+        "mergeCommit": "f952d5b7caa79de90b13935d2d8b51deef8d9925",
+        "scope": "GUARD_SCHOLA_WITH_EXPLICIT_PRIEST_OBSERVATION",
+        "independentAutoDetection": false
+      }
+    },
+    {
+      "id": "AO.CER.REC.10",
+      "idFromBookReview": "AO.BOOKS.DIFF.045",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.045",
+      "originalCanonicalCue": "AO.SM.C0148",
+      "actor": "PRIEST",
+      "expectedOwner": "BENEDICTUS_PRIEST_CROSS",
+      "status": "PARTIALLY_IMPLEMENTED_OBSERVATION_GATE",
+      "stage": "PRIEST_PRIVATE_BENEDICTUS_NOT_SCHOLA_C0148",
+      "finding": "Sung C0148 is SCHOLA_PUBLIC but GM.P.C0148.01 is a priest cross at his own Benedictus. Deferred Schola Benedictus can substantially lag priest recitation. Production guard merged in PR #1059 prevents Schola C0145/C0148 from automatically triggering a priest action; only explicit observed priest event input can now show the source gesture.",
+      "nextAction": "Keep the merged fail-closed guard. An actual independent, trusted priest event driver or clearly visible manual observation workflow remains unimplemented; do not infer it from the choir or silently force a gesture.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 142,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false,
+      "productionResolution": {
+        "pr": 1059,
+        "mergeCommit": "f952d5b7caa79de90b13935d2d8b51deef8d9925",
+        "scope": "GUARD_SCHOLA_WITH_EXPLICIT_PRIEST_OBSERVATION",
+        "independentAutoDetection": false
+      }
+    },
+    {
+      "id": "AO.CER.REC.11",
+      "idFromBookReview": "AO.BOOKS.DIFF.068",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.068",
+      "originalCanonicalCue": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "expectedOwner": "NOBIS_QUOQUE_VOICE",
+      "status": "ALREADY_MODELED_VOICE_SPAN",
+      "stage": "C0196_OPENING_ONLY",
+      "finding": "Existing voice donor explicitly says BRIEFLY AUDIBLE / THEN LOW and limits the scope to EVENT_ONLY, consistent with Alphonsus printed p164.",
+      "nextAction": "Retain brief audible opening; do not extend public audibility to following Canon text.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 164,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    },
+    {
+      "id": "AO.CER.REC.12",
+      "idFromBookReview": "AO.BOOKS.DIFF.072",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.072",
+      "originalCanonicalCue": "AO.SM.C0211",
+      "actor": "PRIEST_OR_SACRED_MINISTERS",
+      "expectedOwner": "PATEN_HANDOFF_BEFORE_LIBERA_NOS",
+      "status": "ALREADY_MODELED_FORM_SPLIT_NEEDS_MICRO_TIMING",
+      "stage": "AFTER_C0211_BEFORE_C0212_LOW",
+      "finding": "Existing Low form state at C0212 already instructs the priest to hold the paten upright while praying Libera nos. Existing Solemn sacred-minister state SMIN-012 at C0212 separately describes the subdeacon-to-deacon-to-celebrant paten handoff. Form ownership is already distinct; precise subcue transfer timing remains an observational/1962 review issue.",
+      "nextAction": "Do not create another universal PATEN_HANDOFF event. Preserve existing Low priest and Solemn sacred-minister action lanes at C0212; address only exact physical timing if independently observed and certified.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 167,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false,
+      "existingImplementations": [
+        {
+          "form": "LOW",
+          "source": "data/presentation/reader-form-state.v1.json",
+          "cueId": "AO.SM.C0212",
+          "actor": "PRIEST",
+          "state": "Holds the paten upright while praying."
+        },
+        {
+          "form": "SOLEMN",
+          "source": "data/presentation/reader-form-state.v1.json",
+          "ministerEventId": "SMIN-012",
+          "cueId": "AO.SM.C0212",
+          "actor": "SUBDEACON → DEACON"
+        }
+      ]
+    },
+    {
+      "id": "AO.CER.REC.13",
+      "idFromBookReview": "AO.BOOKS.DIFF.081",
+      "sourceBookEvidenceRecordId": "ALPH.BK2.081",
+      "originalCanonicalCue": "AO.SM.C0229",
+      "actor": "PRIEST",
+      "expectedOwner": "DOMINE_NON_SUM_DIGNUS_THREE_STRIKES",
+      "status": "ALREADY_MODELED_TRIPLE_GESTURE",
+      "stage": "C0229_C0230_C0231",
+      "finding": "Canonical gesture matrix and priest-action registry already contain one breast-strike at each of three separate Domine non sum dignus cues.",
+      "nextAction": "No new gesture. Mixed-vs-private voice label should not be inferred as public schola performance.",
+      "sourceBook": "the_holy_mass.pdf",
+      "sourcePrintedPage": 170,
+      "existing1962SourceUsed": "CURRENT_GITHUB_CANONICAL_SOT",
+      "eligibleForms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "notApprovedForLive": true,
+      "congregationMandate": false,
+      "cueTextMutation": false
+    }
+  ],
+  "currentMainReconciliation": {
+    "priestChantGuardMerged": true,
+    "priestChantMergeCommit": "f952d5b7caa79de90b13935d2d8b51deef8d9925",
+    "altarKissAlreadyCorrectBoundary": true,
+    "patenLowAndSolemnAlreadyDifferentActors": true,
+    "remainingRealIntegrationCount": 2,
+    "unfinishedIndependentObservationDriver": true
+  }
+}

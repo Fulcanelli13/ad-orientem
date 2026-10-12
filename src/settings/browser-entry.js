@@ -44,10 +44,23 @@ export function createSettingsOwner(win=globalThis){
   }
   function paint(){
     const r=root();if(!r)return false;
+    // Preference updates rebuild the donor markup. Keep keyboard focus on
+    // the *same preference* rather than silently dumping the user onto body.
+    const previous=win.document?.activeElement;
+    const focusFields=["prefPath","prefValue","prefToggle","prefSelect","settingsRoute",
+      "settingsBack","settingsClose","profileId","profileKey","profileName"];
+    const activeFields=previous&&r.contains(previous)
+      ?focusFields.filter(key=>previous.dataset?.[key]!==undefined)
+        .map(key=>[key,previous.dataset[key]]):[];
     r.dataset.aoSettingsOwner="AO_SETTINGS_APP_V1";
     r.dataset.aoSettingsPresentationOwner=SETTINGS_PRESENTATION_VERSION;
     r.dataset.aoSettingsRoute=route;
     r.innerHTML=renderSettingsToString(win,{route,live:isLive()});
+    if(activeFields.length){
+      const candidate=[...r.querySelectorAll("button,input,select,textarea")]
+        .find(el=>activeFields.every(([key,value])=>el.dataset?.[key]===value));
+      try{candidate?.focus?.({preventScroll:true})}catch{}
+    }
     return true;
   }
   function subscribe(){
@@ -151,7 +164,22 @@ export function createSettingsOwner(win=globalThis){
     r.addEventListener("focusout",event=>{
       const el=event.target;if(el?.dataset?.profileName)mutate(()=>donor.renameProfile(el.dataset.profileName,el.value));
     });
-    r.addEventListener("keydown",event=>{if(event.key==="Escape"){event.preventDefault();back();}});
+    r.addEventListener("keydown",event=>{
+      if(event.key==="Escape"){event.preventDefault();back();return;}
+      if(event.key!=="Tab")return;
+      // Settings is a real aria-modal dialog. Never move focus into the
+      // dimmed app while the overlay is open, including after preference paint.
+      const focusables=[...r.querySelectorAll(
+        'button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])'
+      )].filter(el=>el.getClientRects().length&&!el.closest("[hidden],[inert],details:not([open])"));
+      if(!focusables.length){event.preventDefault();r.tabIndex=-1;r.focus();return;}
+      const first=focusables[0],last=focusables[focusables.length-1],active=win.document.activeElement;
+      if(event.shiftKey&&(active===first||!r.contains(active))){
+        event.preventDefault();last.focus();
+      }else if(!event.shiftKey&&(active===last||!r.contains(active))){
+        event.preventDefault();first.focus();
+      }
+    });
   }
   function status(){
     const r=root();

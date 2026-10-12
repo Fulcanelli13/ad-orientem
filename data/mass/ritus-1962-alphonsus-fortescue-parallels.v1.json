@@ -1,0 +1,275 @@
+{
+  "schema": "ao-1962-alphonsus-fortescue-rubric-crosswalk-v1",
+  "version": "1.0.0",
+  "status": "PRINTED_SECTION_PARALLEL_RESEARCH_NOT_WORD_BY_WORD_CERTIFIED",
+  "summary": "The two user-provided historical books are primary study inputs, but not governing 1962 rubrical authority. This crosswalk distinguishes explanatory Fortescue from procedural Alphonsus and modern source checks.",
+  "sources": [
+    {
+      "id": "ALPH1889",
+      "title": "St Alphonsus de Liguori, The Holy Mass (1889)",
+      "role": "HISTORICAL_PROCEDURAL_COMPARE_ONLY",
+      "url": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf"
+    },
+    {
+      "id": "FORT1914",
+      "title": "Adrian Fortescue, The Mass: A Study of the Roman Liturgy (1914)",
+      "role": "HISTORICAL_LITURGICAL_EXPLANATION",
+      "url": "https://archive.org/details/massstudyofroman00fort"
+    },
+    {
+      "id": "MR1962",
+      "title": "Missale Romanum 1962 — Ritus servandus in celebratione Missae",
+      "role": "NORMATIVE",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+    }
+  ],
+  "rows": [
+    {
+      "id": "H01",
+      "theme": "FORMS_AND_RELATIVE_HIGH_LOW",
+      "macroRange": "M01-M30",
+      "alphonsusPrintedLocator": "Introduction to Ceremonies; pp.79–80",
+      "fortescuePrintedLocator": "§ Different Kinds of Mass, p.184–190; To the Collects p.214–215",
+      "comparisonNote": "Fortescue explains High/Low historical derivation; do not model Missa Cantata as Solemn-minus-ministers.",
+      "scope": "FORM_ARCHITECTURE_CONTEXT",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H02",
+      "theme": "OPENING_AND_ALTAR_APPROACH",
+      "macroRange": "M01",
+      "alphonsusPrintedLocator": "pp.91–108, Ch.II–III",
+      "fortescuePrintedLocator": "pp.216–230, Ch.V §§2–5",
+      "comparisonNote": "Alphonsus gives exact priest approach and foot prayers; Fortescue explains entrance, Introit and development of preparation.",
+      "scope": "PRIEST_PROCEDURE_VS_HISTORICAL_FORM",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H03",
+      "theme": "GLORIA_AND_COLLECT",
+      "macroRange": "M02-M04",
+      "alphonsusPrintedLocator": "pp.109–123, Ch.IV–V",
+      "fortescuePrintedLocator": "pp.230–253, Ch.V §§5–7",
+      "comparisonNote": "Do not use older rubric as replacement for 1962 sung vs Low distinction or congregational standing custom.",
+      "scope": "FORM_SENSITIVE_TEXT",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H04",
+      "theme": "EPISTLE_GOSPEL_CREDO",
+      "macroRange": "M05-M09",
+      "alphonsusPrintedLocator": "pp.124–130, Ch.VI",
+      "fortescuePrintedLocator": "pp.254–292, Ch.VI",
+      "comparisonNote": "Historical changes to the Gospel station and chant do not override the solemn deacon/subdeacon positions of Ritus VI.4–8.",
+      "scope": "MINISTER_TOPOLOGY",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H05",
+      "theme": "OFFERTORY_BREAD_AND_CHALICE",
+      "macroRange": "M10",
+      "alphonsusPrintedLocator": "pp.131–138, Ch.VII §§1–4",
+      "fortescuePrintedLocator": "pp.296–308, Ch.VII §§2–5",
+      "comparisonNote": "Alphonsus describes bread/chalice handling; Fortescue gives development of offertory prayers; Solemn minister object transfers come from Ritus VII.9.",
+      "scope": "PROCEDURAL_PLUS_HISTORY",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H06",
+      "theme": "INCENSATION_LAVABO",
+      "macroRange": "M10",
+      "alphonsusPrintedLocator": "pp.138–141, Ch.VII §§4–6",
+      "fortescuePrintedLocator": "pp.308–311, Ch.VII §6",
+      "comparisonNote": "Old Low-Mass gestures may not be projected as an incense route. Distinguish optional sung incense from Solemn and Requiem omission rules.",
+      "scope": "FORM_DELTA_STRICT",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H07",
+      "theme": "PREFACE_SANCTUS",
+      "macroRange": "M12-M13",
+      "alphonsusPrintedLocator": "pp.142–144, Ch.VII §7",
+      "fortescuePrintedLocator": "pp.315–323, Ch.VIII §§1–2",
+      "comparisonNote": "Fortescue discusses provenance of Preface/Sanctus; literal priest head/hands/cross motion follows 1962 Ritus VII.8.",
+      "scope": "EXPLANATION_NOT_COMMAND",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H08",
+      "theme": "CANON_TE_IGITUR_AND_CROSSES",
+      "macroRange": "M14",
+      "alphonsusPrintedLocator": "pp.145–147, Ch.VIII §1",
+      "fortescuePrintedLocator": "pp.328–334, Ch.VIII §4",
+      "comparisonNote": "Match each kiss and sign of cross to clause; older phrasing and historical hypothesis cannot change the Canon's current order.",
+      "scope": "CANON_WORD_ANCHOR",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H09",
+      "theme": "HANC_IGITUR_HANDS_EXTENDED",
+      "macroRange": "M14",
+      "alphonsusPrintedLocator": "pp.151–153, Ch.VIII §2",
+      "fortescuePrintedLocator": "pp.333–335, Ch.VIII §4",
+      "comparisonNote": "Fortescue notes historical development of laying hands; execute only rubric in Ritus VIII.4 rather than a reconstructed earlier rite.",
+      "scope": "CANON_GESTURE_HISTORY",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H10",
+      "theme": "CONSECRATIONS_ELEVATIONS",
+      "macroRange": "M15-M16",
+      "alphonsusPrintedLocator": "pp.153–160, Ch.VIII §§3–4",
+      "fortescuePrintedLocator": "pp.337–344, Ch.VIII §5",
+      "comparisonNote": "Fortescue explicitly traces post-institution elevation as a later medieval ceremony. Current 1962 genuflect/elevate/repose/genuflect still controls.",
+      "scope": "PROCEDURAL_VS_HISTORICAL",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H11",
+      "theme": "CANON_AFTER_CONSECRATION",
+      "macroRange": "M17-M18",
+      "alphonsusPrintedLocator": "pp.161–165, Ch.IX",
+      "fortescuePrintedLocator": "pp.345–360, Ch.VIII §6",
+      "comparisonNote": "Historical interpretation of Canon rearrangement cannot alter Nobis quoque/Per quem/Per ipsum text or gesture boundary.",
+      "scope": "CANON_BOUNDARY",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H12",
+      "theme": "PATERNOSTER_FRACTION_PAX",
+      "macroRange": "M19-M22",
+      "alphonsusPrintedLocator": "pp.166–170, Ch.X §§1–2",
+      "fortescuePrintedLocator": "pp.361–372, Ch.IX §§1–3",
+      "comparisonNote": "Alphonsus is priest-action procedural; Fortescue historicizes fraction and Pax. Solemn minister paten/Pax has explicit 1962 Ritus X.8 choreography.",
+      "scope": "SOLEMN_MINISTRY",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H13",
+      "theme": "PRIEST_AND_FAITHFUL_COMMUNION",
+      "macroRange": "M22-M26",
+      "alphonsusPrintedLocator": "pp.170–177, Ch.X §§3–4; pp.183–187, Ch.XII",
+      "fortescuePrintedLocator": "pp.372–385, Ch.IX §§4–6",
+      "comparisonNote": "Beware historical additional Confiteor before lay Communion; strict 1962 follows Ritus X.6 and suppresses the pre-1960 custom.",
+      "scope": "HISTORICAL_OMISSION",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H14",
+      "theme": "POSTCOMMUNION_AND_DISMISSAL",
+      "macroRange": "M27-M30",
+      "alphonsusPrintedLocator": "pp.178–181, Ch.XI",
+      "fortescuePrintedLocator": "pp.391–396, Ch.X §§1–3",
+      "comparisonNote": "Separation between dismissal, Placeat, blessing and last Gospel must follow 1962 form and exceptions.",
+      "scope": "LAST_RITES",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    },
+    {
+      "id": "H15",
+      "theme": "REQUIEM_SPECIAL_RUBRICS",
+      "macroRange": "M01-M30",
+      "alphonsusPrintedLocator": "pp.192–194, Ch.XIV",
+      "fortescuePrintedLocator": "pp.392–393, Ch.X §2",
+      "comparisonNote": "Both volumes predate the 1962 form; source for omission of Gloria, water blessing, pax, kissing and blessing is Ritus XIII, not historical custom.",
+      "scope": "REQUIEM_EXCEPTION",
+      "urls": {
+        "alphonsus": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "fortescue": "https://archive.org/details/massstudyofroman00fort",
+        "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      },
+      "certifiedWordByWord": false,
+      "runtimeImport": false
+    }
+  ],
+  "gates": {
+    "newNormativeActions": 0,
+    "conditionalMassFormRequired": true,
+    "latin1962RubricFullReviewOpen": true,
+    "sourceParagraphReviewOpen": true,
+    "authorityRule": "1962 Missal > ceremonial interpretation > historical comparison > local faithful custom > UI"
+  }
+}

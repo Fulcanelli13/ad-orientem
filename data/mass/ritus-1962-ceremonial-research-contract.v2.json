@@ -1,0 +1,229 @@
+{
+  "schema": "ao-1962-ceremonial-research-contract-v2",
+  "version": "2.7.0-post-integration-deduplicated",
+  "status": "RESEARCH_NOT_RUNTIME",
+  "sourceOfAuthority": {
+    "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+    "historicalExplanation": [
+      "St Alphonsus: The Holy Mass (1889)",
+      "Fortescue: The Mass (1914)"
+    ]
+  },
+  "baseIdentity": {
+    "lowCues": 275,
+    "sungCues": 279,
+    "comparativeRows": 554,
+    "canonicalCueId": "AO.SM.C####",
+    "noTextMutation": true,
+    "noCardMutation": true
+  },
+  "sourceAlignment": {
+    "rubricProvisions": 98,
+    "textLinkedIncludingSplits": 73,
+    "conditionalOrVisibleOrCrossMacro": 25,
+    "requiresHumanReview": true
+  },
+  "ministrations": {
+    "sourceCheckedSolemnDetailedBatch": "data/mass/ritus-1962-solemn-ministers-batch02.v1.json",
+    "events": 67,
+    "byActor": {
+      "DEACON": 31,
+      "SUBDEACON": 23,
+      "ACOLYTES": 5,
+      "THURIFER": 4,
+      "PRIEST": 4
+    },
+    "requiemEvents": 12,
+    "earlierUnreconciledCandidateEvents": 65,
+    "notEquivalentToMissaCantata": true
+  },
+  "frenchRubrics": {
+    "shortAndDetailedDrafts": 98,
+    "publishableWithoutQA": false
+  },
+  "knownAnomalies": [
+    {
+      "ref": "GATE-1962-001",
+      "cues": [
+        "AO.SM.C0235",
+        "AO.SM.C0236",
+        "AO.SM.C0237",
+        "AO.SM.C0238",
+        "AO.SM.C0239",
+        "AO.SM.C0240",
+        "AO.SM.C0241"
+      ],
+      "policy": "NO_SECOND_CONFITEOR_STRICT_1962"
+    },
+    {
+      "ref": "GATE-1962-002",
+      "cue": "AO.SM.C0196",
+      "correctMacro": "AO.SM.M17"
+    },
+    {
+      "ref": "GATE-1962-002",
+      "cue": "AO.SM.C0200",
+      "correctMacro": "AO.SM.M17"
+    }
+  ],
+  "prohibitions": [
+    "DO_NOT_IMPORT_AS_RUNTIME",
+    "DO_NOT_INFER_FROM_SUBSTRINGS",
+    "DO_NOT_ASSIGN_FAITHFUL_POSTURE_FROM_PRIEST",
+    "DO_NOT_MUTATE_LIVE48",
+    "DO_NOT_TREAT_HISTORIC_BOOKS_AS_1962_LAW"
+  ],
+  "targetSeparateModes": [
+    "FAITHFUL_LIVE",
+    "PRIEST_LIVE"
+  ],
+  "fullDatasetCommitted": false,
+  "sourceCheckedBatches": [
+    {
+      "file": "data/mass/ritus-1962-verified-ceremonial-batch01.v1.json",
+      "events": 46,
+      "uniqueCueAnchors": 33,
+      "languageStatus": "1962 English translation; 3 corrected against 1962 Latin transcription"
+    },
+    {
+      "file": "data/mass/ritus-1962-solemn-ministers-batch02.v1.json",
+      "events": 67,
+      "canonicalAnchorCount": 64,
+      "branchOnlyAnchors": 3,
+      "languageStatus": "English translation; Latin review partial"
+    },
+    {
+      "file": "data/mass/ritus-1962-latin-phrase-audit-batch03.v1.json",
+      "events": 36,
+      "languageStatus": "1962 Latin–French transcription, facsimile review pending"
+    },
+    {
+      "file": "data/mass/ritus-1962-faithful-posture-classification-batch04.v1.json",
+      "events": 23,
+      "localCustom": 5,
+      "languageStatus": "Sung source of truth classifications; historical lay custom review pending"
+    }
+  ],
+  "historicalParallelRegister": "data/mass/ritus-1962-alphonsus-fortescue-parallels.v1.json",
+  "certificationLimits": [
+    "Historical texts predate the 1962 rubrics: conflicting or omitted instructions are unresolved unless the existing 1962 SOT settles them",
+    "No new editions/websites/ceremonial manuals are to be sought for this scope",
+    "The matrix's existing 1962 form rules are preserved; do not infer unsupported variants"
+  ],
+  "priorities": [
+    "Resolve only actual priest-entry/reverence events before C0001 using observed tabernacle/arrival state, not fabricated cues",
+    "Develop a trusted independent source for priest Sanctus/Benedictus observation after the merged PR #1059 fail-closed guard; not Schola timing",
+    "Resolve Epistle Deo gratias response actor under form-specific choir/minister ownership",
+    "Defer source micro-timing for water/wine and paten actions until a supported nontext actor event; current C0212 form split is already correct",
+    "Do not introduce a second Te igitur kiss: GM.P.C0151.01 already represents the exact after-petimus cue boundary"
+  ],
+  "correctionsSinceV2": [
+    "C0163 opening Quam oblationem precedes crosses; C0164 three crosses on benedictam, adscriptam, ratam; C0165 Corpus-only, C0166 Sanguis-only.",
+    "Three Agnus Dei breast strikes individually owned by C0222, C0223 and C0224; Requiem omitted.",
+    "Foot-of-altar C0010 Gloria Patri tied to Judica me III.6 and unavailable where that Psalm is omitted.",
+    "Wine poured into chalice before priest begins C0112 Deus qui humanae.",
+    "All 23 faithful sung postures are usage/profile-guidance, not universal rubrical mandates."
+  ],
+  "userSourceRestriction": {
+    "effective": "2026-10-11",
+    "booksOnly": [
+      "The Holy Mass — St Alphonsus de Liguori",
+      "The Mass: A Study of the Roman Liturgy — Adrian Fortescue"
+    ],
+    "noAdditionalResearchSources": true,
+    "existing1962MatricesRemainAuthorityFor1962Variants": true,
+    "unresolved1962Differences": "FLAG_AND_DEFER_NOT_SEARCH",
+    "noExternalSourceSearches": true,
+    "doNotRequireMoreFacsimiles": true,
+    "workbookSource": "Ad_Orientem_1962_Sung_Mass_CANONICAL_BLUEPRINT_v1.1_PROTOTYPE_READY.xlsx",
+    "directBookEvidenceFile": "data/mass/alphonsus-fortescue-direct-book-evidence.v1.json",
+    "fullBookEvidenceRegistry": "data/mass/alphonsus-fortescue-direct-book-evidence-batch02.v1.json",
+    "moreSourcesNeeded": false,
+    "unresolvedHistorical1962Difference": "FLAG_IN_EXISTING_MATRIX_AND_DEFER"
+  },
+  "bookOnlyEvidenceBatch02": {
+    "file": "data/mass/alphonsus-fortescue-direct-book-evidence-batch02.v1.json",
+    "companionWorkbook": "Ad_Orientem_Two_Book_Ceremonial_Page_Audit_Batch02.xlsx",
+    "alphonsusActionLocators": 113,
+    "fortescueHistoricalLocators": 27,
+    "distinctCanonicalCueIds": 91,
+    "lowSungDonorActionDifferences": 16,
+    "sourceEvidenceStatus": "ALL_113_PAGE_EXCERPTS_LOCATED_SEMANTIC_AND_1962_APPLICABILITY_OPEN",
+    "externalSourcesConsulted": false,
+    "priestGuideTextAutomaticallyPromoted": false
+  },
+  "bookSemanticReview": {
+    "file": "data/mass/alphonsus-fortescue-semantic-reconciliation-remaining97.v1.json",
+    "priorReview": "data/mass/alphonsus-fortescue-low-sung-differences-adjudicated.v1.json",
+    "totalSourcePassages": 113,
+    "alreadyAssessedLowSung": 16,
+    "newSemanticAssessments": 97,
+    "all113NowReviewedForPassageMeaning": true,
+    "counts": {
+      "directHistoric": 41,
+      "caveated": 30,
+      "correctedSourceExcerpt": 8,
+      "needsReanchor": 6,
+      "historic1962Unresolved": 9,
+      "excludedOlderConfiteor": 1,
+      "expresslyRejectedPositiveAction": 1,
+      "researchSummaryOnlyIncomplete": 1
+    },
+    "controllingPrinciple": "All substantive claims sourced solely to two user-supplied historical books, with existing 1962 SOT determining modern form applicability. Green research tests do not establish 1962 normative certification.",
+    "critical": [
+      {
+        "cue": "AO.SM.C0150",
+        "issue": "altar kiss after petimus before C0151"
+      },
+      {
+        "cue": "AO.SM.C0202/C0203",
+        "issue": "all 5 Per ipsum crosses ALREADY in canonical matrix; repair research summary only"
+      },
+      {
+        "cue": "AO.SM.C0112",
+        "issue": "pre-text wine pour / water blessing and Requiem exception require separate actor/object event"
+      },
+      {
+        "cue": "AO.SM.C0180/C0181",
+        "issue": "historical book puts first chalice genuflection at Haec quotiescumque boundary; requires existing 1962 SOT reconciliation"
+      },
+      {
+        "cue": "BISHOP_WATER_BLESSING",
+        "issue": "Alphonsus rejects this practice as not prescribed; no positive gesture"
+      }
+    ]
+  },
+  "priestCueOwnerReconciliation": {
+    "file": "data/mass/ritus-1962-priest-cue-owner-reconciliation13.v1.json",
+    "total": 13,
+    "alreadyCoveredInCanonical": 6,
+    "partiallyCovered": 5,
+    "needsAdditionalReviewOrImplementation": 2,
+    "mostImportant": [
+      "Source gesture GM.P.C0151.01 is ALREADY correctly anchored to the boundary after C0150 petimus and before C0151 uti accepta; do not move it earlier.",
+      "Low priest paten action at C0212 and Solemn SMIN-012 sacred-minister handoff at C0212 are ALREADY distinct; no duplicate object transfer event.",
+      "PR #1059 merged the fail-closed Schola/celebrant separation; independent observation source remains to be implemented.",
+      "Entrance and reservation-conditioned reverence occur BEFORE C0001 and require actual nontext state."
+    ],
+    "previewModule": "tools/mass/priest-owner-independent-clock-preview.mjs",
+    "previewTest": "tests/mass-priest-owner-independent-clock-preview.mjs",
+    "pureResearchOnly": true,
+    "notImportedIntoProduction": true,
+    "priestObservationRequiredForIndependentGesture": true,
+    "noNewCanonicalCues": true,
+    "faithfulPostureUnchanged": true,
+    "knownAlreadyCovered": [
+      "Gospel-route movement C0081 to C0082",
+      "Nobis quoque brief elevated voice C0196",
+      "Three priest Communion breast strikes C0229-0231",
+      "Chalice-elevation microevents already under C0181; historical book timing nuance remains open"
+    ],
+    "bookOnlyPolicy": true,
+    "priestChantGuardMergedIntoMain": true,
+    "priestChantGuardMergeCommit": "f952d5b7caa79de90b13935d2d8b51deef8d9925",
+    "runtimeGuardIntroduced": true,
+    "automaticPriestMotionDetectionIntroduced": false,
+    "existing1962CueBoundaryPreserved": true,
+    "patenFormSplitVerified": true
+  }
+}

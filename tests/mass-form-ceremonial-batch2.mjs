@@ -1,0 +1,91 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {createReaderFormCueStateController,isExplicitRequiemMass} from "../src/mass/reader-form-state.js";
+import {createReaderCueStateController} from "../src/mass/reader-cue-state.js";
+const load=p=>JSON.parse(readFileSync(new URL("../data/"+p,import.meta.url),"utf8"));
+const formState=load("presentation/reader-form-state.v1.json");
+const lowText=load("presentation/reader-text-low.v1.json");
+const sungText=load("presentation/reader-text-sung.v1.json");
+const voiceRegistry=load("presentation/reader-priest-voices.v1.json");
+const gestures=load("mass/gesture-matrix.v1.json");
+const registries=Object.freeze({
+  gestures:load("presentation/reader-gestures.v1.json"),
+  responses:load("presentation/reader-responses.v1.json"),
+  postures:load("presentation/reader-postures.v1.json"),
+  positions:load("presentation/reader-priest-positions.v1.json"),
+  voices:voiceRegistry,
+  actions:load("presentation/reader-priest-actions.v1.json")
+});
+const prepared=(form,overlays=[],extras={})=>({
+  session:{resolvedMass:{form,overlays,actualCelebration:extras.actualCelebration??{type:"CALENDAR"}},
+    plan:{kind:"MASS",overlayGraphs:overlays}},
+  readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}
+});
+const low=(overlays=[],extras={})=>createReaderFormCueStateController({
+  formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+  prepared:prepared("LOW",overlays,extras),gestureMatrix:gestures
+});
+const usual=low();
+const normalWater=usual.project("AO.SM.C0112");
+assert.equal(normalWater.supported,true);
+assert.equal(normalWater.reason,null);
+assert.equal(normalWater.priestPosition.station,"ALTAR_EPISTLE_SIDE");
+assert.equal(normalWater.priestVoice.value,"SECRET");
+assert.match(normalWater.priestAction?.label??"",/Sign of the Cross over the water cruet/);
+assert.equal(normalWater.response,null);
+assert.equal(normalWater.ownership.priestAction,"R18_LOW_CUE_NATIVE");
+assert.equal(formState.low.cueStates.find(x=>x.cueId==="AO.SM.C0112").branchCondition,null);
+assert.equal(voiceRegistry.items.find(x=>x.cueId==="AO.SM.C0112").condition,null);
+const requiem=low(["REQUIEM"]);
+const requiemWater=requiem.project("AO.SM.C0112");
+assert.equal(requiemWater.reason,null,
+  "Requiem conditional must not suppress the entire prayer/voice/position state");
+assert.equal(requiemWater.priestAction,null,
+  "Requiem must omit blessing of water, not the prayer");
+assert.equal(requiemWater.priestPosition.station,"ALTAR_EPISTLE_SIDE");
+assert.equal(requiemWater.priestVoice.value,"SECRET");
+assert.equal(requiemWater.cueId,"AO.SM.C0112");
+assert.equal(requiem.project("AO.SM.C0113").priestVoice.value,"SECRET",
+  "the water/wine Deus qui humanae prayer must continue in Requiem");
+assert.equal(requiem.project("AO.SM.C0113").priestAction?.label?.includes("Pours a little water"),true);
+assert.equal(isExplicitRequiemMass(prepared("LOW",["REQUIEM"])),true);
+assert.equal(isExplicitRequiemMass(prepared("LOW",[])),false);
+assert.equal(isExplicitRequiemMass(prepared("LOW",[],{actualCelebration:{type:"REQUIEM"}})),true);
+assert.equal(isExplicitRequiemMass(prepared("LOW",[]),new Set(["REQUIEM"])),true);
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ const controller=createReaderFormCueStateController({
+   formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+   prepared:prepared(form,["REQUIEM"]),gestureMatrix:gestures
+ });
+ const state=controller.project("AO.SM.C0076");
+ assert.equal(state.response,null,form+" must not force Deo gratias as a faithful response");
+ assert.equal(state.priestAction?.owner==="R17_V180_PRIEST_ACTION_SOURCE",false,
+   form+" must not invent a priest saying Deo gratias");
+ if(form==="LOW"){
+   assert.equal(state.ownership.response,"R18_LOW_SERVER_RESPONSE_SUPPRESSED");
+   assert.equal(state.priestVoice.value,"LISTENS");
+ } else {
+   assert.equal(state.ownership.response==="R17_CUE_NATIVE",false);
+ }
+ const water=controller.project("AO.SM.C0112");
+ assert(water.priestVoice!=null,form+" lost priest voice in Requiem water prayer");
+ if(form==="LOW")assert.equal(water.priestAction,null);
+}
+const lowResponse=formState.low.responseEvents.find(x=>x.cueId==="AO.SM.C0076");
+assert.equal(lowResponse.owner,"MINISTER_OR_SERVER");
+assert.equal(lowResponse.defaultUserResponse,false);
+assert.equal(lowResponse.dialogueEligible,false);
+assert.equal(registries.responses.items.some(x=>x.cueId==="AO.SM.C0076"),false);
+const requiredSung=sungText.blocks.flatMap(b=>b.units).find(x=>x.cue_id==="AO.SM.C0076");
+assert.equal(requiredSung.clock,"USER_RESPONSE",
+  "keep immutable donor clock, but do not treat that clock as a requirement for faithful to respond");
+assert.equal(formState.solemn.ministerEvents.find(x=>x.id==="SMIN-012").cue,"AO.SM.C0212");
+assert.equal(formState.solemn.ministerEvents.find(x=>x.id==="SMIN-012").actor,"SUBDEACON → DEACON");
+const paten=usual.project("AO.SM.C0212");
+assert.match(paten.priestAction.label,/Holds the paten upright/i);
+const pr=gestures.items.filter(x=>x.cueId==="AO.SM.C0181"&&x.actor==="PRIEST");
+assert.equal(pr.filter(x=>x.gesture==="GENUFLECT").length,2);
+assert.equal(pr.filter(x=>x.gesture==="ELEVATE_CHALICE").length,1);
+assert.equal(gestures.items.filter(x=>x.id==="GM.P.C0151.01").length,1,
+  "do not duplicate the altar kiss after petimus");
+console.log("PASS Batch 2 form corrections: Requiem water cue preserved, blessing omitted; Epistle response actor and paten/chalice gestures not duplicated.");

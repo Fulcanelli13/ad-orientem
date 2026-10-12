@@ -1,0 +1,494 @@
+{
+  "schema": "ao-supplied-book-low-sung-difference-adjudication-v1",
+  "version": "1.0.0",
+  "status": "SIXTEEN_HISTORICAL_PASSAGE_SEMANTIC_REVIEWS_NO_RUNTIME_IMPORT",
+  "methods": [
+    "Review the complete identified page in the user-supplied 1889 St Alphonsus PDF, not merely an OCR matching token",
+    "Use supplied Fortescue as historical context; never treat it as exact 1962 ceremonial law",
+    "Crosscheck only existing GitHub certified Low/Missa Cantata/Solemn form registry and source-cue text; no new outside references",
+    "Distinguish differences in wording/voice from independent actor/voice clock and from valid historical exceptions"
+  ],
+  "sourceEvidenceRegistry": "data/mass/alphonsus-fortescue-direct-book-evidence-batch02.v1.json",
+  "distinctCueCount": 14,
+  "totals": {
+    "comparedDifferences": 16,
+    "counts": {
+      "VALID_FORM_DELTA": 6,
+      "SOT_OWNERSHIP_REVIEW": 7,
+      "SHARED_ACTION_NO_REAL_FORM_DELTA": 1,
+      "SPECIAL_HISTORICAL_1962_GATE": 2
+    }
+  },
+  "explicitExceptions": {
+    "requiemIntroitId": "AO.BOOKS.DIFF.099",
+    "bishopGospelId": "AO.BOOKS.DIFF.107"
+  },
+  "noRuntimeChange": true,
+  "sourceBooksPreDate1962": true,
+  "items": [
+    {
+      "id": "AO.BOOKS.DIFF.013",
+      "evidenceRecordId": "ALPH.BK2.013",
+      "cueId": "AO.SM.C0042",
+      "canonicalMacro": "AO.SM.M01",
+      "historicalAction": "GO_EPISTLE_SIDE_INTROIT",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 109,
+        "pdfPage": 109,
+        "excerpt": " the altar the priest joins his hands, and without making any inclination to the cross he goes at a natural walk to the Epistle corner, continuing to say et omnium Sanctorum, etc., as appears from the Rubric that says: Osculato altari accedit ad cornu ejus sinistrum. When he arrives at the place where the Missal is, he turns toward "
+      },
+      "extantSot": {
+        "sungAction": "At the Epistle side, makes the Sign of the Cross from forehead to breast before beginning the Introit.",
+        "lowAction": "Makes the Sign of the Cross and begins the Introit at the Epistle side.",
+        "sungVoice": "SILENT",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "VALID_FORM_DELTA",
+      "bookMeaningAssessment": "Introit: the historical celebrant crosses himself at the Epistle Missal, and the Low Mass priest recites it audibly. Sung models separate the celebrant's text/movement from public chant; preserve distinct voices and exact station.",
+      "proposedNextStep": "KEEP_FORM_VOICE_SPLIT",
+      "concurrencyOrCondition": "PRIEST_POSITION_EPST_AND_VOICE",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": false
+    },
+    {
+      "id": "AO.BOOKS.DIFF.014",
+      "evidenceRecordId": "ALPH.BK2.014",
+      "cueId": "AO.SM.C0053",
+      "canonicalMacro": "AO.SM.M03",
+      "historicalAction": "GLORIA_HANDS_EXPAND_AND_JOIN",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 111,
+        "pdfPage": 111,
+        "excerpt": "Amen. (Rub. Miss. tit. IV. n. 3.) The last Kyrie having been said, while yet standing erect at the middle of the altar, he says Gloria, extend ing his hands the width of his body and raising them to the height of his shoulders, so that they do not pass higher than his nose; 1 when he says in excelsis he joins them before his breast,"
+      },
+      "extantSot": {
+        "sungAction": "Extends and elevates hands for the intonation.",
+        "lowAction": "Extends and elevates his hands and begins the Gloria.",
+        "sungVoice": "SUNG / PUBLIC",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "VALID_FORM_DELTA",
+      "bookMeaningAssessment": "Gloria: St Alphonsus names the same raising and joining of priest's hands, while musical intonation versus Low recitation is form-dependent, not a gesture difference.",
+      "proposedNextStep": "KEEP_SHARED_GESTURE_SEPARATE_DELIVERY",
+      "concurrencyOrCondition": "SPOKEN_VERSUS_INTONED",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": false
+    },
+    {
+      "id": "AO.BOOKS.DIFF.019",
+      "evidenceRecordId": "ALPH.BK2.019",
+      "cueId": "AO.SM.C0075",
+      "canonicalMacro": "AO.SM.M05",
+      "historicalAction": "EPISTLE_READ_FROM_MISSAL",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 124,
+        "pdfPage": 124,
+        "excerpt": "24 The Ceremonies of the Mass. CHAPTER VI. THE EPISTLE, THE GRADUAL, THE GOSPEL, AND THE CREDO. I. The Priest reads the Epistle, the Gradual, and what follows. &quot; Diet-is Oration ibus, celebrans, positis super librum vel super altare manibus, ita ut palmse librum tangant ; vel (ut placuerit) librum tenens, legit Epistolam"
+      },
+      "extantSot": {
+        "sungAction": "Reads/chants the Epistle or Lesson at the Missal.",
+        "lowAction": "Reads the Epistle or Lesson at the Missal.",
+        "sungVoice": "SUNG / CLEAR (MISSA CANTATA)",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "VALID_FORM_DELTA",
+      "bookMeaningAssessment": "Epistle: priest reads clearly in St Alphonsus' Mass; existing 1962 form contract allows a tonsured cleric in Missa Cantata and reserves the Solemn Epistle to the subdeacon. Do not assign every sung Epistle to the celebrant.",
+      "proposedNextStep": "FORM_GATE_ACTOR_EPSTLE",
+      "concurrencyOrCondition": "DEACON_SUBDEACON_NOT_DEFAULT_MC",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": false
+    },
+    {
+      "id": "AO.BOOKS.DIFF.020",
+      "evidenceRecordId": "ALPH.BK2.020",
+      "cueId": "AO.SM.C0076",
+      "canonicalMacro": "AO.SM.M05",
+      "historicalAction": "DEO_GRATIAS_AFTER_EPISTLE",
+      "actor": "SERVER",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 124,
+        "pdfPage": 124,
+        "excerpt": "palmse librum tangant ; vel (ut placuerit) librum tenens, legit Epistolam intelligibili voce, et respondetur a ministro Deo gratias ; et similiter stans eodem modo, prose- quitur Graduate, Alleluja, et Tractum, ac Sequcntiam si dicenda sint. Quibus dictis, Sacerdos si privatim celebret, ipsemet, seu minister portat librum Missali"
+      },
+      "extantSot": {
+        "sungAction": "Receives/listens to response; no preceding gesture is inherited.",
+        "lowAction": "Minister/server responds Deo gratias; celebrant remains at the Missal and listens.",
+        "sungVoice": "SUNG / CLEAR (MISSA CANTATA)",
+        "lowVoice": "LISTENS"
+      },
+      "adjudication": "SOT_OWNERSHIP_REVIEW",
+      "bookMeaningAssessment": "Deo gratias: Alphonsus explicitly says the minister responds. The sung donor priest-event voice 'SUNG/CLEAR' is not evidence that the priest sings the response; route the answer to a minister/choir lane and the celebrant to 'LISTENS'.",
+      "proposedNextStep": "REVIEW_PRIEST_EVENT_VOICE_AND_RESPONSE_ACTOR",
+      "concurrencyOrCondition": "SEPARATE_RESPONSE_TIMELINE",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    },
+    {
+      "id": "AO.BOOKS.DIFF.022",
+      "evidenceRecordId": "ALPH.BK2.022",
+      "cueId": "AO.SM.C0081",
+      "canonicalMacro": "AO.SM.M07",
+      "historicalAction": "GO_TO_GOSPEL_SIDE",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 126,
+        "pdfPage": 126,
+        "excerpt": "rder to recite Munda cor me itin, etc., as has been said above. Then, with his hands still joined before his breast, he goes to the Gospel corner, and there so places the Missal that it looks not towards the front, but obliquely towards the angle of the altar. Then with his hands joined before his breast, without resting them or his arm"
+      },
+      "extantSot": {
+        "sungAction": "Goes to the Missal at the Gospel side and stands facing it with hands joined.",
+        "lowAction": "Arrives at the Gospel-side Missal and stands facing it with hands joined.",
+        "sungVoice": "SILENT",
+        "lowVoice": "SILENT"
+      },
+      "adjudication": "SOT_OWNERSHIP_REVIEW",
+      "bookMeaningAssessment": "The celebrant moves from centre to Gospel-side Missal. Low donor describes arrival while Sung donor labels station ALTAR_CENTER yet describes going to the Gospel side. These are different phases of one movement, not form-specific choreography.",
+      "proposedNextStep": "SPLIT_DEPART_CENTRE_AND_ARRIVE_GOSPEL_STATION",
+      "concurrencyOrCondition": "MOVEMENT_START_END",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    },
+    {
+      "id": "AO.BOOKS.DIFF.025",
+      "evidenceRecordId": "ALPH.BK2.025",
+      "cueId": "AO.SM.C0088",
+      "canonicalMacro": "AO.SM.M07",
+      "historicalAction": "KISS_GOSPEL_AND_PRAYER",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 127,
+        "pdfPage": 127,
+        "excerpt": "ust be made. The Gospel having been said, the priest raises the Missal a little with both hands, inclines somewhat, and kisses the beginning of the text of the Gospel, saying in a low tone of voice: Per Evangelica dicta, etc. After having kissed the Missal the celebrant places it with both hands on the cushion or stand near the cor poral, so that he "
+      },
+      "extantSot": {
+        "sungAction": "Kisses the Gospel text/book while saying the formula quietly.",
+        "lowAction": "Kisses the Gospel text while saying Per evangelica dicta quietly.",
+        "sungVoice": "QUIET / LOW",
+        "lowVoice": "SECRET"
+      },
+      "adjudication": "SHARED_ACTION_NO_REAL_FORM_DELTA",
+      "bookMeaningAssessment": "Kiss after Gospel: quiet versus secret are near-equivalent priest voices and both donors describe the same kiss. Requiem and bishop-presence omissions are distinct conditional branches, not Low/Sung alternatives.",
+      "proposedNextStep": "KEEP_SHARED_PRIEST_KISS_WITH_EXCEPTION_GATES",
+      "concurrencyOrCondition": "REQUIEM_BISHOP_CONDITIONS",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": false
+    },
+    {
+      "id": "AO.BOOKS.DIFF.026",
+      "evidenceRecordId": "ALPH.BK2.026",
+      "cueId": "AO.SM.C0089",
+      "canonicalMacro": "AO.SM.M09",
+      "historicalAction": "BEGIN_CREDO_WITH_HANDS",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 128,
+        "pdfPage": 128,
+        "excerpt": "1 28 The Ceremonies of the Mass. Gloria, begins the Credo, At the word Credo he extends and raises his hands; at the words in unum he joins them; at the word Deum he inclines his head, raising neither his eyes nor his head. He continues as at the Gloria. At"
+      },
+      "extantSot": {
+        "sungAction": "Intones Credo.",
+        "lowAction": "Begins the Credo at the centre of the altar.",
+        "sungVoice": "SUNG / PUBLIC",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "VALID_FORM_DELTA",
+      "bookMeaningAssessment": "Credo: hand extension and joining are the same priest gesture in the book. Sung intonation versus Low spoken recitation explains the donor wording difference.",
+      "proposedNextStep": "KEEP_SHARED_GESTURE_SEPARATE_DELIVERY",
+      "concurrencyOrCondition": "CREDO_APPOINTED",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": false
+    },
+    {
+      "id": "AO.BOOKS.DIFF.029",
+      "evidenceRecordId": "ALPH.BK2.029",
+      "cueId": "AO.SM.C0109",
+      "canonicalMacro": "AO.SM.M10",
+      "historicalAction": "READ_OFFERTORY_AT_EPISTLE",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 131,
+        "pdfPage": 131,
+        "excerpt": "CHAP, vii.] Offertory, Sccreta, and Preface. 131 CHAPTER VII. THE OFFERTORY, THE SECRETA, AND THE PREFACE. i. The Priest recites the Offertory. &quot; Dicto Symbolo, vel, si non sit dicendum, post Evangelium, celebrans os"
+      },
+      "extantSot": {
+        "sungAction": "Begins the altar preparation while the public Offertory chant proceeds; no preceding Dominus/Oremus gesture is inherited.",
+        "lowAction": "Reads the Offertory antiphon at the Missal.",
+        "sungVoice": "SUNG/CLEAR OPENING → SECRET OFFERTORY",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "VALID_FORM_DELTA",
+      "bookMeaningAssessment": "Offertory: St Alphonsus explicitly says the celebrant reads the antiphon. The existing Sung model has a distinct public Schola antiphon and asynchronous priest preparation. Neither single surface owns both clocks.",
+      "proposedNextStep": "KEEP_PROPER_CHANT_AND_PRIVATE_PRIEST_CLOCK_SEPARATE",
+      "concurrencyOrCondition": "PROPER_DUAL_CLOCK",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": false
+    },
+    {
+      "id": "AO.BOOKS.DIFF.044",
+      "evidenceRecordId": "ALPH.BK2.044",
+      "cueId": "AO.SM.C0145",
+      "canonicalMacro": "AO.SM.M13",
+      "historicalAction": "SANCTUS_HEAD_BOW",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 142,
+        "pdfPage": 142,
+        "excerpt": " elevatis et extensis ut prius manibus; prosequitur Prcefattonem, propriam, vel communem, ut tempus requirit. Cum dicit Sanctus, junctis ante pectus manibus, et inclinatus, voce mediocri prosequitur, ministro interim parvam campa- nulam pulsante. Cum dicit, Benedictus qui vcnit in nomine Domini, etc., erigit se, et signum cru"
+      },
+      "extantSot": {
+        "sungAction": "In his parallel priest track, stands inclined with hands joined while reciting the Sanctus through the first Hosanna.",
+        "lowAction": "stands inclined with hands joined and recites the Sanctus through the first Hosanna.",
+        "sungVoice": "QUIET PRIEST TRACK → SECRET CANON",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "SOT_OWNERSHIP_REVIEW",
+      "bookMeaningAssessment": "Sanctus: St Alphonsus describes a bowed priest reciting the text, but C0145 in Sung corpus is SCHOLA_PUBLIC. A priest gesture triggered by Schola text position can be premature or late. Anchor to independent priest recitation.",
+      "proposedNextStep": "BIND_PRIEST_TO_PRIVATE_SANCTUS_EVENT_NOT_SCHOLA_CUE",
+      "concurrencyOrCondition": "INDEPENDENT_CLOCK_OWNER",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    },
+    {
+      "id": "AO.BOOKS.DIFF.045",
+      "evidenceRecordId": "ALPH.BK2.045",
+      "cueId": "AO.SM.C0148",
+      "canonicalMacro": "AO.SM.M13",
+      "historicalAction": "SIGN_AT_BENEDICTUS",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 142,
+        "pdfPage": 142,
+        "excerpt": "nte pectus manibus, et inclinatus, voce mediocri prosequitur, ministro interim parvam campa- nulam pulsante. Cum dicit, Benedictus qui vcnit in nomine Domini, etc., erigit se, et signum crucis sibi producit a fronte ad pectus.&quot; (Rub. Miss, tit. VII. 8.) Having come as far as the words Per omnia scecula SCECU- lorum in the c"
+      },
+      "extantSot": {
+        "sungAction": "In his priest track, stands erect and makes the Sign of the Cross at Benedictus qui venit.",
+        "lowAction": "stands erect and makes the Sign of the Cross at Benedictus qui venit.",
+        "sungVoice": "QUIET PRIEST TRACK → SECRET CANON",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "SOT_OWNERSHIP_REVIEW",
+      "bookMeaningAssessment": "Benedictus: priest stands erect and signs himself in his own recitation (pp. 142–143), while sung C0148 is a Schola-public chant cue. The priest action cannot be synchronized to the Schola's Benedictus timing.",
+      "proposedNextStep": "BIND_PRIEST_TO_PRIVATE_BENEDICTUS_EVENT_NOT_SCHOLA_CUE",
+      "concurrencyOrCondition": "INDEPENDENT_CLOCK_OWNER",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    },
+    {
+      "id": "AO.BOOKS.DIFF.068",
+      "evidenceRecordId": "ALPH.BK2.068",
+      "cueId": "AO.SM.C0196",
+      "canonicalMacro": "AO.SM.M17",
+      "historicalAction": "NOBIS_QUOQUE_BREAST_STRIKE",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 164,
+        "pdfPage": 164,
+        "excerpt": "Sacramentum adorat.&quot; (Rub. Miss. til. IX. 3.) Then he puts his left hand upon the corporal, and standing erect, he strikes his breast with the extremities of his three fingers, saying in a moderate voice: Nobis quoque peccatoribus, and with his hands extended as before he continues, and again joins them when he says: Per Christum D"
+      },
+      "extantSot": {
+        "sungAction": "Raises his voice slightly and strikes his breast.",
+        "lowAction": "Raises his voice slightly at Nobis quoque peccatoribus and strikes his breast.",
+        "sungVoice": "BRIEFLY AUDIBLE / THEN LOW",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "SOT_OWNERSHIP_REVIEW",
+      "bookMeaningAssessment": "Nobis quoque: priest strikes breast and moderately raises voice for opening words; continuation is quiet. Sung donor says briefly audible then low; Low donor 'CLEAR SPOKEN' is too coarse if applied to whole Canon prayer.",
+      "proposedNextStep": "LIMIT_AUDIBLE_VOICE_TO_NOBIS_QUOQUE_OPENING",
+      "concurrencyOrCondition": "VOICE_SCOPE_ONLY",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    },
+    {
+      "id": "AO.BOOKS.DIFF.072",
+      "evidenceRecordId": "ALPH.BK2.072",
+      "cueId": "AO.SM.C0211",
+      "canonicalMacro": "AO.SM.M19",
+      "historicalAction": "TAKE_PATEN_WHILE_LIBERA_NOS",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 167,
+        "pdfPage": 167,
+        "excerpt": "CH. x.] From Pater Noster to Communion. 167 Afterwards, 1 placing his left hand on the corporal, he takes with his right hand the purificator without sepa rating the forefinger from the thumb, and slightly rubs the paten drawn from under the corporal; he leaves the purificator a short distance from the corporal on the Epistle side. Then taking the paten between the fore finger and the middle finger he holds it upright so that the gilt or concave side looks towards the Host, and its edge rests on the altar cloth, but not on the corporal; he keeps his hand on the upper part of the paten, and thus standing he says the prayer Libera nos, etc. 2. The Priest continues until after the Agnus Dei. &quot; Antequam celebrans dicat Da propitius pacem, elevat manu dextra patenam de altari, et seipsum cum ea signat signo crucis a fronte ad pectus dicens, Da propitius pacem in diebus nostris. Cum signat se, manum sinistram ponit infra pectus : deinde patenam ipsam osculatur, et, prosequens, ut ope misericordia tucp, etc., submittit patenam Hostiae, quam indice sinistro accom- modat super patenam, discooperit Calicem et genuflexus Sacra- mentum adorat ; turn, se erigens, accipit Hostiam inter pollicem et indicem dextrae manus et cum illis, ac pollice et indice sinis- trae manus earn super Calicem tenens, reverenter frangit per medium, dicens, Per eumdem Dominum nostrum Jesum Christum Filium tuum, et mediam partem, quam inter pollicem et indi cem dextrae manus tenet, ponit super patenam : de ilia media, quam sinistra manu tenet, frangit cum pollice et indice dextrae manus particulam, prosequens, Qui tecum viva et regnat, etc., et earn inter ipsos dextrae manus pollicem et indicem retinens, partem majorem, quam sinistra tenet, adjungit mediae, super patenam positae, interim dicens, in unitate Spiritus sancti Deus, et particulam Hostiae, quam in dextra manu retinuit, tenens super Calicem, quern sinistra per nodum infra cuppam retinet- intelligibili voc"
+      },
+      "extantSot": {
+        "sungAction": "Joins hands and inclines head at Oremus/Praeceptis.",
+        "lowAction": "Says Amen secretly before beginning Libera nos.",
+        "sungVoice": "LOW / QUIET",
+        "lowVoice": "SECRET"
+      },
+      "adjudication": "SOT_OWNERSHIP_REVIEW",
+      "bookMeaningAssessment": "Paten: St Alphonsus describes priest taking and wiping the paten after the Lord's Prayer response and before Libera nos, whereas donor event C0211 describes prayer/secret Amen, not this object transition. The Solemn minister paten return is a different event source.",
+      "proposedNextStep": "ADD_VISIBLE_PATEN_OBJECT_EVENT_AFTER_C0211_WITH_FORM_ACTOR_RULES",
+      "concurrencyOrCondition": "HANDOFF_AND_OBJECT_STATE",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    },
+    {
+      "id": "AO.BOOKS.DIFF.081",
+      "evidenceRecordId": "ALPH.BK2.081",
+      "cueId": "AO.SM.C0229",
+      "canonicalMacro": "AO.SM.M22",
+      "historicalAction": "DOMINE_NON_SUM_DIGNUS_BREAST",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 170,
+        "pdfPage": 170,
+        "excerpt": " inclinatus, dextra tribus vicibus percutit pectus suum, interim etiam tribus vicibus dicens voce aliquantulum elevata, Domine non sum dignus, et secreto prose- quitur, ut intres, etc. &quot; Quibus tertio dictis, ex sinistra accipit ambas partes prae- dictas Hostise inter pollicem et indicem dextrae manus, et cum ilia super patenam signat"
+      },
+      "extantSot": {
+        "sungAction": "Strikes breast once",
+        "lowAction": "Says Dómine, non sum dignus with the opening words slightly raised, then continues secretly; strikes his breast once.",
+        "sungVoice": "LOW / QUIET",
+        "lowVoice": "RAISED ENTRY → SECRET CONTINUATION"
+      },
+      "adjudication": "SOT_OWNERSHIP_REVIEW",
+      "bookMeaningAssessment": "Domine non sum dignus before priest Communion: the book explicitly describes three repeats with three breast strikes, once per occurrence. Source cues C0229, C0230, C0231 each contain one repeated formula. Do not triple-strike on C0229 alone; sung voice descriptor needs form review.",
+      "proposedNextStep": "THREE_DISTINCT_PRIEST_CUE_BREAST_STRIKES",
+      "concurrencyOrCondition": "REPETITION_AND_VOICE",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    },
+    {
+      "id": "AO.BOOKS.DIFF.090",
+      "evidenceRecordId": "ALPH.BK2.090",
+      "cueId": "AO.SM.C0249",
+      "canonicalMacro": "AO.SM.M26",
+      "historicalAction": "RETURN_EPISTLE_SIDE_COMMUNION_ANTIPHON",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 179,
+        "pdfPage": 179,
+        "excerpt": ". 1 79 in Chapter X., holding his hands before his breast, goes to the Epistle side, where in a loud voice he reads the antiphon, which is called Communio; he returns imme diately after to the middle of the altar, kisses it, and turn ing towards the people says as usual, Dominus vobiscum. Then he returns to the book, and recites the prayer called Post "
+      },
+      "extantSot": {
+        "sungAction": "Reads Communion antiphon at Missal in priest's own track",
+        "lowAction": "Reads the Communion antiphon at the Missal after the ablutions.",
+        "sungVoice": "QUIET PRIEST TRACK",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "VALID_FORM_DELTA",
+      "bookMeaningAssessment": "Communion antiphon: Alphonsus describes priest reading at Epistle-side Missal after ablutions; in sung form Schola's public Communion antiphon is an independent and possibly earlier clock. Maintain separate events and voices.",
+      "proposedNextStep": "KEEP_ANTIPHON_PRIVATE_PRIEST_AND_SCHOLA_TRACK_SEPARATE",
+      "concurrencyOrCondition": "COMMUNION_ASYNC",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": false
+    },
+    {
+      "id": "AO.BOOKS.DIFF.099",
+      "evidenceRecordId": "ALPH.BK2.099",
+      "cueId": "AO.SM.C0042",
+      "canonicalMacro": "AO.SM.M01",
+      "historicalAction": "REQUIEM_SIGN_BOOK_NOT_SELF_INTROIT",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 192,
+        "pdfPage": 192,
+        "excerpt": "qui latificat, etc. dicitur V. Adjutorium nostrum, et Confessio, cum reliquis ut supra. Cum celebrans ad altare incipit Introitum, non signat se, sed manu dextra extensa, facit signum crucis super librum, quasi aliquem benedicens. Non dicitur Gloria Patri, sed post Psalmum repetitur Requiem ceternam; nee dicitur Gloria in ex-"
+      },
+      "extantSot": {
+        "sungAction": "At the Epistle side, makes the Sign of the Cross from forehead to breast before beginning the Introit.",
+        "lowAction": "Makes the Sign of the Cross and begins the Introit at the Epistle side.",
+        "sungVoice": "SILENT",
+        "lowVoice": "CLEAR SPOKEN"
+      },
+      "adjudication": "SPECIAL_HISTORICAL_1962_GATE",
+      "bookMeaningAssessment": "Requiem Introit: St Alphonsus p.192–193 orders a cross over the missal rather than the celebrant signing himself. Both normal Low/Sung C0042 donor descriptions would be wrong for Requiem unless the dedicated form overlay applies. Preserve as historical source-backed candidate pending existing 1962 gate.",
+      "proposedNextStep": "CONDITIONAL_REQUIEM_INTROIT_SIGN_OVER_BOOK",
+      "concurrencyOrCondition": "REQUIEM_NOT_FORM_DIFFERENCE",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    },
+    {
+      "id": "AO.BOOKS.DIFF.107",
+      "evidenceRecordId": "ALPH.BK2.107",
+      "cueId": "AO.SM.C0088",
+      "canonicalMacro": "AO.SM.M07",
+      "historicalAction": "BEFORE_BISHOP_NO_GOSPEL_KISS_BY_PRIEST",
+      "actor": "PRIEST",
+      "originalBookReference": {
+        "title": "Alphonsus — The Holy Mass",
+        "printedPage": 199,
+        "pdfPage": 199,
+        "excerpt": "ore a Bishop. 1 99 lowest step, he begins Aufer a nobis, and ascends the altar. The Gospel having been read, the priest does not kiss the Missal, nor does he say Per Evangelica dicta, because the server without making an inclination to the prelate must carry the Missal to him to be kissed; the prelate, however, having kissed the book, says Pe"
+      },
+      "extantSot": {
+        "sungAction": "Kisses the Gospel text/book while saying the formula quietly.",
+        "lowAction": "Kisses the Gospel text while saying Per evangelica dicta quietly.",
+        "sungVoice": "QUIET / LOW",
+        "lowVoice": "SECRET"
+      },
+      "adjudication": "SPECIAL_HISTORICAL_1962_GATE",
+      "bookMeaningAssessment": "Bishop present: St Alphonsus p.199 records celebrant not kissing the Gospel book while the bishop kisses it. This is a separate historical prelate-presence protocol and is not proof of a universal current 1962 obligation.",
+      "proposedNextStep": "QUARANTINE_PRELATE_GOSPEL_BOOK_PROTOCOL_UNTIL_1962_SOT",
+      "concurrencyOrCondition": "BISHOP_PRESENT_NOT_FORM_DIFFERENCE",
+      "directSourceSupportsHistoricGesture": true,
+      "formRulingSupportedByBooksAlone": false,
+      "liveChangeMade": false,
+      "rubrical1962Approval": "NOT_BY_HISTORICAL_BOOK_ALONE",
+      "humanReviewNeeded": true
+    }
+  ]
+}

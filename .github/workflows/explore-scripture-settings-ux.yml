@@ -1,0 +1,34 @@
+name: Explore Scripture Settings UX
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "src/find/heritage-style.js"
+      - "src/scripture/styles.js"
+      - "src/settings/browser-entry.js"
+      - "tests/explore-scripture-settings-ux-phone.mjs"
+      - ".github/workflows/explore-scripture-settings-ux.yml"
+  workflow_dispatch:
+
+jobs:
+  phone-ui-ux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify production navigation and accessibility on three phone widths
+        run: node tests/explore-scripture-settings-ux-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: explore-scripture-settings-ux-phone
+          path: artifacts/ux-phone-controls/
+          if-no-files-found: warn
+          retention-days: 30

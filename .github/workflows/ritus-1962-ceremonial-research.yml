@@ -1,0 +1,60 @@
+name: 1962 ceremonial research validation
+
+on:
+  pull_request:
+    paths:
+      - "data/mass/ritus-1962-*.json"
+      - "data/mass/alphonsus-fortescue-direct-book-evidence*.json"
+      - "data/mass/alphonsus-fortescue-low-sung-differences-adjudicated.v1.json"
+      - "data/mass/alphonsus-fortescue-semantic-reconciliation-remaining97.v1.json"
+      - "tests/ritus-1962-*.mjs"
+      - "tests/mass-ceremonial-cue-owner-reconciliation13.mjs"
+      - "tests/mass-priest-owner-independent-clock-preview.mjs"
+      - "tools/mass/priest-owner-independent-clock-preview.mjs"
+      - "tests/mass-book-only-evidence-v1.mjs"
+      - "tests/mass-two-books-source-evidence-batch02.mjs"
+      - "tests/mass-two-books-form-differences-adjudication.mjs"
+      - "tests/mass-two-books-semantic-remaining97.mjs"
+      - ".github/workflows/ritus-1962-ceremonial-research.yml"
+  push:
+    branches: [main]
+    paths:
+      - "data/mass/ritus-1962-*.json"
+      - "tests/ritus-1962-*.mjs"
+      - "tests/mass-ceremonial-cue-owner-reconciliation13.mjs"
+      - "tests/mass-priest-owner-independent-clock-preview.mjs"
+      - "tools/mass/priest-owner-independent-clock-preview.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Ceremonial cue, form and source evidence batch 01
+        run: node tests/ritus-1962-ceremonial-batch01.mjs
+      - name: Solemn ministers and Requiem conditional batch 02
+        run: node tests/ritus-1962-solemn-ministers-batch02.mjs
+      - name: Latin phrase-level Offertory and Canon batch 03
+        run: node tests/ritus-1962-latin-phrase-batch03.mjs
+      - name: Faithful posture custom-profile and observed-state batch 04
+        run: node tests/ritus-1962-faithful-posture-batch04.mjs
+      - name: Verify direct-book page evidence and source-scope policy
+        run: node tests/mass-book-only-evidence-v1.mjs
+      - name: Validate all 113 page-evidence matches and 27 historical parallels
+        run: node tests/mass-two-books-source-evidence-batch02.mjs
+      - name: Audit all 16 Low/Sung action differences against sourced books and form ownership
+        run: node tests/mass-two-books-form-differences-adjudication.mjs
+      - name: Certify semantic audit coverage for 97 remaining historic action records
+        run: node tests/mass-two-books-semantic-remaining97.mjs
+      - name: Guard 13 ceremonial actor and cue owner reconciliations
+        run: node tests/mass-ceremonial-cue-owner-reconciliation13.mjs
+      - name: Verify priest observation is not advanced by concurrent Schola chanting
+        run: node tests/mass-priest-owner-independent-clock-preview.mjs
