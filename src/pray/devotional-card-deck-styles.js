@@ -58,7 +58,8 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930LibraryReader .aoP435930PrayerHead{display:none!important}
 #aoPray435930 .aoP435930LibraryReader .aoP435930Flip,
 #aoPray435930 .aoP435930LibraryReader .aoP435930Text{font:400 clamp(18px,4.5vw,22px)/1.65 Georgia,serif!important;text-align:left;white-space:normal;max-width:100%}
-#aoPray435930 .aoP435930LibraryReader .aoLibraryLine{display:block;margin:0 0 16px;min-width:0;white-space:pre-wrap}
+#aoPray435930 .aoP435930LibraryReader .aoLibraryLine{margin:0 0 16px;min-width:0;white-space:pre-wrap}
+#aoPray435930 .aoP435930LibraryReader .aoP435930PrayerProse.aoLibraryLine{display:block}
 #aoPray435930 .aoP435930LibraryReader .aoLibraryBreak{display:block;height:8px}
 #aoPray435930 .aoP435930LibraryReader .aoP435930Source{margin-top:20px}
 #aoPray435930 .aoP435930LibraryReader .aoDevoSequenceTimeline{margin:7px 0}
