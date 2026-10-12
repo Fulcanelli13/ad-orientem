@@ -50,6 +50,16 @@ function validatePayload(payload){
   if(payload.passion?.deathCue!=="tradidit spiritum")throw new Error("Good Friday Passion death cue changed");
   if((payload.conclusion??[]).length!==3)throw new Error("Good Friday requires three concluding prayers");
   if(!payload.solemnPrayers?.find(x=>x.key==="CONVERSION_OF_JEWS")?.variants?.PRINTED_1962)throw new Error("Printed 1962 Jewish prayer variant missing");
+  const deacon=payload.communion?.deaconConfiteor;
+  if(deacon?.sourcePath!=="data/presentation/reader-text-sung.v1.json#AO.SM.B007"||
+     deacon.speaker!=="DEACON"||!Array.isArray(deacon.parts)||
+     deacon.parts.length!==3||
+     deacon.parts.some((x,i)=>x.cueId!=="AO.SM.C"+String(21+i).padStart(4,"0")||
+       !String(x.latin??"").trim()||!String(x.english??"").trim())||
+     !deacon.parts[0].latin.includes("et tibi, pater")||
+     !deacon.parts[2].latin.includes("et te, pater")){
+    throw new Error("Source-owned 1962 deacon Confiteor incomplete or wrong addressee");
+  }
 }
 
 function solemnPrayer(payload,key,jewishPrayerVariant){
@@ -178,10 +188,12 @@ function surfaceFor(record,payload,jewishPrayerVariant){
       textRow("GF-COM-PER",payload.communion.perceptio,"TEXT",["GF-COM-840"],"CELEBRANT"),
       textRow("GF-COM-DNSD",payload.communion.priestDomineNonSumDignus,"TEXT",["GF-COM-840"],"CELEBRANT",3),
       textRow("GF-COM-CORP",payload.communion.priestCommunion,"TEXT",["GF-COM-840"],"CELEBRANT"),
-      // The deacon's Confiteor precedes the celebrant's two absolution
-      // prayers in the distinct Good Friday rite (1956 OHS, nn. 30-32).
-      // This rubric does not invent or abbreviate the confession itself.
+      // The printed Good Friday rubric calls for the deacon's confession.
+      // The full words are reused verbatim from canonical 1962 ministers'
+      // Confiteor AO.SM.B007, using 'tibi, pater' (not the priest's 'vobis').
       textRow("GF-COM-CONF","Et continuo diaconus facit confessionem.","RUBRIC",["GF-COM-840"]),
+      ...payload.communion.deaconConfiteor.parts.map((part,i)=>textRow(
+        "GF-COM-CONF-"+(i+1),part.latin,"TEXT",["GF-COM-840"],"DEACON")),
       textRow("GF-COM-MIS",payload.communion.misereatur,"TEXT",["GF-COM-840"],"CELEBRANT"),
       textRow("GF-COM-MIS-R","Amen.","RESPONSE",["GF-COM-840"],"ALL"),
       textRow("GF-COM-IND",payload.communion.indulgentiam,"TEXT",["GF-COM-840"],"CELEBRANT"),
