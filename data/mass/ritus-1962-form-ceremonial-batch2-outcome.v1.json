@@ -1,0 +1,81 @@
+{
+  "schema": "ao-mass-form-ceremonial-batch2-consolidation-v1",
+  "version": "1.0.0",
+  "basis": {
+    "historicalOnly": [
+      "Alphonsus 1889 book evidence ALPH.BK2.020",
+      "Alphonsus 1889 book evidence ALPH.BK2.032",
+      "Alphonsus 1889 book evidence ALPH.BK2.033",
+      "Alphonsus 1889 book evidence ALPH.BK2.063",
+      "Alphonsus 1889 book evidence ALPH.BK2.072"
+    ],
+    "primaryRuntimeSot": [
+      "data/presentation/reader-form-state.v1.json",
+      "data/presentation/reader-text-low.v1.json",
+      "data/presentation/reader-text-sung.v1.json",
+      "data/presentation/reader-priest-voices.v1.json",
+      "data/mass/gesture-matrix.v1.json"
+    ],
+    "noNewSources": true,
+    "bookEvidenceNotAutomatically1962Normative": true
+  },
+  "decisions": [
+    {
+      "id": "B2-01",
+      "topic": "EPILOGUE_EPISTLE_DEO_GRATIAS",
+      "cueId": "AO.SM.C0076",
+      "status": "EXISTING_LOWMASS_CERTIFIED_SUNG_ROLE_REVIEW_RETAINED",
+      "implementation": "Low already has AO.SM.R010 minister/server response with dialogueEligible=false; no new faithful response. Sung donor clock USER_RESPONSE but no registry cue; no forced RESPOND/NOW/NEXT.",
+      "future": "A genuinely form-specific liturgical responder identity in Sung requires a corroborated role source, not speculation."
+    },
+    {
+      "id": "B2-02",
+      "topic": "WINE_POURED_BEFORE_WATER_PRAYER",
+      "cueId": "AO.SM.C0112",
+      "status": "EXISTING_RITUS_RESEARCH_NOT_RUNTIME_PROMOTED",
+      "implementation": "Wine-pour actor change occurs before prayer, priest in Low/Missa Cantata versus deacon in Solemn according to existing research records. No new text cue or automatic movement was added.",
+      "future": "Certified explicit object event only, retaining roles; do not place wine pouring mid Deus qui humanae."
+    },
+    {
+      "id": "B2-03",
+      "topic": "WATER_BLESSING_REQUIEM_EXCEPTION",
+      "cueId": "AO.SM.C0112",
+      "status": "ACTUAL_RUNTIME_BUG_CORRECTED",
+      "implementation": "C0112 remains an ordinary prayer voice and position in Low Requiem; only its priest water-cross action is omitted on explicit REQUIEM. The Sung common priest quiet voice at this cue is no longer wrongly conditional on a cross omission. Source corpus unchanged.",
+      "future": "No automatic tabernacle/water motion recognition. General Sung positive water-blessing microgesture remains an explicit-source event issue."
+    },
+    {
+      "id": "B2-04",
+      "topic": "PATEN_FORM_ACTOR_OWNERSHIP",
+      "cueId": "AO.SM.C0212",
+      "status": "ALREADY_IMPLEMENTED_NO_DUPLICATE",
+      "implementation": "Low priest holds paten (Low cue state); Solemn SMIN-012 records SUBDEACON → DEACON minister handoff; preserve separate actors.",
+      "future": "Only adjudicate within-Pater timing if the already available 1962 SOT is adequate; do not invent extra object gestures."
+    },
+    {
+      "id": "B2-05",
+      "topic": "CHALICE_ELEVATION",
+      "cueId": "AO.SM.C0181",
+      "status": "ALREADY_IMPLEMENTED_NO_DUPLICATE",
+      "implementation": "Canonical C0181 has two priest genuflections and one chalice elevation in ordered action sequence; C0180 is verbal, not extra elevation.",
+      "future": "Review exact boundary only if existing 1962 primary witness warrants it; never add a second animation."
+    },
+    {
+      "id": "B2-06",
+      "topic": "TE_IGITUR_KISS",
+      "cueId": "AO.SM.C0151",
+      "status": "ALREADY_IMPLEMENTED_NO_DUPLICATE",
+      "implementation": "The altar kiss at C0151 is the boundary immediately following ac petimus at end of C0150.",
+      "future": "Preserve the existing GM.P.C0151.01 icon and event."
+    }
+  ],
+  "contracts": {
+    "lowCueDenominator": 275,
+    "sungCueDenominator": 279,
+    "sacredMinisterDeltas": 19,
+    "faithfulResponseRegistryCount": 23,
+    "priestVoiceRegistryCount": 126,
+    "live48CardModelUntouched": true,
+    "productionChangesRestrictedToC0112ConditionAndCross": true
+  }
+}
