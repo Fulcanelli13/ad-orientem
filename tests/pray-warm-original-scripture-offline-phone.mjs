@@ -37,9 +37,31 @@ try{
  };
  const reader="#aoPray435930.open .aoP435930DevotionalGuidedReader";
  const text=async selector=>(await page.locator(selector).innerText()).replace(/\s+/g," ").trim();
- const snapshot=async(kind)=>{
+ const snapshot=async(kind,{allowRetry=false}={})=>{
+  const status=page.locator(reader+" [data-ao-scripture-source='"+kind+"']");
+  await status.waitFor({timeout:25000});
+  await page.waitForFunction(k=>{
+    const n=document.querySelector("#aoPray435930.open .aoP435930DevotionalGuidedReader [data-ao-scripture-source='"+k+"']");
+    return n?.dataset.aoScriptureContent==="ready"||n?.dataset.aoScriptureContent==="unavailable";
+  },kind,{timeout:15000});
+  if(allowRetry&&await status.getAttribute("data-ao-scripture-content")==="unavailable"){
+   const diagnostic=await page.evaluate(()=>({service:typeof globalThis.AO_RUNTIME_V8?.scriptureService?.load,
+    cache:globalThis.AO_SCRIPTURE_CACHE_V427?.inspect?.()??null,onLine:navigator.onLine}));
+   console.log("ORIGINAL_SOURCE_FIRST_ATTEMPT_UNAVAILABLE "+JSON.stringify({kind,diagnostic}));
+   const button=page.locator(reader+" [data-p435930-scripture-retry='"+kind+"']");
+   await button.tap();
+   await page.waitForFunction(k=>{
+    const n=document.querySelector("#aoPray435930.open .aoP435930DevotionalGuidedReader [data-ao-scripture-source='"+k+"']");
+    return n?.dataset.aoScriptureContent==="ready";
+   },kind,{timeout:19000}).catch(async err=>{
+    const excerpt=await status.innerText();
+    const cache=await page.evaluate(()=>globalThis.AO_SCRIPTURE_CACHE_V427?.inspect?.());
+    throw new Error("Original "+kind+" source remained unavailable after exact-source retry: "+excerpt.slice(0,240)+" "+JSON.stringify(cache)+"; "+err.message);
+   });
+  }
+  assert.equal(await status.getAttribute("data-ao-scripture-content"),"ready",
+   "Never claim warm offline without genuinely loaded "+kind+" source");
   const node=page.locator(reader+" [data-ao-scripture-content='ready'][data-ao-scripture-source='"+kind+"']");
-  await node.waitFor({timeout:24000});
   assert.ok(await node.locator(".aoP435930ScriptureVerse").count()>0,"Original verses unavailable: "+kind);
   const content=await text(reader+" [data-ao-scripture-content='ready']");
   assert.ok(content.length>70&&/\S/.test(content),"Readied source is blank");
@@ -51,7 +73,7 @@ try{
  ]){
   await context.setOffline(false);
   await open(route);
-  const onlineText=await snapshot(kind);
+  const onlineText=await snapshot(kind,{allowRetry:true});
   const cache=await page.evaluate(()=>globalThis.AO_SCRIPTURE_CACHE_V427?.inspect?.());
   assert.ok(cache.installed&&cache.entries>0,"Original Scripture result not in the persistent cache: "+kind);
   await page.screenshot({path:resolve(captures,file+"-online-390.png"),animations:"disabled"});
