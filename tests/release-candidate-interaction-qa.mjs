@@ -234,7 +234,11 @@ try{
   await page.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
-  await page.waitForSelector(".aoP435930RosaryBar",{state:"visible",timeout:10000});
+  // The canonical Rosary keeps depth controls inside its preparation drawer.
+  const rosaryPreparation=page.locator("#aoPrayerBookRoot.open .aoRosaryPreparation");
+  if(await rosaryPreparation.count()&&await rosaryPreparation.getAttribute("open")===null)
+    await rosaryPreparation.locator(":scope > summary").click();
+  await page.waitForSelector("#aoPrayerBookRoot.open .aoP435930RosaryBar",{state:"visible",timeout:10000});
   await page.locator(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']").click();
   await page.waitForTimeout(220);
   const settledRosary=await page.evaluate(()=>({
