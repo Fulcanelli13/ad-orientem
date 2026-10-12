@@ -357,14 +357,19 @@ export async function prepareNativeReaderPreview({
     holyThursdayMandatumSource:mandatumSource,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  // The 65-card visual acceptance is explicitly opt-in, ordinary Sung only.
-  // Every structural special rite, Low/Missal mode and unsupported overlay
-  // retains the certified existing production projection.
+  // A standalone Asperges/Vidi aquam prelude has its own R20 reader and
+  // completion handoff. It is not part of the Ordinary card projector, so
+  // the 64/65-card LIVE presentation can safely follow it without changing
+  // the six R20 rite records or their original source-owned formula states.
+  // Palm, Ash, Candlemas, Rogations, composite preludes and following actions
+  // remain on their separately verified form-specific fallback until audited.
+  const compatiblePrelude=preceding.length===0 ||
+    (preceding.length===1 && preceding[0]==="ASPERGES" && Boolean(loadedAsperges));
   const curatedEligible=reviewCuratedCards===true &&
     model.totalCards===39 &&
     String(model.corpusFamily)==="SUNG" &&
     String(model.presentationMode)==="LIVE" &&
-    !preceding.length && !following.length &&
+    compatiblePrelude && !following.length &&
     (plan?.overlayGraphs??[]).every(id=>id==="VOTIVE_PROPER");
   const presentationModel=curatedEligible
     ? projectCuratedOrdinaryLiveCards(model)
