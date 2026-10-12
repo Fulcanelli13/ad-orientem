@@ -125,20 +125,16 @@ try{
      "Angelus recitation controls leak through the closed preferences drawer");
    assert.equal(await ag.locator('[data-p435930-seg="regina"]').isVisible(),false,
      "Angelus form controls leak through the closed preferences drawer");
-   if(width===320)console.log("ANGELUS VISIBLE CHOICES "+JSON.stringify(await page.evaluate(()=>{
-     const root=document.querySelector("#aoPray435930.open");
-     return [...root.querySelectorAll("button")].filter(b=>{
-       const t=(b.textContent||"").trim().toLowerCase();
-       return t==="individual"||t==="group";
-     }).map(b=>{
-       const path=[];let p=b;
-       for(let i=0;i<6&&p;i++,p=p.parentElement)path.push({
-         cls:String(p.className||"").slice(0,120),
-         tag:p.tagName,
-         attrs:[...p.attributes].filter(a=>a.name.startsWith("data-")).map(a=>a.name+"="+a.value).slice(0,6)
-       });
-       return {name:b.textContent.trim(),hasRect:b.getClientRects().length>0,
-         display:getComputedStyle(b).display,top:b.getBoundingClientRect().top,path};
+   if(width===390)console.log("ANGELUS ON-SCREEN HIT TEST "+JSON.stringify(await page.evaluate(()=>{
+     return [[90,195],[150,204],[190,208],[90,180],[130,225],[90,276]].map(([x,y])=>{
+       const hit=document.elementFromPoint(x,y);
+       const ancestors=[];let n=hit;
+       while(n&&ancestors.length<7){
+         ancestors.push({tag:n.tagName,cls:String(n.className||"").slice(0,130),
+           text:(n.textContent||"").trim().slice(0,100),html:n.outerHTML?.slice(0,290)});
+         n=n.parentElement;
+       }
+       return {x,y,ancestors};
      });
    })));
    await page.screenshot({path:resolve(shots,"angelus-first-"+width+".png"),animations:"disabled"});
