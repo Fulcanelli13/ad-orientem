@@ -91,6 +91,8 @@ try{
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="71"]').getAttribute("aria-pressed"),"true");
  const nearby=await track.evaluate(el=>{const middle=el.getBoundingClientRect().left+el.clientWidth/2;const card=el.querySelector('[data-bible-step="71"]').getBoundingClientRect();return Math.abs(card.left+card.width/2-middle)});
  assert.ok(nearby<125,"selected milestone should remain close to timeline centre");
+ await page.waitForTimeout(650);
+ await captureView("sourced-infancy"); // Four widths: the qualified geographic map must actually display.
  await page.locator('#ao-find-modular-root [data-bible-step="150"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===150,null,{timeout:15000});
  const last=await page.locator("#ao-find-modular-root [data-bible-detail]").innerText();
