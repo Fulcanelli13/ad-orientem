@@ -655,6 +655,15 @@ export function createFindOwner(win=globalThis){
       const overlay=root?.querySelector?.("[data-bible-era-overlay]");
       if(overlay)overlay.innerHTML=atlasEraOverlay(active.era,lang);
     }
+    const mapStage=root?.querySelector?.(".aoBibleAtlasMapStage");
+    const unlocated=atlasMapItems(stops,index).length===0;
+    if(mapStage){
+      const wasUnlocated=mapStage.dataset.bibleUnlocated==="true";
+      mapStage.dataset.bibleUnlocated=String(unlocated);
+      // The same map remains mounted throughout the chronology: only its
+      // unlocated presentation changes; no marker or fictitious GPS is added.
+      if(wasUnlocated&&!unlocated)mapHandle?.map?.resize?.();
+    }
     const map=mapHandle?.map;
     const sync=()=>{
       const source=map?.getSource?.("ao-explore-items");if(!source)return;
