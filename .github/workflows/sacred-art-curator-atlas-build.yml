@@ -52,7 +52,7 @@ jobs:
         run: python tools/calendar/collect-sacred-art-atlas-originals.py
       - name: Build self-contained visual review HTML with local thumbnail images
         run: |
-          python tools/calendar/build-sacred-art-final-atlas.py --images-root artifacts/sacred-art-final-atlas/source-originals --output artifacts/sacred-art-final-atlas/index.html
+          python tools/calendar/build-sacred-art-final-atlas.py --images-root artifacts/sacred-art-final-atlas/source-originals --decisions data/calendar/sacred-art-curator-decisions-20261011.v1.json --output artifacts/sacred-art-final-atlas/index.html
           python tests/test_sacred_art_final_atlas.py
       - name: Generate manageable subject-first review page
         run: |
