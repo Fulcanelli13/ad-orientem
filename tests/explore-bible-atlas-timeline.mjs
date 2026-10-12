@@ -94,6 +94,8 @@ assert.match(atlasEraOverlay("EXODUS","fr"),/L&#39;Exode/);
 const en=renderBibleAtlasToString({language:"en",atlasStops:stops,atlasIndex:0});
 const fr=renderBibleAtlasToString({language:"fr",atlasStops:stops,atlasIndex:71});
 assert.match(en,/data-bible-track/);
+assert.match(en,/data-bible-event-key="biblical:passage:genesis-1-1-31"/);
+assert.match(en,/data-bible-event-key="biblical:event:jerusalem-temple-e3"/);
 assert.match(en,/data-bible-map/);
 assert.match(en,/data-bible-era-overlay/);
 assert.match(en,/data-bible-step="150"/);
