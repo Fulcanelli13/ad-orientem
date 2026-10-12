@@ -121,6 +121,49 @@ try{
  assert.ok(await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step>0),
   "Offline Rosary cannot advance past first prayer");
  console.log("PASS core Rosary opens and advances on first offline use");
+ // The historical six-section Guide is part of the first-use Rosary reader.
+ // Its links can remain remote, but the entire bilingual Guide must render
+ // while disconnected without displacing the active prayer.
+ const offlineGuide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
+ await offlineGuide.waitFor({timeout:12000});
+ assert.equal(await offlineGuide.locator(".aoRosaryGuideSection").count(),6,
+  "Offline Rosary Guide lost its six source-linked sections");
+ assert.equal(await offlineGuide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
+ const guideStep=await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step);
+ if(!await offlineGuide.evaluate(el=>el.open))
+   await offlineGuide.locator("summary").evaluate(el=>el.click());
+ const guideLayout=await offlineGuide.locator(".aoRosaryGuideBody").evaluate(el=>{
+   const rect=el.getBoundingClientRect();
+   return {height:rect.height,scroll:el.scrollHeight,overflow:getComputedStyle(el).overflowY,viewport:innerHeight};
+ });
+ assert.equal(guideLayout.overflow,"auto","Offline Guide must scroll internally on phones");
+ assert.ok(guideLayout.height<=Math.min(guideLayout.viewport*.34,290)+2,
+  "Offline Guide obscures the current prayer: "+JSON.stringify(guideLayout));
+ assert.ok(guideLayout.scroll>guideLayout.height,"Offline Guide sections are clipped");
+ assert.equal(await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step),guideStep,
+  "Reading the offline Guide advanced the Rosary unexpectedly");
+ // Switch the *application* language, not merely the browser locale; start
+ // Divine Mercy for the first time only after airplane-mode launch.
+ await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"fr"}));
+ await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8.store.getState().language==="fr",null,{timeout:10000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true,
+  "Divine Mercy could not start on first offline use");
+ await page.locator("#aoPray435930.open .aoMercyReader").waitFor({timeout:12000});
+ assert.match(await page.locator("#aoPray435930.open .aoMercyPrayer").innerText(),/Au nom du Père/,
+  "First-use offline Divine Mercy did not render French opening prayer");
+ assert.match(await page.locator("#aoPray435930.open .aoMercyKicker").innerText(),/Prière 1 \/ 62/,
+  "First-use offline Divine Mercy lost its French prayer counter");
+ await page.locator("#aoPray435930.open [data-p435930-mercy-next]").first().evaluate(el=>el.click());
+ assert.match(await page.locator("#aoPray435930.open .aoMercyControls").innerText(),/2 \/ 62/,
+  "First-use offline Divine Mercy did not advance");
+ assert.match(await page.locator("#aoPray435930.open .aoMercySource a").getAttribute("href"),
+  /^https:\/\/www\.vaticannews\.va\/fr\//,
+  "Offline Divine Mercy lost its source link");
+ assert.ok(await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1?.status?.supported),
+  "PWA lost offline support during devotional navigation");
+ console.log("PASS six-section offline Rosary Guide, bounded mobile scroll, French Divine Mercy opening and advancement");
+ // Restore the baseline language before the existing Rosary-update test.
+ await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"en"}));
  await context.setOffline(false);
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
  // Open the real Rosary through its production Prayer owner before staging the next release.
