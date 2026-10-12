@@ -164,6 +164,24 @@ function stateOnlyBlock(block){
   );
 }
 
+// Proper words are resolved dynamically, but their liturgical slot is already
+// owned by an exact canonical text cue in each Low/Sung corpus. Without that
+// source ID the visible Proper is ignored by the LIVE 39%-line cue tracker.
+function properTextCueId(block){
+  const candidate=(block?.units??[]).find(unit=>
+    /^AO\\.SM\\.C\\d{4}$/.test(String(unit?.cue_id??"")) &&
+    String(unit?.clock??"").toUpperCase()!=="MINISTER_RESPONSE" &&
+    String(unit?.clock??"").toUpperCase()!=="USER_RESPONSE"
+  );
+  if(!candidate)throw new Error((block?.Block_ID??"PROPER")+": canonical Proper text cue missing");
+  return candidate.cue_id;
+}
+function annotateProperParagraphs(block,rows){
+  const sourceCueId=properTextCueId(block);
+  return rows.map(row=>Object.freeze({
+    ...row,sourceCueIds:Object.freeze([sourceCueId]),displayLanguage:"VERNACULAR"
+  }));
+}
 function properParagraphs(block,properSlots,{language="en"}={}){
   const slot=block.Proper_Slot;
   const envelope=properSlots?.[slot] ?? null;
@@ -179,18 +197,18 @@ function properParagraphs(block,properSlots,{language="en"}={}){
       latin:p.latin ?? p.lat ?? null,
       vernacular:p.vernacular ?? p.english ?? p.en ?? null,
     }));
-    return composeProperReaderParagraphs(block.Block_ID,resolved,{language})
-      .map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
+    return annotateProperParagraphs(block,
+      composeProperReaderParagraphs(block.Block_ID,resolved,{language}));
   }
   const latin=data.latin ?? data.Latin_Text ?? null;
   const english=data.vernacular ?? data.english ?? data.English_Text ?? null;
   if(!latin || !english) throw new Error(block.Block_ID+": Proper slot "+slot+" lacks bilingual resolved text");
-  return composeProperReaderParagraphs(block.Block_ID,[{
+  return annotateProperParagraphs(block,composeProperReaderParagraphs(block.Block_ID,[{
     id:block.Block_ID+".proper",
     kind:"TEXT",
     latin,
     vernacular:english,
-  }],{language}).map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
+  }],{language}));
 }
 
 export function buildReaderSectionCard({
