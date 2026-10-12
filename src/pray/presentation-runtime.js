@@ -1196,8 +1196,11 @@ function decorateRosary(){
    onChapter:target=>{
     // The archived Rosary remains the sole owner of every bead and method.
     const api=window.AO_ROSARY_V381;
-    if(api?.setStep?.(target)===false)return false;
+    if(typeof api?.setStep!=="function"||api.setStep(target)===false)return false;
+    // The historical donor repaints after its cursor changes. Keep the
+    // chapter projection in sync with that native repaint (no second cursor).
     setTimeout(decorateRosary,0);
+    setTimeout(decorateRosary,70);
     return true;
    }
   });
