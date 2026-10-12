@@ -44,7 +44,7 @@ assert.match(philip,/Philip the Evangelist/);
 for(const html of [genesis,math,luc,apostolic,philip]){
  assert.match(html,/data-bible-review-surface="timeline"/);
  assert.doesNotMatch(html,/data-bible-map|<canvas|data-bible-track/,"no fabricated geometry or alternative timeline");
- assert.doesNotMatch(html,/3,231-person.*verified|automatic travel pin/i);
+ assert.match(html,/Research preview|Aperçu de recherche/,"all research views visibly retain publication hold");
 }
 const invalid=structuredClone(data);invalid.status="PUBLISHED";
 assert.equal(validateLineageReviewCorpus(invalid),false,"no silent promotion to live");
