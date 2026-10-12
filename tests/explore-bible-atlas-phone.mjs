@@ -118,7 +118,8 @@ try{
  assert.equal(await crosslink.count(),1,"Annunciation has one unique exact-citation timeline handoff");
  await crosslink.scrollIntoViewIfNeeded();await page.waitForTimeout(360);await crosslink.tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
-  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66,null,{timeout:15000});
+  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66&&
+  /Annunciation/.test(document.querySelector("#ao-find-modular-root [data-bible-detail] h2")?.textContent||""),null,{timeout:15000});
  assert.match(await page.locator("#ao-find-modular-root [data-bible-detail]").innerText(),/Annunciation/);
  await page.locator('#ao-find-modular-root [data-bible-review-surface="apostles"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="apostles",null,{timeout:15000});
@@ -148,7 +149,8 @@ try{
  await captureView("cinematic-incarnation");
  await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
-  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66,null,{timeout:15000});
+  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66&&
+  /Annunciation/.test(document.querySelector("#ao-find-modular-root [data-bible-detail] h2")?.textContent||""),null,{timeout:15000});
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-step]').count(),151);
 
  await page.locator('#ao-find-modular-root [data-bible-review-surface="timeline"]').tap({timeout:15000});
