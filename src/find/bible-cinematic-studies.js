@@ -36,9 +36,10 @@ export function validateCinematicStudies(data){
   for(const candidate of s.candidates){
    if(!Number.isInteger(candidate?.atlasIndex)||candidate.atlasIndex<0||candidate.atlasIndex>=151||
       !["EXACT_REFERENCE","PASSAGE_OVERLAP_REVIEW_ONLY"].includes(candidate.relation)||
-      !candidate.reference||keys.has(candidate.atlasIndex))return false;
+      !candidate.reference||!/^biblical:(event|passage):[a-z0-9-]+$/.test(candidate.atlasEventKey||"")||
+      keys.has(candidate.atlasEventKey)||keys.has(candidate.atlasIndex))return false;
    if(candidate.relation==="EXACT_REFERENCE"&&ref(candidate.reference)!==ref(s.reference))return false;
-   keys.add(candidate.atlasIndex);
+   keys.add(candidate.atlasIndex);keys.add(candidate.atlasEventKey);
   }
   counts[s.status]++;seen.add(s.index);
  }
@@ -64,7 +65,8 @@ export function validateCinematicCrosswalk(data,atlasStops=[]){
  for(const s of data.scenes){
   for(const candidate of s.candidates){
    const stop=atlasStops[candidate.atlasIndex];
-   if(!stop||stop.index!==candidate.atlasIndex||ref(stop.reference)!==ref(candidate.reference))return false;
+   if(!stop||stop.index!==candidate.atlasIndex||stop.eventKey!==candidate.atlasEventKey||
+      ref(stop.reference)!==ref(candidate.reference))return false;
   }
  }
  return true;
@@ -89,7 +91,7 @@ export function cinematicExactAtlasTarget(study,atlasStops=[]){
  if(study?.status!=="EXACT_REFERENCE"||arr(study?.candidates).length!==1)return null;
  const c=study.candidates[0];
  if(c?.relation!=="EXACT_REFERENCE"||ref(c.reference)!==ref(study.reference)||!Number.isInteger(c.atlasIndex))return null;
- const hits=arr(atlasStops).filter(s=>ref(s.reference)===ref(study.reference));
+ const hits=arr(atlasStops).filter(s=>s.eventKey===c.atlasEventKey&&ref(s.reference)===ref(study.reference));
  return hits.length===1&&hits[0].index===c.atlasIndex?c.atlasIndex:null;
 }
 const button=(attr,value,label,active=false)=>'<button type="button" '+attr+'="'+esc(value)+'"'+(active?' aria-pressed="true"':"")+'>'+esc(label)+'</button>';
