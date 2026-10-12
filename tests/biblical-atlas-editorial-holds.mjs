@@ -28,7 +28,7 @@ const by=id=>registry.holds.find(x=>x.id===id);
 assert.equal(atlas[82].reference,"John 2:13–22");
 assert.equal(atlas[82].era,"PUBLIC","Johannine source order is placed after Cana, not asserted Passion chronology");
 assert.equal(atlas[81].reference,"John 2:1–11","Cana comes before John's Temple account");
-assert.equal(atlas[83].reference,"John 4:46–54","existing royal-official episode survives migration");
+assert.equal(atlas[93].reference,"John 4:46–54","the royal official follows the Samaritan per John 4");
 assert.equal(atlas[110].era,"PASSION","the source move must not create an extra Passion episode");
 assert.equal(study.scenes[74].reference,atlas[82].reference);
 assert.equal(study.scenes[74].candidates[0].atlasIndex,82);
