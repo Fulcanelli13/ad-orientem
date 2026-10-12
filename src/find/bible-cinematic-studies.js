@@ -15,8 +15,12 @@ export function validateCinematicStudies(data){
  if(data?.policy?.canonical151Unchanged!==true||data?.policy?.noArtworkImported!==true||
     data?.policy?.noCoordinatesImported!==true||data?.policy?.noRoutesImported!==true||
     data?.policy?.noAutomaticMerges!==true)return false;
- if(arr(data.chapters).length!==14||arr(data.scenes).length!==181||
-   data.counts?.canonicalTimeline!==151)return false;
+ if(arr(data.chapters).length!==14||arr(data.scenes).length!==183||
+   data.counts?.canonicalTimeline!==151||data.counts?.cinematicScenes!==183||
+   data.extension?.baselineSceneCount!==181||
+   data.extension?.baselineSceneIndicesRetained!==true||
+   JSON.stringify(data.extension?.additionalSceneIndices)!=="[181,182]"||
+   data.extension?.editorialStatus!=="SCRIPTURE_CITATION_REVIEW_ONLY")return false;
  const counts={EXACT_REFERENCE:0,PASSAGE_OVERLAP_REVIEW_ONLY:0,NO_DIRECT_PASSAGE_MATCH:0};
  const seen=new Set(),sceneKeys=new Set();
  for(const [position,s] of data.scenes.entries()){
@@ -46,7 +50,11 @@ export function validateCinematicStudies(data){
   }
   counts[s.status]++;seen.add(s.index);sceneKeys.add(s.sceneKey);
  }
- if(counts.EXACT_REFERENCE!==65||counts.PASSAGE_OVERLAP_REVIEW_ONLY!==29||counts.NO_DIRECT_PASSAGE_MATCH!==87)return false;
+ if(counts.EXACT_REFERENCE!==67||counts.PASSAGE_OVERLAP_REVIEW_ONLY!==29||counts.NO_DIRECT_PASSAGE_MATCH!==87)return false;
+ if(data.scenes[181]?.reference!=="Matthew 2:16–18"||
+    data.scenes[181]?.sceneKey!=="biblical:scene:christ:181"||
+    data.scenes[182]?.reference!=="Acts 2:1–41"||
+    data.scenes[182]?.sceneKey!=="biblical:scene:paul:182")return false;
  const sceneIds=new Set(data.scenes.map(s=>s.index));
  const allChapterIds=new Set(),referenced=[];
  for(const chapter of data.chapters){
@@ -58,7 +66,10 @@ export function validateCinematicStudies(data){
    referenced.push(index);
   }
  }
- return referenced.length===181&&new Set(referenced).size===181;
+ return referenced.length===183&&new Set(referenced).size===183&&
+   data.chapters.find(c=>c.id==="INCARNATION")?.sceneIndices.indexOf(181)===
+     data.chapters.find(c=>c.id==="INCARNATION")?.sceneIndices.indexOf(66)-1&&
+   data.chapters.find(c=>c.id==="APOSTLES")?.sceneIndices[0]===182;
 }
 // Cross-reference index integrity, NOT historical/event identity certification.
 // This prevents an obsolete 151-event index or stale passage from appearing as a
@@ -99,7 +110,7 @@ export function cinematicExactAtlasTarget(study,atlasStops=[]){
 }
 const button=(attr,value,label,active=false)=>'<button type="button" '+attr+'="'+esc(value)+'"'+(active?' aria-pressed="true"':"")+'>'+esc(label)+'</button>';
 export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",scene=0,atlasStops=[],artSelection=null}={}){
- // Production reader must reject a stale 181-scene crosswalk after any
+ // Production reader must reject a stale 183-scene crosswalk after any
  // canonical 151-stop migration; test-only checks are not sufficient.
  const lang=language==="fr"?"fr":"en",valid=validateCinematicCrosswalk(data,atlasStops);
  const head='<div class="aoBibleStudyTop"><button type="button" data-bible-atlas-close aria-label="'+esc(L(lang,"Back to Explore","Retour à Explorer"))+'">←</button>'+
@@ -144,7 +155,7 @@ export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",
  '<span>'+esc(L(lang,c.label_en,c.label_fr))+' · '+(n+1)+' / '+len+'</span>'+
  '<button type="button" data-bible-study-direction="1" '+(n===len-1?'disabled':'')+'>'+esc(L(lang,"Next scene","Scène suivante"))+'</button></div>';
  const editorial='<details class="aoBibleStudyNotice"><summary>'+esc(L(lang,"Research comparison — not approved for publication.","Comparaison de recherche — publication non autorisée."))+'</summary>'+
- '<p>'+esc(L(lang,"181 scenes retained separately from the 151 canonical milestones: 65 matching citations, 29 passage overlaps, 87 unmatched scenes. Artwork and speculative routes are excluded.","181 scènes conservées à part des 151 étapes canoniques : 65 références identiques, 29 passages recoupés et 87 scènes sans correspondance directe. Les images et parcours conjecturaux sont exclus."))+'</p></details>';
+ '<p>'+esc(L(lang,"183 scenes (the original 181 plus two source-grounded additions) remain separate from the 151 canonical milestones: 67 matching citations, 29 passage overlaps and 87 unmatched scenes. No artwork or speculative routes have been imported.","183 scènes (les 181 d’origine et deux ajouts documentés) restent distinctes des 151 étapes canoniques : 67 références identiques, 29 recoupements et 87 scènes sans correspondance directe. Aucune œuvre ni route conjecturale n’a été importée."))+'</p></details>';
  const chapterRibbon='<div class="aoBibleStudyChapterTitle"><small>'+esc(L(lang,c.label_en,c.label_fr))+'</small>'+
  '<strong>'+esc(L(lang,c.headline_en,c.headline_fr))+'</strong>'+
  '<details><summary>'+esc(L(lang,"Chapter context","Contexte du chapitre"))+'</summary><p>'+esc(L(lang,c.sub_en,c.sub_fr))+'</p></details></div>';
