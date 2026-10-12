@@ -68,6 +68,71 @@ try{
     assert.ok(summary.headings.includes("Gloria · The Celebrant's Intonation"));
     assert.ok(summary.headings.includes("Words of Consecration and Elevation · Host"));
     assert.ok(summary.headings.includes("Communion Antiphon"));
+    // Production touch contract: finger vertical scrolling must remain within
+    // a prayer card; horizontal gestures must move EXACTLY one card each way.
+    // Historical 48-card touch coverage cannot certify the new curated model.
+    if(width===390 && lang==="en" && !secondConfiteor){
+      const target=await page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW,rows=api.model.cards;
+        for(let i=8;i<rows.length-4;i++){
+          api.showSequence(rows[i].sequence);
+          const el=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+          if(el&&el.scrollHeight-el.clientHeight>100)
+            return {index:i,sequence:rows[i].sequence};
+        }
+        return null;
+      });
+      assert.ok(target,"Curated production model has no vertically scrollable prayer card");
+      await page.waitForTimeout(300);
+      const scroller=page.locator("#ao-r17-native-reader-preview .ao-prayer-card");
+      const bounds=await scroller.boundingBox();
+      assert.ok(bounds&&bounds.width>180&&bounds.height>180,"No phone prayer swipe territory");
+      const before=await scroller.evaluate(el=>el.scrollTop);
+      const cdp=await context.newCDPSession(page);
+      const x=Math.round(bounds.x+bounds.width*.52);
+      const startY=Math.round(bounds.y+bounds.height*.75);
+      const endY=Math.round(bounds.y+bounds.height*.23);
+      await cdp.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x,y:startY}]});
+      for(let i=1;i<=8;i++){
+        const y=Math.round(startY+(endY-startY)*i/8);
+        await cdp.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y}]});
+      }
+      await cdp.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+      await page.waitForTimeout(260);
+      assert.ok((await scroller.evaluate(el=>el.scrollTop))>before,
+        "Vertical finger gesture did not scroll curated prayer paragraphs");
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sequence),target.sequence,
+        "Vertical finger gesture incorrectly changed curated prayer cards");
+      async function horizontal(direction){
+        const y=Math.round(bounds.y+bounds.height*.4);
+        const startX=Math.round(bounds.x+bounds.width*(direction>0?.78:.22));
+        const endX=Math.round(bounds.x+bounds.width*(direction>0?.22:.78));
+        await cdp.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x:startX,y}]});
+        for(let i=1;i<=6;i++){
+          const x=Math.round(startX+(endX-startX)*i/6);
+          await cdp.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y}]});
+        }
+        await cdp.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+      }
+      const position=()=>page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        return api.model.cards.findIndex(c=>c.sequence===api.getCurrentCard().sequence);
+      });
+      assert.equal(await position(),target.index);
+      await horizontal(1);
+      await page.waitForFunction(index=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        return api.model.cards.findIndex(c=>c.sequence===api.getCurrentCard().sequence)===index+1;
+      },target.index,{timeout:5000});
+      assert.equal(await position(),target.index+1,"Horizontal left swipe skipped a curated card");
+      await page.waitForTimeout(450);
+      await horizontal(-1);
+      await page.waitForFunction(index=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        return api.model.cards.findIndex(c=>c.sequence===api.getCurrentCard().sequence)===index;
+      },target.index,{timeout:5000});
+      assert.equal(await position(),target.index,"Horizontal right swipe did not restore preceding card");
+    }
     const landmarks=[
       "Gloria · The Celebrant's Intonation",
       "Gloria · Praise and Supplication",
