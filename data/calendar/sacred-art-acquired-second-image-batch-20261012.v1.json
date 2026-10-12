@@ -7,13 +7,14 @@
   "summary": {
     "remainingFromPrior": 27,
     "secondBatchExactObjectRecordsReconciled": 27,
-    "actuallyNewVisuallyExamined": 21,
-    "sourceOnlyVisualPending": 6,
-    "totalUniqueVisuallyExamined": 44,
-    "remainingActualVisualChecks": 6,
+    "actuallyNewVisuallyExamined": 22,
+    "sourceOnlyVisualPending": 5,
+    "totalUniqueVisuallyExamined": 45,
+    "remainingActualVisualChecks": 5,
     "all50ObjectsSourceReconciled": 50,
     "newUserApprovals": 0,
-    "newProductionAssets": 0
+    "newProductionAssets": 0,
+    "exactImageSourceRecordsInvestigated": 27
   },
   "policy": {
     "preserve101Choices": true,
@@ -31,7 +32,7 @@
     "artist": "Juan Patricio Morlete Ruiz",
     "title": "The Heart of Mary",
     "subjectId": "DEV-02",
-    "note": "Companion oil-on-copper MUNAL painting of pierced Heart of Mary with lilies and female saints. Historical object confirmed and Commons copy exists; not in acquired registry yet. Date shown as 1000 in Google asset is clearly a metadata error and must not be imported.",
+    "note": "The unacquired Heart of Mary remains a distinct research lead not counted within the 50 recovered images.",
     "acquired": false,
     "rightsCleared": false,
     "artisticAccepted": false
@@ -85,11 +86,11 @@
       "recordedArtist": "Netherlandish Painter",
       "recordedTitle": "Virgin and Child with Saint Joseph",
       "museumOriginal": "https://www.metmuseum.org/art/collection/search/459063",
-      "sourceImageMatch": "SOURCE_IDENTITY_ONLY",
-      "artistTier": "SOURCE_IMAGE_PENDING",
-      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
-      "portraitCropRisk": "CROP_NOT_ASSESSED",
-      "reviewNote": "Met confirms 16th-century Netherlandish small domestic Holy Family picture; exact full painting preview not confidently isolated in image searches. Do not assert visual finish or promote as primary Saint Joseph portrait.",
+      "sourceImageMatch": "EXACT_MET_IMAGE_LOCATED_AND_VISUALLY_EXAMINED",
+      "artistTier": "SECONDARY_DOMESTIC_SCENE",
+      "artisticEvidence": "MATCHED_MUSEUM_DIRECT_IMAGE_PREVIEW",
+      "portraitCropRisk": "NEAR_SQUARE_CONTAIN_NO_SOLO_JOSEPH",
+      "reviewNote": "Matched Met original object 459063 (1975.1.121, DT3084): Mary nurses the Child at the left, Joseph in a red robe sits by the table at right; arched landscape window behind. A quiet, warm Netherlandish domestic oil painting, with Joseph clearly visible but the principal emphasis on Mary and the Child. Excellent Holy Family supporting image, weaker as an isolated Saint Joseph card. Preserve whole square composition, table, bread, and townscape. Distinguish from unrelated Gerard David workshop paintings.",
       "relevantOutstandingSubjectIds": [
         "DEV-10",
         "SNT-OT-01"
@@ -99,7 +100,9 @@
       "originalImageByteInspectionInThisPass": false,
       "fullResolutionPixelCheckInThisPass": false,
       "phoneCropApproved": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "exactImageWitness": "https://images.metmuseum.org/CRDImages/rl/original/DT3084.jpg",
+      "exactImageWitnessAuthority": "THE_MET_OFFICIAL"
     },
     {
       "artworkId": "met-437578",
@@ -171,11 +174,11 @@
       "recordedArtist": "French 15th Century",
       "recordedTitle": "The Expectant Madonna with Saint Joseph",
       "museumOriginal": "https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph",
-      "sourceImageMatch": "SOURCE_DESCRIBED_ONLY",
-      "artistTier": "SOURCE_IMAGE_PENDING",
-      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
+      "sourceImageMatch": "EXACT_NGA_OBJECT_IMAGE_DESCRIBED_BUT_UNSEEN",
+      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
+      "artisticEvidence": "VERIFIED_OBJECT_IMAGE_METADATA_AND_MUSEUM_DETAILED_VISUAL_DESCRIPTION",
       "portraitCropRisk": "WHOLE_PANEL_PENDING",
-      "reviewNote": "NGA visual description identifies prominent expectant Virgin with Saint Joseph behind, 15th-century French tall gold-ground panel. Saint Joseph secondary and partly occluded; visually not inspected directly in matching full image, so artistic tier remains open.",
+      "reviewNote": "NGA 41644 (1952.5.32): vertical French tempera panel with heavily featured Expectant Madonna; Saint Joseph is behind an embroidered curtain with a crutch and green book. Mary is principal subject and figure; not a stand-alone Joseph likeness. Artist/style decision still requires seeing exact full image.",
       "relevantOutstandingSubjectIds": [
         "SNT-OT-01"
       ],
@@ -184,7 +187,9 @@
       "originalImageByteInspectionInThisPass": false,
       "fullResolutionPixelCheckInThisPass": false,
       "phoneCropApproved": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "exactImageWitness": "https://www.nga.gov/artworks/41644-expectant-madonna-saint-joseph",
+      "exactImageWitnessAuthority": "NGA"
     },
     {
       "artworkId": "cma-150955",
@@ -216,11 +221,11 @@
       "recordedArtist": "Segna di Buonaventura",
       "recordedTitle": "Saint Benedict",
       "museumOriginal": "https://www.metmuseum.org/art/collection/search/442750",
-      "sourceImageMatch": "SOURCE_DESCRIBED_ONLY",
-      "artistTier": "SOURCE_IMAGE_PENDING",
+      "sourceImageMatch": "EXACT_MET_OBJECT_AND_IMAGE_ENTRY_VERIFIED_BUT_UNSEEN",
+      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
       "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
       "portraitCropRisk": "IMAGE_IDENTITY_PENDING",
-      "reviewNote": "Met original Segna di Buonaventura Saint Benedict is austere tall gold-ground altarpiece side panel. Historically exact saint, but no exact image sufficiently viewed for new visual assessment; previous style concern retained only as expectation.",
+      "reviewNote": "Met accession 24.78c is Saint Benedict's panel from Segna di Buonaventura's dismembered Silvestrine altarpiece of the 1320s. Gold-ground tempera with Byzantine-like striations; earlier restoration and framing elements require safe in-image crop assessment. Do not substitute the similar Saint Sylvester panel 24.78b. No new quality verdict from text alone.",
       "relevantOutstandingSubjectIds": [
         "SNT-OT-14"
       ],
@@ -229,7 +234,9 @@
       "originalImageByteInspectionInThisPass": false,
       "fullResolutionPixelCheckInThisPass": false,
       "phoneCropApproved": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "exactImageWitness": "https://www.metmuseum.org/art/collection/search/442750",
+      "exactImageWitnessAuthority": "THE_MET"
     },
     {
       "artworkId": "met-436565",
@@ -426,11 +433,11 @@
       "recordedArtist": "Juan de Flandes",
       "recordedTitle": "The Temptation of Christ",
       "museumOriginal": "https://www.nga.gov/artworks/50726-temptation-christ",
-      "sourceImageMatch": "SOURCE_DESCRIBED_ONLY",
-      "artistTier": "SOURCE_IMAGE_PENDING",
-      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
+      "sourceImageMatch": "EXACT_MUSEUM_AND_CC0_REPRODUCTION_IDENTIFIED_NOT_FULL_VISUAL_ASSESSED",
+      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
+      "artisticEvidence": "VERIFIED_OBJECT_IMAGE_METADATA_AND_MUSEUM_DETAILED_VISUAL_DESCRIPTION",
       "portraitCropRisk": "VERIFY_ORIGINAL_RENDER",
-      "reviewNote": "NGA exact object 50726: devil disguised as friar with horns/webbed foot offers stone to seated Christ; strong precise Gospel subject based on detailed official museum visual description; matched image not directly examined this pass.",
+      "reviewNote": "NGA original 50726 and precise Commons photograph (3014 x 4000) are identified as the same c.1500-04 Juan de Flandes panel. NGA describes Christ seated in blue and the horned devil disguised as a friar, offering stone, with other temptation scenes in far background; exact Matthew 4 subject. Painterly suitability cannot be newly certified from descriptive metadata alone. Source original already SHA-acquired; do not fetch or claim another image.",
       "relevantOutstandingSubjectIds": [
         "BIB-G05"
       ],
@@ -439,7 +446,9 @@
       "originalImageByteInspectionInThisPass": false,
       "fullResolutionPixelCheckInThisPass": false,
       "phoneCropApproved": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "exactImageWitness": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes,_The_Temptation_of_Christ,_c._1500-1504,_NGA_50726.jpg",
+      "exactImageWitnessAuthority": "NGA_CC0_GLAM_COMMONS"
     },
     {
       "artworkId": "met-437403",
@@ -531,11 +540,11 @@
       "recordedArtist": "Workshop of Domenico Fetti",
       "recordedTitle": "The Good Samaritan",
       "museumOriginal": "https://www.metmuseum.org/art/collection/search/436302",
-      "sourceImageMatch": "SOURCE_IDENTITY_ONLY",
-      "artistTier": "SOURCE_IMAGE_PENDING",
+      "sourceImageMatch": "EXACT_MET_OBJECT_IDENTITY_VERIFIED_NOT_VISUALLY_MATCHED",
+      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
       "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
       "portraitCropRisk": "VERIFY_FULL_IMAGE",
-      "reviewNote": "Met confirms Workshop of Domenico Fetti Good Samaritan small parable painting; precise source identity, workshop status and object dimensions verified but exact picture not inspected successfully in the image pass.",
+      "reviewNote": "Met accession 30.31 belongs to the WORKSHOP of Domenico Fetti; the separately reproduced autograph Good Samaritan works in Dresden or Boston are not interchangeable with the New York workshop panel. A search result returning the autograph must not be counted as this painting. Keep source image inspection pending.",
       "relevantOutstandingSubjectIds": [
         "BIB-G17"
       ],
@@ -544,7 +553,9 @@
       "originalImageByteInspectionInThisPass": false,
       "fullResolutionPixelCheckInThisPass": false,
       "phoneCropApproved": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "exactImageWitness": "https://www.metmuseum.org/art/collection/search/436302",
+      "exactImageWitnessAuthority": "THE_MET"
     },
     {
       "artworkId": "cma-150040",
@@ -594,11 +605,11 @@
       "recordedArtist": "Maestro Bartolomé",
       "recordedTitle": "The Entry into Jerusalem",
       "museumOriginal": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
-      "sourceImageMatch": "SOURCE_IDENTITY_ONLY",
-      "artistTier": "SOURCE_IMAGE_PENDING",
+      "sourceImageMatch": "EXACT_KRESS_K2017_OBJECT_ID_VERIFIED_NOT_VISUALLY_MATCHED",
+      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
       "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
       "portraitCropRisk": "EXACT_KRESS_IMAGE_REQUIRED",
-      "reviewNote": "Kress K2017 Maestro Bartolomé Entry into Jerusalem object verified, oil on panel 1480–88; prior image search surfaced unrelated Cristoforo da Bologna entry; do NOT use wrong painting preview or assert visual grade. Earlier selected Kress source retained subjectwise.",
+      "reviewNote": "Kress K2017 The Entry into Jerusalem, Maestro Bartolomé 1480–88, University of Arizona 1961.013.042. Exact institutional source is certified Public Domain but individual reproduction/rights release still separate. Search image showed Pietro Lorenzetti's fresco, NOT this painting: discard that image without review. Historic selected asset retained.",
       "relevantOutstandingSubjectIds": [
         "BIB-G25"
       ],
@@ -607,7 +618,10 @@
       "originalImageByteInspectionInThisPass": false,
       "fullResolutionPixelCheckInThisPass": false,
       "phoneCropApproved": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "exactImageWitness": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "exactImageWitnessAuthority": "KRESS"
     }
-  ]
+  ],
+  "reviewBoundary": "Only explicit matched visual preview qualifies as visual assessment; exact official source, textual visual description and CC0 reproduction identity can resolve provenance without constituting visual artistic approval."
 }
