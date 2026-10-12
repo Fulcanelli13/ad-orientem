@@ -1252,6 +1252,21 @@ try{
     await shot(name);
   }
 
+  // Good Death is ordinary private prayer, not the urgent bedside Sacraments
+  // companion. Preserve one original prayer at a time AND visible priest-first
+  // access for someone who may be dying now.
+  await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.good_death",{returnContext:null}));
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")
+    ?.dataset?.aoTraditionalPrayRoute==="pray.good_death",null,{timeout:7000});
+  assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop").count(),9,
+    "Good Death lost its nine canonical prayer choices");
+  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),
+    "good-death-devotion_litany_st_joseph","Good Death must open in the St Joseph prayer");
+  assert.equal(await page.locator("#aoPray435930 [data-ao-good-death-options]").evaluate(el=>el.open),false,
+    "Good Death source context should not obscure actual prayer text");
+  assert.equal(await page.locator("#aoPray435930 [data-tp381-route='pray.dying_companion']").isVisible(),true,
+    "The urgent priest-first bedside exit must remain visible above optional private prayers");
+  await shot("03i2-pray-good-death");
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
   await waitForFxSettled();

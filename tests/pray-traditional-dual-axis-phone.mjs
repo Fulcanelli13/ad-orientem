@@ -239,7 +239,45 @@ try{
  await page.setViewportSize({width:320,height:720});
  assert.equal((await snapshot()).overflow,"auto","320px hymn card lost local reading scroll");
  await page.screenshot({path:resolve(captures,"hymns-veni-creator-la-320.png"),animations:"disabled"});
+ // Good Death is a choice of private prayers, NOT a bedside sacramental
+ // checklist; a direct urgent route to a priest-first companion stays visible.
+ await page.setViewportSize({width:390,height:844});
+ await open("pray.good_death");
+ const death=await snapshot();
+ assert.equal(death.route,"pray.good_death");assert.equal(death.kind,"goodDeath");
+ assert.equal(death.stops,9);assert.equal(death.id,"good-death-devotion_litany_st_joseph");
+ assert.equal(death.active,1);assert.equal(death.overflow,"auto");
+ assert.ok(death.paragraphCount>0,"Good Death source prayer has no paragraph focus");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-good-death-options]").evaluate(el=>el.open),false,
+   "Pastoral notes obscured the actual Good Death prayer");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-route='pray.dying_companion']").isVisible(),true,
+   "Someone dying now has no visible entry to the priest-first bedside guide");
+ await page.screenshot({path:resolve(captures,"good-death-joseph-390-fr.png"),animations:"disabled"});
+ await swipe(6,-150);
+ assert.equal((await snapshot()).index,0,"Good Death vertical reading leaked into card navigation");
+ await swipe(-175,4);
+ assert.equal((await snapshot()).index,1,"Good Death horizontal swipe skipped an original prayer");
+ const deathIds=["devotion_litany_st_joseph","devotion_ad_te_beate_ioseph","devotion_memorare_st_joseph",
+   "foundations_act_of_faith","foundations_act_of_hope","foundations_act_of_love",
+   "sacrament_act_of_contrition","foundations_hail_mary","aspirations"];
+ for(let i=0;i<deathIds.length;i++){
+   await page.locator("#aoPray435930 .aoDevoStop").nth(i).evaluate(el=>el.click());
+   const st=await snapshot();
+   assert.equal(st.id,"good-death-"+deathIds[i],"Wrong original prayer at Good Death chapter "+i);
+   assert.equal(st.active,1,"Good Death timeline has competing active stages");
+   assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>24,
+     "Good Death stage has missing source text: "+deathIds[i]);
+ }
+ await page.setViewportSize({width:320,height:720});
+ assert.equal((await snapshot()).overflow,"auto","Narrow Good Death card no longer scrolls locally");
+ await page.screenshot({path:resolve(captures,"good-death-aspirations-320-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 [data-tp381-route='pray.dying_companion']").evaluate(el=>el.click());
+ await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")
+   ?.dataset.aoTraditionalPrayRoute==="pray.dying_companion",null,{timeout:8000});
+ assert.match(await page.locator("#aoPray435930 .aoTP381Section").first().innerText(),
+   /Appelez un prêtre maintenant|Call a priest now/,
+   "Bedside destination no longer puts obtaining a priest first");
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
- console.log("PASS French 390/320px traditional Prayer: Daily, Examen, Holy Name, Meals, Sacred Heart, Communion and all three original Sacred Hymns");
+ console.log("PASS French 390/320px traditional Prayer plus nine Good Death source-owned cards and priest-first bedside handoff");
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
