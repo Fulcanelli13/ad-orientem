@@ -26,6 +26,7 @@ on:
       - "tests/source-transport-compat.mjs"
       - "tests/sacred-geography-profiles-editorial.mjs"
       - "tests/fixtures/reader-phone-harness.html"
+      - "tests/reader-phone-production-card-default.mjs"
       - "index.html"
       - ".github/workflows/required-main-gate.yml"
       - "tests/required-main-gate-contract.mjs"
@@ -71,6 +72,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: node tests/reader-phone-acceptance.mjs
       - run: npm run test:phone-curated65
+      - run: node tests/reader-phone-production-card-default.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
