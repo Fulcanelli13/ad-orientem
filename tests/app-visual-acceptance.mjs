@@ -1210,7 +1210,10 @@ try{
       const guide=page.locator("#aoPray435930 "+selector);
       assert.equal(await guide.count(),1,route+" lost its source-context guide");
       assert.equal(await guide.evaluate(el=>el.open),false,route+" guide obscures the opening prayer");
-      assert.ok((await guide.textContent()).trim().length>100,route+" donor context was discarded");
+      const context=(await guide.textContent()).trim();
+      assert.match(context,route==="pray.meal_prayers"?/ordinary table prayers|prières ordinaires des repas/i
+        :/Historical approved Roman form|Forme romaine historique/i,
+        route+" original prayer-context guidance was lost");
       assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop").count(),
         route==="pray.meal_prayers"?2:7,route+" lost canonical named-card navigation");
     }else{
