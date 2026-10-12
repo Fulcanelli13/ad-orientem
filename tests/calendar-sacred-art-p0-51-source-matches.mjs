@@ -16,10 +16,10 @@ assert.equal(p0.length,51);
 assert.equal(worklist.subjects.filter(x=>x.priority==="P1").length,83);
 assert.equal(decisions.counts.selected,101);
 assert.equal(results.rows.length,51);
-assert.equal(matched.length,35);
-assert.equal(results.summary.canonicalDistinctArtworkLeads,35);
-assert.equal(results.summary.verifiedObjectProposalAssignments,39);
-assert.equal(results.summary.p0WithoutNewObjectMatch,16);
+assert.equal(matched.length,44);
+assert.equal(results.summary.canonicalDistinctArtworkLeads,44);
+assert.equal(results.summary.verifiedObjectProposalAssignments,48);
+assert.equal(results.summary.p0WithoutNewObjectMatch,7);
 assert.equal(results.summary.rubensApostlePanelMatches,7);
 assert.equal(results.summary.sourceImagesAcquired,0);
 assert.equal(results.summary.additionalHumanSelections,0);
@@ -54,8 +54,8 @@ for(const row of results.rows){
     assert.equal(actual.source.objectUrl,p.sourceUrl);
     assert.equal(actual.acquisition.originalSha256,p.sha256);
   }else{
-    assert.ok(["INSTITUTIONAL_OBJECT","ACADEMIC_DOCUMENTED_CHURCH_PAINTING"].includes(p.origin));
-    assert.match(p.sourceUrl,/^https:\/\/(?:www\.)?(?:museodelprado\.es|collections\.louvre\.fr|metmuseum\.org|boijmans\.nl|collections\.augustins\.toulouse\.fr|emuseum\.mfah\.org|catalogo\.beniculturali\.it|archives\.carmeldelisieux\.fr|scuolagrandesanrocco\.org|catedraldesevilla\.es|pop\.culture\.gouv\.fr|onlinecollection\.nationalgallery\.ie|nationalgallery\.org\.uk|utpictura18\.univ-amu\.fr)\//);
+    assert.ok(["INSTITUTIONAL_OBJECT","ACADEMIC_DOCUMENTED_CHURCH_PAINTING","INSTITUTIONAL_ART_RESEARCH","MUSEUM_OBJECT_SECONDARY_PHOTOGRAPHIC_SOURCE"].includes(p.origin));
+    assert.match(p.sourceUrl,/^https:\/\/(?:www\.)?(?:museodelprado\.es|collections\.louvre\.fr|metmuseum\.org|boijmans\.nl|collections\.augustins\.toulouse\.fr|emuseum\.mfah\.org|catalogo\.beniculturali\.it|archives\.carmeldelisieux\.fr|scuolagrandesanrocco\.org|catedraldesevilla\.es|pop\.culture\.gouv\.fr|onlinecollection\.nationalgallery\.ie|nationalgallery\.org\.uk|utpictura18\.univ-amu\.fr|catalogo\.fondazionezeri\.unibo\.it|lombardiabeniculturali\.it|commons\.wikimedia\.org)\//);
   }
  }
 }
@@ -107,7 +107,24 @@ assert.equal(results.summary.completeBertinGreekDoctorsFromVersailles,3);
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-27").paintings[0].origin,
  "ACADEMIC_DOCUMENTED_CHURCH_PAINTING");
 assert.equal(results.summary.sourceAuthenticatedNewAssignmentsInThisTurn,12);
+assert.equal(results.summary.researchedCandidatesAddedThisTurn,9);
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-10").paintings[0].inventory,"1894, 92 × 76 cm");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-11").paintings[0].inventory,"0900119548");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-12").paintings[0].inventory,"982.243");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-20").paintings[0].canonicalProposalId,
+ "zeri-45874-peter-damian");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-22").paintings[0].inventory,"L0050-00042");
+assert.match(results.rows.find(x=>x.subjectId==="SNT-DC-22").paintings[0].note,/conflicts/,
+ "Contradictory Bellarmine portrait chronology must not be silently treated as life portrait");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-17").paintings[0].inventory,"PM74001769");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-18").paintings[0].inventory,"PM01002671");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-28").paintings[0].origin,
+ "MUSEUM_OBJECT_SECONDARY_PHOTOGRAPHIC_SOURCE");
+for(const id of ["DEV-02","DEV-12","SNT-DC-18","SNT-DC-23","SNT-DC-25","SNT-DC-26","SNT-DC-27"])
+ assert.equal(results.rows.find(x=>x.subjectId===id).paintings.length,0,
+ "No weak, flat, unidentified or contextual art may be counted as a strong proposed match");
+
 
 
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-01").paintings[0].canonicalProposalId,"louvre-rf-1948-27");
-console.log("PASS 51 unresolved P0 subjects: 35 evidence-linked, 39 assignments, 35 canonical painting leads, 16 still open; zero selections/photos/app release changed");
+console.log("PASS 51 unresolved P0 subjects: 44 evidence-linked, 48 assignments, 44 canonical painting leads, 7 still open; zero selections/photos/app release changed");
