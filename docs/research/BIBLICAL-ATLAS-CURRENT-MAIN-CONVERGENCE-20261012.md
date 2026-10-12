@@ -46,3 +46,18 @@ Sources:
 2. Screenshot and physical-device review at 320/390/768 and desktop; automated checks are not aesthetic approval.
 3. Event-by-event evaluation of PR #1010's 181 design scenes against PR #998's 151 source events before porting improvements.
 4. Separate editorial approval for lineage claims, historical location identities, apostolic traditions and live public scope.
+
+## A3 — Cinematic sequence reconciliation and connected trees (12 October)
+
+The 181-scene, 14-chapter cinematic pilot is preserved **as a review-only view inside the same Explore / Biblical Atlas owner**, not as a replacement timeline, second app, or newly certified geographic route. The canonical chronology still contains exactly 151 bilingual milestones in 11 eras.
+
+**Source crosswalk:** data/explore/biblical-cinematic-studies-review.v1.json is a projection of research PR #1018's AO_ATLAS_151_181_CROSSWALK_V1. It contains all 181 records from PR #1010, with original source references and EN/FR scene synopses, but strips third-party artworks, coordinates and routes. The 14 chapters are ordered by Abraham → Moses → Christ → St Paul; that is a four-journey comparison, not a complete 73-book chronology. Classification is **65 exact citations, 29 partial overlaps, 87 no direct match**. Of the 65 exact citation cases, **64 yield a unique canonical-target citation**; scene index 68 has an exact citation plus an overlapping second candidate, so its automatic jump is suppressed. Citation matching NEVER implies proven scene equivalence, precise date or location.
+
+**UI:** a restrained read-first cinematic study, a 14-chapter selector and scene-by-scene navigation; every scene has a native Scripture reading action and an evidence status label. Exactly matching unambiguous citations alone offer a reversible jump to the 151-event timeline. No image rights, artwork sources or map coordinates have been promoted. Apostolic / genealogy modes retain the unapproved-research warning. No app runtime outside current Explore is replaced.
+
+**Family tree:** Genesis review no longer presents only a flat parent→child list; it displays an actual nested branch structure with connective rails, distinct IDs and a source link attached to each individual parentage record. Five ancestor foci, 1–6 generations and the 90-source-link underlying corpus are unchanged; no inferred relationships from vendor person-name matches.
+
+**QA / proof:** tests/biblical-cinematic-studies.mjs checks all 181 records, 14 complete chapter partitions, 151 protected milestones, 64 safe exact hops, withheld ambiguous links, absent artwork/GPS and failed-schema rejection. The existing real-phone scenario now traverses cinematic chapters and one exact source jump and checks an actual nested Genesis tree. The screenshot capture suite records 320/390/768/1280px views of canonical chronology, family tree and cinematic study into a named CI artifact for human visual appraisal.
+
+**Publication hold remains:** historical-site certification, Latin/French Scripture textual criticism, aesthetic approval of source-aware imagery and 151↔181 semantic adjudication are not replaced by passing automated tests; all evidence modes remain on a draft PR.
+
