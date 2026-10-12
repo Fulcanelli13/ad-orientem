@@ -33,8 +33,13 @@ function visibleParagraphs(scroll){
 }
 
 export function installRosaryActiveCard({root,stepIndex,chapters,navigate}={}){
- const sheet=root?.querySelector(".pbShell .lab-prayer-sheet");
- const flip=sheet?.querySelector(".lab-prayer-flip[data-pb-flip]");
+ const shell=root?.querySelector(".pbShell");
+ const prayer= shell?.querySelector(".lab-prayer-sheet");
+ const prayerFlip=prayer?.querySelector(".lab-prayer-flip[data-pb-flip]");
+ // Mystery introductions use the source-owned contemplation surface; there
+ // is deliberately no flip or prayer sheet on those steps.
+ const sheet=prayerFlip?prayer:shell?.querySelector(".lab-contemplation");
+ const flip=prayerFlip||sheet;
  if(!sheet||!flip||!Array.isArray(chapters)||!chapters.length||
     typeof navigate!=="function")return null;
  const chapter=chapters[rosaryCurrentChapter(chapters,stepIndex)];
@@ -45,6 +50,7 @@ export function installRosaryActiveCard({root,stepIndex,chapters,navigate}={}){
  sheet.dataset.aoRosaryDualAxis="v1";
  // Keep the donor's existing H2, prayer-flip, and native Previous/Next controls.
  const title=sheet.querySelector("h2");
+ sheet.dataset.aoRosaryCardKind=prayerFlip?"prayer":"contemplation";
  if(title){title.classList.add("aoDevoCardTitle");title.dataset.aoRosaryPrayerTitle="1";}
  flip.classList.add("aoDevoCardScroll","aoRosaryPrayerScroll");
  flip.dataset.aoRosaryPrayerScroll="1";
