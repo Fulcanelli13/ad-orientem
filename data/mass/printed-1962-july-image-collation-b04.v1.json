@@ -1,7 +1,7 @@
 {
   "schema": "AO_PRINTED_1962_JULY_B04_IMAGE_COLLATION_V1",
   "version": 1,
-  "status": "image-inspected-source-anchors-runtime-matches-pending",
+  "status": "image-inspected-evidence-with-tracked-orthographic-divergences",
   "editorialDate": "2026-10-12",
   "scope": "Adds non-B01 text fields, not full-year or full-Missal certification.",
   "witness": {
@@ -41,7 +41,8 @@
       "secret",
       "postcommunion"
     ],
-    "normalization": "fold accents, ligatures, j/i, typography and whitespace; no permission to normalize away substantive words"
+    "normalization": "fold accents, ligatures, j/i, typography and whitespace; no permission to normalize away substantive words",
+    "rules": "Three explicitly listed word-division or ae/oe variants are reported as NON-VERBATIM; do not silently normalize these away or promote them to exact matches."
   },
   "cases": [
     {
@@ -146,10 +147,11 @@
           "field": "postcommunion",
           "index": 0,
           "page": 3,
-          "latinIncipit": "Sumpsimus Domine celebritatis annua votiva",
+          "latinIncipit": "Sumpsimus Domine celebritatis annuae votiva",
           "printedPage": 535,
           "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3",
-          "visualInspection": "page-image-observed-2026-10-12"
+          "visualInspection": "page-image-observed-2026-10-12",
+          "editorialNote": "Manual correction of an image transcription: printed text uses annuæ, not annua."
         },
         {
           "field": "postcommunion",
@@ -190,7 +192,10 @@
           "latinIncipit": "Doctrinam quasi antelucanum illumino",
           "printedPage": 538,
           "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6",
-          "visualInspection": "page-image-observed-2026-10-12"
+          "visualInspection": "page-image-observed-2026-10-12",
+          "runtimeLatinVariant": "Doctrinam quasi ante lucanum illumino",
+          "varianceType": "edition-word-division",
+          "editorialNote": "Printed scan has antelucánum as one word; existing runtime separates ante lucanum. NOT an exact printed-text agreement."
         },
         {
           "field": "secret",
@@ -249,7 +254,10 @@
           "latinIncipit": "Ad mensam caelestis convivii fac nos Domine",
           "printedPage": 539,
           "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=7",
-          "visualInspection": "page-image-observed-2026-10-12"
+          "visualInspection": "page-image-observed-2026-10-12",
+          "runtimeLatinVariant": "Ad mensam coelestis convivii fac nos Domine",
+          "varianceType": "edition-ae-vs-oe-spelling",
+          "editorialNote": "Printed scan has cælestis; runtime has cœléstis. Retain source discrepancy for independent textual collation."
         },
         {
           "field": "postcommunion",
@@ -258,7 +266,10 @@
           "latinIncipit": "Caelesti dape qua pasti sumus",
           "printedPage": 539,
           "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=7",
-          "visualInspection": "page-image-observed-2026-10-12"
+          "visualInspection": "page-image-observed-2026-10-12",
+          "runtimeLatinVariant": "Coelesti dape qua pasti sumus",
+          "varianceType": "edition-ae-vs-oe-spelling",
+          "editorialNote": "Printed scan has Cælésti; runtime has Cœlésti. Not accepted as a verbatim edition agreement."
         }
       ]
     },
