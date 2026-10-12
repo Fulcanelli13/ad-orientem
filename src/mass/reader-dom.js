@@ -1,5 +1,6 @@
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
+import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
@@ -224,6 +225,20 @@ const SHELL_STYLE = `
   content:"RUBRIC";display:block;margin-bottom:5px;font:800 7px/1 var(--ao-font-ui,system-ui,sans-serif);
   letter-spacing:.14em;color:#738278
 }
+/* R20's three source-owned action-only screens have no prayer words.
+   Center the existing participation guide like a restrained interlude,
+   clearly distinct from liturgical Latin and without a fabricated cue. */
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-paragraph[data-kind="RUBRIC"]:only-child{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:min(42vh,360px);max-width:36ch;margin:0 auto;padding:30px 18px;
+  border:0;border-radius:0;background:transparent;text-align:center;
+  color:var(--ao-text-primary,#e8dfcb);
+  font:italic 500 clamp(1.05rem,4vw,1.35rem)/1.62 var(--ao-font-liturgical,Georgia,serif);
+  letter-spacing:.015em;opacity:1
+}
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-paragraph[data-kind="RUBRIC"]:only-child::before{content:none}
 .ao-reader-paragraph[data-kind="RUBRIC"][data-state-duplicate="true"]{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"][data-state-duplicate="true"]{display:block}
 .ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"] .ao-line-primary{
@@ -248,6 +263,10 @@ const SHELL_STYLE = `
   font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.34;letter-spacing:.035em;color:#fff
 }
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:8px;font-size:.60em;color:#b8c2b9}
+.ao-reader-paragraph[data-chant-phrased="true"] .ao-line-primary,
+.ao-reader-paragraph[data-chant-phrased="true"] .ao-line-secondary{white-space:pre-line}
+.ao-speaker-turn{display:block;margin:0 0 6px;font:650 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
+.ao-reader-shell:not([data-mode="LIVE"]) .ao-speaker-turn{display:none}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:14px;border-left:2px solid rgba(200,217,233,.50);color:#dbe5ee}
 .ao-ritual-trigger{border-radius:.18em;background:linear-gradient(transparent 72%,color-mix(in srgb,var(--ao-mass-accent) 18%,transparent) 72%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .ao-ritual-trigger-live{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--ao-mass-accent) 38%,transparent) 62%);text-shadow:0 0 12px color-mix(in srgb,var(--ao-mass-accent) 10%,transparent);animation:aoRitualWordCue 1.25s ease-out both}
@@ -297,7 +316,10 @@ const SHELL_STYLE = `
 }
 .ao-rail-left{left:max(5px,calc((100% - 1080px)/2))}
 .ao-rail-right{right:max(5px,calc((100% - 1080px)/2))}
-.ao-rail[data-visible="false"]{display:flex}
+.ao-rail[data-visible="false"]{display:none}
+/* Only currently applicable transient instructions occupy either LIVE rail.
+   Persistent posture/position belong to the upper ribbon, not ghost rail boxes. */
+.ao-rail .ao-rail-item[data-active="false"]{display:none}
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-rail{display:none}
 .ao-rail-item{
   position:relative;flex:0 0 auto;width:52px;height:52px;min-height:52px;padding:0;
@@ -796,6 +818,86 @@ button.ao-schola-control{cursor:pointer}
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
 }
+/* Opt-in 65-card field reader: keep the sacred dark hierarchy, but the
+   noncurrent text must still be readable in dim church light. The preceding
+   48-card production aesthetic remains unchanged. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph{opacity:.84}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"])
+  .ao-reader-paragraph{opacity:.81}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
+  .ao-reader-paragraph[data-active="true"]{opacity:1}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
+  .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.91}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.83}
+
+/* The persistent Schola panel may be resized/hidden, but it must not lie
+   across prayer rows in the visual scroll window. Reserve real viewport
+   space instead of only adding invisible content after the last paragraph. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-card-viewport{
+  /* The 100%-high viewport was content-box: adding dock padding expanded
+     it beneath the Schola. Include the reserved safe-area and dock INSIDE
+     its own height so the reading scroller ends above the overlay. */
+  box-sizing:border-box;
+  /* Dock sits 9px above the safe-area edge; reserve that extra strip too. */
+  padding-bottom:calc(var(--ao-schola-reserve) + max(12px,env(safe-area-inset-bottom)))
+}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-prayer-card{
+  /* The viewport owns the visible height. Bottom cue-travel padding must
+     remain INSIDE that box instead of expanding a 100%-high content-box
+     beneath the persistent Schola dock. */
+  box-sizing:border-box;
+  height:100%;
+  /* Preserve the native short-card cue-travel variable. The previous
+     fixed clamp masked this inherited reserve and left short responses
+     impossible to reach by scrolling (C0071). Keep actual scroll
+     territory, not inflated prayer paragraph heights. */
+  /* The Schola dock already shortens the reading viewport. A second
+     42vh + 166px fixed padding forced the scroll box to expand to its
+     510px padding minimum despite a smaller declared height. Keep the
+     56px breathing strip and let ensureShortCardCueTravel calculate the
+     remaining scroll distance from actual cue geometry. */
+  padding-bottom:calc(56px + var(--ao-short-cue-tail,0px))
+}
+
+/* Dynamic Schola dock is independent of the reader. Reserve an
+   actually shorter scrolling viewport while its separate panel is open;
+   padding alone does not constrain the scroller's outer rectangle. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-schola-visible="true"] .ao-prayer-card{
+  /* The parent viewport itself includes a larger top-ribbon/rail offset
+     than its nominal 100% scroll-child containing block. Deduct a guarded
+     88px as well as the live dock to keep the actual scroll rectangle
+     above the panel; the extra height remains accessible by finger scroll. */
+  /* Measured against the root's full-viewport fixed shell, not a
+     percentage of the viewport's content box (whose intrinsic 100% child
+     was 69px too tall on phone Chromium). Header/ribbon is 120px; the
+     48px residual margin keeps the real scroller above the floating dock. */
+  height:calc(100dvh - var(--ao-schola-reserve) - 168px)!important
+}
+
+
+/* Discoverable yet subdued horizontal prayer navigation. At .34 and .42
+   opacity the real phone arrows/counter disappeared into the dark canvas.
+   Scope to curated LIVE + prelude; MISSAL retains its book-specific chrome. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-nav button,
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-shell .ao-reader-nav button{
+  color:#c1bcaf;opacity:.60
+}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-progress,
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-shell .ao-reader-progress{
+  color:#c1b7a3;opacity:.80;font-size:10px
+}
+
+
 `;
 
 function esc(value){
@@ -958,10 +1060,16 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       replaceOnToggle=false;
     }
     if(latinProminent && /\b(?:Hoc est enim Corpus meum|Hic est enim Calix)\b/i.test(primary))kind="CONSECRATION_WORDS";
+    const cueIds=p.sourceCueIds??(p.id?[p.id]:[]);
+    primary=insertChantPhraseBreaks(primary,cueIds);
+    secondary=insertChantPhraseBreaks(secondary,cueIds);
+    alternate=insertChantPhraseBreaks(alternate,cueIds);
     return Object.freeze({
       id:String(p.id ?? index),kind,primary,secondary,alternate,replaceOnToggle,
       displayLanguage:latinProminent&&secondary?"LATIN":p.displayLanguage??null,
       active:p.active === true,
+      speakerRole:p.speakerRole??null,
+      speakerEvidence:p.speakerEvidence??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
@@ -1242,8 +1350,25 @@ function setChannel(root, channel, value){
   // The top state cell and its hidden persistent rail counterpart may share
   // a semantic channel. Update both states: the top cell remains the only
   // persistent visual owner, while transient rails have their own channel.
+  const label=textValue(value);
+  const active=Boolean(label);
   for(const item of root.querySelectorAll?.(`[data-channel="${channel}"]`)??[]){
-    item.dataset.active=String(Boolean(textValue(value)));
+    item.dataset.active=String(active);
+    // The icons are intentionally label-free visually, but remain meaningful
+    // for screen readers and for long-press/hover; never leave stale labels
+    // on a later inactive cue or a different priest action.
+    if(!item.classList?.contains("ao-rail-item"))continue;
+    if(active){
+      item.setAttribute("role","img");
+      item.setAttribute("aria-label",label);
+      item.removeAttribute("aria-hidden");
+      item.title=label;
+    }else{
+      item.removeAttribute("role");
+      item.removeAttribute("aria-label");
+      item.setAttribute("aria-hidden","true");
+      item.removeAttribute("title");
+    }
   }
 }
 
@@ -1254,10 +1379,16 @@ function syncRailVisibility(root){
   const live=String(shell?.dataset?.mode??"LIVE").toUpperCase()==="LIVE";
   const left=root.querySelector(".ao-rail-left");
   const right=root.querySelector(".ao-rail-right");
-  if(left)left.dataset.visible=String(live);
-  if(right)right.dataset.visible=String(live);
-  stage.dataset.leftRail=String(live);
-  stage.dataset.rightRail=String(live);
+  // The left persistent posture is already owned by the top ribbon; only
+  // transient faithful cues count when deciding if the left rail exists.
+  const hasVisibleCue=rail=>Boolean(rail?.querySelector?.(
+    '.ao-rail-item[data-active="true"]:not([data-channel="posture"])'
+  ));
+  const leftActive=live&&hasVisibleCue(left),rightActive=live&&hasVisibleCue(right);
+  if(left)left.dataset.visible=String(leftActive);
+  if(right)right.dataset.visible=String(rightActive);
+  stage.dataset.leftRail=String(leftActive);
+  stage.dataset.rightRail=String(rightActive);
 }
 
 // The v1.80 bank uses SVG transport wrappers for 57 PNG alpha payloads,
@@ -2369,11 +2500,15 @@ export function createReaderDomAdapter({
       const doc=body.ownerDocument ?? globalThis.document;
       if(doc?.createElement){
         let openingSet=false;
+        let previousSpeakerRole=null;
         const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
         for(const p of current.paragraphs){
           const node=doc.createElement("p");
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
+          if(p.speakerRole)node.dataset.speakerRole=p.speakerRole;
+          if([p.primary,p.secondary,p.alternate].some(value=>String(value??"").includes("\n")))
+            node.dataset.chantPhrased="true";
           if(decorateThisSection&&!openingSet&&p.kind==="TEXT"&&/^\s*\p{L}/u.test(p.primary)){
             node.dataset.opening="true";openingSet=true;
           }
@@ -2391,6 +2526,27 @@ export function createReaderDomAdapter({
               node.setAttribute("aria-expanded","false");
             }
           }
+          // A role-change caption is shown only in LIVE, and only when the
+          // liturgical source has not already supplied S., M., V. or R.
+          // Do not label action-only or rubric paragraphs as spoken prayers.
+          const speakerRole=String(p.speakerRole??"");
+          // Retain the verified actor on its rendered prayer paragraph.
+          // This is presentation metadata, not a second liturgical owner.
+          if(speakerRole)node.dataset.speakerRole=speakerRole;
+          const ownerLabels=String(prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr")
+            ? {PRIEST:"Prêtre",MINISTERS:"Servants",RESPONDERS:"Réponse",SCHOLA:"Schola",
+               GOSPEL_PROCLAIMER:"Ministre de l'Évangile",DISMISSAL_MINISTER:"Ministre du renvoi"}
+            : {PRIEST:"Priest",MINISTERS:"Servers",RESPONDERS:"Response",SCHOLA:"Schola",
+               GOSPEL_PROCLAIMER:"Gospel minister",DISMISSAL_MINISTER:"Dismissal minister"};
+          if(speakerRole && speakerRole!==previousSpeakerRole && ownerLabels[speakerRole] &&
+             p.kind!=="RUBRIC" && !/^(?:[SMVR]\.|℣\.|℟\.)\s*/u.test(String(p.primary??""))){
+            const speakerTag=doc.createElement("small");
+            speakerTag.className="ao-speaker-turn";
+            speakerTag.textContent=ownerLabels[speakerRole];
+            node.append(speakerTag);
+          }
+          if(speakerRole&&speakerRole!=="PRIEST_ACTION"&&speakerRole!=="EDITORIAL_GUIDE")
+            previousSpeakerRole=speakerRole;
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
           const exactCueIds=(p.sourceCueIds??[]).filter(id=>
             /^(?:AO\.SM\.C\d{4}|GF-SOP-\d\d-[KR]|GF-X-52[123])$/.test(String(id)));
@@ -2398,6 +2554,16 @@ export function createReaderDomAdapter({
           // its source-record cue; other GF records must never acquire an
           // identity from a shared card's source list.
           if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
+          // Sung Gloria and Credo intonations pair a canonical incipit cue
+          // with its priestly completion on one legible paragraph. Both
+          // source IDs remain on data-source-cue-ids; the opening cue owns
+          // focus while this visual composite is active. Without this
+          // explicit two-pair bridge, neither celebrant intonation receives
+          // any LIVE cue focus, voice or cue-scoped rubric projection.
+          if(exactCueIds.length===2 && (
+            (exactCueIds[0]==="AO.SM.C0053" && exactCueIds[1]==="AO.SM.C0054") ||
+            (exactCueIds[0]==="AO.SM.C0089" && exactCueIds[1]==="AO.SM.C0090")
+          )) node.dataset.cueId=exactCueIds[0];
           // The Passion death rubric is tied to the final Latin words,
           // rather than to the long Good Friday Passion card as a whole.
           // This cue identity is inherited from source GF-PASS-320 and

@@ -157,3 +157,31 @@ const mustRefuse=await recoverReaderProperOmissions(wrongAliasLatin,{hostResolve
 assert.equal(mustRefuse.data.secrets[1].fr,"","verified French equivalence bypassed mismatched Latin");
 
 console.log("PASS reader Proper runtime recovery: exact missing base sections recovered without overriding host text.");
+
+const prefaceSource={
+  la:new Map([["Spiritu",["!de Spiritu Sancto","v. Qui, ascéndens, promíssum Spíritum Sanctum effúdit."]],
+              ["Maria",["!de Beata Maria Virgine","v. Et te in *Festivitáte* beátæ Maríæ semper Vírginis."]]]),
+  en:new Map([["Spiritu",["!Holy Spirit","v. Who poured out the promised Holy Ghost."]],
+              ["Maria",["!Blessed Virgin","v. In the *Feast* of the Blessed Mary."]]]),
+  fr:new Map([["Spiritu",["!de Spiritu Sancto","v. Il a répandu le Saint-Esprit promis."]],
+              ["Maria",["!de la Sainte Vierge","v. Et de vous louer en la fête de la bienheureuse Marie."]]]),
+};
+const prefaceResolver={async resolveSource(path,language){
+ assert.equal(path,"Ordo/Prefationes");
+ return {map:prefaceSource[language]};
+}};
+const full={...authoritative,data:{...authoritative.data,
+ preface:{lat:"Communis\nVere dignum",en:"Common",fr:"Commune"}}};
+for(const [id,expected,clause] of [
+ ["tempora:Pasc7-0:1:r","Spiritu",/promíssum Spíritum/],
+ ["sancti:10-07:2:w","Maria",/festivitáte/],
+ ["sancti:12-08:1:w","Maria",/Conceptióne Immaculáta/]
+]){
+ const corrected=await recoverReaderProperOmissions(full,{hostResolver:prefaceResolver,principalCelebrationId:id});
+ assert.equal(corrected.data.preface.prefaceSection,expected);
+ assert.match(corrected.data.preface.lat,clause);
+ assert.ok(corrected.data.preface.en&&corrected.data.preface.fr);
+ if(id.includes("12-08"))assert.match(corrected.data.preface.fr,/Conception immaculée/);
+}
+const unowned=await recoverReaderProperOmissions(full,{hostResolver:prefaceResolver,principalCelebrationId:"tempora:Pent19-0:2:g"});
+assert.equal(unowned,full,"Unknown principal Mass must retain source Preface");

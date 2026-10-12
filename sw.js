@@ -16,6 +16,8 @@ const liveClients=new Map();
  // Only the first-use Prayer graph is promoted from a lazy module graph into
  // the committed bootstrap. Other routes retain normal on-demand caching.
 const OFFLINE_CRITICAL_LAZY_OWNER=new URL("src/pray/browser-entry.js",BASE).href;
+// The first-use Angelus cinematic is a local, approved work, not a network image.
+const OFFLINE_CRITICAL_ANGELUS_ART=new URL("assets/pray/angelus/tanner-annunciation-1898.webp",BASE).href;
 
 const scoped=url=>{
  try{const u=new URL(url,BASE);return u.origin===BASE.origin&&u.pathname.startsWith(BASE.pathname)&&!u.search&&!u.hash?u.href:null}
@@ -100,7 +102,7 @@ async function stageSnapshot(){
   const source=await safeFetch(ROOT),html=await source.clone().text();
   if(!html.includes("src/mass/browser-entry.js")||!html.includes("ao-packed-"))fail("UNRECOGNISED_HTML");
   const initialHash=await hash(utf8(html));
-  const queue=[ROOT,...urlsInHtml(html)];
+  const queue=[ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART];
   const processed=new Set(),digests=[];
   let bytes=0;
   try{

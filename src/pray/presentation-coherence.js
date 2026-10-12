@@ -30,7 +30,8 @@ function oneLayer(){
 }
 function viewOf(root){return root?.querySelector('.aoP435930Mount')?.dataset.aoPrayView||''}
 function needsRecitation(root){
-  const v=viewOf(root);if(['rosary','confession','firstFriday','firstSaturday','fsMeditation'].includes(v))return false;
+  const v=viewOf(root);if(['rosary','angelus','confession','firstFriday','firstSaturday','fsMeditation'].includes(v))return false;
+  if(v==='stations'&&root.querySelector('[data-ao-stations-options] [data-p435930-seg="individual"]'))return false;
   if(v==='library')return !!root.querySelector('.aoP435930Prayer');
   return !!root.querySelector('.aoP435930Prayer,.aoP435930LitCard,.aoP435930AppendixFlip');
 }
@@ -188,6 +189,8 @@ function focusUnits(root){
 }
 function updateFocus(){
   const root=document.getElementById(ROOT),mount=root?.querySelector('.aoP435930Mount');if(!root||!mount||!root.classList.contains('open'))return;
+  // Card-local focus replaces the legacy mount-level focus in the Angelus deck.
+  if(root.querySelector('[data-ao-devotional-deck]'))return;
   if(v3410SpecialFocus(root,mount))return;
   const units=[...root.querySelectorAll('.aoP435930FluidUnit')].filter(x=>x.offsetParent!==null);if(!units.length)return;
   const box=mount.getBoundingClientRect(),focusY=box.top+Math.min(box.height,window.innerHeight)*.43,band=Math.max(150,Math.min(box.height,window.innerHeight)*.39);

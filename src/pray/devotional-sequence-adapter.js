@@ -1,0 +1,176 @@
+/**
+ * Shared dual-axis adapter for source-owned step readers (Stations and Mercy).
+ * Does not own the prayer corpus or recitation sequence. Its only responsibilities:
+ * title timeline, horizontal chapter gestures, card-local vertical focus.
+ */
+import "./devotional-card-deck-styles.js";
+
+export const SEQUENTIAL_DEVOTIONAL_SCHEMA = "dual-axis-sequential-devotional-v1";
+
+const make=(doc,tag,klass,text)=>{
+  const el=doc.createElement(tag);
+  el.className=klass;
+  if(text!==undefined)el.textContent=text;
+  return el;
+};
+const visible=el=>Boolean(el?.getClientRects().length);
+
+/** Group the canonical 62/63 bead events into seven/eight named prayer cards. */
+export function mercyChapters(steps,{french=false}={}){
+  if(!Array.isArray(steps)||!steps.length)return Object.freeze([]);
+  const titles={
+    opening:["Opening prayers","Prières initiales"],
+    conclusion:["Closing invocations","Invocations finales"],
+    "optional-conclusion":["Optional concluding prayer","Prière finale facultative"]
+  };
+  const chapters=[];
+  steps.forEach((step,index)=>{
+    const id=step.decade?"decade-"+step.decade:step.group;
+    let chapter=chapters[chapters.length-1];
+    if(!chapter||chapter.id!==id){
+      const name=step.decade?
+        (french?"Dizaine ":"Decade ")+step.decade:
+        (titles[id]?.[french?1:0]||id);
+      chapter={id,title:name,start:index,entries:[]};
+      chapters.push(chapter);
+    }
+    chapter.entries.push({index,step});
+  });
+  return Object.freeze(chapters.map(chapter=>Object.freeze({
+    id:chapter.id,title:chapter.title,start:chapter.start,
+    entries:Object.freeze(chapter.entries.map(x=>Object.freeze(x)))
+  })));
+}
+
+
+export function installSequentialDevotionalReader({
+  mount,kind,chapters,activeIndex=0,onNavigate=()=>{},paragraphSelector,
+  onFocus=()=>{},restoreStep=null
+}={}){
+  const doc=mount?.ownerDocument;
+  const card=mount?.querySelector(".aoDevoCard");
+  const body=card?.querySelector(".aoDevoCardScroll");
+  if(!doc||!card||!body||!Array.isArray(chapters)||!chapters.length)return null;
+  if(!["stations","mercy"].includes(kind))throw new RangeError("Unexpected sequence owner");
+  const index=Math.max(0,Math.min(chapters.length-1,Number(activeIndex)||0));
+  const parent=kind==="stations"?mount.querySelector(".aoP435930StationRail"):
+    mount.querySelector(".aoMercyReader");
+  if(!parent)return null;
+  let timeline;
+  if(kind==="stations"){
+    // Move the original canonical 14 step buttons; their native click owner stays.
+    timeline=parent;
+    const buttons=[...timeline.querySelectorAll("[data-p435930-station-step]")];
+    if(buttons.length!==chapters.length)return null;
+    const stops=make(doc,"div","aoDevoStops");
+    for(const button of buttons){
+      button.classList.add("aoDevoStop");
+      button.querySelector("span")?.classList.add("aoDevoStopNumber");
+      button.querySelector("b")?.classList.add("aoDevoStopTitle");
+      stops.append(button);
+    }
+    timeline.replaceChildren(stops);
+  }else{
+    timeline=make(doc,"nav","aoDevoTimeline aoDevoSequenceTimeline");
+    const stops=make(doc,"div","aoDevoStops");
+    chapters.forEach((chapter,i)=>{
+      const button=make(doc,"button","aoDevoStop");
+      button.type="button";button.dataset.aoDevoChapter=String(i);
+      button.append(make(doc,"span","aoDevoStopNumber",String(i+1).padStart(2,"0")),
+        make(doc,"span","aoDevoStopTitle",chapter.title));
+      stops.append(button);
+    });
+    timeline.append(stops);
+    parent.insertBefore(timeline,card);
+  }
+  timeline.classList.add("aoDevoTimeline","aoDevoSequenceTimeline");
+  timeline.dataset.aoDevotionalDeck=SEQUENTIAL_DEVOTIONAL_SCHEMA;
+  timeline.setAttribute("aria-label",kind==="stations"?"Station timeline":"Prayer timeline");
+  const stops=timeline.querySelector(".aoDevoStops");
+  const prev=make(doc,"button","aoDevoNavArrow","←");
+  const next=make(doc,"button","aoDevoNavArrow","→");
+  for(const [b,d] of [[prev,-1],[next,1]]){
+    b.type="button";b.dataset.aoDevoSequenceMove=String(d);
+    b.setAttribute("aria-label",d<0?"Previous prayer card":"Next prayer card");
+  }
+  timeline.prepend(prev);timeline.append(next);
+  prev.disabled=index===0;next.disabled=index===chapters.length-1;
+  [...stops.children].forEach((b,i)=>{
+    b.classList.toggle("active",i===index);
+    b.setAttribute("aria-current",i===index?"step":"false");
+  });
+  const selected=stops.children[index];
+  stops.scrollLeft=Math.max(0,selected.offsetLeft-stops.offsetLeft-
+    (stops.clientWidth-selected.clientWidth)/2);
+  card.dataset.aoDevoCard=chapters[index].id;
+  card.dataset.aoDevoIndex=String(index);
+  const paragraphs=[...body.querySelectorAll(paragraphSelector)]
+    .filter(el=>!el.closest("details:not([open])"))
+    .filter(el=>!el.closest(".aoP435930VRLine")||el.classList.contains("aoP435930VRLine"));
+  paragraphs.forEach(p=>p.classList.add("aoDevoParagraph"));
+  let last=null,frame=0,userScrolled=false;
+  function focus(){
+    frame=0;
+    const shown=paragraphs.filter(visible);
+    if(!shown.length)return;
+    const box=body.getBoundingClientRect();
+    const y=box.top+box.height*.40;
+    let found=0,best=Infinity;
+    shown.forEach((p,i)=>{
+      const r=p.getBoundingClientRect();
+      const d=y<r.top?r.top-y:y>r.bottom?y-r.bottom:0;
+      if(d<best){best=d;found=i}
+    });
+    // On initial mount the canonical bead cursor is authoritative. Moving
+    // to the next bead must not be undone by the viewport focus heuristics.
+    if(!userScrolled&&Number.isInteger(restoreStep)){
+      const selected=shown.findIndex(p=>Number(p.dataset.aoMercyStep)===restoreStep);
+      if(selected>=0)found=selected;
+    }else if(body.scrollTop<2)found=0;
+    shown.forEach((p,i)=>{
+      const power=i===found?"1":Math.abs(i-found)===1?".56":".30";
+      p.style.setProperty("--ao-devo-focus",power);
+      p.style.setProperty("opacity",power,"important");
+      p.dataset.aoDevoActive=i===found?"true":"false";
+    });
+    if(last!==shown[found]){last=shown[found];if(userScrolled)onFocus(last)}
+  }
+  const queue=()=>{if(!frame)frame=doc.defaultView.requestAnimationFrame(focus)};
+  if(Number.isInteger(restoreStep)&&restoreStep>=0){
+    const target=paragraphs.find(x=>Number(x.dataset.aoMercyStep)===restoreStep);
+    if(target)body.scrollTop=Math.max(0,target.offsetTop-body.offsetTop-body.clientHeight*.25);
+  }
+  function go(i){
+    const n=Number(i);
+    if(!Number.isInteger(n)||n<0||n>=chapters.length||n===index)return false;
+    onNavigate(n,chapters[n]);
+    return true;
+  }
+  timeline.addEventListener("click",e=>{
+    const b=e.target.closest("[data-ao-devo-sequence-move],[data-ao-devo-chapter]");
+    if(!b)return;
+    e.preventDefault();e.stopPropagation();
+    if(b.dataset.aoDevoChapter!==undefined)go(Number(b.dataset.aoDevoChapter));
+    else go(index+Number(b.dataset.aoDevoSequenceMove));
+  });
+  let touch=null;
+  body.addEventListener("touchstart",e=>{
+    if(e.touches.length!==1||e.target.closest("button,a,input,summary")){touch=null;return}
+    touch={x:e.touches[0].clientX,y:e.touches[0].clientY,at:Date.now()};
+  },{passive:true});
+  body.addEventListener("touchcancel",()=>{touch=null},{passive:true});
+  body.addEventListener("touchend",e=>{
+    if(!touch)return;
+    const dx=e.changedTouches[0].clientX-touch.x;
+    const dy=e.changedTouches[0].clientY-touch.y;
+    const ms=Date.now()-touch.at;touch=null;
+    if(ms<=1300&&Math.abs(dx)>=72&&Math.abs(dx)>Math.abs(dy)*1.35)
+      go(index+(dx<0?1:-1));
+  },{passive:true});
+  body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
+  queue();
+  return Object.freeze({
+    schema:SEQUENTIAL_DEVOTIONAL_SCHEMA,kind,index,
+    total:chapters.length,go,focus:queue
+  });
+}

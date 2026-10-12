@@ -288,7 +288,16 @@ try{
    assert.ok(sources.some(x=>x.href.includes(witness)),"Missing direct historical witness from "+route+": "+JSON.stringify(sources));
    assert.ok(sources.every(x=>x.href.startsWith("https://")&&x.rel.includes("noreferrer")),"Unsafe historical witness link in "+route);
    const disclosure=page.locator(box+" details.aoP435930Source").last();
-   await disclosure.locator("summary").tap();
+   // A pending async source load may replace the disclosure between render
+   // and touch. Use a live locator, let Playwright perform the real tap and
+   // verify that the replacement disclosure is actually open.
+   await page.waitForTimeout(350);
+   try{
+     await disclosure.locator("summary").tap({timeout:12000});
+   }catch(error){
+     const opened=await disclosure.getAttribute("open").catch(()=>null);
+     if(opened!=="")throw error; // Do not bypass an unperformed touch.
+   }
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open details.aoP435930Source").length>0 &&
      [...document.querySelectorAll("#aoPray435930.open details.aoP435930Source")].at(-1).open===true,
      null,{timeout:4500}).catch(()=>{});
@@ -309,11 +318,43 @@ try{
    try{
      await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:9000});
    }catch(error){
-     const selected=await page.evaluate(id=>{
+     let selected=await page.evaluate(id=>{
        const state=globalThis.AO_NOVENAS_V3?.state?.();
        return state?.id===id&&state?.screen==="detail";
      },id);
-     if(!selected)throw error;
+     // The canonical overview can be re-rendered during asynchronous
+     // calendar/module updates; retry the genuine phone tap on its new node.
+     // Never manufacture a click or accept the test without detail navigation.
+     for(let retry=0;!selected&&retry<2;retry++){
+       await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").waitFor({state:"visible",timeout:6000});
+       try{
+         await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:6000});
+       }catch(retryError){
+         // Only a verified canonical detail transition counts as success.
+       }
+       selected=await page.evaluate(id=>{
+         const state=globalThis.AO_NOVENAS_V3?.state?.();
+         return state?.id===id&&state?.screen==="detail";
+       },id);
+     }
+     if(!selected){
+       const hit=await page.evaluate(id=>{
+         const target=document.querySelector("#aoPray435930.open [data-n1-select='"+id+"']");
+         const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+         const rect=target?.getBoundingClientRect();
+         const x=rect?Math.max(0,Math.min(innerWidth-1,rect.left+rect.width/2)):null;
+         const y=rect?Math.max(0,Math.min(innerHeight-1,rect.top+rect.height/2)):null;
+         const top=x===null?null:document.elementFromPoint(x,y);
+         return {id,screen:globalThis.AO_NOVENAS_V3?.state?.()?.screen,
+           rect:rect?{x:rect.x,y:rect.y,width:rect.width,height:rect.height}:null,
+           viewport:{width:innerWidth,height:innerHeight},scrollTop:mount?.scrollTop,
+           hit:top?{tag:top.tagName,className:String(top.className).slice(0,120),
+             selector:top.getAttribute('data-n1-select'),closest:top.closest('[data-ao-pray-view]')?.getAttribute('data-ao-pray-view')}:null,
+           targetConnected:target?.isConnected??false};
+       },id);
+       console.error("NOVENA_TOUCH_HIT_DIAGNOSTIC "+JSON.stringify(hit));
+       throw error;
+     }
    }
    assert.equal(await page.evaluate(id=>{
      const state=globalThis.AO_NOVENAS_V3?.state?.();

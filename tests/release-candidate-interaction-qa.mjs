@@ -144,6 +144,11 @@ try{
   await assertPrayFit("Angelus");
   assert.ok(await page.locator("#aoPray435930 [data-ao-angelus-unit]").count()>=4,"Angelus sequence lost prayer units");
 
+  // The reference reader intentionally places seasonal form selection inside
+  // a collapsed Prayer options disclosure. Exercise the visible phone path.
+  const angelusOptions=page.locator("#aoPray435930 [data-ao-angelus-options]");
+  if(await angelusOptions.getAttribute("open")===null)
+    await angelusOptions.locator(":scope > summary").click();
   await page.locator("#aoPray435930 [data-p435930-seg='regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoP435930Title")?.textContent?.includes("Regina C"),null,{timeout:5000});
   const angelusFlip=page.locator("#aoPray435930 [data-p435930-card-flip]").first();
@@ -171,12 +176,17 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-station-step]").count(),14,"Stations lost XIV-step rail");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-station-step][aria-current='step']").count(),1);
   assert.ok(await page.locator("#aoPray435930 .aoP435930StationConsider").count()>=1,"Guided Stations lost consideration");
+  const stationsOptions=page.locator("#aoPray435930 [data-ao-stations-options]");
+  if(await stationsOptions.getAttribute("open")===null)
+    await stationsOptions.locator(":scope > summary").click();
   await page.locator("#aoPray435930 [data-p435930-seg='simple']").click();
   assert.equal(await page.locator("#aoPray435930 .aoP435930StationConsider").count(),0,"Simple Stations still show guided consideration");
   await page.locator("#aoPray435930 [data-p435930-station-next]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-p435930-station-step='1']")?.getAttribute("aria-current")==="step",null,{timeout:5000});
   const stationTwo=await page.locator("#aoP435930Title").textContent();
   assert.ok(stationTwo&&stationTwo.trim().length>5,"Second Station title is blank");
+  if(await stationsOptions.getAttribute("open")===null)
+    await stationsOptions.locator(":scope > summary").click();
   await page.locator("#aoPray435930 [data-p435930-seg='guided']").click();
   assert.ok(await page.locator("#aoPray435930 .aoP435930StationConsider").count()>=1,"Guided Stations did not restore consideration");
 
@@ -224,7 +234,11 @@ try{
   await page.locator("#aoPray435930 [data-p435930-own='pray.rosary']").click();
   await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
-  await page.waitForSelector(".aoP435930RosaryBar",{state:"visible",timeout:10000});
+  // The canonical Rosary keeps depth controls inside its preparation drawer.
+  const rosaryPreparation=page.locator("#aoPrayerBookRoot.open .aoRosaryPreparation");
+  if(await rosaryPreparation.count()&&await rosaryPreparation.getAttribute("open")===null)
+    await rosaryPreparation.locator(":scope > summary").click();
+  await page.waitForSelector("#aoPrayerBookRoot.open .aoP435930RosaryBar",{state:"visible",timeout:10000});
   await page.locator(".aoP435930RosaryBar [data-p435930-rosary-depth='guided']").click();
   await page.waitForTimeout(220);
   const settledRosary=await page.evaluate(()=>({

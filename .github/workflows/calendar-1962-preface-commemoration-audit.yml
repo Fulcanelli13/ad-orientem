@@ -1,0 +1,45 @@
+name: Calendar 1962 commemoration and preface audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/calendar/calendar-runtime.js'
+      - 'src/mass/browser-entry.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'tests/calendar-1962-commemoration-titles.mjs'
+      - 'tests/calendar-1962-preface-10-date-runtime-audit.mjs'
+      - '.github/workflows/calendar-1962-preface-commemoration-audit.yml'
+jobs:
+  unit-commemorations:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/calendar/calendar-runtime.js
+      - run: node tests/calendar-1962-commemoration-titles.mjs
+      - run: node tests/calendar-ordo-corrections.mjs
+  actual-1962-prefaces:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Inspect ten actual 1962 calendar selections and source prefaces
+        run: node tests/calendar-1962-preface-10-date-runtime-audit.mjs
+      - name: Preserve research-only Ordo comparison
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-1962-preface-ten-date-runtime-audit
+          path: data/calendar/audits/1962-2026-preface-runtime-10-date-audit.v1.json
+          if-no-files-found: warn

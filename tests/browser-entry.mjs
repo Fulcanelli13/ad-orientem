@@ -4,6 +4,7 @@ import {
   mapLegacyFollowMode,
   mapInsertedRites,
   deriveHostOptions,
+  ordinaryMassPrefaceOwner,
   stampMassReaderUi,
   mountR17Preview,
   ACTIVE_MASS_STORAGE_KEY,
@@ -264,6 +265,19 @@ assert.equal(nativeChoice.preview.kind,"native");
 assert.equal(nativeChoice.preview.hasLegacyDonor,false,"native production reader still received legacy-active donor");
 assert.equal(nativeChoice.fallbackReason,null);
 
+const defaultCurated=await mountR17Preview({
+  doc:{defaultView:{location:{search:""}}},prepared:{},iconAssets,
+  nativeMount:({reviewCuratedCards})=>({curated:reviewCuratedCards}),
+});
+assert.equal(defaultCurated.preview.curated,true,
+  "production entry must show the curated 64/65-card Ordinary Sung LIVE reader by default");
+const rollback48=await mountR17Preview({
+  doc:{defaultView:{location:{search:"?aoLiveCards=48"}}},prepared:{},iconAssets,
+  nativeMount:({reviewCuratedCards})=>({curated:reviewCuratedCards}),
+});
+assert.equal(rollback48.preview.curated,false,
+  "legacy source-first 48 projection must remain explicitly available for rollback");
+
 await assert.rejects(
   ()=>mountR17Preview({
     doc:{},
@@ -285,3 +299,10 @@ await assert.rejects(
 );
 
 console.log("browser-entry native production cutover: PASS");
+
+const ordinaryPrefaceCase={calendarDay:{id:"tempora:Pasc7-0:1:r"},requestedCelebrationId:"mass_of_day",celebrationType:"CALENDAR"};
+assert.equal(ordinaryMassPrefaceOwner(ordinaryPrefaceCase),"tempora:Pasc7-0:1:r");
+assert.equal(ordinaryMassPrefaceOwner(ordinaryPrefaceCase,{observed:true}),null);
+assert.equal(ordinaryMassPrefaceOwner({...ordinaryPrefaceCase,requestedCelebrationId:"rosary-votive"}),null);
+assert.equal(ordinaryMassPrefaceOwner({...ordinaryPrefaceCase,celebrationType:"VOTIVE"}),null);
+assert.equal(ordinaryMassPrefaceOwner({...ordinaryPrefaceCase,calendarDay:{title:"Pentecost"}}),null);

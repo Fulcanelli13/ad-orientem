@@ -130,6 +130,8 @@ async function exerciseRealShellSpecialRite(browser,spec){
         schema:prepared.schema,
         form:prepared.session.resolvedMass.form,
         precedingGraphs:[...(prepared.session.plan.precedingGraphs??[])],
+        massEntry:prepared.session.plan.massEntry,
+        normalLastGospel:prepared.session.plan.normalLastGospel,
       };
     },{iconKeys,spec});
 
@@ -235,9 +237,66 @@ async function exerciseRealShellSpecialRite(browser,spec){
 
     await advanceToId(spec.handoffId);
     await tapNext();
-    await page.waitForFunction(()=>
-      globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId==="AO.CARD.001",
-      null,{timeout:5000});
+    await page.waitForFunction(()=>{
+      const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+      // The 64/65 presentation keeps AO.CARD.001 as its source owner;
+      // split prayer cards have independent display IDs by design.
+      return (card?.sourceSectionId??card?.sectionId)==="AO.CARD.001";
+    },null,{timeout:5000});
+    if(spec.kind==="ASPERGES"){
+      const readerIdentity=await page.evaluate(()=>({
+        total:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards,
+        source:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.totalCards,
+        curated:document.getElementById("ao-r17-native-reader-preview")?.dataset.r17CuratedReview,
+      }));
+      assert.deepEqual(readerIdentity,{total:65,source:39,curated:"true"},
+        "real-shell Asperges must return to curated 64/65 cards without changing 39 original Mass source steps");
+    }
+    if(["PALM","ASH","CANDLEMAS","ROGATIONS"].includes(spec.kind)){
+      assert.equal(setup.massEntry,"INTROIT",
+        spec.kind+" prelude must explicitly suppress Foot-cluster, not infer it");
+      const snapshot=await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        const root=document.getElementById("ao-r17-native-reader-preview");
+        return {total:api?.model?.totalCards,source:api?.sourceModel?.totalCards,
+          curated:root?.dataset.r17CuratedReview,
+          first:api?.model?.cards?.[0]?.title,
+          suppressed:api?.model?.suppressedOpeningTitles,
+          handoff:api?.model?.preMassHandoff,
+          progress:root?.querySelector('[data-role="progress"]')?.textContent??"",
+          lastGospelVisibility:api?.model?.cards?.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
+      });
+      assert.equal(snapshot.total,61,spec.kind+" must remove exactly four opening display cards");
+      assert.equal(snapshot.source,39,spec.kind+" must preserve canonical 39 source steps");
+      assert.equal(snapshot.curated,"true");
+      assert.equal(snapshot.first,"Introit");
+      assert.equal(snapshot.handoff,"INTROIT");
+      assert.equal(snapshot.suppressed?.length,4);
+      assert.match(snapshot.progress,new RegExp("1 / "+(spec.kind==="PALM"?58:60)+"$"),
+        spec.kind+" visible progress must exclude Foot cards and optional second Confiteor"+
+        (spec.kind==="PALM"?" and Last Gospel":""));
+      assert.equal(snapshot.lastGospelVisibility,2,
+        "Last Gospel source remains auditable even if suppressed in the Palm ceremony");
+      const switchback=await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        api.setPresentationMode("MISSAL");
+        const missal=api.getPresentationMode();
+        api.setPresentationMode("LIVE");
+        const live=api.getPresentationMode();
+        return {missal,live,
+          source:api.sourceModel.totalCards,
+          model:api.model.totalCards,
+          first:api.model.cards[0].title,
+          current:api.getCurrentCard()?.title};
+      });
+      assert.equal(switchback.missal,"MISSAL");
+      assert.equal(switchback.live,"LIVE");
+      assert.equal(switchback.source,39);
+      assert.equal(switchback.model,61,
+        spec.kind+" must not reintroduce omitted Foot prayers when switching modes");
+      assert.equal(switchback.first,"Introit");
+      assert.equal(switchback.current,"Introit");
+    }
     const handoffTitle=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim()??"";
     assert.notEqual(handoffTitle,"",spec.kind+" real-shell handoff mounted a blank Mass card");
     if(spec.massTitle)assert.equal(
@@ -506,6 +565,22 @@ async function exerciseRealShellFollowingAction(browser,spec){
     assert.equal(ownership.readerUiMode,"NATIVE");
     assert.equal(ownership.uiOwner,"R17_NATIVE_PRODUCTION");
     assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION");
+    if(["GENERIC_PROCESSION","CORPUS_CHRISTI_PROCESSION"].includes(spec.kind)){
+      const audit=await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        const root=document.getElementById("ao-r17-native-reader-preview");
+        return {total:api.model.totalCards,source:api.sourceModel.totalCards,
+          owner:api.model.structureOwner,curated:root?.dataset.r17CuratedReview,
+          optional:api.model.cards.some(c=>c.title?.startsWith("Second Confiteor")),
+          lastGospelCards:api.model.cards.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
+      });
+      assert.equal(audit.total,65,spec.kind+" must have curated Mass before following action");
+      assert.equal(audit.source,39);
+      assert.equal(audit.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+      assert.equal(audit.curated,"true");
+      assert.equal(audit.optional,true,"second Confiteor must remain auditable but opt-in");
+      assert.equal(audit.lastGospelCards,2,"canonical Last Gospel paragraphs remain auditable");
+    }
 
     const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
     const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
@@ -518,10 +593,13 @@ async function exerciseRealShellFollowingAction(browser,spec){
     async function tapNext(){return tap(next,"Next")}
     async function tapBack(){return tap(back,"Back")}
 
-    const exit=await page.evaluate(exitSourceSequence=>{
+    const exit=await page.evaluate(({exitSourceSequence,kind})=>{
       const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
       const cards=(api?.model?.cards??[]).filter(x=>x.sourceSequence===exitSourceSequence);
-      const card=cards[0]??null;
+      const curated=api?.model?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW";
+      // Source Last Gospel is two curated cards: following rite starts after the last.
+      const card=curated && kind==="GENERIC_PROCESSION"
+        ? cards.at(-1)??null : cards[0]??null;
       if(!card)throw new Error("Missing source-sequence exit card "+exitSourceSequence);
       const rendered=api.showSequence(card.sequence);
       const blessingCard=cards.find(x=>(x.blocks??[]).some(block=>block.blockId==="AO.SM.B092"))??null;
@@ -541,26 +619,28 @@ async function exerciseRealShellFollowingAction(browser,spec){
         visibleParagraphCount:root?.querySelectorAll?.("[data-role='paragraphs'] .ao-reader-paragraph")?.length??0,
         planFilteredBlocks:[...(rendered?.planFilteredBlocks??[])],
       };
-    },spec.exitSourceSequence);
+    },{exitSourceSequence:spec.exitSourceSequence,kind:spec.kind});
     if(spec.filteredExitTitle){
-      assert.equal(exit.renderedTitle,spec.filteredExitTitle,
+      const expectedExitTitle=exit.product48?spec.filteredExitTitle
+        :"Placeat tibi · Closing Prayer";
+      assert.equal(exit.renderedTitle,expectedExitTitle,
         spec.kind+" public reader API did not return the plan-aware exit card");
-      assert.equal(exit.domTitle,spec.filteredExitTitle,
+      assert.equal(exit.domTitle,expectedExitTitle,
         spec.kind+" actual DOM did not show the plan-aware exit card title");
-      if(exit.product48){
+      if(exit.product48 || exit.renderedTitle==="Placeat tibi · Closing Prayer"){
         assert.ok(exit.sourceChildCount>=2,
-          spec.kind+" 48-step exit no longer exposes separate Placeat / Blessing presentation children");
+          spec.kind+" exit lost the source-owned Placeat and independently indexed blessing");
         assert.ok(exit.blessingCardId,
-          spec.kind+" 48-step exit lost the dedicated Final Blessing presentation card");
+          spec.kind+" missing auditable Final Blessing card");
         assert.equal(exit.blessingRendered,false,
-          spec.kind+" compiled no-blessing plan allowed direct navigation into the Final Blessing card");
+          spec.kind+" allowed omitted Final Blessing by direct jump");
         assert.equal(exit.renderedParagraphCount,exit.originalParagraphCount,
-          spec.kind+" 48-step Placeat card was unnecessarily text-filtered after the blessing became a separate suppressed card");
+          spec.kind+" must not mutate closing prayer text");
       }else{
         assert.ok(exit.planFilteredBlocks.includes("AO.SM.B092"),
-          spec.kind+" final-blessing block was not marked as plan-filtered");
+          spec.kind+" final blessing was not marked as omitted");
         assert.ok(exit.renderedParagraphCount<exit.originalParagraphCount,
-          spec.kind+" final blessing paragraphs were not removed from the rendered card");
+          spec.kind+" did not omit blessing paragraphs");
       }
       assert.equal(exit.visibleParagraphCount,exit.renderedParagraphCount,
         spec.kind+" DOM paragraph count diverged from the plan-aware card");
