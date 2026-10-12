@@ -155,7 +155,11 @@ export function atlasDetail(s,lang){
   :"";
  const qualification=geo?.kind==="traditional"?L(lang,"Traditional site, not proof of the exact event location.","Site traditionnel, sans certitude sur le lieu exact de cet épisode.")
   :geo?.kind==="city_context"?L(lang,"City-level reference only, not the scene's precise location.","Repère de ville seulement, non le lieu précis de la scène.")
-  :!geo?(s.placeId?L(lang,"A map pin has not yet been certified for this location.","Le repère de ce lieu reste à vérifier."):L(lang,"No earthly location is assigned to this episode.","Aucun lieu terrestre n’est attribué à cet épisode.")):"";
+  :geo?.kind==="settlement"?L(lang,"Settlement marker only, not proof the episode occurred at this exact point.","Repère d'agglomération uniquement, sans preuve que l'épisode eut lieu à cet endroit précis.")
+  :geo?.kind==="mountain_region"?L(lang,"Mountain-region context only; the exact event location is not established.","Repère de région montagneuse ; le lieu exact de l'épisode n'est pas établi.")
+  :geo?.kind==="site"?L(lang,"Site-level location is provisional; the biblical scene is not pinpointed.","Localisation du site provisoire ; la scène biblique n'est pas localisée précisément.")
+  :!geo?(s.placeId?L(lang,"A map pin has not yet been certified for this location.","Le repère de ce lieu reste à vérifier."):L(lang,"No earthly location is assigned to this episode.","Aucun lieu terrestre n’est attribué à cet épisode."))
+  :L(lang,"Geographic context only; no event-specific coordinate is certified.","Simple repère géographique ; aucune coordonnée précise de l'épisode n'est certifiée.");
  return '<div class="aoBibleAtlasEyebrow">'+esc(L(lang,ERAS[s.era][0],ERAS[s.era][1]))+' · '+(s.index+1)+'</div>'+
  '<h2>'+esc(L(lang,s.title_en,s.title_fr))+'</h2>'+
  (s.placeId?'<p class="aoBibleAtlasPlace">'+esc(L(lang,s.place_en,s.place_fr))+'</p>':"")+
