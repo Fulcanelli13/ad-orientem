@@ -1,12 +1,13 @@
 # Questions by interlocutor — editorial index
 
-This is a **non-additive index** into one set of 264 source records. Tags are editorial inferences made in the recovery pass; **they are not the original audience-category membership** of the unrecovered historical question banks.
+This is a **non-additive index** into one set of 282 source-file records. Tags are editorial inferences, **not** recovered membership of the missing historical interlocutor-specific banks.
 
-Use the **canonical ID and original GitHub source-file link** to inspect any question. This file is not a second set of argument bodies or an independently certified teaching resource.
+Each row references the canonical record ID and evidence file; no duplicated argument text is maintained.
 
-## Anglicans (1)
+## Anglicans (2)
 
 - **APOL-022** Is Anglicanism a branch of the Catholic Church, and are Anglican Orders valid? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
+- **AQ16** Are Anglican orders valid? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-022`
 
 ## Atheists, agnostics and secular critics (21)
 
@@ -32,7 +33,7 @@ Use the **canonical ID and original GitHub source-file link** to inspect any que
 - **freemasonry** Is Catholic membership in Freemasonry still prohibited despite changes in canonical codification? — [Contemporary controversies III](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json) · owner `APOL-060`
 - **communism** Which forms of communism and socialism were condemned, and what claims are distinct from Catholic social obligations? — [Contemporary controversies III](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json) · owner `APOL-059`
 
-## General Catholic questions and objections (48)
+## General Catholic questions and objections (64)
 
 - **APOL-007** Can we trust what we know about the historical Jesus? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
 - **APOL-008** Did Jesus really claim to be divine? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
@@ -82,6 +83,22 @@ Use the **canonical ID and original GitHub source-file link** to inspect any que
 - **synodality** Does synodality revise papal or episcopal governing competence, or alter the consultation process? — [Contemporary controversies III](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json) · owner `CR-ECC-12`
 - **recent-canonisations** Does a canonization certify all a saint's prudential decisions or resolve doctrinal disputes about a pontificate? — [Contemporary controversies III](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json) · owner `CR-DOC-09`
 - **modernism** What exactly did Pius X condemn under Modernism, and which contemporary phenomena require independent proof? — [Contemporary controversies III](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json) · owner `CR-DOC-01`
+- **AQ01** Why do Catholics pray to Mary and the saints? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-034`
+- **AQ02** Why confess sins to a priest? Why not just tell God? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-026`
+- **AQ03** Why do Catholics obey the Pope? Is he infallible about everything? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-020`
+- **AQ04** Doesn’t the Mass sacrifice Jesus again? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-031`
+- **AQ05** How can Catholics believe bread really becomes Jesus? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-030`
+- **AQ06** Why Latin? And why the traditional Mass? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+- **AQ07** Why Purgatory? Didn’t Jesus already pay for our sins? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-040`
+- **AQ08** Why isn’t the Bible alone enough? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-014`
+- **AQ09** Does only the Pope teach infallibly? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-020`
+- **AQ10** Did the Church invent doctrines later? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-021`
+- **AQ12** How can we identify Christ's true Church? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-016`
+- **AQ13** Are Catholic images and statues idols? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-036`
+- **AQ14** Why do Catholics venerate relics? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-037`
+- **AQ15** What are indulgences? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-040`
+- **AQ17** Why worship on Sunday rather than the Jewish Sabbath? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-015`
+- **AQ18** Are we saved by faith or works? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-038`
 
 ## Jehovah's Witnesses (3)
 
@@ -118,7 +135,7 @@ Use the **canonical ID and original GitHub source-file link** to inspect any que
 - **BAQ-07** How should the Quran's palm-tree narrative concerning Mary be compared with Pseudo-Matthew and earlier Christian oral or literary traditions? — [Biblical and patristic supplement](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json) · owner `APOL-046`
 - **BAQ-08** Does the Quran confuse Mary, mother of Jesus, with Miriam, sister of Aaron, or is there a different explanation of Quran 19:28? — [Biblical and patristic supplement](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/biblical-patristic-and-sedevacantist-question-supplement.v1.json) · owner `APOL-046`
 
-## Protestant Christians (88)
+## Protestant Christians (99)
 
 - **APOL-012** Is the Bible inspired and trustworthy? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
 - **APOL-013** How do we know which books belong in the Bible? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
@@ -208,8 +225,19 @@ Use the **canonical ID and original GitHub source-file link** to inspect any que
 - **TLM073** Did the 2021–2023 measures completely prohibit the 1962 Missal and older sacraments? — [Traditional Mass objections 066–075](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json) · owner `CR-AUT-07`
 - **TLM074** Did FSSP, ICKSP and SSPX respond to Traditionis custodes in the same way? — [Traditional Mass objections 066–075](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json) · owner `CR-ECC-05`
 - **TLM075** May Catholics disobey Traditionis custodes when they judge it unjust? — [Traditional Mass objections 066–075](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/traditionis-custodes-debates.v1.json) · owner `CR-AUT-03`
+- **AQ01** Why do Catholics pray to Mary and the saints? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-034`
+- **AQ02** Why confess sins to a priest? Why not just tell God? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-026`
+- **AQ03** Why do Catholics obey the Pope? Is he infallible about everything? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-020`
+- **AQ04** Doesn’t the Mass sacrifice Jesus again? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-031`
+- **AQ05** How can Catholics believe bread really becomes Jesus? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-030`
+- **AQ06** Why Latin? And why the traditional Mass? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+- **AQ07** Why Purgatory? Didn’t Jesus already pay for our sins? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-040`
+- **AQ08** Why isn’t the Bible alone enough? — [Apostolate — live question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js) · owner `APOL-014`
+- **AQ09** Does only the Pope teach infallibly? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-020`
+- **AQ10** Did the Church invent doctrines later? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-021`
+- **AQ12** How can we identify Christ's true Church? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-016`
 
-## Religious pluralists and non-Christian interlocutors (7)
+## Religious pluralists and non-Christian interlocutors (8)
 
 - **APOL-044** What is the relationship between biblical Israel, Judaism and the Catholic Church? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
 - **APOL-045** Did the Old Covenant end, continue or change in Christ? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
@@ -218,6 +246,7 @@ Use the **canonical ID and original GitHub source-file link** to inspect any que
 - **APOL-048** Are all religions different paths to the same God? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
 - **APOL-049** What is the Catholic answer to atheism and secular humanism? — [Canonical Apologetics](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-canonical.v1.json)
 - **abu-dhabi** Does divine providence permit religious diversity, or positively will contradictory religious doctrines? — [Contemporary controversies III](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json) · owner `CR-IDM-01`
+- **AQ11** Can contradictory religions all be true? — [Apostolate — proposed question scenarios](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json) · owner `APOL-048`
 
 ## Traditional Catholics, SSPX and sedevacantist interlocutors (144)
 
