@@ -48,7 +48,8 @@ export const ROSARY_DUAL_AXIS_CSS=String.raw`
  font:500 clamp(23px,5.6vw,30px)/1.2 Georgia,serif;
  color:var(--text,#f1e7d7);margin:5px 0 0
 }
-#aoPrayerBookRoot.open .lab-prayer-sheet.aoRosaryCardScroll{
+#aoPrayerBookRoot.open .lab-prayer-sheet.aoRosaryCardScroll,
+#aoPrayerBookRoot.open .lab-contemplation.aoRosaryCardScroll{
  display:block;min-width:0;box-sizing:border-box;
  min-height:min(300px,45dvh)!important;height:min(52dvh,520px)!important;
  overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior-y:contain;scrollbar-width:thin;
