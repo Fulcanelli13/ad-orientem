@@ -784,8 +784,8 @@ export const AFTER_MILESTONES={
       "APOSTLES",
       null,
       null,
-      "Shipwreck on Malta",
-      "Le naufrage à Malte",
+      "Paul's shipwreck at sea",
+      "Le naufrage de saint Paul en mer",
       "Acts 27:13–44"
     ]
   ],
