@@ -128,6 +128,20 @@ try{
  assert.match(await page.locator("#ao-find-modular-root [data-ao-bible-review]").innerText(),/Noah/);
  assert.equal(await page.locator('#ao-find-modular-root [role="tree"]').count(),1,"Genesis has a connected source hierarchy");
  assert.ok(await page.locator('#ao-find-modular-root [data-bible-family-edge]').count()>=2);
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-kin-diagram]').count(),1,
+  "reviewed Genesis relations must appear as a source-linked graphical network");
+ const geometry=await page.locator('#ao-find-modular-root [data-bible-kin-diagram]').evaluate(el=>({
+  box:el.getBoundingClientRect().width,scrollWidth:el.scrollWidth,viewport:innerWidth,
+  arcs:el.querySelectorAll("svg .aoBibleKinLines path").length,
+  persons:el.querySelectorAll("svg [data-bible-kin-person]").length
+ }));
+ assert.ok(geometry.arcs>=2&&geometry.persons>=3,
+  "genealogy must show cited connectors and distinct family nodes");
+ assert.ok(geometry.box<=geometry.viewport+1&&geometry.scrollWidth>geometry.box,
+  "genealogy may pan internally without widening the phone viewport");
+ assert.equal(await page.locator('#ao-find-modular-root .aoBibleKinSourceList').count(),1,
+  "an accessible fully sourced relationship list remains available");
+
  assert.ok(await page.locator('#ao-find-modular-root [data-bible-family-person="shem"]').count()>=1);
  const treeOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(treeOverflow<=1,"Genesis tree does not expand the whole document");
@@ -187,6 +201,9 @@ try{
  await selectedScene.scrollIntoViewIfNeeded();
  await selectedScene.tap({timeout:15000});
  await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="74"]'),null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-scene-stage]').count(),1,
+  "direct scene selection retains the focused theatre stage");
+
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-jump="74"]').getAttribute("aria-pressed"),"true");
  const sceneTrack=page.locator('#ao-find-modular-root [data-bible-study-timeline]');
  const centred=await sceneTrack.evaluate(el=>{
