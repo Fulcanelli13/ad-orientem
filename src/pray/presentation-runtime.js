@@ -1477,6 +1477,11 @@ function horizontalStep(direction){
  return false;
 }
 function onPrayTouchStart(e){
+ // A dual-axis card is the sole owner of its horizontal touch gesture.
+ // Do not also advance the historical global step cursor (two-card skip).
+ if(e.target?.closest?.('.aoDevoCardScroll')&&mount()?.querySelector('.aoDevoSequenceTimeline')){
+  prayTouch=null;return;
+ }
  const t=e.touches?.[0];if(!t||touchBlocked(e.target)){prayTouch=null;return}
  prayTouch={x:t.clientX,y:t.clientY,at:Date.now()};
 }
