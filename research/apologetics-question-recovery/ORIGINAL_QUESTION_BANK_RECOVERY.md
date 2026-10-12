@@ -1,11 +1,11 @@
-# Original apologetics interlocutor banks — original wording recovered from prior-chat excerpts
+# Original interlocutor question bank — recovered prior-chat excerpts
 
-**Different source class from the 282 GitHub source-file records.** Earlier conversations reveal a much larger corpus of interlocutor-specific banks. This file records independently attested bank IDs and worded question fragments retrieved from *prior assistant-response summaries* (timestamps shown). Those excerpts are **not full chat transcripts** and do not certify completeness.
+**62 original-ID question wordings from earlier assistant-response excerpts, 8 further original A-series phrases without reliable individual IDs, 45 attested bank prefixes.** These are recovery witnesses from retrieved chat summaries; they have not yet been compared to complete downloadable chat transcripts. They are not the 282 existing GitHub source-file records.
 
-## Confirmed individual question-wording excerpts (53)
+## Recovered individual question wording
 
 ### ATH — Atheism, agnosticism, naturalism and materialism
-Original answer witness: 2026-10-07T13:34:41Z. Original range: 25 questions.
+Earlier response: 2026-10-07T13:34:41Z
 
 - **ATH-001** What are atheism, agnosticism, naturalism and materialism?
 - **ATH-002** Can God's existence be known without revelation?
@@ -19,7 +19,7 @@ Original answer witness: 2026-10-07T13:34:41Z. Original range: 25 questions.
 - **ATH-010** Did Darwin destroy the argument from design?
 
 ### ISL — Islam
-Original answer witness: 2026-10-07T13:38:54Z. Original range: 25 questions.
+Earlier response: 2026-10-07T13:38:54Z
 
 - **ISL-001** What does “Islam” mean for apologetic purposes?
 - **ISL-002** Is Muhammad himself historically doubtful?
@@ -29,7 +29,7 @@ Original answer witness: 2026-10-07T13:38:54Z. Original range: 25 questions.
 - **ISL-006** Did Muhammad claim miracles besides the Qur’an?
 
 ### JUD — Judaism
-Original answer witness: 2026-10-07T13:53:01Z. Original range: 25 questions.
+Earlier response: 2026-10-07T13:53:01Z
 
 - **JUD-001** What does ‘Judaism’ mean here?
 - **JUD-002** What does traditional rabbinic Judaism expect of the Messiah?
@@ -43,7 +43,7 @@ Original answer witness: 2026-10-07T13:53:01Z. Original range: 25 questions.
 - **JUD-010** Does Daniel 9 clearly predict Jesus’ date?
 
 ### PROT — Generic Protestant apologetics
-Original answer witness: 2026-10-07T12:36:04Z. Original range: 25 questions.
+Earlier response: 2026-10-07T12:36:04Z
 
 - **PROT-001** What does “Protestant” mean?
 - **PROT-002** Is sola Scriptura simply “Catholics don't believe the Bible”?
@@ -57,7 +57,7 @@ Original answer witness: 2026-10-07T12:36:04Z. Original range: 25 questions.
 - **PROT-010** What is the Catholic objection to sola fide?
 
 ### LUT — Lutheranism
-Original answer witness: 2026-10-07T15:21:26Z. Original range: 25 questions.
+Earlier response: 2026-10-07T15:21:26Z
 
 - **LUT-001** What counts as ‘Lutheran doctrine’?
 - **LUT-002** What is the central Lutheran doctrine of justification?
@@ -71,13 +71,26 @@ Original answer witness: 2026-10-07T15:21:26Z. Original range: 25 questions.
 - **LUT-010** Is Lutheran Eucharistic theology symbolic?
 
 ### REF — Reformed / Calvinist
-Original answer witness: 2026-10-07T15:28:59Z. Original range: 25 questions.
+Earlier response: 2026-10-07T15:28:59Z
 
 - **REF-001** What counts as ‘Reformed’ or ‘Calvinist’ doctrine?
 - **REF-025** What is the deepest Catholic–Reformed divide?
 
+### SAN — Saints, relics, images, Purgatory, indulgences
+Earlier response: 2026-10-07T15:19:12Z
+
+- **SAN-001** What does ‘communion of saints’ actually mean?
+- **SAN-002** Are the saints ‘dead’ in a way that prevents Christian fellowship with them?
+- **SAN-003** Why ask saints to pray if Christ is the one Mediator?
+- **SAN-004** Does the Church actually teach that saints in heaven intercede?
+- **SAN-005** Can saints know prayers addressed to them?
+- **SAN-006** Is praying to a saint the same thing as worshipping that saint?
+- **SAN-007** Did early Christians distinguish Christ from martyrs, or did they simply begin worshipping martyrs?
+- **SAN-008** Is the cult of saints a post-Constantinian invention?
+- **SAN-009** Is there any biblical precedent for relics?
+
 ### REST — Restorationist movements incl. Jehovah's Witnesses
-Original answer witness: 2026-10-07T14:22:31Z. Original range: 25 questions.
+Earlier response: 2026-10-07T14:22:31Z
 
 - **REST-001** Are Jehovah’s Witnesses Trinitarian Christians?
 - **REST-002** What do Jehovah’s Witnesses believe Jesus is?
@@ -85,72 +98,72 @@ Original answer witness: 2026-10-07T14:22:31Z. Original range: 25 questions.
 - **REST-004** Do Witnesses believe in immortal souls or eternal hell?
 - **REST-005** What is their current blood-transfusion rule?
 
-## Exact A-series phrases with no reliable individual question ID (8)
+## Truncated question text (excluded from the 62)
 
-- **A001–A025** (2026-10-07T20:31:08Z): Can human reason really know that God exists?
-- **A001–A025** (2026-10-07T20:31:08Z): If everything needs a cause, who caused God?
-- **A001–A025** (2026-10-07T20:31:08Z): Did Jesus of Nazareth really exist?
-- **A001–A025** (2026-10-07T20:31:08Z): Is the Resurrection presented as a real historical event or merely as a symbol of faith?
-- **A026–A050** (2026-10-07T21:38:57Z): Why did Jesus have to die?
-- **A026–A050** (2026-10-07T21:38:57Z): How do we know which books belong in the Bible?
-- **A026–A050** (2026-10-07T21:38:57Z): Is sola Scriptura taught in Scripture?
-- **A026–A050** (2026-10-07T21:38:57Z): Can Catholic doctrine develop without changing its meaning?
+- **SAN-010** “Are relics really attested in the primitive Church…” (the retrieved response excerpt ended before the question was complete).
 
-**Do not assign individual A-series IDs** to these phrases without a direct message witness.
+## Original A-series phrases recovered without individual A IDs
 
-## Recovered original bank catalogue (45 identifiable prefixes)
+- A001–A025 — Can human reason really know that God exists? (reply 2026-10-07T20:31:08Z)
+- A001–A025 — If everything needs a cause, who caused God? (reply 2026-10-07T20:31:08Z)
+- A001–A025 — Did Jesus of Nazareth really exist? (reply 2026-10-07T20:31:08Z)
+- A001–A025 — Is the Resurrection presented as a real historical event or merely as a symbol of faith? (reply 2026-10-07T20:31:08Z)
+- A026–A050 — Why did Jesus have to die? (reply 2026-10-07T21:38:57Z)
+- A026–A050 — How do we know which books belong in the Bible? (reply 2026-10-07T21:38:57Z)
+- A026–A050 — Is sola Scriptura taught in Scripture? (reply 2026-10-07T21:38:57Z)
+- A026–A050 — Can Catholic doctrine develop without changing its meaning? (reply 2026-10-07T21:38:57Z)
 
-| Prefix | Bank / original interlocutor or theme | Originally indicated number | Earlier response witness |
+## Original question-bank inventory
+
+These prefixes and indicated original sizes are past conversation attestations, not 45 completed recoveries.
+
+| Prefix | Interlocutor / subject | Indicated size | Source timestamp |
 |---|---|---:|---|
-| `ATH` | Atheism, agnosticism, naturalism and materialism | 25 | 2026-10-07T13:34:41Z |
-| `ISL` | Islam | 25 | 2026-10-07T13:38:54Z |
-| `JUD` | Judaism | 25 | 2026-10-07T13:53:01Z |
-| `PROT` | Generic Protestant apologetics | 25 | 2026-10-07T12:36:04Z |
-| `LUT` | Lutheranism | 25 | 2026-10-07T15:21:26Z |
-| `REF` | Reformed / Calvinist | 25 | 2026-10-07T15:28:59Z |
-| `ANG` | Anglicanism | 25 | 2026-10-07T15:31:02Z |
-| `BAP-EV` | Baptist / evangelical / non-denominational | 25 | 2026-10-07T15:19:12Z |
-| `WES` | Methodist / Wesleyan | 25 | 2026-10-07T15:19:12Z |
-| `PEN` | Pentecostal / Charismatic | 25 | 2026-10-07T15:19:12Z |
-| `SCR` | Scripture / Tradition / biblical canon | 25 | 2026-10-07T14:58:44Z |
-| `PAP-ORD` | Ordinary papacy / ecclesiology | 25 | 2026-10-07T15:08:11Z |
-| `MAR` | Marian apologetics | 25 | 2026-10-07T15:16:56Z |
-| `SAN` | Saints, relics, images, Purgatory, indulgences | 25 | 2026-10-07T15:19:12Z |
-| `PAT` | Patristics | 25 | 2026-10-07T19:31:31Z |
-| `PAP` | Papacy historical topical bank | 20 | 2026-10-07T19:31:31Z |
-| `MOR` | Moral reasoning | 14 | 2026-10-07T19:31:31Z |
-| `BIO` | Bioethics | 16 | 2026-10-07T19:31:31Z |
-| `AI` | Artificial intelligence | 14 | 2026-10-07T19:14:32Z |
-| `REST` | Restorationist movements incl. Jehovah's Witnesses | 25 | 2026-10-07T14:22:31Z |
-| `ORTH` | Eastern Orthodoxy | Unverified | 2026-10-07T13:27:54Z |
-| `V2` | Vatican II disputes | Unverified | 2026-10-07T13:27:54Z |
-| `LIT` | Liturgical reform / Novus Ordo | Unverified | 2026-10-07T13:27:54Z |
-| `ERR` | Condemned errors and ideological movements | Unverified | 2026-10-07T13:57:26Z |
-| `SIKH` | Sikhism | Unverified | 2026-10-07T15:45:51Z |
-| `JAIN` | Jainism | Unverified | 2026-10-07T15:45:51Z |
-| `BAH` | Baháʼí | Unverified | 2026-10-07T15:45:51Z |
-| `ZOR` | Zoroastrianism | Unverified | 2026-10-07T15:45:51Z |
-| `DAO` | Daoism | Unverified | 2026-10-07T15:45:51Z |
-| `CONF` | Confucian traditions | Unverified | 2026-10-07T15:45:51Z |
-| `CHR` | Chinese popular religion | Unverified | 2026-10-07T15:45:51Z |
-| `SHI` | Shinto | Unverified | 2026-10-07T15:45:51Z |
-| `IND` | Indigenous and animist traditions | Unverified | 2026-10-07T15:45:51Z |
-| `MIN` | Combined smaller religions | 25 | 2026-10-07T15:19:12Z |
-| `EAS` | East Asian and indigenous traditions combined | 25 | 2026-10-07T15:19:12Z |
-| `NEW` | New Age | Unverified | 2026-10-07T16:02:45Z |
-| `THEO` | Theosophy | Unverified | 2026-10-07T16:02:45Z |
-| `ANTH` | Anthroposophy | Unverified | 2026-10-07T16:02:45Z |
-| `SCI` | Scientology | Unverified | 2026-10-07T16:02:45Z |
-| `SAT` | Modern Satanism | Unverified | 2026-10-07T16:02:45Z |
-| `HUM` | Secular humanism | Unverified | 2026-10-07T16:02:45Z |
-| `REL` | Relativism and postmodernism | Unverified | 2026-10-07T16:02:45Z |
-| `EXI` | Existentialism and nihilism | Unverified | 2026-10-07T16:02:45Z |
-| `TRH` | Transhumanism | Unverified | 2026-10-07T16:02:45Z |
-| `PER` | Perennialism | Unverified | 2026-10-07T16:02:45Z |
+| ATH | Atheism, agnosticism, naturalism and materialism | 25 | 2026-10-07T13:34:41Z |
+| ISL | Islam | 25 | 2026-10-07T13:38:54Z |
+| JUD | Judaism | 25 | 2026-10-07T13:53:01Z |
+| PROT | Generic Protestant apologetics | 25 | 2026-10-07T12:36:04Z |
+| LUT | Lutheranism | 25 | 2026-10-07T15:21:26Z |
+| REF | Reformed / Calvinist | 25 | 2026-10-07T15:28:59Z |
+| ANG | Anglicanism | 25 | 2026-10-07T15:31:02Z |
+| BAP-EV | Baptist / evangelical / non-denominational | 25 | 2026-10-07T15:19:12Z |
+| WES | Methodist / Wesleyan | 25 | 2026-10-07T15:19:12Z |
+| PEN | Pentecostal / Charismatic | 25 | 2026-10-07T15:19:12Z |
+| SCR | Scripture / Tradition / biblical canon | 25 | 2026-10-07T14:58:44Z |
+| PAP-ORD | Ordinary papacy / ecclesiology | 25 | 2026-10-07T15:08:11Z |
+| MAR | Marian apologetics | 25 | 2026-10-07T15:16:56Z |
+| SAN | Saints, relics, images, Purgatory, indulgences | 25 | 2026-10-07T15:19:12Z |
+| PAT | Patristics | 25 | 2026-10-07T19:31:31Z |
+| PAP | Papacy historical topical bank | 20 | 2026-10-07T19:31:31Z |
+| MOR | Moral reasoning | 14 | 2026-10-07T19:31:31Z |
+| BIO | Bioethics | 16 | 2026-10-07T19:31:31Z |
+| AI | Artificial intelligence | 14 | 2026-10-07T19:14:32Z |
+| REST | Restorationist movements incl. Jehovah's Witnesses | 25 | 2026-10-07T14:22:31Z |
+| ORTH | Eastern Orthodoxy | unknown | 2026-10-07T13:27:54Z |
+| V2 | Vatican II disputes | unknown | 2026-10-07T13:27:54Z |
+| LIT | Liturgical reform / Novus Ordo | unknown | 2026-10-07T13:27:54Z |
+| ERR | Condemned errors and ideological movements | unknown | 2026-10-07T13:57:26Z |
+| SIKH | Sikhism | unknown | 2026-10-07T15:45:51Z |
+| JAIN | Jainism | unknown | 2026-10-07T15:45:51Z |
+| BAH | Baháʼí | unknown | 2026-10-07T15:45:51Z |
+| ZOR | Zoroastrianism | unknown | 2026-10-07T15:45:51Z |
+| DAO | Daoism | unknown | 2026-10-07T15:45:51Z |
+| CONF | Confucian traditions | unknown | 2026-10-07T15:45:51Z |
+| CHR | Chinese popular religion | unknown | 2026-10-07T15:45:51Z |
+| SHI | Shinto | unknown | 2026-10-07T15:45:51Z |
+| IND | Indigenous and animist traditions | unknown | 2026-10-07T15:45:51Z |
+| MIN | Combined smaller religions | 25 | 2026-10-07T15:19:12Z |
+| EAS | East Asian and indigenous traditions combined | 25 | 2026-10-07T15:19:12Z |
+| NEW | New Age | unknown | 2026-10-07T16:02:45Z |
+| THEO | Theosophy | unknown | 2026-10-07T16:02:45Z |
+| ANTH | Anthroposophy | unknown | 2026-10-07T16:02:45Z |
+| SCI | Scientology | unknown | 2026-10-07T16:02:45Z |
+| SAT | Modern Satanism | unknown | 2026-10-07T16:02:45Z |
+| HUM | Secular humanism | unknown | 2026-10-07T16:02:45Z |
+| REL | Relativism and postmodernism | unknown | 2026-10-07T16:02:45Z |
+| EXI | Existentialism and nihilism | unknown | 2026-10-07T16:02:45Z |
+| TRH | Transhumanism | unknown | 2026-10-07T16:02:45Z |
+| PER | Perennialism | unknown | 2026-10-07T16:02:45Z |
 
-## Distinctions and next recovery needs
-
-- 282 original archive entries are present-day GitHub source-file records. These 53 historically worded questions are **a different retrieval class**; do not add counts until cross-bank identity/deduplication is reviewed.
-- The prefix/range evidence proves that the historic workload was broader than a single A001–318 series, but **a 25-question prefix range is not proof of 25 available individual texts**.
-- Historical transcript downloads or exact per-message originals must still be recovered to strengthen provenance and restore the rest of each bank.
-- No substantive theological answer is certified merely because its historical question wording has surfaced.
+## Source limitations
+The individual strings above were retrieved from indexed earlier assistant responses, not from an exact original-message export with a stable message permalink. Maintain the stated confidence and preserve original prefixes; never substitute fresh synthetic questions for missing wording.
