@@ -1163,7 +1163,7 @@ function prepareRosaryActive(r){
  ].join(' · ');
  return true;
 }
-let rosaryDeckObservedRoot=null,rosaryDeckMutationObserver=null,rosaryDeckPending=false;
+let rosaryDeckMutationObserver=null,rosaryDeckPending=false;
 function projectRosaryDeck(r){
  const info=rosaryLiveInfo();if(!info?.steps?.length||!r?.classList?.contains("open"))return false;
  installRosaryDualAxisReader({
@@ -1178,13 +1178,16 @@ function projectRosaryDeck(r){
  });
  return true;
 }
-function watchRosaryDeck(r){
- if(rosaryDeckObservedRoot===r&&rosaryDeckMutationObserver)return;
- rosaryDeckMutationObserver?.disconnect();
- rosaryDeckObservedRoot=r;
+function watchRosaryDeck(){
+ if(rosaryDeckMutationObserver)return;
+ // Some archived Rosary builds replace the entire player root, not just the
+ // prayer sheet. Observe the host document and resolve the currently open
+ // canonical player afresh; never attach to an obsolete root.
  rosaryDeckMutationObserver=new MutationObserver(()=>{
-  if(rosaryDeckPending||!r.classList.contains("open"))return;
-  const shell=r.querySelector(".pbShell");
+  if(rosaryDeckPending)return;
+  const active=rosaryDonorRoot();
+  if(!active?.classList?.contains("open"))return;
+  const shell=active.querySelector(".pbShell");
   const sheet=shell?.querySelector(".lab-prayer-sheet");
   const info=rosaryLiveInfo();
   if(!sheet||!info?.steps?.length||!shell.querySelector("[data-lab-rosary-next]"))return;
@@ -1194,10 +1197,11 @@ function watchRosaryDeck(r){
   rosaryDeckPending=true;
   requestAnimationFrame(()=>{
    rosaryDeckPending=false;
-   if(r.classList.contains("open"))projectRosaryDeck(r);
+   const current=rosaryDonorRoot();
+   if(current?.classList?.contains("open"))projectRosaryDeck(current);
   });
  });
- rosaryDeckMutationObserver.observe(r,{subtree:true,childList:true});
+ rosaryDeckMutationObserver.observe(document.body,{subtree:true,childList:true});
 }
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
@@ -1226,7 +1230,7 @@ function decorateRosary(){
  prepareRosaryActive(r);
  declutterRosaryDonor(r);
  projectRosaryDeck(r);
- watchRosaryDeck(r);
+ watchRosaryDeck();
 }
 function confessionModeLabel(path){
  const p=confessionPath(path);
