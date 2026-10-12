@@ -47,3 +47,30 @@ The Segna di Buonaventura Saint Benedict / Saint Silvester Commons material cont
 Source/image audit is complete except five honest holds. Next working tranche is *research for previously unfilled specific scenes and saints*, with the 107 subjects segmented into Bible Atlas (71), Calendar saints (33), and Devotions (3). Prioritise historically important paintings and named exact subjects, not arbitrary quotas; maps, architecture and genealogy can replace a forced painting in some Bible episodes.
 
 Machine-readable approved-proof boundary: [cross-module proposal JSON](../../data/calendar/sacred-art-recovered-originals-cross-module-20261013.v1.json) · [visual review evidence](../../data/calendar/sacred-art-acquired-second-image-batch-20261012.v1.json).
+
+## Next research wave — evidence layered, no duplicate acquisitions
+
+The 134 unsatisfied subjects should not be treated as 134 new art searches. After reconciling archived museum originals, the earlier P0 visual register, and the 13 October museum source wave, the exact **134-subject editorial partition** is:
+
+| Existing evidence status | Number of subjects |
+|---|---:|
+| At least one SHA-acquired original candidate | **27** |
+| Institutional source/image-identified painting(s) not yet acquired | **29** |
+| Separate named museum or archival research lead(s) | **15** |
+| Older options awaiting source-object and painting-image verification | **18** |
+| No relevant verified or historical lead found in the reconciled source registers | **45** |
+| **Total** | **134** |
+
+This partition is a **research completeness index**, not editorial approval or exact gospel coverage. Among the 29 sourced-not-acquired subjects, 14 have previews previously examined and nine distinct painting originals were designated priority candidates—six apostles by Rubens at the Prado, Ribalta's Saint Bernard, Rembrandt's Saint Raphael, and Gérôme's Saint Vincent de Paul (photo reproduction on hold). Ribalta's Mark-and-Luke is one single artwork with two saint identities, not two invented paintings.
+
+### Source-backed Gospel and Acts additions — 13 October
+
+- [**Nicolas Poussin — Saints Peter and John Healing the Lame Man**](https://www.metmuseum.org/art/collection/search/437330), Met 437330: **BIB-A02**, exact Acts 3:1–10, oil, subject priority, reproduction/phone approval still pending.
+- [**Jacopo Tintoretto — The Washing of the Feet**](https://www.museodelprado.es/en/the-collection/art-work/the-washing-of-the-feet/77d1fd63-1918-40b7-a79e-6d427e19bed8), Prado P002824: **BIB-G26**, exact John 13:1–17, but 210×533 cm historical wall composition is a strong non-hero Bible illustration, not a narrow cover.
+- [**Rembrandt — The Return of the Prodigal Son**](https://www.hermitagefoundation.co.uk/prodigal-son-rembrandt), Hermitage: **BIB-G18**, Luke 15:20–24 resolution, not generic depiction of entire parable. Hermitage photographic reproduction rights held.
+- [**Wouter Pietersz II Crabeth — The Incredulity of St Thomas**](https://www.rijksmuseum.nl/en/collection/object/The-Incredulity-of-St-Thomas--ba245dd27df1192fbf11cc9e8797cfb7), Rijksmuseum SK-A-1965: **BIB-G21**, exact John 20:24–29 with PD artwork, but museum documents substantial abrasion, retouching, losses and discoloured varnish.
+- [**Raphael — Christ's Charge to Peter**](https://www.vam.ac.uk/articles/the-raphael-cartoons-christs-charge-to-peter/), Victoria & Albert Museum: **BIB-G23**, exact John 21:15–17 with sheep, but a monumental painted tapestry cartoon rather than oil on canvas; royal-loan photographic rights held.
+- [**Diego Velázquez — Christ in the House of Martha and Mary**](https://www.nationalgallery.org.uk/paintings/diego-velazquez-christ-in-the-house-of-martha-and-mary), National Gallery NG1375: **BIB-G19**, exact biblical scene is a *small inset* in a dramatically painted kitchen interior and unsuitable for a tiny Gospel scene crop. Existing Beuckelaer lead remains, not replaced.
+- Earlier existing [**Eugène Delacroix — Christ Asleep during the Tempest**](https://www.metmuseum.org/art/collection/search/436176) for **BIB-G12** is preserved, not counted again as a new research lead; it represents Christ asleep just before the sea is calmed.
+
+**No originals downloaded or released.** The new [layered research index](../../data/calendar/sacred-art-134-layered-existing-evidence-20261013.v1.json) and [worklist](../../data/calendar/sacred-art-134-subject-research-worklist-20261012.v1.json) are updated with these leads, while current artwork approvals remain unchanged.
