@@ -82,6 +82,15 @@ try{
  }
  await page.setViewportSize({width:390,height:844});
  assert.match(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) h2").innerText(),/Announcement|Annonce/);
+ await page.waitForFunction(()=>[...document.querySelectorAll("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph")]
+  .filter(x=>x.getClientRects().length).some(x=>x.dataset.aoDevoActive==="true"),null,{timeout:9000});
+ const paragraphEnergy=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>
+  nodes.filter(x=>x.getClientRects().length).map(x=>({active:x.dataset.aoDevoActive,opacity:Number(getComputedStyle(x).opacity)})));
+ assert.equal(paragraphEnergy.length,3,"Angelus first chapter must expose V/R and one Hail Mary");
+ assert.ok(paragraphEnergy[0].opacity>paragraphEnergy[1].opacity,
+  "Active V. must be brighter than its muted R.: "+JSON.stringify(paragraphEnergy));
+ assert.ok(paragraphEnergy[1].opacity>paragraphEnergy[2].opacity,
+  "Upcoming Hail Mary must also be muted, not full-bright: "+JSON.stringify(paragraphEnergy));
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
  const shot=page.locator("body > .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation']");
  await shot.waitFor({state:"attached",timeout:2000});
