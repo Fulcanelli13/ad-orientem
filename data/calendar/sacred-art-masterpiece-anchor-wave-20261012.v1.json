@@ -18,17 +18,31 @@
     "mobileCropApprovalRequired": true,
     "mustSwitchByDate": false,
     "holdUntilBetterReleasedArtwork": true,
-    "oldAcquisitionDoesNotImplyNewApproval": true
+    "oldAcquisitionDoesNotImplyNewApproval": true,
+    "excludedArtists": [
+      "El Greco",
+      "Fra Angelico"
+    ],
+    "excludedArtStylesForNewHeroRecommendations": [
+      "Fra Angelico-like stylised, flattened, early devotional/predella treatment"
+    ],
+    "preferredVisualReferenceArtists": [
+      "Peter Paul Rubens",
+      "Anthony van Dyck",
+      "Philippe de Champaigne"
+    ]
   },
   "summary": {
     "themeCount": 23,
     "primaryUserSelected": 13,
     "primaryArchiveSalvage": 4,
-    "primaryNewCustodianLeads": 6,
-    "extraReviewAlternatives": 9,
+    "primaryNewCustodianLeads": 5,
+    "extraReviewAlternatives": 8,
     "rightNowProductionReady": 0,
     "subjectsUserSelectedTotal": 101,
-    "minPublicationsRequiredPerDate": 0
+    "minPublicationsRequiredPerDate": 0,
+    "unfilledPrimaryThemes": 1,
+    "historicalStyleExcludedWorks": 2
   },
   "themes": [
     {
@@ -681,15 +695,12 @@
       ],
       "relation": "HEAVENLY_COURT_ICONOGRAPHY_NOT_LITURGICAL_GOSPEL",
       "primary": {
-        "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
-        "provisionalLeadId": "ng-663-1",
-        "artist": "Fra Angelico",
-        "title": "Christ Glorified in the Court of Heaven",
-        "sourceUrl": "https://www.nationalgallery.org.uk/paintings/fra-angelico-christ-glorified-in-the-court-of-heaven",
-        "medium": "tempera on wood",
-        "associationTier": "HEAVENLY_COURT",
-        "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
-        "description": "Central predella panel; lateral panels NG663.2 and NG663.3 depict the Saints in the celestial court. Copyright/high-quality reproduction/crop review required.",
+        "kind": "OPEN_CURATORIAL_GAP",
+        "artist": null,
+        "title": null,
+        "sourceUrl": null,
+        "objectIdentitySource": null,
+        "description": "Fra Angelico candidates explicitly rejected for style; keep All Saints opening unfilled until a new painting consistent with approved painterly aesthetic has been properly sourced. Do not default to unrelated Last Judgment.",
         "userSelectedForSubject": false,
         "userSelectedForHomeMasterpiece": false,
         "homePublicationApproved": false,
@@ -697,26 +708,25 @@
         "rightsCleared": false,
         "mobileCropApproved": false
       },
-      "additional": [
+      "additional": [],
+      "priority": "P0",
+      "historicallyRejectedCandidates": [
         {
-          "kind": "NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD",
-          "provisionalLeadId": "ng-663-3",
+          "source": "https://www.nationalgallery.org.uk/paintings/fra-angelico-christ-glorified-in-the-court-of-heaven",
+          "artist": "Fra Angelico",
+          "title": "Christ Glorified in the Court of Heaven",
+          "disposition": "USER_REJECTED_STYLE_NO_FUTURE_SHORTLIST_OR_APP_PUBLICATION",
+          "preservedForAuditOnly": true
+        },
+        {
+          "source": "https://www.nationalgallery.org.uk/paintings/fra-angelico-the-forerunners-of-christ-with-saints-and-martyrs",
           "artist": "Fra Angelico",
           "title": "The Forerunners of Christ with Saints and Martyrs",
-          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/fra-angelico-the-forerunners-of-christ-with-saints-and-martyrs",
-          "medium": "tempera on wood",
-          "associationTier": "SAINTS_AND_MARTYRS",
-          "objectIdentitySource": "PRIMARY_COLLECTION_PAGE",
-          "description": "Companion panel, not a separate Home compulsory work.",
-          "userSelectedForSubject": false,
-          "userSelectedForHomeMasterpiece": false,
-          "homePublicationApproved": false,
-          "originalImageAcquired": false,
-          "rightsCleared": false,
-          "mobileCropApproved": false
+          "disposition": "USER_REJECTED_STYLE_NO_FUTURE_SHORTLIST_OR_APP_PUBLICATION",
+          "preservedForAuditOnly": true
         }
       ],
-      "priority": "P0"
+      "status": "UNFILLED_USER_STYLE_RESTRICTION"
     },
     {
       "key": "all-souls",
