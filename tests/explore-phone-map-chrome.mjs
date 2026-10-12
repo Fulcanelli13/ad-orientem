@@ -45,8 +45,8 @@ assert.doesNotMatch(source,/map\.fitBounds\(phoneOverview\.bounds/,
 assert.match(source,/new maplibre\.AttributionControl\(\{compact:true\}\),"bottom-left"/);
 assert.match(source,/attributionControl:!compactAttribution/);
 assert.match(styles,/\.aoFindMap \.maplibregl-ctrl-bottom-left/);
-assert.match(styles,/\.aoHeritageMapHint\{[\s\S]*?bottom:67px/);
-assert.match(styles,/\.aoHeritageNearby\{[\s\S]*?bottom:13px/);
+assert.match(styles,/\.aoHeritageMapHint\{[\s\S]*?bottom:68px/);
+assert.match(styles,/\.aoHeritageNearby\{[\s\S]*?bottom:62px/);
 assert.doesNotMatch(styles,/\.maplibregl-ctrl-attrib\s*\{[^}]*display\s*:\s*none/,
   "Required map attribution may not be hidden");
 console.log("PASS phone world fit 320/390/430; one world, halo margin, compact accessible attribution and isolated controls");
