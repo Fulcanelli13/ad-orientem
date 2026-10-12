@@ -51,6 +51,12 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 
 /* Shared daily/examen presentation: one source-owned stage per named card. */
 
+/* Hymns retain authentic versification in an uncluttered source-owned card. */
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="hymns"] .aoTP381HymnSubtitle{margin:0 0 18px;color:var(--muted,#aeb2b8);font:italic 400 .93rem/1.45 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="hymns"] .aoTP381HymnStanza{margin:0 0 22px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="hymns"] .aoTP381HymnStanza .aoTP381TextParagraph{margin:0;font:400 clamp(17px,4.25vw,21px)/1.65 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="hymns"] .aoDevoSequenceTimeline .aoDevoStop{min-width:94px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="hymns"] .aoTP381SecondaryOptions{margin-top:18px}
 /* Sacred Heart and Eucharistic preparations share the one-card prayer-first surface. */
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="sacredHeart"] .aoDevoSequenceTimeline .aoDevoStops{gap:3px}
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="sacredHeart"] .aoDevoSequenceTimeline .aoDevoStop{min-width:85px;flex:1 1 0;max-width:none;padding:7px 4px}

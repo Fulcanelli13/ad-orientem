@@ -4,6 +4,7 @@ import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {SACRED_HYMNS_V381} from "../src/pray/traditional-pray-data.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const captures=resolve(root,"artifacts/pray-traditional-daily");
@@ -193,7 +194,52 @@ try{
  await page.setViewportSize({width:320,height:720});
  assert.equal((await snapshot()).overflow,"auto");
  await page.screenshot({path:resolve(captures,"communion-after-320-fr.png"),animations:"disabled"});
+ // Hymns: original French source lines are unchanged and one named hymn is
+ // active, with vertical lines and single-step horizontal navigation.
+ await page.setViewportSize({width:390,height:844});
+ await open("pray.sacred_hymns");
+ let hymn=await snapshot();
+ assert.equal(hymn.kind,"hymns");assert.equal(hymn.route,"pray.sacred_hymns");
+ assert.equal(hymn.stops,3);assert.equal(hymn.active,1);
+ assert.equal(hymn.id,"hymn-te_deum");assert.equal(hymn.overflow,"auto");
+ assert.ok(hymn.paragraphCount>20,"Te Deum has no line-level focus");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-hymn-options]").evaluate(x=>x.open),false,
+  "Hymn introduction and three language controls crowd the prayer card");
+ await page.screenshot({path:resolve(captures,"hymns-te-deum-390-fr.png"),animations:"disabled"});
+ const sourceLineation=x=>String(x).split("\n").map(y=>y.trim()).filter(Boolean).join("\n");
+ const renderedLines=async selector=>page.locator(selector+" .aoTP381TextParagraph").evaluateAll(nodes=>nodes.map(x=>x.textContent.trim()).filter(Boolean).join("\n"));
+ const frame="#aoPray435930 .aoDevoCardScroll";
+ const keys=["te_deum","veni_creator","ave_maris_stella"];
+ for(let i=0;i<keys.length;i++){
+  await page.locator("#aoPray435930 .aoDevoStop").nth(i).evaluate(b=>b.click());
+  hymn=await snapshot();
+  assert.equal(hymn.id,"hymn-"+keys[i]);
+  assert.equal(hymn.active,1);
+  assert.equal(await renderedLines(frame+" [data-face-v]"),sourceLineation(SACRED_HYMNS_V381[keys[i]].fr),
+    "Original French hymn verse wording/line order changed: "+keys[i]);
+  await page.locator("#aoPray435930 [data-tp381-flip]").evaluate(b=>b.click());
+  assert.equal(await page.locator(frame+" [data-face-la]").isVisible(),true);
+  assert.equal(await renderedLines(frame+" [data-face-la]"),sourceLineation(SACRED_HYMNS_V381[keys[i]].la),
+    "Original Latin hymn witness changed: "+keys[i]);
+ }
+ await page.screenshot({path:resolve(captures,"hymns-ave-maris-stella-la-390.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(x=>x.click());
+ await swipe(6,-135);
+ assert.equal((await snapshot()).id,"hymn-te_deum","Vertical hymn scroll changed the card");
+ await swipe(-175,4);
+ assert.equal((await snapshot()).id,"hymn-veni_creator","Hymn horizontal swipe skipped a source chapter");
+ await page.locator("#aoPray435930 [data-ao-hymn-options] > summary").evaluate(b=>b.click());
+ await page.locator("#aoPray435930 [data-tp381-hymn-lang='en']").evaluate(b=>b.click());
+ assert.equal(await renderedLines(frame+" [data-face-v]"),sourceLineation(SACRED_HYMNS_V381.veni_creator.en),
+  "English hymn witness was changed or language selector failed");
+ await page.locator("#aoPray435930 [data-ao-hymn-options] > summary").evaluate(b=>b.click());
+ await page.locator("#aoPray435930 [data-tp381-hymn-lang='la']").evaluate(b=>b.click());
+ assert.equal(await renderedLines(frame+" .aoTP381Reader"),sourceLineation(SACRED_HYMNS_V381.veni_creator.la),
+  "Explicit Latin reading is not using the original hymn witness");
+ await page.setViewportSize({width:320,height:720});
+ assert.equal((await snapshot()).overflow,"auto","320px hymn card lost local reading scroll");
+ await page.screenshot({path:resolve(captures,"hymns-veni-creator-la-320.png"),animations:"disabled"});
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
- console.log("PASS French 390/320px traditional Prayer: Daily, Examen, Holy Name, Meals, Sacred Heart and Communion canonical cards and timelines");
+ console.log("PASS French 390/320px traditional Prayer: Daily, Examen, Holy Name, Meals, Sacred Heart, Communion and all three original Sacred Hymns");
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
