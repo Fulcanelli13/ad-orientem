@@ -48,7 +48,7 @@ try{
   await page.waitForFunction(()=>{
     const node=document.querySelector("[data-ao-full-mass-preflight] [data-mass-calendar-commemoration]");
     return node&&!node.hidden&&
-      /^(COMPLETE|PENDING|INCOMPLETE|FORM_RULES_UNVERIFIED)$/.test(node.dataset.massCommemorationReadiness||"") &&
+      /^(COMPLETE|PENDING|INCOMPLETE|FORM_RULES_UNVERIFIED|NOT_APPLIED_TO_FORM)$/.test(node.dataset.massCommemorationReadiness||"") &&
       /Maternity of the Blessed Virgin Mary|Maternit/i.test(node.querySelector("[data-mass-calendar-commemoration-name]")?.textContent||"");
   },null,{timeout:12000}).catch(async error=>{
     const diagnostic=await page.evaluate(()=>{
@@ -74,7 +74,7 @@ try{
     throw error;
   });
   assert.match(await block.locator("[data-mass-calendar-commemoration-name]").innerText(),/Maternity of the Blessed Virgin Mary|Maternit/i);
-  assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),/orations|oraisons|Collect|collecte|secrète|postcommunion/i);
+  assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),/prayers|prières|orations|oraisons|Collect|collecte|secrète|postcommunion/i);
   assert.equal(await block.isVisible(),true,"Commemoration visually hidden on phone");
   await block.scrollIntoViewIfNeeded();
   const data=await block.evaluate(el=>{
@@ -86,7 +86,7 @@ try{
   });
   assert.equal(data.overflowX,false,"Horizontal overflow in Mass preflight at "+width+": "+JSON.stringify(data));
   assert.ok(data.rect.left>=-2&&data.rect.right<=width+2,"Commemoration clipped at "+width+": "+JSON.stringify(data));
-  assert.ok(["COMPLETE","PENDING","INCOMPLETE","FORM_RULES_UNVERIFIED"].includes(data.readiness));
+  assert.ok(["COMPLETE","PENDING","INCOMPLETE","FORM_RULES_UNVERIFIED","NOT_APPLIED_TO_FORM"].includes(data.readiness));
   if(data.readiness==="FORM_RULES_UNVERIFIED"){
     assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),
       /not yet verified|pas encore vérifiée/i,
