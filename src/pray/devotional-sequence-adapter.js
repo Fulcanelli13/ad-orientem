@@ -75,12 +75,13 @@ export function installSequentialDevotionalReader({
   const card=mount?.querySelector(".aoDevoCard");
   const body=card?.querySelector(".aoDevoCardScroll");
   if(!doc||!card||!body||!Array.isArray(chapters)||!chapters.length)return null;
-  if(!["stations","mercy","novena","library","daily","examen"].includes(kind))throw new RangeError("Unexpected sequence owner");
+  if(!["stations","mercy","novena","library","daily","examen","benediction"].includes(kind))throw new RangeError("Unexpected sequence owner");
   const index=Math.max(0,Math.min(chapters.length-1,Number(activeIndex)||0));
   const parent=kind==="stations"?mount.querySelector(".aoP435930StationRail"):
     kind==="mercy"?mount.querySelector(".aoMercyReader"):
     kind==="novena"?mount.querySelector(".aoN1Reader"):
     kind==="daily"||kind==="examen"?mount.querySelector(".aoTP381DonorBody"):
+    kind==="benediction"?mount.querySelector(".aoP435930BenedictionReader"):
     mount.querySelector(".aoP435930LibraryReader");
   if(!parent)return null;
   let timeline;
