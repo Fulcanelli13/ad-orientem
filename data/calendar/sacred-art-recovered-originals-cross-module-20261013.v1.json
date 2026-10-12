@@ -14,7 +14,7 @@
     "Preserve 101 current selected subjects; historical 35 acquired choices not silently discarded",
     "Prefer existing source original once per image hash across calendar/devotions/Bible, not cloned per module",
     "Bible Theatre lives in another pipeline: do not invent numerical event identifiers; scripture references require event ID reconciliation",
-    "1912? No: 1962 DayResolver calendar selects contextual use only when liturgical identity / appointed Gospel warrants it",
+    "The 1962 DayResolver determines calendar relevance; an artwork may appear on a date only when the proper, saint or appointed Gospel warrants it",
     "An Emmaus supper scene is not the road scene; a Flight rest scene is not exact departure; Christ and Sacred Heart medallion differs from Host Exposition",
     "Exclusions El Greco and Fra Angelico respected in new shortlist",
     "No new downloads, user approvals, crop approvals, or publishing"
@@ -30,7 +30,9 @@
     "distinctPhysicalSourceImagesInProposals": 13,
     "historicalSelectedArtworksReused": 3,
     "existingUserSelectionsModified": 0,
-    "actualPublishing": 0
+    "actualPublishing": 0,
+    "currentUserSelectedSourceOverlap": 0,
+    "historicalSelectionOriginalsRetained": 3
   },
   "originalProposals": [
     {
