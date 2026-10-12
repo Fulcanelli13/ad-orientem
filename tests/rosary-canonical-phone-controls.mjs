@@ -154,8 +154,68 @@ try{
      active:document.querySelector("#aoPrayerBookRoot.open")?.dataset?.aoRosaryActiveRoot}));
    assert.equal(live.method,"ordinary","Start replaced the canonical Rosary method");
    assert.equal(live.roots,1,"Start created a competing Rosary root");
+   // Active recitation should expose ONE stateful preferences summary and
+   // preserve the canonical gesture, bead, prayer and Previous/Next controls.
+   const activeOptions=player.locator(".aoRosaryActiveOptions");
+   await activeOptions.waitFor({state:"visible",timeout:15000});
+   const activeBefore=await page.evaluate(()=>{
+    const shell=document.querySelector("#aoPrayerBookRoot.open .pbShell"),
+     header=shell.querySelector(":scope > .lab-view-head"),
+     rail=shell.querySelector(":scope > .aoRosaryFaithfulRail"),
+     options=shell.querySelector(":scope > .aoRosaryActiveOptions"),
+     sheet=shell.querySelector(".lab-prayer-sheet"),
+     nav=shell.querySelector("[data-lab-rosary-next]");
+    return {afterRail:rail?.nextElementSibling===options,
+      count:shell.querySelectorAll(".aoRosaryActiveOptions").length,
+      collapsed:!options.open,
+      state:options.querySelector(".aoRosaryActiveOptionsState")?.textContent,
+      summaryHeight:options.querySelector("summary")?.getBoundingClientRect().height,
+      hiddenMode:!shell.querySelector(".aoP435930RosaryBar button")?.getClientRects().length,
+      hiddenRecitation:!shell.querySelector(".r29-head-recitation button")?.getClientRects().length,
+      step:window.AO_ROSARY_V381?.state?.()?.step,
+      prayer:sheet?.innerText?.trim()?.slice(0,130),
+      next:!!nav&&nav.getBoundingClientRect().height>=44,
+      overflow:document.documentElement.scrollWidth-innerWidth,
+      headerHeight:header?.getBoundingClientRect().height
+    };
+   });
+   assert.equal(activeBefore.count,1,"Parallel settings surfaces in active Rosary");
+   assert.equal(activeBefore.afterRail,true,"Gesture rail or prayer hierarchy was disturbed");
+   assert.equal(activeBefore.collapsed,true,"Recitation must focus prayer, not settings");
+   assert.ok(activeBefore.hiddenMode&&activeBefore.hiddenRecitation,
+     "Reading and recitation rows still compete with prayer");
+   assert.ok(activeBefore.summaryHeight>=44&&activeBefore.next,
+     "Active summary or Next action below accessible touch size");
+   assert.ok(activeBefore.prayer?.length>15&&activeBefore.overflow<=1,
+     "Active prayer missing or document overflow");
+   assert.match(activeBefore.state,/Simple.*Group/,"Collapsed state not reflecting real choices");
    await page.screenshot({path:resolve(captures,"rosary-active-after-start-"+width+".png"),
      fullPage:false,animations:"disabled"});
+
+   await activeOptions.locator("summary").click();
+   assert.equal(await activeOptions.evaluate(x=>x.open),true,
+     "Active settings did not expand");
+   assert.equal(await activeOptions.locator('[data-p435930-rosary-depth]').count(),2,
+     "Simple/Guided disappeared from original reader");
+   assert.ok(await activeOptions.locator('[data-p435930-recitation]').count()>=2,
+     "Individual/Group disappeared from original reader");
+   assert.equal(await activeOptions.locator(".aoRosaryGuideSection a[href^='https://']").count(),6,
+     "Guide source links missing from active reader");
+   await activeOptions.locator('[data-p435930-rosary-depth="guided"]').click();
+   await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveOptionsState")?.textContent?.includes("Guided"),null,{timeout:10000});
+   assert.equal(await activeOptions.evaluate(x=>x.open),true,
+     "Changing reading mode closed active options unexpectedly");
+   assert.equal(await page.evaluate(()=>window.AO_ROSARY_V381.state().step),activeBefore.step,
+     "Reading mode advanced canonical bead");
+   await activeOptions.locator("summary").click();
+   const beforeNext=await page.evaluate(()=>window.AO_ROSARY_V381.state().step);
+   await player.locator('[data-lab-rosary-next]').click();
+   await page.waitForFunction(previous=>window.AO_ROSARY_V381?.state?.()?.step>previous,beforeNext,{timeout:12000});
+   await page.waitForFunction(()=>document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveOptions")?.open===false,null,{timeout:12000});
+   assert.equal(await player.locator(".aoRosaryActiveOptions").count(),1,
+     "Active preferences missing after next canonical bead");
+   assert.match(await player.locator(".aoRosaryActiveOptionsState").textContent(),/Guided/,
+     "Reading choice lost after advancing actual Rosary");
    assert.deepEqual(errors,[],"Uncaught reader errors: "+errors.slice(0,5).join("; "));
    console.log("PASS "+width+"px canonical Rosary: 44px controls, source, guide, no overflow/state mutation");
   }finally{await page.close();}
