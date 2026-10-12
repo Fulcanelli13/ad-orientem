@@ -86,3 +86,23 @@ visual acceptance**. The status and late-CDN recovery fix belongs to existing
 [Explore PR #1058](https://github.com/Fulcanelli13/ad-orientem/pull/1058),
 not to this read-only design review. It makes no claim about pin source
 accuracy, tile provider availability, or physical phone acceptance.
+
+
+## Completed non-Mass UI fixes — 12 October 2026
+
+This read-only audit's original observations have been reconciled against production merges, rather than remaining misleadingly listed as unimplemented proposals.
+
+| Finding | Status | Production evidence |
+| --- | --- | --- |
+| Today no-art hero height | **MERGED** | PR #1052, after checks; only the empty artwork fallback is compact |
+| Formation narrow two-column subject cards | **MERGED** | PR #1054, full-width 320–430px rows and visible descriptions |
+| Pray tiny family categories/descriptions | **MERGED** | PR #1054, scoped dark-hub typography, prayer content untouched |
+| Explore truncated site names | **MERGED** | PR #1056, two-line place search labels |
+| Scripture touch-target sizing | **MERGED** | PR #1056, source reading controls at least 44px high |
+| Settings lost focus on repaint / modal escape | **MERGED** | PR #1056, preference focus retention and Tab focus trap |
+| Explore blank map without readiness explanation | **MERGED** | PR #1058, independent remote map loading/stalled/no-pins states, source records unaffected |
+| Calendar month categories wrap and split at phone width | **MERGED** | PR #1060, five categories on one horizontal rail at 320/390/430, 42-day grid unchanged |
+| Mass Entry duplicate close/hierarchy and LIVE type | **DEFERRED** | The user explicitly deferred Mass UI changes |
+| French liturgical-title source mismatch | **DEFERRED** | The user explicitly deferred French localization corrections |
+
+**Important:** A merged CSS/accessibility fix and green CI are not a physical-phone visual sign-off; the audit's local dataset and map rendering acceptance remain separate. The 54-frame workflow records actual screen state, not approval, and the persistent Sacred Geography source/pin gate remains mandatory. No devotions, Mass rubrics, reader cards, proper texts or French liturgical titles were intentionally modified by the non-Mass repairs above.
