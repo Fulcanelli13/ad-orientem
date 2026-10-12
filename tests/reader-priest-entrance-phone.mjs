@@ -63,7 +63,7 @@ try{
     assert.equal(observed.cards,48);
     const began=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.beginObservedMass());
     assert.equal(began.accepted,true);
-    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getPriestEntranceState()?.phase==="MASS_STARTED");
+    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.priestEntrance?.phase==="MASS_STARTED",null,{timeout:4000});
     const after=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
     assert.equal(after.priestEntrance.priestAction,null);
     assert.equal(after.priestEntrance.phase,"MASS_STARTED");
