@@ -19,17 +19,19 @@
     "p0Unresolved": 51,
     "devotions": 9,
     "calendarSaints": 42,
-    "museumOrArchiveSourceMatchedSubjects": 31,
-    "verifiedObjectProposalAssignments": 35,
-    "canonicalDistinctArtworkLeads": 31,
-    "p0WithoutNewObjectMatch": 20,
+    "museumOrArchiveSourceMatchedSubjects": 35,
+    "verifiedObjectProposalAssignments": 39,
+    "canonicalDistinctArtworkLeads": 35,
+    "p0WithoutNewObjectMatch": 16,
     "rubensApostlePanelMatches": 7,
     "humanSelectionsUnchanged": 101,
     "additionalHumanSelections": 0,
     "sourceImagesAcquired": 0,
     "imagesReleased": 0,
     "sharedMarkLukeOriginalPaintings": 1,
-    "verifiedLisieuxCelineLikenessSharedBetweenTwoSubjects": 1
+    "verifiedLisieuxCelineLikenessSharedBetweenTwoSubjects": 1,
+    "completeBertinGreekDoctorsFromVersailles": 3,
+    "sourceAuthenticatedNewAssignmentsInThisTurn": 12
   },
   "rows": [
     {
@@ -831,11 +833,28 @@
         "ART-icolas-ertin-aint-thanasius"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "louvre-b746-athanasius-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Athanase",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057996",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "B 746",
+          "relation": "EXACT_SAINT_ATHANASIUS_THEOLOGIAN_PAINTED_TONDO",
+          "note": "Louvre painting B 746: 18th-century oval canvas from matched series of Greek Church Fathers for Récollets at Versailles, currently in Bazas Saint-Jean-Baptiste. Catalogued painter Nicolas Bertin (formerly linked to François Lemoyne). This is traditional iconography, not historical likeness; artist and mobile form still human-review pending.",
+          "medium": "painting",
+          "sourceEvidence": "LOUVRE_DIRECT_OBJECT_CATALOGUE",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_RECORDED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-DC-15",
@@ -848,11 +867,28 @@
         "ART-icolas-ertin-aint-regory-azianzen"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "louvre-b745-gregory-nazianzen-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Grégoire (de Nazianze)",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057995",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "B 745",
+          "relation": "EXACT_SAINT_GREGORY_NAZIANZEN_GREEK_FATHER_PAINTED_TONDO",
+          "note": "Louvre B 745 explicitly belongs to the four-piece Greek Doctors series, distinct from Gregory the Great Latin Doctor panel INV 9686. Originally Récollets Versailles, now Bazas, and attributed to Nicolas Bertin. A saint iconographic identity not true-to-life portrait.",
+          "medium": "painting",
+          "sourceEvidence": "LOUVRE_DIRECT_OBJECT_CATALOGUE",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_RECORDED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-DC-16",
@@ -866,11 +902,28 @@
         "ART-edro-de-rrente-aint-ohn-hrysostom"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "louvre-b744-chrysostom-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Chrysostome",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057998",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "B 744",
+          "relation": "EXACT_SAINT_JOHN_CHRYSOSTOM_GREEK_FATHER_PAINTED_TONDO",
+          "note": "Louvre B 744, 18th-century oval canvas, attribution to Nicolas Bertin, restored 2023, hangs at Bazas. Greek Father John Chrysostom, no false identification with John the Evangelist, specific source acquisition pending.",
+          "medium": "painting",
+          "sourceEvidence": "LOUVRE_DIRECT_OBJECT_CATALOGUE",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_RECORDED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-DC-18",
@@ -1509,11 +1562,28 @@
         "ART-oseph-arie-ien-aint-enis-reaching-the-aith-in-rance"
       ],
       "priorUnverifiedLeads": [],
-      "paintings": [],
-      "status": "OPEN_PAINTING_RESEARCH",
+      "paintings": [
+        {
+          "canonicalProposalId": "paris-st-roch-vien-st-denis-1767",
+          "artist": "Joseph-Marie Vien",
+          "title": "Saint Denis prêchant la foi en France",
+          "sourceUrl": "https://utpictura18.univ-amu.fr/notice/762-saint-denis-prechant-foi-en-france-joseph-marie-vien",
+          "origin": "ACADEMIC_DOCUMENTED_CHURCH_PAINTING",
+          "inventory": "Saint-Roch, Paris, 1767, 665 × 393 cm",
+          "relation": "EXACT_NAMED_SAINT_DENIS_OF_PARIS_PREACHING_TRADITION",
+          "note": "Aix-Marseille University Utpictura18 research record reproduces Salon de 1767 documentary mention, records full-scale 665×393 cm oil on canvas still in Saint-Roch church, Paris; preliminary smaller sketch Musée Fabre. Caveat: Salon-era narrative conflates Denis of Paris with Dionysius the Areopagite in source legend; do not assert historical identification or manufacture Acts 17 eyewitness scene. Neoclassical visual suitability to be judged separately.",
+          "medium": "painting",
+          "sourceEvidence": "UNIVERSITY_ORIGINAL_ICONOGRAPHIC_RESEARCH_NOT_CUSTODIAN_CATALOGUE",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
       "specialEditorialGate": null,
       "userSelectionApproved": false,
-      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4",
+      "artisticResearchFinding": "SOURCE_RECORDED_NO_USER_APPROVAL"
     },
     {
       "subjectId": "SNT-OT-28",
@@ -1533,5 +1603,5 @@
       "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
     }
   ],
-  "additionalBatch": "Second P0 research batch: Lisieux Carmel's original Céline Thérèse painting shared across devotion and calendar, Tintoretto's Christ before Pilate as contextual only, original Murillo Seville Anthony, Jouvenet Louis, Barry Patrick oil sketch, Fray Juan Rizi Benedict and National Gallery Veronese Nicholas. 8 additional requirements; zero user approvals, zero image downloads."
+  "additionalBatch": "Second P0 research batch: Lisieux Carmel's original Céline Thérèse painting shared across devotion and calendar, Tintoretto's Christ before Pilate as contextual only, original Murillo Seville Anthony, Jouvenet Louis, Barry Patrick oil sketch, Fray Juan Rizi Benedict and National Gallery Veronese Nicholas. 8 additional requirements; zero user approvals, zero image downloads. Institutional verification of B 744/B 745/B 746 Nicolas Bertin Greek Doctors and university-catalogued Vien Saint Denis preaching. All additions remain unapproved."
 }
