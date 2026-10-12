@@ -38,12 +38,12 @@ try{
  await page.locator(base+' [data-ao-mf-open-bible]').tap();
  await page.waitForFunction(()=>globalThis.__massBibleTest?.status?.().bibleRows===26,null,{timeout:15000});
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),26);
- assert.match(await page.locator(base+' [data-ao-mass-bible-study]').innerText(),/not interchangeable/i);
+ assert.match(await page.locator(base+' [data-ao-mass-bible-study]').innerText(),/source-linked research preview/i);
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row="MB18"]').count(),1);
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row="MB24"]').count(),1);
- await page.locator(base+' [data-ao-mf-bible-filter="names"]').tap();
+ await page.locator(base+' [data-ao-mf-bible-filter-select]').selectOption("names");
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),3);
- await page.locator(base+' [data-ao-mf-bible-filter="all"]').tap();
+ await page.locator(base+' [data-ao-mf-bible-filter-select]').selectOption("all");
  await page.locator(base+' [data-ao-mf-bible-stage]').selectOption("COMMUNION");
  assert.ok(await page.locator(base+' [data-ao-mass-bible-row]').count()>=4);
  await page.locator(base+' [data-ao-mf-bible-stage]').selectOption("");
@@ -63,6 +63,7 @@ try{
  await page.locator(base+' [data-ao-mf-back]').tap();
  await page.locator(base+' [data-ao-mf-open-propers]').tap();
  await page.waitForFunction(()=>globalThis.__massBibleTest?.status?.().witnessedPropers===105,null,{timeout:15000});
+ assert.equal(await page.locator(base+' .aoFNav').count(),0,"Proper lookup must not have redundant formation section ribbon");
  assert.equal(await page.locator(base+' [data-ao-mf-bible-proper] option').count(),105);
  await page.locator(base+' [data-ao-mf-bible-proper]').selectOption("Tempora/Pent10-0");
  await page.waitForFunction(()=>globalThis.__massBibleTest?.status?.().properPath==="Tempora/Pent10-0",null,{timeout:15000});
