@@ -8,6 +8,8 @@ on:
       - "tools/calendar/build-sacred-art-final-atlas.py"
       - "tools/calendar/build-sacred-art-priority-review.py"
       - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+      - "data/calendar/sacred-art-editorial-style-holds-20261012.v1.json"
+      - "tests/calendar-sacred-art-editorial-style-holds.mjs"
       - "data/calendar/sacred-art-user-refusal-replacements.v1.json"
       - "tests/calendar-sacred-art-curator-decisions.mjs"
       - "tests/test_sacred_art_final_atlas.py"
@@ -57,6 +59,7 @@ jobs:
       - name: Generate manageable subject-first review page
         run: |
           node tests/calendar-sacred-art-curator-decisions.mjs
+          node tests/calendar-sacred-art-editorial-style-holds.mjs
           python tools/calendar/build-sacred-art-priority-review.py --atlas artifacts/sacred-art-final-atlas/index.html --output reviews/sacred-art-curator-priority.html
           python - <<'PY'
           import json,re,subprocess
