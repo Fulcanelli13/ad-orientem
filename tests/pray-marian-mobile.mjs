@@ -100,7 +100,23 @@ try{
   const x=document.querySelector("body > .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation'] img");
   return x?.complete&&x.naturalWidth>=1900;
  },null,{timeout:2500});
+ // Capture the *visible midpoint* of the real CSS interstitial, rather
+ // than an arbitrary fade-out frame influenced by CI screenshot timing.
+ await shot.evaluate(el=>{
+   for(const animation of el.getAnimations({subtree:true})){
+     const duration=Number(animation.effect?.getTiming()?.duration)||1900;
+     animation.currentTime=duration*.5;
+     animation.pause();
+   }
+ });
  await page.screenshot({path:resolve(captures,"11-angelus-incarnation-cinematic-390.png"),fullPage:false});
+ await shot.waitFor({state:"detached",timeout:5000});
+ await page.emulateMedia({reducedMotion:"reduce"});
+ await page.locator("#aoPray435930 [data-ao-devo-jump='3']").evaluate(x=>x.click());
+ assert.equal(await page.locator("body > .aoDevoCinematicInterstitial").count(),0,
+  "Reduced-motion preference must suppress prayer-card cinematic transitions");
+ await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
+ await page.emulateMedia({reducedMotion:"no-preference"});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").count(),1);
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),3);
