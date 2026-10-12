@@ -126,10 +126,20 @@ const aspergesCuratedAttempt=await prepareNativeReaderPreview({
   prepared:aspergesPrepared,reviewCuratedCards:true,
   presentationData:data,eventData,cueRegistries,guideData,aspergesData,
 });
-assert.equal(aspergesCuratedAttempt.curatedEligible,false,
-  "opt-in curated Ordinary may not flatten a preceding Asperges rite");
-assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,48,
-  "Asperges should fall back to the production model");
+assert.equal(aspergesCuratedAttempt.curatedEligible,true,
+  "an independently sourced Asperges must be allowed to precede curated Sung LIVE");
+assert.equal(aspergesCuratedAttempt.model.totalCards,39,
+  "Asperges cannot alter canonical Mass source ownership");
+assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,65,
+  "Asperges must hand off to the same 65-card curated projection");
+assert.equal(aspergesCuratedAttempt.presentationModel.cards[0].title,
+  "At the Foot of the Altar · Opening and Psalm 42",
+  "Asperges must neither flatten into nor omit the opening prayer cards");
+assert.equal(aspergesCuratedAttempt.aspergesController.project().card.id,"ASP-R01",
+  "the pre-Mass six-record R20 rite must remain the opening surface");
+assert.equal(aspergesReady.curatedEligible,false,
+  "the explicitly non-curated direct native preview remains source-first 48");
+assert.equal(aspergesReady.presentationModel.totalCards,48);
 
 assert.equal(aspergesReady.aspergesController.project().card.id,"ASP-R01");
 assert.equal(aspergesReady.aspergesController.project().formulaState.formula,"ORDINARY");
@@ -567,6 +577,148 @@ const ashReady=await prepareNativeReaderPreview({
 assert.ok(ashReady.ashController,"Ash native preview controller missing");
 assert.equal(ashReady.ashController.project().card.id,"ASH-R01");
 assert.equal(ashReady.model.totalCards,30,"Ash prelude mutated Mass card identity");
+
+// 1962 special-day preludes ending at the Introit omit the entire Foot cluster.
+// The editor's 65-piece Mass projection contains four such display cards;
+// only the verified 61-piece subset may follow Palm, Ash, or Candlemas.
+for(const {kind,loaded,source,omitsLastGospel} of [
+  {kind:"PALM",loaded:palmData,source:"palmData",omitsLastGospel:true},
+  {kind:"ASH",loaded:ashData,source:"ashData",omitsLastGospel:false},
+  {kind:"CANDLEMAS",loaded:candlemasData,source:"candlemasData",omitsLastGospel:false},
+]){
+  const specialPrepared={
+    ...livePrepared,session:{
+      ...livePrepared.session,
+      resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:[kind]},
+      plan:{...livePrepared.session.plan,precedingGraphs:[kind],massEntry:"INTROIT",
+        normalLastGospel:!omitsLastGospel},
+    },
+  };
+  const opts={prepared:specialPrepared,reviewCuratedCards:true,
+    presentationData:data,eventData,cueRegistries,guideData,
+    ...(kind==="PALM"?{palmData:loaded}:kind==="ASH"?{ashData:loaded}:{candlemasData:loaded})};
+  const selected=await prepareNativeReaderPreview(opts);
+  assert.equal(selected.model.totalCards,39,kind+" changed canonical Sung text model");
+  assert.equal(selected.curatedEligible,true,kind+" must qualify only for certified Introit handoff");
+  assert.equal(selected.presentationModel.totalCards,61,kind+" must omit four Foot display cards");
+  assert.equal(selected.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_INTROIT_61");
+  assert.equal(selected.presentationModel.sourceModelTotalCards,39);
+  assert.deepEqual(selected.presentationModel.suppressedOpeningTitles,[
+    "At the Foot of the Altar · Opening and Psalm 42",
+    "Confiteor of the Celebrant","Confiteor of the Servers",
+    "Versicles and Ascent of the Altar",
+  ]);
+  assert.equal(selected.presentationModel.cards[0].title,"Introit");
+  assert.deepEqual(selected.presentationModel.cards[0].blocks.map(b=>b.blockId),["AO.SM.B014"]);
+  assert.equal(selected.presentationModel.cards[0].sequence,1);
+  assert.equal(selected.presentationModel.cardBySequence(2)?.sequence,2);
+  assert.equal(selected.presentationModel.previousCard(selected.presentationModel.cards[0].sectionId),null);
+  assert.ok(selected.presentationModel.nextCard(selected.presentationModel.cards[0].sectionId));
+  const allIds=selected.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id));
+  assert.equal(new Set(allIds).size,allIds.length,kind+" repeated canonical source paragraphs");
+  const noCurator=await prepareNativeReaderPreview({...opts,reviewCuratedCards:false});
+  assert.equal(noCurator.curatedEligible,false);
+  assert.equal(noCurator.presentationModel.totalCards,48,kind+" 48 rollback missing");
+  const wrongEntry=await prepareNativeReaderPreview({
+    ...opts,prepared:{...specialPrepared,session:{...specialPrepared.session,
+      plan:{...specialPrepared.session.plan,massEntry:"FOOT_CLUSTER"}}},
+  });
+  assert.equal(wrongEntry.curatedEligible,false,
+    kind+" must never infer Introit-entry merely because a rite name was selected");
+  assert.equal(wrongEntry.presentationModel.totalCards,48);
+}
+
+
+// Full LIVE source coverage beyond the ordinary Sundays: a source-owned
+// Rogation immediately before Mass ends at INTROIT (never at the Foot).
+// Crucially, the mere word 'Rogations' without explicit Mass-entry authority
+// must remain on the separately validated 48 fallback.
+const rogationIntroitPrepared={
+  ...livePrepared,session:{
+    ...livePrepared.session,
+    resolvedMass:{...livePrepared.session.resolvedMass,
+      precedingRites:["ROGATIONS"]},
+    plan:{...livePrepared.session.plan,
+      precedingGraphs:["ROGATIONS"],massEntry:"INTROIT"},
+  },
+};
+const rogationCuratedOptions={prepared:rogationIntroitPrepared,reviewCuratedCards:true,
+  presentationData:data,eventData,cueRegistries,guideData,rogationsData};
+const rogationCurated=await prepareNativeReaderPreview(rogationCuratedOptions);
+assert.equal(rogationCurated.curatedEligible,true,
+  "certified Rogations -> Introit failed to reach curated LIVE");
+assert.equal(rogationCurated.model.totalCards,39);
+assert.equal(rogationCurated.presentationModel.totalCards,61);
+assert.equal(rogationCurated.presentationModel.cards[0].title,"Introit");
+assert.equal(rogationCurated.rogationsController.project().card.id,"ROG-R01");
+const rogationLegacy=await prepareNativeReaderPreview({
+  ...rogationCuratedOptions,reviewCuratedCards:false});
+assert.equal(rogationLegacy.presentationModel.totalCards,48);
+const rogationWrongHandoff=await prepareNativeReaderPreview({
+  ...rogationCuratedOptions,
+  prepared:{...rogationIntroitPrepared,session:{...rogationIntroitPrepared.session,
+    plan:{...rogationIntroitPrepared.session.plan,massEntry:"FOOT_CLUSTER"}}},
+});
+assert.equal(rogationWrongHandoff.curatedEligible,false);
+assert.equal(rogationWrongHandoff.presentationModel.totalCards,48);
+
+// Following actions must be explicitly selected and their independent
+// controllers loaded. An ordinary 39-source Sung Mass is allowed to use
+// curated LIVE in front of a generic source-only following procession, or
+// the plan-certified Corpus Christi Benedicamus/No-Blessing/No-Last-Gospel.
+// Requiem and Holy Thursday are NOT instances of either contract.
+for(const [followingAction,loaded,controllerKey,firstId,policy] of [
+  ["GENERIC_PROCESSION",genericProcessionData,"genericProcessionController","PROC-R01",
+    {normalLastGospel:true,blessingAllowed:true}],
+  ["CORPUS_CHRISTI_PROCESSION",corpusChristiData,"corpusChristiController","CORPUS-R01",
+    {normalLastGospel:false,blessingAllowed:false,dismissal:"BENEDICAMUS_DOMINO"}],
+]){
+  const fPrepared={
+    ...livePrepared,session:{
+      ...livePrepared.session,
+      resolvedMass:{...livePrepared.session.resolvedMass,
+        followingActions:[followingAction]},
+      plan:{...livePrepared.session.plan,
+        followingGraphs:[followingAction],...policy},
+    },
+  };
+  const args={prepared:fPrepared,reviewCuratedCards:true,
+    presentationData:data,eventData,cueRegistries,guideData,
+    ...(followingAction==="GENERIC_PROCESSION"
+      ? {genericProcessionData:loaded}:{corpusChristiData:loaded})};
+  const curated=await prepareNativeReaderPreview(args);
+  assert.equal(curated.curatedEligible,true,followingAction+" curated gate");
+  assert.equal(curated.model.totalCards,39);
+  assert.equal(curated.presentationModel.totalCards,65);
+  assert.equal(curated.presentationModel.cards[0].title,
+    "At the Foot of the Altar · Opening and Psalm 42");
+  assert.equal(curated[controllerKey].project().card.id,firstId);
+  assert.equal(curated.lifecycleRuntime.snapshot().stage,"MASS_ACTIVE");
+  assert.equal(curated.lifecycleRuntime.contract.followingAction.active,true);
+  const legacy=await prepareNativeReaderPreview({...args,reviewCuratedCards:false});
+  assert.equal(legacy.curatedEligible,false);
+  assert.equal(legacy.presentationModel.totalCards,48,followingAction+" rollback");
+  // Only Corpus changes the Mass end; incomplete ownership must fall back.
+  const unsafe={...fPrepared.session.plan,followingGraphs:[followingAction],
+    ...(followingAction==="CORPUS_CHRISTI_PROCESSION"
+      ? {normalLastGospel:true}:{normalLastGospel:true,blessingAllowed:false})};
+  const guarded=await prepareNativeReaderPreview({
+    ...args,prepared:{...fPrepared,session:{...fPrepared.session,plan:unsafe}},
+  });
+  assert.equal(guarded.curatedEligible,false,
+    followingAction+" should require coherent Mass-ending policy");
+  assert.equal(guarded.presentationModel.totalCards,48);
+  // Composite prelude + following action remains outside certified set.
+  const mixed=await prepareNativeReaderPreview({
+    ...args,aspergesData,
+    prepared:{...fPrepared,session:{...fPrepared.session,
+      resolvedMass:{...fPrepared.session.resolvedMass,precedingRites:["ASPERGES"]},
+      plan:{...fPrepared.session.plan,precedingGraphs:["ASPERGES"]}}},
+  });
+  assert.equal(mixed.curatedEligible,false,"untested composite must remain 48");
+  assert.equal(mixed.presentationModel.totalCards,48);
+}
+
 
 let blocked=false;
 try{

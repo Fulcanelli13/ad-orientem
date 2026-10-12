@@ -37,6 +37,7 @@ try{
  const details=await page.evaluate(async dates=>{
    const resolver=globalThis.AO_RUNTIME_V8.resolver;
    const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+   const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
    const {calendarCommemorationNames}=await import("/src/calendar/calendar-runtime.js");
    const result=[];
    for(const [date,expectedOrdoPreface] of dates){
@@ -47,11 +48,23 @@ try{
        const names=calendarCommemorationNames(day,{language:"en"});
        const text=String(pref?.lat??pref?.la??"");
        const check=p?properToReaderSlots(p,{language:"en"}).slots.PREFACE:null;
+       const corrected=p?await recoverReaderProperOmissions(p,{
+         hostResolver:resolver.properResolver,
+         principalCelebrationId:day?.day?.main?.id??null
+       }):null;
+       const after=corrected?.data??corrected??null;
+       const correctedPreface=after?.preface??null;
+       const correctedLatin=String(correctedPreface?.lat??correctedPreface?.la??"");
        result.push({
          date,expectedOrdoPreface,ready:day?.status,properStatus:day?.proper?.status,
          main:day?.day?.main?.title||null,mainId:day?.day?.main?.id||null,
          commemorationNames:names,commemorationCount:(day?.day?.commemorations||[]).length,
-         prefaceStatus:check?.status||"MISSING",prefaceLatinLength:text.length,
+         prefaceStatus:check?.status||"MISSING",
+         correctedPrefaceLatinOpening:correctedLatin.slice(0,200),
+         correctedPrefaceLatinLength:correctedLatin.length,
+         correctedPrefaceEnglishLength:String(correctedPreface?.en??"").length,
+         correctedPrefaceFrenchLength:String(correctedPreface?.fr??"").length,
+         prefaceLatinLength:text.length,
          prefaceEnglishLength:String(pref?.en??"").length,
          prefaceFrenchLength:String(pref?.fr??"").length,
          prefaceLatinOpening:text.slice(0,550),prefaceReference:pref?.sourceRef??pref?.sourcePath??null,
@@ -73,6 +86,13 @@ try{
  await writeFile(resolve(root,"data/calendar/audits/1962-2026-preface-runtime-10-date-audit.v1.json"),JSON.stringify(doc,null,2)+"\n");
  console.log("RUNTIME_PREFACE_AUDIT="+JSON.stringify({stats:doc.stats,rows:details.map(r=>({date:r.date,expect:r.expectedOrdoPreface,name:r.main,commemorations:r.commemorationNames,ready:r.prefaceStatus,latin:r.prefaceLatinOpening?.slice(0,180),latlen:r.prefaceLatinLength,source:r.prefaceReference,error:r.error}))}));
  assert.equal(details.length,10);
+ for(const [date,expected] of [["2026-05-24",/^de Spiritu Sancto/i],["2026-10-07",/^de Beata Maria Virgine/i],["2026-12-08",/^de Beata Maria Virgine/i]]){
+   const row=details.find(x=>x.date===date);
+   assert.match(row?.correctedPrefaceLatinOpening??"",expected,"production resolver recovery: "+date);
+   assert.ok(row.correctedPrefaceEnglishLength>100&&row.correctedPrefaceFrenchLength>100,"trilingual Preface incomplete: "+date);
+ }
+ assert.match(details.find(x=>x.date==="2026-12-08")?.correctedPrefaceLatinOpening??"",/Conceptióne Immaculáta/i);
+ assert.match(details.find(x=>x.date==="2026-10-07")?.correctedPrefaceLatinOpening??"",/festivitáte/i);
  assert.equal(details.find(x=>x.date==="2026-10-11")?.commemorationNames?.[0],"Maternity of the Blessed Virgin Mary");
  assert.ok(details.every(x=>x.manuallyCertifiedAgainst1962===false&&!x.publishable));
 }finally{await browser?.close();await new Promise(done=>server.close(done))}

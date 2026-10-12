@@ -68,6 +68,86 @@ try{
     assert.ok(summary.headings.includes("Gloria · The Celebrant's Intonation"));
     assert.ok(summary.headings.includes("Words of Consecration and Elevation · Host"));
     assert.ok(summary.headings.includes("Communion Antiphon"));
+    // Production touch contract: finger vertical scrolling must remain within
+    // a prayer card; horizontal gestures must move EXACTLY one card each way.
+    // Historical 48-card touch coverage cannot certify the new curated model.
+    if(width===390 && lang==="en" && !secondConfiteor){
+      // Allow each card's DOM to settle before measuring it. Sampling
+      // several showSequence calls within one evaluate sees stale card geometry.
+      const candidates=await page.evaluate(()=>{
+        const rows=window.__AO_PHONE_PREVIEW.model.cards;
+        return rows.slice(8,-4).map((card,index)=>({index:index+8,sequence:card.sequence}));
+      });
+      let target=null;
+      for(const candidate of candidates){
+        await page.evaluate(seq=>window.__AO_PHONE_PREVIEW.showSequence(seq),candidate.sequence);
+        await page.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
+        const measure=await page.locator("#ao-r17-native-reader-preview .ao-prayer-card")
+          .evaluate(el=>({max:el.scrollHeight-el.clientHeight,client:el.clientHeight}));
+        if(measure.max>100){target=candidate;break;}
+      }
+      assert.ok(target,"Curated production model has no vertically scrollable prayer card");
+      await page.waitForTimeout(250);
+      const scroller=page.locator("#ao-r17-native-reader-preview .ao-prayer-card");
+      const bounds=await scroller.boundingBox();
+      assert.ok(bounds&&bounds.width>180&&bounds.height>180,"No phone prayer swipe territory");
+      const start=await scroller.evaluate(el=>{
+        el.scrollTop=0;
+        return {top:el.scrollTop,max:el.scrollHeight-el.clientHeight};
+      });
+      assert.ok(start.max>100,"Curated card has no real scroll travel");
+      const cdp=await context.newCDPSession(page);
+      const x=Math.round(bounds.x+bounds.width*.52);
+      const startY=Math.round(bounds.y+bounds.height*.52);
+      const endY=Math.round(bounds.y+bounds.height*.15);
+      const hit=await page.evaluate(({x,y})=>{
+        const node=document.elementFromPoint(x,y);
+        return {inside:!!node?.closest(".ao-prayer-card"),
+          target:node?.className??node?.tagName??null};
+      },{x,y:startY});
+      assert.ok(hit.inside,"Vertical gesture target is obscured: "+JSON.stringify(hit));
+      await cdp.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x,y:startY}]});
+      for(let i=1;i<=8;i++){
+        const y=Math.round(startY+(endY-startY)*i/8);
+        await cdp.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y}]});
+      }
+      await cdp.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+      await page.waitForTimeout(260);
+      const after=await scroller.evaluate(el=>el.scrollTop);
+      assert.ok(after>start.top,
+        "Vertical finger gesture did not scroll curated prayer paragraphs: "+JSON.stringify({start,after,hit}));
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sequence),target.sequence,
+        "Vertical finger gesture incorrectly changed curated prayer cards");
+      async function horizontal(direction){
+        const y=Math.round(bounds.y+bounds.height*.4);
+        const startX=Math.round(bounds.x+bounds.width*(direction>0?.78:.22));
+        const endX=Math.round(bounds.x+bounds.width*(direction>0?.22:.78));
+        await cdp.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x:startX,y}]});
+        for(let i=1;i<=6;i++){
+          const x=Math.round(startX+(endX-startX)*i/6);
+          await cdp.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y}]});
+        }
+        await cdp.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+      }
+      const position=()=>page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        return api.model.cards.findIndex(c=>c.sequence===api.getCurrentCard().sequence);
+      });
+      assert.equal(await position(),target.index);
+      await horizontal(1);
+      await page.waitForFunction(index=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        return api.model.cards.findIndex(c=>c.sequence===api.getCurrentCard().sequence)===index+1;
+      },target.index,{timeout:5000});
+      assert.equal(await position(),target.index+1,"Horizontal left swipe skipped a curated card");
+      await page.waitForTimeout(450);
+      await horizontal(-1);
+      await page.waitForFunction(index=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        return api.model.cards.findIndex(c=>c.sequence===api.getCurrentCard().sequence)===index;
+      },target.index,{timeout:5000});
+      assert.equal(await position(),target.index,"Horizontal right swipe did not restore preceding card");
+    }
     const landmarks=[
       "Gloria · The Celebrant's Intonation",
       "Gloria · Praise and Supplication",

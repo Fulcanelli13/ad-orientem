@@ -1,0 +1,25 @@
+name: Mass 1962 Preface source decision gate
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/mass/1962-preface-decision.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'tests/reader-proper-runtime-recovery.mjs'
+      - 'tests/mass-1962-preface-decision.mjs'
+      - '.github/workflows/mass-1962-preface-decision.yml'
+jobs:
+  verify-preface-owner:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/mass/1962-preface-decision.js
+      - run: node tests/mass-1962-preface-decision.mjs
+      - run: node tests/proper-reader-slots.mjs
+      - run: node tests/reader-proper-runtime-recovery.mjs

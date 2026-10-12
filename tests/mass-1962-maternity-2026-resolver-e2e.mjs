@@ -28,6 +28,9 @@ try{
   const date="2026-10-11",resolver=globalThis.AO_RUNTIME_V8.resolver;
   const result=await resolver.resolveDay(date);
   const {massCalendarPreflightContext,fillMassCalendarPreflight}=await import("/src/mass/calendar-preflight-context.js");
+  const {select1962CommemorationsForMassForm}=await import("/src/mass/1962-commemoration-form-source.js");
+  const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+  const {assessPrintableProper}=await import("/src/calendar/print-proper.js");
   const main=result?.day?.main,proper=result?.proper?.data;
   const resolutionState={selectedDate:date,resolving:false,resolution:result};
   const legacy={date,celebrationId:"mass_of_day",celebrationType:"CALENDAR",calendarDay:main,
@@ -43,7 +46,18 @@ try{
     .map(raw=>({isArray:Array.isArray(raw),len:raw?.length,first:raw?.[0]??null,
       firstTitleType:typeof raw?.[0]?.title,firstTitle:raw?.[0]?.title??null}));
   const enContext=massCalendarPreflightContext(legacy,resolutionState,"en");
-  return {namedSourcesDebug:fieldsToDebug,enNamed:enContext.commemorations,
+  const forms=Object.fromEntries(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].map(form=>{
+    const selected=select1962CommemorationsForMassForm({proper:result.proper,calendarResolution:result,form});
+    const selectedData=selected.proper?.data??selected.proper;
+    return [form,{status:selected.status,reason:selected.reason,decision:selected.decision?.status??null,
+      applied:selectedData?.appliedCommemorations?.length??null,
+      sourceCalendarCount:selectedData?.calendarCommemorations?.length??null,
+      prayerCounts:["collects","secrets","postcommunions"].map(k=>selectedData?.[k]?.length??null),
+      readerCount:properToReaderSlots(selectedData,{language:"fr"}).slots.COLLECT_SET.data?.paragraphs?.length??null,
+      printed:assessPrintableProper(result,{language:"fr",massForm:form}).ok,
+      preflight:massCalendarPreflightContext(legacy,resolutionState,"fr",{form}).commemorationOrations.status}];
+  }));
+  return {forms,namedSourcesDebug:fieldsToDebug,enNamed:enContext.commemorations,
     resolutionDate:result?.date,dayDate:result?.day?.date,contextCalendar:context.calendar,
     status:result?.status,properStatus:result?.proper?.status,main:{id:main?.id,title:main?.title,rank:main?.rank,color:main?.color},
     commemorations:comms,selectedCommemoration:context.commemorations,
@@ -65,6 +79,15 @@ try{
  assert.equal(actual.active,true,"Calendar commemoration did not apply to the selected Mass");
  assert.equal(actual.prayerStatus,"COMPLETE","Actual Proper is missing one of the 2/2/2 bilingual prayer sets");
  assert.deepEqual(actual.counts,[2,2,2],"Expected primary + Marian collect, secret and postcommunion");
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+   const proof=actual.forms[form],expected=form==="LOW"?2:1;
+   assert.equal(proof.status,"CERTIFIED",form+" form source must resolve: "+proof.reason);
+   assert.deepEqual(proof.prayerCounts,[expected,expected,expected],form);
+   assert.equal(proof.readerCount,expected,form+" R17 must show exactly selected prayers");
+   assert.equal(proof.printed,true,form+" printed Propers must share source decision");
+   assert.equal(proof.sourceCalendarCount,1,form+" Calendar keeps observance regardless of Mass form");
+   assert.equal(proof.preflight,form==="LOW"?"COMPLETE":"NOT_APPLIED_TO_FORM",form);
+ }
  assert.equal(actual.banner.visible,true);
  assert.match(actual.banner.explanation,/collecte.*secrète.*postcommunion/i,"Pre-Mass guide omits where the extra prayers occur");
  console.log("PASS: real Oct 11 2026 XX Sunday + Marian Maternity; full bilingual 2/2/2 orations and preflight display");
