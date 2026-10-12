@@ -3,6 +3,7 @@
 // The native reader owns the production Mass surface. Legacy is explicit rollback only.
 
 import { installAppShellBridge } from "../app/browser-entry.js";
+import { install1962PrefaceRuntime } from "./1962-preface-runtime.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
@@ -877,6 +878,10 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
 
 if (typeof window !== "undefined" && typeof document !== "undefined") {
   const installFinalBrowserBridges = () => {
+    // Attach to the existing 1962 source resolver BEFORE either Calendar or
+    // native Mass entry may read its Proper. No view-specific Preface patching.
+    const preface=install1962PrefaceRuntime(window);
+    if(!preface.installed)console.warn("1962 Preface source selection unavailable",preface.reason);
     installAppShellBridge();
     installBrowserMassBridge();
   };
