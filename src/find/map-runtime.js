@@ -227,7 +227,7 @@ export function explorePhoneOverview(features,width){
   const west=Math.min(...points.map(p=>p[0])),east=Math.max(...points.map(p=>p[0]));
   // Only wide-world collections need this exception; regional maps retain
   // their existing automatic fit or previously restored camera.
-  if(east-west<=300)return null;
+  if(east-west<=240)return null;
   const south=Math.min(...points.map(p=>p[1])),north=Math.max(...points.map(p=>p[1]));
   const edge=width<=350?52:width<=400?54:58;
   return {

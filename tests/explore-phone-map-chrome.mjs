@@ -17,6 +17,15 @@ for(const width of [320,390,430]){
  assert.ok(width-fit.fit.padding.left-fit.fit.padding.right>=200,
    "Do not squeeze usable phone map below 200px");
 }
+// The actual published Place seed spans about 297° (-121.92° to +175.14°):
+// the previous >300° gate never entered the phone overview at any width.
+const realCorpusEnvelope=[
+ [-121.9203,-40.74667],[175.14219,55.53062],
+].map(coordinates=>({geometry:{coordinates}}));
+for(const w of [320,390,430]){
+ assert.ok(explorePhoneOverview(realCorpusEnvelope,w),
+   w+"px production longitudes must activate edge-safe fit");
+}
 assert.equal(explorePhoneOverview(features,768),null);
 assert.equal(explorePhoneOverview(features,220),null);
 assert.equal(explorePhoneOverview(features,NaN),null);

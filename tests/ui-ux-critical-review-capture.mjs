@@ -78,7 +78,9 @@ try {
    try{
     if(open)await open();
     await page.locator(selector).first().waitFor({state:"visible",timeout:22000});
-    await sleep(180);
+    // MapLibre's map 'load' can precede asynchronously painted GeoJSON
+    // clusters. Give only Explore time to paint before screenshot comparison.
+    await sleep(name==="explore"?1100:180);
     const filename=label+"-"+name+".png";
     await page.screenshot({path:resolve(output,filename),fullPage:false,animations:"disabled"});
     Object.assign(record,{status:"captured",filename,metrics:await measure(selector)});
