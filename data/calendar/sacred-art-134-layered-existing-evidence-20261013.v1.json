@@ -1,0 +1,2181 @@
+{
+  "schema": "AO_SACRED_ART_134_LAYERED_EXISTING_EVIDENCE_V1",
+  "date": "2026-10-13",
+  "branch": "platform/885-sacred-art-candidates",
+  "sourceFiles": [
+    "sacred-art-recovered-originals-cross-module-20261013.v1.json",
+    "sacred-art-p0-first-visual-triage-20261012.v1.json",
+    "sacred-art-134-subject-research-worklist-20261012.v1.json",
+    "sacred-art-candidates.v1.json"
+  ],
+  "classificationNotes": [
+    "Acquired evidence and still-unacquired official art options are separate, never add as same source image",
+    "Unapproved older option IDs may be stale and need exact artwork/source revalidation; not equated with sourced visual leads",
+    "No new images downloaded; no user art approval; no production release",
+    "Only same artwork image retained by same ID/SHA; cross-module Biblical event IDs from independent pipeline not invented"
+  ],
+  "summary": {
+    "acquiredSourceCoverage": 27,
+    "remainingAfterAcquired": 107,
+    "alreadyRegisteredExactPaintingSourceSubjects": 29,
+    "additionalResearchLeadSubjects": 10,
+    "withPreviousUnapprovedOptionOnly": 21,
+    "withNoRecordedSourceOrOlderOption": 47,
+    "visualInspectedSourceLeadSubjects": 14,
+    "visuallyInspectedUnacquiredOriginalCandidates": 13,
+    "priorityPaintingOriginalCandidates": 9,
+    "chosen101Unchanged": true
+  },
+  "subjects": [
+    {
+      "subjectId": "DEV-02",
+      "subject": "Immaculate Heart of Mary",
+      "category": "Devotions",
+      "priority": "P0",
+      "scriptureOrContext": "Exact devotional iconography required, weaker source to review.",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [
+        "ART-nknown-rench-painter-mmaculate-eart-of-ary-ernois-altarpiece"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-morlete-heart-of-mary-munal",
+          "sourceUrl": "https://artsandculture.google.com/asset/the-heart-of-mary/TAFcx9ThkUZqHw",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Mary / El Corazón de María",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "DEV-12",
+      "subject": "Our Lady of Perpetual Help",
+      "category": "Devotions",
+      "priority": "P0",
+      "scriptureOrContext": "The original devotional icon is the canonical subject.",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-retan-school-icon-painter-ur-ady-of-erpetual-elp-historic-icon"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "DEV-13",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Devotions",
+      "priority": "P0",
+      "scriptureOrContext": "Modern saint: historic devotional image needed; exact candidate unverified.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-armelite-devotional-artist-aint-h-r-se-of-isieux-traditional-painted-portrait"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "carmel-lisieux-1925-therese-aux-roses",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux roses (1925)",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "The Apostle series is portrait coverage; narrative works are contextual alternatives, not always substitutable portraits.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-aint-ames-the-reater-postolate"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-rubens-p001648",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-greater/72f76d59-fab7-4cea-8214-af0fb98fc293",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Greater",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "The Apostle series is portrait coverage; narrative works are contextual alternatives, not always substitutable portraits.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-aint-hilip-postolate"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-rubens-p001650",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-philip/a0e78920-8f28-47f5-8cd5-f50ba1dfa8c5",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Philip",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "The Apostle series is portrait coverage; narrative works are contextual alternatives, not always substitutable portraits.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-aint-artholomew-postolate"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-rubens-p001652",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/f49d896e-547c-40bd-ac5d-4cb537e429d8",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Bartholomew",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "The Apostle series is portrait coverage; narrative works are contextual alternatives, not always substitutable portraits.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-aint-homas-postolate"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-rubens-p001654",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/629fe4f7-9fdd-4b8f-af15-653882a62493",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Thomas",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "The Apostle series is portrait coverage; narrative works are contextual alternatives, not always substitutable portraits.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-aint-ames-the-ess-postolate"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-rubens-p001651",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-less/02ef9e0d-b544-48cb-bcd0-89611b37f55b",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Less",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "The Apostle series is portrait coverage; narrative works are contextual alternatives, not always substitutable portraits.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-aint-imon-postolate"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-rubens-p001655",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/0679cee8-ea16-47dc-81f8-179530faaa68",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Simon",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Shared Mark/Luke painting is acceptable; subjects remain distinct.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-uan-ibalta-aint-ark-and-aint-uke",
+        "ART-rancisco-ans-abot-aint-ark"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-juan-ribalta-p002965",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "artist": "Juan Ribalta",
+          "title": "Saint Mark and Saint Luke",
+          "matchedImageExamined": true,
+          "artisticTier": "SECONDARY_DARK_SMALL_DISPLAY_HOLD",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Traditional iconography of Luke painting Mary; not attested historical episode.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-uan-ibalta-aint-ark-and-aint-uke",
+        "ART-orkshop-of-uinten-assys-aint-uke-ainting-the-irgin"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-juan-ribalta-p002965",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "artist": "Juan Ribalta",
+          "title": "Saint Mark and Saint Luke",
+          "matchedImageExamined": true,
+          "artisticTier": "SECONDARY_DARK_SMALL_DISPLAY_HOLD",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-nonymous-lemish-painter-actation-of-aint-ernard",
+        "ART-nknown-rench-painter-actation-of-aint-ernard"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "prado-ribalta-p002804",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+          "artist": "Francisco Ribalta",
+          "title": "Christ embracing Saint Bernard",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-oman-school-aint-ohn-of-the-ross"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "celine-1894-john-cross",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/",
+          "artist": "Céline Martin",
+          "title": "Saint John of the Cross",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-ttributed-to-onadio-aint-lphonsus-iguori"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "italy-0900119548",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+          "artist": "Antonio Marini",
+          "title": "Sant'Alfonso Maria de Liguori",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-chool-of-hilippe-de-hampaigne-aint-rancis-de-ales"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "brou-982243",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/000PE032930",
+          "artist": "Benoît Alhoste (attributed)",
+          "title": "Le Bon Pasteur, saint François de Sales et sainte Madeleine",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-icolas-ertin-aint-thanasius"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "louvre-b746-athanasius-bertin",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057996",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Athanase",
+          "matchedImageExamined": true,
+          "artisticTier": "SECONDARY_SMALL_TONDO_PAINTING",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-icolas-ertin-aint-regory-azianzen"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "louvre-b745-gregory-nazianzen-bertin",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057995",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Grégoire (de Nazianze)",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-icolas-ertin-aint-ohn-hrysostom",
+        "ART-edro-de-rrente-aint-ohn-hrysostom"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "louvre-b744-chrysostom-bertin",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057998",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Chrysostome",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-roman-school-saint-bede-cycle",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200230125-0",
+          "artist": "Anonymous Roman school",
+          "title": "Saint Bede — English saints cycle",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [
+        {
+          "artworkId": "louvre-crespi-inv259",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010064462",
+          "artist": "Giuseppe Maria Crespi",
+          "title": "L'Immaculée Conception avec saint Anselme et saint Martin",
+          "matchedImageExamined": true,
+          "artisticTier": "SECONDARY_CONTEXTUAL_STUDY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-acopo-di-ione-and-workshop-aint-eter-amian-proposed-identification"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "zeri-45874-peter-damian",
+          "sourceUrl": "https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano",
+          "artist": "Venanzio l'Eremita",
+          "title": "San Pier Damiano",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [
+        {
+          "artworkId": "italy-l0060-albert",
+          "sourceUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0060-00113/",
+          "artist": "Giuseppe Franchi",
+          "title": "Portrait of Saint Albert the Great",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-franchi-portrait-albert-the-great",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0060-00113_R03",
+          "artist": "Giuseppe Franchi",
+          "title": "Portrait of Saint Albert the Great",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-arlo-erotti-catalogue-attribution-ortrait-of-aint-obert-ellarmine"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "ambrosiana-L0050-00042",
+          "sourceUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0050-00042/",
+          "artist": "Carlo Perotti (attributed)",
+          "title": "Ritratto di Roberto Bellarmino",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-vallejo-glorification-immaculate-canisius",
+          "sourceUrl": "https://artsandculture.google.com/asset/glorification-of-the-immaculate-conception/UAG7iiXG4ZAo5A?hl=en",
+          "artist": "Francisco Antonio Vallejo",
+          "title": "Glorification of the Immaculate Conception",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [
+        {
+          "artworkId": "italy-banchero-0700031704",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+          "artist": "Angelo Giacinto Banchero",
+          "title": "San Lorenzo da Brindisi",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-ligurian-school-cyril-alexandria",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700018145",
+          "artist": "Anonymous Ligurian painter",
+          "title": "Saint Cyril of Alexandria",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-antonio-nannoni-cyril-jerusalem",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900117888A-1",
+          "artist": "Attributed to Antonio Nannoni",
+          "title": "Saint Cyril of Jerusalem",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Class A status proposed from traditional Calendar; exact source identity still requires complete 1962 resolved-day census.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-erugino-rchangel-aphael-with-obias"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "louvre-inv-1736",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010062024",
+          "artist": "Rembrandt",
+          "title": "L'Archange Raphaël quittant la famille de Tobie",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Class A status proposed from traditional Calendar; exact source identity still requires complete 1962 resolved-day census.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-armelite-devotional-artist-aint-h-r-se-of-isieux-traditional-painted-portrait"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "carmel-lisieux-1925-therese-aux-roses",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux roses (1925)",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Class A status proposed from traditional Calendar; exact source identity still requires complete 1962 resolved-day census.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-ean-ouvenet-aint-ouis-olding-the-rown-of-horns",
+        "ART-uillaume-uillon-ethi-re-aint-ouis-isiting-the-lague-tricken"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "versailles-jouvenet-inv5501",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/000PE006521",
+          "artist": "Jean-Baptiste Jouvenet",
+          "title": "Saint Louis soignant les blessés après la bataille de Mansourah (1250)",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Class A status proposed from traditional Calendar; exact source identity still requires complete 1962 resolved-day census.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-ames-arry-aint-atrick-aptising-an-rish-ing"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "ngi-4623-barry-st-patrick-cashel",
+          "sourceUrl": "https://onlinecollection.nationalgallery.ie/objects/8798",
+          "artist": "James Barry",
+          "title": "The Baptism of the King of Cashel by Saint Patrick",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Class A status proposed from traditional Calendar; exact source identity still requires complete 1962 resolved-day census.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-n-dict-asson-pparition-of-the-acred-eart-to-argaret-ary",
+        "ART-ernard-n-zet-pparition-of-the-acred-eart-to-argaret-ary"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "france-PM74001769-margaretmary",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM74001769",
+          "artist": "Bénédict Masson",
+          "title": "Apparition du Sacré-Cœur à sainte Marguerite-Marie Alacoque",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Class A status proposed from traditional Calendar; exact source identity still requires complete 1962 resolved-day census.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-aul-orel-ainted-pisodes-from-ife-of-ur-of-rs"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "france-PM01002671-vianney",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+          "artist": "Unidentified 19th-century painter",
+          "title": "Guérison de saint Jean-Marie Vianney, curé d'Ars",
+          "matchedImageExamined": false,
+          "artisticTier": "NOT_VISUALLY_ASSESSED_IN_THIS_PASS",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Class A status proposed from traditional Calendar; exact source identity still requires complete 1962 resolved-day census.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-oseph-arie-ien-aint-enis-reaching-the-aith-in-rance"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "paris-st-roch-vien-st-denis-1767",
+          "sourceUrl": "https://utpictura18.univ-amu.fr/notice/762-saint-denis-prechant-foi-en-france-joseph-marie-vien",
+          "artist": "Joseph-Marie Vien",
+          "title": "Saint Denis prêchant la foi en France",
+          "matchedImageExamined": true,
+          "artisticTier": "SECONDARY_CLASSICISM_AND_SOURCE_ID_REVIEW",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "category": "Calendar saints",
+      "priority": "P0",
+      "scriptureOrContext": "Class A status proposed from traditional Calendar; exact source identity still requires complete 1962 resolved-day census.",
+      "status": "EXISTING_VISUAL_SOURCE_RESEARCH",
+      "previousCandidateArtworkIds": [
+        "ART-nonymous-after-imon-ran-ois-aint-incent-de-aul"
+      ],
+      "visualSourceOptions": [
+        {
+          "artworkId": "vesoul-984-6-1-gerome-vincent",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Vincent_de_Paule_-_Gerome.jpg",
+          "artist": "Jean-Léon Gérôme",
+          "title": "Saint Vincent de Paul",
+          "matchedImageExamined": true,
+          "artisticTier": "PRIORITY_VISUAL_SHORTLIST_PHOTO_HOLD",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": true,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-OR04",
+      "subject": "The Flood",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 7:1–24 · Painting identity still unverified.",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-icolas-oussin-he-eluge"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-OR05",
+      "subject": "God’s Covenant with Noah",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 9:8–17 · Rainbow covenant image required only if art would add value.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-PA01",
+      "subject": "Calling of Abram",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 12:1–9 · Map/chronology may suffice.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-PA04",
+      "subject": "Covenant with Abraham",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 15:1–21",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-PA05",
+      "subject": "Birth of Isaac",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 21:1–7",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-PA09",
+      "subject": "Joseph Is Sold",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 37:18–36 · Potiphar transfer is adjacent, not precisely sale by brothers.",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-ontormo-oseph-old-to-otiphar"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-PA10",
+      "subject": "Joseph Governs Egypt",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 41:37–45",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-ontormo-oseph-with-haraoh"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-PA11",
+      "subject": "Joseph Forgives His Brothers",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 45:1–15",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-acchiacca-oseph-ardons-is-rothers"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-PA12",
+      "subject": "Israel Settles in Egypt",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Genesis 46:1–7",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-ontormo-oseph-with-acob-in-gypt"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX03",
+      "subject": "The Plagues Begin",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 7:14–25",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX04",
+      "subject": "First Passover",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 12:1–28",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX05",
+      "subject": "Departure from Egypt",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 12:31–42 · Map may suffice.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX06",
+      "subject": "Crossing of the Red Sea",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 14:15–31",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [
+        "ART-icolas-oussin-rossing-the-ed-ea"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-poussin-crossing-red-sea",
+          "sourceUrl": "https://www.ngv.vic.gov.au/explore/collection/work/4271/",
+          "artist": "Nicolas Poussin",
+          "title": "The Crossing of the Red Sea",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX07",
+      "subject": "Manna in the Wilderness",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 16:1–36",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-icolas-oussin-he-sraelites-athering-anna"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX08",
+      "subject": "Moses Strikes the Rock",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 17:1–7",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-orrado-iaquinto-oses-triking-the-ock"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX09",
+      "subject": "Covenant at Sinai / Ten Commandments",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 19–20",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX10",
+      "subject": "The Golden Calf",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 32:1–35",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-poussin-adoration-golden-calf",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/nicolas-poussin-the-adoration-of-the-golden-calf",
+          "artist": "Nicolas Poussin",
+          "title": "The Adoration of the Golden Calf",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX11",
+      "subject": "The Tabernacle",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Exodus 40:1–38 · Ritual architecture rather than invented painting may fit.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX13",
+      "subject": "Moses on Mount Nebo",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Deuteronomy 34:1–6",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX14",
+      "subject": "Joshua Crosses the Jordan",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Joshua 3:1–17",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-EX15",
+      "subject": "Fall of Jericho",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Joshua 6:1–27",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS01",
+      "subject": "Hannah and Samuel",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "1 Samuel 1:9–20",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS02",
+      "subject": "Samuel Anoints Saul",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "1 Samuel 10:1–8",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS04",
+      "subject": "David Becomes King",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "2 Samuel 2:1–4",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS05",
+      "subject": "Solomon Dedicates Temple",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "1 Kings 8:1–66",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-restout-dedication-temple-solomon",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010063365",
+          "artist": "Jean Restout II",
+          "title": "The Dedication of Solomon’s Temple",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS06",
+      "subject": "Division of the Kingdom",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "1 Kings 12:1–24",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS07",
+      "subject": "Elijah at Mount Carmel",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "1 Kings 18:19–39 · Not same as Elijah at Horeb.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS09",
+      "subject": "Isaiah’s Calling",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Isaiah 6:1–13",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS10",
+      "subject": "Jeremiah Warns Jerusalem",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Jeremiah 7:1–15",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS11",
+      "subject": "Judgment of Solomon",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "1 Kings 3:16–28",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-orkshop-of-eter-aul-ubens-udgment-of-olomon"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS12",
+      "subject": "Fall of Samaria",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "2 Kings 17:1–18",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-IS13",
+      "subject": "Josiah Renews Covenant",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "2 Kings 23:1–25",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL01",
+      "subject": "Destruction of Jerusalem",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "2 Kings 25:1–12",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL02",
+      "subject": "Tobit at Nineveh",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Tobit 1:10 · This artwork depicts journey, not specifically Tobit in Nineveh.",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-erugino-aphael-and-obias"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL03",
+      "subject": "Tobias and Raphael",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Tobit 6:1–9",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-orkshop-of-errocchio-obias-and-the-ngel",
+        "ART-an-ievens-obias-and-the-ngel"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL04",
+      "subject": "Daniel in Babylon",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Daniel 1:1–21 · Lions den is later, not scene Daniel 1.",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-aniel-in-the-ions-en"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL06",
+      "subject": "Ezekiel’s Vision",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Ezekiel 1:1–28",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL10",
+      "subject": "Song of the Three Youths",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Daniel 3:24–90",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-lemish-school-hree-ouths-in-the-iery-urnace"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL11",
+      "subject": "Return from Exile",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Ezra 1:1–11",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL12",
+      "subject": "Rebuilding of the Temple",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Ezra 6:13–22",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL13",
+      "subject": "The Maccabean Resistance",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "1 Maccabees 2:1–5 · Heliodorus is related deuterocanonical episode, not actual resistance scene.",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-ug-ne-elacroix-eliodorus-riven-from-the-emple"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-XL14",
+      "subject": "Martyrdom of Seven Brothers",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "2 Maccabees 7:1–42",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-nonymous-icard-painter-artyrdom-of-the-even-accabean-rothers"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G10",
+      "subject": "Sermon on the Mount",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Matthew 5–7",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G11",
+      "subject": "Raising the Widow’s Son at Nain",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Luke 7:11–17",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G12",
+      "subject": "Calming the Storm",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Mark 4:35–41",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-delacroix-christ-asleep-tempest",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436176",
+          "artist": "Eugène Delacroix",
+          "title": "Christ Asleep during the Tempest",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G13",
+      "subject": "Walking on Water",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Matthew 14:22–33",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G18",
+      "subject": "The Prodigal Son",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Luke 15:11–32",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-he-rodigal-on"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G19",
+      "subject": "Christ and Martha and Mary",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Luke 10:38–42",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-beuckelaer-four-elements-fire",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/joachim-beuckelaer-the-four-elements-fire",
+          "artist": "Joachim Beuckelaer",
+          "title": "The Four Elements: Fire",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G20",
+      "subject": "Peter’s Confession",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Matthew 16:13–20",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G21",
+      "subject": "Christ and Doubting Thomas",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "John 20:24–29",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-eter-aul-ubens-ncredulity-of-aint-homas"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G23",
+      "subject": "Christ Feeds Peter’s Sheep",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "John 21:15–19",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-G26",
+      "subject": "Washing of the Feet",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "John 13:1–17",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A02",
+      "subject": "Peter Heals the Lame Man",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 3:1–10",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-aphael-and-workshop-eter-ealing-the-ame-an-tapestry-cartoon"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A04",
+      "subject": "Philip Baptises the Ethiopian",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 8:26–40",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A06",
+      "subject": "Peter Raises Tabitha",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 9:36–43",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A07",
+      "subject": "Conversion of Cornelius",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 10:1–48",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A08",
+      "subject": "Disciples at Antioch",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 11:19–26",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A09",
+      "subject": "Paul at Lystra",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 14:8–18",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-aphael-and-workshop-acrifice-at-ystra-tapestry-cartoon"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A10",
+      "subject": "Council of Jerusalem",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 15:1–29",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A11",
+      "subject": "Lydia at Philippi",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 16:11–15",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A12",
+      "subject": "Paul in Thessalonica",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 17:1–9",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A13",
+      "subject": "Paul at the Areopagus",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 17:16–34",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-aphael-and-workshop-aint-aul-reaching-at-thens-tapestry-cartoon"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A14",
+      "subject": "Paul at Corinth",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 18:1–18",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A16",
+      "subject": "Paul at Troas — Eutychus",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 20:7–12",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A17",
+      "subject": "Farewell at Miletus",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 20:17–38",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A18",
+      "subject": "Shipwreck on Malta",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 27:13–44",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A19",
+      "subject": "Paul Arrives in Rome",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Acts 28:16–31",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-A20",
+      "subject": "Peter Commissioned by Risen Christ",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "John 21:15–19",
+      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "previousCandidateArtworkIds": [
+        "ART-aphael-and-workshop-hrist-s-harge-to-eter-cartoon"
+      ],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-V01",
+      "subject": "Vision of Saint John",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Revelation 1:9–20 · Symbolic theology, not a map of future physical geography.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-V02",
+      "subject": "Heavenly Liturgy",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Revelation 4:1–11 · Symbolic theology, not a map of future physical geography.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    },
+    {
+      "subjectId": "BIB-V03",
+      "subject": "New Jerusalem",
+      "category": "Bible Atlas",
+      "priority": "P1",
+      "scriptureOrContext": "Revelation 21:1–27 · Symbolic theology, not a map of future physical geography.",
+      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "previousCandidateArtworkIds": [],
+      "visualSourceOptions": [],
+      "nonacquiredNewResearchLeads": [],
+      "hasActuallyImageInspectedResearchLead": false,
+      "acquiredSpecificMatch": false,
+      "artisticAcceptance": false,
+      "publicationAcceptance": false
+    }
+  ]
+}
