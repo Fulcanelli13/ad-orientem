@@ -11,6 +11,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080c12}
 <body>
 <script type="module">
 import { mountNativeReaderPreview } from "../../src/mass/reader-native-preview.js";
+import { compileMassPlan } from "../../src/mass/session-engine.js";
 
 const params=new URLSearchParams(location.search);
 const lang=params.get("lang")==="fr"?"fr":"en";
@@ -66,14 +67,9 @@ const prepared={
   schema:"ao-mass-entry-prepared-v1",
   session:{
     resolvedMass,
-    plan:{
-      kind:"MASS",
-      precedingGraphs:precedingRites,
-      followingGraphs:[],
-      overlayGraphs:properOverlay,
-      massEntry:(withPalm||withAsh)?"INTROIT":"FOOT_CLUSTER",
-      normalLastGospel:withPalm?false:true,
-    },
+    // Real production resolver: Low and Solemn require objectiveContext.
+    // A hand-crafted simple Mass plan hid that requirement in the prior harness.
+    plan:compileMassPlan(resolvedMass),
   },
   readerPreferences:{
     mode,
