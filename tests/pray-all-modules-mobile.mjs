@@ -414,7 +414,19 @@ try{
      const reader=document.querySelector("#aoPray435930.open .aoP435930LibraryReader");
      return Boolean(reader?.querySelector(".aoDevoSequenceTimeline")&&
        reader?.querySelector(".aoDevoCardScroll .aoLibraryLine[data-ao-devo-active='true']"));
-   },null,{timeout:4500});
+   },null,{timeout:4500}).catch(async error=>{
+     const diag=await page.evaluate(()=>{
+       const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
+       const reader=m?.querySelector(".aoP435930LibraryReader");
+       return {view:m?.dataset.aoPrayView,library:!!reader,
+         card:reader?.querySelector(".aoDevoCard")?.outerHTML?.slice(0,1800),
+         timeline:reader?.querySelectorAll(".aoDevoSequenceTimeline").length,
+         lines:reader?.querySelectorAll(".aoLibraryLine").length,
+         active:reader?.querySelectorAll(".aoLibraryLine[data-ao-devo-active='true']").length,
+         sourceNode:reader?.querySelector(".aoP435930Text,[data-face-v]")?.outerHTML?.slice(0,900)};
+     });
+     throw new Error("Library dual-axis card missing for "+id+": "+JSON.stringify(diag)+"; "+error);
+   });
    const libraryDeck=await page.evaluate(()=>{
      const reader=document.querySelector("#aoPray435930.open .aoP435930LibraryReader");
      const scroll=reader?.querySelector(".aoDevoCardScroll");
