@@ -36,13 +36,18 @@ try{
      assert.ok(geometry.documentWidth<=geometry.width+1,name+" page overflow at "+size+"px: "+JSON.stringify(geometry));
      if(name==="cinematic-incarnation"||name==="genesis-branch-tree"){
        const visibility=await page.evaluate(()=>{
-         const selectors=[".aoBibleStudyTabs [aria-pressed=true]",".aoBibleStudyChapters [aria-pressed=true]",".aoBibleReviewTabs [aria-pressed=true]"];
+         const selectors=[".aoBibleStudyTabs [aria-pressed=true]",".aoBibleReviewTabs [aria-pressed=true]"];
          return selectors.map(selector=>document.querySelector("#ao-find-modular-root "+selector)).filter(Boolean).map(button=>{
            const outer=button.parentElement.getBoundingClientRect(),inner=button.getBoundingClientRect();
            return {label:button.textContent,visible:inner.left>=outer.left-2&&inner.right<=outer.right+2};
          });
        });
-       assert.ok(visibility.length>=1&&visibility.every(x=>x.visible),name+" active tab/chapter not visible at "+size+": "+JSON.stringify(visibility));
+       assert.ok(visibility.length>=1&&visibility.every(x=>x.visible),name+" active tab not visible at "+size+": "+JSON.stringify(visibility));
+       if(name==="cinematic-incarnation"&&size<=390){
+         const chapterPicker=page.locator("#ao-find-modular-root [data-bible-study-chapter-select]");
+         assert.equal(await chapterPicker.isVisible(),true,"selected chapter must be visible on a phone");
+         assert.equal(await chapterPicker.inputValue(),"INCARNATION");
+       }
      }
      await page.screenshot({path:resolve(screenshotFolder,name+"-"+size+".png"),fullPage:false,animations:"disabled"});
    }
@@ -147,11 +152,11 @@ try{
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-study-scene="0"]').count(),1);
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump]').count(),0,"overlap cannot become a jump");
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-map]').count(),0,"no research map pins");
- await page.locator('#ao-find-modular-root [data-bible-study-chapter="DELIVERANCE"]').tap({timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("DELIVERANCE");
  await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="25"]'),null,{timeout:15000});
  await page.locator('#ao-find-modular-root [data-bible-study-direction="1"]').tap({timeout:15000});
  await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="26"]'),null,{timeout:15000});
- await page.locator('#ao-find-modular-root [data-bible-study-chapter="INCARNATION"]').tap({timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("INCARNATION");
  await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="57"]'),null,{timeout:15000});
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').count(),1);
  const visualOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
