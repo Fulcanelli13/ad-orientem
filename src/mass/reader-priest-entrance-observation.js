@@ -61,8 +61,8 @@ export function createObservedPriestEntranceController({form}={}){
 
 // Existing right-rail priest-action surface can show a truly observed gesture
 // while NO canonical Mass cue is yet active. It must not retain it at C0001.
-export function projectObservedPreMassPriestAction({state=null,activeCueId=null}={}){
-  if(activeCueId!=null || state?.phase!=="REVERENCE_OBSERVED" ||
+export function projectObservedPreMassPriestAction({state=null,activeCueId=null,preMassVisualWindowOpen=true}={}){
+  if(preMassVisualWindowOpen!==true || activeCueId!=null || state?.phase!=="REVERENCE_OBSERVED" ||
      state?.reverence?.observed!==true)return null;
   const type=state.reverence.kind;
   if(type==="SIMPLE_GENUFLECTION")return Object.freeze({
