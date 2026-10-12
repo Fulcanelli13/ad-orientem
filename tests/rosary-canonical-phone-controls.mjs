@@ -196,6 +196,18 @@ try{
      const node=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
      const summary=node.querySelector(":scope > summary");
      const events=[];
+     const oldStop=Event.prototype.stopImmediatePropagation;
+     Event.prototype.stopImmediatePropagation=function(...args){
+       if(this.type==="click"&&this.target?.closest?.(".aoRosaryActiveOptions"))
+          events.push({kind:"stopped",stack:new Error("STOP CAPTURE").stack.slice(0,1200)});
+       return oldStop.apply(this,args);
+     };
+     const oldPrevent=Event.prototype.preventDefault;
+     Event.prototype.preventDefault=function(...args){
+       if(this.type==="click"&&this.target?.closest?.(".aoRosaryActiveOptions"))
+          events.push({kind:"prevented",stack:new Error("PREVENT").stack.slice(0,900)});
+       return oldPrevent.apply(this,args);
+     };
      node.addEventListener("click",e=>events.push({kind:"click",tag:e.target.tagName,open:node.open}),true);
      node.addEventListener("toggle",()=>events.push({kind:"toggle",open:node.open}));
      const box=summary.getBoundingClientRect();
@@ -208,7 +220,14 @@ try{
      const before={open:node.open,connected:node.isConnected,html:summary.outerHTML.slice(0,280),
        ancestorInfo,hit:document.elementFromPoint(box.x+box.width/2,box.y+box.height/2)?.outerHTML?.slice(0,180)};
      summary.click();
-     return {before,after:{open:node.open,connected:node.isConnected},events};
+     const summaryClickIsNative=summary.click===HTMLElement.prototype.click;
+     const afterClick={open:node.open,connected:node.isConnected};
+     const synthetic=new MouseEvent("click",{bubbles:true,cancelable:true,detail:1,clientX:box.x+3,clientY:box.y+3});
+     const dispatchResult=summary.dispatchEvent(synthetic);
+     const afterDispatch={open:node.open,dispatchResult,defaultPrevented:synthetic.defaultPrevented};
+     Event.prototype.stopImmediatePropagation=oldStop;
+     Event.prototype.preventDefault=oldPrevent;
+     return {before,afterClick,afterDispatch,summaryClickIsNative,events};
    });
    const clickSettled=await page.evaluate(async()=>{
      await new Promise(ok=>setTimeout(ok,120));
