@@ -62,7 +62,18 @@ let browser;try{
        forms[form]=outputForm;
      }
      output.push({date,main:r?.day?.main?.id,source:r?.proper?.data?.sourcePath,
-       calendarCount:r?.day?.commemorations?.length,rawGroups:
+       calendarCount:r?.day?.commemorations?.length,
+       debugSourceBoundaries:date==="2026-12-04"?
+         ["collects","secrets","postcommunions"].map(k=>({
+           field:k,rows:(raw?.[k]??[]).map((x,i)=>({
+             i,
+             laEnd:String(x?.lat??"").slice(-180),
+             enEnd:String(x?.en??"").slice(-180),
+             frEnd:String(x?.fr??"").slice(-180),
+             laStart:String(x?.lat??"").slice(0,90),
+           }))
+         })):null,
+       rawGroups:
          ["collects","secrets","postcommunions"].map(k=>raw?.[k]?.length??0),
        forms});
    }
