@@ -1,0 +1,921 @@
+{
+  "as_of": "2026-10-12",
+  "scope": "ORIGINAL_AUDIENCE_AND_TOPIC_QUESTION_BANKS_NOT_CANONICAL_DOSSIERS",
+  "bank_prefixes": [
+    {
+      "prefix": "ATH",
+      "topic": "Atheism, agnosticism, naturalism and materialism",
+      "original_range_count": 25,
+      "witness": "2026-10-07T13:34:41Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "ISL",
+      "topic": "Islam",
+      "original_range_count": 25,
+      "witness": "2026-10-07T13:38:54Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "JUD",
+      "topic": "Judaism",
+      "original_range_count": 25,
+      "witness": "2026-10-07T13:53:01Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "PROT",
+      "topic": "Generic Protestant apologetics",
+      "original_range_count": 25,
+      "witness": "2026-10-07T12:36:04Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "LUT",
+      "topic": "Lutheranism",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:21:26Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "REF",
+      "topic": "Reformed / Calvinist",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:28:59Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "ANG",
+      "topic": "Anglicanism",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:31:02Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "BAP-EV",
+      "topic": "Baptist / evangelical / non-denominational",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:19:12Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "WES",
+      "topic": "Methodist / Wesleyan",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:19:12Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "PEN",
+      "topic": "Pentecostal / Charismatic",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:19:12Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "SCR",
+      "topic": "Scripture / Tradition / biblical canon",
+      "original_range_count": 25,
+      "witness": "2026-10-07T14:58:44Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "PAP-ORD",
+      "topic": "Ordinary papacy / ecclesiology",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:08:11Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "MAR",
+      "topic": "Marian apologetics",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:16:56Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "SAN",
+      "topic": "Saints, relics, images, Purgatory, indulgences",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:19:12Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "PAT",
+      "topic": "Patristics",
+      "original_range_count": 25,
+      "witness": "2026-10-07T19:31:31Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "PAP",
+      "topic": "Papacy historical topical bank",
+      "original_range_count": 20,
+      "witness": "2026-10-07T19:31:31Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "MOR",
+      "topic": "Moral reasoning",
+      "original_range_count": 14,
+      "witness": "2026-10-07T19:31:31Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "BIO",
+      "topic": "Bioethics",
+      "original_range_count": 16,
+      "witness": "2026-10-07T19:31:31Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "AI",
+      "topic": "Artificial intelligence",
+      "original_range_count": 14,
+      "witness": "2026-10-07T19:14:32Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "REST",
+      "topic": "Restorationist movements incl. Jehovah's Witnesses",
+      "original_range_count": 25,
+      "witness": "2026-10-07T14:22:31Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "ORTH",
+      "topic": "Eastern Orthodoxy",
+      "original_range_count": null,
+      "witness": "2026-10-07T13:27:54Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "V2",
+      "topic": "Vatican II disputes",
+      "original_range_count": null,
+      "witness": "2026-10-07T13:27:54Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "LIT",
+      "topic": "Liturgical reform / Novus Ordo",
+      "original_range_count": null,
+      "witness": "2026-10-07T13:27:54Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "ERR",
+      "topic": "Condemned errors and ideological movements",
+      "original_range_count": null,
+      "witness": "2026-10-07T13:57:26Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "SIKH",
+      "topic": "Sikhism",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "JAIN",
+      "topic": "Jainism",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "BAH",
+      "topic": "Baháʼí",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "ZOR",
+      "topic": "Zoroastrianism",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "DAO",
+      "topic": "Daoism",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "CONF",
+      "topic": "Confucian traditions",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "CHR",
+      "topic": "Chinese popular religion",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "SHI",
+      "topic": "Shinto",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "IND",
+      "topic": "Indigenous and animist traditions",
+      "original_range_count": null,
+      "witness": "2026-10-07T15:45:51Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "MIN",
+      "topic": "Combined smaller religions",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:19:12Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "EAS",
+      "topic": "East Asian and indigenous traditions combined",
+      "original_range_count": 25,
+      "witness": "2026-10-07T15:19:12Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "NEW",
+      "topic": "New Age",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "THEO",
+      "topic": "Theosophy",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "ANTH",
+      "topic": "Anthroposophy",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "SCI",
+      "topic": "Scientology",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "SAT",
+      "topic": "Modern Satanism",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "HUM",
+      "topic": "Secular humanism",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "REL",
+      "topic": "Relativism and postmodernism",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "EXI",
+      "topic": "Existentialism and nihilism",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "TRH",
+      "topic": "Transhumanism",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    },
+    {
+      "prefix": "PER",
+      "topic": "Perennialism",
+      "original_range_count": null,
+      "witness": "2026-10-07T16:02:45Z",
+      "provenance": "PRIOR_CONVERSATION_SEARCH_SUMMARY",
+      "transcript_export_confirmed": false
+    }
+  ],
+  "numbered_question_excerpts": [
+    {
+      "id": "ATH-001",
+      "question": "What are atheism, agnosticism, naturalism and materialism?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-002",
+      "question": "Can God's existence be known without revelation?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-003",
+      "question": "Does ‘proof of God’ mean mathematical demonstration compelling every reasonable person?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-004",
+      "question": "What is Aquinas actually arguing in the Five Ways?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-005",
+      "question": "Who created God?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-006",
+      "question": "Could an eternal universe remove the need for God?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-007",
+      "question": "Does the Big Bang prove creation by God?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-008",
+      "question": "Do quantum events refute causality?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-009",
+      "question": "Does cosmic fine-tuning prove God?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ATH-010",
+      "question": "Did Darwin destroy the argument from design?",
+      "bank": "ATH",
+      "original_message_timestamp_utc": "2026-10-07T13:34:41Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ISL-001",
+      "question": "What does “Islam” mean for apologetic purposes?",
+      "bank": "ISL",
+      "original_message_timestamp_utc": "2026-10-07T13:38:54Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ISL-002",
+      "question": "Is Muhammad himself historically doubtful?",
+      "bank": "ISL",
+      "original_message_timestamp_utc": "2026-10-07T13:38:54Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ISL-003",
+      "question": "Are the detailed biographies contemporary eyewitness records?",
+      "bank": "ISL",
+      "original_message_timestamp_utc": "2026-10-07T13:38:54Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ISL-004",
+      "question": "What must be proved for Muhammad to be a prophet?",
+      "bank": "ISL",
+      "original_message_timestamp_utc": "2026-10-07T13:38:54Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ISL-005",
+      "question": "Is the Qur’an’s literary inimitability itself a proof of divine origin?",
+      "bank": "ISL",
+      "original_message_timestamp_utc": "2026-10-07T13:38:54Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "ISL-006",
+      "question": "Did Muhammad claim miracles besides the Qur’an?",
+      "bank": "ISL",
+      "original_message_timestamp_utc": "2026-10-07T13:38:54Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-001",
+      "question": "What does ‘Judaism’ mean here?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-002",
+      "question": "What does traditional rabbinic Judaism expect of the Messiah?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-003",
+      "question": "Was there one universally agreed Jewish messianic expectation before Jesus?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-004",
+      "question": "What is the strongest Jewish objection to Jesus as Messiah?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-005",
+      "question": "What is the Christian answer to that objection?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-006",
+      "question": "Is a suffering Messiah alien to Judaism?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-007",
+      "question": "Does Isaiah 53 straightforwardly prove Jesus?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-008",
+      "question": "What makes Isaiah 53 significant for Christianity?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-009",
+      "question": "Does Psalm 22 literally say ‘they pierced my hands and feet’?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "JUD-010",
+      "question": "Does Daniel 9 clearly predict Jesus’ date?",
+      "bank": "JUD",
+      "original_message_timestamp_utc": "2026-10-07T13:53:01Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-001",
+      "question": "What does “Protestant” mean?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-002",
+      "question": "Is sola Scriptura simply “Catholics don't believe the Bible”?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-003",
+      "question": "Does Catholicism place Tradition above Scripture?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-004",
+      "question": "How does a Protestant know the biblical canon?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-005",
+      "question": "Are all traditions condemned in Scripture?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-006",
+      "question": "Can the visible Church or councils teach authoritatively?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-007",
+      "question": "What is justification?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-008",
+      "question": "Does Catholicism teach salvation by human works?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-009",
+      "question": "What does “faith alone” actually mean?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "PROT-010",
+      "question": "What is the Catholic objection to sola fide?",
+      "bank": "PROT",
+      "original_message_timestamp_utc": "2026-10-07T12:36:04Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-001",
+      "question": "What counts as ‘Lutheran doctrine’?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-002",
+      "question": "What is the central Lutheran doctrine of justification?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-003",
+      "question": "Does Lutheranism teach that good works are unnecessary or bad?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-004",
+      "question": "Is ‘faith alone’ simply ‘say you believe and live however you want’?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-005",
+      "question": "Are Catholic and Lutheran justification doctrines still completely opposed?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-006",
+      "question": "Did the Joint Declaration abolish every Catholic–Lutheran difference on justification?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-007",
+      "question": "What is the remaining justification difference?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-008",
+      "question": "Does Lutheranism believe Baptism actually does something?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-009",
+      "question": "Do Lutherans baptize infants?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "LUT-010",
+      "question": "Is Lutheran Eucharistic theology symbolic?",
+      "bank": "LUT",
+      "original_message_timestamp_utc": "2026-10-07T15:21:26Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "REST-001",
+      "question": "Are Jehovah’s Witnesses Trinitarian Christians?",
+      "bank": "REST",
+      "original_message_timestamp_utc": "2026-10-07T14:22:31Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "REST-002",
+      "question": "What do Jehovah’s Witnesses believe Jesus is?",
+      "bank": "REST",
+      "original_message_timestamp_utc": "2026-10-07T14:22:31Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "REST-003",
+      "question": "What is distinctive about 144,000?",
+      "bank": "REST",
+      "original_message_timestamp_utc": "2026-10-07T14:22:31Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "REST-004",
+      "question": "Do Witnesses believe in immortal souls or eternal hell?",
+      "bank": "REST",
+      "original_message_timestamp_utc": "2026-10-07T14:22:31Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "REST-005",
+      "question": "What is their current blood-transfusion rule?",
+      "bank": "REST",
+      "original_message_timestamp_utc": "2026-10-07T14:22:31Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "REF-001",
+      "question": "What counts as ‘Reformed’ or ‘Calvinist’ doctrine?",
+      "bank": "REF",
+      "original_message_timestamp_utc": "2026-10-07T15:28:59Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "id": "REF-025",
+      "question": "What is the deepest Catholic–Reformed divide?",
+      "bank": "REF",
+      "original_message_timestamp_utc": "2026-10-07T15:28:59Z",
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "SOURCE_EXCERPT_NOT_FULL_TRANSCRIPT_EXPORT",
+      "fully_verified_against_original_chat_export": false
+    }
+  ],
+  "unassigned_A_series_quoted_fragments": [
+    {
+      "batch": "A001–A025",
+      "question": "Can human reason really know that God exists?",
+      "original_message_timestamp_utc": "2026-10-07T20:31:08Z",
+      "original_per_question_id": null,
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "EXACT_QUOTED_PHRASE_BUT_NO_ATTESTED_ID",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "batch": "A001–A025",
+      "question": "If everything needs a cause, who caused God?",
+      "original_message_timestamp_utc": "2026-10-07T20:31:08Z",
+      "original_per_question_id": null,
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "EXACT_QUOTED_PHRASE_BUT_NO_ATTESTED_ID",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "batch": "A001–A025",
+      "question": "Did Jesus of Nazareth really exist?",
+      "original_message_timestamp_utc": "2026-10-07T20:31:08Z",
+      "original_per_question_id": null,
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "EXACT_QUOTED_PHRASE_BUT_NO_ATTESTED_ID",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "batch": "A001–A025",
+      "question": "Is the Resurrection presented as a real historical event or merely as a symbol of faith?",
+      "original_message_timestamp_utc": "2026-10-07T20:31:08Z",
+      "original_per_question_id": null,
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "EXACT_QUOTED_PHRASE_BUT_NO_ATTESTED_ID",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "batch": "A026–A050",
+      "question": "Why did Jesus have to die?",
+      "original_message_timestamp_utc": "2026-10-07T21:38:57Z",
+      "original_per_question_id": null,
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "EXACT_QUOTED_PHRASE_BUT_NO_ATTESTED_ID",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "batch": "A026–A050",
+      "question": "How do we know which books belong in the Bible?",
+      "original_message_timestamp_utc": "2026-10-07T21:38:57Z",
+      "original_per_question_id": null,
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "EXACT_QUOTED_PHRASE_BUT_NO_ATTESTED_ID",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "batch": "A026–A050",
+      "question": "Is sola Scriptura taught in Scripture?",
+      "original_message_timestamp_utc": "2026-10-07T21:38:57Z",
+      "original_per_question_id": null,
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "EXACT_QUOTED_PHRASE_BUT_NO_ATTESTED_ID",
+      "fully_verified_against_original_chat_export": false
+    },
+    {
+      "batch": "A026–A050",
+      "question": "Can Catholic doctrine develop without changing its meaning?",
+      "original_message_timestamp_utc": "2026-10-07T21:38:57Z",
+      "original_per_question_id": null,
+      "witness_kind": "PRIOR_ASSISTANT_OUTPUT_EXCERPT_FROM_PERSONAL_CONTEXT",
+      "confidence": "EXACT_QUOTED_PHRASE_BUT_NO_ATTESTED_ID",
+      "fully_verified_against_original_chat_export": false
+    }
+  ],
+  "validity": "PRELIMINARY_RETRIEVAL_WITNESSES_NOT_COMPLETE_CHAT_EXPORT",
+  "note": "This dataset supplements, and does not replace, the 282-source-record archive. Exact strings found in previous-assistant-output search summaries. Missing individual titles are null, not composed."
+}
