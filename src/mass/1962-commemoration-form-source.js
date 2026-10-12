@@ -1,4 +1,5 @@
 import {applyMissionSundayCollect} from "./1962-mission-sunday-source.js";
+import {projectJune30InseparableApostles} from "./1962-inseparable-apostles-source.js";
 // Shared source-first 1962 Mass-form oration projection.
 // Certified scope: source-identified single II-class Sunday feast and privileged Sunday / Advent feria.
 // Never infer universal privileges from feast titles, colours or typography.
@@ -49,6 +50,19 @@ export function select1962CommemorationsForMassForm({
     return untouched(proper,"PROPER_SOURCE_UNAVAILABLE");
   const comms=array(day.commemorations);
   if(comms.length===0)return untouched(proper,"NO_COMMEMORATIONS");
+  // §110: a reciprocal St Peter/Paul commemoration belongs INSIDE
+  // each source oration group and counts as a single prayer. Handle before
+  // the ordinary one-to-one calendar/oration matching logic.
+  if(comms.some(c=>c?.inseparable)){
+    const projected=projectJune30InseparableApostles({proper,calendarResolution,
+      form:normalizedForm});
+    if(projected.status==="CERTIFIED")return projected;
+    const blocked=Object.freeze({...data,
+      inseparableOrationsDecision:Object.freeze({status:"UNVERIFIED",
+        reason:projected.reason,source:"1960_GENERAL_RUBRICS_110"})});
+    return untouched(envelope?Object.freeze({...envelope,data:blocked}):blocked,
+      "INSEPARABLE_"+projected.reason);
+  }
   const sunday=new Date(String(calendarResolution.date)+"T12:00:00Z").getUTCDay()===0;
   const only=comms[0],sources=array(data.calendarCommemorations).filter(x=>!x?.inseparable);
   // Calendar identity is the named weekday path, NOT necessarily its
