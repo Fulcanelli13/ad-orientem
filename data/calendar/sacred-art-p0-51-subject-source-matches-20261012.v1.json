@@ -1,0 +1,1312 @@
+{
+  "schema": "AO_SACRED_ART_P0_51_SOURCE_MATCH_BATCH_20261012_V1",
+  "createdOn": "2026-10-12",
+  "ownerPR": 887,
+  "phase": "PHASE_3_4_CANDIDATE_MATCH_GAPS_ONLY",
+  "sourceWorklist": "data/calendar/sacred-art-134-subject-research-worklist-20261012.v1.json",
+  "latestApprovedUserDecisions": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+  "rules": [
+    "Immutable 101 selected artworks; no new human approval inferred.",
+    "No new pixels, acquisition, crop rights or production work.",
+    "Fra Angelico, El Greco and similar flat stylised proposals excluded; artist-name screening does not replace curator visual judgement.",
+    "One canonical artwork object reused across relevant modules, no file duplication.",
+    "Exact scene, contextual named saint, Eucharistic allegory and other subjects clearly distinguished.",
+    "Bible Atlas P1 83 subjects remain owned by independent research pipeline, no mutations.",
+    "Saint icon exception for Our Lady of Perpetual Help requires explicit user decision rather than silent stylistic inconsistency.",
+    "Sources establish actual paintings, not universal 1962 feast priority or app permission."
+  ],
+  "summary": {
+    "p0Unresolved": 51,
+    "devotions": 9,
+    "calendarSaints": 42,
+    "museumOrArchiveSourceMatchedSubjects": 18,
+    "verifiedObjectProposalAssignments": 22,
+    "canonicalDistinctArtworkLeads": 20,
+    "p0WithoutNewObjectMatch": 33,
+    "rubensApostlePanelMatches": 7,
+    "humanSelectionsUnchanged": 101,
+    "additionalHumanSelections": 0,
+    "sourceImagesAcquired": 0,
+    "imagesReleased": 0
+  },
+  "rows": [
+    {
+      "subjectId": "DEV-01",
+      "subject": "Sacred Heart of Jesus",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-n-dict-asson-pparition-of-the-acred-eart-to-argaret-ary",
+        "ART-ernard-n-zet-pparition-of-the-acred-eart-to-argaret-ary"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "commons-morlete-sacred-heart-1759",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "origin": "CANONICAL_ARCHIVE",
+          "inventory": "commons-morlete-sacred-heart-1759",
+          "relation": "EXACT_DEVOTIONAL_SACRED_HEART",
+          "note": "Rights/style review pending; not equivalent to apparition to Margaret Mary.",
+          "medium": "painting",
+          "sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "DEV-02",
+      "subject": "Immaculate Heart of Mary",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-nknown-rench-painter-mmaculate-eart-of-ary-ernois-altarpiece"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "DEV-05",
+      "subject": "Blessed Sacrament / Eucharistic Adoration",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-hilippe-de-hampaigne-a-rande-ne",
+        "ART-nonymous-rench-painter-doration-of-the-lessed-acrament",
+        "ART-hilippe-de-hampaigne-a-etite-ne"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "met-438434",
+          "artist": "Jean Auguste Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+          "origin": "CANONICAL_ARCHIVE",
+          "inventory": "438434",
+          "relation": "DIRECT_HOST_ADORATION",
+          "note": "Ingress depicts Host directly; no automatic release.",
+          "medium": "painting",
+          "sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        },
+        {
+          "canonicalProposalId": "met-437527",
+          "artist": "Peter Paul Rubens",
+          "title": "The Glorification of the Eucharist",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437527",
+          "origin": "CANONICAL_ARCHIVE",
+          "inventory": "437527",
+          "relation": "EUCHARISTIC_ALLEGORY_CONTEXTUAL",
+          "note": "Rubens oil sketch depicts Eucharistic glorification, not Benediction exposition.",
+          "medium": "painting",
+          "sha256": "521b3051abc5f86aa0d069f884fb731cbd339160f1667d8472ee6b35dc72ca65",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "DEV-10",
+      "subject": "Saint Joseph",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eorges-de-a-our-aint-oseph-the-arpenter",
+        "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "louvre-rf-1948-27",
+          "artist": "Georges de La Tour",
+          "title": "Saint Joseph charpentier",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010063817",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "RF 1948 27",
+          "relation": "EXACT_NAMED_JOSEPH_CHILD",
+          "note": "Same object as calendar Joseph.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        },
+        {
+          "canonicalProposalId": "mfah-96-1565",
+          "artist": "Guido Reni",
+          "title": "Saint Joseph and the Christ Child",
+          "sourceUrl": "https://emuseum.mfah.org/objects/36092/saint-joseph-and-the-christ-child",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "96.1565",
+          "relation": "EXACT_NAMED_JOSEPH_CHILD",
+          "note": "Prior researched alternative, rights unknown.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "DEV-11",
+      "subject": "Holy Souls in Purgatory",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-aint-eresa-nterceding-for-ernardino-de-endoza-in-urgatory",
+        "ART-orkshop-of-eter-aul-ubens-aint-eresa-nterceding-for-ouls-in-urgatory"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "met-437542",
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437542",
+          "origin": "CANONICAL_ARCHIVE",
+          "inventory": "437542",
+          "relation": "INTERCESSION_PURGATORY_NAMED_TERESA",
+          "note": "Rubens workshop; scene also names Saint Teresa of Avila.",
+          "medium": "painting",
+          "sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        },
+        {
+          "canonicalProposalId": "augustins-2004-1-218",
+          "artist": "Philippe de Champaigne",
+          "title": "Les Âmes du Purgatoire",
+          "sourceUrl": "https://collections.augustins.toulouse.fr/fr/notice/2004-1-218-les-ames-du-purgatoire-b35ce3cd-498e-4a7f-a4d9-4ed873b8270f",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "2004 1 218",
+          "relation": "EXACT_PURGATORY_SCENE",
+          "note": "French museum photo rights outstanding; crosslink All Souls.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "DEV-12",
+      "subject": "Our Lady of Perpetual Help",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-retan-school-icon-painter-ur-ady-of-erpetual-elp-historic-icon"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": "ORIGINAL_ICON_VISUAL_EXCEPTION_UNDECIDED",
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "DEV-13",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-armelite-devotional-artist-aint-h-r-se-of-isieux-traditional-painted-portrait"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": "MODERN_SAINT_HISTORICAL_PORTRAIT_AUTHENTICITY_REQUIRED",
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "DEV-15",
+      "subject": "Christ the King",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-hristus-alvator-undi"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "DEV-19",
+      "subject": "All Saints",
+      "category": "Devotions",
+      "group": "Prayers & novenas",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-ll-aints-oil-sketch",
+        "ART-eter-aul-ubens-oly-amily-urrounded-by-aints"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "boijmans-1738-ok",
+          "artist": "Peter Paul Rubens",
+          "title": "All Saints",
+          "sourceUrl": "https://www.boijmans.nl/en/collection/artworks/2721/all-saints",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "1738 (OK)",
+          "relation": "EXACT_ALL_SAINTS",
+          "note": "c.1614 oil sketch; same canonical artwork as Calendar Home candidate.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        },
+        {
+          "canonicalProposalId": "prado-giaquinto-glory-saints",
+          "artist": "Corrado Giaquinto",
+          "title": "The Glory of Saints",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-glory-of-saints/522ac2bb-22ac-4f25-8903-b96ae539da80",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "Prado object",
+          "relation": "CONTEXTUAL_HEAVENLY_SAINTS",
+          "note": "1755–56 Baroque painting; compare aesthetic quality.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-aint-ames-the-reater-postolate"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rubens-p001648",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Greater",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-greater/72f76d59-fab7-4cea-8214-af0fb98fc293",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P001648",
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "note": "Prado duque de Lerma 1610–12 coherent Apostolado. Devotional identification, not historical likeness.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-aint-ohn-postolate"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rubens-p001647",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint John the Evangelist",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-the-evangelist/29bfd358-bfd3-43b4-a894-b57f6eb2d81f",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P001647",
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "note": "Prado duque de Lerma 1610–12 coherent Apostolado. Devotional identification, not historical likeness.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-aint-hilip-postolate"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rubens-p001650",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Philip",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-philip/a0e78920-8f28-47f5-8cd5-f50ba1dfa8c5",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P001650",
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "note": "Prado duque de Lerma 1610–12 coherent Apostolado. Devotional identification, not historical likeness.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-aint-artholomew-postolate"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rubens-p001652",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Bartholomew",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/f49d896e-547c-40bd-ac5d-4cb537e429d8",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P001652",
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "note": "Prado duque de Lerma 1610–12 coherent Apostolado. Devotional identification, not historical likeness.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-aint-homas-postolate"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rubens-p001654",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Thomas",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/629fe4f7-9fdd-4b8f-af15-653882a62493",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P001654",
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "note": "Prado duque de Lerma 1610–12 coherent Apostolado. Devotional identification, not historical likeness.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-aint-ames-the-ess-postolate"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rubens-p001651",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Less",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-less/02ef9e0d-b544-48cb-bcd0-89611b37f55b",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P001651",
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "note": "Prado duque de Lerma 1610–12 coherent Apostolado. Devotional identification, not historical likeness.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "category": "Calendar saints",
+      "group": "Apostles",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eter-aul-ubens-aint-imon-postolate"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rubens-p001655",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Simon",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/0679cee8-ea16-47dc-81f8-179530faaa68",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P001655",
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "note": "Prado duque de Lerma 1610–12 coherent Apostolado. Devotional identification, not historical likeness.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "category": "Calendar saints",
+      "group": "Evangelists",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-uan-ibalta-aint-ark-and-aint-uke",
+        "ART-rancisco-ans-abot-aint-ark"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "category": "Calendar saints",
+      "group": "Evangelists",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-uan-ibalta-aint-ark-and-aint-uke",
+        "ART-orkshop-of-uinten-assys-aint-uke-ainting-the-irgin"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-ray-uan-izi-aint-regory-the-reat",
+        "ART-icolas-ertin-aint-regory-the-reat"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-rubens-defenders",
+          "artist": "Peter Paul Rubens",
+          "title": "The Defenders of the Eucharist",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-defenders-of-the-eucharist/c6a0ed37-f1ba-4781-9258-8eabd87ff1c2",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "Prado",
+          "relation": "CONTEXTUAL_NAMED_GREGORY_IN_GROUP",
+          "note": "Gregory identified within several Doctors, not a solo portrait.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-nonymous-lemish-painter-actation-of-aint-ernard",
+        "ART-nknown-rench-painter-actation-of-aint-ernard"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "prado-ribalta-p002804",
+          "artist": "Francisco Ribalta",
+          "title": "Christ embracing Saint Bernard",
+          "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "P002804",
+          "relation": "EXACT_BERNARD_WITH_CHRIST",
+          "note": "1625–27 Baroque oil on canvas.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-ray-uan-de-la-iseria-ifetime-ortrait-of-aint-eresa-of-vila",
+        "ART-eter-aul-ubens-aint-eresa-nterceding-for-ouls"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "met-437542",
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437542",
+          "origin": "CANONICAL_ARCHIVE",
+          "inventory": "437542",
+          "relation": "NAMED_TERESA_IN_PURGATORY_INTERCESSION",
+          "note": "Reuse DEV-11's same Rubens workshop artwork, not separate portrait.",
+          "medium": "painting",
+          "sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-oman-school-aint-ohn-of-the-ross"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-ttributed-to-onadio-aint-lphonsus-iguori"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-chool-of-hilippe-de-hampaigne-aint-rancis-de-ales"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-icolas-ertin-aint-thanasius"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-icolas-ertin-aint-regory-azianzen"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-icolas-ertin-aint-ohn-hrysostom",
+        "ART-edro-de-rrente-aint-ohn-hrysostom"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "NO_PREVIOUS_CANDIDATE",
+      "oldCandidateIds": [],
+      "priorUnverifiedLeads": [
+        {
+          "artworkId": "ART-research-20261012-roman-school-saint-bede-cycle",
+          "artist": "Anonymous Roman school",
+          "title": "Saint Bede — English saints cycle",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200230125-0",
+          "matchNotes": "individual Saint Bede component of a documented cycle; object link pending",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+        }
+      ],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "NO_PREVIOUS_CANDIDATE",
+      "oldCandidateIds": [],
+      "priorUnverifiedLeads": [
+        {
+          "artworkId": "ART-research-20261012-crespi-immaculate-conception-anselm-martin",
+          "artist": "Giuseppe Maria Crespi",
+          "title": "The Immaculate Conception with Saints Anselm and Martin",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010064462",
+          "matchNotes": "exact person; group scene",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+        }
+      ],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-acopo-di-ione-and-workshop-aint-eter-amian-proposed-identification"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "NO_PREVIOUS_CANDIDATE",
+      "oldCandidateIds": [],
+      "priorUnverifiedLeads": [
+        {
+          "artworkId": "ART-research-20261012-franchi-portrait-albert-the-great",
+          "artist": "Giuseppe Franchi",
+          "title": "Portrait of Saint Albert the Great",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0060-00113_R03",
+          "matchNotes": "exact saint portrait",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+        }
+      ],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-arlo-erotti-catalogue-attribution-ortrait-of-aint-obert-ellarmine"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "NO_PREVIOUS_CANDIDATE",
+      "oldCandidateIds": [],
+      "priorUnverifiedLeads": [
+        {
+          "artworkId": "ART-research-20261012-vallejo-glorification-immaculate-canisius",
+          "artist": "Francisco Antonio Vallejo",
+          "title": "Glorification of the Immaculate Conception",
+          "sourceUrl": "https://artsandculture.google.com/asset/glorification-of-the-immaculate-conception/UAG7iiXG4ZAo5A?hl=en",
+          "matchNotes": "Saint Peter Canisius appears among many figures; contextual group scene",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+        }
+      ],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "NO_PREVIOUS_CANDIDATE",
+      "oldCandidateIds": [],
+      "priorUnverifiedLeads": [
+        {
+          "artworkId": "ART-research-20261012-banchero-saint-lawrence-brindisi",
+          "artist": "Angelo Giacinto Banchero",
+          "title": "Saint Lawrence of Brindisi",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+          "matchNotes": "exact saint portrait",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+        }
+      ],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "NO_PREVIOUS_CANDIDATE",
+      "oldCandidateIds": [],
+      "priorUnverifiedLeads": [
+        {
+          "artworkId": "ART-research-20261012-ligurian-school-cyril-alexandria",
+          "artist": "Anonymous Ligurian painter",
+          "title": "Saint Cyril of Alexandria",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700018145",
+          "matchNotes": "exact saint portrait",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+        }
+      ],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "NO_PREVIOUS_CANDIDATE",
+      "oldCandidateIds": [],
+      "priorUnverifiedLeads": [
+        {
+          "artworkId": "ART-research-20261012-antonio-nannoni-cyril-jerusalem",
+          "artist": "Attributed to Antonio Nannoni",
+          "title": "Saint Cyril of Jerusalem",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900117888A-1",
+          "matchNotes": "exact saint portrait, small fresco",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+        }
+      ],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "category": "Calendar saints",
+      "group": "Doctors",
+      "priority": "P0",
+      "originalProblem": "NO_PREVIOUS_CANDIDATE",
+      "oldCandidateIds": [],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-eorges-de-a-our-aint-oseph-the-arpenter",
+        "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "louvre-rf-1948-27",
+          "artist": "Georges de La Tour",
+          "title": "Saint Joseph charpentier",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010063817",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "RF 1948 27",
+          "relation": "EXACT_NAMED_JOSEPH_CHILD",
+          "note": "Reuse DEV-10 artwork.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-erugino-rchangel-aphael-with-obias"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "louvre-inv-1736",
+          "artist": "Rembrandt",
+          "title": "L'Archange Raphaël quittant la famille de Tobie",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010062024",
+          "origin": "INSTITUTIONAL_OBJECT",
+          "inventory": "INV 1736",
+          "relation": "NARRATIVE_TOBIT_12_RAPHAEL_NAMED",
+          "note": "1637 oil on wood; DO NOT confuse with Louvre drawing or Tobit chapter 6.",
+          "medium": "painting",
+          "sourceEvidence": "MUSEUM_COLLECTION_RECORD",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-armelite-devotional-artist-aint-h-r-se-of-isieux-traditional-painted-portrait"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": "MODERN_SAINT_HISTORICAL_PORTRAIT_AUTHENTICITY_REQUIRED",
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-artolom-steban-urillo-ision-of-aint-nthony-of-adua"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-ean-ouvenet-aint-ouis-olding-the-rown-of-horns",
+        "ART-uillaume-uillon-ethi-re-aint-ouis-isiting-the-lague-tricken"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-ames-arry-aint-atrick-aptising-an-rish-ing"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-orenzo-onaco-aint-enedict-dmitting-aurus-and-lacidus"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-n-dict-asson-pparition-of-the-acred-eart-to-argaret-ary",
+        "ART-ernard-n-zet-pparition-of-the-acred-eart-to-argaret-ary"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-aul-orel-ainted-pisodes-from-ife-of-ur-of-rs"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-aolo-eronese-onsecration-of-aint-icholas"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-arlo-rivelli-aint-ucy"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [
+        {
+          "canonicalProposalId": "nga-12209",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Lucy",
+          "sourceUrl": "https://www.nga.gov/artworks/12209-saint-lucy",
+          "origin": "CANONICAL_ARCHIVE",
+          "inventory": "12209",
+          "relation": "EXACT_LUCY_SAINT_ICONOGRAPHY",
+          "note": "Zurbarán original already archived; visual preference check pending.",
+          "medium": "painting",
+          "sha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b",
+          "userApproval": false,
+          "sourceImageAcquiredInPhase": false,
+          "appApproved": false
+        }
+      ],
+      "status": "OBJECT_SOURCE_CANDIDATES_FOR_HUMAN_REVIEW",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-talian-school-artyrdom-of-aint-gnes",
+        "ART-uan-icente-asip-he-artyrdom-of-aint-gnes"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-oseph-arie-ien-aint-enis-reaching-the-aith-in-rance"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "category": "Calendar saints",
+      "group": "Other Class A",
+      "priority": "P0",
+      "originalProblem": "FIND_BETTER_ALTERNATIVE",
+      "oldCandidateIds": [
+        "ART-nonymous-after-imon-ran-ois-aint-incent-de-aul"
+      ],
+      "priorUnverifiedLeads": [],
+      "paintings": [],
+      "status": "OPEN_PAINTING_RESEARCH",
+      "specialEditorialGate": null,
+      "userSelectionApproved": false,
+      "photoRightsAndAcquisition": "OUT_OF_SCOPE_PHASE_3_4"
+    }
+  ]
+}
