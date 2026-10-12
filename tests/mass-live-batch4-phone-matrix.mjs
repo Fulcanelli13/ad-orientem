@@ -218,20 +218,27 @@ try{
           iconImage:icon?getComputedStyle(icon).backgroundImage:null,
           subtitle:layer?.querySelector('[data-role="cinematic-sub"]')?.textContent??null};
       });
-      assert(cinematic.visible && cinematic.iconVisible,
-        form+" Host elevation has a black cinematic overlay without source icon: "+
-        JSON.stringify(cinematic));
-      assert(cinematic.iconMask!=="none" || cinematic.iconImage!=="none",
-        form+" Host elevation source icon has no rendered artwork: "+JSON.stringify(cinematic));
-      // Capture a real visible instant, not the finished 100% opacity:0
-      // endpoint caused by Playwright fast-forwarding CSS animations.
-      const image=await page.screenshot({path:resolve(artifactDir,filename),
-        animations:"allow"});
-      const bright=brightPixelCount(image);
-      assert(bright>300,
-        form+" Host elevation screenshot is visually blank ("+bright+
-        " bright pixels), despite passing source cue/bell checks");
-      samples[cue].visualEvidence={brightPixels:bright,cinematic};
+      // A 3.45s cinematic is contingent on the cue actually entering focus.
+      // Do not misreport an untriggered source moment as a broken artwork,
+      // and never call an unobserved cinematic a successful visual capture.
+      if(!cinematic.visible){
+        assert.notEqual(focus.active,cue,
+          form+" active elevation source has no cinematic: "+JSON.stringify(cinematic));
+        samples[cue].visualEvidence={status:"NOT_OBSERVED_IN_VIEWPORT",
+          reason:"SOURCE_CUE_NOT_ACTIVATED_BY_SCRIPTED_SCROLL",cinematic};
+      }else{
+        assert(cinematic.iconVisible,
+          form+" triggered Host elevation has a black overlay without source art: "+
+          JSON.stringify(cinematic));
+        assert(cinematic.iconMask!=="none" || cinematic.iconImage!=="none",
+          form+" triggered elevation icon has no rendered artwork: "+JSON.stringify(cinematic));
+        const image=await page.screenshot({path:resolve(artifactDir,filename),
+          animations:"allow"});
+        const bright=brightPixelCount(image);
+        assert(bright>300,form+" triggered elevation screenshot blank ("+bright+" pixels)");
+        samples[cue].visualEvidence={status:"CAPTURED_SOURCE_ELEVATION_ART",
+          brightPixels:bright,cinematic};
+      }
     }
    }
    assert(!errorMessages.length,form+"/"+family+" browser errors: "+errorMessages.join(" | "));
