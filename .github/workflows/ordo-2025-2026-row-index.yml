@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'tools/calendar/ordo-2025-2026-row-index.mjs'
+      - 'tools/calendar/compare-1962-ordo-prefaces.mjs'
       - '.github/workflows/ordo-2025-2026-row-index.yml'
 jobs:
   extract:
@@ -31,10 +32,21 @@ jobs:
         run: |
           node tools/calendar/ordo-2025-2026-row-index.mjs artifacts/ordo.txt \
             data/calendar/audits/1962-ordo-2025-2026-printed-row-index.v1.json
+      - name: Install browser for 364-date resolver evaluation
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Compare all 364 source Preface candidates with actual app resolver
+        run: |
+          node tools/calendar/compare-1962-ordo-prefaces.mjs \
+            data/calendar/audits/1962-ordo-2025-2026-printed-row-index.v1.json \
+            data/calendar/audits/1962-ordo-2025-2026-364-day-preface-triage.v1.json
       - name: Upload original text-layer research register
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ordo-2025-2026-printed-date-rows
-          path: data/calendar/audits/1962-ordo-2025-2026-printed-row-index.v1.json
+          path: |
+            data/calendar/audits/1962-ordo-2025-2026-printed-row-index.v1.json
+            data/calendar/audits/1962-ordo-2025-2026-364-day-preface-triage.v1.json
           if-no-files-found: warn
