@@ -24,6 +24,12 @@ assert.ok(by("PASSION","bethphage").index<by("PASSION","olives").index,"Bethphag
 assert.ok(by("PUBLIC","jericho").reference,"multiple Jericho episodes stay on timeline");
 const temple=stops.find(s=>s.reference==="John 2:13–22");
 assert.equal(temple.index,82,"single-event relocation preserves 151 canonical sources");
+assert.equal(temple.eventKey,"biblical:event:jerusalem-temple-e3");
+assert.equal(new Set(stops.map(s=>s.eventKey)).size,151,
+ "every canonical biblical event must have one unique stable source identity");
+assert.ok(stops.every(s=>s.eventKey.startsWith("biblical:")&&
+ (s.sourceEventId===null||s.eventKey==="biblical:event:"+s.sourceEventId)),
+ "artwork, theatre and genealogy must use stable event keys rather than screen indices");
 assert.equal(temple.era,"PUBLIC");
 assert.ok(temple.index>named("The wedding at Cana").index&&temple.index<by("PUBLIC","capernaum").index);
 assert.equal(stops.filter(s=>s.reference==="John 2:13–22").length,1,"do not invent a second cleansing");
