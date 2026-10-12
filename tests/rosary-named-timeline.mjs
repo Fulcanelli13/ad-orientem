@@ -10,6 +10,6 @@ assert.equal(rosaryNamedChapters([],{}).length,0);
 assert.equal(rosaryNamedChapters([{kind:"prayer"}],{french:true})[0].title,"Prières du Rosaire");
 const source=(await import("node:fs")).readFileSync("src/pray/presentation-runtime.js","utf8");
 assert.match(source,/installRosaryNamedTimeline\(r\)/);
-assert.match(source,/AO_ROSARY_V381\?\.setStep\?\.\(start\)/);
+assert.match(source,/AO_ROSARY_V381\.setStep\(start\)/);
 assert.doesNotMatch(source,/rosaryNamedChapters\([^\n]+\)\.splice/);
 console.log("PASS source-owned Rosary named chapter grouping and canonical step delegation");
