@@ -29,6 +29,58 @@ const css=`
 #aoPray435930 .aoRosaryBegin{width:100%;padding:14px 18px;min-height:52px;border-radius:8px;border:1px solid rgba(210,190,151,.9);color:var(--ao-ink,#eee6dc);background:rgba(210,190,151,.17);font:500 1.1rem Georgia,serif}
 #aoPray435930 .aoRosaryHeld{font-size:.86rem;color:var(--ao-muted,#cbbfb2);border-top:1px solid rgba(205,185,150,.2);padding-top:14px}
 #aoPray435930 .aoRosaryChooser .aoMercySource small{display:block;margin-top:6px}
+/* One primary recitation action; source and alternatives are always reachable.
+   Existing donor Rosary player, prayer text and liturgical flow stay untouched. */
+#aoPray435930 .aoRosaryChooser{gap:12px;padding-top:14px}
+#aoPray435930 .aoRosaryReady{
+  display:grid;gap:8px;min-width:0;
+  padding:22px 18px 20px;border:1px solid rgba(205,185,150,.35);
+  border-radius:14px;background:linear-gradient(160deg,rgba(205,185,150,.10),rgba(14,22,29,.25));
+}
+#aoPray435930 .aoRosaryReady .aoMercyKicker{margin:0;font-size:11px}
+#aoPray435930 .aoRosaryReady h2{
+  margin:0;color:var(--ao-ink,#eee6dc);
+  font:500 clamp(24px,5vw,30px)/1.2 Georgia,serif
+}
+#aoPray435930 .aoRosaryReadyChoice{
+  margin:0;font:600 13px/1.45 system-ui,sans-serif;color:var(--ao-ink,#eee6dc)
+}
+#aoPray435930 .aoRosaryReadyDescription{
+  margin:1px 0 6px;color:var(--ao-muted,#cbbfb2);
+  font:400 14px/1.55 system-ui,sans-serif
+}
+#aoPray435930 .aoRosaryReady .aoRosaryBegin{
+  display:block;min-height:54px;margin-top:4px;font-size:19px
+}
+#aoPray435930 .aoRosarySourceCurrent{margin:0}
+#aoPray435930 .aoRosarySourceCurrent a{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--ao-muted,#cbbfb2);font:500 12px/1.4 system-ui,sans-serif;
+  text-decoration:underline;text-underline-offset:3px
+}
+#aoPray435930 .aoRosarySourceCurrent small{
+  display:block;font:400 12px/1.4 system-ui,sans-serif;color:var(--ao-muted,#cbbfb2)
+}
+#aoPray435930 .aoRosaryCustomizeToggle{
+  width:100%;min-height:50px;padding:12px 14px;display:flex;
+  align-items:center;justify-content:space-between;gap:12px;
+  border:1px solid rgba(205,185,150,.26);border-radius:10px;
+  color:var(--ao-ink,#eee6dc);background:rgba(205,185,150,.045);
+  text-align:left;font:600 13px/1.4 system-ui,sans-serif
+}
+#aoPray435930 .aoRosaryCustomizeToggle span{font-size:20px;line-height:1;color:var(--ao-muted,#cbbfb2)}
+#aoPray435930 .aoRosaryCustomizeToggle[aria-expanded="true"]{border-color:rgba(205,185,150,.55)}
+#aoPray435930 .aoRosaryCustomPanel{display:grid;gap:18px;padding:10px 0 0}
+#aoPray435930 .aoRosaryCustomPanel[hidden]{display:none!important}
+#aoPray435930 .aoRosaryCustomizeToggle:focus-visible,
+#aoPray435930 .aoRosaryReady .aoRosaryBegin:focus-visible,
+#aoPray435930 .aoRosaryChoice:focus-visible{
+  outline:2px solid var(--ao-liturgical-accent,#d9bd85);outline-offset:3px
+}
+@media(max-width:430px){
+ #aoPray435930 .aoRosaryReady{padding:18px 14px 16px}
+ #aoPray435930 .aoRosaryReady h2{font-size:25px}
+}
 @media(min-width:650px){#aoPray435930 .aoRosaryChoiceGrid{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoMercyReader *{animation:none!important;transition:none!important}}
 `;
