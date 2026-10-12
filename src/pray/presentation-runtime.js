@@ -1896,6 +1896,38 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   if(!cardDeck)bindAngelusExactRail();
  });else stopAngelusExactRail();
  if((view==='library'&&LIB.open)||(view==='prayerOnly'&&prayerId))queueMicrotask(()=>installLibraryParagraphFocus(m,view==='library'?LIB.open:prayerId));
+ // Four independent source owners share the same presentation engine.
+ // No source sequence is copied into the adapter; it only names and focuses
+ // cards and emits explicit, user-initiated navigation.
+ if(['penitential','litany','sevenWords','fortyHours'].includes(view))queueMicrotask(()=>{
+  const owner=view;
+  if(owner==='litany'&&!LIT.sections?.length)return; // fail closed during historical witness loading
+  const stages=owner==='penitential'?PEN_PSALMS.map((p,i)=>({
+    id:'penitential-'+i,title:'Psalm '+p.trad+(p.modern!==p.trad?' ('+p.modern+')':'')
+   })):owner==='litany'?LIT.sections.map((x,i)=>({id:'litany-'+i,title:x.title}))
+   :owner==='sevenWords'?WORD_REFS.map((_,i)=>({id:'word-'+(i+1),title:(isFr()?WORD_LABELS.fr:WORD_LABELS.en)[i]}))
+   :FORTY_STAGES.map((x,i)=>({id:'forty-'+i,title:L(x[0],x[1])}));
+  const step=owner==='penitential'?PEN.step:owner==='litany'?LIT.step
+   :owner==='sevenWords'?SEVEN.step:FORTY.step;
+  const reader=installSequentialDevotionalReader({
+   mount:m,kind:owner,chapters:stages,activeIndex:step,
+   paragraphSelector:'.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930ScriptureVerse,.aoP435930LitanyLine,.aoP435930WitnessParagraph,.aoP435930Text,.aoP435930Prayer .aoP435930Flip',
+   timelineLabel:owner==='penitential'?L('Seven Penitential Psalms','Sept psaumes pénitentiels')
+    :owner==='litany'?L('Litany invocations','Invocations des litanies')
+    :owner==='sevenWords'?L('Seven Gospel Words','Sept Paroles évangéliques')
+    :L('Forty Hours · follow the church','Quarante-Heures · suivez le rite'),
+   onNavigate:i=>{
+    if(view!==owner)return;
+    if(owner==='penitential')PEN.step=i;
+    else if(owner==='litany')LIT.step=i;
+    else if(owner==='sevenWords')SEVEN.step=i;
+    else FORTY.step=i;
+    render();
+   }
+  });
+  if(reader)m.querySelector('.aoP435930DevotionalGuidedReader')
+   ?.setAttribute('data-ao-devotional-dual-axis','true');
+ });
  if(view==='confession'&&CONF.path&&CONF.stage>=1)queueMicrotask(()=>{
   const stage=CONF.stage,path=CONF.path;
   const cards=stage===1?confessionExaminationCards(path,(isFr()?DATA.examFr:DATA.exam)?.sections):
