@@ -27,7 +27,7 @@ export function rosarySourceChapters(steps,{french=false}={}){
   chapters.push({id:"opening",title:french?"Prières initiales":"Opening prayers",start:0});
  for(const [number,{step,index}] of mystery.entries()){
   const prefix=String(step?.id||"").slice(0,3);
-  const ordinal=Number(String(step?.id||"").match(/(\d+)$/)?.[1])||Number(step?.mi)+1||number+1;
+  const ordinal=Number(String(step?.id||"").match(/(\d+)$/)?.[1])||(Number.isInteger(step?.mi)?step.mi+1:number+1);
   const pair=TITLES[prefix]?.[ordinal-1];
   const title=pair?.[french?1:0]||(french?"Mystère ":"Mystery ")+ordinal;
   chapters.push({id:"mystery-"+String(step?.id||number+1),title,start:index,mysteryId:String(step?.id||"")});
