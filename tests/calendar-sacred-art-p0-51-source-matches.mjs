@@ -108,7 +108,7 @@ assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-27").paintings[0].origin
  "ACADEMIC_DOCUMENTED_CHURCH_PAINTING");
 assert.equal(results.summary.sourceAuthenticatedNewAssignmentsInThisTurn,12);
 assert.equal(results.summary.researchedCandidatesAddedThisTurn,9);
-assert.equal(results.summary.p0UnresolvedWithStrongNewSourceCandidates,44);
+assert.equal(results.summary.p0WithSourcedResearchOptions,44);
 assert.equal(results.summary.p0StillNeedingMasterpieceQualityOrIconException,7);
 assert.equal(results.summary.userApprovedNewSubjectSelections,0);
 assert.equal(results.summary.reproductionWorkInitiatedInCurrentPhase,0);
