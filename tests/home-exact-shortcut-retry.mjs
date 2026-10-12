@@ -22,7 +22,9 @@ class Element {
   closest(selector){
     const match=selector==="[data-home-shortcut-retry]"?this.dataset.homeShortcutRetry:
       selector==="[data-home-shortcut-error]"?this.dataset.homeShortcutError:
-      selector==="[data-home-cu-route]"?this.dataset.homeCuRoute:null;
+      selector==="[data-home-cu-route]"?this.dataset.homeCuRoute:
+      selector==="[data-home-cu-dynamic]"?this.dataset.homeCuDynamic:
+      selector==="[data-home-cu-static]"?this.dataset.homeCuStatic:null;
     return match?this:this.parentElement?.closest(selector)??null;
   }
   querySelectorAll(selector){
@@ -80,5 +82,36 @@ box=screen.querySelectorAll("[data-home-shortcut-error]")[0];
 assert.match(box.children[0].textContent,/Impossible d’ouvrir/);
 assert.equal(box.children[1].textContent,"Réessayer");
 assert.equal(box.dataset.homeShortcutError,"pray.novenas");
+
+
+// The daily Home Angelus cannot launch a second AO_RULE_V411 prayer sheet.
+// Its morning/noon/evening context and static shortcut must converge on the
+// exact same module ID used in the Prayer catalogue, without opening its hub.
+routeOk=true;language="en";
+win.AO_RULE_V411={
+  openDynamic(id){calls.push("BAD_DYNAMIC_RULE:"+id);return true;},
+  openStatic(id){calls.push("BAD_STATIC_RULE:"+id);return true;}
+};
+const staticAngelus=new Element("button");staticAngelus.dataset.homeCuStatic="angelus";screen.appendChild(staticAngelus);
+const dynamicAngelus=new Element("button");
+dynamicAngelus.dataset.homeCuDynamic="angelus.noon";
+dynamicAngelus.dataset.homeCuRoute="pray.angelus_regina";
+screen.appendChild(dynamicAngelus);
+calls.length=0;
+await fire(staticAngelus);
+await fire(dynamicAngelus);
+assert.deepEqual(calls,["registry:pray.angelus_regina","registry:pray.angelus_regina"],
+  "Home must use one canonical Angelus/Regina reader regardless of shortcut");
+assert.equal(calls.some(c=>/BAD_|BAD_GENERIC_HUB/.test(c)),false,
+  "Legacy Daily Rule reader still intercepts the Angelus");
+const staticRosary=new Element("button");staticRosary.dataset.homeCuStatic="rosary";screen.appendChild(staticRosary);
+calls.length=0;
+await fire(staticRosary);
+assert.deepEqual(calls,["registry:pray.rosary"],"Home Rosary must preserve canonical engine ownership");
+routeOk=false;calls.length=0;
+await fire(staticAngelus);
+assert.deepEqual(calls,["registry:pray.angelus_regina","direct:pray.angelus_regina"]);
+assert.equal(screen.querySelectorAll("[data-home-shortcut-error]")[0]?.dataset?.homeShortcutError,
+  "pray.angelus_regina","Unavailable canonical Angelus should show an exact-route retry, not the legacy reader");
 
 console.log("PASS Home exact shortcut, visible EN/FR retry and no generic Pray fallback");
