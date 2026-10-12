@@ -24,7 +24,13 @@ try{
  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,locale:"fr-FR",serviceWorkers:"block"});
  const errors=[];page.on("pageerror",e=>errors.push(e.message));
  await page.goto("http://127.0.0.1:4286/index.html",{waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
+ await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true&&typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
+ await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("settings"));
+ await page.waitForSelector("#ao-settings-modular-root [data-settings-route='/settings/language-reading']",{timeout:20000});
+ await page.locator('[data-settings-route="/settings/language-reading"]').click();
+ await page.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
+ await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr",null,{timeout:10000});
+ await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
  const open=async id=>{
   const result=await page.evaluate(route=>globalThis.AO_MODULES.open(route),id);
@@ -54,6 +60,18 @@ try{
  await page.screenshot({path:resolve(captures,"morning-390-fr.png"),animations:"disabled"});
  const first=await snapshot();
  assert.equal(first.route,"pray.morning_evening");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-options]").evaluate(x=>x.open),false,
+   "Reading options should not crowd the opening prayer");
+ const opening=await page.evaluate(()=>{
+   const card=document.querySelector("#aoPray435930 .aoDevoCard");
+   const options=document.querySelector("#aoPray435930 [data-ao-daily-options]");
+   const glossary=document.querySelector("#aoPray435930 [data-tp381-glossary]");
+   return {cardTop:card?.getBoundingClientRect().top,optionsAfter:!!(card.compareDocumentPosition(options)&Node.DOCUMENT_POSITION_FOLLOWING),
+     glossaryAfter:!!(card.compareDocumentPosition(glossary)&Node.DOCUMENT_POSITION_FOLLOWING)};
+ });
+ assert.ok(opening.cardTop<390&&opening.optionsAfter&&opening.glossaryAfter,
+   "Prayer must precede secondary descriptions and controls: "+JSON.stringify(opening));
+ assert.match(await page.locator("#aoPray435930 .aoTP381DaypartStrip").innerText(),/Matin.*Soir/);
  assert.equal(first.kind,"daily");
  assert.ok(first.stops>=4,"No titled daily prayer card timeline");
  assert.equal(first.index,0);assert.equal(first.active,1);assert.equal(first.overflow,"auto");
@@ -74,6 +92,8 @@ try{
  await page.screenshot({path:resolve(captures,"examen-390-fr.png"),animations:"disabled"});
  const exam=await snapshot();
  assert.equal(exam.route,"pray.nightly_examen");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-examen-options]").evaluate(x=>x.open),false,
+   "Nightly examen context must not overshadow prayer text");
  assert.equal(exam.kind,"examen");assert.ok(exam.stops>=4);assert.equal(exam.active,1);
  await swipe(-175,5);
  assert.equal((await snapshot()).index,1,"Nightly Examen did not move one card");
