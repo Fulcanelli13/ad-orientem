@@ -47,7 +47,9 @@ try{
  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
  const errors=[];page.on("pageerror",e=>errors.push(e.message));
  await page.goto("http://127.0.0.1:4299/index.html",{waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:15000});
  const baseline=await page.evaluate(()=>({
   runtime:typeof globalThis.AO_RUNTIME_V8,
   service:typeof globalThis.AO_RUNTIME_V8?.scriptureService?.load
@@ -128,6 +130,8 @@ try{
  // permanent error loop: source bounding rejects it and clears the cache key.
  const invalid=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
  await invalid.goto("http://127.0.0.1:4299/index.html",{waitUntil:"domcontentloaded"});
+ await invalid.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function");
+ assert.equal(await invalid.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
  await invalid.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function");
  await invalid.evaluate(()=>{
   localStorage.setItem("ao2:v435930:ws:en:litany-saints-1883-en-v2",
