@@ -8,6 +8,7 @@ import { compileMassPlan, makeResolvedMass } from "../src/mass/session-engine.js
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const core=load("../data/mass/special-days-core.v1.1.json");
 const payload=load("../data/presentation/reader-good-friday.v1.json");
+const voiceAnchors=load("../data/mass/good-friday-passion-voice-anchors.v1.json");
 const ordinary=load("../data/presentation/reader-text-sung.v1.json");
 const graph=core.graphs.GF;
 
@@ -43,6 +44,38 @@ const death=built.steps.find(x=>x.recordId==="GF-PASS-320");
 assert.equal(death.posture,"KNEEL");
 assert.equal(death.action,"PAUSE_BRIEFLY");
 assert.equal(death.surfaceKey,"PASSION_BEFORE_DEATH");
+const voiced=buildGoodFridayReader({graph,payload,voiceAnchors});
+assert.equal(voiced.sourceRecordCount,56,"Source voice anchors do not add ritual events");
+const firstPassion=voiced.steps.find(x=>x.recordId==="GF-PASS-310");
+assert.equal(firstPassion.paragraphs.length,payload.passion.preDeath.length);
+assert.ok(!firstPassion.paragraphs[0].scriptureVoiceSpans,
+  "Narrator-only opening may not be silently labeled Christus");
+const known=firstPassion.paragraphs[1].scriptureVoiceSpans;
+assert.equal(known.length,6);
+assert.equal(known.filter(x=>x.role==="CHRISTUS").length,4);
+assert.equal(known.filter(x=>x.role==="SYNAGOGA").length,2);
+assert.ok(known.every(x=>firstPassion.paragraphs[1].latin.slice(x.start,x.end)===x.phrase));
+const all=firstPassion.paragraphs.flatMap(x=>x.scriptureVoiceSpans??[]);
+assert.equal(all.length,voiceAnchors.expectedAnchors);
+assert.equal(all.filter(x=>x.role==="CHRISTUS").length,16);
+assert.equal(all.filter(x=>x.role==="SYNAGOGA").length,33);
+assert.deepEqual(firstPassion.paragraphs.map(x=>x.latin),payload.passion.preDeath,
+  "Role decoration must preserve every Latin Passion word");
+const afterDeath=voiced.steps.find(x=>x.recordId==="GF-PASS-330");
+assert.deepEqual(afterDeath.paragraphs.map(x=>x.latin),payload.passion.postDeath);
+assert.ok(afterDeath.paragraphs.every(x=>!x.scriptureVoiceSpans),
+  "Post-death narrator verses are still outside the verified voice dataset");
+for(const [label,corrupt] of [
+  ["invented voice",{...voiceAnchors,anchors:voiceAnchors.anchors.map((x,i)=>
+    i===0?{...x,role:"PRIEST"}:x)}],
+  ["unfound text",{...voiceAnchors,anchors:voiceAnchors.anchors.map((x,i)=>
+    i===0?{...x,phrase:"Not spoken in 1962"}:x)}],
+  ["duplicate phrase",{...voiceAnchors,anchors:[...voiceAnchors.anchors.slice(0,-1),voiceAnchors.anchors[0]]}],
+]){
+ assert.throws(()=>buildGoodFridayReader({graph,payload,voiceAnchors:corrupt}),
+   /Good Friday/,label);
+}
+
 const resume=built.steps.find(x=>x.recordId==="GF-PASS-330");
 assert.equal(resume.posture,"STAND");
 assert.equal(resume.surfaceKey,"PASSION_AFTER_DEATH");
