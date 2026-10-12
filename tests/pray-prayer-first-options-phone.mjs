@@ -40,7 +40,11 @@ try{
   try{
    await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
     {waitUntil:"domcontentloaded",timeout:90000});
-   await page.waitForFunction(()=>window.AO_PRAY_V435930?.open&&window.AO_APP_SHELL_V1?.status?.().visibleOwner===true,
+   await page.waitForFunction(()=>typeof window.AO_APP_SHELL_V1?.navigate==="function",
+    null,{timeout:45000});
+   const nav=await page.evaluate(()=>window.AO_APP_SHELL_V1.navigate("pray"));
+   assert.equal(nav?.ok,true,"Unable to activate the lazy Prayer destination");
+   await page.waitForFunction(()=>typeof window.AO_PRAY_V435930?.open==="function",
     null,{timeout:45000});
 
    await open("pray.stations");
