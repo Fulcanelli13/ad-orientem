@@ -1247,10 +1247,32 @@ function renderConfession(){
  const sources=`<details class="aoP435930ConfSources"><summary>${esc(L('Catholic sources and explanation','Sources et explication catholiques'))}</summary>
    <p>${esc(L('A general Confession is a wider individual examination; it is not required simply because the last Confession was long ago, and is not the exceptional collective rite of general absolution. All unconfessed grave sins remembered after diligent examination must be confessed by kind and number.','Une confession générale est un examen individuel plus large ; une longue absence ne l’impose pas, et elle n’est pas le rite exceptionnel d’absolution générale collective. Tout péché grave non encore confessé, rappelé après un examen diligent, doit être confessé selon son espèce et son nombre.'))}</p>
    ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(isFr()&&src.urlFr?src.urlFr:src.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&src.labelFr?src.labelFr:src.label)} ↗</a>`).join('')}</details>`;
+ // Preserve all three canonical Confession paths and their original private
+ // question texts. The source model owns the step sequence; this wrapper
+ // supplies only the shared card shell and local paragraph-focus viewport.
+ let cardSequence=null,cardIndex=0;
+ if(CONF.stage===1&&path){
+  cardSequence=confessionExaminationCards(CONF.path,ex?.sections);
+  cardIndex=confessionStepAt(CONF.examStep,cardSequence.length);
+ }else if(CONF.stage===2&&path){
+  cardSequence=confessionRiteCards(CONF.path);
+  cardIndex=confessionStepAt(CONF.riteStep,cardSequence.length);
+ }else if(CONF.stage===3&&path){
+  cardSequence=confessionAfterCards();
+  cardIndex=confessionStepAt(CONF.afterStep,cardSequence.length);
+ }
+ if(cardSequence){
+  const card=cardSequence[cardIndex];
+  const title=card.kind==='questions'?card.title:isFr()?card.fr:card.en;
+  body=`<section class="aoDevoCard" data-ao-devo-card="${esc(card.id)}">
+    <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${cardIndex+1} / ${cardSequence.length}</small><h2 class="aoDevoCardTitle">${esc(title)}</h2></header>
+    <div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${body}</div>
+  </section>`;
+ }
  const lastCard=CONF.stage===3&&CONF.afterStep===confessionAfterCards().length-1;
  const navigation=`<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-conf-prev ${CONF.stage===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>
  <button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):L('Continue','Continuer'))}</button></div>`;
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}${guideRail(stages,CONF.stage,'conf')}<main class="aoP435930Body">${devotionalGuide('confession')}${body}${sources}${navigation}</main>`;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}${guideRail(stages,CONF.stage,'conf')}<main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
@@ -1809,6 +1831,28 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   if(!cardDeck)bindAngelusExactRail();
  });else stopAngelusExactRail();
  if((view==='library'&&LIB.open)||(view==='prayerOnly'&&prayerId))queueMicrotask(()=>installLibraryParagraphFocus(m,view==='library'?LIB.open:prayerId));
+ if(view==='confession'&&CONF.path&&CONF.stage>=1)queueMicrotask(()=>{
+  const stage=CONF.stage,path=CONF.path;
+  const cards=stage===1?confessionExaminationCards(path,(isFr()?DATA.examFr:DATA.exam)?.sections):
+    stage===2?confessionRiteCards(path):confessionAfterCards();
+  const index=stage===1?CONF.examStep:stage===2?CONF.riteStep:CONF.afterStep;
+  const chapters=cards.map(card=>({
+   id:card.id,title:card.kind==='questions'?card.title:isFr()?card.fr:card.en
+  }));
+  const reader=installSequentialDevotionalReader({
+   mount:m,kind:'confession',chapters,activeIndex:index,
+   paragraphSelector:'.aoP435930GuideNow p,.aoP435930ConfOneCard>p,.aoP435930ConfOneCard .aoP435930ConfQuestions>li,.aoP435930Prayer .aoP435930Flip,.aoP435930Prayer .aoP435930Text',
+   timelineLabel:L('Confession examination and preparation cards','Étapes de préparation à la confession'),
+   onNavigate:i=>{
+    if(view!=='confession'||CONF.stage!==stage||CONF.path!==path)return;
+    if(stage===1)CONF.examStep=i;
+    else if(stage===2)CONF.riteStep=i;
+    else CONF.afterStep=i;
+    render();
+   }
+  });
+  if(reader)m.querySelector('.aoP435930ConfessionReader')?.setAttribute('data-ao-confession-dual-axis','true');
+ });
  if(view==='adoration'&&['visit','holy','four'].includes(ADOR.mode))queueMicrotask(()=>{
   const mode=ADOR.mode;
   const steps=mode==='visit'?visitSteps():mode==='holy'?holySteps():fourSteps();

@@ -97,6 +97,25 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930AdorationReader[data-ao-adoration-dual-axis="true"][data-ao-adoration-final="true"] .aoP435930GuideNav{display:flex!important}
 #aoPray435930 .aoP435930AdorationReader[data-ao-adoration-dual-axis="true"][data-ao-adoration-final="true"] .aoP435930GuideNav .aoP435930Secondary{display:none!important}
 
+/* Sacramental Confession: no personal sins or responses are stored. The
+   canonical path chooser remains outside the swipe/timeline interface. */
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll{
+ display:block;padding:18px min(52px,16vw) 26dvh 16px;min-height:min(350px,52dvh)}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll>*{margin-block:0 22px}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930GuideNow h2{
+ display:none!important}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfOneCard{
+ margin:0!important;padding:0!important;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfOneCard>h2,
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfOneCard>small{
+ display:none!important}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfQuestions>li{
+ padding-block:8px}
+#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-dual-axis="true"][data-ao-confession-final="false"] .aoP435930GuideNav{
+ display:none!important}
+#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-dual-axis="true"][data-ao-confession-final="true"] .aoP435930GuideNav .aoP435930Secondary{
+ display:none!important}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
