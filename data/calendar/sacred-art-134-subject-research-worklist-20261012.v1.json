@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_ART_134_RESEARCH_WORKLIST_V1",
-  "asOf": "2026-10-12",
+  "asOf": "2026-10-13",
   "ownerPR": 887,
   "decisionsSource": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
   "leadSource": "Ad Orientem Art Research Register v2 (2026-10-12), provisional",
@@ -9,7 +9,7 @@
     "total": 134,
     "priorNoCandidate": 64,
     "priorRejectedOrUnapproved": 70,
-    "postExportLeadSubjects": 13,
+    "postExportLeadSubjects": 14,
     "noCandidateAfterNewLeads": 52,
     "byCollection": {
       "Bible Atlas": {
@@ -62,7 +62,19 @@
       "previousCandidateArtworkIds": [
         "ART-nknown-rench-painter-mmaculate-eart-of-ary-ernois-altarpiece"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "ART-research-20261012-morlete-heart-of-mary-munal",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Mary / El Corazón de María",
+          "sourceUrl": "https://artsandculture.google.com/asset/the-heart-of-mary/TAFcx9ThkUZqHw",
+          "secondarySourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "matchNotes": "Historical MUNAL companion painting to selected 1759 Heart of Jesus; Marian Heart bears lilies and sword; examine actual high-quality reproduction and rights separately. Google Arts creation date '1000' is erroneous, must NOT import. Do not conflate traditional Immaculate Heart with Immaculate Conception. Existing selected 101 artworks untouched.",
+          "reviewStatus": "UNAPPROVED_SOURCE_VERIFIED_NEW_LEAD",
+          "assetAcquired": false,
+          "artisticAccepted": false
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
