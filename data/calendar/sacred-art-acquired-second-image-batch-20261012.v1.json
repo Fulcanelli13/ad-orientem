@@ -225,7 +225,7 @@
       "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
       "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
       "portraitCropRisk": "IMAGE_IDENTITY_PENDING",
-      "reviewNote": "Met accession 24.78c is Saint Benedict's panel from Segna di Buonaventura's dismembered Silvestrine altarpiece of the 1320s. Gold-ground tempera with Byzantine-like striations; earlier restoration and framing elements require safe in-image crop assessment. Do not substitute the similar Saint Sylvester panel 24.78b. No new quality verdict from text alone.",
+      "reviewNote": "Met accession 24.78c is Saint Benedict's panel from Segna di Buonaventura's dismembered Silvestrine altarpiece of the 1320s. Gold-ground tempera with Byzantine-like striations; earlier restoration and framing elements require safe in-image crop assessment. Do not substitute the similar Saint Sylvester panel 24.78b. No new quality verdict from text alone. New Commons inconsistency: Saint Benedict DP333089 has caption for Saint Silvester and object number 442749/24.78b, while Saint Silvester DP333091 shows a Saint Benedict caption. Neither filename alone is proof of the canonical 442750 image; match accession to Met original before art ranking.",
       "relevantOutstandingSubjectIds": [
         "SNT-OT-14"
       ],
@@ -236,7 +236,21 @@
       "phoneCropApproved": false,
       "publicationApproved": false,
       "exactImageWitness": "https://www.metmuseum.org/art/collection/search/442750",
-      "exactImageWitnessAuthority": "THE_MET"
+      "exactImageWitnessAuthority": "THE_MET",
+      "conflictingCommonsMetadata": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Saint_Benedict_MET_DP333089.jpg",
+          "fileTitle": "Saint Benedict",
+          "structuredAccessionReported": "24.78b / Met object 442749 (SAINT SYLVESTER GOZZOLINI)",
+          "assessment": "CONFLICT_DO_NOT_SUBSTITUTE_FOR_442750"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Saint_Silvester_Gozzolini_MET_DP333091.jpg",
+          "fileTitle": "Saint Silvester Gozzolini",
+          "captionReported": "Saint Benedict MET 24.78c",
+          "assessment": "CONFLICT_MUSEUM_OBJECT_RECONCILIATION_REQUIRED"
+        }
+      ]
     },
     {
       "artworkId": "met-436565",
