@@ -2,7 +2,7 @@
 
 **Recovery snapshot:** 12 October 2026 · **Status: UNFINISHED ORIGINAL RECOVERY / NON-PUBLISHED EDITORIAL INVENTORY**
 
-**Critical:** This contains **282 individual question/dossier/debate records directly transcribed from identified GitHub source files**, not 264 proven unique historical questions and **not** the complete original person-by-person question bank. Overlaps are preserved as references; no theological, translation, or original-quotation certification is claimed.
+**Critical:** This contains **282 individual question/dossier/debate records directly transcribed from identified GitHub source files**, not 282 proven unique historical questions and **not** the complete original person-by-person question bank. Overlaps are preserved as references; no theological, translation, or original-quotation certification is claimed.
 
 Missing historical question texts are not replaced by invented paraphrases. In particular, the historical A001–A318 and C001–C233 ranges are tracked as unresolved archival slots separately, not counted here.
 
