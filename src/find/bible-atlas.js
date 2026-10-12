@@ -222,7 +222,7 @@ export function renderBibleAtlasToString(vm){
  '<div class="aoBibleAtlasTimeline"><div class="aoBibleAtlasCursor" aria-hidden="true"></div><div class="aoBibleAtlasTrack" data-bible-track aria-label="'+esc(L(lang,"Continuous biblical chronology","Chronologie biblique continue"))+'"><div class="aoBibleAtlasTrackPad" aria-hidden="true"></div>';
  for(const step of steps){
   const boundary=step.index===0||steps[step.index-1].era!==step.era;
-  html+='<button type="button" class="aoBibleAtlasStep'+(step.index===index?" active":"")+'" data-bible-step="'+step.index+'" aria-pressed="'+String(step.index===index)+'">'+
+  html+='<button type="button" class="aoBibleAtlasStep'+(step.index===index?" active":"")+'" data-bible-step="'+step.index+'" data-bible-event-key="'+esc(step.eventKey)+'" aria-pressed="'+String(step.index===index)+'">'+
   '<small class="aoBibleAtlasDivider">'+(boundary?esc(L(lang,ERAS[step.era][0],ERAS[step.era][1])):'&nbsp;')+'</small>'+
   '<span class="aoBibleAtlasDot" aria-hidden="true"></span><strong>'+esc(L(lang,step.title_en,step.title_fr))+'</strong>'+
   '<em>'+esc(step.placeId?L(lang,step.place_en,step.place_fr):L(lang,"No geographic pin","Sans repère localisé"))+'</em></button>';
