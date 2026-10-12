@@ -65,3 +65,11 @@ jobs:
         run: |
           node tests/explore-reachability-phone.mjs
           node tests/explore-layout-phone.mjs
+      - name: Archive A3 responsive review captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biblical-atlas-a3-responsive-review
+          path: test-output/biblical-atlas-a3/*.png
+          if-no-files-found: ignore
+          retention-days: 14
