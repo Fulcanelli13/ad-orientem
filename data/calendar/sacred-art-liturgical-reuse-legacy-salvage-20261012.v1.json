@@ -2750,5 +2750,656 @@
     "Related themes and fallback seasonal images are not exact Proper or feast artwork.",
     "Never infer a canonical holy day of obligation solely from a liturgical rank or Class I.",
     "El Greco and other previously rejected styles are historical records only and excluded from future proposals."
-  ]
+  ],
+  "sunday2026": {
+    "allSundayCivilDates": 52,
+    "observedClassIPrincipalSundays": 16,
+    "otherSundaysRequiringNormalDayResolver": 36,
+    "sourceOfSundayDates": "2026 Gregorian UTC day-of-week; calendar principal not guessed",
+    "sundayIndex": [
+      {
+        "date": "2026-01-04",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Most Holy Name of Jesus",
+            "observance2026": "CHECK_DAYRESOLVER",
+            "heroSubjectKey": "holy-name"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-01-11",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Holy Family",
+            "observance2026": "CHECK_DAYRESOLVER",
+            "heroSubjectKey": "holy-family"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-01-18",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-01-25",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Conversion of Saint Paul",
+            "observance2026": "NOMINAL_DATE_SUPERSEDED",
+            "heroSubjectKey": "paul-conversion"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-02-01",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Septuagesima Sunday",
+            "observance2026": "CHECK_DAYRESOLVER",
+            "heroSubjectKey": "septuagesima"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-02-08",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-02-15",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-02-22",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad1-0:1:v",
+          "title": "I Sunday of Lent"
+        },
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Chair of Saint Peter",
+            "observance2026": "NOMINAL_DATE_SUPERSEDED",
+            "heroSubjectKey": "peter-chair"
+          }
+        ],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-01",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad2-0:1:v",
+          "title": "II Sunday of Lent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-08",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad3-0:1:v",
+          "title": "III Sunday of Lent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-15",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad4-0:1:pv",
+          "title": "IV Sunday of Lent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-22",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad5-0:1:v",
+          "title": "Passion Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-03-29",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Quad6-0r:1:rv",
+          "title": "Palm Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-04-05",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Pasc0-0:1:w",
+          "title": "Easter Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "SELECTED_SUBJECT_ART_OPTION_WITH_TECHNICAL_GATES",
+        "subjectArtPlacements": [
+          {
+            "subjectId": "ROS-11",
+            "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist"
+          }
+        ],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-04-12",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Pasc1-0:1:w",
+          "title": "Low Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "SELECTED_SUBJECT_ART_OPTION_WITH_TECHNICAL_GATES",
+        "subjectArtPlacements": [
+          {
+            "subjectId": "ROS-11",
+            "artworkId": "ART-eter-aul-ubens-esurrection-of-hrist"
+          }
+        ],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-04-19",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-04-26",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-03",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-10",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-17",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-24",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Pasc7-0:1:r",
+          "title": "Pentecost Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "SELECTED_SUBJECT_ART_OPTION_WITH_TECHNICAL_GATES",
+        "subjectArtPlacements": [
+          {
+            "subjectId": "ROS-13",
+            "artworkId": "ART-ean-estout-entecost"
+          }
+        ],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-05-31",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Pent01-0r:1:w",
+          "title": "Trinity Sunday"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "SELECTED_SUBJECT_ART_OPTION_WITH_TECHNICAL_GATES",
+        "subjectArtPlacements": [
+          {
+            "subjectId": "DEV-18",
+            "artworkId": "ART-eter-aul-ubens-he-oly-rinity"
+          }
+        ],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-06-07",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-06-14",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-06-21",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-06-28",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-07-05",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-07-12",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-07-19",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-07-26",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-02",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-09",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-16",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-23",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-08-30",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-09-06",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-09-13",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-09-20",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-09-27",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-10-04",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Saint Francis of Assisi",
+            "observance2026": "NOMINAL_DATE_SUPERSEDED",
+            "heroSubjectKey": "francis-assisi"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-10-11",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-10-18",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Saint Luke, Evangelist",
+            "observance2026": "COMMEMORATED_NOT_PRINCIPAL",
+            "heroSubjectKey": "luke"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-10-25",
+        "sourcePrincipalIfClassI": {
+          "id": "sancti:10-DU:1:w",
+          "title": "Christ the King"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-01",
+        "sourcePrincipalIfClassI": {
+          "id": "sancti:11-01:1:w",
+          "title": "All Saints"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-08",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-15",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-22",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Last Sunday after Pentecost",
+            "observance2026": "CHECK_DAYRESOLVER",
+            "heroSubjectKey": "last-sunday"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-11-29",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Adv1-0:1:v",
+          "title": "I Sunday of Advent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-12-06",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Adv2-0:1:v",
+          "title": "II Sunday of Advent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-12-13",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Adv3-0:1:pv",
+          "title": "III Sunday of Advent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-12-20",
+        "sourcePrincipalIfClassI": {
+          "id": "tempora:Adv4-0:1:v",
+          "title": "IV Sunday of Advent"
+        },
+        "additionalNominalArtOccasions": [],
+        "actualPrincipalResolver": "CLASS_I_PRODUCTION_OBSERVED_SNAPSHOT",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      },
+      {
+        "date": "2026-12-27",
+        "sourcePrincipalIfClassI": null,
+        "additionalNominalArtOccasions": [
+          {
+            "title": "Saint John, Apostle and Evangelist",
+            "observance2026": "COMMEMORATED_NOT_PRINCIPAL",
+            "heroSubjectKey": "john-evangelist"
+          }
+        ],
+        "actualPrincipalResolver": "READ_DAYRESOLVER_PRIOR_TO_PUBLICATION",
+        "dailyCalendarTitleAndProper": "ALWAYS_CANONICAL_FROM_DAYRESOLVER",
+        "illustrationMode": "HOLD_APPROVED_HOMEPAGE_MASTERPIECE_OR_REVIEW_SUPERIOR_GOSPEL_SCENE",
+        "subjectArtPlacements": [],
+        "imageChangeRequired": false
+      }
+    ],
+    "policy": "All Sundays have correct 1962 Proper and observance resolved by app DayResolver. I/II rubric independently checked. A major feast or 1962 exception may displace a nominal Sunday; historical nominal spotlight never overrides actual principal. Gospel painting only when source identity and iconographic relationship independently validated; otherwise hold outstanding licensed artwork without false exact-feast claim."
+  }
 }
