@@ -29,7 +29,13 @@ try{
    ["2026-04-05","Paschal"],["2026-05-24","Spiritu"],
    ["2026-06-12","Cordis"],["2026-10-07","Maria"],
    ["2026-10-11","Trinitate"],["2026-10-15","Communis"],
-   ["2026-10-18","Trinitate"],["2026-12-08","Maria"]
+   ["2026-10-18","Trinitate"],["2026-12-08","Maria"],
+   ["2025-11-30","Communis"],["2025-12-27","Nativit"],
+   ["2026-01-07","Epiphania"],["2026-02-25","Quadragesima"],
+   ["2026-03-19","Joseph"],["2026-04-08","Paschalis"],
+   ["2026-04-19","Paschalis"],["2026-05-01","Joseph"],
+   ["2026-05-15","Ascensione"],["2026-05-23","Spiritu"],
+   ["2026-09-21","Apostolis"]
   ];
   const results=[];
   const owner=globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.prefaceOwner;
@@ -56,9 +62,11 @@ try{
   assert.ok(a.prefaceFrenchLen>200&&a.prefaceEnglishLen>200,a.date);
   assert.match(a.prefaceLatin||"",new RegExp(a.section,"i"),"Wrong 1962 Preface on "+a.date);
  }
- for(const d of ["2026-05-24","2026-10-07","2026-12-08"]){
+ for(const d of ["2026-05-24","2026-10-07","2026-12-08",
+   "2025-12-27","2026-01-07","2026-02-25","2026-03-19",
+   "2026-04-08","2026-04-19","2026-05-01","2026-05-15","2026-05-23","2026-09-21"]){
   assert.equal(audit.find(x=>x.date===d).applies,true,d);
  }
  assert.equal(audit.find(x=>x.date==="2026-10-11").applies,null,"No prefatory substitution due to commemoration");
- console.log("PASS: 10/10 actual 1962 date Prefaces, full French+English source text and READY R17 slot");
+ console.log("PASS: 21/21 actual 1962 date Prefaces, full French+English source text and READY R17 slot");
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
