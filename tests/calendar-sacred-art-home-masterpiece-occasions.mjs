@@ -16,6 +16,10 @@ assert.equal(p.apostolicMysticAngelicSpotlights.length,29);
 assert.equal(p.counts.additionalObservedAsPrincipal,23);
 assert.equal(p.counts.additionalCommemoratedOrSuperseded,6);
 assert.equal(p.counts.totalPotentialSpotlightCivilDates,98);
+const iconThemes=p.masterpieceAcquisitionBrief.initialArtSubjectSlots;
+assert.ok(iconThemes.some(x=>x.id==="apostles-and-evangelists"));
+assert.ok(iconThemes.some(x=>x.id==="mystics-and-spiritual-doctors"));
+assert.ok(iconThemes.some(x=>x.id==="saint-michael"));
 const heads=p.apostolicMysticAngelicSpotlights;
 for(const family of ["apostles-evangelists","mystics-and-spiritual-doctors","angels"]){
  assert.ok(heads.some(x=>x.family===family),"Missing iconographic subject family "+family);
@@ -48,9 +52,9 @@ for(const id of ["mark","matthew","luke","john-evangelist","teresa-avila","john-
 }
 assert.ok(heads.find(x=>x.heroSubjectKey==="john-cross").notes.includes("November 24"),
  "Use the 1962 feast rather than the modern John-of-the-Cross date");
-assert.equal(p.masterpieceAcquisitionBrief.initialArtSubjectSlots.length,24);
+assert.equal(p.masterpieceAcquisitionBrief.initialArtSubjectSlots.length,26);
 assert.ok(p.masterpieceAcquisitionBrief.firstWaveMaximumArtworks<=25);
-assert.deepEqual(p.masterpieceAcquisitionBrief.initialArtSubjectSlots.map(x=>x.selectedArtworkId),Array(24).fill(null));
+assert.deepEqual(p.masterpieceAcquisitionBrief.initialArtSubjectSlots.map(x=>x.selectedArtworkId),Array(26).fill(null));
 assert.equal(p.rules.calendarAndHeroDecoupled,true);
 assert.equal(p.rules.noPlaceholderAndNoUglyFallback,true);
 assert.equal(p.rules.homepageArtNotSaintOfTheDay,true);
