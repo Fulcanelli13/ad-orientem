@@ -1,3 +1,4 @@
+import {parseScriptureContext} from "../scripture/context.js";
 // Existing learn.mass owner extension: biblical source layers, not a second Mass reader.
 export const MASS_BIBLE_STUDY_SCHEMA="AO_MASS_BIBLE_SOURCE_LAYERS_V1";
 export const MASS_BIBLE_HOLD="EDITORIAL_STUDY_PREVIEW_NOT_1962_WORD_FOR_WORD_CERTIFIED";
@@ -42,7 +43,8 @@ export function validateMassBibleStudy(data){
    !/^MF0[1-8]$/.test(row.formationStage)||!row.liturgicalCue||
    !row.reading?.en||!row.reading?.fr||!row.scriptureReference||arr(row.sourceLinks).length<2||
    !row.sourceLinks.some(s=>s.role==="1962_MISSAL_ORDER_AND_TEXT"&&goodUrl(s.url))||
-   !row.sourceLinks.some(s=>s.role==="BIBLICAL_CONTEXT"&&goodUrl(s.url)))return false;
+   !row.sourceLinks.some(s=>s.role==="BIBLICAL_CONTEXT"&&goodUrl(s.url))||
+   (row.scriptureReaderRef&&!parseScriptureContext(row.scriptureReaderRef)))return false;
   seen.add(row.id);
  }
  return data.reviewHolds.every(h=>h.public===false);
