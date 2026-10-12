@@ -25,7 +25,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Compare 34 independently image-transcribed July assertions to actual 1962 Proper
-        run: node tools/calendar/printed-1962-july-image-b04.mjs
+        run: node tools/calendar/printed-1962-july-image-b04.mjs --strict
       - name: Preserve traceable per-page discrepancy report
         if: always()
         uses: actions/upload-artifact@v4
