@@ -145,6 +145,20 @@ try{
   "genealogy may pan internally without widening the phone viewport");
  assert.equal(await page.locator('#ao-find-modular-root .aoBibleKinSourceList').count(),1,
   "an accessible fully sourced relationship list remains available");
+ const diagram=page.locator('#ao-find-modular-root [data-bible-kin-diagram]');
+ const metric=()=>diagram.evaluate(el=>({width:Number(el.querySelector("svg").getAttribute("width")),height:Number(el.querySelector("svg").getAttribute("height")),count:el.querySelectorAll("svg .aoBibleKinLines path").length}));
+ const base=await metric();
+ await page.locator('#ao-find-modular-root [data-bible-kin-zoom="in"]').tap();
+ const larger=await metric();
+ assert.ok(larger.width>base.width&&larger.height>base.height,
+  "zoom in enlarges the actual scrollable SVG without inventing family edges");
+ assert.equal(larger.count,base.count,"zoom does not generate new relationships");
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-kin-zoom-value]').textContent(),"120%");
+ await page.locator('#ao-find-modular-root [data-bible-kin-zoom="out"]').tap();
+ assert.equal((await metric()).width,base.width,"zoom out restores original intrinsic size");
+ await page.locator('#ao-find-modular-root [data-bible-kin-zoom="reset"]').tap();
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-kin-zoom-value]').textContent(),"100%");
+
 
  assert.ok(await page.locator('#ao-find-modular-root [data-bible-family-person="shem"]').count()>=1);
  const treeOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
