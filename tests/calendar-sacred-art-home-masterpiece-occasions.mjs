@@ -11,7 +11,43 @@ assert.equal(p.schema,"AO_HOME_MASTERPIECE_LITURGICAL_LIST_V1");
 assert.equal(p.year,2026);
 assert.equal(p.classI.length,53);
 assert.equal(p.optionalSpotlights.length,17);
-assert.equal(p.counts.totalListedDates,70);
+assert.equal(p.counts.totalListedDates,93);
+assert.equal(p.apostolicMysticAngelicSpotlights.length,29);
+assert.equal(p.counts.additionalObservedAsPrincipal,23);
+assert.equal(p.counts.additionalCommemoratedOrSuperseded,6);
+assert.equal(p.counts.totalPotentialSpotlightCivilDates,98);
+const heads=p.apostolicMysticAngelicSpotlights;
+for(const family of ["apostles-evangelists","mystics-and-spiritual-doctors","angels"]){
+ assert.ok(heads.some(x=>x.family===family),"Missing iconographic subject family "+family);
+}
+const nominees=new Set(),nonPrincipals=new Set();
+for(const d of heads){
+ assert.match(d.date,/^2026-\d{2}-\d{2}$/);
+ assert.ok([2,3].includes(d.rank));
+ assert.ok(!nominees.has(d.date),"Repeated supplemental date "+d.date);
+ nominees.add(d.date);
+ assert.equal(d.mustSwitchArtwork,false);
+ assert.equal(d.observedDayTitleMustRemainIndependent,true);
+ assert.ok(d.heroSubjectKey);
+ assert.equal(d.sourceReference,"https://gcatholic.org/calendar/2026/Extraordinary-en");
+ if(d.observance2026!=="OBSERVED_PRINCIPAL"){
+  assert.ok(["COMMEMORATED_NOT_PRINCIPAL","NOMINAL_DATE_SUPERSEDED"].includes(d.observance2026));
+  nonPrincipals.add(d.date);
+  assert.ok(/principal|commemoration|commemorated/i.test(d.notes));
+ }
+}
+assert.deepEqual([...nonPrincipals].sort(),
+ ["2026-01-25","2026-02-22","2026-03-24","2026-10-04","2026-10-18","2026-12-27"].sort());
+assert.equal(heads.filter(x=>x.observance2026==="OBSERVED_PRINCIPAL").length,23);
+assert.ok(p.classI.some(x=>x.date==="2026-09-29"&&/Michael/.test(x.title)),
+ "Saint Michael is already Class I; do not add it as a new optional date");
+assert.ok(p.classI.some(x=>x.date==="2026-06-29"&&/Peter/.test(x.title)),
+ "Saints Peter and Paul already Class I");
+for(const id of ["mark","matthew","luke","john-evangelist","teresa-avila","john-cross","margaret-mary-alacoque"]){
+ assert.ok(heads.some(x=>x.heroSubjectKey===id),"Missing major Christian iconography "+id);
+}
+assert.ok(heads.find(x=>x.heroSubjectKey==="john-cross").notes.includes("November 24"),
+ "Use the 1962 feast rather than the modern John-of-the-Cross date");
 assert.equal(p.masterpieceAcquisitionBrief.initialArtSubjectSlots.length,24);
 assert.ok(p.masterpieceAcquisitionBrief.firstWaveMaximumArtworks<=25);
 assert.deepEqual(p.masterpieceAcquisitionBrief.initialArtSubjectSlots.map(x=>x.selectedArtworkId),Array(24).fill(null));
