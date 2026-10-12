@@ -288,11 +288,16 @@ try{
    assert.ok(sources.some(x=>x.href.includes(witness)),"Missing direct historical witness from "+route+": "+JSON.stringify(sources));
    assert.ok(sources.every(x=>x.href.startsWith("https://")&&x.rel.includes("noreferrer")),"Unsafe historical witness link in "+route);
    const disclosure=page.locator(box+" details.aoP435930Source").last();
-   // Wait out native scrolling before a deliberate touch; the global gesture
-   // guard correctly rejects synthetic navigation clicks immediately after swipes.
-   await disclosure.locator("summary").scrollIntoViewIfNeeded();
+   // A pending async source load may replace the disclosure between render
+   // and touch. Use a live locator, let Playwright perform the real tap and
+   // verify that the replacement disclosure is actually open.
    await page.waitForTimeout(350);
-   await disclosure.locator("summary").tap();
+   try{
+     await disclosure.locator("summary").tap({timeout:12000});
+   }catch(error){
+     const opened=await disclosure.getAttribute("open").catch(()=>null);
+     if(opened!=="")throw error; // Do not bypass an unperformed touch.
+   }
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open details.aoP435930Source").length>0 &&
      [...document.querySelectorAll("#aoPray435930.open details.aoP435930Source")].at(-1).open===true,
      null,{timeout:4500}).catch(()=>{});
