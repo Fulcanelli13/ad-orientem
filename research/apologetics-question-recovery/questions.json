@@ -3,8 +3,8 @@
     "version": "APOLOGETICS_QUESTION_RECOVERY_20261012_V1",
     "status": "SOURCE_EXTRACTED_PARTIAL_HISTORICAL_RECOVERY",
     "as_of": "2026-10-12",
-    "records": 264,
-    "unique_ids": 264,
+    "records": 282,
+    "unique_ids": 282,
     "counts_by_collection": {
       "Canonical Apologetics": 60,
       "Canonical Church Crisis": 81,
@@ -15,12 +15,14 @@
       "Contemporary controversies III": 21,
       "Traditional Mass objections 026–050": 25,
       "Traditional Mass objections 051–065": 15,
-      "Traditional Mass objections 066–075": 10
+      "Traditional Mass objections 066–075": 10,
+      "Apostolate — live question scenarios": 8,
+      "Apostolate — proposed question scenarios": 10
     },
     "counts_by_editorial_audience": [
       {
         "audience": "Anglicans",
-        "count": 1
+        "count": 2
       },
       {
         "audience": "Atheists, agnostics and secular critics",
@@ -28,7 +30,7 @@
       },
       {
         "audience": "General Catholic questions and objections",
-        "count": 48
+        "count": 64
       },
       {
         "audience": "Jehovah's Witnesses",
@@ -44,11 +46,11 @@
       },
       {
         "audience": "Protestant Christians",
-        "count": 88
+        "count": 99
       },
       {
         "audience": "Religious pluralists and non-Christian interlocutors",
-        "count": 7
+        "count": 8
       },
       {
         "audience": "Traditional Catholics, SSPX and sedevacantist interlocutors",
@@ -65,14 +67,15 @@
       "data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json",
       "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
       "data/learn/traditional-mass-objections-051-065-reconciled.v1.json",
-      "data/learn/traditionis-custodes-debates.v1.json"
+      "data/learn/traditionis-custodes-debates.v1.json",
+      "src/apostolate/corpus.js"
     ],
     "historical_position_gaps": {
       "apologetics_projected_positions": 318,
       "crisis_projected_positions": 233,
       "tlm_missing_exact_original": 25
     },
-    "note": "No assertion of original historical per-question completeness. Source-linked canonical and research records only."
+    "note": "264 earlier source records + 8 exact live Apostolate titles + 10 reconciliation-listed proposed titles. All are 282 distinct source-file IDs, not the restored 318 historical A-question texts."
   },
   "questions": [
     {
@@ -4873,6 +4876,377 @@
       "audience_tags": [
         "Protestant Christians",
         "Traditional Catholics, SSPX and sedevacantist interlocutors"
+      ]
+    },
+    {
+      "id": "AQ01",
+      "en": "Why do Catholics pray to Mary and the saints?",
+      "fr": "Pourquoi les catholiques prient-ils Marie et les saints ?",
+      "collection": "Apostolate — live question scenarios",
+      "group": "Conversation-ready source scenarios",
+      "owner": "APOL-034",
+      "canonical_crosslinks": [
+        "APOL-034",
+        "APOL-035"
+      ],
+      "source_file": "src/apostolate/corpus.js",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js",
+      "record_type": "question_as_written_in_live_apostolate_scenario",
+      "record_status": "LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION",
+      "provenance_status": "VERBATIM_SOURCE_FILE_20261012",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ02",
+      "en": "Why confess sins to a priest? Why not just tell God?",
+      "fr": "Pourquoi confesser ses péchés à un prêtre ? Pourquoi ne pas simplement les dire à Dieu ?",
+      "collection": "Apostolate — live question scenarios",
+      "group": "Conversation-ready source scenarios",
+      "owner": "APOL-026",
+      "canonical_crosslinks": [
+        "APOL-026"
+      ],
+      "source_file": "src/apostolate/corpus.js",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js",
+      "record_type": "question_as_written_in_live_apostolate_scenario",
+      "record_status": "LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION",
+      "provenance_status": "VERBATIM_SOURCE_FILE_20261012",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ03",
+      "en": "Why do Catholics obey the Pope? Is he infallible about everything?",
+      "fr": "Pourquoi les catholiques obéissent-ils au Pape ? Est-il infaillible en tout ?",
+      "collection": "Apostolate — live question scenarios",
+      "group": "Conversation-ready source scenarios",
+      "owner": "APOL-020",
+      "canonical_crosslinks": [
+        "APOL-020"
+      ],
+      "source_file": "src/apostolate/corpus.js",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js",
+      "record_type": "question_as_written_in_live_apostolate_scenario",
+      "record_status": "LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION",
+      "provenance_status": "VERBATIM_SOURCE_FILE_20261012",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ04",
+      "en": "Doesn’t the Mass sacrifice Jesus again?",
+      "fr": "La Messe ne sacrifie-t-elle pas Jésus une nouvelle fois ?",
+      "collection": "Apostolate — live question scenarios",
+      "group": "Conversation-ready source scenarios",
+      "owner": "APOL-031",
+      "canonical_crosslinks": [
+        "APOL-031"
+      ],
+      "source_file": "src/apostolate/corpus.js",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js",
+      "record_type": "question_as_written_in_live_apostolate_scenario",
+      "record_status": "LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION",
+      "provenance_status": "VERBATIM_SOURCE_FILE_20261012",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ05",
+      "en": "How can Catholics believe bread really becomes Jesus?",
+      "fr": "Comment les catholiques peuvent-ils croire que le pain devient réellement Jésus ?",
+      "collection": "Apostolate — live question scenarios",
+      "group": "Conversation-ready source scenarios",
+      "owner": "APOL-030",
+      "canonical_crosslinks": [
+        "APOL-030"
+      ],
+      "source_file": "src/apostolate/corpus.js",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js",
+      "record_type": "question_as_written_in_live_apostolate_scenario",
+      "record_status": "LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION",
+      "provenance_status": "VERBATIM_SOURCE_FILE_20261012",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ06",
+      "en": "Why Latin? And why the traditional Mass?",
+      "fr": "Pourquoi le latin ? Et pourquoi la Messe traditionnelle ?",
+      "collection": "Apostolate — live question scenarios",
+      "group": "Conversation-ready source scenarios",
+      "owner": null,
+      "canonical_crosslinks": [],
+      "source_file": "src/apostolate/corpus.js",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js",
+      "record_type": "question_as_written_in_live_apostolate_scenario",
+      "record_status": "LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION",
+      "provenance_status": "VERBATIM_SOURCE_FILE_20261012",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ07",
+      "en": "Why Purgatory? Didn’t Jesus already pay for our sins?",
+      "fr": "Pourquoi le Purgatoire ? Jésus n’a-t-il pas déjà payé pour nos péchés ?",
+      "collection": "Apostolate — live question scenarios",
+      "group": "Conversation-ready source scenarios",
+      "owner": "APOL-040",
+      "canonical_crosslinks": [
+        "APOL-040"
+      ],
+      "source_file": "src/apostolate/corpus.js",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js",
+      "record_type": "question_as_written_in_live_apostolate_scenario",
+      "record_status": "LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION",
+      "provenance_status": "VERBATIM_SOURCE_FILE_20261012",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ08",
+      "en": "Why isn’t the Bible alone enough?",
+      "fr": "Pourquoi la Bible seule ne suffit-elle pas ?",
+      "collection": "Apostolate — live question scenarios",
+      "group": "Conversation-ready source scenarios",
+      "owner": "APOL-014",
+      "canonical_crosslinks": [
+        "APOL-014",
+        "APOL-015"
+      ],
+      "source_file": "src/apostolate/corpus.js",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js",
+      "record_type": "question_as_written_in_live_apostolate_scenario",
+      "record_status": "LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION",
+      "provenance_status": "VERBATIM_SOURCE_FILE_20261012",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ09",
+      "en": "Does only the Pope teach infallibly?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-020",
+      "canonical_crosslinks": [
+        "APOL-020"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ10",
+      "en": "Did the Church invent doctrines later?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-021",
+      "canonical_crosslinks": [
+        "APOL-021"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ11",
+      "en": "Can contradictory religions all be true?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-048",
+      "canonical_crosslinks": [
+        "APOL-048"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Religious pluralists and non-Christian interlocutors"
+      ]
+    },
+    {
+      "id": "AQ12",
+      "en": "How can we identify Christ's true Church?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-016",
+      "canonical_crosslinks": [
+        "APOL-016"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Protestant Christians",
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ13",
+      "en": "Are Catholic images and statues idols?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-036",
+      "canonical_crosslinks": [
+        "APOL-036"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ14",
+      "en": "Why do Catholics venerate relics?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-037",
+      "canonical_crosslinks": [
+        "APOL-037"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ15",
+      "en": "What are indulgences?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-040",
+      "canonical_crosslinks": [
+        "APOL-040"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ16",
+      "en": "Are Anglican orders valid?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-022",
+      "canonical_crosslinks": [
+        "APOL-022"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "Anglicans"
+      ]
+    },
+    {
+      "id": "AQ17",
+      "en": "Why worship on Sunday rather than the Jewish Sabbath?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-015",
+      "canonical_crosslinks": [
+        "APOL-015"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "General Catholic questions and objections"
+      ]
+    },
+    {
+      "id": "AQ18",
+      "en": "Are we saved by faith or works?",
+      "fr": "",
+      "collection": "Apostolate — proposed question scenarios",
+      "group": "Unpublished proposed titles",
+      "owner": "APOL-038",
+      "canonical_crosslinks": [
+        "APOL-038"
+      ],
+      "source_file": "data/learn/apologetics-reconciliation.v1.json",
+      "source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json",
+      "record_type": "historically_proposed_question_title_source_file",
+      "record_status": "PROPOSED_NOT_LIVE",
+      "provenance_status": "VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED",
+      "provenance_urls": [],
+      "audience_tags": [
+        "General Catholic questions and objections"
       ]
     }
   ]
