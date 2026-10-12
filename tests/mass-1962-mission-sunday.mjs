@@ -66,5 +66,16 @@ for(const [arg,reason] of [
   assert.equal(selected.reason,reason);
   assert.notEqual(selected.status,"APPLIED");
 }
+const competing=select1962CommemorationsForMassForm({
+  proper:{...proper,oneConclusionCollects:[{kind:"RITUAL",priority:1}]},
+  calendarResolution:day,form:"LOW"});
+assert.equal(competing.status,"UNVERIFIED");
+assert.match(competing.reason,/MISSION_SUNDAY_PRIORITY_444_445/);
+assert.equal(competing.proper.missionSundayCollectDecision.status,"UNVERIFIED");
+const failedSlots=properToReaderSlots(competing.proper,{language:"fr"});
+assert.equal(failedSlots.slots.COLLECT_SET.status,"MISSING",
+  "Unverified competition must not silently omit a prescribed mission Collect");
+assert.equal(assessPrintableProper({...day,proper:{status:"ready",data:competing.proper}},
+  {massForm:"LOW",language:"fr"}).ok,false);
 assert.equal(applyMissionSundayCollect({proper,calendarResolution:{...day,date:"2026-10-11"},form:"LOW"}).status,"NOT_APPLICABLE");
 console.log("PASS §453: October Mission Sunday across four forms, one Collect conclusion, sourced languages, no extra Secret/Postcommunion, safe competition gates and reader/print parity.");
