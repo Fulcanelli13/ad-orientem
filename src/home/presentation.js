@@ -1,6 +1,7 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import { selectReleasedHomeArtwork, renderReleasedLiturgicalArtwork } from "../calendar/sacred-art-liturgical-bridge.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
@@ -123,7 +124,19 @@ export function renderHomeToString(state,win=globalThis){
   const week=vm.week.map(c=>`<button class="dayCell${c.selected?" selected":""}${c.today?" today":""}" data-date="${esc(c.date)}" aria-pressed="${c.selected}"><span>${esc(c.day)}</span><b>${esc(c.number)}</b></button>`).join("");
   const meta=[vm.rank,vm.colour?`${t("colour")} · ${vm.colour}`:"",vm.formularyLabel,vm.commemorationLabel].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("");
   const chooser=vm.formularies.length?`<div class="formularyChooser" role="group" aria-label="${esc(t("formulary"))}">${vm.formularies.map(x=>`<button data-formulary="${x.index}" class="${x.selected?"selected":""}" aria-pressed="${x.selected}">${esc(x.label)}</button>`).join("")}</div>`:"";
-  const art=win?.AO_PHASE1_ART?.homeMarkup?.(state,vm.language)||"";
+  // Keep the existing Home art until an approved, packaged masterpiece is
+  // promoted. Curator decisions and candidate image URLs are not release data.
+  const resolved=state.resolution;
+  const released=(resolved?.date===state.selectedDate && resolved?.day?.main?.id)
+    ? selectReleasedHomeArtwork({
+        date:vm.dateIso,
+        observedId:resolved.day.main.id,
+        works:win?.AO_SACRED_ART_RELEASE_V1?.artworks
+      })
+    : null;
+  const art=released
+    ? renderReleasedLiturgicalArtwork(released,{french:vm.language==="fr"})
+    : win?.AO_PHASE1_ART?.homeMarkup?.(state,vm.language)||"";
   const resume=readNativeMassResume(win);
   const resumeMeta=resume?[
     resume.date?formatDisplayDate(resume.date):"",
