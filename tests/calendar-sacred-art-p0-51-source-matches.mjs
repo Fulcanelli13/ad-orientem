@@ -16,10 +16,10 @@ assert.equal(p0.length,51);
 assert.equal(worklist.subjects.filter(x=>x.priority==="P1").length,83);
 assert.equal(decisions.counts.selected,101);
 assert.equal(results.rows.length,51);
-assert.equal(matched.length,18);
-assert.equal(results.summary.canonicalDistinctArtworkLeads,20);
-assert.equal(results.summary.verifiedObjectProposalAssignments,22);
-assert.equal(results.summary.p0WithoutNewObjectMatch,33);
+assert.equal(matched.length,23);
+assert.equal(results.summary.canonicalDistinctArtworkLeads,24);
+assert.equal(results.summary.verifiedObjectProposalAssignments,27);
+assert.equal(results.summary.p0WithoutNewObjectMatch,28);
 assert.equal(results.summary.rubensApostlePanelMatches,7);
 assert.equal(results.summary.sourceImagesAcquired,0);
 assert.equal(results.summary.additionalHumanSelections,0);
@@ -73,5 +73,18 @@ assert.equal(results.rows.find(x=>x.subjectId==="DEV-05").paintings[0].canonical
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-08").paintings[0].canonicalProposalId,"met-437542");
 assert.equal(results.rows.find(x=>x.subjectId==="DEV-11").paintings[0].canonicalProposalId,"met-437542");
 assert.equal(results.rows.find(x=>x.subjectId==="DEV-10").paintings[0].canonicalProposalId,"louvre-rf-1948-27");
+const mark=results.rows.find(x=>x.subjectId==="SNT-EV-01").paintings[0];
+const luke=results.rows.find(x=>x.subjectId==="SNT-EV-02").paintings[0];
+assert.equal(mark.canonicalProposalId,"prado-juan-ribalta-p002965");
+assert.equal(luke.canonicalProposalId,mark.canonicalProposalId,
+  "Mark and Luke are depicted in one existing painting, not two separate sources");
+assert.equal(mark.inventory,"P002965");
+assert.equal(mark.relation,"BOTH_NAMED_EVANGELISTS_IN_SAME_PAINTED_PANEL");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-22").paintings[0].inventory,"P007637");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-19").paintings[0].relation,
+  "CONTEXTUAL_NAMED_SAINT_ANSELM_IN_MARIAN_GROUP");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-24").paintings[0].inventory,"0700031704");
+assert.equal(results.summary.sharedMarkLukeOriginalPaintings,1);
+
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-01").paintings[0].canonicalProposalId,"louvre-rf-1948-27");
-console.log("PASS 51 unresolved P0 subjects: 18 evidence-linked, 22 assignments, 20 canonical painting leads, 33 still open; zero selections/photos/app release changed");
+console.log("PASS 51 unresolved P0 subjects: 23 evidence-linked, 27 assignments, 24 canonical painting leads, 28 still open; zero selections/photos/app release changed");
