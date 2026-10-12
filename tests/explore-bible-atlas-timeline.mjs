@@ -68,6 +68,19 @@ assert.equal(byId("beatitudes-e2").index,87,"Matthew 5 precedes Matthew 14");
 
 assert.match(atlasDetail(temple,"en"),/John narrates this cleansing/);
 assert.match(atlasDetail(temple,"fr"),/Saint Jean raconte cette purification/);
+for(const [passage,label] of [
+ ["Mark 4:35–41","The imported witnesses merge"],
+ ["Acts 7:54–60","Stephen's final prayer"],
+ ["Exodus 40:1–38","This chapter has 38"]
+]){
+ const scene=stops.find(s=>s.reference===passage);
+ assert.ok(scene,"missing marked Scripture edition passage "+passage);
+ assert.match(atlasDetail(scene,"en"),/Scripture edition note/);
+ assert.ok(atlasDetail(scene,"en").includes(label));
+ assert.match(atlasDetail(scene,"fr"),/Note sur l&#39;édition biblique/);
+ assert.match(atlasDetail(scene,"en"),/Compare source/);
+}
+
 
 for(const stop of stops){
   assert.ok(stop.title_en&&stop.title_fr&&stop.reference,"bilingual Scripture reference per milestone");
