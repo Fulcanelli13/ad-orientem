@@ -317,7 +317,24 @@ try{
        const state=globalThis.AO_NOVENAS_V3?.state?.();
        return state?.id===id&&state?.screen==="detail";
      },id);
-     if(!selected)throw error;
+     if(!selected){
+       const hit=await page.evaluate(id=>{
+         const target=document.querySelector("#aoPray435930.open [data-n1-select='"+id+"']");
+         const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+         const rect=target?.getBoundingClientRect();
+         const x=rect?Math.max(0,Math.min(innerWidth-1,rect.left+rect.width/2)):null;
+         const y=rect?Math.max(0,Math.min(innerHeight-1,rect.top+rect.height/2)):null;
+         const top=x===null?null:document.elementFromPoint(x,y);
+         return {id,screen:globalThis.AO_NOVENAS_V3?.state?.()?.screen,
+           rect:rect?{x:rect.x,y:rect.y,width:rect.width,height:rect.height}:null,
+           viewport:{width:innerWidth,height:innerHeight},scrollTop:mount?.scrollTop,
+           hit:top?{tag:top.tagName,className:String(top.className).slice(0,120),
+             selector:top.getAttribute('data-n1-select'),closest:top.closest('[data-ao-pray-view]')?.getAttribute('data-ao-pray-view')}:null,
+           targetConnected:target?.isConnected??false};
+       },id);
+       console.error("NOVENA_TOUCH_HIT_DIAGNOSTIC "+JSON.stringify(hit));
+       throw error;
+     }
    }
    assert.equal(await page.evaluate(id=>{
      const state=globalThis.AO_NOVENAS_V3?.state?.();
