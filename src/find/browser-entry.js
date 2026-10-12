@@ -2,7 +2,7 @@ import { filterDirectoryRecords } from "./data-service.js";
 import { createScrollTapGuard } from "../app/scroll-tap-guard.js";
 import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49 } from "./preliminary-directory-r49.js";
 import { loadExploreDataset, loadBiblicalLineageReview, loadBibleCinematicStudies } from "./explore-data-service.js";
-import { renderCinematicStudies, studyChapter, studyStep } from "./bible-cinematic-studies.js";
+import { renderCinematicStudies, studyChapter, studyStep, cinematicExactScenesForAtlasStop, cinematicExactAtlasTarget } from "./bible-cinematic-studies.js";
 import { BIBLE_REVIEW_DEFAULT, renderLineageReview } from "./bible-lineage-review.js";
 import {
   EXPLORE_LENSES,
@@ -187,6 +187,32 @@ export function createFindOwner(win=globalThis){
     return cinematicPromise;
   }
 
+  // Reverse citations are only shown inside the explicit research preview.
+  // They reuse the exact crosswalk validation; overlaps never create a jump.
+  function renderExactSceneLinks(stops,index){
+    if(!bibleResearchPreview||!cinematicReview||state.bibleReview.surface!=="timeline")return;
+    const detail=getRoot(win)?.querySelector?.("[data-bible-detail]");
+    if(!detail||!win?.document)return;
+    detail.querySelector?.("[data-bible-exact-scene-links]")?.remove?.();
+    const scenes=cinematicExactScenesForAtlasStop(cinematicReview,stops,index);
+    if(!scenes.length)return;
+    const group=win.document.createElement("div");
+    group.dataset.bibleExactSceneLinks="true";
+    group.className="aoBibleAtlasActions";
+    const heading=win.document.createElement("small");
+    heading.textContent=language(win)==="fr"
+      ?"Recherche · mêmes références bibliques (non certifiées)"
+      :"Research · exact Scripture citation matches (not certified)";
+    group.append(heading);
+    for(const scene of scenes){
+      const button=win.document.createElement("button");
+      button.type="button";button.dataset.bibleReviewOpenScene=String(scene.index);
+      button.textContent=language(win)==="fr"?scene.title_fr:scene.title_en;
+      group.append(button);
+    }
+    detail.append(group);
+  }
+
   function glossaryTerms(){
     if(state.lens==="tlm")return ["G135","G149","G150","G449","G450","G047","G048","G049"];
     if(state.lens==="shrines")return ["G336","G334","G338","G321"];
@@ -363,6 +389,10 @@ export function createFindOwner(win=globalThis){
       // Place the selected source stop under the timeline cursor before async map
       // loading; the initial scroll origin must never nominate Creation by mistake.
       centerBibleMilestone(state.bibleIndex);
+      if(bibleResearchPreview)void ensureCinematicStudies().then(()=>{
+        if(token===paintToken&&openState&&state.bibleAtlas&&state.bibleReview.surface==="timeline")
+          renderExactSceneLinks(atlasStops,state.bibleIndex);
+      }).catch(()=>{});
       node.dataset.open=openState?"true":"false";
       node.dataset.aoFindLoadState="ready";
       node.dataset.exploreLens=state.lens;
@@ -649,6 +679,7 @@ export function createFindOwner(win=globalThis){
     });
     const detail=root?.querySelector?.("[data-bible-detail]");
     if(detail)detail.innerHTML=atlasDetail(active,lang);
+    renderExactSceneLinks(stops,index);
     const title=root?.querySelector?.("[data-bible-era-name]");
     if(title)title.textContent=lang==="fr"?
       ({ORIGINS:"Les origines",PATRIARCHS:"Les Patriarches",EXODUS:"L'Exode",ISRAEL:"Israël et les Prophètes",EXILE:"Exil et restauration",INFANCY:"L'Incarnation",PUBLIC:"La Vie publique",PASSION:"La Passion",RESURRECTION:"La Résurrection",APOSTLES:"L'Église apostolique",REVELATION:"L'Apocalypse"})[active.era]:
@@ -730,6 +761,19 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();state.bibleAtlas=false;state.bibleIndex=0;state.bibleReview={...BIBLE_REVIEW_DEFAULT};mapHandle?.destroy?.();mapHandle=null;lastMapView=null;lastMapLens=null;void paint();return;
     }
     if(state.bibleAtlas&&bibleResearchPreview){
+      const returnScene=target?.closest?.("[data-bible-review-open-scene]");
+      if(returnScene&&cinematicReview&&dataset){
+        event.preventDefault?.();
+        const index=Number(returnScene.dataset.bibleReviewOpenScene);
+        const stopList=buildBibleAtlas(dataset.biblePlaces?.entries??[]);
+        const scene=cinematicReview.scenes?.[index];
+        const chapter=cinematicReview.chapters?.find(c=>c.sceneIndices.includes(index));
+        if(chapter&&scene&&cinematicExactAtlasTarget(scene,stopList)===state.bibleIndex){
+          state.bibleReview={...state.bibleReview,surface:"cinematic",chapter:chapter.id,scene:index};
+          void paint();
+        }
+        return;
+      }
       const current=state.bibleReview;
       // Zoom only the evidence diagram, preserving its source links and
       // internal viewport midpoint; never scale the full application surface.
