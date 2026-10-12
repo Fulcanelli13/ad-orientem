@@ -141,6 +141,21 @@ try{
    const rect=el.getBoundingClientRect();
    return {height:rect.height,scroll:el.scrollHeight,overflow:getComputedStyle(el).overflowY,viewport:innerHeight};
  });
+ if(guideLayout.overflow!=="auto"){
+   console.error("OFFLINE_GUIDE_CSS_DIAGNOSTIC="+JSON.stringify(await page.evaluate(()=>{
+     const g=document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide");
+     const b=g?.querySelector(".aoRosaryGuideBody");
+     const root=document.getElementById("aoPrayerBookRoot");
+     const style=document.getElementById("ao-pray-rosary-guide-style");
+     return {guideTag:g?.tagName,guideOpen:g?.open,guideAttribute:g?.hasAttribute("open"),
+       rootClasses:root?.className,rootActive:root?.dataset?.aoRosaryActiveRoot,
+       mediaSmall:matchMedia("(max-width:560px)").matches,innerWidth,
+       guideStylePresent:Boolean(style),guideStyleLength:style?.textContent.length,
+       bodyStyle:b?{height:b.getBoundingClientRect().height,scrollHeight:b.scrollHeight,
+        overflow:getComputedStyle(b).overflowY,maxHeight:getComputedStyle(b).maxHeight}:null,
+       stylesheetCount:document.styleSheets.length}
+   })));
+ }
  assert.equal(guideLayout.overflow,"auto","Offline Guide must scroll internally on phones");
  assert.ok(guideLayout.height<=Math.min(guideLayout.viewport*.34,290)+2,
   "Offline Guide obscures the current prayer: "+JSON.stringify(guideLayout));
