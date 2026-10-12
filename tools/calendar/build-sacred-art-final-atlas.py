@@ -38,6 +38,21 @@ def create(args):
               "date":d["date"],"name":d["observedTitle"],"rank":d["class"],
               "principal":d["observedPrincipalId"],
               "tier":alt["tier"],"evidence":alt.get("evidence") or ""})
+    decisions=read(args.decisions) if args.decisions is not None else None
+    selections_by_id=defaultdict(list)
+    refusals_by_id=defaultdict(list)
+    if decisions is not None:
+        assert decisions["schema"]=="AO_SACRED_ART_CURATOR_RECONCILIATION_V1"
+        assert decisions["status"]=="USER_EDITORIAL_REVIEW_ONLY_NOT_PUBLISHED"
+        canonical={a["id"]:a for a in reg["artworks"]}
+        for record in decisions["selections"]:
+            a=canonical.get(record["artworkId"])
+            assert a and a.get("acquisition",{}).get("originalSha256")==record["originalSha256"], "Stale selected artwork SHA"
+            selections_by_id[a["id"]].append(record["targetId"])
+        for record in decisions["refusals"]:
+            a=canonical.get(record["artworkId"])
+            assert a and a.get("acquisition",{}).get("originalSha256")==record["originalSha256"], "Stale refused artwork SHA"
+            refusals_by_id[a["id"]].append(record["targetId"])
     missing=[];items=[]
     metadata_only=[]
     acquired_ids={a["id"] for a in acquired}
@@ -78,12 +93,30 @@ def create(args):
           "subjectTags":(a.get("association") or {}).get("subjectKeys") or [],
           "prayerKeys":(a.get("association") or {}).get("prayerKeys") or [],
           "preview":preview,"uses":uses.get(a["id"],[]),
+          "selectedSubjectKeys":selections_by_id[a["id"]],
+          "refusedSubjectKeys":refusals_by_id[a["id"]],
+          "policyExcluded":bool(re.search(r"\\bel[ -]?greco\\b",a.get("artist") or "",re.I)),
           "publicationApproved":False
         })
     if args.strict_images and missing:
         raise ValueError("Complete atlas requires all originals; preview absent for "+str(len(missing))+" artworks (first: "+",".join(missing[:8])+")")
+    # Stable fingerprints prevent a saved exception-only review from silently
+    # applying to new originals or changed date associations on a later build.
+    source_fingerprints={
+        "originalsSha256":hashlib.sha256("\\n".join(sorted(a["id"]+":"+a["acquisition"]["originalSha256"]
+             for a in acquired)).encode()).hexdigest(),
+        "dateAssociationsSha256":hashlib.sha256(json.dumps(indexed["days"],
+             sort_keys=True,separators=(",",":"),ensure_ascii=False).encode()).hexdigest()
+    }
     payload={"schema":"AO_SACRED_ART_FULL_YEAR_NEGATIVE_EXCEPTION_REVIEW_V1","year":2026,
-             "policy":{"unflagged":"EDITORIALLY_ACCEPTED_ONLY","legalCropAndRelease":"SEPARATE_GATES"},
+             "policy":{"unflagged":"DRAFT_UNTIL_COMPLETION_CONFIRMED",
+                       "afterCompletion":"UNFLAGGED_EDITORIAL_ONLY",
+                       "legalCropAndRelease":"SEPARATE_GATES",
+                       "noPublicationCertification":True},
+             "sourceFingerprints":source_fingerprints,
+             "priorCuratorReview":{"selectionCount":sum(map(len,selections_by_id.values())),
+                                   "refusalCount":sum(map(len,refusals_by_id.values())),
+                                   "status":decisions["status"] if decisions else "NOT_IMPORTED"},
              "summary":{"acquired":len(acquired),"records":len(reg["artworks"]),
                         "yearDates":len(dates),"sourceAlternatives":sum(len(a["uses"]) for a in items),
                         "previewMissing":len(missing),"fullYearCoverage":indexed.get("summary",{})},
@@ -331,4 +364,6 @@ if __name__=="__main__":
     parser.add_argument("--images-root",type=Path,action="append",default=[])
     parser.add_argument("--output",type=Path,default=ROOT/"artifacts/sacred-art-final-atlas/index.html")
     parser.add_argument("--strict-images",action="store_true")
+    parser.add_argument("--decisions",type=Path,default=None,
+                        help="Existing subject-scoped curator decisions; does not grant full-year review approval")
     create(parser.parse_args())
