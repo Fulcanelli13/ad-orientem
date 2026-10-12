@@ -53,11 +53,16 @@ try{
    const stDetails=await page.evaluate(()=>{
     const r=document.querySelector("#aoPray435930.open .aoP435930Stations"),
       prefs=r?.querySelector(":scope > [data-ao-stations-options]"),
-      now=r?.querySelector(":scope > .aoP435930GuideNow");
-    return {first:r?.firstElementChild===prefs,prayerAfter:prefs?.nextElementSibling===now,
+      card=r?.querySelector(":scope > .aoDevoCard"),
+      reader=card?.querySelector(":scope > .aoDevoCardScroll"),
+      now=reader?.querySelector(":scope > .aoP435930GuideNow");
+    return {first:r?.firstElementChild===prefs,
+      prayerAfter:prefs?.nextElementSibling===card&&!!now,
       closed:!prefs?.open,count:r?.querySelectorAll("[data-ao-stations-options]").length,
       summaryHeight:prefs?.querySelector("summary")?.getBoundingClientRect().height,
       prayerText:now?.innerText?.slice(0,200),
+      cardTitle:card?.querySelector(".aoDevoCardTitle")?.textContent?.trim(),
+      cardScroll:reader?getComputedStyle(reader).overflowY:null,
       originalNav:r?.querySelectorAll("[data-p435930-station-next]").length,
       source:r?.querySelectorAll(".aoP435930Source a[href^='https://']").length||0,
       step:r?.querySelector(".aoP435930GuideNow small")?.textContent||""};
@@ -65,8 +70,9 @@ try{
    assert.ok(stDetails.first&&stDetails.prayerAfter&&stDetails.closed,
     "Stations should begin with one collapsed choice and the original prayer: "+JSON.stringify(stDetails));
    assert.equal(stDetails.count,1);
-   assert.ok(stDetails.summaryHeight>=44&&stDetails.prayerText?.length>20&&stDetails.originalNav===1,
-    "Station prayer or previous/next unavailable");
+   assert.ok(stDetails.summaryHeight>=44&&stDetails.prayerText?.length>20&&
+     stDetails.cardTitle?.length>5&&stDetails.cardScroll==="auto"&&stDetails.originalNav===1,
+    "Station named card, local scroll, prayer or previous/next unavailable");
    assert.equal(await page.locator("#aoPray435930.open .aoP435930Stations [data-ao-recitation-control]").count(),0,
      "Global coherence is duplicating the canonical Stations recitation choice");
    await checkDoc("Stations opening");
