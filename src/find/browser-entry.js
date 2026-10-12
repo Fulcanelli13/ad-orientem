@@ -350,6 +350,9 @@ export function createFindOwner(win=globalThis){
       }
       const atlasStops=buildBibleAtlas(data?.biblePlaces?.entries??[]);
       node.innerHTML=renderBibleAtlasToString({language:language(win),atlasStops,atlasIndex:state.bibleIndex});
+      // Place the selected source stop under the timeline cursor before async map
+      // loading; the initial scroll origin must never nominate Creation by mistake.
+      centerBibleMilestone(state.bibleIndex);
       node.dataset.open=openState?"true":"false";
       node.dataset.aoFindLoadState="ready";
       node.dataset.exploreLens=state.lens;
