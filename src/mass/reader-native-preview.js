@@ -1153,6 +1153,7 @@ export async function mountNativeReaderPreview({
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
+  let enteredCanonicalCueSequence=false;
   // Explicit external observation only; neither scroll focus nor Schola audio
   // may invent the priest's private Sanctus/Benedictus recitation.
   let observedPriestEvent=null;
@@ -1419,7 +1420,8 @@ export async function mountNativeReaderPreview({
     });
     const priestEntrance=priestEntranceState.project();
     const preMassPriestAction=projectObservedPreMassPriestAction({
-      state:priestEntrance,activeCueId
+      state:priestEntrance,activeCueId,
+      preMassVisualWindowOpen:!enteredCanonicalCueSequence && current?.sequence===1
     });
     const priestAction=preMassPriestAction??priestLane.priestAction;
     const ownership=Object.freeze({
@@ -2160,6 +2162,7 @@ export async function mountNativeReaderPreview({
     initialCardRender=false;
     armPartCinematic(partCinema);
     if(changed){
+      enteredCanonicalCueSequence=true;
       observedPriestEvent=null;
       activeCueId=null;
       clearEventCinematic({resetCue:true});
@@ -2391,6 +2394,7 @@ export async function mountNativeReaderPreview({
         // move the underlying source cue or trigger LIVE cinematics.
         if(root.querySelector?.("[data-ao-reader-shell]")?.dataset?.mode==="MISSAL")return;
         if(activeCueId!==cueId)observedPriestEvent=null;
+        if(cueId)enteredCanonicalCueSequence=true;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
         transientGuard.resolveCue(cueId);
