@@ -198,6 +198,15 @@ try{
  await page.locator('#ao-find-modular-root [data-bible-study-chapter-select]').selectOption("INCARNATION");
  await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-bible-study-scene="57"]'),null,{timeout:15000});
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').count(),1);
+ // Reciprocal preview-only navigation: exact scene 57 → canonical 66 → scene 57.
+ await page.locator('#ao-find-modular-root [data-bible-review-jump="66"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
+  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66,null,{timeout:15000});
+ const sceneReturn=page.locator('#ao-find-modular-root [data-bible-review-open-scene="57"]');
+ await sceneReturn.waitFor({state:"visible",timeout:15000});
+ await sceneReturn.tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="cinematic"&&
+  document.querySelector('#ao-find-modular-root [data-bible-study-scene="57"]'),null,{timeout:15000});
  const visualOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(visualOverflow<=1,"study view causes no horizontal page overflow");
  // The two A12 additions must be real reader states, not entries that exist
