@@ -1741,19 +1741,14 @@ function refreshRosaryChoiceFocus(attribute,value){
 function installLibraryParagraphFocus(m,id){
  const card=m.querySelector(".aoP435930LibraryReader .aoDevoCard");
  if(!card||!id)return;
- // The canonical prayer text remains untouched in DATA; split only its
- // already-escaped render-time lines, retaining the existing Latin flip owner.
- for(const face of card.querySelectorAll(".aoP435930Text,[data-face-v],[data-face-la]")){
-  const lines=face.innerHTML.split(/<br\s*\/?>/gi);
-  if(!lines.length)continue;
-  face.replaceChildren(...lines.map(line=>{
-   const node=document.createElement("span");
-   node.className=line.trim()?"aoLibraryLine aoDevoParagraph":"aoLibraryBreak";
-   if(line.trim())node.innerHTML=line;
-   else node.setAttribute("aria-hidden","true");
-   return node;
-  }));
- }
+ // The existing Prayer coherence engine already recognises proper prose,
+ // versicles, responses and stanza breaks. Reuse its semantic output instead
+ // of reparsing the prayer and erasing V./R. ownership.
+ window.AO_PRAY_COHERENCE_V435930?.decorate?.();
+ const lines=card.querySelectorAll(
+  ".aoP435930Prayer .aoP435930SemanticFace > :not(.aoP435930PrayerSpacer)"
+ );
+ lines.forEach(line=>line.classList.add("aoLibraryLine"));
  const p=P(id);
  const title=p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière');
  const reader=installSequentialDevotionalReader({
@@ -1770,7 +1765,6 @@ function installLibraryParagraphFocus(m,id){
   if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
  });
 }
-
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);
  if(view==='angelus')queueMicrotask(()=>{
