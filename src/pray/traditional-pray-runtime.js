@@ -355,7 +355,7 @@ function injectGlossaryAction(){
   const button=document.createElement("button");
   button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
   button.textContent=L("Terms & explanations","Termes & explications");
-  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany"].includes(S.route))body.append(button);
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury"].includes(S.route))body.append(button);
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
@@ -407,6 +407,19 @@ function render(){
     });
     if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
   }
+  if(S.screen==="module"&&["pray.sacred_heart","pray.communion_treasury"].includes(S.route)){
+    const heart=S.route==="pray.sacred_heart";
+    const chapters=heart?HEART_STAGES.map(id=>({id:"heart-"+id,title:heartTitle(id)})):
+      communionStages().map(([id,en,fr])=>({id:"communion-"+S.communion+"-"+id,title:L(en,fr)}));
+    const index=heart?HEART_STAGES.indexOf(S.sacredHeart):S.communionStep;
+    const reader=installSequentialDevotionalReader({
+      mount:m,kind:heart?"sacredHeart":"communion",chapters,activeIndex:index,
+      paragraphSelector:".aoTP381TextParagraph",
+      onNavigate:i=>{if(heart)S.sacredHeart=HEART_STAGES[i];else S.communionStep=i;render()},
+      timelineLabel:L("Prayer timeline","Chronologie des prières")
+    });
+    if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
+  }
   injectGlossaryAction();
   m.scrollTop=0;
   queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.({preventScroll:true})});
@@ -420,6 +433,8 @@ function open(route,opts={}){
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
     ...(route==="pray.dying_companion"?{dying:"now"}:{}),
     ...(route==="pray.meal_prayers"?{mealStep:0}:{}),
+    ...(route==="pray.sacred_heart"?{sacredHeart:"litany"}:{}),
+    ...(route==="pray.communion_treasury"?{communion:"before",communionStep:0}:{}),
     ...(route==="pray.holy_name_litany"?{litanyMode:"guided",litanyStep:0}:{})};
   BASE_OPEN("pray.hub",opts);
   render();return true;
@@ -484,7 +499,7 @@ function handleClick(e){
   if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
   if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
-  if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";return render()}
+  if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";S.communionStep=0;return render()}
   if(b.dataset.tp381Dying){S.dying=DYING_COMPANION_STAGES.includes(b.dataset.tp381Dying)?b.dataset.tp381Dying:"now";return render()}
   if(b.dataset.tp381DyingStep){const stage=nextDyingCompanionStage(S.dying,b.dataset.tp381DyingStep);if(stage){S.dying=stage;return render()}return;}
   if(b.dataset.tp381Prayer){S.prayerId=b.dataset.tp381Prayer;S.screen="prayer";return render()}
