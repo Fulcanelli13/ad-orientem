@@ -58,7 +58,7 @@ for(const a of manifest.witnesses){
      String(observed).slice(0,160):undefined}));
 }
 // The exact 1962 distinct-rite engines are NOT regular Missa Cantata cards.
-assert.equal(extra.graphs.PALM.length,7);
+assert.equal(extra.graphs.PALM.length,12);
 assert.equal(core.graphs.GF.length,56);
 assert.ok(core.graphs.EV.length>=30);
 const palmBuilt=buildPalmPayload({graph:extra.graphs.PALM,payload:palm});
