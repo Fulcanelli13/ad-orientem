@@ -679,6 +679,32 @@ const ROSARY_PHONE_CONTROLS_CSS=`
 #aoPrayerBookRoot.open .aoRosaryPreparationBody>.aoRosaryGuide{
  margin:0!important;
 }
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.v38RosaryForm,
+#aoPrayerBookRoot.open .aoRosaryPreparationBody>.lab-option-bar{
+ margin:0!important;width:100%;max-width:100%;box-sizing:border-box;
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries{
+ min-width:0;margin:0 0 14px;
+ border:1px solid var(--border,rgba(255,255,255,.16));border-radius:12px;
+ background:rgba(255,255,255,.018);
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries>summary{
+ display:flex;align-items:center;min-height:48px;
+ padding:11px 14px;cursor:pointer;color:var(--text,#f3ead7);
+ font:650 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries .aoRosaryMysteryChoices{
+ padding:0 10px 12px;min-width:0;
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries .lab-mystery-grid{
+ margin:0!important;min-width:0;max-width:100%;
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries:not([open])>.aoRosaryMysteryChoices{
+ display:none!important;
+}
+#aoPrayerBookRoot.open .aoRosaryOtherMysteries>summary:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
+}
 #aoPrayerBookRoot.open .aoRosaryPreparation>summary:focus-visible{
  outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
 }
