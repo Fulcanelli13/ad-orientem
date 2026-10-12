@@ -79,7 +79,10 @@ export function renderMassBibleStudy(data,{language="en",category="all",stage=""
  if(!good)return '<p class="aoMFError">'+esc(L(lang,"Biblical study research unavailable; existing Mass formation remains accessible.","Recherche biblique indisponible ; la formation sur la Messe reste accessible."))+'</p>';
  const selected=OPTIONS.some(x=>x[0]===category)?category:"all";
  const count=massBibleRows(data,{category:selected,stage});
- const selections='<nav class="aoMBFilters" aria-label="'+esc(L(lang,"Evidence types","Catégories de preuves"))+'">'+
+ const selections='<label class="aoMBMobileFilter">'+esc(L(lang,"Type of biblical connection","Type de lien biblique"))+
+ '<select data-ao-mf-bible-filter-select aria-label="'+esc(L(lang,"Filter evidence type","Filtrer les preuves"))+'">'+
+ OPTIONS.map(([id,en,fr])=>'<option value="'+id+'"'+(id===selected?' selected':'')+'>'+esc(L(lang,en,fr))+'</option>').join("")+'</select></label>'+ 
+ '<nav class="aoMBFilters" aria-label="'+esc(L(lang,"Evidence types","Catégories de preuves"))+'">'+
  OPTIONS.map(([id,en,fr])=>'<button type="button" data-ao-mf-bible-filter="'+id+'" aria-pressed="'+String(id===selected)+'">'+esc(L(lang,en,fr))+'</button>').join("")+'</nav>';
  const filter='<label class="aoMBStageSelect">'+esc(L(lang,"Part of the Mass","Partie de la Messe"))+
  '<select data-ao-mf-bible-stage aria-label="'+esc(L(lang,"Filter Mass stage","Filtrer les étapes de la Messe"))+'"><option value="">'+esc(L(lang,"All stages","Toutes les étapes"))+'</option>'+
@@ -101,17 +104,18 @@ export function renderMassBibleStudy(data,{language="en",category="all",stage=""
        '</details></article>';
   }).join("")+'</section>';
  }).join("");
- return '<div class="aoMBStudy" data-ao-mass-bible-study><p class="aoMBResearch"><strong>'+
- esc(L(lang,"Text, typology and meditation are not interchangeable.","Texte, typologie et méditation ne sont pas interchangeables."))+'</strong> '+
- esc(L(lang,"Source-linked study preview. The 1962 Missal and original Bible editions still require word-level collation. No LIVE gestures or Mass readings are changed.","Étude sourcée en cours de vérification. Le Missel de 1962 et les éditions bibliques originales demandent une collation mot à mot. Le LIVE et les lectures ne sont pas modifiés."))+'</p>'+
+ return '<div class="aoMBStudy" data-ao-mass-bible-study><details class="aoMBResearch aoMBResearchDetails"><summary>'+ 
+ esc(L(lang,"Source-linked research preview · 26 biblical connections","Aperçu de recherche sourcée · 26 liens bibliques"))+'</summary><p>'+ 
+ esc(L(lang,"Biblical wording, typology and meditations are separate layers. The Missal and original Bible editions still require word-level collation; LIVE Mass readings and gestures are unchanged.","Texte biblique, typologie et méditations sont distincts. Le Missel et les éditions bibliques originales attendent une collation mot à mot ; lectures et gestes de la Messe LIVE ne sont pas modifiés."))+'</p></details>'+ 
  selections+filter+byStage+'</div>';
 }
 export function renderMassProperWitnessStudy(index,{language="en",sourcePath=""}={}){
  const lang=language==="fr"?"fr":"en";
  if(!Array.isArray(index)||index.length!==105)return '<p class="aoMFError">'+esc(L(lang,"Missal reading witness index unavailable.","Registre des lectures du Missel indisponible."))+'</p>';
  const chosen=index.find(x=>x.sourcePath===sourcePath)||index[0];
- return '<div class="aoMBProper" data-ao-mass-bible-propers><p class="aoMBResearch">'+
- esc(L(lang,"105 source-path-specific Proper witnesses. These are not automatically today's Mass. Exact selected Proper and matching Latin incipits are required before offering a Scripture reading.","105 témoins de propres, chacun identifié par son chemin source. Ce n’est pas automatiquement la Messe du jour. Le propre sélectionné et l’incipit latin concordant restent obligatoires."))+'</p>'+
+ return '<div class="aoMBProper" data-ao-mass-bible-propers><details class="aoMBResearch aoMBResearchDetails"><summary>'+ 
+ esc(L(lang,"Source-indexed 1962 Proper study · not today's Mass","Étude des propres de 1962 · non la Messe du jour"))+'</summary><p>'+ 
+ esc(L(lang,"105 source-path-specific Proper witnesses; the selected Proper and matching original Latin incipit are required for an actual reading.","105 propres identifiés par source ; le propre choisi et l’incipit latin original concordant sont requis pour une lecture réelle."))+'</p></details>'+
  '<label class="aoMBStageSelect">'+esc(L(lang,"1962 Proper source","Source du propre de 1962"))+
  '<select data-ao-mf-bible-proper aria-label="'+esc(L(lang,"Select witnessed Proper","Choisir un propre attesté"))+'">'+
  index.map(r=>'<option value="'+esc(r.sourcePath)+'"'+(r.sourcePath===chosen.sourcePath?' selected':'')+'>'+esc(r.title)+' — '+esc(r.sourcePath)+'</option>').join("")+'</select></label>'+
@@ -125,10 +129,10 @@ export function renderMassProperWitnessStudy(index,{language="en",sourcePath=""}
 }
 export function massBibleStudyCss(){
  return [
- ".aoMBStudy,.aoMBProper{max-width:800px;margin:0 auto}.aoMBResearch{font:12px/1.6 var(--ao-font-ui,system-ui);color:var(--muted,#b6ae9c);border-left:2px solid #9c865c;background:#15191f;padding:11px 13px}.aoMBResearch strong{display:block;color:#e5c994}",
+ ".aoMBMobileFilter{display:none}.aoMBStudy,.aoMBProper{max-width:800px;margin:0 auto}.aoMBResearch{font:12px/1.6 var(--ao-font-ui,system-ui);color:var(--muted,#b6ae9c);border-left:2px solid #9c865c;background:#15191f;padding:11px 13px}.aoMBResearch strong{display:block;color:#e5c994}.aoMBResearchDetails summary{font:600 12px/1.4 system-ui;color:#e5c994;cursor:pointer}.aoMBResearchDetails p{font:12px/1.55 system-ui;color:#c7baa8;margin:10px 0 0}",
  ".aoMBFilters{display:flex;gap:7px;overflow-x:auto;padding:12px 0;scrollbar-width:thin}.aoMBFilters button{flex:none;min-height:44px;padding:9px 12px;border:1px solid #9c865c66;border-radius:8px;background:#151d28;color:#dacbb2;font:600 12px system-ui}.aoMBFilters button[aria-pressed=true]{border-color:#c9ae75;background:#332f27;color:#f4e2bb}",
  ".aoMBStageSelect{display:grid;gap:8px;margin:12px 0 22px;font:600 12px system-ui;color:#bda782}.aoMBStageSelect select{max-width:100%;width:100%;min-height:44px;border:1px solid #a48c6177;border-radius:8px;background:#101821;color:#f3e4ce;padding:9px;font:13px system-ui}",
  ".aoMBGroup{padding:10px 0 4px;border-top:1px solid #c9ae7526}.aoMBGroup h2,.aoMBProper h2{font:500 25px Georgia,serif;margin:12px 0;color:#efe0c5}.aoMBConnection{margin:12px 0;padding:16px 17px;background:#111922;border:1px solid #b69c6d33;border-radius:12px}.aoMBEvidence{font:600 10px system-ui;letter-spacing:.1em;text-transform:uppercase;color:#bfa479}.aoMBConnection h3{font:500 19px/1.3 Georgia,serif;margin:9px 0}.aoMBConnection p{font:14px/1.6 Georgia,serif;color:#d9cdba}.aoMBConnection p.aoMBLatin{font:italic 16px/1.5 Georgia,serif;color:#eed9ac}.aoMBConnection details{margin-top:14px}.aoMBConnection summary{cursor:pointer;color:#e2c58b;font:600 12px system-ui}.aoMBConnection small{font:11px/1.5 system-ui;color:#aa9c89}.aoMBLinks{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.aoMBLinks a{color:#e5c994;min-height:36px;display:inline-flex;align-items:center;font:12px/1.5 system-ui;border:1px solid #a48c6177;border-radius:8px;text-decoration:none;padding:8px 10px}.aoMBSourcePath{font:12px system-ui;color:#bdaa83}",
- "@media(max-width:480px){.aoMBFilters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}.aoMBFilters button{min-width:0;white-space:normal;font-size:11px;padding:7px}.aoMBConnection{padding:14px}}"
+ "@media(max-width:480px){.aoMBFilters{display:none}.aoMBMobileFilter{display:grid;gap:6px;margin:12px 0 6px;font:600 12px system-ui;color:#bda782}.aoMBMobileFilter select{width:100%;min-height:44px;padding:9px 10px;border:1px solid #a48c6177;border-radius:8px;background:#101821;color:#f3e4ce;font:13px system-ui}.aoMBResearch{padding:8px 11px}.aoMBStageSelect{margin:11px 0 16px}.aoMBConnection{padding:14px}}"
  ].join("\n");
 }
