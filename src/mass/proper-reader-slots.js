@@ -80,8 +80,15 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
   // The source Calendar lists commemorations separately from the prayer
   // arrays. A one-prayer fallback is NOT a complete Proper when an identified
   // commemoration still requires its own Collect, Secret and Postcommunion.
-  const extra=(Array.isArray(proper.calendarCommemorations)?
-    proper.calendarCommemorations:[]).filter(row=>row&&!row.inseparable).length;
+  const selection=proper.commemorationFormDecision;
+  const effectiveCommemorations=selection?.status==="CERTIFIED"&&
+    selection?.source==="1962_PROPER_RESOLVER"&&
+    Number.isInteger(selection.appliedCount)&&
+    Array.isArray(proper.appliedCommemorations)&&
+    selection.appliedCount===proper.appliedCommemorations.length
+      ?proper.appliedCommemorations:proper.calendarCommemorations;
+  const extra=(Array.isArray(effectiveCommemorations)?
+    effectiveCommemorations:[]).filter(row=>row&&!row.inseparable).length;
   const minimum=1+extra;
   if(extra>0){
     for(const [slot,plural,singular] of [
