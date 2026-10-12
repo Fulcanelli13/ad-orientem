@@ -203,7 +203,29 @@
     "misereatur": "Misereatur vestri omnipotens Deus, et, dimissis peccatis vestris, perducat vos ad vitam aeternam.",
     "indulgentiam": "Indulgentiam, absolutionem et remissionem peccatorum vestrorum tribuat vobis omnipotens et misericors Dominus.",
     "ecce": "Ecce Agnus Dei, ecce qui tollit peccata mundi.",
-    "faithfulDomineNonSumDignus": "Domine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanabitur anima mea."
+    "faithfulDomineNonSumDignus": "Domine, non sum dignus, ut intres sub tectum meum: sed tantum dic verbo, et sanabitur anima mea.",
+    "deaconConfiteor": {
+      "sourcePath": "data/presentation/reader-text-sung.v1.json#AO.SM.B007",
+      "sourceBasis": "1962 Ordinary: Confiteor of ministers; Good Friday printed rubric 'Et continuo diaconus facit confessionem.'",
+      "speaker": "DEACON",
+      "parts": [
+        {
+          "cueId": "AO.SM.C0021",
+          "latin": "Confíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Ioánni Baptístæ, sanctis Apóstolis Petro et Paulo, ómnibus Sanctis, et tibi, pater: quia peccávi nimis cogitatióne, verbo et opere:",
+          "english": "I confess to Almighty God, to blessed Mary ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, to all the Saints, and to you Father, that I have sinned exceedingly, in thought, word and deed:"
+        },
+        {
+          "cueId": "AO.SM.C0022",
+          "latin": "mea culpa, mea culpa, mea máxima culpa.",
+          "english": "through my fault, through my fault, through my most grievous fault."
+        },
+        {
+          "cueId": "AO.SM.C0023",
+          "latin": "Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Ioánnem Baptístam, sanctos Apóstolos Petrum et Paulum, omnes Sanctos, et te, pater, oráre pro me ad Dóminum, Deum nostrum.",
+          "english": "Therefore I beseech blessed Mary ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, all the Saints, and thee Father, to pray to the Lord our God for me."
+        }
+      ]
+    }
   },
   "conclusion": [
     "Super populum tuum quaesumus, Domine, qui passionem et mortem Filii tui devota mente recoluit, benedictio copiosa descendat, indulgentia veniat, consolatio tribuatur, fides sancta succrescat, redemptio sempiterna firmetur. Per eundem Christum Dominum nostrum. Amen.",
