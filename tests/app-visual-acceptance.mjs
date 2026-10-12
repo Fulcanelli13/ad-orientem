@@ -688,7 +688,18 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-next]").isDisabled(),true,
     "Confession must require a preparation-path choice before continuing");
   await page.locator("#aoPray435930 [data-p435930-conf-path='regular']").click();
-  for(let i=0;i<6;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  // Consent to the regular preparation path is the one visible Continue.
+  // Thereafter the canonical source cards own navigation, not hidden Next.
+  await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  const confessionTimeline="#aoPray435930.open .aoP435930ConfessionReader .aoDevoSequenceTimeline";
+  await page.waitForSelector(confessionTimeline,{state:"visible",timeout:12000});
+  assert.equal(await page.locator(confessionTimeline+" [data-ao-devo-chapter]").count(),5,
+    "Regular examination must retain five source-owned stages");
+  await page.locator(confessionTimeline+" [data-ao-devo-chapter='4']").click();
+  await page.waitForSelector("#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-final='true']",{timeout:5000});
+  // Only the final examination card reveals the real Continue to the rite.
+  await page.locator("#aoPray435930 .aoP435930ConfessionReader [data-p435930-conf-next]").click();
+  await page.waitForSelector("#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-section='2'] "+".aoDevoSequenceTimeline",{timeout:5000});
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-sign-cross",null,{timeout:3000});
   const confessionRail=await page.evaluate(()=>({
     left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
@@ -701,7 +712,8 @@ try{
   // Preserve the historical visual-acceptance artifact name used by donor comparison.
   await shot("03h-pray-confession-in-confessional");
   // Once the first rehearsal card is past, the transient cross cue disappears.
-  await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  await page.locator(confessionTimeline+" [data-ao-devo-chapter='1']").click();
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930ConfessionReader .aoDevoCard")?.dataset?.aoDevoCard==="say-sins",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Sign-of-Cross cue must not persist throughout rehearsal");
   assert.equal(await page.locator("#aoPray435930 [data-ao-confession-card='say-sins']").count(),1);
   await page.locator("#aoPray435930 [data-p435930-back]").click();
