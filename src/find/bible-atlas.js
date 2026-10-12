@@ -245,7 +245,7 @@ export function renderBibleAtlasToString(vm){
  '<button type="button" data-bible-review-surface="apostles" aria-pressed="false">'+esc(L(lang,"Apostolic lives · review","Vies apostoliques · recherche"))+'</button>'+ 
  '<button type="button" data-bible-review-surface="cinematic" aria-pressed="false">'+esc(L(lang,"Scene studies · review","Études des scènes · recherche"))+'</button></nav>'+
  '<div class="aoBibleAtlasEraHeader"><span data-bible-era-name>'+esc(L(lang,ERAS[s.era][0],ERAS[s.era][1]))+'</span>'+
- '<small>'+esc(L(lang,"Scroll horizontally through the milestones","Faites défiler les étapes horizontalement"))+'</small></div>'+
+ '<small>'+esc(L(lang,"Swipe milestones · selected Gospel narrative, not a dated harmony","Faites défiler les étapes · récit évangélique choisi, non une chronologie datée"))+'</small></div>'+
  '<div class="aoBibleAtlasTimeline"><div class="aoBibleAtlasCursor" aria-hidden="true"></div><div class="aoBibleAtlasTrack" data-bible-track aria-label="'+esc(L(lang,"Continuous biblical chronology","Chronologie biblique continue"))+'"><div class="aoBibleAtlasTrackPad" aria-hidden="true"></div>';
  for(const step of steps){
   const boundary=step.index===0||steps[step.index-1].era!==step.era;
