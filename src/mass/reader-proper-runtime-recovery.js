@@ -102,13 +102,13 @@ const VERIFIED_PREFACE_OWNERS=Object.freeze({
 });
 function applyMarianPrefaceForm(text,language,form){
   if(form==="rosary"){
-    if(language==="la")return text.replace(/\\*Festivitáte\\*/,"festivitáte");
-    if(language==="en")return text.replace(/\\*Feast\\*/,"Feast");
+    if(language==="la")return text.replace(/\*Festivitáte\*/,"festivitáte");
+    if(language==="en")return text.replace(/\*Feast\*/,"Feast");
     if(language==="fr")return text;
   }
   if(form==="immaculate"){
-    if(language==="la")return text.replace(/\\*Festivitáte\\*/,"Conceptióne Immaculáta");
-    if(language==="en")return text.replace(/\\*Feast\\*/,"Immaculate Conception");
+    if(language==="la")return text.replace(/\*Festivitáte\*/,"Conceptióne Immaculáta");
+    if(language==="en")return text.replace(/\*Feast\*/,"Immaculate Conception");
     if(language==="fr")return text.replace(/en la fête de la bienheureuse Marie/i,"en la Conception immaculée de la bienheureuse Marie");
   }
   return text;
@@ -122,7 +122,7 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
   const owner=authenticatedPrefaceOwner(principalCelebrationId);
   if(!owner)return null;
   const heading=String(data.preface?.lat??data.preface?.la??"").trim();
-  const currentlyCommon=/^Communis(?:\\s|$)/i.test(heading);
+  const currentlyCommon=/^Communis(?:\s|$)/i.test(heading);
   if(!currentlyCommon)return null; // Preserve source-selected non-Common text pending independent certification.
   const result={};
   for(const language of ["la","en","fr"]){
@@ -131,7 +131,7 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     if(!section.length)return null;
     let text=cleanLines(section,language);
     text=applyMarianPrefaceForm(text,language,owner.form);
-    if(!sourceTextComplete(text)||/\\*Festivitáte\\*|\\*Feast\\*/.test(text))return null;
+    if(!sourceTextComplete(text)||/\*Festivitáte\*|\*Feast\*/.test(text))return null;
     result[language==="la"?"lat":language]=text;
   }
   if(!hasThreeLanguages(result))return null;
