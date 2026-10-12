@@ -850,6 +850,9 @@ const DEVOTIONAL_PRAYER_FIRST_CSS=`
 #aoPray435930 .aoP435930PrayerOptionsBody{
  display:grid;gap:12px;padding:0 12px 14px;min-width:0;
 }
+#aoPray435930 .aoP435930PrayerOptions:not([open])>.aoP435930PrayerOptionsBody{
+ display:none!important;
+}
 #aoPray435930 .aoP435930PrayerOptionsBody>.aoP435930ModeRow{margin:0}
 #aoPray435930 .aoP435930PrayerOptionsBody .aoP435930Seg button{
  min-height:44px;padding:9px 10px;
