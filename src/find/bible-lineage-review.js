@@ -44,6 +44,34 @@ export function genesisGenerationRows(data,{root="adam",depth=3}={}){
  }
  return result;
 }
+// An actual nested source-edge tree rather than a flat chronological parent list.
+// Every child node is backed by one named Genesis relation; no shared surname merges.
+export function renderGenesisBranchTree(rows,{root="adam",language="en"}={}){
+ const lang=language==="fr"?"fr":"en",out=new Map();
+ for(const edge of arr(rows)){
+  if(!out.has(edge.parentId))out.set(edge.parentId,[]);
+  out.get(edge.parentId).push(edge);
+ }
+ const names={adam:["Adam","Adam"],noah:["Noah","Noé"],abraham:["Abraham","Abraham"],jacob:["Jacob","Jacob"],joseph:["Joseph","Joseph"]};
+ const start=Object.hasOwn(names,root)?root:"adam";
+ const children=(id,seen)=>{
+  const edges=(out.get(id)||[]).filter(e=>!seen.has(e.childId));
+  if(!edges.length)return "";
+  return '<ul role="group">'+edges.map(e=>{
+   const nextSeen=new Set([...seen,e.childId]);
+   return '<li role="treeitem" aria-label="'+esc(e.child)+'" data-bible-family-edge="'+esc(e.id)+'" data-bible-family-person="'+esc(e.childId)+'">'+
+    '<div class="aoBibleFamilyNode"><small>'+esc(L(lang,"Generation","Génération"))+' '+e.generation+'</small>'+
+    '<strong>'+esc(e.child)+'</strong>'+
+    (e.mother?'<small>'+esc(L(lang,"Mother named","Mère nommée"))+': '+esc(e.mother)+'</small>':"")+
+    '<a href="'+esc(e.url)+'" target="_blank" rel="noopener noreferrer">'+esc(e.reference)+' ↗</a></div>'+
+    children(e.childId,nextSeen)+'</li>';
+  }).join("")+'</ul>';
+ };
+ return '<div class="aoBibleFamilyTree" role="tree" aria-label="'+esc(L(lang,"Source-linked family of","Famille référencée de"))+' '+esc(L(lang,...names[start]))+'">'+
+  '<div class="aoBibleFamilyRoot" data-bible-family-person="'+start+'"><small>'+esc(L(lang,"Selected ancestor","Ancêtre choisi"))+'</small>'+
+  '<strong>'+esc(L(lang,...names[start]))+'</strong></div>'+
+  children(start,new Set([start]))+'</div>';
+}
 export function apostolicProfile(data,id){
  if(!validateLineageReviewCorpus(data))return null;
  const profile=data.profiles.find(p=>p.id===id)||data.profiles[0];
@@ -78,10 +106,7 @@ export function renderLineageReview(data,{language="en",surface="genealogies",li
    body+='<div class="aoBibleReviewControls"><span>'+esc(L(lang,"Generations","Générations"))+': '+Number(depth||3)+'</span>'+
    '<button type="button" data-bible-review-depth="-1" '+(Number(depth)<=1?'disabled':'')+'>−</button>'+
    '<button type="button" data-bible-review-depth="1" '+(Number(depth)>=6?'disabled':'')+'>+</button></div>';
-   body+='<ol class="aoBibleReviewList">'+rows.map(r=>'<li class="aoBibleReviewFamily" style="--generation:'+Math.min(r.generation,6)+'">'+
-    '<small>'+esc(L(lang,"Generation","Génération"))+' '+r.generation+'</small><strong>'+esc(r.parent)+' → '+esc(r.child)+'</strong>'+
-    (r.mother?'<small>'+esc(L(lang,"Mother","Mère"))+': '+esc(r.mother)+'</small>':"")+
-    '<a href="'+esc(r.url)+'" rel="noopener noreferrer" target="_blank">'+esc(r.reference)+' ↗</a></li>').join("")+'</ol>';
+   body+=renderGenesisBranchTree(rows,{root,language:lang});
    if(!rows.length)body+='<p class="aoBibleReviewEmpty">'+esc(L(lang,"No source-linked descendants at this depth.","Aucun descendant référencé à ce niveau."))+'</p>';
   }else{
    const seq=lineageSequence(data,key),pg=Math.max(0,Math.min(Math.ceil(seq.length/12)-1,Number(page)||0)),first=pg*12;
@@ -132,6 +157,7 @@ const CSS=[
 ".aoBibleReviewPeople button{white-space:normal;text-align:left;max-width:100%;min-height:48px}.aoBibleReviewControls{display:flex;gap:9px;align-items:center;margin:15px 0;color:#baa983;font:12px system-ui}.aoBibleReviewControls span{flex:1}",
 ".aoBibleReviewList{display:grid;gap:8px;list-style:none;padding:0;margin:16px 0;max-width:830px}.aoBibleReviewList li{display:flex;flex-direction:column;gap:5px;padding:11px 12px;background:#111923;border:1px solid #d9c59a2a;border-radius:10px;min-width:0}",
 ".aoBibleReviewList strong{font:500 16px/1.25 Georgia,serif;color:#f0e3cf}.aoBibleReviewList small{font:11px/1.4 system-ui;color:#baa98d}.aoBibleReviewList a{font:12px/1.5 system-ui;color:#dec28a;width:max-content;max-width:100%;overflow-wrap:anywhere}",
+".aoBibleFamilyTree{max-width:780px;overflow-x:auto;margin:15px 0 25px;padding:5px 2px 12px}.aoBibleFamilyTree ul{list-style:none;margin:0 0 0 16px;padding:0 0 0 17px;border-left:1px solid #c9ae755a}.aoBibleFamilyTree li{position:relative;list-style:none;margin:9px 0 0;min-width:0}.aoBibleFamilyTree li:before{content:'';position:absolute;left:-17px;top:23px;width:17px;border-top:1px solid #c9ae755a}.aoBibleFamilyRoot,.aoBibleFamilyNode{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 13px;background:#111923;border:1px solid #d9c59a35;border-radius:10px;padding:11px 13px;max-width:630px;min-width:0}.aoBibleFamilyRoot{background:#2a271f;border-color:#c9ae757e}.aoBibleFamilyRoot strong,.aoBibleFamilyNode strong{font:500 17px Georgia,serif;color:#f0e3cf}.aoBibleFamilyRoot small,.aoBibleFamilyNode small{font:10px/1.3 system-ui;color:#baa98d}.aoBibleFamilyNode a{font:12px system-ui;color:#dec28a;margin-left:auto}.aoBibleFamilyNode a:focus-visible{outline:2px solid #e6c47b;outline-offset:2px}",
 ".aoBibleReviewFamily{margin-left:calc(min(var(--generation),4)*5px)}.aoBibleReviewEvidence{font:600 10px system-ui;letter-spacing:.06em;text-transform:uppercase;color:#a99472}",
 ".aoBibleReviewList p{font:12px/1.5 system-ui;margin:2px 0;color:#bcb1a0}.aoBibleReviewList button{align-self:flex-start;min-height:44px;border:1px solid #d0b87966;border-radius:8px;background:#22251d;color:#edd09a;padding:8px 13px;font:600 12px system-ui}.aoBibleReviewEmpty{padding:16px;border:1px dashed #a0895f77;border-radius:10px;max-width:700px}",
 "@media(max-width:480px){.aoBibleReviewTop{padding:8px 12px}.aoBibleReviewTabs{padding:7px 9px}.aoBibleReviewScroll{padding:12px 14px 32px}.aoBibleReview h2{font-size:21px}.aoBibleReviewPeople{grid-template-columns:1fr 1fr}.aoBibleReviewPeople button{font-size:11px}}",
