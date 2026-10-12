@@ -1,0 +1,446 @@
+{
+  "schema": "AO_SACRED_ART_ACQUIRED_134_REAL_IMAGE_BATCH_V1",
+  "date": "2026-10-12",
+  "branch": "platform/885-sacred-art-candidates",
+  "sourceRegistry": "data/calendar/sacred-art-candidates.v1.json",
+  "reuseSource": "data/calendar/sacred-art-134-existing-originals-reuse-20261012.v2.json",
+  "reviewMethod": "Compare matching museum source artwork images / Commons derivative photographs to exact art object IDs and recorded SHA references; visual review is of web-viewable complete composition previews, not rereading locally stored high-res hash bytes.",
+  "policy": {
+    "existing101ChoicesImmutable": true,
+    "allowOnlyReviewTiers": true,
+    "excludeArtists": [
+      "El Greco",
+      "Fra Angelico"
+    ],
+    "noAutoPublication": true,
+    "noAutoCropping": true,
+    "noWebImageSubstitutionForAcquiredSHA": true,
+    "museumAttributionSupersedesRegistryIfConflict": true
+  },
+  "counts": {
+    "previouslyAcquiredArtworksEligible": 50,
+    "visuallyAssessedExactObjects": 19,
+    "primary": 9,
+    "secondaryOrHold": 10,
+    "remainingWithoutThisPassReview": 31,
+    "newUserApprovals": 0
+  },
+  "corrections": [
+    {
+      "artworkId": "cma-127746",
+      "field": "artist",
+      "old": "Jacopo Tintoretto",
+      "museumPreferred": "workshop of Jacopo Tintoretto",
+      "source": "https://www.clevelandart.org/art/1950.400"
+    },
+    {
+      "artworkId": "cma-160143",
+      "rule": "Do not substitute Gandolfi The Holy Family at Christie's, a different painting. Exact acquired object is Cleveland 1998.10."
+    }
+  ],
+  "artworks": [
+    {
+      "artworkId": "met-437970",
+      "canonicalSha256": "79a8500d9cca058ac4c68160a6f401ba7920244a70bb3271072a017f22701d61",
+      "recordedArtist": "Francisco de Zurbarán",
+      "recordedTitle": "Saint Benedict",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437970",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_SOURCE",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "LOW",
+      "reviewNote": "Full-length austere monk, restrained earth colours and grave dark cloth, face and jar readable; particularly suitable Benedict devotional/card. Portrait orientation requires full-body contain; crop only by separate approval.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-14"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-12209",
+      "canonicalSha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b",
+      "recordedArtist": "Francisco de Zurbarán",
+      "recordedTitle": "Saint Lucy",
+      "museumOriginal": "https://www.nga.gov/artworks/12209-saint-lucy",
+      "sourceImageMatch": "PREVIEW_MATCHED_INSTITUTIONAL_SOURCE",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "LOW",
+      "reviewNote": "Zurbarán's strong half-length portrait; dark ground, red bodice, flowers and martyr palm create lucid saint identity even at phone size. Eyes on salver legible at enlarged scale, not necessarily thumbnail.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-21"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-702752",
+      "canonicalSha256": "855b6176890e6dde6bac386b28aaea39470725df5ae74b1b234b7cd8f40ec910",
+      "recordedArtist": "Benedetto Luti",
+      "recordedTitle": "Christ and the Woman of Samaria",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/702752",
+      "sourceImageMatch": "PREVIEW_MATCHED_SOURCE_ORIGINAL",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "LOW",
+      "reviewNote": "Luti's intimate two-figure dialogue around stone well; rich red/blue versus ochre drapery and legible scriptural interaction. Good vertical Gospel/Bible card; preserve well and both figures.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G08"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437871",
+      "canonicalSha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
+      "recordedArtist": "Diego Velázquez",
+      "recordedTitle": "The Supper at Emmaus",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437871",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_SOURCE",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "LOW",
+      "reviewNote": "Velázquez monumental naturalistic half-length supper, severe chiaroscuro with red-robed Christ; powerful recognisable sacred encounter. It illustrates the Supper at Emmaus recognition, not walking the road.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G22"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-96688",
+      "canonicalSha256": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+      "recordedArtist": "Jacopo Bassano",
+      "recordedTitle": "The Miraculous Draught of Fishes",
+      "museumOriginal": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+      "sourceImageMatch": "PREVIEW_MATCHED_SOURCE_ORIGINAL",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Bassano saturated Venetian horizontal narrative, clear Jesus/Peter/apostles and nets with strong depth. Excellent Luke 5 Bible Atlas painting; landscape aspect requires contain/alternate subject-sensitive layout; never narrow centre crop.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G06"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-816629",
+      "canonicalSha256": "61630e0254184d4bf79c36a24d6cf1707b9aa60fbc308584436b7955fd0bd9c7",
+      "recordedArtist": "Carlo Maratti",
+      "recordedTitle": "The Flight into Egypt",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/816629",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_SOURCE",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "MEDIUM",
+      "reviewNote": "Maratti's energetic Marian/Joseph exchange with Child amid rushing-water flight scene, saturated blues/ochre and ornamental angels. Good Gospel narrative; check crowded upper cherubs in mobile presentation.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G03"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-435755",
+      "canonicalSha256": "44529c53ef6f8d3643a391a9b49f28b01145fed9fd6fd2abe451265ff1b9e32a",
+      "recordedArtist": "Sébastien Bourdon",
+      "recordedTitle": "The Baptism of Christ",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/435755",
+      "sourceImageMatch": "PREVIEW_MATCHED_MET_ORIGINAL",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "LOW",
+      "reviewNote": "Bourdon's naturalistic Baptism, central Christ kneeling head and Saint John, angels and wooded terrain; liturgical action visually unmistakable, sombre luminous finish, sound phone vertical proportions.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G04"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-160143",
+      "canonicalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "recordedArtist": "Gaetano Gandolfi",
+      "recordedTitle": "The Holy Family",
+      "museumOriginal": "https://clevelandart.org/art/1998.10",
+      "sourceImageMatch": "PREVIEW_MATCHED_CMA_OBJECT_DESCRIPTION",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "LOW",
+      "reviewNote": "Gandolfi's close Holy Family with older Joseph holding an open book, central Christ Child and Mary looking upwards, rich painterly shadows and flesh tones. Explicit 1776 Cleveland object matched, not similarly titled Gandolfi oval auction painting.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-10",
+        "SNT-OT-01"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-438434",
+      "canonicalSha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "recordedArtist": "Jean Auguste Dominique Ingres",
+      "recordedTitle": "The Virgin Adoring the Host",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/438434",
+      "sourceImageMatch": "PREVIOUS_VERIFIED_MATCHED_PREVIEW",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "LOW",
+      "reviewNote": "Ingres Virgin Adoring the Host already visually identified at exact Met object; small, jewel-like controlled composition with saturated Mary blue/red. Eucharistic-Marian contemplation; not monstrance or Exposition. Preserved from prior first-pass visual review.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-05"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437542",
+      "canonicalSha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "recordedArtist": "Workshop of Peter Paul Rubens",
+      "recordedTitle": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437542",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_SOURCE",
+      "artistTier": "SECONDARY_EXACT_SUBJECT",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "MEDIUM",
+      "reviewNote": "Workshop version of Rubens altarpiece, Christ's saturated crimson drapery and Teresa's intense kneeling action; angelic figures above purgatory. Useful exact devotional and Teresa subjects, but workshop finish/size and small bottom souls make it weak as homepage dominant.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-11",
+        "SNT-DC-08"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437527",
+      "canonicalSha256": "521b3051abc5f86aa0d069f884fb731cbd339160f1667d8472ee6b35dc72ca65",
+      "recordedArtist": "Peter Paul Rubens",
+      "recordedTitle": "The Glorification of the Eucharist",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437527",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_SOURCE",
+      "artistTier": "SECONDARY_SKETCH_RESTRICTED",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Rubens painted preparatory oil sketch, busy arch, lightly brushed pale upper heaven and Eucharistic allegory, less polished at large screen than finished altarpiece. Not default Eucharistic exposition or hero; may support historical teaching.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-05"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437743",
+      "canonicalSha256": "93690bf1b31ed4b7459bacec00017dc9642a005744002dd57e9348e4ab106924",
+      "recordedArtist": "Spanish Painter",
+      "recordedTitle": "The Trinity Adored by All Saints",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437743",
+      "sourceImageMatch": "PREVIEW_MATCHED_MET_ORIGINAL",
+      "artistTier": "SECONDARY_COMPLEX_ALTARPIECE",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Early Spanish three-panel gold-ground All Saints altarpiece; remarkably dense painted compartments and dozens of tiny saints. Serious historic subject match but flattened medieval graphic style and unreadable saints at mobile sizes. Not homepage hero by default.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-19"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437722",
+      "canonicalSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+      "recordedArtist": "Spanish Painter",
+      "recordedTitle": "The Mass of Saint Gregory",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437722",
+      "sourceImageMatch": "PREVIEW_MATCHED_MET_ORIGINAL",
+      "artistTier": "SECONDARY_SMALL_NARRATIVE",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "MEDIUM",
+      "reviewNote": "Late Gothic Spanish Mass of Saint Gregory with vestments, gilding and standing risen Man of Sorrows; spiritually apposite for Gregory or Eucharist, but architectural multi-figure detail and edge vestments too small for portrait hero.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-05",
+        "SNT-DC-04"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-505",
+      "canonicalSha256": "f3a7a3e350821593959bba5441953d9684810243d2db8b6848d47dd1ba01c014",
+      "recordedArtist": "Piero di Cosimo",
+      "recordedTitle": "The Visitation with Saint Nicholas and Saint Anthony Abbot",
+      "museumOriginal": "https://www.nga.gov/artworks/505-visitation-saint-nicholas-and-saint-anthony-abbot",
+      "sourceImageMatch": "PREVIEW_MATCHED_NGA_ORIGINAL",
+      "artistTier": "SECONDARY_CONTEXTUAL_SAINTS",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Piero di Cosimo Visitation beautifully clear two central women, seated Saint Nicholas lower left and Anthony Abbot lower right; exact secondary identities. Strong painting for Visitation, but individual saint portraits are peripheral and small. NOT Anthony of Padua.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-20"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437849",
+      "canonicalSha256": "a4c2c2f6c7e1a844658f941a0fc1c14c58821db58e8be5f29c9390ef3c6f74e6",
+      "recordedArtist": "Cosmè Tura",
+      "recordedTitle": "The Flight into Egypt",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437849",
+      "sourceImageMatch": "PREVIEW_MATCHED_MET_ORIGINAL",
+      "artistTier": "SECONDARY_PERIOD_STYLE_HOLD",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Cosmè Tura brown-toned roundel of Joseph alongside Mary and Child on donkey; exact flight context but thin tempera modelling, heavily cracked edge, unusual shape. Retain scholarly/narrative backup, not a prominent devotional hero.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G03"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-150389",
+      "canonicalSha256": "4d3e81096c456cb1b5ad9d36c69e82cba0e14655a1cd0a68a1d4776b4b1f55aa",
+      "recordedArtist": "Nicolas Poussin",
+      "recordedTitle": "The Holy Family on the Steps",
+      "museumOriginal": "https://clevelandart.org/art/1981.18",
+      "sourceImageMatch": "PREVIEW_MATCHED_CMA_OBJECT",
+      "artistTier": "SECONDARY_LAYOUT_CROP_HOLD",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Poussin Holy Family on Steps: lucid primary colours and classical geometric organisation, but Saint Joseph seated at far right partly turned away; horizontal group will become tiny on portrait screen. Museum preview includes elaborate modern frame; use acquired frame-free original only.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-10",
+        "SNT-OT-01"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-436982",
+      "canonicalSha256": "285097a579f880e4478e10353b4d036fcecec7ff3111c27cda549e97d80990db",
+      "recordedArtist": "Maso di Banco",
+      "recordedTitle": "Saint Anthony of Padua",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/436982",
+      "sourceImageMatch": "PREVIEW_MATCHED_MET_ORIGINAL",
+      "artistTier": "SECONDARY_MEDIEVAL_STYLE_HOLD",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "MEDIUM",
+      "reviewNote": "Maso di Banco Anthony of Padua on pointed gold-ground tempera panel; authentic subject but predominantly flat gold-field early Florentine treatment conflicts with solemn painterly Baroque preference. No automatic disqualification: retain historical art only.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-06"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-459258",
+      "canonicalSha256": "bd63753b81300d6cd2e8d6c096ad689cae090c3df9e7aa28c2cb09333981941b",
+      "recordedArtist": "Pietro di Giovanni d'Ambrogio",
+      "recordedTitle": "Saint Nicholas of Bari",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/459258",
+      "sourceImageMatch": "PREVIEW_MATCHED_MET_ORIGINAL",
+      "artistTier": "SECONDARY_MEDIEVAL_STYLE_HOLD",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Saint Nicholas of Bari authentic episcopal figure on very tall and narrow gold panel, distressed gilding and flat medieval style; Met painted surface only 24.5 × 7.5 cm. Poor choice for homepage or phone crop.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-20"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-127746",
+      "canonicalSha256": "3ec7f722c11141337c98a884cd34c87cf09ed4f22e648603136bca0239ba046e",
+      "recordedArtist": "Jacopo Tintoretto",
+      "recordedTitle": "Baptism of Christ",
+      "museumOriginal": "https://clevelandart.org/art/1950.400",
+      "sourceImageMatch": "PREVIEW_MATCHED_CMA_OBJECT",
+      "artistTier": "SECONDARY_WORKSHOP_ATTRIBUTION_HOLD",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Luminous, broad river Baptism with angels but Christ/John silhouettes spaced in panoramic 169×251cm composition. Museum currently explicitly attributes work to the WORKSHOP OF Jacopo Tintoretto, unlike previous simplistic registry entry; do not credit autograph Tintoretto. Phone-cover crop would remove theology/figures.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G04"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    }
+  ]
+}
