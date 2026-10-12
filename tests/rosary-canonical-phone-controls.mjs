@@ -192,9 +192,25 @@ try{
    await page.screenshot({path:resolve(captures,"rosary-active-after-start-"+width+".png"),
      fullPage:false,animations:"disabled"});
 
-   await activeOptions.locator(":scope > summary").click();
-   assert.equal(await activeOptions.evaluate(x=>x.open),true,
-     "Active settings did not expand");
+   const clickDebug=await page.evaluate(()=>{
+     const node=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
+     const summary=node.querySelector(":scope > summary");
+     const events=[];
+     node.addEventListener("click",e=>events.push({kind:"click",tag:e.target.tagName,open:node.open}),true);
+     node.addEventListener("toggle",()=>events.push({kind:"toggle",open:node.open}));
+     const before={open:node.open,connected:node.isConnected,html:summary.outerHTML.slice(0,280)};
+     summary.click();
+     return {before,after:{open:node.open,connected:node.isConnected},events};
+   });
+   const clickSettled=await page.evaluate(async()=>{
+     await new Promise(ok=>setTimeout(ok,120));
+     const n=document.querySelector("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
+     return {exists:!!n,open:n?.open,text:n?.querySelector(":scope>summary")?.textContent,
+       count:document.querySelectorAll("#aoPrayerBookRoot.open .aoRosaryActiveOptions").length,
+       main:document.querySelector("#aoPrayerBookRoot.open")?.dataset?.aoRosaryActiveRoot};
+   });
+   console.log("ACTIVE OPTIONS DEBUG "+width+" "+JSON.stringify({clickDebug,clickSettled}));
+   assert.equal(clickSettled.open,true,"Active settings did not expand");
    assert.equal(await activeOptions.locator('[data-p435930-rosary-depth]').count(),2,
      "Simple/Guided disappeared from original reader");
    assert.ok(await activeOptions.locator('[data-p435930-recitation]').count()>=2,
