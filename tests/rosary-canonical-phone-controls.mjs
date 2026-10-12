@@ -192,7 +192,7 @@ try{
    await page.screenshot({path:resolve(captures,"rosary-active-after-start-"+width+".png"),
      fullPage:false,animations:"disabled"});
 
-   await activeOptions.locator("summary").click();
+   await activeOptions.locator(":scope > summary").click();
    assert.equal(await activeOptions.evaluate(x=>x.open),true,
      "Active settings did not expand");
    assert.equal(await activeOptions.locator('[data-p435930-rosary-depth]').count(),2,
@@ -207,7 +207,7 @@ try{
      "Changing reading mode closed active options unexpectedly");
    assert.equal(await page.evaluate(()=>window.AO_ROSARY_V381.state().step),activeBefore.step,
      "Reading mode advanced canonical bead");
-   await activeOptions.locator("summary").click();
+   await activeOptions.locator(":scope > summary").click();
    const beforeNext=await page.evaluate(()=>window.AO_ROSARY_V381.state().step);
    await player.locator('[data-lab-rosary-next]').click();
    await page.waitForFunction(previous=>window.AO_ROSARY_V381?.state?.()?.step>previous,beforeNext,{timeout:12000});
