@@ -1,0 +1,35 @@
+name: 1962 Holy Week Vatican printed image collation B09
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json'
+      - 'tools/calendar/independent-1962-holy-week-b09-image-audit.mjs'
+      - '.github/workflows/1962-holy-week-printed-image-b09.yml'
+  push:
+    paths:
+      - 'data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json'
+      - 'tools/calendar/independent-1962-holy-week-b09-image-audit.mjs'
+      - '.github/workflows/1962-holy-week-printed-image-b09.yml'
+jobs:
+  printed-image-source-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Compare manually verified Vatican 1962 Holy Week printed-image anchors with actual native rites
+        run: node tools/calendar/independent-1962-holy-week-b09-image-audit.mjs --strict
+      - name: Preserve 1962 printed-page evidence with uncollated B05 holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-holy-week-b09-printed-image-audit
+          path: artifacts/mass-1962-holy-week-b09-printed-image-report.json
+          if-no-files-found: warn
