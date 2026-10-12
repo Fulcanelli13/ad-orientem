@@ -71,7 +71,7 @@ function gospelReference(proper){
   // Do not turn a full Gospel passage into a misleading one-line citation.
   return entry && entry.length<=105?entry:null;
 }
-export function massCalendarPreflightContext(legacy,calendarState={},language="en"){
+export function massCalendarPreflightContext(legacy,calendarState={},language="en",{form=null}={}){
   const date=text(legacy?.date);
   const fr=String(language).toLowerCase().startsWith("fr");
   if(!date||!ISO.test(date))return Object.freeze({date:date??"",fr,
@@ -103,14 +103,37 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
     !calendar.principalId||selectedOwner===calendar.principalId;
   const commemorationApplies=commemorations.length>0&&kind==="CALENDAR"&&
     !alternate&&sameOwner;
-  const commemorationOrations=commemorationApplies?
+  // Counting source orations is NOT a rubrical decision. The 1962 Proper
+  // source owner must certify which commemorations apply to the chosen Mass
+  // form; this read-only context may never infer it from calendar names.
+  const selectedForm=form==null?null:String(form).trim().toUpperCase();
+  const sourceDecision=proper?.commemorationFormDecision;
+  const certified=Boolean(selectedForm&&sourceDecision?.status==="CERTIFIED"&&
+    sourceDecision?.source==="1962_PROPER_RESOLVER"&&
+    sourceDecision?.form===selectedForm&&
+    Number.isInteger(sourceDecision?.appliedCount)&&
+    sourceDecision.appliedCount>=0&&
+    sourceDecision.appliedCount<=commemorations.length&&
+    sourceDecision?.calendarCount===commemorations.length);
+  const counts=commemorationApplies?
     properOrationReadiness(proper,commemorations.length+1,fr):
     Object.freeze({status:"NOT_APPLICABLE",counts:null});
+  const commemorationOrations=!commemorationApplies?counts:
+    selectedForm&&!certified?
+      Object.freeze({status:"FORM_RULES_UNVERIFIED",counts:counts.counts}):
+      certified&&sourceDecision.appliedCount===0?
+        Object.freeze({status:"NOT_APPLIED_TO_FORM",counts:counts.counts}):
+        certified?
+          properOrationReadiness(proper,sourceDecision.appliedCount+1,fr):
+          counts;
+  const commemorationPrayerApplies=!commemorationApplies?false:
+    certified?sourceDecision.appliedCount>0:null;
   return Object.freeze({
     date,fr,season:period?fr?period.fr:period.en:null,calendar,
     actual:Object.freeze({kind,title:actualTitle,colour:actualColour,
       gospel:gospelReference(proper),canStart:legacy?.canStart===true}),
-    commemorations,commemorationOrations,commemorationApplies,
+    commemorations,commemorationOrations,commemorationApplies,commemorationPrayerApplies,
+    form:selectedForm,
     differs,sourceDate:alternate?text(legacy?.sourceDiagnostics?.actualMassSourceDate):null,
     openable:calendarState?.selectedDate===date
   });
@@ -149,6 +172,12 @@ export function fillMassCalendarPreflight(root,context){
   const prayerMessage=!context.commemorationApplies?
     t("The selected celebration differs from the calendar Mass; these additional prayers are not automatically included.",
       "La célébration choisie diffère de la messe du jour ; ces prières ne sont pas ajoutées automatiquement.") :
+    prayerStatus==="FORM_RULES_UNVERIFIED"?
+    t("The Calendar lists this commemoration, but its prayer applicability for the selected Mass form is not yet verified. The additional orations must not be assumed.",
+      "Le calendrier mentionne cette commémoraison, mais son application à la forme de messe choisie n'est pas encore vérifiée. Les oraisons supplémentaires ne doivent pas être présumées.") :
+    prayerStatus==="NOT_APPLIED_TO_FORM"?
+    t("This commemoration remains listed in the Calendar; the source-selected Mass form does not include its additional prayers.",
+      "Cette commémoraison figure au calendrier ; les oraisons supplémentaires ne sont pas retenues pour la forme de messe choisie.") :
     prayerStatus==="COMPLETE"?
     t("After the principal Collect, Secret and Postcommunion, the priest also says the corresponding commemoration prayers.",
       "Après la collecte, la secrète et la postcommunion du jour, le prêtre dit également celles de la commémoraison.") :
