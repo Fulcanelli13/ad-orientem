@@ -55,7 +55,12 @@ const mark=(source,choice)=>Object.freeze({
 export function choose1962PrefaceForDay(day,{allowLocalAdventPreface=false}={}){
   if(day?.status!=="ready"||day?.proper?.status!=="ready")return null;
   const main=primaryId(day);
-  const feast=/^sancti:(\d\d-\d\d):/i.exec(main)?.[1]??null;
+  const feast=/^sancti:(\d\d-\d\d)[a-z]*:/i.exec(main)?.[1]??null;
+  // A source-owned Marian Saturday Mass is itself the principal
+  // Common Proper; unlike a mere Marian commemoration it takes BVM.
+  if(/^commune:C10b:/i.test(main))
+    return mark(main,{id:"BVM",section:"Maria",formulary:"SATURDAY_BVM_COMMON",
+      reason:"SOURCE_PRINCIPAL_MARIAN_COMMON"});
   // The Purification's Nativity Preface overrides the usual Marian rule.
   if(feast&&feast!=="02-02"&&VERIFIED_MARIAN_SOURCE_IDS.has(feast))
     return mark(main,{id:"BVM",section:"Maria",formulary:feast,reason:"BVM_PRINCIPAL_PROPER"});
@@ -154,7 +159,7 @@ export function materialize1962Preface(choice,source){
   const original=source.sources?.[key];
   const entry=original?.sections;
   if(!entry?.lat||!entry?.en||!entry?.fr)throw new Error("TRILINGUAL_1962_PREFACE_SOURCE_INCOMPLETE");
-  const feast=/^sancti:(\d\d-\d\d):/i.exec(choice.properOwner)?.[1]??"";
+  const feast=/^sancti:(\d\d-\d\d)[a-z]*:/i.exec(choice.properOwner)?.[1]??"";
   const out={};
   for(const lang of ["lat","en","fr"]){
     const section=entry[lang];
