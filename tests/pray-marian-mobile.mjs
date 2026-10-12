@@ -83,6 +83,15 @@ try{
  await page.setViewportSize({width:390,height:844});
  assert.match(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) h2").innerText(),/Announcement|Annonce/);
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
+ const shot=page.locator("#aoPray435930 .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation']");
+ await shot.waitFor({state:"attached",timeout:2000});
+ const shotStatus=await shot.evaluate(el=>({art:el.dataset.aoSceneArt,one:el.parentElement.querySelectorAll(".aoDevoCinematicInterstitial").length}));
+ assert.deepEqual(shotStatus,{art:"tanner",one:1},"Cinematic overlay must reuse the single approved Tanner painting");
+ await page.waitForFunction(()=>{
+  const x=document.querySelector("#aoPray435930 .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation'] img");
+  return x?.complete&&x.naturalWidth>=1900;
+ },null,{timeout:2500});
+ await page.screenshot({path:resolve(captures,"11-angelus-incarnation-cinematic-390.png"),fullPage:false});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").count(),1);
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),3);
