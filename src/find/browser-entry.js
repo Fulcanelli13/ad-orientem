@@ -151,6 +151,16 @@ export function createFindOwner(win=globalThis){
     bibleReview:{...BIBLE_REVIEW_DEFAULT,chapter:"PATRIARCHS",scene:0},
   };
 
+  // Keep the active research tab and chapter in view on narrow screens.
+  function centerResearchSelection(node){
+    for(const selector of [".aoBibleReviewTabs [aria-pressed=true]",".aoBibleStudyTabs [aria-pressed=true]",".aoBibleStudyChapters [aria-pressed=true]"]){
+      const active=node?.querySelector?.(selector),track=active?.parentElement;
+      if(!track||track.scrollWidth<=track.clientWidth)return;
+      const trackRect=track.getBoundingClientRect(),activeRect=active.getBoundingClientRect();
+      track.scrollLeft+=activeRect.left+activeRect.width/2-trackRect.left-trackRect.width/2;
+    }
+  }
+
   async function ensureLineageReview(){
     if(lineageReview)return lineageReview;
     if(!lineagePromise)lineagePromise=loadBiblicalLineageReview().then(data=>{
@@ -324,6 +334,7 @@ export function createFindOwner(win=globalThis){
         mapHandle?.destroy?.();mapHandle=null;
         node.innerHTML=renderCinematicStudies(review,{language:language(win),...state.bibleReview,
           atlasStops:buildBibleAtlas(data?.biblePlaces?.entries??[])});
+        centerResearchSelection(node);
         node.dataset.open="true";node.dataset.aoFindLoadState="ready";node.dataset.exploreLens=state.lens;
         return true;
       }
@@ -333,6 +344,7 @@ export function createFindOwner(win=globalThis){
         mapHandle?.destroy?.();mapHandle=null;
         node.innerHTML=renderLineageReview(review,{language:language(win),...state.bibleReview,
           atlasStops:buildBibleAtlas(data?.biblePlaces?.entries??[])});
+        centerResearchSelection(node);
         node.dataset.open="true";node.dataset.aoFindLoadState="ready";node.dataset.exploreLens=state.lens;
         return true;
       }
