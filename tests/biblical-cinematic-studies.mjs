@@ -48,6 +48,7 @@ const fr=renderCinematicStudies(source,{language:"fr",chapter:"INCARNATION",scen
 const extra=renderCinematicStudies(source,{language:"en",chapter:"DELIVERANCE",scene:35,atlasStops:stops});
 assert.match(en,/data-bible-study-scene="21"/);
 assert.match(en,/data-bible-review-jump="11"/);
+assert.match(en,/data-bible-review-event-key="biblical:passage:genesis-21-1-7"/);
 assert.match(en,/Read passage/);
 assert.match(en,/research|comparison/i);
 assert.match(fr,/data-bible-study-scene="68"/);
