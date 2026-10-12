@@ -155,9 +155,13 @@ try{
  await swipe(-160,9);
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"fiat",
   "Horizontal swipe failed to advance exactly one card");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").getAttribute("data-ao-devo-jump"),"1",
+  "Timeline did not follow the one-card forward swipe");
  await swipe(160,4);
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"announcement",
   "Reverse swipe failed to restore previous card");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").getAttribute("data-ao-devo-jump"),"0",
+  "Timeline did not return to the original prayer card");
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
  const shot=page.locator("body > .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation']");
  await shot.waitFor({state:"attached",timeout:2000});
