@@ -1564,10 +1564,18 @@ function scriptureFlip(d,full=false){
 }
 async function loadScriptureInto(selector,kind,ref,full,guard){
  const token=guard();
+ let deadline=null;
  try{
   const svc=runtime()?.scriptureService;
   if(!svc||typeof svc.load!=='function')throw new Error('Canonical Scripture service unavailable');
-  const d=await svc.load(kind,{en:ref,fr:ref,lat:ref});
+  // A silent upstream Scripture request must not leave the prayer on
+  // "Loading…" indefinitely. The deadline changes UI state, not the source
+  // or edition; late responses are ignored rather than installed.
+  const d=await Promise.race([
+   Promise.resolve().then(()=>svc.load(kind,{en:ref,fr:ref,lat:ref})),
+   new Promise((_,reject)=>{deadline=setTimeout(
+    ()=>reject(new Error('Canonical Scripture source request timed out')),12000)})
+  ]);
   if(token!==guard())return;
   const box=document.querySelector(selector);
   if(!box)return;
@@ -1587,6 +1595,8 @@ async function loadScriptureInto(selector,kind,ref,full,guard){
   box.innerHTML=callout(esc(L('Scripture text could not be loaded. This passage has not been replaced by a paraphrase.','Le texte de l’Écriture n’a pas pu être chargé. Aucun texte de remplacement n’a été inventé.')),'warn')+
    `<button class="aoP435930Secondary" type="button" data-p435930-scripture-retry="${esc(kind)}">${esc(L('Retry original Scripture text','Réessayer de charger le texte biblique'))}</button>`;
   console.warn('Canonical Prayer Scripture source unavailable',kind,ref,String(e?.message||e));
+ }finally{
+  if(deadline!==null)clearTimeout(deadline);
  }
 }
 async function guidedWsText(title,key,language='en'){
