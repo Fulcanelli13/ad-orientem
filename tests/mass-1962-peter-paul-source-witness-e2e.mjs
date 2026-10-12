@@ -47,4 +47,47 @@ const hostSections=await page.evaluate(async()=>{
  }return out;
 });
 console.log("PETER_PAUL_SOURCE_SECTIONS="+JSON.stringify(hostSections));
+
+const certified=await page.evaluate(async()=>{
+ const resolver=globalThis.AO_RUNTIME_V8.resolver;
+ const resolution=await resolver.resolveDay("2026-06-30");
+ const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
+ const {select1962CommemorationsForMassForm}=await import("/src/mass/1962-commemoration-form-source.js");
+ const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+ const {assessPrintableProper}=await import("/src/calendar/print-proper.js");
+ const recovered=await recoverReaderProperOmissions(resolution.proper,{
+   hostResolver:resolver.properResolver,principalCelebrationId:resolution.day.main.id});
+ const outputs={recoveredStatus:recovered.data?.inseparableApostolicSources?.status??null};
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+   const selected=select1962CommemorationsForMassForm({
+     proper:recovered,calendarResolution:resolution,form
+   });
+   const proper=selected.proper?.data??selected.proper;
+   const slots=properToReaderSlots(proper,{language:"fr"});
+   outputs[form]={
+     status:selected.status,reason:selected.reason??null,
+     scope:selected.decision?.scope??null,
+     groups:["collects","secrets","postcommunions"].map(k=>proper?.[k]?.length),
+     paragraphs:["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].map(k=>slots.slots[k].data?.paragraphs?.length??null),
+     prayerGroupCount:selected.decision?.prayerGroupCount??null,
+     conclusionOwner:proper?.collects?.[0]?.oneConclusion?.conclusionOwner??null,
+     printed:assessPrintableProper({...resolution,proper:{status:"ready",data:proper}},
+       {language:"fr"}).ok,
+   };
+ }
+ return outputs;
+});
+console.log("PETER_PAUL_1962_CERTIFIED="+JSON.stringify(certified));
+assert.equal(certified.recoveredStatus,"SOURCE_VERIFIED","Other apostle's source sections not recovered");
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ const result=certified[form];
+ assert.equal(result.status,"CERTIFIED",form+": "+result.reason);
+ assert.equal(result.scope,"INSEPARABLE_PETER_PAUL_JUNE_30");
+ assert.deepEqual(result.groups,[1,1,1],form+" must count Apostles as one oration per group");
+ assert.deepEqual(result.paragraphs,[2,2,2],form+" must show both apostolic prayers, one conclusion");
+ assert.equal(result.conclusionOwner,"SAINT_PETER");
+ assert.equal(result.prayerGroupCount,1);
+ assert.equal(result.printed,true);
+}
+
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
