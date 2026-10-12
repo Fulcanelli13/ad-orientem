@@ -1,0 +1,613 @@
+{
+  "schema": "AO_SACRED_ART_ACQUIRED_134_SECOND_BATCH_REVIEW_V1",
+  "dated": "2026-10-12",
+  "branch": "platform/885-sacred-art-candidates",
+  "sourcePreviously": "data/calendar/sacred-art-acquired-exact-visual-review-20261012.v1.json",
+  "method": "Exact institution object/identity matched to visible preview when possible. Six exact museum records did not return a reliable matching image; DO NOT count as visually examined.",
+  "summary": {
+    "remainingFromPrior": 27,
+    "secondBatchExactObjectRecordsReconciled": 27,
+    "actuallyNewVisuallyExamined": 21,
+    "sourceOnlyVisualPending": 6,
+    "totalUniqueVisuallyExamined": 44,
+    "remainingActualVisualChecks": 6,
+    "all50ObjectsSourceReconciled": 50,
+    "newUserApprovals": 0,
+    "newProductionAssets": 0
+  },
+  "policy": {
+    "preserve101Choices": true,
+    "excludeArtists": [
+      "El Greco",
+      "Fra Angelico"
+    ],
+    "noReplacementsWithoutSelection": true,
+    "preciseScriptureSubjectRelation": true,
+    "existingSourcesOnly": true,
+    "releaseZero": true
+  },
+  "additionalDiscovery": {
+    "source": "https://artsandculture.google.com/asset/the-heart-of-mary/TAFcx9ThkUZqHw",
+    "artist": "Juan Patricio Morlete Ruiz",
+    "title": "The Heart of Mary",
+    "subjectId": "DEV-02",
+    "note": "Companion oil-on-copper MUNAL painting of pierced Heart of Mary with lilies and female saints. Historical object confirmed and Commons copy exists; not in acquired registry yet. Date shown as 1000 in Google asset is clearly a metadata error and must not be imported.",
+    "acquired": false,
+    "rightsCleared": false,
+    "artisticAccepted": false
+  },
+  "records": [
+    {
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "canonicalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "recordedArtist": "Juan Patricio Morlete Ruiz",
+      "recordedTitle": "The Heart of Jesus",
+      "museumOriginal": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_EXACT_DEVOTION",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "TALL_FULL_CONTAIN",
+      "reviewNote": "Complex large red central Sacred Heart with angels and surrounding saint medallions in pale blue-gold celestial field; rich historical Catholic iconography but too busy/bright for default solemn homepage. Preserve earlier explicit user selection and use within Sacred Heart devotional chapter.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-01"
+      ],
+      "previouslyExplicitUserSelection": true,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "commons-el-paso-sacred-heart-retablo",
+      "canonicalSha256": "dc2bff1f0b3601394da268703bbd655e316bdf02e5d3471b49195967cf024681",
+      "recordedArtist": "Anonymous Mexican artist",
+      "recordedTitle": "The Sacred Heart of Jesus",
+      "museumOriginal": "https://commons.wikimedia.org/wiki/File:%27The_Sacred_Heart_of_Jesus%27,_anonymous_Mexican_retablo,_oil_on_tin,_mid_19th_century,_El_Paso_Museum_of_Art.JPG",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_FOLK_ART_HOLD",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "EDGE_HARDWARE_CHECK",
+      "reviewNote": "Historical folk retablo: direct bust-length Christ pointing to Sacred Heart, bright halo and visibly abraded green-blue paint with metal corner hangers. Clear exact iconography but rough painterly finish, wear and visible hanging hardware contraindicate curated prominent hero.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-01"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-459063",
+      "canonicalSha256": "fddbdac3ac431af8ef0470922e20cd266ca482cc9602473626be9c89810b5e1c",
+      "recordedArtist": "Netherlandish Painter",
+      "recordedTitle": "Virgin and Child with Saint Joseph",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/459063",
+      "sourceImageMatch": "SOURCE_IDENTITY_ONLY",
+      "artistTier": "SOURCE_IMAGE_PENDING",
+      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
+      "portraitCropRisk": "CROP_NOT_ASSESSED",
+      "reviewNote": "Met confirms 16th-century Netherlandish small domestic Holy Family picture; exact full painting preview not confidently isolated in image searches. Do not assert visual finish or promote as primary Saint Joseph portrait.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-10",
+        "SNT-OT-01"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437578",
+      "canonicalSha256": "9b937183a1b0b65db29b1fca25b3337fbcb0618d42050e7496d37c06d724ee33",
+      "recordedArtist": "Russian (Novgorod?) Painter",
+      "recordedTitle": "Christ in Glory",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437578",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_ICON_STYLE_HOLD",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "WHOLE_PANEL",
+      "reviewNote": "15th-century Russian Christ enthroned within red mandorla framed by angelic beings on gold ground, solemn and canonical Pantocrator icon. Authentically sacred but flat iconic style inconsistent with preferred painterly home hero; context-only exception requires review, not Christ the King appointed-Gospel illustration.",
+      "relevantOutstandingSubjectIds": [
+        "DEV-15"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-459044",
+      "canonicalSha256": "55c27ba75d4760c142ad975b7550650664839c8b08d37db65858c1bb9b291be6",
+      "recordedArtist": "Follower of Giotto",
+      "recordedTitle": "Saints John the Evangelist and Mary Magdalene",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/459044",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_GOLD_GROUND_HOLD",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "DIPTYCH_FULL_CONTAIN",
+      "reviewNote": "Neapolitan follower of Giotto: John in deep navy on left and Magdalen in red on right, gold ground with flying angels. Two saints dominate but early trecento hieratic treatment not suitable as distinctive single-apostle portrait.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-AP-04"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-458963",
+      "canonicalSha256": "8a1138126560ff5087bfc2f9632b0f526171b7200e658652b504d03b0d968563",
+      "recordedArtist": "Paolo di Giovanni Fei",
+      "recordedTitle": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/458963",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_CROWDED_SAINTS",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "NO_ISOLATED_SAINT_CROP",
+      "reviewNote": "Paolo di Giovanni Fei small gold-ground Madonna enthroned amid tightly clustered named saints; visually impressive ornament but Saint John/Agnes tiny in group, not viable as standalone phone card without destructive cropping.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-AP-04",
+        "SNT-OT-22"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-41644",
+      "canonicalSha256": "79288aef1a922ed49acc40312676d25daca19e4f35fa18c26a2779be1ce7bc74",
+      "recordedArtist": "French 15th Century",
+      "recordedTitle": "The Expectant Madonna with Saint Joseph",
+      "museumOriginal": "https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph",
+      "sourceImageMatch": "SOURCE_DESCRIBED_ONLY",
+      "artistTier": "SOURCE_IMAGE_PENDING",
+      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
+      "portraitCropRisk": "WHOLE_PANEL_PENDING",
+      "reviewNote": "NGA visual description identifies prominent expectant Virgin with Saint Joseph behind, 15th-century French tall gold-ground panel. Saint Joseph secondary and partly occluded; visually not inspected directly in matching full image, so artistic tier remains open.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-01"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-150955",
+      "canonicalSha256": "d738e33cf352a13f1bc8e4178449c0938cc59f6d149f4cfb2477d7dd93ccc71a",
+      "recordedArtist": "Giovanni Battista Pittoni",
+      "recordedTitle": "Saints Presenting a Devout Woman to the Virgin and Child",
+      "museumOriginal": "https://clevelandart.org/art/1982.36",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_MULTISAINT_ROCOCO",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "WHOLE_GROUP",
+      "reviewNote": "Pittoni's colour-rich ascending Rococo devotional allegory, Mary and Child above several named saints. Numerous saint figures merge at mobile scale; colourful pastel clouds and rapid movement less restrained than target. Retain contextually, not four distinct saint portraits.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-06",
+        "SNT-OT-14",
+        "SNT-OT-21",
+        "SNT-OT-22"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-442750",
+      "canonicalSha256": "49073f2dae187f36439ba06a8832a872469bfa8b698b94233aa552ec0c3fa79c",
+      "recordedArtist": "Segna di Buonaventura",
+      "recordedTitle": "Saint Benedict",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/442750",
+      "sourceImageMatch": "SOURCE_DESCRIBED_ONLY",
+      "artistTier": "SOURCE_IMAGE_PENDING",
+      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
+      "portraitCropRisk": "IMAGE_IDENTITY_PENDING",
+      "reviewNote": "Met original Segna di Buonaventura Saint Benedict is austere tall gold-ground altarpiece side panel. Historically exact saint, but no exact image sufficiently viewed for new visual assessment; previous style concern retained only as expectation.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-14"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-436565",
+      "canonicalSha256": "d7ef90f5dfd3545d7fc64e7347891c1bff79b3415fa5909dbab975871b85b494",
+      "recordedArtist": "Benozzo Gozzoli",
+      "recordedTitle": "Totila before Saint Benedict",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/436565",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_HISTORIC_NARRATIVE",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "CONTAIN_NARRATIVE",
+      "reviewNote": "Benozzo Gozzoli shows Totila kneeling before enthroned Benedict at right, with castle and court in bright miniature landscape. Clear story and strong colours; flat 15th-century space and tiny focal saint work for Benedict's history, not a modern phone hero.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-14"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437673",
+      "canonicalSha256": "4dad30dbf33803fd4c79d07a1eed242bd757a8677bf72fdc91d1b05d502b2ff8",
+      "recordedArtist": "Luca Signorelli",
+      "recordedTitle": "The Assumption of the Virgin with Saints Michael and Benedict",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437673",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_ASSOCIATED_SAINT",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "FULL_GROUP",
+      "reviewNote": "Signorelli's large Assumption has luminous central Virgin, armored Michael on left and Benedict standing prominently on right; powerful sacred composition but Mary's Assumption, not Benedict, is the principal scene. Can cross-link saint only as secondary.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-14"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-46147",
+      "canonicalSha256": "a29bad9c8b788982ea97609894d8d9cf6c9a6d5ec0d23ac4527956e17bcfd8c5",
+      "recordedArtist": "Veronese; Gabriele Caliari",
+      "recordedTitle": "Saint Lucy and a Donor",
+      "museumOriginal": "https://www.nga.gov/artworks/46147-saint-lucy-and-a-donor",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "PRESERVE_LUCY_AND_DONOR",
+      "reviewNote": "Veronese/Caliari Saint Lucy stands clearly in lustrous rose-and-gold drapery before teal sky; donor secondary below. More painterly and readable than medieval alternatives; shortlist for Lucy with strict confirmation of attribution and source reproduction.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-21"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-436050",
+      "canonicalSha256": "db90c9082a8701fbccb7f0271a1bb14026a7d7dbe59ca156341fd414cf20288e",
+      "recordedArtist": "Giovanni di Bartolommeo Cristiani",
+      "recordedTitle": "Saint Lucy and Her Mother at the Shrine of Saint Agatha; Saint Lucy Giving Alms; Saint Lucy before Paschasius; Saint Lucy Resisting Efforts to Move Her",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/436050",
+      "sourceImageMatch": "VISUAL_MATCHED_PARTIAL_SEQUENCE",
+      "artistTier": "SECONDARY_HISTORIC_SEQUENCE",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "MULTI_SCENE_INTEGRITY",
+      "reviewNote": "Cristiani's narrative panels from Lucy's life have richly painted red architecture and costume; one exact museum panel visually matched, not all four independent scenes newly inspected. Suitable for saint biography narrative, not a single feast portrait.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-21"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437273",
+      "canonicalSha256": "0fb05964bc93c6dd84bd41affd5cf380fc0603f60eb347bfc9e417986af5a28c",
+      "recordedArtist": "Perugino (Pietro di Cristoforo Vannucci)",
+      "recordedTitle": "Saint John the Baptist; Saint Lucy",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437273",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_TWO_SAINTS",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "TWO_PANEL_INTEGRITY",
+      "reviewNote": "Perugino separate Saint John Baptist and Saint Lucy panels form an elegant restrained Renaissance pair; individual Lucy is attractive but source object is combined and crop/isolating one panel would require explicit approval.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-21"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-150046",
+      "canonicalSha256": "a8aa262ef0dedc4836b9944b4990560ed118a75001c6e2f6fa38ec8da677a0c5",
+      "recordedArtist": "John Faed",
+      "recordedTitle": "Expulsion of Adam and Eve",
+      "museumOriginal": "https://clevelandart.org/art/1980.258",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_ADJACENT_GENESIS",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "ASSOCIATION_ADJACENT_ONLY",
+      "reviewNote": "John Faed strongly modeled heavenly white angel dominates center, Adam and Eve in lower right against dramatic dark cloud. Excellent painting for Expulsion (Gen 3:23–24) but it is NOT the actual temptation/Fall itself.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-OR02"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-458971",
+      "canonicalSha256": "dbaf467f7769710340bd1f095c6a7317c7fba1420039ea66d2594ad23c8de4e0",
+      "recordedArtist": "Giovanni di Paolo",
+      "recordedTitle": "The Creation of the World and the Expulsion from Paradise",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/458971",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_COSMOLOGY_STYLE_HOLD",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "MEDIEVAL_SYMBOLIC",
+      "reviewNote": "Giovanni di Paolo combines ringed medieval cosmos and tiny Expulsion under blue skies; important historic theology/cosmology visual but schematic 15th-century aesthetic and divided narrative unsuitable as core homepage.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-OR02"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-137195",
+      "canonicalSha256": "8144d44e89b100a991a12c1bffbccb5665eb505a1f6087286a27063550d928db",
+      "recordedArtist": "Claude Lorrain",
+      "recordedTitle": "Rest on the Flight into Egypt",
+      "museumOriginal": "https://clevelandart.org/art/1962.151",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_LANDSCAPE_CONTEXT",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "LANDSCAPE_CONTAIN",
+      "reviewNote": "Claude Lorrain's luminous pastoral countryside dominates while Rest on the Flight Holy Family is extremely small; superb landscape study but poor narrative focus as Bible Atlas phone subject.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G03"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-143138",
+      "canonicalSha256": "36fcfd50c6b19294fb5f240fcf5ec9953d91a60c82baa7d9f535ee62c876bf5d",
+      "recordedArtist": "Guercino",
+      "recordedTitle": "Rest on the Flight into Egypt",
+      "museumOriginal": "https://clevelandart.org/art/1967.123",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "CIRCULAR_KEEP_ALL",
+      "reviewNote": "Guercino rich circular Baroque grouping: Mary and sleeping Christ Child flanked by grave older Joseph and angel playing violin, blue landscape beyond. Strong intimate Holy Family devotional illustration. Precisely REST on flight, not escape/departure itself.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G03"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-50726",
+      "canonicalSha256": "a9225bb7ebdcabbd9b8610d88576b8d24aa7e382173078e7181ae192be34d9a6",
+      "recordedArtist": "Juan de Flandes",
+      "recordedTitle": "The Temptation of Christ",
+      "museumOriginal": "https://www.nga.gov/artworks/50726-temptation-christ",
+      "sourceImageMatch": "SOURCE_DESCRIBED_ONLY",
+      "artistTier": "SOURCE_IMAGE_PENDING",
+      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
+      "portraitCropRisk": "VERIFY_ORIGINAL_RENDER",
+      "reviewNote": "NGA exact object 50726: devil disguised as friar with horns/webbed foot offers stone to seated Christ; strong precise Gospel subject based on detailed official museum visual description; matched image not directly examined this pass.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G05"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437403",
+      "canonicalSha256": "3c748a4137bae35764fa9fb607bf4af21366436db4c18594ec7aaba72427d108",
+      "recordedArtist": "Style of Rembrandt",
+      "recordedTitle": "Christ and the Woman of Samaria",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437403",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_DARK_ATTRIBUTION_HOLD",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "PRESERVE_BOTH",
+      "reviewNote": "Style of Rembrandt, not autograph. Distinct Christ and woman leaning at Jacob's well in deep shadow, but small dark figures and uncertain attribution give advantage to Luti for primary Bible chapter.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G08"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-42494",
+      "canonicalSha256": "1c6ff113797c015b4136a63a20fc2c1c45fc230c2aa463094f077c824f6eb73f",
+      "recordedArtist": "American 18th Century",
+      "recordedTitle": "Christ and the Woman of Samaria",
+      "museumOriginal": "https://www.nga.gov/artworks/42494-christ-and-the-woman-of-samaria",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_NAIVE_STYLE_RESTRICTED",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "ARTISTIC_STYLE_RESTRICTED",
+      "reviewNote": "18th-century American primitive Samaritan Woman: clear two-figure scene with water vessel and distant village, but blunt flattened modelling and folk palette conflict with preferred painterly aesthetic; no home hero.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G08"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-12205",
+      "canonicalSha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+      "recordedArtist": "Netherlandish 16th Century",
+      "recordedTitle": "The Healing of the Paralytic",
+      "museumOriginal": "https://www.nga.gov/artworks/12205-healing-of-the-paralytic",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_GOSPEL_VARIANT_CHECK",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "VERIFY_GOSPEL_VARIANT",
+      "reviewNote": "Netherlandish Healing of Paralytic with large red-robed man carrying heavy bedding dominating foreground, tiny healing scene around architecture behind. Strong illustrative device, but Mark 2 roof episode association must be checked against fine visual details before strict scripture tag.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G09"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "kress-k2016",
+      "canonicalSha256": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+      "recordedArtist": "Maestro Bartolomé",
+      "recordedTitle": "The Transfiguration",
+      "museumOriginal": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+      "sourceImageMatch": "VISUAL_MATCHED_SECONDARY_PUBLISHER",
+      "artistTier": "SECONDARY_GOTHIC_STYLE_RIGHTS_HOLD",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "CHECK_KRESS_ORIGINAL",
+      "reviewNote": "Maestro Bartolomé Transfiguration: white-robed standing Christ, Moses and Elijah on each side, startled apostles below; visually clear exact biblical scene but strongly stylized late Gothic figure work. Kress reuse terms stay separate from museum CC0.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G15"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-436302",
+      "canonicalSha256": "9fc2875bc115caf055b8816a1519489a50651963b04bf5a37e445f0d6e93e0da",
+      "recordedArtist": "Workshop of Domenico Fetti",
+      "recordedTitle": "The Good Samaritan",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/436302",
+      "sourceImageMatch": "SOURCE_IDENTITY_ONLY",
+      "artistTier": "SOURCE_IMAGE_PENDING",
+      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
+      "portraitCropRisk": "VERIFY_FULL_IMAGE",
+      "reviewNote": "Met confirms Workshop of Domenico Fetti Good Samaritan small parable painting; precise source identity, workshop status and object dimensions verified but exact picture not inspected successfully in the image pass.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G17"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-150040",
+      "canonicalSha256": "50b5483495666044ea418c187ee3a987e1e593ae54939cdd9d0eb109406453ee",
+      "recordedArtist": "Alexandre-Gabriel Decamps",
+      "recordedTitle": "The Good Samaritan",
+      "museumOriginal": "https://clevelandart.org/art/1980.253",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "SECONDARY_DARK_NARRATIVE",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "NO_HERO_CROP",
+      "reviewNote": "Decamps courtyard-in-the-East Good Samaritan painting in dark browns, narrative victim carried to inn small in middle distance; good historical scene but poor mobile small-screen clarity versus alternatives.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G17"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "cma-112626",
+      "canonicalSha256": "8e839b5a58229decac79b7f6d9458f6713043c0fc5c9ca6dbf565839d0746d48",
+      "recordedArtist": "Giovanni Battista Piazzetta",
+      "recordedTitle": "The Supper at Emmaus",
+      "museumOriginal": "https://clevelandart.org/art/1931.245",
+      "sourceImageMatch": "VISUAL_MATCHED",
+      "artistTier": "PRIMARY_ARTISTIC_SHORTLIST",
+      "artisticEvidence": "MATCHED_WEB_IMAGE_PREVIEW_NOT_BYTE_INSPECTED_MASTER",
+      "portraitCropRisk": "PRESERVE_TABLE_THREE_FIGURES",
+      "reviewNote": "Piazzetta Supper at Emmaus: tightly concentrated naturalistic three-person table, Christ looking up with bread and disciples rendered in warm rich tenebrism; markedly strong devotional image for recognition at supper, not initial Emmaus-road walk.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G22"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "kress-k2017",
+      "canonicalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+      "recordedArtist": "Maestro Bartolomé",
+      "recordedTitle": "The Entry into Jerusalem",
+      "museumOriginal": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "sourceImageMatch": "SOURCE_IDENTITY_ONLY",
+      "artistTier": "SOURCE_IMAGE_PENDING",
+      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
+      "portraitCropRisk": "EXACT_KRESS_IMAGE_REQUIRED",
+      "reviewNote": "Kress K2017 Maestro Bartolomé Entry into Jerusalem object verified, oil on panel 1480–88; prior image search surfaced unrelated Cristoforo da Bologna entry; do NOT use wrong painting preview or assert visual grade. Earlier selected Kress source retained subjectwise.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G25"
+      ],
+      "previouslyExplicitUserSelection": true,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    }
+  ]
+}
