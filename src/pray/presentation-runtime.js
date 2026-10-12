@@ -1761,10 +1761,14 @@ function installLibraryParagraphFocus(m,id){
   activeIndex:0,paragraphSelector:".aoLibraryLine",
   timelineLabel:L('Prayer timeline','Parcours de la prière')
  });
- m.addEventListener("click",event=>{
-  if(event.target.closest("[data-p435930-flip]"))
-   queueMicrotask(()=>reader?.focus?.());
- },{once:false});
+ const languageFaces=card.querySelectorAll("[data-face-v],[data-face-la]");
+ if(languageFaces.length&&typeof MutationObserver==="function"){
+  const observer=new MutationObserver(()=>reader?.focus?.());
+  languageFaces.forEach(face=>observer.observe(face,{attributes:true,attributeFilter:["hidden"]}));
+ }
+ card.addEventListener("click",event=>{
+  if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
+ });
 }
 
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
