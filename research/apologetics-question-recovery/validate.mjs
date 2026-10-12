@@ -1,0 +1,24 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+const dir=path.dirname(fileURLToPath(import.meta.url));
+const {manifest,questions}=JSON.parse(fs.readFileSync(path.join(dir,"questions.json"),"utf8"));
+const csv=fs.readFileSync(path.join(dir,"questions.csv"),"utf8");
+const missing=fs.readFileSync(path.join(dir,"HISTORICAL_UNRECOVERED_POSITIONS.csv"),"utf8");
+const audience=fs.readFileSync(path.join(dir,"BY_INTERLOCUTOR.md"),"utf8");
+const master=fs.readFileSync(path.join(dir,"ALL_QUESTIONS.md"),"utf8");
+function assert(ok,message){ if(!ok) throw Error(message); }
+assert(manifest.records===264 && questions.length===264,"Source record count changed; review and update manifest deliberately");
+assert(new Set(questions.map(q=>q.id)).size===questions.length,"Duplicated record ID");
+assert(questions.every(q=>q.en && q.source_url.startsWith("https://github.com/Fulcanelli13/ad-orientem/") && q.audience_tags.length && q.provenance_status),"Missing question, source or editorial context");
+assert(questions.filter(q=>q.id.startsWith("APOL-")).length===60,"Canonical Apologetics count drift");
+assert(questions.filter(q=>q.id.startsWith("CR-")).length===81,"Canonical Church Crisis count drift");
+assert(questions.filter(q=>q.id.startsWith("BAQ-")).length===26,"BAQ count drift");
+assert(questions.filter(q=>q.id.startsWith("SDV-")).length===8,"SDV count drift");
+assert(questions.filter(q=>q.id.startsWith("TLM")).length===50,"Traditional Mass sourced-objection count drift");
+assert(csv.trimEnd().split("\n").length===265,"Unexpected flat CSV row count");
+assert(missing.trimEnd().split("\n").length===577,"Unrecovered historical positions miscounted");
+assert(questions.every(q=>master.includes(q.id+" — "+q.en)),"Master document missing recovered entry");
+assert([...new Set(questions.flatMap(q=>q.audience_tags))].every(a=>audience.includes("## "+a+" (")),"Interlocutor index missing category");
+assert(!questions.some(q=>q.id==="A001"||q.id==="C001"||q.id==="TLM001"),"Historical placeholder wrongly treated as a recovered question");
+console.log("PASS: 264 provenance-linked source records, 576 non-question historical positions, 9 non-additive editorial interlocutor facets; publication status remains editorial.");
