@@ -607,7 +607,13 @@ try{
   assert.equal(adorationArrival.pointer,"none","Adoration rails intercept touch");
   await shot("03e-pray-adoration-arrival");
 
-  await page.locator("#aoPray435930 [data-p435930-visit-next]").click();
+  // The shared seven-stage Adoration reader owns the visible navigation now.
+  // The former Continue button remains for legacy fallback but is hidden.
+  const visitTimeline=page.locator("#aoPray435930 .aoP435930AdorationReader .aoDevoSequenceTimeline");
+  await visitTimeline.waitFor({state:"visible",timeout:5000});
+  assert.equal(await visitTimeline.locator("[aria-current='step']").count(),1,
+    "Adoration Visit must have one active canonical stage");
+  await visitTimeline.locator("[data-ao-devo-sequence-move='1']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-refined-silence",null,{timeout:3000});
   assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-channel='persistent']").count(),1,"Adoration did not settle into the persistent silence rail");
   await shot("03f-pray-adoration-silence");
