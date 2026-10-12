@@ -265,8 +265,13 @@ try{
      return steps.findIndex((entry,i)=>i>start&&entry.mi===steps[start].mi&&entry.kind!=='mystery');
    },jump.start);
    assert.ok(beadTarget>jump.start,"Rosary mystery has no following prayer step");
-   assert.notEqual(await page.evaluate(target=>globalThis.AO_ROSARY_V381.setStep(target),beadTarget),false,
-     "Canonical bead navigation rejected a prayer step");
+   // Use the actual Next control, not setStep() directly: the canonical
+   // donor's real click handler also owns the repaint/decorate lifecycle.
+   for(let bead=jump.start;bead<beadTarget;bead++){
+     await player.locator("[data-lab-rosary-next]").click();
+     await page.waitForFunction(target=>globalThis.AO_ROSARY_V381?.state?.()?.step===target,
+       bead+1,{timeout:9000});
+   }
    await page.waitForFunction(()=>document.querySelector(
      "#aoPrayerBookRoot.open .aoRosaryActiveCard[data-ao-rosary-card-kind='prayer'] .aoRosaryPrayerScroll"),
      null,{timeout:9000}).catch(async error=>{
