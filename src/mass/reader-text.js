@@ -169,7 +169,7 @@ function stateOnlyBlock(block){
 // source ID the visible Proper is ignored by the LIVE 39%-line cue tracker.
 function properTextCueId(block){
   const candidate=(block?.units??[]).find(unit=>
-    /^AO\\.SM\\.C\\d{4}$/.test(String(unit?.cue_id??"")) &&
+    /^AO\.SM\.C\d{4}$/.test(String(unit?.cue_id??"")) &&
     String(unit?.clock??"").toUpperCase()!=="MINISTER_RESPONSE" &&
     String(unit?.clock??"").toUpperCase()!=="USER_RESPONSE"
   );
