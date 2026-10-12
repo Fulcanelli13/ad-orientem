@@ -58,4 +58,25 @@ for(const html of [genesis,math,luc,apostolic,philip]){
 const invalid=structuredClone(data);invalid.status="PUBLISHED";
 assert.equal(validateLineageReviewCorpus(invalid),false,"no silent promotion to live");
 assert.match(renderLineageReview(invalid),/evidence is unavailable/);
-console.log("PASS Biblical review: Genesis 90 sourced edges, two distinct Gospel genealogies, 20 apostles, 55 cited entries, explicit holds, no GPS or publication promotion");
+// Negative cases must not pass merely because all corpus record counts remain 90/41/76/20/55.
+const noSource=structuredClone(data);noSource.genealogies.genesis.edges[0].url="javascript:location.href";
+assert.equal(validateLineageReviewCorpus(noSource),false,"every rendered family link requires an original HTTPS source");
+const circular=structuredClone(data);
+circular.genealogies.genesis.edges[0].parentId="seth";
+assert.equal(validateLineageReviewCorpus(circular),false,"an ancestor must not become the child of a descendant");
+const sameEdge=structuredClone(data);
+sameEdge.genealogies.genesis.edges[1].id=sameEdge.genealogies.genesis.edges[0].id;
+assert.equal(validateLineageReviewCorpus(sameEdge),false,"duplicated source-edge identities are refused");
+const father=structuredClone(data);
+father.genealogies.matthew.nodes.at(-2).type="textual-lineage";
+assert.equal(validateLineageReviewCorpus(father),false,"Joseph cannot silently be promoted to a biological father");
+const lineSwap=structuredClone(data);
+lineSwap.genealogies.luke.nodes[0].reference="Matthew 1:1";
+assert.equal(validateLineageReviewCorpus(lineSwap),false,"Gospel lineage source ownership cannot be silently merged");
+const itineraries=structuredClone(data);
+itineraries.locations[0].certified=true;
+assert.equal(validateLineageReviewCorpus(itineraries),false,"research locations are not publication-certified pins");
+const strayPerson=structuredClone(data);
+strayPerson.events[0].person="philip-vendor-ambiguous";
+assert.equal(validateLineageReviewCorpus(strayPerson),false,"every tradition requires an existing curated person identity");
+console.log("PASS Biblical review: source, lineage, identity and route holds verified; Genesis 90 sourced edges, two distinct Gospel genealogies, 20 apostles, 55 cited entries, explicit holds, no GPS or publication promotion");
