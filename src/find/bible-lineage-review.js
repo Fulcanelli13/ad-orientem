@@ -12,12 +12,62 @@ export function exactAtlasReferenceIndex(milestones,reference){
  return hits.length===1&&Number.isInteger(hits[0].index)?hits[0].index:null;
 }
 export const BIBLE_REVIEW_DEFAULT=Object.freeze({surface:"timeline",lineage:"genesis",root:"adam",depth:3,page:0,apostle:"mary"});
+// Editorial pilot only: integrity of source associations is necessary but
+// cannot by itself certify genealogical history, Scripture variants or routes.
+// Fail closed when an upstream vendor edge is injected into the small curated set.
 export function validateLineageReviewCorpus(data){
- const g=data?.genealogies??{};
- return data?.schema==="BIBLICAL_LINEAGE_DISPERSION_CURATED_V1"&&data?.status==="EDITORIAL_PILOT_CORRECTED_PENDING_REVIEW"
-   &&arr(g.matthew?.nodes).length===41&&arr(g.luke?.nodes).length===76
-   &&arr(g.genesis?.edges).length===90&&arr(data.profiles).length===20&&arr(data.events).length===55
-   &&arr(data.guards).length>=10;
+ const g=data?.genealogies??{},edges=g.genesis?.edges,matthew=g.matthew?.nodes,luke=g.luke?.nodes;
+ if(data?.schema!=="BIBLICAL_LINEAGE_DISPERSION_CURATED_V1"||
+    data?.status!=="EDITORIAL_PILOT_CORRECTED_PENDING_REVIEW"||
+    arr(matthew).length!==41||arr(luke).length!==76||
+    arr(edges).length!==90||arr(data.profiles).length!==20||arr(data.events).length!==55||
+    arr(data.guards).length<10)return false;
+ const pairIds=new Set(),edgeIds=new Set(),parents=new Map();
+ for(const e of edges){
+  if(!e.id||edgeIds.has(e.id)||!e.parentId||!e.childId||e.parentId===e.childId||
+     !e.parent||!e.child||e.kind!=="scripture-parentage"||
+     !e.reference||!url(e.url))return false;
+  const pair=e.parentId+" -> "+e.childId;
+  if(pairIds.has(pair))return false;
+  pairIds.add(pair);edgeIds.add(e.id);
+  if(!parents.has(e.parentId))parents.set(e.parentId,new Set());
+  parents.get(e.parentId).add(e.childId);
+ }
+ // A visually connected tree may not contain circular parentage.
+ const visited=new Set(),active=new Set();
+ const walk=id=>{
+  if(active.has(id))return false;
+  if(visited.has(id))return true;
+  active.add(id);
+  for(const child of parents.get(id)||[])if(!walk(child))return false;
+  active.delete(id);visited.add(id);return true;
+ };
+ for(const id of parents.keys())if(!walk(id))return false;
+ for(const [key,nodes] of [["Matthew",matthew],["Luke",luke]]){
+  const ids=new Set();
+  for(const [i,n] of nodes.entries()){
+   if(!n.id||ids.has(n.id)||n.index!==i||!n.person||!n.reference||!url(n.url)||
+      !n.reference.startsWith(key+" ")||!["textual-lineage","legal-or-putative","terminus"].includes(n.type))return false;
+   ids.add(n.id);
+   for(const w of arr(n.associatedWomen))
+    if(!w.person||w.kind!=="scriptural-association"||!w.reference||!url(w.url))return false;
+  }
+  const joseph=nodes[nodes.length-2],jesus=nodes.at(-1);
+  if(joseph.person!=="Joseph"||joseph.type!=="legal-or-putative"||
+     jesus.person!=="Jesus"||jesus.type!=="terminus")return false;
+ }
+ const profiles=arr(data.profiles),locations=arr(data.locations);
+ const people=new Set(profiles.map(p=>p.id)),placeIds=new Set(locations.map(p=>p.id));
+ if(people.size!==20||profiles.some(p=>!p.id||!p.name||!p.fr)||
+    placeIds.size!==locations.length||locations.some(p=>p.certified!==false))return false;
+ const eventIds=new Set();
+ for(const e of data.events){
+  if(!e.id||eventIds.has(e.id)||!people.has(e.person)||!e.title||!e.fr||
+     !e.reference||!url(e.source)||!["scripture","patristic","later","identification","hold"].includes(e.kind)||
+     (e.place&&!placeIds.has(e.place)))return false;
+  eventIds.add(e.id);
+ }
+ return true;
 }
 export function lineageSequence(data,key){
  if(!validateLineageReviewCorpus(data)||!["matthew","luke"].includes(key))return [];
