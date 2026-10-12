@@ -138,7 +138,11 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
     Number.isInteger(sourceDecision?.appliedCount)&&
     sourceDecision.appliedCount>=0&&
     sourceDecision.appliedCount<=commemorations.length&&
-    sourceDecision?.calendarCount===commemorations.length);
+    sourceDecision?.calendarCount===commemorations.length&&
+    (sourceDecision.prayerGroupCount==null||
+      (Number.isInteger(sourceDecision.prayerGroupCount)&&
+      sourceDecision.prayerGroupCount>=1&&
+      sourceDecision.prayerGroupCount<=sourceDecision.appliedCount+1)));
   const counts=commemorationApplies?
     properOrationReadiness(proper,commemorations.length+1,fr):
     Object.freeze({status:"NOT_APPLICABLE",counts:null});
@@ -148,7 +152,8 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
       certified&&sourceDecision.appliedCount===0?
         Object.freeze({status:"NOT_APPLIED_TO_FORM",counts:counts.counts}):
         certified?
-          properOrationReadiness(proper,sourceDecision.appliedCount+1,fr):
+          properOrationReadiness(proper,sourceDecision.prayerGroupCount??
+            sourceDecision.appliedCount+1,fr):
           counts;
   const commemorationPrayerApplies=!commemorationApplies?false:
     certified?sourceDecision.appliedCount>0:null;
