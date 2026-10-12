@@ -172,7 +172,10 @@ const verifiedPresentation={
  ...presentationWork,
  release:{...presentationWork.release,verifiedOccasions:[{
    date:candlemas.date,subjectId:"ROS-04",
-   observedPrincipalId:candlemas.observedId
+   observedPrincipalId:candlemas.observedId,
+   relationship:"EXACT_FEAST_SUBJECT",
+   liturgicalWitnessUrl:"https://example.test/ordo/02-02",
+   iconographyWitnessUrl:"https://example.test/art/presentation"
  }]}
 };
 assert.equal(selectReleasedCalendarArtwork({
@@ -191,6 +194,46 @@ assert.equal(selectReleasedCalendarArtwork({...exact,works:[good({
  editorial:{subjectIds:["ROS-01"],
    selectedArtworkId:sacredArt2026Curation.selections["ROS-01"].artworkId}
 })]}),null,"Known museum source is a hard identity check");
+
+// Ordinary Sundays may be illustrated by a separately certified appointed
+// Gospel. No Sunday title or Gospel is guessed from a civil date. The witness
+// URLs and Principal ID below are synthetic release-contract test fixtures.
+const sunday="2026-11-08";
+assert.ok(reconciliation.sunday2026.sundayIndex.some(x=>x.date===sunday
+  && !x.sourcePrincipalIfClassI));
+const blind=sacredArt2026Curation.selections["BIB-G27"];
+assert.ok(blind,"All 101 selected artwork subjects, not just the major feasts, are indexed");
+const sundayWork=good({
+  id:"met-777779",
+  source:{rights:"CC0",objectUrl:"https://www.metmuseum.org/art/collection/search/777779"},
+  editorial:{subjectIds:["BIB-G27"],selectedArtworkId:blind.artworkId},
+  image:{...art.image,path:"assets/sacred-art/met-777779.webp"},
+  release:{home:true,homepageMasterpiece:true,calendar:true,verifiedOccasions:[{
+    date:sunday,subjectId:"BIB-G27",observedPrincipalId:"resolved-principal-sunday",
+    relationship:"APPOINTED_GOSPEL",
+    liturgicalWitnessUrl:"https://example.test/1962-proper/sunday",
+    iconographyWitnessUrl:"https://example.test/paintings/healing-blind",
+    homeSpotlight:true
+  }]}
+});
+assert.equal(selectReleasedCalendarArtwork({
+  date:sunday,observedId:"resolved-principal-sunday",works:[sundayWork]
+})?.relation,"APPOINTED_GOSPEL");
+assert.equal(selectReleasedCalendarArtwork({
+  date:sunday,observedId:"different-day",works:[sundayWork]
+}),null);
+assert.equal(selectReleasedHomeArtwork({
+  date:"2026-11-09",observedId:"resolved-monday",
+  works:[art,sundayWork]
+})?.anchorDate,sunday,"New source-cleared Sunday hero replaces earlier held art");
+const noWitness=good({...sundayWork,release:{
+  ...sundayWork.release,verifiedOccasions:[{
+    ...sundayWork.release.verifiedOccasions[0],liturgicalWitnessUrl:null
+  }]
+}});
+assert.equal(selectReleasedCalendarArtwork({
+  date:sunday,observedId:"resolved-principal-sunday",works:[noWitness]
+}),null,"No publication on merely asserted Sunday association");
 
 // Wiring into the currently owned Home and Calendar surfaces, not a parallel
 // UI. Actual live image deployment awaits the release registry and packaged art.
