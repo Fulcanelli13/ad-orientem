@@ -759,6 +759,12 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       return;
     }
     try {
+      // The host resolver can become available *after* DOMContentLoaded.
+      // Install against the fully initialized original source before
+      // constructing any Calendar/Proper callbacks.
+      state.prefaceOwnerStatus=install1962PrefaceRuntime(window);
+      if(!state.prefaceOwnerStatus.installed)throw new Error(
+        "1962_PREFACE_OWNER_"+state.prefaceOwnerStatus.reason);
       state.rogationPreflight=mountRogationPreflight({
         doc:document,
         getResolvedMass:()=>celebrationApi().getResolvedMass(),
@@ -852,6 +858,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     suspend: () => suspendPersistedMass(),
     status: () => Object.freeze({
       installed: state.installed,
+      prefaceOwner:state.prefaceOwnerStatus??null,
       rogationPreflightMounted:Boolean(state.rogationPreflight),
       observedMassSourceMounted:Boolean(state.observedSource),
       observedMassSelection:state.observedSource?.status?.()??null,
