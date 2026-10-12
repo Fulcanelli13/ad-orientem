@@ -15,7 +15,7 @@ const proper={
                  text("Haec nos communio","May this communion","Que cette communion")]
 };
 const main={id:"tempora:Pent20-0:2:g",title:"XX Sunday after Pentecost",rank:"II",color:"green"};
-const commem={name:"Maternity of the Blessed Virgin Mary",nameFr:"Maternité divine de la Bienheureuse Vierge Marie",path:"Sancti/10-11"};
+const commem={name:"10-11",title:"Maternity of the Blessed Virgin Mary",titleFr:"Maternité divine de la Bienheureuse Vierge Marie",path:"Sancti/10-11"};
 const state={selectedDate:"2026-10-11",resolving:false,resolution:{date:"2026-10-11",day:{main:{...main,commemorations:[commem]},commemorations:[commem]}}};
 const legacy={date:"2026-10-11",celebrationType:"CALENDAR",celebrationId:"mass_of_day",
  calendarDay:{id:main.id,title:"Twentieth Sunday after Pentecost"},
