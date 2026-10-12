@@ -124,8 +124,26 @@ try{
  assert.equal(await page.locator(conf+" [data-p435930-conf-path]").count(),3);
  assert.equal(await page.locator(conf+" [data-p435930-conf-next]").isDisabled(),true);
  const press=async selector=>{
-   const pressed=await page.evaluate(s=>{const el=document.querySelector(s);if(!el)return false;el.click();return true},selector);
-   assert.equal(pressed,true,"Missing Confession step button: "+selector);
+   const pressed=await page.evaluate(s=>{
+     // The canonical shared timeline replaces hidden legacy Previous/Next for
+     // the interior examination cards. Test the button a visitor can touch.
+     if(s.includes("[data-p435930-conf-next]")){
+       const reader=document.querySelector("#aoPray435930.open .aoP435930ConfessionReader");
+       const timeline=reader?.querySelector(".aoDevoSequenceTimeline");
+       const card=reader?.querySelector(".aoDevoCard");
+       const index=Number(card?.dataset.aoDevoIndex);
+       const count=timeline?.querySelectorAll(".aoDevoStop").length||0;
+       if(count>1&&index<count-1){
+         const next=timeline.querySelector('[data-ao-devo-sequence-move="1"]');
+         if(!next||next.disabled)return false;
+         next.click();return true;
+       }
+     }
+     const el=document.querySelector(s);if(!el)return false;
+     if(el.getClientRects().length===0)return false;
+     el.click();return true;
+   },selector);
+   assert.equal(pressed,true,"Missing visible Confession navigation: "+selector);
  };
  await page.locator(conf+" [data-p435930-conf-path='regular']").tap();
  assert.equal(await page.locator(conf+" [data-p435930-conf-path='regular']").getAttribute("aria-pressed"),"true");
