@@ -192,6 +192,56 @@ try{
    await page.screenshot({path:resolve(captures,"rosary-active-after-start-"+width+".png"),
      fullPage:false,animations:"disabled"});
 
+   // Chapter cards mirror the canonical bead sequence without mounting a
+   // second engine. Horizontal chapter gestures differ from bead-by-bead Next.
+   const deck=await page.evaluate(()=>{
+     const root=document.querySelector("#aoPrayerBookRoot.open");
+     const shell=root?.querySelector(".pbShell");
+     const sheet=shell?.querySelector(".lab-prayer-sheet");
+     const nav=shell?.querySelector("[data-ao-rosary-timeline]");
+     return {timeline:!!nav,cards:nav?.querySelectorAll(".aoRosaryChapterStop").length,
+       current:nav?.querySelectorAll(".aoRosaryChapterStop[aria-current='step']").length,
+       title:shell?.querySelector(".aoRosaryCardTitle")?.textContent?.trim(),
+       scroll:getComputedStyle(sheet).overflowY,
+       card:sheet?.dataset.aoRosaryCard,
+       chapterStep:window.AO_ROSARY_V381?.state?.()?.step,
+       sources:shell?.querySelectorAll(".lab-prayer-sheet .lab-prayer-flip").length,
+       playerCount:document.querySelectorAll("#aoPrayerBookRoot.open").length};
+   });
+   assert.ok(deck.timeline&&deck.cards>=6&&deck.cards<=7&&deck.current===1&&
+     deck.title?.length>3&&deck.scroll==="auto"&&deck.playerCount===1,
+     "Rosary lost named horizontal cards / card-local vertical scroll: "+JSON.stringify(deck));
+   const chapters=await page.evaluate(()=>[...document.querySelectorAll(
+     "#aoPrayerBookRoot.open [data-ao-rosary-chapter]")].map(x=>x.textContent.trim()));
+   assert.ok(chapters.some(x=>/Annunciation|Annonciation/.test(x)),
+     "Rosary timeline must name the first canonical mystery");
+   // A vertical gesture inside a prayer card does not advance a bead.
+   await player.locator(".aoRosaryCardScroll").evaluate(node=>{
+     const t=(x,y)=>new Touch({identifier:16,target:node,clientX:x,clientY:y});
+     node.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,
+       touches:[t(240,350)],changedTouches:[t(240,350)]}));
+     node.dispatchEvent(new TouchEvent("touchend",{bubbles:true,
+       touches:[],changedTouches:[t(245,200)]}));
+   });
+   assert.equal(await page.evaluate(()=>window.AO_ROSARY_V381.state().step),deck.chapterStep,
+     "Vertical prayer scroll advanced the Rosary bead");
+   const firstMystery=await page.evaluate(()=>window.AO_ROSARY_V381.steps().findIndex(
+     step=>step.kind==="mystery"&&step.phase==="decade"));
+   assert.ok(firstMystery>0,"Rosary donor lost its first canonical mystery");
+   await player.locator('[data-ao-rosary-chapter="1"]').click();
+   await page.waitForFunction(index=>window.AO_ROSARY_V381?.state?.()?.step===index,
+     firstMystery,{timeout:9000});
+   await page.waitForFunction(()=>document.querySelector(
+     "#aoPrayerBookRoot.open [data-ao-rosary-chapter='1']")?.getAttribute("aria-current")==="step",
+     null,{timeout:9000});
+   assert.equal(await player.locator(".aoRosaryChapterTitle").count(),0,
+     "Parallel mystery title surfaces must not be created");
+   await player.locator('[data-ao-rosary-chapter="0"]').click();
+   await page.waitForFunction(()=>window.AO_ROSARY_V381?.state?.()?.step===0,
+     null,{timeout:9000});
+   await page.screenshot({path:resolve(captures,"rosary-dual-axis-"+width+".png"),
+     fullPage:false,animations:"disabled"});
+
    // A shell telemetry collision once caused the legacy bead dispatcher
    // to cancel every descendant click before it reached the real control.
    const shellData=await player.locator(".pbShell").evaluate(shell=>({
