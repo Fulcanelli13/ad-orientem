@@ -130,6 +130,8 @@ async function exerciseRealShellSpecialRite(browser,spec){
         schema:prepared.schema,
         form:prepared.session.resolvedMass.form,
         precedingGraphs:[...(prepared.session.plan.precedingGraphs??[])],
+        massEntry:prepared.session.plan.massEntry,
+        normalLastGospel:prepared.session.plan.normalLastGospel,
       };
     },{iconKeys,spec});
 
@@ -249,6 +251,51 @@ async function exerciseRealShellSpecialRite(browser,spec){
       }));
       assert.deepEqual(readerIdentity,{total:65,source:39,curated:"true"},
         "real-shell Asperges must return to curated 64/65 cards without changing 39 original Mass source steps");
+    }
+    if(["PALM","ASH","CANDLEMAS"].includes(spec.kind)){
+      assert.equal(setup.massEntry,"INTROIT",
+        spec.kind+" prelude must explicitly suppress Foot-cluster, not infer it");
+      const snapshot=await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        const root=document.getElementById("ao-r17-native-reader-preview");
+        return {total:api?.model?.totalCards,source:api?.sourceModel?.totalCards,
+          curated:root?.dataset.r17CuratedReview,
+          first:api?.model?.cards?.[0]?.title,
+          suppressed:api?.model?.suppressedOpeningTitles,
+          handoff:api?.model?.preMassHandoff,
+          progress:root?.querySelector('[data-role="progress"]')?.textContent??"",
+          lastGospelVisibility:api?.model?.cards?.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
+      });
+      assert.equal(snapshot.total,61,spec.kind+" must remove exactly four source-unspoken opening display cards");
+      assert.equal(snapshot.source,39,spec.kind+" must preserve canonical 39 source steps");
+      assert.equal(snapshot.curated,"true");
+      assert.equal(snapshot.first,"Introit");
+      assert.equal(snapshot.handoff,"INTROIT");
+      assert.equal(snapshot.suppressed?.length,4);
+      assert.match(snapshot.progress,new RegExp("1 / "+(spec.kind==="PALM"?58:60)+"$"),
+        spec.kind+" visible progress must exclude Foot cards and optional second Confiteor"+
+        (spec.kind==="PALM"?" and Last Gospel":""));
+      assert.equal(snapshot.lastGospelVisibility,2,
+        "Last Gospel source remains auditable even if suppressed in the Palm ceremony");
+      const switchback=await page.evaluate(()=>{
+        const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+        api.setPresentationMode("MISSAL");
+        const missal=api.getPresentationMode();
+        api.setPresentationMode("LIVE");
+        const live=api.getPresentationMode();
+        return {missal,live,
+          source:api.sourceModel.totalCards,
+          model:api.model.totalCards,
+          first:api.model.cards[0].title,
+          current:api.getCurrentCard()?.title};
+      });
+      assert.equal(switchback.missal,"MISSAL");
+      assert.equal(switchback.live,"LIVE");
+      assert.equal(switchback.source,39);
+      assert.equal(switchback.model,61,
+        spec.kind+" must not reintroduce omitted Foot prayers when switching modes");
+      assert.equal(switchback.first,"Introit");
+      assert.equal(switchback.current,"Introit");
     }
     const handoffTitle=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim()??"";
     assert.notEqual(handoffTitle,"",spec.kind+" real-shell handoff mounted a blank Mass card");

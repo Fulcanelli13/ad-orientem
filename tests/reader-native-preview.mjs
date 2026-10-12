@@ -578,6 +578,57 @@ assert.ok(ashReady.ashController,"Ash native preview controller missing");
 assert.equal(ashReady.ashController.project().card.id,"ASH-R01");
 assert.equal(ashReady.model.totalCards,30,"Ash prelude mutated Mass card identity");
 
+// 1962 special-day preludes ending at the Introit omit the entire Foot cluster.
+// The editor's 65-piece Mass projection contains four such display cards;
+// only the verified 61-piece subset may follow Palm, Ash, or Candlemas.
+for(const {kind,loaded,source,omitsLastGospel} of [
+  {kind:"PALM",loaded:palmData,source:"palmData",omitsLastGospel:true},
+  {kind:"ASH",loaded:ashData,source:"ashData",omitsLastGospel:false},
+  {kind:"CANDLEMAS",loaded:candlemasData,source:"candlemasData",omitsLastGospel:false},
+]){
+  const specialPrepared={
+    ...livePrepared,session:{
+      ...livePrepared.session,
+      resolvedMass:{...livePrepared.session.resolvedMass,precedingRites:[kind]},
+      plan:{...livePrepared.session.plan,precedingGraphs:[kind],massEntry:"INTROIT",
+        normalLastGospel:!omitsLastGospel},
+    },
+  };
+  const opts={prepared:specialPrepared,reviewCuratedCards:true,
+    presentationData:data,eventData,cueRegistries,guideData,
+    ...(kind==="PALM"?{palmData:loaded}:kind==="ASH"?{ashData:loaded}:{candlemasData:loaded})};
+  const selected=await prepareNativeReaderPreview(opts);
+  assert.equal(selected.model.totalCards,39,kind+" changed canonical Sung text model");
+  assert.equal(selected.curatedEligible,true,kind+" must qualify only for certified Introit handoff");
+  assert.equal(selected.presentationModel.totalCards,61,kind+" must omit four Foot display cards");
+  assert.equal(selected.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_INTROIT_61");
+  assert.equal(selected.presentationModel.sourceModelTotalCards,39);
+  assert.deepEqual(selected.presentationModel.suppressedOpeningTitles,[
+    "At the Foot of the Altar · Opening and Psalm 42",
+    "Confiteor of the Celebrant","Confiteor of the Servers",
+    "Versicles and Ascent of the Altar",
+  ]);
+  assert.equal(selected.presentationModel.cards[0].title,"Introit");
+  assert.deepEqual(selected.presentationModel.cards[0].blocks.map(b=>b.blockId),["AO.SM.B014"]);
+  assert.equal(selected.presentationModel.cards[0].sequence,1);
+  assert.equal(selected.presentationModel.cardBySequence(2)?.sequence,2);
+  assert.equal(selected.presentationModel.previousCard(selected.presentationModel.cards[0].sectionId),null);
+  assert.ok(selected.presentationModel.nextCard(selected.presentationModel.cards[0].sectionId));
+  const allIds=selected.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id));
+  assert.equal(new Set(allIds).size,allIds.length,kind+" repeated canonical source paragraphs");
+  const noCurator=await prepareNativeReaderPreview({...opts,reviewCuratedCards:false});
+  assert.equal(noCurator.curatedEligible,false);
+  assert.equal(noCurator.presentationModel.totalCards,48,kind+" 48 rollback missing");
+  const wrongEntry=await prepareNativeReaderPreview({
+    ...opts,prepared:{...specialPrepared,session:{...specialPrepared.session,
+      plan:{...specialPrepared.session.plan,massEntry:"FOOT_CLUSTER"}}},
+  });
+  assert.equal(wrongEntry.curatedEligible,false,
+    kind+" must never infer Introit-entry merely because a rite name was selected");
+  assert.equal(wrongEntry.presentationModel.totalCards,48);
+}
+
+
 let blocked=false;
 try{
   await prepareNativeReaderPreview({

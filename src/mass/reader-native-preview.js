@@ -6,7 +6,7 @@ import { createMassReaderModel } from "./reader-model.js";
 import {loadMandatumSource, createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
-import { projectCuratedOrdinaryLiveCards } from "./reader-live-curated-cards.js";
+import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards } from "./reader-live-curated-cards.js";
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { loadReaderPresentationData } from "./reader-data.js";
@@ -363,16 +363,26 @@ export async function prepareNativeReaderPreview({
   // the six R20 rite records or their original source-owned formula states.
   // Palm, Ash, Candlemas, Rogations, composite preludes and following actions
   // remain on their separately verified form-specific fallback until audited.
+  const introEntryKind=preceding.length===1 ? preceding[0] : null;
+  const explicitIntroitEntry=["PALM","ASH","CANDLEMAS"].includes(introEntryKind) &&
+    String(plan?.massEntry??"").toUpperCase()==="INTROIT" &&
+    (introEntryKind==="PALM" ? Boolean(loadedPalm) :
+      introEntryKind==="ASH" ? Boolean(loadedAsh) : Boolean(loadedCandlemas));
   const compatiblePrelude=preceding.length===0 ||
-    (preceding.length===1 && preceding[0]==="ASPERGES" && Boolean(loadedAsperges));
+    (preceding.length===1 && preceding[0]==="ASPERGES" && Boolean(loadedAsperges)) ||
+    explicitIntroitEntry;
   const curatedEligible=reviewCuratedCards===true &&
     model.totalCards===39 &&
     String(model.corpusFamily)==="SUNG" &&
     String(model.presentationMode)==="LIVE" &&
     compatiblePrelude && !following.length &&
     (plan?.overlayGraphs??[]).every(id=>id==="VOTIVE_PROPER");
+  const curatedOrdinary=curatedEligible
+    ? projectCuratedOrdinaryLiveCards(model):null;
   const presentationModel=curatedEligible
-    ? projectCuratedOrdinaryLiveCards(model)
+    ? (explicitIntroitEntry
+        ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
+        : curatedOrdinary)
     : projectSourceFirst48Presentation(model);
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
   if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
@@ -2323,7 +2333,12 @@ export async function mountNativeReaderPreview({
       reviewExpandedCards:ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
     });
     sourceModel=rebuilt.sourceModel;
-    readerModel=rebuilt.presentationModel;
+    // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
+    // LIVE mode switches. No hidden 65-card ordinary opening can reappear.
+    readerModel=ready.curatedEligible && ready.presentationModel?.preMassHandoff==="INTROIT" &&
+      rebuilt.mode==="LIVE" && rebuilt.presentationModel.totalCards===65
+      ? projectCuratedIntroitEntryLiveCards(rebuilt.presentationModel)
+      : rebuilt.presentationModel;
 
     const anchored=findReaderModeAnchorCard(readerModel,anchor)??readerModel.cardBySequence(1);
     if(!anchored)throw new Error("MODE_SWITCH_ANCHOR_UNAVAILABLE");

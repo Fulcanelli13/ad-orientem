@@ -238,3 +238,58 @@ export function projectCuratedOrdinaryLiveCards(model){
   });
 }
 export const CURATED_LIVE_GROUPS=GROUPS;
+
+
+// Palm Sunday, Ash Wednesday, and Candlemas have an independently sourced
+// pre-Mass ceremony ending at the Introit; their Mass omits the prayers at
+// the Foot of the Altar. Do not render those omitted opening cards and do
+// not renumber, synthesize or mutate their underlying canonical 39 steps.
+export function projectCuratedIntroitEntryLiveCards(curated){
+  if(curated?.structureOwner!=="SOURCE_FIRST_LIVE_CURATED_65_REVIEW"||
+     curated?.totalCards!==65||curated?.sourceModelTotalCards!==39)
+    throw new Error("CURATED_INTROIT_ENTRY_REQUIRES_SOURCE_CURATED_65");
+  const opening=curated.cards.filter(card=>card.sourceSectionId==="AO.CARD.001");
+  const introit=opening.find(card=>card.title==="Introit" &&
+    (card.blocks??[]).some(block=>block.blockId==="AO.SM.B014"));
+  if(opening.length!==5 || opening[4]!==introit ||
+     curated.cards[4]!==introit ||
+     curated.cards.slice(0,4).some(card=>card.sourceSectionId!=="AO.CARD.001") ||
+     (introit.blocks??[]).some(block=>block.blockId!=="AO.SM.B014") ||
+     !introit.paragraphs.length)
+    throw new Error("CURATED_INTROIT_ENTRY_SOURCE_BOUNDARY_UNVERIFIED");
+  const omitted=curated.cards.slice(0,4);
+  const cards=Object.freeze(curated.cards.slice(4).map((card,i)=>freezeCard({
+    ...card,sequence:i+1,
+    provenance:Object.freeze({
+      ...(card.provenance??{}),
+      massEntry:"INTROIT",
+      openingOmission:"ORDINARY_FOOT_CLUSTER_BY_PRECEDING_RITE",
+    }),
+  })));
+  if(cards.length!==61||cards[0].title!=="Introit")
+    throw new Error("CURATED_INTROIT_ENTRY_EXPECTED_61_STEPS");
+  const lookup=new Map(cards.map(c=>[c.sectionId,c]));
+  if(lookup.size!==61)throw new Error("CURATED_INTROIT_ENTRY_DUPLICATE_IDS");
+  const bySequence=n=>Number.isInteger(Number(n))?cards[Number(n)-1]??null:null;
+  const neighbor=(id,delta)=>{
+    const card=lookup.get(String(id));
+    return card?bySequence(card.sequence+delta):null;
+  };
+  const canonicalStart=curated.sourceAuthorityModel.cards.find(c=>c.sectionId==="AO.CARD.001");
+  const keptSourceCueIds=new Set(cards.flatMap(c=>c.paragraphs.flatMap(p=>p.sourceCueIds??[])));
+  if(!canonicalStart || omitted.some(card=>card.paragraphs.some(p=>
+      (p.sourceCueIds??[]).some(id=>keptSourceCueIds.has(id)))))
+    throw new Error("CURATED_INTROIT_ENTRY_SOURCE_CUE_DUPLICATION");
+  return Object.freeze({
+    ...curated,
+    structureOwner:"SOURCE_FIRST_LIVE_CURATED_INTROIT_61",
+    cards,totalCards:61,
+    cardBySequence:bySequence,
+    previousCard:id=>neighbor(id,-1),
+    nextCard:id=>neighbor(id,1),
+    preMassHandoff:"INTROIT",
+    suppressedOpeningCardCount:omitted.length,
+    suppressedOpeningTitles:Object.freeze(omitted.map(c=>c.title)),
+    sourceAuthorityModel:curated.sourceAuthorityModel,
+  });
+}
