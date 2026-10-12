@@ -522,10 +522,10 @@ export const HERITAGE_STYLE = String.raw`
     max-width:100%;
   }
   .aoHeritageSurface .aoHeritageMapHint{
-    left:12px;bottom:67px;max-width:min(220px,calc(100% - 24px));
+    left:12px;bottom:68px;max-width:min(220px,calc(100% - 124px));
   }
   .aoHeritageSurface .aoHeritageNearby{
-    right:12px;bottom:13px;min-height:44px;
+    right:12px;bottom:62px;min-height:44px;
   }
 }
 
