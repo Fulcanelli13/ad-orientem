@@ -19,10 +19,10 @@
   },
   "counts": {
     "previouslyAcquiredArtworksEligible": 50,
-    "visuallyAssessedExactObjects": 19,
+    "visuallyAssessedExactObjects": 23,
     "primary": 9,
-    "secondaryOrHold": 10,
-    "remainingWithoutThisPassReview": 31,
+    "secondaryOrHold": 14,
+    "remainingWithoutThisPassReview": 27,
     "newUserApprovals": 0
   },
   "corrections": [
@@ -36,6 +36,13 @@
     {
       "artworkId": "cma-160143",
       "rule": "Do not substitute Gandolfi The Holy Family at Christie's, a different painting. Exact acquired object is Cleveland 1998.10."
+    },
+    {
+      "artworkId": "met-436302",
+      "field": "artist",
+      "old": "Domenico Fetti",
+      "museumPreferred": "Workshop of Domenico Fetti",
+      "source": "https://www.metmuseum.org/art/collection/search/436302"
     }
   ],
   "artworks": [
@@ -434,6 +441,90 @@
       "reviewNote": "Luminous, broad river Baptism with angels but Christ/John silhouettes spaced in panoramic 169×251cm composition. Museum currently explicitly attributes work to the WORKSHOP OF Jacopo Tintoretto, unlike previous simplistic registry entry; do not credit autograph Tintoretto. Phone-cover crop would remove theology/figures.",
       "relevantOutstandingSubjectIds": [
         "BIB-G04"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "nga-369",
+      "canonicalSha256": "10f17de2bed32d8e564cabd2f60d80dba19dae4df32a26574b2b7699bb91eb8d",
+      "recordedArtist": "Francesco del Cossa",
+      "recordedTitle": "Saint Lucy",
+      "museumOriginal": "https://www.nga.gov/artworks/369-saint-lucy",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_ORIGINAL",
+      "artistTier": "SECONDARY_PERIOD_STYLE_HOLD",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "LOW",
+      "reviewNote": "Francesco del Cossa Saint Lucy: clear isolated standing figure with palm and eyes-on-stem, excellent iconographic fidelity, but early Renaissance gold-ground panel and stylized contour feel flatter and less painterly than preferred Zurbarán. Retain as exact historic alternative.",
+      "relevantOutstandingSubjectIds": [
+        "SNT-OT-21"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-436801",
+      "canonicalSha256": "45fa890f6d70b6a1aa4d22a120fe4c86deb752a4290740154385e177a1656400",
+      "recordedArtist": "Juan de Flandes",
+      "recordedTitle": "The Marriage Feast at Cana",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/436801",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_ORIGINAL",
+      "artistTier": "SECONDARY_NARRATIVE_LAYOUT",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Juan de Flandes Marriage Feast at Cana: figures gathered around a meal and stone jars visible below; scene exact but numerous figures, dense central architecture and miniaturist handling reduce visual clarity as phone hero. Good Bible article illustration.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G07"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-437457",
+      "canonicalSha256": "7519c33f727e462fc1b1f9ecb6cc7316105a35d68a212a9c984cd475a8d0de55",
+      "recordedArtist": "Sebastiano Ricci",
+      "recordedTitle": "The Baptism of Christ",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/437457",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_ORIGINAL",
+      "artistTier": "SECONDARY_SKETCH_RESTRICTED",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "HIGH",
+      "reviewNote": "Sebastiano Ricci Baptism is a small wide preparatory oil sketch, with tiny central figures among clustered bystanders and elaborate architecture; weaker than Bourdon for devotional focus. Museum confirmed oil sketch.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G04"
+      ],
+      "previouslyExplicitUserSelection": false,
+      "userApprovalNewlyGranted": false,
+      "originalImageByteInspectionInThisPass": false,
+      "fullResolutionPixelCheckInThisPass": false,
+      "phoneCropApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "artworkId": "met-436115",
+      "canonicalSha256": "22350106ae8a847e74a056f073b93be650796ba0e28e068e9ff0b5d022aa9e36",
+      "recordedArtist": "Alexandre-Gabriel Decamps",
+      "recordedTitle": "The Good Samaritan",
+      "museumOriginal": "https://www.metmuseum.org/art/collection/search/436115",
+      "sourceImageMatch": "PREVIEW_MATCHED_MUSEUM_ORIGINAL",
+      "artistTier": "SECONDARY_DARK_NARRATIVE",
+      "artisticEvidence": "MATCHED_FULL_COMPOSITION_PREVIEW_NOT_RAW_PIXEL_FILE",
+      "portraitCropRisk": "MEDIUM",
+      "reviewNote": "Alexandre-Gabriel Decamps Good Samaritan: dark thickly impasted street entrance with figures bringing injured man to inn. Exact continuation of parable but injured man visually tiny; better as contextual Bible painting than narrow hero.",
+      "relevantOutstandingSubjectIds": [
+        "BIB-G17"
       ],
       "previouslyExplicitUserSelection": false,
       "userApprovalNewlyGranted": false,
