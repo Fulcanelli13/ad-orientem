@@ -1675,9 +1675,20 @@ async function ensureLitany(){
  const token=++LIT.token;
  const witness=LITANY_SOURCE_WITNESSES[lang()]||LITANY_SOURCE_WITNESSES.en;
  try{
-  const raw=await guidedWsText(witness.title,witness.cacheKey,lang());
+  const language=lang();
+  const raw=await guidedWsText(witness.title,witness.cacheKey,language);
   if(token!==LIT.token)return;
-  LIT.sections=paginateLitanyProper(extractLitanyProper(raw,lang()),lang());
+  let proper;
+  try{
+   proper=extractLitanyProper(raw,language);
+   LIT.sections=paginateLitanyProper(proper,language);
+  }catch(error){
+   // A malformed downloaded transcript must never be kept forever in the
+   // offline/local witness cache. Evict only this exact historical witness,
+   // so Retry is able to fetch and validate it anew on the next attempt.
+   try{localStorage.removeItem('ao2:v435930:ws:'+language+':'+witness.cacheKey)}catch{}
+   throw error;
+  }
   LIT.step=0;LIT.loading=false;render();
  }catch(error){
   if(token!==LIT.token)return;
