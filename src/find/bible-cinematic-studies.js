@@ -23,7 +23,8 @@ export function validateCinematicStudies(data){
   // dataset must not silently display a different scene on a chapter jump.
   if(!Number.isInteger(s.index)||s.index!==position||seen.has(s.index)||!Object.hasOwn(counts,s.status)||
    !s.reference||!s.title_en||!s.title_fr||!s.synopsis_en||!s.synopsis_fr||
-   !s.evidence_en||!s.evidence_fr||s.citationOnly!==true||!Array.isArray(s.candidates))return false;
+   !s.evidence_en||!s.evidence_fr||s.citationOnly!==true||!Array.isArray(s.candidates)||
+   (Boolean(s.sourceNote_en)!==Boolean(s.sourceNote_fr)))return false;
   if(Object.hasOwn(s,"geo")||Object.hasOwn(s,"coordinates")||Object.hasOwn(s,"art")||
      Object.hasOwn(s,"imageUrl")||Object.hasOwn(s,"sourceHasCoordinate"))return false;
   const exact=s.candidates.filter(c=>c?.relation==="EXACT_REFERENCE");
@@ -113,6 +114,7 @@ export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",
  '<h2>'+esc(L(lang,s.title_en,s.title_fr))+'</h2><p class="aoBibleStudySynopsis">'+esc(L(lang,s.synopsis_en,s.synopsis_fr))+'</p>'+
  '<div class="aoBibleStudyReference">'+esc(s.reference)+'</div>'+
  '<p class="aoBibleStudyEvidence">'+esc(status)+'</p>'+
+ (s.sourceNote_en?'<p class="aoBibleStudyQualification">'+esc(L(lang,s.sourceNote_en,s.sourceNote_fr))+'</p>':"")+
  (s.location_en||s.location_fr?'<details class="aoBibleStudyNotes"><summary>'+esc(L(lang,"Location qualification","Précision sur le lieu"))+'</summary><p>'+esc(L(lang,"Uncertified location context; no itinerary is inferred.","Lieu non certifié ; aucun itinéraire n’est inféré."))+' '+esc(L(lang,s.location_en,s.location_fr))+'</p></details>':"")+
  '<div class="aoBibleStudyActions"><button type="button" data-ao-scripture-context="'+esc(s.reference)+'">'+esc(L(lang,"Read passage","Lire le passage"))+'</button>'+
  (link!==null?'<button type="button" data-bible-review-jump="'+link+'">'+esc(L(lang,"Related 151-event chronology reference","Référence dans la chronologie à 151 étapes"))+'</button>':"")+'</div></article>';
