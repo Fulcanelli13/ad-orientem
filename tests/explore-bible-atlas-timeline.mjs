@@ -3,7 +3,7 @@ import {parseScriptureContext} from "../src/scripture/context.js";
 import { readFileSync } from "node:fs";
 import {
   buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes,
-  atlasEraOverlay, renderBibleAtlasToString, ATLAS_GEO
+  atlasEraOverlay, renderBibleAtlasToString, ATLAS_GEO, GOSPEL_NARRATIVE_PRECEDENCES
 } from "../src/find/bible-atlas.js";
 
 const data=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact.v1.json",import.meta.url),"utf8"));
@@ -33,6 +33,39 @@ assert.ok(stops.every(s=>s.eventKey.startsWith("biblical:")&&
 assert.equal(temple.era,"PUBLIC");
 assert.ok(temple.index>named("The wedding at Cana").index&&temple.index<by("PUBLIC","capernaum").index);
 assert.equal(stops.filter(s=>s.reference==="John 2:13–22").length,1,"do not invent a second cleansing");
+
+// Intra-Gospel narrative order is stronger evidence than arbitrary source-place
+// grouping; across Gospel books we make no chronological dating claim.
+assert.equal(GOSPEL_NARRATIVE_PRECEDENCES.length,6);
+const byId=id=>stops.find(s=>s.sourceEventId===id);
+for(const rule of GOSPEL_NARRATIVE_PRECEDENCES){
+ const scene=byId(rule.eventId),anchor=byId(rule.anchorId);
+ assert.ok(scene&&anchor&&rule.source,/missing evidence for /+rule.eventId);
+ assert.equal(scene.era,"PUBLIC");assert.equal(anchor.era,"PUBLIC");
+ assert.ok(rule.side==="before"?scene.index<anchor.index:scene.index>anchor.index,
+  "broken intra-Gospel precedence: "+rule.eventId+" / "+rule.anchorId);
+}
+const gospel=(label)=>stops.filter(s=>s.era==="PUBLIC"&&s.reference?.startsWith(label+" ")).map(s=>{
+ const match=s.reference.match(/\s(\d+):(\d+)/);
+ assert.ok(match,"Gospel chapter and verse required");
+ return {index:s.index,chapter:Number(match[1]),verse:Number(match[2]),reference:s.reference};
+});
+for(const label of ["Matthew","Mark","Luke","John"]){
+ const events=gospel(label);
+ for(let i=1;i<events.length;i++){
+  const before=events[i-1],after=events[i];
+  assert.ok(before.chapter<after.chapter||
+   before.chapter===after.chapter&&before.verse<=after.verse,
+   label+" source-order reversal "+before.reference+" -> "+after.reference);
+ }
+}
+assert.equal(byId("cana-miracle-02").index,93,"John 4:46 after the Samaritan encounter");
+assert.equal(byId("bethesda-miracle-18").index,94,"John 5 follows John 4");
+assert.equal(byId("capernaum-e3").index,97,"John 6 Bread of Life follows the feeding");
+assert.equal(byId("siloam-miracle-26").index,103,"John 9 precedes John 11 Lazarus");
+assert.equal(byId("galilee-sea-e1").index,83,"Mark 1 call precedes Capernaum");
+assert.equal(byId("beatitudes-e2").index,87,"Matthew 5 precedes Matthew 14");
+
 assert.match(atlasDetail(temple,"en"),/John narrates this cleansing/);
 assert.match(atlasDetail(temple,"fr"),/Saint Jean raconte cette purification/);
 
