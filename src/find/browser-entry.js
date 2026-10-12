@@ -153,7 +153,7 @@ export function createFindOwner(win=globalThis){
 
   // Keep the active research tab and chapter in view on narrow screens.
   function centerResearchSelection(node){
-    for(const selector of [".aoBibleReviewTabs [aria-pressed=true]",".aoBibleStudyTabs [aria-pressed=true]",".aoBibleStudyChapters [aria-pressed=true]"]){
+    for(const selector of [".aoBibleReviewTabs [aria-pressed=true]",".aoBibleStudyTabs [aria-pressed=true]",".aoBibleStudyChapters [aria-pressed=true]",".aoBibleStudySceneTimeline [aria-pressed=true]"]){
       const active=node?.querySelector?.(selector),track=active?.parentElement;
       if(!track||track.scrollWidth<=track.clientWidth)return;
       const trackRect=track.getBoundingClientRect(),activeRect=active.getBoundingClientRect();
@@ -729,6 +729,16 @@ export function createFindOwner(win=globalThis){
         event.preventDefault?.();const chosen=studyChapter(cinematicReview,chapterButton.dataset.bibleStudyChapter);
         if(chosen&&chosen.id===chapterButton.dataset.bibleStudyChapter){
           state.bibleReview={...current,chapter:chosen.id,scene:chosen.sceneIndices[0]};void paint();
+        }
+        return;
+      }
+      const sceneJump=target?.closest?.("[data-bible-study-jump]");
+      if(sceneJump&&cinematicReview){
+        event.preventDefault?.();
+        const jumpIndex=Number(sceneJump.dataset.bibleStudyJump);
+        const selectedChapter=studyChapter(cinematicReview,current.chapter);
+        if(Number.isInteger(jumpIndex)&&selectedChapter?.sceneIndices.includes(jumpIndex)){
+          state.bibleReview={...current,scene:jumpIndex};void paint();
         }
         return;
       }
