@@ -16,10 +16,10 @@ assert.equal(p0.length,51);
 assert.equal(worklist.subjects.filter(x=>x.priority==="P1").length,83);
 assert.equal(decisions.counts.selected,101);
 assert.equal(results.rows.length,51);
-assert.equal(matched.length,23);
-assert.equal(results.summary.canonicalDistinctArtworkLeads,24);
-assert.equal(results.summary.verifiedObjectProposalAssignments,27);
-assert.equal(results.summary.p0WithoutNewObjectMatch,28);
+assert.equal(matched.length,35);
+assert.equal(results.summary.canonicalDistinctArtworkLeads,35);
+assert.equal(results.summary.verifiedObjectProposalAssignments,39);
+assert.equal(results.summary.p0WithoutNewObjectMatch,16);
 assert.equal(results.summary.rubensApostlePanelMatches,7);
 assert.equal(results.summary.sourceImagesAcquired,0);
 assert.equal(results.summary.additionalHumanSelections,0);
@@ -54,8 +54,8 @@ for(const row of results.rows){
     assert.equal(actual.source.objectUrl,p.sourceUrl);
     assert.equal(actual.acquisition.originalSha256,p.sha256);
   }else{
-    assert.equal(p.origin,"INSTITUTIONAL_OBJECT");
-    assert.match(p.sourceUrl,/^https:\/\/(?:www\.)?(?:museodelprado\.es|collections\.louvre\.fr|metmuseum\.org|boijmans\.nl|collections\.augustins\.toulouse\.fr|emuseum\.mfah\.org|catalogo\.beniculturali\.it)\//);
+    assert.ok(["INSTITUTIONAL_OBJECT","ACADEMIC_DOCUMENTED_CHURCH_PAINTING"].includes(p.origin));
+    assert.match(p.sourceUrl,/^https:\/\/(?:www\.)?(?:museodelprado\.es|collections\.louvre\.fr|metmuseum\.org|boijmans\.nl|collections\.augustins\.toulouse\.fr|emuseum\.mfah\.org|catalogo\.beniculturali\.it|archives\.carmeldelisieux\.fr|scuolagrandesanrocco\.org|catedraldesevilla\.es|pop\.culture\.gouv\.fr|onlinecollection\.nationalgallery\.ie|nationalgallery\.org\.uk|utpictura18\.univ-amu\.fr)\//);
   }
  }
 }
@@ -85,6 +85,29 @@ assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-19").paintings[0].relati
   "CONTEXTUAL_NAMED_SAINT_ANSELM_IN_MARIAN_GROUP");
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-24").paintings[0].inventory,"0700031704");
 assert.equal(results.summary.sharedMarkLukeOriginalPaintings,1);
+const thDev=results.rows.find(x=>x.subjectId==="DEV-13").paintings[0];
+const thCal=results.rows.find(x=>x.subjectId==="SNT-OT-05").paintings[0];
+assert.equal(thDev.canonicalProposalId,thCal.canonicalProposalId,
+  "The 1925 Thérèse portrait is one canonical painted object shared by Devotions and Calendar");
+assert.equal(thDev.portraitAuthenticity,"POSTHUMOUS_RELATIVE_PAINTED_LIKENESS_NOT_LIFE_SITTING");
+assert.equal(results.rows.find(x=>x.subjectId==="DEV-15").paintings[0].observedGospelRelationship,
+ "THEMATIC_NOT_APPOINTED_EVENT_VERIFIED",
+ "Later handwashing trial must not be called 1962 Christ-the-King John 18 appointed Gospel");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-06").paintings[0].artist,
+ "Bartolomé Esteban Murillo");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-08").paintings[0].inventory,
+ "MV 8363; INV 5501; AC 1873");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-09").paintings[0].artisticQualityGate,
+ "UNFINISHED_SMALL_OIL_SKETCH_VISUAL_REVIEW");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-20").paintings[0].inventory,"NG26");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-13").paintings[0].inventory,"B 746");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-15").paintings[0].inventory,"B 745");
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-DC-16").paintings[0].inventory,"B 744");
+assert.equal(results.summary.completeBertinGreekDoctorsFromVersailles,3);
+assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-27").paintings[0].origin,
+ "ACADEMIC_DOCUMENTED_CHURCH_PAINTING");
+assert.equal(results.summary.sourceAuthenticatedNewAssignmentsInThisTurn,12);
+
 
 assert.equal(results.rows.find(x=>x.subjectId==="SNT-OT-01").paintings[0].canonicalProposalId,"louvre-rf-1948-27");
-console.log("PASS 51 unresolved P0 subjects: 23 evidence-linked, 27 assignments, 24 canonical painting leads, 28 still open; zero selections/photos/app release changed");
+console.log("PASS 51 unresolved P0 subjects: 35 evidence-linked, 39 assignments, 35 canonical painting leads, 16 still open; zero selections/photos/app release changed");
