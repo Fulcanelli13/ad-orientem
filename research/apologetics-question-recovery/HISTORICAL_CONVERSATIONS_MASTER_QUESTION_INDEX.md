@@ -1,16 +1,14 @@
-# Original Ad Orientem Apologetics questions — recovered prior conversations
+# Ad Orientem — historical Apologetics questions recovered from earlier conversations
 
-Recovery date: 12 October 2026 · **446 individually numbered historical question excerpts** · **48 original bank prefixes** · **13 complete indexed question lists** (counting known-size 14- and 16-question banks).
+**Recovery checkpoint 12 October 2026:** 452 individually numbered historic question excerpts, 50 identified original-bank prefixes, 13 fully indexed banks of their recorded sizes.
 
-**Evidence status: provisional.** The original question strings were obtained from indexed excerpts of earlier ChatGPT assistant messages, with dated response witnesses. These are not complete downloadable original transcripts with stable message permalinks; the exact message content has not been independently byte-compared. Never fabricate missing question titles.
+**Provenance:** These are source excerpts from earlier ChatGPT assistant messages with original question IDs and response timestamps. The complete original messages have not been accessed via raw chat export for line-by-line verification. No missing text was fabricated. This original corpus remains separate from 282 current GitHub question/dossier records.
 
-The 282 source records already on GitHub are **separate current canonical/research objects**, not replacements for these original questions, and must not be added as distinct historical-question totals.
-
-## All retrieved historical question titles, retaining their original bank IDs
+## Original question wording by historical bank
 
 ### AI — Artificial intelligence
 
-*Earlier chat reply:* 2026-10-07T19:14:32Z · *Retrieved:* 14/14
+*Original response witness:* 2026-10-07T19:14:32Z · *Question titles retrieved:* 14/14
 
 - **AI-001** Is artificial intelligence intrinsically evil?
 - **AI-002** Is an AI actually a person or a human-like mind?
@@ -29,7 +27,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### ANG — Anglicanism
 
-*Earlier chat reply:* 2026-10-07T15:31:02Z · *Retrieved:* 23/25
+*Original response witness:* 2026-10-07T15:31:02Z · *Question titles retrieved:* 23/25
 
 - **ANG-001** What exactly is ‘Anglican doctrine’?
 - **ANG-002** Is Anglicanism simply Catholicism without the pope?
@@ -57,7 +55,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### ATH — Atheism, agnosticism, naturalism and materialism
 
-*Earlier chat reply:* 2026-10-07T13:34:41Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T13:34:41Z · *Question titles retrieved:* 25/25
 
 - **ATH-001** What are atheism, agnosticism, naturalism and materialism?
 - **ATH-002** Can God's existence be known without revelation?
@@ -87,7 +85,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### BAP-EV — Baptist / evangelical / non-denominational
 
-*Earlier chat reply:* 2026-10-07T15:34:51Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T15:34:51Z · *Question titles retrieved:* 25/25
 
 - **BAP-EV-001** What does ‘evangelical’ mean?
 - **BAP-EV-002** What specifically makes a church Baptist?
@@ -117,7 +115,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### BIO — Bioethics
 
-*Earlier chat reply:* 2026-10-07T19:31:31Z · *Retrieved:* 16/16
+*Original response witness:* 2026-10-07T19:31:31Z · *Question titles retrieved:* 16/16
 
 - **BIO-001** When does a human embryo acquire moral dignity?
 - **BIO-002** Can direct abortion become morally permissible to solve a grave problem?
@@ -136,9 +134,17 @@ The 282 source records already on GitHub are **separate current canonical/resear
 - **BIO-015** Is surrogacy acceptable if altruistic and no money changes hands?
 - **BIO-016** Is euthanasia morally different from refusing burdensome treatment?
 
+### BUD — Buddhism: Four Noble Truths, no-self, salvation and Catholic engagement
+
+*Original response witness:* 2026-10-07T14:26:27Z · *Question titles retrieved:* 3/12
+
+- **BUD-001** Is Buddhism simply atheism?
+- **BUD-002** What are the Four Noble Truths?
+- **BUD-003** What does ‘no-self’ actually mean?
+
 ### ERR — Condemned errors and ideological movements
 
-*Earlier chat reply:* 2026-10-07T13:57:26Z · *Retrieved:* 24/25
+*Original response witness:* 2026-10-07T13:57:26Z · *Question titles retrieved:* 24/25
 
 - **ERR-001** Is Freemasonry properly a “heresy”?
 - **ERR-002** Why did the Church condemn Freemasonry?
@@ -165,16 +171,24 @@ The 282 source records already on GitHub are **separate current canonical/resear
 - **ERR-024** What is ‘Americanism’?
 - **ERR-025** What was condemned in the Sillon controversy?
 
+### HIN — Hinduism: plurality of traditions, Brahman, Atman and Hindu-Christian theology
+
+*Original response witness:* 2026-10-07T13:27:58Z · *Question titles retrieved:* 3/13
+
+- **HIN-001** Is Hinduism simply polytheism?
+- **HIN-002** What is Brahman?
+- **HIN-003** What is *ātman*?
+
 ### HUM — Secular humanism
 
-*Earlier chat reply:* 2026-10-07T16:02:45Z · *Retrieved:* 2/unspecified original size
+*Original response witness:* 2026-10-07T16:02:45Z · *Question titles retrieved:* 2/unspecified original total
 
 - **HUM-001** Is secular humanism simply ‘being humane’ or caring about humans?
 - **HUM-002** Does Catholicism have to deny everything humanists say about reason, science, dignity or ethical responsibility?
 
 ### ISL — Islam
 
-*Earlier chat reply:* 2026-10-07T13:38:54Z · *Retrieved:* 14/25
+*Original response witness:* 2026-10-07T13:38:54Z · *Question titles retrieved:* 14/25
 
 - **ISL-001** What does “Islam” mean for apologetic purposes?
 - **ISL-002** Is Muhammad himself historically doubtful?
@@ -193,7 +207,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### ISR — Biblical Israel, Second Temple Judaism, Rabbinic Judaism, Old and New Covenants, Romans 9–11
 
-*Earlier chat reply:* 2026-10-07T14:31:33Z · *Retrieved:* 10/25
+*Original response witness:* 2026-10-07T14:31:33Z · *Question titles retrieved:* 10/25
 
 - **ISR-001** Is contemporary Judaism simply ‘the religion of the Old Testament’?
 - **ISR-002** Was biblical Israel’s religion centered on synagogue and rabbis?
@@ -208,7 +222,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### JUD — Judaism
 
-*Earlier chat reply:* 2026-10-07T13:53:01Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T13:53:01Z · *Question titles retrieved:* 25/25
 
 - **JUD-001** What does ‘Judaism’ mean here?
 - **JUD-002** What does traditional rabbinic Judaism expect of the Messiah?
@@ -238,7 +252,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### LIT — Liturgical reform / Novus Ordo
 
-*Earlier chat reply:* 2026-10-07T13:27:54Z · *Retrieved:* 22/unspecified original size
+*Original response witness:* 2026-10-07T13:27:54Z · *Question titles retrieved:* 22/unspecified original total
 
 - **LIT-005** Did the 1969/70 reform weaken expression of the propitiatory sacrifice?
 - **LIT-006** Did it weaken expression of the Real Presence?
@@ -265,7 +279,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### LUT — Lutheranism
 
-*Earlier chat reply:* 2026-10-07T15:21:26Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T15:21:26Z · *Question titles retrieved:* 25/25
 
 - **LUT-001** What counts as ‘Lutheran doctrine’?
 - **LUT-002** What is the central Lutheran doctrine of justification?
@@ -295,7 +309,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### MAR — Marian apologetics
 
-*Earlier chat reply:* 2026-10-07T15:16:56Z · *Retrieved:* 20/25
+*Original response witness:* 2026-10-07T15:16:56Z · *Question titles retrieved:* 20/25
 
 - **MAR-001** Why call Mary “Mother of God”? Did she create God?
 - **MAR-002** Is “Mother of God” a late Marian exaggeration?
@@ -320,7 +334,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### MOR — Moral reasoning
 
-*Earlier chat reply:* 2026-10-07T19:31:31Z · *Retrieved:* 14/14
+*Original response witness:* 2026-10-07T19:31:31Z · *Question titles retrieved:* 14/14
 
 - **MOR-001** What makes a human act morally good?
 - **MOR-002** Does a good intention justify a bad means?
@@ -339,7 +353,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### NEW — New Age
 
-*Earlier chat reply:* 2026-10-07T16:02:45Z · *Retrieved:* 4/unspecified original size
+*Original response witness:* 2026-10-07T16:02:45Z · *Question titles retrieved:* 4/unspecified original total
 
 - **NEW-001** What is ‘New Age’?
 - **NEW-002** Does every meditation, yoga exercise, crystal, alternative therapy or interest in ‘wellness’ automatically count as New Age?
@@ -348,7 +362,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### ORTH — Eastern Orthodoxy
 
-*Earlier chat reply:* 2026-10-07T13:27:54Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T13:27:54Z · *Question titles retrieved:* 25/25
 
 - **ORTH-001** What is ‘Eastern Orthodoxy’?
 - **ORTH-002** Do Catholics and Orthodox share the first seven ecumenical councils?
@@ -378,7 +392,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### PEN — Pentecostal / Charismatic
 
-*Earlier chat reply:* 2026-10-07T15:42:35Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T15:42:35Z · *Question titles retrieved:* 25/25
 
 - **PEN-001** What is Pentecostalism historically?
 - **PEN-002** Is Pentecostalism one denomination?
@@ -408,7 +422,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### PROT — Generic Protestant apologetics
 
-*Earlier chat reply:* 2026-10-07T12:36:04Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T12:36:04Z · *Question titles retrieved:* 25/25
 
 - **PROT-001** What does “Protestant” mean?
 - **PROT-002** Is sola Scriptura simply “Catholics don't believe the Bible”?
@@ -438,7 +452,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### REF — Reformed / Calvinist
 
-*Earlier chat reply:* 2026-10-07T15:28:59Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T15:28:59Z · *Question titles retrieved:* 25/25
 
 - **REF-001** What counts as ‘Reformed’ or ‘Calvinist’ doctrine?
 - **REF-002** What is Reformed justification?
@@ -468,7 +482,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### REST — Restorationist movements incl. Jehovah's Witnesses
 
-*Earlier chat reply:* 2026-10-07T14:22:31Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T14:22:31Z · *Question titles retrieved:* 25/25
 
 - **REST-001** Are Jehovah’s Witnesses Trinitarian Christians?
 - **REST-002** What do Jehovah’s Witnesses believe Jesus is?
@@ -498,7 +512,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### SAN — Saints, relics, images, Purgatory, indulgences
 
-*Earlier chat reply:* 2026-10-07T15:19:12Z · *Retrieved:* 10/25
+*Original response witness:* 2026-10-07T15:19:12Z · *Question titles retrieved:* 10/25
 
 - **SAN-001** What does ‘communion of saints’ actually mean?
 - **SAN-002** Are the saints ‘dead’ in a way that prevents Christian fellowship with them?
@@ -513,7 +527,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### SCR — Scripture / Tradition / biblical canon
 
-*Earlier chat reply:* 2026-10-07T14:58:44Z · *Retrieved:* 23/25
+*Original response witness:* 2026-10-07T14:58:44Z · *Question titles retrieved:* 23/25
 
 - **SCR-001** Is divine Revelation identical with the Bible?
 - **SCR-002** Is new public revelation still being added?
@@ -541,7 +555,7 @@ The 282 source records already on GitHub are **separate current canonical/resear
 
 ### WES — Methodist / Wesleyan
 
-*Earlier chat reply:* 2026-10-07T15:39:53Z · *Retrieved:* 25/25
+*Original response witness:* 2026-10-07T15:39:53Z · *Question titles retrieved:* 25/25
 
 - **WES-001** What is Methodism historically?
 - **WES-002** Is ‘Methodist’ synonymous with the United Methodist Church?
@@ -569,83 +583,83 @@ The 282 source records already on GitHub are **separate current canonical/resear
 - **WES-024** What is the ‘Wesleyan Quadrilateral’?
 - **WES-025** What is the deepest Catholic–Wesleyan dispute?
 
-## Bank-by-bank completeness
+## Historic-bank coverage
 
-| Prefix | Category | Question texts recovered | Previously declared bank size | Historical response |
+| Bank | Original interlocutor or topic | Indexed question texts | Known original range | Historical response witness |
 |---|---|---:|---:|---|
 | `AI` | Artificial intelligence | 14 | 14 | 2026-10-07T19:14:32Z |
 | `ANG` | Anglicanism | 23 | 25 | 2026-10-07T15:31:02Z |
-| `ANTH` | Anthroposophy | 0 | Unknown | 2026-10-07T16:02:45Z |
+| `ANTH` | Anthroposophy | 0 | unknown | 2026-10-07T16:02:45Z |
 | `ATH` | Atheism, agnosticism, naturalism and materialism | 25 | 25 | 2026-10-07T13:34:41Z |
-| `BAH` | Baháʼí | 0 | Unknown | 2026-10-07T15:45:51Z |
+| `BAH` | Baháʼí | 0 | unknown | 2026-10-07T15:45:51Z |
 | `BAP-EV` | Baptist / evangelical / non-denominational | 25 | 25 | 2026-10-07T15:34:51Z |
 | `BIO` | Bioethics | 16 | 16 | 2026-10-07T19:31:31Z |
-| `CHR` | Chinese popular religion | 0 | Unknown | 2026-10-07T15:45:51Z |
-| `CONF` | Confucian traditions | 0 | Unknown | 2026-10-07T15:45:51Z |
-| `DAO` | Daoism | 0 | Unknown | 2026-10-07T15:45:51Z |
+| `BUD` | Buddhism: Four Noble Truths, no-self, salvation and Catholic engagement | 3 | 12 | 2026-10-07T14:26:27Z |
+| `CHR` | Chinese popular religion | 0 | unknown | 2026-10-07T15:45:51Z |
+| `CONF` | Confucian traditions | 0 | unknown | 2026-10-07T15:45:51Z |
+| `DAO` | Daoism | 0 | unknown | 2026-10-07T15:45:51Z |
 | `EAS` | East Asian and indigenous traditions combined | 0 | 25 | 2026-10-07T15:19:12Z |
 | `ERR` | Condemned errors and ideological movements | 24 | 25 | 2026-10-07T13:57:26Z |
-| `EXI` | Existentialism and nihilism | 0 | Unknown | 2026-10-07T16:02:45Z |
-| `HIST-PAP` | Historical early papacy, apostolic succession and related historical-sacramental questions | 0 | Unknown | 2026-10-07T13:23:50Z |
-| `HIST-SAC` | Historical sacraments, seven sacraments, Holy Orders, marriage and anointing | 0 | Unknown | 2026-10-07T13:23:50Z |
-| `HUM` | Secular humanism | 2 | Unknown | 2026-10-07T16:02:45Z |
-| `IND` | Indigenous and animist traditions | 0 | Unknown | 2026-10-07T15:45:51Z |
+| `EXI` | Existentialism and nihilism | 0 | unknown | 2026-10-07T16:02:45Z |
+| `HIN` | Hinduism: plurality of traditions, Brahman, Atman and Hindu-Christian theology | 3 | 13 | 2026-10-07T13:27:58Z |
+| `HIST-PAP` | Historical early papacy, apostolic succession and related historical-sacramental questions | 0 | unknown | 2026-10-07T13:23:50Z |
+| `HIST-SAC` | Historical sacraments, seven sacraments, Holy Orders, marriage and anointing | 0 | unknown | 2026-10-07T13:23:50Z |
+| `HUM` | Secular humanism | 2 | unknown | 2026-10-07T16:02:45Z |
+| `IND` | Indigenous and animist traditions | 0 | unknown | 2026-10-07T15:45:51Z |
 | `ISL` | Islam | 14 | 25 | 2026-10-07T13:38:54Z |
 | `ISR` | Biblical Israel, Second Temple Judaism, Rabbinic Judaism, Old and New Covenants, Romans 9–11 | 10 | 25 | 2026-10-07T14:31:33Z |
-| `JAIN` | Jainism | 0 | Unknown | 2026-10-07T15:45:51Z |
+| `JAIN` | Jainism | 0 | unknown | 2026-10-07T15:45:51Z |
 | `JUD` | Judaism | 25 | 25 | 2026-10-07T13:53:01Z |
-| `LIT` | Liturgical reform / Novus Ordo | 22 | Unknown | 2026-10-07T13:27:54Z |
+| `LIT` | Liturgical reform / Novus Ordo | 22 | unknown | 2026-10-07T13:27:54Z |
 | `LUT` | Lutheranism | 25 | 25 | 2026-10-07T15:21:26Z |
 | `MAR` | Marian apologetics | 20 | 25 | 2026-10-07T15:16:56Z |
 | `MIN` | Combined smaller religions | 0 | 25 | 2026-10-07T15:19:12Z |
 | `MOR` | Moral reasoning | 14 | 14 | 2026-10-07T19:31:31Z |
-| `NEW` | New Age | 4 | Unknown | 2026-10-07T16:02:45Z |
+| `NEW` | New Age | 4 | unknown | 2026-10-07T16:02:45Z |
 | `ORTH` | Eastern Orthodoxy | 25 | 25 | 2026-10-07T13:27:54Z |
 | `PAP` | Papacy historical topical bank | 0 | 20 | 2026-10-07T19:31:31Z |
 | `PAP-ORD` | Ordinary papacy / ecclesiology | 0 | 25 | 2026-10-07T15:08:11Z |
 | `PAT` | Patristics | 0 | 25 | 2026-10-07T19:31:31Z |
 | `PEN` | Pentecostal / Charismatic | 25 | 25 | 2026-10-07T15:42:35Z |
-| `PER` | Perennialism | 0 | Unknown | 2026-10-07T16:02:45Z |
+| `PER` | Perennialism | 0 | unknown | 2026-10-07T16:02:45Z |
 | `PROT` | Generic Protestant apologetics | 25 | 25 | 2026-10-07T12:36:04Z |
 | `REF` | Reformed / Calvinist | 25 | 25 | 2026-10-07T15:28:59Z |
-| `REL` | Relativism and postmodernism | 0 | Unknown | 2026-10-07T16:02:45Z |
+| `REL` | Relativism and postmodernism | 0 | unknown | 2026-10-07T16:02:45Z |
 | `REST` | Restorationist movements incl. Jehovah's Witnesses | 25 | 25 | 2026-10-07T14:22:31Z |
 | `SAN` | Saints, relics, images, Purgatory, indulgences | 10 | 25 | 2026-10-07T15:19:12Z |
-| `SAT` | Modern Satanism | 0 | Unknown | 2026-10-07T16:02:45Z |
-| `SCI` | Scientology | 0 | Unknown | 2026-10-07T16:02:45Z |
+| `SAT` | Modern Satanism | 0 | unknown | 2026-10-07T16:02:45Z |
+| `SCI` | Scientology | 0 | unknown | 2026-10-07T16:02:45Z |
 | `SCR` | Scripture / Tradition / biblical canon | 23 | 25 | 2026-10-07T14:58:44Z |
-| `SHI` | Shinto | 0 | Unknown | 2026-10-07T15:45:51Z |
-| `SIKH` | Sikhism | 0 | Unknown | 2026-10-07T15:45:51Z |
-| `THEO` | Theosophy | 0 | Unknown | 2026-10-07T16:02:45Z |
-| `TRH` | Transhumanism | 0 | Unknown | 2026-10-07T16:02:45Z |
-| `V2` | Vatican II disputes | 0 | Unknown | 2026-10-07T13:27:54Z |
+| `SHI` | Shinto | 0 | unknown | 2026-10-07T15:45:51Z |
+| `SIKH` | Sikhism | 0 | unknown | 2026-10-07T15:45:51Z |
+| `THEO` | Theosophy | 0 | unknown | 2026-10-07T16:02:45Z |
+| `TRH` | Transhumanism | 0 | unknown | 2026-10-07T16:02:45Z |
+| `V2` | Vatican II disputes | 0 | unknown | 2026-10-07T13:27:54Z |
 | `WES` | Methodist / Wesleyan | 25 | 25 | 2026-10-07T15:39:53Z |
-| `ZOR` | Zoroastrianism | 0 | Unknown | 2026-10-07T15:45:51Z |
+| `ZOR` | Zoroastrianism | 0 | unknown | 2026-10-07T15:45:51Z |
 
-## Original question fragments with no complete numerical attribution
+## Eight original A-series question phrases without certified individual A-numbers
 
-- A001–A025 — Can human reason really know that God exists? (original reply 2026-10-07T20:31:08Z)
-- A001–A025 — If everything needs a cause, who caused God? (original reply 2026-10-07T20:31:08Z)
-- A001–A025 — Did Jesus of Nazareth really exist? (original reply 2026-10-07T20:31:08Z)
-- A001–A025 — Is the Resurrection presented as a real historical event or merely as a symbol of faith? (original reply 2026-10-07T20:31:08Z)
-- A026–A050 — Why did Jesus have to die? (original reply 2026-10-07T21:38:57Z)
-- A026–A050 — How do we know which books belong in the Bible? (original reply 2026-10-07T21:38:57Z)
-- A026–A050 — Is sola Scriptura taught in Scripture? (original reply 2026-10-07T21:38:57Z)
-- A026–A050 — Can Catholic doctrine develop without changing its meaning? (original reply 2026-10-07T21:38:57Z)
+- A001–A025: Can human reason really know that God exists? · 2026-10-07T20:31:08Z
+- A001–A025: If everything needs a cause, who caused God? · 2026-10-07T20:31:08Z
+- A001–A025: Did Jesus of Nazareth really exist? · 2026-10-07T20:31:08Z
+- A001–A025: Is the Resurrection presented as a real historical event or merely as a symbol of faith? · 2026-10-07T20:31:08Z
+- A026–A050: Why did Jesus have to die? · 2026-10-07T21:38:57Z
+- A026–A050: How do we know which books belong in the Bible? · 2026-10-07T21:38:57Z
+- A026–A050: Is sola Scriptura taught in Scripture? · 2026-10-07T21:38:57Z
+- A026–A050: Can Catholic doctrine develop without changing its meaning? · 2026-10-07T21:38:57Z
 
-## Truncated source excerpts — excluded from complete question count
+## Unfinished question excerpts — excluded from recovered title count
 
-- `ERR-023`: What is ‘Liberal Catholicism?… (source excerpt truncated; **not recovered complete**)
-- `ANG-024`: What did the English Reformation… (source excerpt truncated; **not recovered complete**)
-- `MAR-021`: Is Mary really ‘M… (source excerpt truncated; **not recovered complete**)
-- `SCR-024`: Do manuscript variants and copyist… (source excerpt truncated; **not recovered complete**)
+- ERR-023 — What is ‘Liberal Catholicism?… (truncated in original-chat search index)
+- ANG-024 — What did the English Reformation… (truncated in original-chat search index)
+- MAR-021 — Is Mary really ‘M… (truncated in original-chat search index)
+- SCR-024 — Do manuscript variants and copyist… (truncated in original-chat search index)
 
-## Conflicting historical numbering
+## Critical archival distinctions
 
-The 18:42 UTC MOR-001–014 moral-reasoning bank differs from an earlier 13:40 UTC Sexual Ethics draft that also uses MOR identifiers. The two original reply versions are **not** silently conflated or treated as duplicates with identical text; see `HISTORICAL_ID_COLLISIONS.md`.
-
-## Archival obligations
-
-- `HISTORICAL_QUESTION_GAPS.csv` enumerates unresolved question positions only for bank sizes confirmed from earlier replies. It does not infer an original total for banks of unknown size.
-- A/C historical recovery placeholders are handled separately and not claimed recovered.
-- No theological answer/publication status or app reader behavior is altered by this archive.
+- The MOR-001–014 numbering was reused in two separate original assistant replies on 7 October; preserve both historically scoped versions (see `HISTORICAL_ID_COLLISIONS.md`).
+- Thirteen liturgical-reform question sentences with uncertain individual numbering are preserved in `HISTORICAL_LIT_UNNUMBERED_QUOTES.md`; they are **not** part of the 452 numbered titles.
+- The 282 current canonical/research GitHub records are a distinct evidence class and must not replace the historical wording.
+- Historical A001–A318 / C001–C233 forensic recovery remains separate.
+- No historical list in this file has been certified by byte-for-byte comparison with a complete exported original chat transcript.
