@@ -1,31 +1,33 @@
 {
   "schema": "AO_MR1962_HOLY_WEEK_B05_TEXT_COMPLETENESS_REGISTER_V1",
   "version": 1,
-  "reviewDate": "2026-10-10",
+  "reviewDate": "2026-10-12",
   "auditClass": "production-content-inventory + independently edited 1962 witness incipits; NOT full word-for-word printed-typica verification",
   "certification": "NOT_CERTIFIED",
   "dependsOn": "data/mass/independent-1962-holy-week-b04.v1.json",
   "controls": {
     "calendarRite": "1962 restored Holy Week, never pre-1955 donor",
     "productionTextsChanged": true,
-    "imageVerifiedHolyWeekTypicaPages": 0,
+    "imageVerifiedHolyWeekTypicaPages": 21,
     "lineByLinePrintedCollationsCertified": 0,
     "statusPolicy": "A passing B05 CI documents open textual deficits; it must never be presented as complete Latin/English/French certification. A partial text, heading, rubric or ellipsis is not the full prescribed prayer.",
     "safety": "Retain original graph/Canon/48-card product; prohibit speculative text insertions. Source variants are separate authorities and not interpolated.",
-    "sourceEditedTextVersion": "B08 Holy Thursday proper Canon cue substitution and optional partial Mandatum in reader; original typica visual collation pending"
+    "sourceEditedTextVersion": "B10 Good Friday deacon's 1962 Confiteor from canonical Ordinary minister AO.SM.B007; Latin/English row parity tested. Earlier B08 Holy Thursday proper Canon and partial Mandatum preserved. No full printed Holy Week Latin/EN/FR certification.",
+    "imageWitnessScope": "B09 merged PR #1135: 21 unique printed folios with 29 partial anchors, NOT 21 fully collated pages."
   },
   "sourceWitnesses": [
     {
       "id": "VATICAN_1962_SCAN",
       "kind": "printed-typica-facsimile",
-      "url": "https://propria.org/additional/",
-      "status": "whole-book PDF too large for available web reader; NO Holy Week page visual sign-off"
+      "url": "https://gregobase.selapa.net/source.php?id=42&images=1",
+      "status": "B09_IMAGE_SAMPLE_21_FOLIOS__NOT_COMPLETE_LINE_BY_LINE",
+      "note": "Original Vatican 1962 printed pages accessible at individual GregoBase image URLs; no full-word-for-word certification."
     },
     {
       "id": "PRINTED_SAMPLE_VISUAL",
       "kind": "sample original typica",
       "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
-      "status": "sample covers July, not Holy Week; page 1 visually inspected only as scan provenance"
+      "status": "B04_JULY_11_LEAVES_VISUALLY_OBSERVED__NOT_HOLY_WEEK"
     },
     {
       "id": "PALM_EDITORIAL",
@@ -145,9 +147,11 @@
       "rite": "GOOD_FRIDAY_1962",
       "appPath": "src/mass/reader-good-friday.js",
       "surface": "deacon's confession before faithful Communion",
-      "status": "MISSING_READER_TEXT",
-      "evidence": "The Good Friday Communion card renders the rubric 'Et continuo diaconus facit confessionem.' but not the Latin Confiteor prayer; the following Misereatur and Indulgentiam have text.",
-      "source": "FRIDAY_EDITORIAL"
+      "status": "B10_CANONICAL_MINISTERS_FULL_TEXT_RESTORED__PRINTED_CROSS_REFERENCE_NOT_FULLY_COLLATED",
+      "evidence": "B10 source-owns the deacon's complete three-part Confiteor from the pinned 1962 sung Ordinary block AO.SM.B007 (cues C0021–C0023): 'et tibi, pater'/'et te, pater'. Good Friday printed Communion rubric 'Et continuo diaconus facit confessionem' remains in position before Misereatur and Indulgentiam. Exact Latin/English canonical Ordinary parity asserted; formal original 1962 Ordinary folio cross-reference and full FR translation remain open.",
+      "source": "VATICAN_1962_SCAN",
+      "originalOrdinaryPath": "data/presentation/reader-text-sung.v1.json#AO.SM.B007",
+      "originalGoodFridayRubricImage": "https://gregobase.selapa.net/sources/42/262.png"
     },
     {
       "id": "FRIDAY_CROSS_CHANTS",
