@@ -1,0 +1,105 @@
+import assert from "node:assert/strict";
+import http from "node:http";
+import {readFile,mkdir} from "node:fs/promises";
+import {extname,resolve,sep} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const captures=resolve(root,"artifacts/pray-adoration-guided");
+await mkdir(captures,{recursive:true});
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".webp":"image/webp",".woff2":"font/woff2"};
+const server=http.createServer(async(req,res)=>{
+ try{const name=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname),full=resolve(root,"."+name);
+  if(full!==root&&!full.startsWith(root+sep)){res.writeHead(403);return res.end();}
+  const bytes=await readFile(full);
+  res.writeHead(200,{"content-type":mime[extname(full)]||"application/octet-stream","cache-control":"no-store"});
+  res.end(bytes);
+ }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e.message||e));}
+});
+await new Promise((ok,no)=>{server.once("error",no);server.listen(4293,"127.0.0.1",ok)});
+let browser;
+try{
+ browser=await chromium.launch({headless:true});
+ const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
+ const errors=[];page.on("pageerror",e=>errors.push(String(e.message)));
+ await page.goto("http://127.0.0.1:4293/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.visit_blessed_sacrament",{returnContext:null})),true);
+ const sel="#aoPray435930.open .aoP435930AdorationReader",timeline=sel+" .aoDevoSequenceTimeline";
+ await page.waitForSelector(timeline,{timeout:12000});
+ const snapshot=()=>page.evaluate(()=>{
+  const root=document.querySelector("#aoPray435930.open .aoP435930AdorationReader");
+  const card=root?.querySelector(".aoDevoCard"),scroll=card?.querySelector(".aoDevoCardScroll");
+  return {mode:root?.dataset.aoAdorationMode,stage:Number(root?.dataset.aoAdorationStep),
+   final:root?.dataset.aoAdorationFinal,card:card?.dataset.aoDevoCard,
+   index:Number(card?.dataset.aoDevoIndex),stops:root?.querySelectorAll(".aoDevoStop").length||0,
+   current:root?.querySelectorAll(".aoDevoStop[aria-current='step']").length||0,
+   active:scroll?.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length||0,
+   overflow:scroll?getComputedStyle(scroll).overflowY:null,
+   nav:root?.querySelector(".aoP435930GuideNav")?getComputedStyle(root.querySelector(".aoP435930GuideNav")).display:null};
+ });
+ let v=await snapshot();
+ assert.deepEqual({mode:v.mode,card:v.card,stops:v.stops,current:v.current,overflow:v.overflow},
+  {mode:"visit",card:"visit-0",stops:7,current:1,overflow:"auto"});
+ assert.equal(v.nav,"none","Old Previous/Next navigation duplicates the seven-stage timeline");
+ assert.ok(v.active>=1,"Visit has no illuminated prayer or direction paragraph");
+ await page.screenshot({path:resolve(captures,"visit-390.png"),animations:"disabled"});
+ const swipe=async(dx,dy)=>page.locator(sel+" .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
+  const t=(x,y)=>new Touch({identifier:15,target:el,clientX:x,clientY:y});
+  el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(225,335)],changedTouches:[t(225,335)]}));
+  el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(225+dx,335+dy)]}));
+ },{dx,dy});
+ await swipe(5,-135);
+ assert.equal((await snapshot()).index,0,"Vertical gesture changed the prayer card");
+ await swipe(-160,3);
+ assert.equal((await snapshot()).index,1,"Horizontal swipe must advance exactly one named card");
+ await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
+ v=await snapshot();assert.equal(v.index,6);assert.equal(v.final,"true");
+ assert.notEqual(v.nav,"none","Last Visit card must keep Finish, not trap the faithful");
+ await page.locator(sel+" [data-p435930-visit-next]").tap();
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930BigGrid").count(),1,
+  "Finishing Visit did not restore the Adoration mode chooser");
+ assert.equal(await page.locator(timeline).count(),0);
+ // Open-ended adoration must remain SILENCE FIRST, not become a 7-card workout.
+ await page.locator("#aoPray435930.open [data-p435930-ador-mode='open']").tap();
+ assert.equal(await page.locator(timeline).count(),0,"Open silent Adoration was forced into a step timeline");
+ assert.match(await page.locator("#aoPray435930.open .aoP435930GuideNow").innerText(),/Silence is the default|Be still/i);
+ await page.locator("#aoPray435930.open [data-p435930-ador-home]").tap();
+ await page.locator("#aoPray435930.open [data-p435930-ador-mode='holy']").tap();
+ await page.waitForSelector(timeline);
+ v=await snapshot();assert.equal(v.mode,"holy");assert.equal(v.stops,8);
+ await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
+ assert.match(await page.locator(sel+" .aoDevoCard").innerText(),/Optional Agony decade/i);
+ assert.equal(await page.locator(sel+" [data-p435930-go-rosary]").count(),1,
+  "Optional Rosary handoff was lost from the Holy Hour");
+ await page.locator("#aoPray435930.open [data-p435930-ador-home]").tap();
+ await page.locator("#aoPray435930.open [data-p435930-ador-mode='four']").tap();
+ await page.waitForSelector(timeline);
+ v=await snapshot();assert.equal(v.mode,"four");assert.equal(v.stops,5);
+ assert.match(await page.locator(sel+" .aoDevoCard").innerText(),/Adoration/i);
+ await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ assert.equal((await snapshot()).final,"true");
+ await page.setViewportSize({width:320,height:720});
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
+  "Guided Adoration overflows narrow phone width");
+ assert.equal((await snapshot()).overflow,"auto");
+ const railCollision=await page.evaluate(()=>{
+  const timeline=document.querySelector("#aoPray435930.open .aoP435930AdorationReader .aoDevoSequenceTimeline");
+  const t=timeline?.getBoundingClientRect();
+  if(!t)return {missingTimeline:true};
+  const icons=[...document.querySelectorAll("#aoPray435930 [data-ao-pray-rail-channel]")];
+  const intersections=icons.filter(el=>{
+   const r=el.getBoundingClientRect();
+   return r.width>0&&r.height>0&&r.left<t.right&&r.right>t.left&&r.top<t.bottom&&r.bottom>t.top;
+  });
+  return {iconCount:icons.length,intersections:intersections.length};
+ });
+ assert.equal(railCollision.intersections,0,
+  "Gesture/posture icon collides with a 320px timeline button: "+JSON.stringify(railCollision));
+ await page.screenshot({path:resolve(captures,"four-ends-320.png"),animations:"disabled"});
+ assert.deepEqual(errors,[],"Browser errors: "+errors.join(" | "));
+ console.log("PASS guided Adoration 7/8/5 cards: source stages, swipe, paragraph focus, true silence mode and finish/return");
+ await page.close();
+}finally{await browser?.close();await new Promise(done=>server.close(done));}

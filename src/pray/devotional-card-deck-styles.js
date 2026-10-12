@@ -82,6 +82,21 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930BenedictionReader [data-ao-benediction-guide]>summary{
  min-height:44px;display:flex;align-items:center;color:var(--muted,#aeb2b8);font-size:13px}
 
+/* Only the three chosen guided Adoration methods use card navigation.
+   Open-ended silent prayer and the treasury remain non-sequential. */
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="visit"] .aoDevoCardScroll,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="holy"] .aoDevoCardScroll,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoDevoCardScroll{
+ display:block;padding:18px min(52px,16vw) 26dvh 16px;min-height:min(350px,52dvh)}
+#aoPray435930 .aoP435930AdorationReader .aoDevoCardScroll>*{margin-block:0 22px}
+#aoPray435930 .aoP435930AdorationReader .aoDevoCardScroll .aoP435930GuideNow h2{display:none!important}
+#aoPray435930 .aoP435930AdorationReader .aoDevoCardScroll .aoP435930Prayer{
+ border:0!important;background:transparent!important;box-shadow:none!important}
+#aoPray435930 .aoP435930AdorationReader .aoDevoCardScroll .aoP435930Flip{max-width:100%;white-space:normal}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-dual-axis="true"] .aoP435930GuideNav{display:none!important}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-dual-axis="true"][data-ao-adoration-final="true"] .aoP435930GuideNav{display:flex!important}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-dual-axis="true"][data-ao-adoration-final="true"] .aoP435930GuideNav .aoP435930Secondary{display:none!important}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
