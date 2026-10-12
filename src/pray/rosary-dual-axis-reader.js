@@ -118,7 +118,20 @@ export function installRosaryDualAxisReader({
   if(!Number.isInteger(index)||index<0||index>=chapters.length||index===selected)return false;
   // A chapter click delegates to the canonical bead API. No alternative
   // prayer state, navigation history or progress registry is created.
-  return onChapter(chapters[index].start,chapters[index],index)!==false;
+  if(onChapter(chapters[index].start,chapters[index],index)===false)return false;
+  // The native player may repaint asynchronously. Update only the visual
+  // projection immediately; the canonical cursor remains authoritative.
+  timeline._aoRosaryCurrent=index;
+  const labels=timeline.querySelectorAll("[data-ao-rosary-chapter]");
+  labels.forEach((label,i)=>{
+   label.classList.toggle("active",i===index);
+   label.setAttribute("aria-current",i===index?"step":"false");
+  });
+  if(number)number.textContent=String(index+1).padStart(2,"0")+" / "+String(chapters.length).padStart(2,"0");
+  if(title)title.textContent=chapters[index].title;
+  if(left)left.disabled=index===0;
+  if(right)right.disabled=index===chapters.length-1;
+  return true;
  };
  // Refresh the per-mount handler: the native donor may replace its entire
  // sheet between canonical beads while retaining our timeline node.
