@@ -129,16 +129,20 @@ export function selectReleasedHomeArtwork({
     && (row.group === "observedClassI"
       || row.group === "otherHighlights"
       || row.observedRelationship === "OBSERVED_PRINCIPAL"));
+  let staticChoice = null;
   for (const row of rows.reverse()) {
     for (const subjectId of row.selectedSubjects || []) {
       const selected = selectedWork(subjectId, liveRegistry(works), "home", curation);
-      if (selected && clearedOccasion(row, selected.artwork, subjectId, date, observedId))
-        return { ...selected, anchorDate: row.date,
-        observedPrincipalId: row.principalId || (selected.artwork.release?.verifiedOccasions || [])
-          .find(x => x.date === row.date && x.subjectId === subjectId)?.observedPrincipalId,
-        held: row.date !== date,
-        relation: row.date === date ? "OBSERVED_PRINCIPAL_SUBJECT" : "HELD_PREVIOUS_MASTERPIECE" };
+      if (selected && clearedOccasion(row, selected.artwork, subjectId, date, observedId)) {
+        staticChoice = { ...selected, anchorDate: row.date,
+          observedPrincipalId: row.principalId || (selected.artwork.release?.verifiedOccasions || [])
+            .find(x => x.date === row.date && x.subjectId === subjectId)?.observedPrincipalId,
+          held: row.date !== date,
+          relation: row.date === date ? "OBSERVED_PRINCIPAL_SUBJECT" : "HELD_PREVIOUS_MASTERPIECE" };
+        break;
+      }
     }
+    if (staticChoice) break;
   }
   // A separately approved Sunday/Gospel masterpiece can become a new
   // Home anchor. The switch is opt-in, never an automatic weekly rotation.
@@ -157,7 +161,11 @@ export function selectReleasedHomeArtwork({
     }
   }
   verifiedAnchors.sort((a,b) => b.anchorDate.localeCompare(a.anchorDate));
-  return verifiedAnchors[0] || null;
+  const verified = verifiedAnchors[0] || null;
+  // The newest genuine source-certified anchor wins, irrespective of which
+  // module (Class I manifest or approved Sunday Gospel) discovered it.
+  return verified && (!staticChoice || verified.anchorDate > staticChoice.anchorDate)
+    ? verified : staticChoice;
 }
 
 /**
