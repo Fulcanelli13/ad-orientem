@@ -16,6 +16,15 @@ const params=new URLSearchParams(location.search);
 const lang=params.get("lang")==="fr"?"fr":"en";
 const requestedMode=String(params.get("mode")||"LIVE").toUpperCase();
 const mode=["MISSAL","SIMPLE","LIVE"].includes(requestedMode)?requestedMode:"LIVE";
+// Acceptance-only explicit parameters: defaults preserve the Rosary/Sung harness.
+// Neither the Mass reader nor the app selection defaults are changed.
+const requestedForm=String(params.get("form")??"MISSA_CANTATA_INCENSE").toUpperCase();
+const form=["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(requestedForm)
+  ?requestedForm:"MISSA_CANTATA_INCENSE";
+const family=String(params.get("family")??"VOTIVE").toUpperCase()==="REQUIEM"?"REQUIEM":"VOTIVE";
+const isPrint=params.get("print")==="1";
+const isRequiem=!isPrint&&family==="REQUIEM";
+const properOverlay=isPrint?[]:[isRequiem?"REQUIEM":"VOTIVE_PROPER"];
 const t=(lat,en,fr)=>lang==="fr"?({lat,en:"",fr}):({lat,en,fr:""});
 const proper={
   sourcePath:"Sancti/10-07",
@@ -39,13 +48,15 @@ const precedingRites=withAsperges?["ASPERGES"]:withPalm?["PALM"]:withAsh?["ASH"]
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:"2026-10-04",
-  form:"MISSA_CANTATA_INCENSE",
+  form,
   presentationMode:mode,
-  actualCelebration:{id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
+  actualCelebration:isRequiem
+    ?{id:"requiem",type:"REQUIEM",title:"Requiem"}
+    :{id:"holy_rosary",type:isPrint?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
   calendarCelebration:{id:"Tempora/Pent18-0",type:"CALENDAR",title:"Sunday"},
-  explicitlySelectedCelebration:params.get("print")!=="1",
+  explicitlySelectedCelebration:!isPrint,
   proper:{status:"READY",data:proper,sourcePath:"Sancti/10-07"},
-  overlays:params.get("print")==="1"?[]:["VOTIVE_PROPER"],
+  overlays:properOverlay,
   precedingRites,
   followingActions:[],
   distinctRite:null,
@@ -59,7 +70,7 @@ const prepared={
       kind:"MASS",
       precedingGraphs:precedingRites,
       followingGraphs:[],
-      overlayGraphs:params.get("print")==="1"?[]:["VOTIVE_PROPER"],
+      overlayGraphs:properOverlay,
       massEntry:(withPalm||withAsh)?"INTROIT":"FOOT_CLUSTER",
       normalLastGospel:withPalm?false:true,
     },
@@ -74,6 +85,7 @@ const prepared={
 };
 
 try{
+  window.__AO_PHONE_SCENARIO=Object.freeze({form,family:isPrint?"CALENDAR":family,rite,mode});
   window.__AO_PHONE_PREVIEW=await mountNativeReaderPreview({doc:document,prepared});
   document.documentElement.dataset.harnessReady="true";
 }catch(error){
