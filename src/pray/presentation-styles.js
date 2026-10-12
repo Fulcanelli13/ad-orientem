@@ -825,6 +825,65 @@ function ensureStyle(doc,id,css){
   return true;
 }
 
+/* Stations and Angelus: preserve original prayer, guide and mode controls
+   but do not force configuration before recitation. */
+const DEVOTIONAL_PRAYER_FIRST_CSS=`
+#aoPray435930 .aoP435930PrayerOptions{
+ display:block;min-width:0;box-sizing:border-box;
+ margin:0 0 14px;border:1px solid var(--border,rgba(255,255,255,.17));
+ border-radius:12px;background:var(--surface-1,#151c24);
+}
+#aoPray435930 .aoP435930PrayerOptions>summary{
+ display:flex;align-items:center;justify-content:space-between;
+ gap:9px;padding:11px 13px;min-height:48px;
+ cursor:pointer;color:var(--text,#f3ead7);
+ font:650 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoP435930PrayerOptions>summary>span{min-width:0;flex:1 1 auto}
+#aoPray435930 .aoP435930PrayerOptions>summary>small{
+ color:var(--liturgical,#d8bd7d);font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+ text-align:right;max-width:49%;flex:0 1 auto;
+}
+#aoPray435930 .aoP435930PrayerOptions>summary:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px;
+}
+#aoPray435930 .aoP435930PrayerOptionsBody{
+ display:grid;gap:12px;padding:0 12px 14px;min-width:0;
+}
+#aoPray435930 .aoP435930PrayerOptions:not([open])>.aoP435930PrayerOptionsBody{
+ display:none!important;
+}
+#aoPray435930 .aoP435930PrayerOptionsBody>.aoP435930ModeRow{margin:0}
+#aoPray435930 .aoP435930PrayerOptionsBody .aoP435930Seg button{
+ min-height:44px;padding:9px 10px;
+ font-size:max(12px,.75rem);line-height:1.35;
+}
+#aoPray435930 .aoP435930PrayerOptionsBody .aoP435930Toggle{
+ min-height:44px;box-sizing:border-box;
+}
+#aoPray435930 .aoP435930PrayerOptionsBody .aoP435930GuideInfo,
+#aoPray435930 .aoP435930PrayerOptionsBody .aoAngelusGuide{
+ margin:0;min-width:0;max-width:100%;
+}
+#aoPray435930 .aoP435930PrayerOptionsBody :is(.aoAngelusGuide,.aoP435930GuideInfo)>summary{
+ min-height:44px;display:flex;align-items:center;
+}
+#aoPray435930 .aoP435930AngelusReader>.aoAngelusRitualGrid{
+ margin-top:0;
+}
+@media(max-width:370px){
+ #aoPray435930 .aoP435930PrayerOptions>summary{
+  flex-wrap:wrap;align-items:flex-start;gap:3px;
+ }
+ #aoPray435930 .aoP435930PrayerOptions>summary>small{
+  flex-basis:100%;max-width:100%;text-align:left;
+ }
+ #aoPray435930 .aoP435930PrayerOptionsBody>.aoP435930ModeRow{
+  grid-template-columns:1fr;gap:10px;
+ }
+}
+`;
+
 const PRAY_READING_TYPE_CSS=`
 /* Explanatory devotional body-copy, not rubric, caption or prayer response type. */
 #aoPray435930 .aoAngelusGuideSection p,
@@ -901,6 +960,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-exact-rosary-overview-v3414-style",ROSARY_EXACT_OVERVIEW_CSS);
   ensureStyle(doc,"ao-pray-visible-regression-guard-style",VISIBLE_REGRESSION_GUARD_CSS);
   ensureStyle(doc,"ao-pray-rosary-declutter-style",ROSARY_DECLUTTER_CSS);
+  ensureStyle(doc,"ao-pray-devotional-prayer-first-style",DEVOTIONAL_PRAYER_FIRST_CSS);
   ensureStyle(doc,"ao-pray-readable-guidance-style",PRAY_READING_TYPE_CSS);
   ensureStyle(doc,"ao-pray-organised-family-entry-style",PRAY_ORG_ENTRY_CSS);
   return true;

@@ -31,6 +31,12 @@ function oneLayer(){
 function viewOf(root){return root?.querySelector('.aoP435930Mount')?.dataset.aoPrayView||''}
 function needsRecitation(root){
   const v=viewOf(root);if(['rosary','confession','firstFriday','firstSaturday','fsMeditation'].includes(v))return false;
+  // Stations and Angelus already own an explicit, accessible Individual/Group
+  // choice in their canonical Reading options. Never manufacture a second
+  // global selector outside that drawer. The global control remains for
+  // Prayer readers without a native recitation choice.
+  if(v==='stations'&&root.querySelector('[data-ao-stations-options] [data-p435930-seg="individual"]'))return false;
+  if(v==='angelus'&&root.querySelector('[data-ao-angelus-options] [data-p435930-seg="individual"]'))return false;
   if(v==='library')return !!root.querySelector('.aoP435930Prayer');
   return !!root.querySelector('.aoP435930Prayer,.aoP435930LitCard,.aoP435930AppendixFlip');
 }
