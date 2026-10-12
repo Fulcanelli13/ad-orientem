@@ -1,5 +1,5 @@
 // Shared source-first 1962 Mass-form oration projection.
-// Narrow certified scope: one sourced II-class feast on a II-class Sunday.
+// Certified scope: source-identified single II-class Sunday feast and privileged Sunday / Advent feria.
 // Never infer universal privileges from feast titles, colours or typography.
 // 1960 General Rubrics 109-112 and Missal Rubrics 433-445:
 // https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html
@@ -27,6 +27,10 @@ function isCalendarMass(celebrationId){
  * 1962 day and its complete, ordered, trilingual Proper.
  * Other classes, extra commemorations, local and conventual variants remain
  * UNVERIFIED until their authoritative source classification is available.
+ * Privileged classes follow 1960 General Rubrics §§108, 111(a), 113
+ * and Missal §434(a). The resolved source owns the identity and ranks.
+ * Do not equate the Mission Sunday §453 prayer under one conclusion with
+ * an ordinary Calendar commemoration.
  */
 export function select1962CommemorationsForMassForm({
   proper,calendarResolution,form,celebrationId="mass_of_day",
@@ -44,33 +48,49 @@ export function select1962CommemorationsForMassForm({
     return untouched(proper,"PROPER_SOURCE_UNAVAILABLE");
   const comms=array(day.commemorations);
   if(comms.length===0)return untouched(proper,"NO_COMMEMORATIONS");
-  // Under §111(b) a II-class Sunday allows an occurring II-class feast at
-  // Low Mass. Under §111(a) this ordinary (non-privileged) commemoration is
-  // omitted in a non-conventual Sung Mass. No inference is made for other days.
   const sunday=new Date(String(calendarResolution.date)+"T12:00:00Z").getUTCDay()===0;
   const only=comms[0],sources=array(data.calendarCommemorations).filter(x=>!x?.inseparable);
-  const admissible=comms.length===1&&sources.length===1&&sunday&&
-    Number(main.rank)===2&&Number(only.rank)===2&&
-    /^tempora:[a-z0-9-]+-0:2:/i.test(String(main.id??""))&&
-    /^sancti:/i.test(String(only.id??""))&&
+  const identified=comms.length===1&&sources.length===1&&
     canonical(rowPath(sources[0]))===canonical(rowPath(only))&&
-    !only.inseparable&&!only.privileged&&!sources[0].inseparable;
-  if(!admissible)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
+    canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path)&&
+    !only.inseparable&&!sources[0].inseparable;
+  if(!identified)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
+  const mainId=String(main.id??""),commId=String(only.id??"");
+  const ordinarySunday=sunday&&Number(main.rank)===2&&Number(only.rank)===2&&
+    /^tempora:[a-z0-9-]+-0:2:/i.test(mainId)&&
+    /^sancti:/i.test(commId)&&!only.privileged;
+  // §108(a): an impeded Sunday is privileged in every Mass form; the
+  // principal universal I-class feast keeps its own source identity.
+  const privilegedSunday=sunday&&Number(main.rank)===1&&Number(only.rank)===2&&
+    /^sancti:[0-9]{2}-[0-9]{2}:1:/i.test(mainId)&&
+    /^tempora:[a-z0-9-]+-0:2:/i.test(commId)&&
+    /^Tempora\/[A-Za-z0-9]+-0$/i.test(String(only.path??""));
+  // §108(e): a displaced Advent feria is privileged even in Sung Mass.
+  // The prayerSourcePath may be the canonical Sunday-template alias but
+  // the actual commemoration PATH must identify the named weekday.
+  const privilegedAdvent=/^sancti:[0-9]{2}-[0-9]{2}:[12]:/i.test(mainId)&&
+    [1,2].includes(Number(main.rank))&&Number(only.rank)===3&&
+    /^tempora:Adv[1-4]-[1-6]:3:/i.test(commId)&&
+    /^Tempora\/Adv[1-4]-[1-6]$/i.test(String(only.path??""));
+  const scope=privilegedSunday?"PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL":
+    privilegedAdvent?"PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL":
+    ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":null;
+  if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
-  const low=normalizedForm==="LOW";
-  const applied=low?comms:[],omitted=low?[]:comms;
+  const include=privilegedSunday||privilegedAdvent||normalizedForm==="LOW";
+  const applied=include?comms:[],omitted=include?[]:comms;
   const decision=Object.freeze({
     status:"CERTIFIED",source:"1962_PROPER_RESOLVER",form:normalizedForm,
     calendarCount:1,appliedCount:applied.length,
-    scope:"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL",
-    authorities:Object.freeze(["1960_GENERAL_RUBRICS_109_111","1960_MISSAL_RUBRICS_434"]),
-    mainId:String(main.id),commemorationId:String(only.id)
+    scope,
+    authorities:Object.freeze(["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
+    mainId,commemorationId:commId
   });
   const selected=Object.freeze({...data,
-    collects:Object.freeze((low?data.collects:data.collects.slice(0,1)).slice()),
-    secrets:Object.freeze((low?data.secrets:data.secrets.slice(0,1)).slice()),
-    postcommunions:Object.freeze((low?data.postcommunions:data.postcommunions.slice(0,1)).slice()),
+    collects:Object.freeze((include?data.collects:data.collects.slice(0,1)).slice()),
+    secrets:Object.freeze((include?data.secrets:data.secrets.slice(0,1)).slice()),
+    postcommunions:Object.freeze((include?data.postcommunions:data.postcommunions.slice(0,1)).slice()),
     // Keep the complete Calendar inventory distinct from prayers at this Mass.
     appliedCommemorations:Object.freeze(applied.map(x=>Object.freeze({...x}))),
     omittedCommemorations:Object.freeze(omitted.map(x=>Object.freeze({...x}))),
