@@ -10,7 +10,13 @@ assert.equal(registry.schema,"AO_BIBLICAL_ATLAS_EDITORIAL_HOLDS_V1");
 assert.equal(registry.status,"REVIEW_NOT_PUBLISHED");
 assert.equal(registry.policy?.releaseRequiresHumanSourceReview,true);
 assert.equal(atlas.length,151);
-assert.equal(study.scenes.length,181);
+assert.equal(study.scenes.length,183);
+assert.equal(study.extension.baselineSceneCount,181,
+ "all original 181 source identities remain preserved");
+assert.deepEqual(study.extension.additionalSceneIndices,[181,182],
+ "source-exact Holy Innocents and Pentecost are the only two appended episodes");
+assert.equal(study.scenes[181].reference,atlas[73].reference);
+assert.equal(study.scenes[182].reference,atlas[126].reference);
 assert.equal(registry.holds.length,5,"all five source-critical blockers must remain tracked until reviewed");
 assert.equal(new Set(registry.holds.map(x=>x.id)).size,5);
 
