@@ -153,7 +153,12 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
       ?proper.appliedCommemorations:proper.calendarCommemorations;
   const extra=(Array.isArray(effectiveCommemorations)?
     effectiveCommemorations:[]).filter(row=>row&&!row.inseparable).length;
-  const minimum=1+extra;
+  const certifiedGroupCount=selection?.status==="CERTIFIED"&&
+    selection?.source==="1962_PROPER_RESOLVER"&&
+    Number.isInteger(selection?.prayerGroupCount)&&
+    selection.prayerGroupCount>=1&&
+    selection.prayerGroupCount<=1+extra?selection.prayerGroupCount:null;
+  const minimum=certifiedGroupCount??1+extra;
   if(extra>0){
     for(const [slot,plural,singular] of [
       ["COLLECT_SET","collects","collect"],
