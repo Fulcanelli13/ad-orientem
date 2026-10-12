@@ -19,6 +19,7 @@ import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
+import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
 import {nativeRiteScriptureContext} from "./scripture-native-rite-context.js";
 import {extendedLessonScriptureContext} from "./scripture-extended-lesson-context.js";
@@ -729,10 +730,18 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       });
       const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
       const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;
+      const formSelectedProper=select1962CommemorationsForMassForm({
+        proper,
+        calendarResolution:runtimeState()?.resolution,
+        form:chosen?.form??options.celebrationForm,
+        celebrationId:resolvedMass.celebrationId??"mass_of_day",
+        isConventual:resolvedMass.conventualMass??false,
+        observedSource:Boolean(observed),
+      });
       if(chosen?.kind==="GOOD_FRIDAY" && chosen?.explicitlyChosenForm)
         throw new Error("GOOD_FRIDAY_IS_NOT_A_MASS_FORM");
       const optional=fullMassPreflight?.composeRitesFor?.(resolvedMass,options)??null;
-      return Object.freeze({...options,proper,rogationSelection,
+      return Object.freeze({...options,proper:formSelectedProper.proper,rogationSelection,
         ...(optional?{
           precedingRites:optional.precedingRites,
           followingActions:optional.followingActions,
