@@ -112,6 +112,19 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     }
   }
 
+  // Two or more Calendar commemorations may exceed the permitted count
+  // or demand seasonal precedence. An unresolved source selection must not
+  // become apparently READY just because legacy Proper arrays have text.
+  if(proper.commemorationFormDecision?.status==="UNVERIFIED"&&
+     proper.commemorationFormDecision?.reason===
+       "MULTIPLE_COMMEMORATIONS_SOURCE_PRIORITY_PENDING"){
+    for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+      slots[slot]=Object.freeze({status:"MISSING",slot,data:null,
+        reason:"1962 multiple commemorations: Mass-form priority and "+
+          "oration selection not source-certified."});
+    }
+  }
+
   // Missing/competing §453 source or conclusion: never render a
   // source-incomplete Mission Sunday as a certified ready Collect.
   if(proper.missionSundayCollectDecision?.status==="UNVERIFIED"){
