@@ -90,12 +90,26 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
     (kind==="CALENDAR"?calendar.title:null);
   const alternate=legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY";
   const selectedForm=form==null?null:String(form).trim().toUpperCase();
+  const confirmed=validResolution(calendarState,date);
+  const hostProper=properOf(legacy);
+  // The host preflight may still be loading while the same-date Calendar
+  // resolver has already returned its canonical trilingual Proper. For the
+  // unmodified Mass of the day only, use that authoritative source for the
+  // informational prayer-applicability banner; never unlock Mass start here.
+  const actualId=text(legacy?.actualCelebration?.id);
+  const calendarOwner=confirmed?.day?.main?.id;
+  const calendarOnly=kind==="CALENDAR"&&!alternate&&
+    [null,"","mass_of_day",calendarOwner].includes(text(legacy?.celebrationId))&&
+    [null,"","mass_of_day",calendarOwner].includes(actualId);
+  const resolvedCalendarProper=calendarOnly&&confirmed?.proper?.status==="ready"?
+    confirmed.proper.data:null;
+  const selectedSource=hostProper??resolvedCalendarProper;
   const sourceSelection=select1962CommemorationsForMassForm({
-    proper:properOf(legacy),calendarResolution:validResolution(calendarState,date),
+    proper:selectedSource,calendarResolution:confirmed,
     form:selectedForm,celebrationId:legacy?.celebrationId??"mass_of_day",
     isConventual:legacy?.conventualMass??false,observedSource:alternate
   });
-  const proper=sourceSelection.proper?.data??sourceSelection.proper??properOf(legacy);
+  const proper=sourceSelection.proper?.data??sourceSelection.proper??selectedSource;
   const differs=alternate||!["CALENDAR","GOOD_FRIDAY"].includes(kind)||
     Boolean(actualTitle&&calendar.title&&actualTitle!==calendar.title);
   const actualColour=text(proper?.color)||text(proper?.colour)||
