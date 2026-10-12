@@ -3,6 +3,7 @@
 // The native reader owns the production Mass surface. Legacy is explicit rollback only.
 
 import { installAppShellBridge } from "../app/browser-entry.js";
+import { install1962PrefaceRuntime } from "./1962-preface-runtime.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
@@ -758,6 +759,12 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       return;
     }
     try {
+      // The host resolver can become available *after* DOMContentLoaded.
+      // Install against the fully initialized original source before
+      // constructing any Calendar/Proper callbacks.
+      state.prefaceOwnerStatus=install1962PrefaceRuntime(window);
+      if(!state.prefaceOwnerStatus.installed)throw new Error(
+        "1962_PREFACE_OWNER_"+state.prefaceOwnerStatus.reason);
       state.rogationPreflight=mountRogationPreflight({
         doc:document,
         getResolvedMass:()=>celebrationApi().getResolvedMass(),
@@ -851,6 +858,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     suspend: () => suspendPersistedMass(),
     status: () => Object.freeze({
       installed: state.installed,
+      prefaceOwner:state.prefaceOwnerStatus??null,
       rogationPreflightMounted:Boolean(state.rogationPreflight),
       observedMassSourceMounted:Boolean(state.observedSource),
       observedMassSelection:state.observedSource?.status?.()??null,
@@ -877,6 +885,10 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
 
 if (typeof window !== "undefined" && typeof document !== "undefined") {
   const installFinalBrowserBridges = () => {
+    // Attach to the existing 1962 source resolver BEFORE either Calendar or
+    // native Mass entry may read its Proper. No view-specific Preface patching.
+    const preface=install1962PrefaceRuntime(window);
+    if(!preface.installed)console.warn("1962 Preface source selection unavailable",preface.reason);
     installAppShellBridge();
     installBrowserMassBridge();
   };

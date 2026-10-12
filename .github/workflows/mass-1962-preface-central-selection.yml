@@ -1,0 +1,49 @@
+name: Mass 1962 central Preface source selection
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/mass/1962-preface-decision.js'
+      - 'src/mass/1962-preface-runtime.js'
+      - 'src/mass/browser-entry.js'
+      - 'data/mass/1962-preface-source-maria-spiritu.v1.json'
+      - 'tests/mass-1962-preface-central-decision.mjs'
+      - 'tests/mass-1962-preface-10-date-browser-e2e.mjs'
+      - '.github/workflows/mass-1962-preface-central-selection.yml'
+  pull_request:
+    paths:
+      - 'src/mass/1962-preface-decision.js'
+      - 'src/mass/1962-preface-runtime.js'
+      - 'src/mass/browser-entry.js'
+      - 'data/mass/1962-preface-source-maria-spiritu.v1.json'
+      - 'tests/mass-1962-preface-central-decision.mjs'
+      - 'tests/mass-1962-preface-10-date-browser-e2e.mjs'
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/mass/1962-preface-decision.js
+      - run: node --check src/mass/1962-preface-runtime.js
+      - run: node tests/mass-1962-preface-central-decision.mjs
+      - run: node tests/mass-1962-commemoration-preflight.mjs
+      - run: node tests/host-adapter.mjs
+  browser:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Compare ten actual Prefaces and source first R17 slots
+        run: node tests/mass-1962-preface-10-date-browser-e2e.mjs
