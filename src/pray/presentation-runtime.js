@@ -203,7 +203,7 @@ function load(){
 }
 let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
-let MERCY={step:0,includeClosing:false,guide:'guided'};
+let MERCY={step:0,includeClosing:false,guide:'guided',optionsOpen:false};
 let ROSARY_FIFTEEN={active:false};
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
@@ -293,6 +293,7 @@ function shell(){
     if(!e.target?.isConnected)return;
     if(e.target.matches?.('details[data-ao-stations-options]'))STATIONS.optionsOpen=e.target.open;
     if(e.target.matches?.('details[data-ao-angelus-options]'))angelusOptionsOpen=e.target.open;
+    if(e.target.matches?.('details[data-ao-mercy-options]'))MERCY.optionsOpen=e.target.open;
   },true);
   r.addEventListener('input',onInput);
   r.addEventListener('touchstart',onPrayTouchStart,{passive:true});
