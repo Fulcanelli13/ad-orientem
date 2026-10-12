@@ -1,6 +1,6 @@
 // Approved creative direction: Henry Ossawa Tanner (1898), Philadelphia Museum of Art.
-// Art metadata is source truth; its public-domain Wikimedia reproduction is not
-// bundled here until the derivative image is actually copied into assets/.
+// Art metadata is source truth; the reviewed local derivative is included with
+// its provenance under assets/pray/angelus/ on this integration branch.
 // Every chapter uses ONE original painting, not four unrelated artworks.
 export const TANNER_ANGELUS_MASTER = Object.freeze({
   id:"tanner-annunciation-1898",
@@ -14,7 +14,7 @@ export const TANNER_ANGELUS_MASTER = Object.freeze({
   sourceLicense:"Public Domain Mark 1.0 (Wikimedia Commons reproduction)",
   museumImageTerms:"Museum states images on its own site are shared for educational use; do not assume those terms license its separate downloads.",
   localPath:"assets/pray/angelus/tanner-annunciation-1898.webp",
-  status:"selected-pending-local-image"
+  status:"bundled-local-image-pending-visual-approval"
 });
 
 const freezeSequence=rows=>Object.freeze(rows.map(entry=>Object.freeze(entry)));
