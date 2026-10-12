@@ -15,6 +15,34 @@ const make=(doc,tag,klass,text)=>{
 };
 const visible=el=>Boolean(el?.getClientRects().length);
 
+/** Group the canonical 62/63 bead events into seven/eight named prayer cards. */
+export function mercyChapters(steps,{french=false}={}){
+  if(!Array.isArray(steps)||!steps.length)return Object.freeze([]);
+  const titles={
+    opening:["Opening prayers","Prières initiales"],
+    conclusion:["Closing invocations","Invocations finales"],
+    "optional-conclusion":["Optional concluding prayer","Prière finale facultative"]
+  };
+  const chapters=[];
+  steps.forEach((step,index)=>{
+    const id=step.decade?"decade-"+step.decade:step.group;
+    let chapter=chapters[chapters.length-1];
+    if(!chapter||chapter.id!==id){
+      const name=step.decade?
+        (french?"Dizaine ":"Decade ")+step.decade:
+        (titles[id]?.[french?1:0]||id);
+      chapter={id,title:name,start:index,entries:[]};
+      chapters.push(chapter);
+    }
+    chapter.entries.push({index,step});
+  });
+  return Object.freeze(chapters.map(chapter=>Object.freeze({
+    id:chapter.id,title:chapter.title,start:chapter.start,
+    entries:Object.freeze(chapter.entries.map(x=>Object.freeze(x)))
+  })));
+}
+
+
 export function installSequentialDevotionalReader({
   mount,kind,chapters,activeIndex=0,onNavigate=()=>{},paragraphSelector,
   onFocus=()=>{},restoreStep=null
