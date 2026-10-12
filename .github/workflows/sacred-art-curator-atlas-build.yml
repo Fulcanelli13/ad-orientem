@@ -18,7 +18,7 @@ on:
       - ".github/workflows/sacred-art-curator-atlas-build.yml"
 
 permissions:
-  contents: write
+  contents: read
   actions: read
 
 concurrency:
@@ -96,20 +96,6 @@ jobs:
           assert not s["missingPreviews"], "Atlas must show all acquired artwork previews"
           print("ALL_VISUAL_SOURCE_PREVIEWS_LOADED",s["artworks"])
           PY
-      - name: Publish public self-contained HTML to research branch
-        if: success()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f reviews/sacred-art-curator-priority.html
-          if git diff --cached --quiet; then
-            echo "Shortlist HTML already current"
-          else
-            git commit -m "Publish public priority sacred-art review HTML [skip ci]"
-            git fetch origin platform/885-sacred-art-candidates
-            git merge --no-edit origin/platform/885-sacred-art-candidates
-            git push origin HEAD:refs/heads/platform/885-sacred-art-candidates
-          fi
       - name: Upload single-file visual atlas and provenance proof (no full-size originals)
         if: always()
         uses: actions/upload-artifact@v4
