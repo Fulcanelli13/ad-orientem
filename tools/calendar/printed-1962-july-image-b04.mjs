@@ -34,6 +34,12 @@ for(const row of manifest.cases){
     assert.ok(claim.latinIncipit.length>=22,"Non-distinct image reading");
     const key=[row.date,claim.field,claim.index].join("|");
     assert.ok(!distinct.has(key),"Duplicate proof: "+key);distinct.add(key);
+    if(claim.runtimeLatinVariant){
+      assert.ok(["edition-word-division","edition-ae-vs-oe-spelling"].includes(claim.varianceType),
+        "Known variants must carry independently checked edition differences");
+      assert.notEqual(fold(claim.runtimeLatinVariant),fold(claim.latinIncipit),
+        "Printed and runtime variants must actually differ");
+    }
     pageSet.add(claim.page);
   }
 }
@@ -84,18 +90,25 @@ try{
     const checks=row.assertions.map(claim=>{
       const observed=actual.fields[claim.field]?.[claim.index]??"";
       const match=Boolean(observed)&&fold(observed).includes(fold(claim.latinIncipit));
+      const variance=Boolean(!match&&observed&&claim.runtimeLatinVariant&&
+        fold(observed).includes(fold(claim.runtimeLatinVariant)));
       return {field:claim.field,index:claim.index,page:claim.page,
         printedPage:claim.printedPage,imageRead:claim.latinIncipit,
         actualExcerpt:observed.slice(0,200),agrees:match,
-        status:!observed?"runtime-field-missing":match?"image-incipit-agreement":
-          "image-versus-runtime-discrepancy"};
+        sourceSpellingDeviation:variance,varianceType:variance?claim.varianceType:null,
+        editorialNote:claim.editorialNote??null,
+        status:!observed?"runtime-field-missing":match?"image-incipit-verbatim-agreement":
+          variance?"tracked-nonverbatim-edition-orthography":
+          "unexplained-image-versus-runtime-discrepancy"};
     });
     const item={date:row.date,source:actual.source,rank:actual.rank,
       sameOwnerAndRankAsB01:owner,
       checks,
       status:!owner?"source-identity-discrepancy":
         checks.every(x=>x.agrees)?"image-located-incipits-agree":
-          "image-incipit-discrepancy"};
+        checks.every(x=>x.agrees||x.sourceSpellingDeviation)?
+          "image-located-with-tracked-nonverbatim-variants":
+          "image-incipit-unexplained-discrepancy"};
     results.push(item);
     console.log("PRINTED_1962_JULY_B04 "+JSON.stringify({date:row.date,
       status:item.status,checks:checks.length,discrepancies:checks.filter(x=>!x.agrees)
@@ -107,26 +120,38 @@ try{
   await new Promise(done=>server.close(done));
 }
 const accepted=results.flatMap(x=>x.checks).filter(x=>x.agrees).length;
-const issues=results.filter(x=>x.status!=="image-located-incipits-agree");
+const variants=results.flatMap(x=>x.checks).filter(x=>x.sourceSpellingDeviation);
+const issues=results.filter(x=>x.status==="source-identity-discrepancy"||
+  x.status==="image-incipit-unexplained-discrepancy");
 const report={schema:"AO_PRINTED_1962_JULY_B04_RUNTIME_IMAGE_ANCHOR_AUDIT_V1",
   visualSourceInspection:"All 11 supplied page images inspected manually before transcribing new incipits",
   scope:"8 July observations; 34 new manually image-checked incipits, not full Missal",
   edition:manifest.witness.work,pdf:manifest.witness.url,
   originalEvidencePreservedAsLinksNotBundled:true,
-  dates:results.length,newIndependentClaims:count,matched:accepted,
-  discrepancies:count-accepted,sourceIdentityIssues:issues.length,
+  dates:results.length,newIndependentClaims:count,verbatimAgreements:accepted,
+  trackedNonverbatimOrthographicVariants:variants.length,
+  trackedDifferences:variants.map(x=>({field:x.field,page:x.page,
+    printed:x.imageRead,runtimeExcerpt:x.actualExcerpt,
+    varianceType:x.varianceType,note:x.editorialNote})),
+  unexplainedDiscrepancies:count-accepted-variants.length,
+  sourceIdentityOrUnexpectedIssues:issues.length,
   imagePagesCited:[...pageSet].sort((a,b)=>a-b),
-  status:issues.length?"discrepancies-require-editorial-review":
-    "all-registered-image-incipits-agree-runtime",
+  status:issues.length?"unexpected-print-comparison-requires-review":
+    variants.length?"31-verbatim-plus-3-nonverbatim-orthography-review":
+      "all-registered-image-incipits-verbatim-agree",
   results};
 await mkdir(resolve(root,"artifacts"),{recursive:true});
 await writeFile(resolve(root,"artifacts/mass-printed-1962-july-image-b04.json"),
   JSON.stringify(report,null,2)+"\n");
 console.log("PRINTED_1962_JULY_B04_SUMMARY "+JSON.stringify({
-  status:report.status,claims:count,matched:accepted,
-  discrepancies:report.discrepancies,dates:results.length,
+  status:report.status,claims:count,verbatimAgreements:accepted,
+  trackedNonverbatimOrthographicVariants:variants.length,
+  unexplainedDiscrepancies:report.unexplainedDiscrepancies,
+  dates:results.length,
   pages:report.imagePagesCited}));
 if(process.argv.includes("--strict")){
   assert.equal(issues.length,0,
-    "At least one visually page-located printed Missal claim differs from actual runtime Proper.");
+    "A visually page-located printed Missal claim has a NEW unexplained difference.");
+  assert.equal(variants.length,3,"Expected three explicitly tracked non-verbatim orthographic variants");
+  assert.equal(accepted,31,"Expected 31 independent image claims with verbatim agreement");
 }
