@@ -27,6 +27,14 @@ try{
  await page.goto("http://127.0.0.1:4296/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_HOME_APP_V1?.status?.().installed===true || globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner===true,null,{timeout:30000});
  await page.waitForSelector(".homeScreen",{state:"visible",timeout:20000});
+ // The real first-use cinematic intentionally intercepts clicks until ready.
+ // Insert the shortcut only after initial Home boot/calendar repaint settles.
+ await page.waitForFunction(()=>{
+  const boot=document.getElementById("ao-cinema-boot");
+  const safe=!boot||boot.hidden||getComputedStyle(boot).display==="none"||
+    getComputedStyle(boot).pointerEvents==="none";
+  return safe&&globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolving!==true;
+ },null,{timeout:30000});
  const read=async()=>page.evaluate(()=>{
   const root=document.querySelector("#aoPray435930.open");
   const deck=root?.querySelector('[data-ao-devotional-deck="v1"]');
