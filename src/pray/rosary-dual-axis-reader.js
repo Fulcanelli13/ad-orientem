@@ -115,17 +115,6 @@ export function installRosaryDualAxisReader({
   // prayer state, navigation history or progress registry is created.
   return onChapter(chapters[index].start,chapters[index],index)!==false;
  };
- if(!timeline.dataset.aoRosaryBound){
-  timeline.dataset.aoRosaryBound="1";
-  timeline.addEventListener("click",e=>{
-   const b=e.target.closest("[data-ao-rosary-chapter],[data-ao-rosary-move]");
-   if(!b)return;
-   e.preventDefault();e.stopPropagation();
-   const i=b.dataset.aoRosaryChapter!==undefined?Number(b.dataset.aoRosaryChapter):
-    selected+Number(b.dataset.aoRosaryMove);
-   jump(i);
-  });
- }
  // Refresh the per-mount handler: the native donor may replace its entire
  // sheet between canonical beads while retaining our timeline node.
  timeline._aoRosaryJump=jump;
