@@ -225,6 +225,20 @@ const SHELL_STYLE = `
   content:"RUBRIC";display:block;margin-bottom:5px;font:800 7px/1 var(--ao-font-ui,system-ui,sans-serif);
   letter-spacing:.14em;color:#738278
 }
+/* R20's three source-owned action-only screens have no prayer words.
+   Center the existing participation guide like a restrained interlude,
+   clearly distinct from liturgical Latin and without a fabricated cue. */
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-paragraph[data-kind="RUBRIC"]:only-child{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:min(42vh,360px);max-width:36ch;margin:0 auto;padding:30px 18px;
+  border:0;border-radius:0;background:transparent;text-align:center;
+  color:var(--ao-text-primary,#e8dfcb);
+  font:italic 500 clamp(1.05rem,4vw,1.35rem)/1.62 var(--ao-font-liturgical,Georgia,serif);
+  letter-spacing:.015em;opacity:1
+}
+#ao-r17-native-reader-preview[data-r17-state-owner="R20_ASPERGES_NATIVE"]
+  .ao-reader-paragraph[data-kind="RUBRIC"]:only-child::before{content:none}
 .ao-reader-paragraph[data-kind="RUBRIC"][data-state-duplicate="true"]{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"][data-state-duplicate="true"]{display:block}
 .ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"] .ao-line-primary{
