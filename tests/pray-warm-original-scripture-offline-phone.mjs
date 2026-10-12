@@ -31,6 +31,17 @@ try{
   if(m.type()==="warning"||m.type()==="error")
    console.log("SOURCE_BROWSER_"+m.type().toUpperCase()+" "+m.text().slice(0,700));
  });
+ page.on("response",resp=>{
+  if(resp.status()<400)return;
+  try{
+   const url=new URL(resp.url());
+   // Only public request origin/path. Never log query parameters, tokens,
+   // user data, or actual Scripture response contents.
+   console.log("SOURCE_HTTP_FAILURE "+JSON.stringify({
+    status:resp.status(),origin:url.origin,path:url.pathname.slice(0,240)
+   }));
+  }catch{}
+ });
  await page.goto("http://127.0.0.1:4301/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
