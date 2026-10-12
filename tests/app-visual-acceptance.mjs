@@ -1162,12 +1162,27 @@ try{
     assert.equal(await page.locator("#aoPray435930 [data-tp381-home]").count(),1,route+" lost explicit global Home");
     assert.equal(await page.locator("#aoPray435930 [data-tp381-close]").count(),0,route+" regressed to ambiguous Close");
     assert.equal(await page.locator("#aoPray435930 .aoTP381Hero").count(),0,route+" regained a non-donor hero card");
-    assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,route+" lost its v38.1 donor introduction");
+    if(route==="pray.morning_evening"){
+      // The old introduction is retained as optional guidance after the prayer,
+      // never restored as a first-screen text block.
+      const details=page.locator("#aoPray435930 [data-ao-daily-options]");
+      assert.equal(await details.count(),1,"Morning guidance disclosure missing");
+      assert.equal(await details.evaluate(el=>el.open),false,"Morning guide must not obscure opening prayer");
+      assert.match(await details.textContent(),/traditional daily rule|règle quotidienne traditionnelle/i,
+        "Original prayer-context guidance was discarded rather than relocated");
+    }else{
+      assert.equal(await page.locator("#aoPray435930 .aoTP381Intro").count(),1,
+        route+" lost its v38.1 donor introduction");
+    }
     if(route==="pray.morning_evening"){
        assert.equal(await page.locator("#aoPray435930 [data-ao-pray-guide-card]").count(),1,
          "Morning/Evening must open as a single guided prayer card");
        assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='guided']").getAttribute("aria-pressed"),"true");
        await shot("03g-pray-morning-guided");
+       const details=page.locator("#aoPray435930 [data-ao-daily-options]");
+       await details.locator("summary").click();
+       assert.equal(await details.evaluate(el=>el.open),true,
+         "Secondary options cannot be opened from the finished prayer card");
        await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").click();
       const rowGeometry=await page.evaluate(()=>{
         const row=document.querySelector("#aoPray435930 .aoTP381PrayerList button");
