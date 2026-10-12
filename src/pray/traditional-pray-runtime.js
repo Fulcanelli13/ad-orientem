@@ -204,19 +204,26 @@ function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false}={
   const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):focusParagraphs?prayerParagraphs(v):nl(v);
   return \`<article class="aoTP381PrayerCard"><h3>\${esc(label)}</h3>\${both?\`<button type="button" data-tp381-flip aria-label="\${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>\${show(vern)}</span><span data-face-la hidden>\${show(latin)}</span></button>\`:\`<div class="aoTP381Reader">\${show(vern||latin)}</div>\`}</article>\`;
 }
+const HEART_STAGES=Object.freeze(["litany","reparation","consecration"]);
+function heartTitle(id){return id==="litany"?L("Litany","Litanies"):id==="reparation"?L("Reparation","Réparation"):L("Consecration","Consécration")}
 function renderSacredHeart(){
-  const d=SACRED_HEART_DEVOTIONS_V382,tab=S.sacredHeart||"litany";
-  let body="";
+  const d=SACRED_HEART_DEVOTIONS_V382,tab=HEART_STAGES.includes(S.sacredHeart)?S.sacredHeart:"litany";
+  let prayer="",notes="";
   if(tab==="reparation"){
-    body=`${prayerCard("sacred_heart_short_prayer")}${source("Pius XI · Miserentissimus Redemptor · 1928","https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html")}`;
+    prayer=prayerCard("sacred_heart_short_prayer",{focusParagraphs:true});
+    notes=source("Pius XI · Miserentissimus Redemptor · 1928","https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html");
   }else if(tab==="consecration"){
     const c=d.humanRaceConsecration;
-    body=`${sourcedPrayerCard(c,L(c.title,c.titleFr))}<p class="aoTP381Intro">${esc(L("This is the traditional form associated with Christ the King in the pontificate of Pius XI. The current Enchiridion prints an abbreviated form; the historical form is given here.","Il s’agit de la forme traditionnelle associée au Christ-Roi sous Pie XI. L’Enchiridion actuel donne une forme abrégée ; le texte historique figure ici."))}</p>${source("Acta Apostolicae Sedis · 1927 · Latin",c.sources.latin)}${source("La Porte Latine · traditional French form",c.sources.french)}`;
+    prayer=sourcedPrayerCard(c,L(c.title,c.titleFr),{focusParagraphs:true});
+    notes=\`<p class="aoTP381Intro">\${esc(L("This is the traditional form associated with Christ the King in the pontificate of Pius XI. The current Enchiridion prints an abbreviated form; the historical form is given here.","Il s’agit de la forme traditionnelle associée au Christ-Roi sous Pie XI. L’Enchiridion actuel donne une forme abrégée ; le texte historique figure ici."))}</p>\${source("Acta Apostolicae Sedis · 1927 · Latin",c.sources.latin)}\${source("La Porte Latine · traditional French form",c.sources.french)}\`;
   }else{
     const l=d.litany;
-    body=`${sourcedPrayerCard(l,L(l.title,l.titleFr))}${source("La Porte Latine · French & Latin traditional form",l.sources.frenchLatin)}`;
+    prayer=sourcedPrayerCard(l,L(l.title,l.titleFr),{verseFocus:true});
+    notes=source("La Porte Latine · French & Latin traditional form",l.sources.frenchLatin);
   }
-  return `${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"),L("Litany · reparation · consecration","Litanies · réparation · consécration"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("Pray the Litany, the Act of Reparation, or the consecration according to the time available. Their historical forms are identified in the source notes.","Récitez les Litanies, l’Acte de réparation ou la consécration selon le temps disponible. Leurs formes historiques sont identifiées dans les sources."))}</p>${traditionalContextGuide("heart")}<div class="aoTP381Tabs"><button type="button" data-tp381-heart="litany" class="${tab==="litany"?"active":""}">${esc(L("Litany","Litanies"))}</button><button type="button" data-tp381-heart="reparation" class="${tab==="reparation"?"active":""}">${esc(L("Reparation","Réparation"))}</button><button type="button" data-tp381-heart="consecration" class="${tab==="consecration"?"active":""}">${esc(L("Consecration","Consécration"))}</button></div>${body}</main>`;
+  const card=\`<section class="aoDevoCard" data-ao-devo-card="heart-\${esc(tab)}"><div class="aoDevoCardScroll" role="region" aria-label="\${esc(heartTitle(tab))}">\${prayer}</div></section>\`;
+  const options=\`<details class="aoTP381SecondaryOptions" data-ao-heart-options><summary>\${esc(L("Sources and reading options","Sources et options de lecture"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>\${esc(L("Pray the Litany, the Act of Reparation, or the consecration according to the time available. Their historical forms are identified in the source notes.","Récitez les Litanies, l’Acte de réparation ou la consécration selon le temps disponible. Leurs formes historiques sont identifiées dans les sources."))}</p>\${traditionalContextGuide("heart")}<div class="aoTP381Tabs">\${HEART_STAGES.map(id=>\`<button type="button" data-tp381-heart="\${id}" class="\${tab===id?"active":""}">\${esc(heartTitle(id))}</button>\`).join("")}</div>\${notes}</div></details>\`;
+  return \`\${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"))}<main class="aoP435930Body aoTP381DonorBody">\${card}\${options}</main>\`;
 }
 function renderCommunionTreasury(){
   const d=COMMUNION_TREASURY_V383,tab=S.communion==="after"?"after":"before";
