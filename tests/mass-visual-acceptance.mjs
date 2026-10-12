@@ -655,6 +655,8 @@ try{
       scholaDock:document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset?.active??null,
       leftActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left [data-active='true']").length,
       rightActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-right [data-active='true']").length,
+      leftTransientActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left .ao-rail-item[data-active='true']:not([data-channel='posture'])").length,
+      rightTransientActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-right .ao-rail-item[data-active='true']:not([data-channel='posture'])").length,
       guideDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-button']")?.disabled??null,
       progress:document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent?.trim()??"",
       totalCards:preview?.model?.totalCards??cards.length,
@@ -669,8 +671,11 @@ try{
   assert.ok(consecration.secondaryTexts.some(x=>/THIS IS MY BODY/i.test(x)),"Host Consecration lost vernacular support beneath Latin");
   assert.ok(consecration.rubricCount>=1,"elevation action still renders as ordinary prayer prose");
   assert.ok(consecration.consecrationWordsCount>=1,"Words of Consecration lost dedicated salience");
-  assert.equal(consecration.stageLeft,"true","donor LIVE faithful rail disappeared when no transient cue was active");
-  assert.equal(consecration.stageRight,"true","donor LIVE audio rail disappeared at the Consecration");
+  // Rail surfaces exist only for active transient cues; posture is owned by the top ribbon.
+  assert.equal(consecration.stageLeft,String(consecration.leftTransientActive>0),
+    "faithful rail visibility contradicts active transient cues");
+  assert.equal(consecration.stageRight,String(consecration.rightTransientActive>0),
+    "priest rail visibility contradicts active transient cues");
   const rubricPresentation=await page.evaluate(()=>{
     const rubric=[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-kind='RUBRIC']")]
       .find(el=>getComputedStyle(el).display!=="none");
