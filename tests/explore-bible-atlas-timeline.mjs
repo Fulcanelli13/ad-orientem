@@ -22,6 +22,13 @@ assert.ok(named("Paul heals a man in Lystra").index<named("Council of Jerusalem"
 assert.ok(named("The seven brothers' witness").index<named("The Maccabean resistance").index,"Maccabean witness precedes revolt and restoration");
 assert.ok(by("PASSION","bethphage").index<by("PASSION","olives").index,"Bethphage before entry");
 assert.ok(by("PUBLIC","jericho").reference,"multiple Jericho episodes stay on timeline");
+const temple=stops.find(s=>s.reference==="John 2:13–22");
+assert.equal(temple.index,82,"single-event relocation preserves 151 canonical sources");
+assert.equal(temple.era,"PUBLIC");
+assert.ok(temple.index>named("The wedding at Cana").index&&temple.index<by("PUBLIC","capernaum").index);
+assert.equal(stops.filter(s=>s.reference==="John 2:13–22").length,1,"do not invent a second cleansing");
+assert.match(atlasDetail(temple,"en"),/John narrates this cleansing/);
+assert.match(atlasDetail(temple,"fr"),/Saint Jean raconte cette purification/);
 
 for(const stop of stops){
   assert.ok(stop.title_en&&stop.title_fr&&stop.reference,"bilingual Scripture reference per milestone");
@@ -55,7 +62,7 @@ assert.equal(atlasMapItems(stops,by("ISRAEL","shiloh").index).length,1);
 assert.equal(atlasMapItems(stops,by("EXILE","nineveh").index).length,1);
 assert.equal(atlasMapItems(stops,by("EXILE","babylon").index).length,2);
 assert.equal(atlasMapItems(stops,by("INFANCY","jerusalem-temple").index).length,4,"Infancy adds Nazareth, Ein Kerem, Bethlehem, Jerusalem");
-assert.equal(atlasMapItems(stops,by("PUBLIC","capernaum").index).length,1);
+assert.equal(atlasMapItems(stops,by("PUBLIC","capernaum").index).length,2,"Johannine Temple city context is visible before Capernaum");
 assert.equal(atlasMapItems(stops,by("APOSTLES","rome").index).length,15,"apostolic sites progressively appear");
 assert.equal(atlasIndexForPin(stops,by("APOSTLES","rome").index,"atlas:corinth"),by("APOSTLES","corinth").index);
 assert.match(atlasDetail(by("INFANCY","jerusalem-temple"),"en"),/City-level reference/);
