@@ -144,6 +144,11 @@ try{
   await assertPrayFit("Angelus");
   assert.ok(await page.locator("#aoPray435930 [data-ao-angelus-unit]").count()>=4,"Angelus sequence lost prayer units");
 
+  // The reference reader intentionally places seasonal form selection inside
+  // a collapsed Prayer options disclosure. Exercise the visible phone path.
+  const angelusOptions=page.locator("#aoPray435930 [data-ao-angelus-options]");
+  if(await angelusOptions.getAttribute("open")===null)
+    await angelusOptions.locator(":scope > summary").click();
   await page.locator("#aoPray435930 [data-p435930-seg='regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoP435930Title")?.textContent?.includes("Regina C"),null,{timeout:5000});
   const angelusFlip=page.locator("#aoPray435930 [data-p435930-card-flip]").first();
