@@ -122,6 +122,12 @@ export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",
  (s.location_en||s.location_fr?'<details class="aoBibleStudyNotes"><summary>'+esc(L(lang,"Location qualification","Précision sur le lieu"))+'</summary><p>'+esc(L(lang,"Uncertified location context; no itinerary is inferred.","Lieu non certifié ; aucun itinéraire n’est inféré."))+' '+esc(L(lang,s.location_en,s.location_fr))+'</p></details>':"")+
  '<div class="aoBibleStudyActions"><button type="button" data-ao-scripture-context="'+esc(s.reference)+'">'+esc(L(lang,"Read passage","Lire le passage"))+'</button>'+
  (link!==null?'<button type="button" data-bible-review-jump="'+link+'" data-bible-review-event-key="'+esc(atlasStops[link].eventKey)+'">'+esc(L(lang,"Related 151-event chronology reference","Référence dans la chronologie à 151 étapes"))+'</button>':"")+'</div></article>';
+ const timeline='<nav class="aoBibleStudySceneTimeline" data-bible-study-timeline aria-label="'+esc(L(lang,"Scene timeline","Chronologie des scènes"))+'">'+
+ c.sceneIndices.map((i,position)=>{
+  const entry=data.scenes[i];
+  return '<button type="button" data-bible-study-jump="'+i+'" aria-pressed="'+String(i===s.index)+'" title="'+esc(L(lang,entry.title_en,entry.title_fr))+'">'+
+   '<span>'+(position+1)+'</span><small>'+esc(L(lang,entry.title_en,entry.title_fr))+'</small></button>';
+ }).join("")+'</nav>';
  const control='<div class="aoBibleStudyTransport">'+
  '<button type="button" data-bible-study-direction="-1" '+(n===0?'disabled':'')+'>'+esc(L(lang,"Previous scene","Scène précédente"))+'</button>'+
  '<span>'+esc(L(lang,c.label_en,c.label_fr))+' · '+(n+1)+' / '+len+'</span>'+
@@ -129,7 +135,7 @@ export function renderCinematicStudies(data,{language="en",chapter="PATRIARCHS",
  const header='<details class="aoBibleStudyNotice"><summary>'+esc(L(lang,"Research comparison — not approved for publication.","Comparaison de recherche — publication non autorisée."))+'</summary>'+ 
  '<p>'+esc(L(lang,"181 scenes retained separately from the 151 canonical milestones: 65 matching citations, 29 passage overlaps, 87 unmatched scenes. Artwork and speculative routes are excluded.","181 scènes conservées à part des 151 étapes canoniques : 65 références identiques, 29 passages recoupés et 87 scènes sans correspondance directe. Les images et parcours conjecturaux sont exclus."))+'</p></details>'+ 
  '<div class="aoBibleStudyChapterTitle"><small>'+esc(L(lang,c.label_en,c.label_fr))+'</small><h2>'+esc(L(lang,c.headline_en,c.headline_fr))+'</h2><p>'+esc(L(lang,c.sub_en,c.sub_fr))+'</p></div>';
- return wrapper(header+nav+headerlessSpace()+sc+control);
+ return wrapper(header+nav+headerlessSpace()+timeline+sc+control);
 }
 function headerlessSpace(){return "";}
 const CSS=[
@@ -141,6 +147,7 @@ const CSS=[
 ".aoBibleStudyScroll{min-height:0;flex:1;overflow-y:auto;overscroll-behavior:contain;padding:14px clamp(14px,3vw,30px) 34px}.aoBibleStudyNotice{max-width:850px;font:12px/1.5 system-ui;color:#c4b8a4;background:#14191e;border-left:2px solid #927a4d;padding:9px 11px;margin:0 0 18px}.aoBibleStudyNotice summary{color:#ead3a3;font:600 12px/1.4 system-ui;cursor:pointer}.aoBibleStudyNotice p{margin:8px 0 0;color:#c4b8a4;font:12px/1.5 system-ui}",
 ".aoBibleStudyChapterTitle{margin:6px 0 18px}.aoBibleStudyChapterTitle small{font:600 11px system-ui;letter-spacing:.13em;text-transform:uppercase;color:#b79a68}.aoBibleStudyChapterTitle h2{font:500 clamp(25px,4.8vw,36px)/1.2 Georgia,serif;color:#f1e4d0;margin:6px 0}.aoBibleStudyChapterTitle p{font:14px/1.55 Georgia,serif;color:#cfc1aa;max-width:660px;margin:8px 0}",
 ".aoBibleStudyChapterPicker{display:none;gap:7px;font:600 12px system-ui;color:#cbb794;margin:10px 0}.aoBibleStudyChapterPicker select{width:100%;min-height:44px;box-sizing:border-box;border:1px solid #c9ae7588;background:#17202b;color:#f4e3d1;border-radius:8px;padding:9px 10px;font:600 13px system-ui}.aoBibleStudyChapters{display:flex;overflow-x:auto;gap:7px;padding:2px 0 12px;scrollbar-width:thin}.aoBibleStudyChapters button{flex:none;max-width:180px;white-space:normal;text-align:left}",
+".aoBibleStudySceneTimeline{display:flex;gap:6px;max-width:770px;margin:4px auto 12px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;scrollbar-width:thin;padding:5px 1px 11px}.aoBibleStudySceneTimeline button{flex:0 0 104px;min-height:58px;max-height:78px;scroll-snap-align:center;text-align:left;background:#111820;color:#b8ab95;border:1px solid #b49b6440;border-radius:7px;padding:6px 8px;display:flex;gap:4px;flex-direction:column;cursor:pointer}.aoBibleStudySceneTimeline button[aria-pressed=true]{background:#29271f;border-color:#d9bc83;color:#f2e1bd}.aoBibleStudySceneTimeline button span{font:600 11px system-ui;letter-spacing:.08em}.aoBibleStudySceneTimeline button small{font:11px/1.2 Georgia,serif;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}",
 ".aoBibleStudyScene{max-width:770px;margin:10px auto 0;background:radial-gradient(ellipse at 25% 0%,#27303b,#121922 58%);border:1px solid #d9c59a40;border-radius:16px;padding:clamp(18px,5vw,35px);box-shadow:0 18px 48px #0007}",
 ".aoBibleStudyCount{font:600 10px system-ui;letter-spacing:.12em;text-transform:uppercase;color:#c4a773}.aoBibleStudyScene h2{font:500 clamp(24px,4.8vw,38px)/1.15 Georgia,serif;color:#f3e5cd;margin:14px 0}.aoBibleStudySynopsis{font:17px/1.55 Georgia,serif;color:#ddd0bc;max-width:620px}",
 ".aoBibleStudyNotes{margin:13px 0;color:#b6a98d;font:12px/1.5 system-ui}.aoBibleStudyNotes summary{cursor:pointer;color:#d1bd94}.aoBibleStudyNotes p{margin:8px 0}.aoBibleStudyReference{font:600 12px system-ui;color:#e7c58c;margin:20px 0 10px}.aoBibleStudyEvidence{font:600 11px/1.4 system-ui;color:#c4b395;text-transform:uppercase;letter-spacing:.03em}.aoBibleStudyQualification,.aoBibleStudyLocation{font:12px/1.5 system-ui;color:#aea390;margin:10px 0}",
