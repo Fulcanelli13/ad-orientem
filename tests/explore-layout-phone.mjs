@@ -83,9 +83,9 @@ try{
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
     assert.equal(initial.wrap,false,width+"px repeated world enabled");
     assert.deepEqual(initial.bounds,width<=430
-      ?[[-259.99,-89],[259.99,89]]
+      ?undefined
       :[[-179.99,-85.051129],[179.99,85.051129]],
-      width+"px phone camera must only widen its finite bound to allow one-world overview");
+      width+"px negative-zoom phone overview must not install a wrapping camera clamp");
     if(width<=430){
       assert.ok(initial.zoom<0&&initial.zoom>=-2,
         width+"px must use negative phone overview zoom to prevent edge-clipped global clusters: "+initial.zoom);
