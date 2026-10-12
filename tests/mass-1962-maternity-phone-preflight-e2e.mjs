@@ -48,7 +48,29 @@ try{
   await page.waitForFunction(()=>{
     const node=document.querySelector("[data-ao-full-mass-preflight] [data-mass-calendar-commemoration]");
     return node&&!node.hidden&&node.dataset.massCommemorationReadiness==="COMPLETE";
-  },null,{timeout:30000});
+  },null,{timeout:12000}).catch(async error=>{
+    const diagnostic=await page.evaluate(()=>{
+      const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+      const legacy=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+      const block=document.querySelector("[data-ao-full-mass-preflight] [data-mass-calendar-commemoration]");
+      const root=document.querySelector("[data-ao-full-mass-preflight]");
+      return {
+        selected:state?.selectedDate,calendarDate:state?.resolution?.date,calendarMain:state?.resolution?.day?.main,
+        calendarCommem:state?.resolution?.day?.commemorations,
+        legacyDate:legacy?.date,legacyType:legacy?.celebrationType,legacyId:legacy?.celebrationId,
+        legacyTitle:legacy?.celebrationTitle,legacyActual:legacy?.actualCelebration,
+        legacyProperStatus:legacy?.proper?.status,legacyProperSource:legacy?.proper?.data?.sourcePath,
+        legacyPrayers:Object.fromEntries(["collects","secrets","postcommunions"].map(k=>[k,legacy?.proper?.data?.[k]?.length??0])),
+        panelVisible:!!root,blockExists:!!block,blockHidden:block?.hidden,blockReadiness:block?.dataset.massCommemorationReadiness,
+        blockName:block?.querySelector("[data-mass-calendar-commemoration-name]")?.textContent,
+        rootCalendarSource:root?.querySelector("[data-mass-calendar-context]")?.dataset?.massCalendarSource,
+        rootSnippet:root?.querySelector("[data-mass-calendar-context]")?.textContent?.slice(0,800)
+      };
+    });
+    console.log("OCT11_PHONE_PREFLIGHT_BLOCKER_"+width,JSON.stringify(diagnostic));
+    await page.screenshot({path:resolve(out,"preflight-error-oct11-"+width+".png"),fullPage:true});
+    throw error;
+  });
   assert.match(await block.locator("[data-mass-calendar-commemoration-name]").innerText(),/Maternity of the Blessed Virgin Mary|Maternit/i);
   assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),/collect|secrète|postcommunion/i);
   assert.equal(await block.isVisible(),true,"Commemoration visually hidden on phone");
