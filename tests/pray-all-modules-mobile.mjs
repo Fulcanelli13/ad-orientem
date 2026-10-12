@@ -330,6 +330,9 @@ try{
  const novenaIds=await page.locator("#aoPray435930.open [data-n1-select]").evaluateAll(nodes=>nodes.map(x=>x.dataset.n1Select));
  assert.equal(novenaIds.length,16,"Novenas home no longer lists all sixteen source-backed targets");
  for(const id of novenaIds){
+   // Require actual overview restoration before each independent touch test.
+   await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==='overview',null,{timeout:10000});
+   await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").waitFor({state:'visible',timeout:10000});
    // A successful touch navigation replaces the selection card immediately;
    // Playwright may observe the card detached after the action has succeeded.
    // Require the real canonical Novena detail state or rethrow the tap error.
@@ -405,6 +408,9 @@ try{
      await detail.locator("[data-n1-back]").tap();
    }
    await detail.locator("[data-n1-back]").tap({timeout:9000});
+   await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==="overview",null,{timeout:10000});
+   assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
+     "A detail Back tap must restore the source-backed Novena overview: "+id);
  }
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
