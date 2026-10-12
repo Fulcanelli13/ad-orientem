@@ -696,7 +696,11 @@ try{
   await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:10000});
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-today]",{state:"visible",timeout:10000});
   const standard=page.locator("#aoPrayerBookRoot [data-v38-rosary-form='standard']");
-  if(await standard.count())await standard.click();
+  if(await standard.count()){
+    if(await standard.isVisible())await standard.click();
+    else assert.equal(await standard.evaluate(el=>el.classList.contains("active")),true,
+      "collapsed Rosary options must already select standard form");
+  }
   await page.locator("#aoPrayerBookRoot [data-lab-rosary-today]").click();
   await page.waitForSelector("#aoPrayerBookRoot [data-lab-rosary-next]",{state:"visible",timeout:5000});
   await page.waitForSelector("#aoPrayerBookRoot .lab-decade-bar",{state:"visible",timeout:5000});
