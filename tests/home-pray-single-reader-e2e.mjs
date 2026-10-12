@@ -53,7 +53,22 @@ try{
   btn.textContent="Angelus";document.querySelector(".homeScreen").append(btn);
  });
  await page.locator("#single-owner-home-angelus").click();
- await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{timeout:25000});
+ try{
+  await page.waitForSelector('#aoPray435930.open [data-ao-devotional-deck="v1"]',{timeout:15000});
+ }catch(error){
+  const diagnostic=await page.evaluate(()=>({
+   route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route,
+   shell:globalThis.AO_APP_SHELL_V1?.status?.(),
+   home:globalThis.AO_HOME_APP_V1?.status?.(),
+   pray:globalThis.AO_PRAY_APP_V1?.status?.(),
+   loaded:typeof globalThis.AO_PRAY_V435930?.open,
+   prayerState:globalThis.AO_PRAY_V435930?.state?.(),
+   module:globalThis.AO_MODULES?.resolve?.("pray.angelus_regina"),
+   root:document.querySelector("#aoPray435930")?.outerHTML?.slice(0,750),
+   error:document.querySelector(".homeScreen [data-home-shortcut-error]")?.textContent??null,
+  }));
+  throw new Error("Home Angelus failed to reach canonical card reader: "+JSON.stringify({diagnostic,errors})+"; "+error);
+ }
  const fromHome=await read();
  assert.equal(fromHome.owner,"angelus");
  assert.equal(fromHome.deck,"v1","Home still opened a legacy Daily Rule prayer sheet");
