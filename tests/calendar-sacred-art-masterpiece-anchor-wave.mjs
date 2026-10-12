@@ -15,15 +15,15 @@ assert.equal(wave.summary.themeCount,23);
 assert.equal(wave.themes.length,23);
 assert.equal(wave.summary.primaryUserSelected,13);
 assert.equal(wave.summary.primaryArchiveSalvage,4);
-assert.equal(wave.summary.primaryNewCustodianLeads,5);
-assert.equal(wave.summary.extraReviewAlternatives,8);
+assert.equal(wave.summary.primaryNewCustodianLeads,6);
+assert.equal(wave.summary.extraReviewAlternatives,9);
 assert.equal(wave.summary.rightNowProductionReady,0);
 assert.equal(wave.policy.existingUserChoicesImmutable,true);
 assert.equal(wave.policy.elGrecoExcluded,true);
 assert.equal(wave.policy.mustSwitchByDate,false);
 assert.equal(new Set(wave.themes.map(x=>x.key)).size,23);
 assert.equal(wave.themes.every(x=>x.priority==="P0"),true);
-const allowedSource=/^https:\/\/(?:www\.)?(?:nationalgallery\.org\.uk|museivaticani\.va|collections\.louvre\.fr|museodelprado\.es|catalogo\.beniculturali\.it|collections\.augustins\.toulouse\.fr)\//;
+const allowedSource=/^https:\/\/(?:www\.)?(?:nationalgallery\.org\.uk|museivaticani\.va|collections\.louvre\.fr|museodelprado\.es|catalogo\.beniculturali\.it|collections\.augustins\.toulouse\.fr|boijmans\.nl)\//;
 const verify=w=>{
  assert.equal(w.homePublicationApproved,false);
  assert.equal(w.userSelectedForHomeMasterpiece,false);
@@ -76,9 +76,12 @@ assert.equal(wave.themes.find(x=>x.key==="lent-temptation").primary.canonicalArc
  "Don't reacquire Juan de Flandes: it is already SHA-hashed");
 assert.equal(wave.themes.find(x=>x.key==="palm-sunday").primary.canonicalArchiveId,"kress-k2017");
 assert.equal(wave.themes.find(x=>x.key==="all-souls").primary.canonicalArchiveId,"kress-k2027");
-assert.equal(wave.themes.find(x=>x.key==="all-saints").primary.kind,"OPEN_CURATORIAL_GAP");
+assert.equal(wave.themes.find(x=>x.key==="all-saints").primary.kind,"NEW_OFFICIAL_CUSTODIAN_RESEARCH_LEAD");
+assert.equal(wave.themes.find(x=>x.key==="all-saints").primary.artist,"Peter Paul Rubens");
+assert.equal(wave.themes.find(x=>x.key==="all-saints").primary.provisionalLeadId,"boijmans-1738-ok");
+assert.equal(wave.themes.find(x=>x.key==="all-saints").additional[0].artist,"Corrado Giaquinto");
 assert.deepEqual(wave.policy.excludedArtists,["El Greco","Fra Angelico"]);
-assert.equal(wave.summary.unfilledPrimaryThemes,1);
+assert.equal(wave.summary.unfilledPrimaryThemes,0);
 assert.equal(wave.summary.historicalStyleExcludedWorks,2);
 assert.equal(wave.themes.find(x=>x.key==="all-saints").historicallyRejectedCandidates.length,2);
 assert.ok(wave.themes.find(x=>x.key==="all-souls").additional.some(a=>
@@ -86,4 +89,4 @@ assert.ok(wave.themes.find(x=>x.key==="all-souls").additional.some(a=>
  && a.associationTier==="EXACT_PURGATORY_INTERCESSION_ICONOGRAPHY"
  && a.rightsCleared===false
 ),"Preserve Champaigne's source-confirmed Purgatory painting as a non-approved All Souls alternative");
-console.log("PASS 23 masterpiece-anchor themes: 13 newer selections, 4 hashed original reuses, 5 new museum/church custodian leads, 8 alternates; no user-approval, rights or production promotion");
+console.log("PASS 23 masterpiece-anchor themes: 13 newer selections, 4 hashed original reuses, 6 new museum/church custodian leads, 9 alternates; no user-approval, rights or production promotion");
