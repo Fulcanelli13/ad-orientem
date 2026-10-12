@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {createHomeOwner} from "../src/home/browser-entry.js";
+import {installLazyPrayRegistry} from "../src/pray/lazy-module-registry.js";
 
 class Element {
   constructor(tag="div"){
@@ -126,5 +127,25 @@ await fire(staticAngelus);
 assert.deepEqual(calls,["registry:pray.angelus_regina","direct:pray.angelus_regina"]);
 assert.equal(screen.querySelectorAll("[data-home-shortcut-error]")[0]?.dataset?.homeShortcutError,
   "pray.angelus_regina","Unavailable canonical Angelus should show an exact-route retry, not the legacy reader");
+
+// Cold Home resolves the canonical Marian route before loading PRAY. The lazy
+// handoff must install the one existing runtime and never call an absent or
+// competing legacy module owner.
+const cold={AO_MODULES:{
+  definitions:{},aliases:{},get(){return null;},
+  resolve(){return {ok:false,error:"UNKNOWN_MODULE"};},
+  open(){throw new Error("Cold Home fell through to an unloaded registry");}
+}};
+let loaded=0;
+assert.equal(installLazyPrayRegistry(cold,async({win:host})=>{
+  loaded+=1;
+  host.AO_MODULES={open:async id=>({ok:true,canonicalId:id})};
+}),true);
+assert.equal(cold.AO_MODULES.resolve("pray.angelus_regina")?.ok,true);
+assert.equal(cold.AO_MODULES.get("pray.angelus_regina")?.id,"pray.angelus_regina");
+const coldResult=await cold.AO_MODULES.open("pray.angelus_regina");
+assert.equal(coldResult?.ok,true,"Cold Home could not open the actual Angelus module");
+assert.equal(coldResult?.canonicalId,"pray.angelus_regina");
+assert.equal(loaded,1,"Lazy Angelus loaded more than one reader");
 
 console.log("PASS Home exact shortcut, visible EN/FR retry and no generic Pray fallback");
