@@ -759,34 +759,34 @@ function css(){
 @media(max-width:700px){.aoCalMonthTabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;column-gap:4px;row-gap:2px;margin:10px 0 12px;padding:0 0 5px}.aoCalMonthTabs button{width:100%;min-width:0!important;min-height:44px!important;white-space:normal;line-height:1.2!important;overflow-wrap:break-word;text-align:center}.aoCalV2Picker{padding-top:12px}.aoCalV2YearHeading h2{font-size:clamp(25px,7vw,31px);line-height:1.1}.aoCalV2MonthNav{margin:8px 0 8px;gap:4px}.aoCalV2MonthNav button{min-height:44px!important;min-width:0!important;width:100%!important;box-sizing:border-box;justify-self:stretch!important;font-size:11px!important;padding:4px 0!important}.aoCalV2MonthNav button:first-child,.aoCalV2MonthNav button:last-child{justify-self:stretch!important}.aoCalMonthNavLong{display:none}.aoCalMonthNavShort{display:inline}.aoCalV2MonthNav svg{width:16px;max-width:16px;flex:none}.aoCalModBody{padding:0 var(--ao-page-gutter-phone,12px) 46px}.aoCalV2Tabs{top:calc(61px + var(--safe-top,0px));margin:0 calc(-1 * var(--ao-page-gutter-phone,12px));padding:0 6px}.aoCalV2Tabs button{font-size:var(--ao-type-ui-xs,11px);letter-spacing:.025em}.aoCalMonthTabs{margin-left:0;margin-right:0}.aoCalMonthTabs button{font-size:var(--ao-type-ui-xs,11px)!important;padding-inline:8px!important}.aoCalV2Hero{padding:18px 4px 16px}.aoCalV2Hero h2{font-size:31px}.aoCalV2Saint{align-items:center;padding:8px 4px}.aoCalV2Saint p{font-size:var(--ao-type-ui-xs,11px)}.aoCalV2Saint button{min-height:var(--ao-control-h,44px)!important}.aoCalV2NextMajor{grid-template-columns:1fr!important}.aoCalV2Week{overflow-x:auto;grid-template-columns:repeat(7,92px);margin-right:-12px}.aoCalV2Week button{min-height:104px!important}.aoCalV2YearHeroGrid{grid-template-columns:1fr;gap:26px;padding:22px 16px}.aoCalV2Ring{width:min(250px,76vw);margin:auto}.aoCalV2YearIdentity{text-align:left}.aoCalV2YearIdentity h3{font-size:31px}.aoCalV2YearIdentity dl{grid-template-columns:1fr 1fr}.aoCalV2ComingGrid{grid-template-columns:1fr}.aoCalMonthIndexHead{display:grid;gap:5px}.aoCalMonthIndexHead p{text-align:left}.aoCalMonthIndexList .aoCalMonthIndexDay{grid-template-columns:74px minmax(0,1fr) 12px!important;padding:10px 11px!important}.aoCalV2MonthGrid button{height:66px!important;min-height:0!important;padding:6px 4px 4px!important}.aoCalMonthName{font-size:var(--ao-type-ui-xs,11px);margin-top:6px}.aoCalV2MonthMeta{display:grid;gap:3px}.aoCalV2MonthMeta span:last-child{text-align:left;font-weight:500}.aoCalV2SectionTitle h3{font-size:22px}}
 /* Phone month index: keep all five source-owned month views on ONE legible
    horizontal rail rather than wrapping / splitting Temporale and Sanctorale.
-   Scoped to standalone Calendar picker; embedded Mass Calendar untouched. */
+   Scoped to the standalone Calendar and Today’s inline Month; embedded Mass Calendar untouched. */
 @media(max-width:700px){
- #${ROOT_ID}:not([data-ao-calendar-embedded="true"]) .aoCalV2Picker .aoCalMonthTabs{
+ :is(#${ROOT_ID}:not([data-ao-calendar-embedded="true"]),.aoTodayV2CalendarInline #${ROOT_ID}) .aoCalV2Picker .aoCalMonthTabs{
    display:flex;flex-wrap:nowrap;align-items:stretch;gap:5px;
    overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;
    -webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
    scrollbar-width:thin;scrollbar-color:rgba(201,173,120,.5) transparent;
    margin:8px 0 9px;padding:0 0 5px;scroll-padding-inline:8px;
  }
- #${ROOT_ID}:not([data-ao-calendar-embedded="true"]) .aoCalV2Picker .aoCalMonthTabs button{
+ :is(#${ROOT_ID}:not([data-ao-calendar-embedded="true"]),.aoTodayV2CalendarInline #${ROOT_ID}) .aoCalV2Picker .aoCalMonthTabs button{
    flex:0 0 auto;width:auto;min-width:80px!important;
    min-height:44px!important;white-space:nowrap;overflow-wrap:normal;
    padding:9px 12px!important;font-size:12px!important;
    line-height:1.3!important;scroll-snap-align:start;
  }
- #${ROOT_ID}:not([data-ao-calendar-embedded="true"]) .aoCalV2Picker .aoCalV2MonthNav{
+ :is(#${ROOT_ID}:not([data-ao-calendar-embedded="true"]),.aoTodayV2CalendarInline #${ROOT_ID}) .aoCalV2Picker .aoCalV2MonthNav{
    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,1fr);
    gap:8px;margin:6px 0 6px
  }
- #${ROOT_ID}:not([data-ao-calendar-embedded="true"]) .aoCalV2Picker .aoCalV2MonthNav button{
+ :is(#${ROOT_ID}:not([data-ao-calendar-embedded="true"]),.aoTodayV2CalendarInline #${ROOT_ID}) .aoCalV2Picker .aoCalV2MonthNav button{
    display:flex;align-items:center;justify-content:center;gap:5px;
    min-height:44px!important;padding:8px 6px!important;
    font:600 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)!important;
    color:var(--ao-text-primary,#e9e4d9)!important;
  }
- #${ROOT_ID}:not([data-ao-calendar-embedded="true"]) .aoCalV2Picker .aoCalV2MonthNav button:first-child{justify-content:flex-start!important}
- #${ROOT_ID}:not([data-ao-calendar-embedded="true"]) .aoCalV2Picker .aoCalV2MonthNav button:last-child{justify-content:flex-end!important}
- #${ROOT_ID}:not([data-ao-calendar-embedded="true"]) .aoCalV2Picker .aoCalV2MonthMeta{
+ :is(#${ROOT_ID}:not([data-ao-calendar-embedded="true"]),.aoTodayV2CalendarInline #${ROOT_ID}) .aoCalV2Picker .aoCalV2MonthNav button:first-child{justify-content:flex-start!important}
+ :is(#${ROOT_ID}:not([data-ao-calendar-embedded="true"]),.aoTodayV2CalendarInline #${ROOT_ID}) .aoCalV2Picker .aoCalV2MonthNav button:last-child{justify-content:flex-end!important}
+ :is(#${ROOT_ID}:not([data-ao-calendar-embedded="true"]),.aoTodayV2CalendarInline #${ROOT_ID}) .aoCalV2Picker .aoCalV2MonthMeta{
    margin:0 0 8px;gap:2px;font-size:12px;line-height:1.4
  }
 }
