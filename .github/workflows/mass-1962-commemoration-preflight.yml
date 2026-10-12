@@ -10,6 +10,7 @@ on:
       - 'src/mass/proper-reader-slots.js'
       - 'tests/mass-1962-commemoration-preflight.mjs'
       - 'tests/mass-1962-form-source-selection.mjs'
+      - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
       - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
       - 'tests/mass-1962-maternity-phone-preflight-e2e.mjs'
       - '.github/workflows/mass-1962-commemoration-preflight.yml'
@@ -22,6 +23,7 @@ on:
       - 'src/mass/proper-reader-slots.js'
       - 'tests/mass-1962-commemoration-preflight.mjs'
       - 'tests/mass-1962-form-source-selection.mjs'
+      - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
       - 'tests/mass-1962-maternity-2026-resolver-e2e.mjs'
       - 'tests/mass-1962-maternity-phone-preflight-e2e.mjs'
       - '.github/workflows/mass-1962-commemoration-preflight.yml'
@@ -55,6 +57,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Check real 2026-10-11 Marian commemoration, all prayers and pre-Mass banner
         run: node tests/mass-1962-maternity-2026-resolver-e2e.mjs
+      - name: Independently log verified 1962 privileged/October source witnesses
+        run: node tests/mass-1962-privileged-witnesses-e2e.mjs
       - name: Accept 1962 Marian commemoration in actual 320px and 390px phone preflight
         run: node tests/mass-1962-maternity-phone-preflight-e2e.mjs
       - name: Retain phone screenshots of Marian commemoration

@@ -15,7 +15,7 @@ const base={
 };
 const day={
   date:"2026-10-11",status:"ready",
-  day:{main:{id:"tempora:Pent20-0:2:g",rank:2,title:"XX Sunday after Pentecost"},
+  day:{main:{id:"tempora:Pent20-0:2:g",rank:2,title:"XX Sunday after Pentecost",path:"Tempora/Pent20-0"},
     commemorations:[{id:"sancti:10-11:2:w",rank:2,path:"Sancti/10-11",title:"Divine Maternity"}]},
   proper:{status:"ready",data:base}
 };
@@ -40,6 +40,49 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   const html=renderPrintableProperHtml(day,{language:"en",massForm:form});
   assert.equal((html.match(/<h2 id="section-\d+">Collect/g)||[]).length,expected);
 }
+// Explicit source witnesses: a displaced Sunday and two Advent ferias
+// are privileged in ALL four forms under 1960 General Rubrics §108.
+const privileged=[
+  ["2026-11-01","Sancti/11-01","sancti:11-01:1:w",1,
+    "Tempora/Pent23-0","tempora:Pent23-0:2:g",2,
+    "PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL"],
+  ["2026-11-30","Sancti/11-30","sancti:11-30:2:r",2,
+    "Tempora/Adv1-1","tempora:Adv1-1:3:v",3,
+    "PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL"],
+  ["2026-12-08","Sancti/12-08","sancti:12-08:1:w",1,
+    "Tempora/Adv2-2","tempora:Adv2-2:3:v",3,
+    "PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL"]
+];
+for(const [date,mainPath,mainId,mainRank,commPath,commId,commRank,scope] of privileged){
+  const source={...base,sourcePath:mainPath,calendarCommemorations:[{path:commPath,prayerSourcePath:commPath.includes("/Adv")?commPath.replace(/-[1-6]$/,"-0"):commPath,name:"Source commemoration"}]};
+  const sourceDay={...day,date,day:{main:{id:mainId,rank:mainRank,path:mainPath,title:"Principal"},
+    commemorations:[{id:commId,rank:commRank,path:commPath,title:"Commemoration"}]},
+    proper:{status:"ready",data:source}};
+  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+    const result=select({proper:source,calendarResolution:sourceDay,form});
+    assert.equal(result.status,"CERTIFIED",date+" / "+form+": "+result.reason);
+    assert.equal(result.decision.scope,scope);
+    assert.equal(result.decision.appliedCount,1,date+" / "+form);
+    assert.deepEqual(["collects","secrets","postcommunions"].map(k=>result.proper[k].length),[2,2,2]);
+    assert.equal(result.proper.calendarCommemorations.length,1);
+    const mapped=properToReaderSlots(result.proper,{language:"fr"});
+    assert.equal(mapped.slots.COLLECT_SET.data.paragraphs.length,2);
+    assert.equal(assessPrintableProper(sourceDay,{language:"en",massForm:form}).ok,true);
+  }
+  if(commPath.includes("/Adv")){
+    const poisoned={...source,calendarCommemorations:[{
+      ...source.calendarCommemorations[0],prayerSourcePath:"Tempora/Adv4-0"
+    }]};
+    assert.equal(select({proper:poisoned,calendarResolution:sourceDay,form:"LOW"}).reason,
+      "RUBRICAL_CLASSIFICATION_PENDING","Unrelated Advent Sunday alias cannot be silently trusted");
+  }
+  const differentDay={...sourceDay,date:"2026-10-20"};
+  if(date==="2026-11-01"){
+    assert.equal(select({proper:source,calendarResolution:differentDay,form:"SOLEMN"}).reason,
+      "RUBRICAL_CLASSIFICATION_PENDING","Sunday cannot inherit classification on weekday");
+  }
+}
+
 for(const [change,reason] of [
   [{date:"2026-10-12"},"RUBRICAL_CLASSIFICATION_PENDING"],
   [{day:{main:{...day.day.main,rank:1},commemorations:day.day.commemorations}},"RUBRICAL_CLASSIFICATION_PENDING"],

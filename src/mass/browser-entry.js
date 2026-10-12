@@ -732,7 +732,8 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;
       const formSelectedProper=select1962CommemorationsForMassForm({
         proper,
-        calendarResolution:runtimeState()?.resolution,
+        calendarResolution:runtimeState()?.resolution?.date===resolvedMass.date?
+          runtimeState().resolution:null,
         form:chosen?.form??options.celebrationForm,
         celebrationId:resolvedMass.celebrationId??"mass_of_day",
         isConventual:resolvedMass.conventualMass??false,
