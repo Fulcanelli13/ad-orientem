@@ -43,7 +43,12 @@ export function installRosaryDualAxisReader({
  root,steps,currentStep=0,french=false,onChapter=()=>{}
 }={}){
  const shell=root?.querySelector?.(".pbShell");
- const sheet=shell?.querySelector?.(".lab-prayer-sheet");
+ const kind=steps?.[Number(currentStep)||0]?.kind;
+ // The donor's mystery is a contemplation panel, not a prayer sheet.
+ // Both are first-class canonical stages of the same Rosary chapter.
+ const sheet=kind==="mystery"?
+  (shell?.querySelector?.(".lab-contemplation")||shell?.querySelector?.(".lab-prayer-sheet")):
+  (shell?.querySelector?.(".lab-prayer-sheet")||shell?.querySelector?.(".lab-contemplation"));
  if(!shell||!sheet||!shell.querySelector("[data-lab-rosary-next]"))return null;
  const chapters=rosarySourceChapters(steps,{french});if(!chapters.length)return null;
  const doc=sheet.ownerDocument;
@@ -155,7 +160,7 @@ export function installRosaryDualAxisReader({
   },true);
  }
  const focus=()=>{
-  const all=[...sheet.querySelectorAll("[data-pb-vern],[data-pb-latin],.lab-prayer-sheet p,.lab-prayer-sheet blockquote")]
+  const all=[...sheet.querySelectorAll("[data-pb-vern],[data-pb-latin],p,blockquote")]
    .filter(visible).filter(x=>!x.closest(".lab-prayer-count,.lab-prayer-rubric"));
   // Prefer actual prayer faces; do not treat the whole ritual shell as text.
   const faces=all.filter(x=>x.matches("[data-pb-vern],[data-pb-latin]"));
