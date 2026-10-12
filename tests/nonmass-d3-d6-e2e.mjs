@@ -106,9 +106,19 @@ try{
   assert.doesNotMatch(examText,/prompt\(s\) marked|question\(s\) marquée/i);
 
   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null}));
-  await page.waitForSelector("#aoPray435930 .aoP435930BenMacroRail",{timeout:5000});
-  assert.equal(await page.locator("#aoPray435930 .aoP435930BenMacroRail span").count(),4,"D4 does not expose four macro service phases");
-  assert.equal(await page.locator("#aoPray435930 .aoP435930BenMacroRail span.active").count(),1);
+  // D4 is now the canonical seven-card public rite, not the former
+  // four-phase macro. Verify visible source-owned progress without resurrecting
+  // the intentionally hidden legacy Continue/Previous control strip.
+  const benReader="#aoPray435930 .aoP435930BenedictionReader";
+  await page.waitForSelector(benReader+" .aoDevoSequenceTimeline",{state:"visible",timeout:5000});
+  assert.equal(await page.locator(benReader+" .aoDevoStop").count(),7,
+    "D4 must expose all seven Benediction ritual moments");
+  assert.equal(await page.locator(benReader+" .aoDevoStop[aria-current='step']").count(),1,
+    "D4 must have exactly one active public-rite stage");
+  assert.equal(await page.locator(benReader+" [data-ao-devo-card='exposition']").count(),1,
+    "Benediction should start from the source-owned Exposition card");
+  assert.equal(await page.locator(benReader+" .aoP435930GuideNav").isVisible(),false,
+    "Retired four-stage controls must stay hidden beside the seven-card reader");
 
   await page.evaluate(async()=>{globalThis.AO_PRAY_V435930.close({silent:true});await globalThis.AO_APP_SHELL_V1?.navigate?.("settings")});
   await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
