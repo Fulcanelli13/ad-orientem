@@ -2,7 +2,7 @@
  * Shared devotional design language for canonical Rosary donor.
  * Scoped to the existing single player; no new modal, ribbon, bead cursor.
  */
-export const ROSARY_DUAL_AXIS_CSS=String.raw\`
+export const ROSARY_DUAL_AXIS_CSS=String.raw`
 #aoPrayerBookRoot.open .aoRosaryChapterTimeline{
  display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:5px;
  align-items:center;position:sticky;top:0;z-index:18;
@@ -63,7 +63,7 @@ export const ROSARY_DUAL_AXIS_CSS=String.raw\`
 @media(prefers-reduced-motion:reduce){
  #aoPrayerBookRoot.open .aoRosaryCardScroll .aoRosaryParagraph{transition:none!important}
 }
-\`;
+`;
 export function installRosaryDualAxisStyles(doc=globalThis.document){
  if(!doc?.head||doc.getElementById("ao-rosary-dual-axis-style"))return;
  const el=doc.createElement("style");
