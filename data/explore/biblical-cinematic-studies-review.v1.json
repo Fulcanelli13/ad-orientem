@@ -17,10 +17,10 @@
     "doNotPublishWithoutEditorialReview": true
   },
   "counts": {
-    "cinematicScenes": 181,
+    "cinematicScenes": 183,
     "cinematicChapters": 14,
     "canonicalTimeline": 151,
-    "EXACT_REFERENCE": 65,
+    "EXACT_REFERENCE": 67,
     "PASSAGE_OVERLAP_REVIEW_ONLY": 29,
     "NO_DIRECT_PASSAGE_MATCH": 87
   },
@@ -161,6 +161,7 @@
         63,
         64,
         65,
+        181,
         66,
         67,
         68
@@ -278,9 +279,10 @@
       "label_fr": "L’époque apostolique",
       "headline_en": "To the ends of the earth",
       "headline_fr": "Jusqu’aux extrémités de la terre",
-      "sub_en": "From Damascus to Antioch, Greece and Rome.",
-      "sub_fr": "De Damas à Antioche, puis à la Grèce et à Rome.",
+      "sub_en": "From Pentecost in Jerusalem to Saul's conversion and the missions from Antioch.",
+      "sub_fr": "De la Pentecôte à Jérusalem à la conversion de Saul et aux missions depuis Antioche.",
       "sceneIndices": [
+        182,
         138,
         139,
         140,
@@ -4323,6 +4325,70 @@
       ],
       "citationOnly": true,
       "sceneKey": "biblical:scene:paul:180"
+    },
+    {
+      "index": 181,
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "title_en": "The massacre of the Holy Innocents",
+      "title_fr": "Le massacre des Saints Innocents",
+      "reference": "Matthew 2:16–18",
+      "status": "EXACT_REFERENCE",
+      "synopsis_en": "After the Magi do not return, Herod orders the killing of boys aged two and under in Bethlehem and its surrounding district. Matthew recalls Rachel's lament; the passage does not describe the individual children or name a precise building.",
+      "synopsis_fr": "Après le départ des Mages, Hérode ordonne de tuer les garçons de deux ans et au-dessous à Bethléem et dans son territoire. Matthieu rappelle la plainte de Rachel ; le texte ne décrit ni chaque enfant ni un bâtiment précis.",
+      "evidence_en": "Matthew 2:16–18 is the source. The order in this chapter follows Matthew's narrative, not a dated cross-Gospel reconstruction; the victims must not be individually identified or located.",
+      "evidence_fr": "La source est Matthieu 2, 16–18. L'ordre suit le récit de Matthieu, non une chronologie datée harmonisant les Évangiles ; l'identité et le lieu de chaque victime ne sont pas établis.",
+      "location_en": "Bethlehem and its district · biblical regional identification only",
+      "location_fr": "Bethléem et son territoire · repère régional scripturaire seulement",
+      "candidates": [
+        {
+          "atlasIndex": 73,
+          "relation": "EXACT_REFERENCE",
+          "reference": "Matthew 2:16–18",
+          "atlasEventKey": "biblical:event:bethlehem-additional-003"
+        }
+      ],
+      "citationOnly": true,
+      "sceneKey": "biblical:scene:christ:181",
+      "sourceNote_en": "Matthew 2 narrates the flight to Egypt (2:13–15), then Herod's massacre (2:16–18), then the return (2:19–23). No date or location of an individual death is certified.",
+      "sourceNote_fr": "Matthieu 2 rapporte la fuite en Égypte (2, 13–15), puis le massacre (2, 16–18), puis le retour (2, 19–23). La date et le lieu d'une mort individuelle ne sont pas établis."
+    },
+    {
+      "index": 182,
+      "group": "PAUL",
+      "chapter": "APOSTLES",
+      "title_en": "Pentecost: the Holy Spirit descends",
+      "title_fr": "La Pentecôte : la descente du Saint-Esprit",
+      "reference": "Acts 2:1–41",
+      "status": "EXACT_REFERENCE",
+      "synopsis_en": "The Holy Spirit descends upon those gathered at Pentecost. Peter addresses the crowd, witnesses to the risen Christ, and calls his hearers to repentance and baptism. Luke describes tongues as of fire, not a precisely identifiable modern chamber.",
+      "synopsis_fr": "Le Saint-Esprit descend sur ceux qui sont réunis à la Pentecôte. Pierre s'adresse à la foule, rend témoignage au Christ ressuscité et appelle à la pénitence et au baptême. Luc décrit des langues comme de feu, non une salle moderne identifiée avec certitude.",
+      "evidence_en": "Acts 2:1–41 is a single extended source passage. The narrative belongs after the Ascension and before the subsequent apostolic missions; no exact building, crowd count beyond the text, or historical date is inferred.",
+      "evidence_fr": "Actes 2, 1–41 constitue le passage source. Le récit suit l'Ascension et précède les missions apostoliques ultérieures ; aucun bâtiment précis, nombre supplémentaire ni date historique n'est déduit.",
+      "location_en": "Jerusalem · city context; the precise room is not identified by Acts 2",
+      "location_fr": "Jérusalem · repère urbain ; Actes 2 ne permet pas d'identifier précisément la salle",
+      "candidates": [
+        {
+          "atlasIndex": 126,
+          "relation": "EXACT_REFERENCE",
+          "reference": "Acts 2:1–41",
+          "atlasEventKey": "biblical:passage:acts-2-1-41"
+        }
+      ],
+      "citationOnly": true,
+      "sceneKey": "biblical:scene:paul:182",
+      "sourceNote_en": "The scene is ecclesial and apostolic, not an event in Paul's personal life. Pentecost precedes Saul's conversion; the chapter remains grouped as Apostolic Age without attributing the descent of the Spirit to Paul.",
+      "sourceNote_fr": "La scène concerne l'Église naissante, non la vie personnelle de Paul. La Pentecôte précède la conversion de Saul ; ce chapitre de l'époque apostolique ne lui attribue pas la descente de l'Esprit."
     }
-  ]
+  ],
+  "extension": {
+    "baselineSceneCount": 181,
+    "baselineSceneIndicesRetained": true,
+    "additionalSceneIndices": [
+      181,
+      182
+    ],
+    "editorialStatus": "SCRIPTURE_CITATION_REVIEW_ONLY",
+    "policy": "The additional scenes are append-only source records. No original 181 IDs or original 14 chapter identities were changed; chapter navigation may display appended IDs in source narrative order. No art, coordinates or new 151 events are imported."
+  }
 }
