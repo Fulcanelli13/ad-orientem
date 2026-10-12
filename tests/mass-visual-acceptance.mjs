@@ -1562,11 +1562,18 @@ try{
     ["CELEBRANT","Celebrant"],["ALL","All present"]
   ],"Good Friday Pater wrongly treats congregational prayer as the priest's alone");
   const preparationSpeakers=await displayedSpeakers("GF-COM-840");
+  // The 1962 printed rubric's deacon Confiteor was recovered in #1138.
+  // Protect all three canonical minister-text paragraphs instead of treating
+  // their source-owned DEACON stage as a change in the celebrant's responses.
   assert.deepEqual(preparationSpeakers.map(row=>row.speaker),[
-    "CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT",
-    "ALL","CELEBRANT","ALL","CELEBRANT","CELEBRANT"
+    "CELEBRANT","CELEBRANT","CELEBRANT",
+    "DEACON","DEACON","DEACON",
+    "CELEBRANT","ALL","CELEBRANT","ALL","CELEBRANT","CELEBRANT"
   ]);
-  assert.deepEqual(preparationSpeakers.map(row=>row.label).filter(Boolean),
+  assert.deepEqual(preparationSpeakers.filter(row=>row.speaker==="DEACON").map(row=>row.id),
+    ["GF-COM-CONF-1","GF-COM-CONF-2","GF-COM-CONF-3"],
+    "Good Friday omitted or reordered the canonical deacon's Confiteor");
+  assert.deepEqual(preparationSpeakers.filter(row=>row.speaker!=="DEACON").map(row=>row.label).filter(Boolean),
     ["Celebrant","Celebrant","All present","Celebrant","All present","Celebrant"],
     "Good Friday alternations between celebrant and responses were lost");
   const communionWords=await page.evaluate(()=>{
