@@ -70,6 +70,14 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="communion"] .aoTP381DaypartStrip button{min-width:0;flex:1;text-align:center}
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="communion"] .aoDevoSequenceTimeline .aoDevoStops{min-width:0}
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="communion"] .aoTP381SecondaryOptions{margin-top:12px}
+
+/* The bedside companion opens with a real pastoral action, not a rite simulation. */
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoSequenceTimeline .aoDevoStop{min-width:81px;flex:1 1 0;max-width:none;padding-inline:5px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoSequenceTimeline .aoDevoStops{gap:3px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoCardScroll .aoTP381Section{margin:0 0 20px;padding:0;background:none;border:0}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoCardScroll .aoTP381Section h2{font-size:clamp(21px,5vw,29px);line-height:1.28;margin:0 0 14px}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoCardScroll .aoTP381Section p{font-size:clamp(16px,4vw,20px);line-height:1.65}
+#aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="dyingCompanion"] .aoDevoCardScroll .aoTP381PrayerCard{border:0;background:transparent}
 /* Holy Name and meal stages reuse the same quiet source-owned reader. */
 /* With only two meal stops, both should be fully readable on a 320px phone. */
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="meals"] .aoDevoSequenceTimeline .aoDevoStop{flex:1 1 0!important;min-width:0;max-width:none;padding-inline:6px}
