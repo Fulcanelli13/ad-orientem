@@ -54,7 +54,7 @@ const privileged=[
     "PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL"]
 ];
 for(const [date,mainPath,mainId,mainRank,commPath,commId,commRank,scope] of privileged){
-  const source={...base,sourcePath:mainPath,calendarCommemorations:[{path:commPath,name:"Source commemoration"}]};
+  const source={...base,sourcePath:mainPath,calendarCommemorations:[{path:commPath,prayerSourcePath:commPath.includes("/Adv")?commPath.replace(/-[1-6]$/,"-0"):commPath,name:"Source commemoration"}]};
   const sourceDay={...day,date,day:{main:{id:mainId,rank:mainRank,path:mainPath,title:"Principal"},
     commemorations:[{id:commId,rank:commRank,path:commPath,title:"Commemoration"}]},
     proper:{status:"ready",data:source}};
@@ -68,6 +68,13 @@ for(const [date,mainPath,mainId,mainRank,commPath,commId,commRank,scope] of priv
     const mapped=properToReaderSlots(result.proper,{language:"fr"});
     assert.equal(mapped.slots.COLLECT_SET.data.paragraphs.length,2);
     assert.equal(assessPrintableProper(sourceDay,{language:"en",massForm:form}).ok,true);
+  }
+  if(commPath.includes("/Adv")){
+    const poisoned={...source,calendarCommemorations:[{
+      ...source.calendarCommemorations[0],prayerSourcePath:"Tempora/Adv4-0"
+    }]};
+    assert.equal(select({proper:poisoned,calendarResolution:sourceDay,form:"LOW"}).reason,
+      "RUBRICAL_CLASSIFICATION_PENDING","Unrelated Advent Sunday alias cannot be silently trusted");
   }
   const differentDay={...sourceDay,date:"2026-10-20"};
   if(date==="2026-11-01"){
