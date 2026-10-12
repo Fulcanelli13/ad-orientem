@@ -2,6 +2,8 @@
 // The 56-record GF graph is the choreography authority.
 // Text is source-pinned separately; display grouping never mutates GF state identity.
 
+import {sourceBoundPassionVoiceSpans} from "./reader-good-friday-passion-roles.js";
+
 const REQUIRED_COUNT=56;
 const JEWISH_VARIANTS=new Set(["PRINTED_1962","HOLY_SEE_2008"]);
 const VENERATION_MODES=new Set(["PERSONAL","CORPORATE_SILENT"]);
@@ -14,6 +16,13 @@ function textRow(id,latin,kind="TEXT",sourceIds=[],speaker=null,repetitions=1){
 }
 function rows(prefix,values,sourceIds=[]){
   return freeze((values??[]).map((v,i)=>textRow(prefix+String(i+1),v,"TEXT",sourceIds)));
+}
+function passionRows(prefix,values,sourceIds,voiceSpans,block){
+  return freeze((values??[]).map((value,index)=>{
+    const row=textRow(prefix+(index+1),value,"TEXT",sourceIds);
+    const spans=voiceSpans?.get(block+":"+index)??null;
+    return spans?freeze({...row,scriptureVoiceSpans:spans}):row;
+  }));
 }
 function prayerRows(prefix,intention,prayer){
   // K/R state records own only their respective spoken formulas, not
@@ -71,7 +80,7 @@ function solemnPrayer(payload,key,jewishPrayerVariant){
   return freeze({...item,...variant,variants:undefined});
 }
 
-function surfaceFor(record,payload,jewishPrayerVariant){
+function surfaceFor(record,payload,jewishPrayerVariant,voiceSpans){
   const id=record.id;
   if(id.startsWith("GF-OPEN-"))return freeze({
     key:"OPENING",title:"Opening · Prostration and Prayer",
@@ -102,11 +111,11 @@ function surfaceFor(record,payload,jewishPrayerVariant){
   });
   if(id==="GF-PASS-310"||id==="GF-PASS-320")return freeze({
     key:"PASSION_BEFORE_DEATH",title:"Passion according to St John",
-    paragraphs:rows("GF-PASS-A",payload.passion.preDeath,["GF-PASS-310","GF-PASS-320"])
+    paragraphs:passionRows("GF-PASS-A",payload.passion.preDeath,["GF-PASS-310","GF-PASS-320"],voiceSpans,"preDeath")
   });
   if(id==="GF-PASS-330")return freeze({
     key:"PASSION_AFTER_DEATH",title:"Passion according to St John · Continued",
-    paragraphs:rows("GF-PASS-B",payload.passion.postDeath,["GF-PASS-330"])
+    paragraphs:passionRows("GF-PASS-B",payload.passion.postDeath,["GF-PASS-330"],voiceSpans,"postDeath")
   });
   if(id==="GF-SOP-400")return freeze({
     key:"SOLEMN_PRAYERS_PREP",title:"The Solemn Prayers",
@@ -237,7 +246,7 @@ function activeGraph(graph,{venerationMode,willReceiveCommunion}){
 }
 
 export function buildGoodFridayReader({
-  graph,payload,
+  graph,payload,voiceAnchors=null,
   jewishPrayerVariant="PRINTED_1962",
   venerationMode="PERSONAL",
   willReceiveCommunion=false,
@@ -246,10 +255,11 @@ export function buildGoodFridayReader({
   validatePayload(payload);
   if(!JEWISH_VARIANTS.has(jewishPrayerVariant))throw new Error("Unsupported Jewish-prayer variant");
   if(!VENERATION_MODES.has(venerationMode))throw new Error("Unsupported Cross-veneration mode");
+  const voiceSpans=sourceBoundPassionVoiceSpans(voiceAnchors,payload.passion);
   const active=activeGraph(graph,{venerationMode,willReceiveCommunion});
   const steps=freeze(active.map((record,index)=>{
-    const surface=surfaceFor(record,payload,jewishPrayerVariant);
-    const previous=index?surfaceFor(active[index-1],payload,jewishPrayerVariant):null;
+    const surface=surfaceFor(record,payload,jewishPrayerVariant,voiceSpans);
+    const previous=index?surfaceFor(active[index-1],payload,jewishPrayerVariant,voiceSpans):null;
     const personal=record.actor_scope==="ORDINARY_FAITHFUL"||record.actor_scope==="COMMUNICANT";
     return freeze({
       index,total:active.length,
@@ -333,11 +343,15 @@ export async function loadGoodFridayReaderData({fetchImpl=globalThis.fetch,baseU
   if(typeof fetchImpl!=="function")throw new TypeError("fetch implementation required");
   const payloadUrl=new URL("../../data/presentation/reader-good-friday.v1.json",baseUrl);
   const coreUrl=new URL("../../data/mass/special-days-core.v1.1.json",baseUrl);
-  const [payload,core]=await Promise.all([
+  const voiceUrl=new URL("../../data/mass/good-friday-passion-voice-anchors.v1.json",baseUrl);
+  const [payload,core,voiceAnchors]=await Promise.all([
     readJson(fetchImpl,payloadUrl,"Good Friday payload"),
     readJson(fetchImpl,coreUrl,"special-days core"),
+    readJson(fetchImpl,voiceUrl,"1962 Good Friday Passion voice source"),
   ]);
   const graph=core?.graphs?.GF;
   if(!Array.isArray(graph))throw new Error("Certified Good Friday graph unavailable");
-  return freeze({payload,graph:freeze([...graph]),urls:freeze({payload:String(payloadUrl),core:String(coreUrl)})});
+  sourceBoundPassionVoiceSpans(voiceAnchors,payload.passion);
+  return freeze({payload,voiceAnchors,graph:freeze([...graph]),
+    urls:freeze({payload:String(payloadUrl),core:String(coreUrl),voices:String(voiceUrl)})});
 }
