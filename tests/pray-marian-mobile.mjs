@@ -54,8 +54,21 @@ try{
  );
  await page.locator("#aoPray435930 [data-p435930-mercy-next]").evaluate(x=>x.click());
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/2 \/ 62/);
+ const mercyOptions=page.locator("#aoPray435930.open [data-ao-mercy-options]");
+ assert.equal(await mercyOptions.count(),1,"Canonical Divine Mercy options disclosure missing");
+ assert.equal(await mercyOptions.evaluate(x=>x.open),false,"Optional settings should start collapsed");
+ assert.ok(await mercyOptions.locator(":scope > summary").evaluate(x=>x.getBoundingClientRect().height)>=44);
+ await mercyOptions.locator(":scope > summary").click();
+ assert.equal(await mercyOptions.evaluate(x=>x.open),true,"Mercy settings did not respond to tap");
  await page.locator("#aoPray435930 [data-p435930-mercy-closing]").evaluate(x=>x.click());
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/2 \/ 63/);
+ assert.equal(await mercyOptions.evaluate(x=>x.open),true,"Mercy option collapsed during canonical repaint");
+ assert.equal(await mercyOptions.locator("[data-p435930-mercy-closing]").getAttribute("aria-pressed"),"true");
+ await mercyOptions.locator(":scope > summary").click();
+ assert.equal(await mercyOptions.evaluate(x=>x.open),false);
+ assert.ok((await page.locator("#aoPray435930 .aoMercyPrayer").innerText()).trim().length>15,
+   "Canonical Mercy prayer disappeared behind its optional settings");
+ await mercyOptions.locator(":scope > summary").click();
  await page.locator("#aoPray435930 [data-p435930-mercy-guide]").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoMercyHelp").count(),0);
  assert.ok(["https://www.vaticannews.va/fr/priere/chapelet-de-la-divine-misericorde.html",
