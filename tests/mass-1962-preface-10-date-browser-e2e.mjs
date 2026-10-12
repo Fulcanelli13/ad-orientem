@@ -32,12 +32,14 @@ try{
    ["2026-10-18","Trinitate"],["2026-12-08","Maria"]
   ];
   const results=[];
+  const owner=globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.prefaceOwner;
+  console.log("ACTUAL_PREFACE_OWNER="+JSON.stringify(owner));
   for(const [date,section] of inputs){
     const value=await runtime.resolver.resolveDay(date);
     const pref=value?.proper?.data?.preface;
     const reader=pref?properToReaderSlots(value.proper.data,{language:"fr"}).slots.PREFACE:null;
     results.push({date,section,id:value?.day?.main?.id,status:value?.status,
-      properStatus:value?.proper?.status,prefaceLatin:pref?.lat?.slice(0,130),
+      properStatus:value?.proper?.status,prefaceLatin:(pref?.lat??pref?.la)?.slice(0,130),
       prefaceFrench:pref?.fr?.slice(0,90),
       prefaceEnglishLen:pref?.en?.length,prefaceFrenchLen:pref?.fr?.length,
       readerStatus:reader?.status,chosen:value?.prefaceDecision?.id??null,
