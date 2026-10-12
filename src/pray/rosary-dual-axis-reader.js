@@ -53,6 +53,11 @@ export function installRosaryDualAxisReader({
  const chapter=chapters[selected];
  // The canonically rendered prayer element is never cloned or replaced.
  sheet.classList.add("aoRosaryCardScroll");
+ // The archived donor sets overflow:visible with a high-priority inline rule.
+ // Local scroll must win without moving, cloning or modifying prayer content.
+ sheet.style.setProperty("overflow-y","auto","important");
+ sheet.style.setProperty("overflow-x","hidden","important");
+ sheet.style.setProperty("height","min(52dvh,520px)","important");
  sheet.dataset.aoRosaryCard=chapter.id;
  sheet.dataset.aoRosarySourceStep=String(step);
  let timeline=shell.querySelector("[data-ao-rosary-timeline]");
