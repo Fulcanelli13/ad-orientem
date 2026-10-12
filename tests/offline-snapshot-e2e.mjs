@@ -172,6 +172,55 @@ try{
  assert.ok(await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1?.status?.supported),
   "PWA lost offline support during devotional navigation");
  console.log("PASS six-section offline Rosary Guide, bounded mobile scroll, French Divine Mercy opening and advancement");
+ // Stay disconnected. These canonical devotional modules must render on
+ // first use from the same completed bootstrap, without pre-visiting online.
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true,
+  "First-use Angelus failed while offline");
+ const angelusRoot=page.locator("#aoPray435930.open");
+ await angelusRoot.locator("[data-ao-angelus-form]").waitFor({timeout:12000});
+ assert.equal(await angelusRoot.locator("[data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"angelus",
+  "Offline Angelus launched the wrong liturgical form");
+ assert.equal(await angelusRoot.locator(".aoAngelusGuideSection").count(),5,
+  "Offline Angelus lost its five source-backed guide sections");
+ assert.equal(await angelusRoot.locator(".aoAngelusGuideSection a[href^='https://']").count(),5,
+  "Offline Angelus lost historical source links");
+ const angelusText=await angelusRoot.locator(".aoP435930Mount").innerText();
+ assert.ok(angelusText.length>80,"Offline Angelus prayer rendered blank");
+ await angelusRoot.locator("[data-p435930-seg='group']").first().evaluate(x=>x.click());
+ await page.waitForFunction(()=>{
+  const root=document.querySelector("#aoPray435930.open");
+  return root?.querySelector("[data-ao-angelus-recitation]")?.dataset?.aoAngelusRecitation==="group" &&
+   !!root.querySelector("[data-ao-angelus-voice=leader]") &&
+   !!root.querySelector("[data-ao-angelus-voice=response]");
+ },null,{timeout:10000});
+ await angelusRoot.locator("[data-p435930-seg='regina']").first().evaluate(x=>x.click());
+ await page.waitForFunction(()=>document.querySelector("#aoPray435930.open [data-ao-angelus-form]")?.dataset?.aoAngelusForm==="regina",null,{timeout:10000});
+ assert.equal(await angelusRoot.locator(".aoAngelusGuideSection").count(),4,
+  "Offline Regina Cæli did not show its four source-backed guide sections");
+ assert.equal(await angelusRoot.locator("[data-p435930-angelus-appendix]").count(),0,
+  "Angelus-only appendix leaked into offline Regina Cæli");
+ console.log("PASS first-use offline French Angelus/Regina Caeli, group responses and source-linked guide");
+ // Fourteen Stations require an internally navigable prayer sequence; remote
+ // historical links remain external and are deliberately not claimed offline.
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations",{returnContext:null})),true,
+  "First-use Stations of the Cross failed offline");
+ const stationRoot=page.locator("#aoPray435930.open");
+ await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset?.aoPrayView==="stations",null,{timeout:10000});
+ assert.equal(await stationRoot.locator("[data-p435930-station-step]").count(),14,
+  "Offline Stations lost fourteen station-selector buttons");
+ assert.equal(await stationRoot.locator("[data-p435930-station-step][aria-current='step']").count(),1,
+  "Offline Stations initial active step is ambiguous");
+ assert.equal(await stationRoot.locator("[data-p435930-station-step='0'][aria-current='step']").count(),1,
+  "First-use Stations should open at the first station");
+ assert.ok((await stationRoot.locator(".aoP435930Stations").innerText()).length>150,
+  "Offline Stations returned an empty prayer");
+ await stationRoot.locator("[data-p435930-station-next]").first().evaluate(x=>x.click());
+ await page.waitForFunction(()=>document.querySelector("#aoPray435930.open [data-p435930-station-step='1'][aria-current='step']"),null,{timeout:12000});
+ await stationRoot.locator("[data-p435930-station-prev]").first().evaluate(x=>x.click());
+ await page.waitForFunction(()=>document.querySelector("#aoPray435930.open [data-p435930-station-step='0'][aria-current='step']"),null,{timeout:12000});
+ assert.ok(await stationRoot.locator("details.aoP435930Source a.aoP435930SourceLink").count(),
+  "Offline Stations omitted the original historical witness link");
+ console.log("PASS first-use offline French fourteen Stations and forward/back navigation");
  // Restore the baseline language before the existing Rosary-update test.
  await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"en"}));
  await context.setOffline(false);
