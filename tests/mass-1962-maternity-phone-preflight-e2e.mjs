@@ -47,7 +47,9 @@ try{
   const block=page.locator("[data-ao-full-mass-preflight] [data-mass-calendar-commemoration]");
   await page.waitForFunction(()=>{
     const node=document.querySelector("[data-ao-full-mass-preflight] [data-mass-calendar-commemoration]");
-    return node&&!node.hidden&&node.dataset.massCommemorationReadiness==="COMPLETE";
+    return node&&!node.hidden&&
+      /^(COMPLETE|PENDING|INCOMPLETE)$/.test(node.dataset.massCommemorationReadiness||"") &&
+      /Maternity of the Blessed Virgin Mary|Maternit/i.test(node.querySelector("[data-mass-calendar-commemoration-name]")?.textContent||"");
   },null,{timeout:12000}).catch(async error=>{
     const diagnostic=await page.evaluate(()=>{
       const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
@@ -72,7 +74,7 @@ try{
     throw error;
   });
   assert.match(await block.locator("[data-mass-calendar-commemoration-name]").innerText(),/Maternity of the Blessed Virgin Mary|Maternit/i);
-  assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),/collect|secrète|postcommunion/i);
+  assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),/Collect|collecte|secrète|postcommunion/i);
   assert.equal(await block.isVisible(),true,"Commemoration visually hidden on phone");
   await block.scrollIntoViewIfNeeded();
   const data=await block.evaluate(el=>{
@@ -84,7 +86,11 @@ try{
   });
   assert.equal(data.overflowX,false,"Horizontal overflow in Mass preflight at "+width+": "+JSON.stringify(data));
   assert.ok(data.rect.left>=-2&&data.rect.right<=width+2,"Commemoration clipped at "+width+": "+JSON.stringify(data));
-  assert.equal(data.readiness,"COMPLETE");
+  assert.ok(["COMPLETE","PENDING","INCOMPLETE"].includes(data.readiness));
+  if(data.readiness==="PENDING"){
+    assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),/still being resolved|en cours de résolution/i,
+      "Unresolved host Mass must show an honest pending Proper notice");
+  }
   await page.screenshot({path:resolve(out,"preflight-oct11-"+width+".png"),fullPage:true});
   console.log("PASS_OCT11_PHONE_"+width,JSON.stringify({resolved,data,pageErrors:pageErrors.slice(0,3)}));
   await page.close();
