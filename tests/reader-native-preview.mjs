@@ -79,6 +79,21 @@ assert.equal(liveReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODU
 assert.equal(liveReady.presentationModel.sourceModelTotalCards,39);
 assert.equal(liveReady.presentationModel.historicalV183IdentityClaim,false);
 assert.equal(liveReady.presentationModel.sourceAuthorityModel,liveReady.model);
+const curatedReady=await prepareNativeReaderPreview({
+  prepared:livePrepared,reviewCuratedCards:true,
+  presentationData:data,eventData,cueRegistries,guideData,
+});
+assert.equal(curatedReady.curatedEligible,true);
+assert.equal(curatedReady.model.totalCards,39);
+assert.equal(curatedReady.presentationModel.totalCards,65,
+  "the real native preview must opt into 65 curated LIVE prayer cards");
+assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
+const previewIntroit=curatedReady.presentationModel.cards.find(c=>
+  c.blocks.some(b=>b.blockId==="AO.SM.B014"));
+assert.equal(previewIntroit?.sequence,5,
+  "Prelude handoff must locate the curated Introit by source block, not first card");
+
 assert.equal(liveReady.model.cards[13].sectionId,"AO.CANON.01");
 assert.equal(liveReady.model.cards[13].title,"Te igitur");
 assert.equal(liveReady.model.cards[18].sectionId,"AO.CANON.06");
@@ -107,6 +122,15 @@ const aspergesReady=await prepareNativeReaderPreview({
   prepared:aspergesPrepared,presentationData:data,eventData,cueRegistries,guideData,aspergesData
 });
 assert.ok(aspergesReady.aspergesController,"native preview lost certified Asperges controller");
+const aspergesCuratedAttempt=await prepareNativeReaderPreview({
+  prepared:aspergesPrepared,reviewCuratedCards:true,
+  presentationData:data,eventData,cueRegistries,guideData,aspergesData,
+});
+assert.equal(aspergesCuratedAttempt.curatedEligible,false,
+  "opt-in curated Ordinary may not flatten a preceding Asperges rite");
+assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,48,
+  "Asperges should fall back to the production model");
+
 assert.equal(aspergesReady.aspergesController.project().card.id,"ASP-R01");
 assert.equal(aspergesReady.aspergesController.project().formulaState.formula,"ORDINARY");
 aspergesReady.aspergesController.goTo("ASP-R03");

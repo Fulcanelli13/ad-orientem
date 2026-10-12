@@ -14,6 +14,18 @@ const COMPOSITE_RULES = Object.freeze({
       }),
     }),
   ]),
+  "AO.SM.B027": Object.freeze([
+    Object.freeze({
+      sourceCueIds:Object.freeze(["AO.SM.C0089","AO.SM.C0090"]),
+      id:"AO.SM.C0089+AO.SM.C0090",
+      kind:"TEXT",
+      latin:"Credo in unum Deum.",
+      vernacular:Object.freeze({
+        en:"I believe in one God.",
+        fr:"Je crois en un seul Dieu.",
+      }),
+    }),
+  ]),
 });
 
 function languageKey(language){

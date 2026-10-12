@@ -23,7 +23,8 @@ const frenchSchola=createNativeScholaController({
   frenchOrdinary,
 });
 const frenchGloria=frenchSchola.selectTrack("GLORIA");
-assert.match(frenchGloria.schola.latin,/Deo/);
+assert.equal(frenchGloria.schola.cueId,"AO.SM.C0055","Schola must start Et in terra pax after celebrant intonation");
+assert.match(frenchGloria.schola.latin,/Et in terra pax/);
 assert.ok(frenchGloria.schola.english);
 assert.notEqual(frenchGloria.schola.english,frenchGloria.schola.latin);
 assert.equal(frenchGloria.schola.english,frenchOrdinary.byCue[frenchGloria.schola.cueId]);

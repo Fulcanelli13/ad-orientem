@@ -1,4 +1,8 @@
 // Native Schola state for certified sung forms. Low Mass is a structural absence; Solemn shares the recovered sung Schola donor.
+// The opening intonations of Gloria and Credo belong to the celebrant,
+// even though their trailing donor syllables were catalogued SCHOLA_PUBLIC.
+const PRIEST_INTONATION_END_CUES=new Set(["AO.SM.C0054","AO.SM.C0090"]);
+
 // The Schola has its own progression clock. Reader card changes may select a
 // relevant track, but only exact Schola cues or explicit Schola navigation
 // advance within that track.
@@ -6,16 +10,16 @@
 const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 
 const TRACK_SPECS=Object.freeze([
-  {id:"INTROIT",kind:"PROPER",slot:"INTROIT",cards:[1]},
+  {id:"INTROIT",kind:"PROPER",slot:"INTROIT",cards:[1],canonicalBlockIds:["AO.SM.B014"]},
   {id:"KYRIE",kind:"ORDINARY",macroId:"AO.SM.M02",cards:[2]},
   {id:"GLORIA",kind:"ORDINARY",macroId:"AO.SM.M03",cards:[3]},
   {id:"GRADUAL",kind:"PROPER",slot:"GRADUAL",cards:[6],canonicalBlockIds:["AO.SM.B021"]},
   {id:"ALLELUIA_TRACT_SEQUENCE",kind:"PROPER",slot:"ALLELUIA_TRACT_SEQUENCE",cards:[6],canonicalBlockIds:["AO.SM.B022"],optional:true},
   {id:"CREDO",kind:"ORDINARY",macroId:"AO.SM.M09",cards:[9]},
-  {id:"OFFERTORY",kind:"PROPER",slot:"OFFERTORY",cards:[10,11]},
+  {id:"OFFERTORY",kind:"PROPER",slot:"OFFERTORY",cards:[10,11],canonicalBlockIds:["AO.SM.B030"]},
   {id:"SANCTUS_BENEDICTUS",kind:"ORDINARY",macroId:"AO.SM.M13",cards:[13,14,17]},
   {id:"AGNUS_DEI",kind:"ORDINARY",macroId:"AO.SM.M21",cards:[20,21]},
-  {id:"COMMUNION",kind:"PROPER",slot:"COMMUNION",cards:[25,26]},
+  {id:"COMMUNION",kind:"PROPER",slot:"COMMUNION",cards:[25,26],canonicalBlockIds:["AO.SM.B085"]},
 ]);
 
 function clean(value){const s=String(value??"").trim();return s||null}
@@ -26,7 +30,7 @@ function ordinarySegments(corpus,macroId,{language="en",frenchOrdinary=null}={})
   const rows=[];
   for(const block of blocks){
     for(const unit of block.units??[]){
-      if(unit.clock!=="SCHOLA_PUBLIC")continue;
+      if(unit.clock!=="SCHOLA_PUBLIC"||PRIEST_INTONATION_END_CUES.has(unit.cue_id))continue;
       const latin=clean(unit.latin);
       const fr=String(language).toLowerCase().startsWith("fr");
       // The Schola's translation follows the reader's language, but Latin
@@ -126,13 +130,43 @@ export function createNativeScholaController(args={}){
     if(activeTrackId!==trackId || reset){activeTrackId=trackId;index=0;complete=false;lastSyncedCueId=null}
     return state();
   }
-  function activateForCard(sequence){
-    const n=Number(sequence);
+  // All navigable cards may represent one part of an original macro.
+  // The DOM runtime must not apply historical 1..30 card-number lookup to
+  // the 48- or curated 65-card presentation sequences. Instead resolve
+  // canonical chant source cues and Proper slot block ownership.
+  function tracksForSourceCard(card){
+    const cueIds=new Set((card.paragraphs??[]).flatMap(p=>
+      (p.sourceCueIds??[]).map(String)));
+    const blockIds=new Set((card.blocks??[]).map(p=>String(p.blockId)));
+    const matches=built.tracks.filter(track=>track.kind==="ORDINARY"
+      ? track.segments.some(segment=>segment.cueId&&cueIds.has(segment.cueId))
+      : (track.canonicalBlockIds??[]).some(blockId=>blockIds.has(blockId)));
+    return matches;
+  }
+  function activateForCard(cardOrSequence){
+    // Legacy numeric macro calls remain supported for existing 30/48
+    // consumers until all callers have migrated to source-aware objects.
+    if(!cardOrSequence||typeof cardOrSequence!=="object"){
+      const n=Number(cardOrSequence);
+      const current=activeTrackId?byId.get(activeTrackId):null;
+      if(current?.cards?.includes(n))return state();
+      const matches=built.tracks.filter(t=>t.cards.includes(n));
+      if(!matches.length)return activate(null);
+      return activate(matches[0].id);
+    }
+    const card=cardOrSequence;
+    const matches=tracksForSourceCard(card);
     const current=activeTrackId?byId.get(activeTrackId):null;
-    if(current?.cards?.includes(n))return state();
-    const matches=built.tracks.filter(t=>t.cards.includes(n));
-    if(!matches.length){activeTrackId=null;index=0;complete=false;lastSyncedCueId=null;return state()}
-    return activate(matches[0].id);
+    if(current&&matches.some(t=>t.id===current.id))return state();
+    if(matches.length)return activate(matches[0].id);
+
+    // The Benedictus may continue while the priest prays silently in
+    // the Canon. Keep its independent Schola clock across those cards;
+    // never advance or rewind it merely because the reader is swiped.
+    const macro=Number(card.guideSequence??card.sourceSequence);
+    if(activeTrackId==="SANCTUS_BENEDICTUS" &&
+       Number.isInteger(macro)&&macro>=14&&macro<=18)return state();
+    return activate(null);
   }
   function syncCue(cueId){
     const id=String(cueId??"");
