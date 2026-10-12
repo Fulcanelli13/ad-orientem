@@ -6,6 +6,7 @@ on:
       - 'src/mass/calendar-preflight-context.js'
       - 'src/mass/full-mass-preflight.js'
       - 'src/mass/full-mass-preflight-styles.js'
+      - 'src/mass/proper-reader-slots.js'
       - 'tests/mass-1962-commemoration-preflight.mjs'
       - '.github/workflows/mass-1962-commemoration-preflight.yml'
   pull_request:
@@ -13,6 +14,7 @@ on:
       - 'src/mass/calendar-preflight-context.js'
       - 'src/mass/full-mass-preflight.js'
       - 'src/mass/full-mass-preflight-styles.js'
+      - 'src/mass/proper-reader-slots.js'
       - 'tests/mass-1962-commemoration-preflight.mjs'
       - '.github/workflows/mass-1962-commemoration-preflight.yml'
 jobs:
