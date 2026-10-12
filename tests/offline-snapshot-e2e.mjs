@@ -131,39 +131,31 @@ try{
  // The historical six-section Guide is part of the first-use Rosary reader.
  // Its links can remain remote, but the entire bilingual Guide must render
  // while disconnected without displacing the active prayer.
- const prep=page.locator("#aoPrayerBookRoot.open .aoRosaryPreparation");
- if(await prep.count())await prep.evaluate(el=>{if(!el.open)el.open=true});
+ const readingOptions=page.locator("#aoPrayerBookRoot.open .aoRosaryActiveOptions");
+ await readingOptions.waitFor({state:"attached",timeout:12000});
+ await readingOptions.evaluate(el=>{if(!el.open)el.open=true});
  const offlineGuide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
- // Recent canonical Rosary controls intentionally collapse preparation
- // after a bead starts; the historic source remains attached, but not visible
- // from that active step. Do not force hidden donor DOM visible in a test.
- await offlineGuide.waitFor({state:"attached",timeout:12000});
+ await offlineGuide.waitFor({state:"visible",timeout:12000});
  assert.equal(await offlineGuide.locator(".aoRosaryGuideSection").count(),6,
-  "Offline Rosary Guide lost its six source-linked sections");
+   "Offline Rosary Guide lost its six source-linked sections");
  assert.equal(await offlineGuide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
  const guideStep=await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step);
- if(await offlineGuide.isVisible()){
-   // When the native player exposes its Guide, it must be independently scrollable.
-   await offlineGuide.evaluate(el=>{el.open=true});
-   await page.waitForFunction(()=>{
-     const el=document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide[open] .aoRosaryGuideBody");
-     return Boolean(el)&&getComputedStyle(el).overflowY==="auto";
-   },null,{timeout:9000});
-   const guideLayout=await offlineGuide.locator(".aoRosaryGuideBody").evaluate(el=>{
-     const rect=el.getBoundingClientRect();
-     return {height:rect.height,scroll:el.scrollHeight,overflow:getComputedStyle(el).overflowY,viewport:innerHeight};
-   });
-   assert.equal(guideLayout.overflow,"auto","Expanded offline Guide must scroll internally");
-   assert.ok(guideLayout.height<=Math.min(guideLayout.viewport*.34,290)+2,
-     "Offline Guide obscures the current prayer: "+JSON.stringify(guideLayout));
-   assert.ok(guideLayout.scroll>guideLayout.height,"Offline Guide sections are clipped");
- }else{
-   // Current native active-player layout retains Guide source DOM but hides it.
-   // Treat this as a documented UX limitation, not an offline-cache failure.
-   console.log("NOTE six-section Rosary Guide retained offline but hidden in active reader; in-prayer access is NOT certified");
- }
+ await offlineGuide.evaluate(el=>{el.open=true});
+ await page.waitForFunction(()=>{
+   const el=document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide[open] .aoRosaryGuideBody");
+   return Boolean(el)&&getComputedStyle(el).overflowY==="auto";
+ },null,{timeout:9000});
+ const guideLayout=await offlineGuide.locator(".aoRosaryGuideBody").evaluate(el=>{
+   const rect=el.getBoundingClientRect();
+   return {height:rect.height,scroll:el.scrollHeight,overflow:getComputedStyle(el).overflowY,viewport:innerHeight};
+ });
+ assert.equal(guideLayout.overflow,"auto","Expanded offline Guide must scroll internally on phones");
+ assert.ok(guideLayout.height<=Math.min(guideLayout.viewport*.34,290)+2,
+   "Offline Rosary Guide obscures the active prayer: "+JSON.stringify(guideLayout));
+ assert.ok(guideLayout.scroll>guideLayout.height,"Offline Guide historical sections are clipped");
  assert.equal(await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step),guideStep,
-   "Inspecting the offline Guide advanced the Rosary unexpectedly");
+   "Opening the native Reading options / Guide advanced Rosary beads");
+ console.log("PASS six historic Rosary Guide sections accessible offline from native Reading options");
  // Switch the *application* language, not merely the browser locale; start
  // Divine Mercy for the first time only after airplane-mode launch.
  await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"fr"}));
