@@ -1171,8 +1171,17 @@ function projectRosaryDeck(r){
   onChapter:target=>{
    const api=window.AO_ROSARY_V381;
    if(typeof api?.setStep!=="function"||api.setStep(target)===false)return false;
-   setTimeout(decorateRosary,0);
-   setTimeout(decorateRosary,70);
+   setTimeout(()=>{
+    decorateRosary();
+    // A native Rosary click ordinarily invokes the existing interaction
+    // hardening layer; our chapter control owns the click instead, so apply
+    // that same canonical bead-button decoration explicitly.
+    window.AO_INTERACTION_V4324?.decorate?.();
+   },0);
+   setTimeout(()=>{
+    decorateRosary();
+    window.AO_INTERACTION_V4324?.decorate?.();
+   },70);
    return true;
   }
  });
