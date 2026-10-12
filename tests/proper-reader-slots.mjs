@@ -74,4 +74,47 @@ assert.equal(missing.ready,false);
 assert.ok(missing.missing.includes("GOSPEL"));
 assert.throws(()=>assertReaderProperReady(missing),/GOSPEL/);
 
+// Two source-owned III/IV-class commemorations are ONE additional
+// liturgical group with two focus paragraphs, never a guessed third Collect.
+const joinTwo=(label)=>({
+ lat:"Lat "+label+" A\n\nLat "+label+" B\nPer Dominum. Amen.",
+ fr:"FR "+label+" A\n\nFR "+label+" B\nPar Notre-Seigneur. Ainsi soit-il.",
+ oneConclusion:{status:"CERTIFIED",kind:"MULTIPLE_COMMEMORATIONS",
+   segments:{
+     lat:{principal:"Lat "+label+" A",additional:"Lat "+label+" B",
+       conclusion:"Per Dominum. Amen."},
+     fr:{principal:"FR "+label+" A",additional:"FR "+label+" B",
+       conclusion:"Par Notre-Seigneur. Ainsi soit-il."},
+   }
+ }
+});
+const sourceDecision={status:"CERTIFIED",source:"1962_PROPER_RESOLVER",
+  form:"LOW",calendarCount:2,appliedCount:2,prayerGroupCount:2};
+const multiJoined=properToReaderSlots({...frenchProper,
+ collects:[{lat:"Prima",fr:"Collecte principale"},joinTwo("COLLECT")],
+ secrets:[{lat:"Prima",fr:"Secrète principale"},joinTwo("SECRET")],
+ postcommunions:[{lat:"Prima",fr:"Postcommunion principale"},joinTwo("POST")],
+ calendarCommemorations:[{path:"Sancti/01-19"},{path:"Sancti/01-19o"}],
+ appliedCommemorations:[{path:"Sancti/01-19"},{path:"Sancti/01-19o"}],
+ commemorationFormDecision:sourceDecision,
+},{language:"fr"});
+assert.equal(multiJoined.ready,true,
+  "Two source prayers under ONE conclusion must not be counted as three groups");
+for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+ const p=multiJoined.slots[slot].data.paragraphs;
+ assert.equal(p.length,3,slot+" principal + two focused commemorations");
+ assert.equal(p[1].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
+ assert.equal(p[2].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
+ assert.match(p[2].vernacular,/Ainsi soit-il\.$/);
+}
+const corrupted=properToReaderSlots({...frenchProper,
+ collects:[{lat:"Prima",fr:"Collecte principale"},
+   {...joinTwo("COLLECT"),fr:"Unrelated alteration"}],
+ appliedCommemorations:sourceDecision.calendarCount?[
+   {path:"Sancti/01-19"},{path:"Sancti/01-19o"}]:[],
+ commemorationFormDecision:sourceDecision,
+},{language:"fr"});
+assert.equal(corrupted.slots.COLLECT_SET.status,"MISSING",
+  "A broken shared conclusion must NEVER be presented as ready");
+
 console.log("Proper → reader slots: PASS — EN/FR vernacular projection, certified suppressions, no duplicate Gradual/Alleluia.");
