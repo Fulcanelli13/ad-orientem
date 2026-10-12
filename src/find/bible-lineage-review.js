@@ -54,7 +54,7 @@ export function apostolicProfile(data,id){
 const BUTTON=(attr,k,active,label)=>'<button type="button" '+attr+'="'+esc(k)+'" aria-pressed="'+String(active)+'">'+esc(label)+'</button>';
 export function renderLineageReview(data,{language="en",surface="genealogies",lineage="genesis",root="adam",depth=3,page=0,apostle="mary",atlasStops=[]}={}){
  const lang=language==="fr"?"fr":"en",review=validateLineageReviewCorpus(data);
- const tabs=[["timeline","Chronology","Chronologie"],["genealogies","Genealogies","Généalogies"],["apostles","Apostolic lives","Vies apostoliques"]]
+ const tabs=[["timeline","Chronology","Chronologie"],["genealogies","Genealogies","Généalogies"],["apostles","Apostolic lives","Vies apostoliques"],["cinematic","Scene studies","Études des scènes"]]
   .map(([k,en,fr])=>BUTTON("data-bible-review-surface",k,k===surface,L(lang,en,fr))).join("");
  const head='<div class="aoBibleReviewTop"><button type="button" data-bible-atlas-close aria-label="'+esc(L(lang,"Back to Explore","Retour à Explorer"))+'">←</button>'+
  '<div><small>'+esc(L(lang,"EXPLORE · SCRIPTURE","EXPLORER · ÉCRITURE"))+'</small><h1>'+esc(L(lang,"Biblical Atlas","Atlas biblique"))+'</h1></div></div>'+
