@@ -5,7 +5,8 @@ const read=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const scenes=read("../data/explore/biblical-cinematic-studies-review.v1.json");
 const cross=read("../data/explore/biblical-theatre-art-subject-crosswalk.v1.json");
 assert.ok(validateCinematicStudies(scenes));
-assert.equal(scenes.scenes.length,181);
+assert.equal(scenes.scenes.length,183);
+assert.equal(scenes.extension.baselineSceneCount,181);
 assert.equal(cross.schema,"AO_BIBLICAL_THEATRE_ART_SUBJECT_CROSSWALK_V1");
 assert.equal(cross.owner,"BIBLICAL_ATLAS_SCENE_RESEARCH");
 assert.equal(cross.status,"CROSS_MODULE_RESEARCH_ONLY");
@@ -51,9 +52,9 @@ for(const row of cross.joins){
  if(["SAME_EPISODE_REVIEW","DEPICTS_SUBEPISODE_REVIEW"].includes(row.relation))positive++;
 }
 assert.deepEqual(tally,cross.counts);
-assert.equal(linked,26);
-assert.equal(unrepresented,18);
-assert.equal(positive,17);
+assert.equal(linked,29);
+assert.equal(unrepresented,15);
+assert.equal(positive,20);
 assert.equal(tally.EXCLUDED_ARTIST_HOLD,3);
 assert.equal(tally.DIFFERENT_MOMENT_HOLD,3);
 for(const target of ["calendar.good-friday","rosary.sor4","rosary.sor5"]){
@@ -69,10 +70,19 @@ for(const target of ["calendar.easter","rosary.glo1"]){
 }
 assert.equal(cross.joins.find(x=>x.targetId==="devotion.confession").relation,"HISTORICAL_IDENTITY_HOLD",
  "Luke 7's unnamed sinner is not automatically Mary Magdalene");
-for(const target of ["calendar.pentecost","rosary.glo3","calendar.holy-innocents"]){
+for(const [target,sceneKey,sourceKey] of [
+ ["calendar.pentecost","biblical:scene:paul:182","biblical:passage:acts-2-1-41"],
+ ["rosary.glo3","biblical:scene:paul:182","biblical:passage:acts-2-1-41"],
+ ["calendar.holy-innocents","biblical:scene:christ:181","biblical:event:bethlehem-additional-003"]
+]){
  const row=cross.joins.find(x=>x.targetId===target);
- assert.equal(row.relation,"NO_THEATRE_SCENE","missing events cannot be silently fabricated");
+ assert.equal(row.relation,"SAME_EPISODE_REVIEW",
+  "the new episode is a candidate depiction, not yet approved artwork");
+ assert.equal(row.sceneKey,sceneKey);
+ assert.equal(row.atlasEventKey,sourceKey);
+ assert.equal(row.release,false);
 }
+assert.equal(tally.NO_THEATRE_SCENE||0,0,"the three genuine missing episode gaps now have their own scenes");
 assert.equal(new Set(cross.joins.filter(x=>x.targetId.startsWith("rosary.")).map(x=>x.targetId)).size,15,
  "all 15 traditional Rosary subject decisions must be accounted for");
-console.log("PASS art↔Theatre: 44 scoped subjects, 26 linked candidate/hold identities, 17 potential depictions, 18 absent scenes, 3 prohibited selected artists. No artwork promoted.");
+console.log("PASS art↔Theatre: 44 scoped subjects, 29 linked candidate/hold identities, 20 potential depictions, 15 non-narrative subjects, 3 prohibited selected artists. No artwork promoted.");
