@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const captures=resolve(root,"artifacts/pray-traditional-daily");
+await mkdir(captures,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".webp":"image/webp"};
 const server=http.createServer(async(req,res)=>{
  try{const pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname),file=resolve(root,"."+pathname);
@@ -49,6 +51,7 @@ try{
   node.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(230+dx,390+dy)]}));
  },{dx,dy});
  await open("pray.morning_evening");
+ await page.screenshot({path:resolve(captures,"morning-390-fr.png"),animations:"disabled"});
  const first=await snapshot();
  assert.equal(first.route,"pray.morning_evening");
  assert.equal(first.kind,"daily");
@@ -64,9 +67,11 @@ try{
  assert.equal((await snapshot()).index,2,"Daily prayer timeline failed to navigate");
  // Switching dayparts preserves the source sequence and resets the card cursor.
  await page.locator("#aoPray435930 [data-tp381-daypart='evening']").evaluate(b=>b.click());
+ await page.screenshot({path:resolve(captures,"evening-390-fr.png"),animations:"disabled"});
  const evening=await snapshot();
  assert.equal(evening.index,0);assert.equal(evening.kind,"daily");
  await open("pray.nightly_examen");
+ await page.screenshot({path:resolve(captures,"examen-390-fr.png"),animations:"disabled"});
  const exam=await snapshot();
  assert.equal(exam.route,"pray.nightly_examen");
  assert.equal(exam.kind,"examen");assert.ok(exam.stops>=4);assert.equal(exam.active,1);
@@ -76,6 +81,7 @@ try{
  assert.equal((await snapshot()).index,1,"Nightly Examen vertical gesture leaked into horizontal navigation");
  await page.setViewportSize({width:320,height:720});
  assert.equal((await snapshot()).overflow,"auto","Narrow phone cannot scroll within the prayer card");
+ await page.screenshot({path:resolve(captures,"examen-320-fr.png"),animations:"disabled"});
  assert.deepEqual(errors,[],"Browser errors "+JSON.stringify(errors));
  console.log("PASS French 390/320px Morning Evening and Examen share named-card timeline, local focus and swipe contract");
  await page.close();
