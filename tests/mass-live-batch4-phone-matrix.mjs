@@ -141,7 +141,7 @@ try{
    assert.equal(initial.formScenario.family,family);
    assert.equal(initial.mode,"LIVE");
    const sung=form==="MISSA_CANTATA_SIMPLE"||form==="MISSA_CANTATA_INCENSE";
-   const expectedCards=form==="LOW"?39:(sung&&family==="VOTIVE"?65:48);
+   const expectedCards=form==="LOW"?39:(family==="VOTIVE"?65:48);
    assert.equal(initial.productCards,expectedCards,
      "production form-specific LIVE card count lost for "+form+"/"+family);
    assert(!initial.overflow && initial.rootWidth<=initial.viewportWidth+1,"phone horizontal overflow");
@@ -250,13 +250,13 @@ try{
  }
  const summary={schema:"ao-mass-live-batch4-acceptance-matrix-v1",total:results.length,
   formCount:forms.length,scenarioCount:families.length,
-  explicitPresentationRule:"LOW_39__ORDINARY_SUNG_VOTIVE_65__SOLEMN_OR_REQUIEM_48",
+  explicitPresentationRule:"LOW_39__NON_LOW_VOTIVE_65_WITH_FORM_STATES__REQUIEM_48",
   distinctSourceCueSamples:["C0112","C0174","C0181","C0212"],
   separatelyProtectedSourceOnlyCues:["C0075"],
   emulatorNotPhysicalDevice:true,syntheticProperNotLiturgicalCertification:true,
   results};
  await writeFile(resolve(artifactDir,"acceptance-matrix.json"),JSON.stringify(summary,null,2)+"\n");
- console.log("PASS Batch 4: "+results.length+" real-production four-form × Votive/Requiem phone scenarios; Low 39, ordinary Sung Votive 65, Solemn/Requiem source-first 48; source-owned channels, no invented ministers, phone geometry; screenshots and manifest retained.");
+ console.log("PASS Batch 4: "+results.length+" real-production four-form × Votive/Requiem phone scenarios; Low 39, Cantata/Solemn Votive 65 with form-specific roles, Requiem source-first 48; source-owned channels, no invented ministers, phone geometry; screenshots and manifest retained.");
 } finally {
  await browser?.close();
  await new Promise(ok=>server.close(ok));
