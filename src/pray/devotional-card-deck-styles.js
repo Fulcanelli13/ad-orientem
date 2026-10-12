@@ -50,6 +50,19 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoMercyReader .aoDevoCardTitle{font-size:clamp(23px,5.6vw,30px)}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoMercyLine{transition:none!important}}
 
+
+/* Individual Prayer Library entries use one named card and source-owned flip. */
+#aoPray435930 .aoP435930LibraryReader{min-width:0}
+#aoPray435930 .aoP435930LibraryReader .aoDevoCardScroll{display:block;padding:16px 15px 28dvh;min-height:min(350px,52dvh)}
+#aoPray435930 .aoP435930LibraryReader .aoP435930Prayer{border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:0}
+#aoPray435930 .aoP435930LibraryReader .aoP435930PrayerHead{display:none!important}
+#aoPray435930 .aoP435930LibraryReader .aoP435930Flip,
+#aoPray435930 .aoP435930LibraryReader .aoP435930Text{font:400 clamp(18px,4.5vw,22px)/1.65 Georgia,serif!important;text-align:left;white-space:normal;max-width:100%}
+#aoPray435930 .aoP435930LibraryReader .aoLibraryLine{display:block;margin:0 0 16px;min-width:0;white-space:pre-wrap}
+#aoPray435930 .aoP435930LibraryReader .aoLibraryBreak{display:block;height:8px}
+#aoPray435930 .aoP435930LibraryReader .aoP435930Source{margin-top:20px}
+#aoPray435930 .aoP435930LibraryReader .aoDevoSequenceTimeline{margin:7px 0}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
