@@ -1,0 +1,36 @@
+name: Prayer real Scripture offline PWA restart acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-scripture-offline-reload-phone.mjs"
+      - "src/pray/presentation-runtime.js"
+      - "src/app/offline-boot.js"
+      - "sw.js"
+      - ".github/workflows/pray-scripture-offline-reload.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  offline-restart-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/pray-scripture-offline-reload-phone.mjs
+      - name: Preserve original-text reload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-real-scripture-offline-reload
+          path: artifacts/pray-scripture-offline-reload
+          if-no-files-found: warn
+          retention-days: 21
