@@ -1,0 +1,34 @@
+name: Prayer real original Scripture warm offline acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/pray-warm-original-scripture-offline-phone.mjs"
+      - "src/pray/presentation-runtime.js"
+      - ".github/workflows/pray-warm-scripture-offline.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  warm-offline-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/pray-warm-original-scripture-offline-phone.mjs
+      - name: Original-source phone evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-real-scripture-warm-offline
+          path: artifacts/pray-warm-scripture-offline
+          retention-days: 21
+          if-no-files-found: warn
