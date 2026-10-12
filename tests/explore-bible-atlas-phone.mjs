@@ -94,6 +94,14 @@ try{
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="apostles",null,{timeout:15000});
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-review-apostle]').count(),20);
  assert.ok(await page.locator('#ao-find-modular-root [data-evidence-kind="later"]').count()>=2,"Marian rival traditions clearly classified");
+ const crosslink=page.locator('#ao-find-modular-root [data-bible-review-jump="66"]');
+ assert.equal(await crosslink.count(),1,"Annunciation has one unique exact-citation timeline handoff");
+ await crosslink.scrollIntoViewIfNeeded();await page.waitForTimeout(360);await crosslink.tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
+  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===66,null,{timeout:15000});
+ assert.match(await page.locator("#ao-find-modular-root [data-bible-detail]").innerText(),/Annunciation/);
+ await page.locator('#ao-find-modular-root [data-bible-review-surface="apostles"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="apostles",null,{timeout:15000});
  const philip=page.locator('#ao-find-modular-root [data-bible-review-apostle="philip-evangelist"]');
  await philip.scrollIntoViewIfNeeded();await page.waitForTimeout(360);await philip.tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewApostle==="philip-evangelist",null,{timeout:15000});
@@ -102,7 +110,7 @@ try{
  await page.locator('#ao-find-modular-root [data-bible-review-surface="timeline"]').tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleReviewSurface==="timeline"&&
   document.querySelectorAll("#ao-find-modular-root [data-bible-step]").length===151,null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="3"]').getAttribute("aria-pressed"),"true","timeline index restored after research views");
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="66"]').getAttribute("aria-pressed"),"true","selected Atlas reference restored after research views");
  await page.locator("#ao-find-modular-root [data-bible-atlas-close]").tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===false&&
   document.querySelector('[data-find-view="map"][data-explore-lens="heritage"]'),null,{timeout:15000});
