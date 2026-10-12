@@ -2,7 +2,7 @@
 
 **Recovery snapshot:** 12 October 2026 · **Status: UNFINISHED ORIGINAL RECOVERY / NON-PUBLISHED EDITORIAL INVENTORY**
 
-**Critical:** This contains **264 individual question/dossier/debate records directly transcribed from identified GitHub source files**, not 264 proven unique historical questions and **not** the complete original person-by-person question bank. Overlaps are preserved as references; no theological, translation, or original-quotation certification is claimed.
+**Critical:** This contains **282 individual question/dossier/debate records directly transcribed from identified GitHub source files**, not 264 proven unique historical questions and **not** the complete original person-by-person question bank. Overlaps are preserved as references; no theological, translation, or original-quotation certification is claimed.
 
 Missing historical question texts are not replaced by invented paraphrases. In particular, the historical A001–A318 and C001–C233 ranges are tracked as unresolved archival slots separately, not counted here.
 
@@ -34,6 +34,9 @@ Each entry shows the ID, wording from its identified source, owning canonical do
 - Protestant Christians: 88 linked entries (non-additive)
 - Religious pluralists and non-Christian interlocutors: 7 linked entries (non-additive)
 - Traditional Catholics, SSPX and sedevacantist interlocutors: 144 linked entries (non-additive)
+
+- Apostolate — live question scenarios: **8**
+- Apostolate — proposed question scenarios: **10**
 
 ## FULL QUESTION RECORDS
 
@@ -1806,3 +1809,106 @@ Evidence: [Forensic recovery report](https://github.com/Fulcanelli13/ad-orientem
 3. Every substantive claim, objection, rebuttal and traditional commentary requires hyperlink(s) to original material, with proponent attribution.
 4. Preserve French and English where actually present; blank French means it is not attested in this specific source row.
 5. Publication flags remain false until editorial, theological and native French checks.
+
+## Apostolate — live question scenarios (8)
+
+### AQ01 — Why do Catholics pray to Mary and the saints?
+**FR (source file):** Pourquoi les catholiques prient-ils Marie et les saints ?
+**Canonical owner:** `APOL-034`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION · VERBATIM_SOURCE_FILE_20261012
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+### AQ02 — Why confess sins to a priest? Why not just tell God?
+**FR (source file):** Pourquoi confesser ses péchés à un prêtre ? Pourquoi ne pas simplement les dire à Dieu ?
+**Canonical owner:** `APOL-026`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION · VERBATIM_SOURCE_FILE_20261012
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+### AQ03 — Why do Catholics obey the Pope? Is he infallible about everything?
+**FR (source file):** Pourquoi les catholiques obéissent-ils au Pape ? Est-il infaillible en tout ?
+**Canonical owner:** `APOL-020`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION · VERBATIM_SOURCE_FILE_20261012
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+### AQ04 — Doesn’t the Mass sacrifice Jesus again?
+**FR (source file):** La Messe ne sacrifie-t-elle pas Jésus une nouvelle fois ?
+**Canonical owner:** `APOL-031`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION · VERBATIM_SOURCE_FILE_20261012
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+### AQ05 — How can Catholics believe bread really becomes Jesus?
+**FR (source file):** Comment les catholiques peuvent-ils croire que le pain devient réellement Jésus ?
+**Canonical owner:** `APOL-030`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION · VERBATIM_SOURCE_FILE_20261012
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+### AQ06 — Why Latin? And why the traditional Mass?
+**FR (source file):** Pourquoi le latin ? Et pourquoi la Messe traditionnelle ?
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION · VERBATIM_SOURCE_FILE_20261012
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+### AQ07 — Why Purgatory? Didn’t Jesus already pay for our sins?
+**FR (source file):** Pourquoi le Purgatoire ? Jésus n’a-t-il pas déjà payé pour nos péchés ?
+**Canonical owner:** `APOL-040`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION · VERBATIM_SOURCE_FILE_20261012
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+### AQ08 — Why isn’t the Bible alone enough?
+**FR (source file):** Pourquoi la Bible seule ne suffit-elle pas ?
+**Canonical owner:** `APOL-014`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** LIVE_IN_APOSTOLATE_NOT_A_HISTORIC_A_SERIES_RESTORATION · VERBATIM_SOURCE_FILE_20261012
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/src/apostolate/corpus.js)
+## Apostolate — proposed question scenarios (10; not live)
+
+### AQ09 — Does only the Pope teach infallibly?
+**Canonical owner:** `APOL-020`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ10 — Did the Church invent doctrines later?
+**Canonical owner:** `APOL-021`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ11 — Can contradictory religions all be true?
+**Canonical owner:** `APOL-048`
+**Audience filters (editorial):** Religious pluralists and non-Christian interlocutors
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ12 — How can we identify Christ's true Church?
+**Canonical owner:** `APOL-016`
+**Audience filters (editorial):** Protestant Christians; General Catholic questions and objections
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ13 — Are Catholic images and statues idols?
+**Canonical owner:** `APOL-036`
+**Audience filters (editorial):** General Catholic questions and objections
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ14 — Why do Catholics venerate relics?
+**Canonical owner:** `APOL-037`
+**Audience filters (editorial):** General Catholic questions and objections
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ15 — What are indulgences?
+**Canonical owner:** `APOL-040`
+**Audience filters (editorial):** General Catholic questions and objections
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ16 — Are Anglican orders valid?
+**Canonical owner:** `APOL-022`
+**Audience filters (editorial):** Anglicans
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ17 — Why worship on Sunday rather than the Jewish Sabbath?
+**Canonical owner:** `APOL-015`
+**Audience filters (editorial):** General Catholic questions and objections
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+### AQ18 — Are we saved by faith or works?
+**Canonical owner:** `APOL-038`
+**Audience filters (editorial):** General Catholic questions and objections
+**Evidence:** PROPOSED_NOT_LIVE · VERBATIM_RECONCILIATION_RECORD_NOT_ORIGINAL_DIALOGUE_CERTIFIED
+**Source record:** [GitHub source file](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/learn/apologetics-reconciliation.v1.json)
+**Important:** AQ01–08 are exact existing Apostolate source-file titles. AQ09–18 are written proposed titles in a reconciliation file; neither collection recovers the missing original historical A001–A318 list.
