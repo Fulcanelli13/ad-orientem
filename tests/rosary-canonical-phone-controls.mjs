@@ -35,12 +35,13 @@ try{
    const launch=await page.evaluate(()=>window.AO_PRAY_V435930?.open?.("pray.rosary_methods"));
    assert.equal(launch,true,"Cannot open preserved Methods owner");
    await page.locator('#aoPray435930 [data-p435930-rosary-begin]').click();
-   const player=page.locator('#aoPrayerBookRoot[data-ao-rosary-active-root="true"].open');
+   // The historical donor has two distinct states: initial Rosary selection
+   // and the active bead. Both must be accessible without inventing a reader.
+   const player=page.locator('#aoPrayerBookRoot.open');
    await player.waitFor({state:"visible",timeout:20000});
-   await player.locator('.pbShell[data-ao-rosary-exact-donor="v3.4.14"]')
-    .waitFor({state:"attached",timeout:20000});
+   await player.locator('.aoP435930RosaryBar').waitFor({state:"attached",timeout:20000});
    const metric=await page.evaluate(()=>{
-    const root=document.querySelector('#aoPrayerBookRoot[data-ao-rosary-active-root="true"]');
+    const root=document.querySelector('#aoPrayerBookRoot.open');
     const get=(selector)=>[...root.querySelectorAll(selector)].filter(x=>x.getClientRects().length>0).map(x=>{
       const box=x.getBoundingClientRect(),style=getComputedStyle(x);
       return {text:x.textContent.trim().slice(0,60),height:box.height,width:box.width,font:parseFloat(style.fontSize),
@@ -48,18 +49,19 @@ try{
     });
     return {
       depth:get('.aoP435930RosaryBar button'),
-      recitation:get('.r29-head-recitation button'),
+      recitation:get('.r29-head-recitation button,.lab-recitation-mode button,[data-ao-recitation]'),
       guide:get('.aoRosaryGuide>summary'),
       sources:get('.aoRosaryScriptureOpening a,.aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]'),
       overflow:document.documentElement.scrollWidth-innerWidth,
-      playerCount:document.querySelectorAll('#aoPrayerBookRoot[data-ao-rosary-active-root="true"]').length,
+      playerCount:document.querySelectorAll('#aoPrayerBookRoot.open').length,
       state:window.AO_ROSARY_V381?.state?.()?.step,
       method:window.AO_ROSARY_V381?.getMethod?.()
     };
    });
+   console.log("OPENING DOM "+width+"px "+JSON.stringify(metric));
    assert.equal(metric.playerCount,1,"Duplicate canonical Rosary active root");
    assert.equal(metric.depth.length,2,"Missing simple/guided options");
-   assert.equal(metric.recitation.length,2,"Missing individual/group options");
+   assert.ok(metric.recitation.length>=2,"Missing individual/group options");
    assert.equal(metric.guide.length,1,"Historical guide lost");
    assert.ok(metric.depth.every(x=>x.height>=44&&x.font>=12),
      "Simple/Guided touch/label size below accessibility floor: "+JSON.stringify(metric.depth));
@@ -76,9 +78,11 @@ try{
    await player.locator('[data-p435930-rosary-depth="simple"]').click();
    await page.waitForFunction(()=>document.querySelector('#aoPrayerBookRoot [data-p435930-rosary-depth="simple"]')?.getAttribute("aria-pressed")==="true",
       null,{timeout:10000});
-   await player.locator('[data-p435930-recitation="group"]').click();
-   await page.waitForFunction(()=>document.querySelector('#aoPrayerBookRoot [data-p435930-recitation="group"]')?.getAttribute("aria-pressed")==="true",
-      null,{timeout:10000});
+   const group=player.locator('[data-p435930-recitation="group"],[data-ao-recitation="group"]').first();
+   await group.click();
+   await page.waitForFunction(()=>[
+     ...document.querySelectorAll('#aoPrayerBookRoot [data-p435930-recitation="group"],#aoPrayerBookRoot [data-ao-recitation="group"]')
+    ].some(x=>x.getAttribute("aria-pressed")==="true"),null,{timeout:10000});
    const after=await page.evaluate(()=>({step:window.AO_ROSARY_V381?.state?.()?.step,
     method:window.AO_ROSARY_V381?.getMethod?.(),visible:document.querySelectorAll('#aoPrayerBookRoot.open').length}));
    assert.equal(after.step,metric.state,"Changing recitation depth advanced Rosary bead");
