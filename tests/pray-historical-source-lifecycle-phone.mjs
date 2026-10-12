@@ -134,7 +134,19 @@ try{
  await page.evaluate(()=>{globalThis.AO_RUNTIME_V8.scriptureService.load=async()=>({
   reference:{start:34,end:34},englishChapter:[{verse:34,text:"TEST GOSPEL SOURCE FORMAT ONLY"}],
   frenchChapter:[{verse:34,text:"TEST FORMAT FR"}],latinChapter:[]});});
- await page.locator(reader+" [data-p435930-scripture-retry='gospel']").tap();
+ // Seven Words concurrently loads its original historical meditation.
+ // That legitimate source-owning render can detach the Retry button while
+ // Playwright is preparing a touch. Re-acquire the *live* button or accept a
+ // verified already-resolved original passage, never fake a click.
+ for(let attempt=0;attempt<4;attempt++){
+  if(await page.locator(reader+" [data-ao-scripture-content='ready']").count())break;
+  try{
+   await page.locator(reader+" [data-p435930-scripture-retry='gospel']").tap({timeout:5500});
+  }catch(e){
+   if(await page.locator(reader+" [data-ao-scripture-content='ready']").count())break;
+   if(attempt===3)throw e;
+  }
+ }
  await page.waitForSelector(reader+" [data-ao-scripture-content='ready']",{timeout:10000});
  assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),1);
  await page.screenshot({path:resolve(artifact,"gospel-settled-fixture-390.png"),animations:"disabled"});
