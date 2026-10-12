@@ -31,10 +31,13 @@ function selectedWork(subjectId, works, context, curation) {
       : work.release?.calendar !== true) continue;
     if (!Array.isArray(work.editorial?.subjectIds)
         || !work.editorial.subjectIds.includes(subjectId)) continue;
-    const selectedId = work.editorial?.selectedArtworkId === subject.artworkId;
-    const selectedSource = approvedSource(subject.sourceUrl)
-      && sameSource(work.source?.objectUrl) === sameSource(subject.sourceUrl);
-    if (!selectedId && !selectedSource) continue;
+    // An explicitly identified museum original may not be replaced with
+    // another painting merely by copying the selected editorial artwork ID.
+    const hasMuseumSource = approvedSource(subject.sourceUrl);
+    if (hasMuseumSource && sameSource(work.source?.objectUrl) !== sameSource(subject.sourceUrl))
+      continue;
+    if (!hasMuseumSource && work.editorial?.selectedArtworkId !== subject.artworkId)
+      continue;
     return { artwork: work, subjectId, artworkSelectionId: subject.artworkId,
       artworkTitle: subject.title, artist: subject.artist,
       originalSourceUrl: approvedSource(subject.sourceUrl) ? subject.sourceUrl : null };
@@ -43,24 +46,37 @@ function selectedWork(subjectId, works, context, curation) {
 }
 
 function liveRegistry(works) { return Array.isArray(works) ? works : []; }
-function observedRows(date, observedId, curation) {
-  if (!isDay(date) || date.slice(0,4) !== String(curation?.year)
-      || typeof observedId !== "string" || !observedId) return [];
-  // Only the production-resolved principal may activate this day's art.
-  // Optional nominal/superseded saints have no verified principal ID here.
-  return (curation?.occasions || []).filter(row =>
-    row.group === "observedClassI" && row.date === date
-      && row.principalId === observedId);
+function possibleOccasions(date, curation) {
+  if (!isDay(date) || date.slice(0,4) !== String(curation?.year)) return [];
+  return (curation?.occasions || []).filter(row => row.date === date
+    && (row.group === "observedClassI"
+      || row.group === "otherHighlights"
+      || row.observedRelationship === "OBSERVED_PRINCIPAL"));
+}
+function clearedOccasion(row, artwork, subjectId, date, currentObservedId) {
+  if (row.group === "observedClassI")
+    return !!row.principalId && (date !== row.date || row.principalId === currentObservedId);
+  // Non-Class-I highlights are *eligible* rather than proved feast slots.
+  // A separate dated principal-ID certification, owned by the release, is
+  // required; an existing nominal/date title never asserts an observance.
+  const certified = artwork?.release?.verifiedOccasions;
+  return Array.isArray(certified) && certified.some(entry =>
+    entry.date === row.date && entry.subjectId === subjectId
+      && typeof entry.observedPrincipalId === "string"
+      && !!entry.observedPrincipalId
+      && (date !== row.date || entry.observedPrincipalId === currentObservedId));
 }
 
 /** Calendar displays a true, exact-day association only when separately cleared. */
 export function selectReleasedCalendarArtwork({
   date, observedId, works, curation = sacredArt2026Curation
 } = {}) {
-  for (const row of observedRows(date, observedId, curation)) {
+  if (!isDay(date) || typeof observedId !== "string" || !observedId) return null;
+  for (const row of possibleOccasions(date, curation)) {
     for (const subjectId of row.selectedSubjects || []) {
       const selected = selectedWork(subjectId, liveRegistry(works), "calendar", curation);
-      if (selected) return { ...selected, anchorDate: row.date,
+      if (selected && clearedOccasion(row, selected.artwork, subjectId, date, observedId))
+        return { ...selected, anchorDate: row.date,
         observedPrincipalId: observedId, held: false, relation: "OBSERVED_PRINCIPAL_SUBJECT" };
     }
   }
@@ -78,14 +94,18 @@ export function selectReleasedHomeArtwork({
 } = {}) {
   if (!isDay(date) || date.slice(0,4) !== String(curation?.year)
       || typeof observedId !== "string" || !observedId) return null;
-  const rows = (curation?.occasions || []).filter(row =>
-    row.group === "observedClassI" && row.principalId
-      && row.date <= date && (row.date !== date || row.principalId === observedId));
+  const rows = (curation?.occasions || []).filter(row => row.date <= date
+    && (row.group === "observedClassI"
+      || row.group === "otherHighlights"
+      || row.observedRelationship === "OBSERVED_PRINCIPAL"));
   for (const row of rows.reverse()) {
     for (const subjectId of row.selectedSubjects || []) {
       const selected = selectedWork(subjectId, liveRegistry(works), "home", curation);
-      if (selected) return { ...selected, anchorDate: row.date,
-        observedPrincipalId: row.principalId, held: row.date !== date,
+      if (selected && clearedOccasion(row, selected.artwork, subjectId, date, observedId))
+        return { ...selected, anchorDate: row.date,
+        observedPrincipalId: row.principalId || (selected.artwork.release?.verifiedOccasions || [])
+          .find(x => x.date === row.date && x.subjectId === subjectId)?.observedPrincipalId,
+        held: row.date !== date,
         relation: row.date === date ? "OBSERVED_PRINCIPAL_SUBJECT" : "HELD_PREVIOUS_MASTERPIECE" };
     }
   }
