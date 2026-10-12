@@ -135,28 +135,18 @@ try{
   "Offline Rosary Guide lost its six source-linked sections");
  assert.equal(await offlineGuide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
  const guideStep=await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step);
- if(!await offlineGuide.evaluate(el=>el.open))
-   await offlineGuide.locator("summary").evaluate(el=>el.click());
+ // The Guide may asynchronously rerender during Rosary navigation. Measure
+ // its mobile scroll box only in the expanded state, not while closed.
+ await offlineGuide.evaluate(el=>{el.open=true});
+ await page.waitForFunction(()=>{
+   const el=document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide[open] .aoRosaryGuideBody");
+   return Boolean(el)&&getComputedStyle(el).overflowY==="auto";
+ },null,{timeout:9000});
  const guideLayout=await offlineGuide.locator(".aoRosaryGuideBody").evaluate(el=>{
    const rect=el.getBoundingClientRect();
    return {height:rect.height,scroll:el.scrollHeight,overflow:getComputedStyle(el).overflowY,viewport:innerHeight};
  });
- if(guideLayout.overflow!=="auto"){
-   console.error("OFFLINE_GUIDE_CSS_DIAGNOSTIC="+JSON.stringify(await page.evaluate(()=>{
-     const g=document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide");
-     const b=g?.querySelector(".aoRosaryGuideBody");
-     const root=document.getElementById("aoPrayerBookRoot");
-     const style=document.getElementById("ao-pray-rosary-guide-style");
-     return {guideTag:g?.tagName,guideOpen:g?.open,guideAttribute:g?.hasAttribute("open"),
-       rootClasses:root?.className,rootActive:root?.dataset?.aoRosaryActiveRoot,
-       mediaSmall:matchMedia("(max-width:560px)").matches,innerWidth,
-       guideStylePresent:Boolean(style),guideStyleLength:style?.textContent.length,
-       bodyStyle:b?{height:b.getBoundingClientRect().height,scrollHeight:b.scrollHeight,
-        overflow:getComputedStyle(b).overflowY,maxHeight:getComputedStyle(b).maxHeight}:null,
-       stylesheetCount:document.styleSheets.length}
-   })));
- }
- assert.equal(guideLayout.overflow,"auto","Offline Guide must scroll internally on phones");
+ assert.equal(guideLayout.overflow,"auto","Expanded offline Guide must scroll internally on phones");
  assert.ok(guideLayout.height<=Math.min(guideLayout.viewport*.34,290)+2,
   "Offline Guide obscures the current prayer: "+JSON.stringify(guideLayout));
  assert.ok(guideLayout.scroll>guideLayout.height,"Offline Guide sections are clipped");
