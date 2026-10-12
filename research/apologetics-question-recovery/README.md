@@ -34,6 +34,7 @@ Among **614 known original ID slots** across source-sized historical interlocuto
 - `HISTORICAL_AQ_WORDING_VARIANTS.md` / `.json` — eight AQ09–16 earlier wording candidates compared with later proposed-only GitHub titles.
 - `HISTORICAL_ID_COLLISIONS.md` — MOR-001–014 reused in two dated prior assistant replies for different subject matter.
 - `HISTORICAL_LIT_UNNUMBERED_QUOTES.md` — 13 liturgical-reform question sentences with individual IDs not independently established; excluded from the 452 indexed count.
+- `HISTORICAL_LIT_065_077_CANDIDATE_IDS.md` / `.json` — candidate sequence matching those 13 sentences to LIT065–077 ranges in dated summaries, **not confirmed individual original ID-text pairs**.
 
 ## Current GitHub record census — kept separately
 
