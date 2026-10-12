@@ -9,7 +9,7 @@
   "sourceArtSelection": "data/calendar/sacred-art-curator-decisions-20261011.v1.json",
   "sourceSceneCorpus": "data/explore/biblical-cinematic-studies-review.v1.json",
   "sourceArtBranchHead": "4abb93b1be209e48087b7d2b2b1d83a258a38707",
-  "sourceAtlasBranchHead": "71f4f6c9a75e09abf02ea5086311d21183d8b10a",
+  "sourceAtlasBranchHead": "SOURCE_ADVANCED_AFTER_A11_CHECKPOINT",
   "status": "CROSS_MODULE_RESEARCH_ONLY",
   "publicationAllowed": false,
   "policy": "Target IDs reference independently owned Sacred Art selections. This file never stores art objects or grants painting/image/subject/rights/crop approval. Positive matches are candidate depictions, not certification; holds and unrepresented scenes must not render art.",
@@ -20,8 +20,7 @@
     "EXCLUDED_ARTIST_HOLD": 3,
     "HISTORICAL_IDENTITY_HOLD": 1,
     "NON_NARRATIVE_SUBJECT": 15,
-    "NO_THEATRE_SCENE": 3,
-    "SAME_EPISODE_REVIEW": 13
+    "SAME_EPISODE_REVIEW": 16
   },
   "joins": [
     {
@@ -126,12 +125,13 @@
     },
     {
       "targetId": "calendar.pentecost",
-      "sceneKey": null,
-      "sceneReference": null,
-      "relation": "NO_THEATRE_SCENE",
+      "sceneKey": "biblical:scene:paul:182",
+      "sceneReference": "Acts 2:1–41",
+      "relation": "SAME_EPISODE_REVIEW",
       "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
       "release": false,
-      "note": "Acts 2 Pentecost is in the biblical source chronology but is not among these 181 Theatre scenes; do not invent a scene."
+      "note": "The newly added Pentecost scene cites Acts 2:1–41 exactly. The selected Pentecost painting is a subject candidate only; its figures, original quality, rights and crop still require review.",
+      "atlasEventKey": "biblical:passage:acts-2-1-41"
     },
     {
       "targetId": "calendar.trinity",
@@ -218,12 +218,13 @@
     },
     {
       "targetId": "calendar.holy-innocents",
-      "sceneKey": null,
-      "sceneReference": null,
-      "relation": "NO_THEATRE_SCENE",
+      "sceneKey": "biblical:scene:christ:181",
+      "sceneReference": "Matthew 2:16–18",
+      "relation": "SAME_EPISODE_REVIEW",
       "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
       "release": false,
-      "note": "The Massacre of the Innocents is not a separate scene in this 181-scene selection."
+      "note": "The new Matthew 2:16–18 scene now depicts Herod's massacre as narrated. The selected artwork needs editorial review of its painted episode and figures; no historically precise individual child or location is claimed.",
+      "atlasEventKey": "biblical:event:bethlehem-additional-003"
     },
     {
       "targetId": "rosary.joy1",
@@ -347,12 +348,13 @@
     },
     {
       "targetId": "rosary.glo3",
-      "sceneKey": null,
-      "sceneReference": null,
-      "relation": "NO_THEATRE_SCENE",
+      "sceneKey": "biblical:scene:paul:182",
+      "sceneReference": "Acts 2:1–41",
+      "relation": "SAME_EPISODE_REVIEW",
       "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
       "release": false,
-      "note": "Pentecost is absent from the 181 Theatre scenes, despite appearing in the canonical biblical timeline."
+      "note": "Shares the same canonical Pentecost subject and artwork original as the Calendar; do not duplicate the painting. All depicted figures and iconography require separate source review.",
+      "atlasEventKey": "biblical:passage:acts-2-1-41"
     },
     {
       "targetId": "rosary.glo4",
@@ -446,5 +448,6 @@
       "release": false,
       "note": "St Dominic is post-biblical and has no 181-scene event."
     }
-  ]
+  ],
+  "note": "A12: two additional source-reviewed scenes are appended after historic 181 without renumbering. Three prior no-scene holds now have preliminary same-passage subject matches. Nothing is approved for publication."
 }
