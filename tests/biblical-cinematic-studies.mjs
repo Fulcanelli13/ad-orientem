@@ -10,13 +10,17 @@ const source=JSON.parse(readFileSync(new URL("../data/explore/biblical-cinematic
 const atlasData=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact.v1.json",import.meta.url),"utf8"));
 const stops=buildBibleAtlas(atlasData.entries);
 assert.equal(stops.length,151,"canonical chronology is unchanged");
-assert.equal(validateCinematicStudies(source),true,"181 source-reviewed scene integrity required");
+assert.equal(validateCinematicStudies(source),true,"the original 181 plus two source-review additions must be intact");
 assert.equal(validateCinematicCrosswalk(source,stops),true,
- "Every 181-scene candidate must still reference the exact current canonical passage and index");
+ "every scene must reference the exact current canonical passage and event identity");
 
 assert.deepEqual(source.chapters.map(c=>c.group).filter((g,i,a)=>i===0||g!==a[i-1]),["ABRAHAM","MOSES","CHRIST","PAUL"]);
-assert.equal(source.chapters.reduce((n,c)=>n+c.sceneIndices.length,0),181);
-assert.equal(new Set(source.scenes.map(s=>s.sceneKey)).size,181,
+assert.equal(source.chapters.reduce((n,c)=>n+c.sceneIndices.length,0),183);
+assert.equal(source.extension.baselineSceneCount,181);
+assert.deepEqual(source.extension.additionalSceneIndices,[181,182]);
+assert.deepEqual(source.scenes.slice(0,181).map(s=>s.index),Array.from({length:181},(_,i)=>i),
+ "the complete original Theatre corpus keeps its 181 numeric identities");
+assert.equal(new Set(source.scenes.map(s=>s.sceneKey)).size,183,
  "all study scenes carry stable source identities separate from numbered display order");
 assert.equal(source.scenes[74].sceneKey,"biblical:scene:christ:074");
 const duplicateKey=structuredClone(source);
@@ -24,9 +28,9 @@ duplicateKey.scenes[1].sceneKey=duplicateKey.scenes[0].sceneKey;
 assert.equal(validateCinematicStudies(duplicateKey),false,"duplicate study scene identity is prohibited");
 
 const counts=Object.fromEntries(["EXACT_REFERENCE","PASSAGE_OVERLAP_REVIEW_ONLY","NO_DIRECT_PASSAGE_MATCH"].map(k=>[k,source.scenes.filter(s=>s.status===k).length]));
-assert.deepEqual(counts,{EXACT_REFERENCE:65,PASSAGE_OVERLAP_REVIEW_ONLY:29,NO_DIRECT_PASSAGE_MATCH:87});
+assert.deepEqual(counts,{EXACT_REFERENCE:67,PASSAGE_OVERLAP_REVIEW_ONLY:29,NO_DIRECT_PASSAGE_MATCH:87});
 const linked=source.scenes.filter(s=>cinematicExactAtlasTarget(s,stops)!==null);
-assert.equal(linked.length,64,"all uniquely certified exact references link to existing timeline records");
+assert.equal(linked.length,66,"64 original uniquely matched citations plus two new sources link to canonical milestones");
 assert.equal(source.scenes[68].status,"EXACT_REFERENCE");
 assert.equal(source.scenes[68].candidates.length,2,"one exact scene also has an overlap candidate");
 assert.equal(cinematicExactAtlasTarget(source.scenes[68],stops),null,"ambiguous #68 cannot auto-link");
@@ -50,6 +54,29 @@ assert.equal(source.scenes[68].candidates[1].atlasIndex,77,"Luke 2 hidden-life o
 assert.equal(studyChapter(source,"PATRIARCHS").sceneIndices.length,25);
 assert.equal(studyChapter(source,"MINISTRY").sceneIndices.length,46);
 assert.equal(studyChapter(source,"TO_ROME").sceneIndices.length,11);
+assert.deepEqual(studyChapter(source,"INCARNATION").sceneIndices.slice(7,11),[64,65,181,66],
+ "Matthew's massacre follows the flight, preceding the return from Egypt in the narrated order");
+assert.deepEqual(studyChapter(source,"APOSTLES").sceneIndices.slice(0,3),[182,138,139],
+ "Acts 2 Pentecost precedes the Pauline mission episodes");
+for(const [id,chapter,passage,index,key] of [
+ [181,"INCARNATION","Matthew 2:16–18",73,"biblical:event:bethlehem-additional-003"],
+ [182,"APOSTLES","Acts 2:1–41",126,"biblical:passage:acts-2-1-41"]
+]){
+ const episode=source.scenes[id];
+ assert.equal(episode.chapter,chapter);
+ assert.equal(episode.reference,passage);
+ assert.equal(episode.candidates.length,1);
+ assert.equal(episode.candidates[0].atlasIndex,index);
+ assert.equal(episode.candidates[0].atlasEventKey,key);
+ assert.equal(cinematicExactAtlasTarget(episode,stops),index);
+ assert.match(episode.sourceNote_en,/Matthew|Paul|Pentecost/);
+ assert.match(renderCinematicStudies(source,{language:"en",chapter,scene:id,atlasStops:stops}),new RegExp('data-bible-review-jump="'+index+'"'));
+ assert.match(renderCinematicStudies(source,{language:"fr",chapter,scene:id,atlasStops:stops}),/Lire le passage/);
+}
+assert.equal(studyStep(source,"INCARNATION",65,1),181);
+assert.equal(studyStep(source,"INCARNATION",181,1),66);
+assert.equal(studyStep(source,"APOSTLES",182,1),138);
+assert.equal(studyStep(source,"APOSTLES",138,-1),182);
 assert.equal(studyScene(source,"DELIVERANCE",-1).index,25);
 assert.equal(studyStep(source,"PATRIARCHS",0,1),1);
 assert.equal(studyStep(source,"PATRIARCHS",0,-1),0);
@@ -144,7 +171,7 @@ assert.equal(validateCinematicStudies(shuffled),false,
 const staleCandidate=structuredClone(source);
 staleCandidate.scenes[70].candidates[0].reference="Matthew 4:12–17";
 assert.equal(validateCinematicCrosswalk(staleCandidate,stops),false,
- "A stale candidate passage must never pass the 151-to-181 evidence gate");
+ "A stale candidate passage must never pass the 151-event evidence gate");
 assert.doesNotMatch(renderCinematicStudies(staleCandidate,{atlasStops:stops}),/data-bible-study-scene=/,
  "The actual cinematic reader must refuse stale source/candidate indices");
 const staleEventIdentity=structuredClone(source);
@@ -165,4 +192,4 @@ const secondExact=structuredClone(source);
 secondExact.scenes[70].candidates.push({...secondExact.scenes[70].candidates[0],atlasIndex:78});
 assert.equal(validateCinematicStudies(secondExact),false,
  "Duplicate exact-reference candidates must not silently authorize a chronology jump");
-console.log("PASS Cinematic companion: crosswalk candidate/index/order guards; 181 scenes in 14 chapters, 64 unique exact source jumps, 29 overlaps held, 87 unmatched preserved, zero images/routes/pins");
+console.log("PASS Cinematic companion: 181 historic IDs preserved + 2 Scripture-exact additions, 183 scenes across 14 chapters, 66 unique exact source jumps, 29 overlaps and 87 unmatched retained, no added images/routes/pins");
