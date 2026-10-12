@@ -84,5 +84,31 @@
         }
       ]
     }
-  ]
+  ],
+  "globalStyleExclusions": {
+    "effectiveFrom": "2026-10-12",
+    "hardBlockedArtists": [
+      "El Greco",
+      "Fra Angelico"
+    ],
+    "excludedVisualApproach": "Fra Angelico-like flat, archaizing, decorative predella/early-Renaissance devotional style as homepage sacred painting",
+    "preferredExampleArtists": [
+      "Peter Paul Rubens",
+      "Anthony van Dyck",
+      "Philippe de Champaigne"
+    ],
+    "scope": "All future user-facing Ad Orientem sacred-art curation and candidate shortlists, especially Calendar/Home, Rosary, Bible Atlas and devotions",
+    "handling": "Retain older records for audit only; do not propose, reapprove or automatically publish these works. Similar-looking works require artistic screening; automatic artist-name filter does not substitute image review.",
+    "exceptions": "Only a later explicit user reversal may supersede exclusion",
+    "historicalLeadsAffected": [
+      {
+        "record": "sacred-art-masterpiece-first-wave-2026.v1.json",
+        "count": 3
+      },
+      {
+        "record": "sacred-art-masterpiece-anchor-wave-20261012.v1.json",
+        "count": 2
+      }
+    ]
+  }
 }
