@@ -1,0 +1,34 @@
+name: Devotional prayer-first phone acceptance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/presentation-styles.js"
+      - "tests/pray-prayer-first-options-phone.mjs"
+      - "tests/pray-marian-mobile.mjs"
+      - ".github/workflows/pray-prayer-first-phone.yml"
+  workflow_dispatch:
+
+jobs:
+  devotions-prayer-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Stations, Angelus, Regina Caeli and Divine Mercy at 320/390/430px
+        run: node tests/pray-prayer-first-options-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: devotional-prayer-first-phone
+          path: artifacts/devotions-prayer-first-phone/
+          if-no-files-found: warn
+          retention-days: 30
