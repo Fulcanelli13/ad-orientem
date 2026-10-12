@@ -93,6 +93,14 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
 
+  // Missing/competing §453 source or conclusion: never render a
+  // source-incomplete Mission Sunday as a certified ready Collect.
+  if(proper.missionSundayCollectDecision?.status==="UNVERIFIED"){
+    slots.COLLECT_SET=Object.freeze({status:"MISSING",slot:"COLLECT_SET",data:null,
+      reason:"Mission Sunday Collect source/precedence unverified: "+
+        proper.missionSundayCollectDecision.reason});
+  }
+
   // A source contradiction must not be displayed as a certified ready Preface.
   // This is a reader safety gate, NOT a substitute for repairing source selection.
   if(prefaceDecision && ["CONTRADICTION","MISSING_PREFACE","NEEDS_SELECTED_FORMULARY"].includes(prefaceDecision.status)){
