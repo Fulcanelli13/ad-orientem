@@ -91,6 +91,24 @@ try{
   "Active V. must be brighter than its muted R.: "+JSON.stringify(paragraphEnergy));
  assert.ok(paragraphEnergy[1].opacity>paragraphEnergy[2].opacity,
   "Upcoming Hail Mary must also be muted, not full-bright: "+JSON.stringify(paragraphEnergy));
+ // Distinct axes: diagonal/vertical motion must not advance cards;
+ // deliberate horizontal touch swipe must advance exactly one named card.
+ const swipe=async(dx,dy)=>{
+   await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
+     const touch=(x,y)=>new Touch({identifier:1,target:el,clientX:x,clientY:y});
+     el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[touch(250,340)],changedTouches:[touch(250,340)]}));
+     el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[touch(250+dx,340+dy)]}));
+   },{dx,dy});
+ };
+ await swipe(10,-170);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"announcement",
+  "Vertical scroll must not change the prayer card");
+ await swipe(-160,9);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"fiat",
+  "Horizontal swipe failed to advance exactly one card");
+ await swipe(160,4);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"announcement",
+  "Reverse swipe failed to restore previous card");
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
  const shot=page.locator("body > .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation']");
  await shot.waitFor({state:"attached",timeout:2000});
