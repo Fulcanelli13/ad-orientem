@@ -80,7 +80,8 @@ for(const [passage,label] of [
  const scene=stops.find(s=>s.reference===passage);
  assert.ok(scene,"missing marked Scripture edition passage "+passage);
  assert.match(atlasDetail(scene,"en"),/Scripture edition note/);
- assert.ok(atlasDetail(scene,"en").includes(label));
+ assert.ok(atlasDetail(scene,"en").replaceAll("&#39;","\u0027").includes(label),
+  "English source qualification must survive HTML apostrophe escaping: "+passage);
  assert.match(atlasDetail(scene,"fr"),/Note sur l&#39;édition biblique/);
  assert.match(atlasDetail(scene,"en"),/Compare source/);
 }
