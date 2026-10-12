@@ -13,7 +13,7 @@
     "currentSubjectSelections": 101,
     "historicalPlacements": 44,
     "historicalUniqueAcquiredOriginals": 35,
-    "historicalPlacementsWithExactUrlInNewSelections": 0,
+    "historicalPlacementsWithExactUrlInNewSelections": 2,
     "datedOccasionEntries": 99,
     "uniqueOccasionDates": 98,
     "classI": 53,
@@ -21,7 +21,8 @@
     "apostolicMysticAngelicHighlights": 29,
     "classIOccasionsWithDirectSelectedArt": 30,
     "classIOccasionsWithoutDirectSelectedArt": 23,
-    "currentArtSubjectKeysWithDirectCandidates": 26
+    "currentArtSubjectKeysWithDirectCandidates": 26,
+    "historicalDistinctOriginalsReusedByUrlInNewSelections": 1
   },
   "historicalApprovedOriginalPlacements": [
     {
@@ -48,7 +49,10 @@
       "sourceOriginalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
       "sourceRightsAtReview": "CC0",
-      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "newSubjectPlacementsMatchingExactSourceUrl": [
+        "ROS-01",
+        "DEV-07"
+      ],
       "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
     },
     {
@@ -228,7 +232,10 @@
       "sourceOriginalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
       "sourceRightsAtReview": "CC0",
-      "newSubjectPlacementsMatchingExactSourceUrl": [],
+      "newSubjectPlacementsMatchingExactSourceUrl": [
+        "ROS-01",
+        "DEV-07"
+      ],
       "disposition": "RETAIN_HASHED_SOURCE_AS_LEGACY_OR_BACKUP_NOT_AUTOMATIC_USER_APPROVAL"
     },
     {
