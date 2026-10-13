@@ -1,10 +1,19 @@
 # Mass and Scripture — selected bilingual editorial manuscript
 
-**13 October 2026 · French and English · editorial research copy, not published**
+**13 October 2026 · Catholic Mass Formation · Research copy accepted editorially; NOT published**
 
-**Scope:** 20 complete biblical explanations, 9 concise companion notes, 2 variable readings tied to the selected 1962 Mass Proper. All 26 existing canonical IDs are conserved; the five new N01–N05 research subjects receive editorial dispositions. No new LIVE card, Atlas event, genealogy identifier, image or liturgical calendar rule was introduced.
+**Editorial selection:** 20 substantial biblical explanations, nine concise contextual notes, and two readings dynamically supplied by the selected 1962 Proper. The earlier 31-record research corpus and all 26 MB canonical source identifiers remain intact; five proposals have been judged individually rather than imported indiscriminately.
 
-These explanations foreground actual liturgical meaning and its biblical roots. Bibliographical qualifications are preserved only where necessary to prevent mistaken claims. Each French and English paragraph links to the Bible and an original **1962 Vatican Missal** page image. These source checks establish the Latin location, not automatic permission to reproduce scans or unreviewed translations.
+The explanations below emphasise sacred doctrine, the meaning of the prayers and the biblical passages that illuminate them. Each paragraph has an inline link to its Scripture text and an original **Vatican 1962 Missal** printed-page image, with additional patristic or theological witnesses when useful. These page links document liturgical wording; rights to redistribute images or published translations have not been established.
+
+| Editorial result | Count |
+|---|---:|
+| Full biblical teaching paragraphs | 20 French + 20 English |
+| Companion notes | 9 French + 9 English |
+| Runtime-dependent readings (Epistle and Gospel) | 2 |
+| Original Latin Missal locus checks in source dossier | 31 / 31 |
+| Approved user-facing releases | 0 |
+
 ## Preparation, Gloria, Gospel and Creed
 
 ### MB02 — Psalm Judica me
@@ -17,9 +26,9 @@ Le prêtre s’avance vers l’autel en faisant sienne la prière du psaume 42 :
 
 The priest approaches the altar with the words of Psalm 42: “Introibo ad altare Dei.” The psalmist asks God's light and truth to lead him to God's dwelling despite trial and sorrow. The preparation for Mass thus becomes an act of trust: one approaches God to receive his mercy and praise him. Under the 1962 rubrics this psalm is not recited at every Mass, including Masses for the Dead. [Scripture](https://www.newadvent.org/bible/psa042.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/298.png).
 
-*Référence biblique : Psalm 42:1–5 (Vulgate; 43:1–5 modern). Relation : DIRECT_SCRIPTURAL_WORDING. Condition liturgique : Hide/adjust for Requiem, Passiontide and procession-dependent introductory omissions.*
+*Source class: DIRECT_SCRIPTURAL_WORDING; conditional use: Hide/adjust for Requiem, Passiontide and procession-dependent introductory omissions.*
 
-### MB01 — Prayers at the foot of the altar (short companion note)
+### MB01 — Prayers at the foot of the altar · short companion note
 
 **Français**
 
@@ -29,9 +38,9 @@ The priest approaches the altar with the words of Psalm 42: “Introibo ad altar
 
 “Introibo ad altare Dei” is the verse of Psalm 42 that opens the preparation at the altar. Its meaning belongs with the psalm rather than in a duplicate entry. [Scripture](https://www.newadvent.org/bible/psa042.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/298.png).
 
-*Accompagne : MB02. Pas de carte autonome.*
+*Embedded at: MB02; no independent card.*
 
-### MB03 — Confiteor (short companion note)
+### MB03 — Confiteor · short companion note
 
 **Français**
 
@@ -41,9 +50,9 @@ L’humilité du publicain qui se frappe la poitrine en demandant miséricorde (
 
 The tax collector striking his breast and asking for mercy (Luke 18:13) illuminates the humility of the Confiteor, in which the faithful acknowledge their own sins. [Scripture](https://www.newadvent.org/bible/luk018.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/298.png).
 
-*Accompagne : MF02_PENITENCE_GUIDE. Pas de carte autonome.*
+*Embedded at: MF02_PENITENCE_GUIDE; no independent card.*
 
-### MB04 — Kyrie (short companion note)
+### MB04 — Kyrie · short companion note
 
 **Français**
 
@@ -53,7 +62,7 @@ Les aveugles qui supplient Jésus de prendre pitié d’eux (Mt 20,30–31) mont
 
 The blind men asking Jesus for mercy (Matthew 20:30–31) express the disposition of the Kyrie: persevering appeal to the Lord's compassion. [Scripture](https://www.newadvent.org/bible/mat020.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/299.png).
 
-*Accompagne : MF01_KYRIE_CONTEXT. Pas de carte autonome.*
+*Embedded at: MF01_KYRIE_CONTEXT; no independent card.*
 
 ### MB05 — Gloria
 
@@ -65,9 +74,9 @@ The blind men asking Jesus for mercy (Matthew 20:30–31) express the dispositio
 
 At the Saviour's birth, the angels proclaim God's glory and the peace brought to mankind (Luke 2:14). The Gloria takes up their acclamation and unfolds it into a hymn of praise: the Church blesses the Father, adores the Son, confesses him as the Lamb who takes away the world's sins, and glorifies the Holy Spirit. Its opening adapts Luke's account; the remainder develops that praise in the Church's own hymn. [Scripture](https://www.newadvent.org/bible/luk002.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/300.png).
 
-*Référence biblique : Luke 2:14. Relation : SCRIPTURAL_WORDING_ADAPTED. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: SCRIPTURAL_WORDING_ADAPTED; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
-### N01 — Munda cor meum (new selected subject)
+### N01 — Munda cor meum
 
 **Français**
 
@@ -77,7 +86,7 @@ Avant l’Évangile, le ministre qui doit le proclamer prie : « Munda cor meum 
 
 Before the Gospel, the minister who is to proclaim it prays “Munda cor meum ac labia mea.” He asks God to purify his heart and lips, just as Isaiah's lips were cleansed by the burning coal brought by a seraph (Isaiah 6:5–7). The vision teaches that one who proclaims God's word must first receive purification. At Mass this prayer prepares the priest or deacon to announce the Gospel worthily. [Scripture](https://www.newadvent.org/bible/isa006.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/301.png).
 
-*Référence biblique : Isaiah 6:5–7. Relation : EXPLICIT_SCRIPTURAL_EVENT_REFERENCED_IN_LITURGICAL_PRAYER. Condition liturgique : Priest/deacon position and private prayer vary by Low/Sung/Solemn Mass.*
+*Source class: EXPLICIT_SCRIPTURAL_EVENT_REFERENCED_IN_LITURGICAL_PRAYER; conditional use: Priest/deacon position and private prayer vary by Low/Sung/Solemn Mass.*
 
 ### MB08 — Credo, Incarnation
 
@@ -89,23 +98,23 @@ Lorsque le Credo proclame « Et incarnatus est », l’Église confesse que le F
 
 At “Et incarnatus est,” the Creed confesses that the eternal Son of God took a true human nature without ceasing to be God. St John expresses this mystery with the words, “The Word was made flesh” (John 1:14). The prescribed genuflection gives visible expression to adoration of the Incarnation. The Creed thus joins the profession of faith to a bodily act of reverence. [Scripture](https://www.newadvent.org/bible/joh001.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/302.png).
 
-*Référence biblique : John 1:14. Relation : DOCTRINAL_SCRIPTURE_CONNECTION. Condition liturgique : Credo and genuflection depend on prescribed day and gesture profile.*
+*Source class: DOCTRINAL_SCRIPTURE_CONNECTION; conditional use: Credo and genuflection depend on prescribed day and gesture profile.*
 
 ## Offertory
 
-### N02 — Deus qui humanae substantiae / water and wine (short companion note)
+### N02 — Deus qui humanae substantiae / water and wine · short companion note
 
 **Français**
 
-Quand il mêle l’eau au vin, le prêtre demande que nous participions à la divinité du Christ, qui a pris part à notre humanité. Cette prière rappelle la participation à la nature divine promise en 2 P 1,4. Saint Cyprien explique aussi que le mélange de l’eau et du vin figure l’union du peuple chrétien au Christ. [Écriture](https://ebible.org/latVUC/2PE01.htm) · [Missel 1962](https://gregobase.selapa.net/sources/42/303.png).
+Quand il mêle l’eau au vin, le prêtre demande que nous participions à la divinité du Christ, qui a pris part à notre humanité. Cette prière rappelle la participation à la nature divine promise en 2 P 1,4. Saint Cyprien explique aussi que le mélange de l’eau et du vin figure l’union du peuple chrétien au Christ. [Saint Cyprien, lettre à Cécilius](https://www.newadvent.org/fathers/050662.htm) · [Écriture](https://ebible.org/latVUC/2PE01.htm) · [Missel 1962](https://gregobase.selapa.net/sources/42/303.png).
 
 **English**
 
-As water is mixed with wine, the priest prays that we may share in Christ's divinity, since he took part in our humanity. The prayer recalls the sharing in divine nature promised in 2 Peter 1:4. St Cyprian also explains the mingling of water and wine as a figure of the faithful's union with Christ. [Scripture](https://ebible.org/latVUC/2PE01.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/303.png).
+As water is mixed with wine, the priest prays that we may share in Christ's divinity, since he took part in our humanity. The prayer recalls the sharing in divine nature promised in 2 Peter 1:4. St Cyprian also explains the mingling of water and wine as a figure of the faithful's union with Christ. [St Cyprian to Caecilius](https://www.newadvent.org/fathers/050662.htm) · [Scripture](https://ebible.org/latVUC/2PE01.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/303.png).
 
-*Accompagne : MF03_WATER_WINE. Pas de carte autonome.*
+*Embedded at: MF03_WATER_WINE; no independent card.*
 
-### N03 — In spiritu humilitatis (new selected subject)
+### N03 — In spiritu humilitatis
 
 **Français**
 
@@ -115,19 +124,19 @@ Après l’offrande du calice, le prêtre s’incline et prie « In spiritu humi
 
 After offering the chalice, the priest bows and prays “In spiritu humilitatis.” The words come from Azariah's plea in the furnace: deprived of the Temple's place and means of sacrifice, he asks God to receive a humble spirit and contrite heart (Daniel 3:38–40). The Mass takes up this disposition of humility before the Eucharistic sacrifice, whose worth comes from Christ himself. [Scripture](https://www.newadvent.org/bible/dan003.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/303.png).
 
-*Référence biblique : Daniel 3:39–40. Relation : ADAPTED_SCRIPTURAL_WORDING. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: ADAPTED_SCRIPTURAL_WORDING; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
-### N04 — Dirigatur — Offertory incensation (new selected subject)
+### N04 — Dirigatur — Offertory incensation
 
 **Français**
 
-À l’Offertoire des Messes où l’encensement est prescrit, le prêtre prie avec le psaume 140 de la Vulgate : « Que ma prière s’élève devant vous comme l’encens » (Ps 140,2). La fumée qui monte rend visible le désir que les prières de l’Église soient reçues par Dieu. L’Apocalypse décrit également l’encens uni aux prières des saints dans le culte céleste (Ap 8,3–4). Cet encensement dépend du rite célébré et n’appartient pas à toutes les Messes basses. [Écriture](https://www.newadvent.org/bible/psa140.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/303.png).
+À l’Offertoire des Messes où l’encensement est prescrit, le prêtre prie avec le psaume 140 de la Vulgate : « Que ma prière s’élève devant vous comme l’encens » (Ps 140,2). La fumée qui monte rend visible le désir que les prières de l’Église soient reçues par Dieu. L’Apocalypse décrit également l’encens uni aux prières des saints dans le culte céleste (Ap 8,3–4). Cet encensement dépend du rite célébré et n’appartient pas à toutes les Messes basses. [Écriture](https://www.newadvent.org/bible/psa140.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/303.png). [Deuxième passage biblique](https://www.newadvent.org/bible/apo008.htm).
 
 **English**
 
-At the Offertory of Masses where incensation is prescribed, the priest prays with Vulgate Psalm 140: “Let my prayer rise before you like incense” (Psalm 140:2). The ascending smoke gives visible expression to the Church's desire that her prayers be received by God. Revelation also depicts incense joined to the prayers of the saints in heavenly worship (Revelation 8:3–4). This incensation depends on the form of Mass and is not part of every Low Mass. [Scripture](https://www.newadvent.org/bible/psa140.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/303.png).
+At the Offertory of Masses where incensation is prescribed, the priest prays with Vulgate Psalm 140: “Let my prayer rise before you like incense” (Psalm 140:2). The ascending smoke gives visible expression to the Church's desire that her prayers be received by God. Revelation also depicts incense joined to the prayers of the saints in heavenly worship (Revelation 8:3–4). This incensation depends on the form of Mass and is not part of every Low Mass. [Scripture](https://www.newadvent.org/bible/psa140.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/303.png). [Second biblical passage](https://www.newadvent.org/bible/apo008.htm).
 
-*Référence biblique : Psalm 140:2–4 Vulgate (141:2–4 modern). Relation : DIRECT_SCRIPTURAL_WORDING_CONDITIONAL_RITE. Condition liturgique : Only when Offertory incensation is prescribed; exclude Low Mass without incense.*
+*Source class: DIRECT_SCRIPTURAL_WORDING_CONDITIONAL_RITE; conditional use: Only when Offertory incensation is prescribed; exclude Low Mass without incense.*
 
 ### MB09 — Lavabo
 
@@ -139,9 +148,9 @@ En se lavant les mains à l’Offertoire, le prêtre récite le psaume 25 de la 
 
 As the priest washes his hands at the Offertory, he prays Vulgate Psalm 25: “Lavabo inter innocentes manus meas.” The psalmist loves the Lord's dwelling and longs to remain among those who give him praise. In the Mass, the bodily washing accompanies the desire for purity of soul before the Eucharistic sacrifice. These are actual psalm verses, generally numbered Psalm 26 in modern Bibles. [Scripture](https://www.newadvent.org/bible/psa025.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/303.png).
 
-*Référence biblique : Psalm 25:6–12 (Vulgate; 26:6–12 modern). Relation : DIRECT_SCRIPTURAL_WORDING. Condition liturgique : Use the actual Lavabo Psalm and 1962 ritual setting.*
+*Source class: DIRECT_SCRIPTURAL_WORDING; conditional use: Use the actual Lavabo Psalm and 1962 ritual setting.*
 
-### MB10 — Orate fratres (short companion note)
+### MB10 — Orate fratres · short companion note
 
 **Français**
 
@@ -151,7 +160,7 @@ En demandant aux fidèles de prier pour le sacrifice, l’« Orate fratres » le
 
 “Orate fratres” calls the faithful to unite themselves with Christ's offering. Paul likewise describes the Christian life as spiritual worship offered to God (Romans 12:1). [Scripture](https://www.newadvent.org/bible/rom012.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/304.png).
 
-*Accompagne : MF03_ORATE_FRATRES_CONTEXT. Pas de carte autonome.*
+*Embedded at: MF03_ORATE_FRATRES_CONTEXT; no independent card.*
 
 ## Sanctus, Consecration and Roman Canon
 
@@ -159,15 +168,15 @@ En demandant aux fidèles de prier pour le sacrifice, l’« Orate fratres » le
 
 **Français**
 
-Dans une vision, Isaïe entend les séraphins proclamer trois fois la sainteté du Seigneur (Is 6,3). Le Sanctus fait entrer cette louange dans la prière de l’Église : le ciel et la terre sont remplis de la gloire de Dieu. L’Apocalypse décrit elle aussi des êtres célestes célébrant sans cesse la sainteté divine (Ap 4,8). Ces deux visions distinctes éclairent la même adoration ; la formule de la Messe emploie « Deus Sabaoth », là où la Vulgate d’Isaïe dit « Deus exercituum ». [Écriture](https://www.newadvent.org/bible/isa006.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/376.png).
+Dans une vision, Isaïe entend les séraphins proclamer trois fois la sainteté du Seigneur (Is 6,3). Le Sanctus fait entrer cette louange dans la prière de l’Église : le ciel et la terre sont remplis de la gloire de Dieu. L’Apocalypse décrit elle aussi des êtres célestes célébrant sans cesse la sainteté divine (Ap 4,8). Ces deux visions distinctes éclairent la même adoration ; la formule de la Messe emploie « Deus Sabaoth », là où la Vulgate d’Isaïe dit « Deus exercituum ». [Écriture](https://www.newadvent.org/bible/isa006.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/376.png). [Deuxième passage biblique](https://www.newadvent.org/bible/apo004.htm).
 
 **English**
 
-In a vision, Isaiah hears the seraphim proclaim the Lord's holiness three times (Isaiah 6:3). The Sanctus brings that praise into the Church's worship: heaven and earth are full of God's glory. Revelation describes heavenly beings likewise praising the divine holiness without ceasing (Revelation 4:8). These are distinct visions that illuminate the same adoration. The Mass says “Deus Sabaoth,” where the Clementine Isaiah text has “Deus exercituum.” [Scripture](https://www.newadvent.org/bible/isa006.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/376.png).
+In a vision, Isaiah hears the seraphim proclaim the Lord's holiness three times (Isaiah 6:3). The Sanctus brings that praise into the Church's worship: heaven and earth are full of God's glory. Revelation describes heavenly beings likewise praising the divine holiness without ceasing (Revelation 4:8). These are distinct visions that illuminate the same adoration. The Mass says “Deus Sabaoth,” where the Clementine Isaiah text has “Deus exercituum.” [Scripture](https://www.newadvent.org/bible/isa006.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/376.png). [Second biblical passage](https://www.newadvent.org/bible/apo004.htm).
 
-*Référence biblique : Isaiah 6:3. Relation : SCRIPTURAL_WORDING_ADAPTED. Condition liturgique : The Sanctus may be sung by schola; distinguish the priest's own recitation from music.*
+*Source class: SCRIPTURAL_WORDING_ADAPTED; conditional use: The Sanctus may be sung by schola; distinguish the priest's own recitation from music.*
 
-### MB12 — Benedictus and Hosanna (short companion note)
+### MB12 — Benedictus and Hosanna · short companion note
 
 **Français**
 
@@ -177,9 +186,9 @@ Le « Benedictus » reprend l’accueil fait au Christ entrant à Jérusalem (Mt
 
 The Benedictus recalls the crowd greeting Christ on his entry into Jerusalem (Matthew 21:9). In the Sanctus this earthly acclamation joins the heavenly praise heard by Isaiah. [Scripture](https://www.newadvent.org/bible/mat021.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/376.png).
 
-*Accompagne : MB11. Pas de carte autonome.*
+*Embedded at: MB11; no independent card.*
 
-### MB13 — Te igitur intercessions (short companion note)
+### MB13 — Te igitur intercessions · short companion note
 
 **Français**
 
@@ -189,43 +198,43 @@ Au « Te igitur », le prêtre prie pour l’Église, le pape et l’évêque. C
 
 In “Te igitur,” the priest prays for the Church, the pope and the bishop. This intercession reflects Paul's call to pray for all, particularly those who hold authority (1 Timothy 2:1–2). [Scripture](https://www.newadvent.org/bible/1ti002.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/383.png).
 
-*Accompagne : MF04_CANON_INTERCESSIONS. Pas de carte autonome.*
+*Embedded at: MF04_CANON_INTERCESSIONS; no independent card.*
 
 ### MB14 — Consecration of the Host
 
 **Français**
 
-À la Cène, Jésus prend le pain et déclare : « Ceci est mon Corps », en ordonnant aux Apôtres de faire cela en mémoire de lui (1 Co 11,23–24). Au cœur de la Messe, le prêtre prononce les paroles de la consécration en la personne du Christ : le pain devient véritablement son Corps. Le sacrifice du Calvaire, offert une fois dans l’histoire, est rendu sacramentellement présent, non recommencé comme un nouvel événement. Le texte romain de 1962 possède sa formulation liturgique propre. [Écriture](https://www.newadvent.org/bible/1co011.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/388.png).
+À la Cène, Jésus prend le pain et déclare : « Ceci est mon Corps », en ordonnant aux Apôtres de faire cela en mémoire de lui (1 Co 11,23–24). Au cœur de la Messe, le prêtre prononce les paroles de la consécration en la personne du Christ : le pain devient véritablement son Corps. Le sacrifice du Calvaire, offert une fois dans l’histoire, est rendu sacramentellement présent, non recommencé comme un nouvel événement. Le texte romain de 1962 possède sa formulation liturgique propre. [Écriture](https://www.newadvent.org/bible/1co011.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/388.png). [Commentaire doctrinal ou patristique](https://www.newadvent.org/summa/4083.htm).
 
 **English**
 
-At the Last Supper Jesus takes bread and declares, “This is my body,” commanding the apostles to do this in remembrance of him (1 Corinthians 11:23–24). At the heart of Mass the priest speaks the words of consecration in the person of Christ, and the bread truly becomes his Body. Calvary's sacrifice, offered once in history, is made sacramentally present rather than begun again as another historical event. The 1962 Roman formula has its own received liturgical wording. [Scripture](https://www.newadvent.org/bible/1co011.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/388.png).
+At the Last Supper Jesus takes bread and declares, “This is my body,” commanding the apostles to do this in remembrance of him (1 Corinthians 11:23–24). At the heart of Mass the priest speaks the words of consecration in the person of Christ, and the bread truly becomes his Body. Calvary's sacrifice, offered once in history, is made sacramentally present rather than begun again as another historical event. The 1962 Roman formula has its own received liturgical wording. [Scripture](https://www.newadvent.org/bible/1co011.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/388.png). [Doctrinal or patristic source](https://www.newadvent.org/summa/4083.htm).
 
-*Référence biblique : 1 Corinthians 11:23–26. Relation : NARRATIVE_SCRIPTURE_CONNECTION. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: NARRATIVE_SCRIPTURE_CONNECTION; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
 ### MB15 — Consecration of the Chalice
 
 **Français**
 
-En donnant le calice aux Apôtres, le Christ révèle que son Sang est versé pour l’alliance nouvelle et la rémission des péchés (cf. Lc 22,20 ; Mt 26,28). À la consécration du calice, la Messe nous tourne vers l’offrande rédemptrice du Christ et la présence réelle de son Précieux Sang. Le Canon romain de 1962 inclut les mots « mysterium fidei » dans la formule prononcée sur le calice : ils appartiennent ici au texte liturgique reçu, sans être tirés mot pour mot du récit de saint Luc. [Écriture](https://www.newadvent.org/bible/luk022.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/389.png).
+En donnant le calice aux Apôtres, le Christ révèle que son Sang est versé pour l’alliance nouvelle et la rémission des péchés (cf. Lc 22,20 ; Mt 26,28). À la consécration du calice, la Messe nous tourne vers l’offrande rédemptrice du Christ et la présence réelle de son Précieux Sang. Le Canon romain de 1962 inclut les mots « mysterium fidei » dans la formule prononcée sur le calice : ils appartiennent ici au texte liturgique reçu, sans être tirés mot pour mot du récit de saint Luc. [Écriture](https://www.newadvent.org/bible/luk022.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/389.png). [Commentaire doctrinal ou patristique](https://www.newadvent.org/summa/4075.htm).
 
 **English**
 
-In giving the chalice to the apostles, Christ reveals that his Blood is poured out for the new covenant and the forgiveness of sins (Luke 22:20; Matthew 26:28). The consecration of the chalice directs the Church to Christ's redeeming self-offering and the real presence of his Precious Blood. In the 1962 Roman Canon the words “mysterium fidei” occur within the formula pronounced over the chalice, although they are not a verbatim phrase from Luke's institution account. [Scripture](https://www.newadvent.org/bible/luk022.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/389.png).
+In giving the chalice to the apostles, Christ reveals that his Blood is poured out for the new covenant and the forgiveness of sins (Luke 22:20; Matthew 26:28). The consecration of the chalice directs the Church to Christ's redeeming self-offering and the real presence of his Precious Blood. In the 1962 Roman Canon the words “mysterium fidei” occur within the formula pronounced over the chalice, although they are not a verbatim phrase from Luke's institution account. [Scripture](https://www.newadvent.org/bible/luk022.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/389.png). [Doctrinal or patristic source](https://www.newadvent.org/summa/4075.htm).
 
-*Référence biblique : Luke 22:20. Relation : NARRATIVE_SCRIPTURE_CONNECTION. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: NARRATIVE_SCRIPTURE_CONNECTION; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
 ### MB16 — Unde et memores
 
 **Français**
 
-Après la consécration, le Canon proclame la mémoire de la Passion bienheureuse, de la Résurrection et de l’Ascension du Seigneur. Saint Paul enseigne qu’en mangeant ce Pain et en buvant ce Calice, les fidèles annoncent la mort du Seigneur jusqu’à ce qu’il vienne (1 Co 11,26). « Unde et memores » exprime cette mémoire vivante dans l’offrande de l’Église : toute la victoire pascale du Christ est confessée dans l’unique sacrifice eucharistique. [Écriture](https://www.newadvent.org/bible/1co011.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/390.png).
+Après la consécration, le Canon proclame la mémoire de la Passion bienheureuse, de la Résurrection et de l’Ascension du Seigneur. Saint Paul enseigne qu’en mangeant ce Pain et en buvant ce Calice, les fidèles annoncent la mort du Seigneur jusqu’à ce qu’il vienne (1 Co 11,26). « Unde et memores » exprime cette mémoire vivante dans l’offrande de l’Église : toute la victoire pascale du Christ est confessée dans l’unique sacrifice eucharistique. [Écriture](https://www.newadvent.org/bible/1co011.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/390.png). [Commentaire doctrinal ou patristique](https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)).
 
 **English**
 
-After the Consecration, the Canon remembers the Lord's blessed Passion, Resurrection and Ascension. St Paul teaches that by eating this Bread and drinking this Chalice the faithful proclaim the Lord's death until he comes (1 Corinthians 11:26). “Unde et memores” gives this living remembrance a place in the Church's offering: the whole Paschal victory of Christ is confessed within the one Eucharistic sacrifice. [Scripture](https://www.newadvent.org/bible/1co011.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/390.png).
+After the Consecration, the Canon remembers the Lord's blessed Passion, Resurrection and Ascension. St Paul teaches that by eating this Bread and drinking this Chalice the faithful proclaim the Lord's death until he comes (1 Corinthians 11:26). “Unde et memores” gives this living remembrance a place in the Church's offering: the whole Paschal victory of Christ is confessed within the one Eucharistic sacrifice. [Scripture](https://www.newadvent.org/bible/1co011.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/390.png). [Doctrinal or patristic source](https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)).
 
-*Référence biblique : 1 Corinthians 11:26. Relation : DOCTRINAL_SCRIPTURE_CONNECTION. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: DOCTRINAL_SCRIPTURE_CONNECTION; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
 ### MB17 — Supra quae — Abel
 
@@ -237,33 +246,33 @@ Dans « Supra quae », le prêtre demande à Dieu d’accueillir l’offrande de
 
 In “Supra quae,” the priest asks God to receive the Church's offering as he received that of righteous Abel. Genesis relates that Abel brought the firstborn of his flock, and God looked favourably upon his offering (Genesis 4:4). The Canon recalls the righteousness of the giver and God's acceptance, while the Church confidently petitions for the sacrifice of Christ. Abel is a biblical person expressly named by the prayer, not an event restaged at the altar. [Scripture](https://www.newadvent.org/bible/gen004.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/390.png).
 
-*Référence biblique : Genesis 4:4. Relation : EXPLICIT_BIBLICAL_FIGURE. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: EXPLICIT_BIBLICAL_FIGURE; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
 ### MB18 — Supra quae — Abraham
 
 **Français**
 
-Le Canon évoque ensuite le sacrifice d’Abraham. Dieu éprouve la foi du patriarche en lui demandant Isaac, son fils bien-aimé, puis arrête sa main avant que l’enfant soit immolé (Gn 22). La tradition chrétienne reconnaît dans cette obéissance et cette offrande annoncée une figure du don parfait que le Père accomplit dans le Christ. La Messe rappelle donc un épisode réel de la Genèse, tout en l’éclairant par le sacrifice rédempteur de Jésus. [Écriture](https://www.newadvent.org/bible/gen022.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/390.png).
+Le Canon évoque ensuite le sacrifice d’Abraham. Dieu éprouve la foi du patriarche en lui demandant Isaac, son fils bien-aimé, puis arrête sa main avant que l’enfant soit immolé (Gn 22). La tradition chrétienne reconnaît dans cette obéissance et cette offrande annoncée une figure du don parfait que le Père accomplit dans le Christ. La Messe rappelle donc un épisode réel de la Genèse, tout en l’éclairant par le sacrifice rédempteur de Jésus. [Écriture](https://www.newadvent.org/bible/gen022.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/390.png). [Deuxième passage biblique](https://www.newadvent.org/bible/heb011.htm).
 
 **English**
 
-The Canon next recalls Abraham's sacrifice. God tests the patriarch's faith by asking for his beloved son Isaac, then stops Abraham before the child is killed (Genesis 22). Christian tradition sees in Abraham's obedience and intended offering a figure of the perfect self-gift accomplished in Christ. The Mass recalls a real episode of Genesis and understands it in the light of Jesus' redeeming sacrifice. [Scripture](https://www.newadvent.org/bible/gen022.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/390.png).
+The Canon next recalls Abraham's sacrifice. God tests the patriarch's faith by asking for his beloved son Isaac, then stops Abraham before the child is killed (Genesis 22). Christian tradition sees in Abraham's obedience and intended offering a figure of the perfect self-gift accomplished in Christ. The Mass recalls a real episode of Genesis and understands it in the light of Jesus' redeeming sacrifice. [Scripture](https://www.newadvent.org/bible/gen022.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/390.png). [Second biblical passage](https://www.newadvent.org/bible/heb011.htm).
 
-*Référence biblique : Genesis 22:1–19. Relation : EXPLICIT_BIBLICAL_FIGURE. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: EXPLICIT_BIBLICAL_FIGURE; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
 ### MB19 — Supra quae — Melchisedech
 
 **Français**
 
-Melchisédech, roi de Salem et prêtre du Dieu Très-Haut, accueille Abram avec du pain et du vin et le bénit (Gn 14,18–20). Le Canon le nomme parmi les figures anciennes de l’offrande agréable à Dieu. L’épître aux Hébreux explique en outre pourquoi son sacerdoce éclaire celui du Christ (He 7). La lecture chrétienne voit dans le pain et le vin une préfiguration eucharistique ; le récit de la Genèse, pris seul, ne décrit pas explicitement leur immolation sacrificielle. [Écriture](https://www.newadvent.org/bible/gen014.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/391.png).
+Melchisédech, roi de Salem et prêtre du Dieu Très-Haut, accueille Abram avec du pain et du vin et le bénit (Gn 14,18–20). Le Canon le nomme parmi les figures anciennes de l’offrande agréable à Dieu. L’épître aux Hébreux explique en outre pourquoi son sacerdoce éclaire celui du Christ (He 7). La lecture chrétienne voit dans le pain et le vin une préfiguration eucharistique ; le récit de la Genèse, pris seul, ne décrit pas explicitement leur immolation sacrificielle. [Écriture](https://www.newadvent.org/bible/gen014.htm) · [Missel romain de 1962, page originale](https://gregobase.selapa.net/sources/42/391.png). [Commentaire doctrinal ou patristique](https://www.newadvent.org/fathers/050662.htm).
 
 **English**
 
-Melchizedek, king of Salem and priest of God Most High, brings out bread and wine and blesses Abram (Genesis 14:18–20). The Canon names him among the ancient figures of an offering pleasing to God. Hebrews explains how his priesthood sheds light on Christ's (Hebrews 7). Christian interpretation sees a Eucharistic foreshadowing in the bread and wine, although Genesis itself does not explicitly describe those elements being sacrificed. [Scripture](https://www.newadvent.org/bible/gen014.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/391.png).
+Melchizedek, king of Salem and priest of God Most High, brings out bread and wine and blesses Abram (Genesis 14:18–20). The Canon names him among the ancient figures of an offering pleasing to God. Hebrews explains how his priesthood sheds light on Christ's (Hebrews 7). Christian interpretation sees a Eucharistic foreshadowing in the bread and wine, although Genesis itself does not explicitly describe those elements being sacrificed. [Scripture](https://www.newadvent.org/bible/gen014.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/391.png). [Doctrinal or patristic source](https://www.newadvent.org/fathers/050662.htm).
 
-*Référence biblique : Genesis 14:18–20. Relation : EXPLICIT_BIBLICAL_FIGURE. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: EXPLICIT_BIBLICAL_FIGURE; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
-### MB20 — Melchisedech and priesthood (short companion note)
+### MB20 — Melchisedech and priesthood · short companion note
 
 **Français**
 
@@ -273,9 +282,9 @@ L’épître aux Hébreux montre que le sacerdoce de Melchisédech éclaire celu
 
 Hebrews shows how Melchizedek's priesthood illuminates Christ's eternal priesthood (Hebrews 7). The passage deepens the figure expressly named by the Roman Canon. [Scripture](https://www.newadvent.org/bible/heb007.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/391.png).
 
-*Accompagne : MB19. Pas de carte autonome.*
+*Embedded at: MB19; no independent card.*
 
-## Pater noster and Communion
+## Our Father and Communion
 
 ### MB21 — Pater noster
 
@@ -287,9 +296,9 @@ Après le Canon, le prêtre récite la prière que Jésus a enseignée à ses di
 
 After the Canon, the priest prays the words Christ taught his disciples. The Our Father joins adoration of God's name, longing for his kingdom, daily bread, forgiveness and deliverance from evil (Matthew 6:9–13; Luke 11:2–4). The printed 1962 Latin Missal has “panem nostrum cotidianum,” corresponding in sense to Luke's “quotidianum”; the Clementine Matthew reads “supersubstantialem.” The Lord's Prayer is thus proclaimed in its received Roman liturgical form. [Scripture](https://www.newadvent.org/bible/mat006.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/395.png).
 
-*Référence biblique : Matthew 6:9–13. Relation : SCRIPTURAL_WORDING_ADAPTED. Condition liturgique : Respect priest/ministers' 1962 Pater noster delivery; printed Vatican spelling cotidianum.*
+*Source class: SCRIPTURAL_WORDING_ADAPTED; conditional use: Respect priest/ministers' 1962 Pater noster delivery; printed Vatican spelling cotidianum.*
 
-### MB22 — Libera nos (short companion note)
+### MB22 — Libera nos · short companion note
 
 **Français**
 
@@ -299,7 +308,7 @@ Le « Libera nos » prolonge « délivrez-nous du mal » du Notre Père (Mt 6,13
 
 “Libera nos” expands the Our Father's plea to be delivered from evil (Matthew 6:13), asking through the saints' intercession for God's peace and protection. [Scripture](https://www.newadvent.org/bible/mat006.htm) · [1962 Missal](https://gregobase.selapa.net/sources/42/398.png).
 
-*Accompagne : MB21. Pas de carte autonome.*
+*Embedded at: MB21; no independent card.*
 
 ### MB23 — Agnus Dei
 
@@ -311,9 +320,9 @@ En désignant Jésus, Jean-Baptiste annonce : « Voici l’Agneau de Dieu, qui e
 
 John the Baptist points to Jesus as “the Lamb of God, who takes away the sin of the world” (John 1:29). Before Communion the Church addresses Christ as the sacrificial Lamb who saves, asking first for mercy and then peace. At Masses for the Dead the petitions ask instead for the souls' rest: “dona eis requiem” and finally “dona eis requiem sempiternam.” The same biblical title thus serves differing liturgical intentions. [Scripture](https://www.newadvent.org/bible/joh001.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/400.png).
 
-*Référence biblique : John 1:29. Relation : SCRIPTURAL_WORDING_ADAPTED. Condition liturgique : Requiem Agnus has dona eis requiem / sempiternam and no breast strike.*
+*Source class: SCRIPTURAL_WORDING_ADAPTED; conditional use: Requiem Agnus has dona eis requiem / sempiternam and no breast strike.*
 
-### N05 — Domine Iesu Christe qui dixisti — peace prayer (new selected subject)
+### N05 — Domine Iesu Christe qui dixisti — peace prayer
 
 **Français**
 
@@ -323,7 +332,7 @@ Avant la Communion, la prière « Domine Iesu Christe, qui dixisti Apostolis tui
 
 Before Communion, the prayer “Domine Iesu Christe, qui dixisti Apostolis tuis” takes up Jesus' promise: “Peace I leave with you; my peace I give to you” (John 14:27). The priest asks the Lord to look not upon human sins but upon the faith of his Church, granting her unity and peace. Christ's peace is a gift deeper than the mere absence of conflict. Under the 1962 rite this prayer is omitted at Masses for the Dead. [Scripture](https://www.newadvent.org/bible/joh014.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/400.png).
 
-*Référence biblique : John 14:27. Relation : DIRECT_GOSPEL_WORDS_EMBEDDED_IN_ADDITIONAL_PRAYER. Condition liturgique : Peace prayer omitted in Masses for the Dead; pax conditional.*
+*Source class: DIRECT_GOSPEL_WORDS_EMBEDDED_IN_ADDITIONAL_PRAYER; conditional use: Peace prayer omitted in Masses for the Dead; pax conditional.*
 
 ### MB24 — Domine non sum dignus
 
@@ -335,7 +344,7 @@ Un centurion reconnaît l’autorité de Jésus et déclare qu’il n’est pas 
 
 A centurion acknowledges Jesus' authority and says he is unworthy to receive him under his roof: one word from the Lord can heal his servant (Matthew 8:8). Before Communion the priest takes up this profession of trust and humility: “Domine, non sum dignus,” asking for the healing of his own soul. The Gospel speaks of “puer meus,” the servant; the Mass applies the petition to “anima mea,” the communicant's soul. [Scripture](https://www.newadvent.org/bible/mat008.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/402.png).
 
-*Référence biblique : Matthew 8:8. Relation : SCRIPTURAL_WORDING_ADAPTED. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: SCRIPTURAL_WORDING_ADAPTED; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
 ### MB25 — Priest's Communion prayer
 
@@ -347,7 +356,7 @@ Avant de recevoir le Précieux Sang, le prêtre reprend la gratitude du psaume 1
 
 Before receiving the Precious Blood, the priest takes up the gratitude of Vulgate Psalm 115: “What shall I render to the Lord for all he has given me? I will take the chalice of salvation” (Psalm 115:3–4). In the psalm these words express thanksgiving for God's deliverance; in the Mass they accompany Communion from Christ's chalice. In many modern Bibles the passage is numbered Psalm 116:12–13. [Scripture](https://www.studybible.info/Clementine_Vulgate/Psalms%20115:3-8) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/403.png).
 
-*Référence biblique : Psalm 115:3–4 (Clementine Vulgate; Psalm 116:12–13 in modern numbering). Relation : DIRECT_SCRIPTURAL_WORDING. Condition liturgique : Only at its corresponding Mass section, not on unrelated rituals.*
+*Source class: DIRECT_SCRIPTURAL_WORDING; conditional use: Only at its corresponding Mass section, not on unrelated rituals.*
 
 ## Conclusion
 
@@ -361,18 +370,16 @@ Lorsque les rubriques le prescrivent, la Messe se conclut par le Prologue de sai
 
 When prescribed, the Mass concludes with St John's Prologue: in the beginning was the Word, the Word was God, and the Word became flesh and dwelt among us (John 1:1–14). This reading returns the whole celebration to the mystery of the Incarnation, the beginning of our salvation. The genuflection at “Et Verbum caro factum est” expresses adoration of the Word made flesh. The 1962 Missal also specifies celebrations on which this Last Gospel is omitted. [Scripture](https://www.newadvent.org/bible/joh001.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/409.png).
 
-*Référence biblique : John 1:1–14. Relation : VARIABLE_RITE_SCRIPTURE_READING. Condition liturgique : Last Gospel conditional: 1962 exceptions and Palm Sunday alternatives.*
+*Source class: VARIABLE_RITE_SCRIPTURE_READING; conditional use: Last Gospel conditional: 1962 exceptions and Palm Sunday alternatives.*
 
-## Scripture readings selected by the Mass Proper
+## Variable readings owned by the selected Mass Proper
 
-**MB06 — Epistle and lessons:** the app must resolve the prescribed lessons for the selected Proper and preserve multiple readings in their actual 1962 sequence. The Tenth Sunday after Pentecost (1 Corinthians 12:2–11) is only a source-verified example.
+**MB06 — Epistle / additional lessons.** Resolve the actual 1962 Mass source path and readings, including Ember days and other multi-reading ceremonies; 1 Corinthians 12:2–11 on the Tenth Sunday after Pentecost is evidence for that day only.
 
-**MB07 — Gospel:** the app must resolve the selected Gospel and Latin incipit, not use Luke 18:9–14 merely because it occurs in the research corpus for the Tenth Sunday after Pentecost.
+**MB07 — Gospel.** Resolve the Gospel and its Latin incipit from the actually selected 1962 Mass. Luke 18:9–14 on the Tenth Sunday after Pentecost is not a global default reading.
 
-## Editorial acceptance and outstanding technical gates
+## Editorial acceptance limits
 
-**Accepted for the research teaching manuscript:** 20 full explanations + 9 inline notes + 2 dynamic readout rules.
+**Accepted:** selection architecture, claims' order of presentation and research-grade bilingual teaching copy. **Not yet released:** independently approved translation/rights, all seasonal and ceremony-type runtime regressions, 1962 proper source identity integration and any manual public publication decision. No code in the native Mass reader, its 48-card LIVE presentation, the Bible Atlas or Sacred Art catalogues was modified.
 
-**Not yet authorised for publication:** bilingual translation approval, final original-text citation audit, rights to reproduce third-party translations or images, and observed runtime tests for sung, Low, Requiem, seasonal special days, different rites and variable Propers. The existing 1962 Missal production player and 48-card source architecture remain unchanged.
-
-[Editorial selection dataset](../../data/learn/research/mass-bible-editorial-selection-20261013.v1.json) · [20 main paragraphs](../../data/learn/research/mass-bible-20-primary-polished-bilingual-20261013.v1.json) · [nine notes and two variable readings](../../data/learn/research/mass-bible-9-inline-and-2-variable-20261013.v1.json)
+[Source inventory and editorial decisions](../../data/learn/research/mass-bible-editorial-selection-20261013.v1.json) · [Full paragraphs](../../data/learn/research/mass-bible-20-primary-polished-bilingual-20261013.v1.json) · [Short notes and runtime selections](../../data/learn/research/mass-bible-9-inline-and-2-variable-20261013.v1.json)
