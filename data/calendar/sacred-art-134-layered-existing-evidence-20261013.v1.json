@@ -22,14 +22,15 @@
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
     "additionalResearchLeadSubjects": 54,
-    "withPreviousUnapprovedOptionOnly": 14,
+    "withPreviousUnapprovedOptionOnly": 7,
     "withNoRecordedSourceOrOlderOption": 10,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
     "chosen101Unchanged": true,
     "newInstitutionalSourceWaveSubjectCount": 27,
-    "newInstitutionalSourceWaveCandidateCount": 29
+    "newInstitutionalSourceWaveCandidateCount": 29,
+    "previousOptionInstitutionallyIdentified": 7
   },
   "subjects": [
     {
@@ -67,16 +68,32 @@
       "category": "Devotions",
       "priority": "P0",
       "scriptureOrContext": "The original devotional icon is the canonical subject.",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_INSTITUTIONALLY_IDENTIFIED",
       "previousCandidateArtworkIds": [
         "ART-retan-school-icon-painter-ur-ady-of-erpetual-elp-historic-icon"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-reconciled-DEV-12",
+          "artist": "Cretan school, anonymous",
+          "title": "Original Icon of Our Lady of Perpetual Help",
+          "sourceUrl": "https://www.perpetuosoccorso.it/en/about-shrine/",
+          "medium": "devotional tempera icon",
+          "sceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+          "matchNotes": "Original icon at Redemptorist Sant'Alfonso in Rome, exact canonical devotion. Icon exception does not imply that the painting aesthetics match.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+      "researchWave": "2026-10-13-old-identity-reconciliation"
     },
     {
       "subjectId": "DEV-13",
@@ -1416,16 +1433,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Exodus 16:1–36",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_INSTITUTIONALLY_IDENTIFIED",
       "previousCandidateArtworkIds": [
         "ART-icolas-oussin-he-sraelites-athering-anna"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-reconciled-BIB-EX07",
+          "artist": "Nicolas Poussin",
+          "title": "La Manne",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062511",
+          "medium": "oil on canvas",
+          "sceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+          "matchNotes": "Louvre INV 7275, 1638–39, 149 x 200 cm; direct Exodus 16 subject.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+      "researchWave": "2026-10-13-old-identity-reconciliation"
     },
     {
       "subjectId": "BIB-EX08",
@@ -1433,16 +1466,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Exodus 17:1–7",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_INSTITUTIONALLY_IDENTIFIED",
       "previousCandidateArtworkIds": [
         "ART-orrado-iaquinto-oses-triking-the-ock"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-reconciled-BIB-EX08",
+          "artist": "Corrado Giaquinto",
+          "title": "Moses striking the Rock",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/corrado-giaquinto-moses-striking-the-rock",
+          "medium": "oil on canvas",
+          "sceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+          "matchNotes": "National Gallery London NG6516 1743–44 oil modello; direct Exodus 17 subject.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+      "researchWave": "2026-10-13-old-identity-reconciliation"
     },
     {
       "subjectId": "BIB-EX09",
@@ -1842,16 +1891,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "1 Kings 3:16–28",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_INSTITUTIONALLY_IDENTIFIED",
       "previousCandidateArtworkIds": [
         "ART-orkshop-of-eter-aul-ubens-udgment-of-olomon"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-reconciled-BIB-IS11",
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "The Judgment of Solomon",
+          "sourceUrl": "https://www.museodelprado.es/coleccion/obra-de-arte/el-juicio-de-salomon/2c837c1b-880c-485b-b04c-184b1c9bd5d6",
+          "medium": "oil on canvas",
+          "sceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+          "matchNotes": "Prado workshop attribution, 1611–14, 184 x 218.5 cm, 1 Kings 3.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+      "researchWave": "2026-10-13-old-identity-reconciliation"
     },
     {
       "subjectId": "BIB-IS12",
@@ -1937,17 +2002,46 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Tobit 6:1–9",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_INSTITUTIONALLY_IDENTIFIED",
       "previousCandidateArtworkIds": [
         "ART-orkshop-of-errocchio-obias-and-the-ngel",
         "ART-an-ievens-obias-and-the-ngel"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-reconciled-BIB-XL03",
+          "artist": "Jan Lievens",
+          "title": "A Landscape with Tobias and the Angel",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/jan-lievens-a-landscape-with-tobias-and-the-angel",
+          "medium": "oil on wood",
+          "sceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+          "matchNotes": "National Gallery London NG72; fish/dog object ambiguous, valid overall Tobias and Raphael narrative.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        },
+        {
+          "artworkId": "ART-research-20261013-verrocchio-tobias",
+          "artist": "Workshop of Andrea del Verrocchio",
+          "title": "Tobias and the Angel",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/workshop-of-andrea-del-verrocchio-tobias-and-the-angel/",
+          "medium": "egg tempera on wood",
+          "sceneMatch": "DIRECT_SUBJECT_RESEARCH",
+          "matchNotes": "National Gallery London NG781 c.1470–75; workshop attribution. Unapproved.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+      "researchWave": "2026-10-13-old-identity-reconciliation"
     },
     {
       "subjectId": "BIB-XL04",
@@ -2099,16 +2193,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "2 Maccabees 7:1–42",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_INSTITUTIONALLY_IDENTIFIED",
       "previousCandidateArtworkIds": [
         "ART-nonymous-icard-painter-artyrdom-of-the-even-accabean-rothers"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-reconciled-BIB-XL14",
+          "artist": "Anonymous Picard painter",
+          "title": "Le Martyre des sept frères Macchabées",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010052835",
+          "medium": "painting on wood",
+          "sceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+          "matchNotes": "Louvre RF 1945 24, loan Musée de Picardie; exact 2 Maccabees 7 subject. Historic style not automatically approved.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+      "researchWave": "2026-10-13-old-identity-reconciliation"
     },
     {
       "subjectId": "BIB-G10",
@@ -2780,16 +2890,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "John 21:15–19",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_INSTITUTIONALLY_IDENTIFIED",
       "previousCandidateArtworkIds": [
         "ART-aphael-and-workshop-hrist-s-harge-to-eter-cartoon"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-reconciled-BIB-A20",
+          "artist": "Raphael",
+          "title": "Christ's Charge to Peter",
+          "sourceUrl": "https://www.vam.ac.uk/articles/the-raphael-cartoons-christs-charge-to-peter/",
+          "medium": "cartoon for tapestry",
+          "sceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+          "matchNotes": "V&A Royal Loans 3, 1515–16; John 21 with Matthew 16 imagery, not conventional oil painting.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "DIRECT_OR_CANONICAL_RESEARCH_ONLY",
+      "researchWave": "2026-10-13-old-identity-reconciliation"
     },
     {
       "subjectId": "BIB-V01",
@@ -2870,5 +2996,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "27 original zero-lead subjects have research candidates; 10 remain without leads, no artistic approvals."
+  "recentSourceWave": "Seven previously unidentified options now matched to institutional originals; no artwork approved or acquired."
 }
