@@ -4,8 +4,6 @@ on:
     branches: [platform/885-sacred-art-candidates]
     paths:
       - "tools/calendar/acquire-selected-masterpiece-review.py"
-      - "tools/calendar/acquire-selected-missing-originals.py"
-      - "data/calendar/sacred-art-selected-originals-acquisition-queue-20261013.v1.json"
       - "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json"
       - "data/calendar/sacred-art-masterpiece-selected-source-triage-20261012.v1.json"
       - ".github/workflows/sacred-art-selected-masterpiece-acquisition.yml"
@@ -67,6 +65,10 @@ jobs:
           if-no-files-found: warn
 
   acquire-selected-missing-review:
+    # Wikimedia Commons blocked imageinfo requests with HTTP 429 on 13 October.
+    # Keep this fail-closed source recovery as an explicitly dispatched job;
+    # ordinary catalogue edits must not re-request rate-limited originals.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 28
     steps:
