@@ -17,7 +17,9 @@
     },
     "benchmarkUrlsRecovered": 1,
     "verifiedInstitutionalObjectsThisWave": 20,
-    "institutionalObjectUrlKnownTotal": 40
+    "institutionalObjectUrlKnownTotal": 40,
+    "commonsSelectedOriginalReviewCandidates": 4,
+    "commonsPoorCompositionMasterBlocked": 1
   },
   "notes": [
     "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
@@ -27,7 +29,8 @@
     "Aesthetically excluded artists cannot be reintroduced; this queue records history and source recovery only.",
     "Only source-verified, human-approved, rights-reviewed, image-reviewed originals may enter final gallery.",
     "15 selected artwork exact institutional identities resolved using Prado inventory numbers and Louvre object IDs. Browser search URLs replaced with immutable museum records; no original bytes, rights, user approval, or app assets changed.",
-    "Five previously URL-less named selections have verified current museum object pages: Lanfranco NGI.72, Navarrete NGI.1721, Caravaggio Uffizi 4659 and Thyssen St Catherine, and Champaigne Louvre INV1125. Uncropped files are not in the source archive yet."
+    "Five previously URL-less named selections have verified current museum object pages: Lanfranco NGI.72, Navarrete NGI.1721, Caravaggio Uffizi 4659 and Thyssen St Catherine, and Champaigne Louvre INV1125. Uncropped files are not in the source archive yet.",
+    "Four exact Commons image titles selected for REVIEW-ONLY acquisition with pixel/dimension/rights evidence; includes Sailko CC BY 3.0 photograph, and excludes misleading high-pixel La Petite Cène image with incorrect aspect ratio."
   ],
   "works": [
     {
@@ -392,7 +395,22 @@
       "identityVerifiedOn": "2026-10-13",
       "imageAcquired": false,
       "rightsCleared": false,
-      "sourceIdentityNote": "Caravaggio original ca.1598-99, commercial reuse/image rights independent; press downloads restricted to journalistic uses."
+      "sourceIdentityNote": "Caravaggio original ca.1598-99, commercial reuse/image rights independent; press downloads restricted to journalistic uses.",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Caravaggio - Saint Catherine of Alexandria (post-restoration image).jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_Saint_Catherine_of_Alexandria_(post-restoration_image).jpg",
+        "expectedPixelWidth": 2134,
+        "expectedPixelHeight": 2750,
+        "artworkPhysicalWidthCm": 133,
+        "artworkPhysicalHeightCm": 173,
+        "rightsLabel": "CC0",
+        "creditRequired": null,
+        "acquisitionState": "REVIEW_ONLY_GITHUB_ACTION_PENDING",
+        "actualSha256": null,
+        "photoQuality": "NOT_YET_PIXEL_INSPECTED",
+        "fullCompositionGate": "ASPECT_RATIO_COMPARE_WITH_OBJECT_DIMENSIONS_BEFORE_REVIEW",
+        "copyrightCaveat": "Platform publication requires separate legal assessment and confirmation of licence and presentation"
+      }
     },
     {
       "editorialArtworkId": "ART-aravaggio-he-acrifice-of-saac",
@@ -416,7 +434,22 @@
       "identityVerifiedOn": "2026-10-13",
       "imageAcquired": false,
       "rightsCleared": false,
-      "sourceIdentityNote": "Caravaggio circa 1603, verified original by museum, not a later copy."
+      "sourceIdentityNote": "Caravaggio circa 1603, verified original by museum, not a later copy.",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Sacrifice of Isaac-Caravaggio (Uffizi).jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Sacrifice_of_Isaac-Caravaggio_(Uffizi).jpg",
+        "expectedPixelWidth": 7972,
+        "expectedPixelHeight": 6142,
+        "artworkPhysicalWidthCm": 135,
+        "artworkPhysicalHeightCm": 104,
+        "rightsLabel": "PUBLIC_DOMAIN_MARK_PD_ART",
+        "creditRequired": null,
+        "acquisitionState": "REVIEW_ONLY_GITHUB_ACTION_PENDING",
+        "actualSha256": null,
+        "photoQuality": "NOT_YET_PIXEL_INSPECTED",
+        "fullCompositionGate": "ASPECT_RATIO_COMPARE_WITH_OBJECT_DIMENSIONS_BEFORE_REVIEW",
+        "copyrightCaveat": "Platform publication requires separate legal assessment and confirmation of licence and presentation"
+      }
     },
     {
       "editorialArtworkId": "ART-omenico-etti-oses-before-the-urning-ush",
@@ -525,7 +558,22 @@
       "identityVerifiedOn": "2026-10-13",
       "imageAcquired": false,
       "rightsCleared": false,
-      "sourceIdentityNote": "The complete 229 x 426 cm composition, not a square crop."
+      "sourceIdentityNote": "The complete 229 x 426 cm composition, not a square crop.",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Giovanni lanfranco, moltiplicazione dei pani e dei pesci, 1624-25, 01.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_lanfranco%2C_moltiplicazione_dei_pani_e_dei_pesci%2C_1624-25%2C_01.jpg",
+        "expectedPixelWidth": 4914,
+        "expectedPixelHeight": 2802,
+        "artworkPhysicalWidthCm": 426,
+        "artworkPhysicalHeightCm": 229,
+        "rightsLabel": "CC_BY_3_0",
+        "creditRequired": "Sailko · https://commons.wikimedia.org/wiki/User:Sailko · CC BY 3.0",
+        "acquisitionState": "REVIEW_ONLY_GITHUB_ACTION_PENDING",
+        "actualSha256": null,
+        "photoQuality": "NOT_YET_PIXEL_INSPECTED",
+        "fullCompositionGate": "ASPECT_RATIO_COMPARE_WITH_OBJECT_DIMENSIONS_BEFORE_REVIEW",
+        "copyrightCaveat": "Platform publication requires separate legal assessment and confirmation of licence and presentation"
+      }
     },
     {
       "editorialArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
@@ -622,12 +670,19 @@
       "rightsCleared": false,
       "sourceIdentityNote": "Complete 287 x 238 cm 1576 painting, National Gallery Ireland; Commons PD-Art alternative exists at 2523x3000 pixels but was not acquired.",
       "researchOnlyOriginalCandidate": {
-        "url": "https://commons.wikimedia.org/wiki/File:Abraham_i_els_tres_%C3%A0ngels-Fernandez_Navarrete.jpg",
-        "resolution": "2523 x 3000",
-        "rightsLabel": "Wikimedia Commons Public Domain Mark / PD-Art, local commercial-law assessment separate",
-        "acquisitionState": "SOURCE_FOUND_BYTES_NOT_DOWNLOADED",
-        "attributionMatch": "National Gallery of Ireland NGI.1721",
-        "fullCanvasCheck": "PREVIEW_SEEMS_FULL_PAINTING; MASTER_BYTE_EXAM_NOT_DONE"
+        "commonsFileTitle": "Abraham i els tres àngels-Fernandez Navarrete.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Abraham_i_els_tres_%C3%A0ngels-Fernandez_Navarrete.jpg",
+        "expectedPixelWidth": 2523,
+        "expectedPixelHeight": 3000,
+        "artworkPhysicalWidthCm": 238,
+        "artworkPhysicalHeightCm": 287,
+        "rightsLabel": "PUBLIC_DOMAIN_MARK_PD_ART",
+        "creditRequired": null,
+        "acquisitionState": "REVIEW_ONLY_GITHUB_ACTION_PENDING",
+        "actualSha256": null,
+        "photoQuality": "NOT_YET_PIXEL_INSPECTED",
+        "fullCompositionGate": "ASPECT_RATIO_COMPARE_WITH_OBJECT_DIMENSIONS_BEFORE_REVIEW",
+        "copyrightCaveat": "Platform publication requires separate legal assessment and confirmation of licence and presentation"
       }
     },
     {
@@ -908,7 +963,17 @@
       "identityVerifiedOn": "2026-10-13",
       "imageAcquired": false,
       "rightsCleared": false,
-      "sourceIdentityNote": "1651-52 reduced version of Grande Cène, explicitly separate from INV 1124. Do not substitute full-size composition."
+      "sourceIdentityNote": "1651-52 reduced version of Grande Cène, explicitly separate from INV 1124. Do not substitute full-size composition.",
+      "researchOnlyOriginalCandidate": {
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg",
+        "expectedPixelWidth": 2816,
+        "expectedPixelHeight": 2112,
+        "paintingWidthCm": 149,
+        "paintingHeightCm": 80,
+        "acquisitionState": "REJECT_FOR_AUTOMATED_SOURCE_ACQUISITION_ASPECT_RATIO_MISMATCH",
+        "reason": "Digital image ratio 1.33 versus object painting ratio 1.86. Need visually verify photograph/possible crop before any asset reuse.",
+        "actualSha256": null
+      }
     },
     {
       "editorialArtworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
