@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { properToReaderSlots, assertReaderProperReady } from "../src/mass/proper-reader-slots.js";
+import {composeProperReaderParagraphs} from "../src/mass/proper-reader-composition.js";
 
 const t=(lat,en)=>({lat,en,fr:""});
 const proper={
@@ -50,6 +51,19 @@ const frenchSuppressed=properToReaderSlots({...frenchProper,communion:{}},{
 });
 assert.equal(frenchSuppressed.ready,true,"French Proper lost certified NOT_APPLICABLE support");
 assert.equal(frenchSuppressed.slots.COMMUNION.status,"NOT_APPLICABLE");
+
+// The derived intermediate Amen and canonical final Amen have the same
+// text, but the responding actor differs between LOW and SUNG source clocks.
+for(const [form,role] of [["LOW","MINISTERS"],["SUNG","RESPONDERS"]]){
+  const p=composeProperReaderParagraphs("AO.SM.B019",[{
+    id:"COLLECT_SET.1.AMEN",kind:"RESPONSE",
+    latin:"℟. Amen.",vernacular:"℟. Amen.",speakerRole:"RESPONDERS",
+    prayerRole:"ORATION_RESPONSE",liturgicalGroup:"COLLECT_SET.1",
+  }],{language:"fr",form});
+  assert.equal(p[0].speakerRole,role,form+" intermediate Collect Amen actor mismatch");
+  assert.equal(p[1].id,"AO.SM.C0074");
+  assert.equal(p[1].speakerRole,role,form+" canonical final Collect Amen actor mismatch");
+}
 
 // A translated first prayer must never hide an untranslated additional
 // commemoration in the actual rendered Mass Proper.
