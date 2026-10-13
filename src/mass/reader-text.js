@@ -193,6 +193,7 @@ function properParagraphs(block,properSlots,{language="en"}={}){
   const data=envelope.data ?? envelope;
   if(Array.isArray(data.paragraphs) && data.paragraphs.length){
     const resolved=data.paragraphs.map((p,index)=>({
+      ...p,
       id:String(p.id ?? block.Block_ID+".proper."+index),
       kind:String(p.kind ?? "TEXT").toUpperCase(),
       latin:p.latin ?? p.lat ?? null,
