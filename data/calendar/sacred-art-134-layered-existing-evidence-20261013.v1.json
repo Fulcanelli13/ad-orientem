@@ -18,9 +18,9 @@
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 15,
+    "additionalResearchLeadSubjects": 23,
     "withPreviousUnapprovedOptionOnly": 18,
-    "withNoRecordedSourceOrOlderOption": 45,
+    "withNoRecordedSourceOrOlderOption": 37,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
@@ -42,12 +42,14 @@
         {
           "artworkId": "ART-research-20261012-morlete-heart-of-mary-munal",
           "sourceUrl": "https://artsandculture.google.com/asset/the-heart-of-mary/TAFcx9ThkUZqHw",
-          "artist": "Juan Patricio Morlete Ruiz",
           "title": "The Heart of Mary / El Corazón de María",
+          "artist": "Juan Patricio Morlete Ruiz",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "Historical MUNAL companion painting to selected 1759 Heart of Jesus; Marian Heart bears lilies and sword; examine actual high-quality reproduction and rights separately. Google Arts creation date '1000' is erroneous, must NOT import. Do not conflate traditional Immaculate Heart with Immaculate Conception. Existing selected 101 artworks untouched."
         }
       ],
@@ -538,12 +540,14 @@
         {
           "artworkId": "ART-research-20261012-roman-school-saint-bede-cycle",
           "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200230125-0",
-          "artist": "Anonymous Roman school",
           "title": "Saint Bede — English saints cycle",
+          "artist": "Anonymous Roman school",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "individual Saint Bede component of a documented cycle; object link pending"
         }
       ],
@@ -630,12 +634,14 @@
         {
           "artworkId": "ART-research-20261012-franchi-portrait-albert-the-great",
           "sourceUrl": "https://www.catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0060-00113_R03",
-          "artist": "Giuseppe Franchi",
           "title": "Portrait of Saint Albert the Great",
+          "artist": "Giuseppe Franchi",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "exact saint portrait"
         }
       ],
@@ -685,12 +691,14 @@
         {
           "artworkId": "ART-research-20261012-vallejo-glorification-immaculate-canisius",
           "sourceUrl": "https://artsandculture.google.com/asset/glorification-of-the-immaculate-conception/UAG7iiXG4ZAo5A?hl=en",
-          "artist": "Francisco Antonio Vallejo",
           "title": "Glorification of the Immaculate Conception",
+          "artist": "Francisco Antonio Vallejo",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "Saint Peter Canisius appears among many figures; contextual group scene"
         }
       ],
@@ -738,12 +746,14 @@
         {
           "artworkId": "ART-research-20261012-ligurian-school-cyril-alexandria",
           "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700018145",
-          "artist": "Anonymous Ligurian painter",
           "title": "Saint Cyril of Alexandria",
+          "artist": "Anonymous Ligurian painter",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "exact saint portrait"
         }
       ],
@@ -765,12 +775,14 @@
         {
           "artworkId": "ART-research-20261012-antonio-nannoni-cyril-jerusalem",
           "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900117888A-1",
-          "artist": "Attributed to Antonio Nannoni",
           "title": "Saint Cyril of Jerusalem",
+          "artist": "Attributed to Antonio Nannoni",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "exact saint portrait, small fresco"
         }
       ],
@@ -1225,12 +1237,14 @@
         {
           "artworkId": "ART-research-20261012-poussin-crossing-red-sea",
           "sourceUrl": "https://www.ngv.vic.gov.au/explore/collection/work/4271/",
-          "artist": "Nicolas Poussin",
           "title": "The Crossing of the Red Sea",
+          "artist": "Nicolas Poussin",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "exact Exodus 14 scene"
         }
       ],
@@ -1301,12 +1315,14 @@
         {
           "artworkId": "ART-research-20261012-poussin-adoration-golden-calf",
           "sourceUrl": "https://www.nationalgallery.org.uk/paintings/nicolas-poussin-the-adoration-of-the-golden-calf",
-          "artist": "Nicolas Poussin",
           "title": "The Adoration of the Golden Calf",
+          "artist": "Nicolas Poussin",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "exact Exodus 32 scene"
         }
       ],
@@ -1433,12 +1449,14 @@
         {
           "artworkId": "ART-research-20261012-restout-dedication-temple-solomon",
           "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010063365",
-          "artist": "Jean Restout II",
           "title": "The Dedication of Solomon’s Temple",
+          "artist": "Jean Restout II",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "exact subject; monumental French 4.3 × 8 m composition"
         }
       ],
@@ -1723,10 +1741,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Matthew 5–7",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "nga-52039-callot-sermon-1635",
+          "sourceUrl": "https://www.nga.gov/artworks/52039-sermon-mount",
+          "title": "Sermon on the Mount",
+          "artist": "Jacques Callot",
+          "matchedImageExamined": false,
+          "artisticTier": "SECONDARY_ONLY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": "ETCHING",
+          "scripturalRelation": "EXACT_NARRATIVE",
+          "matchNotes": "1635 NGA museum object 1969.15.884; exact scene, but a 6.3 x 8.5 cm miniature etching, not a substantial painterly Home or Gospel hero. Preserve as optional illustration rather than search mandate."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -1738,10 +1770,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Luke 7:11–17",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "saint-roch-le-sueur-nain-1640",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl020208487",
+          "title": "Résurrection du fils de la veuve de Naïm",
+          "artist": "Eustache Le Sueur",
+          "matchedImageExamined": false,
+          "artisticTier": "CHECK_SAINT_ROCH_ORIGINAL",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": "OIL_PAINTING_VIA_DRAWING_WITNESS",
+          "scripturalRelation": "EXACT_SUBJECT_REPORTED",
+          "matchNotes": "Louvre official record for a related Simon Vouet study explicitly states the oil painting, by Eustache Le Sueur, is preserved at Saint-Roch church in Paris. Drawing itself not exact whole painting; obtain object/image and rights before ranking."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -1760,12 +1806,14 @@
         {
           "artworkId": "ART-research-20261012-delacroix-christ-asleep-tempest",
           "sourceUrl": "https://www.metmuseum.org/art/collection/search/436176",
-          "artist": "Eugène Delacroix",
           "title": "Christ Asleep during the Tempest",
+          "artist": "Eugène Delacroix",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "exact storm narrative; moment before Christ calms the sea"
         }
       ],
@@ -1780,10 +1828,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Matthew 14:22–33",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "nga-30616-vellert-peter-walking-water",
+          "sourceUrl": "https://www.nga.gov/artworks/30616-saint-peter-walking-water",
+          "title": "Saint Peter Walking on the Water",
+          "artist": "Dirk Jacobsz Vellert",
+          "matchedImageExamined": false,
+          "artisticTier": "SECONDARY_ONLY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": "ENGRAVING",
+          "scripturalRelation": "EXACT_NARRATIVE",
+          "matchNotes": "NGA signed 1525 engraving; accurate Christ/Peter in water and boat. The NGA oil Christ at Sea of Galilee (object 41637) is NOT Matthew 14 but John 21, so exclude that painting from Walking on Water."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -1804,12 +1866,14 @@
         {
           "artworkId": "ART-research-20261013-rembrandt-hermitage-prodigal",
           "sourceUrl": "https://www.hermitagefoundation.co.uk/prodigal-son-rembrandt",
-          "artist": "Rembrandt van Rijn",
           "title": "The Return of the Prodigal Son",
+          "artist": "Rembrandt van Rijn",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "Exactly the return/reconciliation episode Luke 15:20–24, not entire parable. Source institutional UK Hermitage Foundation; 2020 image photograph credited to State Hermitage and reproduction rights HELD. Large painterly masterpiece, full composition check needed."
         }
       ],
@@ -1831,23 +1895,27 @@
         {
           "artworkId": "ART-research-20261012-beuckelaer-four-elements-fire",
           "sourceUrl": "https://www.nationalgallery.org.uk/paintings/joachim-beuckelaer-the-four-elements-fire",
-          "artist": "Joachim Beuckelaer",
           "title": "The Four Elements: Fire",
+          "artist": "Joachim Beuckelaer",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "Martha and Mary with Christ appear as a small background scene"
         },
         {
           "artworkId": "ART-research-20261013-velazquez-martha-mary-ng1375",
           "sourceUrl": "https://www.nationalgallery.org.uk/paintings/diego-velazquez-christ-in-the-house-of-martha-and-mary",
-          "artist": "Diego Velázquez",
           "title": "Christ in the House of Martha and Mary",
+          "artist": "Diego Velázquez",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "National Gallery NG1375 exact Luke 10:38–42 appears as SMALL BACKGROUND vignette in kitchen genre painting; remarkable quality but narratively weak mobile crop. Do not label foreground kitchen women the historical sisters automatically. Reproduction image rights pending."
         }
       ],
@@ -1862,10 +1930,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Matthew 16:13–20",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "vatican-sistine-perugino-keys",
+          "sourceUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/parete-nord/storie-di-cristo/consegna-delle-chiavi.html",
+          "title": "Handing over of the Keys",
+          "artist": "Pietro Perugino",
+          "matchedImageExamined": false,
+          "artisticTier": "HIGH_IMPORTANCE_POTENTIAL_PRIORITY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": "MONUMENTAL_FRESCO",
+          "scripturalRelation": "KEYS_HANDOVER_SUBEVENT_MATTHEW16",
+          "matchNotes": "Vatican Museums explicitly tie Sistine Chapel fresco to Matthew 16:13-20. Exact Petrine primacy scene (keys). Large landscape chapel fresco, principal figures small on phone and Vatican photograph rights separate."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -1886,12 +1968,14 @@
         {
           "artworkId": "ART-research-20261013-crabeth-incredulity-sk-a-1965",
           "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Incredulity-of-St-Thomas--ba245dd27df1192fbf11cc9e8797cfb7",
-          "artist": "Wouter Pietersz II Crabeth",
           "title": "The Incredulity of St Thomas",
+          "artist": "Wouter Pietersz II Crabeth",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "Rijksmuseum SK-A-1965, c.1626–30, exact John 20:24–29 encounter in Baroque oil, public domain. Museum reports substantial surface abrasion, losses, discolored varnish; technical colour/quality check before artistic promotion. No Caravaggio attribution."
         }
       ],
@@ -1913,12 +1997,14 @@
         {
           "artworkId": "ART-research-20261013-raphael-charge-peter-va-cartoon",
           "sourceUrl": "https://www.vam.ac.uk/articles/the-raphael-cartoons-christs-charge-to-peter/",
-          "artist": "Raphael",
           "title": "Christ's Charge to Peter",
+          "artist": "Raphael",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "V&A Royal Loans.3 painted tapestry cartoon c.1515–16, exact Risen Christ commissioning Peter John 21:15–17 with sheep and Peter. NOT standard oil canvas. Royal Collection Trust reproduction rights and format held; extraordinary relevance for biblical doctrine, full image and textile-cartoon category required."
         }
       ],
@@ -1940,12 +2026,14 @@
         {
           "artworkId": "ART-research-20261013-tintoretto-prado-washing-p002824",
           "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-washing-of-the-feet/77d1fd63-1918-40b7-a79e-6d427e19bed8",
-          "artist": "Jacopo Robusti Tintoretto",
           "title": "The Washing of the Feet",
+          "artist": "Jacopo Robusti Tintoretto",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "Prado inventory P002824 autograph Tintoretto, 1548–49. Exact John 13:1–17 washing scene, but enormous 210×533cm panorama with Christ/Peter at far right: strong museum painting unsuitable for centered phone hero. Prado reproduction rights held."
         }
       ],
@@ -1969,12 +2057,14 @@
         {
           "artworkId": "ART-research-20261013-poussin-met437330-healing-lame",
           "sourceUrl": "https://www.metmuseum.org/art/collection/search/437330",
-          "artist": "Nicolas Poussin",
           "title": "Saints Peter and John Healing the Lame Man",
+          "artist": "Nicolas Poussin",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
           "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
           "matchNotes": "Met object 437330, 1655 oil on canvas, exact Acts 3:1–10 and temple step composition, public-domain object with Met Open Access. Prefer source-exact Poussin over inaccurate generic Acts illustration; final full-quality and crop checks pending."
         }
       ],
@@ -1989,10 +2079,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 8:26–40",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "rijks-rp-p-1961-1043-eunuch-rembrandt",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Baptism-of-the-Eunuch--37a2e7e158c083b3a5285f67e7cbed46",
+          "title": "The Baptism of the Eunuch",
+          "artist": "Rembrandt van Rijn",
+          "matchedImageExamined": false,
+          "artisticTier": "EXCELLENT_PRINT_NOT_HERO_OIL",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": "ETCHING_DRYPOINT",
+          "scripturalRelation": "EXACT_ACTS8",
+          "matchNotes": "Rijksmuseum RP-P-1961-1043 describes Philip baptizing Ethiopian royal official; exact event, but print not oil painting. Caption Philip the evangelist/deacon, not Apostle Philip."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -2004,10 +2108,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 9:36–43",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ng4573-brunswick-raising-tabitha",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/attributed-to-the-brunswick-monogrammist-the-raising-of-tabitha",
+          "title": "The Raising of Tabitha",
+          "artist": "Attributed to the Brunswick Monogrammist",
+          "matchedImageExamined": false,
+          "artisticTier": "PROMISING_WITH_CONDITION_HOLD",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": "OIL_ON_PANEL",
+          "scripturalRelation": "PROBABLE_EXACT_ACTS9",
+          "matchNotes": "National Gallery London inventory NG4573 (possibly c.1540), says probably Peter raising Tabitha; damaged/extended edges, paint alteration and later reconstructed head. Visually appealing but preservation fidelity and attribution warning are essential."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -2019,10 +2137,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 10:1–48",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "nga-54321-galle-cornelius-peter",
+          "sourceUrl": "https://www.nga.gov/artworks/54321-cornelius-worshipping-saint-peter",
+          "title": "Cornelius Worshipping Saint Peter",
+          "artist": "Philip Galle after Jan van der Straet",
+          "matchedImageExamined": false,
+          "artisticTier": "SECONDARY_ONLY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": "ENGRAVING",
+          "scripturalRelation": "RELATED_SUBEVENT_ACTS10_NOT_CONVERSION_TOTALITY",
+          "matchNotes": "NGA 54321 engraving of Cornelius kneeling before Peter. One moment of Acts 10, not automatically depiction of the baptism or full conversion. A map/context and text may suffice."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -2173,10 +2305,24 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 27:13–44",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "nga-90938-basse-malta-shipwreck",
+          "sourceUrl": "https://www.nga.gov/artworks/90938-saint-paul-shipwrecked-island-malta",
+          "title": "Saint Paul Shipwrecked on the Island of Malta",
+          "artist": "Willem Basse",
+          "matchedImageExamined": false,
+          "artisticTier": "SECONDARY_MAP_FIRST",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": "ETCHING_ENGRAVING",
+          "scripturalRelation": "EXACT_ACTS27",
+          "matchNotes": "NGA 90938 signed 1634 print depicts shipwreck near coast, survivors and wrecked ship. Existing Acts route map is more useful for geographical context; print optional."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -2261,5 +2407,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "BIB-G18, BIB-G19, BIB-G21, BIB-G23, BIB-G26, BIB-A02 exact institutional originals and material/rights holds, still not acquired"
+  "recentSourceWave": "NT selective institutional painting, fresco, and print studies for BIB-G10, G11, G13, G20, G22, A04, A06, A07, A18; no acquisitions or approvals"
 }
