@@ -202,4 +202,100 @@ for(const [cue,track,placement] of [
    cue+": high-risk Canon reader ownership gate lost");
 }
 
+
+const firstPassSourceReview=load("../data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json");
+assert.equal(firstPassSourceReview.schema,"ao-canon-first-pass-19-ritus-source-review-v1");
+assert.equal(firstPassSourceReview.status,"SOURCE_EVENTS_CHECKED_FRENCH_PUBLICATION_NOT_APPROVED");
+const firstPassSourceRows=promotion.decisions.filter(x=>
+  x.reviewGate==="FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF");
+assert.deepEqual(firstPassSourceReview.rows.map(x=>x.cueId),
+  firstPassSourceRows.map(x=>x.cueId),
+  "All 19 first-pass Canon rubrics must be checked in canonical order");
+let holds=0;
+for(const [index,review] of firstPassSourceReview.rows.entries()){
+  const d=firstPassSourceRows[index],row=source.rows.find(x=>x.cueId===review.cueId);
+  assert.equal(review.actionId,d.candidateActionId);
+  assert.equal(row.candidateActions[0].id,review.actionId);
+  assert.equal(row.candidateActions[0].actor,"PRIEST");
+  assert.equal(anchorsByAction.get(review.actionId)?.verifiedSourceWordAnchor,review.latinWordAnchor);
+  assert.equal(review.sourceSection,row.candidateActions[0].ritusLocator);
+  assert.equal(review.eventSourceCheck,"CHECKED_AGAINST_1962_RITUS");
+  assert.ok(Array.isArray(review.sourceUrls)&&review.sourceUrls.length===2);
+  assert.ok(review.sourceUrls.every(url=>url.startsWith("https://")));
+  assert.ok(String(review.sourceFinding??"").length>20,"Source-specific review note missing");
+  assert.equal(review.canonicalOwner,"AO.SM_CANON_SOURCE_CUE");
+  assert.equal(review.frenchDraftId,review.actionId);
+  assert.equal(review.originalDraftRemainsUnpublished,true);
+  assert.equal(review.publication,"BLOCKED_PENDING_APPROVAL");
+  assert.equal(review.priestClock,"INDEPENDENT_OBSERVED_PRIEST_ACTION_REQUIRED");
+  assert.equal(review.faithfulPosture,"NO_AUTOMATIC_DERIVATION");
+  if(review.copyReview==="EDIT_PRECISION_BEFORE_EDITOR_SIGNOFF"){
+    assert.equal(review.cueId,"AO.SM.C0187");
+    assert.ok(review.proposedOriginalFrenchCorrection?.includes("Súpplices"));
+    holds++;
+  }else assert.equal(review.copyReview,"SOURCE_ALIGNED_PENDING_EDITOR_SIGNOFF");
+}
+assert.deepEqual(firstPassSourceReview.totals,{
+  reviewed:19,sourceEventChecked:19,draftAligned:18,copyPrecisionHold:1,published:0,
+});
+assert.equal(holds,1,"Unreviewed French precision hold must not be dropped");
+
+
+const complexSourceReview=load("../data/research/mass-canon-complex-23-ritus-source-review-20261013.json");
+assert.equal(complexSourceReview.schema,"ao-canon-complex-23-ritus-source-review-v1");
+assert.equal(complexSourceReview.status,
+  "CEREMONIAL_SEQUENCING_AND_SOURCE_REVIEW_COMPLETE_PUBLICATION_BLOCKED");
+const complexPromotionRows=promotion.decisions.filter(x=>
+  x.reviewGate==="SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF");
+assert.deepEqual(complexSourceReview.rows.map(x=>x.cueId),
+  complexPromotionRows.map(x=>x.cueId),
+  "Every one of 23 complex Canon cue gaps must be source adjudicated in order");
+const expectedClasses={
+  ORDERED_SEQUENCE:6,MULTI_TEXT_MARK:5,CONDITIONAL_WORDS:2,
+  NEGATIVE_EXPLANATORY:1,CONDITIONAL_MINISTER:3,
+  CONTINUATION_NOT_ACTION:2,CANONICAL_TEXT_VARIANT:1,
+  AUDIBLE_AND_GESTURE_TRANSITION:3,
+};
+assert.deepEqual(complexSourceReview.totals,{
+  complexReviewed:23,publicationReady:0,issueClasses:expectedClasses,
+});
+const observedClasses=Object.fromEntries(Object.keys(expectedClasses).map(x=>[x,0]));
+for(const [index,review] of complexSourceReview.rows.entries()){
+  const decision=complexPromotionRows[index],row=source.rows.find(x=>x.cueId===review.cueId);
+  assert.equal(review.actionId,decision.candidateActionId);
+  assert.equal(row.candidateActions[0].id,review.actionId);
+  assert.equal(review.existingReviewTrack,decision.reviewTrack);
+  assert.equal(review.sourceAnchorKind,anchorsByAction.get(review.actionId).sourceAnchorType);
+  assert.equal(review.sourceSection,row.candidateActions[0].ritusLocator);
+  assert.equal(review.preserveSourceCueId,true);
+  assert.equal(review.copyApproval,"REQUIRED");
+  assert.equal(review.displayInLive,
+    "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE");
+  assert.equal(review.sourceClock,
+    "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER");
+  assert.ok(Array.isArray(review.checkedSources)&&review.checkedSources.length===2);
+  assert.ok(review.checkedSources.every(x=>x.startsWith("https://")));
+  assert.ok(String(review.requiredPresentationGate).length>10);
+  assert.ok(String(review.sourceAdjudication).length>45);
+  assert.ok(Object.hasOwn(observedClasses,review.issueClass));
+  observedClasses[review.issueClass]++;
+}
+assert.deepEqual(observedClasses,expectedClasses);
+for(const [cue,cls,gate] of [
+  ["AO.SM.C0172","NEGATIVE_EXPLANATORY","GUIDE_ONLY_NO_GESTURE_TRANSIENT"],
+  ["AO.SM.C0186","CONTINUATION_NOT_ACTION","SUPPRESS_REPEATED_GESTURE_SHOW_STATE_ONLY"],
+  ["AO.SM.C0199","CONTINUATION_NOT_ACTION","SUPPRESS_REPEATED_GESTURE_MINISTER_CLOCK_SEPARATE"],
+  ["AO.SM.C0204","ORDERED_SEQUENCE","MINOR_ELEVATION_NOT_MAJOR_OSTENSION"],
+  ["AO.SM.C0196","AUDIBLE_AND_GESTURE_TRANSITION","VOICE_RIBBON_PLUS_ONE_OBSERVED_CHEST_STRIKE"],
+  ["AO.SM.C0201","CONDITIONAL_MINISTER","PRIEST_STAGE_IDS_AND_OPTIONAL_DEACON"],
+]){
+  const review=complexSourceReview.rows.find(x=>x.cueId===cue);
+  assert.deepEqual([review?.issueClass,review?.requiredPresentationGate],[cls,gate],
+    cue+": distinct ceremonial actor or guide ownership lost");
+}
+assert.deepEqual([
+  ...new Set([...firstPassSourceReview.rows,...complexSourceReview.rows].map(x=>x.cueId)),
+].sort(),gaps.map(x=>x.cueId).sort(),
+  "19+23 source-review ledgers must cover all 42 Canon gaps, no duplications");
+
 console.log("PASS Canon 58/62 source-anchored preview: 42 rubric gaps preserved; form, actor and observational clocks fail closed.");

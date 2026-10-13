@@ -1,0 +1,443 @@
+{
+  "schema": "ao-canon-complex-23-ritus-source-review-v1",
+  "date": "2026-10-13",
+  "status": "CEREMONIAL_SEQUENCING_AND_SOURCE_REVIEW_COMPLETE_PUBLICATION_BLOCKED",
+  "summary": "Second-pass source adjudication for all 23 complex Canon cue locations. This is a source-based implementation decision ledger, not finished French rubrics or an observed-priest engine.",
+  "sourcePolicy": {
+    "latin": "1962 Ritus servandus VIII–X; retain canonical original Latin donor bytes",
+    "french": "Original drafts in mass-canon-french-rubric-62-original-redraft-20261013.json must receive independent copy approval",
+    "timings": "Independent observed micro-stages, never the reader's scroll position",
+    "posture": "Follow selected and observed community practice; never infer from the priest",
+    "ministers": "Use existing conditional form minister branch, including Solemn deacon and incensed-Missa Cantata thurifer"
+  },
+  "totals": {
+    "complexReviewed": 23,
+    "publicationReady": 0,
+    "issueClasses": {
+      "ORDERED_SEQUENCE": 6,
+      "MULTI_TEXT_MARK": 5,
+      "CONDITIONAL_WORDS": 2,
+      "NEGATIVE_EXPLANATORY": 1,
+      "CONDITIONAL_MINISTER": 3,
+      "CONTINUATION_NOT_ACTION": 2,
+      "CANONICAL_TEXT_VARIANT": 1,
+      "AUDIBLE_AND_GESTURE_TRANSITION": 3
+    }
+  },
+  "rows": [
+    {
+      "cueId": "AO.SM.C0150",
+      "actionId": "AO.CANON.R62.001",
+      "existingReviewTrack": "CEREMONY_SEQUENCE",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.1",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "ORDERED_SEQUENCE",
+      "sourceAdjudication": "Raise eyes/hands, lower eyes, join/place hands on altar, then bow profoundly for Te igitur; do not assert simultaneity.",
+      "requiredPresentationGate": "SEPARATE_PRECANON_STAGE_IDS",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "actionId": "AO.CANON.R62.003",
+      "existingReviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.1",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "MULTI_TEXT_MARK",
+      "sourceAdjudication": "Three distinct crosses at haec dona, haec munera, haec sancta sacrificia; one cue and three word anchors.",
+      "requiredPresentationGate": "THREE_INDEPENDENT_PRINTED_CROSS_ANCHORS",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0153",
+      "actionId": "AO.CANON.R62.004",
+      "existingReviewTrack": "FORM_OR_SOURCE_VARIANT",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.1–2",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "CONDITIONAL_WORDS",
+      "sourceAdjudication": "Hands remain extended; the Pope and diocesan bishop formula has source-defined conditional wording. Do not replace the formula based on a guessed contemporary identity.",
+      "requiredPresentationGate": "SOURCE_SELECTED_CELEBRANT_AND_SEE_VARIANT",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0157",
+      "actionId": "AO.CANON.R62.008",
+      "existingReviewTrack": "FORM_OR_SOURCE_VARIANT",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.4",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "CONDITIONAL_WORDS",
+      "sourceAdjudication": "Communicantes has seasonal proper forms. Keep the current selected Missal variant and the extended-hands state; do not attach a fixed year-round paragraph.",
+      "requiredPresentationGate": "SEASONAL_CANON_TEXT_SELECTION",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "actionId": "AO.CANON.R62.013",
+      "existingReviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.4",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "MULTI_TEXT_MARK",
+      "sourceAdjudication": "Attach one priest cross to each printed benedictam, adscriptam and ratam cross, over Host and Chalice together.",
+      "requiredPresentationGate": "THREE_INDEPENDENT_PRINTED_CROSS_ANCHORS",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0168",
+      "actionId": "AO.CANON.R62.017",
+      "existingReviewTrack": "CEREMONY_SEQUENCE",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.4",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "ORDERED_SEQUENCE",
+      "sourceAdjudication": "The priest takes the Host between paired fingers for Qui pridie; other Hosts are a separate conditional preparation, not a default object on the altar.",
+      "requiredPresentationGate": "SEPARATE_HOST_TAKE_AND_OPTIONAL_OTHER_HOSTS",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0172",
+      "actionId": "AO.CANON.R62.021",
+      "existingReviewTrack": "EXPLANATORY_NO_ACTION",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.4",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "NEGATIVE_EXPLANATORY",
+      "sourceAdjudication": "Fregit belongs to the narrative. Do not perform or display a physical Host fraction during the Institution Narrative; the fracture belongs later.",
+      "requiredPresentationGate": "GUIDE_ONLY_NO_GESTURE_TRANSIENT",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0173",
+      "actionId": "AO.CANON.R62.022",
+      "existingReviewTrack": "CEREMONY_SEQUENCE",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.5",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "ORDERED_SEQUENCE",
+      "sourceAdjudication": "The priest utters Hoc est enim Corpus meum secretly with elbows on the altar; Host adoration/elevation follows only as a separate priest-observed event.",
+      "requiredPresentationGate": "CONSECRATION_WORDS_DISTINCT_FROM_LATER_ELEVATION",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0175",
+      "actionId": "AO.CANON.R62.028",
+      "existingReviewTrack": "FORM_OR_MINISTER_DEPENDENT",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.7",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "CONDITIONAL_MINISTER",
+      "sourceAdjudication": "Chalice uncovering and its small preparatory lift precede the Chalice consecration; Solemn deacon assists when required. Do not call this preparatory lift the public major elevation.",
+      "requiredPresentationGate": "PRIEST_AND_CONDITIONAL_DEACON_OWNERSHIP",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "actionId": "AO.CANON.R62.032",
+      "existingReviewTrack": "CEREMONY_SEQUENCE",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.7",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "ORDERED_SEQUENCE",
+      "sourceAdjudication": "The Chalice words of consecration are spoken continuously and secretly; the Chalice is replaced, adoration follows and the major elevation occurs later.",
+      "requiredPresentationGate": "CHALICE_WORDS_DISTINCT_FROM_LATER_ELEVATION",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0180",
+      "actionId": "AO.CANON.R62.033",
+      "existingReviewTrack": "CEREMONY_SEQUENCE",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "VIII.7",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "ORDERED_SEQUENCE",
+      "sourceAdjudication": "After the Chalice consecration the Chalice is replaced, Haec quotiescumque is spoken secretly, and the first genuflection follows; no simultaneous move.",
+      "requiredPresentationGate": "SPEAKING_AND_FIRST_GENUFLECTION_SEPARATE_STAGES",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "actionId": "AO.CANON.R62.038",
+      "existingReviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.1",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "MULTI_TEXT_MARK",
+      "sourceAdjudication": "Hostiam puram, sanctam, immaculatam each has its own printed cross over Host and Chalice together.",
+      "requiredPresentationGate": "THREE_INDEPENDENT_PRINTED_CROSS_ANCHORS",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "actionId": "AO.CANON.R62.039",
+      "existingReviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.1",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "MULTI_TEXT_MARK",
+      "sourceAdjudication": "Panem sanctum signs over the Host only, then Calicem salutis signs over the Chalice only.",
+      "requiredPresentationGate": "TWO_SEPARATE_OBJECT_ANCHORS",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0186",
+      "actionId": "AO.CANON.R62.040",
+      "existingReviewTrack": "CONTINUING_STATE_NO_NEW_GESTURE",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.1",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "CONTINUATION_NOT_ACTION",
+      "sourceAdjudication": "At Supra quae the hands continue extended; no additional gesture transients or repeated in-text icon should be manufactured.",
+      "requiredPresentationGate": "SUPPRESS_REPEATED_GESTURE_SHOW_STATE_ONLY",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "actionId": "AO.CANON.R62.043",
+      "existingReviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.1",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "MULTI_TEXT_MARK",
+      "sourceAdjudication": "At Corpus the Host is signed; at Sanguinem the Chalice is signed. Two real acts, not an undifferentiated cross icon.",
+      "requiredPresentationGate": "TWO_SEPARATE_OBJECT_ANCHORS",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "actionId": "AO.CANON.R62.044",
+      "existingReviewTrack": "TEXT_VARIANT_REQUIRES_EXACT_MATCH",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.1",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "CANONICAL_TEXT_VARIANT",
+      "sourceAdjudication": "Use the displayed source-owned spelling of coelesti/caelesti in its existing cue when binding the self-cross; never silently rewrite Latin to suit a normalized anchor.",
+      "requiredPresentationGate": "EXACT_RENDERED_SOURCE_TEXT_ANCHOR",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "actionId": "AO.CANON.R62.050",
+      "existingReviewTrack": "VOICE_AND_GESTURE_BOUNDARY",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.3",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "AUDIBLE_AND_GESTURE_TRANSITION",
+      "sourceAdjudication": "Only Nobis quoque peccatoribus is somewhat audible; one strike of the breast with right hand and left hand resting on corporal. The remainder is not loud.",
+      "requiredPresentationGate": "VOICE_RIBBON_PLUS_ONE_OBSERVED_CHEST_STRIKE",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0197",
+      "actionId": "AO.CANON.R62.051",
+      "existingReviewTrack": "VOICE_AND_GESTURE_BOUNDARY",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.3",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "AUDIBLE_AND_GESTURE_TRANSITION",
+      "sourceAdjudication": "At famulis tuis the priest returns to secret voice and extended hands. Change the voice-state once; do not duplicate lengthy text prompts.",
+      "requiredPresentationGate": "VOICE_RIBBON_TRANSITION_TO_SECRET",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0199",
+      "actionId": "AO.CANON.R62.053",
+      "existingReviewTrack": "CONTINUING_STATE_NO_NEW_GESTURE",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.3",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "CONTINUATION_NOT_ACTION",
+      "sourceAdjudication": "At Per quem hands stay joined from Per Christum, without an invented new joined-hands gesture; Solemn deacon approaches on his own minister clock.",
+      "requiredPresentationGate": "SUPPRESS_REPEATED_GESTURE_MINISTER_CLOCK_SEPARATE",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "actionId": "AO.CANON.R62.055",
+      "existingReviewTrack": "FORM_OR_MINISTER_DEPENDENT",
+      "sourceAnchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceSection": "IX.3",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "CONDITIONAL_MINISTER",
+      "sourceAdjudication": "The priest genuflects and takes Host for the doxology, while the Chalice is uncovered; at Solemn Mass the deacon's uncovering is conditional and separately observed.",
+      "requiredPresentationGate": "PRIEST_STAGE_IDS_AND_OPTIONAL_DEACON",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "actionId": "AO.CANON.R62.058",
+      "existingReviewTrack": "CEREMONY_SEQUENCE",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "IX.3",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "ORDERED_SEQUENCE",
+      "sourceAdjudication": "Holding Host over Chalice, the priest slightly raises the species together at omnis honor et gloria. Distinguish this minor elevation from both major elevations.",
+      "requiredPresentationGate": "MINOR_ELEVATION_NOT_MAJOR_OSTENSION",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "actionId": "AO.CANON.R62.059",
+      "existingReviewTrack": "FORM_OR_MINISTER_DEPENDENT",
+      "sourceAnchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceSection": "IX.3",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "CONDITIONAL_MINISTER",
+      "sourceAdjudication": "Replace Host, cover Chalice when required and genuflect in order; the Solemn deacon may cover Chalice, but never inherits the priest genuflection.",
+      "requiredPresentationGate": "PRIEST_STAGE_IDS_AND_OPTIONAL_DEACON",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "cueId": "AO.SM.C0206",
+      "actionId": "AO.CANON.R62.060",
+      "existingReviewTrack": "VOICE_AND_GESTURE_BOUNDARY",
+      "sourceAnchorKind": "SOURCE_LATIN_WORDS",
+      "sourceSection": "X.1",
+      "checkedSources": [
+        "https://www.intratext.com/IXT/LAT0820/_PL.HTM",
+        "https://1962ordo.today/1962-rubrics/"
+      ],
+      "issueClass": "AUDIBLE_AND_GESTURE_TRANSITION",
+      "sourceAdjudication": "After covering and adoring the Sacrament, the priest clearly says Per omnia saecula saeculorum. The Amen response has its own form-based role.",
+      "requiredPresentationGate": "VOICE_RIBBON_AUDIBLE_BOUNDARY_SEPARATE_RESPONSE",
+      "preserveSourceCueId": true,
+      "sourceClock": "PRIEST_AND_MINISTER_OBSERVATION_INDEPENDENT_FROM_READER",
+      "copyApproval": "REQUIRED",
+      "displayInLive": "BLOCKED_PENDING_INDEPENDENT_EDITORIAL_AND_RUNTIME_ACCEPTANCE"
+    }
+  ]
+}
