@@ -54,7 +54,7 @@ for(const cue of ["AO.SM.C0005","AO.SM.C0007","AO.SM.C0009","AO.SM.C0011"]){
     const line=resolveOrdinarySpeaker(source,{form,blockId:"AO.SM.B003"});
     assert.equal(line.role,"MINISTERS",form+" / "+cue+" incorrect Psalm 42 speaker");
     assert.equal(line.kind,"RESPONSE",form+" / "+cue+" Psalm 42 must be a response");
-    assert.match(source.latin,/^M\\. /u,form+" / "+cue+" missing original minister initial");
+    assert.ok(String(source.latin).startsWith("M. "),form+" / "+cue+" missing original minister initial");
   }
 }
 
