@@ -1,0 +1,574 @@
+{
+  "schema": "AO_SACRED_ART_GAP_FILL_RESEARCH_BATCH_16_V1",
+  "researchedAt": "2026-10-13",
+  "source": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json (user exported 2026-10-13T19:52:45.207Z; 235 subjectRankings, 365 artwork ratings, 41 image repro selections)",
+  "branch": "platform/885-sacred-art-candidates",
+  "ownerPR": 887,
+  "aim": "Add exact verified candidate object URLs for previously empty high-value subject slots, without pretending that discovery equals acquired image or aesthetic approval.",
+  "counts": {
+    "allSubjectSlots": 235,
+    "subjectSlotsEmptyInLatestExport": 107,
+    "newlySourcedEmptySlotsForVisualReview": 21,
+    "stillEmptyWithoutSourceRecommendation": 86,
+    "newSourceObjectCandidates": 19,
+    "newPhysicalPaintings": 18,
+    "newOriginalDevotionalIcons": 1,
+    "existingSourceQueueLeadSubjectReuses": 12,
+    "totalSubjectIdsWithAtLeastOneLink": 25,
+    "newImageMastersAcquired": 0,
+    "newUserRatings": 0,
+    "productionApprovals": 0
+  },
+  "policies": [
+    "Preserve the user's current 277 scored entries, 41 chosen reproductions, 101 previous subject choices and zero-to-two exclusion without modification.",
+    "A subject now has SOURCE IDENTIFICATION only, not a preview, approval, copyright clearance, five-star rating, image acquisition or release.",
+    "One original artwork candidate may validly map to multiple subject slots; no duplicate physical artwork record.",
+    "Do not confuse saint Thomas apostle portrait with Caravaggio narrative Incredulity; distinct subjects and physical originals.",
+    "Do not replace Original Icon of Perpetual Help with an arbitrary Madonna; this original icon is a devotional-art exception to oil-painting preference.",
+    "School of Salvator Rosa / works after master / reproductions / engravings are excluded from this oil-original wave.",
+    "Image matching remains single physical original with multiple reproduction options; do not silently show wrong version/copy.",
+    "Bible Atlas coverage is selective and story-centred; do not force one new image per episode.",
+    "Temporary artist attribution UNVERIFIED_AUTHOR is an explicit review hold, never assumed to be unknown author historically.",
+    "Never depict St Thérèse photos/paintings as contemporaneous literal scenes without verification; preserve historic France-world evidence."
+  ],
+  "newCandidates": [
+    {
+      "candidateId": "G16-001",
+      "artist": "Diego Velázquez",
+      "title": "Christ in the House of Martha and Mary",
+      "institution": "National Gallery, London",
+      "accession": "NG1375",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/diego-velazquez-christ-in-the-house-of-martha-and-mary",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-G19"
+      ],
+      "iconographyAndProvenanceNote": "exact Gospel incident Luke 10:38–42, scene occupies opening at upper right; foreground kitchen is not literal Martha and Mary; not a visually dominant portrait of Christ.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-002",
+      "artist": "Jacopo Tintoretto",
+      "title": "Christ washing the Feet of the Disciples",
+      "institution": "National Gallery, London",
+      "accession": "NG1130",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/jacopo-tintoretto-christ-washing-the-feet-of-the-disciples",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-G26"
+      ],
+      "iconographyAndProvenanceNote": "independent circa-1575–80 San Trovaso canvas, darkened and worn surface; distinct from Prado 1548–49 San Marcuola version.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-003",
+      "artist": "Jacopo Tintoretto",
+      "title": "The Washing of the Feet",
+      "institution": "Museo Nacional del Prado, Madrid",
+      "accession": "PRADO_TINTORETTO_WASHING_FEET_INVENTORY_PENDING",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-washing-of-the-feet/77d1fd63-1918-40b7-a79e-6d427e19bed8",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-G26"
+      ],
+      "iconographyAndProvenanceNote": "original 1548–49 San Marcuola painting, different physical object and composition from NG1130; Prado commercial-use licensing must be checked.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-004",
+      "artist": "Orazio Gentileschi",
+      "title": "The Finding of Moses",
+      "institution": "National Gallery, London",
+      "accession": "NG6684",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/orazio-gentileschi-the-finding-of-moses",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-EX01"
+      ],
+      "iconographyAndProvenanceNote": "Exodus 2:2–10, early 1630s oil canvas; commissioned for Charles I and Henrietta Maria; faithful narrative depiction.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-005",
+      "artist": "Paolo Veronese",
+      "title": "The Finding of Moses",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "1937.1.38 / NGA 45",
+      "sourceUrl": "https://www.nga.gov/artworks/45-finding-moses",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-EX01"
+      ],
+      "iconographyAndProvenanceNote": "NGA-original oil canvas circa 1581/82; same biblical event as G16-004 but different physical painting and artist.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-006",
+      "artist": "Sébastien Bourdon",
+      "title": "The Finding of Moses",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "1961.9.65 / NGA 46164",
+      "sourceUrl": "https://www.nga.gov/artworks/46164-finding-moses",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-EX01"
+      ],
+      "iconographyAndProvenanceNote": "original circa-1655/60 oil canvas, French-world artist; distinct from Veronese and Orazio Gentileschi pictures.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-007",
+      "artist": "Nicolas Poussin",
+      "title": "The Adoration of the Golden Calf",
+      "institution": "National Gallery, London",
+      "accession": "NG5597",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/nicolas-poussin-the-adoration-of-the-golden-calf",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-EX10"
+      ],
+      "iconographyAndProvenanceNote": "Exodus 32, oil canvas 1633–34; artistic depiction of Israelites' idolatry as Moses descends. Note separate Australian Crossing of Red Sea companion.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-008",
+      "artist": "Peter Paul Rubens",
+      "title": "Daniel in the Lions' Den",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "1965.13.1 / NGA 50298",
+      "sourceUrl": "https://www.nga.gov/artworks/50298-daniel-lions-den",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-XL05"
+      ],
+      "iconographyAndProvenanceNote": "original c.1614–16 oil canvas, subject Daniel 6; accepted NGA Rubens original; user already has one option for this slot, add as stronger alternative.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-009",
+      "artist": "Jan Lievens",
+      "title": "A Landscape with Tobias and the Angel",
+      "institution": "National Gallery, London",
+      "accession": "NG72",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/jan-lievens-a-landscape-with-tobias-and-the-angel",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-XL03",
+        "SNT-OT-03"
+      ],
+      "iconographyAndProvenanceNote": "exact figures Tobias and Archangel Raphael but figures relatively small in evocative landscape; useful Book of Tobit or angel context, may be weak saint home hero.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-010",
+      "artist": "Barent Fabritius",
+      "title": "The Prodigal Son",
+      "institution": "Rijksmuseum, Amsterdam",
+      "accession": "SK-A-2958",
+      "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Prodigal-Son--ff34afca43c69e6b342858a689fc3006",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-G18"
+      ],
+      "iconographyAndProvenanceNote": "four parable episodes integrated on 96.5 x 289 cm oil canvas commissioned for Lutheran church; true Gospel narrative but very wide, poor phone-crop, never call an explicitly Catholic commissioned original.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-011",
+      "artist": "Pierre Puvis de Chavannes",
+      "title": "The Prodigal Son",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "NGA 46675",
+      "sourceUrl": "https://www.nga.gov/artworks/46675-prodigal-son",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "BIB-G18"
+      ],
+      "iconographyAndProvenanceNote": "original c.1879 image of destitute son with pigs (Luke 15); contextual narrative stage, NOT father's forgiveness scene; not auto-qualify as full parable illustration.",
+      "sourceClass": "OFFICIAL_HOLDING_MUSEUM_OBJECT_CATALOGUE",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-012",
+      "artist": "Auguste de Creuse",
+      "title": "Louis IX, dit saint Louis, roi de France",
+      "institution": "Versailles / French Musées de France (POP)",
+      "accession": "MV17 / INV3604",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/000PE004229",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "SNT-OT-08"
+      ],
+      "iconographyAndProvenanceNote": "official French Joconde record, 1837–38 74×64cm oil state-commissioned saint portrait; historical imagined 19th-century likeness, not authentic lifetime portrait.",
+      "sourceClass": "FRENCH_GOVERNMENT_OBJECT_RECORD",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-013",
+      "artist": "UNVERIFIED_AUTHOR",
+      "title": "Saint Vincent de Paul prêchant",
+      "institution": "Église Saint-Eustache, Paris",
+      "accession": "POP PM75000051",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM75000051",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "SNT-OT-28"
+      ],
+      "iconographyAndProvenanceNote": "Ministère de la Culture Palissy object painting at Saint-Eustache; subject Vincent preaching before Louis XIII and Anne of Austria. Author and image quality not verified.",
+      "sourceClass": "FRENCH_GOVERNMENT_OBJECT_RECORD",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-014",
+      "artist": "UNVERIFIED_AUTHOR",
+      "title": "Saint Vincent de Paul recueillant les enfants abandonnés",
+      "institution": "Église Saint-Germain-l'Auxerrois, Paris",
+      "accession": "POP PM75000072",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM75000072",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "SNT-OT-28"
+      ],
+      "iconographyAndProvenanceNote": "Separate physical parish picture of St Vincent receiving abandoned children; artist, original reproduction and rights still to be verified.",
+      "sourceClass": "FRENCH_GOVERNMENT_OBJECT_RECORD",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-015",
+      "artist": "UNVERIFIED_AUTHOR",
+      "title": "Guérison de saint Jean-Marie Vianney, curé d'Ars",
+      "institution": "Basilique d'Ars-sur-Formans, chapelle Sainte Philomène",
+      "accession": "POP PM01002671",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "SNT-OT-18"
+      ],
+      "iconographyAndProvenanceNote": "1843 oil canvas of Vianney in bed and St Philomena apparition, exact historical scene, not an isolated portrait; original object identified at basilica.",
+      "sourceClass": "FRENCH_GOVERNMENT_OBJECT_RECORD",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-016",
+      "artist": "François-Maurice Rozaneau",
+      "title": "Sainte Thérèse de l'Enfant-Jésus",
+      "institution": "Église Notre-Dame-du-Chapelet, Bordeaux",
+      "accession": "POP PM33001074",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM33001074",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "DEV-13",
+        "SNT-OT-05"
+      ],
+      "iconographyAndProvenanceNote": "Original painting attributed by France's monuments register to François-Maurice Rozaneau; devotional saint image, require live image aesthetic inspection.",
+      "sourceClass": "FRENCH_GOVERNMENT_OBJECT_RECORD",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-017",
+      "artist": "UNVERIFIED_AUTHOR",
+      "title": "Sainte Thérèse de l'Enfant Jésus en extase devant le Christ",
+      "institution": "Église Saint-Louis, La Barre-de-Monts",
+      "accession": "POP PM85001665",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM85001665",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "DEV-13",
+        "SNT-OT-05"
+      ],
+      "iconographyAndProvenanceNote": "Separate original canvas from Bordeaux painting; particular saint-in-ecstasy scene. May not function as portrait hero; source/reproduction check.",
+      "sourceClass": "FRENCH_GOVERNMENT_OBJECT_RECORD",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-018",
+      "artist": "UNVERIFIED_AUTHOR",
+      "title": "Le Coeur immaculé de Marie",
+      "institution": "Église Saint-Giaume, Nice",
+      "accession": "POP PM06001293",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM06001293",
+      "originalObjectType": "PAINTING",
+      "subjectIds": [
+        "DEV-02"
+      ],
+      "iconographyAndProvenanceNote": "Official France Palissy registered retable tableau in church complex. Is a devotional iconographic image rather than a biblical scene; clean crop and painter need verification.",
+      "sourceClass": "FRENCH_GOVERNMENT_OBJECT_RECORD",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "Painting original identity verified by museum or cultural heritage object register; quality, exact attribution where unverified and photography rights are independent checks."
+    },
+    {
+      "candidateId": "G16-019",
+      "artist": "UNATTRIBUTED_CRETAN_ICON",
+      "title": "Original icon of Our Mother of Perpetual Help",
+      "institution": "Chiesa di Sant'Alfonso, Rome",
+      "accession": "REDEMPTORISTS_SANT_ALFONSO_ORIGINAL_ICON",
+      "sourceUrl": "https://www.cssr.news/2016/04/150-years-of-the-veneration-of-icon-of-our-mother-of-perpetual-help-in-st-alphonsus-church-rome/",
+      "originalObjectType": "ICON",
+      "subjectIds": [
+        "DEV-12"
+      ],
+      "iconographyAndProvenanceNote": "Historic original Byzantine/Cretan icon held at Redemptorist Church of Saint Alphonsus (1866 onward). Exact devotion demands the original icon, not interchangeable Marian oil portraits. Ecclesiastical image rights must be checked.",
+      "sourceClass": "CUSTODIAN_RELIGIOUS_ORDER_PRIMARY_ORIGIN",
+      "imageMasterAcquired": false,
+      "sourcePixelDimensions": null,
+      "humanRating": null,
+      "visualApproval": false,
+      "commercialUseApproved": false,
+      "publicationApproved": false,
+      "discoveryStatus": "SOURCE_IDENTIFIED_OBJECT_PENDING_IMAGE_AND_USER_RATING",
+      "policyNotes": "EXCEPTION_PRESERVE_ORIGINAL_DEVOTIONAL_ICON"
+    }
+  ],
+  "existingQueueSubjectReuses": [
+    {
+      "subjectId": "SNT-AP-03",
+      "existingLeadId": "W05-003",
+      "note": "ST_JAMES_GREATER_PRADO_RUBENS",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "existingLeadId": "W05-005",
+      "note": "ST_PHILIP_PRADO_RUBENS",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "existingLeadId": "W05-007",
+      "note": "ST_BARTHOLOMEW_PRADO_RUBENS",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "existingLeadId": "W05-009",
+      "note": "ST_THOMAS_PRADO_RUBENS",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "existingLeadId": "W02-005",
+      "note": "ST_THOMAS_RIBERA_ALTERNATIVE",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "existingLeadId": "W05-006",
+      "note": "ST_JAMES_LESS_PRADO_RUBENS",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "existingLeadId": "W05-010",
+      "note": "ST_SIMON_PRADO_RUBENS",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "existingLeadId": "W14-017",
+      "note": "ST_SIMON_VANDYCK_SECOND_ORIGINAL",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-11",
+      "existingLeadId": "W05-008",
+      "note": "ST_MATTHIAS_PRADO_RUBENS",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-AP-13",
+      "existingLeadId": "W14-016",
+      "note": "ST_JUDE_VANDYCK_KHM",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "existingLeadId": "W01-010",
+      "note": "CHRIST_EMBRACING_BERNARD_PRADO_RIBALTA",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    },
+    {
+      "subjectId": "BIB-G21",
+      "existingLeadId": "W07-014",
+      "note": "CARAVAGGIO_SANS_SOUCI_INCREDULITY",
+      "action": "LINK_EXISTING_SOURCE_LEAD_AS_UNRATED_SUBJECT_OPTION_NOT_NEW_ARTWORK",
+      "visualReviewPending": true
+    }
+  ],
+  "emptySubjectIdsNowResearchSourced": [
+    "DEV-02",
+    "DEV-12",
+    "DEV-13",
+    "SNT-AP-03",
+    "SNT-AP-05",
+    "SNT-AP-06",
+    "SNT-AP-07",
+    "SNT-AP-09",
+    "SNT-AP-10",
+    "SNT-DC-07",
+    "SNT-OT-03",
+    "SNT-OT-05",
+    "SNT-OT-08",
+    "SNT-OT-18",
+    "SNT-OT-28",
+    "BIB-G21",
+    "BIB-G19",
+    "BIB-G26",
+    "BIB-EX10",
+    "BIB-XL03",
+    "BIB-G18"
+  ],
+  "priorityNext": [
+    "Major French saints and devotional subjects with museum painting and photograph evidence",
+    "Gospel events missing any exact original including Nain, Calming Storm, Feeding 5000, Walking on Water, Peter commission",
+    "Old Testament anchor selection (Sinai, Moses/Exodus, Joseph, David/Goliath, Solomon, Daniel, Maccabees) without oversampling",
+    "Apostolic narratives and portraits not represented by existing Rubens Prado series (Mark, Luke, St Jude, etc)",
+    "Per-source high-res original photograph acquisition and unframed clean reproduction before human rating"
+  ],
+  "quality": "Research-only source objects. No images ingested or published."
+}
