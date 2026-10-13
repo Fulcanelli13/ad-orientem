@@ -107,7 +107,14 @@ assert.deepEqual(hostElevation.stages.filter(x=>x.isObservedNow).map(x=>x.id),
   ["AO.CANON.R62.024.02"],"Only actual witnessed Host elevation stage may be active");
 assert.equal(hostElevation.stages[0].isObservedNow,false);
 assert.equal(hostElevation.isObservedNow,false);
-assert.equal(host.ministerActions[0].isObservedNow,true);
+assert.equal(host.ministerActions[0].actionGroupObserved,true);
+assert.equal(host.ministerActions[0].isObservedNow,false,
+  "An observed bell group does not assert its precise micro-stage fired");
+const exactBell=reader.project("AO.SM.C0174",{
+  editorialPreview:true,observedStageIds:["AO.CANON.R62.027.01"],
+});
+assert.deepEqual(exactBell.ministerActions[0].stages.filter(x=>x.isObservedNow).map(x=>x.id),
+  ["AO.CANON.R62.027.01"]);
 assert.equal(host.priestActions.find(x=>x.id==="AO.CANON.R62.026").anchorKind,"PERSISTENT_SOURCE_STATE");
 const chalice=reader.project("AO.SM.C0181",{editorialPreview:true});
 assert.equal(chalice.priestActions[0].anchorKind,"ORDERED_NON_TEXT_CEREMONY");
