@@ -26,11 +26,11 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Inspect new Commons 6-image Actions run and downloaded artifact / ledger (not yet certified successful)",
-    "If verified, reconcile per-file acquisition count and archive JPEGs durably; failures remain holds",
-    "Investigate high-quality lawful source replacements for 208+ remaining pending images without duplication",
-    "Preserve 0–5 image taste approvals and commercial digital-photo rights checks",
-    "Finish Rubens/Van Dyck/Caravaggio/Champaigne original oeuvre census"
+    "Inspect GitHub Actions workflow sacred-art-commons-six-originals and its latest push-triggered run ID, summary and acquisition ZIP (connector currently cannot list push-triggered workflow runs). Do NOT count unverified files.",
+    "For any successful JPEG, compare source hashes against six identity pins and existing SHA inventory; record physically acquired count only after actual source artifact inspection.",
+    "Resolve Prado photograph EXIF photographer and original museum rights for worldwide commercial app publication separately from Commons US public-domain claim.",
+    "Archive newly verified original image ZIPs durably without relying on 30-day Actions retention.",
+    "Collect user ratings 0–5 and context placement, then check phone crops and permission before app release."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -63,7 +63,7 @@
   ],
   "acquisitionExecutionLane": {
     "date": "2026-10-13",
-    "status": "WORKFLOW_COMMITTED_BUT_NO_COMPLETED_ACQUISITION_REPORT_YET",
+    "status": "EXACT_SOURCE_PINS_COMMITTED_RUN_NOT_YET_OBSERVED",
     "manifest": "data/calendar/sacred-art-commons-six-strict-acquisition-20261013.v1.json",
     "script": "tools/calendar/acquire-sacred-art-commons-six.py",
     "workflow": ".github/workflows/sacred-art-commons-six-originals.yml",
@@ -80,6 +80,19 @@
     "willNeverAutopromote": true,
     "successCriteria": "GitHub Actions run has completed, artifacts contain downloaded JPEGs plus successful SHA1/256 ledger verified, and all file holds are recorded.",
     "noClaim": "Candidate list is not acquired, counted as 0 additional verified images until actual ZIP and ledger examined.",
-    "retentionWarning": "Actions artifacts expire in 30 days; preservation of source image ZIP into permanent vault remains outstanding."
+    "retentionWarning": "Actions artifacts expire in 30 days; preservation of source image ZIP into permanent vault remains outstanding.",
+    "dimensionalSourcePins": 6,
+    "independentSourceSha1Pins": 4,
+    "technicalPreflight": "Manifest V2; exact Wikimedia original width, height, and 4 independent SHA1 source pins; downloader checks file-level licence declaration and rehashes JPEG; workflow writes per-lead report.",
+    "workflowRunVerification": "No run ID/artifact for new push workflow available via connected GitHub PR-only runs method; do NOT infer successful run from workflow commit, scheduled push, or web page existence.",
+    "photographyRightsWarnings": "Prado Commons PD scans contain named photographer/Museo del Prado EXIF provenance on some files; worldwide commercial app deployment held pending applicable photo rights and provider terms.",
+    "sixSourceVerificationUrls": [
+      "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
+      "https://commons.wikimedia.org/wiki/File:THe_Defenders_of_the_Eucharist_-_modello.jpg",
+      "https://commons.wikimedia.org/wiki/File:Victory_of_Truth_over_Heresy_-_modello.jpg",
+      "https://commons.wikimedia.org/wiki/File:Triumph-church-rubens-prado.jpg",
+      "https://commons.wikimedia.org/wiki/File:Victory_of_the_Eucharist_over_Paganism_-_modello.jpg",
+      "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Triptych_of_St._Ildefonso_-_Google_Art_Project.jpg"
+    ]
   }
 }
