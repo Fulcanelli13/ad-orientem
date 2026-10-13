@@ -69,6 +69,18 @@ export function resolveOrdinarySpeaker(unit,{form="SUNG",blockId=null}={}){
   if(override)return override;
   const text=String(unit?.latin??"").trim();
   const clock=String(unit?.clock??"").toUpperCase();
+  // The generic SUNG audit intentionally retains conditional speaker roles.
+  // An actual selected form may resolve the public Gospel and dismissal
+  // ministers without attributing the priest's silent text to the deacon.
+  const actualForm=String(form??"").toUpperCase();
+  const actualForms=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+  if(clock==="PUBLIC_TEXT" && actualForms.has(actualForm) &&
+    ["AO.SM.B024","AO.SM.B025","AO.SM.B090"].includes(String(blockId))){
+    return Object.freeze({
+      role:actualForm==="SOLEMN"?"DEACON":"PRIEST",
+      evidence:"1962_MASS_FORM_PUBLIC_MINISTER",
+    });
+  }
   if(/^S\.\s*/u.test(text))return Object.freeze({role:"PRIEST",evidence:"EXPLICIT_S_PREFIX"});
   if(/^M\.\s*/u.test(text))return Object.freeze({role:"MINISTERS",evidence:"EXPLICIT_M_PREFIX"});
   if(/^(?:℟\.|R\.)\s*/u.test(text))return Object.freeze({role:"RESPONDERS",evidence:"EXPLICIT_R_PREFIX"});
