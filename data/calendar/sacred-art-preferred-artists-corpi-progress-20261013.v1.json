@@ -1,0 +1,133 @@
+{
+  "schema": "AO_SACRED_ART_FAVOURITE_ARTIST_CORPUS_ACQUISITION_ROLLUP_V1",
+  "asOf": "2026-10-13",
+  "authority": "The three original source-per-object wave manifests and human original-specific 0–5 ratings, not style imitation or inferred artist preferences.",
+  "counts": {
+    "existingCanonicalRegistry": 281,
+    "existingAcquiredOriginals": 266,
+    "existingNotPreviewedOrAcquired": 15,
+    "newVerifiedMuseumObjectLeads": 43,
+    "newHighResolutionImageFilesActuallyRetrieved": 0,
+    "objectsEligibleForNewHumanRating": 43,
+    "uniqueArtistNamesAmongNewLeads": 9,
+    "explicitNumeric5PreviouslyRated": 12,
+    "alreadyUserRated4Or5Reacquired": 0,
+    "userRated0To2Readmitted": 0
+  },
+  "artistCoverage": [
+    {
+      "artist": "Jusepe de Ribera",
+      "sourceIdentifiedUnacquiredPaintings": 13,
+      "explicitNumericStrongSample": true,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    },
+    {
+      "artist": "Francisco de Zurbarán",
+      "sourceIdentifiedUnacquiredPaintings": 8,
+      "explicitNumericStrongSample": true,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    },
+    {
+      "artist": "Peter Paul Rubens",
+      "sourceIdentifiedUnacquiredPaintings": 6,
+      "explicitNumericStrongSample": false,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    },
+    {
+      "artist": "Anthony van Dyck",
+      "sourceIdentifiedUnacquiredPaintings": 5,
+      "explicitNumericStrongSample": false,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    },
+    {
+      "artist": "Paolo Veronese",
+      "sourceIdentifiedUnacquiredPaintings": 4,
+      "explicitNumericStrongSample": true,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    },
+    {
+      "artist": "Giovanni Girolamo Savoldo",
+      "sourceIdentifiedUnacquiredPaintings": 2,
+      "explicitNumericStrongSample": true,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    },
+    {
+      "artist": "Caravaggio",
+      "sourceIdentifiedUnacquiredPaintings": 2,
+      "explicitNumericStrongSample": true,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    },
+    {
+      "artist": "Francisco Ribalta",
+      "sourceIdentifiedUnacquiredPaintings": 2,
+      "explicitNumericStrongSample": false,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    },
+    {
+      "artist": "Jacopo Bassano",
+      "sourceIdentifiedUnacquiredPaintings": 1,
+      "explicitNumericStrongSample": true,
+      "remainingCompleteWorldwideCatalogue": "NOT_YET_FINISHED"
+    }
+  ],
+  "priorities": {
+    "P0": 15,
+    "P1": 19,
+    "P2": 9
+  },
+  "firstAcquisitionTargets": [
+    {
+      "id": "W03-001",
+      "reason": "NGA Open Access + rare verified Mass Canon Melchizedek / OT subject; strongest high-overlap legal-friendly original"
+    },
+    {
+      "id": "W03-005",
+      "reason": "Met Open Access + Van Dyck favourite; Saint Rosalie important local saint/saint intercession"
+    },
+    {
+      "id": "W02-016",
+      "reason": "NGA Open Access + Zurbarán original doctor Saint Jerome with Paula and Eustochium, substantial catechetical potential"
+    },
+    {
+      "id": "W02-022",
+      "reason": "NGA Open Access + Rubens Old Testament David and Abigail / reconciliation; verified 99280 URL"
+    },
+    {
+      "id": "W02-020",
+      "reason": "NGA Open Access + Van Dyck Virgin as Intercessor; Marian/rosary devotional"
+    },
+    {
+      "id": "W01-008",
+      "reason": "Caravaggio Emmaus major Sunday/Gospel scene (National Gallery London licensing check first)"
+    },
+    {
+      "id": "W01-006",
+      "reason": "Savoldo Mary Magdalene 5/5 artist for Eastertide and saint Magdalene, National Gallery London license check first"
+    },
+    {
+      "id": "W02-012",
+      "reason": "Ribera Lazarus resurrected painting, Gospel and Bible Theatre major scene, Prado rights check first"
+    }
+  ],
+  "nextPipeline": [
+    "Continue source-catalogue completeness artist-by-artist; this 43-work first set is a discoverable tranche not the complete combined oeuvre.",
+    "Use full museum object identity (accession or Met/NGA object ID) and original artist attribution; be strict about 2 paintings with same saint title.",
+    "For NGA/Met open access, obtain exact original source URL and original bytes in network-enabled authorised execution environment; compute SHA256/pixels and retain non-watermarked original.",
+    "Do not retrieve again previously acquired high-rated originals. Mark 0–2 original rejects as blocked.",
+    "For Prado/London NG, verify commercial use rights for world-distributed app offline bundling before acquiring/promoting reproduction.",
+    "Update exactly one canonical art-source record per distinct museum work and connect all valid module contexts; no physical duplication.",
+    "After visual review, expose 0–5 rating and thematic placement. Only explicit user 5/5 works eligible for repeated anchor."
+  ],
+  "sourceFiles": [
+    "data/calendar/sacred-art-preferred-artists-corpus-wave01-20261013.v1.json",
+    "data/calendar/sacred-art-preferred-artists-corpus-wave02-20261013.v1.json",
+    "data/calendar/sacred-art-preferred-artists-corpus-wave03-20261013.v1.json"
+  ],
+  "explicitLimitations": [
+    "No new image binary was fetched in current container because external image hosts do not resolve via DNS; research source URLs are available but not the originals.",
+    "No claim of completing Rubens, Ribera, Zurbarán, Van Dyck or Caravaggio worldwide oeuvre.",
+    "Artist name matching does not automatically exclude all paintings if one specific piece scored 0–2.",
+    "Existing source painting acquisition count 266 does not imply user-rated work count; 197 explicit numeric ratings include some subset."
+  ],
+  "releaseArtworkChanged": false
+}
