@@ -174,7 +174,7 @@ details{border-top:1px solid var(--line);margin-top:14px;padding-top:11px}summar
 <header><div class="eyebrow">1962 Calendar · Complete Sacred Art Review</div><h1>Artwork &amp; liturgical placement</h1>
 <p>One complete exception-only editorial review. Flag unsuitable artwork or incorrect uses; unflagged items count as editorially accepted only after you explicitly mark the entire gallery reviewed. Rights, cropping, edition and publication remain separate.</p>
 <div class="stat" id="stats"></div>
-<nav><button id="showArt">Artworks</button><button id="showCalendar">Calendar</button><button id="showPending">Unacquired source links</button>
+<nav><button id="showArt">Artworks</button><button id="showSubjects">235 subjects</button><button id="showCalendar">Calendar</button><button id="showPending">Unacquired source links</button>
 <input id="search" type="search" placeholder="Find artwork, artist, feast or Gospel" aria-label="Search">
 <select id="rank"><option value="">Every class</option><option value="1">Class I</option><option value="2">Class II</option><option value="3">Class III</option><option value="4">Class IV</option></select>
 <select id="tier"><option value="specific">Specific/event proposals</option><option value="all">All associations, including seasonal &amp; generic</option></select>
@@ -187,6 +187,10 @@ details{border-top:1px solid var(--line);margin-top:14px;padding-top:11px}summar
 <main><p class="note">One source original per card, with museum URL and every proposed Calendar use. Flag a globally unsuitable painting, a misplaced date or an item needing investigation. Existing subject-scoped selections are shown but do not approve unrelated uses. The export remains a draft until the full, unfiltered review is explicitly completed.</p>
 <p class="warning" id="completionStatus" role="status">Draft review: no broad editorial acceptance is implied.</p>
 <section id="art"><div class="grid" id="gallery"></div></section>
+<section id="subjects" style="display:none"><h2>Complete subject inventory · 235 requirements</h2><p>Each earlier selection is preserved. The preview is displayed only when its exact acquired original is present in this atlas. A missing preview does not constitute artistic rejection.</p>
+<div class="filters"><select id="subjectCategory" aria-label="Subject category"><option value="">All subjects</option><option>Rosary</option><option>Stations</option><option>Devotions</option><option>Calendar saints</option><option>Bible Atlas</option></select>
+<select id="subjectStatus" aria-label="Editorial status"><option value="">Any status</option><option value="selected">Earlier selection</option><option value="research">Research in progress</option><option value="unlinked">Selected, original not linked</option></select></div>
+<div class="grid" id="subjectCards"></div></section>
 <section id="calendar"><div id="days"></div></section>
 <section id="pending" style="display:none"><h2>Unacquired artworks and museum leads</h2><p>These source records lack acquired and checksum-verified image previews; open their museum URLs before making artistic decisions.</p><div id="pendingList"></div></section>
 </main>
@@ -328,7 +332,36 @@ function drawDays(){
   });
  }
 }
-function update(){draw();if($("calendar").style.display==="block")drawDays()}
+function drawSubjects(){
+ const root=$("subjectCards");root.replaceChildren();
+ const idx=data.subjectInventory;
+ if(!idx){root.textContent="Subject inventory missing from this build.";return;}
+ const cat=$("subjectCategory").value,status=$("subjectStatus").value,q=$("search").value.toLowerCase().trim();
+ const picked=new Map(idx.selectedEditorialArtworks.map(x=>[x.editorialArtworkId,x]));
+ for(const s of idx.subjects){
+  const selected=picked.get(s.selectedEditorialArtworkId);
+  const source=(s.selectedRegistryArtworkIds||[]).map(id=>catalog.get(id)).find(Boolean);
+  if(cat&&s.category!==cat)continue;
+  if(status==="selected"&&s.editorialDecision!=="selected")continue;
+  if(status==="research"&&s.editorialDecision==="selected")continue;
+  if(status==="unlinked"&&!(s.editorialDecision==="selected"&&!source))continue;
+  if(q&&![s.subjectId,s.title,s.category,selected?.title,selected?.artist].join(" ").toLowerCase().includes(q))continue;
+  const card=document.createElement("article");card.className="card";
+  const fig=source?.preview?'<img loading="lazy" class="preview" alt="'+escape(source.title)+'" src="'+source.preview+'">':
+   '<div class="notloaded">No exact verified acquisition preview in this atlas</div>';
+  card.innerHTML='<div class="image">'+fig+'</div><div class="info">'+
+   '<div class="eyebrow">'+escape(s.category)+' · '+escape(s.subjectId)+'</div>'+
+   '<h2>'+escape(s.title)+'</h2>'+
+   (selected?'<p><strong>Earlier selection:</strong> '+escape(selected.artist)+' — '+escape(selected.title)+'</p>':'<p>Research in progress; no painting newly chosen.</p>')+
+   '<p class="muted">'+escape(s.layeredResearchStatus||s.editorialDecision)+' · '+s.acquiredReuse.length+' acquired reuse possibilities · '+s.layeredResearchArtworkIds.length+' research leads</p>'+
+   (s.exactSceneMismatch?'<div class="review-policy-block">Earlier option depicts a different biblical event.</div>':'')+
+   (s.optionalNoImage?'<p>Text/map/timeline coverage is acceptable without painting.</p>':'')+
+   (selected?.sourceUrl?'<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(selected.sourceUrl)+'">Selected artwork reference</a>':'')+
+   (source?'<p>Verified registry original: '+escape(source.id)+'</p>':'')+'</div>';
+  root.appendChild(card);
+ }
+}
+function update(){draw();if($("calendar").style.display==="block")drawDays();if($("subjects").style.display==="block")drawSubjects()}
 function drawPending(){
  const list=$("pendingList");list.replaceChildren();
  for(const p of data.pendingSourceLinks||[]){
@@ -340,9 +373,11 @@ function drawPending(){
  }
 }
 for(const id of ["search","rank","tier","rights"])$(id).addEventListener("input",update);
-$("showArt").onclick=()=>{$("art").style.display="block";$("calendar").style.display="none";$("pending").style.display="none"};
-$("showCalendar").onclick=()=>{$("art").style.display="none";$("calendar").style.display="block";$("pending").style.display="none";drawDays()};
-$("showPending").onclick=()=>{$("art").style.display="none";$("calendar").style.display="none";$("pending").style.display="block";drawPending()};
+for(const id of ["subjectCategory","subjectStatus"])$(id).addEventListener("change",drawSubjects);
+$("showArt").onclick=()=>{$("art").style.display="block";$("subjects").style.display="none";$("calendar").style.display="none";$("pending").style.display="none"};
+$("showSubjects").onclick=()=>{$("art").style.display="none";$("subjects").style.display="block";$("calendar").style.display="none";$("pending").style.display="none";drawSubjects()};
+$("showCalendar").onclick=()=>{$("art").style.display="none";$("subjects").style.display="none";$("calendar").style.display="block";$("pending").style.display="none";drawDays()};
+$("showPending").onclick=()=>{$("art").style.display="none";$("subjects").style.display="none";$("calendar").style.display="none";$("pending").style.display="block";drawPending()};
 $("closeZoom").onclick=()=>$("zoom").close();
 function completionState(){
  const requested=$("reviewComplete").checked;
