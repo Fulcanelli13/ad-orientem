@@ -120,6 +120,14 @@ const introit=buildReaderSectionCard({
 assert.ok(introit.paragraphs.some(p=>p.primary==="ENGLISH INTROIT"),"resolved Proper was not inserted");
 assert.ok(!introit.paragraphs.some(p=>/Salus p[oó]puli/i.test(p.primary)),"donor-date Introit leaked into generic card");
 
+const collectSourceCard=buildReaderSectionCard({
+  corpus:sung,section:sections.sectionById("AO.CARD.004"),properSlots,
+});
+const primaryCollect=collectSourceCard.paragraphs.find(p=>p.primary==="ENGLISH COLLECT_SET");
+assert.ok(primaryCollect,"canonical Collect Proper not found");
+assert.equal(primaryCollect.sourceAnchorCueId,"AO.SM.C0073",
+  "principal Collect lost canonical source cue anchor");
+
 const epistleCard=buildReaderSectionCard({
   corpus:sung,
   section:sections.sectionById("AO.CARD.005"),
