@@ -1,0 +1,260 @@
+{
+  "schema": "ao-noncanon-mass-form-and-orations-test-matrix-v1",
+  "date": "2026-10-13",
+  "status": "FUTURE_REGRESSION_TEST_SPECIFICATION_NOT_AUTOMATED_RESULTS",
+  "notes": "Scenarios are intended acceptance tests, not proof current production passes. All exact prayer timing and actor identity should be reconciled to final 1962 liturgical and form contracts.",
+  "scenarios": [
+    {
+      "id": "AO.NONCAN.TEST.SC01",
+      "title": "LOW_ORDINARY_ONE_COLLECT",
+      "inputConditions": {
+        "form": "LOW",
+        "collectCount": 1,
+        "collectGrouping": "one"
+      },
+      "expectedBehaviorForFutureTests": "Opening Collect: one Oremus before the sole Collect, one proper conclusion and response Amen. One Secret; one Postcommunion with same arrangement.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N01",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC02",
+      "title": "TWO_COLLECTS_SEPARATE_CONCLUSIONS",
+      "inputConditions": {
+        "form": "LOW_OR_SUNG",
+        "collectCount": 2,
+        "collectGrouping": "separate"
+      },
+      "expectedBehaviorForFutureTests": "Oremus twice, both prayers kept in source order with appropriate conclusions/Amen; corresponding two Secrets said secretly with no additional Oremus; Postcommunions mirror the Collect grouping.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N03",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC03",
+      "title": "THREE_COLLECTS_GROUP_TWO_THREE",
+      "inputConditions": {
+        "form": "LOW_OR_SUNG",
+        "collectCount": 3,
+        "collectGrouping": "first_separate_second_and_third_grouped"
+      },
+      "expectedBehaviorForFutureTests": "Only two Oremus, second and third Collect share the correct second conclusion; three Secrets retain source order without Oremus; Postcommunions mirror opening grouping.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N04",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC04",
+      "title": "RITUAL_PRAYER_SAME_CONCLUSION",
+      "inputConditions": {
+        "form": "SOLEMN",
+        "collectCount": 2,
+        "collectGrouping": "single_conclusion_per_rg60_444"
+      },
+      "expectedBehaviorForFutureTests": "Where explicit law orders a second prayer under one conclusion, one Oremus and one final conclusion/Amen for both; do not apply the separate-conclusions default blindly.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N05",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC05",
+      "title": "FERIAL_LENT_EXTRA_SUPER_POPULUM",
+      "inputConditions": {
+        "form": "LOW_OR_SUNG",
+        "season": "LENT",
+        "dayType": "FERIA_NON_TRIDUUM"
+      },
+      "expectedBehaviorForFutureTests": "After numbered Postcommunions, add separate Oremus/Humiliate capita vestra Deo and Prayer over the People with own conclusion; before dismissal greeting.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N06",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC06",
+      "title": "EMBER_EXTENDED_READINGS",
+      "inputConditions": {
+        "form": "LOW_OR_SUNG",
+        "dayType": "EMBER_SATURDAY",
+        "extraLessons": 5
+      },
+      "expectedBehaviorForFutureTests": "Five lessons before Epistle in appointed source order; only qualifying lesson responses, including Daniel exception; Flectamus genua/Levate where appointed; not forced pairs by lesson ordinal.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N24",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC07",
+      "title": "MISSA_CANTATA_NO_DEACON",
+      "inputConditions": {
+        "form": "MISSA_CANTATA_SIMPLE",
+        "hasDeacon": false
+      },
+      "expectedBehaviorForFutureTests": "Epistle/Gospel and dismissal performer not automatically assigned to deacon/subdeacon. No solemn minister station or Pax imported.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N24",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC08",
+      "title": "SOLEMN_DEACON_SUBDEACON",
+      "inputConditions": {
+        "form": "SOLEMN",
+        "hasDeacon": true,
+        "hasSubdeacon": true
+      },
+      "expectedBehaviorForFutureTests": "Subdeacon Epistle, deacon public Gospel and Ite where required; priest private and schola public timeline separate.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N24",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC09",
+      "title": "REQUIEM_CHALICE_AND_AGNUS",
+      "inputConditions": {
+        "form": "SOLEMN_REQUIEM",
+        "requiem": true
+      },
+      "expectedBehaviorForFutureTests": "No blessing of added chalice water, no entrance altar incensation, modified Agnus text and omission of ordinary priest breast strokes; actual rite/form determines dismissal and ending.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N10",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC10",
+      "title": "HISTORICAL_SECOND_CONFITEOR_OFF",
+      "inputConditions": {
+        "form": "LOW_OR_SUNG",
+        "strict1962": true,
+        "optionalSecondConfiteor": false
+      },
+      "expectedBehaviorForFutureTests": "Source C0235–C0241 not visible; after priest's Communion, Ecce Agnus Dei once then three Domine non sum dignus before faithful receive.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N18",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC11",
+      "title": "SECOND_CONFITEOR_OPT_IN_ONLY",
+      "inputConditions": {
+        "form": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+        "optionalSecondConfiteor": true
+      },
+      "expectedBehaviorForFutureTests": "Clearly labelled older/local custom, not normative 1962; never changes the baseline source contract.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N18",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC12",
+      "title": "BENEDICAMUS_WITH_PROCESSION",
+      "inputConditions": {
+        "form": "SOLEMN",
+        "followingAction": "PROCESSION",
+        "dismissal": "BENEDICAMUS_DOMINO"
+      },
+      "expectedBehaviorForFutureTests": "Dismissal text/response correct, no final blessing; Last Gospel inclusion decided independently by actual 1962 special rubric/procession structure.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N21",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC13",
+      "title": "REQUIEM_DISMISSAL",
+      "inputConditions": {
+        "form": "REQUIEM",
+        "dismissal": "REQUIESCANT_IN_PACE"
+      },
+      "expectedBehaviorForFutureTests": "Reply Amen, no priestly final blessing; Last Gospel assessed separately rather than suppressed by a blanket no-blessing rule.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N21",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC14",
+      "title": "SUNG_SANCTUS_ASYNC_PRIEST",
+      "inputConditions": {
+        "form": "SOLEMN_OR_CANTATA",
+        "scholaAt": "BENEDICTUS",
+        "priestAt": "SILENT_CANON"
+      },
+      "expectedBehaviorForFutureTests": "Left/public guide follows heard chant; right/priest state requires an independent event clock, cannot equal reader paragraph position.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N14",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC15",
+      "title": "CREDO_CHRISTMAS_ANNUNCIATION",
+      "inputConditions": {
+        "form": "SUNG",
+        "priestAt": "SEDILIA",
+        "moment": "ET_INCARNATUS",
+        "specialFeast": true
+      },
+      "expectedBehaviorForFutureTests": "Public-song reverence and Christmas/Annunciation exceptional kneeling distinguished from priest's private recitation action; no synthetic universal posture.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N09",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC16",
+      "title": "FAITHFUL_POSTURE_UNRESOLVED",
+      "inputConditions": {
+        "form": "SUNG",
+        "communityProfile": null
+      },
+      "expectedBehaviorForFutureTests": "Left rail uses follow-congregation observational, not fabricated priest-derived kneeling/standing. Right priest clock must independently confirm hidden gestures.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N23",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC17",
+      "title": "OFFERTORY_INCENSE_ENABLED",
+      "inputConditions": {
+        "form": "MISSA_CANTATA_INCENSE",
+        "incenseEnabled": true
+      },
+      "expectedBehaviorForFutureTests": "Incensation ordered and conditionally rendered; no invented deacon from Solemn forms. People stand to be incensed only with a matching selected/observed community profile.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N11",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC18",
+      "title": "ORDINARY_OFFERTORY_NO_INCENSE",
+      "inputConditions": {
+        "form": "MISSA_CANTATA_SIMPLE",
+        "incenseEnabled": false
+      },
+      "expectedBehaviorForFutureTests": "No C0040–41 or C0120–24 incensation actions or lingering station; restore non-incense priest location.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N11",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC19",
+      "title": "LAST_GOSPEL_EXCEPTION",
+      "inputConditions": {
+        "form": "SPECIAL_RITE",
+        "lastGospelAppointed": false
+      },
+      "expectedBehaviorForFutureTests": "No source John 1 when properly omitted; cue C0273 genuflection not fired when Gospel absent.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N22",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    },
+    {
+      "id": "AO.NONCAN.TEST.SC20",
+      "title": "GOSPEL_RESPONSES_SPEAKER",
+      "inputConditions": {
+        "form": "SOLEMN",
+        "gospelActor": "DEACON"
+      },
+      "expectedBehaviorForFutureTests": "C0085 Glory to Thee and C0087 Praise to Thee actor roles distinguish congregational/ministerial responses and proclaimed gospel; do not label Gospel minister's voice as priest at altar.",
+      "acceptanceGateRef": "AO.NONCAN.GATE.N08",
+      "status": "TEST_DESIGN_ONLY_NOT_EXECUTED",
+      "requiresCodeAndRiteValidation": true
+    }
+  ]
+}
