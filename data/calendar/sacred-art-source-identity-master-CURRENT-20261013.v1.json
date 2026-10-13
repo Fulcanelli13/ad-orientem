@@ -26,12 +26,12 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Respect Wikimedia HTTP 429 and do not count Commons six (0 acquired). Investigate permitted low-volume source access or museum-provided originals after backoff.",
-    "Reconcile 101 human-selected subject placements with canonical original objects; 98 currently lack an acquired registry match and 92 lack a canonical preview.",
-    "Prioritize the 170 review-eligible original images, 12 rated 5/5, and Class I art gaps before expanding 214-image source-acquisition backlog.",
-    "Only retrieve high-quality full original images after artwork identity and individual picture rights checks, and preserve JPEG ZIPs durably.",
-    "Use rated 0–2 global exclusions, accurate Saint/scene iconography, hero mobile crop and 1962 liturgical DayResolver before releasing any asset.",
-    "Separate oversized draft PR research inventories from application release and investigate mergeability status."
+    "Fill remaining 86 subject slots that currently have zero proposed painting options; prioritize major liturgical/saint and high-leverage Gospel subjects rather than demanding one unique Old Testament painting per episode.",
+    "For initial 21 source-sourced subjects obtain the ACTUAL clean source preview, enforce one original painting with multiple reproduction records and user 0–5 rating.",
+    "Reconcile Rubens Prado original Apostle paintings already source identified with six otherwise empty review slots, avoiding repeat artist research.",
+    "For French saint/devotional objects use France POP object records but verify unframed clean photography and photographer rights; original Redemptorist Perpetual Help icon is a distinct devotional-art exception.",
+    "Respect user discarded scores 0–2, explicitly excluded artists, and pending commercial rights for museum photographs.",
+    "Maintain 222 source catalogue while gap batch is unreconciled, user unreviewed and image files not acquired."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -108,5 +108,19 @@
     "heldInRun": 6,
     "allHoldsReason": "Wikimedia Commons HTTP 429 Too Many Requests / rate limiting; no completed new source JPEG downloads.",
     "sourceRightsAndEthics": "Do not hammer or evade Wikimedia rate limiting; use official museum open-access sources or provider-supported paced retries, with licensing review."
+  },
+  "subjectGapResearch": {
+    "dateUtc": "2026-10-13",
+    "sourceUserReviewExport": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json",
+    "referenceBatch": "data/calendar/sacred-art-subject-gap-fill-wave16-20261013.v1.json",
+    "baselinePreviouslyEmpty235SubjectSlots": 107,
+    "ofPreviouslyEmptySourceSourcedForFurtherImageAndRatingReview": 21,
+    "remainingPreviouslyEmptyWithoutDocumentedBatchCandidate": 86,
+    "reusedExistingMasterSourceSubjectLinks": 12,
+    "newMuseumOrFrenchHeritageOrCustodianResearchObjectLeads": 19,
+    "importToResearchQueue222": false,
+    "whySeparate": "Subject-first research suggestions must be user-vetted and deduplicated before conversion into canonical physical art master; source discovery must not imply production image or successful download.",
+    "userRatingMutations": 0,
+    "productionArtMutations": 0
   }
 }
