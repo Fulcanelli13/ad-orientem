@@ -33,7 +33,13 @@
     "newlyReleased": 0,
     "deepNTSourceGapsRequiringNewDiscovery": 0,
     "deepNTIntentionalReuseWithoutNewSource": 1,
-    "deepNTNoImageRequiredOrMapLed": 1
+    "deepNTNoImageRequiredOrMapLed": 1,
+    "OTAnchorLeadCategories": {
+      "acquired": 1,
+      "documentedUnacquired": 4,
+      "olderOnly": 4,
+      "noLead": 5
+    }
   },
   "integrityLocks": [
     "Stay on existing GitHub research PR; no merges",
@@ -74,7 +80,9 @@
       "proposedDefaultOutcome": "SELECT_REPRESENTATIVE_ANCHOR_IF_STRONG",
       "dedicatedNewPaintingRequired": false,
       "documentedAcquiredOriginalIds": [],
-      "verifiedOrHistoricalSourceLeadIds": [],
+      "verifiedOrHistoricalSourceLeadIds": [
+        "louvre-inv7306-poussin-winter"
+      ],
       "priorUnverifiedOptionIds": [
         "ART-icolas-oussin-he-eluge"
       ],
@@ -84,7 +92,7 @@
       "actualImageAcquired": false,
       "releaseApproval": false,
       "stage": "EDITORIAL_TRIAGE_ONLY_NOT_FINAL_REVIEW",
-      "hasSourceLeadOrAcquired": false
+      "hasSourceLeadOrAcquired": true
     },
     {
       "subjectId": "BIB-OR05",
@@ -206,17 +214,19 @@
       "proposedDefaultOutcome": "SELECT_REPRESENTATIVE_ANCHOR_IF_STRONG",
       "dedicatedNewPaintingRequired": false,
       "documentedAcquiredOriginalIds": [],
-      "verifiedOrHistoricalSourceLeadIds": [],
+      "verifiedOrHistoricalSourceLeadIds": [
+        "ng-london-ng1219-bacchiacca-joseph-pardons"
+      ],
       "priorUnverifiedOptionIds": [
         "ART-acchiacca-oseph-ardons-is-rothers"
       ],
       "researchStopRule": "STOP_IF_EXISTING_GOOD_CANDIDATE_OR_MAP_SUFFICES",
-      "specificWarning": null,
+      "specificWarning": "National Gallery Bacchiacca NG1219 is authentic Genesis 45 forgiveness but an extremely wide furniture panel: use as supporting continuous narrative, no portrait crop.",
       "newHumanArtDecision": false,
       "actualImageAcquired": false,
       "releaseApproval": false,
       "stage": "EDITORIAL_TRIAGE_ONLY_NOT_FINAL_REVIEW",
-      "hasSourceLeadOrAcquired": false
+      "hasSourceLeadOrAcquired": true
     },
     {
       "subjectId": "BIB-PA12",
@@ -307,7 +317,7 @@
         "ART-icolas-oussin-rossing-the-ed-ea"
       ],
       "researchStopRule": "STOP_IF_EXISTING_GOOD_CANDIDATE_OR_MAP_SUFFICES",
-      "specificWarning": null,
+      "specificWarning": "NGV Poussin depicts the AFTERMATH of Red Sea waters closing on Egyptians. Painting source and subevent official NGV. Do not caption as the initial parting of waters.",
       "newHumanArtDecision": false,
       "actualImageAcquired": false,
       "releaseApproval": false,
@@ -1670,5 +1680,5 @@
       "hasSourceLeadOrAcquired": false
     }
   ],
-  "latestSourceWave": "Met 437351 Pynas Lystra; Vatican Raphael-design tapestry Athens; Council Jerusalem text/diagram; John21 cross-reuse"
+  "latestSourceWave": "OT: Louvre Winter/Flood; NGV Poussin Red Sea aftermath; National Gallery NG5597 Golden Calf; NG1219 Bacchiacca Joseph forgiveness. No painting mandatory."
 }
