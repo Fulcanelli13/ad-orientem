@@ -9,7 +9,8 @@
     "uniqueSelectedArtworksUnjoined": 91,
     "subjectPlacementsUnjoined": 98,
     "sourceStatus": {
-      "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 15,
+      "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 3,
+      "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING": 12,
       "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION": 5,
       "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 26,
       "IDENTITY_SOURCE_MISSING": 20,
@@ -26,7 +27,8 @@
     "exactInstitutionalOrCustodianIdentitiesNewlyChecked": 5,
     "distinctArtistTitleAmbiguitiesExplicitlyRecorded": 3,
     "newObjectIdentitiesThisAdditionalWave": 4,
-    "moreVersionAmbiguities": 2
+    "moreVersionAmbiguities": 2,
+    "individuallyIdentifiedSanPoloStationPhotos": 12
   },
   "notes": [
     "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
@@ -39,7 +41,8 @@
     "Five previously URL-less named selections have verified current museum object pages: Lanfranco NGI.72, Navarrete NGI.1721, Caravaggio Uffizi 4659 and Thyssen St Catherine, and Champaigne Louvre INV1125. Uncropped files are not in the source archive yet.",
     "Four exact Commons image titles selected for REVIEW-ONLY acquisition with pixel/dimension/rights evidence; includes Sailko CC BY 3.0 photograph, and excludes misleading high-pixel La Petite Cène image with incorrect aspect ratio.",
     "Additional subject-preserving exact museum identities and multiple-version ambiguity research: Musée de Picardie Gérôme, Mauritshuis 253, KMSKA 314, LACMA M.88.177, Cappuccini Rome Reni original location; van Dyck Lamentation, Bruegel Babel, and Rubens Ignatius explicitly marked as ambiguous and not silently identified by title alone.",
-    "Verified KMSKA current Van Dyck attribution of 'Le Coup de Lance' #297 and Prado Ribera Jacob's Dream P001117; two Delacroix chosen subjects are IN SITU murals, not interchangeable with preparatory studies. Flagged original-version ambiguity in Caravaggio David and Jouvenet Lazarus."
+    "Verified KMSKA current Van Dyck attribution of 'Le Coup de Lance' #297 and Prado Ribera Jacob's Dream P001117; two Delacroix chosen subjects are IN SITU murals, not interchangeable with preparatory studies. Flagged original-version ambiguity in Caravaggio David and Jouvenet Lazarus.",
+    "Twelve 1747–49 San Polo Giandomenico Tiepolo individual station panels are now referenced via the Commons category's distinct hi-res photography; retain original 1747–49 institution, verify photographer/licence for each image (Station I is CC BY-SA 4.0), no acquired original. Stations XIII/XIV remain original user-selected Prado works, not replaced by San Polo counterparts."
   ],
   "works": [
     {
@@ -87,11 +90,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20I%20-%20Jesus%20is%20sentenced%20to%20death%20by%20Giandomenico%20Tiepolo.jpg?width=550",
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS I - Jesus is sentenced to death by Giandomenico Tiepolo.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_I_-_Jesus_is_sentenced_to_death_by_Giandomenico_Tiepolo.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3326,
+        "expectedPixelHeight": 3710,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 1,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
@@ -104,11 +125,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20II%20-%20Jesus%20carries%20his%20cross%20by%20Giandomenico%20Tiepolo.jpg?width=550",
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS II - Jesus carries his cross by Giandomenico Tiepolo.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_II_-_Jesus_carries_his_cross_by_Giandomenico_Tiepolo.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 4043,
+        "expectedPixelHeight": 4492,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 2,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
@@ -121,11 +160,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS III - Jesus falls the first time by Giandomenico Tiepolo.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_III_-_Jesus_falls_the_first_time_by_Giandomenico_Tiepolo.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3110,
+        "expectedPixelHeight": 3360,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 3,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
@@ -138,11 +195,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20IV%20-%20Jesus%20meets%20his%20mother%20by%20Giandomenico%20Tiepolo.jpg?width=550",
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS IV - Jesus meets his mother by Giandomenico Tiepolo.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IV_-_Jesus_meets_his_mother_by_Giandomenico_Tiepolo.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 4049,
+        "expectedPixelHeight": 4336,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 4,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
@@ -155,11 +230,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20V%20-%20Simon%20of%20Cyrene%20helps%20Jesus%20carry%20the%20cross%20by%20Giandomenico%20Tiepolo.jpg?width=550",
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS V - Simon of Cyrene helps Jesus carry the cross by Giandomenico Tiepolo.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_V_-_Simon_of_Cyrene_helps_Jesus_carry_the_cross_by_Giandomenico_Tiepolo.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3678,
+        "expectedPixelHeight": 4024,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 5,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
@@ -172,11 +265,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20VI%20-%20Veronica%20wipes%20the%20face%20of%20Jesus%20by%20Giandomenico%20Tiepolo.jpg?width=550",
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS VI - Veronica wipes the face of Jesus by Giandomenico Tiepolo.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VI_-_Veronica_wipes_the_face_of_Jesus_by_Giandomenico_Tiepolo.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3760,
+        "expectedPixelHeight": 4082,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 6,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
@@ -189,11 +300,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS VII - Jesus falls the second time by Giandomenico Tiepolo.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VII_-_Jesus_falls_the_second_time_by_Giandomenico_Tiepolo.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3899,
+        "expectedPixelHeight": 4203,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 7,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
@@ -206,11 +335,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS VIII - Jesus meets the women of Jerusalem who weep by Giandomenico Tiepolo.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_VIII_-_Jesus_meets_the_women_of_Jerusalem_who_weep_by_Giandomenico_Tiepolo.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3101,
+        "expectedPixelHeight": 3988,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 8,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
@@ -223,11 +370,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS IX - Jesus falls the third time.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_IX_-_Jesus_falls_the_third_time.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3170,
+        "expectedPixelHeight": 3992,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 9,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
@@ -240,11 +405,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20X%20-%20Jesus%20is%20stripped%20of%20his%20garments.jpg?width=550",
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS X - Jesus is stripped of his garments.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_X_-_Jesus_is_stripped_of_his_garments.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3525,
+        "expectedPixelHeight": 4478,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 10,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
@@ -257,11 +440,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS XI - Jesus is nailed to the cross.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XI_-_Jesus_is_nailed_to_the_cross.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3741,
+        "expectedPixelHeight": 4702,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 11,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
@@ -274,11 +475,29 @@
       "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
-      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "sourceClassification": "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING",
+      "action": "VERIFY_FILE_SPECIFIC_RIGHTS_AND_PHOTO_EXACT_COMPOSITION_THEN_SHA256_ACQUIRE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "sourceInstitution": "Church of San Polo, Oratory of the Crucifix, Venice",
+      "originalCollectionPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "researchOnlyOriginalCandidate": {
+        "commonsFileTitle": "Chiesa di San Polo (Venice) - VIA CRUCIS XII - Jesus dies on the cross.jpg",
+        "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
+        "commonsCategoryEvidence": "https://commons.wikimedia.org/wiki/Category:Via_Crucis_by_Giovanni_Domenico_Tiepolo",
+        "expectedPixelWidth": 3277,
+        "expectedPixelHeight": 4316,
+        "medium": "2015 photographic reproduction of 1747–49 oil painting",
+        "photographerAndImageCredit": "Must verify per file; Station 1 Commons credits Didier Descouens, CC BY-SA 4.0",
+        "licenceStatus": "NOT_VERIFIED_FOR_THIS_SPECIFIC_FILE",
+        "acquisitionState": "IDENTIFIED_IMAGE_NOT_DOWNLOADED",
+        "originalObjectPanelNumber": 12,
+        "imageApproved": false,
+        "cropApproved": false
+      },
+      "imageAcquired": false,
+      "rightsCleared": false
     },
     {
       "editorialArtworkId": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
@@ -1976,5 +2195,5 @@
       "sourceNeedsByteAndLicenceValidation": true
     }
   ],
-  "latestSourceWave": "31 selected artworks originally without usable identity have now been worked on (exact museum/custodian IDs or explicit version ambiguity); Wikimedia Commons direct acquisition blocked HTTP429."
+  "latestSourceWave": "Twelve earlier cycle-page links resolved to individual panels and Commons image filenames, with licence/master QA still pending. 2 sources remain ambiguous unrelated search links, three Antwerp Rosary collection links need unique painting media."
 }
