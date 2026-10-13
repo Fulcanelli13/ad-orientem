@@ -3,14 +3,14 @@
   "dated": "2026-10-12",
   "branch": "platform/885-sacred-art-candidates",
   "sourcePreviously": "data/calendar/sacred-art-acquired-exact-visual-review-20261012.v1.json",
-  "method": "Exact institution object/identity matched to visible preview when possible. Six exact museum records did not return a reliable matching image; DO NOT count as visually examined.",
+  "method": "Exact institution object/identity matched to visible preview when possible. Six exact museum records did not return a reliable matching image; DO NOT count as visually examined. Final 4 originally uninspected sources were later recovered and byte-verified from canonical GitHub artifacts on 13 October; every 50 source association now has an actual image visual check, but only 13 have a newly independent SHA original-pixel check in the latest two passes.",
   "summary": {
     "remainingFromPrior": 27,
     "secondBatchExactObjectRecordsReconciled": 27,
-    "actuallyNewVisuallyExamined": 23,
-    "sourceOnlyVisualPending": 4,
-    "totalUniqueVisuallyExamined": 46,
-    "remainingActualVisualChecks": 4,
+    "actuallyNewVisuallyExamined": 27,
+    "sourceOnlyVisualPending": 0,
+    "totalUniqueVisuallyExamined": 50,
+    "remainingActualVisualChecks": 0,
     "all50ObjectsSourceReconciled": 50,
     "newUserApprovals": 0,
     "newProductionAssets": 0,
@@ -26,7 +26,10 @@
       "cma-143138",
       "met-436801",
       "nga-50726"
-    ]
+    ],
+    "exactImageOriginalsAllReviewed": true,
+    "independentSHAByteImageChecksFinalBatch": 4,
+    "independentSHAByteImageChecksRecentTwoPasses": 13
   },
   "policy": {
     "preserve101Choices": true,
@@ -186,22 +189,24 @@
       "recordedArtist": "French 15th Century",
       "recordedTitle": "The Expectant Madonna with Saint Joseph",
       "museumOriginal": "https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph",
-      "sourceImageMatch": "EXACT_NGA_OBJECT_IMAGE_DESCRIBED_BUT_UNSEEN",
-      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
-      "artisticEvidence": "VERIFIED_OBJECT_IMAGE_METADATA_AND_MUSEUM_DETAILED_VISUAL_DESCRIPTION",
-      "portraitCropRisk": "WHOLE_PANEL_PENDING",
-      "reviewNote": "NGA 41644 (1952.5.32): vertical French tempera panel with heavily featured Expectant Madonna; Saint Joseph is behind an embroidered curtain with a crutch and green book. Mary is principal subject and figure; not a stand-alone Joseph likeness. Artist/style decision still requires seeing exact full image.",
+      "sourceImageMatch": "SHA_MATCHED_ORIGINAL_JPEG_VISUALLY_INSPECTED",
+      "artistTier": "SECONDARY_HISTORICAL_MARIAN",
+      "artisticEvidence": "EXACT_JPEG_COMPOSITION_AND_PHONE_CROP_INSPECTED",
+      "portraitCropRisk": "FULL_TALL_PANEL_FITS_9_16_WITH_VERTICAL_LETTERBOX",
+      "reviewNote": "NGA exact 1952.5.32 panel shows pregnant Virgin dominant and Saint Joseph behind red-robed at right; angels flank. Bright gold-ground historical panel, not an independent Saint Joseph portrait; retain only as Marian/Holy Family devotional context.",
       "relevantOutstandingSubjectIds": [
         "SNT-OT-01"
       ],
       "previouslyExplicitUserSelection": false,
       "userApprovalNewlyGranted": false,
-      "originalImageByteInspectionInThisPass": false,
-      "fullResolutionPixelCheckInThisPass": false,
+      "originalImageByteInspectionInThisPass": true,
+      "fullResolutionPixelCheckInThisPass": true,
       "phoneCropApproved": false,
       "publicationApproved": false,
       "exactImageWitness": "https://www.nga.gov/artworks/41644-expectant-madonna-saint-joseph",
-      "exactImageWitnessAuthority": "NGA"
+      "exactImageWitnessAuthority": "NGA",
+      "exactMasterPixelAuditRef": "data/calendar/sacred-art-four-final-master-inspections-20261013.v1.json",
+      "sourceImageMatchedOriginalSha256": "79288aef1a922ed49acc40312676d25daca19e4f35fa18c26a2779be1ce7bc74"
     },
     {
       "artworkId": "cma-150955",
@@ -233,18 +238,18 @@
       "recordedArtist": "Segna di Buonaventura",
       "recordedTitle": "Saint Benedict",
       "museumOriginal": "https://www.metmuseum.org/art/collection/search/442750",
-      "sourceImageMatch": "EXACT_MET_OBJECT_AND_IMAGE_ENTRY_VERIFIED_BUT_UNSEEN",
-      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
-      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
-      "portraitCropRisk": "IMAGE_IDENTITY_PENDING",
-      "reviewNote": "Met accession 24.78c is Saint Benedict's panel from Segna di Buonaventura's dismembered Silvestrine altarpiece of the 1320s. Gold-ground tempera with Byzantine-like striations; earlier restoration and framing elements require safe in-image crop assessment. Do not substitute the similar Saint Sylvester panel 24.78b. No new quality verdict from text alone. New Commons inconsistency: Saint Benedict DP333089 has caption for Saint Silvester and object number 442749/24.78b, while Saint Silvester DP333091 shows a Saint Benedict caption. Neither filename alone is proof of the canonical 442750 image; match accession to Met original before art ranking.",
+      "sourceImageMatch": "SHA_MATCHED_ORIGINAL_JPEG_VISUALLY_INSPECTED",
+      "artistTier": "SECONDARY_HISTORIC_SAINT_PANEL",
+      "artisticEvidence": "EXACT_JPEG_COMPOSITION_AND_PHONE_CROP_INSPECTED",
+      "portraitCropRisk": "INTEGRAL_HISTORICAL_FRAME_AND_UPPER_COMPARTMENTS_CONTAIN",
+      "reviewNote": "Exact Met 24.78c St Benedict was independently recovered and pictured with book/habit below two small saint figures in full altarpiece frame. Correct Benedict rather than Sylvester 24.78b, despite Commons filename/caption confusion. Flat medieval gold-ground historical support only; Zurbarán remains preferred.",
       "relevantOutstandingSubjectIds": [
         "SNT-OT-14"
       ],
       "previouslyExplicitUserSelection": false,
       "userApprovalNewlyGranted": false,
-      "originalImageByteInspectionInThisPass": false,
-      "fullResolutionPixelCheckInThisPass": false,
+      "originalImageByteInspectionInThisPass": true,
+      "fullResolutionPixelCheckInThisPass": true,
       "phoneCropApproved": false,
       "publicationApproved": false,
       "exactImageWitness": "https://www.metmuseum.org/art/collection/search/442750",
@@ -262,7 +267,9 @@
           "captionReported": "Saint Benedict MET 24.78c",
           "assessment": "CONFLICT_MUSEUM_OBJECT_RECONCILIATION_REQUIRED"
         }
-      ]
+      ],
+      "exactMasterPixelAuditRef": "data/calendar/sacred-art-four-final-master-inspections-20261013.v1.json",
+      "sourceImageMatchedOriginalSha256": "49073f2dae187f36439ba06a8832a872469bfa8b698b94233aa552ec0c3fa79c"
     },
     {
       "artworkId": "met-436565",
@@ -568,22 +575,24 @@
       "recordedArtist": "Workshop of Domenico Fetti",
       "recordedTitle": "The Good Samaritan",
       "museumOriginal": "https://www.metmuseum.org/art/collection/search/436302",
-      "sourceImageMatch": "EXACT_MET_OBJECT_IDENTITY_VERIFIED_NOT_VISUALLY_MATCHED",
-      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
-      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
-      "portraitCropRisk": "VERIFY_FULL_IMAGE",
-      "reviewNote": "Met accession 30.31 belongs to the WORKSHOP of Domenico Fetti; the separately reproduced autograph Good Samaritan works in Dresden or Boston are not interchangeable with the New York workshop panel. A search result returning the autograph must not be counted as this painting. Keep source image inspection pending.",
+      "sourceImageMatch": "SHA_MATCHED_ORIGINAL_JPEG_VISUALLY_INSPECTED",
+      "artistTier": "HOLD_LOW_CONTRAST_WORKSHOP",
+      "artisticEvidence": "EXACT_JPEG_COMPOSITION_AND_PHONE_CROP_INSPECTED",
+      "portraitCropRisk": "MUDDY_FIGURES_AND_NARRATIVE_SMALL_CROP",
+      "reviewNote": "Met workshop of Fetti 30.31 (not Dresden/Boston autograph), exact hash image depicts Good Samaritan and wounded traveler with donkey in faded dark brown landscape. Low contrast and distant figures make inadequate hero, contextual study only.",
       "relevantOutstandingSubjectIds": [
         "BIB-G17"
       ],
       "previouslyExplicitUserSelection": false,
       "userApprovalNewlyGranted": false,
-      "originalImageByteInspectionInThisPass": false,
-      "fullResolutionPixelCheckInThisPass": false,
+      "originalImageByteInspectionInThisPass": true,
+      "fullResolutionPixelCheckInThisPass": true,
       "phoneCropApproved": false,
       "publicationApproved": false,
       "exactImageWitness": "https://www.metmuseum.org/art/collection/search/436302",
-      "exactImageWitnessAuthority": "THE_MET"
+      "exactImageWitnessAuthority": "THE_MET",
+      "exactMasterPixelAuditRef": "data/calendar/sacred-art-four-final-master-inspections-20261013.v1.json",
+      "sourceImageMatchedOriginalSha256": "9fc2875bc115caf055b8816a1519489a50651963b04bf5a37e445f0d6e93e0da"
     },
     {
       "artworkId": "cma-150040",
@@ -633,22 +642,24 @@
       "recordedArtist": "Maestro Bartolomé",
       "recordedTitle": "The Entry into Jerusalem",
       "museumOriginal": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
-      "sourceImageMatch": "EXACT_KRESS_K2017_OBJECT_ID_VERIFIED_NOT_VISUALLY_MATCHED",
-      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
-      "artisticEvidence": "SOURCE_ONLY_NOT_ARTISTIC_VISUAL_REVIEW",
-      "portraitCropRisk": "EXACT_KRESS_IMAGE_REQUIRED",
-      "reviewNote": "Kress K2017 The Entry into Jerusalem, Maestro Bartolomé 1480–88, University of Arizona 1961.013.042. Exact institutional source is certified Public Domain but individual reproduction/rights release still separate. Search image showed Pietro Lorenzetti's fresco, NOT this painting: discard that image without review. Historic selected asset retained.",
+      "sourceImageMatch": "SHA_MATCHED_ORIGINAL_JPEG_VISUALLY_INSPECTED",
+      "artistTier": "SECONDARY_HISTORIC_PRESELECTED",
+      "artisticEvidence": "EXACT_JPEG_COMPOSITION_AND_PHONE_CROP_INSPECTED",
+      "portraitCropRisk": "FULL_PANEL_CONTAIN_KEEP_CROWD_AND_CITY",
+      "reviewNote": "Correct Maestro Bartolomé K2017 5510x7700 original: Christ on donkey, welcoming crowd, Jerusalem towers, palm fronds. Clear exact subject, strong historic decorative color but flattened early style. Earlier human choice preserved, no automatic modern replacement, rights/crop still held.",
       "relevantOutstandingSubjectIds": [
         "BIB-G25"
       ],
       "previouslyExplicitUserSelection": true,
       "userApprovalNewlyGranted": false,
-      "originalImageByteInspectionInThisPass": false,
-      "fullResolutionPixelCheckInThisPass": false,
+      "originalImageByteInspectionInThisPass": true,
+      "fullResolutionPixelCheckInThisPass": true,
       "phoneCropApproved": false,
       "publicationApproved": false,
       "exactImageWitness": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
-      "exactImageWitnessAuthority": "KRESS"
+      "exactImageWitnessAuthority": "KRESS",
+      "exactMasterPixelAuditRef": "data/calendar/sacred-art-four-final-master-inspections-20261013.v1.json",
+      "sourceImageMatchedOriginalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff"
     }
   ],
   "reviewBoundary": "Only explicit matched visual preview qualifies as visual assessment; exact official source, textual visual description and CC0 reproduction identity can resolve provenance without constituting visual artistic approval."
