@@ -19,7 +19,9 @@
     "originalMissalScanChecks": 0,
     "primaryTextLinkCorrections": 26,
     "properExamplesComparedTo1962OCR": 2,
-    "totalSelectComparisonsAndProperIdentityChecks": 14
+    "totalSelectComparisonsAndProperIdentityChecks": 14,
+    "remainingContextAndRiteComparisonsCompleted": 17,
+    "totalEntriesWithSomeFocusedSourceCheck": 31
   },
   "editorialPolicy": {
     "authorialDraftsAreNotAuthorQuotes": true,
@@ -30,7 +32,8 @@
     "canonicalIdsMB01ToMB26Untouched": true,
     "stageMappingNotPresentationCardMapping": true,
     "wikisourceOrdinaryHasTranscriptionTypos": "Wikisource Ordinarium missae (1962) contains transcription defects such as 'perducat uso' and 'interecedere'; do not present it as printed-edition-certified. Use 1962 Missal OCR for research reference only, original facsimile required for publication.",
-    "referenceOriginalEdition": "1962 Benziger Missale Romanum editio iuxta typicam OCR, not proven identical to independent editio typica witness at all variant loci."
+    "referenceOriginalEdition": "1962 Benziger Missale Romanum editio iuxta typicam OCR, not proven identical to independent editio typica witness at all variant loci.",
+    "ourFatherTextualVariant": "MB21: Clementine Matthew 6:11 supersubstantialem vs 1962 Latin Mass quotidianum, agreeing with Luke 11:3; not a verbatim Matthew quotation."
   },
   "records": [
     {
@@ -74,8 +77,8 @@
       "classification": "DIRECT_SCRIPTURAL_WORDING",
       "bibleReference": "Psalm 42:1–5 (Vulgate; 43:1–5 modern)",
       "existingCoreSourceRecord": "MB02",
-      "fr": "Le psaume « Judica me » forme un dialogue pénitentiel et confiant : l’orant demande à Dieu de le conduire vers son autel. La Messe emploie ce véritable psaume biblique, sans que chaque phrase représente une étape de la Passion. Les rubriques de 1962 omettent ce psaume notamment aux messes des défunts et dans des circonstances prescrites du temps de la Passion. [Écriture](https://www.newadvent.org/bible/psa042.htm) · [OCR du Missel romain de 1962, non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Référence complémentaire](https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html)",
-      "en": "“Judica me” is a psalm of petition and trust: its speaker asks God to lead him to the altar. The Mass uses an actual biblical psalm, not a coded reenactment of successive Passion scenes. Under the 1962 rubrics it is omitted, including at Masses for the Dead and on specified Passiontide occasions. [Scripture](https://www.newadvent.org/bible/psa042.htm) · [1962 Roman Missal OCR, uncollated](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Further source](https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html)",
+      "fr": "Le psaume « Judica me », récité en alternance dans la préparation de la Messe, exprime une supplication confiante : l’orant demande à Dieu de le conduire vers son autel. La Messe emploie ce véritable psaume biblique, sans que chaque phrase représente une étape de la Passion. Les rubriques de 1962 omettent ce psaume notamment aux messes des défunts et dans des circonstances prescrites du temps de la Passion. [Écriture](https://www.newadvent.org/bible/psa042.htm) · [OCR du Missel romain de 1962, non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Référence complémentaire](https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html)",
+      "en": "“Judica me,” prayed responsorially in the preparatory rite, expresses petition and trust: its speaker asks God to lead him to the altar. The Mass uses an actual biblical psalm, not a coded reenactment of successive Passion scenes. Under the 1962 rubrics it is omitted, including at Masses for the Dead and on specified Passiontide occasions. [Scripture](https://www.newadvent.org/bible/psa042.htm) · [1962 Roman Missal OCR, uncollated](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Further source](https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html)",
       "primaryEdition": "1962 Roman Missal, Benziger editio iuxta typicam: accessible OCR text, not visually collated with original printed pages",
       "sourceUrls": [
         "https://www.newadvent.org/bible/psa042.htm",
@@ -89,10 +92,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/psa042.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Ritus 1962: Psalm Judica and antiphon; Psalm 42:1–5 Clementine",
+        "comparison": "Direct Psalm recitation; distinct 1962 omissions at Requiem/Passiontide vs complete preliminary prayers after procession",
+        "textualRelationship": "DIRECT_SCRIPTURAL_WORDING",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -119,10 +127,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/luk018.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Luke 18:13: publicanus ... percutiebat pectus suum",
+        "comparison": "Narrative parallel for penitence and striking breast; Confiteor not Gospel quotation",
+        "textualRelationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -149,10 +162,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/mat020.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Matthew 20:30–31: Domine, miserere nostri, fili David",
+        "comparison": "Closely comparable cry to Greek Kyrie eleison, but no exclusive Gospel scene proves prayer origin",
+        "textualRelationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -280,10 +298,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/joh001.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "John 1:14: Et Verbum caro factum est",
+        "comparison": "Doctrine of Incarnation in Credo matches Johannine truth, not full literal Creed wording",
+        "textualRelationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -310,10 +333,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/psa025.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Psalm 25:6: Lavabo inter innocentes manus meas",
+        "comparison": "Ritus VII.6 directs Lavabo; Psalm in this Vulgate-numbered source is headed Psalm 26 (modern numbering), no false citation to separate Psalm",
+        "textualRelationship": "DIRECT_SCRIPTURAL_WORDING",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -325,8 +353,8 @@
       "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
       "bibleReference": "Romans 12:1",
       "existingCoreSourceRecord": "MB10",
-      "fr": "Par « Orate fratres », le prêtre demande que Dieu agrée le sacrifice offert par son ministère et celui auquel les fidèles s’unissent. Romains 12,1 appelle les chrétiens à présenter leur vie comme une offrande spirituelle : le rapprochement éclaire cette participation intérieure. Il ne faut pourtant pas confondre ce verset avec les paroles de la prière romaine, ni effacer la fonction propre du prêtre célébrant. [Écriture](https://www.newadvent.org/bible/rom012.htm) · [OCR du Missel romain de 1962, non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Référence complémentaire](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)",
-      "en": "Through “Orate fratres,” the priest asks that God accept the sacrifice offered through his ministry and in which the faithful participate. Romans 12:1 calls Christians to offer their lives as spiritual worship, illuminating that inward participation. The verse is not the text of the Roman prayer, and it does not erase the distinctive liturgical ministry of the celebrant. [Scripture](https://www.newadvent.org/bible/rom012.htm) · [1962 Roman Missal OCR, uncollated](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)",
+      "fr": "Par « Orate fratres », le prêtre demande que Dieu agrée son sacrifice, auquel les fidèles sont appelés à s’unir. Romains 12,1 appelle les chrétiens à présenter leur vie comme une offrande spirituelle : le rapprochement éclaire cette participation intérieure. Il ne faut pourtant pas confondre ce verset avec les paroles de la prière romaine, ni effacer la fonction propre du prêtre célébrant. [Écriture](https://www.newadvent.org/bible/rom012.htm) · [OCR du Missel romain de 1962, non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Référence complémentaire](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)",
+      "en": "Through “Orate fratres,” the priest asks that God accept his sacrifice, with which the faithful are called to unite themselves. Romans 12:1 calls Christians to offer their lives as spiritual worship, illuminating that inward participation. The verse is not the text of the Roman prayer, and it does not erase the distinctive liturgical ministry of the celebrant. [Scripture](https://www.newadvent.org/bible/rom012.htm) · [1962 Roman Missal OCR, uncollated](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)",
       "primaryEdition": "1962 Roman Missal, Benziger editio iuxta typicam: accessible OCR text, not visually collated with original printed pages",
       "sourceUrls": [
         "https://www.newadvent.org/bible/rom012.htm",
@@ -340,10 +368,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/rom012.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Romans 12:1: hostiam viventem, sanctam; rationabile obsequium",
+        "comparison": "Spiritual self-offering theological context, not wording of Orate fratres",
+        "textualRelationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -390,8 +423,8 @@
       "classification": "SCRIPTURAL_WORDING_ADAPTED",
       "bibleReference": "Matthew 21:9",
       "existingCoreSourceRecord": "MB12",
-      "fr": "« Benedictus qui venit in nomine Domini » et « Hosanna » rappellent l’acclamation de Jésus entrant dans Jérusalem (Mt 21,9), elle-même liée au psaume 117 de la Vulgate. Dans la Messe, cette acclamation rejoint le Sanctus, mais l’entrée à Jérusalem n’est pas la même scène que la vision des séraphins d’Isaïe. Le chant réunit plusieurs témoignages bibliques en une seule louange. [Écriture](https://www.newadvent.org/bible/mat021.htm) · [OCR du Missel romain de 1962, non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Référence complémentaire](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)",
-      "en": "“Benedictus qui venit in nomine Domini” and “Hosanna” recall the acclamation greeting Jesus as he entered Jerusalem (Matthew 21:9), with roots in Vulgate Psalm 117. Within the Mass this is joined to the Sanctus, but the entry into Jerusalem is not Isaiah’s vision of the seraphim. One liturgical acclamation draws together distinct scriptural testimonies. [Scripture](https://www.newadvent.org/bible/mat021.htm) · [1962 Roman Missal OCR, uncollated](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)",
+      "fr": "« Benedictus qui venit in nomine Domini » et « Hosanna » rappellent l’acclamation de Jésus entrant dans Jérusalem (Mt 21,9), elle-même liée au psaume 117 de la Vulgate. Dans la Messe, cette acclamation rejoint le Sanctus, mais l’entrée à Jérusalem n’est pas la même scène que la vision des séraphins d’Isaïe. Le chant réunit plusieurs témoignages bibliques en une seule louange ; le « hosanna in altissimis » de Matthieu devient « hosanna in excelsis » dans le chant de la Messe. [Écriture](https://www.newadvent.org/bible/mat021.htm) · [OCR du Missel romain de 1962, non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Référence complémentaire](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)",
+      "en": "“Benedictus qui venit in nomine Domini” and “Hosanna” recall the acclamation greeting Jesus as he entered Jerusalem (Matthew 21:9), with roots in Vulgate Psalm 117. Within the Mass this is joined to the Sanctus, but the entry into Jerusalem is not Isaiah’s vision of the seraphim. One liturgical acclamation draws together distinct scriptural testimonies; Matthew's “hosanna in altissimis” appears as “hosanna in excelsis” in the liturgical text. [Scripture](https://www.newadvent.org/bible/mat021.htm) · [1962 Roman Missal OCR, uncollated](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)",
       "primaryEdition": "1962 Roman Missal, Benziger editio iuxta typicam: accessible OCR text, not visually collated with original printed pages",
       "sourceUrls": [
         "https://www.newadvent.org/bible/mat021.htm",
@@ -405,10 +438,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/mat021.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Matthew 21:9: benedictus qui venit in nomine Domini; hosanna in altissimis",
+        "comparison": "Mass Benedictus joins Gospel phrase to Sanctus and sings Hosanna in excelsis; altissimis/excelsis differ",
+        "textualRelationship": "SCRIPTURAL_WORDING_ADAPTED",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -435,10 +473,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/1ti002.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "1 Timothy 2:1–2: supplications for all men, rulers",
+        "comparison": "Broad intercessory principle supports Te igitur without proving literary derivation",
+        "textualRelationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -465,10 +508,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/1co011.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "1 Corinthians 11:24: hoc est corpus meum ... versus Mass hoc est enim corpus meum",
+        "comparison": "Institution narrative is directly related, but ritual text includes extra enim and a different context",
+        "textualRelationship": "NARRATIVE_SCRIPTURE_CONNECTION",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -530,10 +578,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/1co011.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "1 Corinthians 11:26: mortem Domini annuntiabitis donec veniat",
+        "comparison": "Liturgical Unde et memores includes Passion Resurrection Ascension, beyond exact Pauline sentence",
+        "textualRelationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -560,10 +613,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/gen004.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Genesis 4:4: Abel offerings from firstborn; Canon explicitly names Abel",
+        "comparison": "Explicit biblical actor in Canon but historical sacrifice not a celebration of Mass",
+        "textualRelationship": "EXPLICIT_BIBLICAL_FIGURE",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -590,10 +648,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/gen022.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Genesis 22:12–13: angel stops Abraham from killing Isaac",
+        "comparison": "Genesis 22 offering/sparing of Isaac differs from later Christian sacrificial typology",
+        "textualRelationship": "EXPLICIT_BIBLICAL_FIGURE",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -655,10 +718,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/heb007.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Hebrews 7:1–17: Melchisedech priesthood and Christ",
+        "comparison": "Biblical typology is explicit in Hebrews but Canon does not quote its chapter",
+        "textualRelationship": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -667,15 +735,16 @@
       "id": "MB21",
       "formationStage": "MF07",
       "moment": "Pater noster",
-      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
       "bibleReference": "Matthew 6:9–13",
       "existingCoreSourceRecord": "MB21",
-      "fr": "Le « Pater noster » est la prière enseignée par le Christ à ses disciples (Mt 6,9–13 ; cf. Lc 11,2–4). Dans la Messe romaine, elle vient après le Canon et reçoit une introduction liturgique propre ; sa dernière demande s’articule avec le « Libera nos » qui suit. Le lien biblique est direct, mais le déroulement cérémoniel appartient au rite. [Écriture](https://www.newadvent.org/bible/mat006.htm) · [OCR du Missel romain de 1962, non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)",
-      "en": "The Lord’s Prayer was taught by Christ to his disciples (Matthew 6:9–13; compare Luke 11:2–4). In the Roman Mass it follows the Canon, preceded by a liturgical introduction and followed by the related “Libera nos” prayer. The biblical origin is direct, while its ritual placement and responses belong to the Roman rite. [Scripture](https://www.newadvent.org/bible/mat006.htm) · [1962 Roman Missal OCR, uncollated](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)",
+      "fr": "Le « Pater noster » est la prière enseignée par le Christ à ses disciples (Mt 6,9–13 ; Lc 11,2–4). Le latin de la Messe suit largement ce texte, mais ne reproduit pas chaque mot de la Vulgate clémentine de Matthieu : celle-ci écrit « panem nostrum supersubstantialem » (Mt 6,11), tandis que la Messe dit « panem nostrum quotidianum », comme Lc 11,3. La place de cette prière après le Canon et les réponses sont fixées par le rite. [Écriture selon Matthieu](https://www.newadvent.org/bible/mat006.htm) · [Écriture selon Luc](https://www.newadvent.org/bible/luk011.htm) · [Missel 1962, OCR non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)",
+      "en": "The Pater noster is the prayer taught by Christ (Matthew 6:9–13; Luke 11:2–4). Its Latin liturgical form follows this teaching, but is not identical to the Clementine Vulgate of Matthew: Matthew 6:11 says “panem nostrum supersubstantialem,” while the Mass says “panem nostrum quotidianum,” as in Luke 11:3. The prayer’s placement after the Canon and the ritual responses are governed by the Roman rite. [Matthew](https://www.newadvent.org/bible/mat006.htm) · [Luke](https://www.newadvent.org/bible/luk011.htm) · [1962 Missal, uncollated OCR](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)",
       "primaryEdition": "1962 Roman Missal, Benziger editio iuxta typicam: accessible OCR text, not visually collated with original printed pages",
       "sourceUrls": [
         "https://www.newadvent.org/bible/mat006.htm",
-        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt"
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://www.newadvent.org/bible/luk011.htm"
       ],
       "unresolved": [
         "LITURGICAL_FORMULA_AND_EDITION_VARIANTS",
@@ -684,12 +753,18 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/mat006.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Matthew 6:11: panem nostrum supersubstantialem; Luke 11:3 & Mass: quotidianum",
+        "comparison": "Major correction: Roman Pater noster borrows the prayer of Christ but differs from Matthew Clementine at daily bread",
+        "textualRelationship": "SCRIPTURAL_WORDING_ADAPTED",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "checkedSecondaryBibleUrl": "https://www.newadvent.org/bible/luk011.htm"
       }
     },
     {
@@ -714,10 +789,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/mat006.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "Matthew 6:13: sed libera nos a malo",
+        "comparison": "Libera nos embolism enlarges final petition with intercession for saints; prayer is not a continuation of Gospel",
+        "textualRelationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -744,10 +824,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/joh001.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "John 1:29: Ecce Agnus Dei, ecce qui tollit peccatum mundi",
+        "comparison": "Mass changes into repeated petitions and 1962 Requiem uses dona eis requiem",
+        "textualRelationship": "SCRIPTURAL_WORDING_ADAPTED",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
@@ -844,10 +929,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "SCRIPTURE_CONTEXT_AND_1962_RITE_COMPARISON",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/joh001.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedAuthorityUrl": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+        "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
+        "checkedPhraseInRiteOrBible": "John 1:1–14, Et Verbum caro factum est",
+        "comparison": "Actual passage of Last Gospel where prescribed, rubrics 509–510 restrict cases and include proper Palm Sunday reading",
+        "textualRelationship": "VARIABLE_RITE_SCRIPTURE_READING",
+        "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false
       }
