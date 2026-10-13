@@ -1,11 +1,11 @@
 {
   "schema": "AO_SACRED_ART_SOURCE_IDENTITY_CURRENT_POINTER_V1",
   "asOf": "2026-10-13",
-  "canonicalNewWorkQueue": "data/calendar/sacred-art-source-identity-master-215-queue-20261013.v7.json",
-  "coveredWaves": "W01-W14",
-  "newSourceIdentities": 215,
+  "canonicalNewWorkQueue": "data/calendar/sacred-art-source-identity-master-222-queue-20261013.v8.json",
+  "coveredWaves": "W01-W15",
+  "newSourceIdentities": 222,
   "newAcquiredOriginalImageMasters": 8,
-  "pendingImageMasters": 207,
+  "pendingImageMasters": 214,
   "oldCanonicalRegistry": "data/calendar/sacred-art-candidates.v1.json",
   "oldCanonicalRegistryEntries": 281,
   "oldCanonicalHashedMasters": 266,
@@ -15,33 +15,50 @@
     "w13_london_coup_de_lance": 1,
     "w13_windsor_access_check": 1,
     "w14_khm_original_workshop": 2,
-    "w14_palazzo_bianco_disputed": 1
+    "w14_palazzo_bianco_disputed": 1,
+    "w15_nga_RubensWorkshopFixed": true,
+    "w15_odescalchiPhotoRights": 1
   },
   "imageRightsApprovedForApp": 0,
   "editorialReleaseApprovedForApp": 0,
   "productionArtMutated": false,
   "acquiredImageProof": "data/calendar/sacred-art-eight-real-originals-sha-ledger-20261013.v1.json",
-  "currentScope": "Research-only 215 identity leads including individually inventoried oil studies and component panels, no worldwide oeuvre completeness or rights approvals.",
-  "precedingSnapshots": "145/153/165/180/190/196 queue files are historical; current version 215 W14 replaces as active authority, not additive.",
+  "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
+  "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Reconcile other museum paintings in Rubens complete religious corpus and Van Dyck Böhler apostles across all museums",
-    "Complete Caravaggio scholarly autograph/disputed-object matrix without promoting Genoa disputed Ecce Homo",
-    "Resolve KHM studio execution claims GG517/GG519 and donor/ensemble components GG678/GG698",
-    "Obtain licensed full-resolution museum masters without reacquiring approved 4/5–5/5",
-    "Store actual image SHA256/dimensions in durable asset vault; existing eight Action originals retention 30 days",
-    "Capture 0–5 human review, subject suitability, phone crop and usage clearance before app integration"
+    "Enumerate complete Rubens Eucharist corpus beyond six Prado oil models and separate engravings/copies/tapestries",
+    "Reconcile Caravaggio original authorship and alternative versions against original custodians",
+    "Source lawful high-resolution photographs and durable vault for 214 source-unacquired new leads without reacquiring approved 4–5/5 works",
+    "Preserve NGA 46131 anonymous Rubens-workshop replica status; actual Rubens source modello Mauritshuis 926 restricted for commercial use",
+    "Obtain user 0–5 ratings, themed placement, original crop and publication approval"
   ],
   "verifiedCounts": {
-    "newQueue": 215,
-    "unique": 215,
-    "acquired": 8,
-    "waiting": 207,
-    "wave14": 19,
-    "registry": 281,
-    "waveStart": "W14-001",
-    "waveEnd": "W14-019",
-    "originalReady": 0,
-    "unchangedApp": true
+    "master": 222,
+    "uniqueIds": 222,
+    "wave15": 7,
+    "oldRegistry": 281,
+    "priorAcquired": 8,
+    "pending": 214,
+    "ngaWorkshop": "Anonymous painter (probably Rubens workshop; NGA)",
+    "ngaHash": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+    "ngaUnrated": "PENDING_HUMAN_CURATOR",
+    "productionMutation": false
   },
-  "sourceCensusWave": "data/calendar/sacred-art-vienna-rubens-vandyck-caravaggio-wave14-20261013.v1.json"
+  "sourceCensusWave": "data/calendar/sacred-art-rubens-eucharist-caravaggio-wave15-20261013.v1.json",
+  "completedBoundedSequences": [
+    {
+      "name": "Prado Rubens Triumph of the Eucharist original oil model panels",
+      "verified": 6,
+      "total": 6,
+      "accessions": "P001695-P001700",
+      "leadIds": [
+        "W15-001",
+        "W05-018",
+        "W15-002",
+        "W15-003",
+        "W15-004",
+        "W15-005"
+      ]
+    }
+  ]
 }
