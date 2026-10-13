@@ -6,9 +6,9 @@
 
 The 83 pending Bible artwork opportunities have all been assigned a provisional visual strategy: **14** representative OT anchor opportunities; **29** low-intensity OT contexts, of which **11** explicitly favor map/diagram; **30** prominent NT source comparisons and **10** selective NT contexts. Among the NT contexts, the default is art only if its iconography and aesthetics are strong. **There is no mandatory image count.**
 
-The 83 operational rows currently split as **26 compare-existing-candidates**, **3 targeted masterpieces-source-checks**, **1 exact John 21 canonical reuse**, **14 OT anchor selectivities**, **17 map/diagram defaults**, **18 text/map/reuse contexts**, and **4 optional art-or-text contexts**. These are editorial workflow states, not final picture decisions.
+The 83 operational rows currently split as **28 compare-existing-candidates**, **1 text/diagram-first Council of Jerusalem**, **1 exact John 21 canonical reuse**, **14 OT anchor selectivities**, **17 map/diagram defaults**, **18 text/map/reuse contexts**, and **4 optional art-or-text contexts**. These are editorial workflow states, not final picture decisions.
 
-Of 30 deep-research NT subjects, **26 have a verified/acquired painting-source lead in the reconciled register** (some only in prints/frescos or with reproduction holds). Four currently lack that documented source status: `BIB-A09` Lystra and `BIB-A13` Areopagus each have an older unverified candidate; `BIB-A10` Jerusalem council has no recorded source; `BIB-A20` Peter's commissioning is an intentional cross-link to `BIB-G23` and requires no independent hunt. Consequently **three** require a targeted object/source pass, not 30 new searches.
+Of 30 deep-research NT subjects, **28 have an acquired or documented artwork-source lead in the reconciled register**, some prints/frescoes/tapestry works, not necessarily finished canvas paintings; **one** (`BIB-A20`) deliberately reuses the same John 21 artwork as `BIB-G23`; and **one** (`BIB-A10`) is offered a text/diagram-first outcome. There are **zero compulsory new painting searches** among the 30 cases. None is yet a new human-approved artwork.
 
 ## New verified collection-research batch
 
@@ -46,7 +46,16 @@ Machine-readable [83-row execution ledger](../../data/calendar/sacred-art-bible-
 
 ## Next high-value execution
 
-1. Check existing prior source records for Lystra and Areopagus, and screen whether any Council of Jerusalem masterpiece genuinely adds pictorial value before searching further.
+1. Visually evaluate the institutional originals now recovered for Lystra and the Areopagus; Council of Jerusalem has a provisional text/diagram-first solution and should not trigger mandatory independent art research.
 2. Compare museum-source imagery for the newly found Tabitha and Perugino works against prior candidates. Preserve original painting versus etching, damaged panel or panoramic fresco distinctions.
 3. Convert low-value OT subjects into usable map/genealogy links in the Bible Theatre owner's pipeline **only after** reconciling its source-of-truth event records. Research branch marks recommended outcomes, not UI mutations.
 4. Return to 51 higher-priority saint/devotional art decisions separately, then final full-resolution and commercial-rights approval.
+
+## Final high-priority New Testament gap closure, same batch
+
+- **BIB-A09 Paul at Lystra:** [Jacob Pynas, *Paul and Barnabas at Lystra*](https://www.metmuseum.org/art/collection/search/437351), Met 1971.255, original oil on wood. This matches the Acts 14 Lystra episode; distinguish from a later stoning scene or Jordaens's chalk drawing. Strong object-source candidate, image rights and artistic QA pending.
+- **BIB-A13 Paul at the Areopagus:** [Vatican Museums' *Saint Paul Preaching at Athens*](https://www.museivaticani.va/content/museivaticani/en/eventi-e-novita/iniziative/mostre/2026/predica-san-paolo-atene.html), Raphael/workshop-designed Flemish Acts tapestry, woven 1515–1521; exhibited at Castel Gandolfo in 2026. Not a Raphael oil painting. Institutional source verified; reproduction rights still held.
+- **BIB-A10 Council of Jerusalem:** text/diagram-first editorial option, with chronological explanation and Jerusalem context. No requirement to invent an art scene. This leaves its human art-selection status unchanged (undecided).
+- **BIB-A20 Peter Commissioned:** explicitly reuse the same John 21:15–19 canonical painting that eventually serves **BIB-G23 Christ Feeds Peter's Sheep**; no double image or duplicate Bible Theatre event invented.
+
+**Final operational high-priority partition: 28 documented artwork-source subjects + 1 reused John 21 subject + 1 text/diagram-first subject = all 30.** This is a successful research-triage outcome, not approval or production readiness.
