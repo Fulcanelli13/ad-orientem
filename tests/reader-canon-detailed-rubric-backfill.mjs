@@ -27,7 +27,7 @@ for(const row of audit.rows){
  assert.ok(row.draftFrenchRubric.length>15,row.cueId+": no substantive French candidate");
  assert.ok(row.sourceUrls.every(url=>url.startsWith("https://")),row.cueId+": source links absent");
  assert.equal(row.actor,"PRIEST");
- assert.ok(/^AO\\.CANON\\.R62\\.\\d{3}$/.test(row.actionId));
+ assert.ok(/^AO\.CANON\.R62\.\d{3}$/.test(row.actionId));
 }
 assert.ok(!seen.has("AO.SM.C0155"),"Existing published rubric cue must never be replaced");
 assert.ok(!seen.has("AO.SM.C0174"),"Existing multi-stage Host rubric must not be backfilled");
