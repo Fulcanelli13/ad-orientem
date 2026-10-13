@@ -17,13 +17,14 @@
     {
       "priority": "P0",
       "lane": "REQUIRED_MAJOR_LITURGICAL",
-      "requirement": "For every actual observed Class I date, associate one appropriate painting for the feast, principal, appointed Gospel or clearly supported liturgical subject; repeat the same eligible painting across legitimately related feast occurrences instead of one image per day.",
+      "requirement": "For every actual observed Class I date, provide at least one appropriate painting. A distinct major feast, saint or rite should have art depicting its actual feast/event/person; appointed Gospel art can cover Class I Sundays and privileged ferias when relevant, or serve only as an explicitly provisional fallback for feast-specific gaps. Legitimate repetitions (octave, repeated Gospel) may share an eligible painting rather than unique art per date.",
       "include": [
         "Every observed I-class day under actual 1962 DayResolver",
         "Selected II/III class figures: Apostles, Evangelists, Doctors, angels, major saints, national patrons",
         "Local/national patron days only where profile/jurisdiction proves an actual observed principal or commemoration"
       ],
-      "exception": "Commemoration and feast suppressed by higher-precedence day do not replace the actual principal; a locally valid commemoration may get a separately identified artwork."
+      "exception": "Commemoration and feast suppressed by higher-precedence day do not replace the actual principal; a locally valid commemoration may get a separately identified artwork.",
+      "gapGate": "For an observed major feast, generic Gospel, season or Sunday fallback is not counted as the specific major-feast image requirement being satisfied. Preserve separate exact-subject backlog until resolved."
     },
     {
       "priority": "P1",
