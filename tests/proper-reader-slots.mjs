@@ -111,6 +111,45 @@ assert.equal(missing.ready,false);
 assert.ok(missing.missing.includes("GOSPEL"));
 assert.throws(()=>assertReaderProperReady(missing),/GOSPEL/);
 
+// The canonical Ordinary already supplies the post-Epistle and post-Gospel
+// responses. If an imported source carries the same reply, display it only
+// once, with the reply owned by its immutable cue (B020/B026).
+const readingSource={
+  epistle:{
+    lat:"Léctio Epístolæ.\n℟. Deo grátias.",
+    en:"Lesson from the Epistle.\n℟. Thanks be to God.",
+    fr:"Lecture de l’Épître.\n℟. Deo gratias — Rendons grâce à Dieu.",
+  },
+  gospel:{
+    lat:"Sequéntia sancti Evangélii.\n℟. Laus tibi, Christe.",
+    en:"Continuation of the holy Gospel.\n℟. Praise be to Thee, O Christ.",
+    fr:"Suite du saint Évangile.\n℟. Louange à vous, ô Christ.",
+  },
+};
+for(const language of ["en","fr"]){
+  const slots=properToReaderSlots({...proper,...readingSource},{language});
+  assert.equal(slots.ready,true,language+" reading response dedup blocked a valid Proper");
+  const epistle=slots.slots.EPISTLE_OR_LESSON.data.paragraphs[0];
+  const gospel=slots.slots.GOSPEL.data.paragraphs[0];
+  assert.equal(epistle.latin,"Léctio Epístolæ.");
+  assert.equal(gospel.latin,"Sequéntia sancti Evangélii.");
+  assert.doesNotMatch(epistle.vernacular,/Thanks be to God|Deo gratias/iu);
+  assert.doesNotMatch(gospel.vernacular,/Praise be to Thee|Louange à vous/iu);
+  assert.equal(epistle.fixedResponseCueId,"AO.SM.C0076");
+  assert.equal(gospel.fixedResponseCueId,"AO.SM.C0087");
+}
+assert.match(readingSource.epistle.lat,/Deo grátias/,
+  "source data must remain authoritative and untouched");
+assert.match(readingSource.gospel.lat,/Laus tibi/,
+  "source Gospel text must remain untouched");
+// Similar words in the biblical text are not sufficient to erase a line:
+// removal requires a separate terminal rubric/response with ℟. or R.
+const unmarkedReading=properToReaderSlots({...proper,
+  epistle:{lat:"Léctio. Deo grátias.",en:"Reading. Thanks be to God."},
+}).slots.EPISTLE_OR_LESSON.data.paragraphs[0];
+assert.equal(unmarkedReading.latin,"Léctio. Deo grátias.");
+assert.equal(unmarkedReading.vernacular,"Reading. Thanks be to God.");
+
 // Missal 1962 §481: only the final Secret's "Per omnia" is audible.
 // Its words and the respondent Amen are the immutable B041 cue pair;
 // no part of the bilingual source Proper may be duplicated in B040.
