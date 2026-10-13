@@ -73,22 +73,28 @@ const solemnSpeakerModel=createMassReaderModel({
   resolvedMass:{...base,form:"SOLEMN"},
   sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 });
+const simpleCantataSpeakerModel=createMassReaderModel({
+  resolvedMass:{...base,form:"MISSA_CANTATA_SIMPLE"},
+  sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
 const speakerFor=(m,id)=>m.cards.flatMap(c=>c.paragraphs).find(p=>
   p.id===id || p.sourceCueIds?.includes(id)
 )?.speakerRole;
 for(const [selected,form] of [
   [model,"MISSA_CANTATA_INCENSE"],
+  [simpleCantataSpeakerModel,"MISSA_CANTATA_SIMPLE"],
   [solemnSpeakerModel,"SOLEMN"],
   [lowModel,"LOW"],
 ]){
   const gospel=form==="SOLEMN"?"DEACON":"PRIEST";
-  const epistle=form==="SOLEMN"?"SUBDEACON":"MINISTER_TO_BE_OBSERVED";
+  const epistle=form==="SOLEMN"?"SUBDEACON":
+    form==="LOW"?"PRIEST":"MINISTER_TO_BE_OBSERVED";
   for(const id of ["AO.SM.C0082","AO.SM.C0084","GOSPEL.1"]){
     assert.equal(speakerFor(selected,id),gospel,
       form+"/"+id+" public Gospel performer");
   }
   assert.equal(speakerFor(selected,"EPISTLE_OR_LESSON.1"),epistle,
-    form+" epistle actor must not invent a subdeacon in Missa Cantata");
+    form+" Epistle actor must match the selected 1962 Mass form");
   assert.equal(speakerFor(selected,"AO.SM.C0259"),gospel,
     form+" dismissal minister performer");
   for(const id of ["AO.SM.C0083","AO.SM.C0085","AO.SM.C0260"]){
