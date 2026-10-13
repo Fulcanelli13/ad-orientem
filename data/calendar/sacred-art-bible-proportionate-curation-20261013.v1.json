@@ -1,0 +1,1545 @@
+{
+  "schema": "AO_SACRED_ART_BIBLE_PROPORTIONATE_CURATORIAL_POLICY_V1",
+  "date": "2026-10-13",
+  "status": "RECOMMENDED_LIGHTER_EDITORIAL_RESEARCH_POLICY_NOT_ART_APPROVAL",
+  "repoBranch": "platform/885-sacred-art-candidates",
+  "sourceWorklist": "data/calendar/sacred-art-134-subject-research-worklist-20261012.v1.json",
+  "principle": "The Bible Theatre requires complete narrative coverage, NOT painting coverage. Many episodes share paintings or have no painting; new-source effort weighted to the New Testament.",
+  "authoritativeSelectionLedger": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+  "sourceDecisionRules": {
+    "allStoriesMayHaveZeroImages": true,
+    "multipleStoriesMayLinkSameOriginal": true,
+    "noPrescribedPaintingCount": true,
+    "noArtisticOrRightsStandardsRelaxed": true,
+    "newTestamentResearchDeeperThanOldTestament": true,
+    "oldTestamentResearchAnchorsOnly": true,
+    "visualOutcomes": [
+      "PAINTING_CURATED",
+      "PAINTING_REUSED_WITH_ACCURATE_RELATION",
+      "MAP_OR_SCHEMATIC",
+      "TEXT_TIMELINE_GENEALOGY_ONLY",
+      "NO_IMAGE_NEEDED"
+    ],
+    "imageLinkRelationshipTypes": [
+      "EXACT_EVENT",
+      "RELATED_SUBEVENT",
+      "SAME_NARRATIVE_CYCLE",
+      "CONTEXTUAL_OR_SYMBOLIC_NOT_EXACT"
+    ],
+    "theologyRules": [
+      "No artwork must fabricate literal geography for Revelation visions",
+      "A painting depicting a later narrative moment must never caption an earlier moment as exact",
+      "The same John 21 commissioned-Peter event may be represented via one asset across overlapping subjects",
+      "Retain previous user selections and protect against artist-style exclusions and wrong object substitutes"
+    ]
+  },
+  "summary": {
+    "currentBibleAtlasRequirementsTotal": 111,
+    "alreadySelected": 28,
+    "stillResearchInPreviousLedger": 83,
+    "laneCounts": {
+      "OT_ANCHOR_SELECTIVE": 14,
+      "OT_LIGHT_CONTEXT": 29,
+      "NT_DEEP_RESEARCH": 30,
+      "NT_SELECTIVE": 10
+    },
+    "mandatoryNewPaintings": 0,
+    "outputClassificationDoesNotReduce235SubjectList": true
+  },
+  "subjects": [
+    {
+      "subjectId": "BIB-OR02",
+      "subject": "The Fall",
+      "scriptureContext": "Genesis 3:1–24",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-OR04",
+      "subject": "The Flood",
+      "scriptureContext": "Genesis 7:1–24 · Painting identity still unverified.",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-OR05",
+      "subject": "God’s Covenant with Noah",
+      "scriptureContext": "Genesis 9:8–17 · Rainbow covenant image required only if art would add value.",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "REUSE_NOAH_FLOOD_OR_NO_IMAGE",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": "Reuse the Flood/Noah canonical artwork if pictorially relevant; rainbow covenant may stand as text/icon; no independent hunt.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-PA01",
+      "subject": "Calling of Abram",
+      "scriptureContext": "Genesis 12:1–9 · Map/chronology may suffice.",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-PA04",
+      "subject": "Covenant with Abraham",
+      "scriptureContext": "Genesis 15:1–21",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-PA05",
+      "subject": "Birth of Isaac",
+      "scriptureContext": "Genesis 21:1–7",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-PA09",
+      "subject": "Joseph Is Sold",
+      "scriptureContext": "Genesis 37:18–36 · Potiphar transfer is adjacent, not precisely sale by brothers.",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-PA10",
+      "subject": "Joseph Governs Egypt",
+      "scriptureContext": "Genesis 41:37–45",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": "Reuse the wider Joseph narrative group; an Egyptian-period map or family chronology may be clearer.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-PA11",
+      "subject": "Joseph Forgives His Brothers",
+      "scriptureContext": "Genesis 45:1–15",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-PA12",
+      "subject": "Israel Settles in Egypt",
+      "scriptureContext": "Genesis 46:1–7",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": "Map of Jacob's family's descent into Egypt and narrative; no painting required.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX03",
+      "subject": "The Plagues Begin",
+      "scriptureContext": "Exodus 7:14–25",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX04",
+      "subject": "First Passover",
+      "scriptureContext": "Exodus 12:1–28",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX05",
+      "subject": "Departure from Egypt",
+      "scriptureContext": "Exodus 12:31–42 · Map may suffice.",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": "Route through Egypt; no need for an independent depiction of departure.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX06",
+      "subject": "Crossing of the Red Sea",
+      "scriptureContext": "Exodus 14:15–31",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX07",
+      "subject": "Manna in the Wilderness",
+      "scriptureContext": "Exodus 16:1–36",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX08",
+      "subject": "Moses Strikes the Rock",
+      "scriptureContext": "Exodus 17:1–7",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX09",
+      "subject": "Covenant at Sinai / Ten Commandments",
+      "scriptureContext": "Exodus 19–20",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX10",
+      "subject": "The Golden Calf",
+      "scriptureContext": "Exodus 32:1–35",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX11",
+      "subject": "The Tabernacle",
+      "scriptureContext": "Exodus 40:1–38 · Ritual architecture rather than invented painting may fit.",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": "Faithful schematic/architectural Tabernacle plan preferred to a speculative painting.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX13",
+      "subject": "Moses on Mount Nebo",
+      "scriptureContext": "Deuteronomy 34:1–6",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX14",
+      "subject": "Joshua Crosses the Jordan",
+      "scriptureContext": "Joshua 3:1–17",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-EX15",
+      "subject": "Fall of Jericho",
+      "scriptureContext": "Joshua 6:1–27",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS01",
+      "subject": "Hannah and Samuel",
+      "scriptureContext": "1 Samuel 1:9–20",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS02",
+      "subject": "Samuel Anoints Saul",
+      "scriptureContext": "1 Samuel 10:1–8",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS04",
+      "subject": "David Becomes King",
+      "scriptureContext": "2 Samuel 2:1–4",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS05",
+      "subject": "Solomon Dedicates Temple",
+      "scriptureContext": "1 Kings 8:1–66",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS06",
+      "subject": "Division of the Kingdom",
+      "scriptureContext": "1 Kings 12:1–24",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": "Map of northern/southern kingdoms preferred over invented court image.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS07",
+      "subject": "Elijah at Mount Carmel",
+      "scriptureContext": "1 Kings 18:19–39 · Not same as Elijah at Horeb.",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS09",
+      "subject": "Isaiah’s Calling",
+      "scriptureContext": "Isaiah 6:1–13",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS10",
+      "subject": "Jeremiah Warns Jerusalem",
+      "scriptureContext": "Jeremiah 7:1–15",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS11",
+      "subject": "Judgment of Solomon",
+      "scriptureContext": "1 Kings 3:16–28",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS12",
+      "subject": "Fall of Samaria",
+      "scriptureContext": "2 Kings 17:1–18",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-IS13",
+      "subject": "Josiah Renews Covenant",
+      "scriptureContext": "2 Kings 23:1–25",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL01",
+      "subject": "Destruction of Jerusalem",
+      "scriptureContext": "2 Kings 25:1–12",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL02",
+      "subject": "Tobit at Nineveh",
+      "scriptureContext": "Tobit 1:10 · This artwork depicts journey, not specifically Tobit in Nineveh.",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL03",
+      "subject": "Tobias and Raphael",
+      "scriptureContext": "Tobit 6:1–9",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL04",
+      "subject": "Daniel in Babylon",
+      "scriptureContext": "Daniel 1:1–21 · Lions den is later, not scene Daniel 1.",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL06",
+      "subject": "Ezekiel’s Vision",
+      "scriptureContext": "Ezekiel 1:1–28",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL10",
+      "subject": "Song of the Three Youths",
+      "scriptureContext": "Daniel 3:24–90",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL11",
+      "subject": "Return from Exile",
+      "scriptureContext": "Ezra 1:1–11",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": "Return route and rebuilding timeline preferred.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL12",
+      "subject": "Rebuilding of the Temple",
+      "scriptureContext": "Ezra 6:13–22",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL13",
+      "subject": "The Maccabean Resistance",
+      "scriptureContext": "1 Maccabees 2:1–5 · Heliodorus is related deuterocanonical episode, not actual resistance scene.",
+      "lane": "OT_LIGHT_CONTEXT",
+      "kind": "OLD_TESTAMENT_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "NO_INDEPENDENT_SEARCH_UNLESS_EXISTING_HIGH_VALUE_ART_APPEARS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-XL14",
+      "subject": "Martyrdom of Seven Brothers",
+      "scriptureContext": "2 Maccabees 7:1–42",
+      "lane": "OT_ANCHOR_SELECTIVE",
+      "kind": "OLD_TESTAMENT_KEY",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "ONE_TO_FEW_GOOD_ANCHORS_NOT_EACH_EVENT",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G03",
+      "subject": "Flight into Egypt",
+      "scriptureContext": "Matthew 2:13–15",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G04",
+      "subject": "Baptism of Christ",
+      "scriptureContext": "Matthew 3:13–17",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G05",
+      "subject": "Temptation of Christ",
+      "scriptureContext": "Matthew 4:1–11",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G06",
+      "subject": "Calling the Fishermen",
+      "scriptureContext": "Luke 5:1–11",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G07",
+      "subject": "Wedding at Cana",
+      "scriptureContext": "John 2:1–11",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G08",
+      "subject": "Samaritan Woman",
+      "scriptureContext": "John 4:4–26",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G09",
+      "subject": "Healing the Paralytic",
+      "scriptureContext": "Mark 2:1–12",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G10",
+      "subject": "Sermon on the Mount",
+      "scriptureContext": "Matthew 5–7",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G11",
+      "subject": "Raising the Widow’s Son at Nain",
+      "scriptureContext": "Luke 7:11–17",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G12",
+      "subject": "Calming the Storm",
+      "scriptureContext": "Mark 4:35–41",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G13",
+      "subject": "Walking on Water",
+      "scriptureContext": "Matthew 14:22–33",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G15",
+      "subject": "Transfiguration",
+      "scriptureContext": "Matthew 17:1–9",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G17",
+      "subject": "The Good Samaritan",
+      "scriptureContext": "Luke 10:25–37",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G18",
+      "subject": "The Prodigal Son",
+      "scriptureContext": "Luke 15:11–32",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G19",
+      "subject": "Christ and Martha and Mary",
+      "scriptureContext": "Luke 10:38–42",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G20",
+      "subject": "Peter’s Confession",
+      "scriptureContext": "Matthew 16:13–20",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G21",
+      "subject": "Christ and Doubting Thomas",
+      "scriptureContext": "John 20:24–29",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G22",
+      "subject": "Road to Emmaus",
+      "scriptureContext": "Luke 24:13–35",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": "The supper at Emmaus can illustrate the recognition subevent only; not the road dialogue.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G23",
+      "subject": "Christ Feeds Peter’s Sheep",
+      "scriptureContext": "John 21:15–19",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G25",
+      "subject": "Entry into Jerusalem",
+      "scriptureContext": "Matthew 21:1–11",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-G26",
+      "subject": "Washing of the Feet",
+      "scriptureContext": "John 13:1–17",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "GOSPEL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A02",
+      "subject": "Peter Heals the Lame Man",
+      "scriptureContext": "Acts 3:1–10",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A04",
+      "subject": "Philip Baptises the Ethiopian",
+      "scriptureContext": "Acts 8:26–40",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A06",
+      "subject": "Peter Raises Tabitha",
+      "scriptureContext": "Acts 9:36–43",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A07",
+      "subject": "Conversion of Cornelius",
+      "scriptureContext": "Acts 10:1–48",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A08",
+      "subject": "Disciples at Antioch",
+      "scriptureContext": "Acts 11:19–26",
+      "lane": "NT_SELECTIVE",
+      "kind": "ACTS_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A09",
+      "subject": "Paul at Lystra",
+      "scriptureContext": "Acts 14:8–18",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A10",
+      "subject": "Council of Jerusalem",
+      "scriptureContext": "Acts 15:1–29",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A11",
+      "subject": "Lydia at Philippi",
+      "scriptureContext": "Acts 16:11–15",
+      "lane": "NT_SELECTIVE",
+      "kind": "ACTS_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A12",
+      "subject": "Paul in Thessalonica",
+      "scriptureContext": "Acts 17:1–9",
+      "lane": "NT_SELECTIVE",
+      "kind": "ACTS_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A13",
+      "subject": "Paul at the Areopagus",
+      "scriptureContext": "Acts 17:16–34",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A14",
+      "subject": "Paul at Corinth",
+      "scriptureContext": "Acts 18:1–18",
+      "lane": "NT_SELECTIVE",
+      "kind": "ACTS_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A16",
+      "subject": "Paul at Troas — Eutychus",
+      "scriptureContext": "Acts 20:7–12",
+      "lane": "NT_SELECTIVE",
+      "kind": "ACTS_SUPPORTING",
+      "defaultVisualRole": "OPTIONAL_PAINTING",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A17",
+      "subject": "Farewell at Miletus",
+      "scriptureContext": "Acts 20:17–38",
+      "lane": "NT_SELECTIVE",
+      "kind": "ACTS_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A18",
+      "subject": "Shipwreck on Malta",
+      "scriptureContext": "Acts 27:13–44",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "PREFERRED_IF_WORTHY",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A19",
+      "subject": "Paul Arrives in Rome",
+      "scriptureContext": "Acts 28:16–31",
+      "lane": "NT_SELECTIVE",
+      "kind": "ACTS_SUPPORTING",
+      "defaultVisualRole": "MAP_OR_DIAGRAM_PREFERRED",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-A20",
+      "subject": "Peter Commissioned by Risen Christ",
+      "scriptureContext": "John 21:15–19",
+      "lane": "NT_DEEP_RESEARCH",
+      "kind": "ACTS_PIVOTAL",
+      "defaultVisualRole": "REUSE_SAME_JOHN21_ARTWORK_AS_BIB_G23",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "MULTI_MUSEUM_COMPARISON_WHEN_ART_EXISTS",
+      "reuseOrVisualNotes": "Same John 21:15-19 event as BIB-G23; share one canonical artwork and event link, never duplicate.",
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-V01",
+      "subject": "Vision of Saint John",
+      "scriptureContext": "Revelation 1:9–20 · Symbolic theology, not a map of future physical geography.",
+      "lane": "NT_SELECTIVE",
+      "kind": "REVELATION_SYMBOLIC",
+      "defaultVisualRole": "OPTIONAL_THEOLOGICAL_ART",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-V02",
+      "subject": "Heavenly Liturgy",
+      "scriptureContext": "Revelation 4:1–11 · Symbolic theology, not a map of future physical geography.",
+      "lane": "NT_SELECTIVE",
+      "kind": "REVELATION_SYMBOLIC",
+      "defaultVisualRole": "OPTIONAL_THEOLOGICAL_ART",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    },
+    {
+      "subjectId": "BIB-V03",
+      "subject": "New Jerusalem",
+      "scriptureContext": "Revelation 21:1–27 · Symbolic theology, not a map of future physical geography.",
+      "lane": "NT_SELECTIVE",
+      "kind": "REVELATION_SYMBOLIC",
+      "defaultVisualRole": "OPTIONAL_THEOLOGICAL_ART",
+      "editorialPermission": [
+        "SAME_CANONICAL_ARTWORK_MAY_COVER_MULTIPLE_VALID_SUBEVENTS",
+        "NO_ARTWORK_IS_ACCEPTABLE",
+        "NEVER_FORCE_MISLABELED_OR_BAD_ART"
+      ],
+      "researchBudget": "BRIEF_TARGETED_SEARCH_IF_VALUABLE",
+      "reuseOrVisualNotes": null,
+      "currentResearchStatus": "UNCHANGED_IN_SOURCE_WORKLIST",
+      "historicalUserApproval": "NOT_CHANGED",
+      "releaseApproval": false
+    }
+  ]
+}
