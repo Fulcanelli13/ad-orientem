@@ -27,7 +27,7 @@ const T=(fr,en,language)=>language==="fr"?fr:en;
 // Escape all data before converting tightly constrained markdown URL references.
 // No arbitrary HTML from research files is ever injected.
 export function safeMassBibleLinkedText(value){
- const s=String(value??""),re=/\[([^\]\n]{1,120})\]\((https:\/\/[^\s()<>"]+)\)/g;
+ const s=String(value??""),re=/\[([^\]\n]{1,120})\]\((https:\/\/[^\s<>"]+)\)/g;
  let start=0,parts=[],match;
  while((match=re.exec(s))){
   parts.push(esc(s.slice(start,match.index)));
@@ -38,6 +38,18 @@ export function safeMassBibleLinkedText(value){
  parts.push(esc(s.slice(start)));
  return parts.join("");
 }
+
+const conditions={
+ MB02:{fr:"Omis aux messes des défunts et dans certains rites du Temps de la Passion ou après procession.",en:"Omitted at Masses for the Dead and in specified Passiontide or post-procession rites."},
+ MB08:{fr:"Le Credo et le geste prescrit dépendent de la célébration.",en:"Use only when the Creed and its prescribed reverence apply."},
+ MB11:{fr:"Ne pas confondre le Sanctus dit par le prêtre avec le chant de la schola.",en:"Distinguish the priest's recitation from the schola's singing."},
+ MB21:{fr:"Le Notre Père est récité selon les rubriques ; graphie imprimée cotidianum.",en:"Observe the Roman delivery rules; printed spelling cotidianum."},
+ MB23:{fr:"À la Messe des défunts, le texte et le geste sont différents.",en:"At Requiem Masses, the petitions and breast-striking rubric differ."},
+ MB26:{fr:"Le Dernier Évangile est parfois omis, notamment dans certains rites de la Semaine sainte.",en:"The Last Gospel is omitted in specified Masses and Holy Week rites."},
+ N01:{fr:"La prière est adaptée au prêtre ou au diacre selon la forme de Messe.",en:"Minister and ceremonial setting vary between Low, Sung and Solemn Mass."},
+ N04:{fr:"Uniquement lorsqu'un encensement de l'Offertoire est prescrit.",en:"Only when the Offertory incensation is prescribed."},
+ N05:{fr:"Cette prière est omise aux messes des défunts.",en:"The peace prayer is omitted at Masses for the Dead."}
+};
 const idsUnique=rows=>new Set(rows.map(x=>x.id)).size===rows.length;
 export function validateCuratedMassBibleStudy(selection,primary,inline){
  if(selection?.schema!==MASS_BIBLE_CURATION_SCHEMAS.selection||
@@ -70,12 +82,13 @@ export function validateCuratedMassBibleStudy(selection,primary,inline){
  const order=groups.flatMap(x=>x.ids);
  return order.length===29&&new Set(order).size===29&&order.every(x=>chosenIds.has(x)||noteIds.has(x));
 }
-export function renderCuratedMassBibleStudy(selection,primary,inline,{language="en",category="all",stage=""}={}){
+export function renderCuratedMassBibleStudy(selection,primary,inline,{language="en",category="all",stage="",sourceRows=[]}={}){
  const lang=language==="fr"?"fr":"en";
  if(!validateCuratedMassBibleStudy(selection,primary,inline))
   return '<p class="aoMFError">'+esc(T("Impossible de vérifier la sélection biblique.","Curated biblical study is unavailable; source verification failed.",lang))+'</p>';
  const full=new Map(primary.records.map(x=>[x.id,x])),short=new Map(inline.inlineNotes.map(x=>[x.id,x]));
  const decisions=new Map(selection.records.map(x=>[x.id,x]));
+ const contextRefs=new Map(Array.isArray(sourceRows)?sourceRows.filter(x=>typeof x?.scriptureReaderRef==="string").map(x=>[x.id,x.scriptureReaderRef]):[]);
  const categories=[["all","All connections","Tous les liens"],["text","Scriptural words","Paroles de l’Écriture"],
  ["figures","Biblical people","Personnages bibliques"],["meaning","Explanation and typology","Sens et typologie"]];
  const normalized=categories.some(x=>x[0]===category)?category:"all";
@@ -101,9 +114,11 @@ export function renderCuratedMassBibleStudy(selection,primary,inline,{language="
     '<div class="aoMBEvidence">'+esc(T(note?"Complément":"Étude biblique",note?"Supporting note":"Biblical study",lang))+'</div>'+
     '<h3>'+esc(reason?.moment||id)+'</h3>'+
     '<p>'+safeMassBibleLinkedText(raw)+'</p>'+
+    (contextRefs.has(id)?'<button type="button" class="aoMBReadBible" data-ao-scripture-context="'+esc(contextRefs.get(id))+'">'+
+      esc(T("Lire le passage biblique","Open biblical context",lang))+'</button>':"")+
     (main?'<details><summary>'+esc(T("Lien, conditions et sources","Sources and liturgical conditions",lang))+'</summary>'+
        '<p class="aoMBQualification">'+esc(T("Texte de recherche, non homologué pour publication.","Research text; not approved for publication.",lang))+'</p>'+
-       '<p class="aoMBQualification">'+esc(main.conditionalDisplay||"")+'</p></details>':"")+
+       '<p class="aoMBQualification">'+esc(conditions[id]?.[lang]||T("Pour la partie de Messe correspondante seulement.","Only at the corresponding part of Mass.",lang))+'</p></details>':"")+
     '</article>';
   }).join("");
   return html?'<section class="aoMBGroup"><h2>'+esc(T(g.fr,g.en,lang))+'</h2>'+html+'</section>':"";
