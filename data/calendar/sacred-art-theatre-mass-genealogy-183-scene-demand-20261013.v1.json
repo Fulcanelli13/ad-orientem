@@ -1,0 +1,5297 @@
+{
+  "schema": "AO_SACRED_ART_ALL_THEATRE_MASS_GENEALOGY_REAL_ID_JOIN_V1",
+  "createdOn": "2026-10-13",
+  "purpose": "Combine actual source-owned 183 Bible Theatre scene keys (14 chapters), 151 native Atlas event candidates, 31 Mass salvation source decisions with 11 Atlas candidates, 55 curated Apostle/Mary life episodes and 20 Rosary scripture scene slots. Attach 44 pre-existing art subject placements while enforcing newer human rating exclusions. Research only, no production or asset import.",
+  "sourceLinks": [
+    {
+      "label": "Biblical Theatre research PR 1069",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/pull/1069"
+    },
+    {
+      "label": "Native 151 chronology merged PR 1108",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/pull/1108"
+    },
+    {
+      "label": "Mass salvation draft PR 34",
+      "url": "https://github.com/Fulcanelli13/folio-core/pull/34"
+    },
+    {
+      "label": "Genealogy broader source PR 1018",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/pull/1018"
+    },
+    {
+      "label": "Sacred Art curator PR 887",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/pull/887"
+    }
+  ],
+  "sourceFiles": {
+    "theatre": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "ref": "feature/biblical-atlas-current-main-convergence-20261012",
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "pr": 1069
+    },
+    "existingArtworkCrosswalk": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "ref": "feature/biblical-atlas-current-main-convergence-20261012",
+      "path": "data/explore/biblical-theatre-art-subject-crosswalk.v1.json",
+      "pr": 1069
+    },
+    "genealogy": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "ref": "feature/biblical-atlas-current-main-convergence-20261012",
+      "path": "data/explore/biblical-lineage-curated-review.v1.json",
+      "pr": 1069
+    },
+    "massSalvation": {
+      "repo": "Fulcanelli13/folio-core",
+      "ref": "research/mass-salvation-crosswalk-20261013",
+      "path": "data/learn/research/mass-salvation-source-crosswalk-20261013.v1.json",
+      "pr": 34
+    },
+    "rosary": {
+      "repo": "Fulcanelli13/folio-core",
+      "ref": null,
+      "path": "src/pray/rosary-mystery-context.v1.js"
+    },
+    "selectedArtwork": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "ref": "platform/885-sacred-art-candidates",
+      "path": "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+    },
+    "ratedEligibility": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "ref": "platform/885-sacred-art-candidates",
+      "path": "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json"
+    },
+    "gallery": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "ref": "platform/885-sacred-art-candidates",
+      "path": "data/calendar/sacred-art-candidates.v1.json"
+    },
+    "currentIdBridge": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "ref": "platform/885-sacred-art-candidates",
+      "path": "data/calendar/sacred-art-mass-rosary-bible-geography-real-id-bridge-20261013.v1.json"
+    }
+  },
+  "counts": {
+    "cinematicScenes": 183,
+    "cinematicGroups": 14,
+    "sourceAtlasEvents": 151,
+    "sceneReferenceExactCandidate": 67,
+    "sceneReferenceOverlapReview": 29,
+    "sceneNoAtlasPassageMatch": 87,
+    "preexistingSacredArtSubjectPlacements": 44,
+    "preexistingArtPlacementsWithScene": 29,
+    "distinctTheatreScenesWithPreviousArtSelection": 20,
+    "theatreScenesWithNoPrior44Selection": 163,
+    "artPlacementsMarkedExcludedArtist": 3,
+    "uniqueArtOriginalsExcludedByThisOldBridge": 2,
+    "priorSelectedArtPlacementsNumeric5": 0,
+    "genealogyCuratedGenesisEdges": 90,
+    "genealogyMatthewTextualPersons": 41,
+    "genealogyLukeTextualPersons": 76,
+    "genealogyApostolicMarianProfiles": 20,
+    "genealogyEpisodeRefs": 55,
+    "genealogyEpisodesMatchingTheatreExactVerse": 10,
+    "massSalvationDecisions": 31,
+    "massSalvationCanonicalMCOccurrences": 37,
+    "massAtlasCandidateReferences": 11,
+    "massAtlasDistinctSelectedEvents": 9,
+    "massAtlasCandidateRowsWithTheatreScene": 8,
+    "massAtlasDistinctTheatreScenes": 7,
+    "massBiblePlaceOnlyEpisodeCandidates": 3,
+    "rosaryMysteries": 20,
+    "rosaryMysteryToScenePreexistingExplicit": 13,
+    "rosaryMysteryExactVerseSceneMatches": 11,
+    "scenesWith4OrMoreDistinctSourceFamilies": 9,
+    "sourcePublisherReadyArtworks": 0
+  },
+  "sceneFamilyCoverage": {
+    "ABRAHAM": {
+      "scenes": 25,
+      "scenesWithSelectedSubjectLinks": 0,
+      "scenesWithMassBibleCandidate": 2,
+      "scenesWithGenealogyEvents": 0
+    },
+    "MOSES": {
+      "scenes": 32,
+      "scenesWithSelectedSubjectLinks": 0,
+      "scenesWithMassBibleCandidate": 2,
+      "scenesWithGenealogyEvents": 0
+    },
+    "CHRIST": {
+      "scenes": 82,
+      "scenesWithSelectedSubjectLinks": 19,
+      "scenesWithMassBibleCandidate": 3,
+      "scenesWithGenealogyEvents": 7
+    },
+    "PAUL": {
+      "scenes": 44,
+      "scenesWithSelectedSubjectLinks": 1,
+      "scenesWithMassBibleCandidate": 0,
+      "scenesWithGenealogyEvents": 3
+    }
+  },
+  "ratingGate": {
+    "ratingsSource": "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json",
+    "historical44SelectionCount": 44,
+    "previousSubjectApprovalIsNotNumerical5": true,
+    "mustFilterArtistExclusionsEvenWhenOldSubjectSelected": true,
+    "globallyDiscardRating0to2": true,
+    "eligibleRating3To5MayAppearAsOneOff": true,
+    "numeric5RequiredForRepeat": true,
+    "legacyExcluded": [
+      "met-459087",
+      "cma-129386"
+    ],
+    "specificRetiredArtTargets": [
+      {
+        "targetId": "calendar.good-friday",
+        "sceneKey": "biblical:scene:christ:128",
+        "oldPaintingId": "met-459087"
+      },
+      {
+        "targetId": "rosary.sor4",
+        "sceneKey": "biblical:scene:christ:128",
+        "oldPaintingId": "met-459087"
+      },
+      {
+        "targetId": "rosary.sor5",
+        "sceneKey": "biblical:scene:christ:129",
+        "oldPaintingId": "cma-129386"
+      }
+    ],
+    "dataQualityHolds": [
+      {
+        "artworkId": "met-437977",
+        "title": "The Last Communion of Saint Mary of Egypt",
+        "offendingSubjectKey": "saint-jerome",
+        "action": "PROVENANCE_AND_ICONOGRAPHY_AUDIT_HOLD_DO_NOT_LABEL_SAINT_JEROME"
+      }
+    ]
+  },
+  "noFalseCompletion": {
+    "scenesWithoutOld44SelectionAreNotAutomaticallyResearchGaps": "The 44 selections are one older review subset. Scene may have another eligible unjoined museum painting, and OT minor scenes are explicitly not all mandatory.",
+    "atlasLinkMeaning": "An exact identical Bible reference is not a claim that art depicts exactly the right narrative submoment, location, or chronology.",
+    "massLinkMeaning": "11 Mass-to-Atlas source candidates contain explicit typology and named persons, not 11 historical reenactments. Keep the Mass MC event and biblical scene separately represented.",
+    "genealogyLinkMeaning": "The 55 event records are curated research episodes, not interchangeable with the 3231-person raw genealogical donor. Scripture exact references can support occurrence co-links only.",
+    "holyWeekSource": "Passion subepisodes, procession/suppressed text and Gospel sequence must be distinguished from Mass liturgical action.",
+    "rosaryMysteries": "Assumption and Coronation remain Marian doctrinal/typological subjects even without exact historical scene link. Do not fabricate event geolocation.",
+    "currentAppStatus": "Theatre and genealogy research PR 1069, Mass journey PR 34 remain draft; 151 event Atlas source is merged in old repo; no claim any of this bridge is deployed in folio-core main."
+  },
+  "highCrossModuleScenes": [
+    {
+      "sceneKey": "biblical:scene:christ:057",
+      "title": "The Annunciation",
+      "group": "CHRIST",
+      "passage": "Luke 1:26–38",
+      "contextFamilyCount": 6,
+      "contextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "MASS_BIBLE_FORMATION",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [
+        "calendar.annunciation",
+        "rosary.joy1"
+      ],
+      "massReferences": [
+        "MB08"
+      ],
+      "rosaryReferences": [
+        "rosary.joy1"
+      ],
+      "genealogyReferences": [
+        "event-1"
+      ]
+    },
+    {
+      "sceneKey": "biblical:scene:christ:061",
+      "title": "The Nativity",
+      "group": "CHRIST",
+      "passage": "Luke 2:1–20",
+      "contextFamilyCount": 6,
+      "contextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "MASS_BIBLE_FORMATION",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [
+        "calendar.christmas",
+        "rosary.joy3"
+      ],
+      "massReferences": [
+        "MB05"
+      ],
+      "rosaryReferences": [
+        "rosary.joy3"
+      ],
+      "genealogyReferences": [
+        "event-3"
+      ]
+    },
+    {
+      "sceneKey": "biblical:scene:christ:064",
+      "title": "The Presentation",
+      "group": "CHRIST",
+      "passage": "Luke 2:22–38",
+      "contextFamilyCount": 5,
+      "contextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [
+        "calendar.candlemas",
+        "rosary.joy4"
+      ],
+      "massReferences": [],
+      "rosaryReferences": [
+        "rosary.joy4"
+      ],
+      "genealogyReferences": [
+        "event-4"
+      ]
+    },
+    {
+      "sceneKey": "biblical:scene:christ:131",
+      "title": "The empty tomb and Mary Magdalene",
+      "group": "CHRIST",
+      "passage": "John 20:1–18",
+      "contextFamilyCount": 5,
+      "contextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [
+        "calendar.easter",
+        "rosary.glo1"
+      ],
+      "massReferences": [],
+      "rosaryReferences": [
+        "rosary.glo1"
+      ],
+      "genealogyReferences": [
+        "event-44"
+      ]
+    },
+    {
+      "sceneKey": "biblical:scene:christ:137",
+      "title": "The Ascension",
+      "group": "CHRIST",
+      "passage": "Acts 1:6–12",
+      "contextFamilyCount": 4,
+      "contextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [
+        "calendar.ascension",
+        "rosary.glo2"
+      ],
+      "massReferences": [],
+      "rosaryReferences": [
+        "rosary.glo2"
+      ],
+      "genealogyReferences": []
+    },
+    {
+      "sceneKey": "biblical:scene:paul:182",
+      "title": "Pentecost: the Holy Spirit descends",
+      "group": "PAUL",
+      "passage": "Acts 2:1–41",
+      "contextFamilyCount": 4,
+      "contextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [
+        "calendar.pentecost",
+        "rosary.glo3"
+      ],
+      "massReferences": [],
+      "rosaryReferences": [
+        "rosary.glo3"
+      ],
+      "genealogyReferences": []
+    },
+    {
+      "sceneKey": "biblical:scene:christ:059",
+      "title": "The Visitation",
+      "group": "CHRIST",
+      "passage": "Luke 1:39–56",
+      "contextFamilyCount": 4,
+      "contextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [
+        "rosary.joy2"
+      ],
+      "massReferences": [],
+      "rosaryReferences": [
+        "rosary.joy2"
+      ],
+      "genealogyReferences": [
+        "event-2"
+      ]
+    },
+    {
+      "sceneKey": "biblical:scene:christ:119",
+      "title": "The Last Supper",
+      "group": "CHRIST",
+      "passage": "Luke 22:14–20",
+      "contextFamilyCount": 4,
+      "contextFamilies": [
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "MASS_BIBLE_FORMATION",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [
+        "calendar.holy-thursday"
+      ],
+      "massReferences": [
+        "MB15"
+      ],
+      "rosaryReferences": [
+        "rosary.lum5"
+      ],
+      "genealogyReferences": []
+    },
+    {
+      "sceneKey": "biblical:scene:christ:073",
+      "title": "The wedding at Cana",
+      "group": "CHRIST",
+      "passage": "John 2:1–11",
+      "contextFamilyCount": 4,
+      "contextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "ROSARY"
+      ],
+      "relatedArtSubjects": [],
+      "massReferences": [],
+      "rosaryReferences": [
+        "rosary.lum2"
+      ],
+      "genealogyReferences": [
+        "event-6"
+      ]
+    }
+  ],
+  "nextResearchPriority": [
+    {
+      "subject": "Annunciation/Incarnation",
+      "why": "Rosary, Class I, Theatre, 151 Atlas, Mary's life dossier, Mass Credo and Angelus; find one or more 5/5 repeat anchors"
+    },
+    {
+      "subject": "Nativity/Adoration of Shepherds",
+      "why": "High source-family overlap; user's Savoldo 5/5 candidate is promising with scene/crop verification"
+    },
+    {
+      "subject": "Last Supper/Institution",
+      "why": "Rosary luminous, Mass Chalice, Holy Thursday, Theatre and Atlas; old direct Rosary mystery-tag gap"
+    },
+    {
+      "subject": "Passion/Crucifixion",
+      "why": "Rosary, Good Friday, 14 Stations, Seven Last Words and Theatre; replace old El Greco exclusions; distinguish Saint Andrew crucifixion"
+    },
+    {
+      "subject": "Pentecost",
+      "why": "151 Atlas and added Theatre scene 182, Class I, Rosary and novena, no geography event in compact app list; five-star art needed for repeat"
+    },
+    {
+      "subject": "Resurrection/Empty Tomb",
+      "why": "Easter, Rosary, Mary Magdalene, Theology and Gospel are distinct depicted instants; solve old DIFFERENT_MOMENT_HOLD"
+    },
+    {
+      "subject": "Proclamation of the Kingdom",
+      "why": "Luminous mystery lacks eligible direct painting; first Mass/Atlas scene content insufficient to cover entire preaching theme"
+    },
+    {
+      "subject": "Abraham/Isaac, Melchizedek, Passover, Manna",
+      "why": "Mass Canon and Eucharistic typology now links to specific OT Theatre scenes; selective representative high-quality anchors, not one artwork per verse"
+    },
+    {
+      "subject": "Major feast exact coverage beyond 44 historical selections",
+      "why": "Class I + priority Class II/III observance and true local patrons; join DayResolver dates, appointed Gospel and 5/5 Sunday fallback before counting coverage"
+    }
+  ],
+  "scenes": [
+    {
+      "sceneKey": "biblical:scene:abraham:000",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The call of Abram",
+      "scriptureReference": "Genesis 12:1–5",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 7
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:001",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The covenant begins with a departure",
+      "scriptureReference": "Genesis 12:4–5",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 7
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:002",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The journey toward Canaan",
+      "scriptureReference": "Genesis 12:5–6",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 7
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:003",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The altar at Shechem",
+      "scriptureReference": "Genesis 12:6–7",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 7
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:004",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The promise of the land",
+      "scriptureReference": "Genesis 12:7",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 7
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:005",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Between Bethel and Ai",
+      "scriptureReference": "Genesis 12:8",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 7
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:006",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "A famine, a journey into Egypt",
+      "scriptureReference": "Genesis 12:10–20",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:007",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The return to Canaan",
+      "scriptureReference": "Genesis 13:1–4",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:008",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Abram and Lot separate",
+      "scriptureReference": "Genesis 13:5–13",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:009",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Lot moves toward Sodom",
+      "scriptureReference": "Genesis 13:10–13",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:010",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The oaks of Mamre",
+      "scriptureReference": "Genesis 13:14–18",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:011",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Abram rescues Lot",
+      "scriptureReference": "Genesis 14:13–16",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:012",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Melchizedek, king of Salem",
+      "scriptureReference": "Genesis 14:17–20",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-14-18-20",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 8
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [
+        {
+          "massBibleId": "MB19",
+          "atlasEventKey": "biblical:passage:genesis-14-18-20",
+          "biblicalRelation": "NAMED_ACTOR",
+          "atlasJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "canonicalMCEventIds": [
+            "MC-CAN-110"
+          ]
+        },
+        {
+          "massBibleId": "MB20",
+          "atlasEventKey": "biblical:passage:genesis-14-18-20",
+          "biblicalRelation": "INTERPRETIVE_TYPOLOGY",
+          "atlasJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "canonicalMCEventIds": [
+            "MC-CAN-110"
+          ]
+        }
+      ],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE",
+        "MASS_BIBLE_FORMATION"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:013",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The promise beneath the stars",
+      "scriptureReference": "Genesis 15:1–6",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-15-1-21",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 9
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:014",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The covenant is sealed",
+      "scriptureReference": "Genesis 15:7–21",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-15-1-21",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 9
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:015",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The birth of Ishmael",
+      "scriptureReference": "Genesis 16:1–16",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:016",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Abraham receives a new name",
+      "scriptureReference": "Genesis 17:1–14",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:017",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Three visitors at Mamre",
+      "scriptureReference": "Genesis 18:1–15",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-18-1-8",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 10
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:018",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Abraham intercedes for Sodom",
+      "scriptureReference": "Genesis 18:16–33",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:019",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The destruction of Sodom",
+      "scriptureReference": "Genesis 19:1–29",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:020",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "Abraham and Abimelech",
+      "scriptureReference": "Genesis 20:1–18",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:021",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The birth of Isaac",
+      "scriptureReference": "Genesis 21:1–7",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-21-1-7",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 11
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:022",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "A well at Beersheba",
+      "scriptureReference": "Genesis 21:22–34",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:023",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The sacrifice of Isaac",
+      "scriptureReference": "Genesis 22:1–19",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-22-1-19",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 12
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [
+        {
+          "massBibleId": "MB18",
+          "atlasEventKey": "biblical:passage:genesis-22-1-19",
+          "biblicalRelation": "NAMED_ACTOR",
+          "atlasJoinStatus": "EXACT_REFERENCE",
+          "canonicalMCEventIds": [
+            "MC-CAN-110"
+          ]
+        }
+      ],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "MASS_BIBLE_FORMATION"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:024",
+      "group": "ABRAHAM",
+      "chapter": "PATRIARCHS",
+      "titleEn": "The burial at Machpelah",
+      "scriptureReference": "Genesis 23:1–20",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:025",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "Israel under oppression",
+      "scriptureReference": "Exodus 1:8–22",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:026",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "Moses is born and hidden",
+      "scriptureReference": "Exodus 2:1–10",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-2-1-10",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 18
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:027",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "Moses flees to Midian",
+      "scriptureReference": "Exodus 2:11–22",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:028",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "The burning bush",
+      "scriptureReference": "Exodus 3:1–15",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-3-1-15",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 19
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:029",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "Moses returns to Egypt",
+      "scriptureReference": "Exodus 4:18–31",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:030",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "Let my people go",
+      "scriptureReference": "Exodus 5:1–23",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:031",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "The staff and the magicians",
+      "scriptureReference": "Exodus 7:8–13",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:032",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "The first plague: the Nile turns to blood",
+      "scriptureReference": "Exodus 7:14–25",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-7-14-25",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 20
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:033",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "The first Passover",
+      "scriptureReference": "Exodus 12:1–28",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-12-1-28",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 21
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [
+        {
+          "massBibleId": "MB14",
+          "atlasEventKey": "biblical:passage:exodus-12-1-28",
+          "biblicalRelation": "PROPOSED_PASSOVER_TYPOLOGY",
+          "atlasJoinStatus": "EXACT_REFERENCE",
+          "canonicalMCEventIds": [
+            "MC-CNS-020",
+            "MC-CNS-040"
+          ]
+        }
+      ],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "MASS_BIBLE_FORMATION"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:034",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "The departure from Rameses",
+      "scriptureReference": "Exodus 12:31–42",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-12-31-42",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 22
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:035",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "The pillar of cloud and fire",
+      "scriptureReference": "Exodus 13:17–22",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:036",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "The crossing of the sea",
+      "scriptureReference": "Exodus 14:15–31",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-14-15-31",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 23
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:037",
+      "group": "MOSES",
+      "chapter": "DELIVERANCE",
+      "titleEn": "The song of Moses and Miriam",
+      "scriptureReference": "Exodus 15:1–21",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:038",
+      "group": "MOSES",
+      "chapter": "WILDERNESS",
+      "titleEn": "Bitter water made sweet",
+      "scriptureReference": "Exodus 15:22–27",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:039",
+      "group": "MOSES",
+      "chapter": "WILDERNESS",
+      "titleEn": "Bread from heaven",
+      "scriptureReference": "Exodus 16:1–36",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-16-1-36",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 24
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [
+        {
+          "massBibleId": "MB23",
+          "atlasEventKey": "biblical:passage:exodus-16-1-36",
+          "biblicalRelation": "PROPOSED_EUCHARISTIC_TYPOLOGY",
+          "atlasJoinStatus": "EXACT_REFERENCE",
+          "canonicalMCEventIds": [
+            "MC-COM-130"
+          ]
+        }
+      ],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "MASS_BIBLE_FORMATION"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:040",
+      "group": "MOSES",
+      "chapter": "WILDERNESS",
+      "titleEn": "Water from the rock",
+      "scriptureReference": "Exodus 17:1–7",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:041",
+      "group": "MOSES",
+      "chapter": "WILDERNESS",
+      "titleEn": "Battle against Amalek",
+      "scriptureReference": "Exodus 17:8–16",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:042",
+      "group": "MOSES",
+      "chapter": "WILDERNESS",
+      "titleEn": "Jethro advises Moses",
+      "scriptureReference": "Exodus 18:13–27",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:043",
+      "group": "MOSES",
+      "chapter": "COVENANT",
+      "titleEn": "At the mountain of God",
+      "scriptureReference": "Exodus 19:1–15",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:044",
+      "group": "MOSES",
+      "chapter": "COVENANT",
+      "titleEn": "The Ten Commandments",
+      "scriptureReference": "Exodus 20:1–17",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-20-1-17",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 26
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:045",
+      "group": "MOSES",
+      "chapter": "COVENANT",
+      "titleEn": "The covenant is ratified",
+      "scriptureReference": "Exodus 24:1–18",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:046",
+      "group": "MOSES",
+      "chapter": "COVENANT",
+      "titleEn": "The golden calf",
+      "scriptureReference": "Exodus 32:1–35",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-32-1-35",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 27
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:047",
+      "group": "MOSES",
+      "chapter": "COVENANT",
+      "titleEn": "The second tablets",
+      "scriptureReference": "Exodus 34:1–35",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:048",
+      "group": "MOSES",
+      "chapter": "COVENANT",
+      "titleEn": "The Tabernacle is erected",
+      "scriptureReference": "Exodus 40:1–38",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-40-1-38",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 28
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:049",
+      "group": "MOSES",
+      "chapter": "WANDERINGS",
+      "titleEn": "Departure from Sinai",
+      "scriptureReference": "Numbers 10:11–36",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:050",
+      "group": "MOSES",
+      "chapter": "WANDERINGS",
+      "titleEn": "The twelve spies",
+      "scriptureReference": "Numbers 13:1–33",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:051",
+      "group": "MOSES",
+      "chapter": "WANDERINGS",
+      "titleEn": "Forty years in the wilderness",
+      "scriptureReference": "Numbers 14:1–38",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:052",
+      "group": "MOSES",
+      "chapter": "WANDERINGS",
+      "titleEn": "The bronze serpent",
+      "scriptureReference": "Numbers 21:4–9",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:053",
+      "group": "MOSES",
+      "chapter": "WANDERINGS",
+      "titleEn": "Balaam and Balak",
+      "scriptureReference": "Numbers 22:1–24:25",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:054",
+      "group": "MOSES",
+      "chapter": "WANDERINGS",
+      "titleEn": "Moses addresses Israel",
+      "scriptureReference": "Deuteronomy 6:4–25",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:055",
+      "group": "MOSES",
+      "chapter": "WANDERINGS",
+      "titleEn": "The view from Mount Nebo",
+      "scriptureReference": "Deuteronomy 34:1–8",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:deuteronomy-34-1-6",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 29
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:056",
+      "group": "MOSES",
+      "chapter": "WANDERINGS",
+      "titleEn": "Joshua leads the crossing",
+      "scriptureReference": "Joshua 3:1–17",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:joshua-3-1-17",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 30
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:057",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "The Annunciation",
+      "scriptureReference": "Luke 1:26–38",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:nazareth-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 66
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.annunciation",
+          "artworkId": "met-438724",
+          "artist": "Philippe de Champaigne",
+          "title": "The Annunciation",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "rosary.joy1",
+          "artworkId": "met-438724",
+          "artist": "Philippe de Champaigne",
+          "title": "The Annunciation",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.joy1",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [
+        {
+          "massBibleId": "MB08",
+          "atlasEventKey": "biblical:event:nazareth-e1",
+          "biblicalRelation": "INCARNATION_DOCTRINAL_SCENE_NOT_QUOTATION",
+          "atlasJoinStatus": "EXACT_REFERENCE",
+          "canonicalMCEventIds": [
+            "MC-CRD-025",
+            "MC-CRD-045"
+          ]
+        }
+      ],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-1",
+          "personId": "mary",
+          "reference": "Luke 1:26–38"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "MASS_BIBLE_FORMATION",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 6,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:058",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "Joseph receives the angelic message",
+      "scriptureReference": "Matthew 1:18–25",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:nazareth-additional-001",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 67
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:059",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "The Visitation",
+      "scriptureReference": "Luke 1:39–56",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:ein-karem-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 68
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "rosary.joy2",
+          "artworkId": "nga-505",
+          "artist": "Piero di Cosimo",
+          "title": "The Visitation with Saint Nicholas and Saint Anthony Abbot",
+          "subjectMatchStatus": "COMPOSITE_ICONOGRAPHY_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.joy2",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-2",
+          "personId": "mary",
+          "reference": "Luke 1:39–56"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 4,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:060",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "Birth of John the Baptist",
+      "scriptureReference": "Luke 1:57–80",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:061",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "The Nativity",
+      "scriptureReference": "Luke 2:1–20",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethlehem-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 69
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.christmas",
+          "artworkId": "cma-143784",
+          "artist": "Carlo Dolci",
+          "title": "Adoration of the Shepherds",
+          "subjectMatchStatus": "DEPICTS_SUBEPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "rosary.joy3",
+          "artworkId": "cma-143784",
+          "artist": "Carlo Dolci",
+          "title": "Adoration of the Shepherds",
+          "subjectMatchStatus": "DEPICTS_SUBEPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.joy3",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [
+        {
+          "massBibleId": "MB05",
+          "atlasEventKey": "biblical:event:bethlehem-e1",
+          "biblicalRelation": "ANGELS_ACCLAMATION_CONTAINED_IN_SCENE",
+          "atlasJoinStatus": "EXACT_REFERENCE",
+          "canonicalMCEventIds": [
+            "MC-GLR-020"
+          ]
+        }
+      ],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-3",
+          "personId": "mary",
+          "reference": "Luke 2:1–20"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "MASS_BIBLE_FORMATION",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 6,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:062",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "The circumcision and naming",
+      "scriptureReference": "Luke 2:21",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethlehem-additional-002",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 70
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:063",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "The Magi come to adore",
+      "scriptureReference": "Matthew 2:1–12",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethlehem-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 72
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.epiphany",
+          "artworkId": "met-436984",
+          "artist": "Quinten Massys",
+          "title": "The Adoration of the Magi",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:064",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "The Presentation",
+      "scriptureReference": "Luke 2:22–38",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-temple-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 71
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.candlemas",
+          "artworkId": "nga-46127",
+          "artist": "Master of the Prado \"Adoration of the Magi\"",
+          "title": "The Presentation in the Temple",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "rosary.joy4",
+          "artworkId": "nga-46127",
+          "artist": "Master of the Prado \"Adoration of the Magi\"",
+          "title": "The Presentation in the Temple",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.joy4",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-4",
+          "personId": "mary",
+          "reference": "Luke 2:22–38"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 5,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:065",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "Flight into Egypt",
+      "scriptureReference": "Matthew 2:13–15",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:egypt-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 74
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-5",
+          "personId": "mary",
+          "reference": "Matthew 2:13–15"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "GENEALOGY_APOSTOLIC_EPISODE"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:066",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "Return to Nazareth",
+      "scriptureReference": "Matthew 2:19–23",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:egypt-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 75
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:067",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "The hidden years",
+      "scriptureReference": "Luke 2:39–52",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-temple-e2",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 76
+        },
+        {
+          "atlasEventKey": "biblical:event:nazareth-additional-006",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 77
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:068",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "Jesus found in the Temple",
+      "scriptureReference": "Luke 2:41–52",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-temple-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 76
+        },
+        {
+          "atlasEventKey": "biblical:event:nazareth-additional-006",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 77
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "rosary.joy5",
+          "artworkId": "nga-41656",
+          "artist": "Master of the Catholic Kings",
+          "title": "Christ among the Doctors",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.joy5",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:069",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Baptism in the Jordan",
+      "scriptureReference": "Matthew 3:13–17",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:jordan-baptism-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 78
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [
+        {
+          "id": "rosary.lum1",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:070",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The forty-day fast",
+      "scriptureReference": "Matthew 4:1–11",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:judean-wilderness-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 80
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:071",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Behold the Lamb of God",
+      "scriptureReference": "John 1:29–34",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:072",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The first disciples follow Jesus",
+      "scriptureReference": "John 1:35–51",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:jordan-east-bank-additional-008",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 79
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:073",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The wedding at Cana",
+      "scriptureReference": "John 2:1–11",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:cana-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 81
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [
+        {
+          "id": "rosary.lum2",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-6",
+          "personId": "mary",
+          "reference": "John 2:1–11"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 4,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:074",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Jesus cleanses the Temple (John 2)",
+      "scriptureReference": "John 2:13–22",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-temple-e3",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 82
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:075",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Nicodemus comes by night",
+      "scriptureReference": "John 3:1–21",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:076",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Samaritan woman",
+      "scriptureReference": "John 4:4–26",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:sychar-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 91
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:077",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The royal official’s son is healed",
+      "scriptureReference": "John 4:46–54",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:cana-miracle-02",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 93
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:078",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Capernaum, the synagogue",
+      "scriptureReference": "Mark 1:21–28",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:capernaum-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 84
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:079",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Peter’s mother-in-law healed",
+      "scriptureReference": "Mark 1:29–31",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:capernaum-miracle-04",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 85
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:080",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "A paralytic lowered through the roof",
+      "scriptureReference": "Mark 2:1–12",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:capernaum-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 86
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:081",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The centurion’s faith",
+      "scriptureReference": "Matthew 8:5–13",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:082",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Levi leaves the tax booth",
+      "scriptureReference": "Mark 2:13–17",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:083",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The call of the fishermen",
+      "scriptureReference": "Luke 5:1–11",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:084",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Twelve are chosen",
+      "scriptureReference": "Luke 6:12–16",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:beatitudes-additional-021",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 90
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:085",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Sermon on the Mount",
+      "scriptureReference": "Matthew 5:1–12",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:086",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Lord’s Prayer",
+      "scriptureReference": "Matthew 6:5–15",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:087",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The widow’s son at Nain",
+      "scriptureReference": "Luke 7:11–17",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:nain-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 95
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:088",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The sinful woman anoints his feet",
+      "scriptureReference": "Luke 7:36–50",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "devotion.confession",
+          "artworkId": "met-436839",
+          "artist": "Georges de La Tour",
+          "title": "The Penitent Magdalen",
+          "subjectMatchStatus": "HISTORICAL_IDENTITY_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE",
+        "DEVOTION_SUBJECT"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:089",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The parable of the sower",
+      "scriptureReference": "Mark 4:1–20",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:090",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The storm is calmed",
+      "scriptureReference": "Mark 4:35–41",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:galilee-sea-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 88
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:091",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Gerasene demoniac",
+      "scriptureReference": "Mark 5:1–20",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:092",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Jairus’s daughter raised",
+      "scriptureReference": "Mark 5:21–43",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:093",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Twelve sent to preach",
+      "scriptureReference": "Matthew 10:1–15",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:094",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The beheading of John the Baptist",
+      "scriptureReference": "Mark 6:17–29",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.st-john-baptist",
+          "artworkId": "met-437738",
+          "artist": "Spanish Catalan Painter",
+          "title": "The Beheading of Saint John the Baptist",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:095",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Jesus walks upon the water",
+      "scriptureReference": "Matthew 14:22–33",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:galilee-sea-e3",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 89
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:096",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The multiplication of loaves",
+      "scriptureReference": "John 6:1–15",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:tabgha-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 96
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:097",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Bread of Life discourse",
+      "scriptureReference": "John 6:22–59",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:capernaum-e3",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 97
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:098",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Syrophoenician woman",
+      "scriptureReference": "Mark 7:24–30",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:099",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The deaf man healed",
+      "scriptureReference": "Mark 7:31–37",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:100",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The feeding of four thousand",
+      "scriptureReference": "Matthew 15:32–39",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:101",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The blind man of Bethsaida",
+      "scriptureReference": "Mark 8:22–26",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethsaida-miracle-25",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 98
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:102",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Peter’s confession",
+      "scriptureReference": "Matthew 16:13–20",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:caesarea-philippi-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 99
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:103",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "First prediction of the Passion",
+      "scriptureReference": "Matthew 16:21–28",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:caesarea-philippi-additional-044",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 100
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:104",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Transfiguration",
+      "scriptureReference": "Matthew 17:1–9",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:transfiguration-e1",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 101
+        },
+        {
+          "atlasEventKey": "biblical:event:transfiguration-additional-045",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 102
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [
+        {
+          "id": "rosary.lum4",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:105",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The possessed boy healed",
+      "scriptureReference": "Mark 9:14–29",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:106",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The man born blind at Siloam",
+      "scriptureReference": "John 9:1–12",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:siloam-miracle-26",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 103
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:107",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Good Shepherd",
+      "scriptureReference": "John 10:1–21",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:108",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The Good Samaritan",
+      "scriptureReference": "Luke 10:25–37",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:109",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Martha and Mary",
+      "scriptureReference": "Luke 10:38–42",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethany-additional-057",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 105
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:110",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The prodigal son",
+      "scriptureReference": "Luke 15:11–32",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:111",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Ten lepers cleansed",
+      "scriptureReference": "Luke 17:11–19",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:112",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Zacchaeus of Jericho",
+      "scriptureReference": "Luke 19:1–10",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:jericho-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 108
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:113",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "Lazarus is raised",
+      "scriptureReference": "John 11:1–44",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethany-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 104
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:114",
+      "group": "CHRIST",
+      "chapter": "MINISTRY",
+      "titleEn": "The anointing at Bethany",
+      "scriptureReference": "John 12:1–8",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethany-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 106
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:115",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The entry into Jerusalem",
+      "scriptureReference": "Matthew 21:1–11",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethphage-e1",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 109
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.palm-sunday",
+          "artworkId": "kress-k2017",
+          "artist": "Maestro Bartolomé",
+          "title": "The Entry into Jerusalem",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:116",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "Jesus weeps over Jerusalem",
+      "scriptureReference": "Luke 19:41–44",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:olives-e1",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 110
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:117",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The Temple cleansed",
+      "scriptureReference": "Mark 11:15–19",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:118",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The discourse on the end",
+      "scriptureReference": "Mark 13:1–37",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:119",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The Last Supper",
+      "scriptureReference": "Luke 22:14–20",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:cenacle-e1",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 111
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.holy-thursday",
+          "artworkId": "met-459131",
+          "artist": "Ugolino da Siena",
+          "title": "The Last Supper",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.lum5",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [
+        {
+          "massBibleId": "MB15",
+          "atlasEventKey": "biblical:event:cenacle-e1",
+          "biblicalRelation": "LAST_SUPPER_NARRATIVE_RELATED_TO_CHALICE",
+          "atlasJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "canonicalMCEventIds": [
+            "MC-CNS-090",
+            "MC-CNS-110"
+          ]
+        }
+      ],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "MASS_BIBLE_FORMATION",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 4,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:120",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "Washing of the feet",
+      "scriptureReference": "John 13:1–17",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:cenacle-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 112
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:121",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The new commandment",
+      "scriptureReference": "John 13:31–35",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:122",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The prayer for unity",
+      "scriptureReference": "John 17:1–26",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:123",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "Gethsemane",
+      "scriptureReference": "Matthew 26:36–46",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:gethsemane-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 113
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "rosary.sor1",
+          "artworkId": "met-442488",
+          "artist": "Nicolas Poussin",
+          "title": "The Agony in the Garden",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.sor1",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:124",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The arrest in the garden",
+      "scriptureReference": "Matthew 26:47–56",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:gethsemane-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 114
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:125",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "Peter’s three denials",
+      "scriptureReference": "Luke 22:54–62",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "person.peter",
+          "artworkId": "met-441971",
+          "artist": "Jusepe de Ribera",
+          "title": "The Tears of Saint Peter",
+          "subjectMatchStatus": "DEPICTS_SUBEPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE",
+        "PERSON_SUBJECT"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:126",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "Christ before Pilate",
+      "scriptureReference": "John 18:28–40",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:127",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The scourging and thorns",
+      "scriptureReference": "John 19:1–16",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-trial-e3",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 116
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "rosary.sor2",
+          "artworkId": "met-438466",
+          "artist": "Master of the Berswordt Altar",
+          "title": "The Flagellation",
+          "subjectMatchStatus": "DEPICTS_SUBEPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "rosary.sor3",
+          "artworkId": "met-436721",
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "subjectMatchStatus": "COMPOSITE_ICONOGRAPHY_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.sor2",
+          "relation": "DEPICTS_SUBEPISODE_REVIEW",
+          "matchType": "PREEXISTING_CURATED_SCENE_BRIDGE"
+        },
+        {
+          "id": "rosary.sor3",
+          "relation": "COMPOSITE_ICONOGRAPHY_HOLD",
+          "matchType": "PREEXISTING_CURATED_SCENE_BRIDGE"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:128",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The way to Calvary",
+      "scriptureReference": "Luke 23:26–32",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.good-friday",
+          "artworkId": "met-459087",
+          "artist": "El Greco",
+          "title": "Christ Carrying the Cross",
+          "subjectMatchStatus": "EXCLUDED_ARTIST_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": true,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "rosary.sor4",
+          "artworkId": "met-459087",
+          "artist": "El Greco",
+          "title": "Christ Carrying the Cross",
+          "subjectMatchStatus": "EXCLUDED_ARTIST_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": true,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.sor4",
+          "relation": "EXCLUDED_ARTIST_HOLD",
+          "matchType": "PREEXISTING_CURATED_SCENE_BRIDGE"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:129",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The Crucifixion",
+      "scriptureReference": "John 19:17–30",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:golgotha-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 117
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "rosary.sor5",
+          "artworkId": "cma-129386",
+          "artist": "El Greco",
+          "title": "Christ on the Cross",
+          "subjectMatchStatus": "EXCLUDED_ARTIST_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": true,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.sor5",
+          "relation": "EXCLUDED_ARTIST_HOLD",
+          "matchType": "PREEXISTING_CURATED_SCENE_BRIDGE"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:130",
+      "group": "CHRIST",
+      "chapter": "PASSION",
+      "titleEn": "The burial of Christ",
+      "scriptureReference": "John 19:38–42",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:christ-tomb-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 119
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.holy-saturday",
+          "artworkId": "met-437156",
+          "artist": "Moretto da Brescia",
+          "title": "The Entombment",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "calendar.our-lady-sorrows",
+          "artworkId": "met-437342",
+          "artist": "Scipione Pulzone",
+          "title": "The Lamentation",
+          "subjectMatchStatus": "DIFFERENT_MOMENT_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:131",
+      "group": "CHRIST",
+      "chapter": "RISEN",
+      "titleEn": "The empty tomb and Mary Magdalene",
+      "scriptureReference": "John 20:1–18",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:christ-tomb-e2",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 120
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.easter",
+          "artworkId": "cma-78982",
+          "artist": "Johann König",
+          "title": "The Resurrection of Christ",
+          "subjectMatchStatus": "DIFFERENT_MOMENT_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "rosary.glo1",
+          "artworkId": "cma-78982",
+          "artist": "Johann König",
+          "title": "The Resurrection of Christ",
+          "subjectMatchStatus": "DIFFERENT_MOMENT_HOLD",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.glo1",
+          "relation": "REFERENCE_EQUALITY_ONLY",
+          "matchType": "EXACT_PASSAGE_JOIN_NEEDS_SCENE_VERIFICATION"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-44",
+          "personId": "magdalene",
+          "reference": "John 20:1–18"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "GENEALOGY_APOSTOLIC_EPISODE",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 5,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:132",
+      "group": "CHRIST",
+      "chapter": "RISEN",
+      "titleEn": "Peter and John at the tomb",
+      "scriptureReference": "John 20:3–10",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:christ-tomb-e2",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 120
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:133",
+      "group": "CHRIST",
+      "chapter": "RISEN",
+      "titleEn": "The risen Lord meets the Apostles",
+      "scriptureReference": "John 20:19–23",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:cenacle-e3",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 123
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:134",
+      "group": "CHRIST",
+      "chapter": "RISEN",
+      "titleEn": "Thomas believes",
+      "scriptureReference": "John 20:24–29",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:cenacle-e3",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 123
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:135",
+      "group": "CHRIST",
+      "chapter": "RISEN",
+      "titleEn": "The road to Emmaus",
+      "scriptureReference": "Luke 24:13–35",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:emmaus-e1",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 122
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:136",
+      "group": "CHRIST",
+      "chapter": "RISEN",
+      "titleEn": "Peter, feed my sheep",
+      "scriptureReference": "John 21:15–19",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:137",
+      "group": "CHRIST",
+      "chapter": "RISEN",
+      "titleEn": "The Ascension",
+      "scriptureReference": "Acts 1:6–12",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:olives-e3",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 125
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.ascension",
+          "artworkId": "met-436835",
+          "artist": "Hans Süss von Kulmbach",
+          "title": "The Ascension of Christ",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "rosary.glo2",
+          "artworkId": "met-436835",
+          "artist": "Hans Süss von Kulmbach",
+          "title": "The Ascension of Christ",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.glo2",
+          "relation": "SAME_EPISODE_REVIEW",
+          "matchType": "PREEXISTING_CURATED_SCENE_BRIDGE"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 4,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:138",
+      "group": "PAUL",
+      "chapter": "APOSTLES",
+      "titleEn": "The road to Damascus",
+      "scriptureReference": "Acts 9:1–9",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-9-1-22",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 130
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:139",
+      "group": "PAUL",
+      "chapter": "APOSTLES",
+      "titleEn": "Ananias baptises Saul",
+      "scriptureReference": "Acts 9:10–19",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-9-1-22",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 130
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:140",
+      "group": "PAUL",
+      "chapter": "APOSTLES",
+      "titleEn": "Saul escapes Damascus",
+      "scriptureReference": "Acts 9:20–25",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-9-1-22",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 130
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:141",
+      "group": "PAUL",
+      "chapter": "APOSTLES",
+      "titleEn": "Saul visits Jerusalem",
+      "scriptureReference": "Acts 9:26–30",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-9-29-30",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 131
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:142",
+      "group": "PAUL",
+      "chapter": "APOSTLES",
+      "titleEn": "The disciples at Antioch",
+      "scriptureReference": "Acts 11:19–26",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-11-19-26",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 134
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:143",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Barnabas and Saul are sent",
+      "scriptureReference": "Acts 13:1–3",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:144",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Departure from Seleucia",
+      "scriptureReference": "Acts 13:4",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:145",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Salamis on Cyprus",
+      "scriptureReference": "Acts 13:5",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:146",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "The mission to Cyprus",
+      "scriptureReference": "Acts 13:4–12",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:147",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Perga in Pamphylia",
+      "scriptureReference": "Acts 13:13–14",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:148",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Antioch in Pisidia",
+      "scriptureReference": "Acts 13:14–43",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:149",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Iconium resists the preaching",
+      "scriptureReference": "Acts 14:1–7",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:150",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Lystra and the miracle",
+      "scriptureReference": "Acts 14:8–20",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-14-8-18",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 135
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:151",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Derbe and the return",
+      "scriptureReference": "Acts 14:20–28",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:152",
+      "group": "PAUL",
+      "chapter": "FIRST_MISSION",
+      "titleEn": "Council in Jerusalem",
+      "scriptureReference": "Acts 15:1–29",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-15-1-29",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 136
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:153",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "A second departure",
+      "scriptureReference": "Acts 15:36–41",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:154",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "Timothy joins the mission",
+      "scriptureReference": "Acts 16:1–5",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:155",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "The Macedonian vision",
+      "scriptureReference": "Acts 16:6–10",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:156",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "The crossing to Macedonia",
+      "scriptureReference": "Acts 16:8–12",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-16-11-15",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 137
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:157",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "Landfall at Neapolis",
+      "scriptureReference": "Acts 16:11–12",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-16-11-15",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 137
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:158",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "Lydia and the church at Philippi",
+      "scriptureReference": "Acts 16:11–15",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-16-11-15",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 137
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-38",
+          "personId": "paul",
+          "reference": "Acts 16:11–15"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "GENEALOGY_APOSTOLIC_EPISODE"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:159",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "Paul and Silas in prison",
+      "scriptureReference": "Acts 16:16–40",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:160",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "Paul at Thessalonica",
+      "scriptureReference": "Acts 17:1–9",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-17-1-9",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 138
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:161",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "The believers at Berea",
+      "scriptureReference": "Acts 17:10–15",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:162",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "The Areopagus at Athens",
+      "scriptureReference": "Acts 17:16–34",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-17-16-34",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 139
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-39",
+          "personId": "paul",
+          "reference": "Acts 17:16–34"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "GENEALOGY_APOSTOLIC_EPISODE"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:163",
+      "group": "PAUL",
+      "chapter": "SECOND_MISSION",
+      "titleEn": "Corinth and the tentmakers",
+      "scriptureReference": "Acts 18:1–18",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-18-1-18",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 140
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [
+        {
+          "id": "event-40",
+          "personId": "paul",
+          "reference": "Acts 18:1–18"
+        }
+      ],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "GENEALOGY_APOSTOLIC_EPISODE"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:164",
+      "group": "PAUL",
+      "chapter": "THIRD_MISSION",
+      "titleEn": "The mission returns to Antioch",
+      "scriptureReference": "Acts 18:18–23",
+      "sceneSourceJoinStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-18-1-18",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "atlasIndex": 140
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:165",
+      "group": "PAUL",
+      "chapter": "THIRD_MISSION",
+      "titleEn": "Paul revisits Galatia and Phrygia",
+      "scriptureReference": "Acts 18:23",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:166",
+      "group": "PAUL",
+      "chapter": "THIRD_MISSION",
+      "titleEn": "The mission in Ephesus",
+      "scriptureReference": "Acts 19:1–20",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-19-1-20",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 141
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:167",
+      "group": "PAUL",
+      "chapter": "THIRD_MISSION",
+      "titleEn": "Riot of the silversmiths",
+      "scriptureReference": "Acts 19:23–41",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:168",
+      "group": "PAUL",
+      "chapter": "THIRD_MISSION",
+      "titleEn": "Eutychus restored at Troas",
+      "scriptureReference": "Acts 20:7–12",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-20-7-12",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 142
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:169",
+      "group": "PAUL",
+      "chapter": "THIRD_MISSION",
+      "titleEn": "Farewell at Miletus",
+      "scriptureReference": "Acts 20:17–38",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-20-17-38",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 143
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:170",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "Paul arrives at Tyre",
+      "scriptureReference": "Acts 21:1–6",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:171",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "Prophecy at Caesarea",
+      "scriptureReference": "Acts 21:8–14",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:172",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "Paul arrested at the Temple",
+      "scriptureReference": "Acts 21:27–36",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:173",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "Before Felix at Caesarea",
+      "scriptureReference": "Acts 24:1–27",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:174",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "Paul appeals to Caesar",
+      "scriptureReference": "Acts 25:1–12",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:175",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "The long voyage from Caesarea",
+      "scriptureReference": "Acts 27:1–12",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:176",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "A storm on the sea",
+      "scriptureReference": "Acts 27:13–44",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-27-13-44",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 144
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:177",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "Shipwreck and hospitality on Malta",
+      "scriptureReference": "Acts 28:1–10",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:178",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "Syracuse and Puteoli",
+      "scriptureReference": "Acts 28:11–14",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:179",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "The Italian mainland",
+      "scriptureReference": "Acts 28:13–14",
+      "sceneSourceJoinStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasReferences": [],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 1,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:180",
+      "group": "PAUL",
+      "chapter": "TO_ROME",
+      "titleEn": "Paul arrives in Rome",
+      "scriptureReference": "Acts 28:16–31",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-28-16-31",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 145
+        }
+      ],
+      "previousSacredArtTargets": [],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE"
+      ],
+      "documentedContextFamilyCount": 2,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:181",
+      "group": "CHRIST",
+      "chapter": "INCARNATION",
+      "titleEn": "The massacre of the Holy Innocents",
+      "scriptureReference": "Matthew 2:16–18",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:event:bethlehem-additional-003",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 73
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.holy-innocents",
+          "artworkId": "kress-k1782",
+          "artist": "Follower of Raphael",
+          "title": "The Massacre of the Innocents",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT"
+      ],
+      "documentedContextFamilyCount": 3,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:182",
+      "group": "PAUL",
+      "chapter": "APOSTLES",
+      "titleEn": "Pentecost: the Holy Spirit descends",
+      "scriptureReference": "Acts 2:1–41",
+      "sceneSourceJoinStatus": "EXACT_REFERENCE",
+      "atlasReferences": [
+        {
+          "atlasEventKey": "biblical:passage:acts-2-1-41",
+          "relation": "EXACT_REFERENCE",
+          "atlasIndex": 126
+        }
+      ],
+      "previousSacredArtTargets": [
+        {
+          "subjectTarget": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "artist": "Master of the Baroncelli Portraits",
+          "title": "Pentecost",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        },
+        {
+          "subjectTarget": "rosary.glo3",
+          "artworkId": "commons-baroncelli-pentecost",
+          "artist": "Master of the Baroncelli Portraits",
+          "title": "Pentecost",
+          "subjectMatchStatus": "SAME_EPISODE_REVIEW",
+          "artworkUserRating": null,
+          "artworkRatingInterpretation": "PREVIOUS_SUBJECT_SELECTION_WITHOUT_USER_NUMERIC_5",
+          "explicitlyExcludedArtist": false,
+          "globallyDiscardedRated0to2": false,
+          "stillInFinalReviewEligibilitySelectedOriginal": true,
+          "automaticRepeatAllowed": false,
+          "publicationApproved": false
+        }
+      ],
+      "rosaryMatches": [
+        {
+          "id": "rosary.glo3",
+          "relation": "SAME_EPISODE_REVIEW",
+          "matchType": "PREEXISTING_CURATED_SCENE_BRIDGE"
+        }
+      ],
+      "massBibleFormationReferences": [],
+      "genealogyEpisodesExactReference": [],
+      "documentedDistinctContextFamilies": [
+        "151_SELECTED_ATLAS_EXACT_PASSAGE",
+        "BIBLICAL_THEATRE",
+        "CALENDAR_SUBJECT",
+        "ROSARY"
+      ],
+      "documentedContextFamilyCount": 4,
+      "independentUserVisitFrequencyMeasured": false,
+      "artworkReleaseApproved": false
+    }
+  ],
+  "productionMutations": 0,
+  "status": "SOURCE_OWNED_RESEARCH_LINKS_WITH_ALL_ART_REVIEW_GATES_UNCLEARED"
+}
