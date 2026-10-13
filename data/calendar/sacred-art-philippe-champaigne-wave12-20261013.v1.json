@@ -1,0 +1,458 @@
+{
+  "schema": "AO_SACRED_ART_PHILIPPE_CHAMPAIGNE_WAVE12_V1",
+  "asOf": "2026-10-13",
+  "scope": "10 missing museum/ministerial object identities; own oil paintings plus two monumental tapestry cartoon-related works with divided authorship assessment. Not complete global oeuvre, and 3 attribution-held.",
+  "focusArtist": "Philippe de Champaigne (1602–1674)",
+  "authoritativeCatalogues": [
+    "Bernard Dorival, Philippe de Champaigne: la vie, l'oeuvre et le catalogue raisonné, 1976, vol. II",
+    "https://collections.louvre.fr/",
+    "https://musees.dijon.fr/",
+    "https://www.museedegrenoble.fr/",
+    "https://mba.caen.fr/oeuvre/la-samaritaine",
+    "https://pop.culture.gouv.fr/"
+  ],
+  "counts": {
+    "newSourceLeads": 10,
+    "newAcquiredImages": 0,
+    "acquisitionHolds": 3,
+    "previousNewSourceLeads": 180,
+    "updatedNewSourceLeads": 190
+  },
+  "carmeliteCycleReconciliation": {
+    "sourceAuthority": [
+      "https://pop.culture.gouv.fr/notice/palissy/PM15000769",
+      "https://musees.dijon.fr/artworks/la-presentation-au-temple/",
+      "https://collections.louvre.fr/ark:/53355/cl010060517"
+    ],
+    "method": "Dijon describes SIX Marian canvases while heritage Palissy proposes SEVEN Carmelite series scenes including St Joseph's Dream and Lazarus; different scope/classifications, do NOT assert one globally fixed total until Dorival reconciliation.",
+    "identifiedSubjects": [
+      {
+        "subject": "Dream of St Joseph",
+        "inventory": "Louvre INV 20450",
+        "lead": "W04-009",
+        "state": "ALREADY_QUEUED_DAMAGED"
+      },
+      {
+        "subject": "Adoration of Shepherds",
+        "inventory": "Lyon A52",
+        "lead": "W04-013",
+        "state": "ALREADY_QUEUED"
+      },
+      {
+        "subject": "Raising of Lazarus",
+        "inventory": "Grenoble MG57",
+        "lead": "W04-014",
+        "state": "ALREADY_QUEUED"
+      },
+      {
+        "subject": "Assumption",
+        "inventory": "Louvre MI333",
+        "lead": "W12-001",
+        "state": "NEW_IDENTITY"
+      },
+      {
+        "subject": "Presentation of Jesus",
+        "inventory": "Dijon CA104",
+        "lead": "W12-002",
+        "state": "NEW_IDENTITY"
+      },
+      {
+        "subject": "Pentecost",
+        "inventory": "Saint-Flour PM15000769",
+        "lead": "W12-008",
+        "state": "PROPOSED_CHAMPAIGNE_ATTRIBUTION_ONLY"
+      },
+      {
+        "subject": "Adoration of Magi",
+        "inventory": null,
+        "lead": null,
+        "state": "DESTROYED_STRASBOURG_1870_NO_MASTER_CANDIDATE"
+      }
+    ]
+  },
+  "importantAttributionExclusions": [
+    {
+      "object": "La Pentecôte, Libourne B720 / D.818.1.1",
+      "state": "NOT_PHILIPPE_ORIGINAL",
+      "source": "https://collections.louvre.fr/en/ark:/53355/cl010058020",
+      "note": "Louvre currently catalogues François Verdier, whereas local Joconde catalogue names Nicolas de Plattemontagne; regardless both exclude Philippe. Contradiction of replacement names must remain unresolved, not treated as two works."
+    },
+    {
+      "object": "Louvre INV1127 Christ en croix",
+      "state": "CHAMPAIGNE_WORKSHOP_REPLICA",
+      "source": "https://collections.louvre.fr/en/ark:/53355/cl010060516"
+    },
+    {
+      "object": "Caen 225 Le Voile de Véronique",
+      "state": "ATTRIBUTED_TO_JEAN_BAPTISTE_COPY",
+      "source": "https://pop.culture.gouv.fr/notice/joconde/000PE024538",
+      "note": "Former Philippe attribution explicitly superseded; copy not new Philippe original."
+    },
+    {
+      "object": "Port-Royal Sainte Face RF3165",
+      "state": "WORKSHOP_NOT_PHILIPPE_ORIGINAL",
+      "source": "https://collections.louvre.fr/en/ark:/53355/cl010057828"
+    },
+    {
+      "object": "Louvre INV19872 Naissance de la Vierge",
+      "state": "DRAWING_LIKELY_COPY",
+      "source": "https://collections.louvre.fr/en/ark:/53355/cl020110016"
+    }
+  ],
+  "provenancePolicy": "Painting vs painted tapestry cartoon must remain explicit, and Jean-Baptiste collaborations not silently added to sole Philippe autograph corpus.",
+  "queue": [
+    {
+      "leadId": "W12-001",
+      "artist": "Philippe de Champaigne",
+      "title": "L'Assomption (Carmelite altarpiece)",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "MI 333",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010063151",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "calendar.assumption",
+        "rosary.glorious4",
+        "marian.assumption"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1629 original oil on canvas, Carmelite convent Paris; distinct from Nancy Charles de La Fosse Assumption, other Rubens and Champaigne Assumption copies.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "MUSEUM_ATTRIBUTION_UNCHALLENGED"
+    },
+    {
+      "leadId": "W12-002",
+      "artist": "Philippe de Champaigne",
+      "title": "La Présentation de Jésus au Temple",
+      "institution": "Musée des Beaux-Arts, Dijon",
+      "accession": "CA 104",
+      "sourceUrl": "https://musees.dijon.fr/artworks/la-presentation-au-temple/",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "calendar.candlemas",
+        "rosary.joy4",
+        "bible.luke2.presentation"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Signed commission dated 1628 for Paris Carmelite cycle; presents JESUS, NOT childhood of Mary. Dijon confirms museum inventory, oil and object provenance.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "MUSEUM_ATTRIBUTION_UNCHALLENGED"
+    },
+    {
+      "leadId": "W12-003",
+      "artist": "Philippe de Champaigne",
+      "title": "La Vierge de douleur",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1129",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010061791",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "calendar.our-lady-of-sorrows",
+        "rosary.sorrowful",
+        "seven-sorrows"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1655–1660 original Louvre oil; distinct from Leipzig smaller original-version and Jean Baptiste de Champaigne copy at Port Royal. Virgin of Sorrows WITHOUT literal seven swords.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "MUSEUM_ATTRIBUTION_UNCHALLENGED"
+    },
+    {
+      "leadId": "W12-004",
+      "artist": "Philippe de Champaigne",
+      "title": "Apparition de saint Gervais et de saint Protais à saint Ambroise",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1130",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010061790",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "saints.ambrose",
+        "saints.gervais",
+        "saints.protais",
+        "church-history.relic-discovery"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1657–1658 full-size painted tapestry cartoon for St Gervais series; Louvre states executed entirely by Philippe de Champaigne. Saint Paul appears in later legend, not historical firsthand event.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "MUSEUM_ATTRIBUTION_UNCHALLENGED"
+    },
+    {
+      "leadId": "W12-005",
+      "artist": "Philippe de Champaigne (with Jean-Baptiste de Champaigne)",
+      "title": "Translation des corps de saint Gervais et de saint Protais",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1131",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060524",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "saints.gervais",
+        "saints.protais",
+        "church-history.relic-translation"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1660–1661 tapestry cartoon. Louvre explicitly states Jean-Baptiste de Champaigne participation in execution seems predominant: DO NOT credit as sole-authored Philippe original, and keep held for solo oeuvre classification.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "ATTRIBUTION_VERIFICATION_HOLD",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "COAUTHORSHIP_DOMINANT_JEAN_BAPTISTE"
+    },
+    {
+      "leadId": "W12-006",
+      "artist": "Philippe de Champaigne",
+      "title": "L'Invention des reliques de saint Gervais et saint Protais",
+      "institution": "Musée des Beaux-Arts, Lyon (Louvre deposit)",
+      "accession": "A 103",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010058907",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "saints.ambrose",
+        "saints.gervais",
+        "saints.protais",
+        "church-history.relic-discovery"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Official Louvre deposit object 365×682cm oil on canvas. Related Saint-Gervais series but physically distinct from Louvre INV 1130 and INV 1131; verify authorship/autograph status in Dorival before allowing acquisition.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "ATTRIBUTION_VERIFICATION_HOLD",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "AUTHORSHIP_CATALOGUE_RAISSONNE_CONFIRM"
+    },
+    {
+      "leadId": "W12-007",
+      "artist": "Philippe de Champaigne",
+      "title": "Le Christ mort sur la Croix",
+      "institution": "Musée de Grenoble",
+      "accession": "MG 60",
+      "sourceUrl": "https://www.museedegrenoble.fr/oeuvre/126/1922-le-christ-mort-sur-la-croix.htm",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "calendar.good-friday",
+        "stations.12",
+        "bible.crucifixion"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1655 oil commissioned for Grande Chartreuse; Christ shown dead. Distinct from Louvre earlier living Christ on Cross INV 1126 and smaller INV1127 workshop replica.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "MUSEUM_ATTRIBUTION_UNCHALLENGED"
+    },
+    {
+      "leadId": "W12-008",
+      "artist": "Philippe de Champaigne (attributed)",
+      "title": "La Pentecôte ou La Descente du Saint-Esprit (Saint-Flour)",
+      "institution": "Cathédrale Saint-Pierre, Saint-Flour",
+      "accession": "PM15000769",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM15000769",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "calendar.pentecost",
+        "rosary.glorious3",
+        "bible.acts2"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Palissy Monument historique proposes, DOES NOT fully certify, Champaigne original. Possible 1628 Carmelite cycle panel. Different from Libourne B720 falsely attributed to Champaigne in past, now Verdier/Plattemontagne. Attribution hold.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "ATTRIBUTION_VERIFICATION_HOLD",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "ATTRIBUTED_ONLY_SCHOLARLY_GATE"
+    },
+    {
+      "leadId": "W12-009",
+      "artist": "Philippe de Champaigne",
+      "title": "Les Pèlerins d'Emmaüs (Nantes)",
+      "institution": "Musée d'arts de Nantes (Louvre deposit)",
+      "accession": "inv 396 / D.809.1.7.P",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010058761",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "calendar.easter",
+        "bible.luke24.emmaus",
+        "rosary.glorious1"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Distinct Nantes original catalogued as Philippe de Champaigne in Louvre deposit; compare with different original same subject by Eustache Le Sueur at Grenoble before asserting visual identity.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "MUSEUM_ATTRIBUTION_UNCHALLENGED"
+    },
+    {
+      "leadId": "W12-010",
+      "artist": "Philippe de Champaigne",
+      "title": "La Samaritaine / Christ et la Samaritaine",
+      "institution": "Musée des Beaux-Arts de Caen",
+      "accession": "52",
+      "sourceUrl": "https://mba.caen.fr/oeuvre/la-samaritaine",
+      "sourceSpecificity": "INDIVIDUAL_OFFICIAL_MUSEUM_OR_MINISTRY_OBJECT",
+      "contextKeys": [
+        "bible.john4.samaritan-woman",
+        "formation.christ-and-samaritans",
+        "calendar.lent-context"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Circa 1650 original Caen oil on canvas 114.5×113cm, Port-Royal high altar ensemble of three. Do not confuse with 17th-century copies in other churches or anonymous French paintings.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 12,
+      "identityNote": "IDENTIFIED_DISTINCT_PHYSICAL_PAINTING_OR_PAINTED_TAPESTRY_CARTOON",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INDIVIDUAL_MUSEUM_OR_MINISTRY_RECORD",
+      "authorshipGate": "MUSEUM_ATTRIBUTION_UNCHALLENGED"
+    }
+  ],
+  "acquisitionPolicy": "No downloads, no human scores, no production rights, no deployment."
+}
