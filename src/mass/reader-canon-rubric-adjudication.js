@@ -119,6 +119,7 @@ export function createCanonRubricAdjudicationController({
     const base=original.project(cueId,options);
     if(base.previewEnabled!==true)return base;
     const ministry=ministerController.project(cueId,options);
+    const observedStages=new Set(options.observedStageIds??[]);
     const augment=action=>{
       const fr=byFrench.get(action.id),tr=byTrigger.get(action.id);
       const anchor=resolveCanonLatinWordAnchors({
@@ -136,7 +137,16 @@ export function createCanonRubricAdjudicationController({
         anchorKind:tr.sourceAnchorType,
         checkedLatinWords:tr.verifiedSourceWordAnchor,
         exactLatinSpans:anchor.spans,anchorResolution:anchor.status,
-        stages:Object.freeze(tr.stageSequence.map(s=>Object.freeze({...s}))),
+        // Observing an action group is not observation of all its ordered
+        // steps: host/chalice genuflections, elevation and covering have
+        // separate independent minister/priest clocks.
+        actionGroupObserved:action.isObservedNow,
+        isObservedNow:tr.stageSequence.length===0&&action.isObservedNow,
+        stages:Object.freeze(tr.stageSequence.map(s=>Object.freeze({
+          ...s,isObservedNow:observedStages.has(s.id),
+          observedBy:"INDEPENDENT_MICRO_STAGE_EVENT_ONLY",
+          publishable:false,
+        }))),
         editorialFlags:Object.freeze([...fr.editorialFlags]),
         sourceRitusLocator:tr.rubricSource,
         reviewedAgainst:fr.checkedAgainst,
