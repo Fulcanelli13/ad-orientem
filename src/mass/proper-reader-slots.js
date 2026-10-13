@@ -37,6 +37,20 @@ function readyEnvelope(slot,value,{language="en"}={}){
   const spokenOrations=slot==="COLLECT_SET"||slot==="POSTCOMMUNION_SET";
   const french=String(language).toLowerCase().startsWith("fr");
   const paragraphs=[];
+  // The source witness frequently prints the congregation's terminal Amen
+  // as part of the complete prayer text. In Collects/Postcommunions that
+  // response is instead projected as a separate, speaker-labelled paragraph
+  // (intermediate derived response or final canonical C0074/C0255).
+  // Preserve the original text for provenance/conclusion validation above.
+  const spokenBody=(text,locale)=>{
+    const raw=String(text??"");
+    if(!spokenOrations)return raw;
+    const response=locale==="fr"
+      ?/\\s*(?:(?:℟\\.|R\\.)\\s*)?(?:Ainsi soit-il|Amen)\\.\\s*$/iu
+      :/\\s*(?:(?:℟\\.|R\\.)\\s*)?Amen\\.\\s*$/iu;
+    const without=raw.replace(response,"").trimEnd();
+    return without||raw;
+  };
   for(const [index,row] of rows.entries()){
     const group=slot+"."+(index+1);
     // The source donor already has the first Oremus at C0072/C0253.
@@ -65,22 +79,22 @@ function readyEnvelope(slot,value,{language="en"}={}){
       paragraphs.push(Object.freeze({
         ...common,
         id:group+(multiple?".FIRST_COMMEMORATION":".PRINCIPAL"),kind:"TEXT",
-        latin:latin.principal,vernacular:trans.principal,
+        latin:spokenBody(latin.principal,"lat"),vernacular:spokenBody(trans.principal,language),
         prayerRole:multiple?"FIRST_COMMEMORATION":"PRINCIPAL_ORATION",
         sourcePath:multiple?composed.sourcePaths?.[0]??common.sourcePath:common.sourcePath,
       }));
       paragraphs.push(Object.freeze({
         ...common,
         id:group+(multiple?".SECOND_COMMEMORATION":composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
-        kind:"TEXT",latin:extra(latin)+"\n"+latin.conclusion,
-        vernacular:extra(trans)+"\n"+trans.conclusion,
+        kind:"TEXT",latin:spokenBody(extra(latin)+"\n"+latin.conclusion,"lat"),
+        vernacular:spokenBody(extra(trans)+"\n"+trans.conclusion,language),
         prayerRole:multiple?"SECOND_COMMEMORATION":"ORATION_UNDER_ONE_CONCLUSION",
         sourcePath:multiple?composed.sourcePaths?.[1]??null:composed.sourcePath??common.sourcePath,
       }));
     }else{
       paragraphs.push(Object.freeze({
         ...common,id:group,kind:"TEXT",
-        latin:String(row.lat??row.la),vernacular:vernacularValue(row,language),
+        latin:spokenBody(row.lat??row.la,"lat"),vernacular:spokenBody(vernacularValue(row,language),language),
         prayerRole:index===0?"PRINCIPAL_ORATION":"ADDITIONAL_ORATION",
       }));
     }
