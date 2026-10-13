@@ -1,0 +1,482 @@
+{
+  "schema": "AO_SACRED_ART_NANCY_COLLECTION_CENSUS_WAVE10_V1",
+  "asOf": "2026-10-13",
+  "scope": "Targeted sacred painting census: Nancy Renaissance, XVIIe and XVIIIe official museum collections. Does not claim complete museum holdings or worldwide artist corpora.",
+  "sources": [
+    "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviie-siecle",
+    "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-de-la-renaissance-xive-xvie-siecles",
+    "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviiie-siecle",
+    "https://pop.culture.gouv.fr/",
+    "https://collections-mba.nancy.fr/"
+  ],
+  "counts": {
+    "newObjectIdentityLeads": 12,
+    "preexistingWave09Nancy": 4,
+    "priorQueue": 153,
+    "updatedQueue": 165,
+    "newOriginalMastersDownloaded": 0,
+    "attributionHolds": 3
+  },
+  "criticalCorrections": [
+    "Noël Coypel, NOT Nicolas Coypel, painted Nancy Nativity inventory 173.",
+    "Valerio Castello Pietà date 1650–1659, not erroneous 1650–1559.",
+    "Tiburtine Sibyl and Augustus: non-canonical legend, not a biblical event.",
+    "Jan II Brueghel Noli me tangere may have collaborating artists; authorial division on hold.",
+    "Fragonard attribution specifically qualified; Seghers historic attribution conflict held.",
+    "Barberini Carpineto Caravaggio original is already in W09, not duplicated."
+  ],
+  "excludedCopiesOrWorkshop": [
+    {
+      "artist": "Lubin Baugin",
+      "titles": [
+        "Les saints Barthélemy et Mathias",
+        "Les saints Philippe et Thaddée"
+      ],
+      "inventory": [
+        "2016.5.1",
+        "2016.5.2"
+      ],
+      "reason": "Copies after Correggio frescos, not independent autograph compositions.",
+      "source": "https://www.latribunedelart.com/deux-toiles-de-lubin-baugin-preemptees-par-le-musee-des-beaux-arts-de-nancy"
+    },
+    {
+      "title": "L'Annonciation",
+      "artist": "Atelier Federico Barocci",
+      "reason": "Workshop, not the master's original.",
+      "source": "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-de-la-renaissance-xive-xvie-siecles"
+    },
+    {
+      "title": "Le Sauveur du monde",
+      "artist": "Atelier Léonard de Vinci",
+      "reason": "Workshop, not Leonardo autograph.",
+      "source": "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-de-la-renaissance-xive-xvie-siecles"
+    }
+  ],
+  "discoveredForFutureAestheticTriage": [
+    {
+      "artist": "Wenceslas Coebergher",
+      "title": "Les apprêts du martyre de saint Sébastien"
+    },
+    {
+      "artist": "Noël Bellemare",
+      "title": "La naissance de la Vierge"
+    },
+    {
+      "artist": "Pietro Perugino",
+      "title": "La Vierge à l'Enfant avec le petit saint Jean-Baptiste et deux anges"
+    },
+    {
+      "artist": "Giovanni di Lorenzo Larciani",
+      "title": "Saint Jean-Baptiste dans le désert"
+    },
+    {
+      "artist": "Mello da Gubbio",
+      "title": "Crucifixion"
+    }
+  ],
+  "queue": [
+    {
+      "leadId": "W10-001",
+      "artist": "Charles de La Fosse",
+      "title": "L'Assomption",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "215",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/05120000117",
+      "sourceSpecificity": "OFFICIAL_JOCONDE_OBJECT",
+      "contextKeys": [
+        "assumption",
+        "rosary.glorious4"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Nancy 1682-1686; original distinct from Dijon study.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "JOCONDE_INVENTORY"
+    },
+    {
+      "leadId": "W10-002",
+      "artist": "Frans II Pourbus",
+      "title": "L'Annonciation",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "101",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/05120000039",
+      "sourceSpecificity": "OFFICIAL_JOCONDE_OBJECT",
+      "contextKeys": [
+        "annunciation",
+        "rosary.joy1",
+        "angelus"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Signed 1619. Distinct from Caravaggio's Nancy Annunciation.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "JOCONDE_INVENTORY"
+    },
+    {
+      "leadId": "W10-003",
+      "artist": "Jan II Brueghel",
+      "title": "Noli me tangere",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "87.8.1",
+      "sourceUrl": "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviie-siecle",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_COLLECTION_PAGE",
+      "contextKeys": [
+        "easter",
+        "rosary.glorious1",
+        "john.20.11-18"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Official Nancy Jan II Brueghel; collaboration reportedly includes Lucas van Uden and Jacob Jordaens; attribution extent not yet verified.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "ATTRIBUTION_VERIFICATION_HOLD",
+      "verifiedSourceBasis": "CURATED_COLLECTION_WITH_INVENTORY_CROSSCHECK"
+    },
+    {
+      "leadId": "W10-004",
+      "artist": "Lubin Baugin",
+      "title": "La Vierge, l'Enfant Jésus et saint Jean-Baptiste",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "140",
+      "sourceUrl": "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviie-siecle",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_COLLECTION_PAGE",
+      "contextKeys": [
+        "holy-family",
+        "nativity-of-john",
+        "bible.childhood"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Original named in official Nancy collection; independent object from Rennes painting.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "CURATED_COLLECTION_WITH_INVENTORY_CROSSCHECK"
+    },
+    {
+      "leadId": "W10-005",
+      "artist": "Pietro da Cortona",
+      "title": "La Sibylle de Tibur annonçant à Auguste l'avènement du Christ",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "8",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/05120001193",
+      "sourceSpecificity": "OFFICIAL_JOCONDE_OBJECT",
+      "contextKeys": [
+        "advent-context",
+        "formation.ancient-world"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1660; non-canonical Tiburtine Sibyl legend, NOT direct biblical history.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "JOCONDE_INVENTORY"
+    },
+    {
+      "leadId": "W10-006",
+      "artist": "Valerio Castello",
+      "title": "Le Christ au tombeau ; Pietà",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "18",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/05120001196",
+      "sourceSpecificity": "OFFICIAL_JOCONDE_OBJECT",
+      "contextKeys": [
+        "passion",
+        "stations.13",
+        "pieta"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Correct date 1650–1659 per Joconde; museum highlight 1650-1559 is a typo.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "JOCONDE_INVENTORY"
+    },
+    {
+      "leadId": "W10-007",
+      "artist": "Noël Coypel",
+      "title": "Nativité",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "173",
+      "sourceUrl": "https://collections-mba.nancy.fr/fr/notice/173-nativite-cfc8cd03-918e-4c7a-b635-0dda8f5e1e07",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_OBJECT_RECORD",
+      "contextKeys": [
+        "christmas",
+        "rosary.joy3",
+        "nativity"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "CRITICAL: artist Noël Coypel, not Nicolas Coypel. Official 1667–1668.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_INDIVIDUAL_NANCY_OBJECT"
+    },
+    {
+      "leadId": "W10-008",
+      "artist": "Jan Sanders van Hemessen",
+      "title": "Le Christ chassant les marchands du temple",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "90",
+      "sourceUrl": "https://collections-mba.nancy.fr/fr/notice/90-le-christ-chassant-les-marchands-du-temple-9d475c93-9f8f-421a-b415-ad1442c04d13",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_OBJECT_RECORD",
+      "contextKeys": [
+        "cleansing-temple",
+        "formation.life-of-christ"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Signed and dated 1556. Depicts an Antwerp-like cathedral, not Jerusalem architecture.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_INDIVIDUAL_NANCY_OBJECT"
+    },
+    {
+      "leadId": "W10-009",
+      "artist": "Jean-Honoré Fragonard (attributed)",
+      "title": "L'Apothéose de saint Louis",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "520",
+      "sourceUrl": "https://collections-mba.nancy.fr/fr/notice/520-apotheose-de-saint-louis-4f4dd315-e13c-44cf-9b26-11f1d3009ce4",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_OBJECT_RECORD",
+      "contextKeys": [
+        "calendar.st-louis",
+        "saints.louis-ix"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "c.1758, attributed to Fragonard; previously Lemoyne/Doyen. DO NOT claim securely autograph.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "ATTRIBUTION_VERIFICATION_HOLD",
+      "verifiedSourceBasis": "OFFICIAL_INDIVIDUAL_NANCY_OBJECT"
+    },
+    {
+      "leadId": "W10-010",
+      "artist": "Jacopo Tintoretto",
+      "title": "Déploration du Christ",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "514",
+      "sourceUrl": "https://collections-mba.nancy.fr/fr/notice/514-deploration-du-christ-22fbd423-6f0a-4621-a704-67e5d2eb60c6",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_OBJECT_RECORD",
+      "contextKeys": [
+        "good-friday",
+        "stations.13",
+        "lamentation"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Museum-assigned Tintoretto c.1580; lamentation between Descent and Entombment, not exact burial.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_INDIVIDUAL_NANCY_OBJECT"
+    },
+    {
+      "leadId": "W10-011",
+      "artist": "Gerard Seghers",
+      "title": "Le Christ après la flagellation",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "78",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/05120000025",
+      "sourceSpecificity": "OFFICIAL_JOCONDE_OBJECT",
+      "contextKeys": [
+        "passion",
+        "after-flagellation"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Joconde names Gerard Seghers, but 1977 reference calls attributed to; further original-authorship check.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "ATTRIBUTION_VERIFICATION_HOLD",
+      "verifiedSourceBasis": "JOCONDE_INVENTORY"
+    },
+    {
+      "leadId": "W10-012",
+      "artist": "Wilhelm Stetter",
+      "title": "La Décollation de saint Jean-Baptiste",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": "121",
+      "sourceUrl": "https://collections-mba.nancy.fr/fr/notice/121-la-decollation-de-saint-jean-baptiste-24a826ba-e53a-48e1-976d-6cc0f634348f",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_OBJECT_RECORD",
+      "contextKeys": [
+        "calendar.beheading-john",
+        "mark.6.17-29"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1515 original oil on panel; aesthetic review needed before module use.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 10,
+      "identityNote": "NANCY_OBJECT_NOT_IN_EXISTING_SOURCE_QUEUE",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_INDIVIDUAL_NANCY_OBJECT"
+    }
+  ],
+  "status": "SOURCE_RESEARCH_ONLY_NO_PIXELS_NO_EDITORIAL_RELEASE"
+}
