@@ -1,0 +1,1775 @@
+{
+  "schema": "AO_SACRED_ART_MOBILE_FIRST_CURATORIAL_REPRIORITIZATION_V1",
+  "updated": "2026-10-13",
+  "repositoryBranch": "platform/885-sacred-art-candidates",
+  "ownerPR": 887,
+  "purpose": "Stop low-value high-resolution hunting and open-ended Bible cataloging. Reuse existing 266 previews and canonical catalogue to prioritize primary liturgical and devotional content.",
+  "explicitUserPriorityOrder": [
+    "1. VISUALLY_SCREEN_ALL_RELEVANT_EXISTING_WORKS for established naturalistic sacred aesthetic, respecting excluded artists",
+    "2. COVER_ALL_53_OBSERVED_CLASS_I_DATES_2026 with excellent feast/theme images, reusing same painting across octaves and related days when justified",
+    "3. COVER_MAJOR_FEASTS_NOT_CLASS_I (Candlemas, Transfiguration, Holy Rosary, Seven Sorrows, Holy Family, Holy Innocents and others in source spotlight list)",
+    "4. COVER_IMPORTANT_LOCAL_AND_TRADITIONAL_PATRONS, CORE_DOCTORS, APOSTLES_AND_EVANGELISTS from existing library first",
+    "5. BREADTH_FIRST_SCRIPTURE: Christ/NT events prioritized, fewer anchor paintings for OT, existing painting reuse and optional no-image scenes"
+  ],
+  "priorityGates": {
+    "aesthetic": "Naturalistic figure modelling, painterly technical quality, compositional clarity, dignified religious gravity, colour and light, faithful subject; reject weak decorative/flat substitutes for major hero images. Original iconographic exceptions separately labelled.",
+    "hardExclusions": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "neverAutoPromoteOldSelections": true,
+    "reusePaintingManySubjects": true,
+    "oneArtworkPerDayNotRequired": true,
+    "classIDayArtworkIsSubjectLinkedNotAutomaticFeastIdentity": true,
+    "noCompulsoryArtForScriptureEpisode": true,
+    "mobileImageStandard": {
+      "displayUse": "Phone-first fullscreen/card/crop; original ratio preserved and full composition visible where needed.",
+      "galleryWebpLongEdgePx": "900–1600 (visual role dependent)",
+      "optionalZoomLongEdgePx": "1800–2200 only when useful",
+      "nominalCompressedWebpBytes": "100–500 KB (complex paintings can require more)",
+      "rejectOversizedAsPrimaryRequirement": true,
+      "qualityRequirement": "Enough detail to remain sharp at intended device display size; evaluate crop and colour after aesthetic selection, not before."
+    },
+    "researchFreeze": "Pause opportunistic new gallery research, exhaustive OT/Acts episode sourcing and jumbo master acquisition while old library Class I and primary saints remain uncurated. Do not delete previous archives."
+  },
+  "baseline": {
+    "allSubjectRequirements": 235,
+    "acquiredReviewOriginalsInExistingRegistry": 266,
+    "registeredArtworks": 281,
+    "classIDates2026": 53,
+    "distinctClassIResearchThemes": 27,
+    "classIDatesWithDirectHistoricalSelectedTarget": 33,
+    "existingHistoricalCalendarSelections": 21,
+    "historicalCalendarPreviewScreening": {
+      "PROMISING_AESTHETIC_FIT": 7,
+      "COMPARATIVE_REVIEW": 6,
+      "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE": 6,
+      "HARD_EXCLUDED": 1,
+      "AESTHETIC_HOLD_DEVOTIONAL_EXCEPTION_POSSIBLE": 1
+    },
+    "additionalMajorFeastSpotlights": 17,
+    "doctors": {
+      "total": 28,
+      "selectedHistorically": 9,
+      "notSelected": 19
+    },
+    "apostles": {
+      "total": 13,
+      "selectedHistorically": 6,
+      "notSelected": 7
+    },
+    "evangelists": {
+      "total": 2,
+      "selectedHistorically": 0,
+      "notSelected": 2
+    },
+    "additionalSaints": {
+      "total": 32,
+      "selectedHistorically": 18,
+      "notSelected": 14
+    },
+    "newArtworksAcquiredInThisStage": 0,
+    "newUserSelectionsGranted": 0,
+    "classIDatesCertifiedAestheticallyComplete": 0
+  },
+  "firstClassDays": [
+    {
+      "date": "2026-01-01",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:01-01:1:w",
+      "observedTitle": "Octave Day of Christmas",
+      "target": "calendar.christmas",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "cma-143784",
+      "oldLibraryVisualScreen": "PROMISING_AESTHETIC_FIT",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-01-06",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:01-06:1:w",
+      "observedTitle": "Epiphany of the Lord",
+      "target": "calendar.epiphany",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "met-436984",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-02-18",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quadp3-3:1:v",
+      "observedTitle": "Ash Wednesday",
+      "target": "calendar.lent",
+      "sourceRelation": "LITURGY_AND_GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-02-22",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad1-0:1:v",
+      "observedTitle": "I Sunday of Lent",
+      "target": "calendar.lent",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-01",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad2-0:1:v",
+      "observedTitle": "II Sunday of Lent",
+      "target": "calendar.lent",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-08",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad3-0:1:v",
+      "observedTitle": "III Sunday of Lent",
+      "target": "calendar.lent",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-15",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad4-0:1:pv",
+      "observedTitle": "IV Sunday of Lent",
+      "target": "calendar.lent",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-19",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:03-19:1:w",
+      "observedTitle": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "target": "calendar.saint-joseph",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "cma-160143",
+      "oldLibraryVisualScreen": "PROMISING_AESTHETIC_FIT",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-22",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad5-0:1:v",
+      "observedTitle": "Passion Sunday",
+      "target": "calendar.passion",
+      "sourceRelation": "LITURGY_AND_GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-25",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:03-25:1:w",
+      "observedTitle": "Annunciation of the Blessed Virgin Mary",
+      "target": "calendar.annunciation",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "met-438724",
+      "oldLibraryVisualScreen": "PROMISING_AESTHETIC_FIT",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-29",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad6-0r:1:rv",
+      "observedTitle": "Palm Sunday",
+      "target": "calendar.palm-sunday",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "kress-k2017",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-30",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad6-1:1:v",
+      "observedTitle": "Feria II of Holy Week",
+      "target": "calendar.passion",
+      "sourceRelation": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_HOLY_WEEK",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-03-31",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad6-2:1:v",
+      "observedTitle": "Feria III of Holy Week",
+      "target": "calendar.passion",
+      "sourceRelation": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_HOLY_WEEK",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-01",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad6-3:1:v",
+      "observedTitle": "Feria IV of Holy Week",
+      "target": "calendar.passion",
+      "sourceRelation": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_HOLY_WEEK",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-02",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad6-4r:1:w",
+      "observedTitle": "Holy Thursday",
+      "target": "calendar.holy-thursday",
+      "sourceRelation": "COMPLEX_RITE_SUBJECT",
+      "historicalSelectedArtworkId": "met-459131",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_HOLY_WEEK",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-03",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad6-5r:1:bv",
+      "observedTitle": "Good Friday",
+      "target": "calendar.good-friday",
+      "sourceRelation": "COMPLEX_RITE_SUBJECT",
+      "historicalSelectedArtworkId": "met-459087",
+      "oldLibraryVisualScreen": "HARD_EXCLUDED",
+      "priority": "P0_HOLY_WEEK",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REPLACE_FROM_EXISTING_LIBRARY",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-04",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Quad6-6r:1:vw",
+      "observedTitle": "Holy Saturday",
+      "target": "calendar.holy-saturday",
+      "sourceRelation": "COMPLEX_RITE_SUBJECT",
+      "historicalSelectedArtworkId": "met-437156",
+      "oldLibraryVisualScreen": "PROMISING_AESTHETIC_FIT",
+      "priority": "P0_HOLY_WEEK",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-05",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc0-0:1:w",
+      "observedTitle": "Easter Sunday",
+      "target": "calendar.easter",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "cma-78982",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-06",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc0-1:1:w",
+      "observedTitle": "Monday in the Octave of Easter",
+      "target": "calendar.easter",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "cma-78982",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-07",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc0-2:1:w",
+      "observedTitle": "Tuesday in the Octave of Easter",
+      "target": "calendar.easter",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "cma-78982",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-08",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc0-3:1:w",
+      "observedTitle": "Wednesday in the Octave of Easter",
+      "target": "calendar.easter",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "cma-78982",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-09",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc0-4:1:w",
+      "observedTitle": "Thursday in the Octave of Easter",
+      "target": "calendar.easter",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "cma-78982",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-10",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc0-5:1:w",
+      "observedTitle": "Friday in the Octave of Easter",
+      "target": "calendar.easter",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "cma-78982",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-11",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc0-6:1:w",
+      "observedTitle": "Saturday in the Octave of Easter",
+      "target": "calendar.easter",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "cma-78982",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-04-12",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc1-0:1:w",
+      "observedTitle": "Low Sunday",
+      "target": "calendar.easter",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": "cma-78982",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-01",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:05-01r:1:w",
+      "observedTitle": "St. Joseph the Workman",
+      "target": "calendar.saint-joseph",
+      "sourceRelation": "RELATED_SAINT_DIFFERENT_FEAST",
+      "historicalSelectedArtworkId": "cma-160143",
+      "oldLibraryVisualScreen": "PROMISING_AESTHETIC_FIT",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-14",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc5-4:1:w",
+      "observedTitle": "Ascension of the Lord",
+      "target": "calendar.ascension",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "met-436835",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-23",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc6-6:1:r",
+      "observedTitle": "Vigil of Pentecost",
+      "target": "calendar.pentecost",
+      "sourceRelation": "VIGIL_CONTEXT",
+      "historicalSelectedArtworkId": "commons-baroncelli-pentecost",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-24",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc7-0:1:r",
+      "observedTitle": "Pentecost Sunday",
+      "target": "calendar.pentecost",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "commons-baroncelli-pentecost",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-25",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc7-1:1:r",
+      "observedTitle": "Monday after Pentecost",
+      "target": "calendar.pentecost",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "commons-baroncelli-pentecost",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-26",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc7-2:1:r",
+      "observedTitle": "Tuesday after Pentecost",
+      "target": "calendar.pentecost",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "commons-baroncelli-pentecost",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-27",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc7-3:1:r",
+      "observedTitle": "Ember Wednesday of Pentecost",
+      "target": "calendar.pentecost",
+      "sourceRelation": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": "commons-baroncelli-pentecost",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-28",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc7-4:1:r",
+      "observedTitle": "Thursday after Pentecost",
+      "target": "calendar.pentecost",
+      "sourceRelation": "OCTAVE_CONTEXT",
+      "historicalSelectedArtworkId": "commons-baroncelli-pentecost",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-29",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc7-5:1:r",
+      "observedTitle": "Ember Friday of Pentecost",
+      "target": "calendar.pentecost",
+      "sourceRelation": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": "commons-baroncelli-pentecost",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-30",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pasc7-6:1:r",
+      "observedTitle": "Ember Saturday of Pentecost",
+      "target": "calendar.pentecost",
+      "sourceRelation": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": "commons-baroncelli-pentecost",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "REUSE_EXCELLENT_RELATED_PAINTING_WHEN_SUITABLE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-05-31",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pent01-0r:1:w",
+      "observedTitle": "Trinity Sunday",
+      "target": "calendar.trinity",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "cma-136507",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-06-04",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pent01-4:1:w",
+      "observedTitle": "Corpus Christi",
+      "target": "calendar.corpus-christi",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "met-437722",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-06-12",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Pent02-5:1:w",
+      "observedTitle": "Sacred Heart of Jesus",
+      "target": "calendar.sacred-heart",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "commons-morlete-sacred-heart-1759",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_DEVOTIONAL_EXCEPTION_POSSIBLE",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-06-24",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:06-24:1:w",
+      "observedTitle": "Nativity of St. John the Baptist",
+      "target": "calendar.st-john-baptist",
+      "sourceRelation": "NATIVITY_SUBJECT_REQUIRED",
+      "historicalSelectedArtworkId": "met-437738",
+      "oldLibraryVisualScreen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "EXISTING_SELECTION_REVIEW_OR_REPLACE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-06-29",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:06-29:1:r",
+      "observedTitle": "Sts. Peter & Paul",
+      "target": "person.peter",
+      "sourceRelation": "TWO_SAINTS_SUBJECT_REQUIRED",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-07-01",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:07-01:1:r",
+      "observedTitle": "The Precious Blood of Our Lord Jesus Christ",
+      "target": "devotion.precious-blood",
+      "sourceRelation": "EXACT_DEVOTION",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-08-15",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:08-15:1:w",
+      "observedTitle": "Assumption of the Blessed Virgin Mary",
+      "target": "calendar.assumption",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "nga-46131",
+      "oldLibraryVisualScreen": "COMPARATIVE_REVIEW",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-09-29",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:09-29:1:w",
+      "observedTitle": "Dedication of St. Michael the Archangel",
+      "target": "devotion.st-michael",
+      "sourceRelation": "EXACT_DEVOTION",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-10-25",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:10-DU:1:w",
+      "observedTitle": "Christ the King",
+      "target": "calendar.christ-king",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-11-01",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:11-01:1:w",
+      "observedTitle": "All Saints",
+      "target": "calendar.all-saints",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-11-02",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:11-02m1:1:b",
+      "observedTitle": "Commemoration of All Souls",
+      "target": "calendar.all-souls",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-11-29",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Adv1-0:1:v",
+      "observedTitle": "I Sunday of Advent",
+      "target": "calendar.advent",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-12-06",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Adv2-0:1:v",
+      "observedTitle": "II Sunday of Advent",
+      "target": "calendar.advent",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-12-08",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:12-08:1:w",
+      "observedTitle": "Immaculate Conception of the Blessed Virgin Mary",
+      "target": "calendar.immaculate-conception",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "cma-135659",
+      "oldLibraryVisualScreen": "PROMISING_AESTHETIC_FIT",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-12-13",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Adv3-0:1:pv",
+      "observedTitle": "III Sunday of Advent",
+      "target": "calendar.advent",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-12-20",
+      "observedRank": 1,
+      "observedPrincipalId": "tempora:Adv4-0:1:v",
+      "observedTitle": "IV Sunday of Advent",
+      "target": "calendar.advent",
+      "sourceRelation": "GOSPEL_RESEARCH",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_SEASONAL_REUSE",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-12-24",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:12-24:1:v",
+      "observedTitle": "Vigil of Christmas",
+      "target": "calendar.christmas-eve",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": null,
+      "oldLibraryVisualScreen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "SEARCH_EXISTING_LIBRARY_FIRST",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    },
+    {
+      "date": "2026-12-25",
+      "observedRank": 1,
+      "observedPrincipalId": "sancti:12-25m1:1:w",
+      "observedTitle": "The Nativity of Our Lord",
+      "target": "calendar.christmas",
+      "sourceRelation": "EXACT_FEAST",
+      "historicalSelectedArtworkId": "cma-143784",
+      "oldLibraryVisualScreen": "PROMISING_AESTHETIC_FIT",
+      "priority": "P0_UNIQUE_FEAST",
+      "imageRequirement": "ONE_STRONG_WORK_OR_SUITABLE_RELIGIOUS_IMAGE",
+      "visualDisposition": "REVIEW_EXISTING_CANDIDATE",
+      "independentOriginalRequired": false,
+      "noPromotionWithoutHumanReview": true
+    }
+  ],
+  "historicalCalendarPaintingsVisualScreen": [
+    {
+      "targetId": "calendar.christmas",
+      "priorArtworkId": "cma-143784",
+      "artist": "Carlo Dolci",
+      "title": "Adoration of the Shepherds",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "PROMISING_AESTHETIC_FIT",
+      "thumbnailVisualNotes": "Rich Baroque lighting, convincing figures and devotional atmosphere for Nativity",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FULL_ARTWORK_AESTHETIC_CONFIRMATION"
+    },
+    {
+      "targetId": "calendar.epiphany",
+      "priorArtworkId": "met-436984",
+      "artist": "Quinten Massys",
+      "title": "The Adoration of the Magi",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "COMPARATIVE_REVIEW",
+      "thumbnailVisualNotes": "Competent Magi narrative, somewhat early stiff modelling; verify against baroque existing alternative",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "COMPARE_EXISTING_LIBRARY_ALTERNATIVES"
+    },
+    {
+      "targetId": "calendar.annunciation",
+      "priorArtworkId": "met-438724",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "PROMISING_AESTHETIC_FIT",
+      "thumbnailVisualNotes": "Good solemn modelling, architectural coherence, restrained light; candidate for Class I hero",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FULL_ARTWORK_AESTHETIC_CONFIRMATION"
+    },
+    {
+      "targetId": "calendar.holy-thursday",
+      "priorArtworkId": "met-459131",
+      "artist": "Ugolino da Siena",
+      "title": "The Last Supper",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "thumbnailVisualNotes": "Gold-ground flattened medieval Last Supper; does not fit primary mobile feast hero standard",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FIND_BETTER_OLD_LIBRARY_IMAGE_OR_USE_DEVOTIONAL_EXCEPTION"
+    },
+    {
+      "targetId": "calendar.palm-sunday",
+      "priorArtworkId": "kress-k2017",
+      "artist": "Maestro Bartolomé",
+      "title": "The Entry into Jerusalem",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "thumbnailVisualNotes": "Early stiff architectural Palm Sunday scene; stronger existing Passion composition needed",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FIND_BETTER_OLD_LIBRARY_IMAGE_OR_USE_DEVOTIONAL_EXCEPTION"
+    },
+    {
+      "targetId": "calendar.candlemas",
+      "priorArtworkId": "nga-46127",
+      "artist": "Master of the Prado \"Adoration of the Magi\"",
+      "title": "The Presentation in the Temple",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "COMPARATIVE_REVIEW",
+      "thumbnailVisualNotes": "Naturalistically rendered Presentation but earlier dense small figures; composition review",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "COMPARE_EXISTING_LIBRARY_ALTERNATIVES"
+    },
+    {
+      "targetId": "calendar.good-friday",
+      "priorArtworkId": "met-459087",
+      "artist": "El Greco",
+      "title": "Christ Carrying the Cross",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "HARD_EXCLUDED",
+      "thumbnailVisualNotes": "El Greco explicitly excluded; earlier approval retained for audit only",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "REPLACE_FROM_EXISTING_LIBRARY_PRIORITY"
+    },
+    {
+      "targetId": "calendar.holy-saturday",
+      "priorArtworkId": "met-437156",
+      "artist": "Moretto da Brescia",
+      "title": "The Entombment",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "PROMISING_AESTHETIC_FIT",
+      "thumbnailVisualNotes": "Grave, naturalistically modelled figures and coherent Passion scene",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FULL_ARTWORK_AESTHETIC_CONFIRMATION"
+    },
+    {
+      "targetId": "calendar.easter",
+      "priorArtworkId": "cma-78982",
+      "artist": "Johann König",
+      "title": "The Resurrection of Christ",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "COMPARATIVE_REVIEW",
+      "thumbnailVisualNotes": "Painterly dramatic Resurrection but busy staging; compare alternatives in existing library",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "COMPARE_EXISTING_LIBRARY_ALTERNATIVES"
+    },
+    {
+      "targetId": "calendar.ascension",
+      "priorArtworkId": "met-436835",
+      "artist": "Hans Süss von Kulmbach",
+      "title": "The Ascension of Christ",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "COMPARATIVE_REVIEW",
+      "thumbnailVisualNotes": "Early German Renaissance Ascension composition; somewhat stiff, needs comparison",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "COMPARE_EXISTING_LIBRARY_ALTERNATIVES"
+    },
+    {
+      "targetId": "calendar.pentecost",
+      "priorArtworkId": "commons-baroncelli-pentecost",
+      "artist": "Master of the Baroncelli Portraits",
+      "title": "Pentecost",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "thumbnailVisualNotes": "Early stylized figure language, theatrical grouping without mature modelling",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FIND_BETTER_OLD_LIBRARY_IMAGE_OR_USE_DEVOTIONAL_EXCEPTION"
+    },
+    {
+      "targetId": "calendar.trinity",
+      "priorArtworkId": "cma-136507",
+      "artist": "Laurent Girardin",
+      "title": "The Trinity",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "thumbnailVisualNotes": "Flat devotional Trinity panel with archaizing geometry",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FIND_BETTER_OLD_LIBRARY_IMAGE_OR_USE_DEVOTIONAL_EXCEPTION"
+    },
+    {
+      "targetId": "calendar.corpus-christi",
+      "priorArtworkId": "met-437722",
+      "artist": "Spanish Painter",
+      "title": "The Mass of Saint Gregory",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "thumbnailVisualNotes": "Small gold-ground narrative votive painting not suitable as primary Corpus Christi hero",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FIND_BETTER_OLD_LIBRARY_IMAGE_OR_USE_DEVOTIONAL_EXCEPTION"
+    },
+    {
+      "targetId": "calendar.sacred-heart",
+      "priorArtworkId": "commons-morlete-sacred-heart-1759",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Jesus",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "AESTHETIC_HOLD_DEVOTIONAL_EXCEPTION_POSSIBLE",
+      "thumbnailVisualNotes": "Historically devotional retablo is schematic; preserve possible canonical devotional role but not default hero",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FIND_BETTER_OLD_LIBRARY_IMAGE_OR_USE_DEVOTIONAL_EXCEPTION"
+    },
+    {
+      "targetId": "calendar.assumption",
+      "priorArtworkId": "nga-46131",
+      "artist": "Anonymous Artist; Sir Peter Paul Rubens",
+      "title": "The Assumption of the Virgin",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "COMPARATIVE_REVIEW",
+      "thumbnailVisualNotes": "Dynamic Assumption; needs exact attribution, colour and composition check",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "COMPARE_EXISTING_LIBRARY_ALTERNATIVES"
+    },
+    {
+      "targetId": "calendar.immaculate-conception",
+      "priorArtworkId": "cma-135659",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Immaculate Conception",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "PROMISING_AESTHETIC_FIT",
+      "thumbnailVisualNotes": "Murillo colour and modelling appear suitable for Marian feast",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FULL_ARTWORK_AESTHETIC_CONFIRMATION"
+    },
+    {
+      "targetId": "calendar.holy-rosary",
+      "priorArtworkId": "met-437336",
+      "artist": "Giulio Cesare Procaccini",
+      "title": "Madonna and Child with Saints Francis and Dominic and Angels",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "PROMISING_AESTHETIC_FIT",
+      "thumbnailVisualNotes": "Painterly Baroque Marian composition with Dominican saints; Rosary exact iconography needs examination",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FULL_ARTWORK_AESTHETIC_CONFIRMATION"
+    },
+    {
+      "targetId": "calendar.our-lady-sorrows",
+      "priorArtworkId": "met-437342",
+      "artist": "Scipione Pulzone",
+      "title": "The Lamentation",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "PROMISING_AESTHETIC_FIT",
+      "thumbnailVisualNotes": "Strong Lamentation with readable figuration and restrained gravity",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FULL_ARTWORK_AESTHETIC_CONFIRMATION"
+    },
+    {
+      "targetId": "calendar.saint-joseph",
+      "priorArtworkId": "cma-160143",
+      "artist": "Gaetano Gandolfi",
+      "title": "The Holy Family",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "PROMISING_AESTHETIC_FIT",
+      "thumbnailVisualNotes": "Naturalistic Holy Family and Joseph, rich modelling; feast-specificity requires review",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FULL_ARTWORK_AESTHETIC_CONFIRMATION"
+    },
+    {
+      "targetId": "calendar.st-john-baptist",
+      "priorArtworkId": "met-437738",
+      "artist": "Spanish Catalan Painter",
+      "title": "The Beheading of Saint John the Baptist",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "thumbnailVisualNotes": "Historical beheading scene but flat, schematic modelling; feast's Nativity not same episode",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "FIND_BETTER_OLD_LIBRARY_IMAGE_OR_USE_DEVOTIONAL_EXCEPTION"
+    },
+    {
+      "targetId": "calendar.holy-innocents",
+      "priorArtworkId": "kress-k1782",
+      "artist": "Follower of Raphael",
+      "title": "The Massacre of the Innocents",
+      "imagePreviewAvailableInExisting266": true,
+      "originalHistoricalUserSelectionRetained": true,
+      "thumbnailVisualScreenStatus": "COMPARATIVE_REVIEW",
+      "thumbnailVisualNotes": "Useful Holy Innocents narrative but very small-format predella and narrow orientation; secondary role",
+      "finalAestheticApprovalStatus": "UNCHANGED_PENDING_FULL_PAINTING_COMPARISON",
+      "keepInExistingLibrary": true,
+      "preferredNextAction": "COMPARE_EXISTING_LIBRARY_ALTERNATIVES"
+    }
+  ],
+  "majorFeastSecondarySource": "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json",
+  "majorFeastsBeyondClassI": [
+    {
+      "date": "2026-01-04",
+      "title": "Most Holy Name of Jesus",
+      "theme": "holy-name",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-01-11",
+      "title": "Holy Family",
+      "theme": "holy-family",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-01-13",
+      "title": "Commemoration of the Baptism of Our Lord",
+      "theme": "baptism",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-02-01",
+      "title": "Septuagesima Sunday",
+      "theme": "septuagesima",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-02-02",
+      "title": "Purification of the BVM / Presentation of the Lord (Candlemas)",
+      "theme": "presentation",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-02-11",
+      "title": "Our Lady of Lourdes",
+      "theme": "our-lady-lourdes",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-07-02",
+      "title": "Visitation of the Blessed Virgin Mary",
+      "theme": "visitation",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-07-22",
+      "title": "St. Mary Magdalene",
+      "theme": "magdalene",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-08-06",
+      "title": "Transfiguration of Our Lord",
+      "theme": "transfiguration",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-09-08",
+      "title": "Nativity of the Blessed Virgin Mary",
+      "theme": "nativity-mary",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-09-14",
+      "title": "Exaltation of the Holy Cross",
+      "theme": "exaltation-cross",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-09-15",
+      "title": "Seven Sorrows of the Blessed Virgin Mary",
+      "theme": "mater-dolorosa",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-10-03",
+      "title": "St. Thérèse of the Child Jesus",
+      "theme": "therese-lisieux",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-10-07",
+      "title": "Our Lady of the Rosary",
+      "theme": "our-lady-rosary",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-11-09",
+      "title": "Dedication of the Lateran Archbasilica",
+      "theme": "lateran-dedication",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-11-22",
+      "title": "Last Sunday after Pentecost",
+      "theme": "last-sunday",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    },
+    {
+      "date": "2026-12-28",
+      "title": "Holy Innocents",
+      "theme": "holy-innocents",
+      "priority": "P1_MAJOR_FEAST_NOT_CLASS_I",
+      "imageRequirement": "OPTIONAL_STRONG_EXISTING_LIBRARY_OR_REUSE"
+    }
+  ],
+  "saintCategories": [
+    {
+      "category": "Apostles",
+      "total": 13,
+      "selectedHistorically": 6,
+      "notSelected": 7,
+      "editorialSubjects": [
+        {
+          "subjectId": "SNT-AP-01",
+          "title": "Saint Peter",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-usepe-de-ibera-aint-eter-postolate"
+        },
+        {
+          "subjectId": "SNT-AP-02",
+          "title": "Saint Andrew",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew"
+        },
+        {
+          "subjectId": "SNT-AP-03",
+          "title": "Saint James the Greater",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-AP-04",
+          "title": "Saint John",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-AP-05",
+          "title": "Saint Philip",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-AP-06",
+          "title": "Saint Bartholomew",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-AP-07",
+          "title": "Saint Thomas",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-AP-08",
+          "title": "Saint Matthew",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-aravaggio-nspiration-of-aint-atthew"
+        },
+        {
+          "subjectId": "SNT-AP-09",
+          "title": "Saint James the Less",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-AP-10",
+          "title": "Saint Simon",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-AP-11",
+          "title": "Saint Matthias",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-eter-aul-ubens-aint-atthias-postolate"
+        },
+        {
+          "subjectId": "SNT-AP-12",
+          "title": "Saint Paul",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-usepe-de-ibera-aint-aul-postolate"
+        },
+        {
+          "subjectId": "SNT-AP-13",
+          "title": "Saint Jude Thaddeus",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-usepe-de-ibera-aint-udas-haddeus"
+        }
+      ]
+    },
+    {
+      "category": "Evangelists",
+      "total": 2,
+      "selectedHistorically": 0,
+      "notSelected": 2,
+      "editorialSubjects": [
+        {
+          "subjectId": "SNT-EV-01",
+          "title": "Saint Mark the Evangelist",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-EV-02",
+          "title": "Saint Luke the Evangelist",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        }
+      ]
+    },
+    {
+      "category": "Doctors",
+      "total": 28,
+      "selectedHistorically": 9,
+      "notSelected": 19,
+      "editorialSubjects": [
+        {
+          "subjectId": "SNT-DC-01",
+          "title": "Saint Ambrose",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius"
+        },
+        {
+          "subjectId": "SNT-DC-02",
+          "title": "Saint Augustine",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-hilippe-de-hampaigne-aint-ugustine"
+        },
+        {
+          "subjectId": "SNT-DC-03",
+          "title": "Saint Jerome",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-usepe-de-ibera-aint-erome-riting"
+        },
+        {
+          "subjectId": "SNT-DC-04",
+          "title": "Saint Gregory the Great",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-05",
+          "title": "Saint Thomas Aquinas",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-arlo-rivelli-aint-homas-quinas"
+        },
+        {
+          "subjectId": "SNT-DC-06",
+          "title": "Saint Bonaventure",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon"
+        },
+        {
+          "subjectId": "SNT-DC-07",
+          "title": "Saint Bernard of Clairvaux",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-08",
+          "title": "Saint Teresa of Ávila",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-09",
+          "title": "Saint Catherine of Siena",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-iambattista-iepolo-aint-atherine-of-iena"
+        },
+        {
+          "subjectId": "SNT-DC-10",
+          "title": "Saint John of the Cross",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-11",
+          "title": "Saint Alphonsus Liguori",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-12",
+          "title": "Saint Francis de Sales",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-13",
+          "title": "Saint Athanasius",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-14",
+          "title": "Saint Basil the Great",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello"
+        },
+        {
+          "subjectId": "SNT-DC-15",
+          "title": "Saint Gregory Nazianzen",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-16",
+          "title": "Saint John Chrysostom",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-17",
+          "title": "Saint Isidore of Seville",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-artolom-steban-urillo-aint-sidore-of-eville"
+        },
+        {
+          "subjectId": "SNT-DC-18",
+          "title": "Saint Bede the Venerable",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-19",
+          "title": "Saint Anselm",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-20",
+          "title": "Saint Peter Damian",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-21",
+          "title": "Saint Albert the Great",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-22",
+          "title": "Saint Robert Bellarmine",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-23",
+          "title": "Saint Peter Canisius",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-24",
+          "title": "Saint Lawrence of Brindisi",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-25",
+          "title": "Saint Cyril of Alexandria",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-26",
+          "title": "Saint Cyril of Jerusalem",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-27",
+          "title": "Saint Ephrem",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-DC-28",
+          "title": "Saint Hilary of Poitiers",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel"
+        }
+      ]
+    },
+    {
+      "category": "Other Class A",
+      "total": 32,
+      "selectedHistorically": 18,
+      "notSelected": 14,
+      "editorialSubjects": [
+        {
+          "subjectId": "SNT-OT-01",
+          "title": "Saint Joseph",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-02",
+          "title": "Saint Michael Archangel",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan"
+        },
+        {
+          "subjectId": "SNT-OT-03",
+          "title": "Saint Raphael Archangel",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-04",
+          "title": "Saint John the Baptist",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-ierre-ignard-aint-ohn-the-aptist"
+        },
+        {
+          "subjectId": "SNT-OT-05",
+          "title": "Saint Thérèse of Lisieux",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-06",
+          "title": "Saint Anthony of Padua",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-07",
+          "title": "Saint Joan of Arc",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles"
+        },
+        {
+          "subjectId": "SNT-OT-08",
+          "title": "Saint Louis IX",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-09",
+          "title": "Saint Patrick",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-10",
+          "title": "Saint Stephen",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen"
+        },
+        {
+          "subjectId": "SNT-OT-11",
+          "title": "Saint Lawrence",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence"
+        },
+        {
+          "subjectId": "SNT-OT-12",
+          "title": "Saint Francis of Assisi",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-nthony-van-yck-aint-rancis-in-cstasy"
+        },
+        {
+          "subjectId": "SNT-OT-13",
+          "title": "Saint Dominic",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-laudio-oello-aint-ominic-of-uzm-n"
+        },
+        {
+          "subjectId": "SNT-OT-14",
+          "title": "Saint Benedict",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-15",
+          "title": "Saint Francis Xavier",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier"
+        },
+        {
+          "subjectId": "SNT-OT-16",
+          "title": "Saint Ignatius of Loyola",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola"
+        },
+        {
+          "subjectId": "SNT-OT-17",
+          "title": "Saint Margaret Mary Alacoque",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-18",
+          "title": "Saint Jean Vianney",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-19",
+          "title": "Saint Sebastian",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-eter-aul-ubens-aint-ebastian"
+        },
+        {
+          "subjectId": "SNT-OT-20",
+          "title": "Saint Nicholas",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-21",
+          "title": "Saint Lucy",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-22",
+          "title": "Saint Agnes",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-23",
+          "title": "Saint Cecilia",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-ietro-da-ortona-aint-ecilia"
+        },
+        {
+          "subjectId": "SNT-OT-24",
+          "title": "Saint Catherine of Alexandria",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-aravaggio-aint-atherine-of-lexandria"
+        },
+        {
+          "subjectId": "SNT-OT-25",
+          "title": "Saint Mary Magdalene",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-uido-eni-aint-ary-agdalene"
+        },
+        {
+          "subjectId": "SNT-OT-26",
+          "title": "Saint Geneviève",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-abriel-ran-ois-oyen-iracle-des-rdents"
+        },
+        {
+          "subjectId": "SNT-OT-27",
+          "title": "Saint Denis of Paris",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-28",
+          "title": "Saint Vincent de Paul",
+          "existingUserSelection": false,
+          "selectedArtworkId": null
+        },
+        {
+          "subjectId": "SNT-OT-29",
+          "title": "Saint Martin of Tours",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-nthony-van-yck-aint-artin-ividing-is-loak"
+        },
+        {
+          "subjectId": "SNT-OT-30",
+          "title": "Saint Anne",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-eter-aul-ubens-oly-amily-with-aint-nne"
+        },
+        {
+          "subjectId": "SNT-OT-31",
+          "title": "Saint Rosalia",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo"
+        },
+        {
+          "subjectId": "SNT-OT-32",
+          "title": "Saint Francis of Paola",
+          "existingUserSelection": true,
+          "selectedArtworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola"
+        }
+      ]
+    }
+  ],
+  "completionSequence": [
+    "Screen matching old registry images at mobile thumbnail and enlarged contain ratio; record aesthetic verdicts as PROVISIONAL, not user approvals.",
+    "Class I artwork matrix: prioritize Holy Week, Easter, Pentecost, major feasts; solve weak/unmatched cases with candidates already in registry.",
+    "Major non-Class I feast coverage: reuse strong old assets, avoid artificial daily-change quota.",
+    "Patrons, Doctors, Apostles, Evangelists: use good existing portrait, historical devotional image or documentary image when high art is unavailable; avoid forced low-quality artwork.",
+    "Only then broad NT biblical art, followed by selectively illustrated OT anchors.",
+    "Create final responsive compressed media derivatives after content and aesthetic confirmation."
+  ],
+  "sourceProvenance": [
+    "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json",
+    "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json",
+    "data/calendar/sacred-art-curator-decisions-20261011.v1.json",
+    "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+    "data/calendar/sacred-art-candidates.v1.json"
+  ],
+  "notes": [
+    "Thumbnail review is based on full-composition previews in generated 266-image atlas, not raw master pixels; no final work approval inferred.",
+    "Earlier fixed calendar decision is preserved even when art is unsuitable; replacement is subject to separate human review.",
+    "2026 Class I dates reflect observed 1962 local-date calendar (includes repeat octaves and Sundays). Different years move; derive dates dynamically.",
+    "St Joseph Workman and St Joseph March 19 may share Joseph subject when artistic and liturgical fit permits; do not mislabel a secular workshop painting as a specific Mass episode.",
+    "All Saints and All Souls are distinct subject themes despite neighbouring dates."
+  ]
+}
