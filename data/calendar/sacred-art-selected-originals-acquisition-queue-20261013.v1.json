@@ -12,10 +12,11 @@
       "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 3,
       "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING": 12,
       "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION": 6,
-      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 27,
+      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 26,
       "IDENTITY_SOURCE_MISSING": 20,
       "IN_SITU_MURAL_IDENTITY_VERIFIED_REPRODUCTION_PENDING": 2,
       "SOURCE_CUSTODIAN_LOCATION_VERIFIED_OBJECT_LINK_PENDING": 1,
+      "HASHED_4000PX_REVIEW_IMAGE_IN_EXISTING_ACTION_ARCHIVE": 1,
       "OBJECT_URL_RECORDED_NEEDS_MASTER": 20
     },
     "benchmarkUrlsRecovered": 1,
@@ -28,7 +29,9 @@
     "newObjectIdentitiesThisAdditionalWave": 4,
     "moreVersionAmbiguities": 2,
     "individuallyIdentifiedSanPoloStationPhotos": 12,
-    "lastTwoUnverifiedLinksReviewed": 2
+    "lastTwoUnverifiedLinksReviewed": 2,
+    "selectedUnjoinedWithNewlyReconciledHashVerifiedImage": 1,
+    "originalSelectedWorksWithoutHashVerifiedImage": 90
   },
   "notes": [
     "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
@@ -42,7 +45,8 @@
     "Four exact Commons image titles selected for REVIEW-ONLY acquisition with pixel/dimension/rights evidence; includes Sailko CC BY 3.0 photograph, and excludes misleading high-pixel La Petite Cène image with incorrect aspect ratio.",
     "Additional subject-preserving exact museum identities and multiple-version ambiguity research: Musée de Picardie Gérôme, Mauritshuis 253, KMSKA 314, LACMA M.88.177, Cappuccini Rome Reni original location; van Dyck Lamentation, Bruegel Babel, and Rubens Ignatius explicitly marked as ambiguous and not silently identified by title alone.",
     "Verified KMSKA current Van Dyck attribution of 'Le Coup de Lance' #297 and Prado Ribera Jacob's Dream P001117; two Delacroix chosen subjects are IN SITU murals, not interchangeable with preparatory studies. Flagged original-version ambiguity in Caravaggio David and Jouvenet Lazarus.",
-    "Twelve 1747–49 San Polo Giandomenico Tiepolo individual station panels are now referenced via the Commons category's distinct hi-res photography; retain original 1747–49 institution, verify photographer/licence for each image (Station I is CC BY-SA 4.0), no acquired original. Stations XIII/XIV remain original user-selected Prado works, not replaced by San Polo counterparts."
+    "Twelve 1747–49 San Polo Giandomenico Tiepolo individual station panels are now referenced via the Commons category's distinct hi-res photography; retain original 1747–49 institution, verify photographer/licence for each image (Station I is CC BY-SA 4.0), no acquired original. Stations XIII/XIV remain original user-selected Prado works, not replaced by San Polo counterparts.",
+    "Recovered KMSKA 314 Rubens Holy Trinity 4000×4113 source bytes in EXISTING selected-masterpieces GitHub artifact 11795814297, 2026-10-13 successful workflow, SHA256 5996132…; linked to distinct preselected DEV-18 artwork. This is a temporary Actions archive, no durable backup, not a main 281-registry canonical original, and no aesthetic/rights/phone/release approval."
   ],
   "works": [
     {
@@ -1261,8 +1265,8 @@
       "recordedSourceUrl": "https://kmska.be/en/masterpiece/the-holy-trinity",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
-      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
+      "sourceClassification": "HASHED_4000PX_REVIEW_IMAGE_IN_EXISTING_ACTION_ARCHIVE",
+      "action": "PRESERVE_REVIEW_SHA_VERIFY_DURABLE_BACKUP_AND_RELEASE_GATES",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
       "sourceNeedsByteAndLicenceValidation": true,
@@ -1271,9 +1275,31 @@
       "sourceInstitution": "Royal Museum of Fine Arts Antwerp",
       "verifiedMedium": "oil on panel",
       "sourceIdentityNote": "1620, 157 × 150cm. IIIF manifest https://iiif.kmska.be/iiif/2/28958/manifest.json; rights and original-byte gates remain distinct.",
-      "imageAcquired": false,
+      "imageAcquired": true,
       "rightsCleared": false,
-      "identityVerifiedOn": "2026-10-13"
+      "identityVerifiedOn": "2026-10-13",
+      "hashVerifiedReviewOriginal": {
+        "source": "https://kmska.be/en/masterpiece/the-holy-trinity",
+        "sourceIIIFManifest": "https://iiif.kmska.be/iiif/2/28958/manifest.json",
+        "originalArchiveRepo": "Fulcanelli13/ad-orientem",
+        "githubRunUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38364502942",
+        "artifactId": 11795814297,
+        "archivePath": "images/kmska-314.jpg",
+        "sha256": "5996132846d655eeaecbf0baf8887989c6ec2a57348a08db59cac5f54a3964b9",
+        "pixels": {
+          "width": 4000,
+          "height": 4113
+        },
+        "bytes": 2835566,
+        "sourceType": "4000PX_IIIF_REVIEW_DERIVATIVE",
+        "sourceRightsEvidence": "KMSKA_IIIF_PUBLIC_DOMAIN_MARK_AND_COLLECTION_IMAGE_CC0",
+        "sourceStatus": "ARTIFACT_BYTES_AND_SHA256_VERIFIED_2026_10_13",
+        "originalFullMasterClaim": false,
+        "durableRepositoryStorage": false,
+        "copyrightJurisdictionReleaseApproved": false,
+        "userVisualReviewApproved": false,
+        "productionAsset": false
+      }
     },
     {
       "editorialArtworkId": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
@@ -2217,5 +2243,5 @@
       "sourceIdentityNote": "1638–39 Rubens, historic original owned by Fundación since commission for high altar of Real Hospital de San Andrés; site is direct original custodian source, not generic painting by same name."
     }
   ],
-  "latestSourceWave": "Last two uncertain direct links reviewed: Rubens Saint Andrew is exact Fundación painting; van Dyck Saint Martin has distinct Zaventem and Windsor autograph versions, so specific chosen image remains unresolved."
+  "latestSourceWave": "91 unique originally unjoined editorial artworks: KMSKA 314 has 4000px SHA-verified preview original in separate time-limited source artifact; 90 others lack verified images in this recovery queue, and Commons direct job blocked HTTP429."
 }
