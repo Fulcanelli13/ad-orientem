@@ -83,18 +83,18 @@ jobs:
           f=Path("artifacts/sacred-art-commons-six-originals/acquisition.json")
           path=Path(os.environ["GITHUB_STEP_SUMMARY"])
           with path.open("a",encoding="utf-8") as s:
-              s.write("## Six original painting image acquisitions (research only)\\n\\n")
+              s.write("## Six original painting image acquisitions (research only)\n\n")
               if not f.exists():
-                  s.write("Acquisition ledger absent: setup or downloader failed before writing. **Count zero.**\\n")
+                  s.write("Acquisition ledger absent: setup or downloader failed before writing. **Count zero.**\n")
               else:
                   j=json.loads(f.read_text(encoding="utf-8"))
-                  s.write(f"Verified acquisition claims in ledger: **{j['acquired']}/{j['requested']}**. Independent artifact hashes still need review. No app approval or deployment.\\n\\n")
-                  s.write("| Lead | Status | Dimensions | Reason / SHA256 |\\n|---|---|---|---|\\n")
+                  s.write(f"Verified acquisition claims in ledger: **{j['acquired']}/{j['requested']}**. Independent artifact hashes still need review. No app approval or deployment.\n\n")
+                  s.write("| Lead | Status | Dimensions | Reason / SHA256 |\n|---|---|---|---|\n")
                   for r in j["results"]:
                       dim=f"{r.get('width','—')} × {r.get('height','—')}"
                       note=r.get("holdReason") or r.get("originalSha256","")
-                      note=str(note).replace("|","/").replace("\\n"," ")[:160]
-                      s.write(f"| {r['leadId']} | {r['status']} | {dim} | {note} |\\n")
+                      note=str(note).replace("|","/").replace("\n"," ")[:160]
+                      s.write(f"| {r['leadId']} | {r['status']} | {dim} | {note} |\n")
           PY
       - name: Preserve original JPEG bytes and SHA ledger for review only
         if: always()
