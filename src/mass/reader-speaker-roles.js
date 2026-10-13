@@ -70,10 +70,21 @@ const VERSICLE_ACTORS=Object.freeze({
   "AO.SM.B024":"GOSPEL_PROCLAIMER",
   "AO.SM.B090":"DISMISSAL_MINISTER",
 });
+// Low Mass server responds in the alternating ninefold Kyrie. The same
+// source cue IDs belong to the schola in Sung Mass, so this cannot be a
+// cross-form override or a mutation of the frozen Ordinary source.
+const LOW_KYRIE_MINISTER_RESPONSE_CUES=new Set([
+  "AO.SM.C0045","AO.SM.C0047","AO.SM.C0049","AO.SM.C0051"
+]);
 export const SUNG_ORDINARY_INTONATION_CUES=Object.freeze(["AO.SM.C0053","AO.SM.C0054","AO.SM.C0089","AO.SM.C0090"]);
 
 export function resolveOrdinarySpeaker(unit,{form="SUNG",blockId=null}={}){
   const cueId=String(unit?.cue_id??"");
+  if(String(form).toUpperCase()==="LOW" &&
+     LOW_KYRIE_MINISTER_RESPONSE_CUES.has(cueId)){
+    return Object.freeze({role:"MINISTERS",kind:"RESPONSE",
+      evidence:"1962_LOW_MASS_ALTERNATING_KYRIE"});
+  }
   const override=EXPLICIT[cueId];
   if(override)return override;
   const text=String(unit?.latin??"").trim();
