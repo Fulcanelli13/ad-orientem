@@ -26,6 +26,47 @@ for(const block of sung.blocks){
     assert.equal(projected.role,record.role,unit.cue_id+": registry diverges from runtime actor projection");
   }
 }
+// The generic SUNG donor is conditional, but *every* resolved Sung reader
+// form must preserve the other 277 source-owned actors. This exhaustively
+// prevents formFamily("SUNG") from erasing the chosen celebrant/deacon roles
+// while protecting the Schola, priest-private and response source clocks.
+const conditionalPublicCues=new Set(["AO.SM.C0082","AO.SM.C0084","AO.SM.C0259"]);
+for(const [form,publicMinister] of [
+  ["MISSA_CANTATA_SIMPLE","PRIEST"],
+  ["MISSA_CANTATA_INCENSE","PRIEST"],
+  ["SOLEMN","DEACON"],
+]){
+  let checked=0;
+  for(const block of sung.blocks){
+    for(const unit of block.units??[]){
+      const expected=conditionalPublicCues.has(unit.cue_id)
+        ?publicMinister:registry.get(unit.cue_id).role;
+      const projected=resolveOrdinarySpeaker(unit,{form,blockId:block.Block_ID});
+      assert.equal(projected.role,expected,
+        form+"/"+unit.cue_id+": selected-form speaker disagrees with immutable 1962 source ownership");
+      if(conditionalPublicCues.has(unit.cue_id)){
+        assert.equal(projected.evidence,"1962_SELECTED_FORM_PUBLIC_GOSPEL_OR_DISMISSAL");
+      }
+      checked++;
+    }
+  }
+  assert.equal(checked,280,form+": incomplete selected-form speaker coverage");
+}
+// A response must remain a response, regardless of whether its live
+// minister is the priest, subdeacon, deacon, choir or congregation.
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const source=form==="LOW"?low:sung;
+  for(const block of source.blocks){
+    for(const unit of block.units??[]){
+      const latin=String(unit.latin??"").trim();
+      if(!/^(?:℟\\.|R\\.)\\s*/u.test(latin))continue;
+      const role=resolveOrdinarySpeaker(unit,{form,blockId:block.Block_ID}).role;
+      assert.ok(["RESPONDERS","MINISTERS"].includes(role),
+        form+"/"+unit.cue_id+": printed response cannot acquire priest/deacon role");
+    }
+  }
+}
+
 assert.equal(registry.get("AO.SM.C0235").optionality,"LOCAL_CUSTOM_PRE1960_SURVIVAL",
   "second Confiteor must remain optional");
 assert.equal(registry.get("AO.SM.C0235").role,"MINISTERS");
