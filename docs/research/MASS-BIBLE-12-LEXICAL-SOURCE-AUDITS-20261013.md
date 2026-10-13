@@ -45,10 +45,17 @@ The [general Latin Ordinarium transcription](https://la.wikisource.org/wiki/Ordi
 
 **Types of connections:** biblical direct quotations (Psalm 42, Psalm 115, John 14 fragment), adaptations (Gloria, Sanctus, Daniel prayer, centurion), named biblical figures (Melchisedech), doctrinal echoes (2 Peter), and specific visual allusions (Isaiah's coal) are separate. `Dirigatur` is conditional on incensation and cannot be asserted as universally used at every Low Mass.
 
+
+## Two additional Proper-identity crosschecks (14 entries reviewed overall)
+
+**MB06 and MB07** were checked against the [1962 Benziger Missal OCR](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt), original printed page **384**, in the section **Dominica decima post Pentecosten** (around OCR lines 40690–40741). The printed-Missal-derived OCR explicitly labels the *Epistola* **1 Cor 12:2–11** and the *Evangelium* **Luke 18:9–14**. Thus these two references are correctly given as examples tied to that **one Sunday**, not as universal Mass readings. The 1962 printed page image itself still awaits inspection; this is not a full Propers publication certification. [Independent corroborating reading presentation](https://mylatinmass.com/readings/10th-sunday-after-pentecost/).
+
+**Overall by status:** 12 direct biblical-wording/interpretation comparisons + 2 selected Proper-identity checks = **14/31 entries with focused crosschecks**; **17/31** still only bibliography-linked at this level. The 26 existing canonical MB entries and five proposed entries remain unchanged as teaching owners, with 0 final publication approvals.
+
 ## What is still not complete
 
 - **0/31** original 1962 printed facsimile pairs visually collated in this batch. The original scans and more precise rubrical variants should be checked before any user-facing publication.
-- The other **19/31** explanation entries still have source bibliography but have not received this exact Bible-vs-liturgical-word audit.
+- The other **17/31** explanation entries still have source bibliography but have not received a focused text/Proper-identity check at this level.
 - No final authority/rights clearance for reproducing modern online translations or OCR; cited original Bible and Missal wording only in short comparative snippets.
 - Separate approval and cross-module mapping are needed before adding new teaching links; do not create new Bible events or touch Mass LIVE cards.
 
