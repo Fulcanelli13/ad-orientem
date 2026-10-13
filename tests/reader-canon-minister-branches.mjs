@@ -73,6 +73,18 @@ const bad=structuredClone(data);bad.branches.find(x=>x.id==="AO.CANON.MIN.004").
 assert.throws(()=>validateCanonMinisterFormBranches(bad),/Uncertified minister/);
 const wrongCue=structuredClone(data);wrongCue.branches[0].cueId="AO.SM.C0174";
 assert.throws(()=>validateCanonMinisterFormBranches(wrongCue),/diverged/);
+const incorrectIncenseScope=structuredClone(data);
+incorrectIncenseScope.branches.find(x=>x.id==="AO.CANON.MIN.004").forms=["MISSA_CANTATA_INCENSE"];
+assert.throws(()=>validateCanonMinisterFormBranches(incorrectIncenseScope),/diverged/,
+ "Thurifer must be retained in BOTH Solemn and incensed Cantata scopes");
+const unverifiedMandatory=structuredClone(data);
+unverifiedMandatory.branches.find(x=>x.id==="AO.CANON.MIN.011").condition="WHEN_REQUIRED";
+assert.throws(()=>validateCanonMinisterFormBranches(unverifiedMandatory),/diverged/,
+ "Deacon genuflection cannot become a conditional pall-cover event");
+const falsePall=structuredClone(data);
+falsePall.branches.find(x=>x.id==="AO.CANON.MIN.008").condition="SOURCE_PRESCRIBED";
+assert.throws(()=>validateCanonMinisterFormBranches(falsePall),/diverged/,
+ "Pall handling must remain conditional on need");
 const released=structuredClone(data);released.branches[0].publication="PUBLISHED";
 assert.throws(()=>validateCanonMinisterFormBranches(released),/Uncertified minister/);
 console.log("PASS: 11 source-backed Canon minister branches, independent clocks, Solemn/Missa Cantata distinctions and Low/Sung respondent role.");

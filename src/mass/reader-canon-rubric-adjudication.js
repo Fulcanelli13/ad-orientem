@@ -17,6 +17,11 @@ const EXPECTED_TYPES=Object.freeze({
 const ALL_TYPES=new Set(Object.keys(EXPECTED_TYPES));
 const ACCEPTED_STATUS="SOURCE_RECHECKED_ORIGINAL_FRENCH_DRAFT_NOT_PUBLISHED";
 const ACTION_RE=/^AO\.CANON\.R62\.\d{3}$/;
+// Form-owned covering is not universally a priest gesture (Ritus VIII.8, IX.4).
+const FORM_OWNED_CHALICE_STAGES=new Map([
+  ["AO.CANON.R62.034.04","AO.CANON.MIN.010"],
+  ["AO.CANON.R62.059.02","AO.CANON.MIN.008"],
+]);
 
 function sortedActionMap(items,label){
   const result=new Map();
@@ -120,6 +125,7 @@ export function createCanonRubricAdjudicationController({
     if(base.previewEnabled!==true)return base;
     const ministry=ministerController.project(cueId,options);
     const observedStages=new Set(options.observedStageIds??[]);
+    const solemn=String(options.form??"LOW").toUpperCase()==="SOLEMN";
     const augment=action=>{
       const fr=byFrench.get(action.id),tr=byTrigger.get(action.id);
       const anchor=resolveCanonLatinWordAnchors({
@@ -142,11 +148,13 @@ export function createCanonRubricAdjudicationController({
         // separate independent minister/priest clocks.
         actionGroupObserved:action.isObservedNow,
         isObservedNow:tr.stageSequence.length===0&&action.isObservedNow,
-        stages:Object.freeze(tr.stageSequence.map(s=>Object.freeze({
-          ...s,isObservedNow:observedStages.has(s.id),
-          observedBy:"INDEPENDENT_MICRO_STAGE_EVENT_ONLY",
-          publishable:false,
-        }))),
+        stages:Object.freeze(tr.stageSequence
+          .filter(s=>!(solemn&&FORM_OWNED_CHALICE_STAGES.has(s.id)))
+          .map(s=>Object.freeze({
+            ...s,actor:action.actor,isObservedNow:observedStages.has(s.id),
+            observedBy:"INDEPENDENT_MICRO_STAGE_EVENT_ONLY",
+            publishable:false,
+          }))),
         editorialFlags:Object.freeze([...fr.editorialFlags]),
         sourceRitusLocator:tr.rubricSource,
         reviewedAgainst:fr.checkedAgainst,
@@ -158,6 +166,19 @@ export function createCanonRubricAdjudicationController({
       priestActions:Object.freeze(base.priestActions.map(augment)),
       ministerActions:Object.freeze(base.ministerActions.map(augment)),
       conditionalMinisterActions:ministry.ministerActions,
+      // In Solemn Mass, covering cannot be assigned to the priest without
+      // independent actor evidence; a priest's cue or stage clock is not it.
+      formDependentChaliceEvents:Object.freeze(solemn?base.priestActions.flatMap(a=>
+        byTrigger.get(a.id).stageSequence
+          .filter(st=>FORM_OWNED_CHALICE_STAGES.has(st.id))
+          .map(st=>Object.freeze({
+            ...st,actor:"UNRESOLVED_PRIEST_OR_DEACON",
+            possibleActors:Object.freeze(["PRIEST","DEACON"]),
+            conditionalDeaconActionId:FORM_OWNED_CHALICE_STAGES.get(st.id),
+            isObservedNow:false,
+            observedBy:"INDEPENDENT_ROLE_ATTESTATION_REQUIRED",
+            publishable:false,
+          }))):[]),
       respondentRole:ministry.respondentRole,
       ministerFormSourceSupported:ministerController.supported,
       canPublish:false,publicationState:"FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
