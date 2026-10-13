@@ -1,0 +1,599 @@
+{
+  "schema": "AO_SACRED_ART_BAROQUE_FULL_CORPUS_VOLUME_BY_VOLUME_AUDIT_V1",
+  "date": "2026-10-13",
+  "motivation": "Do NOT report discovery inventory as a complete artist's religious painting oeuvre. Use complete published research volumes as the canonical census spine. Prefer user-favourite ORIGINAL religious paintings and document exactly which printed/writable corpus entries are reconciled.",
+  "authoritativeRubensCorpus": {
+    "catalogue": "Corpus Rubenianum Ludwig Burchard",
+    "officialHome": "https://www.rubensonline.be/en/corpus-rubenianum-ludwig-burchard",
+    "digitalUpdate": "https://rubenshuis.be/en/digitizing-corpus-rubenianum-ludwig-burchard-completion",
+    "publicPublisherList": "https://www.brepols.net/series/HMCRLB",
+    "bibliographicSource": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+    "officialWorkUniverse": "MORE_THAN_2500_COMPOSITIONS_AND_MORE_THAN_16000_RELATED_ART_OBJECTS",
+    "restrictions": "Counts include oil paintings, preparatory sketches, drawings, tapestry cartoons, drawings, prints, workshop versions, high-quality copies and secular subjects; NEVER pretend 2500 original religious paintings.",
+    "digitization": "19 older full volumes online/searchable; newly published volumes and recent print volumes enter RKD digitally, project through 2027.",
+    "thematicVolumeSections": [
+      {
+        "part": "I",
+        "topic": "Ceilings for Jesuit Church of Antwerp",
+        "citation": "Jacob Burchard; John Rupert Martin, Corpus Rubenianum part I (1968)",
+        "evidence": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+        "precedence": 5,
+        "priority": "P1",
+        "relevantSubjects": [
+          "Jesuit Saints",
+          "Virgin",
+          "Holy Trinity",
+          "saints' virtues"
+        ],
+        "volumeAccess": "LEGACY_VOLUME_OLDER_15_YEARS_RUBENSHUIS_SEARCHABLE_PDF",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "II",
+        "topic": "The Eucharist Series",
+        "citation": "Nora de Poorter, Corpus Rubenianum part II vols 1 and 2 (1978)",
+        "evidence": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+        "precedence": 1,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Eucharist",
+          "Abraham and Melchizedek",
+          "Mass typology",
+          "Old Law/New Law",
+          "Corpus Christi",
+          "Last Supper"
+        ],
+        "volumeAccess": "LEGACY_VOLUME_OLDER_15_YEARS_RUBENSHUIS_SEARCHABLE_PDF",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "III",
+        "topic": "The Old Testament",
+        "citation": "R.-A. d'Hulst and M. Vandenven, Corpus Rubenianum part III (1989)",
+        "evidence": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+        "precedence": 3,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Sacrifice of Isaac",
+          "Noah",
+          "David",
+          "Daniel",
+          "Moses",
+          "Biblical Theatre",
+          "genealogy"
+        ],
+        "volumeAccess": "LEGACY_VOLUME_OLDER_15_YEARS_RUBENSHUIS_SEARCHABLE_PDF",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "IV(1)",
+        "topic": "The Holy Trinity and Life of the Virgin",
+        "citation": "Fiona Healy (ed. Brecht Vanoppen), Corpus Rubenianum part IV(1) (2024)",
+        "evidence": "https://www.brepols.net/series/HMCRLB",
+        "precedence": 2,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Annunciation",
+          "Immaculate Conception",
+          "Visitation",
+          "Assumption",
+          "Coronation Virgin",
+          "Marian devotion"
+        ],
+        "volumeAccess": "RECENT_VOLUME_NOT_FULLTEXT_OPEN_AS_OF_2026_BIBLIO_AND_RKD_RECORDS",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "IV(remaining)",
+        "topic": "Madonnas and Holy Family",
+        "citation": "Corpus Rubenianum part IV planned thematic sequence; dates/volume detail verify publisher",
+        "evidence": "https://www.rubensonline.be/en/corpus-rubenianum-ludwig-burchard",
+        "precedence": 4,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Virgin and Child",
+          "Holy Family",
+          "St Joseph",
+          "St Anne",
+          "Infant John",
+          "marian devotions"
+        ],
+        "volumeAccess": "SCHOLARLY_PUBLICATION_STATUS_CHECK_REQUIRED",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "V(1)",
+        "topic": "Life of Christ before Passion — Youth of Christ",
+        "citation": "Hans Devisscher and Hans Vlieghe, Corpus Rubenianum part V(1) vols 1–2 (2014)",
+        "evidence": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+        "precedence": 6,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Nativity",
+          "Adoration Magi",
+          "Presentation",
+          "Flight Egypt",
+          "Baptism",
+          "Childhood of Christ"
+        ],
+        "volumeAccess": "RECENT_VOLUME_NOT_FULLTEXT_OPEN_AS_OF_2026_BIBLIO_AND_RKD_RECORDS",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "V(2)",
+        "topic": "Life of Christ before Passion — Ministry of Christ",
+        "citation": "Koen Bulckens, Corpus Rubenianum part V(2) (2017)",
+        "evidence": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+        "precedence": 7,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Cana",
+          "Calling disciples",
+          "Christ Preaching",
+          "Transfiguration",
+          "Raising Lazarus",
+          "Gospel iconography"
+        ],
+        "volumeAccess": "RECENT_VOLUME_NOT_FULLTEXT_OPEN_AS_OF_2026_BIBLIO_AND_RKD_RECORDS",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "VI",
+        "topic": "The Passion of Christ",
+        "citation": "J. Richard Judson, Corpus Rubenianum part VI (2000)",
+        "evidence": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+        "precedence": 0,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Agony",
+          "Flagellation",
+          "Crowning with thorns",
+          "Carrying Cross",
+          "Crucifixion",
+          "Deposition",
+          "Entombment",
+          "Stations",
+          "Seven Last Words"
+        ],
+        "volumeAccess": "LEGACY_VOLUME_OLDER_15_YEARS_RUBENSHUIS_SEARCHABLE_PDF",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "VII",
+        "topic": "Life of Christ after the Passion",
+        "citation": "David Freedberg, Corpus Rubenianum part VII (1984)",
+        "evidence": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+        "precedence": 8,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Resurrection",
+          "Emmaus",
+          "Ascension",
+          "Pentecost thematic cross-check",
+          "Christ in Glory"
+        ],
+        "volumeAccess": "LEGACY_VOLUME_OLDER_15_YEARS_RUBENSHUIS_SEARCHABLE_PDF",
+        "physicalMasterWorksExpected": true
+      },
+      {
+        "part": "VIII (I–II)",
+        "topic": "Angels, Apostles and Saints",
+        "citation": "Hans Vlieghe, Corpus Rubenianum part VIII vols I–II (1972–73)",
+        "evidence": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+        "precedence": 9,
+        "priority": "P0",
+        "relevantSubjects": [
+          "Apostles",
+          "Saint Peter",
+          "Saint Paul",
+          "Saint Lawrence",
+          "St Augustine",
+          "St Dominic",
+          "St Teresa",
+          "Patron Saints",
+          "Martyrdom"
+        ],
+        "volumeAccess": "LEGACY_VOLUME_OLDER_15_YEARS_RUBENSHUIS_SEARCHABLE_PDF",
+        "physicalMasterWorksExpected": true
+      }
+    ],
+    "sourceWorkReconciliation": {
+      "publicationSectionsPlanned": 10,
+      "scannedOriginalPaintingCatalogueEntriesVerifiedAgainstMuseumIDs": 0,
+      "sourceSectionCompletelyExhausted": 0,
+      "knownOriginalWorkLeads": [
+        "W02-021",
+        "W02-022",
+        "W03-001",
+        "W03-002",
+        "W03-003",
+        "W03-004",
+        "W05-001",
+        "W05-002",
+        "W05-003",
+        "W05-004",
+        "W05-005",
+        "W05-006",
+        "W05-007",
+        "W05-008",
+        "W05-009",
+        "W05-010",
+        "W05-011",
+        "W05-012",
+        "W05-013",
+        "W05-014",
+        "W05-015",
+        "W05-016",
+        "W05-017",
+        "W05-018",
+        "W06-001",
+        "W06-002",
+        "W06-003",
+        "W06-004",
+        "W06-005",
+        "W06-006",
+        "W08-011",
+        "W08-012"
+      ],
+      "knownBoundedSeries": "Prado Apostolado Lerma has 12 physical panel inventories P001646 to P001657, entered in W05; complete 12/12 SOURCE OBJECT identities, not digital images.",
+      "nextDetailedHarvestMethod": "Go volume-by-volume, enumerate numbered composition, painting version, current owner and attribution; map each to actual authoritative museum inventory URL; append only distinct source IDs not matching 281 acquired+145 pending; never blindly treat corpus drawings, tapestry woven copies or studio reproductions as new ORIGINAL oil painting.",
+      "volumeQueue": [
+        {
+          "part": "VI",
+          "source": "J. Richard Judson, Corpus Rubenianum part VI (2000)",
+          "topic": "The Passion of Christ",
+          "sourceReference": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "II",
+          "source": "Nora de Poorter, Corpus Rubenianum part II vols 1 and 2 (1978)",
+          "topic": "The Eucharist Series",
+          "sourceReference": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "IV(1)",
+          "source": "Fiona Healy (ed. Brecht Vanoppen), Corpus Rubenianum part IV(1) (2024)",
+          "topic": "The Holy Trinity and Life of the Virgin",
+          "sourceReference": "https://www.brepols.net/series/HMCRLB",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "III",
+          "source": "R.-A. d'Hulst and M. Vandenven, Corpus Rubenianum part III (1989)",
+          "topic": "The Old Testament",
+          "sourceReference": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "IV(remaining)",
+          "source": "Corpus Rubenianum part IV planned thematic sequence; dates/volume detail verify publisher",
+          "topic": "Madonnas and Holy Family",
+          "sourceReference": "https://www.rubensonline.be/en/corpus-rubenianum-ludwig-burchard",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "I",
+          "source": "Jacob Burchard; John Rupert Martin, Corpus Rubenianum part I (1968)",
+          "topic": "Ceilings for Jesuit Church of Antwerp",
+          "sourceReference": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+          "priority": "P1",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "V(1)",
+          "source": "Hans Devisscher and Hans Vlieghe, Corpus Rubenianum part V(1) vols 1–2 (2014)",
+          "topic": "Life of Christ before Passion — Youth of Christ",
+          "sourceReference": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "V(2)",
+          "source": "Koen Bulckens, Corpus Rubenianum part V(2) (2017)",
+          "topic": "Life of Christ before Passion — Ministry of Christ",
+          "sourceReference": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "VII",
+          "source": "David Freedberg, Corpus Rubenianum part VII (1984)",
+          "topic": "Life of Christ after the Passion",
+          "sourceReference": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        },
+        {
+          "part": "VIII (I–II)",
+          "source": "Hans Vlieghe, Corpus Rubenianum part VIII vols I–II (1972–73)",
+          "topic": "Angels, Apostles and Saints",
+          "sourceReference": "https://www.inha.fr/app/uploads/2024/07/SUBSTRAT-REGISTRE-DES-20-VOLUMES.pdf",
+          "priority": "P0",
+          "taskStatus": "FULL_CATALOGUE_ITEM_EXTRACTION_PENDING",
+          "newPaintingIDsDiscoveredInThisVolumeAudit": 0
+        }
+      ]
+    }
+  },
+  "authoritativeVanDyckCorpus": {
+    "source": "Susan Barnes, Nora De Poorter, Oliver Millar, Horst Vey, Van Dyck: A Complete Catalogue of the Paintings (Yale / Paul Mellon Centre, 2004)",
+    "publisher": "https://yalebooks.co.uk/book/9780300099287/van-dyck/",
+    "scope": "ALL_AUTHORITATIVE_PAINTINGS_IN_PRINTED_CATALOGUE",
+    "access": "Scholarly text not open full-text; museum holdings/source bibliographies and published references may be separately used; do not invent Barnes catalogue numbers.",
+    "verifiedLimitedSource": "https://livres.louvre.fr/vandyck/catalogue/",
+    "limitedCollectionStatus": "Louvre 2023 has 34 catalogue entries, five identified autograph religious paintings and five held copies/attributions listed in W07. This is a museum holding audit, not full Barnes global book.",
+    "numberedFullWorldAutographReligiousEntriesAudited": 0,
+    "nextDetailedHarvestMethod": "Enumerate religious/history paintings from 2004 catalogue, preserve original catalogue no. and current autograph status, exact museum ID; exclude 'after', 'studio of', later copies and religious-looking secular portraits."
+  },
+  "authoritativeCaravaggioCorpus": {
+    "source": "Sebastian Schütze, Caravaggio: The Complete Works",
+    "publisherOrBibliography": "https://books.google.com/books?id=GJkIMQAACAAJ",
+    "primaryCheck": "Original holding institutions, with current attribution for each version and disputed case",
+    "acceptedWorldwideAuthenticOriginalCount": "UNKNOWN_ATTRIBUTION_DEPENDENT",
+    "currentOriginalLeadIDs": [
+      "W01-008",
+      "W01-009",
+      "W04-020",
+      "W05-023",
+      "W05-024",
+      "W05-025",
+      "W05-026",
+      "W05-027",
+      "W05-028",
+      "W05-029",
+      "W05-030",
+      "W05-031",
+      "W05-032",
+      "W05-033",
+      "W05-034",
+      "W05-035",
+      "W05-036",
+      "W06-008",
+      "W06-009",
+      "W07-007",
+      "W07-008",
+      "W07-009",
+      "W07-010",
+      "W07-011",
+      "W07-012",
+      "W07-013",
+      "W07-014",
+      "W07-015",
+      "W08-001",
+      "W08-002",
+      "W08-003",
+      "W08-004",
+      "W08-005",
+      "W08-006",
+      "W08-007",
+      "W08-008",
+      "W08-009"
+    ],
+    "sourceObjectHoldNotes": [
+      "Valletta St John the Baptist beheading and St Jerome two different canvases despite shared website.",
+      "Doria Pamphilj Penitent Magdalene and Rest on Flight Egypt are two separate original inventory items.",
+      "Prado, Vienna and Borghese David and Goliath are different versions; keep separate owner IDs.",
+      "New Prado-on-loan Ecce Homo privately owned, no claim Prado owns rights.",
+      "Print-source image pages are not rights to bundle commercial art."
+    ],
+    "nextDetailedHarvestMethod": "Establish single item-level attributed original catalogue from museum holders, mark disputed works without forced count, physically reconcile each with 2 already acquired + 37 unacquired sources; then count remaining originals not yet in register. Limit to religious and Biblical subjects per project aim."
+  },
+  "otherUserRequiredCorpora": {
+    "philippe": "Bernard Dorival 1976 Philippe de Champaigne catalogue raisonné, W04 France/Amiens originals, still incomplete; Jean Baptiste separate",
+    "museums": [
+      "Musée de Picardie Amiens",
+      "Pinacoteca di Brera Milan",
+      "Pinacoteca Ambrosiana Milan (no image acquisition absent rights)"
+    ]
+  },
+  "crossChecks": {
+    "canonicalExistingResearchObjects": 281,
+    "existingOriginalHashes": 266,
+    "newUnacquiredIdentities": 145,
+    "priorityLeadCount": 82,
+    "artistsSample": [
+      {
+        "artist": "Peter Paul Rubens",
+        "verifiedResearchLeadCount": 32,
+        "existingArchiveLiteralArtistEntries": [
+          {
+            "id": "met-437524",
+            "title": "The Coronation of the Virgin",
+            "originalSourcePresent": true
+          },
+          {
+            "id": "met-437527",
+            "title": "The Glorification of the Eucharist",
+            "originalSourcePresent": true
+          }
+        ],
+        "userStrongNumericalRatingCount": 0,
+        "sourceComplete": false,
+        "unacquiredLeadIds": [
+          "W02-021",
+          "W02-022",
+          "W03-001",
+          "W03-002",
+          "W03-003",
+          "W03-004",
+          "W05-001",
+          "W05-002",
+          "W05-003",
+          "W05-004",
+          "W05-005",
+          "W05-006",
+          "W05-007",
+          "W05-008",
+          "W05-009",
+          "W05-010",
+          "W05-011",
+          "W05-012",
+          "W05-013",
+          "W05-014",
+          "W05-015",
+          "W05-016",
+          "W05-017",
+          "W05-018",
+          "W06-001",
+          "W06-002",
+          "W06-003",
+          "W06-004",
+          "W06-005",
+          "W06-006",
+          "W08-011",
+          "W08-012"
+        ],
+        "priorityOriginalLeadCount": 22
+      },
+      {
+        "artist": "Anthony van Dyck",
+        "verifiedResearchLeadCount": 17,
+        "existingArchiveLiteralArtistEntries": [],
+        "userStrongNumericalRatingCount": 0,
+        "sourceComplete": false,
+        "unacquiredLeadIds": [
+          "W02-017",
+          "W02-018",
+          "W02-019",
+          "W02-020",
+          "W03-005",
+          "W05-019",
+          "W05-020",
+          "W05-021",
+          "W05-022",
+          "W06-007",
+          "W07-001",
+          "W07-002",
+          "W07-003",
+          "W07-004",
+          "W07-005",
+          "W07-006",
+          "W08-010"
+        ],
+        "priorityOriginalLeadCount": 8
+      },
+      {
+        "artist": "Caravaggio",
+        "verifiedResearchLeadCount": 37,
+        "existingArchiveLiteralArtistEntries": [
+          {
+            "id": "cma-148758",
+            "title": "The Crucifixion of Saint Andrew",
+            "originalSourcePresent": true
+          },
+          {
+            "id": "met-437986",
+            "title": "The Denial of Saint Peter",
+            "originalSourcePresent": true
+          }
+        ],
+        "userStrongNumericalRatingCount": 2,
+        "sourceComplete": false,
+        "unacquiredLeadIds": [
+          "W01-008",
+          "W01-009",
+          "W04-020",
+          "W05-023",
+          "W05-024",
+          "W05-025",
+          "W05-026",
+          "W05-027",
+          "W05-028",
+          "W05-029",
+          "W05-030",
+          "W05-031",
+          "W05-032",
+          "W05-033",
+          "W05-034",
+          "W05-035",
+          "W05-036",
+          "W06-008",
+          "W06-009",
+          "W07-007",
+          "W07-008",
+          "W07-009",
+          "W07-010",
+          "W07-011",
+          "W07-012",
+          "W07-013",
+          "W07-014",
+          "W07-015",
+          "W08-001",
+          "W08-002",
+          "W08-003",
+          "W08-004",
+          "W08-005",
+          "W08-006",
+          "W08-007",
+          "W08-008",
+          "W08-009"
+        ],
+        "priorityOriginalLeadCount": 33
+      },
+      {
+        "artist": "Philippe de Champaigne",
+        "verifiedResearchLeadCount": 13,
+        "existingArchiveLiteralArtistEntries": [
+          {
+            "id": "met-438724",
+            "title": "The Annunciation",
+            "originalSourcePresent": true
+          }
+        ],
+        "userStrongNumericalRatingCount": 0,
+        "sourceComplete": false,
+        "unacquiredLeadIds": [
+          "W04-001",
+          "W04-005",
+          "W04-006",
+          "W04-007",
+          "W04-008",
+          "W04-009",
+          "W04-010",
+          "W04-011",
+          "W04-012",
+          "W04-013",
+          "W04-014",
+          "W04-015",
+          "W04-016"
+        ],
+        "priorityOriginalLeadCount": 5
+      },
+      {
+        "artist": "Jean Baptiste de Champaigne",
+        "verifiedResearchLeadCount": 1,
+        "existingArchiveLiteralArtistEntries": [
+          {
+            "id": "nga-106362",
+            "title": "The Martyrdom of Saint Lawrence",
+            "originalSourcePresent": true
+          }
+        ],
+        "userStrongNumericalRatingCount": 1,
+        "sourceComplete": false,
+        "unacquiredLeadIds": [
+          "W04-017"
+        ],
+        "priorityOriginalLeadCount": 0
+      }
+    ],
+    "newlyAcquiredOriginalImages": 0
+  },
+  "publicationStatus": "CATALOGUE_SOURCES_AND_VOLUME_QUEUE_GROUNDED_NO_CLAIM_FULL_RELIGIOUS_OEUVRE_ENUMERATION"
+}
