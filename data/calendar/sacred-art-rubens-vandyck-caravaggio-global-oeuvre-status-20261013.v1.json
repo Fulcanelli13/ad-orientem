@@ -1,0 +1,159 @@
+{
+  "schema": "AO_SACRED_ART_MASTER_ARTIST_CORPUS_COMPLETENESS_AUDIT_20261013_V1",
+  "version": "2026-10-13",
+  "correctionToPriorClaims": "None of Rubens/Van Dyck/Caravaggio's complete religious original painting oeuvres is covered by earlier institution-centred artist queue. 12 Prado Apostle panels alone a completed series, not completed oeuvre.",
+  "fullCatalogueSources": [
+    {
+      "artist": "Peter Paul Rubens",
+      "source": "Rubenshuis / RKD Corpus Rubenianum",
+      "url": "https://www.rubenshouse.be/en/corpus-rubenianum-ludwig-burchard",
+      "paintingUniverse": "The corpus encompasses more than 2500 compositions and several thousand other works/copies/drawings. Regional museum holdings not exhaustive.",
+      "releaseGate": "Catalogue theme sections especially CRLB II Eucharist, III Old Testament, IV Virgin, V Youth of Christ, VI Passion, VII Life after Passion, VIII Saints; record source volume and figure/composition with original attribution"
+    },
+    {
+      "artist": "Anthony van Dyck",
+      "source": "Barnes, De Poorter, Millar & Vey 2004 Yale catalogue raisonné",
+      "url": "https://yalebooks.co.uk/book/9780300099287/van-dyck/",
+      "paintingUniverse": "Rijksmuseum critical catalogue states well over 700 paintings including secular portraits. Paintings in the religious oeuvre have not been exhaustively inventoried.",
+      "releaseGate": "Crosswalk every genuine religious painting in Barnes 2004 to one museum/original owner, exclude portrait mass and studio copies, preserve alternative versions."
+    },
+    {
+      "artist": "Caravaggio",
+      "source": "Schütze 2017 complete works + official museum autographs",
+      "url": "https://books.google.com/books?id=GJkIMQAACAAJ",
+      "paintingUniverse": "Only original works, note disputed, lost, replicas, Caravaggisti independently. No false fixed denominator while exact scholarly attribution differs.",
+      "releaseGate": "Compare every religious original painting entry, including Rome, Naples, Sicily, Florence, Vatican, Malta and Madrid, against museum inventory, ownership, version, rights and source original."
+    }
+  ],
+  "measured": {
+    "newMasterworkLeadsAcrossSixWaves": 117,
+    "distinctFirstWaveFiles": 6,
+    "alreadyAcquiredRegistry": 266,
+    "existingResearchObjects": 281,
+    "physicalNewImageAcquisitions": 0,
+    "repeatedAlreadyAcquiredRated4to5": 0
+  },
+  "byArtist": [
+    {
+      "artist": "Peter Paul Rubens",
+      "newSourceWorks": 30,
+      "firstIds": [
+        "W02-021",
+        "W02-022",
+        "W03-001",
+        "W03-002",
+        "W03-003",
+        "W03-004",
+        "W05-001",
+        "W05-002",
+        "W05-003",
+        "W05-004",
+        "W05-005",
+        "W05-006",
+        "W05-007",
+        "W05-008",
+        "W05-009",
+        "W05-010",
+        "W05-011",
+        "W05-012"
+      ],
+      "oldAcquiredExactAuthor": [
+        {
+          "id": "met-437524",
+          "title": "The Coronation of the Virgin",
+          "hasOriginal": true
+        },
+        {
+          "id": "met-437527",
+          "title": "The Glorification of the Eucharist",
+          "hasOriginal": true
+        }
+      ],
+      "oeuvreComplete": false
+    },
+    {
+      "artist": "Anthony van Dyck",
+      "newSourceWorks": 10,
+      "firstIds": [
+        "W02-017",
+        "W02-018",
+        "W02-019",
+        "W02-020",
+        "W03-005",
+        "W05-019",
+        "W05-020",
+        "W05-021",
+        "W05-022",
+        "W06-007"
+      ],
+      "oldAcquiredExactAuthor": [],
+      "oeuvreComplete": false
+    },
+    {
+      "artist": "Caravaggio",
+      "newSourceWorks": 19,
+      "firstIds": [
+        "W01-008",
+        "W01-009",
+        "W04-020",
+        "W05-023",
+        "W05-024",
+        "W05-025",
+        "W05-026",
+        "W05-027",
+        "W05-028",
+        "W05-029",
+        "W05-030",
+        "W05-031",
+        "W05-032",
+        "W05-033",
+        "W05-034",
+        "W05-035",
+        "W05-036",
+        "W06-008"
+      ],
+      "oldAcquiredExactAuthor": [
+        {
+          "id": "cma-148758",
+          "title": "The Crucifixion of Saint Andrew",
+          "hasOriginal": true
+        },
+        {
+          "id": "met-437986",
+          "title": "The Denial of Saint Peter",
+          "hasOriginal": true
+        }
+      ],
+      "oeuvreComplete": false
+    }
+  ],
+  "completedBoundedInstitutionalSequences": [
+    {
+      "artist": "Peter Paul Rubens",
+      "series": "Duke of Lerma Apostle sequence",
+      "institution": "Museo del Prado",
+      "identitiesInSeries": 12,
+      "identitiesSourceMatched": 12,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-peter/191fcaa5-1841-41dd-bcae-939be2f88437",
+      "artworkBytesAcquired": 0
+    }
+  ],
+  "pipelineOrder": [
+    "Freeze original catalogue per painter and scholar volume source; mark edition date and artist attribution grade",
+    "Count original oil paintings of religious subjects only and artwork versions separately; leave uncertain denominator explicitly UNKNOWN",
+    "Join all previously acquired originals plus source identities in waves 1–6 before any new download, exact object ID/title+museum match",
+    "Protect previously acquired 4–5 user-rated works from new sourcing, retain existing originals",
+    "Reject exactly user rated 0–2 originals across all target themes; a rejected work does not blacklist all of that painter's oeuvre",
+    "Rank unacquired originals by frequency across Rosary, major feasts, Mass/Bible Theatre and symbolic devotions, using real scene IDs.",
+    "Find permitted full resolution non-watermarked reproduction, verify pixels/hash/rights then stage for user's 0–5 rating",
+    "Only user-scored 5 can serve as repeat anchors; 3–4 for per-scene use when appropriate",
+    "No final production app merge without approved artwork and rights-certified reproduction"
+  ],
+  "theologicalAndVisualGuards": [
+    "Rubens cathedral Descent from Cross as one triptych with distinct side-scene links Visitation/Presentation; cannot use side wings as if full independent oil paintings.",
+    "Caravaggio 1606 Brera Supper at Emmaus and earlier London version both separately inventoried; not a duplicate.",
+    "Caravaggio Thyssen Catherine Alexandria original is not Prado copy of it; retain museum identity.",
+    "Art quality not inferred from fame, previous approval, or a painter's average rating."
+  ],
+  "status": "THREE_FULL_OEUVRE_AUDITS_PENDING;_SIX_WAVES_SOURCE_DISCOVERIES_VERIFIED;_NO_IMAGE_BINARY_ACQUISITION"
+}
