@@ -68,6 +68,14 @@ def main():
         assert payload["items"][0]["refusedSubjectKeys"]==["devotion.adoration"]
         assert payload["items"][0]["publicationApproved"] is False
         assert payload["summary"]["previewMissing"]==0
+        assert payload["subjectInventory"]["counts"]["subjects"]==235
+        assert payload["subjectInventory"]["counts"]["userSelectedSubjectPlacements"]==101
+        assert payload["subjectInventory"]["counts"]["unsettledSubjectPlacements"]==134
+        assert len(payload["subjects"])==235 if "subjects" in payload else len(payload["subjectInventory"]["subjects"])==235
+        assert "id=\"showSubjects\"" in content
+        assert "id=\"subjectCards\"" in content
+        assert "allSelectedAvailable=chosen.length===101" in content
+        assert len(payload["sourceFingerprints"]["subjectInventorySha256"])==64
         assert len(payload["sourceFingerprints"]["originalsSha256"])==64
         assert len(payload["sourceFingerprints"]["dateAssociationsSha256"])==64
         assert 'UNFLAGGED_EDITORIALLY_ACCEPTED_EXCEPT_POLICY_EXCLUSIONS' in content
