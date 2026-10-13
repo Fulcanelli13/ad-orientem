@@ -18,7 +18,8 @@
     "French Mays of Notre-Dame corpus is important further source discovery (https://www.notredamedeparis.fr/comprendre/peintures/les-mays-de-notre-dame/): historic large oil canvases predominantly Acts; do not import all or imply image rights. Explicit subjects Courtin 1707 and Galloche 1705 added as separate original artworks.",
     "Source correction 2026-10-13: 5 previously unverified older options were real art but WRONG biblical event: Joseph-to-Potiphar versus sold by brothers; Jacob/Pharaoh versus first settlement; Tobias versus Tobit; Daniel 6 lions versus Daniel 1; Heliodorus versus Maccabean resistance. Do not count as exact coverage.",
     "Latest 4 formerly zero-source subjects have museum-indexed engravings/manuscript illustrations; no graphic is aesthetically approved and no thematic subject's physical event is deemed map equivalent. These images can be bypassed in favour of atlas/timeline rendering.",
-    "Earlier five wrong-scene IDs remain wrong; separate institutionally recorded replacement candidates added. A print is never automatically equivalent to a museum painting, and journey or subevent coverage is distinguished from complete subject."
+    "Earlier five wrong-scene IDs remain wrong; separate institutionally recorded replacement candidates added. A print is never automatically equivalent to a museum painting, and journey or subevent coverage is distinguished from complete subject.",
+    "Previous Pontormo Joseph-with-Pharaoh and vague Flemish-school furnace option IDs are still NOT individually source-identified. Two separate institutionally supported exact-subject alternatives now registered without rewriting prior art ID or falsely certifying attribution."
   ],
   "summary": {
     "acquiredSourceCoverage": 27,
@@ -35,7 +36,8 @@
     "newInstitutionalSourceWaveCandidateCount": 37,
     "previousOptionInstitutionallyIdentified": 7,
     "previousOptionSceneMismatchConfirmed": 5,
-    "previousWrongSceneAlternativeEvidenceCount": 5
+    "previousWrongSceneAlternativeEvidenceCount": 5,
+    "unidentifiedPreviousOptionWithAlternativeCount": 2
   },
   "subjects": [
     {
@@ -1291,11 +1293,29 @@
         "ART-ontormo-oseph-with-haraoh"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-distinct-alternative-BIB-PA10",
+          "artist": "Workshop of Bernard Picart, after Bernard Picart",
+          "title": "Joseph Appointed Governor of Egypt (lower register on composite print)",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Tamar-toont-de-staf-en-ring-van-Juda-en-Jozef-benoemd-tot-onderkoning--191d3e16030ccb6e21cb1ab44abcc4b7",
+          "medium": "etching and engraving",
+          "sourceInstitution": "Rijksmuseum RP-P-1921-123",
+          "sceneMatch": "EXACT_SUBJECT_SEPARATE_ARTWORK",
+          "matchNotes": "Exact Genesis 41:42 ring investiture as LOWER scene of composite print. Does not identify original ambiguous 'Pontormo Joseph with Pharaoh' artwork ID.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionOriginalIdentityStillUnverified": true,
+      "verifiedDistinctAlternativeArtworkId": "ART-research-20261013-distinct-alternative-BIB-PA10",
+      "researchWave": "2026-10-13-unresolved-prior-with-separate-artwork"
     },
     {
       "subjectId": "BIB-PA11",
@@ -2319,11 +2339,29 @@
         "ART-lemish-school-hree-ouths-in-the-iery-urnace"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-distinct-alternative-BIB-XL10",
+          "artist": "Pieter Pietersz the Elder",
+          "title": "The Three Youths in the Fiery Furnace",
+          "sourceUrl": "https://www.franshalsmuseum.nl/en/art/the-three-youths-in-the-fiery-furnace/",
+          "medium": "oil on panel",
+          "sourceInstitution": "Frans Hals Museum Haarlem os I-281",
+          "sceneMatch": "EXACT_SUBJECT_SEPARATE_ARTWORK",
+          "matchNotes": "1575, original 222.8 × 182.2 cm monumental narrative of Daniel 3. Historic Dutch named painter; must not be silently equated with vague older 'Flemish school' ID. Aesthetic review pending.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionOriginalIdentityStillUnverified": true,
+      "verifiedDistinctAlternativeArtworkId": "ART-research-20261013-distinct-alternative-BIB-XL10",
+      "researchWave": "2026-10-13-unresolved-prior-with-separate-artwork"
     },
     {
       "subjectId": "BIB-XL11",
@@ -3294,5 +3332,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "35 previously zero-source subjects now have identified sources; 2 zero-source subjects remain: Antioch Acts 11 and Thessalonica Acts 17."
+  "recentSourceWave": "Two unresearched subjects remain without any source; five inaccurate earlier scene assignments have separate alternatives; two vague older identities remain unresolved but have separately identified alternatives. 101 original selected subjects unchanged."
 }
