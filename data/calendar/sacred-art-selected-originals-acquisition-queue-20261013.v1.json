@@ -9,13 +9,15 @@
     "uniqueSelectedArtworksUnjoined": 91,
     "subjectPlacementsUnjoined": 98,
     "sourceStatus": {
-      "SEARCH_PAGE_NOT_ART_OBJECT": 15,
+      "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 15,
       "IDENTITY_SOURCE_MISSING": 39,
       "OBJECT_URL_RECORDED_NEEDS_MASTER": 20,
-      "VERIFY_EXACT_OBJECT_IDENTITY": 2,
-      "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 15
+      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 15,
+      "VERIFY_EXACT_OBJECT_IDENTITY": 2
     },
-    "benchmarkUrlsRecovered": 1
+    "benchmarkUrlsRecovered": 1,
+    "verifiedInstitutionalObjectsThisWave": 15,
+    "institutionalObjectUrlKnownTotal": 35
   },
   "notes": [
     "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
@@ -23,7 +25,8 @@
     "Potential collection-level link does not certify an exact painting panel; previous artist/title chosen remains immutable.",
     "Do not substitute a different painting merely because a similar artist/subject is in the acquired registry.",
     "Aesthetically excluded artists cannot be reintroduced; this queue records history and source recovery only.",
-    "Only source-verified, human-approved, rights-reviewed, image-reviewed originals may enter final gallery."
+    "Only source-verified, human-approved, rights-reviewed, image-reviewed originals may enter final gallery.",
+    "15 selected artwork exact institutional identities resolved using Prado inventory numbers and Louvre object IDs. Browser search URLs replaced with immutable museum records; no original bytes, rights, user approval, or app assets changed."
   ],
   "works": [
     {
@@ -1296,14 +1299,22 @@
         "ROS-08"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001474",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-crowning-with-thorns/8115e55f-004f-45c3-b574-fb9880c2fb57",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001474",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-crowning-with-thorns/8115e55f-004f-45c3-b574-fb9880c2fb57",
+      "institutionalObjectId": "Prado P001474",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
@@ -1313,14 +1324,22 @@
         "SNT-OT-12"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001478",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-francis-of-assisi-in-ecstasy/1e458766-15e5-4aee-b933-21d0b8344ca2",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001478",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-francis-of-assisi-in-ecstasy/1e458766-15e5-4aee-b933-21d0b8344ca2",
+      "institutionalObjectId": "Prado P001478",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-artolom-steban-urillo-onversion-of-aint-aul",
@@ -1330,14 +1349,22 @@
         "BIB-A05"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000984",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-conversion-of-saint-paul/70a89a74-c1ed-4de2-9b55-bd40898e4ad3",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000984",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-conversion-of-saint-paul/70a89a74-c1ed-4de2-9b55-bd40898e4ad3",
+      "institutionalObjectId": "Prado P000984",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-laudio-oello-aint-ominic-of-uzm-n",
@@ -1347,14 +1374,22 @@
         "SNT-OT-13"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000662",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-dominic-of-guzman/80a673a4-8833-4334-a878-0046662c25d9",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000662",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-dominic-of-guzman/80a673a4-8833-4334-a878-0046662c25d9",
+      "institutionalObjectId": "Prado P000662",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
@@ -1364,14 +1399,22 @@
         "BIB-A15"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%208020",
+      "recordedSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010061650",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%208020",
+      "exactInstitutionalSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010061650",
+      "institutionalObjectId": "Louvre INV 8020",
+      "verifiedMedium": "oil on canvas (transferred)",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
@@ -1381,14 +1424,22 @@
         "SNT-DC-06"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20204",
+      "recordedSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010064947",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20204",
+      "exactInstitutionalSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010064947",
+      "institutionalObjectId": "Louvre MI 204",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
@@ -1398,14 +1449,22 @@
         "STN-14"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000362",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/burial-of-christ/fca27623-6bb0-4bca-9856-b7c23a6651a3",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000362",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/burial-of-christ/fca27623-6bb0-4bca-9856-b7c23a6651a3",
+      "institutionalObjectId": "Prado P000362",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
@@ -1415,14 +1474,22 @@
         "STN-13"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000361",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-descent-from-the-cross/e7418abd-85af-4721-b8d2-f1f433767373",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000361",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-descent-from-the-cross/e7418abd-85af-4721-b8d2-f1f433767373",
+      "institutionalObjectId": "Prado P000361",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-acopo-intoretto-udith-and-olofernes",
@@ -1432,14 +1499,22 @@
         "BIB-XL07"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000389",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/judith-and-holofernes/c35da7af-d24b-4ba3-8926-9eb81ec2932d",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000389",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/judith-and-holofernes/c35da7af-d24b-4ba3-8926-9eb81ec2932d",
+      "institutionalObjectId": "Prado P000389",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-ean-estout-entecost",
@@ -1451,14 +1526,22 @@
         "BIB-A01"
       ],
       "numberOfUses": 3,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+      "recordedSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+      "exactInstitutionalSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
+      "institutionalObjectId": "Louvre INV 20303",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
@@ -1468,14 +1551,22 @@
         "SNT-OT-07"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20667",
+      "recordedSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010065747",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20667",
+      "exactInstitutionalSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010065747",
+      "institutionalObjectId": "Louvre MI 667",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
@@ -1486,14 +1577,22 @@
         "BIB-A03"
       ],
       "numberOfUses": 2,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000841",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-stephen/637be782-674b-47db-bd73-1789aecdd2d4",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000841",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-stephen/637be782-674b-47db-bd73-1789aecdd2d4",
+      "institutionalObjectId": "Prado P000841",
+      "verifiedMedium": "oil on panel",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-usepe-de-ibera-aint-erome-riting",
@@ -1503,14 +1602,22 @@
         "SNT-DC-03"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P005201",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-jerome-writing/ed0b9f12-8471-4d50-88ec-b3ea87667120",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P005201",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-jerome-writing/ed0b9f12-8471-4d50-88ec-b3ea87667120",
+      "institutionalObjectId": "Prado P005201",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-eter-aul-ubens-aint-atthias-postolate",
@@ -1520,14 +1627,22 @@
         "SNT-AP-11"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20Rubens%20Saint%20Matthias%20Duke%20of%20Lerma%20Apostolado",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20Rubens%20Saint%20Matthias%20Duke%20of%20Lerma%20Apostolado",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+      "institutionalObjectId": "Prado P001653",
+      "verifiedMedium": "oil on panel",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-itian-hrist-arrying-the-ross",
@@ -1537,14 +1652,22 @@
         "ROS-09"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000438",
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-carrying-the-cross/657fa964-0040-48df-971e-88f0de5c6714",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
-      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "originalSearchUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000438",
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-carrying-the-cross/657fa964-0040-48df-971e-88f0de5c6714",
+      "institutionalObjectId": "Prado P000438",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "paintingApprovedUnchanged": true
     },
     {
       "editorialArtworkId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
@@ -1580,5 +1703,6 @@
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
       "sourceNeedsByteAndLicenceValidation": true
     }
-  ]
+  ],
+  "latestSourceWave": "2026-10-13: 15 exact institution object URLs recovered from search-link-only selection records. Other 76 source paths unchanged."
 }
