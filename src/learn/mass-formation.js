@@ -162,7 +162,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
       node.innerHTML=top(win,isFr(win)?"La Bible dans la Messe":"The Bible in the Mass")+'<main class="aoMFWrap">'+
         (state.studyError?'<p class="aoMFError">'+esc(state.studyError)+'</p>':
          state.curated?renderCuratedMassBibleStudy(state.curated.selection,state.curated.primary,state.curated.inline,{
-           language:isFr(win)?"fr":"en",category:state.bibleFilter,stage:state.bibleGroup
+           language:isFr(win)?"fr":"en",category:state.bibleFilter,stage:state.bibleGroup,sourceRows:state.bibleData?.rows??[]
          }):state.bibleData?(state.curationError?
            '<p class="aoMFError">'+esc(isFr(win)?"Aperçu enrichi indisponible ; version de recherche précédente.":"Curated preview unavailable; showing previous source-linked research.")+'</p>':"")+
            renderMassBibleStudy(state.bibleData,{language:isFr(win)?"fr":"en",category:"all",stage:""}):
