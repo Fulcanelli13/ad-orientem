@@ -60,8 +60,10 @@ for(const id of ["MB08","MB23","MB26"]){
  assert.equal(byId(id).sourceLinks.find(x=>x.role==="BIBLICAL_CONTEXT").url,
   "https://www.newadvent.org/bible/joh001.htm");
 }
-assert.equal(corpus.rows.filter(r=>r.classification==="DIRECT_SCRIPTURAL_WORDING").length,5);
-assert.equal(corpus.rows.filter(r=>r.classification==="SCRIPTURAL_WORDING_ADAPTED").length,5);
+assert.equal(corpus.rows.filter(r=>r.classification==="DIRECT_SCRIPTURAL_WORDING").length,4);
+assert.equal(corpus.rows.filter(r=>r.classification==="SCRIPTURAL_WORDING_ADAPTED").length,6);
+assert.equal(byId("MB21").classification,"SCRIPTURAL_WORDING_ADAPTED");
+assert.match(byId("MB21").reading.fr,/supersubstantialem.*cotidianum/);
 const en=renderMassBibleStudy(corpus,{language:"en",category:"names"});
 const fr=renderMassBibleStudy(corpus,{language:"fr",category:"all",stage:"COMMUNION"});
 assert.equal((en.match(/data-ao-mass-bible-row=/g)||[]).length,3);
