@@ -32,7 +32,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   assert.equal(p.calendarCommemorations.length,1,"Calendar is preserved");
   assert.equal(p.appliedCommemorations.length,expected-1);
   assert.deepEqual(p.collects[0],one,"Principal prayer must not be replaced");
-  assert.equal(properToReaderSlots(p,{language:"fr"}).slots.COLLECT_SET.data.paragraphs.length,expected);
+  assert.equal(properToReaderSlots(p,{language:"fr"}).slots.COLLECT_SET.data.paragraphs.filter(p=>p.kind==="TEXT").length,expected);
   assert.equal(properToReaderSlots(p,{language:"en"}).slots.SECRET_SET.data.paragraphs.length,expected);
   const printed=assessPrintableProper(day,{language:"fr",massForm:form});
   assert.equal(printed.ok,true,form+": "+printed.reason);
@@ -66,7 +66,7 @@ for(const [date,mainPath,mainId,mainRank,commPath,commId,commRank,scope] of priv
     assert.deepEqual(["collects","secrets","postcommunions"].map(k=>result.proper[k].length),[2,2,2]);
     assert.equal(result.proper.calendarCommemorations.length,1);
     const mapped=properToReaderSlots(result.proper,{language:"fr"});
-    assert.equal(mapped.slots.COLLECT_SET.data.paragraphs.length,2);
+    assert.equal(mapped.slots.COLLECT_SET.data.paragraphs.filter(p=>p.kind==="TEXT").length,2);
     assert.equal(assessPrintableProper(sourceDay,{language:"en",massForm:form}).ok,true);
   }
   if(commPath.includes("/Adv")){
