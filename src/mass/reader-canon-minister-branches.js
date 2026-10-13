@@ -38,22 +38,24 @@ export function validateCanonMinisterFormBranches(data){
     ids.add(event.id);
   }
   const exact=Object.freeze([
-    ["001","AO.SM.C0163","DEACON"],
-    ["002","AO.SM.C0174","DEACON"],
-    ["003","AO.SM.C0181","DEACON"],
-    ["004","AO.SM.C0174","THURIFER"],
-    ["005","AO.SM.C0181","THURIFER"],
-    ["006","AO.SM.C0199","DEACON"],
-    ["007","AO.SM.C0201","DEACON"],
-    ["008","AO.SM.C0205","DEACON"],
-    ["009","AO.SM.C0175","DEACON"],
-    ["010","AO.SM.C0181","DEACON"],
-    ["011","AO.SM.C0205","DEACON"],
+    ["001","AO.SM.C0163","DEACON","SOLEMN","SOURCE_PRESCRIBED","VIII.8"],
+    ["002","AO.SM.C0174","DEACON","SOLEMN","SOURCE_PRESCRIBED","VIII.8"],
+    ["003","AO.SM.C0181","DEACON","SOLEMN","SOURCE_PRESCRIBED","VIII.8"],
+    ["004","AO.SM.C0174","THURIFER","MISSA_CANTATA_INCENSE,SOLEMN","INCENSE_BRANCH","VIII.8"],
+    ["005","AO.SM.C0181","THURIFER","MISSA_CANTATA_INCENSE,SOLEMN","INCENSE_BRANCH","VIII.8"],
+    ["006","AO.SM.C0199","DEACON","SOLEMN","SOURCE_PRESCRIBED","IX.4"],
+    ["007","AO.SM.C0201","DEACON","SOLEMN","WHEN_REQUIRED","IX.4"],
+    ["008","AO.SM.C0205","DEACON","SOLEMN","WHEN_REQUIRED","IX.4"],
+    ["009","AO.SM.C0175","DEACON","SOLEMN","WHEN_REQUIRED","VIII.8"],
+    ["010","AO.SM.C0181","DEACON","SOLEMN","WHEN_REQUIRED","VIII.8"],
+    ["011","AO.SM.C0205","DEACON","SOLEMN","SOURCE_PRESCRIBED","IX.4"],
   ]);
-  for(const [n,cue,actor] of exact){
+  for(const [n,cue,actor,forms,condition,section] of exact){
     const row=data.branches.find(x=>x.id==="AO.CANON.MIN."+n);
-    if(row?.cueId!==cue||row?.actor!==actor)
-      throw new Error(n+": conditional minister cue/actor identity diverged");
+    if(row?.cueId!==cue||row?.actor!==actor||
+       row.forms.slice().sort().join(",")!==forms||
+       row.condition!==condition||row.sourceSection!==section)
+      throw new Error(n+": conditional minister cue/actor/form/condition/source identity diverged");
   }
   return Object.freeze({ministerCandidateCount:ids.size,
     deaconCount:data.branches.filter(x=>x.actor==="DEACON").length,
