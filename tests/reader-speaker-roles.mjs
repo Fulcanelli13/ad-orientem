@@ -59,7 +59,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   for(const block of source.blocks){
     for(const unit of block.units??[]){
       const latin=String(unit.latin??"").trim();
-      if(!/^(?:℟\\.|R\\.)\\s*/u.test(latin))continue;
+      if(!/^(?:℟[.]|R[.])[ ]*/u.test(latin))continue;
       const role=resolveOrdinarySpeaker(unit,{form,blockId:block.Block_ID}).role;
       assert.ok(["RESPONDERS","MINISTERS"].includes(role),
         form+"/"+unit.cue_id+": printed response cannot acquire priest/deacon role");
