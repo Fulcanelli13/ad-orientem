@@ -29,6 +29,17 @@ for(const row of audit.rows){
  assert.equal(row.actor,"PRIEST");
  assert.ok(/^AO\.CANON\.R62\.\d{3}$/.test(row.actionId));
 }
+const c0180=audit.rows.find(x=>x.cueId==="AO.SM.C0180");
+assert.equal(c0180.latinAnchor,"Haec quotiescumque feceritis");
+assert.equal(c0180.stageIds.length,3,
+ "Latin word anchor and separately witnessed ordered actions must coexist");
+const c0205=audit.rows.find(x=>x.cueId==="AO.SM.C0205");
+assert.equal(c0205.formOwnedStages.length,1);
+assert.equal(c0205.formOwnedStages[0].solemnActor,"DEACON_WHEN_REQUIRED");
+assert.equal(c0205.formOwnedStages[0].solemnMinisterActionId,"AO.CANON.MIN.008");
+const c0175=audit.rows.find(x=>x.cueId==="AO.SM.C0175");
+assert.match(c0175.draftFrenchRubric,/diacre à la messe solennelle/,
+ "No universal celebrant-only chalice uncovering claim");
 assert.ok(!seen.has("AO.SM.C0155"),"Existing published rubric cue must never be replaced");
 assert.ok(!seen.has("AO.SM.C0174"),"Existing multi-stage Host rubric must not be backfilled");
 assert.ok(!seen.has("AO.SM.C0181"),"Existing chalice rubric must not be duplicated");
@@ -58,6 +69,9 @@ const y=structuredClone(witnesses);y.backfill.items[0].latinAnchor="wrong";
 assert.throws(()=>validateCanonDetailedRubricBackfill(y),/linkage drift/);
 const z=structuredClone(witnesses);z.backfill.items[0].editorialState="APPROVED";
 assert.throws(()=>validateCanonDetailedRubricBackfill(z),/linkage drift/);
+const inaccurateOwner=structuredClone(witnesses);
+inaccurateOwner.backfill.items.find(x=>x.cueId==="AO.SM.C0205").formOwnedStages=[];
+assert.throws(()=>validateCanonDetailedRubricBackfill(inaccurateOwner),/stage actor ownership/);
 const released=structuredClone(witnesses);released.frenchReview.rows[0].reviewState="PUBLISHED";
 assert.throws(()=>validateCanonDetailedRubricBackfill(released),/linkage drift/);
 console.log("PASS: 42/42 source-linked Canon published-detail gaps staged for review; 13 existing untouched; 0 published; no live gesture inference.");
