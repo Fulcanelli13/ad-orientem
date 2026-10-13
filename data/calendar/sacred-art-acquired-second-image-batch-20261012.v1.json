@@ -7,14 +7,26 @@
   "summary": {
     "remainingFromPrior": 27,
     "secondBatchExactObjectRecordsReconciled": 27,
-    "actuallyNewVisuallyExamined": 22,
-    "sourceOnlyVisualPending": 5,
-    "totalUniqueVisuallyExamined": 45,
-    "remainingActualVisualChecks": 5,
+    "actuallyNewVisuallyExamined": 23,
+    "sourceOnlyVisualPending": 4,
+    "totalUniqueVisuallyExamined": 46,
+    "remainingActualVisualChecks": 4,
     "all50ObjectsSourceReconciled": 50,
     "newUserApprovals": 0,
     "newProductionAssets": 0,
-    "exactImageSourceRecordsInvestigated": 27
+    "exactImageSourceRecordsInvestigated": 27,
+    "newFullOriginalByteVerifiedSincePrior": 9,
+    "newFullOriginalByteVerifiedIds": [
+      "met-816629",
+      "met-435755",
+      "nga-96688",
+      "met-702752",
+      "met-437871",
+      "cma-112626",
+      "cma-143138",
+      "met-436801",
+      "nga-50726"
+    ]
   },
   "policy": {
     "preserve101Choices": true,
@@ -447,22 +459,24 @@
       "recordedArtist": "Juan de Flandes",
       "recordedTitle": "The Temptation of Christ",
       "museumOriginal": "https://www.nga.gov/artworks/50726-temptation-christ",
-      "sourceImageMatch": "EXACT_MUSEUM_AND_CC0_REPRODUCTION_IDENTIFIED_NOT_FULL_VISUAL_ASSESSED",
-      "artistTier": "ARTISTIC_IMAGE_CHECK_PENDING_EXACT_SOURCE",
-      "artisticEvidence": "VERIFIED_OBJECT_IMAGE_METADATA_AND_MUSEUM_DETAILED_VISUAL_DESCRIPTION",
+      "sourceImageMatch": "SHA_VERIFIED_ORIGINAL_JPEG_VISUALLY_EXAMINED_20261013",
+      "artistTier": "SECONDARY_PAINTING_CONDITION_HOLD",
+      "artisticEvidence": "EXACT_BYTE_ORIGINAL_CONTACT_AND_PHONE_CROP_INSPECTED",
       "portraitCropRisk": "VERIFY_ORIGINAL_RENDER",
-      "reviewNote": "NGA original 50726 and precise Commons photograph (3014 x 4000) are identified as the same c.1500-04 Juan de Flandes panel. NGA describes Christ seated in blue and the horned devil disguised as a friar, offering stone, with other temptation scenes in far background; exact Matthew 4 subject. Painterly suitability cannot be newly certified from descriptive metadata alone. Source original already SHA-acquired; do not fetch or claim another image.",
+      "reviewNote": "Exact NGA JPEG 3087 x 4096 recovered and independently SHA256-verified: Christ confronted by disguised friar/devil with horns and webbed foot; fine figures and extensive craquelure impair Home hero. Authentic Gospel chapter illustration, not prime Home artwork.",
       "relevantOutstandingSubjectIds": [
         "BIB-G05"
       ],
       "previouslyExplicitUserSelection": false,
       "userApprovalNewlyGranted": false,
-      "originalImageByteInspectionInThisPass": false,
-      "fullResolutionPixelCheckInThisPass": false,
+      "originalImageByteInspectionInThisPass": true,
+      "fullResolutionPixelCheckInThisPass": true,
       "phoneCropApproved": false,
       "publicationApproved": false,
       "exactImageWitness": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes,_The_Temptation_of_Christ,_c._1500-1504,_NGA_50726.jpg",
-      "exactImageWitnessAuthority": "NGA_CC0_GLAM_COMMONS"
+      "exactImageWitnessAuthority": "NGA_CC0_GLAM_COMMONS",
+      "exactMasterPixelAuditRef": "data/calendar/sacred-art-9-master-pixel-inspection-20261013.v1.json",
+      "sourceImageMatchedOriginalSha256": "a9225bb7ebdcabbd9b8610d88576b8d24aa7e382173078e7181ae192be34d9a6"
     },
     {
       "artworkId": "met-437403",
