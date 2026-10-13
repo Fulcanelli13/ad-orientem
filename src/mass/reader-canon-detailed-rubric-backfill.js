@@ -1,8 +1,8 @@
 // Editorial-only coverage of the 42 Canon cues without a published detailed
 // rubric. The single French text owner remains the existing R62 draft corpus.
 // This bridge MUST NOT change live R17 priest rails, Missal text or cues.
-const ID=/^AO\\.CANON\\.DET\\.C\\d{4}$/;
-const CUE=/^AO\\.SM\\.C\\d{4}$/;
+const ID=/^AO\.CANON\.DET\.C\d{4}$/;
+const CUE=/^AO\.SM\.C\d{4}$/;
 const FORMS=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const STAT="SOURCE_RECONCILED_42_EDITORIAL_ONLY_NOT_PUBLISHED";
 const KINDS=new Set(["SOURCE_LATIN_WORDS","ORDERED_NON_TEXT_CEREMONY"]);
