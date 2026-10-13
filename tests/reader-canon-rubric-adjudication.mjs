@@ -205,4 +205,31 @@ prematurelyPublished.status="APPROVED";
 assert.throws(()=>validateCanonRubricAdjudication({
  canonData,triggerAudit,frenchReview:prematurelyPublished,
 }),/published\/user-facing/);
+
+const frenchById=new Map(frenchReview.rows.map(x=>[x.id,x]));
+const copyPrecision=[
+ ["AO.CANON.R62.001",/mains jointes et posées sur l’autel/],
+ ["AO.CANON.R62.017",/découvre d’abord ce récipient/],
+ ["AO.CANON.R62.027",/le servant sonne trois fois ou continûment/],
+ ["AO.CANON.R62.028",/par le diacre à la messe solennelle lorsque son intervention est requise/],
+ ["AO.CANON.R62.035",/jusqu’à ce que le calice soit reposé sur le corporal/],
+ ["AO.CANON.R62.040",/mains toujours étendues devant la poitrine/],
+ ["AO.CANON.R62.055",/le diacre intervient lorsque cela est nécessaire/],
+ ["AO.CANON.R62.058",/c’est la petite élévation, distincte des grandes élévations/],
+ ["AO.CANON.R62.059",/Le calice est recouvert de la pale, par le diacre à la messe solennelle/],
+];
+assert.equal(copyPrecision.length,9);
+for(const [id,pattern] of copyPrecision){
+  const item=frenchById.get(id);
+  assert.ok(item,id+": French canonical source owner disappeared");
+  assert.match(item.revisedFrenchRubric,pattern,id+": source-precision correction lost");
+  assert.equal(item.reviewState,"ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
+  assert.equal(item.faithfulRubricInferred,false);
+  assert.ok(item.sourceURLs.length>=2 && item.sourceURLs.every(x=>x.startsWith("https://")));
+}
+assert.doesNotMatch(frenchById.get("AO.CANON.R62.027").revisedFrenchRubric,/action du célébrant/);
+assert.doesNotMatch(frenchById.get("AO.CANON.R62.040").revisedFrenchRubric,/aucun geste supplémentaire/);
+assert.match(frenchById.get("AO.CANON.R62.017").revisedFrenchRubric,/à « accépit panem »/);
+assert.equal(reader.project("AO.SM.C0150",{editorialPreview:false}).canPublish,false);
+
 console.log("PASS: 62 bilingual source-checked Canon redrafts; 50 exact word, 10 non-text, 1 persistent, 1 anticipatory; independent actor clocks and no publication.");
