@@ -11,13 +11,12 @@
     "sourceStatus": {
       "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 3,
       "INDIVIDUAL_STATION_PHOTO_LOCATED_MASTER_AND_LICENCE_PENDING": 12,
-      "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION": 5,
-      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 26,
+      "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION": 6,
+      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 27,
       "IDENTITY_SOURCE_MISSING": 20,
       "IN_SITU_MURAL_IDENTITY_VERIFIED_REPRODUCTION_PENDING": 2,
       "SOURCE_CUSTODIAN_LOCATION_VERIFIED_OBJECT_LINK_PENDING": 1,
-      "OBJECT_URL_RECORDED_NEEDS_MASTER": 20,
-      "VERIFY_EXACT_OBJECT_IDENTITY": 2
+      "OBJECT_URL_RECORDED_NEEDS_MASTER": 20
     },
     "benchmarkUrlsRecovered": 1,
     "verifiedInstitutionalObjectsThisWave": 20,
@@ -28,7 +27,8 @@
     "distinctArtistTitleAmbiguitiesExplicitlyRecorded": 3,
     "newObjectIdentitiesThisAdditionalWave": 4,
     "moreVersionAmbiguities": 2,
-    "individuallyIdentifiedSanPoloStationPhotos": 12
+    "individuallyIdentifiedSanPoloStationPhotos": 12,
+    "lastTwoUnverifiedLinksReviewed": 2
   },
   "notes": [
     "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
@@ -2171,11 +2171,28 @@
       "recordedSourceUrl": "https://www.wga.hu/html/d/dyck_van/3other/s_martin.html",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "VERIFY_EXACT_OBJECT_IDENTITY",
-      "action": "VERIFY_OBJECT_NOT_CYCLE_OR_SEARCH",
+      "sourceClassification": "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION",
+      "action": "MATCH_ORIGINAL_WGA_IMAGE_WITH_ZAVENTEM_VS_WINDSOR_COMPOSITION",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "competingInstitutionalOriginals": [
+        {
+          "institution": "Sint-Martinuskerk, Zaventem, Belgium",
+          "source": "https://www.zaventem.be/van-dyck-in-de-sint-martinuskerk",
+          "medium": "oil on panel, 171×157.5 cm",
+          "date": "c.1618/1621",
+          "title": "Saint Martin Dividing his Cloak, Zaventem altarpiece"
+        },
+        {
+          "institution": "Royal Collection Trust, Windsor Castle",
+          "source": "https://www.rct.uk/collection/search",
+          "medium": "oil on canvas, 243.1×242.5 cm",
+          "date": "c.1620",
+          "title": "Saint Martin Dividing his Cloak, larger second version"
+        }
+      ],
+      "sourceIdentityNote": "Original WGA entry could depict one of at least two autograph versions. Preserve earlier title and do not choose Zaventem or Windsor based solely on artwork name."
     },
     {
       "editorialArtworkId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
@@ -2188,12 +2205,17 @@
       "recordedSourceUrl": "https://www.fcamberes.org/en/-the-martyrdom-of-saint-andrew",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "VERIFY_EXACT_OBJECT_IDENTITY",
-      "action": "VERIFY_OBJECT_NOT_CYCLE_OR_SEARCH",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://www.fcamberes.org/en/-the-martyrdom-of-saint-andrew",
+      "institutionalObjectId": "Fundación Carlos de Amberes high-altar painting",
+      "sourceInstitution": "Fundación Carlos de Amberes, Madrid",
+      "verifiedMedium": "oil painting, 306×216 cm",
+      "sourceIdentityNote": "1638–39 Rubens, historic original owned by Fundación since commission for high altar of Real Hospital de San Andrés; site is direct original custodian source, not generic painting by same name."
     }
   ],
-  "latestSourceWave": "Twelve earlier cycle-page links resolved to individual panels and Commons image filenames, with licence/master QA still pending. 2 sources remain ambiguous unrelated search links, three Antwerp Rosary collection links need unique painting media."
+  "latestSourceWave": "Last two uncertain direct links reviewed: Rubens Saint Andrew is exact Fundación painting; van Dyck Saint Martin has distinct Zaventem and Windsor autograph versions, so specific chosen image remains unresolved."
 }
