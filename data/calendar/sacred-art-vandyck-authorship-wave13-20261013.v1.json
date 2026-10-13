@@ -1,0 +1,280 @@
+{
+  "schema": "AO_SACRED_ART_VAN_DYCK_ATTRIBUTIONS_WAVE13_V1",
+  "asOf": "2026-10-13",
+  "scope": "6 authenticated distinct Van Dyck religious oils (including oil study), current institutional authorship, one conflict with prior Rubens-model attribution. Does not complete Van Dyck global painting oeuvre.",
+  "counts": {
+    "newObjectLeads": 6,
+    "priorMasterCount": 190,
+    "nextMasterCount": 196,
+    "downloadedJPEGs": 0,
+    "heldRoyalCollectionPrimaryPage": 1
+  },
+  "attributionReconciliations": [
+    {
+      "museum": "KMSKA",
+      "accession": "297",
+      "currentlyArtist": "Anthony van Dyck",
+      "previousArtist": "Peter Paul Rubens",
+      "type": "ALTARPIECE",
+      "source": "https://kmska.be/en/masterpiece/christ-on-the-cross-le-coup-de-lance-0",
+      "study": "https://kmska.be/en/le-coup-de-lance-by-rubens"
+    },
+    {
+      "museum": "National Gallery London loan V&A",
+      "accession": "L1121",
+      "currentlyArtist": "Peter Paul Rubens",
+      "dissentingOpinion": "KMSKA research explicitly attributes preparatory modello design to Van Dyck",
+      "type": "OIL_MODELLO",
+      "lead": "W02-021",
+      "source": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-the-coup-de-lance",
+      "status": "ATTRIBUTION_DISPUTED_INSTITUTIONAL"
+    },
+    {
+      "museum": "National Gallery of Art Washington",
+      "accession": "1952.5.17",
+      "currentArtist": "Jan Boeckhorst",
+      "type": "OIL_SKETCH",
+      "work": "Saint Martin Dividing His Cloak",
+      "source": "https://www.nga.gov/artworks/52251-saint-martin-dividing-his-cloak",
+      "status": "NOT_VAN_DYCK_ORIGINAL",
+      "evidence": "NGA identifies panel dating too late for van Dyck sketch and stylistic evidence for Boeckhorst. Earlier historic van Dyck label superseded."
+    }
+  ],
+  "sameSubjectDifferentPhysicalArt": [
+    {
+      "theme": "Saint Martin divides cloak",
+      "differentWorks": [
+        "Sint-Martinuskerk Zaventem 1621 Van Dyck original",
+        "Windsor Royal Collection RCIN 405878 Van Dyck original",
+        "NGA 52251 Boeckhorst oil sketch (not Van Dyck)"
+      ]
+    },
+    {
+      "theme": "Saint Augustine in Ecstasy",
+      "differentWorks": [
+        "KMSKA IB003 full-size altarpiece",
+        "KMSKA 5145 preliminary oil study"
+      ]
+    },
+    {
+      "theme": "Coup de Lance",
+      "differentWorks": [
+        "KMSKA 297 full-size altarpiece Van Dyck now",
+        "NG London L1121 V&A-owned oil modello still labeled Rubens"
+      ]
+    }
+  ],
+  "queue": [
+    {
+      "leadId": "W13-001",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Martin Dividing his Cloak (Zaventem original)",
+      "institution": "Sint-Martinuskerk, Zaventem, Belgium",
+      "accession": "in situ Saint-Martinuskerk",
+      "sourceUrl": "https://www.zaventem.be/sint-martinuskerk",
+      "sourceSpecificity": "OFFICIAL_COLLECTION_OBJECT",
+      "contextKeys": [
+        "saints.martin-of-tours",
+        "charity",
+        "church-history.martin"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Municipality confirms local altar painting c.1621 by Van Dyck. Not Royal Collection RCIN405878 and NOT NGA Jan Boeckhorst attributed sketch.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 13,
+      "identityNote": "ORIGINAL_UNIQUE_OBJECT_SEPARATE_FROM_SKETCH_COPY_AND_RELATIVES",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_OR_MUNICIPALITY",
+      "authorialAttribution": "INSTITUTIONAL_VAN_DYCK"
+    },
+    {
+      "leadId": "W13-002",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Martin Dividing his Cloak (Windsor original)",
+      "institution": "Royal Collection, Windsor Castle",
+      "accession": "RCIN 405878",
+      "sourceUrl": "https://www.rct.uk/collection/405878/st-martin-dividing-his-cloak",
+      "sourceSpecificity": "OFFICIAL_ROYAL_COLLECTION_ID_CORROBORATED_BY_TECHNICAL_SCHOLARSHIP",
+      "contextKeys": [
+        "saints.martin-of-tours",
+        "charity",
+        "church-history.martin"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Distinct larger oil on canvas around 1620, preserved at Windsor; royal collection identity corroborated by National Gallery technical bulletin and Royal Collection catalogue references. Royal Collection web detail inaccessible in this research environment; image permissions required.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 13,
+      "identityNote": "ORIGINAL_UNIQUE_OBJECT_SEPARATE_FROM_SKETCH_COPY_AND_RELATIVES",
+      "acquisitionStatus": "MUSEUM_OBJECT_PAGE_AUTHORITY_PENDING",
+      "verifiedSourceBasis": "ROYAL_COLLECTION_ACCESSION_AND_NATIONAL_GALLERY_TECHNICAL_BULLETIN",
+      "authorialAttribution": "INSTITUTIONAL_VAN_DYCK"
+    },
+    {
+      "leadId": "W13-003",
+      "artist": "Anthony van Dyck",
+      "title": "Christ on the Cross with Saint Catherine of Siena, Saint Dominic and an Angel",
+      "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+      "accession": "401",
+      "sourceUrl": "https://kmska.be/en/masterpiece/christ-on-the-cross-with-saint-catherine-of-siena-saint-dominic-and-an-angel",
+      "sourceSpecificity": "OFFICIAL_COLLECTION_OBJECT",
+      "contextKeys": [
+        "calendar.good-friday",
+        "saints.catherine-of-siena",
+        "saints.dominic",
+        "rosary.sorrowful"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1622–1627 original oil on canvas, 313.8×244.6cm. Mystical saint presence is devotional, not the historical crucifixion eyewitness list.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 13,
+      "identityNote": "ORIGINAL_UNIQUE_OBJECT_SEPARATE_FROM_SKETCH_COPY_AND_RELATIVES",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_OR_MUNICIPALITY",
+      "authorialAttribution": "INSTITUTIONAL_VAN_DYCK"
+    },
+    {
+      "leadId": "W13-004",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Augustine in Ecstasy (large altarpiece)",
+      "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+      "accession": "IB003",
+      "sourceUrl": "https://kmska.be/en/masterpiece/saint-augustine-in-ecstasy-1",
+      "sourceSpecificity": "OFFICIAL_COLLECTION_OBJECT",
+      "contextKeys": [
+        "saints.augustine-of-hippo",
+        "conversion",
+        "formation.church-fathers"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1628 oil on canvas 383.5×220.6 cm, original side altar commission for Augustinian Antwerp church. Separate physical object from oil study inv5145.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 13,
+      "identityNote": "ORIGINAL_UNIQUE_OBJECT_SEPARATE_FROM_SKETCH_COPY_AND_RELATIVES",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_OR_MUNICIPALITY",
+      "authorialAttribution": "INSTITUTIONAL_VAN_DYCK"
+    },
+    {
+      "leadId": "W13-005",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Augustine in Ecstasy (preparatory oil study)",
+      "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+      "accession": "5145",
+      "sourceUrl": "https://kmska.be/en/masterpiece/saint-augustine-in-ecstasy-0",
+      "sourceSpecificity": "OFFICIAL_COLLECTION_OBJECT",
+      "contextKeys": [
+        "saints.augustine-of-hippo",
+        "formation.art-history"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1628 original oil-on-panel study 44.5×27.5cm; separate from full-size altarpiece IB003. Preserve 'study' role and do not count as separate devotional iconographic episode.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 13,
+      "identityNote": "ORIGINAL_UNIQUE_OBJECT_SEPARATE_FROM_SKETCH_COPY_AND_RELATIVES",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_OR_MUNICIPALITY",
+      "authorialAttribution": "INSTITUTIONAL_VAN_DYCK"
+    },
+    {
+      "leadId": "W13-006",
+      "artist": "Anthony van Dyck",
+      "title": "Christ on the Cross, Le Coup de Lance (KMSKA altarpiece)",
+      "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+      "accession": "297",
+      "sourceUrl": "https://kmska.be/en/masterpiece/christ-on-the-cross-le-coup-de-lance-0",
+      "sourceSpecificity": "OFFICIAL_COLLECTION_OBJECT",
+      "contextKeys": [
+        "calendar.good-friday",
+        "stations.12",
+        "bible.john19.piercing"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "1620 oil on panel altarpiece 429.6×310cm, formerly Rubens, **currently KMSKA assigned Van Dyck**. The 2011 technical assessment identified Van Dyck design/execution for Rubens' workshop. Distinct from V&A/NG London L1121 oil-on-oak modello.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 13,
+      "identityNote": "ORIGINAL_UNIQUE_OBJECT_SEPARATE_FROM_SKETCH_COPY_AND_RELATIVES",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_OR_MUNICIPALITY",
+      "authorialAttribution": "KMSKA_VAN_DYCK_FORMERLY_RUBENS"
+    }
+  ],
+  "release": "No photography rights/ratings/crops/new pixels; KMSKA TIFF download does not itself confer professional reuse permission."
+}
