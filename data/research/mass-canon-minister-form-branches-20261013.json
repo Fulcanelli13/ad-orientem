@@ -16,7 +16,8 @@
     "The 1962 rubrics apply the thurifer's three incense swings to sung Mass with incensations.",
     "The deacon only uncovers/covers the chalice when needed.",
     "C0207 is an explicit response; the Low donor assigns MINISTER_RESPONSE, the Sung donor USER_RESPONSE, so do not universally identify this responder as a server.",
-    "Server bells C0174/C0181 and anticipatory C0161 remain distinct within the original 62-event witness."
+    "Server bells C0174/C0181 and anticipatory C0161 remain distinct within the original 62-event witness.",
+    "In Solemn Mass, minister handling of the chalice at C0175 and C0181 must not be attributed automatically to the celebrant; the deacon's participation is conditional on need."
   ],
   "branches": [
     {
@@ -30,6 +31,23 @@
       "action": "Approaches the celebrant's right, kneels on the upper altar step",
       "sourceSection": "VIII.8",
       "condition": "SOURCE_PRESCRIBED",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.009",
+      "cueId": "AO.SM.C0175",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "Chalice preparation",
+      "action": "Uncovers the chalice when required during the chalice-consecration sequence",
+      "sourceSection": "VIII.8",
+      "condition": "WHEN_REQUIRED",
       "sourceUrls": [
         "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
       ],
@@ -100,6 +118,23 @@
       "action": "Incenses the raised chalice three times",
       "sourceSection": "VIII.8",
       "condition": "INCENSE_BRANCH",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.010",
+      "cueId": "AO.SM.C0181",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "After chalice elevation",
+      "action": "Covers the chalice when required after the chalice elevation",
+      "sourceSection": "VIII.8",
+      "condition": "WHEN_REQUIRED",
       "sourceUrls": [
         "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
       ],
