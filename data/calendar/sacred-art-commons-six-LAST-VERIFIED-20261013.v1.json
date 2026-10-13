@@ -1,0 +1,63 @@
+{
+  "schema": "AO_SACRED_ART_COMMONS_6_ACTUAL_RUN_VERIFIED_RECEIPT_V1",
+  "timeUtc": "2026-10-13T16:45:11.474117+00:00",
+  "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38432749966",
+  "triggerCommit": "a50144b806f4d944e6902529f141baa1ebf4baa8",
+  "status": "ALL_SIX_SOURCES_HELD_NO_NEW_MASTER",
+  "requested": 6,
+  "sourceMastersVerified": 0,
+  "held": 6,
+  "results": [
+    {
+      "leadId": "W09-001",
+      "sourceCommonsFile": "Annunciation-Caravaggio.jpg",
+      "status": "SOURCE_OR_RIGHTS_HELD",
+      "productionApproved": false,
+      "humanRating": null,
+      "holdReason": "Source download error: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "leadId": "W15-001",
+      "sourceCommonsFile": "THe Defenders of the Eucharist - modello.jpg",
+      "status": "SOURCE_OR_RIGHTS_HELD",
+      "productionApproved": false,
+      "humanRating": null,
+      "holdReason": "Source download error: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "leadId": "W15-002",
+      "sourceCommonsFile": "Victory of Truth over Heresy - modello.jpg",
+      "status": "SOURCE_OR_RIGHTS_HELD",
+      "productionApproved": false,
+      "humanRating": null,
+      "holdReason": "Source download error: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "leadId": "W15-003",
+      "sourceCommonsFile": "Triumph-church-rubens-prado.jpg",
+      "status": "SOURCE_OR_RIGHTS_HELD",
+      "productionApproved": false,
+      "humanRating": null,
+      "holdReason": "Source download error: HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)"
+    },
+    {
+      "leadId": "W15-004",
+      "sourceCommonsFile": "Victory of the Eucharist over Paganism - modello.jpg",
+      "status": "SOURCE_OR_RIGHTS_HELD",
+      "productionApproved": false,
+      "humanRating": null,
+      "holdReason": "Source download error: HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)"
+    },
+    {
+      "leadId": "W14-011",
+      "sourceCommonsFile": "Peter Paul Rubens - The Triptych of St. Ildefonso - Google Art Project.jpg",
+      "status": "SOURCE_OR_RIGHTS_HELD",
+      "productionApproved": false,
+      "humanRating": null,
+      "holdReason": "Source download error: HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)"
+    }
+  ],
+  "note": "Files remain ONLY in temporary GitHub Actions ZIP until independently preserved; no production rights, aesthetic ratings or crops granted.",
+  "productionChanges": 0,
+  "commercialReleaseApproved": false
+}
