@@ -131,6 +131,25 @@ assert.ok(epistleCard.paragraphs.some(p=>
   /Thanks be to God/.test(p.secondary??"")
 ), "fixed Deo gratias follow-up disappeared behind Proper replacement");
 
+// The published Low donor records MINISTER_RESPONSE, not a generic
+// congregational voice, for the replies to Collect, Lesson, Gospel and
+// Postcommunion. Sung keeps its distinct USER_RESPONSE ownership.
+for(const [corpus,expectedRole] of [[low,"MINISTERS"],[sung,"RESPONDERS"]]){
+  for(const [cardId,cueId] of [
+    ["AO.CARD.004","AO.SM.C0074"],
+    ["AO.CARD.005","AO.SM.C0076"],
+    ["AO.CARD.007","AO.SM.C0087"],
+    ["AO.CARD.027","AO.SM.C0255"],
+  ]){
+    const card=buildReaderSectionCard({corpus,section:sections.sectionById(cardId),properSlots});
+    const paragraph=card.paragraphs.find(p=>p.id===cueId);
+    assert.ok(paragraph,corpus.form+" missing fixed Proper reply "+cueId);
+    assert.equal(paragraph.kind,"RESPONSE",corpus.form+" lost reply classification "+cueId);
+    assert.equal(paragraph.speakerRole,expectedRole,
+      corpus.form+" mislabels fixed Proper reply "+cueId);
+  }
+}
+
 const gospelCard=buildReaderSectionCard({
   corpus:sung,
   section:sections.sectionById("AO.CARD.007"),
