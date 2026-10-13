@@ -20,6 +20,9 @@ function normalizeParagraphSource(paragraph, fallbackKind="TEXT"){
     displayLanguage:paragraph.displayLanguage ?? null,
     speakerRole:paragraph.speakerRole ?? null,
     speakerEvidence:paragraph.speakerEvidence ?? null,
+    liturgicalGroup:paragraph.liturgicalGroup ?? null,
+    prayerRole:paragraph.prayerRole ?? null,
+    sourcePath:paragraph.sourcePath ?? null,
     sourceCueIds:Object.freeze([...(paragraph.sourceCueIds ?? (paragraph.id ? [paragraph.id] : []))].map(String)),
   });
 }
@@ -49,7 +52,7 @@ export function projectResolvedReaderText(resolvedText){
         primary:String(p.latin),secondary:null,
         alternate:p.vernacular == null ? null : String(p.vernacular),
         replaceOnToggle:Boolean(p.vernacular),
-        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,sourceCueIds:p.sourceCueIds,
+        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,liturgicalGroup:p.liturgicalGroup,prayerRole:p.prayerRole,sourcePath:p.sourcePath,sourceCueIds:p.sourceCueIds,
         displayLanguage:"LATIN",languageOwner:"SOURCE_SUNG_PRAYER",
       });
     }
@@ -60,7 +63,7 @@ export function projectResolvedReaderText(resolvedText){
         primary:String(p.vernacular),secondary:null,
         alternate:p.latin == null ? null : String(p.latin),
         replaceOnToggle:Boolean(p.latin),
-        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,sourceCueIds:p.sourceCueIds,
+        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,liturgicalGroup:p.liturgicalGroup,prayerRole:p.prayerRole,sourcePath:p.sourcePath,sourceCueIds:p.sourceCueIds,
         displayLanguage:"VERNACULAR",languageOwner:"SOURCE_PRIVATE_OR_PROPER",
       });
     }
@@ -73,7 +76,7 @@ export function projectResolvedReaderText(resolvedText){
         secondary:p.vernacular == null ? null : String(p.vernacular),
         alternate:null,
         replaceOnToggle:false,
-        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,
+        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,liturgicalGroup:p.liturgicalGroup,prayerRole:p.prayerRole,sourcePath:p.sourcePath,
         sourceCueIds:p.sourceCueIds,
       });
     }
@@ -85,7 +88,7 @@ export function projectResolvedReaderText(resolvedText){
       secondary:null,
       alternate:p.latin == null ? null : String(p.latin),
       replaceOnToggle:Boolean(p.latin),
-      active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,
+      active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,liturgicalGroup:p.liturgicalGroup,prayerRole:p.prayerRole,sourcePath:p.sourcePath,
       sourceCueIds:p.sourceCueIds,
     });
   }));
