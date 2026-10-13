@@ -1,0 +1,64 @@
+name: Sacred Art — favourite artist Met/NGA open-access masters
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "data/calendar/sacred-art-favourite-artist-open-access-8-20261013.v1.json"
+      - "data/calendar/sacred-art-source-identity-master-153-queue-20261013.v2.json"
+      - "tools/calendar/acquire-sacred-art-favourite-artists-open-access.py"
+      - ".github/workflows/sacred-art-favourite-artist-open-access.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-favourite-artist-cc0
+  cancel-in-progress: true
+jobs:
+  acquire-research-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout fixed research branch
+        uses: actions/checkout@v4
+      - name: Use Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image metadata verifier
+        run: python -m pip install Pillow
+      - name: Retrieve public-domain museum originals with strict source validation
+        run: python tools/calendar/acquire-sacred-art-favourite-artists-open-access.py
+      - name: Check SHA256, no duplicate originals, and no release promotions
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          root=Path("artifacts/sacred-art-favourite-artist-open-access")
+          report=json.loads((root/"acquisition.json").read_text(encoding="utf8"))
+          assert report["requested"]==8
+          assert report["productionChanges"]==0
+          completed=0
+          for item in report["results"]:
+              assert item["userRating"] is None
+              assert item["productionApproved"] is False
+              assert item["artCuratorApproved"] is False
+              assert item["mobileHeroCropApproved"] is False
+              if item["status"]=="ORIGINAL_ACQUIRED_RESEARCH_ONLY":
+                  original=root/item["filename"]
+                  assert original.exists() and original.stat().st_size==item["bytes"]
+                  assert hashlib.sha256(original.read_bytes()).hexdigest()==item["originalSha256"]
+                  assert max(item["width"],item["height"])>=2000
+                  assert item["imageRights"] in ("MET_OPEN_ACCESS_CC0","NGA_IMAGE_OPENACCESS_1")
+                  completed+=1
+              else:
+                  print("HELD",item["artworkId"],item.get("holdReason"))
+          print("OPEN_ACCESS_RESEARCH_ORIGINALS",completed,"of",report["requested"])
+          PY
+      - name: Preserve originals and provenance; do not promote to production
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-favourite-artist-met-nga-originals
+          path: artifacts/sacred-art-favourite-artist-open-access/
+          retention-days: 30
+          if-no-files-found: warn
