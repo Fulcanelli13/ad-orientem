@@ -64,7 +64,11 @@ assert.equal(runtime.getReaderState().posture.label,"STAND");
 runtime.next();
 assert.equal(runtime.getCurrentSectionId(),"AO.EMBER.02");
 assert.equal(runtime.getReaderState().cardTitle,"Lesson · 2");
-assert.equal(runtime.getReaderState().posture.label,"SIT");
+assert.equal(runtime.getReaderModel().cards.find(card=>card.sectionId==="AO.EMBER.02").posture,
+  "FOLLOW_CONGREGATION_OBSERVATIONAL",
+  "Ember lesson may not impose a universal faithful SIT");
+assert.equal(runtime.getReaderState().posture.label,"STAND",
+  "Without an observed posture change the preceding posture must persist");
 runtime.next();
 assert.equal(runtime.getCurrentSectionId(),"AO.EMBER.03");
 assert.equal(runtime.getReaderState().cardTitle,"Gradual");
