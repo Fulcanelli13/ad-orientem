@@ -12,19 +12,22 @@
     "Acquired evidence and still-unacquired official art options are separate, never add as same source image",
     "Unapproved older option IDs may be stale and need exact artwork/source revalidation; not equated with sourced visual leads",
     "No new images downloaded; no user art approval; no production release",
-    "Only same artwork image retained by same ID/SHA; cross-module Biblical event IDs from independent pipeline not invented"
+    "Only same artwork image retained by same ID/SHA; cross-module Biblical event IDs from independent pipeline not invented",
+    "2026-10-13 wave: new museum-linked visual leads for 13 formerly zero-lead subjects, including contextual-only and related-episode evidence. No exact-scene completion inferred merely from presence of a link."
   ],
   "summary": {
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 27,
+    "additionalResearchLeadSubjects": 40,
     "withPreviousUnapprovedOptionOnly": 14,
-    "withNoRecordedSourceOrOlderOption": 37,
+    "withNoRecordedSourceOrOlderOption": 24,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
-    "chosen101Unchanged": true
+    "chosen101Unchanged": true,
+    "newInstitutionalSourceWaveSubjectCount": 13,
+    "newInstitutionalSourceWaveCandidateCount": 15
   },
   "subjects": [
     {
@@ -1055,14 +1058,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Genesis 9:8–17 · Rainbow covenant image required only if art would add value.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-noah-appearance",
+          "sourceUrl": "https://collections.thejewishmuseum.org/collection/26673-god-appears-to-noah-apparition-de-dieu-a-noe",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "God Appears to Noah",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "CONTEXTUAL",
+          "matchNotes": "Noah divine appearance is securely identified; painting title alone does not certify depiction of Genesis 9 rainbow/covenant. Do not mark complete."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-PA01",
@@ -1070,14 +1089,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Genesis 12:1–9 · Map/chronology may suffice.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-caravan-abram",
+          "sourceUrl": "https://collections.thejewishmuseum.org/collection/26684-the-caravan-of-abram-la-caravane-d-abram",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "The Caravan of Abram",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "CONTEXTUAL",
+          "matchNotes": "Shows Abraham's migration; does not by itself depict the divine calling or audible command of Genesis 12."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-PA04",
@@ -1085,14 +1120,44 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Genesis 15:1–21",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-promises-abram",
+          "sourceUrl": "https://collections.thejewishmuseum.org/collection/26688-god-s-promises-to-abram-promesses-de-dieu-a-abram",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "God's Promises to Abram",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "RELATED_EPISODE",
+          "matchNotes": "Divine promises; exact covenant rite and Genesis chapter must be checked before exact-event tagging."
+        },
+        {
+          "artworkId": "ART-research-20261013-promises-abraham",
+          "sourceUrl": "https://collections.thejewishmuseum.org/collection/26695-god-renews-his-promises-to-abraham-nouvelles-promesses-de-dieu-a-abraham",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "God Renews His Promises to Abraham",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "RELATED_EPISODE",
+          "matchNotes": "Later promise renewal, not necessarily the Genesis 15 covenant ratification. Keep distinct from original covenant."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-PA05",
@@ -1210,14 +1275,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Exodus 12:1–28",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-jews-passover",
+          "sourceUrl": "https://collections.thejewishmuseum.org/collection/26355-the-jews-passover-la-paque-des-juifs",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "The Jews' Passover",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Museum catalogues Passover subject; assess whether it represents first Exodus 12 Passover rather than a general historical observance."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-EX05",
@@ -1303,14 +1384,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Exodus 19–20",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-moses-commandments",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tissot_Moses_and_the_Ten_Commandments.jpg",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "Moses and the Ten Commandments",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Museum artist inventory confirms exact title; Commons item references Jewish Museum object 26382. Institution object endpoint currently inaccessible; inspect full scene and museum metadata before locking."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-EX10",
@@ -1360,14 +1457,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Deuteronomy 34:1–6",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-moses-promised-land",
+          "sourceUrl": "https://collections.thejewishmuseum.org/collection/26400-moses-sees-the-promised-land-from-afar-moise-voit-de-loin-la-terre-promise",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "Moses Sees the Promised Land From Afar",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Exact narrative of Moses viewing the promised land; verify Mount Nebo setting and Deuteronomy 34 context during review."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-EX14",
@@ -1375,14 +1488,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Joshua 3:1–17",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-ark-jordan",
+          "sourceUrl": "https://artsandculture.google.com/asset/the-ark-passes-over-the-jordan-james-jacques-joseph-tissot/-gF5GmG4ikvtNQ?hl=en",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "The Ark Passes Over the Jordan",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Collection-supplied object X1952-214 illustrates Joshua 3 crossing with Ark; does not require artwork for every substage."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-EX15",
@@ -1390,14 +1519,44 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Joshua 6:1–27",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-tissot-jericho",
+          "sourceUrl": "https://collections.thejewishmuseum.org/collection/26412-the-taking-of-jericho-la-prise-de-jericho",
+          "artist": "James Jacques Joseph Tissot and followers",
+          "title": "The Taking of Jericho",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Museum catalogues Jericho conquest; original attributed to Tissot and followers, not Tissot alone."
+        },
+        {
+          "artworkId": "ART-research-20261013-murer-jericho",
+          "sourceUrl": "https://www.nga.gov/artworks/118889-joshua-and-israelites-walls-jericho",
+          "artist": "Christoph Murer",
+          "title": "Joshua and the Israelites before the Walls of Jericho",
+          "medium": "pen/ink/gray wash drawing",
+          "sourceInstitution": "National Gallery of Art, Washington",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "RELATED_EPISODE",
+          "matchNotes": "Procession before the walls, rather than actual collapse; valid narrative context, not interchangeable with Jericho fall."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-IS01",
@@ -1405,14 +1564,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "1 Samuel 1:9–20",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-hannah-priest",
+          "sourceUrl": "https://collections.thejewishmuseum.org/artist/james-jacques-joseph-tissot-b-1836-nantes-france-d-1902-chenecey-buillon-france?page=3",
+          "artist": "James Jacques Joseph Tissot and followers",
+          "title": "The High Priest and Hannah",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "RELATED_EPISODE",
+          "matchNotes": "Hannah's prayer and Eli precede Samuel's birth; museum artist listing documents identity, but direct object page and attribution should be retrieved."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-IS02",
@@ -1420,14 +1595,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "1 Samuel 10:1–8",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-dunz-saul",
+          "sourceUrl": "https://sammlung.staedelmuseum.de/en/work/coronation-of-saul-by-samuel",
+          "artist": "Hans Jakob Dünz",
+          "title": "Coronation of Saul by Samuel",
+          "medium": "pen/brush/watercolour drawing",
+          "sourceInstitution": "Städel Museum, Frankfurt",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Städel inventory 6774 Z, 1598; depicts Samuel with Saul, per museum scripture indexing."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-IS04",
@@ -1492,14 +1683,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "1 Kings 18:19–39 · Not same as Elijah at Horeb.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-marienhof-elijah",
+          "sourceUrl": "https://artuk.org/discover/artworks/the-sacrifice-of-elijah-44237",
+          "artist": "Aert Jansz. Marienhof",
+          "title": "The Sacrifice of Elijah",
+          "medium": "oil on canvas",
+          "sourceInstitution": "The Bowes Museum / Art UK",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Bowes Museum B.M.627, 1651; Art UK explicitly identifies the contest on Mount Carmel; reproduction reuse needs permission."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-IS09",
@@ -1651,14 +1858,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Ezekiel 1:1–28",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-raphael-ezekiel",
+          "sourceUrl": "https://www.uffizi.it/en/artworks/ezekiel-raphael",
+          "artist": "Raphael",
+          "title": "Ezekiel's Vision",
+          "medium": "oil on panel",
+          "sourceInstitution": "Uffizi Galleries / Palazzo Pitti",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Uffizi identifies Palazzo Pitti oil panel 41x30cm, 1517-1518; portrait-orientation vision, not all passages of Ezekiel."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-XL10",
@@ -2364,14 +2587,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Revelation 1:9–20 · Symbolic theology, not a map of future physical geography.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-velazquez-john-patmos",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/diego-velazquez-saint-john-the-evangelist-on-the-island-of-patmos",
+          "artist": "Diego Velázquez",
+          "title": "Saint John the Evangelist on the Island of Patmos",
+          "medium": "oil painting",
+          "sourceInstitution": "National Gallery, London",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "SPECIFIC_VISION",
+          "matchNotes": "NG6264, 1618-1619; depicts Revelation 12 Woman of Apocalypse and dragon, not the entire Revelation cycle."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-V02",
@@ -2405,5 +2644,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "Selective OT originals verified at Louvre, NGV and National Gallery London; Poussin Red Sea subevent verified; no download or selection."
+  "recentSourceWave": "2026-10-13 museum-linked research wave: 13 previously zero-lead subjects / 15 unacquired candidates, including partial scene matches; no image acquired, artist acceptance, user choice or publication."
 }
