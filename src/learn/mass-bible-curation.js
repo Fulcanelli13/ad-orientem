@@ -73,7 +73,7 @@ export function validateCuratedMassBibleStudy(selection,primary,inline){
 export function renderCuratedMassBibleStudy(selection,primary,inline,{language="en",category="all",stage=""}={}){
  const lang=language==="fr"?"fr":"en";
  if(!validateCuratedMassBibleStudy(selection,primary,inline))
-  return '<p class="aoMFError">'+esc(T(lang==="fr"?"Impossible de vérifier la sélection biblique.":"Curated biblical study is unavailable; source verification failed.",lang==="fr"?"Impossible de vérifier la sélection biblique.":"Curated biblical study is unavailable; source verification failed.",lang))+'</p>';
+  return '<p class="aoMFError">'+esc(T("Impossible de vérifier la sélection biblique.","Curated biblical study is unavailable; source verification failed.",lang))+'</p>';
  const full=new Map(primary.records.map(x=>[x.id,x])),short=new Map(inline.inlineNotes.map(x=>[x.id,x]));
  const decisions=new Map(selection.records.map(x=>[x.id,x]));
  const categories=[["all","All connections","Tous les liens"],["text","Scriptural words","Paroles de l’Écriture"],
@@ -98,7 +98,7 @@ export function renderCuratedMassBibleStudy(selection,primary,inline,{language="
    const raw=lang==="fr"?(main?.french||note?.fr):(main?.english||note?.en);
    const reason=decisions.get(id);
    return '<article class="aoMBConnection'+(note?' aoMBInline':'')+'" data-ao-mass-bible-row="'+esc(id)+'" data-evidence-type="'+esc(cls)+'">'+
-    '<div class="aoMBEvidence">'+esc(T(note?"Complément":"Lien biblique","Biblical context":"Biblical study",lang))+'</div>'+
+    '<div class="aoMBEvidence">'+esc(T(note?"Complément":"Étude biblique",note?"Supporting note":"Biblical study",lang))+'</div>'+
     '<h3>'+esc(reason?.moment||id)+'</h3>'+
     '<p>'+safeMassBibleLinkedText(raw)+'</p>'+
     (main?'<details><summary>'+esc(T("Lien, conditions et sources","Sources and liturgical conditions",lang))+'</summary>'+
