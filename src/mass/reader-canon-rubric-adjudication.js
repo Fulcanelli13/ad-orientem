@@ -6,6 +6,7 @@ import {
   validateCanonRubricReview,createCanonRubricReviewController,
 } from "./reader-canon-rubric-review.js";
 import {createCanonMinisterFormReviewController} from "./reader-canon-minister-branches.js";
+import {resolveCanonLatinWordAnchors} from "./reader-canon-latin-anchors.js";
 
 const EXPECTED_TYPES=Object.freeze({
   SOURCE_LATIN_WORDS:50,
@@ -120,12 +121,21 @@ export function createCanonRubricAdjudicationController({
     const ministry=ministerController.project(cueId,options);
     const augment=action=>{
       const fr=byFrench.get(action.id),tr=byTrigger.get(action.id);
+      const anchor=resolveCanonLatinWordAnchors({
+        sourceLatin:tr.sourceLatin,anchorKind:tr.sourceAnchorType,
+        anchorLatin:tr.verifiedSourceWordAnchor,
+      });
+      if(tr.sourceAnchorType==="SOURCE_LATIN_WORDS"&&anchor.status!=="WORD_MATCH_EXACT")
+        throw new Error(action.id+": cannot place a French rubric at an unverified Latin word span");
+      if(tr.sourceAnchorType!=="SOURCE_LATIN_WORDS"&&anchor.status!=="NON_TEXT_SOURCE_EVENT")
+        throw new Error(action.id+": event-only rubric cannot borrow a word span");
       return Object.freeze({
         ...action,
         frenchDraft:fr.revisedFrenchRubric,
         priorFrenchDraft:fr.draftFrenchOriginal,
         anchorKind:tr.sourceAnchorType,
         checkedLatinWords:tr.verifiedSourceWordAnchor,
+        exactLatinSpans:anchor.spans,anchorResolution:anchor.status,
         stages:Object.freeze(tr.stageSequence.map(s=>Object.freeze({...s}))),
         editorialFlags:Object.freeze([...fr.editorialFlags]),
         sourceRitusLocator:tr.rubricSource,
