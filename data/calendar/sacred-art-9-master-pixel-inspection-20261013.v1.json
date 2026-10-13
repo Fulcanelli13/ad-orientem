@@ -5,14 +5,16 @@
   "branch": "platform/885-sacred-art-candidates",
   "reference": "data/calendar/sacred-art-candidates.v1.json",
   "method": "Downloaded archived ZIPs using GitHub connector, extracted exact original JPEGs locally, sha256sum independently matched all nine to canonical original hashes, human visual examination of original-image contact sheets and simulated 9:16 centre covers.",
-  "galleryInfo": "Single offline HTML image comparison with embedded scaled previews delivered in current conversation only; not uploaded to repository.",
+  "galleryInfo": "Single offline HTML image comparison with embedded scaled previews delivered in current conversation only; not uploaded to repository. The previous 'Priority' labels based on source and phone legibility are superseded by beauty-first gate. User-rejected Velázquez candidate not to be ranked primary.",
   "summary": {
     "hashVerifiedNineOfNine": 9,
-    "primary": 5,
-    "secondary": 3,
+    "primary": 0,
+    "secondary": 0,
     "conditionHold": 1,
     "humanApprovals": 0,
-    "releaseApprovals": 0
+    "releaseApprovals": 0,
+    "originalPrimaryResearchRatings": 5,
+    "allPreviouslyRatedImagesRequireBeautyFirstReview": 9
   },
   "entries": [
     {
@@ -30,14 +32,17 @@
         "height": 4000
       },
       "portraitCoverWidthRetainedPercent": 70,
-      "rank": "PRIMARY",
+      "rank": "EXACT_MASTER_SOURCE_INSPECTED_ARTISTIC_JUDGMENT_PENDING",
       "observation": "Maratti captures flight across water, Mary, Child, Joseph and angels visible. The whole devotional narrative reads at phone size.",
       "warning": "Crossing river stage of Flight, not Saint Christopher.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "PRIMARY",
+      "aestheticGate": "ARTISTIC_BENCHMARK_COMPARISON_REQUIRED",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "artworkId": "met-435755",
@@ -54,14 +59,17 @@
         "height": 3722
       },
       "portraitCoverWidthRetainedPercent": 72.7,
-      "rank": "PRIMARY",
+      "rank": "EXACT_MASTER_SOURCE_INSPECTED_ARTISTIC_JUDGMENT_PENDING",
       "observation": "Bourdon baptism gesture is clear; oval painted surface and gray corner spandrels are in the original image.",
       "warning": "Maintain oval full painted surface.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "PRIMARY",
+      "aestheticGate": "ARTISTIC_BENCHMARK_COMPARISON_REQUIRED",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "artworkId": "nga-96688",
@@ -78,14 +86,17 @@
         "height": 2395
       },
       "portraitCoverWidthRetainedPercent": 32.9,
-      "rank": "PRIMARY_LANDSCAPE_ONLY",
+      "rank": "EXACT_MASTER_SOURCE_INSPECTED_ARTISTIC_JUDGMENT_PENDING",
       "observation": "Bassano Luke 5 wide composition has Jesus extreme left, fishermen right. Portrait cover cuts out essential figures.",
       "warning": "Never substitute post-Resurrection John 21 catch.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "PRIMARY_LANDSCAPE_ONLY",
+      "aestheticGate": "STRONG_NARRATIVE_ILLUSTRATION_NOT_FLAGSHIP",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "artworkId": "met-702752",
@@ -102,14 +113,17 @@
         "height": 4000
       },
       "portraitCoverWidthRetainedPercent": 69,
-      "rank": "PRIMARY",
+      "rank": "EXACT_MASTER_SOURCE_INSPECTED_ARTISTIC_JUDGMENT_PENDING",
       "observation": "Luti polished oil-on-copper well encounter, both protagonists and jar legible; dark outer border on original.",
       "warning": "Examine margins before cropping.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "PRIMARY",
+      "aestheticGate": "ARTISTIC_BENCHMARK_COMPARISON_REQUIRED",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "artworkId": "met-437871",
@@ -126,14 +140,17 @@
         "height": 3303
       },
       "portraitCoverWidthRetainedPercent": 52.5,
-      "rank": "PRIMARY_FULL_CONTAIN",
+      "rank": "PRIOR_REJECTED_ART_HOLD",
       "observation": "Velázquez supper recognition strongly legible when kept whole; portrait crop cuts Christ at left and other disciple at right.",
       "warning": "Supper, not walking road.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "PRIMARY_FULL_CONTAIN",
+      "aestheticGate": "PRIOR_USER_REJECTION_HOLD",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "artworkId": "cma-112626",
@@ -150,14 +167,17 @@
         "height": 2596
       },
       "portraitCoverWidthRetainedPercent": 42.9,
-      "rank": "SECONDARY",
+      "rank": "EXACT_MASTER_SOURCE_INSPECTED_ARTISTIC_JUDGMENT_PENDING",
       "observation": "Piazzetta dark painterly supper alternative, but phone crop loses actors and readability weaker than Velázquez.",
       "warning": "Same event, not a separate story.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "SECONDARY",
+      "aestheticGate": "NO_AUTOMATIC_MASTERPIECE_PROMOTION",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "artworkId": "cma-143138",
@@ -174,14 +194,17 @@
         "height": 3400
       },
       "portraitCoverWidthRetainedPercent": 56.7,
-      "rank": "SECONDARY",
+      "rank": "EXACT_MASTER_SOURCE_INSPECTED_ARTISTIC_JUDGMENT_PENDING",
       "observation": "Guercino circular Mary, Child, Joseph and angel image: beautiful supporting episode; portrait crop removes Joseph/angel.",
       "warning": "Rest on the Flight, not departure itself.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "SECONDARY",
+      "aestheticGate": "NO_AUTOMATIC_MASTERPIECE_PROMOTION",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "artworkId": "met-436801",
@@ -198,14 +221,17 @@
         "height": 3722
       },
       "portraitCoverWidthRetainedPercent": 73.4,
-      "rank": "SECONDARY",
+      "rank": "EXACT_MASTER_SOURCE_INSPECTED_ARTISTIC_JUDGMENT_PENDING",
       "observation": "Juan de Flandes precise Cana scene, water jars foreground, but numerous small actors and architectural dominance.",
       "warning": "Keep jars and group in frame.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "SECONDARY",
+      "aestheticGate": "NO_AUTOMATIC_MASTERPIECE_PROMOTION",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "artworkId": "nga-50726",
@@ -222,14 +248,17 @@
         "height": 4096
       },
       "portraitCoverWidthRetainedPercent": 74.6,
-      "rank": "CONDITION_HOLD",
+      "rank": "EXACT_MASTER_SOURCE_INSPECTED_ARTISTIC_JUDGMENT_PENDING",
       "observation": "Juan de Flandes exact temptation shows Christ and devil disguised as monk; extensive long craquelure visible in real master.",
       "warning": "Do not interpret devil disguised as friar as a saint.",
       "actuallyViewedFullMaster": true,
       "actuallyViewedSimulatedPhoneCrop": true,
       "approvedByUser": false,
       "approvedForPhoneCover": false,
-      "releasedToProduction": false
+      "releasedToProduction": false,
+      "legacyResearchRank": "CONDITION_HOLD",
+      "aestheticGate": "NO_AUTOMATIC_MASTERPIECE_PROMOTION",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     }
   ]
 }
