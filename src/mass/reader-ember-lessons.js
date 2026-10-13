@@ -68,13 +68,28 @@ function resolveNodeParagraphs(node,m){
 }
 
 function exactFormulaStates(paragraphs){
-  const latin=paragraphs.map(p=>String(p.alternate??p.primary??"")).join("\n");
+  // Flectamus / Levate occur at *different words*. Never show both as an
+  // undifferentiated posture for the entire prayer paragraph. These are
+  // ceremony-formula anchors, not universal instructions for every pew.
   const states=[];
-  if(/Flect[aá]mus\s+g[eé]nua/i.test(latin)){
-    states.push(freeze({formula:"FLECTAMUS_GENUA",posture:"KNEEL",action:"SILENT_PRAYER",sourceRecordId:"LECT-INS-020"}));
-  }
-  if(/\bLev[aá]te\b/i.test(latin)){
-    states.push(freeze({formula:"LEVATE",posture:"STAND",action:"RISE",sourceRecordId:"LECT-INS-030"}));
+  const triggers=/Flect[aá]mus\s+g[eé]nua|\bLev[aá]te\b/gi;
+  for(const paragraph of paragraphs){
+    const latin=String(paragraph.alternate??paragraph.primary??"");
+    for(const match of latin.matchAll(triggers)){
+      const kneel=/^Flect/i.test(match[0]);
+      states.push(freeze({
+        formula:kneel?"FLECTAMUS_GENUA":"LEVATE",
+        posture:kneel?"KNEEL":"STAND",
+        action:kneel?"SILENT_PRAYER":"RISE",
+        sourceRecordId:kneel?"LECT-INS-020":"LECT-INS-030",
+        paragraphId:String(paragraph.id),
+        latinStart:match.index,
+        latinEnd:match.index+match[0].length,
+        latinTrigger:match[0],
+        visibility:"ONLY_WHEN_SOURCE_FORMULA_IS_ACTIVE",
+        faithfulAuthority:"COMMUNITY_PROFILE_OR_OBSERVATIONAL_NOT_UNIVERSAL_PEW_LAW",
+      }));
+    }
   }
   return freeze(states);
 }
@@ -93,7 +108,10 @@ function nodeTitle(node,index){
 }
 
 function nodePosture(node){
-  return String(node.type??"").toUpperCase()==="LESSON" ? "SIT" : "STAND_OR_SOURCE_FORMULA";
+  // Reading type is not proof that the faithful are currently seated.
+  // The left rail may display the posture only from the selected community
+  // profile or an observed action, independently of the priest's rubric.
+  return "FOLLOW_CONGREGATION_OBSERVATIONAL";
 }
 
 export function buildEmberInsertionCards(resolvedMass){
