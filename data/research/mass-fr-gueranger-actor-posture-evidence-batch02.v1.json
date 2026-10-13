@@ -1,0 +1,590 @@
+{
+  "schema": "ao-original-fr-gueranger-actor-evidence-batch02-v1",
+  "version": "2026-10-13",
+  "status": "HISTORICAL_RESEARCH_EVIDENCE_ONLY",
+  "source": {
+    "title": "Guéranger Explication des prières et des cérémonies de la Messe",
+    "language": "fr",
+    "originalEdition": 1885,
+    "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+    "formScope": "Historical Roman liturgy; not 1962 normative"
+  },
+  "items": [
+    {
+      "id": "FRP01",
+      "cueId": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "dimension": "REVERENCE",
+      "massMoment": "FOOT_OF_ALTAR",
+      "historicalClaim": "bow_or_genuflect_depending_tabernacle",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          79,
+          82
+        ]
+      },
+      "authorityStatus": "1885_PRIEST_CEREMONIAL_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP02",
+      "cueId": "AO.SM.C0017",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "FOOT_OF_ALTAR",
+      "historicalClaim": "strikes_breast_three_times_at_mea_culpa",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          98,
+          101
+        ]
+      },
+      "authorityStatus": "1885_PRIEST_CEREMONIAL_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP03",
+      "cueId": "AO.SM.C0072",
+      "actor": "FAITHFUL",
+      "dimension": "POSTURE",
+      "massMoment": "COLLECT",
+      "historicalClaim": "monastic_choir_bows_profoundly",
+      "condition": "MONASTIC_CHAPTER_ONLY",
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          159,
+          162
+        ]
+      },
+      "authorityStatus": "MONASTIC_PRACTICE_NOT_UNIVERSAL_PEWS",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP04",
+      "cueId": "AO.SM.C0079",
+      "actor": "DEACON",
+      "dimension": "POSTURE",
+      "massMoment": "SOLEMN_GOSPEL_PREPARATION",
+      "historicalClaim": "kneels_at_high_altar_step_for_munda_cor_meum",
+      "condition": "SOLEMN_ACTOR_ONLY",
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          194,
+          197
+        ]
+      },
+      "authorityStatus": "SOLEMN_HISTORICAL_NOT_PRIEST_RAIL",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP05",
+      "cueId": "AO.SM.C0084",
+      "actor": "DEACON",
+      "dimension": "GESTURE",
+      "massMoment": "SOLEMN_GOSPEL",
+      "historicalClaim": "crosses_book_forehead_lips_breast",
+      "condition": "SOLEMN_ACTOR_ONLY",
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          197,
+          201
+        ]
+      },
+      "authorityStatus": "SOLEMN_HISTORICAL_PRIEST_LOW_DIFFERS",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP06",
+      "cueId": "AO.SM.C0121",
+      "actor": "PRIEST",
+      "dimension": "MOVEMENT",
+      "massMoment": "OFFERTORY_INCENSATION",
+      "historicalClaim": "incenses_cross_relics_altar_with_routes",
+      "condition": "INCENSE_ENABLED",
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          345,
+          349
+        ]
+      },
+      "authorityStatus": "HISTORICAL_ROUTE_NEEDS_1962_FORM_CHECK",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP07",
+      "cueId": "AO.SM.C0124",
+      "actor": "FAITHFUL",
+      "dimension": "POSTURE",
+      "massMoment": "PEOPLE_INCENSATION",
+      "historicalClaim": "stand_to_receive_incense",
+      "condition": "INCENSE_ENABLED&&PEOPLE_INCENSED",
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          348,
+          350
+        ]
+      },
+      "authorityStatus": "EXPLICIT_FRENCH_HISTORICAL_CUSTOM_NOT_1962_UNIVERSAL",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP08",
+      "cueId": "AO.SM.C0139",
+      "actor": "FAITHFUL",
+      "dimension": "POSTURE",
+      "massMoment": "SURSUM_CORDA",
+      "historicalClaim": "avoid_remaining_seated_if_possible",
+      "condition": "PREFACE_DIALOGUE",
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          391,
+          395
+        ]
+      },
+      "authorityStatus": "EXPLICIT_1885_DEVOTIONAL_EXHORTATION_NOT_ABSOLUTE_NORM",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP09",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "HANC_IGITUR",
+      "historicalClaim": "hands_extended_over_offerings",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          496,
+          500
+        ]
+      },
+      "authorityStatus": "1885_PRIEST_CEREMONIAL_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP10",
+      "cueId": "AO.SM.C0173",
+      "actor": "PRIEST",
+      "dimension": "POSTURE_VOICE",
+      "massMoment": "HOST_CONSECRATION",
+      "historicalClaim": "holds_host_thumb_forefinger_says_words_softly_distinctly",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          518,
+          520
+        ]
+      },
+      "authorityStatus": "1885_PRIEST_CEREMONIAL_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP11",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "dimension": "SEQUENCE",
+      "massMoment": "HOST_ELEVATION",
+      "historicalClaim": "genuflect_immediately_raise_show_replace_genuflect",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          519,
+          522
+        ]
+      },
+      "authorityStatus": "1885_PRIEST_SEQUENCE_REQUIRES_1962_RITUS_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP12",
+      "cueId": "AO.SM.C0184",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "UNDE_MEMORES",
+      "historicalClaim": "three_crosses_both_species_after_consecration",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          570,
+          573
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_DETAILS_PRIEST_ACTOR",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP13",
+      "cueId": "AO.SM.C0187",
+      "actor": "PRIEST",
+      "dimension": "POSTURE",
+      "massMoment": "SUPPLICES",
+      "historicalClaim": "profound_bow_hands_joined_on_altar",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          587,
+          590
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_POSTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP14",
+      "cueId": "AO.SM.C0188",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "SUPPLICES_ALTAR_KISS",
+      "historicalClaim": "kisses_altar_at_ex_hac_altaris_participatione",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          597,
+          598
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_GESTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP15",
+      "cueId": "AO.SM.C0189",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "SUPPLICES_CORPUS_SANGUINEM",
+      "historicalClaim": "crosses_host_chalice_then_signs_self",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          597,
+          600
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_GESTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP16",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "dimension": "VOICE_GESTURE",
+      "massMoment": "NOBIS_QUOQUE",
+      "historicalClaim": "voice_audible_strikes_breast",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          621,
+          623
+        ]
+      },
+      "authorityStatus": "1885_PRIEST_CEREMONIAL_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP17",
+      "cueId": "AO.SM.C0196",
+      "actor": "FAITHFUL",
+      "dimension": "GESTURE",
+      "massMoment": "NOBIS_QUOQUE",
+      "historicalClaim": "guéranger_invites_faithful_to_strike_breast",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          621,
+          623
+        ]
+      },
+      "authorityStatus": "HISTORICAL_DEVOTIONAL_CUSTOM_NOT_UNIVERSAL_PRESCRIPTION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP18",
+      "cueId": "AO.SM.C0202",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "PER_IPSUM",
+      "historicalClaim": "three_crosses_over_chalice_then_two_between_chalice_and_breast",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          647,
+          650
+        ]
+      },
+      "authorityStatus": "1885_PRIEST_CEREMONIAL_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP19",
+      "cueId": "AO.SM.C0204",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "PER_IPSUM_MINOR_ELEVATION",
+      "historicalClaim": "slightly_lifts_host_and_chalice",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          647,
+          650
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_GESTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP20",
+      "cueId": "AO.SM.C0212",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "LIBERA_NOS",
+      "historicalClaim": "paten_cross_at_et_omnibus_sanctis_then_kiss",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          696,
+          699
+        ]
+      },
+      "authorityStatus": "1885_RUBRICAL_SEQUENCE_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP21",
+      "cueId": "AO.SM.C0219",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "PAX_DOMINI",
+      "historicalClaim": "three_crosses_over_chalice_using_particle",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          698,
+          702
+        ]
+      },
+      "authorityStatus": "1885_RUBRICAL_SEQUENCE_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP22",
+      "cueId": "AO.SM.C0221",
+      "actor": "PRIEST",
+      "dimension": "ACTION",
+      "massMoment": "COMMIXTION",
+      "historicalClaim": "drops_particle_into_chalice",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          701,
+          705
+        ]
+      },
+      "authorityStatus": "1885_RUBRICAL_SEQUENCE_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP23",
+      "cueId": "AO.SM.C0222",
+      "actor": "PRIEST",
+      "dimension": "POSTURE",
+      "massMoment": "AGNUS_DEI",
+      "historicalClaim": "inclines_before_sacrament_hands_joined",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          707,
+          710
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_POSTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP24",
+      "cueId": "AO.SM.C0225",
+      "actor": "DEACON",
+      "dimension": "ACTION",
+      "massMoment": "SOLEMN_PAX",
+      "historicalClaim": "receives_peace_from_celebrant_and_passes_to_subdeacon",
+      "condition": "SOLEMN_ONLY&&NOT_REQUIEM",
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          713,
+          718
+        ]
+      },
+      "authorityStatus": "HISTORICAL_FORM_ROLE_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP25",
+      "cueId": "AO.SM.C0229",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "PRIEST_DOMINE_NON_SUM_DIGNUS",
+      "historicalClaim": "strikes_breast_three_times",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          730,
+          733
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_GESTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP26",
+      "cueId": "AO.SM.C0232",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "PRIEST_HOST_COMMUNION",
+      "historicalClaim": "signs_host_cross_before_receiving",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          734,
+          736
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_GESTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP27",
+      "cueId": "AO.SM.C0234",
+      "actor": "PRIEST",
+      "dimension": "GESTURE",
+      "massMoment": "PRIEST_CHALICE_COMMUNION",
+      "historicalClaim": "makes_cross_with_chalice",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          738,
+          741
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_GESTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP28",
+      "cueId": "AO.SM.C0248",
+      "actor": "PRIEST",
+      "dimension": "HAND_DISCIPLINE",
+      "massMoment": "ABLUTIONS",
+      "historicalClaim": "may_separate_thumb_and_forefinger_after_purification",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          741,
+          743
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_HAND_DISCIPLINE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP29",
+      "cueId": "AO.SM.C0264",
+      "actor": "PRIEST",
+      "dimension": "GESTURE_POSITION",
+      "massMoment": "FINAL_BLESSING",
+      "historicalClaim": "kisses_altar_raises_eyes_and_hands_turns_to_people",
+      "condition": null,
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          759,
+          761
+        ]
+      },
+      "authorityStatus": "1885_RUBRICAL_SEQUENCE_NEEDS_1962_CONFIRMATION",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    },
+    {
+      "id": "FRP30",
+      "cueId": "AO.SM.C0273",
+      "actor": "PRIEST",
+      "dimension": "POSTURE",
+      "massMoment": "LAST_GOSPEL_INCARNATION",
+      "historicalClaim": "genuflects_at_et_verbum_caro_factum_est",
+      "condition": "LAST_GOSPEL_PRESENT",
+      "sourceLocator": {
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "webLines": [
+          770,
+          772
+        ]
+      },
+      "authorityStatus": "1885_HISTORICAL_PRIEST_POSTURE",
+      "accepted1962Norm": false,
+      "faithfulUniversalMandate": false
+    }
+  ],
+  "researchGates": {
+    "priest": "Compare against 1962 Ritus and 1960 general rubrics, preserve exact actor/event order and conditioned state persistence",
+    "faithful": "Check O'Connell 1964 + community/local before projecting lay posture; Guéranger historical monastic guidance not mandatory in pews",
+    "solemn": "Deacon/subdeacon acts never projected as priest-only Missa Cantata choreography",
+    "timing": "Original historical cue alignment is an interpretive index, not proof of actual current priest clock in Sung Mass"
+  }
+}
