@@ -112,7 +112,10 @@ def create(args):
         "originalsSha256":hashlib.sha256("\n".join(sorted(a["id"]+":"+a["acquisition"]["originalSha256"]
              for a in acquired)).encode()).hexdigest(),
         "dateAssociationsSha256":hashlib.sha256(json.dumps(indexed["days"],
+             sort_keys=True,separators=(",",":"),ensure_ascii=False).encode()).hexdigest(),
+        "subjectInventorySha256":hashlib.sha256(json.dumps(subject_index,
              sort_keys=True,separators=(",",":"),ensure_ascii=False).encode()).hexdigest()
+             if subject_index else None
     }
     payload={"schema":"AO_SACRED_ART_FULL_YEAR_NEGATIVE_EXCEPTION_REVIEW_V1","year":2026,
              "policy":{"unflagged":"DRAFT_UNTIL_COMPLETION_CONFIRMED",
@@ -206,8 +209,8 @@ const acceptedTiers=new Set(["STRICT_DAY_SOURCE_LINK","VERIFIED_CONTEXTUAL_LEDGE
 const exceptions=new Map();
 const approvals=new Map();
 const fingerprint=data.sourceFingerprints?.originalsSha256||"unknown";
-const storageKey="ao-sacred-art-exceptions-2026-"+fingerprint;
-const approvalStorageKey="ao-sacred-art-approvals-2026-"+fingerprint;
+const storageKey="ao-sacred-art-exceptions-2026-"+fingerprint+"-"+(data.sourceFingerprints?.subjectInventorySha256||"no-subjects");
+const approvalStorageKey="ao-sacred-art-approvals-2026-"+fingerprint+"-"+(data.sourceFingerprints?.subjectInventorySha256||"no-subjects");
 const escape=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const key=(id,date,principal,type)=>[id,date||"*",principal||"*",type].join("|");
 function restore(){
@@ -383,7 +386,9 @@ function completionState(){
  const requested=$("reviewComplete").checked;
  const hasAllPreviews=data.summary.previewMissing===0;
  const hasAssociations=data.days.length===365&&data.summary.sourceAlternatives>0;
- const allSelectedAvailable=data.subjectInventory?.counts?.selectedJoin?.selectedMatchedToAcquiredOriginal===101;
+ const chosen=data.subjectInventory?.subjects?.filter(s=>s.editorialDecision==="selected")||[];
+ const allSelectedAvailable=chosen.length===101&&chosen.every(s=>
+   (s.selectedRegistryArtworkIds||[]).some(id=>catalog.get(id)?.preview));
  const complete=requested&&hasAllPreviews&&hasAssociations&&allSelectedAvailable;
  const excluded=data.items.filter(a=>a.policyExcluded).map(a=>a.id);
  $("completionStatus").textContent=complete
@@ -419,7 +424,8 @@ $("importFile").onchange=async e=>{
   if(!["AO_SACRED_ART_NEGATIVE_EXCEPTIONS_V1","AO_SACRED_ART_CURATOR_REVIEW_V2","AO_SACRED_ART_CURATOR_NEGATIVE_REVIEW_V3"].includes(imported.schema))throw Error("Wrong format");
   if(imported.schema==="AO_SACRED_ART_CURATOR_NEGATIVE_REVIEW_V3"&&
     (imported.sourceFingerprints?.originalsSha256!==data.sourceFingerprints.originalsSha256||
-     imported.sourceFingerprints?.dateAssociationsSha256!==data.sourceFingerprints.dateAssociationsSha256))
+     imported.sourceFingerprints?.dateAssociationsSha256!==data.sourceFingerprints.dateAssociationsSha256||
+     imported.sourceFingerprints?.subjectInventorySha256!==data.sourceFingerprints.subjectInventorySha256))
     throw Error("Source originals or date assignments changed; review cannot be reused without reinspection");
   exceptions.clear();approvals.clear();
   $("reviewComplete").checked=imported.schema==="AO_SACRED_ART_CURATOR_NEGATIVE_REVIEW_V3"&&imported.reviewCompleted===true;
