@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { properToReaderSlots, assertReaderProperReady } from "../src/mass/proper-reader-slots.js";
+import { composeProperReaderParagraphs } from "../src/mass/proper-reader-composition.js";
 import {composeProperReaderParagraphs} from "../src/mass/proper-reader-composition.js";
 
 const t=(lat,en)=>({lat,en,fr:""});
@@ -137,6 +138,16 @@ for(const language of ["en","fr"]){
   assert.doesNotMatch(gospel.vernacular,/Praise be to Thee|Louange à vous/iu);
   assert.equal(epistle.fixedResponseCueId,"AO.SM.C0076");
   assert.equal(gospel.fixedResponseCueId,"AO.SM.C0087");
+  const epistleCard=composeProperReaderParagraphs("AO.SM.B020",
+    slots.slots.EPISTLE_OR_LESSON.data.paragraphs,{language});
+  const gospelCard=composeProperReaderParagraphs("AO.SM.B026",
+    slots.slots.GOSPEL.data.paragraphs,{language});
+  assert.deepEqual(epistleCard.filter(p=>p.kind==="RESPONSE").map(p=>p.id),
+    ["AO.SM.C0076"],"Epistle must have exactly one canonical Deo gratias reply");
+  assert.deepEqual(gospelCard.filter(p=>p.kind==="RESPONSE").map(p=>p.id),
+    ["AO.SM.C0087"],"Gospel must have exactly one canonical Laus tibi reply");
+  assert.equal(gospelCard.at(-1).id,"AO.SM.C0088",
+    "Gospel kiss prayer must remain after the public response");
 }
 assert.match(readingSource.epistle.lat,/Deo grátias/,
   "source data must remain authoritative and untouched");
