@@ -1,5 +1,5 @@
 {
-  "schema": "AO_SACRED_ART_COMMONS_EXACT_SOURCE_ACQUISITION_6_V1",
+  "schema": "AO_SACRED_ART_COMMONS_EXACT_SOURCE_ACQUISITION_6_V2",
   "asOf": "2026-10-13",
   "purpose": "Get research JPEG bytes from six explicitly matched museum original paintings. Do not license, rate, crop, promote or publish. File-level Commons metadata plus museum inventory matching and SHA required.",
   "master": "data/calendar/sacred-art-source-identity-master-222-queue-20261013.v8.json",
@@ -14,7 +14,11 @@
     "noPhotographicCreativeWorksUnlessPublicDomainRightsDemonstrated": true,
     "usage": "RESEARCH_ONLY_NEVER_AUTOMATICALLY_COMMERCIALLY_RELEASE",
     "licence": "PD-Art / PD-scan / Public Domain Mark; jurisdiction review before commercial deployment",
-    "date": "2026-10-13"
+    "date": "2026-10-13",
+    "declaredSourceDimensionPinning": true,
+    "declaredSHA1PinningWherePublished": true,
+    "exifPhotographerRightsMustBeReviewed": true,
+    "doNotCountUntilActualActionArtifactHashVerification": true
   },
   "exclusions": [
     {
@@ -47,7 +51,12 @@
       "commonsPage": "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
       "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
       "productionApproved": false,
-      "numericUserRating": null
+      "numericUserRating": null,
+      "expectedWidth": 7880,
+      "expectedHeight": 10994,
+      "expectedCommonsSha1": "6abe52de3122179ac44486de73865c37f235ac98",
+      "expectedPhysicalSourceOrigin": "Museum of Fine Arts Nancy",
+      "professionalUseRights": "HOLD_MUSEUM_PHOTOGRAPHY_JURISDICTION_REVIEW"
     },
     {
       "leadId": "W15-001",
@@ -61,7 +70,12 @@
       "commonsPage": "https://commons.wikimedia.org/wiki/File:THe%20Defenders%20of%20the%20Eucharist%20-%20modello.jpg",
       "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
       "productionApproved": false,
-      "numericUserRating": null
+      "numericUserRating": null,
+      "expectedWidth": 3034,
+      "expectedHeight": 2953,
+      "expectedCommonsSha1": "3d9a802639fd291f8281eb8d1bd88c7b12bd4864",
+      "expectedPhysicalSourceOrigin": "Museo Nacional del Prado",
+      "professionalUseRights": "HOLD_MUSEUM_PHOTOGRAPHY_JURISDICTION_REVIEW"
     },
     {
       "leadId": "W15-002",
@@ -75,7 +89,12 @@
       "commonsPage": "https://commons.wikimedia.org/wiki/File:Victory%20of%20Truth%20over%20Heresy%20-%20modello.jpg",
       "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
       "productionApproved": false,
-      "numericUserRating": null
+      "numericUserRating": null,
+      "expectedWidth": 2953,
+      "expectedHeight": 2089,
+      "expectedCommonsSha1": "f2b0924bbfe38b68b12880120cfa5797ba4f89c8",
+      "expectedPhysicalSourceOrigin": "Museo Nacional del Prado",
+      "professionalUseRights": "HOLD_MUSEUM_PHOTOGRAPHY_JURISDICTION_REVIEW"
     },
     {
       "leadId": "W15-003",
@@ -89,7 +108,11 @@
       "commonsPage": "https://commons.wikimedia.org/wiki/File:Triumph-church-rubens-prado.jpg",
       "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
       "productionApproved": false,
-      "numericUserRating": null
+      "numericUserRating": null,
+      "expectedWidth": 3295,
+      "expectedHeight": 2717,
+      "expectedPhysicalSourceOrigin": "Museo Nacional del Prado",
+      "professionalUseRights": "HOLD_MUSEUM_PHOTOGRAPHY_JURISDICTION_REVIEW"
     },
     {
       "leadId": "W15-004",
@@ -103,7 +126,12 @@
       "commonsPage": "https://commons.wikimedia.org/wiki/File:Victory%20of%20the%20Eucharist%20over%20Paganism%20-%20modello.jpg",
       "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
       "productionApproved": false,
-      "numericUserRating": null
+      "numericUserRating": null,
+      "expectedWidth": 2953,
+      "expectedHeight": 2126,
+      "expectedCommonsSha1": "37d2fd3344bf9d2ed66164eddd70cd82c9a68123",
+      "expectedPhysicalSourceOrigin": "Museo Nacional del Prado",
+      "professionalUseRights": "HOLD_MUSEUM_PHOTOGRAPHY_JURISDICTION_REVIEW"
     },
     {
       "leadId": "W14-011",
@@ -117,7 +145,13 @@
       "commonsPage": "https://commons.wikimedia.org/wiki/File:Peter%20Paul%20Rubens%20-%20The%20Triptych%20of%20St.%20Ildefonso%20-%20Google%20Art%20Project.jpg",
       "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
       "productionApproved": false,
-      "numericUserRating": null
+      "numericUserRating": null,
+      "expectedWidth": 6000,
+      "expectedHeight": 4585,
+      "expectedPhysicalSourceOrigin": "Kunsthistorisches Museum Vienna",
+      "professionalUseRights": "HOLD_MUSEUM_PHOTOGRAPHY_JURISDICTION_REVIEW"
     }
-  ]
+  ],
+  "pinningNotes": "All 6 original pixel dimensions independently verified against live Commons file pages. 4 files have independent Wikidata structured-data SHA1 records; the other 2 must rely on file-level live API SHA1 and post-download hash parity. If Commons file changes dimensions or pinned checksum, hold pending source reinspection.",
+  "openRightsConflict": "Prado reproductions include individual photographer / Museo del Prado EXIF metadata while Commons marks them PD; despite Commons research use, require Spanish/EU and worldwide commercial review before sale."
 }
