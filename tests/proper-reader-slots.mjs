@@ -73,6 +73,20 @@ assert.equal(twoCollects[1].speakerRole,"RESPONDERS");
 assert.equal(twoCollects[2].speakerRole,"PRIEST");
 assert.equal(twoCollects[2].latin,"Orémus.");
 assert.equal(twoCollects[2].vernacular,"Prions.");
+// Source text remains byte-for-byte intact while public responses are detached.
+const printedAmen=properToReaderSlots({...frenchProper,collects:[
+ {lat:"Príma orátio. Amen.",fr:"Première collecte. Ainsi soit-il."},
+ {lat:"Secúnda orátio. Amen.",fr:"Deuxième collecte. Ainsi soit-il."},
+]},{language:"fr"}).slots.COLLECT_SET.data.paragraphs;
+assert.deepEqual(printedAmen.filter(p=>p.kind==="TEXT").map(p=>p.latin),[
+ "Príma orátio.","Secúnda orátio.",
+]);
+assert.deepEqual(printedAmen.filter(p=>p.kind==="RESPONSE").map(p=>p.latin),[
+ "℟. Amen.",
+]); // The final Amen is owned by B019 C0074, not the slot.
+assert.deepEqual(printedAmen.map(p=>p.id),[
+ "COLLECT_SET.1","COLLECT_SET.1.AMEN","COLLECT_SET.2.OREMUS","COLLECT_SET.2",
+]);
 for(const [property,slot] of [["secrets","SECRET_SET"],["postcommunions","POSTCOMMUNION_SET"]]){
  const mixed=properToReaderSlots({...proper,[property]:[t("Oratio","Prayer"),{lat:"Commemoratio",en:"",fr:""}]});
  assert.equal(mixed.ready,false,slot+" silently filtered a missing commemoration");
@@ -124,7 +138,10 @@ for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
  assert.equal(pair[0].liturgicalGroup,slot+".2");
  assert.equal(pair[1].liturgicalGroup,slot+".2",
    "the third source oration must not fabricate a third concluded group");
- assert.match(pair[1].vernacular,/Ainsi soit-il\.$/);
+ assert.doesNotMatch(pair[1].vernacular,/Ainsi soit-il\\.$/,
+   "printed Amen must appear as labelled response, not twice");
+ assert.doesNotMatch(pair[1].latin,/Amen\\.$/,
+   "printed Latin Amen must not duplicate the canonical response");
  assert.equal(p.filter(x=>x.id.endsWith(".OREMUS")).length,publicPrayer?1:0,
    "never add a public Oremus to Secrets or repeat it within joined commemorations");
  assert.equal(p.filter(x=>x.id.endsWith(".AMEN")).length,publicPrayer?1:0,
