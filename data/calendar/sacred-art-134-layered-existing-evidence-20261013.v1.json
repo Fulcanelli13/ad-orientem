@@ -19,7 +19,8 @@
     "Source correction 2026-10-13: 5 previously unverified older options were real art but WRONG biblical event: Joseph-to-Potiphar versus sold by brothers; Jacob/Pharaoh versus first settlement; Tobias versus Tobit; Daniel 6 lions versus Daniel 1; Heliodorus versus Maccabean resistance. Do not count as exact coverage.",
     "Latest 4 formerly zero-source subjects have museum-indexed engravings/manuscript illustrations; no graphic is aesthetically approved and no thematic subject's physical event is deemed map equivalent. These images can be bypassed in favour of atlas/timeline rendering.",
     "Earlier five wrong-scene IDs remain wrong; separate institutionally recorded replacement candidates added. A print is never automatically equivalent to a museum painting, and journey or subevent coverage is distinguished from complete subject.",
-    "Previous Pontormo Joseph-with-Pharaoh and vague Flemish-school furnace option IDs are still NOT individually source-identified. Two separate institutionally supported exact-subject alternatives now registered without rewriting prior art ID or falsely certifying attribution."
+    "Previous Pontormo Joseph-with-Pharaoh and vague Flemish-school furnace option IDs are still NOT individually source-identified. Two separate institutionally supported exact-subject alternatives now registered without rewriting prior art ID or falsely certifying attribution.",
+    "2026-10-13 canonical duplicate check: the 11 most recent research options did not exactly match any of the 281 candidate artwork records by institutional object URL or artist+title; these worklist source leads remain separate, unacquired and cannot be promoted as parallel production artwork IDs."
   ],
   "summary": {
     "acquiredSourceCoverage": 27,
@@ -2344,11 +2345,11 @@
           "artworkId": "ART-research-20261013-distinct-alternative-BIB-XL10",
           "artist": "Pieter Pietersz the Elder",
           "title": "The Three Youths in the Fiery Furnace",
-          "sourceUrl": "https://www.franshalsmuseum.nl/en/art/the-three-youths-in-the-fiery-furnace/",
+          "sourceUrl": "https://artsandculture.google.com/asset/the-three-youths-in-the-fiery-furnace-pieter-pietersz/NwE2GwZDaPx3EA?hl=en",
           "medium": "oil on panel",
-          "sourceInstitution": "Frans Hals Museum Haarlem os I-281",
+          "sourceInstitution": "Frans Hals Museum; collection partner Google Arts & Culture (accessible institutional presentation)",
           "sceneMatch": "EXACT_SUBJECT_SEPARATE_ARTWORK",
-          "matchNotes": "1575, original 222.8 × 182.2 cm monumental narrative of Daniel 3. Historic Dutch named painter; must not be silently equated with vague older 'Flemish school' ID. Aesthetic review pending.",
+          "matchNotes": "1575, original 222.8 × 182.2 cm monumental narrative of Daniel 3. Historic Dutch named painter; must not be silently equated with vague older 'Flemish school' ID. Aesthetic review pending. Verified painting accession os I-281 as reported in Frans Hals Museum collection references; Google Arts collection record displays full subject and artist. Original vague Flemish-school record still unresolved.",
           "matchedImageExamined": false,
           "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
           "acquiredOriginalSha256": null,
@@ -2916,7 +2917,10 @@
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchDisposition": "ATLAS_TIMELINE_FIRST_IF_ART_UNSUITABLE",
+      "unsuitableSubstitutionsRule": "Acts 11:19–26 — founding of the church at Antioch in Syria. Do not substitute Antioch of Pisidia or unrelated paintings of Barnabas/Paul at later mission stages.",
+      "sceneArtworkRequirement": "OPTIONAL_NOT_A_PUBLICATION_BLOCKER"
     },
     {
       "subjectId": "BIB-A09",
@@ -3022,7 +3026,10 @@
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchDisposition": "ATLAS_TIMELINE_FIRST_IF_ART_UNSUITABLE",
+      "unsuitableSubstitutionsRule": "Acts 17:1–9 — Paul preaching in Thessalonica. Do not substitute Paul's Areopagus speech in Athens, later epistles, or St Ambrose and Theodosius at Milan.",
+      "sceneArtworkRequirement": "OPTIONAL_NOT_A_PUBLICATION_BLOCKER"
     },
     {
       "subjectId": "BIB-A13",
@@ -3332,5 +3339,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "Two unresearched subjects remain without any source; five inaccurate earlier scene assignments have separate alternatives; two vague older identities remain unresolved but have separately identified alternatives. 101 original selected subjects unchanged."
+  "recentSourceWave": "Research audit complete for this stage: two zero-source Acts subjects left optional/map-timeline-first; five incorrect earlier matches have separate corrected alternatives; two ambiguous legacy artwork identities remain unresolved though exact-subject alternatives sourced. 101 selections unchanged."
 }
