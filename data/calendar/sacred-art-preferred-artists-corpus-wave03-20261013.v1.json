@@ -1,0 +1,122 @@
+{
+  "schema": "AO_SACRED_ART_PREFERRED_ARTISTS_CORPUS_WAVE03_V1",
+  "createdOn": "2026-10-13",
+  "scope": "Five newly identified museum oil paintings/oil sketches from artists supported by past preference; object-identity and dedup only.",
+  "sourceOwner": "Individual official NGA London/Met/NGA Washington painting pages",
+  "counts": {
+    "newSourceIdentities": 5,
+    "knownPriorWavesTotal": 38,
+    "combinedNewObjectIdentityLeads": 43,
+    "acquiredImageBytes": 0,
+    "approvedArtworks": 0
+  },
+  "queue": [
+    {
+      "id": "W03-001",
+      "artist": "Peter Paul Rubens",
+      "title": "The Meeting of Abraham and Melchizedek",
+      "institution": "NGA Washington",
+      "accession": "1958.4.1",
+      "museumSourceUrl": "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek",
+      "contexts": [
+        "genesis14",
+        "mass-canon-supra-quae"
+      ],
+      "priority": "P0",
+      "sourceStatus": "INDIVIDUAL_MUSEUM_OBJECT_PAGE_VERIFIED",
+      "rights": "NGA_OPEN_ACCESS",
+      "alreadyAcquiredByRegisteredObjectURL": false,
+      "physicalOriginalDownloaded": false,
+      "userRating": null,
+      "productionApproved": false,
+      "sourceNote": "Specific Gospel/Mass typology not equivalence to sacramental rite"
+    },
+    {
+      "id": "W03-002",
+      "artist": "Peter Paul Rubens",
+      "title": "The Brazen Serpent",
+      "institution": "National Gallery London",
+      "accession": "NG59",
+      "museumSourceUrl": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-the-brazen-serpent",
+      "contexts": [
+        "numbers21",
+        "christological-typology"
+      ],
+      "priority": "P1",
+      "sourceStatus": "INDIVIDUAL_MUSEUM_OBJECT_PAGE_VERIFIED",
+      "rights": "IMAGE_RIGHTS_PENDING_WORKSHOP_ASSISTED",
+      "alreadyAcquiredByRegisteredObjectURL": false,
+      "physicalOriginalDownloaded": false,
+      "userRating": null,
+      "productionApproved": false,
+      "sourceNote": "Rubens and assistants per museum"
+    },
+    {
+      "id": "W03-003",
+      "artist": "Peter Paul Rubens",
+      "title": "Samson and Delilah",
+      "institution": "National Gallery London",
+      "accession": "NG6461",
+      "museumSourceUrl": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-samson-and-delilah",
+      "contexts": [
+        "judges16",
+        "old-testament"
+      ],
+      "priority": "P2",
+      "sourceStatus": "INDIVIDUAL_MUSEUM_OBJECT_PAGE_VERIFIED",
+      "rights": "IMAGE_RIGHTS_PENDING",
+      "alreadyAcquiredByRegisteredObjectURL": false,
+      "physicalOriginalDownloaded": false,
+      "userRating": null,
+      "productionApproved": false,
+      "sourceNote": null
+    },
+    {
+      "id": "W03-004",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Bavo is received by Saints Amand and Floribert",
+      "institution": "National Gallery London",
+      "accession": "NG57.1",
+      "museumSourceUrl": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-saint-bavo-is-received-by-saints-amand-and-floribert",
+      "contexts": [
+        "local-saint-bavo",
+        "saint-amand"
+      ],
+      "priority": "P2",
+      "sourceStatus": "INDIVIDUAL_MUSEUM_OBJECT_PAGE_VERIFIED",
+      "rights": "IMAGE_RIGHTS_PENDING_ORIGINAL_OIL_SKETCH",
+      "alreadyAcquiredByRegisteredObjectURL": false,
+      "physicalOriginalDownloaded": false,
+      "userRating": null,
+      "productionApproved": false,
+      "sourceNote": "Original oil modello not full-size altarpiece"
+    },
+    {
+      "id": "W03-005",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Rosalie Interceding for the Plague-stricken of Palermo",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "71.41",
+      "museumSourceUrl": "https://www.metmuseum.org/art/collection/search/436257",
+      "contexts": [
+        "saint-rosalie",
+        "local-patron",
+        "devotional-intercession"
+      ],
+      "priority": "P1",
+      "sourceStatus": "INDIVIDUAL_MUSEUM_OBJECT_PAGE_VERIFIED",
+      "rights": "MET_PUBLIC_DOMAIN_CC0",
+      "alreadyAcquiredByRegisteredObjectURL": false,
+      "physicalOriginalDownloaded": false,
+      "userRating": null,
+      "productionApproved": false,
+      "sourceNote": null
+    }
+  ],
+  "notes": [
+    "Image use, exact original image URL, pixel dimensions and hash pending, including for museums supplying freely reusable public-domain images.",
+    "Source URLs exactly checked against 281 canonical records and the prior 38 leads, no same URL.",
+    "Only user 5/5 for repeated anchors. Do not treat old Rubens 2/5 as universal painter dislike.",
+    "No new image files and no production changes."
+  ]
+}
