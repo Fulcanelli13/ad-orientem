@@ -1,0 +1,3923 @@
+{
+  "schema": "AO_SACRED_ART_CROSS_MODULE_DEMAND_SEED_V1",
+  "createdOn": "2026-10-13",
+  "purpose": "First evidence-based subject-occurrence index to prioritize painting research across Calendar, Rosary, Stations, devotional Prayer and Formation; later add actual Mass Theatre, Biblical Theatre, genealogy/geography and liturgical day resolver joins.",
+  "sources": [
+    "data/calendar/sacred-art-editorial-crosswalk.v1.json",
+    "data/calendar/sacred-art-prayer-slots.v1.json",
+    "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+    "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json",
+    "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
+  ],
+  "denominator": {
+    "observedClassIDates2026": 53,
+    "registeredEditorialSubjectEntries": 235,
+    "existingRosaryMysteriesIndexed": 20,
+    "traditionalMysteryEditorialSelections": 15,
+    "stationEntries": 14,
+    "prayerSlots": 48,
+    "novenaSlots": 16,
+    "distinctIconographyKeys": 137
+  },
+  "method": {
+    "countUnit": "Count of explicit distinct indexed context references; NOT measured usage frequency, NOT actual unique art originals and NOT a count of exact liturgical matches.",
+    "distinctFamilyUnit": "Calendar, Rosary, Stations, Prayer, Novena, Formation, Scripture, Devotion; these are editorial reference families rather than proven standalone application screens.",
+    "sourceMatching": "All links are preliminary direct-iconography or source-defined primary-subject labels. Verify iconographic subject and scene before claiming exact painting match.",
+    "notYetAudited": [
+      "Mass Theatre scene occurrence IDs and theatrical timeline",
+      "Biblical Theatre complete narrative scene IDs",
+      "Genealogy and Geography narrative events/place metadata",
+      "User-facing module open frequency",
+      "2026 all rank I–IV dates' source-bound Gospel usage",
+      "Seven Last Words implementation slots",
+      "Divine Mercy Chaplet screen and hero asset"
+    ],
+    "knownAliasRisks": [
+      {
+        "one": "pentecost",
+        "two": "descent-holy-spirit",
+        "note": "Same event; don't add reference counts as separate demand."
+      },
+      {
+        "one": "holy-souls",
+        "two": "purgatory",
+        "note": "Overlap but not interchangeable as iconographic claims."
+      },
+      {
+        "one": "eucharist",
+        "two": "last-supper",
+        "note": "Eucharistic symbol may be related; not every Eucharistic devotion can be depicted as Last Supper."
+      }
+    ]
+  },
+  "firstPassHighlights": [
+    {
+      "subjectKey": "eucharist",
+      "documentedReferenceCount": 16,
+      "distinctIndexedFamilies": 5,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer"
+      ]
+    },
+    {
+      "subjectKey": "last-supper",
+      "documentedReferenceCount": 15,
+      "distinctIndexedFamilies": 6,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer",
+        "rosary"
+      ]
+    },
+    {
+      "subjectKey": "virgin-child",
+      "documentedReferenceCount": 9,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "prayer"
+      ]
+    },
+    {
+      "subjectKey": "pentecost",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 6,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer",
+        "rosary"
+      ]
+    },
+    {
+      "subjectKey": "crucifixion",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 5,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "prayer",
+        "rosary",
+        "stations"
+      ]
+    },
+    {
+      "subjectKey": "saint-joseph",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 5,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer"
+      ]
+    },
+    {
+      "subjectKey": "holy-souls",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer"
+      ]
+    },
+    {
+      "subjectKey": "annunciation",
+      "documentedReferenceCount": 6,
+      "distinctIndexedFamilies": 5,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer",
+        "rosary"
+      ]
+    },
+    {
+      "subjectKey": "sacred-heart-jesus",
+      "documentedReferenceCount": 6,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer"
+      ]
+    },
+    {
+      "subjectKey": "penitent-magdalene",
+      "documentedReferenceCount": 5,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "prayer"
+      ]
+    },
+    {
+      "subjectKey": "christ-king",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer"
+      ]
+    },
+    {
+      "subjectKey": "resurrection",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "prayer",
+        "rosary"
+      ]
+    },
+    {
+      "subjectKey": "nativity",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "novena",
+        "rosary"
+      ]
+    },
+    {
+      "subjectKey": "presentation-jesus",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "rosary",
+        "scripture"
+      ]
+    },
+    {
+      "subjectKey": "wedding-cana",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "formation",
+        "rosary",
+        "scripture"
+      ]
+    }
+  ],
+  "fiveStarOriginalsEligibleForCrossContextReuse": [
+    {
+      "artworkId": "cma-136680",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Jerome",
+      "currentTheme": "Saint Jerome",
+      "sourceOriginalSha256": "0b876319f895d7758a7bdac6e7c0c9a247054d825f4800991146daf1709a8bcd"
+    },
+    {
+      "artworkId": "cma-148758",
+      "artist": "Caravaggio",
+      "title": "The Crucifixion of Saint Andrew",
+      "currentTheme": "Martyrdom St Andrew",
+      "sourceOriginalSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833"
+    },
+    {
+      "artworkId": "cma-150046",
+      "artist": "John Faed",
+      "title": "Expulsion of Adam and Eve",
+      "currentTheme": "Expulsion Paradise",
+      "sourceOriginalSha256": "a8aa262ef0dedc4836b9944b4990560ed118a75001c6e2f6fa38ec8da677a0c5"
+    },
+    {
+      "artworkId": "met-436198",
+      "artist": "Abraham van Diepenbeeck",
+      "title": "Saint Cecilia",
+      "currentTheme": "Saint Cecilia",
+      "sourceOriginalSha256": "95566ebeb14d227a44c2464864556ad0049b40a1ce5128fbb8a065713027bc7f"
+    },
+    {
+      "artworkId": "met-437977",
+      "artist": "Marcantonio Franceschini",
+      "title": "The Last Communion of Saint Mary of Egypt",
+      "currentTheme": "Last Communion",
+      "sourceOriginalSha256": "62e1b85b4afa6301eac6a8d6b9974384729f43563c08c3f2ed4e2af80574b90e"
+    },
+    {
+      "artworkId": "met-438134",
+      "artist": "Paolo Veronese (Paolo Caliari)",
+      "title": "Saint Catherine of Alexandria in Prison",
+      "currentTheme": "Saint Catherine Alexandria",
+      "sourceOriginalSha256": "263c9e06dbc7f5ef80325def8bae06f2369ee79c41f4b04930c610771d0a0fa7"
+    },
+    {
+      "artworkId": "met-438434",
+      "artist": "Jean Auguste Dominique Ingres",
+      "title": "The Virgin Adoring the Host",
+      "currentTheme": "Adoration Of Host",
+      "sourceOriginalSha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934"
+    },
+    {
+      "artworkId": "met-712946",
+      "artist": "Giovanni Battista Caracciolo",
+      "title": "The Calling of Saint Matthew",
+      "currentTheme": "Calling Disciples",
+      "sourceOriginalSha256": "9d0fff62d386d550b93e99c399857d120c629f614b5b7870c4d4049e29efb668"
+    },
+    {
+      "artworkId": "met-724811",
+      "artist": "Placido Costanzi",
+      "title": "A Miracle of Saint Joseph of Cupertino",
+      "currentTheme": "Saint Joseph Of Cupertino",
+      "sourceOriginalSha256": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751"
+    },
+    {
+      "artworkId": "nga-106362",
+      "artist": "Jean Baptiste de Champaigne",
+      "title": "The Martyrdom of Saint Lawrence",
+      "currentTheme": "Saint Lawrence",
+      "sourceOriginalSha256": "b86ccb14d2ba44302c83a1c8a244f712a14ef8c29d7628064a357fa8dea11148"
+    },
+    {
+      "artworkId": "nga-12209",
+      "artist": "Francisco de Zurbarán",
+      "title": "Saint Lucy",
+      "currentTheme": "Saint Lucy",
+      "sourceOriginalSha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b"
+    },
+    {
+      "artworkId": "nga-46185",
+      "artist": "Giovanni Girolamo Savoldo",
+      "title": "The Adoration of the Shepherds",
+      "currentTheme": "Adoration of the Shepherds",
+      "sourceOriginalSha256": "15b39e8c36d0592c95487e8675ac3322296bfd332bb3e3dcb5e32779b4ff1d03"
+    }
+  ],
+  "subjectIndex": [
+    {
+      "subjectKey": "last-supper",
+      "documentedReferenceCount": 15,
+      "distinctIndexedFamilies": 6,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.lum5",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.adoration",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.corpus-christi",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.holy-thursday",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.corpus-christi",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.first-communion",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.mass",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_prayer_of_adoration",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "adoration_spiritual_communion",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_o_salutaris",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_tantum_ergo",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "adoration_litany_blessed_sacrament",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "adoration_lord_i_am_not_worthy",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_adoremus_ps116",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "corpus_christi",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "descent-holy-spirit",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 6,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.glo3",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.holy-spirit",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.pentecost",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.confirmation",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "sacrament_come_holy_spirit",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "traditional_veni_sancte_sequence",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "holy_ghost",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "pentecost",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 6,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.glo3",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.holy-spirit",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.pentecost",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.confirmation",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "sacrament_come_holy_spirit",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "traditional_veni_sancte_sequence",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "holy_ghost",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "eucharist",
+      "documentedReferenceCount": 16,
+      "distinctIndexedFamilies": 5,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.adoration",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.corpus-christi",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.corpus-christi",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.first-communion",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.mass",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_prayer_of_adoration",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "adoration_anima_christi",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "adoration_spiritual_communion",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_o_salutaris",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_tantum_ergo",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_divine_praises",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "adoration_litany_blessed_sacrament",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_versicles",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "adoration_lord_i_am_not_worthy",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_adoremus_ps116",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "corpus_christi",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "crucifixion",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 5,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "prayer",
+        "rosary",
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.sor5",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "station.12",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.precious-blood",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.passion",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.good-friday",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_sign_of_cross",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "adoration_anima_christi",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-joseph",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 5,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.st-joseph",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.saint-joseph",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.fatherhood",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion_memorare_st_joseph",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion_litany_st_joseph",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion_ad_te_beate_ioseph",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "st_joseph",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "annunciation",
+      "documentedReferenceCount": 6,
+      "distinctIndexedFamilies": 5,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.joy1",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.angelus",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.advent",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.annunciation",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_hail_mary",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "annunciation",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "holy-souls",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.holy-souls",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.all-souls",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_eternal_rest",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "dead_de_profundis",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "dead_fidelium_deus",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "dead_eternal_rest_singular",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "holy_souls",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "purgatory",
+      "documentedReferenceCount": 7,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.holy-souls",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.all-souls",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_eternal_rest",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "dead_de_profundis",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "dead_fidelium_deus",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "dead_eternal_rest_singular",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "holy_souls",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "sacred-heart-jesus",
+      "documentedReferenceCount": 6,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.sacred-heart",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.sacred-heart",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_act_of_love",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "sacred_heart_short_prayer",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "sacred_heart_aspiration_trust",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "sacred_heart",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "christ-blessing",
+      "documentedReferenceCount": 5,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.adoration",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.morning-prayer",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.after-pentecost",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.catechism",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_morning_offering",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "penitent-magdalene",
+      "documentedReferenceCount": 5,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.confession",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.lent",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.confession",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "sacrament_act_of_contrition",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "mass_confiteor",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "prodigal-son",
+      "documentedReferenceCount": 5,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "devotion",
+        "formation",
+        "prayer",
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.confession",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "scripture.prodigal-son",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.confession",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "sacrament_act_of_contrition",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "mass_confiteor",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "assumption-mary",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "formation",
+        "novena",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.glo4",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.assumption",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.marian-dogmas",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "assumption",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "christ-king",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.christ-king",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.christ-king",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion_consecration_christ_king",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "christ_the_king",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "immaculate-conception",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation",
+        "novena"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.immaculate-conception",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.immaculate-conception",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.marian-dogmas",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "immaculate_conception",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "resurrection",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 4,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "prayer",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.glo1",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.regina-caeli",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.easter",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_act_of_hope",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "holy-trinity",
+      "documentedReferenceCount": 5,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "formation",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.trinity",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.trinity",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_glory_be",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_apostles_creed",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "benediction_divine_praises",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "nativity",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "novena",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.joy3",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.christmas",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.christmas-eve",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "christmas",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-michael",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "devotion",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.st-michael",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "mass_devotion_leonine",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion_prayer_st_michael",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "st_michael",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "carrying-cross",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "rosary",
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.sor4",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "station.02",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.passion",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "immaculate-heart-mary",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "devotion",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.immaculate-heart",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "marian_consecration_immaculate_heart",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "immaculate_heart",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "lamentation",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.seven-sorrows",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.our-lady-sorrows",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "seven_sorrows",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "mater-dolorosa",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "novena"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.seven-sorrows",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.our-lady-sorrows",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "seven_sorrows",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "presentation-jesus",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "rosary",
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.joy4",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.candlemas",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "scripture.presentation-temple",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "repentance",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "calendar",
+        "devotion",
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.confession",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.lent",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.confession",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-anthony-padua",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "devotion",
+        "novena",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.st-anthony",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion_st_anthony_lost_items",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "st_anthony_nine_tuesdays",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "wedding-cana",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 3,
+      "referenceFamilies": [
+        "formation",
+        "rosary",
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.lum2",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "scripture.wedding-cana",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.matrimony",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "HIGH_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "virgin-child",
+      "documentedReferenceCount": 9,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.morning-prayer",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.saturday-marian",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_hail_mary",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "marian_hail_holy_queen",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "marian_memorare",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "mass_devotion_leonine",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "sub_tuum",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "litany_loreto_1962",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "litany_loreto_current",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "marian",
+      "documentedReferenceCount": 6,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.saturday-marian",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "marian_hail_holy_queen",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "marian_memorare",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "sub_tuum",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "litany_loreto_1962",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "litany_loreto_current",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "christ-teaching",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "formation",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "formation.catechism",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_our_father",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_apostles_creed",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_act_of_faith",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "last-communion",
+      "documentedReferenceCount": 4,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.good-death",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.first-communion",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.sick",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.eucharistic-saint",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "adoration-shepherds",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.joy3",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.christmas",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.christmas-eve",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "holy-family",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.st-joseph",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "devotion.holy-family",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.fatherhood",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "visitation",
+      "documentedReferenceCount": 3,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "prayer",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.joy2",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "weekday_magnificat",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "weekday_benedictus",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "all-saints",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.litanies",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.all-saints",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "ascension-christ",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.glo2",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.ascension",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "baptism-christ",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "formation",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.lum1",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.baptism",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "burial-christ",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.14",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.holy-saturday",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "christ-in-majesty",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.christ-king",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.christ-king",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "entombment",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.14",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.holy-saturday",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "expulsion-paradise",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.septuagesima",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.original-sin",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "fall-adam-eve",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.septuagesima",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.original-sin",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "finding-jesus-temple",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "formation",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.joy5",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.catechism",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "flight-egypt",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.evening-prayer",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "scripture.flight-egypt",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "gregory-i",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "formation",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "formation.papacy",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "church_prayer_for_pope",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "guardian-angel",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.guardian-angel",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_guardian_angel",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "incarnation",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.angelus",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.advent",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "leo-xiii",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "formation",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "formation.papacy",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "church_prayer_for_pope",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "our-lady-perpetual-help",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "novena"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.our-lady-perpetual-help",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "perpetual_help",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "pieta",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "novena"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.seven-sorrows",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "seven_sorrows",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "pius-x",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "formation",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "formation.papacy",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "church_prayer_for_pope",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-john-baptist",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.st-john-baptist",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "weekday_benedictus",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-therese-lisieux",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "novena"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.st-therese",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "st_therese",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "supper-emmaus",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.adoration",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "scripture.emmaus",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "temptation-christ",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.lent",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "scripture.temtation-christ",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "transfiguration",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "calendar",
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.lum4",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.transfiguration",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "viaticum",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 2,
+      "referenceFamilies": [
+        "devotion",
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.good-death",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.sick",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "MEDIUM_CROSS_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "good-samaritan",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.works-mercy",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.charity",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "mass-saint-gregory",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.mass",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.serve-mass",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "multiplication-loaves",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "foundations_grace_before_meals",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        },
+        {
+          "contextId": "foundations_grace_after_meals",
+          "family": "prayer",
+          "relationship": "PRAYER_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "passion",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.passion",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "calendar.good-friday",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-martin-beggar",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.works-mercy",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "formation.charity",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saints-peter-paul",
+      "documentedReferenceCount": 2,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "person.peter",
+          "family": "prayer",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        },
+        {
+          "contextId": "person.paul",
+          "family": "prayer",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "adoration-lamb",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.litanies",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "adoration-magi",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.epiphany",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "adoration-of-host",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.adoration",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "agony-garden",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.sor1",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "anointing-sick",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.sick",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "archangel-michael",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "novena"
+      ],
+      "references": [
+        {
+          "contextId": "st_michael",
+          "family": "novena",
+          "relationship": "NOVENA_PRIMARY_SUBJECT_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "baptism-rite",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.baptism",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "blind-man",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.blind-man",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "candlemas",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.candlemas",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "christ-before-pilate",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.01",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "christ-meets-mother",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.04",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "christ-preaching",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.lum3",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "communion-apostles",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.first-communion",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "condemnation-christ",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.01",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "confirmation-rite",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.confirmation",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "consecration-bishop",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.holy-orders",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "coronation-virgin",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.glo5",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "crowning-thorns",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.sor3",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "death-st-joseph",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.good-death",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "denial-peter",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.confession",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "deposition-christ",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.13",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "descent-cross",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.13",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "elevation-host",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.serve-mass",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "entry-jerusalem",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.palm-sunday",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "epiphany",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.epiphany",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "first-fall-christ",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.03",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "flagellation",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "rosary"
+      ],
+      "references": [
+        {
+          "contextId": "rosary.sor2",
+          "family": "rosary",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "glorification-eucharist",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.adoration",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "good-shepherd",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.good-shepherd",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "healing-blind",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.blind-man",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "healing-paralytic",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.healing-paralytic",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "holy-face",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.06",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "holy-innocents",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.holy-innocents",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "holy-matrimony",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.matrimony",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "holy-name-jesus",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.holy-name",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "keys-to-peter",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.keys-to-peter",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "last-judgment",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.death-judgment",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "mary-martha",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.spiritual-life",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "massacre-innocents",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.holy-innocents",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "nailing-cross",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.11",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "noli-me-tangere",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.noli-me-tangere",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "ordination",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.holy-orders",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "ordination-saint-stephen",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.holy-orders",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "our-lady-of-mount-carmel",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.scapular",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "our-lady-rosary",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.holy-rosary",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "parable-talents",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.talents",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "precious-blood",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.precious-blood",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "raising-lazarus",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.lazarus",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "raising-widows-son",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.raising-widows-son",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "rest-flight-egypt",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "devotion"
+      ],
+      "references": [
+        {
+          "contextId": "devotion.evening-prayer",
+          "family": "devotion",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "resurrection-dead",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.death-judgment",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-augustine",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.doctor-church",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-benedict",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.spiritual-life",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-jerome",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.doctor-church",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-mary-magdalene",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.mary-magdalene",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-paul",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "person.paul",
+          "family": "prayer",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-peter",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "prayer"
+      ],
+      "references": [
+        {
+          "contextId": "person.peter",
+          "family": "prayer",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-peter-julian-eymard",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.eucharistic-saint",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-teresa-avila",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.spiritual-life",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-thomas-aquinas",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.doctor-church",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "saint-veronica",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.06",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "scapular-simon-stock",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.scapular",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "second-fall-christ",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.07",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "seven-sacraments",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.sacrament-all-seven",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "simon-cyrene",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.05",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "stripping-christ",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.10",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "third-fall-christ",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.09",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "tribute-money",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.tribute-money",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "washing-feet",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "calendar"
+      ],
+      "references": [
+        {
+          "contextId": "calendar.holy-thursday",
+          "family": "calendar",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "wise-foolish-virgins",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.wise-foolish-virgins",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "woman-at-well",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "scripture"
+      ],
+      "references": [
+        {
+          "contextId": "scripture.samaritan-woman",
+          "family": "scripture",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "women-jerusalem",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "stations"
+      ],
+      "references": [
+        {
+          "contextId": "station.08",
+          "family": "stations",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    },
+    {
+      "subjectKey": "works-of-mercy",
+      "documentedReferenceCount": 1,
+      "distinctIndexedFamilies": 1,
+      "referenceFamilies": [
+        "formation"
+      ],
+      "references": [
+        {
+          "contextId": "formation.works-mercy",
+          "family": "formation",
+          "relationship": "DIRECT_ICONOGRAPHY_PRELIMINARY"
+        }
+      ],
+      "prioritySignal": "SINGLE_FAMILY",
+      "actualViewFrequencyMeasured": false,
+      "liturgicalCrosslinksValidated": false,
+      "theatreAndGenealogyLinksValidated": false
+    }
+  ],
+  "status": "INITIAL_REFERENCE_DEMAND_SEED_RESEARCH_ONLY_NOT_RUNTIME_FREQUENCY"
+}
