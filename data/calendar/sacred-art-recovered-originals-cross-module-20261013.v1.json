@@ -17,13 +17,13 @@
     "The 1962 DayResolver determines calendar relevance; an artwork may appear on a date only when the proper, saint or appointed Gospel warrants it",
     "An Emmaus supper scene is not the road scene; a Flight rest scene is not exact departure; Christ and Sacred Heart medallion differs from Host Exposition",
     "Exclusions El Greco and Fra Angelico respected in new shortlist",
-    "No new downloads, user approvals, crop approvals, or publishing"
+    "Archived research originals were recovered from existing Actions artifacts; no new artwork source acquisition, user approval, crop approval, or production publication"
   ],
   "summary": {
     "outstandingSubjects": 134,
     "withAcquiredSourceResearchLead": 27,
-    "visuallyAssessedFrom50": 46,
-    "exactImageVisualPending": 4,
+    "visuallyAssessedFrom50": 50,
+    "exactImageVisualPending": 0,
     "priorityArtworksFromPreviouslyReviewed": 12,
     "explicitSubjectSelectionsRecommendedByAssistant": 10,
     "distinctOutstandingSubjectsWithEditorialRecommendations": 11,
@@ -33,7 +33,10 @@
     "actualPublishing": 0,
     "currentUserSelectedSourceOverlap": 0,
     "historicalSelectionOriginalsRetained": 3,
-    "lastFullPixelAudit": "data/calendar/sacred-art-9-master-pixel-inspection-20261013.v1.json"
+    "lastFullPixelAudit": "data/calendar/sacred-art-four-final-master-inspections-20261013.v1.json",
+    "mastersByteVerifiedInLastTwoPasses": 13,
+    "finalImageInspectionCompleted": true,
+    "newUserArtApproval": 0
   },
   "originalProposals": [
     {
@@ -368,28 +371,7 @@
       "noProductionMutation": true
     }
   ],
-  "remainingAwaitingImageVerification": [
-    {
-      "artworkId": "nga-41644",
-      "sourceUrl": "https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph",
-      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
-    },
-    {
-      "artworkId": "met-442750",
-      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442750",
-      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
-    },
-    {
-      "artworkId": "met-436302",
-      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436302",
-      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
-    },
-    {
-      "artworkId": "kress-k2017",
-      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
-      "visualGate": "SOURCE_VERIFIED_EXACT_IMAGE_RENDER_NOT_PROPERLY_EVALUATED"
-    }
-  ],
+  "remainingAwaitingImageVerification": [],
   "outstandingSubjectNoVerifiedAcquiredLead": [
     {
       "subjectId": "DEV-02",
@@ -926,5 +908,9 @@
       "subject": "New Jerusalem",
       "category": "Bible Atlas"
     }
+  ],
+  "originalReproductionQA": [
+    "data/calendar/sacred-art-9-master-pixel-inspection-20261013.v1.json",
+    "data/calendar/sacred-art-four-final-master-inspections-20261013.v1.json"
   ]
 }
