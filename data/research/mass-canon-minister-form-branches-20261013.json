@@ -17,7 +17,8 @@
     "The deacon only uncovers/covers the chalice when needed.",
     "C0207 is an explicit response; the Low donor assigns MINISTER_RESPONSE, the Sung donor USER_RESPONSE, so do not universally identify this responder as a server.",
     "Server bells C0174/C0181 and anticipatory C0161 remain distinct within the original 62-event witness.",
-    "In Solemn Mass, minister handling of the chalice at C0175 and C0181 must not be attributed automatically to the celebrant; the deacon's participation is conditional on need."
+    "In Solemn Mass, minister handling of the chalice at C0175 and C0181 must not be attributed automatically to the celebrant; the deacon's participation is conditional on need.",
+    "IX.4 prescribes a further genuflection after the chalice-covering point. It is distinct from conditional pall handling, and must remain a separate observable minister event."
   ],
   "branches": [
     {
@@ -183,9 +184,26 @@
         "SOLEMN"
       ],
       "trigger": "After minor elevation",
-      "action": "Covers the chalice when required and genuflects with the celebrant",
+      "action": "Covers the chalice when required after the Canon minor elevation",
       "sourceSection": "IX.4",
       "condition": "WHEN_REQUIRED",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.011",
+      "cueId": "AO.SM.C0205",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "After Per ipsum and the minor elevation",
+      "action": "Genuflects again before the Blessed Sacrament after the chalice-covering point, whether or not he needed to handle the pall",
+      "sourceSection": "IX.4",
+      "condition": "SOURCE_PRESCRIBED",
       "sourceUrls": [
         "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
       ],
