@@ -202,4 +202,42 @@ for(const [cue,track,placement] of [
    cue+": high-risk Canon reader ownership gate lost");
 }
 
+
+const firstPassSourceReview=load("../data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json");
+assert.equal(firstPassSourceReview.schema,"ao-canon-first-pass-19-ritus-source-review-v1");
+assert.equal(firstPassSourceReview.status,"SOURCE_EVENTS_CHECKED_FRENCH_PUBLICATION_NOT_APPROVED");
+const firstPassSourceRows=promotion.decisions.filter(x=>
+  x.reviewGate==="FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF");
+assert.deepEqual(firstPassSourceReview.rows.map(x=>x.cueId),
+  firstPassSourceRows.map(x=>x.cueId),
+  "All 19 first-pass Canon rubrics must be checked in canonical order");
+let holds=0;
+for(const [index,review] of firstPassSourceReview.rows.entries()){
+  const d=firstPassSourceRows[index],row=source.rows.find(x=>x.cueId===review.cueId);
+  assert.equal(review.actionId,d.candidateActionId);
+  assert.equal(row.candidateActions[0].id,review.actionId);
+  assert.equal(row.candidateActions[0].actor,"PRIEST");
+  assert.equal(anchorsByAction.get(review.actionId)?.verifiedSourceWordAnchor,review.latinWordAnchor);
+  assert.equal(review.sourceSection,row.candidateActions[0].ritusLocator);
+  assert.equal(review.eventSourceCheck,"CHECKED_AGAINST_1962_RITUS");
+  assert.ok(Array.isArray(review.sourceUrls)&&review.sourceUrls.length===2);
+  assert.ok(review.sourceUrls.every(url=>url.startsWith("https://")));
+  assert.ok(String(review.sourceFinding??"").length>20,"Source-specific review note missing");
+  assert.equal(review.canonicalOwner,"AO.SM_CANON_SOURCE_CUE");
+  assert.equal(review.frenchDraftId,review.actionId);
+  assert.equal(review.originalDraftRemainsUnpublished,true);
+  assert.equal(review.publication,"BLOCKED_PENDING_APPROVAL");
+  assert.equal(review.priestClock,"INDEPENDENT_OBSERVED_PRIEST_ACTION_REQUIRED");
+  assert.equal(review.faithfulPosture,"NO_AUTOMATIC_DERIVATION");
+  if(review.copyReview==="EDIT_PRECISION_BEFORE_EDITOR_SIGNOFF"){
+    assert.equal(review.cueId,"AO.SM.C0187");
+    assert.ok(review.proposedOriginalFrenchCorrection?.includes("Súpplices"));
+    holds++;
+  }else assert.equal(review.copyReview,"SOURCE_ALIGNED_PENDING_EDITOR_SIGNOFF");
+}
+assert.deepEqual(firstPassSourceReview.totals,{
+  reviewed:19,sourceEventChecked:19,draftAligned:18,copyPrecisionHold:1,published:0,
+});
+assert.equal(holds,1,"Unreviewed French precision hold must not be dropped");
+
 console.log("PASS Canon 58/62 source-anchored preview: 42 rubric gaps preserved; form, actor and observational clocks fail closed.");
