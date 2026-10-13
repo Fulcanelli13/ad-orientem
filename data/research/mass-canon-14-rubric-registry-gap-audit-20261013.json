@@ -1,0 +1,964 @@
+{
+  "schema": "ao-mass-canon-source-to-current-rubrics-gap-register-v1",
+  "date": "2026-10-13",
+  "status": "AUDIT_BASELINE_NO_PRODUCTION_MUTATION",
+  "totalCanonCues": 58,
+  "sourceVerifiedPriestActions": 58,
+  "sourceVerifiedNonPriestActions": 4,
+  "cuesWithExistingDetailedRubric": 13,
+  "cuesWithNewPriestActionButNoDetailedRubric": 42,
+  "sourceCuesNoDistinctPrescribedMoment": [
+    "AO.SM.C0159",
+    "AO.SM.C0163",
+    "AO.SM.C0207"
+  ],
+  "rows": [
+    {
+      "cueId": "AO.SM.C0150",
+      "blockId": "AO.SM.B047",
+      "sourceLatinBegin": "Te igitur, clementíssime Pater, per Iesum Christum, Fílium tuum, Dóm",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.001"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "PROFOUND BOW"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0151",
+      "blockId": "AO.SM.B047",
+      "sourceLatinBegin": "uti accepta habeas et benedícas,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.002"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "KISSES ALTAR"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "blockId": "AO.SM.B047",
+      "sourceLatinBegin": "hæc ✠ dona, hæc ✠ múnera, hæc ✠ sancta sacrifícia illibáta.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.003"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "THREE CROSSES"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0153",
+      "blockId": "AO.SM.B047",
+      "sourceLatinBegin": "In primis, quæ tibi offérimus pro Ecclésia tua sancta cathólica: qua",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.004"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0154",
+      "blockId": "AO.SM.B048",
+      "sourceLatinBegin": "Meménto, Dómine, famulórum famularúmque tuarum N. et N.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.005"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0155",
+      "blockId": "AO.SM.B048",
+      "sourceLatinBegin": "[SILENT COMMEMORATION OF THE LIVING]",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.006"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0155.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0156",
+      "blockId": "AO.SM.B048",
+      "sourceLatinBegin": "et ómnium circumstántium, quorum tibi fides cógnita est et nota devó",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.007"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0157",
+      "blockId": "AO.SM.B049",
+      "sourceLatinBegin": "Communicántes, et memóriam venerántes, in primis gloriósæ semper Vír",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.008"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0158",
+      "blockId": "AO.SM.B049",
+      "sourceLatinBegin": "Iesu Christi:",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.009"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0158.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0159",
+      "blockId": "AO.SM.B049",
+      "sourceLatinBegin": "sed et beati Ioseph, eiusdem Virginis Sponsi, et beatórum Apostolóru",
+      "sourceVerifiedPriestMicroActionIds": [],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0160",
+      "blockId": "AO.SM.B049",
+      "sourceLatinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.010"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0161",
+      "blockId": "AO.SM.B050",
+      "sourceLatinBegin": "Hanc igitur oblatiónem servitutis nostræ, sed et cunctae famíliæ tuæ",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.011"
+      ],
+      "sourceVerifiedMinisterEventIds": [
+        "AO.CANON.R62.062"
+      ],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0161.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0162",
+      "blockId": "AO.SM.B050",
+      "sourceLatinBegin": "Per Christum, Dóminum nostrum. Amen.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.012"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0163",
+      "blockId": "AO.SM.B051",
+      "sourceLatinBegin": "Quam oblatiónem tu, Deus, in ómnibus, quaesumus,",
+      "sourceVerifiedPriestMicroActionIds": [],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "blockId": "AO.SM.B051",
+      "sourceLatinBegin": "bene ✠ díctam, adscríp ✠ tam, ra ✠ tam, rationábilem, acceptabilémqu",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.013"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "THREE CROSSES"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "blockId": "AO.SM.B051",
+      "sourceLatinBegin": "ut nobis Cor ✠ pus,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.014"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "SIGNS HOST"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "blockId": "AO.SM.B051",
+      "sourceLatinBegin": "et San ✠ guis fiat",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.015"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "SIGNS CHALICE"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0167",
+      "blockId": "AO.SM.B051",
+      "sourceLatinBegin": "dilectíssimi Fílii tui, Dómini nostri Iesu Christi.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.016"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0167.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0168",
+      "blockId": "AO.SM.B052",
+      "sourceLatinBegin": "Qui prídie quam paterétur, accépit panem in sanctas ac venerábiles m",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.017"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0169",
+      "blockId": "AO.SM.B052",
+      "sourceLatinBegin": "elevátis óculis in coelum ad te Deum, Patrem suum omnipoténtem,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.018"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0169.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0170",
+      "blockId": "AO.SM.B052",
+      "sourceLatinBegin": "tibi grátias agens,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.019"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0170.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "blockId": "AO.SM.B052",
+      "sourceLatinBegin": "bene ✠ dixit,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.020"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "SIGNS HOST"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0172",
+      "blockId": "AO.SM.B052",
+      "sourceLatinBegin": "fregit, dedítque discípulis suis, dicens: Accípite, et manducáte ex ",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.021"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0173",
+      "blockId": "AO.SM.B052",
+      "sourceLatinBegin": "HOC EST ENIM CORPUS MEUM.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.022"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [
+        "Remain kneeling; bow reverently, then look up at the Sacred Host"
+      ],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "blockId": "AO.SM.B052",
+      "sourceLatinBegin": "[GENUFLECTS — ELEVATES THE SACRED HOST — REPLACES IT — GENUFLECTS]",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.023",
+        "AO.CANON.R62.024",
+        "AO.CANON.R62.025",
+        "AO.CANON.R62.026"
+      ],
+      "sourceVerifiedMinisterEventIds": [
+        "AO.CANON.R62.027"
+      ],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0174.01",
+        "AO.RUB.C0174.02",
+        "AO.RUB.C0174.04",
+        "AO.RUB.C0174.05",
+        "AO.RUB.C0174.06"
+      ],
+      "existingPriestActionLabels": [
+        "ELEVATES HOST"
+      ],
+      "existingFaithfulGestureLabels": [
+        "Remain kneeling; bow reverently, then look up at the Sacred Host"
+      ],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0175",
+      "blockId": "AO.SM.B053",
+      "sourceLatinBegin": "Símili modo postquam coenátum est, accípiens et hunc præclárum Cálic",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.028"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0176",
+      "blockId": "AO.SM.B053",
+      "sourceLatinBegin": "item tibi grátias agens,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.029"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0176.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "blockId": "AO.SM.B053",
+      "sourceLatinBegin": "bene ✠ dixit,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.030"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "SIGNS CHALICE"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0178",
+      "blockId": "AO.SM.B053",
+      "sourceLatinBegin": "dedítque discípulis suis, dicens: Accípite, et bíbite ex eo omnes.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.031"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "blockId": "AO.SM.B053",
+      "sourceLatinBegin": "HIC EST ENIM CALIX SÁNGUINIS MEI, NOVI ET ÆTÉRNI TESTAMÉNTI: MYSTÉRI",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.032"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [
+        "Remain kneeling; bow reverently, then look up at the Chalice"
+      ],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0180",
+      "blockId": "AO.SM.B053",
+      "sourceLatinBegin": "Hæc quotiescúmque fecéritis, in mei memóriam faciétis.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.033"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "blockId": "AO.SM.B053",
+      "sourceLatinBegin": "[GENUFLECTS — ELEVATES THE PRECIOUS BLOOD — REPLACES/COVERS THE CHAL",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.034"
+      ],
+      "sourceVerifiedMinisterEventIds": [
+        "AO.CANON.R62.035"
+      ],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0181.01",
+        "AO.RUB.C0181.02",
+        "AO.RUB.C0181.04",
+        "AO.RUB.C0181.05"
+      ],
+      "existingPriestActionLabels": [
+        "ELEVATES CHALICE"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0182",
+      "blockId": "AO.SM.B054",
+      "sourceLatinBegin": "Unde et mémores, Dómine, nos servi tui, sed et plebs tua sancta, eiu",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.036"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0183",
+      "blockId": "AO.SM.B054",
+      "sourceLatinBegin": "offérimus præcláræ maiestáti tuæ de tuis donis ac datis,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.037"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "blockId": "AO.SM.B054",
+      "sourceLatinBegin": "hóstiam ✠ puram, hóstiam ✠ sanctam, hóstiam ✠ immaculátam,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.038"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "THREE CROSSES"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "blockId": "AO.SM.B054",
+      "sourceLatinBegin": "Panem ✠ sanctum vitæ ætérnæ, et Calicem ✠ salútis perpétuæ.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.039"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "SIGNS HOST"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0186",
+      "blockId": "AO.SM.B055",
+      "sourceLatinBegin": "Supra quæ propítio ac seréno vultu respícere dignéris: et accépta ha",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.040"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "blockId": "AO.SM.B056",
+      "sourceLatinBegin": "Súpplices te rogámus, omnípotens Deus: iube hæc perférri per manus s",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.041"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "PROFOUND BOW"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "blockId": "AO.SM.B056",
+      "sourceLatinBegin": "ut, quotquot ex hac altáris participatióne sacrosánctum Fílii tui",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.042"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "KISSES ALTAR"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "blockId": "AO.SM.B056",
+      "sourceLatinBegin": "Cor ✠ pus, et Sán ✠ guinem sumpsérimus,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.043"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "SIGNS HOST"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "blockId": "AO.SM.B056",
+      "sourceLatinBegin": "omni benedictióne coelésti et grátia repleámur.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.044"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "SIGNS HIMSELF"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0191",
+      "blockId": "AO.SM.B056",
+      "sourceLatinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.045"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0192",
+      "blockId": "AO.SM.B057",
+      "sourceLatinBegin": "Meménto étiam, Dómine, famulórum famularúmque tuárum N. et N., qui n",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.046"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0193",
+      "blockId": "AO.SM.B057",
+      "sourceLatinBegin": "[SILENT COMMEMORATION OF THE DEAD]",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.047"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0193.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0194",
+      "blockId": "AO.SM.B057",
+      "sourceLatinBegin": "Ipsis, Dómine, et ómnibus in Christo quiescéntibus locum refrigérii,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.048"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0195",
+      "blockId": "AO.SM.B057",
+      "sourceLatinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.049"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "blockId": "AO.SM.B058",
+      "sourceLatinBegin": "Nobis quoque peccatóribus",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.050"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "STRIKES BREAST"
+      ],
+      "existingFaithfulGestureLabels": [
+        "Strike breast"
+      ],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0197",
+      "blockId": "AO.SM.B058",
+      "sourceLatinBegin": "fámulis tuis, de multitúdine miseratiónum tuárum sperántibus, partem",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.051"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [
+        "Strike breast"
+      ],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0198",
+      "blockId": "AO.SM.B058",
+      "sourceLatinBegin": "Per Christum, Dóminum nostrum.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.052"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [
+        "Strike breast"
+      ],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0199",
+      "blockId": "AO.SM.B059",
+      "sourceLatinBegin": "Per quem hæc ómnia, Dómine, semper bona creas,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.053"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0200",
+      "blockId": "AO.SM.B059",
+      "sourceLatinBegin": "sancti ✠ ficas, viví ✠ ficas, bene ✠ dícis et præstas nobis.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.054"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0200.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "blockId": "AO.SM.B060",
+      "sourceLatinBegin": "[UNCOVERS CHALICE — GENUFLECTS — TAKES SACRED HOST]",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.055"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "GENUFLECTS"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0202",
+      "blockId": "AO.SM.B060",
+      "sourceLatinBegin": "Per ip ✠ sum, et cum ip ✠ so, et in ip ✠ so,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.056"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0202.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0203",
+      "blockId": "AO.SM.B060",
+      "sourceLatinBegin": "est tibi Deo Patri ✠ omnipotenti, in unitáte Spíritus ✠ Sancti,",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.057"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0203.01"
+      ],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "blockId": "AO.SM.B060",
+      "sourceLatinBegin": "omnis honor, et glória.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.058"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "MINOR ELEVATION"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "blockId": "AO.SM.B060",
+      "sourceLatinBegin": "[REPLACES THE HOST — COVERS THE CHALICE — GENUFLECTS]",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.059"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [
+        "GENUFLECTS"
+      ],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0206",
+      "blockId": "AO.SM.B061",
+      "sourceLatinBegin": "℣. Per ómnia sǽcula sæculórum.",
+      "sourceVerifiedPriestMicroActionIds": [
+        "AO.CANON.R62.060"
+      ],
+      "sourceVerifiedMinisterEventIds": [],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": true
+    },
+    {
+      "cueId": "AO.SM.C0207",
+      "blockId": "AO.SM.B061",
+      "sourceLatinBegin": "℟. Amen.",
+      "sourceVerifiedPriestMicroActionIds": [],
+      "sourceVerifiedMinisterEventIds": [
+        "AO.CANON.R62.061"
+      ],
+      "existingDetailedRubricIds": [],
+      "existingPriestActionLabels": [],
+      "existingFaithfulGestureLabels": [],
+      "isPriestRubricCoverageGap": false
+    }
+  ],
+  "majorEditorialIssues": [
+    {
+      "issueId": "AO.CANON.GAP.01",
+      "category": "FAITHFUL_PROFILE_CONDITIONAL",
+      "cueIds": [
+        "AO.SM.C0150",
+        "AO.SM.C0182"
+      ],
+      "problem": "Kneel and optional stand are profile-guarded and not universal pew law.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.02",
+      "category": "FAITHFUL_ACTION_DUPLICATION",
+      "cueIds": [
+        "AO.SM.C0196",
+        "AO.SM.C0197",
+        "AO.SM.C0198"
+      ],
+      "problem": "Three successive faithful breast strikes, although direct priest Ritus mandates one at opening and Guéranger invites faithful only at opening. C0197/C0198 require independent evidence.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.03",
+      "category": "IN_TEXT_GESTURE_INCOMPLETENESS",
+      "cueIds": [
+        "AO.SM.C0185"
+      ],
+      "problem": "Current action labels SIGNS HOST, while Ritus IX.1 calls for signs over Host and over Chalice.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.04",
+      "category": "PRIEST_VOICE_BOUNDARIES",
+      "cueIds": [
+        "AO.SM.C0196",
+        "AO.SM.C0197",
+        "AO.SM.C0206"
+      ],
+      "problem": "Raised voice at Nobis opening, secret continuation, audible concluding Per omnia.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.05",
+      "category": "BELL_ACTOR_AND_TIMING",
+      "cueIds": [
+        "AO.SM.C0161",
+        "AO.SM.C0174",
+        "AO.SM.C0181"
+      ],
+      "problem": "Bell is server action, warning paulo ante Consecrationem rather than exact obligatory cue; ringing alternatives at elevations.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.06",
+      "category": "CONSECRATION_SEQUENCE",
+      "cueIds": [
+        "AO.SM.C0179",
+        "AO.SM.C0180",
+        "AO.SM.C0181"
+      ],
+      "problem": "Chalice words, reposition, first genuflection, elevation, covering and second genuflection remain discrete.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.07",
+      "category": "LATIN_SOURCE_INTEGRITY",
+      "cueIds": [
+        "AO.SM.C0194"
+      ],
+      "problem": "Missing et in locum refrigerii lucis et pacis. Tracked in issue #1145, do not mutate donor in research.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.08",
+      "category": "GUERANGER_1885_DIFFERS_1962",
+      "cueIds": [
+        "AO.SM.C0159"
+      ],
+      "problem": "1885 source says St Joseph absent; he is present in 1962.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.09",
+      "category": "PRIEST_STATION_INHERITANCE",
+      "cueIds": [
+        "AO.SM.C0150",
+        "AO.SM.C0205"
+      ],
+      "problem": "No direct Canon station transitions in sparse registry; priest stands at altar centre with independently timed bows/genuflections.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    },
+    {
+      "issueId": "AO.CANON.GAP.10",
+      "category": "PRIEST_SCHOLA_CLOCKS",
+      "cueIds": [
+        "AO.SM.C0150",
+        "AO.SM.C0207"
+      ],
+      "problem": "Schola may still sing Sanctus or Benedictus after priest privately begins Canon.",
+      "status": "OPEN_RESEARCH_OR_IMPLEMENTATION"
+    }
+  ]
+}
