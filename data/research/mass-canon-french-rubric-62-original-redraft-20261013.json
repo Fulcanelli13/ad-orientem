@@ -1,0 +1,1402 @@
+{
+  "schema": "ao-canon-62-french-rubric-review-batch-v1",
+  "date": "2026-10-13",
+  "status": "SOURCE_RECHECKED_ORIGINAL_FRENCH_DRAFT_NOT_PUBLISHED",
+  "scope": {
+    "canonCues": 58,
+    "actionRows": 62,
+    "priestRows": 58,
+    "ministerRows": 4
+  },
+  "standard": "Independent original French phrasing, source event ownership, no modern protected French translation copied; editorial signoff still required",
+  "sourceInputs": [
+    "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+    "data/research/mass-canon-62-source-trigger-audit-20261013.json"
+  ],
+  "displayPolicy": {
+    "inTextApprovalRequired": true,
+    "priestClockIndependent": true,
+    "ministerClockIndependent": true,
+    "faithfulPostureDerived": false,
+    "secondRibbonMayNotRepeatThisRubric": true
+  },
+  "reviewAlerts": [
+    "C0173 and C0179 are consecratory words, NOT elevations.",
+    "C0174 and C0181 carry multi-step chronology with distinct priest/server actors.",
+    "C0161 anticipatory bell is not exactly Hanc igitur.",
+    "C0185 two signs of cross affect Host and Chalice separately.",
+    "C0201 and C0205 chalice handling has a Solemn Mass deacon.",
+    "C0196 raised-voice opening returns immediately to secret text at C0197.",
+    "C0194 original donor missing et; runtime correction SRC-PARITY-003 exists.",
+    "C0190 Latin source spells coelésti, not the research trigger caelesti.",
+    "C0207 response actor depends on Mass form."
+  ],
+  "rows": [
+    {
+      "id": "AO.CANON.R62.001",
+      "cueId": "AO.SM.C0150",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Te igitur",
+      "ritusLocator": "VIII.1",
+      "draftFrenchOriginal": "Au début du Te igitur, s'incline profondément, mains jointes appuyées à l'autel, voix secrète.",
+      "revisedFrenchRubric": "Au centre de l’autel, le prêtre lève brièvement les yeux et les mains, puis s’incline profondément, les mains posées sur l’autel, et commence le Canon à voix secrète.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0150",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "OPENING_HANDS_AND_EYES_BEFORE_BOW",
+        "PRIEST_EVENT_CLOCK_NOT_SCROLL"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.002",
+      "cueId": "AO.SM.C0151",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "uti accepta habeas",
+      "ritusLocator": "VIII.1",
+      "draftFrenchOriginal": "Baise l'autel au centre puis se redresse, les mains jointes devant la poitrine.",
+      "revisedFrenchRubric": "Il baise l’autel au centre, se redresse et joint les mains devant la poitrine.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0151",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.003",
+      "cueId": "AO.SM.C0152",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "haec dona / haec munera / haec sancta sacrificia",
+      "ritusLocator": "VIII.1",
+      "draftFrenchOriginal": "Trace trois signes de croix sur l'hostie et le calice ensemble.",
+      "revisedFrenchRubric": "Il trace trois signes de croix de la main droite sur l’Hostie et le calice ensemble, aux trois expressions du texte.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0152",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.004",
+      "cueId": "AO.SM.C0153",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "In primis",
+      "ritusLocator": "VIII.1–2",
+      "draftFrenchOriginal": "Poursuit, les mains étendues devant la poitrine; noms du pape et de l'ordinaire selon les rubriques.",
+      "revisedFrenchRubric": "Il poursuit, les mains étendues devant la poitrine. Le nom du pape et celui de l’ordinaire du lieu suivent les règles propres à la situation du célébrant et du siège.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0153",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "PONTIFF_BISHOP_FORMULA_CONDITIONAL"
+      ],
+      "formReview": "FORM_OR_PASTORAL_REVIEW_PENDING",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.005",
+      "cueId": "AO.SM.C0154",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Memento",
+      "ritusLocator": "VIII.3",
+      "draftFrenchOriginal": "Joint et élève les mains vers le visage ou la poitrine, incline légèrement la tête.",
+      "revisedFrenchRubric": "À « Meménto », il joint les mains et les élève devant le visage ou la poitrine, la tête légèrement inclinée.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0154",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.006",
+      "cueId": "AO.SM.C0155",
+      "actor": "PRIEST",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.3",
+      "draftFrenchOriginal": "Reste immobile un bref temps et fait mémoire des vivants, mentalement ou en nommant certains à voix secrète.",
+      "revisedFrenchRubric": "Il demeure recueilli un moment pour faire mémoire des vivants ; il peut les nommer à voix secrète, sans y être obligé.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0155",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "SILENT_NON_TEXT_MEMORIAL",
+        "NAMES_OPTIONAL"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.007",
+      "cueId": "AO.SM.C0156",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "et omnium circumstantium",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Abaisse et étend les mains pour poursuivre le souvenir des assistants.",
+      "revisedFrenchRubric": "La commémoration terminée, il reprend la prière, les mains étendues.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0156",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.008",
+      "cueId": "AO.SM.C0157",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Communicantes",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Poursuit le Communicantes debout, mains étendues; certaines fêtes ajoutent un texte propre.",
+      "revisedFrenchRubric": "Il récite le « Communicántes » les mains étendues ; la formule peut varier selon le jour liturgique.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0157",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "SEASONAL_COMMUNICANTES_TEXT"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.009",
+      "cueId": "AO.SM.C0158",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Iesu Christi",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Incline la tête vers la Croix au nom de Jésus-Christ.",
+      "revisedFrenchRubric": "Au nom de Jésus-Christ, il incline la tête vers la croix de l’autel.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0158",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.010",
+      "cueId": "AO.SM.C0160",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Per eundem",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Joint les mains à la conclusion du Communicantes.",
+      "revisedFrenchRubric": "À « Per eúndem », il joint les mains devant la poitrine.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0160",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.011",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Hanc igitur oblationem",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Étend ensemble les mains au-dessus du calice et de l'hostie, paumes tournées vers les oblats.",
+      "revisedFrenchRubric": "À « Hanc ígitur », il tient les mains réunies au-dessus de l’Hostie et du calice, les paumes tournées vers les oblats.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0161",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "HANC_IGITUR_SPECIAL_FORMS"
+      ],
+      "formReview": "FORM_OR_PASTORAL_REVIEW_PENDING",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.012",
+      "cueId": "AO.SM.C0162",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Per Christum Dominum nostrum",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Joint les mains à la fin du Hanc igitur.",
+      "revisedFrenchRubric": "À « Per Christum », il joint les mains avant de poursuivre.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0162",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.013",
+      "cueId": "AO.SM.C0164",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "benedictam / adscriptam / ratam",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Trace trois croix conjointement sur l'hostie et le calice.",
+      "revisedFrenchRubric": "Il trace trois signes de croix de la main droite sur l’Hostie et le calice ensemble, successivement à « benedíctam », « adscríptam » et « ratam ».",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0164",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.014",
+      "cueId": "AO.SM.C0165",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Corpus",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Trace une croix sur l'hostie seule.",
+      "revisedFrenchRubric": "À « Corpus », il trace un signe de croix sur l’Hostie seule.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0165",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.015",
+      "cueId": "AO.SM.C0166",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Sanguis",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Trace une croix sur le calice seul.",
+      "revisedFrenchRubric": "À « Sanguis », il trace un signe de croix sur le calice seul.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0166",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.016",
+      "cueId": "AO.SM.C0167",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "dilectissimi Filii tui",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Élève puis joint les mains devant la poitrine; incline la tête vers la Croix.",
+      "revisedFrenchRubric": "Il élève puis joint les mains et incline la tête vers la croix.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0167",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.017",
+      "cueId": "AO.SM.C0168",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Qui pridie / accepit panem",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Prend l'hostie entre les pouces et index des deux mains, au milieu de l'autel.",
+      "revisedFrenchRubric": "Il prend l’Hostie entre le pouce et l’index des deux mains et la tient au centre de l’autel.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0168",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "OTHER_HOSTS_OPTIONAL"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.018",
+      "cueId": "AO.SM.C0169",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "elevatis oculis",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Lève les yeux vers le ciel et les abaisse aussitôt.",
+      "revisedFrenchRubric": "Il élève les yeux vers le ciel, puis les abaisse aussitôt.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0169",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.019",
+      "cueId": "AO.SM.C0170",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "tibi gratias agens",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Incline légèrement la tête.",
+      "revisedFrenchRubric": "Il incline légèrement la tête en disant les mots d’action de grâces.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0170",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.020",
+      "cueId": "AO.SM.C0171",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "benedixit",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Tenant l'hostie de la main gauche, la signe de la droite.",
+      "revisedFrenchRubric": "Tenant l’Hostie de la main gauche, il trace de la droite un signe de croix sur elle.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0171",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.021",
+      "cueId": "AO.SM.C0172",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "fregit",
+      "ritusLocator": "VIII.4",
+      "draftFrenchOriginal": "Poursuit le récit, tenant l'hostie: le mot fregit n'autorise pas à montrer une fraction physique à cet instant.",
+      "revisedFrenchRubric": "Il poursuit les paroles du récit « fregit, dedítque… » sans rompre l’Hostie à cet instant.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0172",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "NARRATED_FREGIT_IS_NOT_PHYSICAL_FRACTION"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.022",
+      "cueId": "AO.SM.C0173",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Hoc est enim Corpus meum",
+      "ritusLocator": "VIII.5",
+      "draftFrenchOriginal": "Avant-bras/coudes sur l'autel, prononce distinctement et avec révérence les paroles sur l'hostie; ce sont les paroles consacratoires, non l'élévation.",
+      "revisedFrenchRubric": "Incliné sur l’autel, les coudes appuyés, il prononce distinctement, avec révérence et à voix secrète, les paroles de la consécration de l’Hostie.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0173",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "CONSECRATION_WORDS_VS_ELEVATION"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.023",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.5–6",
+      "draftFrenchOriginal": "Adore immédiatement l'Hostie consacrée en génuflexion.",
+      "revisedFrenchRubric": "Après les paroles consécratoires, il fait une première génuflexion pour adorer l’Hostie.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0174",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "HOST_GENUFLECTION_FIRST",
+        "ORDERED_ATOMIC_STEPS"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.024",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.5–6",
+      "draftFrenchOriginal": "Se relève, élève l'Hostie pour l'adoration des fidèles, yeux fixés sur elle.",
+      "revisedFrenchRubric": "Il se relève, puis élève l’Hostie pour la présenter à l’adoration des fidèles, les yeux tournés vers elle.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0174",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "HOST_ELEVATION_AFTER_FIRST_GENUFLECTION",
+        "ORDERED_ATOMIC_STEPS"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.025",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.5–6",
+      "draftFrenchOriginal": "Repose l'Hostie sur le corporal et fait une seconde génuflexion.",
+      "revisedFrenchRubric": "Il repose l’Hostie sur le corporal, puis fait une seconde génuflexion.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0174",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "HOST_REPLACE_THEN_SECOND_GENUFLECTION",
+        "ORDERED_ATOMIC_STEPS"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.026",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "sourceAnchorType": "PERSISTENT_SOURCE_STATE",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.5",
+      "draftFrenchOriginal": "Après la consécration de l'Hostie, garde pouces et index joints sauf pour toucher/manier une Hostie consacrée, jusqu'à l'ablution.",
+      "revisedFrenchRubric": "À partir de la consécration, il garde les pouces et index réunis, sauf pour toucher l’Hostie consacrée, jusqu’à l’ablution des doigts.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0174",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "PERSISTENT_THUMB_INDEX_STATE_NOT_INSTANT"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.027",
+      "cueId": "AO.SM.C0174",
+      "actor": "SERVER",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.6",
+      "draftFrenchOriginal": "À l'élévation de l'Hostie, le servant sonne trois fois ou continûment selon le mode prévu; le prêtre ne sonne pas.",
+      "revisedFrenchRubric": "Pendant l’élévation de l’Hostie, le servant sonne trois fois ou sans interruption jusqu’à ce qu’elle soit reposée ; ce n’est pas une action du célébrant.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0174",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "SERVER_BELL_CONCURRENT_WITH_HOST_ELEVATION",
+        "RING_THREE_OR_CONTINUOUSLY"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.028",
+      "cueId": "AO.SM.C0175",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Simili modo",
+      "ritusLocator": "VIII.7",
+      "draftFrenchOriginal": "Découvre le calice, l'élève très légèrement puis le repose au début du récit.",
+      "revisedFrenchRubric": "Après l’adoration, il découvre le calice ; au début du récit, il l’élève légèrement dans les deux mains, puis le repose aussitôt.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0175",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "CHALICE_UNCOVER_AND_SMALL_PREP_ELEVATION_NOT_MAJOR"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.029",
+      "cueId": "AO.SM.C0176",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "item tibi gratias agens",
+      "ritusLocator": "VIII.7",
+      "draftFrenchOriginal": "Incline la tête à l'action de grâces.",
+      "revisedFrenchRubric": "À « item tibi grátias agens », il incline la tête.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0176",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.030",
+      "cueId": "AO.SM.C0177",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "benedixit",
+      "ritusLocator": "VIII.7",
+      "draftFrenchOriginal": "Trace une croix de la main droite au-dessus du calice qu'il tient de la gauche.",
+      "revisedFrenchRubric": "Tenant le calice de la main gauche, il trace de la droite un signe de croix sur lui.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0177",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.031",
+      "cueId": "AO.SM.C0178",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Accipite et bibite",
+      "ritusLocator": "VIII.7",
+      "draftFrenchOriginal": "Tient le calice avec les deux mains, au nœud et au pied, en préparant les paroles consacratoires.",
+      "revisedFrenchRubric": "Il tient le calice à deux mains, la gauche au pied et la droite au nœud, en se préparant à la consécration.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0178",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.032",
+      "cueId": "AO.SM.C0179",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Hic est enim Calix Sanguinis mei",
+      "ritusLocator": "VIII.7",
+      "draftFrenchOriginal": "Appuyé sur l'autel, prononce les paroles consacratoires du calice avec attention et continuité.",
+      "revisedFrenchRubric": "Incliné vers le calice, les coudes appuyés sur l’autel, il prononce de façon continue, attentive et secrète les paroles de la consécration du Précieux Sang.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0179",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "CHALICE_WORDS_VS_ELEVATION"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.033",
+      "cueId": "AO.SM.C0180",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Haec quotiescumque feceritis",
+      "ritusLocator": "VIII.7",
+      "draftFrenchOriginal": "Repose le calice, dit secrètement l'ordre de commémoration et adore par une première génuflexion.",
+      "revisedFrenchRubric": "Après les paroles consacratoires, il repose le calice, dit secrètement « Hæc quotiescúmque… », puis adore par une première génuflexion.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0180",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "CHALICE_REPLACEMENT_HAEC_WORDS_THEN_FIRST_GENUFLECTION"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.034",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.7",
+      "draftFrenchOriginal": "Élève le calice découvert pour l'adoration des fidèles; le repose, le couvre et génuflecte de nouveau.",
+      "revisedFrenchRubric": "Après la première génuflexion, il se relève et élève le calice découvert ; il le repose, le fait couvrir selon la forme de la messe, puis fait une seconde génuflexion.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0181",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "CHALICE_FIRST_GENUFLECT_ELEVATE_REPLACE_COVER_SECOND_GENUFLECT"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.035",
+      "cueId": "AO.SM.C0181",
+      "actor": "SERVER",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.6–7",
+      "draftFrenchOriginal": "Le servant sonne à l'élévation du calice, trois fois ou en continu selon l'option prescrite.",
+      "revisedFrenchRubric": "Pendant l’élévation du calice, le servant sonne trois fois ou sans interruption jusqu’à sa déposition.",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0181",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "SERVER_BELL_CONCURRENT_WITH_CHALICE_ELEVATION"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.036",
+      "cueId": "AO.SM.C0182",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Unde et memores",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Debout, mains étendues devant la poitrine, poursuit le Canon à voix secrète.",
+      "revisedFrenchRubric": "Le calice reposé et adoré, il poursuit « Unde et mémores » à voix secrète, debout, les mains étendues.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0182",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.037",
+      "cueId": "AO.SM.C0183",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "de tuis donis ac datis",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Joint les mains.",
+      "revisedFrenchRubric": "À « de tuis donis ac datis », il joint les mains devant la poitrine.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0183",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.038",
+      "cueId": "AO.SM.C0184",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Hostiam puram / sanctam / immaculatam",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Trace trois croix sur les deux Espèces consacrées ensemble.",
+      "revisedFrenchRubric": "Il trace successivement trois signes de croix sur l’Hostie et le calice ensemble.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0184",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.039",
+      "cueId": "AO.SM.C0185",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Panem sanctum / Calicem salutis",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Trace une croix sur l'Hostie seule puis une sur le calice seul.",
+      "revisedFrenchRubric": "Il trace une croix sur l’Hostie à « Panem sanctum », puis une sur le calice à « Calicem salútis ».",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0185",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "TWO_SEPARATE_CROSSES_HOST_THEN_CHALICE"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.040",
+      "cueId": "AO.SM.C0186",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Supra quae propitio",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Poursuit Supra quae, mains étendues; aucun geste distinct n'est prescrit ici par Ritus IX.1.",
+      "revisedFrenchRubric": "Il reprend « Supra quæ » les mains étendues ; aucun geste supplémentaire distinct n’est prescrit à cet endroit.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0186",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "PERSISTENT_HANDS_NO_NEW_GESTURE"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.041",
+      "cueId": "AO.SM.C0187",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Supplices te rogamus",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "S'incline profondément au centre de l'autel, mains jointes appuyées.",
+      "revisedFrenchRubric": "À « Súpplices te rogámus », il s’incline profondément au milieu de l’autel, les mains jointes posées sur celui-ci.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0187",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.042",
+      "cueId": "AO.SM.C0188",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "ex hac altaris participatione",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Baise l'autel, mains de part et d'autre sur le corporal.",
+      "revisedFrenchRubric": "À « ex hac altáris participatióne », il baise l’autel en posant les mains de part et d’autre sur le corporal.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0188",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.043",
+      "cueId": "AO.SM.C0189",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Corpus / Sanguinem",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Trace séparément une croix sur l'Hostie puis une sur le calice.",
+      "revisedFrenchRubric": "Il trace séparément un signe de croix sur l’Hostie à « Corpus », puis sur le calice à « Sanguinem ».",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0189",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.044",
+      "cueId": "AO.SM.C0190",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "omni benedictióne",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Se signe du front à la poitrine.",
+      "revisedFrenchRubric": "À « omni benedictióne », il fait sur lui-même le signe de croix, du front à la poitrine.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0190",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "COELESTI_SOURCE_VARIANT_NOT_CAELESTI"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.045",
+      "cueId": "AO.SM.C0191",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Per eundem",
+      "ritusLocator": "IX.1",
+      "draftFrenchOriginal": "Joint les mains à la conclusion.",
+      "revisedFrenchRubric": "À « Per eúndem », il joint les mains.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0191",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.046",
+      "cueId": "AO.SM.C0192",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Memento etiam",
+      "ritusLocator": "IX.2",
+      "draftFrenchOriginal": "Élève les mains jointes devant son visage, les yeux fixés sur le Sacrement.",
+      "revisedFrenchRubric": "À « Meménto étiam », il joint et élève les mains devant le visage et regarde le Saint-Sacrement sur l’autel.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0192",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.047",
+      "cueId": "AO.SM.C0193",
+      "actor": "PRIEST",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "IX.2",
+      "draftFrenchOriginal": "Fait mémoire des défunts à sa convenance, comme au Memento des vivants.",
+      "revisedFrenchRubric": "Il fait mémoire des fidèles défunts à sa convenance, comme il l’a fait pour les vivants.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0193",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.048",
+      "cueId": "AO.SM.C0194",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Ipsis Domine",
+      "ritusLocator": "IX.2",
+      "draftFrenchOriginal": "Reprend la prière les mains étendues.",
+      "revisedFrenchRubric": "Cette commémoration achevée, il poursuit la prière les mains étendues.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0194",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.049",
+      "cueId": "AO.SM.C0195",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Per eundem",
+      "ritusLocator": "IX.2",
+      "draftFrenchOriginal": "Joint les mains et incline la tête à la conclusion.",
+      "revisedFrenchRubric": "À « Per eúndem », il joint les mains et incline la tête.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0195",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.050",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Nobis quoque peccatoribus",
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Élève quelque peu la voix à Nobis quoque et frappe une fois sa poitrine de la main droite.",
+      "revisedFrenchRubric": "À « Nobis quoque peccatóribus », il élève légèrement la voix et se frappe une fois la poitrine de la main droite, la gauche posée sur le corporal.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0196",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "RAISED_VOICE_ONLY_INITIAL_PHRASE_ONE_CHEST_STRIKE"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.051",
+      "cueId": "AO.SM.C0197",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "famulis tuis",
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Poursuit la prière secrètement, les mains étendues.",
+      "revisedFrenchRubric": "Il poursuit « fámulis tuis… » à voix secrète, les mains étendues.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0197",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "VOICE_RETURNS_TO_SECRET"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.052",
+      "cueId": "AO.SM.C0198",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Per Christum",
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Joint les mains à Per Christum.",
+      "revisedFrenchRubric": "À « Per Christum », il joint les mains.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0198",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.053",
+      "cueId": "AO.SM.C0199",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Per quem haec omnia",
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Joint les mains devant la poitrine.",
+      "revisedFrenchRubric": "À « Per quem hæc ómnia », il garde les mains jointes devant la poitrine.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0199",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.054",
+      "cueId": "AO.SM.C0200",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "sanctificas / vivificas / benedicis",
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Trace trois croix sur les deux Espèces.",
+      "revisedFrenchRubric": "Il trace de la main droite trois signes de croix successifs sur l’Hostie et le calice ensemble.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0200",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.055",
+      "cueId": "AO.SM.C0201",
+      "actor": "PRIEST",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Découvre le calice, génuflecte puis prend l'Hostie consacrée; le diacre n'aide que dans la Messe solennelle.",
+      "revisedFrenchRubric": "Pour la conclusion du Canon, le calice est découvert ; le prêtre fait une génuflexion, se relève et prend l’Hostie. À la messe solennelle, le diacre intervient pour découvrir le calice selon les rubriques.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0201",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "SOLEMN_DEACON_ROLE_SEPARATE_FROM_PRIEST"
+      ],
+      "formReview": "FORM_OR_PASTORAL_REVIEW_PENDING",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.056",
+      "cueId": "AO.SM.C0202",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Per ipsum / cum ipso / in ipso",
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Avec l'Hostie, trace trois croix d'un bord à l'autre au-dessus du calice.",
+      "revisedFrenchRubric": "Avec l’Hostie consacrée, il trace trois croix au-dessus du calice, d’un bord à l’autre, aux trois expressions « Per ipsum », « cum ipso », « in ipso ».",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0202",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.057",
+      "cueId": "AO.SM.C0203",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Deo Patri / Spiritus Sancti",
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Trace deux croix avec l'Hostie entre le calice et la poitrine.",
+      "revisedFrenchRubric": "Avec l’Hostie, il trace deux croix entre le calice et sa poitrine, aux mots « Patri » et « Sancti ».",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0203",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.058",
+      "cueId": "AO.SM.C0204",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "omnis honor et gloria",
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Élève légèrement l'Hostie et le calice ensemble; il ne s'agit pas des grandes ostensions.",
+      "revisedFrenchRubric": "Tenant l’Hostie au-dessus du calice, il élève légèrement les deux espèces ensemble. Il s’agit de la petite élévation, non d’une grande ostension.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0204",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "MINOR_ELEVATION_NOT_MAJOR_OSTENSION"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.059",
+      "cueId": "AO.SM.C0205",
+      "actor": "PRIEST",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "latinTrigger": null,
+      "ritusLocator": "IX.3",
+      "draftFrenchOriginal": "Repose l'Hostie et le calice, couvre ce dernier, puis génuflecte.",
+      "revisedFrenchRubric": "Il repose l’Hostie sur le corporal ; le calice est couvert selon la forme de la messe, puis le prêtre fait une génuflexion.",
+      "checkedAgainst": "LATIN_RITUS_IX_AND_ENGLISH_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0205",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "SOLEMN_DEACON_MAY_UNCOVER_COVER_CHALICE"
+      ],
+      "formReview": "FORM_OR_PASTORAL_REVIEW_PENDING",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.060",
+      "cueId": "AO.SM.C0206",
+      "actor": "PRIEST",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Per ómnia",
+      "ritusLocator": "X.1",
+      "draftFrenchOriginal": "Au début de la conclusion du Canon, prononce Per omnia saecula saeculorum intelligiblement.",
+      "revisedFrenchRubric": "Après s’être relevé de l’adoration, il prononce distinctement et à voix intelligible « Per ómnia sæcula sæculórum ».",
+      "checkedAgainst": "1962_RITUS_X_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0206",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "AUDIBLE_BOUNDARY_TO_PATERNOSTER"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.061",
+      "cueId": "AO.SM.C0207",
+      "actor": "SERVER",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "latinTrigger": "Amen",
+      "ritusLocator": "X.1",
+      "draftFrenchOriginal": "Le ministre répond Amen à la conclusion du Canon; l'affectation exacte de la réponse dépend de la forme.",
+      "revisedFrenchRubric": "À la conclusion audible du Canon, le répondant dit « Amen » ; sa qualité exacte dépend de la forme de la messe.",
+      "checkedAgainst": "1962_RITUS_X_TRANSLATION",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0207",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "RESPONSE_ROLE_DEPENDS_ON_MASS_FORM"
+      ],
+      "formReview": "FORM_OR_PASTORAL_REVIEW_PENDING",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.R62.062",
+      "cueId": "AO.SM.C0161",
+      "actor": "SERVER",
+      "sourceAnchorType": "OBSERVED_ANTICIPATORY_EVENT",
+      "latinTrigger": null,
+      "ritusLocator": "VIII.6",
+      "draftFrenchOriginal": "Peu avant les paroles consécratoires, le servant avertit les fidèles par un coup de sonnette; Hanc igitur est un point d'ancrage pratique, pas une synchronisation imposée par le texte du Ritus.",
+      "revisedFrenchRubric": "Peu avant la consécration, le servant avertit les fidèles par un coup de sonnette ; cette action n’est pas fixée au mot « Hanc ígitur ».",
+      "checkedAgainst": "1962_RITUS_VIII_TRANSLATION_WITH_REGISTERED_LATIN_RESEARCH",
+      "sourceURLs": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceCueId": "AO.SM.C0161",
+      "faithfulRubricInferred": false,
+      "editorialFlags": [
+        "ANTICIPATORY_BELL_NOT_EXACT_HANC_IGITUR_CUE"
+      ],
+      "formReview": "FORM_BASELINE_CHECKED",
+      "reviewState": "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"
+    }
+  ]
+}
