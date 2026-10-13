@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {applyMissionSundayCollect,penultimateOctoberSunday,MISSION_SUNDAY_SOURCE} from "../src/mass/1962-mission-sunday-source.js";
 import {select1962CommemorationsForMassForm} from "../src/mass/1962-commemoration-form-source.js";
 import {properToReaderSlots} from "../src/mass/proper-reader-slots.js";
+import {composeProperReaderParagraphs} from "../src/mass/proper-reader-composition.js";
 import {assessPrintableProper,renderPrintableProperHtml} from "../src/calendar/print-proper.js";
 
 const ending=Object.freeze({
@@ -49,9 +50,24 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   }
   const fr=properToReaderSlots(result,{language:"fr"});
   const en=properToReaderSlots(result,{language:"en"});
-  assert.equal(fr.slots.COLLECT_SET.data.paragraphs.length,expected+1+(form==="LOW"?1:0),
-    form+" needs separate main/Mission focus segments plus separate St Luke if Low");
-  assert.equal(en.slots.COLLECT_SET.data.paragraphs.length,expected+1+(form==="LOW"?1:0));
+  // The source Proper slot owns text, NOT ceremony-interlude paragraphs.
+  // They are composed only when rendering independently concluded groups.
+  assert.equal(fr.slots.COLLECT_SET.data.paragraphs.length,expected+1,
+    form+" source Proper holds main/Mission text plus the separately concluded St Luke when Low");
+  assert.equal(en.slots.COLLECT_SET.data.paragraphs.length,expected+1);
+  for(const [mapped,language] of [[fr,"fr"],[en,"en"]]){
+    const displayed=composeProperReaderParagraphs(
+      "AO.SM.B019",mapped.slots.COLLECT_SET.data.paragraphs,{language}
+    );
+    assert.equal(displayed.length,form==="LOW"?6:3,
+      form+" must include the correct number of actual prayer/response events");
+    assert.equal(displayed.filter(p=>p.latin==="Orémus.").length,
+      form==="LOW"?1:0,
+      form+" must not say another Oremus within the Mission single-conclusion prayer");
+    assert.equal(displayed.filter(p=>p.kind==="RESPONSE").length,
+      form==="LOW"?2:1,
+      form+" must retain final and independently concluded St Luke responses");
+  }
   assert.equal(fr.slots.COLLECT_SET.data.paragraphs[0].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
   assert.equal(fr.slots.COLLECT_SET.data.paragraphs[1].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
   const audit=assessPrintableProper(day,{massForm:form,language:"fr"});
