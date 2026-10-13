@@ -197,6 +197,11 @@ function properParagraphs(block,properSlots,{language="en"}={}){
       kind:String(p.kind ?? "TEXT").toUpperCase(),
       latin:p.latin ?? p.lat ?? null,
       vernacular:p.vernacular ?? p.english ?? p.en ?? null,
+      // The Proper resolver identifies independently concluded prayer groups.
+      // Preserve that identity for liturgically accurate Oremus/Amen insertion.
+      orationGroupIndex:p.orationGroupIndex??null,
+      liturgicalGroup:p.liturgicalGroup??null,
+      sourcePath:p.sourcePath??null,
     }));
     return composeProperReaderParagraphs(block.Block_ID,resolved,{language})
       .map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
