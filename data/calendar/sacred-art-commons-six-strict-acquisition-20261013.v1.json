@@ -1,0 +1,123 @@
+{
+  "schema": "AO_SACRED_ART_COMMONS_EXACT_SOURCE_ACQUISITION_6_V1",
+  "asOf": "2026-10-13",
+  "purpose": "Get research JPEG bytes from six explicitly matched museum original paintings. Do not license, rate, crop, promote or publish. File-level Commons metadata plus museum inventory matching and SHA required.",
+  "master": "data/calendar/sacred-art-source-identity-master-222-queue-20261013.v8.json",
+  "registry": "data/calendar/sacred-art-candidates.v1.json",
+  "sourceRules": {
+    "hosts": [
+      "commons.wikimedia.org",
+      "upload.wikimedia.org"
+    ],
+    "minimumJPEGBytes": 100000,
+    "maxJPEGBytes": 50000000,
+    "noPhotographicCreativeWorksUnlessPublicDomainRightsDemonstrated": true,
+    "usage": "RESEARCH_ONLY_NEVER_AUTOMATICALLY_COMMERCIALLY_RELEASE",
+    "licence": "PD-Art / PD-scan / Public Domain Mark; jurisdiction review before commercial deployment",
+    "date": "2026-10-13"
+  },
+  "exclusions": [
+    {
+      "leadId": "W15-005",
+      "reason": "Commons public-domain original scan only 1920px, fails 2500px master quality gate"
+    },
+    {
+      "leadId": "W14-018",
+      "reason": "Caravaggio Montserrat highest located Commons file only 1388 × 1908; hold source master"
+    },
+    {
+      "leadId": "W09-003",
+      "reason": "Champaigne Charity only found photographer CC BY-SA 3.0 2443×2767, needs quality/attribution/attribution policy review"
+    },
+    {
+      "leadId": "W09-002",
+      "reason": "Rubens Nancy Transfiguration versions are photography with gallery/frame/background and/or highly compressed; no clean high-quality master certified"
+    }
+  ],
+  "items": [
+    {
+      "leadId": "W09-001",
+      "artist": "Caravaggio",
+      "title": "L'Annonciation",
+      "museum": "Musée des Beaux-Arts, Nancy",
+      "accession": "53",
+      "commonsFile": "Annunciation-Caravaggio.jpg",
+      "minLongSide": 4000,
+      "expectedShortSideMin": 2500,
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
+      "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
+      "productionApproved": false,
+      "numericUserRating": null
+    },
+    {
+      "leadId": "W15-001",
+      "artist": "Peter Paul Rubens",
+      "title": "The Defenders of the Eucharist",
+      "museum": "Museo Nacional del Prado, Madrid",
+      "accession": "P001695",
+      "commonsFile": "THe Defenders of the Eucharist - modello.jpg",
+      "minLongSide": 2800,
+      "expectedShortSideMin": 1950,
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:THe%20Defenders%20of%20the%20Eucharist%20-%20modello.jpg",
+      "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
+      "productionApproved": false,
+      "numericUserRating": null
+    },
+    {
+      "leadId": "W15-002",
+      "artist": "Peter Paul Rubens",
+      "title": "The Victory of Truth over Heresy",
+      "museum": "Museo Nacional del Prado, Madrid",
+      "accession": "P001697",
+      "commonsFile": "Victory of Truth over Heresy - modello.jpg",
+      "minLongSide": 2800,
+      "expectedShortSideMin": 1800,
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Victory%20of%20Truth%20over%20Heresy%20-%20modello.jpg",
+      "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
+      "productionApproved": false,
+      "numericUserRating": null
+    },
+    {
+      "leadId": "W15-003",
+      "artist": "Peter Paul Rubens",
+      "title": "The Triumph of the Church",
+      "museum": "Museo Nacional del Prado, Madrid",
+      "accession": "P001698",
+      "commonsFile": "Triumph-church-rubens-prado.jpg",
+      "minLongSide": 2800,
+      "expectedShortSideMin": 2000,
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Triumph-church-rubens-prado.jpg",
+      "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
+      "productionApproved": false,
+      "numericUserRating": null
+    },
+    {
+      "leadId": "W15-004",
+      "artist": "Peter Paul Rubens",
+      "title": "The Triumph of the Eucharist over Idolatry",
+      "museum": "Museo Nacional del Prado, Madrid",
+      "accession": "P001699",
+      "commonsFile": "Victory of the Eucharist over Paganism - modello.jpg",
+      "minLongSide": 2800,
+      "expectedShortSideMin": 1950,
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Victory%20of%20the%20Eucharist%20over%20Paganism%20-%20modello.jpg",
+      "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
+      "productionApproved": false,
+      "numericUserRating": null
+    },
+    {
+      "leadId": "W14-011",
+      "artist": "Peter Paul Rubens",
+      "title": "Triptych of Saint Ildefonso",
+      "museum": "Kunsthistorisches Museum, Vienna",
+      "accession": "GG 678",
+      "commonsFile": "Peter Paul Rubens - The Triptych of St. Ildefonso - Google Art Project.jpg",
+      "minLongSide": 5000,
+      "expectedShortSideMin": 3500,
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Peter%20Paul%20Rubens%20-%20The%20Triptych%20of%20St.%20Ildefonso%20-%20Google%20Art%20Project.jpg",
+      "rightsStatus": "COMMONS_PD_MARK_US_JURISDICTION_REVIEW_PENDING",
+      "productionApproved": false,
+      "numericUserRating": null
+    }
+  ]
+}
