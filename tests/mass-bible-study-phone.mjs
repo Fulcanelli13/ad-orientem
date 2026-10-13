@@ -33,12 +33,15 @@ try{
  });
  assert.equal(opened,true);
  const base="#ao-mass-formation-root";
+ const windowlessStatus=status=>status.bibleRows===26&&status.curatedPrimary===20&&status.curatedInline===9;
  await page.locator(base+' [data-ao-mf-open-bible]').waitFor({state:"visible",timeout:15000});
  assert.equal(await page.locator(base+' [data-ao-mf-stage]').count(),8,"original eight formation stages still available");
  await page.locator(base+' [data-ao-mf-open-bible]').tap();
- await page.waitForFunction(()=>globalThis.__massBibleTest?.status?.().bibleRows===26,null,{timeout:15000});
- assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),26);
- assert.match(await page.locator(base+' [data-ao-mass-bible-study]').innerText(),/source-linked research preview/i);
+ await page.waitForFunction(()=>globalThis.__massBibleTest?.status?.().curatedPrimary===20&&document.querySelectorAll("#ao-mass-formation-root [data-ao-mass-bible-row]").length===29,null,{timeout:15000});
+ assert.equal(windowlessStatus(await page.evaluate(()=>globalThis.__massBibleTest.status())),true);
+ assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),29);
+ assert.match(await page.locator(base+' [data-ao-mass-bible-curation]').innerText(),/editorial research preview/i);
+ assert.equal(await page.locator(base+' .aoMBInline').count(),9);
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row="MB18"]').count(),1);
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row="MB24"]').count(),1);
  const scriptureButton=page.locator(base+' [data-ao-mass-bible-row="MB18"] [data-ao-scripture-context]');
@@ -47,9 +50,9 @@ try{
  await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true,null,{timeout:15000});
  await page.locator('#ao-scripture-overlay [data-scripture-close]').first().tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===false,null,{timeout:15000});
- assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),26,"Mass formation survives Scripture return");
+ assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),29,"Mass formation survives Scripture return");
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row="MB01"] [data-ao-scripture-context]').count(),0,"Psalm cross-edition link correctly held");
- await page.locator(base+' [data-ao-mf-bible-filter-select]').selectOption("names");
+ await page.locator(base+' [data-ao-mf-bible-filter-select]').selectOption("figures");
  assert.equal(await page.locator(base+' [data-ao-mass-bible-row]').count(),3);
  await page.locator(base+' [data-ao-mf-bible-filter-select]').selectOption("all");
  await page.locator(base+' [data-ao-mf-bible-stage]').selectOption("COMMUNION");
@@ -72,7 +75,8 @@ try{
  await page.locator(base+' [data-ao-mf-open-propers]').tap();
  await page.waitForFunction(()=>globalThis.__massBibleTest?.status?.().witnessedPropers===105,null,{timeout:15000});
  assert.equal(await page.locator(base+' .aoFNav').count(),0,"Proper lookup must not have redundant formation section ribbon");
- assert.equal(await page.locator(base+' [data-ao-mf-bible-proper] option').count(),105);
+ assert.equal(await page.locator(base+' [data-ao-mf-bible-proper] option').count(),106,"Explicit empty selection plus 105 witnessed Propers");
+ assert.equal(await page.locator(base+' [data-ao-mass-bible-propers] h3').count(),0,"No default Proper or invented reading");
  await page.locator(base+' [data-ao-mf-bible-proper]').selectOption("Tempora/Pent10-0");
  await page.waitForFunction(()=>globalThis.__massBibleTest?.status?.().properPath==="Tempora/Pent10-0",null,{timeout:15000});
  assert.match(await page.locator(base+' [data-ao-mass-bible-propers]').innerText(),/Luke 18:9–14/);
@@ -83,6 +87,6 @@ try{
  assert.match(await page.locator(base+' .aoMFStage h1').innerText(),/another Calvary/i);
  assert.equal(await page.locator(base+' [data-ao-mf-prev]').count(),1);
  assert.equal(errors.length,0,errors.join(" | "));
- console.log("PASS Mass Bible phone: 26 source-typed links, 105 Proper witness options, stage/genre filters, original 8-stage formation and responsive screenshots");
+ console.log("PASS Mass Bible phone: 20 main + 9 inline, source-reader handoffs, 105 explicit Propers, filters, original 8 stages and screenshots");
  await context.close();
 }finally{await browser?.close().catch(()=>{});await new Promise(ok=>server.close(ok))}
