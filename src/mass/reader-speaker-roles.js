@@ -3,6 +3,15 @@
 // intonation may span a PUBLIC_TEXT cue and a SCHOLA_PUBLIC donor cue.
 // This layer never alters canonical cues, event timing or source text.
 const EXPLICIT=Object.freeze({
+  // Psalm 42 is an actual antiphonal priest/minister dialogue. The immutable
+  // donor labels these M. lines as PUBLIC_TEXT, which identifies audibility
+  // but wrongly leaves them styled as the celebrant's own prayer text.
+  // Preserve their printed M. initials; classify these exact four lines as
+  // responses for reader typography, language policy and future cue gestures.
+  "AO.SM.C0005":Object.freeze({role:"MINISTERS",evidence:"1962_PSALM42_ALTERNATING_MINISTER_VERSE",kind:"RESPONSE"}),
+  "AO.SM.C0007":Object.freeze({role:"MINISTERS",evidence:"1962_PSALM42_ALTERNATING_MINISTER_VERSE",kind:"RESPONSE"}),
+  "AO.SM.C0009":Object.freeze({role:"MINISTERS",evidence:"1962_PSALM42_ALTERNATING_MINISTER_VERSE",kind:"RESPONSE"}),
+  "AO.SM.C0011":Object.freeze({role:"MINISTERS",evidence:"1962_PSALM42_ALTERNATING_MINISTER_VERSE",kind:"RESPONSE"}),
   // Exact speaker initials preserved in the 1962 Low Mass text witness;
   // the Sung donor omitted those initials on these opening dialogues.
   "AO.SM.C0001":Object.freeze({role:"PRIEST",evidence:"LOW_MASS_DIALOGUE_PREFIX",prefix:"S."}),
