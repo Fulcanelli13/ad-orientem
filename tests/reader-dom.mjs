@@ -98,6 +98,7 @@ const oration=normalizeReaderMoment({
     primary:"Collect of the commemoration",
     speakerRole:"PRIEST",prayerRole:"ADDITIONAL_ORATION",
     liturgicalGroup:"COLLECT_SET.2",sourcePath:"Sancti/10-11",
+    sourceAnchorCueId:"AO.SM.C0073",
   }],
 });
 expect(oration.paragraphs[0].prayerRole==="ADDITIONAL_ORATION",
@@ -106,6 +107,8 @@ expect(oration.paragraphs[0].liturgicalGroup==="COLLECT_SET.2",
   "Paragraph-level oration grouping was lost before gestures/rubrics");
 expect(oration.paragraphs[0].sourcePath==="Sancti/10-11",
   "Commemoration source path was lost before the DOM");
+expect(oration.paragraphs[0].sourceAnchorCueId==="AO.SM.C0073",
+  "Proper canonical cue anchor disappeared before reader gestures/rubrics");
 
 const first=normalizeReaderMoment({
   id:"A",
