@@ -115,6 +115,7 @@ function validateFrenchOrdinary(frenchOrdinary){
 
 function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVariants=null,form="LOW"}={}){
   const locale=languageKey(language);
+  const sourceFamily=formFamily(form);
   const frenchByCue=locale==="fr" ? validateFrenchOrdinary(frenchOrdinary) : null;
   const raw=(block.units??[])
     .map(unit=>applyCanonicalTextCorrection(block.Block_ID,unit))
@@ -134,13 +135,13 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
       // in translated presentation, without altering the corpus itself.
       if(["AO.SM.C0068","AO.SM.C0104"].includes(unit.cue_id) &&
         !String(vernacular??"").includes("✠"))vernacular=String(vernacular??"")+" ✠";
-      const latin=applySungSpeakerPrefix(unit.cue_id,correctSungPreparatoryAmen(unit.cue_id,variant?.lat??unit.latin,{form}),{form});
+      const latin=applySungSpeakerPrefix(unit.cue_id,correctSungPreparatoryAmen(unit.cue_id,variant?.lat??unit.latin,{form:sourceFamily}),{form:sourceFamily});
       // The three opening Amens lost their speaker prefixes in the Sung
       // donor. Restore them in both language surfaces, not the raw corpus.
       if(speaker.prefix && /^Amen\.$/iu.test(String(vernacular??"").trim())){
         vernacular=speaker.prefix+" "+String(vernacular).trim();
       }
-      vernacular=applySungSpeakerPrefix(unit.cue_id,vernacular,{form});
+      vernacular=applySungSpeakerPrefix(unit.cue_id,vernacular,{form:sourceFamily});
       return {
         id:unit.cue_id,
         kind:speaker.kind??unitKind(unit),
@@ -154,7 +155,7 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
   const composed=composeOrdinaryReaderParagraphs(block,raw,{language:locale});
   const byCue=new Map((block.units??[]).map(u=>[u.cue_id,String(u.clock??"").toUpperCase()]));
   const speakersByCue=new Map((block.units??[]).map(u=>[u.cue_id,resolveOrdinarySpeaker(u,{form,blockId:block.Block_ID})]));
-  const sungForm=String(form??"").toUpperCase()==="SUNG";
+  const sungForm=sourceFamily==="SUNG";
   return Object.freeze(composed.map(p=>{
     const cues=p.sourceCueIds??[p.id];
     const clocks=cues.map(id=>byCue.get(id));
@@ -183,6 +184,22 @@ function stateOnlyBlock(block){
   );
 }
 
+function properSpeaker(slot,form){
+  const selected=String(form??"").toUpperCase();
+  if(slot==="GOSPEL")return Object.freeze({
+    role:selected==="SOLEMN"?"DEACON":
+      ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"].includes(selected)
+        ?"PRIEST":"GOSPEL_PROCLAIMER",
+    evidence:"1962_FORM_PUBLIC_GOSPEL",
+  });
+  if(slot==="EPISTLE_OR_LESSON")return Object.freeze({
+    role:selected==="SOLEMN"?"SUBDEACON":"MINISTER_TO_BE_OBSERVED",
+    evidence:selected==="SOLEMN"?"1962_FORM_SUBDEACON_EPISTLE":
+      "PUBLIC_EPISTLE_ACTOR_DEPENDS_ON_ACTUAL_FORM",
+  });
+  return null;
+}
+
 function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
   const slot=block.Proper_Slot;
   const envelope=properSlots?.[slot] ?? null;
@@ -202,8 +219,8 @@ function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
       sourceAnchorCueId:p.sourceAnchorCueId??block.units?.[0]?.cue_id??null,
       orationGroupIndex:p.orationGroupIndex??null,
       prayerRole:p.prayerRole??null,
-      speakerRole:p.speakerRole??null,
-      speakerEvidence:p.speakerEvidence??null,
+      speakerRole:properSpeaker(slot,form)?.role??p.speakerRole??null,
+      speakerEvidence:properSpeaker(slot,form)?.evidence??p.speakerEvidence??null,
       liturgicalGroup:p.liturgicalGroup??null,
       sourcePath:p.sourcePath??null,
     }));
@@ -219,6 +236,8 @@ function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
     kind:"TEXT",
     latin,
     vernacular:english,
+    speakerRole:properSpeaker(slot,form)?.role??null,
+    speakerEvidence:properSpeaker(slot,form)?.evidence??null,
   }],{language,form}).map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
 }
 
@@ -229,6 +248,7 @@ export function buildReaderSectionCard({
   vernacularLanguage="en",
   frenchOrdinary=null,
   ordinaryVariants=null,
+  actualForm=null,
 }={}){
   validateReaderTextCorpus(corpus);
   if(!section || !Number.isInteger(section.sequence)) throw new TypeError("Reader section with sequence required");
@@ -246,8 +266,8 @@ export function buildReaderSectionCard({
       block.Proper_Slot && properSlots?.[block.Proper_Slot]?.status==="NOT_APPLICABLE"
     );
     const raw=block.Proper_Slot
-      ? properParagraphs(block,properSlots,{language:vernacularLanguage,form:formFamily(corpus.form)})
-      : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants,form:formFamily(corpus.form)});
+      ? properParagraphs(block,properSlots,{language:vernacularLanguage,form:actualForm??corpus.form})
+      : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants,form:actualForm??corpus.form});
     const stateOnly=stateOnlyBlock(block);
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");

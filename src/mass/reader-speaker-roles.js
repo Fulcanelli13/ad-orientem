@@ -97,6 +97,18 @@ export function resolveOrdinarySpeaker(unit,{form="SUNG",blockId=null}={}){
     return Object.freeze({role:"MINISTERS",kind:"RESPONSE",
       evidence:"1962_LOW_MASS_ALTERNATING_KYRIE"});
   }
+  // Resolve the public Gospel and dismissal minister only after the user
+  // has selected an actual 1962 form. Generic SUNG still represents the
+  // conditional source role; it must not claim to observe a real priest.
+  const selected=String(form??"").toUpperCase();
+  if(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(selected) &&
+     LOW_CELEBRANT_OWNED_PUBLIC_CUES.has(cueId) &&
+     String(unit?.clock??"").toUpperCase()==="PUBLIC_TEXT"){
+    return Object.freeze({
+      role:selected==="SOLEMN"?"DEACON":"PRIEST",
+      evidence:"1962_SELECTED_FORM_PUBLIC_GOSPEL_OR_DISMISSAL",
+    });
+  }
   const override=EXPLICIT[cueId];
   if(override)return override;
   const text=String(unit?.latin??"").trim();
