@@ -49,11 +49,18 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   }
   const fr=properToReaderSlots(result,{language:"fr"});
   const en=properToReaderSlots(result,{language:"en"});
-  assert.equal(fr.slots.COLLECT_SET.data.paragraphs.length,expected+1+(form==="LOW"?1:0),
-    form+" needs separate main/Mission focus segments plus separate St Luke if Low");
-  assert.equal(en.slots.COLLECT_SET.data.paragraphs.length,expected+1+(form==="LOW"?1:0));
-  assert.equal(fr.slots.COLLECT_SET.data.paragraphs[0].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
-  assert.equal(fr.slots.COLLECT_SET.data.paragraphs[1].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
+  const sourceGroups=fr.slots.COLLECT_SET.data.paragraphs;
+  assert.deepEqual(sourceGroups.map(p=>p.id),form==="LOW"?[
+    "COLLECT_SET.1.PRINCIPAL","COLLECT_SET.1.MISSION",
+    "COLLECT_SET.1.AMEN","COLLECT_SET.2.OREMUS","COLLECT_SET.2",
+  ]:["COLLECT_SET.1.PRINCIPAL","COLLECT_SET.1.MISSION"],
+  form+" preserves the single-conclusion mission Collect and separate St Luke dialogue");
+  assert.deepEqual(en.slots.COLLECT_SET.data.paragraphs.map(p=>p.id),
+    sourceGroups.map(p=>p.id),"English and French oration orders diverged");
+  assert.equal(sourceGroups[0].liturgicalGroup,"COLLECT_SET.1");
+  assert.equal(sourceGroups[1].liturgicalGroup,"COLLECT_SET.1");
+  assert.equal(sourceGroups.filter(p=>p.prayerRole==="ORATION_INVITATION").length,
+    form==="LOW"?1:0,"Only a distinct St Luke oration requires additional Oremus");
   const audit=assessPrintableProper(day,{massForm:form,language:"fr"});
   assert.equal(audit.ok,true,audit.reason);
   assert.equal(audit.sections.filter(x=>x.kind==="collect").length,expected);
