@@ -11,10 +11,10 @@
   ],
   "counts": {
     "frenchDrafts": 62,
-    "flaggedDrafts": 30,
-    "highPriority": 22,
+    "flaggedDrafts": 29,
+    "highPriority": 21,
     "standardPriority": 8,
-    "flaggedWithFirstPassResearch": 1,
+    "flaggedWithFirstPassResearch": 0,
     "flaggedWithComplexResearch": 18,
     "flaggedWithR62SourceOnly": 11,
     "editoriallyApproved": 0,
@@ -489,29 +489,6 @@
       "publishable": false
     },
     {
-      "actionId": "AO.CANON.R62.041",
-      "cueId": "AO.SM.C0187",
-      "actor": "PRIEST",
-      "ritusLocator": "IX.1",
-      "anchorKind": "SOURCE_LATIN_WORDS",
-      "sourceUrls": [
-        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
-        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
-        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
-      ],
-      "evidenceTracks": [
-        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
-        "PR1161_FIRST_PASS_19"
-      ],
-      "priority": "HIGH",
-      "issues": [
-        "IX_1_INCLINAT_SE_DEGREE_NOT_INDEPENDENTLY_SPECIFIED"
-      ],
-      "reviewInstruction": "Ritus IX.1 says inclinat se; degree not expressly specified by its Latin sentence.",
-      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
-      "publishable": false
-    },
-    {
       "actionId": "AO.CANON.R62.044",
       "cueId": "AO.SM.C0190",
       "actor": "PRIEST",
@@ -716,5 +693,8 @@
       "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
       "publishable": false
     }
+  ],
+  "notes": [
+    "C0187 was removed from the flagged count because the identified excessive bow degree was corrected in the canonical French draft while retaining its 19 first-pass source track; it remains unpublished pending signoff."
   ]
 }
