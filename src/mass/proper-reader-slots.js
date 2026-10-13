@@ -52,6 +52,7 @@ function readyEnvelope(slot,value,{language="en"}={}){
         id:slot+"."+(index+1)+".PRINCIPAL",kind:"TEXT",
         latin:latin.principal,vernacular:trans.principal,
         liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+        orationGroupIndex:index+1,
       }));
       paragraphs.push(Object.freeze({
         id:slot+"."+(index+1)+(composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
@@ -59,21 +60,20 @@ function readyEnvelope(slot,value,{language="en"}={}){
         latin:extra(latin)+"\n"+latin.conclusion,
         vernacular:extra(trans)+"\n"+trans.conclusion,
         liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+        orationGroupIndex:index+1,
         sourcePath:composed.sourcePath,
       }));
-      // When a separate St Luke commemoration follows in Low Mass, its
-      // conclusion is independent. The fixed end-of-block ℟. Amen covers
-      // that final prayer; emit this first Amen at the missionary conclusion.
-      if(slot==="COLLECT_SET"&&index<rows.length-1)paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1)+".MISSION_AMEN",kind:"RESPONSE",
-        latin:"℟. Amen.",vernacular:"℟. Amen.",
-        role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
-        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
-      }));
+      // Intermediate Amen and new Oremus are composed from *source prayer
+      // group boundaries* by proper-reader-composition.js, not injected in
+      // this Proper data record. This prevents the historical special
+      // Mission-Sunday case from receiving a second, duplicate Amen.
+
     }else{
       paragraphs.push(Object.freeze({
         id:slot+"."+(index+1),kind:"TEXT",
         latin:String(row.lat??row.la),vernacular:vernacularValue(row,language),
+        orationGroupIndex:["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(slot)
+          ?index+1:null,
       }));
     }
   }
