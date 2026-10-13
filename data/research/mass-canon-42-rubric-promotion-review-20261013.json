@@ -1,0 +1,412 @@
+{
+  "schema": "ao-mass-canon-42-rubric-promotion-review-v1",
+  "date": "2026-10-13",
+  "status": "EDITORIAL_TRIAGE_REQUIRES_INDEPENDENT_SOURCE_AND_COPY_APPROVAL",
+  "purpose": "Prevent automatic promotion of 42 source-gap candidates into duplicate, premature or misattributed LIVE instructions.",
+  "sourceOwners": {
+    "canonicalCueCrosswalk": "data/presentation/reader-canon-rubric-review.v1.json",
+    "sourceLatinTriggers": "data/research/mass-canon-62-source-trigger-audit-20261013.json",
+    "frenchOriginalDrafts": "data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",
+    "conditionalMinisters": "data/research/mass-canon-minister-form-branches-20261013.json"
+  },
+  "counts": {
+    "gapCandidates": 42,
+    "firstPassCopyReview": 19,
+    "requiresFurtherCeremonialOrTextReview": 23,
+    "byPhase": {
+      "PRE_CONSECRATION": 11,
+      "HOST_CONSECRATION": 5,
+      "CHALICE_CONSECRATION": 5,
+      "POST_CONSECRATION": 21
+    }
+  },
+  "principles": [
+    "One gesture or state belongs to one user-facing surface; do not repeat a voice-ribbon state as redundant inline copy.",
+    "A Latin narrative word is not proof of an enacted physical movement; fregit is not an instruction to fraction the Host during the Institution Narrative.",
+    "Multiple signs at different printed crosses need separate subword/stage triggers before dynamic highlighting.",
+    "Consecutive elevations and genuflections require distinct independent priest/minister clock observations; reader scroll or source location alone cannot activate them.",
+    "Conditional Solemn deacon/thurifer events must be resolved by selected form and independently observed; do not mix them into the priest's 58 actions.",
+    "Faithful posture is observational or governed by a selected documented community practice, never inferred from a priest rubric.",
+    "First-pass review means eligible for editorial examination, not approved for publication; all 42 records remain unpublished."
+  ],
+  "decisions": [
+    {
+      "cueId": "AO.SM.C0150",
+      "candidateActionId": "AO.CANON.R62.001",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "CEREMONY_SEQUENCE",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0151",
+      "candidateActionId": "AO.CANON.R62.002",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "candidateActionId": "AO.CANON.R62.003",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0153",
+      "candidateActionId": "AO.CANON.R62.004",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "FORM_OR_SOURCE_VARIANT",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0154",
+      "candidateActionId": "AO.CANON.R62.005",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0156",
+      "candidateActionId": "AO.CANON.R62.007",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0157",
+      "candidateActionId": "AO.CANON.R62.008",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "FORM_OR_SOURCE_VARIANT",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0160",
+      "candidateActionId": "AO.CANON.R62.010",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0162",
+      "candidateActionId": "AO.CANON.R62.012",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "candidateActionId": "AO.CANON.R62.013",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "candidateActionId": "AO.CANON.R62.014",
+      "phase": "PRE_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "candidateActionId": "AO.CANON.R62.015",
+      "phase": "HOST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0168",
+      "candidateActionId": "AO.CANON.R62.017",
+      "phase": "HOST_CONSECRATION",
+      "reviewTrack": "CEREMONY_SEQUENCE",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "candidateActionId": "AO.CANON.R62.020",
+      "phase": "HOST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0172",
+      "candidateActionId": "AO.CANON.R62.021",
+      "phase": "HOST_CONSECRATION",
+      "reviewTrack": "EXPLANATORY_NO_ACTION",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "GUIDE_NOTE_NOT_GESTURE",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0173",
+      "candidateActionId": "AO.CANON.R62.022",
+      "phase": "HOST_CONSECRATION",
+      "reviewTrack": "CEREMONY_SEQUENCE",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0175",
+      "candidateActionId": "AO.CANON.R62.028",
+      "phase": "CHALICE_CONSECRATION",
+      "reviewTrack": "FORM_OR_MINISTER_DEPENDENT",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "candidateActionId": "AO.CANON.R62.030",
+      "phase": "CHALICE_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0178",
+      "candidateActionId": "AO.CANON.R62.031",
+      "phase": "CHALICE_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "candidateActionId": "AO.CANON.R62.032",
+      "phase": "CHALICE_CONSECRATION",
+      "reviewTrack": "CEREMONY_SEQUENCE",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0180",
+      "candidateActionId": "AO.CANON.R62.033",
+      "phase": "CHALICE_CONSECRATION",
+      "reviewTrack": "CEREMONY_SEQUENCE",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0182",
+      "candidateActionId": "AO.CANON.R62.036",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0183",
+      "candidateActionId": "AO.CANON.R62.037",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "candidateActionId": "AO.CANON.R62.038",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "candidateActionId": "AO.CANON.R62.039",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0186",
+      "candidateActionId": "AO.CANON.R62.040",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "CONTINUING_STATE_NO_NEW_GESTURE",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "PRIEST_STATE_CONTINUATION_NO_TRANSIENT",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "candidateActionId": "AO.CANON.R62.041",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "candidateActionId": "AO.CANON.R62.042",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "candidateActionId": "AO.CANON.R62.043",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "MULTIPLE_WORD_TRIGGERS",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "candidateActionId": "AO.CANON.R62.044",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "TEXT_VARIANT_REQUIRES_EXACT_MATCH",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0191",
+      "candidateActionId": "AO.CANON.R62.045",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0192",
+      "candidateActionId": "AO.CANON.R62.046",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0194",
+      "candidateActionId": "AO.CANON.R62.048",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0195",
+      "candidateActionId": "AO.CANON.R62.049",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "candidateActionId": "AO.CANON.R62.050",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "VOICE_AND_GESTURE_BOUNDARY",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "VOICE_RIBBON_NOT_DUPLICATED_INLINE",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0197",
+      "candidateActionId": "AO.CANON.R62.051",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "VOICE_AND_GESTURE_BOUNDARY",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "VOICE_RIBBON_NOT_DUPLICATED_INLINE",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0198",
+      "candidateActionId": "AO.CANON.R62.052",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "STRAIGHT_SOURCE_RUBRIC",
+      "reviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0199",
+      "candidateActionId": "AO.CANON.R62.053",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "CONTINUING_STATE_NO_NEW_GESTURE",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "PRIEST_STATE_CONTINUATION_NO_TRANSIENT",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "candidateActionId": "AO.CANON.R62.055",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "FORM_OR_MINISTER_DEPENDENT",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "candidateActionId": "AO.CANON.R62.058",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "CEREMONY_SEQUENCE",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "candidateActionId": "AO.CANON.R62.059",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "FORM_OR_MINISTER_DEPENDENT",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    },
+    {
+      "cueId": "AO.SM.C0206",
+      "candidateActionId": "AO.CANON.R62.060",
+      "phase": "POST_CONSECRATION",
+      "reviewTrack": "VOICE_AND_GESTURE_BOUNDARY",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "placement": "VOICE_RIBBON_NOT_DUPLICATED_INLINE",
+      "publication": "NOT_APPROVED_NOT_VISIBLE"
+    }
+  ]
+}

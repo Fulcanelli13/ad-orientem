@@ -141,4 +141,65 @@ assert.equal(paragraphReviews[1].cueReviews.length,0,
 assert.equal(paragraphReviews[0].cueReviews[0].priestActions[0].isObservedNow,false);
 assert.throws(()=>projectCanonParagraphReviews(null,controller),/Reader paragraphs required/);
 
+
+const promotion=load("../data/research/mass-canon-42-rubric-promotion-review-20261013.json");
+const frenchDrafts=load("../data/research/mass-canon-french-rubric-62-original-redraft-20261013.json");
+const latinAnchors=load("../data/research/mass-canon-62-source-trigger-audit-20261013.json");
+const gaps=source.rows.filter(x=>x.gapPending===true);
+const frenchByAction=new Map(frenchDrafts.rows.map(x=>[x.id,x]));
+const anchorsByAction=new Map(latinAnchors.rows.map(x=>[x.id,x]));
+assert.equal(promotion.schema,"ao-mass-canon-42-rubric-promotion-review-v1");
+assert.equal(promotion.status,"EDITORIAL_TRIAGE_REQUIRES_INDEPENDENT_SOURCE_AND_COPY_APPROVAL");
+assert.deepEqual(promotion.decisions.map(x=>x.cueId),gaps.map(x=>x.cueId),
+  "42-gap promotion ledger must be source-ordered and exhaustive, not an arbitrary subsection");
+assert.equal(new Set(promotion.decisions.map(x=>x.cueId)).size,42);
+assert.equal(new Set(promotion.decisions.map(x=>x.candidateActionId)).size,42);
+const pendingPhase={PRE_CONSECRATION:0,HOST_CONSECRATION:0,
+  CHALICE_CONSECRATION:0,POST_CONSECRATION:0};
+let firstPass=0,secondPass=0;
+for(const [i,decision] of promotion.decisions.entries()){
+  const sourceRow=gaps[i],action=sourceRow.candidateActions[0];
+  assert.equal(sourceRow.candidateActions.length,1,decision.cueId+": ambiguous gap action count");
+  assert.equal(decision.candidateActionId,action.id,decision.cueId+": canonical micro-action changed");
+  assert.equal(frenchByAction.get(action.id)?.cueId,decision.cueId);
+  assert.equal(anchorsByAction.get(action.id)?.cueId,decision.cueId);
+  assert.equal(decision.publication,"NOT_APPROVED_NOT_VISIBLE",
+    decision.cueId+": triage is not authorization to release French copy");
+  assert.ok(Object.hasOwn(pendingPhase,decision.phase),"Unknown Canon phase");
+  const number=Number(decision.cueId.slice(-4));
+  const expectedPhase=number<=165?"PRE_CONSECRATION":number<=174?"HOST_CONSECRATION":
+    number<=181?"CHALICE_CONSECRATION":"POST_CONSECRATION";
+  assert.equal(decision.phase,expectedPhase,decision.cueId+": incorrect source cue phase");
+  pendingPhase[decision.phase]++;
+  const simple=decision.reviewGate==="FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF";
+  const hold=decision.reviewGate==="SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF";
+  assert.ok(simple||hold,decision.cueId+": unknown editorial stage");
+  if(simple){
+    firstPass++;
+    assert.equal(decision.reviewTrack,"STRAIGHT_SOURCE_RUBRIC");
+    assert.deepEqual(frenchByAction.get(action.id).editorialFlags,[],
+      decision.cueId+": a qualified source cannot silently gain first-pass release readiness");
+  }else secondPass++;
+}
+assert.deepEqual([firstPass,secondPass],[19,23],"Canon rubric review denominator changed");
+assert.deepEqual(pendingPhase,promotion.counts.byPhase);
+assert.deepEqual([promotion.counts.gapCandidates,promotion.counts.firstPassCopyReview,
+  promotion.counts.requiresFurtherCeremonialOrTextReview],[42,19,23]);
+for(const cue of ["AO.SM.C0159","AO.SM.C0163","AO.SM.C0207"]){
+  assert.ok(!promotion.decisions.some(x=>x.cueId===cue),
+    cue+": a continuation/deacon/source response cannot be invented as a missing priest rubric");
+}
+for(const [cue,track,placement] of [
+  ["AO.SM.C0172","EXPLANATORY_NO_ACTION","GUIDE_NOTE_NOT_GESTURE"],
+  ["AO.SM.C0186","CONTINUING_STATE_NO_NEW_GESTURE","PRIEST_STATE_CONTINUATION_NO_TRANSIENT"],
+  ["AO.SM.C0199","CONTINUING_STATE_NO_NEW_GESTURE","PRIEST_STATE_CONTINUATION_NO_TRANSIENT"],
+  ["AO.SM.C0196","VOICE_AND_GESTURE_BOUNDARY","VOICE_RIBBON_NOT_DUPLICATED_INLINE"],
+  ["AO.SM.C0206","VOICE_AND_GESTURE_BOUNDARY","VOICE_RIBBON_NOT_DUPLICATED_INLINE"],
+  ["AO.SM.C0201","FORM_OR_MINISTER_DEPENDENT","CANDIDATE_INLINE_RUBRIC_AFTER_COPY_APPROVAL"],
+]){
+ const d=promotion.decisions.find(x=>x.cueId===cue);
+ assert.deepEqual([d?.reviewTrack,d?.placement],[track,placement],
+   cue+": high-risk Canon reader ownership gate lost");
+}
+
 console.log("PASS Canon 58/62 source-anchored preview: 42 rubric gaps preserved; form, actor and observational clocks fail closed.");
