@@ -31,7 +31,8 @@
     "explicitNGAOpenAccessObjectLeads": 3,
     "highResNewlyDownloaded": 0,
     "newHumanRated": 0,
-    "productionAssetsChanged": 0
+    "productionAssetsChanged": 0,
+    "correctedInstitutionalObjectURLs": 1
   },
   "queue": [
     {
@@ -675,7 +676,7 @@
       "title": "The Meeting of David and Abigail",
       "institution": "National Gallery of Art, Washington",
       "institutionAccession": "1997.57.8",
-      "museumSourceUrl": "https://www.nga.gov/artworks/120347-meeting-david-and-abigail",
+      "museumSourceUrl": "https://www.nga.gov/artworks/99280-meeting-david-and-abigail",
       "artMedia": "oil on panel",
       "possibleSubjectContexts": [
         "old-testament",
@@ -698,7 +699,7 @@
       "reuseEligible": false,
       "technicalPhoneHeroApproved": false,
       "releaseApproved": false,
-      "sourceNuance": null
+      "sourceNuance": "OFFICIAL_NGA_OBJECT_99280_VALIDATED_AS_CORRECTION_FROM_UNRESOLVABLE_GUESSED_URL; attribution Sir Peter Paul Rubens; oil on panel; public-domain NGA media"
     },
     {
       "id": "W02-023",
@@ -730,6 +731,14 @@
       "technicalPhoneHeroApproved": false,
       "releaseApproved": false,
       "sourceNuance": null
+    }
+  ],
+  "validationCorrections": [
+    {
+      "id": "W02-022",
+      "formerUrl": "https://www.nga.gov/artworks/120347-meeting-david-and-abigail",
+      "correctedUrl": "https://www.nga.gov/artworks/99280-meeting-david-and-abigail",
+      "reason": "Initial NGA item URL was inferred instead of verified; official search returned object record 99280; 120347 is not accessible and is invalid."
     }
   ]
 }
