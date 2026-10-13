@@ -55,7 +55,7 @@ for(const corpus of [low,sung]){
   }
   const secretEnd=blocks.get("AO.SM.B041").units;
   assert.match(secretEnd[0].latin,/Per ómnia sæcula sæculórum/u);
-  assert.match(secretEnd[1].latin,/℟\\. Amen\./u);
+  assert.equal(secretEnd[1].latin,"℟. Amen.");
   assert.ok(/RESPONSE/.test(secretEnd[1].clock),
     "the final Secret Amen must be an actual minister/faithful response");
   const collectResponse=blocks.get("AO.SM.B019").units.at(-1);
