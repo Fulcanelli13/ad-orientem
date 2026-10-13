@@ -82,10 +82,23 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
       assert.equal(latin.slice(span.start,span.end),span.latin,
         form+"/"+event.cueId+": inline placement must preserve exact rendered glyphs");
   }
-  assert.ok(exact.length>=20,form+": too few source-verified precise word placements");
-  assert.ok(nonWord.length>=2,form+": non-text Canon events must remain separate");
+  assert.equal(exact.length,40,form+": all 40 Canon word-anchor gaps must be source-verified");
+  assert.equal(nonWord.length,2,form+": two ceremonial actions must remain non-text");
+  for(const [cue,correctionId] of [
+    ["AO.SM.C0153","SRC-PARITY-002"],
+    ["AO.SM.C0194","SRC-PARITY-003"],
+  ]){
+    const placement=events.find(e=>e.cueId===cue);
+    assert.equal(placement?.status,"WORD_MATCH_EXACT",
+      form+"/"+cue+": verified canonical correction must not block its Latin source anchor");
+    assert.equal(placement?.canonicalCorrectionId,correctionId);
+    assert.equal(placement?.spans.length,1);
+  }
+  assert.equal(exact.filter(e=>e.canonicalCorrectionId!==null).length,2,
+    form+": no other donor offsets may be silently accepted after text mutation");
   const deferred=events.filter(e=>e.status!=="WORD_MATCH_EXACT"&&
     e.status!=="NON_TEXT_SOURCE_EVENT");
+  assert.equal(deferred.length,0,form+": no unreviewed Canon word anchor may retain a stale donor span");
   console.log("CANON_IN_TEXT_AUDIT",form,JSON.stringify({
     exact:exact.length,nonText:nonWord.length,
     deferred:deferred.map(e=>({cueId:e.cueId,status:e.status})),
@@ -116,6 +129,23 @@ const changed=projectCanonInlineEditorialPlacements({
 });
 assert.equal(flattened(changed)[0].status,"RENDERED_LATIN_MISMATCH_REVALIDATION_REQUIRED");
 assert.equal(flattened(changed)[0].spans.length,0);
+// Registered corrections are not a licence to accept any similar or
+// partially modified word sequence. Only the exact audited reader text passes.
+const donorCorrection=sourceByCue(sung)["AO.SM.C0153"];
+const wrongCorrection=projectCanonInlineEditorialPlacements({
+  paragraphs:[{
+    id:"unapproved-variant",sourceCueIds:["AO.SM.C0153"],
+    displayLanguage:"VERNACULAR",
+    primary:"Unapproved translation",
+    alternate:donorCorrection.replace("Antístite nostro et", "Antístite nostro ALIUS et"),
+  }],
+  controller:ctl,promotion,sourceLatinByCue:sourceByCue(sung),
+  form:"SOLEMN",editorialPreview:true,
+});
+assert.equal(flattened(wrongCorrection)[0].status,
+  "RENDERED_LATIN_MISMATCH_REVALIDATION_REQUIRED");
+assert.equal(flattened(wrongCorrection)[0].spans.length,0);
+
 const synthetic=projectCanonInlineEditorialPlacements({
   paragraphs:[{id:"derived-amen",sourceCueIds:[],sourceAnchorCueId:"AO.SM.C0165",
     primary:sungSource["AO.SM.C0165"]}],
