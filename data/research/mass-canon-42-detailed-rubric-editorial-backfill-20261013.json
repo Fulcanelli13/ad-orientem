@@ -1,0 +1,1050 @@
+{
+  "schema": "ao-canon-42-detailed-rubric-editorial-backfill-v1",
+  "version": "2026-10-13",
+  "status": "SOURCE_RECONCILED_42_EDITORIAL_ONLY_NOT_PUBLISHED",
+  "authority": "RITUS_SERVANDUS_1962_VIII_IX_X",
+  "ownership": "ONE_SOURCE_CUE_ONE_EXISTING_FRENCH_ACTION_ID",
+  "interpretation": "42 gaps mean existing PUBLISHED detailed rubric coverage gaps, not missing Canon prayers or missing source-level French drafts. This registry references the existing 62 source-linked original-French draft corpus, never duplicates it.",
+  "sources": [
+    "data/presentation/reader-canon-rubric-review.v1.json",
+    "data/research/mass-canon-62-source-trigger-audit-20261013.json",
+    "data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",
+    "data/research/mass-canon-14-rubric-registry-gap-audit-20261013.json"
+  ],
+  "counts": {
+    "canonSourceCues": 58,
+    "existingDetailedRubricCues": 13,
+    "sourceGapCues": 42,
+    "sourceCuesNoDistinctPrescribedMoment": 3,
+    "candidateCoverage": 42,
+    "exactLatinWordAnchored": 40,
+    "orderedNonTextCeremonies": 2,
+    "publishedByThisBatch": 0
+  },
+  "invariants": [
+    "Never mark an existing published-gap cue as complete merely because a review candidate exists.",
+    "Never copy sourceFrenchDraft to the live reader without explicit per-item doctrinal/liturgical approval.",
+    "Priest action cues cannot derive now-state from reader scroll, Latin match, Schola singing, or another minister's action.",
+    "Form-owned chalice covering, visible Host/Chalice elevations, consecratory words and server bells must remain distinct chronological events.",
+    "All 42 records reference existing canonical French draft action IDs; do not maintain a second copy of draftFrenchRubric.",
+    "Neither the 13 existing detailed-rubric cues nor the three no-distinct-action cues are reissued here.",
+    "Separate Low, sung without incense, sung with incense, and Solemn actor conditions before publication."
+  ],
+  "items": [
+    {
+      "id": "AO.CANON.DET.C0150",
+      "cueId": "AO.SM.C0150",
+      "sourceActionId": "AO.CANON.R62.001",
+      "frenchDraftActionId": "AO.CANON.R62.001",
+      "sourceTriggerActionId": "AO.CANON.R62.001",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Te igitur",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "OPENING_HANDS_AND_EYES_BEFORE_BOW",
+        "PRIEST_EVENT_CLOCK_NOT_SCROLL"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0151",
+      "cueId": "AO.SM.C0151",
+      "sourceActionId": "AO.CANON.R62.002",
+      "frenchDraftActionId": "AO.CANON.R62.002",
+      "sourceTriggerActionId": "AO.CANON.R62.002",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "uti accepta habeas",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0152",
+      "cueId": "AO.SM.C0152",
+      "sourceActionId": "AO.CANON.R62.003",
+      "frenchDraftActionId": "AO.CANON.R62.003",
+      "sourceTriggerActionId": "AO.CANON.R62.003",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "haec dona / haec munera / haec sancta sacrificia",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0153",
+      "cueId": "AO.SM.C0153",
+      "sourceActionId": "AO.CANON.R62.004",
+      "frenchDraftActionId": "AO.CANON.R62.004",
+      "sourceTriggerActionId": "AO.CANON.R62.004",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1–2",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "In primis",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "PONTIFF_BISHOP_FORMULA_CONDITIONAL"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0154",
+      "cueId": "AO.SM.C0154",
+      "sourceActionId": "AO.CANON.R62.005",
+      "frenchDraftActionId": "AO.CANON.R62.005",
+      "sourceTriggerActionId": "AO.CANON.R62.005",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.3",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Memento",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0156",
+      "cueId": "AO.SM.C0156",
+      "sourceActionId": "AO.CANON.R62.007",
+      "frenchDraftActionId": "AO.CANON.R62.007",
+      "sourceTriggerActionId": "AO.CANON.R62.007",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "et omnium circumstantium",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0157",
+      "cueId": "AO.SM.C0157",
+      "sourceActionId": "AO.CANON.R62.008",
+      "frenchDraftActionId": "AO.CANON.R62.008",
+      "sourceTriggerActionId": "AO.CANON.R62.008",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Communicantes",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "SEASONAL_COMMUNICANTES_TEXT"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0160",
+      "cueId": "AO.SM.C0160",
+      "sourceActionId": "AO.CANON.R62.010",
+      "frenchDraftActionId": "AO.CANON.R62.010",
+      "sourceTriggerActionId": "AO.CANON.R62.010",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Per eundem",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0162",
+      "cueId": "AO.SM.C0162",
+      "sourceActionId": "AO.CANON.R62.012",
+      "frenchDraftActionId": "AO.CANON.R62.012",
+      "sourceTriggerActionId": "AO.CANON.R62.012",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Per Christum Dominum nostrum",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0164",
+      "cueId": "AO.SM.C0164",
+      "sourceActionId": "AO.CANON.R62.013",
+      "frenchDraftActionId": "AO.CANON.R62.013",
+      "sourceTriggerActionId": "AO.CANON.R62.013",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "benedictam / adscriptam / ratam",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0165",
+      "cueId": "AO.SM.C0165",
+      "sourceActionId": "AO.CANON.R62.014",
+      "frenchDraftActionId": "AO.CANON.R62.014",
+      "sourceTriggerActionId": "AO.CANON.R62.014",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Corpus",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0166",
+      "cueId": "AO.SM.C0166",
+      "sourceActionId": "AO.CANON.R62.015",
+      "frenchDraftActionId": "AO.CANON.R62.015",
+      "sourceTriggerActionId": "AO.CANON.R62.015",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Sanguis",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0168",
+      "cueId": "AO.SM.C0168",
+      "sourceActionId": "AO.CANON.R62.017",
+      "frenchDraftActionId": "AO.CANON.R62.017",
+      "sourceTriggerActionId": "AO.CANON.R62.017",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Qui pridie / accepit panem",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "OTHER_HOSTS_OPTIONAL"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0171",
+      "cueId": "AO.SM.C0171",
+      "sourceActionId": "AO.CANON.R62.020",
+      "frenchDraftActionId": "AO.CANON.R62.020",
+      "sourceTriggerActionId": "AO.CANON.R62.020",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "benedixit",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0172",
+      "cueId": "AO.SM.C0172",
+      "sourceActionId": "AO.CANON.R62.021",
+      "frenchDraftActionId": "AO.CANON.R62.021",
+      "sourceTriggerActionId": "AO.CANON.R62.021",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "fregit",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "NARRATED_FREGIT_IS_NOT_PHYSICAL_FRACTION"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0173",
+      "cueId": "AO.SM.C0173",
+      "sourceActionId": "AO.CANON.R62.022",
+      "frenchDraftActionId": "AO.CANON.R62.022",
+      "sourceTriggerActionId": "AO.CANON.R62.022",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Hoc est enim Corpus meum",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "CONSECRATION_WORDS_VS_ELEVATION"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0175",
+      "cueId": "AO.SM.C0175",
+      "sourceActionId": "AO.CANON.R62.028",
+      "frenchDraftActionId": "AO.CANON.R62.028",
+      "sourceTriggerActionId": "AO.CANON.R62.028",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Simili modo",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "CHALICE_UNCOVER_AND_SMALL_PREP_ELEVATION_NOT_MAJOR"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0177",
+      "cueId": "AO.SM.C0177",
+      "sourceActionId": "AO.CANON.R62.030",
+      "frenchDraftActionId": "AO.CANON.R62.030",
+      "sourceTriggerActionId": "AO.CANON.R62.030",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "benedixit",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0178",
+      "cueId": "AO.SM.C0178",
+      "sourceActionId": "AO.CANON.R62.031",
+      "frenchDraftActionId": "AO.CANON.R62.031",
+      "sourceTriggerActionId": "AO.CANON.R62.031",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Accipite et bibite",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0179",
+      "cueId": "AO.SM.C0179",
+      "sourceActionId": "AO.CANON.R62.032",
+      "frenchDraftActionId": "AO.CANON.R62.032",
+      "sourceTriggerActionId": "AO.CANON.R62.032",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Hic est enim Calix Sanguinis mei",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "CHALICE_WORDS_VS_ELEVATION"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0180",
+      "cueId": "AO.SM.C0180",
+      "sourceActionId": "AO.CANON.R62.033",
+      "frenchDraftActionId": "AO.CANON.R62.033",
+      "sourceTriggerActionId": "AO.CANON.R62.033",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Haec quotiescumque feceritis",
+      "ceremonialStageIds": [
+        "AO.CANON.R62.033.01",
+        "AO.CANON.R62.033.02",
+        "AO.CANON.R62.033.03"
+      ],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "CHALICE_REPLACEMENT_HAEC_WORDS_THEN_FIRST_GENUFLECTION"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0182",
+      "cueId": "AO.SM.C0182",
+      "sourceActionId": "AO.CANON.R62.036",
+      "frenchDraftActionId": "AO.CANON.R62.036",
+      "sourceTriggerActionId": "AO.CANON.R62.036",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Unde et memores",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0183",
+      "cueId": "AO.SM.C0183",
+      "sourceActionId": "AO.CANON.R62.037",
+      "frenchDraftActionId": "AO.CANON.R62.037",
+      "sourceTriggerActionId": "AO.CANON.R62.037",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "de tuis donis ac datis",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0184",
+      "cueId": "AO.SM.C0184",
+      "sourceActionId": "AO.CANON.R62.038",
+      "frenchDraftActionId": "AO.CANON.R62.038",
+      "sourceTriggerActionId": "AO.CANON.R62.038",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Hostiam puram / sanctam / immaculatam",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0185",
+      "cueId": "AO.SM.C0185",
+      "sourceActionId": "AO.CANON.R62.039",
+      "frenchDraftActionId": "AO.CANON.R62.039",
+      "sourceTriggerActionId": "AO.CANON.R62.039",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Panem sanctum / Calicem salutis",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "TWO_SEPARATE_CROSSES_HOST_THEN_CHALICE"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0186",
+      "cueId": "AO.SM.C0186",
+      "sourceActionId": "AO.CANON.R62.040",
+      "frenchDraftActionId": "AO.CANON.R62.040",
+      "sourceTriggerActionId": "AO.CANON.R62.040",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Supra quae propitio",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "PERSISTENT_HANDS_NO_NEW_GESTURE"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0187",
+      "cueId": "AO.SM.C0187",
+      "sourceActionId": "AO.CANON.R62.041",
+      "frenchDraftActionId": "AO.CANON.R62.041",
+      "sourceTriggerActionId": "AO.CANON.R62.041",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Supplices te rogamus",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0188",
+      "cueId": "AO.SM.C0188",
+      "sourceActionId": "AO.CANON.R62.042",
+      "frenchDraftActionId": "AO.CANON.R62.042",
+      "sourceTriggerActionId": "AO.CANON.R62.042",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "ex hac altaris participatione",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0189",
+      "cueId": "AO.SM.C0189",
+      "sourceActionId": "AO.CANON.R62.043",
+      "frenchDraftActionId": "AO.CANON.R62.043",
+      "sourceTriggerActionId": "AO.CANON.R62.043",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Corpus / Sanguinem",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0190",
+      "cueId": "AO.SM.C0190",
+      "sourceActionId": "AO.CANON.R62.044",
+      "frenchDraftActionId": "AO.CANON.R62.044",
+      "sourceTriggerActionId": "AO.CANON.R62.044",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "omni benedictióne",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "COELESTI_SOURCE_VARIANT_NOT_CAELESTI"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0191",
+      "cueId": "AO.SM.C0191",
+      "sourceActionId": "AO.CANON.R62.045",
+      "frenchDraftActionId": "AO.CANON.R62.045",
+      "sourceTriggerActionId": "AO.CANON.R62.045",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Per eundem",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0192",
+      "cueId": "AO.SM.C0192",
+      "sourceActionId": "AO.CANON.R62.046",
+      "frenchDraftActionId": "AO.CANON.R62.046",
+      "sourceTriggerActionId": "AO.CANON.R62.046",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.2",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Memento etiam",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0194",
+      "cueId": "AO.SM.C0194",
+      "sourceActionId": "AO.CANON.R62.048",
+      "frenchDraftActionId": "AO.CANON.R62.048",
+      "sourceTriggerActionId": "AO.CANON.R62.048",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.2",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Ipsis Domine",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0195",
+      "cueId": "AO.SM.C0195",
+      "sourceActionId": "AO.CANON.R62.049",
+      "frenchDraftActionId": "AO.CANON.R62.049",
+      "sourceTriggerActionId": "AO.CANON.R62.049",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.2",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Per eundem",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0196",
+      "cueId": "AO.SM.C0196",
+      "sourceActionId": "AO.CANON.R62.050",
+      "frenchDraftActionId": "AO.CANON.R62.050",
+      "sourceTriggerActionId": "AO.CANON.R62.050",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Nobis quoque peccatoribus",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "RAISED_VOICE_ONLY_INITIAL_PHRASE_ONE_CHEST_STRIKE"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0197",
+      "cueId": "AO.SM.C0197",
+      "sourceActionId": "AO.CANON.R62.051",
+      "frenchDraftActionId": "AO.CANON.R62.051",
+      "sourceTriggerActionId": "AO.CANON.R62.051",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "famulis tuis",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "VOICE_RETURNS_TO_SECRET"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0198",
+      "cueId": "AO.SM.C0198",
+      "sourceActionId": "AO.CANON.R62.052",
+      "frenchDraftActionId": "AO.CANON.R62.052",
+      "sourceTriggerActionId": "AO.CANON.R62.052",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Per Christum",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0199",
+      "cueId": "AO.SM.C0199",
+      "sourceActionId": "AO.CANON.R62.053",
+      "frenchDraftActionId": "AO.CANON.R62.053",
+      "sourceTriggerActionId": "AO.CANON.R62.053",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Per quem haec omnia",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0201",
+      "cueId": "AO.SM.C0201",
+      "sourceActionId": "AO.CANON.R62.055",
+      "frenchDraftActionId": "AO.CANON.R62.055",
+      "sourceTriggerActionId": "AO.CANON.R62.055",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorClass": "ORDERED_NON_TEXT_CEREMONY",
+      "latinAnchor": null,
+      "ceremonialStageIds": [
+        "AO.CANON.R62.055.01",
+        "AO.CANON.R62.055.02",
+        "AO.CANON.R62.055.03"
+      ],
+      "formScope": "SOLEMN_DEACON_SEPARATE",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "SOLEMN_DEACON_ROLE_SEPARATE_FROM_PRIEST"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0204",
+      "cueId": "AO.SM.C0204",
+      "sourceActionId": "AO.CANON.R62.058",
+      "frenchDraftActionId": "AO.CANON.R62.058",
+      "sourceTriggerActionId": "AO.CANON.R62.058",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "omnis honor et gloria",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "MINOR_ELEVATION_NOT_MAJOR_OSTENSION"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0205",
+      "cueId": "AO.SM.C0205",
+      "sourceActionId": "AO.CANON.R62.059",
+      "frenchDraftActionId": "AO.CANON.R62.059",
+      "sourceTriggerActionId": "AO.CANON.R62.059",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorClass": "ORDERED_NON_TEXT_CEREMONY",
+      "latinAnchor": null,
+      "ceremonialStageIds": [
+        "AO.CANON.R62.059.01",
+        "AO.CANON.R62.059.02",
+        "AO.CANON.R62.059.03"
+      ],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "SOLEMN_DEACON_MAY_UNCOVER_COVER_CHALICE"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    },
+    {
+      "id": "AO.CANON.DET.C0206",
+      "cueId": "AO.SM.C0206",
+      "sourceActionId": "AO.CANON.R62.060",
+      "frenchDraftActionId": "AO.CANON.R62.060",
+      "sourceTriggerActionId": "AO.CANON.R62.060",
+      "actor": "PRIEST",
+      "ritusLocator": "X.1",
+      "anchorClass": "SOURCE_LATIN_WORDS",
+      "latinAnchor": "Per ómnia",
+      "ceremonialStageIds": [],
+      "formScope": "ORDINARY_CELEBRANT",
+      "voice": "SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "reviewFlags": [
+        "AUDIBLE_BOUNDARY_TO_PATERNOSTER"
+      ],
+      "editorialState": "SOURCE_CROSSWALK_DRAFT_NOT_APPROVED",
+      "existingDetailedRubricIds": [],
+      "publication": "DO_NOT_DISPLAY"
+    }
+  ]
+}
