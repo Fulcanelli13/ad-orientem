@@ -1,0 +1,4499 @@
+{
+  "schema": "AO_SACRED_ART_MASTER_NEW_WORKS_SINGLE_RESEARCH_INDEX_V1",
+  "date": "2026-10-13",
+  "purpose": "The one practical canonical new-work queue consolidating waves 01–08 rather than 8 independent acquisition owners. Read-only source references to separate museum objects; original image files remain solely in canonical art archive once acquired.",
+  "counts": {
+    "newLeadSourceFiles": 8,
+    "existingRegistry": 281,
+    "existingOriginalsHashed": 266,
+    "newIdentityLeads": 145,
+    "uniqueLeadIds": 145,
+    "artists": 21,
+    "byPriority": {
+      "P0": 82,
+      "P1": 46,
+      "P2": 17
+    },
+    "knownExactArchiveUrlCollisions": 0,
+    "sharedOfficialSourceUrlGroups": 4,
+    "potentialArtistMuseumInventoryCollisions": 1,
+    "originalImageBytesAcquiredByThisPipeline": 0
+  },
+  "policy": {
+    "rating": "0–2 artworks excluded, 3 can be revisited, existing acquired 4–5 never re-source, 5 needed repeated use; past unnumbered subject selection ≠ 5.",
+    "objectIdentity": "Museum/owner plus accession+title, never subject name alone; source URL shared by distinct works is fine, but repeated URL within one institutional listing does NOT count proof of a unique object without name accession corroboration.",
+    "provenance": "Only verified original autograph oil painting rows are candidates for acquisition; works 'after', studio and prints held separately.",
+    "artistCorpusCompletion": "No claim of full Rubens / Van Dyck global oeuvre; Louvre Van Dyck holdings specifically audited; Prado Apostle series complete.",
+    "rights": "Digital reproduction worldwide commercial rights, pixel dimensions, fidelity and crop must be checked after artwork identity. Public-domain object alone does not clear copyrighted image.",
+    "status": "RESEARCH_ONLY_NOT_ACQUIRED_NOT_DEPLOYED"
+  },
+  "sources": [
+    "data/calendar/sacred-art-preferred-artists-corpus-wave01-20261013.v1.json",
+    "data/calendar/sacred-art-preferred-artists-corpus-wave02-20261013.v1.json",
+    "data/calendar/sacred-art-preferred-artists-corpus-wave03-20261013.v1.json",
+    "data/calendar/sacred-art-champaigne-amiens-milan-wave04-20261013.v1.json",
+    "data/calendar/sacred-art-rubens-vandyck-caravaggio-corpus-gap-wave05-20261013.v1.json",
+    "data/calendar/sacred-art-rubens-vandyck-caravaggio-cathedral-museum-wave06-20261013.v1.json",
+    "data/calendar/sacred-art-van-dyck-caravaggio-autographs-copy-gates-wave07-20261013.v1.json",
+    "data/calendar/sacred-art-master-originals-next-gaps-wave08-20261013.v1.json"
+  ],
+  "sharedSourceUrlForDifferentObjects": [
+    {
+      "url": "https://turismoroma.it/en/node/18610",
+      "leads": [
+        {
+          "leadId": "W05-023",
+          "title": "The Calling of Saint Matthew",
+          "artist": "Caravaggio",
+          "institution": "San Luigi dei Francesi Rome",
+          "accession": null
+        },
+        {
+          "leadId": "W05-024",
+          "title": "The Martyrdom of Saint Matthew",
+          "artist": "Caravaggio",
+          "institution": "San Luigi dei Francesi Rome",
+          "accession": null
+        },
+        {
+          "leadId": "W05-025",
+          "title": "Saint Matthew and the Angel (second version)",
+          "artist": "Caravaggio",
+          "institution": "San Luigi dei Francesi Rome",
+          "accession": null
+        },
+        {
+          "leadId": "W05-026",
+          "title": "The Conversion of Saint Paul",
+          "artist": "Caravaggio",
+          "institution": "Cerasi Chapel Rome",
+          "accession": null
+        },
+        {
+          "leadId": "W05-027",
+          "title": "The Crucifixion of Saint Peter",
+          "artist": "Caravaggio",
+          "institution": "Cerasi Chapel Rome",
+          "accession": null
+        }
+      ]
+    },
+    {
+      "url": "https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio/",
+      "leads": [
+        {
+          "leadId": "W07-011",
+          "title": "The Beheading of Saint John the Baptist",
+          "artist": "Caravaggio",
+          "institution": "St John's Co-Cathedral, Valletta",
+          "accession": "In situ original"
+        },
+        {
+          "leadId": "W07-012",
+          "title": "Saint Jerome Writing (Valletta original)",
+          "artist": "Caravaggio",
+          "institution": "St John's Co-Cathedral, Valletta",
+          "accession": "In situ original"
+        }
+      ]
+    },
+    {
+      "url": "https://www.doriapamphilj.it/portfolio/caravaggio/",
+      "leads": [
+        {
+          "leadId": "W08-001",
+          "title": "Penitent Magdalene",
+          "artist": "Caravaggio",
+          "institution": "Galleria Doria Pamphilj Rome",
+          "accession": "FC357"
+        },
+        {
+          "leadId": "W08-002",
+          "title": "Rest on the Flight into Egypt",
+          "artist": "Caravaggio",
+          "institution": "Galleria Doria Pamphilj Rome",
+          "accession": "FC241"
+        }
+      ]
+    },
+    {
+      "url": "https://www.thewadsworth.org/wp-content/uploads/2015/09/Euro-Wall-Text-Final.pdf",
+      "leads": [
+        {
+          "leadId": "W08-008",
+          "title": "Saint Francis of Assisi in Ecstasy",
+          "artist": "Caravaggio",
+          "institution": "Wadsworth Atheneum Hartford",
+          "accession": "1943.222"
+        },
+        {
+          "leadId": "W08-010",
+          "title": "The Resurrection",
+          "artist": "Anthony van Dyck",
+          "institution": "Wadsworth Atheneum Hartford",
+          "accession": "1964.1"
+        }
+      ]
+    }
+  ],
+  "possibleSameArtistMuseumAndInventoryKeys": [
+    {
+      "key": "caravaggio|stjohnscocathedralvalletta|insituoriginal",
+      "ids": [
+        "W07-011",
+        "W07-012"
+      ],
+      "titles": [
+        "The Beheading of Saint John the Baptist",
+        "Saint Jerome Writing (Valletta original)"
+      ]
+    }
+  ],
+  "exactArchiveUrlCollisions": [],
+  "queue": [
+    {
+      "leadId": "W01-001",
+      "artist": "Jusepe de Ribera",
+      "title": "The Martyrdom of Saint Philip",
+      "institution": null,
+      "accession": "P001101",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-philip/a221ea0e-d38c-4018-be83-af9119458701",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Apostle Philip",
+        "apostolic martyrdom"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-002",
+      "artist": "Francisco de Zurbarán",
+      "title": "The Martyrdom of Saint James",
+      "institution": null,
+      "accession": "P007421",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-james/7e180004-49fc-430b-b292-f9ba10b97f00",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Saint James the Greater",
+        "major saint",
+        "national patron"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-003",
+      "artist": "Francisco de Zurbarán",
+      "title": "The Immaculate Conception",
+      "institution": null,
+      "accession": "P002992",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/f54c4809-8926-440c-8d55-33722602469d",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Immaculate Conception: feast and devotion"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-004",
+      "artist": "Francisco de Zurbarán",
+      "title": "Immaculate Conception (circa 1635)",
+      "institution": null,
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/immaculate-conception/ef257327-c4ae-4a18-b648-fc0ad3d2ef8c",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Alternative Immaculate Conception iconography"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-005",
+      "artist": "Jacopo Bassano",
+      "title": "The Animals entering Noah's Ark",
+      "institution": null,
+      "accession": "P000022",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-animals-entering-noahs-ark/a234abf6-32db-48a2-9c13-c533b5ca3fd1",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Noah",
+        "Genesis",
+        "Bible Theatre and genealogy"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-006",
+      "artist": "Giovanni Girolamo Savoldo",
+      "title": "Mary Magdalene",
+      "institution": null,
+      "accession": "NG1031",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/giovanni-girolamo-savoldo-mary-magdalene",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Magdalene",
+        "contemplative Eastertide"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-007",
+      "artist": "Giovanni Girolamo Savoldo",
+      "title": "Saint Jerome",
+      "institution": null,
+      "accession": "NG3092",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/giovanni-girolamo-savoldo-saint-jerome",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Doctor of the Church",
+        "penance"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-008",
+      "artist": "Caravaggio",
+      "title": "The Supper at Emmaus",
+      "institution": null,
+      "accession": "NG172",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Emmaus",
+        "Resurrection appearances",
+        "Eucharistic meditation"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-009",
+      "artist": "Caravaggio",
+      "title": "Salome receives the Head of John the Baptist",
+      "institution": null,
+      "accession": "NG6389",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-salome-receives-the-head-of-john-the-baptist",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Martyrdom of Saint John the Baptist"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-010",
+      "artist": "Francisco Ribalta",
+      "title": "Christ embracing Saint Bernard",
+      "institution": null,
+      "accession": "P002804",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Saint Bernard",
+        "contemplative devotion"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-011",
+      "artist": "Francisco Ribalta",
+      "title": "Mary Magdalene before Christ's Tomb",
+      "institution": null,
+      "accession": "P002712",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/mary-magdalene-before-christs-tomb/64b942fb-5ac3-4efa-8f70-b730d6036bee",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Magdalene",
+        "Eastertide"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-012",
+      "artist": "Paolo Veronese",
+      "title": "The Adoration of the Kings",
+      "institution": null,
+      "accession": "NG268",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/paolo-veronese-the-adoration-of-the-kings",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Epiphany",
+        "Magi",
+        "Bible Theatre"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-013",
+      "artist": "Paolo Veronese",
+      "title": "The Consecration of Saint Nicholas",
+      "institution": null,
+      "accession": "NG26",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/paolo-veronese-the-consecration-of-saint-nicholas",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Saint Nicholas",
+        "episcopal vocation"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-014",
+      "artist": "Paolo Veronese",
+      "title": "The Conversion of Mary Magdalene",
+      "institution": null,
+      "accession": "NG931",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/paolo-veronese-the-conversion-of-mary-magdalene",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Symbolic penitence",
+        "later devotional narrative",
+        "not Gospel event"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W01-015",
+      "artist": "Francisco de Zurbarán",
+      "title": "The Immaculate Conception as a Child",
+      "institution": null,
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception-as-a-child/0c63700c-c6bf-4970-a69b-73f198f3105c",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Marian devotional alternative"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 1
+    },
+    {
+      "leadId": "W02-001",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Bartholomew (Apostolado series, 1630–35)",
+      "institution": "Museo del Prado",
+      "accession": "P001099",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/4818e314-6b68-4828-8397-57c5e051507e",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "apostle-bartholomew"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-002",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Bartholomew (penitent series, 1641)",
+      "institution": "Museo del Prado",
+      "accession": "P001100",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/279864d2-83ad-4cb3-bf73-949757fab0b0",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "apostle-bartholomew",
+        "penance"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-003",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Simon",
+      "institution": "Museo del Prado",
+      "accession": "P001091",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/c407d683-796b-4e33-8cd0-2393590db4f0",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "apostle-simon"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-004",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Andrew",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/68ed413d-2136-4d13-a03c-15f08ce59c1a",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "apostle-andrew"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-005",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Thomas",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/6cb0a2c8-ecf1-4702-8e8d-19c819c53ac2",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "apostle-thomas"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-006",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Sebastian",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-sebastian/27da29bb-e8b4-4bab-8088-4bc589546326",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "saint-sebastian",
+        "martyrs"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-007",
+      "artist": "Jusepe de Ribera",
+      "title": "Penitent Magdalen (1641)",
+      "institution": "Museo del Prado",
+      "accession": "P001103",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/penitent-magdalen/1f0c2f5f-5eed-46cc-978f-a4a301b7dc55",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "magdalene",
+        "confession",
+        "penitence"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-008",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Mary of Egypt",
+      "institution": "Museo del Prado",
+      "accession": "P001106",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mary-of-egypt/1a0b50dc-1aa5-4e02-844b-6da30547b218",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "penitence",
+        "saint-mary-egypt"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-009",
+      "artist": "Jusepe de Ribera",
+      "title": "The Immaculate Conception (first half 17th century)",
+      "institution": "Museo del Prado",
+      "accession": "P001070",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/267c8f3f-7a57-4dd8-bd5a-5a0fd08cc07c",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "immaculate-conception",
+        "marian"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-010",
+      "artist": "Jusepe de Ribera",
+      "title": "The Immaculate Conception (1647)",
+      "institution": "Museo del Prado",
+      "accession": "P003191",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/la-inmaculada-concepcion/af28188c-9e79-4b0e-995c-ed403cd0bb85",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "immaculate-conception",
+        "marian"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-011",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Jerome writing (c. 1615)",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-jerome-writing/ed0b9f12-8471-4d50-88ec-b3ea87667120",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "doctor-jerome",
+        "scripture-translation"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-012",
+      "artist": "Jusepe de Ribera",
+      "title": "The Raising of Lazarus (c. 1616)",
+      "institution": "Museo del Prado",
+      "accession": "P007768",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-raising-of-lazarus/dd5c9787-ac0b-4d42-aa93-478b2662a6ad",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "resurrection-of-lazarus",
+        "biblical-theatre",
+        "john-11"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "PRADO_DOWNLOAD_REUSE_LICENSE_OBJECT_SPECIFIC_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-013",
+      "artist": "Francisco de Zurbarán",
+      "title": "Saint Margaret of Antioch",
+      "institution": "National Gallery, London",
+      "accession": "NG1930",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-margaret-of-antioch",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "saint-margaret-antioch",
+        "saints"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "LONDON_NG_OR_LOAN_IMAGE_COMMERCIAL_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-014",
+      "artist": "Francisco de Zurbarán",
+      "title": "Saint Francis in Meditation (c. 1635–39)",
+      "institution": "National Gallery, London",
+      "accession": "NG230",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation-1",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "saint-francis-assisi",
+        "meditation",
+        "death"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "LONDON_NG_OR_LOAN_IMAGE_COMMERCIAL_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-015",
+      "artist": "Francisco de Zurbarán",
+      "title": "Saint Francis in Meditation (1639)",
+      "institution": "National Gallery, London",
+      "accession": "NG5655",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "saint-francis-assisi",
+        "meditation",
+        "death"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "LONDON_NG_OR_LOAN_IMAGE_COMMERCIAL_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-016",
+      "artist": "Francisco de Zurbarán",
+      "title": "Saint Jerome with Saint Paula and Saint Eustochium",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "1952.5.88",
+      "sourceUrl": "https://www.nga.gov/artworks/41703-saint-jerome-saint-paula-and-saint-eustochium",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "doctor-jerome",
+        "saint-paula",
+        "saint-eustochium",
+        "church-history"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "MUSEUM_EXPLICIT_OPEN_ACCESS_MEDIA_STILL_DOWNLOAD_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-017",
+      "artist": "Anthony van Dyck",
+      "title": "St Ambrose barring Theodosius from Milan Cathedral",
+      "institution": "National Gallery, London",
+      "accession": "NG50",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "doctor-ambrose",
+        "repentance",
+        "church-history"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "LONDON_NG_OR_LOAN_IMAGE_COMMERCIAL_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-018",
+      "artist": "Anthony van Dyck",
+      "title": "The Abbot Scaglia adoring the Virgin and Child",
+      "institution": "National Gallery, London",
+      "accession": "NG4889",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-the-abbot-scaglia-adoring-the-virgin-and-child",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "marian-adoration",
+        "spiritual-life"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "LONDON_NG_OR_LOAN_IMAGE_COMMERCIAL_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-019",
+      "artist": "Anthony van Dyck",
+      "title": "Charity",
+      "institution": "National Gallery, London",
+      "accession": "NG6494",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-charity",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "theological-virtue-charity",
+        "symbolic"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "LONDON_NG_OR_LOAN_IMAGE_COMMERCIAL_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-020",
+      "artist": "Anthony van Dyck",
+      "title": "The Virgin as Intercessor",
+      "institution": "National Gallery of Art, Washington",
+      "accession": null,
+      "sourceUrl": "https://www.nga.gov/artworks/1227-virgin-intercessor",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "marian-intercession",
+        "rosary",
+        "symbolic-marian"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "MUSEUM_EXPLICIT_OPEN_ACCESS_MEDIA_STILL_DOWNLOAD_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-021",
+      "artist": "Peter Paul Rubens",
+      "title": "The Coup de Lance (modello)",
+      "institution": "National Gallery, London (on loan from Victoria and Albert Museum)",
+      "accession": "L1121",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-the-coup-de-lance",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "passion",
+        "crucifixion",
+        "john19:31-34"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "LONDON_NG_OR_LOAN_IMAGE_COMMERCIAL_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-022",
+      "artist": "Peter Paul Rubens",
+      "title": "The Meeting of David and Abigail",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "1997.57.8",
+      "sourceUrl": "https://www.nga.gov/artworks/99280-meeting-david-and-abigail",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "old-testament",
+        "david",
+        "abigail"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "MUSEUM_EXPLICIT_OPEN_ACCESS_MEDIA_STILL_DOWNLOAD_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W02-023",
+      "artist": "Paolo Veronese",
+      "title": "The Dream of Saint Helena",
+      "institution": "National Gallery, London",
+      "accession": "NG1041",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/paolo-veronese-the-dream-of-saint-helena",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "saint-helena",
+        "true-cross",
+        "historical-devotion"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "LONDON_NG_OR_LOAN_IMAGE_COMMERCIAL_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 2
+    },
+    {
+      "leadId": "W03-001",
+      "artist": "Peter Paul Rubens",
+      "title": "The Meeting of Abraham and Melchizedek",
+      "institution": "NGA Washington",
+      "accession": "1958.4.1",
+      "sourceUrl": "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "genesis14",
+        "mass-canon-supra-quae"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Specific Gospel/Mass typology not equivalence to sacramental rite",
+      "reproductionRightsStatus": "NGA_OPEN_ACCESS",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 3
+    },
+    {
+      "leadId": "W03-002",
+      "artist": "Peter Paul Rubens",
+      "title": "The Brazen Serpent",
+      "institution": "National Gallery London",
+      "accession": "NG59",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-the-brazen-serpent",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "numbers21",
+        "christological-typology"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Rubens and assistants per museum",
+      "reproductionRightsStatus": "IMAGE_RIGHTS_PENDING_WORKSHOP_ASSISTED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 3
+    },
+    {
+      "leadId": "W03-003",
+      "artist": "Peter Paul Rubens",
+      "title": "Samson and Delilah",
+      "institution": "National Gallery London",
+      "accession": "NG6461",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-samson-and-delilah",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "judges16",
+        "old-testament"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "IMAGE_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 3
+    },
+    {
+      "leadId": "W03-004",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Bavo is received by Saints Amand and Floribert",
+      "institution": "National Gallery London",
+      "accession": "NG57.1",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-saint-bavo-is-received-by-saints-amand-and-floribert",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "local-saint-bavo",
+        "saint-amand"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil modello not full-size altarpiece",
+      "reproductionRightsStatus": "IMAGE_RIGHTS_PENDING_ORIGINAL_OIL_SKETCH",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 3
+    },
+    {
+      "leadId": "W03-005",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Rosalie Interceding for the Plague-stricken of Palermo",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "71.41",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436257",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "saint-rosalie",
+        "local-patron",
+        "devotional-intercession"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": null,
+      "reproductionRightsStatus": "MET_PUBLIC_DOMAIN_CC0",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 3
+    },
+    {
+      "leadId": "W04-001",
+      "artist": "Philippe de Champaigne",
+      "title": "Moïse et les Tables de la Loi",
+      "institution": "Musée de Picardie, Amiens",
+      "accession": "M.P.P.2083-684",
+      "sourceUrl": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XVII/Notices/Notice-Philippe-de-Champaigne",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Moses",
+        "Sinai",
+        "decalogue",
+        "Mass-Salvation OT narrative"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Painted original 1663, 117.6×89.5 cm.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_CREDIT_MARC_JEANNETEAU_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-002",
+      "artist": "Jusepe de Ribera",
+      "title": "Le miracle de saint Donat d’Arezzo",
+      "institution": "Musée de Picardie, Amiens",
+      "accession": "M.P.Lav.1894-242",
+      "sourceUrl": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XVII/Notices/Notice-Jusepe-de-Ribera-Le-miracle-de-saint-Donat-d-Arezzo-1652",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Saint Donatus",
+        "saint bishop",
+        "miraculous Mass episode",
+        "saints"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Formerly erroneously identified as Mass of Saint Gregory: exact depicted figure is Saint Donatus of Arezzo; no misleading St Gregory crosslink.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_CREDIT_PERMISSION_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-003",
+      "artist": "Simon Vouet",
+      "title": "La Madeleine repentante",
+      "institution": "Musée de Picardie, Amiens",
+      "accession": null,
+      "sourceUrl": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XVII/Notices/Notice-Simon-Vouet-La-Madeleine-repentante",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Penitence",
+        "examination of conscience",
+        "spiritual devotions"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Symbolic contemplative Magdalene, not literal depiction of Mary at Jesus tomb; preserve historical identity differentiation.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-004",
+      "artist": "Adriaen van Utrecht and attributed Simon de Vos",
+      "title": "Marthe dans une cuisine et le Christ parlant à Marie",
+      "institution": "Musée de Picardie, Amiens",
+      "accession": "M.P.Lav.1894-115",
+      "sourceUrl": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XVII/Notices/Notice-Adriaen-van-Utrecht",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Martha and Mary at Bethany",
+        "Luke 10",
+        "active/contemplative spiritual life"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Two named artist associations, second attributed; still-life composition with Gospel scene, not automatically a high-quality phone hero.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-005",
+      "artist": "Philippe de Champaigne",
+      "title": "La Cène, dite La Grande Cène",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1124",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060521",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Last Supper",
+        "Holy Thursday",
+        "Eucharist",
+        "Rosary luminous V",
+        "Mass Theatre"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "A separate composition/object from INV1125. Louvre notes original Port-Royal altar; display art-specific suitability.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-006",
+      "artist": "Philippe de Champaigne",
+      "title": "La Cène, dite La Petite Cène",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1125",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010062076",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Last Supper",
+        "Eucharistic meditation",
+        "Rosary luminous V"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Reduced replica with variations of Grande Cène, but museum maintains autograph attribution; not a distinct narrative event.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-007",
+      "artist": "Philippe de Champaigne",
+      "title": "Le Christ en croix",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1126",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060520",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Crucifixion",
+        "Good Friday",
+        "Seven Last Words",
+        "sorrowful mystery"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original by Philippe; DO NOT confuse workshop copy INV1127.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-008",
+      "artist": "Philippe de Champaigne",
+      "title": "Le Christ mort",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1128",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060519",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Holy Saturday",
+        "dead Christ",
+        "preparation for burial",
+        "meditation"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original painted on oak panel. Not the moment of Resurrection.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-009",
+      "artist": "Philippe de Champaigne",
+      "title": "Le songe de saint Joseph",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 20450",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060517",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Joseph",
+        "dream",
+        "Holy Family",
+        "Matthew 1 / flight context caveats"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Preserve specific biblical dream and painting event; don't confuse with Joseph of Egypt.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-010",
+      "artist": "Philippe de Champaigne",
+      "title": "L'Apôtre saint Philippe",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1132",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060518",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "St Philip Apostle",
+        "apostolic saints",
+        "Class II/III observed feast"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Apostle Philip not Philip Neri.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-011",
+      "artist": "Philippe de Champaigne",
+      "title": "Les miracles de sainte Marie pénitente",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1151",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060523",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Saint Mary penitent",
+        "ascetic saints",
+        "symbolic repentance"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Desert saint and literary story; do not re-label as Magdalene without proper source.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-012",
+      "artist": "Philippe de Champaigne",
+      "title": "Paphnuce libérant Thaïs",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1150",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060501",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Saint Paphnutius",
+        "Thaïs",
+        "repentance"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Ascetical narrative from patristic literature, not an episode in canonical Gospels.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-013",
+      "artist": "Philippe de Champaigne",
+      "title": "L'Adoration des bergers",
+      "institution": "Musée des Beaux-Arts de Lyon (Louvre deposit)",
+      "accession": "A 52",
+      "sourceUrl": "https://collections.mba-lyon.fr/fr/notice/a-52-l-adoration-des-bergers-27b31686-bc12-4f3e-937c-c684368c522a",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Christmas",
+        "Nativity",
+        "Rosary joyful III",
+        "Luke 2"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original 1630, 397.5×247.5 cm; separately source crosschecked with Louvre.",
+      "reproductionRightsStatus": "LYON_MUSEUM_PHOTOGRAPH_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-014",
+      "artist": "Philippe de Champaigne",
+      "title": "Résurrection de Lazare",
+      "institution": "Musée de Grenoble (Louvre deposit)",
+      "accession": "MG 57",
+      "sourceUrl": "https://www.museedegrenoble.fr/oeuvre/3315/1922-resurrection-de-lazare.htm",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Lazarus",
+        "John 11",
+        "Passiontide Gospel",
+        "Bible Theatre"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Grenoble museum lists public domain work; oil painting 1631-32. Photography credit separate.",
+      "reproductionRightsStatus": "MUSEUM_PUBLIC_DOMAIN_OBJECT_BUT_PHOTO_PERMISSION_CHECK",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-015",
+      "artist": "Philippe de Champaigne",
+      "title": "Présentation de la Vierge au Temple",
+      "institution": "Musée des Beaux-Arts d'Arras (Louvre deposit)",
+      "accession": "MI 327",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010053088",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Presentation of Mary",
+        "Marian childhood",
+        "devotions"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Painting/cartoon for tapestry, not Presentation of Jesus (Candlemas).",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-016",
+      "artist": "Philippe de Champaigne",
+      "title": "Ex-voto de 1662",
+      "institution": "Musée du Louvre, Paris",
+      "accession": "INV 1138",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010066957",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Prayer",
+        "healing",
+        "convent history",
+        "charity"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 1,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Two Port-Royal nuns; historical votive picture; no fabricated canonised saint title.",
+      "reproductionRightsStatus": "LOUVRE_IMAGE_USE_TERMS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-017",
+      "artist": "Jean Baptiste de Champaigne",
+      "title": "Saint Paul renversé et lapidé dans la ville de Lystre",
+      "institution": "Musée des Beaux-Arts de Marseille",
+      "accession": "1938 F 142",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/50110000785",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Apostolic mission",
+        "Acts 14",
+        "St Paul",
+        "biblical theatre"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Original monumental May de Notre Dame Paris 1667; keep Jean-Baptiste distinct from uncle Philippe.",
+      "reproductionRightsStatus": "RMN_PHOTO_EXPRESS_PERMISSION_REQUIRED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-018",
+      "artist": "Paolo Veronese",
+      "title": "Cristo nell'orto",
+      "institution": "Pinacoteca di Brera, Milan",
+      "accession": "227",
+      "sourceUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/cristo-nellorto/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Agony in Garden",
+        "Rosary sorrowful I",
+        "Passion meditation"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Brera identifies Veronese, 1582-83 oil canvas; dramatic light; depicted details from Aretino distinguish scripture literal scene.",
+      "reproductionRightsStatus": "BRERA_IMAGE_DOWNLOAD_LINK_PRESENT_RIGHTS_CHECK",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-019",
+      "artist": "Paolo Veronese",
+      "title": "Ultima Cena",
+      "institution": "Pinacoteca di Brera, Milan",
+      "accession": "554",
+      "sourceUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/ultima-cena/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Last Supper",
+        "Holy Thursday",
+        "Eucharist",
+        "Rosary luminous V"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Late Veronese Last Supper c 1580, attribution historically debated; Christ off centre, exceptionally wide crop may be poor mobile hero.",
+      "reproductionRightsStatus": "BRERA_IMAGE_DOWNLOAD_LINK_PRESENT_RIGHTS_CHECK",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-020",
+      "artist": "Caravaggio",
+      "title": "Cena in Emmaus (1606, Brera version)",
+      "institution": "Pinacoteca di Brera, Milan",
+      "accession": "2296",
+      "sourceUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/cena-in-emmaus/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Emmaus",
+        "Easter Gospel",
+        "post Resurrection",
+        "Eucharistic meditation"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Different 1606 canvas from London NG172 (c1601-02) previously queued W01-008. Do not treat the two as duplicate objects.",
+      "reproductionRightsStatus": "BRERA_IMAGE_DOWNLOAD_LINK_PRESENT_RIGHTS_CHECK",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-021",
+      "artist": "Giovanni Battista Caracciolo",
+      "title": "Cristo e la Samaritana al pozzo",
+      "institution": "Pinacoteca di Brera, Milan",
+      "accession": "457",
+      "sourceUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/cristo-e-la-samaritana-al-pozzo/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "John 4: Samaritan woman",
+        "Lent Gospel",
+        "biblical theatre"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Monogram GBC; formerly misattributed to Caravaggio, but explicitly Battistello Caracciolo; preferred rated 5/5 artist.",
+      "reproductionRightsStatus": "BRERA_IMAGE_DOWNLOAD_LINK_PRESENT_RIGHTS_CHECK",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-022",
+      "artist": "Annibale Carracci",
+      "title": "Cristo e la Samaritana al pozzo",
+      "institution": "Pinacoteca di Brera, Milan",
+      "accession": "104",
+      "sourceUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/cristo-e-la-samaritana-al-pozzo-2/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "John 4: Samaritan woman",
+        "Lent Gospel"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Separate oil painting from Caracciolo Brera inv457; common title NOT duplicate.",
+      "reproductionRightsStatus": "BRERA_IMAGE_DOWNLOAD_LINK_PRESENT_RIGHTS_CHECK",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-023",
+      "artist": "Giovanni Bellini",
+      "title": "Pietà",
+      "institution": "Pinacoteca di Brera, Milan",
+      "accession": "228",
+      "sourceUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/pieta/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Passion",
+        "Lamentation",
+        "Mater Dolorosa",
+        "meditation"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Tempera on panel c1460; human stylistic preference unknown and may be below user's realistic modeling threshold.",
+      "reproductionRightsStatus": "BRERA_IMAGE_DOWNLOAD_LINK_PRESENT_RIGHTS_CHECK",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-024",
+      "artist": "Andrea Mantegna",
+      "title": "Cristo morto nel sepolcro e tre dolenti",
+      "institution": "Pinacoteca di Brera, Milan",
+      "accession": "352",
+      "sourceUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/cristo-morto-nel-sepolcro-e-tre-dolenti/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Holy Saturday",
+        "deceased Christ",
+        "Passion",
+        "mourning"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Tempera on canvas c1483, strongly foreshortened; no automatic user preference assumption.",
+      "reproductionRightsStatus": "BRERA_IMAGE_DOWNLOAD_LINK_PRESENT_RIGHTS_CHECK",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-025",
+      "artist": "Jacopo Bassano",
+      "title": "Riposo durante la fuga in Egitto",
+      "institution": "Pinacoteca Ambrosiana, Milan",
+      "accession": "207",
+      "sourceUrl": "https://www.ambrosiana.it/scopri/capolavori/riposo-durante-la-fuga-in-egitto-jacopo-bassano/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Flight into Egypt",
+        "Holy Family",
+        "biblical theatre",
+        "Mass formation"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Original 1547 oil on canvas; favoured Jacopo Bassano (two rated 4/5).",
+      "reproductionRightsStatus": "AMBROSIANA_EXPLICIT_PERMISSION_REQUIRED_NO_SITE_IMAGE_DOWNLOAD",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-026",
+      "artist": "Titian",
+      "title": "Adorazione dei Magi",
+      "institution": "Pinacoteca Ambrosiana, Milan",
+      "accession": "202",
+      "sourceUrl": "https://www.ambrosiana.it/scopri/capolavori/tiziano-adorazione-dei-magi/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Epiphany",
+        "Adoration Magi",
+        "Gospel Matthew 2"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Museum indicates some workshop assistance.",
+      "reproductionRightsStatus": "AMBROSIANA_EXPLICIT_PERMISSION_REQUIRED_NO_SITE_IMAGE_DOWNLOAD",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-027",
+      "artist": "Federico Barocci",
+      "title": "Presepe",
+      "institution": "Pinacoteca Ambrosiana, Milan",
+      "accession": "153",
+      "sourceUrl": "https://www.ambrosiana.it/scopri/capolavori/il-presepe-federico-barocci/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Nativity",
+        "Rosary joy III",
+        "Christmas"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Museum calls Milan work autograph replica with Prado version another distinct original; no invented 'unique original'.",
+      "reproductionRightsStatus": "AMBROSIANA_EXPLICIT_PERMISSION_REQUIRED_NO_SITE_IMAGE_DOWNLOAD",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-028",
+      "artist": "Bernardino Luini",
+      "title": "Sacra famiglia con sant'Anna e san Giovanni",
+      "institution": "Pinacoteca Ambrosiana, Milan",
+      "accession": "92",
+      "sourceUrl": "https://www.ambrosiana.it/scopri/capolavori/sacra-famiglia-con-santanna-e-san-giovanni-bernardino-luini/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Holy Family",
+        "St Anne",
+        "John Baptist child",
+        "devotional Marian"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Museum says composition derives partly from Leonardo cartoon; separate painter/object identity.",
+      "reproductionRightsStatus": "AMBROSIANA_EXPLICIT_PERMISSION_REQUIRED_NO_SITE_IMAGE_DOWNLOAD",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W04-029",
+      "artist": "Bramantino",
+      "title": "Adorazione",
+      "institution": "Pinacoteca Ambrosiana, Milan",
+      "accession": "84",
+      "sourceUrl": "https://www.ambrosiana.it/scopri/capolavori/adorazione-bramantino/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "Adoration of Child",
+        "Nativity",
+        "symbolic preparation"
+      ],
+      "priority": "P2",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Early style may not fit user; avoid presumptive shortlisting.",
+      "reproductionRightsStatus": "AMBROSIANA_EXPLICIT_PERMISSION_REQUIRED_NO_SITE_IMAGE_DOWNLOAD",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 4
+    },
+    {
+      "leadId": "W05-001",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Peter",
+      "institution": "Museo del Prado",
+      "accession": "P001646",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-peter/191fcaa5-1841-41dd-bcae-939be2f88437",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-002",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint John the Evangelist",
+      "institution": "Museo del Prado",
+      "accession": "P001647",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-the-evangelist/29bfd358-bfd3-43b4-a894-b57f6eb2d81f",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-003",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint James the Greater",
+      "institution": "Museo del Prado",
+      "accession": "P001648",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-greater/72f76d59-fab7-4cea-8214-af0fb98fc293",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-004",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Andrew",
+      "institution": "Museo del Prado",
+      "accession": "P001649",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/3b512d00-0e07-47f9-944e-159058552dbf",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-005",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Philip",
+      "institution": "Museo del Prado",
+      "accession": "P001650",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-philip/a0e78920-8f28-47f5-8cd5-f50ba1dfa8c5",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-006",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint James the Less",
+      "institution": "Museo del Prado",
+      "accession": "P001651",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-less/02ef9e0d-b544-48cb-bcd0-89611b37f55b",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-007",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Bartholomew",
+      "institution": "Museo del Prado",
+      "accession": "P001652",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/f49d896e-547c-40bd-ac5d-4cb537e429d8",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-008",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Matthias",
+      "institution": "Museo del Prado",
+      "accession": "P001653",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-009",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Thomas",
+      "institution": "Museo del Prado",
+      "accession": "P001654",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/629fe4f7-9fdd-4b8f-af15-653882a62493",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-010",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Simon",
+      "institution": "Museo del Prado",
+      "accession": "P001655",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/0679cee8-ea16-47dc-81f8-179530faaa68",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-011",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Matthew",
+      "institution": "Museo del Prado",
+      "accession": "P001656",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-matthew/e52ae737-7a03-4690-9709-4eb5eec3fa98",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-012",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Paul",
+      "institution": "Museo del Prado",
+      "accession": "P001657",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-paul/d9ce01ba-2d87-4bb2-adc1-266482f24875",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "APOSTLE_PERSON"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original oil panel 1610–12; do not confuse apostle with similarly named other saints.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-013",
+      "artist": "Peter Paul Rubens",
+      "title": "The Adoration of the Magi",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "EPIPHANY"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Separate Prado museum object. Where a modello: distinct from NGA Melchizedek work W03-001.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-014",
+      "artist": "Peter Paul Rubens",
+      "title": "The Immaculate Conception",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "MARIAN_DOGMATIC"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Separate Prado museum object. Where a modello: distinct from NGA Melchizedek work W03-001.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-015",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint George and the Dragon",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-george-and-the-dragon/dea0a4cc-110e-425e-a8e2-bdb37444d26c",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "SAINT_TRADITION"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Separate Prado museum object. Where a modello: distinct from NGA Melchizedek work W03-001.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-016",
+      "artist": "Peter Paul Rubens",
+      "title": "The Rest on the Flight into Egypt with Saints",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-rest-on-the-flight-into-egypt-with-saints/f9bedfdf-384f-4061-89e7-0d18cf240f49",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "COMPOSITE_DEVOTIONAL"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Separate Prado museum object. Where a modello: distinct from NGA Melchizedek work W03-001.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-017",
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Family Surrounded by Saints",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-holy-family-surrounded-by-saints/558f46a9-8874-4e8e-91ba-ea13c42dd2bd",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "COMPOSITE_DEVOTIONAL"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Separate Prado museum object. Where a modello: distinct from NGA Melchizedek work W03-001.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-018",
+      "artist": "Peter Paul Rubens",
+      "title": "The Meeting of Abraham and Melchizedek (Prado modello)",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-meeting-of-abraham-and-melchizedek/c83a26fc-68b4-4d84-b397-00c1b4401b95",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "MASS_CANON_OT_TYPOLOGY"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Separate Prado museum object. Where a modello: distinct from NGA Melchizedek work W03-001.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-019",
+      "artist": "Anthony van Dyck",
+      "title": "Pietà",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/pieta/f89676d9-34cc-46d9-b232-571faf9894ba",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "PASSION_PIETA"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Autograph institutional attributed oil painting, not a Rubens atelier work. Met object Open Access.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-020",
+      "artist": "Anthony van Dyck",
+      "title": "The Crowning with Thorns",
+      "institution": "Museo del Prado",
+      "accession": null,
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-crowning-with-thorns/8115e55f-004f-45c3-b574-fb9880c2fb57",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "PASSION_CROWNING"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Autograph institutional attributed oil painting, not a Rubens atelier work. Met object Open Access.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-021",
+      "artist": "Anthony van Dyck",
+      "title": "The Penitent Magdalen",
+      "institution": "Rijksmuseum Amsterdam",
+      "accession": "SK-A-103",
+      "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Penitent-Magdalen--e30fc561580a9a44dc4ad411199bab07",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "PENITENCE_SYMBOLIC"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Autograph institutional attributed oil painting, not a Rubens atelier work. Met object Open Access.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-022",
+      "artist": "Anthony van Dyck",
+      "title": "Virgin and Child with Saint Catherine of Alexandria",
+      "institution": "Metropolitan Museum of Art",
+      "accession": "60.71.5",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436262",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "SAINT_CATHERINE_ALEXANDRIA"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Autograph institutional attributed oil painting, not a Rubens atelier work. Met object Open Access.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-023",
+      "artist": "Caravaggio",
+      "title": "The Calling of Saint Matthew",
+      "institution": "San Luigi dei Francesi Rome",
+      "accession": null,
+      "sourceUrl": "https://turismoroma.it/en/node/18610",
+      "sourceSpecificity": "OFFICIAL_CULTURAL_ITINERARY_DISTINCT_PAINTING",
+      "contextKeys": [
+        "APOSTLE_MATTHEW_CALLING"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Five distinct original paintings listed in official Rome city itinerary; source URL shared, per-object image attribution not yet attached.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-024",
+      "artist": "Caravaggio",
+      "title": "The Martyrdom of Saint Matthew",
+      "institution": "San Luigi dei Francesi Rome",
+      "accession": null,
+      "sourceUrl": "https://turismoroma.it/en/node/18610",
+      "sourceSpecificity": "OFFICIAL_CULTURAL_ITINERARY_DISTINCT_PAINTING",
+      "contextKeys": [
+        "APOSTLE_MATTHEW_MARTYRDOM"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Five distinct original paintings listed in official Rome city itinerary; source URL shared, per-object image attribution not yet attached.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-025",
+      "artist": "Caravaggio",
+      "title": "Saint Matthew and the Angel (second version)",
+      "institution": "San Luigi dei Francesi Rome",
+      "accession": null,
+      "sourceUrl": "https://turismoroma.it/en/node/18610",
+      "sourceSpecificity": "OFFICIAL_CULTURAL_ITINERARY_DISTINCT_PAINTING",
+      "contextKeys": [
+        "APOSTLE_MATTHEW_WRITING"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Five distinct original paintings listed in official Rome city itinerary; source URL shared, per-object image attribution not yet attached.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-026",
+      "artist": "Caravaggio",
+      "title": "The Conversion of Saint Paul",
+      "institution": "Cerasi Chapel Rome",
+      "accession": null,
+      "sourceUrl": "https://turismoroma.it/en/node/18610",
+      "sourceSpecificity": "OFFICIAL_CULTURAL_ITINERARY_DISTINCT_PAINTING",
+      "contextKeys": [
+        "PAUL_CONVERSION"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Five distinct original paintings listed in official Rome city itinerary; source URL shared, per-object image attribution not yet attached.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-027",
+      "artist": "Caravaggio",
+      "title": "The Crucifixion of Saint Peter",
+      "institution": "Cerasi Chapel Rome",
+      "accession": null,
+      "sourceUrl": "https://turismoroma.it/en/node/18610",
+      "sourceSpecificity": "OFFICIAL_CULTURAL_ITINERARY_DISTINCT_PAINTING",
+      "contextKeys": [
+        "PETER_MARTYRDOM"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Five distinct original paintings listed in official Rome city itinerary; source URL shared, per-object image attribution not yet attached.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-028",
+      "artist": "Caravaggio",
+      "title": "Madonna of Loreto",
+      "institution": "Sant'Agostino Rome",
+      "accession": null,
+      "sourceUrl": "https://www.santagostinoroma.it/le-opere/madonna-dei-pellegrini/",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "MARIAN_LORETO"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-029",
+      "artist": "Caravaggio",
+      "title": "The Deposition of Christ",
+      "institution": "Vatican Museums",
+      "accession": null,
+      "sourceUrl": "https://www.museivaticani.va/content/museivaticani/it/collezioni/musei/la-pinacoteca/sala-xii---secolo-xvii/caravaggio--deposizione-dalla-croce.html",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "DEAD_CHRIST_ANOINTING_STONE"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-030",
+      "artist": "Caravaggio",
+      "title": "Madonna of the Rosary",
+      "institution": "Kunsthistorisches Museum Vienna",
+      "accession": "Inv 147",
+      "sourceUrl": "https://caravaggio-bernini.khm.at/en/visione/",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "ROSARY_DEVOTIONAL"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-031",
+      "artist": "Caravaggio",
+      "title": "The Flagellation of Christ",
+      "institution": "Capodimonte Naples",
+      "accession": null,
+      "sourceUrl": "https://capodimonte.cultura.gov.it/la-flagellazione-di-caravaggio-rientra-al-museo-di-capodimonte/",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "FLAGELLATION"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-032",
+      "artist": "Caravaggio",
+      "title": "The Seven Works of Mercy",
+      "institution": "Pio Monte della Misericordia Naples",
+      "accession": null,
+      "sourceUrl": "https://piomontedellamisericordia.it/en/caravaggio/",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "WORKS_OF_MERCY"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-033",
+      "artist": "Caravaggio",
+      "title": "The Raising of Lazarus",
+      "institution": "Museo Regionale Accascina Messina",
+      "accession": null,
+      "sourceUrl": "https://museo.messina.it/opera/resurrezione-di-lazzaro/",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "RAISING_LAZARUS"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-034",
+      "artist": "Caravaggio",
+      "title": "The Adoration of the Shepherds (Messina)",
+      "institution": "Museo Regionale Accascina Messina",
+      "accession": null,
+      "sourceUrl": "https://museo.messina.it/opera/nativita-adorazione-dei-pastori/",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "NATIVITY"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-035",
+      "artist": "Caravaggio",
+      "title": "The Death of the Virgin",
+      "institution": "Musée du Louvre Paris",
+      "accession": "INV 54",
+      "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062304",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "MARIAN_DEATH_NOT_ASSUMPTION"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W05-036",
+      "artist": "Caravaggio",
+      "title": "The Sacrifice of Isaac",
+      "institution": "Uffizi Florence",
+      "accession": "1890 no. 4659",
+      "sourceUrl": "https://www.uffizi.it/en/artworks/sacrifice-of-isaac",
+      "sourceSpecificity": "ORIGINAL_HOLDER_COLLECTION_ARTWORK_SOURCE",
+      "contextKeys": [
+        "GENESIS_22_MASS_TYPOLOGY"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Individual public institution object/museum page; reproduction rights and pixel data not approved.",
+      "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 5
+    },
+    {
+      "leadId": "W06-001",
+      "artist": "Peter Paul Rubens",
+      "title": "The Elevation of the Cross (triptych)",
+      "institution": "Antwerp Cathedral of Our Lady",
+      "accession": null,
+      "sourceUrl": "https://www.dekathedraal.be/en/rubens-elevation-cross",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "PASSION_ELEVATION"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Triptych single integrated altarpiece; do not count three panels as three different museum paintings.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W06-002",
+      "artist": "Peter Paul Rubens",
+      "title": "The Descent from the Cross (triptych)",
+      "institution": "Antwerp Cathedral of Our Lady",
+      "accession": null,
+      "sourceUrl": "https://www.dekathedraal.be/en/rubens-descent-cross",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "PASSION_DESCENT"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Centre Descent; wings Visitation and Presentation of Jesus; one canonical altarpiece ID with component scene anchors.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W06-003",
+      "artist": "Peter Paul Rubens",
+      "title": "The Resurrection of Christ (triptych)",
+      "institution": "Antwerp Cathedral of Our Lady",
+      "accession": null,
+      "sourceUrl": "https://www.dekathedraal.be/en/rubens-resurrection-christ",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "EASTER_RESURRECTION"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "In situ triptych. Institution currently notes temporary restoration/non-display, not public image unavailability.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W06-004",
+      "artist": "Peter Paul Rubens",
+      "title": "The Assumption of the Virgin",
+      "institution": "Antwerp Cathedral of Our Lady",
+      "accession": null,
+      "sourceUrl": "https://www.visitflanders.com/en/discover-flanders/arts-and-heritage/flemish-masters/peter-paul-rubens/rubens-flanders",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "ASSUMPTION_MARY"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Tourism authority original altarpiece listed in Cathedral, object-specific painting page pending.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W06-005",
+      "artist": "Peter Paul Rubens",
+      "title": "The Adoration of the Magi (Antwerp KMSKA original)",
+      "institution": "Royal Museum of Fine Arts Antwerp KMSKA",
+      "accession": null,
+      "sourceUrl": "https://kmska.be/en/masterpiece/the-adoration-of-the-magi-6",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "EPIPHANY"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "KMSKA inventory 298; entirely distinct altarpiece from Rubens 1609 Prado Adoration W05.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W06-006",
+      "artist": "Peter Paul Rubens",
+      "title": "The Enthroned Madonna Adored by Saints",
+      "institution": "Royal Museum of Fine Arts Antwerp KMSKA",
+      "accession": null,
+      "sourceUrl": "https://www.buren.kmska.be/en/enthroned-madonna-shines-again-kmska-completes-first-phase-of-studio-rubens",
+      "sourceSpecificity": "INSTITUTIONAL_OR_TOURISM_CURATED_COLLECTION_REFERENCE",
+      "contextKeys": [
+        "MARIAN_SAINTS_DEVOTION"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "KMSKA original restored 2025; individual accession still to match; do not assume only autograph hand.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W06-007",
+      "artist": "Anthony van Dyck",
+      "title": "The Lamentation over the Dead Christ",
+      "institution": "Royal Museum of Fine Arts Antwerp KMSKA",
+      "accession": null,
+      "sourceUrl": "https://www.kmska.be/en/masterpiece/the-lamentation-over-the-dead-christ-2",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "LAMENTATION_PIETA"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Inventory 404, wide original 115.5×207.5, phone crop needs review; separate from Prado Van Dyck Pietà.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W06-008",
+      "artist": "Caravaggio",
+      "title": "The Taking of Christ",
+      "institution": "National Gallery of Ireland Dublin",
+      "accession": null,
+      "sourceUrl": "https://www.nationalgallery.ie/art-and-artists/highlights-collection/taking-christ-michelangelo-merisi-da-caravaggio",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "AGONY_ARREST_JUDAS"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "L14702 Jesuit Community original on indefinite loan; Dublin gallery photograph copyright; distinct work from the other Matthew/canonical Passion studies.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W06-009",
+      "artist": "Caravaggio",
+      "title": "Saint Catherine of Alexandria",
+      "institution": "Museo Nacional Thyssen-Bornemisza Madrid",
+      "accession": null,
+      "sourceUrl": "https://www.museothyssen.org/en/collection/artists/caravaggio-michelangelo-merisi/saint-catherine-alexandria",
+      "sourceSpecificity": "OFFICIAL_OBJECT_RECORD",
+      "contextKeys": [
+        "SAINT_CATHERINE_ALEXANDRIA"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original Thyssen painting. Prado holds COPY of this composition; copy must never be added as Caravaggio original. Image archive professional usage rights held.",
+      "reproductionRightsStatus": "UNKNOWN_OR_PERMISSION_REQUIRED_VERIFY",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 6
+    },
+    {
+      "leadId": "W07-001",
+      "artist": "Anthony van Dyck",
+      "title": "Preparations for the Martyrdom of Saint Sebastian",
+      "institution": "Louvre, Paris",
+      "accession": "M.I. 918",
+      "sourceUrl": "https://livres.louvre.fr/vandyck/cats/3/",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "MARTYR_ST_SEBASTIAN"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "1615–1616 original oil painting; not studio copy; photographer RMN permission required",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-002",
+      "artist": "Anthony van Dyck",
+      "title": "Calvary: Christ Crucified with Mary, John and Mary Magdalene",
+      "institution": "Louvre, Paris",
+      "accession": "INV 1766",
+      "sourceUrl": "https://livres.louvre.fr/vandyck/cats/4/",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "CRUCIFIXION_CHRIST"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original 1617–19, large canvas; Gospel crucifixion and Seven Last Words only matching depicted moments",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-003",
+      "artist": "Anthony van Dyck",
+      "title": "Virgin and Child with the Three Penitents",
+      "institution": "Louvre, Paris",
+      "accession": "INV 1230",
+      "sourceUrl": "https://livres.louvre.fr/vandyck/cats/13/",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "MARIAN_PENITENCE_SYMBOLIC"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Virgin and Christ Child with Magdalene, Prodigal Son and David; symbolic juxtaposition, no literal scriptural meeting",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-004",
+      "artist": "Anthony van Dyck",
+      "title": "Virgin and Child with Donors (Roettiers Madonna?)",
+      "institution": "Louvre, Paris",
+      "accession": "INV 1231",
+      "sourceUrl": "https://livres.louvre.fr/vandyck/cats/14/",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "MARIAN_INTERCESSION_WITH_DONORS"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Historical devotional portrait donors, not solely Marian scene; reworked canvas physically enlarged",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-005",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Sebastian Tended by Angels",
+      "institution": "Louvre, Paris",
+      "accession": "INV 1233",
+      "sourceUrl": "https://livres.louvre.fr/vandyck/cats/15/",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "ST_SEBASTIAN_ASSISTANCE"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original Louvre catalogue Van Dyck, not other copies or attributed drawings",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-006",
+      "artist": "Anthony van Dyck",
+      "title": "Madonna and Child with Saint Anthony of Padua",
+      "institution": "Pinacoteca di Brera, Milan",
+      "accession": "Inv. 87",
+      "sourceUrl": "https://pinacotecabrera.org/collezioni/collezione-on-line/la-madonna-col-bambino-e-santantonio-da-padova/",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "SAINT_ANTHONY_PADUA_MARIAN"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Authentic Van Dyck original c1630–1632; Brera says not presently exhibited",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-007",
+      "artist": "Caravaggio",
+      "title": "Saint Jerome Writing (Borghese original)",
+      "institution": "Galleria Borghese, Rome",
+      "accession": "Inv. 056",
+      "sourceUrl": "https://www.collezionegalleriaborghese.it/en/opere/saint-jerome",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "DOCTOR_JEROME_SCRIPTURE"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Distinct from earlier Ribera St Jerome user 5/5 and Caravaggio's Malta St Jerome original",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-008",
+      "artist": "Caravaggio",
+      "title": "Madonna and Child with Saint Anne (Palafrenieri)",
+      "institution": "Galleria Borghese, Rome",
+      "accession": "Inv. 110",
+      "sourceUrl": "https://www.collezionegalleriaborghese.it/en/opere/madonna-and-child-with-saint-anne-madonna-dei-palafrenieri",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "MARIAN_SAINT_ANNE"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Different subject than Immaculate Conception and Saint Anne iconography, not literal scene from Gospel",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-009",
+      "artist": "Caravaggio",
+      "title": "Saint John the Baptist (Borghese original)",
+      "institution": "Galleria Borghese, Rome",
+      "accession": "Inv. 267",
+      "sourceUrl": "https://www.collezionegalleriaborghese.it/en/opere/saint-john-the-baptist",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "JOHN_BAPTIST_CONTEMPLATIVE"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Portrait-like depiction, not Beheading or Baptism of Christ",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-010",
+      "artist": "Caravaggio",
+      "title": "David with the Head of Goliath (Borghese original)",
+      "institution": "Galleria Borghese, Rome",
+      "accession": "Borghese Inv. 455",
+      "sourceUrl": "https://www.collezionegalleriaborghese.it/en/opere/david-with-the-head-of-goliath",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "DAVID_AND_GOLIATH"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Self-portrait on Goliath head; distinct from Prado Caravaggio David and Goliath painting, ownership/reproduction separate",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-011",
+      "artist": "Caravaggio",
+      "title": "The Beheading of Saint John the Baptist",
+      "institution": "St John's Co-Cathedral, Valletta",
+      "accession": "In situ original",
+      "sourceUrl": "https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio/",
+      "sourceSpecificity": "INSTITUTIONAL_COLLECTION_OR_LOAN_SUPPORTING_MULTIPLE_OBJECTS",
+      "contextKeys": [
+        "MARTYRDOM_JOHN_BAPTIST"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "The cathedral documents it as original c1608, huge 520×360 cm; image photography permission pending",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-012",
+      "artist": "Caravaggio",
+      "title": "Saint Jerome Writing (Valletta original)",
+      "institution": "St John's Co-Cathedral, Valletta",
+      "accession": "In situ original",
+      "sourceUrl": "https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio/",
+      "sourceSpecificity": "INSTITUTIONAL_COLLECTION_OR_LOAN_SUPPORTING_MULTIPLE_OBJECTS",
+      "contextKeys": [
+        "DOCTOR_JEROME_SCRIPTURE"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Distinct canvas c1607 (117×157 cm), not Borghese Jerome; cathedral is holder, page shared",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-013",
+      "artist": "Caravaggio",
+      "title": "Martha and Mary Magdalene",
+      "institution": "Detroit Institute of Arts",
+      "accession": "73.268",
+      "sourceUrl": "https://dia.org/collection/martha-and-mary-magdalene/36204",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "MAGDALENE_REPENTANCE_MIRROR"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Museum warns imaginary Marian/Martha conversion meeting and mirror; symbolic confession not literal Luke 10 scene; high-res TIFF offered with reproduction conditions",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-014",
+      "artist": "Caravaggio",
+      "title": "The Incredulity of Saint Thomas",
+      "institution": "Stiftung Preußische Schlösser und Gärten, Potsdam",
+      "accession": "GK I 5438",
+      "sourceUrl": "https://www.spsg.de/en/press-material-paintings",
+      "sourceSpecificity": "INSTITUTIONAL_COLLECTION_OR_LOAN_SUPPORTING_MULTIPLE_OBJECTS",
+      "contextKeys": [
+        "RESURRECTION_DOUBTING_THOMAS"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Museum offers 6 MB press download with photographer copyright; press download permission does NOT equal app commercial licence",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-015",
+      "artist": "Caravaggio",
+      "title": "Ecce Homo (private collection, Prado loan through 2027)",
+      "institution": "Private collection / loan Museo del Prado",
+      "accession": "Private collection; no Prado inventory",
+      "sourceUrl": "https://www.museodelprado.es/actualidad/noticia/ecce-homo-de-caravaggio-se-expone-de-nuevo-en-el/d3c11743-7d5c-d41f-ba3e-5db8e325342a",
+      "sourceSpecificity": "INSTITUTIONAL_COLLECTION_OR_LOAN_SUPPORTING_MULTIPLE_OBJECTS",
+      "contextKeys": [
+        "PASSION_ECCE_HOMO"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Newly rediscovered and source-reviewed Caravaggio; Prado 2025 states museum loan to 2027, not Prado ownership; image rights especially restrictive",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W07-016",
+      "artist": "Giovanni Battista Caracciolo",
+      "title": "David with the Head of Goliath",
+      "institution": "Galleria Borghese, Rome",
+      "accession": "Inv. 002",
+      "sourceUrl": "https://www.collezionegalleriaborghese.it/en/opere/david-with-the-head-of-goliath-2",
+      "sourceSpecificity": "INDIVIDUAL_CATALOGUE_WORK",
+      "contextKeys": [
+        "DAVID_AND_GOLIATH"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 1,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Not Caravaggio! Documentary frame payment 1612 proves Caracciolo author. Artist has existing user 5/5 for Calling of Matthew",
+      "reproductionRightsStatus": "NOT_CLEARED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 7
+    },
+    {
+      "leadId": "W08-001",
+      "artist": "Caravaggio",
+      "title": "Penitent Magdalene",
+      "institution": "Galleria Doria Pamphilj Rome",
+      "accession": "FC357",
+      "sourceUrl": "https://www.doriapamphilj.it/portfolio/caravaggio/",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_MULTI_OBJECT_PROVENANCE",
+      "contextKeys": [
+        "PENITENT_MAGDALENE"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Institution-owned original, metaphoric penance distinct from Mary at empty tomb.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-002",
+      "artist": "Caravaggio",
+      "title": "Rest on the Flight into Egypt",
+      "institution": "Galleria Doria Pamphilj Rome",
+      "accession": "FC241",
+      "sourceUrl": "https://www.doriapamphilj.it/portfolio/caravaggio/",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_MULTI_OBJECT_PROVENANCE",
+      "contextKeys": [
+        "FLIGHT_EGYPT"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Institution-owned original; same page as FC357 but physically distinct painting.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-003",
+      "artist": "Caravaggio",
+      "title": "David with the Head of Goliath (Vienna original)",
+      "institution": "Kunsthistorisches Museum Wien",
+      "accession": "Inv125",
+      "sourceUrl": "https://caravaggio-bernini.khm.at/en/orrore-terribilita/",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_MULTI_OBJECT_PROVENANCE",
+      "contextKeys": [
+        "DAVID_GOLIATH"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "KHM original c1600/01 on poplar, separately owned from Prado P000065 and Borghese original.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-004",
+      "artist": "Caravaggio",
+      "title": "The Crowning with Thorns (Vienna)",
+      "institution": "Kunsthistorisches Museum Wien",
+      "accession": "Inventory to confirm",
+      "sourceUrl": "https://caravaggio-bernini.khm.at/en/",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_MULTI_OBJECT_PROVENANCE",
+      "contextKeys": [
+        "CROWNING_WITH_THORNS"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "KHM original c1603, directly relevant Rosary sorrowful III; exact museum inventory to confirm.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-005",
+      "artist": "Caravaggio",
+      "title": "David with the Head of Goliath (Prado original)",
+      "institution": "Museo Nacional del Prado",
+      "accession": "P000065",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/david-with-the-head-of-goliath/c3895900-73d4-4257-97fb-240e3aaf0402",
+      "sourceSpecificity": "OFFICIAL_OBJECT_OR_EXHIBITION_SPECIFIC",
+      "contextKeys": [
+        "DAVID_GOLIATH"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Separate painting from Vienna and Borghese. Prado 2024 technical attribution report flags historical debate; accepted as Caravaggio in current museum classification.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-006",
+      "artist": "Caravaggio",
+      "title": "Judith Beheading Holofernes",
+      "institution": "Palazzo Barberini Rome",
+      "accession": "Museum inventory to confirm",
+      "sourceUrl": "https://barberinicorsini.org/evento/emozioni-tattili-giuditta-e-oloferne-del-caravaggio-i-polpastrelli-raccontano/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_OR_EXHIBITION_SPECIFIC",
+      "contextKeys": [
+        "JUDITH_HOLOFERNES"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Caravaggio Barberini documented original. Deuterocanonical Judith scene, distinguish disputed Toulouse alternate.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-007",
+      "artist": "Caravaggio",
+      "title": "Martyrdom of Saint Ursula",
+      "institution": "Gallerie d'Italia Napoli",
+      "accession": "Collection accession to confirm",
+      "sourceUrl": "https://gallerieditalia.com/it/musei-online/capolavori/martirio-di-sant-orsola-caravaggio/",
+      "sourceSpecificity": "OFFICIAL_OBJECT_OR_EXHIBITION_SPECIFIC",
+      "contextKeys": [
+        "MARTYR_URSULA"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Documented last known painting 1610, subject is a saint's legendary martyrdom not Gospel historical event.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-008",
+      "artist": "Caravaggio",
+      "title": "Saint Francis of Assisi in Ecstasy",
+      "institution": "Wadsworth Atheneum Hartford",
+      "accession": "1943.222",
+      "sourceUrl": "https://www.thewadsworth.org/wp-content/uploads/2015/09/Euro-Wall-Text-Final.pdf",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_MULTI_OBJECT_PROVENANCE",
+      "contextKeys": [
+        "ST_FRANCIS_ECSTASY"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Museum original c1595-96. Explicit in museum collection wall text; St Francis adoration/devotion vs stigmatization iconography as documented.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-009",
+      "artist": "Caravaggio",
+      "title": "Saint John the Baptist in the Wilderness",
+      "institution": "Nelson-Atkins Museum Kansas City",
+      "accession": "Museum accession pending",
+      "sourceUrl": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+      "sourceSpecificity": "OFFICIAL_OBJECT_OR_EXHIBITION_SPECIFIC",
+      "contextKeys": [
+        "ST_JOHN_BAPTIST"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 2,
+        "fiveRatedWorks": 1,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Museum original painting directly acknowledged by institution's licensed print page, date 1604; print shop image not a commercial asset license.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-010",
+      "artist": "Anthony van Dyck",
+      "title": "The Resurrection",
+      "institution": "Wadsworth Atheneum Hartford",
+      "accession": "1964.1",
+      "sourceUrl": "https://www.thewadsworth.org/wp-content/uploads/2015/09/Euro-Wall-Text-Final.pdf",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_MULTI_OBJECT_PROVENANCE",
+      "contextKeys": [
+        "RESURRECTION"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Museum original c1631–32, notes possibility canvas left unfinished; major currently missing 5/5 cross-module Resurrection anchor subject.",
+      "reproductionRightsStatus": "MUSEUM_PHOTO_RIGHTS_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-011",
+      "artist": "Peter Paul Rubens",
+      "title": "Holy Family with Saint Elizabeth, Saint John and a Dove",
+      "institution": "Metropolitan Museum of Art",
+      "accession": "55.135.1",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437529",
+      "sourceSpecificity": "OFFICIAL_OBJECT_OR_EXHIBITION_SPECIFIC",
+      "contextKeys": [
+        "HOLY_FAMILY_MARIAN"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Authenticated Rubens ca1608-09, Met Open Access public domain painting original; distinct enlarged Rubens+workshop version in LACMA.",
+      "reproductionRightsStatus": "MET_PUBLIC_DOMAIN_CC0_UNDOWNLOADED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    },
+    {
+      "leadId": "W08-012",
+      "artist": "Peter Paul Rubens",
+      "title": "Holy Family with Saints Francis and Anne and the Infant John the Baptist",
+      "institution": "Metropolitan Museum of Art",
+      "accession": "02.24",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437528",
+      "sourceSpecificity": "OFFICIAL_OBJECT_OR_EXHIBITION_SPECIFIC",
+      "contextKeys": [
+        "HOLY_FAMILY_SAINT_FRANCIS"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 1,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": true
+      },
+      "provenanceNotes": "Original Rubens early/mid1630s, devotional composite with Saint Francis, not literal Gospel event; Met public domain CC0 image source.",
+      "reproductionRightsStatus": "MET_PUBLIC_DOMAIN_CC0_UNDOWNLOADED",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 8
+    }
+  ],
+  "nextExecution": {
+    "topPriority": "For each P0/P1 museum identity: separate licence-releasable unframed full resolution original URI from page; calculate SHA and pixels; review; connect to existing Mass, Bible, Calendar and Prayer targets.",
+    "order": [
+      "Eliminate artist-excluded works and source duplicates",
+      "Complete original-painting sets artist-wise from catalogue raisonné",
+      "Source freely reusable museum originals first (Met/NGA) without compromising user-rated aesthetics",
+      "Source other museum full-resolution images only after legal grant",
+      "Numerically rate the new images in consolidated 0–5 reviewer",
+      "Store one canonical object and links to all modules"
+    ],
+    "offlineBundleNewOriginals": 0
+  },
+  "artProductionMutated": false
+}
