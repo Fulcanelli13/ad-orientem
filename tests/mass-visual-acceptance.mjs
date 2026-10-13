@@ -1562,13 +1562,19 @@ try{
     ["CELEBRANT","Celebrant"],["ALL","All present"]
   ],"Good Friday Pater wrongly treats congregational prayer as the priest's alone");
   const preparationSpeakers=await displayedSpeakers("GF-COM-840");
+  // The current sourced 1962 Good Friday communion office includes
+  // "Et continuo diaconus facit confessionem" and its exact three-part
+  // deacon Confiteor (reader-good-friday.js, source C0021–C0023).
+  // Do not delete the deacon's prayer to satisfy a stale visual baseline.
   assert.deepEqual(preparationSpeakers.map(row=>row.speaker),[
-    "CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT",
-    "ALL","CELEBRANT","ALL","CELEBRANT","CELEBRANT"
+    "CELEBRANT","CELEBRANT","CELEBRANT",
+    "DEACON","DEACON","DEACON",
+    "CELEBRANT","ALL","CELEBRANT","ALL","CELEBRANT","CELEBRANT"
   ]);
   assert.deepEqual(preparationSpeakers.map(row=>row.label).filter(Boolean),
-    ["Celebrant","Celebrant","All present","Celebrant","All present","Celebrant"],
-    "Good Friday alternations between celebrant and responses were lost");
+    ["Celebrant","Deacon","Celebrant","All present",
+     "Celebrant","All present","Celebrant"],
+    "Good Friday deacon Confiteor and subsequent responses lost their speaker changes");
   const communionWords=await page.evaluate(()=>{
     const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
     const rows=[...api.root.querySelectorAll(".ao-reader-paragraph")];
