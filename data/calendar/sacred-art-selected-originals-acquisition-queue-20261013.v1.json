@@ -10,16 +10,20 @@
     "subjectPlacementsUnjoined": 98,
     "sourceStatus": {
       "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 15,
-      "IDENTITY_SOURCE_MISSING": 34,
-      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 20,
+      "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION": 3,
+      "IDENTITY_SOURCE_MISSING": 26,
+      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 24,
+      "SOURCE_CUSTODIAN_LOCATION_VERIFIED_OBJECT_LINK_PENDING": 1,
       "OBJECT_URL_RECORDED_NEEDS_MASTER": 20,
       "VERIFY_EXACT_OBJECT_IDENTITY": 2
     },
     "benchmarkUrlsRecovered": 1,
     "verifiedInstitutionalObjectsThisWave": 20,
-    "institutionalObjectUrlKnownTotal": 40,
+    "institutionalObjectUrlKnownTotal": 44,
     "commonsSelectedOriginalReviewCandidates": 4,
-    "commonsPoorCompositionMasterBlocked": 1
+    "commonsPoorCompositionMasterBlocked": 1,
+    "exactInstitutionalOrCustodianIdentitiesNewlyChecked": 5,
+    "distinctArtistTitleAmbiguitiesExplicitlyRecorded": 3
   },
   "notes": [
     "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
@@ -30,7 +34,8 @@
     "Only source-verified, human-approved, rights-reviewed, image-reviewed originals may enter final gallery.",
     "15 selected artwork exact institutional identities resolved using Prado inventory numbers and Louvre object IDs. Browser search URLs replaced with immutable museum records; no original bytes, rights, user approval, or app assets changed.",
     "Five previously URL-less named selections have verified current museum object pages: Lanfranco NGI.72, Navarrete NGI.1721, Caravaggio Uffizi 4659 and Thyssen St Catherine, and Champaigne Louvre INV1125. Uncropped files are not in the source archive yet.",
-    "Four exact Commons image titles selected for REVIEW-ONLY acquisition with pixel/dimension/rights evidence; includes Sailko CC BY 3.0 photograph, and excludes misleading high-pixel La Petite Cène image with incorrect aspect ratio."
+    "Four exact Commons image titles selected for REVIEW-ONLY acquisition with pixel/dimension/rights evidence; includes Sailko CC BY 3.0 photograph, and excludes misleading high-pixel La Petite Cène image with incorrect aspect ratio.",
+    "Additional subject-preserving exact museum identities and multiple-version ambiguity research: Musée de Picardie Gérôme, Mauritshuis 253, KMSKA 314, LACMA M.88.177, Cappuccini Rome Reni original location; van Dyck Lamentation, Bruegel Babel, and Rubens Ignatius explicitly marked as ambiguous and not silently identified by title alone."
   ],
   "works": [
     {
@@ -299,11 +304,26 @@
       "recordedSourceUrl": null,
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION",
+      "action": "KEEP_PREVIOUS_EDITORIAL_SELECTION_UNCHANGED_UNTIL_EXACT_VERSION_RESOLVED",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "competingInstitutionalOriginals": [
+        {
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/la-lamentacion/428bc8a8-8336-4aa7-800b-69fccd834254",
+          "institution": "Prado P001642",
+          "title": "La Lamentación",
+          "date": "1618–1620"
+        },
+        {
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/la-piedad/f89676d9-34cc-46d9-b232-571faf9894ba",
+          "institution": "Prado second van Dyck Pietà",
+          "title": "La Piedad",
+          "date": "c.1629"
+        }
+      ],
+      "imageAcquired": false
     },
     {
       "editorialArtworkId": "ART-nthony-van-yck-he-ance-hrust",
@@ -585,14 +605,22 @@
         "SNT-OT-02"
       ],
       "numberOfUses": 3,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://commons.wikimedia.org/wiki/Category:Saint_Michael_defeats_Satan_by_Guido_Reni_(Santa_Maria_Immacolata_a_via_Veneto,_Rome)",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "SOURCE_CUSTODIAN_LOCATION_VERIFIED_OBJECT_LINK_PENDING",
+      "action": "IDENTIFY_PROPER_CUSTODIAN_IMAGE_AND_LICENSE",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://commons.wikimedia.org/wiki/Category:Saint_Michael_defeats_Satan_by_Guido_Reni_(Santa_Maria_Immacolata_a_via_Veneto,_Rome)",
+      "institutionalObjectId": "Santa Maria della Concezione dei Cappuccini, first chapel on right",
+      "sourceInstitution": "Capuchin church, Rome",
+      "verifiedMedium": "oil on silk; confirm restoration/substrate from custodian",
+      "sourceIdentityNote": "1635 original still in church; detailed catalogues and contemporary engravings corroborate, but no individual institutional object permalink secured. Various photographs have frames/shrine conditions and must be inspected.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-ean-ouvenet-aising-of-azarus",
@@ -620,14 +648,22 @@
         "DEV-04"
       ],
       "numberOfUses": 2,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XIX/Notices/Notice-Jean-Leon-Gerome-Siecle-d-Auguste",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XIX/Notices/Notice-Jean-Leon-Gerome-Siecle-d-Auguste",
+      "institutionalObjectId": "RF 1983.92",
+      "sourceInstitution": "Musée de Picardie, Amiens",
+      "verifiedMedium": "oil on canvas",
+      "sourceIdentityNote": "1855, 620 × 1014 cm. Monumental allegory with Nativity in lower foreground; never substitute square crop, contextual placement should remain honest.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-os-de-ibera-acob-s-ream",
@@ -850,11 +886,26 @@
       "recordedSourceUrl": null,
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION",
+      "action": "KEEP_PREVIOUS_EDITORIAL_SELECTION_UNCHANGED_UNTIL_EXACT_VERSION_RESOLVED",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "competingInstitutionalOriginals": [
+        {
+          "url": "https://www.khm.at/fileadmin/pdf_KHM/online-publikationen/2025/ansichtssache_28/KHM_PointOfView_28.pdf",
+          "institution": "KHM Vienna GG 530",
+          "title": "Rubens painted modello / preparatory oil",
+          "date": "c.1617"
+        },
+        {
+          "url": "https://www.khm.at/fileadmin/pdf_KHM/online-publikationen/2025/ansichtssache_28/KHM_PointOfView_28.pdf",
+          "institution": "KHM Vienna GG 517",
+          "title": "Rubens and workshop completed altarpiece",
+          "date": "c.1617–1618"
+        }
+      ],
+      "imageAcquired": false
     },
     {
       "editorialArtworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
@@ -915,14 +966,22 @@
         "DEV-18"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://kmska.be/en/masterpiece/the-holy-trinity",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://kmska.be/en/masterpiece/the-holy-trinity",
+      "institutionalObjectId": "KMSKA 314",
+      "sourceInstitution": "Royal Museum of Fine Arts Antwerp",
+      "verifiedMedium": "oil on panel",
+      "sourceIdentityNote": "1620, 157 × 150cm. IIIF manifest https://iiif.kmska.be/iiif/2/28958/manifest.json; rights and original-byte gates remain distinct.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
@@ -932,14 +991,22 @@
         "BIB-OR01"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://www.mauritshuis.nl/en/our-collection/artworks/253-the-garden-of-eden-with-the-fall-of-man",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://www.mauritshuis.nl/en/our-collection/artworks/253-the-garden-of-eden-with-the-fall-of-man",
+      "institutionalObjectId": "Mauritshuis 253",
+      "sourceInstitution": "Mauritshuis, The Hague",
+      "verifiedMedium": "oil on panel",
+      "sourceIdentityNote": "c. 1615, jointly signed, 74.3 × 114.7cm. The Rubens/Jan Brueghel collaboration, not a different Eden composition.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
@@ -1000,14 +1067,22 @@
         "SNT-DC-02"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://collections.lacma.org/object/61062",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://collections.lacma.org/object/61062",
+      "institutionalObjectId": "LACMA M.88.177",
+      "sourceInstitution": "Los Angeles County Museum of Art",
+      "verifiedMedium": "oil on canvas",
+      "sourceIdentityNote": "c.1645, 78.74 × 62.23 cm. Exact full-length Augustine painting with flaming heart and VERITAS inscription; Commons frameless/cropped variants require separate quality review.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-ierre-ignard-aint-ohn-the-aptist",
@@ -1037,11 +1112,26 @@
       "recordedSourceUrl": null,
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION",
+      "action": "KEEP_PREVIOUS_EDITORIAL_SELECTION_UNCHANGED_UNTIL_EXACT_VERSION_RESOLVED",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "competingInstitutionalOriginals": [
+        {
+          "url": "https://bruegel.at/en/the-tower-of-babel/",
+          "institution": "Kunsthistorisches Museum Vienna",
+          "title": "Great Tower of Babel",
+          "date": "1563"
+        },
+        {
+          "url": "https://www.boijmans.nl/en/collection/artworks",
+          "institution": "Museum Boijmans Van Beuningen Rotterdam",
+          "title": "Little Tower of Babel",
+          "date": "c.1563 (undated panel)"
+        }
+      ],
+      "imageAcquired": false
     },
     {
       "editorialArtworkId": "ART-ietro-da-ortona-he-uardian-ngel",
@@ -1813,5 +1903,5 @@
       "sourceNeedsByteAndLicenceValidation": true
     }
   ],
-  "latestSourceWave": "20 previously unjoined selected works now newly confirmed to exact institutional original; 34 remain with no exact recorded object URL."
+  "latestSourceWave": "25 source-missing/search-selected artwork identities/custodians newly evidenced, 3 competing-version holds; original-image acquisition blocked by Wikimedia Commons HTTP 429 on 2026-10-13 run."
 }
