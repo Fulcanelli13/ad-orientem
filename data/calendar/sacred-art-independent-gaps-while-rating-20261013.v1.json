@@ -29,7 +29,7 @@
     ],
     "sourceOfGapMatrix": "data/calendar/sacred-art-class-i-existing-image-matrix-20261013.v1.json"
   },
-  "sourceWorkCount": 14,
+  "sourceWorkCount": 15,
   "corroboration": {
     "institutionalObjectLinks": 13,
     "officialCathedralWorkDescription": 1
@@ -69,8 +69,14 @@
       "status": "EXACT_HISTORIC_DEVOTIONAL_PAINTING_IMAGE_RIGHTS_AND_MOBILE_REVIEW_PENDING"
     },
     "calendar.palm-sunday": {
-      "newPrimaryCandidates": [],
-      "status": "NO_STRONG_STYLISTICALLY_ELIGIBLE_OIL_PAINTING_VERIFIED_IN_THIS_PASS"
+      "newPrimaryCandidates": [
+        "FEAST-PALM-VANDYCK-INDIANAPOLIS"
+      ],
+      "status": "ONE_HIGH_PRIORITY_REAL_BAROQUE_EXACT_SCENE_SOURCE_FOUND_MOBILE_ARTISTIC_REVIEW_PENDING",
+      "sourceLinks": [
+        "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ",
+        "https://catalogo.fondazionezeri.unibo.it/entry/work/101277/Dyck%20Antoon%20van%2C%20Entrata%20di%20Cristo%20in%20Gerusalemme"
+      ]
     },
     "SNT-DC-18": {
       "newPrimaryCandidates": [
@@ -444,6 +450,47 @@
       "productionApproved": false,
       "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
       "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "FEAST-PALM-VANDYCK-INDIANAPOLIS",
+      "targetIds": [
+        "calendar.palm-sunday",
+        "BIB-PASSION-ENTRY-INTO-JERUSALEM"
+      ],
+      "artist": "Anthony van Dyck",
+      "title": "Entry of Christ into Jerusalem",
+      "institutionalObjectUrl": "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-0103/xwHjZLGpdC6wMQ",
+      "independentCatalogUrl": "https://catalogo.fondazionezeri.unibo.it/entry/work/101277/Dyck%20Antoon%20van%2C%20Entrata%20di%20Cristo%20in%20Gerusalemme",
+      "secondaryPhotoCatalog": "https://commons.wikimedia.org/wiki/Category:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck",
+      "institutionalObjectId": "Indianapolis Museum of Art at Newfields, accession 58.3",
+      "medium": "oil on canvas",
+      "approximateDate": "ca. 1617",
+      "dimensionCm": [
+        151,
+        229.2
+      ],
+      "attributionEvidence": "Newfields gallery data via Google Arts and Culture, independent Fondazione Zeri no. 99420",
+      "priorCatalogIdentityStatus": "NOT_IN_PRIOR_MAIN_281_ARTWORK_REGISTRY_BY_SOURCE_URL",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_PALM_SUNDAY_GOSPEL",
+      "priority": "HIGH",
+      "editorialNotes": "Strong painterly young van Dyck Baroque painting with Christ riding donkey, crowd laying foliage, vivid modelling. Relatively wide 3:2 composition; mobile hero must preserve group or select considered framing. No user aesthetic rating yet, no approval.",
+      "imageryResearch": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck",
+          "status": "RESEARCH_ONLY_PUBLIC_DOMAIN_ART_AND_MIXED_LICENSE_PHOTOGRAPHS",
+          "sizesReported": "At least 5043×3325 historic full image, 2724×1940 and 3456×2064 photographs (photos may require attribution)",
+          "originalBytesFetched": false
+        }
+      ],
+      "technicalMediaRole": "MOBILE_HERO_POSSIBLE_AFTER_AESTHETIC_GATE",
+      "provenanceStatus": "INSTITUTION_CONTRIBUTED_COLLECTION_RECORD_AND_INDEPENDENT_ART_CATALOGUE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "userReviewQueueTouched": false
     }
   ],
   "outstandingSourceSearch": "Target only Palm Sunday high-quality exact painting, a truly feast-specific Christ the King, stronger All Saints, and a few top missing Doctors; do not scour entire Old Testament.",
@@ -453,6 +500,7 @@
     "Notre-Dame Blanchard is a specific cathedral painting record but not museum catalogued with precise object ID; copyright/photo source unresolved.",
     "Preti work depicts Christ in Glory with a selection of Saints. Cross-reuse is contextual for All Saints and Christ King, never exact both.",
     "Rubens Prado apostolate contains several exact already catalogued saints, so no duplicate ID imported.",
-    "A Saint iconographic reference is not sufficient for an automatic calendar hero: intended mobile artwork must have proper emphasis and visual quality."
+    "A Saint iconographic reference is not sufficient for an automatic calendar hero: intended mobile artwork must have proper emphasis and visual quality.",
+    "Update: van Dyck's 1617 Indianapolis Museum Entry into Jerusalem is direct Class I Palm Sunday painting with Newfields contributed collection record and Zeri independent catalogue. This is a HIGH value candidate but not added to user's ongoing rating sheet, not an acquired 267th image, and phone-crop/user aesthetic review still pending."
   ]
 }
