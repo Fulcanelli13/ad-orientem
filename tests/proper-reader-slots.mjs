@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { properToReaderSlots, assertReaderProperReady } from "../src/mass/proper-reader-slots.js";
+import { composeProperReaderParagraphs } from "../src/mass/proper-reader-composition.js";
 
 const t=(lat,en)=>({lat,en,fr:""});
 const proper={
@@ -116,5 +117,54 @@ const corrupted=properToReaderSlots({...frenchProper,
 },{language:"fr"});
 assert.equal(corrupted.slots.COLLECT_SET.status,"MISSING",
   "A broken shared conclusion must NEVER be presented as ready");
+
+// The canonical Ordinary already supplies the post-Epistle and post-Gospel
+// responses. If an imported source carries the same reply, display it only
+// once, with the reply owned by its immutable cue (B020/B026).
+const readingSource={
+  epistle:{
+    lat:"Léctio Epístolæ.\n℟. Deo grátias.",
+    en:"Lesson from the Epistle.\n℟. Thanks be to God.",
+    fr:"Lecture de l’Épître.\n℟. Deo gratias — Rendons grâce à Dieu.",
+  },
+  gospel:{
+    lat:"Sequéntia sancti Evangélii.\n℟. Laus tibi, Christe.",
+    en:"Continuation of the holy Gospel.\n℟. Praise be to Thee, O Christ.",
+    fr:"Suite du saint Évangile.\n℟. Louange à vous, ô Christ.",
+  },
+};
+for(const language of ["en","fr"]){
+  const slots=properToReaderSlots({...(language==="fr"?frenchProper:proper),...readingSource},{language});
+  assert.equal(slots.ready,true,language+" reading response dedup blocked a valid Proper");
+  const epistle=slots.slots.EPISTLE_OR_LESSON.data.paragraphs[0];
+  const gospel=slots.slots.GOSPEL.data.paragraphs[0];
+  assert.equal(epistle.latin,"Léctio Epístolæ.");
+  assert.equal(gospel.latin,"Sequéntia sancti Evangélii.");
+  assert.doesNotMatch(epistle.vernacular,/Thanks be to God|Deo gratias/iu);
+  assert.doesNotMatch(gospel.vernacular,/Praise be to Thee|Louange à vous/iu);
+  assert.equal(epistle.fixedResponseCueId,"AO.SM.C0076");
+  assert.equal(gospel.fixedResponseCueId,"AO.SM.C0087");
+  const epistleCard=composeProperReaderParagraphs("AO.SM.B020",
+    slots.slots.EPISTLE_OR_LESSON.data.paragraphs,{language});
+  const gospelCard=composeProperReaderParagraphs("AO.SM.B026",
+    slots.slots.GOSPEL.data.paragraphs,{language});
+  assert.deepEqual(epistleCard.filter(p=>p.kind==="RESPONSE").map(p=>p.id),
+    ["AO.SM.C0076"],"Epistle must have exactly one canonical Deo gratias reply");
+  assert.deepEqual(gospelCard.filter(p=>p.kind==="RESPONSE").map(p=>p.id),
+    ["AO.SM.C0087"],"Gospel must have exactly one canonical Laus tibi reply");
+  assert.equal(gospelCard.at(-1).id,"AO.SM.C0088",
+    "Gospel kiss prayer must remain after the public response");
+}
+assert.match(readingSource.epistle.lat,/Deo grátias/,
+  "source data must remain authoritative and untouched");
+assert.match(readingSource.gospel.lat,/Laus tibi/,
+  "source Gospel text must remain untouched");
+// Similar words in the biblical text are not sufficient to erase a line:
+// removal requires a separate terminal rubric/response with ℟. or R.
+const unmarkedReading=properToReaderSlots({...proper,
+  epistle:{lat:"Léctio. Deo grátias.",en:"Reading. Thanks be to God."},
+}).slots.EPISTLE_OR_LESSON.data.paragraphs[0];
+assert.equal(unmarkedReading.latin,"Léctio. Deo grátias.");
+assert.equal(unmarkedReading.vernacular,"Reading. Thanks be to God.");
 
 console.log("Proper → reader slots: PASS — EN/FR vernacular projection, certified suppressions, no duplicate Gradual/Alleluia.");
