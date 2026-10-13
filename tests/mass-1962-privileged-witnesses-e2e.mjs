@@ -44,7 +44,7 @@ try{
        return [form,{status:result.status,reason:result.reason??null,
          scope:result.decision?.scope??null,applied:result.decision?.appliedCount??null,
          prayerCounts:["collects","secrets","postcommunions"].map(k=>selected?.[k]?.length??null),
-         readerCollects:slots.slots.COLLECT_SET.data?.paragraphs?.length??null,
+         readerCollects:slots.slots.COLLECT_SET.data?.paragraphs?.filter(p=>p.kind==="TEXT").length??null,
          missionCollect:selected?.missionSundayCollectDecision?.status??null,
          missionUnderOneConclusion:selected?.collects?.[0]?.oneConclusion?.status??null,
          printed:print.ok,printReason:print.reason??null,
