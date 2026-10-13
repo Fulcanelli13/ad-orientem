@@ -66,6 +66,22 @@ for(const cue of ["AO.SM.C0045","AO.SM.C0047","AO.SM.C0049","AO.SM.C0051"]){
   assert.equal(sungLine.role,"SCHOLA",cue+" sung Kyrie must retain independent schola ownership");
   assert.notEqual(sungLine.kind,"RESPONSE",cue+" sung choir part is not a server dialogue");
 }
+// Low Mass Gospel is proclaimed by the celebrant and the Low
+// dismissal is his, whereas Solemn Gospel/dismissal are minister roles.
+for(const cue of ["AO.SM.C0082","AO.SM.C0084","AO.SM.C0259"]){
+  const lowLine=resolveOrdinarySpeaker(lowUnits.get(cue),{
+    form:"LOW",blockId:cue==="AO.SM.C0259"?"AO.SM.B090":
+      cue==="AO.SM.C0082"?"AO.SM.B024":"AO.SM.B025",
+  });
+  assert.equal(lowLine.role,"PRIEST",cue+" low celebrant ownership lost");
+}
+assert.equal(resolveOrdinarySpeaker(sungUnits.get("AO.SM.C0082"),{
+  form:"SUNG",blockId:"AO.SM.B024",
+}).role,"GOSPEL_PROCLAIMER");
+assert.equal(resolveOrdinarySpeaker(sungUnits.get("AO.SM.C0259"),{
+  form:"SUNG",blockId:"AO.SM.B090",
+}).role,"DISMISSAL_MINISTER");
+
 for(const cue of SUNG_ORDINARY_INTONATION_CUES){
   assert.equal(resolveOrdinarySpeaker(sungUnits.get(cue)).role,"PRIEST",cue+": celebrant intonation misowned");
 }
