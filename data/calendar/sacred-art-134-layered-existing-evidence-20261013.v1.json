@@ -13,21 +13,22 @@
     "Unapproved older option IDs may be stale and need exact artwork/source revalidation; not equated with sourced visual leads",
     "No new images downloaded; no user art approval; no production release",
     "Only same artwork image retained by same ID/SHA; cross-module Biblical event IDs from independent pipeline not invented",
-    "2026-10-13 wave: new museum-linked visual leads for 13 formerly zero-lead subjects, including contextual-only and related-episode evidence. No exact-scene completion inferred merely from presence of a link."
+    "2026-10-13 wave: new museum-linked visual leads for 13 formerly zero-lead subjects, including contextual-only and related-episode evidence. No exact-scene completion inferred merely from presence of a link.",
+    "Second 2026-10-13 research wave: source-grounded 5 additional zero-lead subjects (2 oil paintings, 2 etchings, 1 gouache); non-painting formats and contextual mismatch explicitly flagged; no approval or download."
   ],
   "summary": {
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 40,
+    "additionalResearchLeadSubjects": 45,
     "withPreviousUnapprovedOptionOnly": 14,
-    "withNoRecordedSourceOrOlderOption": 24,
+    "withNoRecordedSourceOrOlderOption": 19,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
     "chosen101Unchanged": true,
-    "newInstitutionalSourceWaveSubjectCount": 13,
-    "newInstitutionalSourceWaveCandidateCount": 15
+    "newInstitutionalSourceWaveSubjectCount": 18,
+    "newInstitutionalSourceWaveCandidateCount": 20
   },
   "subjects": [
     {
@@ -1306,14 +1307,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Exodus 12:31–42 · Map may suffice.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-francken-exodus-departure",
+          "sourceUrl": "https://www.sammlung.pinakothek.de/en/artwork/2mxqBNdL8b",
+          "artist": "Frans Francken the Younger",
+          "title": "Departure of the Israelites from Egypt",
+          "medium": "oil painting on oak panel",
+          "sourceInstitution": "Bayerische Staatsgemäldesammlungen; Staatsgalerie Aschaffenburg (inv. 6253)",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Institution identifies Exodus departure, dated 1640, 95.7 × 123 cm; source describes Israelites setting out with unleavened bread and vessels. Historical artist, not user aesthetic approval."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-EX06",
@@ -1442,14 +1459,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Exodus 40:1–38 · Ritual architecture rather than invented painting may fit.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-tissot-tabernacle-joshua",
+          "sourceUrl": "https://collections.thejewishmuseum.org/collection/26402-moses-and-joshua-in-the-tabernacle-moise-assiste-de-josue-dans-le-tabernacle",
+          "artist": "James Jacques Joseph Tissot and followers",
+          "title": "Moses and Joshua in the Tabernacle",
+          "medium": "gouache on board",
+          "sourceInstitution": "The Jewish Museum, New York (X1952-208)",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "CONTEXTUAL",
+          "matchNotes": "Confirmed Tabernacle interior scene, c.1896–1902, not a depiction of its construction or consecration. May be useful only as setting-related secondary illustration."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-EX13",
@@ -1791,14 +1824,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "2 Kings 25:1–12",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-rembrandt-jeremiah-ruins",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Jeremiah-Lamenting-the-Destruction-of-Jerusalem--8e1adedeb8e339890121dc4228dce95d",
+          "artist": "Rembrandt van Rijn",
+          "title": "Jeremiah Lamenting the Destruction of Jerusalem",
+          "medium": "oil on panel",
+          "sourceInstitution": "Rijksmuseum (SK-A-3276)",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT_WITH_CHARACTER_FOCUS",
+          "matchNotes": "1630, 58 × 46 cm. Burning Jerusalem visible behind grieving prophet; depicts aftermath/contemporary lament, not Jeremiah's warning BEFORE the destruction. Museum lists public domain."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-XL02",
@@ -1906,14 +1955,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Ezra 1:1–11",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-luyken-return-exile",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Terugkeer-uit-de-Babylonische-ballingschap--1d982fc94b84bb4fc6aa9e30330afcf7",
+          "artist": "Jan Luyken",
+          "title": "Return from the Babylonian Captivity (Terugkeer uit de Babylonische ballingschap)",
+          "medium": "etching, trial proof",
+          "sourceInstitution": "Rijksmuseum (RP-P-OB-45.374)",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "1708, 252 × 199 mm; catalogued as return from Babylonian captivity. Print only, not painting, and no aesthetic endorsement; catalogue marks public domain."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-XL12",
@@ -1921,14 +1986,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Ezra 6:13–22",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-luyken-rebuilding-temple",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Wederopbouw-van-de-Tempel-te-Jeruzalem--660456aa81973c6b8dce394e0bc09e96",
+          "artist": "Jan Luyken",
+          "title": "Rebuilding the Temple at Jerusalem (Wederopbouw van de Tempel te Jeruzalem)",
+          "medium": "etching, trial proof",
+          "sourceInstitution": "Rijksmuseum (RP-P-OB-45.935)",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "1712, 111 × 147 mm, indexed by museum explicitly to Ezra 3 rebuilding; public domain. Secondary graphic-art fallback rather than oil painting."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-XL13",
@@ -2644,5 +2725,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "2026-10-13 museum-linked research wave: 13 previously zero-lead subjects / 15 unacquired candidates, including partial scene matches; no image acquired, artist acceptance, user choice or publication."
+  "recentSourceWave": "2026-10-13: 18 original zero-lead subjects now have 20 museum-linked original art leads, 19 with no verified leads; still no acquisitions or aesthetic approvals."
 }
