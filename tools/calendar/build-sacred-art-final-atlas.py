@@ -39,6 +39,12 @@ def create(args):
               "principal":d["observedPrincipalId"],
               "tier":alt["tier"],"evidence":alt.get("evidence") or ""})
     decisions=read(args.decisions) if args.decisions is not None else None
+    subject_index=read(args.subject_index) if args.subject_index and args.subject_index.is_file() else None
+    if subject_index:
+        assert subject_index["schema"]=="AO_SACRED_ART_CONSOLIDATED_SUBJECT_REVIEW_INDEX_V1"
+        assert len(subject_index["subjects"])==235
+        assert subject_index["counts"]["userSelectedSubjectPlacements"]==101
+
     selections_by_id=defaultdict(list)
     refusals_by_id=defaultdict(list)
     if decisions is not None:
@@ -95,7 +101,7 @@ def create(args):
           "preview":preview,"uses":uses.get(a["id"],[]),
           "selectedSubjectKeys":selections_by_id[a["id"]],
           "refusedSubjectKeys":refusals_by_id[a["id"]],
-          "policyExcluded":bool(re.search(r"\bel[ -]?greco\b",a.get("artist") or "",re.I)),
+          "policyExcluded":bool(re.search(r"\b(?:el[ -]?greco|fra[ -]?angelico)\b",a.get("artist") or "",re.I)),
           "publicationApproved":False
         })
     if args.strict_images and missing:
@@ -120,7 +126,8 @@ def create(args):
              "summary":{"acquired":len(acquired),"records":len(reg["artworks"]),
                         "yearDates":len(dates),"sourceAlternatives":sum(len(a["uses"]) for a in items),
                         "previewMissing":len(missing),"fullYearCoverage":indexed.get("summary",{})},
-             "items":items,"days":dates,"pendingSourceLinks":metadata_only+additional_leads}
+             "items":items,"days":dates,"pendingSourceLinks":metadata_only+additional_leads,
+             "subjectInventory":subject_index}
     safe=json.dumps(payload,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")
     html=PAGE.replace("__PAYLOAD__",safe)
     args.output.parent.mkdir(parents=True,exist_ok=True)
@@ -341,11 +348,13 @@ function completionState(){
  const requested=$("reviewComplete").checked;
  const hasAllPreviews=data.summary.previewMissing===0;
  const hasAssociations=data.days.length===365&&data.summary.sourceAlternatives>0;
- const complete=requested&&hasAllPreviews&&hasAssociations;
+ const allSelectedAvailable=data.subjectInventory?.counts?.selectedJoin?.selectedMatchedToAcquiredOriginal===101;
+ const complete=requested&&hasAllPreviews&&hasAssociations&&allSelectedAvailable;
  const excluded=data.items.filter(a=>a.policyExcluded).map(a=>a.id);
  $("completionStatus").textContent=complete
   ?"Full-gallery editorial review confirmed. Exceptions apply; publication rights and crop gates remain closed."
   :requested&&!hasAllPreviews?"Cannot complete: one or more original-image previews are missing."
+  :requested&&!allSelectedAvailable?"Cannot complete: the 101 subject selections are not all present in the acquired original library."
   :"Draft review only. Existing subject selections remain scoped; all new artwork/date associations are still unreviewed.";
  return {complete,excluded};
 }
@@ -398,4 +407,7 @@ if __name__=="__main__":
     parser.add_argument("--strict-images",action="store_true")
     parser.add_argument("--decisions",type=Path,default=None,
                         help="Existing subject-scoped curator decisions; does not grant full-year review approval")
+    parser.add_argument("--subject-index",type=Path,
+                        default=ROOT/"data/calendar/sacred-art-consolidated-subject-review-index-20261013.v1.json",
+                        help="All 235 subject requirements, linked to canonical original IDs")
     create(parser.parse_args())
