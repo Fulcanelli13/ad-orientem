@@ -1,0 +1,3466 @@
+{
+  "schema": "ao-mass-canon-cue-rubric-review-v1",
+  "version": "2026-10-13",
+  "status": "EDITORIAL_PREVIEW_ONLY_NOT_APPROVED_FOR_LIVE_PRIEST_RAIL",
+  "primaryAuthority": "ROMAN_MISSAL_1962",
+  "sourceInputs": [
+    {
+      "path": "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json"
+    },
+    {
+      "path": "data/research/mass-canon-14-rubric-registry-gap-audit-20261013.json"
+    },
+    {
+      "path": "data/research/mass-canon-faithful-postures-and-gestures-58-cues-20261013.json"
+    }
+  ],
+  "owner": "SOURCE_CUE_NOT_READER_CARD",
+  "clockPolicy": "PRIEST_OBSERVATION_SEPARATE_FROM_PUBLIC_SCHOLA_AND_SCROLL",
+  "faithfulPolicy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+  "defaultPublication": false,
+  "counts": {
+    "sourceCues": 58,
+    "candidateActions": 62,
+    "priestActionCandidates": 58,
+    "ministerActionCandidates": 4,
+    "sourceGapCues": 42,
+    "withExistingDetailedRubric": 13
+  },
+  "rows": [
+    {
+      "cueId": "AO.SM.C0150",
+      "blockId": "AO.SM.B047",
+      "latinBegin": "Te igitur, clementíssime Pater, per Iesum Christum, Fílium tuum, Dóm",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "PROFOUND BOW"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.001",
+          "actor": "PRIEST",
+          "key": "BOW_PROFOUND",
+          "latinTrigger": "Te igitur",
+          "ritusLocator": "VIII.1",
+          "frenchParaphraseDraft": "Au début du Te igitur, s'incline profondément, mains jointes appuyées à l'autel, voix secrète.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0151",
+      "blockId": "AO.SM.B047",
+      "latinBegin": "uti accepta habeas et benedícas,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "KISSES ALTAR"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.002",
+          "actor": "PRIEST",
+          "key": "ALTAR_KISS",
+          "latinTrigger": "uti accepta habeas",
+          "ritusLocator": "VIII.1",
+          "frenchParaphraseDraft": "Baise l'autel au centre puis se redresse, les mains jointes devant la poitrine.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "blockId": "AO.SM.B047",
+      "latinBegin": "hæc ✠ dona, hæc ✠ múnera, hæc ✠ sancta sacrifícia illibáta.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "THREE CROSSES"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.003",
+          "actor": "PRIEST",
+          "key": "THREE_CROSSES",
+          "latinTrigger": "haec dona / haec munera / haec sancta sacrificia",
+          "ritusLocator": "VIII.1",
+          "frenchParaphraseDraft": "Trace trois signes de croix sur l'hostie et le calice ensemble.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0153",
+      "blockId": "AO.SM.B047",
+      "latinBegin": "In primis, quæ tibi offérimus pro Ecclésia tua sancta cathólica: qua",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.004",
+          "actor": "PRIEST",
+          "key": "HANDS_EXTEND",
+          "latinTrigger": "In primis",
+          "ritusLocator": "VIII.1–2",
+          "frenchParaphraseDraft": "Poursuit, les mains étendues devant la poitrine; noms du pape et de l'ordinaire selon les rubriques.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0154",
+      "blockId": "AO.SM.B048",
+      "latinBegin": "Meménto, Dómine, famulórum famularúmque tuarum N. et N.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.005",
+          "actor": "PRIEST",
+          "key": "HANDS_JOINED_LIFT",
+          "latinTrigger": "Memento",
+          "ritusLocator": "VIII.3",
+          "frenchParaphraseDraft": "Joint et élève les mains vers le visage ou la poitrine, incline légèrement la tête.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0155",
+      "blockId": "AO.SM.B048",
+      "latinBegin": "[SILENT COMMEMORATION OF THE LIVING]",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0155.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.006",
+          "actor": "PRIEST",
+          "key": "PERSONAL_MEMORIAL",
+          "latinTrigger": "Memento vivorum",
+          "ritusLocator": "VIII.3",
+          "frenchParaphraseDraft": "Reste immobile un bref temps et fait mémoire des vivants, mentalement ou en nommant certains à voix secrète.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0156",
+      "blockId": "AO.SM.B048",
+      "latinBegin": "et ómnium circumstántium, quorum tibi fides cógnita est et nota devó",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.007",
+          "actor": "PRIEST",
+          "key": "HANDS_EXTEND",
+          "latinTrigger": "et omnium circumstantium",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Abaisse et étend les mains pour poursuivre le souvenir des assistants.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0157",
+      "blockId": "AO.SM.B049",
+      "latinBegin": "Communicántes, et memóriam venerántes, in primis gloriósæ semper Vír",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.008",
+          "actor": "PRIEST",
+          "key": "HANDS_EXTEND_PERSIST",
+          "latinTrigger": "Communicantes",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Poursuit le Communicantes debout, mains étendues; certaines fêtes ajoutent un texte propre.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0158",
+      "blockId": "AO.SM.B049",
+      "latinBegin": "Iesu Christi:",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0158.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.009",
+          "actor": "PRIEST",
+          "key": "HEAD_BOW",
+          "latinTrigger": "Iesu Christi",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Incline la tête vers la Croix au nom de Jésus-Christ.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0159",
+      "blockId": "AO.SM.B049",
+      "latinBegin": "sed et beati Ioseph, eiusdem Virginis Sponsi, et beatórum Apostolóru",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0160",
+      "blockId": "AO.SM.B049",
+      "latinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.010",
+          "actor": "PRIEST",
+          "key": "HANDS_JOIN",
+          "latinTrigger": "Per eundem",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Joint les mains à la conclusion du Communicantes.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0161",
+      "blockId": "AO.SM.B050",
+      "latinBegin": "Hanc igitur oblatiónem servitutis nostræ, sed et cunctae famíliæ tuæ",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0161.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.011",
+          "actor": "PRIEST",
+          "key": "HANDS_OVER_OBLATIONS",
+          "latinTrigger": "Hanc igitur oblationem",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Étend ensemble les mains au-dessus du calice et de l'hostie, paumes tournées vers les oblats.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        },
+        {
+          "id": "AO.CANON.R62.062",
+          "actor": "SERVER",
+          "key": "BELL_BEFORE_CONSECRATION",
+          "latinTrigger": "paulo ante Consecrationem",
+          "ritusLocator": "VIII.6",
+          "frenchParaphraseDraft": null,
+          "secondaryFrenchDraft": "Peu avant les paroles consécratoires, le servant avertit les fidèles par un coup de sonnette; Hanc igitur est un point d'ancrage pratique, pas une synchronisation imposée par le texte du Ritus.",
+          "formQualification": "SERVER_ROLE_TIMING_NOT_STRICT_HANC_IGITUR_SENTENCE",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "INDEPENDENT_MINISTER_TIMING_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0162",
+      "blockId": "AO.SM.B050",
+      "latinBegin": "Per Christum, Dóminum nostrum. Amen.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.012",
+          "actor": "PRIEST",
+          "key": "HANDS_JOIN",
+          "latinTrigger": "Per Christum Dominum nostrum",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Joint les mains à la fin du Hanc igitur.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0163",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "Quam oblatiónem tu, Deus, in ómnibus, quaesumus,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "bene ✠ díctam, adscríp ✠ tam, ra ✠ tam, rationábilem, acceptabilémqu",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "THREE CROSSES"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.013",
+          "actor": "PRIEST",
+          "key": "THREE_CROSSES",
+          "latinTrigger": "benedictam / adscriptam / ratam",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Trace trois croix conjointement sur l'hostie et le calice.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "ut nobis Cor ✠ pus,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "SIGNS HOST"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.014",
+          "actor": "PRIEST",
+          "key": "HOST_CROSS",
+          "latinTrigger": "Corpus",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Trace une croix sur l'hostie seule.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "et San ✠ guis fiat",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "SIGNS CHALICE"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.015",
+          "actor": "PRIEST",
+          "key": "CHALICE_CROSS",
+          "latinTrigger": "Sanguis",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Trace une croix sur le calice seul.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0167",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "dilectíssimi Fílii tui, Dómini nostri Iesu Christi.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0167.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.016",
+          "actor": "PRIEST",
+          "key": "JOIN_AND_BOW",
+          "latinTrigger": "dilectissimi Filii tui",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Élève puis joint les mains devant la poitrine; incline la tête vers la Croix.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0168",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "Qui prídie quam paterétur, accépit panem in sanctas ac venerábiles m",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.017",
+          "actor": "PRIEST",
+          "key": "HOST_IN_HANDS",
+          "latinTrigger": "Qui pridie / accepit panem",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Prend l'hostie entre les pouces et index des deux mains, au milieu de l'autel.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0169",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "elevátis óculis in coelum ad te Deum, Patrem suum omnipoténtem,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0169.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.018",
+          "actor": "PRIEST",
+          "key": "EYES_UP",
+          "latinTrigger": "elevatis oculis",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Lève les yeux vers le ciel et les abaisse aussitôt.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0170",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "tibi grátias agens,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0170.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.019",
+          "actor": "PRIEST",
+          "key": "HEAD_BOW",
+          "latinTrigger": "tibi gratias agens",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Incline légèrement la tête.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "bene ✠ dixit,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "SIGNS HOST"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.020",
+          "actor": "PRIEST",
+          "key": "HOST_CROSS",
+          "latinTrigger": "benedixit",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Tenant l'hostie de la main gauche, la signe de la droite.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0172",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "fregit, dedítque discípulis suis, dicens: Accípite, et manducáte ex ",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.021",
+          "actor": "PRIEST",
+          "key": "NO_FRACTION_YET",
+          "latinTrigger": "fregit",
+          "ritusLocator": "VIII.4",
+          "frenchParaphraseDraft": "Poursuit le récit, tenant l'hostie: le mot fregit n'autorise pas à montrer une fraction physique à cet instant.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0173",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "HOC EST ENIM CORPUS MEUM.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.022",
+          "actor": "PRIEST",
+          "key": "CONSECRATION_HOST",
+          "latinTrigger": "Hoc est enim Corpus meum",
+          "ritusLocator": "VIII.5",
+          "frenchParaphraseDraft": "Avant-bras/coudes sur l'autel, prononce distinctement et avec révérence les paroles sur l'hostie; ce sont les paroles consacratoires, non l'élévation.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [
+          {
+            "action": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+            "trigger": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+            "condition": null,
+            "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+            "canonicalFaithfulLaw": false
+          }
+        ],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "[GENUFLECTS — ELEVATES THE SACRED HOST — REPLACES IT — GENUFLECTS]",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0174.01",
+        "AO.RUB.C0174.02",
+        "AO.RUB.C0174.04",
+        "AO.RUB.C0174.05",
+        "AO.RUB.C0174.06"
+      ],
+      "existingPublishedPriestLabels": [
+        "ELEVATES HOST"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.023",
+          "actor": "PRIEST",
+          "key": "HOST_FIRST_GENUFLECTION",
+          "latinTrigger": "after words of Host Consecration",
+          "ritusLocator": "VIII.5–6",
+          "frenchParaphraseDraft": "Adore immédiatement l'Hostie consacrée en génuflexion.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        },
+        {
+          "id": "AO.CANON.R62.024",
+          "actor": "PRIEST",
+          "key": "HOST_MAJOR_ELEVATION",
+          "latinTrigger": "Host elevation",
+          "ritusLocator": "VIII.5–6",
+          "frenchParaphraseDraft": "Se relève, élève l'Hostie pour l'adoration des fidèles, yeux fixés sur elle.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        },
+        {
+          "id": "AO.CANON.R62.025",
+          "actor": "PRIEST",
+          "key": "HOST_REPLACE_AND_GENUFLECT",
+          "latinTrigger": "Host replacement",
+          "ritusLocator": "VIII.5–6",
+          "frenchParaphraseDraft": "Repose l'Hostie sur le corporal et fait une seconde génuflexion.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        },
+        {
+          "id": "AO.CANON.R62.026",
+          "actor": "PRIEST",
+          "key": "THUMB_INDEX_DISCIPLINE",
+          "latinTrigger": "after Host Consecration",
+          "ritusLocator": "VIII.5",
+          "frenchParaphraseDraft": "Après la consécration de l'Hostie, garde pouces et index joints sauf pour toucher/manier une Hostie consacrée, jusqu'à l'ablution.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        },
+        {
+          "id": "AO.CANON.R62.027",
+          "actor": "SERVER",
+          "key": "BELL_AT_ELEVATION",
+          "latinTrigger": "Host elevation",
+          "ritusLocator": "VIII.6",
+          "frenchParaphraseDraft": null,
+          "secondaryFrenchDraft": "À l'élévation de l'Hostie, le servant sonne trois fois ou continûment selon le mode prévu; le prêtre ne sonne pas.",
+          "formQualification": "SERVER_OR_MINISTER_ROLE",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "INDEPENDENT_MINISTER_TIMING_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [
+          {
+            "action": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+            "trigger": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+            "condition": null,
+            "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+            "canonicalFaithfulLaw": false
+          }
+        ],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0175",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "Símili modo postquam coenátum est, accípiens et hunc præclárum Cálic",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.028",
+          "actor": "PRIEST",
+          "key": "CHALICE_PREPARE",
+          "latinTrigger": "Simili modo",
+          "ritusLocator": "VIII.7",
+          "frenchParaphraseDraft": "Découvre le calice, l'élève très légèrement puis le repose au début du récit.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0176",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "item tibi grátias agens,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0176.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.029",
+          "actor": "PRIEST",
+          "key": "HEAD_BOW",
+          "latinTrigger": "item tibi gratias agens",
+          "ritusLocator": "VIII.7",
+          "frenchParaphraseDraft": "Incline la tête à l'action de grâces.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "bene ✠ dixit,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "SIGNS CHALICE"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.030",
+          "actor": "PRIEST",
+          "key": "CHALICE_CROSS",
+          "latinTrigger": "benedixit",
+          "ritusLocator": "VIII.7",
+          "frenchParaphraseDraft": "Trace une croix de la main droite au-dessus du calice qu'il tient de la gauche.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0178",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "dedítque discípulis suis, dicens: Accípite, et bíbite ex eo omnes.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.031",
+          "actor": "PRIEST",
+          "key": "HOLD_CHALICE",
+          "latinTrigger": "Accipite et bibite",
+          "ritusLocator": "VIII.7",
+          "frenchParaphraseDraft": "Tient le calice avec les deux mains, au nœud et au pied, en préparant les paroles consacratoires.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "HIC EST ENIM CALIX SÁNGUINIS MEI, NOVI ET ÆTÉRNI TESTAMÉNTI: MYSTÉRI",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.032",
+          "actor": "PRIEST",
+          "key": "CONSECRATION_CHALICE",
+          "latinTrigger": "Hic est enim Calix Sanguinis mei",
+          "ritusLocator": "VIII.7",
+          "frenchParaphraseDraft": "Appuyé sur l'autel, prononce les paroles consacratoires du calice avec attention et continuité.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [
+          {
+            "action": "Remain kneeling; bow reverently, then look up at the Chalice",
+            "trigger": "The Chalice is actually elevated — At the actual elevation [Do not add an inv...",
+            "condition": null,
+            "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+            "canonicalFaithfulLaw": false
+          }
+        ],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0180",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "Hæc quotiescúmque fecéritis, in mei memóriam faciétis.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.033",
+          "actor": "PRIEST",
+          "key": "REPLACE_CHALICE_AND_GENFLECT",
+          "latinTrigger": "Haec quotiescumque feceritis",
+          "ritusLocator": "VIII.7",
+          "frenchParaphraseDraft": "Repose le calice, dit secrètement l'ordre de commémoration et adore par une première génuflexion.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "[GENUFLECTS — ELEVATES THE PRECIOUS BLOOD — REPLACES/COVERS THE CHAL",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0181.01",
+        "AO.RUB.C0181.02",
+        "AO.RUB.C0181.04",
+        "AO.RUB.C0181.05"
+      ],
+      "existingPublishedPriestLabels": [
+        "ELEVATES CHALICE"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.034",
+          "actor": "PRIEST",
+          "key": "CHALICE_MAJOR_ELEVATION",
+          "latinTrigger": "Chalice elevation",
+          "ritusLocator": "VIII.7",
+          "frenchParaphraseDraft": "Élève le calice découvert pour l'adoration des fidèles; le repose, le couvre et génuflecte de nouveau.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        },
+        {
+          "id": "AO.CANON.R62.035",
+          "actor": "SERVER",
+          "key": "BELL_AT_CHALICE_ELEVATION",
+          "latinTrigger": "Chalice elevation",
+          "ritusLocator": "VIII.6–7",
+          "frenchParaphraseDraft": null,
+          "secondaryFrenchDraft": "Le servant sonne à l'élévation du calice, trois fois ou en continu selon l'option prescrite.",
+          "formQualification": "SERVER_OR_MINISTER_ROLE",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "INDEPENDENT_MINISTER_TIMING_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "KNEEL",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "CANON_START_PROFILE_KNEEL"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0182",
+      "blockId": "AO.SM.B054",
+      "latinBegin": "Unde et mémores, Dómine, nos servi tui, sed et plebs tua sancta, eiu",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.036",
+          "actor": "PRIEST",
+          "key": "HANDS_EXTEND",
+          "latinTrigger": "Unde et memores",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Debout, mains étendues devant la poitrine, poursuit le Canon à voix secrète.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0183",
+      "blockId": "AO.SM.B054",
+      "latinBegin": "offérimus præcláræ maiestáti tuæ de tuis donis ac datis,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.037",
+          "actor": "PRIEST",
+          "key": "JOIN_HANDS",
+          "latinTrigger": "de tuis donis ac datis",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Joint les mains.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "blockId": "AO.SM.B054",
+      "latinBegin": "hóstiam ✠ puram, hóstiam ✠ sanctam, hóstiam ✠ immaculátam,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "THREE CROSSES"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.038",
+          "actor": "PRIEST",
+          "key": "THREE_CROSSES",
+          "latinTrigger": "Hostiam puram / sanctam / immaculatam",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Trace trois croix sur les deux Espèces consacrées ensemble.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "blockId": "AO.SM.B054",
+      "latinBegin": "Panem ✠ sanctum vitæ ætérnæ, et Calicem ✠ salútis perpétuæ.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "SIGNS HOST"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.039",
+          "actor": "PRIEST",
+          "key": "HOST_THEN_CHALICE_CROSS",
+          "latinTrigger": "Panem sanctum / Calicem salutis",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Trace une croix sur l'Hostie seule puis une sur le calice seul.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0186",
+      "blockId": "AO.SM.B055",
+      "latinBegin": "Supra quæ propítio ac seréno vultu respícere dignéris: et accépta ha",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.040",
+          "actor": "PRIEST",
+          "key": "HANDS_EXTEND_PERSIST",
+          "latinTrigger": "Supra quae propitio",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Poursuit Supra quae, mains étendues; aucun geste distinct n'est prescrit ici par Ritus IX.1.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "Súpplices te rogámus, omnípotens Deus: iube hæc perférri per manus s",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "PROFOUND BOW"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.041",
+          "actor": "PRIEST",
+          "key": "PROFOUND_BOW",
+          "latinTrigger": "Supplices te rogamus",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "S'incline profondément au centre de l'autel, mains jointes appuyées.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "ut, quotquot ex hac altáris participatióne sacrosánctum Fílii tui",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "KISSES ALTAR"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.042",
+          "actor": "PRIEST",
+          "key": "ALTAR_KISS",
+          "latinTrigger": "ex hac altaris participatione",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Baise l'autel, mains de part et d'autre sur le corporal.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "Cor ✠ pus, et Sán ✠ guinem sumpsérimus,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "SIGNS HOST"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.043",
+          "actor": "PRIEST",
+          "key": "HOST_AND_CHALICE_CROSS",
+          "latinTrigger": "Corpus / Sanguinem",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Trace séparément une croix sur l'Hostie puis une sur le calice.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "omni benedictióne coelésti et grátia repleámur.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "SIGNS HIMSELF"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.044",
+          "actor": "PRIEST",
+          "key": "SIGN_SELF",
+          "latinTrigger": "omni benedictione caelesti",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Se signe du front à la poitrine.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0191",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.045",
+          "actor": "PRIEST",
+          "key": "JOIN_HANDS",
+          "latinTrigger": "Per eundem",
+          "ritusLocator": "IX.1",
+          "frenchParaphraseDraft": "Joint les mains à la conclusion.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0192",
+      "blockId": "AO.SM.B057",
+      "latinBegin": "Meménto étiam, Dómine, famulórum famularúmque tuárum N. et N., qui n",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.046",
+          "actor": "PRIEST",
+          "key": "EYES_ON_SACRAMENT_AND_HANDS",
+          "latinTrigger": "Memento etiam",
+          "ritusLocator": "IX.2",
+          "frenchParaphraseDraft": "Élève les mains jointes devant son visage, les yeux fixés sur le Sacrement.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0193",
+      "blockId": "AO.SM.B057",
+      "latinBegin": "[SILENT COMMEMORATION OF THE DEAD]",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0193.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.047",
+          "actor": "PRIEST",
+          "key": "COMMEMORATE_DEAD",
+          "latinTrigger": "Memento defunctorum",
+          "ritusLocator": "IX.2",
+          "frenchParaphraseDraft": "Fait mémoire des défunts à sa convenance, comme au Memento des vivants.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0194",
+      "blockId": "AO.SM.B057",
+      "latinBegin": "Ipsis, Dómine, et ómnibus in Christo quiescéntibus locum refrigérii,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.048",
+          "actor": "PRIEST",
+          "key": "HANDS_EXTEND",
+          "latinTrigger": "Ipsis Domine",
+          "ritusLocator": "IX.2",
+          "frenchParaphraseDraft": "Reprend la prière les mains étendues.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0195",
+      "blockId": "AO.SM.B057",
+      "latinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.049",
+          "actor": "PRIEST",
+          "key": "JOIN_AND_BOW",
+          "latinTrigger": "Per eundem",
+          "ritusLocator": "IX.2",
+          "frenchParaphraseDraft": "Joint les mains et incline la tête à la conclusion.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "blockId": "AO.SM.B058",
+      "latinBegin": "Nobis quoque peccatóribus",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "STRIKES BREAST"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.050",
+          "actor": "PRIEST",
+          "key": "VOICE_UP_CHEST_STRIKE",
+          "latinTrigger": "Nobis quoque peccatoribus",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Élève quelque peu la voix à Nobis quoque et frappe une fois sa poitrine de la main droite.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [
+          {
+            "action": "Strike breast",
+            "trigger": "Nobis quoque peccatóribus — At / as these words begin",
+            "condition": null,
+            "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+            "canonicalFaithfulLaw": false
+          }
+        ],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0197",
+      "blockId": "AO.SM.B058",
+      "latinBegin": "fámulis tuis, de multitúdine miseratiónum tuárum sperántibus, partem",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.051",
+          "actor": "PRIEST",
+          "key": "VOICE_SECRET",
+          "latinTrigger": "famulis tuis",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Poursuit la prière secrètement, les mains étendues.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [
+          {
+            "action": "Strike breast",
+            "trigger": "Nobis quoque peccatóribus — At / as these words begin",
+            "condition": null,
+            "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+            "canonicalFaithfulLaw": false
+          }
+        ],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0198",
+      "blockId": "AO.SM.B058",
+      "latinBegin": "Per Christum, Dóminum nostrum.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.052",
+          "actor": "PRIEST",
+          "key": "HANDS_JOIN",
+          "latinTrigger": "Per Christum",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Joint les mains à Per Christum.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [
+          {
+            "action": "Strike breast",
+            "trigger": "Nobis quoque peccatóribus — At / as these words begin",
+            "condition": null,
+            "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+            "canonicalFaithfulLaw": false
+          }
+        ],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0199",
+      "blockId": "AO.SM.B059",
+      "latinBegin": "Per quem hæc ómnia, Dómine, semper bona creas,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.053",
+          "actor": "PRIEST",
+          "key": "HANDS_JOIN",
+          "latinTrigger": "Per quem haec omnia",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Joint les mains devant la poitrine.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0200",
+      "blockId": "AO.SM.B059",
+      "latinBegin": "sancti ✠ ficas, viví ✠ ficas, bene ✠ dícis et præstas nobis.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0200.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.054",
+          "actor": "PRIEST",
+          "key": "THREE_CROSSES",
+          "latinTrigger": "sanctificas / vivificas / benedicis",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Trace trois croix sur les deux Espèces.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "[UNCOVERS CHALICE — GENUFLECTS — TAKES SACRED HOST]",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "GENUFLECTS"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.055",
+          "actor": "PRIEST",
+          "key": "GENUFLECT_AND_TAKE_HOST",
+          "latinTrigger": "prepare Per ipsum",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Découvre le calice, génuflecte puis prend l'Hostie consacrée; le diacre n'aide que dans la Messe solennelle.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "SOLEMN_DEACON_SEPARATE",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0202",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "Per ip ✠ sum, et cum ip ✠ so, et in ip ✠ so,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0202.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.056",
+          "actor": "PRIEST",
+          "key": "THREE_HOST_CROSSES_OVER_CHALICE",
+          "latinTrigger": "Per ipsum / cum ipso / in ipso",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Avec l'Hostie, trace trois croix d'un bord à l'autre au-dessus du calice.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0203",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "est tibi Deo Patri ✠ omnipotenti, in unitáte Spíritus ✠ Sancti,",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [
+        "AO.RUB.C0203.01"
+      ],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.057",
+          "actor": "PRIEST",
+          "key": "TWO_HOST_CROSSES",
+          "latinTrigger": "Deo Patri / Spiritus Sancti",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Trace deux croix avec l'Hostie entre le calice et la poitrine.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "omnis honor, et glória.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "MINOR ELEVATION"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.058",
+          "actor": "PRIEST",
+          "key": "MINOR_ELEVATION",
+          "latinTrigger": "omnis honor et gloria",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Élève légèrement l'Hostie et le calice ensemble; il ne s'agit pas des grandes ostensions.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "[REPLACES THE HOST — COVERS THE CHALICE — GENUFLECTS]",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [
+        "GENUFLECTS"
+      ],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.059",
+          "actor": "PRIEST",
+          "key": "REPLACE_COVER_GENUFLECT",
+          "latinTrigger": "after minor elevation",
+          "ritusLocator": "IX.3",
+          "frenchParaphraseDraft": "Repose l'Hostie et le calice, couvre ce dernier, puis génuflecte.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0206",
+      "blockId": "AO.SM.B061",
+      "latinBegin": "℣. Per ómnia sǽcula sæculórum.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.060",
+          "actor": "PRIEST",
+          "key": "AUDIBLE_PER_OMNIA",
+          "latinTrigger": "Per omnia saecula saeculorum",
+          "ritusLocator": "X.1",
+          "frenchParaphraseDraft": "Au début de la conclusion du Canon, prononce Per omnia saecula saeculorum intelligiblement.",
+          "secondaryFrenchDraft": null,
+          "formQualification": "ORDINARY_CELEBRANT",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "PRIEST_ACTUAL_CLOCK_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": true
+    },
+    {
+      "cueId": "AO.SM.C0207",
+      "blockId": "AO.SM.B061",
+      "latinBegin": "℟. Amen.",
+      "priestStation": "ALTAR_CENTER",
+      "priestOrientation": "LITURGICAL_EAST",
+      "priestClock": "NOT_INFERRED_FROM_READ_POSITION",
+      "existingDetailedRubricIds": [],
+      "existingPublishedPriestLabels": [],
+      "candidateActions": [
+        {
+          "id": "AO.CANON.R62.061",
+          "actor": "SERVER",
+          "key": "AMEN_RESPONSE",
+          "latinTrigger": "Amen",
+          "ritusLocator": "X.1",
+          "frenchParaphraseDraft": null,
+          "secondaryFrenchDraft": "Le ministre répond Amen à la conclusion du Canon; l'affectation exacte de la réponse dépend de la forme.",
+          "formQualification": "SERVER_OR_MINISTER_ROLE",
+          "sources": [
+            "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+            "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+            "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+          ],
+          "timing": "INDEPENDENT_MINISTER_TIMING_REQUIRED",
+          "publication": "SOURCE_RESEARCH_EDITORIAL_REVIEW_PENDING"
+        }
+      ],
+      "faithful": {
+        "defaultProfile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "normalisedPosture": "NOT_INFERRED_FROM_PRIEST_OR_READER",
+        "sourcedCandidates": [
+          {
+            "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+            "value": "OBSERVE_LOCAL",
+            "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE",
+            "condition": null
+          },
+          {
+            "profile": "AO_DEFAULT_1962_SUNG",
+            "value": "KNEEL",
+            "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+            "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+          },
+          {
+            "profile": "POST_CONSECRATION_STAND_PROFILE",
+            "value": "STAND",
+            "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+            "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+          }
+        ],
+        "registeredGestureCandidates": [],
+        "status": "CANDIDATES_NOT_UNIVERSAL_1962_PEW_LAW"
+      },
+      "gapPending": false
+    }
+  ]
+}
