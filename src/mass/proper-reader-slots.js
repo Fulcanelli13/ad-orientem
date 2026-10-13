@@ -29,14 +29,29 @@ function values(value,language="en"){
 
 function readyEnvelope(slot,value,{language="en"}={}){
   const rows=values(value,language);
-  // A composed Collect/Secret/Postcommunion array must retain every source
-  // oration. Reject the complete slot if any commemoration lacks the selected
-  // vernacular or Latin text; filtering valid neighbours silently loses Mass text.
+  // Never discard one incomplete commemorated oration while retaining
+  // another. The whole threefold Mass Proper must be source-complete.
   const incomplete=Array.isArray(value)&&value.some(row=>!usable(row,language));
-  if(!rows.length||incomplete) return Object.freeze({status:"MISSING",slot,data:null});
+  if(!rows.length||incomplete)return Object.freeze({status:"MISSING",slot,data:null});
+
+  const spokenOrations=slot==="COLLECT_SET"||slot==="POSTCOMMUNION_SET";
+  const french=String(language).toLowerCase().startsWith("fr");
   const paragraphs=[];
   for(const [index,row] of rows.entries()){
+    const group=slot+"."+(index+1);
+    // The source donor already has the first Oremus at C0072/C0253.
+    // A *separately concluded* added oration requires its own Oremus;
+    // two commemorations under one conclusion require just ONE here.
+    // A Secret never acquires an invented public Oremus or response.
+    if(index>0&&spokenOrations)paragraphs.push(Object.freeze({
+      id:group+".OREMUS",kind:"VERSICLE",
+      latin:"Orémus.",vernacular:french?"Prions.":"Let us pray.",
+      speakerRole:"PRIEST",speakerEvidence:"1962_ADDITIONAL_ORATION_DIALOGUE",
+      sourceCueIds:Object.freeze([]),liturgicalGroup:group,prayerRole:"ORATION_INVITATION",
+    }));
     const composed=["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(slot)?row.oneConclusion:null;
+    const common={liturgicalGroup:group,speakerRole:"PRIEST",
+      speakerEvidence:"1962_PROPER_ORATION",sourcePath:row.sourcePath??null};
     if(composed){
       const latin=composed.segments?.lat,trans=composed.segments?.[language];
       const extra=segment=>segment?.additional??segment?.mission;
@@ -45,37 +60,38 @@ function readyEnvelope(slot,value,{language="en"}={}){
         rejoin(latin)!==String(row.lat??row.la)||
         rejoin(trans)!==vernacularValue(row,language))
         return Object.freeze({status:"MISSING",slot,data:null,
-          reason:"Unverified one-conclusion Collect composition"});
-      // Two illuminated text paragraphs but ONE liturgical prayer group.
-      // The shared ending belongs to the second, source-identified prayer.
+          reason:"Unverified one-conclusion oration composition"});
+      const multiple=composed.kind==="MULTIPLE_COMMEMORATIONS";
       paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1)+".PRINCIPAL",kind:"TEXT",
+        ...common,
+        id:group+(multiple?".FIRST_COMMEMORATION":".PRINCIPAL"),kind:"TEXT",
         latin:latin.principal,vernacular:trans.principal,
-        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+        prayerRole:multiple?"FIRST_COMMEMORATION":"PRINCIPAL_ORATION",
+        sourcePath:multiple?composed.sourcePaths?.[0]??common.sourcePath:common.sourcePath,
       }));
       paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1)+(composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
-        kind:"TEXT",
-        latin:extra(latin)+"\n"+latin.conclusion,
+        ...common,
+        id:group+(multiple?".SECOND_COMMEMORATION":composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
+        kind:"TEXT",latin:extra(latin)+"\n"+latin.conclusion,
         vernacular:extra(trans)+"\n"+trans.conclusion,
-        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
-        sourcePath:composed.sourcePath,
-      }));
-      // When a separate St Luke commemoration follows in Low Mass, its
-      // conclusion is independent. The fixed end-of-block ℟. Amen covers
-      // that final prayer; emit this first Amen at the missionary conclusion.
-      if(slot==="COLLECT_SET"&&index<rows.length-1)paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1)+".MISSION_AMEN",kind:"RESPONSE",
-        latin:"℟. Amen.",vernacular:"℟. Amen.",
-        role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
-        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
+        prayerRole:multiple?"SECOND_COMMEMORATION":"ORATION_UNDER_ONE_CONCLUSION",
+        sourcePath:multiple?composed.sourcePaths?.[1]??null:composed.sourcePath??common.sourcePath,
       }));
     }else{
       paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1),kind:"TEXT",
+        ...common,id:group,kind:"TEXT",
         latin:String(row.lat??row.la),vernacular:vernacularValue(row,language),
+        prayerRole:index===0?"PRINCIPAL_ORATION":"ADDITIONAL_ORATION",
       }));
     }
+    // The donor C0074/C0255 already provides the LAST response. Only
+    // intermediate separately concluded groups need a derived Amen.
+    if(spokenOrations&&index<rows.length-1)paragraphs.push(Object.freeze({
+      id:group+".AMEN",kind:"RESPONSE",
+      latin:"℟. Amen.",vernacular:"℟. Amen.",
+      speakerRole:"RESPONDERS",speakerEvidence:"1962_INTERMEDIATE_ORATION_RESPONSE",
+      sourceCueIds:Object.freeze([]),liturgicalGroup:group,prayerRole:"ORATION_RESPONSE",
+    }));
   }
   return Object.freeze({
     status:"READY",slot,
