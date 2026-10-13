@@ -1,0 +1,115 @@
+{
+  "schema": "AO_SACRED_ART_FOUR_FINAL_ORIGINALS_BYTE_PIXEL_QA_V1",
+  "date": "2026-10-13",
+  "branch": "platform/885-sacred-art-candidates",
+  "ownerPR": 887,
+  "method": "Extracted 4 original JPEGs from their exact canonical GitHub Actions acquisition artifacts; independently SHA256 checked against canonical registry and opened full composition and simulated 9:16 phone crops. This is exact-image visual evidence, not unverified web thumbnails or complete rights clearance.",
+  "summary": {
+    "requestedOriginals": 4,
+    "recoveredSHAValid": 4,
+    "sourceIdentityHoldsClosed": 4,
+    "humanApprovalsNew": 0,
+    "productionReleasedNew": 0,
+    "visuallyAssessedRecoveredOriginalsNow": 50,
+    "existingAcquiredMasterOriginalsQAFromPreviousPass": 9,
+    "totalByteAndPixelVerifiedInTwoPasses": 13
+  },
+  "images": [
+    {
+      "artworkId": "nga-41644",
+      "recordedArtist": "French 15th Century",
+      "title": "Expectant Madonna with Saint Joseph",
+      "sourceUrl": "https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph",
+      "subjectId": "BIB_CONTEXT_JOSEPH_SAINT",
+      "originalArchiveArtifactId": 11684723858,
+      "originalArchivePath": "originals/nga-41644.jpg",
+      "originalSha256": "79288aef1a922ed49acc40312676d25daca19e4f35fa18c26a2779be1ce7bc74",
+      "imageDimensions": {
+        "width": 2014,
+        "height": 4096
+      },
+      "bytesVerifiedByContainerSHA256": true,
+      "originalJPEGActuallyVisuallyInspected": true,
+      "phoneCenterCoverWidthRetainedPercent": 100,
+      "curatorialTier": "SECONDARY_HISTORICAL_MARIAN",
+      "visualObservation": "NGA 1952.5.32 exact tempera panel: Mary pregnant dominant full length, Saint Joseph in red robe behind at right; two angels flanking, embroidered gold background. Full image visually high clarity, vivid late-medieval colouring; nevertheless principally an Expectant Madonna and Saint Joseph is supporting actor, not solo portrait.",
+      "displayConstraint": "No forced close crop: top heraldic canopy and bottom feet/context would be lost. Medieval style conditional for a devotional chapter, not Home hero.",
+      "approvalStatus": "RESEARCH_ONLY_NOT_NEW_HUMAN_SELECTION",
+      "rightsStatus": "ARTWORK_SOURCE_STATUS_VERIFIED_BUT_REPRODUCTION_APP_RELEASE_UNCLEARED",
+      "phoneCropApproval": false,
+      "productionReleaseApproved": false
+    },
+    {
+      "artworkId": "met-442750",
+      "recordedArtist": "Segna di Buonaventura",
+      "title": "Saint Benedict",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442750",
+      "subjectId": "SNT-OT-14",
+      "originalArchiveArtifactId": 11666649062,
+      "originalArchivePath": "originals/met-442750.jpg",
+      "originalSha256": "49073f2dae187f36439ba06a8832a872469bfa8b698b94233aa552ec0c3fa79c",
+      "imageDimensions": {
+        "width": 1681,
+        "height": 3887
+      },
+      "bytesVerifiedByContainerSHA256": true,
+      "originalJPEGActuallyVisuallyInspected": true,
+      "phoneCenterCoverWidthRetainedPercent": 100,
+      "curatorialTier": "SECONDARY_HISTORIC_SAINT_PANEL",
+      "visualObservation": "Met 24.78c original contains Benedict with book in dark habit and two saints in upper register, plus original dark architectural wood frame/panel. Visually confirms correct Benedict, not the superficially similar Met Sylvester panel 24.78b. Sharp enough art-historic object but flat medieval gold, upper compartments and extant integral framing preclude premium portrait hero. Zurbarán preferred.",
+      "displayConstraint": "Keep source panel intact as a historical altarpiece object; any crop to isolated Benedict requires explicit editorial consent and source-object accuracy.",
+      "approvalStatus": "RESEARCH_ONLY_NOT_NEW_HUMAN_SELECTION",
+      "rightsStatus": "ARTWORK_SOURCE_STATUS_VERIFIED_BUT_REPRODUCTION_APP_RELEASE_UNCLEARED",
+      "phoneCropApproval": false,
+      "productionReleaseApproved": false
+    },
+    {
+      "artworkId": "met-436302",
+      "recordedArtist": "Workshop of Domenico Fetti",
+      "title": "The Good Samaritan",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436302",
+      "subjectId": "BIB-G17",
+      "originalArchiveArtifactId": 11666649062,
+      "originalArchivePath": "originals/met-436302.jpg",
+      "originalSha256": "9fc2875bc115caf055b8816a1519489a50651963b04bf5a37e445f0d6e93e0da",
+      "imageDimensions": {
+        "width": 2792,
+        "height": 3866
+      },
+      "bytesVerifiedByContainerSHA256": true,
+      "originalJPEGActuallyVisuallyInspected": true,
+      "phoneCenterCoverWidthRetainedPercent": 77.9,
+      "curatorialTier": "HOLD_LOW_CONTRAST_WORKSHOP",
+      "visualObservation": "Met 30.31 workshop of Domenico Fetti: muted brownish-green landscape with small central injured man supported on donkey and Samaritan in travel scene. Correct original visibly very low contrast, small biblical figures, hazy surface; poor narrative readability even in full frame; cannot substitute Dresden or other autograph Fetti versions.",
+      "displayConstraint": "Avoid Home/phone hero. If used anywhere, only full-image historical parable supporting illustration and caption WORKSHOP of Fetti.",
+      "approvalStatus": "RESEARCH_ONLY_NOT_NEW_HUMAN_SELECTION",
+      "rightsStatus": "ARTWORK_SOURCE_STATUS_VERIFIED_BUT_REPRODUCTION_APP_RELEASE_UNCLEARED",
+      "phoneCropApproval": false,
+      "productionReleaseApproved": false
+    },
+    {
+      "artworkId": "kress-k2017",
+      "recordedArtist": "Maestro Bartolomé",
+      "title": "The Entry into Jerusalem",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "subjectId": "BIB-G25",
+      "originalArchiveArtifactId": 11669761734,
+      "originalArchivePath": "originals/kress-k2017.jpg",
+      "originalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+      "imageDimensions": {
+        "width": 5510,
+        "height": 7700
+      },
+      "bytesVerifiedByContainerSHA256": true,
+      "originalJPEGActuallyVisuallyInspected": true,
+      "phoneCenterCoverWidthRetainedPercent": 78.6,
+      "curatorialTier": "SECONDARY_HISTORIC_PRESELECTED",
+      "visualObservation": "Maestro Bartolomé K2017 original shows Christ entering Jerusalem seated on donkey, standing disciples at left, kneeling/welcoming figures on right, palm branches, and Gothic walls/towers. Clear exact Palm Sunday iconography and vivid Renaissance-Gothic colours. Visually quite narratively legible on full image, but flattened archaizing painterly style less aligned with preferred Baroque. This is the correct earlier chosen Kress original, not Pietro Lorenzetti.",
+      "displayConstraint": "Retain previous human Palm Sunday placement; do not silently revoke, replace, elevate to current 101 approved, or use without Kress reproduction rights and final crop approval.",
+      "approvalStatus": "RESEARCH_ONLY_NOT_NEW_HUMAN_SELECTION",
+      "rightsStatus": "ARTWORK_SOURCE_STATUS_VERIFIED_BUT_REPRODUCTION_APP_RELEASE_UNCLEARED",
+      "phoneCropApproval": false,
+      "productionReleaseApproved": false
+    }
+  ]
+}
