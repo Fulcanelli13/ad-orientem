@@ -68,7 +68,7 @@ function readyEnvelope(slot,value,{language="en"}={}){
           reason:"Unverified one-conclusion oration composition"});
       const multiple=composed.kind==="MULTIPLE_COMMEMORATIONS";
       paragraphs.push(Object.freeze({
-        ...common,
+        ...common,liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
         id:group+(multiple?".FIRST_COMMEMORATION":".PRINCIPAL"),kind:"TEXT",
         latin:spokenBody(latin.principal,"lat"),
         vernacular:spokenBody(trans.principal,language),
@@ -76,7 +76,7 @@ function readyEnvelope(slot,value,{language="en"}={}){
         sourcePath:multiple?composed.sourcePaths?.[0]??common.sourcePath:common.sourcePath,
       }));
       paragraphs.push(Object.freeze({
-        ...common,
+        ...common,liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
         id:group+(multiple?".SECOND_COMMEMORATION":
           composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
         kind:"TEXT",
