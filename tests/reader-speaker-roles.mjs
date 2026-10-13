@@ -58,6 +58,14 @@ for(const cue of ["AO.SM.C0005","AO.SM.C0007","AO.SM.C0009","AO.SM.C0011"]){
   }
 }
 
+for(const cue of ["AO.SM.C0045","AO.SM.C0047","AO.SM.C0049","AO.SM.C0051"]){
+  const lowLine=resolveOrdinarySpeaker(lowUnits.get(cue),{form:"LOW",blockId:"AO.SM.B015"});
+  const sungLine=resolveOrdinarySpeaker(sungUnits.get(cue),{form:"SUNG",blockId:"AO.SM.B015"});
+  assert.equal(lowLine.role,"MINISTERS",cue+" Low Mass Kyrie must be assigned to the server");
+  assert.equal(lowLine.kind,"RESPONSE",cue+" Low Mass Kyrie should be typed as a response");
+  assert.equal(sungLine.role,"SCHOLA",cue+" sung Kyrie must retain independent schola ownership");
+  assert.notEqual(sungLine.kind,"RESPONSE",cue+" sung choir part is not a server dialogue");
+}
 for(const cue of SUNG_ORDINARY_INTONATION_CUES){
   assert.equal(resolveOrdinarySpeaker(sungUnits.get(cue)).role,"PRIEST",cue+": celebrant intonation misowned");
 }
