@@ -1,0 +1,486 @@
+{
+  "schema": "AO_SACRED_ART_PRIORITY_II_III_2026_SEED_V1",
+  "date": "2026-10-13",
+  "reconciledWith": "data/calendar/sacred-art-priority-policy-20261013.v2.json",
+  "source": "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json",
+  "scope": "Curated candidate major non-Class-I dates for the universal 1962 calendar; supplement with verified institute, parish, diocesan, French and Mauritian local patrons where genuinely observed or commemorated.",
+  "counts": {
+    "candidateDates": 46,
+    "previouslyCuratedNonI": 17,
+    "appliedFigures": 29,
+    "figureObservedPrincipal": 23,
+    "commemoratedOrSuperseded": 6,
+    "otherDatesNeedingObservedPrincipalDayResolverVerification": 17,
+    "localPatronOrNationalCalendarCandidateDatesNotYetEnumerated": null
+  },
+  "constraints": [
+    "The 17 historical optional spotlight entries require actual DayResolver confirmation; don't declare them 17 observed principals solely from this editorial file.",
+    "Commemorated/not-principal or nominal superseded saint dates are never the principal of that civil day.",
+    "A national patron or commemoration only qualifies with documented proper/profile and applicable year; local titles do not silently override General Roman Calendar.",
+    "These are subject research priorities, not automatic image swaps, art approval or publication.",
+    "A Class I principal that falls on a highlighted day always retains its precedence."
+  ],
+  "events": [
+    {
+      "date2026": "2026-01-04",
+      "rank": 2,
+      "feastName": "Most Holy Name of Jesus",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-01-11",
+      "rank": 2,
+      "feastName": "Holy Family",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-01-13",
+      "rank": 2,
+      "feastName": "Commemoration of the Baptism of Our Lord",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-02-01",
+      "rank": 2,
+      "feastName": "Septuagesima Sunday",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-02-02",
+      "rank": 2,
+      "feastName": "Purification of the BVM / Presentation of the Lord (Candlemas)",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-02-11",
+      "rank": 3,
+      "feastName": "Our Lady of Lourdes",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-07-02",
+      "rank": 2,
+      "feastName": "Visitation of the Blessed Virgin Mary",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-07-22",
+      "rank": 3,
+      "feastName": "St. Mary Magdalene",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "ordo-fsspx-2026"
+    },
+    {
+      "date2026": "2026-08-06",
+      "rank": 2,
+      "feastName": "Transfiguration of Our Lord",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-09-08",
+      "rank": 2,
+      "feastName": "Nativity of the Blessed Virgin Mary",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-09-14",
+      "rank": 2,
+      "feastName": "Exaltation of the Holy Cross",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "extraordinaryform-2026-ordo"
+    },
+    {
+      "date2026": "2026-09-15",
+      "rank": 2,
+      "feastName": "Seven Sorrows of the Blessed Virgin Mary",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "extraordinaryform-2026-ordo"
+    },
+    {
+      "date2026": "2026-10-03",
+      "rank": 3,
+      "feastName": "St. Thérèse of the Child Jesus",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-10-07",
+      "rank": 2,
+      "feastName": "Our Lady of the Rosary",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-11-09",
+      "rank": 2,
+      "feastName": "Dedication of the Lateran Archbasilica",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-11-22",
+      "rank": 2,
+      "feastName": "Last Sunday after Pentecost",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "1962-year-independent-checks-2026"
+    },
+    {
+      "date2026": "2026-12-28",
+      "rank": 2,
+      "feastName": "Holy Innocents",
+      "family": "select-major-class-ii-iii",
+      "status": "EDITORIAL_OCCASION_PREVIOUSLY_LISTED_VERIFY_CURRENT_DAYRESOLVER",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Candidate artwork requested when observed / specifically commemorated, without displacing actual liturgical principal",
+      "existingSourceReference": "ordo-fsspx-2026"
+    },
+    {
+      "date2026": "2026-01-25",
+      "rank": 3,
+      "feastName": "Conversion of Saint Paul",
+      "family": "apostles-evangelists",
+      "status": "NOMINAL_DATE_SUPERSEDED",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Supplemental commemoration requires source-bound evidence, not replacement of the higher-rank day's hero",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-02-22",
+      "rank": 2,
+      "feastName": "Chair of Saint Peter",
+      "family": "apostles-evangelists",
+      "status": "NOMINAL_DATE_SUPERSEDED",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Supplemental commemoration requires source-bound evidence, not replacement of the higher-rank day's hero",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-02-24",
+      "rank": 2,
+      "feastName": "Saint Matthias, Apostle",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-04-25",
+      "rank": 2,
+      "feastName": "Saint Mark, Evangelist",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-05-11",
+      "rank": 2,
+      "feastName": "Saints Philip and James, Apostles",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-06-11",
+      "rank": 3,
+      "feastName": "Saint Barnabas, Apostle",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-06-30",
+      "rank": 3,
+      "feastName": "Commemoration of Saint Paul, Apostle",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-07-25",
+      "rank": 2,
+      "feastName": "Saint James the Greater, Apostle",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-08-24",
+      "rank": 2,
+      "feastName": "Saint Bartholomew, Apostle",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-09-21",
+      "rank": 2,
+      "feastName": "Saint Matthew, Apostle and Evangelist",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-10-18",
+      "rank": 2,
+      "feastName": "Saint Luke, Evangelist",
+      "family": "apostles-evangelists",
+      "status": "COMMEMORATED_NOT_PRINCIPAL",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Supplemental commemoration requires source-bound evidence, not replacement of the higher-rank day's hero",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-10-28",
+      "rank": 2,
+      "feastName": "Saints Simon and Jude, Apostles",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-11-30",
+      "rank": 2,
+      "feastName": "Saint Andrew, Apostle",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-12-21",
+      "rank": 2,
+      "feastName": "Saint Thomas, Apostle",
+      "family": "apostles-evangelists",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-12-27",
+      "rank": 2,
+      "feastName": "Saint John, Apostle and Evangelist",
+      "family": "apostles-evangelists",
+      "status": "COMMEMORATED_NOT_PRINCIPAL",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Supplemental commemoration requires source-bound evidence, not replacement of the higher-rank day's hero",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-01-29",
+      "rank": 3,
+      "feastName": "Saint Francis de Sales",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-04-30",
+      "rank": 3,
+      "feastName": "Saint Catherine of Siena",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-08-04",
+      "rank": 3,
+      "feastName": "Saint Dominic",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-08-19",
+      "rank": 3,
+      "feastName": "Saint John Eudes",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-08-20",
+      "rank": 3,
+      "feastName": "Saint Bernard of Clairvaux",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-10-04",
+      "rank": 3,
+      "feastName": "Saint Francis of Assisi",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "NOMINAL_DATE_SUPERSEDED",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Supplemental commemoration requires source-bound evidence, not replacement of the higher-rank day's hero",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-10-08",
+      "rank": 3,
+      "feastName": "Saint Bridget of Sweden",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-10-15",
+      "rank": 3,
+      "feastName": "Saint Teresa of Avila",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-10-17",
+      "rank": 3,
+      "feastName": "Saint Margaret Mary Alacoque",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-11-16",
+      "rank": 3,
+      "feastName": "Saint Gertrude the Great",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-11-24",
+      "rank": 3,
+      "feastName": "Saint John of the Cross",
+      "family": "mystics-and-spiritual-doctors",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-03-24",
+      "rank": 3,
+      "feastName": "Saint Gabriel, Archangel",
+      "family": "angels",
+      "status": "COMMEMORATED_NOT_PRINCIPAL",
+      "observedPrincipalConfirmedHere": false,
+      "artworkRule": "Supplemental commemoration requires source-bound evidence, not replacement of the higher-rank day's hero",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-10-02",
+      "rank": 3,
+      "feastName": "Holy Guardian Angels",
+      "family": "angels",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    },
+    {
+      "date2026": "2026-10-24",
+      "rank": 3,
+      "feastName": "Saint Raphael, Archangel",
+      "family": "angels",
+      "status": "OBSERVED_PRINCIPAL",
+      "observedPrincipalConfirmedHere": true,
+      "artworkRule": "Selected high-importance II/III principal requires an appropriate painting",
+      "existingSourceReference": "https://gcatholic.org/calendar/2026/Extraordinary-en"
+    }
+  ],
+  "publicationApproved": 0
+}
