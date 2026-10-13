@@ -18,8 +18,8 @@
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 23,
-    "withPreviousUnapprovedOptionOnly": 18,
+    "additionalResearchLeadSubjects": 25,
+    "withPreviousUnapprovedOptionOnly": 16,
     "withNoRecordedSourceOrOlderOption": 37,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
@@ -2181,12 +2181,26 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 14:8–18",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [
         "ART-aphael-and-workshop-acrifice-at-ystra-tapestry-cartoon"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "met-437351-jacob-pynas-lystra",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437351",
+          "title": "Paul and Barnabas at Lystra",
+          "artist": "Jacob Pynas",
+          "matchedImageExamined": false,
+          "artisticTier": "PROMISING_OIL_EXACT_EPISODE_SOURCE_MATCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
+          "matchNotes": "Met 1971.255, Jacob Pynas original oil on wood 48.3x73.3 cm, Acts 14:8-18 scene at Lystra. Institutional public-domain source, higher artistic potential than a generic print. Do not confuse with Jordaens chalk drawing 335629 or Guerra's AFTER-STONING Acts 14:20 scene 339081."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -2243,12 +2257,26 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 17:16–34",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [
         "ART-aphael-and-workshop-aint-aul-reaching-at-thens-tapestry-cartoon"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "vatican-raphael-athens-acts-tapestry",
+          "sourceUrl": "https://www.museivaticani.va/content/museivaticani/en/eventi-e-novita/iniziative/mostre/2026/predica-san-paolo-atene.html",
+          "title": "Saint Paul Preaching at Athens",
+          "artist": "Flemish workshop after Raphael and his workshop",
+          "matchedImageExamined": false,
+          "artisticTier": "HIGH_VALUE_HISTORICAL_TAPESTRY_NOT_OIL",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sourceObjectType": null,
+          "scripturalRelation": null,
+          "matchNotes": "Official Vatican Museums source documents 1515-1521 Acts tapestry from Raphael/workshop preparatory cartoons, Acts 17:16-34 Paul before Areopagus, now on display in 2026 in the Papal Palace Castel Gandolfo. A tapestry, NOT directly an oil Raphael canvas; rights/reproduction and large size hold. Strong exact scene and major historical art."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
@@ -2407,5 +2435,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "NT selective institutional painting, fresco, and print studies for BIB-G10, G11, G13, G20, G22, A04, A06, A07, A18; no acquisitions or approvals"
+  "recentSourceWave": "Museum original Met Jacob Pynas Paul and Barnabas at Lystra and Vatican Paul at Areopagus Raphael-designed tapestry; no new image acquisition"
 }
