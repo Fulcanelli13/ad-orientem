@@ -591,6 +591,7 @@ export async function mountNativeReaderPreview({
 
     const communionSpeakerLabels=Object.freeze({
       CELEBRANT:"Celebrant",
+      DEACON:"Deacon",
       ALL:"All present",
       COMMUNICANTS:"Communicants",
     });
