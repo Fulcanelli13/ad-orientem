@@ -42,8 +42,8 @@ function readyEnvelope(slot,value,{language="en"}={}){
     // Full source Missal endings contain a respondent Amen. The speaker
     // owns a separate intermediate response, or canonical C0074/C0255.
     const response=locale==="fr"
-      ?/\s*(?:(?:℟\.|R\.)\s*)?(?:Ainsi soit-il|Amen)\.\s*$/iu
-      :/\s*(?:(?:℟\.|R\.)\s*)?Amen\.\s*$/iu;
+      ?/\s+(?:(?:℟\.|R\.)\s+)?(?:Ainsi soit-il|Amen)\.\s*$/iu
+      :/\s+(?:(?:℟\.|R\.)\s+)?Amen\.\s*$/iu;
     return raw.replace(response,"").trimEnd()||raw;
   };
   const paragraphs=[];
