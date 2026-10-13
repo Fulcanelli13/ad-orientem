@@ -7,6 +7,7 @@ const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const canonData=load("../data/presentation/reader-canon-rubric-review.v1.json");
 const triggerAudit=load("../data/research/mass-canon-62-source-trigger-audit-20261013.json");
 const frenchReview=load("../data/research/mass-canon-french-rubric-62-original-redraft-20261013.json");
+const ministerData=load("../data/research/mass-canon-minister-form-branches-20261013.json");
 const original=load("../data/research/mass-canon-14-ritus1962-french-microactions-20261013.json");
 const corpus=load("../data/presentation/reader-text-sung.v1.json");
 const sourceCues=new Map(corpus.blocks.flatMap(x=>x.units??[]).map(y=>[y.cue_id,y.latin]));
@@ -57,6 +58,28 @@ for(const row of canonData.rows){
     assert.equal(action.isObservedNow,false);
   }
 }
+const roles=createCanonRubricAdjudicationController({canonData,triggerAudit,frenchReview,ministerData});
+const solemnHost=roles.project("AO.SM.C0174",{editorialPreview:true,form:"SOLEMN"});
+const sungIncenseHost=roles.project("AO.SM.C0174",{editorialPreview:true,form:"MISSA_CANTATA_INCENSE"});
+const noIncenseHost=roles.project("AO.SM.C0174",{editorialPreview:true,form:"MISSA_CANTATA_SIMPLE"});
+assert.equal(solemnHost.priestActions.length,4);
+assert.equal(solemnHost.ministerActions.length,1,
+  "Original server bell must not be replaced or counted twice");
+assert.equal(solemnHost.conditionalMinisterActions.length,2,
+  "Solemn deacon and thurifer are distinct from the priest and the server bell");
+assert.deepEqual(solemnHost.conditionalMinisterActions.map(x=>x.actor),
+  ["DEACON","THURIFER"]);
+assert.equal(sungIncenseHost.conditionalMinisterActions.length,1);
+assert.equal(sungIncenseHost.conditionalMinisterActions[0].actor,"THURIFER");
+assert.equal(noIncenseHost.conditionalMinisterActions.length,0);
+assert.equal(roles.project("AO.SM.C0174",{form:"SOLEMN"}).priestActions.length,0);
+const chalicelid=roles.project("AO.SM.C0205",{editorialPreview:true,form:"SOLEMN"});
+assert.equal(chalicelid.conditionalMinisterActions.length,1);
+assert.equal(chalicelid.conditionalMinisterActions[0].actor,"DEACON");
+assert.equal(chalicelid.conditionalMinisterActions[0].conditionVerified,false);
+const canonAmen=roles.project("AO.SM.C0207",{editorialPreview:true,form:"LOW"});
+assert.equal(canonAmen.respondentRole.speakerRole,"MINISTERS");
+assert.equal(canonAmen.canPublish,false);
 const host=reader.project("AO.SM.C0174",{
   form:"SOLEMN",editorialPreview:true,priestObservedCueId:"AO.SM.C0174",
   observedPriestActionIds:["AO.CANON.R62.024"],
