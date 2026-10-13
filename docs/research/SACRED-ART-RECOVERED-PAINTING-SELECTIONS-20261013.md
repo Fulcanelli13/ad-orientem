@@ -24,15 +24,16 @@ The physical originals previously acquired are the priority. The existing canoni
 
 **Interpretation:** Zurbarán is preferred for Saint Lucy; Veronese with donor remains an alternative, never another Saint Lucy image duplicated on the app. Velázquez and Piazzetta are two treatments of the supper stage of the Emmaus account, not images of the road. Carlo Maratti's flight image is literal to Matthew 2; Guercino's painting is an episode of resting during that flight, not a false exact narrative. Ingres depicts Mary adoring the Host and cannot stand in for a monstrance photograph. The Holy Family may legitimately represent Joseph but is not a solo saint portrait.
 
-## Four formerly outstanding exact-image checks — now closed
+## The exact-image identity holds are now resolved
 
-- [nga-41644](https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
-- [met-442750](https://www.metmuseum.org/art/collection/search/442750) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
-- [nga-50726](https://www.nga.gov/artworks/50726-temptation-christ) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
-- [met-436302](https://www.metmuseum.org/art/collection/search/436302) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
-- [kress-k2017](https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
+Five artworks lacked confirmed image previews in the earlier checkpoint. Juan de Flandes's [*Temptation of Christ*](https://www.nga.gov/artworks/50726-temptation-christ) was SHA-verified and inspected in the first nine-master review. Four further originals were recovered and verified from Actions ZIPs in the final batch:
 
-The Segna di Buonaventura Saint Benedict / Saint Silvester Commons material originally contained conflicting image file titles, captions and object numbers: `DP333089` filename says Benedict but metadata points to Sylvester 24.78b, and `DP333091` filename says Sylvester while a caption points to Benedict 24.78c. Use **Met object 442750 = 24.78c** as the authority; do not select by Commons filename. A general image search for Maestro Bartolomé's Kress K2017 wrongly surfaced Pietro Lorenzetti, and Fetti's autograph Good Samaritan is not equivalent to the Met workshop copy. Both remain held.
+- [NGA 41644 — Expectant Madonna](https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph): a fine tall Marian medieval panel, with Saint Joseph at her right; secondary as a standalone Joseph illustration.
+- [Met 442750 — Segna di Buonaventura, Saint Benedict](https://www.metmuseum.org/art/collection/search/442750): the actual Benedict 24.78c panel and surviving architectural setting, not Saint Silvester 24.78b. The Commons titles/captions for `DP333089` and `DP333091` are inconsistent; the museum accession wins. Zurbarán is the stronger painterly saint choice.
+- [Met 436302 — Workshop of Domenico Fetti, *The Good Samaritan*](https://www.metmuseum.org/art/collection/search/436302): authentic workshop original, not the autograph elsewhere. Extremely muted brown landscape and small figures make it a poor phone hero.
+- [Kress K2017 — Maestro Bartolomé, *Entry into Jerusalem*](https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079): exact 5510×7700 panel with Christ entering on donkey, welcoming crowd and city gate; retain historical human selection while noting Gothic artistic style and Kress photographic rights hold. It is not the Lorenzetti image mistakenly returned by earlier searches.
+
+**All image identities have now been visually checked in the 50-work pool; no exact-image preview holds remain.** This does not approve the paintings or certify photo rights, reproduction condition and production crops. [Final four SHA/pixel evidence](../../data/calendar/sacred-art-four-final-master-inspections-20261013.v1.json).
 
 ## Cross-module integration policy
 
