@@ -97,6 +97,42 @@ assert.equal(missing.ready,false);
 assert.ok(missing.missing.includes("GOSPEL"));
 assert.throws(()=>assertReaderProperReady(missing),/GOSPEL/);
 
+// Missal 1962 §481: only the final Secret's "Per omnia" is audible.
+// Its words and the respondent Amen are the immutable B041 cue pair;
+// no part of the bilingual source Proper may be duplicated in B040.
+const fullSecretEnding={
+ lat:"Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+ en:"Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+ fr:"Par Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+const secretSource=()=>({lat:"Hæc sacra nobis, Dómine.\n"+fullSecretEnding.lat,
+ en:"May these offerings please Thee.\n"+fullSecretEnding.en,
+ fr:"Accueillez notre offrande.\n"+fullSecretEnding.fr});
+for(const language of ["en","fr"]){
+  const result=properToReaderSlots({...proper,secrets:[secretSource()]},{language});
+  assert.equal(result.slots.SECRET_SET.status,"READY",language+" Secret source incorrectly blocked");
+  const row=result.slots.SECRET_SET.data.paragraphs.at(-1);
+  assert.match(row.latin,/Deus,?\s*$/u,"private Secret must retain its silent conclusion");
+  assert.doesNotMatch(row.latin,/per ómnia sǽcula|Amen\./u,
+    "last Secret duplicates the public B041 ending/response");
+  assert.equal(row.secretConclusionBoundary,"AUDIBLE_PER_OMNIA_IN_CANONICAL_B041");
+  assert.doesNotMatch(row.vernacular,/world without end|Ainsi soit-il|Amen\./iu,
+    language+" Secret duplicates the translated audible ending");
+}
+const multipleSecrets=properToReaderSlots({...proper,secrets:[
+  secretSource(),secretSource(),
+]},{language:"fr"}).slots.SECRET_SET.data.paragraphs;
+assert.equal(multipleSecrets.length,2,"no public Oremus/Amen between Secrets");
+assert.match(multipleSecrets[0].latin,/per ómnia sǽcula sæculórum\. Amen\.$/u,
+  "earlier Secret is entirely recited silently");
+assert.doesNotMatch(multipleSecrets[1].latin,/per ómnia sǽcula|Amen\./u,
+  "last Secret has only the silently spoken part");
+const brokenSecret=properToReaderSlots({...proper,secrets:[{
+  ...secretSource(),fr:"Texte interrompu. Ainsi soit-il.",
+}]},{language:"fr"});
+assert.equal(brokenSecret.slots.SECRET_SET.status,"MISSING",
+  "unmatched bilingual Secret endings must fail closed rather than duplicate");
+
 // Two source-owned III/IV-class commemorations are ONE additional
 // liturgical group with two focus paragraphs, never a guessed third Collect.
 const joinTwo=(label)=>({
