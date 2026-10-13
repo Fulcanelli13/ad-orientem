@@ -63,7 +63,16 @@ const completeFrenchCommemoration=properToReaderSlots({...frenchProper,collects:
  {lat:"Oratio",en:"",fr:"Collecte"},{lat:"Commemoratio",en:"",fr:"Commémoraison"}
 ]},{language:"fr"});
 assert.equal(completeFrenchCommemoration.ready,true);
-assert.equal(completeFrenchCommemoration.slots.COLLECT_SET.data.paragraphs.length,2);
+const twoCollects=completeFrenchCommemoration.slots.COLLECT_SET.data.paragraphs;
+assert.equal(twoCollects.length,4,"separate Collect groups must include intermediate Amen and second Oremus");
+assert.deepEqual(twoCollects.map(x=>x.id),[
+  "COLLECT_SET.1","COLLECT_SET.1.AMEN","COLLECT_SET.2.OREMUS","COLLECT_SET.2",
+]);
+assert.equal(twoCollects[1].kind,"RESPONSE");
+assert.equal(twoCollects[1].speakerRole,"RESPONDERS");
+assert.equal(twoCollects[2].speakerRole,"PRIEST");
+assert.equal(twoCollects[2].latin,"Orémus.");
+assert.equal(twoCollects[2].vernacular,"Prions.");
 for(const [property,slot] of [["secrets","SECRET_SET"],["postcommunions","POSTCOMMUNION_SET"]]){
  const mixed=properToReaderSlots({...proper,[property]:[t("Oratio","Prayer"),{lat:"Commemoratio",en:"",fr:""}]});
  assert.equal(mixed.ready,false,slot+" silently filtered a missing commemoration");
@@ -102,10 +111,24 @@ assert.equal(multiJoined.ready,true,
   "Two source prayers under ONE conclusion must not be counted as three groups");
 for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
  const p=multiJoined.slots[slot].data.paragraphs;
- assert.equal(p.length,3,slot+" principal + two focused commemorations");
- assert.equal(p[1].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
- assert.equal(p[2].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
- assert.match(p[2].vernacular,/Ainsi soit-il\.$/);
+ const publicPrayer=slot!=="SECRET_SET";
+ assert.deepEqual(p.map(x=>x.id),publicPrayer?[
+   slot+".1",slot+".1.AMEN",slot+".2.OREMUS",
+   slot+".2.FIRST_COMMEMORATION",slot+".2.SECOND_COMMEMORATION",
+ ]:[
+   slot+".1",slot+".2.FIRST_COMMEMORATION",slot+".2.SECOND_COMMEMORATION",
+ ],slot+" correct prayer/response/versicle sequence");
+ const pair=p.filter(x=>x.prayerRole==="FIRST_COMMEMORATION"||
+   x.prayerRole==="SECOND_COMMEMORATION");
+ assert.equal(pair.length,2,slot+" two separate focus paragraphs");
+ assert.equal(pair[0].liturgicalGroup,slot+".2");
+ assert.equal(pair[1].liturgicalGroup,slot+".2",
+   "the third source oration must not fabricate a third concluded group");
+ assert.match(pair[1].vernacular,/Ainsi soit-il\.$/);
+ assert.equal(p.filter(x=>x.id.endsWith(".OREMUS")).length,publicPrayer?1:0,
+   "never add a public Oremus to Secrets or repeat it within joined commemorations");
+ assert.equal(p.filter(x=>x.id.endsWith(".AMEN")).length,publicPrayer?1:0,
+   "never invent a response to silent Secrets");
 }
 const corrupted=properToReaderSlots({...frenchProper,
  collects:[{lat:"Prima",fr:"Collecte principale"},
