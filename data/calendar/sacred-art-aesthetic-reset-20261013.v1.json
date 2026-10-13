@@ -1,0 +1,246 @@
+{
+  "schema": "AO_SACRED_ART_USER_TASTE_AESTHETIC_RESET_V1",
+  "date": "2026-10-13",
+  "branch": "platform/885-sacred-art-candidates",
+  "ownerPR": 887,
+  "reason": "Resets provenance-coverage-driven priority labelling after user corrected deviation from earlier explicit art direction. Record 50-source original inspection separately from the actual beauty/devootional selection.",
+  "sourceLedger": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+  "status": "CURRENT_AESTHETIC_REVIEW_POLICY_NO_HUMAN_ARTWORK_DECISIONS_CHANGED",
+  "benchmarkPaintings": [
+    {
+      "artist": "Francisco Ribalta",
+      "title": "Christ Embracing Saint Bernard",
+      "url": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+      "qualities": [
+        "spiritual intensity",
+        "naturalistic weight",
+        "emotive sacred encounter",
+        "strong chiaroscuro"
+      ]
+    },
+    {
+      "artist": "Peter Paul Rubens",
+      "title": "Saint James the Greater / Prado apostolate",
+      "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-greater/72f76d59-fab7-4cea-8214-af0fb98fc293",
+      "qualities": [
+        "modelled human form",
+        "rich chromatic depth",
+        "lively painterly finish",
+        "noble expressive saint identity"
+      ]
+    },
+    {
+      "artist": "Giovanni Lanfranco",
+      "title": "The Miracle of the Loaves and Fishes",
+      "url": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+      "qualities": [
+        "monumental coherent biblical narration",
+        "movement and pictorial grandeur",
+        "full-colour Baroque painterliness",
+        "theological meaning"
+      ]
+    },
+    {
+      "artist": "Juan Fernández de Navarrete",
+      "title": "Abraham and the Three Angels",
+      "url": "https://onlinecollection.nationalgallery.ie/objects/details/3180",
+      "qualities": [
+        "saturated yet controlled Renaissance colour",
+        "noble naturalistic figures",
+        "spiritual dignity",
+        "complex subject clear without artificial poster simplification"
+      ]
+    },
+    {
+      "artist": "Georges de La Tour",
+      "title": "Saint Joseph the Carpenter",
+      "url": "https://collections.louvre.fr/en/ark:/53355/cl010063817",
+      "qualities": [
+        "restrained luminous nocturne",
+        "deep devotional intimacy",
+        "economy and figure presence"
+      ]
+    }
+  ],
+  "approvedReferenceArtists": [
+    "Peter Paul Rubens",
+    "Anthony van Dyck",
+    "Philippe de Champaigne",
+    "Giovanni Lanfranco",
+    "Juan Fernández de Navarrete",
+    "Francisco Ribalta",
+    "Georges de La Tour"
+  ],
+  "strictOrdering": [
+    {
+      "index": 1,
+      "criterion": "EXCEPTIONAL_ARTISTIC_EXCELLENCE",
+      "required": true,
+      "description": "First ask whether the image has real aesthetic force: rich meaningful colour, substantial accomplished painterly execution, composed figures, believable anatomy, high religious dignity, reverent emotion. The work must be beautiful in its own right, not just illustrated subject matter."
+    },
+    {
+      "index": 2,
+      "criterion": "SACRED_DEVOTIONAL_INTENSITY",
+      "required": true,
+      "description": "Must invite attention, contemplation and Catholic devotion instead of looking like a generic historical engraving, institutional document, illustrative diagram, wooden mediaeval panel, flat cartoon or mundane genre scene."
+    },
+    {
+      "index": 3,
+      "criterion": "ICONOGRAPHY_AND_CONTEXT",
+      "required": true,
+      "description": "Exact or honestly contextual feast, saint, mystery or Bible subevent; distinctive subject naming; no incorrect event reuse, theological distortion or misrepresenting author / medium."
+    },
+    {
+      "index": 4,
+      "criterion": "SOURCE_AND_REPRODUCTION",
+      "required": true,
+      "description": "Institutional original verified, photographic copy true to object, commercial-rights verified, sufficient colour/size, clean uncropped master and appropriate mobile display. These cannot rescue an aesthetically weak picture."
+    }
+  ],
+  "prohibitions": [
+    "Do not use weighted scoring where technical checks and correct subject can compensate for insufficient beauty.",
+    "Never convert a source discovery, SHA-verified JPEG, readable phone crop or matched event into a primary art recommendation.",
+    "Do not put rejected artists or user-rejected individual artworks back into any affirmative shortlist.",
+    "El Greco and Fra Angelico remain excluded for new selections; earlier Velázquez suggestions are on a prior-user-rejection hold pending explicit reconsideration.",
+    "Old Testament art requirements may be sparse or reused: the reduced coverage quota does NOT lower quality standard for an image that IS displayed.",
+    "Never auto-reject 101 current user-chosen records; preserve historical selections separately with any style conflict holds."
+  ],
+  "levels": [
+    {
+      "level": "A",
+      "name": "EXCEPTIONAL_SACRED_MASTERPIECE",
+      "standard": "On par with user-nominated Ribalta, Rubens, Lanfranco, Navarrete and similarly rich van Dyck/Champaigne masterpieces; possible exceptional Home/Calendar anchor after approval"
+    },
+    {
+      "level": "B",
+      "name": "HIGH_QUALITY_SUPPORTING_PAINTING",
+      "standard": "Genuinely painterly, sacred and accurate; suitable for a Bible/saint/devotion passage, but not proven exceptional enough for Home"
+    },
+    {
+      "level": "C",
+      "name": "HISTORICAL_CONTEXTUAL_ONLY",
+      "standard": "Useful narrative or documentary material, historically relevant but less artistically compelling; never promote as an A/B sacred-art selection by filling coverage"
+    },
+    {
+      "level": "D",
+      "name": "HOLD_EXCLUDE_OR_NO_IMAGE",
+      "standard": "Visually incompatible or already rejected, distorted subject, poor painting or image reproduction; narrative continues without image"
+    }
+  ],
+  "previouslyPrimaryTwelveReappraisal": [
+    {
+      "artworkId": "met-437970",
+      "disposition": "WORTH_COMPARING_TO_BENCHMARK",
+      "reason": "Zurbarán saint portrait has devotional dignity, but avoid assuming flagship status solely because sourced and readable.",
+      "domain": "SAINT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "nga-12209",
+      "disposition": "WORTH_COMPARING_TO_BENCHMARK",
+      "reason": "Zurbarán saint portrait may fit portrait slot; do not confuse excellent saint identification with benchmark-level sacred art.",
+      "domain": "SAINT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "met-702752",
+      "disposition": "NARRATIVE_SUPPORT_NOT_AUTOMATIC_MASTERPIECE",
+      "reason": "Luti Samaritan Woman is correct and polished but its compact oil-on-copper intimacy is not sufficient evidence for monumental app artistic direction.",
+      "domain": "NT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "met-437871",
+      "disposition": "PRIOR_USER_REJECTION_HOLD_DO_NOT_RECOMMEND",
+      "reason": "Velázquez has been previously rejected in user's Sacred Art artistic choices; remove this Supper at Emmaus from affirmative new shortlist, preserve research metadata and rights.",
+      "domain": "NT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "nga-96688",
+      "disposition": "STRONG_CONTEXTUAL_WIDE_PAINTING_NO_HOME_PROMOTION",
+      "reason": "Bassano has genuine painterly merit and accurate Luke 5 scene; very wide landscape, not an automatically exceptional homepage/phone art hero.",
+      "domain": "NT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "met-816629",
+      "disposition": "SUPPORTING_NARRATIVE_NEEDS_BENCHMARK_COMPARISON",
+      "reason": "Maratti Flight is decorative and accurate but must be compared visually with exceptional sacred masterpieces, not awarded primary status based on source and mobile clarity.",
+      "domain": "NT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "met-435755",
+      "disposition": "CANDIDATE_NEEDS_BENCHMARK_COMPARISON",
+      "reason": "Bourdon Baptism is restrained and narratively precise; do not infer it has the grandeur of user-admired Ribalta, Lanfranco or Rubens.",
+      "domain": "NT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "cma-160143",
+      "disposition": "CONTEXTUAL_DEVOTIONAL_OPTION",
+      "reason": "Gandolfi Holy Family may remain an appropriate selected historical image or support, but not homepage masterpiece without explicit aesthetic review.",
+      "domain": "DEVOTION",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "met-438434",
+      "disposition": "CONTEXTUAL_DEVOTIONAL_OPTION",
+      "reason": "Ingres Virgin Adoring Host has theological content; smaller formal composition not necessarily exceptional artistic identity for Home.",
+      "domain": "DEVOTION",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "nga-46147",
+      "disposition": "SECONDARY_SAINT_WITH_DONOR",
+      "reason": "Saint Lucy recognisable; image has donor and must be judged against superior painterly saint portraits, not promoted by saint title.",
+      "domain": "SAINT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "cma-143138",
+      "disposition": "CONTEXTUAL_REST_ON_FLIGHT",
+      "reason": "Guercino is beautiful but depicts Rest rather than Flight, and is not automatically homepage flagship.",
+      "domain": "NT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    },
+    {
+      "artworkId": "cma-112626",
+      "disposition": "CONTEXTUAL_DARK_SMALL_DISPLAY",
+      "reason": "Piazzetta Supper at Emmaus has Baroque interest but lower legibility and must not automatically become flagship; comparison only.",
+      "domain": "NT",
+      "isUserApproval": false,
+      "isHomeReleaseApproved": false,
+      "previousPriorityLabel": "SOURCE_LED_RESEARCH_PRELIMINARY_SUPERSEDED_FOR_AESTHETIC_PRIORITY"
+    }
+  ],
+  "counts": {
+    "previouslyPrimarySourceResearchWorksReappraised": 12,
+    "automaticallyFlagshipEligible": 0,
+    "newExplicitUserApprovals": 0,
+    "currentUserSelectedSubjectsPreserved": 101
+  }
+}
