@@ -4,7 +4,7 @@
 
 The physical originals previously acquired are the priority. The existing canonical artwork research registry contains 266 SHA-acquired originals; its 134 outstanding subject list now has 59 specific reuse associations from 50 artworks across 27 research subjects. The current 101 user-chosen subjects remain immutable. The previous 35 historically accepted source originals are preserved as another asset pool.
 
-**Image evidence:** 45/50 source-matched previews assessed; 5 still require a demonstrably correct on-screen original to judge colour/composition. **12** priority art objects in the initial shortlist. The extended subject editorial proposals cover **11** subjects with **13** unique SHA sources (includes the historically selected Sacred Heart painting); **0** new approvals.
+**Latest image evidence (13 Oct): 50/50 source-matched artworks visually assessed; 13/50 newly recovered as exact JPEG masters independently SHA-256 verified, and the other 37/50 reviewed from matched source previews. Zero image-identity holds remain.** **12** priority art objects in the initial shortlist. The extended subject editorial proposals cover **11** subjects with **13** unique SHA sources (includes the historically selected Sacred Heart painting); **0** new approvals.
 
 ## Provisional choices from existing paintings
 
@@ -24,7 +24,7 @@ The physical originals previously acquired are the priority. The existing canoni
 
 **Interpretation:** Zurbarán is preferred for Saint Lucy; Veronese with donor remains an alternative, never another Saint Lucy image duplicated on the app. Velázquez and Piazzetta are two treatments of the supper stage of the Emmaus account, not images of the road. Carlo Maratti's flight image is literal to Matthew 2; Guercino's painting is an episode of resting during that flight, not a false exact narrative. Ingres depicts Mary adoring the Host and cannot stand in for a monstrance photograph. The Holy Family may legitimately represent Joseph but is not a solo saint portrait.
 
-## Five outstanding exact-image checks
+## Four formerly outstanding exact-image checks — now closed
 
 - [nga-41644](https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
 - [met-442750](https://www.metmuseum.org/art/collection/search/442750) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
@@ -32,7 +32,7 @@ The physical originals previously acquired are the priority. The existing canoni
 - [met-436302](https://www.metmuseum.org/art/collection/search/436302) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
 - [kress-k2017](https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079) — museum object identified; exact source view not independently visually compared. **Do not infer painterly quality or approval**.
 
-The Segna di Buonaventura Saint Benedict / Saint Silvester Commons material contains conflicting image file titles, captions and object numbers: `DP333089` filename says Benedict but metadata points to Sylvester 24.78b, and `DP333091` filename says Sylvester while a caption points to Benedict 24.78c. Use **Met object 442750 = 24.78c** as the authority; do not select by Commons filename. A general image search for Maestro Bartolomé's Kress K2017 wrongly surfaced Pietro Lorenzetti, and Fetti's autograph Good Samaritan is not equivalent to the Met workshop copy. Both remain held.
+The Segna di Buonaventura Saint Benedict / Saint Silvester Commons material originally contained conflicting image file titles, captions and object numbers: `DP333089` filename says Benedict but metadata points to Sylvester 24.78b, and `DP333091` filename says Sylvester while a caption points to Benedict 24.78c. Use **Met object 442750 = 24.78c** as the authority; do not select by Commons filename. A general image search for Maestro Bartolomé's Kress K2017 wrongly surfaced Pietro Lorenzetti, and Fetti's autograph Good Samaritan is not equivalent to the Met workshop copy. Both remain held.
 
 ## Cross-module integration policy
 
@@ -78,3 +78,7 @@ This partition is a **research completeness index**, not editorial approval or e
 ## Proportional Bible research policy — 13 October
 
 **Do not treat all 83 undecided Bible art subjects as compulsory painting gaps.** The [proportionate art policy](SACRED-ART-PROPORTIONATE-BIBLE-CURATION-20261013.md) explicitly allows shared historical artworks, maps, diagrams, genealogical/timeline presentations or no artwork. Research is weighted 30 deep NT subjects, 10 selective NT, 14 representative OT anchors, and 29 light-context OT scenes. This is *research effort*, not picture quotas or reductions in narrative coverage. No existing selection or production artwork is changed. Every used image must still pass object identity, artistic quality, reproduction and rights approval.
+
+## Final recovered-image inspection closure — 13 October
+
+All four remaining museum-original images were recovered from archived GitHub Actions ZIPs, checked against canonical SHA256, and inspected as complete compositions with mobile-centre crop simulations: NGA 41644 Expectant Madonna, Met 442750 Benedict (24.78c, not the 24.78b Saint Silvester), Met 436302 workshop of Fetti Good Samaritan, and Kress K2017 Entry into Jerusalem. **Research image inspection is now 50/50**, not a publication certificate; **13 originals have been independently byte-verified** in these latest two passes. One assembled **13-master self-contained offline image review gallery** has been delivered in the conversation rather than merged into the repository. All 101 selected subjects unchanged, all 134 formerly undecided subjects still require appropriate editorial outcomes (image, reused image, map/diagram, or none). [Four original SHA audit](../../data/calendar/sacred-art-four-final-master-inspections-20261013.v1.json) · [complete current 50-image review](SACRED-ART-ACQUIRED-VISUAL-REVIEW-20261012.md).
