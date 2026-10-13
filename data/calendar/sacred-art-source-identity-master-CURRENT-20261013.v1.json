@@ -63,7 +63,7 @@
   ],
   "acquisitionExecutionLane": {
     "date": "2026-10-13",
-    "status": "PINNED_SIX_SOURCE_WORKFLOW_WITH_HASH_RECEIPT_AUTOCOMMIT_CONFIGURED_NO_RECEIPT_YET",
+    "status": "VERIFIED_LEDGER_AUTOCOMMIT_CONFIGURED_ACCEPTS_ZERO_OR_SOME_NOT_YET_OBSERVED",
     "manifest": "data/calendar/sacred-art-commons-six-strict-acquisition-20261013.v1.json",
     "script": "tools/calendar/acquire-sacred-art-commons-six.py",
     "workflow": ".github/workflows/sacred-art-commons-six-originals.yml",
@@ -95,9 +95,10 @@
       "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Triptych_of_St._Ildefonso_-_Google_Art_Project.jpg"
     ],
     "expectedReceipt": "data/calendar/sacred-art-commons-six-LAST-VERIFIED-20261013.v1.json",
-    "receiptPublicationGate": "Only a successful Actions job with >=1 JPEG whose actual bytes match Commons source SHA1, SHA256 and manifest metadata can create/update the receipt; no raw images committed.",
+    "receiptPublicationGate": "Once script and byte/hash audit succeed (including an all-held 0/6 outcome), CI commits a per-file status receipt to research branch. Every successful image must match exact source dimensions and SHA1; no JPEGs are committed. No receipt yet observed.",
     "receiptNotPresentOnLastCheck": true,
     "runIdVerified": false,
-    "libraryBackupOriginals": "Prior 8 source JPEGs have 28MB ZIP archived in user's persistent ChatGPT Library as well as temporary Actions artifact; private Library file not referenced in public GitHub repository."
+    "libraryBackupOriginals": "Prior 8 source JPEGs have 28MB ZIP archived in user's persistent ChatGPT Library as well as temporary Actions artifact; private Library file not referenced in public GitHub repository.",
+    "zeroAcquiredBehavior": "Explicit status ALL_SIX_SOURCES_HELD_NO_NEW_MASTER with hold reasons in automatically committed receipt; never add six to acquired count on path existence alone."
   }
 }
