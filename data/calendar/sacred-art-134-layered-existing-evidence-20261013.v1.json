@@ -16,21 +16,22 @@
     "2026-10-13 wave: new museum-linked visual leads for 13 formerly zero-lead subjects, including contextual-only and related-episode evidence. No exact-scene completion inferred merely from presence of a link.",
     "Second 2026-10-13 research wave: source-grounded 5 additional zero-lead subjects (2 oil paintings, 2 etchings, 1 gouache); non-painting formats and contextual mismatch explicitly flagged; no approval or download.",
     "French Mays of Notre-Dame corpus is important further source discovery (https://www.notredamedeparis.fr/comprendre/peintures/les-mays-de-notre-dame/): historic large oil canvases predominantly Acts; do not import all or imply image rights. Explicit subjects Courtin 1707 and Galloche 1705 added as separate original artworks.",
-    "Source correction 2026-10-13: 5 previously unverified older options were real art but WRONG biblical event: Joseph-to-Potiphar versus sold by brothers; Jacob/Pharaoh versus first settlement; Tobias versus Tobit; Daniel 6 lions versus Daniel 1; Heliodorus versus Maccabean resistance. Do not count as exact coverage."
+    "Source correction 2026-10-13: 5 previously unverified older options were real art but WRONG biblical event: Joseph-to-Potiphar versus sold by brothers; Jacob/Pharaoh versus first settlement; Tobias versus Tobit; Daniel 6 lions versus Daniel 1; Heliodorus versus Maccabean resistance. Do not count as exact coverage.",
+    "Latest 4 formerly zero-source subjects have museum-indexed engravings/manuscript illustrations; no graphic is aesthetically approved and no thematic subject's physical event is deemed map equivalent. These images can be bypassed in favour of atlas/timeline rendering."
   ],
   "summary": {
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 54,
+    "additionalResearchLeadSubjects": 58,
     "withPreviousUnapprovedOptionOnly": 2,
-    "withNoRecordedSourceOrOlderOption": 10,
+    "withNoRecordedSourceOrOlderOption": 6,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
     "chosen101Unchanged": true,
-    "newInstitutionalSourceWaveSubjectCount": 27,
-    "newInstitutionalSourceWaveCandidateCount": 29,
+    "newInstitutionalSourceWaveSubjectCount": 31,
+    "newInstitutionalSourceWaveCandidateCount": 33,
     "previousOptionInstitutionallyIdentified": 7,
     "previousOptionSceneMismatchConfirmed": 5
   },
@@ -1833,14 +1834,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "1 Kings 12:1–24",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-collaert-rehoboam-answers",
+          "artist": "Hans Collaert I (attribution uncertain), after Ambrosius Francken I",
+          "title": "Rehoboam Answers the People",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Rechabeam%2Bantwoordt%2Bhet%2Bvolk--6a35d8831c45fd8a316d66588ecaff60",
+          "medium": "engraving",
+          "sourceInstitution": "Rijksmuseum RP-P-1995-26-29",
+          "sceneMatch": "EXACT_DIVISION_INCIDENT",
+          "matchNotes": "1579 engraving depicts Rehoboam rejecting Israelites' requests and triggering secession 1 Kings 12; illustrates turning point, not a political map. Graphic-only, not art-approved.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_GRAPHIC_SECONDARY_ONLY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-rijkmuseum-graphics-source"
     },
     {
       "subjectId": "BIB-IS07",
@@ -1973,14 +1990,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "2 Kings 23:1–25",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-galle-josiah-covenant",
+          "artist": "Philips Galle after Maarten van Heemskerck",
+          "title": "King Josiah Has the Book of the Law Read to the People",
+          "sourceUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Koning%2BJosia%2Blaat%2Bhet%2Bwetboek%2Baan%2Bhet%2Bvolk%2Bvoorlezen--ffdd5f21760565919e5e0bcc744ec250",
+          "medium": "engraving",
+          "sourceInstitution": "Rijksmuseum RP-P-1995-26 series",
+          "sceneMatch": "EXACT_COVENANT_SCENE",
+          "matchNotes": "Engraving c.1567–71, Josiah on Temple steps swears to uphold the Law and has law read publicly, indexed 2 Kings 23; non-painting documentary fallback.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_GRAPHIC_SECONDARY_ONLY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-rijkmuseum-graphics-source"
     },
     {
       "subjectId": "BIB-XL01",
@@ -2747,14 +2780,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 15:1–29",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-genevieve-acts15",
+          "artist": "Illuminator unidentified",
+          "title": "Council of Jerusalem",
+          "sourceUrl": "https://portail.biblissima.fr/fr/ark:/43093/ifdata0d9213d47e3f0769e364fa83f98ee10992314284",
+          "medium": "illuminated manuscript miniature",
+          "sourceInstitution": "Bibliothèque Sainte-Geneviève, Paris MS 809 fol.300v / Biblissima",
+          "sceneMatch": "EXACT_SUBJECT_GRAPHIC_ONLY",
+          "matchNotes": "c.1470 manuscript scene indexed Acts 15:5–21, but flat medieval miniature is not consistent with preferred art aesthetic; preserve evidence as optional archival illustration only, NOT painting shortlist.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_GRAPHIC_SECONDARY_ONLY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-rijkmuseum-graphics-source"
     },
     {
       "subjectId": "BIB-A11",
@@ -3036,14 +3085,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Revelation 4:1–11 · Symbolic theology, not a map of future physical geography.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-groeningen-heavenly-liturgy",
+          "artist": "Gerard van Groeningen",
+          "title": "Adoration of the Lamb of God",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Aanbidding%2Bvan%2Bhet%2BLam%2BGods--4103e2552b5eac1443baa1574b417d0f",
+          "medium": "etching and engraving",
+          "sourceInstitution": "Rijksmuseum RP-P-1878-A-1366",
+          "sceneMatch": "EXACT_REVELATION_VISION_GRAPHIC_ONLY",
+          "matchNotes": "1563–74 print shows 24 crowned elders, four creatures, Lamb and sealed scroll (Rev 4:2–8, 5:6–14). Symbolic heavenly vision, not geographical scene. Unapproved graphic fallback.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_GRAPHIC_SECONDARY_ONLY",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-rijkmuseum-graphics-source"
     },
     {
       "subjectId": "BIB-V03",
@@ -3078,5 +3143,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "27 formerly zero-lead subjects gained candidates (10 remain); 12 of 14 old IDs institutionally reconciled (7 exact, 5 confirmed wrong-scene); 2 IDs remain unresolved."
+  "recentSourceWave": "31 formerly zero-source subjects now have documented research options (6 still zero-source); 12 older original candidates reconciled: seven identified, five invalid event matches; two remain unidentified."
 }
