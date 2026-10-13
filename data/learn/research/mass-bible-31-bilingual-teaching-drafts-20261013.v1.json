@@ -21,7 +21,9 @@
     "properExamplesComparedTo1962OCR": 2,
     "totalSelectComparisonsAndProperIdentityChecks": 14,
     "remainingContextAndRiteComparisonsCompleted": 17,
-    "totalEntriesWithSomeFocusedSourceCheck": 31
+    "totalEntriesWithSomeFocusedSourceCheck": 31,
+    "facsimileImageOriginalPageLociDirectlyRead": 16,
+    "fullIndependentEditionCertifications": 0
   },
   "editorialPolicy": {
     "authorialDraftsAreNotAuthorQuotes": true,
@@ -33,7 +35,9 @@
     "stageMappingNotPresentationCardMapping": true,
     "wikisourceOrdinaryHasTranscriptionTypos": "Wikisource Ordinarium missae (1962) contains transcription defects such as 'perducat uso' and 'interecedere'; do not present it as printed-edition-certified. Use 1962 Missal OCR for research reference only, original facsimile required for publication.",
     "referenceOriginalEdition": "1962 Benziger Missale Romanum editio iuxta typicam OCR, not proven identical to independent editio typica witness at all variant loci.",
-    "ourFatherTextualVariant": "MB21: Clementine Matthew 6:11 supersubstantialem vs 1962 Latin Mass quotidianum, agreeing with Luke 11:3; not a verbatim Matthew quotation."
+    "ourFatherTextualVariant": "MB21: Clementine Matthew 6:11 supersubstantialem vs 1962 Latin Mass quotidianum, agreeing with Luke 11:3; not a verbatim Matthew quotation.",
+    "facsimileImportantCaveat": "16 specific liturgical loci are now checked against photographed pages of a 1962 Benziger altar Missal. That photographed copy has the November 1962 Saint Joseph Canon amendment physically pasted onto page 306; do not treat it as original typesetting. Original independent Vatican typical edition comparison is still outstanding. The third-party host provides images only and has no ecclesial authority.",
+    "latinOurFatherExactBenzigerSpelling": "This 1962 Benziger printing, printed pp.310–311, sings 'co-ti-di-a-num' (cotidianum), orthographic variant of quotidianum, distinct from Matt 6:11 supersubstantialem."
   },
   "records": [
     {
@@ -413,7 +417,31 @@
         "textualRelationship": "ADAPTED",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            300
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0375.jpg"
+          ],
+          "readingObservation": "Printed p.300 shows Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth and Hosanna in excelsis in Praefatio communis.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -448,7 +476,31 @@
         "textualRelationship": "SCRIPTURAL_WORDING_ADAPTED",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            300
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0375.jpg"
+          ],
+          "readingObservation": "Printed p.300 shows Benedictus qui venit in nomine Domini and Hosanna in excelsis following Sanctus.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -483,7 +535,31 @@
         "textualRelationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            303
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0380.jpg"
+          ],
+          "readingObservation": "Canon title and Te igitur p.303; explicit prayer for Church/Pope/bishop.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -518,7 +594,33 @@
         "textualRelationship": "NARRATIVE_SCRIPTURE_CONNECTION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            306,
+            307
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0383.jpg",
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0384.jpg"
+          ],
+          "readingObservation": "Qui pridie begins p.306; p.307 prominently sets Hoc est enim Corpus meum and elevation rubrics.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -553,7 +655,31 @@
         "textualRelationship": "NARRATIVE_WITH_ADDITIONAL_LITURGICAL_WORDS",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            307
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0384.jpg"
+          ],
+          "readingObservation": "Chalice formula includes mysterium fidei inside 1962 words of consecration on printed p.307.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -588,7 +714,31 @@
         "textualRelationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            308
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0385.jpg"
+          ],
+          "readingObservation": "Unde et memores explicitly names Passion, Resurrection and Ascension on p.308.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -623,7 +773,31 @@
         "textualRelationship": "EXPLICIT_BIBLICAL_FIGURE",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            308
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0385.jpg"
+          ],
+          "readingObservation": "Supra quae on p.308 explicitly names iusti Abel.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -658,7 +832,31 @@
         "textualRelationship": "EXPLICIT_BIBLICAL_FIGURE",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            308
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0385.jpg"
+          ],
+          "readingObservation": "Supra quae on p.308 explicitly names sacrificium Patriarchae nostri Abrahae.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -693,7 +891,31 @@
         "textualRelationship": "EXPLICIT_NAME_PLUS_TRADITIONAL_TYPOLOGY",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            308
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0385.jpg"
+          ],
+          "readingObservation": "Supra quae on p.308 explicitly names summus sacerdos tuus Melchisedech; interpretive claim about Genesis must remain Bible-side.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -738,8 +960,8 @@
       "classification": "SCRIPTURAL_WORDING_ADAPTED",
       "bibleReference": "Matthew 6:9–13",
       "existingCoreSourceRecord": "MB21",
-      "fr": "Le « Pater noster » est la prière enseignée par le Christ à ses disciples (Mt 6,9–13 ; Lc 11,2–4). Le latin de la Messe suit largement ce texte, mais ne reproduit pas chaque mot de la Vulgate clémentine de Matthieu : celle-ci écrit « panem nostrum supersubstantialem » (Mt 6,11), tandis que la Messe dit « panem nostrum quotidianum », comme Lc 11,3. La place de cette prière après le Canon et les réponses sont fixées par le rite. [Écriture selon Matthieu](https://www.newadvent.org/bible/mat006.htm) · [Écriture selon Luc](https://www.newadvent.org/bible/luk011.htm) · [Missel 1962, OCR non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)",
-      "en": "The Pater noster is the prayer taught by Christ (Matthew 6:9–13; Luke 11:2–4). Its Latin liturgical form follows this teaching, but is not identical to the Clementine Vulgate of Matthew: Matthew 6:11 says “panem nostrum supersubstantialem,” while the Mass says “panem nostrum quotidianum,” as in Luke 11:3. The prayer’s placement after the Canon and the ritual responses are governed by the Roman rite. [Matthew](https://www.newadvent.org/bible/mat006.htm) · [Luke](https://www.newadvent.org/bible/luk011.htm) · [1962 Missal, uncollated OCR](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)",
+      "fr": "Le « Pater noster » est la prière enseignée par le Christ à ses disciples (Mt 6,9–13 ; Lc 11,2–4). Le latin de la Messe suit largement ce texte, mais ne reproduit pas chaque mot de la Vulgate clémentine de Matthieu : celle-ci écrit « panem nostrum supersubstantialem » (Mt 6,11), tandis que la Messe dit « panem nostrum cotidianum » dans ce Missel Benziger de 1962 (graphie parfois normalisée « quotidianum »), comme Lc 11,3 pour le sens. La place de cette prière après le Canon et les réponses sont fixées par le rite. [Écriture selon Matthieu](https://www.newadvent.org/bible/mat006.htm) · [Écriture selon Luc](https://www.newadvent.org/bible/luk011.htm) · [Missel 1962, OCR non collationné](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)",
+      "en": "The Pater noster is the prayer taught by Christ (Matthew 6:9–13; Luke 11:2–4). Its Latin liturgical form follows this teaching, but is not identical to the Clementine Vulgate of Matthew: Matthew 6:11 says “panem nostrum supersubstantialem,” while the Mass says “panem nostrum cotidianum” in this 1962 Benziger printing (also written “quotidianum”), corresponding to Luke 11:3. The prayer’s placement after the Canon and the ritual responses are governed by the Roman rite. [Matthew](https://www.newadvent.org/bible/mat006.htm) · [Luke](https://www.newadvent.org/bible/luk011.htm) · [1962 Missal, uncollated OCR](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)",
       "primaryEdition": "1962 Roman Missal, Benziger editio iuxta typicam: accessible OCR text, not visually collated with original printed pages",
       "sourceUrls": [
         "https://www.newadvent.org/bible/mat006.htm",
@@ -758,13 +980,39 @@
         "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
         "checkedAuthorityUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
         "checkedRiteSourceLimit": "Searchable 1962 Benziger Missal OCR and/or linked rubrical translation, not a printed-page facsimile audit; some references are non-literal exegetical comparisons.",
-        "checkedPhraseInRiteOrBible": "Matthew 6:11: panem nostrum supersubstantialem; Luke 11:3 & Mass: quotidianum",
+        "checkedPhraseInRiteOrBible": "Matthew 6:11 Clementine 'supersubstantialem'; visual scan 1962 Benziger 310–311 'co-ti-di-a-num' (cotidianum); Luke 11:3 'quotidianum' in New Advent Clementine display. Distinguish orthography and choice of word.",
         "comparison": "Major correction: Roman Pater noster borrows the prayer of Christ but differs from Matthew Clementine at daily bread",
         "textualRelationship": "SCRIPTURAL_WORDING_ADAPTED",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "publicationApproved": false,
-        "checkedSecondaryBibleUrl": "https://www.newadvent.org/bible/luk011.htm"
+        "checkedSecondaryBibleUrl": "https://www.newadvent.org/bible/luk011.htm",
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            310,
+            311
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0387.jpg",
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0388.jpg"
+          ],
+          "readingObservation": "Printed p.310–311 musical text spells panem nostrum cotidianum (hyphenated co-ti-di-a-num), not supersubstantialem; full Pater follows Per ipsum. Correct earlier editorial literal 'quotidianum' assertion to printed 'cotidianum' in this edition; Bible online sources vary orthographic choices.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -799,7 +1047,31 @@
         "textualRelationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            312
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0389.jpg"
+          ],
+          "readingObservation": "p.312 begins Libera nos and requests protection and intercession from Mary, Peter, Paul, Andrew and all saints.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -834,7 +1106,31 @@
         "textualRelationship": "SCRIPTURAL_WORDING_ADAPTED",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            313
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0390.jpg"
+          ],
+          "readingObservation": "p.313 ordinary Agnus Dei thrice, Requiem substitution dona eis requiem and no mercy formula; ceremonial rubric three breast strikes applies to ordinary.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -869,7 +1165,31 @@
         "textualRelationship": "ADAPTED",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            315
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0392.jpg"
+          ],
+          "readingObservation": "p.315 has Domine non sum dignus and sanabitur anima mea following breast strike instruction.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -904,7 +1224,31 @@
         "textualRelationship": "DIRECT",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            315
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0392.jpg"
+          ],
+          "readingObservation": "p.315 has Quid retribuam Domino and Calicem salutaris accipiam, joined to chalice reception.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -939,7 +1283,33 @@
         "textualRelationship": "VARIABLE_RITE_SCRIPTURE_READING",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            319,
+            320
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0396.jpg",
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0397.jpg"
+          ],
+          "readingObservation": "p.319 begins the conditional Last Gospel John 1:1–14; p.320 prints genuflection at Et Verbum caro factum est.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     },
     {
@@ -1119,7 +1489,31 @@
         "textualRelationship": "DIRECT_WORDS_EMBEDDED",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "facsimileCheck": {
+          "witness": "Benziger Brothers 1962 Missale Romanum, editio iuxta typicam, photographed printed original altar Missal",
+          "imprintedCopy": {
+            "titlePageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+            "approvalPageScan": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+            "scanPageOffset": 77
+          },
+          "printedPageNumbers": [
+            314
+          ],
+          "sourceImageUrls": [
+            "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0391.jpg"
+          ],
+          "readingObservation": "p.314 peace prayer quotes Pacem relinquo vobis, pacem meam do vobis; rubrical statement omits prior prayer and pax in Requiem.",
+          "humanReadableImageChecked": true,
+          "fullLiturgicalParagraphIndependentlySecondWitnessCertified": false,
+          "originalFullAppPublicationCertified": false,
+          "witnessSpecificRisks": [
+            "Third-party scan host is ideologically polemical; ignore surrounding editorial material and do not treat host as publisher or ecclesiastical authority.",
+            "Page 306 displays a *physical pasted insertion* mentioning St Joseph, not uninterrupted original 1962 typesetting. St Joseph printed-baseline/1962 decree must be independently sourced.",
+            "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
+          ],
+          "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        }
       }
     }
   ]
