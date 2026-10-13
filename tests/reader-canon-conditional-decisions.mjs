@@ -84,6 +84,42 @@ assert.equal(r("AO.SM.C0207","LOW").actor,"MINISTERS");
 const french=sources.frenchReview.rows;
 const formula=french.find(x=>x.id==="AO.CANON.R62.004");
 assert.match(formula.revisedFrenchRubric,/siège local est vacant/);
+// 1962 source-precision audit: preserve actual gesture ordering, distinct
+// pontifical/diocesan exceptions, small vs major elevations, and hand/voice
+// ownership at the end of the Canon. These remain draft-only.
+const getCopy=n=>french.find(x=>x.id==="AO.CANON.R62."+n).revisedFrenchRubric;
+const sourceAudit=read("../data/research/mass-canon-62-source-trigger-audit-20261013.json");
+for(const [number,cue,ritus] of [
+ ["001","AO.SM.C0150","VIII.1"],["004","AO.SM.C0153","VIII.1–2"],
+ ["028","AO.SM.C0175","VIII.7"],["058","AO.SM.C0204","IX.3"],
+ ["060","AO.SM.C0206","X.1"],
+]){
+ const action=sourceAudit.rows.find(x=>x.id==="AO.CANON.R62."+number);
+ assert.equal(action.cueId,cue);
+ assert.equal(action.rubricSource,ritus);
+ assert.ok(action.directSourceUrls.length>0);
+ assert.equal(french.find(x=>x.id===action.id).reviewState,
+  "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
+}
+assert.match(getCopy("001"),/étend les mains et les élève légèrement/);
+assert.match(getCopy("001"),/puis les baisse aussitôt/);
+assert.match(getCopy("001"),/Il joint alors les mains, les pose sur l’autel/);
+assert.match(getCopy("004"),/pape, sauf si le Siège apostolique est vacant/);
+assert.match(getCopy("004"),/mention de l’ordinaire est omise/);
+assert.match(getCopy("004"),/si la messe est célébrée à Rome/);
+assert.match(getCopy("004"),/évêque, archevêque ou patriarche/);
+assert.match(getCopy("004"),/si le pape célèbre, il remplace les deux mentions/);
+assert.match(getCopy("028"),/le diacre le découvre lorsque cela est nécessaire/);
+assert.match(getCopy("028"),/accipiens et hunc præclarum Calicem/);
+assert.match(getCopy("028"),/l’élève légèrement et le repose aussitôt/);
+assert.match(getCopy("028"),/ce n’est pas encore la grande élévation/);
+assert.match(getCopy("058"),/À « omnis honor et gloria »/);
+assert.match(getCopy("058"),/le calice avec l’Hostie tenue au-dessus/);
+assert.match(getCopy("058"),/Il s’agit de la petite élévation/);
+assert.match(getCopy("060"),/les pose de part et d’autre sur l’autel, à l’intérieur du corporal/);
+assert.match(getCopy("060"),/d’une voix intelligible/);
+assert.equal(french.filter(row=>row.editorialFlags.length>0).length,29);
+assert.equal(sources.frenchReview.displayPolicy.inTextApprovalRequired,true);
 const supplices=french.find(x=>x.id==="AO.CANON.R62.041");
 assert.match(supplices.revisedFrenchRubric,/il s’incline au milieu/);
 assert.doesNotMatch(supplices.revisedFrenchRubric,/s’incline profondément/);
