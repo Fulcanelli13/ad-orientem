@@ -16,7 +16,7 @@ export function validateCanonMinisterFormBranches(data){
      data.respondentAtC0207?.low?.sourceClock!=="MINISTER_RESPONSE" ||
      data.respondentAtC0207?.sung?.sourceClock!=="USER_RESPONSE" ||
      data.respondentAtC0207?.publication!=="RESEARCH_REVIEW_NOT_LIVE" ||
-     !Array.isArray(data.branches)||data.branches.length!==10)
+     !Array.isArray(data.branches)||data.branches.length!==11)
     throw new Error("1962 Canon minister form-branch source registry is incomplete");
   const ids=new Set();
   for(const event of data.branches){
@@ -48,6 +48,7 @@ export function validateCanonMinisterFormBranches(data){
     ["008","AO.SM.C0205","DEACON"],
     ["009","AO.SM.C0175","DEACON"],
     ["010","AO.SM.C0181","DEACON"],
+    ["011","AO.SM.C0205","DEACON"],
   ]);
   for(const [n,cue,actor] of exact){
     const row=data.branches.find(x=>x.id==="AO.CANON.MIN."+n);
@@ -83,7 +84,8 @@ export function createCanonMinisterFormReviewController({data=null}={}){
       condition:event.condition,
       conditionVerified:event.condition!=="WHEN_REQUIRED" ||
         conditions.has(event.id),
-      isObservedNow:observed.has(event.id),
+      isObservedNow:observed.has(event.id) &&
+        (event.condition!=="WHEN_REQUIRED" || conditions.has(event.id)),
       observedBy:"INDEPENDENT_MINISTER_EVENT_ONLY",
       publishable:false,
     })));
