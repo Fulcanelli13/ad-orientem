@@ -105,6 +105,13 @@ for(const [selected,form] of [
 }
 // EN/FR share the canonical cue and actor ownership. Language switching
 // must not turn conditional source ministers into the generic SUNG actor.
+// A bilingual *test-only* Proper fixture is used here: its French strings
+// are placeholders, NOT approved translations or production Proper data.
+const frenchSpeakerProper=Object.fromEntries(Object.entries(proper).map(([key,value])=>{
+  const row=v=>v&&typeof v==="object"&&v.lat&&v.en
+    ?{...v,fr:"FR TEST · "+v.en}:v;
+  return [key,Array.isArray(value)?value.map(row):row(value)];
+}));
 for(const [form,enModel] of [
   ["LOW",lowModel],
   ["MISSA_CANTATA_SIMPLE",simpleCantataSpeakerModel],
@@ -114,7 +121,8 @@ for(const [form,enModel] of [
   const frModel=createMassReaderModel({
     resolvedMass:{...base,form,
       presentationMode:form==="LOW"?"SIMPLE":"LIVE",
-      overlays:form==="LOW"?[]:base.overlays},
+      overlays:form==="LOW"?[]:base.overlays,
+      proper:{...base.proper,data:frenchSpeakerProper}},
     sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
     frenchOrdinary,vernacularLanguage:"fr",
   });
