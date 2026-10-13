@@ -73,7 +73,14 @@
     "classIDatesCertifiedAestheticallyComplete": 0,
     "existingLibraryExistingOriginalCandidatesAdditionallyScreened": 14,
     "newlyAddedExternalArtworkRecords": 0,
-    "newArtworkDownloads": 0
+    "newArtworkDownloads": 0,
+    "existingLibraryMainVisualScreenCount": 79,
+    "classIDatesWithProvisionalArtStatus": 53,
+    "classIThemesWithStrongExistingAppropriate": 9,
+    "classIThemesWithStrongContextualReuse": 3,
+    "classIThemesWithSeparateArchivedReviewSource": 1,
+    "classIThemesWithSecondaryOnly": 8,
+    "classIThemesWithoutSuitableHero": 6
   },
   "firstClassDays": [
     {
@@ -1774,7 +1781,8 @@
     "2026 Class I dates reflect observed 1962 local-date calendar (includes repeat octaves and Sundays). Different years move; derive dates dynamically.",
     "St Joseph Workman and St Joseph March 19 may share Joseph subject when artistic and liturgical fit permits; do not mislabel a secular workshop painting as a specific Mass episode.",
     "All Saints and All Souls are distinct subject themes despite neighbouring dates.",
-    "2026-10-13: additionally examined 14 already-acquired registry originals via source-complete 266-item atlas thumbnails for high-priority weak Class I feast themes. These are visually provisional candidates, no new app release or user override. Further high-quality full image review required."
+    "2026-10-13: additionally examined 14 already-acquired registry originals via source-complete 266-item atlas thumbnails for high-priority weak Class I feast themes. These are visually provisional candidates, no new app release or user override. Further high-quality full image review required.",
+    "The visual batch intentionally downgraded source-only recommendations for Salomon de Bray Pentecost, van Balen Trinity and Ricci Last Supper after examining phone-sized full artwork previews. These source records remain archived; no weak painting auto-selected."
   ],
   "existingLibraryAlternativesScreened": [
     {
@@ -2005,5 +2013,14 @@
       "target": "devotion.precious-blood",
       "reason": "No distinctly qualified selected artwork in the baseline. A grave Crucifixion can be reused as a related devotional work if expressly labelled contextual."
     }
-  ]
+  ],
+  "currentVisualBatch": {
+    "date": "2026-10-13",
+    "existingLibraryScreen": "data/calendar/sacred-art-existing-library-phone-visual-screen-20261013.v1.json",
+    "classIDateMatrix": "data/calendar/sacred-art-class-i-existing-image-matrix-20261013.v1.json",
+    "previewedSource": "266 existing mobile-previews from sacred-art-complete-curator-atlas",
+    "newArtworkAcquired": 0,
+    "newProductionSelections": 0,
+    "status": "79_ARTWORKS_SCREENED_CLASS_I_MAPPING_COMPLETE_AS_RESEARCH_USER_FINAL_APPROVAL_PENDING"
+  }
 }
