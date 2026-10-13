@@ -1,5 +1,6 @@
 # Sacred Art — recovered paintings, cross-module selection (13 October 2026)
 
+> **ARTISTIC PRIORITY CORRECTION — 13 October 2026:** Earlier labels such as *primary*, *preferred*, *priority*, and *shortlist* in this historical research report describe object/subject research leads, **not current beauty-first recommendations or user approvals**. Apply the [binding aesthetic reset](SACRED-ART-AESTHETIC-RESET-20261013.md): Ribalta / Rubens / Lanfranco / Navarrete benchmark first; no reinstatement of previously rejected Velázquez options; source/rights/phone clarity cannot compensate for mediocre sacred art. The current 101 selected subjects are unchanged.\n\n
 **Draft PR #887, `platform/885-sacred-art-candidates`. No production publication or new user approval.**
 
 The physical originals previously acquired are the priority. The existing canonical artwork research registry contains 266 SHA-acquired originals; its 134 outstanding subject list now has 59 specific reuse associations from 50 artworks across 27 research subjects. The current 101 user-chosen subjects remain immutable. The previous 35 historically accepted source originals are preserved as another asset pool.
