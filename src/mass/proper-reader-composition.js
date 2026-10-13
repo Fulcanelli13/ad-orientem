@@ -65,17 +65,29 @@ function languageKey(language){
   return String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
 }
 
-export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs, {language="en"}={}) {
+export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs, {language="en",form="SUNG"}={}) {
   if (!Array.isArray(resolvedProperParagraphs) || resolvedProperParagraphs.length === 0) {
     throw new TypeError("Resolved Proper paragraphs required");
   }
   const locale=languageKey(language);
+  const low=String(form??"").toUpperCase()==="LOW";
   const fixed=(PINNED_PROPER_FOLLOWUPS[String(blockId)] ?? []).map(row=>Object.freeze({
     ...row,
+    // The frozen Low source uses MINISTER_RESPONSE for exactly these fixed
+    // B019/B020/B026/B088 replies; Sung source uses USER_RESPONSE.
+    speakerRole:low&&row.kind==="RESPONSE"?"MINISTERS":row.speakerRole,
+    speakerEvidence:low&&row.kind==="RESPONSE"
+      ?"CANONICAL_LOW_MASS_MINISTER_RESPONSE_CLOCK":row.speakerEvidence,
     vernacular:row.vernacular?.[locale] ?? row.vernacular?.en ?? "",
   }));
   return Object.freeze([
-    ...resolvedProperParagraphs.map(x=>Object.freeze({...x})),
+    ...resolvedProperParagraphs.map(x=>Object.freeze({
+      ...x,
+      speakerRole:low&&x.kind==="RESPONSE"&&x.prayerRole==="ORATION_RESPONSE"
+        ?"MINISTERS":x.speakerRole,
+      speakerEvidence:low&&x.kind==="RESPONSE"&&x.prayerRole==="ORATION_RESPONSE"
+        ?"1962_LOW_MASS_INTERMEDIATE_ORATION_MINISTER_RESPONSE":x.speakerEvidence,
+    })),
     ...fixed,
   ]);
 }
