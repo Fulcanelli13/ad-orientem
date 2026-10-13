@@ -71,7 +71,7 @@ def main():
         assert payload["subjectInventory"]["counts"]["subjects"]==235
         assert payload["subjectInventory"]["counts"]["userSelectedSubjectPlacements"]==101
         assert payload["subjectInventory"]["counts"]["unsettledSubjectPlacements"]==134
-        assert len(payload["subjects"])==235 if "subjects" in payload else len(payload["subjectInventory"]["subjects"])==235
+        assert len(payload["subjectInventory"]["subjects"])==235
         assert "id=\"showSubjects\"" in content
         assert "id=\"subjectCards\"" in content
         assert "allSelectedAvailable=chosen.length===101" in content
