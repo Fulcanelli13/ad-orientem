@@ -10,20 +10,23 @@
     "subjectPlacementsUnjoined": 98,
     "sourceStatus": {
       "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 15,
-      "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION": 3,
-      "IDENTITY_SOURCE_MISSING": 26,
-      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 24,
+      "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION": 5,
+      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 26,
+      "IDENTITY_SOURCE_MISSING": 20,
+      "IN_SITU_MURAL_IDENTITY_VERIFIED_REPRODUCTION_PENDING": 2,
       "SOURCE_CUSTODIAN_LOCATION_VERIFIED_OBJECT_LINK_PENDING": 1,
       "OBJECT_URL_RECORDED_NEEDS_MASTER": 20,
       "VERIFY_EXACT_OBJECT_IDENTITY": 2
     },
     "benchmarkUrlsRecovered": 1,
     "verifiedInstitutionalObjectsThisWave": 20,
-    "institutionalObjectUrlKnownTotal": 44,
+    "institutionalObjectUrlKnownTotal": 46,
     "commonsSelectedOriginalReviewCandidates": 4,
     "commonsPoorCompositionMasterBlocked": 1,
     "exactInstitutionalOrCustodianIdentitiesNewlyChecked": 5,
-    "distinctArtistTitleAmbiguitiesExplicitlyRecorded": 3
+    "distinctArtistTitleAmbiguitiesExplicitlyRecorded": 3,
+    "newObjectIdentitiesThisAdditionalWave": 4,
+    "moreVersionAmbiguities": 2
   },
   "notes": [
     "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
@@ -35,7 +38,8 @@
     "15 selected artwork exact institutional identities resolved using Prado inventory numbers and Louvre object IDs. Browser search URLs replaced with immutable museum records; no original bytes, rights, user approval, or app assets changed.",
     "Five previously URL-less named selections have verified current museum object pages: Lanfranco NGI.72, Navarrete NGI.1721, Caravaggio Uffizi 4659 and Thyssen St Catherine, and Champaigne Louvre INV1125. Uncropped files are not in the source archive yet.",
     "Four exact Commons image titles selected for REVIEW-ONLY acquisition with pixel/dimension/rights evidence; includes Sailko CC BY 3.0 photograph, and excludes misleading high-pixel La Petite Cène image with incorrect aspect ratio.",
-    "Additional subject-preserving exact museum identities and multiple-version ambiguity research: Musée de Picardie Gérôme, Mauritshuis 253, KMSKA 314, LACMA M.88.177, Cappuccini Rome Reni original location; van Dyck Lamentation, Bruegel Babel, and Rubens Ignatius explicitly marked as ambiguous and not silently identified by title alone."
+    "Additional subject-preserving exact museum identities and multiple-version ambiguity research: Musée de Picardie Gérôme, Mauritshuis 253, KMSKA 314, LACMA M.88.177, Cappuccini Rome Reni original location; van Dyck Lamentation, Bruegel Babel, and Rubens Ignatius explicitly marked as ambiguous and not silently identified by title alone.",
+    "Verified KMSKA current Van Dyck attribution of 'Le Coup de Lance' #297 and Prado Ribera Jacob's Dream P001117; two Delacroix chosen subjects are IN SITU murals, not interchangeable with preparatory studies. Flagged original-version ambiguity in Caravaggio David and Jouvenet Lazarus."
   ],
   "works": [
     {
@@ -333,14 +337,21 @@
         "ROS-10"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://kmska.be/en/masterpiece/christ-on-the-cross-le-coup-de-lance-0",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://kmska.be/en/masterpiece/christ-on-the-cross-le-coup-de-lance-0",
+      "institutionalObjectId": "KMSKA 297",
+      "verifiedMedium": "oil on panel",
+      "sourceIdentityNote": "1620, 429.6 × 310 cm. Current institutional attribution Van Dyck, historical Rubens debate; exact IIIF v3 manifest https://iiif.kmska.be/iiif/3/301/manifest.json. No artwork substituted.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-artolom-steban-urillo-aint-sidore-of-eville",
@@ -370,11 +381,35 @@
       "recordedSourceUrl": null,
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION",
+      "action": "PRESERVE_CHOSEN_ARTWORK_ID_UNTIL_EXACT_ORIGINAL_VERSION_IDENTIFIED",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "competingInstitutionalOriginals": [
+        {
+          "source": "https://www.collezionegalleriaborghese.it/en/opere/david-with-the-head-of-goliath",
+          "institution": "Galleria Borghese inv 455",
+          "artist": "Caravaggio",
+          "date": "1606–07 or 1609–10",
+          "medium": "oil on canvas"
+        },
+        {
+          "source": "https://www.khm.at/en/",
+          "institution": "Kunsthistorisches Museum Vienna",
+          "artist": "Caravaggio",
+          "date": "c.1607",
+          "medium": "oil on canvas"
+        },
+        {
+          "source": "https://www.museodelprado.es/en/the-collection/",
+          "institution": "Museo del Prado",
+          "artist": "Caravaggio composition documented",
+          "date": "earlier version",
+          "medium": "oil painting"
+        }
+      ],
+      "imageAcquired": false
     },
     {
       "editorialArtworkId": "ART-aravaggio-nspiration-of-aint-atthew",
@@ -496,14 +531,21 @@
         "BIB-XL15"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://www.paris.fr/pages/retrouvez-les-splendeurs-de-delacroix-a-la-chapelle-des-saints-anges-de-saint-sulpice-4241",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "IN_SITU_MURAL_IDENTITY_VERIFIED_REPRODUCTION_PENDING",
+      "action": "SOURCE_ORIGINAL_MURAL_IN_SITU_VERIFY_RIGHTS_AND_COMPOSITION",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://www.paris.fr/pages/retrouvez-les-splendeurs-de-delacroix-a-la-chapelle-des-saints-anges-de-saint-sulpice-4241",
+      "institutionalObjectId": "Saint-Sulpice west wall, Chapel of Holy Angels",
+      "verifiedMedium": "wall mural painting",
+      "sourceIdentityNote": "Original mural in situ, completed 1861. NOT Louvre drawing study or movable oil-on-canvas. Requires faithful architectural-context-free frontal reproduction and permissions.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-ug-ne-elacroix-acob-restling-with-the-ngel",
@@ -513,14 +555,21 @@
         "BIB-PA08"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://www.paris.fr/pages/retrouvez-les-splendeurs-de-delacroix-a-la-chapelle-des-saints-anges-de-saint-sulpice-4241",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "IN_SITU_MURAL_IDENTITY_VERIFIED_REPRODUCTION_PENDING",
+      "action": "SOURCE_ORIGINAL_MURAL_IN_SITU_VERIFY_RIGHTS_AND_COMPOSITION",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://www.paris.fr/pages/retrouvez-les-splendeurs-de-delacroix-a-la-chapelle-des-saints-anges-de-saint-sulpice-4241",
+      "institutionalObjectId": "Saint-Sulpice east wall, Chapel of Holy Angels",
+      "verifiedMedium": "wall mural painting",
+      "sourceIdentityNote": "Original mural in situ, completed 1861, east wall. NOT preparatory oil-on-paper at Metropolitan Museum, not engraving or shrine snapshot.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
@@ -633,11 +682,28 @@
       "recordedSourceUrl": null,
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "MULTIPLE_ORIGINAL_VERSIONS_REQUIRE_CHOSEN_COMPOSITION",
+      "action": "PRESERVE_CHOSEN_ARTWORK_ID_UNTIL_EXACT_ORIGINAL_VERSION_IDENTIFIED",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "competingInstitutionalOriginals": [
+        {
+          "source": "https://collections.louvre.fr/en/ark:/53355/cl010060569",
+          "institution": "Musée du Louvre INV 5489",
+          "artist": "Jean Jouvenet",
+          "date": "1706",
+          "medium": "oil canvas 388×664 cm"
+        },
+        {
+          "source": "https://collections.lacma.org/object/103873",
+          "institution": "LACMA M.2000.179.4",
+          "artist": "Jean Jouvenet",
+          "date": "circa 1711",
+          "medium": "oil canvas 99.4×161.3 cm"
+        }
+      ],
+      "imageAcquired": false
     },
     {
       "editorialArtworkId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
@@ -673,14 +739,21 @@
         "BIB-PA07"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://www.museodelprado.es/en/whats-on/multimedia/jacobs-dream-jusepe-de-ribera/05b9379d-0e43-99fa-02d6-b27d562974cc",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://www.museodelprado.es/en/whats-on/multimedia/jacobs-dream-jusepe-de-ribera/05b9379d-0e43-99fa-02d6-b27d562974cc",
+      "institutionalObjectId": "Prado P001117",
+      "verifiedMedium": "oil on canvas",
+      "sourceIdentityNote": "1639, 179×233cm, museum-authenticated Ribera original. Reference is museum's artwork explanation, not exact individual painting-object permalink; acquisition pending.",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "identityVerifiedOn": "2026-10-13"
     },
     {
       "editorialArtworkId": "ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
@@ -1903,5 +1976,5 @@
       "sourceNeedsByteAndLicenceValidation": true
     }
   ],
-  "latestSourceWave": "25 source-missing/search-selected artwork identities/custodians newly evidenced, 3 competing-version holds; original-image acquisition blocked by Wikimedia Commons HTTP 429 on 2026-10-13 run."
+  "latestSourceWave": "31 selected artworks originally without usable identity have now been worked on (exact museum/custodian IDs or explicit version ambiguity); Wikimedia Commons direct acquisition blocked HTTP429."
 }
