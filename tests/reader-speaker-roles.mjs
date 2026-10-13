@@ -46,6 +46,42 @@ for(const [cue,role,marker] of [
   assert.equal(correctSungPreparatoryAmen(cue,sungUnits.get(cue).latin),marker+" Amen.");
   assert.equal(correctSungPreparatoryAmen(cue,lowUnits.get(cue).latin,{form:"LOW"}),lowUnits.get(cue).latin);
 }
+// Four alternating Psalm 42 lines are typed responses, not an undifferentiated
+// PUBLIC_TEXT paragraph. Keep their exact M. prefix for server ownership.
+for(const cue of ["AO.SM.C0005","AO.SM.C0007","AO.SM.C0009","AO.SM.C0011"]){
+  for(const [form,units] of [["LOW",lowUnits],["SUNG",sungUnits]]){
+    const source=units.get(cue);
+    const line=resolveOrdinarySpeaker(source,{form,blockId:"AO.SM.B003"});
+    assert.equal(line.role,"MINISTERS",form+" / "+cue+" incorrect Psalm 42 speaker");
+    assert.equal(line.kind,"RESPONSE",form+" / "+cue+" Psalm 42 must be a response");
+    assert.ok(String(source.latin).startsWith("M. "),form+" / "+cue+" missing original minister initial");
+  }
+}
+
+for(const cue of ["AO.SM.C0045","AO.SM.C0047","AO.SM.C0049","AO.SM.C0051"]){
+  const lowLine=resolveOrdinarySpeaker(lowUnits.get(cue),{form:"LOW",blockId:"AO.SM.B015"});
+  const sungLine=resolveOrdinarySpeaker(sungUnits.get(cue),{form:"SUNG",blockId:"AO.SM.B015"});
+  assert.equal(lowLine.role,"MINISTERS",cue+" Low Mass Kyrie must be assigned to the server");
+  assert.equal(lowLine.kind,"RESPONSE",cue+" Low Mass Kyrie should be typed as a response");
+  assert.equal(sungLine.role,"SCHOLA",cue+" sung Kyrie must retain independent schola ownership");
+  assert.notEqual(sungLine.kind,"RESPONSE",cue+" sung choir part is not a server dialogue");
+}
+// Low Mass Gospel is proclaimed by the celebrant and the Low
+// dismissal is his, whereas Solemn Gospel/dismissal are minister roles.
+for(const cue of ["AO.SM.C0082","AO.SM.C0084","AO.SM.C0259"]){
+  const lowLine=resolveOrdinarySpeaker(lowUnits.get(cue),{
+    form:"LOW",blockId:cue==="AO.SM.C0259"?"AO.SM.B090":
+      cue==="AO.SM.C0082"?"AO.SM.B024":"AO.SM.B025",
+  });
+  assert.equal(lowLine.role,"PRIEST",cue+" low celebrant ownership lost");
+}
+assert.equal(resolveOrdinarySpeaker(sungUnits.get("AO.SM.C0082"),{
+  form:"SUNG",blockId:"AO.SM.B024",
+}).role,"GOSPEL_PROCLAIMER");
+assert.equal(resolveOrdinarySpeaker(sungUnits.get("AO.SM.C0259"),{
+  form:"SUNG",blockId:"AO.SM.B090",
+}).role,"DISMISSAL_MINISTER");
+
 for(const cue of SUNG_ORDINARY_INTONATION_CUES){
   assert.equal(resolveOrdinarySpeaker(sungUnits.get(cue)).role,"PRIEST",cue+": celebrant intonation misowned");
 }

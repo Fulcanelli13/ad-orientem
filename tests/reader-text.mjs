@@ -30,6 +30,43 @@ for(const corpus of [low,sung]){
   }
 }
 
+// Canonical 1962 temporal order gates: the reader must never move a
+// Proper prayer, its introductory versicle, or its respondent into a
+// neighbouring liturgical moment. Check BOTH source families independently.
+const liturgicalCheckpoints=[
+  "B017","B018","B019","B020", // Collect dialogue, Collects, Epistle
+  "B023","B024","B025","B026","B096","B027", // Gospel, homily, Credo
+  "B028","B029","B030","B039","B040","B041","B042", // Offertory/Secrets/Preface
+  "B045","B046","B047","B052","B053","B060","B061", // Preface/Canon
+  "B062","B063","B064","B065","B066","B068", // Pater to Agnus
+  "B073","B074","B075","B076","B080","B081","B082", // Both communions
+  "B083","B084","B085","B086","B087","B088", // Ablutions, antiphon, Postcommunions
+  "B089","B090","B091","B092","B093","B094","B095", // Dismissal to Last Gospel
+];
+for(const corpus of [low,sung]){
+  const blocks=new Map(corpus.blocks.map(x=>[x.Block_ID,x]));
+  let last=-Infinity;
+  for(const shortId of liturgicalCheckpoints){
+    const id="AO.SM."+shortId,block=blocks.get(id);
+    assert.ok(block,corpus.form+" missing essential liturgical section "+id);
+    assert.ok(block.Display_Order>last,
+      corpus.form+" Mass section out of order at "+id);
+    last=block.Display_Order;
+  }
+  const secretEnd=blocks.get("AO.SM.B041").units;
+  assert.match(secretEnd[0].latin,/Per ómnia sæcula sæculórum/u);
+  assert.equal(secretEnd[1].latin,"℟. Amen.");
+  assert.ok(/RESPONSE/.test(secretEnd[1].clock),
+    "the final Secret Amen must be an actual minister/faithful response");
+  const collectResponse=blocks.get("AO.SM.B019").units.at(-1);
+  const postcommunionResponse=blocks.get("AO.SM.B088").units
+    .find(u=>u.cue_id==="AO.SM.C0255");
+  assert.ok(/RESPONSE/.test(collectResponse.clock),
+    "Collect must conclude with its own response");
+  assert.ok(/RESPONSE/.test(postcommunionResponse.clock),
+    "Postcommunion must conclude with its own response");
+}
+
 assert.equal(selectReaderTextCorpus({form:"LOW",lowCorpus:low,sungCorpus:sung}).family,"LOW");
 assert.equal(selectReaderTextCorpus({form:"MISSA_CANTATA_SIMPLE",lowCorpus:low,sungCorpus:sung}).family,"SUNG");
 assert.equal(selectReaderTextCorpus({form:"SOLEMN",lowCorpus:low,sungCorpus:sung}).family,"SUNG");
@@ -83,6 +120,14 @@ const introit=buildReaderSectionCard({
 assert.ok(introit.paragraphs.some(p=>p.primary==="ENGLISH INTROIT"),"resolved Proper was not inserted");
 assert.ok(!introit.paragraphs.some(p=>/Salus p[oó]puli/i.test(p.primary)),"donor-date Introit leaked into generic card");
 
+const collectSourceCard=buildReaderSectionCard({
+  corpus:sung,section:sections.sectionById("AO.CARD.004"),properSlots,
+});
+const primaryCollect=collectSourceCard.paragraphs.find(p=>p.primary==="ENGLISH COLLECT_SET");
+assert.ok(primaryCollect,"canonical Collect Proper not found");
+assert.equal(primaryCollect.sourceAnchorCueId,"AO.SM.C0073",
+  "principal Collect lost canonical source cue anchor");
+
 const epistleCard=buildReaderSectionCard({
   corpus:sung,
   section:sections.sectionById("AO.CARD.005"),
@@ -93,6 +138,25 @@ assert.ok(epistleCard.paragraphs.some(p=>
   /Deo grátias/.test(p.primary) &&
   /Thanks be to God/.test(p.secondary??"")
 ), "fixed Deo gratias follow-up disappeared behind Proper replacement");
+
+// The published Low donor records MINISTER_RESPONSE, not a generic
+// congregational voice, for the replies to Collect, Lesson, Gospel and
+// Postcommunion. Sung keeps its distinct USER_RESPONSE ownership.
+for(const [corpus,expectedRole] of [[low,"MINISTERS"],[sung,"RESPONDERS"]]){
+  for(const [cardId,cueId] of [
+    ["AO.CARD.004","AO.SM.C0074"],
+    ["AO.CARD.005","AO.SM.C0076"],
+    ["AO.CARD.007","AO.SM.C0087"],
+    ["AO.CARD.027","AO.SM.C0255"],
+  ]){
+    const card=buildReaderSectionCard({corpus,section:sections.sectionById(cardId),properSlots});
+    const paragraph=card.paragraphs.find(p=>p.id===cueId);
+    assert.ok(paragraph,corpus.form+" missing fixed Proper reply "+cueId);
+    assert.equal(paragraph.kind,"RESPONSE",corpus.form+" lost reply classification "+cueId);
+    assert.equal(paragraph.speakerRole,expectedRole,
+      corpus.form+" mislabels fixed Proper reply "+cueId);
+  }
+}
 
 const gospelCard=buildReaderSectionCard({
   corpus:sung,

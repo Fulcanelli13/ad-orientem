@@ -3,6 +3,15 @@
 // intonation may span a PUBLIC_TEXT cue and a SCHOLA_PUBLIC donor cue.
 // This layer never alters canonical cues, event timing or source text.
 const EXPLICIT=Object.freeze({
+  // Psalm 42 is an actual antiphonal priest/minister dialogue. The immutable
+  // donor labels these M. lines as PUBLIC_TEXT, which identifies audibility
+  // but wrongly leaves them styled as the celebrant's own prayer text.
+  // Preserve their printed M. initials; classify these exact four lines as
+  // responses for reader typography, language policy and future cue gestures.
+  "AO.SM.C0005":Object.freeze({role:"MINISTERS",evidence:"1962_PSALM42_ALTERNATING_MINISTER_VERSE",kind:"RESPONSE"}),
+  "AO.SM.C0007":Object.freeze({role:"MINISTERS",evidence:"1962_PSALM42_ALTERNATING_MINISTER_VERSE",kind:"RESPONSE"}),
+  "AO.SM.C0009":Object.freeze({role:"MINISTERS",evidence:"1962_PSALM42_ALTERNATING_MINISTER_VERSE",kind:"RESPONSE"}),
+  "AO.SM.C0011":Object.freeze({role:"MINISTERS",evidence:"1962_PSALM42_ALTERNATING_MINISTER_VERSE",kind:"RESPONSE"}),
   // Exact speaker initials preserved in the 1962 Low Mass text witness;
   // the Sung donor omitted those initials on these opening dialogues.
   "AO.SM.C0001":Object.freeze({role:"PRIEST",evidence:"LOW_MASS_DIALOGUE_PREFIX",prefix:"S."}),
@@ -61,10 +70,33 @@ const VERSICLE_ACTORS=Object.freeze({
   "AO.SM.B024":"GOSPEL_PROCLAIMER",
   "AO.SM.B090":"DISMISSAL_MINISTER",
 });
+// Low Mass server responds in the alternating ninefold Kyrie. The same
+// source cue IDs belong to the schola in Sung Mass, so this cannot be a
+// cross-form override or a mutation of the frozen Ordinary source.
+// At Low Mass the celebrant, not a deacon or other proclaiming
+// minister, says the Gospel versicle/proclamation and dismissal. The
+// sung corpus still uses a form-sensitive minister owner for Solemn
+// versus Missa Cantata and must not be over-labelled as a priest.
+const LOW_CELEBRANT_OWNED_PUBLIC_CUES=new Set([
+  "AO.SM.C0082","AO.SM.C0084","AO.SM.C0259"
+]);
+const LOW_KYRIE_MINISTER_RESPONSE_CUES=new Set([
+  "AO.SM.C0045","AO.SM.C0047","AO.SM.C0049","AO.SM.C0051"
+]);
 export const SUNG_ORDINARY_INTONATION_CUES=Object.freeze(["AO.SM.C0053","AO.SM.C0054","AO.SM.C0089","AO.SM.C0090"]);
 
 export function resolveOrdinarySpeaker(unit,{form="SUNG",blockId=null}={}){
   const cueId=String(unit?.cue_id??"");
+  if(String(form).toUpperCase()==="LOW" &&
+     LOW_CELEBRANT_OWNED_PUBLIC_CUES.has(cueId)){
+    return Object.freeze({role:"PRIEST",
+      evidence:"1962_LOW_MASS_CELEBRANT_GOSPEL_OR_DISMISSAL"});
+  }
+  if(String(form).toUpperCase()==="LOW" &&
+     LOW_KYRIE_MINISTER_RESPONSE_CUES.has(cueId)){
+    return Object.freeze({role:"MINISTERS",kind:"RESPONSE",
+      evidence:"1962_LOW_MASS_ALTERNATING_KYRIE"});
+  }
   const override=EXPLICIT[cueId];
   if(override)return override;
   const text=String(unit?.latin??"").trim();

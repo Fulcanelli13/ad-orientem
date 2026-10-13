@@ -266,6 +266,8 @@ const SHELL_STYLE = `
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-primary,
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-secondary{white-space:pre-line}
 .ao-speaker-turn{display:block;margin:0 0 6px;font:650 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
+.ao-oration-label{display:block;margin:0 0 7px;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.055em;color:var(--ao-mass-accent-text)}
+.ao-reader-shell[data-mode="MISSAL"] .ao-oration-label{grid-column:1 / -1}
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-speaker-turn{display:none}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:14px;border-left:2px solid rgba(200,217,233,.50);color:#dbe5ee}
 .ao-ritual-trigger{border-radius:.18em;background:linear-gradient(transparent 72%,color-mix(in srgb,var(--ao-mass-accent) 18%,transparent) 72%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
@@ -1070,6 +1072,10 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       active:p.active === true,
       speakerRole:p.speakerRole??null,
       speakerEvidence:p.speakerEvidence??null,
+      liturgicalGroup:p.liturgicalGroup??null,
+      prayerRole:p.prayerRole??null,
+      sourcePath:p.sourcePath??null,
+      sourceAnchorCueId:p.sourceAnchorCueId??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
@@ -2501,12 +2507,26 @@ export function createReaderDomAdapter({
       if(doc?.createElement){
         let openingSet=false;
         let previousSpeakerRole=null;
+        const multiOration=current.paragraphs.filter(p=>p.prayerRole=== "PRINCIPAL_ORATION"||
+          p.prayerRole==="FIRST_COMMEMORATION"||p.prayerRole==="SECOND_COMMEMORATION"||
+          p.prayerRole==="ADDITIONAL_ORATION"||p.prayerRole==="ORATION_UNDER_ONE_CONCLUSION").length>1;
+        const frenchReader=String(prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr");
+        const orationLabels={
+          PRINCIPAL_ORATION:frenchReader?"Oraison principale":"Principal prayer",
+          ADDITIONAL_ORATION:frenchReader?"Commémoraison":"Commemoration",
+          FIRST_COMMEMORATION:frenchReader?"Première commémoraison":"First commemoration",
+          SECOND_COMMEMORATION:frenchReader?"Deuxième commémoraison":"Second commemoration",
+          ORATION_UNDER_ONE_CONCLUSION:frenchReader?"Oraison à conclusion commune":"Prayer under one conclusion",
+        };
         const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
         for(const p of current.paragraphs){
           const node=doc.createElement("p");
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
           if(p.speakerRole)node.dataset.speakerRole=p.speakerRole;
+          if(p.liturgicalGroup)node.dataset.liturgicalGroup=p.liturgicalGroup;
+          if(p.prayerRole)node.dataset.prayerRole=p.prayerRole;
+          if(p.sourceAnchorCueId)node.dataset.sourceAnchorCueId=p.sourceAnchorCueId;
           if([p.primary,p.secondary,p.alternate].some(value=>String(value??"").includes("\n")))
             node.dataset.chantPhrased="true";
           if(decorateThisSection&&!openingSet&&p.kind==="TEXT"&&/^\s*\p{L}/u.test(p.primary)){
@@ -2538,7 +2558,21 @@ export function createReaderDomAdapter({
                GOSPEL_PROCLAIMER:"Ministre de l'Évangile",DISMISSAL_MINISTER:"Ministre du renvoi"}
             : {PRIEST:"Priest",MINISTERS:"Servers",RESPONDERS:"Response",SCHOLA:"Schola",
                GOSPEL_PROCLAIMER:"Gospel minister",DISMISSAL_MINISTER:"Dismissal minister"};
-          if(speakerRole && speakerRole!==previousSpeakerRole && ownerLabels[speakerRole] &&
+          // Source-backed oration roles, not the card title, distinguish
+          // principal and additional prayers without repeating a large heading.
+          // A single unsupplemented prayer already has its card heading.
+          let orationCaption=null;
+          if(orationLabels[p.prayerRole] && (multiOration ||
+             p.prayerRole!=="PRINCIPAL_ORATION")){
+            orationCaption=doc.createElement("small");
+            orationCaption.className="ao-oration-label";
+            orationCaption.textContent=p.prayerRole==="ORATION_UNDER_ONE_CONCLUSION"&&
+              String(p.id).endsWith(".MISSION")
+                ?(frenchReader?"Pour les Missions":"For the Missions")
+                :orationLabels[p.prayerRole];
+            node.append(orationCaption);
+          }
+          if(!orationCaption && speakerRole && speakerRole!==previousSpeakerRole && ownerLabels[speakerRole] &&
              p.kind!=="RUBRIC" && !/^(?:[SMVR]\.|℣\.|℟\.)\s*/u.test(String(p.primary??""))){
             const speakerTag=doc.createElement("small");
             speakerTag.className="ao-speaker-turn";

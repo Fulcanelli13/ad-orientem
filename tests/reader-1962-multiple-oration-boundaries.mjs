@@ -124,4 +124,50 @@ for(const lang of ["en","fr"]){
   content("COLLECT_SET",mapped,lang);
   assert.equal(JSON.stringify(parent),snapshot);
 }
+// The speaker of the canonical and intermediate responses is source-form
+// dependent: the Low donor uses MINISTER_RESPONSE, Sung USER_RESPONSE.
+for(const [form,actor] of [["LOW","MINISTERS"],["SUNG","RESPONDERS"]]){
+  const bilingual=properToReaderSlots(proper({
+    collects:[t("first"),t("second")],
+    secrets:[t("first"),t("second")],
+    postcommunions:[t("first"),t("second")],
+  }),{language:"fr"});
+  const collect=composeProperReaderParagraphs("AO.SM.B019",
+    bilingual.slots.COLLECT_SET.data.paragraphs,{language:"fr",form});
+  assert.equal(collect.find(p=>p.id.endsWith(".AMEN")).speakerRole,actor,
+    form+" intermediate Collect Amen actor incorrect");
+  assert.equal(collect.find(p=>p.id==="AO.SM.C0074").speakerRole,actor,
+    form+" final Collect Amen actor incorrect");
+  const post=composeProperReaderParagraphs("AO.SM.B088",
+    bilingual.slots.POSTCOMMUNION_SET.data.paragraphs,{language:"fr",form});
+  assert.equal(post.find(p=>p.id==="AO.SM.C0255").speakerRole,actor,
+    form+" Postcommunion response actor incorrect");
+}
+
+const completeSecret={
+  lat:"Hæc sacra nobis, Dómine.\nPer Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+  en:"May these offerings please Thee.\nThrough our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+  fr:"Accueillez nos offrandes.\nPar Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.",
+};
+for(const language of ["en","fr"]){
+  const result=properToReaderSlots(proper({secrets:[completeSecret,completeSecret]}),{language});
+  assert.equal(result.ready,true,language+" certified double Secret unexpectedly unavailable");
+  const body=result.slots.SECRET_SET.data.paragraphs;
+  assert.equal(body.length,2);
+  assert.match(body[0].latin,/per ómnia sǽcula sæculórum\. Amen\.$/,
+    "first Secret's entire conclusion must stay private");
+  assert.doesNotMatch(body[1].latin,/per ómnia sǽcula sæculórum|Amen\.$/,
+    "last Secret duplicates the separately canonical B041 audible response");
+  assert.equal(body[1].secretConclusionBoundary,
+    "AUDIBLE_PER_OMNIA_IN_CANONICAL_B041");
+  assert.doesNotMatch(body[1].vernacular,
+    /world without end|Ainsi soit-il\.$/i,
+    language+" final Secret translated audible conclusion repeated");
+}
+const unpairedSecret=properToReaderSlots(proper({secrets:[{
+  ...completeSecret,fr:"Texte sans conclusion française.",
+}]}),{language:"fr"});
+assert.equal(unpairedSecret.slots.SECRET_SET.status,"MISSING",
+  "unpaired public Secret conclusion must fail closed");
+
 console.log("PASS: 1962 Collect/Postcommunion Oremus and intermediate Amen group boundaries, EN/FR; Secrets and single-conclusion exceptions preserved.");

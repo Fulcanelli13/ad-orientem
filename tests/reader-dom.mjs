@@ -90,6 +90,26 @@ expect(normalizeScholaSpeed(0.50)===0.45,"unknown Schola speed did not fail to d
 const donorDuration=scholaTickerDuration({viewportWidth:260,lineWidth:420,speed:0.45,isMobile:true});
 expect(donorDuration>=15000&&donorDuration<=120000,"Schola ticker duration escaped donor bounds");
 
+// An oration label must survive all the way to the real DOM moment model.
+const oration=normalizeReaderMoment({
+  id:"COLLECT_AUDIT",
+  paragraphs:[{
+    id:"COLLECT_SET.2",kind:"TEXT",
+    primary:"Collect of the commemoration",
+    speakerRole:"PRIEST",prayerRole:"ADDITIONAL_ORATION",
+    liturgicalGroup:"COLLECT_SET.2",sourcePath:"Sancti/10-11",
+    sourceAnchorCueId:"AO.SM.C0073",
+  }],
+});
+expect(oration.paragraphs[0].prayerRole==="ADDITIONAL_ORATION",
+  "Commemoration type was discarded before rendering");
+expect(oration.paragraphs[0].liturgicalGroup==="COLLECT_SET.2",
+  "Paragraph-level oration grouping was lost before gestures/rubrics");
+expect(oration.paragraphs[0].sourcePath==="Sancti/10-11",
+  "Commemoration source path was lost before the DOM");
+expect(oration.paragraphs[0].sourceAnchorCueId==="AO.SM.C0073",
+  "Proper canonical cue anchor disappeared before reader gestures/rubrics");
+
 const first=normalizeReaderMoment({
   id:"A",
   sectionTitle:"Credo",

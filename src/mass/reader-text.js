@@ -183,7 +183,7 @@ function stateOnlyBlock(block){
   );
 }
 
-function properParagraphs(block,properSlots,{language="en"}={}){
+function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
   const slot=block.Proper_Slot;
   const envelope=properSlots?.[slot] ?? null;
   if(envelope?.status==="NOT_APPLICABLE") return [];
@@ -199,11 +199,15 @@ function properParagraphs(block,properSlots,{language="en"}={}){
       vernacular:p.vernacular ?? p.english ?? p.en ?? null,
       // The Proper resolver identifies independently concluded prayer groups.
       // Preserve that identity for liturgically accurate Oremus/Amen insertion.
+      sourceAnchorCueId:p.sourceAnchorCueId??block.units?.[0]?.cue_id??null,
       orationGroupIndex:p.orationGroupIndex??null,
+      prayerRole:p.prayerRole??null,
+      speakerRole:p.speakerRole??null,
+      speakerEvidence:p.speakerEvidence??null,
       liturgicalGroup:p.liturgicalGroup??null,
       sourcePath:p.sourcePath??null,
     }));
-    return composeProperReaderParagraphs(block.Block_ID,resolved,{language})
+    return composeProperReaderParagraphs(block.Block_ID,resolved,{language,form})
       .map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
   }
   const latin=data.latin ?? data.Latin_Text ?? null;
@@ -211,10 +215,11 @@ function properParagraphs(block,properSlots,{language="en"}={}){
   if(!latin || !english) throw new Error(block.Block_ID+": Proper slot "+slot+" lacks bilingual resolved text");
   return composeProperReaderParagraphs(block.Block_ID,[{
     id:block.Block_ID+".proper",
+    sourceAnchorCueId:block.units?.[0]?.cue_id??null,
     kind:"TEXT",
     latin,
     vernacular:english,
-  }],{language}).map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
+  }],{language,form}).map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
 }
 
 export function buildReaderSectionCard({
@@ -241,7 +246,7 @@ export function buildReaderSectionCard({
       block.Proper_Slot && properSlots?.[block.Proper_Slot]?.status==="NOT_APPLICABLE"
     );
     const raw=block.Proper_Slot
-      ? properParagraphs(block,properSlots,{language:vernacularLanguage})
+      ? properParagraphs(block,properSlots,{language:vernacularLanguage,form:formFamily(corpus.form)})
       : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants,form:formFamily(corpus.form)});
     const stateOnly=stateOnlyBlock(block);
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {

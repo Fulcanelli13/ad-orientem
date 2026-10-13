@@ -65,13 +65,17 @@ function languageKey(language){
   return String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
 }
 
-export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs, {language="en"}={}) {
+export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs, {language="en",form="SUNG"}={}) {
   if (!Array.isArray(resolvedProperParagraphs) || resolvedProperParagraphs.length === 0) {
     throw new TypeError("Resolved Proper paragraphs required");
   }
   const locale=languageKey(language);
+  const low=String(form).toUpperCase()==="LOW";
   const fixed=(PINNED_PROPER_FOLLOWUPS[String(blockId)] ?? []).map(row=>Object.freeze({
     ...row,
+    speakerRole:low&&row.kind==="RESPONSE"?"MINISTERS":row.speakerRole,
+    speakerEvidence:low&&row.kind==="RESPONSE"
+      ?"CANONICAL_LOW_MASS_MINISTER_RESPONSE_CLOCK":row.speakerEvidence,
     vernacular:row.vernacular?.[locale] ?? row.vernacular?.en ?? "",
   }));
   // The first Oremus is already a canonical Ordinary cue (C0072/C0253).
@@ -95,7 +99,10 @@ export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs,
       rows.push(Object.freeze({
         id:stem+".AMEN",kind:"RESPONSE",
         latin:"℟. Amen.",vernacular:"℟. Amen.",
-        role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+        role:"FIXED_RESPONSE",speakerRole:low?"MINISTERS":"RESPONDERS",
+        speakerEvidence:low?"1962_LOW_MASS_INTERMEDIATE_ORATION_MINISTER_RESPONSE":
+          "1962_INTERMEDIATE_ORATION_RESPONDERS",
+        prayerRole:"ORATION_RESPONSE",liturgicalGroup:"R17.ORATION."+label+".G"+lastGroup,
         sourceCueIds:Object.freeze([]),sourceAnchorCueId:prayerAnchor,
         sourceRule:"1960_MISSAL_RUBRICS_436_437_505",
         displayOnly:true,
@@ -104,6 +111,7 @@ export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs,
         id:"R17.ORATION."+label+".G"+group+".OREMUS",kind:"VERSICLE",
         latin:"Orémus.",vernacular:locale==="fr"?"Prions.":"Let us pray.",
         role:"PRIEST",speakerRole:"PRIEST",
+        prayerRole:"ORATION_INVITATION",liturgicalGroup:"R17.ORATION."+label+".G"+group,
         sourceCueIds:Object.freeze([]),sourceAnchorCueId:prayerAnchor,
         sourceRule:"1960_MISSAL_RUBRICS_436_437_505",
         displayOnly:true,
