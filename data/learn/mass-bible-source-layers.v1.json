@@ -1,0 +1,693 @@
+{
+  "schema": "AO_MASS_BIBLE_SOURCE_LAYERS_V1",
+  "version": "2026-10-12-full-source-queue-batch-3",
+  "status": "EDITORIAL_STUDY_PREVIEW_NOT_1962_WORD_FOR_WORD_CERTIFIED",
+  "sourcePolicy": {
+    "missalRole": "1962 norm for liturgical wording; wording, variants and cited printed pages await original Latin collation",
+    "bibleRole": "Chapter/verse context checked against specified edition and numbering; Vulgate Psalm split/merge conventions and wording variants are explicit, not assumed equivalent to the 1962 printed Missal",
+    "properPolicy": "105 separately source-path-and-Latin-gated Proper identities live in the existing Mass Scripture Context; this study must never override actual readings",
+    "meaningPolicy": "Exact/adapted liturgical words, named Scripture figures, doctrinal analogy, typology and private meditations are separate evidence types",
+    "rightAndCanon": "No automatically published Bible edition text, no fabricated alignment to R17 LIVE 48 cards or historic Dujardin meditations; native Scripture button available only for 20 unambiguous contextual verse references (with precise source-page link); Vulgate Psalms and Proper examples are held",
+    "ourFatherVariant": "The photographed Benziger 1962 printed pp.310–311 give 'cotidianum' (scan chant syllables co-ti-di-a-num), an orthographic variant of 'quotidianum'; Clementine Matthew 6:11 has 'supersubstantialem'."
+  },
+  "liturgicalWitness": {
+    "name": "Missale Romanum 1962",
+    "url": "https://archive.org/details/sp07mr62-editio-typica"
+  },
+  "reviewHolds": [
+    {
+      "id": "H01",
+      "topic": "Fortescue 54 typology candidates",
+      "reason": "Historical comparison, paragraph-level author/original edition and 1962 boundary not certified",
+      "public": false
+    },
+    {
+      "id": "H02",
+      "topic": "Dujardin 22 meditative Christ-life scenes in Grimm XIII",
+      "reason": "Authorship is Fr Léopold J Dujardin, not St Alphonsus; textual locators and parallels not independently certified",
+      "public": false
+    },
+    {
+      "id": "H03",
+      "topic": "105 proper source paths, 195 reading slots",
+      "reason": "Existing scripture registries are supplemental; 0/100 printed page packets fully independently certified; use runtime source path and Latin incipit",
+      "public": false
+    },
+    {
+      "id": "H04",
+      "topic": "48 LIVE card matching",
+      "reason": "Source-first 48 presentation is not historical C01-C48 map; do not invent card IDs",
+      "public": false
+    }
+  ],
+  "rows": [
+    {
+      "id": "MB01",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Prayers at the foot of the altar",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "liturgicalCue": "Introibo ad altare Dei",
+      "scriptureReference": "Psalm 42:4 (Vulgate; 43:4 in most modern numbering)",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/psa042.htm"
+        }
+      ],
+      "reading": {
+        "en": "The altar verse comes from the Vulgate Psalm 42. Keep its Latin numbering distinct from modern English numbering.",
+        "fr": "Le verset de l’autel vient du psaume 42 de la Vulgate. Il correspond au psaume 43 dans de nombreuses éditions modernes."
+      },
+      "qualification": "NOT_A_FULL_PSALM_EDITION_MAPPING",
+      "group": "PREPARATION"
+    },
+    {
+      "id": "MB02",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Psalm Judica me",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "liturgicalCue": "Judica me, Deus",
+      "scriptureReference": "Psalm 42:1–5 (Vulgate; 43:1–5 modern)",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/psa042.htm"
+        }
+      ],
+      "reading": {
+        "en": "The preparatory psalm is a Psalm text, not an allegorical reconstruction of the Passion.",
+        "fr": "Le psaume préparatoire est un texte biblique, non une reconstitution allégorique de la Passion."
+      },
+      "qualification": "OMITTED_IN_SOME_LITURGICAL_CIRCUMSTANCES",
+      "group": "PREPARATION"
+    },
+    {
+      "id": "MB03",
+      "formationStage": "MF02",
+      "liturgicalMoment": "Confiteor",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "liturgicalCue": "Mea culpa",
+      "scriptureReference": "Luke 18:13",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/luk018.htm"
+        }
+      ],
+      "reading": {
+        "en": "The publican's plea for mercy supplies a biblical comparison for penitence; the Confiteor does not quote this entire verse.",
+        "fr": "La prière du publicain éclaire la pénitence, mais le Confiteor ne reproduit pas intégralement ce verset."
+      },
+      "qualification": "COMPARATIVE_NOT_LITURGICAL_CITATION",
+      "group": "PREPARATION",
+      "scriptureReaderRef": "Luke 18:13"
+    },
+    {
+      "id": "MB04",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Kyrie",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "liturgicalCue": "Kyrie eleison",
+      "scriptureReference": "Matthew 20:30–31",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/mat020.htm"
+        }
+      ],
+      "reading": {
+        "en": "The cry for mercy recurs in the Gospels. Do not assign the Greek litany to one single Gospel scene.",
+        "fr": "L’appel à la miséricorde apparaît dans les Évangiles. Le Kyrie n’est pas attribuable à une seule scène évangélique."
+      },
+      "qualification": "COMPARATIVE_NOT_SINGLE_EXACT_QUOTE",
+      "group": "PREPARATION",
+      "scriptureReaderRef": "Matthew 20:30–31"
+    },
+    {
+      "id": "MB05",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Gloria",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "liturgicalCue": "Gloria in excelsis Deo",
+      "scriptureReference": "Luke 2:14",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/luk002.htm"
+        }
+      ],
+      "reading": {
+        "en": "The opening of the Mass Gloria takes up the angels’ hymn of Luke 2:14, but the printed Vulgate reads 'Gloria in altissimis Deo', not the liturgical 'Gloria in excelsis Deo'. Only the opening is biblically related; the whole hymn is a later liturgical composition.",
+        "fr": "Le début du Gloria de la Messe reprend le cantique angélique de Luc 2,14, mais la Vulgate donne « Gloria in altissimis Deo », non la formule liturgique « Gloria in excelsis Deo ». Le reste appartient à une hymne liturgique plus développée."
+      },
+      "qualification": "ALTISSIMIS_VULGATE_VERSUS_EXCELSIS_MISSAL_NOT_WORD_FOR_WORD",
+      "group": "PREPARATION",
+      "scriptureReaderRef": "Luke 2:14"
+    },
+    {
+      "id": "MB06",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Epistle or Lesson",
+      "classification": "VARIABLE_PROPER_READING",
+      "liturgicalCue": "Lectio Epistolae / Lectio",
+      "scriptureReference": "1 Corinthians 12:2–11 (example: Pentecost X only)",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/1co012.htm"
+        }
+      ],
+      "reading": {
+        "en": "The lesson is determined by the selected Proper, not by a universal Mass timeline. This passage is an illustrative source-registered Sunday, not today's reading.",
+        "fr": "La leçon dépend du propre de la Messe choisie, non d’une chronologie universelle. Ce passage n’est qu’un exemple attesté, pas la lecture du jour."
+      },
+      "qualification": "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH",
+      "group": "WORD"
+    },
+    {
+      "id": "MB07",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Gospel",
+      "classification": "VARIABLE_PROPER_READING",
+      "liturgicalCue": "Sequentia sancti Evangelii",
+      "scriptureReference": "Luke 18:9–14 (example: Pentecost X only)",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/luk018.htm"
+        }
+      ],
+      "reading": {
+        "en": "The Gospel changes with the Proper. Runtime must first resolve the actual 1962 selection and Latin incipit.",
+        "fr": "L’Évangile varie selon le propre. Il faut d’abord résoudre la Messe de 1962 choisie et contrôler l’incipit latin."
+      },
+      "qualification": "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH",
+      "group": "WORD"
+    },
+    {
+      "id": "MB08",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Credo, Incarnation",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "liturgicalCue": "Et incarnatus est",
+      "scriptureReference": "John 1:14",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/joh001.htm"
+        }
+      ],
+      "reading": {
+        "en": "The Creed confesses the Word made flesh; John 1:14 supports the doctrine but is not a verbatim transcription of the Creed.",
+        "fr": "Le Credo professe que le Verbe s’est fait chair ; Jean 1,14 soutient la doctrine sans être le texte littéral du Credo."
+      },
+      "qualification": "NOT_VERBATIM_CREED_TEXT",
+      "group": "WORD",
+      "scriptureReaderRef": "John 1:14"
+    },
+    {
+      "id": "MB09",
+      "formationStage": "MF03",
+      "liturgicalMoment": "Lavabo",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "liturgicalCue": "Lavabo inter innocentes manus meas",
+      "scriptureReference": "Psalm 25:6–12 (Vulgate; 26:6–12 modern)",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/psa025.htm"
+        }
+      ],
+      "reading": {
+        "en": "The priest's handwashing Psalm has an identifiable Vulgate text; the ceremonial gesture and Psalm wording must not be conflated.",
+        "fr": "Le psaume du Lavabo est identifiable dans la Vulgate ; il faut distinguer le rite accompli des paroles du psaume."
+      },
+      "qualification": "VULGATE_PSALM_NUMBERING",
+      "group": "OFFERTORY"
+    },
+    {
+      "id": "MB10",
+      "formationStage": "MF03",
+      "liturgicalMoment": "Orate fratres",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "liturgicalCue": "Meum ac vestrum sacrificium",
+      "scriptureReference": "Romans 12:1",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/rom012.htm"
+        }
+      ],
+      "reading": {
+        "en": "The distinction between the priestly offering and the faithful's participation is liturgical; Romans 12:1 gives a related account of spiritual oblation, not the Mass prayer's wording.",
+        "fr": "La distinction des offrandes dans l’Orate fratres est liturgique ; Romains 12,1 concerne l’offrande spirituelle, sans être la source littérale de la prière."
+      },
+      "qualification": "THEOLOGICAL_CONNECTION_NOT_LITERAL",
+      "group": "OFFERTORY",
+      "scriptureReaderRef": "Romans 12:1"
+    },
+    {
+      "id": "MB11",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Sanctus",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "liturgicalCue": "Sanctus, Sanctus, Sanctus",
+      "scriptureReference": "Isaiah 6:3",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/isa006.htm"
+        }
+      ],
+      "reading": {
+        "en": "The threefold Sanctus draws upon Isaiah 6:3. The Clementine Vulgate reads 'Dominus, Deus exercituum', whereas the liturgical Sanctus reads 'Dominus Deus Sabaoth'. The wording is adapted, not a letter-for-letter quotation.",
+        "fr": "Le triple Sanctus vient d’Isaïe 6,3. La Vulgate clémentine donne « Dominus, Deus exercituum », tandis que le Sanctus liturgique dit « Dominus Deus Sabaoth ». Il s’agit d’une adaptation, non d’une citation littérale."
+      },
+      "qualification": "VULGATE_EXERCITUUM_VERSUS_LITURGICAL_SABAOTH",
+      "group": "CANON",
+      "scriptureReaderRef": "Isaiah 6:3"
+    },
+    {
+      "id": "MB12",
+      "formationStage": "MF01",
+      "liturgicalMoment": "Benedictus and Hosanna",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "liturgicalCue": "Benedictus qui venit in nomine Domini. Hosanna in excelsis",
+      "scriptureReference": "Matthew 21:9",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/mat021.htm"
+        }
+      ],
+      "reading": {
+        "en": "The acclamation recalls Christ's entry into Jerusalem. The liturgical text brings biblical phrases into the Sanctus.",
+        "fr": "L’acclamation rappelle l’entrée du Christ à Jérusalem. Le texte liturgique intègre ces expressions au Sanctus."
+      },
+      "qualification": "LITURGICAL_COMPOSITION",
+      "group": "CANON",
+      "scriptureReaderRef": "Matthew 21:9"
+    },
+    {
+      "id": "MB13",
+      "formationStage": "MF04",
+      "liturgicalMoment": "Te igitur intercessions",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "liturgicalCue": "pro Ecclesia tua sancta catholica",
+      "scriptureReference": "1 Timothy 2:1–2",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/1ti002.htm"
+        }
+      ],
+      "reading": {
+        "en": "Paul's appeal for intercessory prayer supplies context for the Canon's intercessions; it is not a transcription of Te igitur.",
+        "fr": "La recommandation paulinienne de prier pour tous éclaire les intercessions du Canon ; elle n’en est pas la transcription."
+      },
+      "qualification": "COMPARATIVE_NOT_EXACT_QUOTATION",
+      "group": "CANON",
+      "scriptureReaderRef": "1 Timothy 2:1–2"
+    },
+    {
+      "id": "MB14",
+      "formationStage": "MF05",
+      "liturgicalMoment": "Consecration of the Host",
+      "classification": "NARRATIVE_SCRIPTURE_CONNECTION",
+      "liturgicalCue": "Hoc est enim Corpus meum",
+      "scriptureReference": "1 Corinthians 11:23–26",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/1co011.htm"
+        }
+      ],
+      "reading": {
+        "en": "The Eucharistic institution is narrated by St Paul. The 1962 liturgical formula must be compared with its own Missal text, not silently replaced with the epistle.",
+        "fr": "Saint Paul rapporte l’institution de l’Eucharistie. Il ne faut pas substituer silencieusement le texte de l’épître à la formule liturgique du Missel."
+      },
+      "qualification": "NO_WORD_FOR_WORD_EQUIVALENCE",
+      "group": "CONSECRATION",
+      "scriptureReaderRef": "1 Corinthians 11:23–26"
+    },
+    {
+      "id": "MB15",
+      "formationStage": "MF05",
+      "liturgicalMoment": "Consecration of the Chalice",
+      "classification": "NARRATIVE_SCRIPTURE_CONNECTION",
+      "liturgicalCue": "Hic est enim Calix Sanguinis mei",
+      "scriptureReference": "Luke 22:20",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/luk022.htm"
+        }
+      ],
+      "reading": {
+        "en": "The chalice prayer relates to the Last Supper narrative. The Mass formula also contains liturgical wording not represented verbatim by this single verse.",
+        "fr": "La prière sur le calice renvoie au récit de la Cène. La formule liturgique comporte aussi des mots absents de ce seul verset."
+      },
+      "qualification": "MYSTERIUM_FIDEI_NOT_PROVEN_AS_EXACT_GOSPEL_WORDS",
+      "group": "CONSECRATION",
+      "scriptureReaderRef": "Luke 22:20"
+    },
+    {
+      "id": "MB16",
+      "formationStage": "MF06",
+      "liturgicalMoment": "Unde et memores",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "liturgicalCue": "memores, Domine",
+      "scriptureReference": "1 Corinthians 11:26",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/1co011.htm"
+        }
+      ],
+      "reading": {
+        "en": "St Paul's account of proclaiming the Lord's death illuminates the liturgical remembrance; this is an interpretive link, not an exact quote.",
+        "fr": "L’enseignement de saint Paul sur l’annonce de la mort du Seigneur éclaire l’anamnèse ; ce lien n’est pas une citation littérale."
+      },
+      "qualification": "THEOLOGICAL_CONNECTION_NOT_LITERAL",
+      "group": "CANON",
+      "scriptureReaderRef": "1 Corinthians 11:26"
+    },
+    {
+      "id": "MB17",
+      "formationStage": "MF06",
+      "liturgicalMoment": "Supra quae — Abel",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "liturgicalCue": "munera pueri tui justi Abel",
+      "scriptureReference": "Genesis 4:4",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/gen004.htm"
+        }
+      ],
+      "reading": {
+        "en": "The Roman Canon explicitly names Abel as an accepted biblical sacrifice; it does not reproduce Genesis as a reading here.",
+        "fr": "Le Canon nomme expressément Abel parmi les sacrifices agréés par Dieu ; il ne lit pas ici le texte de la Genèse."
+      },
+      "qualification": "NAME_IN_MISSAL_NOT_READING",
+      "group": "CANON",
+      "scriptureReaderRef": "Genesis 4:4"
+    },
+    {
+      "id": "MB18",
+      "formationStage": "MF06",
+      "liturgicalMoment": "Supra quae — Abraham",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "liturgicalCue": "sacrificium Patriarchae nostri Abrahae",
+      "scriptureReference": "Genesis 22:1–19",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/gen022.htm"
+        }
+      ],
+      "reading": {
+        "en": "The Canon explicitly recalls Abraham's offering. Genesis narrates the divine stopping of Isaac's death; do not imply that Isaac was killed.",
+        "fr": "Le Canon évoque expressément le sacrifice d’Abraham. Dans la Genèse, Dieu empêche la mort d’Isaac ; il ne faut pas prétendre qu’Isaac a été immolé."
+      },
+      "qualification": "ISAAC_NOT_KILLED",
+      "group": "CANON",
+      "scriptureReaderRef": "Genesis 22:1–19"
+    },
+    {
+      "id": "MB19",
+      "formationStage": "MF06",
+      "liturgicalMoment": "Supra quae — Melchisedech",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "liturgicalCue": "quod tibi obtulit summus sacerdos tuus Melchisedech",
+      "scriptureReference": "Genesis 14:18–20",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/gen014.htm"
+        }
+      ],
+      "reading": {
+        "en": "Genesis 14:18 identifies Melchisedech as priest of the Most High God and says that he brought forth bread and wine. It does not explicitly narrate a sacrificial offering of those elements. The Roman Canon names Melchisedech and interprets his gift sacrificially; this liturgical theology must not be presented as a direct biblical quotation.",
+        "fr": "Genèse 14,18 nomme Melchisédech prêtre du Dieu Très-Haut et dit qu’il apporta du pain et du vin, sans décrire explicitement un sacrifice de ces espèces. Le Canon romain le nomme et donne à son geste une interprétation sacrificielle qu’il faut distinguer du récit biblique."
+      },
+      "qualification": "GENESIS_PROFERENS_NOT_EXPLICIT_BREAD_WINE_SACRIFICE",
+      "group": "CANON",
+      "scriptureReaderRef": "Genesis 14:18–20"
+    },
+    {
+      "id": "MB20",
+      "formationStage": "MF06",
+      "liturgicalMoment": "Melchisedech and priesthood",
+      "classification": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
+      "liturgicalCue": "Melchisedech in Supra quae",
+      "scriptureReference": "Hebrews 7:1–17",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/heb007.htm"
+        }
+      ],
+      "reading": {
+        "en": "Hebrews develops Melchisedech as a figure of Christ's priesthood. This is a biblical theological reading, not a claim that the Missal quotes Hebrews 7.",
+        "fr": "L’épître aux Hébreux présente Melchisédech comme figure du sacerdoce du Christ. Ce n’est pas une citation d’Hébreux 7 dans le Canon."
+      },
+      "qualification": "INTERPRETATION_NOT_MISSAL_WORDING",
+      "group": "CANON",
+      "scriptureReaderRef": "Hebrews 7:1–17"
+    },
+    {
+      "id": "MB21",
+      "formationStage": "MF07",
+      "liturgicalMoment": "Pater noster",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "liturgicalCue": "Pater noster, qui es in caelis",
+      "scriptureReference": "Matthew 6:9–13 (cf. Luke 11:2–4); Matt 6:11 Latin variant",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/mat006.htm"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT_LUKE_LATIN_WORDING",
+          "url": "https://www.newadvent.org/bible/luk011.htm"
+        }
+      ],
+      "reading": {
+        "en": "The Lord's Prayer comes from Christ's teaching. Clementine Matthew 6:11 says 'panem nostrum supersubstantialem', while the Mass uses 'panem nostrum cotidianum' in the photographed 1962 Benziger Missal (also 'quotidianum'), corresponding to Luke 11:3. This is a scriptural prayer with a real textual adaptation and a specifically Roman liturgical placement.",
+        "fr": "Le Notre Père vient de l’enseignement du Christ. Dans la Vulgate clémentine, Matthieu 6,11 dit « panem nostrum supersubstantialem », tandis que la Messe emploie « panem nostrum cotidianum » (cette graphie du Missel Benziger de 1962 ; également « quotidianum »), comme en Luc 11,3 pour le sens. La liturgie adapte donc un mot de la prière biblique et lui donne sa place après le Canon."
+      },
+      "qualification": "CLEMENTINE_MATTHEW_SUPERSUBSTANTIALEM_VS_BENZIGER_1962_COTIDIANUM_LUKE_QUOTIDIANUM",
+      "group": "COMMUNION",
+      "scriptureReaderRef": "Matthew 6:9–13"
+    },
+    {
+      "id": "MB22",
+      "formationStage": "MF07",
+      "liturgicalMoment": "Libera nos",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "liturgicalCue": "Libera nos, quaesumus, Domine, ab omnibus malis",
+      "scriptureReference": "Matthew 6:13",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/mat006.htm"
+        }
+      ],
+      "reading": {
+        "en": "The embolism expands the last petition of the Lord's Prayer; it is not the remainder of Matthew's Gospel text.",
+        "fr": "L’embolisme développe la dernière demande du Notre Père ; ce n’est pas la suite du texte de Matthieu."
+      },
+      "qualification": "LITURGICAL_EMBOLISM",
+      "group": "COMMUNION",
+      "scriptureReaderRef": "Matthew 6:13"
+    },
+    {
+      "id": "MB23",
+      "formationStage": "MF07",
+      "liturgicalMoment": "Agnus Dei",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "liturgicalCue": "Agnus Dei, qui tollis peccata mundi",
+      "scriptureReference": "John 1:29",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/joh001.htm"
+        }
+      ],
+      "reading": {
+        "en": "John the Baptist identifies Jesus as the Lamb of God. The threefold Mass invocation expands that Gospel identification.",
+        "fr": "Jean-Baptiste désigne Jésus comme l’Agneau de Dieu. La triple invocation de la Messe développe cette parole."
+      },
+      "qualification": "MASS_INVOCATION_EXTENDS_VERSE",
+      "group": "COMMUNION",
+      "scriptureReaderRef": "John 1:29"
+    },
+    {
+      "id": "MB24",
+      "formationStage": "MF07",
+      "liturgicalMoment": "Domine non sum dignus",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "liturgicalCue": "Domine, non sum dignus ut intres sub tectum meum",
+      "scriptureReference": "Matthew 8:8",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/mat008.htm"
+        }
+      ],
+      "reading": {
+        "en": "The centurion's words are applied to Communion. The Gospel asks for his servant's healing; the Mass asks that the communicant's soul be healed.",
+        "fr": "La parole du centurion est appliquée à la Communion. L’Évangile demande la guérison de son serviteur ; la Messe demande celle de l’âme du communiant."
+      },
+      "qualification": "PUER_MEUS_VERSUS_ANIMA_MEA",
+      "group": "COMMUNION",
+      "scriptureReaderRef": "Matthew 8:8"
+    },
+    {
+      "id": "MB25",
+      "formationStage": "MF07",
+      "liturgicalMoment": "Priest's Communion prayer",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "liturgicalCue": "Quid retribuam Domino",
+      "scriptureReference": "Psalm 115:3–4 (Clementine Vulgate; Psalm 116:12–13 in modern numbering)",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://vulgate.org/ot/psalms_115.htm"
+        }
+      ],
+      "reading": {
+        "en": "The priest’s 'Quid retribuam' and 'Calicem salutaris accipiam' derive from the second part of Psalm 116 in modern numbering. In the Clementine Vulgate's separate Psalm 115, these are verses 3–4; some merged-chapter Latin displays number them 12–13. Do not present the merged numbering as the Clementine verse index.",
+        "fr": "Le « Quid retribuam » et le « Calicem salutaris accipiam » viennent de la seconde partie du psaume 116 selon la numérotation moderne. Dans le psaume 115 distinct de la Vulgate clémentine, il s’agit des versets 3–4 ; certaines éditions latines regroupées les numérotent 12–13. Ne pas confondre ces systèmes."
+      },
+      "qualification": "CLEMENTINE_115_3_4_MODERN_116_12_13",
+      "group": "COMMUNION"
+    },
+    {
+      "id": "MB26",
+      "formationStage": "MF08",
+      "liturgicalMoment": "Last Gospel (when prescribed)",
+      "classification": "VARIABLE_RITE_SCRIPTURE_READING",
+      "liturgicalCue": "In principio erat Verbum",
+      "scriptureReference": "John 1:1–14",
+      "sourceLinks": [
+        {
+          "role": "1962_MISSAL_ORDER_AND_TEXT",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT",
+          "url": "https://www.newadvent.org/bible/joh001.htm"
+        }
+      ],
+      "reading": {
+        "en": "The ordinary Last Gospel is the Prologue of St John, but exceptional Masses may alter or omit it. Never force it into every Mass or special rite.",
+        "fr": "Le dernier Évangile ordinaire est le Prologue de saint Jean ; certaines Messes le modifient ou l’omettent. Il ne faut jamais le forcer dans tous les rites."
+      },
+      "qualification": "RITE_DEPENDENT_NOT_UNCONDITIONAL",
+      "group": "CONCLUSION",
+      "scriptureReaderRef": "John 1:1–14"
+    }
+  ]
+}

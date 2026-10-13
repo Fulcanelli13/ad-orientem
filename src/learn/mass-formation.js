@@ -1,11 +1,22 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
+import { validateCuratedMassBibleStudy,renderCuratedMassBibleStudy,massBibleCurationCss } from "./mass-bible-curation.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { validateMassBibleStudy,renderMassBibleStudy,validateProperWitnesses,properReadingIndex,renderMassProperWitnessStudy,massBibleStudyCss } from "./mass-bible-study.js";
 
 export const MASS_FORMATION_VERSION="mass-formation-campion-v1";
 export const MASS_FORMATION_ROUTE="learn.mass";
 export const MASS_FORMATION_ROOT_ID="ao-mass-formation-root";
 
 const DATA_URL=new URL("../../data/learn/mass-formation-campion.v1.json",import.meta.url);
+const BIBLE_URL=new URL("../../data/learn/mass-bible-source-layers.v1.json",import.meta.url);
+const CURATED_URLS=[
+ new URL("../../data/learn/research/mass-bible-editorial-selection-20261013.v1.json",import.meta.url),
+ new URL("../../data/learn/research/mass-bible-20-primary-polished-bilingual-20261013.v1.json",import.meta.url),
+ new URL("../../data/learn/research/mass-bible-9-inline-and-2-variable-20261013.v1.json",import.meta.url)
+];
+const PROPER_URLS=[new URL("../../data/mass/scripture-reading-witness-register.v1.json",import.meta.url),
+ new URL("../../data/mass/scripture-feast-reading-supplement.v1.json",import.meta.url),
+ new URL("../../data/mass/scripture-segmented-proper.v1.json",import.meta.url)];
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const appState=win=>win?.AO_RUNTIME_V8?.store?.getState?.()??{};
 const isFr=win=>appState(win)?.language==="fr"||String(win?.document?.documentElement?.lang||"").toLowerCase().startsWith("fr");
@@ -28,8 +39,9 @@ function css(){
     ".aoMFWrap{width:min(800px,100%);margin:0 auto;padding:20px 15px 44px}.aoMFIntro{margin:0 0 18px;color:var(--muted,#9ba5b1);font-size:.96rem;line-height:1.5}.aoMFList{border-top:1px solid var(--border,rgba(255,255,255,.12))}",
     ".aoMFStageRow{width:100%;padding:15px 2px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.12));background:transparent;color:inherit;text-align:left;display:grid;grid-template-columns:34px 1fr;gap:10px}.aoMFStageRow .n{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--liturgical-border,rgba(201,173,120,.4));border-radius:50%;color:var(--liturgical,#c9ad78);font:.7rem/1 var(--ao-font-display,Georgia,serif)}.aoMFStageRow strong{display:block;font:600 1rem/1.25 var(--ao-font-display,Georgia,serif)}.aoMFStageRow p{margin:4px 0 0;color:var(--muted,#9ba5b1);font-size:.82rem;line-height:1.45}",
     ".aoMFQuestion{margin:0 0 6px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.09em;text-transform:uppercase}.aoMFStage h1{margin:0 0 9px;font:500 clamp(1.8rem,7vw,2.7rem)/1.08 var(--ao-font-display,Georgia,serif)}.aoMFStageLead{margin:0 0 20px;color:var(--muted,#9ba5b1);line-height:1.52}",
+    ".aoMBHomeLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 22px}.aoMBHomeLinks button{min-height:64px;text-align:left;padding:12px 13px;background:#161e28;color:#e5cfac;border:1px solid #c9ae7566;border-radius:12px;font:600 13px/1.45 system-ui}.aoMBHomeLinks button:focus-visible{outline:2px solid #edce8b}.aoMBHomeLinks button:hover{background:#20252d}@media(max-width:430px){.aoMBHomeLinks{grid-template-columns:1fr}}",
     ".aoMFClaim{padding:15px 0;border-top:1px solid var(--border,rgba(255,255,255,.11))}.aoMFClaim p{margin:0;line-height:1.62}.aoMFSources{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.aoMFSources a{display:inline-flex;align-items:center;min-height:29px;padding:5px 8px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:999px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-ui,system-ui,sans-serif);text-decoration:none}.aoMFNav{display:flex;justify-content:space-between;gap:8px;margin-top:20px}.aoMFNav button{min-height:38px;padding:8px 11px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;background:var(--surface-1,#101821);color:inherit}.aoMFError{padding:12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.4));border-radius:10px;color:var(--muted,#9ba5b1)}"
-  ].join("")+formationReaderCss();
+  ].join("")+formationReaderCss()+massBibleStudyCss()+massBibleCurationCss();
 }
 
 async function loadData(fetchImpl=globalThis.fetch){
@@ -43,11 +55,14 @@ async function loadData(fetchImpl=globalThis.fetch){
 
 function sourceMap(data){return Object.fromEntries((data?.sources??[]).map(source=>[source.id,source]));}
 function top(win,title){
-  return '<style data-ao-mf-style>'+css()+'</style><header class="aoMFTop"><button type="button" data-ao-mf-back aria-label="'+esc(isFr(win)?"Retour":"Back")+'">'+uiIcon("ao-ui-back")+'</button><div><small>FORMATION</small><strong>'+esc(title)+'</strong></div><button type="button" data-ao-mf-close aria-label="'+esc(isFr(win)?"Fermer":"Close")+'">'+uiIcon("ao-ui-close")+'</button></header>';
+  return '<style data-ao-mf-style>'+css()+'</style><header class="aoMFTop"><button type="button" data-ao-mf-back aria-label="'+esc(isFr(win)?"Retour":"Back")+'">'+uiIcon("ao-ui-back")+'</button><div><small>FORMATION</small><strong>'+esc(title)+'</strong></div><button type="button" data-ao-mf-close aria-label="'+esc(isFr(win)?"Fermer":"Close")+'">'+'×'+'</button></header>';
 }
 function listHtml(win,data){
   const rows=data.stages.map(stage=>'<button type="button" class="aoMFStageRow" data-ao-mf-stage="'+esc(stage.id)+'"><span class="n">'+esc(stage.order)+'</span><span><strong>'+esc(pick(win,stage.title))+'</strong><p>'+esc(pick(win,stage.summary))+'</p></span></button>').join("");
-  return top(win,pick(win,data.title))+'<main class="aoMFWrap"><p class="aoMFIntro">'+esc(pick(win,data.intro))+'</p><div class="aoMFList">'+rows+'</div></main>';
+  const studies='<nav class="aoMBHomeLinks" aria-label="'+esc(isFr(win)?"Études bibliques":"Biblical studies")+'">'+
+  '<button type="button" data-ao-mf-open-bible>'+esc(isFr(win)?"La Bible dans la Messe · aperçu éditorial":"The Bible in the Mass · editorial preview")+'</button>'+ 
+  '<button type="button" data-ao-mf-open-propers>'+esc(isFr(win)?"Épîtres et Évangiles de 1962 · sources attestées":"1962 Epistles and Gospels · witnessed sources")+'</button></nav>';
+  return top(win,pick(win,data.title))+'<main class="aoMFWrap"><p class="aoMFIntro">'+esc(pick(win,data.intro))+'</p>'+studies+'<div class="aoMFList">'+rows+'</div></main>';
 }
 function stageHtml(win,data,stage){
   const sources=sourceMap(data);
@@ -59,12 +74,62 @@ function stageHtml(win,data,stage){
 }
 
 export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
-  const state={data:null,view:"list",stageId:null,returnFocus:null,loading:null};
+  const state={data:null,view:"list",stageId:null,returnFocus:null,loading:null,
+    bibleData:null,bibleLoading:null,curated:null,curatedLoading:null,curationError:"",properIndex:null,properLoading:null,
+    bibleFilter:"all",bibleGroup:"",properPath:"",studyError:""};
   const root=()=>win?.document?.getElementById?.(MASS_FORMATION_ROOT_ID)??null;
   async function ensureData(){
     if(state.data)return state.data;
     if(!state.loading)state.loading=loadData(fetchImpl).then(data=>{state.data=data;return data}).finally(()=>{state.loading=null});
     return state.loading;
+  }
+  async function ensureBibleData(){
+    if(state.bibleData)return state.bibleData;
+    if(!state.bibleLoading)state.bibleLoading=(async()=>{
+      const response=await fetchImpl(BIBLE_URL);
+      if(!response?.ok)throw new Error("Mass Bible study data unavailable");
+      const data=await response.json();
+      if(!validateMassBibleStudy(data))throw new Error("Unapproved Mass Bible schema: study withheld");
+      state.bibleData=data;return data;
+    })().finally(()=>{state.bibleLoading=null});
+    return state.bibleLoading;
+  }
+  async function ensureCuratedData(){
+    if(state.curated)return state.curated;
+    if(!state.curatedLoading)state.curatedLoading=(async()=>{
+      const responses=await Promise.all(CURATED_URLS.map(url=>fetchImpl(url)));
+      if(responses.some(response=>!response?.ok))throw new Error("Curated Mass research unavailable");
+      const [selection,primary,inline]=await Promise.all(responses.map(response=>response.json()));
+      if(!validateCuratedMassBibleStudy(selection,primary,inline))
+        throw new Error("Curated Mass research approval/schema guard failed");
+      state.curated={selection,primary,inline};
+      return state.curated;
+    })().finally(()=>{state.curatedLoading=null});
+    return state.curatedLoading;
+  }
+  async function ensureProperIndex(){
+    if(state.properIndex)return state.properIndex;
+    if(!state.properLoading)state.properLoading=(async()=>{
+      const responses=await Promise.all(PROPER_URLS.map(url=>fetchImpl(url)));
+      if(responses.some(response=>!response?.ok))throw new Error("1962 witness sources unavailable");
+      const [first,second,segmented]=await Promise.all(responses.map(response=>response.json()));
+      if(!validateProperWitnesses(first,second,segmented))throw new Error("1962 source and Latin witness guard failed");
+      state.properIndex=properReadingIndex(first,second,segmented);
+      return state.properIndex;
+    })().finally(()=>{state.properLoading=null});
+    return state.properLoading;
+  }
+  async function openStudy(view){
+    state.studyError="";
+    state.view=view;
+    try{
+      if(view==="bible"){
+        await ensureBibleData(); // preserve existing canonical 26-source guard and Scripture handoffs
+        try{await ensureCuratedData();}
+        catch(error){state.curationError=String(error?.message??error);}
+      }else await ensureProperIndex();
+    }catch(error){state.studyError=String(error?.message??error);}
+    if(state.view===view)render();
   }
   function ensureRoot(){
     const doc=win?.document;if(!doc?.body)return null;
@@ -74,19 +139,41 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
       const target=event.target?.closest?.("button");if(!target)return;
       if(target.matches("[data-ao-mf-close]")){event.preventDefault();close(true);return;}
       if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){event.preventDefault();state.view="list";state.stageId=null;render();return;}
+      if(target.matches("[data-ao-mf-open-bible]")){event.preventDefault();void openStudy("bible");return;}
+      if(target.matches("[data-ao-mf-open-propers]")){event.preventDefault();void openStudy("propers");return;}
+      if(target.dataset.aoMfBibleFilter){event.preventDefault();state.bibleFilter=target.dataset.aoMfBibleFilter;render();return;}
       if(target.dataset.aoMfStage){event.preventDefault();state.view="stage";state.stageId=target.dataset.aoMfStage;render();return;}
       const stages=state.data?.stages??[],idx=stages.findIndex(x=>x.id===state.stageId);
       if(target.matches("[data-ao-mf-prev]")&&idx>0){event.preventDefault();state.stageId=stages[idx-1].id;render();return;}
       if(target.matches("[data-ao-mf-next]")&&idx>=0&&idx<stages.length-1){event.preventDefault();state.stageId=stages[idx+1].id;render();return;}
+    });
+    node.addEventListener("change",event=>{
+      const el=event.target;
+      if(el?.matches?.("[data-ao-mf-bible-filter-select]")){state.bibleFilter=el.value;render();return;}
+      if(el?.matches?.("[data-ao-mf-bible-stage]")){state.bibleGroup=el.value;render();return;}
+      if(el?.matches?.("[data-ao-mf-bible-proper]")){state.properPath=el.value;render();return;}
     });
     doc.body.append(node);return node;
   }
   function render(){
     const node=ensureRoot();if(!node||!state.data)return false;
     const stage=state.data.stages.find(x=>x.id===state.stageId);
-    node.innerHTML=state.view==="stage"&&stage?stageHtml(win,state.data,stage):listHtml(win,state.data);
+    if(state.view==="bible"){
+      node.innerHTML=top(win,isFr(win)?"La Bible dans la Messe":"The Bible in the Mass")+'<main class="aoMFWrap">'+
+        (state.studyError?'<p class="aoMFError">'+esc(state.studyError)+'</p>':
+         state.curated?renderCuratedMassBibleStudy(state.curated.selection,state.curated.primary,state.curated.inline,{
+           language:isFr(win)?"fr":"en",category:state.bibleFilter,stage:state.bibleGroup,sourceRows:state.bibleData?.rows??[]
+         }):state.bibleData?(state.curationError?
+           '<p class="aoMFError">'+esc(isFr(win)?"Aperçu enrichi indisponible ; version de recherche précédente.":"Curated preview unavailable; showing previous source-linked research.")+'</p>':"")+
+           renderMassBibleStudy(state.bibleData,{language:isFr(win)?"fr":"en",category:"all",stage:""}):
+           '<p role="status">'+esc(isFr(win)?"Chargement de l’étude…":"Loading study…")+'</p>')+'</main>';
+    }else if(state.view==="propers"){
+      node.innerHTML=top(win,isFr(win)?"Lectures du Missel":"Missal readings")+'<main class="aoMFWrap">'+
+        (state.studyError?'<p class="aoMFError">'+esc(state.studyError)+'</p>':state.properIndex?renderMassProperWitnessStudy(state.properIndex,{language:isFr(win)?"fr":"en",sourcePath:state.properPath}):
+          '<p role="status">'+esc(isFr(win)?"Chargement des sources…":"Loading sources…")+'</p>')+'</main>';
+    }else node.innerHTML=state.view==="stage"&&stage?stageHtml(win,state.data,stage):listHtml(win,state.data);
     node.hidden=false;node.removeAttribute("aria-hidden");node.scrollTop=0;
-    installFormationNavigation(win,node);
+    if(state.view==="stage"||state.view==="bible")installFormationNavigation(win,node);
     queueMicrotask(()=>node.querySelector("button,a[href]")?.focus?.({preventScroll:true}));
     return true;
   }
@@ -98,17 +185,22 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     }
     state.view=opts.stageId&&state.data.stages.some(x=>x.id===opts.stageId)?"stage":"list";
     state.stageId=state.view==="stage"?opts.stageId:null;
+    state.bibleFilter="all";state.bibleGroup="";state.properPath="";state.studyError="";state.curationError="";
     win?.document?.body?.classList?.add?.("aoMassFormationOpen");
-    render();return true;
+    render();
+    if(opts.study==="bible"||opts.study==="propers")await openStudy(opts.study);
+    return true;
   }
   function close(returnToLearn=false){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoMassFormationOpen");
-    state.view="list";state.stageId=null;
+    state.view="list";state.stageId=null;state.studyError="";
     if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
-  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,sourceBacked:Boolean(state.data)});}
+  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,sourceBacked:Boolean(state.data),bibleRows:state.bibleData?.rows?.length??0,curatedPrimary:state.curated?.primary?.records?.length??0,curatedInline:state.curated?.inline?.inlineNotes?.length??0,
+    witnessedPropers:state.properIndex?.length??0,bibleFilter:state.bibleFilter,bibleGroup:state.bibleGroup,
+    properPath:state.properPath});}
   return Object.freeze({version:MASS_FORMATION_VERSION,open,close,render,status});
 }
 

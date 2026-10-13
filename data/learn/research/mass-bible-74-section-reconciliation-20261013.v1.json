@@ -1,0 +1,961 @@
+{
+  "schema": "AO_MASS_BIBLE_74_RECONCILIATION_RESEARCH_V1",
+  "version": "2026-10-13",
+  "status": "RESEARCH_ONLY_NOT_FOR_PUBLICATION",
+  "owner": "learn.mass",
+  "inputResearchDocuments": [
+    "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+    "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+    "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md"
+  ],
+  "accounting": {
+    "researchSubtopics": 74,
+    "existingCanonicalBibleLinks": 26,
+    "coveredExistingCanonicalBibleLinkIds": 26,
+    "missingExistingCanonicalIds": [],
+    "additionCandidates": 5,
+    "dispositionCounts": {
+      "REUSE_EXISTING_MB": 30,
+      "OPTIONAL_INTERPRETATION_ONLY": 12,
+      "VARIABLE_PROPER_OWNER": 8,
+      "REUSE_MB_WITH_VARIABLE_PROPER": 2,
+      "NEW_BIBLE_CONNECTION_REVIEW": 5,
+      "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY": 17
+    },
+    "scopeNote": "74 are granular research subtopics, not a count of 74 distinct citations or app cards"
+  },
+  "sourcePolicy": {
+    "proper": "Variable Propers belong to their own source-path-gated registry",
+    "notSameAsR17CardIds": true,
+    "rights": "Open online access does not establish commercial redistribution rights",
+    "fixedMass": "The 1962 Missal is the normative witness for wording and ceremonies; compare original scanned pages before publication.",
+    "bibleEditionalControl": "Clementine Vulgate and Crampon 1923 are separate edition witnesses, not substitutes for the printed 1962 Missal."
+  },
+  "reconciliation": [
+    {
+      "researchKey": "PRE-01",
+      "section": "Judica me / Introibo",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB01",
+        "MB02"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB01/02 | Psalm 42 (Vulgate); direct words | Ritus III.6; Guéranger Psaume Judica | Omitted on specified 1962 occasions",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-02",
+      "section": "Confiteor",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB03"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB03 | Luke 18:13; comparison | Ritus III.7; Guéranger Confiteor | Publican's words are not entire prayer",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-03",
+      "section": "Aufer a nobis, Oramus te",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "New research | Holy-of-Holies imagery, not Bible quotation | Ritus III.11-IV.1; Guéranger ascent | Typology is devotional; no geographical claim",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-04",
+      "section": "Introit",
+      "disposition": "VARIABLE_PROPER_OWNER",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "Proper owner | Variable psalm, scripture or composition | Ritus IV; Guéranger; Gihr II pp.15–19 | Must select exact day; seasonal exceptions",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-05",
+      "section": "Kyrie",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB04"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB04 | Matthew 20:30–31 parallel only | Guéranger Kyrie; DTC litany history | Ninefold Trinity explanation is later author interpretation",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-06",
+      "section": "Gloria",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB05"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB05 | Luke 2:14 adapted | Guéranger Gloria; 1962 text | Clementine altissimis versus liturgical excelsis",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-07",
+      "section": "Collect",
+      "disposition": "VARIABLE_PROPER_OWNER",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "Proper owner | Variable prayer; no universal Bible episode | Guéranger Collecte; 1962 order | No fabricated uniform citation",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-08",
+      "section": "Epistle or lessons",
+      "disposition": "REUSE_MB_WITH_VARIABLE_PROPER",
+      "existingMB": [
+        "MB06"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB06 / Proper | Actual selected Proper passages | Ritus VI; existing 105 source paths | Retain segmented/Ember lesson order",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-09",
+      "section": "Gradual, Alleluia, Tract, Sequence",
+      "disposition": "VARIABLE_PROPER_OWNER",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "Proper owner | Variable Psalm/Scripture/other chant | Guéranger chant sections; DTC | Text can differ from Clementine; seasonal substitution",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-10",
+      "section": "Munda cor meum",
+      "disposition": "NEW_BIBLE_CONNECTION_REVIEW",
+      "existingMB": [],
+      "newCandidate": "N01",
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "New research | Isaiah 6:5–7; author-attributed narrative allusion | Ritus VI; O'Connell Gospel section; Guéranger Évangile | Not word-for-word Isaiah or ritual reenactment",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-11",
+      "section": "Gospel and triple crosses",
+      "disposition": "REUSE_MB_WITH_VARIABLE_PROPER",
+      "existingMB": [
+        "MB07"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB07 / Proper | Selected Gospel passage only | Ritus VI, O'Connell ceremonial | No assumed feast or episode",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-12",
+      "section": "Credo and Incarnation",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB08"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB08 | John 1:14 theological relation | Guéranger Credo | Creed does not directly quote John 1",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-13",
+      "section": "Offertory antiphon",
+      "disposition": "VARIABLE_PROPER_OWNER",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "Proper owner | Variable source text | Ritus VII; Guéranger Offertoire | Distinct from fixed private offerings",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-14",
+      "section": "Suscipe sancte Pater",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "New research | OT unblemished victim motif (Leviticus 22); typology | Ritus VII.2; Guéranger Offertoire | No literal biblical prayer; dating unverified",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-15",
+      "section": "Water and wine",
+      "disposition": "NEW_BIBLE_CONNECTION_REVIEW",
+      "existingMB": [],
+      "newCandidate": "N02",
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "New research | John 19:34/2 Peter 1:4 are interpretations | Ritus VII.4; Guéranger Offertoire; Cyprian Ep.63 prior research | Distinguish Guéranger Christological and Cyprian ecclesial symbols",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-16",
+      "section": "Offerimus tibi — chalice",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB25"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "New research | Calicem salutaris resembles Psalm 115:4 Vulgate | Ritus VII.4; Guéranger Offertoire | Not an entire Psalm quotation",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-17",
+      "section": "In spiritu humilitatis",
+      "disposition": "NEW_BIBLE_CONNECTION_REVIEW",
+      "existingMB": [],
+      "newCandidate": "N03",
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "Prior pilot | Daniel 3:39–40 adapted, Catholic additions | Ritus VII.5; O'Connell pp.252–253; Guéranger; Crampon | Azariah's furnace is not enacted in Mass",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-18",
+      "section": "Veni sanctificator",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "New research | No single demonstrated exact verse | Ritus VII.5; Guéranger | Avoid false direct-biblical label",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-19",
+      "section": "Incensation / Dirigatur",
+      "disposition": "NEW_BIBLE_CONNECTION_REVIEW",
+      "existingMB": [],
+      "newCandidate": "N04",
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "New research | Psalm 140:2 Vulgate used in rite | Guéranger Offertory incensation; Ritus VII | Does not apply identically to every Low Mass",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-20",
+      "section": "Lavabo",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB09"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB09 | Psalm 25:6–12 Vulgate, 26 modern; direct | Ritus VII.6; Guéranger Lavabo | Practical washing versus penitential meaning",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-21",
+      "section": "Suscipe sancta Trinitas",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "New research | Passion/Resurrection/Ascension theology | Guéranger Suscipe sancta Trinitas | Not three dramatic biblical scenes",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-22",
+      "section": "Orate fratres",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB10"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "MB10 | Romans 12:1 theological comparison | Guéranger Orate fratres; O'Connell | Not verbatim Pauline prayer",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "PRE-23",
+      "section": "Secret (super oblata)",
+      "disposition": "VARIABLE_PROPER_OWNER",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-BIBLE-OPEN-LIBRARIES-PRECANON-23-STAGES-20261013.md",
+      "researchEvidence": "Proper owner | Variable prayer, not fixed Bible quotation | Guéranger Secrète; DTC history | Do not confuse with silent Offertory fixed texts",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C01",
+      "section": "Preface dialogue — Sursum corda",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "EARLY_WITNESS_EXPLICIT | Cyprian De oratione dominica 31 (named dialogue; no proof of complete 1962 rite) | 1962 preface opening; Guéranger PREFACE | Keep 3rd-c. prayer dialogue distinct from later full Canon text",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C02",
+      "section": "Variable Preface",
+      "disposition": "VARIABLE_PROPER_OWNER",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "VARIABLE_PROPER_RITE | Mystery of day; not one universal Bible verse | 1962 Missal preface variants; Rubricae 486–499 | No fixed uniform preface across the liturgical calendar",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C03",
+      "section": "Sanctus — Isaiah",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB11"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "ADAPTED_BIBLICAL_WORDING | Isaiah 6:3; compare Revelation 4:8 separately | Missal Sanctus; Guéranger SANCTUS; MB11 | Clementine Deus exercituum versus liturgical Deus Sabaoth",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C04",
+      "section": "Benedictus + Hosanna",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB12"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "ADAPTED_BIBLICAL_WORDING | Matthew 21:9; Psalm 117:25–26 Vulgate | Missal; Guéranger SANCTUS; MB12 | Palm Sunday entry distinct from Isaiah's heavenly vision",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C05",
+      "section": "Te igitur — intercessions",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB13"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "PARALLEL_NOT_DIRECT_QUOTE | 1 Timothy 2:1–2 — Church and leaders as objects of prayer | Missal printed Canon p.302–303 OCR; MB13 | Prayer for Church/Pope/local ordinary is not Paul's literal formula",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C06",
+      "section": "Memento vivorum",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "INTERCESSION_NO_EXCLUSIVE_EPISODE | Biblical prayer for others, not an exclusive event | 1962 Canon pp.303–304 | No invented dated Atlas story/coordinates for privately named people",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C07",
+      "section": "Communicantes — saints",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "EXPLICIT_LITURGICAL_PERSONS | Mary, Joseph and named Apostles; other named martyrs mostly extrabiblical | 1962 Canon pp.304–306; 1962 includes Joseph | Do not assign historical identity of each James/John automatically from bare name; no Gospel verse for postbiblical martyrs",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C08",
+      "section": "Communicantes — proper feasts",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "SPECIAL_TEXT_OVERLAY | Christmas, Epiphany, Easter, Ascension, Pentecost, Maundy Thursday | 1962 Missal Canon proper variants, O'Connell p.120 Canon footnote | Special feasts are real liturgical text changes, not extra invented Bible events",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C09",
+      "section": "Hanc igitur",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "PRECONSECRATION_INTERCESSION | Peace, deliverance and membership among elect; thematic not citation | 1962 Missal pp.305–306; Easter and Pentecost baptismal variants | Avoid one fixed translation for Easter/Pentecost or Holy Thursday",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C10",
+      "section": "Quam oblationem",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB10"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "THEOLOGICAL_ECHO | Romans 12:1 rationabilis thematic comparison, NOT entire text | 1962 Missal p.306; Aquinas III q.83 a.4 reply 7 | Distinguish preconsecratory blessing prayer from sacramental words",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C11",
+      "section": "Qui pridie / Host institution",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB14"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "MULTIPLE_SCRIPTURAL_WITNESSES | Mt 26:26; Mk 14:22; Lk 22:19; 1 Cor 11:23–24 | 1962 Missal p.306–307; MB14 | Eyes lifted to heaven, enim and precise ceremonial are not simply an exact Luke quotation",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C12",
+      "section": "Qui pridie Maundy Thursday",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB14"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "SPECIAL_TEXT_OVERLAY | Last Supper recalled as TODAY in that celebration | 1962 Holy Thursday Missal text in Cena Domini; O'Connell Canon variants | Date-related Qui pridie variant, not permanent ordinary text",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C13",
+      "section": "Consecration chalice",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB15"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "MULTIPLE_SCRIPTURAL_WITNESSES_AND_ADAPTATION | Mt 26:28; Mk 14:24; Lk 22:20; 1 Cor 11:25; MB15 | 1962 Missal p.307; De sacramentis IV.5 | Mysterium fidei inside 1962 chalice formula, not in Gospel institution narratives; don't substitute 1969 wording",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C14",
+      "section": "Unde et memores",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB16"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "LITURGICAL_ANAMNESIS | Lk 22:19 and 1 Cor 11:26; Passion, Resurrection, Ascension | 1962 Canon p.308; De sacramentis IV.6.26–27; MB16 | Those three histories remembered, not an invented chronological re-enactment",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C15",
+      "section": "Supra quae — Abel",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB17"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "EXPLICIT_BIBLE_ACTOR | Genesis 4:4; MB17 | 1962 Canon p.308; De sacramentis IV.6.27 | Actual biblical offering distinguished from the Canon's theological comparison",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C16",
+      "section": "Supra quae — Abraham",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB18"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "EXPLICIT_BIBLE_ACTOR | Genesis 22:1–19; MB18 | 1962 Canon; De sacramentis IV.6.27 | Isaac-offering narrative; no Eucharistic text in Genesis",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C17",
+      "section": "Supra quae — Melchisedech",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB19",
+        "MB20"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "EXPLICIT_BIBLE_ACTOR_PLUS_PATRISTIC_TYPOLOGY | Genesis 14:18–20; Hebrews 7; MB19–MB20 | Canon; De sacramentis IV.6.27 and V.1 | Genesis says brought forth bread/wine and was priest; doesn't directly state the bread/wine were offered sacrificially",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C18",
+      "section": "Supplices te rogamus",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "MYSTICAL_HEAVENLY_ALTAR_ANALOGY | Revelation 8:3–4 in Aquinas, not direct Bible prayer | 1962 Canon p.308; De sacramentis IV.6.27; Aquinas III q.83 a.4 ad 9 | Do NOT depict sacramental species being physically borne into heaven",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C19",
+      "section": "Memento defunctorum",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "INTERCESSION_FOR_DEAD | No exact Bible prayer verse asserted | 1962 Canon p.309; Guéranger MEMENTO DES MORTS | Historic witness/purgatory doctrine separate from exact wording source",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C20",
+      "section": "Nobis quoque peccatoribus",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "SAINTS_INVOCATION_NOT_SCRIPTURE_QUOTE | John Baptist, Stephen, Matthias, Barnabas among named biblical people; other saints later | 1962 Canon p.309; Ritus servandus IX.3 | Priest strikes breast and slightly raises voice exactly at Nobis quoque; separate from later list",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C21",
+      "section": "Per quem haec omnia",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "HISTORICAL_HYPOTHESIS | No direct unique Bible scene | 1962 Canon p.309; Guéranger PER QUEM | Historical origin as produce blessing is a hypothesis, not established by its present words",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "CANON-C22",
+      "section": "Per ipsum / minor elevation and Amen",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-PREFACE-ROMAN-CANON-SOURCE-CRITICAL-READING-20261013.md",
+      "researchEvidence": "DOXOLOGY_THEOLOGICAL | Romans 11:36 as broad thematic comparison, not literal source | 1962 Canon p.309–310; Guéranger PER IPSUM | End of Canon distinct from Pater and Communion; five signs require true 1962 rubrical witness",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P01",
+      "section": "Pater noster introductory prayer",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB21"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB21 | SCRIPTURE_IN_RITE | Matthew 6:9–13; Luke 11:2–4 | Lord's Prayer directly, with Roman liturgical opening and people's response | M62-X; GUÉRANGER PATER | DIRECT_TEXT_WITH_LITURGICAL_ADAPTATION",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P02",
+      "section": "Pater noster response",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB21"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB21 | RITUAL_DISTRIBUTION | Sed libera nos a malo | Priest recites prayer; minister responds last petition in Low Mass; do not map individual words onto a single narrated event | M62-X; O'CONNELL pp.275–276 | RUBRIC_1962_OCR",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P03",
+      "section": "Libera nos embolism",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB22"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB22 | EXPANSION_NOT_QUOTE | Matthew 6:13 thematic continuation | Roman prayer develops final plea and invokes Mary, Peter, Paul, Andrew and all saints; not words of the Gospel | M62-X; GUÉRANGER LIBERA NOS | AUTHOR_AND_RUBRIC",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P04",
+      "section": "Paten sign in Libera nos",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | NO_EXCLUSIVE_BIBLE_EVENT | None required | Priest blesses himself with paten while asking peace; action is liturgical rather than narrative reenactment | M62-X; O'CONNELL ch. XIII | RUBRIC_1962_OCR",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P05",
+      "section": "Fraction of Host",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | NARRATIVE_LINK_DISTINCT_FROM_ORIGIN | Luke 22:19; Luke 24:30–35; 1 Cor 10:16–17 | Fraction recalls Christ breaking bread; Durandus adds Emmaus typology, not literal historical origin of specific Roman fraction | M62-X; O'CONNELL pp.277–278; DURAND IV.51 | AUTHOR_ATTRIBUTED_TYPOLOGY",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P06",
+      "section": "Pax Domini and particle sign",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | PEACE_THEOLOGY_NOT_GOSPEL_COPY | John 20:19 as thematic comparison | Rite gives three signs over chalice with particle, then places particle in Precious Blood | M62-X; O'CONNELL p.278 | RITUAL_OCR_WITH_THEME",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P07",
+      "section": "Haec commixtio",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | SPIRITUAL_SYMBOLISM | Resurrection connection according to Guéranger | Guéranger reads reunited Body and Blood as resurrection symbol; not statement of the rite's proven historical origin or second consecration | M62-X; GUÉRANGER LIBERA NOS | DEVOTIONAL_INTERPRETATION",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P08",
+      "section": "Agnus Dei ordinary",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB23"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB23 | ADAPTED_SCRIPTURAL_WORDING | John 1:29; Rev 5:6 broader image distinct | John Baptist identifies Lamb of God; Roman threefold petition adds mercy and peace | M62-X; GUÉRANGER AGNUS DEI; CRAMPON JOHN | ADAPTED_TEXT",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P09",
+      "section": "Agnus Dei in Requiem",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB23"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB23 with variant | RUBRICAL_SPECIAL_TEXT | John 1:29 retained incipit | Dona eis requiem twice and dona eis requiem sempiternam third; no striking breast | M62-X Requiem XIII; O'CONNELL; GUÉRANGER | 1962_SPECIAL_TEXT",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P10",
+      "section": "Domine Jesu Christe qui dixisti / peace prayer",
+      "disposition": "NEW_BIBLE_CONNECTION_REVIEW",
+      "existingMB": [],
+      "newCandidate": "N05",
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | SCRIPTURE_PHRASE_ADAPTED | John 14:27 Pax relinquo vobis | Liturgical prayer refers to apostolic peace and Church unity; in Requiem omitted together with exchange of peace | M62-X; GUÉRANGER ORAISONS | PRAYER_PLUS_REQUIEM_EXCEPTION",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P11",
+      "section": "Kiss of peace in Solemn Mass",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | APOSTOLIC_PARALLEL | Rom 16:16; 1 Pet 5:14 conceptual, not form | Rubrical minister-to-minister exchange; not repeated in every Low Mass; no kiss of peace in Requiem | M62-X; O'CONNELL ch. XIII | RITUAL_CONDITIONAL",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P12",
+      "section": "Domine Jesu Christe Fili Dei vivi",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | THEOLOGICAL_ECHO | 1 Cor 11:27–29 in Guéranger's warning against unworthy reception | Private Communion preparation prayer, not a direct Pauline verse | M62-X; GUÉRANGER ORAISONS | COMMENTATOR_ATTESTED",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P13",
+      "section": "Perceptio Corporis tui",
+      "disposition": "OPTIONAL_INTERPRETATION_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | THEOLOGICAL_ECHO | 1 Cor 11:27–29 | Second private prayer before Communion; no one unique Gospel episode | M62-X; GUÉRANGER | PRAYER_NOT_LITERAL_BIBLE",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P14",
+      "section": "Panem caelestem accipiam",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB25"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | SCRIPTURAL_ECHO_COMPOSITE | Psalm 115:4 (Vulgate 115:4) / John 6 heavenly bread comparison | Do not classify as a standalone verbatim Vulgate phrase: formula combines scriptural phrases and rite | M62-X; GUÉRANGER COMMUNION | COMPOSITE_TEXT_REVIEW",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P15",
+      "section": "Domine non sum dignus — priest",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB24"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB24 | SCRIPTURAL_ADAPTATION | Matthew 8:8 (compare Luke 7:6–7) | Centurion speaks of servant healed; liturgy says sanabitur anima mea; priest strikes breast three times | M62-X; O'CONNELL p.279; CRAMPON MATTHEW | ADAPTED_NOT_VERBATIM",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P16",
+      "section": "Priest receives Host",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | SACRAMENTAL_THEOLOGY | 1 Cor 10:16–17 conceptual | Rite has Corpus Domini ... custodiat animam meam, followed by actual consumption; no scriptural passage is same complete formula | M62-X; O'CONNELL p.280 | RUBRIC_PLUS_THEOLOGY",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P17",
+      "section": "Quid retribuam / calicem salutaris",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB25"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB25 | DIRECT_PSALM_WORDING_WITH_CONTEXT | Psalm 115:3–4 Vulgate / modern Psalm 116:12–13 | Spoken before consuming chalice; match exact Latin and Psalm numbering to original edition | M62-X; GUÉRANGER COMMUNION; CRAMPON PSALMS | SOURCE_TEXT_EDITION_CHECK",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P18",
+      "section": "Priest receives Chalice",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | SACRAMENTAL_THEOLOGY | 1 Cor 10:16 conceptual | Sanguis Domini ... custodiat animam meam; practical rite distinct from Bible's narrative | M62-X; O'CONNELL ch. XIII | RUBRIC_PLUS_THEOLOGY",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P19",
+      "section": "Ecce Agnus Dei for communicants",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB23"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB23 | ADAPTED_BIBLE_TEXT | John 1:29 | Priest shows Host to faithful, says ecce Agnus Dei, then 3x Domine non sum dignus; distinct from priest's preceding quiet prayer | M62-X; Rubr 503; CRAMPON JOHN | 1962_RUBRIC",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P20",
+      "section": "Second Confiteor at Communion",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing optional local feature | NORMATIVE_1962_OMISSION | No biblical episode | Rubr 503: omit Confiteor and absolution if distributing during Mass; separate outside-Mass rite; older custom must not masquerade as normative 1962 | Rubr 502–503; O'CONNELL | IMPORTANT_VARIANT_GUARD",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P21",
+      "section": "Communion distribution formula",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | LITURGICAL_FORMULA | Eternal-life theology; cf. John 6, not full text quote | Corpus Domini nostri Jesu Christi custodiat animam tuam in vitam aeternam; distinguish priest meam versus communicant tuam | M62-X; O'CONNELL | RUBRIC_1962_OCR",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P22",
+      "section": "Purifications / ablutions",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing ritual owner | PRAYER_AND_REVERENCE | No one direct biblical verse | Quod ore sumpsimus / Corpus tuum; ritual cleaning and spiritual petition; Guéranger's age claims require separate evidence | M62-X; GUÉRANGER; O'CONNELL ch. XIII | EXPLANATORY_NOT_GOSPEL_SCENE",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P23",
+      "section": "Communion antiphon",
+      "disposition": "VARIABLE_PROPER_OWNER",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Proper owner | VARIABLE_PROPER_SOURCE | Often biblical, not always identical wording | Rites say proper Communion chant/text after distribution with seasonal Alleluia rules; 420 chant-section source queue not certified | Rubr 504; M62-X | VARIABLE_NOT_ONE_UNIVERSAL_VERSE",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P24",
+      "section": "Postcommunion prayer",
+      "disposition": "VARIABLE_PROPER_OWNER",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Proper owner | VARIABLE_PRAYER | No universal Scripture quotation | Number and order follow Collects; occasional Lenten oratio super populum follows according to rubrics | Rubr 505–506; M62-X | VARIABLE_NOT_ONE_UNIVERSAL_VERSE",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P25",
+      "section": "Ite missa est",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing dismissal owner | HISTORICALLY_LITURGICAL | No direct Bible quotation | Normal 1962 dismissal even in penitential season, contra Guéranger's nineteenth-century described practice | Rubr 507; GUÉRANGER dismissal | HISTORICAL_CONFLICT_RESOLVED_BY_NORM",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P26",
+      "section": "Benedicamus and Requiescant",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing variant overlay owner | SPECIAL_DISMISSAL | No specific Bible episode | Benedicamus when Eucharistic reposition/procession follows; Requiescant in Requiem with Amen; Easter octave double Alleluia | Rubr 507; M62-X | SPECIAL_1962_RUBRIC",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P27",
+      "section": "Placeat and final blessing",
+      "disposition": "RUBRICAL_OR_DOCTRINAL_CONTEXT_ONLY",
+      "existingMB": [],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "Existing dismissal owner | THEOLOGICAL_PRAYER_NOT_DIRECT_QUOTE | Trinity invocation | Placeat always in normal conclusion; blessing omitted after Benedicamus and Requiescant | Rubr 508; M62-X; O'CONNELL | 1962_RUBRIC_AND_THEOLOGY",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P28",
+      "section": "Last Gospel when prescribed",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB26"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB26 | DIRECT_BIBLICAL_READING | John 1:1–14, with genuflection at Et Verbum caro factum est | Exact Bible prologue; not a general extra Gospel to show in every 1962 Mass | Rubr 509–510; CRAMPON JOHN; GUÉRANGER DERNIER ÉVANGILE | 1962_VARIANT_GUARD",
+      "publicationApproved": false
+    },
+    {
+      "researchKey": "POST-P29",
+      "section": "Last Gospel exceptions / Palm Sunday",
+      "disposition": "REUSE_EXISTING_MB",
+      "existingMB": [
+        "MB26"
+      ],
+      "newCandidate": null,
+      "sourceDocument": "docs/research/MASS-COMMUNION-THROUGH-LAST-GOSPEL-COMPARATIVE-20261013.md",
+      "researchEvidence": "MB26 with variant | SPECIAL_RITE_OVERLAY | Palm Sunday proper Last Gospel if no palms procession | Omit after Benedicamus-as-procession, Christmas third Mass, Palm Sunday with procession, Easter Vigil, Requiem with absolution, and certain consecrations; proper Palm Gospel otherwise | Rubr 509–510 | 1962_SPECIAL_OVERLAY",
+      "publicationApproved": false
+    }
+  ],
+  "selectedNewCandidates": [
+    {
+      "id": "N01",
+      "stage": "MF01",
+      "moment": "Munda cor meum",
+      "scripture": "Isaiah 6:5–7",
+      "type": "EXPLICIT_SCRIPTURAL_EVENT_REFERENCED_IN_LITURGICAL_PRAYER",
+      "sources": [
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.txt",
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Isaïe"
+      ],
+      "text": {
+        "fr": "Avant l’Évangile, le ministre demande à Dieu de purifier son cœur et ses lèvres. La prière mentionne expressément les lèvres du prophète Isaïe, purifiées par un charbon ardent (Is 6,5–7). L’épisode éclaire la disposition intérieure requise pour annoncer l’Évangile ; le rite n’est pas une reconstitution de cette vision.",
+        "en": "Before the Gospel, the minister asks God to cleanse his heart and lips. The prayer explicitly recalls Isaiah’s lips being purified by a burning coal (Isaiah 6:5–7). The vision illuminates the disposition required to proclaim the Gospel; the rite does not reenact the vision."
+      },
+      "publicationApproved": false
+    },
+    {
+      "id": "N02",
+      "stage": "MF03",
+      "moment": "Deus qui humanae substantiae / water and wine",
+      "scripture": "2 Peter 1:4; John 19:34 as separate optional patristic symbolism",
+      "type": "DOCTRINAL_WORDING_ECHO_NOT_DIRECT_QUOTATION",
+      "sources": [
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://ebible.org/latVUC/2PE01.htm",
+        "https://www.newadvent.org/fathers/050662.htm"
+      ],
+      "text": {
+        "fr": "En mêlant l’eau au vin, le prêtre demande que nous devenions participants de la divinité du Christ, qui a daigné prendre part à notre humanité. Cette formulation rappelle la participation à la nature divine évoquée en 2 P 1,4. L’eau et le vin ont également reçu diverses interprétations chez les Pères, notamment chez saint Cyprien : ces interprétations ne démontrent pas à elles seules l’origine historique du geste.",
+        "en": "When water is mixed with the wine, the priest prays that we may share in Christ’s divinity, since he chose to share in our humanity. This recalls participation in the divine nature in 2 Peter 1:4. Early Christian authors, notably Cyprian, also gave the mixed cup symbolic interpretations; those interpretations do not by themselves prove the historical origin of the gesture."
+      },
+      "publicationApproved": false
+    },
+    {
+      "id": "N03",
+      "stage": "MF03",
+      "moment": "In spiritu humilitatis",
+      "scripture": "Daniel 3:39–40",
+      "type": "ADAPTED_SCRIPTURAL_WORDING",
+      "sources": [
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.txt",
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://la.wikisource.org/wiki/Vulgata_Clementina/Prophetia_Danielis"
+      ],
+      "text": {
+        "fr": "Après l’offrande du calice, le prêtre s’incline et prie avec humilité. Les mots reprennent en les adaptant la supplication d’Azarias dans la fournaise (Dn 3,39–40) : privé des sacrifices du Temple, il demande à Dieu d’accueillir un cœur contrit. La Messe emprunte cette disposition intérieure, sans reproduire l’épisode biblique.",
+        "en": "After offering the chalice, the priest bows and prays in humility. The words adapt Azariah’s plea in the furnace (Daniel 3:39–40): deprived of Temple sacrifices, he asks God to accept a contrite heart. The Mass takes up this inward disposition without reenacting the biblical event."
+      },
+      "publicationApproved": false
+    },
+    {
+      "id": "N04",
+      "stage": "MF03",
+      "moment": "Dirigatur — Offertory incensation",
+      "scripture": "Psalm 140:2–4 Vulgate (141:2–4 modern)",
+      "type": "DIRECT_SCRIPTURAL_WORDING_CONDITIONAL_RITE",
+      "sources": [
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html",
+        "https://la.wikisource.org/wiki/Vulgata_Clementina/Liber_Psalmorum"
+      ],
+      "text": {
+        "fr": "Lorsque l’encensement est prévu à l’Offertoire, le prêtre reprend le psaume 140 de la Vulgate : il demande que sa prière s’élève devant Dieu comme l’encens. L’image du psaume est employée dans une cérémonie précise ; elle n’implique pas que toutes les messes basses comportent l’encensement.",
+        "en": "When Offertory incensation is prescribed, the priest takes up Vulgate Psalm 140, praying that his prayer may rise before God like incense. The psalmic image is used in a specific ceremony; it does not imply that every Low Mass includes incensation."
+      },
+      "publicationApproved": false
+    },
+    {
+      "id": "N05",
+      "stage": "MF07",
+      "moment": "Domine Iesu Christe qui dixisti — peace prayer",
+      "scripture": "John 14:27",
+      "type": "DIRECT_GOSPEL_WORDS_EMBEDDED_IN_ADDITIONAL_PRAYER",
+      "sources": [
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.txt",
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://studybible.info/Clementine_Vulgate/John%2014%3A27"
+      ],
+      "text": {
+        "fr": "Avant la Communion, la prière pour la paix reprend les paroles de Jésus aux Apôtres : « Je vous laisse la paix, je vous donne ma paix » (Jn 14,27). Elle demande ensuite au Christ de regarder la foi de son Église et de lui donner unité et paix. Cette prière n’est pas dite à la messe des défunts selon les rubriques de 1962.",
+        "en": "Before Communion, the prayer for peace takes up Christ’s words to the Apostles: 'Peace I leave with you; my peace I give to you' (John 14:27). It then asks Christ to look upon the faith of his Church and grant her unity and peace. Under the 1962 rubrics, this prayer is omitted at Masses for the Dead."
+      },
+      "publicationApproved": false
+    }
+  ],
+  "illustrativeOnlyNotNewBibleLinks": [
+    {
+      "topic": "Fraction / Emmaus",
+      "scripture": "Luke 24:30-35",
+      "owner": "optional Durandus historical meditation",
+      "whyNoNewLink": "Rite origin not proved by medieval interpretation"
+    },
+    {
+      "topic": "Supplices te rogamus / heavenly altar",
+      "scripture": "Revelation 8:3–4",
+      "owner": "Aquinas theological commentary; no material transport of Eucharistic species",
+      "whyNoNewLink": "Not a direct scriptural quotation"
+    },
+    {
+      "topic": "Sanctus / Revelation vision",
+      "scripture": "Revelation 4:8",
+      "owner": "attach supplemental comparison to MB11",
+      "whyNoNewLink": "Shares existing Sanctus anchor with Isaiah 6:3"
+    },
+    {
+      "topic": "Quam oblationem rationabilem",
+      "scripture": "Romans 12:1",
+      "owner": "lexical note cross-referencing existing MB10",
+      "whyNoNewLink": "Additional sense of existing verse; not whole prayer quotation"
+    }
+  ],
+  "publicationApproved": false
+}

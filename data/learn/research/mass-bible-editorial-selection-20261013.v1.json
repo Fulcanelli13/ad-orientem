@@ -1,0 +1,734 @@
+{
+  "schema": "AO_MASS_BIBLE_EDITORIAL_SELECTION_V1",
+  "version": "2026-10-13",
+  "owner": "learn.mass",
+  "status": "EDITORIAL_SCOPE_SELECTED_NOT_PUBLICATION_APPROVED",
+  "principle": "Bible-linked Mass formation should explain the theology and actual sacred text before textual differences; include only direct scriptural wording, explicit named biblical actor/event, or doctrinally indispensable link as a full teaching entry. Keep loose Gospel comparisons inline; never override actual 1962 rite/Proper or duplicate an Atlas event.",
+  "totals": {
+    "reviewed": 31,
+    "fullTeachingEntries": 20,
+    "inlineContext": 9,
+    "dynamicProperEntries": 2,
+    "canPublishNow": 0
+  },
+  "inputResearchDataset": "data/learn/research/mass-bible-31-bilingual-teaching-drafts-20261013.v1.json",
+  "originalVaticanSource": "https://gregobase.selapa.net/source.php?id=42&images=1",
+  "publicationGate": "Separate source page identification from theological/content approval, reuse rights, final paragraph editorial acceptance and runtime variant regression.",
+  "records": [
+    {
+      "id": "MB01",
+      "formationStage": "MF01",
+      "moment": "Prayers at the foot of the altar",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": "MB01",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/298.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/psa042.htm",
+      "biblicalRelation": "DIRECT_SCRIPTURAL_WORDING",
+      "why": "Introibo already belongs to the Psalm 42 teaching; eliminate duplicate standalone view",
+      "placement": "MB02",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB02",
+      "formationStage": "MF01",
+      "moment": "Psalm Judica me",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB02",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/298.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/psa042.htm",
+      "biblicalRelation": "DIRECT_SCRIPTURAL_WORDING",
+      "why": "Actual Psalm 42 is prayed as part of the entrance preparation; substantial verse-level teaching.",
+      "placement": null,
+      "displayWhen": "Hide/adjust for Requiem, Passiontide and procession-dependent introductory omissions",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB03",
+      "formationStage": "MF02",
+      "moment": "Confiteor",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": "MB03",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/298.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/luk018.htm",
+      "biblicalRelation": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "why": "Luke 18:13 illuminates penitence and breast striking; Confiteor is not a direct textual borrowing",
+      "placement": "MF02_PENITENCE_GUIDE",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB04",
+      "formationStage": "MF01",
+      "moment": "Kyrie",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": "MB04",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/299.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/mat020.htm",
+      "biblicalRelation": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "why": "The blind men's mercy appeal is one Gospel parallel among several and cannot own the liturgical Kyrie",
+      "placement": "MF01_KYRIE_CONTEXT",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB05",
+      "formationStage": "MF01",
+      "moment": "Gloria",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB05",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/300.png",
+        "https://gregobase.selapa.net/sources/42/301.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/luk002.htm",
+      "biblicalRelation": "SCRIPTURAL_WORDING_ADAPTED",
+      "why": "Explicit Lucan angelic acclamation adapted into the liturgical Gloria; clear textual and theological value.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB06",
+      "formationStage": "MF01",
+      "moment": "Epistle or Lesson",
+      "disposition": "DYNAMIC_PROPER_ONLY",
+      "canonicalRecordId": "MB06",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/471.png",
+        "https://gregobase.selapa.net/sources/42/472.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/1co012.htm",
+      "biblicalRelation": "VARIABLE_PROPER_READING",
+      "why": "Use only the selected 1962 Proper Epistle/lesson and keep Ember/multiple lessons in true order",
+      "placement": null,
+      "displayWhen": "Use only the selected 1962 Proper Epistle/lesson and keep Ember/multiple lessons in true order",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB07",
+      "formationStage": "MF01",
+      "moment": "Gospel",
+      "disposition": "DYNAMIC_PROPER_ONLY",
+      "canonicalRecordId": "MB07",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/472.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/luk018.htm",
+      "biblicalRelation": "VARIABLE_PROPER_READING",
+      "why": "Use only the selected 1962 Proper Gospel; no example passage may become the default Gospel",
+      "placement": null,
+      "displayWhen": "Use only the selected 1962 Proper Gospel; no example passage may become the default Gospel",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB08",
+      "formationStage": "MF01",
+      "moment": "Credo, Incarnation",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB08",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/302.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/joh001.htm",
+      "biblicalRelation": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "why": "The Incarnation is central to the Creed and the reverence at Et incarnatus est.",
+      "placement": null,
+      "displayWhen": "Credo and genuflection depend on prescribed day and gesture profile",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB09",
+      "formationStage": "MF03",
+      "moment": "Lavabo",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB09",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/303.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/psa025.htm",
+      "biblicalRelation": "DIRECT_SCRIPTURAL_WORDING",
+      "why": "The actual Lavabo uses Psalm 25 of the Vulgate, illuminating purification.",
+      "placement": null,
+      "displayWhen": "Use the actual Lavabo Psalm and 1962 ritual setting",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB10",
+      "formationStage": "MF03",
+      "moment": "Orate fratres",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": "MB10",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/304.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/rom012.htm",
+      "biblicalRelation": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "why": "Romans 12:1 gives the spiritual offering of the faithful, not the wording of Orate fratres",
+      "placement": "MF03_ORATE_FRATRES_CONTEXT",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB11",
+      "formationStage": "MF01",
+      "moment": "Sanctus",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB11",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/376.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/isa006.htm",
+      "biblicalRelation": "SCRIPTURAL_WORDING_ADAPTED",
+      "why": "The Sanctus is directly linked to Isaiah's heavenly vision; Revelation 4 is a second distinct comparison.",
+      "placement": null,
+      "displayWhen": "The Sanctus may be sung by schola; distinguish the priest's own recitation from music",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB12",
+      "formationStage": "MF01",
+      "moment": "Benedictus and Hosanna",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": "MB12",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/376.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/mat021.htm",
+      "biblicalRelation": "SCRIPTURAL_WORDING_ADAPTED",
+      "why": "Benedictus is biblical but belongs within the same Sanctus teaching while preserving Jerusalem as a second scene",
+      "placement": "MB11",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB13",
+      "formationStage": "MF04",
+      "moment": "Te igitur intercessions",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": "MB13",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/383.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/1ti002.htm",
+      "biblicalRelation": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "why": "1 Timothy 2 gives intercessory context but is not a textual origin of Te igitur",
+      "placement": "MF04_CANON_INTERCESSIONS",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB14",
+      "formationStage": "MF05",
+      "moment": "Consecration of the Host",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB14",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/388.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/1co011.htm",
+      "biblicalRelation": "NARRATIVE_SCRIPTURE_CONNECTION",
+      "why": "Institution of the Eucharist in 1 Corinthians and the Gospels anchors the bread Consecration.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB15",
+      "formationStage": "MF05",
+      "moment": "Consecration of the Chalice",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB15",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/389.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/luk022.htm",
+      "biblicalRelation": "NARRATIVE_SCRIPTURE_CONNECTION",
+      "why": "Institution accounts explain chalice Consecration, with essential 1962 wording distinction.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB16",
+      "formationStage": "MF06",
+      "moment": "Unde et memores",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB16",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/390.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/1co011.htm",
+      "biblicalRelation": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "why": "Pauline anamnesis clarifies the Passion–Resurrection–Ascension prayer following Consecration.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB17",
+      "formationStage": "MF06",
+      "moment": "Supra quae — Abel",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB17",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/390.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/gen004.htm",
+      "biblicalRelation": "EXPLICIT_BIBLICAL_FIGURE",
+      "why": "Abel is explicitly named by the Canon and directly identifiable in Genesis.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB18",
+      "formationStage": "MF06",
+      "moment": "Supra quae — Abraham",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB18",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/390.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/gen022.htm",
+      "biblicalRelation": "EXPLICIT_BIBLICAL_FIGURE",
+      "why": "Abraham and Isaac are explicitly recalled; clear biblical narrative and distinct typology.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB19",
+      "formationStage": "MF06",
+      "moment": "Supra quae — Melchisedech",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB19",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/391.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/gen014.htm",
+      "biblicalRelation": "EXPLICIT_BIBLICAL_FIGURE",
+      "why": "Melchisedech is explicitly named in the Canon; his role as priest and bread/wine can be tied to Genesis without inventing a sacrifice narrative.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB20",
+      "formationStage": "MF06",
+      "moment": "Melchisedech and priesthood",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": "MB20",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/391.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/heb007.htm",
+      "biblicalRelation": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
+      "why": "Hebrews 7 should deepen the Melchisedech reference, not duplicate its entry",
+      "placement": "MB19",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB21",
+      "formationStage": "MF07",
+      "moment": "Pater noster",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB21",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/395.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/mat006.htm",
+      "biblicalRelation": "SCRIPTURAL_WORDING_ADAPTED",
+      "why": "Christ's own prayer is a central Mass text; note Clementine Matthew versus Roman Latin variant.",
+      "placement": null,
+      "displayWhen": "Respect priest/ministers' 1962 Pater noster delivery; printed Vatican spelling cotidianum",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB22",
+      "formationStage": "MF07",
+      "moment": "Libera nos",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": "MB22",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/398.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/mat006.htm",
+      "biblicalRelation": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "why": "Libera nos expands the Lord's Prayer and belongs directly after it as a companion note",
+      "placement": "MB21",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB23",
+      "formationStage": "MF07",
+      "moment": "Agnus Dei",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB23",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/400.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/joh001.htm",
+      "biblicalRelation": "SCRIPTURAL_WORDING_ADAPTED",
+      "why": "The Lamb of God phrase comes from John 1:29; strong Holy Communion theology and Requiem variant.",
+      "placement": null,
+      "displayWhen": "Requiem Agnus has dona eis requiem / sempiternam and no breast strike",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB24",
+      "formationStage": "MF07",
+      "moment": "Domine non sum dignus",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB24",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/402.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/mat008.htm",
+      "biblicalRelation": "SCRIPTURAL_WORDING_ADAPTED",
+      "why": "The centurion's trust is adapted almost directly into Communion preparation.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB25",
+      "formationStage": "MF07",
+      "moment": "Priest's Communion prayer",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB25",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/403.png"
+      ],
+      "scriptureWitness": "https://www.studybible.info/Clementine_Vulgate/Psalms%20115:3-8",
+      "biblicalRelation": "DIRECT_SCRIPTURAL_WORDING",
+      "why": "Quid retribuam and Calicem salutaris are directly from Vulgate Psalm 115:3–4.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "MB26",
+      "formationStage": "MF08",
+      "moment": "Last Gospel (when prescribed)",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": "MB26",
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/409.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/joh001.htm",
+      "biblicalRelation": "VARIABLE_RITE_SCRIPTURE_READING",
+      "why": "John 1:1–14 is actually read when Last Gospel is prescribed; substantial Incarnation teaching.",
+      "placement": null,
+      "displayWhen": "Last Gospel conditional: 1962 exceptions and Palm Sunday alternatives",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "N01",
+      "formationStage": "MF01",
+      "moment": "Munda cor meum",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": null,
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/301.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/isa006.htm",
+      "biblicalRelation": "EXPLICIT_SCRIPTURAL_EVENT_REFERENCED_IN_LITURGICAL_PRAYER",
+      "why": "Munda cor meum names Isaiah and the fiery coal explicitly, making an excellent clear biblical event relation.",
+      "placement": null,
+      "displayWhen": "Priest/deacon position and private prayer vary by Low/Sung/Solemn Mass",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "N02",
+      "formationStage": "MF03",
+      "moment": "Deus qui humanae substantiae / water and wine",
+      "disposition": "INLINE_COMPANION",
+      "canonicalRecordId": null,
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/303.png"
+      ],
+      "scriptureWitness": "https://ebible.org/latVUC/2PE01.htm",
+      "biblicalRelation": "DOCTRINAL_WORDING_ECHO_NOT_DIRECT_QUOTATION",
+      "why": "2 Peter 1:4 illuminates participation in divine nature, but the wording is doctrinally parallel rather than a source quotation; include as optional Offertory commentary",
+      "placement": "MF03_WATER_WINE",
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "KEEP_BRIEF_CONTEXT_NOT_NEW_CARD",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "N03",
+      "formationStage": "MF03",
+      "moment": "In spiritu humilitatis",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": null,
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/303.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/dan003.htm",
+      "biblicalRelation": "ADAPTED_SCRIPTURAL_WORDING",
+      "why": "In spiritu humilitatis demonstrably adapts Azariah's Daniel 3:39–40 prayer.",
+      "placement": null,
+      "displayWhen": "Only at its corresponding Mass section, not on unrelated rituals",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "N04",
+      "formationStage": "MF03",
+      "moment": "Dirigatur — Offertory incensation",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": null,
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/303.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/psa140.htm",
+      "biblicalRelation": "DIRECT_SCRIPTURAL_WORDING_CONDITIONAL_RITE",
+      "why": "Dirigatur at Offertory incensation quotes Psalm 140 directly, with important conditional visibility.",
+      "placement": null,
+      "displayWhen": "Only when Offertory incensation is prescribed; exclude Low Mass without incense",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    },
+    {
+      "id": "N05",
+      "formationStage": "MF07",
+      "moment": "Domine Iesu Christe qui dixisti — peace prayer",
+      "disposition": "FULL_TEACHING_ENTRY",
+      "canonicalRecordId": null,
+      "publicationApproved": false,
+      "sourceEvidenceImageURLs": [
+        "https://gregobase.selapa.net/sources/42/400.png"
+      ],
+      "scriptureWitness": "https://www.newadvent.org/bible/joh014.htm",
+      "biblicalRelation": "DIRECT_GOSPEL_WORDS_EMBEDDED_IN_ADDITIONAL_PRAYER",
+      "why": "The peace prayer embeds Christ's exact words from John 14:27 and has a meaningful Requiem exception.",
+      "placement": null,
+      "displayWhen": "Peace prayer omitted in Masses for the Dead; pax conditional",
+      "editorialCopyDecision": "SUBSTANTIVE_REWRITE_REQUIRED_TO_REDUCE_EDITORIAL_META",
+      "releaseHolds": [
+        "Manual reading of final French/English claim and links",
+        "Version-specific Scripture citations and rights for any copied translation",
+        "Apply 1962 Mass-type and Proper conditions",
+        "No speculative Atlas/GPS/art IDs"
+      ]
+    }
+  ]
+}
