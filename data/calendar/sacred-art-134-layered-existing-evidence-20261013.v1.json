@@ -15,14 +15,15 @@
     "Only same artwork image retained by same ID/SHA; cross-module Biblical event IDs from independent pipeline not invented",
     "2026-10-13 wave: new museum-linked visual leads for 13 formerly zero-lead subjects, including contextual-only and related-episode evidence. No exact-scene completion inferred merely from presence of a link.",
     "Second 2026-10-13 research wave: source-grounded 5 additional zero-lead subjects (2 oil paintings, 2 etchings, 1 gouache); non-painting formats and contextual mismatch explicitly flagged; no approval or download.",
-    "French Mays of Notre-Dame corpus is important further source discovery (https://www.notredamedeparis.fr/comprendre/peintures/les-mays-de-notre-dame/): historic large oil canvases predominantly Acts; do not import all or imply image rights. Explicit subjects Courtin 1707 and Galloche 1705 added as separate original artworks."
+    "French Mays of Notre-Dame corpus is important further source discovery (https://www.notredamedeparis.fr/comprendre/peintures/les-mays-de-notre-dame/): historic large oil canvases predominantly Acts; do not import all or imply image rights. Explicit subjects Courtin 1707 and Galloche 1705 added as separate original artworks.",
+    "Source correction 2026-10-13: 5 previously unverified older options were real art but WRONG biblical event: Joseph-to-Potiphar versus sold by brothers; Jacob/Pharaoh versus first settlement; Tobias versus Tobit; Daniel 6 lions versus Daniel 1; Heliodorus versus Maccabean resistance. Do not count as exact coverage."
   ],
   "summary": {
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
     "additionalResearchLeadSubjects": 54,
-    "withPreviousUnapprovedOptionOnly": 7,
+    "withPreviousUnapprovedOptionOnly": 2,
     "withNoRecordedSourceOrOlderOption": 10,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
@@ -30,7 +31,8 @@
     "chosen101Unchanged": true,
     "newInstitutionalSourceWaveSubjectCount": 27,
     "newInstitutionalSourceWaveCandidateCount": 29,
-    "previousOptionInstitutionallyIdentified": 7
+    "previousOptionInstitutionallyIdentified": 7,
+    "previousOptionSceneMismatchConfirmed": 5
   },
   "subjects": [
     {
@@ -1231,16 +1233,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Genesis 37:18–36 · Potiphar transfer is adjacent, not precisely sale by brothers.",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_SCENE_MISMATCH_CONFIRMED",
       "previousCandidateArtworkIds": [
         "ART-ontormo-oseph-old-to-otiphar"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-invalid-exact-BIB-PA09",
+          "artist": "Pontormo",
+          "title": "Joseph sold to Potiphar",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/pontormo-joseph-sold-to-potiphar",
+          "medium": "oil on wood",
+          "sceneMatch": "WRONG_EVENT_SUBJECT_MISMATCH",
+          "matchNotes": "National Gallery NG6451 depicts sale to Potiphar by Ishmaelites in Egypt (Genesis 39:1), NOT original sale by brothers (Genesis 37:25–28).",
+          "matchedImageExamined": false,
+          "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
+          "acquiredOriginalSha256": null,
+          "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
+      "researchWave": "2026-10-13-subject-match-correction"
     },
     {
       "subjectId": "BIB-PA10",
@@ -1294,16 +1312,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Genesis 46:1–7",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_SCENE_MISMATCH_CONFIRMED",
       "previousCandidateArtworkIds": [
         "ART-ontormo-oseph-with-acob-in-gypt"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-invalid-exact-BIB-PA12",
+          "artist": "Pontormo",
+          "title": "Joseph with Jacob in Egypt",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/pontormo-joseph-with-jacob-in-egypt",
+          "medium": "oil on wood",
+          "sceneMatch": "WRONG_EVENT_SUBJECT_MISMATCH",
+          "matchNotes": "National Gallery NG1131 combines later Pharaoh meeting and Genesis 47–48 episodes; NOT initial relocation Genesis 46:1–7.",
+          "matchedImageExamined": false,
+          "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
+          "acquiredOriginalSha256": null,
+          "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
+      "researchWave": "2026-10-13-subject-match-correction"
     },
     {
       "subjectId": "BIB-EX03",
@@ -1985,16 +2019,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Tobit 1:10 · This artwork depicts journey, not specifically Tobit in Nineveh.",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_SCENE_MISMATCH_CONFIRMED",
       "previousCandidateArtworkIds": [
         "ART-erugino-aphael-and-obias"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-invalid-exact-BIB-XL02",
+          "artist": "Pietro Perugino",
+          "title": "The Archangel Raphael with Tobias",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/pietro-perugino-the-archangel-raphael-with-tobias",
+          "medium": "oil on wood",
+          "sceneMatch": "WRONG_EVENT_SUBJECT_MISMATCH",
+          "matchNotes": "NG288.3 shows son Tobias traveling with Raphael and fish, NOT father Tobit at Nineveh. This incorrect event must not be promoted.",
+          "matchedImageExamined": false,
+          "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
+          "acquiredOriginalSha256": null,
+          "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
+      "researchWave": "2026-10-13-subject-match-correction"
     },
     {
       "subjectId": "BIB-XL03",
@@ -2049,16 +2099,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Daniel 1:1–21 · Lions den is later, not scene Daniel 1.",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_SCENE_MISMATCH_CONFIRMED",
       "previousCandidateArtworkIds": [
         "ART-eter-aul-ubens-aniel-in-the-ions-en"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-invalid-exact-BIB-XL04",
+          "artist": "Peter Paul Rubens",
+          "title": "Daniel in the Lions' Den",
+          "sourceUrl": "https://www.nga.gov/artworks/50298-daniel-lions-den",
+          "medium": "oil on canvas",
+          "sceneMatch": "WRONG_EVENT_SUBJECT_MISMATCH",
+          "matchNotes": "NGA 1965.13.1 relates to Daniel 6, NOT Daniel 1 Babylonian court and education. Preserve real painting as separate possible Bible scene.",
+          "matchedImageExamined": false,
+          "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
+          "acquiredOriginalSha256": null,
+          "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
+      "researchWave": "2026-10-13-subject-match-correction"
     },
     {
       "subjectId": "BIB-XL06",
@@ -2176,16 +2242,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "1 Maccabees 2:1–5 · Heliodorus is related deuterocanonical episode, not actual resistance scene.",
-      "status": "PREVIOUS_UNAPPROVED_OPTIONS_REQUIRE_SOURCE_IDENTITY",
+      "status": "PREVIOUS_OPTION_SCENE_MISMATCH_CONFIRMED",
       "previousCandidateArtworkIds": [
         "ART-ug-ne-elacroix-eliodorus-riven-from-the-emple"
       ],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-invalid-exact-BIB-XL13",
+          "artist": "Eugène Delacroix",
+          "title": "Étude pour Héliodore chassé du temple",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010455726",
+          "medium": "ink drawing study",
+          "sceneMatch": "WRONG_EVENT_SUBJECT_MISMATCH",
+          "matchNotes": "Heliodorus is 2 Maccabees 3, NOT Maccabean resistance 1 Maccabees 2. Linked museum object is a drawing STUDY, not full mural at St-Sulpice.",
+          "matchedImageExamined": false,
+          "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
+          "acquiredOriginalSha256": null,
+          "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
+      "researchWave": "2026-10-13-subject-match-correction"
     },
     {
       "subjectId": "BIB-XL14",
@@ -2996,5 +3078,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "Seven previously unidentified options now matched to institutional originals; no artwork approved or acquired."
+  "recentSourceWave": "27 formerly zero-lead subjects gained candidates (10 remain); 12 of 14 old IDs institutionally reconciled (7 exact, 5 confirmed wrong-scene); 2 IDs remain unresolved."
 }
