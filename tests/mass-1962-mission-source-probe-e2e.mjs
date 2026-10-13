@@ -65,7 +65,7 @@ try{
    assert.equal(proof.mission,"CERTIFIED",form);
    assert.deepEqual([proof.collected,proof.secret,proof.postcommunion],
       [ordinary,ordinary,ordinary],form+" must add NO extra Secret/Postcommunion");
-   assert.equal(proof.focus,ordinary+1+(form==="LOW"?1:0),form+" must have source text focus and intermediate Low-Mass Amen");
+   assert.equal(proof.focus,ordinary+1+(form==="LOW"?2:0),form+" must have source text focus and intermediate Low-Mass Amen");
    assert.equal(proof.correctConclusion,true,form+" must end with missionary Qui tecum");
    assert.equal(proof.oldConclusionAbsent,true,form+" must remove original principal Per Dominum");
    assert.equal(proof.noticeVisible,true,form+" preflight must show the actual mission notice");
