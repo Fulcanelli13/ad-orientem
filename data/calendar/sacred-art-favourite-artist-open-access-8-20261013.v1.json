@@ -1,0 +1,105 @@
+{
+  "schema": "AO_SACRED_ART_PREFERRED_ARTISTS_OPEN_ACCESS_ACQUISITION_INPUT_V1",
+  "asOf": "2026-10-13",
+  "purpose": "8 exact source-verified oil paintings among user-preferred artists for new high-res original acquisition. No copy of existing 4-5/5 source, no unauthorised image, no publish.",
+  "canonicalQueue": "data/calendar/sacred-art-source-identity-master-153-queue-20261013.v2.json",
+  "canonicalExisting": "data/calendar/sacred-art-candidates.v1.json",
+  "imagePolicy": {
+    "provider": "Met Open Access API only public domain painting; NGA official open-data only images where openaccess=1",
+    "minimumLongSidePixels": 2000,
+    "maxOriginalBytes": 48000000,
+    "allImagesHeldForHumanRating": true,
+    "productionApproved": false
+  },
+  "expectedOriginals": 8,
+  "items": [
+    {
+      "leadId": "W03-005",
+      "provider": "met",
+      "objectId": 436257,
+      "expectedArtist": "Anthony van Dyck",
+      "expectedTitle": "Saint Rosalie Interceding for the Plague-stricken of Palermo",
+      "officialUrl": "https://www.metmuseum.org/art/collection/search/436257",
+      "priority": "P1",
+      "reviewRating": null,
+      "rightsStatus": "PROVIDER_MUSEUM_PUBLIC_DOMAIN_CONFIRMED_SOURCE_PAGE_CHECKED_DOWNLOAD_NOT_YET_VERIFIED"
+    },
+    {
+      "leadId": "W05-022",
+      "provider": "met",
+      "objectId": 436262,
+      "expectedArtist": "Anthony van Dyck",
+      "expectedTitle": "Virgin and Child with Saint Catherine of Alexandria",
+      "officialUrl": "https://www.metmuseum.org/art/collection/search/436262",
+      "priority": "P1",
+      "reviewRating": null,
+      "rightsStatus": "PROVIDER_MUSEUM_PUBLIC_DOMAIN_CONFIRMED_SOURCE_PAGE_CHECKED_DOWNLOAD_NOT_YET_VERIFIED"
+    },
+    {
+      "leadId": "W08-011",
+      "provider": "met",
+      "objectId": 437529,
+      "expectedArtist": "Peter Paul Rubens",
+      "expectedTitle": "The Holy Family with Saint Elizabeth, Saint John, and a Dove",
+      "officialUrl": "https://www.metmuseum.org/art/collection/search/437529",
+      "priority": "P1",
+      "reviewRating": null,
+      "rightsStatus": "PROVIDER_MUSEUM_PUBLIC_DOMAIN_CONFIRMED_SOURCE_PAGE_CHECKED_DOWNLOAD_NOT_YET_VERIFIED"
+    },
+    {
+      "leadId": "W08-012",
+      "provider": "met",
+      "objectId": 437528,
+      "expectedArtist": "Peter Paul Rubens",
+      "expectedTitle": "The Holy Family with Saints Francis and Anne and the Infant Saint John the Baptist",
+      "officialUrl": "https://www.metmuseum.org/art/collection/search/437528",
+      "priority": "P1",
+      "reviewRating": null,
+      "rightsStatus": "PROVIDER_MUSEUM_PUBLIC_DOMAIN_CONFIRMED_SOURCE_PAGE_CHECKED_DOWNLOAD_NOT_YET_VERIFIED"
+    },
+    {
+      "leadId": "W03-001",
+      "provider": "nga",
+      "objectId": 45640,
+      "expectedArtist": "Peter Paul Rubens",
+      "expectedTitle": "The Meeting of Abraham and Melchizedek",
+      "officialUrl": "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek",
+      "priority": "P0",
+      "reviewRating": null,
+      "rightsStatus": "PROVIDER_MUSEUM_PUBLIC_DOMAIN_CONFIRMED_SOURCE_PAGE_CHECKED_DOWNLOAD_NOT_YET_VERIFIED"
+    },
+    {
+      "leadId": "W02-016",
+      "provider": "nga",
+      "objectId": 41703,
+      "expectedArtist": "Francisco de Zurbarán",
+      "expectedTitle": "Saint Jerome with Saint Paula and Saint Eustochium",
+      "officialUrl": "https://www.nga.gov/artworks/41703-saint-jerome-saint-paula-and-saint-eustochium",
+      "priority": "P1",
+      "reviewRating": null,
+      "rightsStatus": "PROVIDER_MUSEUM_PUBLIC_DOMAIN_CONFIRMED_SOURCE_PAGE_CHECKED_DOWNLOAD_NOT_YET_VERIFIED"
+    },
+    {
+      "leadId": "W02-020",
+      "provider": "nga",
+      "objectId": 1227,
+      "expectedArtist": "Anthony van Dyck",
+      "expectedTitle": "The Virgin as Intercessor",
+      "officialUrl": "https://www.nga.gov/artworks/1227-virgin-intercessor",
+      "priority": "P1",
+      "reviewRating": null,
+      "rightsStatus": "PROVIDER_MUSEUM_PUBLIC_DOMAIN_CONFIRMED_SOURCE_PAGE_CHECKED_DOWNLOAD_NOT_YET_VERIFIED"
+    },
+    {
+      "leadId": "W02-022",
+      "provider": "nga",
+      "objectId": 99280,
+      "expectedArtist": "Peter Paul Rubens",
+      "expectedTitle": "The Meeting of David and Abigail",
+      "officialUrl": "https://www.nga.gov/artworks/99280-meeting-david-and-abigail",
+      "priority": "P1",
+      "reviewRating": null,
+      "rightsStatus": "PROVIDER_MUSEUM_PUBLIC_DOMAIN_CONFIRMED_SOURCE_PAGE_CHECKED_DOWNLOAD_NOT_YET_VERIFIED"
+    }
+  ]
+}
