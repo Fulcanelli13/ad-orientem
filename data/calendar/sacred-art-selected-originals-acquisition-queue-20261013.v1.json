@@ -1,0 +1,1584 @@
+{
+  "schema": "AO_SACRED_ART_UNJOINED_SELECTED_WORKS_ACQUISITION_QUEUE_V1",
+  "date": "2026-10-13",
+  "ownerPR": 887,
+  "branch": "platform/885-sacred-art-candidates",
+  "sourceIndex": "data/calendar/sacred-art-consolidated-subject-review-index-20261013.v1.json",
+  "status": "PRESERVATION_AND_SOURCE_ACQUISITION_QUEUE_ONLY_NO_NEW_ART_DECISIONS",
+  "counts": {
+    "uniqueSelectedArtworksUnjoined": 91,
+    "subjectPlacementsUnjoined": 98,
+    "sourceStatus": {
+      "SEARCH_PAGE_NOT_ART_OBJECT": 15,
+      "IDENTITY_SOURCE_MISSING": 39,
+      "OBJECT_URL_RECORDED_NEEDS_MASTER": 20,
+      "VERIFY_EXACT_OBJECT_IDENTITY": 2,
+      "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 15
+    },
+    "benchmarkUrlsRecovered": 1
+  },
+  "notes": [
+    "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
+    "Unjoined means absent from the 281 museum painting registry under strict identity joins, not lost or invalid across all existing archives.",
+    "Potential collection-level link does not certify an exact painting panel; previous artist/title chosen remains immutable.",
+    "Do not substitute a different painting merely because a similar artist/subject is in the acquired registry.",
+    "Aesthetically excluded artists cannot be reintroduced; this queue records history and source recovery only.",
+    "Only source-verified, human-approved, rights-reviewed, image-reviewed originals may enter final gallery."
+  ],
+  "works": [
+    {
+      "editorialArtworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "artist": "Artus Wolffort",
+      "title": "Ascension — Antwerp Rosary cycle",
+      "subjectIds": [
+        "ROS-12"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "artist": "David Teniers the Elder",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "subjectIds": [
+        "ROS-06"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 01: Christ Condemned to Death",
+      "subjectIds": [
+        "STN-01"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20I%20-%20Jesus%20is%20sentenced%20to%20death%20by%20Giandomenico%20Tiepolo.jpg?width=550",
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 02: Jesus Takes Up the Cross",
+      "subjectIds": [
+        "STN-02"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20II%20-%20Jesus%20carries%20his%20cross%20by%20Giandomenico%20Tiepolo.jpg?width=550",
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 03: First Fall",
+      "subjectIds": [
+        "STN-03"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
+      "subjectIds": [
+        "STN-04"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20IV%20-%20Jesus%20meets%20his%20mother%20by%20Giandomenico%20Tiepolo.jpg?width=550",
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 05: Simon of Cyrene Helps",
+      "subjectIds": [
+        "STN-05"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20V%20-%20Simon%20of%20Cyrene%20helps%20Jesus%20carry%20the%20cross%20by%20Giandomenico%20Tiepolo.jpg?width=550",
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 06: Veronica Wipes His Face",
+      "subjectIds": [
+        "STN-06"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20VI%20-%20Veronica%20wipes%20the%20face%20of%20Jesus%20by%20Giandomenico%20Tiepolo.jpg?width=550",
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 07: Second Fall",
+      "subjectIds": [
+        "STN-07"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 08: Jesus Addresses the Women of Jerusalem",
+      "subjectIds": [
+        "STN-08"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 09: Third Fall",
+      "subjectIds": [
+        "STN-09"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 10: Stripping of His Garments",
+      "subjectIds": [
+        "STN-10"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20di%20San%20Polo%20%28Venice%29%20-%20VIA%20CRUCIS%20X%20-%20Jesus%20is%20stripped%20of%20his%20garments.jpg?width=550",
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 11: Nailing to the Cross",
+      "subjectIds": [
+        "STN-11"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis — Station 12: Death on the Cross",
+      "subjectIds": [
+        "STN-12"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+      "artist": "Peter Paul Rubens",
+      "title": "Scourging at the Pillar — Antwerp Rosary cycle",
+      "subjectIds": [
+        "ROS-07"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID",
+      "action": "IDENTIFY_SPECIFIC_WORK_WITHIN_COLLECTION",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-nthony-van-yck-amentation-of-hrist",
+      "artist": "Anthony van Dyck",
+      "title": "Lamentation of Christ",
+      "subjectIds": [
+        "DEV-09"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "artist": "Anthony van Dyck",
+      "title": "The Lance Thrust",
+      "subjectIds": [
+        "ROS-10"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "Saint Isidore of Seville",
+      "subjectIds": [
+        "SNT-DC-17"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-aravaggio-avid-with-the-ead-of-oliath",
+      "artist": "Caravaggio",
+      "title": "David with the Head of Goliath",
+      "subjectIds": [
+        "BIB-IS03"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-aravaggio-nspiration-of-aint-atthew",
+      "artist": "Caravaggio",
+      "title": "Inspiration of Saint Matthew",
+      "subjectIds": [
+        "SNT-AP-08"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-aravaggio-aint-atherine-of-lexandria",
+      "artist": "Caravaggio",
+      "title": "Saint Catherine of Alexandria",
+      "subjectIds": [
+        "SNT-OT-24"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-aravaggio-he-acrifice-of-saac",
+      "artist": "Caravaggio",
+      "title": "The Sacrifice of Isaac",
+      "subjectIds": [
+        "BIB-PA06"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-omenico-etti-oses-before-the-urning-ush",
+      "artist": "Domenico Fetti",
+      "title": "Moses before the Burning Bush",
+      "subjectIds": [
+        "BIB-EX02"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ug-ne-elacroix-eliodorus-riven-from-the-emple",
+      "artist": "Eugène Delacroix",
+      "title": "Heliodorus Driven from the Temple",
+      "subjectIds": [
+        "BIB-XL15"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ug-ne-elacroix-acob-restling-with-the-ngel",
+      "artist": "Eugène Delacroix",
+      "title": "Jacob Wrestling with the Angel",
+      "subjectIds": [
+        "BIB-PA08"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+      "artist": "Gabriel-François Doyen",
+      "title": "Miracle des Ardents",
+      "subjectIds": [
+        "SNT-OT-26"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iambattista-iepolo-aint-atherine-of-iena",
+      "artist": "Giambattista Tiepolo",
+      "title": "Saint Catherine of Siena",
+      "subjectIds": [
+        "SNT-DC-09"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "artist": "Giovanni Lanfranco",
+      "title": "Miracle of Loaves and Fishes",
+      "subjectIds": [
+        "BIB-G14"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "artist": "Guido Reni",
+      "title": "Archangel Michael Defeating Satan",
+      "subjectIds": [
+        "DEV-16",
+        "DEV-20",
+        "SNT-OT-02"
+      ],
+      "numberOfUses": 3,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ean-ouvenet-aising-of-azarus",
+      "artist": "Jean Jouvenet",
+      "title": "Raising of Lazarus",
+      "subjectIds": [
+        "BIB-G16"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+      "artist": "Jean-Léon Gérôme",
+      "title": "The Age of Augustus: Birth of Christ",
+      "subjectIds": [
+        "ROS-03",
+        "DEV-04"
+      ],
+      "numberOfUses": 2,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-os-de-ibera-acob-s-ream",
+      "artist": "José de Ribera",
+      "title": "Jacob’s Dream",
+      "subjectIds": [
+        "BIB-PA07"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
+      "artist": "Juan Fernández de Navarrete",
+      "title": "Abraham and the Three Angels",
+      "subjectIds": [
+        "BIB-PA02"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": "https://onlinecollection.nationalgallery.ie/objects/details/3180",
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-usepe-de-ibera-aint-udas-haddeus",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Judas Thaddeus",
+      "subjectIds": [
+        "SNT-AP-13"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Paul — Apostolate",
+      "subjectIds": [
+        "SNT-AP-12"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Peter — Apostolate",
+      "subjectIds": [
+        "SNT-AP-01"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "artist": "Peter Paul Rubens",
+      "title": "Assumption of the Virgin",
+      "subjectIds": [
+        "ROS-14",
+        "DEV-08"
+      ],
+      "numberOfUses": 2,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-ain-and-bel",
+      "artist": "Peter Paul Rubens",
+      "title": "Cain and Abel",
+      "subjectIds": [
+        "BIB-OR03"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "artist": "Peter Paul Rubens",
+      "title": "Holy Family with Saint Anne",
+      "subjectIds": [
+        "SNT-OT-30"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+      "artist": "Peter Paul Rubens",
+      "title": "Meeting of Abraham and Melchizedek",
+      "subjectIds": [
+        "BIB-PA03"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+      "artist": "Peter Paul Rubens",
+      "title": "Miracles of Saint Francis of Paola",
+      "subjectIds": [
+        "SNT-OT-32"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+      "artist": "Peter Paul Rubens",
+      "title": "Miracles of Saint Francis Xavier",
+      "subjectIds": [
+        "SNT-OT-15"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "artist": "Peter Paul Rubens",
+      "title": "Miracles of Saint Ignatius of Loyola",
+      "subjectIds": [
+        "SNT-OT-16"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+      "artist": "Peter Paul Rubens",
+      "title": "Resurrection of Christ",
+      "subjectIds": [
+        "ROS-11"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Anthony of Padua with the Christ Child",
+      "subjectIds": [
+        "DEV-14"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-aint-ebastian",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Sebastian",
+      "subjectIds": [
+        "SNT-OT-19"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-he-oly-rinity",
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Trinity",
+      "subjectIds": [
+        "DEV-18"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
+      "artist": "Peter Paul Rubens and Jan Brueghel the Elder",
+      "title": "Garden of Eden with the Fall",
+      "subjectIds": [
+        "BIB-OR01"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+      "artist": "Philippe de Champaigne",
+      "title": "La Petite Cène",
+      "subjectIds": [
+        "BIB-G24"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "artist": "Philippe de Champaigne",
+      "title": "Presentation of Jesus at the Temple",
+      "subjectIds": [
+        "ROS-04"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Philippe_de_Champaigne_The_Presentation_of_the_Temple.jpg/512px-Philippe_de_Champaigne_The_Presentation_of_the_Temple.jpg",
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-hilippe-de-hampaigne-aint-ugustine",
+      "artist": "Philippe de Champaigne",
+      "title": "Saint Augustine",
+      "subjectIds": [
+        "SNT-DC-02"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ierre-ignard-aint-ohn-the-aptist",
+      "artist": "Pierre Mignard",
+      "title": "Saint John the Baptist",
+      "subjectIds": [
+        "SNT-OT-04"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ieter-ruegel-the-lder-ower-of-abel",
+      "artist": "Pieter Bruegel the Elder",
+      "title": "Tower of Babel",
+      "subjectIds": [
+        "BIB-OR06"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+      "artist": "Pietro da Cortona",
+      "title": "The Guardian Angel",
+      "subjectIds": [
+        "DEV-17"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": null,
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "IDENTITY_SOURCE_MISSING",
+      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Ambrose Barring Theodosius",
+      "subjectIds": [
+        "SNT-DC-01"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Rosalia Interceding for Palermo",
+      "subjectIds": [
+        "SNT-OT-31"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.metmuseum.org/art/collection/search/436235",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-arlo-rivelli-aint-homas-quinas",
+      "artist": "Carlo Crivelli",
+      "title": "Saint Thomas Aquinas",
+      "subjectIds": [
+        "SNT-DC-05"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/carlo-crivelli-saint-thomas-aquinas",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-uccio-di-uoninsegna-ealing-of-the-an-orn-lind",
+      "artist": "Duccio di Buoninsegna",
+      "title": "Healing of the Man Born Blind",
+      "subjectIds": [
+        "BIB-G27"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/catalogues/gordon-2011/the-healing-of-the-man-born-blind",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-aspard-ughet-lijah-and-the-ngel",
+      "artist": "Gaspard Dughet",
+      "title": "Elijah and the Angel",
+      "subjectIds": [
+        "BIB-IS08"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/gaspard-dughet-elijah-and-the-angel",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-uido-eni-aint-ary-agdalene",
+      "artist": "Guido Reni",
+      "title": "Saint Mary Magdalene",
+      "subjectIds": [
+        "SNT-OT-25"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/guido-reni-saint-mary-magdalene",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-uido-eni-usannah-and-the-lders",
+      "artist": "Guido Reni",
+      "title": "Susannah and the Elders",
+      "subjectIds": [
+        "BIB-XL09"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/guido-reni-susannah-and-the-elders",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+      "artist": "Jean-Baptiste de Champaigne",
+      "title": "Martyrdom of Saint Lawrence",
+      "subjectIds": [
+        "SNT-OT-11"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nga.gov/artworks/103596-martyrdom-saint-lawrence",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "artist": "Juan Correa de Vivar",
+      "title": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel",
+      "subjectIds": [
+        "SNT-DC-28"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-lawrence-saint-hilary/71cff54c-68c8-4be5-8704-15713fe411a8",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-udovico-azzolino-hrist-isputing-with-the-octors",
+      "artist": "Ludovico Mazzolino",
+      "title": "Christ Disputing with the Doctors",
+      "subjectIds": [
+        "ROS-05"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/ludovico-mazzolino-christ-disputing-with-the-doctors",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+      "artist": "Peter Paul Rubens",
+      "title": "Adoration of the Magi",
+      "subjectIds": [
+        "BIB-G01"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-aniel-in-the-ions-en",
+      "artist": "Peter Paul Rubens",
+      "title": "Daniel in the Lions’ Den",
+      "subjectIds": [
+        "BIB-XL05"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nga.gov/artworks/50298-daniel-lions-den",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-mmaculate-onception",
+      "artist": "Peter Paul Rubens",
+      "title": "Immaculate Conception",
+      "subjectIds": [
+        "DEV-06"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-he-razen-erpent",
+      "artist": "Peter Paul Rubens",
+      "title": "The Brazen Serpent",
+      "subjectIds": [
+        "BIB-EX12"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-the-brazen-serpent",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "artist": "Philippe de Champaigne",
+      "title": "The Dream of Saint Joseph",
+      "subjectIds": [
+        "BIB-G02"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+      "artist": "Pierre Hubert Subleyras",
+      "title": "The Mass of Saint Basil — oil modello",
+      "subjectIds": [
+        "SNT-DC-14"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.metmuseum.org/art/collection/search/439120",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ietro-da-ortona-aint-ecilia",
+      "artist": "Pietro da Cortona",
+      "title": "Saint Cecilia",
+      "subjectIds": [
+        "SNT-OT-23"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/pietro-da-cortona-saint-cecilia",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-aphael-and-iulio-omano-he-isitation",
+      "artist": "Raphael and Giulio Romano",
+      "title": "The Visitation",
+      "subjectIds": [
+        "ROS-02"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-visitation/c02d195f-fdc4-4c61-bedf-e19216dd7335",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ebastiano-icci-sther-before-hasuerus",
+      "artist": "Sebastiano Ricci",
+      "title": "Esther before Ahasuerus",
+      "subjectIds": [
+        "BIB-XL08"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nationalgallery.org.uk/paintings/sebastiano-ricci-esther-before-ahasuerus",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-bastien-ourdon-he-inding-of-oses",
+      "artist": "Sébastien Bourdon",
+      "title": "The Finding of Moses",
+      "subjectIds": [
+        "BIB-EX01"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.nga.gov/artworks/46164-finding-moses",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "OBJECT_URL_RECORDED_NEEDS_MASTER",
+      "action": "CONFIRM_ID_AND_ACQUIRE_FULL_UNCROPPED_ORIGINAL",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-nthony-van-yck-rowning-with-horns",
+      "artist": "Anthony van Dyck",
+      "title": "Crowning with Thorns",
+      "subjectIds": [
+        "ROS-08"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001474",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Francis in Ecstasy",
+      "subjectIds": [
+        "SNT-OT-12"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001478",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "Conversion of Saint Paul",
+      "subjectIds": [
+        "BIB-A05"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000984",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "artist": "Claudio Coello",
+      "title": "Saint Dominic of Guzmán",
+      "subjectIds": [
+        "SNT-OT-13"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000662",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+      "artist": "Eustache Le Sueur",
+      "title": "Saint Paul Preaching at Ephesus",
+      "subjectIds": [
+        "BIB-A15"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%208020",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+      "artist": "Francisco de Zurbarán",
+      "title": "Saint Bonaventure at Council of Lyon",
+      "subjectIds": [
+        "SNT-DC-06"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20204",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Burial of Christ — Prado Passion series",
+      "subjectIds": [
+        "STN-14"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000362",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Descent from the Cross — Prado Passion series",
+      "subjectIds": [
+        "STN-13"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000361",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-acopo-intoretto-udith-and-olofernes",
+      "artist": "Jacopo Tintoretto",
+      "title": "Judith and Holofernes",
+      "subjectIds": [
+        "BIB-XL07"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000389",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ean-estout-entecost",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "subjectIds": [
+        "ROS-13",
+        "DEV-03",
+        "BIB-A01"
+      ],
+      "numberOfUses": 3,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "title": "Joan of Arc at Coronation of Charles VII",
+      "subjectIds": [
+        "SNT-OT-07"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20667",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "artist": "Juan de Juanes",
+      "title": "Martyrdom of Saint Stephen",
+      "subjectIds": [
+        "SNT-OT-10",
+        "BIB-A03"
+      ],
+      "numberOfUses": 2,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000841",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-usepe-de-ibera-aint-erome-riting",
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Jerome Writing",
+      "subjectIds": [
+        "SNT-DC-03"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P005201",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Matthias — Apostolate",
+      "subjectIds": [
+        "SNT-AP-11"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20Rubens%20Saint%20Matthias%20Duke%20of%20Lerma%20Apostolado",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-itian-hrist-arrying-the-ross",
+      "artist": "Titian",
+      "title": "Christ Carrying the Cross",
+      "subjectIds": [
+        "ROS-09"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000438",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "SEARCH_PAGE_NOT_ART_OBJECT",
+      "action": "REPLACE_SEARCH_LINK_WITH_INSTITUTION_OBJECT",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+      "artist": "Anthony van Dyck",
+      "title": "Saint Martin Dividing His Cloak",
+      "subjectIds": [
+        "SNT-OT-29"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.wga.hu/html/d/dyck_van/3other/s_martin.html",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "VERIFY_EXACT_OBJECT_IDENTITY",
+      "action": "VERIFY_OBJECT_NOT_CYCLE_OR_SEARCH",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    },
+    {
+      "editorialArtworkId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+      "artist": "Peter Paul Rubens",
+      "title": "Martyrdom of Saint Andrew",
+      "subjectIds": [
+        "SNT-AP-02"
+      ],
+      "numberOfUses": 1,
+      "recordedSourceUrl": "https://www.fcamberes.org/en/-the-martyrdom-of-saint-andrew",
+      "selectedPreviewUrl": null,
+      "additionalInstitutionalBenchmarkLead": null,
+      "sourceClassification": "VERIFY_EXACT_OBJECT_IDENTITY",
+      "action": "VERIFY_OBJECT_NOT_CYCLE_OR_SEARCH",
+      "acquiredRegistryOriginal": false,
+      "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
+      "sourceNeedsByteAndLicenceValidation": true
+    }
+  ]
+}
