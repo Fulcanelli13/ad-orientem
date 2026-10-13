@@ -70,7 +70,10 @@
     },
     "newArtworksAcquiredInThisStage": 0,
     "newUserSelectionsGranted": 0,
-    "classIDatesCertifiedAestheticallyComplete": 0
+    "classIDatesCertifiedAestheticallyComplete": 0,
+    "existingLibraryExistingOriginalCandidatesAdditionallyScreened": 14,
+    "newlyAddedExternalArtworkRecords": 0,
+    "newArtworkDownloads": 0
   },
   "firstClassDays": [
     {
@@ -1770,6 +1773,237 @@
     "Earlier fixed calendar decision is preserved even when art is unsuitable; replacement is subject to separate human review.",
     "2026 Class I dates reflect observed 1962 local-date calendar (includes repeat octaves and Sundays). Different years move; derive dates dynamically.",
     "St Joseph Workman and St Joseph March 19 may share Joseph subject when artistic and liturgical fit permits; do not mislabel a secular workshop painting as a specific Mass episode.",
-    "All Saints and All Souls are distinct subject themes despite neighbouring dates."
+    "All Saints and All Souls are distinct subject themes despite neighbouring dates.",
+    "2026-10-13: additionally examined 14 already-acquired registry originals via source-complete 266-item atlas thumbnails for high-priority weak Class I feast themes. These are visually provisional candidates, no new app release or user override. Further high-quality full image review required."
+  ],
+  "existingLibraryAlternativesScreened": [
+    {
+      "target": "calendar.pentecost",
+      "artworkId": "commons-debray-pentecost",
+      "artist": "Salomon de Bray",
+      "title": "Pentecost",
+      "existingRegistryOriginalSha256": "8c7e68d71f4fb477be62ad877acbaaabad17833799e0b3ff675e13438acd620f",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pentecost,_by_Salomon_de_Bray_(1597-1664).jpg",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "EXACT_FEAST",
+      "provisionalVisualVerdict": "PRIORITY_FULL_IMAGE_REVIEW",
+      "visualNote": "Salomon de Bray's Pentecost is painted in a more naturalistic, Baroque language than the older Baroncelli choice. The available thumbnail is dark and soft, so full-image detail and contrast must be checked.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.holy-thursday",
+      "artworkId": "nga-12130",
+      "artist": "Sebastiano Ricci",
+      "title": "The Last Supper",
+      "existingRegistryOriginalSha256": "699b5a374b42ae683f5802501df56c164f055cdda0dea75046e49244f57eb7bf",
+      "sourceUrl": "https://www.nga.gov/artworks/12130-last-supper",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "LAST_SUPPER_EXACT_EVENT",
+      "provisionalVisualVerdict": "PRIORITY_FULL_IMAGE_REVIEW",
+      "visualNote": "Sebastiano Ricci's Last Supper has fuller figure modelling and a coherent painted interior; substantially more compatible stylistically than the historical Ugolino gold-ground panel.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.trinity",
+      "artworkId": "cma-159488",
+      "artist": "Hendrik van Balen",
+      "title": "The Trinity",
+      "existingRegistryOriginalSha256": "1880866ce9b1cfc27c59a177fbe16689d6d2a595aa69b3cf2fbf9a62c59f49a7",
+      "sourceUrl": "https://clevelandart.org/art/1996.26",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "EXACT_TRINITY",
+      "provisionalVisualVerdict": "PRIORITY_FULL_IMAGE_REVIEW",
+      "visualNote": "Hendrik van Balen's sculpturally modelled Trinity with angels is more painterly than the historical Laurent Girardin panel; detailed iconography and clarity need review.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.good-friday",
+      "artworkId": "met-652416",
+      "artist": "Pedro Orrente",
+      "title": "The Crucifixion",
+      "existingRegistryOriginalSha256": "dc5b87d8f35213f971f5baea844a43aaef6d05b1eacd5eeea3e7442a52f0116f",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/652416",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "EXACT_CRUCIFIXION",
+      "provisionalVisualVerdict": "PRIORITY_FULL_IMAGE_REVIEW",
+      "visualNote": "Pedro Orrente's Crucifixion provides serious dramatic figuration and the actual Passion subject, not the excluded El Greco Carrying the Cross. Composition is complex but credible.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.good-friday",
+      "artworkId": "met-436098",
+      "artist": "Gerard David",
+      "title": "The Crucifixion",
+      "existingRegistryOriginalSha256": "5a6de0cc6c1a3e16c9a52d2bbe39dde87202fd678f3f029aeef472bdab5881fb",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436098",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "EXACT_CRUCIFIXION",
+      "provisionalVisualVerdict": "SECONDARY_AESTHETIC_REVIEW",
+      "visualNote": "Gerard David's Crucifixion has good sacred solemnity but earlier Northern modeling; compare with Orrente on current aesthetic benchmark.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.good-friday",
+      "artworkId": "cma-97147",
+      "artist": "Sodoma",
+      "title": "The Crucifixion",
+      "existingRegistryOriginalSha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "sourceUrl": "https://clevelandart.org/art/1916.786",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "EXACT_CRUCIFIXION",
+      "provisionalVisualVerdict": "SECONDARY_AESTHETIC_REVIEW",
+      "visualNote": "Sodoma Crucifixion has clear full-body figure, colour and landscape; idealisation/quiet scene versus Orrente's drama to compare, not automatically promote.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.corpus-christi",
+      "artworkId": "met-438434",
+      "artist": "Jean Auguste Dominique Ingres",
+      "title": "The Virgin Adoring the Host",
+      "existingRegistryOriginalSha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "EUCHARISTIC_ADORATION_CONTEXT_NOT_EXACT_FEAST",
+      "provisionalVisualVerdict": "SECONDARY_THEMATIC_REUSE",
+      "visualNote": "Ingres The Virgin Adoring the Host is an accomplished devotional painting and potential Eucharistic substitute; do not claim it depicts the Corpus Christi historical liturgy.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.corpus-christi",
+      "artworkId": "met-437527",
+      "artist": "Peter Paul Rubens",
+      "title": "The Glorification of the Eucharist",
+      "existingRegistryOriginalSha256": "521b3051abc5f86aa0d069f884fb731cbd339160f1667d8472ee6b35dc72ca65",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437527",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "EUCHARISTIC_GLORIFICATION_CONTEXT_NOT_EXACT_FEAST",
+      "provisionalVisualVerdict": "SECONDARY_STUDY_ONLY",
+      "visualNote": "Rubens Eucharistic Glorification is directly themed but a loose oil sketch, soft/low legibility at mobile sizes. Do not treat sketch as full-page painting approval.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.st-john-baptist",
+      "artworkId": "met-438467",
+      "artist": "Bernard van Orley",
+      "title": "The Birth and Naming of Saint John the Baptist; (reverse) Trompe-l'oeil with Painting of The Man of Sorrows",
+      "existingRegistryOriginalSha256": "2ed2f5a5294815d7332c713eef824d2f616db12e5636ff5253908d87469832df",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438467",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "NATIVITY_OF_ST_JOHN_EXACT_EVENT",
+      "provisionalVisualVerdict": "PRIORITY_FULL_IMAGE_REVIEW",
+      "visualNote": "Bernard van Orley's Birth and Naming of John directly matches June 24, unlike the old historical Beheading painting; Northern style but scene-specific and clearly rendered.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.christ-king",
+      "artworkId": "met-436794",
+      "artist": "Joos van Cleve",
+      "title": "The Last Judgment",
+      "existingRegistryOriginalSha256": "a96c2979bbce3032a6fa7c0a1213833c645ec3586e612ae814080808838bedeb",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436794",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "RELATED_ESCHATOLOGY_NOT_EXACT_FEAST",
+      "provisionalVisualVerdict": "SECONDARY_THEMATIC_REUSE",
+      "visualNote": "Joos van Cleve Last Judgment includes Christ enthroned but is not an exact portrayal of Christ the King; useful source alternative only; mobile legibility review.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.advent",
+      "artworkId": "met-436502",
+      "artist": "Luca Giordano",
+      "title": "The Annunciation",
+      "existingRegistryOriginalSha256": "a76e00046346849d284e777072cff343a60faefa218178663071a08a10dc74b8",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436502",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "ANNUNCIATION_FOR_ADVENT_CONTEXT",
+      "provisionalVisualVerdict": "PRIORITY_FULL_IMAGE_REVIEW",
+      "visualNote": "Luca Giordano Annunciation offers Baroque depth and modelling for Advent usage; preserve Champaigne Annunciation as separate first-rank selected painting.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.advent",
+      "artworkId": "met-441233",
+      "artist": "Peter Candid",
+      "title": "The Annunciation",
+      "existingRegistryOriginalSha256": "72c2c54a263ee67a0b7ed8ffc99474b64ce5c45096d75be0da16ca95ccab92d6",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/441233",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "ANNUNCIATION_FOR_ADVENT_CONTEXT",
+      "provisionalVisualVerdict": "SECONDARY_AESTHETIC_REVIEW",
+      "visualNote": "Peter Candid Annunciation is readable, sculptural, and painterly; compare against Giordano and prior Champaigne painting, no new unique daily picture necessary.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.passion",
+      "artworkId": "met-437156",
+      "artist": "Moretto da Brescia",
+      "title": "The Entombment",
+      "existingRegistryOriginalSha256": "6825656670d25b88c12aa833984db007876698c7d6fbdbdadeb6d020cf1bbb67",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437156",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "PASSION_ENTOMBMENT_CONTEXT_NOT_SAME_DAY",
+      "provisionalVisualVerdict": "SECONDARY_THEMATIC_REUSE",
+      "visualNote": "Moretto Entombment previously selected for Holy Saturday could be reused for Passion/Holy Week theme if date and iconography are kept separate.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    },
+    {
+      "target": "calendar.all-saints",
+      "artworkId": "met-437743",
+      "artist": "Spanish Painter",
+      "title": "The Trinity Adored by All Saints",
+      "existingRegistryOriginalSha256": "93690bf1b31ed4b7459bacec00017dc9642a005744002dd57e9348e4ab106924",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437743",
+      "source": "EXISTING_LIBRARY_266_THUMBNAIL_EXAMINED",
+      "relation": "ALL_SAINTS_SUBJECT_BUT_STYLE_HOLD",
+      "provisionalVisualVerdict": "ARCHIVAL_ONLY_UNTIL_ARTISTIC_GATE",
+      "visualNote": "A literal all-saints assembly exists but is a complex early polyptych; not a suitable Class I primary hero under the established style. No eligible alternative yet identified inside review subset.",
+      "artistHardBlocked": false,
+      "userApprovedNewSelection": false,
+      "qualityRightsCropGatesCleared": false
+    }
+  ],
+  "existingLibraryNoClearlySuitableExactHeroYet": [
+    {
+      "target": "calendar.palm-sunday",
+      "reason": "Only already-reviewed stylized Maestro Bartolomé Entry into Jerusalem is directly tagged; allow targeted search after wider existing-art reconciliation, not a fake match."
+    },
+    {
+      "target": "calendar.christ-king",
+      "reason": "Last Judgment provides contextual reuse but not an excellent exact King of Kings painting in screened existing subset."
+    },
+    {
+      "target": "calendar.all-saints",
+      "reason": "Historical full-saints assembly is small/details overcrowded. Could use magnificent known saints depiction only after artistic approval; don't manufacture scenes."
+    },
+    {
+      "target": "devotion.precious-blood",
+      "reason": "No distinctly qualified selected artwork in the baseline. A grave Crucifixion can be reused as a related devotional work if expressly labelled contextual."
+    }
   ]
 }
