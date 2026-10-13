@@ -27,6 +27,7 @@ try{
    const dates=["2026-10-11","2026-10-18","2026-11-01","2026-11-30","2026-12-08"];
    const {select1962CommemorationsForMassForm}=await import("/src/mass/1962-commemoration-form-source.js");
    const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+   const {composeProperReaderParagraphs}=await import("/src/mass/proper-reader-composition.js");
    const {assessPrintableProper}=await import("/src/calendar/print-proper.js");
    const forms=["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"];
    const output=[];
@@ -40,11 +41,17 @@ try{
        });
        const selected=result?.proper?.data??result?.proper;
        const slots=properToReaderSlots(selected,{language:"fr"});
+       const displayed=composeProperReaderParagraphs(
+         "AO.SM.B019",slots.slots.COLLECT_SET.data.paragraphs,{language:"fr"}
+       );
        const print=assessPrintableProper(r,{language:"fr",massForm:form});
        return [form,{status:result.status,reason:result.reason??null,
          scope:result.decision?.scope??null,applied:result.decision?.appliedCount??null,
          prayerCounts:["collects","secrets","postcommunions"].map(k=>selected?.[k]?.length??null),
          readerCollects:slots.slots.COLLECT_SET.data?.paragraphs?.length??null,
+         renderedCollects:displayed.length,
+         additionalOremus:displayed.filter(p=>p.latin==="Orémus.").length,
+         renderedResponses:displayed.filter(p=>p.kind==="RESPONSE").length,
          missionCollect:selected?.missionSundayCollectDecision?.status??null,
          missionUnderOneConclusion:selected?.collects?.[0]?.oneConclusion?.status??null,
          printed:print.ok,printReason:print.reason??null,
@@ -79,7 +86,17 @@ try{
      assert.equal(actual.status,"CERTIFIED",row.date+"/"+form+": "+actual.reason);
      assert.equal(actual.applied,expected[row.date][index]);
      assert.deepEqual(actual.prayerCounts,[n,n,n]);
-     assert.equal(actual.readerCollects,n+(row.date==="2026-10-18"?(form==="LOW"?2:1):0),row.date+"/"+form+" LIVE paragraph focus");
+     // Source Proper paragraphs exclude display-only intermediate Amen/Oremus.
+     assert.equal(actual.readerCollects,n+(row.date==="2026-10-18"?1:0),
+       row.date+"/"+form+" source prayer focus paragraphs");
+     const displayedCount=row.date==="2026-10-18"?
+       (form==="LOW"?6:3):(n===2?5:2);
+     assert.equal(actual.renderedCollects,displayedCount,
+       row.date+"/"+form+" rendered Collect/Oremus/Amen sequence");
+     assert.equal(actual.additionalOremus,n-1,
+       row.date+"/"+form+" extra Oremus only between separate conclusions");
+     assert.equal(actual.renderedResponses,n,
+       row.date+"/"+form+" Amen at each separate conclusion");
      if(row.date==="2026-10-18"){
        assert.equal(actual.missionCollect,"CERTIFIED",form+" must include Mission Sunday under one conclusion");
        assert.equal(actual.missionUnderOneConclusion,"CERTIFIED");

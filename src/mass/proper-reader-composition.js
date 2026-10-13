@@ -74,8 +74,43 @@ export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs,
     ...row,
     vernacular:row.vernacular?.[locale] ?? row.vernacular?.en ?? "",
   }));
-  return Object.freeze([
-    ...resolvedProperParagraphs.map(x=>Object.freeze({...x})),
-    ...fixed,
-  ]);
+  // The first Oremus is already a canonical Ordinary cue (C0072/C0253).
+  // Subsequent source-owned Collect/Postcommunion prayer groups require a
+  // distinct Amen followed by Oremus. Grouped commemorations under one
+  // conclusion retain ONE group index, so they do not get an extra invitation.
+  // Secret prayers remain silent, without inserted Oremus or public Amen.
+  const prayerAnchor=blockId==="AO.SM.B019"?"AO.SM.C0073":
+    blockId==="AO.SM.B088"?"AO.SM.C0254":null;
+  const rows=[];
+  let lastGroup=null;
+  for(const paragraph of resolvedProperParagraphs){
+    const group=Number.isInteger(paragraph.orationGroupIndex) ?
+      paragraph.orationGroupIndex : null;
+    if(prayerAnchor && group!==null && lastGroup!==null && group!==lastGroup){
+      if(group!==lastGroup+1)throw new Error(
+        blockId+": source prayer groups out of order"
+      );
+      const label=blockId==="AO.SM.B019"?"COLLECT":"POSTCOMMUNION";
+      const stem="R17.ORATION."+label+".G"+lastGroup;
+      rows.push(Object.freeze({
+        id:stem+".AMEN",kind:"RESPONSE",
+        latin:"℟. Amen.",vernacular:"℟. Amen.",
+        role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
+        sourceCueIds:Object.freeze([]),sourceAnchorCueId:prayerAnchor,
+        sourceRule:"1960_MISSAL_RUBRICS_436_437_505",
+        displayOnly:true,
+      }));
+      rows.push(Object.freeze({
+        id:"R17.ORATION."+label+".G"+group+".OREMUS",kind:"VERSICLE",
+        latin:"Orémus.",vernacular:locale==="fr"?"Prions.":"Let us pray.",
+        role:"PRIEST",speakerRole:"PRIEST",
+        sourceCueIds:Object.freeze([]),sourceAnchorCueId:prayerAnchor,
+        sourceRule:"1960_MISSAL_RUBRICS_436_437_505",
+        displayOnly:true,
+      }));
+    }
+    rows.push(Object.freeze({...paragraph}));
+    if(group!==null)lastGroup=group;
+  }
+  return Object.freeze([...rows,...fixed]);
 }
