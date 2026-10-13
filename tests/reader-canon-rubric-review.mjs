@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
-  validateCanonRubricReview,createCanonRubricReviewController,
+  validateCanonRubricReview,createCanonRubricReviewController,projectCanonParagraphReviews,
   CANON_RUBRIC_REVIEW_SCHEMA,
 } from "../src/mass/reader-canon-rubric-review.js";
 
@@ -107,4 +107,21 @@ wrongActor.rows[0].candidateActions[0].actor="FAITHFUL";
 assert.throws(()=>validateCanonRubricReview(wrongActor),/invalid or unsupported/);
 const published=structuredClone(source);published.defaultPublication=true;
 assert.throws(()=>validateCanonRubricReview(published),/draft cannot claim/);
+const paragraphReviews=projectCanonParagraphReviews([
+  {id:"CANON.FOCUS.1",sourceCueIds:["AO.SM.C0150"]},
+  {id:"CANON.SYNTHETIC.OREMUS",sourceCueIds:[],sourceAnchorCueId:"AO.SM.C0150"},
+  {id:"CANON.FOCUS.2",sourceCueIds:["AO.SM.C0174","AO.SM.C0181"]},
+  {id:"CANON.FOCUS.3",sourceCueIds:["AO.SM.C0150","AO.SM.C0150"]},
+  {id:"CANON.NONRITUAL",sourceCueIds:["OTHER.002"]},
+],controller,{editorialPreview:true,form:"LOW"});
+assert.deepEqual(paragraphReviews.map(x=>x.cueReviews.length),[1,0,2,1,0],
+  "Paragraphs must link independently to canonical source cues only");
+assert.deepEqual(paragraphReviews[2].cueReviews.map(x=>x.cueId),
+  ["AO.SM.C0174","AO.SM.C0181"],"Composite paragraph lost one actual cue");
+assert.equal(paragraphReviews[1].canPublish,false);
+assert.equal(paragraphReviews[1].cueReviews.length,0,
+  "Derived Oremus sourceAnchorCueId must not masquerade as priest action");
+assert.equal(paragraphReviews[0].cueReviews[0].priestActions[0].isObservedNow,false);
+assert.throws(()=>projectCanonParagraphReviews(null,controller),/Reader paragraphs required/);
+
 console.log("PASS Canon 58/62 source-anchored preview: 42 rubric gaps preserved; form, actor and observational clocks fail closed.");
