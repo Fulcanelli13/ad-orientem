@@ -1,0 +1,1805 @@
+{
+  "schema": "ao-mass-canon-faithful-58-cues-profile-audit-v1",
+  "date": "2026-10-13",
+  "status": "PROFILE_AND_CONGREGATIONAL_CUSTOM_RESEARCH_NOT_1962_UNIVERSAL_PEW_RULE",
+  "sourceInputs": [
+    "data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+    "data/presentation/reader-postures.v1.json",
+    "data/presentation/reader-gestures.v1.json",
+    "data/mass/ritus-1962-faithful-posture-classification-batch04.v1.json"
+  ],
+  "allCuesCovered": 58,
+  "items": [
+    {
+      "cueId": "AO.SM.C0150",
+      "blockId": "AO.SM.B047",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [
+        {
+          "id": "AO.SM.POST.016",
+          "condition": "CANON_START && AO_DEFAULT_1962_SUNG",
+          "authority": "B1/C1"
+        }
+      ],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0151",
+      "blockId": "AO.SM.B047",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "blockId": "AO.SM.B047",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0153",
+      "blockId": "AO.SM.B047",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0154",
+      "blockId": "AO.SM.B048",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0155",
+      "blockId": "AO.SM.B048",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0156",
+      "blockId": "AO.SM.B048",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0157",
+      "blockId": "AO.SM.B049",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0158",
+      "blockId": "AO.SM.B049",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0159",
+      "blockId": "AO.SM.B049",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0160",
+      "blockId": "AO.SM.B049",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0161",
+      "blockId": "AO.SM.B050",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0162",
+      "blockId": "AO.SM.B050",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0163",
+      "blockId": "AO.SM.B051",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "blockId": "AO.SM.B051",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "blockId": "AO.SM.B051",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "blockId": "AO.SM.B051",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0167",
+      "blockId": "AO.SM.B051",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0168",
+      "blockId": "AO.SM.B052",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0169",
+      "blockId": "AO.SM.B052",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0170",
+      "blockId": "AO.SM.B052",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "blockId": "AO.SM.B052",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0172",
+      "blockId": "AO.SM.B052",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0173",
+      "blockId": "AO.SM.B052",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [
+        {
+          "action": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+          "trigger": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+          "condition": null,
+          "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+          "canonicalFaithfulLaw": false
+        }
+      ],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [
+        "KNEEL_AND_LOOK_UP_CUES_ARE_DEVOTIONAL_NOT_GENERAL_1962_PEW_LAW"
+      ],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "blockId": "AO.SM.B052",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [
+        {
+          "action": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+          "trigger": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+          "condition": null,
+          "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+          "canonicalFaithfulLaw": false
+        }
+      ],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [
+        "KNEEL_AND_LOOK_UP_CUES_ARE_DEVOTIONAL_NOT_GENERAL_1962_PEW_LAW"
+      ],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0175",
+      "blockId": "AO.SM.B053",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0176",
+      "blockId": "AO.SM.B053",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "blockId": "AO.SM.B053",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0178",
+      "blockId": "AO.SM.B053",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "blockId": "AO.SM.B053",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [
+        {
+          "action": "Remain kneeling; bow reverently, then look up at the Chalice",
+          "trigger": "The Chalice is actually elevated — At the actual elevation [Do not add an inv...",
+          "condition": null,
+          "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+          "canonicalFaithfulLaw": false
+        }
+      ],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [
+        "KNEEL_AND_LOOK_UP_CUES_ARE_DEVOTIONAL_NOT_GENERAL_1962_PEW_LAW"
+      ],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0180",
+      "blockId": "AO.SM.B053",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "blockId": "AO.SM.B053",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "KNEEL",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "CANON_START_PROFILE_KNEEL"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0182",
+      "blockId": "AO.SM.B054",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [
+        {
+          "id": "AO.SM.POST.017",
+          "condition": "POST_CONSECRATION_STAND_PROFILE",
+          "authority": "C1"
+        }
+      ],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [
+        "POST_CONSECRATION_STAND_EVENT_IS_EXPLICITLY_CONDITIONAL_NOT_UNIVERSAL"
+      ],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0183",
+      "blockId": "AO.SM.B054",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "blockId": "AO.SM.B054",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "blockId": "AO.SM.B054",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0186",
+      "blockId": "AO.SM.B055",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "blockId": "AO.SM.B056",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "blockId": "AO.SM.B056",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "blockId": "AO.SM.B056",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "blockId": "AO.SM.B056",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0191",
+      "blockId": "AO.SM.B056",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0192",
+      "blockId": "AO.SM.B057",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0193",
+      "blockId": "AO.SM.B057",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0194",
+      "blockId": "AO.SM.B057",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0195",
+      "blockId": "AO.SM.B057",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "blockId": "AO.SM.B058",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [
+        {
+          "action": "Strike breast",
+          "trigger": "Nobis quoque peccatóribus — At / as these words begin",
+          "condition": null,
+          "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+          "canonicalFaithfulLaw": false
+        }
+      ],
+      "additionalHistoricalGestureWitness": {
+        "action": "STRIKE_BREAST",
+        "source": "GUERANGER_ORIGINAL_1885",
+        "authority": "HISTORICAL_LAY_CUSTOM_ONLY",
+        "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+      },
+      "decisionFlags": [
+        "GUERANGER_1885_INVITES_FAITHFUL_BREAST_STRIKE_CUSTODY_NOT_UNIVERSAL"
+      ],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0197",
+      "blockId": "AO.SM.B058",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [
+        {
+          "action": "Strike breast",
+          "trigger": "Nobis quoque peccatóribus — At / as these words begin",
+          "condition": null,
+          "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+          "canonicalFaithfulLaw": false
+        }
+      ],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [
+        "POTENTIALLY_DUPLICATED_BREAST_STRIKE_EXISTING_REGISTRY_HAS_NO_NEW_RITUS_FAITHFUL_RULE"
+      ],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0198",
+      "blockId": "AO.SM.B058",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [
+        {
+          "action": "Strike breast",
+          "trigger": "Nobis quoque peccatóribus — At / as these words begin",
+          "condition": null,
+          "sourceTier": "SUNG_PRESENTATION_REGISTRY_CONGREGATION_CUSTOM_UNVERIFIED",
+          "canonicalFaithfulLaw": false
+        }
+      ],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [
+        "POTENTIALLY_DUPLICATED_BREAST_STRIKE_EXISTING_REGISTRY_HAS_NO_NEW_RITUS_FAITHFUL_RULE"
+      ],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0199",
+      "blockId": "AO.SM.B059",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0200",
+      "blockId": "AO.SM.B059",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "blockId": "AO.SM.B060",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0202",
+      "blockId": "AO.SM.B060",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0203",
+      "blockId": "AO.SM.B060",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "blockId": "AO.SM.B060",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "blockId": "AO.SM.B060",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0206",
+      "blockId": "AO.SM.B061",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0207",
+      "blockId": "AO.SM.B061",
+      "postureCandidatesByCommunityProfile": [
+        {
+          "profile": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+          "value": "OBSERVE_LOCAL",
+          "authority": "DEFAULT_SAFE_NO_UNIVERSAL_1962_PEW_MANDATE"
+        },
+        {
+          "profile": "AO_DEFAULT_1962_SUNG",
+          "value": "KNEEL",
+          "authority": "OC64_COMMUNITY_PROFILE_IF_SELECTED_AND_ACTUALLY_OBSERVED",
+          "condition": "CANON_START_AND_NO_LATER_LOCAL_OVERRIDE"
+        },
+        {
+          "profile": "POST_CONSECRATION_STAND_PROFILE",
+          "value": "STAND",
+          "authority": "PERIOD_CEREMONIAL_PROFILE_NOT_UNIVERSAL",
+          "condition": "C0182_EVENT_REQUIRES_SELECTED_LOCAL_PROFILE"
+        }
+      ],
+      "sourcePostureEvents": [],
+      "registeredGestureCandidates": [],
+      "additionalHistoricalGestureWitness": null,
+      "decisionFlags": [],
+      "lowForm": "SEPARATE_LOW_MASS_COMMUNITY_PROFILE_NOT_COPIED_FROM_SUNG",
+      "status": "EXPLICIT_RESEARCH_STATE_NOT_PUBLICATION_CERTIFIED"
+    }
+  ],
+  "warnings": {
+    "existingPostureEventIds": [
+      {
+        "id": "AO.SM.POST.016",
+        "cueId": "AO.SM.C0150",
+        "condition": "CANON_START && AO_DEFAULT_1962_SUNG",
+        "posture": "KNEEL"
+      },
+      {
+        "id": "AO.SM.POST.017",
+        "cueId": "AO.SM.C0182",
+        "condition": "POST_CONSECRATION_STAND_PROFILE",
+        "posture": "STAND"
+      }
+    ],
+    "existingGestureCues": 6,
+    "flaggedNobisRepeat": [
+      "AO.SM.C0197",
+      "AO.SM.C0198"
+    ],
+    "universalRomanPewObligations": 0,
+    "notes": [
+      "The 1962 Ritus directs priest/ministers; this does not authorize imposed lay pew posture at any of the 58 cues.",
+      "Profile terms are existing Ad Orientem research names; verify against selected community practice before displaying.",
+      "Kneeling from C0150 is historical suggested assistance posture, not categorical Roman 1962 law.",
+      "Post-Consecration standing event C0182 is explicitly guarded by selected local profile.",
+      "Guéranger's historical witness invites breast strike at the opening phrase only, not across all three subsequent cues.",
+      "Visible Schola text position does not establish actual priest progression through silent Canon."
+    ]
+  }
+}
