@@ -17,7 +17,8 @@
     "Second 2026-10-13 research wave: source-grounded 5 additional zero-lead subjects (2 oil paintings, 2 etchings, 1 gouache); non-painting formats and contextual mismatch explicitly flagged; no approval or download.",
     "French Mays of Notre-Dame corpus is important further source discovery (https://www.notredamedeparis.fr/comprendre/peintures/les-mays-de-notre-dame/): historic large oil canvases predominantly Acts; do not import all or imply image rights. Explicit subjects Courtin 1707 and Galloche 1705 added as separate original artworks.",
     "Source correction 2026-10-13: 5 previously unverified older options were real art but WRONG biblical event: Joseph-to-Potiphar versus sold by brothers; Jacob/Pharaoh versus first settlement; Tobias versus Tobit; Daniel 6 lions versus Daniel 1; Heliodorus versus Maccabean resistance. Do not count as exact coverage.",
-    "Latest 4 formerly zero-source subjects have museum-indexed engravings/manuscript illustrations; no graphic is aesthetically approved and no thematic subject's physical event is deemed map equivalent. These images can be bypassed in favour of atlas/timeline rendering."
+    "Latest 4 formerly zero-source subjects have museum-indexed engravings/manuscript illustrations; no graphic is aesthetically approved and no thematic subject's physical event is deemed map equivalent. These images can be bypassed in favour of atlas/timeline rendering.",
+    "Earlier five wrong-scene IDs remain wrong; separate institutionally recorded replacement candidates added. A print is never automatically equivalent to a museum painting, and journey or subevent coverage is distinguished from complete subject."
   ],
   "summary": {
     "acquiredSourceCoverage": 27,
@@ -33,7 +34,8 @@
     "newInstitutionalSourceWaveSubjectCount": 35,
     "newInstitutionalSourceWaveCandidateCount": 37,
     "previousOptionInstitutionallyIdentified": 7,
-    "previousOptionSceneMismatchConfirmed": 5
+    "previousOptionSceneMismatchConfirmed": 5,
+    "previousWrongSceneAlternativeEvidenceCount": 5
   },
   "subjects": [
     {
@@ -1252,6 +1254,20 @@
           "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
           "acquiredOriginalSha256": null,
           "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        },
+        {
+          "artworkId": "ART-research-20261013-replacement-BIB-PA09",
+          "artist": "Sébastien Bourdon",
+          "title": "The Selling of Joseph by His Brothers",
+          "sourceUrl": "https://www.nationaltrustcollections.org.uk/object/486136",
+          "medium": "oil on canvas",
+          "sourceInstitution": "National Trust NT 486136 Petworth House",
+          "sceneMatch": "GENESIS_37_DIRECT",
+          "matchNotes": "c.1640 original shows payment for Joseph by his brothers, unlike previous Pontormo scene showing Egyptian resale.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_REPLACEMENT_SOURCE",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -1259,7 +1275,10 @@
       "artisticAcceptance": false,
       "publicationAcceptance": false,
       "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
-      "researchWave": "2026-10-13-subject-match-correction"
+      "researchWave": "2026-10-13-wrong-scene-replacement",
+      "verifiedReplacementLeads": [
+        "ART-research-20261013-replacement-BIB-PA09"
+      ]
     },
     {
       "subjectId": "BIB-PA10",
@@ -1331,6 +1350,20 @@
           "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
           "acquiredOriginalSha256": null,
           "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        },
+        {
+          "artworkId": "ART-research-20261013-replacement-BIB-PA12",
+          "artist": "Stefano della Bella",
+          "title": "Jacob's Journey to Egypt",
+          "sourceUrl": "https://buffaloakg.org/artworks/unnumbered-3-jacobs-journey-egypt",
+          "medium": "engraving",
+          "sourceInstitution": "Buffalo AKG Art Museum",
+          "sceneMatch": "GENESIS_46_JOURNEY",
+          "matchNotes": "c.1647, journey toward Egypt; adjacent to settlement, not a depiction of arrival or full settlement.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_REPLACEMENT_SOURCE",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -1338,7 +1371,10 @@
       "artisticAcceptance": false,
       "publicationAcceptance": false,
       "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
-      "researchWave": "2026-10-13-subject-match-correction"
+      "researchWave": "2026-10-13-wrong-scene-replacement",
+      "verifiedReplacementLeads": [
+        "ART-research-20261013-replacement-BIB-PA12"
+      ]
     },
     {
       "subjectId": "BIB-EX03",
@@ -2118,6 +2154,20 @@
           "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
           "acquiredOriginalSha256": null,
           "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        },
+        {
+          "artworkId": "ART-research-20261013-replacement-BIB-XL02",
+          "artist": "Andrea di Lione",
+          "title": "Tobit Burying the Dead",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436891",
+          "medium": "oil on canvas",
+          "sourceInstitution": "Metropolitan Museum of Art 1989.225",
+          "sceneMatch": "TOBIT_1_EXACT_EPISODE",
+          "matchNotes": "1640s painting showing father Tobit in Assyrian exile, specifically his act of burying the dead, not Tobias' journey with Raphael.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_REPLACEMENT_SOURCE",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -2125,7 +2175,10 @@
       "artisticAcceptance": false,
       "publicationAcceptance": false,
       "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
-      "researchWave": "2026-10-13-subject-match-correction"
+      "researchWave": "2026-10-13-wrong-scene-replacement",
+      "verifiedReplacementLeads": [
+        "ART-research-20261013-replacement-BIB-XL02"
+      ]
     },
     {
       "subjectId": "BIB-XL03",
@@ -2198,6 +2251,20 @@
           "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
           "acquiredOriginalSha256": null,
           "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        },
+        {
+          "artworkId": "ART-research-20261013-replacement-BIB-XL04",
+          "artist": "Johannes or Lucas van Doetechum, after Hans Vredeman de Vries",
+          "title": "Daniel before King Nebuchadnezzar",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Daniel-voor-koning-Nebukadnessar--1c539b34c16c610bc061467191b6d5f1",
+          "medium": "etching",
+          "sourceInstitution": "Rijksmuseum RP-P-1960-175",
+          "sceneMatch": "DANIEL_1_DIRECT",
+          "matchNotes": "1579 print of Daniel and companions before Nebuchadnezzar for palace education; differs from lions' den Daniel 6.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_REPLACEMENT_SOURCE",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -2205,7 +2272,10 @@
       "artisticAcceptance": false,
       "publicationAcceptance": false,
       "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
-      "researchWave": "2026-10-13-subject-match-correction"
+      "researchWave": "2026-10-13-wrong-scene-replacement",
+      "verifiedReplacementLeads": [
+        "ART-research-20261013-replacement-BIB-XL04"
+      ]
     },
     {
       "subjectId": "BIB-XL06",
@@ -2341,6 +2411,20 @@
           "artisticTier": "SOURCE_IDENTIFIED_INVALID_EXACT_MATCH",
           "acquiredOriginalSha256": null,
           "decision": "NOT_VALID_FOR_THIS_SUBJECT"
+        },
+        {
+          "artworkId": "ART-research-20261013-replacement-BIB-XL13",
+          "artist": "Jan de Visscher, after Matthias Scheits",
+          "title": "Mattatias",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Mattatias--c197d46bff918435e221d113cb56a2a3",
+          "medium": "etching and engraving",
+          "sourceInstitution": "Rijksmuseum",
+          "sceneMatch": "1_MACCABEES_2_DIRECT",
+          "matchNotes": "Collection indexes opening of Maccabean resistance at Modin; replaces unrelated Heliodorus episode for subject coverage.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_REPLACEMENT_SOURCE",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
         }
       ],
       "hasActuallyImageInspectedResearchLead": false,
@@ -2348,7 +2432,10 @@
       "artisticAcceptance": false,
       "publicationAcceptance": false,
       "previousOptionSceneMatch": "INVALID_FOR_EXACT_SUBJECT",
-      "researchWave": "2026-10-13-subject-match-correction"
+      "researchWave": "2026-10-13-wrong-scene-replacement",
+      "verifiedReplacementLeads": [
+        "ART-research-20261013-replacement-BIB-XL13"
+      ]
     },
     {
       "subjectId": "BIB-XL14",
