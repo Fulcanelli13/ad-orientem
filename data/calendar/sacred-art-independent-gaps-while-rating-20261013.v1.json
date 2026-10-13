@@ -60,7 +60,8 @@
       "newPrimaryCandidates": [
         "FEAST-ALLSAINTS-PRETI"
       ],
-      "status": "RELATED_CHRIST_IN_GLORY_NOT_LITURGICALLY_EXACT"
+      "status": "ONLY_CONTEXTUAL_PRETI_AND_EXCLUDED_LOW_QUALITY_OR_ICON_FORMAT_ALTERNATIVES_FOUND",
+      "negativeResearchRecordCount": 3
     },
     "calendar.sacred-heart": {
       "newPrimaryCandidates": [
@@ -501,6 +502,40 @@
     "Preti work depicts Christ in Glory with a selection of Saints. Cross-reuse is contextual for All Saints and Christ King, never exact both.",
     "Rubens Prado apostolate contains several exact already catalogued saints, so no duplicate ID imported.",
     "A Saint iconographic reference is not sufficient for an automatic calendar hero: intended mobile artwork must have proper emphasis and visual quality.",
-    "Update: van Dyck's 1617 Indianapolis Museum Entry into Jerusalem is direct Class I Palm Sunday painting with Newfields contributed collection record and Zeri independent catalogue. This is a HIGH value candidate but not added to user's ongoing rating sheet, not an acquired 267th image, and phone-crop/user aesthetic review still pending."
+    "Update: van Dyck's 1617 Indianapolis Museum Entry into Jerusalem is direct Class I Palm Sunday painting with Newfields contributed collection record and Zeri independent catalogue. This is a HIGH value candidate but not added to user's ongoing rating sheet, not an acquired 267th image, and phone-crop/user aesthetic review still pending.",
+    "No weak direct-title Christ King painting is promoted merely for exact subject: Italian state catalogue explicitly describes one as modest provincial work. Cretan icon is only an iconographic reference. High-quality exact painting remains an OPEN artistic gap."
+  ],
+  "negativeAestheticFindings": [
+    {
+      "targetId": "calendar.christ-king",
+      "artist": "Regional painter of the Marches, unidentified",
+      "title": "Cristo re",
+      "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1100050599",
+      "institution": "Italian Ministry of Culture object 1100050599",
+      "medium": "oil on canvas",
+      "period": "nineteenth century",
+      "status": "DO_NOT_SHORTLIST_AS_MOBILE_FEAST_HERO",
+      "reason": "Institutional description expressly calls it a modest work by a local provincial painter; it illustrates title but not the established high-art standard. Keep as negative search evidence, not candidate."
+    },
+    {
+      "targetId": "calendar.christ-king",
+      "artist": "Unknown painter",
+      "title": "Cristo re",
+      "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1100235152A-3",
+      "institution": "Italian Ministry of Culture object 1100235152A-3",
+      "medium": "painting",
+      "status": "NOT_SHORTLISTED_AESTHETIC_CONCERNS_REQUIRE_VERIFICATION",
+      "reason": "Late nineteenth-century named subject exists but documentary quality indications insufficient for superior naturalistic sacred painting; not a promoted lead."
+    },
+    {
+      "targetId": "calendar.christ-king",
+      "artist": "Tzanès",
+      "title": "Christ Roi des Rois",
+      "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010529596",
+      "institution": "Musée du Louvre",
+      "medium": "icon",
+      "status": "ICONOGRAPHIC_REFERENCE_ONLY_NOT_PRIMARY_MOBILE_HERO",
+      "reason": "Cretan icon subject is valid Christ King precedent, but gold-ground stylized form conflicts with preferred first-rank painterly hero aesthetic; can serve iconographic documentation only."
+    }
   ]
 }
