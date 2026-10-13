@@ -75,14 +75,23 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   const exact=events.filter(e=>e.status==="WORD_MATCH_EXACT");
   for(const event of exact){
     const rendered=paragraphs.find(p=>p.sourceCueIds?.includes(event.cueId));
-    const latin=rendered?.displayLanguage==="VERNACULAR"
-      ?rendered?.alternate:rendered?.primary;
+    assert.ok(["primary","alternate"].includes(event.surfaceField),
+      form+"/"+event.cueId+": precise placement requires an explicit Latin surface");
+    const latin=rendered?.[event.surfaceField];
     for(const span of event.spans)
       assert.equal(latin.slice(span.start,span.end),span.latin,
         form+"/"+event.cueId+": inline placement must preserve exact rendered glyphs");
   }
   assert.ok(exact.length>=20,form+": too few source-verified precise word placements");
   assert.ok(nonWord.length>=2,form+": non-text Canon events must remain separate");
+  const deferred=events.filter(e=>e.status!=="WORD_MATCH_EXACT"&&
+    e.status!=="NON_TEXT_SOURCE_EVENT");
+  console.log("CANON_IN_TEXT_AUDIT",form,JSON.stringify({
+    exact:exact.length,nonText:nonWord.length,
+    deferred:deferred.map(e=>({cueId:e.cueId,status:e.status})),
+    matchedLatinSurfaces:exact.reduce((acc,e)=>
+      (acc[e.surfaceField]=(acc[e.surfaceField]??0)+1,acc),{}),
+  }));
   totalExact+=exact.length;totalNonWord+=nonWord.length;
 }
 const sungSource=sourceByCue(sung);
