@@ -1,0 +1,244 @@
+{
+  "schema": "AO_SACRED_ART_USER_PRIORITY_POLICY_V2",
+  "adoptedOn": "2026-10-13",
+  "authority": "Explicit user 2026-10-13 direction, superseding old source-count-first, date-specific unique-painting quotas, and default artist/style-based suggestions.",
+  "sourceFiles": {
+    "ratings": "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json",
+    "liturgical": "data/calendar/sacred-art-liturgical-priorities.v1.json",
+    "classI": "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json",
+    "home": "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json",
+    "target": "data/calendar/sacred-art-subject-targets.v2.json",
+    "crosswalk": "data/calendar/sacred-art-editorial-crosswalk.v1.json",
+    "prayers": "data/calendar/sacred-art-prayer-slots.v1.json",
+    "user235": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+    "previouslyApproved": "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+  },
+  "evaluationOrder": [
+    {
+      "priority": "P0",
+      "lane": "REQUIRED_MAJOR_LITURGICAL",
+      "requirement": "For every actual observed Class I date, associate one appropriate painting for the feast, principal, appointed Gospel or clearly supported liturgical subject; repeat the same eligible painting across legitimately related feast occurrences instead of one image per day.",
+      "include": [
+        "Every observed I-class day under actual 1962 DayResolver",
+        "Selected II/III class figures: Apostles, Evangelists, Doctors, angels, major saints, national patrons",
+        "Local/national patron days only where profile/jurisdiction proves an actual observed principal or commemoration"
+      ],
+      "exception": "Commemoration and feast suppressed by higher-precedence day do not replace the actual principal; a locally valid commemoration may get a separately identified artwork."
+    },
+    {
+      "priority": "P1",
+      "lane": "MODULE_HERO_AND_CINEMATICS",
+      "requirement": "Every substantive module has hero artwork where suited; within a module, cover all distinct art-worthy scenes or prayer meditations.",
+      "mandatoryInventory": [
+        "20 Rosary mysteries: joyful/sorrowful/glorious/luminous, five each",
+        "14 Stations of the Cross",
+        "Seven Last Words of Christ: seven meditation moments (confirm actual route)",
+        "Divine Mercy Chaplet: devotional original image/hero and genuinely apt companion art; do not invent five narrative mysteries",
+        "Seven Sorrows and other existing chaplets and extended Rosary devotions as verified in runtime",
+        "Adoration, Benediction, Confession, novenas, other art-bearing modules"
+      ],
+      "cinematicConstraints": [
+        "Use suitable frames/vertical crops, coherent cadence, long static holds where needed and low distractions",
+        "No unique picture per paragraph requirement; actual meditation scenes may reuse an image if separately justified"
+      ]
+    },
+    {
+      "priority": "P2",
+      "lane": "CROSS_MODULE_EPISODE_FREQUENCY",
+      "requirement": "Build canonical subject/event IDs shared across Mass Theatre, Biblical Theatre, Bible timeline/genealogy/geography, Calendar, Rosary, Stations, and Prayers. Prioritize verified recurrence and meaningful module breadth above one-off subjects.",
+      "measurement": [
+        "Count distinct actual context references by subject/event ID",
+        "Differentiate estimated/user-facing frequency (daily, weekly, yearly, on-demand) from indexed reference count",
+        "Log actual liturgical 1962 Gospel repetitions where validated",
+        "Log one physical artwork ID with all valid use contexts; never duplicate physical image",
+        "Do not treat theatre overlap as verified until the event join exists"
+      ],
+      "highLeverageExamples": [
+        "Annunciation and Incarnation",
+        "Crucifixion / Passion",
+        "Institution of Eucharist / Last Supper",
+        "Pentecost / Descent of Holy Spirit",
+        "Resurrection / Easter",
+        "Nativity / Christmas",
+        "Repentance / Mary Magdalene",
+        "Major saints with multiple devotional and Calendar uses"
+      ]
+    },
+    {
+      "priority": "P3",
+      "lane": "SYMBOLIC_SPIRITUAL_ART",
+      "requirement": "Where historical biblical event is not visual subject, choose the most theologically appropriate symbolic and contemplative masterpieces.",
+      "references": [
+        {
+          "theme": "Examination of conscience and Confession",
+          "artworkId": "met-436839",
+          "artist": "Georges de La Tour",
+          "title": "The Penitent Magdalen",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436839",
+          "olderSubjectSelected": "devotion.confession",
+          "relation": "MIRROR_VANITY_SKULL_MORTALITY_CANDLE_REPENTANCE",
+          "artisticStatus": "HISTORICAL_USER_SUBJECT_SELECTION_NOT_RATED_5"
+        }
+      ],
+      "iconographicIntegrity": "Do not falsely call a symbol a depiction of a distinct Gospel scene."
+    },
+    {
+      "priority": "P4",
+      "lane": "SELECTIVE_ENRICHMENT",
+      "requirement": "Additional minor saint/iconographic subjects, lower-rank weekday context, genealogical anchors, Biblical Theatre secondary episodes, and optional historic portraits; avoid manufacturing a mandatory art slot for each story."
+    },
+    {
+      "priority": "P5",
+      "lane": "CALENDAR_WEEKDAY_FALLBACK",
+      "requirement": "For each date lacking an approved appropriate feast/saint picture: (1) candidate for the exact day's appointed Gospel, (2) if none, the approved artwork for the liturgical Sunday's Mass governing that week.",
+      "fallbackSequence": [
+        "exact principal feast/event or approved saint artwork",
+        "appointed Gospel of that date with actual source-bound reading and verified scene",
+        "governing liturgical Sunday Mass artwork; keep independent date caption and distinct painting subject"
+      ],
+      "guardrails": [
+        "Fallback cannot be reported as exact-feast visual coverage",
+        "Verify temporal week identification, including seasons, vigils, octaves, Holy Week",
+        "For regularly reused weekday background prefer artwork individually rated 5/5; do not auto-promote ratings 3/4 or an unrated earlier choice into a repetitive anchor",
+        "If no verified 5/5 Sunday anchor exists for reuse, flag human selection rather than automatically reusing a poorer image",
+        "Never let artwork caption overwrite the real observed 1962 liturgical principal"
+      ]
+    }
+  ],
+  "aesthetic": {
+    "eligibility": "New user ratings 3,4,5 eligible for final review; 0,1,2 globally excluded regardless thematic fit.",
+    "repeatPolicy": "Only user-rated 5/5 artworks are automatically eligible for repeated cross-context placements; each placement still requires valid iconographic association, technical rights and crop. Previously subject-approved but unnumbered artwork requires explicit 5/5 approval for repetitive anchor use.",
+    "rating4": "Strong single placement or occasional art subject; not automatically repeatable.",
+    "rating3": "Potential final-review/supporting subject candidate; not a homepage/weekday repeat default.",
+    "positiveExamples": [
+      {
+        "artworkId": "cma-136680",
+        "artist": "Jusepe de Ribera",
+        "title": "Saint Jerome",
+        "currentTheme": "Saint Jerome",
+        "sourceOriginalSha256": "0b876319f895d7758a7bdac6e7c0c9a247054d825f4800991146daf1709a8bcd"
+      },
+      {
+        "artworkId": "cma-148758",
+        "artist": "Caravaggio",
+        "title": "The Crucifixion of Saint Andrew",
+        "currentTheme": "Martyrdom St Andrew",
+        "sourceOriginalSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833"
+      },
+      {
+        "artworkId": "cma-150046",
+        "artist": "John Faed",
+        "title": "Expulsion of Adam and Eve",
+        "currentTheme": "Expulsion Paradise",
+        "sourceOriginalSha256": "a8aa262ef0dedc4836b9944b4990560ed118a75001c6e2f6fa38ec8da677a0c5"
+      },
+      {
+        "artworkId": "met-436198",
+        "artist": "Abraham van Diepenbeeck",
+        "title": "Saint Cecilia",
+        "currentTheme": "Saint Cecilia",
+        "sourceOriginalSha256": "95566ebeb14d227a44c2464864556ad0049b40a1ce5128fbb8a065713027bc7f"
+      },
+      {
+        "artworkId": "met-437977",
+        "artist": "Marcantonio Franceschini",
+        "title": "The Last Communion of Saint Mary of Egypt",
+        "currentTheme": "Last Communion",
+        "sourceOriginalSha256": "62e1b85b4afa6301eac6a8d6b9974384729f43563c08c3f2ed4e2af80574b90e"
+      },
+      {
+        "artworkId": "met-438134",
+        "artist": "Paolo Veronese (Paolo Caliari)",
+        "title": "Saint Catherine of Alexandria in Prison",
+        "currentTheme": "Saint Catherine Alexandria",
+        "sourceOriginalSha256": "263c9e06dbc7f5ef80325def8bae06f2369ee79c41f4b04930c610771d0a0fa7"
+      },
+      {
+        "artworkId": "met-438434",
+        "artist": "Jean Auguste Dominique Ingres",
+        "title": "The Virgin Adoring the Host",
+        "currentTheme": "Adoration Of Host",
+        "sourceOriginalSha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934"
+      },
+      {
+        "artworkId": "met-712946",
+        "artist": "Giovanni Battista Caracciolo",
+        "title": "The Calling of Saint Matthew",
+        "currentTheme": "Calling Disciples",
+        "sourceOriginalSha256": "9d0fff62d386d550b93e99c399857d120c629f614b5b7870c4d4049e29efb668"
+      },
+      {
+        "artworkId": "met-724811",
+        "artist": "Placido Costanzi",
+        "title": "A Miracle of Saint Joseph of Cupertino",
+        "currentTheme": "Saint Joseph Of Cupertino",
+        "sourceOriginalSha256": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751"
+      },
+      {
+        "artworkId": "nga-106362",
+        "artist": "Jean Baptiste de Champaigne",
+        "title": "The Martyrdom of Saint Lawrence",
+        "currentTheme": "Saint Lawrence",
+        "sourceOriginalSha256": "b86ccb14d2ba44302c83a1c8a244f712a14ef8c29d7628064a357fa8dea11148"
+      },
+      {
+        "artworkId": "nga-12209",
+        "artist": "Francisco de Zurbarán",
+        "title": "Saint Lucy",
+        "currentTheme": "Saint Lucy",
+        "sourceOriginalSha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b"
+      },
+      {
+        "artworkId": "nga-46185",
+        "artist": "Giovanni Girolamo Savoldo",
+        "title": "The Adoration of the Shepherds",
+        "currentTheme": "Adoration of the Shepherds",
+        "sourceOriginalSha256": "15b39e8c36d0592c95487e8675ac3322296bfd332bb3e3dcb5e32779b4ff1d03"
+      }
+    ],
+    "negativeSetReference": "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json",
+    "excludedArtists": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "preferences": [
+      "Accomplished figurative naturalism and convincing anatomy",
+      "Devotional solemnity and strong painterly execution",
+      "Rich, meaningful colour and chiaroscuro",
+      "Composition readable on a phone without aggressive crop",
+      "No shallow flat/stiff composition merely because iconographic title is correct"
+    ],
+    "specialAuthenticDevotionalImages": "Some devotions (e.g. Divine Mercy) have specific historically venerated images; respect their exact devotional identity instead of replacing it with a more decorative picture. Verify official source and reproduction rights separately."
+  },
+  "measurements": {
+    "researchCoverage": "Relevant subject with at least one source-authenticated, visually screened user-eligible original",
+    "curatorialFinalReview": "User numeric rating >=3 or earlier subject selection preserved for human final review (not production approval)",
+    "crossContextReuse": "Use same hash/original with separate accurate subject/context tags; automated repeat only 5/5 after verifying appropriateness",
+    "moduleHero": "Distinct approved hero candidate, permitted cross-module reuse only under 5/5 gate",
+    "cinematicMoment": "Artwork available at meditation moment; not automatically unique per scene",
+    "calendarDay": "Actual DayResolver date and proper matched to artwork exact/gospel/sunday_fallback, with relationship recorded",
+    "legalRelease": "Per-original object identity, rights for commercial/offline distribution and phone crop passed",
+    "frequency": "Observed context/route count and calendar recurrence measured separately from number of paintings"
+  },
+  "currentBaseline": {
+    "ratingPoolCandidateCount": 170,
+    "rated5Artworks": 12,
+    "rated0to2DiscardCount": 62,
+    "observed2026ClassIDates": 53,
+    "editorialSubjectSelections": 101,
+    "legacyUnresolvedEditorialSubjects": 134,
+    "indexedDirectSubjectKeys": 137,
+    "indexDocumentedReferences": 316,
+    "status": "Policy and reference demands recorded; no Calendar/Mass Theatre/Bible Theatre/cinematic runtime integration claimed."
+  },
+  "implementationOrder": [
+    "Source-register each art-bearing module hero and moments (including 4×5 Rosary and supplemental devotions)",
+    "Join validated 1962 Class I and selected observed II/III dates to art-subject/event ID",
+    "Merge module event IDs across Theatre/Atlas/genealogy/geography and rank by references, cadence and cultural importance",
+    "Match existing 170 review-eligible images before new image research",
+    "Research subject gaps in high-impact batches guided by 5/5 vs 0–2 look",
+    "Assemble user-facing final atlas and verify rights/mobile/offline QA before release"
+  ],
+  "sourceEvidenceCaveat": "Current seed is explicit prior iconography/prayer crosswalk only; no claim of measured screen-open frequency, full Theatre/Atlas joins or all module implementation.",
+  "noProductionAssetChange": true
+}
