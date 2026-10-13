@@ -38,7 +38,7 @@ assert.equal(c0205.formOwnedStages.length,1);
 assert.equal(c0205.formOwnedStages[0].solemnActor,"DEACON_WHEN_REQUIRED");
 assert.equal(c0205.formOwnedStages[0].solemnMinisterActionId,"AO.CANON.MIN.008");
 const c0175=audit.rows.find(x=>x.cueId==="AO.SM.C0175");
-assert.match(c0175.draftFrenchRubric,/diacre à la messe solennelle/,
+assert.match(c0175.draftFrenchRubric,/à la messe solennelle, le diacre le découvre lorsque cela est nécessaire/,
  "No universal celebrant-only chalice uncovering claim");
 assert.ok(!seen.has("AO.SM.C0155"),"Existing published rubric cue must never be replaced");
 assert.ok(!seen.has("AO.SM.C0174"),"Existing multi-stage Host rubric must not be backfilled");
