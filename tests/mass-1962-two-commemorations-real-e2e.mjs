@@ -46,7 +46,7 @@ let browser;try{
          applied:selected.decision?.appliedCount??null,
          groups:selected.decision?.prayerGroupCount??null,
          counts:["collects","secrets","postcommunions"].map(k=>p[k]?.length??0),
-         focus:["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].map(k=>mapped.slots[k].data?.paragraphs?.length??null),
+         focus:["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].map(k=>mapped.slots[k].data?.paragraphs?.filter(p=>p.kind==="TEXT").length??null),
          ready:!["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].some(k=>mapped.slots[k].status!=="READY"),
          kind:p.collects?.[1]?.oneConclusion?.kind??null,
          endingValid:["collects","secrets","postcommunions"].every(k=>
