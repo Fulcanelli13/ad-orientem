@@ -88,7 +88,8 @@ export function createCanonRubricReviewController({data=null}={}){
   const byCue=new Map(data.rows.map(row=>[row.cueId,row]));
   function project(cueId,{
     form="LOW",editorialPreview=false,priestObservedCueId=null,
-    observedMinisterActionIds=[],communityProfile="FOLLOW_CONGREGATION_OBSERVATIONAL",
+    observedPriestActionIds=[],observedMinisterActionIds=[],
+    communityProfile="FOLLOW_CONGREGATION_OBSERVATIONAL",
   }={}){
     const id=String(cueId??"");
     const row=byCue.get(id);
@@ -97,14 +98,19 @@ export function createCanonRubricReviewController({data=null}={}){
     const actions=enabled?row.candidateActions:[];
     // An independent observation is indispensable for "happening now".
     // Read-focus, source order and simultaneous Schola singing are not it.
-    const priestObserved=priestObservedCueId===id;
+    // One Canon cue can contain several consecutive genuflections,
+    // elevations and repositionings. Seeing the priest at that cue DOES NOT
+    // observe all those distinct micro-events. Only explicit action IDs
+    // supplied by a separate priest observer may set an individual event.
+    const priestCueObserved=priestObservedCueId===id;
+    const priestObserved=new Set(observedPriestActionIds);
     const ministerObserved=new Set(observedMinisterActionIds);
     const priestActions=freezeRows(actions.filter(a=>a.actor==="PRIEST").map(a=>({
       id:a.id,actor:a.actor,actionKey:a.key,
       frenchDraft:a.frenchParaphraseDraft,latinTrigger:a.latinTrigger,
       ritusLocator:a.ritusLocator,sources:Object.freeze([...a.sources]),
       formQualification:a.formQualification,
-      cueId:id,isObservedNow:priestObserved,
+      cueId:id,priestCueObserved,isObservedNow:priestObserved.has(a.id),
       publishable:false,
     })));
     const ministerActions=freezeRows(actions.filter(a=>a.actor!=="PRIEST").map(a=>({
