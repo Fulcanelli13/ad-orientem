@@ -389,7 +389,8 @@
       "blockId": "AO.SM.B050",
       "latinBegin": "Hanc igitur oblatiónem servitutis nostræ, sed et cunctae famíliæ tuæ",
       "sourceEventIds": [
-        "AO.CANON.R62.011"
+        "AO.CANON.R62.011",
+        "AO.CANON.R62.062"
       ],
       "priestStationSource": {
         "station": "ALTAR_CENTER",
@@ -2056,7 +2057,7 @@
       "actor": "SERVER",
       "actionKey": "BELL_AT_ELEVATION",
       "inTextPriestRubricFrDraft": null,
-      "secondaryActionFrDraft": "Le servant avertit peu avant la consécration puis sonne trois fois ou sans interruption à l'élévation; ce n'est pas un geste du prêtre.",
+      "secondaryActionFrDraft": "À l'élévation de l'Hostie, le servant sonne trois fois ou continûment selon le mode prévu; le prêtre ne sonne pas.",
       "latinTrigger": "Host elevation",
       "ritusLocator": "VIII.6",
       "facets": [
@@ -2825,6 +2826,29 @@
       ],
       "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
       "formQualification": "SERVER_OR_MINISTER_ROLE"
+    },
+    {
+      "id": "AO.CANON.R62.062",
+      "cueId": "AO.SM.C0161",
+      "actor": "SERVER",
+      "actionKey": "BELL_BEFORE_CONSECRATION",
+      "inTextPriestRubricFrDraft": null,
+      "secondaryActionFrDraft": "Peu avant les paroles consécratoires, le servant avertit les fidèles par un coup de sonnette; Hanc igitur est un point d'ancrage pratique, pas une synchronisation imposée par le texte du Ritus.",
+      "latinTrigger": "paulo ante Consecrationem",
+      "ritusLocator": "VIII.6",
+      "facets": [
+        "MINISTER_ACTION",
+        "TIMING_CONDITIONAL"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "SERVER_ACTION_DEPENDS_ON_ACTUAL_CELEBRANT_TIMING",
+      "formQualification": "SERVER_ROLE_TIMING_NOT_STRICT_HANC_IGITUR_SENTENCE"
     }
   ],
   "invariants": [
@@ -2833,5 +2857,8 @@
     "1962 priestly source dictates gesture/voice, but Roman law does not dictate a single pew posture for every faithful person",
     "No mass source text, source cue or current LIVE card changed",
     "Use conditional rubrics where text itself omits parts or includes variant prayers"
+  ],
+  "notes": [
+    "At Hanc igitur a warning bell is historically common, but Ritus VIII.6 says paulo ante Consecrationem, not at a mandatory fixed word. Keep relative-priest-clock event, not a fake exact cue synchronization."
   ]
 }
