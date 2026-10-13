@@ -23,15 +23,15 @@
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 58,
+    "additionalResearchLeadSubjects": 62,
     "withPreviousUnapprovedOptionOnly": 2,
-    "withNoRecordedSourceOrOlderOption": 6,
+    "withNoRecordedSourceOrOlderOption": 2,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
     "chosen101Unchanged": true,
-    "newInstitutionalSourceWaveSubjectCount": 31,
-    "newInstitutionalSourceWaveCandidateCount": 33,
+    "newInstitutionalSourceWaveSubjectCount": 35,
+    "newInstitutionalSourceWaveCandidateCount": 37,
     "previousOptionInstitutionallyIdentified": 7,
     "previousOptionSceneMismatchConfirmed": 5
   },
@@ -1792,14 +1792,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "2 Samuel 2:1–4",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-final-BIB-IS04",
+          "sourceUrl": "https://www.themorgan.org/collection/crusader-bible/71",
+          "sourceInstitution": "Morgan Library & Museum",
+          "title": "David Anointed King of Judah, Morgan Picture Bible folio 36r",
+          "artist": "Anonymous Paris illuminator",
+          "medium": "illuminated manuscript miniature",
+          "sceneMatch": "DIRECT_SUBJECT_GRAPHIC_ONLY",
+          "matchNotes": "Exact 2 Samuel 2:1–4 in upper-right register of medieval folio; archival evidence only, stylistically outside preferred painting aesthetic.",
+          "matchedImageExamined": false,
+          "artisticTier": "ARCHIVAL_ONLY_NOT_AESTHETICALLY_APPROVED",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-final-source-pass"
     },
     {
       "subjectId": "BIB-IS05",
@@ -1927,14 +1943,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Jeremiah 7:1–15",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-final-BIB-IS10",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/669100",
+          "sourceInstitution": "Metropolitan Museum of Art",
+          "title": "Jeremiah Prophesying the Destruction of Jerusalem",
+          "artist": "Nicolaes de Bruyn",
+          "medium": "engraving",
+          "sceneMatch": "RELATED_NOT_EXACT",
+          "matchNotes": "Prophesying destruction relates to subject, but catalogue does not certify specific Jeremiah 7 Temple Sermon. Related episode, not exact match.",
+          "matchedImageExamined": false,
+          "artisticTier": "ARCHIVAL_ONLY_NOT_AESTHETICALLY_APPROVED",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-final-source-pass"
     },
     {
       "subjectId": "BIB-IS11",
@@ -1975,14 +2007,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "2 Kings 17:1–18",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-final-BIB-IS12",
+          "sourceUrl": "https://dia.pitts.emory.edu/image_details.cfm?ID=1858",
+          "sourceInstitution": "Emory University Pitts Theology Library",
+          "title": "Fall of Samaria",
+          "artist": "Virgil Solis",
+          "medium": "woodcut",
+          "sceneMatch": "DIRECT_SUBJECT_GRAPHIC_ONLY",
+          "matchNotes": "Museum-backed Bible print keyed to 2 Kings 17. Not the earlier 2 Kings 6–7 siege. Archival only.",
+          "matchedImageExamined": false,
+          "artisticTier": "ARCHIVAL_ONLY_NOT_AESTHETICALLY_APPROVED",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-final-source-pass"
     },
     {
       "subjectId": "BIB-IS13",
@@ -3006,14 +3054,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 28:16–31",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-final-BIB-A19",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Gevangen-genomen-Paulus-wordt-door-Romeinse-soldaten-Rome-binnengeleid--233c0d703bba619676a831cd9811b617",
+          "sourceInstitution": "Rijksmuseum",
+          "title": "Paul Escorted into Rome by Roman Soldiers",
+          "artist": "Jan Luyken",
+          "medium": "etching",
+          "sceneMatch": "DIRECT_SUBJECT_GRAPHIC_ONLY",
+          "matchNotes": "1712 Rijksmuseum etching RP-P-OB-46.093 of Paul's arrival as prisoner, Acts 28. Exact arrival scene, archival print only.",
+          "matchedImageExamined": false,
+          "artisticTier": "ARCHIVAL_ONLY_NOT_AESTHETICALLY_APPROVED",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-final-source-pass"
     },
     {
       "subjectId": "BIB-A20",
@@ -3143,5 +3207,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "31 formerly zero-source subjects now have documented research options (6 still zero-source); 12 older original candidates reconciled: seven identified, five invalid event matches; two remain unidentified."
+  "recentSourceWave": "35 previously zero-source subjects now have identified sources; 2 zero-source subjects remain: Antioch Acts 11 and Thessalonica Acts 17."
 }
