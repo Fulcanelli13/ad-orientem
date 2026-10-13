@@ -17,7 +17,11 @@
     "knownExactArchiveUrlCollisions": 0,
     "sharedOfficialSourceUrlGroups": 4,
     "potentialArtistMuseumInventoryCollisions": 1,
-    "originalImageBytesAcquiredByThisPipeline": 0
+    "originalImageBytesAcquiredByThisPipeline": 29112686,
+    "sourceLeads": 153,
+    "newOriginalMastersSourceAcquired": 8,
+    "newSourceLeadsWithoutMaster": 145,
+    "rightsApprovedForProduction": 0
   },
   "policy": {
     "rating": "0–2 artworks excluded, 3 can be revisited, existing acquired 4–5 never re-source, 5 needed repeated use; past unnumbered subject selection ≠ 5.",
@@ -1079,11 +1083,24 @@
       "reproductionRightsStatus": "MUSEUM_EXPLICIT_OPEN_ACCESS_MEDIA_STILL_DOWNLOAD_PENDING",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
-      "newOriginalMasterAcquired": false,
+      "newOriginalMasterAcquired": true,
       "numericUserRating": null,
       "repeatEligible": false,
       "readyForCommercialRelease": false,
-      "researchWave": 2
+      "researchWave": 2,
+      "sourceOriginalAsset": {
+        "artworkId": "nga-41703",
+        "originalSha256": "cb1f3745abf473eac1ff8aee943b7d84476de434edc01004b73e8abfd253fb1b",
+        "width": 2850,
+        "height": 4096,
+        "bytes": 2431242,
+        "artifactId": 11820348366,
+        "artifactFilename": "originals/nga-41703.jpg",
+        "originalSource": "MET_OR_NGA_OPEN_ACCESS_VERIFIED",
+        "imageApproval": "RESEARCH_ONLY",
+        "userRating": null
+      },
+      "acquisitionStatus": "HIGH_RES_SOURCE_JPEG_SHA_VERIFIED_IN_GITHUB_ACTIONS_ARTIFACT"
     },
     {
       "leadId": "W02-017",
@@ -1201,11 +1218,24 @@
       "reproductionRightsStatus": "MUSEUM_EXPLICIT_OPEN_ACCESS_MEDIA_STILL_DOWNLOAD_PENDING",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
-      "newOriginalMasterAcquired": false,
+      "newOriginalMasterAcquired": true,
       "numericUserRating": null,
       "repeatEligible": false,
       "readyForCommercialRelease": false,
-      "researchWave": 2
+      "researchWave": 2,
+      "sourceOriginalAsset": {
+        "artworkId": "nga-1227",
+        "originalSha256": "1ec2aab40475b5b31d97e222aae645da36a15c270b1070a4a3b51dd9285b3d85",
+        "width": 3489,
+        "height": 4096,
+        "bytes": 4499389,
+        "artifactId": 11820348366,
+        "artifactFilename": "originals/nga-1227.jpg",
+        "originalSource": "MET_OR_NGA_OPEN_ACCESS_VERIFIED",
+        "imageApproval": "RESEARCH_ONLY",
+        "userRating": null
+      },
+      "acquisitionStatus": "HIGH_RES_SOURCE_JPEG_SHA_VERIFIED_IN_GITHUB_ACTIONS_ARTIFACT"
     },
     {
       "leadId": "W02-021",
@@ -1263,11 +1293,24 @@
       "reproductionRightsStatus": "MUSEUM_EXPLICIT_OPEN_ACCESS_MEDIA_STILL_DOWNLOAD_PENDING",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
-      "newOriginalMasterAcquired": false,
+      "newOriginalMasterAcquired": true,
       "numericUserRating": null,
       "repeatEligible": false,
       "readyForCommercialRelease": false,
-      "researchWave": 2
+      "researchWave": 2,
+      "sourceOriginalAsset": {
+        "artworkId": "nga-99280",
+        "originalSha256": "e490bc8b4aab1f11410100a1f1fa0a502a15325ba7097a7a623dc4deeca490cb",
+        "width": 4096,
+        "height": 2790,
+        "bytes": 3655575,
+        "artifactId": 11820348366,
+        "artifactFilename": "originals/nga-99280.jpg",
+        "originalSource": "MET_OR_NGA_OPEN_ACCESS_VERIFIED",
+        "imageApproval": "RESEARCH_ONLY",
+        "userRating": null
+      },
+      "acquisitionStatus": "HIGH_RES_SOURCE_JPEG_SHA_VERIFIED_IN_GITHUB_ACTIONS_ARTIFACT"
     },
     {
       "leadId": "W02-023",
@@ -1324,11 +1367,24 @@
       "reproductionRightsStatus": "NGA_OPEN_ACCESS",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
-      "newOriginalMasterAcquired": false,
+      "newOriginalMasterAcquired": true,
       "numericUserRating": null,
       "repeatEligible": false,
       "readyForCommercialRelease": false,
-      "researchWave": 3
+      "researchWave": 3,
+      "sourceOriginalAsset": {
+        "artworkId": "nga-45640",
+        "originalSha256": "e63575298c26e78c25d338d484f58cf4d4e7c8e2e78ad7d2b01a1e97213e9320",
+        "width": 4096,
+        "height": 3269,
+        "bytes": 4330567,
+        "artifactId": 11820348366,
+        "artifactFilename": "originals/nga-45640.jpg",
+        "originalSource": "MET_OR_NGA_OPEN_ACCESS_VERIFIED",
+        "imageApproval": "RESEARCH_ONLY",
+        "userRating": null
+      },
+      "acquisitionStatus": "HIGH_RES_SOURCE_JPEG_SHA_VERIFIED_IN_GITHUB_ACTIONS_ARTIFACT"
     },
     {
       "leadId": "W03-002",
@@ -1445,11 +1501,24 @@
       "reproductionRightsStatus": "MET_PUBLIC_DOMAIN_CC0",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
-      "newOriginalMasterAcquired": false,
+      "newOriginalMasterAcquired": true,
       "numericUserRating": null,
       "repeatEligible": false,
       "readyForCommercialRelease": false,
-      "researchWave": 3
+      "researchWave": 3,
+      "sourceOriginalAsset": {
+        "artworkId": "met-436257",
+        "originalSha256": "ee5ae4c22d5af95a2b30d9fb6eb2eda82422996457d2c092f243c9dce90c504c",
+        "width": 2995,
+        "height": 4000,
+        "bytes": 4370125,
+        "artifactId": 11820348366,
+        "artifactFilename": "originals/met-436257.jpg",
+        "originalSource": "MET_OR_NGA_OPEN_ACCESS_VERIFIED",
+        "imageApproval": "RESEARCH_ONLY",
+        "userRating": null
+      },
+      "acquisitionStatus": "HIGH_RES_SOURCE_JPEG_SHA_VERIFIED_IN_GITHUB_ACTIONS_ARTIFACT"
     },
     {
       "leadId": "W04-001",
@@ -2998,11 +3067,24 @@
       "reproductionRightsStatus": "PENDING_OBJECT_SPECIFIC",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
-      "newOriginalMasterAcquired": false,
+      "newOriginalMasterAcquired": true,
       "numericUserRating": null,
       "repeatEligible": false,
       "readyForCommercialRelease": false,
-      "researchWave": 5
+      "researchWave": 5,
+      "sourceOriginalAsset": {
+        "artworkId": "met-436262",
+        "originalSha256": "be5dcc3b4b3152249302d60850335e2f59be16b9cac688f0896d3ff297fec131",
+        "width": 3113,
+        "height": 3710,
+        "bytes": 2807635,
+        "artifactId": 11820348366,
+        "artifactFilename": "originals/met-436262.jpg",
+        "originalSource": "MET_OR_NGA_OPEN_ACCESS_VERIFIED",
+        "imageApproval": "RESEARCH_ONLY",
+        "userRating": null
+      },
+      "acquisitionStatus": "HIGH_RES_SOURCE_JPEG_SHA_VERIFIED_IN_GITHUB_ACTIONS_ARTIFACT"
     },
     {
       "leadId": "W05-023",
@@ -4448,11 +4530,24 @@
       "reproductionRightsStatus": "MET_PUBLIC_DOMAIN_CC0_UNDOWNLOADED",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
-      "newOriginalMasterAcquired": false,
+      "newOriginalMasterAcquired": true,
       "numericUserRating": null,
       "repeatEligible": false,
       "readyForCommercialRelease": false,
-      "researchWave": 8
+      "researchWave": 8,
+      "sourceOriginalAsset": {
+        "artworkId": "met-437529",
+        "originalSha256": "23343dac6df2ec7a181eec271332c1abb62e89f11d9fa0f4764f3a63c4600bee",
+        "width": 3167,
+        "height": 4000,
+        "bytes": 3916732,
+        "artifactId": 11820348366,
+        "artifactFilename": "originals/met-437529.jpg",
+        "originalSource": "MET_OR_NGA_OPEN_ACCESS_VERIFIED",
+        "imageApproval": "RESEARCH_ONLY",
+        "userRating": null
+      },
+      "acquisitionStatus": "HIGH_RES_SOURCE_JPEG_SHA_VERIFIED_IN_GITHUB_ACTIONS_ARTIFACT"
     },
     {
       "leadId": "W08-012",
@@ -4477,11 +4572,24 @@
       "reproductionRightsStatus": "MET_PUBLIC_DOMAIN_CC0_UNDOWNLOADED",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
-      "newOriginalMasterAcquired": false,
+      "newOriginalMasterAcquired": true,
       "numericUserRating": null,
       "repeatEligible": false,
       "readyForCommercialRelease": false,
-      "researchWave": 8
+      "researchWave": 8,
+      "sourceOriginalAsset": {
+        "artworkId": "met-437528",
+        "originalSha256": "176949aa14df437fa3bd917ed08c8d7958dfad9a2e01b38c59a22970e0ba469f",
+        "width": 4000,
+        "height": 3409,
+        "bytes": 3101421,
+        "artifactId": 11820348366,
+        "artifactFilename": "originals/met-437528.jpg",
+        "originalSource": "MET_OR_NGA_OPEN_ACCESS_VERIFIED",
+        "imageApproval": "RESEARCH_ONLY",
+        "userRating": null
+      },
+      "acquisitionStatus": "HIGH_RES_SOURCE_JPEG_SHA_VERIFIED_IN_GITHUB_ACTIONS_ARTIFACT"
     },
     {
       "leadId": "W09-001",
@@ -4767,5 +4875,14 @@
     "offlineBundleNewOriginals": 0
   },
   "artProductionMutated": false,
-  "editorialCorrection": "Source page on Musée des Beaux-Arts de Nancy and institutional reports on Caravaggio differentiate authentic originals from copies; W09 has eight more physically distinct painting leads."
+  "editorialCorrection": "Source page on Musée des Beaux-Arts de Nancy and institutional reports on Caravaggio differentiate authentic originals from copies; W09 has eight more physically distinct painting leads.",
+  "acquisitionAudit": {
+    "asOf": "2026-10-13",
+    "hashLedger": "data/calendar/sacred-art-eight-real-originals-sha-ledger-20261013.v1.json",
+    "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38410218913",
+    "artifactId": 11820348366,
+    "artifactRetentionDays": 30,
+    "warning": "8 downloaded official JPEG originals archived as GitHub Action artifact only; not automatically durable beyond artifact retention. User review pending.",
+    "knownPreviouslyAcquiredFourFiveReacquired": 0
+  }
 }
