@@ -199,6 +199,7 @@ function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
       vernacular:p.vernacular ?? p.english ?? p.en ?? null,
       // The Proper resolver identifies independently concluded prayer groups.
       // Preserve that identity for liturgically accurate Oremus/Amen insertion.
+      sourceAnchorCueId:p.sourceAnchorCueId??block.units?.[0]?.cue_id??null,
       orationGroupIndex:p.orationGroupIndex??null,
       prayerRole:p.prayerRole??null,
       speakerRole:p.speakerRole??null,
@@ -214,6 +215,7 @@ function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
   if(!latin || !english) throw new Error(block.Block_ID+": Proper slot "+slot+" lacks bilingual resolved text");
   return composeProperReaderParagraphs(block.Block_ID,[{
     id:block.Block_ID+".proper",
+    sourceAnchorCueId:block.units?.[0]?.cue_id??null,
     kind:"TEXT",
     latin,
     vernacular:english,
