@@ -69,6 +69,39 @@ const lowModel=createMassReaderModel({
 assert.equal(lowModel.corpusFamily,"LOW");
 assert.equal(lowModel.totalCards,30);
 
+const solemnSpeakerModel=createMassReaderModel({
+  resolvedMass:{...base,form:"SOLEMN"},
+  sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
+const speakerFor=(m,id)=>m.cards.flatMap(c=>c.paragraphs).find(p=>
+  p.id===id || p.sourceCueIds?.includes(id)
+)?.speakerRole;
+for(const [selected,form] of [
+  [model,"MISSA_CANTATA_INCENSE"],
+  [solemnSpeakerModel,"SOLEMN"],
+  [lowModel,"LOW"],
+]){
+  const gospel=form==="SOLEMN"?"DEACON":"PRIEST";
+  const epistle=form==="SOLEMN"?"SUBDEACON":"MINISTER_TO_BE_OBSERVED";
+  for(const id of ["AO.SM.C0082","AO.SM.C0084","GOSPEL.1"]){
+    assert.equal(speakerFor(selected,id),gospel,
+      form+"/"+id+" public Gospel performer");
+  }
+  assert.equal(speakerFor(selected,"EPISTLE_OR_LESSON.1"),epistle,
+    form+" epistle actor must not invent a subdeacon in Missa Cantata");
+  assert.equal(speakerFor(selected,"AO.SM.C0259"),gospel,
+    form+" dismissal minister performer");
+  for(const id of ["AO.SM.C0083","AO.SM.C0085","AO.SM.C0260"]){
+    assert.equal(speakerFor(selected,id),"RESPONDERS",
+      form+"/"+id+" response must not inherit Gospel/dismissal deacon");
+  }
+}
+assert.match(model.cards.flatMap(c=>c.paragraphs).find(p=>
+  p.sourceCueIds?.includes("AO.SM.C0020"))?.primary??"",
+  /^S\. Amen\./,
+  "Selected Cantata must retain the historically sourced Sung preparatory prefix");
+
+
 assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,proper:null},sectionMap,lowCorpus:low,sungCorpus:sung
 }),/READY resolved Proper/);
