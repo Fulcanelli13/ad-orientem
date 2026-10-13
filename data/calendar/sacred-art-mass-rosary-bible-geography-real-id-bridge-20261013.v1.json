@@ -1,0 +1,1460 @@
+{
+  "schema": "AO_ART_MASS_ROSARY_BIBLE_GEO_REAL_ID_BRIDGE_V1",
+  "date": "2026-10-13",
+  "objective": "Bridge actual live app Mass ceremonial and Mass-Bible formation identities to Rosary mystery identities, existing Bible geography events and canonical art candidate/ratings identities, never equating verse overlaps to scene equality automatically.",
+  "dataProvenance": {
+    "appRepository": "Fulcanelli13/folio-core",
+    "appDefaultBranch": "default at inspection 2026-10-13",
+    "researchRepository": "Fulcanelli13/ad-orientem",
+    "researchBranch": "platform/885-sacred-art-candidates",
+    "appSources": [
+      "data/explore/bible-places-compact.v1.json",
+      "src/pray/rosary-mystery-context.v1.js",
+      "data/learn/mass-bible-source-layers.v1.json",
+      "data/mass/mc-event-graph.v1.json",
+      "data/mass/mc-events-01.v1.json",
+      "data/mass/mc-events-02.v1.json",
+      "data/mass/mc-events-03.v1.json",
+      "data/mass/mc-events-04.v1.json",
+      "data/mass/mc-events-05.v1.json",
+      "data/mass/mc-events-06.v1.json"
+    ],
+    "artSources": [
+      "data/calendar/sacred-art-candidates.v1.json",
+      "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json",
+      "data/calendar/sacred-art-editorial-crosswalk.v1.json"
+    ],
+    "priorDemandIndex": "data/calendar/sacred-art-cross-module-demand-seed-20261013.v1.json"
+  },
+  "counts": {
+    "rosaryMysteries": 20,
+    "rosaryLinkedToGeographyEvent": 17,
+    "rosaryGeoExactPassage": 9,
+    "rosaryGeoPartialOrContainedPassage": 7,
+    "rosaryGeoSameEventDifferentGospel": 1,
+    "rosaryGeoNoEventRecord": 3,
+    "geographyPlaceRecords": 60,
+    "geographyRecordedEvents": 166,
+    "geographyEventsByGroup": {
+      "CHRIST": 166,
+      "OT": 0,
+      "DEUTERO": 0,
+      "APOSTLES": 0
+    },
+    "massCeremonialGraphEvents": 178,
+    "massBibleRecords": 26,
+    "massBibleAllMappedToExistingMassEventIds": true,
+    "massBibleDistinctMassEventIds": 27,
+    "rosaryEligibleExactMysteryTagged": 18,
+    "rosaryOnlySecondarySubjectTaggedEligible": 1,
+    "rosaryNoEligibleDirectOrSecondary": 1,
+    "rosaryAnyCurrentFiveRatedCandidate": 1,
+    "existing5starUserRatedOriginals": 12
+  },
+  "controls": {
+    "noGuaranteedRuntimeRelease": true,
+    "geographyPopulationLimit": "The 166 indexed episode rows are all under group CHRIST; Old Testament/Apostles/Deuterocanonical site entries may exist but presently have no comparable per-event link list. Do not claim full biblical theatre coverage.",
+    "notCompleted": [
+      "A separate full Biblical Theatre event registry was not identified among inspected current app src/learn and data/explore folders; do not count it as implemented.",
+      "Genealogy timeline actor-to-event IDs and universal 1962 per-date Gospel resolver joins remain unbuilt.",
+      "The 178 MC entries are priest/schola ritual event identities, not 178 illustrated biblical scenes.",
+      "Mass-Bible 26 are interpretative/scriptural connections, not 26 direct story depictions.",
+      "Geography and Rosary share episode locations but not every event is a geographically pinpointable occurrence; 4 Rosary themes have no direct existing map episode record, including Marian doctrinal/typological mysteries.",
+      "Art metadata subject/association tags are provisional and must not override the human rating gate.",
+      "Only user numerical 5/5 qualifies for repeat-eligible default; art reuse still needs truthful placement."
+    ],
+    "geographyJoinRule": "Same scripture verse interval or explicit manually adjudicated event meaning; partial overlaps and different Gospel witness are labelled.",
+    "massJoinRule": "Match row to pre-existing canonical MC event; a mere text parallel is NOT proof of a visual Gospel episode."
+  },
+  "highValueCrossModuleCases": [
+    {
+      "id": "INSTITUTION_EUCHARIST",
+      "verified": [
+        "rosary.lum5",
+        "cenacle-e1",
+        "MB14",
+        "MB15",
+        "MC-CNS-020",
+        "MC-CNS-090"
+      ],
+      "broaderTargetContexts": [
+        "calendar.holy-thursday",
+        "calendar.corpus-christi",
+        "devotion.adoration"
+      ],
+      "priority": "P0",
+      "gaps": [
+        "No user-5/5 explicit mystery painting presently assigned",
+        "Mass consecration must not be represented as historical Last Supper dialogue"
+      ]
+    },
+    {
+      "id": "NATIVITY_GLORIA",
+      "verified": [
+        "rosary.joy3",
+        "bethlehem-e1",
+        "MB05",
+        "MC-GLR-010"
+      ],
+      "broaderTargetContexts": [
+        "calendar.christmas"
+      ],
+      "priority": "P0",
+      "gaps": [
+        "High aesthetic Nativity selection exists by subject but not necessarily directly Rosary-tagged; curate exact subject/crop"
+      ]
+    },
+    {
+      "id": "ANNUNCIATION_INCARCATION",
+      "verified": [
+        "rosary.joy1",
+        "nazareth-e1",
+        "MB08",
+        "MC-CRD-025"
+      ],
+      "broaderTargetContexts": [
+        "calendar.annunciation",
+        "devotion.angelus"
+      ],
+      "priority": "P0",
+      "gaps": [
+        "Existing eligible originals, but no user-rated 5/5 on the mystery tag; frequent repeat anchor research"
+      ]
+    },
+    {
+      "id": "CRUCIFIXION_PASSION",
+      "verified": [
+        "rosary.sor5",
+        "golgotha-e2"
+      ],
+      "broaderTargetContexts": [
+        "station.12",
+        "calendar.good-friday",
+        "devotion.seven-last-words"
+      ],
+      "priority": "P0",
+      "gaps": [
+        "Seven Last Words and Stations cinematic joins need user-facing moment IDs and actual relevant depiction per word"
+      ]
+    },
+    {
+      "id": "PENTECOST",
+      "verified": [
+        "rosary.glo3"
+      ],
+      "broaderTargetContexts": [
+        "calendar.pentecost",
+        "devotion.holy-spirit",
+        "novena.holy_ghost"
+      ],
+      "priority": "P0",
+      "gaps": [
+        "No Bible geography event row indexed",
+        "No 5/5 user-rated repeat painting, current exact-mystery candidates merit aesthetic inspection"
+      ]
+    },
+    {
+      "id": "ABEL_ABRAHAM_MELCHIZEDEK",
+      "verified": [
+        "MB17",
+        "MB18",
+        "MB19",
+        "MB20",
+        "MC-CAN-110"
+      ],
+      "broaderTargetContexts": [
+        "biblical-theatre-old-testament",
+        "genealogy-timeline"
+      ],
+      "priority": "P1",
+      "gaps": [
+        "Actual OT narrative/genealogy IDs need linking; art may be selectively anchored with best painting, not mandatory for all typologies"
+      ]
+    },
+    {
+      "id": "MAGDALENE_REPENTANCE_AND_RESURRECTION",
+      "verified": [
+        "rosary.glo1",
+        "christ-tomb-e2"
+      ],
+      "broaderTargetContexts": [
+        "devotion.confession",
+        "examination-of-conscience",
+        "calendar.mary-magdalene"
+      ],
+      "priority": "P1",
+      "gaps": [
+        "Symbolic penitent Magdalene (museum met-436839) is not same scene as Mary at empty tomb; preserve separate iconographic roles"
+      ]
+    },
+    {
+      "id": "PREACHING_KINGDOM",
+      "verified": [
+        "rosary.lum3",
+        "galilee-sea-e1"
+      ],
+      "broaderTargetContexts": [
+        "gospel-preaching",
+        "biblical-theatre"
+      ],
+      "priority": "P0",
+      "gaps": [
+        "Fishermen calling scene covers only part of Rosary mystery",
+        "Zero eligible directly or subject-tagged current painting candidates; prioritize discovery"
+      ]
+    },
+    {
+      "id": "HOLY_RESURRECTION",
+      "verified": [
+        "rosary.glo1",
+        "christ-tomb-e2"
+      ],
+      "broaderTargetContexts": [
+        "calendar.easter",
+        "devotion.regina-caeli"
+      ],
+      "priority": "P0",
+      "gaps": [
+        "Eligible candidate but no user-5/5 rated repeated anchor"
+      ]
+    }
+  ],
+  "rosaryToGeographyAndArt": [
+    {
+      "mysteryId": "joy1",
+      "artworkSubjectKey": "rosary.joy1",
+      "sourceScripture": "Luke 1:26-38",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "annunciation"
+      ],
+      "geographyEvent": {
+        "id": "nazareth-e1",
+        "placeId": "nazareth",
+        "title": "The Annunciation",
+        "reference": "Luke 1:26–38"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-438724",
+          "met-441233",
+          "met-436791",
+          "met-436502",
+          "met-459055",
+          "met-435899",
+          "met-436096",
+          "cma-127572",
+          "met-437250",
+          "met-437490",
+          "cma-130980",
+          "met-459016"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-458966",
+          "cma-122338",
+          "cma-131820"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [
+          "met-458963",
+          "nga-364",
+          "nga-18",
+          "nga-46170",
+          "nga-46"
+        ],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "joy2",
+      "artworkSubjectKey": "rosary.joy2",
+      "sourceScripture": "Luke 1:39-56",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "visitation"
+      ],
+      "geographyEvent": {
+        "id": "ein-karem-e1",
+        "placeId": "ein-karem",
+        "title": "The Visitation",
+        "reference": "Luke 1:39–56"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "nga-505"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "cma-128075"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "joy3",
+      "artworkSubjectKey": "rosary.joy3",
+      "sourceScripture": "Luke 2:1-20",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "nativity",
+        "adoration-shepherds"
+      ],
+      "geographyEvent": {
+        "id": "bethlehem-e1",
+        "placeId": "bethlehem",
+        "title": "Birth of Jesus and adoration of the shepherds",
+        "reference": "Luke 2:1–20"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-437231",
+          "met-769294",
+          "met-435859",
+          "met-435584",
+          "met-436100",
+          "cma-143644",
+          "cma-143784",
+          "cma-97143"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-459007",
+          "cma-97142"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [
+          "met-436570",
+          "met-436200"
+        ],
+        "secondarySubjectTagEligible": [
+          "cma-130980",
+          "met-435900",
+          "nga-432",
+          "nga-46185",
+          "nga-56668"
+        ],
+        "fiveOfFiveIds": [
+          "nga-46185"
+        ]
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "joy4",
+      "artworkSubjectKey": "rosary.joy4",
+      "sourceScripture": "Luke 2:22-38",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "presentation-jesus"
+      ],
+      "geographyEvent": {
+        "id": "jerusalem-temple-e1",
+        "placeId": "jerusalem-temple",
+        "title": "The Presentation of Jesus",
+        "reference": "Luke 2:22–38"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-437298",
+          "met-436513"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-435828"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [
+          "nga-46127"
+        ],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "joy5",
+      "artworkSubjectKey": "rosary.joy5",
+      "sourceScripture": "Luke 2:41-52",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "finding-jesus-temple"
+      ],
+      "geographyEvent": {
+        "id": "jerusalem-temple-e2",
+        "placeId": "jerusalem-temple",
+        "title": "The twelve-year-old Jesus in the Temple",
+        "reference": "Luke 2:41–52"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-436672",
+          "nga-41656",
+          "nga-41661"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-437736"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "lum1",
+      "artworkSubjectKey": "rosary.lum1",
+      "sourceScripture": "Matthew 3:13-17",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "baptism-christ"
+      ],
+      "geographyEvent": {
+        "id": "jordan-baptism-e1",
+        "placeId": "jordan-baptism",
+        "title": "Baptism of Jesus",
+        "reference": "Matthew 3:13–17"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-437457",
+          "met-435755",
+          "met-440393",
+          "cma-127746"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "cma-130377"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "lum2",
+      "artworkSubjectKey": "rosary.lum2",
+      "sourceScripture": "John 2:1-11",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "wedding-cana"
+      ],
+      "geographyEvent": {
+        "id": "cana-e1",
+        "placeId": "cana",
+        "title": "The wedding at Cana",
+        "reference": "John 2:1–11"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-436801"
+        ],
+        "exactMysteryTagExcluded0to2": [],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "lum3",
+      "artworkSubjectKey": "rosary.lum3",
+      "sourceScripture": "Mark 1:14-20",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "christ-preaching"
+      ],
+      "geographyEvent": {
+        "id": "galilee-sea-e1",
+        "placeId": "galilee-sea",
+        "title": "The call of the fishermen",
+        "reference": "Mark 1:16–20"
+      },
+      "geographyMatch": {
+        "kind": "PARTIAL_SCENE_MISMATCH",
+        "scriptureOverlap": "GEO_EVENT_WITHIN_ROSARY_PASSAGE",
+        "qualifiedBy": "Geography scene captures the CALL OF FISHERMEN within Mark 1:14-20, not the full Proclamation of the Kingdom; do not claim the latter is artistically covered."
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [],
+        "exactMysteryTagExcluded0to2": [],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "NO_ELIGIBLE_EXACT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "lum4",
+      "artworkSubjectKey": "rosary.lum4",
+      "sourceScripture": "Matthew 17:1-9",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "transfiguration"
+      ],
+      "geographyEvent": {
+        "id": "transfiguration-e1",
+        "placeId": "transfiguration",
+        "title": "The Transfiguration",
+        "reference": "Matthew 17:1–8"
+      },
+      "geographyMatch": {
+        "kind": "VERIFIED_EVENT_PARTIAL_PASSAGE",
+        "scriptureOverlap": "GEO_EVENT_WITHIN_ROSARY_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "kress-k2016"
+        ],
+        "exactMysteryTagExcluded0to2": [],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "lum5",
+      "artworkSubjectKey": "rosary.lum5",
+      "sourceScripture": "Luke 22:14-20",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "last-supper"
+      ],
+      "geographyEvent": {
+        "id": "cenacle-e1",
+        "placeId": "cenacle",
+        "title": "The Last Supper and institution of the Eucharist",
+        "reference": "Luke 22:7–20"
+      },
+      "geographyMatch": {
+        "kind": "VERIFIED_EVENT_PARTIAL_PASSAGE",
+        "scriptureOverlap": "ROSARY_PASSAGE_WITHIN_GEO_EVENT",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [],
+        "exactMysteryTagExcluded0to2": [],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [
+          "met-459131"
+        ],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "ONLY_SUBJECT_TAG_ELIGIBLE_NEEDS_EXPLICIT_ASSIGNMENT",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "sor1",
+      "artworkSubjectKey": "rosary.sor1",
+      "sourceScripture": "Matthew 26:36-46",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "agony-garden"
+      ],
+      "geographyEvent": {
+        "id": "gethsemane-e1",
+        "placeId": "gethsemane",
+        "title": "The agony in the garden",
+        "reference": "Matthew 26:36–46"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-437371",
+          "met-442488"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "cma-124118"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "sor2",
+      "artworkSubjectKey": "rosary.sor2",
+      "sourceScripture": "John 19:1-3",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "flagellation"
+      ],
+      "geographyEvent": {
+        "id": "jerusalem-trial-e3",
+        "placeId": "jerusalem-trial",
+        "title": "The scourging and crowning with thorns",
+        "reference": "John 19:1–16"
+      },
+      "geographyMatch": {
+        "kind": "MERGED_SCENE_SPLIT_REQUIRED",
+        "scriptureOverlap": "ROSARY_PASSAGE_WITHIN_GEO_EVENT",
+        "qualifiedBy": "Geography event merges scourging and crowning in John 19:1-16; one scene is not a guarantee of separate, accurate visual depiction for both mysteries."
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "nga-41696",
+          "met-438466"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "cma-124117",
+          "met-459021"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "sor3",
+      "artworkSubjectKey": "rosary.sor3",
+      "sourceScripture": "Matthew 27:27-31",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "crowning-thorns"
+      ],
+      "geographyEvent": {
+        "id": "jerusalem-trial-e3",
+        "placeId": "jerusalem-trial",
+        "title": "The scourging and crowning with thorns",
+        "reference": "John 19:1–16"
+      },
+      "geographyMatch": {
+        "kind": "DIFFERENT_GOSPEL_SAME_EVENT",
+        "scriptureOverlap": "NONE",
+        "qualifiedBy": "Geography's combined scourging/crowning scene is from John, while the Rosary witness is Matthew 27:27-31. Same Passion episode, DIFFERENT gospel passage; source link is thematic/event correspondence, not passage identity."
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-436721"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "cma-124118"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [
+          "met-435580"
+        ],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "sor4",
+      "artworkSubjectKey": "rosary.sor4",
+      "sourceScripture": "Luke 23:26-33",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "carrying-cross"
+      ],
+      "geographyEvent": {
+        "id": "golgotha-e1",
+        "placeId": "golgotha",
+        "title": "The way to Calvary",
+        "reference": "Luke 23:26–32"
+      },
+      "geographyMatch": {
+        "kind": "VERIFIED_EVENT_PARTIAL_PASSAGE",
+        "scriptureOverlap": "GEO_EVENT_WITHIN_ROSARY_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-459087",
+          "met-459061"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-439977"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [
+          "nga-137505"
+        ],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "sor5",
+      "artworkSubjectKey": "rosary.sor5",
+      "sourceScripture": "John 19:25-30",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "crucifixion"
+      ],
+      "geographyEvent": {
+        "id": "golgotha-e2",
+        "placeId": "golgotha",
+        "title": "The Crucifixion and death of Jesus",
+        "reference": "John 19:17–30"
+      },
+      "geographyMatch": {
+        "kind": "VERIFIED_EVENT_PARTIAL_PASSAGE",
+        "scriptureOverlap": "ROSARY_PASSAGE_WITHIN_GEO_EVENT",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-436098",
+          "met-652416",
+          "met-437338",
+          "cma-97181",
+          "cma-119698",
+          "cma-97147",
+          "cma-129386"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-459005",
+          "met-910391",
+          "cma-97136",
+          "cma-136864",
+          "cma-127664"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [
+          "met-437242",
+          "met-435577"
+        ],
+        "secondarySubjectTagEligible": [
+          "cma-112856"
+        ],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "glo1",
+      "artworkSubjectKey": "rosary.glo1",
+      "sourceScripture": "John 20:1-18",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "resurrection"
+      ],
+      "geographyEvent": {
+        "id": "christ-tomb-e2",
+        "placeId": "christ-tomb",
+        "title": "The empty tomb and Mary Magdalene",
+        "reference": "John 20:1–18"
+      },
+      "geographyMatch": {
+        "kind": "EXACT_SCRIPTURE_AND_SCENE_ID",
+        "scriptureOverlap": "EXACT_PASSAGE",
+        "qualifiedBy": null
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "cma-78982"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-437272",
+          "met-436416",
+          "met-437639"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "glo2",
+      "artworkSubjectKey": "rosary.glo2",
+      "sourceScripture": "Acts 1:3-11",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "ascension-christ"
+      ],
+      "geographyEvent": {
+        "id": "olives-e3",
+        "placeId": "olives",
+        "title": "The Ascension of Our Lord",
+        "reference": "Acts 1:6–12"
+      },
+      "geographyMatch": {
+        "kind": "VERIFIED_EVENT_PARTIAL_PASSAGE",
+        "scriptureOverlap": "PARTIAL_PASSAGE_OVERLAP",
+        "qualifiedBy": "Ascension geo reference Acts 1:6-12 partly overlaps Rosary Acts 1:3-11; event title confirms same episode."
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "met-436835",
+          "nga-45890"
+        ],
+        "exactMysteryTagExcluded0to2": [],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "glo3",
+      "artworkSubjectKey": "rosary.glo3",
+      "sourceScripture": "Acts 2:1-13",
+      "scripturalKind": "scriptural_event",
+      "canonicalArtSubjectKeys": [
+        "pentecost",
+        "descent-holy-spirit"
+      ],
+      "geographyEvent": null,
+      "geographyMatch": {
+        "kind": "NOT_INDEXED_IN_GEO",
+        "scriptureOverlap": "NO_IDENTIFIED_GEO_SCENE",
+        "qualifiedBy": "Pentecost is located in Jerusalem in Acts 2, but not indexed as a distinct event in the Christ-only geography event list; new place/event map record must be verified separately."
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "commons-debray-pentecost",
+          "commons-baroncelli-pentecost"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "commons-multscher-pentecost"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [
+          "artic-41217",
+          "artic-16316"
+        ],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "glo4",
+      "artworkSubjectKey": "rosary.glo4",
+      "sourceScripture": "Luke 1:46-55",
+      "scripturalKind": "related_scripture_for_doctrinal_mystery",
+      "canonicalArtSubjectKeys": [
+        "assumption-mary"
+      ],
+      "geographyEvent": null,
+      "geographyMatch": {
+        "kind": "DOCTRINAL_OR_TYPOLOGICAL",
+        "scriptureOverlap": "NO_IDENTIFIED_GEO_SCENE",
+        "qualifiedBy": "Assumption is a doctrinal mystery; cited Luke 1:46-55 is related Marian Scripture, not a depiction or geographical identification of the Assumption."
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "nga-46470",
+          "met-435656",
+          "met-437673"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-458998",
+          "nga-46145"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [],
+        "secondarySubjectTagEligible": [
+          "nga-46131",
+          "nga-50280"
+        ],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    },
+    {
+      "mysteryId": "glo5",
+      "artworkSubjectKey": "rosary.glo5",
+      "sourceScripture": "Revelation 12:1",
+      "scripturalKind": "traditional_marian_typology",
+      "canonicalArtSubjectKeys": [
+        "coronation-virgin"
+      ],
+      "geographyEvent": null,
+      "geographyMatch": {
+        "kind": "DOCTRINAL_OR_TYPOLOGICAL",
+        "scriptureOverlap": "NO_IDENTIFIED_GEO_SCENE",
+        "qualifiedBy": "Coronation is a traditional Marian mystery; Revelation 12:1 is typological, not direct historical/geographical proof."
+      },
+      "candidateOriginals": {
+        "exactMysteryTagEligible": [
+          "cma-111435",
+          "cma-124076",
+          "cma-125248",
+          "nga-12134",
+          "met-458961"
+        ],
+        "exactMysteryTagExcluded0to2": [
+          "met-458978"
+        ],
+        "exactMysteryTagUnratedOrUnadjudicated": [
+          "met-437524"
+        ],
+        "secondarySubjectTagEligible": [],
+        "fiveOfFiveIds": []
+      },
+      "primaryCoverageStatus": "HAS_ELIGIBLE_EXPLICIT_MYSTERY_CANDIDATE",
+      "publicationReady": false
+    }
+  ],
+  "massBibleToCeremonialEvents": [
+    {
+      "massBibleId": "MB01",
+      "liturgicalMoment": "Prayers at the foot of the altar",
+      "scriptureReference": "Psalm 42:4 (Vulgate; 43:4 in most modern numbering)",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "relatedMassEventIds": [
+        "MC-FOOT-020"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/psa042.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB02",
+      "liturgicalMoment": "Psalm Judica me",
+      "scriptureReference": "Psalm 42:1–5 (Vulgate; 43:1–5 modern)",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "relatedMassEventIds": [
+        "MC-FOOT-020"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/psa042.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB03",
+      "liturgicalMoment": "Confiteor",
+      "scriptureReference": "Luke 18:13",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "relatedMassEventIds": [
+        "MC-FOOT-040",
+        "MC-FOOT-060"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/luk018.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB04",
+      "liturgicalMoment": "Kyrie",
+      "scriptureReference": "Matthew 20:30–31",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "relatedMassEventIds": [
+        "MC-KYR-010"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/mat020.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB05",
+      "liturgicalMoment": "Gloria",
+      "scriptureReference": "Luke 2:14",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "relatedMassEventIds": [
+        "MC-GLR-010"
+      ],
+      "relatedArtEvent": "nativity-shepherds",
+      "relatedRosaryMystery": "joy3",
+      "relationshipQualification": "GLORIA_OPENING_LUKE_2_14_RELATED_TO_NATIVITY_SCENE_NOT_ENTIRE_HYMN",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/luk002.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB06",
+      "liturgicalMoment": "Epistle or Lesson",
+      "scriptureReference": "1 Corinthians 12:2–11 (example: Pentecost X only)",
+      "classification": "VARIABLE_PROPER_READING",
+      "relatedMassEventIds": [
+        "MC-EPI-020"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/1co012.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB07",
+      "liturgicalMoment": "Gospel",
+      "scriptureReference": "Luke 18:9–14 (example: Pentecost X only)",
+      "classification": "VARIABLE_PROPER_READING",
+      "relatedMassEventIds": [
+        "MC-GSP-060"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/luk018.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB08",
+      "liturgicalMoment": "Credo, Incarnation",
+      "scriptureReference": "John 1:14",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "relatedMassEventIds": [
+        "MC-CRD-025",
+        "MC-CRD-045"
+      ],
+      "relatedArtEvent": "annunciation-incarnation",
+      "relatedRosaryMystery": "joy1",
+      "relationshipQualification": "DOCTRINAL_INCARCATION_LINK_NOT_EXACT_PICTORIAL_QUOTATION",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/joh001.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB09",
+      "liturgicalMoment": "Lavabo",
+      "scriptureReference": "Psalm 25:6–12 (Vulgate; 26:6–12 modern)",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "relatedMassEventIds": [
+        "MC-OFF-140"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/psa025.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB10",
+      "liturgicalMoment": "Orate fratres",
+      "scriptureReference": "Romans 12:1",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "relatedMassEventIds": [
+        "MC-OFF-160"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/rom012.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB11",
+      "liturgicalMoment": "Sanctus",
+      "scriptureReference": "Isaiah 6:3",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "relatedMassEventIds": [
+        "MC-SAN-010"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/isa006.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB12",
+      "liturgicalMoment": "Benedictus and Hosanna",
+      "scriptureReference": "Matthew 21:9",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "relatedMassEventIds": [
+        "MC-SAN-030"
+      ],
+      "relatedArtEvent": "entry-jerusalem",
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "BENEDICTUS_HOSANNA_SCRIPTURAL_CONNECTION_NOT_ALWAYS_A_PALM_SUNDAY_SCENE",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/mat021.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB13",
+      "liturgicalMoment": "Te igitur intercessions",
+      "scriptureReference": "1 Timothy 2:1–2",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "relatedMassEventIds": [
+        "MC-CAN-010"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/1ti002.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB14",
+      "liturgicalMoment": "Consecration of the Host",
+      "scriptureReference": "1 Corinthians 11:23–26",
+      "classification": "NARRATIVE_SCRIPTURE_CONNECTION",
+      "relatedMassEventIds": [
+        "MC-CNS-020",
+        "MC-CNS-040"
+      ],
+      "relatedArtEvent": "last-supper",
+      "relatedRosaryMystery": "lum5",
+      "relationshipQualification": "SAME_INSTITUTION_EVENT_VIA_1_CORINTHIANS_NOT_IDENTICAL_MISSAL_WORDS",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/1co011.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB15",
+      "liturgicalMoment": "Consecration of the Chalice",
+      "scriptureReference": "Luke 22:20",
+      "classification": "NARRATIVE_SCRIPTURE_CONNECTION",
+      "relatedMassEventIds": [
+        "MC-CNS-090",
+        "MC-CNS-110"
+      ],
+      "relatedArtEvent": "last-supper",
+      "relatedRosaryMystery": "lum5",
+      "relationshipQualification": "SAME_LAST_SUPPER_EVENT_VIA_LUKE_22_20_NOT_LITERAL_CHALICE_RITUAL_IMAGE",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/luk022.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB16",
+      "liturgicalMoment": "Unde et memores",
+      "scriptureReference": "1 Corinthians 11:26",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "relatedMassEventIds": [
+        "MC-CAN-100"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/1co011.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB17",
+      "liturgicalMoment": "Supra quae — Abel",
+      "scriptureReference": "Genesis 4:4",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "relatedMassEventIds": [
+        "MC-CAN-110"
+      ],
+      "relatedArtEvent": "abel-offering",
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "BIBLICAL_FIGURE_EXPLICITLY_NAMED_IN_MASS_CANON",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/gen004.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB18",
+      "liturgicalMoment": "Supra quae — Abraham",
+      "scriptureReference": "Genesis 22:1–19",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "relatedMassEventIds": [
+        "MC-CAN-110"
+      ],
+      "relatedArtEvent": "abraham-offers-isaac",
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "BIBLICAL_FIGURE_EXPLICITLY_NAMED_IN_MASS_CANON",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/gen022.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB19",
+      "liturgicalMoment": "Supra quae — Melchisedech",
+      "scriptureReference": "Genesis 14:18–20",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "relatedMassEventIds": [
+        "MC-CAN-110"
+      ],
+      "relatedArtEvent": "melchizedek-offering",
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "BIBLICAL_FIGURE_EXPLICITLY_NAMED_IN_MASS_CANON",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/gen014.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB20",
+      "liturgicalMoment": "Melchisedech and priesthood",
+      "scriptureReference": "Hebrews 7:1–17",
+      "classification": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
+      "relatedMassEventIds": [
+        "MC-CAN-110"
+      ],
+      "relatedArtEvent": "melchizedek-offering",
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "INTERPRETIVE_TYPOLOGY_NOT_MISSAL_TEXT",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/heb007.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB21",
+      "liturgicalMoment": "Pater noster",
+      "scriptureReference": "Matthew 6:9–13 (cf. Luke 11:2–4); Matt 6:11 Latin variant",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "relatedMassEventIds": [
+        "MC-COM-020"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/mat006.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB22",
+      "liturgicalMoment": "Libera nos",
+      "scriptureReference": "Matthew 6:13",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "relatedMassEventIds": [
+        "MC-COM-050"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/mat006.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB23",
+      "liturgicalMoment": "Agnus Dei",
+      "scriptureReference": "John 1:29",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "relatedMassEventIds": [
+        "MC-COM-130"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/joh001.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB24",
+      "liturgicalMoment": "Domine non sum dignus",
+      "scriptureReference": "Matthew 8:8",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "relatedMassEventIds": [
+        "MC-COM-200",
+        "MC-COM-280"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/mat008.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB25",
+      "liturgicalMoment": "Priest's Communion prayer",
+      "scriptureReference": "Psalm 115:3–4 (Clementine Vulgate; Psalm 116:12–13 in modern numbering)",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "relatedMassEventIds": [
+        "MC-COM-230"
+      ],
+      "relatedArtEvent": null,
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "MASS_MOMENT_TO_SCRIPTURE_RELATION_ONLY_NO_AUTOMATIC_ART_EVENT_ID",
+      "needsNarrativeConfirmation": true,
+      "sourceWitness": [
+        "https://vulgate.org/ot/psalms_115.htm"
+      ]
+    },
+    {
+      "massBibleId": "MB26",
+      "liturgicalMoment": "Last Gospel (when prescribed)",
+      "scriptureReference": "John 1:1–14",
+      "classification": "VARIABLE_RITE_SCRIPTURE_READING",
+      "relatedMassEventIds": [
+        "MC-END-160"
+      ],
+      "relatedArtEvent": "prologue-john",
+      "relatedRosaryMystery": null,
+      "relationshipQualification": "WHEN_PRESCRIBED_NOT_RECREATION_OF_SINGLE_BIBLICAL_EPISODE",
+      "needsNarrativeConfirmation": false,
+      "sourceWitness": [
+        "https://www.newadvent.org/bible/joh001.htm"
+      ]
+    }
+  ],
+  "researchQueue": [
+    {
+      "priority": 1,
+      "subject": "Proclamation of the Kingdom",
+      "reason": "No eligible exact/subject-tagged original; incomplete geography scene and cross-context Luminous Rosary demand",
+      "targetIds": [
+        "rosary.lum3",
+        "galilee-sea-e1"
+      ]
+    },
+    {
+      "priority": 2,
+      "subject": "Last Supper and Institution of Eucharist",
+      "reason": "No eligible directly mystery-tagged original; one eligible secondary last-supper candidate; Mass Consecration and Holy Thursday cross-module multiplier",
+      "targetIds": [
+        "rosary.lum5",
+        "cenacle-e1",
+        "MB14",
+        "MB15"
+      ]
+    },
+    {
+      "priority": 3,
+      "subject": "Annunciation / Incarnation",
+      "reason": "Calendar, Rosary, Angelus, Mass Credo and geography; multiple rated >=3 but no 5/5 repeat painting",
+      "targetIds": [
+        "rosary.joy1",
+        "nazareth-e1",
+        "MB08"
+      ]
+    },
+    {
+      "priority": 4,
+      "subject": "Crucifixion and Seven Last Words",
+      "reason": "Passion, Good Friday, Rosary and Stations cross use; no repeat-ready five-star Crucifixion of CHRIST (do not confuse Saint Andrew)",
+      "targetIds": [
+        "rosary.sor5",
+        "golgotha-e2",
+        "station.12"
+      ]
+    },
+    {
+      "priority": 5,
+      "subject": "Pentecost",
+      "reason": "Required Class I feast, Rosary, Holy Ghost novena; art anchor and geography event link missing",
+      "targetIds": [
+        "rosary.glo3"
+      ]
+    },
+    {
+      "priority": 6,
+      "subject": "Resurrection",
+      "reason": "Easter, Rosary, Eastertide prayers, Biblical theatre; no five-star repeat-ready work",
+      "targetIds": [
+        "rosary.glo1",
+        "christ-tomb-e2"
+      ]
+    },
+    {
+      "priority": 7,
+      "subject": "Abel / Abraham / Melchizedek",
+      "reason": "Distinct OT narrative art should support Mass Canon meditation and salvation history; source exact event mapping and genealogy required",
+      "targetIds": [
+        "MB17",
+        "MB18",
+        "MB19",
+        "MB20"
+      ]
+    },
+    {
+      "priority": 8,
+      "subject": "Other major Class I and select II/III gaps",
+      "reason": "Run source-verified observed liturgical principal and Gospel date join, then rank exact feast event gaps",
+      "targetIds": [
+        "data/calendar/sacred-art-class-ii-iii-occasions-20261013.v1.json"
+      ]
+    },
+    {
+      "priority": 9,
+      "subject": "Nativity five-star reuse",
+      "reason": "Savoldo 5/5 Adoration of Shepherds rated strong; decide appropriate Rosary mystery and Christmas hero uses only after crop/rights/user review",
+      "targetIds": [
+        "rosary.joy3",
+        "bethlehem-e1",
+        "nga-46185"
+      ]
+    }
+  ],
+  "artPublicationChanges": 0,
+  "status": "VERIFIED_REAL_ID_FIRST_JOIN_BUT_INCOMPLETE_FULL_THEATRE_GENEALOGY_AND_CALENDAR_RESOLVER"
+}
