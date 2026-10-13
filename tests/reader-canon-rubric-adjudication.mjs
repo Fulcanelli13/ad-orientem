@@ -56,6 +56,13 @@ for(const row of canonData.rows){
     assert.equal(action.canPublish,false);
     assert.equal(action.sourceRitusLocator,fr.ritusLocator);
     assert.equal(action.isObservedNow,false);
+    if(action.anchorKind==="SOURCE_LATIN_WORDS"){
+      assert.equal(action.anchorResolution,"WORD_MATCH_EXACT",action.id);
+      assert.ok(action.exactLatinSpans.length>0,action.id);
+    }else{
+      assert.equal(action.anchorResolution,"NON_TEXT_SOURCE_EVENT",action.id);
+      assert.equal(action.exactLatinSpans.length,0,action.id);
+    }
   }
 }
 const roles=createCanonRubricAdjudicationController({canonData,triggerAudit,frenchReview,ministerData});
