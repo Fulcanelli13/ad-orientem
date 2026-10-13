@@ -24,12 +24,16 @@ try{
    const {select1962CommemorationsForMassForm}=await import("/src/mass/1962-commemoration-form-source.js");
    const {MISSION_SUNDAY_SOURCE}=await import("/src/mass/1962-mission-sunday-source.js");
    const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+   const {composeProperReaderParagraphs}=await import("/src/mass/proper-reader-composition.js");
    const {massCalendarPreflightContext,fillMassCalendarPreflight}=await import("/src/mass/calendar-preflight-context.js");
    const projections={};
    for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
      const x=select1962CommemorationsForMassForm({proper:r.proper,calendarResolution:r,form});
      const q=x.proper?.data??x.proper;
      const slots=properToReaderSlots(q,{language:"fr"});
+     const displayed=composeProperReaderParagraphs(
+       "AO.SM.B019",slots.slots.COLLECT_SET.data.paragraphs,{language:"fr"}
+     );
      const legacy={date:r.date,celebrationId:"mass_of_day",celebrationType:"CALENDAR",
        actualCelebration:r.day.main,proper:r.proper,canStart:true};
      const context=massCalendarPreflightContext(legacy,{
@@ -40,6 +44,9 @@ try{
      projections[form]={status:x.status,mission:q.missionSundayCollectDecision?.status??null,
        collected:q.collects.length,secret:q.secrets.length,postcommunion:q.postcommunions.length,
        focus:slots.slots.COLLECT_SET.data?.paragraphs?.length??0,
+       rendered:displayed.length,
+       additionalOremus:displayed.filter(row=>row.latin==="Orémus.").length,
+       explicitResponses:displayed.filter(row=>row.kind==="RESPONSE").length,
        correctConclusion:q.collects[0]?.lat?.endsWith(MISSION_SUNDAY_SOURCE.conclusion.lat)??false,
        oldConclusionAbsent:!q.collects[0]?.lat?.includes("Per Dóminum nostrum Iesum Christum"),
        notice:node.querySelector("[data-mass-calendar-mission]")?.textContent??"",
@@ -65,7 +72,14 @@ try{
    assert.equal(proof.mission,"CERTIFIED",form);
    assert.deepEqual([proof.collected,proof.secret,proof.postcommunion],
       [ordinary,ordinary,ordinary],form+" must add NO extra Secret/Postcommunion");
-   assert.equal(proof.focus,ordinary+1+(form==="LOW"?1:0),form+" must have source text focus and intermediate Low-Mass Amen");
+   assert.equal(proof.focus,ordinary+1,
+     form+" retains only source Proper text paragraphs, without synthetic Amen");
+   assert.equal(proof.rendered,form==="LOW"?6:3,
+     form+" produces the correct rendered text/intermediate rubric boundaries");
+   assert.equal(proof.additionalOremus,form==="LOW"?1:0,
+     form+" says a new Oremus only for a separately concluded St Luke");
+   assert.equal(proof.explicitResponses,ordinary,
+     form+" responds Amen to each independently concluded Collect");
    assert.equal(proof.correctConclusion,true,form+" must end with missionary Qui tecum");
    assert.equal(proof.oldConclusionAbsent,true,form+" must remove original principal Per Dominum");
    assert.equal(proof.noticeVisible,true,form+" preflight must show the actual mission notice");
