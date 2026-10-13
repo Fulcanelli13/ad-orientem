@@ -14,21 +14,22 @@
     "No new images downloaded; no user art approval; no production release",
     "Only same artwork image retained by same ID/SHA; cross-module Biblical event IDs from independent pipeline not invented",
     "2026-10-13 wave: new museum-linked visual leads for 13 formerly zero-lead subjects, including contextual-only and related-episode evidence. No exact-scene completion inferred merely from presence of a link.",
-    "Second 2026-10-13 research wave: source-grounded 5 additional zero-lead subjects (2 oil paintings, 2 etchings, 1 gouache); non-painting formats and contextual mismatch explicitly flagged; no approval or download."
+    "Second 2026-10-13 research wave: source-grounded 5 additional zero-lead subjects (2 oil paintings, 2 etchings, 1 gouache); non-painting formats and contextual mismatch explicitly flagged; no approval or download.",
+    "French Mays of Notre-Dame corpus is important further source discovery (https://www.notredamedeparis.fr/comprendre/peintures/les-mays-de-notre-dame/): historic large oil canvases predominantly Acts; do not import all or imply image rights. Explicit subjects Courtin 1707 and Galloche 1705 added as separate original artworks."
   ],
   "summary": {
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 45,
+    "additionalResearchLeadSubjects": 49,
     "withPreviousUnapprovedOptionOnly": 14,
-    "withNoRecordedSourceOrOlderOption": 19,
+    "withNoRecordedSourceOrOlderOption": 15,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
     "chosen101Unchanged": true,
-    "newInstitutionalSourceWaveSubjectCount": 18,
-    "newInstitutionalSourceWaveCandidateCount": 20
+    "newInstitutionalSourceWaveSubjectCount": 22,
+    "newInstitutionalSourceWaveCandidateCount": 24
   },
   "subjects": [
     {
@@ -2505,14 +2506,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 16:11–15",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-anon-stradanus-lydia-philippi",
+          "sourceUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Paulus-spreekt-met-de-vrouwen-in-Filippi--3f533abe112e56a3477e693822105bc3",
+          "artist": "Anonymous engraver, after Philips Galle, after Jan van der Straet design",
+          "title": "Paul Preaches to the Women at Philippi (Paulus spreekt met de vrouwen in Filippi)",
+          "medium": "engraving",
+          "sourceInstitution": "Rijksmuseum (RP-P-1976-30-417)",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT_SECONDARY_VIGNETTE",
+          "matchNotes": "1643 print. Lydia and household being baptised appear in right background of a composite Acts 16 scene; museum explicitly indexes Acts 16:14. This is not an oil painting or scene-centered Lydia portrait; possible secondary illustration only."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-A12",
@@ -2579,14 +2596,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 20:7–12",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-courtin-saint-paul-eutychus-1707",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010057900",
+          "artist": "Jacques François Courtin",
+          "title": "Saint Paul Preaches at Troas and Raises Eutychus",
+          "medium": "painting on canvas, oil technique not explicitly stated in catalogue",
+          "sourceInstitution": "Musée du Louvre (B 506); Cathédrale Saint-Étienne, Toulouse",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "Monumental 1707 Grand May of Notre-Dame, canvas 4.22 × 3.42 m, direct Acts 20:7-12 subject; historically retitled from 'Resurrection of Lazarus', museum current identification Eutychus. Full-canvas reproduction selection/rights not yet examined."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-A17",
@@ -2594,14 +2627,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 20:17–38",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-galloche-farewell-ephesians-1705",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010063561",
+          "artist": "Louis Galloche",
+          "title": "Saint Paul Receiving the Farewell of the Ephesian Elders",
+          "medium": "oil on canvas",
+          "sourceInstitution": "Musée du Louvre (MI 310)",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_FAREWELL_EVENT_GEOGRAPHY_UNCERTAIN",
+          "matchNotes": "1705 Grand May for Notre-Dame 4.20 × 3.35 m; inscription Acts 20. Museum describes farewell on departure from Ephesus; Bible states Acts 20 elders were summoned to Miletus. Keep geographic match unresolved; do not silently assign painting to Miletus."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     },
     {
       "subjectId": "BIB-A18",
@@ -2714,16 +2763,32 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Revelation 21:1–27 · Symbolic theology, not a map of future physical geography.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-pieter-van-der-borcht-new-jerusalem",
+          "sourceUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Engel-toont-Johannes-het-nieuwe-Jeruzalem--a1c2e3111d9b5459911c983ec855c0f7",
+          "artist": "Pieter van der Borcht I (named on print)",
+          "title": "Angel Shows John the New Jerusalem (Engel toont Johannes het nieuwe Jeruzalem)",
+          "medium": "etching with letterpress text",
+          "sourceInstitution": "Rijksmuseum (BI-1919-77-99)",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY",
+          "sceneMatch": "DIRECT_SUBJECT",
+          "matchNotes": "1585 engraving specifically illustrates Revelation 21 descent of New Jerusalem, Lamb and twelve gates. Exact episode, but graphic-art fallback only; not oil painting and not aesthetically approved."
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-institutional-no-prior-selection"
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "2026-10-13: 18 original zero-lead subjects now have 20 museum-linked original art leads, 19 with no verified leads; still no acquisitions or aesthetic approvals."
+  "recentSourceWave": "22 original zero-lead subjects gained 24 museum-linked research candidates; 15 zero-lead subjects remain. No new acquisitions, artistic approvals or changes to selected 101."
 }
