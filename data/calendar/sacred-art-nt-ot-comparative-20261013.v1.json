@@ -12,17 +12,22 @@
     "Highest-quality original reproduction and app-wide image rights separate",
     "No El Greco or Fra Angelico new shortlist",
     "No change to 101 selected works, live Bible ids, or 28 selected Bible subjects",
-    "Records with 'do not match' are negative safeguards, not art selections"
+    "Records with 'do not match' are negative safeguards, not art selections",
+    "Effective 13 October aesthetic reset: all former 'PREFERRED' ranks were source-identification triage and are not artistic approvals. No automatic flagship from this batch. Apply benchmark Ribalta/Lanfranco/Navarrete/Rubens + prior rejected artist holds first."
   ],
   "summary": {
     "artworksComparedOrIdentified": 21,
     "distinctSubjects": 21,
-    "preferredOrPriority": 13,
+    "preferredOrPriority": 0,
     "strictFalsePositiveExclusions": 1,
     "oldTestamentAnchorSubjectComparisons": 5,
     "artworkMasterDownloads": 0,
     "artApprovedByUserInThisPass": 0,
-    "productionApproved": 0
+    "productionApproved": 0,
+    "oldSourcePriorityLabelsSuperseded": true,
+    "legacyPreferredOrPriority": 13,
+    "userRejectionHoldsAdded": 2,
+    "newAestheticFlagshipPromotions": 0
   },
   "records": [
     {
@@ -34,7 +39,7 @@
       "officialSourceUrl": "https://www.metmuseum.org/art/collection/search/816629",
       "sourceClass": "SOURCE_ORIGINAL_ACQUIRED_SHA",
       "existingOriginalSha256": "61630e0254184d4bf79c36a24d6cf1707b9aa60fbc308584436b7955fd0bd9c7",
-      "editorialRank": "PREFERRED_EXISTING",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_SUBEVENT",
       "sourceEvidence": "MET_COLLECTION_AND_MATCHED_PREVIEW",
       "assessment": "The Pope Alexander VII-commissioned oil on copper shows Joseph assisting Mary and Child at the river crossing. Rich yet unusually clear vertical composition. Keep all three figures and tree; no cover crop.",
@@ -42,7 +47,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_EXISTING",
+      "aestheticGate": "ARTISTIC_BENCHMARK_COMPARISON_REQUIRED",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G04",
@@ -53,7 +61,7 @@
       "officialSourceUrl": "https://www.metmuseum.org/art/collection/search/435755",
       "sourceClass": "SOURCE_ORIGINAL_ACQUIRED_SHA",
       "existingOriginalSha256": "44529c53ef6f8d3643a391a9b49f28b01145fed9fd6fd2abe451265ff1b9e32a",
-      "editorialRank": "PREFERRED_EXISTING",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_EVENT",
       "sourceEvidence": "MET_COLLECTION_AND_MATCHED_PREVIEW",
       "assessment": "Monumental oval painted surface: baptism gesture legible and figures centrally focused. Attractive restrained French classicist visual. Retain oval outline; avoid cutting angel on right.",
@@ -61,7 +69,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_EXISTING",
+      "aestheticGate": "ARTISTIC_BENCHMARK_COMPARISON_REQUIRED",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G06",
@@ -72,7 +83,7 @@
       "officialSourceUrl": "https://www.nga.gov/artworks/96688-miraculous-draught-fishes",
       "sourceClass": "SOURCE_ORIGINAL_ACQUIRED_SHA",
       "existingOriginalSha256": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
-      "editorialRank": "PREFERRED_EXISTING",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_LUKE5_NOT_JOHN21",
       "sourceEvidence": "NGA_COLLECTION_AND_MATCHED_PREVIEW",
       "assessment": "Recognisable Luke 5 calling/catch of fishermen; exceptional Venetian colour and grouping. 243 cm wide, full-width landscape only, not portrait cover.",
@@ -80,7 +91,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_EXISTING",
+      "aestheticGate": "STRONG_NARRATIVE_ILLUSTRATION_NOT_FLAGSHIP",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G08",
@@ -91,7 +105,7 @@
       "officialSourceUrl": "https://www.metmuseum.org/art/collection/search/702752",
       "sourceClass": "SOURCE_ORIGINAL_ACQUIRED_SHA",
       "existingOriginalSha256": "855b6176890e6dde6bac386b28aaea39470725df5ae74b1b234b7cd8f40ec910",
-      "editorialRank": "PREFERRED_EXISTING",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_EVENT",
       "sourceEvidence": "MET_COLLECTION_AND_PREVIOUS_MATCHED_PREVIEW",
       "assessment": "Finely finished oil on copper with intimate Christ/woman encounter, well evident. Met confirms this is a finished-work candidate, not merely unfinished sketch.",
@@ -99,7 +113,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_EXISTING",
+      "aestheticGate": "ARTISTIC_BENCHMARK_COMPARISON_REQUIRED",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G12",
@@ -110,7 +127,7 @@
       "officialSourceUrl": "https://www.metmuseum.org/art/collection/search/436176",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "USE_AS_RELATED_SUBEVENT",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "CHRIST_ASLEEP_BEFORE_CALMING",
       "sourceEvidence": "MET_COLLECTION_SOURCE",
       "assessment": "Beautiful strong colour with Delacroix expressive painterly effect but Christ is ASLEEP, not rising to calm the storm. Optional supporting illustration, not mislabeled climax.",
@@ -118,7 +135,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "USE_AS_RELATED_SUBEVENT",
+      "aestheticGate": "CONTEXTUAL_OR_HOLD",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G18",
@@ -129,7 +149,7 @@
       "officialSourceUrl": "https://www.hermitagefoundation.co.uk/prodigal-son-rembrandt",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "PREFERRED_PENDING_RIGHTS",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "PARABLE_RECONCILIATION_EXACT",
       "sourceEvidence": "HERMITAGE_INSTITUTION_AND_MATCHED_EXTERNAL_PREVIEW",
       "assessment": "Exceptional emotional gravity, purposeful light, clear father/son figures. Exactly the return and forgiveness segment of Luke 15, not departure or dissipation. Seek high quality faithful photo and legal commercial terms.",
@@ -137,7 +157,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_PENDING_RIGHTS",
+      "aestheticGate": "BEAUTY_FIRST_COMPARATIVE_REVIEW_REQUIRED",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G19",
@@ -148,7 +171,7 @@
       "officialSourceUrl": "https://www.nationalgallery.org.uk/paintings/diego-velazquez-christ-in-the-house-of-martha-and-mary",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "CONTEXTUAL_ONLY_NO_HERO",
+      "editorialRank": "HELD_PREVIOUSLY_REJECTED",
       "iconographyRelation": "GOSPEL_INSET_WITHIN_KITCHEN_SCENE",
       "sourceEvidence": "NATIONAL_GALLERY_OFFICIAL_SOURCE",
       "assessment": "Masterly bodegón, but the actual Luke 10 scene is a tiny background inset. Do not claim foreground women are literally the Biblical Martha and Mary; no mandatory specific image if no better painting found.",
@@ -156,7 +179,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "CONTEXTUAL_ONLY_NO_HERO",
+      "aestheticGate": "PRIOR_USER_REJECTION_HOLD",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G20",
@@ -167,7 +193,7 @@
       "officialSourceUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/parete-nord/storie-di-cristo/consegna-delle-chiavi.html",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "IMPORTANT_HISTORICAL_FRESCO_HOLD",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "MATTHEW16_KEYS_NOT_CONFESSION_ALONE",
       "sourceEvidence": "VATICAN_MUSEUM_OBJECT_SOURCE",
       "assessment": "Outstanding fresco of handing the keys in Matthew 16, but an architectural panorama, not an exact moment of Peter simply confessing Christ. Use only for Petrine primacy/keys-related stage, full fresco contain.",
@@ -175,7 +201,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "IMPORTANT_HISTORICAL_FRESCO_HOLD",
+      "aestheticGate": "NOT_YET_EVALUATED_AGAINST_USER_BENCHMARKS",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G21",
@@ -186,7 +215,7 @@
       "officialSourceUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Incredulity-of-St-Thomas--ba245dd27df1192fbf11cc9e8797cfb7",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "PREFERRED_SUBJECT_CONDITION_HOLD",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_EVENT",
       "sourceEvidence": "RIJKSMUSEUM_OBJECT_RECORD",
       "assessment": "Large painted John 20 encounter, Thomas touches the wound as disciples watch. Art quality/reproduction condition check required. Do not treat object title alone as image-visual approval.",
@@ -194,7 +223,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_SUBJECT_CONDITION_HOLD",
+      "aestheticGate": "NOT_YET_EVALUATED_AGAINST_USER_BENCHMARKS",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G22",
@@ -205,7 +237,7 @@
       "officialSourceUrl": "https://www.metmuseum.org/art/collection/search/437871",
       "sourceClass": "SOURCE_ORIGINAL_ACQUIRED_SHA",
       "existingOriginalSha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
-      "editorialRank": "PREFERRED_EXISTING_SUBEVENT",
+      "editorialRank": "HELD_PREVIOUSLY_REJECTED",
       "iconographyRelation": "EMMAUS_SUPPER_RECOGNITION_NOT_ROAD",
       "sourceEvidence": "MET_COLLECTION_AND_PREVIOUS_MATCHED_PREVIEW",
       "assessment": "Extraordinarily strong tenebrist three-person reaction and fine table still-life. It paints Luke 24 recognition at supper; user may separately need illustration of earlier road journey, but no painting required for that subevent.",
@@ -213,7 +245,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_EXISTING_SUBEVENT",
+      "aestheticGate": "PRIOR_USER_REJECTION_HOLD",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G23",
@@ -224,7 +259,7 @@
       "officialSourceUrl": "https://www.vam.ac.uk/articles/the-raphael-cartoons-christs-charge-to-peter/",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "PREFERRED_HISTORICAL_ART_PENDING_RIGHTS",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "JOHN21_COMMISSIONING",
       "sourceEvidence": "VICTORIA_ALBERT_MUSEUM_OFFICIAL_SOURCE",
       "assessment": "Raphael's c.1515–16 painted full-size tapestry cartoon: exceptionally important historic image, clear Resurrected Christ, Peter, sheep. Reuse ONE artwork for BIB-G23 and BIB-A20. Royal Loans photograph rights pending.",
@@ -232,7 +267,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_HISTORICAL_ART_PENDING_RIGHTS",
+      "aestheticGate": "NOT_YET_EVALUATED_AGAINST_USER_BENCHMARKS",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-G26",
@@ -243,7 +281,7 @@
       "officialSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-washing-of-the-feet/77d1fd63-1918-40b7-a79e-6d427e19bed8",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "HISTORICALLY_IMPORTANT_LANDSCAPE_ONLY",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_EVENT",
       "sourceEvidence": "PRADO_MUSEUM_OFFICIAL_SOURCE",
       "assessment": "Major Venetian original depicting John 13, extremely wide 210 x 533 cm; Christ/Peter near right edge. Full original is compelling; no phone-cover crop or arbitrary cutting of figures.",
@@ -251,7 +289,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "HISTORICALLY_IMPORTANT_LANDSCAPE_ONLY",
+      "aestheticGate": "NOT_YET_EVALUATED_AGAINST_USER_BENCHMARKS",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-A02",
@@ -262,7 +303,7 @@
       "officialSourceUrl": "https://www.metmuseum.org/art/collection/search/437330",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "PREFERRED_SOURCE_PRIORITY",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_ACTS3",
       "sourceEvidence": "MET_COLLECTION_AND_MATCHED_PREVIEW",
       "assessment": "Highly ordered 1655 temple steps, colorful apostolic figures. Excellent exact Acts 3 narrative and significant museum-source quality. Main action central-left but not prominent at thumbnail; wide contain.",
@@ -270,7 +311,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_SOURCE_PRIORITY",
+      "aestheticGate": "SOURCE_VERIFIED_AESTHETIC_REVIEW_PENDING",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-A06",
@@ -281,7 +325,7 @@
       "officialSourceUrl": "https://www.nationalgallery.org.uk/paintings/attributed-to-the-brunswick-monogrammist-the-raising-of-tabitha",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "CONTEXTUAL_CONDITION_HOLD",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "PROBABLE_EXACT_ACTS9",
       "sourceEvidence": "NATIONAL_GALLERY_RESEARCH_SOURCE",
       "assessment": "Rare actual oil depiction of Tabitha, but official museum states 'probably' this event; painting altered, extended and partly repainted. No automatic primary artistic recommendation.",
@@ -289,7 +333,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "CONTEXTUAL_CONDITION_HOLD",
+      "aestheticGate": "CONTEXTUAL_OR_HOLD",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-A09",
@@ -300,7 +347,7 @@
       "officialSourceUrl": "https://www.metmuseum.org/art/collection/search/437351",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "PREFERRED_SOURCE_PRIORITY",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_ACTS14",
       "sourceEvidence": "MET_COLLECTION_AND_MATCHED_EXTERNAL_PREVIEW",
       "assessment": "Strong large-figure Dutch Baroque narration of apostles stopping sacrifices after healing. Exact museum Pynas painting, not Rafael cartoon and not later stoning scene; preserve temple structure in horizontal frame.",
@@ -308,7 +355,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_SOURCE_PRIORITY",
+      "aestheticGate": "SOURCE_VERIFIED_AESTHETIC_REVIEW_PENDING",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-A13",
@@ -319,7 +369,7 @@
       "officialSourceUrl": "https://www.museivaticani.va/content/museivaticani/en/eventi-e-novita/iniziative/mostre/2026/predica-san-paolo-atene.html",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "IMPORTANT_HISTORICAL_TAPESTRY_HOLD",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXACT_ACTS17",
       "sourceEvidence": "VATICAN_MUSEUM_RESEARCH_SOURCE",
       "assessment": "Excellent iconographic source: Raphael-designed Acts tapestry. The underlying asset is a woven tapestry, not an autograph canvas oil. Exact full reproduction and rights unresolved; use as a study candidate.",
@@ -327,7 +377,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "IMPORTANT_HISTORICAL_TAPESTRY_HOLD",
+      "aestheticGate": "NOT_YET_EVALUATED_AGAINST_USER_BENCHMARKS",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-OR04",
@@ -338,7 +391,7 @@
       "officialSourceUrl": "https://collections.louvre.fr/ark:/53355/cl010066113",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "PREFERRED_OT_ANCHOR_SOURCE",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "GENESIS_FLOOD_AND_SEASON_ALLEGORY",
       "sourceEvidence": "LOUVRE_OFFICIAL_OBJECT_AND_EXTERNAL_IMAGE_PREVIEW",
       "assessment": "Exceptional dark atmospheric biblical Flood scene, biblical drowning survivors and lightning. Clearly evokes destruction, NOT rainbow covenant; high value single OT anchor across Noah's flood story.",
@@ -346,7 +399,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_OT_ANCHOR_SOURCE",
+      "aestheticGate": "SELECTIVE_OT_ANCHOR_NOT_AUTOMATIC_MASTERPIECE",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-EX06",
@@ -357,7 +413,7 @@
       "officialSourceUrl": "https://www.ngv.vic.gov.au/explore/collection/work/4271/",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "PREFERRED_OT_ANCHOR_SOURCE",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXODUS14_WATERS_HAVE_CLOSED",
       "sourceEvidence": "NGV_OFFICIAL_OBJECT_AND_IMAGE_PREVIEW",
       "assessment": "Stunning 89-figure complex Baroque scene, exact Exodus 14 AFTER sea closes over pursuing Egyptians. Source shows restored painting; many small figures but ideal full-width anchor. Not artwork of first parting; do not reuse inaccurate caption.",
@@ -365,7 +421,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_OT_ANCHOR_SOURCE",
+      "aestheticGate": "SELECTIVE_OT_ANCHOR_NOT_AUTOMATIC_MASTERPIECE",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-EX10",
@@ -376,7 +435,7 @@
       "officialSourceUrl": "https://www.nationalgallery.org.uk/paintings/nicolas-poussin-the-adoration-of-the-golden-calf",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "PREFERRED_OT_ANCHOR_SOURCE",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "EXODUS32_WORSHIP_AND_TABLETS_BREAK",
       "sourceEvidence": "NATIONAL_GALLERY_OFFICIAL_OBJECT_AND_IMAGE_PREVIEW",
       "assessment": "Companion to Poussin's Red Sea work, lively sacrilegious dance focused on golden idol; exact Exodus 32. Monumental 154 x 212 cm, readable full-width despite crowd, strong OT anchor.",
@@ -384,7 +443,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": true,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "PREFERRED_OT_ANCHOR_SOURCE",
+      "aestheticGate": "SELECTIVE_OT_ANCHOR_NOT_AUTOMATIC_MASTERPIECE",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-PA11",
@@ -395,7 +457,7 @@
       "officialSourceUrl": "https://www.nationalgallery.org.uk/paintings/bacchiacca-joseph-pardons-his-brothers",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "ACCURATE_SECONDARY_OT_NARRATIVE",
+      "editorialRank": "RESEARCH_RECORD_NOT_ARTISTICALLY_APPROVED",
       "iconographyRelation": "GENESIS45_CONTINUOUS_NARRATIVE",
       "sourceEvidence": "NATIONAL_GALLERY_OFFICIAL_OBJECT",
       "assessment": "Accurate Joseph's forgiveness, but extremely elongated Florentine 1515 furniture panel 36.2 x 141.6 cm; mobile only as horizontally navigable historic story, not hero. Can give one anchor for multiple Joseph sequence events with captions.",
@@ -403,7 +465,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "ACCURATE_SECONDARY_OT_NARRATIVE",
+      "aestheticGate": "CONTEXTUAL_ONLY",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     },
     {
       "subjectId": "BIB-PA09",
@@ -414,7 +479,7 @@
       "officialSourceUrl": "https://www.nationalgallery.org.uk/paintings/pontormo-joseph-sold-to-potiphar",
       "sourceClass": "SOURCE_CANDIDATE_NOT_ACQUIRED",
       "existingOriginalSha256": null,
-      "editorialRank": "DO_NOT_MATCH_SUBJECT_FALSE_POSITIVE",
+      "editorialRank": "EXCLUDED_FALSE_MATCH",
       "iconographyRelation": "GENESIS39_NOT_GENESIS37",
       "sourceEvidence": "NATIONAL_GALLERY_OFFICIAL_OBJECT",
       "assessment": "Critical identity exclusion: Genesis 39 sale to Potiphar AFTER arrival Egypt is NOT brothers selling Joseph to Ishmaelite traders in Genesis 37. May be reused for properly named separate narrative, not BIB-PA09.",
@@ -422,7 +487,10 @@
       "physicalImageVisuallyInspectedThisBatch": false,
       "webImagePreviewCompared": false,
       "userApproved": false,
-      "productionApproved": false
+      "productionApproved": false,
+      "legacyResearchPriority": "DO_NOT_MATCH_SUBJECT_FALSE_POSITIVE",
+      "aestheticGate": "EXCLUDE_FALSE_EVENT_MATCH",
+      "supersedingAestheticPolicy": "data/calendar/sacred-art-aesthetic-reset-20261013.v1.json"
     }
   ]
 }
