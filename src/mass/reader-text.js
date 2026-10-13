@@ -193,8 +193,13 @@ function properSpeaker(slot,form){
     evidence:"1962_FORM_PUBLIC_GOSPEL",
   });
   if(slot==="EPISTLE_OR_LESSON")return Object.freeze({
-    role:selected==="SOLEMN"?"SUBDEACON":"MINISTER_TO_BE_OBSERVED",
+    // At Low Mass the celebrant himself reads the Epistle (Ritus VI).
+    // At Solemn Mass its public singer is the subdeacon. In a Missa
+    // Cantata the singing/reading minister may vary by actual practice.
+    role:selected==="SOLEMN"?"SUBDEACON":
+      selected==="LOW"?"PRIEST":"MINISTER_TO_BE_OBSERVED",
     evidence:selected==="SOLEMN"?"1962_FORM_SUBDEACON_EPISTLE":
+      selected==="LOW"?"1962_LOW_MASS_CELEBRANT_EPISTLE":
       "PUBLIC_EPISTLE_ACTOR_DEPENDS_ON_ACTUAL_FORM",
   });
   return null;
