@@ -96,4 +96,34 @@ assert.throws(()=>validateCanonConditionalDecisionReview(publishes),/source-only
 const wrongDeacon=structuredClone(sources);
 wrongDeacon.ministerData.branches.find(x=>x.id==="AO.CANON.MIN.011").condition="WHEN_REQUIRED";
 assert.throws(()=>validateCanonConditionalDecisionReview(wrongDeacon),/genuflection conditional/);
+const flagged=read("../data/research/mass-canon-flagged-french-copy-triage-20261013.json");
+const trigger=read("../data/research/mass-canon-62-source-trigger-audit-20261013.json");
+const first=read("../data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json");
+const complex=read("../data/research/mass-canon-complex-23-ritus-source-review-20261013.json");
+const flaggedInCanon=sources.frenchReview.rows.filter(row=>row.editorialFlags.length);
+assert.equal(flagged.status,"COMPLETE_FLAG_TRIAGE_ONLY_NO_COPY_SIGNOFF");
+assert.deepEqual(flagged.counts,{
+ frenchDrafts:62,flaggedDrafts:30,highPriority:22,standardPriority:8,
+ flaggedWithFirstPassResearch:1,flaggedWithComplexResearch:18,
+ flaggedWithR62SourceOnly:11,editoriallyApproved:0,published:0
+});
+assert.deepEqual(flagged.rows.map(x=>x.actionId),flaggedInCanon.map(x=>x.id));
+const tmap=new Map(trigger.rows.map(x=>[x.id,x]));
+const fmap=new Set(first.rows.map(x=>x.actionId));
+const cmap=new Set(complex.rows.map(x=>x.actionId));
+for(const row of flagged.rows){
+ const french=sources.frenchReview.rows.find(x=>x.id===row.actionId);
+ const original=tmap.get(row.actionId);
+ assert.equal(row.cueId,french.cueId);
+ assert.equal(row.ritusLocator,original.rubricSource);
+ assert.deepEqual(row.issues,french.editorialFlags);
+ assert.deepEqual(row.sourceUrls,original.directSourceUrls);
+ assert.equal(row.publishable,false);
+ assert.equal(row.copyReviewState,"INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED");
+ assert.equal(row.evidenceTracks.includes("PR1161_FIRST_PASS_19"),fmap.has(row.actionId));
+ assert.equal(row.evidenceTracks.includes("PR1161_COMPLEX_23"),cmap.has(row.actionId));
+ assert.ok(row.reviewInstruction.length>20,"Each issue requires meaningful editorial review");
+}
+assert.equal(sources.frenchReview.rows.filter(x=>x.formReview==="FORM_OR_PASTORAL_REVIEW_PENDING").length,5,
+ "Five source decisions do not constitute final pastoral/form approval");
 console.log("PASS: five Canon form-conditioned sources, exact 1962 actor constraints, two corrected French drafts, 0 published.");
