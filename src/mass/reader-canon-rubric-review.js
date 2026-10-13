@@ -132,3 +132,25 @@ export function createCanonRubricReviewController({data=null}={}){
   }
   return Object.freeze({supported:true,audit,project});
 }
+
+// Resolve each displayed paragraph's source cue identities independently.
+// Never infer a rubric from title, scroll position, Latin word matching or a
+// display-only sourceAnchorCueId (e.g. a derived Oremus/Amen).
+export function projectCanonParagraphReviews(paragraphs,controller,options={}){
+  if(!Array.isArray(paragraphs))throw new TypeError("Reader paragraphs required");
+  if(typeof controller?.project!=="function")throw new TypeError("Canon rubric review controller required");
+  return Object.freeze(paragraphs.map((paragraph,index)=>{
+    const ids=Array.isArray(paragraph?.sourceCueIds)
+      ?[...new Set(paragraph.sourceCueIds.filter(id=>CUE.test(String(id))))]
+      :[];
+    return Object.freeze({
+      paragraphId:String(paragraph?.id??index),
+      owner:"CANON_SOURCE_CUES_ONLY",
+      // Zero cues is a deliberate null state, not a license to borrow a
+      // preceding/following source cue or claim the priest is doing it now.
+      cueReviews:Object.freeze(ids.map(id=>controller.project(id,options))
+        .filter(result=>result.supported)),
+      canPublish:false,
+    });
+  }));
+}
