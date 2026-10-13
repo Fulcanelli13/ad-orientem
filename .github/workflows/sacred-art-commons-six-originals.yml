@@ -1,0 +1,66 @@
+name: Sacred Art — Commons six museum originals (research-only)
+on:
+  push:
+    branches:
+      - platform/885-sacred-art-candidates
+    paths:
+      - "data/calendar/sacred-art-commons-six-strict-acquisition-20261013.v1.json"
+      - "tools/calendar/acquire-sacred-art-commons-six.py"
+      - ".github/workflows/sacred-art-commons-six-originals.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-commons-six-originals
+  cancel-in-progress: false
+jobs:
+  research-source-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout research branch (not application release)
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pillow for actual JPEG integrity and pixel validation
+        run: python -m pip install Pillow
+      - name: Retrieve exact Commons original files and verify SHA1 + SHA256
+        run: python tools/calendar/acquire-sacred-art-commons-six.py
+      - name: Verify fail-closed image research and no production promotions
+        run: |
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          root=Path("artifacts/sacred-art-commons-six-originals")
+          ledger=json.loads((root/"acquisition.json").read_text(encoding="utf-8"))
+          assert ledger["requested"] == 6 and ledger["productionChanges"] == 0
+          assert len(ledger["results"]) == 6
+          count=0
+          for row in ledger["results"]:
+              assert row["rating"] is None
+              assert row["productionApproved"] is False
+              assert row["artCuratorApproved"] is False
+              assert row["mobileCropApproved"] is False
+              if row["status"] != "ORIGINAL_ACQUIRED_RESEARCH_ONLY":
+                  print("HELD",row["leadId"],row.get("holdReason"))
+                  continue
+              data=(root/row["filename"]).read_bytes()
+              assert len(data) == row["bytes"]
+              assert hashlib.sha1(data).hexdigest() == row["originalSha1Commons"]
+              assert hashlib.sha256(data).hexdigest() == row["originalSha256"]
+              assert "PENDING" in row["rights"]
+              assert max(row["width"],row["height"]) >= 2800
+              count+=1
+          print("VERIFIED_RESEARCH_ORIGINALS",count,"/6")
+          assert count > 0, "No verified source files acquired: investigate Commons API/rights holds"
+          PY
+      - name: Preserve original JPEG bytes and SHA ledger for review only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-commons-six-research-originals
+          path: artifacts/sacred-art-commons-six-originals/
+          retention-days: 30
+          if-no-files-found: warn
