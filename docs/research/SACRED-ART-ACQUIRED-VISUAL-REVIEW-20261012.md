@@ -1,5 +1,6 @@
 # Sacred Art — acquired-original evaluation and source-by-source artistic shortlist
 
+> **ARTISTIC PRIORITY CORRECTION — 13 October 2026:** Earlier labels such as *primary*, *preferred*, *priority*, and *shortlist* in this historical research report describe object/subject research leads, **not current beauty-first recommendations or user approvals**. Apply the [binding aesthetic reset](SACRED-ART-AESTHETIC-RESET-20261013.md): Ribalta / Rubens / Lanfranco / Navarrete benchmark first; no reinstatement of previously rejected Velázquez options; source/rights/phone clarity cannot compensate for mediocre sacred art. The current 101 selected subjects are unchanged.\n\n
 **Latest checkpoint 13 October 2026 · Draft PR #887 · `platform/885-sacred-art-candidates`.** This report consolidates earlier research and the latest four recovered museum masters; earlier interim counts of 44/50, 45/50 and 46/50 are superseded.
 
 ## Verified source and artistic progress
