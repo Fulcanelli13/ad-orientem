@@ -10841,5 +10841,29 @@
       "researchDisposition": "EXCLUDED_ARTIST"
     }
   ],
-  "productionArtworkChanges": 0
+  "productionArtworkChanges": 0,
+  "correctiveEditorialPriorities": {
+    "on": "2026-10-13",
+    "artists": [
+      {
+        "artist": "Philippe de Champaigne",
+        "status": "USER_EXPLICIT_PRIORITY_UPGRADE",
+        "basis": "User explicitly demanded artist-first oeuvre survey; original owned Met Annunciation earlier selected; art corpus contains exceptional independently source-verified Louvre, Grenoble and Amiens sacred paintings; rank artist first wave irrespective lack of numeric 4/5.",
+        "source": "data/calendar/sacred-art-champaigne-amiens-milan-wave04-20261013.v1.json"
+      },
+      {
+        "artist": "Jean Baptiste de Champaigne",
+        "status": "DISTINCT_ARTIST_NOT_MERGED_WITH_PHILIPPE",
+        "basis": "Separate painter, Saint Lawrence (NGA 106362) already rated numeric 5/5 and acquired; St Paul at Lystra Marseille newly identified as a separate work.",
+        "source": "data/calendar/sacred-art-champaigne-amiens-milan-wave04-20261013.v1.json"
+      }
+    ],
+    "collectionSitePreferences": [
+      "Musée de Picardie, Amiens",
+      "Pinacoteca di Brera, Milan",
+      "Pinacoteca Ambrosiana, Milan"
+    ],
+    "important": "Institution/site expansion is additional to painter research, not an artist vote and not production approval.",
+    "ratingsNotModified": true
+  }
 }
