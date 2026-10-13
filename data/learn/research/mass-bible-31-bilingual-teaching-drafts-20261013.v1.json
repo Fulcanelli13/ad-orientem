@@ -16,14 +16,18 @@
     "editorialSourceLinksInEveryLanguage": true,
     "published": 0,
     "phraseLevelComparisonsAgainstAccessibleText": 12,
-    "originalMissalScanChecks": 0,
+    "originalMissalScanChecks": 31,
     "primaryTextLinkCorrections": 26,
     "properExamplesComparedTo1962OCR": 2,
     "totalSelectComparisonsAndProperIdentityChecks": 14,
     "remainingContextAndRiteComparisonsCompleted": 17,
     "totalEntriesWithSomeFocusedSourceCheck": 31,
     "facsimileImageOriginalPageLociDirectlyRead": 16,
-    "fullIndependentEditionCertifications": 0
+    "fullIndependentEditionCertifications": 0,
+    "originalVaticanEditioTypicaPrintedLociChecked": 31,
+    "completedOriginalBenzigerPrintedLociChecks": 16,
+    "publicationOrBilingualExplanationApproved": 0,
+    "originalMissalScanChecksNotEqualApproval": "Each original 1962 Vatican Latin locus located and photographed-page-checked; no biblical exegetical commentary or commercial reuse is automatically certified."
   },
   "editorialPolicy": {
     "authorialDraftsAreNotAuthorQuotes": true,
@@ -37,7 +41,10 @@
     "referenceOriginalEdition": "1962 Benziger Missale Romanum editio iuxta typicam OCR, not proven identical to independent editio typica witness at all variant loci.",
     "ourFatherTextualVariant": "MB21: Clementine Matthew 6:11 supersubstantialem vs 1962 Latin Mass quotidianum, agreeing with Luke 11:3; not a verbatim Matthew quotation.",
     "facsimileImportantCaveat": "16 specific liturgical loci are now checked against photographed pages of a 1962 Benziger altar Missal. That photographed copy has the November 1962 Saint Joseph Canon amendment physically pasted onto page 306; do not treat it as original typesetting. Original independent Vatican typical edition comparison is still outstanding. The third-party host provides images only and has no ecclesial authority.",
-    "latinOurFatherExactBenzigerSpelling": "This 1962 Benziger printing, printed pp.310–311, sings 'co-ti-di-a-num' (cotidianum), orthographic variant of quotidianum, distinct from Matt 6:11 supersubstantialem."
+    "latinOurFatherExactBenzigerSpelling": "This 1962 Benziger printing, printed pp.310–311, sings 'co-ti-di-a-num' (cotidianum), orthographic variant of quotidianum, distinct from Matt 6:11 supersubstantialem.",
+    "vaticanVSBenzigerPrintState": "Vatican 1962 editio typica printed p.302 contains Saint Joseph within Communicantes in uninterrupted typeset text; examined 1962 Benziger altar Missal p.306 has physically pasted Saint Joseph addition over an older printing. Treat as differing physical print states, not a doctrinal contradiction.",
+    "vaticanCorrectPrintSpelling": "The Vatican original printed p.313 chants co-ti-di-a-num (cotidianum), independently corroborating the Benziger 1962 spelling, distinct from Clementine Matthew 6:11 supersubstantialem.",
+    "properEditionPagesMustNotBeInterchanged": "Vatican 1962 printed pp.389–390 contain Dominica X post Pentecosten readings. Benziger OCR's printed-page values are not transferrable to Vatican pagination."
   },
   "records": [
     {
@@ -52,7 +59,8 @@
       "primaryEdition": "1962 Roman Missal, Benziger editio iuxta typicam: accessible OCR text, not visually collated with original printed pages",
       "sourceUrls": [
         "https://www.newadvent.org/bible/psa042.htm",
-        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt"
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://gregobase.selapa.net/sources/42/298.png"
       ],
       "unresolved": [
         "NOT_A_FULL_PSALM_EDITION_MAPPING",
@@ -71,7 +79,23 @@
         "textualRelationship": "DIRECT",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            216
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/298.png"
+          ],
+          "readingObservation": "Original Vatican p.216: Introibo ad altare Dei in priest's preparation.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -87,7 +111,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/psa042.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html"
+        "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+        "https://gregobase.selapa.net/sources/42/298.png"
       ],
       "unresolved": [
         "OMITTED_IN_SOME_LITURGICAL_CIRCUMSTANCES",
@@ -106,7 +131,23 @@
         "textualRelationship": "DIRECT_SCRIPTURAL_WORDING",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            216
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/298.png"
+          ],
+          "readingObservation": "Original Vatican p.216: Psalm 42 Judica me in alternating priest/minister lines; rubric provides omission exceptions.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -122,7 +163,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/luk018.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/298.png"
       ],
       "unresolved": [
         "COMPARATIVE_NOT_LITURGICAL_CITATION",
@@ -141,7 +183,23 @@
         "textualRelationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            216
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/298.png"
+          ],
+          "readingObservation": "Original Vatican p.216: Confiteor with mea culpa/striking breast and ministerial dialogue.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -157,7 +215,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/mat020.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/299.png"
       ],
       "unresolved": [
         "COMPARATIVE_NOT_SINGLE_EXACT_QUOTE",
@@ -176,7 +235,23 @@
         "textualRelationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            217
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/299.png"
+          ],
+          "readingObservation": "Original Vatican p.217: Kyrie eleison, Christe eleison, Kyrie eleison; not a direct Matthew Gospel transcription.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -192,7 +267,9 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/luk002.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/300.png",
+        "https://gregobase.selapa.net/sources/42/301.png"
       ],
       "unresolved": [
         "ALTISSIMIS_VULGATE_VERSUS_EXCELSIS_MISSAL_NOT_WORD_FOR_WORD",
@@ -211,7 +288,25 @@
         "textualRelationship": "ADAPTED",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            218,
+            219
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/300.png",
+            "https://gregobase.selapa.net/sources/42/301.png"
+          ],
+          "readingObservation": "Original Vatican pp.218–219: Gloria in excelsis Deo in chant incipits and complete hymn prose; not Luke's altissimis.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -226,7 +321,9 @@
       "primaryEdition": "1962 Roman Missal, Benziger editio iuxta typicam: accessible OCR text, not visually collated with original printed pages",
       "sourceUrls": [
         "https://www.newadvent.org/bible/1co012.htm",
-        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt"
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://gregobase.selapa.net/sources/42/471.png",
+        "https://gregobase.selapa.net/sources/42/472.png"
       ],
       "unresolved": [
         "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH",
@@ -244,7 +341,25 @@
         "actualRuntimeProperNotSelected": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "comparison": "1962 Missal Sunday X after Pentecost (printed page 384) explicitly lists 1 Cor. 12,2–11 as Epistle. This is only a conditional example, not all Masses.",
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            389,
+            390
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/471.png",
+            "https://gregobase.selapa.net/sources/42/472.png"
+          ],
+          "readingObservation": "Original Vatican pp.389–390: Dominica Decima post Pentecosten explicitly names Epistola 1 Cor 12,2–11; text begins p.389 and continues on p.390; this is a Proper only.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -259,7 +374,8 @@
       "primaryEdition": "1962 Roman Missal, Benziger editio iuxta typicam: accessible OCR text, not visually collated with original printed pages",
       "sourceUrls": [
         "https://www.newadvent.org/bible/luk018.htm",
-        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt"
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://gregobase.selapa.net/sources/42/472.png"
       ],
       "unresolved": [
         "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH",
@@ -277,7 +393,23 @@
         "actualRuntimeProperNotSelected": true,
         "original1962FacsimileVisuallyConfirmed": false,
         "comparison": "1962 Missal Sunday X after Pentecost (printed page 384) explicitly lists Luke 18,9–14 as Gospel. This is only a conditional example, not all Masses.",
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            390
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/472.png"
+          ],
+          "readingObservation": "Original Vatican p.390: Dominica Decima post Pentecosten explicitly names Sequentia Evangelii Luke 18,9–14; Proper reading only.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -293,7 +425,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/joh001.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/302.png"
       ],
       "unresolved": [
         "NOT_VERBATIM_CREED_TEXT",
@@ -312,7 +445,23 @@
         "textualRelationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            220
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/302.png"
+          ],
+          "readingObservation": "Original Vatican p.220: Credo includes Et incarnatus est and genuflection rubric, distinct from John 1:14 text.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -328,7 +477,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/psa025.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/303.png"
       ],
       "unresolved": [
         "VULGATE_PSALM_NUMBERING",
@@ -347,7 +497,23 @@
         "textualRelationship": "DIRECT_SCRIPTURAL_WORDING",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            221
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/303.png"
+          ],
+          "readingObservation": "Original Vatican p.221: Lavabo inter innocentes with Vulgate Psalm 25,6–12, part of conditional Offertory sequence.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -363,7 +529,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/rom012.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/304.png"
       ],
       "unresolved": [
         "THEOLOGICAL_CONNECTION_NOT_LITERAL",
@@ -382,7 +549,23 @@
         "textualRelationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            222
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/304.png"
+          ],
+          "readingObservation": "Original Vatican p.222: Orate, fratres and Suscipiat Dominus; Romans 12:1 is supporting theological comparison, not quotation.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -398,7 +581,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/isa006.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/376.png"
       ],
       "unresolved": [
         "VULGATE_EXERCITUUM_VERSUS_LITURGICAL_SABAOTH",
@@ -441,6 +625,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            294
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/376.png"
+          ],
+          "readingObservation": "Original Vatican p.294: Sanctus, Dominus Deus Sabaoth in Preface; Isaiah 6:3 Clementine has Deus exercituum.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -457,7 +657,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/mat021.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/376.png"
       ],
       "unresolved": [
         "LITURGICAL_COMPOSITION",
@@ -500,6 +701,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            294
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/376.png"
+          ],
+          "readingObservation": "Original Vatican p.294: Benedictus qui venit and Hosanna in excelsis; Gospel Matt 21:9 has in altissimis.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -516,7 +733,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/1ti002.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/383.png"
       ],
       "unresolved": [
         "COMPARATIVE_NOT_EXACT_QUOTATION",
@@ -559,6 +777,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            301
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/383.png"
+          ],
+          "readingObservation": "Original Vatican p.301: Te igitur names Church/Pope and local ordinary; 1 Tim 2 is thematic, not literal.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -575,7 +809,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/1co011.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)"
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+        "https://gregobase.selapa.net/sources/42/388.png"
       ],
       "unresolved": [
         "NO_WORD_FOR_WORD_EQUIVALENCE",
@@ -620,6 +855,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            306
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/388.png"
+          ],
+          "readingObservation": "Original Vatican p.306: Qui pridie and Hoc est enim Corpus meum; institution Gospel/Paul accounts not identical to liturgical sentence.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -636,7 +887,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/luk022.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)"
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+        "https://gregobase.selapa.net/sources/42/389.png"
       ],
       "unresolved": [
         "MYSTERIUM_FIDEI_NOT_PROVEN_AS_EXACT_GOSPEL_WORDS",
@@ -679,6 +931,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            307
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/389.png"
+          ],
+          "readingObservation": "Original Vatican p.307: chalice formula contains mysterium fidei within consecratory words.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -695,7 +963,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/1co011.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)"
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+        "https://gregobase.selapa.net/sources/42/390.png"
       ],
       "unresolved": [
         "THEOLOGICAL_CONNECTION_NOT_LITERAL",
@@ -738,6 +1007,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            308
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/390.png"
+          ],
+          "readingObservation": "Original Vatican p.308: Unde et memores Passion Resurrection Ascension wording.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -754,7 +1039,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/gen004.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)"
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+        "https://gregobase.selapa.net/sources/42/390.png"
       ],
       "unresolved": [
         "NAME_IN_MISSAL_NOT_READING",
@@ -797,6 +1083,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            308
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/390.png"
+          ],
+          "readingObservation": "Original Vatican p.308: Supra quae explicitly names Abel.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -813,7 +1115,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/gen022.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)"
+        "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+        "https://gregobase.selapa.net/sources/42/390.png"
       ],
       "unresolved": [
         "ISAAC_NOT_KILLED",
@@ -856,6 +1159,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            308
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/390.png"
+          ],
+          "readingObservation": "Original Vatican p.308: Supra quae explicitly names Abraham's offering.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -872,7 +1191,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/gen014.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.newadvent.org/fathers/050662.htm"
+        "https://www.newadvent.org/fathers/050662.htm",
+        "https://gregobase.selapa.net/sources/42/391.png"
       ],
       "unresolved": [
         "GENESIS_PROFERENS_NOT_EXPLICIT_BREAD_WINE_SACRIFICE",
@@ -915,6 +1235,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            309
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/391.png"
+          ],
+          "readingObservation": "Original Vatican p.309: Supra quae explicitly names Melchisedech and holy sacrifice.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -931,7 +1267,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/heb007.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.newadvent.org/summa/4022.htm"
+        "https://www.newadvent.org/summa/4022.htm",
+        "https://gregobase.selapa.net/sources/42/391.png"
       ],
       "unresolved": [
         "INTERPRETATION_NOT_MISSAL_WORDING",
@@ -950,7 +1287,23 @@
         "textualRelationship": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            309
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/391.png"
+          ],
+          "readingObservation": "Original Vatican p.309: Melchisedech name in Canon, Hebrews 7 typology is BIBLE-SIDE meaning not a quoted Canon verse.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -966,7 +1319,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/mat006.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.newadvent.org/bible/luk011.htm"
+        "https://www.newadvent.org/bible/luk011.htm",
+        "https://gregobase.selapa.net/sources/42/395.png"
       ],
       "unresolved": [
         "LITURGICAL_FORMULA_AND_EDITION_VARIANTS",
@@ -1012,6 +1366,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            313
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/395.png"
+          ],
+          "readingObservation": "Original Vatican p.313: Pa-nem nostrum co-ti-di-a-num; printed cotidianum, not Matthew Clementine supersubstantialem.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -1028,7 +1398,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/mat006.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/398.png"
       ],
       "unresolved": [
         "LITURGICAL_EMBOLISM",
@@ -1071,6 +1442,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            316
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/398.png"
+          ],
+          "readingObservation": "Original Vatican p.316: Libera nos following Pater, with Mary, Peter, Paul, Andrew; not a verbatim Gospel continuation.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -1087,7 +1474,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/joh001.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html"
+        "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+        "https://gregobase.selapa.net/sources/42/400.png"
       ],
       "unresolved": [
         "MASS_INVOCATION_EXTENDS_VERSE",
@@ -1130,6 +1518,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            318
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/400.png"
+          ],
+          "readingObservation": "Original Vatican p.318: triple Agnus Dei; Requiem rubric dona eis requiem and sempiternam.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -1146,7 +1550,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/mat008.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/402.png"
       ],
       "unresolved": [
         "PUER_MEUS_VERSUS_ANIMA_MEA",
@@ -1189,6 +1594,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            320
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/402.png"
+          ],
+          "readingObservation": "Original Vatican p.320: Domine non sum dignus ... sanabitur anima mea, priest breast striking.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -1205,7 +1626,8 @@
       "sourceUrls": [
         "https://www.studybible.info/Clementine_Vulgate/Psalms%20115%3A3-8",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://www.biblegateway.com/passage/?search=Psalmi+115%3A3-4&version=VULGATE"
+        "https://www.biblegateway.com/passage/?search=Psalmi+115%3A3-4&version=VULGATE",
+        "https://gregobase.selapa.net/sources/42/403.png"
       ],
       "unresolved": [
         "CLEMENTINE_115_3_4_MODERN_116_12_13",
@@ -1248,6 +1670,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            321
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/403.png"
+          ],
+          "readingObservation": "Original Vatican p.321: Quid retribuam Domino and Calicem salutaris accipiam for chalice Communion.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -1264,7 +1702,8 @@
       "sourceUrls": [
         "https://www.newadvent.org/bible/joh001.htm",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
-        "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html"
+        "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+        "https://gregobase.selapa.net/sources/42/409.png"
       ],
       "unresolved": [
         "RITE_DEPENDENT_NOT_UNCONDITIONAL",
@@ -1309,6 +1748,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            327
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/409.png"
+          ],
+          "readingObservation": "Original Vatican p.327: Initium sancti Evangelii secundum Ioannem / John 1:1–14; actual exceptions separately rubrical.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     },
@@ -1326,7 +1781,8 @@
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.txt",
         "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
-        "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Isaïe"
+        "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Isaïe",
+        "https://gregobase.selapa.net/sources/42/301.png"
       ],
       "unresolved": [
         "Distinguish literal text from adaptation/interpretation",
@@ -1345,7 +1801,23 @@
         "textualRelationship": "EXPLICIT_NARRATIVE_ALLUSION",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            219
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/301.png"
+          ],
+          "readingObservation": "Original Vatican p.219: Munda cor meum explicitly mentions Isaiah's lips and burning coal.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -1362,7 +1834,8 @@
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
         "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
         "https://ebible.org/latVUC/2PE01.htm",
-        "https://www.newadvent.org/fathers/050662.htm"
+        "https://www.newadvent.org/fathers/050662.htm",
+        "https://gregobase.selapa.net/sources/42/303.png"
       ],
       "unresolved": [
         "Distinguish literal text from adaptation/interpretation",
@@ -1381,7 +1854,23 @@
         "textualRelationship": "DOCTRINAL_ECHO",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            221
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/303.png"
+          ],
+          "readingObservation": "Original Vatican p.221: Deus qui humanae substantiae with divinitatis ... consortes; compare 2 Peter 1:4 as theological echo.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -1398,7 +1887,8 @@
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.txt",
         "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
-        "https://la.wikisource.org/wiki/Vulgata_Clementina/Prophetia_Danielis"
+        "https://la.wikisource.org/wiki/Vulgata_Clementina/Prophetia_Danielis",
+        "https://gregobase.selapa.net/sources/42/303.png"
       ],
       "unresolved": [
         "Distinguish literal text from adaptation/interpretation",
@@ -1417,7 +1907,23 @@
         "textualRelationship": "ADAPTED",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            221
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/303.png"
+          ],
+          "readingObservation": "Original Vatican p.221: In spiritu humilitatis et in animo contrito; compare Dan 3:39–40 wording.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -1434,7 +1940,8 @@
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
         "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
         "https://liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html",
-        "https://la.wikisource.org/wiki/Vulgata_Clementina/Liber_Psalmorum"
+        "https://la.wikisource.org/wiki/Vulgata_Clementina/Liber_Psalmorum",
+        "https://gregobase.selapa.net/sources/42/303.png"
       ],
       "unresolved": [
         "Distinguish literal text from adaptation/interpretation",
@@ -1453,7 +1960,23 @@
         "textualRelationship": "DIRECT_CONDITIONAL",
         "bibleVerseCrosscheck": true,
         "original1962FacsimileVisuallyConfirmed": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            221
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/303.png"
+          ],
+          "readingObservation": "Original Vatican p.221: Dirigatur ... sicut incensum, Psalm 140:2–4, conditional incense rite.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
+        }
       }
     },
     {
@@ -1470,7 +1993,8 @@
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
         "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.txt",
         "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
-        "https://studybible.info/Clementine_Vulgate/John%2014%3A27"
+        "https://studybible.info/Clementine_Vulgate/John%2014%3A27",
+        "https://gregobase.selapa.net/sources/42/400.png"
       ],
       "unresolved": [
         "Distinguish literal text from adaptation/interpretation",
@@ -1513,6 +2037,22 @@
             "This is Benziger editio iuxta typicam (1962), not established equivalent to every line of the Vatican editio typica."
           ],
           "status": "PRINTED_1962_PAGE_PHOTOGRAPH_DIRECTLY_READ_REQUIRES_INDEPENDENT_EDITION_COLLATION"
+        },
+        "vaticanTypical1962FacsimileCheck": {
+          "sourceEdition": "Missale Romanum 1962, Vatican editio typica, printed-page image credited by GregoBase to Church Music Association of America",
+          "sourceCatalogue": "https://gregobase.selapa.net/source.php?id=42&images=1",
+          "printedPages": [
+            318
+          ],
+          "photographedImageUrls": [
+            "https://gregobase.selapa.net/sources/42/400.png"
+          ],
+          "readingObservation": "Original Vatican p.318: Domine Iesu Christe qui dixisti Apostolis tuis: Pacem relinquo vobis, pacem meam do vobis; Requiem omission on p.319.",
+          "directOriginalVaticanPageImageRead": true,
+          "separatelyVerifiedScripturalText": true,
+          "teachingCommentaryApproved": false,
+          "publicationApproved": false,
+          "caveat": "Image establishes Vatican 1962 print at the cited locus; commentary, variable Proper applicability, textual Bible comparison and reuse rights remain separate. Pages numbers are Vatican edition, not Benziger printed-page numbers."
         }
       }
     }
