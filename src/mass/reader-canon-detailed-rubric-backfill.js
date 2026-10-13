@@ -53,17 +53,25 @@ export function validateCanonDetailedRubricBackfill({backfill,canonData,gapData,
        row.voice!=="SOURCE_EVENT_ACTUAL_CLOCK_NOT_READER_SCROLL"||
        JSON.stringify(row.reviewFlags)!==JSON.stringify([...new Set([...t.editorialRiskFlags,...fr.editorialFlags])]))
       throw Error("Canon source/French/trigger linkage drift at "+row?.cueId);
-    if(row.anchorClass==="SOURCE_LATIN_WORDS"&&
-       (!row.latinAnchor||row.ceremonialStageIds.length))
-      throw Error(row.id+": Latin-word rubric may not invent ceremony stages");
+    // A genuine word anchor may coexist with separately ordered non-text
+    // micro-stages (C0180). Word focus must never activate those stages.
+    if(row.anchorClass==="SOURCE_LATIN_WORDS"&&!row.latinAnchor)
+      throw Error(row.id+": Latin-word rubric is missing its genuine word anchor");
     if(row.anchorClass==="ORDERED_NON_TEXT_CEREMONY"&&
        (row.latinAnchor!==null||row.ceremonialStageIds.length===0))
       throw Error(row.id+": ceremonial event may not invent word anchors");
+    const expectedFormOwned=row.cueId==="AO.SM.C0205"
+      ?[{stageId:"AO.CANON.R62.059.02",lowAndCantataActor:"PRIEST",
+          solemnActor:"DEACON_WHEN_REQUIRED",solemnMinisterActionId:"AO.CANON.MIN.008",
+          currentState:"INDEPENDENT_ROLE_OBSERVATION_REQUIRED"}]:[];
+    if(JSON.stringify(row.formOwnedStages)!==JSON.stringify(expectedFormOwned))
+      throw Error(row.id+": form-specific stage actor ownership changed");
     seen.add(row.cueId);kinds[row.anchorClass]++;
     rows.push(Object.freeze({cueId:row.cueId,rubricId:row.id,
       actionId:row.sourceActionId,actor:"PRIEST",sourceLocator:row.ritusLocator,
       sourceUrls:Object.freeze([...row.sources]),latinAnchor:row.latinAnchor,
       stageIds:Object.freeze([...row.ceremonialStageIds]),
+      formOwnedStages:Object.freeze(row.formOwnedStages.map(x=>Object.freeze({...x}))),
       draftFrenchRubric:fr.revisedFrenchRubric,
       reviewerFlags:Object.freeze([...row.reviewFlags]),
       reviewState:row.editorialState,canPublish:false,publishable:false}));
