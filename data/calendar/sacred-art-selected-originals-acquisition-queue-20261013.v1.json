@@ -10,14 +10,14 @@
     "subjectPlacementsUnjoined": 98,
     "sourceStatus": {
       "COLLECTION_OR_CYCLE_PAGE_NEEDS_PANEL_ID": 15,
-      "IDENTITY_SOURCE_MISSING": 39,
+      "IDENTITY_SOURCE_MISSING": 34,
+      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 20,
       "OBJECT_URL_RECORDED_NEEDS_MASTER": 20,
-      "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING": 15,
       "VERIFY_EXACT_OBJECT_IDENTITY": 2
     },
     "benchmarkUrlsRecovered": 1,
-    "verifiedInstitutionalObjectsThisWave": 15,
-    "institutionalObjectUrlKnownTotal": 35
+    "verifiedInstitutionalObjectsThisWave": 20,
+    "institutionalObjectUrlKnownTotal": 40
   },
   "notes": [
     "One row per DISTINCT previously selected editorial artwork, not per subject or calendar use.",
@@ -26,7 +26,8 @@
     "Do not substitute a different painting merely because a similar artist/subject is in the acquired registry.",
     "Aesthetically excluded artists cannot be reintroduced; this queue records history and source recovery only.",
     "Only source-verified, human-approved, rights-reviewed, image-reviewed originals may enter final gallery.",
-    "15 selected artwork exact institutional identities resolved using Prado inventory numbers and Louvre object IDs. Browser search URLs replaced with immutable museum records; no original bytes, rights, user approval, or app assets changed."
+    "15 selected artwork exact institutional identities resolved using Prado inventory numbers and Louvre object IDs. Browser search URLs replaced with immutable museum records; no original bytes, rights, user approval, or app assets changed.",
+    "Five previously URL-less named selections have verified current museum object pages: Lanfranco NGI.72, Navarrete NGI.1721, Caravaggio Uffizi 4659 and Thyssen St Catherine, and Champaigne Louvre INV1125. Uncropped files are not in the source archive yet."
   ],
   "works": [
     {
@@ -377,14 +378,21 @@
         "SNT-OT-24"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://www.museothyssen.org/en/collection/artists/caravaggio-michelangelo-merisi/saint-catherine-alexandria",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://www.museothyssen.org/en/collection/artists/caravaggio-michelangelo-merisi/saint-catherine-alexandria",
+      "institutionalObjectId": "Museo Thyssen permanent collection",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "sourceIdentityNote": "Caravaggio original ca.1598-99, commercial reuse/image rights independent; press downloads restricted to journalistic uses."
     },
     {
       "editorialArtworkId": "ART-aravaggio-he-acrifice-of-saac",
@@ -394,14 +402,21 @@
         "BIB-PA06"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://www.uffizi.it/en/artworks/sacrifice-of-isaac",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://www.uffizi.it/en/artworks/sacrifice-of-isaac",
+      "institutionalObjectId": "Uffizi 1890 no.4659",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "sourceIdentityNote": "Caravaggio circa 1603, verified original by museum, not a later copy."
     },
     {
       "editorialArtworkId": "ART-omenico-etti-oses-before-the-urning-ush",
@@ -496,14 +511,21 @@
         "BIB-G14"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+      "institutionalObjectId": "NGI.72",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "sourceIdentityNote": "The complete 229 x 426 cm composition, not a square crop."
     },
     {
       "editorialArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
@@ -584,14 +606,29 @@
         "BIB-PA02"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://onlinecollection.nationalgallery.ie/objects/details/3180",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": "https://onlinecollection.nationalgallery.ie/objects/details/3180",
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://onlinecollection.nationalgallery.ie/objects/details/3180",
+      "institutionalObjectId": "NGI.1721",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "sourceIdentityNote": "Complete 287 x 238 cm 1576 painting, National Gallery Ireland; Commons PD-Art alternative exists at 2523x3000 pixels but was not acquired.",
+      "researchOnlyOriginalCandidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Abraham_i_els_tres_%C3%A0ngels-Fernandez_Navarrete.jpg",
+        "resolution": "2523 x 3000",
+        "rightsLabel": "Wikimedia Commons Public Domain Mark / PD-Art, local commercial-law assessment separate",
+        "acquisitionState": "SOURCE_FOUND_BYTES_NOT_DOWNLOADED",
+        "attributionMatch": "National Gallery of Ireland NGI.1721",
+        "fullCanvasCheck": "PREVIEW_SEEMS_FULL_PAINTING; MASTER_BYTE_EXAM_NOT_DONE"
+      }
     },
     {
       "editorialArtworkId": "ART-usepe-de-ibera-aint-udas-haddeus",
@@ -857,14 +894,21 @@
         "BIB-G24"
       ],
       "numberOfUses": 1,
-      "recordedSourceUrl": null,
+      "recordedSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
       "selectedPreviewUrl": null,
       "additionalInstitutionalBenchmarkLead": null,
-      "sourceClassification": "IDENTITY_SOURCE_MISSING",
-      "action": "IDENTIFY_CUSTODIAN_AND_EXACT_OBJECT",
+      "sourceClassification": "EXACT_INSTITUTIONAL_OBJECT_VERIFIED_MASTER_MISSING",
+      "action": "RETRIEVE_UNCROPPED_MASTER_VERIFY_SHA_COLOUR_RIGHTS_AND_CUSTODIAN",
       "acquiredRegistryOriginal": false,
       "approvalStatus": "PREVIOUS_USER_SELECTION_PRESERVED_NOT_ACQUISITION_OR_RELEASE",
-      "sourceNeedsByteAndLicenceValidation": true
+      "sourceNeedsByteAndLicenceValidation": true,
+      "exactInstitutionalSourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
+      "institutionalObjectId": "Louvre INV 1125",
+      "verifiedMedium": "oil on canvas",
+      "identityVerifiedOn": "2026-10-13",
+      "imageAcquired": false,
+      "rightsCleared": false,
+      "sourceIdentityNote": "1651-52 reduced version of Grande Cène, explicitly separate from INV 1124. Do not substitute full-size composition."
     },
     {
       "editorialArtworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
@@ -1704,5 +1748,5 @@
       "sourceNeedsByteAndLicenceValidation": true
     }
   ],
-  "latestSourceWave": "2026-10-13: 15 exact institution object URLs recovered from search-link-only selection records. Other 76 source paths unchanged."
+  "latestSourceWave": "20 previously unjoined selected works now newly confirmed to exact institutional original; 34 remain with no exact recorded object URL."
 }
