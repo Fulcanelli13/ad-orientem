@@ -89,6 +89,39 @@ const chalicelid=roles.project("AO.SM.C0205",{editorialPreview:true,form:"SOLEMN
 assert.equal(chalicelid.conditionalMinisterActions.length,2);
 assert.equal(chalicelid.conditionalMinisterActions[0].actor,"DEACON");
 assert.equal(chalicelid.conditionalMinisterActions[0].conditionVerified,false);
+// A Solemn deacon may cover the chalice, so the source chronology's
+// covering milestones must not inherit the surrounding PRIEST action actor.
+const solemnMajor=roles.project("AO.SM.C0181",{
+ editorialPreview:true,form:"SOLEMN",
+ observedStageIds:["AO.CANON.R62.034.04"],
+});
+assert.equal(solemnMajor.formDependentChaliceEvents.length,1);
+assert.equal(solemnMajor.formDependentChaliceEvents[0].id,"AO.CANON.R62.034.04");
+assert.equal(solemnMajor.formDependentChaliceEvents[0].actor,"UNRESOLVED_PRIEST_OR_DEACON");
+assert.equal(solemnMajor.formDependentChaliceEvents[0].conditionalDeaconActionId,"AO.CANON.MIN.010");
+assert.equal(solemnMajor.formDependentChaliceEvents[0].isObservedNow,false);
+assert.ok(solemnMajor.priestActions.every(x=>x.stages.every(
+ stage=>stage.id!=="AO.CANON.R62.034.04")),
+ "Solemn chalice covering must never be presented within the priest gesture stages");
+const solemnMinor=roles.project("AO.SM.C0205",{
+ editorialPreview:true,form:"SOLEMN",
+ observedStageIds:["AO.CANON.R62.059.02"],
+});
+assert.equal(solemnMinor.formDependentChaliceEvents.length,1);
+assert.equal(solemnMinor.formDependentChaliceEvents[0].conditionalDeaconActionId,"AO.CANON.MIN.008");
+assert.equal(solemnMinor.formDependentChaliceEvents[0].isObservedNow,false);
+assert.ok(solemnMinor.priestActions.every(x=>x.stages.every(
+ stage=>stage.id!=="AO.CANON.R62.059.02")));
+const cantataChalice=roles.project("AO.SM.C0181",{
+ editorialPreview:true,form:"MISSA_CANTATA_INCENSE",
+});
+assert.equal(cantataChalice.formDependentChaliceEvents.length,0);
+assert.equal(cantataChalice.priestActions[0].stages.find(
+ stage=>stage.id==="AO.CANON.R62.034.04").actor,"PRIEST");
+const lowMinor=roles.project("AO.SM.C0205",{editorialPreview:true,form:"LOW"});
+assert.equal(lowMinor.formDependentChaliceEvents.length,0);
+assert.equal(lowMinor.priestActions[0].stages.find(
+ stage=>stage.id==="AO.CANON.R62.059.02").actor,"PRIEST");
 const canonAmen=roles.project("AO.SM.C0207",{editorialPreview:true,form:"LOW"});
 assert.equal(canonAmen.respondentRole.speakerRole,"MINISTERS");
 assert.equal(canonAmen.canPublish,false);
