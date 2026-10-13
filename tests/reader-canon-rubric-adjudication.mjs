@@ -86,7 +86,7 @@ const post=reader.project("AO.SM.C0206",{editorialPreview:true});
 assert.equal(post.priestActions[0].anchorKind,"SOURCE_LATIN_WORDS");
 assert.equal(post.priestActions[0].checkedLatinWords,"Per ómnia");
 const signed=reader.project("AO.SM.C0196",{editorialPreview:true});
-assert.match(signed.priestActions[0].frenchDraft,/une fois sa poitrine/);
+assert.match(signed.priestActions[0].frenchDraft,/se frappe une fois la poitrine/);
 const voices=reader.project("AO.SM.C0197",{editorialPreview:true});
 assert.match(voices.priestActions[0].frenchDraft,/voix secrète/);
 const noForm=reader.project("AO.SM.C0201",{editorialPreview:true,form:"REQUIEM"});
