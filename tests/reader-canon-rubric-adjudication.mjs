@@ -94,8 +94,19 @@ const host=reader.project("AO.SM.C0174",{
 });
 assert.equal(host.priestActions.length,4);
 assert.equal(host.ministerActions.length,1);
-assert.deepEqual(host.priestActions.filter(x=>x.isObservedNow).map(x=>x.id),["AO.CANON.R62.024"],
-  "Host genuflection, elevation, replacement and lasting finger discipline may not run simultaneously");
+assert.deepEqual(host.priestActions.filter(x=>x.actionGroupObserved).map(x=>x.id),["AO.CANON.R62.024"],
+  "Only explicitly observed priest action group can be marked as observed");
+assert.ok(host.priestActions.every(x=>x.isObservedNow===false),
+  "Observed action group cannot imply an actual genuflection or elevation micro-stage");
+const preciseHost=reader.project("AO.SM.C0174",{
+  form:"SOLEMN",editorialPreview:true,
+  observedStageIds:["AO.CANON.R62.024.02"],
+});
+const hostElevation=preciseHost.priestActions.find(x=>x.id==="AO.CANON.R62.024");
+assert.deepEqual(hostElevation.stages.filter(x=>x.isObservedNow).map(x=>x.id),
+  ["AO.CANON.R62.024.02"],"Only actual witnessed Host elevation stage may be active");
+assert.equal(hostElevation.stages[0].isObservedNow,false);
+assert.equal(hostElevation.isObservedNow,false);
 assert.equal(host.ministerActions[0].isObservedNow,true);
 assert.equal(host.priestActions.find(x=>x.id==="AO.CANON.R62.026").anchorKind,"PERSISTENT_SOURCE_STATE");
 const chalice=reader.project("AO.SM.C0181",{editorialPreview:true});
@@ -107,6 +118,18 @@ assert.deepEqual(chalice.priestActions[0].stages.map(x=>x.action),[
   "CHALICE_IS_COVERED_BY_AUTHORIZED_ROLE",
   "PRIEST_GENUFLECTS_SECOND_TIME",
 ]);
+const chaliceStage=reader.project("AO.SM.C0181",{
+  editorialPreview:true,
+  observedPriestActionIds:["AO.CANON.R62.034"],
+  observedStageIds:["AO.CANON.R62.034.02"],
+});
+const observedChalice=chaliceStage.priestActions[0];
+assert.equal(observedChalice.actionGroupObserved,true);
+assert.equal(observedChalice.isObservedNow,false);
+assert.deepEqual(observedChalice.stages.filter(x=>x.isObservedNow).map(x=>x.action),
+  ["PRIEST_ELEVATES_CHALICE"],
+  "Chalice elevation, covering and second genuflection may never fire together");
+
 assert.equal(chalice.ministerActions[0].actor,"SERVER");
 const bell=reader.project("AO.SM.C0161",{editorialPreview:true});
 assert.equal(bell.ministerActions.find(x=>x.id==="AO.CANON.R62.062").anchorKind,
