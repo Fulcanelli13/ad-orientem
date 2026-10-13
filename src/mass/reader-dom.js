@@ -1075,6 +1075,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       liturgicalGroup:p.liturgicalGroup??null,
       prayerRole:p.prayerRole??null,
       sourcePath:p.sourcePath??null,
+      sourceAnchorCueId:p.sourceAnchorCueId??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
@@ -2525,6 +2526,7 @@ export function createReaderDomAdapter({
           if(p.speakerRole)node.dataset.speakerRole=p.speakerRole;
           if(p.liturgicalGroup)node.dataset.liturgicalGroup=p.liturgicalGroup;
           if(p.prayerRole)node.dataset.prayerRole=p.prayerRole;
+          if(p.sourceAnchorCueId)node.dataset.sourceAnchorCueId=p.sourceAnchorCueId;
           if([p.primary,p.secondary,p.alternate].some(value=>String(value??"").includes("\n")))
             node.dataset.chantPhrased="true";
           if(decorateThisSection&&!openingSet&&p.kind==="TEXT"&&/^\s*\p{L}/u.test(p.primary)){
