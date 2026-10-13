@@ -2565,7 +2565,7 @@ export function createReaderDomAdapter({
             orationCaption=doc.createElement("small");
             orationCaption.className="ao-oration-label";
             orationCaption.textContent=p.prayerRole==="ORATION_UNDER_ONE_CONCLUSION"&&
-              /\\.MISSION$/u.test(p.id)
+              String(p.id).endsWith(".MISSION")
                 ?(frenchReader?"Pour les Missions":"For the Missions")
                 :orationLabels[p.prayerRole];
             node.append(orationCaption);
