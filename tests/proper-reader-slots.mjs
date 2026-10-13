@@ -106,14 +106,14 @@ for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
  assert.equal(p[1].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
  assert.equal(p[2].liturgicalGroup,"COLLECT_UNDER_ONE_CONCLUSION");
  if(slot==="SECRET_SET"){
-   assert.match(p[2].vernacular,/Ainsi soit-il\\.$/,
+   assert.equal(p[2].vernacular.endsWith("Ainsi soit-il."),true,
      "a secret conclusion remains private if its full public boundary was not sourced");
  }else{
    assert.equal(p[2].vernacular.endsWith("Par Notre-Seigneur."),true,
      "Collect/Postcommunion source prayer was truncated while splitting the respondent Amen");
    assert.equal(p[2].latin.endsWith("Per Dominum."),true,
      "Latin source conclusion lost the last word before its distinct response");
-   assert.doesNotMatch(p[2].vernacular,/Ainsi soit-il\\.$/,
+   assert.equal(p[2].vernacular.endsWith("Ainsi soit-il."),false,
      "Collect/Postcommunion duplicates the separately materialised respondent Amen");
  }
 }
