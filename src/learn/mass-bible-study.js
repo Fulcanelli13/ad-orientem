@@ -115,20 +115,22 @@ export function renderMassBibleStudy(data,{language="en",category="all",stage=""
 export function renderMassProperWitnessStudy(index,{language="en",sourcePath=""}={}){
  const lang=language==="fr"?"fr":"en";
  if(!Array.isArray(index)||index.length!==105)return '<p class="aoMFError">'+esc(L(lang,"Missal reading witness index unavailable.","Registre des lectures du Missel indisponible."))+'</p>';
- const chosen=index.find(x=>x.sourcePath===sourcePath)||index[0];
+ const chosen=index.find(x=>x.sourcePath===sourcePath)||null;
  return '<div class="aoMBProper" data-ao-mass-bible-propers><details class="aoMBResearch aoMBResearchDetails"><summary>'+ 
  esc(L(lang,"Source-indexed 1962 Proper study · not today's Mass","Étude des propres de 1962 · non la Messe du jour"))+'</summary><p>'+ 
  esc(L(lang,"105 source-path-specific Proper witnesses; the selected Proper and matching original Latin incipit are required for an actual reading.","105 propres identifiés par source ; le propre choisi et l’incipit latin original concordant sont requis pour une lecture réelle."))+'</p></details>'+
  '<label class="aoMBStageSelect">'+esc(L(lang,"1962 Proper source","Source du propre de 1962"))+
  '<select data-ao-mf-bible-proper aria-label="'+esc(L(lang,"Select witnessed Proper","Choisir un propre attesté"))+'">'+
- index.map(r=>'<option value="'+esc(r.sourcePath)+'"'+(r.sourcePath===chosen.sourcePath?' selected':'')+'>'+esc(r.title)+' — '+esc(r.sourcePath)+'</option>').join("")+'</select></label>'+
+ '<option value=""'+(!chosen?' selected':'')+'>'+esc(L(lang,"Select a specific Proper","Choisir un propre précis"))+'</option>'+ 
+ index.map(r=>'<option value="'+esc(r.sourcePath)+'"'+(r.sourcePath===chosen?.sourcePath?' selected':'')+'>'+esc(r.title)+' — '+esc(r.sourcePath)+'</option>').join("")+'</select></label>'+
+ (chosen?
  '<h2>'+esc(chosen.title)+'</h2><p class="aoMBSourcePath">'+esc(chosen.sourcePath)+'</p>'+
  '<div class="aoMBLinks"><a href="'+esc(chosen.witnessUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Original Proper witness","Témoin original du propre"))+' ↗</a></div>'+
  chosen.slots.map(r=>'<article class="aoMBConnection"><div class="aoMBEvidence">'+esc(r.slot==="GOSPEL"?L(lang,"Gospel","Évangile"):L(lang,"Epistle / Lesson","Épître / Leçon"))+'</div>'+
  '<h3>'+esc(r.reference)+'</h3><p class="aoMBLatin">'+esc(r.latinIncipit)+'</p></article>').join("")+
  (chosen.segmented.length?'<p class="aoMBResearch">'+esc(L(lang,"Segmented or discontinuous passages require the special ordered-source registry; do not convert these into one continuous reading.","Les passages discontinus exigent le registre spécial des segments dans leur ordre original ; ne pas les fusionner."))+'</p>':"")+
  chosen.holds.map(h=>'<p class="aoMBResearch">'+esc(L(lang,"Source hold","Réserve de source"))+': '+esc(h.slot)+' — '+esc(h.reason.replaceAll("_"," "))+'</p>').join("")+
- '</div>';
+ '</div>':'<p class="aoMBResearch" role="status">'+esc(L(lang,"Choose the 1962 Proper; no readings are inferred by default.","Choisissez le propre de 1962 ; aucune lecture n’est supposée par défaut."))+'</p></div>');
 }
 export function massBibleStudyCss(){
  return [
