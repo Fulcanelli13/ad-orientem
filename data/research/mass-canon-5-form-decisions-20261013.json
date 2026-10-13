@@ -1,0 +1,155 @@
+{
+  "schema": "ao-canon-5-conditional-form-decisions-v1",
+  "version": "2026-10-13",
+  "status": "SOURCE_RULES_RECONCILED_EDITORIAL_ONLY_NOT_PUBLISHED",
+  "baseline": "58 source cues, 62 R62 French drafts, 42 detailed-rubric review gaps; five explicit form/pastoral blockers identified in merged PR #1163",
+  "scope": {
+    "entries": 5,
+    "sourceRulesChecked": 5,
+    "userCopyApproved": 0,
+    "livePublished": 0
+  },
+  "proof": "1962 Ritus servandus VIII.2, VIII.4, VIII.8, IX.3–4 and X.1, together with the existing canonical Low/Sung response donor",
+  "notes": [
+    "This registry never replaces the original Latin, independently sourced form selection, or 62 French review rows.",
+    "A source-rule resolution is NOT independent editorial signoff. No French draft is published.",
+    "Ritus VIII.8 explicitly assigns chasuble support, conditional pall handling and incense to different ministers. Later IX.4 likewise separates the deacon's genuflection from pall handling.",
+    "The cases here are five source-form questions, not five newly created Mass gestures.",
+    "An actor's live action cannot be inferred from source cue, rendered paragraph, or scroll."
+  ],
+  "cases": [
+    {
+      "id": "AO.CANON.FORM.001",
+      "cueId": "AO.SM.C0153",
+      "sourceActionId": "AO.CANON.R62.004",
+      "sourceSection": "VIII.2",
+      "subject": "ROMAN_PONTIFF_AND_LOCAL_ORDINARY_FORMULA",
+      "decision": "SOURCE_RULE_RESOLVED_COPY_APPROVAL_PENDING",
+      "rule": "Mention the Roman Pontiff unless the Apostolic See is vacant. Mention the Ordinary of the actual place of celebration, not a different superior, subject to vacancy/Rome and a celebrant who is a bishop or the Supreme Pontiff. Never infer names from today's date or a guessed jurisdiction.",
+      "inputs": [
+        "APOSTOLIC_SEE_STATUS",
+        "CELEBRATION_LOCATION_ROMA_OR_OTHER",
+        "LOCAL_ORDINARY_SEE_STATUS",
+        "CELEBRANT_RANK",
+        "EXPLICIT_LITURGICAL_JURISDICTION"
+      ],
+      "branches": [
+        "ORDINARY_FORM",
+        "APOSTOLIC_SEE_VACANT",
+        "LOCAL_SEE_VACANT",
+        "ROMAN_LOCATION",
+        "CELEBRANT_BISHOP_OR_PATRIARCH",
+        "CELEBRANT_POPE"
+      ],
+      "actor": "PRIEST",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      ],
+      "releaseGate": "FORMULA_MUST_USE_VERIFIED_CELEBRANT_AND_SEE_CONTEXT"
+    },
+    {
+      "id": "AO.CANON.FORM.002",
+      "cueId": "AO.SM.C0161",
+      "sourceActionId": "AO.CANON.R62.011",
+      "sourceSection": "VIII.4",
+      "subject": "HANC_IGITUR_HANDS_AND_SEASONAL_PROPER",
+      "decision": "SOURCE_RULE_RESOLVED_COPY_APPROVAL_PENDING",
+      "rule": "Both hands extended open over Host and chalice until Per Christum, then joined. The actual Hanc igitur text, including exceptional proper variants where prescribed, must come from a preselected liturgical source, not a reader-scrolling substitution.",
+      "inputs": [
+        "SELECTED_1962_MASS_AND_PROPER",
+        "VERIFIED_HANC_TEXT_VARIANT",
+        "INDEPENDENT_PRIEST_GESTURE_OBSERVATION"
+      ],
+      "branches": [
+        "NORMAL_HANC_IGITUR",
+        "SOURCE_SELECTED_SPECIAL_HANC_IGITUR"
+      ],
+      "actor": "PRIEST",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      ],
+      "releaseGate": "SELECTED_SOURCE_VARIANT_AND_WORD_ANCHOR_VERIFIED"
+    },
+    {
+      "id": "AO.CANON.FORM.003",
+      "cueId": "AO.SM.C0201",
+      "sourceActionId": "AO.CANON.R62.055",
+      "sourceSection": "IX.3-4",
+      "subject": "PER_IPSUM_CHALICE_UNCOVERING",
+      "decision": "SOURCE_RULE_RESOLVED_COPY_APPROVAL_PENDING",
+      "rule": "The celebrant genuflects and takes the Host; the chalice is uncovered before the minor elevation. In Solemn Mass, deacon assistance/handling belongs to an independent conditional minister event, not to a priest gesture, and is never inferred from reader focus.",
+      "inputs": [
+        "MASS_FORM",
+        "CHALICE_HANDLING_NEEDED",
+        "INDEPENDENT_DEACON_ACTION_OBSERVATION"
+      ],
+      "branches": [
+        "LOW_CELEBRANT",
+        "MISSA_CANTATA_CELEBRANT",
+        "SOLEMN_DEACON_WHEN_REQUIRED"
+      ],
+      "actor": "FORM_DEPENDENT_CHALICE_HANDLING",
+      "ministerEventId": "AO.CANON.MIN.007",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      ],
+      "releaseGate": "SOLEMN_DEACON_ROLE_AND_REQUIRED_CONDITION_CONFIRMED"
+    },
+    {
+      "id": "AO.CANON.FORM.004",
+      "cueId": "AO.SM.C0205",
+      "sourceActionId": "AO.CANON.R62.059",
+      "sourceSection": "IX.3-4",
+      "subject": "PER_IPSUM_CHALICE_COVERING_AND_GENUFLECTION",
+      "decision": "SOURCE_RULE_RESOLVED_COPY_APPROVAL_PENDING",
+      "rule": "After the minor elevation the Host is replaced, the chalice is covered as required, and the celebrant genuflects. At Solemn Mass the deacon may cover the chalice when required, yet his subsequent genuflection is an independent prescribed action, not conditional on touching the pall.",
+      "inputs": [
+        "MASS_FORM",
+        "CHALICE_HANDLING_NEEDED",
+        "INDEPENDENT_DEACON_ACTION_OBSERVATION",
+        "INDEPENDENT_DEACON_GENUFLECTION_OBSERVATION"
+      ],
+      "branches": [
+        "LOW_CELEBRANT",
+        "MISSA_CANTATA_CELEBRANT",
+        "SOLEMN_DEACON_WHEN_REQUIRED",
+        "SOLEMN_DEACON_GENUFLECTS_INDEPENDENTLY"
+      ],
+      "actor": "FORM_DEPENDENT_CHALICE_HANDLING",
+      "ministerEventId": "AO.CANON.MIN.008",
+      "requiredDeaconGenuflectionId": "AO.CANON.MIN.011",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      ],
+      "releaseGate": "DISTINGUISH_CHALICE_COVERING_FROM_PRESCRIBED_GENUFLECTION"
+    },
+    {
+      "id": "AO.CANON.FORM.005",
+      "cueId": "AO.SM.C0207",
+      "sourceActionId": "AO.CANON.R62.061",
+      "sourceSection": "X.1_AND_CANON_AMEN",
+      "subject": "CANON_FINAL_AMEN_RESPONDER",
+      "decision": "SOURCE_CLOCK_RESOLVED_PERSONAL_SPEAKER_UNSPECIFIED",
+      "rule": "At the audible Per omnia sæcula sæculorum, the reply Amen uses the actual source respondent role. Low Mass donor: MINISTER_RESPONSE. Sung donor: USER_RESPONSE. Do not turn USER_RESPONSE into a claim that a named server, choir, priest, or every member of the congregation must speak.",
+      "inputs": [
+        "MASS_FORM",
+        "ORIGINAL_SOURCE_RESPONSE_CLOCK",
+        "OBSERVED_RESPONDING_PARTY_IF_ANY"
+      ],
+      "branches": [
+        "LOW_MINISTER_RESPONSE",
+        "SUNG_UNRESOLVED_RESPONDENTS"
+      ],
+      "actor": "FORM_DEPENDENT_RESPONDER",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      ],
+      "releaseGate": "SPEAKER_IDENTITY_FROM_SOURCE_NOT_FROM_GENERIC_SUNG"
+    }
+  ]
+}
