@@ -76,8 +76,16 @@ const observed=controller.project("AO.SM.C0150",{
   editorialPreview:true,form:"SOLEMN",priestObservedCueId:"AO.SM.C0150",
   communityProfile:"AO_DEFAULT_1962_SUNG",
 });
-assert.equal(observed.priestActions[0].isObservedNow,true,
-  "Exact independent priest observation should remain distinguished from the reader cue");
+assert.equal(observed.priestActions[0].priestCueObserved,true);
+assert.equal(observed.priestActions[0].isObservedNow,false,
+  "Priest observed at a cue is not proof that any micro-action has occurred");
+const observedAction=controller.project("AO.SM.C0150",{
+  editorialPreview:true,form:"SOLEMN",
+  priestObservedCueId:"AO.SM.C0150",
+  observedPriestActionIds:["AO.CANON.R62.001"],
+});
+assert.equal(observedAction.priestActions[0].isObservedNow,true,
+  "An independently observed EXACT priest micro-action may be marked individually");
 assert.equal(observed.priestActions[0].publishable,false);
 assert.equal(observed.postureCandidate?.value,"KNEEL");
 assert.equal(observed.faithfulPosture,null,
@@ -86,6 +94,15 @@ const elevation=controller.project("AO.SM.C0174",{editorialPreview:true});
 assert.equal(elevation.priestActions.length,4);
 assert.equal(elevation.ministerActions.length,1);
 assert.equal(elevation.ministerActions[0].isObservedNow,false);
+// Host genuflections and elevation share C0174, but happen sequentially.
+const onlyElevation=controller.project("AO.SM.C0174",{
+  editorialPreview:true,priestObservedCueId:"AO.SM.C0174",
+  observedPriestActionIds:["AO.CANON.R62.024"],
+});
+assert.deepEqual(onlyElevation.priestActions.filter(x=>x.isObservedNow).map(x=>x.id),
+  ["AO.CANON.R62.024"],"A single witnessed elevation cannot trigger all 4 priest actions");
+assert.equal(onlyElevation.priestActions.filter(x=>x.priestCueObserved).length,4,
+  "Whole-cue observation remains distinct from individual action evidence");
 const observedBell=controller.project("AO.SM.C0174",{
   editorialPreview:true,observedMinisterActionIds:["AO.CANON.R62.027"],
 });
