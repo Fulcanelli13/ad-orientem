@@ -61,8 +61,9 @@ def create(args):
                     "individualImageRecordUrl":photo.get("commonsPageUrl"),
                     "museumInventory":lead.get("institutionalObjectId"),
                     "copyrightAssessment":"PENDING_LICENSE_AND_JURISDICTION",
-                    "imageBytesAcquired":False,
-                    "originalSha256":None,
+                    "imageBytesAcquired":bool(lead.get("hashVerifiedReviewOriginal")),
+                    "originalSha256":(lead.get("hashVerifiedReviewOriginal") or {}).get("sha256"),
+                    "reviewArchiveRunUrl":(lead.get("hashVerifiedReviewOriginal") or {}).get("githubRunUrl"),
                     "competingOriginalCount":len(lead.get("competingInstitutionalOriginals") or []),
                     "unresolvedCompetingOriginals":lead.get("competingInstitutionalOriginals") or []
                 }
@@ -386,7 +387,9 @@ function drawSubjects(){
     '<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(selected.recovery.exactInstitutionalUrl)+'">Recovered museum/custodian source · Master pending</a>':'')+
    (selected?.recovery?.individualImageRecordUrl?
     '<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(selected.recovery.individualImageRecordUrl)+'">Individual photograph record · Licence review pending</a>':'')+
-   (selected?.recovery?'<p class="muted">Source research: '+escape(selected.recovery.classification.replaceAll("_"," "))+' · Not acquired or approved</p>':'')+
+   (selected?.recovery?'<p class="muted">Source research: '+escape(selected.recovery.classification.replaceAll("_"," "))+
+      (selected.recovery.imageBytesAcquired?' · Archived SHA-verified review file (not production)':' · Source original not recovered')+'</p>':'')+
+   (selected?.recovery?.reviewArchiveRunUrl?'<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(selected.recovery.reviewArchiveRunUrl)+'">SHA-verified research archive · Limited retention</a>':'')+
    (source?'<p>Verified registry original: '+escape(source.id)+'</p>':'')+'</div>';
   root.appendChild(card);
  }
