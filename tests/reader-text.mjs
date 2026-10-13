@@ -30,6 +30,43 @@ for(const corpus of [low,sung]){
   }
 }
 
+// Canonical 1962 temporal order gates: the reader must never move a
+// Proper prayer, its introductory versicle, or its respondent into a
+// neighbouring liturgical moment. Check BOTH source families independently.
+const liturgicalCheckpoints=[
+  "B017","B018","B019","B020", // Collect dialogue, Collects, Epistle
+  "B023","B024","B025","B026","B096","B027", // Gospel, homily, Credo
+  "B028","B029","B030","B039","B040","B041","B042", // Offertory/Secrets/Preface
+  "B045","B046","B047","B052","B053","B060","B061", // Preface/Canon
+  "B062","B063","B064","B065","B066","B068", // Pater to Agnus
+  "B073","B074","B075","B076","B080","B081","B082", // Both communions
+  "B083","B084","B085","B086","B087","B088", // Ablutions, antiphon, Postcommunions
+  "B089","B090","B091","B092","B093","B094","B095", // Dismissal to Last Gospel
+];
+for(const corpus of [low,sung]){
+  const blocks=new Map(corpus.blocks.map(x=>[x.Block_ID,x]));
+  let last=-Infinity;
+  for(const shortId of liturgicalCheckpoints){
+    const id="AO.SM."+shortId,block=blocks.get(id);
+    assert.ok(block,corpus.form+" missing essential liturgical section "+id);
+    assert.ok(block.Display_Order>last,
+      corpus.form+" Mass section out of order at "+id);
+    last=block.Display_Order;
+  }
+  const secretEnd=blocks.get("AO.SM.B041").units;
+  assert.match(secretEnd[0].latin,/Per ómnia sæcula sæculórum/u);
+  assert.match(secretEnd[1].latin,/℟\\. Amen\./u);
+  assert.ok(/RESPONSE/.test(secretEnd[1].clock),
+    "the final Secret Amen must be an actual minister/faithful response");
+  const collectResponse=blocks.get("AO.SM.B019").units.at(-1);
+  const postcommunionResponse=blocks.get("AO.SM.B088").units
+    .find(u=>u.cue_id==="AO.SM.C0255");
+  assert.ok(/RESPONSE/.test(collectResponse.clock),
+    "Collect must conclude with its own response");
+  assert.ok(/RESPONSE/.test(postcommunionResponse.clock),
+    "Postcommunion must conclude with its own response");
+}
+
 assert.equal(selectReaderTextCorpus({form:"LOW",lowCorpus:low,sungCorpus:sung}).family,"LOW");
 assert.equal(selectReaderTextCorpus({form:"MISSA_CANTATA_SIMPLE",lowCorpus:low,sungCorpus:sung}).family,"SUNG");
 assert.equal(selectReaderTextCorpus({form:"SOLEMN",lowCorpus:low,sungCorpus:sung}).family,"SUNG");
