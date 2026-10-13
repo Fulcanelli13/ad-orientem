@@ -3,7 +3,7 @@
 // It returns no French draft text and never infers priest actions from scroll.
 import {resolveCanonLatinWordAnchors} from "./reader-canon-latin-anchors.js";
 
-const CUE=/^AO\\.SM\\.C\\d{4}$/;
+const CUE=/^AO[.]SM[.]C[0-9]{4}$/;
 const FORMS=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const WORD="SOURCE_LATIN_WORDS";
 const FROZEN_EMPTY=Object.freeze([]);
@@ -36,7 +36,7 @@ export function projectCanonInlineEditorialPlacements({
   const decisions=new Map();
   for(const entry of promotion.decisions??[]){
     if(!CUE.test(String(entry.cueId))||decisions.has(entry.cueId)||
-       !/^AO\\.CANON\\.R62\\.\\d{3}$/.test(String(entry.candidateActionId))||
+       !/^AO[.]CANON[.]R62[.][0-9]{3}$/.test(String(entry.candidateActionId))||
        entry.publication!=="NOT_APPROVED_NOT_VISIBLE")
       throw new Error("Unapproved Canon triage identity is missing or altered");
     decisions.set(entry.cueId,entry);
