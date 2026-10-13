@@ -98,7 +98,7 @@ for(const [selected,form] of [
 }
 assert.match(model.cards.flatMap(c=>c.paragraphs).find(p=>
   p.sourceCueIds?.includes("AO.SM.C0020"))?.primary??"",
-  /^S\\. Amen\\./,
+  /^S\. Amen\./,
   "Selected Cantata must retain the historically sourced Sung preparatory prefix");
 
 
