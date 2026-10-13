@@ -1,0 +1,458 @@
+{
+  "schema": "AO_SACRED_ART_PARALLEL_GAP_RESEARCH_WAVE_V1",
+  "date": "2026-10-13",
+  "repo": "Fulcanelli13/ad-orientem",
+  "branch": "platform/885-sacred-art-candidates",
+  "purpose": "Independent major-feast and saint gap research while user rates 197 archived artworks; no intervention in ratings.",
+  "hardExclusions": [
+    "Fra Angelico",
+    "El Greco"
+  ],
+  "safeguards": {
+    "preserveYesterday62ReviewsAndNewerSelection": true,
+    "leave197UnreviewedRatingSetEntirelyUntouched": true,
+    "noAdditionalScreenshotsIntoUserRatingQueue": true,
+    "noImageAcquisitionDuringRating": true,
+    "noArtAssignedToApp": true,
+    "noCompulsoryArtPerBibleEpisode": true,
+    "curatorMustConfirmVisualAestheticsAfterRating": true,
+    "mobileLongEdgeRequirement": "Display 900-1600px, not giant 2500-8000px originals"
+  },
+  "startingStatus": {
+    "originalClassIVisualGapThemes": 6,
+    "priorityDomains": [
+      "calendar",
+      "major saints",
+      "Doctors",
+      "Apostles",
+      "Evangelists"
+    ],
+    "sourceOfGapMatrix": "data/calendar/sacred-art-class-i-existing-image-matrix-20261013.v1.json"
+  },
+  "sourceWorkCount": 14,
+  "corroboration": {
+    "institutionalObjectLinks": 13,
+    "officialCathedralWorkDescription": 1
+  },
+  "existingLeadReconciliation": [],
+  "gapTopicReview": {
+    "calendar.pentecost": {
+      "newPrimaryCandidates": [
+        "FEAST-PENT-LEBRUN",
+        "FEAST-PENT-BLANCHARD"
+      ],
+      "status": "SPECIFIC_MUSEUM_SCENES_FOUND_VISUAL_REVIEW_PENDING"
+    },
+    "calendar.holy-thursday": {
+      "newPrimaryCandidates": [
+        "FEAST-HOLYTHURS-BASSANO",
+        "FEAST-HOLYTHURS-JUANES"
+      ],
+      "status": "TWO_VERIFIED_DIRECT_SUPPER_PAINTINGS"
+    },
+    "calendar.all-saints": {
+      "newPrimaryCandidates": [
+        "FEAST-ALLSAINTS-PRETI"
+      ],
+      "status": "CONTEXTUAL_SAINTS_IN_GLORY_NOT_COMPLETE_ALL_SAINTS"
+    },
+    "calendar.christ-king": {
+      "newPrimaryCandidates": [
+        "FEAST-ALLSAINTS-PRETI"
+      ],
+      "status": "RELATED_CHRIST_IN_GLORY_NOT_LITURGICALLY_EXACT"
+    },
+    "calendar.sacred-heart": {
+      "newPrimaryCandidates": [
+        "FEAST-SACREDHEART-BATONI"
+      ],
+      "status": "EXACT_HISTORIC_DEVOTIONAL_PAINTING_IMAGE_RIGHTS_AND_MOBILE_REVIEW_PENDING"
+    },
+    "calendar.palm-sunday": {
+      "newPrimaryCandidates": [],
+      "status": "NO_STRONG_STYLISTICALLY_ELIGIBLE_OIL_PAINTING_VERIFIED_IN_THIS_PASS"
+    },
+    "SNT-DC-18": {
+      "newPrimaryCandidates": [
+        "DOCTOR-BEDE-SCOTT"
+      ],
+      "status": "LOW_PRIORITY_NON_FRENCH_ART_AND_MOBILE_COMPOSITION_HOLD"
+    },
+    "SNT-DC-25": {
+      "newPrimaryCandidates": [
+        "DOCTOR-CYRIL-ALEX"
+      ],
+      "status": "MINOR_PORTRAIT_PRIMARY_IMAGE_NOT_PROVEN"
+    },
+    "SNT-DC-26": {
+      "newPrimaryCandidates": [
+        "DOCTOR-CYRIL-JERUSALEM"
+      ],
+      "status": "IN_SITU_FRESCO_ONLY"
+    },
+    "SNT-DC-27": {
+      "newPrimaryCandidates": [
+        "DOCTOR-EFREM-1936"
+      ],
+      "status": "LATE_PANEL_ONLY"
+    },
+    "SNT-AP-06": {
+      "newPrimaryCandidates": [
+        "APOSTLE-BARTHOLOMEW-RIBERA"
+      ],
+      "status": "ANOTHER_EXACT_ARTIST_ALTERNATIVE_WHILE_RUBENS_EXISTS"
+    },
+    "SNT-DC-07": {
+      "newPrimaryCandidates": [
+        "DOCTOR-BERNARD-CANO"
+      ],
+      "status": "STRONG_ADDITIONAL_OPTION_WHILE_RIBALTA_ALREADY_DOCUMENTED"
+    },
+    "SNT-EV-01": {
+      "newPrimaryCandidates": [],
+      "status": "ALREADY_SOURCE_LINKED_WITH_EV02_PRADO_RIBALTA_P002965_NO_NEW_WORK_NEEDED"
+    },
+    "SNT-EV-02": {
+      "newPrimaryCandidates": [],
+      "status": "ALREADY_SOURCE_LINKED_WITH_EV01_PRADO_RIBALTA_P002965_NO_NEW_WORK_NEEDED"
+    },
+    "SNT-AP-03_04_05_06_07_09_10": {
+      "newPrimaryCandidates": [],
+      "status": "SEVEN_ALREADY_LINKED_TO_RUBENS_PRADO_APOSTOLATE_IN_P0_SOURCE_WORKLIST_REUSE_NOT_DUPLICATE"
+    }
+  },
+  "confirmedWorks": [
+    {
+      "sourceResearchId": "FEAST-PENT-LEBRUN",
+      "targetIds": [
+        "calendar.pentecost"
+      ],
+      "artist": "Charles Le Brun",
+      "title": "La Descente du Saint-Esprit",
+      "institutionalObjectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010060608",
+      "institutionalObjectId": "Louvre INV 2888",
+      "medium": "oil on canvas",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_FEAST_SCENE",
+      "priority": "HIGH",
+      "editorialNotes": "1656–57; 317 × 265 cm; existing original Louvre after altarpiece history; distinct from Saint-Sulpice version. Strong painterly mobile potential, no rating.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "FEAST-PENT-BLANCHARD",
+      "targetIds": [
+        "calendar.pentecost"
+      ],
+      "artist": "Jacques Blanchard",
+      "title": "The Descent of the Holy Spirit",
+      "institutionalObjectUrl": "https://www.notredamedeparis.fr/en/understand/paintings/the-descent-of-the-holy-spirit/",
+      "institutionalObjectId": "Notre-Dame de Paris, historic Grand May painting",
+      "medium": "oil on canvas (verify technique on definitive record)",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_FEAST_SCENE",
+      "priority": "HIGH",
+      "editorialNotes": "Cathedral explains Mary and apostles under tongues of fire and expressive painterly movement; no individual museum inventory / image rights established.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "FEAST-ALLSAINTS-PRETI",
+      "targetIds": [
+        "calendar.all-saints",
+        "calendar.christ-king"
+      ],
+      "artist": "Mattia Preti",
+      "title": "Christ in Glory with Saints",
+      "institutionalObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-in-glory-with-saints/32832959-08a0-4764-a51e-c1908b739473",
+      "institutionalObjectId": "Prado P003146",
+      "medium": "oil on canvas",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "SAINTS_IN_GLORY_SELECTED_GROUP_NOT_ALL_SAINTS",
+      "priority": "HIGH",
+      "editorialNotes": "1660–61; Christ with Jerome, Francis, Mary Magdalene and others. Contextual All Saints and Christ in Glory, not an exact universal All Saints procession or proper feast painting.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "FEAST-HOLYTHURS-BASSANO",
+      "targetIds": [
+        "calendar.holy-thursday"
+      ],
+      "artist": "Francesco Bassano",
+      "title": "Last Supper",
+      "institutionalObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/last-supper/3bb752c7-074e-4767-aff1-0bdaa686049e",
+      "institutionalObjectId": "Prado P000034",
+      "medium": "oil on canvas",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_LAST_SUPPER_SCENE",
+      "priority": "HIGH",
+      "editorialNotes": "c.1586; 151×214 cm; disciples gathered at table, includes foreground genre detail; visual quality as phone hero not yet assessed.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "FEAST-HOLYTHURS-JUANES",
+      "targetIds": [
+        "calendar.holy-thursday"
+      ],
+      "artist": "Juan de Juanes",
+      "title": "The Last Supper",
+      "institutionalObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-last-supper/2800c04d-a3ad-41eb-a75b-fe359d7d1dde",
+      "institutionalObjectId": "Prado P000846",
+      "medium": "oil on panel",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_EUCHARISTIC_INSTITUTION",
+      "priority": "HIGH",
+      "editorialNotes": "1555–62; 116×191 cm; museum explicitly identifies consecration of Sacred Host at supper. Earlier style: must screen modelling/flatness against aesthetic criterion.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "FEAST-CORPUS-JUANES",
+      "targetIds": [
+        "calendar.corpus-christi"
+      ],
+      "artist": "Juan de Juanes",
+      "title": "The Eucharistic Saviour",
+      "institutionalObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/christ-the-saviour/e485cf76-459b-4d14-bc04-188361b39b58",
+      "institutionalObjectId": "Prado P000845",
+      "medium": "oil on panel",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_EUCHARISTIC_ICONOGRAPHY_NOT_CORPUS_PROCESSION",
+      "priority": "SECONDARY",
+      "editorialNotes": "1545–50; Christ holds Host and chalice against gold ground; might be too flat. Distinct Eucharist portrait, not historical procession.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "FEAST-SACREDHEART-BATONI",
+      "targetIds": [
+        "calendar.sacred-heart"
+      ],
+      "artist": "Pompeo Girolamo Batoni",
+      "title": "Il Sacro Cuore di Gesù",
+      "institutionalObjectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200762531",
+      "institutionalObjectId": "Italian state cultural inventory 1200762531; Chiesa del Gesù, Rome",
+      "medium": "oil on copper",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "EXACT_SACRED_HEART_ICONOGRAPHY",
+      "priority": "HIGH",
+      "editorialNotes": "c.1767, 80×70 cm; original historic devotion. A 1034×1441 reference may be adequate for a MOBILE app, unlike prior obsolete >=2500px hard gate; license/photo/crop still require review.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "DOCTOR-BERNARD-CANO",
+      "targetIds": [
+        "SNT-DC-07"
+      ],
+      "artist": "Alonso Cano",
+      "title": "Saint Bernard and the Virgin",
+      "institutionalObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-bernard-and-the-virgin/25b83887-3b11-4a99-a9b1-3b3050733d6a",
+      "institutionalObjectId": "Prado P003134",
+      "medium": "oil on canvas",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_SAINT_NARRATIVE",
+      "priority": "HIGH",
+      "editorialNotes": "1645–52, 267×185 cm; Saint Bernard miracle with Virgin. Strongly modelled Baroque alternative to already documented Ribalta Christ Embracing Saint Bernard; no approval.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "APOSTLE-BARTHOLOMEW-RIBERA",
+      "targetIds": [
+        "SNT-AP-06"
+      ],
+      "artist": "Jusepe de Ribera",
+      "title": "Saint Bartholomew",
+      "institutionalObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/279864d2-83ad-4cb3-bf73-949757fab0b0",
+      "institutionalObjectId": "Prado painting 1641 (confirm exact inventory if re-used)",
+      "medium": "oil on canvas",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_SAINT_PORTRAIT",
+      "priority": "HIGH",
+      "editorialNotes": "1641, saint with flaying knife. Distinct baroque alternative to already documented Rubens Saint Bartholomew panel, not duplicate identity.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "DOCTOR-CYRIL-ALEX",
+      "targetIds": [
+        "SNT-DC-25"
+      ],
+      "artist": "Unknown Ligurian painter",
+      "title": "Saint Cyril of Alexandria",
+      "institutionalObjectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700018145",
+      "institutionalObjectId": "Italian cultural inventory 0700018145; Loano",
+      "medium": "oil on canvas",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_SAINT_PORTRAIT",
+      "priority": "LOW",
+      "editorialNotes": "1700–1749 97×78.5 cm; direct labeled identity with episcopal dress; source describes stronger naturalism in face but stereotyped rest: secondary only until aesthetic inspection.",
+      "technicalMediaRole": "SECONDARY_ICONOGRAPHIC_DOCUMENTATION",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "DOCTOR-CYRIL-JERUSALEM",
+      "targetIds": [
+        "SNT-DC-26"
+      ],
+      "artist": "Attributed to Antonio Nannoni",
+      "title": "Saint Cyril of Jerusalem",
+      "institutionalObjectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900117888A-1",
+      "institutionalObjectId": "Italian cultural inventory 0900117888A-1; Tavarnelle Val di Pesa",
+      "medium": "fresco",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_SAINT_PORTRAIT_IN_SITU",
+      "priority": "LOW",
+      "editorialNotes": "1637 Carmelite fresco, labeled S.Cyrillus H; in situ/mural. Weak match for preferred oil-painting format, source research only.",
+      "technicalMediaRole": "SECONDARY_ICONOGRAPHIC_DOCUMENTATION",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "DOCTOR-EFREM-1936",
+      "targetIds": [
+        "SNT-DC-27"
+      ],
+      "artist": "Roman workshop (unidentified)",
+      "title": "Sant'Efrem",
+      "institutionalObjectUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200200390-3",
+      "institutionalObjectId": "Italian cultural inventory 1200200390-3; S. Maria della Concezione in Campo Marzio",
+      "medium": "tempera on panel",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "SAINT_ICONOGRAPHY_HISTORICAL_LATE",
+      "priority": "LOW",
+      "editorialNotes": "1936 panel added to decorative church cycle; face modeled after patriarch Ignatius Gabriel I Tappouni. Late historical image but unlikely primary sacred masterpiece.",
+      "technicalMediaRole": "SECONDARY_ICONOGRAPHIC_DOCUMENTATION",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "DOCTOR-BEDE-SCOTT",
+      "targetIds": [
+        "SNT-DC-18"
+      ],
+      "artist": "William Bell Scott",
+      "title": "Bede Finishes His Works and Life",
+      "institutionalObjectUrl": "https://www.nationaltrustcollections.org.uk/object/584368",
+      "institutionalObjectId": "National Trust Wallington NT584368",
+      "medium": "oil on canvas",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_SAINT_DEATH_NARRATIVE",
+      "priority": "SECONDARY",
+      "editorialNotes": "1857 mural-scale secular-historical cycle but painting depicting dying Bede dictating translation of John's Gospel; may be too busy for mobile card; Anglo art not French cultural priority.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    },
+    {
+      "sourceResearchId": "DOCTOR-TERESA-MIRANDA",
+      "targetIds": [
+        "SNT-DC-08"
+      ],
+      "artist": "Juan García de Miranda",
+      "title": "Saint Teresa and Her Brother Rodrigo Building Hermitages",
+      "institutionalObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-teresa-and-her-brother-mr-rodrigo/129135e7-a2bf-42ac-b1a7-739f03605bc7",
+      "institutionalObjectId": "Museo del Prado (object link identifies painting)",
+      "medium": "oil on canvas",
+      "exactMatchingPriorCatalogueId": null,
+      "existingArchiveLeadId": null,
+      "relationToTarget": "DIRECT_SAINT_CHILDHOOD_NARRATIVE",
+      "priority": "SECONDARY",
+      "editorialNotes": "1735 Teresa childhood scene, NOT transverberation or canonized portrait. Secondary use in saint bio or formation; inappropriate substitution for devotional feast hero.",
+      "technicalMediaRole": "MOBILE_APP_POSSIBLE_SOURCE",
+      "imageAcquired": false,
+      "fullPaintingAestheticallyInspected": false,
+      "userRatingReceived": false,
+      "productionApproved": false,
+      "provenanceStatus": "PRIMARY_INSTITUTIONAL_OR_NATIONAL_CULTURAL_INVENTORY_RECORD",
+      "userReviewQueueTouched": false
+    }
+  ],
+  "outstandingSourceSearch": "Target only Palm Sunday high-quality exact painting, a truly feast-specific Christ the King, stronger All Saints, and a few top missing Doctors; do not scour entire Old Testament.",
+  "notes": [
+    "Batoni source record appears in older hard-feast blocker; high pixel threshold rejected image earlier but is irrelevant to 900–1600px phone app target. This work should be reopened as possible source, not promoted.",
+    "Prado Bartholomew painting is a distinct object from Rubens series. No reclassification without user rating.",
+    "Notre-Dame Blanchard is a specific cathedral painting record but not museum catalogued with precise object ID; copyright/photo source unresolved.",
+    "Preti work depicts Christ in Glory with a selection of Saints. Cross-reuse is contextual for All Saints and Christ King, never exact both.",
+    "Rubens Prado apostolate contains several exact already catalogued saints, so no duplicate ID imported.",
+    "A Saint iconographic reference is not sufficient for an automatic calendar hero: intended mobile artwork must have proper emphasis and visual quality."
+  ]
+}
