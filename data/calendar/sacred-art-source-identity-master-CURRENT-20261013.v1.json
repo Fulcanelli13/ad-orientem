@@ -1,0 +1,62 @@
+{
+  "schema": "AO_SACRED_ART_SOURCE_IDENTITY_CURRENT_POINTER_V1",
+  "asOf": "2026-10-13",
+  "canonicalNewWorkQueue": "data/calendar/sacred-art-source-identity-master-196-queue-20261013.v6.json",
+  "coveredWaves": "W01-W13",
+  "newSourceIdentities": 196,
+  "newAcquiredOriginalImageMasters": 8,
+  "pendingImageMasters": 188,
+  "oldCanonicalRegistry": "data/calendar/sacred-art-candidates.v1.json",
+  "oldCanonicalRegistryEntries": 281,
+  "oldCanonicalHashedMasters": 266,
+  "attributionGates": {
+    "w10_nancy": 3,
+    "w12_champaigne": 3,
+    "w13_london_coup_de_lance": 1,
+    "w13_windsor_access_check": 1
+  },
+  "imageRightsApprovedForApp": 0,
+  "editorialReleaseApprovedForApp": 0,
+  "productionArtMutated": false,
+  "acquiredImageProof": "data/calendar/sacred-art-eight-real-originals-sha-ledger-20261013.v1.json",
+  "currentScope": "Research-only source acquisition queue. Not a complete census of Rubens, Van Dyck, Caravaggio, Champaigne or museum holdings.",
+  "precedingSnapshots": "Older 145/153/165/180/190 queue filenames are historical; do not use them as active authority. Do not add their counts together.",
+  "nextTasks": [
+    "Finish source object census against authoritatively published religious oeuvres and dated museum catalogues",
+    "Match each object to required biblical, liturgical, prayer, saint and sacred geography scene keys",
+    "Resolve authorship/copy/workshop and metadata discrepancies, including London/V&A vs Antwerp altarpiece Coup de Lance",
+    "Acquire lawful high-resolution unframed images for missing objects, storing SHA256 and original rights evidence",
+    "Capture user 0–5 ratings and subject placement and preserve excluded/approved painting decisions",
+    "Archive source photographs durably rather than rely on 30-day GitHub Actions retention"
+  ],
+  "verifiedCounts": {
+    "queue": 196,
+    "uniqueIds": 196,
+    "oldQueue": 180,
+    "w12": 10,
+    "w13": 6,
+    "previousUntouchedIds": true,
+    "new8SourceMasters": 8,
+    "pending": 188,
+    "ready": 0,
+    "oldCanonical": 281,
+    "masterNotApp": true,
+    "correctedOriginalModello": "ATTRIBUTION_VERIFICATION_HOLD",
+    "correctedNGAAccession": "1970.17.107",
+    "groups": {
+      "1": 15,
+      "2": 23,
+      "3": 5,
+      "4": 29,
+      "5": 36,
+      "6": 9,
+      "7": 16,
+      "8": 12,
+      "9": 8,
+      "10": 12,
+      "11": 15,
+      "12": 10,
+      "13": 6
+    }
+  }
+}
