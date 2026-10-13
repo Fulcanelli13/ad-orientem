@@ -65,6 +65,11 @@ for(const row of canonData.rows){
     }
   }
 }
+const hancFrench=frenchReview.rows.find(x=>x.id==="AO.CANON.R62.011");
+assert.match(hancFrench.revisedFrenchRubric,/étend les deux mains ensemble/);
+assert.match(hancFrench.revisedFrenchRubric,/paumes ouvertes/);
+assert.doesNotMatch(hancFrench.revisedFrenchRubric,/mains réunies/,
+ "Ritus VIII.4 specifies both hands extended over the oblata, not folded or joined");
 const roles=createCanonRubricAdjudicationController({canonData,triggerAudit,frenchReview,ministerData});
 const solemnHost=roles.project("AO.SM.C0174",{editorialPreview:true,form:"SOLEMN"});
 const sungIncenseHost=roles.project("AO.SM.C0174",{editorialPreview:true,form:"MISSA_CANTATA_INCENSE"});
