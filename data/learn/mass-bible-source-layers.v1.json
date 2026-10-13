@@ -7,7 +7,8 @@
     "bibleRole": "Chapter/verse context checked against specified edition and numbering; Vulgate Psalm split/merge conventions and wording variants are explicit, not assumed equivalent to the 1962 printed Missal",
     "properPolicy": "105 separately source-path-and-Latin-gated Proper identities live in the existing Mass Scripture Context; this study must never override actual readings",
     "meaningPolicy": "Exact/adapted liturgical words, named Scripture figures, doctrinal analogy, typology and private meditations are separate evidence types",
-    "rightAndCanon": "No automatically published Bible edition text, no fabricated alignment to R17 LIVE 48 cards or historic Dujardin meditations; native Scripture button available only for 20 unambiguous contextual verse references (with precise source-page link); Vulgate Psalms and Proper examples are held"
+    "rightAndCanon": "No automatically published Bible edition text, no fabricated alignment to R17 LIVE 48 cards or historic Dujardin meditations; native Scripture button available only for 20 unambiguous contextual verse references (with precise source-page link); Vulgate Psalms and Proper examples are held",
+    "ourFatherVariant": "MB21 is adapted scriptural wording; do not label the Roman Latin Pater a word-for-word copy of Clementine Matthew 6:11. Compare Luke 11:3."
   },
   "liturgicalWitness": {
     "name": "Missale Romanum 1962",
@@ -539,9 +540,9 @@
       "id": "MB21",
       "formationStage": "MF07",
       "liturgicalMoment": "Pater noster",
-      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
       "liturgicalCue": "Pater noster, qui es in caelis",
-      "scriptureReference": "Matthew 6:9–13",
+      "scriptureReference": "Matthew 6:9–13 (cf. Luke 11:2–4); Matt 6:11 Latin variant",
       "sourceLinks": [
         {
           "role": "1962_MISSAL_ORDER_AND_TEXT",
@@ -550,13 +551,17 @@
         {
           "role": "BIBLICAL_CONTEXT",
           "url": "https://www.newadvent.org/bible/mat006.htm"
+        },
+        {
+          "role": "BIBLICAL_CONTEXT_LUKE_LATIN_WORDING",
+          "url": "https://www.newadvent.org/bible/luk011.htm"
         }
       ],
       "reading": {
-        "en": "The Lord's Prayer comes from Christ's teaching. Compare the liturgical conclusion and doxology with the biblical source rather than assuming complete verbal identity.",
-        "fr": "Le Notre Père vient de l’enseignement du Christ. Sa conclusion liturgique doit être distinguée du texte biblique."
+        "en": "The Lord's Prayer comes from Christ's teaching. Clementine Matthew 6:11 says 'panem nostrum supersubstantialem', while the Mass uses 'panem nostrum quotidianum', as in Luke 11:3. This is a scriptural prayer with a real textual adaptation and a specifically Roman liturgical placement.",
+        "fr": "Le Notre Père vient de l’enseignement du Christ. Dans la Vulgate clémentine, Matthieu 6,11 dit « panem nostrum supersubstantialem », tandis que la Messe emploie « panem nostrum quotidianum », comme en Luc 11,3. La liturgie adapte donc un mot de la prière biblique et lui donne sa place après le Canon."
       },
-      "qualification": "LITURGICAL_FORMULA_AND_EDITION_VARIANTS",
+      "qualification": "CLEMENTINE_MATTHEW_SUPERSUBSTANTIALEM_VS_ROMAN_MASS_QUOTIDIANUM_LUKE_11_3",
       "group": "COMMUNION",
       "scriptureReaderRef": "Matthew 6:9–13"
     },
