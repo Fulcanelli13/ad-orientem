@@ -8,7 +8,7 @@
     "existingOriginalsHashed": 266,
     "newIdentityLeads": 215,
     "uniqueLeadIds": 215,
-    "artists": 46,
+    "artists": 47,
     "byPriority": {
       "P0": 132,
       "P1": 64,
@@ -40,7 +40,8 @@
     "majorAttributionConflict": "Coup de Lance London L1121 still Rubens in NG catalogue vs Van Dyck in KMSKA technical research; record dissent and verify before original-artist repeat. KMSKA 297 authentically recorded under Van Dyck. NGA Boeckhorst 52251 exclude from Van Dyck autograph originals. Corrected NGA Jan Boeckhorst accession 1970.17.107, object page ID 52251, not inventory '52251'.",
     "physicalWorkAndEnsemble": "Vienna GG678 and GG698 share an Ildefonso altarpiece ensemble yet have distinct museum inventories; separate individual artwork components and scene crossrefs, no double counting entire commission. Sketches and final canvases separate physical objects.",
     "disputedCaravaggio": "Genoa PB1638 Ecce Homo must remain disputed attribution, although museum currently Caravaggio; unrelated Madrid Prado loan object W07-015 and Cigoli painting. Montserrat Saint Jerome official museum acceptance.",
-    "originalityScope": "Research unique physical inventory leads include genuine Rubens studies and works of workshop execution; do not collapse scope to all-autograph oils count."
+    "originalityScope": "Research unique physical inventory leads include genuine Rubens studies and works of workshop execution; do not collapse scope to all-autograph oils count.",
+    "artistAttributionCaution": "KHM Ignatius GG517 is Rubens plus workshop attribution (possible Jordaens); Xavier GG519 workshop execution is under review, not conclusively segmented."
   },
   "sources": [
     "data/calendar/sacred-art-preferred-artists-corpus-wave01-20261013.v1.json",
@@ -6615,7 +6616,7 @@
     },
     {
       "leadId": "W14-005",
-      "artist": "Peter Paul Rubens and Workshop",
+      "artist": "Peter Paul Rubens and workshop (attributed)",
       "title": "The Miracles of Saint Ignatius of Loyola (large altarpiece)",
       "institution": "Kunsthistorisches Museum, Vienna",
       "accession": "GG 517",
@@ -6682,7 +6683,7 @@
     },
     {
       "leadId": "W14-007",
-      "artist": "Peter Paul Rubens and Workshop",
+      "artist": "Peter Paul Rubens (workshop execution under review)",
       "title": "The Miracles of Saint Francis Xavier (large altarpiece)",
       "institution": "Kunsthistorisches Museum, Vienna",
       "accession": "GG 519",
@@ -6786,7 +6787,7 @@
     {
       "leadId": "W14-010",
       "artist": "Peter Paul Rubens",
-      "title": "The Lamentation (small oil study)",
+      "title": "The Lamentation (small oil-on-oak panel)",
       "institution": "Kunsthistorisches Museum, Vienna",
       "accession": "GG 515",
       "sourceUrl": "https://press.khm.at/fileadmin/content/KHM/Presse/2017/Rubens/PT_Rubens_E_KHM_Staedel_final.pdf",
@@ -6804,7 +6805,7 @@
         "oldSubjectApprovedOriginals": 0,
         "explicitAestheticBenchmark": false
       },
-      "provenanceNotes": "c.1614 oil on oak 40.5×52.5cm; KHM press catalogue identity; DIFFERENT object from larger lamentation GG529. Label 'small panel' not duplicate full painting.",
+      "provenanceNotes": "c.1614 oil on oak 40.5×52.5cm; KHM press catalogue identity; DIFFERENT object from larger lamentation GG529. Label 'small original oil panel' not duplicate full painting.",
       "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
       "knownArchiveSameExactSourceUrl": null,
       "existingSameArtistTitleArchiveIds": [],
