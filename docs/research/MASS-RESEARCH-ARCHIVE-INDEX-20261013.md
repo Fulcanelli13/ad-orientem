@@ -43,3 +43,19 @@ The two September snapshots together preserve **all ten research tabs** of `Ad_O
 For a new finding, append a source-anchored record to a new versioned batch rather than rewriting the historical September archive. Each extracted claim needs source URL/printed page or stable heading/trigger, author, original language, exact prayer/cue, actor, Mass form, authority tier, conditional scope and editorial status. Do not manufacture posture for an undocumented paragraph. Tie displayed reader content to the original cue ID, independent of whether the current projection uses 64/65 cards or 48 rollback. Start from the source text, then priest state/faithful profile, then exact in-text rubrics, and finally the **non-duplicative** guidance text.
 
 Existing Mass reader/form implementation is **not** changed by this archive.
+
+## 13 October 2026 — Canon 14 source audit and full 22-tab SOT archive (batch 3)
+
+- [Canon 14 main research report](MASS-CANON14-1962-PRIEST-FAITHFUL-FRENCH-AUDIT-20261013.md) — 14 canonical segments, 58 Canon cues, original French rubrics, faithful form/profile verification and 10 open quality gates.
+- [1962 Roman Canon priest/server micro-actions](../../data/research/mass-canon-14-ritus1962-french-microactions-20261013.json) — 58 priest and 4 minister actions/voice states, each source anchored, not published; only 13 of 58 cues currently have an existing detailed in-text priest rubric.
+- [Faithful posture/gesture state for every Canon cue](../../data/research/mass-canon-faithful-postures-and-gestures-58-cues-20261013.json) — conditional and observational postures, faithful custom separately sourced.
+- [Second original French theological witness](../../data/research/mass-canon-french-dtc-independent-audit-20261013.json) — H. Moureau, *Dictionnaire de théologie catholique* (1909), 14 Canon-segment comparisons; contested heavenly-altar angel explanations and historical *Per quem* reconstructions explicitly qualified.
+- [Current detailed-rubric gap audit](../../data/research/mass-canon-14-rubric-registry-gap-audit-20261013.json) — all 58 cues linked to current production research registries, source evidence, and implementation gaps.
+- Full original **22-tab Mass Source of Truth v12** workbook research content is now archived as immutable/parsing-stage snapshots:
+  - [Lines 1–1000](../../data/research/archive/mass-sot-v12-library-parsed-lines-0001-1000.snapshot.json)
+  - [Lines 1001–2000](../../data/research/archive/mass-sot-v12-library-parsed-lines-1001-2000.snapshot.json)
+  - [Lines 2001–2810](../../data/research/archive/mass-sot-v12-library-parsed-lines-2001-2810.snapshot.json)
+
+**Read-only snapshot verification:** Contiguous line ranges 1–1000, 1001–2000, 2001–2810; `nextStartLine=null` after final chunk; all **2,810 parsed lines** and all **22 named workbook tabs** represented. The original .xlsx bytes remain in the user's file Library. These are textual representations; no claim of byte-identical workbook backup or formula/style preservation. Historical September 21 10-tab compendium and its 422 evidence records remain separately archived above.
+
+The in-text priest rubric content is not yet deployed. The source evidence is preserved for future review; its actor, form, posture authority and timing must be respected before production integration.

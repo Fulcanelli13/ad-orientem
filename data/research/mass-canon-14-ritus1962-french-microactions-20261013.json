@@ -1,0 +1,2864 @@
+{
+  "schema": "ao-1962-canon-14-rubric-per-cue-audit-v1",
+  "version": "2026-10-13",
+  "status": "1962_DIRECT_LATIN_VERIFIED_FRENCH_PARAPHRASE_RESEARCH_NOT_RUNTIME",
+  "sourceWitnesses": {
+    "latin": "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+    "latinIX": "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+    "frenchBilingual": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+    "officialPrimary": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+  },
+  "scope": {
+    "sourceBlocks": [
+      "AO.SM.B047",
+      "AO.SM.B061"
+    ],
+    "sourceCues": 58,
+    "canonSegmentCount": 14,
+    "form": "LOW_AND_SUNG_SHARED_PRIEST_CEREMONIAL_WHERE_APPLICABLE",
+    "pageNote": "French-Latin bilingual 2007 translation is COPYRIGHTED: only newly written French paraphrases stored"
+  },
+  "segments": [
+    {
+      "id": "AO.CANON.01",
+      "title": "Te igitur",
+      "cueStart": "AO.SM.C0150",
+      "cueEnd": "AO.SM.C0153",
+      "sourceRule": "Ritus VIII",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.02",
+      "title": "Memento, Domine — Living",
+      "cueStart": "AO.SM.C0154",
+      "cueEnd": "AO.SM.C0156",
+      "sourceRule": "Ritus VIII",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.03",
+      "title": "Communicantes",
+      "cueStart": "AO.SM.C0157",
+      "cueEnd": "AO.SM.C0160",
+      "sourceRule": "Ritus VIII",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.04",
+      "title": "Hanc igitur",
+      "cueStart": "AO.SM.C0161",
+      "cueEnd": "AO.SM.C0162",
+      "sourceRule": "Ritus VIII",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.05",
+      "title": "Quam oblationem",
+      "cueStart": "AO.SM.C0163",
+      "cueEnd": "AO.SM.C0167",
+      "sourceRule": "Ritus VIII",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.06",
+      "title": "Consecration of the Sacred Host",
+      "cueStart": "AO.SM.C0168",
+      "cueEnd": "AO.SM.C0174",
+      "sourceRule": "Ritus VIII",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.07",
+      "title": "Consecration of the Chalice",
+      "cueStart": "AO.SM.C0175",
+      "cueEnd": "AO.SM.C0181",
+      "sourceRule": "Ritus VIII",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.08",
+      "title": "Unde et memores",
+      "cueStart": "AO.SM.C0182",
+      "cueEnd": "AO.SM.C0185",
+      "sourceRule": "Ritus IX",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.09",
+      "title": "Supra quae",
+      "cueStart": "AO.SM.C0186",
+      "cueEnd": "AO.SM.C0186",
+      "sourceRule": "Ritus IX",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.10",
+      "title": "Supplices te rogamus",
+      "cueStart": "AO.SM.C0187",
+      "cueEnd": "AO.SM.C0191",
+      "sourceRule": "Ritus IX",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.11",
+      "title": "Memento etiam, Domine — Dead",
+      "cueStart": "AO.SM.C0192",
+      "cueEnd": "AO.SM.C0195",
+      "sourceRule": "Ritus IX",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.12",
+      "title": "Nobis quoque peccatoribus",
+      "cueStart": "AO.SM.C0196",
+      "cueEnd": "AO.SM.C0198",
+      "sourceRule": "Ritus IX",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.13",
+      "title": "Per quem haec omnia",
+      "cueStart": "AO.SM.C0199",
+      "cueEnd": "AO.SM.C0200",
+      "sourceRule": "Ritus IX",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    },
+    {
+      "id": "AO.CANON.14",
+      "title": "Per ipsum · Minor Elevation",
+      "cueStart": "AO.SM.C0201",
+      "cueEnd": "AO.SM.C0207",
+      "sourceRule": "Ritus IX",
+      "status": "SOURCE_STRUCTURE_VERIFIED_IN_CANON_REGISTRY_NOT_UI_RELEASE_CERTIFIED"
+    }
+  ],
+  "cueIndex": [
+    {
+      "cueId": "AO.SM.C0150",
+      "blockId": "AO.SM.B047",
+      "latinBegin": "Te igitur, clementíssime Pater, per Iesum Christum, Fílium tuum, Dóm",
+      "sourceEventIds": [
+        "AO.CANON.R62.001"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0151",
+      "blockId": "AO.SM.B047",
+      "latinBegin": "uti accepta habeas et benedícas,",
+      "sourceEventIds": [
+        "AO.CANON.R62.002"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "blockId": "AO.SM.B047",
+      "latinBegin": "hæc ✠ dona, hæc ✠ múnera, hæc ✠ sancta sacrifícia illibáta.",
+      "sourceEventIds": [
+        "AO.CANON.R62.003"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0153",
+      "blockId": "AO.SM.B047",
+      "latinBegin": "In primis, quæ tibi offérimus pro Ecclésia tua sancta cathólica: qua",
+      "sourceEventIds": [
+        "AO.CANON.R62.004"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0154",
+      "blockId": "AO.SM.B048",
+      "latinBegin": "Meménto, Dómine, famulórum famularúmque tuarum N. et N.",
+      "sourceEventIds": [
+        "AO.CANON.R62.005"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0155",
+      "blockId": "AO.SM.B048",
+      "latinBegin": "[SILENT COMMEMORATION OF THE LIVING]",
+      "sourceEventIds": [
+        "AO.CANON.R62.006"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0156",
+      "blockId": "AO.SM.B048",
+      "latinBegin": "et ómnium circumstántium, quorum tibi fides cógnita est et nota devó",
+      "sourceEventIds": [
+        "AO.CANON.R62.007"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0157",
+      "blockId": "AO.SM.B049",
+      "latinBegin": "Communicántes, et memóriam venerántes, in primis gloriósæ semper Vír",
+      "sourceEventIds": [
+        "AO.CANON.R62.008"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0158",
+      "blockId": "AO.SM.B049",
+      "latinBegin": "Iesu Christi:",
+      "sourceEventIds": [
+        "AO.CANON.R62.009"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0159",
+      "blockId": "AO.SM.B049",
+      "latinBegin": "sed et beati Ioseph, eiusdem Virginis Sponsi, et beatórum Apostolóru",
+      "sourceEventIds": [],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0160",
+      "blockId": "AO.SM.B049",
+      "latinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "sourceEventIds": [
+        "AO.CANON.R62.010"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0161",
+      "blockId": "AO.SM.B050",
+      "latinBegin": "Hanc igitur oblatiónem servitutis nostræ, sed et cunctae famíliæ tuæ",
+      "sourceEventIds": [
+        "AO.CANON.R62.011",
+        "AO.CANON.R62.062"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0162",
+      "blockId": "AO.SM.B050",
+      "latinBegin": "Per Christum, Dóminum nostrum. Amen.",
+      "sourceEventIds": [
+        "AO.CANON.R62.012"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0163",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "Quam oblatiónem tu, Deus, in ómnibus, quaesumus,",
+      "sourceEventIds": [],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "bene ✠ díctam, adscríp ✠ tam, ra ✠ tam, rationábilem, acceptabilémqu",
+      "sourceEventIds": [
+        "AO.CANON.R62.013"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "ut nobis Cor ✠ pus,",
+      "sourceEventIds": [
+        "AO.CANON.R62.014"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "et San ✠ guis fiat",
+      "sourceEventIds": [
+        "AO.CANON.R62.015"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0167",
+      "blockId": "AO.SM.B051",
+      "latinBegin": "dilectíssimi Fílii tui, Dómini nostri Iesu Christi.",
+      "sourceEventIds": [
+        "AO.CANON.R62.016"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0168",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "Qui prídie quam paterétur, accépit panem in sanctas ac venerábiles m",
+      "sourceEventIds": [
+        "AO.CANON.R62.017"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0169",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "elevátis óculis in coelum ad te Deum, Patrem suum omnipoténtem,",
+      "sourceEventIds": [
+        "AO.CANON.R62.018"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0170",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "tibi grátias agens,",
+      "sourceEventIds": [
+        "AO.CANON.R62.019"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "bene ✠ dixit,",
+      "sourceEventIds": [
+        "AO.CANON.R62.020"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0172",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "fregit, dedítque discípulis suis, dicens: Accípite, et manducáte ex ",
+      "sourceEventIds": [
+        "AO.CANON.R62.021"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0173",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "HOC EST ENIM CORPUS MEUM.",
+      "sourceEventIds": [
+        "AO.CANON.R62.022"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "blockId": "AO.SM.B052",
+      "latinBegin": "[GENUFLECTS — ELEVATES THE SACRED HOST — REPLACES IT — GENUFLECTS]",
+      "sourceEventIds": [
+        "AO.CANON.R62.023",
+        "AO.CANON.R62.024",
+        "AO.CANON.R62.025",
+        "AO.CANON.R62.026",
+        "AO.CANON.R62.027"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0175",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "Símili modo postquam coenátum est, accípiens et hunc præclárum Cálic",
+      "sourceEventIds": [
+        "AO.CANON.R62.028"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0176",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "item tibi grátias agens,",
+      "sourceEventIds": [
+        "AO.CANON.R62.029"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "bene ✠ dixit,",
+      "sourceEventIds": [
+        "AO.CANON.R62.030"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0178",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "dedítque discípulis suis, dicens: Accípite, et bíbite ex eo omnes.",
+      "sourceEventIds": [
+        "AO.CANON.R62.031"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "HIC EST ENIM CALIX SÁNGUINIS MEI, NOVI ET ÆTÉRNI TESTAMÉNTI: MYSTÉRI",
+      "sourceEventIds": [
+        "AO.CANON.R62.032"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0180",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "Hæc quotiescúmque fecéritis, in mei memóriam faciétis.",
+      "sourceEventIds": [
+        "AO.CANON.R62.033"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "blockId": "AO.SM.B053",
+      "latinBegin": "[GENUFLECTS — ELEVATES THE PRECIOUS BLOOD — REPLACES/COVERS THE CHAL",
+      "sourceEventIds": [
+        "AO.CANON.R62.034",
+        "AO.CANON.R62.035"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0182",
+      "blockId": "AO.SM.B054",
+      "latinBegin": "Unde et mémores, Dómine, nos servi tui, sed et plebs tua sancta, eiu",
+      "sourceEventIds": [
+        "AO.CANON.R62.036"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0183",
+      "blockId": "AO.SM.B054",
+      "latinBegin": "offérimus præcláræ maiestáti tuæ de tuis donis ac datis,",
+      "sourceEventIds": [
+        "AO.CANON.R62.037"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "blockId": "AO.SM.B054",
+      "latinBegin": "hóstiam ✠ puram, hóstiam ✠ sanctam, hóstiam ✠ immaculátam,",
+      "sourceEventIds": [
+        "AO.CANON.R62.038"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "blockId": "AO.SM.B054",
+      "latinBegin": "Panem ✠ sanctum vitæ ætérnæ, et Calicem ✠ salútis perpétuæ.",
+      "sourceEventIds": [
+        "AO.CANON.R62.039"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0186",
+      "blockId": "AO.SM.B055",
+      "latinBegin": "Supra quæ propítio ac seréno vultu respícere dignéris: et accépta ha",
+      "sourceEventIds": [
+        "AO.CANON.R62.040"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "Súpplices te rogámus, omnípotens Deus: iube hæc perférri per manus s",
+      "sourceEventIds": [
+        "AO.CANON.R62.041"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "ut, quotquot ex hac altáris participatióne sacrosánctum Fílii tui",
+      "sourceEventIds": [
+        "AO.CANON.R62.042"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "Cor ✠ pus, et Sán ✠ guinem sumpsérimus,",
+      "sourceEventIds": [
+        "AO.CANON.R62.043"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "omni benedictióne coelésti et grátia repleámur.",
+      "sourceEventIds": [
+        "AO.CANON.R62.044"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0191",
+      "blockId": "AO.SM.B056",
+      "latinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "sourceEventIds": [
+        "AO.CANON.R62.045"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0192",
+      "blockId": "AO.SM.B057",
+      "latinBegin": "Meménto étiam, Dómine, famulórum famularúmque tuárum N. et N., qui n",
+      "sourceEventIds": [
+        "AO.CANON.R62.046"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0193",
+      "blockId": "AO.SM.B057",
+      "latinBegin": "[SILENT COMMEMORATION OF THE DEAD]",
+      "sourceEventIds": [
+        "AO.CANON.R62.047"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0194",
+      "blockId": "AO.SM.B057",
+      "latinBegin": "Ipsis, Dómine, et ómnibus in Christo quiescéntibus locum refrigérii,",
+      "sourceEventIds": [
+        "AO.CANON.R62.048"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0195",
+      "blockId": "AO.SM.B057",
+      "latinBegin": "Per eúndem Christum, Dóminum nostrum. Amen.",
+      "sourceEventIds": [
+        "AO.CANON.R62.049"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "blockId": "AO.SM.B058",
+      "latinBegin": "Nobis quoque peccatóribus",
+      "sourceEventIds": [
+        "AO.CANON.R62.050"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0197",
+      "blockId": "AO.SM.B058",
+      "latinBegin": "fámulis tuis, de multitúdine miseratiónum tuárum sperántibus, partem",
+      "sourceEventIds": [
+        "AO.CANON.R62.051"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0198",
+      "blockId": "AO.SM.B058",
+      "latinBegin": "Per Christum, Dóminum nostrum.",
+      "sourceEventIds": [
+        "AO.CANON.R62.052"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0199",
+      "blockId": "AO.SM.B059",
+      "latinBegin": "Per quem hæc ómnia, Dómine, semper bona creas,",
+      "sourceEventIds": [
+        "AO.CANON.R62.053"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0200",
+      "blockId": "AO.SM.B059",
+      "latinBegin": "sancti ✠ ficas, viví ✠ ficas, bene ✠ dícis et præstas nobis.",
+      "sourceEventIds": [
+        "AO.CANON.R62.054"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "[UNCOVERS CHALICE — GENUFLECTS — TAKES SACRED HOST]",
+      "sourceEventIds": [
+        "AO.CANON.R62.055"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0202",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "Per ip ✠ sum, et cum ip ✠ so, et in ip ✠ so,",
+      "sourceEventIds": [
+        "AO.CANON.R62.056"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0203",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "est tibi Deo Patri ✠ omnipotenti, in unitáte Spíritus ✠ Sancti,",
+      "sourceEventIds": [
+        "AO.CANON.R62.057"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "omnis honor, et glória.",
+      "sourceEventIds": [
+        "AO.CANON.R62.058"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "blockId": "AO.SM.B060",
+      "latinBegin": "[REPLACES THE HOST — COVERS THE CHALICE — GENUFLECTS]",
+      "sourceEventIds": [
+        "AO.CANON.R62.059"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0206",
+      "blockId": "AO.SM.B061",
+      "latinBegin": "℣. Per ómnia sǽcula sæculórum.",
+      "sourceEventIds": [
+        "AO.CANON.R62.060"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    },
+    {
+      "cueId": "AO.SM.C0207",
+      "blockId": "AO.SM.B061",
+      "latinBegin": "℟. Amen.",
+      "sourceEventIds": [
+        "AO.CANON.R62.061"
+      ],
+      "priestStationSource": {
+        "station": "ALTAR_CENTER",
+        "facing": "LITURGICAL_EAST",
+        "basis": "PRIEST_CANON_NORMAL_STATION",
+        "source": "Ritus VIII.1 and IX.1",
+        "clock": "PRIEST_ACTUAL_NOT_PUBLIC_READER_SCROLL",
+        "condition": "NORMAL_CELEBRANT_AT_ALTAR",
+        "exceptions": "Solemn ministers, route states, exceptional form/branch independently modeled"
+      },
+      "faithfulDefault": {
+        "policy": "FOLLOW_CONGREGATION_OBSERVATIONAL",
+        "universal1962PewMandate": false,
+        "meaning": "No new automatic posture mandate inferred for this cue"
+      },
+      "review": "EXACT_CUE_ID_COVERED_BY_SOURCE_MAP_NOT_RUNTIME_CERTIFIED"
+    }
+  ],
+  "microActions": [
+    {
+      "id": "AO.CANON.R62.001",
+      "cueId": "AO.SM.C0150",
+      "actor": "PRIEST",
+      "actionKey": "BOW_PROFOUND",
+      "inTextPriestRubricFrDraft": "Au début du Te igitur, s'incline profondément, mains jointes appuyées à l'autel, voix secrète.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Te igitur",
+      "ritusLocator": "VIII.1",
+      "facets": [
+        "POSTURE",
+        "VOICE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.002",
+      "cueId": "AO.SM.C0151",
+      "actor": "PRIEST",
+      "actionKey": "ALTAR_KISS",
+      "inTextPriestRubricFrDraft": "Baise l'autel au centre puis se redresse, les mains jointes devant la poitrine.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "uti accepta habeas",
+      "ritusLocator": "VIII.1",
+      "facets": [
+        "ACTION",
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.003",
+      "cueId": "AO.SM.C0152",
+      "actor": "PRIEST",
+      "actionKey": "THREE_CROSSES",
+      "inTextPriestRubricFrDraft": "Trace trois signes de croix sur l'hostie et le calice ensemble.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "haec dona / haec munera / haec sancta sacrificia",
+      "ritusLocator": "VIII.1",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.004",
+      "cueId": "AO.SM.C0153",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_EXTEND",
+      "inTextPriestRubricFrDraft": "Poursuit, les mains étendues devant la poitrine; noms du pape et de l'ordinaire selon les rubriques.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "In primis",
+      "ritusLocator": "VIII.1–2",
+      "facets": [
+        "POSTURE",
+        "BRANCH"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.005",
+      "cueId": "AO.SM.C0154",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_JOINED_LIFT",
+      "inTextPriestRubricFrDraft": "Joint et élève les mains vers le visage ou la poitrine, incline légèrement la tête.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Memento",
+      "ritusLocator": "VIII.3",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.006",
+      "cueId": "AO.SM.C0155",
+      "actor": "PRIEST",
+      "actionKey": "PERSONAL_MEMORIAL",
+      "inTextPriestRubricFrDraft": "Reste immobile un bref temps et fait mémoire des vivants, mentalement ou en nommant certains à voix secrète.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Memento vivorum",
+      "ritusLocator": "VIII.3",
+      "facets": [
+        "SILENT_ACTION"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.007",
+      "cueId": "AO.SM.C0156",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_EXTEND",
+      "inTextPriestRubricFrDraft": "Abaisse et étend les mains pour poursuivre le souvenir des assistants.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "et omnium circumstantium",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.008",
+      "cueId": "AO.SM.C0157",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_EXTEND_PERSIST",
+      "inTextPriestRubricFrDraft": "Poursuit le Communicantes debout, mains étendues; certaines fêtes ajoutent un texte propre.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Communicantes",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "POSTURE",
+        "BRANCH"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.009",
+      "cueId": "AO.SM.C0158",
+      "actor": "PRIEST",
+      "actionKey": "HEAD_BOW",
+      "inTextPriestRubricFrDraft": "Incline la tête vers la Croix au nom de Jésus-Christ.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Iesu Christi",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.010",
+      "cueId": "AO.SM.C0160",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_JOIN",
+      "inTextPriestRubricFrDraft": "Joint les mains à la conclusion du Communicantes.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Per eundem",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.011",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_OVER_OBLATIONS",
+      "inTextPriestRubricFrDraft": "Étend ensemble les mains au-dessus du calice et de l'hostie, paumes tournées vers les oblats.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Hanc igitur oblationem",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.012",
+      "cueId": "AO.SM.C0162",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_JOIN",
+      "inTextPriestRubricFrDraft": "Joint les mains à la fin du Hanc igitur.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Per Christum Dominum nostrum",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.013",
+      "cueId": "AO.SM.C0164",
+      "actor": "PRIEST",
+      "actionKey": "THREE_CROSSES",
+      "inTextPriestRubricFrDraft": "Trace trois croix conjointement sur l'hostie et le calice.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "benedictam / adscriptam / ratam",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.014",
+      "cueId": "AO.SM.C0165",
+      "actor": "PRIEST",
+      "actionKey": "HOST_CROSS",
+      "inTextPriestRubricFrDraft": "Trace une croix sur l'hostie seule.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Corpus",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.015",
+      "cueId": "AO.SM.C0166",
+      "actor": "PRIEST",
+      "actionKey": "CHALICE_CROSS",
+      "inTextPriestRubricFrDraft": "Trace une croix sur le calice seul.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Sanguis",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.016",
+      "cueId": "AO.SM.C0167",
+      "actor": "PRIEST",
+      "actionKey": "JOIN_AND_BOW",
+      "inTextPriestRubricFrDraft": "Élève puis joint les mains devant la poitrine; incline la tête vers la Croix.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "dilectissimi Filii tui",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "POSTURE",
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.017",
+      "cueId": "AO.SM.C0168",
+      "actor": "PRIEST",
+      "actionKey": "HOST_IN_HANDS",
+      "inTextPriestRubricFrDraft": "Prend l'hostie entre les pouces et index des deux mains, au milieu de l'autel.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Qui pridie / accepit panem",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "ACTION"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.018",
+      "cueId": "AO.SM.C0169",
+      "actor": "PRIEST",
+      "actionKey": "EYES_UP",
+      "inTextPriestRubricFrDraft": "Lève les yeux vers le ciel et les abaisse aussitôt.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "elevatis oculis",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.019",
+      "cueId": "AO.SM.C0170",
+      "actor": "PRIEST",
+      "actionKey": "HEAD_BOW",
+      "inTextPriestRubricFrDraft": "Incline légèrement la tête.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "tibi gratias agens",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.020",
+      "cueId": "AO.SM.C0171",
+      "actor": "PRIEST",
+      "actionKey": "HOST_CROSS",
+      "inTextPriestRubricFrDraft": "Tenant l'hostie de la main gauche, la signe de la droite.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "benedixit",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.021",
+      "cueId": "AO.SM.C0172",
+      "actor": "PRIEST",
+      "actionKey": "NO_FRACTION_YET",
+      "inTextPriestRubricFrDraft": "Poursuit le récit, tenant l'hostie: le mot fregit n'autorise pas à montrer une fraction physique à cet instant.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "fregit",
+      "ritusLocator": "VIII.4",
+      "facets": [
+        "RUBRIC_NEGATIVE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.022",
+      "cueId": "AO.SM.C0173",
+      "actor": "PRIEST",
+      "actionKey": "CONSECRATION_HOST",
+      "inTextPriestRubricFrDraft": "Avant-bras/coudes sur l'autel, prononce distinctement et avec révérence les paroles sur l'hostie; ce sont les paroles consacratoires, non l'élévation.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Hoc est enim Corpus meum",
+      "ritusLocator": "VIII.5",
+      "facets": [
+        "SACRAMENTAL_WORDS"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.023",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "actionKey": "HOST_FIRST_GENUFLECTION",
+      "inTextPriestRubricFrDraft": "Adore immédiatement l'Hostie consacrée en génuflexion.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "after words of Host Consecration",
+      "ritusLocator": "VIII.5–6",
+      "facets": [
+        "GESTURE",
+        "SEQUENCE_1"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.024",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "actionKey": "HOST_MAJOR_ELEVATION",
+      "inTextPriestRubricFrDraft": "Se relève, élève l'Hostie pour l'adoration des fidèles, yeux fixés sur elle.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Host elevation",
+      "ritusLocator": "VIII.5–6",
+      "facets": [
+        "GESTURE",
+        "SEQUENCE_2"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.025",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "actionKey": "HOST_REPLACE_AND_GENUFLECT",
+      "inTextPriestRubricFrDraft": "Repose l'Hostie sur le corporal et fait une seconde génuflexion.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Host replacement",
+      "ritusLocator": "VIII.5–6",
+      "facets": [
+        "GESTURE",
+        "SEQUENCE_3"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.026",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "actionKey": "THUMB_INDEX_DISCIPLINE",
+      "inTextPriestRubricFrDraft": "Après la consécration de l'Hostie, garde pouces et index joints sauf pour toucher/manier une Hostie consacrée, jusqu'à l'ablution.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "after Host Consecration",
+      "ritusLocator": "VIII.5",
+      "facets": [
+        "PERSISTENT_HAND_STATE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.027",
+      "cueId": "AO.SM.C0174",
+      "actor": "SERVER",
+      "actionKey": "BELL_AT_ELEVATION",
+      "inTextPriestRubricFrDraft": null,
+      "secondaryActionFrDraft": "À l'élévation de l'Hostie, le servant sonne trois fois ou continûment selon le mode prévu; le prêtre ne sonne pas.",
+      "latinTrigger": "Host elevation",
+      "ritusLocator": "VIII.6",
+      "facets": [
+        "MINISTER_ACTION"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "SERVER_OR_MINISTER_ROLE"
+    },
+    {
+      "id": "AO.CANON.R62.028",
+      "cueId": "AO.SM.C0175",
+      "actor": "PRIEST",
+      "actionKey": "CHALICE_PREPARE",
+      "inTextPriestRubricFrDraft": "Découvre le calice, l'élève très légèrement puis le repose au début du récit.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Simili modo",
+      "ritusLocator": "VIII.7",
+      "facets": [
+        "ACTION"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.029",
+      "cueId": "AO.SM.C0176",
+      "actor": "PRIEST",
+      "actionKey": "HEAD_BOW",
+      "inTextPriestRubricFrDraft": "Incline la tête à l'action de grâces.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "item tibi gratias agens",
+      "ritusLocator": "VIII.7",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.030",
+      "cueId": "AO.SM.C0177",
+      "actor": "PRIEST",
+      "actionKey": "CHALICE_CROSS",
+      "inTextPriestRubricFrDraft": "Trace une croix de la main droite au-dessus du calice qu'il tient de la gauche.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "benedixit",
+      "ritusLocator": "VIII.7",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.031",
+      "cueId": "AO.SM.C0178",
+      "actor": "PRIEST",
+      "actionKey": "HOLD_CHALICE",
+      "inTextPriestRubricFrDraft": "Tient le calice avec les deux mains, au nœud et au pied, en préparant les paroles consacratoires.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Accipite et bibite",
+      "ritusLocator": "VIII.7",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.032",
+      "cueId": "AO.SM.C0179",
+      "actor": "PRIEST",
+      "actionKey": "CONSECRATION_CHALICE",
+      "inTextPriestRubricFrDraft": "Appuyé sur l'autel, prononce les paroles consacratoires du calice avec attention et continuité.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Hic est enim Calix Sanguinis mei",
+      "ritusLocator": "VIII.7",
+      "facets": [
+        "SACRAMENTAL_WORDS"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.033",
+      "cueId": "AO.SM.C0180",
+      "actor": "PRIEST",
+      "actionKey": "REPLACE_CHALICE_AND_GENFLECT",
+      "inTextPriestRubricFrDraft": "Repose le calice, dit secrètement l'ordre de commémoration et adore par une première génuflexion.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Haec quotiescumque feceritis",
+      "ritusLocator": "VIII.7",
+      "facets": [
+        "SEQUENCE_1",
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.034",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "actionKey": "CHALICE_MAJOR_ELEVATION",
+      "inTextPriestRubricFrDraft": "Élève le calice découvert pour l'adoration des fidèles; le repose, le couvre et génuflecte de nouveau.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Chalice elevation",
+      "ritusLocator": "VIII.7",
+      "facets": [
+        "SEQUENCE_2",
+        "SEQUENCE_3"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.035",
+      "cueId": "AO.SM.C0181",
+      "actor": "SERVER",
+      "actionKey": "BELL_AT_CHALICE_ELEVATION",
+      "inTextPriestRubricFrDraft": null,
+      "secondaryActionFrDraft": "Le servant sonne à l'élévation du calice, trois fois ou en continu selon l'option prescrite.",
+      "latinTrigger": "Chalice elevation",
+      "ritusLocator": "VIII.6–7",
+      "facets": [
+        "MINISTER_ACTION"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "SERVER_OR_MINISTER_ROLE"
+    },
+    {
+      "id": "AO.CANON.R62.036",
+      "cueId": "AO.SM.C0182",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_EXTEND",
+      "inTextPriestRubricFrDraft": "Debout, mains étendues devant la poitrine, poursuit le Canon à voix secrète.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Unde et memores",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "POSTURE",
+        "VOICE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.037",
+      "cueId": "AO.SM.C0183",
+      "actor": "PRIEST",
+      "actionKey": "JOIN_HANDS",
+      "inTextPriestRubricFrDraft": "Joint les mains.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "de tuis donis ac datis",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.038",
+      "cueId": "AO.SM.C0184",
+      "actor": "PRIEST",
+      "actionKey": "THREE_CROSSES",
+      "inTextPriestRubricFrDraft": "Trace trois croix sur les deux Espèces consacrées ensemble.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Hostiam puram / sanctam / immaculatam",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.039",
+      "cueId": "AO.SM.C0185",
+      "actor": "PRIEST",
+      "actionKey": "HOST_THEN_CHALICE_CROSS",
+      "inTextPriestRubricFrDraft": "Trace une croix sur l'Hostie seule puis une sur le calice seul.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Panem sanctum / Calicem salutis",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.040",
+      "cueId": "AO.SM.C0186",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_EXTEND_PERSIST",
+      "inTextPriestRubricFrDraft": "Poursuit Supra quae, mains étendues; aucun geste distinct n'est prescrit ici par Ritus IX.1.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Supra quae propitio",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.041",
+      "cueId": "AO.SM.C0187",
+      "actor": "PRIEST",
+      "actionKey": "PROFOUND_BOW",
+      "inTextPriestRubricFrDraft": "S'incline profondément au centre de l'autel, mains jointes appuyées.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Supplices te rogamus",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.042",
+      "cueId": "AO.SM.C0188",
+      "actor": "PRIEST",
+      "actionKey": "ALTAR_KISS",
+      "inTextPriestRubricFrDraft": "Baise l'autel, mains de part et d'autre sur le corporal.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "ex hac altaris participatione",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.043",
+      "cueId": "AO.SM.C0189",
+      "actor": "PRIEST",
+      "actionKey": "HOST_AND_CHALICE_CROSS",
+      "inTextPriestRubricFrDraft": "Trace séparément une croix sur l'Hostie puis une sur le calice.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Corpus / Sanguinem",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.044",
+      "cueId": "AO.SM.C0190",
+      "actor": "PRIEST",
+      "actionKey": "SIGN_SELF",
+      "inTextPriestRubricFrDraft": "Se signe du front à la poitrine.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "omni benedictione caelesti",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.045",
+      "cueId": "AO.SM.C0191",
+      "actor": "PRIEST",
+      "actionKey": "JOIN_HANDS",
+      "inTextPriestRubricFrDraft": "Joint les mains à la conclusion.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Per eundem",
+      "ritusLocator": "IX.1",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.046",
+      "cueId": "AO.SM.C0192",
+      "actor": "PRIEST",
+      "actionKey": "EYES_ON_SACRAMENT_AND_HANDS",
+      "inTextPriestRubricFrDraft": "Élève les mains jointes devant son visage, les yeux fixés sur le Sacrement.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Memento etiam",
+      "ritusLocator": "IX.2",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.047",
+      "cueId": "AO.SM.C0193",
+      "actor": "PRIEST",
+      "actionKey": "COMMEMORATE_DEAD",
+      "inTextPriestRubricFrDraft": "Fait mémoire des défunts à sa convenance, comme au Memento des vivants.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Memento defunctorum",
+      "ritusLocator": "IX.2",
+      "facets": [
+        "SILENT_ACTION"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.048",
+      "cueId": "AO.SM.C0194",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_EXTEND",
+      "inTextPriestRubricFrDraft": "Reprend la prière les mains étendues.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Ipsis Domine",
+      "ritusLocator": "IX.2",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.049",
+      "cueId": "AO.SM.C0195",
+      "actor": "PRIEST",
+      "actionKey": "JOIN_AND_BOW",
+      "inTextPriestRubricFrDraft": "Joint les mains et incline la tête à la conclusion.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Per eundem",
+      "ritusLocator": "IX.2",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.050",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "actionKey": "VOICE_UP_CHEST_STRIKE",
+      "inTextPriestRubricFrDraft": "Élève quelque peu la voix à Nobis quoque et frappe une fois sa poitrine de la main droite.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Nobis quoque peccatoribus",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "VOICE",
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.051",
+      "cueId": "AO.SM.C0197",
+      "actor": "PRIEST",
+      "actionKey": "VOICE_SECRET",
+      "inTextPriestRubricFrDraft": "Poursuit la prière secrètement, les mains étendues.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "famulis tuis",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "VOICE",
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.052",
+      "cueId": "AO.SM.C0198",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_JOIN",
+      "inTextPriestRubricFrDraft": "Joint les mains à Per Christum.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Per Christum",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.053",
+      "cueId": "AO.SM.C0199",
+      "actor": "PRIEST",
+      "actionKey": "HANDS_JOIN",
+      "inTextPriestRubricFrDraft": "Joint les mains devant la poitrine.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Per quem haec omnia",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "POSTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.054",
+      "cueId": "AO.SM.C0200",
+      "actor": "PRIEST",
+      "actionKey": "THREE_CROSSES",
+      "inTextPriestRubricFrDraft": "Trace trois croix sur les deux Espèces.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "sanctificas / vivificas / benedicis",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.055",
+      "cueId": "AO.SM.C0201",
+      "actor": "PRIEST",
+      "actionKey": "GENUFLECT_AND_TAKE_HOST",
+      "inTextPriestRubricFrDraft": "Découvre le calice, génuflecte puis prend l'Hostie consacrée; le diacre n'aide que dans la Messe solennelle.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "prepare Per ipsum",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "ACTION",
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "SOLEMN_DEACON_SEPARATE"
+    },
+    {
+      "id": "AO.CANON.R62.056",
+      "cueId": "AO.SM.C0202",
+      "actor": "PRIEST",
+      "actionKey": "THREE_HOST_CROSSES_OVER_CHALICE",
+      "inTextPriestRubricFrDraft": "Avec l'Hostie, trace trois croix d'un bord à l'autre au-dessus du calice.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Per ipsum / cum ipso / in ipso",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.057",
+      "cueId": "AO.SM.C0203",
+      "actor": "PRIEST",
+      "actionKey": "TWO_HOST_CROSSES",
+      "inTextPriestRubricFrDraft": "Trace deux croix avec l'Hostie entre le calice et la poitrine.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Deo Patri / Spiritus Sancti",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.058",
+      "cueId": "AO.SM.C0204",
+      "actor": "PRIEST",
+      "actionKey": "MINOR_ELEVATION",
+      "inTextPriestRubricFrDraft": "Élève légèrement l'Hostie et le calice ensemble; il ne s'agit pas des grandes ostensions.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "omnis honor et gloria",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.059",
+      "cueId": "AO.SM.C0205",
+      "actor": "PRIEST",
+      "actionKey": "REPLACE_COVER_GENUFLECT",
+      "inTextPriestRubricFrDraft": "Repose l'Hostie et le calice, couvre ce dernier, puis génuflecte.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "after minor elevation",
+      "ritusLocator": "IX.3",
+      "facets": [
+        "GESTURE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.060",
+      "cueId": "AO.SM.C0206",
+      "actor": "PRIEST",
+      "actionKey": "AUDIBLE_PER_OMNIA",
+      "inTextPriestRubricFrDraft": "Au début de la conclusion du Canon, prononce Per omnia saecula saeculorum intelligiblement.",
+      "secondaryActionFrDraft": null,
+      "latinTrigger": "Per omnia saecula saeculorum",
+      "ritusLocator": "X.1",
+      "facets": [
+        "VOICE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "ORDINARY_CELEBRANT"
+    },
+    {
+      "id": "AO.CANON.R62.061",
+      "cueId": "AO.SM.C0207",
+      "actor": "SERVER",
+      "actionKey": "AMEN_RESPONSE",
+      "inTextPriestRubricFrDraft": null,
+      "secondaryActionFrDraft": "Le ministre répond Amen à la conclusion du Canon; l'affectation exacte de la réponse dépend de la forme.",
+      "latinTrigger": "Amen",
+      "ritusLocator": "X.1",
+      "facets": [
+        "MINISTER_RESPONSE"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "PRIEST_PRIVATE_CLOCK_INDEPENDENT_OF_SCHOLA",
+      "formQualification": "SERVER_OR_MINISTER_ROLE"
+    },
+    {
+      "id": "AO.CANON.R62.062",
+      "cueId": "AO.SM.C0161",
+      "actor": "SERVER",
+      "actionKey": "BELL_BEFORE_CONSECRATION",
+      "inTextPriestRubricFrDraft": null,
+      "secondaryActionFrDraft": "Peu avant les paroles consécratoires, le servant avertit les fidèles par un coup de sonnette; Hanc igitur est un point d'ancrage pratique, pas une synchronisation imposée par le texte du Ritus.",
+      "latinTrigger": "paulo ante Consecrationem",
+      "ritusLocator": "VIII.6",
+      "facets": [
+        "MINISTER_ACTION",
+        "TIMING_CONDITIONAL"
+      ],
+      "status": "LATIN_RITUS_DIRECT_TEXT_CHECKED_FRENCH_EDITORIAL_PARAPHRASE_NOT_RUNTIME_CERTIFIED",
+      "authorityClass": "ROMAN_MISSAL_1962",
+      "sources": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sungVisibility": "SERVER_ACTION_DEPENDS_ON_ACTUAL_CELEBRANT_TIMING",
+      "formQualification": "SERVER_ROLE_TIMING_NOT_STRICT_HANC_IGITUR_SENTENCE"
+    }
+  ],
+  "invariants": [
+    "Do not substitute the faithful's current reading position for actual priest clock",
+    "Historical participation profile never upgraded to priest rubrics",
+    "1962 priestly source dictates gesture/voice, but Roman law does not dictate a single pew posture for every faithful person",
+    "No mass source text, source cue or current LIVE card changed",
+    "Use conditional rubrics where text itself omits parts or includes variant prayers"
+  ],
+  "notes": [
+    "At Hanc igitur a warning bell is historically common, but Ritus VIII.6 says paulo ante Consecrationem, not at a mandatory fixed word. Keep relative-priest-clock event, not a fake exact cue synchronization."
+  ]
+}
