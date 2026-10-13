@@ -94,6 +94,13 @@ def check_one(item, queue, existing):
         raise ValueError("File-level Commons metadata does not confirm PD/CC0: "+license_name)
     if restrictions and not re.search(r"none|no restrictions", restrictions, flags=re.I):
         raise ValueError("File-level restrictions need human review: "+restrictions[:100])
+    if (int(info.get("width") or 0), int(info.get("height") or 0)) != (
+        item["expectedWidth"], item["expectedHeight"]
+    ):
+        raise ValueError("Commons exact original pixel dimensions changed; re-review file identity")
+    pinned_sha1 = item.get("expectedCommonsSha1")
+    if pinned_sha1 and str(info.get("sha1") or "").lower() != pinned_sha1.lower():
+        raise ValueError("Commons SHA1 differs from independent previously published hash pin")
     if max(int(info.get("width") or 0),int(info.get("height") or 0)) < item["minLongSide"]:
         raise ValueError("Live source too low-resolution")
     body = fetch(uri)
@@ -119,6 +126,9 @@ def check_one(item, queue, existing):
         "commonsFileTitle":page["title"],"commonsPage":item["commonsPage"],
         "fileUrl":uri,"commonsLicenseName":license_name,
         "commonsLicenseUrl":licence_url,
+        "expectedOriginalDimensions":[item["expectedWidth"],item["expectedHeight"]],
+        "expectedCommonsSha1":pinned_sha1,
+        "museumReproductionRightsStatus":"MUSEUM_PHOTOGRAPHER_AND_EU_COMMERCIAL_RIGHTS_REVIEW_HOLD",
         "rights":"COMMONS_PD_DECLARED_US_JURISDICTION_AND_PROVIDER_COMMERCIAL_REVIEW_PENDING",
         "originalSha1Commons":sha1,"originalSha256":sha256,
         "width":w,"height":h,"bytes":len(body),
@@ -128,8 +138,11 @@ def check_one(item, queue, existing):
 
 def main():
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
-    if len(manifest["items"])!=6:
-        raise ValueError("Expected exactly six explicit sources")
+    if len(manifest["items"])!=6 or manifest.get("schema") != "AO_SACRED_ART_COMMONS_EXACT_SOURCE_ACQUISITION_6_V2":
+        raise ValueError("Expected six V2 pin-protected source originals")
+    for item in manifest["items"]:
+        if not all(item.get(k) for k in ("expectedWidth","expectedHeight","expectedPhysicalSourceOrigin")):
+            raise ValueError("Missing immutable expected original JPEG identity pin")
     master=json.loads((ROOT/manifest["master"]).read_text(encoding="utf-8"))
     queue={x["leadId"]:x for x in master["queue"]}
     existing=json.loads((ROOT/manifest["registry"]).read_text(encoding="utf-8"))["artworks"]
