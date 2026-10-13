@@ -21,15 +21,15 @@
     "acquiredSourceCoverage": 27,
     "remainingAfterAcquired": 107,
     "alreadyRegisteredExactPaintingSourceSubjects": 29,
-    "additionalResearchLeadSubjects": 49,
+    "additionalResearchLeadSubjects": 54,
     "withPreviousUnapprovedOptionOnly": 14,
-    "withNoRecordedSourceOrOlderOption": 15,
+    "withNoRecordedSourceOrOlderOption": 10,
     "visualInspectedSourceLeadSubjects": 14,
     "visuallyInspectedUnacquiredOriginalCandidates": 13,
     "priorityPaintingOriginalCandidates": 9,
     "chosen101Unchanged": true,
-    "newInstitutionalSourceWaveSubjectCount": 22,
-    "newInstitutionalSourceWaveCandidateCount": 24
+    "newInstitutionalSourceWaveSubjectCount": 27,
+    "newInstitutionalSourceWaveCandidateCount": 29
   },
   "subjects": [
     {
@@ -790,14 +790,30 @@
       "category": "Calendar saints",
       "priority": "P0",
       "scriptureOrContext": "Named Doctor: presence and rank in the 1962 Calendar must be independently checked. Some received the Doctor title after 1962.",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-sadeler-ephrem",
+          "sourceUrl": "https://parismuseescollections.paris.fr/fr/petit-palais/oeuvres/ephrem",
+          "artist": "Jan Sadeler I, after Maerten de Vos",
+          "title": "Ephrem",
+          "medium": "engraving",
+          "sourceInstitution": "Petit Palais, Paris, GDUT10493",
+          "sceneMatch": "DIRECT_SAINT_GRAPHIC",
+          "matchNotes": "Sixteenth-century print of Saint Ephrem; not oil painting. Calendar status and aesthetic suitability remain separate.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-museum-sources"
     },
     {
       "subjectId": "SNT-OT-03",
@@ -1167,14 +1183,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Genesis 21:1–7",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-allegrini-isaac",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl020102511",
+          "artist": "Francesco Allegrini",
+          "title": "Birth of Isaac, Isaac and Ishmael, Hagar and Ishmael",
+          "medium": "pen drawing",
+          "sourceInstitution": "Musée du Louvre INV 12367",
+          "sceneMatch": "COMPOSITE_DIRECT_EPISODE",
+          "matchNotes": "Small multi-scene drawing includes Isaac's birth; not painting, not suitable as sole Nativity-like scene without visual review.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-museum-sources"
     },
     {
       "subjectId": "BIB-PA09",
@@ -1262,14 +1294,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Exodus 7:14–25",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-tissot-plague-blood",
+          "sourceUrl": "https://collections.thejewishmuseum.org/?page=199",
+          "artist": "James Jacques Joseph Tissot",
+          "title": "Water is Changed Into Blood",
+          "medium": "gouache painting (medium to verify)",
+          "sourceInstitution": "Jewish Museum, New York (collection listing)",
+          "sceneMatch": "EXACT_SUBJECT_LISTING",
+          "matchNotes": "Official museum collection listing confirms exact title, c.1896–1902; object-specific museum URL not yet extracted. First plague only.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-museum-sources"
     },
     {
       "subjectId": "BIB-EX04",
@@ -1748,14 +1796,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Isaiah 6:1–13",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-west-isaiah",
+          "sourceUrl": "https://spencerart.ku.edu/art/collections-online/object/9645",
+          "artist": "Benjamin West",
+          "title": "The Inspiration of the Prophet Isaiah",
+          "medium": "oil on canvas",
+          "sourceInstitution": "Spencer Museum of Art, 1955.0011",
+          "sceneMatch": "EXACT_SUBJECT",
+          "matchNotes": "1782 study, 83.8 x 34.3 cm; angel purifying prophet's lips Isaiah 6:6–7. Not yet reviewed for artistic quality.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-museum-sources"
     },
     {
       "subjectId": "BIB-IS10",
@@ -2581,14 +2645,30 @@
       "category": "Bible Atlas",
       "priority": "P1",
       "scriptureOrContext": "Acts 18:1–18",
-      "status": "NO_VERIFIED_SOURCE_LEAD_REGISTERED",
+      "status": "EXISTING_DOCUMENTED_RESEARCH_LEADS",
       "previousCandidateArtworkIds": [],
       "visualSourceOptions": [],
-      "nonacquiredNewResearchLeads": [],
+      "nonacquiredNewResearchLeads": [
+        {
+          "artworkId": "ART-research-20261013-sadeler-paul-corinth",
+          "sourceUrl": "https://www.boijmans.nl/en/collection/artworks/31434/saint-paul-at-corinth-with-the-sailmakers-aquila-and-priscilla",
+          "artist": "Hans Sadeler (publisher), after Joos van Winghe",
+          "title": "Saint Paul at Corinth with the Sailmakers Aquila and Priscilla",
+          "medium": "engraving",
+          "sourceInstitution": "Museum Boijmans Van Beuningen BdH 14948 (PK)",
+          "sceneMatch": "EXACT_SUBJECT_GRAPHIC",
+          "matchNotes": "Engraving c.1580–1600, not oil painting. Acts 18 with Aquila and Priscilla.",
+          "matchedImageExamined": false,
+          "artisticTier": "UNAPPROVED_SOURCE_RESEARCH",
+          "acquiredOriginalSha256": null,
+          "decision": "UNAPPROVED_RESEARCH_ONLY"
+        }
+      ],
       "hasActuallyImageInspectedResearchLead": false,
       "acquiredSpecificMatch": false,
       "artisticAcceptance": false,
-      "publicationAcceptance": false
+      "publicationAcceptance": false,
+      "researchWave": "2026-10-13-museum-sources"
     },
     {
       "subjectId": "BIB-A16",
@@ -2790,5 +2870,5 @@
     }
   ],
   "updated": "2026-10-13",
-  "recentSourceWave": "22 original zero-lead subjects gained 24 museum-linked research candidates; 15 zero-lead subjects remain. No new acquisitions, artistic approvals or changes to selected 101."
+  "recentSourceWave": "27 original zero-lead subjects have research candidates; 10 remain without leads, no artistic approvals."
 }
