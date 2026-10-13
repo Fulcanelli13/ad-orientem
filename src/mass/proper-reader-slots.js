@@ -107,6 +107,35 @@ function readyEnvelope(slot,value,{language="en"}={}){
       sourceCueIds:Object.freeze([]),liturgicalGroup:group,prayerRole:"ORATION_RESPONSE",
     }));
   }
+  // Roman Missal 1962, n. 481: the last Secret's conclusion is private
+  // UNTIL "Per omnia saecula saeculorum", which is spoken aloud in
+  // canonical block B041 (C0135), followed by the server's Amen (C0136).
+  // Do not print the same audible ending and Amen inside the Secret text.
+  // Ordinary source fixtures without a full ending are not rewritten.
+  if(slot==="SECRET_SET"){
+    const final=paragraphs.findLastIndex(p=>p.kind==="TEXT");
+    if(final<0)return Object.freeze({status:"MISSING",slot,data:null,
+      reason:"No final Secret prayer"});
+    const row=paragraphs[final];
+    const latinTail=/per\s+[oó]mnia\s+s(?:ae|[æǽ])cula\s+s(?:ae|[æǽ])cul[oó]rum\.\s*Amen\.\s*$/iu;
+    const vernacularTail=french
+      ?/(?:dans (?:tous )?les siècles des siècles|pour (?:tous )?les siècles des siècles|aux siècles des siècles)\.\s*(?:Ainsi soit-il|Amen)\.\s*$/iu
+      :/(?:world without end|for ever and ever|forever and ever)\.\s*Amen\.\s*$/iu;
+    const latinPresent=latinTail.test(row.latin);
+    const vernacularPresent=vernacularTail.test(row.vernacular);
+    if(latinPresent!==vernacularPresent){
+      return Object.freeze({status:"MISSING",slot,data:null,
+        reason:"Final Secret public conclusion does not align in Latin and translation"});
+    }
+    if(latinPresent){
+      paragraphs[final]=Object.freeze({
+        ...row,
+        latin:row.latin.replace(latinTail,"").trimEnd(),
+        vernacular:row.vernacular.replace(vernacularTail,"").trimEnd(),
+        secretConclusionBoundary:"AUDIBLE_PER_OMNIA_IN_CANONICAL_B041",
+      });
+    }
+  }
   return Object.freeze({
     status:"READY",slot,
     data:Object.freeze({paragraphs:Object.freeze(paragraphs)})
