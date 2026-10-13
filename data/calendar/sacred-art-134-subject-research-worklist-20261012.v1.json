@@ -9,8 +9,8 @@
     "total": 134,
     "priorNoCandidate": 64,
     "priorRejectedOrUnapproved": 70,
-    "postExportLeadSubjects": 19,
-    "noCandidateAfterNewLeads": 50,
+    "postExportLeadSubjects": 28,
+    "noCandidateAfterNewLeads": 42,
     "byCollection": {
       "Bible Atlas": {
         "total": 83,
@@ -1702,7 +1702,19 @@
       "context": "Matthew 5–7",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "nga-52039-callot-sermon-1635",
+          "artist": "Jacques Callot",
+          "title": "Sermon on the Mount",
+          "sourceUrl": "https://www.nga.gov/artworks/52039-sermon-mount",
+          "matchNotes": "1635 NGA museum object 1969.15.884; exact scene, but a 6.3 x 8.5 cm miniature etching, not a substantial painterly Home or Gospel hero. Preserve as optional illustration rather than search mandate.",
+          "sourceObjectType": "ETCHING",
+          "scripturalRelation": "EXACT_NARRATIVE",
+          "curatorialTier": "SECONDARY_ONLY",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1716,7 +1728,19 @@
       "context": "Luke 7:11–17",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "saint-roch-le-sueur-nain-1640",
+          "artist": "Eustache Le Sueur",
+          "title": "Résurrection du fils de la veuve de Naïm",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl020208487",
+          "matchNotes": "Louvre official record for a related Simon Vouet study explicitly states the oil painting, by Eustache Le Sueur, is preserved at Saint-Roch church in Paris. Drawing itself not exact whole painting; obtain object/image and rights before ranking.",
+          "sourceObjectType": "OIL_PAINTING_VIA_DRAWING_WITNESS",
+          "scripturalRelation": "EXACT_SUBJECT_REPORTED",
+          "curatorialTier": "CHECK_SAINT_ROCH_ORIGINAL",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1753,7 +1777,19 @@
       "context": "Matthew 14:22–33",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "nga-30616-vellert-peter-walking-water",
+          "artist": "Dirk Jacobsz Vellert",
+          "title": "Saint Peter Walking on the Water",
+          "sourceUrl": "https://www.nga.gov/artworks/30616-saint-peter-walking-water",
+          "matchNotes": "NGA signed 1525 engraving; accurate Christ/Peter in water and boat. The NGA oil Christ at Sea of Galilee (object 41637) is NOT Matthew 14 but John 21, so exclude that painting from Walking on Water.",
+          "sourceObjectType": "ENGRAVING",
+          "scripturalRelation": "EXACT_NARRATIVE",
+          "curatorialTier": "SECONDARY_ONLY",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1864,7 +1900,19 @@
       "context": "Matthew 16:13–20",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "vatican-sistine-perugino-keys",
+          "artist": "Pietro Perugino",
+          "title": "Handing over of the Keys",
+          "sourceUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/parete-nord/storie-di-cristo/consegna-delle-chiavi.html",
+          "matchNotes": "Vatican Museums explicitly tie Sistine Chapel fresco to Matthew 16:13-20. Exact Petrine primacy scene (keys). Large landscape chapel fresco, principal figures small on phone and Vatican photograph rights separate.",
+          "sourceObjectType": "MONUMENTAL_FRESCO",
+          "scripturalRelation": "KEYS_HANDOVER_SUBEVENT_MATTHEW16",
+          "curatorialTier": "HIGH_IMPORTANCE_POTENTIAL_PRIORITY",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1907,7 +1955,19 @@
       "previousCandidateArtworkIds": [
         "ART-ltobello-elone-he-oad-to-mmaus"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "nga-50692-christ-road-emmaus",
+          "artist": "American 18th Century",
+          "title": "Christ on the Road to Emmaus",
+          "sourceUrl": "https://www.nga.gov/artworks/50692-christ-road-emmaus",
+          "matchNotes": "NGA museum object records three figures walking along road; genuinely represents Luke 24 initial road event unlike the already researched Velázquez/Piazzetta supper scenes. Artistic quality versus masterpieces needs human comparison, no automatic replacement.",
+          "sourceObjectType": "OIL_PAINTING",
+          "scripturalRelation": "EXACT_ROAD_SUBEVENT",
+          "curatorialTier": "SECONDARY_COMPARISON",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -2012,7 +2072,19 @@
       "context": "Acts 8:26–40",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "rijks-rp-p-1961-1043-eunuch-rembrandt",
+          "artist": "Rembrandt van Rijn",
+          "title": "The Baptism of the Eunuch",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/The-Baptism-of-the-Eunuch--37a2e7e158c083b3a5285f67e7cbed46",
+          "matchNotes": "Rijksmuseum RP-P-1961-1043 describes Philip baptizing Ethiopian royal official; exact event, but print not oil painting. Caption Philip the evangelist/deacon, not Apostle Philip.",
+          "sourceObjectType": "ETCHING_DRYPOINT",
+          "scripturalRelation": "EXACT_ACTS8",
+          "curatorialTier": "EXCELLENT_PRINT_NOT_HERO_OIL",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -2026,7 +2098,19 @@
       "context": "Acts 9:36–43",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "ng4573-brunswick-raising-tabitha",
+          "artist": "Attributed to the Brunswick Monogrammist",
+          "title": "The Raising of Tabitha",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/attributed-to-the-brunswick-monogrammist-the-raising-of-tabitha",
+          "matchNotes": "National Gallery London inventory NG4573 (possibly c.1540), says probably Peter raising Tabitha; damaged/extended edges, paint alteration and later reconstructed head. Visually appealing but preservation fidelity and attribution warning are essential.",
+          "sourceObjectType": "OIL_ON_PANEL",
+          "scripturalRelation": "PROBABLE_EXACT_ACTS9",
+          "curatorialTier": "PROMISING_WITH_CONDITION_HOLD",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -2040,7 +2124,19 @@
       "context": "Acts 10:1–48",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "nga-54321-galle-cornelius-peter",
+          "artist": "Philip Galle after Jan van der Straet",
+          "title": "Cornelius Worshipping Saint Peter",
+          "sourceUrl": "https://www.nga.gov/artworks/54321-cornelius-worshipping-saint-peter",
+          "matchNotes": "NGA 54321 engraving of Cornelius kneeling before Peter. One moment of Acts 10, not automatically depiction of the baptism or full conversion. A map/context and text may suffice.",
+          "sourceObjectType": "ENGRAVING",
+          "scripturalRelation": "RELATED_SUBEVENT_ACTS10_NOT_CONVERSION_TOTALITY",
+          "curatorialTier": "SECONDARY_ONLY",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -2184,7 +2280,19 @@
       "context": "Acts 27:13–44",
       "researchProblem": "NO_PREVIOUS_CANDIDATE",
       "previousCandidateArtworkIds": [],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "nga-90938-basse-malta-shipwreck",
+          "artist": "Willem Basse",
+          "title": "Saint Paul Shipwrecked on the Island of Malta",
+          "sourceUrl": "https://www.nga.gov/artworks/90938-saint-paul-shipwrecked-island-malta",
+          "matchNotes": "NGA 90938 signed 1634 print depicts shipwreck near coast, survivors and wrecked ship. Existing Acts route map is more useful for geographical context; print optional.",
+          "sourceObjectType": "ETCHING_ENGRAVING",
+          "scripturalRelation": "EXACT_ACTS27",
+          "curatorialTier": "SECONDARY_MAP_FIRST",
+          "reviewStatus": "DOCUMENTED_SOURCE_RESEARCH_NO_IMAGE_ACQUISITION_NO_APPROVAL"
+        }
+      ],
       "needsFirstResearchLead": true,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
