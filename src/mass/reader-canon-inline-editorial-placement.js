@@ -9,13 +9,19 @@ const WORD="SOURCE_LATIN_WORDS";
 const FROZEN_EMPTY=Object.freeze([]);
 
 function freezeRows(rows){return Object.freeze(rows.map(row=>Object.freeze(row)));}
-function latinSurface(paragraph){
-  // Private Canon prayer is vernacular-first in the reader; the Latin is
-  // its unmodified alternate, not the primary string visible by default.
-  if(paragraph?.displayLanguage==="VERNACULAR"){
-    return typeof paragraph?.alternate==="string" ? paragraph.alternate : null;
+function exactLatinSurface(paragraph,original){
+  // A reader's displayLanguage may be null: public Canon text can still
+  // be vernacular-first, with the source Latin under "alternate". Never
+  // equate "primary" with Latin or reuse donor offsets on a changed line.
+  if(typeof original!=="string")return null;
+  const mode=String(paragraph?.displayLanguage??"");
+  const candidates=mode==="LATIN"?["primary"]:
+    mode==="VERNACULAR"?["alternate"]:["primary","alternate"];
+  for(const field of candidates){
+    if(typeof paragraph?.[field]==="string" && paragraph[field]===original)
+      return Object.freeze({latin:original,field});
   }
-  return typeof paragraph?.primary==="string" ? paragraph.primary : null;
+  return null;
 }
 export function projectCanonInlineEditorialPlacements({
   paragraphs,controller,promotion,sourceLatinByCue,form="LOW",
@@ -63,27 +69,26 @@ export function projectCanonInlineEditorialPlacements({
       if(matches.length!==1 || matches[0].publishable!==false)
         throw new Error(cueId+": unpublished micro-action source identity diverges");
       const action=matches[0];
-      let status,spans=FROZEN_EMPTY;
+      let status,spans=FROZEN_EMPTY,surfaceField=null;
       if(action.anchorKind!==WORD){
         status="NON_TEXT_SOURCE_EVENT";
       }else if(ids.length!==1){
         status="COMPOSITE_PARAGRAPH_REQUIRES_SOURCE_SEGMENTATION";
       }else{
-        const latin=latinSurface(paragraph);
-        const original=sourceLatinByCue[cueId];
-        if(typeof original!=="string"||typeof latin!=="string" ||latin!==original){
-          // Reader text can have corrected or recomposed Latin. Exact offsets
-          // from the frozen source must NEVER be copied into that new surface.
+        const surface=exactLatinSurface(paragraph,sourceLatinByCue[cueId]);
+        if(!surface){
+          // Corrected or recomposed Latin cannot borrow the donor offsets.
           status="RENDERED_LATIN_MISMATCH_REVALIDATION_REQUIRED";
         }else{
+          surfaceField=surface.field;
           const anchor=resolveCanonLatinWordAnchors({
-            sourceLatin:latin,anchorKind:action.anchorKind,
+            sourceLatin:surface.latin,anchorKind:action.anchorKind,
             anchorLatin:action.checkedLatinWords,
           });
           status=anchor.status;
           if(status==="WORD_MATCH_EXACT")
             spans=freezeRows(anchor.spans.map(s=>({
-              start:s.start,end:s.end,latin:latin.slice(s.start,s.end),
+              start:s.start,end:s.end,latin:surface.latin.slice(s.start,s.end),
               sourceCharactersUnchanged:true,
             })));
         }
@@ -93,7 +98,7 @@ export function projectCanonInlineEditorialPlacements({
         reviewTrack:decision.reviewTrack,reviewGate:decision.reviewGate,
         placementPolicy:decision.placement,
         sourceAnchorKind:action.anchorKind,
-        status,spans,
+        status,spans,surfaceField,
         displayText:null,faithfulPosture:null,priestActionNow:null,
         publication:"NOT_APPROVED_NOT_VISIBLE",canPublish:false,
       }));
