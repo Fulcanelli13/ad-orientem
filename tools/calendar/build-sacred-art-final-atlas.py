@@ -44,6 +44,28 @@ def create(args):
         assert subject_index["schema"]=="AO_SACRED_ART_CONSOLIDATED_SUBJECT_REVIEW_INDEX_V1"
         assert len(subject_index["subjects"])==235
         assert subject_index["counts"]["userSelectedSubjectPlacements"]==101
+        queue_path=ROOT/"data/calendar/sacred-art-selected-originals-acquisition-queue-20261013.v1.json"
+        if queue_path.is_file():
+            queue=read(queue_path)
+            assert queue["schema"]=="AO_SACRED_ART_UNJOINED_SELECTED_WORKS_ACQUISITION_QUEUE_V1"
+            recovered={w["editorialArtworkId"]:w for w in queue["works"]}
+            for selected in subject_index["selectedEditorialArtworks"]:
+                lead=recovered.get(selected["editorialArtworkId"])
+                if lead is None:
+                    continue
+                photo=lead.get("researchOnlyOriginalCandidate") or {}
+                selected["recovery"]={
+                    "classification":lead["sourceClassification"],
+                    "exactInstitutionalUrl":lead.get("exactInstitutionalSourceUrl") or
+                        (lead.get("recordedSourceUrl") if lead["sourceClassification"]=="OBJECT_URL_RECORDED_NEEDS_MASTER" else None),
+                    "individualImageRecordUrl":photo.get("commonsPageUrl"),
+                    "museumInventory":lead.get("institutionalObjectId"),
+                    "copyrightAssessment":"PENDING_LICENSE_AND_JURISDICTION",
+                    "imageBytesAcquired":False,
+                    "originalSha256":None,
+                    "competingOriginalCount":len(lead.get("competingInstitutionalOriginals") or []),
+                    "unresolvedCompetingOriginals":lead.get("competingInstitutionalOriginals") or []
+                }
 
     selections_by_id=defaultdict(list)
     refusals_by_id=defaultdict(list)
@@ -359,7 +381,12 @@ function drawSubjects(){
    '<p class="muted">'+escape(s.layeredResearchStatus||s.editorialDecision)+' · '+s.acquiredReuse.length+' acquired reuse possibilities · '+s.layeredResearchArtworkIds.length+' research leads</p>'+
    (s.exactSceneMismatch?'<div class="review-policy-block">Earlier option depicts a different biblical event.</div>':'')+
    (s.optionalNoImage?'<p>Text/map/timeline coverage is acceptable without painting.</p>':'')+
-   (selected?.sourceUrl?'<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(selected.sourceUrl)+'">Selected artwork reference</a>':'')+
+   (selected?.sourceUrl?'<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(selected.sourceUrl)+'">Earlier chosen artwork reference</a>':'')+
+   (selected?.recovery?.exactInstitutionalUrl&&selected.recovery.exactInstitutionalUrl!==selected.sourceUrl?
+    '<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(selected.recovery.exactInstitutionalUrl)+'">Recovered museum/custodian source · Master pending</a>':'')+
+   (selected?.recovery?.individualImageRecordUrl?
+    '<a class="source-url" target="_blank" rel="noopener noreferrer" href="'+escape(selected.recovery.individualImageRecordUrl)+'">Individual photograph record · Licence review pending</a>':'')+
+   (selected?.recovery?'<p class="muted">Source research: '+escape(selected.recovery.classification.replaceAll("_"," "))+' · Not acquired or approved</p>':'')+
    (source?'<p>Verified registry original: '+escape(source.id)+'</p>':'')+'</div>';
   root.appendChild(card);
  }
