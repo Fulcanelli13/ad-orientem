@@ -27,6 +27,31 @@ function values(value,language="en"){
   return usable(value,language) ? [value] : [];
 }
 
+// The source's Lectio/Evangelium may already print its terminal ℟. line.
+// In the native reader these replies are canonically owned by B020/C0076
+// (Deo gratias) and B026/C0087 (Laus tibi, Christe). Keep the original
+// resolved Proper untouched; suppress only a matching terminal reply in
+// the display text, never a response embedded in the reading itself.
+function stripPinnedReadingResponse(text,slot,locale){
+  const raw=String(text??"");
+  const french=locale==="fr";
+  const latin=locale==="lat";
+  const epistle=latin
+    ?/(?:^|\n)\s*(?:℟\.|R\.)\s*Deo\s+gr[áa]tias\.?\s*$/iu
+    :french
+      ?/(?:^|\n)\s*(?:℟\.|R\.)\s*(?:Deo\s+gr[áa]tias(?:\s*[-–—]\s*Rendons\s+gr[aâ]ces?\s+[àa]\s+Dieu)?|Rendons\s+gr[aâ]ces?\s+[àa]\s+Dieu)\.?\s*$/iu
+      :/(?:^|\n)\s*(?:℟\.|R\.)\s*(?:Deo\s+gr[áa]tias|Thanks\s+be\s+to\s+God)\.?\s*$/iu;
+  const gospel=latin
+    ?/(?:^|\n)\s*(?:℟\.|R\.)\s*Laus\s+tibi,?\s*Christe\.?\s*$/iu
+    :french
+      ?/(?:^|\n)\s*(?:℟\.|R\.)\s*(?:Laus\s+tibi,?\s*Christe|Louange\s+[àa]\s+vous,?\s+[ôo]\s+Christ)\.?\s*$/iu
+      :/(?:^|\n)\s*(?:℟\.|R\.)\s*(?:Laus\s+tibi,?\s*Christe|Praise\s+be\s+to\s+(?:Thee|you),?\s+O\s+Christ)\.?\s*$/iu;
+  const expression=slot==="EPISTLE_OR_LESSON"?epistle:slot==="GOSPEL"?gospel:null;
+  if(!expression)return Object.freeze({text:raw,suppressed:false});
+  const stripped=raw.replace(expression,"").trimEnd();
+  return Object.freeze({text:stripped||raw,suppressed:expression.test(raw)});
+}
+
 function readyEnvelope(slot,value,{language="en"}={}){
   const rows=values(value,language);
   // A composed Collect/Secret/Postcommunion array must retain every source
@@ -71,7 +96,9 @@ function readyEnvelope(slot,value,{language="en"}={}){
     }else{
       paragraphs.push(Object.freeze({
         id:slot+"."+(index+1),kind:"TEXT",
-        latin:String(row.lat??row.la),vernacular:vernacularValue(row,language),
+        latin:stripPinnedReadingResponse(String(row.lat??row.la),slot,"lat").text,
+        vernacular:stripPinnedReadingResponse(vernacularValue(row,language),slot,language).text,
+        fixedResponseCueId:slot==="EPISTLE_OR_LESSON"?"AO.SM.C0076":slot==="GOSPEL"?"AO.SM.C0087":null,
         orationGroupIndex:["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(slot)
           ?index+1:null,
       }));
