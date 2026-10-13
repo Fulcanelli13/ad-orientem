@@ -1,0 +1,523 @@
+{
+  "schema": "ao-noncanon-1962-exact-sequence-and-authority-gates-v1",
+  "date": "2026-10-13",
+  "status": "RESEARCH_AND_ACCEPTANCE_GATES_NO_CANONICAL_SOURCE_TEXT_MUTATION",
+  "sourceWitnesses": [
+    {
+      "role": "NORMATIVE_1960_GENERAL_RUBRICS",
+      "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf"
+    },
+    {
+      "role": "NORMATIVE_1962_RITUS_ENGLISH_WITNESS",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+    },
+    {
+      "role": "INDEPENDENT_1962_COLLECT_IMPLEMENTATION_EXAMPLE",
+      "url": "https://1962ordo.today/1962-rubrics/"
+    },
+    {
+      "role": "1962_LATIN_MISSAL_SCAN",
+      "url": "https://www.musicasacra.com/pdf/missale62.pdf"
+    }
+  ],
+  "items": [
+    {
+      "id": "AO.NONCAN.GATE.N01",
+      "name": "COLLECT_MULTIPLE_OREMUS",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0072",
+        "AO.SM.C0073",
+        "AO.SM.C0074"
+      ],
+      "region": "Collects of the day",
+      "appliesWhen": "MULTIPLE_COLLECTS_IN_RESOLVED_MASS",
+      "requiredRiteBehavior": "Oremus before first Collect and before second distinct prayer-group; a third permitted collect is grouped under the second conclusion without an extra Oremus. Unless a prayer is exceptionally linked under one conclusion, maintain proper separate conclusions and Amen boundaries.",
+      "currentResearchFinding": "Current one fixed C0072 Oremus + opaque COLLECT_SET pair does not by itself prove dynamic second Oremus.",
+      "sourceLocator": "RG60 433–437, 444–446; 1962ordo Oration Rules",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "PROPER_RESOLVER_AND_READER_TEXT_TEST",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N02",
+      "name": "COLLECT_CONCLUSION_AND_AMEN",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0073",
+        "AO.SM.C0074"
+      ],
+      "region": "Collect group",
+      "appliesWhen": "COMMEMORATIONS_AND_ADDITIONAL_PRAYERS",
+      "requiredRiteBehavior": "Separate full conclusions and responsive Amen only at the ends required by the 1960 rules; one-conclusion additions must stay attached to the proper prayer.",
+      "currentResearchFinding": "Single placeholder C0074 USER_RESPONSE cannot be accepted as proof of correct count/order.",
+      "sourceLocator": "RG60 436–437, 444–446",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "PROPER_GROUP_RENDERER",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N03",
+      "name": "POSTCOMMUNION_PARITY",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0253",
+        "AO.SM.C0254",
+        "AO.SM.C0255",
+        "AO.SM.C0256"
+      ],
+      "region": "Postcommunion",
+      "appliesWhen": "MULTIPLE_POSTCOMMUNIONS",
+      "requiredRiteBehavior": "Use the same number, order, Oremus and conclusion arrangements as the opening collects. Amen belongs to the proper prayer boundary.",
+      "currentResearchFinding": "POSTCOMMUNION_SET placeholder and one Oremus require branch-wise expansion.",
+      "sourceLocator": "RG60 505; Ritus XI.1",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "POSTCOMMUNION_RESOLVER",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N04",
+      "name": "SECRET_NO_OREMUS",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0134",
+        "AO.SM.C0135",
+        "AO.SM.C0136"
+      ],
+      "region": "Secrets",
+      "appliesWhen": "ALL",
+      "requiredRiteBehavior": "One Secret for each Collect in the same order, normally secret; do not repeat Dominus vobiscum or Oremus for each Secret. Audible Per omnia saecula saeculorum only at the concluding transition.",
+      "currentResearchFinding": "Opaque SECRET_SET must be split in data into component Secret orations without duplicating Oremus.",
+      "sourceLocator": "RG60 480–481",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "SECRET_GROUP_RESOLVER_AND_VOICE",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N05",
+      "name": "LENT_ORATIO_SUPER_POPULUM",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0254",
+        "AO.SM.C0255",
+        "AO.SM.C0256",
+        "AO.SM.C0257"
+      ],
+      "region": "Lenten concluding prayer",
+      "appliesWhen": "LENTEN_FERIAL_NOT_TRIDUUM",
+      "requiredRiteBehavior": "After the normal Postcommunion(s), append a distinct Oremus and Humiliate capita vestra Deo and the Prayer over the People before the dismissal greeting, with its own conclusion.",
+      "currentResearchFinding": "Do not mislabel as another Postcommunion, or omit if day calls for it.",
+      "sourceLocator": "RG60 506; Ritus XI.2",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "SPECIAL_PROPER_BRANCH",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N06",
+      "name": "ADDITIONAL_LESSONS_SEQUENTIAL",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0073",
+        "AO.SM.C0074",
+        "AO.SM.C0075",
+        "AO.SM.C0076",
+        "AO.SM.C0077"
+      ],
+      "region": "Ember and extended lessons",
+      "appliesWhen": "EXTRA_LESSONS_APPOINTED",
+      "requiredRiteBehavior": "Preserve source sequence of lesson, response and intervening prayer, with Flectamus genua / Levate where printed and actor roles dependent on Mass form; do not infer reading order from lesson numbering.",
+      "currentResearchFinding": "One EPISTLE_OR_LESSON slot cannot certify the longer sequence by itself.",
+      "sourceLocator": "RG60 440, 442–443, 466–468",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "EXTENDED_LECTIO_SEQUENCER",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N07",
+      "name": "EPISTLE_DEO_GRATIAS_ACTOR",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0075",
+        "AO.SM.C0076"
+      ],
+      "region": "Epistle and response",
+      "appliesWhen": "ALL_APPOINTED_EPISTLE",
+      "requiredRiteBehavior": "Responsorial Deo gratias follows the lesson when the rubrics require it; distinguish priest's private voice, public lector/subdeacon and the server's or choir's response. USER_RESPONSE is a rendering role, not automatic congregational obligation.",
+      "currentResearchFinding": "Current C0076 USER_RESPONSE is under-specified by Mass form and performer.",
+      "sourceLocator": "RG60 466–468, 473; Ritus VI.4",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "ROLE_AND_RESPONSE_GUARD",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N08",
+      "name": "GOSPEL_ACTOR_CLOCK",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0079",
+        "AO.SM.C0082",
+        "AO.SM.C0084",
+        "AO.SM.C0085",
+        "AO.SM.C0086",
+        "AO.SM.C0087",
+        "AO.SM.C0088"
+      ],
+      "region": "Gospel",
+      "appliesWhen": "LOW_VS_CANTATA_VS_SOLEMN",
+      "requiredRiteBehavior": "At Solemn Mass the deacon's public Gospel and priest's independent action/voice must be kept apart; Sung Mass may lack deacon. Keep three small Gospel crosses on correct actor and correct source words.",
+      "currentResearchFinding": "PRIEST_ACTION and USER_RESPONSE placeholders need actor disambiguation.",
+      "sourceLocator": "RG60 471–473; Ritus VI.5",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "PUBLIC_AND_PRIEST_CLOCKS",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N09",
+      "name": "CREDO_INCARNATUS_FORM_FEAST",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0095",
+        "AO.SM.C0096",
+        "AO.SM.C0097",
+        "AO.SM.C0278",
+        "AO.SM.C0279"
+      ],
+      "region": "Credo Incarnation",
+      "appliesWhen": "CREDO_APPOINTED",
+      "requiredRiteBehavior": "The celebrant genuflects when reciting Et incarnatus; at public singing, action is governed by whether he is standing or seated, with Christmas and Annunciation kneeling exceptions. Faithful posture must not mechanically copy the private celebrant's cue.",
+      "currentResearchFinding": "Current source state C0278/C0279 are sedilia transitions with async priest/public clock.",
+      "sourceLocator": "RG60 518; Ritus VI.3",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "MULTI_CLOCK_AND_FEAST_BRANCH",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N10",
+      "name": "OFFERTORY_WINE_WATER_REQUIEM",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0112",
+        "AO.SM.C0113"
+      ],
+      "region": "Preparation of chalice",
+      "appliesWhen": "REQUIEM_OPTION",
+      "requiredRiteBehavior": "Priest adds water to wine, but does not bless water at Requiem Mass. Difference is the blessing, not disappearance of the chalice preparation prayer.",
+      "currentResearchFinding": "Existing Latin phrase audit specifically marks NOT_REQUIEM; preserve actor and threshold.",
+      "sourceLocator": "Ritus VII.4 and XIII.1",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "CONDITIONAL_GESTURE",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N11",
+      "name": "INCENSE_FORM_EXCEPTIONS",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0040",
+        "AO.SM.C0041",
+        "AO.SM.C0120",
+        "AO.SM.C0121",
+        "AO.SM.C0122",
+        "AO.SM.C0123",
+        "AO.SM.C0124"
+      ],
+      "region": "Incensation",
+      "appliesWhen": "INCENSE_ENABLED_AND_FORM_ALLOWED",
+      "requiredRiteBehavior": "First and Offertory incensation are conditional; Requiem suppresses entrance incensation, but includes distinct prescribed later incense where permitted. Solemn deacon/thurifer actor routing must not be projected as Sung priest motion.",
+      "currentResearchFinding": "Seven conditional source cues are in non-Canon inventory; timing and people-incense start/end are visible-state signals not word patterns.",
+      "sourceLocator": "Ritus IV.4; VII.9–11; XIII.2",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "INCENSE_BRANCH_AND_MINISTER_ROUTES",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N12",
+      "name": "LAVABO_DOXOLOGY",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0125",
+        "AO.SM.C0126",
+        "AO.SM.C0127"
+      ],
+      "region": "Lavabo",
+      "appliesWhen": "REQUIEM_OR_PASSIONTIDE",
+      "requiredRiteBehavior": "Gloria Patri and related doxology omitted under relevant Passiontide and Requiem cases, with the underlying Lavabo action retained.",
+      "currentResearchFinding": "Check precise branch logic against 1962, not generalized penitential days.",
+      "sourceLocator": "Ritus VII.6; XIII.1",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "CONDITIONAL_TEXT_AND_GESTURE",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N13",
+      "name": "SECRET_PREFACE_AUDIO_HANDOFF",
+      "severity": "MEDIUM",
+      "cueIds": [
+        "AO.SM.C0134",
+        "AO.SM.C0135",
+        "AO.SM.C0136",
+        "AO.SM.C0137",
+        "AO.SM.C0144"
+      ],
+      "region": "Secret–Preface handoff",
+      "appliesWhen": "ALL",
+      "requiredRiteBehavior": "Secret remains inaudible until the audible concluding Per omnia; Preface dialogue audible or sung begins thereafter. Priest clock independent from Schola.",
+      "currentResearchFinding": "No simultaneous identical index unless actual priest transition observed.",
+      "sourceLocator": "RG60 480–482, 511",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "VOICE_AND_PUBLIC_TIMELINE",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N14",
+      "name": "PREFACE_SANCTUS_TWO_CLOCKS",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0145",
+        "AO.SM.C0146",
+        "AO.SM.C0147",
+        "AO.SM.C0148",
+        "AO.SM.C0149"
+      ],
+      "region": "Sanctus/Benedictus",
+      "appliesWhen": "SUNG_AND_SOLEMN",
+      "requiredRiteBehavior": "Priest may begin secret Canon while schola is still singing Sanctus/Benedictus; do not tie priest position to sung Benedictus text. Priest sign at Benedictus text and bows are source-scoped actions.",
+      "currentResearchFinding": "Existing 48-card regressions must not determine liturgical identity.",
+      "sourceLocator": "Ritus VII.8, VIII.1; existing Guide",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "ASYNCHRONOUS_LANES",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N15",
+      "name": "PATER_NOSTER_RESPONSE_ROLE",
+      "severity": "MEDIUM",
+      "cueIds": [
+        "AO.SM.C0208",
+        "AO.SM.C0209",
+        "AO.SM.C0210",
+        "AO.SM.C0211"
+      ],
+      "region": "Our Father",
+      "appliesWhen": "ALL",
+      "requiredRiteBehavior": "Pater is said or sung audibly by priest according to form; Et ne nos inducas concludes before Sed libera nos a malo response; verify performer and voice distinctions by form.",
+      "currentResearchFinding": "C0210 is response, not priestly silent prayer.",
+      "sourceLocator": "Ritus X.1",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "RESPONSE_ROLE_LABEL",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N16",
+      "name": "AGNUS_STRIKE_REQUIEM",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0222",
+        "AO.SM.C0223",
+        "AO.SM.C0224"
+      ],
+      "region": "Agnus Dei",
+      "appliesWhen": "ORDINARY_VS_REQUIEM",
+      "requiredRiteBehavior": "Ordinary: priest strikes breast at each of three invocations; Requiem: wording changes to dona eis requiem, third with sempiternam, and priest omits breast strikes. Do not duplicate faithful customary action automatically.",
+      "currentResearchFinding": "Current three priest source events B01 and B03 are clearly distinct; Requiem branch must not inherit crosses.",
+      "sourceLocator": "Ritus X.3; XIII.1",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "FORM_TEXT_AND_ACTOR_GESTURE",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N17",
+      "name": "PAX_SOLEMN_ONLY",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0225"
+      ],
+      "region": "Pax transfer",
+      "appliesWhen": "SOLEMN_NOT_REQUIEM",
+      "requiredRiteBehavior": "Ministerial Pax handed from priest to deacon and subdeacon only where prescribed; no universal free-form congregational exchange, no deacon in Missa Cantata.",
+      "currentResearchFinding": "Avoid actor/presentation conflation in right priest rail.",
+      "sourceLocator": "Ritus X and XIII",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "MINISTER_ACTOR_ROLE",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N18",
+      "name": "SECOND_CONFITEOR_OMITTED_1962",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0235",
+        "AO.SM.C0236",
+        "AO.SM.C0237",
+        "AO.SM.C0238",
+        "AO.SM.C0239",
+        "AO.SM.C0240",
+        "AO.SM.C0241"
+      ],
+      "region": "Faithful Communion preparation",
+      "appliesWhen": "STRICT_1962_DEFAULT",
+      "requiredRiteBehavior": "Extra Confiteor/Misereatur/Indulgentiam before laity's Communion is historical customary only; strict 1962 starts at Ecce Agnus Dei. Optional branch must be visibly labelled nonnormative.",
+      "currentResearchFinding": "Seven current donor cues are historic optional; no default promotion.",
+      "sourceLocator": "RG60 503",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "STRICT_1962_EXCLUSION",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N19",
+      "name": "ECCE_ONCE_DOMINE_THRICE",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0242",
+        "AO.SM.C0243",
+        "AO.SM.C0244",
+        "AO.SM.C0245"
+      ],
+      "region": "Holy Communion invitation",
+      "appliesWhen": "FAITHFUL_COMMUNICANTS_PRESENT",
+      "requiredRiteBehavior": "Ecce Agnus Dei once, Domine non sum dignus three times, followed by Communion distribution. Do not misread an English translation suggesting Ecce repeated.",
+      "currentResearchFinding": "Different from priest's previous Domine non sum dignus C0229–C0231.",
+      "sourceLocator": "RG60 503; Ritus X.6",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "RITE_ORDER_AND_COUNTER",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N20",
+      "name": "COMMUNION_CHANT_ABLUTION",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0246",
+        "AO.SM.C0247",
+        "AO.SM.C0248",
+        "AO.SM.C0249",
+        "AO.SM.C0250"
+      ],
+      "region": "Communion chant and ablutions",
+      "appliesWhen": "SUNG_PUBLIC_CLOCK",
+      "requiredRiteBehavior": "Communion chant may continue during distribution and overlap with priest's communion and purification phases; distinguish priest and Schola clock and actual communicants. Priest retains finger discipline until ablutions.",
+      "currentResearchFinding": "C0249/C0250 slots do not represent priest station by themselves.",
+      "sourceLocator": "Ritus XI; RG60 504",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "INDEPENDENT_TIMELINES",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N21",
+      "name": "DISMISSAL_BRANCH_VOICE",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0257",
+        "AO.SM.C0259",
+        "AO.SM.C0260"
+      ],
+      "region": "Dismissal",
+      "appliesWhen": "SPECIAL_DAY_AND_FORM",
+      "requiredRiteBehavior": "Ite missa est / Benedicamus Domino / Requiescant in pace depend on rite; Deo gratias vs Amen response must be correctly assigned to the formula. At Solemn deacon sings Ite; at Missa Cantata priest sings it.",
+      "currentResearchFinding": "Single fixed Ite source prayer cannot be displayed on every day.",
+      "sourceLocator": "RG60 507; Ritus XI.1, XII",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "FORMULA_BRANCH_AND_ACTOR",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N22",
+      "name": "BLESSING_AND_LAST_GOSPEL",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0261",
+        "AO.SM.C0262",
+        "AO.SM.C0263",
+        "AO.SM.C0264",
+        "AO.SM.C0265",
+        "AO.SM.C0266",
+        "AO.SM.C0267",
+        "AO.SM.C0271",
+        "AO.SM.C0273"
+      ],
+      "region": "End Mass",
+      "appliesWhen": "BENEDICAMUS_REQUIESCANT_AND_SPECIAL_RITES",
+      "requiredRiteBehavior": "Final blessing omitted after Benedicamus Domino and Requiescant in pace. Last Gospel John 1 is normative where present, with 1962 omissions and Palm Sunday proper special cases. Priest genuflects at Et Verbum caro.",
+      "currentResearchFinding": "Do not suppress Last Gospel automatically whenever blessing suppressed; independent rubrical conditions.",
+      "sourceLocator": "RG60 508–510; Ritus XII",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "ENDING_INDEPENDENT_BRANCHES",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N23",
+      "name": "LAY_POSTURE_NOT_PRIEST_RUBRIC",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0001",
+        "AO.SM.C0075",
+        "AO.SM.C0084",
+        "AO.SM.C0096",
+        "AO.SM.C0124",
+        "AO.SM.C0222",
+        "AO.SM.C0263",
+        "AO.SM.C0273"
+      ],
+      "region": "Faithful rail",
+      "appliesWhen": "ALL",
+      "requiredRiteBehavior": "Faithful posture and gestures require proper period/community or observed local evidence; do not copy the priest's bows, crosses and breast strikes into left rail automatically.",
+      "currentResearchFinding": "Persistent state events have source conditions, some non-cue; no synthetic default when unresolved.",
+      "sourceLocator": "O'Connell congregational rules + guide + RG60 517–524",
+      "sourceUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "acceptanceType": "PROFILE_AUTHORITY",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1960_GENERAL_RUBRICS_ENGLISH_TRANSLATION"
+    },
+    {
+      "id": "AO.NONCAN.GATE.N24",
+      "name": "MISSA_CANTATA_NOT_SOLEMN",
+      "severity": "HIGH",
+      "cueIds": [
+        "AO.SM.C0075",
+        "AO.SM.C0084",
+        "AO.SM.C0124",
+        "AO.SM.C0209",
+        "AO.SM.C0225",
+        "AO.SM.C0259"
+      ],
+      "region": "Minister roles",
+      "appliesWhen": "SUNG_NOT_SOLEMN",
+      "requiredRiteBehavior": "Solemn Mass assigns deacon/subdeacon/thurifer actions distinctly. Missa Cantata has no deacon or subdeacon; source witness must retain exact actor and applicability.",
+      "currentResearchFinding": "54 sourced solemn minister events outside Canon are research-only conditional lane.",
+      "sourceLocator": "Ritus VI, VII, X, XI; solemn minister batch02",
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "acceptanceType": "ACTOR_AND_FORM_FILTER",
+      "status": "OPEN_PENDING_SOURCE_AND_PRODUCTION_CROSSCHECK",
+      "sourceCategory": "1962_RITUS_ENGLISH_TRANSLATION"
+    }
+  ],
+  "policy": [
+    "Every listed behavior is a source-to-implementation test gate, not proof current app fails under every branch.",
+    "Never implement proposed corrections without checking actual renderer branch, 1962 Latin and 1960 general rubrics.",
+    "Actor roles separate priest, server, deacon, subdeacon, Schola and faithful.",
+    "Two or three Collects do not imply two or three independent Oremus in all cases: group and conclusion rules govern.",
+    "Historical second Confiteor opt-in may be displayed only clearly non-normative."
+  ]
+}
