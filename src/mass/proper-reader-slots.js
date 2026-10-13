@@ -29,14 +29,34 @@ function values(value,language="en"){
 
 function readyEnvelope(slot,value,{language="en"}={}){
   const rows=values(value,language);
-  // A composed Collect/Secret/Postcommunion array must retain every source
-  // oration. Reject the complete slot if any commemoration lacks the selected
-  // vernacular or Latin text; filtering valid neighbours silently loses Mass text.
+  // All orations must be source- and translation-complete; no fallback
+  // which silently drops one of the commemorations on this Mass day.
   const incomplete=Array.isArray(value)&&value.some(row=>!usable(row,language));
-  if(!rows.length||incomplete) return Object.freeze({status:"MISSING",slot,data:null});
+  if(!rows.length||incomplete)return Object.freeze({status:"MISSING",slot,data:null});
+  const publicOration=slot==="COLLECT_SET"||slot==="POSTCOMMUNION_SET";
+  const threefoldOration=publicOration||slot==="SECRET_SET";
+  const french=String(language).toLowerCase().startsWith("fr");
+  const spokenBody=(value,locale)=>{
+    const raw=String(value??"");
+    if(!publicOration)return raw;
+    // Full source Missal endings contain a respondent Amen. The speaker
+    // owns a separate intermediate response, or canonical C0074/C0255.
+    const response=locale==="fr"
+      ?/\s*(?:(?:℟\.|R\.)\s*)?(?:Ainsi soit-il|Amen)\.\s*$/iu
+      :/\s*(?:(?:℟\.|R\.)\s*)?Amen\.\s*$/iu;
+    return raw.replace(response,"").trimEnd()||raw;
+  };
   const paragraphs=[];
   for(const [index,row] of rows.entries()){
-    const composed=["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(slot)?row.oneConclusion:null;
+    const group=slot+"."+(index+1);
+    const common={
+      orationGroupIndex:threefoldOration?index+1:null,
+      liturgicalGroup:threefoldOration?group:null,
+      speakerRole:threefoldOration?"PRIEST":null,
+      speakerEvidence:threefoldOration?"1962_PROPER_ORATION":null,
+      sourcePath:row.sourcePath??null,
+    };
+    const composed=threefoldOration?row.oneConclusion:null;
     if(composed){
       const latin=composed.segments?.lat,trans=composed.segments?.[language];
       const extra=segment=>segment?.additional??segment?.mission;
@@ -45,37 +65,60 @@ function readyEnvelope(slot,value,{language="en"}={}){
         rejoin(latin)!==String(row.lat??row.la)||
         rejoin(trans)!==vernacularValue(row,language))
         return Object.freeze({status:"MISSING",slot,data:null,
-          reason:"Unverified one-conclusion Collect composition"});
-      // Two illuminated text paragraphs but ONE liturgical prayer group.
-      // The shared ending belongs to the second, source-identified prayer.
+          reason:"Unverified one-conclusion oration composition"});
+      const multiple=composed.kind==="MULTIPLE_COMMEMORATIONS";
       paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1)+".PRINCIPAL",kind:"TEXT",
-        latin:latin.principal,vernacular:trans.principal,
-        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
-        orationGroupIndex:index+1,
+        ...common,
+        id:group+(multiple?".FIRST_COMMEMORATION":".PRINCIPAL"),kind:"TEXT",
+        latin:spokenBody(latin.principal,"lat"),
+        vernacular:spokenBody(trans.principal,language),
+        prayerRole:multiple?"FIRST_COMMEMORATION":"PRINCIPAL_ORATION",
+        sourcePath:multiple?composed.sourcePaths?.[0]??common.sourcePath:common.sourcePath,
       }));
       paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1)+(composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
+        ...common,
+        id:group+(multiple?".SECOND_COMMEMORATION":
+          composed.kind==="INSEPARABLE_APOSTLES"?".PETER":".MISSION"),
         kind:"TEXT",
-        latin:extra(latin)+"\n"+latin.conclusion,
-        vernacular:extra(trans)+"\n"+trans.conclusion,
-        liturgicalGroup:"COLLECT_UNDER_ONE_CONCLUSION",
-        orationGroupIndex:index+1,
-        sourcePath:composed.sourcePath,
+        latin:spokenBody(extra(latin)+"\n"+latin.conclusion,"lat"),
+        vernacular:spokenBody(extra(trans)+"\n"+trans.conclusion,language),
+        prayerRole:multiple?"SECOND_COMMEMORATION":"ORATION_UNDER_ONE_CONCLUSION",
+        sourcePath:multiple?composed.sourcePaths?.[1]??null:
+          composed.sourcePath??common.sourcePath,
       }));
-      // Intermediate Amen and new Oremus are composed from *source prayer
-      // group boundaries* by proper-reader-composition.js, not injected in
-      // this Proper data record. This prevents the historical special
-      // Mission-Sunday case from receiving a second, duplicate Amen.
-
     }else{
       paragraphs.push(Object.freeze({
-        id:slot+"."+(index+1),kind:"TEXT",
-        latin:String(row.lat??row.la),vernacular:vernacularValue(row,language),
-        orationGroupIndex:["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"].includes(slot)
-          ?index+1:null,
+        ...common,id:group,kind:"TEXT",
+        latin:spokenBody(row.lat??row.la,"lat"),
+        vernacular:spokenBody(vernacularValue(row,language),language),
+        prayerRole:threefoldOration
+          ?(index===0?"PRINCIPAL_ORATION":"ADDITIONAL_ORATION"):null,
       }));
     }
+  }
+  // Missal 1962 n. 481: the LAST Secret ends privately until
+  // "Per omnia saecula saeculorum", said aloud in C0135 with C0136 Amen.
+  // Remove only that exact bilingual audible tail from the *display*,
+  // not the frozen source Proper. Earlier Secrets remain fully private.
+  if(slot==="SECRET_SET"){
+    const index=paragraphs.findLastIndex(p=>p.kind==="TEXT");
+    if(index<0)return Object.freeze({status:"MISSING",slot,data:null,
+      reason:"Final Secret prayer missing"});
+    const last=paragraphs[index];
+    const latinTail=/per\s+[oó]mnia\s+s(?:ae|[æǽ])cula\s+s(?:ae|[æǽ])cul[oó]rum\.\s*Amen\.\s*$/iu;
+    const vernacularTail=french
+      ?/(?:dans (?:tous )?les siècles des siècles|pour (?:tous )?les siècles des siècles|aux siècles des siècles)\.\s*(?:Ainsi soit-il|Amen)\.\s*$/iu
+      :/(?:world without end|for ever and ever|forever and ever)\.\s*Amen\.\s*$/iu;
+    const latinPresent=latinTail.test(last.latin);
+    const transPresent=vernacularTail.test(last.vernacular);
+    if(latinPresent&&!transPresent)return Object.freeze({status:"MISSING",slot,data:null,
+      reason:"Secret audible conclusion has no matching translation"});
+    if(latinPresent&&transPresent)paragraphs[index]=Object.freeze({
+      ...last,
+      latin:last.latin.replace(latinTail,"").trimEnd(),
+      vernacular:last.vernacular.replace(vernacularTail,"").trimEnd(),
+      secretConclusionBoundary:"AUDIBLE_PER_OMNIA_IN_CANONICAL_B041",
+    });
   }
   return Object.freeze({
     status:"READY",slot,
