@@ -74,3 +74,7 @@ This partition is a **research completeness index**, not editorial approval or e
 - Earlier existing [**Eugène Delacroix — Christ Asleep during the Tempest**](https://www.metmuseum.org/art/collection/search/436176) for **BIB-G12** is preserved, not counted again as a new research lead; it represents Christ asleep just before the sea is calmed.
 
 **No originals downloaded or released.** The new [layered research index](../../data/calendar/sacred-art-134-layered-existing-evidence-20261013.v1.json) and [worklist](../../data/calendar/sacred-art-134-subject-research-worklist-20261012.v1.json) are updated with these leads, while current artwork approvals remain unchanged.
+
+## Proportional Bible research policy — 13 October
+
+**Do not treat all 83 undecided Bible art subjects as compulsory painting gaps.** The [proportionate art policy](SACRED-ART-PROPORTIONATE-BIBLE-CURATION-20261013.md) explicitly allows shared historical artworks, maps, diagrams, genealogical/timeline presentations or no artwork. Research is weighted 30 deep NT subjects, 10 selective NT, 14 representative OT anchors, and 29 light-context OT scenes. This is *research effort*, not picture quotas or reductions in narrative coverage. No existing selection or production artwork is changed. Every used image must still pass object identity, artistic quality, reproduction and rights approval.
