@@ -63,7 +63,9 @@
       "CHAMPAIGNE_CORPUS": 13,
       "MILAN_BRERA": 7,
       "MILAN_AMBROSIANA": 5
-    }
+    },
+    "externallyLicensedDigitalPhotoLeads": 2,
+    "newActualImageBytesSaved": 0
   },
   "queue": [
     {
@@ -779,5 +781,61 @@
       "publicationApproved": false
     }
   ],
-  "releaseStatus": "NOT_APP_APPROVED_SOURCE_IDENTIFIED_IMAGE_RIGHTS_AND_USER_RATING_PENDING"
+  "releaseStatus": "NOT_APP_APPROVED_SOURCE_IDENTIFIED_IMAGE_RIGHTS_AND_USER_RATING_PENDING",
+  "externalReproductionChoices": [
+    {
+      "recordId": "W04-001",
+      "painting": "Moïse et les Tables de la Loi",
+      "kind": "PHOTOGRAPH_OF_ORIGINAL_WITH_FRAME",
+      "origin": "Wikimedia Commons, photographer Bycro",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Amiens,_mus%C3%A9e_de_Picardie,_Mo%C3%AFse_et_les_Tables_de_la_Loi_par_Philippe_de_Champaigne_(1663)_02.jpg",
+      "pixelWidth": 1638,
+      "pixelHeight": 2227,
+      "reproductionLicense": "CC-BY-SA-4.0",
+      "authorCredit": "Bycro",
+      "photographyDate": "2020-09-06",
+      "sourceRights": "Attribution / ShareAlike; attribution and app adaptation obligations before commercial release",
+      "aestheticTechnicalWarning": "Photo includes potential frame; not final high-quality studio scan; no master-image QA",
+      "imageFetchedIntoProject": false
+    },
+    {
+      "recordId": "W04-005",
+      "painting": "La Cène, dite La Grande Cène",
+      "kind": "PHOTOGRAPH_OF_ORIGINAL_WITH_FRAME",
+      "origin": "Wikimedia Commons, photographer Tangopaso",
+      "originalFilePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_C%C3%A8ne_(Louvre,_INV_1124).jpg",
+      "pixelWidth": 2816,
+      "pixelHeight": 2112,
+      "reproductionLicense": "PHOTOGRAPHER_DEDICATES_WORLDWIDE_PUBLIC_DOMAIN",
+      "authorCredit": "Tangopaso (source author)",
+      "photographyDate": "2017-12-15",
+      "sourceRights": "Commons shows photographer's PD dedication; underlying oil painting PD. Other local museum image use terms independently assessed if sourcing their image instead.",
+      "aestheticTechnicalWarning": "Photograph contains entire museum frame and blue-wall; lower-tier review only; not finished clean hero; painting aspect extremely wide.",
+      "imageFetchedIntoProject": false
+    }
+  ],
+  "downloadAttempts": [
+    {
+      "recordId": "W04-005",
+      "source": "upload.wikimedia.org",
+      "status": "FAILED_CONTAINER_DOWNLOAD_NO_BYTES",
+      "url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_C%C3%A8ne_(Louvre,_INV_1124).jpg"
+    }
+  ],
+  "corpusResearch": [
+    {
+      "artist": "Philippe de Champaigne",
+      "sourceType": "SCHOLARLY_CATALOGUE_RAISONNE",
+      "title": "Bernard Dorival, Philippe de Champaigne (1602–1674): la vie, l'œuvre et le catalogue raisonné de l'œuvre (1976), vol. II",
+      "proof": "https://collections.louvre.fr/ark:/53355/cl010062076",
+      "nextAction": "Complete world-wide original autograph list against Dorival item numbering; preserve museum catalogue changes/copies in separate works."
+    },
+    {
+      "artist": "Jean Baptiste de Champaigne",
+      "sourceType": "SCHOLARLY_MONOGRAPH",
+      "title": "Bernard Dorival, Jean-Baptiste de Champaigne (1631–1681): la vie, l'homme et l'art (1992)",
+      "proof": "https://www.nga.gov/artists/31038-jean-baptiste-de-champaigne",
+      "nextAction": "Enumerate religious paintings separately from Philippe; no reacquisition of existing 5/5 Saint Lawrence."
+    }
+  ]
 }
