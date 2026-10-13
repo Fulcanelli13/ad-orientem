@@ -1,0 +1,45 @@
+# Ad Orientem Mass Research — persistent archive index
+
+**Updated:** 13 October 2026. **Canonical destination:** this existing GitHub repository. Research is versioned as append-only/source-labeled records, not overwritten summaries. No research artifact below is itself a 1962 rubric or a runtime reader requirement unless explicitly certified.
+
+## Read this first
+
+| File | Preservation status | Contents |
+|---|---|---|
+| [Mass Reader four-surface decision](../MASS-PARAGRAPH-RAILS-AND-DYNAMIC-GUIDANCE-CONTRACT-20261013.md) | Merged permanent design rule | Left rail faithful postures/gestures, right rail priest position/posture, priest's precise in-text rubrics, second top ribbon replaced by changing explanatory/norm text; same canonical cue IDs |
+| [Original French Guéranger pass 1](MASS-FRENCH-GUERANGER-ORIGINAL-AUDIT-20261013.md) | 30 draft topics FRG01–FRG30, original French sourced | Theological, historical, gesture and ceremony explanations; corrected cue anchors |
+| [Original French Guéranger pass 2](MASS-FRENCH-GUERANGER-BATCH02-ARCHIVE-AND-DISCREPANCIES-20261013.md) | 41 more draft topics, 30 gesture/position evidence records | Source-critical reports and exceptions; dated 1885 original vs 1962 differences |
+| [French pass 2 machine-readable microguide](../../data/research/mass-fr-gueranger-microguide-batch02.v1.json) | 41 precise records | Cue identity, paraphrased French draft, original source URL, section and line locations, editorial authority |
+| [French pass 2 historical actor records](../../data/research/mass-fr-gueranger-actor-posture-evidence-batch02.v1.json) | 30 precise records | 23 priest, 4 faithful, 3 deacon posture, position, gestures, incensation and Communion source evidence; **historical only** pending 1962 audit |
+| [Complete paragraph coverage crosswalk](../../data/research/mass-rail-paragraph-coverage-20261013.json) | Every current Sung and Low source unit indexed | 279 Sung + 275 Low canonical cues, one synthetic non-liturgical pause in each form; cites currently registered profile/posture/gesture/position/action and historic-original-French research |
+| [Sept 21 source evidence snapshot](../../data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json) | Frozen **422** evidence records | Original evidence ID, event ID, source, author, claimed interpretation, actor, authority, applicability, locator and source URL/file; full research-layer preservation |
+| [Sept 21 comparison snapshot](../../data/research/archive/mass-compendium-20260921-comparisons.snapshot.v1.json) | Frozen **9** research tabs | 71-event overview, ceremonial comparison, interpretive comparison, participation, forms/changes, devotional overlays, sources/gaps, 1960 primary rubrics, control rules |
+
+The two September snapshots together preserve **all ten research tabs** of `Ad_Orientem_1962_Mass_Compendium_Reorganized_2026-09-21.xlsx` from the file Library. Each cell value was transferred without deliberate editorial correction. The original workbook remains in the user's Library; this is a research archive and must not replace runtime sources or be edited to falsify original evidence.
+
+**Additional source still stored in Library:** `Ad_Orientem_1962_Mass_Source_of_Truth_v12_ORGANISED.xlsx` (22 tabs), which is the earlier underlying SOT with a distinct scope. That complete workbook has **not** been replicated by these ten-tab compendium snapshots. In any reconciliation, retain its Library original and distinguish it from the September compendium; future full archive can be done as a separately reviewed snapshot.
+
+## Source witness and primary law
+
+- [Guéranger original French transcription, 1885](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/). Posthumous conference-note publication. Every extracted point should carry a section/phrase locator; do not cite it as direct 1962 ceremonial law.
+- [Missale Romanum 1962 / Ritus servandus](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) and [Latin 1962 Missal scan](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf).
+- [1960 General Rubrics](https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf).
+- O'Connell 1964 and other user-researched witnesses: original source references preserved individually in 422-record ledger.
+- User-provided 2013 **red CIEL booklet missal**: a lay explanatory witness. Its second Confiteor is earlier/customary and **not** normative 1962. Original file remains in the conversation attachment system, not reproduced on this GitHub branch.
+- Le Barroux and Clovis modern French missals: bibliography/translation comparisons only until lawful source text available; **no copyrighted modern French translations are bulk imported**. Croegaert remains an independent historical-theological research target whose complete volumes have not yet been audited.
+
+## Conflict and correction registry
+
+1. `C0159`: Guéranger 1885 says St Joseph not in the `Communicantes`; 1962 text explicitly includes him. **DATED HISTORICAL DISCREPANCY**, not conflicting normative rules.
+2. `C0194`: Sung donor currently omits **et** from `locum refrigerii, lucis et pacis`; direct 1962 Latin source confirms **et**. See [tracked source-integrity issue #1145](https://github.com/Fulcanelli13/ad-orientem/issues/1145). **Confirmed source difference, pending production repair with regression test.**
+3. `C0221`: French pass 1 misattached `commixtio` to `C0220`; corrected to `C0221`. Distinct from `Pax Domini`.
+4. `C0269`: French pass 1 Last Gospel explanation moved from prefatory `C0267` to proclamation `C0269`.
+5. Faithful stand when incensed and breast strike at `Nobis quoque`: source-based **historical custom**, not universal 1962 pew law.
+6. Mass forms: Solemn deacon/subdeacon actions distinct from celebrant in Missa Cantata, schola and priest timing independent.
+7. All original French source dates, scope and devotional/symbolic interpretations remain separate from controlling 1962 liturgical law.
+
+## Change discipline / next researchers
+
+For a new finding, append a source-anchored record to a new versioned batch rather than rewriting the historical September archive. Each extracted claim needs source URL/printed page or stable heading/trigger, author, original language, exact prayer/cue, actor, Mass form, authority tier, conditional scope and editorial status. Do not manufacture posture for an undocumented paragraph. Tie displayed reader content to the original cue ID, independent of whether the current projection uses 64/65 cards or 48 rollback. Start from the source text, then priest state/faithful profile, then exact in-text rubrics, and finally the **non-duplicative** guidance text.
+
+Existing Mass reader/form implementation is **not** changed by this archive.
