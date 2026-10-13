@@ -9,7 +9,7 @@
     "total": 134,
     "priorNoCandidate": 64,
     "priorRejectedOrUnapproved": 70,
-    "postExportLeadSubjects": 30,
+    "postExportLeadSubjects": 32,
     "noCandidateAfterNewLeads": 42,
     "byCollection": {
       "Bible Atlas": {
@@ -952,7 +952,16 @@
       "previousCandidateArtworkIds": [
         "ART-icolas-oussin-he-eluge"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "louvre-inv7306-poussin-winter",
+          "artist": "Nicolas Poussin",
+          "title": "Winter (The Flood)",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010066113",
+          "matchNotes": "Louvre INV 7306/MR2336, 1660–64; exact Genesis Flood disaster subject as allegorical Winter. Depicts survivors amid rising flood, NOT Noah covenant; museum source verified, no physical master acquired.",
+          "reviewStatus": "OBJECT_IDENTIFIED_AT_CUSTODIAN_NOT_APPROVED_NOT_DOWNLOADED"
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1056,7 +1065,16 @@
       "previousCandidateArtworkIds": [
         "ART-acchiacca-oseph-ardons-is-rothers"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "ng-london-ng1219-bacchiacca-joseph-pardons",
+          "artist": "Bacchiacca",
+          "title": "Joseph pardons his Brothers",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/bacchiacca-joseph-pardons-his-brothers",
+          "matchNotes": "National Gallery NG1219 (probably 1515), original oil-on-wood horizontal 36.2 x 141.6 cm continuous narrative culminating in forgiveness Genesis 45; historical source but unfit narrow hero crop.",
+          "reviewStatus": "OBJECT_IDENTIFIED_AT_CUSTODIAN_NOT_APPROVED_NOT_DOWNLOADED"
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -1136,8 +1154,9 @@
           "artist": "Nicolas Poussin",
           "title": "The Crossing of the Red Sea",
           "sourceUrl": "https://www.ngv.vic.gov.au/explore/collection/work/4271/",
-          "matchNotes": "exact Exodus 14 scene",
-          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+          "matchNotes": "NGV 1843-4 original Poussin painting; Exodus 14 scene is AFTER the Red Sea has closed over Egyptians, not the initial water parting. Original source exact, already in research; no duplicate source acquisition or artwork record.",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD",
+          "editorialSubevent": "EXODUS14_WATERS_CLOSE_OVER_EGYPTIANS"
         }
       ],
       "needsFirstResearchLead": false,
@@ -1205,8 +1224,9 @@
           "artist": "Nicolas Poussin",
           "title": "The Adoration of the Golden Calf",
           "sourceUrl": "https://www.nationalgallery.org.uk/paintings/nicolas-poussin-the-adoration-of-the-golden-calf",
-          "matchNotes": "exact Exodus 32 scene",
-          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD"
+          "matchNotes": "National Gallery London NG5597 original Poussin painting Exodus 32 dancing at Golden Calf and smashing tablets; companion to NGV Red Sea. Full-width OT anchor; source existing, rights and crop unresolved.",
+          "reviewStatus": "UNAPPROVED_RESEARCH_LEAD",
+          "editorialSubevent": "EXODUS32_GOLDEN_CALF_IDOLATRY"
         }
       ],
       "needsFirstResearchLead": false,
