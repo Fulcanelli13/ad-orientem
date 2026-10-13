@@ -27,6 +27,92 @@ function values(value,language="en"){
   return usable(value,language) ? [value] : [];
 }
 
+// The source's Lectio/Evangelium may already print its terminal ℟. line.
+// In the native reader these replies are canonically owned by B020/C0076
+// (Deo gratias) and B026/C0087 (Laus tibi, Christe). Keep the original
+// resolved Proper untouched; suppress only a matching terminal reply in
+// the display text, never a response embedded in the reading itself.
+function stripPinnedReadingResponse(text,slot,locale){
+  const raw=String(text??"");
+  if(slot!=="EPISTLE_OR_LESSON"&&slot!=="GOSPEL")
+    return Object.freeze({text:raw,suppressed:false});
+  const prefix=String.raw`(?:℟\\.|R\\.)\\s*`;
+  const isFrench=locale==="fr";
+  const isLatin=locale==="lat";
+  let tail;
+  if(slot==="EPISTLE_OR_LESSON"){
+    const words=isLatin?String.raw`Deo\\s+gr[áa]tias`
+      :isFrench?String.raw`(?:Deo\\s+gr[áa]tias(?:\\s*[-–—]\\s*Rendons\\s+gr[aâ]ces?\\s+[àa]\\s+Dieu)?|Rendons\\s+gr[aâ]ces?\\s+[àa]\\s+Dieu)`
+      :String.raw`(?:Deo\\s+gr[áa]tias|Thanks\\s+be\\s+to\\s+God)`;
+    tail=new RegExp(String.raw`(?:^|\\n)\\s*`+prefix+words+String.raw`\\.?\\s*import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
+const REQUIRED_SLOTS = Object.freeze([
+  "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
+  "GOSPEL","OFFERTORY","SECRET_SET","PREFACE","COMMUNION","POSTCOMMUNION_SET"
+]);
+export const READER_PROPER_SLOTS = Object.freeze([
+  ...REQUIRED_SLOTS.slice(0,4),
+  "ALLELUIA_TRACT_SEQUENCE",
+  ...REQUIRED_SLOTS.slice(4),
+]);
+
+function vernacularValue(value,language="en"){
+  if(!value || typeof value!=="object")return "";
+  const lang=String(language??"en").toLowerCase();
+  if(lang.startsWith("fr")) return String(value.fr ?? "").trim();
+  return String(value.en ?? value.vernacular ?? value.translation ?? "").trim();
+}
+
+function usable(value,language="en"){
+  return value && typeof value==="object" &&
+    Boolean(String(value.lat??value.la??"").trim()) &&
+    Boolean(vernacularValue(value,language));
+}
+
+function values(value,language="en"){
+  if(Array.isArray(value)) return value.filter(row=>usable(row,language));
+  return usable(value,language) ? [value] : [];
+}
+
+,"iu");
+  }else{
+    const words=isLatin?String.raw`Laus\\s+tibi,?\\s*Christe`
+      :isFrench?String.raw`(?:Laus\\s+tibi,?\\s*Christe|Louange\\s+[àa]\\s+vous,?\\s+[ôo]\\s+Christ)`
+      :String.raw`(?:Laus\\s+tibi,?\\s*Christe|Praise\\s+be\\s+to\\s+(?:Thee|you),?\\s+O\\s+Christ)`;
+    tail=new RegExp(String.raw`(?:^|\\n)\\s*`+prefix+words+String.raw`\\.?\\s*import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
+const REQUIRED_SLOTS = Object.freeze([
+  "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
+  "GOSPEL","OFFERTORY","SECRET_SET","PREFACE","COMMUNION","POSTCOMMUNION_SET"
+]);
+export const READER_PROPER_SLOTS = Object.freeze([
+  ...REQUIRED_SLOTS.slice(0,4),
+  "ALLELUIA_TRACT_SEQUENCE",
+  ...REQUIRED_SLOTS.slice(4),
+]);
+
+function vernacularValue(value,language="en"){
+  if(!value || typeof value!=="object")return "";
+  const lang=String(language??"en").toLowerCase();
+  if(lang.startsWith("fr")) return String(value.fr ?? "").trim();
+  return String(value.en ?? value.vernacular ?? value.translation ?? "").trim();
+}
+
+function usable(value,language="en"){
+  return value && typeof value==="object" &&
+    Boolean(String(value.lat??value.la??"").trim()) &&
+    Boolean(vernacularValue(value,language));
+}
+
+function values(value,language="en"){
+  if(Array.isArray(value)) return value.filter(row=>usable(row,language));
+  return usable(value,language) ? [value] : [];
+}
+
+,"iu");
+  }
+  const stripped=raw.replace(tail,"").trimEnd();
+  return Object.freeze({text:stripped||raw,suppressed:stripped!==raw.trimEnd()});
+}
+
 function readyEnvelope(slot,value,{language="en"}={}){
   const rows=values(value,language);
   // Never discard one incomplete commemorated oration while retaining
@@ -94,7 +180,9 @@ function readyEnvelope(slot,value,{language="en"}={}){
     }else{
       paragraphs.push(Object.freeze({
         ...common,id:group,kind:"TEXT",
-        latin:spokenBody(row.lat??row.la,"lat"),vernacular:spokenBody(vernacularValue(row,language),language),
+        latin:stripPinnedReadingResponse(spokenBody(row.lat??row.la,"lat"),slot,"lat").text,
+        vernacular:stripPinnedReadingResponse(spokenBody(vernacularValue(row,language),language),slot,language).text,
+        fixedResponseCueId:slot==="EPISTLE_OR_LESSON"?"AO.SM.C0076":slot==="GOSPEL"?"AO.SM.C0087":null,
         prayerRole:index===0?"PRINCIPAL_ORATION":"ADDITIONAL_ORATION",
       }));
     }
