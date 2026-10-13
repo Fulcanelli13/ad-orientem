@@ -9,7 +9,7 @@ on:
       - ".github/workflows/sacred-art-commons-six-originals.yml"
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: sacred-art-commons-six-originals
   cancel-in-progress: true
@@ -96,6 +96,57 @@ jobs:
                       note=str(note).replace("|","/").replace("\n"," ")[:160]
                       s.write(f"| {r['leadId']} | {r['status']} | {dim} | {note} |\n")
           PY
+      - name: Commit audited acquisition receipt to research branch (metadata only)
+        if: success()
+        run: |
+          python - <<'PY'
+          import json, os, hashlib
+          from datetime import datetime, timezone
+          from pathlib import Path
+          artifact=Path("artifacts/sacred-art-commons-six-originals")
+          report=json.loads((artifact/"acquisition.json").read_text(encoding="utf-8"))
+          assert report["requested"]==6 and report["productionChanges"]==0
+          done=0
+          rows=[]
+          for x in report["results"]:
+              record={"leadId":x["leadId"],"sourceCommonsFile":x["commonsFile"],
+                "status":x["status"],"productionApproved":False,"humanRating":None}
+              if x["status"]=="ORIGINAL_ACQUIRED_RESEARCH_ONLY":
+                  data=(artifact/x["filename"]).read_bytes()
+                  assert hashlib.sha256(data).hexdigest()==x["originalSha256"]
+                  assert hashlib.sha1(data).hexdigest()==x["originalSha1Commons"]
+                  assert len(data)==x["bytes"]
+                  record.update(originalSha256=x["originalSha256"],
+                    originalSha1Commons=x["originalSha1Commons"],
+                    dimensions=[x["width"],x["height"]],
+                    bytes=x["bytes"],commonsPage=x["commonsPage"],
+                    imageRights=x["rights"],fileName=x["filename"])
+                  done+=1
+              else:
+                  record["holdReason"]=str(x.get("holdReason",""))[:240]
+              rows.append(record)
+          assert done==report["acquired"] and done>=1
+          receipt={"schema":"AO_SACRED_ART_COMMONS_6_ACTUAL_RUN_VERIFIED_RECEIPT_V1",
+            "timeUtc":datetime.now(timezone.utc).isoformat(),
+            "runUrl":"https://github.com/"+os.environ["GITHUB_REPOSITORY"]+
+               "/actions/runs/"+os.environ["GITHUB_RUN_ID"],
+            "triggerCommit":os.environ["GITHUB_SHA"],
+            "status":"ACQUISITION_RECEIPT_FROM_COMPLETED_HASH_VERIFICATION",
+            "requested":6,"sourceMastersVerified":done,
+            "held":6-done,"results":rows,
+            "note":"Files remain ONLY in temporary GitHub Actions ZIP until independently preserved; no production rights, aesthetic ratings or crops granted.",
+            "productionChanges":0,"commercialReleaseApproved":False}
+          target=Path("data/calendar/sacred-art-commons-six-LAST-VERIFIED-20261013.v1.json")
+          target.write_text(json.dumps(receipt,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+          print("VERIFIABLE_RECEIPT",target,done,"/6")
+          PY
+          git config user.name "ad-orientem-art-research-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-commons-six-LAST-VERIFIED-20261013.v1.json
+          git commit -m "research(art): record Commons source-JPEG checksums [skip ci]"
+          git fetch origin platform/885-sacred-art-candidates
+          git rebase origin/platform/885-sacred-art-candidates
+          git push origin HEAD:platform/885-sacred-art-candidates
       - name: Preserve original JPEG bytes and SHA ledger for review only
         if: always()
         uses: actions/upload-artifact@v4
