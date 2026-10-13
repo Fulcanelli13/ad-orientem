@@ -81,7 +81,7 @@ assert.equal(sungIncenseHost.conditionalMinisterActions[0].actor,"THURIFER");
 assert.equal(noIncenseHost.conditionalMinisterActions.length,0);
 assert.equal(roles.project("AO.SM.C0174",{form:"SOLEMN"}).priestActions.length,0);
 const chalicelid=roles.project("AO.SM.C0205",{editorialPreview:true,form:"SOLEMN"});
-assert.equal(chalicelid.conditionalMinisterActions.length,1);
+assert.equal(chalicelid.conditionalMinisterActions.length,2);
 assert.equal(chalicelid.conditionalMinisterActions[0].actor,"DEACON");
 assert.equal(chalicelid.conditionalMinisterActions[0].conditionVerified,false);
 const canonAmen=roles.project("AO.SM.C0207",{editorialPreview:true,form:"LOW"});
