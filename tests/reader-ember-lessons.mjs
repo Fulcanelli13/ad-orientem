@@ -94,8 +94,17 @@ assert.deepEqual(inserts.map(x=>x.sourceSectionKey),order,
   "Ember insertion reordered nodes by numeric suffix");
 assert.deepEqual(inserts.map(x=>x.emberNodeType),["ORATION","LESSON","GRADUAL","ORATION","LESSON"]);
 assert.deepEqual(inserts[0].formulaStates.map(x=>x.formula),["FLECTAMUS_GENUA","LEVATE"]);
-assert.equal(inserts[1].posture,"SIT");
-assert.equal(inserts[2].posture,"STAND_OR_SOURCE_FORMULA");
+assert.ok(inserts.every(card=>card.posture==="FOLLOW_CONGREGATION_OBSERVATIONAL"),
+  "Ember readings cannot impose universal sitting/standing on the faithful");
+assert.deepEqual(inserts[0].formulaStates.map(x=>x.paragraphId),
+  [inserts[0].paragraphs[0].id,inserts[0].paragraphs[0].id]);
+assert.ok(inserts[0].formulaStates[0].latinEnd<=inserts[0].formulaStates[1].latinStart,
+  "Flectamus and Levate must be separate, ordered word triggers");
+assert.equal(inserts[0].formulaStates[0].latinTrigger,"Flectámus génua");
+assert.equal(inserts[0].formulaStates[1].latinTrigger,"Leváte");
+assert.ok(inserts[0].formulaStates.every(x=>
+  x.visibility==="ONLY_WHEN_SOURCE_FORMULA_IS_ACTIVE" &&
+  x.faithfulAuthority==="COMMUNITY_PROFILE_OR_OBSERVATIONAL_NOT_UNIVERSAL_PEW_LAW"));
 assert.equal(inserts[0].paragraphs[0].primary,"Let us pray. Let us kneel. Second prayer. Arise.");
 assert.equal(inserts[0].paragraphs[0].alternate,"Orémus. Flectámus génua. Oratio secunda. Leváte.");
 
