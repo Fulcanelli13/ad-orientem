@@ -187,7 +187,9 @@ function stateOnlyBlock(block){
 function properSpeaker(slot,form){
   const current=String(form??"").toUpperCase();
   if(slot==="GOSPEL")return Object.freeze({
-    role:current==="SOLEMN"?"DEACON":"PRIEST",
+    role:current==="SOLEMN"?"DEACON":
+      ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"].includes(current)
+        ?"PRIEST":"GOSPEL_PROCLAIMER",
     evidence:"1962_FORM_PUBLIC_GOSPEL",
   });
   if(slot==="EPISTLE_OR_LESSON")return Object.freeze({
