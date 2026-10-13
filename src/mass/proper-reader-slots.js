@@ -123,11 +123,15 @@ function readyEnvelope(slot,value,{language="en"}={}){
       :/(?:world without end|for ever and ever|forever and ever)\.\s*Amen\.\s*$/iu;
     const latinPresent=latinTail.test(row.latin);
     const vernacularPresent=vernacularTail.test(row.vernacular);
-    if(latinPresent!==vernacularPresent){
+    // Only the authoritative Latin tail certifies this audible boundary.
+    // Incomplete historic/local fixtures may have a translated conclusion
+    // without its Latin macro; do not treat that as evidence that B041 may
+    // be spliced into this Secret. Keep the source unchanged for review.
+    if(latinPresent&&!vernacularPresent){
       return Object.freeze({status:"MISSING",slot,data:null,
         reason:"Final Secret public conclusion does not align in Latin and translation"});
     }
-    if(latinPresent){
+    if(latinPresent&&vernacularPresent){
       paragraphs[final]=Object.freeze({
         ...row,
         latin:row.latin.replace(latinTail,"").trimEnd(),
