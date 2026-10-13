@@ -2,6 +2,7 @@
 // paragraphs. This is NOT a production LIVE rubric/gesture engine.
 // It returns no French draft text and never infers priest actions from scroll.
 import {resolveCanonLatinWordAnchors} from "./reader-canon-latin-anchors.js";
+import {CANONICAL_TEXT_CORRECTIONS} from "./canonical-text-corrections.js";
 
 const CUE=/^AO[.]SM[.]C[0-9]{4}$/;
 const FORMS=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
@@ -9,17 +10,30 @@ const WORD="SOURCE_LATIN_WORDS";
 const FROZEN_EMPTY=Object.freeze([]);
 
 function freezeRows(rows){return Object.freeze(rows.map(row=>Object.freeze(row)));}
-function exactLatinSurface(paragraph,original){
+function certifiedLatinSurface(paragraph,original,cueId){
   // A reader's displayLanguage may be null: public Canon text can still
-  // be vernacular-first, with the source Latin under "alternate". Never
-  // equate "primary" with Latin or reuse donor offsets on a changed line.
+  // be vernacular-first with source Latin under "alternate". Exact-match
+  // either surface by content and report which field owns the offsets.
   if(typeof original!=="string")return null;
   const mode=String(paragraph?.displayLanguage??"");
-  const candidates=mode==="LATIN"?["primary"]:
+  const fields=mode==="LATIN"?["primary"]:
     mode==="VERNACULAR"?["alternate"]:["primary","alternate"];
-  for(const field of candidates){
+  for(const field of fields){
     if(typeof paragraph?.[field]==="string" && paragraph[field]===original)
-      return Object.freeze({latin:original,field});
+      return Object.freeze({latin:original,field,canonicalCorrectionId:null});
+  }
+  // Frozen donor bytes and the current R17 reader may legitimately differ
+  // ONLY through an explicitly registered, unique source-parity correction.
+  // Do not grant arbitrary altered Latin a "matching" word offset.
+  const correction=CANONICAL_TEXT_CORRECTIONS[cueId];
+  if(correction?.field!=="latin" || !original.includes(correction.from) ||
+     original.includes(correction.to) ||
+     original.indexOf(correction.from)!==original.lastIndexOf(correction.from))
+    return null;
+  const expected=original.replace(correction.from,correction.to);
+  for(const field of fields){
+    if(typeof paragraph?.[field]==="string" && paragraph[field]===expected)
+      return Object.freeze({latin:expected,field,canonicalCorrectionId:correction.id});
   }
   return null;
 }
@@ -69,18 +83,19 @@ export function projectCanonInlineEditorialPlacements({
       if(matches.length!==1 || matches[0].publishable!==false)
         throw new Error(cueId+": unpublished micro-action source identity diverges");
       const action=matches[0];
-      let status,spans=FROZEN_EMPTY,surfaceField=null;
+      let status,spans=FROZEN_EMPTY,surfaceField=null,canonicalCorrectionId=null;
       if(action.anchorKind!==WORD){
         status="NON_TEXT_SOURCE_EVENT";
       }else if(ids.length!==1){
         status="COMPOSITE_PARAGRAPH_REQUIRES_SOURCE_SEGMENTATION";
       }else{
-        const surface=exactLatinSurface(paragraph,sourceLatinByCue[cueId]);
+        const surface=certifiedLatinSurface(paragraph,sourceLatinByCue[cueId],cueId);
         if(!surface){
           // Corrected or recomposed Latin cannot borrow the donor offsets.
           status="RENDERED_LATIN_MISMATCH_REVALIDATION_REQUIRED";
         }else{
           surfaceField=surface.field;
+          canonicalCorrectionId=surface.canonicalCorrectionId;
           const anchor=resolveCanonLatinWordAnchors({
             sourceLatin:surface.latin,anchorKind:action.anchorKind,
             anchorLatin:action.checkedLatinWords,
@@ -98,7 +113,7 @@ export function projectCanonInlineEditorialPlacements({
         reviewTrack:decision.reviewTrack,reviewGate:decision.reviewGate,
         placementPolicy:decision.placement,
         sourceAnchorKind:action.anchorKind,
-        status,spans,surfaceField,
+        status,spans,surfaceField,canonicalCorrectionId,
         displayText:null,faithfulPosture:null,priestActionNow:null,
         publication:"NOT_APPROVED_NOT_VISIBLE",canPublish:false,
       }));
