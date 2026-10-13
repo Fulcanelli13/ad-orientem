@@ -46,6 +46,18 @@ for(const [cue,role,marker] of [
   assert.equal(correctSungPreparatoryAmen(cue,sungUnits.get(cue).latin),marker+" Amen.");
   assert.equal(correctSungPreparatoryAmen(cue,lowUnits.get(cue).latin,{form:"LOW"}),lowUnits.get(cue).latin);
 }
+// Four alternating Psalm 42 lines are typed responses, not an undifferentiated
+// PUBLIC_TEXT paragraph. Keep their exact M. prefix for server ownership.
+for(const cue of ["AO.SM.C0005","AO.SM.C0007","AO.SM.C0009","AO.SM.C0011"]){
+  for(const [form,units] of [["LOW",lowUnits],["SUNG",sungUnits]]){
+    const source=units.get(cue);
+    const line=resolveOrdinarySpeaker(source,{form,blockId:"AO.SM.B003"});
+    assert.equal(line.role,"MINISTERS",form+" / "+cue+" incorrect Psalm 42 speaker");
+    assert.equal(line.kind,"RESPONSE",form+" / "+cue+" Psalm 42 must be a response");
+    assert.match(source.latin,/^M\\. /u,form+" / "+cue+" missing original minister initial");
+  }
+}
+
 for(const cue of SUNG_ORDINARY_INTONATION_CUES){
   assert.equal(resolveOrdinarySpeaker(sungUnits.get(cue)).role,"PRIEST",cue+": celebrant intonation misowned");
 }
