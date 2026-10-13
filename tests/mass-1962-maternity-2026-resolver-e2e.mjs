@@ -53,7 +53,7 @@ try{
       applied:selectedData?.appliedCommemorations?.length??null,
       sourceCalendarCount:selectedData?.calendarCommemorations?.length??null,
       prayerCounts:["collects","secrets","postcommunions"].map(k=>selectedData?.[k]?.length??null),
-      readerCount:properToReaderSlots(selectedData,{language:"fr"}).slots.COLLECT_SET.data?.paragraphs?.length??null,
+      readerCount:properToReaderSlots(selectedData,{language:"fr"}).slots.COLLECT_SET.data?.paragraphs?.filter(p=>p.kind==="TEXT").length??null,
       printed:assessPrintableProper(result,{language:"fr",massForm:form}).ok,
       preflight:massCalendarPreflightContext(legacy,resolutionState,"fr",{form}).commemorationOrations.status}];
   }));
