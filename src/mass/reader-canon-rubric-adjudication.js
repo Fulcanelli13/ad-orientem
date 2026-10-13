@@ -5,6 +5,7 @@
 import {
   validateCanonRubricReview,createCanonRubricReviewController,
 } from "./reader-canon-rubric-review.js";
+import {createCanonMinisterFormReviewController} from "./reader-canon-minister-branches.js";
 
 const EXPECTED_TYPES=Object.freeze({
   SOURCE_LATIN_WORDS:50,
@@ -102,7 +103,7 @@ export function validateCanonRubricAdjudication({
 }
 
 export function createCanonRubricAdjudicationController({
-  canonData,triggerAudit,frenchReview,
+  canonData,triggerAudit,frenchReview,ministerData=null,
 }={}){
   if(!canonData||!triggerAudit||!frenchReview)
     return Object.freeze({supported:false,status:"COMPLETE_SOURCE_TRIAD_REQUIRED",
@@ -112,9 +113,11 @@ export function createCanonRubricAdjudicationController({
   const original=createCanonRubricReviewController({data:canonData});
   const byFrench=sortedActionMap(frenchReview.rows,"French review");
   const byTrigger=sortedActionMap(triggerAudit.rows,"Trigger audit");
+  const ministerController=createCanonMinisterFormReviewController({data:ministerData});
   function project(cueId,options={}){
     const base=original.project(cueId,options);
     if(base.previewEnabled!==true)return base;
+    const ministry=ministerController.project(cueId,options);
     const augment=action=>{
       const fr=byFrench.get(action.id),tr=byTrigger.get(action.id);
       return Object.freeze({
@@ -134,6 +137,9 @@ export function createCanonRubricAdjudicationController({
       ...base,
       priestActions:Object.freeze(base.priestActions.map(augment)),
       ministerActions:Object.freeze(base.ministerActions.map(augment)),
+      conditionalMinisterActions:ministry.ministerActions,
+      respondentRole:ministry.respondentRole,
+      ministerFormSourceSupported:ministerController.supported,
       canPublish:false,publicationState:"FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
     });
   }
