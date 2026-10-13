@@ -1,0 +1,174 @@
+{
+  "schema": "ao-canon-minister-form-branches-v1",
+  "version": "2026-10-13",
+  "status": "PRIMARY_LATIN_CHECKED_CONDITIONAL_EDITORIAL_ONLY",
+  "sourceWitness": {
+    "url": "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+    "sections": [
+      "Ritus servandus VIII.8",
+      "Ritus servandus IX.4"
+    ]
+  },
+  "provenance": "Additional 1962 form-specific minister actions; independent of fixed 62-event Canon priest/server ledger. Does not replace those events or create new canonical source cues.",
+  "notices": [
+    "In Missa Cantata without incense, do not show a thurifer.",
+    "Low Mass has neither Solemn deacon nor Solemn thurifer.",
+    "The 1962 rubrics apply the thurifer's three incense swings to sung Mass with incensations.",
+    "The deacon only uncovers/covers the chalice when needed.",
+    "C0207 is an explicit response; the Low donor assigns MINISTER_RESPONSE, the Sung donor USER_RESPONSE, so do not universally identify this responder as a server.",
+    "Server bells C0174/C0181 and anticipatory C0161 remain distinct within the original 62-event witness."
+  ],
+  "branches": [
+    {
+      "id": "AO.CANON.MIN.001",
+      "cueId": "AO.SM.C0163",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "Quam oblationem",
+      "action": "Approaches the celebrant's right, kneels on the upper altar step",
+      "sourceSection": "VIII.8",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.002",
+      "cueId": "AO.SM.C0174",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "Host elevation",
+      "action": "Assists at the elevation and lifts the back of the chasuble",
+      "sourceSection": "VIII.8",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.003",
+      "cueId": "AO.SM.C0181",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "Chalice elevation",
+      "action": "Assists at the chalice elevation and lifts the back of the chasuble",
+      "sourceSection": "VIII.8",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.004",
+      "cueId": "AO.SM.C0174",
+      "actor": "THURIFER",
+      "forms": [
+        "SOLEMN",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "trigger": "Host elevation",
+      "action": "Incenses the raised Host three times",
+      "sourceSection": "VIII.8",
+      "condition": "INCENSE_BRANCH",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.005",
+      "cueId": "AO.SM.C0181",
+      "actor": "THURIFER",
+      "forms": [
+        "SOLEMN",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "trigger": "Chalice elevation",
+      "action": "Incenses the raised chalice three times",
+      "sourceSection": "VIII.8",
+      "condition": "INCENSE_BRANCH",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.006",
+      "cueId": "AO.SM.C0199",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "Per quem haec omnia",
+      "action": "Genuflects and approaches the celebrant's right for the Canon conclusion",
+      "sourceSection": "IX.4",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.007",
+      "cueId": "AO.SM.C0201",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "Before Per ipsum",
+      "action": "Uncovers the chalice when required",
+      "sourceSection": "IX.4",
+      "condition": "WHEN_REQUIRED",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    },
+    {
+      "id": "AO.CANON.MIN.008",
+      "cueId": "AO.SM.C0205",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "trigger": "After minor elevation",
+      "action": "Covers the chalice when required and genuflects with the celebrant",
+      "sourceSection": "IX.4",
+      "condition": "WHEN_REQUIRED",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "observationalClock": "INDEPENDENT_MINISTER_EVENT_ONLY",
+      "publication": "RESEARCH_REVIEW_NOT_LIVE"
+    }
+  ],
+  "respondentAtC0207": {
+    "cueId": "AO.SM.C0207",
+    "low": {
+      "speakerRole": "MINISTERS",
+      "sourceClock": "MINISTER_RESPONSE"
+    },
+    "sung": {
+      "speakerRole": "RESPONDERS",
+      "sourceClock": "USER_RESPONSE"
+    },
+    "speakerClock": "FORM_DEPENDENT_NO_ASSUMED_INDIVIDUAL",
+    "publication": "RESEARCH_REVIEW_NOT_LIVE"
+  }
+}
