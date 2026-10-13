@@ -7,6 +7,7 @@ const low=load("../data/presentation/reader-text-low.v1.json");
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const sectionMap=load("../data/presentation/reader-section-map.v0.13.1.json");
 const canonSourceMap=load("../data/presentation/reader-canon-source-map.v1.json");
+const frenchOrdinary=load("../data/presentation/reader-french-ordinary.v1.json");
 const mandatumSource=load("../data/mass/special-days-core.v1.1.json").optional_inserts.HOLY_THURSDAY_MANDATUM;
 const t=(lat,en)=>({lat,en});
 const proper={
@@ -102,6 +103,38 @@ for(const [selected,form] of [
       form+"/"+id+" response must not inherit Gospel/dismissal deacon");
   }
 }
+// EN/FR share the canonical cue and actor ownership. Language switching
+// must not turn conditional source ministers into the generic SUNG actor.
+// A bilingual *test-only* Proper fixture is used here: its French strings
+// are placeholders, NOT approved translations or production Proper data.
+const frenchSpeakerProper=Object.fromEntries(Object.entries(proper).map(([key,value])=>{
+  const row=v=>v&&typeof v==="object"&&v.lat&&v.en
+    ?{...v,fr:"FR TEST · "+v.en}:v;
+  return [key,Array.isArray(value)?value.map(row):row(value)];
+}));
+for(const [form,enModel] of [
+  ["LOW",lowModel],
+  ["MISSA_CANTATA_SIMPLE",simpleCantataSpeakerModel],
+  ["MISSA_CANTATA_INCENSE",model],
+  ["SOLEMN",solemnSpeakerModel],
+]){
+  const frModel=createMassReaderModel({
+    resolvedMass:{...base,form,
+      presentationMode:form==="LOW"?"SIMPLE":"LIVE",
+      overlays:form==="LOW"?[]:base.overlays,
+      proper:{...base.proper,data:frenchSpeakerProper}},
+    sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+    frenchOrdinary,vernacularLanguage:"fr",
+  });
+  for(const cue of [
+    "AO.SM.C0082","AO.SM.C0083","AO.SM.C0084","AO.SM.C0085",
+    "EPISTLE_OR_LESSON.1","GOSPEL.1","AO.SM.C0259","AO.SM.C0260",
+  ]){
+    assert.equal(speakerFor(frModel,cue),speakerFor(enModel,cue),
+      form+"/"+cue+": switching EN/FR changed the actual-form speaking minister");
+  }
+}
+
 assert.match(model.cards.flatMap(c=>c.paragraphs).find(p=>
   p.sourceCueIds?.includes("AO.SM.C0020"))?.primary??"",
   /^S\. Amen\./,
