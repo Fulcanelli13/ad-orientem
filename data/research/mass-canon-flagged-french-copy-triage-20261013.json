@@ -1,0 +1,720 @@
+{
+  "schema": "ao-canon-flagged-french-copy-triage-v1",
+  "version": "2026-10-13",
+  "status": "COMPLETE_FLAG_TRIAGE_ONLY_NO_COPY_SIGNOFF",
+  "linkedSourceRecords": [
+    "data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",
+    "data/research/mass-canon-62-source-trigger-audit-20261013.json",
+    "data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json",
+    "data/research/mass-canon-complex-23-ritus-source-review-20261013.json",
+    "data/research/mass-canon-5-form-decisions-20261013.json"
+  ],
+  "counts": {
+    "frenchDrafts": 62,
+    "flaggedDrafts": 30,
+    "highPriority": 22,
+    "standardPriority": 8,
+    "flaggedWithFirstPassResearch": 1,
+    "flaggedWithComplexResearch": 18,
+    "flaggedWithR62SourceOnly": 11,
+    "editoriallyApproved": 0,
+    "published": 0
+  },
+  "interpretation": "Completes source-risk and copy-review assignment for every flagged French draft. An existing source audit is not editorial approval; unflagged drafts are likewise not approved automatically.",
+  "invariants": [
+    "This file links canonical original French drafts by ID; never duplicates their text.",
+    "Source review already completed is credited but never silently treated as independent copy approval.",
+    "Conditional ministers, stage order, and profile-aware congregation postures remain source-owned and not scroll-driven.",
+    "No existing Canon public rubric or current runtime cue is changed."
+  ],
+  "rows": [
+    {
+      "actionId": "AO.CANON.R62.001",
+      "cueId": "AO.SM.C0150",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "OPENING_HANDS_AND_EYES_BEFORE_BOW",
+        "PRIEST_EVENT_CLOCK_NOT_SCROLL"
+      ],
+      "reviewInstruction": "Check the stated source-linked event and retain independent actor timing and word/ceremony placement.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.004",
+      "cueId": "AO.SM.C0153",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1–2",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "PONTIFF_BISHOP_FORMULA_CONDITIONAL",
+        "VIII_2_EXPLICIT_FORMULA_BRANCHES_NOT_CALENDAR_INFERRED"
+      ],
+      "reviewInstruction": "Verify sede vacante, Rome and episcopal-celebrant variants without inserting inferred names.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.006",
+      "cueId": "AO.SM.C0155",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.3",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "STANDARD",
+      "issues": [
+        "SILENT_NON_TEXT_MEMORIAL",
+        "NAMES_OPTIONAL"
+      ],
+      "reviewInstruction": "Check the stated source-linked event and retain independent actor timing and word/ceremony placement.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.008",
+      "cueId": "AO.SM.C0157",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "STANDARD",
+      "issues": [
+        "SEASONAL_COMMUNICANTES_TEXT"
+      ],
+      "reviewInstruction": "Check the stated source-linked event and retain independent actor timing and word/ceremony placement.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.011",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "HANC_IGITUR_SPECIAL_FORMS",
+        "HANDS_EXTENDED_OPEN_NOT_JOINED"
+      ],
+      "reviewInstruction": "Keep hands extended/open, join only at Per Christum, preserve preselected special proper.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.017",
+      "cueId": "AO.SM.C0168",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "STANDARD",
+      "issues": [
+        "OTHER_HOSTS_OPTIONAL"
+      ],
+      "reviewInstruction": "Check the stated source-linked event and retain independent actor timing and word/ceremony placement.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.021",
+      "cueId": "AO.SM.C0172",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "STANDARD",
+      "issues": [
+        "NARRATED_FREGIT_IS_NOT_PHYSICAL_FRACTION"
+      ],
+      "reviewInstruction": "Keep narrated fregit as explanation only; physical fraction occurs later.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.022",
+      "cueId": "AO.SM.C0173",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "CONSECRATION_WORDS_VS_ELEVATION"
+      ],
+      "reviewInstruction": "Consecration words are not the Host elevation; preserve exact physical-stage gap.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.023",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5–6",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "HOST_GENUFLECTION_FIRST",
+        "ORDERED_ATOMIC_STEPS"
+      ],
+      "reviewInstruction": "First genuflection has independent observable stage.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.024",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5–6",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "HOST_ELEVATION_AFTER_FIRST_GENUFLECTION",
+        "ORDERED_ATOMIC_STEPS"
+      ],
+      "reviewInstruction": "Host elevation occurs after the first genuflection, not simultaneously.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.025",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5–6",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "HOST_REPLACE_THEN_SECOND_GENUFLECTION",
+        "ORDERED_ATOMIC_STEPS"
+      ],
+      "reviewInstruction": "Host placement then second genuflection must not collapse.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.026",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5",
+      "anchorKind": "PERSISTENT_SOURCE_STATE",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "PERSISTENT_THUMB_INDEX_STATE_NOT_INSTANT"
+      ],
+      "reviewInstruction": "Joined fingers is a persistent discipline, not a momentary action icon.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.027",
+      "cueId": "AO.SM.C0174",
+      "actor": "SERVER",
+      "ritusLocator": "VIII.6",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "SERVER_BELL_CONCURRENT_WITH_HOST_ELEVATION",
+        "RING_THREE_OR_CONTINUOUSLY"
+      ],
+      "reviewInstruction": "Server bell actor and independently observed duration; never priest gesture.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.028",
+      "cueId": "AO.SM.C0175",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "CHALICE_UNCOVER_AND_SMALL_PREP_ELEVATION_NOT_MAJOR",
+        "SOLEMN_DEACON_UNCOVER_CONDITIONAL_NOT_UNIVERSAL_PRIEST"
+      ],
+      "reviewInstruction": "Solemn deacon's conditional uncovering and priest's slight narrative elevation remain separate.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.032",
+      "cueId": "AO.SM.C0179",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "CHALICE_WORDS_VS_ELEVATION"
+      ],
+      "reviewInstruction": "Chalice consecration words occur before first genuflection and major elevation.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.033",
+      "cueId": "AO.SM.C0180",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "CHALICE_REPLACEMENT_HAEC_WORDS_THEN_FIRST_GENUFLECTION"
+      ],
+      "reviewInstruction": "Chalice replacement, secret Haec and first genuflection are ordered independently.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.034",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "CHALICE_FIRST_GENUFLECT_ELEVATE_REPLACE_COVER_SECOND_GENUFLECT"
+      ],
+      "reviewInstruction": "Large Chalice elevation, replacement, role-owned pall and second genuflection cannot fire together.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.035",
+      "cueId": "AO.SM.C0181",
+      "actor": "SERVER",
+      "ritusLocator": "VIII.6–7",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "SERVER_BELL_CONCURRENT_WITH_CHALICE_ELEVATION"
+      ],
+      "reviewInstruction": "Server bell at chalice elevation independent of priest.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.039",
+      "cueId": "AO.SM.C0185",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "STANDARD",
+      "issues": [
+        "TWO_SEPARATE_CROSSES_HOST_THEN_CHALICE"
+      ],
+      "reviewInstruction": "Check the stated source-linked event and retain independent actor timing and word/ceremony placement.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.040",
+      "cueId": "AO.SM.C0186",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "STANDARD",
+      "issues": [
+        "PERSISTENT_HANDS_NO_NEW_GESTURE"
+      ],
+      "reviewInstruction": "Check the stated source-linked event and retain independent actor timing and word/ceremony placement.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.041",
+      "cueId": "AO.SM.C0187",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_FIRST_PASS_19"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "IX_1_INCLINAT_SE_DEGREE_NOT_INDEPENDENTLY_SPECIFIED"
+      ],
+      "reviewInstruction": "Ritus IX.1 says inclinat se; degree not expressly specified by its Latin sentence.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.044",
+      "cueId": "AO.SM.C0190",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "STANDARD",
+      "issues": [
+        "COELESTI_SOURCE_VARIANT_NOT_CAELESTI"
+      ],
+      "reviewInstruction": "Check the stated source-linked event and retain independent actor timing and word/ceremony placement.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.050",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "RAISED_VOICE_ONLY_INITIAL_PHRASE_ONE_CHEST_STRIKE"
+      ],
+      "reviewInstruction": "Raised voice only at Nobis quoque, with one breast strike.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.051",
+      "cueId": "AO.SM.C0197",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "VOICE_RETURNS_TO_SECRET"
+      ],
+      "reviewInstruction": "Voice returns to secret at famulis tuis.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.055",
+      "cueId": "AO.SM.C0201",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "SOLEMN_DEACON_ROLE_SEPARATE_FROM_PRIEST"
+      ],
+      "reviewInstruction": "Solemn deacon uncovers when required; celebrant keeps own genuflection/Host handling.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.058",
+      "cueId": "AO.SM.C0204",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "MINOR_ELEVATION_NOT_MAJOR_OSTENSION"
+      ],
+      "reviewInstruction": "Minor elevation of Host plus chalice, not major ostension.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.059",
+      "cueId": "AO.SM.C0205",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "anchorKind": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "SOLEMN_DEACON_MAY_UNCOVER_COVER_CHALICE"
+      ],
+      "reviewInstruction": "Pall handling form-owned; separate prescribed deacon genuflection.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.060",
+      "cueId": "AO.SM.C0206",
+      "actor": "PRIEST",
+      "ritusLocator": "X.1",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH",
+        "PR1161_COMPLEX_23"
+      ],
+      "priority": "STANDARD",
+      "issues": [
+        "AUDIBLE_BOUNDARY_TO_PATERNOSTER"
+      ],
+      "reviewInstruction": "Check the stated source-linked event and retain independent actor timing and word/ceremony placement.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.061",
+      "cueId": "AO.SM.C0207",
+      "actor": "SERVER",
+      "ritusLocator": "X.1",
+      "anchorKind": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "RESPONSE_ROLE_DEPENDS_ON_MASS_FORM"
+      ],
+      "reviewInstruction": "Low minister-response vs Sung user-response clock; no inferred personal speaker.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    },
+    {
+      "actionId": "AO.CANON.R62.062",
+      "cueId": "AO.SM.C0161",
+      "actor": "SERVER",
+      "ritusLocator": "VIII.6",
+      "anchorKind": "OBSERVED_ANTICIPATORY_EVENT",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "evidenceTracks": [
+        "R62_CANONICAL_LATIN_TRIGGER_RESEARCH"
+      ],
+      "priority": "HIGH",
+      "issues": [
+        "ANTICIPATORY_BELL_NOT_EXACT_HANC_IGITUR_CUE"
+      ],
+      "reviewInstruction": "Bell paulo ante Consecrationem, not an exact Hanc igitur word match.",
+      "copyReviewState": "INDEPENDENT_FRENCH_EDITORIAL_SIGNOFF_REQUIRED",
+      "publishable": false
+    }
+  ]
+}
