@@ -17,7 +17,9 @@
     "published": 0,
     "phraseLevelComparisonsAgainstAccessibleText": 12,
     "originalMissalScanChecks": 0,
-    "primaryTextLinkCorrections": 26
+    "primaryTextLinkCorrections": 26,
+    "properExamplesComparedTo1962OCR": 2,
+    "totalSelectComparisonsAndProperIdentityChecks": 14
   },
   "editorialPolicy": {
     "authorialDraftsAreNotAuthorQuotes": true,
@@ -211,11 +213,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "1962_PROPER_LECTIO_SOURCE_IDENTITY_CROSSCHECK",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/1co012.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Benziger 1962 editio iuxta typicam OCR, printed page 384, Dominican tenth Sunday after Pentecost; two-column text, original facsimile still unreviewed",
+        "bibleVerseCrosscheck": true,
+        "sourcePathConfirmedAtResearchLevel": true,
+        "actualRuntimeProperNotSelected": true,
         "original1962FacsimileVisuallyConfirmed": false,
+        "comparison": "1962 Missal Sunday X after Pentecost (printed page 384) explicitly lists 1 Cor. 12,2–11 as Epistle. This is only a conditional example, not all Masses.",
         "publicationApproved": false
       }
     },
@@ -240,11 +246,15 @@
       ],
       "publicationApproved": false,
       "evidenceAudit": {
-        "stage": "BIBLIOGRAPHY_LINKED_NOT_PAIRED_TEXT_CHECKED",
-        "checkedScriptureUrl": null,
-        "checkedRiteWitnessUrl": null,
-        "bibleVerseCrosscheck": false,
+        "stage": "1962_PROPER_LECTIO_SOURCE_IDENTITY_CROSSCHECK",
+        "checkedScriptureUrl": "https://www.newadvent.org/bible/luk018.htm",
+        "checkedRiteWitnessUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "checkedRiteSourceLimit": "Benziger 1962 editio iuxta typicam OCR, printed page 384, Dominican tenth Sunday after Pentecost; two-column text, original facsimile still unreviewed",
+        "bibleVerseCrosscheck": true,
+        "sourcePathConfirmedAtResearchLevel": true,
+        "actualRuntimeProperNotSelected": true,
         "original1962FacsimileVisuallyConfirmed": false,
+        "comparison": "1962 Missal Sunday X after Pentecost (printed page 384) explicitly lists Luke 18,9–14 as Gospel. This is only a conditional example, not all Masses.",
         "publicationApproved": false
       }
     },
