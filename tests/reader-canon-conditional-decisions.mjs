@@ -103,8 +103,8 @@ const complex=read("../data/research/mass-canon-complex-23-ritus-source-review-2
 const flaggedInCanon=sources.frenchReview.rows.filter(row=>row.editorialFlags.length);
 assert.equal(flagged.status,"COMPLETE_FLAG_TRIAGE_ONLY_NO_COPY_SIGNOFF");
 assert.deepEqual(flagged.counts,{
- frenchDrafts:62,flaggedDrafts:30,highPriority:22,standardPriority:8,
- flaggedWithFirstPassResearch:1,flaggedWithComplexResearch:18,
+ frenchDrafts:62,flaggedDrafts:29,highPriority:21,standardPriority:8,
+ flaggedWithFirstPassResearch:0,flaggedWithComplexResearch:18,
  flaggedWithR62SourceOnly:11,editoriallyApproved:0,published:0
 });
 assert.deepEqual(flagged.rows.map(x=>x.actionId),flaggedInCanon.map(x=>x.id));
