@@ -6,7 +6,7 @@ The 134 unselected artwork subjects were reconciled with the **266 SHA-acquired 
 
 ## Verified progress and truth in accounting
 
-- **50/50 exact artwork identities/source records reconciled** and recorded, of which **44/50 actually visually inspected through matched on-screen previews**. **6/50** are reliable institutional object records whose exact composition **was not visually verified** in this review and must remain unranked for artistic approval.
+- **50/50 exact artwork identities/source records reconciled** and recorded, of which **44/50 actually visually inspected through matched on-screen previews**. **4/50** are reliable institutional object records whose exact composition **was not visually verified** in this review and must remain unranked for artistic approval.
 - **12** source-matched paintings presently ranked priority artistic candidates by assistant, **32** image-seen contextual/secondary/style holds, and **6** image-pending institutional records.
 - **101 existing user-selected subjects remain unchanged.** Previously selected Sacred Heart Morlete Ruiz remains historically approved *for its subject*, notwithstanding weaker home-screen suitability. No automatic removals, approvals, new gallery, production publish, or cropped images.
 - Source/master SHA-256 is retained for every one of 50 painting records; these are **not** new full-resolution byte checks, image downloads or universal commercial-license certifications.
@@ -86,9 +86,13 @@ The historical [Juan Patricio Morlete Ruiz *The Heart of Mary*](https://artsandc
 
 ## Next work
 
-1. Obtain exact museum-matched rendered previews for the six image-pending originals and close the visual check; **no new painting acquisitions needed** for that.
+1. Obtain exact museum-matched rendered previews for the four image-pending originals and close the visual check; **no new painting acquisitions needed** for that.
 2. Consider the 12 priority paintings and the retained user-selected 35 acquired originals as one pooled shortlist to check for strong saint/Scripture/calendar coverage, without displacing the current 101 chosen subjects.
 3. Resume research for the 107 remaining specific subjects where the acquired registry has no verified satisfactory source. Keep Bible Atlas subjects that benefit more from maps, genealogy and architectural information rather than forcing poor paintings.
 4. Only after artwork research/visual screening across all subjects, prepare the planned **single comprehensive HTML gallery** for user exceptions and final art approval, followed separately by rights and phone-crop release QA.
 
 **Machine-readable evidence:** [previous batch](../../data/calendar/sacred-art-acquired-exact-visual-review-20261012.v1.json) · [this batch](../../data/calendar/sacred-art-acquired-second-image-batch-20261012.v1.json) · [134-subject reuse ledger](../../data/calendar/sacred-art-134-existing-originals-reuse-20261012.v2.json).
+
+## 13 October — exact original-pixel inspection checkpoint
+
+Nine original JPEGs were extracted from their GitHub Actions artifact ZIPs and independently SHA-256 matched with the canonical artwork registry. These were actually visually examined at full composition and as 9:16 center-cover simulations: Maratti *Flight into Egypt*, Bourdon *Baptism of Christ*, Bassano *Miraculous Draught of Fishes*, Luti *Woman of Samaria*, Velázquez and Piazzetta *Supper at Emmaus*, Guercino *Rest on the Flight*, Juan de Flandes *Marriage at Cana* and *Temptation of Christ*. The Temptation's original NGA painting was previously one of the five exact-image visual holds; it is now visually checked and classified as a condition-restricted illustration because its fine figures and vertical craquelure weaken it for Home hero display. Consequently **46/50 acquired originals have been visually assessed**, **four still require exact image view**, and **nine have passed an explicit master-byte SHA check in this latest pass**. Four outstanding original-image reviews: NGA 41644, Met 442750, Met 436302, Kress K2017. These do not imply user art approvals or production release. [Nine-original byte/pixel audit](../../data/calendar/sacred-art-9-master-pixel-inspection-20261013.v1.json).
