@@ -9,7 +9,7 @@
     "total": 134,
     "priorNoCandidate": 64,
     "priorRejectedOrUnapproved": 70,
-    "postExportLeadSubjects": 28,
+    "postExportLeadSubjects": 30,
     "noCandidateAfterNewLeads": 42,
     "byCollection": {
       "Bible Atlas": {
@@ -2166,7 +2166,19 @@
       "previousCandidateArtworkIds": [
         "ART-aphael-and-workshop-acrifice-at-ystra-tapestry-cartoon"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "met-437351-jacob-pynas-lystra",
+          "artist": "Jacob Pynas",
+          "title": "Paul and Barnabas at Lystra",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437351",
+          "matchNotes": "Met 1971.255, Jacob Pynas original oil on wood 48.3x73.3 cm, Acts 14:8-18 scene at Lystra. Institutional public-domain source, higher artistic potential than a generic print. Do not confuse with Jordaens chalk drawing 335629 or Guerra's AFTER-STONING Acts 14:20 scene 339081.",
+          "curatorialTier": "PROMISING_OIL_EXACT_EPISODE_SOURCE_MATCH",
+          "reviewStatus": "OBJECT_IDENTITY_SOURCE_VERIFIED_ARTISTIC_RIGHTS_PENDING",
+          "imageAcquired": false,
+          "appPublished": false
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
@@ -2224,7 +2236,19 @@
       "previousCandidateArtworkIds": [
         "ART-aphael-and-workshop-aint-aul-reaching-at-thens-tapestry-cartoon"
       ],
-      "newResearchLeads": [],
+      "newResearchLeads": [
+        {
+          "artworkId": "vatican-raphael-athens-acts-tapestry",
+          "artist": "Flemish workshop after Raphael and his workshop",
+          "title": "Saint Paul Preaching at Athens",
+          "sourceUrl": "https://www.museivaticani.va/content/museivaticani/en/eventi-e-novita/iniziative/mostre/2026/predica-san-paolo-atene.html",
+          "matchNotes": "Official Vatican Museums source documents 1515-1521 Acts tapestry from Raphael/workshop preparatory cartoons, Acts 17:16-34 Paul before Areopagus, now on display in 2026 in the Papal Palace Castel Gandolfo. A tapestry, NOT directly an oil Raphael canvas; rights/reproduction and large size hold. Strong exact scene and major historical art.",
+          "curatorialTier": "HIGH_VALUE_HISTORICAL_TAPESTRY_NOT_OIL",
+          "reviewStatus": "OBJECT_IDENTITY_SOURCE_VERIFIED_ARTISTIC_RIGHTS_PENDING",
+          "imageAcquired": false,
+          "appPublished": false
+        }
+      ],
       "needsFirstResearchLead": false,
       "editorialStatus": "RESEARCH_REQUIRED",
       "productionStatus": "NOT_APPROVED"
