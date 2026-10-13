@@ -1,0 +1,292 @@
+{
+  "schema": "AO_SACRED_ART_SOURCE_CENSUS_WAVE09_V1",
+  "asOf": "2026-10-13",
+  "purpose": "Correct omitted Caravaggio, Rubens, Champaigne, Ribera religious originals in Nancy and authenticated Caravaggios in Rome/Syracuse/Madrid. Not user approval or image download.",
+  "sources": [
+    "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviie-siecle",
+    "https://barberinicorsini.org/evento/caravaggio-nel-patrimonio-del-f-e-c-il-doppio-e-la-copia/",
+    "https://www.patrimonionacional.es/en/coleccion/restauracion/salome-con-la-cabeza-del-bautista",
+    "https://www.museicapitolini.org/it/opera/san-giovanni-battista"
+  ],
+  "importantAttributionCorrection": "Barberini Corsini distinguishes original Carpineto San Francesco from Capuchin Roma copy; never count both as autograph originals.",
+  "counts": {
+    "newPhysicalOriginalIdentities": 8,
+    "nancy": 4,
+    "additionalCaravaggio": 4,
+    "priorQueue": 145,
+    "afterAddition": 153,
+    "newImagesDownloaded": 0
+  },
+  "queue": [
+    {
+      "leadId": "W09-001",
+      "artist": "Caravaggio",
+      "title": "L'Annonciation",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": null,
+      "sourceUrl": "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviie-siecle",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_COLLECTION_PAGE",
+      "contextKeys": [
+        "rosary.joy1",
+        "calendar.annunciation",
+        "angelus",
+        "biblical-theatre.annunciation"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Nancy 1607–1610 original; no assumption that every depiction fits 5/5 repeat.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 9,
+      "identityNote": "INDIVIDUAL_OR_INSTITUTIONAL_SOURCE_NEW_OBJECT",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_COLLECTION_PAGE"
+    },
+    {
+      "leadId": "W09-002",
+      "artist": "Peter Paul Rubens",
+      "title": "La Transfiguration",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": null,
+      "sourceUrl": "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviie-siecle",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_COLLECTION_PAGE",
+      "contextKeys": [
+        "rosary.lum4",
+        "calendar.transfiguration",
+        "biblical-theatre.transfiguration"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Nancy collection names an original by Rubens, dated 1604–1605; not automatically the same as any other Transfiguration.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 9,
+      "identityNote": "INDIVIDUAL_OR_INSTITUTIONAL_SOURCE_NEW_OBJECT",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_COLLECTION_PAGE"
+    },
+    {
+      "leadId": "W09-003",
+      "artist": "Philippe de Champaigne",
+      "title": "La Charité",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": null,
+      "sourceUrl": "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviie-siecle",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_COLLECTION_PAGE",
+      "contextKeys": [
+        "devotion.charity",
+        "formation.theological-virtues"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Original dated 1635–1636; charity imagery can be symbolic rather than a literal Gospel event.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 9,
+      "identityNote": "INDIVIDUAL_OR_INSTITUTIONAL_SOURCE_NEW_OBJECT",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_COLLECTION_PAGE"
+    },
+    {
+      "leadId": "W09-004",
+      "artist": "Jusepe de Ribera",
+      "title": "Le Baptême du Christ",
+      "institution": "Musée des Beaux-Arts, Nancy",
+      "accession": null,
+      "sourceUrl": "https://musee-des-beaux-arts.nancy.fr/les-collections/peinture/peinture-du-xviie-siecle",
+      "sourceSpecificity": "OFFICIAL_MUSEUM_COLLECTION_PAGE",
+      "contextKeys": [
+        "rosary.lum1",
+        "biblical-theatre.baptism-christ",
+        "calendar.baptism-christ"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Ribera work dated 1643; another original than Jacopo Bassano's already 4/5 Baptism; do not reacquire Bassano.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 9,
+      "identityNote": "INDIVIDUAL_OR_INSTITUTIONAL_SOURCE_NEW_OBJECT",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_MUSEUM_COLLECTION_PAGE"
+    },
+    {
+      "leadId": "W09-005",
+      "artist": "Caravaggio",
+      "title": "San Francesco in meditazione (Carpineto original)",
+      "institution": "Fondo Edifici di Culto, deposit Gallerie Nazionali Barberini Corsini, Rome",
+      "accession": null,
+      "sourceUrl": "https://barberinicorsini.org/evento/caravaggio-nel-patrimonio-del-f-e-c-il-doppio-e-la-copia/",
+      "sourceSpecificity": "INSTITUTION_ATTESTS_ORIGINAL_AND_SEPARATE_COPY",
+      "contextKeys": [
+        "calendar.saint-francis",
+        "devotion.meditation",
+        "devotion.memento-mori"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Explicitly ORIGINAL Carpineto Romano canvas, not nearly identical Roman Capuchin copy. FEC owner original/source Barberini deposit.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 9,
+      "identityNote": "INDIVIDUAL_OR_INSTITUTIONAL_SOURCE_NEW_OBJECT",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INSTITUTION_ATTESTS_ORIGINAL_AND_SEPARATE_COPY"
+    },
+    {
+      "leadId": "W09-006",
+      "artist": "Caravaggio",
+      "title": "Seppellimento di Santa Lucia",
+      "institution": "Fondo Edifici di Culto, Santa Lucia alla Badia, Syracuse",
+      "accession": null,
+      "sourceUrl": "https://barberinicorsini.org/evento/caravaggio-nel-patrimonio-del-f-e-c-il-doppio-e-la-copia/",
+      "sourceSpecificity": "INSTITUTION_ATTESTS_ORIGINAL",
+      "contextKeys": [
+        "calendar.saint-lucy",
+        "saints.martyrdom",
+        "devotion.burial"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "FEC five acknowledged original Caravaggios include Burial of Saint Lucy; current installation location requires time-specific verification.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 9,
+      "identityNote": "INDIVIDUAL_OR_INSTITUTIONAL_SOURCE_NEW_OBJECT",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "INSTITUTION_ATTESTS_ORIGINAL"
+    },
+    {
+      "leadId": "W09-007",
+      "artist": "Caravaggio",
+      "title": "Salomé con la cabeza del Bautista (Madrid original)",
+      "institution": "Patrimonio Nacional, Galería de las Colecciones Reales, Madrid",
+      "accession": null,
+      "sourceUrl": "https://www.patrimonionacional.es/en/coleccion/restauracion/salome-con-la-cabeza-del-bautista",
+      "sourceSpecificity": "OFFICIAL_ORIGINAL_INSTITUTION_PAGE",
+      "contextKeys": [
+        "calendar.beheading-john-baptist",
+        "biblical-theatre.john-martyrdom"
+      ],
+      "priority": "P0",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Distinct original from London's National Gallery NG6389 previously W01-009. Different Salome version; Royal Collections official provenance.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 9,
+      "identityNote": "INDIVIDUAL_OR_INSTITUTIONAL_SOURCE_NEW_OBJECT",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_ORIGINAL_INSTITUTION_PAGE"
+    },
+    {
+      "leadId": "W09-008",
+      "artist": "Caravaggio",
+      "title": "San Giovanni Battista (Capitoline original)",
+      "institution": "Musei Capitolini, Pinacoteca Capitolina, Rome",
+      "accession": "PC 239",
+      "sourceUrl": "https://www.museicapitolini.org/it/opera/san-giovanni-battista",
+      "sourceSpecificity": "OFFICIAL_INDIVIDUAL_OBJECT_WITH_INVENTORY",
+      "contextKeys": [
+        "calendar.saint-john-baptist",
+        "saints.john-baptist"
+      ],
+      "priority": "P1",
+      "artistTaste": {
+        "positiveRatedWorks": 0,
+        "fiveRatedWorks": 0,
+        "negativeRatedWorks": 0,
+        "oldSubjectApprovedOriginals": 0,
+        "explicitAestheticBenchmark": false
+      },
+      "provenanceNotes": "Capitoline 1602 Saint John PC239; no narrative Baptism in Jordan here. Not Borghese or Kansas City Baptist.",
+      "reproductionRightsStatus": "WORLDWIDE_COMMERCIAL_DIGITAL_IMAGE_REPRO_PENDING",
+      "knownArchiveSameExactSourceUrl": null,
+      "existingSameArtistTitleArchiveIds": [],
+      "newOriginalMasterAcquired": false,
+      "numericUserRating": null,
+      "repeatEligible": false,
+      "readyForCommercialRelease": false,
+      "researchWave": 9,
+      "identityNote": "INDIVIDUAL_OR_INSTITUTIONAL_SOURCE_NEW_OBJECT",
+      "acquisitionStatus": "NOT_ACQUIRED",
+      "verifiedSourceBasis": "OFFICIAL_INDIVIDUAL_OBJECT_WITH_INVENTORY"
+    }
+  ]
+}
