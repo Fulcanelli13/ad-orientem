@@ -46,8 +46,8 @@ function readyEnvelope(slot,value,{language="en"}={}){
     const raw=String(text??"");
     if(!spokenOrations)return raw;
     const response=locale==="fr"
-      ?/\\s*(?:(?:℟\\.|R\\.)\\s*)?(?:Ainsi soit-il|Amen)\\.\\s*$/iu
-      :/\\s*(?:(?:℟\\.|R\\.)\\s*)?Amen\\.\\s*$/iu;
+      ?/\s*(?:(?:℟\.|R\.)\s*)?(?:Ainsi soit-il|Amen)\.\s*$/iu
+      :/\s*(?:(?:℟\.|R\.)\s*)?Amen\.\s*$/iu;
     const without=raw.replace(response,"").trimEnd();
     return without||raw;
   };
