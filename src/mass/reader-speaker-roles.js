@@ -73,6 +73,13 @@ const VERSICLE_ACTORS=Object.freeze({
 // Low Mass server responds in the alternating ninefold Kyrie. The same
 // source cue IDs belong to the schola in Sung Mass, so this cannot be a
 // cross-form override or a mutation of the frozen Ordinary source.
+// At Low Mass the celebrant, not a deacon or other proclaiming
+// minister, says the Gospel versicle/proclamation and dismissal. The
+// sung corpus still uses a form-sensitive minister owner for Solemn
+// versus Missa Cantata and must not be over-labelled as a priest.
+const LOW_CELEBRANT_OWNED_PUBLIC_CUES=new Set([
+  "AO.SM.C0082","AO.SM.C0084","AO.SM.C0259"
+]);
 const LOW_KYRIE_MINISTER_RESPONSE_CUES=new Set([
   "AO.SM.C0045","AO.SM.C0047","AO.SM.C0049","AO.SM.C0051"
 ]);
@@ -80,6 +87,11 @@ export const SUNG_ORDINARY_INTONATION_CUES=Object.freeze(["AO.SM.C0053","AO.SM.C
 
 export function resolveOrdinarySpeaker(unit,{form="SUNG",blockId=null}={}){
   const cueId=String(unit?.cue_id??"");
+  if(String(form).toUpperCase()==="LOW" &&
+     LOW_CELEBRANT_OWNED_PUBLIC_CUES.has(cueId)){
+    return Object.freeze({role:"PRIEST",
+      evidence:"1962_LOW_MASS_CELEBRANT_GOSPEL_OR_DISMISSAL"});
+  }
   if(String(form).toUpperCase()==="LOW" &&
      LOW_KYRIE_MINISTER_RESPONSE_CUES.has(cueId)){
     return Object.freeze({role:"MINISTERS",kind:"RESPONSE",
