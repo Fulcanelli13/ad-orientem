@@ -26,11 +26,11 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Enumerate complete Rubens Eucharist corpus beyond six Prado oil models and separate engravings/copies/tapestries",
-    "Reconcile Caravaggio original authorship and alternative versions against original custodians",
-    "Source lawful high-resolution photographs and durable vault for 214 source-unacquired new leads without reacquiring approved 4–5/5 works",
-    "Preserve NGA 46131 anonymous Rubens-workshop replica status; actual Rubens source modello Mauritshuis 926 restricted for commercial use",
-    "Obtain user 0–5 ratings, themed placement, original crop and publication approval"
+    "Inspect new Commons 6-image Actions run and downloaded artifact / ledger (not yet certified successful)",
+    "If verified, reconcile per-file acquisition count and archive JPEGs durably; failures remain holds",
+    "Investigate high-quality lawful source replacements for 208+ remaining pending images without duplication",
+    "Preserve 0–5 image taste approvals and commercial digital-photo rights checks",
+    "Finish Rubens/Van Dyck/Caravaggio/Champaigne original oeuvre census"
   ],
   "verifiedCounts": {
     "master": 222,
@@ -60,5 +60,26 @@
         "W15-005"
       ]
     }
-  ]
+  ],
+  "acquisitionExecutionLane": {
+    "date": "2026-10-13",
+    "status": "WORKFLOW_COMMITTED_BUT_NO_COMPLETED_ACQUISITION_REPORT_YET",
+    "manifest": "data/calendar/sacred-art-commons-six-strict-acquisition-20261013.v1.json",
+    "script": "tools/calendar/acquire-sacred-art-commons-six.py",
+    "workflow": ".github/workflows/sacred-art-commons-six-originals.yml",
+    "candidateLeadIds": [
+      "W09-001",
+      "W15-001",
+      "W15-002",
+      "W15-003",
+      "W15-004",
+      "W14-011"
+    ],
+    "candidateCount": 6,
+    "source": "Wikimedia Commons original JPEG, linked to museum inventory, public-domain declaration; commercial rights review remains separate",
+    "willNeverAutopromote": true,
+    "successCriteria": "GitHub Actions run has completed, artifacts contain downloaded JPEGs plus successful SHA1/256 ledger verified, and all file holds are recorded.",
+    "noClaim": "Candidate list is not acquired, counted as 0 additional verified images until actual ZIP and ledger examined.",
+    "retentionWarning": "Actions artifacts expire in 30 days; preservation of source image ZIP into permanent vault remains outstanding."
+  }
 }
