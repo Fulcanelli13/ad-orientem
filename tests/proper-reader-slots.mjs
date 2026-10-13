@@ -127,7 +127,7 @@ const readingSource={
   },
 };
 for(const language of ["en","fr"]){
-  const slots=properToReaderSlots({...proper,...readingSource},{language});
+  const slots=properToReaderSlots({...(language==="fr"?frenchProper:proper),...readingSource},{language});
   assert.equal(slots.ready,true,language+" reading response dedup blocked a valid Proper");
   const epistle=slots.slots.EPISTLE_OR_LESSON.data.paragraphs[0];
   const gospel=slots.slots.GOSPEL.data.paragraphs[0];
