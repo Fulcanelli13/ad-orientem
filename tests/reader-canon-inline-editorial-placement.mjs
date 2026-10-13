@@ -3,6 +3,8 @@ import {readFileSync} from "node:fs";
 import {createMassReaderModel} from "../src/mass/reader-model.js";
 import {createCanonRubricAdjudicationController} from "../src/mass/reader-canon-rubric-adjudication.js";
 import {projectCanonInlineEditorialPlacements} from "../src/mass/reader-canon-inline-editorial-placement.js";
+import {createCanonDetailedRubricEditorialController} from "../src/mass/reader-canon-detailed-rubric-backfill.js";
+import {buildCanon42EditorialReviewPacket} from "../src/mass/reader-canon-42-editorial-review-packet.js";
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const low=load("../data/presentation/reader-text-low.v1.json");
@@ -14,6 +16,12 @@ const triggerAudit=load("../data/research/mass-canon-62-source-trigger-audit-202
 const frenchReview=load("../data/research/mass-canon-french-rubric-62-original-redraft-20261013.json");
 const ministerData=load("../data/research/mass-canon-minister-form-branches-20261013.json");
 const promotion=load("../data/research/mass-canon-42-rubric-promotion-review-20261013.json");
+const backfillCtl=createCanonDetailedRubricEditorialController({
+  backfill:load("../data/research/mass-canon-42-detailed-rubric-editorial-backfill-20261013.json"),
+  canonData,
+  gapData:load("../data/research/mass-canon-14-rubric-registry-gap-audit-20261013.json"),
+  triggerAudit,frenchReview,
+});
 const ctl=createCanonRubricAdjudicationController({
   canonData,triggerAudit,frenchReview,ministerData,
 });
@@ -56,6 +64,40 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
     sourceLatinByCue:sourceByCue(form==="LOW"?low:sung),
     form,editorialPreview:true,
   });
+  const closedPacket=buildCanon42EditorialReviewPacket({
+    inlineProjection:preview,backfillController:backfillCtl,form,
+  });
+  assert.equal(closedPacket.status,"EDITORIAL_REVIEW_DISABLED");
+  assert.equal(closedPacket.rows.length,0,"Default LIVE path must contain no French drafts");
+  const packet=buildCanon42EditorialReviewPacket({
+    inlineProjection:preview,backfillController:backfillCtl,
+    form,editorialPreview:true,
+  });
+  assert.equal(packet.status,"COMPLETE_SOURCE_REFERENCED_EDITORIAL_PACKET_NOT_PUBLISHED");
+  assert.equal(packet.reviewedCueCount,42);
+  assert.equal(packet.publicationReady,0);
+  assert.equal(packet.canPublish,false);
+  assert.equal(packet.rows.filter(r=>r.anchorStatus==="WORD_MATCH_EXACT").length,40);
+  assert.equal(packet.rows.filter(r=>r.anchorStatus==="NON_TEXT_SOURCE_EVENT").length,2);
+  assert.equal(new Set(packet.rows.map(r=>r.cueId)).size,42);
+  assert.ok(packet.rows.every(r=>r.frenchCopyDraft.length>15&&
+    r.sourceUrls.length>0&&r.sourceUrls.every(url=>url.startsWith("https://"))&&
+    r.readerDisplayText===null&&r.priestActionNow===null&&r.faithfulPosture===null&&
+    r.copyApproval==="NOT_APPROVED"&&r.ceremonialApproval==="NOT_APPROVED"&&
+    r.readerAcceptance==="NOT_APPROVED"&&r.canPublish===false));
+  for(const cue of ["AO.SM.C0201","AO.SM.C0205"]){
+    const r=packet.rows.find(row=>row.cueId===cue);
+    assert.equal(r.anchorStatus,"NON_TEXT_SOURCE_EVENT");
+    assert.equal(r.spans.length,0);
+    assert.ok(r.ritusLocator,"Editor must retain primary Ritus provenance");
+  }
+  assert.equal(packet.rows.find(r=>r.cueId==="AO.SM.C0205")
+    .conditionalMinisterStages[0].solemnActor,"DEACON_WHEN_REQUIRED");
+  assert.equal(packet.rows.find(r=>r.cueId==="AO.SM.C0153")
+    .canonicalCorrectionId,"SRC-PARITY-002");
+  assert.equal(packet.rows.find(r=>r.cueId==="AO.SM.C0194")
+    .canonicalCorrectionId,"SRC-PARITY-003");
+  assert.equal(packet.approvalRequirements.length,4);
   const events=flattened(preview);
   assert.equal(preview.status,"EDITORIAL_PREVIEW_ONLY");
   assert.equal(preview.publicationReady,0);
@@ -173,6 +215,26 @@ const duplicate=()=>projectCanonInlineEditorialPlacements({
   form:"LOW",editorialPreview:true,
 });
 assert.throws(duplicate,/repeated in multiple reader paragraphs/);
+const withheldPacket=()=>buildCanon42EditorialReviewPacket({
+  inlineProjection:changed,backfillController:backfillCtl,
+  form:"SOLEMN",editorialPreview:true,
+});
+assert.throws(withheldPacket,/needs all 42 gap cues exactly once/,
+  "Partial Canon paragraph sets must not claim full editorial signoff");
+const failedStatus=structuredClone({
+  status:"EDITORIAL_PREVIEW_ONLY",canPublish:false,publicationReady:0,
+  paragraphs:[{paragraphId:"forged",placements:[{
+    cueId:"AO.SM.C0150",actionId:"AO.CANON.R62.001",
+    canPublish:true,publication:"NOT_APPROVED_NOT_VISIBLE",displayText:null,
+    priestActionNow:null,faithfulPosture:null,
+  }],canPublish:false}],
+  unmatchedGapCueIds:[],
+});
+assert.throws(()=>buildCanon42EditorialReviewPacket({
+  inlineProjection:failedStatus,backfillController:backfillCtl,
+  form:"SOLEMN",editorialPreview:true,
+}),/publication leak/,
+"Editorial packet must reject an attempted LIVE publication flag");
 console.log("PASS Canon inline review: 42 gap cues in all four reader forms; "+
   totalExact+" exact word placements; "+totalNonWord+
   " non-text previews; corrected text and composite cues fail closed; zero LIVE copy.");
