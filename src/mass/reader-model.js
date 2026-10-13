@@ -76,6 +76,7 @@ export function createMassReaderModel({
       vernacularLanguage,
       frenchOrdinary,
       ordinaryVariants,
+      actualForm:resolvedMass.form,
     })
   ));
   const cards=augmentReaderCardsWithPrayerOverPeople(baseCards,resolvedMass);
