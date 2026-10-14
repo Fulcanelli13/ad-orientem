@@ -1,0 +1,111 @@
+{
+  "schema": "ao-mass-minimal-native-svg-staging-v1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_PROTOTYPES_ONLY_NOT_APPROVED_NOT_RUNTIME_BOUND",
+  "governingFamily": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+  "referenceAsset": "assets/active/mass-v46/priest_sedilia_rich.svg",
+  "referenceRating": 5,
+  "governingRule": {
+    "3": "RESEARCH",
+    "4": "USER_REVIEW",
+    "5": "CONFIRMED",
+    "0_to_2": "REJECT_PREVIOUS_ORIGINAL",
+    "UNRATED": "PENDING"
+  },
+  "intent": "First actual geometry simplification, not a claim of successful artist-family replication. Minimal detail; gesture and silhouette first.",
+  "assetRoot": "reviews/mass-icon-candidates/minimal-20261014/",
+  "format": {
+    "viewBox": "0 0 128 128",
+    "svg": "PATH_AND_GEOMETRY_WITH_NO_EMBEDDED_RASTER",
+    "singleColor": "currentColor",
+    "cutouts": "native SVG mask",
+    "transparentCanvas": true,
+    "sourceMasterUnchanged": true,
+    "railedRenderingPx": [
+      48,
+      64,
+      128
+    ],
+    "note": "External image elements using SVG as src do not inherit CSS color; use INLINE SVG or CSS masking with currentColor from host UI."
+  },
+  "items": [
+    {
+      "id": "S_priest_incense_altar",
+      "file": "S_priest_incense_altar_min_v1.svg",
+      "sourceCueCandidates": [
+        "AO.SM.C0041",
+        "AO.SM.C0122"
+      ],
+      "priorScore": 3,
+      "priorDisposition": "RESEARCH",
+      "geometryStatus": "GEOMETRY_PROTOTYPE",
+      "stage": "INCENSE_ENABLED_ONLY",
+      "passed": [
+        "native nonembedded SVG shapes",
+        "single tint and true alpha",
+        "hair/face/ornament simplified"
+      ],
+      "needs": [
+        "compare with exact 5/5 priest_sedilia illustration",
+        "verify thurible swing and altar station against source",
+        "64px distinctness",
+        "explicit user artwork rating"
+      ],
+      "railAcceptance": "UNVERIFIED"
+    },
+    {
+      "id": "B16",
+      "file": "B16_profound_bow_min_v1.svg",
+      "sourceCueCandidates": [
+        "AO.SM.C0150",
+        "AO.SM.C0187"
+      ],
+      "priorScore": 4,
+      "priorDisposition": "USER_REVIEW",
+      "geometryStatus": "GEOMETRY_PROTOTYPE",
+      "stage": "ROMAN_CANON_AT_ALTAR_ONLY",
+      "passed": [
+        "native nonembedded SVG shapes",
+        "single tint and true alpha",
+        "waist inclination clearer at mobile size"
+      ],
+      "needs": [
+        "exact joined hand position and altar contact",
+        "profile-specific variants for Confiteor C0016",
+        "match approved vestment style",
+        "explicit user artwork rating"
+      ],
+      "railAcceptance": "POSSIBLE_NOT_YET_APPROVED"
+    },
+    {
+      "id": "B13",
+      "file": "B13_receives_host_min_v1.svg",
+      "sourceCueCandidates": [
+        "AO.SM.C0232"
+      ],
+      "priorScore": 3,
+      "priorDisposition": "RESEARCH",
+      "geometryStatus": "GEOMETRY_PROTOTYPE",
+      "stage": "PRIEST_COMMUNION",
+      "passed": [
+        "native nonembedded SVG shapes",
+        "single tint and true alpha",
+        "ornamental detail stripped"
+      ],
+      "needs": [
+        "redesign arm/Host relation to make consumption unmistakable",
+        "64px gesture legibility currently FAILED",
+        "compare with established family",
+        "explicit user artwork rating"
+      ],
+      "railAcceptance": "FAIL_AT_64PX"
+    }
+  ],
+  "notIncluded": "Detailed high-contrast generated image sheet was rejected, not processed into new icon assets.",
+  "productionChanges": {
+    "readerIcons": false,
+    "assetBank": false,
+    "approvedAssets": false,
+    "frozenDonor": false
+  }
+}
