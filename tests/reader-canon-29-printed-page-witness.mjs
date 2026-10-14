@@ -61,13 +61,15 @@ assert.deepEqual(get("001").witness.pdfPageNumbers,[13]);
 assert.equal(get("001").claimClass,"SEQUENCE_EYES_THEN_JOINED_HANDS");
 assert.deepEqual(get("017").witness.pdfPageNumbers,[14,15]);
 assert.equal(get("017").claimClass,"RETROSPECTIVE_SOURCE_ORDER");
+assert.match(originalFrench.get("AO.CANON.R62.017").revisedFrenchRubric,/découvre d’abord ce récipient de la main droite\. À « accépit panem »/);
+assert.match(bilingualOwner.get("AO.CANON.R62.017").guideDraft.en,/first uncovers it with his right hand\. At accepit panem/);
 assert.match(get("017").englishFinding,/before taking the principal Host/);
 assert.match(get("017").frenchFinding,/avant la prise de l'Hostie principale/);
 assert.match(get("017").latinLocator,/antequam accipiat hostiam/i);
 assert.match(originalFrench.get("AO.CANON.R62.017").shortFrenchRubricDraft,
- /découvre d’abord leur vase ; à « accépit panem »/);
+ /découvre d’abord leur vase ; puis, à « accépit panem »/);
 assert.match(bilingualOwner.get("AO.CANON.R62.017").shortDraft.en,
- /first uncovers their vessel; at accepit panem/);
+ /first uncovers their vessel; then, at accepit panem/);
 assert.equal(get("044").claimClass,"UNVERIFIED_DONOR_CROSS_OFFSET");
 assert.deepEqual(get("044").witness.pdfPageNumbers,[16]);
 assert.match(get("044").englishFinding,/after omni benedictione and before caelesti/);
