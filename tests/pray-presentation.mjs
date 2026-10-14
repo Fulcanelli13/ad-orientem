@@ -380,6 +380,12 @@ for(const code of ["en","fr"]){
  assert.ok(parts.every(x=>/^Part(ie)? \d+$/.test(x.title)),"do not invent semantic labels from equal text chunks");
  assert.throws(()=>extractLitanyProper(witness.replace(ending,""),code),/ending not found/i);
 }
+// Prayer needs the original Psalm/Gospel verses, not a blocking chain of
+// unrelated external Bellarmine/Catena commentary requests. The canonical
+// Scripture service's context-only mode preserves real source text and its
+// exact-signature persistent-cache policy.
+assert.match(runtime,/svc\\.load\\(kind,\\{en:ref,fr:ref,lat:ref\\},\\{contextOnly:true\\}\\)/,
+ "Prayer Scripture reader must bypass nonessential commentary retrieval");
 assert.match(runtime,/data-p435930-lit-retry/);
 assert.match(runtime,/litanySourceDisclosure\(\)/);
 assert.doesNotMatch(runtime,/A Manual of Prayers for the Use of the Catholic Laity\/Litany of the Saints/,"unavailable historical Wikisource title returned");
