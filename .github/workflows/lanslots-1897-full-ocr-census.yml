@@ -30,6 +30,7 @@ jobs:
           node tests/mass-lanslots-original-cue-audit.mjs
           node tests/mass-lanslots-critical-reconciliation.mjs
           node tests/mass-lanslots-full-ocr-integrity.mjs
+          node tests/mass-lanslots-original-image-spotcheck.mjs
       - name: Acquire unmodified Internet Archive original OCR
         shell: bash
         run: |
