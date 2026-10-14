@@ -295,10 +295,11 @@
       "cueId": "AO.SM.C0190",
       "candidateActionId": "AO.CANON.R62.044",
       "phase": "POST_CONSECRATION",
-      "reviewTrack": "TEXT_VARIANT_AND_CROSS_SIGN_OFFSET_UNRESOLVED",
-      "reviewGate": "DONOR_COELESTI_VS_1962_CAELESTI_SOURCE_CROSS_OFFSET_PENDING",
+      "reviewTrack": "TEXT_VARIANT_REQUIRES_EXACT_MATCH",
+      "reviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
       "placement": "GUIDE_ONLY_PENDING_CROSS_SIGN_OFFSET",
-      "publication": "NOT_APPROVED_NOT_VISIBLE"
+      "publication": "NOT_APPROVED_NOT_VISIBLE",
+      "sourceGestureOffsetReview": "DONOR_COELESTI_VS_1962_CAELESTI_SOURCE_CROSS_OFFSET_PENDING"
     },
     {
       "cueId": "AO.SM.C0191",
