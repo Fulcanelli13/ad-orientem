@@ -61,6 +61,7 @@ import { projectGloriaCredoFaithfulCue } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
+import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { resolvePriestChantAction, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
@@ -2283,7 +2284,10 @@ export async function mountNativeReaderPreview({
       sectionTitle:visibleCard.title,
       cardTitle:visibleCard.title,
       cardUpdate:true,
-      paragraphs:visibleCard.paragraphs,
+      paragraphs:withPublishedCanonParagraphRubrics(
+        visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+          form:ready.prepared?.session?.resolvedMass?.form,
+        }),
       progress:visibleProgress(visibleCard),
       guide:guideForCurrent(visibleCard),
       ...state,

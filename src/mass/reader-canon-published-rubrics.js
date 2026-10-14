@@ -24,6 +24,9 @@ export function publishedCanonRubricsForParagraph(paragraph,registry,{
   if(!allowed.has(String(form).toUpperCase()))
     return immutable({status:"FORM_NOT_APPROVED",paragraphId:String(paragraph?.id??""),
       rubrics:immutable([])});
+  const normativeSource=registry.sources?.find(source=>source.id===SOURCE_1962);
+  const sourceUrl=typeof normativeSource?.url==="string" &&
+    /^https:\/\//.test(normativeSource.url) ? normativeSource.url : null;
   const entries=[];
   for(const cueId of ids){
     const events=registry.items.filter(x=>x.cueId===cueId &&
@@ -35,7 +38,7 @@ export function publishedCanonRubricsForParagraph(paragraph,registry,{
       entries.push(immutable({
         id:event.id,sourceCueId:cueId,actor:"PRIEST",
         shortAction:event.label,latinTrigger:event.triggerLat??null,
-        sourceId:SOURCE_1962,order:event.order,
+        sourceId:SOURCE_1962,sourceUrl,order:event.order,
         review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
         // Source order is NOT proof that the priest is doing it right now.
         observedNow:false,
@@ -47,4 +50,15 @@ export function publishedCanonRubricsForParagraph(paragraph,registry,{
     paragraphId:String(paragraph?.id??""),
     rubrics:immutable(entries),
   });
+}
+
+/** Add certified actions to existing rows, without synthetic prayer or scroll cues. */
+export function withPublishedCanonParagraphRubrics(paragraphs,registry,options={}){
+  if(!Array.isArray(paragraphs))return immutable([]);
+  return immutable(paragraphs.map(paragraph=>{
+    const result=publishedCanonRubricsForParagraph(paragraph,registry,options);
+    return result.rubrics.length
+      ? immutable({...paragraph,publishedCanonRubrics:result.rubrics})
+      : paragraph;
+  }));
 }
