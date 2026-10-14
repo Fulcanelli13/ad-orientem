@@ -13,6 +13,7 @@ on:
       - 'tests/mystery-mass-phase2-bilingual-manuscript.mjs'
       - 'tests/mystery-mass-phase3-editorial-evidence.mjs'
       - 'tests/mystery-mass-complete-source-recovery.mjs'
+      - 'tests/mystery-mass-dual-chronology-source-crosswalk.mjs'
       - 'data/learn/research/mystery-mass-*-20261014.v1.json'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
       - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
@@ -24,6 +25,7 @@ on:
       - 'tests/mystery-mass-phase2-bilingual-manuscript.mjs'
       - 'tests/mystery-mass-phase3-editorial-evidence.mjs'
       - 'tests/mystery-mass-complete-source-recovery.mjs'
+      - 'tests/mystery-mass-dual-chronology-source-crosswalk.mjs'
       - 'data/learn/research/mystery-mass-*-20261014.v1.json'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
       - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
@@ -50,3 +52,5 @@ jobs:
         run: node tests/mystery-mass-phase3-editorial-evidence.mjs
       - name: Validate complete source recovery and old 422-event crosswalk
         run: node tests/mystery-mass-complete-source-recovery.mjs
+      - name: Validate two chronological paths and source-critical meditations
+        run: node tests/mystery-mass-dual-chronology-source-crosswalk.mjs
