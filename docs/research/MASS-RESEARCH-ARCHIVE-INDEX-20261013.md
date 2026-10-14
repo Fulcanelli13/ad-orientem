@@ -4,6 +4,8 @@
 
 ## Read this first
 
+**New 14 October 2026 source inventory — Lanslots (1897), research-only:** [25-chapter provisional map](MASS-LANSLOTS-1897-CHAPTER-CROSSWALK-20261014.md) and [15-claim original-Bible/Guéranger/evidence differential](../../data/research/mass-lanslots-1897-claim-differential.v1.json). Five initial candidates are already covered; others are prospective enrichments, not accepted page-level quotations. The complete 404-page original scan/complete OCR remains unverified in this pass. No public Guide/1962 rubric changes. PR #1179 is a separate **draft** research lane under historical register #342.
+
 | File | Preservation status | Contents |
 |---|---|---|
 | [Mass Reader four-surface decision](../MASS-PARAGRAPH-RAILS-AND-DYNAMIC-GUIDANCE-CONTRACT-20261013.md) | Merged permanent design rule | Left rail faithful postures/gestures, right rail priest position/posture, priest's precise in-text rubrics, second top ribbon replaced by changing explanatory/norm text; same canonical cue IDs |
