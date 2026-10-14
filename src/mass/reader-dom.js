@@ -543,17 +543,20 @@ button.ao-schola-control{cursor:pointer}
 /* Existing approved icon becomes an in-stage focus illustration only if
    a real unoccupied reading region is available. Otherwise retain rail art. */
 .ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-cinematic[data-kind="ELEVATION"]{
-  position:absolute;inset:auto 0 clamp(26px,7vh,50px);height:186px;
+  position:absolute;inset:auto 0 clamp(68px,9vh,82px);height:172px;
   display:grid;place-items:center;padding:0;z-index:17;
   background:transparent;box-shadow:none;pointer-events:none;
 }
 .ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{
-  width:min(43vw,174px);height:auto;aspect-ratio:1;filter:none;
+  width:min(42vw,165px);height:auto;aspect-ratio:1;filter:none;
   background:radial-gradient(circle,rgba(208,192,151,.06),transparent 68%);
   animation:aoElevation 3.35s cubic-bezier(.18,.72,.22,1) both;
 }
 .ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-icon{
   width:84%;height:84%;
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-sub{
+  top:calc(100% + 7px);
 }
 .ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-rail-right .ao-rail-item[data-channel="priest-action"]{
   /* A visibility transition keeps both images on screen briefly. The
@@ -2844,7 +2847,7 @@ export function createReaderDomAdapter({
       const room=visibleBottom-lastTextBottom;
       const iconAvailable=Boolean(current.priestActionIconKey &&
         current.cinematic?.kind==="ELEVATION");
-      const canIllustrate=iconAvailable && room>=260 && bounds?.height>=420;
+      const canIllustrate=iconAvailable && room>=272 && bounds?.height>=420;
       stageCinema.hidden=!canIllustrate;
       stageCinema.setAttribute?.("aria-hidden","true");
       if(stageShell)stageShell.dataset.cinematicVisual=canIllustrate?"ICON":"RAIL";
