@@ -91,7 +91,7 @@
     "test:app-shell-nuptial": "node tests/app-shell-nuptial-e2e.mjs",
     "test:app-shell-easter-vigil": "node tests/app-shell-easter-vigil-e2e.mjs",
     "test:tree-hygiene": "node tests/production-tree-hygiene.mjs",
-    "test:app-shell-contract": "node tests/app-shell-contract.mjs",
+    "test:app-shell-contract": "node tests/app-shell-contract.mjs && node tests/vercel-web-preview-freshness.mjs",
     "test:reader-native-good-friday": "node tests/reader-native-good-friday.mjs",
     "check:app-release": "node tests/app-release-gate.mjs",
     "test:app-live-guards": "node tests/app-live-session-guards.mjs",
