@@ -99,7 +99,9 @@ export const LEARN_LAYOUT=Object.freeze({
   ])
 });
 
-export const LEARN_MODULE_IDS=Object.freeze(LEARN_LAYOUT.sections.flatMap(section=>section.items.map(item=>item.id)));
+// Public canonical launcher inventory stays unchanged: unpublished review
+// destinations are available only to explicit editorial reviewers.
+export const LEARN_MODULE_IDS=Object.freeze(LEARN_LAYOUT.sections.flatMap(section=>section.items.filter(item=>!item.reviewOnly).map(item=>item.id)));
 
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const assetMask=(assetId,className="aoLearnControlIcon")=>{
