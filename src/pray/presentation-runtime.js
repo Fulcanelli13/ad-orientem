@@ -6,7 +6,8 @@ import "./presentation-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
-import {showDevotionalInterlude,showDevotionalParagraphCue} from "./devotional-cinematic.js";
+import {showDevotionalInterlude,showDevotionalParagraphCue,resetDevotionalCinematicSession} from "./devotional-cinematic.js";
+import {resolveAngelusIncarnationCinematic} from "./angelus-cinematic-policy.js";
 import "./devotional-methods-styles.js";
 import "./tenebrae-styles.js";
 import {loadTenebraeHour} from "./tenebrae-1960.js";
@@ -313,7 +314,7 @@ function open(id,opts={}){
   returnContext=Object.prototype.hasOwnProperty.call(opts,'returnContext')?opts.returnContext:PRAY_CTX;returnFocus=opts.trigger||document.activeElement;
   navStack=[];familyId=null;
   if(id==='pray.hub')view='home';
-  else if(id==='pray.angelus'||id==='pray.angelus_regina'){view='angelus';ANGELUS_CARD_INDEX=0;}
+  else if(id==='pray.angelus'||id==='pray.angelus_regina'){view='angelus';ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
   else if(id==='pray.rosary'){
     ROSARY_FIFTEEN.active=false;
     window.AO_ROSARY_V381?.setMethod?.('ordinary');
@@ -1993,12 +1994,19 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    mount:m,form,language:lang(),historicalConclusion:form==='angelus'&&S.angelusHistoricalConclusion,
    appendixText:{vern:DATA.angelusAppendix?.[lang()],latin:DATA.angelusAppendix?.la},
    initialIndex:ANGELUS_CARD_INDEX,
-   onCardChange:(card,index)=>{
+   onCardChange:(_card,index)=>{
+    // Opening sacred artwork belongs only to prayer entry, never card changes.
     ANGELUS_CARD_INDEX=index;
-    showDevotionalInterlude({mount:m,form,card,language:lang(),win:window});
    },
    onCue:cue=>{
-    showDevotionalParagraphCue({mount:m,cue:cue==='profound-bow'&&posture.stand?cue:null});
+    const action=cue==='profound-bow'?resolveAngelusIncarnationCinematic({
+      form,weekday:selectedWeekday(),
+      saturdayAfterVespers:angelusSaturdayVespersDate===selectedDateKey(),
+      language:lang(),
+    }):null;
+    // The full-screen cue deliberately remains salient even when the source
+    // posture state says the faithful are already kneeling on weekdays.
+    showDevotionalParagraphCue({mount:m,cue,action,language:lang(),win:window});
     const rail=m.querySelector('[data-ao-ritual-module="angelus"]');
     if(!rail)return;
     rail.querySelectorAll('[data-channel="gesture"]').forEach(el=>el.remove());
@@ -2007,6 +2015,8 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
       L('Bow profoundly','Inclination profonde'),{emphasis:true,value:'profound-bow'}));
    }
   });
+  if(cardDeck && form==='angelus' && ANGELUS_CARD_INDEX===0)
+    showDevotionalInterlude({mount:m,form,card:cardDeck.plan[0],language:lang(),win:window});
   if(!cardDeck)bindAngelusExactRail();
  });else stopAngelusExactRail();
  if((view==='library'&&LIB.open)||(view==='prayerOnly'&&prayerId))queueMicrotask(()=>installLibraryParagraphFocus(m,view==='library'?LIB.open:prayerId));
@@ -2145,7 +2155,7 @@ function routeOwn(id){
  if(!next)return false;
  view=next;
  if(next==='stations'){STATIONS.step=0;lastStationsFxStep=null}
- if(next==='angelus')ANGELUS_CARD_INDEX=0;
+ if(next==='angelus'){ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
  if(next==='mercy')MERCY.step=0;
  if(next==='rosaryMethods')ROSARY_CHOOSER.optionsOpen=false;
  if(id==='pray.visit_blessed_sacrament')ADOR.mode='visit';
