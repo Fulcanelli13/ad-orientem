@@ -33,7 +33,7 @@ export function resolveDevotionalActionScene({
     if(benedictionStage!=="blessing")return null;
     return fixed("BENEDICTION.BLESSING","SOLEMN_ACTION","ao-live-blessing","Benedictio",
       "Attend to the Eucharistic blessing","Recueillez-vous pour la Bénédiction eucharistique",
-      "BENEDICTON.PUBLIC_STAGE.BLESSING");
+      "BENEDICTION.PUBLIC_STAGE.BLESSING");
   }
   if(view==="adoration"){
     if(adorationMode==="visit" && visitStep===0)return fixed(
