@@ -1,0 +1,1235 @@
+{
+  "schema": "AO_FORMATION_INDEPENDENT_35_CSE_END_GOV_AUDIT_V1",
+  "date": "2026-10-14",
+  "status": "BOUNDED_ARGUMENT_AND_SOURCE_REVIEW_NOT_FINAL_CERTIFICATION",
+  "scope": "CSE126–150, CR-GOV-01–10; catechism excluded",
+  "source_files": {
+    "src/learn/sexual-ethics-data/questions-101-150.js": "be0ffc3f1b121a56cb76d3e8c7117edf198d7f02",
+    "data/learn/church-crisis-canonical.v1.json": "67476d576ae500d363773ef383ae48f8952d507f",
+    "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json": "850b90144d010b631664f8949103dd9f796ce705",
+    "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json": "876370bb2ade45ffb611fe7e17c0c9c394d961e9"
+  },
+  "citation_standard": "Accept precise original works, reliable attributed quotes and sections without whole book; distinguish normative doctrine, dated individual evidence, administrative acts and independent statistical data.",
+  "count": {
+    "questions": 35,
+    "unique": 35,
+    "cse": 25,
+    "gov": 10,
+    "cr_full_english_roles": 40,
+    "high_priority_content_defects": [
+      "CR-GOV-01",
+      "CR-GOV-09"
+    ],
+    "historical_empirical_gaps": [
+      "CR-GOV-02",
+      "CR-GOV-03"
+    ],
+    "reasons_of_persistence_gap": [
+      "CR-GOV-06"
+    ],
+    "full_certification": 0,
+    "live_edits": 0
+  },
+  "cases": [
+    {
+      "id": "CSE126",
+      "owner": "sexual-ethics",
+      "title_en": "How should parents respond when children encounter pornography online?",
+      "answer_en": "Without panic or shaming: establish what happened, distinguish accidental exposure from deliberate seeking, explain simply why pornography is harmful to chastity, strengthen practical protections and keep communication open.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "CCC",
+          "locator": "§2354"
+        },
+        {
+          "id": "DIVINI",
+          "locator": "§§31–35"
+        }
+      ],
+      "disposition": "adequate_age_appropriate_support",
+      "assessment": "Existing advice on calm parental communication and protections is proportionate; avoid shame and do not treat accidental exposure as chosen wrongdoing.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE127",
+      "owner": "sexual-ethics",
+      "title_en": "Is sexting outside marriage seriously sinful even when both people consent?",
+      "answer_en": "Consent does not make deliberate sexual display or stimulation outside marriage morally neutral. Explicit image exchange can also create additional risks of distribution, coercion, scandal and lasting injury.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "ST151",
+          "locator": "a.1"
+        },
+        {
+          "id": "CCC",
+          "locator": "§2354"
+        },
+        {
+          "id": "ST18",
+          "locator": "aa.10–11"
+        }
+      ],
+      "disposition": "adequate_bounded_moral_claim",
+      "assessment": "Consent alone does not establish chastity in non-marital explicit images; digital distribution/coercion risk described conditionally, not as guaranteed harm.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE128",
+      "owner": "sexual-ethics",
+      "title_en": "What about intimate images exchanged privately between spouses?",
+      "answer_en": "There is no specific magisterial ruling that makes every private image exchanged between spouses either automatically sinful or automatically safe. The secure principles are marital chastity, respect for the spouse, and prudence. Because a digital image can persist, be copied or escape the couple’s control, the privacy risk is morally relevant even when the original exchange is consensual.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "ST18",
+          "locator": "aa.2–6"
+        },
+        {
+          "id": "CASTI",
+          "locator": "§§19–30"
+        }
+      ],
+      "disposition": "adequate_technology_specific_reservation",
+      "assessment": "Current answer wisely refuses blanket rule on spouses' private images; distinguish chosen act, dignified consent, risks of persistent distribution.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE129",
+      "owner": "sexual-ethics",
+      "title_en": "Can virtual sexual activity constitute infidelity?",
+      "answer_en": "Yes, depending on what is deliberately chosen. Sexualized interaction with another person can violate chastity and marital fidelity even without physical contact; technology does not make an intentionally sexual relationship morally unreal.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "CASTI",
+          "locator": "§§19–22"
+        },
+        {
+          "id": "ST18",
+          "locator": "aa.2–4"
+        }
+      ],
+      "disposition": "adequate_analogy",
+      "assessment": "Sexual interaction with a person may violate marital fidelity without physical contact; not a false claim of explicit medieval technology ruling.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE130",
+      "owner": "sexual-ethics",
+      "title_en": "How should sexual interaction with an AI be judged?",
+      "answer_en": "No historical source names this technology, so the judgment is analogical. Deliberately using an artificial agent to stimulate lust or simulate a sexual relationship can violate chastity even though no human partner exists; for a married person it may also distort fidelity and marital intimacy.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "ST151",
+          "locator": "a.1"
+        },
+        {
+          "id": "ST18",
+          "locator": "aa.2–6"
+        },
+        {
+          "id": "CASTI",
+          "locator": "§§19–22"
+        }
+      ],
+      "disposition": "adequate_analogical_label",
+      "assessment": "Original text expressly discloses analogical reasoning about AI, not fabricated direct magisterial rule; do not equate AI with human perpetrator.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE131",
+      "owner": "sexual-ethics",
+      "title_en": "How should sexual sins be confessed?",
+      "answer_en": "Confess the grave sins of which you are conscious, by kind and number as accurately as reasonably possible (CIC can. 988 §1). Mention circumstances that change the moral kind of the sin, but avoid graphic descriptions that are not necessary. Canon 979 also requires the confessor to question prudently and discreetly.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "CIC_PENANCE",
+          "locator": "can. 988 §1"
+        },
+        {
+          "id": "CIC_PENANCE_MINISTER",
+          "locator": "can. 979 · prudence and discretion in questioning"
+        },
+        {
+          "id": "PIUSX",
+          "locator": "Penance: confession of mortal sins"
+        },
+        {
+          "id": "ST18",
+          "locator": "aa.10–11"
+        }
+      ],
+      "disposition": "primary_canonical_precision",
+      "assessment": "Canon 988 §1 requires kind/number of grave sins; 979 obliges confessor to question prudently, discretely and mindful of age; basic guidance correct.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE132",
+      "owner": "sexual-ethics",
+      "title_en": "What does confessing sins by “kind and number” mean?",
+      "answer_en": "Kind identifies what moral sin was committed; number gives the frequency of unconfessed mortal sins as accurately as one reasonably can. It does not require impossible mathematical precision where memory cannot provide it.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "CIC_PENANCE",
+          "locator": "can. 988 §1"
+        },
+        {
+          "id": "PIUSX",
+          "locator": "Penance"
+        }
+      ],
+      "disposition": "primary_canonical_precision",
+      "assessment": "Canon 988 text supports kind and number but not impossible numerical certainty; honest approximation is a pastoral application, not a verbatim extra canon.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE133",
+      "owner": "sexual-ethics",
+      "title_en": "Must embarrassing sexual details be given in Confession?",
+      "answer_en": "Only what identifies the moral kind of a grave sin and any circumstance needed to distinguish it. Canon 988 requires kind and number, not an explicit narrative; canon 979 requires a confessor to question with prudence and discretion, attentive to the penitent's age and condition. A penitent may ask the confessor whether a particular detail is needed.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "CIC_PENANCE",
+          "locator": "can. 988 §1"
+        },
+        {
+          "id": "CIC_PENANCE_MINISTER",
+          "locator": "can. 979 · prudence and discretion in questioning"
+        },
+        {
+          "id": "PIUSX",
+          "locator": "Penance"
+        },
+        {
+          "id": "ST18",
+          "locator": "aa.10–11"
+        }
+      ],
+      "disposition": "primary_canonical_precision",
+      "assessment": "Canon 979 explicitly requires restraint and discretion; no requirement of graphic detail unless needed for moral species.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE134",
+      "owner": "sexual-ethics",
+      "title_en": "How should habitual sins be counted?",
+      "answer_en": "Canon 988 requires the kind and number of grave sins after a diligent examination. If the exact count is genuinely forgotten, give an honest approximation or usual frequency over the period concerned; never invent numerical certainty. The practical estimation is an application of truthful confession, not an additional formula quoted verbatim in the canon.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "PIUSX",
+          "locator": "Penance"
+        },
+        {
+          "id": "CIC_PENANCE",
+          "locator": "can. 988 §1 · diligent examination, kind and number"
+        }
+      ],
+      "disposition": "primary_canonical_precision",
+      "assessment": "Diligent examination and kind/number rule verified; estimated count is truthful pastoral inference, not a ritual formula.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE135",
+      "owner": "sexual-ethics",
+      "title_en": "What is a firm purpose of amendment when someone repeatedly falls?",
+      "answer_en": "A firm purpose of amendment means presently intending to turn away from sin and to take reasonable steps against its occasions (CIC can. 987). It does not require certainty that no future fall can ever occur; repeated difficulty calls for honest confession and concrete means, not a promise about an unknowable future.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "CIC_PENANCE",
+          "locator": "can. 987"
+        },
+        {
+          "id": "PIUSX",
+          "locator": "Penance: contrition and purpose of amendment"
+        }
+      ],
+      "disposition": "primary_canonical_precision",
+      "assessment": "Canon 987 speaks of purpose of amendment, not promise of freedom from all future relapse; existing answer correct.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE136",
+      "owner": "sexual-ethics",
+      "title_en": "Should doubtful sexual thoughts always be confessed?",
+      "answer_en": "No universal rule says every doubtful or intrusive thought must be confessed. The relevant question is whether there was sufficient awareness and voluntary consent; compulsively confessing every doubt can feed scrupulosity.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "ST6",
+          "locator": "aa.1,4–8"
+        },
+        {
+          "id": "ST77",
+          "locator": "aa.1–7"
+        },
+        {
+          "id": "PIUSX",
+          "locator": "Penance · Confession Q80; Sixth and Ninth Commandments QQ4–5"
+        }
+      ],
+      "disposition": "scrupulosity_pastoral_safeguard",
+      "assessment": "Avoid making every doubtful thought matter for confession; difficult cases should follow prudent consistent confessor advice, not a clinical diagnosis inferred from one thought.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE137",
+      "owner": "sexual-ethics",
+      "title_en": "How can a scrupulous person distinguish temptation from consent?",
+      "answer_en": "Begin with a simple rule: what arrived uninvited is not yet consent. Consent requires a sufficiently deliberate choice to retain, enjoy or pursue the temptation.",
+      "french_answer_present": true,
+      "detail_en": "A scrupulous person should avoid endlessly reconstructing fleeting interior movements. Follow the guidance of one prudent confessor, use stable criteria for voluntariness, and do not treat uncertainty itself as proof of mortal sin. The aim is moral truth, not impossible interior certainty.",
+      "declared_sources": [
+        {
+          "id": "ST6",
+          "locator": "aa.1,4–8"
+        },
+        {
+          "id": "ST77",
+          "locator": "aa.1–7"
+        },
+        {
+          "id": "PIUSX",
+          "locator": "Sixth and Ninth Commandments QQ4–5; Penance · Confession Q80"
+        }
+      ],
+      "disposition": "scrupulosity_pastoral_safeguard",
+      "assessment": "Unbidden thoughts not deliberate consent; possible compulsive religious thoughts should not be exacerbated by infinitely replaying mental images.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE138",
+      "owner": "sexual-ethics",
+      "title_en": "How should someone respond to repeated falls without becoming lax or despairing?",
+      "answer_en": "Keep both truths together: the sin should not be minimized, and repeated failure does not make conversion pointless. Confess sincerely, repair avoidable occasions, strengthen habits of prayer and discipline, and resume the struggle promptly after a fall.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "SACRA",
+          "locator": "§§58–62 (clerical-formation context)"
+        },
+        {
+          "id": "PIUSX",
+          "locator": "Penance · Confession QQ19–22"
+        }
+      ],
+      "disposition": "adequate_non_despondency",
+      "assessment": "Moral and practical advice given without absolute guarantees of treatment; voluntary behavior and mental health should not be conflated.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE139",
+      "owner": "sexual-ethics",
+      "title_en": "When should someone refrain from Holy Communion after sexual sin?",
+      "answer_en": "Under canon 916, a person conscious of grave sin must ordinarily receive sacramental confession before Holy Communion. Only when both a grave reason to receive and no opportunity to confess exist does the exception apply; it requires perfect contrition and a resolve to confess as soon as possible. An objectively grave act should not be confused with certainty about personal mortal culpability.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "CIC_EUCHARIST",
+          "locator": "can. 916"
+        },
+        {
+          "id": "PIUSX",
+          "locator": "Holy Communion and Penance"
+        },
+        {
+          "id": "ST76",
+          "locator": "aa.1–4"
+        }
+      ],
+      "disposition": "canon_916_precise",
+      "assessment": "CIC 916 narrow exception requires both grave reason/no opportunity to confess and perfect contrition with immediate intention to confess. Draft correctly separates objective matter and personal culpability.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE140",
+      "owner": "sexual-ethics",
+      "title_en": "What practical Catholic programme helps someone grow in chastity?",
+      "answer_en": "Regular prayer and confession, chastity of imagination and habits, avoiding predictable occasions, practical digital limits, charity, work and supportive friendships all contribute. Communion should be received worthily; a person conscious of grave sin must follow the norm and narrow exception in CIC can. 916, rather than treating Communion as automatically available regardless of conscience.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "SACRA",
+          "locator": "§§58–62"
+        },
+        {
+          "id": "ST151",
+          "locator": "a.1"
+        },
+        {
+          "id": "CIC_EUCHARIST",
+          "locator": "can. 916 · Communion when conscious of grave sin"
+        }
+      ],
+      "disposition": "canon_916_precise",
+      "assessment": "Communion is not automatically available contrary to canon 916; current integrated habits advice remains general and non-coercive.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE141",
+      "owner": "sexual-ethics",
+      "title_en": "Why is the Catholic Church so obsessed with sex?",
+      "answer_en": "It should not be. Catholic morality includes worship, justice, truthfulness, family duties, money, violence, charity and every other area of human action. Sexual morality receives disproportionate attention when public debate concentrates on the few teachings that conflict most sharply with modern sexual norms. If Catholic formation presents only sexual prohibitions, it is presenting Catholic morality badly.",
+      "french_answer_present": true,
+      "detail_en": "In his original 2013 interview with Antonio Spadaro, Pope Francis criticized continually emphasizing abortion, same-sex marriage and contraception without pastoral context; he did not revoke those teachings. Chastity belongs within a moral life that also demands truthfulness, justice, mercy and care for the poor (Aquinas II-II q.151).",
+      "declared_sources": [
+        {
+          "id": "FRANCIS_SPADARO2013",
+          "locator": "2013 original papal interview · pastoral priority without revoking doctrine"
+        },
+        {
+          "id": "ST151",
+          "locator": "a.1"
+        },
+        {
+          "id": "SACRA",
+          "locator": "§§34–36, 53–62"
+        }
+      ],
+      "disposition": "original_papal_interview_verified",
+      "assessment": "Original 2013 Spadaro interview actually states cannot insist only on abortion, gay marriage and contraception, and retains Church doctrine; precise context accurately represented.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE142",
+      "owner": "sexual-ethics",
+      "title_en": "Is Catholic sexual morality simply impossible to live today?",
+      "answer_en": "It can be difficult, sometimes severely so, but difficulty does not prove impossibility or falsehood. Catholicism also does not present chastity as unaided willpower: virtue is supported by habits, prudence, community, prayer and sacramental grace.",
+      "french_answer_present": true,
+      "detail_en": "For a non-believer, the natural argument concerns whether human beings can form stable habits of self-mastery rather than obey every strong desire. For a Catholic, the answer also includes grace, Confession, Eucharistic life and ascetic discipline. “Hard” and “inhuman” are not synonyms.",
+      "declared_sources": [
+        {
+          "id": "ST151",
+          "locator": "a.1"
+        },
+        {
+          "id": "SACRA",
+          "locator": "§§34–36, 53–62"
+        },
+        {
+          "id": "LBM",
+          "locator": "pastoral application"
+        }
+      ],
+      "disposition": "reasonable_positive_pastoral",
+      "assessment": "Difficulty not proof impossibility; avoid universal claims about ease or reliance on unaided willpower.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE143",
+      "owner": "sexual-ethics",
+      "title_en": "Does Catholic sexual teaching create harmful guilt and shame?",
+      "answer_en": "It can be taught in a harmful way, but guilt and shame are not the same thing. Moral guilt concerns responsibility for a freely chosen wrong; toxic shame tells a person that he or she is worthless. Catholic repentance is supposed to name the act truthfully while preserving the dignity of the person and offering forgiveness, not to produce self-hatred. If teaching collapses sin into personal worthlessness, it has distorted the Catholic message.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "HOMO86",
+          "locator": "§10"
+        },
+        {
+          "id": "SACRA",
+          "locator": "§§53–62"
+        }
+      ],
+      "disposition": "distinct_moral_psychological_categories",
+      "assessment": "Objective culpability and feelings of worthlessness distinguished; 'toxic shame' is explanatory language, not epidemiological diagnosis.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE144",
+      "owner": "sexual-ethics",
+      "title_en": "Doesn’t mercy require exceptions in difficult cases?",
+      "answer_en": "Mercy takes suffering, constraint, ignorance and reduced freedom seriously and can change the judgment about a person's culpability and appropriate care. It does not by itself turn a deliberately chosen intrinsically wrong moral object into a good act; Veritatis Splendor §§78–82 distinguishes the object from circumstances and further intention.",
+      "french_answer_present": true,
+      "detail_en": "Mercy rejects cold moralism by taking suffering, freedom and personal responsibility seriously, while preserving the distinction between the objective norm, subjective culpability and the pastoral help appropriate now. Reduced culpability can change the judgment of personal guilt without making an intrinsically evil act good.",
+      "declared_sources": [
+        {
+          "id": "VS",
+          "locator": "§§54–64, 78–82"
+        },
+        {
+          "id": "HOMO86",
+          "locator": "§§11–15"
+        }
+      ],
+      "disposition": "veritatis_splendor_aligned",
+      "assessment": "A norm objectively evaluating moral acts differs from subjective culpability and compassionate care; VS §§78–82 supports.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE145",
+      "owner": "sexual-ethics",
+      "title_en": "Why isn’t “love is love” enough?",
+      "answer_en": "Because the word love can name many real goods—affection, loyalty, sacrifice, friendship—without proving that every act motivated by love is morally good. Catholic ethics asks how love should act in truth toward the goods of the persons involved.",
+      "french_answer_present": true,
+      "detail_en": "The slogan is powerful because it correctly insists that affection and personal dignity matter. The false inference is that sincere love automatically validates every sexual expression. Catholicism applies the same principle elsewhere: a loving intention cannot justify adultery, contraception or another act merely by changing its motive. Love is morally decisive, but love itself must be ordered to truth and the real good of the beloved.",
+      "declared_sources": [
+        {
+          "id": "ST18",
+          "locator": "aa.2–6"
+        },
+        {
+          "id": "VS",
+          "locator": "§§78–80"
+        },
+        {
+          "id": "LBM",
+          "locator": "moral reasoning"
+        }
+      ],
+      "disposition": "real_opponent_not_strawman",
+      "assessment": "A sincere affection can be a genuine good without making every sexual act good; answer acknowledges limited merit of common slogan.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE146",
+      "owner": "sexual-ethics",
+      "title_en": "If almost everyone does something, can it really be seriously wrong?",
+      "answer_en": "Yes. Frequency tells us how common a behaviour is, not whether it is morally good. Social acceptance can affect awareness and therefore culpability, but it does not by itself determine the objective moral character of an act.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "PH",
+          "locator": "§9"
+        },
+        {
+          "id": "ST76",
+          "locator": "aa.1–4"
+        }
+      ],
+      "disposition": "descriptive_not_normative",
+      "assessment": "How widespread behavior is cannot establish its moral species; prevalence may change awareness and culpability.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE147",
+      "owner": "sexual-ethics",
+      "title_en": "Why should a non-Catholic accept any of this?",
+      "answer_en": "A non-Catholic is not expected to accept a conclusion merely because a pope or catechism says it. The natural-law claims must be argued from human goods, moral action, marriage, fidelity, procreation, freedom and justice; revelation then adds a specifically Christian authority and horizon.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "ST94",
+          "locator": "a.2"
+        },
+        {
+          "id": "VS",
+          "locator": "§§78–80"
+        }
+      ],
+      "disposition": "natural_law_argument_needed_not_authority_demand",
+      "assessment": "Faithless interlocutor not asked to accept mere papal fiat; use public human-good arguments; specific applications are separately disputable.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE148",
+      "owner": "sexual-ethics",
+      "title_en": "How can I explain Catholic sexual morality without sounding judgmental?",
+      "answer_en": "Start with the good being protected, not merely the prohibition. State the objection fairly, concede what is true in it, make the decisive distinction, and judge acts without pretending to know another person’s entire culpability.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "ST18",
+          "locator": "aa.2–11"
+        },
+        {
+          "id": "HOMO86",
+          "locator": "§§10–15"
+        }
+      ],
+      "disposition": "communication_not_verdict",
+      "assessment": "Advise fair statement of objection and avoid judgement of another's entire culpability, no invented psychotherapy claim.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE149",
+      "owner": "sexual-ethics",
+      "title_en": "Doesn’t modern science contradict traditional sexual morality?",
+      "answer_en": "Science can overturn factual assumptions, and a moral argument that depends on a false factual premise must be corrected. But science describes what happens; it does not by itself answer every question about what ought to be chosen. For example, psychology can inform us about attraction, compulsion or distress, and reproductive medicine can explain fertility, while the moral judgment still requires premises about freedom, human goods, marriage and the value of human life.",
+      "french_answer_present": true,
+      "detail_en": "Clinical and empirical bodies should be read within their own domains. The APA's conclusion that same-sex orientation is not a mental disorder is a clinical claim; ASRM's 2023 conditional defence of gestational-carrier arrangements is a professional ethical assessment, not an experimental finding or Catholic moral judgment. Neither experimentally settles all Catholic moral propositions, while a theological argument built on a false medical premise must be corrected.",
+      "declared_sources": [
+        {
+          "id": "APA_LGB_POLICY",
+          "locator": "official APA orientation policy · clinical fact not complete moral theory"
+        },
+        {
+          "id": "ST94",
+          "locator": "aa.2–4"
+        },
+        {
+          "id": "HOMO86",
+          "locator": "§2"
+        },
+        {
+          "id": "DP",
+          "locator": "§§3–10"
+        },
+        {
+          "id": "ASRM_GC",
+          "locator": "2023 Ethics Committee opinion · gestational carrier, informed consent and safeguards"
+        }
+      ],
+      "disposition": "science_policy_and_moral_reasoning_separated",
+      "assessment": "APA's clinical policy, ASRM's 2023 professional ethical advocacy and Catholic moral premises are different kinds of evidence; original existing paragraph marks distinctions.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CSE150",
+      "owner": "sexual-ethics",
+      "title_en": "What is the positive Catholic vision of sexuality—not merely the prohibitions?",
+      "answer_en": "Sexuality is a good dimension of embodied human life, not a disgrace. In marriage it is ordered to faithful conjugal love and the possible generation and education of children; in every state of life chastity orders desire through reason and charity. Consecrated celibacy is also a positive vocation, so a person's dignity or fruitfulness is never reduced to sexual activity.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "declared_sources": [
+        {
+          "id": "ST151",
+          "locator": "a.1"
+        },
+        {
+          "id": "CASTI",
+          "locator": "§§11–30"
+        },
+        {
+          "id": "SACRA",
+          "locator": "§§34–36, 53–62"
+        }
+      ],
+      "disposition": "positive_vision_source_supported",
+      "assessment": "Chastity, faithful marriage, children, celibacy present positively; no reduction of personal dignity to sexual behavior.",
+      "review_level": "existing concise English text and source locators read, selected original passages; French field present but not individually proofread",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-01",
+      "owner": "church-crisis",
+      "title_en": "Who was actually responsible when the postconciliar crisis unfolded?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "The postconciliar crisis cannot be assigned to one official or a faceless 'institution'. Popes enacted laws, bishops governed dioceses, theologians proposed interpretations and local ministers implemented practices; their authority and responsibility differ. The Vatican–China agreement is a concrete example requiring scrutiny of diplomatic acts and episcopal appointments rather than assuming either perfect freedom or universal coercion.",
+          "french_present": true,
+          "source_ids": [
+            "CIC4",
+            "PIUSCHINA",
+            "CHINA2024"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Pius XII's Ad Apostolorum Principis (1958) condemned episcopal appointments and consecrations imposed by the Communist Chinese state against the Holy See. The Holy See announced on 22 October 2024 a further four-year extension of the provisional agreement on episcopal appointments, expressly calling it fruitful after consultation; it also announced a specific appointment in Chifeng in July 2026. Critics such as Cardinal Joseph Zen argue that secrecy and state control threaten the liberty of the Church. Because the actual bilateral agreement is not publicly reproduced in these sources, neither the full appointment mechanism nor actual veto rights may be asserted as if examined.",
+          "french_present": true,
+          "source_ids": [
+            "PIUSCHINA",
+            "CHINA2024",
+            "CHINA2026",
+            "ZENSCHOLAR"
+          ],
+          "attribution": "Pius XII's 1958 encyclical and Holy See 2024/2026 official acts contrasted with documented criticism of Cardinal Zen via Beatrice Leung's 2024 analysis"
+        },
+        {
+          "role": "critical_response",
+          "english": "The 2024 extension demonstrates Rome's decision to continue a diplomatic arrangement, not the publication of its clauses or evidence that every bishop was freely selected. A particular 2026 appointment demonstrates an outcome, not the absence of pressure on candidates or the complete mechanism used. Conversely, opaque diplomacy is not itself evidence that every negotiator intended apostasy. The serious historical questions concern the state role in vetting episcopal candidates, the ability of underground Catholics to practise safely, and the Holy See's freedom to reject unsuitable nominees; first-person Cardinal Zen texts and the agreement itself still need fuller examination.",
+          "french_present": true,
+          "source_ids": [
+            "CHINA2024",
+            "CHINA2026",
+            "PIUSCHINA",
+            "ZENSCHOLAR"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "The freedom and apostolic succession of bishops concern the Church's constitution, not diplomatic convenience alone. Legitimate negotiations may seek survival under persecution without abandoning proclamation of Christ or the faithful's rights. Catholics should criticise demonstrated harmful decisions, identify responsible actors and refuse the fiction that every prudential compromise is itself a definitive doctrine.",
+          "french_present": true,
+          "source_ids": [
+            "PIUSCHINA",
+            "V1",
+            "CIC4"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "critical_canonical_owner_drift",
+      "assessment": "Question asks responsibility for entire postconciliar period; four sections almost all rely on 1958–2026 Vatican–China appointments. Preserve that as a later concrete case and establish chronological papal/curial/episcopal/local responsibility for Council implementation and governance.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-02",
+      "owner": "church-crisis",
+      "title_en": "What happened to seminaries and priestly formation?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Seminary formation after Vatican II combined legitimate calls for pastoral, biblical and human formation with disparate local implementations. The Council's Optatam totius did not instruct seminaries to abandon doctrine, priestly identity or spiritual discipline. Judging claims of collapse needs enrolment, staffing, curriculum, ordination and safeguarding evidence for named seminaries and years.",
+          "french_present": true,
+          "source_ids": [
+            "OT65",
+            "PDV92"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Optatam totius insists that priestly candidates learn philosophy and theology, cultivate spiritual life and prepare to celebrate the sacraments. Pastores dabo vobis (1992) explicitly reaffirms the major seminary as the normal formation community and integrates human, spiritual, intellectual and pastoral dimensions. These original Roman programmes are not mandates for doctrinal reduction.",
+          "french_present": true,
+          "source_ids": [
+            "OT65",
+            "PDV92"
+          ],
+          "attribution": "Vatican II Optatam totius (1965); John Paul II Pastores dabo vobis (1992)"
+        },
+        {
+          "role": "critical_response",
+          "english": "A drop in vocations may reflect demography, Catholic family life or local formation quality; attribution to a specific method requires evidence. A seminary may be academically rigorous and pastorally negligent, or orthodox in textbooks and poor in personal formation. Evaluations should distinguish disciplines rather than label every postconciliar student formation defective.",
+          "french_present": true,
+          "source_ids": [
+            "OT65",
+            "PDV92"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "A priest must be formed in truth, chastity, prayer, Eucharistic reverence, sound philosophy and practical charity. Bishops owe serious personal oversight of those preparing to represent Christ in ministry, not merely approval of a syllabus. Traditional Catholic formation is valuable where it combines these duties with full canonical and safeguarding responsibility.",
+          "french_present": true,
+          "source_ids": [
+            "PDV92",
+            "OT65",
+            "CD65"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "empirical_context_gap",
+      "assessment": "Original Optatam totius and Pastores dabo vobis prove prescribed formation ideals, not what happened numerically. CARA U.S. priests 59,426 in 1965 versus 33,462 in 2025; scope limited to U.S., no causal attribution to any one formation policy.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-03",
+      "owner": "church-crisis",
+      "title_en": "What happened to religious orders, discipline and charism?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Religious communities after the Council faced changed discipline, adaptation of apostolic works and sometimes loss of vocations or departure of members. Perfectae caritatis called for renewal in fidelity to each institute's founding charism and Gospel life, not destruction of religious vows. The effects of any adaptation should be examined institute by institute.",
+          "french_present": true,
+          "source_ids": [
+            "PC65",
+            "ES66"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Perfectae caritatis §2 combines return to Scripture, original founders and healthy adaptation to changed conditions. Ecclesiae sanctae (1966) establishes the procedures for renewal, consultation and chapters. These original texts call for regulated fidelity rather than an instruction to erase the distinct life of each order.",
+          "french_present": true,
+          "source_ids": [
+            "PC65",
+            "ES66"
+          ],
+          "attribution": "Vatican II Perfectae caritatis and Paul VI Ecclesiae sanctae (1966)"
+        },
+        {
+          "role": "critical_response",
+          "english": "A reduction in habits worn or houses operating is not by itself proof that vows were abolished, although it may reflect a consequential choice about communal identity. Equally, invoking adaptation does not immunise an institute from charges of abandoning its constitutions. The analysis must document canonical approvals, actual practice, recruitment and spiritual life.",
+          "french_present": true,
+          "source_ids": [
+            "PC65",
+            "ES66"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "Poverty, chastity and obedience are offered for love of Christ, not as detachable historical accessories. Renewal should deepen prayer, common life and the charism each founder actually handed down. Institutional decline calls for truth and reform, while an order's distinctive signs should not be treated as an excuse to neglect charity or obedience.",
+          "french_present": true,
+          "source_ids": [
+            "PC65",
+            "ES66"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "empirical_context_gap",
+      "assessment": "Perfectae caritatis and Ecclesiae sanctae prescribe reform but do not measure outcomes. CARA U.S. sisters 178,740 in 1965 versus 33,135 in 2025; not global, and neither decline alone nor changing habits proves bad or good renewal.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-04",
+      "owner": "church-crisis",
+      "title_en": "Why was theological dissent so difficult to control?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Disputes in Catholic theology were difficult to govern because research institutions, diocesan authorities and religious superiors shared overlapping responsibilities while moral and doctrinal positions became widely public. Authority should examine actual propositions, expertise and due process instead of relying solely on labels. A published dissenting claim and mere exploratory scholarship have different ecclesial significance.",
+          "french_present": true,
+          "source_ids": [
+            "DV90",
+            "CUR86",
+            "CD65"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "In his signed 1986 article, Charles E. Curran maintains that serious, well-founded dissent from some non-infallible Catholic moral teachings can serve the pursuit of truth. He expressly distinguishes this from rejecting doctrines held to be irreformable and identifies his disagreement with the CDF as involving the theologian's relationship to the hierarchical teaching office. This was not a merely hypothetical complaint: the CDF ruled that his public positions made him unsuitable to teach as a Catholic theologian in the Church's name. His primary defence and the original 1986 disciplinary document reveal a concrete conflict about authority, institutional responsibility and theological research.",
+          "french_present": true,
+          "source_ids": [
+            "CUR86",
+            "DV90",
+            "CURRAN1986-GOV"
+          ],
+          "attribution": "Charles E. Curran, original 16 October 1986 article; CDF, original 1986 disciplinary correspondence"
+        },
+        {
+          "role": "critical_response",
+          "english": "Curran's distinction between a definitive dogma and fallible hierarchical judgment is real; it does not entail an unrestricted right to represent privately contested conclusions as Catholic doctrine in an institution charged with teaching the faith. Donum veritatis describes how genuine difficulties should be presented and what responsibilities both theologian and pastor bear. A sound governance process needs documented reasons, fair procedure and clear doctrinal standards. Conversely, authority cannot simply use a disciplinary decree as a substitute for patient engagement with genuine questions of evidence and interpretation.",
+          "french_present": true,
+          "source_ids": [
+            "DV90",
+            "CUR86",
+            "CD65",
+            "CURRAN1986-GOV"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "Theological freedom is ordered toward clearer understanding of revelation and not a licence to market contradiction as authentic Catholic doctrine. Legitimate authority must be charitable, precise and just in correcting error, and theologians should cooperate without servility or factional publicity. Truth needs both serious scholarship and governance.",
+          "french_present": true,
+          "source_ids": [
+            "DV90",
+            "CUR86"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "adequate_original_polemical_pair",
+      "assessment": "Curran first-person defence and CDF institutional action documented as distinct speakers; avoid interpreting publication of dissent itself as a universal legal freedom to teach in Church name.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-05",
+      "owner": "church-crisis",
+      "title_en": "Did episcopal conferences and bureaucracy diffuse personal responsibility?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Episcopal conferences help bishops coordinate pastoral efforts but do not replace each bishop's personal responsibility for teaching, sanctifying and governing his diocese. A national secretariat or committee can assist, yet the authority of its statements depends on law and approval. Confusion arises when collective branding obscures who actually issued or failed to enforce an instruction.",
+          "french_present": true,
+          "source_ids": [
+            "CD65",
+            "AS98",
+            "LG64"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Apostolos suos §22 and Complementary Norm art. 1 (1998) distinguish a bishop's own authentic teaching from a conference's doctrinal declaration. A declaration issued in the name of the episcopal conference as authentic magisterium requires unanimous approval of voting members, or a two-thirds approval in plenary session followed by recognitio from the Apostolic See. The document expressly denies a conference commission independent authority to issue such declarations. Christus dominus commends coordination among bishops but does not dissolve their individual pastoral responsibility into an anonymous national administration.",
+          "french_present": true,
+          "source_ids": [
+            "AS98",
+            "CD65"
+          ],
+          "attribution": "John Paul II Apostolos suos arts. 1–4 and Vatican II Christus dominus"
+        },
+        {
+          "role": "critical_response",
+          "english": "An episcopal conference cannot automatically be blamed for a diocesan bishop's specific failure, nor may a bishop hide behind national policy when he personally owes protection or correction. Good coordination should leave decisions, votes, delegation and accountability identifiable. A claim of responsibility diffusion requires the records of actual decision chains.",
+          "french_present": true,
+          "source_ids": [
+            "AS98",
+            "CD65",
+            "LG64"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "Christ entrusted real pastoral responsibility to individual bishops, who cooperate without surrendering their own sacred duties to anonymity. Councils and administrative services should strengthen accountability and doctrinal clarity. The faithful have a right to know which competent shepherd can answer a petition or redress an abuse.",
+          "french_present": true,
+          "source_ids": [
+            "CD65",
+            "AS98",
+            "LG64"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "strong_primary_legal_alignment",
+      "assessment": "Apostolos suos complementary norms arts 1–2 confirm unanimity OR two-thirds plenary vote plus recognitio for authentic conference doctrinal statements; bishop's proper authority still distinct.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-06",
+      "owner": "church-crisis",
+      "title_en": "Why did liturgical abuse persist despite Roman prohibitions?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Liturgical abuse occurs when celebration departs from binding requirements, which must be distinguished from lawful variations and particular permissions. The existence of abuses does not show that the Missal itself commands them, but lawful promulgation cannot excuse deliberate noncompliance in a parish. Historical responsibility requires matching each practice with the applicable rubric, legislator and local oversight.",
+          "french_present": true,
+          "source_ids": [
+            "RS2004",
+            "GIRM",
+            "CIC4"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Redemptionis sacramentum (2004) names recurring abuses in celebrating and receiving the Eucharist, and reiterates disciplinary norms. Its issuance is original documentary evidence that the Holy See did not generally approve arbitrary liturgical innovation. It also raises a real governance question where repeated instructions did not secure obedience to the existing rubrics.",
+          "french_present": true,
+          "source_ids": [
+            "RS2004",
+            "GIRM"
+          ],
+          "attribution": "Congregation for Divine Worship, Redemptionis sacramentum (2004)"
+        },
+        {
+          "role": "critical_response",
+          "english": "A spectacular episode does not establish how frequently liturgical abuses occur elsewhere. Evidence must identify the date, place, exact liturgical book and edition binding at that celebration, breached rubric, responsible authority and any response. Redemptionis sacramentum (2004) and the General Instruction concern the reformed Roman liturgy; their provisions cannot automatically be read as the rubrics of the 1962 Missal. Poor formation, local habits or weak supervision are possible explanations, not proven causes without specific evidence. The faithful's right to lawful worship is served by a precise complaint, not by blanket condemnation of whole generations or rites.",
+          "french_present": true,
+          "source_ids": [
+            "RS2004",
+            "CIC4",
+            "SC63"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "The liturgy is the Church's public worship, not the property of each celebrant. Fidelity to its legitimate rules guards Eucharistic doctrine and protects the faithful from arbitrary preferences. Abuses should be corrected patiently and decisively, but proven irregularities must not be used to deny automatically the validity of every celebration of the reformed Mass.",
+          "french_present": true,
+          "source_ids": [
+            "RS2004",
+            "MD47",
+            "SC63"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "outcome_causation_not_yet_shown",
+      "assessment": "Redemptionis sacramentum demonstrates prohibitions and recorded irregularities, not frequency of each abuse or independently established causal account of persistence. Don't manufacture extent or motives.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-07",
+      "owner": "church-crisis",
+      "title_en": "Why were canon law and ecclesiastical discipline so often under-enforced?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Canon 915 regulates the minister's duty not to admit those under the stated canonical categories, including persons obstinately persevering in manifest grave sin; canon 916 regulates the recipient's obligation not to receive while conscious of grave sin without the lawful conditions for an exception. They are not interchangeable and do not create a universal rule excluding every politician of a named party. Cardinal Ratzinger's 2004 memorandum addresses a concrete example of obstinate public support for permissive abortion or euthanasia legislation.",
+          "french_present": true,
+          "source_ids": [
+            "CAN915",
+            "RATZ2004"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "In his 2004 memorandum Worthiness to Receive Holy Communion, Cardinal Joseph Ratzinger described a Catholic politician whose formal cooperation consists in campaigning and voting for permissive abortion and euthanasia laws, and he specified that the pastor should meet the person, explain Church teaching, inform him not to present himself for Communion and warn of eventual refusal. He did not declare an automatic Eucharistic exclusion for every politician regardless of conduct or pastoral process. His text is cardinal-prefect guidance addressed to U.S. bishops, not a later solemn universal legislative enactment.",
+          "french_present": true,
+          "source_ids": [
+            "RATZ2004",
+            "CAN915"
+          ],
+          "attribution": "Joseph Ratzinger, 2004 signed memorandum Worthiness to Receive Holy Communion, points 3–6"
+        },
+        {
+          "role": "critical_response",
+          "english": "Public, manifest and obstinate conduct must be ascertained in fact and according to canon 915 rather than deduced from electoral affiliation or an unverified allegation. Canon 916 leaves the communicant's private duty intact even where a minister cannot establish all public conditions for exclusion. Conversely, the private-conscience rule does not excuse a competent minister from applying canon 915 where its public legal conditions truly exist. The Ratzinger memorandum's staged warning makes disciplinary precision and charity complementary.",
+          "french_present": true,
+          "source_ids": [
+            "CAN915",
+            "RATZ2004",
+            "CCC212"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "Canon law serves the salvation of souls while guarding the sacraments and personal rights; it should neither be a partisan weapon nor an empty decree never applied. Pastors owe teaching, just warning, proportionate discipline and due process. The faithful should seek coherent Eucharistic practice without presuming inner guilt beyond what public facts and lawful judgement support.",
+          "french_present": true,
+          "source_ids": [
+            "CAN915",
+            "CIC1752",
+            "CCC212"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "correct_canon_915_916_and_memorandum",
+      "assessment": "Canon 915 governs ministers' objectively public admission, canon 916 communicant's private duty; Ratzinger 2004 memorandum directly discusses specific public campaigns, not party-wide automatic ban.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-08",
+      "owner": "church-crisis",
+      "title_en": "The abuse crisis: what failed in episcopal governance and accountability?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "The abuse crisis exposed failures in responding to accusations, protecting victims, investigating clerics, supervising bishops and preventing offenders from regaining access to vulnerable people. The Church's sacramental authority does not suspend the requirements of civil law or protect an officeholder from investigation. Exact local records are needed to assign criminal and institutional responsibility.",
+          "french_present": true,
+          "source_ids": [
+            "VELM23",
+            "CD65"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "The Irish Government's 2009 Murphy Commission, investigating clerical sexual abuse and institutional responses in the Archdiocese of Dublin, found systematic priority given to avoidance of scandal and institutional reputation rather than children's safety. The report's conclusions document real failures involving church leadership and civil authorities over a particular period; this evidence cannot be dismissed as a hypothetical polemic against Catholic doctrine. The later 2023 Vos estis lux mundi norms are a disciplinary response to such accountability failures, not proof that earlier harm never occurred or that all subsequent safeguards have been implemented effectively.",
+          "french_present": true,
+          "source_ids": [
+            "VELM23",
+            "MURPHY-CR-2009"
+          ],
+          "attribution": "Irish Commission of Investigation into the Catholic Archdiocese of Dublin (Murphy Report), 2009, compared with 2023 Church law"
+        },
+        {
+          "role": "critical_response",
+          "english": "The commission's findings require effective criminal reporting, victim protection, proportionate canonical penalties, fair investigation and scrutiny of supervisory decisions. The sacramental validity of a priest's ministry and the Church's supernatural mission do not excuse concealment, negligence or retaliation. Vos estis lux mundi establishes a process for specific allegations and cover-up, but a written rule is not proof of practical enforcement. Accountability must be measured from case outcomes, independently reviewed records and the safety of vulnerable persons, without forcing forgiveness or silence on survivors.",
+          "french_present": true,
+          "source_ids": [
+            "VELM23",
+            "CD65",
+            "MURPHY-CR-2009"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "The first pastoral duty is to safeguard those entrusted to the Church, especially children and vulnerable adults. Authentic forgiveness cannot be imposed as silence or return to unsafe contact, and justice protects both victims and legitimate process. Reform must make reporting, independent scrutiny and episcopal responsibility enforceable in practice.",
+          "french_present": true,
+          "source_ids": [
+            "VELM23",
+            "CD65"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "commission_finding_verified",
+      "assessment": "Murphy Dublin Report 2009 original findings about concealment, reputation/assets and failure to prioritize child safety verifiably quoted in Irish Oireachtas 2009; don't infer all dioceses equal or treat 2023 norm as enforcement proof.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-09",
+      "owner": "church-crisis",
+      "title_en": "Financial, institutional and personnel oversight: where did governance fail?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Church governance includes fiduciary duties over property, personnel, donations, employment and institutional records. Financial harm may arise from fraud, secrecy or poor control without any necessary relation to liturgical preference. Canon law requires diocesan finance councils and responsible administrators; assessing failure demands identifiable transactions, authorisations and audited records.",
+          "french_present": true,
+          "source_ids": [
+            "CICADMIN",
+            "CICFIN"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "MONEYVAL, the Council of Europe's independent financial-crime evaluation body, published a May 2024 follow-up report on anti-money-laundering and counter-terrorist-financing controls in the Holy See and Vatican City State. The assessment addresses progress and remaining technical-compliance weaknesses following the 2021 evaluation. This is concrete external scrutiny of financial oversight; it is neither a finding that every Vatican financial transaction was corrupt nor evidence about all diocesan finances worldwide. Against this measured criticism, the 1983 Code of Canon Law sets specific obligations for diocesan financial officers, councils, accounting and protection of ecclesiastical property.",
+          "french_present": true,
+          "source_ids": [
+            "CICADMIN",
+            "CICFIN",
+            "MONEYVAL-CR-2024"
+          ],
+          "attribution": "Council of Europe MONEYVAL, 2024 Holy See/Vatican City follow-up, contrasted with CIC financial stewardship canons"
+        },
+        {
+          "role": "critical_response",
+          "english": "A financial audit deficiency, a canonical misadministration and a proven act of fraud are distinct findings with different standards of evidence. MONEYVAL's Vatican-specific technical assessment should not be misapplied to every national bishop or parish, yet its external oversight illustrates why accounting safeguards cannot rest on clerical trust alone. Canon law demands defined councils, recordkeeping and oversight; individual cases also require civil evidence, audits, restitution, transparent decisions and due process. The ultimate obligation is to protect resources entrusted for worship, education, charitable service and the poor.",
+          "french_present": true,
+          "source_ids": [
+            "CICADMIN",
+            "CICFIN",
+            "MONEYVAL-CR-2024"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "Money entrusted for worship, charity and apostolate is not the private possession of clergy or patrons. Justice demands transparent stewardship, proportionate salaries, protection of donors' intentions and redress for fraud. Good administration serves the salvation of souls by preventing avoidable betrayal of trust.",
+          "french_present": true,
+          "source_ids": [
+            "CICFIN",
+            "CICADMIN"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "critical_source_framing",
+      "assessment": "MONEYVAL May 2024 follow-up reports substantial positive remediation: R13 compliant, R16 and R24 largely compliant (minor weaknesses), 35/39 compliant or largely; not direct evidence of generalized fraud. Reframe as measured external compliance, not a failure example.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    },
+    {
+      "id": "CR-GOV-10",
+      "owner": "church-crisis",
+      "title_en": "Does synodality repair weak governance or diffuse responsibility further?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Synodality can improve governance if it broadens accurate information and meaningful consultation while leaving lawful decision-makers and accountability clear. It can worsen weakness if collective language hides who approved harmful acts or who must correct them. The actual juridical structure of a synod or consultation, not its name, determines whether responsibility is clarified.",
+          "french_present": true,
+          "source_ids": [
+            "SYN2018",
+            "EPICOM18",
+            "AS98"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "In a dubium dated 10 July 2023, five cardinals questioned whether making synodality a constitutive supreme principle of Church government could compromise the divine constitution of the pope and episcopal college. This is a named internal Catholic objection from Cardinals Brandmüller, Burke, Sandoval Íñiguez, Sarah and Zen, not an imaginary traditionalist suspicion. Francis's official answer, published by the DDF, reaffirmed that synodality requires participation but cannot replace the hierarchy. Episcopalis communio (2018) provides concrete juridical limits on a Synod's final document and papal ratification; criticism must distinguish consultation from legislative and doctrinal acts.",
+          "french_present": true,
+          "source_ids": [
+            "EPICOM18",
+            "AS98",
+            "FIVECARD-SYN-GOV"
+          ],
+          "attribution": "Five cardinals, original 10 July 2023 synodality dubium 3, contrasted with Francis's official reply and Episcopalis communio (2018)"
+        },
+        {
+          "role": "critical_response",
+          "english": "The cardinals' question concerns a genuine constitutional limit: consultation, discussion and even a vote do not in themselves supply the ordinary jurisdiction of the Pope or the college of bishops. The papal response retains their proper authority while recognising the faithful's participation. Yet announcing participation is no substitute for transparent decision ownership: where proposals are adopted, published acts should identify their legislator, disciplinary reach, teaching authority and method of correction. Whether synodality improves governance is ultimately an empirical as well as constitutional question, to be tested by outcomes and safeguards.",
+          "french_present": true,
+          "source_ids": [
+            "EPICOM18",
+            "SYN2018",
+            "AS98",
+            "FIVECARD-SYN-GOV"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "The apostolic constitution of the Church unites the genuine voice of the faithful with accountable personal pastoral authority. Synodal methods are good when they foster truth, safeguard the vulnerable and reinforce bishops' duties rather than dissolve them. Catholic unity requires fidelity to doctrine and visible responsibility, not rule by committees without answerability.",
+          "french_present": true,
+          "source_ids": [
+            "EPICOM18",
+            "AS98",
+            "SYN2018"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "legitimate_named_constitutional_controversy",
+      "assessment": "Five cardinals' July 2023 dubium 3 and Francis official response original. Distinguish their question about synodality being supreme government norm from Francis's assertion hierarchical authority preserved; effectiveness is separate empirical question.",
+      "review_level": "four full existing English roles assessed against author and quoted source type; independent French quality check outstanding",
+      "complete_certification": false,
+      "app_changed": false
+    }
+  ]
+}
