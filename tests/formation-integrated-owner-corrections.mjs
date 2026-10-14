@@ -71,6 +71,9 @@ for(const original of originalCases.cases){
  assert.ok(original.source_registry.length>0);
  assert.equal(original.publication_allowed,false);
 }
+const readerCode=readFileSync("src/learn/formation-recovery-review.js","utf8");
+assert.match(readerCode,/Retained owner cases/,"Reader must load the preserved research cases");
+assert.match(readerCode,/data-rr-retained-case/,"Reader must expose the cases separately from canonical answers");
 assert.equal(CSE_QUESTIONS.length,150);
 assert.equal(CSE_PUBLIC_QUESTIONS.length,147);
 const headship=CSE_DEBATE_MAP.CSE045;
