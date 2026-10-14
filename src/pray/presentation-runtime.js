@@ -2140,7 +2140,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   installSequentialDevotionalReader({
    mount:m,kind:'stations',chapters,activeIndex:STATIONS.step,
    paragraphSelector:'.aoP435930VRLine,.aoP435930StationConsider p,.aoP435930HistoricalFocus p,.aoP435930Flip,.aoP435930Text,.aoP435930GuideNow p,.aoP435930GuideCue p',
-   onNavigate:i=>{STATIONS.step=i;render()},
+   onNavigate:i=>{actionCinematics.reset();STATIONS.step=i;render()},
    onFocus:paragraph=>{
     // Only explicitly selected traditional public method, exact visible
     // source paragraph, and actual user scroll may own a posture cinematic.
