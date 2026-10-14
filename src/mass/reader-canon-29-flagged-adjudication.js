@@ -45,6 +45,10 @@ export function validateCanon29FlaggedAdjudication({risks,triage,bilingual,frenc
      r.unresolvedIssue.en.length<30||r.unresolvedIssue.fr.length<30||
      f.editorialFlags.length===0||
      f.reviewState!=="ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"||
+     f.shortRubricReviewState!=="ORIGINAL_FRENCH_SHORT_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"||
+     b.shortDraft?.frCanonicalActionId!==r.actionId||
+     Object.hasOwn(b.shortDraft??{},"fr")||
+     !String(f.shortFrenchRubricDraft??"").trim()||
      b.copyApproval!=="NOT_APPROVED"||
      !Array.isArray(r.sourceUrls)||r.sourceUrls.length<2||
      !r.sourceUrls.every(u=>u.startsWith("https://"))||
@@ -77,7 +81,8 @@ export function validateCanon29FlaggedAdjudication({risks,triage,bilingual,frenc
    displaySurface:r.editorialDisplaySurface,
    sourceUrls:immutable([...r.sourceUrls]),
    unresolvedIssue:immutable({...r.unresolvedIssue}),
-   shortDraft:immutable({...b.shortDraft}),
+   shortDraft:immutable({fr:f.shortFrenchRubricDraft,en:b.shortDraft.en}),
+   shortFrenchOwnerId:f.id,
    guideDraft:immutable({en:b.guideDraft.en,fr:f.revisedFrenchRubric}),
    sourceSignoff:"NOT_APPROVED",copyApproval:"NOT_APPROVED",
    observedNow:false,canPublish:false}));
