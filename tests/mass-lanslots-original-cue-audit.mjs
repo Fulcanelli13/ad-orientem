@@ -40,7 +40,8 @@ assert.equal(coverage.chapterCoverage.filter(x=>x.scriptureSourceOccurrenceCount
 assert.equal(coverage.chapterCoverage.filter(x=>x.otherContextIds.length>0).length,7);
 assert(coverage.chapterCoverage.every(x=>x.hasOriginalTextEvidence));
 assert.equal(coverage.census.scriptureReferenceOccurrences,69);
-assert.equal(coverage.census.originalTextPdfPagesVisuallyChecked,0);
+assert.equal(coverage.census.originalTextPdfPagesVisuallyChecked,11,"exactly 11 independently documented PDF image checks");
+assert.equal(coverage.census.completeBookLocalOcrExtracted,true,"complete original OCR is now immutable and checked");
 assert.equal(coverage.census.exhaustiveVerseCountKnown,false);
 assert.equal(live.rows.length,39);
 assert.equal(live.rows.filter(x=>x.sourceKind==="CANON_SOURCE_SEGMENT").length,14);
