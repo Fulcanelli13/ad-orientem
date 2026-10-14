@@ -172,7 +172,7 @@ try{
   message:el.querySelector(".aoDevotionalActionTitle")?.textContent??"",
   artRepeat:document.body.querySelectorAll(":scope > .aoDevoCinematicInterstitial").length,
  }));
- assert.match(seen.id,/^ANGELUS\\.INCARNATION\\.(?:KNEEL|BOW)$/);
+ assert.match(seen.id,/^ANGELUS\.INCARNATION\.(?:KNEEL|BOW)$/);
  assert.equal(seen.kind,"POSTURE");
  assert.equal(seen.icon,true,"The Incarnation must show the approved large posture asset");
  assert.ok(seen.message.length>10,"Incarnation full cinematic lacks bodily instruction");
