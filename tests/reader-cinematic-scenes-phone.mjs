@@ -96,6 +96,8 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
       lastParagraphBottom:Math.max(0,...[...scroller.querySelectorAll(".ao-reader-paragraph")]
         .filter(el=>!el.hidden).map(el=>el.getBoundingClientRect().bottom)),
       cinematicBackground:getComputedStyle(cinema).backgroundColor,
+      cinematicCaptionBottom:cinema.querySelector(".ao-cinematic-sub")?.getBoundingClientRect().bottom??null,
+      navTop:shell.querySelector(".ao-reader-nav")?.getBoundingClientRect().top??null,
       priestDisplay:priest ? getComputedStyle(priest).display : null,
       priestActive:priest?.dataset.active??"false",
       priestIcon:icon?.dataset.iconKey??null,
@@ -117,7 +119,9 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
       "Elevation lacks explicit text-safe visual treatment: "+JSON.stringify(actual));
     if(actual.visualMode==="ICON"){
       assert.equal(actual.fullScreenVisible,true,"Measured empty stage did not show elevation icon");
-      assert.ok(actual.cinematicHeight<=190,"Elevation replaced with full-screen takeover");
+      assert.ok(actual.cinematicHeight<=174,"Elevation replaced with full-screen takeover");
+      assert.ok(actual.cinematicCaptionBottom<=actual.navTop-10,
+        "Elevation caption overlaps the bottom card counter: "+JSON.stringify(actual));
       assert.ok(actual.cinematicTop>=actual.lastParagraphBottom+2,
         "Large elevation art overlaps source words/rubrics: "+JSON.stringify(actual));
       assert.equal(actual.priestDisplay,"none",
