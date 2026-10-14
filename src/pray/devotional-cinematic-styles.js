@@ -16,7 +16,7 @@ body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicHeading .aoDev
 @keyframes aoDevoFilm{0%{opacity:0}14%{opacity:1}72%{opacity:1}100%{opacity:0}}
 @keyframes aoDevoFilmCamera{0%{transform:scale(1.025);filter:brightness(.73) saturate(.7)}75%{transform:scale(var(--ao-devo-scale,1.12));filter:brightness(.9) saturate(.84)}100%{transform:scale(var(--ao-devo-scale,1.12))}}
 @keyframes aoDevoGestureQuiet{0%{box-shadow:inset 0 0 0 rgba(202,178,120,0)}45%{box-shadow:inset 0 -2px 0 rgba(202,178,120,.62)}100%{box-shadow:inset 0 0 0 rgba(202,178,120,0)}}
-@media(prefers-reduced-motion:reduce){body.aoP435930Open > .aoDevoCinematicInterstitial{display:none!important}#aoPray435930 .aoDevoCardHead{animation:none!important}}
+@media(prefers-reduced-motion:reduce){body.aoP435930Open > .aoDevoCinematicInterstitial{animation:none!important}body.aoP435930Open > .aoDevoCinematicInterstitial .aoDevoCinematicArtwork{animation:none!important;transform:none!important}#aoPray435930 .aoDevoCardHead{animation:none!important}}
 `;
 function ensureDevotionalCinematicStyles(doc=globalThis.document){
  if(!doc||doc.getElementById("ao-devotional-cinematic-style"))return;
