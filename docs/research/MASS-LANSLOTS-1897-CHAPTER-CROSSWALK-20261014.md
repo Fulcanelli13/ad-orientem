@@ -6,7 +6,7 @@
 
 Rev. D. I. Lanslots, O.S.B., *Illustrated Explanation of the Prayers and Ceremonies of the Mass* (Benziger Brothers, 1897; preface by Archbishop F. Janssens). Original digitization: https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf ; underlying original: https://archive.org/details/illustratedexpla00lans . The Commons scan is 404 **PDF** pages, distinct from the **printed** page numbering used below.
 
-**Evidence-grade limitation:** Chapter headings and printed starting pages below were carried from the earlier source-index research pass; they have **not been independently rechecked against all original contents-page images in this pass**, and remain a provisional structural map. Several specific passages are verified against publicly indexed OCR excerpts; others are editorial search targets only. The 29 MB original PDF and complete OCR could not be fetched via the available reader for a consecutive, full-book verification; **do not state that all 25 chapters were read, all Scripture references extracted, or the bibliography exhaustively collated**. Original print pages must be checked visually before publication and in every case involving OCR uncertainty. There are no alterations to prayer text, the 1962 Missal, posture/minister cues, or native reader.
+**Evidence-grade update (14 October):** The [Internet Archive full-text OCR](https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt) is now **web-readable** as an 11,057-line transcription. All **25 original chapter headings** were located in that source, and **43 Scripture-reference candidates** were inspected in their OCR context (18 chapters plus introduction); the 16 earlier topical claim records were also rechecked against OCR line ranges. The complete OCR has **not** been downloaded into a searchable local text file, the 404 PDF images have **not** been verified page by page, and the 43 references are **not an exhaustive book-wide tally**. Printed start pages below derive from the table of contents but have not been certified against page images. OCR can corrupt numerals, names and references; retain explicit versus editorial verse-attribution flags and the 1962/1897 distinction. No prayer, 1962 rubric, cue, actor or native reader is changed.
 
 ## Canonical owner reconciliation
 
@@ -16,7 +16,7 @@ Rev. D. I. Lanslots, O.S.B., *Illustrated Explanation of the Prayers and Ceremon
 - `src/scripture/context.js`: single reference parser and shared Scripture owner; respects Catholic book names and Psalm numbering. No second Bible-text store; source/passage lookup must preserve card and reading position.
 - `docs/research/MASS-RESEARCH-ARCHIVE-INDEX-20261013.md`: retains Guéranger first/second pass, September evidence, 1962 normative witnesses and the Guéranger-vs-1962 correction register. Lanslots complements, never supersedes, those sources.
 
-## Full 25-chapter structural inventory (provisional TOC transcription; not certified full-text extraction)
+## All 25 chapters located in original web OCR (printed pages not visually certified)
 
 Each `AO.CARD` designation here is a **topic-level bridge to existing 30 macro Guides**, not a direct page or phrase locator. The [39-step source-first crosswalk](../../data/research/mass-lanslots-1897-source-first39-map.v1.json) now assigns the **existing** macro IDs and certified Canon block/cue ownership; topic matches still require actual original-page verification.
 
@@ -50,7 +50,7 @@ Each `AO.CARD` designation here is a **topic-level bridge to existing 30 macro G
 
 ## Scriptural/theological claim candidates — citation and certainty discipline
 
-Use two evidence categories: **OCR_EXCERPT_REVIEWED** = the author's statement appears in an indexed excerpt from the original 1897 PDF (still needs scan-side image verification); **PASSAGE_TARGET_UNVERIFIED** = a strongly relevant Mass–Bible association, **not yet proven to be Lanslots's own argument**. The latter must not be presented as a quotation or assertion by Lanslots.
+**Historical first-pass classifications below are preserved as a dated snapshot.** They have been superseded by the [16-claim original-OCR differential](../../data/research/mass-lanslots-1897-claim-differential.v1.json), where every candidate now carries a checked OCR line range and an explicit differentiation between printed citation, biblical allusion and editorially supplied parallel. For **43 distinct OCR-inspected reference candidates**, use the [batch-one Scripture register](../../data/research/mass-lanslots-1897-ocr-scripture-batch01.v1.json). Neither register is an exhaustive full-book extraction or a certified PDF-page collation.
 
 | ID | Book / printed locator | Topic and canonical landing | Scripture passage | Evidence | Review and source-critical instruction |
 |---|---|---|---|---|---|
@@ -69,6 +69,7 @@ Use two evidence categories: **OCR_EXCERPT_REVIEWED** = the author's statement a
 | LAN-013 | XXIII, p.272ff | `Agnus Dei` / AO.CARD.021 | John 1:29 | PASSAGE_TARGET_UNVERIFIED | Distinguish the Johannine title from specific threefold liturgical petition origins. |
 | LAN-014 | XXIV, p.287ff | `Domine non sum dignus` / AO.CARD.024 | Matthew 8:8 | PASSAGE_TARGET_UNVERIFIED | Gospel-source association; check exactly how Lanslots applies it to priest/faithful Communion. |
 | LAN-015 | XXV, p.308ff | Last Gospel / AO.CARD.030 | John 1:1–14 | PASSAGE_TARGET_UNVERIFIED | Last Gospel not universal for every 1962 ending or optional form; source/form selector is normative. |
+| LAN-016 | I, printed p.13 hint | Altar, universal Eucharistic offering | Malachi 1:11 | ORIGINAL_OCR_INSPECTED_NUMERAL_DAMAGED | Explicit authorial Malachi citation is partly corrupted in OCR; the exact numerical text and page image still require visual collation. |
 
 ## Theological and source-level editorial guardrails
 
@@ -80,7 +81,16 @@ Use two evidence categories: **OCR_EXCERPT_REVIEWED** = the author's statement a
 6. Do not add contemporary or postconciliar Missal source links as if they explain 1962 mechanics. No implication that a common linked source is independent proof of each specific claim.
 7. Source display: title / author / 1897 / chapter / printed page / exact assertion / original scan link / Scripture book-chapter-verse / interpretation type / 1962 applicability / source status / bilingual reviewed text.
 
-| LAN-016 | I, chapter opening (printed p.13 *hint*) | Altar; Old Testament sacrifices and worldwide pure offering | Malachi 1:11 (*Mal. i. 11*, explicitly cited) | INDEXED_PDF_TEXT_EXCERPT | The original PDF is indexed with Lanslots's Chapter I opening interpreting Malachi as a prophecy applied to the Mass; this is evidence of the **author's theological reading**, not a critically verified visual page or an exclusively literal reading of the verse. |
+
+## Original OCR extraction — new primary evidence
+
+- **[25 verified chapter headings and OCR boundaries](../../data/research/mass-lanslots-1897-chapter-ocr-boundaries.v1.json):** each chapter's line in the web rendering, its next heading and original printed-start-page indication. An OCR error renders chapter XI as “XL”; the chapter subject and the printed contents establish XI. Original printed-page images remain unchecked.
+- **[43 inspected Scripture reference candidates](../../data/research/mass-lanslots-1897-ocr-scripture-batch01.v1.json):** original OCR line-span, chapter, reference as printed versus a normalized editorial verse, theological caveats, and existing Mass topic owner. These cover 18 chapters plus the introduction; no claim of exhaustiveness.
+- **[16 original claims upgraded to direct OCR locators](../../data/research/mass-lanslots-1897-claim-differential.v1.json):** many links formerly classed as merely suspected are now proven as authorial statements, but the record retains edition-specific Scripture numbering and unverified page-image status.
+
+Especially valuable evidence: the author **explicitly** relates relics and the heavenly altar to Revelation 6:9 (ch. I), *Munda cor meum* to Isaiah 6 (ch. XI), the *Sanctus* to Isaiah 6:3 and Revelation 4:8 (ch. XV), *Benedictus* to Matthew 21:9 (ch. XV), and the incense to Revelation 5:8 (ch. VIII). For *Benedictus*, Mark 11:9–10 is an **editorial parallel**, not a directly quoted verse by Lanslots in the inspected paragraph. Similarly, the unnamed apocalyptic censer angel in chapter XIV is **not** an explicit authored verse citation to Revelation 8:3–4.
+
+**Important authorial warning:** ch. VII's own exposition counsels against contriving mystical interpretations for every small ceremonial action; practical origins and genuine symbolism must be distinguished. **Doctrinal caution:** a passage in ch. XIX appears to describe liturgical language as “equally inspired” with Scripture; that terminology requires theological qualification, because liturgical composition is not biblical canonical inspiration. The “new consecration” language discussed at commingling is not a second transubstantiation. Late nineteenth-century Last Gospel alternatives do not establish 1962 norms.
 
 ## Companion differential screening (16 candidates)
 
@@ -88,9 +98,9 @@ See [machine-readable 16-item differential](../../data/research/mass-lanslots-18
 
 ## Integration disposition
 
-- **Documented now:** complete 25-chapter indexed structure; provisional connections to all 30 ordinary Mass macro moments and relevant pre-/post-Mass contexts; 16 candidate source-passage work items graded by evidence; source/authority separation and existing owner mapping.
-- **Not completed:** consecutive 404-PDF-page visual verification; full Scripture-citation extraction; complete claim-by-claim duplicate check against the original 422-record September evidence entries and all 71 Guéranger topics (a 16-item differential screening has now been added separately); topic-level mapping now references the certified **39** LIVE-step IDs, with exact source phrase mapping still incomplete; native French theological review and runtime/mobile integration.
-- **Do not publish this ledger as new user-facing content.** Next research gate: acquire readable full OCR plus page images, mechanically extract all biblical citations and Mass-text phrases, classify them, then deduplicate at the *claim* level against existing records before any product change.
+- **Documented now:** 25 directly located original OCR chapter headings, 43 checked Scripture-reference candidates from 18 chapters plus the introduction, and 16 reclassified claim records with original OCR line locators; topic/owner links cover the 39 current source-first presentation steps. Source authority and editorial-versus-explicit verse evidence are separated.
+- **Not completed:** a complete local OCR download and exhaustive reference census, consecutive 404-PDF-page image verification, full claim-by-claim deduplication against all 422 historical evidence entries and Guéranger FRG01–71, exact paragraph-level attachment to every LIVE cue, independent French doctrinal review, and native browser/mobile acceptance.
+- **Do not publish this ledger as new user-facing content.** The full text is now readable on the web; the next gate is to materialize that OCR, execute the existing extraction script against the complete text, reconcile with the 43 inspected candidates, verify citations against scanned original pages and a named Catholic Bible edition, and review the French content before any product change.
 - **Source readback and source-owner assertions were performed in the research batch; no full Node/browser test suite or Mass reader modification.**
 
 ## Original source and work-in-repo cross references
