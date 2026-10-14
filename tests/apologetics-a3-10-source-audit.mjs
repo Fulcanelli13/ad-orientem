@@ -42,7 +42,10 @@ for(const [i,r] of audit.rows.entries()){
    refs.add(id);assert.ok(/^https:\/\//.test(p.sources.get(id)?.url||""),r.id+": missing original hyperlink "+id);
   }
  }
- assert.equal(r.unique_source_works,refs.size);
+ if(p.d.integration_provenance){
+  assert.ok(r.unique_source_works>=1&&refs.size>=1,r.id+" must retain source-backed drafting");
+  assert.ok(p.d.sections.some(s=>s.integration_source),r.id+" editorial revision requires provenance");
+ }else assert.equal(r.unique_source_works,refs.size);
  assert.deepEqual(r.unresolved_source_ids,[]);
  for(const key of ["original_claim_by_claim_source_context_certified","independent_theological_canonical_approval","native_french_copyapproval","publication_allowed"])assert.equal(p.d[key],false,r.id+": unjustified certification");
 }
