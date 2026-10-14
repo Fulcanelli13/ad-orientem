@@ -84,4 +84,66 @@ assert.equal(get("061").claimClass,"FORM_DEPENDENT_RESPONDENT");
 assert.deepEqual(get("061").witness.pdfPageNumbers,[17]);
 for(const n of ["023","024","025","027","028","033","034","035","055","058","059","062"])
  assert.equal(get(n).exactLiveClockObserved,false);
+
+const secondary=evidence.records.filter(x=>Object.hasOwn(x,"supplementalAuthority"));
+assert.deepEqual(secondary.map(x=>x.actionId),[
+ "AO.CANON.R62.008","AO.CANON.R62.017","AO.CANON.R62.061",
+],"Do not silently promote or duplicate other review cases");
+const proper=get("008").supplementalAuthority;
+assert.equal(proper.ruleOrigin,"RUBRICAE_GENERALES_MISSALIS_ROMANI_1962_501");
+assert.match(proper.latinLocator,/Communicantes, Hanc igitur et Qui pridie/);
+assert.ok(proper.documentUrl.startsWith("https://"));
+assert.deepEqual(proper.formsWithProperSelection,[
+ "COMMUNICANTES","HANC_IGITUR","QUI_PRIDIE",
+]);
+assert.deepEqual(proper.octaveRule.octaves,["NATIVITY","EASTER","PENTECOST"]);
+assert.deepEqual(proper.octaveRule.forms,["COMMUNICANTES","HANC_IGITUR"],
+ "Do not generalize the octave carryover to Qui pridie");
+assert.equal(proper.octaveRule.appliesWhenCelebratedMassIsNotOfOctave,true);
+assert.equal(proper.octaveRule.mayHaveDistinctProperPreface,true);
+assert.equal(proper.fixedOrdinaryTextAlwaysValid,false);
+assert.equal(proper.automaticSelectionCertified,false);
+assert.equal(proper.readerPublicationAuthorized,false);
+assert.equal(get("008").sourceRitus,"VIII.4",
+ "Keep primary canonical rubric owner distinct from proper selection authority");
+const hosts=get("017").supplementalAuthority;
+assert.equal(get("017").sourceRitus,hosts.cueSourceRitus);
+assert.equal(hosts.cueSourceRitus,"VIII.4");
+assert.equal(hosts.conditionalInstructionRitus,"VIII.5");
+assert.match(hosts.exactLatinCondition,/antequam accipiat Hostiam/);
+assert.equal(hosts.condition,"ADDITIONAL_HOSTS_FOR_CONSECRATION_IN_A_COVERED_VESSEL");
+assert.deepEqual(hosts.orderedEvents,[
+ "UNCOVER_ADDITIONAL_HOSTS_VESSEL_WITH_RIGHT_HAND",
+ "TAKE_PRINCIPAL_HOST_AT_ACCEPIT_PANEM",
+],"The vessel must be uncovered BEFORE taking the principal Host");
+assert.equal(hosts.printOrderDeterminesActionOrder,false);
+assert.equal(hosts.postAccepitUncoveringAuthorized,false);
+assert.equal(hosts.newExactClockAuthorized,false);
+assert.equal(hosts.readerPublicationAuthorized,false);
+const amen=get("061").supplementalAuthority;
+assert.equal(amen.inheritedLedgerActor,get("061").actor);
+assert.equal(amen.inheritedLedgerActor,"SERVER");
+assert.equal(amen.inheritedActorIsUniversalSpeaker,false);
+assert.equal(amen.sourceDocuments.length,3);
+assert.deepEqual(amen.sourceDocuments.map(x=>x.locator),[
+ "Ritus servandus X.1",
+ "De musica sacra et sacra liturgia (1958), nn. 25-26",
+ "De musica sacra et sacra liturgia (1958), n. 31",
+]);
+assert.ok(amen.sourceDocuments.every(x=>x.url.startsWith("https://")));
+assert.deepEqual(amen.formRules.map(x=>x.form),["LOW","MISSA_CANTATA","SOLEMN"]);
+assert.equal(amen.formRules[0].respondentClass,"MINISTER_BY_DEFAULT");
+assert.equal(amen.formRules[0].congregationalParticipation,"POSSIBLE_IF_DIALOGUE_MASS");
+assert.ok(amen.formRules.slice(1).every(x=>x.congregationalParticipation==="PERMITTED_NOT_IMPLIED"));
+assert.equal(amen.actualRespondentObserved,false);
+assert.equal(amen.newSpeakerClockAuthorized,false);
+assert.equal(amen.readerPublicationAuthorized,false);
+for(const x of secondary){
+ assert.equal(x.canPublish,false);
+ assert.equal(x.independentCopySignoff,"NOT_GRANTED");
+ assert.equal(x.independentCeremonialSignoff,"NOT_GRANTED");
+ assert.equal(x.exactLiveClockObserved,false);
+ assert.equal(x.witness.primary1962PrintedFacsimileVerified,false);
+}
+
 console.log("PASS: 29 original 1962 Ritus review cases independently page-located in English witness, 17 conditional/sequence checks, 0 facsimile/linguistic/source-clock approvals, 0 publication.");
