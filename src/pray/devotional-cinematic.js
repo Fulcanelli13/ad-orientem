@@ -45,12 +45,15 @@ export function showDevotionalInterlude({mount,form="angelus",card,language="en"
  // Art is a one-time opening tableau, not a four-part repeating
  // Annunciation/Tanner film. Never replay it on fiat or Incarnation.
  if(!sheet||!scene||form!=="angelus"||card?.id!=="announcement"||shown.has(sheet))return false;
- shown.add(sheet);
  const approved=approvedOpeningArtworkPool(win?.AO_SACRED_ART_APPROVED??[],"ANNUNCIATION");
  let previousId=null;
  try{previousId=win?.sessionStorage?.getItem?.("ao-angelus-last-approved-art")??null}catch{}
  const selected=selectSessionArtwork(approved,previousId,()=>win?.Math?.random?.()??Math.random());
- if(selected){try{win?.sessionStorage?.setItem?.("ao-angelus-last-approved-art",selected.id)}catch{}}
+ // A blank full-screen art panel would be more distracting than prayer.
+ // Fail closed until the independently curated approved art records arrive.
+ if(!selected)return false;
+ shown.add(sheet);
+ try{win?.sessionStorage?.setItem?.("ao-angelus-last-approved-art",selected.id)}catch{}
  const previous=timers.get(sheet);
  if(previous){win.clearTimeout(previous.timer);previous.node.remove();}
  sheet.ownerDocument.body.querySelectorAll(":scope > .aoDevoCinematicInterstitial").forEach(n=>n.remove());
