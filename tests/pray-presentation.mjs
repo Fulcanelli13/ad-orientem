@@ -6,18 +6,45 @@ import {angelusCardPlan,DEVOTIONAL_CARD_SCHEMA} from "../src/pray/devotional-car
 import {mercyChapters,SEQUENTIAL_DEVOTIONAL_SCHEMA} from "../src/pray/devotional-sequence-adapter.js";
 import {divineMercySteps} from "../src/pray/devotional-methods-v1.js";
 import {devotionalInterludePlan,DEVOTIONAL_CINEMATIC_VERSION} from "../src/pray/devotional-cinematic.js";
-assert.equal(DEVOTIONAL_CINEMATIC_VERSION,"devotional-card-interstitial-v2");
-const opening=devotionalInterludePlan({form:"angelus",
- card:{id:"announcement",title:"The Annunciation",latin:"Angelus Domini"}});
-assert.equal(opening.id,"announcement");
-assert.equal(opening.image,null,"Pending Tanner derivative cannot bypass artwork approval");
-assert.equal(opening.shot,null,"No repeatable chapter-by-chapter image pan");
+import {
+  ANGELUS_REVIEWED_OPENING_ART, selectAngelusOpeningArtwork,
+  resolveAngelusIncarnationCinematic, resolveAngelusArtworkImage,
+} from "../src/pray/angelus-cinematic-policy.js";
+assert.equal(DEVOTIONAL_CINEMATIC_VERSION,"angelus-devotional-cinematics-v2");
+const opening=devotionalInterludePlan({form:"angelus",card:{id:"announcement",title:"The Announcement"}});
+assert.equal(opening.repeatPerCard,false);
+assert.equal(opening.artworkOwner,"USER_REVIEWED_SACRED_ART");
 for(const id of ["fiat","incarnation","intercession","faithful-departed"]){
- assert.equal(devotionalInterludePlan({form:"angelus",card:{id,title:"Other"}}),null,
-  "Only one opening tableau may exist per Angelus session");
+ assert.equal(devotionalInterludePlan({form:"angelus",card:{id,title:id}}),null,
+   "Angelus artwork must not interrupt later cards: "+id);
 }
 assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}),null);
-assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"missing",title:""}}),null);
+assert.equal(ANGELUS_REVIEWED_OPENING_ART.length,5);
+assert.ok(ANGELUS_REVIEWED_OPENING_ART.every(row=>
+  row.rating===4&&row.subject==="ANNUNCIATION"&&row.sourceUrl));
+const picked=selectAngelusOpeningArtwork({random:()=>0});
+assert.equal(picked.id,"nga-46");
+assert.notEqual(selectAngelusOpeningArtwork({lastId:picked.id,random:()=>0}).id,picked.id);
+assert.equal(selectAngelusOpeningArtwork({pool:[]}),null);
+const cma=ANGELUS_REVIEWED_OPENING_ART.find(x=>x.id==="cma-127572");
+assert.ok(cma && cma.rating===4 && cma.sourceUrl.includes("1950.251"));
+assert.equal(await resolveAngelusArtworkImage(cma,{fetchImpl:async()=>({
+ ok:true,json:async()=>({data:{id:127572,share_license_status:"CC0",
+ images:{web:{url:"https://images.example.test/cma-annunciation.jpg"}}}})
+})}),"https://images.example.test/cma-annunciation.jpg");
+assert.equal(await resolveAngelusArtworkImage(cma,{fetchImpl:async()=>({
+ ok:true,json:async()=>({data:{id:127572,share_license_status:"copyrighted",
+ images:{web:{url:"https://images.example.test/not-cc0.jpg"}}}})
+})}),null,"Non-CC0 reproduction must never appear");
+assert.equal(resolveAngelusIncarnationCinematic({form:"regina"}),null);
+assert.equal(resolveAngelusIncarnationCinematic({weekday:1}).action,"HEAD_BOW");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:6}).action,"HEAD_BOW");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:6,saturdayAfterVespers:true}).action,"GENUFLECT");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:0}).action,"GENUFLECT");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:0,gestureOverride:"NONE"}),null);
+assert.equal(resolveAngelusIncarnationCinematic({weekday:0,gestureOverride:"PROFOUND_BOW",language:"fr"}).label,
+  "Inclinez-vous profondément");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:0}).automaticObservation,false);
 assert.equal(DEVOTIONAL_CARD_SCHEMA,"dual-axis-devotional-cards-v1");
 assert.equal(SEQUENTIAL_DEVOTIONAL_SCHEMA,"dual-axis-sequential-devotional-v1");
 const mercyMain=mercyChapters(divineMercySteps(),{french:true});
