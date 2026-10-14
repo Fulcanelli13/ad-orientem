@@ -9,6 +9,8 @@ import {parseScriptureContext} from "../scripture/context.js";
  * passage/chapter/commentary, original-source labels and return navigation.
  */
 export const MASS_FORMATION_SCRIPTURE_ANCHORS=Object.freeze([
+  {id:"MFS17",stageId:"MF01",reference:"Matthew 20:30–31",relationship:"COMPARATIVE_PASSAGE",title:{en:"Kyrie · the cry for mercy",fr:"Kyrie · l'appel à la miséricorde"}},
+  {id:"MFS18",stageId:"MF01",reference:"John 1:14",relationship:"DOCTRINAL_PARALLEL",title:{en:"The Incarnation · Word made flesh",fr:"L'Incarnation · le Verbe fait chair"}},
   {id:"MFS01",stageId:"MF01",reference:"Luke 2:14",relationship:"ADAPTED_WORDS",title:{en:"Gloria · angelic acclamation",fr:"Gloria · acclamation des anges"}},
   {id:"MFS02",stageId:"MF01",reference:"Isaiah 6:3",relationship:"ADAPTED_WORDS",title:{en:"Sanctus · Isaiah's vision",fr:"Sanctus · vision d'Isaïe"}},
   {id:"MFS03",stageId:"MF01",reference:"Matthew 21:9",relationship:"ADAPTED_WORDS",title:{en:"Benedictus · entry into Jerusalem",fr:"Benedictus · entrée à Jérusalem"}},
@@ -20,7 +22,7 @@ export const MASS_FORMATION_SCRIPTURE_ANCHORS=Object.freeze([
   {id:"MFS09",stageId:"MF06",reference:"Genesis 4:4",relationship:"NAMED_FIGURE",title:{en:"Abel's offering",fr:"L'offrande d'Abel"}},
   {id:"MFS10",stageId:"MF06",reference:"Genesis 22:1–19",relationship:"NAMED_FIGURE",title:{en:"Abraham and Isaac",fr:"Abraham et Isaac"}},
   {id:"MFS11",stageId:"MF06",reference:"Genesis 14:18–20",relationship:"NAMED_FIGURE",title:{en:"Melchisedech in Genesis",fr:"Melchisédech dans la Genèse"}},
-  {id:"MFS12",stageId:"MF06",reference:"Hebrews 7:1–3",relationship:"DOCTRINAL_PARALLEL",title:{en:"Melchisedech and priesthood",fr:"Melchisédech et le sacerdoce"}},
+  {id:"MFS12",stageId:"MF06",reference:"Hebrews 7:1–17",relationship:"DOCTRINAL_PARALLEL",title:{en:"Melchisedech and priesthood",fr:"Melchisédech et le sacerdoce"}},
   {id:"MFS13",stageId:"MF07",reference:"Matthew 6:9–13",relationship:"ADAPTED_WORDS",title:{en:"The Lord's Prayer",fr:"Le Notre Père"}},
   {id:"MFS14",stageId:"MF07",reference:"John 1:29",relationship:"ADAPTED_WORDS",title:{en:"Behold the Lamb of God",fr:"Voici l'Agneau de Dieu"}},
   {id:"MFS15",stageId:"MF07",reference:"Matthew 8:8",relationship:"ADAPTED_WORDS",title:{en:"The centurion's words",fr:"Les paroles du centurion"}},
