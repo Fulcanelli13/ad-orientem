@@ -22,14 +22,14 @@
     "originalWebOcrWitnessBatch": "data/research/mass-lanslots-1897-ocr-scripture-batch01.v1.json"
   },
   "originalSourceAccess": {
-    "completePdfAcquired": false,
-    "completeOcrAcquired": false,
-    "webPdfTooLargeForInspection": true,
-    "restriction": "11,057-line full-text OCR became web-readable via the Internet Archive FULL TEXT link. All 16 named claims have since been spot-checked in that OCR and now carry source line ranges. Complete machine-readable download and visual PDF page verification remain unavailable. Do not mark full bibliography exhaustive.",
+    "completePdfAcquired": true,
+    "completeOcrAcquired": true,
+    "webPdfTooLargeForInspection": false,
+    "restriction": "Original complete OCR is archived byte-identically in repository, and original 404-page scanned PDF is acquired as GitHub research artifact. Eleven carefully selected original page images were visually checked. Complete verse inventory and the remaining 393 printed scan pages are not certified.",
     "fullCitationInventory": false,
-    "visualPageChecks": 0,
+    "visualPageChecks": 11,
     "indexedFullPdfChapterITextExcerptVerified": true,
-    "independentlyVisuallyVerifiedPageImages": 0,
+    "independentlyVisuallyVerifiedPageImages": 11,
     "fullOcrAvailableOnline": true,
     "fullOcrUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
     "fullWebOcrLines": 11057
@@ -646,16 +646,16 @@
       "claimTopic": "Altar and worldwide pure oblation as interpreted from the prophet Malachias",
       "sourceChapter": "I",
       "printedPageHint": 13,
-      "printedPageLocatorStatus": "CHAPTER_OPENING_PAGE_HINT_NOT_PAGE_IMAGE_VERIFIED",
+      "printedPageLocatorStatus": "PRINTED_PAGE_13_VISUALLY_CHECKED_PDF19",
       "scriptureRefs": [
         "Malachi 1:11"
       ],
-      "scriptureCitationEvidence": "EXPLICIT_IN_WEB_SEARCH_INDEX_EXCERPT_OF_ORIGINAL_1897_PDF",
+      "scriptureCitationEvidence": "EXPLICIT_MALACHI_1_11_ON_PRINTED_PDF_PAGE_19",
       "sourceExcerptShort": "from the rising of the sun even to the going down, a clean oblation is offered (Mal. i. 11)",
       "originalContextSummary": "At the beginning of Chapter I, Lanslots surveys patriarchal altars (Abel, Noe, Abraham) and connects their tradition to the Christian altar by applying Malachi 1:11 to the universally offered Eucharistic oblation.",
       "proofUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_%28IA_illustratedexpla00lans%29.pdf",
       "scriptureCitationClassification": "AUTHOR_EXPLICIT_REFERENCE_AND_CATHOLIC_TYPOLOGICAL_APPLICATION",
-      "theologicalHistoricalQualification": "Explicit authorial reading of Malachi 1:11 as prefiguration of worldwide Mass; do not assert without argument that this exclusively exhausts the verse's original prophetic context. The quoted first-page text supports the claimed authorial interpretation, but full page needs visual verification.",
+      "theologicalHistoricalQualification": "Explicit authorial reading of Malachi 1:11 as prefiguration of worldwide Mass; do not assert without argument that this exclusively exhausts the verse's original prophetic context. The quoted first-page text supports the claimed authorial interpretation, and original printed page 13 has been visually checked; the typological interpretation remains attributable to Lanslots rather than an exclusive literal exegesis.",
       "legacyGuideOwnerIds": [
         "AO.CARD.001"
       ],
@@ -672,7 +672,7 @@
       },
       "disposition": "EXPLICIT_SCRIPTURAL_LINK_NEW_HISTORICAL_WITNESS",
       "criticalNote": "The 422-entry evidence ledger has many Offertory/sacrificial claims but did not expose this precise book-author-verse association in the audited material. Not yet certified unique across all contextual theological sources.",
-      "originalTextVerification": "FULL_TEXT_OCR_INSPECTED_MALACHI_CITATION_CHARACTERS_DAMAGED_SCAN_PAGE_PENDING",
+      "originalTextVerification": "ORIGINAL_PRINTED_PAGE_IMAGE_VERIFIED_PDF19",
       "biblicalVerseAttributionToLanslots": "AUTHOR_EXPLICIT_REFERENCE_OCR_DAMAGED",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
@@ -687,7 +687,13 @@
         "webLineEnd": 496,
         "evidenceType": "AUTHOR_EXPLICIT_REFERENCE_OCR_DAMAGED",
         "readableAndChecked": true,
-        "originalPageScanChecked": false
+        "originalPageScanChecked": true,
+        "originalScannedWitness": {
+          "pdfPage": 19,
+          "printedPage": 13,
+          "visuallyReadAs": "Mal. i. 11",
+          "citation": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+        }
       }
     }
   ],
