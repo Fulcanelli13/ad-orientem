@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:formation-integrated-corrections": "node tests/formation-integrated-owner-corrections.mjs",
     "test:wave1": "node tests/wave01-contracts.mjs",
     "test:b005": "node tests/b005-low-objective.mjs",
     "test:b006": "node tests/b006-solemn-objective.mjs",
