@@ -1,0 +1,1069 @@
+{
+  "schema": "AO_FORMATION_INDEPENDENT_SOURCE_33_QA_BATCH_V1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_CONTEXT_AND_SOURCE_ROLE_AUDIT_NOT_CERTIFICATION",
+  "scope": "CSE026-CSE050 + CR-MOR-01-08, Catechism excluded",
+  "sources_sha": {
+    "src/learn/sexual-ethics-data/questions-001-050.js": "26f587dddda1634539641b0dc82275fb6ae2a393",
+    "src/learn/sexual-ethics-data/debates-001-031.js": "c8944cc6868e9c28965f98a225fe71ed2bbee6a6",
+    "src/learn/sexual-ethics-data/debates-035-064.js": "6b30529ee496852b85cc353329bd8b267e2daf15",
+    "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json": "228f2e4d9ff34efa8c0d12c729353bf43b32bec9",
+    "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json": "850b90144d010b631664f8949103dd9f796ce705",
+    "data/learn/church-crisis-canonical.v1.json": "67476d576ae500d363773ef383ae48f8952d507f"
+  },
+  "methodology": [
+    "Read 25 current CSE concise English answers and source-ID declarations and available expanded-opposition text; check bilingual fields are present, not full French proof",
+    "Read all four English roles in eight CR-MOR draft dossiers; full French and exact chapter collation not completed",
+    "Compare selected moral claims with original Aquinas, papal, Holy See and canonical documents; distinguish authorial evidence from later critical excerpts",
+    "Use explicit document/page locators and do not claim a source in a registry independently corroborates a distinct source using its quotations",
+    "Do not merge, publish, certify or change live answers without complete original-text, opponent and native-French review"
+  ],
+  "counts": {
+    "reviewed": 33,
+    "cse": 25,
+    "crisis": 8,
+    "with_cse_debate": 8,
+    "crisis_draft_role_sections": 32,
+    "high_priority_issues": [
+      "CR-MOR-01",
+      "CR-MOR-06",
+      "CR-MOR-07",
+      "CSE045",
+      "CSE043",
+      "CSE049",
+      "CSE050"
+    ],
+    "certified": 0
+  },
+  "records": [
+    {
+      "id": "CSE026",
+      "module": "sexual-ethics",
+      "canonical_question_en": "When does a sexual thought become voluntary consent?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "When the will, with sufficient awareness, chooses to retain, enjoy or pursue what was first presented involuntarily. Mere notice, surprise or passing attention is not the same as consent.",
+      "short_answer_fr_present": true,
+      "detail_en": "There is no need to measure the exact second at which a temptation became sinful. The practical distinction is between what happened to you and what you knowingly chose to continue.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"ST6\",\"aa.1–8\"",
+      "disposition": "improve_precise_passage",
+      "source_locator": "Aquinas I-II q.74 aa.6–8; q.6",
+      "original_url": "https://www.newadvent.org/summa/2074.htm",
+      "registry_source_id": "S42",
+      "review_notes": "Use direct distinction between thought occurring and deliberate delectation/consent, not second-by-second scruple.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE027",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Are erotic dreams or nocturnal emissions sinful?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Not when they occur involuntarily during sleep. Moral responsibility requires a voluntary act; what happens without deliberate consent is not personal sin.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"ST6\",\"aa.1–8\"",
+      "disposition": "source_confirmed_with_causal_nuance",
+      "source_locator": "Aquinas II-II q.154 a.5",
+      "original_url": "https://www.newadvent.org/summa/3154.htm",
+      "registry_source_id": "S52",
+      "review_notes": "Original source explicitly says involuntary emission while asleep is not itself a sin; culpable preceding voluntary causes are assessed separately.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE028",
+      "module": "sexual-ethics",
+      "canonical_question_en": "If virginity is higher, does that devalue marriage?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "No. Catholic tradition simultaneously teaches that marriage is holy and sacramental and that consecrated virginity for God is a higher counsel. A higher state does not make the lower good evil.",
+      "short_answer_fr_present": true,
+      "detail_en": "Aquinas explicitly distinguishes the objective excellence of virginity as a state from the holiness of individual persons: a particular married person can be holier than a particular virgin.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"SCR\",\"Mt 19:10–12; 1 Cor 7:32–38\"",
+      "disposition": "source_confirmed",
+      "source_locator": "Aquinas II-II q.152 a.4",
+      "original_url": "https://www.newadvent.org/summa/3152.htm",
+      "registry_source_id": "S51",
+      "review_notes": "Aquinas explicitly says a particular married person can be holier than a virgin; preserve distinction of states and persons.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE029",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Is lifelong celibacy psychologically unhealthy?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Not by definition. The claim that celibacy is necessarily unhealthy would require showing that sexual activity is a psychological necessity. Catholic teaching denies that premise and treats lifelong continence as a genuinely livable vocation. It does not claim that every celibate life is automatically healthy: immaturity, isolation or poor formation can still cause real problems in a particular person.",
+      "short_answer_fr_present": true,
+      "detail_en": "A qualitative study of 15 US Catholic priests reported both benefits and strains associated with celibacy and obedience. It cannot determine their prevalence or show celibacy alone causes distress. Vocational discernment must attend to friendships, maturity and support.",
+      "debate_present": true,
+      "debate_opposition_en": "A qualitative study based on interviews with 15 US Catholic priests examined perceived benefits and psychological difficulties associated with celibacy and obedience. It can illuminate participants' experiences, but cannot establish how common these outcomes are among all priests or prove that celibacy causes them. What pastoral responsibilities follow from reported distress or isolation?",
+      "source_id_declarations": "[\"SACRA\",\"§§34–36, 53–62\"",
+      "disposition": "empirical_scope_limited",
+      "source_locator": "Isacco et al. qualitative study, 15 US priests",
+      "original_url": "https://pubmed.ncbi.nlm.nih.gov/25617141/",
+      "registry_source_id": "S50",
+      "review_notes": "The original peer-reviewed abstract confirms positive and negative experiences among 15 participants; it does not establish prevalence nor that celibacy universally causes distress.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE030",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Is modesty objective or merely cultural?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "The virtue is objective, while many concrete dress conventions vary by time, place and social context. Catholic tradition evaluates moderation, circumstances and intention rather than treating one historical dress code as universal moral law.",
+      "short_answer_fr_present": true,
+      "detail_en": "Aquinas expressly recognizes variation in clothing customs. Deliberately seeking to provoke lust can be morally relevant, but not every departure from a preferred cultural style is automatically immodest.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"ST169\",\"a.2\"",
+      "disposition": "source_confirmed",
+      "source_locator": "Aquinas II-II q.169 aa.1–2",
+      "original_url": "https://www.newadvent.org/summa/3169.htm",
+      "registry_source_id": "S53",
+      "review_notes": "Source distinguishes virtue from locally variable attire conventions; maintain moderation, intent and context and avoid universalising one era's dress code.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE031",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Why is premarital sex wrong if two people genuinely love each other?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Because affection alone does not establish the marital covenant, exclusivity and stable parental responsibilities to which sexual union is naturally ordered. Catholic teaching does not deny the couple’s love; it denies that love by itself creates marriage.",
+      "short_answer_fr_present": true,
+      "detail_en": "Deep commitment is a real good, and avoiding pregnancy can alter consequences, but neither establishes the marital covenant. Sexual union is morally ordered not only by emotion or immediate consequences but by its relation to generation and to the stable union appropriate to parenthood; marriage gives that union its objective covenantal form.",
+      "debate_present": true,
+      "debate_opposition_en": "If two people sincerely love each other, are committed and intend to marry, requiring a wedding before sex looks like making a ceremony more important than the relationship.",
+      "source_id_declarations": "[\"ST154\",\"a.2\"",
+      "disposition": "clarify_contract_vs_ceremony",
+      "source_locator": "1983 CIC can.1057; Aquinas II-II q.154 a.2",
+      "original_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "registry_source_id": "S48",
+      "review_notes": "Canonical consent lawfully expressed makes marriage. The objection reduces marriage to a 'wedding ceremony'; answer should explain juridical public commitment, not ritual formalism.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE032",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Is engagement morally equivalent to marriage?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "No. Engagement is a serious promise and preparation for marriage, but it is not the matrimonial bond itself. A future intention to marry does not create the present rights and duties of marriage. Engagement is also the time to resolve serious disagreements about fidelity, contraception, openness to children and sexual ethics before matrimonial consent is exchanged.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"CASTI\",\"§§5–10, 11–30\"",
+      "disposition": "source_confirmed",
+      "source_locator": "1983 CIC cann.1057,1062",
+      "original_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "registry_source_id": "S48",
+      "review_notes": "A marriage promise/engagement is not marriage; canon 1062 §2 expressly disallows action to compel celebration; useful exact locator.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE033",
+      "module": "sexual-ethics",
+      "canonical_question_en": "How far is “too far” physically before marriage?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "There is no honest universal centimetre-rule. Affection becomes morally wrong when the couple deliberately seeks sexual pleasure proper to intercourse, chooses acts ordered to it, or knowingly places themselves in a proximate occasion they are not prepared to resist.",
+      "short_answer_fr_present": true,
+      "detail_en": "Aquinas explicitly says kissing and touching are not mortal sins by their species; their moral character depends on purpose and the pleasure deliberately sought. This avoids both laxity and mechanical scrupulosity.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"ST154\",\"a.4\"]",
+      "disposition": "source_confirmed_with_pastoral_guardrail",
+      "source_locator": "Aquinas II-II q.154 a.4",
+      "original_url": "https://www.newadvent.org/summa/3154.htm",
+      "registry_source_id": "S52",
+      "review_notes": "Kisses/touches not sins by their species, but intention matters; avoid rigid physical boundary or pronouncing personal mortal guilt.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE034",
+      "module": "sexual-ethics",
+      "canonical_question_en": "When can kissing or touching become sinful?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "When they are deliberately used to seek illicit sexual pleasure, to arouse oneself or another toward sexual activity outside marriage, or when they create a knowingly chosen proximate occasion of serious sin.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"ST154\",\"a.4\"]",
+      "disposition": "source_confirmed_with_pastoral_guardrail",
+      "source_locator": "Aquinas II-II q.154 a.4",
+      "original_url": "https://www.newadvent.org/summa/3154.htm",
+      "registry_source_id": "S52",
+      "review_notes": "Same Aquinas distinction applies; current short answer is coherent, no centimeter-rule to be added.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE035",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Is cohabitation a sensible way to test compatibility?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Catholic morality separates two questions. If cohabitation includes sex, the sexual relations are outside marriage and are judged accordingly. If the couple is genuinely continent, sharing a home is not itself fornication; the remaining questions are prudential—whether the arrangement creates a proximate occasion of sin, gives serious scandal, or creates dependencies that make free discernment harder. The Church does not need to claim that cohabitation is an ineffective “compatibility test” in order to judge those moral issues.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": true,
+      "debate_opposition_en": "Pew's 2019 U.S. survey found that 23% of adults currently cohabiting cited wanting to test their relationship as a major reason for moving in together; 38% cited finances and 37% convenience. These are reported motives, not evidence that cohabitation improves later marriages. Does testing daily compatibility justify living together before marriage?",
+      "source_id_declarations": "[\"ST154\",\"a.2\"",
+      "disposition": "avoid_empirical_overclaim",
+      "source_locator": "Aquinas q.154; Pew 2019 motives not experimental outcomes",
+      "original_url": "https://www.newadvent.org/summa/3154.htm",
+      "registry_source_id": "S52",
+      "review_notes": "Current wording distinguishes fornication from prudence of cohabitation, correctly avoids proving incompatibility by survey motives. Original Pew counts should be checked separately if expanded debate retained.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE036",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Can an unmarried couple live together chastely?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Sharing a residence is not automatically the moral species of fornication. A chaste arrangement still requires prudential evaluation of occasions of sin, scandal, public presentation, dependence and concrete circumstances.",
+      "short_answer_fr_present": true,
+      "detail_en": "Sharing an address is not itself fornication. If the couple is genuinely continent and serious danger, scandal and other relevant circumstances are absent, the shared residence alone does not create a sexual sin.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"ST43\",\"aa.1, 7\"",
+      "disposition": "careful_distinction_preserved",
+      "source_locator": "Aquinas II-II q.154; prudential occasions and scandal",
+      "original_url": "https://www.newadvent.org/summa/3154.htm",
+      "registry_source_id": "S52",
+      "review_notes": "Source does not make sharing an address identical to fornication; maintain context and avoid unqualified presumption about all cohabiting couples.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE037",
+      "module": "sexual-ethics",
+      "canonical_question_en": "What is a proximate occasion of sin?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "A situation in which a particular person is seriously and predictably likely to fall into sin. The judgment is partly objective and partly personal: what is a remote danger for one person can be proximate for another.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"SACRA\",\"§§58–62\"",
+      "disposition": "source_scope_needs_specialist",
+      "source_locator": "Aquinas II-II q.43 scandal; historical ascetical/moral manuals",
+      "original_url": "https://www.newadvent.org/summa/2043.htm",
+      "registry_source_id": null,
+      "review_notes": "Current definition is practical, but not every highly uncomfortable situation is objectively proximate; would benefit from direct moral manual exposition.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE038",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Is it sinful to keep looking at attractive women or men for sexual pleasure?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Noticing that someone is attractive is not itself a sin. The moral line is crossed when a person deliberately prolongs the look, returns to it, or mentally uses the other person in order to enjoy lustful sexual pleasure. The issue is consent to lust, not the first involuntary notice.",
+      "short_answer_fr_present": true,
+      "detail_en": "For someone dating, engaged or married, the same distinction applies, but repeated deliberate sexualized attention to others can also become a failure of fidelity in desire and a chosen occasion of further sin. This is different from ordinary social attention, aesthetic appreciation or an involuntary attraction.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"SCR\",\"Mt 5:27–28\"",
+      "disposition": "source_scope_needs_primary_direct_locator",
+      "source_locator": "Matt 5:27–28; Aquinas I-II q.74 aa.6–8",
+      "original_url": "https://www.newadvent.org/summa/2074.htm",
+      "registry_source_id": "S42",
+      "review_notes": "Keep distinction between involuntary noticing and chosen lust; attach q.74 thought/pleasure passage rather than infer sin from aesthetics.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE039",
+      "module": "sexual-ethics",
+      "canonical_question_en": "When does flirting become sinful or disloyal?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Friendly warmth, humour and ordinary social charm are not automatically sinful. Flirting becomes morally problematic when it is deliberately used to provoke sexual interest, secure romantic attention one has no right to invite, manipulate another person, or cultivate an alternative romantic bond contrary to an existing relationship or marriage.",
+      "short_answer_fr_present": true,
+      "detail_en": "A single playful remark is not the same thing as deliberately keeping another person sexually or romantically interested. For a boyfriend/girlfriend or engaged person, exclusivity may be an agreed relational duty even before marriage; for a spouse, deliberate romantic cultivation of a third person can become emotional infidelity and an occasion of adultery even before physical contact occurs.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"SCR\",\"Mt 5:27–28\"",
+      "disposition": "reasonable_prudential_reply",
+      "source_locator": "Casti connubii §§19–22; Aquinas I-II q.18",
+      "original_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "registry_source_id": "S19",
+      "review_notes": "Avoid implying all friendly warmth/ambiguous flirting is adultery, especially unmarried dating; distinguish pledged exclusivity from sacramental matrimonial fidelity.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE040",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Does avoiding intercourse make other sexual acts acceptable before marriage?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "No. Deliberate genital stimulation or the pursuit of sexual climax before marriage is not made chaste by avoiding intercourse. Ordinary affection requires a different judgment of intention, circumstances and occasions of sin. Engagement prepares a couple for marriage; it does not confer conjugal rights.",
+      "short_answer_fr_present": true,
+      "detail_en": "Kissing and ordinary affection are not wrong by species and must be judged by intention and effect. Deliberately chosen genital stimulation and the pursuit of sexual climax are different in moral object from ordinary signs of affection. Calling them “not technically intercourse” does not change the moral object. Sleeping in the same bed or being nude together is not automatically the same act, but it can be a deliberately chosen proximate occasion and should be judged accordingly.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"CASTI\",\"§18\"",
+      "disposition": "original_moral_object_partially_checked",
+      "source_locator": "Aquinas II-II q.154 aa.2,4; Persona humana §7",
+      "original_url": "https://www.newadvent.org/summa/3154.htm",
+      "registry_source_id": "S52",
+      "review_notes": "The premarital acts discussion is directionally consistent with originals. Technical statements about acts require careful confessor-quality review and distinction from mere affection.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE041",
+      "module": "sexual-ethics",
+      "canonical_question_en": "What is marriage?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Marriage is the stable covenantal union of one man and one woman ordered by its nature to the good of the spouses and to the generation and education of children; between baptized persons it is also a sacrament.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"CASTI\",\"§§5–24\"",
+      "disposition": "primary_law_aligned",
+      "source_locator": "CIC can.1055–1056",
+      "original_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "registry_source_id": "S48",
+      "review_notes": "Existing answer aligns with explicit canonical definition of conjugal covenant and sacramental status between baptized.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE042",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Is marriage just a social construct?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Cultures regulate marriage differently, but Catholic teaching holds that society does not invent its basic nature. Human consent establishes a particular marriage; the institution’s essential structure and ends are not created at will by the spouses or state.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"CASTI\",\"§§5–10\"]",
+      "disposition": "primary_law_aligned",
+      "source_locator": "CIC cann.1055–1057",
+      "original_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "registry_source_id": "S48",
+      "review_notes": "Cultural expression vs institution defined by natural and juridical goods should be distinguished; current short answer is consistent.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE043",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Why must marriage be between a man and a woman?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Because Catholic teaching understands marriage as a sexual union whose bodily form is male-female, naturally ordered to generation and the stable parenthood of children. Affection and fidelity are real goods, but they do not by themselves define marriage.",
+      "short_answer_fr_present": true,
+      "detail_en": "Actual infertility does not remove the male-female structure of the conjugal union. An infertile husband and wife still perform the same kind of conjugal act even when conception cannot occur; Catholic tradition therefore distinguishes sterility from incapacity for conjugal union.",
+      "debate_present": true,
+      "debate_opposition_en": "Margaret Farley argues that legal recognition of same-sex partnerships and marriages can counter social rejection (Just Love, p.293, quoted in the CDF's 2012 Notification). Her position raises a substantive challenge: if two people of the same sex can show love, fidelity and commitment, why should civil and ecclesial understandings of marriage differ?",
+      "source_id_declarations": "[\"CASTI\",\"§§17–20\"",
+      "disposition": "original_opponent_mediated_excerpt",
+      "source_locator": "CDF 2012 Notification quotes Margaret Farley Just Love p.293",
+      "original_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+      "registry_source_id": "S49",
+      "review_notes": "The book excerpt is in an original CDF assessment, not a full independent reading of Farley's book. Represent Farley's actually quoted claim narrowly; do not infer full argument from CDF's selection.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE044",
+      "module": "sexual-ethics",
+      "canonical_question_en": "If infertile couples can marry, why is procreation essential?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Because being ordered to procreation is not the same as actually conceiving. Sterility concerns the result; the marital union remains the kind of male-female bodily union naturally apt for generation even when age or pathology prevents conception.",
+      "short_answer_fr_present": true,
+      "detail_en": "Canon law has long distinguished sterility from impotence. Sterility does not invalidate marriage because actual reproductive success is not required; the capacity for the conjugal kind of union is the relevant distinction.",
+      "debate_present": true,
+      "debate_opposition_en": "If infertile heterosexual couples can marry, procreation clearly cannot be essential to marriage. Excluding same-sex couples on procreative grounds is therefore inconsistent.",
+      "source_id_declarations": "[\"CASTI\",\"§§17, 36\"",
+      "disposition": "primary_canon_precise",
+      "source_locator": "CIC can.1084 §§1–3",
+      "original_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "registry_source_id": "S48",
+      "review_notes": "Sterility and antecedent perpetual impotence are legally distinct; current moral rationale should identify genus of conjugal union without presuming medical capability from fertility.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE045",
+      "module": "sexual-ethics",
+      "canonical_question_en": "What are the purposes and duties of Christian marriage, including headship and submission?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Marriage joins faithful love, mutual help, the procreation and education of children, and distinct duties taught in Ephesians 5. Traditional papal teaching affirms the husband’s domestic primacy and the wife’s willing submission, while also upholding her freedom and dignity and the husband’s sacrificial duty. John Paul II explicitly teaches mutual subjection out of reverence for Christ, while Pius XI teaches the husband’s primacy; neither permits domination, and the distinction between their formulations cannot be ignored.",
+      "short_answer_fr_present": true,
+      "detail_en": "In Ephesians 5:21–33, St Paul teaches that wives should be subject to their husbands and husbands must love their wives as Christ loved the Church, giving Himself for her. This is neither servitude nor unlimited power: Pius XI affirms the wife's freedom and dignity, rejects unreasonable or degrading demands, and says that the manner of her submission can vary with circumstances. These marital duties do not grant a boyfriend or fiancé authority over his partner. They never justify coercion or a command to sin.",
+      "debate_present": true,
+      "debate_opposition_en": "Marriage today is mainly about love, companionship and mutual support. Making procreation central imposes an outdated biological model on a personal relationship.",
+      "source_id_declarations": "[\"SCRIPT_EPH5\",\"5:21–33\"",
+      "disposition": "high_priority_cross_era_dispute",
+      "source_locator": "Casti connubii §§26–29; Mulieris dignitatem §24; CIC can.1135",
+      "original_url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1988/documents/hf_jp-ii_apl_15081988_mulieris-dignitatem.html",
+      "registry_source_id": "S47",
+      "review_notes": "Both formulations are genuine primary texts and cannot be conflated. Current concise answer acknowledges difference, but the expanded opponent focuses only on procreation and does not genuinely debate male primacy vs mutual subjection: improve targeted objection.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE046",
+      "module": "sexual-ethics",
+      "canonical_question_en": "What are the ends and goods of marriage?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Traditional Catholic teaching names offspring and their education, fidelity, the indissoluble bond, mutual help and the spouses’ growth in charity and holiness. Older terminology calls procreation and education the primary end without reducing marriage to reproduction alone.",
+      "short_answer_fr_present": true,
+      "detail_en": "Casti Connubii itself is more nuanced than the slogan “marriage is only for children”: it preserves the traditional hierarchy of ends while speaking strongly of mutual formation, love and sanctification.",
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"CASTI\",\"§§11–30\"]",
+      "disposition": "primary_historical_precision",
+      "source_locator": "Casti connubii §§11–30; CIC can.1055",
+      "original_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "registry_source_id": "S19",
+      "review_notes": "Retain historical description of primary end while distinguishing modern canonical phrasing of bonum coniugum, not asserting a simplistic formal identity of all formulations.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE047",
+      "module": "sexual-ethics",
+      "canonical_question_en": "May infertile or post-menopausal spouses have marital relations?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Yes. Catholic teaching has never required that each marital act actually result in conception. Natural infertility does not make the marital act illicit.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"CASTI\",\"§59\"",
+      "disposition": "primary_historical_precision",
+      "source_locator": "Casti connubii §59; Humanae vitae §11",
+      "original_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "registry_source_id": "S19",
+      "review_notes": "Valid infertile marital acts do not require possible conception at each encounter. Distinguish intention to sterilize from age/pathology.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE048",
+      "module": "sexual-ethics",
+      "canonical_question_en": "How can marriage change the morality of the same physical sexual act?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "Because a moral act is more than a physical movement. Marriage establishes an objective covenant with exclusive rights, duties, permanence and openness to parenthood; intercourse within that bond therefore has a moral relationship absent outside it.",
+      "short_answer_fr_present": true,
+      "detail_en": null,
+      "debate_present": false,
+      "debate_opposition_en": null,
+      "source_id_declarations": "[\"ST18\",\"aa.2–11\"",
+      "disposition": "primary_theology_alignment",
+      "source_locator": "Aquinas I-II q.18; marriage covenant CIC can.1055",
+      "original_url": "https://www.newadvent.org/summa/2018.htm",
+      "registry_source_id": "S43",
+      "review_notes": "Different moral description is not mere geometry; avoid statement that sacramental status excuses objectively wrongful acts within marriage.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE049",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Why must marriage be indissoluble?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "A valid, ratified and consummated sacramental marriage cannot be dissolved by any human power (CIC can. 1141). Serious danger can justify separation, and canon law recognizes narrowly defined dissolutions of some other marriage bonds. Loss of affection alone does not dissolve a marriage.",
+      "short_answer_fr_present": true,
+      "detail_en": "CIC can. 1153 allows separation in serious danger to a spouse or child, including immediate departure if delay is dangerous. Canons 1142–1150 address exceptional dissolutions of other marriage bonds, distinct from nullity.",
+      "debate_present": true,
+      "debate_opposition_en": "Margaret Farley argues that even a nearly unconditional marital promise can cease to bind after profound, unforeseen changes in the spouses or their relationship (Just Love, pp.304–305, excerpted in the CDF's 2012 Notification). Why should a permanent commitment remain binding when what the couple originally promised to share seems to have disappeared?",
+      "source_id_declarations": "[\"SCR\",\"Mt 19:3–9\"",
+      "disposition": "legal_nuance_preserved_opponent_book_unread",
+      "source_locator": "CIC 1141; 1153 and CDF 2012 Farley excerpt pp.304–305",
+      "original_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "registry_source_id": "S48",
+      "review_notes": "Correctly distinguishes dissolution of ratified consummated bond from immediate safety separation; no ecclesiastical permission needed before escaping immediate danger. Farley's full book not accessed.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CSE050",
+      "module": "sexual-ethics",
+      "canonical_question_en": "Why can’t someone remarry after a marriage has completely failed?",
+      "question_fr_present": true,
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_en": "An irretrievably failed common life does not by itself dissolve marriage. If a prior valid bond subsists, civil divorce alone does not grant freedom to remarry (CIC can. 1085). Nullity and a narrowly permitted dissolution of certain non-consummated or non-sacramental bonds are different questions.",
+      "short_answer_fr_present": true,
+      "detail_en": "Nullity establishes that a valid bond never arose; dissolution releases a previously valid bond in narrowly specified circumstances (CIC cann. 1142–1150). Serious danger or abuse can justify immediate separation (can. 1153) without itself establishing either nullity or dissolution.",
+      "debate_present": true,
+      "debate_opposition_en": "Margaret Farley argues that a marriage leaves a lasting history and, sometimes, continuing parental obligations, but that this residual bond need not prohibit a later marriage (Just Love, p.310, quoted in the CDF's 2012 Notification). Why should the former bond always bar a new marriage after separation or civil divorce?",
+      "source_id_declarations": "[\"SCR\",\"Mt 19:3–9\"",
+      "disposition": "legal_nuance_preserved_opponent_book_unread",
+      "source_locator": "CIC 1085;1141–1153 and CDF 2012 Farley excerpt p.310",
+      "original_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+      "registry_source_id": "S49",
+      "review_notes": "Correctly separates nullity, dissolution, separation and divorce. Distinguish legal status from a judgment about a particular person's soul. Farley's full book still not read.",
+      "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CR-MOR-01",
+      "module": "church-crisis",
+      "canonical_question_en": "Did the crisis in moral theology begin before Vatican II?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "en": "Catholic moral theology faced methodological disputes before 1962: how to integrate law, conscience, virtue and pastoral judgement without reducing morality to a list of cases. The Council did not invent every later difficulty, but neither did older manuals guarantee perfect moral formation. The historical claims demand comparisons of texts and actual seminary practice.",
+          "fr_present": true,
+          "source_ids": [
+            "GS65",
+            "VS93"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "In his own 1971 article, Josef Fuchs disputes whether the universality attributed to particular behavioural norms takes sufficient account of historical setting and the concrete moral act; he does not deny the need for objective moral judgment. The later Veritatis splendor explicitly corrects accounts that dissolve exceptionless moral prohibitions into comparisons of premoral goods. These first-person texts show a real debate within Catholic moral theology rather than a generic postconciliar abandonment of all rules.",
+          "fr_present": true,
+          "source_ids": [
+            "FUCHS71-FIRSTPERSON-REPRINT",
+            "VS93"
+          ],
+          "attribution": "Josef Fuchs, 1971 authored article and John Paul II, 1993 Veritatis splendor §§75–83"
+        },
+        {
+          "role": "critical_response",
+          "en": "A pre-existing methodological weakness does not make every postconciliar correction effective or every subsequent dissent inevitable. Likewise, an old theological manual should be judged for its actual principles rather than condemned under a general slogan about legalism. Distinguish original moral norms, pastoral application and theoretical accounts of human agency.",
+          "fr_present": true,
+          "source_ids": [
+            "GS65",
+            "VS93"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The commandments, virtues and the grace of Christ belong together in moral formation. Fidelity requires an objective account of good and evil, sound conscience and merciful care for persons in difficulty. Neither casuistic minimalism nor subjective autonomy can replace the Christian vocation to holiness.",
+          "fr_present": true,
+          "source_ids": [
+            "VS93",
+            "GS65"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "historical_origin_gap_closed_in_part",
+      "source_locator": "Pius XII, original 18 April 1952 address on situation ethics; 1954 Häring book documented from scholarly history",
+      "original_url": "https://www.vatican.va/content/pius-xii/fr/speeches/1952/documents/hf_p-xii_spe_19520418_soyez-bienvenues.html",
+      "registry_source_id": "S45",
+      "review_notes": "Later Josef Fuchs 1971 is not evidence of the dispute's origin before 1962. Original papal 1952 critique conclusively documents a preconciliar controversy; specialist secondary historiography corroborates 1954 moral-theology reform but Häring's full book not reviewed.",
+      "review_level": "all four English draft roles and original source labels read, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CR-MOR-02",
+      "module": "church-crisis",
+      "canonical_question_en": "Conscience: judge of moral truth or creator of moral truth?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "en": "Conscience judges the moral character of an act in the light of truth; it does not create the right and wrong of that act. A person must follow a certain conscience but also bears responsibility for sincere formation and correction of error. Subjective guilt and objective moral disorder must not be collapsed into one assertion.",
+          "fr_present": true,
+          "source_ids": [
+            "VS93",
+            "CCC178",
+            "GS65"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Josef Fuchs's 1971 account asks the concrete conscience to judge whether an abstract norm captures all morally relevant aspects of an action, while expressly appealing to objective recta ratio and conceding that conscience can err. Veritatis splendor §§54–64 insists that conscience applies rather than creates moral truth. This is a real debate about the authority of abstract behavioural norms and the moral object, not proof that Fuchs directly taught that any sincere choice automatically becomes morally right.",
+          "fr_present": true,
+          "source_ids": [
+            "FUCHS71-FIRSTPERSON-REPRINT",
+            "VS93",
+            "GS65"
+          ],
+          "attribution": "Josef Fuchs, The Absoluteness of Moral Terms (1971), pp. 110–112; Veritatis splendor §§54–64 (1993)"
+        },
+        {
+          "role": "critical_response",
+          "en": "A sincerely erroneous judgement can reduce culpability without changing the act's objective species. Conversely, a correct external command does not excuse deliberate ignorance or refusal to investigate important facts. Conscience formation requires reason, reliable witnesses and the Church's authentic teaching rather than either blind conformity or absolute private preference.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC178",
+            "VS93"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Freedom reaches maturity by choosing the true good, not merely a choice experienced as personally sincere. A Catholic should seek instruction, pray and correct his conduct when he learns he was wrong. Charity toward a person in error never demands teaching that truth itself changes according to opinion.",
+          "fr_present": true,
+          "source_ids": [
+            "VS93",
+            "GS65",
+            "CCC178"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "sound_core_original_opponent_scope",
+      "source_locator": "Veritatis splendor §§54–64 and Fuchs 1971 reprint",
+      "original_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "registry_source_id": "S21",
+      "review_notes": "Current draft fairly explains that Fuchs did not claim sincerity makes any choice objectively right; his original 1971 published text only partly accessible through reprint, chapter/edition correspondence unverified.",
+      "review_level": "all four English draft roles and original source labels read, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CR-MOR-03",
+      "module": "church-crisis",
+      "canonical_question_en": "Why did Humanae vitae become a crisis of authority and moral method?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "en": "Humanae vitae reaffirmed that each marital act must respect the inseparable unitive and procreative meanings of conjugal love, while allowing responsible parenthood through moral means. The 1968 controversy became a crisis of authority because some theologians publicly contested not only a practical rule but the role of the ordinary Magisterium in moral teaching.",
+          "fr_present": true,
+          "source_ids": [
+            "HV68",
+            "CUR86"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Paul VI's Humanae vitae §§11–14 expressly teaches the inseparability of the unitive and procreative meaning of conjugal acts and prohibits contraceptive action. Charles E. Curran's own signed article in October 1986 framed his conflict with the CDF around the legitimacy of dissent from certain non-infallible hierarchical teachings, while the CDF's July letter listed artificial contraception and other teachings among his disputed positions. The opponent's own argument and Rome's summary can therefore be compared, rather than attributed solely through one side.",
+          "fr_present": true,
+          "source_ids": [
+            "HV68",
+            "CURRAN86-FIRSTPERSON",
+            "CUR86"
+          ],
+          "attribution": "Paul VI Humanae vitae (1968) and CDF's quoted Charles Curran position (1986)"
+        },
+        {
+          "role": "critical_response",
+          "en": "Predictive claims about social consequences need separate historical evaluation; they are not the sole grounds for an intrinsically moral teaching. Likewise, hardship experienced by couples deserves practical pastoral accompaniment, not dismissal, but cannot by itself decide the truth of a universal negative norm. Critics should engage the encyclical's actual account of marital acts.",
+          "fr_present": true,
+          "source_ids": [
+            "HV68",
+            "VS93"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Humanae vitae §§11–14 teaches that each marital act must preserve its orientation to the transmission of life, forbids making procreation impossible as either an end or a means, and distinguishes this from periodic abstinence for just reasons (§16). Veritatis splendor §§79–83 excludes remaking the moral object of an intrinsically wrongful act by appealing only to difficulties or good results. This is demanding precisely because marriage includes mutual charity, grave obligations and real hardship; pastoral compassion must include practical help, truthful instruction and grace, not a claim that an explicitly prohibited act becomes good through sincere anxiety or intentions.",
+          "fr_present": true,
+          "source_ids": [
+            "HV68",
+            "VS93"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "primary_magisterium_and_opponent_parity",
+      "source_locator": "Humanae vitae §§11–16; Curran signed 1986 article; 2018 retrospective",
+      "original_url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "registry_source_id": "S20",
+      "review_notes": "The original encyclical supports normative distinction; Curran's original dissent is specifically about authority and non-infallible teaching, not simply dismissing family hardship. Separate 1968 events from 1986/2018 recounting.",
+      "review_level": "all four English draft roles and original source labels read, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CR-MOR-04",
+      "module": "church-crisis",
+      "canonical_question_en": "Is ‘responsible dissent’ from non-infallible moral teaching legitimate?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "en": "Authentic Catholic teaching carries obligations proportionate to its authority even when not proposed definitively; it is mistaken to equate 'non-infallible' with 'dispensable'. Yet Donum veritatis explicitly recognises that the theologian may have serious difficulties about the timing, form or content of a non-irreformable intervention, and calls for careful study and dialogue. The actual dispute with Charles Curran concerns whether and how a commissioned teacher may publicly advance a contrary view in the name of Catholic theology.",
+          "fr_present": true,
+          "source_ids": [
+            "DV90",
+            "PF98",
+            "CURRAN86-FIRSTPERSON",
+            "CUR86"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "In his own October 1986 article, Charles Curran defended the legitimacy of theological dissent regarding certain non-infallible teachings while accepting that the pope and bishops have a special teaching office and that Catholics owe religious respect to their teaching. The CDF's letter of 25 July rejected his proposal to continue teaching outside sexual ethics, arguing that his published positions and the unity of Catholic theology made that compromise untenable. This is a real, directly sourced disagreement, not an anonymous argument invented for rebuttal.",
+          "fr_present": true,
+          "source_ids": [
+            "CURRAN86-FIRSTPERSON",
+            "CUR86"
+          ],
+          "attribution": "CDF Letter to Fr Charles Curran (25 July 1986), reporting his own stance"
+        },
+        {
+          "role": "critical_response",
+          "en": "Curran correctly distinguishes non-definitive from infallible doctrine, but his inference that public dissent should be accepted because a teaching is not definitive is exactly what the CDF disputes. Donum veritatis §§24–31 acknowledges that magisterial prudential interventions may contain contingent elements and that a theologian may raise serious questions, while rejecting subjective conscience as a stand-alone test of doctrinal truth or media pressure as an ordinary method of correction. The distinction between the truth of a proposition and the rights attached to a Catholic teaching office is crucial.",
+          "fr_present": true,
+          "source_ids": [
+            "CURRAN86-FIRSTPERSON",
+            "CUR86",
+            "DV90",
+            "PF98"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Sound Catholic theology requires genuine intellectual work and the humility to test arguments against revelation, rather than a blanket prohibition on asking difficult questions. The theologian who teaches with an ecclesial mandate must also faithfully explain what the Church proposes as doctrine, including non-definitive authentic teaching according to its proper authority. The remedy for a serious difficulty is evidence, patient discussion and lawful process, not the unilateral establishment of a rival magisterium.",
+          "fr_present": true,
+          "source_ids": [
+            "DV90",
+            "PF98",
+            "CURRAN86-FIRSTPERSON"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "source_distinction_preserved",
+      "source_locator": "Donum veritatis §§23–32; Curran 1986 first person",
+      "original_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "registry_source_id": "S41",
+      "review_notes": "Current draft preserves difference between genuine difficulties with non-irreformable teaching and systematic public dissent. CDF criticism of Curran is a different speaker and must not be substituted for original Curran article.",
+      "review_level": "all four English draft roles and original source labels read, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CR-MOR-05",
+      "module": "church-crisis",
+      "canonical_question_en": "Proportionalism and consequentialism: can good consequences justify an otherwise evil act?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "en": "The specific Catholic controversy over proportionalism is not whether consequences ever matter. Josef Fuchs argued that one must distinguish harms considered 'premorally' (death, wounds or loss) from morally wrong human choices, and judge an act in its concrete unity of object, intention and circumstances. He doubted that many concrete action-descriptions yield exceptionless negative norms. Veritatis splendor §§75–83 rejects reducing the moral object to the balance of premoral results and affirms that certain freely chosen objects remain intrinsically wrong whatever the intended benefit.",
+          "fr_present": true,
+          "source_ids": [
+            "FUCHS71-FIRSTPERSON-REPRINT",
+            "VS93"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "In 'The Absoluteness of Moral Terms' (1971), Josef Fuchs explicitly argues that killing described without its morally specifying context is not always wicked, distinguishing, for instance, avaricious killing from justified self-defence. He maintains that the premoral injury caused by surgery may be justified within a single healing act, and queries whether a concrete negative norm can be universally applied without knowing circumstances and intention. Fuchs still appeals to objective right reason: it is inaccurate to attribute to him the view that conscience simply invents moral truth or that the most pleasant consequence automatically justifies every act.",
+          "fr_present": true,
+          "source_ids": [
+            "FUCHS71-FIRSTPERSON-REPRINT"
+          ],
+          "attribution": "Josef Fuchs S.J., his own 1971 Gregorianum article 'The Absoluteness of Moral Terms', reproduced in 1979 by Curran and McCormick, pp. 117–125"
+        },
+        {
+          "role": "critical_response",
+          "en": "The decisive disagreement is what counts as the deliberately chosen moral object. Traditional Catholic moral reasoning agrees that 'killing' without qualification is too broad to identify murder, and that proportionate side effects can be permitted in genuine healing; it nonetheless maintains that directly choosing an intrinsically wrongful object—such as intentionally killing the innocent—cannot be redescribed as morally good merely by placing it within a beneficial larger plan. Veritatis splendor thus challenges Fuchs's treatment of material action, ends and total consequences, not the trivial proposition that context never matters.",
+          "fr_present": true,
+          "source_ids": [
+            "FUCHS71-FIRSTPERSON-REPRINT",
+            "VS93",
+            "GRISEZ85-DIRECT-REPLY"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Conscience must attend to intention, circumstances and foreseeable harm, yet no Christian can choose a morally evil means on the ground that an aggregate gain will outweigh it. The negative moral precepts protect persons from being used as tools of purported greater benefits. Accurate criticism of Fuchs should preserve his concerns for objective practical reason and correct the precise point where his account endangers universal prohibitions; making him a simple utilitarian would undermine the force of the answer.",
+          "fr_present": true,
+          "source_ids": [
+            "VS93",
+            "FUCHS71-FIRSTPERSON-REPRINT",
+            "GRISEZ85-DIRECT-REPLY"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "fuchs_original_unverified_in_full",
+      "source_locator": "Fuchs 1971 original, Grisez 1985 reply, Veritatis splendor §§75–83",
+      "original_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "registry_source_id": "S21",
+      "review_notes": "Draft is notably nuanced: does not caricature Fuchs as simply utilitarian. Exact original 1971 full journal pagination and Grisez 1985 full article have not been independently compared in this batch; retain that gate.",
+      "review_level": "all four English draft roles and original source labels read, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CR-MOR-06",
+      "module": "church-crisis",
+      "canonical_question_en": "Fundamental option, mortal sin and intrinsically evil acts",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "en": "A person's fundamental orientation toward God matters to spiritual life, yet a knowingly and freely chosen grave act can destroy charity even without an explicit declaration of hatred toward God. Mortal sin requires grave matter, knowledge and deliberate consent. Reducing it to one ultimate formal rejection would obscure concrete moral responsibility.",
+          "fr_present": true,
+          "source_ids": [
+            "RP84",
+            "VS93"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Josef Fuchs's own 1971 essay, The Absoluteness of Moral Terms, questions whether an action type described abstractly, without its full concrete intention and circumstances, can always be judged by the same absolute negative norm. This concern later intersects with some accounts of a person's fundamental option, but Fuchs's specific argument should not be simplified into the claim that every sinful act becomes harmless whenever a person generally desires God. The sharper question is whether the chosen object's moral character can be determined apart from the overall situation; John Paul II's Reconciliatio et paenitentia §17 rejects a different, strong thesis that mortal sin requires only an explicit total rejection of God.",
+          "fr_present": true,
+          "source_ids": [
+            "RP84",
+            "VS93",
+            "FUCHS71-FIRSTPERSON-REPRINT"
+          ],
+          "attribution": "Josef Fuchs S.J., The Absoluteness of Moral Terms (1971), compared with Reconciliatio et paenitentia §17"
+        },
+        {
+          "role": "critical_response",
+          "en": "There are two connected but not identical questions: whether concrete circumstances matter to identifying a moral object, and whether a freely chosen grave sin can destroy charity despite the person's habitual aspirations. Catholic moral theology takes circumstances and intention seriously, but Veritatis splendor §§65–70 and Reconciliatio et paenitentia §17 insist that a knowingly chosen grave act may be mortal without an explicit formal proclamation of apostasy. The legitimate distinction between accidental harm, justified defence and deliberate murder must not be collapsed into a theory that makes intrinsically wrong choices universally excusable.",
+          "fr_present": true,
+          "source_ids": [
+            "RP84",
+            "VS93",
+            "FUCHS71-FIRSTPERSON-REPRINT"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Frequent conversion and sacramental confession help the Christian turn from actual sins rather than relying on an assumed general religious orientation. God judges both freedom and truth with perfect justice. The faithful should neither despair over every imperfection nor excuse deliberate grave wrongdoing by appealing to a supposedly unaltered fundamental option.",
+          "fr_present": true,
+          "source_ids": [
+            "RP84",
+            "VS93"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "opponent_proponent_mismatch",
+      "source_locator": "Reconciliatio et paenitentia §17 and Veritatis splendor §§65–70",
+      "original_url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+      "registry_source_id": "S54",
+      "review_notes": "The draft correctly distinguishes moral-object issue from fundamental option but cites Fuchs on action descriptions as the documented position for a different controversy. Need a genuine first-person advocate of the strong fundamental-option thesis or transparently describe it as a position critiqued by magisterial sources; do not attribute it directly to Fuchs.",
+      "review_level": "all four English draft roles and original source labels read, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CR-MOR-07",
+      "module": "church-crisis",
+      "canonical_question_en": "Did Veritatis splendor settle the postconciliar moral-theology crisis?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "en": "Veritatis splendor gave authoritative correction to prominent postconciliar theories about conscience, moral object, fundamental option and intrinsically evil acts. It did not automatically remove dissent from theological faculties or solve every pastoral difficulty. A doctrinal intervention and its later reception are distinct historical events requiring separate evidence.",
+          "fr_present": true,
+          "source_ids": [
+            "VS93",
+            "CUR86",
+            "DV90"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Josef Fuchs argued in his own 1971 study that judging a human act requires a total concrete account of purpose, circumstances and premoral effects, raising doubts about the scope of materially formulated exceptionless norms. John Paul II's Veritatis splendor in 1993 rejected proportionalist and consequentialist accounts denying intrinsically evil objects, while the CDF's 1986 Curran correspondence shows that moral-theology disagreement was already publicly consequential. These are documents from different dates and identifiable sides of the dispute, not evidence that every dissenting scholar agreed with Fuchs.",
+          "fr_present": true,
+          "source_ids": [
+            "FUCHS71-FIRSTPERSON-REPRINT",
+            "VS93",
+            "CUR86"
+          ],
+          "attribution": "Josef Fuchs, original 1971 Gregorianum argument, and John Paul II, Veritatis splendor 1993"
+        },
+        {
+          "role": "critical_response",
+          "en": "Formal doctrinal clarity is a necessary resource for teaching, yet a seminary or Catholic school can fail to teach it well. Assertions about continuing dissent require actual curricula, publications and identifiable speakers. Conversely, persistent argument against the encyclical does not mean its teaching was merely an abandoned personal opinion.",
+          "fr_present": true,
+          "source_ids": [
+            "VS93",
+            "DV90",
+            "CUR86"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Sound moral doctrine needs formation, confessional practice, family education and credible witness from clergy. Defending absolute norms does not excuse harshness toward people who struggle. The faithful should learn the real reasons of Veritatis splendor and apply them with truth and mercy rather than treat its publication as the end of every controversy.",
+          "fr_present": true,
+          "source_ids": [
+            "VS93",
+            "DV90"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "reception_empirical_gap",
+      "source_locator": "Veritatis splendor §§65–83; original 1986 Curran case",
+      "original_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "registry_source_id": "S21",
+      "review_notes": "The encyclical's normative claims are supported, but broad effect claims about university curricula, persistence of dissent or seminary teaching require independent dated documentary evidence; absence of full empirical review remains.",
+      "review_level": "all four English draft roles and original source labels read, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    },
+    {
+      "id": "CR-MOR-08",
+      "module": "church-crisis",
+      "canonical_question_en": "Amoris laetitia: continuity, qualification or conflict with prior sacramental and moral discipline?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "en": "The 2016 exhortation Amoris laetitia chapter VIII retains marriage's indissolubility and asks for discernment of personal responsibility in irregular situations. Its §305 and footnote 351 say that, in certain cases, discernment may include the help of the sacraments. The Argentine bishops' September 2016 guidelines envisage access in some difficult cases, and Francis explicitly endorsed their reading. This is a concrete disputed sacramental application, not a declaration that an existing valid marriage can simply be dissolved.",
+          "fr_present": true,
+          "source_ids": [
+            "AL2016",
+            "FC1981",
+            "AL-BA2016",
+            "BA2016-ORIGINAL-LETTER"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "The four cardinals' signed dubia, dated 19 September 2016 and made public in November, asked specifically whether Amoris laetitia §§300–305, especially note 351, permitted sacramental admission of divorced and civilly remarried people living as spouses without fulfilling Familiaris consortio §84's condition of continence. Their other questions concerned absolute negative precepts, conscience and grave objective evil. Francis's 5 September letter to the Buenos Aires bishops, by contrast, commended their guidelines' discernment of some cases of sacramental access and said their chapter VIII interpretation was the correct one. These are original statements of the opposed positions.",
+          "fr_present": true,
+          "source_ids": [
+            "DUBIA2016-FULL",
+            "FC1981",
+            "AL2016",
+            "AL-BA2016"
+          ],
+          "attribution": "Four cardinals Brandmüller, Burke, Caffarra, Meisner (2016 signed five dubia) contrasted with Francis's own 5 September 2016 letter to Buenos Aires bishops"
+        },
+        {
+          "role": "critical_response",
+          "en": "Familiaris consortio §84 expressly excludes divorced and civilly remarried people living as spouses from Eucharistic Communion while the prior marriage bond persists, and envisages reception of the sacraments when a couple undertakes to live in continence, avoiding scandal. The Buenos Aires criteria read Amoris laetitia as allowing more particular discernment, even sacramental access in some cases where continence is not feasible. The dispute therefore cannot be settled by pretending the new guidance mentioned only abstract mercy; nor should it be described as a formally promulgated definition that adultery is morally good. Objective moral norms, reduced subjective culpability and public sacramental admission are distinct propositions requiring explicit theological reconciliation.",
+          "fr_present": true,
+          "source_ids": [
+            "FC1981",
+            "AL2016",
+            "BA2016-ORIGINAL-LETTER",
+            "DUBIA2016-FULL"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The validity and indissolubility of sacramental marriage and the Eucharist's holiness cannot be reduced to decisions of pastoral convenience. The Church must help persons in complex family histories with justice, truth, confession and practical support, while being clear about what continence and sacramental reconciliation require. Fidelity demands answering the cardinals' actual question and the actual Argentine criteria instead of replacing either with slogans; charity toward people who struggle never requires denial of divine law or judgment of souls from appearances.",
+          "fr_present": true,
+          "source_ids": [
+            "FC1981",
+            "AL2016",
+            "DUBIA2016-FULL",
+            "BA2016-ORIGINAL-LETTER"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "historical_regime_and_canon_law_context",
+      "source_locator": "Familiaris consortio §84; Amoris laetitia §305 note351; 2016 Buenos Aires criteria nn5–10 and Francis letter; 2000 declaration can915",
+      "original_url": "https://www.vatican.va/content/francesco/es/letters/2016/documents/papa-francesco_20160905_regione-pastorale-buenos-aires.html",
+      "registry_source_id": "S56",
+      "review_notes": "Both original sides of the disputed discipline are documented. Buenos Aires n6 explicitly allows possibility of access to sacraments in some cases, n7 denies unrestricted access. Avoid saying no change occurred or that any new union automatically entails permission; distinguish 2000 can.915 explanation and 2016 pastoral guidance.",
+      "review_level": "all four English draft roles and original source labels read, selected original context only",
+      "all_source_claims_collated": false,
+      "independently_certified": false,
+      "production_changed": false
+    }
+  ]
+}
