@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 105,
+  "source_count": 117,
   "sources": [
     {
       "id": "S01",
@@ -1265,6 +1265,150 @@
       "access": "original_full_html_verified",
       "chapter_passage_certified": false,
       "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S106",
+      "title": "1983 Code of Canon Law, penitents and confessors, cann. 979, 987–988",
+      "author": "John Paul II",
+      "year": "1983",
+      "role": "universal_law_original",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
+      "scope": "canon 979 prudent questions; 987 purpose of amendment; 988 kind and number after diligent examination",
+      "access": "full_original_official_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S107",
+      "title": "1983 Code of Canon Law, Eucharist canon 916",
+      "author": "John Paul II",
+      "year": "1983",
+      "role": "universal_law_original",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html",
+      "scope": "canon 916 general norm and narrow grave-reason/no-opportunity/perfect-contrition exception",
+      "access": "official_original_locator",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S108",
+      "title": "Original 2013 Pope Francis interview with Antonio Spadaro",
+      "author": "Francis / Antonio Spadaro",
+      "year": "2013",
+      "role": "firstperson_papal_pastoral_original_not_magisterial_definition",
+      "url": "https://www.vatican.va/content/francesco/en/speeches/2013/september/documents/papa-francesco_20130921_intervista-spadaro.html",
+      "scope": "first-person remark on not insisting only on abortion, gay marriage, contraception; broader evangelical pastoral context",
+      "access": "full_official_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S109",
+      "title": "Christus dominus",
+      "author": "Vatican II",
+      "year": "1965",
+      "role": "conciliar_original_bishop_jurisdiction",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_christus-dominus_en.html",
+      "scope": "§§2–3 Roman primacy and bishops, §8 ordinary proper immediate diocesan authority, §11 threefold bishop task",
+      "access": "full_original_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S110",
+      "title": "Missale Romanum",
+      "author": "Paul VI",
+      "year": "1969",
+      "role": "papal_liturgical_constitution_original",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "scope": "3 April 1969, promulgation of new Roman Missal, effective 30 November 1969, distinguishes universal act and downstream local implementation",
+      "access": "full_original_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S111",
+      "title": "CARA Frequently Requested Catholic Church Statistics",
+      "author": "Georgetown University Center for Applied Research in the Apostolate",
+      "year": "1965–2025 panel",
+      "role": "independent_empirical_us_church_statistics",
+      "url": "https://cara.georgetown.edu/faqs",
+      "scope": "official CARA data workbook; U.S. and global sheets, standardized classifications and definitions; does not demonstrate causal mechanisms",
+      "access": "original_academic_center_faq_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S112",
+      "title": "CARA US clergy and religious longitudinal summary",
+      "author": "Georgetown University Center for Applied Research in the Apostolate",
+      "year": "1965–2025",
+      "role": "independent_empirical_us_church_statistics_same_author_as_S111",
+      "url": "https://cara.georgetown.edu/testing-page",
+      "scope": "U.S. 1965 priests 59,426 and sisters 178,740; 2025 priests 33,462 and sisters 33,135; revision/source-series differences may exist; not proof of Council causality",
+      "access": "original_CARA_published_table_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S113",
+      "title": "Council of Europe MONEYVAL Holy See 2024 follow-up",
+      "author": "Council of Europe MONEYVAL",
+      "year": "2024",
+      "role": "independent_external_financial_supervision_original",
+      "url": "https://www.coe.int/en/web/moneyval/-/the-holy-see-including-vatican-city-state-improved-anti-money-laundering-and-combating-the-financing-of-terrorism-measures-with-respect-to-banking-and-legal-persons",
+      "scope": "May 2024: Holy See compliant R13, largely compliant R16/R24; 35/39 recommendations compliant or largely compliant, 4 partially compliant; positive progress not direct proof of fraud",
+      "access": "full_official_council_article_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S114",
+      "title": "Apostolos suos complementary norms",
+      "author": "John Paul II",
+      "year": "1998",
+      "role": "papal_episcopal_conference_original_law",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_22071998_apostolos-suos.html",
+      "scope": "Complementary norms arts 1–2: unanimity or two-thirds plus Apostolic See recognitio for authentic conference teaching; committees lack independent authority",
+      "access": "full_official_original_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S115",
+      "title": "Murphy report 2009 original commission findings parliamentary quotation",
+      "author": "Irish Commission of Investigation as quoted verbatim by Oireachtas",
+      "year": "2009",
+      "role": "independent_state_inquiry_contemporaneous_reproduction",
+      "url": "https://www.oireachtas.ie/en/debates/debate/dail/2009-12-03/10/",
+      "scope": "Irish parliamentary record quotes commission finding concealment/scandal/reputation/assets prioritized over child safety; official government parliamentary record, original full report already indexed in source-registry",
+      "access": "official_parliamentary_verbatim_excerpt_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S116",
+      "title": "2023 five cardinals' synodality dubia and Francis answer",
+      "author": "Five cardinals; Francis",
+      "year": "2023",
+      "role": "firstparty_controversy_with_official_answer",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_risposta-dubia-2023_en.html",
+      "scope": "Q3 alleges synodality might compromise pope/episcopal constitution; Francis's response distinguishes participation from hierarchy; original cardinals/pope source",
+      "access": "official_original_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S117",
+      "title": "Catholic Religious Life 1965–2025 US data and renewal",
+      "author": "CARA / Vatican II",
+      "year": "1965–2025",
+      "role": "cross_reference_of_S111_not_independent",
+      "url": "https://cara.georgetown.edu/religious-institutes",
+      "scope": "CARA U.S. religious sisters/brothers trends and religious life research; before inferring causes study institute/region age structure, entry and exit",
+      "access": "original_CARA_religious_research_page_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
     }
   ],
   "priority_questions": [
@@ -2607,12 +2751,16 @@
       "source_ids": [
         "S21",
         "S23",
-        "S24"
+        "S24",
+        "S76",
+        "S93"
       ],
       "source_roles": [
         "magisterial_moral_original",
         "magisterial_bioethics_original",
-        "magisterial_dignity_original"
+        "magisterial_dignity_original",
+        "professional_psychology_policy_original_opposing",
+        "firstperson_opponent_professional_ethics"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -4309,13 +4457,567 @@
       "independent_outside_support_required": false,
       "risk": "ecclesial_obedience_disputed_authority",
       "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE126",
+      "source_ids": [
+        "S108"
+      ],
+      "source_roles": [
+        "firstperson_papal_pastoral_original_not_magisterial_definition"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE127",
+      "source_ids": [
+        "S90"
+      ],
+      "source_roles": [
+        "magisterial_same_doc_as_S24"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE128",
+      "source_ids": [
+        "S90"
+      ],
+      "source_roles": [
+        "magisterial_same_doc_as_S24"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE129",
+      "source_ids": [
+        "S19"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE130",
+      "source_ids": [
+        "S90"
+      ],
+      "source_roles": [
+        "magisterial_same_doc_as_S24"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE131",
+      "source_ids": [
+        "S106"
+      ],
+      "source_roles": [
+        "universal_law_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE132",
+      "source_ids": [
+        "S106"
+      ],
+      "source_roles": [
+        "universal_law_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE133",
+      "source_ids": [
+        "S106"
+      ],
+      "source_roles": [
+        "universal_law_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE134",
+      "source_ids": [
+        "S106"
+      ],
+      "source_roles": [
+        "universal_law_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE135",
+      "source_ids": [
+        "S106"
+      ],
+      "source_roles": [
+        "universal_law_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE136",
+      "source_ids": [
+        "S42"
+      ],
+      "source_roles": [
+        "classical_theological_temptation_and_consent_analysis"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE137",
+      "source_ids": [
+        "S42"
+      ],
+      "source_roles": [
+        "classical_theological_temptation_and_consent_analysis"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE138",
+      "source_ids": [
+        "S27"
+      ],
+      "source_roles": [
+        "historical_moral_manual"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE139",
+      "source_ids": [
+        "S107"
+      ],
+      "source_roles": [
+        "universal_law_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE140",
+      "source_ids": [
+        "S107"
+      ],
+      "source_roles": [
+        "universal_law_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE141",
+      "source_ids": [
+        "S108"
+      ],
+      "source_roles": [
+        "firstperson_papal_pastoral_original_not_magisterial_definition"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE142",
+      "source_ids": [
+        "S51"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE143",
+      "source_ids": [
+        "S21"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE144",
+      "source_ids": [
+        "S21"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE145",
+      "source_ids": [
+        "S43"
+      ],
+      "source_roles": [
+        "classical_moral_object_and_circumstances_analysis"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE146",
+      "source_ids": [
+        "S27"
+      ],
+      "source_roles": [
+        "historical_moral_manual"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE147",
+      "source_ids": [
+        "S29"
+      ],
+      "source_roles": [
+        "historical_catholic_secondary"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE148",
+      "source_ids": [
+        "S21"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CSE150",
+      "source_ids": [
+        "S19",
+        "S51"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "pastoral_or_confession_legal",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-01",
+      "source_ids": [
+        "S109",
+        "S110"
+      ],
+      "source_roles": [
+        "conciliar_original_bishop_jurisdiction",
+        "papal_liturgical_constitution_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-02",
+      "source_ids": [
+        "S111",
+        "S112"
+      ],
+      "source_roles": [
+        "independent_empirical_us_church_statistics",
+        "independent_empirical_us_church_statistics_same_author_as_S111"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-03",
+      "source_ids": [
+        "S111",
+        "S117"
+      ],
+      "source_roles": [
+        "independent_empirical_us_church_statistics",
+        "cross_reference_of_S111_not_independent"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-04",
+      "source_ids": [
+        "S41"
+      ],
+      "source_roles": [
+        "magisterial_assent_and_theological_difficulties_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-05",
+      "source_ids": [
+        "S109",
+        "S114"
+      ],
+      "source_roles": [
+        "conciliar_original_bishop_jurisdiction",
+        "papal_episcopal_conference_original_law"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-06",
+      "source_ids": [
+        "S109"
+      ],
+      "source_roles": [
+        "conciliar_original_bishop_jurisdiction"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-07",
+      "source_ids": [
+        "S107"
+      ],
+      "source_roles": [
+        "universal_law_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-08",
+      "source_ids": [
+        "S115"
+      ],
+      "source_roles": [
+        "independent_state_inquiry_contemporaneous_reproduction"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-09",
+      "source_ids": [
+        "S113"
+      ],
+      "source_roles": [
+        "independent_external_financial_supervision_original"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-GOV-10",
+      "source_ids": [
+        "S116"
+      ],
+      "source_roles": [
+        "firstparty_controversy_with_official_answer"
+      ],
+      "locator_level": "reliable_bounded_source_and_topic_mapping_not_final_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_governance_historical_empirical_scope",
+      "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
     }
   ],
   "counts": {
-    "sources": 105,
-    "mapped_questions": 165,
-    "church_crisis": 48,
-    "sexual_ethics": 117,
+    "sources": 117,
+    "mapped_questions": 199,
+    "church_crisis": 58,
+    "sexual_ethics": 141,
     "answer_audited": 0,
     "answer_certified": 0
   },
@@ -4331,6 +5033,8 @@
     "Charles Curran 2018 essay records his current argument and description of earlier dissent, not a verbatim witness for the 1968 group declaration.",
     "A section number must always be tied to the cited edition. For McHugh–Callan the app links to the revised Farrell 1958 digital edition where §1624 is about venereal acts of marriage, whereas the older unabridged Gutenberg edition treats the same subject at §2618 and §1624 concerns foolishness. Never declare an edition-specific citation wrong without checking the actual linked edition.",
     "In high-stakes clinical paragraphs do not equate a theological source with medical treatment evidence. WPATH/APA are actual clinical/professional proponent texts, not substitutes for independent outcome studies. Maintain the distinction between American Psychological Association and American Psychiatric Association.",
-    "For survivor trauma, informed consent, and emergency pregnancy: do not infer consent from involuntary physiology, do not give therapeutic procedures as a standalone theological recommendation, and do not delay emergency care for moral debate."
+    "For survivor trauma, informed consent, and emergency pregnancy: do not infer consent from involuntary physiology, do not give therapeutic procedures as a standalone theological recommendation, and do not delay emergency care for moral debate.",
+    "For GOV-09, May 2024 MONEYVAL follow-up is broadly positive with precisely measured technical improvement. Do not present the follow-up as a conviction or proof of generalized Vatican fraud.",
+    "For GOV-01, postconciliar responsibility must be dated and layered across legislation, Roman dicasteries, diocesan bishops and local implementation, not reduced to unrelated 2020s diplomatic event."
   ]
 }
