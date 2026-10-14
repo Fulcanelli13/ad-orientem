@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 58,
+  "source_count": 59,
   "sources": [
     {
       "id": "S01",
@@ -701,6 +701,18 @@
       "access": "full_text_opened",
       "chapter_passage_certified": false,
       "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S59",
+      "title": "Summa theologiae II-II q.43 On Scandal",
+      "author": "Thomas Aquinas",
+      "year": "13th c.",
+      "role": "classical_moral_theology_original_translation",
+      "url": "https://www.newadvent.org/summa/3043.htm",
+      "scope": "aa.1–2, active vs passive scandal and appearances of sin; not a complete treatise on proximate occasion",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Avoid using q.43 alone to prove all details of proximate occasion of sin; further practical moral manual needed."
     }
   ],
   "priority_questions": [
@@ -2183,10 +2195,12 @@
     {
       "id": "CSE038",
       "source_ids": [
-        "S52"
+        "S52",
+        "S42"
       ],
       "source_roles": [
-        "classical_moral_theology_original_translation"
+        "classical_moral_theology_original_translation",
+        "classical_theological_temptation_and_consent_analysis"
       ],
       "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
       "section_and_quote_checked_for_question": false,
@@ -2441,13 +2455,77 @@
       "independent_outside_support_required": true,
       "risk": "historical_and_theological_adversarial",
       "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE026",
+      "source_ids": [
+        "S42"
+      ],
+      "source_roles": [
+        "classical_theological_temptation_and_consent_analysis"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "moral_object_and_prudence",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE037",
+      "source_ids": [
+        "S59"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "moral_object_and_prudence",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE039",
+      "source_ids": [
+        "S19"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "moral_object_and_prudence",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE048",
+      "source_ids": [
+        "S43"
+      ],
+      "source_roles": [
+        "classical_moral_object_and_circumstances_analysis"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "moral_object_and_prudence",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
     }
   ],
   "counts": {
-    "sources": 58,
-    "mapped_questions": 94,
+    "sources": 59,
+    "mapped_questions": 98,
     "church_crisis": 33,
-    "sexual_ethics": 61,
+    "sexual_ethics": 65,
     "answer_audited": 0,
     "answer_certified": 0
   },
