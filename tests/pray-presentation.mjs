@@ -22,9 +22,14 @@ assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Or
 assert.equal(ANGELUS_REVIEWED_OPENING_ART.length,5);
 assert.ok(ANGELUS_REVIEWED_OPENING_ART.every(row=>
   row.rating===4&&row.subject==="ANNUNCIATION"&&row.sourceUrl));
-const picked=selectAngelusOpeningArtwork({random:()=>0});
+// 4/5 means review, not final approval. Only a 5 or explicit confirmed
+// approval may appear in the opening carousel.
+assert.equal(selectAngelusOpeningArtwork({random:()=>0}),null,
+  "Rated-4 shortlist was incorrectly promoted to approved artwork");
+const approved=ANGELUS_REVIEWED_OPENING_ART.slice(0,2).map(a=>({...a,rating:5}));
+const picked=selectAngelusOpeningArtwork({pool:approved,random:()=>0});
 assert.equal(picked.id,"nga-46");
-assert.notEqual(selectAngelusOpeningArtwork({lastId:picked.id,random:()=>0}).id,picked.id);
+assert.notEqual(selectAngelusOpeningArtwork({pool:approved,lastId:picked.id,random:()=>0}).id,picked.id);
 assert.equal(selectAngelusOpeningArtwork({pool:[]}),null);
 const cma=ANGELUS_REVIEWED_OPENING_ART.find(x=>x.id==="cma-127572");
 assert.ok(cma && cma.rating===4 && cma.sourceUrl.includes("1950.251"));
