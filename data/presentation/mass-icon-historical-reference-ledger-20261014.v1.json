@@ -17,7 +17,7 @@
     "priestStationVariantReview": 3,
     "conditionalMinisterCandidates": 11,
     "approvedUnboundFingerArtwork": 2,
-    "referenceBibliographySources": 9
+    "referenceBibliographySources": 10
   },
   "sources": [
     {
@@ -100,6 +100,15 @@
       "visualEvidence": "BOOK_ILLUSTRATIONS_VERIFIED_IN_CATALOGUE_ONLY",
       "rights": "REPRINT_ART_RIGHTS_UNVERIFIED_REFERENCE_ONLY",
       "note": "Illustrated comic-style book useful for source discovery, but unsuitable as automatically selected final icon style."
+    },
+    {
+      "id": "JOUENNE_FRANCE_PRE1740",
+      "title": "La sainte messe ... actions du prêtre / François Jouenne, Paris, before 1740, Bridwell Library exhibition",
+      "url": "https://bridwell.omeka.net/exhibits/show/frenchdevotion/ritualhistory/jouenne",
+      "kind": "FRENCH_HISTORICAL_ENGRAVED_CEREMONIAL_GUIDE",
+      "visualEvidence": "PRIEST_ACOLYTE_MASS_STAGE_ENGRAVING_SERIES_REFERENCED_EXACT_POSES_UNVERIFIED",
+      "rights": "EARLY_ORIGINAL_ART_POTENTIALLY_PUBLIC_DOMAIN_DIGITAL_SCAN_RIGHTS_UNVERIFIED",
+      "note": "A French illustrated Mass guide pairs priest/acolyte ceremonial actions with Passion imagery; the museum confirms its early date and engraving format. Do not treat a pre-1740 ceremonial pose as 1962 normative or copy exhibition scans without verifying image rights."
     }
   ],
   "gestureFamilies": [
@@ -178,7 +187,8 @@
       "sourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "SANCTAMISSA_TUTORIALS"
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "rowCount": 2
@@ -192,7 +202,8 @@
       "sourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "LANSLOTS_1897"
+        "LANSLOTS_1897",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "rowCount": 2
@@ -206,7 +217,8 @@
       "sourceIds": [
         "RITUS_1962",
         "BENZIGER_1945_HANC",
-        "MARIAN_1958_HANC"
+        "MARIAN_1958_HANC",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "imageProof": "HANC_IGITUR_EXACT_POSE_VISUALLY_IDENTIFIED_RIGHTS_UNCLEARED",
       "rowCount": 1
@@ -220,7 +232,8 @@
       "sourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "SANCTAMISSA_TUTORIALS"
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "rowCount": 1
@@ -233,7 +246,8 @@
       ],
       "sourceIds": [
         "RITUS_1962",
-        "SCHMITZ_1960"
+        "SCHMITZ_1960",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED_DO_NOT_USE_MAJOR_ELEVATION",
       "rowCount": 1
@@ -462,7 +476,8 @@
       "referenceSourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "SANCTAMISSA_TUTORIALS"
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "reuseCurrentMasters": [
@@ -483,7 +498,8 @@
       "referenceSourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "SANCTAMISSA_TUTORIALS"
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "reuseCurrentMasters": [
@@ -504,7 +520,8 @@
       "referenceSourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "LANSLOTS_1897"
+        "LANSLOTS_1897",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "reuseCurrentMasters": [
@@ -525,7 +542,8 @@
       "referenceSourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "LANSLOTS_1897"
+        "LANSLOTS_1897",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "reuseCurrentMasters": [
@@ -546,7 +564,8 @@
       "referenceSourceIds": [
         "RITUS_1962",
         "BENZIGER_1945_HANC",
-        "MARIAN_1958_HANC"
+        "MARIAN_1958_HANC",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "visualVerification": "HANC_IGITUR_EXACT_POSE_VISUALLY_IDENTIFIED_RIGHTS_UNCLEARED",
       "reuseCurrentMasters": [
@@ -567,7 +586,8 @@
       "referenceSourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "SANCTAMISSA_TUTORIALS"
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "reuseCurrentMasters": [
@@ -587,7 +607,8 @@
       "decision": "EXACT_HOST_ABOVE_SLIGHTLY_LIFTED_CHALICE_REFERENCE_REQUIRED",
       "referenceSourceIds": [
         "RITUS_1962",
-        "SCHMITZ_1960"
+        "SCHMITZ_1960",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED_DO_NOT_USE_MAJOR_ELEVATION",
       "reuseCurrentMasters": [
@@ -610,7 +631,8 @@
       ],
       "referenceSourceIds": [
         "FORTESCUE_1918",
-        "SANCTAMISSA_TUTORIALS"
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "rights": "NO_NEW_ARTWORK_CLEARED",
       "publication": "REVIEW_ONLY"
@@ -628,7 +650,8 @@
       ],
       "referenceSourceIds": [
         "FORTESCUE_1918",
-        "SANCTAMISSA_TUTORIALS"
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "rights": "NO_NEW_ARTWORK_CLEARED",
       "publication": "REVIEW_ONLY"
@@ -643,7 +666,8 @@
       ],
       "referenceSourceIds": [
         "FORTESCUE_1918",
-        "SANCTAMISSA_TUTORIALS"
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
       ],
       "rights": "NO_NEW_ARTWORK_CLEARED",
       "publication": "REVIEW_ONLY"
