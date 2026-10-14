@@ -195,7 +195,54 @@ try{
     assert.deepEqual(errors,[],width+" "+lang+" "+query+" runtime errors");
     await context.close();
   }
-  console.log("PASS actual LIVE 48/65 phone cinematics: EN/FR, 320/390px, two Elevations, both Consecrations, Incarnatus, no blackout, no stale scene, reduced motion.");
+  // Good Friday has its own R28 source graph; ordinary AO.SM cue focus
+  // must never be used to manufacture the death pause.
+  {
+    const context=await browser.newContext({viewport:{width:390,height:844},
+      deviceScaleFactor:1,isMobile:true,hasTouch:true,locale:"en-GB"});
+    const page=await context.newPage();
+    const errors=[];
+    page.on("pageerror",e=>errors.push(String(e.message??e)));
+    await page.goto("http://127.0.0.1:4188/tests/fixtures/reader-phone-harness.html?rite=good-friday&form=SOLEMN",
+      {waitUntil:"networkidle",timeout:45000});
+    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
+      null,{timeout:20000});
+    const actual=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const before=api.getGoodFridayState().step.recordId;
+      api.goToGoodFridayRecord("GF-PASS-320");
+      const shell=document.querySelector("[data-ao-reader-shell]");
+      const state=api.getGoodFridayState();
+      const scene=shell?.dataset.cinematicScene;
+      const primary=[...shell.querySelectorAll(".ao-reader-paragraph")]
+        .find(el=>el.dataset.cueId==="GF-PASS-320");
+      const visible=Boolean(primary && primary.querySelector(".ao-line-primary")?.textContent
+        .toLowerCase().includes("tradidit spiritum"));
+      return {before,record:state.step.recordId,posture:state.posture,
+        deathPause:window.AO_R17_NATIVE_READER_STATE?.deathPause,
+        scene,visible,reading:api.getCurrentCard()?.title};
+    });
+    assert.equal(actual.record,"GF-PASS-320");
+    assert.equal(actual.scene,"PASSION_DEATH");
+    assert.equal(actual.deathPause,true);
+    assert.equal(actual.posture,"KNEEL");
+    assert.equal(actual.visible,true,
+      "The authentic Passion death words must remain legible: "+JSON.stringify(actual));
+    await page.screenshot({path:resolve(out,"390-en-good-friday-death.png")});
+    const after=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      api.goToGoodFridayRecord("GF-PASS-330");
+      return {scene:document.querySelector("[data-ao-reader-shell]")?.dataset.cinematicScene,
+        posture:api.getGoodFridayState().posture,
+        deathPause:window.AO_R17_NATIVE_READER_STATE?.deathPause};
+    });
+    assert.equal(after.scene,"NONE","Passion death stillness leaked into the resumed Gospel");
+    assert.equal(after.posture,"STAND");
+    assert.equal(after.deathPause,false);
+    assert.deepEqual(errors,[],"Good Friday source graph browser errors");
+    await context.close();
+  }
+  console.log("PASS actual LIVE 48/65 phone cinematics: EN/FR, 320/390px, two Elevations, both Consecrations, Incarnatus, Hanc, Gospel and R28 Passion, no blackout, no stale scene, reduced motion.");
 }finally{
   await browser?.close();
   await new Promise(done=>server.close(done));
