@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 35,
+  "source_count": 44,
   "sources": [
     {
       "id": "S01",
@@ -425,6 +425,114 @@
       "access": "direct_full_text_opened_and_II_B_5_located",
       "chapter_passage_certified": false,
       "annotation": "Use original explicit 'simple case' paragraph and note dignity of IVF-conceived children; this text is independent of the later Dignitas personae instruction only as an original promulgated text, not as an independent tradition."
+    },
+    {
+      "id": "S36",
+      "title": "Quas primas",
+      "author": "Pius XI",
+      "year": "1925",
+      "role": "preconciliar_social_kingship_original",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+      "scope": "Christ’s universal kingship; §§14–18 temporal and spiritual authority, 24–29 public duties",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S37",
+      "title": "Immortale Dei",
+      "author": "Leo XIII",
+      "year": "1885",
+      "role": "preconciliar_church_state_original",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+      "scope": "§§3–6 public religion/state duty, §§35–37 powers and qualified tolerance",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S38",
+      "title": "On Liberty",
+      "author": "John Stuart Mill",
+      "year": "1859",
+      "role": "noncatholic_liberty_proponent_original",
+      "url": "https://www.gutenberg.org/cache/epub/34901/pg34901-images.html",
+      "scope": "Chapter I harm principle for social/legal coercion, Chapters IV–V limits/applications; not a comprehensive sexual moral permissibility theory",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S39",
+      "title": "Teaching good sex: The limits of consent and the role of the virtues",
+      "author": "David Archard",
+      "year": "2022",
+      "role": "independent_modern_philosophical_analysis",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/1467-9752.12684",
+      "scope": "Sections on consent as central and insufficiency of consent-only criteria; importance of virtues",
+      "access": "open_access_full_article_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S40",
+      "title": "Consent, Trust, and Sexual Ethics",
+      "author": "Elise Woodard",
+      "year": "2026",
+      "role": "independent_modern_philosophical_analysis",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/phpe.70008",
+      "scope": "Sections 2 and 7; consent’s limits in trusted intimate relationships; not Catholic sexual moral framework",
+      "access": "open_access_full_article_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S41",
+      "title": "Donum veritatis",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "1990",
+      "role": "magisterial_assent_and_theological_difficulties_original",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "scope": "§§23–31; actual meaning of legitimate difficulties, assent and public dissent; EN and FR originals available",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S42",
+      "title": "Summa theologiae I-II q.74",
+      "author": "Thomas Aquinas",
+      "year": "13th century",
+      "role": "classical_theological_temptation_and_consent_analysis",
+      "url": "https://www.newadvent.org/summa/2074.htm",
+      "scope": "Articles 6–8, consent to thoughts/pleasure and reason; no mechanical simplification to duration of unwanted thought",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S43",
+      "title": "Summa theologiae I-II q.18",
+      "author": "Thomas Aquinas",
+      "year": "13th century",
+      "role": "classical_moral_object_and_circumstances_analysis",
+      "url": "https://www.newadvent.org/summa/2018.htm",
+      "scope": "Articles 2–4, 6, 10–11, object, intention, circumstances and whether circumstances can give a moral species",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S44",
+      "title": "Summa theologiae I-II q.77 and q.78",
+      "author": "Thomas Aquinas",
+      "year": "13th century",
+      "role": "classical_freedom_passion_and_habit_analysis",
+      "url": "https://www.newadvent.org/summa/2077.htm",
+      "scope": "q.77 aa.6–8 passion and voluntariness; q.78 a.2 habit and deliberate malice; second locator https://www.newadvent.org/summa/2078.htm",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
     }
   ],
   "priority_questions": [
@@ -469,12 +577,14 @@
       "source_ids": [
         "S03",
         "S04",
-        "S14"
+        "S14",
+        "S41"
       ],
       "source_roles": [
         "magisterial_original",
         "magisterial_original",
-        "sspx_original_proponent"
+        "sspx_original_proponent",
+        "magisterial_assent_and_theological_difficulties_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -510,11 +620,15 @@
       "id": "CR-DOC-05",
       "source_ids": [
         "S01",
-        "S08"
+        "S08",
+        "S36",
+        "S37"
       ],
       "source_roles": [
         "magisterial_original",
-        "magisterial_preconciliar"
+        "magisterial_preconciliar",
+        "preconciliar_social_kingship_original",
+        "preconciliar_church_state_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -586,11 +700,13 @@
       "id": "CR-DOC-09",
       "source_ids": [
         "S03",
-        "S07"
+        "S07",
+        "S41"
       ],
       "source_roles": [
         "magisterial_original",
-        "magisterial_preconciliar"
+        "magisterial_preconciliar",
+        "magisterial_assent_and_theological_difficulties_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -606,13 +722,15 @@
         "S01",
         "S07",
         "S14",
-        "S31"
+        "S31",
+        "S41"
       ],
       "source_roles": [
         "magisterial_original",
         "magisterial_preconciliar",
         "sspx_original_proponent",
-        "sspx_proponent_counter_rebuttal"
+        "sspx_proponent_counter_rebuttal",
+        "magisterial_assent_and_theological_difficulties_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -951,12 +1069,16 @@
       "source_ids": [
         "S21",
         "S27",
-        "S34"
+        "S34",
+        "S38",
+        "S39"
       ],
       "source_roles": [
         "magisterial_moral_original",
         "historical_moral_manual",
-        "noncatholic_opposing_ethical_foundation_original"
+        "noncatholic_opposing_ethical_foundation_original",
+        "noncatholic_liberty_proponent_original",
+        "independent_modern_philosophical_analysis"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -971,12 +1093,16 @@
       "source_ids": [
         "S21",
         "S27",
-        "S34"
+        "S34",
+        "S39",
+        "S40"
       ],
       "source_roles": [
         "magisterial_moral_original",
         "historical_moral_manual",
-        "noncatholic_opposing_ethical_foundation_original"
+        "noncatholic_opposing_ethical_foundation_original",
+        "independent_modern_philosophical_analysis",
+        "independent_modern_philosophical_analysis"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -991,12 +1117,14 @@
       "source_ids": [
         "S21",
         "S27",
-        "S34"
+        "S34",
+        "S43"
       ],
       "source_roles": [
         "magisterial_moral_original",
         "historical_moral_manual",
-        "noncatholic_opposing_ethical_foundation_original"
+        "noncatholic_opposing_ethical_foundation_original",
+        "classical_moral_object_and_circumstances_analysis"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1011,12 +1139,14 @@
       "source_ids": [
         "S21",
         "S27",
-        "S34"
+        "S34",
+        "S43"
       ],
       "source_roles": [
         "magisterial_moral_original",
         "historical_moral_manual",
-        "noncatholic_opposing_ethical_foundation_original"
+        "noncatholic_opposing_ethical_foundation_original",
+        "classical_moral_object_and_circumstances_analysis"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1031,12 +1161,14 @@
       "source_ids": [
         "S21",
         "S27",
-        "S34"
+        "S34",
+        "S43"
       ],
       "source_roles": [
         "magisterial_moral_original",
         "historical_moral_manual",
-        "noncatholic_opposing_ethical_foundation_original"
+        "noncatholic_opposing_ethical_foundation_original",
+        "classical_moral_object_and_circumstances_analysis"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1051,12 +1183,14 @@
       "source_ids": [
         "S21",
         "S27",
-        "S33"
+        "S33",
+        "S41"
       ],
       "source_roles": [
         "magisterial_moral_original",
         "historical_moral_manual",
-        "catholic_theological_dissent_original_argument"
+        "catholic_theological_dissent_original_argument",
+        "magisterial_assent_and_theological_difficulties_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1108,11 +1242,13 @@
       "id": "CSE020",
       "source_ids": [
         "S27",
-        "S25"
+        "S25",
+        "S44"
       ],
       "source_roles": [
         "historical_moral_manual",
-        "magisterial_sexual_ethics_original"
+        "magisterial_sexual_ethics_original",
+        "classical_freedom_passion_and_habit_analysis"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1631,13 +1767,93 @@
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE018",
+      "source_ids": [
+        "S41"
+      ],
+      "source_roles": [
+        "magisterial_assent_and_theological_difficulties_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE022",
+      "source_ids": [
+        "S42"
+      ],
+      "source_roles": [
+        "classical_theological_temptation_and_consent_analysis"
+      ],
+      "locator_level": "direct_aquinas_chapter_review_not_full_QA_proof",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "moral_voluntariness_and_scruples",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE023",
+      "source_ids": [
+        "S42"
+      ],
+      "source_roles": [
+        "classical_theological_temptation_and_consent_analysis"
+      ],
+      "locator_level": "direct_aquinas_chapter_review_not_full_QA_proof",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "moral_voluntariness_and_scruples",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE024",
+      "source_ids": [
+        "S42"
+      ],
+      "source_roles": [
+        "classical_theological_temptation_and_consent_analysis"
+      ],
+      "locator_level": "direct_aquinas_chapter_review_not_full_QA_proof",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "moral_voluntariness_and_scruples",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE025",
+      "source_ids": [
+        "S42"
+      ],
+      "source_roles": [
+        "classical_theological_temptation_and_consent_analysis"
+      ],
+      "locator_level": "direct_aquinas_chapter_review_not_full_QA_proof",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "moral_voluntariness_and_scruples",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
     }
   ],
   "counts": {
-    "sources": 35,
-    "mapped_questions": 65,
+    "sources": 44,
+    "mapped_questions": 70,
     "church_crisis": 25,
-    "sexual_ethics": 40,
+    "sexual_ethics": 45,
     "answer_audited": 0,
     "answer_certified": 0
   },
