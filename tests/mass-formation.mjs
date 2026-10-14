@@ -55,6 +55,43 @@ for(const stage of data.stages){
 assert.equal(massFormationScriptureHtml("MF99"),"");
 assert.doesNotMatch(JSON.stringify(MASS_FORMATION_SCRIPTURE_ANCHORS),/sourceWitness|reviewed|enabled/,
  "Teaching links may not grant textual editions or bypass provenance gates");
+const bridge=JSON.parse(readFileSync("data/learn/research/mass-bible-canonical-scripture-bridge-20261014.v1.json","utf8"));
+assert.equal(bridge.schema,"AO_MASS_BIBLE_CANONICAL_SCRIPTURE_BRIDGE_V1");
+assert.equal(bridge.status,"SOURCE_RECONCILED_READER_ONLY_NO_EDITORIAL_PUBLICATION");
+assert.equal(bridge.pinnedInputs.canonical39.pr,1193);
+assert.equal(bridge.pinnedInputs.massBible26.pr,1082);
+assert.deepEqual([bridge.counts.canonicalOwnersAvailable,bridge.counts.records,bridge.counts.uniqueCanonicalOwners,
+ bridge.counts.readerEligible,bridge.counts.displayedLinks,bridge.counts.containedSubverses,
+ bridge.counts.held,bridge.counts.versionSensitivePsalms,bridge.counts.variableProper,bridge.counts.newManuscriptPublications],
+ [39,26,20,20,18,2,6,4,2,0]);
+const idSet=new Set(),fromResearch=new Map();
+for(const row of bridge.rows){
+ assert.ok(!idSet.has(row.id),"Each of 26 research connections must have one canonical owner: "+row.id);
+ idSet.add(row.id);
+ assert.match(row.canonicalSectionId,/^AO\\.(?:CARD|CANON)\\.\\d{2,3}$/);
+ assert.equal(row.publicationApproved,false,"Do not promote unfinished historical manuscript claims");
+ if(row.scriptureStudyLink){
+  const target=MASS_FORMATION_SCRIPTURE_ANCHORS.find(x=>x.id===row.scriptureStudyLink.id);
+  assert.ok(target,"Missing visible Scripture reference for "+row.id);
+  assert.equal(target.reference,row.scriptureStudyLink.reference);
+  assert.equal(target.stageId,row.scriptureStudyLink.displayLessonId);
+  assert.ok(parseScriptureContext(row.scriptureStudyLink.upstreamReference),
+   "Only source-identified Bible references may open the shared reader");
+  if(row.scriptureStudyLink.alignment==="EXACT_PASSAGE")
+    assert.equal(target.reference,row.scriptureStudyLink.upstreamReference);
+  else assert.ok(["MB16","MB22"].includes(row.id),
+    "A shorter verse may reuse a longer linked passage only with explicit research proof");
+  assert.equal(row.scriptureStudyLink.noMassTextEquivalence,true);
+ }else{
+  assert.ok(row.heldReason,"Unresolved source must be deliberately withheld: "+row.id);
+ }
+ fromResearch.set(row.id,row);
+}
+assert.deepEqual([...idSet].sort(),Array.from({length:26},(_,i)=>"MB"+String(i+1).padStart(2,"0")));
+assert.deepEqual([...fromResearch.values()].filter(x=>x.heldReason).map(x=>x.id),
+ ["MB01","MB02","MB06","MB07","MB09","MB25"]);
+assert.equal(new Set(bridge.rows.filter(x=>x.scriptureStudyLink).map(x=>x.scriptureStudyLink.id)).size,18);
+assert.equal(bridge.rows.filter(x=>x.scriptureStudyLink?.alignment==="VERSE_WITHIN_LARGER_PASSAGE").length,2);
 const sources=new Map(data.sources.map(s=>[s.id,s]));
 assert.equal(sources.get("SRC-MR62").role,"NORMATIVE_1962");
 assert.equal(sources.get("SRC-CAMPION-1954").role,"DISCOVERY_AND_EXPLANATORY");
