@@ -75,7 +75,7 @@ const opening=readFileSync(new URL("../src/pray/devotional-cinematic.js",import.
 const styles=readFileSync(new URL("../src/pray/devotional-action-cinematic-styles.js",import.meta.url),"utf8");
 assert.ok(runtime.includes("actionCinematics.sync(scene,{mount:m"));
 assert.ok(runtime.includes("benedictionStage:view==='benediction'?BEN_STAGES[BEN.step]?.[0]:null"));
-assert.ok(runtime.includes("stationRitual:null"));
+assert.ok(runtime.includes("stationRitual:view==='stations'?certifiedPublicStationCue({"));
 assert.ok(runtime.includes("resolveAngelusIncarnationCinematic({"));
 assert.ok(opening.includes("entry.openingShown"));
 assert.ok(opening.includes("selectAngelusOpeningArtwork("));
