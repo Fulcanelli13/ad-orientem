@@ -51,7 +51,10 @@ for(const row of recovered.records){
   assert.equal(source.rawLineStart,row.originalOcrRawLine);
   assert.equal(source.chapter,row.chapter);
   assert(!oldKeys.has(row.chapter+"|"+row.normalizedScriptureRef),"new entry duplicates prior batch: "+row.id);
-  assert.equal(row.pdfPageVisualCheck,false);
+  const originalPages=new Map([["L1897-OCR3-001",16],["L1897-OCR3-007",150],["L1897-OCR3-008",173],["L1897-OCR3-009",179]]);
+  const verifiedPage=originalPages.get(row.id);
+  assert.equal(row.pdfPageVisualCheck,verifiedPage!==undefined,"exactly four new-record page checks must be marked");
+  if(verifiedPage!==undefined)assert.equal(row.visuallyVerifiedOriginalScan.oneBasedPdfPage,verifiedPage,"visual evidence must match image record");
   assert.equal(row.runtimePromotion,"BLOCKED");
 }
 const royal=recovered.records.filter(x=>x.normalizedScriptureRef==="1 Peter 2:9");
