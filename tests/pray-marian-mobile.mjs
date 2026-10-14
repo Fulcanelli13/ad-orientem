@@ -148,8 +148,10 @@ try{
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
  const opening=page.locator("body > .aoDevoCinematicOpening[data-ao-devotional-scene='opening']");
  await opening.waitFor({state:"attached",timeout:2200});
- assert.ok(["nga-46","met-437250","met-436791","met-436502","cma-127572"].includes(
-   await opening.getAttribute("data-ao-scene-art")),"Opening selected an unreviewed painting");
+ assert.equal(await opening.getAttribute("data-ao-scene-art"),"none",
+   "Rating-4 Annunciations are under review, not automatically approved");
+ assert.equal(await opening.locator("img.aoDevoCinematicArtwork").count(),0,
+   "Opening must not render a still-unapproved reproduction");
  await opening.locator(".aoDevoCinematicSkip").evaluate(x=>x.click());
  await opening.waitFor({state:"detached",timeout:2200});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),4);
