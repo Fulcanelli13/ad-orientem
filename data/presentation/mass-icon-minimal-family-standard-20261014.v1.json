@@ -1,0 +1,145 @@
+{
+  "schema": "ao-mass-minimal-icon-family-standard-v1",
+  "date": "2026-10-14",
+  "status": "DESIGN_LOCK_FOR_REVIEW_NOT_RUNTIME_APPROVAL",
+  "basis": {
+    "review": "Ad_Orientem_Full_Mass_Icon_Review_2026-10-14.json",
+    "visualNote": "User rejects new detailed engravings and complicated priest features; follow the already selected minimal family",
+    "existingOrders": "data/presentation/mass-icon-harmonization-16-workorders-20261014.v1.json",
+    "sourceCue": "data/mass/gesture-matrix.v1.json"
+  },
+  "ratings": {
+    "score0to2": "PERMANENTLY_REJECT_ORIGINAL_NO_REUSE_NO_HARMONIZE",
+    "score3": "RESEARCH_REQUIRED_NOT_APPROVED",
+    "score4": "USER_REVIEW_REQUIRED_NOT_AUTO_APPROVED",
+    "score5": "AUTOMATICALLY_CONFIRMED_AND_SELECTED",
+    "unrated": "PENDING_NEVER_ASSUMED_ACCEPTED",
+    "explicitKeep3or4": "PRESERVE_LEGACY_KEEP_HISTORY_BUT_NO_NEW_AUTOMATIC_VISUAL_APPROVAL",
+    "originalReplacements": "New artwork must use a new candidate/asset ID and must be reviewed independently; never resurrect a <3 original"
+  },
+  "referenceOrder": [
+    {
+      "id": "S_priest_sedilia",
+      "path": "assets/active/mass-v46/priest_sedilia_rich.svg",
+      "rating": 5,
+      "role": "CONFIRMED_PRIMARY_PRIEST_STYLE_AND_SILHOUETTE"
+    },
+    {
+      "id": "S_priest_elevate_host",
+      "path": "assets/active/mass-v46/priest_elevation.svg",
+      "rating": 4,
+      "role": "REVIEW_REFERENCE_ONLY_GESTURE_AND_PARTIAL_ALTAR"
+    },
+    {
+      "id": "S_priest_ambo",
+      "path": "assets/active/mass-v46/priest_ambo_rich.svg",
+      "rating": 4,
+      "role": "REVIEW_REFERENCE_ONLY_PRIEST_PROPORTIONS"
+    },
+    {
+      "id": "S_priest_communion_rail",
+      "path": "assets/active/mass-v46/priest_rail_after_rich.svg",
+      "rating": 4,
+      "role": "REVIEW_REFERENCE_ONLY_PRIEST_SCALE"
+    },
+    {
+      "id": "S_priest_centre",
+      "path": "assets/active/mass-v46/priest_centre_rich.svg",
+      "rating": 3,
+      "role": "ALTAR_LAYOUT_GEOMETRY_REFERENCE_PENDING_RESEARCH_NOT_APPROVED_STYLE"
+    },
+    {
+      "id": "S_you_genuflect",
+      "path": "assets/active/mass-v46/genuflect.svg",
+      "rating": 4,
+      "role": "FAITHFUL_POSTURE_VECTOR_DENSITY_REFERENCE_NOT_PRIEST_ACTOR"
+    },
+    {
+      "id": "S_you_hands_joined",
+      "path": "assets/active/mass-v46/hands_joined.svg",
+      "rating": 4,
+      "role": "SIMPLE_GESTURE_DENSITY_REFERENCE"
+    }
+  ],
+  "design": {
+    "intent": "functional liturgical pictogram, not an engraved religious scene",
+    "sceneTreatment": "Keep only the shapes required to identify actor, action and necessary object; scenery should never compete with posture",
+    "priestFace": "In rear views no face rendered; in side/front views use basic head oval or silhouette, no eyes, eyebrows, eyelashes, nose modelling, mouth modelling or portrait likeness; only mouth-chalice contact outline if essential",
+    "hair": "single outer contour or one restrained mass; no individual strands, highlights, hairline engraving or gradients",
+    "vestments": "one clean alb silhouette, simple chasuble outline, at most the existing master's minimal cross/band motif; no brocade patterns, detailed lace, embroidery, decorative edging, or many folds",
+    "armsHands": "Gesture is dominant; anatomical placement exact but fingers simplified to groups, with thumb-index separate only when the rubric hinges on it; clear wrists, no extra limbs",
+    "altar": "single shared minimal altar base derived from verified accepted composition: basic table/cloth line, crucifix and candlesticks only where context required; no architectural panels, floral patterns, carved arches, cloth lace, ornament or shrine-like scenery",
+    "minister": "simple distinct dalmatic/surplice silhouette and clear actor position, never a second detailed portrait",
+    "objects": "draw only the sacred object needed to differentiate the action (Host, chalice, paten, thurible, pall, Missal); never add ceremonial props to fill space",
+    "incense": "one restrained thurible shape; at most 1–2 thin smoke strokes if needed for recognition; no billowing smoke cloud",
+    "lineLanguage": "monochrome filled silhouette with sparse clear cut-outs, no crosshatching, etching, texture, halftone, gradients, shading or photorealism",
+    "composition": "one icon and one frozen instant, consistent figure proportions and baseline; no multi-panel sheets, captions, headings or frames",
+    "color": "single alpha-based artwork tinted from app's currentColor; no baked background/checkerboard, no permanent navy ink, no multicolor fill",
+    "vector": "final SVG contains native paths/shapes only, no embedded PNG/JPEG/SVG as image data; if not fully vector, label accurately as tintable raster mask",
+    "assets": "Never mutate original approved v4.6 donors; add reviewed corrected candidates to new paths only"
+  },
+  "hierarchy": {
+    "smallRail": "At 48/64 px show one action or one priest station; cropped gesture/silhouette or text may replace complex full-altars",
+    "expandedGuide": "Full priest-plus-altar context only when source comprehension benefits, still as minimal pictogram",
+    "noDecorativePriority": true,
+    "legibilityGate": "A reviewer can identify the correct action at 64px without reading its label; where impossible use a source-backed text cue instead",
+    "actorGate": "Reader's posture vs priest vs deacon vs thurifer never conflated"
+  },
+  "prohibitions": [
+    "portrait faces or exaggerated hair",
+    "embroidered Roman chasubles and patterned lace",
+    "baroque altar architecture or carved panels",
+    "clouds, glowing beams, excessive smoke",
+    "crosshatching, woodcut/engraving simulation, texture or shadows",
+    "scene borders, infographic layouts and grids",
+    "hand anatomy inconsistent with 1962 rubric",
+    "false altar positions or perspective mirroring",
+    "recoloring detailed artwork and calling it harmonized",
+    "treating 0-2 original as repairable",
+    "treating 3 as approval",
+    "promoting generated sheets or raster-wrapped SVG as production icons"
+  ],
+  "acceptanceGates": [
+    {
+      "id": "G0",
+      "name": "RATING",
+      "rule": "Reject originals rated 0–2. 3 researches, 4 reviews, 5 confirms; unrated pending."
+    },
+    {
+      "id": "G1",
+      "name": "REUSE",
+      "rule": "Compare selected originals and matching physical actions before drawing."
+    },
+    {
+      "id": "G2",
+      "name": "RUBRICS",
+      "rule": "Precise actor, position, hands/objects and form according to source cue."
+    },
+    {
+      "id": "G3",
+      "name": "SILHOUETTE",
+      "rule": "Head/face flat; vestments/altar stripped to only vital geometry; no etched decoration."
+    },
+    {
+      "id": "G4",
+      "name": "MOBILE",
+      "rule": "Gesture recognizable at 64px, acceptable silhouette at 48px; otherwise text/zoomed detail."
+    },
+    {
+      "id": "G5",
+      "name": "UI_COLOR",
+      "rule": "True alpha + variable tint on dark/light backgrounds; final vector path certification."
+    },
+    {
+      "id": "G6",
+      "name": "SELECTION",
+      "rule": "Only 5 automatically selects; 4 awaits review; 3 directs research. Keep legacy source selections separate from new ratings."
+    }
+  ],
+  "nextProcess": [
+    "Apply target design constraints separately to each of the 24 surviving rework subjects.",
+    "Resolve by REUSE, REMAP, TEXT or MINIMAL_REDRAW; avoid any decorative enhancement.",
+    "Reference existing 5-rated priest_sedilia and user-reviewed 4s, not latest ornate drawings.",
+    "After repair, re-audit cue coverage across 36 action subjects; only genuinely missing ones enter generation in groups of 3."
+  ]
+}
