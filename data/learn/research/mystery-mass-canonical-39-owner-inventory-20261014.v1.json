@@ -2533,7 +2533,8 @@
     "Variable Propers, Mass conditions, priest-vs-faithful text, special rites, Requiem and historical local customs require explicit contextual ownership. No automatic historical ritual inference.",
     "Preserve source provenance by original branch and commit; PR #1179 and PR #1082 are open drafts, not merged source files in main.",
     "NO reader code, Guide registry, image assets or publication flags are changed by this editorial inventory.",
-    "The eight-stage learn.mass reader exists on main; do not infer production-store visibility or public rollout from source-code presence alone."
+    "The eight-stage learn.mass reader exists on main; do not infer production-store visibility or public rollout from source-code presence alone.",
+    "Eight of ten Lanslots critical issue IDs have canonical prayer-section owners (one has two); two remaining (DISC04, DISC09) belong to lesson-level context, deliberately without a live Guide cue."
   ],
   "nextReleaseSequence": [
     {
@@ -2588,5 +2589,21 @@
     "doNotTouchProductionGuide": true,
     "doNotChangeMassText": true,
     "doNotChangeNativeReader": true
-  }
+  },
+  "contextualNonSectionCriticalItems": [
+    {
+      "id": "L1897-DISC-04",
+      "subject": "Apostolic Latin and liturgical language",
+      "reason": "Cross-chapter historical source warning, no specific normative Mass prayer owner",
+      "lessonOwner": "MF01",
+      "inlineGuideCue": null
+    },
+    {
+      "id": "L1897-DISC-09",
+      "subject": "Eucharistic unity through one bread",
+      "reason": "General theological unity context, not exact Latin wording of one 1962 cue",
+      "lessonOwner": "MF06",
+      "inlineGuideCue": null
+    }
+  ]
 }
