@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {ROSARY_SCRIPTURE_REFERENCE_V1,ROSARY_SCRIPTURE_POLICY_V1,rosaryScripturePassage,rosaryMeditationCitationLabel} from "../src/pray/rosary-scripture-policy.js";
+import {ROSARY_SCRIPTURE_REFERENCE_V1,ROSARY_SCRIPTURE_POLICY_V1,rosaryScripturePassage,rosaryMeditationCitationLabel,rosaryBeadContextReference} from "../src/pray/rosary-scripture-policy.js";
+import {parseScriptureContext} from "../src/scripture/context.js";
 import {ROSARY_MYSTERY_CONTEXT_V1} from "../src/pray/rosary-mystery-context.v1.js";
 import {ROSARY_GUIDED_BEAD_MEDITATIONS_V1} from "../src/pray/rosary-guided-bead-meditations.v1.js";
 import {ROSARY_GUIDED_BEAD_EVIDENCE_V1} from "../src/pray/rosary-guided-bead-evidence.v1.js";
@@ -31,6 +32,25 @@ for(const [id,meditations] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1))
 }
 const biblicalLinks=Object.values(ROSARY_GUIDED_BEAD_EVIDENCE_V1).flat().filter(x=>/^https:\/\/fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\//.test(x.frenchPrimaryUrl));
 assert.equal(biblicalLinks.length,190,"expected 190 chapter-specific Crampon links and 10 doctrinal witnesses");
+const doctrinalLinks=Object.values(ROSARY_GUIDED_BEAD_EVIDENCE_V1).flat()
+  .filter(x=>!biblicalLinks.includes(x));
+assert.equal(doctrinalLinks.length,10,"all ten nonbiblical witnesses stay external");
+for(const citation of biblicalLinks){
+  const reference=rosaryBeadContextReference(citation);
+  assert.equal(reference,citation.reference,"Scripture bead should retain its exact approved source reference");
+  assert.ok(parseScriptureContext(reference),"The shared Catholic passage parser must accept every biblical bead");
+}
+for(const citation of doctrinalLinks){
+  assert.equal(rosaryBeadContextReference(citation),null,
+    "Papal and conciliar documents must never be interpreted as Bible passages");
+}
+assert.equal(rosaryBeadContextReference({reference:"Luke 1:28"}),null,
+  "An unsourced citation cannot be promoted to an in-app Scripture bead");
+assert.equal(rosaryBeadContextReference({
+  reference:"Luke 1:28",
+  primaryUrl:"https://www.biblegateway.com/passage/?search=Luke%201%3A28&version=DRA",
+  frenchPrimaryUrl:"https://www.vatican.va/"
+}),null,"The primary bilingual witness must not be silently substituted");
 for(const citation of biblicalLinks){
  const fr=rosaryMeditationCitationLabel(citation,{french:true});
  const en=rosaryMeditationCitationLabel(citation,{french:false});
@@ -111,6 +131,10 @@ for(const x of [...ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4.slice(6),...ROSARY_GUIDED
 const rosaryPolicy=readFileSync("src/pray/rosary-scripture-policy.js","utf8");
 assert.match(rosaryPolicy,/rosaryMeditationCitationLabel\(witness,\{french\}\)/);
 assert.match(rosaryPolicy,/frenchWitnessLanguage==="la"/);
+assert.match(rosaryPolicy,/citation\.dataset\.aoScriptureContext=contextReference/,
+  "Each source-owned Rosary Scripture citation must open the canonical reader");
+assert.match(rosaryPolicy,/citation\.href=french\?witness\.frenchPrimaryUrl:witness\.primaryUrl/,
+  "Original EN\/FR biblical and doctrinal source URLs must remain available");
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy1[2].en,/ponders the meaning/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy2[2].fr,/Élisabeth/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy4[3].en,/two turtledoves or two young pigeons/);
