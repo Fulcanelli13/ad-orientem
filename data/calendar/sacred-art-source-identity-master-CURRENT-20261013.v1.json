@@ -26,12 +26,12 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Fill remaining 86 subject slots that currently have zero proposed painting options; prioritize major liturgical/saint and high-leverage Gospel subjects rather than demanding one unique Old Testament painting per episode.",
-    "For initial 21 source-sourced subjects obtain the ACTUAL clean source preview, enforce one original painting with multiple reproduction records and user 0–5 rating.",
-    "Reconcile Rubens Prado original Apostle paintings already source identified with six otherwise empty review slots, avoiding repeat artist research.",
-    "For French saint/devotional objects use France POP object records but verify unframed clean photography and photographer rights; original Redemptorist Perpetual Help icon is a distinct devotional-art exception.",
-    "Respect user discarded scores 0–2, explicitly excluded artists, and pending commercial rights for museum photographs.",
-    "Maintain 222 source catalogue while gap batch is unreconciled, user unreviewed and image files not acquired."
+    "Continue remaining 75 formerly empty subject slots; prioritize strong original portraits of uncovered Doctors and major Gospel events, not one painting per minor episode.",
+    "Acquire and visually check exact-source reproductions for W16 and W17 candidates before seeking user score 0-5 or app usage.",
+    "Do not reacquire or duplicate already user-rated 5/5 Zurbarán Saint Lucy NGA 12209; link to Saint Lucy subjects.",
+    "Strictly preserve existing zero-two exclusions and workshop/source painting identity, especially French cultural-historical saint paintings.",
+    "Verify exact cross-module reuse and 1962 observed principal/appointed Gospel before future release.",
+    "W16 and W17 source-matching is separate from new originals 222 queue and existing 281 image-registry entries; reconcile identities first."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -115,12 +115,25 @@
     "referenceBatch": "data/calendar/sacred-art-subject-gap-fill-wave16-20261013.v1.json",
     "baselinePreviouslyEmpty235SubjectSlots": 107,
     "ofPreviouslyEmptySourceSourcedForFurtherImageAndRatingReview": 21,
-    "remainingPreviouslyEmptyWithoutDocumentedBatchCandidate": 86,
+    "remainingPreviouslyEmptyWithoutDocumentedBatchCandidate": 75,
     "reusedExistingMasterSourceSubjectLinks": 12,
     "newMuseumOrFrenchHeritageOrCustodianResearchObjectLeads": 19,
     "importToResearchQueue222": false,
     "whySeparate": "Subject-first research suggestions must be user-vetted and deduplicated before conversion into canonical physical art master; source discovery must not imply production image or successful download.",
     "userRatingMutations": 0,
-    "productionArtMutations": 0
+    "productionArtMutations": 0,
+    "latestWave": "data/calendar/sacred-art-subject-gap-fill-wave17-20261014.v1.json",
+    "wave17NewOriginalCandidateResearchLeads": 21,
+    "wave17NewlySourceLinkedPreviouslyEmptySubjectSlots": 11,
+    "wave16And17SourceLinkedFormerlyEmptySubjects": 32,
+    "existingCanonicalReuseLinksFromWave17": 11,
+    "excludedUser0to2ArtworkIdsExplicitlyHeldInWave17": [
+      "met-436982",
+      "met-436050",
+      "met-437273"
+    ],
+    "userRatedFiveLucyExisting": "nga-12209",
+    "wave17NoNewSourceJPEGsOrLicensingApprovals": true,
+    "olderNewLeadQueue222NotAppended": true
   }
 }
