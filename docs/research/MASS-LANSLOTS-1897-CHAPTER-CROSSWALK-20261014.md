@@ -124,6 +124,14 @@ A repository [source-critical focused regression test](../../tests/mass-lanslots
 
 A [focused ten-case reconciliation regression](../../tests/mass-lanslots-critical-reconciliation.mjs) checks source locators, present canonical ownership, inherited Guéranger source IDs, the normative Joseph insertion, and the promotion locks. **Research records are still draft**; neither the full Node suite nor 404-page scan-image collation has been certified in this batch.
 
+## Independent Catholic Bible-text validation — source distinctions
+
+Ten selected passages from the 69-source Lanslots register have now been checked **independently in traditional Catholic biblical text**, with direct witnesses and separate evidence status: [10-verse crosscheck register](../../data/research/mass-lanslots-1897-independent-bible-spotchecks.v1.json). The checks cover Psalm 96:11; Ecclesiasticus/Sirach 24:18; Psalm 103:13–15; 1 Corinthians 10:17 and 11:28–29; Hebrews 7:27; Leviticus 8:14; Psalm 109:4; Psalm 25:6–12; and Isaiah 6:3. Where possible, both the Douay-Rheims translation and Vulgate were inspected. The underlying external witness links are preserved in each JSON record.
+
+These checks verify **what the Bible actually says**, **not** that a printed source page of Lanslots has been visually certified. The distinction is particularly important where the original OCR mangles Roman numerals: the phrase “light is risen to the just” agrees with Psalm 96:11, but the corresponding 1897 scanned number is not yet certified. Sirach 24:18 matches the rose plant in Jericho specifically under traditional Douay-Rheims/Vulgate numbering; modern English Bibles may shift the verse. The bread and wine of Psalm 103 are primarily in verses 14–15, rather than all in verse 13. Leviticus 8:14 records hands placed on a sacrificial animal, but not the historic derivation of the Roman priest's `Hanc igitur` gesture.
+
+A focused research test now checks that these ten independent witnesses attach to existing source IDs **without elevating independent biblical wording checks into original-publication certification**. External historical corroboration additionally confirms the dated Joseph decree: [Congregation of Rites, 13 November 1962](https://oud.rkdocumenten.nl/rkdocs/index.php?doc=2641&mi=600) alongside the [ICRSP French source](https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret). The current Canon's correct amended reading remains intact.
+
 ## Integration disposition
 
 - **Documented now:** 25 original OCR chapter headings; 69 individual Scripture reference/allusion records across 18 chapters plus the introduction; seven additional chapter-level theological/source-context records with bilingual drafts; 16 reclassified first-pass topical claim records. The precise 39-step source-first mapping is preserved. Source authority, explicit quotations, allusions and editorially supplied parallels remain separated.
