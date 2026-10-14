@@ -25,13 +25,14 @@
       "sourceSection": "VIII.2",
       "subject": "ROMAN_PONTIFF_AND_LOCAL_ORDINARY_FORMULA",
       "decision": "SOURCE_RULE_RESOLVED_COPY_APPROVAL_PENDING",
-      "rule": "Mention the Roman Pontiff unless the Apostolic See is vacant. Mention the Ordinary of the actual place of celebration, not a different superior, subject to vacancy/Rome and a celebrant who is a bishop or the Supreme Pontiff. Never infer names from today's date or a guessed jurisdiction.",
+      "rule": "Mention the Roman Pontiff except while the Apostolic See is vacant. Mention the Ordinary of the place of celebration, not a different superior; VIII.2 specifically prescribes omission when that Ordinary has died, and for celebration at Rome. Episcopally-ranked celebrants replace the Ordinary slot with the self formula; the Pope replaces both slots. Resolve papal, ordinary and celebrant substitution components independently, not by one mutually exclusive fallback branch. Do not infer names or other vacancy causes.",
       "inputs": [
         "APOSTOLIC_SEE_STATUS",
         "CELEBRATION_LOCATION_ROMA_OR_OTHER",
         "LOCAL_ORDINARY_SEE_STATUS",
         "CELEBRANT_RANK",
-        "EXPLICIT_LITURGICAL_JURISDICTION"
+        "EXPLICIT_LITURGICAL_JURISDICTION",
+        "LOCAL_VACANCY_CAUSE_VERIFIED_FOR_DECEASED_ORDINARY"
       ],
       "branches": [
         "ORDINARY_FORM",
@@ -46,7 +47,7 @@
         "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
         "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
       ],
-      "releaseGate": "FORMULA_MUST_USE_VERIFIED_CELEBRANT_AND_SEE_CONTEXT"
+      "releaseGate": "SEPARATE_PAPAL_AND_ORDINARY_NAME_COMPONENTS_WITH_VERIFIED_CELEBRANT_SEE_AND_VACANCY_CAUSE"
     },
     {
       "id": "AO.CANON.FORM.002",

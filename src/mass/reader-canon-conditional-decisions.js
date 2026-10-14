@@ -71,11 +71,33 @@ export function createCanonConditionalDecisionController(data){
      actor:"NOT_ASSUMED",personalSpeakerResolved:false,canPublish:false,isObservedNow:false};
    if(id==="AO.SM.C0153"){
      const v=context;
-     const resolved=v.liturgicalJurisdictionVerified===true&&
+     const hasContext=v.liturgicalJurisdictionVerified===true&&
        ["OCCUPIED","VACANT"].includes(v.apostolicSeeStatus)&&
        ["OCCUPIED","VACANT"].includes(v.localSeeStatus)&&
        ["ROME","OUTSIDE_ROME"].includes(v.location)&&
        ["PRESBYTER","BISHOP","POPE"].includes(v.celebrantRank);
+     // Ritus VIII.2 explicitly specifies a deceased diocesan ordinary.
+     // A generic vacancy flag alone is insufficient to certify that case.
+     const ordinaryNeedsVacancyProof=v.celebrantRank==="PRESBYTER"&&
+       v.location==="OUTSIDE_ROME"&&v.localSeeStatus==="VACANT";
+     const localCauseVerified=!ordinaryNeedsVacancyProof||
+       v.localVacancyReason==="ORDINARY_DECEASED";
+     const impossiblePapalVacancy=v.celebrantRank==="POPE"&&
+       v.apostolicSeeStatus==="VACANT";
+     const resolved=hasContext&&localCauseVerified&&!impossiblePapalVacancy;
+     const papalCommemoration=resolved?(
+       v.celebrantRank==="POPE"?"REPLACED_BY_PAPAL_CELEBRANT_FORMULA":
+       v.apostolicSeeStatus==="VACANT"?"OMITTED_APOSTOLIC_SEE_VACANT":
+       "VERIFIED_PONTIFF_NAME_REQUIRED"):null;
+     const ordinaryCommemoration=resolved?(
+       v.celebrantRank==="POPE"?"REPLACED_BY_PAPAL_CELEBRANT_FORMULA":
+       v.celebrantRank==="BISHOP"?"REPLACED_BY_EPISCOPAL_CELEBRANT_FORMULA":
+       v.location==="ROME"?"OMITTED_ROMAN_CELEBRATION":
+       v.localSeeStatus==="VACANT"?"OMITTED_ORDINARY_DECEASED":
+       "VERIFIED_LOCAL_ORDINARY_NAME_REQUIRED"):null;
+     const substitution=resolved?(
+       v.celebrantRank==="POPE"?"PAPAL_SELF_FORMULA":
+       v.celebrantRank==="BISHOP"?"EPISCOPAL_SELF_FORMULA":null):null;
      result={...result,sourceContextResolved:resolved,
        branch:!resolved?"CONDITIONS_NOT_VERIFIED":
         v.celebrantRank==="POPE"?"CELEBRANT_POPE":
@@ -83,6 +105,13 @@ export function createCanonConditionalDecisionController(data){
         v.apostolicSeeStatus==="VACANT"?"APOSTOLIC_SEE_VACANT":
         v.location==="ROME"?"ROMAN_LOCATION":
         v.localSeeStatus==="VACANT"?"LOCAL_SEE_VACANT":"ORDINARY_FORM",
+       // The legacy branch is a summary, not a complete formula resolver:
+       // vacant papal and diocesan sees may coexist independently.
+       formulaComponents:Object.freeze({
+         papalCommemoration,ordinaryCommemoration,
+         celebrantSubstitution:substitution,
+       }),
+       localityReasonSourceVerified:resolved,
        actor:"PRIEST",formulaText:null};
    }else if(id==="AO.SM.C0161"){
      const variant=context.hancSourceVariant;

@@ -34,8 +34,8 @@ const normal={apostolicSeeStatus:"OCCUPIED",localSeeStatus:"OCCUPIED",
 assert.equal(r("AO.SM.C0153","LOW",normal).branch,"ORDINARY_FORM");
 assert.equal(r("AO.SM.C0153","LOW",{...normal,apostolicSeeStatus:"VACANT"}).branch,
  "APOSTOLIC_SEE_VACANT");
-assert.equal(r("AO.SM.C0153","LOW",{...normal,localSeeStatus:"VACANT"}).branch,
- "LOCAL_SEE_VACANT");
+assert.equal(r("AO.SM.C0153","LOW",{...normal,localSeeStatus:"VACANT",
+ localVacancyReason:"ORDINARY_DECEASED"}).branch,"LOCAL_SEE_VACANT");
 assert.equal(r("AO.SM.C0153","LOW",{...normal,location:"ROME"}).branch,
  "ROMAN_LOCATION");
 assert.equal(r("AO.SM.C0153","SOLEMN",{...normal,celebrantRank:"BISHOP"}).branch,
@@ -44,6 +44,51 @@ assert.equal(r("AO.SM.C0153","SOLEMN",{...normal,celebrantRank:"POPE"}).branch,
  "CELEBRANT_POPE");
 assert.equal(r("AO.SM.C0153","LOW",{...normal,liturgicalJurisdictionVerified:false}).branch,
  "CONDITIONS_NOT_VERIFIED");
+const ordinaryParts=r("AO.SM.C0153","LOW",normal);
+assert.deepEqual(ordinaryParts.formulaComponents,{
+ papalCommemoration:"VERIFIED_PONTIFF_NAME_REQUIRED",
+ ordinaryCommemoration:"VERIFIED_LOCAL_ORDINARY_NAME_REQUIRED",
+ celebrantSubstitution:null,
+});
+const romanParts=r("AO.SM.C0153","LOW",{...normal,location:"ROME"});
+assert.equal(romanParts.formulaComponents.papalCommemoration,
+ "VERIFIED_PONTIFF_NAME_REQUIRED");
+assert.equal(romanParts.formulaComponents.ordinaryCommemoration,
+ "OMITTED_ROMAN_CELEBRATION",
+ "Celebrating in Rome does not delete the Pope's commemoration");
+const deceased=r("AO.SM.C0153","LOW",{...normal,localSeeStatus:"VACANT",
+ localVacancyReason:"ORDINARY_DECEASED"});
+assert.equal(deceased.sourceContextResolved,true);
+assert.equal(deceased.formulaComponents.ordinaryCommemoration,"OMITTED_ORDINARY_DECEASED");
+const vagueVacancy=r("AO.SM.C0153","LOW",{...normal,localSeeStatus:"VACANT"});
+assert.equal(vagueVacancy.sourceContextResolved,false,
+ "Ritus VIII.2 specifies a deceased Ordinary: generic vacancy cannot become source-certified");
+assert.deepEqual(vagueVacancy.formulaComponents,{
+ papalCommemoration:null,ordinaryCommemoration:null,celebrantSubstitution:null});
+const bothVacant=r("AO.SM.C0153","LOW",{...normal,apostolicSeeStatus:"VACANT",
+ localSeeStatus:"VACANT",localVacancyReason:"ORDINARY_DECEASED"});
+assert.equal(bothVacant.sourceContextResolved,true);
+assert.equal(bothVacant.formulaComponents.papalCommemoration,
+ "OMITTED_APOSTOLIC_SEE_VACANT");
+assert.equal(bothVacant.formulaComponents.ordinaryCommemoration,
+ "OMITTED_ORDINARY_DECEASED");
+const bishop=r("AO.SM.C0153","SOLEMN",{...normal,celebrantRank:"BISHOP",
+ apostolicSeeStatus:"VACANT",localSeeStatus:"VACANT"});
+assert.equal(bishop.sourceContextResolved,true);
+assert.equal(bishop.formulaComponents.papalCommemoration,
+ "OMITTED_APOSTOLIC_SEE_VACANT");
+assert.equal(bishop.formulaComponents.ordinaryCommemoration,
+ "REPLACED_BY_EPISCOPAL_CELEBRANT_FORMULA");
+assert.equal(bishop.formulaComponents.celebrantSubstitution,"EPISCOPAL_SELF_FORMULA");
+const pope=r("AO.SM.C0153","SOLEMN",{...normal,celebrantRank:"POPE"});
+assert.equal(pope.formulaComponents.papalCommemoration,
+ "REPLACED_BY_PAPAL_CELEBRANT_FORMULA");
+assert.equal(pope.formulaComponents.ordinaryCommemoration,
+ "REPLACED_BY_PAPAL_CELEBRANT_FORMULA");
+assert.equal(pope.formulaText,null);
+assert.equal(r("AO.SM.C0153","SOLEMN",{...normal,celebrantRank:"POPE",
+ apostolicSeeStatus:"VACANT"}).sourceContextResolved,false,
+ "Pope celebrant and vacant Apostolic See are mutually inconsistent");
 assert.equal(r("AO.SM.C0161","LOW").sourceContextResolved,false);
 assert.equal(r("AO.SM.C0161","LOW",{hancSourceVariant:"ORDINARY",sourceSelectionVerified:true}).branch,
  "NORMAL_HANC_IGITUR");
@@ -83,7 +128,7 @@ for(const form of ["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
 assert.equal(r("AO.SM.C0207","LOW").actor,"MINISTERS");
 const french=sources.frenchReview.rows;
 const formula=french.find(x=>x.id==="AO.CANON.R62.004");
-assert.match(formula.revisedFrenchRubric,/siège local est vacant/);
+assert.match(formula.revisedFrenchRubric,/évêque ordinaire du lieu est décédé/);
 // 1962 source-precision audit: preserve actual gesture ordering, distinct
 // pontifical/diocesan exceptions, small vs major elevations, and hand/voice
 // ownership at the end of the Canon. These remain draft-only.
