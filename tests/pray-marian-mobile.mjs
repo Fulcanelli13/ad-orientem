@@ -117,7 +117,7 @@ try{
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
  const opening=page.locator("body > .aoDevoCinematicOpening[data-ao-devotional-scene='opening']");
  await opening.waitFor({state:"attached",timeout:2200});
- assert.ok(["nga-46","met-437250","met-436791","met-436502"].includes(
+ assert.ok(["nga-46","met-437250","met-436791","met-436502","cma-127572"].includes(
    await opening.getAttribute("data-ao-scene-art")),"Opening selected an unreviewed painting");
  await opening.locator(".aoDevoCinematicSkip").evaluate(x=>x.click());
  await opening.waitFor({state:"detached",timeout:2200});
