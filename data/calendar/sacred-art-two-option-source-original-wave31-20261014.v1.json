@@ -1,0 +1,58 @@
+{
+  "schema": "AO_SACRED_ART_TWO_OPTIONS_W31_V1",
+  "date": "2026-10-14",
+  "scope": "Two distinct physical original works for the existing 75 major saints and Doctors; no scoring or additional compulsory saints.",
+  "candidateOriginals": [
+    {
+      "id": "G31-001",
+      "subjectId": "SNT-DC-23",
+      "artist": "Anonymous Northern Netherlands",
+      "title": "Petrus Canisius (1521–97), portrait miniature",
+      "institution": "Rijksmuseum",
+      "inventory": "SK-A-4423",
+      "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Petrus-Canisius-1521-97-Geestelijke-en-schrijver-te-Nijmegen--62669513b330202b4091495bd20e3939",
+      "medium": "oil on copper",
+      "date": "1600–1699",
+      "evidence": "Museum names Canisius and transcribes identifying inscription V.P. Petrus Canisius; distinct from Munich Alte Pinakothek WAF 680 A signed 1546 painted linden panel.",
+      "usage": "SECOND_EXACT_SAINT_ORIGINAL_RESEARCH_OPTION",
+      "qualityHold": "Small 13.6x10.9cm miniature may not yield large phone hero master; institution labels media public domain."
+    },
+    {
+      "id": "G31-002",
+      "subjectId": "SNT-DC-17",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "Saint Isidore of Seville, roundel in Chapter House",
+      "institution": "Seville Cathedral",
+      "inventory": "Sala Capitular Murillo 1668",
+      "sourceUrl": "https://www.catedraldesevilla.es/en/the-cathedral/artistic-heritage/painting/",
+      "medium": "painted roundel",
+      "date": "1668",
+      "evidence": "Cathedral inventories separate 1655 Murillo Saint Isidore in Sacristía Mayor and 1668 Murillo Saint Isidore in Sala Capitular; two physical paintings of the Doctor, not farmer Isidore.",
+      "usage": "SECOND_EXACT_SAINT_ORIGINAL_RESEARCH_OPTION",
+      "qualityHold": "Confirm painting-only photo/rights, small roundel composition."
+    }
+  ],
+  "excludedOrHeld": [
+    {
+      "subjectId": "SNT-DC-15",
+      "url": "https://pop.culture.gouv.fr/notice/palissy/IM02001844",
+      "status": "NOT_COUNTABLE_UNTIL_SAINT_IDENTITY_RECONCILED",
+      "reason": "Record alternately says Gregory Nazianzen and a PONTIFF Gregory among four Latin Fathers; iconographic text explicitly pope with Latin Gregory. Conflicting state record and heavily repainted."
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "url": "https://www.parismuseescollections.paris.fr/fr/petit-palais/oeuvres/saint-athanase",
+      "status": "ICON_ONLY_NONNATURALISTIC_ALTERNATE",
+      "reason": "Museum PPP4896 is 1728 Greek tempera-on-wood icon, not preferred naturalistic oil portrait."
+    }
+  ],
+  "counts": {
+    "newExactCountableOriginals": 2,
+    "identityOrStyleHolds": 2,
+    "newScores": 0,
+    "newMandatorySubjects": 0,
+    "newImageFiles": 0,
+    "releaseApprovals": 0
+  },
+  "lineage": "W31 separate from concurrently committed W30; preserve W30 original objects and avoid overlapping IDs."
+}
