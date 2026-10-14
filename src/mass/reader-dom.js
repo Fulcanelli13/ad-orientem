@@ -506,6 +506,59 @@ button.ao-schola-control{cursor:pointer}
 }
 @keyframes aoElevation{0%{opacity:0;transform:translateY(28px) scale(.72)}16%{opacity:1;transform:translateY(0) scale(1.03)}72%{opacity:1;transform:translateY(-5px) scale(1)}100%{opacity:0;transform:translateY(-16px) scale(.96)}}
 
+/* First-pass sacred LIVE cinematic language: retain the actual prayer in view.
+   This is an atmospheric focus layer, NOT an observed priest-action animation.
+   Icon emphasis reuses the existing R17 rail/asset-bank icon identity. */
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HOST_WORDS"] .ao-card-viewport,
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="CHALICE_WORDS"] .ao-card-viewport{
+  background:radial-gradient(ellipse 54% 41% at 50% 43%,rgba(208,190,147,.065),transparent 78%);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HOST_ELEVATION"] .ao-card-viewport{
+  background:radial-gradient(ellipse 45% 38% at 52% 43%,rgba(215,197,151,.11),transparent 84%);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="CHALICE_ELEVATION"] .ao-card-viewport{
+  background:radial-gradient(ellipse 47% 40% at 52% 43%,rgba(176,170,145,.10),transparent 84%);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="INCARNATUS_GESTURE"] .ao-card-viewport{
+  background:radial-gradient(ellipse 48% 35% at 50% 44%,rgba(190,170,133,.075),transparent 80%);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HOST_WORDS"] .ao-reader-paragraph[data-active="true"] .ao-line-primary,
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="CHALICE_WORDS"] .ao-reader-paragraph[data-active="true"] .ao-line-primary{
+  color:#f4eedb;text-shadow:0 0 18px rgba(218,198,149,.19);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HOST_ELEVATION"] .ao-reader-paragraph[data-active="true"] .ao-line-primary,
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="CHALICE_ELEVATION"] .ao-reader-paragraph[data-active="true"] .ao-line-primary{
+  color:#f7f0df;text-shadow:0 0 16px rgba(210,192,143,.12);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="INCARNATUS_GESTURE"] .ao-reader-paragraph[data-active="true"] .ao-line-primary{
+  color:#f3ebd8;text-shadow:0 0 12px rgba(207,181,138,.10);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HOST_ELEVATION"] .ao-rail-right .ao-rail-item[data-channel="priest-action"][data-active="true"] .ao-icon-mask,
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="CHALICE_ELEVATION"] .ao-rail-right .ao-rail-item[data-channel="priest-action"][data-active="true"] .ao-icon-mask{
+  transform-origin:50% 55%;animation:aoCinematicIconHold 3.35s ease-in-out both;
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="INCARNATUS_GESTURE"] .ao-rail-left .ao-rail-item[data-channel="gesture"][data-active="true"] .ao-icon-mask{
+  transform-origin:50% 60%;animation:aoCinematicPostureCue .75s ease-out both;
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HOST_ELEVATION"] .ao-cinematic,
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="CHALICE_ELEVATION"] .ao-cinematic{display:none!important}
+@keyframes aoCinematicIconHold{
+  0%{opacity:.65;transform:translateY(3px) scale(.96)}
+  20%{opacity:1;transform:translateY(-3px) scale(1.14)}
+  78%{opacity:1;transform:translateY(-3px) scale(1.12)}
+  100%{opacity:1;transform:none}
+}
+@keyframes aoCinematicPostureCue{
+  0%{transform:translateY(-4px);opacity:.7}
+  70%{transform:translateY(2px);opacity:1}
+  100%{transform:none;opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+  .ao-reader-shell[data-cinematic-scene] .ao-rail-item .ao-icon-mask{animation:none!important;transform:none!important}
+  .ao-reader-shell[data-cinematic-scene] .ao-card-viewport{animation:none!important}
+}
+
+
 .ao-guide-popover{
   position:absolute;inset:0;z-index:35;background:rgba(1,4,2,.74);backdrop-filter:blur(7px);
   display:grid;align-items:end;justify-items:stretch;padding:0
@@ -1142,6 +1195,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     attentionIconKey:moment.attentionIconKey ?? null,
     bell:moment.bell ?? null,
     cinematic:moment.cinematic ?? null,
+    cinematicScene:moment.cinematicScene ?? null,
     priestPosition:persist(moment.priestPosition, previous.priestPosition),
     priestAction:moment.priestAction ?? null,
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
@@ -2512,11 +2566,18 @@ export function createReaderDomAdapter({
     const bellRail=root.querySelector('[data-channel="bell"]');
     if(bellRail)bellRail.dataset.major=String(Boolean(visibleBell&&majorCue.has(visibleBell.cueId??activeCue)));
 
+    const sceneId=String(current.cinematicScene?.id??"NONE");
+    const sceneShell=root.querySelector("[data-ao-reader-shell]");
+    if(sceneShell)sceneShell.dataset.cinematicScene=sceneId;
     const cinematic=root.querySelector('[data-role="cinematic"]');
     if(cinematic){
       const visible=Boolean(current.cinematic);
       const kind=visible ? String(current.cinematic.kind??"TRANSIENT") : "";
-      cinematic.hidden=!visible;
+      // Major Elevations illuminate the existing reader rather than blacking
+      // out the Latin Consecration and gesture rails.
+      const focusElevation=sceneId==="HOST_ELEVATION"||sceneId==="CHALICE_ELEVATION";
+      cinematic.hidden=!visible||focusElevation;
+      cinematic.setAttribute?.("aria-hidden",String(!visible||focusElevation));
       cinematic.dataset.kind=kind;
       setText(root,"cinematic-title",visible ? current.cinematic.title : null);
       setText(root,"cinematic-sub",visible ? current.cinematic.subtitle : null);
