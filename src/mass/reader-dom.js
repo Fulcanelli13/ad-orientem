@@ -179,7 +179,26 @@ const SHELL_STYLE = `
 .ao-reader-shell .ao-line-secondary{font-size:.73em;line-height:1.5;font-style:italic}
 .ao-reader-shell .ao-reader-paragraph[data-kind="RUBRIC"]{font-family:var(--ao-missal-face);font-style:italic;font-weight:400;
   border-left-color:color-mix(in srgb,var(--ao-mass-accent) 50%,transparent);background:color-mix(in srgb,var(--ao-mass-accent) 6%,transparent)}
-.ao-reader-shell .ao-reader-paragraph[data-kind="RUBRIC"]::before{color:var(--ao-mass-accent-text)}
+.ao-reader-shell .ao-canon-inline-rubrics{
+  display:block;margin:11px 0 2px;padding:8px 11px;
+  border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 42%,transparent);
+  color:#b7c2b9;background:color-mix(in srgb,var(--ao-mass-accent) 4%,transparent);
+  font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.01em
+}
+.ao-canon-inline-heading{display:block;margin-bottom:3px;color:var(--ao-mass-accent-text);font:700 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em}
+.ao-canon-inline-actions{display:block;white-space:normal}
+.ao-canon-inline-source{display:inline-block;margin-top:4px;color:#aabdb0;text-underline-offset:3px;font:500 10px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-reader-shell[data-mode="SIMPLE"] .ao-canon-inline-rubrics{font-size:10px}
+.ao-reader-shell[data-canon-inline="true"] .ao-state-ribbon{grid-template-columns:minmax(0,1fr) auto;height:48px;min-height:48px;align-items:center}
+.ao-reader-shell[data-canon-inline="true"] .ao-state-cell{display:none}
+.ao-state-source{display:none}
+.ao-reader-shell[data-canon-inline="true"] .ao-state-source{
+  display:block;padding:0 14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  color:var(--ao-mass-accent-text);font:600 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.06em
+}
+.ao-reader-shell[data-canon-inline="true"] .ao-state-guide{height:48px;border-left:1px solid rgba(255,255,255,.06)}
+.ao-reader-shell[data-canon-inline="true"] .ao-progress-track{top:106px}
+.ao-reader-paragraph[data-kind="RUBRIC"]::before{color:var(--ao-mass-accent-text)}
 .ao-reader-shell .ao-prayer-title,.ao-reader-shell .ao-section-jump,
 .ao-reader-shell .ao-cinematic-title{font-family:var(--ao-missal-display)}
 .ao-reader-shell .ao-reader-paragraph[data-opening="true"] .ao-line-primary::first-letter{
@@ -1077,6 +1096,18 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       sourcePath:p.sourcePath??null,
       sourceAnchorCueId:p.sourceAnchorCueId??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
+      publishedCanonRubrics:Object.freeze((Array.isArray(p.publishedCanonRubrics)?p.publishedCanonRubrics:[])
+        .filter(event=>event?.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
+          event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
+          event.observedNow===false && typeof event.shortAction==="string" &&
+          event.shortAction.trim() &&
+          (p.sourceCueIds??[]).includes(event.sourceCueId))
+        .map(event=>Object.freeze({
+          id:String(event.id),shortAction:event.shortAction,
+          sourceCueId:event.sourceCueId,observedNow:false,
+          sourceUrl:typeof event.sourceUrl==="string" &&
+            event.sourceUrl.startsWith("https://") ? event.sourceUrl : null,
+        }))),
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
 
@@ -1216,6 +1247,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   </header>
 
   <div class="ao-state-ribbon" aria-live="polite">
+    <span class="ao-state-source" data-role="canon-source-summary">CANON · RITUS SERVANDUS (1962)</span>
     <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
       <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span></span>
@@ -2077,6 +2109,7 @@ export function createReaderDomAdapter({
         navigateBy(1,"click");
         return;
       }
+      if(event.target?.closest?.('[data-rubric-source-link="true"]'))return;
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
       if(translatable && mode!=="MISSAL"){
         toggleReaderTranslation(translatable);
@@ -2500,6 +2533,9 @@ export function createReaderDomAdapter({
     // Only a genuine card transition invalidates its contextual content.
     if(pop && current.cardUpdate){pop.hidden=true;pop.replaceChildren?.();}
 
+    const shell=root.querySelector("[data-ao-reader-shell]");
+    if(shell && current.cardUpdate)shell.dataset.canonInline=String(
+      current.paragraphs.some(p=>p.publishedCanonRubrics?.length>0));
     const body=root.querySelector('[data-role="paragraphs"]');
     if(body && current.cardUpdate){
       body.replaceChildren();
@@ -2667,6 +2703,31 @@ export function createReaderDomAdapter({
             secondary.textContent=parallel;
             decorateLiturgicalSpeaker(secondary,parallel);
             node.append(secondary);
+          }
+          if(p.publishedCanonRubrics?.length){
+            const note=doc.createElement("span");
+            note.className="ao-canon-inline-rubrics";
+            note.dataset.sourceAuthority="MR62_RITUS";
+            note.dataset.observedNow="false";
+            const heading=doc.createElement("span");
+            heading.className="ao-canon-inline-heading";
+            heading.textContent=frenchReader?"PRÊTRE · RUBRIQUE DE 1962":"PRIEST · 1962 RUBRIC";
+            const actions=doc.createElement("span");
+            actions.className="ao-canon-inline-actions";
+            actions.textContent=p.publishedCanonRubrics.map(event=>event.shortAction).join(" · ");
+            note.append(heading,actions);
+            const sourceUrl=p.publishedCanonRubrics[0]?.sourceUrl;
+            if(sourceUrl){
+              const source=doc.createElement("a");
+              source.className="ao-canon-inline-source";
+              source.dataset.rubricSourceLink="true";
+              source.href=sourceUrl;
+              source.target="_blank";
+              source.rel="noopener noreferrer";
+              source.textContent="Ritus servandus · 1962";
+              note.append(source);
+            }
+            node.append(note);
           }
           body.append(node);
         }
