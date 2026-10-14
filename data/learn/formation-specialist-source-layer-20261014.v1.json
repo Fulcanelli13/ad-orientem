@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 32,
+  "source_count": 34,
   "sources": [
     {
       "id": "S01",
@@ -389,6 +389,30 @@
       "access": "direct_full_text_opened",
       "chapter_passage_certified": false,
       "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S33",
+      "title": "Humanae vitae: Fifty Years Later",
+      "author": "Charles E. Curran",
+      "year": "2018",
+      "role": "catholic_theological_dissent_original_argument",
+      "url": "https://theologicalstudies.net/wp-content/uploads/2023/02/2-Curran-Humanae-Vitae.pdf",
+      "scope": "open journal 23-page essay: Curran's own retrospect and argument that teaching on contraception should be reconsidered; esp pp 520–522 and subsequent sections",
+      "access": "pdf_opened_p0_screenshot_verified_text_extracted",
+      "chapter_passage_certified": false,
+      "annotation": "Original authorial 2018 position, not itself the original 1968 Washington Statement; check actual 1968 text separately."
+    },
+    {
+      "id": "S34",
+      "title": "Utilitarianism",
+      "author": "John Stuart Mill",
+      "year": "1861",
+      "role": "noncatholic_opposing_ethical_foundation_original",
+      "url": "https://www.gutenberg.org/files/11224/11224-h/11224-h",
+      "scope": "chapters II and V, classical principle of utility and relation to justice",
+      "access": "full_html_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Defends general utilitarian theory; must not attribute contemporary Catholic sexual ethics positions to Mill without evidence."
     }
   ],
   "priority_questions": [
@@ -914,16 +938,18 @@
       "id": "CSE006",
       "source_ids": [
         "S21",
-        "S27"
+        "S27",
+        "S34"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "noncatholic_opposing_ethical_foundation_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -932,16 +958,18 @@
       "id": "CSE007",
       "source_ids": [
         "S21",
-        "S27"
+        "S27",
+        "S34"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "noncatholic_opposing_ethical_foundation_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -950,16 +978,18 @@
       "id": "CSE008",
       "source_ids": [
         "S21",
-        "S27"
+        "S27",
+        "S34"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "noncatholic_opposing_ethical_foundation_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -968,16 +998,18 @@
       "id": "CSE009",
       "source_ids": [
         "S21",
-        "S27"
+        "S27",
+        "S34"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "noncatholic_opposing_ethical_foundation_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -986,16 +1018,18 @@
       "id": "CSE010",
       "source_ids": [
         "S21",
-        "S27"
+        "S27",
+        "S34"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "noncatholic_opposing_ethical_foundation_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -1004,16 +1038,18 @@
       "id": "CSE016",
       "source_ids": [
         "S21",
-        "S27"
+        "S27",
+        "S33"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "catholic_theological_dissent_original_argument"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -1022,16 +1058,18 @@
       "id": "CSE017",
       "source_ids": [
         "S21",
-        "S27"
+        "S27",
+        "S33"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "catholic_theological_dissent_original_argument"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -1204,16 +1242,18 @@
       "id": "CSE061",
       "source_ids": [
         "S19",
-        "S20"
+        "S20",
+        "S33"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "magisterial_moral_original"
+        "magisterial_moral_original",
+        "catholic_theological_dissent_original_argument"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -1221,15 +1261,17 @@
     {
       "id": "CSE063",
       "source_ids": [
-        "S20"
+        "S20",
+        "S33"
       ],
       "source_roles": [
-        "magisterial_moral_original"
+        "magisterial_moral_original",
+        "catholic_theological_dissent_original_argument"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
       "actual_answer_checked": false,
-      "opposing_view_sourced": false,
+      "opposing_view_sourced": true,
       "independent_outside_support_required": true,
       "risk": "doctrinal_moral_and_opponent_comparison",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
@@ -1572,7 +1614,7 @@
     }
   ],
   "counts": {
-    "sources": 32,
+    "sources": 34,
     "mapped_questions": 65,
     "church_crisis": 25,
     "sexual_ethics": 40,
@@ -1587,6 +1629,7 @@
     "Sources sharing the same ecclesial authorship or intellectual tradition are not automatically independent evidentiary corroborations",
     "For medical, safeguarding, and sex-development matters obtain qualified original empirical and clinical evidence, distinguish descriptive science from Church moral positions, and flag outdated assertions",
     "Full paragraph-by-paragraph audit and English/French editorial parity required prior to any answer edit",
-    "Do not change live Q&A or add dossiers; this PR is research discovery only"
+    "Do not change live Q&A or add dossiers; this PR is research discovery only",
+    "Charles Curran 2018 essay records his current argument and description of earlier dissent, not a verbatim witness for the 1968 group declaration."
   ]
 }
