@@ -18,17 +18,21 @@
     "canonSourcePath": "data/presentation/reader-canon-source-map.v1.json",
     "formationPath": "data/learn/mass-formation-campion.v1.json",
     "sourceFirst39CrosswalkPath": "data/research/mass-lanslots-1897-source-first39-map.v1.json",
-    "liveModelCorrection": "Current src/mass/reader-live-source.js projects 39 source-first steps (30 base, 5 replaced Canon macro cards with 14 Canon segments). Historical 48 is optional archaeology, not live authority."
+    "liveModelCorrection": "Current src/mass/reader-live-source.js projects 39 source-first steps (30 base, 5 replaced Canon macro cards with 14 Canon segments). Historical 48 is optional archaeology, not live authority.",
+    "originalWebOcrWitnessBatch": "data/research/mass-lanslots-1897-ocr-scripture-batch01.v1.json"
   },
   "originalSourceAccess": {
     "completePdfAcquired": false,
     "completeOcrAcquired": false,
     "webPdfTooLargeForInspection": true,
-    "restriction": "Do not upgrade provisional OCR excerpts to certified original-page witness; first seven rows reference previous indexed excerpts not fully revalidated.",
+    "restriction": "11,057-line full-text OCR became web-readable via the Internet Archive FULL TEXT link. All 16 named claims have since been spot-checked in that OCR and now carry source line ranges. Complete machine-readable download and visual PDF page verification remain unavailable. Do not mark full bibliography exhaustive.",
     "fullCitationInventory": false,
     "visualPageChecks": 0,
     "indexedFullPdfChapterITextExcerptVerified": true,
-    "independentlyVisuallyVerifiedPageImages": 0
+    "independentlyVisuallyVerifiedPageImages": 0,
+    "fullOcrAvailableOnline": true,
+    "fullOcrUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+    "fullWebOcrLines": 11057
   },
   "claimCount": 16,
   "claims": [
@@ -54,13 +58,21 @@
       },
       "disposition": "POTENTIAL_SCRIPTURAL_ENRICHMENT",
       "criticalNote": "Existing evidence describes the ceremony, not necessarily this biblical interpretation.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "AUTHOR_EXPLICIT_REFERENCE",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
-      "sourceFirst39SectionIds": []
+      "sourceFirst39SectionIds": [],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 2141,
+        "webLineEnd": 2163,
+        "evidenceType": "AUTHOR_EXPLICIT_REFERENCE",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-002",
@@ -83,15 +95,23 @@
       },
       "disposition": "RELATED_BUT_DISTINCT_ALLEGORY",
       "criticalNote": "Older St Vincent Ferrer record mentions the Magi at the altar, not the biblical basis of incensation; no historical-origin claim.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "EDITORIAL_NORMALIZED_BIBLICAL_ALLUSION",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.001"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 2145,
+        "webLineEnd": 2151,
+        "evidenceType": "EDITORIAL_NORMALIZED_BIBLICAL_ALLUSION",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-003",
@@ -112,15 +132,23 @@
       },
       "disposition": "NEEDS_EXACT_VERSE",
       "criticalNote": "Book-level mention only in prior OCR excerpt; no verse should be invented.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "BOOK_ONLY_AUTHOR_EXPLICIT",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.001"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 2141,
+        "webLineEnd": 2146,
+        "evidenceType": "BOOK_ONLY_AUTHOR_EXPLICIT",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-004",
@@ -143,16 +171,24 @@
         "formationStageIds": []
       },
       "disposition": "SCRIPTURE_VERSE_ALLOCATION_UNVERIFIED",
-      "criticalNote": "Angel with censer was reportedly in prior OCR excerpt, but Revelation reference is editorial matching, not verified author's explicit citation.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "criticalNote": "Author mentions unnamed Apocalypse censer angel but does NOT supply Revelation 8:3–4 in the inspected paragraph. This numeric identification is editorial, not a claimed direct Lanslots citation.",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "EDITORIAL_NORMALIZED_BIBLICAL_ALLUSION",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.010"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 4065,
+        "webLineEnd": 4074,
+        "evidenceType": "EDITORIAL_NORMALIZED_BIBLICAL_ALLUSION",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-005",
@@ -179,13 +215,21 @@
       },
       "disposition": "RELATED_THEOLOGY_NEW_IMAGE_CANDIDATE",
       "criticalNote": "Underlying doctrine already covered by Formation MF05-C02 and MF06-C01; differentiate typology from Christ dying again.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "EDITORIAL_NORMALIZED_BIBLICAL_ALLUSION",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
-      "sourceFirst39SectionIds": []
+      "sourceFirst39SectionIds": [],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 6713,
+        "webLineEnd": 6721,
+        "evidenceType": "EDITORIAL_NORMALIZED_BIBLICAL_ALLUSION",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-006",
@@ -222,15 +266,23 @@
       },
       "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
       "criticalNote": "Canon is AO.CANON.09, AO.SM.B055, AO.SM.C0186; also Formation MF06-C02. Bible verses are editorial correspondences, not proof of author's individual verse citations.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "CANON_PRAYER_NAMES_NO_VERSE_NUMBERS",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "PRECISE_CANON_SEGMENT_OWNERSHIP_VERIFIED",
       "sourceFirst39SectionIds": [
         "AO.CANON.09"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 6692,
+        "webLineEnd": 6699,
+        "evidenceType": "CANON_PRAYER_NAMES_NO_VERSE_NUMBERS",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-007",
@@ -251,15 +303,23 @@
       },
       "disposition": "NOT_SCRIPTURE_DOCTRINAL_AUTHORITY",
       "criticalNote": "Session XXII chapter 4 is a separate doctrinal witness; verify exact quotation and interpretive scope.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "AUTHOR_EXPLICIT_NONBIBLICAL_REFERENCE",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CANON.01"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 4895,
+        "webLineEnd": 4915,
+        "evidenceType": "AUTHOR_EXPLICIT_NONBIBLICAL_REFERENCE",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-008",
@@ -282,15 +342,23 @@
       },
       "disposition": "RELATED_GUERANGER_SYMBOLISM_SCRIPTURE_NEW_CANDIDATE",
       "criticalNote": "Existing FRG03 mentions relics and altar kiss; the Revelation association requires visual original-text check.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "AUTHOR_EXPLICIT_REFERENCE",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.001"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 573,
+        "webLineEnd": 588,
+        "evidenceType": "AUTHOR_EXPLICIT_REFERENCE",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-009",
@@ -315,15 +383,23 @@
       },
       "disposition": "RELATED_GOSPEL_CONTEXT_SCRIPTURE_NEW_CANDIDATE",
       "criticalNote": "Check whether book explicitly identifies Isaiah in Munda cor meum explanation; existing evidence treats ceremonial Gospel preparation.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "AUTHOR_EXPLICIT_REFERENCE",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.007"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 2841,
+        "webLineEnd": 2875,
+        "evidenceType": "AUTHOR_EXPLICIT_REFERENCE",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-010",
@@ -345,15 +421,23 @@
       },
       "disposition": "POTENTIAL_SCRIPTURAL_ENRICHMENT",
       "criticalNote": "Original-page citation not yet directly checked. Distinguish Sanctus proper from Benedictus.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "AUTHOR_EXPLICIT_REFERENCE",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.013"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 4819,
+        "webLineEnd": 4830,
+        "evidenceType": "AUTHOR_EXPLICIT_REFERENCE",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-011",
@@ -379,15 +463,23 @@
       },
       "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
       "criticalNote": "The liturgical Psalm itself and FRG13 already connect washing and purity; count as evidence enrichment only.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "BOOK_AND_CHAPTER_EXPLICIT_VERSES_EDITORIAL",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.010"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 4164,
+        "webLineEnd": 4180,
+        "evidenceType": "BOOK_AND_CHAPTER_EXPLICIT_VERSES_EDITORIAL",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-012",
@@ -408,16 +500,24 @@
         "formationStageIds": []
       },
       "disposition": "POTENTIAL_SCRIPTURAL_ENRICHMENT",
-      "criticalNote": "The relation of liturgical words to Gospel text is clear but attribution to Lanslots requires source verification.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "criticalNote": "The author explicitly attributes the Benedictus to Matthew 21:9; Mark 11:9–10 is a separate editorial parallel, NOT explicitly attributed to Lanslots in the checked paragraph.",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "MATTHEW_EXPLICIT_MARK_EDITORIAL_PARALLEL",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.013"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 4862,
+        "webLineEnd": 4870,
+        "evidenceType": "MATTHEW_EXPLICIT_MARK_EDITORIAL_PARALLEL",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-013",
@@ -442,15 +542,23 @@
       },
       "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
       "criticalNote": "Do not create a second Agnus Dei explanation; reuse existing French content and source ownership.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "BIBLICAL_TEXT_MATCH_NO_VERSE_PRINTED",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.021"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 8502,
+        "webLineEnd": 8507,
+        "evidenceType": "BIBLICAL_TEXT_MATCH_NO_VERSE_PRINTED",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-014",
@@ -473,15 +581,23 @@
       },
       "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
       "criticalNote": "FRG63 already explains the centurion's humility before celebrant Communion; assess priest/faithful difference.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "MATTHEW_GOSPEL_EXPLICIT_VERSE_EDITORIAL",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.024"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 8888,
+        "webLineEnd": 8912,
+        "evidenceType": "MATTHEW_GOSPEL_EXPLICIT_VERSE_EDITORIAL",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-015",
@@ -507,15 +623,23 @@
       },
       "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
       "criticalNote": "1962 exceptions are normative; John 1 link is already present in the evidence ledger.",
-      "originalTextVerification": "REQUIRED",
-      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "originalTextVerification": "FULL_TEXT_OCR_CONTEXT_VERIFIED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "LITURGICAL_BIBLICAL_TEXT_MATCH",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
       "sourceFirst39SectionIds": [
         "AO.CARD.030"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 9690,
+        "webLineEnd": 9732,
+        "evidenceType": "LITURGICAL_BIBLICAL_TEXT_MATCH",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     },
     {
       "id": "LAN-016",
@@ -548,15 +672,23 @@
       },
       "disposition": "EXPLICIT_SCRIPTURAL_LINK_NEW_HISTORICAL_WITNESS",
       "criticalNote": "The 422-entry evidence ledger has many Offertory/sacrificial claims but did not expose this precise book-author-verse association in the audited material. Not yet certified unique across all contextual theological sources.",
-      "originalTextVerification": "SEARCH_ENGINE_INDEXED_PDF_EXCERPT_ONLY_SCAN_PAGE_CHECK_REQUIRED",
-      "biblicalVerseAttributionToLanslots": "EXPLICIT_IN_SEARCH_INDEX_EXCERPT",
+      "originalTextVerification": "FULL_TEXT_OCR_INSPECTED_MALACHI_CITATION_CHARACTERS_DAMAGED_SCAN_PAGE_PENDING",
+      "biblicalVerseAttributionToLanslots": "AUTHOR_EXPLICIT_REFERENCE_OCR_DAMAGED",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED",
       "sourceFirst39LinkStatus": "CURRENT_BASE_MACRO_OWNERSHIP_VERIFIED",
       "sourceFirst39SectionIds": [
         "AO.CARD.001"
-      ]
+      ],
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 482,
+        "webLineEnd": 496,
+        "evidenceType": "AUTHOR_EXPLICIT_REFERENCE_OCR_DAMAGED",
+        "readableAndChecked": true,
+        "originalPageScanChecked": false
+      }
     }
   ],
   "rules": [
