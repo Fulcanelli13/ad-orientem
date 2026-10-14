@@ -37,6 +37,7 @@ export function resolveDevotionalActionScene({
     // The current St Alphonsus reader provides no certified kneel/bow
     // records per Station. Explicitly do NOT synthesize 14 genuflections.
     if(stationRitual?.certified!==true ||
+       !/^STATIONS\.PUBLIC\.(?:[1-9]|1[0-4])\.(?:VERSICLE|MEDITATION|PRAYER)$/.test(String(stationRitual.sourceCueId??"")) ||
        !["KNEEL","STAND","GENUFLECT","BOW","PROFOUND_BOW"].includes(stationRitual?.action) ||
        !Number.isInteger(stationStep)||stationStep<0||stationStep>13)return null;
     const labels={KNEEL:["Kneel","Mettez-vous à genoux"],
