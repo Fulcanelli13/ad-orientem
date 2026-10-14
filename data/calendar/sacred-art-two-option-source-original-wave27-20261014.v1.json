@@ -1,0 +1,78 @@
+{
+  "schema": "AO_SACRED_ART_TWO_SOURCE_SAINTS_W27_V1",
+  "asOf": "2026-10-14",
+  "ownerPR": 887,
+  "userDirective": "Minimum two genuinely distinct relevant original paintings per named major saint or Doctor where feasible; no ratings requested.",
+  "candidates": [
+    {
+      "id": "G27-001",
+      "subjectId": "SNT-AP-11",
+      "artist": "Sebastián Martínez Domedel",
+      "title": "El apóstol san Matías",
+      "institution": "Museo Nacional del Prado",
+      "inventory": "P007531",
+      "sourceUrl": "https://www.museodelprado.es/coleccion/obra-de-arte/el-apostol-san-matias/5e198a1c-a1a7-429c-aba6-b4d63eb01a02",
+      "medium": "oil on canvas",
+      "date": "1635–1665",
+      "researchRelation": "EXACT_SAINT_MATTHIAS",
+      "physicalOriginalDistinctFrom": "W05-008 Peter Paul Rubens Saint Matthias Prado P001653",
+      "sourceNotes": "Prado current attribution Sebastián Martínez Domedel, previously assigned to Antonio Arias in 1991; 193×100 cm original."
+    },
+    {
+      "id": "G27-002",
+      "subjectId": "SNT-OT-09",
+      "artist": "Vincenzo Valdrè",
+      "title": "Ceiling of St Patrick's Hall, preparatory oil sketch (St Patrick lighting Paschal fire in upper panel)",
+      "institution": "Royal Dublin Society (RDS) Art Collection",
+      "inventory": "RDS art collection 1 Valdre St Patrick's Hall",
+      "sourceUrl": "https://digitalarchive.rds.ie/items/show/3978",
+      "medium": "oil on canvas",
+      "date": "1787",
+      "researchRelation": "SAINT_PATRICK_EXACT_IN_UPPER_PANEL_NOT_SOLO_PORTRAIT",
+      "physicalOriginalDistinctFrom": "James Barry The Baptism of the King of Cashel by Saint Patrick, National Gallery of Ireland NGI4623",
+      "sourceNotes": "RDS own archive describes upper panel depicting St Patrick lighting the Paschal fire on Hill of Slane. Overall composition has secular panels. RDS image publication requires its permission; not publication approved."
+    }
+  ],
+  "provenanceHolds": [
+    {
+      "id": "met-2016-653",
+      "subjectId": "SNT-AP-11",
+      "artist": "Giovanni Battista Piazzetta",
+      "title": "Bust of a Man (Saint Matthias?)",
+      "url": "https://www.metmuseum.org/art/collection/search/695496",
+      "status": "HOLD_TENTATIVE_SITTER_IDENTITY",
+      "note": "Met says may be Saint Matthias; not counted as exact."
+    },
+    {
+      "id": "met-43-98-11",
+      "subjectId": "SNT-AP-11",
+      "artist": "Workshop of Simone Martini",
+      "title": "Saint Matthias",
+      "url": "https://www.metmuseum.org/art/collection/search/437678",
+      "status": "HOLD_EARLY_STYLE_AND_TEMPERA",
+      "note": "Authentic named physical 1317–19 tempera original, but stylistically distant from requested naturalistic hero aesthetic; keep as fallback, do not count toward high-fit pairs."
+    },
+    {
+      "id": "james-barry-1763-finished",
+      "subjectId": "SNT-OT-09",
+      "title": "The Baptism of the King of Cashel by Saint Patrick (early finished version)",
+      "url": "https://www.dib.ie/biography/barry-james-a0441",
+      "status": "HOLD_CUSTODY_AND_IMAGE_NOT_CONFIRMED",
+      "note": "Dictionary of Irish Biography says earlier finished 1763 original survives at Terenure College after fire; not counted as a source-ready third until custodian record and image match."
+    }
+  ],
+  "counts": {
+    "newInstitutionalPaintingSources": 2,
+    "identityAndStyleFallbacksNotCounted": 3,
+    "imageMastersAcquired": 0,
+    "newUserRatings": 0,
+    "newRequiredSaints": 0,
+    "productionChanges": 0
+  },
+  "releaseRules": [
+    "St Patrick appears within RDS multi-scene ceiling sketch; qualifies as contextual source research, not saint-only hero.",
+    "Different oil paintings from the same historical episode can count if separate physical objects proven; no derivative prints.",
+    "Same Rubens Matthias painting cannot count twice because historic selection and W05-008 refer to Prado P001653.",
+    "Do not automatically use RDS archive photographs commercially: explicit permission gate remains."
+  ]
+}
