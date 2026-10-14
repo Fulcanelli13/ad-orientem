@@ -1,0 +1,968 @@
+{
+  "schema": "ao-canon-29-printed-page-witness-crosswalk-v1",
+  "date": "2026-10-14",
+  "status": "ALL_29_SOURCE_CASES_PAGE_LOCATED_NO_INDEPENDENT_SIGNOFF",
+  "sourceOwners": {
+    "risk": "data/research/mass-canon-29-flagged-bilingual-adjudication-20261014.json",
+    "latinWitness": "data/research/mass-canon-29-external-ritus-witness-20261014.json",
+    "french": "data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",
+    "bilingual": "data/research/mass-canon-62-bilingual-two-layer-review-20261014.json"
+  },
+  "counts": {
+    "cases": 29,
+    "englishEvidenceNotes": 29,
+    "frenchEvidenceNotes": 29,
+    "printedPageLocations": 29,
+    "independent1962FacsimileApproved": 0,
+    "bilingualCopyApproved": 0,
+    "actionClockApproved": 0,
+    "livePublished": 0
+  },
+  "editorialSafeguards": [
+    "The indexed 27-page English Ritus translation is page-level corroboration, NOT a photographed 1962 Latin typical-edition facsimile.",
+    "R62.017: the Latin antequam accipiat Hostiam is an explicit retroactive timing condition, even though VIII.5 is printed after the words in VIII.4. Do not switch this to a post-acceptance gesture.",
+    "R62.044: the cross is after omni benedictione, before caelesti; the frozen source has coelésti. Do not promote an early generic word match to a priest Sign-of-Cross clock.",
+    "R62.061: the form-specific Amen respondent requires the appropriate Ordo/ministers evidence, not just an R. Amen in Ritus X.1.",
+    "Every new finding is a source claim for editorial verification; no human approval, facsimile certification or observed action is implied.",
+    "The frozen original Latin, canonical French owners, prayer words, 48-card reader, minister clocks and publication gates remain untouched."
+  ],
+  "records": [
+    {
+      "actionId": "AO.CANON.R62.001",
+      "cueId": "AO.SM.C0150",
+      "reviewCode": "STAGE_ORDER",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.1",
+      "claimClass": "SEQUENCE_EYES_THEN_JOINED_HANDS",
+      "englishFinding": "The eyes are lowered before the hands are joined; the source does not prescribe a separate simultaneous lowering of both hands and eyes.",
+      "frenchFinding": "Les yeux sont abaissés avant que les mains soient jointes ; ne pas inventer un abaissement simultané des mains et des yeux.",
+      "latinLocator": "oculisque elevatis ad Deum",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          13
+        ],
+        "zeroBasedPageIndexes": [
+          12
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=13"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.001",
+      "originalEnglishShortOwner": "AO.CANON.R62.001",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.004",
+      "cueId": "AO.SM.C0153",
+      "reviewCode": "MASS_FORM",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.1–2",
+      "claimClass": "FORMULA_REQUIRES_CONTEXT",
+      "englishFinding": "The commemoration formula has distinct papal, deceased-ordinary, Rome, and bishop-celebrant exceptions; names cannot be inferred from this evidence alone.",
+      "frenchFinding": "La formule comporte des exceptions distinctes pour le pape, l'ordinaire décédé, Rome et l'évêque célébrant ; les noms ne se déduisent pas de la rubrique seule.",
+      "latinLocator": "Sede autem vacante",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          13
+        ],
+        "zeroBasedPageIndexes": [
+          12
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=13"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.004",
+      "originalEnglishShortOwner": "AO.CANON.R62.004",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.006",
+      "cueId": "AO.SM.C0155",
+      "reviewCode": "SILENT_MEMORY",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.3",
+      "claimClass": "OPTIONAL_INTENTION",
+      "englishFinding": "Naming the living in the priest's private intention is optional and does not authorize an observed pause timer.",
+      "frenchFinding": "La mention des vivants dans l'intention privée est facultative ; aucun chronomètre de pause n'en découle.",
+      "latinLocator": "nomina, si vult, secreto",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          13
+        ],
+        "zeroBasedPageIndexes": [
+          12
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=13"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.006",
+      "originalEnglishShortOwner": "AO.CANON.R62.006",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.008",
+      "cueId": "AO.SM.C0157",
+      "reviewCode": "MASS_FORM",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.4",
+      "claimClass": "PROPER_SELECTED_PRE_MASS",
+      "englishFinding": "The prescribed Communicantes is selected for its feast; the ordinary text is not universal.",
+      "frenchFinding": "Le Communicantes propre est choisi selon la fête ; le texte commun ne vaut pas universellement.",
+      "latinLocator": "Communicantes",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          14
+        ],
+        "zeroBasedPageIndexes": [
+          13
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.008",
+      "originalEnglishShortOwner": "AO.CANON.R62.008",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.011",
+      "cueId": "AO.SM.C0161",
+      "reviewCode": "MASS_FORM",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.4",
+      "claimClass": "GESTURE_PERSISTENT_UNTIL_WORD",
+      "englishFinding": "Hands stay extended over the offerings until Per Christum; particular Hanc igitur forms are separate from that gesture.",
+      "frenchFinding": "Les mains demeurent étendues sur les oblats jusqu'à Per Christum ; les formes propres du Hanc igitur ne modifient pas ce geste par inférence.",
+      "latinLocator": "palmæ sint apertæ",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          14
+        ],
+        "zeroBasedPageIndexes": [
+          13
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.011",
+      "originalEnglishShortOwner": "AO.CANON.R62.011",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.017",
+      "cueId": "AO.SM.C0168",
+      "reviewCode": "OPTIONAL_ACTION",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.4",
+      "claimClass": "RETROSPECTIVE_SOURCE_ORDER",
+      "englishFinding": "Latin VIII.5 expressly says antequam accipiat Hostiam: any covered vessel of other Hosts is uncovered before taking the principal Host, even though this instruction is printed after the narrative words.",
+      "frenchFinding": "Le latin VIII.5 prescrit avant de prendre l'Hostie : le vase couvert des autres hosties est découvert avant la prise de l'Hostie principale, malgré l'emplacement plus tardif de cette indication imprimée.",
+      "latinLocator": "antequam accipiat hostiam",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          14,
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          13,
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.017",
+      "originalEnglishShortOwner": "AO.CANON.R62.017",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.021",
+      "cueId": "AO.SM.C0172",
+      "reviewCode": "WORD_NOT_GESTURE",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.4",
+      "claimClass": "SPOKEN_NOT_PHYSICAL",
+      "englishFinding": "Fregit belongs to the words of the narrative; the priest does not break the Host at this point.",
+      "frenchFinding": "Fregit relève du récit ; le prêtre ne rompt pas l'Hostie à ce moment.",
+      "latinLocator": "fregit, deditque",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.021",
+      "originalEnglishShortOwner": "AO.CANON.R62.021",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.022",
+      "cueId": "AO.SM.C0173",
+      "reviewCode": "CONSECRATION_FOCUS",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.5",
+      "claimClass": "CONSECRATION_WORDS_ONLY",
+      "englishFinding": "Consecratory words take place before the first adoration genuflection; no duplicate gesture caption belongs over those words.",
+      "frenchFinding": "Les paroles consécratoires précèdent la première génuflexion ; ne pas superposer un second appel gestuel aux paroles.",
+      "latinLocator": "distincte et reverenter",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.022",
+      "originalEnglishShortOwner": "AO.CANON.R62.022",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.023",
+      "cueId": "AO.SM.C0174",
+      "reviewCode": "INDEPENDENT_EVENT",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.5–6",
+      "claimClass": "INDEPENDENT_GENUFLECTION",
+      "englishFinding": "After consecration the first genuflection precedes the elevation; it is not a word-triggered action.",
+      "frenchFinding": "Après la consécration, la première génuflexion précède l'élévation ; ce n'est pas une action déclenchée par le texte.",
+      "latinLocator": "genuflexus eam adorat",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.023",
+      "originalEnglishShortOwner": "AO.CANON.R62.023",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.024",
+      "cueId": "AO.SM.C0174",
+      "reviewCode": "INDEPENDENT_EVENT",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.5–6",
+      "claimClass": "INDEPENDENT_ELEVATION",
+      "englishFinding": "The Host is elevated after the first genuflection, then replaced; the server bell has separate ownership.",
+      "frenchFinding": "L'Hostie est élevée après la première génuflexion, puis reposée ; la sonnette du servant est distincte.",
+      "latinLocator": "elevat in altum hostiam",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.024",
+      "originalEnglishShortOwner": "AO.CANON.R62.024",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.025",
+      "cueId": "AO.SM.C0174",
+      "reviewCode": "STAGE_ORDER",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.5–6",
+      "claimClass": "ORDERED_REPLACEMENT_GENUFLECTION",
+      "englishFinding": "Replacing the Host precedes the second genuflection; do not collapse into one simultaneous animation.",
+      "frenchFinding": "La déposition de l'Hostie précède la seconde génuflexion ; ne pas fusionner ces deux moments.",
+      "latinLocator": "Reposita hostia consecrata",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.025",
+      "originalEnglishShortOwner": "AO.CANON.R62.025",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.026",
+      "cueId": "AO.SM.C0174",
+      "reviewCode": "PERSISTENT_STATE",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.5",
+      "claimClass": "PERSISTENT_FINGER_STATE",
+      "englishFinding": "The joined-finger rule persists until ablution with necessary contact exceptions; it is not a transient cue.",
+      "frenchFinding": "La jonction des doigts demeure jusqu'à l'ablution, sauf contacts nécessaires ; ce n'est pas un rappel ponctuel.",
+      "latinLocator": "pollices et indices non disiungit",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.026",
+      "originalEnglishShortOwner": "AO.CANON.R62.026",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.027",
+      "cueId": "AO.SM.C0174",
+      "reviewCode": "SERVER_ACTION",
+      "actor": "SERVER",
+      "sourceRitus": "VIII.6",
+      "claimClass": "SERVER_BELL_INDEPENDENT",
+      "englishFinding": "The server rings the bell three times at the Host elevation, or continuously until the Host is replaced, independently of the priest's clock.",
+      "frenchFinding": "Le servant sonne trois fois à l'élévation de l'Hostie, ou sans interruption jusqu'à sa déposition, indépendamment du geste du prêtre.",
+      "latinLocator": "pulsat campanulam ter",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.027",
+      "originalEnglishShortOwner": "AO.CANON.R62.027",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.028",
+      "cueId": "AO.SM.C0175",
+      "reviewCode": "DEACON_CONDITION",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.7",
+      "claimClass": "SMALL_LIFT_NOT_MAJOR",
+      "englishFinding": "The small chalice lift in the narrative is not the major elevation; deacon uncovering at Solemn Mass is conditional.",
+      "frenchFinding": "Le léger soulèvement du calice pendant le récit n'est pas la grande élévation ; la découverte par le diacre à la messe solennelle est conditionnelle.",
+      "latinLocator": "aliquantulum illum elevans",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15,
+          16
+        ],
+        "zeroBasedPageIndexes": [
+          14,
+          15
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.028",
+      "originalEnglishShortOwner": "AO.CANON.R62.028",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.032",
+      "cueId": "AO.SM.C0179",
+      "reviewCode": "CONSECRATION_FOCUS",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.7",
+      "claimClass": "CONSECRATION_WORDS_ONLY",
+      "englishFinding": "The chalice consecration precedes later adoration and elevation, which require separate source events.",
+      "frenchFinding": "La consécration du calice précède l'adoration et l'élévation suivantes, qui constituent des événements distincts.",
+      "latinLocator": "verba consecrationis Sanguinis",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.032",
+      "originalEnglishShortOwner": "AO.CANON.R62.032",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.033",
+      "cueId": "AO.SM.C0180",
+      "reviewCode": "STAGE_ORDER",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.7",
+      "claimClass": "THREE_ORDERED_STAGES",
+      "englishFinding": "The priest replaces the chalice, pronounces Haec quotiescumque secretly, then genuflects for the first adoration.",
+      "frenchFinding": "Le prêtre repose le calice, prononce secrètement Hæc quotiescumque, puis fait la première génuflexion.",
+      "latinLocator": "dicens secreto: Hæc quotiescumque",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.033",
+      "originalEnglishShortOwner": "AO.CANON.R62.033",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.034",
+      "cueId": "AO.SM.C0181",
+      "reviewCode": "DEACON_CONDITION",
+      "actor": "PRIEST",
+      "sourceRitus": "VIII.7",
+      "claimClass": "STAGED_CHALICE_ELEVATION",
+      "englishFinding": "First genuflection, chalice elevation, replacement, pall coverage, and second genuflection must be distinct stages; the authorized pall actor depends on Mass form.",
+      "frenchFinding": "Première génuflexion, élévation, déposition, couverture par la pale et seconde génuflexion sont distinctes ; le ministre varie selon la forme de messe.",
+      "latinLocator": "calicem discoopertum",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15,
+          16
+        ],
+        "zeroBasedPageIndexes": [
+          14,
+          15
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.034",
+      "originalEnglishShortOwner": "AO.CANON.R62.034",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.035",
+      "cueId": "AO.SM.C0181",
+      "reviewCode": "SERVER_ACTION",
+      "actor": "SERVER",
+      "sourceRitus": "VIII.6–7",
+      "claimClass": "SERVER_BELL_INDEPENDENT",
+      "englishFinding": "The server rings during the chalice elevation, independently of the priest or reader's text focus.",
+      "frenchFinding": "Le servant sonne pendant l'élévation du calice, indépendamment du prêtre et de la position du texte.",
+      "latinLocator": "similiter postmodum ad elevationem calicis",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.035",
+      "originalEnglishShortOwner": "AO.CANON.R62.035",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.039",
+      "cueId": "AO.SM.C0185",
+      "reviewCode": "STAGE_ORDER",
+      "actor": "PRIEST",
+      "sourceRitus": "IX.1",
+      "claimClass": "TWO_OBJECT_CROSSES",
+      "englishFinding": "A separate Sign of the Cross is made over the Host at Panem sanctum and over the chalice at Calicem salutis.",
+      "frenchFinding": "Une croix distincte est tracée sur l'Hostie à Panem sanctum et sur le calice à Calicem salutis.",
+      "latinLocator": "Panem + sanctum",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          16
+        ],
+        "zeroBasedPageIndexes": [
+          15
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.039",
+      "originalEnglishShortOwner": "AO.CANON.R62.039",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.040",
+      "cueId": "AO.SM.C0186",
+      "reviewCode": "PERSISTENT_STATE",
+      "actor": "PRIEST",
+      "sourceRitus": "IX.1",
+      "claimClass": "PERSISTENT_HANDS_STATE",
+      "englishFinding": "Hands are already extended during Supra quae; this is a continuing state, not a new extension gesture.",
+      "frenchFinding": "Les mains sont déjà étendues pendant Supra quæ ; c'est un état maintenu, non un nouveau geste.",
+      "latinLocator": "extensis manibus",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          16
+        ],
+        "zeroBasedPageIndexes": [
+          15
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.040",
+      "originalEnglishShortOwner": "AO.CANON.R62.040",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.044",
+      "cueId": "AO.SM.C0190",
+      "reviewCode": "SOURCE_SPELLING",
+      "actor": "PRIEST",
+      "sourceRitus": "IX.1",
+      "claimClass": "UNVERIFIED_DONOR_CROSS_OFFSET",
+      "englishFinding": "The 1962 cross mark is after omni benedictione and before caelesti; the frozen R17 text has coelésti without a printed cross. Keep guide-only until exact donor offset and independent approval.",
+      "frenchFinding": "La croix de la rubrique est après omni benedictione et avant cælesti ; le texte figé porte coelésti sans croix imprimée. Conserver la notice hors des gestes en direct.",
+      "latinLocator": "omni benedictione + cælesti",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          16
+        ],
+        "zeroBasedPageIndexes": [
+          15
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.044",
+      "originalEnglishShortOwner": "AO.CANON.R62.044",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.050",
+      "cueId": "AO.SM.C0196",
+      "reviewCode": "VOICE_AND_GESTURE",
+      "actor": "PRIEST",
+      "sourceRitus": "IX.3",
+      "claimClass": "VOICE_AND_BREAST_STRIKE",
+      "englishFinding": "The priest raises his voice somewhat only at Nobis quoque and strikes his breast once; the prayer resumes secretly.",
+      "frenchFinding": "Le prêtre élève un peu la voix au seul début Nobis quoque et se frappe une fois la poitrine ; la suite redevient secrète.",
+      "latinLocator": "vocem aliquantulum elevat",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          17
+        ],
+        "zeroBasedPageIndexes": [
+          16
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.050",
+      "originalEnglishShortOwner": "AO.CANON.R62.050",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.051",
+      "cueId": "AO.SM.C0197",
+      "reviewCode": "VOICE_STATE",
+      "actor": "PRIEST",
+      "sourceRitus": "IX.3",
+      "claimClass": "SECRET_VOICE_STATE",
+      "englishFinding": "The voice becomes secret again at famulis tuis; no independent posture change is established.",
+      "frenchFinding": "La voix redevient secrète à famulis tuis ; aucune nouvelle posture n'est prescrite.",
+      "latinLocator": "prosequitur secreto",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          17
+        ],
+        "zeroBasedPageIndexes": [
+          16
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.051",
+      "originalEnglishShortOwner": "AO.CANON.R62.051",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.055",
+      "cueId": "AO.SM.C0201",
+      "reviewCode": "DEACON_CONDITION",
+      "actor": "PRIEST",
+      "sourceRitus": "IX.3",
+      "claimClass": "CONDITIONAL_DEACON_STAGE",
+      "englishFinding": "Chalice uncovering, priest genuflection and Host-taking are distinct; the Solemn deacon participates as prescribed.",
+      "frenchFinding": "Découverte du calice, génuflexion du prêtre et prise de l'Hostie sont distinctes ; le diacre intervient selon la messe solennelle.",
+      "latinLocator": "discooperit manu dextera calicem",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          17
+        ],
+        "zeroBasedPageIndexes": [
+          16
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.055",
+      "originalEnglishShortOwner": "AO.CANON.R62.055",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.058",
+      "cueId": "AO.SM.C0204",
+      "reviewCode": "MINOR_ELEVATION",
+      "actor": "PRIEST",
+      "sourceRitus": "IX.3",
+      "claimClass": "MINOR_ELEVATION",
+      "englishFinding": "The Host stays above the slightly lifted chalice for the minor elevation; this is not a repeat of either major elevation.",
+      "frenchFinding": "L'Hostie demeure au-dessus du calice légèrement soulevé pour la petite élévation ; ce n'est pas une nouvelle grande élévation.",
+      "latinLocator": "elevat eum aliquantulum",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          17
+        ],
+        "zeroBasedPageIndexes": [
+          16
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.058",
+      "originalEnglishShortOwner": "AO.CANON.R62.058",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.059",
+      "cueId": "AO.SM.C0205",
+      "reviewCode": "DEACON_CONDITION",
+      "actor": "PRIEST",
+      "sourceRitus": "IX.3",
+      "claimClass": "CONDITIONAL_DEACON_STAGE",
+      "englishFinding": "The sacred species are replaced, the pall is handled by the correct minister and the priest genuflects; the Solemn deacon has distinct actions.",
+      "frenchFinding": "Les saintes espèces sont reposées, la pale est replacée par le ministre compétent et le prêtre génuflecte ; les gestes du diacre demeurent distincts.",
+      "latinLocator": "calicem palla cooperit",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          17
+        ],
+        "zeroBasedPageIndexes": [
+          16
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.059",
+      "originalEnglishShortOwner": "AO.CANON.R62.059",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.060",
+      "cueId": "AO.SM.C0206",
+      "reviewCode": "VOICE_AND_GESTURE",
+      "actor": "PRIEST",
+      "sourceRitus": "X.1",
+      "claimClass": "AUDIBLE_BOUNDARY",
+      "englishFinding": "The priest's conclusion Per omnia is audible, with hands placed upon the altar within the corporal; respondent Amen is a separate action.",
+      "frenchFinding": "Le Per omnia du prêtre est audible, les mains posées sur l'autel à l'intérieur du corporal ; la réponse Amen est distincte.",
+      "latinLocator": "dicit intellegibili voce",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          17
+        ],
+        "zeroBasedPageIndexes": [
+          16
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.060",
+      "originalEnglishShortOwner": "AO.CANON.R62.060",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.061",
+      "cueId": "AO.SM.C0207",
+      "reviewCode": "MASS_FORM",
+      "actor": "SERVER",
+      "sourceRitus": "X.1",
+      "claimClass": "FORM_DEPENDENT_RESPONDENT",
+      "englishFinding": "Amen belongs to the form-appointed respondent; the generic Ritus text does not by itself certify a unique human speaker.",
+      "frenchFinding": "Amen revient au répondant prescrit pour la forme de messe ; le texte générique du Ritus ne désigne pas à lui seul une personne déterminée.",
+      "latinLocator": "Per omnia sæcula sæculorum",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          17
+        ],
+        "zeroBasedPageIndexes": [
+          16
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.061",
+      "originalEnglishShortOwner": "AO.CANON.R62.061",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    },
+    {
+      "actionId": "AO.CANON.R62.062",
+      "cueId": "AO.SM.C0161",
+      "reviewCode": "ANTICIPATORY_SERVER",
+      "actor": "SERVER",
+      "sourceRitus": "VIII.6",
+      "claimClass": "ANTICIPATORY_SERVER_EVENT",
+      "englishFinding": "The warning bell is sounded shortly before consecration, not precisely when Hanc igitur enters the reader's focus.",
+      "frenchFinding": "La sonnette retentit peu avant la consécration, non au moment exact où Hanc igitur apparaît dans le lecteur.",
+      "latinLocator": "Minister paulo ante Consecrationem",
+      "witness": {
+        "documentUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumbers": [
+          15
+        ],
+        "zeroBasedPageIndexes": [
+          14
+        ],
+        "exactPageLinks": [
+          "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+        ],
+        "editionDescription": "ENGLISH_TRANSLATION_LABELED_1962_RITUS",
+        "primary1962PrintedFacsimileVerified": false,
+        "separateLatinTranscriptionUrl": "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962"
+      },
+      "originalFrenchShortOwner": "AO.CANON.R62.062",
+      "originalEnglishShortOwner": "AO.CANON.R62.062",
+      "independentCopySignoff": "NOT_GRANTED",
+      "independentCeremonialSignoff": "NOT_GRANTED",
+      "exactLiveClockObserved": false,
+      "canPublish": false
+    }
+  ]
+}
