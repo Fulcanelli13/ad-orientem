@@ -1,6 +1,7 @@
 // Shared non-Mass cinematic owner. It never determines prayer text, day,
  // custom, posture or the ceremonial occurrence of an external public rite.
 import {resolveCanonicalAssetUrl} from "../assets/asset-registry.js";
+import "./devotional-action-cinematic-styles.js";
 export const DEVOTIONAL_ACTION_CINEMATIC_VERSION="devotional-action-v1";
 const norm=v=>String(v??"").trim();
 const fixed=(id,kind,assetId,latin,en,fr,sourceCue)=>Object.freeze({
