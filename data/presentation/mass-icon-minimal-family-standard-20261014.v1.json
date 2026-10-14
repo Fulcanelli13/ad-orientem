@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-minimal-icon-family-standard-v1",
   "date": "2026-10-14",
-  "status": "FAMILY_FIDELITY_CORRECTED_MASTER_DERIVATIVE_NOT_NEW_GEOMETRY",
+  "status": "EXACT_FROZEN_V46_BLACK_FAMILY_LOCK_SOURCE_SPLIT_VERIFIED",
   "basis": {
     "review": "Ad_Orientem_Full_Mass_Icon_Review_2026-10-14.json",
     "visualNote": "User rejects new detailed engravings and complicated priest features; follow the already selected minimal family",
@@ -146,6 +146,7 @@
     }
   ],
   "nextProcess": [
+    "Do not use old sepia priest sources. Fetch actual active v4.6 embedded PNG for visual family verification.",
     "Reject the three 2026-10-14 geometric icon prototypes as family mismatches, preserving only as historical rejected construction studies.",
     "Apply target design constraints separately to each of the 24 surviving rework subjects.",
     "Resolve by REUSE, REMAP, TEXT or MINIMAL_REDRAW; avoid any decorative enhancement.",
@@ -154,7 +155,7 @@
   ],
   "familyParity": {
     "priority": "DONOR_DERIVATIVE_NOT_STYLE_IMITATION_FROM_TEXT",
-    "base": "S_priest_sedilia user 5/5 establishes actor rendering; use same selected visual family and appropriate existing priest-at-altar donor for station geometry",
+    "base": "Actual CURRENT v4.6 black-alpha priest_sedilia_rich, not sepia v1.41 first-bank illustration.",
     "requireMatch": [
       "head size and contour",
       "neck and shoulders",
@@ -183,5 +184,15 @@
       "user judges family parity before any SVG trace/integration"
     ],
     "assetNote": "Original assets are raster in SVG wrapper; do not claim editing or automatic tracing will preserve family until seen and reviewed."
+  },
+  "sourceVisualCorrection": {
+    "discoveredAt": "2026-10-14",
+    "currentAuthoritativeFamily": "Black monochrome/alpha v4.6 source masters, not the earlier sepia elaborate illustrations embedded in the same original HTML prototype.",
+    "visualEvidence": "Frozen prototype v1.41 contains both older sepia approximately 150–165px PNGs and separate full-resolution black silhouette PNGs under overlapping names.",
+    "frozenReference": "priest_sedilia_rich black 1024-plus-size PNG, originally stored in active SVG wrapper, user rating 5/5",
+    "prohibitedReference": "Sepia artistically detailed priest images from the prototype legacy asset dictionary cannot be used as source for new v4.6 repairs.",
+    "exactAliasDefect": "Current active priest_kiss_altar_rich.svg and priest_profound_bow_rich.svg have byte-identical embedded 1024px PNG, verified by full base64 equality.",
+    "sourcePNG_SHA256": "9121458d217b075492a1bd50cd2c2b56bfb65877c7d69f21004577a4ad72dff2",
+    "note": "Previous generated and sepia-based B16 images are invalid as family examples. The black icon also cannot directly be reused for both priest kiss and profound bow without a visually distinct, source-corrected action."
   }
 }
