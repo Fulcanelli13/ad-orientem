@@ -205,4 +205,36 @@ prematurelyPublished.status="APPROVED";
 assert.throws(()=>validateCanonRubricAdjudication({
  canonData,triggerAudit,frenchReview:prematurelyPublished,
 }),/published\/user-facing/);
+// Reconciled source-precision copy batch from #1168: six improvements not
+// already merged in #1169. The sole owner is R62 and all are unpublished.
+const exactDrafts=new Map(frenchReview.rows.map(x=>[x.id,x]));
+const sourceByAction=new Map(triggerAudit.rows.map(x=>[x.id,x]));
+const copyRequirements=[
+ ["017","AO.SM.C0168",/à « accépit panem »/,/découvre d’abord ce récipient/],
+ ["027","AO.SM.C0174",/le servant sonne trois fois ou continûment/,/repose l’Hostie sur le corporal/],
+ ["035","AO.SM.C0181",/le servant sonne trois fois ou continûment/,/calice soit reposé sur le corporal/],
+ ["040","AO.SM.C0186",/mains toujours étendues devant la poitrine/,/Il poursuit « Supra quæ »/],
+ ["055","AO.SM.C0201",/le diacre intervient lorsque cela est nécessaire/,/le pouce et l’index de la main droite/],
+ ["059","AO.SM.C0205",/après la petite élévation|Après la petite élévation/,/par le diacre à la messe solennelle lorsque cela est nécessaire/],
+];
+for(const [n,cue,a,b] of copyRequirements){
+ const id="AO.CANON.R62."+n,fr=exactDrafts.get(id),source=sourceByAction.get(id);
+ assert.equal(fr?.cueId,cue,id+": canonical cue must not move");
+ assert.equal(source?.cueId,cue,id+": Latin research must own cue");
+ assert.match(fr.revisedFrenchRubric,a);
+ assert.match(fr.revisedFrenchRubric,b);
+ assert.equal(fr.reviewState,"ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
+ assert.equal(fr.faithfulRubricInferred,false);
+ assert.ok(fr.sourceURLs.length>=2&&fr.sourceURLs.every(u=>u.startsWith("https://")));
+}
+for(const n of ["027","035"])assert.equal(exactDrafts.get("AO.CANON.R62."+n).actor,"SERVER");
+assert.doesNotMatch(exactDrafts.get("AO.CANON.R62.040").revisedFrenchRubric,/aucun geste supplémentaire/,
+ "User rubric should describe the continuous state, not the editor's implementation notes");
+assert.deepEqual(
+ ["001","028","058"].map(n=>exactDrafts.get("AO.CANON.R62."+n).revisedFrenchRubric.includes("prêtre")),
+ [true,true,true],
+ "Already-merged source corrections must remain owned by current main");
+assert.equal(frenchReview.rows.length,62);
+assert.equal(frenchReview.rows.filter(x=>x.editorialFlags.length).length,29);
+assert.equal(frenchReview.status,"SOURCE_RECHECKED_ORIGINAL_FRENCH_DRAFT_NOT_PUBLISHED");
 console.log("PASS: 62 bilingual source-checked Canon redrafts; 50 exact word, 10 non-text, 1 persistent, 1 anticipatory; independent actor clocks and no publication.");
