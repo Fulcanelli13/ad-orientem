@@ -255,7 +255,7 @@ const preciseShortCopy=new Map([
  ["004",/conditions et formules prescrites/],
  ["008",/texte propre prévu pour certains jours/],
  ["011",/jusqu’à « Per Christum »/],
- ["017",/d’autres hosties à consacrer, il les découvre d’abord/],
+ ["017",/d’autres hosties doivent être consacrées, il découvre d’abord leur vase/],
  ["026",/sauf pour toucher une Hostie consacrée/],
  ["027",/sonne trois fois ou continûment pendant l’élévation de l’Hostie/],
  ["028",/au besoin par le diacre/],
@@ -266,7 +266,7 @@ const preciseShortCopy=new Map([
  ["055",/au besoin par le diacre.*le prêtre génuflecte/],
  ["058",/« omnis honor et glória ».*l’Hostie tenue au-dessus/],
  ["059",/repose le calice et l’Hostie.*au besoin par le diacre/],
- ["061",/ministre à la messe basse.*répondants à la messe chantée/],
+ ["061",/ministre à la messe basse.*répondants dans les formes chantées/],
  ["062",/Peu avant la consécration, le servant avertit les fidèles/],
 ]);
 assert.equal(preciseShortCopy.size,16);
@@ -282,6 +282,11 @@ for(const [number,pattern] of preciseShortCopy){
 }
 assert.match(conciseRubricDrafts.find(x=>x.id==="AO.CANON.R62.026")
  .shortFrenchRubricDraft,/jusqu’à l’ablution des doigts/);
+for(const id of ["028","055","059"]){
+ const short=conciseRubricDrafts.find(x=>x.id==="AO.CANON.R62."+id).shortFrenchRubricDraft;
+ assert.match(short,/diacre à la messe solennelle/,
+  id+": short rubric must not attribute a Solemn deacon to Low Mass or Cantata");
+}
 assert.match(conciseRubricDrafts.find(x=>x.id==="AO.CANON.R62.034")
  .shortFrenchRubricDraft,/le fait couvrir/);
 assert.doesNotMatch(conciseRubricDrafts.find(x=>x.id==="AO.CANON.R62.062")
