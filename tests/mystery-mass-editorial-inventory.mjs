@@ -98,7 +98,12 @@ assert([...seenGueranger.values()].every(x=>x===1));
 assert.equal(totalLan,7);
 assert.equal(sourceBilingual.size,7);
 assert([...sourceBilingual.values()].every(x=>x===1));
-assert(totalCritical>=10);
+assert.equal(totalCritical,9,'eight unique prayer-owned critical topics, with one shared bread/chalice owner');
+const ownedCritical=new Set(matrix.sections.flatMap(s=>s.selectedResearchSourceIds.lanslotsCritical));
+assert.equal(ownedCritical.size,8);
+assert.deepEqual(matrix.contextualNonSectionCriticalItems.map(x=>x.id),['L1897-DISC-04','L1897-DISC-09']);
+for(const c of matrix.contextualNonSectionCriticalItems){assert(!ownedCritical.has(c.id));assert.equal(c.inlineGuideCue,null);assert(stages.has(c.lessonOwner));}
+assert.equal(new Set([...ownedCritical,...matrix.contextualNonSectionCriticalItems.map(x=>x.id)]).size,10,'all ten critical source records accounted for');
 assert.equal(totalNP,16);
 assert.equal(totalCueAnchors,12);
 assert.equal(enhanced,33);
