@@ -1,4 +1,5 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
@@ -421,23 +422,48 @@ function emptyState(vm){
   }
   return '<section class="aoFindEmpty"><strong>'+esc(L(vm.language,"No matching records","Aucune fiche correspondante"))+'</strong><p>'+esc(L(vm.language,"Try a broader search or another Explore lens.","Essayez une recherche plus large ou un autre volet d’Explore."))+'</p></section>';
 }
+function massLegendItem(group,label){
+  const emblem=massInstitutionEmblem(group);
+  return '<span data-group="'+esc(group)+'">'
+    +(emblem?'<img src="'+esc(emblem.image)+'" alt="" loading="lazy" decoding="async" />':'')
+    +esc(label)+'</span>';
+}
+function massEmblemCredits(language){
+  return '<details class="aoMapEmblemCredits"><summary>'
+    +esc(L(language,"Emblem sources & rights","Sources et droits des emblèmes"))+'</summary><div>'
+    +MASS_EMBLEM_GROUPS.map(group=>{
+      const record=massInstitutionEmblem(group);
+      return '<p><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'
+        +esc(record.label)+'</a> · '+esc(record.rights)+' · <a href="'+esc(record.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'
+        +esc(L(language,"Original image licence","Licence de l’image"))+'</a></p>';
+    }).join("")
+    +'<p>'+esc(L(language,
+      "The Holy See arms identify diocesan listings editorially. Neither Holy See endorsement nor oversight of the listed Mass is implied. Copyright licences do not waive separate insignia or trademark rights. Commercial clearance remains outstanding.",
+      "Les armes du Saint-Siège identifient les fiches diocésaines dans cette carte, sans impliquer son approbation ni son contrôle. Les licences d’auteur ne lèvent pas les droits distincts attachés aux insignes ou aux marques. La validation commerciale reste à effectuer."))+'</p></div></details>';
+}
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
     let html='<section class="aoFindFilters aoExploreTlmFilters" aria-label="'+esc(L(vm.language,"Mass venue filters","Filtres des lieux de messe"))+'">';
     html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"Show","Afficher"))+'</span>';
-    html+=pill("directoryGroup","ROME",L(vm.language,"Communities in communion with Rome","Communautés en communion avec Rome"),f.directoryGroup);
-    html+=pill("directoryGroup","ALL",L(vm.language,"All","Tous"),f.directoryGroup);
+    html+=pill("directoryGroup","ALL",L(vm.language,"All locations","Tous les lieux"),f.directoryGroup);
+    html+=pill("directoryGroup","ROME",L(vm.language,"Rome-grouped listings","Fiches classées Rome"),f.directoryGroup);
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
-    html+='</div><details class="aoExploreAdvancedFilters"><summary>'+esc(L(vm.language,"Affiliation filters","Filtres par affiliation"))+'</summary>';
-    html+='<section><small>'+esc(L(vm.language,"SOURCE-REPORTED COMMUNITY","COMMUNAUTÉ SELON LES SOURCES"))+'</small><div class="aoFindAffiliations">';
-    for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"])
-      html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+esc(id==="DIOCESAN"?L(vm.language,"Diocesan","Diocésain"):id)+'</button>';
-    html+='</div></section></details>';
-    html+='<p class="aoPreliminaryDirectoryNotice">'+esc(L(vm.language,
-      "Preliminary locations only. Affiliation comes from listings; an individual Mass’s una-cum status, current celebration and timetable have not been checked. Consult the linked source before visiting.",
-      "Lieux provisoires. L’appartenance est indiquée selon les sources ; le caractère una cum de chaque messe, sa célébration actuelle et ses horaires restent à vérifier. Consultez la source avant toute visite."))+'</p>';
+    html+='</div><div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
+    html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
+    for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"]){
+      const emblem=massInstitutionEmblem(id);
+      html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'
+        +(emblem?'<img src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':'')
+        +esc(id==="DIOCESAN"?L(vm.language,"Diocesan","Diocésain"):id==="OTHER"?L(vm.language,"Other","Autres"):id)+'</button>';
+    }
+    html+='</div></div>';
+    html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
+      "Provisional pins · Check the original source before travelling",
+      "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,
+      "Affiliation comes from source listings. A particular Mass’s una-cum status, current celebration, precise entrance and timetable have not been verified. Links are supplied to the original source; an institute’s emblem is not a verification badge.",
+      "L’appartenance est issue des répertoires sources. Le caractère una cum d’une messe, sa célébration actuelle, son entrée exacte et ses horaires n’ont pas été vérifiés. L’emblème d’un institut ne constitue pas un contrôle de ces informations."))+'</p></details>';
     return html+'</section>';
   }
   let html='<div class="aoFindFilters aoExploreTlmFilters">';
@@ -513,7 +539,8 @@ export function renderExploreToString(vm){
 
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<nav class="aoExploreSectionNav" aria-label="'+esc(L(vm.language,"Explore navigation","Navigation Explorer"))+'">';
-  html+='<span>'+esc(L(vm.language,"SACRED GEOGRAPHY","GÉOGRAPHIE SACRÉE"))+' · '+esc(lensLabel(vm.language,vm.lens))+'</span>';
+  html+='<span>'+(vm.lens==="tlm"?esc(L(vm.language,"MASS DIRECTORY","ANNUAIRE DES MESSES"))
+    :esc(L(vm.language,"SACRED GEOGRAPHY","GÉOGRAPHIE SACRÉE"))+' · '+esc(lensLabel(vm.language,vm.lens)))+'</span>';
   html+='<details class="aoExploreSectionSwitcher"><summary>'+esc(L(vm.language,"Other sections","Autres sections"))+'</summary><div>';
   html+='<button type="button" data-find-filter="lens" data-find-filter-value="heritage">'+esc(L(vm.language,"Sacred places map","Carte des lieux sacrés"))+'</button>';
   for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
@@ -524,6 +551,7 @@ export function renderExploreToString(vm){
   if(vm.lens==="traditions")html+=customsAtlasPanel(vm);
   if(vm.lens==="pilgrimages"&&f.calendarKey)html+='<section class="aoExploreCalendarBridge"><span>'+esc(L(vm.language,"Pilgrimages associated with this Calendar observance","Pèlerinages associés à cette célébration du calendrier"))+' · '+esc(f.calendarKey)+'</span><button type="button" data-find-clear-calendar>'+esc(L(vm.language,"Show all pilgrimages","Tous les pèlerinages"))+'</button></section>';
 
+  if(vm.lens==="tlm")html+='<div class="aoTlmToolbar">';
   html+='<div class="aoFindSearch"><input type="search" data-find-query value="'+esc(f.query||"")+'" placeholder="'+esc(
     vm.lens==="tlm"?L(vm.language,"City, church, diocese or country","Ville, église, diocèse ou pays"):
     vm.lens==="shrines"?L(vm.language,"Shrine, saint or place","Sanctuaire, saint ou lieu"):
@@ -533,18 +561,13 @@ export function renderExploreToString(vm){
     L(vm.language,"Pilgrimage, shrine, route or place","Pèlerinage, sanctuaire, itinéraire ou lieu")
   )+'"></div>';
 
-  if(vm.lens==="tlm")html+='<section class="aoFindExternalSource" role="note">'
-    +'<div><strong>'+esc(L(vm.language,"More Mass locations","Autres lieux de messe"))+'</strong>'
-    +'<span>'+esc(L(vm.language,"Other directories may have additional locations. Always confirm current Mass times with the priest or parish.","D’autres annuaires peuvent signaler des lieux supplémentaires. Vérifiez toujours les horaires actuels auprès du prêtre ou de la paroisse."))+'</span></div>'
-    +'<a href="https://www.latinmass.com/find-latin-mass" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Mass of the Ages map ↗","Carte Mass of the Ages ↗"))+'</a>'
-    +'<a href="https://www.latinmassdir.org/countries/" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Latin Mass Directory ↗","Latin Mass Directory ↗"))+'</a>'
-    +'</section>';
   html+='<nav class="aoFindViewTabs">'+pill("view","list",vm.lens==="traditions"?L(vm.language,"Practices","Pratiques"):L(vm.language,"List","Liste"),vm.view)+pill("view","map",vm.lens==="traditions"?L(vm.language,"Attested places","Lieux attestés"):L(vm.language,"Map","Carte"),vm.view)+'</nav>';
+  if(vm.lens==="tlm")html+='</div>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
 
   const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
-  if(vm.mapped)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
+  if(vm.mapped&&vm.mapped<vm.items.length)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
   if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
   if(vm.lens==="tlm"){
     const listed=vm.items.filter(x=>x.status==="SCHEDULE UNVERIFIED").length;
@@ -565,11 +588,12 @@ export function renderExploreToString(vm){
     if(vm.lens==="tlm"&&vm.mapped){
       html+='<div class="aoMapLegend" role="note" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'">'
         +'<span class="aoMapLegendLabel">'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"Source affiliation","Affiliation selon les sources"):L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
-        +'<span data-group="FSSP">FSSP</span><span data-group="ICKSP">ICKSP</span>'
-        +'<span data-group="SSPX">SSPX</span><span data-group="DIOCESAN">'+esc(L(vm.language,"Diocesan","Diocésain"))+'</span>'
-        +'<span data-group="OTHER">'+esc(L(vm.language,"Other","Autre"))+'</span>'
+        +massLegendItem("FSSP","FSSP")+massLegendItem("ICKSP","ICKSP")
+        +massLegendItem("SSPX","SSPX")+massLegendItem("IBP","IBP")
+        +massLegendItem("DIOCESAN",L(vm.language,"Diocesan","Diocésain"))
+        +massLegendItem("OTHER",L(vm.language,"Other / unknown","Autre / inconnu"))
         +'<small>'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"All pins provisional; exact entrances and Mass times are not verified.","Tous les repères sont provisoires ; entrées exactes et horaires des messes non vérifiés."):L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
-        +'</div>';
+        +massEmblemCredits(vm.language)+'</div>';
     }
   }else if(vm.items.length){
     const visible=vm.items.slice(0,vm.displayLimit);
@@ -577,6 +601,13 @@ export function renderExploreToString(vm){
     if(visible.length<vm.items.length)html+='<div class="aoFindMore"><span>'+esc(L(vm.language,"Showing ","Affichage de "))+visible.length+' / '+vm.items.length+'</span>'
       +'<button type="button" data-find-show-more>'+esc(L(vm.language,"Show more results","Afficher plus de résultats"))+'</button></div>';
   }else html+=emptyState(vm);
-  html+='</div>'+(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):(vm.selected?(vm.expandDetail?detailSheet(vm):compactExploreItemSheet(vm)):""))+'</section>';
+  html+='</div>';
+  if(vm.lens==="tlm")html+='<details class="aoFindExternalSource" role="note"><summary>'+esc(L(vm.language,"Other Mass directories and source checking","Autres annuaires et vérification des sources"))+'</summary>'
+    +'<div><strong>'+esc(L(vm.language,"More Mass locations","Autres lieux de messe"))+'</strong>'
+    +'<span>'+esc(L(vm.language,"Other directories may have additional locations. Always confirm current Mass times with the priest or parish.","D’autres annuaires peuvent signaler des lieux supplémentaires. Vérifiez toujours les horaires actuels auprès du prêtre ou de la paroisse."))+'</span></div>'
+    +'<a href="https://www.latinmass.com/find-latin-mass" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Mass of the Ages map ↗","Carte Mass of the Ages ↗"))+'</a>'
+    +'<a href="https://www.latinmassdir.org/countries/" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Latin Mass Directory ↗","Latin Mass Directory ↗"))+'</a>'
+    +'</details>';
+  html+=(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):(vm.selected?(vm.expandDetail?detailSheet(vm):compactExploreItemSheet(vm)):""))+'</section>';
   return html;
 }

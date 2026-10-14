@@ -1,5 +1,8 @@
 import { isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance.js";
 import { attachExploreMapStatus } from "./map-status.js";
+import { registerMassInstitutionImages, massInstitutionEmblem } from "./institution-emblems.js";
+import { MASS_CLUSTER_GROUPS,CLUSTER_PAGE_SIZE,exploreClusterProperties,
+  exploreClusterMajorityExpression,clusterPageBounds } from "./cluster-presentation.js";
 const MAPLIBRE_MODULE="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.mjs";
 const MAPLIBRE_CSS="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.css";
 const DEFAULT_STYLE="https://tiles.openfreemap.org/styles/dark";
@@ -29,17 +32,18 @@ export function boundedWorldMapOptions(viewport=null){
   };
 }
 
+// Electric outline/selection palette; actual institute identity is the emblem sprite.
 export const MASS_MAP_GROUP_COLORS=Object.freeze({
-  FSSP:"#c9ae75",ICKSP:"#aa9bc5",SSPX:"#85a9b7",IBP:"#b6aa94",
-  DIOCESAN:"#87ac9b",OTHER:"#b8b1a2",
+  FSSP:"#00E5FF",ICKSP:"#BC65FF",SSPX:"#347CFF",IBP:"#FF9D24",
+  DIOCESAN:"#A3FF12",OTHER:"#93A3B9",
 });
 export function massMapProviderGroup(value){
   const key=String(value??"").toUpperCase();
   return Object.hasOwn(MASS_MAP_GROUP_COLORS,key)?key:"OTHER";
 }
 const HERITAGE_POINT_COLOR=["match",["get","heritage_primary"],
-  "shrines","#c9ae75","relics","#a99bc5","pilgrimages","#87ac9b",
-  "apparitions","#a0b5c8","traditions","#c49c93","#b8b1a2"];
+  "shrines","#FFBF2E","relics","#B65CFF","pilgrimages","#00E6A7",
+  "apparitions","#23B8FF","traditions","#FF5497","#93A3B9"];
 const POINT_COLOR=["match",["get","provider_group"],
   "FSSP",MASS_MAP_GROUP_COLORS.FSSP,
   "ICKSP",MASS_MAP_GROUP_COLORS.ICKSP,
@@ -180,30 +184,144 @@ export function exploreDistinctPointChoices(features){
     const properties=feature?.properties??{},id=String(properties.item_id??"");
     if(!id||seen.has(id))continue;
     seen.add(id);
-    choices.push({item_id:id,name:String(properties.name??"").trim()||"Sacred place"});
+    choices.push({item_id:id,name:String(properties.name??"").trim()||"Sacred place",
+      lens:String(properties.lens??""),provider_group:massMapProviderGroup(properties.provider_group),
+      approximate:properties.approximate===true||properties.approximate==="true"});
   }
   return choices;
 }
-function explorePlaceChoicePopup({win,map,maplibre,coordinates,choices,onSelect}){
-  if(choices.length<2||!maplibre.Popup||!win?.document)return false;
-  const list=win.document.createElement("div");
+// Draw one compact rectangular cluster badge, avoiding generic gold bubbles.
+// The text and its composition label are a separate MapLibre symbol.
+// A category-coloured badge is never an invented percentage chart: only exact
+// source-derived dominant affiliations receive the institute's electric outline.
+export const EXPLORE_CLUSTER_BADGE_COLORS=Object.freeze({
+  ...MASS_MAP_GROUP_COLORS,MIXED:"#22D6F7",PLACES:"#FFBF2E",
+});
+// Compact cartographic cluster glyphs, not rectangular dashboard counters.
+// Institute identity remains on individual venue emblems; a cluster is only
+// a group/zoom affordance. Colour comes from source-reported affiliation.
+export function registerExploreClusterBadge(map,win=globalThis){
+  if(!win?.document?.createElement||!map?.addImage)return false;
+  const canvas=win.document.createElement("canvas");
+  // 84px physical at pixelRatio 2 = 42px on screen (old rectangle was 88px).
+  canvas.width=84;canvas.height=84;
+  const ctx=canvas.getContext?.("2d");
+  if(!ctx)return false;
+  try{
+    for(const [group,color] of Object.entries(EXPLORE_CLUSTER_BADGE_COLORS)){
+      ctx.clearRect(0,0,84,84);
+      const cx=42,cy=42,r=31;
+      // A slim hexagonal outline reads as a map glyph, not as a popup card.
+      const vertices=Array.from({length:6},(_,i)=>{
+        const angle=Math.PI/3*i-Math.PI/6;
+        return [cx+r*Math.cos(angle),cy+r*Math.sin(angle)];
+      });
+      ctx.beginPath();
+      vertices.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));
+      ctx.closePath();
+      ctx.fillStyle="#0B1725";
+      ctx.fill();
+      ctx.lineWidth=2.4;
+      ctx.strokeStyle=color;
+      ctx.stroke();
+      if(group==="MIXED"){
+        // Multicolour side ticks indicate distinct affiliations, never made-up
+        // percentages. Real breakdown is obtained on opening the cluster.
+        const groups=["FSSP","ICKSP","SSPX","DIOCESAN","IBP","OTHER"];
+        ctx.lineWidth=3.2;
+        for(let i=0;i<6;i++){
+          const p=vertices[i],q=vertices[(i+1)%6];
+          const from=0.28,to=0.72;
+          ctx.beginPath();
+          ctx.moveTo(p[0]+(q[0]-p[0])*from,p[1]+(q[1]-p[1])*from);
+          ctx.lineTo(p[0]+(q[0]-p[0])*to,p[1]+(q[1]-p[1])*to);
+          ctx.strokeStyle=MASS_MAP_GROUP_COLORS[groups[i]];
+          ctx.stroke();
+        }
+      }
+      const id="ao-explore-cluster-badge-"+group;
+      if(!map.hasImage?.(id))map.addImage(id,ctx.getImageData(0,0,84,84),{pixelRatio:2});
+    }
+    return true;
+  }catch{return false}
+}
+function explorePlaceChoicePopup({win,map,maplibre,coordinates,choices,onSelect,
+  total=choices.length,fetchMore=null,initialOffset=choices.length}){
+  if((choices.length<2&&!fetchMore)||!maplibre.Popup||!win?.document)return false;
+  const doc=win.document,fr=win.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr";
+  const list=doc.createElement("div");
   list.className="aoExplorePlaceChoices";
-  list.style.cssText="max-height:min(52vh,320px);min-width:min(250px,70vw);overflow:auto;padding:6px 3px;color:#18212b";
-  const title=win.document.createElement("strong");
-  title.textContent="Places nearby · Lieux à proximité";
-  title.style.cssText="display:block;padding:6px;font-size:12px";
+  list.style.cssText="max-height:min(62dvh,420px);min-width:min(280px,72vw);max-width:min(360px,84vw);overflow:auto;padding:9px;color:#e8f4ff;background:#0b1622;border-radius:8px";
+  list.setAttribute("role","group");
+  const title=doc.createElement("strong");
+  title.textContent=fr?"Lieux à cet endroit":"Places at this location";
+  title.style.cssText="display:block;padding:7px 6px 9px;font:600 14px/1.3 system-ui,sans-serif";
   list.append(title);
-  const popup=new maplibre.Popup({closeButton:true,maxWidth:"340px"});
-  for(const choice of choices){
-    const button=win.document.createElement("button");
-    button.type="button";
-    button.textContent=choice.name;
-    button.setAttribute("aria-label",choice.name);
-    button.style.cssText="display:block;width:100%;padding:11px 8px;min-height:44px;text-align:left;border:0;border-bottom:1px solid #ddd;background:transparent;color:#18212b;cursor:pointer";
-    button.addEventListener("click",()=>{popup.remove?.();onSelect(choice.item_id)});
-    list.append(button);
+  const count=doc.createElement("small");
+  count.style.cssText="display:block;padding:0 6px 8px;color:#92bacc";
+  count.textContent=String(total)+" "+(fr?"lieux répertoriés":"listed places");
+  list.append(count);
+  const popup=new maplibre.Popup({closeButton:true,maxWidth:"390px"});
+  const seen=new Set();
+  function appendChoices(rows){
+    for(const choice of rows){
+      if(!choice.item_id||seen.has(choice.item_id))continue;
+      seen.add(choice.item_id);
+      const button=doc.createElement("button");
+      button.type="button";
+      button.style.cssText="display:flex;align-items:center;gap:10px;width:100%;min-height:48px;padding:9px 7px;text-align:left;border:0;border-top:1px solid #294153;background:transparent;color:#ecf8ff;cursor:pointer";
+      const emblem=choice.lens==="tlm"?massInstitutionEmblem(choice.provider_group):null;
+      if(emblem){
+        const img=doc.createElement("img");img.src=emblem.image;img.alt="";
+        img.style.cssText="flex:none;object-fit:contain;width:29px;height:29px";
+        button.append(img);
+      }
+      const description=doc.createElement("span");
+      description.style.cssText="display:flex;flex-direction:column;gap:3px;min-width:0";
+      const name=doc.createElement("span");
+      name.textContent=choice.name;
+      name.style.cssText="font:600 13px/1.3 system-ui,sans-serif";
+      description.append(name);
+      if(choice.lens==="tlm"){
+        const category=doc.createElement("small");
+        category.textContent=(choice.provider_group==="OTHER"?(fr?"Affiliation non précisée":"Affiliation unspecified"):choice.provider_group)
+          +(choice.approximate?(fr?" · position indicative":" · approximate pin"):"");
+        category.style.cssText="color:#a7c8d8;font:11px/1.25 system-ui,sans-serif";
+        description.append(category);
+      }
+      button.append(description);
+      button.setAttribute("aria-label",choice.name);
+      button.addEventListener("click",()=>{popup.remove?.();onSelect(choice.item_id)});
+      list.append(button);
+    }
+  }
+  appendChoices(choices);
+  let offset=initialOffset;
+  if(fetchMore&&offset<total){
+    const loadMore=doc.createElement("button");
+    loadMore.type="button";
+    loadMore.style.cssText="display:block;width:100%;min-height:46px;margin-top:7px;padding:8px;background:#123548;border:1px solid #18b6e0;border-radius:8px;color:#e9faff;font:600 13px system-ui,sans-serif;cursor:pointer";
+    const label=()=>fr?`Afficher plus · ${Math.min(offset,total)}/${total}`:`Show more · ${Math.min(offset,total)}/${total}`;
+    loadMore.textContent=label();
+    loadMore.addEventListener("click",async()=>{
+      if(loadMore.disabled)return;
+      loadMore.disabled=true;loadMore.textContent=fr?"Chargement…":"Loading…";
+      try{
+        const next=await fetchMore(offset);
+        // Offset tracks returned leaves, not only distinct IDs. The source
+        // can legitimately yield two records with the same display name.
+        if(!next.length){loadMore.remove();return}
+        offset+=next.length;
+        loadMore.remove();appendChoices(next);
+        if(offset<total){loadMore.disabled=false;loadMore.textContent=label();list.append(loadMore)}
+      }catch{
+        loadMore.disabled=false;loadMore.textContent=fr?"Réessayer":"Retry";
+      }
+    });
+    list.append(loadMore);
   }
   popup.setLngLat(coordinates).setDOMContent(list).addTo(map);
+  popup.getElement?.()?.classList?.add("aoExploreDarkPopup");
   return true;
 }
 export function mapFitBounds(features){
@@ -238,20 +356,57 @@ export async function mountExploreMap(container,items,{
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
   if(maplibre.FullscreenControl)map.addControl?.(new maplibre.FullscreenControl({pseudo:true}),"top-right");
   const visualStatus=attachExploreMapStatus(container,map,{win});
+  if(features.some(feature=>feature.properties?.lens==="tlm")){
+    const reset=win.document.createElement("button");
+    reset.type="button";reset.className="aoExploreMapReset";
+    reset.setAttribute("data-explore-map-reset","");
+    const fr=win.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr";
+    reset.textContent=fr?"↗ Tous les résultats":"↗ All results";
+    reset.setAttribute("aria-label",fr?"Recentrer la carte sur tous les résultats visibles":"Fit map to all visible results");
+    reset.addEventListener("click",()=>{
+      const bounds=mapFitBounds(features);
+      const duration=reducedMotion?0:360;
+      if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration});
+      else map.easeTo({center:[0,16],zoom:1,duration});
+    });
+    container.append?.(reset);
+  }
   map.on("load",()=>{
     const sourceId="ao-explore-items",prefix="ao-explore";
     map.addSource(sourceId,{type:"geojson",data:{type:"FeatureCollection",features},
-      cluster:true,clusterMaxZoom:12,clusterRadius:52});
+      cluster:true,clusterMaxZoom:12,clusterRadius:52,
+      clusterProperties:exploreClusterProperties()});
+    const clusterBadgeReady=registerExploreClusterBadge(map,win);
+    // Invisible hit surface stays >=48px. Visible hexagon stays a fixed 42px:
+    // population does not inflate markers into big obstructive boxes.
     map.addLayer({id:prefix+"-cluster-halo",type:"circle",source:sourceId,filter:["has","point_count"],
-      paint:{"circle-radius":["step",["get","point_count"],23,20,29,100,35],
-        "circle-color":"#101924","circle-stroke-color":"#d7c294",
-        "circle-stroke-opacity":0.35,"circle-stroke-width":1.5,"circle-opacity":0.91}});
+      paint:{"circle-radius":25,"circle-color":"#09131f",
+        "circle-stroke-color":"#22D6F7",
+        "circle-stroke-opacity":clusterBadgeReady?0:0.6,
+        "circle-stroke-width":clusterBadgeReady?0:1.5,
+        "circle-opacity":clusterBadgeReady?0.005:0.88}});
     map.addLayer({id:prefix+"-clusters",type:"circle",source:sourceId,filter:["has","point_count"],
-      paint:{"circle-radius":["step",["get","point_count"],18,20,24,100,30],
-        "circle-color":"#c9b388","circle-opacity":0.95}});
+      paint:{"circle-radius":24,"circle-color":"#142432",
+        "circle-opacity":clusterBadgeReady?0.005:0.96}});
     map.addLayer({id:prefix+"-cluster-count",type:"symbol",source:sourceId,filter:["has","point_count"],
-      layout:{"text-field":["get","point_count_abbreviated"],"text-size":12},
-      paint:{"text-color":"#080c12"}});
+      layout:{"text-field":["get","point_count_abbreviated"],"text-size":12,
+        "visibility":clusterBadgeReady?"none":"visible"},
+      paint:{"text-color":"#F1FAFF"}});
+    if(clusterBadgeReady){
+      const majority=exploreClusterMajorityExpression(group=>group);
+      const countSum=["+",...MASS_CLUSTER_GROUPS.map(group=>["get","mass_"+group.toLowerCase()])];
+      // Every branch must return a string: an untyped null invalidates the
+      // entire MapLibre symbol layer and conceals all clustering badges.
+      const clusterKind=["case",[">",countSum,0],majority,"PLACES"];
+      map.addLayer({id:prefix+"-cluster-badges",type:"symbol",source:sourceId,
+        filter:["has","point_count"],
+        layout:{"icon-image":["concat","ao-explore-cluster-badge-",clusterKind],
+          "icon-size":1,"icon-allow-overlap":true,"icon-ignore-placement":true,
+          "text-field":["get","point_count_abbreviated"],
+          "text-size":12,"text-anchor":"center",
+          "text-allow-overlap":true,"text-ignore-placement":true},
+        paint:{"text-color":"#EBF8FF","text-halo-color":"#0B1521","text-halo-width":0.5}});
+    }
     map.addLayer({id:prefix+"-points",type:"circle",source:sourceId,filter:["!",["has","point_count"]],
       paint:{"circle-radius":["case",["get","approximate"],6,
           ["==",["get","lens"],"heritage"],
@@ -259,8 +414,9 @@ export async function mountExploreMap(container,items,{
           8],
         "circle-color":["case",["==",["get","lens"],"heritage"],HERITAGE_POINT_COLOR,POINT_COLOR],
         "circle-opacity":["case",["get","approximate"],0.65,0.97],
-        "circle-stroke-width":["case",["get","approximate"],1.6,2.4],
-        "circle-stroke-color":["case",["get","approximate"],"#17212d","#f0e7d4"]}});
+        "circle-stroke-width":["case",["get","approximate"],1.6,2.2],
+        "circle-stroke-color":["case",["==",["get","lens"],"tlm"],POINT_COLOR,
+          ["case",["get","approximate"],"#17212d","#f0e7d4"]]}});
     // Editorial hierarchy is derived only from canonical physical site type.
     // This does not assert ecclesiastical prominence or authenticated status.
     // Labels emerge only after zooming into an area; collisions stay hidden.
@@ -271,6 +427,37 @@ export async function mountExploreMap(container,items,{
         "text-optional":true},
       paint:{"text-color":"#e9dfcc","text-halo-color":"#08121b",
         "text-halo-width":1.4,"text-opacity":0.92}});
+    // Real affiliation insignia appear only for classified TLM venues.
+    // Progressive loading keeps every existing pin usable when a source blocks CORS.
+    if(features.some(feature=>feature.properties?.lens==="tlm")){
+      const loadedGroups=new Set();
+      const refreshEmblems=()=>{
+        if(!map.getSource?.(sourceId)||!loadedGroups.size)return;
+        const withEmblem=["all",["==",["get","lens"],"tlm"],
+          ["in",["get","provider_group"],["literal",[...loadedGroups]]]];
+        map.setPaintProperty(prefix+"-points","circle-radius",
+          ["case",withEmblem,19,["case",["get","approximate"],6,
+            ["==",["get","lens"],"heritage"],
+            ["match",["get","place_type"],"cathedral",11,"basilica",10,"shrine",9,8],8]]);
+        // An emblem takes the central canvas; neon stroke remains the key to
+        // recognition for low-resolution or colour-blind map readers.
+        map.setPaintProperty(prefix+"-points","circle-color",
+          ["case",withEmblem,"#0B1521",
+            ["==",["get","lens"],"heritage"],HERITAGE_POINT_COLOR,POINT_COLOR]);
+        const layer=prefix+"-institution-emblems",
+          filter=["all",["!",["has","point_count"]],withEmblem];
+        if(map.getLayer?.(layer)){map.setFilter(layer,filter);return}
+        map.addLayer({id:layer,type:"symbol",source:sourceId,filter,
+          layout:{"icon-image":["concat","ao-mass-institution-",["get","provider_group"]],
+            "icon-size":0.9,"icon-allow-overlap":true,"icon-ignore-placement":true}});
+      };
+      void registerMassInstitutionImages(map,{win,onRegistered:group=>{
+        loadedGroups.add(group);
+        try{refreshEmblems()}catch(error){
+          console.warn("Explore affiliation emblem presentation failed",error);
+        }
+      }}).catch(()=>{});
+    }
     if(!initialViewport){
       const bounds=mapFitBounds(features);
       if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration:0});
@@ -297,19 +484,30 @@ export async function mountExploreMap(container,items,{
         const zoom=await source.getClusterExpansionZoom(clusterId);
         const coords=feature.geometry?.coordinates;
         if(!coords)return;
-        // If the cluster has reached its maximum expansion zoom (or the user is
-        // already there), reveal every underlying Place instead of zooming into
-        // an apparently solitary marker that conceals neighbours.
         const currentZoom=map.getZoom?.()??0;
         if(zoom>currentZoom+0.25&&currentZoom<12.5){
           map.easeTo({center:coords,zoom,duration:reducedMotion?0:420});
           return;
         }
-        const leaves=await source.getClusterLeaves?.(clusterId,500,0);
+        // Always allow pagination through *all* source-backed leaves. A fixed
+        // 500-result cap made dense city clusters silently inaccessible.
+        const total=Math.max(0,Number(feature.properties?.point_count)||0);
+        const first=clusterPageBounds(total);
+        const leaves=await source.getClusterLeaves?.(clusterId,first.limit,first.offset);
         const choices=exploreDistinctPointChoices(leaves);
-        if(!explorePlaceChoicePopup({win,map,maplibre,
-          coordinates:coords,choices,onSelect})&&choices.length===1)onSelect(choices[0].item_id);
-      }catch{}
+        if(!choices.length)return;
+        const fetchMore=async offset=>{
+          const page=clusterPageBounds(total,offset);
+          if(!page.limit)return [];
+          return exploreDistinctPointChoices(await source.getClusterLeaves(clusterId,page.limit,page.offset));
+        };
+        if(!explorePlaceChoicePopup({win,map,maplibre,coordinates:coords,
+          choices,total,fetchMore,initialOffset:first.nextOffset,onSelect})
+          &&choices.length===1)onSelect(choices[0].item_id);
+      }catch(error){
+        // Keep the map interactive when a provider's cluster API is unavailable.
+        console.warn("Explore cluster selection failed",error);
+      }
     });
     for(const layer of [prefix+"-points",prefix+"-clusters"]){
       map.on("mouseenter",layer,()=>{map.getCanvas().style.cursor="pointer"});

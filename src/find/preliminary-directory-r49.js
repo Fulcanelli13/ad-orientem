@@ -82,7 +82,7 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
   cache=items;
   return items;
 }
-export function filterPreliminaryR49(items,{query="",directoryGroup="ROME",affiliations=[]}={}){
+export function filterPreliminaryR49(items,{query="",directoryGroup="ALL",affiliations=[]}={}){
   const q=searchKey(query),group=tidy(directoryGroup).toUpperCase();
   const allowed=["ALL","ROME","SSPX","UNKNOWN"].includes(group)?group:"ROME";
   const aff=new Set((Array.isArray(affiliations)?affiliations:[]).map(x=>tidy(x).toUpperCase()));
