@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-minimal-icon-family-standard-v1",
   "date": "2026-10-14",
-  "status": "DESIGN_LOCK_FOR_REVIEW_NOT_RUNTIME_APPROVAL",
+  "status": "FAMILY_FIDELITY_CORRECTED_MASTER_DERIVATIVE_NOT_NEW_GEOMETRY",
   "basis": {
     "review": "Ad_Orientem_Full_Mass_Icon_Review_2026-10-14.json",
     "visualNote": "User rejects new detailed engravings and complicated priest features; follow the already selected minimal family",
@@ -62,21 +62,22 @@
     }
   ],
   "design": {
-    "intent": "functional liturgical pictogram, not an engraved religious scene",
-    "sceneTreatment": "Keep only the shapes required to identify actor, action and necessary object; scenery should never compete with posture",
-    "priestFace": "In rear views no face rendered; in side/front views use basic head oval or silhouette, no eyes, eyebrows, eyelashes, nose modelling, mouth modelling or portrait likeness; only mouth-chalice contact outline if essential",
-    "hair": "single outer contour or one restrained mass; no individual strands, highlights, hairline engraving or gradients",
-    "vestments": "one clean alb silhouette, simple chasuble outline, at most the existing master's minimal cross/band motif; no brocade patterns, detailed lace, embroidery, decorative edging, or many folds",
-    "armsHands": "Gesture is dominant; anatomical placement exact but fingers simplified to groups, with thumb-index separate only when the rubric hinges on it; clear wrists, no extra limbs",
-    "altar": "single shared minimal altar base derived from verified accepted composition: basic table/cloth line, crucifix and candlesticks only where context required; no architectural panels, floral patterns, carved arches, cloth lace, ornament or shrine-like scenery",
+    "intent": "Exact derivative of the user's established selected illustration family: measured traditional priest and altar linework, not an ornate full engraving and not a generic geometric pictogram.",
+    "sceneTreatment": "Preserve the selected master composition, recognizable silhouette, baseline, viewpoint, ratio of empty space to figure and its established treatment of the altar; remove only detail beyond that master.",
+    "priestFace": "No new facial portraiture. When rear-facing, reproduce selected master head/neck/hair shape without inventing facial features. When profile, use only same restrained facial treatment as the selected donor, not blank circle head.",
+    "hair": "Preserve the master hair contour and its existing sparse detail exactly; do not invent strands or erase identity-defining outline.",
+    "vestments": "COPY selected master Roman chasuble cut, sleeve volume, alb outline, hems and existing simple ornament / cross band as precisely as possible; do not impose a plain blob garment. Retain details present in the approved reference, omit new ornamental additions.",
+    "armsHands": "Keep bodily anatomy and the exact donor sleeve/arm structure. Alter only gesture-specific forearm and hand positions; simplified fingers still show true thumb/index action when prescribed.",
+    "altar": "REUSE the same visually approved altar footprint and its existing proportions, altar cloth, crucifix, candlestick positions and any restrained structural linework present in the donor. Do not replace with a generic table or two sticks; do not add elaborate carved panels.",
     "minister": "simple distinct dalmatic/surplice silhouette and clear actor position, never a second detailed portrait",
     "objects": "draw only the sacred object needed to differentiate the action (Host, chalice, paten, thurible, pall, Missal); never add ceremonial props to fill space",
     "incense": "one restrained thurible shape; at most 1–2 thin smoke strokes if needed for recognition; no billowing smoke cloud",
-    "lineLanguage": "monochrome filled silhouette with sparse clear cut-outs, no crosshatching, etching, texture, halftone, gradients, shading or photorealism",
-    "composition": "one icon and one frozen instant, consistent figure proportions and baseline; no multi-panel sheets, captions, headings or frames",
+    "lineLanguage": "Match the selected family stroke thickness, navy-to-background contrast, positive/negative shape balance and limited interior detailing. Neither hatching-heavy etching nor geometric stick-person iconography is allowed.",
+    "composition": "Source-preserving derivative: anchor torso/altar widths, head-to-body size, perspective and candlesticks at the same coordinates as the approved master. Edit only the limbs/objects required for the exact source-owned gesture; 1 icon per file.",
     "color": "single alpha-based artwork tinted from app's currentColor; no baked background/checkerboard, no permanent navy ink, no multicolor fill",
     "vector": "final SVG contains native paths/shapes only, no embedded PNG/JPEG/SVG as image data; if not fully vector, label accurately as tintable raster mask",
-    "assets": "Never mutate original approved v4.6 donors; add reviewed corrected candidates to new paths only"
+    "assets": "Never mutate original approved v4.6 donors; add reviewed corrected candidates to new paths only",
+    "objective": "Achieve VISUAL FAMILY PARITY by matched contour overlays at 128px and 64px, not just compliance with a list of prohibited details."
   },
   "hierarchy": {
     "smallRail": "At 48/64 px show one action or one priest station; cropped gesture/silhouette or text may replace complex full-altars",
@@ -87,8 +88,6 @@
   },
   "prohibitions": [
     "portrait faces or exaggerated hair",
-    "embroidered Roman chasubles and patterned lace",
-    "baroque altar architecture or carved panels",
     "clouds, glowing beams, excessive smoke",
     "crosshatching, woodcut/engraving simulation, texture or shadows",
     "scene borders, infographic layouts and grids",
@@ -97,7 +96,12 @@
     "recoloring detailed artwork and calling it harmonized",
     "treating 0-2 original as repairable",
     "treating 3 as approval",
-    "promoting generated sheets or raster-wrapped SVG as production icons"
+    "promoting generated sheets or raster-wrapped SVG as production icons",
+    "Generic round-head/white-robed stick-person icon family",
+    "Replacing an approved master altar with a couple of unrelated lines",
+    "Redesigning chasuble silhouette or cross just because it is easier to trace",
+    "Removing small structural details that are characteristic of the approved family",
+    "Adding artist-specific detail beyond the approved family"
   ],
   "acceptanceGates": [
     {
@@ -114,6 +118,11 @@
       "id": "G2",
       "name": "RUBRICS",
       "rule": "Precise actor, position, hands/objects and form according to source cue."
+    },
+    {
+      "id": "G3A",
+      "name": "MASTER_OVERLAY",
+      "rule": "Compare the candidate at same crop and scale to the actual 5-rated master and relevant chosen altar donor: unchanged parts must stay matching; a generic symbol fails, regardless of tintability."
     },
     {
       "id": "G3",
@@ -137,9 +146,42 @@
     }
   ],
   "nextProcess": [
+    "Reject the three 2026-10-14 geometric icon prototypes as family mismatches, preserving only as historical rejected construction studies.",
     "Apply target design constraints separately to each of the 24 surviving rework subjects.",
     "Resolve by REUSE, REMAP, TEXT or MINIMAL_REDRAW; avoid any decorative enhancement.",
     "Reference existing 5-rated priest_sedilia and user-reviewed 4s, not latest ornate drawings.",
     "After repair, re-audit cue coverage across 36 action subjects; only genuinely missing ones enter generation in groups of 3."
-  ]
+  ],
+  "familyParity": {
+    "priority": "DONOR_DERIVATIVE_NOT_STYLE_IMITATION_FROM_TEXT",
+    "base": "S_priest_sedilia user 5/5 establishes actor rendering; use same selected visual family and appropriate existing priest-at-altar donor for station geometry",
+    "requireMatch": [
+      "head size and contour",
+      "neck and shoulders",
+      "chasuble outline and simple existing decorative mark",
+      "sleeve/fold treatment present in selected master",
+      "altar proportions and architecture if relevant",
+      "crucifix/candle sizes and positions",
+      "line weight and ink/negative space balance",
+      "view angle, pose baseline, composition margins"
+    ],
+    "prohibitedNewStyle": [
+      "oversimplified faceless stick figures",
+      "pure circle head and trapezoid body",
+      "stick altar/independent cross disconnected from family",
+      "new exaggerated geometric white cross chasuble",
+      "new realistic portrait features or ornate embroidery",
+      "new floral carving, lace micro-detail or billowing smoke",
+      "text-based prompt-only style guessing"
+    ],
+    "workflow": [
+      "take pixel-perfect visible selected master",
+      "hold all unchanged regions constant",
+      "modify only physically necessary body region and prop",
+      "overlay original and candidate with diff markers",
+      "test small-size clarity",
+      "user judges family parity before any SVG trace/integration"
+    ],
+    "assetNote": "Original assets are raster in SVG wrapper; do not claim editing or automatic tracing will preserve family until seen and reviewed."
+  }
 }
