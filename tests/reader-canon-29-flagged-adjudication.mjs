@@ -26,6 +26,13 @@ for(const row of audit.rows){
  assert.ok(row.guideDraft.fr.length>35);
  assert.ok(row.guideDraft.en.length>35);
  assert.ok(row.shortDraft.fr.length>5);
+ const owner=witnesses.french.rows.find(x=>x.id===row.actionId);
+ assert.equal(row.frenchShortOwnerId,row.actionId);
+ assert.equal(row.shortDraft.fr,owner.shortFrenchRubricDraft,
+  "Flagged French short must always resolve from canonical R62 owner");
+ const raw=witnesses.bilingual.rows.find(x=>x.actionId===row.actionId);
+ assert.equal(raw.shortDraft.frCanonicalActionId,row.actionId);
+ assert.ok(!Object.hasOwn(raw.shortDraft,"fr"),"No duplicated French short copies");
  assert.ok(row.shortDraft.en.length>5);
  assert.ok(row.sourceUrls.length>=2);
  assert.ok(row.unresolvedIssue.fr.length>30);
@@ -69,6 +76,15 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
 assert.throws(()=>controller.project({editorialPreview:true,
  actionIds:["AO.CANON.R62.099"]}),/Unknown/);
 function corrupt(change){const x=structuredClone(witnesses);change(x);return x;}
+assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
+ x.bilingual.rows[0].shortDraft.fr="Stale duplicate French";
+})),/drift/);
+assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
+ x.bilingual.rows[0].shortDraft.frCanonicalActionId="AO.CANON.R62.061";
+})),/drift/);
+assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
+ x.french.rows[0].shortRubricReviewState="APPROVED";
+})),/drift/);
 assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
  x.risks.rows[0].canPublish=true;
 })),/drift/);
