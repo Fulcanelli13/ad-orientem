@@ -344,4 +344,74 @@ assert.equal(controller.project("AO.SM.C0153").canPublish,false,
  "No short French draft may enable public Canon text");
 assert.equal(sources.frenchReview.rows.filter(x=>x.formReview==="FORM_OR_PASTORAL_REVIEW_PENDING").length,5,
  "Five source decisions do not constitute final pastoral/form approval");
+
+const iconPlan=read("../data/research/mass-canon-62-icon-ownership-review-20261014.json");
+const {R17_FROZEN_ACTIVE_ICON_ASSETS}=await import("../src/mass/reader-icon-bank.js");
+assert.equal(iconPlan.schema,"ao-canon-62-editorial-icon-ownership-v1");
+assert.equal(iconPlan.status,"EDITORIAL_ICON_PREVIEW_NOT_ACTIVATED");
+assert.deepEqual(iconPlan.counts,{
+ sourceActions:62,priest:58,server:4,sourceWordAnchors:50,
+ nonTextOrStates:12,withFrozenAsset:50,noIconByDesign:3,requiresDistinctOrStageArtwork:9,
+ livePublishedByThisBatch:0,faithfulPosturesInferred:0
+});
+assert.deepEqual(iconPlan.rows.map(x=>x.actionId),trigger.rows.map(x=>x.id));
+const iconGaps=[],iconSeen=new Set();
+for(const item of iconPlan.rows){
+ const audit=trigger.rows.find(x=>x.id===item.actionId);
+ const copy=sources.frenchReview.rows.find(x=>x.id===item.actionId);
+ assert.ok(audit&&copy,item.actionId+": canonical Ritus action missing");
+ assert.ok(!iconSeen.has(item.actionId),item.actionId+": duplicate icon decision");
+ iconSeen.add(item.actionId);
+ assert.equal(item.cueId,audit.cueId);
+ assert.equal(item.actor,audit.actor);
+ assert.equal(item.sourceActionKey,audit.actionKey);
+ assert.equal(item.sourceAnchorType,audit.sourceAnchorType);
+ assert.equal(item.sourceVerifiedWords,audit.verifiedSourceWordAnchor);
+ assert.equal(item.ritusLocator,audit.rubricSource);
+ assert.deepEqual(item.stageIds,audit.stageSequence.map(s=>s.id));
+ assert.equal(item.shortFrenchDraftRef,copy.id);
+ assert.equal(item.requiresIndependentActorObservation,true);
+ assert.equal(item.readerDisplayApproval,"NOT_APPROVED");
+ assert.equal(item.observedNow,false);
+ assert.equal(item.faithfulPosture,null);
+ if(item.iconKey===null)iconGaps.push(item.actionId);
+ else assert.ok(Object.hasOwn(R17_FROZEN_ACTIVE_ICON_ASSETS,item.iconKey),
+   item.actionId+": icon is not in frozen v4.6 active assets");
+ assert.equal(item.sceneType,audit.sourceAnchorType==="SOURCE_LATIN_WORDS"
+   ?"SOURCE_WORD_REFERENCE_ONLY":"NOT_A_WORD_SYNCHRONISED_ACTION");
+}
+assert.equal(iconSeen.size,62);
+assert.deepEqual(iconGaps,[
+ "AO.CANON.R62.006","AO.CANON.R62.017","AO.CANON.R62.021",
+ "AO.CANON.R62.025","AO.CANON.R62.026","AO.CANON.R62.028",
+ "AO.CANON.R62.031","AO.CANON.R62.033","AO.CANON.R62.047",
+ "AO.CANON.R62.055","AO.CANON.R62.058","AO.CANON.R62.059",
+]);
+assert.deepEqual(iconPlan.knownGaps.map(x=>x.actionId),iconGaps);
+const byIconId=id=>iconPlan.rows.find(x=>x.actionId==="AO.CANON.R62."+id);
+assert.equal(byIconId("021").iconKey,null,
+ "Narrative fregit may never be displayed as actual Host fraction");
+assert.equal(byIconId("058").iconKey,null,
+ "Minor Per ipsum elevation must not borrow major Host/Chalice elevation");
+assert.equal(byIconId("024").iconKey,"priest_elevation");
+assert.equal(byIconId("034").iconKey,"priest_elevate_chalice_rich");
+assert.equal(byIconId("041").iconKey,"bow",
+ "Ritus IX.1 incline se does not certify a profound bow at Supplices");
+for(const id of ["027","035","062"]){
+ assert.equal(byIconId(id).iconKey,"bells");
+ assert.equal(byIconId(id).actor,"SERVER");
+ assert.notEqual(byIconId(id).sceneType,"SOURCE_WORD_REFERENCE_ONLY");
+}
+assert.equal(byIconId("061").iconKey,"response");
+assert.equal(byIconId("061").actor,"SERVER");
+assert.equal(byIconId("062").sourceVerifiedWords,null,
+ "The pre-consecration bell cannot be attached to Hanc igitur words");
+for(const id of ["055","059"]){
+ assert.equal(byIconId(id).iconKey,null,
+  "Conditional Solemn deacon and priest ceremonies need separate stage art");
+}
+assert.equal(byIconId("026").iconKey,null,
+ "Thumb/index discipline is a continuing state, not a fired gesture");
+console.log("PASS: 62 source-owned Canon icons; 50 matched frozen art, 12 intentional no-icon/stage review cases, 0 live publication or inferred pew postures.");
+
 console.log("PASS: five Canon form-conditioned sources, exact 1962 actor constraints, two corrected French drafts, 0 published.");
