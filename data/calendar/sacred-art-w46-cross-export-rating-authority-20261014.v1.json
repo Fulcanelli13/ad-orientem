@@ -60,7 +60,7 @@
     "historicBaselineArtIdsNotInOct13Reconciled": 27,
     "conflictsAcrossSources": 20,
     "uniqueConflictingArtworks": 13,
-    "conflictsCrossingPermanentRejectionBoundary": 1,
+    "conflictsCrossingPermanentRejectionBoundary": 13,
     "effectiveAcross247": {
       "CONFIRMED_SELECTED_5": 12,
       "REVIEW_REQUIRED_4": 55,
@@ -74,7 +74,9 @@
     },
     "selectedPortrait5Count": 9,
     "unresolvedPortrait4Count": 13,
-    "historicalUnnumberedApprovals": 35
+    "historicalUnnumberedApprovals": 35,
+    "permanentRejectionsGlobalAccessionCertified": 0,
+    "knownOct13LaterBaselineCorrectionsToFormerScores": 13
   },
   "conflicts": [
     {
@@ -280,12 +282,132 @@
   ],
   "conflictsCrossingRejectionBoundary": [
     {
+      "artworkId": "met-435617",
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Paul",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-458955",
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Peter",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-459044",
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Mary Magdalene",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-435617",
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Paul",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-437065",
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Paul",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-435617",
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Paul",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-436982",
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Anthony Padua",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-442750",
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Benedict",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "cma-153406",
+      "subjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Sebastian",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
       "artworkId": "met-459258",
       "subjectId": "SNT-OT-20",
       "subject": "Saint Nicholas",
       "earlierRating": 4,
       "laterBaselineRating": 2,
       "earlierTheme": "Saint Nicholas Myra",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-436050",
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Lucy",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-437273",
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint John Baptist",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-459044",
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Mary Magdalene",
       "firstRatedSource": "2026-10-13T10:23:32.144Z",
       "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
     }
@@ -4858,5 +4980,6 @@
     "score3": "INTERNAL_RESEARCH_SIGNAL_NO_REDISPLAY",
     "noAutomaticPromotionOfUnnumberedApprovals": true,
     "sameWorkVariantBan": true
-  }
+  },
+  "qualification": "The ranked 75-person baseline contains source-relative ratings across themes; a numeric rating's work-identity and latest explicit provenance must be verified before an irrevocable application-wide blacklist changes any other module. The present filter and do-not-review list are implemented in the research candidate review first, with historical score records untouched."
 }
