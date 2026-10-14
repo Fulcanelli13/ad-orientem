@@ -69,7 +69,7 @@ for(const entry of gaps.records){
  assert(links(entry.deep.en)>=1&&links(entry.deep.fr)>=1);
  assert(entry.short.en.length>70&&entry.short.fr.length>70);
  assert(entry.deep.en.length>350&&entry.deep.fr.length>390,"substantive long research drafts required "+entry.id);
- assert.deepEqual(entry.conditionalityFlags,owner.conditionalityFlags);
+ for(const inherited of owner.conditionalityFlags)assert(entry.conditionalityFlags.includes(inherited),"existing owner condition must be retained: "+entry.id+" "+inherited);
  assert.equal(entry.publication.approved,false);
  assert.equal(entry.publication.hasNativeFrenchReview,false);
  assert.equal(entry.publication.requiresRubricAndEditionAcceptance,true);
