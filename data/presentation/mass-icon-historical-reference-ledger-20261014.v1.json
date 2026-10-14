@@ -1,0 +1,896 @@
+{
+  "schema": "ao-mass-icon-historical-reference-ledger-v1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_ONLY_IMAGE_RIGHTS_AND_CEREMONIAL_REVIEW_PENDING",
+  "authority": {
+    "rubric": "MISSAL_1962_RITUS",
+    "activeArtwork": "UNCHANGED_V46_BANK",
+    "banGeneratedSubstitutes": true,
+    "canonicalCueOwner": "SOURCE_CUE",
+    "independentPriestClock": true,
+    "automaticAssetActivation": false,
+    "policy": "No artwork generated, no rejected art revived, no source-uncleared photo or engraving republished. Older visual manuals describe historical practice but 1962 rubrics determine applicability."
+  },
+  "counts": {
+    "gestureMatrixPending": 17,
+    "distinctGestureFamilies": 10,
+    "priestStationVariantReview": 3,
+    "conditionalMinisterCandidates": 11,
+    "approvedUnboundFingerArtwork": 2,
+    "referenceBibliographySources": 10
+  },
+  "sources": [
+    {
+      "id": "RITUS_1962",
+      "title": "Missale Romanum 1962, Ritus servandus",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "kind": "NORMATIVE_RUBRIC_TEXT",
+      "visualEvidence": "NONE",
+      "rights": "SOURCE_TEXT_RESEARCH_ONLY",
+      "note": "1962 rubric remains authoritative; translation and any plates must not be silently republished."
+    },
+    {
+      "id": "SCHMITZ_1960",
+      "title": "Walter J. Schmitz, Learning the Mass (1960)",
+      "url": "https://www.sanctamissa.org/liturgical-resources",
+      "kind": "CONTEMPORARY_CEREMONIAL_MANUAL",
+      "visualEvidence": "TEXTUAL_CROSSCHECK_ONLY",
+      "rights": "REFERENCE_ONLY_NOT_CLEARED",
+      "note": "Sancta Missa lists the manual, updated for 1960 rubrical simplifications. Verify each exact gesture against 1962 Ritus."
+    },
+    {
+      "id": "FORTESCUE_1918",
+      "title": "Adrian Fortescue, The Ceremonies of the Roman Rite Described (1918 original)",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Ceremonies_of_the_Roman_Rite_Described_(First_Edition).djvu",
+      "kind": "HISTORICAL_ILLUSTRATED_CEREMONIAL_MANUAL",
+      "visualEvidence": "ALTAR_PLANS_PRESENT_POSES_UNVERIFIED",
+      "rights": "PUBLIC_DOMAIN_COMMMONS_IDENTIFIED",
+      "note": "Wikimedia Commons marks the 1918 original scan public-domain; layouts/plans are not proof of precise 1962 gesture. Check actual illustration page before reuse."
+    },
+    {
+      "id": "LANSLOTS_1897",
+      "title": "D. I. Lanslots, Illustrated Explanation of the Prayers and Ceremonies of the Mass (1897)",
+      "url": "https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf",
+      "kind": "HISTORICAL_ILLUSTRATED_CEREMONIAL_MANUAL",
+      "visualEvidence": "ILLUSTRATED_SCAN_NO_CUE_PAGE_VERIFIED",
+      "rights": "PUBLIC_DOMAIN_US_IDENTIFIED_REVIEW_OTHER_REGIONS",
+      "note": "Public-domain US scan; illustrations exist (including Host-offering scene), but exact gesture page/index still needs visual inspection and 1962 conformity check."
+    },
+    {
+      "id": "BENZIGER_1945_HANC",
+      "title": "Lasance/Walsh, The New Roman Missal (1945), Hanc igitur engraving p.779, cited and reproduced in 2026 discussion",
+      "url": "https://tlminayear.substack.com/p/the-eighteenth-sunday-after-pentecost",
+      "kind": "HISTORICAL_ENGRAVING_REFERENCE",
+      "visualEvidence": "HANC_IGITUR_IMAGE_IDENTIFIED_BY_CAPTION",
+      "rights": "REUSE_RIGHTS_UNVERIFIED_REFERENCE_ONLY",
+      "note": "Source explicitly identifies a Benziger engraving of Hanc igitur at p.779. Host article is not proof of free redistribution; compare hand angles to Ritus."
+    },
+    {
+      "id": "MARIAN_1958_HANC",
+      "title": "Marian Children's Missal (1958 original), reprint sample Hanc igitur spread",
+      "url": "https://store.latinmasshelper.com/products/marian-childrens-sunday-missal-latin-mass",
+      "kind": "HISTORICAL_PHOTOGRAPH_REFERENCE",
+      "visualEvidence": "HANDS_OVER_OBLATIONS_PHOTO_VISIBLE",
+      "rights": "REUSE_RIGHTS_UNVERIFIED_REFERENCE_ONLY",
+      "note": "Product photo explicitly depicts palms over offerings during Hanc igitur; visual reference only, not a licensable app asset."
+    },
+    {
+      "id": "SANCTAMISSA_TUTORIALS",
+      "title": "Sancta Missa liturgical instructional videos (Low/High Mass)",
+      "url": "https://www.sanctamissa.org/tutorials",
+      "kind": "CURRENT_REAL_CEREMONY_VIDEO",
+      "visualEvidence": "SOURCE_LIBRARY_VERIFIED_FRAME_NOT_YET_SELECTED",
+      "rights": "REFERENCE_ONLY_PERMISSION_NOT_GRANTED",
+      "note": "Canons Regular of St John Cantius training videos; useful for hands/vestments/minister identity. No image reuse or frame extraction authorized."
+    },
+    {
+      "id": "ICKSP_SOLEMN_CHALICE",
+      "title": "Institute of Christ the King, Most Precious Blood Parish, Mass photo gallery",
+      "url": "https://institute-christ-king.org/pittsburgh-gallery/892-from-st-boniface-to-most-precious-blood",
+      "kind": "CURRENT_CEREMONY_PHOTOGRAPH",
+      "visualEvidence": "SOLEMN_CHALICE_ELEVATION_PHOTO_VISIBLE",
+      "rights": "REFERENCE_ONLY_PERMISSION_NOT_GRANTED",
+      "note": "Gallery photograph illustrates Solemn chalice elevation with vested ministers; do not use the high elevation as a representation of Per ipsum minor elevation."
+    },
+    {
+      "id": "CAMPION_1954",
+      "title": "Demetrius Manousos, Know Your Mass (1954; modern full-colour reprint)",
+      "url": "https://fraternitypublications.com/product/know-your-mass/",
+      "kind": "ILLUSTRATED_CATECHETICAL_MANUAL",
+      "visualEvidence": "BOOK_ILLUSTRATIONS_VERIFIED_IN_CATALOGUE_ONLY",
+      "rights": "REPRINT_ART_RIGHTS_UNVERIFIED_REFERENCE_ONLY",
+      "note": "Illustrated comic-style book useful for source discovery, but unsuitable as automatically selected final icon style."
+    },
+    {
+      "id": "JOUENNE_FRANCE_PRE1740",
+      "title": "La sainte messe ... actions du prêtre / François Jouenne, Paris, before 1740, Bridwell Library exhibition",
+      "url": "https://bridwell.omeka.net/exhibits/show/frenchdevotion/ritualhistory/jouenne",
+      "kind": "FRENCH_HISTORICAL_ENGRAVED_CEREMONIAL_GUIDE",
+      "visualEvidence": "PRIEST_ACOLYTE_MASS_STAGE_ENGRAVING_SERIES_REFERENCED_EXACT_POSES_UNVERIFIED",
+      "rights": "EARLY_ORIGINAL_ART_POTENTIALLY_PUBLIC_DOMAIN_DIGITAL_SCAN_RIGHTS_UNVERIFIED",
+      "note": "A French illustrated Mass guide pairs priest/acolyte ceremonial actions with Passion imagery; the museum confirms its early date and engraving format. Do not treat a pre-1740 ceremonial pose as 1962 normative or copy exhibition scans without verifying image rights."
+    }
+  ],
+  "gestureFamilies": [
+    {
+      "id": "FAITHFUL_CONFITEOR",
+      "decision": "EXISTING_ICON_REUSE_WITH_PROFILE_CONDITIONS",
+      "masterKeys": [
+        "profound_bow",
+        "head_bow",
+        "kneel"
+      ],
+      "sourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960"
+      ],
+      "imageProof": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "rowCount": 4
+    },
+    {
+      "id": "FAITHFUL_GLORIA_BOW",
+      "decision": "EXISTING_ICON_REUSE_ONLY_WHERE_CUSTOM_APPLIES",
+      "masterKeys": [
+        "head_bow"
+      ],
+      "sourceIds": [
+        "RITUS_1962"
+      ],
+      "imageProof": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "rowCount": 1
+    },
+    {
+      "id": "FAITHFUL_INCARNATUS",
+      "decision": "EXISTING_ICON_REUSE_WITH_CALENDAR_PROFILE_GATE",
+      "masterKeys": [
+        "kneel",
+        "genuflect"
+      ],
+      "sourceIds": [
+        "RITUS_1962"
+      ],
+      "imageProof": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "rowCount": 1
+    },
+    {
+      "id": "FAITHFUL_ELEVATIONS",
+      "decision": "SEQUENCE_EXISTING_BOW_KNEEL_LOOK_NO_UNIVERSAL_ADDED_ACTION",
+      "masterKeys": [
+        "kneel",
+        "head_bow"
+      ],
+      "sourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "imageProof": "REFERENCE_SEQUENCE_NOT_SINGLE_NEW_ICON",
+      "rowCount": 3
+    },
+    {
+      "id": "FAITHFUL_ATTENTION",
+      "decision": "TEXT_GUIDANCE_PREFERRED_NO_MANDATORY_POSTURE_ICON",
+      "masterKeys": [
+        "listen"
+      ],
+      "sourceIds": [
+        "RITUS_1962"
+      ],
+      "imageProof": "NOT_A_PRESCRIBED_GESTURE",
+      "rowCount": 1
+    },
+    {
+      "id": "PRIEST_EYES_AND_HANDS",
+      "decision": "EXACT_VISUAL_REFERENCE_REQUIRED",
+      "masterKeys": [
+        "priest_centre_arms_rich"
+      ],
+      "sourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED",
+      "rowCount": 2
+    },
+    {
+      "id": "PRIEST_MEMENTO",
+      "decision": "EXACT_VISUAL_REFERENCE_REQUIRED_DISTINGUISH_HEAD_EYES",
+      "masterKeys": [
+        "priest_centre_hands_rich"
+      ],
+      "sourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "LANSLOTS_1897",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED",
+      "rowCount": 2
+    },
+    {
+      "id": "PRIEST_HANDS_OVER_OBLATIONS",
+      "decision": "PHOTO_REFERENCE_FOUND_NO_REDRAW_OR_ACTIVATION",
+      "masterKeys": [
+        "priest_centre_hands_rich"
+      ],
+      "sourceIds": [
+        "RITUS_1962",
+        "BENZIGER_1945_HANC",
+        "MARIAN_1958_HANC",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "imageProof": "HANC_IGITUR_EXACT_POSE_VISUALLY_IDENTIFIED_RIGHTS_UNCLEARED",
+      "rowCount": 1
+    },
+    {
+      "id": "PRIEST_EYES_ONLY",
+      "decision": "EXACT_EYES_ONLY_REFERENCE_REQUIRED_NOT_ARMS_RAISED",
+      "masterKeys": [
+        "priest_centre_rich"
+      ],
+      "sourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED",
+      "rowCount": 1
+    },
+    {
+      "id": "PRIEST_MINOR_ELEVATION",
+      "decision": "EXACT_HOST_ABOVE_SLIGHTLY_LIFTED_CHALICE_REFERENCE_REQUIRED",
+      "masterKeys": [
+        "canon"
+      ],
+      "sourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED_DO_NOT_USE_MAJOR_ELEVATION",
+      "rowCount": 1
+    }
+  ],
+  "gestureMatrixPending": [
+    {
+      "matrixId": "GM.F.C0021.01",
+      "cueId": "AO.SM.C0021",
+      "actor": "FAITHFUL",
+      "gesture": "PROFOUND_BOW",
+      "label": "Profound bow / remain kneeling according profile",
+      "triggerLatin": "During Confiteor",
+      "formCondition": null,
+      "family": "FAITHFUL_CONFITEOR",
+      "decision": "EXISTING_ICON_REUSE_WITH_PROFILE_CONDITIONS",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960"
+      ],
+      "visualVerification": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "reuseCurrentMasters": [
+        "profound_bow",
+        "head_bow",
+        "kneel"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0023.01",
+      "cueId": "AO.SM.C0023",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain bowed / return after conclusion",
+      "triggerLatin": "After mea culpa",
+      "formCondition": null,
+      "family": "FAITHFUL_CONFITEOR",
+      "decision": "EXISTING_ICON_REUSE_WITH_PROFILE_CONDITIONS",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960"
+      ],
+      "visualVerification": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "reuseCurrentMasters": [
+        "profound_bow",
+        "head_bow",
+        "kneel"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0235.01",
+      "cueId": "AO.SM.C0235",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain bowed / recollected",
+      "triggerLatin": "During optional second Confiteor",
+      "formCondition": "SECOND_CONFITEOR_LOCAL_CUSTOM_ENABLED",
+      "family": "FAITHFUL_CONFITEOR",
+      "decision": "EXISTING_ICON_REUSE_WITH_PROFILE_CONDITIONS",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960"
+      ],
+      "visualVerification": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "reuseCurrentMasters": [
+        "profound_bow",
+        "head_bow",
+        "kneel"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0237.01",
+      "cueId": "AO.SM.C0237",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain bowed / recollected",
+      "triggerLatin": "Conclusion of optional Confiteor",
+      "formCondition": "SECOND_CONFITEOR_LOCAL_CUSTOM_ENABLED",
+      "family": "FAITHFUL_CONFITEOR",
+      "decision": "EXISTING_ICON_REUSE_WITH_PROFILE_CONDITIONS",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960"
+      ],
+      "visualVerification": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "reuseCurrentMasters": [
+        "profound_bow",
+        "head_bow",
+        "kneel"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0056.01",
+      "cueId": "AO.SM.C0056",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Customary bow may follow local practice; do not hard-code as universal.",
+      "triggerLatin": "Adorámus te",
+      "formCondition": null,
+      "family": "FAITHFUL_GLORIA_BOW",
+      "decision": "EXISTING_ICON_REUSE_ONLY_WHERE_CUSTOM_APPLIES",
+      "referenceSourceIds": [
+        "RITUS_1962"
+      ],
+      "visualVerification": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "reuseCurrentMasters": [
+        "head_bow"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0096.01",
+      "cueId": "AO.SM.C0096",
+      "actor": "FAITHFUL",
+      "gesture": "GENUFLECT",
+      "label": "Kneeling/genuflection here depends on sung/local calendar rule; Christmas and...",
+      "triggerLatin": "Et incarnatus est ... et homo factus est",
+      "formCondition": null,
+      "family": "FAITHFUL_INCARNATUS",
+      "decision": "EXISTING_ICON_REUSE_WITH_CALENDAR_PROFILE_GATE",
+      "referenceSourceIds": [
+        "RITUS_1962"
+      ],
+      "visualVerification": "REUSE_EXISTING_V46_NO_NEW_ART",
+      "reuseCurrentMasters": [
+        "kneel",
+        "genuflect"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0173.01",
+      "cueId": "AO.SM.C0173",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+      "triggerLatin": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+      "formCondition": null,
+      "family": "FAITHFUL_ELEVATIONS",
+      "decision": "SEQUENCE_EXISTING_BOW_KNEEL_LOOK_NO_UNIVERSAL_ADDED_ACTION",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "REFERENCE_SEQUENCE_NOT_SINGLE_NEW_ICON",
+      "reuseCurrentMasters": [
+        "kneel",
+        "head_bow"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0174.01",
+      "cueId": "AO.SM.C0174",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+      "triggerLatin": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+      "formCondition": null,
+      "family": "FAITHFUL_ELEVATIONS",
+      "decision": "SEQUENCE_EXISTING_BOW_KNEEL_LOOK_NO_UNIVERSAL_ADDED_ACTION",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "REFERENCE_SEQUENCE_NOT_SINGLE_NEW_ICON",
+      "reuseCurrentMasters": [
+        "kneel",
+        "head_bow"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0179.01",
+      "cueId": "AO.SM.C0179",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Chalice",
+      "triggerLatin": "The Chalice is actually elevated — At the actual elevation [Do not add an inv...",
+      "formCondition": null,
+      "family": "FAITHFUL_ELEVATIONS",
+      "decision": "SEQUENCE_EXISTING_BOW_KNEEL_LOOK_NO_UNIVERSAL_ADDED_ACTION",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "REFERENCE_SEQUENCE_NOT_SINGLE_NEW_ICON",
+      "reuseCurrentMasters": [
+        "kneel",
+        "head_bow"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.F.C0242.01",
+      "cueId": "AO.SM.C0242",
+      "actor": "FAITHFUL",
+      "gesture": "REVERENT_ATTENTION",
+      "label": "Reverent attention to the Host",
+      "triggerLatin": "Ecce Agnus Dei",
+      "formCondition": null,
+      "family": "FAITHFUL_ATTENTION",
+      "decision": "TEXT_GUIDANCE_PREFERRED_NO_MANDATORY_POSTURE_ICON",
+      "referenceSourceIds": [
+        "RITUS_1962"
+      ],
+      "visualVerification": "NOT_A_PRESCRIBED_GESTURE",
+      "reuseCurrentMasters": [
+        "listen"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.P.C0117.01",
+      "cueId": "AO.SM.C0117",
+      "actor": "PRIEST",
+      "gesture": "RAISE_EYES_AND_HANDS",
+      "label": "RAISES EYES AND HANDS",
+      "triggerLatin": null,
+      "formCondition": null,
+      "family": "PRIEST_EYES_AND_HANDS",
+      "decision": "EXACT_VISUAL_REFERENCE_REQUIRED",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
+      "reuseCurrentMasters": [
+        "priest_centre_arms_rich"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.P.C0263.01",
+      "cueId": "AO.SM.C0263",
+      "actor": "PRIEST",
+      "gesture": "RAISE_EYES_AND_HANDS",
+      "label": "RAISES EYES AND HANDS",
+      "triggerLatin": null,
+      "formCondition": null,
+      "family": "PRIEST_EYES_AND_HANDS",
+      "decision": "EXACT_VISUAL_REFERENCE_REQUIRED",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
+      "reuseCurrentMasters": [
+        "priest_centre_arms_rich"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.P.C0155.01",
+      "cueId": "AO.SM.C0155",
+      "actor": "PRIEST",
+      "gesture": "MEMENTO_HANDS",
+      "label": "RAISES AND JOINS HANDS · BOWS HEAD",
+      "triggerLatin": "silent commemoration of the living",
+      "formCondition": null,
+      "family": "PRIEST_MEMENTO",
+      "decision": "EXACT_VISUAL_REFERENCE_REQUIRED_DISTINGUISH_HEAD_EYES",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "LANSLOTS_1897",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
+      "reuseCurrentMasters": [
+        "priest_centre_hands_rich"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.P.C0193.01",
+      "cueId": "AO.SM.C0193",
+      "actor": "PRIEST",
+      "gesture": "MEMENTO_HANDS",
+      "label": "RAISES AND JOINS HANDS · EYES ON THE SACRAMENT",
+      "triggerLatin": "silent commemoration of the dead",
+      "formCondition": null,
+      "family": "PRIEST_MEMENTO",
+      "decision": "EXACT_VISUAL_REFERENCE_REQUIRED_DISTINGUISH_HEAD_EYES",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "LANSLOTS_1897",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
+      "reuseCurrentMasters": [
+        "priest_centre_hands_rich"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.P.C0161.01",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "gesture": "HANDS_OVER_OBLATIONS",
+      "label": "HANDS OVER OBLATIONS",
+      "triggerLatin": null,
+      "formCondition": null,
+      "family": "PRIEST_HANDS_OVER_OBLATIONS",
+      "decision": "PHOTO_REFERENCE_FOUND_NO_REDRAW_OR_ACTIVATION",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "BENZIGER_1945_HANC",
+        "MARIAN_1958_HANC",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "visualVerification": "HANC_IGITUR_EXACT_POSE_VISUALLY_IDENTIFIED_RIGHTS_UNCLEARED",
+      "reuseCurrentMasters": [
+        "priest_centre_hands_rich"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.P.C0169.01",
+      "cueId": "AO.SM.C0169",
+      "actor": "PRIEST",
+      "gesture": "RAISE_EYES",
+      "label": "RAISES EYES",
+      "triggerLatin": "elevatis oculis",
+      "formCondition": null,
+      "family": "PRIEST_EYES_ONLY",
+      "decision": "EXACT_EYES_ONLY_REFERENCE_REQUIRED_NOT_ARMS_RAISED",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
+      "reuseCurrentMasters": [
+        "priest_centre_rich"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    },
+    {
+      "matrixId": "GM.P.C0204.01",
+      "cueId": "AO.SM.C0204",
+      "actor": "PRIEST",
+      "gesture": "MINOR_ELEVATION",
+      "label": "ELEVATES HOST AND CHALICE SLIGHTLY",
+      "triggerLatin": "omnis honor, et glória",
+      "formCondition": null,
+      "family": "PRIEST_MINOR_ELEVATION",
+      "decision": "EXACT_HOST_ABOVE_SLIGHTLY_LIFTED_CHALICE_REFERENCE_REQUIRED",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SCHMITZ_1960",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED_DO_NOT_USE_MAJOR_ELEVATION",
+      "reuseCurrentMasters": [
+        "canon"
+      ],
+      "publication": "RESEARCH_ONLY_NO_ACTIVATION"
+    }
+  ],
+  "stationVariants": [
+    {
+      "station": "ALTAR_EPISTLE_MISSAL",
+      "family": "PRIEST_EPISTLE_STATION",
+      "variantDecision": "REVIEW_CURRENT_RICH_PRIEST_POSITION_AGAINST_REAL_REFERENCE",
+      "cueIds": [
+        "AO.SM.C0042",
+        "AO.SM.C0072",
+        "AO.SM.C0112",
+        "AO.SM.C0113",
+        "AO.SM.C0253"
+      ],
+      "referenceSourceIds": [
+        "FORTESCUE_1918",
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "rights": "NO_NEW_ARTWORK_CLEARED",
+      "publication": "REVIEW_ONLY"
+    },
+    {
+      "station": "ALTAR_EPISTLE_SIDE",
+      "family": "PRIEST_EPISTLE_STATION",
+      "variantDecision": "REVIEW_SAME_OR_SEPARATE_POSE_WITH_REAL_REFERENCE",
+      "cueIds": [
+        "AO.SM.C0123",
+        "AO.SM.C0124",
+        "AO.SM.C0125",
+        "AO.SM.C0126",
+        "AO.SM.C0127"
+      ],
+      "referenceSourceIds": [
+        "FORTESCUE_1918",
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "rights": "NO_NEW_ARTWORK_CLEARED",
+      "publication": "REVIEW_ONLY"
+    },
+    {
+      "station": "ALTAR_GOSPEL_MISSAL",
+      "family": "PRIEST_GOSPEL_STATION",
+      "variantDecision": "REVIEW_CURRENT_RICH_PRIEST_POSITION_AGAINST_REAL_REFERENCE",
+      "cueIds": [
+        "AO.SM.C0082",
+        "AO.SM.C0267"
+      ],
+      "referenceSourceIds": [
+        "FORTESCUE_1918",
+        "SANCTAMISSA_TUTORIALS",
+        "JOUENNE_FRANCE_PRE1740"
+      ],
+      "rights": "NO_NEW_ARTWORK_CLEARED",
+      "publication": "REVIEW_ONLY"
+    }
+  ],
+  "conditionalMinisterCandidates": [
+    {
+      "id": "AO.CANON.MIN.001",
+      "cueId": "AO.SM.C0163",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Approaches the celebrant's right, kneels on the upper altar step",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceSection": "VIII.8",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "NO_EXACT_MINISTER_POSE_YET_VERIFIED",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.009",
+      "cueId": "AO.SM.C0175",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Uncovers the chalice when required during the chalice-consecration sequence",
+      "condition": "WHEN_REQUIRED",
+      "sourceSection": "VIII.8",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "NO_EXACT_MINISTER_POSE_YET_VERIFIED",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.002",
+      "cueId": "AO.SM.C0174",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Assists at the elevation and lifts the back of the chasuble",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceSection": "VIII.8",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "NO_EXACT_MINISTER_POSE_YET_VERIFIED",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.003",
+      "cueId": "AO.SM.C0181",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Assists at the chalice elevation and lifts the back of the chasuble",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceSection": "VIII.8",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS",
+        "ICKSP_SOLEMN_CHALICE"
+      ],
+      "visualVerification": "HIGH_ELEVATION_CONTEXT_ONLY_NOT_ACTOR_SPECIFIC",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.004",
+      "cueId": "AO.SM.C0174",
+      "actor": "THURIFER",
+      "forms": [
+        "SOLEMN",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "action": "Incenses the raised Host three times",
+      "condition": "INCENSE_BRANCH",
+      "sourceSection": "VIII.8",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "NO_EXACT_MINISTER_POSE_YET_VERIFIED",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.005",
+      "cueId": "AO.SM.C0181",
+      "actor": "THURIFER",
+      "forms": [
+        "SOLEMN",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "action": "Incenses the raised chalice three times",
+      "condition": "INCENSE_BRANCH",
+      "sourceSection": "VIII.8",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS",
+        "ICKSP_SOLEMN_CHALICE"
+      ],
+      "visualVerification": "HIGH_ELEVATION_CONTEXT_ONLY_NOT_ACTOR_SPECIFIC",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.010",
+      "cueId": "AO.SM.C0181",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Covers the chalice when required after the chalice elevation",
+      "condition": "WHEN_REQUIRED",
+      "sourceSection": "VIII.8",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS",
+        "ICKSP_SOLEMN_CHALICE"
+      ],
+      "visualVerification": "HIGH_ELEVATION_CONTEXT_ONLY_NOT_ACTOR_SPECIFIC",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.006",
+      "cueId": "AO.SM.C0199",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Genuflects and approaches the celebrant's right for the Canon conclusion",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceSection": "IX.4",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "NO_EXACT_MINISTER_POSE_YET_VERIFIED",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.007",
+      "cueId": "AO.SM.C0201",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Uncovers the chalice when required",
+      "condition": "WHEN_REQUIRED",
+      "sourceSection": "IX.4",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "NO_EXACT_MINISTER_POSE_YET_VERIFIED",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.008",
+      "cueId": "AO.SM.C0205",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Covers the chalice when required after the Canon minor elevation",
+      "condition": "WHEN_REQUIRED",
+      "sourceSection": "IX.4",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "NO_EXACT_MINISTER_POSE_YET_VERIFIED",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    },
+    {
+      "id": "AO.CANON.MIN.011",
+      "cueId": "AO.SM.C0205",
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "action": "Genuflects again before the Blessed Sacrament after the chalice-covering point, whether or not he needed to handle the pall",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourceSection": "IX.4",
+      "referenceSourceIds": [
+        "RITUS_1962",
+        "SANCTAMISSA_TUTORIALS"
+      ],
+      "visualVerification": "NO_EXACT_MINISTER_POSE_YET_VERIFIED",
+      "publication": "EDITORIAL_ONLY_MINISTER_INDEPENDENT_CLOCK_REQUIRED"
+    }
+  ],
+  "approvedUnboundArtwork": [
+    {
+      "id": "priest:fingers_joined_after_consecration",
+      "cueId": "AO.SM.C0174",
+      "existingApprovedAsset": "assets/approved/mass/finger-contact-post-consecration.svg",
+      "runtimeBound": false,
+      "decision": "PRESERVE_APPROVED_ASSET_NO_REGENERATION",
+      "publication": "DO_NOT_ACTIVATE_AUTOMATICALLY"
+    },
+    {
+      "id": "priest:post_communion_finger_ablutions",
+      "cueId": "AO.SM.C0248",
+      "existingApprovedAsset": "assets/approved/mass/finger-ablutions-post-communion.svg",
+      "runtimeBound": false,
+      "decision": "PRESERVE_APPROVED_ASSET_NO_REGENERATION",
+      "publication": "DO_NOT_ACTIVATE_AUTOMATICALLY"
+    }
+  ],
+  "nextResearchGates": [
+    "Inspect and record actual page/frame per source and exact gesture; descriptions alone do not authorize art.",
+    "Verify licensing per ORIGINAL artwork and usage region, not merely website availability.",
+    "Cross-check each actor, orientation, chalice/Host configuration and form condition against 1962 rubrics.",
+    "Prefer exact approved v4.6 reuse or textual guidance where new exact imagery is unavailable.",
+    "Require explicit user visual approval and mobile resolution tests before any icon mapping or activation.",
+    "Do not imply priest or deacon is performing an action from prayer-reader scrolling."
+  ]
+}
