@@ -1,7 +1,7 @@
 {
   "schema": "ao-canon-62-editorial-icon-ownership-v1",
-  "version": "1.0.0",
-  "status": "EDITORIAL_ICON_PREVIEW_NOT_ACTIVATED",
+  "version": "1.1.0",
+  "status": "EDITORIAL_ICON_AND_STAGE_REVIEW_NOT_ACTIVATED",
   "authority": "1962_RITUS_AND_FROZEN_R17_ICON_BANK",
   "sourceRecords": {
     "actions": "data/research/mass-canon-62-source-trigger-audit-20261013.json",
@@ -16,7 +16,10 @@
     "Major elevations and Per ipsum minor elevation must use distinct artwork.",
     "The degree of the Supplices te rogamus bow is not certified by IX.1 itself.",
     "Conditional Solemn deacon handling and celebrant genuflection require separate stages.",
-    "Icon suggestions are editorial only; no release or user-visible rendering follows."
+    "Icon suggestions are editorial only; no release or user-visible rendering follows.",
+    "A continuing hand/finger position and a held chalice need no flashing pictogram; avoid inventing new art for a state.",
+    "Only existing source stage IDs can receive atomic artwork references, and no suggested stage is activated by scrolling.",
+    "Short and long bilingual drafts remain an entirely separate editorial approval contract."
   ],
   "counts": {
     "sourceActions": 62,
@@ -25,71 +28,87 @@
     "sourceWordAnchors": 50,
     "nonTextOrStates": 12,
     "withFrozenAsset": 50,
-    "requiresDistinctOrStageArtwork": 9,
+    "requiresDistinctOrStageArtwork": 7,
     "livePublishedByThisBatch": 0,
     "faithfulPosturesInferred": 0,
-    "noIconByDesign": 3
+    "noIconByDesign": 5,
+    "artworkSubjectsToReview": 3,
+    "compositeStageSourceActions": 4,
+    "sourceOwnedSubstages": 10,
+    "frozenStageIconCandidates": 5
   },
   "knownGaps": [
     {
       "actionId": "AO.CANON.R62.006",
       "cueId": "AO.SM.C0155",
-      "visualPolicy": "SILENT_MEMORIAL_GUIDE_ONLY"
+      "visualPolicy": "SILENT_MEMORIAL_GUIDE_ONLY",
+      "classification": "NO_ICON_BY_DESIGN"
     },
     {
       "actionId": "AO.CANON.R62.017",
       "cueId": "AO.SM.C0168",
-      "visualPolicy": "PREPARATORY_HOST_TAKING_NEEDS_ART"
+      "visualPolicy": "PREPARATORY_HOST_TAKING_NEEDS_ART",
+      "classification": "DISTINCT_ART_REQUIRED"
     },
     {
       "actionId": "AO.CANON.R62.021",
       "cueId": "AO.SM.C0172",
-      "visualPolicy": "NARRATIVE_WORD_NOT_PHYSICAL_FRACTION"
+      "visualPolicy": "NARRATIVE_WORD_NOT_PHYSICAL_FRACTION",
+      "classification": "NO_ICON_BY_DESIGN"
     },
     {
       "actionId": "AO.CANON.R62.025",
       "cueId": "AO.SM.C0174",
-      "visualPolicy": "REPLACE_AND_GENUFLECT_STAGE_SPLIT_REQUIRED"
+      "visualPolicy": "REPLACE_AND_GENUFLECT_STAGE_SPLIT_REQUIRED",
+      "classification": "EXISTING_STAGE_SPLIT_REQUIRED"
     },
     {
       "actionId": "AO.CANON.R62.026",
       "cueId": "AO.SM.C0174",
-      "visualPolicy": "PERSISTENT_FINGER_DISCIPLINE_NO_MATCHING_ICON"
+      "visualPolicy": "PERSISTENT_FINGER_DISCIPLINE_NO_MATCHING_ICON",
+      "classification": "NO_ICON_BY_DESIGN"
     },
     {
       "actionId": "AO.CANON.R62.028",
       "cueId": "AO.SM.C0175",
-      "visualPolicy": "CHALICE_PREPARATION_WITH_CONDITIONAL_DEACON"
+      "visualPolicy": "CHALICE_PREPARATION_WITH_CONDITIONAL_DEACON",
+      "classification": "DISTINCT_ART_AND_SOURCE_STAGE_SPLIT_REQUIRED"
     },
     {
       "actionId": "AO.CANON.R62.031",
       "cueId": "AO.SM.C0178",
-      "visualPolicy": "CHALICE_HELD_NOT_MAJOR_ELEVATION"
+      "visualPolicy": "CHALICE_HELD_NOT_MAJOR_ELEVATION",
+      "classification": "NO_ICON_BY_DESIGN"
     },
     {
       "actionId": "AO.CANON.R62.033",
       "cueId": "AO.SM.C0180",
-      "visualPolicy": "REPLACE_CHALICE_THEN_GENUFLECT_STAGE_SPLIT"
+      "visualPolicy": "REPLACE_CHALICE_THEN_GENUFLECT_STAGE_SPLIT",
+      "classification": "EXISTING_STAGE_SPLIT_REQUIRED"
     },
     {
       "actionId": "AO.CANON.R62.047",
       "cueId": "AO.SM.C0193",
-      "visualPolicy": "SILENT_MEMORIAL_GUIDE_ONLY"
+      "visualPolicy": "SILENT_MEMORIAL_GUIDE_ONLY",
+      "classification": "NO_ICON_BY_DESIGN"
     },
     {
       "actionId": "AO.CANON.R62.055",
       "cueId": "AO.SM.C0201",
-      "visualPolicy": "CONDITIONAL_DEACON_VS_PRIEST_STAGE_SPLIT"
+      "visualPolicy": "CONDITIONAL_DEACON_VS_PRIEST_STAGE_SPLIT",
+      "classification": "EXISTING_STAGE_SPLIT_REQUIRED"
     },
     {
       "actionId": "AO.CANON.R62.058",
       "cueId": "AO.SM.C0204",
-      "visualPolicy": "MINOR_ELEVATION_DISTINCT_ART_REQUIRED"
+      "visualPolicy": "MINOR_ELEVATION_DISTINCT_ART_REQUIRED",
+      "classification": "DISTINCT_ART_REQUIRED"
     },
     {
       "actionId": "AO.CANON.R62.059",
       "cueId": "AO.SM.C0205",
-      "visualPolicy": "CONDITIONAL_CHALICE_PALL_AND_GENUFLECTION_STAGES"
+      "visualPolicy": "CONDITIONAL_CHALICE_PALL_AND_GENUFLECTION_STAGES",
+      "classification": "EXISTING_STAGE_SPLIT_REQUIRED"
     }
   ],
   "rows": [
@@ -397,7 +416,21 @@
       "observedNow": false,
       "faithfulPosture": null,
       "readerDisplayApproval": "NOT_APPROVED",
-      "stageIds": []
+      "stageIds": [],
+      "visualStageReview": {
+        "classification": "DISTINCT_ART_REQUIRED",
+        "sourceArtSubject": "PRIEST_TAKES_HOST_BETWEEN_THUMBS_AND_INDEX_FINGERS",
+        "stageVisualCandidates": [],
+        "conditions": [
+          "OTHER_HOSTS_UNCOVERED_FIRST_ONLY_WHEN_PRESENT",
+          "HOST_TAKING_AT_ACCEPIT_PANEM"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.018",
@@ -549,7 +582,38 @@
       "stageIds": [
         "AO.CANON.R62.025.01",
         "AO.CANON.R62.025.02"
-      ]
+      ],
+      "visualStageReview": {
+        "classification": "EXISTING_STAGE_SPLIT_REQUIRED",
+        "stageVisualCandidates": [
+          {
+            "stageId": "AO.CANON.R62.025.01",
+            "iconKey": null,
+            "iconChannel": "PRIEST_GESTURE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          },
+          {
+            "stageId": "AO.CANON.R62.025.02",
+            "iconKey": "priest_genuflect",
+            "iconChannel": "PRIEST_GESTURE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          }
+        ],
+        "conditions": [
+          "REPLACE_HOST_BEFORE_SECOND_GENUFLECTION"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.026",
@@ -569,7 +633,30 @@
       "readerDisplayApproval": "NOT_APPROVED",
       "stageIds": [
         "AO.CANON.R62.026.01"
-      ]
+      ],
+      "visualStageReview": {
+        "classification": "NO_ICON_BY_DESIGN",
+        "stageVisualCandidates": [
+          {
+            "stageId": "AO.CANON.R62.026.01",
+            "iconKey": null,
+            "iconChannel": "PRIEST_CONTINUING_STATE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          }
+        ],
+        "conditions": [
+          "THUMB_INDEX_DISCIPLINE_CONTINUES_UNTIL_ABLUTION",
+          "NOT_INSTANTANEOUS_GESTURE"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.027",
@@ -607,7 +694,22 @@
       "observedNow": false,
       "faithfulPosture": null,
       "readerDisplayApproval": "NOT_APPROVED",
-      "stageIds": []
+      "stageIds": [],
+      "visualStageReview": {
+        "classification": "DISTINCT_ART_AND_SOURCE_STAGE_SPLIT_REQUIRED",
+        "sourceArtSubject": "CHALICE_UNCOVERING_AND_SLIGHT_PREPARATORY_LIFT_NOT_MAJOR_ELEVATION",
+        "stageVisualCandidates": [],
+        "conditions": [
+          "CHALICE_UNCOVERING_FORM_OWNER_CONDITIONAL",
+          "PRIEST_SMALL_PREPARATORY_LIFT_NOT_MAJOR_ELEVATION",
+          "SOURCE_NO_SUBSTAGE_ID_YET"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.029",
@@ -661,7 +763,20 @@
       "observedNow": false,
       "faithfulPosture": null,
       "readerDisplayApproval": "NOT_APPROVED",
-      "stageIds": []
+      "stageIds": [],
+      "visualStageReview": {
+        "classification": "NO_ICON_BY_DESIGN",
+        "stageVisualCandidates": [],
+        "conditions": [
+          "HOLDING_CHALICE_IN_HANDS_IS_CONTINUING_POSITION",
+          "NO_ELEVATION_IMAGE"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.032",
@@ -701,7 +816,49 @@
         "AO.CANON.R62.033.01",
         "AO.CANON.R62.033.02",
         "AO.CANON.R62.033.03"
-      ]
+      ],
+      "visualStageReview": {
+        "classification": "EXISTING_STAGE_SPLIT_REQUIRED",
+        "stageVisualCandidates": [
+          {
+            "stageId": "AO.CANON.R62.033.01",
+            "iconKey": null,
+            "iconChannel": "PRIEST_GESTURE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          },
+          {
+            "stageId": "AO.CANON.R62.033.02",
+            "iconKey": "priest_silent",
+            "iconChannel": "PRIEST_VOICE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          },
+          {
+            "stageId": "AO.CANON.R62.033.03",
+            "iconKey": "priest_genuflect",
+            "iconChannel": "PRIEST_GESTURE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          }
+        ],
+        "conditions": [
+          "CHALICE_REPLACE_BEFORE_HAEC_QUOTIESCUMQUE",
+          "SECRET_VOICE_NOT_ELEVATION",
+          "FIRST_GENUFLECTION_AFTER_HAEC"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.034",
@@ -1109,7 +1266,55 @@
         "AO.CANON.R62.055.01",
         "AO.CANON.R62.055.02",
         "AO.CANON.R62.055.03"
-      ]
+      ],
+      "visualStageReview": {
+        "classification": "EXISTING_STAGE_SPLIT_REQUIRED",
+        "stageVisualCandidates": [
+          {
+            "stageId": "AO.CANON.R62.055.01",
+            "iconKey": null,
+            "iconChannel": "CONDITIONAL_MINISTER",
+            "actor": "FORM_OWNER_UNRESOLVED",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          },
+          {
+            "stageId": "AO.CANON.R62.055.02",
+            "iconKey": "priest_genuflect",
+            "iconChannel": "PRIEST_GESTURE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          },
+          {
+            "stageId": "AO.CANON.R62.055.03",
+            "iconKey": null,
+            "iconChannel": "PRIEST_GESTURE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          }
+        ],
+        "formOwnerByMass": {
+          "LOW": "PRIEST",
+          "MISSA_CANTATA_SIMPLE": "PRIEST",
+          "MISSA_CANTATA_INCENSE": "PRIEST",
+          "SOLEMN": "DEACON_WHEN_REQUIRED"
+        },
+        "conditions": [
+          "CHALICE_UNCOVERING_NOT_ALWAYS_PRIEST_IN_SOLEMN",
+          "GENUFLECTION_ONLY_PRIEST",
+          "PRIEST_TAKES_HOST_AFTER_GENUFLECTION"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.056",
@@ -1163,7 +1368,21 @@
       "observedNow": false,
       "faithfulPosture": null,
       "readerDisplayApproval": "NOT_APPROVED",
-      "stageIds": []
+      "stageIds": [],
+      "visualStageReview": {
+        "classification": "DISTINCT_ART_REQUIRED",
+        "sourceArtSubject": "PER_IPSUM_MINOR_ELEVATION_HOST_OVER_CHALICE_NOT_MAJOR_ELEVATION",
+        "stageVisualCandidates": [],
+        "conditions": [
+          "PER_IPSUM_MINOR_ELEVATION_NOT_MAJOR_OSTENSION",
+          "NO_MAJOR_ELEVATION_ASSET"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.059",
@@ -1185,7 +1404,55 @@
         "AO.CANON.R62.059.01",
         "AO.CANON.R62.059.02",
         "AO.CANON.R62.059.03"
-      ]
+      ],
+      "visualStageReview": {
+        "classification": "EXISTING_STAGE_SPLIT_REQUIRED",
+        "stageVisualCandidates": [
+          {
+            "stageId": "AO.CANON.R62.059.01",
+            "iconKey": null,
+            "iconChannel": "PRIEST_GESTURE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          },
+          {
+            "stageId": "AO.CANON.R62.059.02",
+            "iconKey": null,
+            "iconChannel": "CONDITIONAL_MINISTER",
+            "actor": "FORM_OWNER_UNRESOLVED",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          },
+          {
+            "stageId": "AO.CANON.R62.059.03",
+            "iconKey": "priest_genuflect",
+            "iconChannel": "PRIEST_GESTURE",
+            "actor": "PRIEST",
+            "observedNow": false,
+            "autoTriggeredByWord": false,
+            "readerDisplayApproval": "NOT_APPROVED"
+          }
+        ],
+        "formOwnerByMass": {
+          "LOW": "PRIEST",
+          "MISSA_CANTATA_SIMPLE": "PRIEST",
+          "MISSA_CANTATA_INCENSE": "PRIEST",
+          "SOLEMN": "DEACON_WHEN_REQUIRED"
+        },
+        "conditions": [
+          "REPLACE_HOST_BEFORE_COVERING",
+          "COVERING_FORM_OWNER_DEPENDS_ON_MASS",
+          "PRIEST_GENUFLECTION_NOT_AUTOMATIC_DEACON_GENUFLECTION"
+        ],
+        "inventedStageIds": [],
+        "readerDisplayApproval": "NOT_APPROVED",
+        "observedNow": false,
+        "faithfulPosture": null,
+        "sourceStageOnly": true
+      }
     },
     {
       "actionId": "AO.CANON.R62.060",
@@ -1243,5 +1510,6 @@
         "AO.CANON.R62.062.01"
       ]
     }
-  ]
+  ],
+  "stageReviewMethod": "Existing 1962 R62 stage IDs only, no simulated priest observation, no priest/server/conditional deacon collapse"
 }
