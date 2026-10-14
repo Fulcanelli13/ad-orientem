@@ -7,7 +7,7 @@ import {
 } from "./presentation.js";
 import {
   ensureLearnModule,installLazyLearnRegistry,TRADITIONAL_LEARN_ROUTES,
-  SPIRITUAL_LIFE_ROUTE_ID,LATIN_COURSE_ROUTE_ID,GLOSSARY_ROUTE_ID,MASS_FORMATION_ROUTE,
+  SPIRITUAL_LIFE_ROUTE_ID,LATIN_COURSE_ROUTE_ID,GLOSSARY_ROUTE_ID,MASS_FORMATION_ROUTE,MYSTERY_MASS_REVIEW_ROUTE,
 } from "./lazy-module-registry.js";
 import {loadReferenceDiscovery,loadFormationContentDiscovery} from "./discovery.js";
 
@@ -44,6 +44,7 @@ function childOpen(win,id){
   if(id===LATIN_COURSE_ROUTE_ID)return Boolean(win?.AO_LATIN_COURSE_V1?.status?.()?.open);
   if(id===GLOSSARY_ROUTE_ID)return Boolean(win?.AO_GLOSSARY_V1?.status?.()?.open);
   if(id===MASS_FORMATION_ROUTE)return Boolean(win?.AO_MASS_FORMATION_V1?.status?.()?.open);
+  if(id===MYSTERY_MASS_REVIEW_ROUTE)return Boolean(win?.AO_MYSTERY_MASS_REVIEW_V1?.status?.()?.open);
   if(id==="learn.sexual_ethics")return Boolean(win?.AO_SEXUAL_ETHICS_V1?.status?.()?.open);
   if(id===SPIRITUAL_LIFE_ROUTE_ID)return Boolean(win?.AO_SPIRITUAL_LIFE_V1?.status?.()?.open);
   if(TRADITIONAL_LEARN_ROUTES[id]){const s=win?.AO_TRADITIONAL_LEARN_V381?.status?.();return Boolean(s?.open&&s?.route===id)}
@@ -71,6 +72,7 @@ function closeChild(win,id){
     if(id===LATIN_COURSE_ROUTE_ID){win?.AO_LATIN_COURSE_V1?.close?.();return true;}
     if(id===GLOSSARY_ROUTE_ID){win?.AO_GLOSSARY_V1?.close?.();return true;}
     if(id===MASS_FORMATION_ROUTE){win?.AO_MASS_FORMATION_V1?.close?.();return true;}
+    if(id===MYSTERY_MASS_REVIEW_ROUTE){win?.AO_MYSTERY_MASS_REVIEW_V1?.close?.();return true;}
     if(id==="learn.sexual_ethics"){win?.AO_SEXUAL_ETHICS_V1?.close?.();return true;}
     if(id===SPIRITUAL_LIFE_ROUTE_ID){win?.AO_SPIRITUAL_LIFE_V1?.close?.();return true;}
     if(TRADITIONAL_LEARN_ROUTES[id]){win?.AO_TRADITIONAL_LEARN_V381?.close?.();return true;}
