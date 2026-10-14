@@ -15,8 +15,8 @@
     "chaptersWithScriptureSample": 18,
     "chaptersWithContextInstead": 7,
     "scriptureReferenceOccurrences": 69,
-    "originalTextPdfPagesVisuallyChecked": 0,
-    "completeBookLocalOcrExtracted": false,
+    "originalTextPdfPagesVisuallyChecked": 11,
+    "completeBookLocalOcrExtracted": true,
     "exhaustiveVerseCountKnown": false
   },
   "interpretation": "100 percent chapter COVERAGE does not mean 100 percent chapter CONTENT has been transcribed or 100 percent of biblical references has been found. There may be further original Scripture passages and authoritative source corrections.",
@@ -545,11 +545,18 @@
     }
   ],
   "remainingGates": [
-    "Obtain complete original OCR bytes and run exhaustive extraction in maintained CLI",
+    "Full original OCR archived; improve machine and human citation extraction for unrecognized abbreviations and allusions",
     "Collate all verse citations by Catholic book/edition including Psalm numbering and OCR ambiguities",
-    "Original PDF page image collation, not just web OCR line locators",
+    "Expand original PDF page-image collation beyond first 11 sampled pages",
     "Deduplicate each historical/theological claim against Guéranger and frozen 422 evidence records",
     "Independent native-French source/theological review",
     "Source-first 39-step phrase-level Guide matching and mobile browser acceptance before publication"
-  ]
+  ],
+  "additionalReview": {
+    "wholeOcrParenPatternCandidates": 82,
+    "reviewedCitationOccurrencesIncludingNewBatch": 86,
+    "visuallyCheckedOriginalPdfPages": 11,
+    "originalPdfPages": 404,
+    "citationExhaustiveness": false
+  }
 }
