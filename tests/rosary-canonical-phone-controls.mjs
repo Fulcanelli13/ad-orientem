@@ -245,7 +245,15 @@ try{
      "Rosary title timeline missing the five mysteries or unique current chapter");
    assert.ok(options.every((x,i)=>x.title&&Number.isInteger(x.start)&&
       (i===0||x.start>options[i-1].start)), "Rosary timeline chapters must follow source steps");
-   const jump=options.find(x=>x.title.includes("Mystery")||/Annunciation|Visitation|Nativity|Agony|Résurrection|Annonciation|Visitation/.test(x.title));
+   // Titles are localised and the visible stop label is not guaranteed to
+   // contain the word "Mystery". Resolve identity from canonical bead steps.
+   const jump=await page.evaluate(stops=>{
+     const steps=globalThis.AO_ROSARY_V381.steps();
+     return stops.find(stop=>{
+       const step=steps[stop.start];
+       return step?.kind==="mystery"&&Number.isInteger(step.mi)&&step.mi>=0;
+     });
+   },options);
    assert.ok(jump,"No named Rosary mystery chapter");
    await chapterRail.locator('[data-ao-rosary-chapter="'+jump.start+'"]').click();
    await page.waitForFunction(target=>window.AO_ROSARY_V381?.state?.()?.step===target,jump.start,{timeout:9000});
