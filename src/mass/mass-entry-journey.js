@@ -78,7 +78,6 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
   const summary=node(doc,"summary","",
     tr(fr,"How this affects the Mass","Conséquences pour la messe"));
   summary.dataset.massJourneyCommemorationSummary="";
-  details.open=true; // Source-relevant commemoration prayers remain visible on phone.
   details.append(summary,prayerText);
   commemorations.append(details);
  }
