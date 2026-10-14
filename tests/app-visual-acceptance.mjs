@@ -394,20 +394,20 @@ try{
 
   const todayTabs=".homeScreen.aoTodayV2 .aoTodayV2Tabs";
   await page.locator(todayTabs+" [data-home-calendar-view='year']").click();
-  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2Ring",{state:"visible",timeout:10000});
-  const inlineYear=await page.evaluate(()=>({
-    segments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
-    periods:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-period]").length,
-    track:document.querySelectorAll("#ao-calendar-modular-root .aoCalYearTrack").length,
-    ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect().width??0,
-    overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    selected:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
-  }));
-  assert.equal(inlineYear.segments,11,"Liturgical Year lost its eleven 1962 periods");
-  assert.equal(inlineYear.periods,11,"Liturgical Year periods are not selectable");
-  assert.equal(inlineYear.track,1,"Liturgical Year must have one proportional timeline");
-  assert.ok(inlineYear.ringWidth>=105&&inlineYear.ringWidth<=160,"Year date ring is not phone-legible");
-  assert.ok(inlineYear.overflow<=1,"Liturgical Year overflows the phone");
+  await page.waitForSelector("#ao-calendar-modular-root .aoClockDial",{state:"visible",timeout:12000});
+  const inlineYear=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-calendar-modular-root");
+    const dial=root?.querySelector(".aoClockDial")?.getBoundingClientRect();
+    return {seasons:root?.querySelectorAll(".aoClockSector").length??0,
+      months:root?.querySelectorAll(".aoClockMonthSegment").length??0,
+      dialWidth:dial?.width??0,
+      overflow:root?root.scrollWidth-root.clientWidth:Infinity,
+      selected:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='year']")?.getAttribute("aria-current")??null};
+  });
+  assert.equal(inlineYear.seasons,8,"Liturgical Clock lost one of eight grouped seasons");
+  assert.ok(inlineYear.months>=12,"Liturgical Clock lost its Advent-to-Advent month geometry");
+  assert.ok(inlineYear.dialWidth>190&&inlineYear.dialWidth<=390,"Year dial is not phone-legible");
+  assert.ok(inlineYear.overflow<=1,"Liturgical Clock overflows the phone");
   assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
 
@@ -417,7 +417,7 @@ try{
   const inlineMonth=await page.evaluate(()=>({
     cells:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").length,
     markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
-    views:[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")].map(x=>x.dataset.calMonthView),
+    views:[...(document.querySelector("#ao-calendar-modular-root [data-cal-month-filter]")?.options||[])].map(x=>x.value),
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
     active:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='picker']")?.getAttribute("aria-current")??null
   }));
@@ -429,7 +429,7 @@ try{
   assert.equal(inlineMonth.active,"page","Today did not identify the Month tab");
   await shot("02d-calendar-month");
   for(const category of ["major","temporale","sanctorale","practices"]){
-    await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='"+category+"']").click();
+    await page.locator("#ao-calendar-modular-root [data-cal-month-filter]").selectOption(category);
     await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='"+category+"']",
       {state:"visible",timeout:5000});
     assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='"+category+"'] [data-cal-month-index-date]").count()>=3,
