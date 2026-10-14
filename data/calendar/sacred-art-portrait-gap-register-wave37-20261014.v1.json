@@ -15,9 +15,11 @@
     "passThreshold": "Any confirmed subject-specific, solo/portrait-format artwork explicitly rated >=4 in W36 or carried as a clearly identified solo portrait with earlier score >=4 in the compact 75-person matrix.",
     "gaps": "If no qualifying 4+ portrait is recorded, continue researching new distinct works; earlier narrative/group scenes do not satisfy portrait-format threshold even when scored 4 or 5.",
     "stage": "Meeting 4+ threshold is provisional coverage only, not the originally desired 3–4 approved portrait options; independent reproduction identity, rights, resolution and clean image gates remain open.",
-    "noRepeat": "Do not show a file/photo variant of a previously reviewed physical artwork as a new candidate. Preserve all earlier human scores and preferences.",
+    "noRepeat": "No duplicate rating records for one physical artwork or merely resized/rephotographed files. In any subject not yet confirmed with at least one portrait rated 4+, RE-DISPLAY ALL previous subject portrait candidates and recorded scores together with new proposals so the user can make a comparative judgment; preserve identifiers and existing ratings until the user changes them explicitly.",
     "noteOnHistoricalRatings": "The compact W31 matrix exposes 44 previously rated links, not the entire 277 historic rating records. If an omitted historic exact portrait rated >=4 is later found, revise status with exact original and provenance instead of duplicating review.",
-    "fitField": "All W36 fit fields are null; no equivalence to perfect-for-theme or suitable-elsewhere can be inferred."
+    "fitField": "All W36 fit fields are null; no equivalence to perfect-for-theme or suitable-elsewhere can be inferred.",
+    "reviewPresentation": "For unresolved subjects, do NOT hide earlier 0–3 or unscored portrait entries. Include them in a distinct 'Previously seen' section with previous ratings and flags visible (0–2 distinctly marked discarded/low preference, 3 marked provisional, unscored marked pending). Offer re-evaluation without resetting/duplicating recorded human scores. Previously approved 4+/5 portraits from the historical corpus count toward the threshold even if no recent W36 score reaches 4.",
+    "reviewGate": "Only consider a subject provisionally covered when a subject-specific portrait is already confirmed 4+/5; show all old and new candidates again for subjects lacking confirmation. Scenic/contextual artworks with 4+/5 remain distinct from portrait suitability and cannot close this portrait-only gap."
   },
   "counts": {
     "COVERED_4PLUS_PORTRAIT": {
@@ -53,13 +55,13 @@
       "batch": 1,
       "tier": "REVIEWED_BELOW_4",
       "subjects": 13,
-      "focus": "Source 3–4 genuinely new naturalistic, devotional solo-painting alternatives per subject, avoid repeats and previous rejected styles."
+      "focus": "For the 13 failed cohort, research genuinely new paintings AND compile all earlier portrait candidates (including prior ratings 0–3 and pending) into the same comparative review. Do not discard historic entries from the gallery. Under-3 images remain labeled discarded by earlier decision, not promoted."
     },
     {
       "batch": 2,
       "tier": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
       "subjects": 46,
-      "focus": "Reconcile previous artwork records, then research paintings and bring newly screened works into the one portrait-rating gallery."
+      "focus": "For the 46 unreviewed cohort, reconcile previous artwork entries and ratings and display them again alongside new discoveries, with original scores intact. Close portrait gap only at >=4."
     },
     {
       "batch": 3,
