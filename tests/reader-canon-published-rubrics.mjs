@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {publishedCanonRubricsForParagraph} from "../src/mass/reader-canon-published-rubrics.js";
+import {publishedCanonRubricsForParagraph,withPublishedCanonParagraphRubrics} from "../src/mass/reader-canon-published-rubrics.js";
+import {normalizeReaderMoment,buildReaderShellMarkup} from "../src/mass/reader-dom.js";
 const data=JSON.parse(readFileSync(new URL("../data/presentation/reader-rubric-events.v1.json",import.meta.url),"utf8"));
 const research=JSON.parse(readFileSync(new URL("../data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",import.meta.url),"utf8"));
 const paragraph=(id,cues)=>({id,sourceCueIds:cues});
@@ -67,4 +68,34 @@ const wrongCue=publishedCanonRubricsForParagraph({
  id:"fabricated-owner",sourceAnchorCueId:"AO.SM.C0181",sourceCueIds:[]
 },data,{form:"SOLEMN"});
 assert.equal(wrongCue.rubrics.length,0);
-console.log("PASS: approved Canon source-rubric bridge excludes all 62 unapproved French drafts, artificial cues, unsupported forms and fabricated clock state.");
+const rows=[paragraph("te",["AO.SM.C0155"]),paragraph("synthetic-amen",[]),paragraph("gospel",["AO.SM.C0084"])];
+const enriched=withPublishedCanonParagraphRubrics(rows,data,{form:"MISSA_CANTATA_SIMPLE"});
+assert.equal(enriched.length,rows.length,"inline display must preserve paragraph count");
+assert.deepEqual(enriched.map(x=>x.id),rows.map(x=>x.id));
+assert.equal(enriched[1],rows[1],"derived Amen must not acquire a priest event");
+assert.equal(enriched[2],rows[2],"non-Canon remains unchanged");
+assert.equal(enriched[0].publishedCanonRubrics[0].sourceCueId,"AO.SM.C0155");
+assert.equal(enriched[0].publishedCanonRubrics[0].sourceUrl,data.sources.find(x=>x.id==="MR62_RITUS").url);
+assert.ok(Object.isFrozen(enriched)&&Object.isFrozen(enriched[0].publishedCanonRubrics));
+const solemnRows=withPublishedCanonParagraphRubrics(
+  [paragraph("chalice",["AO.SM.C0181"])],data,{form:"SOLEMN"});
+assert.ok(solemnRows[0].publishedCanonRubrics.every(x=>x.id!=="AO.RUB.C0181.04"),
+  "Inline UI may not defeat Solemn deacon/celebrant ownership");
+assert.equal(withPublishedCanonParagraphRubrics(rows,data,{form:"REQUIEM"})[0].publishedCanonRubrics,undefined);
+const normalized=normalizeReaderMoment({paragraphs:enriched}).paragraphs;
+assert.equal(normalized[0].publishedCanonRubrics[0].observedNow,false);
+assert.equal(normalized[1].publishedCanonRubrics.length,0);
+assert.equal(normalized[2].publishedCanonRubrics.length,0);
+const invented=normalizeReaderMoment({paragraphs:[{
+  id:"invented",sourceCueIds:["AO.SM.C0155"],
+  publishedCanonRubrics:[{review:"UNAPPROVED_FRENCH_DRAFT",actor:"PRIEST",
+    sourceId:"MR62_RITUS",shortAction:"INVENTED",sourceCueId:"AO.SM.C0155",observedNow:false}]
+}]}).paragraphs[0];
+assert.equal(invented.publishedCanonRubrics.length,0);
+assert.ok(buildReaderShellMarkup({session:{resolvedMass:{presentationMode:"LIVE"}},readerPreferences:{mode:"LIVE"}}).includes('data-role="canon-source-summary"'));
+const domSource=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
+const runtimeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
+assert.ok(domSource.includes('note.dataset.observedNow="false"'));
+assert.ok(runtimeSource.includes("withPublishedCanonParagraphRubrics("));
+assert.ok(!domSource.includes("mass-canon-french-rubric-62-original-redraft"));
+console.log("PASS: 19-ID Canon allowlist and Solemn safeguards govern the visible source-linked rubric rows, without a priest-progress clock.");
