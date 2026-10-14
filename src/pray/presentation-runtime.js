@@ -1644,7 +1644,7 @@ async function loadScriptureInto(selector,kind,ref,full,guard){
   // "Loading…" indefinitely. The deadline changes UI state, not the source
   // or edition; late responses are ignored rather than installed.
   const d=await Promise.race([
-   Promise.resolve().then(()=>svc.load(kind,{en:ref,fr:ref,lat:ref})),
+   Promise.resolve().then(()=>svc.load(kind,{en:ref,fr:ref,lat:ref},{contextOnly:true})),
    new Promise((_,reject)=>{deadline=setTimeout(
     ()=>reject(new Error('Canonical Scripture source request timed out')),12000)})
   ]);
