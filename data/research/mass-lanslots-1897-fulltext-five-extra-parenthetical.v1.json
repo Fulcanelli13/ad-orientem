@@ -12,7 +12,8 @@
     "One repeats Psalm 25:8 in the same chapter: count as a second textual occurrence, not a different verse.",
     "1 Thessalonians 5:27 uses an unusual split book-and-verse form; the book name is unambiguously in immediately preceding prose.",
     "John 19:19 is a prooftext used in a historically insecure speculation about the precise form of the Cross; do not adopt it as established history.",
-    "Hebrews 11:4 is relevant to Abel in the Supra quae; extend FRG41 rather than duplicate it."
+    "Hebrews 11:4 is relevant to Abel in the Supra quae; extend FRG41 rather than duplicate it.",
+    "The four newly unique passages were independently cross-referenced with online Douay-Rheims 1899 verse content; repeated Psalm 25:8 relies on earlier independent Psalm-25 checks. These are Bible-text witnesses, not proofs of Lanslots page images."
   ],
   "records": [
     {
@@ -29,10 +30,16 @@
       "topicOwner": "AO.CARD.001",
       "relatedGuerangerId": null,
       "originalPdfPageImageVerified": false,
-      "catholicEditionVerseTextChecked": false,
+      "catholicEditionVerseTextChecked": true,
       "nativeFrenchReviewed": false,
       "runtimePromotion": "BLOCKED",
-      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt"
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "independentBibleWitness": {
+        "edition": "Douay-Rheims 1899 American Edition",
+        "url": "https://www.biblegateway.com/passage/?search=Psalm+25%3A8&version=DRA",
+        "status": "EARLIER_INDEPENDENT_PSALM_25_PASSAGE_WITNESS_COVERED",
+        "originalLanslotsPrintedPageVerifiedByThis": false
+      }
     },
     {
       "id": "L1897-OCR4-002",
@@ -48,10 +55,16 @@
       "topicOwner": "LITURGICAL_COLOURS_CONTEXT_ONLY",
       "relatedGuerangerId": null,
       "originalPdfPageImageVerified": false,
-      "catholicEditionVerseTextChecked": false,
+      "catholicEditionVerseTextChecked": true,
       "nativeFrenchReviewed": false,
       "runtimePromotion": "BLOCKED",
-      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt"
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "independentBibleWitness": {
+        "edition": "Douay-Rheims 1899 American Edition",
+        "url": "https://www.biblegateway.com/passage/?search=Song+of+Solomon+5%3A10&version=DRA",
+        "status": "DOUAY_RHEIMS_BIBLE_TEXT_INDEPENDENTLY_RETRIEVED",
+        "originalLanslotsPrintedPageVerifiedByThis": false
+      }
     },
     {
       "id": "L1897-OCR4-003",
@@ -67,10 +80,16 @@
       "topicOwner": "AO.CARD.005",
       "relatedGuerangerId": null,
       "originalPdfPageImageVerified": false,
-      "catholicEditionVerseTextChecked": false,
+      "catholicEditionVerseTextChecked": true,
       "nativeFrenchReviewed": false,
       "runtimePromotion": "BLOCKED",
-      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt"
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "independentBibleWitness": {
+        "edition": "Douay-Rheims 1899 American Edition",
+        "url": "https://www.biblegateway.com/passage/?search=1+Thessalonians+5%3A27&version=DRA",
+        "status": "DOUAY_RHEIMS_BIBLE_TEXT_INDEPENDENTLY_RETRIEVED",
+        "originalLanslotsPrintedPageVerifiedByThis": false
+      }
     },
     {
       "id": "L1897-OCR4-004",
@@ -86,10 +105,16 @@
       "topicOwner": "CANON_TE_IGITUR_HISTORICAL_CONTEXT_ONLY",
       "relatedGuerangerId": null,
       "originalPdfPageImageVerified": false,
-      "catholicEditionVerseTextChecked": false,
+      "catholicEditionVerseTextChecked": true,
       "nativeFrenchReviewed": false,
       "runtimePromotion": "BLOCKED",
-      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt"
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "independentBibleWitness": {
+        "edition": "Douay-Rheims 1899 American Edition",
+        "url": "https://www.biblegateway.com/passage/?search=John+19%3A19-20&version=DRA",
+        "status": "DOUAY_RHEIMS_BIBLE_TEXT_INDEPENDENTLY_RETRIEVED",
+        "originalLanslotsPrintedPageVerifiedByThis": false
+      }
     },
     {
       "id": "L1897-OCR4-005",
@@ -105,10 +130,16 @@
       "topicOwner": "AO.CANON.09",
       "relatedGuerangerId": "FRG41",
       "originalPdfPageImageVerified": false,
-      "catholicEditionVerseTextChecked": false,
+      "catholicEditionVerseTextChecked": true,
       "nativeFrenchReviewed": false,
       "runtimePromotion": "BLOCKED",
-      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt"
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "independentBibleWitness": {
+        "edition": "Douay-Rheims 1899 American Edition",
+        "url": "https://www.biblegateway.com/passage/?search=Hebrews+11%3A4&version=DRA",
+        "status": "DOUAY_RHEIMS_BIBLE_TEXT_INDEPENDENTLY_RETRIEVED",
+        "originalLanslotsPrintedPageVerifiedByThis": false
+      }
     }
   ]
 }
