@@ -1,0 +1,1365 @@
+{
+  "schema": "AO_FORMATION_INDEPENDENT_FINAL_23_CHURCH_CRISIS_QA_REVIEW_V1",
+  "date": "2026-10-14",
+  "status": "PROPORTIONATE_ORIGINAL_SOURCE_AND_FOUR_ROLE_DRAFT_SCREENING_NOT_FINAL_CERTIFICATION",
+  "scope": "CR-ORG-01–09, CR-LIT-01–12, CR-ECC-11–12; Catechism excluded",
+  "source_shas": {
+    "data/learn/church-crisis-canonical.v1.json": "67476d576ae500d363773ef383ae48f8952d507f",
+    "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json": "29444ee1bab994f27e96e6bd879e8236c9ceec41",
+    "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json": "cde2a5eab976af02f99181cc371b8ff874537004",
+    "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json": "850b90144d010b631664f8949103dd9f796ce705",
+    "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json": "552072cc4f3bb246d79f168a6309cc22b9f022a1"
+  },
+  "evidence_rule": "A correctly attributed original bounded excerpt or reliable reproduction suffices for its proposition, no full-book requirement. Do not infer historical motives or universal causes from normative documents.",
+  "stats": {
+    "owners": 23,
+    "unique": 23,
+    "all_four_roles": true,
+    "roles_total": 92,
+    "origins": 9,
+    "liturgy": 12,
+    "ecclesiology": 2,
+    "priority_owners": [
+      "CR-ORG-05",
+      "CR-ORG-09",
+      "CR-LIT-04",
+      "CR-LIT-07",
+      "CR-LIT-08",
+      "CR-ECC-11",
+      "CR-ECC-12"
+    ],
+    "production_changes": 0,
+    "full_certifications": 0
+  },
+  "records": [
+    {
+      "id": "CR-ECC-11",
+      "canonical_title": "From collegiality to synodality: organic development or new ecclesiology?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Collegiality concerns bishops sharing care for the universal Church with and under the pope; synodality adds consultation and participation without necessarily transferring the bishops' jurisdiction to a popular assembly. Concrete procedures must identify who listens, recommends and decides, so responsibility does not evaporate.",
+            "french_present": true,
+            "cited_source_ids": [
+              "LUM1964",
+              "SYN2018",
+              "ES66"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Lumen gentium §22 describes the episcopal college with and never without its head, while the International Theological Commission's 2018 text describes differentiated synodal participation. Neither source declares that a majority vote can substitute for the apostolic deposit.",
+            "french_present": true,
+            "cited_source_ids": [
+              "LUM1964",
+              "SYN2018"
+            ],
+            "attribution": "Lumen gentium §22 and ITC Synodality (2018)"
+          },
+          {
+            "role": "critical_response",
+            "english": "Hearing lay witnesses is not intrinsically a democratic takeover, but unclear decision-making rules can conceal personal accountability. Critics should quote actual synodal statutes; supporters must answer demonstrated jurisdictional ambiguity. The boundary is the Church's teaching constitution, not mere affection for meetings.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SYN2018",
+              "LG64",
+              "ES66"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Christ gave bishops duties to teach, sanctify and govern, while granting the baptised genuine voices and responsibilities. Consultation can serve the truth; it cannot manufacture new revealed doctrines by vote. Reform succeeds where it strengthens identifiable pastoral accountability and communion.",
+            "french_present": true,
+            "cited_source_ids": [
+              "LUM1964",
+              "SYN2018",
+              "V1"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "cross_owner_overlap_needs_scope",
+      "assessment": "Question organic development of collegiality/synodality overlaps ECC12 and CR-GOV10. Restrict this owner to doctrinal/ecclesiological history, role of faithful/bishops/pope and distinction of voice/jurisdiction, crosslink later law rather than fully repeat 2024 implementation.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ECC-12",
+      "canonical_title": "Does modern synodality change who teaches, governs or decides in the Church?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Synodality describes ecclesial listening, consultation and common discernment within hierarchical communion; it does not, by definition, transfer sacramental teaching and jurisdiction from bishops and pope to an autonomous popular vote. Episcopalis communio and the International Theological Commission specify the distinct roles of the baptised faithful, bishops and Roman Pontiff. New procedures must be assessed against those real competencies.",
+            "french_present": true,
+            "cited_source_ids": [
+              "EPICOM18",
+              "SYN2018"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The five cardinals Brandmüller, Burke, Sandoval Íñiguez, Sarah and Zen wrote dubium 3 on 10 July 2023 asking whether calling synodality constitutive could make it a supreme principle of governance against the authority of pope and episcopal college. The DDF subsequently published Francis's 11 July response, which distinguished forms of participation while retaining the Church's hierarchical constitution. The 2024 Synod final text belongs to a further stage of implementation; neither the original five-cardinal question nor Francis's reply is a formal abolition of apostolic governance.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SYN2023-DUBIA-DIRECT",
+              "EPICOM18",
+              "SYNODFINAL24"
+            ],
+            "attribution": "Five named cardinals, original 10 July 2023 dubium 3, and Francis's 11 July reply formally published by DDF in Sept 2023"
+          },
+          {
+            "role": "critical_response",
+            "english": "Francis's response to the five cardinals is not a statement that doctrinal questions may henceforth be settled by polling. The juridical status of a synodal vote still depends on papal approval and the norms governing the assembly. Conversely, the cardinals' concern about the Church's immutable hierarchical constitution is not disproved merely because a consultative process is said to be pastorally inclusive. The correct analysis identifies whether a particular 2024–26 proposal is consultation, doctrine, disciplinary law or an authorised papal act, then measures it against Lumen gentium §22 and Episcopalis communio.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SYN2023-DUBIA-DIRECT",
+              "EPICOM18",
+              "SYN2018",
+              "V1"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Christ entrusted the teaching, sanctifying and governing mission to the apostles and their successors; the laity are not silent subjects, yet their baptismal participation does not cancel this divine constitution. Common discernment serves the deposit of faith only when anchored in Scripture, Tradition and the authority of the shepherds. A pastoral process cannot canonise contradiction with revelation by appealing to majority opinion.",
+            "french_present": true,
+            "cited_source_ids": [
+              "EPICOM18",
+              "SYN2018",
+              "V1"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "critical_2024_magisterium_omission",
+      "assessment": "Draft addresses 2024 Synod document as further implementation but omits Francis's 24 Nov 2024 explicit papal ordinary-magisterium status and simultaneous qualification that document is not strictly normative. Separate assent/status and implementation from doctrinal definition or automatically enacted universal legislation.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-01",
+      "canonical_title": "How far had Roman liturgical reform already gone before Vatican II?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Pius XII's liturgical reforms predated Vatican II in identifiable stages: a provisional restoration of the Easter Vigil began in 1951, and the decree Maxima redemptionis of 16 November 1955 prescribed a revised Holy Week for use from Palm Sunday, 25 March 1956. Its stated reasons included restoring the hours of ceremonies and allowing more faithful to attend. These official preconciliar changes cannot be attributed to a council that had not yet met, though their effects still require historical evaluation.",
+            "french_present": true,
+            "cited_source_ids": [
+              "LIT55",
+              "MD47",
+              "SC63"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The Sacred Congregation of Rites' 1955 decree explicitly traces the former morning celebration of the Triduum, explains the 1951 experimental Easter Vigil, and orders the revised rites and their times from 25 March 1956. Mediator Dei had already encouraged liturgical participation while warning against indiscriminate archaeological revival. Neither document establishes that every reform after 1962 was the same project.",
+            "french_present": true,
+            "cited_source_ids": [
+              "LIT55",
+              "MD47"
+            ],
+            "attribution": "Pius XII, Mediator Dei (1947) and Holy Week reform decree (1955)"
+          },
+          {
+            "role": "critical_response",
+            "english": "Calling every older change 'organic' and every later one 'fabricated' is too broad: structure, texts, pastoral cause and continuity need comparison measure by measure. At the same time, earlier papal approval of a reform does not settle the quality of every innovation proposed after the Council. The evidence should follow editions and rubrics rather than a retrospective single-cause narrative.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "SC63",
+              "LIT55"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "A traditional Catholic may both respect the inherited 1962 books and investigate the reforms by which they took shape. Liturgy carries faith through prayers and ritual actions, so alterations deserve exact historical scrutiny and theological prudence. Recovering solemnity and prayerful participation need not falsely imply that the entire pre-1962 period was textually frozen.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "SC63",
+              "LIT55"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "original_1955_decree_verified",
+      "assessment": "Pius XII-approved 16 Nov 1955 decree prescribes revised Holy Week beginning 25 Mar 1956 and recollects 1951 experimental Easter Vigil; valid pre-Council timeline.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-02",
+      "canonical_title": "What did Sacrosanctum Concilium actually require—and what did it not require?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Sacrosanctum Concilium §§21–23 expressly preserves unchangeable divinely instituted elements, authorizes review of mutable forms only by lawful authority, and requires new forms to grow organically from existing rites where a genuine and certain ecclesial benefit demands change. Article 36 preserves Latin in the Latin rites while extending permission for vernacular worship; article 116 gives Gregorian chant pride of place, without prohibiting other appropriate sacred music. The constitution requested reform but did not itself promulgate the 1969 Missal, command celebration facing the people or order universal abandonment of Latin. To establish what actually happened one must distinguish the conciliar text, papal legislation and local pastoral practice.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "MR69"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Paul VI later promulgated the revised Missal through Missale Romanum; that papal act and the Consilium's implementation are identifiable subsequent decisions. Describing them as developments implementing the Council is historically more precise than asserting that every altered rubric appeared expressly in the Constitution.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MR69",
+              "SC63"
+            ],
+            "attribution": "Paul VI, Missale Romanum, 3 April 1969"
+          },
+          {
+            "role": "critical_response",
+            "english": "Neither an injunction to reform nor the phrase 'active participation' logically establishes every later choice of language, arrangement or ritual gesture. Conversely, the existence of postconciliar changes not verbally ordered by the Council does not automatically make every such change illicit. Each step must be checked against the competent promulgating authority and the conciliar standards.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "MR69"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The Council's explicit requirements of organic growth, Latin's preservation and the honour due to Gregorian chant furnish legitimate standards by which Catholics may question particular reforms or local implementation. Such scrutiny tests fidelity to the official text rather than equating ecclesial obedience with an unquestioning endorsement of every later custom.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "MD47"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "council_vs_papal_law_distinction",
+      "assessment": "SC 21–23,36,116 does not mandate priest facing people, abolish Latin or enact 1969 missal; later legislation must be identified.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-03",
+      "canonical_title": "What changed in the 1964–1967 transitional reforms and experiments?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The liturgical reform between 1964 and 1967 was not a single overnight substitution of the old Missal. Inter Oecumenici (1964) and Tres abhinc annos (1967) introduced successive changes to celebration, readings, audible prayers and ritual arrangements before the complete Missal was promulgated. The date and legal authority of each change matter for an accurate reconstruction.",
+            "french_present": true,
+            "cited_source_ids": [
+              "IO64",
+              "TA67",
+              "MR69"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Inter Oecumenici explains an initial programme of implementing Sacrosanctum Concilium while preserving an ordered transition. Tres abhinc annos authorises additional simplifications. These are contemporary legislative sources, not memories reconstructed decades after the fact; they show that transitional practice had several distinct normative stages.",
+            "french_present": true,
+            "cited_source_ids": [
+              "IO64",
+              "TA67"
+            ],
+            "attribution": "1964 and 1967 Roman instructions"
+          },
+          {
+            "role": "critical_response",
+            "english": "A photograph or recording labelled 'the 1962 Mass' may actually reflect a transitional local practice; likewise a later recollection of 'what the Council changed' often conflates the Council, implementing instructions, episcopal permissions and subsequent custom. Documentary comparison must therefore proceed rubric by rubric and specify which year and authority governed each observance.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "IO64",
+              "TA67"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Judging continuity requires exact ritual history. The ancient books, the 1964 and 1967 instructions and the eventual revised Missal are different documentary states. Only by respecting those distinctions can a Catholic defend inherited practice, assess simplification critically and avoid attributing innovations to the wrong legislator.",
+            "french_present": true,
+            "cited_source_ids": [
+              "JOHNXIII1962",
+              "IO64",
+              "TA67",
+              "MR69"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "transition_timeline_sound",
+      "assessment": "1964 Inter Oecumenici and 1967 Tres abhinc annos are distinct legislative stages before 1969 Missal; avoid presenting as one overnight change.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-04",
+      "canonical_title": "Who produced the postconciliar reform? — Consilium, Bugnini, Missa normativa and Protestant observers",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The 1969–1970 Roman Missal was promulgated by Pope Paul VI following postconciliar work coordinated by the Consilium and other Roman authorities. The Council set principles for revision in Sacrosanctum Concilium but did not itself issue the full new Ordo Missae. Papal promulgation, expert drafting, consultative participation and later implementation must not be collapsed into one undifferentiated act.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MR69",
+              "SC63"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Interdenominational liturgical cooperation in the 1960s is documented, including the Joint Liturgical Group founded among British churches. Its own historical narrative discusses Anglicans, Methodists, Congregationalists and Baptists cooperating on worship, but is not a list of the Roman Consilium's members, not a record of Protestant authorship of Paul VI's Missal, and not proof that six Protestants composed the Novus Ordo. To assess Protestant observers' influence on the Roman reform one must locate the specific Roman meeting, accredited observer, minutes and proposed text, then distinguish consultation from authorship and papal approval.",
+            "french_present": true,
+            "cited_source_ids": [
+              "JLG1966",
+              "MR69"
+            ],
+            "attribution": "Joint Liturgical Group history; observer participation, not proven Missal authorship"
+          },
+          {
+            "role": "critical_response",
+            "english": "The Consilium's experimental Missa normativa was presented in 1967, and the official Notitiae record includes Synod voting and remarks. The 1967 experiment is not identical to the text promulgated in 1969. A defensible account must distinguish proposals, episcopal criticism, revisions and the final papal act rather than assigning the whole outcome to one adviser or inventing unanimity among bishops.",
+            "french_present": true,
+            "cited_source_ids": [
+              "NOT67",
+              "MR69"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Sacrosanctum Concilium §§21–23 distinguishes changeable human liturgical forms from elements instituted by God, makes competent ecclesiastical authority responsible for regulation and expressly forbids a priest to add, remove or change rites on his own. Article 23 demands actual theological, historical and pastoral study and states that innovations require a genuine and certain good of the Church and organic growth from what already exists. A legitimate Catholic criticism can apply those conditions to documented drafting choices and long-term pastoral results. It cannot claim Protestant authorship of Paul VI's Missal without actual Roman evidence, nor deny the fact of papal promulgation merely because a proposal was criticized.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "MR69"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "material_proponent_gap_and_attribution",
+      "assessment": "Joint Liturgical Group of British denominations is not evidence of named observers having Roman Consilium drafting authority. Covering letter signed by Ottaviani/Bacci while Study by distinct experts; need exact Roman meeting observer identity/minutes before claiming influence, not another unrelated movement.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-05",
+      "canonical_title": "Is the 1969/70 Missal an organic development of the Roman Rite or a substantial reconstruction?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Sacrosanctum Concilium §23 supplies a criterion for legitimate liturgical development: real ecclesial need, historical and pastoral study and forms growing organically from what preceded them. Paul VI's Missale Romanum describes substantial revisions of Eucharistic Prayers, readings, ritual texts and the calendar. Whether those changes satisfy the conciliar criterion is a substantive historical and theological judgment, not a verdict determined by counting additions.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "MR69"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The 1969 signed letter of Cardinals Ottaviani and Bacci accompanying the Short Critical Study criticises the revised Order of Mass as a notable departure, in both whole and detail, from the sacrificial theology given dogmatic expression at Trent. That is a specific traditionalist case for discontinuity, not merely a preference for the Latin language. Benedict XVI's 2007 letter, by contrast, speaks of two usages of one Roman Rite, while Francis's 2021 provisions regulate the earlier Missal differently. The legal and descriptive differences among those papal acts are real; the 1969 doctrinal criticism must be evaluated from the prayers themselves and not taken as an automatic judgment of invalidity.",
+            "french_present": true,
+            "cited_source_ids": [
+              "BEN07",
+              "TC21",
+              "FR21",
+              "OTT69-CR"
+            ],
+            "attribution": "Cardinals Ottaviani and Bacci, signed 1969 Short Critical Study; contrasted with Benedict XVI 2007 and Francis 2021"
+          },
+          {
+            "role": "critical_response",
+            "english": "An objection concerning organic development must compare specified texts and ecclesial authorities: the 1962 Offertory and Canon, the revised offertory and Eucharistic Prayers, and the changes to the calendar and lectionary. The Ottaviani–Bacci study challenges continuity of doctrinal expression, whereas the existence of an authorised later Missal bears on juridical legitimacy; neither datum alone proves the other. Sacrosanctum Concilium §23 gives a continuity criterion, and Missale Romanum promulgates the new books. A historically serious judgement separates the merits of reform, fidelity to revealed doctrine and the validity of a particular celebration.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "MR69",
+              "BEN07",
+              "OTT69-CR"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The inherited Roman liturgy deserves careful preservation not because every customary element is immutable, but because a rite embodies accumulated prayer and theological expression. The same principle binds reformers to justify omissions and replacements. A legitimate defense of the older usage does not require denying the Church's authority, while a legitimate defense of reform does not erase the obligation of sound continuity.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "BEN07",
+              "MR69"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "covering_letter_study_author_separate",
+      "assessment": "1969 cardinal signatures attach to covering letter, not proof they personally composed critical Study. Present real sacrificial theological objections, distinguish lawful rite, emphasis and validity.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-06",
+      "canonical_title": "What changed in the Offertory, Roman Canon and Eucharistic Prayers?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The reformed Missal replaced the older Offertory prayers with a preparation of gifts and provided Eucharistic Prayers alongside the Roman Canon. These textual facts can be compared in the respective official books; it is inaccurate either to claim that the Canon disappeared altogether or that the change was merely a translation of identical prayers.",
+            "french_present": true,
+            "cited_source_ids": [
+              "JOHNXIII1962",
+              "MR69",
+              "OFF1962"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "In their signed 1969 letter accompanying the Short Critical Study of the new Order of Mass, Cardinals Ottaviani and Bacci advanced a serious traditional objection: the revised rite, considered as a whole and in its details, made the doctrine of the Eucharistic sacrifice less explicit than Trent's formulation. The concern extended beyond translated vocabulary to new Offertory formulas, the structure of the Eucharistic Prayer and the ritual's cumulative doctrinal expression. This was a criticism of the reform, not an official declaration that every celebration would be invalid or that Paul VI had definitively denied the Mass as sacrifice.",
+            "french_present": true,
+            "cited_source_ids": [
+              "GIRM",
+              "OFF1962",
+              "CCC1350",
+              "OTT69",
+              "MR69"
+            ],
+            "attribution": "Cardinals Alfredo Ottaviani and Antonio Bacci, signed 25 September 1969 letter and Short Critical Study, compared with Roman Missals"
+          },
+          {
+            "role": "critical_response",
+            "english": "The 1969 critique raises a testable question about what a worshipper hears and the clarity of the sign of sacrifice. The older Offertory explicitly anticipates sacrificial offering; the revised preparation of the gifts is not a simple translation of it. But less explicit language in one rite segment does not logically establish that the entire revised Missal lacks a valid consecration or that its Roman Canon disappeared. Compare the original books, each Eucharistic Prayer and the actual promulgating norms, distinguishing doctrinal truth, expressive emphasis and lawful liturgical change.",
+            "french_present": true,
+            "cited_source_ids": [
+              "OFF1962",
+              "MR69",
+              "CCC1350",
+              "OTT69"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The older Roman Offertory expresses expiation and offering with striking explicitness, while the Canon's long use grounds a particular theological and devotional inheritance. Comparing it with the revised texts should neither suppress the beauty of those inherited prayers nor mistake every change in emphasis for a denial of sacramental doctrine.",
+            "french_present": true,
+            "cited_source_ids": [
+              "OFF1962",
+              "MD47",
+              "MR69"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "original_offertory_and_roman_canon_distinction",
+      "assessment": "Replacing older offertory is real textual change; Roman Canon retained alongside other prayers. 1969 critique attributable to its letter signatories versus theologian study separately.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-07",
+      "canonical_title": "Did sacrificial, propitiatory, penitential and ascetical language become less explicit?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The disputed reform must be judged on identified ritual texts rather than the slogan that either every change is Protestant or every promulgated change is pastorally harmless. Pius XII's Mediator Dei §§48–50 treats the liturgy as a doctrinal witness subject to the Church's Magisterium and distinguishes divine elements from mutable human forms; §§63–65 warns against simplistic antiquarianism and autonomous improvisation. Sacrosanctum Concilium §23 requires sound tradition and organic development. Paul VI's Missale Romanum promulgated the reform. These facts allow serious criticism of individual Offertory, Canon and rubrical changes without assuming that shortened wording automatically cancels the Eucharistic sacrifice or invalidates every celebration.",
+            "french_present": true,
+            "cited_source_ids": [
+              "JOHNXIII1962",
+              "MR69",
+              "MD47"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The signed Ottaviani–Bacci letter of 25 September 1969 presents the accompanying Short Critical Study to Paul VI as alleging a serious departure, both overall and in detail, from the theology of the Mass formulated at Trent's Session XXII. Its authors did not merely dislike an altered ceremonial style: they challenged the expression of Eucharistic sacrifice and the possibility of readings compatible with Protestant theology. This remains a historically real, forceful traditional critique. It should be tested against the exact 1969 texts and the subsequent amendment of the General Instruction, not blunted into a generic unease about change or converted automatically into proof of sacramental invalidity.",
+            "french_present": true,
+            "cited_source_ids": [
+              "OTT69",
+              "MR69",
+              "IGMR69_ORIGINAL"
+            ],
+            "attribution": "Cardinals Ottaviani and Bacci, Short Critical Study (1969)"
+          },
+          {
+            "role": "critical_response",
+            "english": "A theological concern over clarity must distinguish textual omission, possible catechetical misunderstanding and genuine doctrinal negation. Later revisions to the General Instruction and the continued presence of the Roman Canon are relevant evidence, as is whether a cited criticism addresses the original 1969 text rather than an amended edition.",
+            "french_present": true,
+            "cited_source_ids": [
+              "IGMR69_ORIGINAL",
+              "GIRM75",
+              "MR69"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Sacrificial and propitiatory language belongs centrally to Catholic Eucharistic faith and deserves more than a merely minimalist presence. An honest comparison should preserve historical editions, quote each prayer accurately and make a reasoned judgment about emphasis and communicative clarity without carelessly charging the Roman Church with promulgating an invalid rite.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "JOHNXIII1962",
+              "MR69",
+              "OTT69"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "critical_question_underspecified",
+      "assessment": "Question seeks whether propitiatory, penitential and ascetical language was less explicit; current answer instead presents only methodology and normative legitimacy. Need an actual labelled prayer-by-prayer original comparison and identifiable theological readings; don't generalize from Offertory to all Mass.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-08",
+      "canonical_title": "Did the new lectionary simply give Catholics more Scripture, or did selection and omission matter?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The postconciliar lectionary expanded the quantity and variety of biblical readings through multi-year Sunday cycles and broader weekday provision. Greater volume is a factual difference; whether the selection and arrangement teach particular doctrines more clearly is a separate editorial and theological question. Neither quantity nor antiquity alone determines a rite's overall value.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "LEC81"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The General Introduction to the Lectionary sets out principles for arranging and selecting readings so the mystery of salvation unfolds across the liturgical year. The older cycle exhibits a different logic of recurrence and memorisation; defenders of annual repetition point to the pedagogical benefits of repeatedly hearing and learning the same texts.",
+            "french_present": true,
+            "cited_source_ids": [
+              "LEC81",
+              "JOHNXIII1962"
+            ],
+            "attribution": "General Introduction to the Lectionary, official principles"
+          },
+          {
+            "role": "critical_response",
+            "english": "A serious comparison must examine the pericopes themselves, the treatment of difficult passages, Sunday and weekday usage, seasonal appropriateness and actual attendance. Claims of widespread omission of sin or judgement require a reproducible verse-level comparison rather than a few striking examples; equally, an expanded cycle does not guarantee that a congregation actually hears more Scripture.",
+            "french_present": true,
+            "cited_source_ids": [
+              "LEC81",
+              "SC63",
+              "JOHNXIII1962"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Scriptural proclamation belongs integrally to Catholic worship, but the historic one-year Roman readings are also an inherited theological composition. Fidelity to the Word of God calls for accuracy, sound interpretation and contemplative recurrence, not for treating the number of distinct verses as the sole criterion of liturgical excellence.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "JOHNXIII1962",
+              "LEC81"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "reasonable_but_needs_concrete_comparison",
+      "assessment": "Original lectionary expanded Sunday and weekday cycles; draft is methodologically accurate but lacks even one tabulated concrete pericope comparison, avoid absolute suppression claims.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-09",
+      "canonical_title": "What happened to Latin, vernacular worship and Gregorian chant?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Latin was not abolished by Vatican II. Sacrosanctum Concilium §36(1) directs that its use be preserved in the Latin rites, subject to particular law, while §§36(2)–(4) allow controlled extension of the vernacular with competent authority and approval. Article 116 identifies Gregorian chant as specially suited to the Roman liturgy and assigns it pride of place where appropriate. These are actual conciliar obligations and preferences; the postconciliar predominance of vernacular celebrations has to be explained through later legislation, episcopal decisions and pastoral adoption, not falsely attributed to an express conciliar command eliminating Latin or chant.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "AUD26"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Paul VI's general audiences of 1969 openly described changes in familiar liturgical expression and defended making prayers more readily accessible to worshippers. This is a documented papal pastoral argument, not a claim that Gregorian chant was worthless or had to disappear from all Roman celebrations.",
+            "french_present": true,
+            "cited_source_ids": [
+              "AUD19",
+              "AUD26"
+            ],
+            "attribution": "Paul VI, general audiences November 1969"
+          },
+          {
+            "role": "critical_response",
+            "english": "Vernacular comprehension can aid active participation, but understanding isolated words is neither the whole of participation nor a sufficient justification for eliminating the Church's liturgical language from practice. The actual balance between Latin, vernacular texts and chant must be checked against official laws, local permissions, pastoral resources and the spiritual needs of worshippers.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "AUD26"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The Council's own text requires more than a sentimental attachment to Latin. Sacrosanctum Concilium §36 explicitly protects its place in Latin worship, while §116 gives Gregorian chant a privileged place because it belongs properly to the Roman rite. This inheritance sustains common scriptural memory, a stable technical vocabulary of prayer and music acquired through centuries of liturgical practice. Defending it is compatible with vernacular readings, pastoral translations and serious catechesis, which the same Council allowed. The real criticism is therefore not that the faithful must never understand worship; it is that later practice should be measured against the Council's simultaneous requirements of comprehension and preservation.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "AUD26"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "clear_council_language",
+      "assessment": "Latin SC §36 and Gregorian chant §116 preserved in law; broad later vernacular practice not decree's own abolition.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-10",
+      "canonical_title": "Did Vatican II require Mass facing the people? — orientation and ad populum",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Vatican II did not issue a universal command that the priest must celebrate Mass facing the people. The Council's Constitution concerns liturgical renewal but nowhere requires replacing every eastward-facing altar; later norms discuss altar arrangement and the celebrant's orientation. Historical Christian practice includes a range of architectural and ceremonial patterns.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "GIRM",
+              "CDW2000"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The General Instruction of the Roman Missal no. 299 describes constructing an altar detached from the wall, so that it may be walked around and Mass may be celebrated facing the people, a placement it calls desirable where possible. In a formal reply of 25 September 2000, the Congregation for Divine Worship answered expressly that this text does not exclude celebration facing the apse: the Latin expedit indicates recommendation rather than obligation, and 'where possible' depends on architectural and pastoral conditions. The actual Roman norm therefore cannot honestly be presented as an absolute prohibition of ad orientem celebration.",
+            "french_present": true,
+            "cited_source_ids": [
+              "GIRM",
+              "CDW2000"
+            ],
+            "attribution": "CDW, reply on General Instruction no. 299 (2000)"
+          },
+          {
+            "role": "critical_response",
+            "english": "Calling versus populum the single universal norm of antiquity ignores differences among churches, common direction of prayer and historical altar siting. Claiming, in the opposite direction, that every early Christian liturgy used the same modern 'ad orientem' arrangement also exceeds the surviving evidence. The ancient orientation question needs archaeology, textual rubrics and honest regional distinctions.",
+            "french_present": true,
+            "cited_source_ids": [
+              "RAT2000",
+              "LANG05",
+              "CDW2000"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Common orientation of priest and faithful expresses pilgrimage toward Christ and the eschatological direction of worship; it need not imply that the priest turns his back on the congregation as persons. Defending this inherited symbolism is compatible with recognising legitimate variation, provided that neither architectural ideology nor convenience supplants reverence for the Eucharistic sacrifice.",
+            "french_present": true,
+            "cited_source_ids": [
+              "RAT2000",
+              "CDW2000",
+              "SC63"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "actual_2000_responsum_supports",
+      "assessment": "CDF/CDW 2000 official reply says GIRM299 does not exclude facing apse; expedit recommendation not mandatory celebration facing people. Exact Latin/protocol verify before printing citation number.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-11",
+      "canonical_title": "What happened to Communion discipline? — hand/tongue, kneeling, rails and tabernacle practice",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Communion discipline involves several distinct questions: the manner of reception, the posture of the communicant, the location of the tabernacle and the presence of an altar rail. Vatican II's Constitution did not itself institute Communion in the hand. Memoriale Domini (1969) maintained the received manner while providing a conditional mechanism for episcopal requests about a contrary practice.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MEM69",
+              "SC63"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "In Memoriale Domini (1969), the Holy See published the episcopal consultation: on admitting Communion in the hand in addition to the customary manner, 597 bishops voted yes, 1,233 no, and 315 yes with reservations (20 invalid votes). Paul VI therefore decided to preserve the existing manner and warned against irreverence; where a contrary practice already prevailed, a conference could petition Rome after the prescribed deliberation and majority. This was not a universal conciliar mandate to distribute in the hand, still less a decree abolishing reception on the tongue.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MEM69"
+            ],
+            "attribution": "Congregation for Divine Worship, Memoriale Domini (1969)"
+          },
+          {
+            "role": "critical_response",
+            "english": "Different rubrics concerning kneeling, standing or receiving on the tongue should not be reduced to an allegation that one gesture alone establishes Eucharistic faith or unbelief. Conversely, altar rails and kneeling may carry legitimate catechetical meaning about holy space and adoration; omitting them is a pastoral and architectural change worth assessing rather than dismissing as meaningless.",
+            "french_present": true,
+            "cited_source_ids": [
+              "GIRM",
+              "MEM69",
+              "RS2004"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The Eucharist is the true Body and Blood of Christ, and the manner of reception ought to manifest humility, care and adoration. The inherited practice of kneeling and Communion on the tongue remains a real ecclesial tradition; its defence must rely on doctrine and valid norms, not on contempt for Catholics following another permitted discipline.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MEM69",
+              "RS2004",
+              "MD47"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "precise_episcopal_vote_verified",
+      "assessment": "1969 Memoriale Domini first vote 597 yes/1,233 no/315 conditional/20 invalid, default tongue retained with conditioned local permission; don't equate permission with universal change.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-LIT-12",
+      "canonical_title": "Which postconciliar practices were law, permission, experiment, custom, toleration or abuse?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "A traditional custom, a binding universal norm, an episcopal permission and an illicit practice are not interchangeable categories. Head coverings, altar-server eligibility and the preaching obligations at Mass have distinct canonical and ritual histories. Any criticism must begin by identifying the applicable code, particular law, rite and date, rather than treating everything common today as a decree of Vatican II.",
+            "french_present": true,
+            "cited_source_ids": [
+              "CAN1917",
+              "CODE83",
+              "SC63"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The 1917 Code, canon 1262 §2, prescribed covered heads for women in church, while the 1983 Code did not reproduce this obligation and its canon 6 abrogated the prior Code. This difference between an older binding prescription and a respected devotional custom today must be stated explicitly. Separately, the 1994 communication on female altar servers concerned a possible local permission, not a duty to employ girls; each practice must be classified according to the applicable rite, date and competent authority rather than attributed indiscriminately to Vatican II.",
+            "french_present": true,
+            "cited_source_ids": [
+              "CAN1917",
+              "CIC6",
+              "SERV94"
+            ],
+            "attribution": "1917 and 1983 Codes; CDW 1994 instruction"
+          },
+          {
+            "role": "critical_response",
+            "english": "An inherited veil or male altar-serving custom can be preserved by a community without implying that every woman or girl has less dignity. Conversely, calling such a custom optional today is not proof that its historical or theological symbolism was empty. Claims about mandatory homilies or permissible service must be checked against current and historical rubrics, not inferred from stereotypes.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SC63",
+              "SERV94",
+              "CAN1917"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Reverence can be expressed through stable customary signs, but discipline must be stated with exact legal force. Catholics defending inherited forms should explain their religious meaning without adding obligations the Church has not imposed, while Catholics preferring other permitted forms should not disparage the piety of those who retain them.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "SC63",
+              "CIC6"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "canonic_custom_and_permission",
+      "assessment": "1917 can.1262§2 headcovering and later 1983 code not duplicating same obligation; female servers conditional permission 1994, not required; respect separate rites/dates.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-01",
+      "canonical_title": "Was there already a crisis before Vatican II?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The years before Vatican II were not free from doctrinal, pastoral and social problems. Pius X's anti-Modernist intervention, Pius XII's warnings about theological errors, and postwar secularisation document tensions before 1962. The Council must be placed in that chronology without making every subsequent crisis inevitable or treating the earlier Church as already identical to its later condition.",
+            "french_present": true,
+            "cited_source_ids": [
+              "PASCENDI",
+              "HG1950",
+              "GAU65"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Humani generis in 1950 warned against reducing dogmatic teaching to fashionable philosophical systems; Pascendi in 1907 diagnosed a connected modernist account of revelation. These were actual preconciliar papal interventions, not proof that every theologian of renewal held the condemned propositions.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HG1950",
+              "PASCENDI"
+            ],
+            "attribution": "Pius X, Pascendi (1907); Pius XII, Humani generis (1950)"
+          },
+          {
+            "role": "critical_response",
+            "english": "A genuine pre-existing weakness can explain why reformers saw a need for renewal, but does not validate each reform carried out. Equally, evidence of strong attendance in one country cannot erase documented intellectual or catechetical deficiencies elsewhere. One must differentiate changes in faith, discipline and wider society and compare national evidence before assigning causes.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HG1950",
+              "GAU65",
+              "MD47"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The Church's inheritance contains enduring doctrines and disciplines, yet particular epochs need purification and correction. Catholics should study the genuine failings that preceded the Council and the concrete decisions that followed, defending Tradition without mythologising a perfect 1950s. Recovery begins with doctrine, worthy worship and the ordinary work of conversion.",
+            "french_present": true,
+            "cited_source_ids": [
+              "PASCENDI",
+              "MD47",
+              "GAU65"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "sound_preconciliar_context",
+      "assessment": "Pascendi (1907), Humani generis (1950) and social changes establish earlier controversies; no inference all theology condemned.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-02",
+      "canonical_title": "Why did John XXIII call Vatican II?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "John XXIII called Vatican II by his own papal authority to present the Church's saving mission amid rapid modern changes and seek renewal of Christian life and unity. The 1961 convocation Humanae salutis is the proper original statement of this intention. Later disputes about particular texts and implementation must not be retroactively inserted into his stated reasons for summoning the bishops.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HS61",
+              "GAU65"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "In Humanae salutis John XXIII described the Church as a bearer of truth and salvation in a troubled world and formally convoked the ecumenical assembly. His original Latin text is a first-person papal witness to the Council's initiative, not a secret transcript of all subsequent negotiations.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HS61"
+            ],
+            "attribution": "John XXIII, Humanae salutis, 25 December 1961"
+          },
+          {
+            "role": "critical_response",
+            "english": "A pastoral intention to address modern society may be prudent even where later conciliar formulations cause difficult questions. Conversely, saying the Council was 'pastoral' does not turn every statement into a mere optional suggestion. Evaluating the initiative requires comparing stated aims, text actually adopted, the authority of each proposition and the history of implementation.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HS61",
+              "DV65",
+              "LG64"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The Church may hold councils to meet new pastoral needs, but their service remains the conservation and transmission of revelation. Charity toward John XXIII's purpose neither forbids critical study of actual results nor makes the Council an alternative foundation of the faith. Apostolic doctrine remains the measure of every programme of renewal.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HS61",
+              "DV65",
+              "LG64"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "appropriate_original_papal_intent",
+      "assessment": "Humanae salutis (1961) represents John XXIII's actual declared reasons, not later claimed hidden motives; draft bounded.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-03",
+      "canonical_title": "Modernism, nouvelle théologie and ressourcement: renewal or return of errors?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Ressourcement sought to return to Scripture, Fathers and early liturgical sources; the 'nouvelle théologie' label grouped varied approaches and cannot be treated as a single doctrinal party. Pius XII warned in Humani generis against certain theological methods that undermined stable dogmatic formulations. The decisive test is what a named writer actually proposed, not whether that writer read the Fathers or used a new vocabulary.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HG1950",
+              "PASCENDI",
+              "DV65"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Pius XII in Humani generis opposed methods that made established dogmatic concepts interchangeable with fashionable philosophy. A real representative of the conciliar criticism of older theological drafts, Karl Rahner, is recorded in the Pontifical Catholic University of Chile's catalogue of his original 1962 Disquisitio brevis against De fontibus revelationis: the catalogue lists objections concerning excessive length, pastoral character and ecumenical spirit. This evidence identifies an actual critic but does not establish from his unexamined manuscript that he rejected immutable dogma itself.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HG1950",
+              "RAHNER62-ARCHIVE",
+              "FONTIBUS62-PRIMARY-TRANS"
+            ],
+            "attribution": "Karl Rahner's original 1962 Disquisitio brevis listed in university manuscript catalogue; Pius XII's published Humani generis"
+          },
+          {
+            "role": "critical_response",
+            "english": "A real patristic retrieval can deepen Catholic doctrine without asserting that every medieval or Tridentine clarification was an error. At the same time, an appeal to ancient sources cannot license the denial of later defined teaching. Historical assessment needs the theologian's original publication and precise censured claim, especially when judging named persons or theological schools.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HG1950",
+              "DV65",
+              "PASCENDI"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "True renewal takes the whole Tradition, not a chosen century made into a rival to Trent or Vatican I. Scripture and Fathers should illuminate rather than erase authentic development. The Church needs intellectual courage to expose renewed modernist errors together with justice that does not accuse every advocate of careful historical study.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HG1950",
+              "DV65",
+              "PASCENDI"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "adequate_but_archive_scope",
+      "assessment": "Rahner's 1962 manuscript is reported by an archival catalogue, not direct manuscript quotation; current draft correctly signals this. Do not label every ressourcement author a Modernist.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-04",
+      "canonical_title": "Was the Liturgical Movement already divided before the Council?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The Liturgical Movement was never a single programme. Before Vatican II some pursued deeper participation, Gregorian chant and recovery of ancient rites; others pressed changes whose pastoral benefits or doctrinal clarity were disputed. Mediator Dei (1947) both encouraged participation and cautioned against antiquarianism and arbitrary liturgical experimentation. This makes the preconciliar debate historically demonstrable.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "SC63"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Pius XII taught in Mediator Dei that liturgy is the Church's public worship and that restoration of older usages is not automatically superior to legitimately developed practice. His warning about archaeological enthusiasm is first-hand evidence of tensions within liturgical renewal well before the Council.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47"
+            ],
+            "attribution": "Pius XII, Mediator Dei, 1947, original papal caution about archaism"
+          },
+          {
+            "role": "critical_response",
+            "english": "Advocacy of active participation did not inherently entail abandonment of Latin or silent prayer, nor did love of older rites require denying genuine pastoral difficulties. Each proposed change needs examination of its original advocates, theological rationale, authorising decree and actual outcomes. Later events cannot be projected onto every preconciliar liturgist as if intentions were uniform.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "SC63"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The worship of God must remain the Church's received act, cultivated through reverence, sound catechesis and faithful rubrics. Participation is deeper than verbal activity: the faithful can join Christ's sacrifice inwardly even when priestly words are silent. Reform deserves prudence where it changes signs by which belief has long been carried.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "SC63"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "adequate_preconciliar_liturgical_history",
+      "assessment": "Mediator Dei (1947) documents liturgical movement debate and cautions against archaeological reduction while encouraging interior participation.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-05",
+      "canonical_title": "Was Europe already dechristianising before Vatican II? — the French case",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "French dechristianisation neither began in 1965 nor followed an unchanged downward line. Long-term changes in rural parishes, worker missions, catechesis and the transmission of faith predated the Council; a sharp shift in practice around the conciliar period still deserves study rather than dismissal. The measured question is how these overlapping causes operated, not which single date absolves every institution.",
+            "french_present": true,
+            "cited_source_ids": [
+              "CUCHET",
+              "BERTH22",
+              "CUCHET26"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Guillaume Cuchet's work and French historical scholarship examine a pronounced decline of Catholic observance in the 1960s while identifying longer cultural and religious antecedents. A retrospective claim that every loss of practice was caused by the revised Mass outruns such evidence; so does an argument that preconciliar decline demonstrates the harmlessness of every postconciliar decision.",
+            "french_present": true,
+            "cited_source_ids": [
+              "CUCHET",
+              "BERTH22"
+            ],
+            "attribution": "Guillaume Cuchet and French scholarly studies of observance"
+          },
+          {
+            "role": "critical_response",
+            "english": "A serious investigation separates Easter duty, Sunday Mass, ordinations, baptisms, religious education and stated belief before comparing their timing. It must distinguish a historical association from a causal explanation and avoid exporting the French chronology without testing other countries. Particular parish and family experiences matter, but cannot substitute for representative sources.",
+            "french_present": true,
+            "cited_source_ids": [
+              "BERTH22",
+              "CUCHET",
+              "CUCHET26"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Faith is passed through sustained worship, teaching, sacramental life and families; weakening these bonds can deepen an existing cultural crisis. Catholic fidelity requires recovering the substance of belief and reverent liturgical practice while honestly admitting both the pressures that preceded Vatican II and pastoral errors that followed it. Neither nostalgia nor institutional self-exoneration repairs lost transmission.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "CUCHET",
+              "BERTH22"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "author_position_understated",
+      "assessment": "Original Cuchet university author publication description explicitly proposes Vatican II as 'trigger' within longer French dechristianization; existing draft overly general about historical causal argument. Add named hypothesis without claiming settled universal causality.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-06",
+      "canonical_title": "How did war, technology, democracy and decolonisation change the Church’s situation?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The Church encountered mass warfare, displacement, colonial independence, industrial urban life, new media and changing political institutions in the decades around the Council. These pressures affected catechesis, missions, clergy formation and family transmission independently of liturgical decisions. Historical causation requires a specific place, demographic evidence and attention to the fact that each change reached countries at a different pace.",
+            "french_present": true,
+            "cited_source_ids": [
+              "GAU65",
+              "AG65",
+              "HS61"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Gaudium et spes opened by describing rapid changes in science, technology, social relations and culture; Ad gentes addressed missionary work amid diverse peoples and institutions. These primary conciliar descriptions establish what bishops considered pressing, without proving that each proposed pastoral strategy succeeded.",
+            "french_present": true,
+            "cited_source_ids": [
+              "GAU65",
+              "AG65"
+            ],
+            "attribution": "Vatican II, Gaudium et spes §§4–10 and Ad gentes §§2–7"
+          },
+          {
+            "role": "critical_response",
+            "english": "A postwar social revolution can contribute to declining practice, but does not absolve bishops of responsibility for doctrine or discipline. Likewise, a declining attendance series does not prove one conciliar sentence caused the decline. Comparative studies should separate secular legislation, urban movement, education, familial religion and ecclesial choices rather than aggregate them into an undefined 'spirit of the age'.",
+            "french_present": true,
+            "cited_source_ids": [
+              "GAU65",
+              "AG65",
+              "CD65"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Changing conditions demand intelligent missionary and pastoral work, not alterations to revelation. The Church can use new languages and media while preserving the sacraments, chastity, prayer and Catholic doctrine. Fidelity requires both courage before modernity and honesty when church leaders' own decisions worsened avoidable weakness.",
+            "french_present": true,
+            "cited_source_ids": [
+              "AG65",
+              "GAU65",
+              "DV65"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "adequate_descriptive_not_causal",
+      "assessment": "Gaudium et spes and Ad gentes state pressures identified by conciliar bishops; do not claim this proves success/decline from one cause.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-07",
+      "canonical_title": "Why were major preparatory schemas rejected or rewritten?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "In November 1962 the Council Fathers debated an actual preparatory draft, De fontibus revelationis, prepared before Vatican II by the Roman theological commission. Chapter I §4 proposed Scripture and Tradition as a 'twofold source' of revelation; the eventual Dei Verbum instead described their common divine origin and one sacred deposit. On 20 November 1962 a majority voted to discontinue debate, but the vote did not achieve the required two-thirds; John XXIII then personally assigned redrafting to a mixed commission. The draft was not a promulgated dogma later abolished by a council vote.",
+            "french_present": true,
+            "cited_source_ids": [
+              "FONTIBUS62-PRIMARY-TRANS",
+              "SCHEMAVOTE62-SYNOPSIS",
+              "DV65"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The preparatory commission's actual 1962 chapter I §§3–6 asserted the apostolic transmission of revealed truth, a twofold source of Scripture and Tradition, Tradition's role in clarifying the biblical canon, and the living Magisterium's authority to interpret the deposit. A surviving archival description of Karl Rahner's Disquisitio brevis registers his criticisms that this draft was too long, insufficiently pastoral and far from the ecumenical spirit. Rahner's manuscript itself has not yet been fully compared with the draft: the listed objections are grounded only in the university archive's catalogue, not falsely quoted from unexamined pages.",
+            "french_present": true,
+            "cited_source_ids": [
+              "FONTIBUS62-PRIMARY-TRANS",
+              "RAHNER62-ARCHIVE",
+              "DV65"
+            ],
+            "attribution": "Karl Rahner's 1962 Disquisitio brevis, original manuscript catalog description (original full text pending) vs. Preparatory Theological Commission's 1962 printed schema"
+          },
+          {
+            "role": "critical_response",
+            "english": "The contrast is real but precise: the 1962 draft §4 uses the twofold-source formula and §6 stresses interpretation by the living Magisterium, while the final Dei Verbum §§9–10 emphasises a shared wellspring, one deposit and the Magisterium as servant of the Word. Neither formulation should be used to imply that the final Council denied the authority of Tradition or that all preparatory language was already irreformable dogma. Explaining the whole redrafting process will still require the intervening 1963–65 schemas, speeches and Acta; one draft and one final text alone do not prove every participant's motives.",
+            "french_present": true,
+            "cited_source_ids": [
+              "FONTIBUS62-PRIMARY-TRANS",
+              "DV65",
+              "FONTIBUS62-SOURCE-HISTORY"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Divine Revelation is faithfully transmitted through apostolic Scripture and Tradition, and the Church's authentic teaching office must preserve rather than invent that deposit. A Catholic can scrutinise whether the final formulation is as precise as the earlier draft, without confusing a preparatory commission's proposals with an ecumenical council's promulgated act. Serious traditional criticism compares the actual texts, their authority and the recorded interventions instead of inventing a secret, legally conclusive repeal by an unpassed two-thirds motion.",
+            "french_present": true,
+            "cited_source_ids": [
+              "FONTIBUS62-PRIMARY-TRANS",
+              "DV65",
+              "SCHEMAVOTE62-SYNOPSIS"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "legitimate_vote_distinctions",
+      "assessment": "Original preparatory schema and later Dei Verbum distinct; 20 Nov 1962 voting threshold not achieved, papal redrafting ordered. Rahner archive summary is only catalogue evidence, not full manuscript.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-08",
+      "canonical_title": "Was Vatican II captured, hijacked or legitimately redirected?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "Vatican II's final texts resulted from debate and legitimate papal promulgation, not from an alternative council unrecognised by the Catholic hierarchy. Claims that influential participants redirected priorities require evidence about original aims, revisions and voting; they must not be confused with proof of an invalid assembly. The quality of particular doctrinal formulations and their subsequent misuse remains open to detailed criticism.",
+            "french_present": true,
+            "cited_source_ids": [
+              "HS61",
+              "LG64",
+              "DV65"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "The Society of Saint Pius X's published 2012 reply to its critics alleges four definite conciliar contradictions: Dignitatis humanae §2 on religious liberty, Lumen gentium §8 on the Church, Unitatis redintegratio §3 on ecumenism and Lumen gentium §22 on collegiality. It also explicitly affirms that the dispute should be resolved with Roman authority rather than by adopting sedevacantism. These actual stated positions establish doctrinal objections requiring argument; they do not establish that the conciliar assembly lacked legitimate identity or that a hidden faction legally annulled its work.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SSPX2012-FOUR",
+              "DH1965",
+              "LG64",
+              "UR64"
+            ],
+            "attribution": "SSPX USA District 2012, 'Is the SSPX Heretical?', its actual four named Vatican II contradiction allegations"
+          },
+          {
+            "role": "critical_response",
+            "english": "The Society's four objections are theological questions about identified propositions, not a documented claim that Vatican II was never lawfully convoked. The Catholic reply must compare those exact passages with their purported preconciliar opposites and with authoritative clarifications, such as the 2007 CDF distinction between Christ's Church subsisting uniquely in Catholicism and elements of sanctification outside her structure. Neither archival conspiracy claims nor the bare declaration that all conciliar sentences are equally infallible can settle the matter.",
+            "french_present": true,
+            "cited_source_ids": [
+              "SSPX2012-FOUR",
+              "CDF2007-RESP",
+              "CDF2007-COMMENT",
+              "LG64"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "Catholics must be both loyal to the Church's real public authority and faithful to the doctrinal deposit beyond any historical faction. They can criticise ambiguous formulations and harmful implementations using original sources while declining conspiratorial certainty unsupported by archives. Charity and disciplined evidence are stronger safeguards of Tradition than claims of secret omnipotent actors.",
+            "french_present": true,
+            "cited_source_ids": [
+              "DV65",
+              "LG64",
+              "RLFSSPX"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "sspx_original_opponent_attributed",
+      "assessment": "SSPX's actual 2012 four-question objection accurately named; doctrinal dispute is not a documented juridical invalidity of Council. Avoid conspiracy motives.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    },
+    {
+      "id": "CR-ORG-09",
+      "canonical_title": "Did Vatican II cause, expose, accelerate or fail to cure an existing crisis?",
+      "module": "church-crisis",
+      "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "existing_draft": {
+        "sections": [
+          {
+            "role": "answer",
+            "english": "The decline of Catholic practice had causes preceding Vatican II, including transformations in French parish life, religious transmission, urbanisation and social norms. The Council and subsequent reforms entered that pre-existing process, which they may also have affected. Chronology alone does not prove either that the Council caused every loss or that its implementation had no effect.",
+            "french_present": true,
+            "cited_source_ids": [
+              "CUCHET",
+              "BERTH22"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "documented_position",
+            "english": "Guillaume Cuchet's historical work analyses the collapse of French Catholic practice using social and religious evidence, rather than a single liturgical explanation. His research can sustain questions about a post-1965 inflection while not yielding a universal causal verdict applicable to every country or practice.",
+            "french_present": true,
+            "cited_source_ids": [
+              "CUCHET",
+              "BERTH22"
+            ],
+            "attribution": "Guillaume Cuchet, French religious-history research"
+          },
+          {
+            "role": "critical_response",
+            "english": "Confounding simultaneous changes with an established causal mechanism produces false certainty. One must distinguish attendance, sacramental discipline, belief, catechesis and institutional trust, then ask what trends are documented before the Council and what changed afterwards. A single graph cannot explain the contribution of revised worship, clergy practice and wider secularisation.",
+            "french_present": true,
+            "cited_source_ids": [
+              "BERTH22",
+              "CUCHET"
+            ],
+            "attribution": null
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "english": "The Church may acknowledge social pressures without using them to dismiss inadequate catechesis, careless liturgy or weak sacramental discipline. Renewal requires both fidelity to inherited faith and honest appraisal of historical mistakes. Blaming everything on one Council is unconvincing; declaring all postconciliar decisions beyond criticism is equally unhistorical.",
+            "french_present": true,
+            "cited_source_ids": [
+              "MD47",
+              "CUCHET"
+            ],
+            "attribution": null
+          }
+        ]
+      },
+      "disposition": "same_cuchet_nuance_as_org05",
+      "assessment": "The topic is overall causation, so quote Cuchet's actual catalytic hypothesis alongside long trend; CR-ORG-05 owns detailed French case, no parallel complete narrative.",
+      "review_method": "Read all four English source paragraphs, evaluate source roles and selected authentic original/bounded excerpt; no chapter-perfect French signoff",
+      "complete_independent_certification": false,
+      "live_answer_changed": false
+    }
+  ]
+}
