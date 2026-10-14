@@ -58,6 +58,165 @@ for(const [n,phraseEn] of [
   n+": French short text must resolve from the canonical R62 source");
  assert.ok(row.shortDraft.en.includes(phraseEn),n+": English copy semantics drift");
 }
+const englishSourceParity={
+  "001": [
+    "lowers his hands and eyes",
+    "bows profoundly"
+  ],
+  "002": [
+    "straightens",
+    "then joins his hands"
+  ],
+  "004": [
+    "hands extended",
+    "prescribed conditions"
+  ],
+  "005": [
+    "joins and raises his hands",
+    "slightly bowed"
+  ],
+  "008": [
+    "prescribed proper form",
+    "certain days"
+  ],
+  "011": [
+    "open hands",
+    "until Per Christum"
+  ],
+  "013": [
+    "benedictam",
+    "adscriptam",
+    "ratam"
+  ],
+  "016": [
+    "raises and joins",
+    "towards the cross"
+  ],
+  "017": [
+    "If other Hosts",
+    "first uncovers",
+    "accepit panem"
+  ],
+  "020": [
+    "left hand",
+    "with his right"
+  ],
+  "023": [
+    "adores the consecrated Host",
+    "first genuflection"
+  ],
+  "026": [
+    "except to touch a consecrated Host",
+    "until the washing"
+  ],
+  "027": [
+    "server rings three times or continuously",
+    "Host elevation"
+  ],
+  "028": [
+    "chalice is uncovered",
+    "deacon when required at Solemn Mass",
+    "priest raises it slightly"
+  ],
+  "029": [
+    "item tibi gratias agens"
+  ],
+  "030": [
+    "left hand",
+    "with his right"
+  ],
+  "032": [
+    "Bending over the chalice",
+    "chalice consecration"
+  ],
+  "033": [
+    "Haec quotiescumque",
+    "first genuflection"
+  ],
+  "034": [
+    "first genuflection",
+    "elevates the chalice",
+    "has it covered",
+    "genuflects again"
+  ],
+  "035": [
+    "server rings three times or continuously",
+    "chalice elevation"
+  ],
+  "036": [
+    "Unde et memores quietly"
+  ],
+  "037": [
+    "de tuis donis ac datis"
+  ],
+  "039": [
+    "Panem sanctum",
+    "Calicem salutis"
+  ],
+  "041": [
+    "Supplices te rogamus",
+    "hands joined"
+  ],
+  "042": [
+    "ex hac altaris participatione"
+  ],
+  "043": [
+    "Corpus",
+    "Sanguinem"
+  ],
+  "046": [
+    "joins and raises his hands",
+    "Blessed Sacrament"
+  ],
+  "047": [
+    "faithful departed",
+    "brief silence"
+  ],
+  "051": [
+    "famulis tuis",
+    "hands extended"
+  ],
+  "053": [
+    "Per quem haec omnia"
+  ],
+  "055": [
+    "deacon at Solemn Mass when required",
+    "takes the Host"
+  ],
+  "056": [
+    "Per ipsum",
+    "cum ipso",
+    "in ipso"
+  ],
+  "057": [
+    "Patri",
+    "Sancti",
+    "between the chalice and his breast"
+  ],
+  "059": [
+    "replaces the sacred species",
+    "deacon at Solemn Mass when required",
+    "priest genuflects"
+  ],
+  "060": [
+    "Per omnia saecula saeculorum audibly"
+  ],
+  "061": [
+    "respondent says Amen",
+    "minister at Low Mass",
+    "respondents at Sung Masses"
+  ]
+};
+assert.equal(Object.keys(englishSourceParity).length,36);
+for(const [number,phrases] of Object.entries(englishSourceParity)){
+ const action="AO.CANON.R62."+number,copy=byId.get(action);
+ assert.ok(copy,"Missing approved-source identity "+action);
+ for(const text of phrases)assert.ok(copy.shortDraft.en.includes(text),
+  action+": essential French source nuance lost from English copy: "+text);
+ assert.equal(copy.shortDraft.fr,canonicalShortById.get(action).shortFrenchRubricDraft);
+ assert.equal(copy.canPublish,false);
+ assert.equal(copy.observedNow,false);
+}
 for(const row of audit.rows){
  const canonical=canonicalShortById.get(row.actionId);
  assert.equal(row.shortDraft.fr,canonical.shortFrenchRubricDraft,
