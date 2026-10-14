@@ -45,6 +45,22 @@ try{
   {mode:"visit",card:"visit-0",stops:7,current:1,overflow:"auto"});
  assert.equal(v.nav,"none","Old Previous/Next navigation duplicates the seven-stage timeline");
  assert.ok(v.active>=1,"Visit has no illuminated prayer or direction paragraph");
+ const reverence=page.locator("#aoPray435930 .aoDevotionalActionCinematic");
+ await reverence.waitFor({state:"visible",timeout:4500});
+ const rCue=await reverence.evaluate(el=>({
+  id:el.dataset.aoActionScene,kind:el.dataset.aoActionKind,
+  icon:el.querySelector(".aoDevotionalActionIcon")?.hidden===false,
+  width:el.getBoundingClientRect().width,view:window.innerWidth,
+  instruction:el.querySelector(".aoDevotionalActionTitle")?.textContent
+ }));
+ assert.equal(rCue.id,"VISIT.ARRIVAL");
+ assert.equal(rCue.kind,"REVERENCE");
+ assert.equal(rCue.icon,true,"Visit arrival lost the approved reverence icon");
+ assert.ok(rCue.width>=rCue.view-60,"Visit arrival still uses a small rail badge");
+ assert.match(rCue.instruction,/reverence|révérence/i);
+ await page.screenshot({path:resolve(captures,"visit-390-full-reverence-cinematic.png"),animations:"disabled"});
+ await reverence.locator(".aoDevotionalActionContinue").click();
+ assert.equal(await reverence.count(),0,"Visit cinematic did not return to the existing prayer");
  await page.screenshot({path:resolve(captures,"visit-390.png"),animations:"disabled"});
  const swipe=async(dx,dy)=>page.locator(sel+" .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:15,target:el,clientX:x,clientY:y});
