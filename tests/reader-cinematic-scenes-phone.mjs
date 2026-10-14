@@ -97,7 +97,7 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
         .filter(el=>!el.hidden).map(el=>el.getBoundingClientRect().bottom)),
       cinematicBackground:getComputedStyle(cinema).backgroundColor,
       cinematicCaptionBottom:cinema.querySelector(".ao-cinematic-sub")?.getBoundingClientRect().bottom??null,
-      navTop:shell.querySelector(".ao-reader-nav")?.getBoundingClientRect().top??null,
+      navTop:shell.querySelector(".ao-reader-progress")?.getBoundingClientRect().top??null,
       priestDisplay:priest ? getComputedStyle(priest).display : null,
       priestActive:priest?.dataset.active??"false",
       priestIcon:icon?.dataset.iconKey??null,
