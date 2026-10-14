@@ -38,7 +38,7 @@
         "webLineStart": 6353,
         "webLineEnd": 6356,
         "checkedWebOcr": true,
-        "printedPageImageChecked": false
+        "printedPageImageChecked": true
       },
       "topic": "Scripture's inspiration versus approved liturgical wording",
       "authorArgument": "Lanslots describes nonbiblical Institution-text words as apostolic tradition equally inspired as Scripture.",
@@ -56,7 +56,12 @@
         "DV"
       ],
       "originalImageAndIndependentFrenchApproved": false,
-      "publication": "BLOCKED"
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 245,
+        "printedPage": "211",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
     },
     {
       "id": "L1897-DISC-02",
@@ -66,7 +71,7 @@
         "webLineStart": 7065,
         "webLineEnd": 7138,
         "checkedWebOcr": true,
-        "printedPageImageChecked": false
+        "printedPageImageChecked": true
       },
       "topic": "The holy Angel in Supplices te rogamus",
       "authorArgument": "Lanslots attributes a Christological interpretation to Guéranger, then also sets out a created-angel reading and admits uncertainty about the angel's identity.",
@@ -81,7 +86,12 @@
       ],
       "independentAuthorityIds": [],
       "originalImageAndIndependentFrenchApproved": false,
-      "publication": "BLOCKED"
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 270,
+        "printedPage": "234",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
     },
     {
       "id": "L1897-DISC-03",
@@ -91,7 +101,7 @@
         "webLineStart": 8378,
         "webLineEnd": 8418,
         "checkedWebOcr": true,
-        "printedPageImageChecked": false
+        "printedPageImageChecked": true
       },
       "topic": "Consecratio at the commingling",
       "authorArgument": "Lanslots explains Bellarmine's new consecration language as a renewed sacramental signification in the ritual union of the already consecrated Species.",
@@ -106,7 +116,12 @@
       ],
       "independentAuthorityIds": [],
       "originalImageAndIndependentFrenchApproved": false,
-      "publication": "BLOCKED"
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 321,
+        "printedPage": "279",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
     },
     {
       "id": "L1897-DISC-04",
@@ -213,7 +228,7 @@
         "webLineStart": 6353,
         "webLineEnd": 6372,
         "checkedWebOcr": true,
-        "printedPageImageChecked": false
+        "printedPageImageChecked": true
       },
       "topic": "Alexander I and the history of Canon formulas",
       "authorArgument": "Lanslots attributes a chronological Institution-narrative phrase to Pope Alexander I.",
@@ -226,7 +241,12 @@
       "existingGuerangerOverlaps": [],
       "independentAuthorityIds": [],
       "originalImageAndIndependentFrenchApproved": false,
-      "publication": "BLOCKED"
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 245,
+        "printedPage": "211",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
     },
     {
       "id": "L1897-DISC-09",
@@ -257,7 +277,7 @@
         "webLineStart": 5451,
         "webLineEnd": 5480,
         "checkedWebOcr": true,
-        "printedPageImageChecked": false
+        "printedPageImageChecked": true
       },
       "topic": "St Joseph omitted from the 1897 Communicantes, inserted in the Roman Canon in late 1962",
       "authorArgument": "Lanslots transcribes the Communicantes names from the nineteenth-century Roman Canon, going directly from the Blessed Virgin to the apostles and martyrs without St Joseph.",
@@ -276,7 +296,12 @@
       "exactSourceCue": "AO.SM.C0159",
       "requiredLatin": "sed et beati Ioseph",
       "originalImageAndIndependentFrenchApproved": false,
-      "publication": "BLOCKED"
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 211,
+        "printedPage": "181",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
     }
   ],
   "acceptanceRules": [
@@ -286,5 +311,6 @@
     "1962 actions and roles must always be sourced separately from 1897 mystical interpretations.",
     "Each paragraph of future published commentary requires linked original source evidence and French review.",
     "No approval before scanned-page collation, claim-level deduplication and editorial release acceptance."
-  ]
+  ],
+  "originalPdfPageImageSpotchecks": 11
 }
