@@ -185,7 +185,9 @@ function discoveryLabel(result,state){
 }
 
 export function learnDiscoveryMarkup(state,win,{query="",referenceEntries=[],referenceStatus="idle",contentEntries=[],contentStatus="idle"}={}){
- const langFr=isFr(state),results=searchDiscovery(query,{sections:LEARN_LAYOUT.sections,referenceEntries,contentEntries,limit:24});
+ const langFr=isFr(state),review=/(?:^|[?&])mysteryReview=1(?:&|$)/.test(String(win?.location?.search||""));
+ const visibleSections=LEARN_LAYOUT.sections.map(section=>({...section,items:section.items.filter(item=>!item.reviewOnly||review)}));
+ const results=searchDiscovery(query,{sections:visibleSections,referenceEntries,contentEntries,limit:24});
  if(!query.trim())return "";
  const items=results.map(result=>{
   const type=result.kind;
