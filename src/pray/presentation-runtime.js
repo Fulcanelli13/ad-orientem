@@ -2148,9 +2148,16 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     const ritual=certifiedPublicStationCue({stationStep:STATIONS.step,phase,
       enabled:STATIONS.publicPosture && S.stations.recitation==='group',
       guided:S.stations.mode==='guided'});
-    actionCinematics.sync(resolveDevotionalActionScene({
+    const stationScene=resolveDevotionalActionScene({
       view:'stations',stationStep:STATIONS.step,stationRitual:ritual,
-    }),{mount:m,language:lang(),sessionKey:'stations-public'});
+    });
+    if(window.__AO_STATIONS_DEBUG)console.log("STATION_RUNTIME_FOCUS",JSON.stringify({
+      phase,step:STATIONS.step,publicPosture:STATIONS.publicPosture,
+      recitation:S.stations.recitation,mode:S.stations.mode,
+      cue:ritual?.sourceCueId??null,scene:stationScene?.id??null,
+      active:paragraph?.className??null,
+    }));
+    actionCinematics.sync(stationScene,{mount:m,language:lang(),sessionKey:'stations-public'});
    }
   });
  });
