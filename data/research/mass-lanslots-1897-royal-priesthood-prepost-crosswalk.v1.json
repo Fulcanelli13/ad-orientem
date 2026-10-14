@@ -17,7 +17,10 @@
       "scripture": "1 Peter 2:9",
       "verseNumberInParenthesisButBookInPrecedingProse": true,
       "printedPage": "10 (TOC-derived approximate)",
-      "pdfImageChecked": false
+      "pdfImageChecked": false,
+      "originalPrintedPageImageChecked": true,
+      "oneBasedPdfPage": 16,
+      "visuallyVerifiedPrintedPage": "10"
     },
     {
       "chapter": "XV",
@@ -30,7 +33,10 @@
       "scripture": "1 Peter 2:9",
       "verseNumberInParenthesisButBookExplicit": true,
       "printedPage": "approximately 147–149; original scan not visually confirmed",
-      "pdfImageChecked": false
+      "pdfImageChecked": false,
+      "originalPrintedPageImageChecked": true,
+      "oneBasedPdfPage": 173,
+      "visuallyVerifiedPrintedPage": "147"
     }
   ],
   "scripturalWitness": {
@@ -112,12 +118,13 @@
   },
   "checks": {
     "authorOriginalOcrTextSource": true,
-    "originalScannedPageVerified": false,
+    "originalScannedPageVerified": true,
     "scripturalWitnessExternal": true,
     "preconciliarAuthorityIncluded": true,
     "postconciliarAuthoritiesIncluded": true,
     "frenchIndependentlyApproved": false,
     "duplicateContentOwnerReviewed": false,
-    "runtimePromotion": "BLOCKED"
+    "runtimePromotion": "BLOCKED",
+    "sourcePdfSha256": "6650f21a95a0936ecbbfdb71e41aaa6872039322d94ed14c3f4b383578ae8c04"
   }
 }
