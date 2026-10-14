@@ -1,0 +1,415 @@
+{
+  "schema": "AO_SACRED_ART_MAJOR_SAINTS_DOCTORS_SELECTED_PATRONS_SCOPE_RECONCILIATION_V1",
+  "asOf": "2026-10-14",
+  "ownerPR": 887,
+  "branch": "platform/885-sacred-art-candidates",
+  "changeType": "RESEARCH_PRIORITY_CORRECTION_NOT_CATALOGUE_EXPANSION",
+  "userDirective": "Major saints and Doctors, plus only some selected patrons; explicitly not all saints.",
+  "authorityOrder": [
+    "User 13 Oct 2026 19:52 UTC exported 277 ratings/235 ranked subjects (external user file; exact per-artwork scores remain there).",
+    "User curated 235-subject editorial decisions, 101 historical selections (12 Oct).",
+    "Class I calendar dates and major-feast priority audit (53 dates / approximately 27 reused themes).",
+    "Institutional source-original identity files, Waves16-20, only for finding usable candidates.",
+    "Other older automated and provisional subject targets are discovery prompts and are NOT mandatory artwork requirements."
+  ],
+  "sourceFiles": [
+    "data/calendar/sacred-art-source-identity-master-CURRENT-20261013.v1.json",
+    "sacred-art-user-235-subject-decisions-20261012.v1.json",
+    "sacred-art-source-identity-master-CURRENT-20261013.v1.json",
+    "sacred-art-subject-gap-fill-wave16-20261013.v1.json",
+    "sacred-art-subject-gap-fill-wave17-20261014.v1.json",
+    "sacred-art-subject-gap-fill-wave18-20261014.v1.json",
+    "sacred-art-subject-gap-fill-wave19-20261014.v1.json",
+    "sacred-art-subject-gap-fill-wave20-20261014.v1.json",
+    "sacred-art-subject-targets.v2.json"
+  ],
+  "subjectUniverse": {
+    "calendarSaintReviewSlots": 75,
+    "byGroup": {
+      "Apostles": 13,
+      "Evangelists": 2,
+      "Doctors": 28,
+      "Other Class A": 32
+    },
+    "alreadySelectedOct12": 33,
+    "researchOct12": 42,
+    "userOct13ReviewedPaintings": 277,
+    "subjectCountsAreNotReleaseApprovedPaintings": true,
+    "oct13SaintSlotsWithNoRankedOption": 33,
+    "oct13SaintSlotsWithAtLeastOne3to5RatedOption": 22,
+    "oct13SaintSlotsWithAtLeastOne4to5RatedOption": 20,
+    "missingNumericScoreDoesNotEqualRejected": true,
+    "threeOrMoreDoesNotMeanArtSelectedOrReleased": true,
+    "asOfLatestUserExport": "2026-10-13T19:52:45.207Z"
+  },
+  "priorityPolicy": {
+    "highest": "Preserve 53 observed Class I calendar dates (~27 reusable themes), major feast/rosary/stations/devotional art and existing five-star user images. No interruption for minor portraits.",
+    "majorSaints": "Within existing 75 slots: Apostles, Evangelists, key saints of universal devotion, prominent founders, selected French spiritual figures, locally important patron figure. Source-link and curate good existing originals before any outside discovery.",
+    "doctors": "Retain all 28 historical Doctor records as inventory, but not 28 mandatory dedicated paintings or a license for obscure Doctor-first gallery research. Prioritize Augustine, Jerome, Gregory, Thomas Aquinas, Ambrose, Teresa, Alphonsus, Francis de Sales and other actual module subjects; lesser-known Doctors remain deferred until higher-impact holes are cleared.",
+    "selectedPatrons": "Eligible only when verified specific existing Calendar/Prayer/Formation route, major internationally recognized patron relevant to actual audience, or documented French Catholic/Mauritius devotional importance; distinguish official patron status from association. No universal country-by-country or 1962-calendar exhaustive portraits.",
+    "scopeRule": "A named person in subject-targets.v2, a 1962 calendar occurrence, or a museum catalogue is NOT sufficient alone to create a mandatory painting target.",
+    "aesthetic": "Only user's 0-5 scores govern suitability; 0–2 universally excluded, >=3 enter review, >=4 valuable; preserve historical selections, use single canonical original reused across modules; user style exclusions govern.",
+    "methodology": [
+      "Reconcile requirements for Calendar/Prayers/Formation and weekly display with existing 75 review slots and 207 target list; avoid duplicate ownership.",
+      "Reuse and verify rated 5/5 and 4/5 physical masters, exact iconography, mobile view and license before discovery.",
+      "Rank truly missing major saints and explicitly selected patrons; keep 28 Doctors in historical list but defer low-value portrait research.",
+      "Maintain biblical narrative selective approach; do not divert resources to missing old Bible Atlas slots just to inflate percentages."
+    ]
+  },
+  "highValueExistingSaintReviewPriorities": [
+    {
+      "subjectId": "SNT-OT-01",
+      "title": "Saint Joseph",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: 13 ranked options, 6 scored >=3; five-star Poussin and Gandolfi originals cma-150389/cma-160143, plus other 5-star works.",
+      "action": "REUSE_AND_CURATE_RATED"
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "title": "Saint Thérèse of Lisieux",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [
+        {
+          "source": "W16",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: no ranked options; W16 source research identifies new paintings.",
+      "action": "VERIFY_EXISTING_W16_SOURCES_BEFORE_DISCOVERY"
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "title": "Saint Jean Vianney",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [
+        {
+          "source": "W16",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: no ranked options; W16 research candidate.",
+      "action": "VERIFY_EXISTING_W16_SOURCES_BEFORE_DISCOVERY"
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "title": "Saint Vincent de Paul",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [
+        {
+          "source": "W16",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: no ranked options; W16 researched original(s).",
+      "action": "VERIFY_EXISTING_W16_SOURCES_BEFORE_DISCOVERY"
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "title": "Saint Louis IX",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [
+        {
+          "source": "W16",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: no ranked options; W16 original(s) and prior queue leads.",
+      "action": "VERIFY_EXISTING_W16_SOURCES_BEFORE_DISCOVERY"
+    },
+    {
+      "subjectId": "SNT-OT-14",
+      "title": "Saint Benedict",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: five ranked options, three >=3; promising but check exact saint prominence in multi-saint works.",
+      "action": "REUSE_AND_CURATE_RATED"
+    },
+    {
+      "subjectId": "SNT-OT-06",
+      "title": "Saint Anthony of Padua",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: CMA-150955 scored 4 but is a multi-saint work requiring exact Anthony identification; MET-436982 revised to 2 and globally excluded.",
+      "action": "RESPECT_EXCLUSION_AND_FIND_EXACT_FIT"
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "title": "Saint Margaret Mary Alacoque",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [
+        {
+          "source": "W17",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: no ranked options; W17 source lead.",
+      "action": "VERIFY_EXISTING_W17_SOURCES_BEFORE_DISCOVERY"
+    },
+    {
+      "subjectId": "SNT-OT-02",
+      "title": "Saint Michael Archangel",
+      "group": "Other Class A",
+      "oldReviewState": "selected",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: 5-star historically selected artwork, physical source identity must be reconciled.",
+      "action": "REUSE_EXISTING_USER_SELECTION"
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "title": "Saint Denis of Paris",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [
+        {
+          "source": "W17",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: no ranked options; W17 source original(s).",
+      "action": "VERIFY_EXISTING_W17_SOURCES_BEFORE_DISCOVERY"
+    },
+    {
+      "subjectId": "SNT-OT-26",
+      "title": "Saint Geneviève",
+      "group": "Other Class A",
+      "oldReviewState": "selected",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: selected Oyen artwork scored 4.",
+      "action": "REUSE_EXISTING_USER_SELECTION"
+    },
+    {
+      "subjectId": "SNT-OT-29",
+      "title": "Saint Martin of Tours",
+      "group": "Other Class A",
+      "oldReviewState": "selected",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: historical user selection without current numeric scored option.",
+      "action": "PRESERVE_EXISTING_SELECTION_FIND_PREVIEW"
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "title": "Saint Patrick",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: no ranked option; an earlier sourced painting lead exists.",
+      "action": "REVIEW_OLD_RESEARCH_BEFORE_NEW"
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "title": "Saint Lucy",
+      "group": "Other Class A",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: Zurbarán NGA-12209 scored 5, not missing or new; reuse canonically.",
+      "action": "REUSE_ALREADY_FIVE_STAR"
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "title": "Saint James the Greater",
+      "group": "Apostles",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [
+        {
+          "source": "W16",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: zero ranked options; W16 links existing Prado Rubens apostolate physical source.",
+      "action": "LINK_EXISTING_MASTER"
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "title": "Saint Philip",
+      "group": "Apostles",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [
+        {
+          "source": "W16",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: zero ranked options; W16 links existing Prado Rubens apostolate physical source.",
+      "action": "LINK_EXISTING_MASTER"
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "title": "Saint Mark the Evangelist",
+      "group": "Evangelists",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [
+        {
+          "source": "W17",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: zero ranked options; W17 museum original identified.",
+      "action": "VERIFY_W17_NOT_RESEARCH_AGAIN"
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "title": "Saint Luke the Evangelist",
+      "group": "Evangelists",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [
+        {
+          "source": "W17",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: zero ranked options; W17 museum original identified.",
+      "action": "VERIFY_W17_NOT_RESEARCH_AGAIN"
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "title": "Saint Gregory the Great",
+      "group": "Doctors",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: MET-437722 Mass of St Gregory rated 4; not empty.",
+      "action": "REUSE_AND_ASSESS_ICONOGRAPHY"
+    },
+    {
+      "subjectId": "SNT-DC-05",
+      "title": "Saint Thomas Aquinas",
+      "group": "Doctors",
+      "oldReviewState": "selected",
+      "oct12ReviewOptionCount": 2,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: one historically selected unrated Crivelli and MET-435617 rated 2 and excluded. Preserve selection, do not claim acceptable rated original.",
+      "action": "HISTORICAL_SELECTION_UNRATED_EXCLUSION_HOLD"
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "title": "Saint Alphonsus Liguori",
+      "group": "Doctors",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [],
+      "ratingEvidence": "13 Oct export: no ranked options; W17 warns one French original lost/unlocated; significant spiritual-theology saint but no urgent obscure saint acquisition sprint.",
+      "action": "SOURCE_TRIAGE_AFTER_MAJOR_SAINTS"
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "title": "Saint Francis de Sales",
+      "group": "Doctors",
+      "oldReviewState": "research",
+      "oct12ReviewOptionCount": 1,
+      "sourceResearchLinks": [
+        {
+          "source": "W17",
+          "type": "source-identified",
+          "ref": null
+        }
+      ],
+      "ratingEvidence": "13 Oct export: no ranked options; W17 source lead; more relevant to French spirituality than lower-priority Doctors.",
+      "action": "SOURCE_TRIAGE_AFTER_MAJOR_SAINTS"
+    }
+  ],
+  "additionalNamesAlreadyInBroaderProjectNotIn75": [
+    {
+      "name": "Saint Philip Neri",
+      "sourceTarget": "person.philip-neri",
+      "sourceArtwork": "met-712539",
+      "sourceTitle": "Saint Philip Neri (1515–1595)",
+      "artist": "Carlo Dolci",
+      "museum": "The Metropolitan Museum of Art",
+      "latestHumanRating": 4,
+      "category": "MAJOR_SAINT_CANDIDATE",
+      "resolution": "Existing hashed and positively rated original. Link to canonical saint identity and relevant module; do not rediscover.",
+      "mandatoryNewSubjectSlot": false
+    },
+    {
+      "name": "Saint John Bosco",
+      "sourceTarget": "person.john-bosco",
+      "category": "MAJOR_FOUNDER_CANDIDATE",
+      "resolution": "Existing product target but absent from 75 review subjects; confirm intended recurring Calendar/Formation use before adding required slot.",
+      "mandatoryNewSubjectSlot": false
+    },
+    {
+      "name": "Saint Louis-Marie Grignion de Montfort",
+      "sourceTarget": "person.louis-marie-grignion",
+      "category": "FRENCH_DEVOTIONAL_CANDIDATE",
+      "resolution": "Already in product target register. Prioritize if Rosary/Marian formation/devotion route actually displays saint-specific artwork.",
+      "mandatoryNewSubjectSlot": false
+    },
+    {
+      "name": "Saint Peter Julian Eymard",
+      "sourceTarget": "person.pierre-julien-eymard",
+      "category": "FRENCH_EUCHARISTIC_CANDIDATE",
+      "resolution": "Already in broader target register; explicit Eucharistic devotions may justify inclusion, not automatic on name alone.",
+      "mandatoryNewSubjectSlot": false
+    },
+    {
+      "name": "Blessed Jacques-Désiré Laval",
+      "sourceTarget": null,
+      "category": "MAURITIUS_LOCAL_RELEVANCE_REVIEW",
+      "resolution": "Blessed, not Saint. Only if the established Père Laval pilgrimage/Formation/Calendar modules require an authentic portrayal. A credible historical portrait may be preferable to invented oil painting; retain separate ecclesial status.",
+      "mandatoryNewSubjectSlot": false
+    }
+  ],
+  "excludedAutoExpansion": [
+    "All saints of every national calendar",
+    "Every saint commemorated in the 1962 sanctoral",
+    "Every saint in the 207 project discovery target list",
+    "Every national patron worldwide, absent demonstrable use",
+    "A distinct painting for each of the 28 Doctors",
+    "Every Bible Atlas episode and each Acts place",
+    "Artwork substitutes falsely identified as saint, studio work upgraded to autograph, user-rejected 0-2 paintings, specifically Fra Angelico and El Greco"
+  ],
+  "metricsInterpretation": {
+    "legacy107NoOptionSlotsNowSourceLinked": 63,
+    "legacy107Remaining": 44,
+    "label": "OLD_235_SUBJECT_RESEARCH_COHORT_ONLY",
+    "notPercentageOfRequiredArt": true,
+    "notAReleaseCoverageMetric": true,
+    "legacyDatasetStillUnmodified": true
+  },
+  "gates": {
+    "researchOnly": true,
+    "userScoresEdited": false,
+    "otherArtistExclusionsModified": false,
+    "artworkImagesAcquired": 0,
+    "productionArtworkApproved": 0,
+    "productionFilesModified": false,
+    "existingPRDraft": true
+  }
+}
