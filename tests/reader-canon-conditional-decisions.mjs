@@ -250,7 +250,7 @@ for(const [id,part] of [
  assert.equal(conciseRubricDrafts.find(x=>x.id===id)?.shortRubricPlacement,part,
   id+": priest, respondent or minister time ownership drifted");
 }
-assert.equal(ctl.project?.("AO.SM.C0150")?.canPublish ?? false,false,
+assert.equal(controller.project("AO.SM.C0153").canPublish,false,
  "No short French draft may enable public Canon text");
 assert.equal(sources.frenchReview.rows.filter(x=>x.formReview==="FORM_OR_PASTORAL_REVIEW_PENDING").length,5,
  "Five source decisions do not constitute final pastoral/form approval");
