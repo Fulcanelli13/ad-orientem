@@ -85,8 +85,6 @@ try{
   "https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html"].includes(
   await page.locator("#aoPray435930 .aoMercySource a").getAttribute("href")));
   // The same title/paragraph navigation contract now applies to Stations.
- page.on("console",msg=>{if(msg.text().startsWith("STATION_RUNTIME_FOCUS"))console.log(msg.text())});
- await page.evaluate(()=>window.__AO_STATIONS_DEBUG=true);
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930 .aoP435930Stations .aoDevoCardScroll",{timeout:9000});
  await page.waitForSelector("#aoPray435930 .aoP435930StationRail.aoDevoSequenceTimeline",{timeout:9000});
@@ -118,6 +116,9 @@ try{
    x.checked=true;x.dispatchEvent(new Event("change",{bubbles:true}));
  });
  await page.waitForSelector("#aoPray435930 [data-p435930-station-public-posture]:checked");
+ assert.match(await page.locator("#aoPray435930 details[data-ao-stations-options] > summary small").innerText(),
+   /Guided.*Group|Guidé.*Groupe/,
+   "The explicitly selected public Stations method must display Guided and Group even with individual global preferences");
  const focusStationPhase=async(selector)=>{
    await page.locator("#aoPray435930 .aoP435930Stations .aoDevoCardScroll").evaluate((body,selector)=>{
      const el=body.querySelector(selector);
