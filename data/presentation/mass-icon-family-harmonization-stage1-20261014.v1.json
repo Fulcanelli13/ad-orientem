@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-icon-family-harmonization-stage1-v1",
   "date": "2026-10-14",
-  "status": "STAGED_CANDIDATES_ONLY_NO_ARTWORK_APPROVAL_NO_RUNTIME_CHANGE",
+  "status": "PALETTE_MASK_EXPERIMENT_ONLY_NOT_VISUAL_STYLE",
   "basis": {
     "userReview": "Ad_Orientem_Full_Mass_Icon_Review_2026-10-14.json",
     "harmonization": "reviews/mass-icon-harmonization-24-workorders-20261014.md"
@@ -119,9 +119,11 @@
     "diagnostic": 2,
     "crop": 1,
     "passedRgbaAlphaCandidates": 3,
-    "otherMissingArtwork": "NOT_YET_CERTIFIED"
+    "otherMissingArtwork": "NOT_YET_CERTIFIED",
+    "styleWorkordersStillOpen": 13,
+    "newIllustrationArtApproved": 0
   },
-  "deliveryNote": "Staging image binaries remain conversation artifacts outside repo. Do not change app source to reference their filesystem paths.",
+  "deliveryNote": "Staging masks cannot be visually approved by technical alpha/tint checks; keep discarded originals and old ornate candidates out of new selection.",
   "mobileQA": {
     "testedSizesPx": [
       48,
@@ -135,5 +137,15 @@
     "interpretation": "A scene showing a full altar and priest can read as a scene but cannot be relied upon to convey delicate Eucharistic hand geometry in the narrow mobile rail.",
     "remedy": "Preserve detailed art for expanded rubric guide; in the rail use a simplified user-reviewed silhouette or source-owned short text cue, with a strict one-state-one-surface rule. Do not auto-promote whole-scene illustrations on colour and transparency alone.",
     "ratingPreservation": "All existing user ratings unchanged."
+  },
+  "lockedStyleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+  "visualReassessment": {
+    "oldDetailedDrafts": "POSE_REFERENCE_ONLY_NOT_VISUAL_BASELINE",
+    "confirmedPriestAnchor": "assets/active/mass-v46/priest_sedilia_rich.svg",
+    "rating5AutoConfirm": true,
+    "rating4RequiresReview": true,
+    "rating3RequiresResearch": true,
+    "rating0to2NeverReused": true,
+    "caveat": "The three alpha masks establish only tint and crop technical feasibility; their facial, vestment, altar and smoke detail fail the new minimal-family design direction. Do not promote as harmonized artwork."
   }
 }
