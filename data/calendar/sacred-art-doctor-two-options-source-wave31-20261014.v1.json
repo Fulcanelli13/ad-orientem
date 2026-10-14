@@ -1,0 +1,72 @@
+{
+  "schema": "AO_SACRED_ART_SECOND_ORIGINALS_W31_V1",
+  "date": "2026-10-14",
+  "ownerPR": 887,
+  "verifiedOriginals": [
+    {
+      "id": "G31-001",
+      "subjectId": "SNT-DC-18",
+      "artist": "James Doyle Penrose",
+      "title": "The Last Chapter (The Venerable Bede Translating the Gospel of John)",
+      "museum": "Cambridge University Library",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_last_chapter_by_J._Doyle_Penrose_(1902).jpg",
+      "year": 1902,
+      "medium": "oil on canvas",
+      "exactness": "EXACT_VENERABLE_BEDE",
+      "differentFrom": "William Bell Scott Bede finishes his Works and Life National Trust 584368 (1857)",
+      "museumCustody": "Commons metadata Cambridge University Library; direct Cambridge catalogue accession not verified",
+      "photoStatus": "Commons reproduction available; copyright/repro source/quality unverified",
+      "countTowardsResearchMinimum": true
+    },
+    {
+      "id": "G31-002",
+      "subjectId": "SNT-DC-25",
+      "artist": "Peter Paul Rubens",
+      "title": "The Glorification of the Eucharist",
+      "museum": "Metropolitan Museum of Art",
+      "accession": "37.160.12",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437527",
+      "year": "c.1630–1632",
+      "medium": "oil on wood",
+      "exactness": "MET_CURATOR_IDENTIFIES_SAINT_CYRIL_OF_ALEXANDRIA_AMONG_FIGURES",
+      "differentFrom": "Louvre/Greek icon already rejected as outside preferred naturalistic oil",
+      "museumCustody": "Met museum direct official object",
+      "photoStatus": "Met Open Access public-domain reproduction; imagery not SHA-downloaded",
+      "countTowardsResearchMinimum": true,
+      "groupComposition": true
+    }
+  ],
+  "heldAlternatives": [
+    {
+      "subjectId": "SNT-DC-27",
+      "artist": "Francesco Netti",
+      "title": "Sant'Effremo",
+      "sourceUrl": "https://www.francesconetti.com/en-gb/newpage7d1e8e8d",
+      "holdReason": "1892 oil original in Bari Corrado Giaquinto gallery may depict an Italian locally titled Saint Efrem; confirm unequivocally this is Ephrem the Syrian and separate from Lombardia record before counting."
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "sourceUrl": "https://art.diocesan.com/gallery/saints/saint-cyril-of-jerusalem/",
+      "holdReason": "Modern stock-photo product; no identified historical physical oil painting, not a qualifying original."
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "sourceUrl": "https://www.iconmuseum.org/collection/saint-cyril-of-alexandria/",
+      "holdReason": "Museum identifies exact icon but tempera on gold, not preferred Western naturalistic oil corpus; fallback only."
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "sourceUrl": "https://www.nationalgalleries.org/art-and-artists/17753/study-painting-death-venerable-bede-jarrow-priory",
+      "holdReason": "William Bell Scott pen-and-ink compositional study is SAME painting's preparatory drawing, not second Bede oil."
+    }
+  ],
+  "counts": {
+    "twoAddedResearchOriginals": 2,
+    "holds": 4,
+    "imagesDownloaded": 0,
+    "newUserRatings": 0,
+    "newMandatorySubjects": 0,
+    "productionChanges": 0
+  },
+  "proofRule": "Source-linked original is not curator approved; do not score or alter existing ratings."
+}
