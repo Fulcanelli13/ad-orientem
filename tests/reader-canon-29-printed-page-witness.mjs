@@ -149,6 +149,7 @@ for(const x of secondary){
 
 const originalEditionProvenanceFiles=[
  "../data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+ "../data/research/mass-canon-42-detailed-rubric-editorial-backfill-20261013.json",
  "../data/research/mass-canon-flagged-french-copy-triage-20261013.json",
  "../data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json",
  "../data/research/mass-canon-complex-23-ritus-source-review-20261013.json",
