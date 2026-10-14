@@ -1,0 +1,1033 @@
+{
+  "schema": "AO_FORMATION_35_MARRIAGE_AND_MISSION_PROPORTIONATE_REVIEW_V1",
+  "date": "2026-10-14",
+  "status": "BOUNDED_CITATION_AND_ANSWER_REVIEW_NOT_FULL_QA_CERTIFICATION",
+  "scope": "CSE051–CSE075 + CR-IDM-01–10. Catechism module excluded.",
+  "source_sha": {
+    "src/learn/sexual-ethics-data/questions-051-100.js": "c44823177d9e152d2e40a036de41c80195b772c8",
+    "src/learn/sexual-ethics-data/debates-035-064.js": "6b30529ee496852b85cc353329bd8b267e2daf15",
+    "src/learn/sexual-ethics-data/debates-070-104.js": "1f6ea95bd6ae099507f31d9df8375c2aa6ea097b",
+    "data/learn/church-crisis-canonical.v1.json": "67476d576ae500d363773ef383ae48f8952d507f",
+    "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json": "228f2e4d9ff34efa8c0d12c729353bf43b32bec9",
+    "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json": "876370bb2ade45ffb611fe7e17c0c9c394d961e9",
+    "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json": "850b90144d010b631664f8949103dd9f796ce705"
+  },
+  "governing_source_rule": "Precisely attributed original passages and reliable reproductions suffice for their bounded propositions; never require full-book retrieval unless necessary to resolve real ambiguity or misattribution.",
+  "qc": {
+    "total": 35,
+    "unique_ids": 35,
+    "cse": 25,
+    "cr": 10,
+    "cr_sections": 40
+  },
+  "correction_to_initial_false_positive": "Linked 1958 revised Farrell edition really has §1624 on marital acts; Gutenberg §2618 covers the same topic. Do not touch the app's correct citations.",
+  "rows": [
+    {
+      "id": "CSE051",
+      "owner": "sexual-ethics",
+      "title_en": "Is everything spouses mutually consent to sexually permissible?",
+      "answer_en": "No. Consent is necessary, but it does not override the exclusive fidelity or moral obligations of marriage. Casti Connubii §§19–22 says that marital rights may not be granted to a third person, and that spouses cannot authorize conduct contrary to divine law. A choice therefore needs more than agreement: it must respect the spouse, the marriage covenant and the moral nature of the act.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": "If both spouses freely agree and neither is pressured, it can seem that no further restriction is necessary. Why should marital intimacy be subject to rules beyond mutual consent?",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"CASTI\",\"§§19–22\"],[\"HV\",\"§§12–14\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Spousal agreement never overrides marital fidelity; Casti connubii §§19–22 is proportionate.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE052",
+      "owner": "sexual-ethics",
+      "title_en": "What does the traditional “marital debt” mean?",
+      "answer_en": "It refers to reciprocal marital rights and duties regarding conjugal relations, not ownership of the other spouse’s body. Traditional theology treats the obligation as mutual and governed by reason, charity and legitimate circumstances.",
+      "answer_fr_present": true,
+      "detail_en": "The reciprocal conjugal obligation is not an unlimited entitlement to sex. Illness, danger, proportionate reasons for abstinence and the moral character of a proposed act limit what may justly be requested; no such obligation permits coercion.",
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"ST64SUP\",\"marital debt\"],[\"CASTI\",\"§§19–30\"],[\"HV\",\"§13\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "The marital debt is reciprocal, not force. Revised McHugh §1620–1623 addresses qualified obligation.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE053",
+      "owner": "sexual-ethics",
+      "title_en": "When may a spouse legitimately refuse marital relations?",
+      "answer_en": "Marriage creates real reciprocal obligations, but they are not absolute. Serious illness, danger, unjust or immoral demands, coercion, reasonable temporary abstinence and other proportionate circumstances can justify refusal.",
+      "answer_fr_present": true,
+      "detail_en": "The traditional marital obligation is governed by charity, justice and the concrete circumstances of the spouses; it cannot be invoked mechanically to require an immoral act or to disregard serious harm to the spouse.",
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"ST64SUP\",\"marital debt\"],[\"HV\",\"§13\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Revised McHugh §1621 describes unreasonable requests, including significant health danger.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE054",
+      "owner": "sexual-ethics",
+      "title_en": "Can sexual coercion exist within marriage?",
+      "answer_en": "Yes. Marriage creates conjugal rights and duties, but it does not abolish the spouse’s dignity or make coercion morally legitimate. Imposing sexual activity on a spouse is itself gravely unjust. A reciprocal conjugal obligation never entitles either spouse to force or intimidation.",
+      "answer_fr_present": true,
+      "detail_en": "The marital debt names reciprocal duties, not a right to force another person's body into sexual acts. Humanae Vitae §13 rejects imposed intercourse disregarding a spouse's reasonable wishes. Grave danger may justify immediate separation under CIC can. 1153.",
+      "expanded_opposition_en": "Traditional talk of the “marital debt” implies that marriage gives each spouse a right to sex, so refusing a spouse may itself be unjust. Modern claims about marital coercion therefore seem inconsistent with older teaching.",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"ST64SUP\",\"reciprocal obligations\"],[\"HV\",\"§13\"],[\"CIC\",\"can. 1153\"],[\"LBM\",\"chastity within marriage\"]]",
+      "disposition": "adequate_safeguarding",
+      "source_claim_observation": "Coercion is not authorised by marriage. Humanae vitae §13 and canon 1153 are pertinent.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE055",
+      "owner": "sexual-ethics",
+      "title_en": "Are oral stimulation, manual stimulation or sex toys permitted within marriage?",
+      "answer_en": "Non-consummated affection between spouses can be lawful both as preparation for intercourse and as a way of fostering or preserving conjugal love (McHugh–Callan §1624). This does not permit choosing a different act of sexual completion as a substitute for the conjugal act. Modern devices have no exhaustive magisterial list: their specific use needs consideration of the act, freely given consent, dignity and whether it replaces conjugal intercourse.",
+      "answer_fr_present": true,
+      "detail_en": "The manual does not require that every marital embrace, caress or incomplete act be immediately followed by intercourse; it expressly includes expressions which foster conjugal affection. It also distinguishes those acts from deliberate sexual completion outside the natural conjugal act and from freely chosen occasions of such completion. The absence of a device-specific decree is not proof that every use is lawful or unlawful. Spouses should not reduce the question to anatomy, orgasm timing or consent alone.",
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"MCHUGH\",\"§1624\"],[\"CASTI\",\"§§19–30, 53–59\"],[\"HV\",\"§§11–14\"]]",
+      "disposition": "edition_citation_correct",
+      "source_claim_observation": "§1624 is correct IN THE LINKED 1958 REVISED McHugh-Callan-Farrell edition. The different Gutenberg unabridged work numbers same material §2618, its §1624 is about foolishness. No answer correction.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE056",
+      "owner": "sexual-ethics",
+      "title_en": "Are threesomes, partner-swapping or inviting a third person into marital sex ever allowed if both spouses consent?",
+      "answer_en": "No. Mutual consent between the spouses cannot authorize sexual activity with a third person. Marriage establishes an exclusive sexual bond; adding another participant introduces adultery or fornication rather than expanding marital intimacy.",
+      "answer_fr_present": true,
+      "detail_en": "The fact that no spouse is deceived removes the additional wrong of secrecy, but it does not remove the third party or the violation of exclusivity. Watching a third person perform sexual acts, arranging partner-swapping, or deliberately using another person as part of the couple’s sexual activity is not made marital by prior permission.",
+      "expanded_opposition_en": "If both spouses agree to non-monogamy, adultery should no longer apply because no one is being deceived. Fidelity can be defined by the couple however they choose.",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"SCR\",\"Ex 20:14; Mt 5:27–28\"],[\"CASTI\",\"§§19–22, 72–73\"],[\"TRENT6\",\"Part III · Sixth Commandment\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Consent between spouses does not make a third party part of an exclusive marital union.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE057",
+      "owner": "sexual-ethics",
+      "title_en": "What principles determine the limits of sexual acts within marriage?",
+      "answer_en": "Married life must respect the spouse's dignity, free consent and the objective meaning of the conjugal act. Ask whether an act is integrated into the marital act rather than chosen to replace or deliberately frustrate intercourse; avoid treating a speculative list of individual practices as settled magisterial rulings.",
+      "answer_fr_present": true,
+      "detail_en": "Affection and preparatory acts can be integrated into legitimate intercourse. A different act deliberately chosen as its substitute, or a choice that deliberately contracepts the marital act, has a different moral object and must be judged accordingly.",
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"CASTI\",\"§§19–30, 53–59\"],[\"HV\",\"§§11–14\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Avoid device-specific blanket judgments; remain at moral-object and appropriate conjugal-intimacy principles.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE058",
+      "owner": "sexual-ethics",
+      "title_en": "Is anal sex permitted within marriage?",
+      "answer_en": "Anal intercourse deliberately completed as the substitute for the marital act is not compatible with Catholic conjugal ethics: it is not the generative kind of union and traditional theology classifies completed sodomitic acts among sins against nature. A different question is limited anal touching or non-completed penetration used as foreplay before marital intercourse; the Magisterium has not issued a specific ruling on every such act, and Catholic moralists have not been completely uniform. No general moral permission for those particular practices follows from the permissibility of ordinary marital affection.",
+      "answer_fr_present": true,
+      "detail_en": "The conjugal act itself must be distinguished from acts that merely prepare for it. Traditional manuals allow many incomplete acts between spouses when genuinely accessory to lawful intercourse, but that principle does not automatically settle every form of anal penetration. Serious doubt about the moral object, health risk, degradation, coercion, or a deliberate intention to substitute the anal act for intercourse weighs against permissibility.",
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"ST154\",\"a.11\"],[\"MCHUGH\",\"§1624\"],[\"CASTI\",\"§§19–30, 53–59\"]]",
+      "disposition": "edition_citation_correct",
+      "source_claim_observation": "Revised McHugh §1624(c) addresses completed acts. Different partial acts require precise analysis; §1624 IS correctly cited for linked edition.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE059",
+      "owner": "sexual-ethics",
+      "title_en": "How do illness, disability or age affect marital obligations?",
+      "answer_en": "They can substantially affect what is reasonable, possible or charitable. Marriage does not require spouses to ignore serious health, pain, incapacity or danger; prudence and mutual charity govern concrete obligations.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"ST64SUP\",\"circumstances of marital debt\"],[\"HV\",\"§13\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Health, infirmity and reasonable limits are supported by revised McHugh §1621.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE060",
+      "owner": "sexual-ethics",
+      "title_en": "Does permanent infertility change marital sexual ethics?",
+      "answer_en": "It changes the likelihood of conception, not the basic moral kind of the marital union. Infertile spouses may legitimately have conjugal relations because the act is not made illicit by a fertility defect beyond their will.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"CASTI\",\"§59\"],[\"HV\",\"§11\"],[\"CIC\",\"can. 1084 §3\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Naturally infertile marital relations remain different from deliberately sterilised acts; Casti §59.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE061",
+      "owner": "sexual-ethics",
+      "title_en": "Why is contraception wrong?",
+      "answer_en": "Catholic teaching condemns contraception because it deliberately chooses to make the marital act infertile, separating the act from its procreative ordering. The moral problem is not the artificiality of technology but the intentional contraceptive choice.",
+      "answer_fr_present": true,
+      "detail_en": "A serious reason to avoid pregnancy can be morally legitimate without making every means legitimate. Casti Connubii rejects deliberate frustration of the generative act; Pius XII later permits recourse to infertile periods for serious reasons. The tradition therefore distinguishes the intention to avoid conception from the means chosen to do so.",
+      "expanded_opposition_en": "Charles Curran's 1987 essay criticizes the 'physicalism' he sees in an absolute ban on contraception. He argues that the goods of persons and marriage can sometimes warrant intervention in biological processes; he does not deny the importance of love and fidelity. Why must every individual conjugal act retain its procreative ordering?",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"CASTI\",\"§§53–59\"],[\"MIDWIVES\",\"1951 address · serious reasons and infertile periods\"],[\"HV\",\"§§11–16\"],[\"LBM\",\"chastity within marriage\"]]",
+      "disposition": "adequate_opposition",
+      "source_claim_observation": "Original Humanae vitae and actual Curran opposition already used; do not duplicate CSE063.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE062",
+      "owner": "sexual-ethics",
+      "title_en": "May spouses have serious reasons to avoid pregnancy?",
+      "answer_en": "Yes. Catholic teaching recognizes medical, economic, social and family circumstances that can justify postponing pregnancy. The existence of a serious reason does not, however, make every means of avoiding conception morally equivalent.",
+      "answer_fr_present": true,
+      "detail_en": "Pius XII explicitly recognized serious medical, economic and social reasons for using naturally infertile periods in 1951. Catholic spouses need not seek conception at every opportunity, but postponing pregnancy requires responsible judgment.",
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"MIDWIVES\",\"1951 address, on restricting intercourse to infertile days for serious medical, economic or social reasons\"],[\"HV\",\"§10 (responsible parenthood); §16 (recourse to infertile periods)\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Pius XII 1951 recognizes serious medical, economic and social reasons; source is original Italian.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE063",
+      "owner": "sexual-ethics",
+      "title_en": "Why is NFP morally different from contraception?",
+      "answer_en": "The intention can be the same: both couples may wish to avoid pregnancy. The difference lies in what is chosen—periodic abstinence refrains from intercourse during fertile periods, whereas contraception performs intercourse while deliberately acting to prevent its fertility.",
+      "answer_fr_present": true,
+      "detail_en": "An identical remote intention to avoid conception does not make different means the same moral act. Choosing whether to perform an act and choosing to perform it while deliberately rendering it infertile are different voluntary choices. Periodic abstinence can also be used selfishly when proportionate reasons for avoiding pregnancy are absent.",
+      "expanded_opposition_en": "NFP and contraception aim at the same result: sex without pregnancy. Calling one moral and the other immoral looks like a word game based on technology rather than intention.",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"MIDWIVES\",\"1951 address · serious reasons and infertile periods\"],[\"HV\",\"§16\"],[\"LBM\",\"contraception argument\"]]",
+      "disposition": "adequate_opposition",
+      "source_claim_observation": "Intent to avoid conception is distinguished from means used, Humanae vitae §§14–16.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE064",
+      "owner": "sexual-ethics",
+      "title_en": "Is NFP simply “Catholic contraception”?",
+      "answer_en": "No. Both can share the intention to avoid conception, but contraception is defined by a positive anti-procreative choice connected with the act itself. Periodic abstinence can nevertheless be used for selfish or inadequate reasons and is not automatically virtuous.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": "NFP is just Catholic contraception with a natural method. Couples track fertility specifically to prevent pregnancy, so the moral distinction seems cosmetic.",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"MIDWIVES\",\"1951 address · serious reasons and infertile periods\"],[\"HV\",\"§16\"]]",
+      "disposition": "adequate_overlap_CSE063",
+      "source_claim_observation": "A popular objection covered as independent Q&A phrasing, not a new theological dossier.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE065",
+      "owner": "sexual-ethics",
+      "title_en": "What counts as a sufficiently serious reason to postpone pregnancy?",
+      "answer_en": "There is no universal checklist detached from circumstances. Health, psychological strain, serious economic difficulty, responsibilities toward existing children and other proportionate family conditions can matter; spouses must judge honestly and prudently rather than from mere convenience.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"MIDWIVES\",\"1951 address, on serious reasons for limiting intercourse to infertile days\"],[\"HV\",\"§10 (physical, economic, psychological and social conditions); §16 (periodic abstinence)\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "No universally prescribed numeric threshold for serious reasons; personal prudence.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE066",
+      "owner": "sexual-ethics",
+      "title_en": "Must spouses try to conceive every time they have relations?",
+      "answer_en": "No. Humanae Vitae §11 explicitly recognizes that not every legitimate marital act results in conception. The requirement is not that every act conceive, but that spouses not deliberately contracept the act they choose to perform.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"CASTI\",\"§59\"],[\"HV\",\"§11\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Not every marital act needs a possible pregnancy, per Humanae vitae §11.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE067",
+      "owner": "sexual-ethics",
+      "title_en": "May spouses deliberately use infertile periods?",
+      "answer_en": "Yes, when there are proportionate reasons. Pius XII explicitly allowed recourse to naturally infertile periods for serious reasons, including over prolonged periods.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"MIDWIVES\",\"1951 address · serious reasons and infertile periods\"],[\"HV\",\"§16\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Pius XII permits infertile-period recourse for serious reasons.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE068",
+      "owner": "sexual-ethics",
+      "title_en": "Why is direct sterilization wrong?",
+      "answer_en": "Direct sterilization chooses infertility itself as an end or means. Catholic teaching distinguishes this from treatment of a real pathology where infertility is an unintended but foreseen consequence.",
+      "answer_fr_present": true,
+      "detail_en": "The key word is direct. Removing or treating diseased tissue can be legitimate even when fertility is lost, provided the therapeutic act is directed to the pathology and infertility is not chosen as the means of treatment.",
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"MIDWIVES\",\"1951 address · direct sterilization\"],[\"HEMATOLOGY\",\"1958 address · direct versus therapeutic sterility\"],[\"HV\",\"§15\"]]",
+      "disposition": "upgrade_original_sterilization_source",
+      "source_claim_observation": "More exact direct-sterilization authority: Humanae vitae §14 and CDF Quaecumque sterilizatio (1975).",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE069",
+      "owner": "sexual-ethics",
+      "title_en": "May medical treatment be used when infertility is a side effect?",
+      "answer_en": "Yes, when the treatment is genuinely directed to a pathology and infertility is neither the intended end nor the chosen means. Foreseeing an unwanted effect is not the same as intending it.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"HEMATOLOGY\",\"1958 address · therapeutic treatment and foreseen sterility\"],[\"HV\",\"§15\"]]",
+      "disposition": "clinical_case_caution",
+      "source_claim_observation": "Intended therapeutic intervention versus sterilisation as end/means must be assessed case by case; no automatic clinical inference.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE070",
+      "owner": "sexual-ethics",
+      "title_en": "What if only one spouse insists on contraception?",
+      "answer_en": "The spouses’ moral responsibilities are not automatically identical. Pius XI explicitly distinguishes the spouse who chooses the disorder from a spouse who, for a grave reason, reluctantly permits what he or she does not approve; the latter must not intend the contraceptive choice and should seek to dissuade the partner.",
+      "answer_fr_present": true,
+      "detail_en": "Casti Connubii §59 distinguishes the spouse who chooses the contraceptive disorder from the spouse who, for a grave cause, reluctantly permits what he or she does not approve. The latter must not intend the contraceptive choice and must preserve charity without simply confirming the partner in wrongdoing; coercion, intention and the concrete form of cooperation therefore matter.",
+      "expanded_opposition_en": "If one spouse insists on contraception, the other either cooperates or destroys the marriage by refusing sex. It seems unfair to burden the unwilling spouse with the other’s choice.",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"CASTI\",\"§59\"],[\"HV\",\"§13\"],[\"ST18\",\"aa.2–11\"],[\"LBM\",\"pastoral application\"]]",
+      "disposition": "exact_primary_section_accepted",
+      "source_claim_observation": "Casti connubii §59 accurately quoted regarding unwilling spouse and duty of dissuasion; no blanket approval of active cooperation.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE071",
+      "owner": "sexual-ethics",
+      "title_en": "Masturbation hurts nobody—why is it wrong?",
+      "answer_en": "Catholic morality is not based only on interpersonal harm. Masturbation deliberately uses the sexual faculty outside the conjugal order in which sexual pleasure is properly integrated with marital self-giving and procreation.",
+      "answer_fr_present": true,
+      "detail_en": "The absence of a third-party victim does not exhaust moral analysis. Persona Humana §9 distinguishes the objective judgment on deliberate masturbation from subjective responsibility, which may be reduced by immaturity, affective imbalance or acquired habit. This reduction must be assessed rather than presumed in every case; neither automatic mortal guilt nor automatic exculpation follows from repetition.",
+      "expanded_opposition_en": "Margaret Farley holds that the justice of masturbation should be judged largely by its effects on a person's wellbeing and freedom rather than by an intrinsic moral prohibition (Just Love, p.236, quoted in the CDF's 2012 Notification). If no one else is harmed, why should the act itself be considered gravely disordered?",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"ST154\",\"a.11\"],[\"PH\",\"§9\"],[\"CCC\",\"§2352\"],[\"LBM\",\"obligations outside marriage\"]]",
+      "disposition": "opponent_quote_accepted",
+      "source_claim_observation": "Specific Farley Just Love passage reproduced in 2012 CDF Notification adequately attributed; full book not required.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE072",
+      "owner": "sexual-ethics",
+      "title_en": "How does habit affect culpability for masturbation?",
+      "answer_en": "A strong habit can reduce freedom in a particular act, but it does not automatically remove responsibility. The person’s present deliberation, the origin and reinforcement of the habit, and sincere efforts to resist all matter.",
+      "answer_fr_present": true,
+      "detail_en": "The later Catechism explicitly lists acquired habit, anxiety and affective immaturity as possible mitigating factors. Aquinas also warns that a voluntarily acquired vicious habit may make a choice more rooted in the will, so “habit” cannot function as an automatic excuse.",
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"ST78\",\"a.2\"],[\"CCC\",\"§2352\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Habit can diminish freedom but is not automatic exemption; avoid assuming mortal culpability from repetition.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE073",
+      "owner": "sexual-ethics",
+      "title_en": "If masturbation is common during puberty, does that change its morality?",
+      "answer_en": "Frequency does not determine moral goodness. Age, immaturity, habit and reduced deliberation can affect personal culpability, but they are distinct from the objective judgment about the act.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"PH\",\"§9\"],[\"CCC\",\"§2352\"]]",
+      "disposition": "adequate",
+      "source_claim_observation": "Age and immaturity may reduce responsibility; commonness does not alter the norm.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE074",
+      "owner": "sexual-ethics",
+      "title_en": "Why is pornography wrong if all the adults involved consent?",
+      "answer_en": "Consent removes one possible wrong—coercion—but does not settle the whole moral question. Pornography deliberately detaches sexual acts or representations from their proper intimacy and presents them for third-party sexual consumption.",
+      "answer_fr_present": true,
+      "detail_en": "Coercion makes exploitation graver, but Catholic teaching does not ground the wrongness of pornography only in coercion. Deliberate lust, objectification and the conversion of sexual intimacy into a spectacle for others remain morally relevant even where the participants consent.",
+      "expanded_opposition_en": "If adults freely consent to produce and view pornography, and coercion and harmful depictions are guarded against, why should the activity itself be wrong? Could the concern be exploitation and degrading use rather than every erotic depiction?",
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"CCC\",\"§2354\"],[\"ST151\",\"a.1\"],[\"LBM\",\"sexual morality and harm/consent\"]]",
+      "disposition": "adequate_need_real_opposition",
+      "source_claim_observation": "Consent addresses coercion but does not establish the moral goodness of all sexual representations; empirical harms require separate evidence.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CSE075",
+      "owner": "sexual-ethics",
+      "title_en": "Does private pornography use really harm anyone?",
+      "answer_en": "Catholic morality does not require a publicly visible victim before an act can be wrong. Deliberately cultivating lust and consuming sexual intimacy as an object are themselves contrary to chastity; production can also implicate the dignity of those represented.",
+      "answer_fr_present": true,
+      "detail_en": null,
+      "expanded_opposition_en": null,
+      "source_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+      "source_references": "[[\"CCC\",\"§2354\"],[\"ST151\",\"a.1\"]]",
+      "disposition": "adequate_no_empirical_extrapolation",
+      "source_claim_observation": "No empirical prevalence assertions necessary to defend theological argument about personal chastity.",
+      "source_independence_status": "proportional_selected_excerpt_review_not_full_question_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-01",
+      "owner": "church-crisis",
+      "title_en": "Did Catholic mission change from conversion to dialogue?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "Dialogue can assist Christian mission but cannot replace the claim that Jesus Christ alone is the definitive revelation and unique Saviour. Dominus Iesus rejects treating contradictory religions as equally revealed paths of salvation. The theological question raised by recent interreligious formulas is whether they distinguish God's permission of error from his positive willing of true revelation.",
+          "fr_present": true,
+          "source_ids": [
+            "DI2000",
+            "AD2019"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "The Abu Dhabi document signed by Francis and Ahmad al-Tayyeb on 4 February 2019 uses the expression that religious pluralism is willed by God, in a passage also mentioning diversity of sex, colour, race and language. SSPX Superior General Davide Pagliarani publicly objected that such phrasing threatens the unique claim of Christ as Saviour and could confuse the distinction between God's positive will and his permission of false religious beliefs. Dominus Iesus §§13–17, 20–22 rejects treating different religious revelations as equivalent. A signed diplomatic-theological declaration and its original traditionalist criticism are the proper opposing documents.",
+          "fr_present": true,
+          "source_ids": [
+            "AD2019",
+            "ABUPAG19",
+            "DI2000"
+          ],
+          "attribution": "Francis and Ahmad al-Tayyeb, 4 Feb 2019 signed Human Fraternity declaration, versus Davide Pagliarani's published SSPX General House objection"
+        },
+        {
+          "role": "critical_response",
+          "en": "God's providential permission that human beings adopt divergent religions does not imply that he positively reveals mutually contradictory claims about Jesus Christ. The Abu Dhabi phrase does not specify that distinction, so the theological request for clarification is substantive rather than a contrived insult. Conversely, dialogue about civic coexistence and the rejection of religious coercion do not, without more, assert that the Incarnation and Resurrection are optional myths. A defensible reading must preserve both the original wording and Catholic doctrine's exclusive assertion of Christ's mediation.",
+          "fr_present": true,
+          "source_ids": [
+            "AD2019",
+            "DI2000",
+            "ABUPAG19",
+            "DH1965"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The Church evangelises because the Incarnation, Cross and Resurrection are true and saving, not merely cultural versions of an interchangeable religious experience. Dialogue is useful when it removes obstacles to witness and mutual charity; it fails when silence concerning the only Redeemer is made a principle. Catholic mission joins the duty to truth with love of one's neighbour.",
+          "fr_present": true,
+          "source_ids": [
+            "DI2000",
+            "MA1928",
+            "DH1965"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "adequate_real_dispute",
+      "source_claim_observation": "Abu Dhabi document 2019 really contains religious pluralism divinely willed formulation; SSPX rebuttal is a distinct original speaker; distinguish permission vs positive will without asserting clause makes distinction.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-02",
+      "owner": "church-crisis",
+      "title_en": "Did Vatican II abandon the conversion of non-Catholic Christians?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "Vatican II did not abolish the duty to invite separated Christians toward full Catholic communion. Unitatis redintegratio asks Catholics to work for unity in truth, while Ad gentes still commands proclamation, conversion and baptism. Ecumenical dialogue and a real desire for full visible communion are not logically opposed, even when pastoral methods change.",
+          "fr_present": true,
+          "source_ids": [
+            "UR64",
+            "AG65",
+            "DOMJES"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "The Council's Unitatis redintegratio §4 recognises that already-baptised non-Catholics can truly share Christian gifts, while expressly naming the restoration of full Catholic unity as the purpose. Ad gentes §7 maintains the obligation to evangelise and baptise, and Dominus Iesus §§16–17 denies the notion that all separated communities are complete parallel Churches. The SSPX's 2012 published objection nevertheless alleges that Unitatis redintegratio §3 introduces a doctrinal discontinuity by ascribing ecclesial and salvific significance to communities separated from Rome. These are the actual propositions at issue, not a contest about the courtesy of interreligious meetings.",
+          "fr_present": true,
+          "source_ids": [
+            "UR64",
+            "AG65",
+            "DOMJES",
+            "SSPX2012-FOUR"
+          ],
+          "attribution": "Vatican II Unitatis redintegratio §§3–4; SSPX USA District 2012 actual opposing ecclesiology argument"
+        },
+        {
+          "role": "critical_response",
+          "en": "Recognition that certain separated Churches possess valid orders and the Eucharist does not mean that doctrinal and jurisdictional separation ceases to matter. The 2007 CDF Responses explicitly differentiates Eastern particular Churches with apostolic succession from ecclesial communities originating in the Reformation that lack valid episcopal orders in the Catholic assessment. Mission therefore concerns fullness of faith and communion, even while grace outside visible Catholic boundaries is acknowledged. A claim of indifferentism must show where the Council actually abandons the duty to conversion, rather than merely note its use of language about shared baptism.",
+          "fr_present": true,
+          "source_ids": [
+            "UR64",
+            "CDF07",
+            "DOMJES",
+            "AG65"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Catholic unity is not constructed by concealing the Eucharist, apostolic succession or Petrine primacy. Charity calls for honest dialogue and prayer alongside an open invitation to the fullness of faith. A Catholic must neither coerce conscience nor pretend that real differences have ceased to exist.",
+          "fr_present": true,
+          "source_ids": [
+            "UR64",
+            "DOMJES",
+            "MA1928"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "adequate_crosslink",
+      "source_claim_observation": "Mission to separated Christians remains distinct owner; Ad gentes conversion and Unitatis redintegratio unity.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-03",
+      "owner": "church-crisis",
+      "title_en": "Mortalium animos and Vatican II: contradiction or development in ecumenism?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "Mortalium animos condemns projects of Christian unity that treat mutually contradictory confessions as equivalent branches of one unseen federation. Vatican II's Unitatis redintegratio encourages dialogue while affirming that the fullness of saving means belongs to the Catholic Church. A claim of contradiction must establish whether the same specific proposition is being affirmed and denied.",
+          "fr_present": true,
+          "source_ids": [
+            "MA1928",
+            "UR64",
+            "LG64"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Pius XI's Mortalium animos §§2, 6–10 denounces a specific pan-Christian project that would construct a federation through a minimum shared creed while allowing incompatible doctrines to persist; he forbids Catholics to support those enterprises. Vatican II's Unitatis redintegratio §§3–4 instead permits Catholic ecumenical engagement and recognises varying but incomplete bonds with other Christians, while §11 speaks of the hierarchy of truths. The genuine point of contrast includes a real change in approved forms of contact, which cannot be treated as if the earlier encyclical simply anticipated the later programme word for word.",
+          "fr_present": true,
+          "source_ids": [
+            "MA1928",
+            "UR64"
+          ],
+          "attribution": "Pius XI Mortalium animos §§2, 6–10 (1928) and Vatican II Unitatis redintegratio §§3–4, 11 (1964)"
+        },
+        {
+          "role": "critical_response",
+          "en": "The ban on a federation that compromises revealed articles in Mortalium animos cannot automatically be equated with every supervised dialogue under Unitatis redintegratio. Pius XI insists that all divinely revealed doctrines must be believed, and the Council's hierarchy of truths concerns their relationship to the Christian foundation rather than creating an optional class of dogmas. This supports an important doctrinal distinction without erasing the historical reversal of some practical prohibitions. Whether particular joint services compromise Catholic doctrine remains a case-specific question under actual sacramental and liturgical norms.",
+          "fr_present": true,
+          "source_ids": [
+            "MA1928",
+            "UR64",
+            "DOMJES"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Christ founded one Church, and the agreement of Christians cannot be secured by selecting a minimum creed while bracketing revealed doctrines. Mortalium animos rejects this indifferentist premise and recalls that divine revelation demands assent to all truths actually taught by God; Unitatis redintegratio §11 speaks of the hierarchy of truths as an order of relation to the foundation of faith, not a licence to deny lesser-ranking dogmas. Fraternal dialogue and shared charitable work are therefore legitimate only when they preserve truth, avoid sacramental confusion and direct separated Christians toward real ecclesial unity.",
+          "fr_present": true,
+          "source_ids": [
+            "MA1928",
+            "UR64",
+            "DOMJES"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "adequate_historical_transition",
+      "source_claim_observation": "Mortalium animos pan-Christian federation differs from supervised postconciliar dialogue; real disciplinary changes acknowledged.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-04",
+      "owner": "church-crisis",
+      "title_en": "Imperfect communion, subsistit in and ‘sister Churches’: what do these expressions mean?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "Subsistit in in Lumen gentium §8 affirms that Christ's one Church continues to exist concretely in the Catholic Church, while elements of sanctification and truth occur outside her visible structure. Imperfect communion refers to genuine but incomplete bonds among baptised Christians. Neither expression simply equates every Christian body with a separate full Catholic Church.",
+          "fr_present": true,
+          "source_ids": [
+            "LG64",
+            "UR64",
+            "CDF07"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "In 2012 the SSPX US District explicitly listed Lumen gentium §8, with its formula subsistit in, among four conciliar propositions it judged irreconcilable with earlier doctrine. The CDF's five official Responses in 2007 explicitly takes the opposite doctrinal position: the word means that the sole Church of Christ continues uniquely and concretely in the Catholic Church, though elements of sanctification and truth can operate outside her visible structure. The CDF simultaneously differentiates validly ordained Eastern particular Churches from communities lacking apostolic sacramental succession. These are genuinely opposing, directly attributed published accounts.",
+          "fr_present": true,
+          "source_ids": [
+            "SSPX2012-FOUR",
+            "CDF07",
+            "CDF2007-COMMENT",
+            "LG64"
+          ],
+          "attribution": "SSPX USA District 'Is the SSPX heretical?' (2012) vs CDF Responses and explanatory Commentary (2007)"
+        },
+        {
+          "role": "critical_response",
+          "en": "Subsistit in is not an invitation to treat the one Church of Christ as several equally complete institutional branches. The CDF's 2007 Responsa states that unique historical subsistence belongs only to the Catholic Church and that Eastern Churches possess genuine apostolic succession and valid Eucharist but lack full communion with Rome. A Protestant community lacking those sacramental elements is not termed a Church in the same proper sense. The SSPX's allegation of rupture therefore needs to show a remaining conflict in the exact wording after this explanation rather than attribute a plural-church thesis which the issuing Roman office has expressly rejected.",
+          "fr_present": true,
+          "source_ids": [
+            "CDF07",
+            "CDF2007-COMMENT",
+            "LG64",
+            "SSPX2012-FOUR"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The one Church of Christ is not a branch federation. Lumen gentium §8 locates its continuing concrete existence in the Catholic Church, and the CDF's 2007 Responsa explicitly denies that 'subsists in' means the same Church fully subsists in several rival bodies. Eastern Churches with valid apostolic succession and Eucharist possess real ecclesial sacraments while lacking full communion; communities without valid episcopate and Eucharistic mystery are not Churches in the same strict Catholic sense. The traditional claim of unique visible unity must therefore stand together with recognition of genuine Christian grace outside full communion, without dissolving the requirement of conversion and Catholic communion.",
+          "fr_present": true,
+          "source_ids": [
+            "LG64",
+            "CDF07",
+            "DOMJES",
+            "MA1928"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "adequate_source_pair",
+      "source_claim_observation": "2007 CDF responses and SSPX argument should retain distinct authorial voices and not suggest branch theory is taught.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-05",
+      "owner": "church-crisis",
+      "title_en": "Common prayer, ecumenical cooperation and sacramental sharing: what changed?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "The 1993 Directory for Ecumenism permits some prayers and spiritual acts shared among baptised Christians and, under strictly defined conditions, certain sacramental sharing. Its §§102–115 describe common spiritual activity and its §§122–132 reserve Eucharist, Penance and Anointing to special conditions, including need, proper disposition and confession of the Catholic faith for non-Catholic recipients. It neither establishes habitual open Communion for all Christians nor automatically approves common religious worship with adherents of non-Christian traditions. Earlier Mortalium animos condemned defined indifferentist pan-Christian ventures, so the change of ecumenical discipline must be described accurately.",
+          "fr_present": true,
+          "source_ids": [
+            "ECUM1993",
+            "MA1928"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Pius XI's Mortalium animos warns against a Christian federation built on sacrificing defined dogmas and forbids Catholic participation in the forms of pan-Christian association it condemns. The Holy See's 1993 Directory, by contrast, expressly permits certain common prayers with Christians not in full communion, while reserving sacramental participation to narrow situations in §§129–132. The SSPX argues that these later practices can weaken witness to the Church's unique identity. The documents undeniably contain a change in practical permissions; they do not all speak about the same type of rite or assert identical ecclesiology.",
+          "fr_present": true,
+          "source_ids": [
+            "MA1928",
+            "ECUM1993",
+            "ECFSSPX"
+          ],
+          "attribution": "Pius XI, Mortalium animos (1928), contrasted with Pontifical Council for Promoting Christian Unity's 1993 Directory §§102–132 and SSPX's own missionary critique"
+        },
+        {
+          "role": "critical_response",
+          "en": "The Directory itself warns in its preface against ecumenical activities that produce doctrinal confusion or indifferentism. It further distinguishes common prayer as one form of spiritual sharing from the restricted administration of sacramental Eucharist, Penance or Anointing (§§130–132). Permission for a prayer meeting thus does not imply permission for intercommunion; nor does a limited sacramental exception assert agreement on orders or the Mass. Assisi's successive prayers by different religions raise another theological question and should not be silently folded into a directory applying to baptised Christians.",
+          "fr_present": true,
+          "source_ids": [
+            "ECUM1993",
+            "ASSISI-START",
+            "MA1928"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The Church's visible unity and the integrity of her sacraments must not be exchanged for the appearance of easy agreement. Charity toward other Christians calls for honest cooperation without pretending that full communion already exists. The faithful may welcome truthful witness and common concern for justice while avoiding gestures that signify the equivalence of incompatible creeds.",
+          "fr_present": true,
+          "source_ids": [
+            "MA1928",
+            "ECUM1993",
+            "DI2000"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "needs_conditions_distinguished",
+      "source_claim_observation": "1993 Directory distinguishes common prayer §§108–115, Eastern Churches' sacraments §§122–128, and other Christians' more demanding criteria §§129–136. Current draft compresses exception criteria into a general category.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-06",
+      "owner": "church-crisis",
+      "title_en": "What does ‘proselytism’ mean, and does rejecting it weaken missionary conversion?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "In ordinary usage 'proselytism' can mean coercive, manipulative or materially induced religious recruitment; rejecting those abuses does not abolish the Christian duty to announce Christ and invite free conversion. Catholic mission requires truthful proclamation, respect for conscience and sacramental initiation without force. The context of the word matters before concluding that evangelisation itself has been forbidden.",
+          "fr_present": true,
+          "source_ids": [
+            "EN75",
+            "AG65",
+            "DOMJES"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Francis, in his general audience of 11 January 2023, insisted that the Church is missionary but must not operate by proselytism, which he contrasted with personal witness and attraction to Christ. He explicitly recalled Benedict XVI's formulation that the Church grows by attraction. Read on its own, the forceful distinction invites a legitimate question about the meaning of 'proselytism': does the rejection concern coercion, manipulative recruitment and self-promotion, or could its rhetoric be understood as discouraging an honest invitation to conversion? Paul VI's Evangelii nuntiandi and Vatican II's Ad gentes unequivocally retain explicit proclamation, free conversion and baptism.",
+          "fr_present": true,
+          "source_ids": [
+            "EN75",
+            "AG65",
+            "FRANCIS-AUD23-CR"
+          ],
+          "attribution": "Francis, general audience 11 January 2023, read alongside Paul VI Evangelii nuntiandi and Vatican II Ad gentes"
+        },
+        {
+          "role": "critical_response",
+          "en": "Rejecting deception and pressure is consistent with telling another person that Christ is the Saviour and inviting them freely to baptism. The original 2023 Francis audience expressly proclaims Jesus and does not formally rescind the Church's mission. But broad language may be misunderstood if 'proselytism' is used indiscriminately for all attempts to persuade; the remedy is to define abuse precisely and preserve the honest, free presentation of the Gospel. Evangelii nuntiandi §§22–24 and Ad gentes §§13–14 establish conversion and Christian initiation as genuine ends of mission.",
+          "fr_present": true,
+          "source_ids": [
+            "EN75",
+            "AG65",
+            "DOMJES",
+            "FRANCIS-AUD23-CR"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The Church evangelises because the Lord's identity and redemption are objectively true and good for all people. True charity respects the hearer's freedom while refusing silence concerning Christ. Neither threats, deception and inducements nor a policy of never seeking conversion belong to authentic Catholic mission.",
+          "fr_present": true,
+          "source_ids": [
+            "EN75",
+            "AG65",
+            "DOMJES"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "needs_rhetoric_precision",
+      "source_claim_observation": "Francis 11 Jan 2023 criticism of proselytism includes mission by attraction, not only rejection of coercion. Evangelii nuntiandi §22 explicitly requires proclamation.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-07",
+      "owner": "church-crisis",
+      "title_en": "Assisi 1986: legitimate peace witness or objectively indifferentist sign?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "At Assisi on 27 October 1986, John Paul II invited leaders of Christian communities and other religions for a peace gathering. In his opening address he rejected negotiating a religious consensus or relativism and described this actual sequence: each religion would pray separately in its traditional place and rite; participants would walk together in silence; prayers would then be presented one after another in the square. This was not one single jointly recited liturgical text. Whether the overall public staging nevertheless conveyed misleading religious equivalence remains an important prudential and theological question.",
+          "fr_present": true,
+          "source_ids": [
+            "ASSISI-START",
+            "ASSISI-END"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Lefebvre and de Castro Mayer's signed Buenos Aires declaration of 2 December 1986 goes beyond a general worry about ambiguity: it calls the Assisi events a public sin and a climactic rupture, claiming John Paul II encouraged adherents of false religions to pray to false gods. John Paul II's own 27 October address expressly said the gathering was not a doctrinal consensus or relativism; it organised separate and successive prayers for peace. These two attributable primary documents disagree about the religious meaning of the public event, and should be quoted as actual opposed judgements without pretending that intentions alone prove its prudence.",
+          "fr_present": true,
+          "source_ids": [
+            "ASSISILEF86",
+            "ASSISI-START",
+            "ASSISI-END"
+          ],
+          "attribution": "Marcel Lefebvre and Antônio de Castro Mayer, signed declaration 2 Dec 1986, versus John Paul II opening and final addresses, 27 Oct 1986"
+        },
+        {
+          "role": "critical_response",
+          "en": "One cannot equate successive prayers by different religions in one public programme with a single intercommunion or shared liturgical rite; the pope stated a concrete separation. Nevertheless, an organiser's intended distinction does not settle whether the public setting and successive invocations objectively risked scandal by visually associating incompatible claims about God. A conclusive judgement requires the rites actually used and material evidence of the staging, rather than only the declaration of either party. The Catholic prohibition of religious indifferentism and the right to seek civic peace must both be taken seriously.",
+          "fr_present": true,
+          "source_ids": [
+            "ASSISI-START",
+            "ASSISI-END",
+            "ASSISILEF86",
+            "DI2000"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "A true desire for peace does not lessen the obligation to confess the unique mediation of Jesus Christ and to offer worship only to the true God. Peaceful contact with neighbours of other religions is possible without presenting contradictory doctrines as equally revealed. Charity, accurate history and serious vigilance against scandal belong together.",
+          "fr_present": true,
+          "source_ids": [
+            "MA1928",
+            "DI2000",
+            "ASSISI-START"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "adequate_event_intention",
+      "source_claim_observation": "1986 Assisi opening specifies successive, separate prayers; critics challenge signification and prudence. Do not invent unified liturgy.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-08",
+      "owner": "church-crisis",
+      "title_en": "Inculturation versus syncretism: where is the boundary?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "Inculturation receives legitimate expressions of a people's culture into Christian life without sacrificing the first commandment; syncretism mingles Christian worship with religious acts directed to incompatible deities. The 2019 Amazon Synod controversies involved statues and ceremonies that some called Pachamama worship. An objective judgement needs the identity of the objects, actual gestures and intended worship, not assumptions about an entire indigenous culture.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC2112",
+            "FRANCIS",
+            "PACHFR"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "On 25 October 2019 Francis described the Amazonian statues taken from Santa Maria in Traspontina as 'pachamama' and said they had been placed there without idolatrous intentions; the Holy See Press Office disseminated his remarks. The French SSPX publication published on 29 October argued instead that the veneration shown to the figures was objectively idolatrous. The papal statement gives evidence of professed intention, while the Society disputes the religious meaning of particular gestures. Neither document, standing alone, is a complete eyewitness liturgical transcript of every ceremony at the Amazon Synod.",
+          "fr_present": true,
+          "source_ids": [
+            "FRANCIS",
+            "PACHFR",
+            "PACHSSPX"
+          ],
+          "attribution": "Francis, first-person 25 October 2019 speech transcribed by Vatican News, versus FSSPX Actualités French editorial of 29 October 2019"
+        },
+        {
+          "role": "critical_response",
+          "en": "Francis's claim about non-idolatrous intentions must be acknowledged rather than misrepresented as approval of idol worship. It is equally legitimate to ask whether a ritual gesture directed toward an ambiguous image could objectively signify worship and create foreseeable scandal, even if participants deny that intention. The Catechism §§2110–2114 condemns idolatry; applying that rule to a real event requires identifying the agent, gesture, accompanying words and intended religious object. Neither cultural stereotype nor a simple assertion of good intentions completes this factual enquiry.",
+          "fr_present": true,
+          "source_ids": [
+            "FRANCIS",
+            "PACHFR",
+            "CCC2112"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The first commandment forbids worship of false gods, and ecclesial liturgy cannot deliberately obscure whom Christians adore. Genuine cultural hospitality receives languages, symbols and customs only insofar as they can be purified and directed toward Christ. Protection of this duty demands evidence and charity, not a presumption of religious guilt attached to a whole population.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC2112",
+            "DI2000",
+            "PACHFR"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "adequate_two_testimonies",
+      "source_claim_observation": "Francis 25 Oct 2019 named 'pachamama' and denied idolatrous intent; a critic's allegation about gesture is not independent visual proof of the event.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-09",
+      "owner": "church-crisis",
+      "title_en": "Why have some Catholic schools, universities and institutions lost a distinct Catholic identity?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "A Catholic school or university is more than an institution historically founded by Catholics: it should unite academic integrity, Christian anthropology, sacramental and moral formation and fidelity to the Church's teaching mission. Some institutions have experienced secularisation or doctrinal conflict, but the prevalence and causes must be documented individually instead of assumed from their names or secular rankings.",
+          "fr_present": true,
+          "source_ids": [
+            "ECC1990",
+            "CIC803"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Ex corde Ecclesiae I.13 and General Norms art. 2 describes a Catholic university as combining research and scholarly autonomy with an institutional commitment that the Catholic faith should inform its research, teaching and community life. Canon 808 adds that even a university that is Catholic in fact cannot assume the title 'Catholic university' without consent of the competent ecclesiastical authority. This is a legally and doctrinally testable identity, not a mere memory of a religious founder; Catholic identity also does not abolish legitimate academic freedom.",
+          "fr_present": true,
+          "source_ids": [
+            "ECC1990",
+            "CIC803"
+          ],
+          "attribution": "John Paul II Ex corde Ecclesiae (1990), CIC canons 803/808"
+        },
+        {
+          "role": "critical_response",
+          "en": "An academic institution should examine modern scholarship rigorously, but freedom to research is not identical to permission to market contradiction of defined teaching as Catholic doctrine. Likewise, administrators who enforce doctrinal commitments must use transparent rules, fair process and competent interpretation. Claims of apostasy need identifiable course materials and institutional acts.",
+          "fr_present": true,
+          "source_ids": [
+            "ECC1990",
+            "CIC803",
+            "DV90"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Education must form both intellectual competence and the virtues needed for truth and holiness. Parents and students deserve to know whether a Catholic institution genuinely teaches the faith it advertises, while teachers deserve justice and intellectual seriousness. A Catholic label without Catholic substance injures both conscience and ecclesial mission.",
+          "fr_present": true,
+          "source_ids": [
+            "ECC1990",
+            "CIC803",
+            "DV90"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "adequate_norm_not_outcome",
+      "source_claim_observation": "Ex corde Ecclesiae and canons 803/808 state norms; no unverified prevalence of institutional secularization should be inferred.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    },
+    {
+      "id": "CR-IDM-10",
+      "owner": "church-crisis",
+      "title_en": "Did the postconciliar missionary strategy slow or accelerate secularisation?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "sections": [
+        {
+          "role": "answer",
+          "en": "Postconciliar mission and secularisation developed amid changes in urbanisation, family life, political institutions and educational cultures. A decline in practice near a change of missionary method is not sufficient evidence that the latter caused it. Equally, broad social pressures cannot excuse a church policy that weakened doctrinal clarity or reduced missionary formation. Research must compare countries, dates and measurable outcomes.",
+          "fr_present": true,
+          "source_ids": [
+            "GAU65",
+            "AG65",
+            "EN75"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Gaudium et spes documented changing conditions in modern societies; Ad gentes required ongoing evangelisation; Evangelii nuntiandi later stressed that there is no authentic evangelisation without announcing Jesus. These official sources acknowledge both modern challenges and the unrenounceable missionary obligation, rather than supplying a measured proof of a strategy's effectiveness.",
+          "fr_present": true,
+          "source_ids": [
+            "GAU65",
+            "AG65",
+            "EN75"
+          ],
+          "attribution": "Vatican II Gaudium et spes, Ad gentes; Paul VI Evangelii nuntiandi (1975)"
+        },
+        {
+          "role": "critical_response",
+          "en": "Attendance, baptisms, adult conversions and vocations measure different aspects of Catholic vitality and can move in different directions. A country's secularisation before the Council must not be erased when studying later decline, and a favourable local mission story cannot substitute for representative evidence. The conclusion should remain conditional where controlled comparisons are lacking.",
+          "fr_present": true,
+          "source_ids": [
+            "GAU65",
+            "AG65",
+            "EN75"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Mission requires announcing Christ, teaching the faith, forming converts and sustaining sacramental life, whatever contemporary cultural strategies are employed. Catholics may value lawful pastoral creativity while challenging approaches that make doctrine optional. Fidelity and charity, not merely favourable metrics or nostalgia, guide missionary renewal.",
+          "fr_present": true,
+          "source_ids": [
+            "AG65",
+            "EN75",
+            "DOMJES"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "empirical_causation_unresolved",
+      "source_claim_observation": "No evidence that a temporal change alone proved decline due to missionary strategy; existing text correctly says causal assessment must remain conditional.",
+      "source_independence_status": "all_4_English_draft_roles_read_key_originals_checked_not_full_certification",
+      "full_book_required": false,
+      "production_edit_applied": false,
+      "fully_certified": false
+    }
+  ]
+}
