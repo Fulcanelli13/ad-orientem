@@ -77,3 +77,50 @@ For every accepted illustration: (1) 1962 rubric, precise cue, correct actor and
 - User 90-record review SHA-256: `edbde2bf608646cd258351274b6e545d42d88952b393c40c66492800684bc4a0`.
 
 Machine-readable files: `data/presentation/mass-icon-harmonization-source-resolutions-20261014.v1.json` and `data/presentation/mass-icon-harmonization-16-workorders-20261014.v1.json`.
+
+
+---
+
+## Update: minimal-family anti-drift lock (14 October)
+
+**The richly engraved recent image-generation outputs are NOT the approved style.** Use only the [minimal family standard](../data/presentation/mass-icon-minimal-family-standard-20261014.v1.json) and [human-readable design rules](mass-icon-minimal-family-standard-20261014.md). The **5/5 sedilia** is the primary confirmed priest reference; the 4/5 references await review, and a 3/5 asset cannot be used as approved style authority.
+
+**Scores:** 0–2 original discarded permanently; 3 = research required; 4 = user review; 5 = confirmed and selected; unrated = pending. Historical “keep” decisions remain provenance and do not promote a newly scored 3 into automatic final approval.
+
+Minimal means featureless or near-featureless priest head, one clean Roman chasuble contour, almost no inner folds, basic altar outline and only necessary hands/vessels. **No lace, textured hair, rich embroidery, carved altar panels, engraving/hatching, smoke clouds, or portrait modelling.** At 48–64px use only a readable gesture or a short source-owned text cue; do not shrink a full embellished altar scene. Final assets must be UI-tintable with true alpha, with real path SVG only when actually vector.
+
+### Eight source/semantic corrections under the minimal rule
+
+| ID | Method | Minimum acceptable presentation |
+|---|---|---|
+| `A04` | reuse and text | One minimalist priest centre silhouette only; add precise eyes-up rubric. Do not depict raised hands. |
+| `A05` | research then minimal gesture | If picture needed, minimalist priest with two joined hands near face and gaze toward the Sacrament, not a Canon scene. |
+| `B05` | shared minimal lavabo | If visual needed, separate hands/water over ewer, not an entire embroidered priest scene; same master reused for S_other_lavabo. |
+| `B06` | station reuse plus text | Existing simple priest centre icon and short placement rubric; no special vessel drawing. |
+| `B07` | station reuse plus text | Existing general station/Canon cue and explicitly source-owned pall action label, appropriate actor and form. |
+| `B09` | station reuse plus text | Retain major elevation only at elevation moment. After it, minimal priest cue plus text 'Replaces Host' and then 'Genuflects'. |
+| `S_priest_epistle` | conditional existing swap | Use opposite existing pictorial master provisionally; validate priest and Missal appear on congregation's right before approval. |
+| `S_priest_gospel` | conditional existing swap | Use opposite existing pictorial master provisionally; validate priest and Missal appear on congregation's left before approval. |
+
+### Sixteen other repairs under the minimal rule
+
+| ID | First repair method | Gesture/detail to preserve |
+|---|---|---|
+| `A03` | new sparse pose only after existing-art check | Bare hands close together, palms down directly over the offerings; sleeves 1 broad shape each. |
+| `A06` | new sparse pose only after existing-art check | Right hand holds Host just over chalice; left holds chalice at node; both low, no overhead elevation. |
+| `B01` | reuse a clear icon or use short rubric | One priest silhouette with restrained blessing hand over thurible, only if visually distinguishable. |
+| `B02` | no new image; existing symbol + rubric | Preserve existing cross mark and state that paten is used. |
+| `B03` | no new image; existing symbol + rubric | Use accepted centre pose and exact textual paten placement; no distinct art. |
+| `B04` | reuse a clear icon or use short rubric | Priest receiving thurible; only add tiny simple server/chain handoff when readable. |
+| `B16` | retain approved pose geometry, redraw as sparse silhouette | Preserve the 4/5 deep torso inclination geometry, simplify priest into one clean garment shape and featureless head. |
+| `D06` | one source-specific minister only if rail-scale gesture requires it | Distinct simple kneeling thurifer silhouette only if needed; thurible one clear tear-drop/chain. |
+| `S_priest_procession` | simplify retained actor, no extra scenery | One priest recognizable by the same minimal chasuble outline with walking direction, plus optional cross bearer if indispensable. |
+| `S_priest_incense_altar` | reuse approved altar footprint; strip ornamental architecture | Reconstruct same simplified altar outline as centre composition; one priest and one clear thurible motion. |
+| `S_other_canon` | use one flat monochrome symbol | One sober monochrome Canon symbol or no pictogram if section title suffices. |
+| `S_other_lavabo` | single minimal Lavabo asset for B05 + existing Lavabo | A single minimalist hand-and-water/ewer cue shared with B05; priest fingertip washing at Offertory. |
+| `I_priest_blessing` | do not reuse any rejected original; design fresh icon only if still necessary | Simple priest face-to-congregation silhouette with one blessing hand and minimal vestment cues, if usable; old 2/5 facing-people source NEVER reused. |
+| `S_priest_elevate_chalice` | identify defect before drawing | Compare selected Host elevation framing, verify chalice above priest and correct grip, keep same figure scale. |
+| `S_sound_schola` | identify defect before drawing | Test simple chorus/singing symbol against approved audible/response utility family at 48/64px. |
+| `B13` | recrop only; no added detail or implied gesture approval | Keep better single-pose crop only if Host actually contacts priest's mouth; may use text if action illegible. |
+
+**Result:** all 24 work orders now carry a specific minimal-family method. The 36-subject generation register is paused until style repair and gap re-audit; previous ornamental masks are kept only as alpha/tint feasibility or hand-pose evidence. **No new artwork has been approved or linked into the live reader.**
