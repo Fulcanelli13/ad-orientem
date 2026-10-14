@@ -13,7 +13,9 @@ import {loadReferenceDiscovery,loadFormationContentDiscovery} from "./discovery.
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
-const MODULE_SET=new Set([...LEARN_MODULE_IDS,MYSTERY_MASS_REVIEW_ROUTE,"today.saint","today.gospel",SPIRITUAL_LIFE_ROUTE_ID]);
+const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint","today.gospel",SPIRITUAL_LIFE_ROUTE_ID]);
+// Research-only child does not alter the frozen public Formation module set.
+MODULE_SET.add(MYSTERY_MASS_REVIEW_ROUTE);
 
 function runtime(win){return win?.AO_RUNTIME_V8??null;}
 function appState(win){return runtime(win)?.store?.getState?.()??null;}
