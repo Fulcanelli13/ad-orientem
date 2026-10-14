@@ -544,6 +544,46 @@
       "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
       "locator": "§§74–79, distinct proportionalist and consequentialist theses; acts with intrinsic moral species",
       "original_context_approved": false
+    },
+    {
+      "id": "INT_APOL_002_1",
+      "title": "Dei Filius chapter IV, faith and reason",
+      "url": "https://www.vatican.va/content/pius-ix/it/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+      "locator": "Dei Filius chapter IV, faith and reason",
+      "provenance": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_APOL_002_2",
+      "title": "Fides et ratio introduction; §§34,43",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html",
+      "locator": "Fides et ratio introduction; §§34,43",
+      "provenance": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_APOL_002_3",
+      "title": "Dialogues parts IX–X; speakers' arguments, not a direct Hume confession",
+      "url": "https://www.gutenberg.org/cache/epub/4583/pg4583-images.html",
+      "locator": "Dialogues parts IX–X; speakers' arguments, not a direct Hume confession",
+      "provenance": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_APOL_002_4",
+      "title": "Introduction; §§34,43",
+      "url": "https://www.vatican.va/content/john-paul-ii/fr/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html",
+      "locator": "Introduction; §§34,43",
+      "provenance": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_APOL_002_5",
+      "title": "ST I q.2 a.2 on natural demonstration, limit to particular theological claim",
+      "url": "https://www.newadvent.org/summa/1002.htm",
+      "locator": "ST I q.2 a.2 on natural demonstration, limit to particular theological claim",
+      "provenance": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -560,75 +600,100 @@
         {
           "role": "answer",
           "text": {
-            "en": "Humani generis §36 permits competent specialists to investigate the origin of the human body from pre-existing living matter, while requiring Catholics to hold that each spiritual soul is immediately created by God. That limited permission neither makes a literalist account of every biological mechanism Catholic dogma nor grants automatic doctrinal approval to every scientific reconstruction. Section 37 separately refuses the faithful permission to embrace the stated forms of polygenism because their reconciliation with original sin originating from an individual Adam is not apparent. Scientific explanations of genetic population sizes and theological claims concerning original sin are not interchangeable propositions.",
-            "fr": "Humani generis §36 permet aux spécialistes compétents d'étudier l'origine du corps humain à partir d'une matière vivante préexistante, tout en imposant la création immédiate de chaque âme spirituelle par Dieu. Cette permission limitée ne transforme ni le littéralisme de chaque mécanisme biologique en dogme ni les reconstructions scientifiques en approbations doctrinales automatiques. Le §37 refuse séparément aux fidèles d'admettre les formes de polygénisme qui y sont définies, faute de conciliation apparente avec le péché originel issu d'un Adam individuel. Les modèles scientifiques de populations génétiques et les propositions théologiques sur le péché originel ne sont pas des énoncés interchangeables."
+            "en": "Faith and reason are not rival sources of contradictory truth. The First Vatican Council's *Dei Filius*, chapter IV, distinguishes truths naturally knowable by reason from mysteries known through divine Revelation and teaches that there can be no genuine contradiction between them because God is the source of both. Reason can investigate nature and evaluate arguments for God's existence; faith receives truths that unaided investigation cannot discover, such as the Trinity and Incarnation. An apparent clash still demands scrutiny of the scientific claim, the biblical interpretation and the authority of the doctrinal proposition, not an automatic dismissal of evidence.",
+            "fr": "La foi et la raison ne sont pas deux sources rivales de vérités contradictoires. *Dei Filius* du premier concile du Vatican (chapitre IV) distingue les vérités accessibles à la raison naturelle des mystères connus par la Révélation et enseigne qu'aucune contradiction véritable n'est possible entre elles, puisque Dieu est la source de l'une et de l'autre. La raison peut étudier la nature et examiner les arguments sur l'existence de Dieu ; la foi accueille aussi des vérités qu'une enquête purement humaine ne peut découvrir, telles que la Trinité et l'Incarnation. Un conflit apparent exige donc l'examen de la conclusion scientifique, de l'interprétation biblique et de l'autorité de la proposition doctrinale, non le rejet automatique des preuves."
           },
           "source_ids": [
             "HG1950",
-            "DA1943"
+            "DA1943",
+            "INT_APOL_002_1",
+            "INT_APOL_002_2"
           ],
           "attribution": null,
           "original_context_approved": false,
           "french_final_approved": false,
           "source_claim_locators": {
-            "HG1950": "Humani generis §§35–37: discussion of bodily evolution, immediate creation of soul, distinct polygenism restriction"
+            "HG1950": "Humani generis §§35–37: discussion of bodily evolution, immediate creation of soul, distinct polygenism restriction",
+            "INT_APOL_002_1": "Dei Filius chapter IV, faith and reason",
+            "INT_APOL_002_2": "Fides et ratio introduction; §§34,43"
           }
         },
         {
           "role": "documented_position",
           "text": {
-            "en": "The BioLogos research article, first published in 2014 and substantially revised in 2021, argues that genetic evidence supports a historically large ancestral human breeding population. It also explicitly says population genetics cannot establish or exclude the historicity of any particular individual such as Adam. Pius XII's Humani generis §36 allowed scholarly discussion of biological evolution of the human body while insisting on immediate divine creation of souls; §37 separately warned that polygenism, as there described, had not been reconciled with the doctrine of original sin. The scientific population model and the specified theological problem must not be falsely equated or quietly collapsed into a revision of dogma.",
-            "fr": "L'article scientifique de BioLogos, paru en 2014 et substantiellement révisé en 2021, soutient que les données génétiques indiquent une population ancestrale humaine reproductrice importante. Il précise lui-même que la génétique des populations ne peut confirmer ni exclure l'existence historique d'un individu particulier tel qu'Adam. Humani generis (§36) de Pie XII permet l'étude de l'évolution du corps humain en maintenant la création immédiate des âmes par Dieu ; son §37 met séparément en garde contre un polygénisme qui n'est pas concilié avec la doctrine du péché originel. Le modèle scientifique et la question théologique précise ne doivent être ni confondus ni présentés comme une révision tacite du dogme."
+            "en": "David Hume's *Dialogues Concerning Natural Religion* puts serious limits on inferences from experienced nature to an infinite and perfectly good God. In Parts IX and X, its speakers dispute the force of a priori demonstrations and the inference from a suffering world to divine attributes. This is a genuine philosophical challenge to the ability of reason to reach the claims of faith; it is not a scientific experiment proving God absent. John Paul II's *Fides et ratio* answers a different danger: that faith would dispense with rational inquiry or that unaided reason could pronounce Revelation unintelligible simply because it transcends investigation.",
+            "fr": "Les *Dialogues sur la religion naturelle* de David Hume soulèvent de sérieuses difficultés quant au passage de la nature observée à l'affirmation d'un Dieu infini et parfaitement bon. Dans les parties IX et X, les interlocuteurs discutent la valeur des démonstrations *a priori* et de l'inférence des souffrances du monde aux attributs divins. Il s'agit d'une objection philosophique réelle aux prétentions de la raison à rejoindre les vérités de la foi, non d'une expérience scientifique démontrant l'inexistence de Dieu. *Fides et ratio* de Jean-Paul II répond à un autre danger : prétendre que la foi dispense de la recherche rationnelle ou que la raison ne peut recevoir une Révélation qui la dépasse."
           },
           "source_ids": [
             "BIOLOGOS2014",
-            "HG1950"
+            "HG1950",
+            "INT_APOL_002_3",
+            "INT_APOL_002_4"
           ],
           "attribution": "BioLogos, population-genetics analysis",
           "original_context_approved": false,
           "french_final_approved": false,
           "source_claim_locators": {
             "BIOLOGOS2014": "BioLogos, 'Adam, Eve, and Human Population Genetics', original 2014, revision 2021, introductory genetics vs individual historicity",
-            "HG1950": "Pius XII Humani generis §§36–37, bodily evolution and problem of polygenism"
+            "HG1950": "Pius XII Humani generis §§36–37, bodily evolution and problem of polygenism",
+            "INT_APOL_002_3": "Dialogues parts IX–X; speakers' arguments, not a direct Hume confession",
+            "INT_APOL_002_4": "Introduction; §§34,43"
           }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "The encyclical does not say simply that 'evolution is forbidden', nor does it declare that all theories grouped today as polygenism are harmless. Humani generis §36 provides conditional freedom to examine bodily origins, and §37 specifically rejects embracing either later true humans wholly unrelated to Adam by natural generation or Adam understood as a plurality of first parents. Pius XII gives an explicit theological reason: he cannot see how those claims fit the transmitted doctrine of original sin. A modern population-genetic inference may be scientifically relevant but cannot, without further reasoning, dissolve the separate doctrinal proposition or prove the historicity of any named individual.",
-            "fr": "L'encyclique ne dit pas simplement que « l'évolution est interdite », ni que toutes les théories aujourd'hui classées comme polygénistes seraient indifférentes. Humani generis §36 autorise sous conditions la discussion sur l'origine corporelle ; son §37 refuse précisément d'admettre des humains véritables n'ayant aucun lien de génération naturelle avec Adam ou un Adam représentant plusieurs premiers parents. Pie XII formule une raison théologique explicite : il ne voit pas comment concilier ces thèses avec la transmission du péché originel. Une inférence de génétique des populations peut être scientifiquement pertinente, mais ne résout pas à elle seule la proposition dogmatique distincte ni ne prouve l'historicité d'un individu nommé."
+            "en": "Hume is correct that reasoning from finite effects cannot simply assume every divine attribute; any philosophical demonstration must defend its causal premises and the route to its conclusion. But limitations of one inference do not show that all metaphysical reasoning is irrational or that revealed truth contradicts valid scientific knowledge. *Dei Filius* distinguishes the natural grounds of belief, the genuine autonomy of rational inquiry within its competence and the mysteries whose content is gratuitously disclosed. Likewise, scientific accounts of bodily evolution and the doctrine of original sin must be examined on their own precise terms rather than made a substitute for the whole subject of faith and reason.",
+            "fr": "Hume a raison de souligner qu'un raisonnement partant d'effets finis ne peut présupposer sans preuve tous les attributs divins ; toute démonstration philosophique doit justifier ses prémisses causales et sa conclusion. Toutefois, les limites d'une inférence ne démontrent pas que toute métaphysique serait irrationnelle ni que la Révélation contredirait les connaissances scientifiques établies. *Dei Filius* distingue les fondements rationnels de la croyance, l'autonomie légitime des recherches dans leur domaine et les mystères librement révélés. De même, l'évolution corporelle et la doctrine du péché originel doivent être examinées selon leurs propositions exactes, sans remplacer par ce cas particulier l'ensemble de la question de la foi et de la raison."
           },
           "source_ids": [
             "HG1950",
-            "BIOLOGOS2014"
+            "BIOLOGOS2014",
+            "INT_APOL_002_1",
+            "INT_APOL_002_3",
+            "INT_APOL_002_2"
           ],
           "attribution": null,
           "original_context_approved": false,
           "french_final_approved": false,
           "source_claim_locators": {
             "HG1950": "Humani generis §§36–37, distinct formulations and explicitly stated original-sin difficulty",
-            "BIOLOGOS2014": "BioLogos population genetics article; scientific model not papal doctrinal declaration"
+            "BIOLOGOS2014": "BioLogos population genetics article; scientific model not papal doctrinal declaration",
+            "INT_APOL_002_1": "Chapter IV",
+            "INT_APOL_002_3": "Part IX",
+            "INT_APOL_002_2": "§§9,34,43"
           }
         },
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "Reason can examine nature precisely because creation is ordered and intelligible; faith must also guard truths that laboratory methods cannot decide, particularly the spiritual soul, the fall and redemption in Christ. Catholic reasoning neither invents scientific facts to save an interpretation nor sacrifices defined doctrines to a provisional empirical theory.",
-            "fr": "La raison peut étudier la nature parce que la création est ordonnée et intelligible ; la foi doit préserver les vérités que le laboratoire ne saurait trancher, spécialement l'âme spirituelle, la chute et la Rédemption dans le Christ. Le raisonnement catholique n'invente pas des faits scientifiques pour sauver une lecture, ni ne sacrifie des doctrines définies à une théorie empirique provisoire."
+            "en": "The same Creator gives human beings an intellect capable of knowing reality and offers supernatural Revelation for their salvation. The Church therefore has no need to fear genuine discoveries of science or rigorous philosophical criticism, but neither may she reduce revealed mysteries to hypotheses judged solely by laboratory methods. St Thomas's distinction between what can be demonstrated by reason and what must be received through faith permits reason to clarify the premises, answer objections and contemplate revealed truth without claiming to exhaust its mystery. Truth cannot contradict truth.",
+            "fr": "Le même Créateur donne à l'homme une intelligence capable de connaître le réel et lui offre la Révélation surnaturelle pour son salut. L'Église n'a donc à craindre ni les véritables découvertes scientifiques ni la critique philosophique rigoureuse ; elle ne saurait pourtant réduire les mystères révélés à des hypothèses évaluées exclusivement par les méthodes expérimentales. La distinction de saint Thomas entre ce qui peut être démontré par la raison et ce qui doit être reçu dans la foi permet d'éclairer les prémisses, de répondre aux objections et de contempler la vérité révélée sans prétendre en épuiser le mystère. La vérité ne peut contredire la vérité."
           },
           "source_ids": [
             "HG1950",
-            "DA1943"
+            "DA1943",
+            "INT_APOL_002_1",
+            "INT_APOL_002_4",
+            "INT_APOL_002_5"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "INT_APOL_002_1": "Chapter IV",
+            "INT_APOL_002_4": "§§34,43",
+            "INT_APOL_002_5": "ST I q.2 a.2 on natural demonstration, limit to particular theological claim"
+          }
         }
       ],
       "original_claim_by_claim_source_context_certified": false,
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
-      "publication_allowed": false
+      "publication_allowed": false,
+      "integration_status": "SOURCE_LINKED_BILINGUAL_CORRECTION_STAGED_REVIEW_PENDING",
+      "correction_overlay": "data/learn/formation-apologetics-six-owner-corrections-20261014.v1.json",
+      "preserved_previous_case": "data/learn/formation-apol002-evolution-research-preserved-20261014.v1.json"
     },
     {
       "id": "APOL-004",
@@ -1121,16 +1186,21 @@
         {
           "role": "answer",
           "text": {
-            "en": "Catholic social teaching does not prescribe one universal electoral system, open borders without qualification or pacifism in every circumstance. It does impose moral duties on public authority: protect human dignity, respect justice and the common good, safeguard peace and resist arbitrary attacks on the innocent. Particular policies require empirical and prudential assessment.",
-            "fr": "La doctrine sociale catholique ne prescrit ni un régime électoral universel, ni des frontières ouvertes sans réserve, ni le pacifisme en toute circonstance. Elle impose aux autorités des devoirs moraux : protéger la dignité humaine, la justice et le bien commun, sauvegarder la paix et proscrire les attaques arbitraires contre les innocents. Les politiques concrètes exigent aussi des jugements empiriques et prudents."
+            "en": "Catholic social teaching does not prescribe one universal electoral system, open borders without qualification or pacifism in every circumstance. It does impose moral duties on public authority: protect human dignity, respect justice and the common good, safeguard peace and resist arbitrary attacks on the innocent. Particular policies require empirical and prudential assessment.\n\nCatholic social teaching affirms that persons, families and political societies have duties under natural and divine law, including justice, peace, protection of the vulnerable and the freedom of the Church. Pius XI's *Quas primas* §§13–18, 27–32 expressly teaches the public as well as personal Kingship of Christ while explaining that his kingdom is fundamentally spiritual, not a claim that priests must directly govern every state. Leo XIII's *Immortale Dei* distinguishes spiritual ecclesiastical authority from legitimate temporal political authority. The Church does not prescribe one universal constitution, immigration quota or economic programme, yet public government is not morally autonomous from truth and the common good. Contested historical developments in civil religious liberty belong to CR-DOC-05/04.",
+            "fr": "La doctrine sociale catholique ne prescrit ni un régime électoral universel, ni des frontières ouvertes sans réserve, ni le pacifisme en toute circonstance. Elle impose aux autorités des devoirs moraux : protéger la dignité humaine, la justice et le bien commun, sauvegarder la paix et proscrire les attaques arbitraires contre les innocents. Les politiques concrètes exigent aussi des jugements empiriques et prudents.\n\nLa doctrine sociale catholique affirme que les personnes, les familles et les sociétés politiques sont tenues par la loi naturelle et divine : justice, paix, protection des faibles et liberté propre de l'Église. *Quas primas* de Pie XI (§§13–18, 27–32) enseigne expressément la royauté publique aussi bien que personnelle du Christ, tout en rappelant que son royaume est essentiellement spirituel et n'exige pas que le clergé gouverne directement chaque État. *Immortale Dei* de Léon XIII distingue l'autorité spirituelle de l'Église du pouvoir temporel légitime. L'Église n'impose ni constitution unique, ni quota d'immigration, ni programme économique universel ; toutefois, l'État n'est pas moralement indépendant de la vérité et du bien commun. Le débat sur l'évolution de la liberté religieuse civile relève des dossiers CR-DOC-05/04."
           },
           "source_ids": [
             "IMM1885",
-            "WAR2309"
+            "WAR2309",
+            "QP1925"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "QP1925": "§§13–18,27–32",
+            "IMM1885": "on two powers and public religious duty"
+          }
         },
         {
           "role": "documented_position",
@@ -1183,7 +1253,9 @@
       "original_claim_by_claim_source_context_certified": false,
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
-      "publication_allowed": false
+      "publication_allowed": false,
+      "integration_status": "SOURCE_LINKED_BILINGUAL_CORRECTION_STAGED_REVIEW_PENDING",
+      "correction_overlay": "data/learn/formation-apologetics-six-owner-corrections-20261014.v1.json"
     },
     {
       "id": "APOL-059",
