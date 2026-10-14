@@ -10,6 +10,7 @@ on:
       - "tests/explore-surface.mjs"
       - "tests/explore-reachability-phone.mjs"
       - "tests/explore-layout-phone.mjs"
+      - "tests/explore-mass-map-visual.mjs"
       - "tests/explore-place-preview-r54.mjs"
       - "tests/preliminary-world-mass-map-r49.mjs"
       - ".github/workflows/explore-mobile-r53.yml"
@@ -66,3 +67,11 @@ jobs:
         run: node tests/explore-reachability-phone.mjs
       - name: Four-width Explore geometry and map-card audit
         run: node tests/explore-layout-phone.mjs
+      - name: Traditional Mass map screenshots and first-screen acceptance
+        run: node tests/explore-mass-map-visual.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: explore-mass-map-visual
+          path: artifacts/visual-acceptance/explore
+          if-no-files-found: warn
