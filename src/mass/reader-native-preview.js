@@ -60,7 +60,7 @@ import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./
 import { projectGloriaCredoFaithfulCue } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
-import { projectLiveCinematicScene } from "./reader-cinematic-scenes.js";
+import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
@@ -856,6 +856,10 @@ export async function mountNativeReaderPreview({
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
         posture:sourcePosture ? Object.freeze({label:sourcePosture}) : null,
         postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[sourcePosture]??null,
+        cinematicScene:projectGoodFridayDeathScene({
+          recordId:step.recordId,deathPause:step.recordId==="GF-PASS-320",
+          posture:sourcePosture,
+        }),
         ritualTrigger:/^GF-SOP-\d\d-R$/.test(step.recordId)
           ? Object.freeze({
             canonicalCueId:step.recordId,anchorLat:"Levate.",
@@ -1539,6 +1543,8 @@ export async function mountNativeReaderPreview({
       cueNative,
       cinematic:transient.cinematic,
       faithfulGesture:focusedFaithful?.gesture??null,
+      priestAction,
+      priestPosition,
     });
     const attention=readerAttentionForState({priestVoice,response});
     // A native source transition may animate the selected posture owner.
