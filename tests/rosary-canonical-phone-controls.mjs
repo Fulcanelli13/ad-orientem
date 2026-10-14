@@ -245,7 +245,15 @@ try{
      "Rosary title timeline missing the five mysteries or unique current chapter");
    assert.ok(options.every((x,i)=>x.title&&Number.isInteger(x.start)&&
       (i===0||x.start>options[i-1].start)), "Rosary timeline chapters must follow source steps");
-   const jump=options.find(x=>x.title.includes("Mystery")||/Annunciation|Visitation|Nativity|Agony|Résurrection|Annonciation|Visitation/.test(x.title));
+   // Titles are localised and the visible stop label is not guaranteed to
+   // contain the word "Mystery". Resolve identity from canonical bead steps.
+   const jump=await page.evaluate(stops=>{
+     const steps=globalThis.AO_ROSARY_V381.steps();
+     return stops.find(stop=>{
+       const step=steps[stop.start];
+       return step?.kind==="mystery"&&Number.isInteger(step.mi)&&step.mi>=0;
+     });
+   },options);
    assert.ok(jump,"No named Rosary mystery chapter");
    await chapterRail.locator('[data-ao-rosary-chapter="'+jump.start+'"]').click();
    await page.waitForFunction(target=>window.AO_ROSARY_V381?.state?.()?.step===target,jump.start,{timeout:9000});
@@ -344,6 +352,41 @@ try{
    await page.waitForFunction(()=>document.querySelectorAll(
       "#aoPrayerBookRoot.open .aoRosaryActiveCard .aoDevoParagraph[data-ao-devo-active='true']").length===1,
      null,{timeout:9000});
+   // Real Guided-bead Scripture links now open the same contextual Bible
+   // reader as the 20 mystery openings. The canonical bead index must survive
+   // passage/chapter/commentary navigation and exact-origin return.
+   const citedBead=await page.evaluate(start=>{
+     const steps=globalThis.AO_ROSARY_V381.steps();
+     return steps.findIndex((step,index)=>index>start&&
+       step.mi===steps[start].mi&&step.cue&&Number.isInteger(step.bead)&&step.bead>0);
+   },jump.start);
+   assert.ok(citedBead>jump.start,"A mystery has no source-owned Guided citation bead");
+   for(let n=jump.start;n<citedBead;n++){
+     await player.locator("[data-lab-rosary-next]").click();
+     await page.waitForFunction(index=>globalThis.AO_ROSARY_V381.state().step===index,
+       n+1,{timeout:9000});
+   }
+   const beadSource=player.locator(
+     ".aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source][data-ao-scripture-context]").first();
+   await beadSource.waitFor({state:"visible",timeout:9000});
+   const citedReference=await beadSource.getAttribute("data-ao-scripture-context");
+   assert.match(citedReference,/^[A-Za-z1-3 ]+\s+\d+:\d+/,
+     "The same original bead reference must be used in the shared Bible reader");
+   assert.match(await beadSource.getAttribute("href"),/^https:\/\//,
+     "Keep exact external Catholic source witness as fallback");
+   await beadSource.click();
+   const scripture=page.locator("#ao-scripture-overlay");
+   await scripture.waitFor({state:"visible",timeout:10000});
+   assert.equal(await scripture.locator("[data-scripture-context-depth='selected']").count(),1,
+     "Bead source opened an external page or another Scripture reader");
+   await scripture.locator("[data-scripture-context-depth='chapter']").click();
+   assert.ok(await scripture.locator(".aoScriptureVerse").count()>5,
+     "Biblical chapter must display original source-witness verses in-app");
+   await scripture.locator("[data-scripture-close]").click();
+   assert.equal(await page.evaluate(()=>globalThis.AO_ROSARY_V381.state().step),citedBead,
+     "Opening a Bible chapter advanced the original Rosary bead engine");
+   assert.equal(await player.locator(".aoRosaryGuidedBeadMeditation").count(),1,
+     "Scripture return discarded the existing source-owned meditation");
    assert.deepEqual(errors,[],"Uncaught reader errors: "+errors.slice(0,5).join("; "));
    console.log("PASS "+width+"px canonical Rosary: 44px controls, source, guide, no overflow/state mutation");
   }finally{await page.close();}
