@@ -384,7 +384,7 @@ for(const code of ["en","fr"]){
 // unrelated external Bellarmine/Catena commentary requests. The canonical
 // Scripture service's context-only mode preserves real source text and its
 // exact-signature persistent-cache policy.
-assert.match(runtime,/svc\\.load\\(kind,\\{en:ref,fr:ref,lat:ref\\},\\{contextOnly:true\\}\\)/,
+assert.ok(runtime.includes("svc.load(kind,{en:ref,fr:ref,lat:ref},{contextOnly:true})"),
  "Prayer Scripture reader must bypass nonessential commentary retrieval");
 assert.match(runtime,/data-p435930-lit-retry/);
 assert.match(runtime,/litanySourceDisclosure\(\)/);
