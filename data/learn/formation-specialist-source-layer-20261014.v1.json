@@ -1,0 +1,1592 @@
+{
+  "schema": "AO_FORMATION_SPECIALIST_PRIMARY_SOURCE_LAYER_V1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
+  "repo_base": "main",
+  "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
+  "source_count": 32,
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Dignitatis humanae",
+      "author": "Vatican II",
+      "year": "1965",
+      "role": "magisterial_original",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+      "scope": "religious freedom §§1–2,6",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S02",
+      "title": "Sacrosanctum Concilium",
+      "author": "Vatican II",
+      "year": "1963",
+      "role": "magisterial_original",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "scope": "liturgy §§14,21–23,36,54,116",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S03",
+      "title": "Lumen gentium",
+      "author": "Vatican II",
+      "year": "1964",
+      "role": "magisterial_original",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+      "scope": "Church §§8,18–25, 37",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S04",
+      "title": "Gaudium et spes",
+      "author": "Vatican II",
+      "year": "1965",
+      "role": "magisterial_original",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html",
+      "scope": "moral/social context §§16,22,47–52",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S05",
+      "title": "Unitatis redintegratio",
+      "author": "Vatican II",
+      "year": "1964",
+      "role": "magisterial_original",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+      "scope": "ecumenism §§1–4,11",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S06",
+      "title": "Nostra aetate",
+      "author": "Vatican II",
+      "year": "1965",
+      "role": "magisterial_original",
+      "url": "https://www.vatican.va/content/dam/wss/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+      "scope": "Judaism §4, non-Christian religions §§2–3",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S07",
+      "title": "Pascendi Dominici Gregis",
+      "author": "Pius X",
+      "year": "1907",
+      "role": "magisterial_preconciliar",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "scope": "historical Modernism doctrinal sections",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S08",
+      "title": "Quanta cura",
+      "author": "Pius IX",
+      "year": "1864",
+      "role": "magisterial_preconciliar",
+      "url": "https://www.vatican.va/content/pius-ix/en/documents/encyclica-quanta-cura-8-decembris-1864.html",
+      "scope": "Latin authentic text; civil/religious liberty passages require contextual collation",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S09",
+      "title": "Mortalium animos",
+      "author": "Pius XI",
+      "year": "1928",
+      "role": "magisterial_preconciliar",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280106_mortalium-animos.html",
+      "scope": "religious unity and ecumenism",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S10",
+      "title": "Ecclesia Dei adflicta",
+      "author": "John Paul II",
+      "year": "1988",
+      "role": "holy_see_act",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html",
+      "scope": "§§1–5 historical/canonical judgment after 1988 consecrations",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S11",
+      "title": "Summorum Pontificum",
+      "author": "Benedict XVI",
+      "year": "2007",
+      "role": "holy_see_law_historical",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html",
+      "scope": "2007 text; historical comparison, not presumed current law",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S12",
+      "title": "Letter accompanying Summorum Pontificum",
+      "author": "Benedict XVI",
+      "year": "2007",
+      "role": "holy_see_explanatory",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html",
+      "scope": "unabrogated rite / liturgical continuity arguments",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S13",
+      "title": "Traditionis custodes",
+      "author": "Francis",
+      "year": "2021",
+      "role": "holy_see_law_historical",
+      "url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html",
+      "scope": "arts.1–8; current applicability must be checked against later acts",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S14",
+      "title": "Declaration of 21 November 1974",
+      "author": "Marcel Lefebvre",
+      "year": "1974",
+      "role": "sspx_original_proponent",
+      "url": "https://fsspx.org/fr/la-declaration-du-21-novembre-1974-31164",
+      "scope": "full French original statement; SSPX own representation",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S15",
+      "title": "The state of necessity",
+      "author": "SSPX District USA / published polemic",
+      "year": "undated",
+      "role": "sspx_proponent_analysis",
+      "url": "https://sspx.org/en/state-necessity-30464",
+      "scope": "religious freedom and necessity argument",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S16",
+      "title": "A study of the 1988 episcopal consecrations",
+      "author": "SSPX District USA / SiSiNoNo",
+      "year": "1999",
+      "role": "sspx_proponent_analysis",
+      "url": "https://sspx.org/en/study-1988-episcopal-consecrations-30461",
+      "scope": "necessity/canon law pro-SSPX argument",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S17",
+      "title": "Perpetual Successors in the Primacy",
+      "author": "CMRI / sedevacantist author",
+      "year": "undated",
+      "role": "sedevacantist_original_proponent",
+      "url": "https://cmri.org/articles-on-the-traditional-catholic-faith/perpetual-successors-in-the-primacy/",
+      "scope": "vacancy and perpetual successors argument",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S18",
+      "title": "The Chair Is Still Empty",
+      "author": "Novus Ordo Watch",
+      "year": "undated",
+      "role": "sedevacantist_original_proponent",
+      "url": "https://novusordowatch.org/the-chair-is-still-empty/",
+      "scope": "public heresy and authority argument; party original",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S19",
+      "title": "Casti connubii",
+      "author": "Pius XI",
+      "year": "1930",
+      "role": "magisterial_moral_original",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "scope": "marriage, procreation, contraception; specific paragraph pinpoint pending",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S20",
+      "title": "Humanae vitae",
+      "author": "Paul VI",
+      "year": "1968",
+      "role": "magisterial_moral_original",
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "scope": "§§10–17, especially 14 and 16; contraception, periodic abstinence",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S21",
+      "title": "Veritatis splendor",
+      "author": "John Paul II",
+      "year": "1993",
+      "role": "magisterial_moral_original",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "scope": "§§54–64 conscience; 71–83, especially 78–81 intrinsic evil",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S22",
+      "title": "Familiaris consortio",
+      "author": "John Paul II",
+      "year": "1981",
+      "role": "magisterial_pastoral_original",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_19811122_familiaris-consortio.html",
+      "scope": "marriage and responsible parenthood; paragraph-level collation pending",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S23",
+      "title": "Dignitas personae",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "2008",
+      "role": "magisterial_bioethics_original",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "scope": "§§12–23 IVF, fertilization, frozen embryos, selection",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S24",
+      "title": "Dignitas infinita",
+      "author": "Dicastery for the Doctrine of the Faith",
+      "year": "2024",
+      "role": "magisterial_dignity_original",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html",
+      "scope": "§§55–61 gender theory, sex change and digital violence; distinct from empirical science",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S25",
+      "title": "Persona humana",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "1975",
+      "role": "magisterial_sexual_ethics_original",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html",
+      "scope": "sections V–X sexual morality, culpability",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S26",
+      "title": "Considerations on legal recognition of homosexual unions",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "2003",
+      "role": "magisterial_social_original",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20030731_homosexual-unions_en.html",
+      "scope": "§§2–11 marriage, morality and civil law",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S27",
+      "title": "A manual of moral theology for English-speaking countries, Vol I",
+      "author": "Thomas Slater SJ",
+      "year": "1925",
+      "role": "historical_moral_manual",
+      "url": "https://en.wikisource.org/wiki/A_manual_of_moral_theology_for_English-speaking_countries/Book_1",
+      "scope": "Book I chapters I–IV: free action, voluntariness, obstacles, moral object",
+      "access": "direct_chapter_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S28",
+      "title": "The Way of the Lord Jesus, Vol I: Christian Moral Principles",
+      "author": "Germain Grisez",
+      "year": "1983",
+      "role": "modern_moral_theology_book",
+      "url": "https://twotlj.org/G-1-V-1.html",
+      "scope": "whole volume index found; direct site timed out; cannot cite passage yet",
+      "access": "search_index_only_open_failed",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S29",
+      "title": "Natural Law",
+      "author": "James Fox in Catholic Encyclopedia",
+      "year": "1910",
+      "role": "historical_catholic_secondary",
+      "url": "https://www.newadvent.org/cathen/09076a.htm",
+      "scope": "definitions and Thomistic framework",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S30",
+      "title": "Moral Theology",
+      "author": "Augustinus Lehmkuhl in Catholic Encyclopedia",
+      "year": "1912",
+      "role": "historical_catholic_secondary",
+      "url": "https://www.newadvent.org/cathen/14601a.htm",
+      "scope": "history of moral theology and scope",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S31",
+      "title": "The state of necessity (2)",
+      "author": "SSPX District USA",
+      "year": "undated",
+      "role": "sspx_proponent_counter_rebuttal",
+      "url": "https://sspx.org/en/state-necessity-2-30465",
+      "scope": "SSPX responds to continuity defence of Dignitatis humanae",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    },
+    {
+      "id": "S32",
+      "title": "When the Shepherd Is Struck: the papacy and sedevacantist disunity",
+      "author": "Novus Ordo Watch",
+      "year": "2017",
+      "role": "sedevacantist_proponent_counter_rebuttal",
+      "url": "https://novusordowatch.org/2017/03/when-the-shepherd-is-struck/",
+      "scope": "proponent response to visibility/disunity objection",
+      "access": "direct_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Exact context must be checked for every Q&A use. Role=proponent records an argument, not doctrinal validation; role=magisterial establishes authorial text, not every downstream inference."
+    }
+  ],
+  "priority_questions": [
+    {
+      "id": "CR-DOC-01",
+      "source_ids": [
+        "S07",
+        "S29"
+      ],
+      "source_roles": [
+        "magisterial_preconciliar",
+        "historical_catholic_secondary"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-02",
+      "source_ids": [
+        "S03",
+        "S07"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_preconciliar"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-03",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S14"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_original",
+        "sspx_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-04",
+      "source_ids": [
+        "S01",
+        "S08",
+        "S15",
+        "S31"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_preconciliar",
+        "sspx_proponent_analysis",
+        "sspx_proponent_counter_rebuttal"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-05",
+      "source_ids": [
+        "S01",
+        "S08"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_preconciliar"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-06",
+      "source_ids": [
+        "S03",
+        "S05",
+        "S09",
+        "S14"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_original",
+        "magisterial_preconciliar",
+        "sspx_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-07",
+      "source_ids": [
+        "S03",
+        "S05"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-08",
+      "source_ids": [
+        "S06",
+        "S14"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "sspx_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-09",
+      "source_ids": [
+        "S03",
+        "S07"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_preconciliar"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-DOC-10",
+      "source_ids": [
+        "S01",
+        "S07",
+        "S14",
+        "S31"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_preconciliar",
+        "sspx_original_proponent",
+        "sspx_proponent_counter_rebuttal"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-01",
+      "source_ids": [
+        "S03",
+        "S17"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "sedevacantist_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-02",
+      "source_ids": [
+        "S03",
+        "S17"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "sedevacantist_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-03",
+      "source_ids": [
+        "S02",
+        "S10",
+        "S14"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "holy_see_act",
+        "sspx_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-04",
+      "source_ids": [
+        "S03",
+        "S18"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "sedevacantist_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-05",
+      "source_ids": [
+        "S10",
+        "S14",
+        "S16"
+      ],
+      "source_roles": [
+        "holy_see_act",
+        "sspx_original_proponent",
+        "sspx_proponent_analysis"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-06",
+      "source_ids": [
+        "S16",
+        "S15",
+        "S10"
+      ],
+      "source_roles": [
+        "sspx_proponent_analysis",
+        "sspx_proponent_analysis",
+        "holy_see_act"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-07",
+      "source_ids": [
+        "S10",
+        "S16"
+      ],
+      "source_roles": [
+        "holy_see_act",
+        "sspx_proponent_analysis"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-08",
+      "source_ids": [
+        "S17",
+        "S18",
+        "S32",
+        "S03"
+      ],
+      "source_roles": [
+        "sedevacantist_original_proponent",
+        "sedevacantist_original_proponent",
+        "sedevacantist_proponent_counter_rebuttal",
+        "magisterial_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-09",
+      "source_ids": [
+        "S17",
+        "S18"
+      ],
+      "source_roles": [
+        "sedevacantist_original_proponent",
+        "sedevacantist_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-ECC-10",
+      "source_ids": [
+        "S10",
+        "S14"
+      ],
+      "source_roles": [
+        "holy_see_act",
+        "sspx_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-AUT-01",
+      "source_ids": [
+        "S03",
+        "S10",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "holy_see_act",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-AUT-02",
+      "source_ids": [
+        "S10",
+        "S14",
+        "S27"
+      ],
+      "source_roles": [
+        "holy_see_act",
+        "sspx_original_proponent",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-AUT-03",
+      "source_ids": [
+        "S03",
+        "S14"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "sspx_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-AUT-04",
+      "source_ids": [
+        "S03",
+        "S07"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_preconciliar"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CR-AUT-05",
+      "source_ids": [
+        "S03",
+        "S07",
+        "S18"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_preconciliar",
+        "sedevacantist_original_proponent"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_canonical_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE004",
+      "source_ids": [
+        "S27",
+        "S29",
+        "S21"
+      ],
+      "source_roles": [
+        "historical_moral_manual",
+        "historical_catholic_secondary",
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE005",
+      "source_ids": [
+        "S27",
+        "S29"
+      ],
+      "source_roles": [
+        "historical_moral_manual",
+        "historical_catholic_secondary"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE006",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE007",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE008",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE009",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE010",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE016",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE017",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE019",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE020",
+      "source_ids": [
+        "S27",
+        "S25"
+      ],
+      "source_roles": [
+        "historical_moral_manual",
+        "magisterial_sexual_ethics_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE031",
+      "source_ids": [
+        "S25",
+        "S19"
+      ],
+      "source_roles": [
+        "magisterial_sexual_ethics_original",
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE041",
+      "source_ids": [
+        "S19",
+        "S22"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_pastoral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE045",
+      "source_ids": [
+        "S19",
+        "S22",
+        "S04"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_pastoral_original",
+        "magisterial_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE049",
+      "source_ids": [
+        "S19",
+        "S22"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_pastoral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE050",
+      "source_ids": [
+        "S19",
+        "S22"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_pastoral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE051",
+      "source_ids": [
+        "S19",
+        "S21"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE054",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE061",
+      "source_ids": [
+        "S19",
+        "S20"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE063",
+      "source_ids": [
+        "S20"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE065",
+      "source_ids": [
+        "S20",
+        "S22"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_pastoral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE068",
+      "source_ids": [
+        "S20"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE081",
+      "source_ids": [
+        "S25",
+        "S24"
+      ],
+      "source_roles": [
+        "magisterial_sexual_ethics_original",
+        "magisterial_dignity_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE084",
+      "source_ids": [
+        "S26",
+        "S19"
+      ],
+      "source_roles": [
+        "magisterial_social_original",
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE086",
+      "source_ids": [
+        "S24",
+        "S25"
+      ],
+      "source_roles": [
+        "magisterial_dignity_original",
+        "magisterial_sexual_ethics_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE091",
+      "source_ids": [
+        "S24"
+      ],
+      "source_roles": [
+        "magisterial_dignity_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE096",
+      "source_ids": [
+        "S24"
+      ],
+      "source_roles": [
+        "magisterial_dignity_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE097",
+      "source_ids": [
+        "S24"
+      ],
+      "source_roles": [
+        "magisterial_dignity_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE101",
+      "source_ids": [
+        "S23"
+      ],
+      "source_roles": [
+        "magisterial_bioethics_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE105",
+      "source_ids": [
+        "S23"
+      ],
+      "source_roles": [
+        "magisterial_bioethics_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE109",
+      "source_ids": [
+        "S23"
+      ],
+      "source_roles": [
+        "magisterial_bioethics_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE110",
+      "source_ids": [
+        "S23"
+      ],
+      "source_roles": [
+        "magisterial_bioethics_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE111",
+      "source_ids": [
+        "S21",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE112",
+      "source_ids": [
+        "S27"
+      ],
+      "source_roles": [
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE113",
+      "source_ids": [
+        "S27"
+      ],
+      "source_roles": [
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE117",
+      "source_ids": [
+        "S27"
+      ],
+      "source_roles": [
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE120",
+      "source_ids": [
+        "S27"
+      ],
+      "source_roles": [
+        "historical_moral_manual"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE123",
+      "source_ids": [
+        "S20",
+        "S21"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE125",
+      "source_ids": [
+        "S21"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "high_stakes_medical_psychological_legal",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE149",
+      "source_ids": [
+        "S21",
+        "S23",
+        "S24"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_bioethics_original",
+        "magisterial_dignity_original"
+      ],
+      "locator_level": "document_or_subject_section_candidate_not_answer_verified",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_moral_and_opponent_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    }
+  ],
+  "counts": {
+    "sources": 32,
+    "mapped_questions": 65,
+    "church_crisis": 25,
+    "sexual_ethics": 40,
+    "answer_audited": 0,
+    "answer_certified": 0
+  },
+  "rules": [
+    "Do not equate a source URL with chapter/paragraph accuracy",
+    "All source links are research-only; active provenance pipeline and canonical source registry unchanged",
+    "Older sources are historical, not sufficient to establish 2026 disciplinary, scientific or empirical facts",
+    "Sedevacantist and SSPX sources prove their original proponent positions, not the assertions within them",
+    "Sources sharing the same ecclesial authorship or intellectual tradition are not automatically independent evidentiary corroborations",
+    "For medical, safeguarding, and sex-development matters obtain qualified original empirical and clinical evidence, distinguish descriptive science from Church moral positions, and flag outdated assertions",
+    "Full paragraph-by-paragraph audit and English/French editorial parity required prior to any answer edit",
+    "Do not change live Q&A or add dossiers; this PR is research discovery only"
+  ]
+}
