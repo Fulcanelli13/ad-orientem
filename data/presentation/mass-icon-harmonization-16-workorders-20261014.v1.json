@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-icon-harmonization-16-repair-workorders-v1",
   "date": "2026-10-14",
-  "phase": "PHASE_B_MINIMAL_REPAIR_SPECIFIED_NO_ARTWORK_GENERATED",
+  "phase": "PHASE_B_MASTER_DERIVATIVE_ONLY_REJECTED_GEOMETRIC_PROTOTYPES",
   "links": {
     "semanticLedger": "data/presentation/mass-icon-harmonization-source-resolutions-20261014.v1.json",
     "userReviewSHA256": "edbde2bf608646cd258351274b6e545d42d88952b393c40c66492800684bc4a0"
@@ -31,7 +31,14 @@
       "5": "CONFIRMED_AND_SELECTED",
       "0-2": "REJECT_ORIGINAL"
     },
-    "generatedDetailedDraftPolicy": "POSE_REFERENCE_ONLY_NOT_FAMILY_STANDARD"
+    "generatedDetailedDraftPolicy": "POSE_REFERENCE_ONLY_NOT_FAMILY_STANDARD",
+    "styleCorrection": "The approved family sits between hyper-detailed engraving and generic circle-head/trapezoid pictograms. All non-gesture visual parts must match the actual selected reference, including characteristic small structural detail.",
+    "designMethod": "SOURCE_EDIT_PRESERVE_DONOR_NOT_REINVENT_GENERIC_ART",
+    "prototypesRejected": [
+      "S_priest_incense_altar_min_v1.svg",
+      "B16_profound_bow_min_v1.svg",
+      "B13_receives_host_min_v1.svg"
+    ]
   },
   "counts": {
     "items": 16,
@@ -59,13 +66,16 @@
         "repairMode": "MINIMAL_REBUILD",
         "surface": "RAIL_GESTURE_PLUS_OPTIONAL_GUIDE_SCENE",
         "gestureMustSurvive": "Bare hands close together, palms down directly over the offerings; sleeves 1 broad shape each.",
-        "detailsToRemove": "Remove patterned chasuble, finger engraving, altar relief and surrounding decoration.",
+        "detailsToRemove": "Do not invent additional details beyond the approved reference; retain its original structural ornaments, finger engraving, altar relief and surrounding decoration.",
         "ceremonialGate": "Canon C0161; verify close hand spacing and downward palms before assessing style.",
         "face": "NO_PORTRAIT_FEATURES",
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -93,7 +103,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -121,7 +134,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -149,7 +165,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -176,7 +195,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -204,7 +226,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -226,13 +251,16 @@
         "repairMode": "SIMPLIFY_EXISTING_POSE",
         "surface": "RAIL_PROFOUND_BOW",
         "gestureMustSurvive": "Preserve the 4/5 deep torso inclination geometry, simplify priest into one clean garment shape and featureless head.",
-        "detailsToRemove": "Remove altar lace/embroidery, engraved vestments and extra detail; ensure no lip-to-altar kiss.",
+        "detailsToRemove": "Do not invent additional details beyond the approved reference; retain its original structural ornaments, engraved vestments and extra detail; ensure no lip-to-altar kiss.",
         "ceremonialGate": "Confiteor and Canon contexts have different hand placement; show the correct one or use rubric.",
         "face": "NO_PORTRAIT_FEATURES",
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "AWAIT_USER_REVIEW"
+        "ratingDisposition": "AWAIT_USER_REVIEW",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -260,7 +288,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -288,7 +319,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -310,13 +344,16 @@
         "repairMode": "REDRAW_MINIMAL_ALTAR_OVERLAY",
         "surface": "RAIL_THURIBLE_GUIDE_MINIMAL_ALTAR",
         "gestureMustSurvive": "Reconstruct same simplified altar outline as centre composition; one priest and one clear thurible motion.",
-        "detailsToRemove": "Delete ornate pillars, textile ornaments, hair strands, chasuble brocade, thick smoke clouds.",
+        "detailsToRemove": "Do not invent additional details beyond the approved reference; retain its original structural ornaments, textile ornaments, hair strands, chasuble brocade, thick smoke clouds.",
         "ceremonialGate": "Incenses altar, not incense blessing or people.",
         "face": "NO_PORTRAIT_FEATURES",
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -345,7 +382,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -373,7 +413,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -401,7 +444,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -429,7 +475,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -458,7 +507,10 @@
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     },
     {
@@ -479,13 +531,16 @@
         "repairMode": "TECHNICAL_ONLY_THEN_REVIEW",
         "surface": "RAIL_HOST_COMMUNION",
         "gestureMustSurvive": "Keep better single-pose crop only if Host actually contacts priest's mouth; may use text if action illegible.",
-        "detailsToRemove": "No detail enhancement, no new altar, no enlarged facial features.",
+        "detailsToRemove": "Do not invent additional details beyond the approved reference; retain its original structural ornaments, no new altar, no enlarged facial features.",
         "ceremonialGate": "Host reception, not Host elevation.",
         "face": "NO_PORTRAIT_FEATURES",
         "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
         "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
         "productionIconStatus": "NOT_APPROVED",
-        "ratingDisposition": "RESEARCH_REQUIRED"
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
       }
     }
   ],
