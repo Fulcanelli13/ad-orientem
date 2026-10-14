@@ -9,11 +9,13 @@ body.aoP435930Open > .aoDevotionalActionCinematic{
   min-height:100dvh;overflow:auto;overscroll-behavior:contain;isolation:isolate;
   background:radial-gradient(ellipse 74% 54% at 50% 42%,#17202b 0%,#0a1018 54%,#080c12 100%);
   color:#f0e9db;padding:max(30px,env(safe-area-inset-top)) 18px max(24px,env(safe-area-inset-bottom));
-  animation:aoDevotionalActionEnter .66s ease-out both
+  /* Opaque from frame one. Fading the overlay itself reveals shell controls
+     underneath during the transition, defeating full-screen solemn focus. */
 }
 body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionInner{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:clamp(12px,2.1dvh,22px);width:min(100%,510px);max-width:100%;text-align:center
+  gap:clamp(12px,2.1dvh,22px);width:min(100%,510px);max-width:100%;text-align:center;
+  animation:aoDevotionalActionEnter .66s ease-out both
 }
 body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionKicker{
   font:600 10px/1.4 system-ui,sans-serif;letter-spacing:.20em;
@@ -50,7 +52,7 @@ body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionContinue:fo
  to{opacity:1;transform:none}
 }
 @media(prefers-reduced-motion:reduce){
- body.aoP435930Open > .aoDevotionalActionCinematic,
+ body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionInner,
  body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionIcon{animation:none!important;transition:none!important}
 }
 `;
