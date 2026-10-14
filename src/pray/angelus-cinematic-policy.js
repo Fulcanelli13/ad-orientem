@@ -6,14 +6,17 @@
  */
 export const ANGELUS_CINEMATIC_VERSION="angelus-devotional-cinematics-v2";
 
-// Curatorial identities come exclusively from the user's completed 13 Oct 2026
-// Sacred Art rating export: rating 4/5, kept for further visual review only. These are
-// ANNUNCIATION paintings (the Angelus' central subject), not falsely labelled
-// as Visitation. The one rated Visitation candidate scored 2 and is not in
-// this provisional review shortlist. A rating of 4 is NOT final approval.
-// Artwork identities do not certify
-// any remote image reproduction as an approved local derivative.
+// The later 13 Oct 2026 user ranking export supersedes the older partial
+// ratings snapshot: Philippe de Champaigne's Annunciation is ranked first,
+// scored 5/5 and previously selected. Five additional theme-suitable works
+// scored 4/5. User ratings and rank are AESTHETIC choices, not final image
+// rights or production approval (the export explicitly says so).
+// Never infer publication approval from a score, including 5/5.
 export const ANGELUS_REVIEWED_OPENING_ART=Object.freeze([
+ Object.freeze({id:"met-438724",title:"The Annunciation",artist:"Philippe de Champaigne",
+  rating:5,rank:1,selectedInPriorReview:true,subject:"ANNUNCIATION",
+  sourceUrl:"https://www.metmuseum.org/art/collection/search/438724",
+  objectId:438724,provider:"met",finalApproval:"PENDING",reproductionApproval:"PENDING"}),
  Object.freeze({id:"nga-46",title:"The Annunciation",artist:"Jan van Eyck",
   rating:4,subject:"ANNUNCIATION",sourceUrl:"https://www.nga.gov/artworks/46-annunciation",
   imageUrl:"https://api.nga.gov/iiif/46633bd6-4834-40fb-8ce0-fb975c731dc1/full/!1200,1200/0/default.jpg",
@@ -36,7 +39,8 @@ export function selectAngelusOpeningArtwork({
   pool=ANGELUS_REVIEWED_OPENING_ART,lastId=null,random=Math.random,
 }={}){
   const eligible=(Array.isArray(pool)?pool:[]).filter(a=>
-    (a?.rating>=5 || a?.finalApproval==="APPROVED") && a.subject==="ANNUNCIATION" && a.sourceUrl &&
+    a?.finalApproval==="APPROVED" && a?.reproductionApproval==="APPROVED" &&
+    a.subject==="ANNUNCIATION" && a.sourceUrl &&
     (a.imageUrl||Number.isInteger(a.objectId))
   );
   if(!eligible.length)return null;
