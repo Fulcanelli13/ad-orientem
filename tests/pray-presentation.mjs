@@ -6,12 +6,17 @@ import {angelusCardPlan,DEVOTIONAL_CARD_SCHEMA} from "../src/pray/devotional-car
 import {mercyChapters,SEQUENTIAL_DEVOTIONAL_SCHEMA} from "../src/pray/devotional-sequence-adapter.js";
 import {divineMercySteps} from "../src/pray/devotional-methods-v1.js";
 import {devotionalInterludePlan,DEVOTIONAL_CINEMATIC_VERSION} from "../src/pray/devotional-cinematic.js";
-assert.equal(DEVOTIONAL_CINEMATIC_VERSION,"devotional-card-interstitial-v1");
-const paintedShot=devotionalInterludePlan({form:"angelus",card:{id:"incarnation",title:"L’Incarnation",latin:"Et Verbum"}});
-assert.equal(paintedShot.image,"assets/pray/angelus/tanner-annunciation-1898.webp");
-assert.equal(paintedShot.shot.effect,"light");
-assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}).image,null);
-assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"faithful-departed",title:"Pour les fidèles défunts"}}).image,null);
+assert.equal(DEVOTIONAL_CINEMATIC_VERSION,"devotional-card-interstitial-v2");
+const opening=devotionalInterludePlan({form:"angelus",
+ card:{id:"announcement",title:"The Annunciation",latin:"Angelus Domini"}});
+assert.equal(opening.id,"announcement");
+assert.equal(opening.image,null,"Pending Tanner derivative cannot bypass artwork approval");
+assert.equal(opening.shot,null,"No repeatable chapter-by-chapter image pan");
+for(const id of ["fiat","incarnation","intercession","faithful-departed"]){
+ assert.equal(devotionalInterludePlan({form:"angelus",card:{id,title:"Other"}}),null,
+  "Only one opening tableau may exist per Angelus session");
+}
+assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}),null);
 assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"missing",title:""}}),null);
 assert.equal(DEVOTIONAL_CARD_SCHEMA,"dual-axis-devotional-cards-v1");
 assert.equal(SEQUENTIAL_DEVOTIONAL_SCHEMA,"dual-axis-sequential-devotional-v1");
