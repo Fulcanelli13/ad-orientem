@@ -109,6 +109,37 @@ try{
  await page.locator("#aoPray435930 [data-p435930-station-step='0']").evaluate(x=>x.click());
  await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-1']");
  await page.emulateMedia({reducedMotion:"no-preference"});
+ // Source-certified traditional public Stations is optional, not a global
+ // instruction for private users. Its cue is owned by the focused versicle.
+ await page.locator("#aoPray435930 details[data-ao-stations-options] > summary").evaluate(x=>x.click());
+ await page.locator("#aoPray435930 [data-p435930-station-public-posture]").evaluate(x=>{
+   x.checked=true;x.dispatchEvent(new Event("change",{bubbles:true}));
+ });
+ await page.waitForSelector("#aoPray435930 [data-p435930-station-public-posture]:checked");
+ const focusStationPhase=async(selector)=>{
+   await page.locator("#aoPray435930 .aoP435930Stations .aoDevoCardScroll").evaluate((body,selector)=>{
+     const el=body.querySelector(selector);
+     if(!el)throw Error("Station source paragraph missing: "+selector);
+     const bounds=body.getBoundingClientRect(),target=el.getBoundingClientRect();
+     const max=Math.max(0,body.scrollHeight-body.clientHeight);
+     body.scrollTop=Math.min(max,Math.max(0,body.scrollTop+target.top-bounds.top-body.clientHeight*.4));
+     body.dispatchEvent(new Event("scroll",{bubbles:true}));
+   },selector);
+ };
+ await focusStationPhase(".aoP435930VRLine.leader");
+ const stationCinema=page.locator("#aoPray435930 .aoDevotionalActionCinematic");
+ await stationCinema.waitFor({state:"visible",timeout:6000});
+ assert.equal(await stationCinema.getAttribute("data-ao-action-scene"),"STATIONS.0.GENUFLECT");
+ await page.screenshot({path:resolve(captures,"02b-stations-public-genuflect-390.png"),animations:"disabled"});
+ await stationCinema.locator(".aoDevotionalActionContinue").click();
+ await focusStationPhase(".aoP435930StationConsider p");
+ await stationCinema.waitFor({state:"visible",timeout:6000});
+ assert.equal(await stationCinema.getAttribute("data-ao-action-scene"),"STATIONS.0.STAND");
+ await stationCinema.locator(".aoDevotionalActionContinue").click();
+ await focusStationPhase(".aoP435930StationPrayer .aoP435930Flip");
+ await stationCinema.waitFor({state:"visible",timeout:6000});
+ assert.equal(await stationCinema.getAttribute("data-ao-action-scene"),"STATIONS.0.KNEEL");
+ await stationCinema.locator(".aoDevotionalActionContinue").click();
 
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{state:"attached",timeout:12000});
