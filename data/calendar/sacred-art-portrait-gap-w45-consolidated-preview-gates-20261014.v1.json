@@ -29,8 +29,8 @@
   "objectiveGates": [
     "A Commons category file is not a physical oil painting and cannot count until medium + subject depiction are established.",
     "Separate photo variants of the same museum accession must be one original record. Even exact different URLs can be same original; this pass only removes exact URL duplicates.",
-    "No portrait candidate is declared reviewable based solely on metadata gate; physically view reproduction and detect repeats against full 277 human scores first.",
-    "Reuse source identifiers and preserve W36 choice IDs. If gallery is issued later, send standalone HTML directly in chat, not only GitHub link.",
+    "Check all historic 277-rating sources for earlier candidates, scoring, and physical-original duplicates. Distinguish RE-DISPLAY to support comparison from re-importing photos as NEW distinct paintings. Do not suppress old selections merely because they were rated.",
+    "Reuse original source/candidate identifiers and preserve all human scores. For any portrait subject without a confirmed prior 4+/5, the next HTML MUST re-display all previously presented options for that subject (including <=3 and unscored), clearly marked with original ratings/status, together with genuinely new paintings; do not count repeats as new originals. Deliver the consolidated HTML in chat.",
     "Never combine Philip Apostle with Philip Neri, Martin of Tours with a donor Martin, or Saint Vincent de Paul with unrelated named saints.",
     "Current 13 reviewed gaps remain open until new 4+/5 user rating, irrespective of count of possible alternatives."
   ],
@@ -1499,5 +1499,21 @@
       "isRatedByHuman": false,
       "cleanMasterAcquired": false
     }
-  ]
+  ],
+  "reviewerGalleryPolicy": {
+    "coverageThreshold": 4,
+    "unresolvedSubjectGallery": "ALL_PREVIOUS_CANDIDATES_PLUS_NEW_CANDIDATES",
+    "reusePreviousRatings": true,
+    "previousScoreTreatment": {
+      "3": "previously provisional, shown again with prior score",
+      "0-2": "previously discarded/low-rated, re-shown only as context and re-rateable, never relabeled accepted",
+      "4-5": "already qualifies if an actual subject portrait; normally no urgent gap review required",
+      "unrated": "previously proposed and pending, shown again"
+    },
+    "dedupPhysicalOriginal": true,
+    "noScoreReset": true,
+    "userConfirmOverridesOnly": true,
+    "showPriorCandidatesEvenIfNoNewResearch": true,
+    "doNotAutoPromoteContextualScenesToPortrait": true
+  }
 }
