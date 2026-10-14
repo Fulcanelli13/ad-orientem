@@ -76,6 +76,9 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   assert.equal(packet.status,"COMPLETE_SOURCE_REFERENCED_EDITORIAL_PACKET_NOT_PUBLISHED");
   assert.equal(packet.reviewedCueCount,42);
   assert.equal(packet.publicationReady,0);
+  assert.equal(packet.sourceExactWordPlacements,39);
+  assert.equal(packet.sourceOffsetSignoffReady,false);
+  assert.deepEqual(packet.sourceOffsetReviewHolds,["AO.CANON.R62.044"]);
   assert.equal(packet.canPublish,false);
   assert.equal(packet.rows.filter(r=>r.anchorStatus==="WORD_MATCH_EXACT").length,39);
   assert.equal(packet.rows.filter(r=>r.anchorStatus==="NON_TEXT_SOURCE_EVENT").length,2);
