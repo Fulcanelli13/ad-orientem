@@ -1,6 +1,7 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear } from "./liturgical-year.js";
+import { clockCandidates, orderedClockCandidateDates, renderLiturgicalClock, liturgicalClockCss } from "./liturgical-clock.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
@@ -34,7 +35,7 @@ const addDays=(id,n)=>{const d=dateOf(id);d.setDate(d.getDate()+Number(n||0));re
 
 const weekCache=new Map(),dayLoads=new Map(),weekLoads=new Map(),weekStatus=new Map(),monthLoads=new Map(),monthStatus=new Map(),nextMajorResults=new Map(),nextMajorRequests=new Map();
 let foregroundWeek="",navEpoch=0,monthEpoch=0;
-let yearColourLoad=null;
+let yearColourLoad=null, clockYearAnchor=null, clockPreviewDate=null, clockSelection=null;
 const CALENDAR_VIEWS=new Set(["day","year","picker"]);
 const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","practices"]);
 let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null,focusedYearPeriodId=null;
@@ -100,12 +101,12 @@ function rankTier(r,id){
   if(!r||r.status==="failed"||!r.day)return 0;
   const rank=rankOf(r).trim().toLowerCase();
   // Original sources and donor adapters also report bare class numbers/ordinals.
-  const bare=rank.replace(/^classis\s+|^class\s+|\s+classis$|\s+class$|\s+classe$/g,"").trim();
+  const bare=rank.replace(/^(?:classis|class|classe)\s+|\s+(?:classis|class|classe)$/g,"").trim();
   const numeral={i:1,ii:2,iii:3,iv:4};
   if(Object.hasOwn(numeral,bare))return numeral[bare];
   if(/^[1-4]$/.test(bare))return Number(bare);
-  if(/\b(?:i|1st|first|1)\s*(?:class|classe)\b/.test(rank))return 1;
-  if(/\b(?:ii|2nd|second|2)\s*(?:class|classe)\b/.test(rank))return 2;
+  if(/\b(?:i|1st|first|1re|1ère|première|1)\s*(?:class|classe|classis)\b/.test(rank))return 1;
+  if(/\b(?:ii|2nd|second|2e|2ème|deuxième|2)\s*(?:class|classe|classis)\b/.test(rank))return 2;
   if(/\b(?:iii|3rd|third|3)\s*(?:class|classe)\b/.test(rank))return 3;
   if(/\b(?:iv|4th|fourth|4)\s*(?:class|classe)\b/.test(rank))return 4;
   return 0;
@@ -113,7 +114,7 @@ function rankTier(r,id){
 function monthCellData(id){
   const raw=weekCache.get(id),r=raw?.status!=="failed"&&raw?.day?raw:null,sunday=dateOf(id).getDay()===0,tier=rankTier(r,id);
   const name=r&&(tier>0&&tier<=2||sunday)?titleOf(r):"";
-  const accent=r?liturgicalAccent(r):"#59626c";
+  const accent=r?liturgicalAccent(r):"var(--muted)"; // Unresolved dates have no invented liturgical colour.
   const rank=r?rankOf(r):"",colour=r?colourOf(r):"";
   const aria=[displayDate(id),name,r?null:L("Awaiting daily resolution","En attente de résolution du jour"),rank,colour].filter(Boolean).join(" · ");
   return {r,sunday,tier,name,projected:false,accent,rank,colour,aria,ready:!!r};
@@ -183,14 +184,15 @@ function monthIndexEntries(monthId,view){
   return entries;
 }
 function monthIndexTabs(){
-  const tabs=[
-    ["calendar",L("Calendar","Calendrier")],
-    ["major",L("Major","Jours majeurs")],
+  const options=[
+    ["calendar",L("All observances","Toutes les célébrations")],
+    ["major",L("Major days","Jours majeurs")],
     ["temporale",L("Temporale","Temporal")],
     ["sanctorale",L("Sanctorale","Sanctoral")],
     ["practices",L("Practices","Pratiques")],
   ];
-  return `<nav class="aoCalMonthTabs" aria-label="${esc(L("Month views","Vues du mois"))}">${tabs.map(([id,label])=>`<button type="button" data-cal-month-view="${id}" class="${calendarMonthView===id?"active":""}" ${calendarMonthView===id?'aria-current="page"':""}>${esc(label)}</button>`).join("")}</nav>`;
+  // One Month surface with a filter, not five parallel Calendar views.
+  return `<label class="aoCalMonthFilter">${esc(L("Show","Afficher"))}<select data-cal-month-filter aria-label="${esc(L("Filter month observances","Filtrer les célébrations du mois"))}">${options.map(([id,label])=>`<option value="${id}" ${calendarMonthView===id?"selected":""}>${esc(label)}</option>`).join("")}</select></label>`;
 }
 // Month-index categories depend on actual resolved days; practices come from
 // their own registry and must not be blocked by an unrelated day-resolution job.
@@ -205,16 +207,8 @@ function monthIndexList(monthId,selected,view){
   const rows=monthIndexEntries(monthId,view);
   const unknownRows=(view==="temporale"||view==="sanctorale")?monthDateIds(monthId).map(monthEntry).filter(x=>x?.cycle==="unknown"):[];
   const status=monthIndexResolutionState(monthId,view);
-  const label=view==="major"?L("Major days","Jours majeurs"):view==="temporale"?L("Temporale","Temporal"):view==="sanctorale"?L("Sanctorale","Sanctoral"):L("Practices","Pratiques");
-  const explanation=view==="major"
-    ?L("Sundays, I–II class observances and other principal days in this month.","Dimanches, célébrations de I–II classe et autres jours principaux de ce mois.")
-    :view==="temporale"
-      ?L("Observed days belonging to the temporal cycle and movable season.","Jours observés appartenant au cycle temporal et aux temps mobiles.")
-      :view==="sanctorale"
-        ?L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.")
-        :L("Traditional devotions and novena starts for dates in this month.","Dévotions traditionnelles et débuts de neuvaines aux dates de ce mois.");
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
-    <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
+
     ${rows.length&&status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
     ${unknownRows.length?`<div class="aoCalMonthCoverage" data-cal-unclassified role="status"><p>${esc(L("Some resolved days cannot yet be assigned to Temporale or Sanctorale from their source identity; they are excluded from both indexes.","Certains jours résolus ne peuvent pas encore être classés dans le temporal ou le sanctoral selon leur source ; ils sont exclus des deux index."))}</p><div>${unknownRows.map(x=>`<button type="button" data-cal-month-index-date="${esc(x.date)}">${esc(displayDate(x.date))} · ${esc(x.title)}</button>`).join("")}</div></div>`:""}
     ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<div class="aoCalMonthIndexRow" style="--month-accent:${esc(x.accent)}">
@@ -232,9 +226,9 @@ function updateMonthStatusDom(monthId){
   const el=root()?.querySelector?.("[data-cal-month-status]");if(!el)return;
   const ids=monthGridIds(monthId),s=monthStatus.get(monthId),done=ids.filter(x=>weekCache.has(x)).length;
   const errors=ids.filter(x=>weekCache.has(x)&&(!weekCache.get(x)?.day||weekCache.get(x)?.status==="failed")).length;
-  el.textContent=monthVerified(monthId)?L("Calendar grid loaded · 42 dates","Grille du calendrier chargée · 42 dates")
-    :monthReady(monthId)?L(`1962 calendar · ${errors} day(s) unavailable`,`Calendrier 1962 · ${errors} jour(s) indisponible(s)`)
-    :L(`Resolving liturgical month · ${s?.done??done}/42`,`Résolution du mois liturgique · ${s?.done??done}/42`);
+  el.textContent=monthVerified(monthId)?""
+    :monthReady(monthId)?L(`${errors} day(s) unavailable`,`${errors} jour(s) indisponible(s)`)
+    :L(`Loading · ${s?.done??done}/42`,`Chargement · ${s?.done??done}/42`);
 }
 function hydrateMonthCell(id){
   if(calendarView!=="picker"||!pickerMonthId)return;
@@ -499,7 +493,7 @@ function dayNavigator(selected){
 function compactWeek(selected){
   const A=cache(),ids=(A?.weekIds?.(selected)||fallbackWeekIds(selected)),loc=fr()?"fr-FR":"en-GB";
   return `<div class="aoCalV2Week">${ids.map(id=>{
-    const d=dateOf(id),rr=id===selected?resolution():A?.get?.(id),name=rr?titleOf(rr):"",accent=rr?liturgicalAccent(rr):"#59626c";
+    const d=dateOf(id),rr=id===selected?resolution():A?.get?.(id),name=id===selected?"":rr?titleOf(rr):"",accent=rr?liturgicalAccent(rr):"var(--liturgical)";
     return `<button type="button" data-cal-date="${id}" class="${id===selected?"active":""}" style="--day-accent:${esc(accent)}" ${id===selected?'aria-current="date"':""}>
       <small>${esc(d.toLocaleDateString(loc,{weekday:"short"}))}</small><b>${d.getDate()}</b><span>${esc(name||"—")}</span>
     </button>`;
@@ -545,8 +539,7 @@ function practiceContext(selected,r){
   const disciplineRelevant=intel.discipline?.today?.key!=="none"||[...tags].some(tag=>/DISCIPLINE|PENITENTIAL/.test(tag));
   if(!events.length&&!disciplineRelevant)return "";
   return `<section class="aoCalPracticeContext" data-cal-intelligence-date="${esc(selected)}">
-    <div class="aoCalV2SectionTitle"><div><small>${esc(L("PRACTICES & DISCIPLINE","PRATIQUES & DISCIPLINE"))}</small><h3>${esc(L("For this date","Pour cette date"))}</h3></div></div>
-    <p class="aoCalPracticeIntro">${esc(L("Date-bound devotional context. Current obligations remain separate from historical discipline and voluntary custom.","Contexte dévotionnel lié à la date. Les obligations actuelles restent distinctes de la discipline historique et des coutumes volontaires."))}</p>
+    <div class="aoCalV2SectionTitle"><h3>${esc(L("Practices & discipline","Pratiques et discipline"))}</h3></div>
     ${events.length?`<div class="aoCalPracticeList">${events.map(event=>`<article class="aoCalPracticeCard" data-cal-intelligence-id="${esc(event.id)}">
       <small>${esc(intelligenceKind(event))}</small>
       <h4>${esc(event.title)}</h4>
@@ -621,87 +614,56 @@ function daySurface(selected,r){
     <section class="aoCalV2Context">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><h3>${esc(season)}</h3></div></div>
       ${next?`<button class="aoCalV2NextMajor" type="button" data-cal-date="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:nextMajorStatusMarkup(selected,"day")}
-      <button class="aoCalV2TextLink" type="button" data-cal-view="year">${esc(L("View the liturgical year","Voir l’année liturgique"))} →</button>
     </section>
     ${practiceContext(selected,r)}
     <section class="aoCalV2WeekSection">
-      <div class="aoCalV2SectionTitle"><div><small>${esc(L("IN CONTEXT","EN CONTEXTE"))}</small><h3>${esc(L("This week","Cette semaine"))}</h3></div><button class="aoCalV2Today" type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button></div>
       ${compactWeek(selected)}
-      <div class="aoCalV2WeekShift"><button data-cal-shift="-7">${assetIcon("ao-ui-previous")} ${esc(L("Previous week","Semaine précédente"))}</button><button data-cal-shift="7">${esc(L("Next week","Semaine suivante"))} ${assetIcon("ao-ui-next")}</button></div>
     </section>
     ${cm.length?`<section class="aoCalV2Commemorations"><small>${esc(L("ALSO OBSERVED","ÉGALEMENT"))}</small><h3>${esc(L("Commemorations","Commémorations"))}</h3>${cm.map(x=>`<p><i></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
   `;
 }
-function requestYearDailyColours(year){
-  if(calendarView!=="year"||!root()||yearColourLoad?.start===year.start)return;
-  const ids=Array.from({length:year.totalDays},(_,i)=>addDaysIso(year.start,i));
-  const missing=ids.filter(id=>!weekCache.has(id));
-  if(!missing.length)return;
-  const job={start:year.start};
-  yearColourLoad=job;
-  // Deliberate incremental resolution. Never fabricate liturgical colours for
-  // missing dates; stop background work when Calendar Year is no longer open.
-  queueMicrotask(async()=>{
-    try{
-      for(let offset=0;offset<missing.length;offset+=16){
-        if(calendarView!=="year"||!root()||yearColourLoad!==job)break;
-        const dates=missing.slice(offset,offset+16);
-        let n=0;
-        const worker=async()=>{while(n<dates.length){
-          if(calendarView!=="year"||yearColourLoad!==job)return;
-          await resolveOne(dates[n++]);
-        }};
-        await Promise.all(Array.from({length:3},worker));
-        if(yearColourLoad===job)hydrateYearColourWheel(year);
-        await new Promise(done=>setTimeout(done,0));
-      }
-    }catch(error){console.warn("1962 year colour projection incomplete",error)}
-    finally{if(yearColourLoad===job)yearColourLoad=null}
-  });
+// Only candidate feast days are resolved for the Year clock, never 365 dates.
+// The principal day resolver decides which observance actually appears.
+function requestClockFeasts(year){
+ if(calendarView!=="year"||!root()||yearColourLoad?.start===year.start)return;
+ const anchor=clockPreviewDate||clockYearAnchor||state()?.selectedDate||year.start;
+ const missing=orderedClockCandidateDates(year,anchor).filter(id=>!weekCache.has(id));
+ if(!missing.length)return;
+ const job={start:year.start};yearColourLoad=job;
+ queueMicrotask(async()=>{
+  try{
+   let n=0,done=0;
+   const firstPaintAt=Math.min(6,missing.length);
+   const worker=async()=>{
+    while(n<missing.length){
+     if(calendarView!=="year"||yearColourLoad!==job||!root())return;
+     await resolveOne(missing[n++]);
+     done++;
+     // Show verified upcoming feasts promptly. Keep the open season/feast
+     // disclosure intact; the remaining dates resolve without repaint churn.
+     if(done===firstPaintAt&&calendarView==="year"&&yearColourLoad===job&&root())paint();
+    }
+   };
+   await Promise.all(Array.from({length:Math.min(3,missing.length)},worker));
+   if(calendarView==="year"&&yearColourLoad===job&&root()&&done>firstPaintAt)paint();
+  }catch(error){console.warn("Liturgical Clock marker resolution incomplete",error)}
+  finally{if(yearColourLoad===job)yearColourLoad=null}
+ });
 }
-function hydrateYearColourWheel(year){
-  const el=root()?.querySelector(".aoCalV2Ring");
-  if(!el||el.dataset.yearStart!==year.start)return;
-  const projection=yearDailyProjection(year,id=>weekCache.get(id));
-  el.style.setProperty("--year-daily-gradient",projection.gradient);
-  el.dataset.verifiedDays=String(projection.verified);
-  const timeline=root()?.querySelector(".aoCalYearDailyTrack");
-  if(timeline)timeline.style.background=projection.timeline;
-  const label=root()?.querySelector("[data-cal-year-colour-status]");
-  if(label)label.textContent=L("Daily colours from the verified 1962 calendar", "Couleurs quotidiennes du calendrier 1962 vérifié")+
-    " · "+projection.verified+"/"+projection.total;
+function cachedClockDay(date){
+ const current=resolution();
+ return current?.date===date?current:weekCache.get(date)??null;
 }
 function yearSurface(selected,r){
-  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected);
-  const seasonGradient=yearSeasonGradient(y),daily=yearDailyProjection(y,id=>weekCache.get(id));
-  queueMicrotask(()=>{if(calendarView==="year"&&root())requestYearDailyColours(y)});
-  const nextSeason=y.nextPeriod||{en:"Advent",fr:"Avent",start:addDaysIso(y.end,1)};
-  return `
-    <section class="aoCalV2YearHero">
-      <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL YEAR","ANNÉE LITURGIQUE"))}</small><h2>${esc(y.label)}</h2></div>
-      <div class="aoCalV2YearHeroGrid">
-        <div class="aoCalV2Ring" data-year-start="${y.start}" data-verified-days="${daily.verified}" style="--year-angle:${((y.dayIndex-.5)/y.totalDays*360).toFixed(2)}deg;--year-season-gradient:${seasonGradient};--year-daily-gradient:${daily.gradient}">
-          <div class="aoCalV2RingMarker"></div>
-          <div class="aoCalV2RingCore"><strong>${dateOf(selected).getDate()}</strong><small>${esc(dateOf(selected).toLocaleDateString(fr()?"fr-FR":"en-GB",{month:"long"}))}</small><span>${esc(L("SELECTED DAY","JOUR CONSULTÉ"))}</span></div>
-        </div>
-        <div class="aoCalV2YearIdentity">
-          <small>${esc(L("LITURGICAL SEASON","TEMPS LITURGIQUE"))}</small>
-          <h3>${esc(periodName(p))}</h3>
-          <p class="aoCalV2SelectedFeast">${esc(r?.day?titleOf(r):L("Mass of the day awaiting resolution","Messe du jour en attente de résolution"))}</p>
-          ${next?`<div class="aoCalV2MajorLine"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><button type="button" data-cal-year-open-day="${next.date}">${esc(celebrationName(next))} · ${esc(shortDate(next.date))}</button></div>`:nextMajorStatusMarkup(selected,"year")}
-        </div>
-      </div>
-    </section>
-    ${renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate,dailyColours:daily})}
-    <section class="aoCalV2Coming">
-      <div class="aoCalV2SectionTitle"><div><small>${esc(L("WHAT NOW?","ET MAINTENANT ?"))}</small><h3>${esc(L("Coming next","Les prochains repères"))}</h3></div></div>
-      <div class="aoCalV2ComingGrid">
-        <button type="button" data-cal-year-open-day="${nextSeason.start}"><small>${esc(L("NEXT CHANGE OF SEASON","PROCHAIN CHANGEMENT DE TEMPS"))}</small><strong>${esc(periodName(nextSeason))}</strong><span>${esc(longDate(nextSeason.start))} · ${dayCount(selected,nextSeason.start)} ${esc(L("days","jours"))}</span></button>
-        ${next?`<button type="button" data-cal-year-open-day="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:""}
-      </div>
-      <button class="aoCalV2TextLink" type="button" data-cal-open-month="major">${esc(L("Major days this month","Jours majeurs de ce mois"))} →</button>
-    </section>
-  `;
+ const active=clockPreviewDate||clockYearAnchor||selected;
+ const y=buildLiturgicalYear(active);
+ queueMicrotask(()=>{if(calendarView==="year"&&root())requestClockFeasts(y)});
+ const next=active===selected?nextResolvedMajorCelebration(selected):null;
+ return renderLiturgicalClock({
+  year:y,selectedDate:active,todayDate:iso(new Date()),fr:fr(),
+  getDay:cachedClockDay,titleFor:titleOf,rankFor:rankOf, massColourFor:colourOf,
+  selection:clockSelection,nextMajor:next?.verified?{date:next.date,title:celebrationName(next),verified:true}:null
+ });
 }
 function pickerSurface(selected){
   if(!pickerMonthId)pickerMonthId=selected.slice(0,7);
@@ -715,13 +677,13 @@ function pickerSurface(selected){
     }).join("")}</div>`;
   const projection=calendarMonthView==="calendar"?calendarGrid:monthIndexList(pickerMonthId,selected,calendarMonthView);
   return `<section class="aoCalV2Picker">
-    <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL MONTH","MOIS LITURGIQUE"))}</small><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2></div>
+    <div class="aoCalV2YearHeading"><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2></div>
     <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1" aria-label="${esc(L("Previous month","Mois précédent"))}">${assetIcon("ao-ui-previous")}<span class="aoCalMonthNavLong">${esc(L("Previous month","Mois précédent"))}</span><span class="aoCalMonthNavShort">${esc(L("Previous","Précédent"))}</span></button><button type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button><button type="button" data-cal-month-shift="1" aria-label="${esc(L("Next month","Mois suivant"))}"><span class="aoCalMonthNavLong">${esc(L("Next month","Mois suivant"))}</span><span class="aoCalMonthNavShort">${esc(L("Next","Suivant"))}</span>${assetIcon("ao-ui-next")}</button></div>
     ${monthIndexTabs()}
-    <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?L("Calendar grid loaded · 42 dates","Grille du calendrier chargée · 42 dates"):attempted?L(`1962 calendar · ${errors} day(s) unavailable`,`Calendrier 1962 · ${errors} jour(s) indisponible(s)`):L(`Resolving liturgical month · ${done}/42`,`Résolution du mois liturgique · ${done}/42`))}</span>${calendarMonthView==="calendar"?`<span>${esc(L("Colour = liturgical colour · stronger mark = higher rank","Couleur = couleur liturgique · marque plus forte = classe plus élevée"))}</span>`:""}</div>
+    <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?"":attempted?L(`${errors} day(s) unavailable`,`${errors} jour(s) indisponible(s)`):L(`Loading · ${done}/42`,`Chargement · ${done}/42`))}</span></div>
     ${retryable?`<button type="button" class="aoCalV2Retry" data-cal-month-retry>${esc(L(`Retry ${retryable} unavailable day(s)`,`Réessayer pour ${retryable} jour(s) indisponible(s)`))}</button>`:""}
     ${projection}
-    <div class="aoCalV2MonthExport"><button type="button" class="aoCalV2TextLink" data-cal-export-ics="${esc(pickerMonthId)}" ${exportReady?"":'disabled aria-disabled="true"'} title="${esc(L("Download resolved general Roman calendar as an all-day .ics file; no Mass schedules or local feasts.","Télécharger le calendrier romain général résolu au format .ics, sans horaires de messe ni propres locaux."))}">${esc(L("Export this month · .ics","Exporter ce mois · .ics"))}</button><small>${esc(exportReady?L("Liturgical observances only · no Mass times","Célébrations uniquement · sans horaires de messe"):L("Available when every day is resolved","Disponible lorsque tous les jours sont résolus"))}</small><p data-cal-export-error role="status" aria-live="polite"></p></div>
+    <div class="aoCalV2MonthExport"><button type="button" class="aoCalV2TextLink" data-cal-export-ics="${esc(pickerMonthId)}" ${exportReady?"":'disabled aria-disabled="true"'} title="${esc(L("Export 1962 Roman calendar observances; no Mass schedules or local feasts.","Exporter les célébrations du calendrier romain 1962, sans horaires de messe ni propres locaux."))}">${esc(L("Export · .ics","Exporter · .ics"))}</button><p data-cal-export-error role="status" aria-live="polite"></p></div>
     <div class="aoCalV2DirectJump"><label for="ao-cal-exact-date">${esc(L("Exact date","Date exacte"))}</label><div><input id="ao-cal-exact-date" data-cal-input inputmode="numeric" value="${esc(displayDate(selected))}" aria-label="${esc(L("Date in DD/MM/YYYY format","Date au format JJ/MM/AAAA"))}"><button type="button" data-cal-go>${esc(L("Go","Aller"))}</button></div><p data-cal-error aria-live="polite"></p></div>
   </section>`;
 }
@@ -745,22 +707,22 @@ function css(){
 .aoCalModBody{width:min(var(--ao-content-max,760px),100%);padding:0 var(--ao-page-gutter,14px) 60px}#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalModBody{width:min(var(--ao-content-wide,980px),100%)}
 .aoCalGlossaryError:not([hidden]){grid-column:1/-1;margin:0;padding:6px 12px;color:#d9b99a;font:500 14px/1.4 var(--ao-font-ui,system-ui,sans-serif)}.aoCalV2Tabs{position:sticky;top:calc(61px + var(--safe-top,0px));z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0 calc(-1 * var(--ao-page-gutter,14px));padding:0 var(--ao-page-gutter,14px);background:rgba(8,12,18,.96);border-bottom:1px solid rgba(235,225,208,.09);backdrop-filter:blur(14px)}
 .aoCalV2Tabs button{min-height:var(--ao-control-h,44px);border:0;background:transparent;color:#7f878e;font:650 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.045em;text-transform:uppercase;border-bottom:2px solid transparent}
-.aoCalV2Tabs button.active{color:#e8decc;border-bottom-color:#cfc2a8}
+.aoCalV2Tabs button.active{color:var(--liturgical);border-bottom-color:var(--liturgical)}
 .aoCalMonthTabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:16px 0 12px;padding:2px 0 5px;border-bottom:1px solid rgba(235,225,208,.08)}.aoCalMonthTabs::-webkit-scrollbar{display:none}.aoCalMonthTabs button{flex:0 0 auto;min-height:var(--ao-control-h,44px)!important;border:0!important;border-radius:0!important;background:transparent!important;padding:7px 10px!important;color:#7f878e!important;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif)!important;letter-spacing:.055em;text-transform:uppercase;position:relative}.aoCalMonthTabs button.active{color:#e8decc!important}.aoCalMonthTabs button.active:after{content:"";position:absolute;left:9px;right:9px;bottom:-6px;height:2px;background:#cfc2a8}
-.aoCalMonthIndex{padding:4px 0 2px}.aoCalMonthIndexHead{display:flex;align-items:end;justify-content:space-between;gap:18px;padding:4px 0 12px}.aoCalMonthIndexHead small{color:#9a9184;font:700 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em}.aoCalMonthIndexHead p{max-width:470px;margin:0;color:#777f87;font:500 var(--ao-type-ui-sm,12px)/1.4 var(--ao-font-ui,system-ui,sans-serif);text-align:right}.aoCalMonthIndexList{display:grid;gap:7px}.aoCalMonthIndexList .aoCalMonthIndexRow{display:flex;min-width:0;align-items:stretch;gap:7px}.aoCalMonthIndexList .aoCalMonthIndexDay{flex:1 1 auto;min-width:0}.aoCalMonthIndexList .aoCalMonthSaintDetail{flex:0 0 auto;max-width:125px;min-width:94px;min-height:68px;border-radius:var(--ao-card-radius,15px);padding:9px 11px;font:650 .78rem/1.4 var(--ao-font-body,Georgia,serif);color:var(--ao-liturgical-accent,#c7ae6d);border:1px solid var(--ao-rule,rgba(226,214,190,.15));background:var(--ao-surface-1,#101821);text-align:center}.aoCalMonthIndexList .aoCalMonthIndexDay{display:grid!important;grid-template-columns:86px minmax(0,1fr) 14px!important;align-items:center!important;gap:12px!important;min-height:68px!important;border-radius:var(--ao-card-radius,15px)!important;background:linear-gradient(150deg,color-mix(in srgb,var(--month-accent,#59626c) 5%,#0b1118),#0b1118)!important;text-align:left!important;padding:11px 13px!important;position:relative;overflow:hidden}.aoCalMonthIndexList .aoCalMonthIndexDay:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--month-accent,#59626c);opacity:.72}.aoCalMonthIndexList .aoCalMonthIndexDay.selected{border-color:#d4c6a8!important;box-shadow:inset 0 0 0 1px rgba(212,198,168,.18)}.aoCalMonthIndexList time{color:#aa9a80;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);font-variant-numeric:tabular-nums}.aoCalMonthIndexText{min-width:0}.aoCalMonthIndexText strong{display:block;font-size:15px;font-weight:400;line-height:1.18}.aoCalMonthIndexText small{display:block;margin-top:5px;color:#858d94;font:600 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif)}.aoCalMonthIndexText em{display:block;margin-top:7px;color:#b9aa91;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase;font-style:normal}.aoCalMonthIndexList i{width:8px;height:8px;border-radius:50%;background:var(--month-accent,#59626c);justify-self:end;opacity:.85}.aoCalMonthEmpty{padding:28px 14px;border:1px solid rgba(235,225,208,.08);border-radius:var(--ao-card-radius,15px);color:#81898f;text-align:center;font-size:12px;line-height:1.45}
+.aoCalMonthIndex{padding:4px 0 2px}.aoCalMonthIndexHead{display:flex;align-items:end;justify-content:space-between;gap:18px;padding:4px 0 12px}.aoCalMonthIndexHead small{color:#9a9184;font:700 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em}.aoCalMonthIndexHead p{max-width:470px;margin:0;color:#777f87;font:500 var(--ao-type-ui-sm,12px)/1.4 var(--ao-font-ui,system-ui,sans-serif);text-align:right}.aoCalMonthIndexList{display:grid;gap:7px}.aoCalMonthIndexList .aoCalMonthIndexRow{display:flex;min-width:0;align-items:stretch;gap:7px}.aoCalMonthIndexList .aoCalMonthIndexDay{flex:1 1 auto;min-width:0}.aoCalMonthIndexList .aoCalMonthSaintDetail{flex:0 0 auto;max-width:125px;min-width:94px;min-height:68px;border-radius:var(--ao-card-radius,15px);padding:9px 11px;font:650 .78rem/1.4 var(--ao-font-body,Georgia,serif);color:var(--ao-liturgical-accent,#c7ae6d);border:1px solid var(--ao-rule,rgba(226,214,190,.15));background:var(--ao-surface-1,#101821);text-align:center}.aoCalMonthIndexList .aoCalMonthIndexDay{display:grid!important;grid-template-columns:86px minmax(0,1fr) 14px!important;align-items:center!important;gap:12px!important;min-height:68px!important;border-radius:var(--ao-card-radius,15px)!important;background:linear-gradient(150deg,color-mix(in srgb,var(--month-accent,var(--liturgical)) 5%,var(--ao-surface-1,var(--bg))),var(--ao-surface-1,var(--bg)))!important;text-align:left!important;padding:11px 13px!important;position:relative;overflow:hidden}.aoCalMonthIndexList .aoCalMonthIndexDay:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--month-accent,#59626c);opacity:.72}.aoCalMonthIndexList .aoCalMonthIndexDay.selected{border-color:#d4c6a8!important;box-shadow:inset 0 0 0 1px rgba(212,198,168,.18)}.aoCalMonthIndexList time{color:#aa9a80;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);font-variant-numeric:tabular-nums}.aoCalMonthIndexText{min-width:0}.aoCalMonthIndexText strong{display:block;font-size:15px;font-weight:400;line-height:1.18}.aoCalMonthIndexText small{display:block;margin-top:5px;color:#858d94;font:600 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif)}.aoCalMonthIndexText em{display:block;margin-top:7px;color:#b9aa91;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase;font-style:normal}.aoCalMonthIndexList i{width:8px;height:8px;border-radius:50%;background:var(--month-accent,#59626c);justify-self:end;opacity:.85}.aoCalMonthEmpty{padding:28px 14px;border:1px solid rgba(235,225,208,.08);border-radius:var(--ao-card-radius,15px);color:#81898f;text-align:center;font-size:12px;line-height:1.45}
 .aoCalV2DayNav{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:12px;padding:24px 0 18px;border-bottom:1px solid rgba(235,225,208,.08)}
-.aoCalV2DayNav button,.aoCalV2MonthNav button,.aoCalV2WeekShift button,.aoCalV2Today{border:0!important;background:transparent!important;color:#aaa39a!important}
+.aoCalV2DayNav button,.aoCalV2MonthNav button,.aoCalV2WeekShift button,.aoCalV2Today{border:0!important;background:transparent!important;color:var(--ao-text-muted,var(--muted))!important}
 .aoCalV2DayNav>div{text-align:center}.aoCalV2DayNav small{display:block;color:#8d949a;font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-transform:uppercase}.aoCalV2DayNav strong{display:block;margin-top:5px;font-size:18px;font-weight:400;text-transform:capitalize}
 .aoCalV2Hero{text-align:center;padding:26px 10px 22px;position:relative}.aoCalV2Hero:after{content:"";position:absolute;left:20%;right:20%;bottom:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ao-cal-liturgical) 62%,transparent),transparent)}
 .aoCalV2Eyebrow,.aoCalV2SectionTitle small,.aoCalV2Commemorations>small,.aoCalV2YearHeading small,.aoCalV2YearIdentity>small,.aoCalV2MajorLine small,.aoCalV2PeriodProgress small,.aoCalV2ComingGrid small{font:700 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.14em;text-transform:uppercase;color:#8f948f}
 .aoCalV2Hero h2{font-size:clamp(29px,5.5vw,48px);line-height:1.02;font-weight:400;letter-spacing:-.035em;margin:8px auto 10px;max-width:780px}.aoCalV2Hero .aoCalIdentityMeta{justify-content:center}.aoCalV2Hero .aoCalSourceLine{justify-content:center}
 .aoCalV2Saint{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;margin:0;border-top:1px solid rgba(235,225,208,.07);border-bottom:1px solid rgba(235,225,208,.09);background:linear-gradient(90deg,color-mix(in srgb,var(--saint-accent,#59626c) 5%,transparent),transparent)}.aoCalV2Saint small{color:#9d9487;font:700 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em}.aoCalV2Saint p{margin:5px 0 0;color:#858c91;font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)}.aoCalV2Saint button{flex:0 0 auto;min-height:var(--ao-control-h,44px)!important;border:0!important;background:transparent!important;color:#d1c4ad!important;padding:0!important;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif)!important;letter-spacing:.08em;text-transform:uppercase}.aoCalV2Saint button span{margin-left:6px}
-.aoCalV2Primary{margin-top:12px!important;min-height:48px!important;border-radius:var(--ao-control-radius,11px)!important;padding:0 22px!important;border:1px solid rgba(214,195,156,.4)!important;background:rgba(171,145,94,.1)!important;color:#eee5d5!important;font:600 11px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}.aoCalV2Primary span{margin-left:10px}.aoCalV2Hero [data-cal-print-feedback]:empty{display:none}
+.aoCalV2Primary{margin-top:12px!important;min-height:48px!important;border-radius:var(--ao-control-radius,11px)!important;padding:0 22px!important;border:1px solid color-mix(in srgb,var(--liturgical) 40%,transparent)!important;background:color-mix(in srgb,var(--liturgical) 10%,var(--ao-surface-1,var(--bg)))!important;color:var(--text)!important;font:600 11px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}.aoCalV2Primary span{margin-left:10px}.aoCalV2Hero [data-cal-print-feedback]:empty{display:none}
 .aoCalV2Context{padding:18px 0;border-bottom:1px solid rgba(235,225,208,.08)}.aoCalV2WeekSection,.aoCalV2Commemorations,.aoCalV2Coming{padding:28px 0;border-bottom:1px solid rgba(235,225,208,.08)}
 .aoCalV2SectionTitle{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:14px}.aoCalV2SectionTitle h3{margin:4px 0 0;font-size:25px;font-weight:400}.aoCalV2SectionTitle>strong{font:400 27px/1 Georgia,serif;color:#cabca4}
 
-.aoCalV2NextMajor{width:100%;display:grid!important;grid-template-columns:1fr auto!important;gap:4px 16px!important;text-align:left!important;border:1px solid rgba(235,225,208,.1)!important;border-radius:3px!important;background:#0c1219!important;padding:16px 18px!important}.aoCalV2NextMajor small{grid-column:1/-1;color:#8d949a;font:700 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em}.aoCalV2NextMajor strong{font-size:18px;font-weight:400}.aoCalV2NextMajor span{align-self:center;color:#8d949a;font:500 var(--ao-type-ui-sm,12px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}
-.aoCalV2TextLink{display:inline-flex!important;margin-top:16px!important;border:0!important;background:transparent!important;padding:6px 0!important;color:#c8bda9!important;font:650 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}
+.aoCalV2NextMajor{width:100%;display:grid!important;grid-template-columns:1fr auto!important;gap:4px 16px!important;text-align:left!important;border:1px solid var(--ao-rule)!important;border-radius:3px!important;background:var(--ao-surface-1,var(--bg))!important;padding:16px 18px!important}.aoCalV2NextMajor small{grid-column:1/-1;color:#8d949a;font:700 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em}.aoCalV2NextMajor strong{font-size:18px;font-weight:400}.aoCalV2NextMajor span{align-self:center;color:#8d949a;font:500 var(--ao-type-ui-sm,12px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.aoCalV2TextLink{display:inline-flex!important;margin-top:16px!important;border:0!important;background:transparent!important;padding:6px 0!important;color:var(--liturgical)!important;font:650 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}
 .aoCalV2Week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid rgba(235,225,208,.08);border-bottom:1px solid rgba(235,225,208,.08)}.aoCalV2Week button{min-width:0!important;min-height:112px!important;border:0!important;border-right:1px solid rgba(235,225,208,.06)!important;border-radius:0!important;background:transparent!important;padding:14px 7px!important;text-align:center!important;position:relative}.aoCalV2Week button:last-child{border-right:0!important}.aoCalV2Week button:after{content:"";position:absolute;left:25%;right:25%;bottom:-1px;height:2px;background:var(--day-accent);opacity:.42}.aoCalV2Week button.active{background:rgba(235,225,208,.035)!important}.aoCalV2Week button.active:after{left:12%;right:12%;height:3px;opacity:1}.aoCalV2Week small{display:block;color:#747d85;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase}.aoCalV2Week b{display:block;margin:8px 0 7px;font-size:23px;font-weight:400}.aoCalV2Week span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:11px;line-height:1.15;color:#aaa49a}
 .aoCalV2WeekShift,.aoCalV2MonthNav{display:flex;justify-content:space-between;gap:10px;margin-top:9px}.aoCalV2MonthNav{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center}.aoCalV2MonthNav button{min-width:0!important;padding-inline:0!important}.aoCalV2MonthNav button:first-child{justify-self:start;text-align:left}.aoCalV2MonthNav button:last-child{justify-self:end;text-align:right}.aoCalV2WeekShift button,.aoCalV2MonthNav button{font-size:11px!important}
 .aoCalV2Today{font:650 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif)!important;text-transform:uppercase!important;letter-spacing:.08em!important}
@@ -775,8 +737,9 @@ function css(){
 
 .aoCalV2ComingGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.aoCalV2ComingGrid button{min-height:116px!important;border-radius:2px!important;background:#0b1118!important;text-align:left!important;padding:17px!important;border-radius:var(--ao-card-radius,15px)!important}.aoCalV2ComingGrid strong{display:block;font-size:20px;font-weight:400;margin:9px 0 6px}.aoCalV2ComingGrid span{color:#8f969a;font:500 var(--ao-type-ui-sm,12px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}
 .aoCalMonthNavShort{display:none}.aoCalV2MonthNav button{display:flex;align-items:center;gap:5px;min-height:var(--ao-control-h,44px)!important;max-width:100%;overflow:visible;white-space:normal}.aoCalV2MonthNav button:last-child{justify-content:flex-end}.aoCalV2MonthNav button:first-child{justify-content:flex-start}
-.aoCalV2Picker{padding:28px 0}.aoCalV2MonthNav{align-items:center;margin:18px 0 10px}.aoCalV2MonthMeta{display:flex;justify-content:space-between;gap:12px;margin:0 0 13px;color:#747d84;font:600 var(--ao-type-ui-xs,11px)/1.35 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em}.aoCalV2MonthMeta span:last-child{text-align:right}.aoCalV2Weekdays,.aoCalV2MonthGrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));width:100%;min-width:0}.aoCalV2Weekdays{border-bottom:1px solid rgba(235,225,208,.09)}.aoCalV2Weekdays span{text-align:center;padding:9px 4px;color:#747d84;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase}.aoCalV2MonthGrid{border-left:1px solid rgba(235,225,208,.06);border-top:1px solid rgba(235,225,208,.06)}.aoCalV2MonthGrid button{aspect-ratio:auto;min-width:0!important;padding:7px 5px 5px!important;height:78px!important;min-height:0!important;border-radius:0!important;border-width:0 1px 1px 0!important;border-color:rgba(235,225,208,.06)!important;background:color-mix(in srgb,var(--month-accent,#59626c) 3%,#0b1118)!important;position:relative;text-align:left!important;overflow:hidden}.aoCalV2MonthGrid button[data-ready="0"]{--month-accent:#59626c}.aoCalV2MonthGrid button.outside{opacity:.26}.aoCalV2MonthGrid button.sunday:not(.outside){background:color-mix(in srgb,var(--month-accent,#59626c) 7%,#0b1118)!important}.aoCalV2MonthGrid button.selected{z-index:1;box-shadow:inset 0 0 0 2px #d3c5a7}.aoCalV2MonthGrid button.today .aoCalMonthTop b{outline:1px solid rgba(181,93,80,.9);outline-offset:2px;border-radius:50%}.aoCalMonthTop{display:flex;align-items:center;justify-content:space-between;gap:4px}.aoCalV2MonthGrid b{font-size:16px;font-weight:400;line-height:1}.aoCalMonthTop i{display:block;width:6px;height:2px;border-radius:999px;background:var(--month-accent,#59626c);opacity:.62}.aoCalV2MonthGrid button[data-rank-tier="1"] .aoCalMonthTop i{width:16px;height:3px;opacity:1}.aoCalV2MonthGrid button[data-rank-tier="2"] .aoCalMonthTop i{width:12px;height:3px;opacity:.9}.aoCalV2MonthGrid button[data-rank-tier="3"] .aoCalMonthTop i{width:9px;height:2px;opacity:.76}.aoCalMonthName{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:8px;color:#a9a397;font:500 var(--ao-type-ui-xs,11px)/1.08 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}.aoCalV2MonthGrid button.major .aoCalMonthName,.aoCalV2MonthGrid button.sunday .aoCalMonthName{color:#d3cab9}.aoCalMonthName:empty{display:none}.aoCalV2DirectJump{margin-top:22px;padding-top:18px;border-top:1px solid rgba(235,225,208,.08)}.aoCalV2DirectJump label{color:#8c949a;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em;text-transform:uppercase}.aoCalV2DirectJump>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-top:8px}.aoCalV2DirectJump input{min-width:0;min-height:var(--ao-control-h,44px);border:1px solid rgba(235,225,208,.13);border-radius:var(--ao-control-radius,11px);background:#0b1118;color:#e7dfd2;padding:8px 11px}.aoCalV2DirectJump p{min-height:18px;color:#d2aa7b;font-size:11px}
+.aoCalV2Picker{padding:28px 0}.aoCalV2MonthNav{align-items:center;margin:18px 0 10px}.aoCalV2MonthMeta{display:flex;justify-content:space-between;gap:12px;margin:0 0 13px;color:#747d84;font:600 var(--ao-type-ui-xs,11px)/1.35 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em}.aoCalV2MonthMeta span:last-child{text-align:right}.aoCalV2Weekdays,.aoCalV2MonthGrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));width:100%;min-width:0}.aoCalV2Weekdays{border-bottom:1px solid rgba(235,225,208,.09)}.aoCalV2Weekdays span{text-align:center;padding:9px 4px;color:#747d84;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase}.aoCalV2MonthGrid{border-left:1px solid rgba(235,225,208,.06);border-top:1px solid rgba(235,225,208,.06)}.aoCalV2MonthGrid button{aspect-ratio:auto;min-width:0!important;padding:7px 5px 5px!important;height:78px!important;min-height:0!important;border-radius:0!important;border-width:0 1px 1px 0!important;border-color:rgba(235,225,208,.06)!important;background:color-mix(in srgb,var(--month-accent,var(--liturgical)) 3%,var(--ao-surface-1,var(--bg)))!important;position:relative;text-align:left!important;overflow:hidden}.aoCalV2MonthGrid button[data-ready="0"]{--month-accent:#59626c}.aoCalV2MonthGrid button.outside{opacity:.26}.aoCalV2MonthGrid button.sunday:not(.outside){background:color-mix(in srgb,var(--month-accent,#59626c) 7%,#0b1118)!important}.aoCalV2MonthGrid button.selected{z-index:1;box-shadow:inset 0 0 0 2px var(--liturgical)}.aoCalV2MonthGrid button.today .aoCalMonthTop b{outline:1px solid rgba(181,93,80,.9);outline-offset:2px;border-radius:50%}.aoCalMonthTop{display:flex;align-items:center;justify-content:space-between;gap:4px}.aoCalV2MonthGrid b{font-size:16px;font-weight:400;line-height:1}.aoCalMonthTop i{display:block;width:6px;height:2px;border-radius:999px;background:var(--month-accent,#59626c);opacity:.62}.aoCalV2MonthGrid button[data-rank-tier="1"] .aoCalMonthTop i{width:16px;height:3px;opacity:1}.aoCalV2MonthGrid button[data-rank-tier="2"] .aoCalMonthTop i{width:12px;height:3px;opacity:.9}.aoCalV2MonthGrid button[data-rank-tier="3"] .aoCalMonthTop i{width:9px;height:2px;opacity:.76}.aoCalMonthName{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:8px;color:#a9a397;font:500 var(--ao-type-ui-xs,11px)/1.08 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}.aoCalV2MonthGrid button.major .aoCalMonthName,.aoCalV2MonthGrid button.sunday .aoCalMonthName{color:#d3cab9}.aoCalMonthName:empty{display:none}.aoCalV2DirectJump{margin-top:22px;padding-top:18px;border-top:1px solid rgba(235,225,208,.08)}.aoCalV2DirectJump label{color:#8c949a;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em;text-transform:uppercase}.aoCalV2DirectJump>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-top:8px}.aoCalV2DirectJump input{min-width:0;min-height:var(--ao-control-h,44px);border:1px solid var(--ao-rule);border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-1,var(--bg));color:var(--text);padding:8px 11px}.aoCalV2DirectJump p{min-height:18px;color:#d2aa7b;font-size:11px}
 @media(max-width:700px){.aoCalMonthTabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;column-gap:4px;row-gap:2px;margin:10px 0 12px;padding:0 0 5px}.aoCalMonthTabs button{width:100%;min-width:0!important;min-height:44px!important;white-space:normal;line-height:1.2!important;overflow-wrap:break-word;text-align:center}.aoCalV2Picker{padding-top:12px}.aoCalV2YearHeading h2{font-size:clamp(25px,7vw,31px);line-height:1.1}.aoCalV2MonthNav{margin:8px 0 8px;gap:4px}.aoCalV2MonthNav button{min-height:44px!important;min-width:0!important;width:100%!important;box-sizing:border-box;justify-self:stretch!important;font-size:11px!important;padding:4px 0!important}.aoCalV2MonthNav button:first-child,.aoCalV2MonthNav button:last-child{justify-self:stretch!important}.aoCalMonthNavLong{display:none}.aoCalMonthNavShort{display:inline}.aoCalV2MonthNav svg{width:16px;max-width:16px;flex:none}.aoCalModBody{padding:0 var(--ao-page-gutter-phone,12px) 46px}.aoCalV2Tabs{top:calc(61px + var(--safe-top,0px));margin:0 calc(-1 * var(--ao-page-gutter-phone,12px));padding:0 6px}.aoCalV2Tabs button{font-size:var(--ao-type-ui-xs,11px);letter-spacing:.025em}.aoCalMonthTabs{margin-left:0;margin-right:0}.aoCalMonthTabs button{font-size:var(--ao-type-ui-xs,11px)!important;padding-inline:8px!important}.aoCalV2Hero{padding:18px 4px 16px}.aoCalV2Hero h2{font-size:31px}.aoCalV2Saint{align-items:center;padding:8px 4px}.aoCalV2Saint p{font-size:var(--ao-type-ui-xs,11px)}.aoCalV2Saint button{min-height:var(--ao-control-h,44px)!important}.aoCalV2NextMajor{grid-template-columns:1fr!important}.aoCalV2Week{overflow-x:auto;grid-template-columns:repeat(7,92px);margin-right:-12px}.aoCalV2Week button{min-height:104px!important}.aoCalV2YearHeroGrid{grid-template-columns:1fr;gap:26px;padding:22px 16px}.aoCalV2Ring{width:min(250px,76vw);margin:auto}.aoCalV2YearIdentity{text-align:left}.aoCalV2YearIdentity h3{font-size:31px}.aoCalV2YearIdentity dl{grid-template-columns:1fr 1fr}.aoCalV2ComingGrid{grid-template-columns:1fr}.aoCalMonthIndexHead{display:grid;gap:5px}.aoCalMonthIndexHead p{text-align:left}.aoCalMonthIndexList .aoCalMonthIndexDay{grid-template-columns:74px minmax(0,1fr) 12px!important;padding:10px 11px!important}.aoCalV2MonthGrid button{height:66px!important;min-height:0!important;padding:6px 4px 4px!important}.aoCalMonthName{font-size:var(--ao-type-ui-xs,11px);margin-top:6px}.aoCalV2MonthMeta{display:grid;gap:3px}.aoCalV2MonthMeta span:last-child{text-align:left;font-weight:500}.aoCalV2SectionTitle h3{font-size:22px}}
+.aoCalMonthFilter{display:flex;align-items:center;gap:10px;margin:10px 0 12px;font:500 var(--ao-type-ui-sm,13px)/1.3 var(--ao-font-ui,system-ui);color:var(--ao-text-muted)}.aoCalMonthFilter select{min-height:44px;flex:1;min-width:0;border:1px solid var(--ao-rule);border-radius:var(--ao-control-radius,8px);background:var(--ao-surface-1);color:var(--ao-text-primary);padding:8px;font:inherit}
 /* Phone month index: keep all five source-owned month views on ONE legible
    horizontal rail rather than wrapping / splitting Temporale and Sanctorale.
    Scoped to the standalone Calendar and Today’s inline Month; embedded Mass Calendar untouched. */
@@ -813,6 +776,7 @@ function css(){
 /* Body-copy readability floor; do not enlarge dates, hierarchy captions or rubrical labels. */
 .aoCalV2Saint p,.aoCalMonthIndexHead p,.aoCalV2ComingGrid span,.aoCalV2Commemorations span,.aoCalPilgrimagePlaces>p,.aoCalPracticeIntro,.aoCalV2RingCore span{font-size:max(14px,.875rem);line-height:1.5}
 ${yearJourneyCss}
+${liturgicalClockCss}
 #${ROOT_ID}[data-ao-calendar-embedded="true"]{position:relative!important;inset:auto!important;z-index:auto!important;width:100%;height:auto;max-height:none;min-height:0;overflow:visible!important;background:transparent;box-shadow:none}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalModTop{position:relative;top:auto;padding:8px}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalModBody{width:100%;max-width:760px;padding:6px 4px 26px}
@@ -878,17 +842,55 @@ async function openCalendarGlossary(){
     return false;
   }finally{button?.removeAttribute("aria-busy")}
 }
+// Repainting the Year wheel can grow or regroup clusters while a user has
+// keyboard focus on one. Preserve focus by the selected feast date, not by
+// the cluster's transient first date.
+function clockRestoreFocusTarget(host,attr,value){
+ if(!host||!attr||!value)return null;
+ const exact=Array.from(host.querySelectorAll("["+attr+"]"))
+  .find(node=>node.getAttribute(attr)===value);
+ if(exact)return exact;
+ if((attr==="data-cal-clock-cluster"||attr==="data-cal-clock-feast")
+    &&/^\d{4}-\d{2}-\d{2}$/.test(value)){
+  const group=Array.from(host.querySelectorAll("[data-cal-clock-cluster-members]"))
+   .find(node=>String(node.getAttribute("data-cal-clock-cluster-members")||"")
+     .split(",").includes(value));
+  // A previously clustered date can become a singleton after new resolver
+  // data changes the grouping. Keep focus on the observed feast itself.
+  return group||Array.from(host.querySelectorAll("[data-cal-clock-feast]"))
+   .find(node=>node.getAttribute("data-cal-clock-feast")===value)||null;
+ }
+ return null;
+}
 function paint(){
   const r=root();if(!r)return false;
   const body=r.querySelector("[data-cal-body]");if(!body)return false;
   const selected=state()?.selectedDate||"",isSameDay=calendarView==="day"&&r.dataset.aoCalendarPaintDate===selected&&r.dataset.aoCalendarPaintView==="day";
   // Date/week-cache subscriptions may repaint after a person expands this
   // disclosure. Preserve it only on a same-date Day repaint.
+  // Preserve a user's open season menu while async 1962 marker data repaints Year.
+  const wasClockMenuOpen=calendarView==="year"&&body.querySelector(".aoClockSeasonMenu")?.open===true;
+  const wasFeastMenuOpen=calendarView==="year"&&body.querySelector(".aoClockFeastMenu")?.open===true;
+  const hadFeastSummaryFocus=wasFeastMenuOpen&&globalThis.document?.activeElement?.matches?.(".aoClockFeastMenu summary")===true;
   const oldDiscipline=isSameDay?body.querySelector(".aoCalPracticeDiscipline"):null;
   const wasDisciplineOpen=oldDiscipline?.open===true;
   const hadDisciplineFocus=Boolean(oldDiscipline?.querySelector("summary")?.contains(globalThis.document?.activeElement));
   const active=globalThis.document?.activeElement,existing=body.querySelector("[data-cal-input]"),editing=active===existing,value=editing?existing.value:null,start=editing?existing.selectionStart:null,end=editing?existing.selectionEnd:null;
+  // The year wheel replaces its SVG on every selection and async resolver
+  // update. Preserve an exact keyboard target instead of losing focus to body.
+  const clockFocusAttrs=["data-cal-clock-season","data-cal-clock-cluster","data-cal-clock-feast",
+    "data-cal-clock-year","data-cal-clock-today","data-cal-clock-browse","data-cal-clock-open-day"];
+  const focusAttr=calendarView==="year"&&active&&body.contains(active)
+    ?clockFocusAttrs.find(attr=>active.hasAttribute?.(attr)):null;
+  const focusValue=focusAttr?active.getAttribute(focusAttr):null;
   body.innerHTML=bodyMarkup();
+  if(wasClockMenuOpen){const menu=body.querySelector(".aoClockSeasonMenu");if(menu)menu.open=true;}
+  if(wasFeastMenuOpen){const menu=body.querySelector(".aoClockFeastMenu");if(menu){menu.open=true;if(hadFeastSummaryFocus)menu.querySelector("summary")?.focus?.({preventScroll:true})}}
+  if(focusAttr){
+    // Filter by the exact attribute value; never interpolate a date or source
+    // title into a CSS selector. Works equally for keyboard SVG and HTML buttons.
+    clockRestoreFocusTarget(body,focusAttr,focusValue)?.focus?.({preventScroll:true});
+  }
   if(wasDisciplineOpen){
     const next=body.querySelector(".aoCalPracticeDiscipline");
     if(next){next.open=true;if(hadDisciplineFocus)next.querySelector("summary")?.focus?.({preventScroll:true})}
@@ -935,7 +937,7 @@ function setView(view){
   if(!CALENDAR_VIEWS.has(next))return false;
   if(!root()){requestedView=next;return true}
   calendarView=next;
-  if(calendarView==="year")focusedYearPeriodId=null;
+  if(calendarView==="year"){focusedYearPeriodId=null;clockYearAnchor=null;clockPreviewDate=null;clockSelection=null;}
   if(calendarView==="picker"){
     pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
     if(!MONTH_INDEX_VIEWS.has(calendarMonthView))calendarMonthView="calendar";
@@ -959,10 +961,83 @@ function openPrintableProper(){
     console.error("Calendar print Proper source gate",error);return false;
   }
 }
+function dismissClockDetail(){
+ if(!clockSelection)return false;
+ const previous=clockSelection;
+ clockSelection=null;paint();
+ const attr=previous.type==="season"?"data-cal-clock-season"
+   :previous.type==="cluster"?"data-cal-clock-cluster"
+   :previous.type==="feast"?"data-cal-clock-feast":null;
+ const id=previous.type==="season"?previous.id:previous.date;
+ clockRestoreFocusTarget(root(),attr,id)?.focus?.({preventScroll:true});
+ return true;
+}
 function bind(r){
+  r.addEventListener("change",event=>{
+    const filter=event.target.closest?.("[data-cal-month-filter]");
+    if(filter)setMonthView(filter.value||"calendar",{openMonth:true});
+  });
+  r.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&calendarView==="year"&&clockSelection){
+      event.preventDefault();
+      dismissClockDetail();
+      return;
+    }
+    if(event.key!=="Enter"&&event.key!==" ")return;
+    const target=event.target.closest?.("g[data-cal-clock-season],g[data-cal-clock-feast],g[data-cal-clock-cluster]");
+    if(target){event.preventDefault();target.dispatchEvent(new MouseEvent("click",{bubbles:true}));}
+  });
   r.addEventListener("click",event=>{
     const reading=event.target.closest?.("[data-cal-scripture-slot]");
     if(reading){event.preventDefault();void openCalendarScripture(reading);return;}
+    const clockClose=event.target.closest?.("[data-cal-clock-close]");
+    if(clockClose){event.preventDefault();dismissClockDetail();return;}
+    const clockSeason=event.target.closest?.("[data-cal-clock-season]");
+    if(clockSeason){
+      event.preventDefault();const id=clockSeason.dataset.calClockSeason;
+      clockSelection={type:"season",id};paint();return;
+    }
+    const clockCluster=event.target.closest?.("[data-cal-clock-cluster]");
+    if(clockCluster){
+      event.preventDefault();const date=clockCluster.dataset.calClockCluster;
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(date))return;
+      clockSelection={type:"cluster",date};paint();return;
+    }
+    const clockFeast=event.target.closest?.("[data-cal-clock-feast]");
+    if(clockFeast){
+      event.preventDefault();const date=clockFeast.dataset.calClockFeast;
+      if(!cachedClockDay(date)?.day?.main)return;
+      clockPreviewDate=date;clockSelection={type:"feast",date};paint();return;
+    }
+    const clockOpen=event.target.closest?.("[data-cal-clock-open-day]");
+    if(clockOpen){
+      event.preventDefault();const date=clockOpen.dataset.calClockOpenDay;
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(date))return;
+      calendarView="day";clockSelection=null;clockYearAnchor=null;clockPreviewDate=null;
+      root()?.scrollTo?.({top:0,left:0,behavior:"auto"});void select(date);return;
+    }
+    const clockBrowse=event.target.closest?.("[data-cal-clock-browse]");
+    if(clockBrowse){
+      event.preventDefault();const month=clockBrowse.dataset.calClockBrowse;
+      if(!/^\d{4}-\d{2}$/.test(month))return;
+      pickerMonthId=month;calendarMonthView="calendar";calendarView="picker";
+      clockSelection=null;clockYearAnchor=null;clockPreviewDate=null;
+      root()?.scrollTo?.({top:0,left:0,behavior:"auto"});paint();requestPickerMonth();return;
+    }
+    const clockYear=event.target.closest?.("[data-cal-clock-year]");
+    if(clockYear){
+      event.preventDefault();
+      const step=Number(clockYear.dataset.calClockYear||0);
+      if(step!==1&&step!==-1)return;
+      const current=buildLiturgicalYear(clockPreviewDate||clockYearAnchor||state()?.selectedDate||iso(new Date()));
+      clockYearAnchor=step===1?addDaysIso(current.end,1):buildLiturgicalYear(addDaysIso(current.start,-1)).start;
+      clockPreviewDate=null;clockSelection=null;yearColourLoad=null;paint();return;
+    }
+    const clockToday=event.target.closest?.("[data-cal-clock-today]");
+    if(clockToday){
+      event.preventDefault();clockYearAnchor=null;clockPreviewDate=null;clockSelection=null;
+      yearColourLoad=null;void select(iso(new Date())).then(()=>paint());return;
+    }
     const yearPeriod=event.target.closest?.("[data-cal-year-period]");
     if(yearPeriod){
       event.preventDefault();
