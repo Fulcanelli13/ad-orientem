@@ -205,7 +205,55 @@ for(const row of flagged.rows){
  assert.equal(row.evidenceTracks.includes("PR1161_COMPLEX_23"),cmap.has(row.actionId));
  assert.ok(row.reviewInstruction.length>20,"Each issue requires meaningful editorial review");
 }
-const conciseRubricDrafts=sources.frenchReview.rows.filter(x=>x.shortFrenchRubricDraft);
+const conciseRubricDrafts=sources.frenchReview.rows.filter(x=>x.editorialFlags.length>0);
+const allShortRubrics=sources.frenchReview.rows;
+assert.equal(allShortRubrics.length,62,"Complete original Canon action inventory required");
+assert.equal(allShortRubrics.filter(x=>x.actor==="PRIEST").length,58);
+assert.equal(allShortRubrics.filter(x=>x.actor==="SERVER").length,4);
+assert.equal(allShortRubrics.filter(x=>x.shortFrenchRubricDraft).length,62,
+ "Every existing Canon source action now needs source-specific concise French draft copy");
+assert.equal(allShortRubrics.filter(x=>x.editorialFlags.length===0).length,33,
+ "The 33 previously unflagged Canon source actions must be covered once");
+const uniqueShortActions=new Set();
+for(const row of allShortRubrics){
+ assert.ok(!uniqueShortActions.has(row.id),row.id+": duplicated French text owner");
+ uniqueShortActions.add(row.id);
+ assert.equal(row.shortRubricReviewState,
+  "ORIGINAL_FRENCH_SHORT_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
+ assert.equal(row.reviewState,
+  "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
+ assert.equal(row.faithfulRubricInferred,false);
+ assert.ok(row.shortFrenchRubricDraft.length>=24,row.id+": content too thin");
+ assert.ok(row.shortFrenchRubricDraft.length<=row.revisedFrenchRubric.length+24,
+  row.id+": short rubric must remain genuinely concise");
+ assert.ok(row.sourceURLs.every(url=>url.startsWith("https://")));
+ const canonical=trigger.rows.find(x=>x.id===row.id);
+ assert.equal(canonical?.cueId,row.cueId,row.id+": source cue owner changed");
+ assert.equal(canonical?.actor,row.actor,row.id+": priest/minister attribution changed");
+ assert.doesNotMatch(row.shortFrenchRubricDraft,
+  /(?:ce module|cette application|d’après la source|selon le dossier|l’éditeur|rubrique à revoir)/iu,
+  row.id+": editorial metacommentary leaked into short guide");
+}
+for(const [id,pattern] of [
+ ["013",/« benedíctam ».*« adscríptam ».*« ratam ».*trois croix/],
+ ["014",/« Corpus ».*Hostie seule/],
+ ["015",/« Sanguis ».*calice seul/],
+ ["041",/« Súpplices te rogámus ».*au milieu de l’autel/],
+ ["043",/« Corpus ».*« Sanguinem »/],
+ ["047",/mémoire des fidèles défunts/],
+ ["053",/garde les mains jointes/],
+ ["056",/« Per ipsum ».*« cum ipso ».*« in ipso ».*trois croix/],
+ ["057",/« Patri ».*« Sancti ».*deux croix/],
+]){
+ const row=allShortRubrics.find(x=>x.id==="AO.CANON.R62."+id);
+ assert.match(row.shortFrenchRubricDraft,pattern,id+": source-dependent short copy lost");
+}
+assert.equal(allShortRubrics.find(x=>x.id==="AO.CANON.R62.047")
+ .shortRubricPlacement,"PRIEST_SILENT_PAUSE");
+assert.equal(allShortRubrics.find(x=>x.id==="AO.CANON.R62.053")
+ .shortRubricPlacement,"PRIEST_PERSISTENT_STATE");
+assert.doesNotMatch(allShortRubrics.find(x=>x.id==="AO.CANON.R62.041")
+ .shortFrenchRubricDraft,/profondément/);
 assert.equal(conciseRubricDrafts.length,29,"29 flagged Canon rubrics need original French short copy");
 assert.deepEqual(conciseRubricDrafts.map(x=>x.id),flagged.rows.map(x=>x.actionId),
  "Short draft must use the same 29 source-owned risk actions without duplicates");
