@@ -22,6 +22,8 @@ assert.equal(rome.length,PRELIMINARY_R49_ROME);
 assert.equal(sspx.length,732);
 assert.equal(unknown.length,125);
 assert.equal(all.length,1879);
+assert.equal(filterPreliminaryR49(records).length,1879,
+  "Worldwide Mass map must include every provisional source-backed venue by default");
 assert.equal(exploreMapFeatures(records).length,1879);
 assert.ok(rome.every(x=>x.preliminary_group==="ROME"));
 assert.ok(sspx.every(x=>x.community_id==="SSPX"));
@@ -39,6 +41,12 @@ const vm=buildExploreViewModel({language:"fr",items:rome,lens:"tlm",view:"map",
 const html=renderExploreToString(vm);
 assert.match(html,/data-find-filter="directoryGroup"/);
 assert.match(html,/data-find-filter-value="ROME"/);
+assert.match(html,/data-find-filter-value="ALL"/);
+assert.match(html,/aoTlmToolbar/,"Mass map search and view switch should share a compact toolbar");
+assert.match(html,/aoTlmProviderStrip/,"Institution filters must be visible, not hidden in a details disclosure");
+assert.match(html,/aoPreliminaryDirectoryNotice/,"The provisional-directory warning must remain available");
+assert.ok(html.indexOf("aoFindExternalSource")>html.indexOf('data-find-view="map"'),
+  "Secondary directory links belong below the map, not above it");
 assert.match(html,/data-find-filter-value="SSPX"/);
 assert.match(html,/data-find-map/);
 assert.doesNotMatch(html,/data-find-filter="day"/,"Preliminary directory must not claim day-by-day timetable filters");
