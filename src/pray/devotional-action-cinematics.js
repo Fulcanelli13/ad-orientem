@@ -14,20 +14,9 @@ export function resolveDevotionalActionScene({
   adorationMode=null,visitStep=null,benedictionStage=null,
   stationStep=null,stationRitual=null,
 }={}){
-  if(view==="angelus"){
-    if(form!=="angelus"||cardId!=="incarnation"||cue!=="profound-bow")return null;
-    // The approved traditional posture resolver returns kneel on weekdays,
-    // stand on Sundays and Saturday after Vespers. Do not invert that rule.
-    if(posture==="stand")return fixed("ANGELUS.INCARNATION.BOW","POSTURE",
-      "ao-live-profound-bow","Et Verbum caro factum est",
-      "Bow profoundly at the Incarnation","Inclinez-vous profondément à l’Incarnation",
-      "ANGELUS.CARD.INCARNATION.VERSICLE");
-    if(posture==="kneel")return fixed("ANGELUS.INCARNATION.KNEEL","POSTURE",
-      "ao-live-kneel","Et Verbum caro factum est",
-      "Remain kneeling for the Incarnation","Demeurez à genoux à l’Incarnation",
-      "ANGELUS.CARD.INCARNATION.VERSICLE");
-    return null;
-  }
+  // Angelus has one exact owner: angelus-cinematic-policy.js and
+  // devotional-cinematic.js (PR #1196). Do not create a second gesture.
+  if(view==="angelus")return null;
   if(view==="benediction"){
     // A user-selected stage is not independent observation of the blessing.
     if(benedictionStage!=="blessing")return null;
