@@ -33,4 +33,19 @@ assert.ok(current.includes('"RAISES EYES":"priest_centre_arms_rich"'));
 assert.ok(current.includes('"WASHES / PURIFIES":"lavabo"'));
 assert.ok(current.includes('ALTAR_EPISTLE_MISSAL:"priest_epistle_rich"'));
 assert.ok(current.includes('ALTAR_GOSPEL_MISSAL:"priest_gospel_rich"'));
+
+const work=load("../data/presentation/mass-icon-harmonization-16-workorders-20261014.v1.json");
+assert.equal(work.phase,"PHASE_B_PENDING_SOURCE_AND_VISUAL_REVIEW");
+assert.equal(work.policy.noLiveChanges,true);
+assert.equal(work.policy.noImageGenerationBeforeReuse,true);
+assert.deepEqual(Object.values(work.counts),[16,13,2,1]);
+assert.equal(work.workorders.length,16);
+assert.deepEqual(new Set(work.workorders.map(x=>x.id)).size,16);
+assert.deepEqual([...new Set(work.workorders.filter(x=>x.track==="FAMILY").map(x=>x.id))].sort(),a.groups.family.slice().sort());
+assert.deepEqual(work.workorders.filter(x=>x.track==="DIAGNOSE").map(x=>x.id).sort(),a.groups.diagnostic.slice().sort());
+assert.deepEqual(work.workorders.filter(x=>x.track==="CROP").map(x=>x.id).sort(),a.groups.crop.slice().sort());
+assert.ok(work.workorders.every(x=>x.rating>=3 && !x.autoApproval && x.anchors.length));
+assert.ok(work.workorders.every(x=>!a.discardIds.includes(x.id)));
+assert.deepEqual(new Set([...work.workorders.map(x=>x.id),...a.groups.semantic]).size,24);
+
 console.log("PASS: 8 rubrical/semantic reviews; 12 discarded; 19 pending; zero reader changes.");
