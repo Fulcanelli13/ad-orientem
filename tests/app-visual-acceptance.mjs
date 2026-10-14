@@ -606,6 +606,15 @@ try{
   assert.ok(adorationArrival.bodyWidth>=360,"Adoration rails reserved horizontal reader width");
   assert.equal(adorationArrival.pointer,"none","Adoration rails intercept touch");
   await shot("03e-pray-adoration-arrival");
+  // The new solemn Visit cue is intentionally modal. A human must first
+  // acknowledge the reverence before touching the underlying seven-stage
+  // timeline. Do not force-click through the modal or disable pointer capture.
+  const arrivalCinema=page.locator("body > .aoDevotionalActionCinematic[data-ao-action-scene='VISIT.ARRIVAL']");
+  await arrivalCinema.waitFor({state:"visible",timeout:5000});
+  assert.equal(await arrivalCinema.getAttribute("aria-modal"),"true");
+  await arrivalCinema.locator(".aoDevotionalActionContinue").click();
+  assert.equal(await arrivalCinema.count(),0,"Visit acknowledgement did not return to the canonical timeline");
+  await shot("03e2-pray-adoration-reader-after-reverence");
 
   // The guided Visit now uses a seven-stage source-owned timeline; the old
   // Continue button is intentionally hidden except on the final Finish card.
