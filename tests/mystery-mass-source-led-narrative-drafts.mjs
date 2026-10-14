@@ -15,6 +15,26 @@ assert.equal(n.liturgicalStudySelections.length,39);
 assert.equal(n.counts.existingStudyDrafts,44);
 assert.equal(n.counts.biblicalScenesWithAlphonsusOriginalPassages,19);
 assert.equal(n.counts.alphonsusCitedPassageLinks,30);
+const canon=json('data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json');
+assert.equal(canon.canonPrayers.length,14);
+assert.equal(n.counts.canonSourceCriticalPrayerExpositions,14);
+const editorialCanon=new Map(canon.canonPrayers.map(x=>[x.massOwner,x]));
+assert.equal(editorialCanon.size,14);
+assert.equal(n.liturgicalStudySelections.filter(x=>x.canonSourceCriticalStudy).length,14);
+for(const x of n.liturgicalStudySelections.filter(x=>x.owner.startsWith('AO.CANON.'))){
+ const expected=editorialCanon.get(x.owner);
+ assert.ok(expected,x.owner);
+ assert.ok(expected.coreTheologicalQuestion.length>=75);
+ assert.ok(expected.sourceLedExplanationDraftEN.length>=320);
+ assert.ok(expected.transitionInLiturgicalJourney.length>=65);
+ assert.equal(expected.published,false);
+ assert.equal(x.canonSourceCriticalStudy.researchRecordId,x.owner);
+ assert.equal(x.canonSourceCriticalStudy.authorDrivenEnglishExplanation,expected.sourceLedExplanationDraftEN);
+ assert.equal(x.canonSourceCriticalStudy.approved,false);
+ assert.ok(expected.sourceAnchorIds.guérangerOriginalFrench.length>0);
+ assert.ok(expected.sourceAnchorIds.inheritedBilingualManuscripts.length>0);
+}
+
 assert.deepEqual(n.biblicalNarrativeDrafts.map(x=>x.id),map.biblicalChronology.map(x=>x.id));
 assert.deepEqual(n.liturgicalStudySelections.map(x=>x.owner),map.liturgicalChronology.map(x=>x.ownerId));
 const alph=new Map(a.alphonsusPassageClaims.map(x=>[x.id,x]));
