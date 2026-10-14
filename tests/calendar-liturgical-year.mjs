@@ -11,6 +11,7 @@ import {
 } from "../src/calendar/liturgical-year.js";
 import { v384Dates, v384Events, v384Event } from "../src/calendar/traditional-year-v384.js";
 import { SEASON_GUIDE, yearSegmentGeometry, renderYearJourney } from "../src/calendar/year-journey.js";
+import { clockGeometry, clockCandidates, orderedClockCandidateDates, resolvedClockFeasts, nextVerifiedClockFeast, clockMarkerClusters, renderLiturgicalClock, liturgicalClockCss } from "../src/calendar/liturgical-clock.js";
 import { calendarMassColour } from "../src/calendar/colour-projection.js";
 import { calendarPaletteColour, resolvedYearColour, yearDailyProjection, yearSeasonGradient } from "../src/calendar/year-colour-wheel.js";
 import { MASS_LITURGICAL_PALETTES } from "../src/mass/reader-liturgical-theme.js";
@@ -63,15 +64,15 @@ assert.equal(calendarPaletteColour("white"),MASS_LITURGICAL_PALETTES.WHITE.accen
 assert.equal(calendarPaletteColour("black"),MASS_LITURGICAL_PALETTES.BLACK.accent,
   "Black must be distinct from the unresolved neutral state");
 assert.equal(calendarPaletteColour("violet"),MASS_LITURGICAL_PALETTES.VIOLET.accent);
-const sourceDay=(date,color)=>({date,status:"ready",day:{main:{id:"fixture:"+date,color}},
-  proper:{data:{color}}});
+const sourceDay=(date,color,rank="IV Class")=>({date,status:"ready",day:{main:{id:"fixture:"+date,color,rank}},
+  proper:{data:{color,rank}}});
 const resolvedFixtures=new Map([
-  ["2026-04-05",sourceDay("2026-04-05","White")],
+  ["2026-04-05",sourceDay("2026-04-05","White","I Class")],
   ["2026-10-07",sourceDay("2026-10-07","Green")],
-  ["2026-05-24",sourceDay("2026-05-24","Red")],
+  ["2026-05-24",sourceDay("2026-05-24","Red","I Class")],
   ["2026-10-10",sourceDay("2026-10-10","White")],
   ["2026-10-11",sourceDay("2026-10-11","Green")],
-  ["2026-11-02",sourceDay("2026-11-02","Black")],
+  ["2026-11-02",sourceDay("2026-11-02","Black","I Class")],
 ]);
 const daily=yearDailyProjection(rosary,id=>resolvedFixtures.get(id));
 assert.equal(daily.total,364,"2025–2026 liturgical-year daily wheel must have 364 distinct days");
@@ -96,9 +97,9 @@ assert.equal(verifiedEveryday.complete,true);
 assert.equal((verifiedEveryday.gradient.match(/#[a-f0-9]+/gi)||[]).length,1,
   "Contiguous equal-colour days must combine into one CSS band");
 const yearRuntimeSource=fs.readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
-assert.match(yearRuntimeSource,/requestYearDailyColours\(y\)/,"Year view must initiate source-based day colours");
-assert.match(yearRuntimeSource,/data-verified-days/,"Year wheel must expose actual verification count");
-assert.match(yearRuntimeSource,/yearDailyProjection\(y,/);
+assert.match(yearRuntimeSource,/requestClockFeasts\(y\)/,"Year view must load candidate feasts without resolving 365 days");
+assert.match(yearRuntimeSource,/renderLiturgicalClock\(/,"Year view must render the canonical SVG clock");
+assert.doesNotMatch(yearRuntimeSource.slice(yearRuntimeSource.indexOf("function yearSurface("),yearRuntimeSource.indexOf("function pickerSurface(")),/aoCalV2Ring|renderYearJourney/,"Obsolete progress ring or duplicated timeline returned to Year");
 const yearJourneySource=fs.readFileSync(new URL("../src/calendar/year-journey.js",import.meta.url),"utf8");
 assert.doesNotMatch(yearJourneySource,/const COLOR=Object.freeze/,"Legacy beige seasonal palette must be removed");
 assert.match(yearJourneySource,/aoCalYearDailyTrack/,"Timeline must show actual daily colours separately from seasons");
@@ -110,6 +111,213 @@ assert.ok(Math.abs(segments.reduce((n,p)=>n+p.widthPercent,0)-100)<1e-8,"Timelin
 assert.ok(Math.abs(segments.at(-1).endPercent-100)<1e-8,"Timeline must end at liturgical year boundary");
 assert.ok(segments.every(p=>p.days>0&&p.endPercent>p.startPercent),"Timeline segment must represent actual day duration");
 assert.ok(segments.find(p=>p.id==="pentecost").widthPercent<3,"Short Pentecost octave must remain proportionally short");
+const clockGroups=clockGeometry(rosary);
+assert.equal(clockGroups.groups.length,8,"The Liturgical Clock must have eight major visual sections");
+assert.equal(clockGroups.groups[0].start,rosary.start);
+assert.equal(clockGroups.groups.at(-1).end,rosary.end);
+assert.equal(clockGroups.groups.reduce((total,g)=>total+g.periods.reduce((n,p)=>n+p.days,0),0),rosary.totalDays,"Season arcs must cover every date exactly once");
+assert.equal(clockCandidates(rosary).filter(c=>c.date==="2026-04-05").length,1);
+const clockQueue=clockCandidates(rosary);
+const clockPriority=orderedClockCandidateDates(rosary,"2026-10-13");
+const kingCandidate=clockQueue.find(c=>c.en==="Christ the King");
+assert.equal(clockPriority[0],kingCandidate.date,
+ "Year preload must resolve the next major feast before all the previous winter's candidates");
+assert.equal(new Set(clockPriority).size,clockQueue.length,
+ "Preload priority must neither duplicate nor discard source candidate dates");
+assert.deepEqual([...clockPriority].sort(),clockQueue.map(c=>c.date).sort(),
+ "Reordered source candidate list must preserve the complete original resolver work queue");
+
+for(const name of ["First Sunday of Advent","Annunciation of the Blessed Virgin Mary","Trinity Sunday","Holy Wednesday","Fourth Sunday of Lent"]){
+ assert.ok(clockQueue.some(c=>c.en.startsWith(name)),name+" omitted from source-curated marker candidates");
+}
+assert.equal(new Set(clockQueue.map(c=>c.date)).size,clockQueue.length,
+ "Transferred coincidences must not fetch/render the same liturgical date twice");
+const annunciationCandidate=clockQueue.find(c=>c.en.startsWith("Annunciation"));
+assert.equal(annunciationCandidate.date,annunciationObservanceDate(2026),
+ "The Annunciation marker queue must use the already computed 1962 observance date");
+const announcedDay=sourceDay(annunciationCandidate.date,"White","I Class");
+const announcedMarkers=resolvedClockFeasts(rosary,id=>id===annunciationCandidate.date?announcedDay:null,
+ r=>r.day.main.id,r=>r.day.main.rank);
+assert.ok(announcedMarkers.some(c=>c.date===annunciationCandidate.date),
+ "A source-confirmed first-class Annunciation must have a clickable clock marker");
+const unobservedAnnunciation=resolvedClockFeasts(rosary,id=>id===annunciationCandidate.date
+ ?sourceDay(annunciationCandidate.date,"Violet","IV Class"):null,
+ r=>r.day.main.id,r=>r.day.main.rank);
+assert.equal(unobservedAnnunciation.length,0,
+ "A calendar candidate alone must not imply the Annunciation is observed on that date");
+
+// A later confirmed jewel is not necessarily the next feast: the prior
+// Christ-the-King candidate must be resolved before claiming All Saints next.
+const pendingKing=new Map([["2026-11-01",sourceDay("2026-11-01","White","I Class")]]);
+const pendingFeasts=resolvedClockFeasts(rosary,id=>pendingKing.get(id),
+ r=>r.day.main.id,r=>r.day.main.rank);
+assert.equal(nextVerifiedClockFeast(rosary,"2026-10-13",id=>pendingKing.get(id),pendingFeasts),null,
+ "Do not call All Saints next while Christ the King is still unresolved");
+const renderUpcoming=({cache,nextMajor=null})=>{
+ const html=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-13",todayDate:"2026-10-13",
+  getDay:id=>cache.get(id),titleFor:r=>r.day.main.id,rankFor:r=>r.day.main.rank,nextMajor});
+ return html.split('<section class="aoClockUpcoming">')[1]?.split("</section>")[0]||"";
+};
+assert.doesNotMatch(renderUpcoming({cache:pendingKing}),/data-cal-clock-open-day="2026-11-01"/,
+ "The Coming next card must not jump over an unresolved source date");
+assert.doesNotMatch(renderUpcoming({cache:pendingKing,
+ nextMajor:{date:"2026-11-01",title:"All Saints"}}),/data-cal-clock-open-day="2026-11-01"/,
+ "An unverified explicit next-feast hint must not override the source gate");
+const resolvedKing=new Map(pendingKing);
+resolvedKing.set(kingCandidate.date,sourceDay(kingCandidate.date,"White","I Class"));
+assert.equal(nextVerifiedClockFeast(rosary,"2026-10-13",id=>resolvedKing.get(id),
+ resolvedClockFeasts(rosary,id=>resolvedKing.get(id),r=>r.day.main.id,r=>r.day.main.rank))?.date,
+ kingCandidate.date,"Once resolved, Christ the King must appear before All Saints");
+const lowRankKing=new Map(pendingKing);
+lowRankKing.set(kingCandidate.date,sourceDay(kingCandidate.date,"Green","IV Class"));
+assert.equal(nextVerifiedClockFeast(rosary,"2026-10-13",id=>lowRankKing.get(id),
+ resolvedClockFeasts(rosary,id=>lowRankKing.get(id),r=>r.day.main.id,r=>r.day.main.rank))?.date,
+ "2026-11-01","A source-verified IV-class day may be skipped when finding the next I/II feast");
+assert.match(renderUpcoming({cache:pendingKing,
+ nextMajor:{date:kingCandidate.date,title:"Christ the King",verified:true}}),
+ new RegExp('data-cal-clock-open-day="'+kingCandidate.date+'"'),
+ "A canonical explicitly verified next observance may be displayed");
+
+// Rank typography must not silently remove a confirmed I/II feast from the
+// French wheel. III-class dates remain excluded even if source-resolved.
+for(const [rank,tier] of [["I Class","principal"],["Classis I","principal"],
+ ["Classe I","principal"],["1re classe","principal"],["première classe","principal"],
+ ["II Class","significant"],["Classe II","significant"],["2e classe","significant"],
+ ["deuxième classe","significant"],["Classe III",null]]){
+ const marked=resolvedClockFeasts(rosary,id=>id==="2026-04-05"
+   ?sourceDay("2026-04-05","White",rank):null,
+   r=>r.day.main.id,r=>r.day.main.rank);
+ assert.equal(marked.find(f=>f.date==="2026-04-05")?.tier||null,tier,
+  "Source-confirmed 1962 class notation "+rank+" must produce the correct marker");
+}
+
+const knownClock=resolvedClockFeasts(rosary,id=>resolvedFixtures.get(id),r=>r.day.main.id,r=>r.day.main.rank);
+assert.ok(knownClock.some(f=>f.date==="2026-04-05"),"Easter should be marked when resolved");
+assert.equal(knownClock.find(f=>f.date==="2026-04-05")?.tier,"principal","Observed I-class rank must determine marker tier");
+const displacedClock=resolvedClockFeasts(rosary,id=>{
+ const row=resolvedFixtures.get(id);
+ return id==="2026-04-05"?{...row,day:{main:{...row.day.main,rank:"IV Class"}}}:row;
+},r=>r.day.main.id,r=>r.day.main.rank);
+assert.ok(!displacedClock.some(f=>f.date==="2026-04-05"),
+ "A projected first-class candidate cannot make a resolver-observed IV-class feria into a major feast");
+assert.equal(resolvedClockFeasts(rosary,id=>resolvedFixtures.get(id),r=>r.day.main.id,
+ r=>r.day.main.rank).filter(f=>f.date==="2026-04-05").length,1,
+ "Do not duplicate the same observed Mass date when candidate dates overlap");
+assert.ok(!knownClock.some(f=>f.date==="2025-12-25"),"Unresolved feasts cannot be displayed as confirmed");
+const clockHtml=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-07",todayDate:"2026-10-13",
+ getDay:id=>resolvedFixtures.get(id),titleFor:r=>r.day.main.id,rankFor:r=>r.day.main.rank,massColourFor:()=> "Green"});
+assert.equal((clockHtml.match(/data-cal-clock-season="/g)||[]).length,8,"One eight-sector wheel; no redundant season browser");
+assert.doesNotMatch(clockHtml,/aoClockSeasonMenu|Browse seasons|Parcourir les temps/,
+ "The wheel must not duplicate all seasons in a second navigation menu");
+assert.match(liturgicalClockCss,/var\(--liturgical\)/,
+ "Active Clock controls must follow the application's daily liturgical theme");
+assert.match(liturgicalClockCss,/var\(--bg\)/,
+ "Clock background must inherit the existing app canvas");
+assert.match(liturgicalClockCss,/var\(--text\)/,
+ "Clock text must inherit the app's contrast hierarchy");
+assert.doesNotMatch(liturgicalClockCss,/#[\da-f]{3,8}\b/i,
+ "The Year wheel must not introduce a competing hardcoded hex palette");
+assert.match(liturgicalClockCss,/background:var\(--ao-surface-1,var\(--bg\)\)!important/,
+ "Upcoming feast cards must inherit the daily application surface, not a fixed green-grey gradient");
+assert.match(clockHtml,/data-cal-clock-feast="2026-04-05"/,"Resolved feast must have an interactive marker");
+assert.match(clockHtml,/class="aoClockFeastMenu"/,
+ "The small phone dial must have a separate full-size accessible feast chooser");
+assert.match(clockHtml,/Feast dates/,
+ "Verified celebrations must have one touch-friendly date list fallback");
+assert.match(clockHtml,/<button type="button" data-cal-clock-feast="2026-04-05"/,
+ "Verified feasts must remain selectable via a touch-sized list control");
+
+assert.doesNotMatch(clockHtml,/data-cal-clock-feast="2025-12-25"/,"Unresolved feast must not have a fabricated marker");
+assert.match(clockHtml,/data-cal-clock-open-day="2026-10-07"/,"Clock centre must open the selected date");
+assert.doesNotMatch(clockHtml,/data-cal-clock-today/,
+ "Return to today is unnecessary when already in the current liturgical year");
+const otherYear=buildLiturgicalYear("2024-10-13");
+const olderClock=renderLiturgicalClock({year:otherYear,selectedDate:"2024-10-13",todayDate:"2026-10-13"});
+assert.match(olderClock,/data-cal-clock-today/,
+ "Year navigation still needs one return-to-today action when browsing another year");
+assert.doesNotMatch(clockHtml,/aoClockActions|Browse month|Browse this season|aoClockCoreSeason|aoClockCoreColour/,
+ "Duplicate Year menus, season labels, colour labels and bottom navigation must be absent");
+assert.doesNotMatch(clockHtml,/1962 day resolver|source resolution/i,
+ "Liturgical year must not expose internal verification jargon in the user interface");
+assert.match(clockHtml,/data-cal-clock-year="-1"/);
+const selectedFeastClock=renderLiturgicalClock({year:rosary,selectedDate:"2026-04-05",todayDate:"2026-10-13",
+ getDay:id=>resolvedFixtures.get(id),titleFor:r=>r.day.main.id,rankFor:r=>r.day.main.rank,
+ selection:{type:"feast",date:"2026-04-05"}});
+assert.match(selectedFeastClock,/data-cal-clock-open-day="2026-04-05"/);
+const frenchClock=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-07",todayDate:"2026-10-13",
+ fr:true,getDay:id=>resolvedFixtures.get(id),titleFor:r=>r.day.main.id,selection:{type:"season",id:"advent"}});
+assert.match(frenchClock,/TEMPS LITURGIQUE/,"French season details must be translated");
+const frenchFeastMenu=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-07",todayDate:"2026-10-13",
+ fr:true,getDay:id=>resolvedFixtures.get(id),titleFor:r=>r.day.main.id,rankFor:r=>r.day.main.rank});
+assert.match(frenchFeastMenu,/Dates des fêtes/,
+ "The accessible verified-feast chooser must be bilingual");
+
+
+// Holy Week is a dense 1962 run. Nearby verified celebrations must have ONE
+// readable cluster marker and remain individually reachable in the drawer.
+const holyDays=new Map([
+ ["2026-04-02",sourceDay("2026-04-02","White","I Class")],
+ ["2026-04-03",sourceDay("2026-04-03","Black","I Class")],
+ ["2026-04-04",sourceDay("2026-04-04","Violet","I Class")],
+ ["2026-04-05",sourceDay("2026-04-05","White","I Class")]
+]);
+const holyFeasts=resolvedClockFeasts(rosary,id=>holyDays.get(id),r=>r.day.main.id,r=>r.day.main.rank);
+// Clustering is geometric only. A chain of consecutive observed Holy Week
+// dates must not collapse Lent, Passiontide and Easter into one unselectable dot.
+const allCandidateMarkers=clockCandidates(rosary).map(c=>({...c,title:c.en,tier:"principal"}));
+const boundedClockClusters=clockMarkerClusters(allCandidateMarkers);
+assert.equal(boundedClockClusters.reduce((n,g)=>n+g.length,0),allCandidateMarkers.length,
+ "All candidate dates must survive cluster layout without dropping feasts");
+assert.ok(boundedClockClusters.every(g=>g.length<=5&&
+ (new Date(g.at(-1).date+"T12:00:00Z")-new Date(g[0].date+"T12:00:00Z"))/86400000<=4),
+ "A visual feast cluster must span at most four days; no transitive Holy Week chain");
+assert.ok(boundedClockClusters.filter(g=>g.some(f=>f.date>="2026-03-15"&&f.date<="2026-04-05")).length>=3,
+ "Fourth Sunday of Lent through Easter Sunday must remain distinguishable clusters");
+const holyClusters=clockMarkerClusters(holyFeasts);
+assert.equal(holyFeasts.length,4,"Known Holy Week dates must resolve into four verified celebrations");
+assert.equal(holyClusters.length,1,"Adjacent Holy Week markers must be grouped into one tap target");
+assert.equal(holyClusters[0].length,4);
+const holyHtml=renderLiturgicalClock({year:rosary,selectedDate:"2026-04-05",todayDate:"2026-10-13",
+ getDay:id=>holyDays.get(id),titleFor:r=>r.day.main.id,rankFor:r=>r.day.main.rank,
+ selection:{type:"cluster",date:"2026-04-02"}});
+assert.match(holyHtml,/data-cal-clock-cluster="2026-04-02"/,"Crowded feasts need a group selector");
+for(const iso of holyDays.keys())assert.match(holyHtml,new RegExp('data-cal-clock-feast="'+iso+'"'),
+ "A clustered celebration must remain individually available from its detail");
+assert.ok(!holyHtml.includes('<g data-cal-clock-feast="2026-04-02"'),
+ "Clustered days should not draw overlapping individual outer dots");
+
+// Source resolution arrives out of order. A cluster opened while only Apr 3–5
+// are known must stay open if Apr 2 resolves later and becomes the first marker.
+const partialHolyDays=new Map([...holyDays].filter(([date])=>date>="2026-04-03"));
+const initialClusterHtml=renderLiturgicalClock({year:rosary,selectedDate:"2026-04-05",todayDate:"2026-10-13",
+ getDay:id=>partialHolyDays.get(id),titleFor:r=>r.day.main.id,rankFor:r=>r.day.main.rank,
+ selection:{type:"cluster",date:"2026-04-03"}});
+assert.match(initialClusterHtml,/data-cal-clock-cluster="2026-04-03"/,
+ "Partially resolved cluster should open from its first verified date");
+const expandedClusterHtml=renderLiturgicalClock({year:rosary,selectedDate:"2026-04-05",todayDate:"2026-10-13",
+ getDay:id=>holyDays.get(id),titleFor:r=>r.day.main.id,rankFor:r=>r.day.main.rank,
+ selection:{type:"cluster",date:"2026-04-03"}});
+assert.match(expandedClusterHtml,/data-cal-clock-cluster="2026-04-02"/,
+ "Newly resolved earlier day must become the source-aligned cluster anchor");
+assert.match(expandedClusterHtml,/data-cal-clock-cluster-members="2026-04-02,2026-04-03,2026-04-04,2026-04-05"/,
+ "Cluster must expose source dates for stable keyboard focus restoration");
+assert.match(expandedClusterHtml,/Adjacent major celebrations/,
+ "A selected cluster must remain open even after its anchor date changes");
+assert.match(expandedClusterHtml,/data-cal-clock-cluster="2026-04-02"[^>]*aria-pressed="true"/,
+ "Regrouped source marker must remain visibly selected");
+// A selected group may become an individual observed jewel after a resolver
+// update. Never silently discard its detail just because the group disappeared.
+const isolatedEaster=renderLiturgicalClock({year:rosary,selectedDate:"2026-04-05",todayDate:"2026-10-13",
+ getDay:id=>id==="2026-04-05"?holyDays.get(id):null,
+ titleFor:r=>r.day.main.id,rankFor:r=>r.day.main.rank,
+ selection:{type:"cluster",date:"2026-04-05"}});
+assert.match(isolatedEaster,/OBSERVED CELEBRATION/,
+ "A formerly clustered source date must fall back to its individual observed-feast detail");
+assert.match(isolatedEaster,/data-cal-clock-open-day="2026-04-05"/,
+ "Source-confirmed singleton detail must still open the exact observed day");
+assert.doesNotMatch(isolatedEaster,/Adjacent major celebrations/,
+ "A one-day observed feast must not be presented as a multi-date cluster");
+
 const yearHtml=renderYearJourney({year:rosary,selectedDate:"2026-10-07",formatDate:id=>id});
 assert.equal((yearHtml.match(/data-cal-year-segment=/g)||[]).length,11,"Year track must render each period exactly once");
 assert.equal((yearHtml.match(/data-cal-year-period=/g)||[]).length,11,"All 11 period cards must be selectable");
@@ -289,19 +497,46 @@ assert.match(browser, /if\(calendarView==="picker"\)return/, "Month picker must 
 assert.match(browser, /calendarView==="year"\)return \`\$\{tabsMarkup\(\)\}\$\{yearSurface/, "Year view must render before Day's resolution guard");
 assert.match(browser, /calendarView==="picker"\)return \`\$\{tabsMarkup\(\)\}\$\{pickerSurface/, "Month must render before Day's resolution guard");
 assert.match(browser, /data-cal-view/);
-assert.match(browser, /aoCalV2Ring/, "Liturgical Year lost its sourced progress ring");
-assert.match(browser, /aoCalV2YearIdentity/, "Liturgical Year lost selected-day and period identity");
-assert.match(browser, /renderYearJourney\(\{year:y/, "Liturgical Year lost the proportional timeline and period journey");
-assert.match(browser, /yearJourneyCss/, "Liturgical Year did not import responsive journey styles");
-assert.match(browser, /aoCalV2Coming/, "Liturgical Year lost its next major celebration and season transitions");
-assert.match(browser, /data-cal-open-month="major"/, "Liturgical Year lost its major-days route into Month");
-assert.ok(browser.includes('data-cal-year-open-day="${next.date}"'),"Next feast must open Day through existing Year-Journey handler");
-assert.ok(browser.includes('data-cal-year-open-day="${nextSeason.start}"'),"Next season must open Day through Year-Journey handler");
+assert.match(browser,/liturgicalClockCss/,"Calendar must ship responsive wheel styles");
+
+/* Calendar controls inherit the active app theme.  Per-day Month markers
+   retain their own source-resolved colour, not a global seasonal tint. */
+assert.match(browser,/\.aoCalV2Tabs button\.active\{color:var\(--liturgical\);border-bottom-color:var\(--liturgical\)\}/,
+ "Selected Calendar navigation must use the shared daily liturgical theme");
+assert.match(browser,/\.aoCalV2MonthGrid button\.selected\{[^}]*box-shadow:inset 0 0 0 2px var\(--liturgical\)/,
+ "The selected month date must use the shared theme accent");
+assert.match(browser,/const accent=r\?liturgicalAccent\(r\):"var\(--muted\)"/,
+ "Unresolved Month dates must use neutral theme markers, not invented liturgical colours");
+assert.match(browser,/\.aoCalV2MonthGrid button\{[^}]*var\(--month-accent,var\(--liturgical\)\) 3%,var\(--ao-surface-1,var\(--bg\)\)/,
+ "Each month cell must preserve its own verified daily colour on the neutral app surface");
+assert.match(browser,/\.aoCalV2NextMajor\{[^}]*background:var\(--ao-surface-1,var\(--bg\)\)/,
+ "Day upcoming-celebration cards must inherit the app surface");
+assert.match(browser,/\.aoCalV2Primary\{[^}]*color-mix\(in srgb,var\(--liturgical\)/,
+ "Day's Mass action must use the current liturgical accent");
+assert.match(browser,/\.aoCalV2DirectJump input\{[^}]*background:var\(--ao-surface-1,var\(--bg\)\)/,
+ "Month date input must inherit the app surface");
+assert.match(browser,/\.aoCalV2TextLink\{[^}]*color:var\(--liturgical\)/,
+ "Calendar text actions must use the shared liturgical accent");
+
+assert.match(browser,/requestClockFeasts/,"Calendar must resolve bounded feast candidates");
+assert.match(browser,/renderLiturgicalClock/,"Year must use the SVG Liturgical Clock");
+assert.doesNotMatch(browser,/View the liturgical year|Voir l’année liturgique/,
+ "Day must not repeat the already visible Year navigation");
+assert.doesNotMatch(browser,/class="aoCalV2WeekShift"/,
+ "Day must not add a second row of previous/next week navigation controls");
+assert.doesNotMatch(browser,/Date-bound devotional context|Contexte dévotionnel lié à la date/,
+ "Repeated technical practices introductions must not reappear");
+assert.match(browser,/r.addEventListener\("change",event=>/,
+ "Month filter must work with keyboard and pointer selection");
+
+assert.match(browser,/data-cal-clock-feast/,"Feast markers must have real selection handling");
+assert.match(browser,/data-cal-clock-season/,"Seasons must have real selection handling");
+assert.match(browser,/data-cal-clock-browse/,"Wheel must hand off to Month without a parallel calendar");
+assert.match(browser,/data-cal-clock-open-day/,"Wheel must hand off to Day");
+assert.match(browser,/data-cal-clock-today/,"Wheel must provide a Today reset");
+assert.match(browser,/data-cal-clock-year/,"Wheel must navigate liturgical years");
 assert.ok(!browser.includes('data-cal-month-index-date="${x.date}" ${view==="sanctorale"'),"Sanctorale rows cannot intercept Day selection with saint-detail handler");
 assert.ok(browser.includes('if(openMonth&&calendarView!=="picker")pickerMonthId='),"Year-to-Month route must reset stale month");
-assert.match(browser,/data-cal-year-open-day/,"Period to Day journey navigation is missing");
-assert.match(browser,/data-cal-year-month/,"Period to Month journey navigation is missing");
-assert.match(browser,/data-cal-year-period/,"Expandable period card navigation is missing");
 assert.doesNotMatch(browser, /v384Companion/,"redundant v38.4 Traditional Liturgical Year companion returned");
 assert.doesNotMatch(browser, /data-ao-cal-v384-panel/,"retired v38.4 year\/discipline UI returned");
 assert.doesNotMatch(browser, /data-ao-cal-v384-era/,"retired duplicate discipline-era tabs returned");
@@ -315,8 +550,11 @@ assert.match(browser, /L\("Month","Mois"\)/, "Calendar must expose Month as a to
 assert.doesNotMatch(browser, /L\("Year index","Repères"\)/, "redundant Year Index returned as a top-level surface");
 assert.doesNotMatch(browser, /function indexSurface\(/, "obsolete Year Index implementation remains active");
 assert.match(browser, /MONTH_INDEX_VIEWS=new Set\(\["calendar","major","temporale","sanctorale","practices"\]\)/, "Month did not retain Calendar/Major/Temporale/Sanctorale/Practices projections");
-assert.match(browser, /data-cal-month-view/, "Month secondary navigation is missing");
-assert.match(browser, /\["practices",L\("Practices","Pratiques"\)\]/, "Month Practices tab disappeared");
+assert.match(browser, /data-cal-month-filter/, "Month must use one compact filter rather than five competing tab views");
+assert.doesNotMatch(browser, /<nav class="aoCalMonthTabs"/,
+ "Old five-tab Month index should not be mounted");
+assert.match(browser, /\["practices",L\("Practices","Pratiques"\)\]/,
+ "The single Month filter must retain Practices data");
 assert.match(browser, /calendarPracticeMonthEntries/, "Month Practices stopped consuming shared Calendar Intelligence");
 assert.match(browser, /function monthIndexEntries\(monthId,view\)/, "Month index projections are missing");
 assert.match(browser, /if\(next==="index"\).*calendarMonthView="major"/, "legacy Year Index route no longer redirects to Month\/Major");
