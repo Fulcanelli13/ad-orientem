@@ -26,6 +26,9 @@ export const ANGELUS_REVIEWED_OPENING_ART=Object.freeze([
  Object.freeze({id:"met-436502",title:"The Annunciation",artist:"Luca Giordano",
   rating:4,subject:"ANNUNCIATION",sourceUrl:"https://www.metmuseum.org/art/collection/search/436502",
   objectId:436502,provider:"met"}),
+ Object.freeze({id:"cma-127572",title:"The Annunciation",artist:"Paolo Veronese and Workshop",
+  rating:4,subject:"ANNUNCIATION",sourceUrl:"https://www.clevelandart.org/art/1950.251",
+  objectId:127572,accession:"1950.251",provider:"cma"}),
 ]);
 
 export function selectAngelusOpeningArtwork({
@@ -47,13 +50,24 @@ export function selectAngelusOpeningArtwork({
 export async function resolveAngelusArtworkImage(artwork,{fetchImpl=globalThis.fetch}={}){
   if(!artwork)return null;
   if(artwork.imageUrl)return artwork.imageUrl;
-  if(artwork.provider!=="met"||!Number.isInteger(artwork.objectId)||
-      typeof fetchImpl!=="function")return null;
+  if(!Number.isInteger(artwork.objectId) ||
+     !["met","cma"].includes(artwork.provider) ||
+     typeof fetchImpl!=="function")return null;
   try{
+    if(artwork.provider==="cma"){
+      const response=await fetchImpl(
+        "https://openaccess-api.clevelandart.org/api/artworks/"+artwork.objectId,
+        {mode:"cors",cache:"force-cache"});
+      if(!response?.ok)return null;
+      const obj=(await response.json())?.data;
+      if(obj?.id!==artwork.objectId ||
+         String(obj?.share_license_status??"").toUpperCase()!=="CC0")return null;
+      const url=String(obj.images?.web?.url??"");
+      return /^https:\/\//.test(url)?url:null;
+    }
     const response=await fetchImpl(
       "https://collectionapi.metmuseum.org/public/collection/v1/objects/"+artwork.objectId,
-      {mode:"cors",cache:"force-cache"}
-    );
+      {mode:"cors",cache:"force-cache"});
     if(!response?.ok)return null;
     const obj=await response.json();
     if(obj.objectID!==artwork.objectId || obj.isPublicDomain!==true)return null;
