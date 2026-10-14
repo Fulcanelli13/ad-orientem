@@ -215,8 +215,8 @@ try{
       {state:"visible",timeout:15000});
     await page.screenshot({path:resolve(shots,"today-month-"+width+".png"),fullPage:true});
     await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
-    await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="day"] .aoCalV2Hero',
-      {state:"visible",timeout:15000});
+    await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
+    assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,"Today return must not duplicate Calendar");
     await page.screenshot({path:resolve(shots,"today-day-"+width+".png"),fullPage:true});
     await page.close();
   }
