@@ -1,0 +1,401 @@
+{
+  "schema": "AO_MYSTERY_MASS_CANON_14_SOURCE_CRITICAL_EDITED_STUDIES_V1",
+  "date": "2026-10-14",
+  "status": "FIRST_PASS_DOCTRINAL_AND_SOURCE_CRITICAL_ENGLISH_EDITORIAL_DRAFT",
+  "count": 14,
+  "policy": "Each Canon prayer begins from its actual text and original-prayer owner; an author argument or historical problem is distinguished from the prayer's binding wording and 1962 ritual law. This supplements, not replaces, 44 existing EN/FR manuscript paragraphs.",
+  "primarySources": {
+    "guéranger": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+    "alphonsus": "data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json",
+    "gihrLanguetTorma": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json",
+    "lanslotsHistorical": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+    "controlling1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+  },
+  "canonPrayers": [
+    {
+      "massOwner": "AO.CANON.01",
+      "title": "Te igitur",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "If Christ's sacrifice is complete and infinitely acceptable, why does the priest first ask the Father to accept the offering?",
+      "sourceLedExplanationDraftEN": "The prayer addresses the Father through Christ, placing the sacrifice within the Church's visible communion. Guéranger reads its supplication as ecclesial action even while the celebrant speaks quietly. The mention of the Pope and appropriate bishop expresses communion; it is not merely administrative information added to a private devotion. The question of acceptance will return after the Consecration in Supra quae, but here the Canon is already concerned with the Church's peace, protection and unity.",
+      "transitionInLiturgicalJourney": "The sacred action belongs to Christ and His Church; silence of voice does not privatize the sacrifice.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG18"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-08"
+        ]
+      },
+      "primaryScripturalContext": [
+        "1 Timothy 2:1–2"
+      ],
+      "analyticalKind": "SOURCE_BASED_CANON_EXPOSITION",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.02",
+      "title": "Memento of the living",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "Whose sacrifice is this, and how can individual intentions belong to a single public offering?",
+      "sourceLedExplanationDraftEN": "The Memento brings particular persons before the Father and expressly names the faith and devotion of those around the altar. Guéranger's treatment notes how intercession extends to the circumstantes. The faithful's participation must be understood without confusing their spiritual union to the offering with the celebrant's power of sacramental Consecration. Private intentions enter the public liturgical prayer without turning the Canon into a collection of private liturgies.",
+      "transitionInLiturgicalJourney": "The passage from named persons to the company of saints prepares the next prayer, Communicantes.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG19",
+          "FRG31"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-09"
+        ]
+      },
+      "primaryScripturalContext": [],
+      "analyticalKind": "PRAYER_WORDS_PLUS_THEOLOGICAL_DISTINCTION",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.03",
+      "title": "Communicantes",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "Why name the saints within a sacrificial prayer addressed to the Father?",
+      "sourceLedExplanationDraftEN": "Communicantes professes the Church's communion with Mary, Joseph, the apostles and martyrs; the faithful on earth are not a separate worshipping body from the saints in glory. Guéranger wrote before Joseph's insertion into the Roman Canon, and Lanslots's 1897 transcription likewise omits him. Both witnesses are valuable for historical comparison but cannot be presented as the wording of the liturgy after the 1962 insertion became effective. The Church's present text controls, while the history explains what changed.",
+      "transitionInLiturgicalJourney": "The Canon turns from those for whom the Church intercedes to the disposition of the offering now before God.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG32",
+          "FRG33"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [
+          "L1897-DISC-10"
+        ],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-10"
+        ]
+      },
+      "primaryScripturalContext": [
+        "Hebrews 12:22–24"
+      ],
+      "analyticalKind": "ECCLESIAL_DOCTRINE_WITH_DATE-SCOPED_TEXT",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.04",
+      "title": "Hanc igitur",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "What do the priest's extended hands mean, and is the gesture derived from an Old Testament sacrificial act?",
+      "sourceLedExplanationDraftEN": "The prayer petitions acceptance, peace, deliverance from eternal condemnation and admission among the elect. Guéranger, St Alphonsus and Lanslots associate the extended hands with biblical imposition upon a victim. That is a meaningful traditional comparison, not proof that this Roman gesture originated by reenacting Leviticus. Leviticus 8:14 discusses hands upon the sin-offering bullock; Leviticus 16 also distinguishes the slain goat from the live scapegoat sent away. Torma's recent conflation requires correction rather than repetition.",
+      "transitionInLiturgicalJourney": "The petition for an acceptable offering narrows into a prayer for the offering's transformation at Quam oblationem.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG20",
+          "FRG34"
+        ],
+        "stAlphonsusOriginalPrinted": [
+          "ALPX17"
+        ],
+        "otherOriginalAuthorCritical": [
+          "L1897-DISC-06",
+          "TORMA-01"
+        ],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-11"
+        ]
+      },
+      "primaryScripturalContext": [
+        "Leviticus 8:14",
+        "Leviticus 16"
+      ],
+      "analyticalKind": "RITUAL_ACTION_VS_TYPOLOGY",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.05",
+      "title": "Quam oblationem",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "Why does the Church ask God to make the offering 'reasonable' and acceptable immediately before Consecration?",
+      "sourceLedExplanationDraftEN": "Guéranger relates rationabilem to the spiritual worship enjoined in Romans 12:1. The prayer asks that the oblation become for us Christ's Body and Blood. The five pre-Consecration crosses emphasize the actual Latin petitions but do not cause transubstantiation by themselves. Torma's description of the signs can be compared with the 1962 text; speculative interpretations of the five wounds are distinct from their rubrical timing and historical origin.",
+      "transitionInLiturgicalJourney": "The act prayed for is about to occur at Christ's own words, not at the preceding crosses.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG21",
+          "FRG35",
+          "FRG36",
+          "FRG37"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [
+          "TORMA-02"
+        ],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-12"
+        ]
+      },
+      "primaryScripturalContext": [
+        "Romans 12:1"
+      ],
+      "analyticalKind": "TEXT_RATIONABILEM_PLUS_RUBRIC",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.06",
+      "title": "Consecration of the Host",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "At which instant is Christ truly present, and why are there several actions before and after it?",
+      "sourceLedExplanationDraftEN": "The institution narrative recalls the Last Supper, but the received Roman words and gestures are a liturgical text with history, not a verbatim transcript from one Evangelist. Guéranger comments on details such as Christ lifting His eyes. The Real Presence follows from the words of Consecration: the priest's immediate genuflection acknowledges what has already occurred. The elevation displays the consecrated Host for adoration; it does not make the bread become Christ's Body. Claims that every accompanying detail originates from a particular early Pope need manuscript evidence.",
+      "transitionInLiturgicalJourney": "The chalice Consecration completes the two-species sacramental sign of the one sacrifice.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG22",
+          "FRG38",
+          "FRG39"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [
+          "L1897-DISC-01",
+          "L1897-DISC-08"
+        ],
+        "inheritedBilingualManuscripts": [
+          "MM-PRIMARY-MB14"
+        ]
+      },
+      "primaryScripturalContext": [
+        "1 Corinthians 11:23–26",
+        "Matthew 26:26"
+      ],
+      "analyticalKind": "SACRAMENTAL_ACT_VS_HISTORICAL_TEXT",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.07",
+      "title": "Consecration of the chalice",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "How does Christ's Blood of the covenant become present without a second historical shedding of blood?",
+      "sourceLedExplanationDraftEN": "The Roman chalice formula relates the Blood of Christ to the new covenant and the forgiveness of sins. Its received 1962 wording includes mysterium fidei inside the consecratory formula. The Church's sacramental offering does not reproduce a second bloody death: the two species signify the sacrificial separation of Body and Blood while the whole risen Christ remains present under either species. Older commentators may offer symbolic explanations of cross-signs or narrative details, but no source may silently replace the 1962 formula with a harmonized Gospel paraphrase.",
+      "transitionInLiturgicalJourney": "Once both Consecrations have occurred, the Canon explicitly names what the Church remembers and offers.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG22"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [
+          "L1897-DISC-01",
+          "L1897-DISC-08"
+        ],
+        "inheritedBilingualManuscripts": [
+          "MM-PRIMARY-MB15"
+        ]
+      },
+      "primaryScripturalContext": [
+        "Exodus 24:8",
+        "Luke 22:20"
+      ],
+      "analyticalKind": "ROMAN_FORMULA_VS_BIBLE_NARRATIVE",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.08",
+      "title": "Unde et memores",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "Why remember Passion, Resurrection and Ascension within the sacrifice instead of stopping at Calvary?",
+      "sourceLedExplanationDraftEN": "The prayer does not isolate a moment of death. It explicitly commemorates the saving mysteries of Christ crucified, risen and ascended, and offers the gifts received from God. Guéranger explains that the signs made after Consecration do not bless Christ as though He required further sanctification; they recall His saving sacrifice. This is where a salvation-history narrative can reach beyond the historical Passion, while the liturgical commentary explains an actual Roman prayer rather than assigning arbitrary events to each cross.",
+      "transitionInLiturgicalJourney": "The Canon then invokes the sacrifices named in ancient Scripture, now after Christ's presence upon the altar.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG23",
+          "FRG40"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [],
+        "inheritedBilingualManuscripts": [
+          "MM-PRIMARY-MB16"
+        ]
+      },
+      "primaryScripturalContext": [
+        "1 Corinthians 11:26"
+      ],
+      "analyticalKind": "LITURGICAL_ANAMNESIS_NOT_SYMBOLIC_TABLEAU",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.09",
+      "title": "Supra quae",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "Why ask that the Eucharistic offering be received like the gifts of Abel, Abraham and Melchisedech, if it is infinitely greater?",
+      "sourceLedExplanationDraftEN": "Guéranger and Gihr confront this as a real theological problem rather than a decorative list of Old Testament stories. Gihr, drawing on St Thomas, locates the comparison in the faith and devotion of the earlier offerers and God's favourable regard, not in equality between victims. Abel's faith, Abraham's obedience and Melchisedech's priesthood are distinct interpretive avenues. Genesis says Melchisedech brought forth bread and wine; Gihr's assertion that he sacrificed them is subsequent Christian interpretation, not the Bible's direct narration. His hypothesis of fire consuming Abel's offering likewise exceeds Genesis 4.",
+      "transitionInLiturgicalJourney": "The question of acceptance leads into the more difficult language of the angel, the heavenly altar and participation in heavenly blessing.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG41",
+          "FRG42",
+          "FRG43"
+        ],
+        "stAlphonsusOriginalPrinted": [
+          "ALPX18"
+        ],
+        "otherOriginalAuthorCritical": [
+          "GIHR-03",
+          "GIHR-04",
+          "GIHR-05",
+          "L1897-DISC-07"
+        ],
+        "inheritedBilingualManuscripts": [
+          "MM-PRIMARY-MB17",
+          "MM-PRIMARY-MB18",
+          "MM-PRIMARY-MB19"
+        ]
+      },
+      "primaryScripturalContext": [
+        "Genesis 4",
+        "Genesis 14",
+        "Genesis 22",
+        "Hebrews 7"
+      ],
+      "analyticalKind": "THEOLOGICAL_PARADOX_THOMISTIC_RESPONSE",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.10",
+      "title": "Supplices te rogamus",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "Who is the holy Angel, and what does it mean for the offering to be borne to the heavenly altar?",
+      "sourceLedExplanationDraftEN": "Guéranger interprets the Angel christologically; Lanslots juxtaposes that account with other angelic readings and acknowledges uncertainty. St Alphonsus reports a Christological explanation from a French predecessor but favours the reading associated with St Thomas, concerning the angelic presentation of the Church's prayers. These are distinguishable authorial positions, not several synonyms. St Thomas expressly resists imagining that Christ's physical Body or the consecrated species leave the altar to be carried to heaven. The petition concerns heavenly communion and blessing, not Eucharistic relocation.",
+      "transitionInLiturgicalJourney": "From worship joined to heaven, the Canon turns to those who have died in faith and await the fulfilment of the promises.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG44",
+          "FRG45"
+        ],
+        "stAlphonsusOriginalPrinted": [
+          "ALPX19"
+        ],
+        "otherOriginalAuthorCritical": [
+          "L1897-DISC-02"
+        ],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-13"
+        ]
+      },
+      "primaryScripturalContext": [
+        "Revelation 8:3–4",
+        "Hebrews 9:24"
+      ],
+      "analyticalKind": "EXPLICIT_AUTHOR_DISAGREEMENT",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.11",
+      "title": "Memento of the dead",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "What can the Eucharistic Sacrifice mean for those who have died, and how does naming them differ from private prayer?",
+      "sourceLedExplanationDraftEN": "The Canon commends the faithful departed to God, asking for a place of refreshment, light and peace. Guéranger's interpretation of the signum fidei makes one historic link to Christian initiation; it should not displace the text's own wording. Lanslots distinguishes the rules and history of public liturgical naming from the possibility of private intercession. We should explain the Church's prayer for the dead without pretending the celebrant knows the final state of any particular soul or collapsing rubrical diptychs into the personal intentions of every attendee.",
+      "transitionInLiturgicalJourney": "The prayer next includes the still-living sinners who beg to share the saints' company.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG46",
+          "FRG47"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [
+          "L1897-DISC-05"
+        ],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-14"
+        ]
+      },
+      "primaryScripturalContext": [
+        "2 Maccabees 12:43–46"
+      ],
+      "analyticalKind": "INTERCESSION_PUBLIC_VS_PRIVATE",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.12",
+      "title": "Nobis quoque peccatoribus",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "Why does a Canon full of saints and divine glory return to the confession of one's own sinfulness?",
+      "sourceLedExplanationDraftEN": "The priest breaks the prevailing silence of the Canon at its opening words, strikes his breast, and asks for fellowship with apostles and martyrs. The decisive words reject the presumption of deserving such a reward through one's own merit. Guéranger observes the gesture and reports practices of the faithful, but historical custom must not be imposed as universal posture or action in a 1962 congregation. The theological logic is not embarrassment after Consecration: the Eucharistic offering establishes precisely the ground of hope for sinners.",
+      "transitionInLiturgicalJourney": "The Canon's closing sentences turn from petition to praise through the one mediator, Christ.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG24",
+          "FRG48",
+          "FRG49"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-15"
+        ]
+      },
+      "primaryScripturalContext": [],
+      "analyticalKind": "MERCY_SAINTS_AND_ACTOR_DISTINCTION",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.13",
+      "title": "Per quem haec omnia",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "What are 'all these good things' and why does the priest make signs of the Cross after Consecration?",
+      "sourceLedExplanationDraftEN": "The words name God as the giver of creation, sanctification, life and blessing through Christ. Guéranger recalls a historical association with blessings of additional material gifts; this requires evidence rather than a confident reconstruction of what every ancient Mass celebrated. The three crosses belong to the actual 1962 ceremonial sequence but are not a repeated Consecration. This prayer therefore juxtaposes the whole created order and the Eucharistic gift without authorizing picturesque invented rites.",
+      "transitionInLiturgicalJourney": "The final doxology gathers the whole sacrifice into an act of honour and glory to the Father.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG50",
+          "FRG51"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-16"
+        ]
+      },
+      "primaryScripturalContext": [],
+      "analyticalKind": "HISTORICAL_HYPOTHESIS_NOT_CAUSAL_ORIGIN",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    },
+    {
+      "massOwner": "AO.CANON.14",
+      "title": "Per ipsum",
+      "studyIncorporation": "OWNED_BY_STUDY_OF_MASS",
+      "coreTheologicalQuestion": "Why does the Canon end with another elevation, and what is being offered to the Father?",
+      "sourceLedExplanationDraftEN": "The words glorify the Father through Christ, with Him and in Him, in the unity of the Holy Ghost. Guéranger distinguishes the small elevation associated with this doxology from the ostension immediately after each Consecration. The crosses and actions have exact 1962 positions; they neither reconsecrate the sacred species nor restage another event in Christ's earthly life. The theological movement is complete: the Church's prayer, united to Christ's own self-offering, reaches its doxological conclusion.",
+      "transitionInLiturgicalJourney": "The Pater noster now leads the celebration toward Communion, where sacrificial participation is received under the sacramental species.",
+      "sourceAnchorIds": {
+        "guérangerOriginalFrench": [
+          "FRG25",
+          "FRG52",
+          "FRG53"
+        ],
+        "stAlphonsusOriginalPrinted": [],
+        "otherOriginalAuthorCritical": [],
+        "inheritedBilingualManuscripts": [
+          "MM-NEW-17"
+        ]
+      },
+      "primaryScripturalContext": [
+        "Romans 11:36"
+      ],
+      "analyticalKind": "DOXOLOGY_TWO_ELEVATIONS_NOT_IDENTICAL",
+      "editorialAuthority": "INTERPRETIVE_RESEARCH_NOT_1962_RUBRICAL_AUTHORITY",
+      "published": false
+    }
+  ]
+}
