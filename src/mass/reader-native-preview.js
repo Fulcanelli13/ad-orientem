@@ -60,6 +60,7 @@ import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./
 import { projectGloriaCredoFaithfulCue } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
+import { projectLiveCinematicScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
@@ -1530,6 +1531,15 @@ export async function mountNativeReaderPreview({
                 : "R18_CUE_WAITING_FAIL_CLOSED",
       sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
+    // Decorative focus follows a certified exact LIVE cue; it is never
+    // evidence that the priest (or the faithful) performed an action.
+    const cinematicScene=projectLiveCinematicScene({
+      mode:readerModel?.presentationMode,
+      cueId:activeCueId,
+      cueNative,
+      cinematic:transient.cinematic,
+      faithfulGesture:focusedFaithful?.gesture??null,
+    });
     const attention=readerAttentionForState({priestVoice,response});
     // A native source transition may animate the selected posture owner.
     // Never issue a conflicting instruction when a local/observed profile
@@ -1567,6 +1577,7 @@ export async function mountNativeReaderPreview({
       attentionIconKey:attention?.iconKey??null,
       bell,
       cinematic,
+      cinematicScene,
       priestVoice,
       schola:scholaProjection.schola,
       priestAction,
