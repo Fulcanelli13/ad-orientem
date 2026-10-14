@@ -205,6 +205,53 @@ for(const row of flagged.rows){
  assert.equal(row.evidenceTracks.includes("PR1161_COMPLEX_23"),cmap.has(row.actionId));
  assert.ok(row.reviewInstruction.length>20,"Each issue requires meaningful editorial review");
 }
+const conciseRubricDrafts=sources.frenchReview.rows.filter(x=>x.shortFrenchRubricDraft);
+assert.equal(conciseRubricDrafts.length,29,"29 flagged Canon rubrics need original French short copy");
+assert.deepEqual(conciseRubricDrafts.map(x=>x.id),flagged.rows.map(x=>x.actionId),
+ "Short draft must use the same 29 source-owned risk actions without duplicates");
+const allowedSurfaces=new Set([
+ "PRIEST_SEQUENCE","PRIEST_STATE","PRIEST_SILENT_PAUSE","PRIEST_ACTION",
+ "GUIDE_NOTE_NOT_GESTURE","PRIEST_VOICE","PRIEST_OBSERVED_STAGE",
+ "PRIEST_PERSISTENT_STATE","MINISTER_OBSERVED_EVENT",
+ "PRIEST_WITH_CONDITIONAL_MINISTER","PRIEST_WORD_ANCHORED_SEQUENCE",
+ "PRIEST_VOICE_AND_GESTURE","FORM_DEPENDENT_RESPONSE",
+ "MINISTER_ANTICIPATORY_EVENT",
+]);
+for(const row of conciseRubricDrafts){
+ assert.equal(row.shortRubricReviewState,
+  "ORIGINAL_FRENCH_SHORT_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
+ assert.equal(row.reviewState,
+  "ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
+ assert.equal(row.faithfulRubricInferred,false);
+ assert.ok(allowedSurfaces.has(row.shortRubricPlacement));
+ assert.ok(row.shortFrenchRubricDraft.length>=24);
+ assert.ok(row.shortFrenchRubricDraft.length < row.revisedFrenchRubric.length+12);
+ assert.ok(row.sourceURLs.every(url=>url.startsWith("https://")));
+ assert.doesNotMatch(row.shortFrenchRubricDraft,
+  /(?:ce module|cette application|d’après la source|selon le dossier|l’éditeur|rubrique à revoir)/iu,
+  row.id+": editorial meta language leaked into short prayer guidance");
+ if(row.shortRubricPlacement.startsWith("MINISTER_")||
+    row.shortRubricPlacement==="FORM_DEPENDENT_RESPONSE")
+  assert.equal(row.actor,"SERVER",row.id+": minister rubric misattributed to priest");
+ if(row.shortRubricPlacement==="GUIDE_NOTE_NOT_GESTURE")
+  assert.equal(row.id,"AO.CANON.R62.021","Narrative fregit cannot become an actual Host fraction");
+ if(row.shortRubricPlacement==="PRIEST_PERSISTENT_STATE")
+  assert.ok(["AO.CANON.R62.026","AO.CANON.R62.040"].includes(row.id));
+}
+for(const [id,part] of [
+ ["AO.CANON.R62.027","MINISTER_OBSERVED_EVENT"],
+ ["AO.CANON.R62.035","MINISTER_OBSERVED_EVENT"],
+ ["AO.CANON.R62.062","MINISTER_ANTICIPATORY_EVENT"],
+ ["AO.CANON.R62.061","FORM_DEPENDENT_RESPONSE"],
+ ["AO.CANON.R62.055","PRIEST_WITH_CONDITIONAL_MINISTER"],
+ ["AO.CANON.R62.059","PRIEST_WITH_CONDITIONAL_MINISTER"],
+ ["AO.CANON.R62.050","PRIEST_VOICE_AND_GESTURE"],
+]){
+ assert.equal(conciseRubricDrafts.find(x=>x.id===id)?.shortRubricPlacement,part,
+  id+": priest, respondent or minister time ownership drifted");
+}
+assert.equal(controller.project("AO.SM.C0153").canPublish,false,
+ "No short French draft may enable public Canon text");
 assert.equal(sources.frenchReview.rows.filter(x=>x.formReview==="FORM_OR_PASTORAL_REVIEW_PENDING").length,5,
  "Five source decisions do not constitute final pastoral/form approval");
 console.log("PASS: five Canon form-conditioned sources, exact 1962 actor constraints, two corrected French drafts, 0 published.");
