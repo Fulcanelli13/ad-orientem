@@ -29,6 +29,7 @@ export function validateCanonBilingualCopyReview({bilingual,french,trigger,triag
     bilingual.counts?.linguisticallyApproved!==0||
     bilingual.counts?.ceremoniallyApproved!==0||
     bilingual.counts?.shortEnglish!==62||bilingual.counts?.shortFrench!==62||
+    bilingual.counts?.shortFrenchCanonicalLinks!==62||
     bilingual.counts?.guideEnglish!==62||bilingual.counts?.guideFrenchLinked!==62)
   throw Error("Canon bilingual rubric proposals need complete unpublished source witnesses");
  const sourceActions=new Map(french.rows.map(x=>[x.id,x]));
@@ -52,12 +53,16 @@ export function validateCanonBilingualCopyReview({bilingual,french,trigger,triag
      !row.sourceUrls.every(x=>typeof x==="string"&&x.startsWith("https://"))||
      !row.sourceUrls.length||
      row.guideDraft?.frCanonicalActionId!==row.actionId||
+     row.shortDraft?.frCanonicalActionId!==row.actionId||
+     Object.hasOwn(row.shortDraft??{},"fr")||
+     f.shortRubricReviewState!=="ORIGINAL_FRENCH_SHORT_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"||
+     f.reviewState!=="ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY"||
      !String(row.guideDraft?.en??"").trim()||
      /\b(?:reader|scroll|source trigger|generic paragraph|actor ownership|implementation|render|dashboard)\b/i.test(row.guideDraft.en)||
-     !String(row.shortDraft?.fr??"").trim()||
+     !String(f.shortFrenchRubricDraft??"").trim()||
      !String(row.shortDraft?.en??"").trim()||
-     row.shortDraft.fr===f.revisedFrenchRubric||
-     row.shortDraft.fr.length>190||row.shortDraft.en.length>190||
+     f.shortFrenchRubricDraft===f.revisedFrenchRubric||
+     f.shortFrenchRubricDraft.length>190||row.shortDraft.en.length>190||
      !REVIEW_SURFACES.has(row.reviewSurface)||!row.semanticKind||
      row.displayPolicy!=="EDITORIAL_PREVIEW_ONLY_NOT_LIVE"||
      row.copyApproval!=="NOT_APPROVED"||
@@ -80,7 +85,7 @@ export function validateCanonBilingualCopyReview({bilingual,french,trigger,triag
     !["AO.CANON.R62.022","AO.CANON.R62.032"].includes(row.actionId))
    throw Error(row.actionId+": sacramental-focus exception identity mismatch");
   if(row.actionId==="AO.CANON.R62.028"&&
-    /^(Il découvre|He uncovers)/.test(row.shortDraft.fr+"|"+row.shortDraft.en))
+    /^(Il découvre|He uncovers)/.test(f.shortFrenchRubricDraft+"|"+row.shortDraft.en))
    throw Error("Conditional deacon chalice uncovering cannot be the priest's universal action");
   ids.add(row.actionId);
   kindCounts[row.semanticKind]=(kindCounts[row.semanticKind]||0)+1;
@@ -90,7 +95,8 @@ export function validateCanonBilingualCopyReview({bilingual,french,trigger,triag
    sourceUrls:immutable([...row.sourceUrls]),
    reviewSurface:row.reviewSurface,semanticKind:row.semanticKind,
    riskReviewRequired:flagged.has(row.actionId),
-   shortDraft:immutable({...row.shortDraft}),
+   shortDraft:immutable({fr:f.shortFrenchRubricDraft,en:row.shortDraft.en}),
+   shortFrenchOwnerId:f.id,
    guideDraft:immutable({en:row.guideDraft.en,fr:f.revisedFrenchRubric}),
    guideFrenchOwnerId:f.id,
    canPublish:false,observedNow:false,faithfulPosture:null,
