@@ -14,6 +14,20 @@ const texts=json('data/learn/research/mystery-mass-complete-source-recovery-2026
 assert.equal(research.biblicalChronology.length,24);
 assert.equal(research.liturgicalChronology.length,39);
 assert.equal(research.dujardinSecondaryMethod.length,22);
+assert.equal(research.recoveredGuérangerFirst30.length,30);
+assert.equal(research.counts.guérangerSourceDrafts,71);
+assert.equal(research.counts.studyManuscriptResearchTopics,48);
+const manuscripts=list => list.flatMap(x=>Object.values(x.studyManuscriptIds).filter(Array.isArray).flat());
+const guids=research.liturgicalChronology.flatMap(x=>x.guérangerOriginalFrenchSourceIds.map(y=>y.id));
+assert.equal(guids.length,71);
+assert.equal(new Set(guids).size,71);
+for(let i=1;i<=71;i++) assert.ok(guids.includes('FRG'+String(i).padStart(2,'0')));
+const manuscriptIds=manuscripts(research.liturgicalChronology);
+assert.equal(manuscriptIds.length,48);
+assert.equal(new Set(manuscriptIds).size,48);
+assert.equal(research.liturgicalChronology.filter(x=>x.studyManuscriptIds.polishedBilingual.length+x.studyManuscriptIds.additionalBilingual.length>0).length,39);
+assert.ok(research.liturgicalChronology.every(x=>Array.isArray(x.lanslotsOriginalSourceCandidateIds)));
+
 assert.equal(meditation.rows.length,32);
 assert.equal(meditation.rows.filter(x=>x.sourceCode==='SVF').length,26);
 assert.equal(meditation.rows.filter(x=>x.sourceCode==='SFS').length,6);
