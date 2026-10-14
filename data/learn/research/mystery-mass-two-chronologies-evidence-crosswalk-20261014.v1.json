@@ -15,7 +15,10 @@
     "archivalEvidenceUnmapped": 20,
     "dujardinAuthorMeditationRows": 22,
     "sourceCriticallyReadNewClaims": 12,
-    "massBibleOriginalContextRecords": 26
+    "massBibleOriginalContextRecords": 26,
+    "studyManuscriptResearchTopics": 48,
+    "guérangerSourceDrafts": 71,
+    "lanslotsDistinctSourceCandidates": 36
   },
   "sourceOfTruth": {
     "studyInventory": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json",
@@ -33,7 +36,9 @@
     "Dujardin headings remain his, not those of St Alphonsus; optional allegories never define 1962 historical origins.",
     "Scripture expansion must delegate to shared Canonical Bible reader, and images to canonical approved artworks.",
     "Do not project any research copy into LIVE Mass rubric/action rail without separate audit.",
-    "For every liturgical owner, carry independently classified MB passage links even when no full biblical chronology scene is assigned. Variable Proper readings are resolved from the Mass calendar/Proper rather than a guessed fixed chapter."
+    "For every liturgical owner, carry independently classified MB passage links even when no full biblical chronology scene is assigned. Variable Proper readings are resolved from the Mass calendar/Proper rather than a guessed fixed chapter.",
+    "All 71 Guéranger French cue-based draft records are assigned once to a source-first owner: 30 archived first pass plus 41 structured second pass. FRG22 also references the chalice Consecration, without creating a second text owner.",
+    "All 48 Phase 3 bilingual research topics have one original Mass owner; 48 explanatory research topics are not the same as 48 LIVE presentation cards."
   ],
   "biblicalChronology": [
     {
@@ -746,7 +751,54 @@
           "scriptureReaderRef": "Luke 18:13",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB02"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [
+          "MM-SUP-01"
+        ],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG01",
+          "cueText": "`AO.SM.C0001`",
+          "class": "EXPLICIT_HISTORICAL_CEREMONIAL",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG02",
+          "cueText": "`AO.SM.C0004`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG03",
+          "cueText": "`AO.SM.C0037\\`, \\`AO.SM.C0039`",
+          "class": "HISTORY_AND_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG04",
+          "cueText": "`AO.SM.C0042`",
+          "class": "HISTORY_PRIEST_SCHOLA_CONCURRENCY",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-07",
+        "L1897-NP-001",
+        "L1897-NP-002",
+        "L1897-NP-003",
+        "L1897-NP-004",
+        "L1897-NP-005",
+        "L1897-NP-006"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 2,
@@ -808,7 +860,26 @@
           "scriptureReaderRef": "Matthew 20:30–31",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-01"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG05",
+          "cueText": "`AO.SM.C0044`",
+          "class": "ATTRIBUTED_THEOLOGICAL_INTERPRETATION",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 3,
@@ -870,7 +941,26 @@
           "scriptureReaderRef": "Luke 2:14",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB05"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG06",
+          "cueText": "`AO.SM.C0053`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 4,
@@ -899,7 +989,26 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-02"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG07",
+          "cueText": "`AO.SM.C0072`",
+          "class": "HISTORICAL_GESTURE_INTERPRETATION",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 5,
@@ -954,7 +1063,26 @@
           "scriptureReaderRef": null,
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-03"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG08",
+          "cueText": "`AO.SM.C0075`",
+          "class": "HISTORY_AND_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 6,
@@ -996,7 +1124,19 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-04"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 7,
@@ -1070,7 +1210,29 @@
           "scriptureReaderRef": null,
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-N01"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG09",
+          "cueText": "`AO.SM.C0084`",
+          "class": "HISTORY_AND_CEREMONIAL;FAITHFUL_CUSTOM_SEPARATE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-01",
+        "L1897-OCR-018"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 8,
@@ -1094,7 +1256,19 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-05"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 9,
@@ -1169,7 +1343,26 @@
           "scriptureReaderRef": "John 1:14",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB08"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG10",
+          "cueText": "`AO.SM.C0089\\`, \\`AO.SM.C0096`",
+          "class": "PRAYER_MEANING;FAITHFUL_POSTURE_CONDITIONAL",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 10,
@@ -1301,7 +1494,55 @@
           "scriptureReaderRef": null,
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB09",
+          "MM-PRIMARY-N03",
+          "MM-PRIMARY-N04"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [
+          "MM-SUP-03"
+        ],
+        "otherExistingFormationStage": "MF03"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG11",
+          "cueText": "`AO.SM.C0110`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG12",
+          "cueText": "`AO.SM.C0112`",
+          "class": "PRAYER_MEANING_AND_ATTRIBUTED_SYMBOLISM",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG13",
+          "cueText": "`AO.SM.C0125`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG14",
+          "cueText": "`AO.SM.C0128`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-02",
+        "L1897-MYST-06",
+        "L1897-NP-007",
+        "L1897-OCR-006",
+        "L1897-OCR-025",
+        "L1897-OCR-026"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 11,
@@ -1389,7 +1630,32 @@
           "scriptureReaderRef": "Romans 12:1",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-06"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF03"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG15",
+          "cueText": "`AO.SM.C0130`",
+          "class": "PRAYER_MEANING_WITH_DOCTRINAL_QUALIFICATION",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG16",
+          "cueText": "`AO.SM.C0135`",
+          "class": "HISTORICAL_VOICE_AND_RESPONSE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 12,
@@ -1434,7 +1700,26 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-07"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG17",
+          "cueText": "`AO.SM.C0137`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 13,
@@ -1537,7 +1822,27 @@
           "scriptureReaderRef": "Matthew 21:9",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB11"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [
+          "MM-SUP-02"
+        ],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-03",
+        "L1897-MYST-04",
+        "L1897-OCR-027",
+        "L1897-OCR-028",
+        "L1897-OCR-029"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 14,
@@ -1610,7 +1915,28 @@
           "scriptureReaderRef": "1 Timothy 2:1–2",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-08"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG18",
+          "cueText": "`AO.SM.C0150`",
+          "class": "CANON_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-NP-008"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 15,
@@ -1639,7 +1965,32 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-09"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG19",
+          "cueText": "`AO.SM.C0154`",
+          "class": "CANON_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG31",
+          "cueText": "AO.SM.C0156",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 16,
@@ -1673,7 +2024,34 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-10"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG32",
+          "cueText": "AO.SM.C0157",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG33",
+          "cueText": "AO.SM.C0159",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 17,
@@ -1732,7 +2110,34 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-11"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG20",
+          "cueText": "`AO.SM.C0161`",
+          "class": "ATTRIBUTED_HISTORICAL_SYMBOLISM_PLUS_PRAYER",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG34",
+          "cueText": "AO.SM.C0161",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 18,
@@ -1758,7 +2163,44 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-12"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG21",
+          "cueText": "`AO.SM.C0164\\`, \\`AO.SM.C0165\\`, \\`AO.SM.C0166`",
+          "class": "CANON_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG35",
+          "cueText": "AO.SM.C0164",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG36",
+          "cueText": "AO.SM.C0165",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG37",
+          "cueText": "AO.SM.C0166",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 19,
@@ -1871,7 +2313,43 @@
           "scriptureReaderRef": "1 Corinthians 11:23–26",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB14"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF05"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG22",
+          "cueText": "`AO.SM.C0173\\`, \\`AO.SM.C0174\\`, \\`AO.SM.C0181`",
+          "class": "DOCTRINE_AND_SOURCE_ACTION_ORDER",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG38",
+          "cueText": "AO.SM.C0169",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG39",
+          "cueText": "AO.SM.C0174",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null,
+        null,
+        "L1897-NP-009",
+        "L1897-NP-010"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 20,
@@ -2001,7 +2479,23 @@
           "scriptureReaderRef": "Luke 22:20",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB15"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF05"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [
+        "FRG22"
+      ],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 21,
@@ -2087,7 +2581,32 @@
           "scriptureReaderRef": "1 Corinthians 11:26",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB16"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG23",
+          "cueText": "`AO.SM.C0182`",
+          "class": "CANON_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG40",
+          "cueText": "AO.SM.C0184",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 22,
@@ -2214,7 +2733,48 @@
           "scriptureReaderRef": "Hebrews 7:1–17",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB17",
+          "MM-PRIMARY-MB18",
+          "MM-PRIMARY-MB19"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [
+          "MM-SUP-04"
+        ],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG41",
+          "cueText": "AO.SM.C0186",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG42",
+          "cueText": "AO.SM.C0186",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG43",
+          "cueText": "AO.SM.C0186",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null,
+        "L1897-NP-011",
+        "L1897-NP-012",
+        "L1897-NP-013",
+        "L1897-OCR2-023"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 23,
@@ -2261,7 +2821,34 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-13"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG44",
+          "cueText": "AO.SM.C0187",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG45",
+          "cueText": "AO.SM.C0188",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 24,
@@ -2290,7 +2877,34 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-14"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG46",
+          "cueText": "AO.SM.C0192",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG47",
+          "cueText": "AO.SM.C0194",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 25,
@@ -2322,7 +2936,38 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-15"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG24",
+          "cueText": "`AO.SM.C0196`",
+          "class": "CANON_PRAYER_MEANING_AND_GESTURE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG48",
+          "cueText": "AO.SM.C0196",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG49",
+          "cueText": "AO.SM.C0197",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 26,
@@ -2353,7 +2998,32 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-16"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG50",
+          "cueText": "AO.SM.C0199",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG51",
+          "cueText": "AO.SM.C0200",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 27,
@@ -2407,7 +3077,38 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-17"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG25",
+          "cueText": "`AO.SM.C0202`",
+          "class": "CANON_DOXOLOGY_AND_CEREMONIAL",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG52",
+          "cueText": "AO.SM.C0202",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG53",
+          "cueText": "AO.SM.C0204",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 28,
@@ -2462,7 +3163,34 @@
           "scriptureReaderRef": "Matthew 6:9–13",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB21"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG26",
+          "cueText": "`AO.SM.C0208`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG54",
+          "cueText": "AO.SM.C0209",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-NP-014"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 29,
@@ -2519,7 +3247,47 @@
           "scriptureReaderRef": "Matthew 6:13",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-18"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG27",
+          "cueText": "`AO.SM.C0221`",
+          "class": "LEXICAL_DOCTRINAL_CLARIFICATION",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG55",
+          "cueText": "AO.SM.C0212",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG56",
+          "cueText": "AO.SM.C0219",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG57",
+          "cueText": "AO.SM.C0221",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null,
+        "L1897-NP-015"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 30,
@@ -2605,7 +3373,34 @@
           "scriptureReaderRef": "John 1:29",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB23"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG58",
+          "cueText": "AO.SM.C0222",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG59",
+          "cueText": "AO.SM.C0224",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-OCR-035"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 31,
@@ -2668,7 +3463,47 @@
           "scriptureReaderRef": "Matthew 8:8",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB24",
+          "MM-PRIMARY-N05"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG60",
+          "cueText": "AO.SM.C0225",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG61",
+          "cueText": "AO.SM.C0226",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG62",
+          "cueText": "AO.SM.C0227",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG63",
+          "cueText": "AO.SM.C0229",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-OCR-038"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 32,
@@ -2738,7 +3573,35 @@
           "scriptureReaderRef": null,
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB25"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG64",
+          "cueText": "AO.SM.C0232",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG65",
+          "cueText": "AO.SM.C0234",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-05",
+        "L1897-OCR-009"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 33,
@@ -2812,7 +3675,19 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-19"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 34,
@@ -2902,7 +3777,21 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-20"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-NP-016"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 35,
@@ -2938,7 +3827,38 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-21"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG28",
+          "cueText": "`AO.SM.C0247`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG66",
+          "cueText": "AO.SM.C0247",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG67",
+          "cueText": "AO.SM.C0248",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 36,
@@ -2969,7 +3889,26 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-22"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG68",
+          "cueText": "AO.SM.C0254",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 37,
@@ -3001,7 +3940,26 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-23"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG29",
+          "cueText": "`AO.SM.C0259`",
+          "class": "HISTORICAL_ETYMOLGY_WITH_1962_EXCEPTION_GATE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 38,
@@ -3035,7 +3993,32 @@
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
       "release": "RESEARCH_ONLY",
-      "existingMassBiblePassages": []
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-24"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG69",
+          "cueText": "AO.SM.C0261",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG70",
+          "cueText": "AO.SM.C0264",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     },
     {
       "sequence": 39,
@@ -3102,7 +4085,34 @@
           "scriptureReaderRef": "John 1:1–14",
           "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
         }
-      ]
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB26"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG30",
+          "cueText": "`AO.SM.C0269`",
+          "class": "HISTORICAL_DEVOTION_AND_1962_EXCEPTION_GATE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG71",
+          "cueText": "AO.SM.C0273",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-OCR-043"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
     }
   ],
   "dujardinSecondaryMethod": [
@@ -3572,6 +4582,368 @@
       "id": "E71",
       "reason": "Departure/post-Mass prayers are outside the fixed final Mass prayer or depend on observance",
       "evidenceCount": 3
+    }
+  ],
+  "recoveredGuérangerFirst30": [
+    {
+      "sourceId": "FRG01",
+      "originalCueText": "`AO.SM.C0001`",
+      "originalFrenchHeading": "EXPLICATION DE LA MESSE, paratus et debita reverentia",
+      "sourceParaphraseFr": "Le prêtre s'approche de l'autel pour le Sacrifice. Sa première révérence dépend de la présence du Saint-Sacrement; elle n'est pas une simple formalité.",
+      "sourceClass": "EXPLICIT_HISTORICAL_CEREMONIAL",
+      "primaryOwner": "AO.CARD.001",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG02",
+      "originalCueText": "`AO.SM.C0004`",
+      "originalFrenchHeading": "PSAUME JUDICA",
+      "sourceParaphraseFr": "Le psaume donne voix au désir de monter vers l'autel de Dieu. L'antienne Introibo en éclaire l'usage au commencement de la Messe.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.001",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG03",
+      "originalCueText": "`AO.SM.C0037\\`, \\`AO.SM.C0039`",
+      "originalFrenchHeading": "Fin PSAUME JUDICA, passage à l'autel",
+      "sourceParaphraseFr": "En montant à l'autel, le célébrant demande d'être purifié. Le baiser rend honneur à l'autel et évoque les reliques des saints; la prière rassemble également les intentions de ceux qui assistent.",
+      "sourceClass": "HISTORY_AND_PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.001",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG04",
+      "originalCueText": "`AO.SM.C0042`",
+      "originalFrenchHeading": "INTROÏT",
+      "sourceParaphraseFr": "L'Introït était d'abord le chant du chœur accompagnant l'entrée; sa récitation par le célébrant s'est développée avec les messes basses. Au chant, le prêtre et la schola peuvent donc suivre des rythmes distincts.",
+      "sourceClass": "HISTORY_PRIEST_SCHOLA_CONCURRENCY",
+      "primaryOwner": "AO.CARD.001",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG05",
+      "originalCueText": "`AO.SM.C0044`",
+      "originalFrenchHeading": "KYRIE",
+      "sourceParaphraseFr": "Le Kyrie est l'invocation répétée de la miséricorde divine. Guéranger y voit une adresse trinitaire et un écho à la louange des neuf chœurs angéliques: c'est son interprétation, non une rubrique.",
+      "sourceClass": "ATTRIBUTED_THEOLOGICAL_INTERPRETATION",
+      "primaryOwner": "AO.CARD.002",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG06",
+      "originalCueText": "`AO.SM.C0053`",
+      "originalFrenchHeading": "GLORIA IN EXCELSIS",
+      "sourceParaphraseFr": "Le Gloria prolonge la louange angélique et unit adoration, action de grâces et supplication. Les gestes du célébrant doivent être rattachés aux mots auxquels ils sont prescrits.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.003",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG07",
+      "originalCueText": "`AO.SM.C0072`",
+      "originalFrenchHeading": "COLLECTE",
+      "sourceParaphraseFr": "Le prêtre prie les bras étendus, geste ancien que Guéranger rapproche de la posture des orants des premiers siècles. L'oraison rassemble l'intention de la célébration et reçoit l'assentiment des fidèles.",
+      "sourceClass": "HISTORICAL_GESTURE_INTERPRETATION",
+      "primaryOwner": "AO.CARD.004",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG08",
+      "originalCueText": "`AO.SM.C0075`",
+      "originalFrenchHeading": "ÉPÎTRE",
+      "sourceParaphraseFr": "L'Épître fait entendre la parole des apôtres ou un autre texte scripturaire avant l'Évangile; elle a sa propre dignité, différente de la proclamation solennelle de l'Évangile.",
+      "sourceClass": "HISTORY_AND_PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.005",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG09",
+      "originalCueText": "`AO.SM.C0084`",
+      "originalFrenchHeading": "ÉVANGILE",
+      "sourceParaphraseFr": "Le livre et sa proclamation reçoivent des honneurs particuliers parce que l'Église écoute la parole du Christ. Les petites croix du ministre se rapportent au front, aux lèvres et au cœur; la pratique des fidèles relève d'un autre niveau d'autorité.",
+      "sourceClass": "HISTORY_AND_CEREMONIAL;FAITHFUL_CUSTOM_SEPARATE",
+      "primaryOwner": "AO.CARD.007",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG10",
+      "originalCueText": "`AO.SM.C0089\\`, \\`AO.SM.C0096`",
+      "originalFrenchHeading": "CREDO",
+      "sourceParaphraseFr": "À l'Évangile répond la profession commune de foi. La génuflexion à l'Incarnation exprime l'adoration du Verbe fait chair; les postures des fidèles dépendent de la fête, du chant et des coutumes attestées.",
+      "sourceClass": "PRAYER_MEANING;FAITHFUL_POSTURE_CONDITIONAL",
+      "primaryOwner": "AO.CARD.009",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG11",
+      "originalCueText": "`AO.SM.C0110`",
+      "originalFrenchHeading": "OFFERTOIRE",
+      "sourceParaphraseFr": "L'oblation du pain anticipe le Sacrifice eucharistique sans avoir encore opéré la consécration. Le prêtre pense déjà à la Victime qui sera réellement présente après les paroles consécratoires.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.010",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG12",
+      "originalCueText": "`AO.SM.C0112`",
+      "originalFrenchHeading": "OFFERTOIRE, Deus qui humanae substantiae",
+      "sourceParaphraseFr": "L'eau mêlée au vin donne à l'Église l'occasion de demander une participation à la vie divine du Christ, qui a pris notre humanité. Guéranger développe aussi le symbole christologique des deux natures.",
+      "sourceClass": "PRAYER_MEANING_AND_ATTRIBUTED_SYMBOLISM",
+      "primaryOwner": "AO.CARD.010",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG13",
+      "originalCueText": "`AO.SM.C0125`",
+      "originalFrenchHeading": "LAVABO",
+      "sourceParaphraseFr": "Le lavement des doigts accompagne un psaume demandant la pureté nécessaire à l'approche de l'autel. Le geste visible éclaire cette disposition intérieure, sans être une simple opération matérielle.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.010",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG14",
+      "originalCueText": "`AO.SM.C0128`",
+      "originalFrenchHeading": "SUSCIPE SANCTA TRINITAS",
+      "sourceParaphraseFr": "L'Église offre le Sacrifice en mémoire de la Passion, de la Résurrection et de l'Ascension. Guéranger souligne que ces trois mystères appartiennent ensemble à l'économie du salut.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.010",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG15",
+      "originalCueText": "`AO.SM.C0130`",
+      "originalFrenchHeading": "ORATE FRATRES",
+      "sourceParaphraseFr": "Le prêtre demande aux fidèles de prier pour que le sacrifice soit agréé. Leur réponse s'unit à l'offrande sans abolir le rôle sacramentel propre du prêtre.",
+      "sourceClass": "PRAYER_MEANING_WITH_DOCTRINAL_QUALIFICATION",
+      "primaryOwner": "AO.CARD.011",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG16",
+      "originalCueText": "`AO.SM.C0135`",
+      "originalFrenchHeading": "SECRÈTE ET PRÉFACE",
+      "sourceParaphraseFr": "La prière sur les offrandes est dite à voix basse. Son dernier Per omnia devient audible pour que l'assemblée réponde Amen à l'oraison du prêtre, même sans en entendre chaque mot.",
+      "sourceClass": "HISTORICAL_VOICE_AND_RESPONSE",
+      "primaryOwner": "AO.CARD.011",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG17",
+      "originalCueText": "`AO.SM.C0137`",
+      "originalFrenchHeading": "PRÉFACE",
+      "sourceParaphraseFr": "Sursum corda invite les fidèles à élever leur cœur; Gratias agamus appelle à l'action de grâces que le prêtre va offrir au nom de l'assemblée.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.012",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG18",
+      "originalCueText": "`AO.SM.C0150`",
+      "originalFrenchHeading": "CANON, TE IGITUR",
+      "sourceParaphraseFr": "Le Canon s'adresse au Père par Jésus-Christ et implore l'acceptation de l'offrande pour l'Église. La voix basse ne signifie pas que la prière cesse d'être l'action liturgique de l'Église.",
+      "sourceClass": "CANON_PRAYER_MEANING",
+      "primaryOwner": "AO.CANON.01",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG19",
+      "originalCueText": "`AO.SM.C0154`",
+      "originalFrenchHeading": "MEMENTO DES VIVANTS",
+      "sourceParaphraseFr": "Le prêtre présente des intentions particulières au sein de la supplication pour l'Église et tous ceux qui l'entourent. Leurs foi et dévotion sont mentionnées dans la prière elle-même.",
+      "sourceClass": "CANON_PRAYER_MEANING",
+      "primaryOwner": "AO.CANON.02",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG20",
+      "originalCueText": "`AO.SM.C0161`",
+      "originalFrenchHeading": "HANC IGITUR",
+      "sourceParaphraseFr": "Les mains du prêtre étendues sur l'oblation sont rapprochées par Guéranger des sacrifices de l'ancienne Loi. Le Canon demande ici que l'offrande soit accueillie et que nos jours soient disposés dans la paix.",
+      "sourceClass": "ATTRIBUTED_HISTORICAL_SYMBOLISM_PLUS_PRAYER",
+      "primaryOwner": "AO.CANON.04",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG21",
+      "originalCueText": "`AO.SM.C0164\\`, \\`AO.SM.C0165\\`, \\`AO.SM.C0166`",
+      "originalFrenchHeading": "QUAM OBLATIONEM",
+      "sourceParaphraseFr": "La prière demande que l'offrande soit bénie, reconnue, ratifiée, spirituelle et agréée, afin de devenir pour nous le Corps et le Sang du Christ. Les signes de croix accompagnent des mots précis; ce ne sont pas des consécrations successives.",
+      "sourceClass": "CANON_PRAYER_MEANING",
+      "primaryOwner": "AO.CANON.05",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG22",
+      "originalCueText": "`AO.SM.C0173\\`, \\`AO.SM.C0174\\`, \\`AO.SM.C0181`",
+      "originalFrenchHeading": "CONSÉCRATION DE L'HOSTIE; CONSÉCRATION DU VIN",
+      "sourceParaphraseFr": "Dès les paroles consacratoires, la Présence réelle exige l'adoration: d'abord la génuflexion du prêtre, ensuite l'élévation offerte à l'adoration des fidèles, puis une nouvelle génuflexion. La consécration et l'ostension ne doivent jamais être confondues.",
+      "sourceClass": "DOCTRINE_AND_SOURCE_ACTION_ORDER",
+      "primaryOwner": "AO.CANON.06",
+      "secondOwner": "AO.CANON.07",
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG23",
+      "originalCueText": "`AO.SM.C0182`",
+      "originalFrenchHeading": "UNDE ET MEMORES",
+      "sourceParaphraseFr": "Après les consécrations, l'Église fait mémoire de la Passion, de la Résurrection et de l'Ascension; elle offre au Père les dons mêmes qu'elle a reçus de lui.",
+      "sourceClass": "CANON_PRAYER_MEANING",
+      "primaryOwner": "AO.CANON.08",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG24",
+      "originalCueText": "`AO.SM.C0196`",
+      "originalFrenchHeading": "NOBIS QUOQUE PECCATORIBUS",
+      "sourceParaphraseFr": "L'appel aux pécheurs rompt brièvement le silence du Canon. Le prêtre frappe sa poitrine et demande d'avoir part à la compagnie des saints, par la miséricorde et non par ses mérites.",
+      "sourceClass": "CANON_PRAYER_MEANING_AND_GESTURE",
+      "primaryOwner": "AO.CANON.12",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG25",
+      "originalCueText": "`AO.SM.C0202`",
+      "originalFrenchHeading": "PER IPSUM",
+      "sourceParaphraseFr": "À la doxologie, le Christ offert glorifie le Père dans l'unité de l'Esprit Saint. Les signes de croix et la petite élévation accompagnent cette louange; elle diffère de l'ostension après les consécrations.",
+      "sourceClass": "CANON_DOXOLOGY_AND_CEREMONIAL",
+      "primaryOwner": "AO.CANON.14",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG26",
+      "originalCueText": "`AO.SM.C0208`",
+      "originalFrenchHeading": "PATER NOSTER",
+      "sourceParaphraseFr": "L'Église ose dire Notre Père sur l'ordre même du Seigneur. À l'approche de la Communion, la demande du pain quotidien prend également une résonance eucharistique.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.019",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG27",
+      "originalCueText": "`AO.SM.C0221`",
+      "originalFrenchHeading": "FRACTION ET COMMIXTION",
+      "sourceParaphraseFr": "Une parcelle de l'Hostie consacrée est placée dans le calice. Le terme consecratio employé dans la formule n'indique pas ici une nouvelle consécration sacramentelle mais l'union de choses déjà sacrées.",
+      "sourceClass": "LEXICAL_DOCTRINAL_CLARIFICATION",
+      "primaryOwner": "AO.CARD.020",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG28",
+      "originalCueText": "`AO.SM.C0247`",
+      "originalFrenchHeading": "ABLUTIONS ET POSTCOMMUNION",
+      "sourceParaphraseFr": "La purification soigneuse manifeste la révérence due aux saintes Espèces. La prière demande que le don reçu dans un instant de cette vie devienne un remède pour l'éternité.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.026",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG29",
+      "originalCueText": "`AO.SM.C0259`",
+      "originalFrenchHeading": "ITE MISSA EST",
+      "sourceParaphraseFr": "La formule congédie l'assemblée à l'issue de l'action liturgique. Guéranger en propose une explication historique; ses indications anciennes sur les jours où l'on emploie d'autres formules ne remplacent pas les rubriques de 1960–1962.",
+      "sourceClass": "HISTORICAL_ETYMOLGY_WITH_1962_EXCEPTION_GATE",
+      "primaryOwner": "AO.CARD.028",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG30",
+      "originalCueText": "`AO.SM.C0269`",
+      "originalFrenchHeading": "DERNIER ÉVANGILE",
+      "sourceParaphraseFr": "La proclamation du Prologue de saint Jean rappelle le mystère du Verbe incarné. Son adoption comme dernier Évangile relève d'une histoire dévotionnelle; ses emplois et omissions sont réglés en 1962, non par l'usage décrit au XIXe siècle.",
+      "sourceClass": "HISTORICAL_DEVOTION_AND_1962_EXCEPTION_GATE",
+      "primaryOwner": "AO.CARD.030",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
     }
   ]
 }
