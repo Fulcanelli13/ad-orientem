@@ -163,7 +163,7 @@ const parallelLatinFrench1962="https://fr.scribd.com/document/542057936/Ritus-Se
 for(const path of originalEditionProvenanceFiles){
  const raw=readFileSync(new URL(path,import.meta.url),"utf8");
  const obj=JSON.parse(raw);
- assert.doesNotMatch(raw,/www\\.intratext\\.com\\/IXT\\/LAT0820\\/_P[J-K]\\.HTM/,
+ assert.ok(!raw.includes("https://www.intratext.com/IXT/LAT0820/"),
   path+": pre-1962 rubrical witness cannot be cited as 1962 typical edition");
  assert.ok(raw.includes(latin1962)||raw.includes(parallelLatinFrench1962),
   path+": must link a separately labeled 1962 Latin witness");
