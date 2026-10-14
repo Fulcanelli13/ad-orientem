@@ -6,13 +6,56 @@ import {angelusCardPlan,DEVOTIONAL_CARD_SCHEMA} from "../src/pray/devotional-car
 import {mercyChapters,SEQUENTIAL_DEVOTIONAL_SCHEMA} from "../src/pray/devotional-sequence-adapter.js";
 import {divineMercySteps} from "../src/pray/devotional-methods-v1.js";
 import {devotionalInterludePlan,DEVOTIONAL_CINEMATIC_VERSION} from "../src/pray/devotional-cinematic.js";
-assert.equal(DEVOTIONAL_CINEMATIC_VERSION,"devotional-card-interstitial-v1");
-const paintedShot=devotionalInterludePlan({form:"angelus",card:{id:"incarnation",title:"L’Incarnation",latin:"Et Verbum"}});
-assert.equal(paintedShot.image,"assets/pray/angelus/tanner-annunciation-1898.webp");
-assert.equal(paintedShot.shot.effect,"light");
-assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}).image,null);
-assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"faithful-departed",title:"Pour les fidèles défunts"}}).image,null);
-assert.equal(devotionalInterludePlan({form:"angelus",card:{id:"missing",title:""}}),null);
+import {
+  ANGELUS_REVIEWED_OPENING_ART, selectAngelusOpeningArtwork,
+  resolveAngelusIncarnationCinematic, resolveAngelusArtworkImage,
+} from "../src/pray/angelus-cinematic-policy.js";
+assert.equal(DEVOTIONAL_CINEMATIC_VERSION,"angelus-devotional-cinematics-v2");
+const opening=devotionalInterludePlan({form:"angelus",card:{id:"announcement",title:"The Announcement"}});
+assert.equal(opening.repeatPerCard,false);
+assert.equal(opening.artworkOwner,"USER_REVIEWED_SACRED_ART");
+for(const id of ["fiat","incarnation","intercession","faithful-departed"]){
+ assert.equal(devotionalInterludePlan({form:"angelus",card:{id,title:id}}),null,
+   "Angelus artwork must not interrupt later cards: "+id);
+}
+assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}),null);
+assert.equal(ANGELUS_REVIEWED_OPENING_ART.length,6);
+assert.ok(ANGELUS_REVIEWED_OPENING_ART.every(row=>
+  [4,5].includes(row.rating)&&row.subject==="ANNUNCIATION"&&row.sourceUrl));
+const champaigne=ANGELUS_REVIEWED_OPENING_ART.find(a=>a.id==="met-438724");
+assert.ok(champaigne&&champaigne.rating===5&&champaigne.rank===1&&
+  champaigne.selectedInPriorReview&&champaigne.finalApproval!=="APPROVED",
+  "The newest 13 Oct user ranking must retain the selected 5/5 Annunciation without falsely certifying it");
+// Neither a score of five nor a prior aesthetic selection is artwork-release approval.
+assert.equal(selectAngelusOpeningArtwork({random:()=>0}),null,
+  "Aesthetic scores were incorrectly promoted to publishable artwork");
+assert.equal(selectAngelusOpeningArtwork({pool:[{...champaigne,finalApproval:"APPROVED"}]}),null,
+  "An approved painting without approved reproduction was published");
+const approved=ANGELUS_REVIEWED_OPENING_ART.slice(1,3).map(a=>({
+ ...a,finalApproval:"APPROVED",reproductionApproval:"APPROVED"}));
+const picked=selectAngelusOpeningArtwork({pool:approved,random:()=>0});
+assert.equal(picked.id,"nga-46");
+assert.notEqual(selectAngelusOpeningArtwork({pool:approved,lastId:picked.id,random:()=>0}).id,picked.id);
+assert.equal(selectAngelusOpeningArtwork({pool:[]}),null);
+const cma=ANGELUS_REVIEWED_OPENING_ART.find(x=>x.id==="cma-127572");
+assert.ok(cma && cma.rating===4 && cma.sourceUrl.includes("1950.251"));
+assert.equal(await resolveAngelusArtworkImage(cma,{fetchImpl:async()=>({
+ ok:true,json:async()=>({data:{id:127572,share_license_status:"CC0",
+ images:{web:{url:"https://images.example.test/cma-annunciation.jpg"}}}})
+})}),"https://images.example.test/cma-annunciation.jpg");
+assert.equal(await resolveAngelusArtworkImage(cma,{fetchImpl:async()=>({
+ ok:true,json:async()=>({data:{id:127572,share_license_status:"copyrighted",
+ images:{web:{url:"https://images.example.test/not-cc0.jpg"}}}})
+})}),null,"Non-CC0 reproduction must never appear");
+assert.equal(resolveAngelusIncarnationCinematic({form:"regina"}),null);
+assert.equal(resolveAngelusIncarnationCinematic({weekday:1}).action,"HEAD_BOW");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:6}).action,"HEAD_BOW");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:6,saturdayAfterVespers:true}).action,"GENUFLECT");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:0}).action,"GENUFLECT");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:0,gestureOverride:"NONE"}),null);
+assert.equal(resolveAngelusIncarnationCinematic({weekday:0,gestureOverride:"PROFOUND_BOW",language:"fr"}).label,
+  "Inclinez-vous profondément");
+assert.equal(resolveAngelusIncarnationCinematic({weekday:0}).automaticObservation,false);
 assert.equal(DEVOTIONAL_CARD_SCHEMA,"dual-axis-devotional-cards-v1");
 assert.equal(SEQUENTIAL_DEVOTIONAL_SCHEMA,"dual-axis-sequential-devotional-v1");
 const mercyMain=mercyChapters(divineMercySteps(),{french:true});
@@ -343,6 +386,12 @@ for(const code of ["en","fr"]){
  assert.ok(parts.every(x=>/^Part(ie)? \d+$/.test(x.title)),"do not invent semantic labels from equal text chunks");
  assert.throws(()=>extractLitanyProper(witness.replace(ending,""),code),/ending not found/i);
 }
+// Prayer needs the original Psalm/Gospel verses, not a blocking chain of
+// unrelated external Bellarmine/Catena commentary requests. The canonical
+// Scripture service's context-only mode preserves real source text and its
+// exact-signature persistent-cache policy.
+assert.ok(runtime.includes("svc.load(kind,{en:ref,fr:ref,lat:ref},{contextOnly:true})"),
+ "Prayer Scripture reader must bypass nonessential commentary retrieval");
 assert.match(runtime,/data-p435930-lit-retry/);
 assert.match(runtime,/litanySourceDisclosure\(\)/);
 assert.doesNotMatch(runtime,/A Manual of Prayers for the Use of the Catholic Laity\/Litany of the Saints/,"unavailable historical Wikisource title returned");
