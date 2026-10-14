@@ -26,13 +26,15 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Wave24 newly reviewable: Pittoni San Diego 48.3 CC0 1826x2565 exact Saint Anthony (new physical original), and Van Dyck Brera Inv87 old W07-006 750x901 preview only. 2 new score decisions and 1 existing Cleveland group 4/5 locked.",
-    "Wave24 source custody HOLDS: Shelley Vianney Ars original IM01000822 / PM01002795 same physical oil; Céline Lisieux Thérèse aux Roses 1925 original oil; Élisabeth Martin Margaret Mary Québec 165636.105 original signed 1920; Seville Murillo in situ (clean unframed reproduction unresolved).",
-    "AUTHORITATIVE CORRECTION: Cleveland CMA 1982.36 / cma-150955 curator explicitly identifies six saints Lucy, Agnes, Scholastica, Benedict, Veronica, Anthony of Padua. This supersedes prior uncertainty; single group painting stays user 4/5, not six portrait paintings.",
-    "Wait for W22, W23 and W24 score exports; preserve all Oct13 scores/exclusions, do not infer new ratings. Rating previews are browser remote imagery, not downloaded SHA-verified source masters.",
-    "Prioritize exact clean heritage reproductions and required rights for important saints over all-saints lists, minor Doctors, and optional Bible Atlas episode saturation.",
-    "Old W01-W15 222 research object leads, 8 SHA-verified files, 214 still missing; old W16-W20 63/107 subject gap tally is NOT overall art library completion.",
-    "Keep draft PR #887 research-only and unmerged. No app artwork production modifications."
+    "Prioritize user's no-rating two-physical-original source requirement, measured against latest Oct13 file: 64/75 existing selected major Saints, Doctors, Apostles, Evangelists source-linked with at least TWO distinct research paintings; 11 remaining Doctor shortages in latest v4 matrix, 3 without suitable identified oils.",
+    "Matrix / correct owner: data/calendar/sacred-art-two-options-matrix-wave29-20261014.v4.json. Each subject retains status/sourceURL/artist, 0–2 exclusions, context-vs-portrait, photo-rights, qualified uncertainty; do not count derivative prints or same physical object twice.",
+    "High-priority Doctor shortages: Athanasius, Gregory Nazianzen, Isidore of Seville, Bede, Peter Damian, Albert, Bellarmine, Canisius, Cyril of Alexandria, Cyril of Jerusalem, Ephrem. Treat 3 Cyril/Ephrem source voids seriously but do not fabricate naturalistic portraits or permit copy after excluded El Greco.",
+    "Do NOT link saint Patrick to Saint Louis image W10-009; W27 RDS oil of Patrick lighting Paschal fire is valid separate narrative; Barry NGI4623 distinct.",
+    "Do NOT link Mary of Egypt and Zosimas 5/5 MET-437977 to Saint Jerome; user score survives for the actual painting, inaccurate subject join removed.",
+    "Do NOT duplicate St Matthias Rubens original through historical ART id and Prado W05-008; new original Sebastiàn Martínez Domedel Prado P007531 is distinct.",
+    "Do NOT duplicate 1925 Céline Thérèse, Juan Ribalta Mark/Luke shared original, Ribera Saint Jude alias or Jean-Baptiste de Champaigne Saint Lawrence originally selected and NGA modern entry.",
+    "Existing user Oct13 rankings and scores immutable. Research 2-option coverage ≠ human-approved, correctly licensed, source-JPEG-downloaded or publication-complete. No further score panels needed until user asks.",
+    "Before any commercial use secure museum/repro permissions and original SHA/pixel dimensions. Preserve prior 222 W01–15 source leads, 8 verified new masters and 214 pending as separate from W25–W29 source dossiers. PR #887 remains draft and unmerged."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -204,6 +206,26 @@
       "Veronica",
       "Anthony of Padua"
     ],
-    "wave24ClevelandPhysicalOriginal": "cma-150955"
+    "wave24ClevelandPhysicalOriginal": "cma-150955",
+    "user20261014CurrentInstruction": "No ratings now; obtain at least TWO different relevant original source paintings where possible for EVERY existing Doctor, Apostle, Evangelist and selected major superstar saint; don't expand to all saints or weaker substitutes.",
+    "twoOptionSourceMatrix": "data/calendar/sacred-art-two-options-matrix-wave29-20261014.v4.json",
+    "twoOptionBase": "data/calendar/sacred-art-two-options-user-baseline-75-20261014.v1.json",
+    "twoOptionResearchWaveDossiers": [
+      "data/calendar/sacred-art-two-option-source-original-wave25-20261014.v1.json",
+      "data/calendar/sacred-art-two-option-source-original-wave26-20261014.v1.json",
+      "data/calendar/sacred-art-two-option-source-original-wave27-20261014.v1.json",
+      "data/calendar/sacred-art-two-option-source-original-wave28-20261014.v1.json",
+      "data/calendar/sacred-art-two-option-source-original-wave29-20261014.v1.json"
+    ],
+    "twoOptionSubjectsAtLeast2ResearchRecords": 64,
+    "twoOptionSubjectsTotal": 75,
+    "twoOptionDoctorsBelowTwo": 11,
+    "twoOptionApostlesCovered": 13,
+    "twoOptionEvangelistsCovered": 2,
+    "twoOptionOtherMajorSaintsCovered": 32,
+    "twoOptionScoreImageReleaseCoverageUnknown": true,
+    "noFurtherHumanScoringRequested": true,
+    "noNewRequiredSaintSubjects": true,
+    "twoOptionNewSHAVerifiedImages": 0
   }
 }
