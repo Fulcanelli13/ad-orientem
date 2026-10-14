@@ -1,0 +1,299 @@
+{
+  "schema": "AO_SACRED_ART_W39_GAP_PORTRAITS_SOURCE_VERIFICATION_V1",
+  "asOf": "2026-10-14",
+  "branchPR": 887,
+  "dependency": "data/calendar/sacred-art-portrait-gap-w38-primary-source-pass-20261014.v1.json",
+  "status": "SOURCE_RESEARCH_ONLY_NOT_HUMAN_APPROVAL",
+  "totals": {
+    "newRecords": 14,
+    "portraitTypeLeads": 11,
+    "subjectsWithLeads": 4,
+    "explicitSceneOrWrongMediumExclusions": 3,
+    "unrated": 14,
+    "newPhysicalMastersDownloadedAndHashed": 0,
+    "gapsClosedByNew4PlusRating": 0
+  },
+  "sourceGate": "Sources match museum collections or item file metadata where stated; category page alone does not certify museum original provenance, attribution or safe commercial reuse. No physical-original uniqueness has been checked against full 277 historical scores, and no previously rated artwork should be shown again. Treat image dimensions as Commons metadata only.",
+  "qualityGaps": [
+    "Raphael paintings have adequate alternatives but original source photo cropping and copyright need work.",
+    "Benedict now has distinct Rizi, Berdusán, Comontes objects; only Rizi has a borderline portrait preview, other Commons thumbnails too small.",
+    "Francis Xavier Prado Luca Giordano now found with good preview; Vatican Seghers and Vanni have identity issues.",
+    "Martin at Sare has large clear portrait-format church photo but need clean crop and exact original maker."
+  ],
+  "objects": [
+    {
+      "recordId": "W39-001",
+      "canonicalSubjectId": "SNT-OT-03",
+      "artist": "Miguel Cabrera",
+      "title": "El Arcángel san Rafael",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:El_Arc%C3%A1ngel_san_Rafael,_ca._1760,_de_Miguel_Cabrera_en_el_MUNAL_01.jpg",
+      "collection": "Museo Nacional de Arte (MUNAL), Mexico City",
+      "role": "SOLO_ARCHANGEL_PORTRAIT",
+      "commonsReportedPixels": [
+        3448,
+        4592
+      ],
+      "curatorialGate": "REVIEW_PREVIEW_WITH_MUSEUM_OBJECT_MATCH_PENDING",
+      "notes": "c.1760 oil on canvas, museum reference via Google Arts & Culture. Photo includes frame/museum setting; crop/straighten without modification and confirm object accession.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-002",
+      "canonicalSubjectId": "SNT-OT-03",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "Angel Raphael with a Fish",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Murillo_-_Angel_Raphael_with_a_fish_2021_CKS_20053_0043(043105).jpg",
+      "collection": "Christie's lot 6327304; private collection provenance to verify",
+      "role": "SOLO_ARCHANGEL_PORTRAIT",
+      "commonsReportedPixels": [
+        2306,
+        3200
+      ],
+      "curatorialGate": "AUCTION_PROVENANCE_AND_COPYRIGHT_HOLD",
+      "notes": "c.1680 oil on canvas, 23.8×32.8 cm; auction photograph. Strong Raphael iconography; check rights and exact original ID.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-003",
+      "canonicalSubjectId": "SNT-OT-03",
+      "artist": "Anonymous Spanish painter, formerly attributed to Antonio Palomino",
+      "title": "San Rafael Arcángel",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:San_Rafael_Arc%C3%A1ngel_(CE1553P,_Museo_de_Bellas_Artes_de_C%C3%B3rdoba).jpg",
+      "collection": "Museo de Bellas Artes de Córdoba CE1553P",
+      "role": "SOLO_ARCHANGEL_PORTRAIT",
+      "commonsReportedPixels": [
+        1180,
+        1522
+      ],
+      "curatorialGate": "PIXEL_SIZE_AND_AUTHOR_HOLD",
+      "notes": "Oil on canvas, 123×97 cm; former Palomino attribution withdrawn, must keep anonymous; source file slightly small.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-004",
+      "canonicalSubjectId": "SNT-OT-03",
+      "artist": "Artist to verify",
+      "title": "El Arcángel San Rafael",
+      "sourceURL": "https://fundacionkutxabank.es/tesoros-kutxabank/el-arcangel-san-rafael",
+      "collection": "Fundación Kutxabank",
+      "role": "SOLO_ARCHANGEL_PORTRAIT",
+      "commonsReportedPixels": null,
+      "curatorialGate": "INSTITUTION_CATALOGUE_IMAGE_RIGHTS_HOLD",
+      "notes": "Distinct single angel with fish, staff, wings; painting in Foundation collection. Attribution/date/accession needs catalogue confirmation.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-005",
+      "canonicalSubjectId": "SNT-OT-14",
+      "artist": "Fray Juan Andrés Rizi",
+      "title": "San Benito Abad con dos ángeles",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:San_Benito_Abad_con_dos_%C3%A1ngeles_(Museo_del_Prado).jpg",
+      "collection": "Museo del Prado P002601; on deposit Museo de Pontevedra",
+      "role": "SAINT_DOMINANT_WITH_TWO_ANGELS",
+      "commonsReportedPixels": [
+        900,
+        1920
+      ],
+      "curatorialGate": "POTENTIAL_PORTRAIT_WITH_ICONOGRAPHIC_FIGURES",
+      "notes": "c.1650 oil on canvas, 210×102cm; Benedict visually central; evaluate suitability on screen; distinguish from Rizi P002600 'La cena de San Benito' narrative.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-006",
+      "canonicalSubjectId": "SNT-OT-14",
+      "artist": "Vicente Berdusán",
+      "title": "San Benito de Nursia",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:San_Benito_de_Nursia,_de_Vicente_Berdus%C3%A1n_(Museo_de_Zaragoza).jpg",
+      "collection": "Museo de Zaragoza 10214",
+      "role": "SOLO_SAINT_PORTRAIT",
+      "commonsReportedPixels": [
+        587,
+        995
+      ],
+      "curatorialGate": "PIXEL_HOLD_FIND_MUSEUM_MASTER",
+      "notes": "c.1670–73 oil on panel 178×106 cm; originally Monastery of Veruela. A real distinct museum painting, but existing reproduction too poor for user review.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-007",
+      "canonicalSubjectId": "SNT-OT-14",
+      "artist": "Antonio de Comontes",
+      "title": "San Benito de Nursia",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:San_Benito_de_Nursia,_de_Antonio_de_Comontes_(Museo_L%C3%A1zaro_Galdiano,_Madrid).jpg",
+      "collection": "Museo Lázaro Galdiano 07494",
+      "role": "SOLO_SAINT_PORTRAIT",
+      "commonsReportedPixels": [
+        796,
+        1050
+      ],
+      "curatorialGate": "PIXEL_AND_EARLY_STYLE_HOLD",
+      "notes": "16th c oil on panel 101×75cm. Unique museum original, likely much earlier style; higher res source and aesthetic suitability uncertain.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-008",
+      "canonicalSubjectId": "SNT-OT-15",
+      "artist": "Luca Giordano",
+      "title": "San Francisco Javier",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:San_Francisco_Javier_de_Luca_Giordano.jpg",
+      "collection": "Museo del Prado P000181",
+      "role": "SOLO_SAINT_PORTRAIT",
+      "commonsReportedPixels": [
+        1437,
+        1920
+      ],
+      "curatorialGate": "REVIEW_PREVIEW_WITH_INSTITUTION_ORIGINAL",
+      "notes": "Second-half 17th c oil on canvas 97×71cm; Commons reproduction sourced directly from Prado permanent collection, object accession P000181.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-009",
+      "canonicalSubjectId": "SNT-OT-15",
+      "artist": "Gerard Seghers and Jan Wildens; contested attribution",
+      "title": "Saint Francis Xavier",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Vatican_Museums_2020_P38_Gerard_Seghers_Jan_Wildens_Francis_Xavier.jpg",
+      "collection": "Pinacoteca Vaticana; accession pending",
+      "role": "SAINT_DOMINANT_PORTRAIT",
+      "commonsReportedPixels": [
+        1920,
+        3306
+      ],
+      "curatorialGate": "AUTHOR_AND_ACCESSION_HOLD",
+      "notes": "Vatican photographic file, verify exact painter attribution (Commons artist field mentions Anthony van Dyck) and museum object identity, photo CC BY-SA 4.0.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-010",
+      "canonicalSubjectId": "SNT-OT-15",
+      "artist": "Francesco Vanni (site attribution unverified)",
+      "title": "San Francesco Saverio",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Francesco_Vanni_-_San_Francesco_Saverio.jpg",
+      "collection": "Chiesa di San Vigilio, Siena",
+      "role": "SOLO_SAINT_PORTRAIT",
+      "commonsReportedPixels": [
+        1217,
+        1881
+      ],
+      "curatorialGate": "IN_SITU_ATTRIBUTION_CROP_HOLD",
+      "notes": "Commons 2017 crop from a 1563×2210 church photograph, image licensed CC BY 3.0; verify historical date/artist identity and original artwork.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-011",
+      "canonicalSubjectId": "SNT-OT-29",
+      "artist": "Unknown artist",
+      "title": "Portrait of Saint Martin in episcopal vestments",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Sare-Saint_Martin_de_Tours_(TD)-20201015.jpg",
+      "collection": "Church at Sare, France; monument mobilier PM64002547",
+      "role": "SAINT_DOMINANT_PORTRAIT_WITH_BACKGROUND_SCENE",
+      "commonsReportedPixels": [
+        2931,
+        4429
+      ],
+      "curatorialGate": "ORIGINAL_ATTRIBUTION_AND_CLEAN_CROP_HOLD",
+      "notes": "Oil painting photo by Daniel Villafruela under CC BY-SA 4.0, monumental protection PM64002547; figure Martin bishop foreground with a Saint Martin charity scene in background, image includes framing/site photo.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-012",
+      "canonicalSubjectId": "SNT-OT-29",
+      "artist": "Godfried Maes",
+      "title": "Saint Martin of Tours raises a man from the dead",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Godfried_Maes_-_Saint_Martin_of_Tours_raises_a_man_from_the_dead_(cropped).jpeg",
+      "collection": "Sint-Martinuskerk, Aalst; BALaT object 32625",
+      "role": "NARRATIVE_SCENE_ONLY",
+      "commonsReportedPixels": null,
+      "curatorialGate": "INELIGIBLE_FOR_PORTRAIT_ONLY",
+      "notes": "1687 oil on canvas, exact Saint Martin depiction but miracle scene, shared via calendar and life scenes; not a 4+ portrait target.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-013",
+      "canonicalSubjectId": "SNT-OT-29",
+      "artist": "Unknown maker",
+      "title": "San Martín (Catedral de Orense)",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:San_Mart%C3%ADn_(Catedral_de_Orense).png",
+      "collection": "Cathedral museum Ourense",
+      "role": "SCULPTURE_NOT_PAINTING",
+      "commonsReportedPixels": [
+        1908,
+        3072
+      ],
+      "curatorialGate": "REJECT_WRONG_MEDIUM",
+      "notes": "Commons lists as sculpture statue Saint Martin, despite high pixels; excluded from painting portrait catalogue.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    },
+    {
+      "recordId": "W39-014",
+      "canonicalSubjectId": "SNT-OT-14",
+      "artist": "Fray Juan Andrés Rizi",
+      "title": "La cena de San Benito",
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito.jpg",
+      "collection": "Museo del Prado P002600",
+      "role": "NARRATIVE_SCENE_ONLY",
+      "commonsReportedPixels": [
+        2717,
+        2353
+      ],
+      "curatorialGate": "INELIGIBLE_FOR_PORTRAIT_ONLY",
+      "notes": "Rizi 17th c oil canvas depicts Benedict dining with a monk; 2,717×2,353 reproduction exists, but it is not Benedict P002601 portrait with angels.",
+      "priorUserRating": null,
+      "assetSHA256": null,
+      "sourceObjectVerified": false,
+      "licenseForFinalUse": "PENDING_SPECIFIC_PHOTOGRAPH_AND_JURISDICTION_REVIEW",
+      "includedInReviewGallery": false
+    }
+  ]
+}
