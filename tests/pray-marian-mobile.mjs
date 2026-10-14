@@ -132,11 +132,11 @@ try{
    console.log("STATION_PHASE_DIAGNOSTIC "+JSON.stringify(await page.locator("#aoPray435930 .aoP435930Stations .aoDevoCardScroll").evaluate((body,selector)=>({
      requested:selector,top:body.scrollTop,max:body.scrollHeight-body.clientHeight,
      active:[...body.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']")].map(p=>({className:p.className,text:p.textContent.slice(0,35)})),
-     scene:document.querySelector("#aoPray435930 .aoDevotionalActionCinematic")?.dataset.aoActionScene??null
+     scene:document.querySelector("body > .aoDevotionalActionCinematic")?.dataset.aoActionScene??null
    }),selector)));
  };
  await focusStationPhase(".aoP435930VRLine.leader");
- const stationCinema=page.locator("#aoPray435930 .aoDevotionalActionCinematic");
+ const stationCinema=page.locator("body > .aoDevotionalActionCinematic");
  await stationCinema.waitFor({state:"visible",timeout:6000});
  assert.equal(await stationCinema.getAttribute("data-ao-action-scene"),"STATIONS.0.GENUFLECT");
  await page.screenshot({path:resolve(captures,"02b-stations-public-genuflect-390.png"),animations:"disabled"});
