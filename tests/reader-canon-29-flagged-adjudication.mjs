@@ -18,6 +18,18 @@ assert.equal(audit.rows.length,29);
 assert.equal(audit.rows.filter(x=>x.priority==="HIGH").length,21);
 assert.equal(audit.rows.filter(x=>x.priority==="STANDARD").length,8);
 const by=new Map(audit.rows.map(x=>[x.actionId,x]));
+const canonicalById=new Map(witnesses.french.rows.map(x=>[x.id,x]));
+assert.equal(witnesses.bilingual.rows.filter(x=>Object.hasOwn(x.shortDraft,"fr")).length,0,
+ "All 62 bilingual proposals must link French rather than duplicating it");
+for(const row of audit.rows){
+ assert.equal(row.shortFrenchOwnerId,row.actionId);
+ assert.equal(row.shortDraft.fr,canonicalById.get(row.actionId).shortFrenchRubricDraft,
+  row.actionId+": 29 flagged review must inherit newly corrected French original");
+ const source=witnesses.bilingual.rows.find(x=>x.actionId===row.actionId);
+ assert.equal(source.shortDraft.frCanonicalActionId,row.actionId);
+}
+assert.match(by.get("AO.CANON.R62.028").shortDraft.fr,/diacre à la messe solennelle/);
+
 for(const row of audit.rows){
  assert.equal(row.sourceSignoff,"NOT_APPROVED");
  assert.equal(row.copyApproval,"NOT_APPROVED");
@@ -96,6 +108,12 @@ assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
 assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
  x.bilingual.rows.find(y=>y.actionId==="AO.CANON.R62.027").copyApproval="APPROVED";
 })),/drift/);
+assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
+ x.bilingual.rows.find(y=>y.actionId==="AO.CANON.R62.028").shortDraft.fr="Il découvre le calice.";
+})),/drift/,"Parallel French short strings must not re-enter the 29 flagged review");
+assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
+ x.bilingual.rows.find(y=>y.actionId==="AO.CANON.R62.028").shortDraft.frCanonicalActionId="AO.CANON.R62.027";
+})),/drift/,"Wrong French ID must never be accepted as a short rubric");
 assert.throws(()=>validateCanon29FlaggedAdjudication(corrupt(x=>{
  x.french.status="PUBLISHED";
 })),/source ledgers/);
