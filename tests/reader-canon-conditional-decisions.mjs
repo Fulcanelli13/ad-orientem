@@ -250,6 +250,43 @@ for(const [id,part] of [
  assert.equal(conciseRubricDrafts.find(x=>x.id===id)?.shortRubricPlacement,part,
   id+": priest, respondent or minister time ownership drifted");
 }
+// 1962 Ritus VIII–X short-rubric precision: these remain wholly draft-only.
+const preciseShortCopy=new Map([
+ ["004",/conditions et formules prescrites/],
+ ["008",/texte propre prévu pour certains jours/],
+ ["011",/jusqu’à « Per Christum »/],
+ ["017",/d’autres hosties à consacrer, il les découvre d’abord/],
+ ["026",/sauf pour toucher une Hostie consacrée/],
+ ["027",/sonne trois fois ou continûment pendant l’élévation de l’Hostie/],
+ ["028",/au besoin par le diacre/],
+ ["033",/première génuflexion/],
+ ["034",/Après la première génuflexion.*puis génuflecte de nouveau/],
+ ["035",/sonne trois fois ou continûment pendant l’élévation du calice/],
+ ["039",/« Panem sanctum ».*« Calicem salútis »/],
+ ["055",/au besoin par le diacre.*le prêtre génuflecte/],
+ ["058",/« omnis honor et glória ».*l’Hostie tenue au-dessus/],
+ ["059",/repose le calice et l’Hostie.*au besoin par le diacre/],
+ ["061",/ministre à la messe basse.*répondants à la messe chantée/],
+ ["062",/Peu avant la consécration, le servant avertit les fidèles/],
+]);
+assert.equal(preciseShortCopy.size,16);
+for(const [number,pattern] of preciseShortCopy){
+ const row=conciseRubricDrafts.find(x=>x.id==="AO.CANON.R62."+number);
+ assert.ok(row,number+": canonical R62 rubric missing");
+ assert.match(row.shortFrenchRubricDraft,pattern,number+": 1962 short-copy qualifier lost");
+ assert.equal(row.shortRubricReviewState,
+  "ORIGINAL_FRENCH_SHORT_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
+ const source=trigger.rows.find(x=>x.id===row.id);
+ assert.equal(source.cueId,row.cueId,number+": source cue ownership mismatch");
+ assert.equal(source.actor,row.actor,number+": minister/priest actor mismatch");
+}
+assert.match(conciseRubricDrafts.find(x=>x.id==="AO.CANON.R62.026")
+ .shortFrenchRubricDraft,/jusqu’à l’ablution des doigts/);
+assert.match(conciseRubricDrafts.find(x=>x.id==="AO.CANON.R62.034")
+ .shortFrenchRubricDraft,/le fait couvrir/);
+assert.doesNotMatch(conciseRubricDrafts.find(x=>x.id==="AO.CANON.R62.062")
+ .shortFrenchRubricDraft,/(?:Hanc|ígitur)/u,
+ "Anticipatory minister bell must never be text-synchronised to Hanc igitur");
 assert.equal(controller.project("AO.SM.C0153").canPublish,false,
  "No short French draft may enable public Canon text");
 assert.equal(sources.frenchReview.rows.filter(x=>x.formReview==="FORM_OR_PASTORAL_REVIEW_PENDING").length,5,
