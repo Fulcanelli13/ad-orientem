@@ -100,6 +100,10 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
  kindKicker.dataset.massJourneyKind="";
  const formIdentity=node(doc,"p","aoMassJourneyFormIdentity");
  formIdentity.dataset.massJourneyFormIdentity="";
+ // The liturgical commemoration belongs to the selected Mass identity and
+ // must never be hidden by the legacy host calendar layout on mobile.
+ context.hidden=false;
+ context.style.setProperty("display","grid","important");
  lead.append(kindKicker,selected,context,formIdentity,multiple,observed,readiness,choice);
  const focus=node(doc,"aside","aoMassJourneyEssential");
  focus.dataset.massJourneyEssential="";focus.hidden=true;
@@ -412,7 +416,11 @@ export function updateMassJourneyObserved(root,legacy,{language="en"}={}){
  if(!target)return false;
  const reported=legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY";
  // A selected alternative Proper must expose its source review on phone.
- if(reported){const sources=root.querySelector("[data-mass-journey-sources]");if(sources)sources.open=true;}
+ const sources=root.querySelector("[data-mass-journey-sources]");
+ if(reported&&sources){sources.open=true;sources.dataset.massJourneyAutoOpened="true";}
+ else if(sources?.dataset.massJourneyAutoOpened==="true"){
+  sources.open=false;delete sources.dataset.massJourneyAutoOpened;
+ }
  target.hidden=!reported;
  target.textContent=reported?
   tr(String(language).startsWith("fr"),
