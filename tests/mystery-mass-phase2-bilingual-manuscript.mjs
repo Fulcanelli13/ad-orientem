@@ -81,7 +81,7 @@ assert.equal(selected.records.filter(x=>x.sourceFirstOwner==="AO.CANON.09").leng
 assert(selected.records.some(x=>x.sourceManuscriptId==="MB24"&&x.sourceFirstOwner==="AO.CARD.022"),"priest's centurion verse ownership");
 assert(gaps.records.some(x=>x.sourceFirstOwner==="AO.CARD.024"),"faithful Communion preparation distinct");
 assert(gaps.records.some(x=>x.sourceFirstOwner==="AO.CANON.03"&&x.deep.en.includes("8 December 1962")),"1962 Joseph amendment");
-assert(gaps.records.some(x=>x.sourceFirstOwner==="AO.CANON.10"&&x.deep.en.includes("not dogmatically defined")),"angels disputed");
+assert(gaps.records.some(x=>x.sourceFirstOwner==="AO.CANON.10"&&x.deep.en.includes("not a dogmatic identification")),"angels disputed");
 assert(gaps.records.some(x=>x.sourceFirstOwner==="AO.CARD.020"&&x.deep.en.includes("second Eucharistic Consecration")),"no second consecration at commingling");
 assert(gaps.records.some(x=>x.sourceFirstOwner==="AO.CARD.028"&&x.deep.en.includes("Requiescant in pace")),"dismissal variants preserved");
 assert(selected.records.some(x=>x.sourceManuscriptId==="MB02"&&x.sourceFirstOwner==="AO.CARD.001"),"Psalm 42 base");
