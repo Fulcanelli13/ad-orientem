@@ -19,13 +19,23 @@ for(const id of ["fiat","incarnation","intercession","faithful-departed"]){
    "Angelus artwork must not interrupt later cards: "+id);
 }
 assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}),null);
-assert.equal(ANGELUS_REVIEWED_OPENING_ART.length,4);
+assert.equal(ANGELUS_REVIEWED_OPENING_ART.length,5);
 assert.ok(ANGELUS_REVIEWED_OPENING_ART.every(row=>
   row.rating===4&&row.subject==="ANNUNCIATION"&&row.sourceUrl));
 const picked=selectAngelusOpeningArtwork({random:()=>0});
 assert.equal(picked.id,"nga-46");
 assert.notEqual(selectAngelusOpeningArtwork({lastId:picked.id,random:()=>0}).id,picked.id);
 assert.equal(selectAngelusOpeningArtwork({pool:[]}),null);
+const cma=ANGELUS_REVIEWED_OPENING_ART.find(x=>x.id==="cma-127572");
+assert.ok(cma && cma.rating===4 && cma.sourceUrl.includes("1950.251"));
+assert.equal(await resolveAngelusArtworkImage(cma,{fetchImpl:async()=>({
+ ok:true,json:async()=>({data:{id:127572,share_license_status:"CC0",
+ images:{web:{url:"https://images.example.test/cma-annunciation.jpg"}}}})
+})}),"https://images.example.test/cma-annunciation.jpg");
+assert.equal(await resolveAngelusArtworkImage(cma,{fetchImpl:async()=>({
+ ok:true,json:async()=>({data:{id:127572,share_license_status:"copyrighted",
+ images:{web:{url:"https://images.example.test/not-cc0.jpg"}}}})
+})}),null,"Non-CC0 reproduction must never appear");
 assert.equal(resolveAngelusIncarnationCinematic({form:"regina"}),null);
 assert.equal(resolveAngelusIncarnationCinematic({weekday:1}).action,"HEAD_BOW");
 assert.equal(resolveAngelusIncarnationCinematic({weekday:6}).action,"HEAD_BOW");
