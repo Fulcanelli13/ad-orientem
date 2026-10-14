@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-icon-harmonization-16-repair-workorders-v1",
   "date": "2026-10-14",
-  "phase": "PHASE_B_PENDING_SOURCE_AND_VISUAL_REVIEW",
+  "phase": "PHASE_B_MINIMAL_REPAIR_SPECIFIED_NO_ARTWORK_GENERATED",
   "links": {
     "semanticLedger": "data/presentation/mass-icon-harmonization-source-resolutions-20261014.v1.json",
     "userReviewSHA256": "edbde2bf608646cd258351274b6e545d42d88952b393c40c66492800684bc4a0"
@@ -23,7 +23,15 @@
       128
     ],
     "noLiveChanges": true,
-    "noImageGenerationBeforeReuse": true
+    "noImageGenerationBeforeReuse": true,
+    "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+    "ratingThresholdRule": {
+      "3": "RESEARCH_ONLY",
+      "4": "USER_REVIEW",
+      "5": "CONFIRMED_AND_SELECTED",
+      "0-2": "REJECT_ORIGINAL"
+    },
+    "generatedDetailedDraftPolicy": "POSE_REFERENCE_ONLY_NOT_FAMILY_STANDARD"
   },
   "counts": {
     "items": 16,
@@ -45,7 +53,20 @@
       "repairClass": "VECTOR_REFINEMENT",
       "acceptanceGate": "TWO_PALMS_DOWN_ABOVE_OFFERINGS",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "MINIMAL_REBUILD",
+        "surface": "RAIL_GESTURE_PLUS_OPTIONAL_GUIDE_SCENE",
+        "gestureMustSurvive": "Bare hands close together, palms down directly over the offerings; sleeves 1 broad shape each.",
+        "detailsToRemove": "Remove patterned chasuble, finger engraving, altar relief and surrounding decoration.",
+        "ceremonialGate": "Canon C0161; verify close hand spacing and downward palms before assessing style.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "A06",
@@ -60,7 +81,20 @@
       "repairClass": "EXACT_GESTURE_REBUILD",
       "acceptanceGate": "HOST_ABOVE_SLIGHTLY_RAISED_CHALICE",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "MINIMAL_REBUILD",
+        "surface": "RAIL_HOST_CHALICE_AND_GUIDE_SCENE",
+        "gestureMustSurvive": "Right hand holds Host just over chalice; left holds chalice at node; both low, no overhead elevation.",
+        "detailsToRemove": "No elaborate vessels, Host halo, carved altar or detailed face/hair.",
+        "ceremonialGate": "Canon C0204; show BOTH Host and chalice at correct relative height.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "B01",
@@ -75,7 +109,20 @@
       "repairClass": "REUSE_OR_TARGETED_REPAIR",
       "acceptanceGate": "INCENSE_BLESSING_NOT_SWING",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_THEN_TEXT",
+        "surface": "RAIL_GENERIC_INCENSE_CUE",
+        "gestureMustSurvive": "One priest silhouette with restrained blessing hand over thurible, only if visually distinguishable.",
+        "detailsToRemove": "No tall plume, patterned thurible or full altar panorama.",
+        "ceremonialGate": "C0040/C0120 blessing, not incensation.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "B02",
@@ -90,7 +137,20 @@
       "repairClass": "REUSE_SYMBOL_WITH_RUBRIC",
       "acceptanceGate": "CROSS_WITH_PATEN_NOT_HAND",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_PLUS_TEXT",
+        "surface": "RAIL_CROSS_ICON",
+        "gestureMustSurvive": "Preserve existing cross mark and state that paten is used.",
+        "detailsToRemove": "Do not build a new priest/altar scene for a brief micro-gesture.",
+        "ceremonialGate": "C0111 Sign of Cross with paten.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "B03",
@@ -104,7 +164,20 @@
       "repairClass": "REUSE_WITH_RUBRIC",
       "acceptanceGate": "PATEN_PLACED_RIGHT_UNDER_CORPORAL",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_PLUS_TEXT",
+        "surface": "RAIL_PRIEST_STATION",
+        "gestureMustSurvive": "Use accepted centre pose and exact textual paten placement; no distinct art.",
+        "detailsToRemove": "Remove the generated paten-setting scene entirely from redraw queue.",
+        "ceremonialGate": "C0111 paten placed on altar with correct location.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "B04",
@@ -119,7 +192,20 @@
       "repairClass": "REUSE_OR_CONDITIONAL_VARIANT",
       "acceptanceGate": "RECEIVES_THURIBLE_NOT_INCENSES",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_THEN_TEXT",
+        "surface": "RAIL_INCENSE_CUE",
+        "gestureMustSurvive": "Priest receiving thurible; only add tiny simple server/chain handoff when readable.",
+        "detailsToRemove": "No multi-figure elaborate scene, embroidered costumes or swirling smoke.",
+        "ceremonialGate": "C0124 receives, not swings thurible.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "B16",
@@ -134,7 +220,20 @@
       "repairClass": "SALVAGE_POSE_REBUILD_FAMILY",
       "acceptanceGate": "DEEP_BOW_NO_KISS",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "SIMPLIFY_EXISTING_POSE",
+        "surface": "RAIL_PROFOUND_BOW",
+        "gestureMustSurvive": "Preserve the 4/5 deep torso inclination geometry, simplify priest into one clean garment shape and featureless head.",
+        "detailsToRemove": "Remove altar lace/embroidery, engraved vestments and extra detail; ensure no lip-to-altar kiss.",
+        "ceremonialGate": "Confiteor and Canon contexts have different hand placement; show the correct one or use rubric.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "AWAIT_USER_REVIEW"
+      }
     },
     {
       "id": "D06",
@@ -149,7 +248,20 @@
       "repairClass": "CONDITIONAL_MINISTER_REFERENCE",
       "acceptanceGate": "THURIFER_NOT_PRIEST",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_PLUS_TEXT_OR_MINIMAL_MINISTER",
+        "surface": "RAIL_THURIBLE_SYMBOL",
+        "gestureMustSurvive": "Distinct simple kneeling thurifer silhouette only if needed; thurible one clear tear-drop/chain.",
+        "detailsToRemove": "No second detailed priest, incense cloud, decorative altar or full solemn panorama.",
+        "ceremonialGate": "Only at relevant incensed rites and exact minister actor.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "S_priest_procession",
@@ -164,7 +276,20 @@
       "repairClass": "TARGETED_ILLUSTRATION_REPAIR",
       "acceptanceGate": "EXPLICIT_PROCESSION_ONLY",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "SIMPLIFY_EXISTING_OR_MINIMAL_REBUILD",
+        "surface": "RAIL_PRIEST_WALKING",
+        "gestureMustSurvive": "One priest recognizable by the same minimal chasuble outline with walking direction, plus optional cross bearer if indispensable.",
+        "detailsToRemove": "No elaborate procession group, lace or church backdrop.",
+        "ceremonialGate": "Only explicit processions, not generic priest transitions.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "S_priest_incense_altar",
@@ -179,7 +304,20 @@
       "repairClass": "COMMON_ALTAR_BACKGROUND_REPAIR",
       "acceptanceGate": "SAME_ALTAR",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REDRAW_MINIMAL_ALTAR_OVERLAY",
+        "surface": "RAIL_THURIBLE_GUIDE_MINIMAL_ALTAR",
+        "gestureMustSurvive": "Reconstruct same simplified altar outline as centre composition; one priest and one clear thurible motion.",
+        "detailsToRemove": "Delete ornate pillars, textile ornaments, hair strands, chasuble brocade, thick smoke clouds.",
+        "ceremonialGate": "Incenses altar, not incense blessing or people.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "S_other_canon",
@@ -195,7 +333,20 @@
       "repairClass": "ICON_LANGUAGE_NORMALIZATION",
       "acceptanceGate": "GENERAL_CANON_NOT_EXACT_ACTION",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "SIMPLIFY_UTILITY",
+        "surface": "RAIL_CANON_SYMBOL",
+        "gestureMustSurvive": "One sober monochrome Canon symbol or no pictogram if section title suffices.",
+        "detailsToRemove": "No illustrated altar, priest faces, icons inside borders.",
+        "ceremonialGate": "This represents the Canon section rather than a prescribed action.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "S_other_lavabo",
@@ -210,7 +361,20 @@
       "repairClass": "SHARED_B05_REPAIR",
       "acceptanceGate": "OFFERTORY_LAVABO_ONLY",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "SHARE_B05_MASTER",
+        "surface": "RAIL_HANDS_WATER",
+        "gestureMustSurvive": "A single minimalist hand-and-water/ewer cue shared with B05; priest fingertip washing at Offertory.",
+        "detailsToRemove": "No full decorated priest scene and no conflation with C0248 finger ablution.",
+        "ceremonialGate": "Identical semantic master for Offertory C0125 only.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "I_priest_blessing",
@@ -225,7 +389,20 @@
       "repairClass": "INVESTIGATE_BEFORE_APPROVAL",
       "acceptanceGate": "FINAL_BLESSING_NOT_INCENSE",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "RESEARCH_THEN_NEW_MINIMAL",
+        "surface": "RAIL_BLESSING_HAND",
+        "gestureMustSurvive": "Simple priest face-to-congregation silhouette with one blessing hand and minimal vestment cues, if usable; old 2/5 facing-people source NEVER reused.",
+        "detailsToRemove": "No anatomical portrait face, ornamental chasuble or excessive altar context.",
+        "ceremonialGate": "Final blessing, not blessing incense.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "S_priest_elevate_chalice",
@@ -240,7 +417,20 @@
       "repairClass": "DIAGNOSE_THEN_TARGETED_REPAIR",
       "acceptanceGate": "CHALICE_MAJOR_ELEVATION",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "DIAGNOSE_BEFORE_EDIT",
+        "surface": "RAIL_MAJOR_CHALICE_ELEVATION",
+        "gestureMustSurvive": "Compare selected Host elevation framing, verify chalice above priest and correct grip, keep same figure scale.",
+        "detailsToRemove": "Do not enhance details as default revision; only change demonstrated defect.",
+        "ceremonialGate": "Major chalice elevation, not drinking or minor elevation.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "S_sound_schola",
@@ -256,7 +446,20 @@
       "repairClass": "DIAGNOSE_THEN_STYLE_REPAIR",
       "acceptanceGate": "SCHOLA_AUDIO_CUE",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "DIAGNOSE_BEFORE_EDIT",
+        "surface": "RAIL_SCHOLA_SYMBOL",
+        "gestureMustSurvive": "Test simple chorus/singing symbol against approved audible/response utility family at 48/64px.",
+        "detailsToRemove": "No faces, ornate sheet music, notes clouds or illustrated choir hall.",
+        "ceremonialGate": "Acoustic schola role, no bodily movement implied.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     },
     {
       "id": "B13",
@@ -270,7 +473,20 @@
       "repairClass": "TECHNICAL_RECROP_THEN_VERIFY",
       "acceptanceGate": "HOST_TO_MOUTH_NOT_ELEVATION",
       "autoApproval": false,
-      "sourceUserReview": "2026-10-14_EXPORT"
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "TECHNICAL_ONLY_THEN_REVIEW",
+        "surface": "RAIL_HOST_COMMUNION",
+        "gestureMustSurvive": "Keep better single-pose crop only if Host actually contacts priest's mouth; may use text if action illegible.",
+        "detailsToRemove": "No detail enhancement, no new altar, no enlarged facial features.",
+        "ceremonialGate": "Host reception, not Host elevation.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED"
+      }
     }
   ],
   "sharedFixes": [
@@ -308,6 +524,40 @@
         "D06"
       ],
       "strategy": "Source-verify whether thurifer action is present in selected Mass form; actor must not appear to be celebrant."
+    },
+    {
+      "id": "DECORATION_STRIP",
+      "targets": [
+        "A03",
+        "A06",
+        "B16",
+        "S_priest_procession",
+        "S_priest_incense_altar",
+        "D06"
+      ],
+      "strategy": "Use approved silhouette grammar; eliminate facial modeling, hairs, lace, embroidery, carved architecture, decorative smoke and crosshatching."
+    },
+    {
+      "id": "RAIL_VS_GUIDE",
+      "targets": [
+        "A03",
+        "A06",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B16",
+        "D06",
+        "S_priest_procession",
+        "S_priest_incense_altar",
+        "S_other_canon",
+        "S_other_lavabo",
+        "I_priest_blessing",
+        "S_priest_elevate_chalice",
+        "S_sound_schola",
+        "B13"
+      ],
+      "strategy": "At 48–64px prioritize one large gesture or exact source text; keep optional minimally detailed scene in expanded rubric guide rather than shrinking a full altar illustration."
     }
   ]
 }
