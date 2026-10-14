@@ -156,9 +156,8 @@ try{
   assert.equal(await page.locator(".aoTodayV2CalendarInline .aoCalMonthFilter").count(),1,
     "Month must have exactly one filter");
   await page.screenshot({path:resolve(shots,"today-month-"+width+".png"),fullPage:true});
-  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="day"]').click();
-  await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="day"] .aoCalV2Hero',
-    {state:"visible",timeout:15000});
+  await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
+  await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
   await page.screenshot({path:resolve(shots,"today-day-"+width+".png"),fullPage:true});
   await page.locator('[data-home-calendar-today]').click();
   await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
@@ -215,7 +214,7 @@ try{
     await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"] .aoCalV2Picker',
       {state:"visible",timeout:15000});
     await page.screenshot({path:resolve(shots,"today-month-"+width+".png"),fullPage:true});
-    await page.locator('.aoTodayV2Tabs [data-home-calendar-view="day"]').click();
+    await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
     await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="day"] .aoCalV2Hero',
       {state:"visible",timeout:15000});
     await page.screenshot({path:resolve(shots,"today-day-"+width+".png"),fullPage:true});
@@ -259,13 +258,12 @@ try{
     assert.equal(await page.locator('.aoTodayV2CalendarInline [data-cal-month-filter]').getAttribute("aria-label"),
       "Filtrer les célébrations du mois","French Month control must expose a translated accessible label");
     await page.screenshot({path:resolve(shots,"today-month-fr-"+width+".png"),fullPage:true});
-    await page.locator('.aoTodayV2Tabs [data-home-calendar-view="day"]').click();
-    await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="day"] .aoCalV2Context',
-      {state:"visible",timeout:15000});
-    assert.match(await page.locator('.aoTodayV2CalendarInline .aoCalV2Context').innerText(),
-      /TEMPS LITURGIQUE/,"French Day liturgical period heading must remain visible");
+    await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
+    await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
+    assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,"Today return must close the embedded Calendar");
+    assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language),"fr");
     await page.screenshot({path:resolve(shots,"today-day-fr-"+width+".png"),fullPage:true});
-    metrics.push({width,language:"fr",views:["year","picker","day"],wheelWidth:wheelBox.width});
+    metrics.push({width,language:"fr",views:["year","picker","today"],wheelWidth:wheelBox.width});
     await page.close();
   }
   await writeFile(resolve(shots,"verification.json"),JSON.stringify(metrics,null,2));
