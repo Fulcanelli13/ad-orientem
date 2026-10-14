@@ -13,12 +13,12 @@
     "researchRecords": 57,
     "subjectsIncluded": 13,
     "tiers": {
-      "IDENTITY_OR_IMAGE_HOLD": 29,
-      "PROMISING_OBJECT_IMAGE_QA_PENDING": 15,
+      "PROMISING_OBJECT_IMAGE_QA_PENDING": 16,
+      "IDENTITY_OR_IMAGE_HOLD": 28,
       "OUTSIDE_PORTRAIT_REVIEW": 6,
       "ORIGINAL_VARIANT_COLLATION_HOLD": 7
     },
-    "subjectsWithAnyPromising": 9,
+    "subjectsWithAnyPromising": 10,
     "subjectsWithThreePromising": 1,
     "gapsClosedByNewUserReview": 0,
     "newCleanMasterDownloads": 0,
@@ -29,7 +29,8 @@
     "Object records may include copies, studio variants, alternative photo files and separate originals whose attribution remains uncertain; the physical-original dedup gate is still mandatory.",
     "The distinct 277 historic ratings were not all reconciled; W37 earlier solo portraits plus 50 W36 scores used for current minimum-four gap list.",
     "All 13 P1 gaps remain open until user rates a distinct candidate >=4.",
-    "Counts of source records should not be described as counts of verified or suitable new portraits."
+    "Counts of source records should not be described as counts of verified or suitable new portraits.",
+    "Stanzione Saint Agnes was classified as strong preview with independently identified MNAC object and must remain in promising source-level tier despite full reproduction/copyright QA pending."
   ],
   "subjects": [
     {
@@ -64,9 +65,9 @@
       "group": "OT",
       "priorW36Best": 1,
       "researchObjectRecords": 3,
-      "reviewPrepPotential": 0,
+      "reviewPrepPotential": 1,
       "originalVariantHolds": 0,
-      "identityOrImageHolds": 3,
+      "identityOrImageHolds": 2,
       "sceneOrWrongMedium": 0,
       "requiresMoreHighQualityUniquePortraits": true,
       "urgentNextStep": "FIND_MORE_INDEPENDENT_HIGH_QUALITY_MUSEUM_ORIGINALS"
@@ -214,7 +215,7 @@
       "gate": "STRONG_PREVIEW",
       "collector": "MNAC: 065579-000",
       "legacy": {},
-      "curationTier": "IDENTITY_OR_IMAGE_HOLD",
+      "curationTier": "PROMISING_OBJECT_IMAGE_QA_PENDING",
       "isNewHumanReviewed": false,
       "hasAppReleaseRightsApproval": false
     },
