@@ -1,0 +1,344 @@
+{
+  "schema": "AO_SACRED_ART_SUBJECT_GAP_FILL_WAVE19_V1",
+  "asOf": "2026-10-14",
+  "branch": "platform/885-sacred-art-candidates",
+  "ownerPR": 887,
+  "sourceAuthority": "Official holding-museum catalogue, museum-curated syndicated collection record or documented official museum-supplied research record; photographs independently gated.",
+  "baseline": {
+    "initiallyEmptyUserExportSlots": 107,
+    "sourceLinkedThroughW18": 46,
+    "remainingThroughW18": 61,
+    "olderOctober12RepoLedgerOnly64ZeroOptionSlots": "The Oct12 repo ledger is earlier than user Oct13 rankings export; do not recompute 107 baseline from it. 52 Oct12-identified IDs were still absent from W16-W18."
+  },
+  "counts": {
+    "newDistinctOriginalResearchCandidates": 10,
+    "existingPhysicalOriginalReusedFromCanonicalRegistry": 1,
+    "newlySourceLinkedFormerlyEmptySubjectIds": 8,
+    "sourceLinkedInitialEmptyAfterW19": 54,
+    "stillWithoutSourceCandidate": 53,
+    "originalJPEGBytesAcquired": 0,
+    "numericHumanRatingsEdited": 0,
+    "productionChanges": 0,
+    "appImageRightsApproved": 0
+  },
+  "candidateOriginals": [
+    {
+      "candidateId": "G19-001",
+      "subjectIds": [
+        "BIB-G20"
+      ],
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "title": "Jésus donnant les clefs à saint Pierre",
+      "institution": "Musée du Louvre; deposit Musée Ingres-Bourdelle, Montauban",
+      "inventory": "RF 97",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010052765",
+      "scopeAndEvidence": "Original signed 1820, reworked 1841–42; Louvre official record. Matthew 16:18–19 keys, not John 21 feeding sheep.",
+      "subjectMatch": "EXACT_MATTHEW16_KEYS",
+      "imageGate": "PHOTO_1996_GRANDPALAIS_RMN_RIGHTS_NOT_CLEARED",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://collections.louvre.fr/ark:/53355/cl010052765"
+      ]
+    },
+    {
+      "candidateId": "G19-002",
+      "subjectIds": [
+        "BIB-G25"
+      ],
+      "artist": "Anthony van Dyck",
+      "title": "The Entry of Christ into Jerusalem",
+      "institution": "Indianapolis Museum of Art at Newfields",
+      "inventory": "collection artwork 78756",
+      "sourceUrl": "https://collections.discovernewfields.org/art/artwork/78756",
+      "scopeAndEvidence": "Museum-indexed original oil canvas circa 1617; Christ on donkey and palm bearers; museum site blocks automated content fetch, corroborated by Google Arts & Culture museum partner.",
+      "subjectMatch": "EXACT_PALM_SUNDAY_ENTRY",
+      "imageGate": "OFFICIAL_MUSEUM_PAGE_INDEXED_ONLY_PHOTO_RIGHTS_UNKNOWN",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://artsandculture.google.com/asset/entry-of-christ-into-jerusalem-anthony-van-dyck-flemish-1599-1641/xwHjZLGpdC6wMQ?hl=en"
+      ]
+    },
+    {
+      "candidateId": "G19-003",
+      "subjectIds": [
+        "BIB-A04"
+      ],
+      "artist": "Rembrandt van Rijn",
+      "title": "The Baptism of the Eunuch",
+      "institution": "Museum Catharijneconvent, Utrecht",
+      "inventory": "ABM s380",
+      "sourceUrl": "https://www.rembrandtdatabase.org/in-focus/60-catharijneconvent-s-documents-and-updated-art-historical-data-now-online.html",
+      "scopeAndEvidence": "1626 oil on panel. Institution-supplied research documentation identifies collection object ABM s380; seek current custodian image before comparing its reproduction. Acts 8:26–39.",
+      "subjectMatch": "EXACT_ACTS8_BAPTISM",
+      "imageGate": "RESEARCH_DATABASE_MUSEUM_DOCUMENTATION_PHOTO_RIGHTS_UNRESOLVED",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://www.rembrandtdatabase.org/in-focus/60-catharijneconvent-s-documents-and-updated-art-historical-data-now-online.html"
+      ]
+    },
+    {
+      "candidateId": "G19-004",
+      "subjectIds": [
+        "BIB-A04"
+      ],
+      "artist": "Salvator Rosa",
+      "title": "The Baptism of the Eunuch",
+      "institution": "Chrysler Museum of Art",
+      "inventory": "71.525",
+      "sourceUrl": "https://chrysler.emuseum.com/objects/26761/the-baptism-of-the-eunuch",
+      "scopeAndEvidence": "Circa 1660 signed-monogram oil on canvas original; formal official collection record. Not the Rembrandt painting; separate physical object.",
+      "subjectMatch": "EXACT_ACTS8_BAPTISM",
+      "imageGate": "OFFICIAL_OBJECT_PAGE_CONTENT_INDEXED_PHOTO_RIGHTS_UNRESOLVED",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://chrysler.emuseum.com/objects/26761/the-baptism-of-the-eunuch"
+      ]
+    },
+    {
+      "candidateId": "G19-005",
+      "subjectIds": [
+        "BIB-A04"
+      ],
+      "artist": "Jacob de Wit",
+      "title": "Saint Philip Baptizes the Eunuch",
+      "institution": "Rijksmuseum (on loan from Amsterdam Museum)",
+      "inventory": "BK-C-2007-1-A",
+      "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Saint-Philip-Baptizes-the-Eunuch--9c8f49ec0ac9c2f64145c66f352eaafa",
+      "scopeAndEvidence": "1748 signed oil-on-canvas overmantel, housed in Beuning Room. Original physically distinct from Rembrandt and Salvator Rosa.",
+      "subjectMatch": "EXACT_ACTS8_BAPTISM",
+      "imageGate": "RIJKSMUSEUM_PUBLIC_DOMAIN_MARKED_IMAGE_MASTER_NOT_ACQUIRED",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://id.rijksmuseum.nl/200480888"
+      ]
+    },
+    {
+      "candidateId": "G19-006",
+      "subjectIds": [
+        "BIB-A18"
+      ],
+      "artist": "Laurent de La Hyre",
+      "title": "Saint Paul Shipwrecked on Malta",
+      "institution": "Birmingham Museum of Art",
+      "inventory": "AFI.1.2004",
+      "sourceUrl": "https://www.artsbma.org/collection/saint-paul-shipwrecked-on-malta/",
+      "scopeAndEvidence": "Circa 1630 original French oil painting. Official museum describes Acts 28:1–6 viper biting Paul on Malta AFTER shipwreck; not a representation of the vessel sinking. Subject match qualified.",
+      "subjectMatch": "RELATED_POST_SHIPWRECK_EPISODE_NOT_SHIPWRECK_DEPICTED",
+      "imageGate": "BIRMINGHAM_OPEN_CONTENT_PER_IMAGE_ICON_CHECK_PENDING",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://www.artsbma.org/collection/saint-paul-shipwrecked-on-malta/"
+      ]
+    },
+    {
+      "candidateId": "G19-007",
+      "subjectIds": [
+        "BIB-EX09"
+      ],
+      "artist": "Benjamin West",
+      "title": "Moses Receiving the Law on Mount Sinai",
+      "institution": "Parliamentary Art Collection, Palace of Westminster",
+      "inventory": "WOA 5215",
+      "sourceUrl": "https://artuk.org/discover/artworks/moses-receiving-the-law-on-mount-sinai-214293",
+      "scopeAndEvidence": "1784 original monumental oil canvas 548.6 × 373.3 cm, collection data syndicated through Art UK; exactly depicts receiving the Law, not breaking tablets.",
+      "subjectMatch": "EXACT_SINAI_RECEIVING_THE_LAW",
+      "imageGate": "PARLIAMENTARY_ART_COLLECTION_PHOTO_RIGHTS_PENDING",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://artuk.org/discover/artworks/moses-receiving-the-law-on-mount-sinai-214293"
+      ]
+    },
+    {
+      "candidateId": "G19-008",
+      "subjectIds": [
+        "BIB-EX09"
+      ],
+      "artist": "Hans III Jordaens",
+      "title": "Moses Receiving the Tablets of the Law",
+      "institution": "Musée des Beaux-Arts de Nîmes",
+      "inventory": "institutional partner object, accession unconfirmed",
+      "sourceUrl": "https://artsandculture.google.com/asset/moses-receiving-the-tablets-of-the-law/kAG07meBfPa39g",
+      "scopeAndEvidence": "17th-century oil canvas, multiple sequential Sinai and Golden Calf scenes; gifted 2013. Distinguish Hans III Jordaens from Jacob Jordaens. Nîmes syndicated collection data and photographer credit © Florent Gardin.",
+      "subjectMatch": "EXACT_SINAI_WITH_SEQUENTIAL_SUBSCENES",
+      "imageGate": "PHOTO_FLORIENT_GARDIN_CREDIT_AND_RIGHTS_REVIEW_REQUIRED",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://artsandculture.google.com/asset/moses-receiving-the-tablets-of-the-law/kAG07meBfPa39g"
+      ]
+    },
+    {
+      "candidateId": "G19-009",
+      "subjectIds": [
+        "BIB-IS07"
+      ],
+      "artist": "Domenico Fetti",
+      "title": "The Sacrifice of Elijah Before the Priests of Baal",
+      "institution": "Royal Collection Trust",
+      "inventory": "RCIN 405466",
+      "sourceUrl": "https://www.rct.uk/collection/exhibitions/the-art-of-italy-in-the-royal-collection/the-queens-gallery-buckingham/the-sacrifice-of-elijah-before-the-priests-of-baal",
+      "scopeAndEvidence": "Circa 1621–22 original, possibly preparatory sketch for larger work, explicitly showing divine fire and Priests of Baal; not an Elijah fed by ravens or an Assumption of Elijah.",
+      "subjectMatch": "EXACT_FIRST_KINGS18_CARMEL",
+      "imageGate": "ROYAL_COLLECTION_PHOTO_RIGHTS_PENDING",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://www.rct.uk/collection/exhibitions/the-art-of-italy-in-the-royal-collection/the-queens-gallery-buckingham/the-sacrifice-of-elijah-before-the-priests-of-baal"
+      ]
+    },
+    {
+      "candidateId": "G19-010",
+      "subjectIds": [
+        "BIB-XL06"
+      ],
+      "artist": "Francisco Collantes",
+      "title": "Visión de Ezequiel: la resurrección de la carne",
+      "institution": "Museo Nacional del Prado",
+      "inventory": "P000666",
+      "sourceUrl": "https://www.museodelprado.es/coleccion/obra-de-arte/vision-de-ezequiel-la-resurreccion-de-la-carne/d5db02a6-b3a3-4acb-bcbb-61b0398cf7bc",
+      "scopeAndEvidence": "1630 signed oil canvas 177 × 205 cm; independently attested in Prado's artist encyclopedia, conservation and loan records. The original object page is intermittently blocked, so links to these official corroborations provided.",
+      "subjectMatch": "EXACT_EZEKIEL37_DRY_BONES_NOT_GENERIC_PROPHET",
+      "imageGate": "PRADO_OBJECT_PHOTOGRAPH_RIGHTS_PENDING",
+      "physicalObjectType": "ORIGINAL_PAINTING_RESEARCH_CANDIDATE",
+      "imageMasterAcquired": false,
+      "imageOriginalSha256": null,
+      "humanRating": null,
+      "artisticApproval": false,
+      "commercialReproductionApproved": false,
+      "appReleaseApproved": false,
+      "independentHoldingEvidenceUrls": [
+        "https://www.museodelprado.es/aprende/enciclopedia/voz/collantes-francisco/ababefdb-9b05-40b0-9565-5e2f96c84df5",
+        "https://www.museodelprado.es/museo/informes-coleccion/restauraciones-2023"
+      ]
+    }
+  ],
+  "existingOriginalReuses": [
+    {
+      "subjectId": "BIB-G05",
+      "registryArtworkId": "nga-50726",
+      "artist": "Juan de Flandes",
+      "title": "The Temptation of Christ",
+      "institution": "National Gallery of Art",
+      "accession": "1967.7.1",
+      "sourceUrl": "https://www.nga.gov/artworks/50726-temptation-christ",
+      "objectMatch": "EXACT_TEMPTATION_MATTHEW4",
+      "note": "Already in canonical 281-artwork library. Reuse existing identity, never create second physical artwork object; user taste/0-5 review is still required, and early stylistic treatment is not automatic hero approval.",
+      "preserveExistingUserRating": true
+    }
+  ],
+  "newlyLinkedSubjectIds": [
+    "BIB-G05",
+    "BIB-G20",
+    "BIB-G25",
+    "BIB-A04",
+    "BIB-A18",
+    "BIB-EX09",
+    "BIB-IS07",
+    "BIB-XL06"
+  ],
+  "explicitDoctorHolds": [
+    {
+      "subjectId": "SNT-DC-18",
+      "name": "Bede",
+      "reason": "Sources encountered were manuscript attributions TO Bede, not painted likenesses of Bede; no acceptable museum oil portrait yet."
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "name": "Anselm of Canterbury",
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-anselm/abc33520-554d-4aee-b383-5e2b91c3dcea",
+      "reason": "Prado item is a paper study, not suitable as an original oil painting; keep unmet."
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "name": "Albert the Great",
+      "reason": "No exact acceptable institutional original painting verified in this pass."
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "name": "Peter Canisius",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM68000162",
+      "reason": "French state Saint Canisius (?) reference is a 19th-century carved choir-stall saint of uncertain identification, not a painting."
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "name": "Lawrence of Brindisi",
+      "reason": "Do not substitute Martyr Saint Lawrence; distinct person and iconography."
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "name": "Cyril of Alexandria",
+      "sourceUrl": "https://www.iconmuseum.org/collection/saint-cyril-of-alexandria/",
+      "reason": "Holding museum's original is a 16th-century Greek tempera icon; document as alternative medium, not a French-world naturalistic oil painting."
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "name": "Cyril of Jerusalem",
+      "reason": "Do not substitute Cyril of Alexandria or Cyril Belozerski."
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "name": "Ephrem the Syrian",
+      "reason": "No accurate French-world museum oil painting verified in this pass."
+    }
+  ],
+  "qualityFlags": [
+    "G19-006 pictures the viper incident on shore after the wreck, NOT the ship hitting shore; present as contextual coverage, not exact shipwreck visualization.",
+    "G19-002 museum collection page robot-blocked at fetch time; object is corroborated by the Indianapolis Museum's Google Arts & Culture record; no unverified accession number invented.",
+    "G19-010 Prado official encyclopedia, 2023 restoration record and 2024 loans corroborate P000666; individual official artwork page sometimes returns 403/English not found.",
+    "G19-008 official institutional partner has a photographer copyright mark; no reuse permission inferred.",
+    "Older user's Oct13 scored zero-to-two exclusions and explicit artist exclusions apply globally; none of these W19 entries is a human artistic approval.",
+    "This file does not create production artwork, append to canonical 222 source queue, import JPEGs, revise Oct13 277 numeric ratings or modify old physical archive."
+  ]
+}
