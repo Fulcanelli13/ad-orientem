@@ -12,14 +12,43 @@
     "fullHistorical277RatingsCorpusAudited": false
   },
   "policy": {
-    "passThreshold": "Any confirmed subject-specific, solo/portrait-format artwork explicitly rated >=4 in W36 or carried as a clearly identified solo portrait with earlier score >=4 in the compact 75-person matrix.",
-    "gaps": "If no qualifying 4+ portrait is recorded, continue researching new distinct works; earlier narrative/group scenes do not satisfy portrait-format threshold even when scored 4 or 5.",
-    "stage": "Meeting 4+ threshold is provisional coverage only, not the originally desired 3–4 approved portrait options; independent reproduction identity, rights, resolution and clean image gates remain open.",
-    "noRepeat": "No duplicate rating records for one physical artwork or merely resized/rephotographed files. In any subject not yet confirmed with at least one portrait rated 4+, RE-DISPLAY ALL previous subject portrait candidates and recorded scores together with new proposals so the user can make a comparative judgment; preserve identifiers and existing ratings until the user changes them explicitly.",
+    "passThreshold": "A portrait rated 5 is CONFIRMED SELECTED. A portrait rated 4 is PENDING EXPLICIT USER DECISION. Both satisfy the 4+ threshold for ending urgent research on that subject; 0–3 do not.",
+    "gaps": "Only no 4+ portrait is a subject research gap. A 3 triggers further research without re-review of that image. A 0–2 is permanently rejected forever. Narrative/group scenes do not satisfy solo-portrait coverage.",
+    "stage": "Separately distinguish CONFIRMED_SELECTED_5 from AWAITING_USER_REVIEW_4. Both technically count as >=4 for research-gap triage, but 4 must never be called selected or automatically approved.",
+    "noRepeat": "NEVER resurface human-rated 0–2 (permanent rejection), including by rephotograph/crop; NEVER resurface 3 (research-only signal). Only 4s require repeat user selection review; 5s are already selected. Show previously proposed unrated original paintings only after appropriate source/image QA. Do not destroy historical ratings.",
     "noteOnHistoricalRatings": "The compact W31 matrix exposes 44 previously rated links, not the entire 277 historic rating records. If an omitted historic exact portrait rated >=4 is later found, revise status with exact original and provenance instead of duplicating review.",
     "fitField": "All W36 fit fields are null; no equivalence to perfect-for-theme or suitable-elsewhere can be inferred.",
-    "reviewPresentation": "For unresolved subjects, do NOT hide earlier 0–3 or unscored portrait entries. Include them in a distinct 'Previously seen' section with previous ratings and flags visible (0–2 distinctly marked discarded/low preference, 3 marked provisional, unscored marked pending). Offer re-evaluation without resetting/duplicating recorded human scores. Previously approved 4+/5 portraits from the historical corpus count toward the threshold even if no recent W36 score reaches 4.",
-    "reviewGate": "Only consider a subject provisionally covered when a subject-specific portrait is already confirmed 4+/5; show all old and new candidates again for subjects lacking confirmation. Scenic/contextual artworks with 4+/5 remain distinct from portrait suitability and cannot close this portrait-only gap."
+    "reviewPresentation": "Show only score-4 options awaiting explicit user's decision and suitable not-yet-scored options for review; show score-5 in confirmed/selected inventory without another aesthetic review. Never display score 0–3 in the gallery, including as context, marked rejects or rerating opportunities.",
+    "reviewGate": "For no-4+ subject, continue finding genuinely distinct paintings; a score-4 candidate awaits user judgment; a score-5 candidate is automatically confirmed. A 4 may still need review where the subject has a 5 from another painting.",
+    "ratingSemantics": {
+      "effectiveDate": "2026-10-14",
+      "scope": "All sacred-art user aesthetic ratings across previous and future review rounds",
+      "score0to2": {
+        "status": "PERMANENT_REJECTION",
+        "rule": "Immediately and permanently exclude from aesthetic gallery, re-review, shortlist, new candidate counts and final selections. Retain historical source/rating for audit only. New crop, resized source, file rename or photo is not a new work and cannot evade the rejection."
+      },
+      "score3": {
+        "status": "RESEARCH_SIGNAL_ONLY",
+        "rule": "Insufficient; do not show for user re-rating or final selection. Use only internally to identify subject requiring further research, and source stronger distinct works. Preserve prior rating as evidence."
+      },
+      "score4": {
+        "status": "AWAITING_EXPLICIT_USER_DECISION",
+        "rule": "Present for the user's selection/confirmation review, even if another painting of the same subject has already been confirmed 5. Preserve 4 until explicitly changed; never automatically confirm, reject or suppress."
+      },
+      "score5": {
+        "status": "CONFIRMED_SELECTED",
+        "rule": "Automatically retain and select as aesthetically approved, no more aesthetic confirmation required. Technical identity, accurate depiction, reproducibility, licence and production checks remain separate."
+      },
+      "nullRating": {
+        "status": "NOT_YET_SCORED",
+        "rule": "Present only if a genuinely appropriate new candidate or previously proposed unscored painting and the source/image-quality gates pass; never infer approval."
+      },
+      "categoryResearchRule": "A subject/category with no qualifying subject-specific portrait scored 4 or 5 needs more paintings researched. A 4 removes the urgent research gap but is still awaiting user review; a 5 confirms a selection. Prior strong narrative scenes do not fulfill solo portrait coverage.",
+      "galleryRule": "Display 4-rated works requiring the user's decision and eligible unrated new/prior proposals; 5-rated works in already-confirmed selected section. Never show 0-3 rated works as options again, not even greyed out, side-by-side or 'previously seen'.",
+      "originalIdentityRule": "A rating belongs to the underlying original work. Copies, cropped photos, editions, and alternate files must not recreate rejected works as fresh candidates. Distinct physical originals only when their identifiers/provenance are established.",
+      "auditRule": "Preserve all prior 0-5 data in non-UI historical ledger; do not delete or overwrite ratings to implement filter.",
+      "confirmedVsRights": "5 automatically means aesthetic selection, not automatic commercial-use rights or publication."
+    }
   },
   "counts": {
     "COVERED_4PLUS_PORTRAIT": {
@@ -55,19 +84,19 @@
       "batch": 1,
       "tier": "REVIEWED_BELOW_4",
       "subjects": 13,
-      "focus": "For the 13 failed cohort, research genuinely new paintings AND compile all earlier portrait candidates (including prior ratings 0–3 and pending) into the same comparative review. Do not discard historic entries from the gallery. Under-3 images remain labeled discarded by earlier decision, not promoted."
+      "focus": "For 13 insufficient-score W36 subjects, research new original paintings. Never show W36 or historical 0–3 paintings for rating again. Present strong new unrated proposals plus any historic 4s only (none of these 13 has a known historic 4 solo portrait)."
     },
     {
       "batch": 2,
       "tier": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
       "subjects": 46,
-      "focus": "For the 46 unreviewed cohort, reconcile previous artwork entries and ratings and display them again alongside new discoveries, with original scores intact. Close portrait gap only at >=4."
+      "focus": "For 46 other no-4+ subjects, reconcile historical 277 ratings to suppress every 0–2 permanently and every 3 from future review, then source review-worthy new paintings; old 4s go to user decision and 5s to selected inventory."
     },
     {
       "batch": 3,
       "tier": "COVERED_4PLUS_PORTRAIT",
       "subjects": 16,
-      "focus": "No urgent gap filling; still require 3–4 distinct strong options where feasible and rights/source verification before app use."
+      "focus": "Retain score-5 selections automatically, and separately bring score-4 individual artworks for user final review regardless of whether their subject has a 5; check source identity and rights after aesthetic selection."
     }
   ],
   "subjects": [
@@ -124,7 +153,22 @@
         ]
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "ART-usepe-de-ibera-aint-eter-postolate",
+            "rating": 5,
+            "title": "Saint Peter — Apostolate",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-AP-02",
@@ -156,7 +200,15 @@
         ]
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-AP-03",
@@ -193,7 +245,29 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "W36-SNT-AP-03-3e9d9be5f41a",
+            "rating": 5,
+            "title": "Guido Reni - Saint James the Greater - Google Art Project.jpg",
+            "source": "W36"
+          }
+        ],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-AP-03-09e61d002bd2",
+            "rating": 4,
+            "title": "Novelli Pietro - Saint Jacques le Majeur.jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-AP-04",
@@ -225,7 +299,15 @@
         ]
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-AP-05",
@@ -251,7 +333,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 2,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-AP-06",
@@ -277,7 +367,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-AP-07",
@@ -303,7 +401,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-AP-08",
@@ -346,7 +452,22 @@
         ]
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "AWAITING_USER_REVIEW_4",
+        "highestQualifyingPortraitRating": 4,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-AP-08-c5bdab70b9d1",
+            "rating": 4,
+            "title": "Saint Matthew, by Valentin de Boulogne.jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-AP-09",
@@ -372,7 +493,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-AP-10",
@@ -398,7 +527,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-AP-11",
@@ -424,7 +561,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-AP-12",
@@ -469,7 +614,22 @@
         ]
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "ART-usepe-de-ibera-aint-aul-postolate",
+            "rating": 5,
+            "title": "Saint Paul — Apostolate",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 2
+      }
     },
     {
       "subjectId": "SNT-AP-13",
@@ -495,7 +655,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-EV-01",
@@ -521,7 +689,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-EV-02",
@@ -547,7 +723,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-01",
@@ -585,7 +769,22 @@
         ]
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "AWAITING_USER_REVIEW_4",
+        "highestQualifyingPortraitRating": 4,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-DC-01-90bde6f815fb",
+            "rating": 4,
+            "title": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-DC-02",
@@ -619,7 +818,22 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "ART-hilippe-de-hampaigne-aint-ugustine",
+            "rating": 5,
+            "title": "Saint Augustine",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-03",
@@ -659,7 +873,22 @@
         ]
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "cma-136680",
+            "rating": 5,
+            "title": "Saint Jerome",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 2,
+        "prior0to2ForeverRejectedCount": 2
+      }
     },
     {
       "subjectId": "SNT-DC-04",
@@ -691,7 +920,15 @@
         ]
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-05",
@@ -717,7 +954,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 2,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 2
+      }
     },
     {
       "subjectId": "SNT-DC-06",
@@ -743,7 +988,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-07",
@@ -769,7 +1022,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-08",
@@ -801,7 +1062,22 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "AWAITING_USER_REVIEW_4",
+        "highestQualifyingPortraitRating": 4,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-DC-08-4a0cadffec49",
+            "rating": 4,
+            "title": "Antonio Palomino. Santa Teresa de Jesús escribiendo.jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-09",
@@ -833,7 +1109,22 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "AWAITING_USER_REVIEW_4",
+        "highestQualifyingPortraitRating": 4,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-DC-09-1a42763e6883",
+            "rating": 4,
+            "title": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-10",
@@ -859,7 +1150,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-11",
@@ -885,7 +1184,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-12",
@@ -917,7 +1224,22 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "AWAITING_USER_REVIEW_4",
+        "highestQualifyingPortraitRating": 4,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-DC-12-faa6ec8f702d",
+            "rating": 4,
+            "title": "San Francisco de Sales, de Francisco Bayeu (Museo del Prado).jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-13",
@@ -943,7 +1265,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-14",
@@ -969,7 +1299,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-15",
@@ -995,7 +1333,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-16",
@@ -1021,7 +1367,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-17",
@@ -1047,7 +1401,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-18",
@@ -1073,7 +1435,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-19",
@@ -1099,7 +1469,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-20",
@@ -1125,7 +1503,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-21",
@@ -1151,7 +1537,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-22",
@@ -1177,7 +1571,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-23",
@@ -1203,7 +1605,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-24",
@@ -1229,7 +1639,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-25",
@@ -1255,7 +1673,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-26",
@@ -1281,7 +1707,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-27",
@@ -1307,7 +1741,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-DC-28",
@@ -1333,7 +1775,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-01",
@@ -1385,7 +1835,15 @@
         ]
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-OT-02",
@@ -1417,7 +1875,15 @@
         ]
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-03",
@@ -1443,7 +1909,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 2,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-OT-04",
@@ -1469,7 +1943,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-05",
@@ -1495,7 +1977,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-06",
@@ -1527,7 +2017,15 @@
         ]
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-07",
@@ -1559,7 +2057,22 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "AWAITING_USER_REVIEW_4",
+        "highestQualifyingPortraitRating": 4,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-OT-07-45a8e73c4d83",
+            "rating": 4,
+            "title": "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-08",
@@ -1585,7 +2098,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-09",
@@ -1611,7 +2132,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-10",
@@ -1637,7 +2166,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-11",
@@ -1669,7 +2206,15 @@
         ]
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-12",
@@ -1695,7 +2240,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-13",
@@ -1732,7 +2285,29 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "W36-SNT-OT-13-5387d641cce6",
+            "rating": 5,
+            "title": "Claudio coello-santo domingo.JPG",
+            "source": "W36"
+          }
+        ],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-OT-13-e1db7ffd5583",
+            "rating": 4,
+            "title": "Gaspar de Crayer - Saint Dominic.jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-14",
@@ -1764,7 +2339,15 @@
         ]
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-15",
@@ -1790,7 +2373,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-16",
@@ -1822,7 +2413,22 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "AWAITING_USER_REVIEW_4",
+        "highestQualifyingPortraitRating": 4,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-OT-16-377ced58de3c",
+            "rating": 4,
+            "title": "Miguel Cabrera - Saint Ignatius Loyola - Google Art Project.jpg",
+            "source": "W36"
+          }
+        ],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-OT-17",
@@ -1848,7 +2454,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-18",
@@ -1874,7 +2488,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-19",
@@ -1908,7 +2530,22 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "ART-eter-aul-ubens-aint-ebastian",
+            "rating": 5,
+            "title": "Saint Sebastian",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-20",
@@ -1940,7 +2577,15 @@
         ]
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-21",
@@ -1997,7 +2642,29 @@
         ]
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "nga-12209",
+            "rating": 5,
+            "title": "Saint Lucy",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "awaitingUserDecision4": [
+          {
+            "id": "nga-369",
+            "rating": 4,
+            "title": "Saint Lucy",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "prior3ResearchOnlyCount": 4,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-22",
@@ -2034,7 +2701,15 @@
         ]
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 1,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-OT-23",
@@ -2086,7 +2761,41 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "CONFIRMED_SELECTED_5",
+        "highestQualifyingPortraitRating": 5,
+        "confirmedSelection5": [
+          {
+            "id": "ART-ietro-da-ortona-aint-ecilia",
+            "rating": 5,
+            "title": "Saint Cecilia",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "awaitingUserDecision4": [
+          {
+            "id": "W36-SNT-OT-23-3538f3078e54",
+            "rating": 4,
+            "title": "Cavalier Arpino - santa cecilia.jpg",
+            "source": "W36"
+          },
+          {
+            "id": "W36-SNT-OT-23-ea67147c879b",
+            "rating": 4,
+            "title": "Guercino - Santa Cecilia.JPG",
+            "source": "W36"
+          },
+          {
+            "id": "met-436198",
+            "rating": 4,
+            "title": "Saint Cecilia",
+            "source": "Earlier W31 matrix"
+          }
+        ],
+        "prior3ResearchOnlyCount": 2,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-OT-24",
@@ -2112,7 +2821,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-25",
@@ -2138,7 +2855,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 2,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 1
+      }
     },
     {
       "subjectId": "SNT-OT-26",
@@ -2170,7 +2895,15 @@
         ]
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-27",
@@ -2196,7 +2929,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-28",
@@ -2222,7 +2963,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-29",
@@ -2248,7 +2997,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": 3,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 1,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-30",
@@ -2274,7 +3031,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-31",
@@ -2300,7 +3065,15 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     },
     {
       "subjectId": "SNT-OT-32",
@@ -2326,7 +3099,24 @@
         "passingNarrativeOrGroupOnlyExcluded": []
       },
       "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
-      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL",
+      "ratingDecision": {
+        "state": "RESEARCH_GAP_NO_4PLUS",
+        "highestQualifyingPortraitRating": null,
+        "confirmedSelection5": [],
+        "awaitingUserDecision4": [],
+        "prior3ResearchOnlyCount": 0,
+        "prior0to2ForeverRejectedCount": 0
+      }
     }
-  ]
+  ],
+  "ratingDecisionCounts": {
+    "confirmedSubject5": 9,
+    "pendingSubject4Only": 7,
+    "researchGapNo4Plus": 59,
+    "individual5": 9,
+    "individual4": 13,
+    "w36PermanentRejected": 16,
+    "w36ResearchOnly3": 21
+  }
 }
