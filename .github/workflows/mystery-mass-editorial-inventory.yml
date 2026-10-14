@@ -1,0 +1,34 @@
+name: Mystery of the Mass editorial inventory gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/mystery-mass-editorial-consolidation-20261014
+    paths:
+      - '.github/workflows/mystery-mass-editorial-inventory.yml'
+      - 'data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json'
+      - 'docs/research/MYSTERY-OF-MASS-CANONICAL-CONSOLIDATION-20261014.md'
+      - 'tests/mystery-mass-editorial-inventory.mjs'
+  pull_request:
+    paths:
+      - 'data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json'
+      - 'docs/research/MYSTERY-OF-MASS-CANONICAL-CONSOLIDATION-20261014.md'
+      - 'tests/mystery-mass-editorial-inventory.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source-ownership:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify baseline Formation route is unchanged
+        run: node tests/mass-formation.mjs
+      - name: Validate source-first editorial inventory and deduplication
+        run: node tests/mystery-mass-editorial-inventory.mjs
