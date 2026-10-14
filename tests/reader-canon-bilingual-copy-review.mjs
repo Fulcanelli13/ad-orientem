@@ -99,7 +99,10 @@ assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
  x.bilingual.rows[23].automaticallyTriggeredByScroll=true;
 })),/drift/);
 assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
- x.bilingual.rows[27].actor="PRIEST";
+ x.bilingual.rows[27].actor="DEACON";
+})),/drift/);
+assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
+ x.bilingual.rows[26].actor="PRIEST";
 })),/drift/);
 assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
  x.bilingual.rows[27].shortDraft.fr="Il découvre le calice.";
