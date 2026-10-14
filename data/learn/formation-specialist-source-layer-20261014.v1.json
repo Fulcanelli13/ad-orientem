@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 90,
+  "source_count": 92,
   "sources": [
     {
       "id": "S01",
@@ -1085,6 +1085,30 @@
       "access": "opened_official_html",
       "chapter_passage_certified": false,
       "annotation": "Proportionate citation suffices for attributed bounded argument; source role and publication date must be preserved. Translation duplicates are not independent corroboration."
+    },
+    {
+      "id": "S91",
+      "title": "Claimant group first-party Q&A on the 1990 conclavist election",
+      "author": "Self-styled Pope Michael II group, reproducing Michael I's explanations",
+      "year": "recent website recount of 1990 event",
+      "role": "conclavist_firstparty_original_argument_not_catholic_authority",
+      "url": "https://www.vie-official.org/faq/",
+      "scope": "FAQ original party account of proposed 1990 election without Cardinals, claim of vacancy, eligibility and purported alternative voters. Records their argument, NOT a valid canonical election.",
+      "access": "firstparty_full_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Original primary claimant account; distinguish this group from other sedevacantists, sedeprivationists and legitimate canonical authorities."
+    },
+    {
+      "id": "S92",
+      "title": "I Was an Elector in a Conclavist Election Attempt",
+      "author": "T. Stanfill Benns, first-party former electoral participant",
+      "year": "2012, updated 2023",
+      "role": "conclavist_participant_firstperson_retrospective_criticism",
+      "url": "https://www.betrayedcatholics.com/i-was-an-elector-in-a-conclavist-election-attempt/",
+      "scope": "First-person account of participating in 1990 attempted election and later rejecting its legitimacy; not a universal objective count of electors.",
+      "access": "full_firstperson_article_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Retrospective self-report and a counterpoint to claimant-party record; do not make her private later legal judgement official Church law."
     }
   ],
   "priority_questions": [
@@ -1475,12 +1499,16 @@
       "source_ids": [
         "S17",
         "S18",
-        "S85"
+        "S85",
+        "S91",
+        "S92"
       ],
       "source_roles": [
         "sedevacantist_original_proponent",
         "sedevacantist_original_proponent",
-        "sedeprivationist_firstperson_original"
+        "sedeprivationist_firstperson_original",
+        "conclavist_firstparty_original_argument_not_catholic_authority",
+        "conclavist_participant_firstperson_retrospective_criticism"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -3762,7 +3790,7 @@
     }
   ],
   "counts": {
-    "sources": 90,
+    "sources": 92,
     "mapped_questions": 146,
     "church_crisis": 43,
     "sexual_ethics": 103,
