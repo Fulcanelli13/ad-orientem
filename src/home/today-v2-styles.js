@@ -48,6 +48,10 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2CalendarInline{width:100%;min-height:100px;padding:0 10px 28px}
 .aoTodayV2[data-ao-home-calendar-view="day"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Below,.aoTodayV2[data-ao-home-calendar-view="picker"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Below,.aoTodayV2[data-ao-home-calendar-view="year"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Below{display:none!important}
 .aoTodayV2[data-ao-home-calendar-view] .aoTodayV2CalendarInline{display:block}
+/* Avoid sticky host-tab overlap with the larger Liturgical Clock identity header. */
+.aoTodayV2[data-ao-home-calendar-view="year"] .aoTodayV2Tabs{position:relative;top:auto}
+/* Today already owns the Day / Month / Year navigation: no nested Calendar toolbar. */
+.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalModTop{display:none!important}
 .aoTodayV2[data-ao-home-calendar-view] > :not(.aoTodayV2Header){display:none!important}
 .aoTodayV2[data-ao-home-calendar-view] .aoTodayV2Header > :not(.brandRow):not(.aoTodayV2Tabs):not(.aoTodayV2CalendarInline){display:none!important}
 
