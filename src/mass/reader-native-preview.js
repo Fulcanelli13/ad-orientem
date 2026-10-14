@@ -1545,6 +1545,7 @@ export async function mountNativeReaderPreview({
       faithfulGesture:focusedFaithful?.gesture??null,
       priestAction,
       priestPosition,
+      sourceGestureAction:gestureMatrixProjection?.primaryPriestAction??null,
     });
     const attention=readerAttentionForState({priestVoice,response});
     // A native source transition may animate the selected posture owner.
