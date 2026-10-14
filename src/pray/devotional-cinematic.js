@@ -4,10 +4,23 @@
  * Approved Angelus artwork/shot metadata recovered from PR #1015.
  */
 import {TANNER_ANGELUS_MASTER,tannerScene} from "./angelus-tanner-storyboard.js";
+import {approvedOpeningArtworkPool,selectSessionArtwork} from "./devotional-action-cinematics.js";
 import "./devotional-cinematic-styles.js";
 export const DEVOTIONAL_CINEMATIC_VERSION="devotional-card-interstitial-v1";
 const shotId=Object.freeze({announcement:"annunciation",fiat:"fiat",incarnation:"incarnation",intercession:"collect"});
 const timers=new WeakMap();
+const shown=new WeakSet();
+export function resetDevotionalOpening(doc=globalThis.document){
+ const sheet=doc?.querySelector?.("#aoPray435930 .aoP435930Sheet");
+ if(sheet){
+  shown.delete(sheet);
+  const prev=timers.get(sheet);
+  if(prev){sheet.ownerDocument.defaultView?.clearTimeout?.(prev.timer);prev.node?.remove();}
+  timers.delete(sheet);
+ }
+ doc?.body?.querySelectorAll?.(":scope > .aoDevoCinematicInterstitial")
+   .forEach(x=>x.remove());
+}
 function reduced(win){
  return !!(win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches||
   win?.AO_CINEMATIC_V4312?.isReducedMotion?.()||
@@ -29,40 +42,49 @@ function create(doc,tag,cls,text){
 export function showDevotionalInterlude({mount,form="angelus",card,language="en",win=globalThis}={}){
  const scene=devotionalInterludePlan({form,card});
  const sheet=mount?.closest?.("#aoPray435930")?.querySelector?.(".aoP435930Sheet");
- if(!sheet||!scene||reduced(win))return false;
+ // Art is a one-time opening tableau, not a four-part repeating
+ // Annunciation/Tanner film. Never replay it on fiat or Incarnation.
+ if(!sheet||!scene||form!=="angelus"||card?.id!=="announcement"||shown.has(sheet))return false;
+ shown.add(sheet);
+ const approved=approvedOpeningArtworkPool(win?.AO_SACRED_ART_APPROVED??[],"ANNUNCIATION");
+ let previousId=null;
+ try{previousId=win?.sessionStorage?.getItem?.("ao-angelus-last-approved-art")??null}catch{}
+ const selected=selectSessionArtwork(approved,previousId,()=>win?.Math?.random?.()??Math.random());
+ if(selected){try{win?.sessionStorage?.setItem?.("ao-angelus-last-approved-art",selected.id)}catch{}}
  const previous=timers.get(sheet);
  if(previous){win.clearTimeout(previous.timer);previous.node.remove();}
  sheet.ownerDocument.body.querySelectorAll(":scope > .aoDevoCinematicInterstitial").forEach(n=>n.remove());
  const doc=sheet.ownerDocument;
  const sceneNode=create(doc,"section","aoDevoCinematicInterstitial");
  sceneNode.dataset.aoDevotionalScene=scene.id;
- sceneNode.dataset.aoSceneArt=scene.image?"tanner":"text";
+ sceneNode.dataset.aoSceneArt=selected?"approved-opening-art":"text";
+ sceneNode.dataset.aoMotion=reduced(win)?"static":"standard";
  sceneNode.setAttribute("aria-hidden","true");
  sceneNode.style.setProperty("--ao-devo-duration",scene.durationMs+"ms");
  const imageZone=create(doc,"div","aoDevoCinematicImageZone");
- if(scene.image){
+ if(selected){
   const img=create(doc,"img","aoDevoCinematicArtwork");
   img.alt="";img.setAttribute("aria-hidden","true");
-  img.src=scene.image;img.decoding="async";img.loading="eager";
-  const focal=scene.shot.focus;
-  img.style.setProperty("--ao-devo-x",focal.x+"%");
-  img.style.setProperty("--ao-devo-y",focal.y+"%");
-  img.style.setProperty("--ao-devo-scale",String(focal.scale));
+  img.src=selected.localPath;img.decoding="async";img.loading="eager";
+  // No forced camera pan/crop over previously approved artwork.
+  img.style.setProperty("--ao-devo-x","50%");
+  img.style.setProperty("--ao-devo-y","50%");
+  img.style.setProperty("--ao-devo-scale","1");
   img.addEventListener("error",()=>{imageZone.dataset.aoArtFailed="true";img.remove();},{once:true});
   imageZone.append(img);
  }else imageZone.dataset.aoArtAbsent="true";
  const heading=create(doc,"div","aoDevoCinematicHeading");
  heading.append(create(doc,"small","",language==="fr"?"PRIÈRE MARIALE":"MARIAN PRAYER"),
   create(doc,"h2","",scene.title),create(doc,"p","",scene.latin));
- if(scene.image)
+ if(selected)
   heading.append(create(doc,"small","aoDevoCinematicCredit",
-   "Henry Ossawa Tanner · The Annunciation (1898) · Philadelphia Museum of Art"));
+   selected.artist+" · "+selected.title));
  sceneNode.append(imageZone,heading);
  doc.body.append(sceneNode);
  const timer=win.setTimeout(()=>{
   if(timers.get(sheet)?.node!==sceneNode)return;
   timers.delete(sheet);sceneNode.remove();
- },scene.durationMs+80);
+ },reduced(win)?1600:2200);
  timers.set(sheet,{node:sceneNode,timer});
  return true;
 }
