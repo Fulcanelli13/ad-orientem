@@ -14,7 +14,7 @@ const POSTURE_GESTURES=new Set(["GENUFLECT","KNEEL","BOW","PROFOUND_BOW","HEAD_B
 
 export function projectLiveCinematicScene({
   mode=null, cueId=null, cueNative=false, cinematic=null, faithfulGesture=null,
-  priestAction=null, priestPosition=null,
+  priestAction=null, priestPosition=null, sourceGestureAction=null,
 }={}){
   if(String(mode??"").toUpperCase()!=="LIVE" || cueNative!==true)return null;
   const id=CUES[String(cueId??"")]??null;
@@ -37,8 +37,10 @@ export function projectLiveCinematicScene({
   // Do not stage the Gospel small crosses from a generic Gospel card title:
   // the priest's exact book/body-cross source cue and station must agree.
   if(id==="GOSPEL_CROSSES" && !(
-    (priestAction?.cueId===cueId || priestAction?.sourceCueId===cueId) &&
-    String(priestAction?.label??priestAction?.action??"").toUpperCase().startsWith("SIGNS GOSPEL BOOK") &&
+    sourceGestureAction?.sourceGestureId==="GM.P.C0084.01" &&
+    sourceGestureAction?.cueId===cueId &&
+    sourceGestureAction?.owner==="GESTURE_MATRIX_SOT" &&
+    sourceGestureAction?.iconKey==="gospel_crosses" &&
     String(priestPosition?.station??priestPosition?.value??"").toUpperCase()==="ALTAR_GOSPEL_MISSAL"
   ))return null;
   return Object.freeze({
