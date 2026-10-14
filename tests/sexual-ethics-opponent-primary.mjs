@@ -10,7 +10,8 @@ const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-au
 const preview=readFileSync("src/learn/sexual-ethics.js","utf8");
 const directIds=["CURRAN1987","FARLEY_QUOTED2012","FARLEY_RESPONSE2012","CURRAN_CDF1986","ACOG_ECTOPIC","ACOG_ECTOPIC_GUIDELINE","MILL_IV_FULL"];
 assert.equal(new Set(CSE_SOURCES.map(s=>s.id)).size,CSE_SOURCES.length);
-assert.equal(CSE_SOURCES.length,97,"Canonical source registry grew after the original opponent audit");
+assert.equal(CSE_SOURCES.filter(s=>s.id!=="QUAEC").length,97,"Original opponent-source inventory must remain intact");
+assert.match(CSE_SOURCE_MAP.QUAEC.canonical_url,/^https:\/\/www\.vatican\.va\//,"Additional primary CDF source must resolve");
 for(const id of directIds){assert.match(CSE_SOURCE_MAP[id].canonical_url,/^https:\/\//);assert.ok(CSE_SOURCE_MAP[id].title);}
 assert.equal(audit.summary.records,55);
 assert.equal(audit.cases.length,55);
