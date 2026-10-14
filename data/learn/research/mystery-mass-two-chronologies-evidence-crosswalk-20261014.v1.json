@@ -14,7 +14,8 @@
     "archivalEvidenceRowsAssigned": 402,
     "archivalEvidenceUnmapped": 20,
     "dujardinAuthorMeditationRows": 22,
-    "sourceCriticallyReadNewClaims": 12
+    "sourceCriticallyReadNewClaims": 12,
+    "massBibleOriginalContextRecords": 26
   },
   "sourceOfTruth": {
     "studyInventory": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json",
@@ -31,7 +32,8 @@
     "Every relationship type must distinguish direct liturgical words, adapted words, actual named figure, doctrinal typology, historical hypothesis and attributed meditation.",
     "Dujardin headings remain his, not those of St Alphonsus; optional allegories never define 1962 historical origins.",
     "Scripture expansion must delegate to shared Canonical Bible reader, and images to canonical approved artworks.",
-    "Do not project any research copy into LIVE Mass rubric/action rail without separate audit."
+    "Do not project any research copy into LIVE Mass rubric/action rail without separate audit.",
+    "For every liturgical owner, carry independently classified MB passage links even when no full biblical chronology scene is assigned. Variable Proper readings are resolved from the Mass calendar/Proper rather than a guessed fixed chapter."
   ],
   "biblicalChronology": [
     {
@@ -697,7 +699,54 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB01",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "scriptureReference": "Psalm 42:4 (Vulgate; 43:4 in most modern numbering)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa042.htm"
+            }
+          ],
+          "qualification": "NOT_A_FULL_PSALM_EDITION_MAPPING",
+          "properDependent": false,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB02",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "scriptureReference": "Psalm 42:1–5 (Vulgate; 43:1–5 modern)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa042.htm"
+            }
+          ],
+          "qualification": "OMITTED_IN_SOME_LITURGICAL_CIRCUMSTANCES",
+          "properDependent": false,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB03",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "scriptureReference": "Luke 18:13",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk018.htm"
+            }
+          ],
+          "qualification": "COMPARATIVE_NOT_LITURGICAL_CITATION",
+          "properDependent": false,
+          "scriptureReaderRef": "Luke 18:13",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 2,
@@ -742,7 +791,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB04",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "scriptureReference": "Matthew 20:30–31",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat020.htm"
+            }
+          ],
+          "qualification": "COMPARATIVE_NOT_SINGLE_EXACT_QUOTE",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 20:30–31",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 3,
@@ -787,7 +853,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB05",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Luke 2:14",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk002.htm"
+            }
+          ],
+          "qualification": "ALTISSIMIS_VULGATE_VERSUS_EXCELSIS_MISSAL_NOT_WORD_FOR_WORD",
+          "properDependent": false,
+          "scriptureReaderRef": "Luke 2:14",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 4,
@@ -815,7 +898,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 5,
@@ -853,7 +937,24 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB06",
+          "relationship": "VARIABLE_PROPER_READING",
+          "scriptureReference": "1 Corinthians 12:2–11 (example: Pentecost X only)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co012.htm"
+            }
+          ],
+          "qualification": "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH",
+          "properDependent": true,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 6,
@@ -894,7 +995,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 7,
@@ -951,7 +1053,24 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB07",
+          "relationship": "VARIABLE_PROPER_READING",
+          "scriptureReference": "Luke 18:9–14 (example: Pentecost X only)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk018.htm"
+            }
+          ],
+          "qualification": "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH",
+          "properDependent": true,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 8,
@@ -974,7 +1093,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 9,
@@ -1032,7 +1152,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB08",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "scriptureReference": "John 1:14",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ],
+          "qualification": "NOT_VERBATIM_CREED_TEXT",
+          "properDependent": false,
+          "scriptureReaderRef": "John 1:14",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 10,
@@ -1147,7 +1284,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB09",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "scriptureReference": "Psalm 25:6–12 (Vulgate; 26:6–12 modern)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa025.htm"
+            }
+          ],
+          "qualification": "VULGATE_PSALM_NUMBERING",
+          "properDependent": false,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 11,
@@ -1218,7 +1372,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB10",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "scriptureReference": "Romans 12:1",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/rom012.htm"
+            }
+          ],
+          "qualification": "THEOLOGICAL_CONNECTION_NOT_LITERAL",
+          "properDependent": false,
+          "scriptureReaderRef": "Romans 12:1",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 12,
@@ -1262,7 +1433,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 13,
@@ -1333,7 +1505,39 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB11",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Isaiah 6:3",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/isa006.htm"
+            }
+          ],
+          "qualification": "VULGATE_EXERCITUUM_VERSUS_LITURGICAL_SABAOTH",
+          "properDependent": false,
+          "scriptureReaderRef": "Isaiah 6:3",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB12",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Matthew 21:9",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat021.htm"
+            }
+          ],
+          "qualification": "LITURGICAL_COMPOSITION",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 21:9",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 14,
@@ -1389,7 +1593,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB13",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "scriptureReference": "1 Timothy 2:1–2",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1ti002.htm"
+            }
+          ],
+          "qualification": "COMPARATIVE_NOT_EXACT_QUOTATION",
+          "properDependent": false,
+          "scriptureReaderRef": "1 Timothy 2:1–2",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 15,
@@ -1417,7 +1638,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 16,
@@ -1450,7 +1672,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 17,
@@ -1508,7 +1731,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 18,
@@ -1533,7 +1757,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 19,
@@ -1629,7 +1854,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB14",
+          "relationship": "NARRATIVE_SCRIPTURE_CONNECTION",
+          "scriptureReference": "1 Corinthians 11:23–26",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co011.htm"
+            }
+          ],
+          "qualification": "NO_WORD_FOR_WORD_EQUIVALENCE",
+          "properDependent": false,
+          "scriptureReaderRef": "1 Corinthians 11:23–26",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 20,
@@ -1742,7 +1984,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB15",
+          "relationship": "NARRATIVE_SCRIPTURE_CONNECTION",
+          "scriptureReference": "Luke 22:20",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk022.htm"
+            }
+          ],
+          "qualification": "MYSTERIUM_FIDEI_NOT_PROVEN_AS_EXACT_GOSPEL_WORDS",
+          "properDependent": false,
+          "scriptureReaderRef": "Luke 22:20",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 21,
@@ -1811,7 +2070,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB16",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "scriptureReference": "1 Corinthians 11:26",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co011.htm"
+            }
+          ],
+          "qualification": "THEOLOGICAL_CONNECTION_NOT_LITERAL",
+          "properDependent": false,
+          "scriptureReaderRef": "1 Corinthians 11:26",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 22,
@@ -1876,7 +2152,69 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB17",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "scriptureReference": "Genesis 4:4",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen004.htm"
+            }
+          ],
+          "qualification": "NAME_IN_MISSAL_NOT_READING",
+          "properDependent": false,
+          "scriptureReaderRef": "Genesis 4:4",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB18",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "scriptureReference": "Genesis 22:1–19",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen022.htm"
+            }
+          ],
+          "qualification": "ISAAC_NOT_KILLED",
+          "properDependent": false,
+          "scriptureReaderRef": "Genesis 22:1–19",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB19",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "scriptureReference": "Genesis 14:18–20",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen014.htm"
+            }
+          ],
+          "qualification": "GENESIS_PROFERENS_NOT_EXPLICIT_BREAD_WINE_SACRIFICE",
+          "properDependent": false,
+          "scriptureReaderRef": "Genesis 14:18–20",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB20",
+          "relationship": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
+          "scriptureReference": "Hebrews 7:1–17",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/heb007.htm"
+            }
+          ],
+          "qualification": "INTERPRETATION_NOT_MISSAL_WORDING",
+          "properDependent": false,
+          "scriptureReaderRef": "Hebrews 7:1–17",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 23,
@@ -1922,7 +2260,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 24,
@@ -1950,7 +2289,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 25,
@@ -1981,7 +2321,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 26,
@@ -2011,7 +2352,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 27,
@@ -2064,7 +2406,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 28,
@@ -2098,7 +2441,28 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB21",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Matthew 6:9–13 (cf. Luke 11:2–4); Matt 6:11 Latin variant",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat006.htm"
+            },
+            {
+              "sourceRole": "BIBLICAL_CONTEXT_LUKE_LATIN_WORDING",
+              "url": "https://www.newadvent.org/bible/luk011.htm"
+            }
+          ],
+          "qualification": "CLEMENTINE_MATTHEW_SUPERSUBSTANTIALEM_VS_BENZIGER_1962_COTIDIANUM_LUKE_QUOTIDIANUM",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 6:9–13",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 29,
@@ -2138,7 +2502,24 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB22",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "scriptureReference": "Matthew 6:13",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat006.htm"
+            }
+          ],
+          "qualification": "LITURGICAL_EMBOLISM",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 6:13",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 30,
@@ -2207,7 +2588,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB23",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "John 1:29",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ],
+          "qualification": "MASS_INVOCATION_EXTENDS_VERSE",
+          "properDependent": false,
+          "scriptureReaderRef": "John 1:29",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 31,
@@ -2253,7 +2651,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB24",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Matthew 8:8",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat008.htm"
+            }
+          ],
+          "qualification": "PUER_MEUS_VERSUS_ANIMA_MEA",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 8:8",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 32,
@@ -2306,7 +2721,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB25",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "scriptureReference": "Psalm 115:3–4 (Clementine Vulgate; Psalm 116:12–13 in modern numbering)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://vulgate.org/ot/psalms_115.htm"
+            }
+          ],
+          "qualification": "CLEMENTINE_115_3_4_MODERN_116_12_13",
+          "properDependent": false,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     },
     {
       "sequence": 33,
@@ -2379,7 +2811,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 34,
@@ -2468,7 +2901,8 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 35,
@@ -2503,7 +2937,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 36,
@@ -2533,7 +2968,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 37,
@@ -2564,7 +3000,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 38,
@@ -2597,7 +3034,8 @@
       "editorialCautions": [],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": []
     },
     {
       "sequence": 39,
@@ -2647,7 +3085,24 @@
       ],
       "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
       "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
-      "release": "RESEARCH_ONLY"
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB26",
+          "relationship": "VARIABLE_RITE_SCRIPTURE_READING",
+          "scriptureReference": "John 1:1–14",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ],
+          "qualification": "RITE_DEPENDENT_NOT_UNCONDITIONAL",
+          "properDependent": true,
+          "scriptureReaderRef": "John 1:1–14",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ]
     }
   ],
   "dujardinSecondaryMethod": [
