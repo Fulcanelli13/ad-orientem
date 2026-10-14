@@ -19,3 +19,9 @@ An alternative digitized copy was located:
 | MM-NEW-12 Quam oblationem | Three crosses over offerings, one at `Corpus`, one at `Sanguis` | INDEX/OCR CORROBORATION ONLY |
 
 No claim is advanced from `source linked` to `original print certified` based on the search index or a URL that could not be displayed. Preserve all no-publication flags and the original 39 owners / LIVE reader distinction.
+
+## Second access attempt — 14 October 2026
+
+- The Isidore OCR PDF is rejected by the browsing interface for exceeding the 30 MB content limit; no PDF page image was obtained. Do not treat its search-index excerpts as original-print verification.
+- The linked third-party 1962 color-scan site exposes an index of individual images, but its host also contains unrelated polemical and unreliable material. **Do not use that site's commentary as editorial or doctrinal authority.** Scans, if independently authenticated against a bibliographical identity and the edition's title page, can serve only as photographic witnesses; neither the correct Canon folios nor the integrity of its 1962 edition have been established here.
+- Current disposition: **0 newly certified original 1962 Canon pages**. Retain open requirements for MB14–MB19 and MM-NEW-12. Seek a recognized library archive, securely identified facsimile, or vetted editorial photographic reproduction before certifying.
