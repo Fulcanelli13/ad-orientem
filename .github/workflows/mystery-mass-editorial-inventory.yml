@@ -10,11 +10,17 @@ on:
       - 'data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json'
       - 'docs/research/MYSTERY-OF-MASS-CANONICAL-CONSOLIDATION-20261014.md'
       - 'tests/mystery-mass-editorial-inventory.mjs'
+      - 'tests/mystery-mass-phase2-bilingual-manuscript.mjs'
+      - 'data/learn/research/mystery-mass-*-20261014.v1.json'
+      - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
   pull_request:
     paths:
       - 'data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json'
       - 'docs/research/MYSTERY-OF-MASS-CANONICAL-CONSOLIDATION-20261014.md'
       - 'tests/mystery-mass-editorial-inventory.mjs'
+      - 'tests/mystery-mass-phase2-bilingual-manuscript.mjs'
+      - 'data/learn/research/mystery-mass-*-20261014.v1.json'
+      - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
 
 permissions:
   contents: read
@@ -32,3 +38,5 @@ jobs:
         run: node tests/mass-formation.mjs
       - name: Validate source-first editorial inventory and deduplication
         run: node tests/mystery-mass-editorial-inventory.mjs
+      - name: Validate full Phase 2 bilingual research manuscript
+        run: node tests/mystery-mass-phase2-bilingual-manuscript.mjs
