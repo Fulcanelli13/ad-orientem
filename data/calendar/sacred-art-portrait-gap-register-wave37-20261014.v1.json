@@ -1,0 +1,2330 @@
+{
+  "schema": "AO_SACRED_ART_75_PERSON_PORTRAIT_GAP_REGISTER_W37_V1",
+  "asOf": "2026-10-14",
+  "status": "RESEARCH_PRIORITY_RESOLVED_NOVEL_PORTRAITS_NOT_YET_FILLED",
+  "repoPR": 887,
+  "scope": {
+    "canonicalSource": "data/calendar/sacred-art-two-options-matrix-wave31-20261014.v6.json",
+    "latestHumanRatings": "data/calendar/sacred-art-portraits-w36-human-ratings-20261014.v1.json",
+    "subjectCount": 75,
+    "newRatingsRead": 50,
+    "earlierRatedLinksReconciledWithin75PersonMatrix": 44,
+    "fullHistorical277RatingsCorpusAudited": false
+  },
+  "policy": {
+    "passThreshold": "Any confirmed subject-specific, solo/portrait-format artwork explicitly rated >=4 in W36 or carried as a clearly identified solo portrait with earlier score >=4 in the compact 75-person matrix.",
+    "gaps": "If no qualifying 4+ portrait is recorded, continue researching new distinct works; earlier narrative/group scenes do not satisfy portrait-format threshold even when scored 4 or 5.",
+    "stage": "Meeting 4+ threshold is provisional coverage only, not the originally desired 3–4 approved portrait options; independent reproduction identity, rights, resolution and clean image gates remain open.",
+    "noRepeat": "Do not show a file/photo variant of a previously reviewed physical artwork as a new candidate. Preserve all earlier human scores and preferences.",
+    "noteOnHistoricalRatings": "The compact W31 matrix exposes 44 previously rated links, not the entire 277 historic rating records. If an omitted historic exact portrait rated >=4 is later found, revise status with exact original and provenance instead of duplicating review.",
+    "fitField": "All W36 fit fields are null; no equivalence to perfect-for-theme or suitable-elsewhere can be inferred."
+  },
+  "counts": {
+    "COVERED_4PLUS_PORTRAIT": {
+      "total": 16,
+      "byGroup": {
+        "DC": 6,
+        "AP": 4,
+        "EV": 0,
+        "OT": 6
+      }
+    },
+    "REVIEWED_BELOW_4": {
+      "total": 13,
+      "byGroup": {
+        "DC": 1,
+        "AP": 1,
+        "EV": 0,
+        "OT": 11
+      }
+    },
+    "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT": {
+      "total": 46,
+      "byGroup": {
+        "DC": 21,
+        "AP": 8,
+        "EV": 2,
+        "OT": 15
+      }
+    }
+  },
+  "nextActions": [
+    {
+      "batch": 1,
+      "tier": "REVIEWED_BELOW_4",
+      "subjects": 13,
+      "focus": "Source 3–4 genuinely new naturalistic, devotional solo-painting alternatives per subject, avoid repeats and previous rejected styles."
+    },
+    {
+      "batch": 2,
+      "tier": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "subjects": 46,
+      "focus": "Reconcile previous artwork records, then research paintings and bring newly screened works into the one portrait-rating gallery."
+    },
+    {
+      "batch": 3,
+      "tier": "COVERED_4PLUS_PORTRAIT",
+      "subjects": 16,
+      "focus": "No urgent gap filling; still require 3–4 distinct strong options where feasible and rights/source verification before app use."
+    }
+  ],
+  "subjects": [
+    {
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [
+          {
+            "originalID": "ART-usepe-de-ibera-aint-eter-postolate",
+            "artist": "Jusepe de Ribera",
+            "title": "Saint Peter — Apostolate",
+            "rating": 5,
+            "sourceURL": null
+          }
+        ],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "met-442491",
+            "title": "Saints Peter and Paul",
+            "rating": 5
+          },
+          {
+            "originalID": "met-441971",
+            "title": "The Tears of Saint Peter",
+            "rating": 4
+          },
+          {
+            "originalID": "met-438561",
+            "title": "The Denial of Saint Peter",
+            "rating": 4
+          },
+          {
+            "originalID": "met-458963",
+            "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-02",
+      "subject": "Saint Andrew",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "cma-148758",
+            "title": "The Crucifixion of Saint Andrew",
+            "rating": 5
+          }
+        ]
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 5,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 1
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-AP-03-3e9d9be5f41a",
+            "rating": 5,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg"
+          },
+          {
+            "uploadCandidateId": "W36-SNT-AP-03-09e61d002bd2",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Novelli_Pietro_-_Saint_Jacques_le_Majeur.jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "met-458963",
+            "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 2,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 4,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 0,
+          "4": 1,
+          "5": 0
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-AP-08-c5bdab70b9d1",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Saint_Matthew,_by_Valentin_de_Boulogne.jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "ART-aravaggio-nspiration-of-aint-atthew",
+            "title": "Inspiration of Saint Matthew",
+            "rating": 5
+          },
+          {
+            "originalID": "met-712946",
+            "title": "The Calling of Saint Matthew",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-11",
+      "subject": "Saint Matthias",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 2,
+        "distribution": {
+          "1": 1,
+          "2": 1,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [
+          {
+            "originalID": "ART-usepe-de-ibera-aint-aul-postolate",
+            "artist": "Jusepe de Ribera",
+            "title": "Saint Paul — Apostolate",
+            "rating": 5,
+            "sourceURL": null
+          }
+        ],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "met-442491",
+            "title": "Saints Peter and Paul",
+            "rating": 5
+          },
+          {
+            "originalID": "met-458963",
+            "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-AP-13",
+      "subject": "Saint Jude Thaddeus",
+      "group": "AP",
+      "groupLabel": "Apostles",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "group": "EV",
+      "groupLabel": "Evangelists",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "group": "EV",
+      "groupLabel": "Evangelists",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-01",
+      "subject": "Saint Ambrose",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 4,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 0,
+          "4": 1,
+          "5": 0
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-DC-01-90bde6f815fb",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+            "title": "Saint Ambrose Barring Theodosius",
+            "rating": 5
+          }
+        ]
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-02",
+      "subject": "Saint Augustine",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [
+          {
+            "originalID": "ART-hilippe-de-hampaigne-aint-ugustine",
+            "artist": "Philippe de Champaigne",
+            "title": "Saint Augustine",
+            "rating": 5,
+            "sourceURL": null
+          }
+        ],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-03",
+      "subject": "Saint Jerome",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 4,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 2,
+          "3": 2,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [
+          {
+            "originalID": "cma-136680",
+            "artist": "Jusepe de Ribera",
+            "title": "Saint Jerome",
+            "rating": 5,
+            "sourceURL": "https://clevelandart.org/art/1961.219"
+          }
+        ],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "met-435728",
+            "title": "The Last Communion of Saint Jerome",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "met-437722",
+            "title": "The Mass of Saint Gregory",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 2,
+        "distribution": {
+          "1": 0,
+          "2": 2,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 4,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 0
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-DC-08-4a0cadffec49",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Antonio_Palomino._Santa_Teresa_de_Jes%C3%BAs_escribiendo.jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 4,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 1,
+          "5": 0
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-DC-09-1a42763e6883",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Bernardino_mei,_Santa_Caterina_da_Siena,_1641.jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 4,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 1,
+          "5": 0
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-DC-12-faa6ec8f702d",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Sales,_de_Francisco_Bayeu_(Museo_del_Prado).jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-14",
+      "subject": "Saint Basil the Great",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-17",
+      "subject": "Saint Isidore of Seville",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "group": "DC",
+      "groupLabel": "Doctors of the Church",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "cma-150389",
+            "title": "The Holy Family on the Steps",
+            "rating": 5
+          },
+          {
+            "originalID": "cma-160143",
+            "title": "The Holy Family",
+            "rating": 5
+          },
+          {
+            "originalID": "cma-130392",
+            "title": "The Return of the Holy Family to Nazareth",
+            "rating": 5
+          },
+          {
+            "originalID": "cma-370119",
+            "title": "Holy Family with the Mystic Marriage of Saint Catherine",
+            "rating": 5
+          },
+          {
+            "originalID": "met-437458",
+            "title": "The Holy Family with Angels",
+            "rating": 5
+          }
+        ]
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-02",
+      "subject": "Saint Michael Archangel",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "ART-uido-eni-rchangel-ichael-efeating-atan",
+            "title": "Archangel Michael Defeating Satan",
+            "rating": 5
+          }
+        ]
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 3,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-04",
+      "subject": "Saint John the Baptist",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "cma-150955",
+            "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 4,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 0
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-OT-07-45a8e73c4d83",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-10",
+      "subject": "Saint Stephen",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-11",
+      "subject": "Saint Lawrence",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "nga-106362",
+            "title": "The Martyrdom of Saint Lawrence",
+            "rating": 5
+          }
+        ]
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-12",
+      "subject": "Saint Francis of Assisi",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-13",
+      "subject": "Saint Dominic",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 5,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 1
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-OT-13-5387d641cce6",
+            "rating": 5,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG"
+          },
+          {
+            "uploadCandidateId": "W36-SNT-OT-13-e1db7ffd5583",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Gaspar_de_Crayer_-_Saint_Dominic.jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "cma-150955",
+            "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-15",
+      "subject": "Saint Francis Xavier",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-16",
+      "subject": "Saint Ignatius of Loyola",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 2,
+        "bestRating": 4,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 0,
+          "4": 1,
+          "5": 0
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-OT-16-377ced58de3c",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_Saint_Ignatius_Loyola_-_Google_Art_Project.jpg"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [
+          {
+            "originalID": "ART-eter-aul-ubens-aint-ebastian",
+            "artist": "Peter Paul Rubens",
+            "title": "Saint Sebastian",
+            "rating": 5,
+            "sourceURL": null
+          }
+        ],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "nga-505",
+            "title": "The Visitation with Saint Nicholas and Saint Anthony Abbot",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 4,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 4,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [
+          {
+            "originalID": "nga-12209",
+            "artist": "Francisco de Zurbarán",
+            "title": "Saint Lucy",
+            "rating": 5,
+            "sourceURL": "https://www.nga.gov/artworks/12209-saint-lucy"
+          },
+          {
+            "originalID": "nga-369",
+            "artist": "Francesco del Cossa",
+            "title": "Saint Lucy",
+            "rating": 4,
+            "sourceURL": "https://www.nga.gov/artworks/369-saint-lucy"
+          }
+        ],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "nga-46147",
+            "title": "Saint Lucy and a Donor",
+            "rating": 4
+          },
+          {
+            "originalID": "cma-150955",
+            "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+            "rating": 4
+          },
+          {
+            "originalID": "met-458963",
+            "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 1,
+        "distribution": {
+          "1": 1,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "cma-150955",
+            "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+            "rating": 4
+          },
+          {
+            "originalID": "met-458963",
+            "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-23",
+      "subject": "Saint Cecilia",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "COVERED_4PLUS_PORTRAIT",
+      "priority": 3,
+      "w36": {
+        "reviewedCount": 5,
+        "bestRating": 4,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 2,
+          "5": 0
+        },
+        "passingNewPortraits": [
+          {
+            "uploadCandidateId": "W36-SNT-OT-23-3538f3078e54",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg"
+          },
+          {
+            "uploadCandidateId": "W36-SNT-OT-23-ea67147c879b",
+            "rating": 4,
+            "sourceURL": "https://commons.wikimedia.org/wiki/File:Guercino_-_Santa_Cecilia.JPG"
+          }
+        ]
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [
+          {
+            "originalID": "ART-ietro-da-ortona-aint-ecilia",
+            "artist": "Pietro da Cortona",
+            "title": "Saint Cecilia",
+            "rating": 5,
+            "sourceURL": null
+          },
+          {
+            "originalID": "met-436198",
+            "artist": "Abraham van Diepenbeeck",
+            "title": "Saint Cecilia",
+            "rating": 4,
+            "sourceURL": "https://www.metmuseum.org/art/collection/search/436198"
+          }
+        ],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "MIN4_COVERAGE_PRESENT_NOT_FINAL_3TO4_OPTIONS_OR_PUBLICATION_APPROVAL",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-24",
+      "subject": "Saint Catherine of Alexandria",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 2,
+        "distribution": {
+          "1": 0,
+          "2": 1,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-26",
+      "subject": "Saint Geneviève",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": [
+          {
+            "originalID": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+            "title": "Miracle des Ardents",
+            "rating": 4
+          }
+        ]
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-29",
+      "subject": "Saint Martin of Tours",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "REVIEWED_BELOW_4",
+      "priority": 1,
+      "w36": {
+        "reviewedCount": 1,
+        "bestRating": 3,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_DISTINCT_NEW_PORTRAITS_AS_PREVIOUS_ONES_PEAK_BELOW_4",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-30",
+      "subject": "Saint Anne",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-31",
+      "subject": "Saint Rosalia",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    },
+    {
+      "subjectId": "SNT-OT-32",
+      "subject": "Saint Francis of Paola",
+      "group": "OT",
+      "groupLabel": "Major saints and patrons",
+      "status": "NOT_YET_REVIEWED_NO_4PLUS_PORTRAIT",
+      "priority": 2,
+      "w36": {
+        "reviewedCount": 0,
+        "bestRating": null,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "passingNewPortraits": []
+      },
+      "earlier75SubjectMatrix": {
+        "passingSoloPortraits": [],
+        "passingNarrativeOrGroupOnlyExcluded": []
+      },
+      "need": "FIND_AND_PRESENT_QUALIFYING_SOLO_PORTRAITS",
+      "importPolicy": "DO_NOT_REPEAT_PREVIOUSLY_SCORED_PHYSICAL_ORIGINAL"
+    }
+  ]
+}
