@@ -684,6 +684,13 @@ try{
   assert.ok(benBlessing.bytes>1000,"Benediction blessing runtime asset is unexpectedly empty");
   assert.ok(benBlessing.width>=30&&benBlessing.height>=30,"Benediction blessing icon collapsed below visible rail geometry");
   await shot("03g-pray-benediction-blessing");
+  // A solemn blessing is a genuinely blocking, acknowledged prayer moment.
+  // Continue in the cinematic before using the Prayer Back control.
+  const benedictionCinema=page.locator("body > .aoDevotionalActionCinematic[data-ao-action-scene='BENEDICTION.BLESSING']");
+  await benedictionCinema.waitFor({state:"visible",timeout:5000});
+  assert.equal(await benedictionCinema.getAttribute("aria-modal"),"true");
+  await benedictionCinema.locator(".aoDevotionalActionContinue").click();
+  assert.equal(await benedictionCinema.count(),0,"Benediction cinematic failed to yield to the source reader");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
   await page.locator("#aoPray435930 [data-p435930-back]").click();
