@@ -1,0 +1,536 @@
+{
+  "schema": "ao-mass-icon-production-backlog-v1",
+  "date": "2026-10-14",
+  "title": "One coherent icon family: deduplicated Mass icon worklist",
+  "scope": "1962 Sung R17 Mass reader and separate research-only Canon minister branches, not all extraordinary feast modules",
+  "status": "RESEARCH_ONLY_NO_APPROVAL_NO_ACTIVATION",
+  "counts": {
+    "total": 36,
+    "drawOrRefine": 25,
+    "reviewExisting": 11,
+    "corePriest": 6,
+    "priestActions": 20,
+    "priestPositions": 4,
+    "sacredMinisters": 6,
+    "existingApprovedUnboundFingerIllustrations": 2,
+    "unresolvedFaithfulCueRowsHandledWithConditionalReuse": 10
+  },
+  "interpretation": {
+    "drawOrRefine": "Potential separate drawing; some may be reduced after reviewing existing assets",
+    "reviewExisting": "Do not redraw before comparison against selected masters",
+    "minister": "Editorial only, cannot be treated as live priest actions",
+    "existingFingerArt": "Already visually approved separately, do not regenerate",
+    "faithful": "Reuse stand, kneel, sit, head bow, profound bow, genuflect and existing sequence as appropriate; no ten new images"
+  },
+  "rules": [
+    "One approved family of monochrome illustrations, no photographs or historical engraved plates as UI artwork.",
+    "Existing user-selected masters are reference; keep priest vestments, altar, crucifix, candlesticks, proportions, navy/white tone and line detail coherent.",
+    "Exact rubrical cue and actor/form ownership required; no icon illustrates a movement not prescribed or observed.",
+    "Generated image is PNG until a genuine vector editable SVG is verified; do not call it SVG based on filename.",
+    "Batch output is exactly three independently reviewable candidate designs; no automatic approvals or production activation.",
+    "Prefer existing artwork for context/faithful posture; do not create 36 images automatically.",
+    "Two already approved finger/ablution icons remain preserved and are separate from 36 subjects.",
+    "All new icon assets must pass exact gesture, silhouette consistency, 64px legibility, transparency and rights checks."
+  ],
+  "firstBatch": [
+    "B15",
+    "B16",
+    "B17"
+  ],
+  "firstBatchReason": "Three existing-bank semantic defects with clear distinct priest movements, suitable for a controlled style/accuracy test; review existing artwork before replacing.",
+  "records": [
+    {
+      "id": "A01",
+      "family": "CORE_PRIEST",
+      "label": "Eyes and hands raised",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0117",
+        "AO.SM.C0263"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "A02",
+      "family": "CORE_PRIEST",
+      "label": "Memento of the Living: joined hands and inclination",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0155"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "A03",
+      "family": "CORE_PRIEST",
+      "label": "Hanc igitur: both hands above offerings",
+      "status": "REFINE",
+      "cues": [
+        "AO.SM.C0161"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "A04",
+      "family": "CORE_PRIEST",
+      "label": "Qui pridie: raises eyes only",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0169"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "A05",
+      "family": "CORE_PRIEST",
+      "label": "Memento of the Dead: hands/eyes toward Sacrament",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0193"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "A06",
+      "family": "CORE_PRIEST",
+      "label": "Per ipsum: minor Host-and-chalice elevation",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0204"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B01",
+      "family": "PRIEST_ACTIONS",
+      "label": "Blesses incense",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0040",
+        "AO.SM.C0120"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B02",
+      "family": "PRIEST_ACTIONS",
+      "label": "Makes sign with paten",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0111"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B03",
+      "family": "PRIEST_ACTIONS",
+      "label": "Sets paten aside",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0111"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B04",
+      "family": "PRIEST_ACTIONS",
+      "label": "Receives incense/thurible",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0124"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B05",
+      "family": "PRIEST_ACTIONS",
+      "label": "Offertory Lavabo",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0125"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B06",
+      "family": "PRIEST_ACTIONS",
+      "label": "Sets chalice on altar",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0115"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B07",
+      "family": "PRIEST_ACTIONS",
+      "label": "Covers chalice (priest-form branch)",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0115",
+        "AO.SM.C0181"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B08",
+      "family": "PRIEST_ACTIONS",
+      "label": "Makes three small crosses",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0152",
+        "AO.SM.C0164",
+        "AO.SM.C0184"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B09",
+      "family": "PRIEST_ACTIONS",
+      "label": "Replaces Host after elevation",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0174"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B10",
+      "family": "PRIEST_ACTIONS",
+      "label": "Fraction of Host",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0216"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B11",
+      "family": "PRIEST_ACTIONS",
+      "label": "Commingling",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0221"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B12",
+      "family": "PRIEST_ACTIONS",
+      "label": "Takes Host before Communion",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0228"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B13",
+      "family": "PRIEST_ACTIONS",
+      "label": "Consumes Host",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0232"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B14",
+      "family": "PRIEST_ACTIONS",
+      "label": "Consumes chalice",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0234"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B15",
+      "family": "PRIEST_ACTIONS",
+      "label": "Kisses altar (not profound bow)",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0039",
+        "AO.SM.C0129",
+        "AO.SM.C0151",
+        "AO.SM.C0188",
+        "AO.SM.C0262"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B16",
+      "family": "PRIEST_ACTIONS",
+      "label": "Profound bow (not altar kiss)",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0016",
+        "AO.SM.C0150",
+        "AO.SM.C0187"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B17",
+      "family": "PRIEST_ACTIONS",
+      "label": "Priest genuflection (priest vestments)",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0096",
+        "AO.SM.C0174",
+        "AO.SM.C0181",
+        "AO.SM.C0273"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B18",
+      "family": "PRIEST_ACTIONS",
+      "label": "Blesses the faithful",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0265"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B19",
+      "family": "PRIEST_ACTIONS",
+      "label": "Incenses altar",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0041",
+        "AO.SM.C0121",
+        "AO.SM.C0122"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "B20",
+      "family": "PRIEST_ACTIONS",
+      "label": "Incenses people (selected master identity)",
+      "status": "REVIEW",
+      "cues": [],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "C01",
+      "family": "PRIEST_POSITIONS",
+      "label": "Foot of altar",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0001"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "C02",
+      "family": "PRIEST_POSITIONS",
+      "label": "Turning/returning toward altar",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0041",
+        "AO.SM.C0122"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "C03",
+      "family": "PRIEST_POSITIONS",
+      "label": "Epistle-side Missal station",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0042",
+        "AO.SM.C0072",
+        "AO.SM.C0112",
+        "AO.SM.C0113",
+        "AO.SM.C0253"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "C04",
+      "family": "PRIEST_POSITIONS",
+      "label": "Gospel-side Missal station",
+      "status": "REVIEW",
+      "cues": [
+        "AO.SM.C0082",
+        "AO.SM.C0267"
+      ],
+      "scope": "1962_SUNG_R17_SOURCE_CUE",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "D01",
+      "family": "SACRED_MINISTERS",
+      "label": "Deacon approaches and kneels right of priest",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0163"
+      ],
+      "scope": "SOLEMN_MASS_EDITORIAL_ONLY",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "D02",
+      "family": "SACRED_MINISTERS",
+      "label": "Deacon lifts celebrant's chasuble at elevations",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0174",
+        "AO.SM.C0181"
+      ],
+      "scope": "SOLEMN_MASS_EDITORIAL_ONLY",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "D03",
+      "family": "SACRED_MINISTERS",
+      "label": "Deacon uncovers chalice",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0175",
+        "AO.SM.C0201"
+      ],
+      "scope": "SOLEMN_MASS_EDITORIAL_ONLY",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "D04",
+      "family": "SACRED_MINISTERS",
+      "label": "Deacon covers chalice",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0181",
+        "AO.SM.C0205"
+      ],
+      "scope": "SOLEMN_MASS_EDITORIAL_ONLY",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "D05",
+      "family": "SACRED_MINISTERS",
+      "label": "Deacon genuflects in Canon",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0199",
+        "AO.SM.C0205"
+      ],
+      "scope": "SOLEMN_MASS_EDITORIAL_ONLY",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    },
+    {
+      "id": "D06",
+      "family": "SACRED_MINISTERS",
+      "label": "Thurifer incenses the elevated Species",
+      "status": "DRAW",
+      "cues": [
+        "AO.SM.C0174",
+        "AO.SM.C0181"
+      ],
+      "scope": "SOLEMN_MASS_EDITORIAL_ONLY",
+      "artworkReview": "NOT_APPROVED",
+      "productionBinding": false,
+      "referenceFamily": "APPROVED_MONOCHROME_PRIEST_FAITHFUL_MASTERS"
+    }
+  ]
+}
