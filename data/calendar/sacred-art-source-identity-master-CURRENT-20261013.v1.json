@@ -26,14 +26,13 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "First await user's W22 and W23 0-5 rating exports; preserve separate browser namespaces; merge rating deltas only after explicit user approval, never infer ratings for source holds.",
-    "Newly sourced W23 primary image candidates: Musée Carnavalet P863 Saint Vincent circa 1660 (CC0), Paul Delaroche Yale 2017.65.1 preaching Vincent, Petit Palais PDUT1793 Saint Louis à Damiette (CC0), Noël Hallé PM75001042 Saint Francis de Sales and Jeanne de Chantal (modern photo license audit).",
-    "Keep W23 holds: Tours Saint Louis Le Sueur (Commons image copyright explicitly disputed and attribution problem), Ars Vianney 1843 historical painting (in situ framed photograph), Vatican Podesti Margaret Mary (800x600 and unverified object/provenance).",
-    "Keep Carmel Lisieux Céline Thérèse and Seville Cathedral Murillo Anthony on source-photo rights/size hold; no low-quality shrines or false originals in release.",
-    "Find actual full-res original file and compute SHA-256 for approved major-saint artworks in a distinct acquisition operation; visual previews do NOT count as acquired masters.",
-    "Respect prior human 277 scores (0-2 excluded globally), all earlier 5-star and 4-star decisions, all historical unscored subject choices, and user exclusions; no all-saints expansion.",
-    "Never present old W16-W20 63/107 research cohort as overall Sacred Art scope progress; draft PR remains isolated from production.",
-    "Keep existing 222 W01-W15 research queue with 8 SHA-verified and 214 pending unchanged until actual independently verified file acquisitions."
+    "Wave24 newly reviewable: Pittoni San Diego 48.3 CC0 1826x2565 exact Saint Anthony (new physical original), and Van Dyck Brera Inv87 old W07-006 750x901 preview only. 2 new score decisions and 1 existing Cleveland group 4/5 locked.",
+    "Wave24 source custody HOLDS: Shelley Vianney Ars original IM01000822 / PM01002795 same physical oil; Céline Lisieux Thérèse aux Roses 1925 original oil; Élisabeth Martin Margaret Mary Québec 165636.105 original signed 1920; Seville Murillo in situ (clean unframed reproduction unresolved).",
+    "AUTHORITATIVE CORRECTION: Cleveland CMA 1982.36 / cma-150955 curator explicitly identifies six saints Lucy, Agnes, Scholastica, Benedict, Veronica, Anthony of Padua. This supersedes prior uncertainty; single group painting stays user 4/5, not six portrait paintings.",
+    "Wait for W22, W23 and W24 score exports; preserve all Oct13 scores/exclusions, do not infer new ratings. Rating previews are browser remote imagery, not downloaded SHA-verified source masters.",
+    "Prioritize exact clean heritage reproductions and required rights for important saints over all-saints lists, minor Doctors, and optional Bible Atlas episode saturation.",
+    "Old W01-W15 222 research object leads, 8 SHA-verified files, 214 still missing; old W16-W20 63/107 subject gap tally is NOT overall art library completion.",
+    "Keep draft PR #887 research-only and unmerged. No app artwork production modifications."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -176,7 +175,7 @@
     "wave21NewMandatorySaints": 0,
     "wave21SourceImagesAcquired": 0,
     "wave21ExistingRatingMutations": 0,
-    "latestVisualReview": "data/calendar/sacred-art-major-saints-review-wave23-20261014.html",
+    "latestVisualReview": "data/calendar/sacred-art-major-saints-review-wave24-20261014.html",
     "wave22VisualItems": 15,
     "wave22UserRatedLockedItems": 6,
     "wave22NewReviewableItems": 7,
@@ -184,12 +183,27 @@
     "wave22ImagesAcquiredAndHashed": 0,
     "wave22CommercialUseCleared": 0,
     "wave22ProductionArtworkMutations": 0,
-    "latestSourcePreviewManifest": "data/calendar/sacred-art-major-saint-source-preview-wave23-20261014.v1.json",
+    "latestSourcePreviewManifest": "data/calendar/sacred-art-major-saint-source-preview-wave24-20261014.v1.json",
     "previousVisualReviewStillIndependent": "data/calendar/sacred-art-major-saints-review-wave22-20261014.html",
     "wave23NewReviewableArtworks": 4,
     "wave23ImageOrRightsHolds": 3,
     "wave23VerifiedOriginalJpegNewAdditions": 0,
     "wave23NewRequiredSaints": 0,
-    "wave23UserRatingsUnmodified": true
+    "wave23UserRatingsUnmodified": true,
+    "wave23VisualReviewStillIndependent": "data/calendar/sacred-art-major-saints-review-wave23-20261014.html",
+    "wave24NewReviewable": 2,
+    "wave24PreviouslyRatedLocked": 1,
+    "wave24SourceOrLicenceHolds": 4,
+    "wave24NewJPEGMasterSHA": 0,
+    "wave24NewMandatorySaints": 0,
+    "wave24PittoniSixSaintsMuseumConfirmed": [
+      "Lucy",
+      "Agnes",
+      "Scholastica",
+      "Benedict",
+      "Veronica",
+      "Anthony of Padua"
+    ],
+    "wave24ClevelandPhysicalOriginal": "cma-150955"
   }
 }
