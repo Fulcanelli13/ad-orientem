@@ -1,0 +1,4862 @@
+{
+  "schema": "AO_SACRED_ART_W46_NUMERIC_RATING_AUTHORITY_RECON_V1",
+  "asOf": "2026-10-14",
+  "PR": 887,
+  "status": "HISTORICAL_SCORE_RECONCILIATION_SOURCE_AUDIT_NOT_NEW_USER_DECISIONS",
+  "sources": [
+    {
+      "path": "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json",
+      "scope": "197 directly scored works",
+      "exportAt": "2026-10-13T10:23:32.144Z"
+    },
+    {
+      "path": "data/calendar/sacred-art-two-options-user-baseline-75-20261014.v1.json",
+      "scope": "75 people; 92 option memberships, including 26 unrated placements",
+      "exportFile": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json",
+      "treatedAsLaterRelativeTo": "197 earlier records"
+    },
+    {
+      "path": "data/calendar/sacred-art-portraits-w36-human-ratings-20261014.v1.json",
+      "scope": "50 scored portraits from W36",
+      "exportAt": "2026-10-14T08:19:19.747Z"
+    }
+  ],
+  "ratingSemantics": {
+    "effectiveDate": "2026-10-14",
+    "scope": "All sacred-art user aesthetic ratings across previous and future review rounds",
+    "score0to2": {
+      "status": "PERMANENT_REJECTION",
+      "rule": "Immediately and permanently exclude from aesthetic gallery, re-review, shortlist, new candidate counts and final selections. Retain historical source/rating for audit only. New crop, resized source, file rename or photo is not a new work and cannot evade the rejection."
+    },
+    "score3": {
+      "status": "RESEARCH_SIGNAL_ONLY",
+      "rule": "Insufficient; do not show for user re-rating or final selection. Use only internally to identify subject requiring further research, and source stronger distinct works. Preserve prior rating as evidence."
+    },
+    "score4": {
+      "status": "AWAITING_EXPLICIT_USER_DECISION",
+      "rule": "Present for the user's selection/confirmation review, even if another painting of the same subject has already been confirmed 5. Preserve 4 until explicitly changed; never automatically confirm, reject or suppress."
+    },
+    "score5": {
+      "status": "CONFIRMED_SELECTED",
+      "rule": "Automatically retain and select as aesthetically approved, no more aesthetic confirmation required. Technical identity, accurate depiction, reproducibility, licence and production checks remain separate."
+    },
+    "nullRating": {
+      "status": "NOT_YET_SCORED",
+      "rule": "Present only if a genuinely appropriate new candidate or previously proposed unscored painting and the source/image-quality gates pass; never infer approval."
+    },
+    "categoryResearchRule": "A subject/category with no qualifying subject-specific portrait scored 4 or 5 needs more paintings researched. A 4 removes the urgent research gap but is still awaiting user review; a 5 confirms a selection. Prior strong narrative scenes do not fulfill solo portrait coverage.",
+    "galleryRule": "Display 4-rated works requiring the user's decision and eligible unrated new/prior proposals; 5-rated works in already-confirmed selected section. Never show 0-3 rated works as options again, not even greyed out, side-by-side or 'previously seen'.",
+    "originalIdentityRule": "A rating belongs to the underlying original work. Copies, cropped photos, editions, and alternate files must not recreate rejected works as fresh candidates. Distinct physical originals only when their identifiers/provenance are established.",
+    "auditRule": "Preserve all prior 0-5 data in non-UI historical ledger; do not delete or overwrite ratings to implement filter.",
+    "confirmedVsRights": "5 automatically means aesthetic selection, not automatic commercial-use rights or publication."
+  },
+  "evidenceBoundary": "The 75-person baseline is a later explicit ranking export than the Oct13 10:23 export; where exact artwork IDs differ, the later baseline score controls in the 75-person portrait workflow, but the original score and conflict are retained. 35 older unnumbered 'approved' artworks and 101 editorial subject selections are NOT silently converted to numeric 5s. Full original 277 scored file is not located; 197+50 explicit score rows directly present, plus membership linkage, is not proof of lifetime completeness.",
+  "counts": {
+    "early197": 197,
+    "w36Rated": 50,
+    "combinedDirectScoreRows": 247,
+    "baselineRankedMemberships": 92,
+    "uniqueBaselineRankedArtIDs": 55,
+    "historicBaselineArtIdsNotInOct13Reconciled": 27,
+    "conflictsAcrossSources": 20,
+    "uniqueConflictingArtworks": 13,
+    "conflictsCrossingPermanentRejectionBoundary": 1,
+    "effectiveAcross247": {
+      "CONFIRMED_SELECTED_5": 12,
+      "REVIEW_REQUIRED_4": 55,
+      "PERMANENT_REJECTED": 88,
+      "RESEARCH_ONLY": 92
+    },
+    "subjectsIn75": {
+      "HAS_CONFIRMED_5": 9,
+      "RESEARCH_GAP_NO_4_OR_5": 59,
+      "PENDING_USER_REVIEW_4": 7
+    },
+    "selectedPortrait5Count": 9,
+    "unresolvedPortrait4Count": 13,
+    "historicalUnnumberedApprovals": 35
+  },
+  "conflicts": [
+    {
+      "artworkId": "met-435617",
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Paul",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-458955",
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Peter",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-458963",
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "earlierRating": 3,
+      "laterBaselineRating": 4,
+      "earlierTheme": "Annunciation",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-458963",
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "earlierRating": 3,
+      "laterBaselineRating": 4,
+      "earlierTheme": "Annunciation",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-459044",
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Mary Magdalene",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-712946",
+      "subjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "earlierRating": 5,
+      "laterBaselineRating": 4,
+      "earlierTheme": "Calling Disciples",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-435617",
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Paul",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-437065",
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Paul",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-458963",
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "earlierRating": 3,
+      "laterBaselineRating": 4,
+      "earlierTheme": "Annunciation",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-435617",
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Paul",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-436982",
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Anthony Padua",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-442750",
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Benedict",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "cma-153406",
+      "subjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Sebastian",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-459258",
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "earlierRating": 4,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Nicholas Myra",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-436050",
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Lucy",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-437273",
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint John Baptist",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-458963",
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "earlierRating": 3,
+      "laterBaselineRating": 4,
+      "earlierTheme": "Annunciation",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-458963",
+      "subjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "earlierRating": 3,
+      "laterBaselineRating": 4,
+      "earlierTheme": "Annunciation",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-436198",
+      "subjectId": "SNT-OT-23",
+      "subject": "Saint Cecilia",
+      "earlierRating": 5,
+      "laterBaselineRating": 4,
+      "earlierTheme": "Saint Cecilia",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    },
+    {
+      "artworkId": "met-459044",
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "earlierRating": 3,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Mary Magdalene",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    }
+  ],
+  "conflictsCrossingRejectionBoundary": [
+    {
+      "artworkId": "met-459258",
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "earlierRating": 4,
+      "laterBaselineRating": 2,
+      "earlierTheme": "Saint Nicholas Myra",
+      "firstRatedSource": "2026-10-13T10:23:32.144Z",
+      "secondRatedSource": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json"
+    }
+  ],
+  "historicBaselineOnlyArtworks": [
+    {
+      "id": "ART-usepe-de-ibera-aint-eter-postolate",
+      "rating": 5,
+      "subjects": [
+        "SNT-AP-01"
+      ],
+      "title": "Saint Peter — Apostolate",
+      "artist": "Jusepe de Ribera"
+    },
+    {
+      "id": "met-442491",
+      "rating": 5,
+      "subjects": [
+        "SNT-AP-01",
+        "SNT-AP-12"
+      ],
+      "title": "Saints Peter and Paul",
+      "artist": "Bartolomeo Manfredi"
+    },
+    {
+      "id": "met-441971",
+      "rating": 4,
+      "subjects": [
+        "SNT-AP-01"
+      ],
+      "title": "The Tears of Saint Peter",
+      "artist": "Jusepe de Ribera"
+    },
+    {
+      "id": "ART-aravaggio-nspiration-of-aint-atthew",
+      "rating": 5,
+      "subjects": [
+        "SNT-AP-08"
+      ],
+      "title": "Inspiration of Saint Matthew",
+      "artist": "Caravaggio"
+    },
+    {
+      "id": "ART-usepe-de-ibera-aint-aul-postolate",
+      "rating": 5,
+      "subjects": [
+        "SNT-AP-12"
+      ],
+      "title": "Saint Paul — Apostolate",
+      "artist": "Jusepe de Ribera"
+    },
+    {
+      "id": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "rating": 5,
+      "subjects": [
+        "SNT-DC-01"
+      ],
+      "title": "Saint Ambrose Barring Theodosius",
+      "artist": "Anthony van Dyck"
+    },
+    {
+      "id": "ART-hilippe-de-hampaigne-aint-ugustine",
+      "rating": 5,
+      "subjects": [
+        "SNT-DC-02"
+      ],
+      "title": "Saint Augustine",
+      "artist": "Philippe de Champaigne"
+    },
+    {
+      "id": "met-437722",
+      "rating": 4,
+      "subjects": [
+        "SNT-DC-04"
+      ],
+      "title": "The Mass of Saint Gregory",
+      "artist": "Spanish Painter"
+    },
+    {
+      "id": "cma-150389",
+      "rating": 5,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Holy Family on the Steps",
+      "artist": "Nicolas Poussin"
+    },
+    {
+      "id": "cma-160143",
+      "rating": 5,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Holy Family",
+      "artist": "Gaetano Gandolfi"
+    },
+    {
+      "id": "met-459063",
+      "rating": 2,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "Virgin and Child with Saint Joseph",
+      "artist": "Netherlandish Painter"
+    },
+    {
+      "id": "nga-41644",
+      "rating": 2,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Expectant Madonna with Saint Joseph",
+      "artist": "French 15th Century"
+    },
+    {
+      "id": "cma-113202",
+      "rating": 2,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Holy Family with Saint John the Baptist and Saint Margaret",
+      "artist": "Filippino Lippi"
+    },
+    {
+      "id": "cma-126768",
+      "rating": 3,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "Holy Family with a Shepherd",
+      "artist": "Battista Dossi"
+    },
+    {
+      "id": "cma-130392",
+      "rating": 5,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Return of the Holy Family to Nazareth",
+      "artist": "Nicolas Poussin"
+    },
+    {
+      "id": "cma-170814",
+      "rating": 2,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Holy Family",
+      "artist": "Unknown old master"
+    },
+    {
+      "id": "cma-370119",
+      "rating": 5,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "Holy Family with the Mystic Marriage of Saint Catherine",
+      "artist": "Maso da San Friano"
+    },
+    {
+      "id": "met-436793",
+      "rating": 2,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Holy Family",
+      "artist": "Joos van Cleve"
+    },
+    {
+      "id": "met-436797",
+      "rating": 2,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Holy Family",
+      "artist": "Joos van Cleve"
+    },
+    {
+      "id": "met-437458",
+      "rating": 5,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Holy Family with Angels",
+      "artist": "Sebastiano Ricci"
+    },
+    {
+      "id": "met-459059",
+      "rating": 2,
+      "subjects": [
+        "SNT-OT-01"
+      ],
+      "title": "The Holy Family",
+      "artist": "Joos van Cleve"
+    },
+    {
+      "id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "rating": 5,
+      "subjects": [
+        "SNT-OT-02"
+      ],
+      "title": "Archangel Michael Defeating Satan",
+      "artist": "Guido Reni"
+    },
+    {
+      "id": "met-437970",
+      "rating": 3,
+      "subjects": [
+        "SNT-OT-14"
+      ],
+      "title": "Saint Benedict",
+      "artist": "Francisco de Zurbarán"
+    },
+    {
+      "id": "ART-eter-aul-ubens-aint-ebastian",
+      "rating": 5,
+      "subjects": [
+        "SNT-OT-19"
+      ],
+      "title": "Saint Sebastian",
+      "artist": "Peter Paul Rubens"
+    },
+    {
+      "id": "nga-505",
+      "rating": 4,
+      "subjects": [
+        "SNT-OT-20"
+      ],
+      "title": "The Visitation with Saint Nicholas and Saint Anthony Abbot",
+      "artist": "Piero di Cosimo"
+    },
+    {
+      "id": "ART-ietro-da-ortona-aint-ecilia",
+      "rating": 5,
+      "subjects": [
+        "SNT-OT-23"
+      ],
+      "title": "Saint Cecilia",
+      "artist": "Pietro da Cortona"
+    },
+    {
+      "id": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+      "rating": 4,
+      "subjects": [
+        "SNT-OT-26"
+      ],
+      "title": "Miracle des Ardents",
+      "artist": "Gabriel-François Doyen"
+    }
+  ],
+  "effectiveEarlyRatedArtworks": [
+    {
+      "id": "cma-136680",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "0b876319f895d7758a7bdac6e7c0c9a247054d825f4800991146daf1709a8bcd",
+      "title": "Saint Jerome",
+      "artist": "Jusepe de Ribera",
+      "url": "https://clevelandart.org/art/1961.219"
+    },
+    {
+      "id": "cma-148758",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833",
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "url": "https://clevelandart.org/art/1976.2"
+    },
+    {
+      "id": "cma-150046",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "a8aa262ef0dedc4836b9944b4990560ed118a75001c6e2f6fa38ec8da677a0c5",
+      "title": "Expulsion of Adam and Eve",
+      "artist": "John Faed",
+      "url": "https://clevelandart.org/art/1980.258"
+    },
+    {
+      "id": "met-436198",
+      "rating": 4,
+      "wasSuperseded": true,
+      "originalRating": 5,
+      "sourceSha256": "95566ebeb14d227a44c2464864556ad0049b40a1ce5128fbb8a065713027bc7f",
+      "title": "Saint Cecilia",
+      "artist": "Abraham van Diepenbeeck",
+      "url": "https://www.metmuseum.org/art/collection/search/436198"
+    },
+    {
+      "id": "met-437977",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "62e1b85b4afa6301eac6a8d6b9974384729f43563c08c3f2ed4e2af80574b90e",
+      "title": "The Last Communion of Saint Mary of Egypt",
+      "artist": "Marcantonio Franceschini",
+      "url": "https://www.metmuseum.org/art/collection/search/437977"
+    },
+    {
+      "id": "met-438134",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "263c9e06dbc7f5ef80325def8bae06f2369ee79c41f4b04930c610771d0a0fa7",
+      "title": "Saint Catherine of Alexandria in Prison",
+      "artist": "Paolo Veronese (Paolo Caliari)",
+      "url": "https://www.metmuseum.org/art/collection/search/438134"
+    },
+    {
+      "id": "met-438434",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "url": "https://www.metmuseum.org/art/collection/search/438434"
+    },
+    {
+      "id": "met-712946",
+      "rating": 4,
+      "wasSuperseded": true,
+      "originalRating": 5,
+      "sourceSha256": "9d0fff62d386d550b93e99c399857d120c629f614b5b7870c4d4049e29efb668",
+      "title": "The Calling of Saint Matthew",
+      "artist": "Giovanni Battista Caracciolo",
+      "url": "https://www.metmuseum.org/art/collection/search/712946"
+    },
+    {
+      "id": "met-724811",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751",
+      "title": "A Miracle of Saint Joseph of Cupertino",
+      "artist": "Placido Costanzi",
+      "url": "https://www.metmuseum.org/art/collection/search/724811"
+    },
+    {
+      "id": "nga-106362",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "b86ccb14d2ba44302c83a1c8a244f712a14ef8c29d7628064a357fa8dea11148",
+      "title": "The Martyrdom of Saint Lawrence",
+      "artist": "Jean Baptiste de Champaigne",
+      "url": "https://www.nga.gov/artworks/106362-martyrdom-of-saint-lawrence"
+    },
+    {
+      "id": "nga-12209",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b",
+      "title": "Saint Lucy",
+      "artist": "Francisco de Zurbarán",
+      "url": "https://www.nga.gov/artworks/12209-saint-lucy"
+    },
+    {
+      "id": "nga-46185",
+      "rating": 5,
+      "wasSuperseded": false,
+      "originalRating": 5,
+      "sourceSha256": "15b39e8c36d0592c95487e8675ac3322296bfd332bb3e3dcb5e32779b4ff1d03",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Giovanni Girolamo Savoldo",
+      "url": "https://www.nga.gov/artworks/46185-adoration-of-the-shepherds"
+    },
+    {
+      "id": "cma-127572",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "07bceb9a3161ea2cbf10bbe19c26a3e37b95696df261804565cb7a325f64f9ab",
+      "title": "The Annunciation",
+      "artist": "Workshop of Paolo Veronese",
+      "url": "https://clevelandart.org/art/1950.251"
+    },
+    {
+      "id": "cma-127746",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "3ec7f722c11141337c98a884cd34c87cf09ed4f22e648603136bca0239ba046e",
+      "title": "Baptism of Christ",
+      "artist": "workshop of Jacopo Tintoretto",
+      "url": "https://clevelandart.org/art/1950.400"
+    },
+    {
+      "id": "cma-137195",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "8144d44e89b100a991a12c1bffbccb5665eb505a1f6087286a27063550d928db",
+      "title": "Rest on the Flight into Egypt",
+      "artist": "Claude Lorrain",
+      "url": "https://clevelandart.org/art/1962.151"
+    },
+    {
+      "id": "cma-150040",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "50b5483495666044ea418c187ee3a987e1e593ae54939cdd9d0eb109406453ee",
+      "title": "The Good Samaritan",
+      "artist": "Alexandre-Gabriel Decamps",
+      "url": "https://clevelandart.org/art/1980.253"
+    },
+    {
+      "id": "cma-150955",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "d738e33cf352a13f1bc8e4178449c0938cc59f6d149f4cfb2477d7dd93ccc71a",
+      "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+      "artist": "Giovanni Battista Pittoni",
+      "url": "https://clevelandart.org/art/1982.36"
+    },
+    {
+      "id": "cma-159488",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "1880866ce9b1cfc27c59a177fbe16689d6d2a595aa69b3cf2fbf9a62c59f49a7",
+      "title": "The Trinity",
+      "artist": "Hendrik van Balen",
+      "url": "https://clevelandart.org/art/1996.26"
+    },
+    {
+      "id": "kress-k2016",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+      "title": "The Transfiguration",
+      "artist": "Maestro Bartolomé",
+      "url": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd"
+    },
+    {
+      "id": "kress-k2027",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "691f5f14d4a5242e6e316db34304301e170c42732f92dbf01f739775cb015ff7",
+      "title": "The Last Judgment",
+      "artist": "Fernando Gallego and Workshop",
+      "url": "https://www.kressfoundation.org/kress-collection/artwork/5cfc10f4fb81dd90a2088e868b50f68a66c11fc3525daa2e5b3c7530fa82d82f"
+    },
+    {
+      "id": "met-435728",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "fe7bee03b4a23f8b9c3edf491e4d2ab6e711f39600759b8be0473611d35771ea",
+      "title": "The Last Communion of Saint Jerome",
+      "artist": "Sandro Botticelli",
+      "url": "https://www.metmuseum.org/art/collection/search/435728"
+    },
+    {
+      "id": "met-435859",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "2826fdfe6d5f1fd990d133889326d95b6655b17607b70d2f7cb81e4ce9ca2119",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Vincenzo Catena",
+      "url": "https://www.metmuseum.org/art/collection/search/435859"
+    },
+    {
+      "id": "met-435900",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "71735160551b379138067a3386e5559bad881566959e2b039fc11bb2feddd839",
+      "title": "The Adoration of the Shepherds with Saint Catherine of Alexandria",
+      "artist": "Cigoli (Ludovico Cardi)",
+      "url": "https://www.metmuseum.org/art/collection/search/435900"
+    },
+    {
+      "id": "met-436199",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "f68a9d408b8d03554f26cd84aa31a9c4f7f4eafd0693482bdba2ce69d7536a97",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "url": "https://www.metmuseum.org/art/collection/search/436199"
+    },
+    {
+      "id": "met-436411",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "94f832160df265e6ceeb8757955557f9d783c5dcbf1d7cd5440ff60596094312",
+      "title": "The Crucifixion of Saint Peter with a Donor; The Legend of Saint Anthony Abbot with a Donor; The Annunciation",
+      "artist": "Northern French Painter",
+      "url": "https://www.metmuseum.org/art/collection/search/436411"
+    },
+    {
+      "id": "met-436502",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "a76e00046346849d284e777072cff343a60faefa218178663071a08a10dc74b8",
+      "title": "The Annunciation",
+      "artist": "Luca Giordano",
+      "url": "https://www.metmuseum.org/art/collection/search/436502"
+    },
+    {
+      "id": "met-436791",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "f294a91e54d1e073bbabf9c5d5ce4d8576febe145dff2ce5d278fc47dfb43d15",
+      "title": "The Annunciation",
+      "artist": "Joos van Cleve",
+      "url": "https://www.metmuseum.org/art/collection/search/436791"
+    },
+    {
+      "id": "met-436794",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "a96c2979bbce3032a6fa7c0a1213833c645ec3586e612ae814080808838bedeb",
+      "title": "The Last Judgment",
+      "artist": "Joos van Cleve",
+      "url": "https://www.metmuseum.org/art/collection/search/436794"
+    },
+    {
+      "id": "met-437008",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "d1b9128deb55d1df3de1bd4b751d042f99e8bac5639e22938954a43531a67b11",
+      "title": "The Descent from the Cross",
+      "artist": "Master of the Holy Blood",
+      "url": "https://www.metmuseum.org/art/collection/search/437008"
+    },
+    {
+      "id": "met-437216",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "5f3f6c1b4c9f74d0defe77bf286adc8f36c4dfcc4c86b4a22f8121ba11d00b99",
+      "title": "The Fifteen Mysteries and the Virgin of the Rosary",
+      "artist": "Netherlandish (Brussels) Painter",
+      "url": "https://www.metmuseum.org/art/collection/search/437216"
+    },
+    {
+      "id": "met-437231",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "3a736ed3e0f57755e1872ec4726de232c2d82e2f5ec873811007978f9e548e09",
+      "title": "The Adoration of the Shepherds",
+      "artist": "L'Ortolano",
+      "url": "https://www.metmuseum.org/art/collection/search/437231"
+    },
+    {
+      "id": "met-437250",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "97d061e06bda7f3f564f8b7997c3bc60fbc21ca1ccbda76514ee3466756cd3d3",
+      "title": "The Annunciation",
+      "artist": "Girolamo Mazzola Bedoli",
+      "url": "https://www.metmuseum.org/art/collection/search/437250"
+    },
+    {
+      "id": "met-437298",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "d89337600ea0e5702e68cf17ef7caf1d59755195da78c04313a6faff2bc598d9",
+      "title": "The Presentation in the Temple",
+      "artist": "Alvaro Pirez",
+      "url": "https://www.metmuseum.org/art/collection/search/437298"
+    },
+    {
+      "id": "met-437457",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "7519c33f727e462fc1b1f9ecb6cc7316105a35d68a212a9c984cd475a8d0de55",
+      "title": "The Baptism of Christ",
+      "artist": "Sebastiano Ricci",
+      "url": "https://www.metmuseum.org/art/collection/search/437457"
+    },
+    {
+      "id": "met-437729",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "26be17aa91fd738b87c38204430e9cff8333197c585fd4f95706d25e43fc3b4e",
+      "title": "Saint Michael the Archangel",
+      "artist": "Ignacio de Ries",
+      "url": "https://www.metmuseum.org/art/collection/search/437729"
+    },
+    {
+      "id": "met-437986",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "566616872ca68aa9301a91f4e8ebd7631433cc42358f963e3230cbe6dd913dea",
+      "title": "The Denial of Saint Peter",
+      "artist": "Caravaggio (Michelangelo Merisi)",
+      "url": "https://www.metmuseum.org/art/collection/search/437986"
+    },
+    {
+      "id": "met-438338",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+      "title": "The Burial of Christ",
+      "artist": "Annibale Carracci",
+      "url": "https://www.metmuseum.org/art/collection/search/438338"
+    },
+    {
+      "id": "met-438561",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "c69f9767527a3ea7249d8a2523bc8eec50810dd147dfcfb4bd0cdf7e3babc2ca",
+      "title": "The Denial of Saint Peter",
+      "artist": "Ludovico Carracci",
+      "url": "https://www.metmuseum.org/art/collection/search/438561"
+    },
+    {
+      "id": "met-440393",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "240532f3efec68b9d606873fde65b0978b1f7333c8b5c5a1f460df3d208a6c64",
+      "title": "The Baptism of Christ",
+      "artist": "Jacopo Bassano",
+      "url": "https://www.metmuseum.org/art/collection/search/440393"
+    },
+    {
+      "id": "met-458971",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "dbaf467f7769710340bd1f095c6a7317c7fba1420039ea66d2594ad23c8de4e0",
+      "title": "The Creation of the World and the Expulsion from Paradise",
+      "artist": "Giovanni di Paolo",
+      "url": "https://www.metmuseum.org/art/collection/search/458971"
+    },
+    {
+      "id": "met-459258",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 4,
+      "sourceSha256": "bd63753b81300d6cd2e8d6c096ad689cae090c3df9e7aa28c2cb09333981941b",
+      "title": "Saint Nicholas of Bari",
+      "artist": "Pietro di Giovanni d'Ambrogio",
+      "url": "https://www.metmuseum.org/art/collection/search/459258"
+    },
+    {
+      "id": "met-647338",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "ea1999a8bf70a3eedf2a1d3a059fbed4d6623c3970bf813645572a379c084f5a",
+      "title": "Saint Francis in Ecstasy",
+      "artist": "Giovanni Benedetto Castiglione",
+      "url": "https://www.metmuseum.org/art/collection/search/647338"
+    },
+    {
+      "id": "met-692597",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "9cdcf81fc3c217099dfc937947cb858dd26d5e937690c866d6922c616ed84b78",
+      "title": "Saint Francis of Assisi",
+      "artist": "Antoniazzo Romano",
+      "url": "https://www.metmuseum.org/art/collection/search/692597"
+    },
+    {
+      "id": "met-702752",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "855b6176890e6dde6bac386b28aaea39470725df5ae74b1b234b7cd8f40ec910",
+      "title": "Christ and the Woman of Samaria",
+      "artist": "Benedetto Luti",
+      "url": "https://www.metmuseum.org/art/collection/search/702752"
+    },
+    {
+      "id": "met-712539",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "667ad6757d2356e03f6e3629c854861eabdde8f91deeec76c3808cabcd9fc75a",
+      "title": "Saint Philip Neri (1515–1595)",
+      "artist": "Carlo Dolci",
+      "url": "https://www.metmuseum.org/art/collection/search/712539"
+    },
+    {
+      "id": "met-769294",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "fa268c569f69ee456946c71742199a1b85ebd082f27f68630184a9d33f293078",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Girolamo da Carpi",
+      "url": "https://www.metmuseum.org/art/collection/search/769294"
+    },
+    {
+      "id": "met-816629",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "61630e0254184d4bf79c36a24d6cf1707b9aa60fbc308584436b7955fd0bd9c7",
+      "title": "The Flight into Egypt",
+      "artist": "Carlo Maratti",
+      "url": "https://www.metmuseum.org/art/collection/search/816629"
+    },
+    {
+      "id": "nga-12118",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "7d8c7a8c2935861433057f7215d4f2b91f250fc03187c843c219a9e8335b97c1",
+      "title": "Saint Catherine of Alexandria",
+      "artist": "Bartolomeo Bulgarini",
+      "url": "https://www.nga.gov/artworks/12118-saint-catherine-of-alexandria"
+    },
+    {
+      "id": "nga-129283",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "f5a7e4abe01ca01d26759e3ccac7300d85a0620ef8edf913c28f7a777f8501f9",
+      "title": "Saint John the Baptist Preaching",
+      "artist": "Willem Reuter",
+      "url": "https://www.nga.gov/artworks/129283-saint-john-the-baptist-preaching"
+    },
+    {
+      "id": "nga-369",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "10f17de2bed32d8e564cabd2f60d80dba19dae4df32a26574b2b7699bb91eb8d",
+      "title": "Saint Lucy",
+      "artist": "Francesco del Cossa",
+      "url": "https://www.nga.gov/artworks/369-saint-lucy"
+    },
+    {
+      "id": "nga-432",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "3de350a364b46457544009f02ac19a92a17ef28f1f9eec63ddb33d2f2c800b49",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Giorgione",
+      "url": "https://www.nga.gov/artworks/432-adoration-of-the-shepherds"
+    },
+    {
+      "id": "nga-46",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "defa94673a9416aa51a524e37cf939ebb0825d8a838279c835e9270681ea7167",
+      "title": "The Annunciation",
+      "artist": "Jan van Eyck",
+      "url": "https://www.nga.gov/artworks/46-annunciation"
+    },
+    {
+      "id": "nga-46147",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "a29bad9c8b788982ea97609894d8d9cf6c9a6d5ec0d23ac4527956e17bcfd8c5",
+      "title": "Saint Lucy and a Donor",
+      "artist": "Veronese; Gabriele Caliari",
+      "url": "https://www.nga.gov/artworks/46147-saint-lucy-and-a-donor"
+    },
+    {
+      "id": "nga-96688",
+      "rating": 4,
+      "wasSuperseded": false,
+      "originalRating": 4,
+      "sourceSha256": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+      "title": "The Miraculous Draught of Fishes",
+      "artist": "Jacopo Bassano",
+      "url": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes"
+    },
+    {
+      "id": "cma-111435",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "ca3477cec38703486c8a9d050e79d48d94bbda9668035a7d3447690da00b76ee",
+      "title": "Coronation of the Virgin",
+      "artist": "Master of the Fröndenberg Altarpiece",
+      "url": "https://clevelandart.org/art/1929.920"
+    },
+    {
+      "id": "cma-112856",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "90c986e166f476ebcdee174e0560a7d795f708004095e2eb13393dfeb02ad78e",
+      "title": "The Crucifixion with a Carthusian Monk",
+      "artist": "Rogier van der Weyden",
+      "url": "https://clevelandart.org/art/1931.449"
+    },
+    {
+      "id": "cma-115394",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "4eaeeb997a94d719c1c77b958100895438017d0c209c429493899b98ed897324",
+      "title": "Adoration of the Magi",
+      "artist": "Konrad Laib",
+      "url": "https://clevelandart.org/art/1936.18"
+    },
+    {
+      "id": "cma-119698",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "5fbf39792f104c04a9327100e65cf4628db32fd9909e235a1704246bb4154c05",
+      "title": "The Crucifixion",
+      "artist": "Matteo di Giovanni",
+      "url": "https://clevelandart.org/art/1940.535"
+    },
+    {
+      "id": "cma-122223",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "6055f95de874861bf78662655a689bf4c293b9331b9fe7cbf7363ead48342347",
+      "title": "The Adoration of the Magi",
+      "artist": "Giovanni di Paolo",
+      "url": "https://clevelandart.org/art/1942.536"
+    },
+    {
+      "id": "cma-125248",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "a0e5686b8293d3d2567260a2900e1a7cf7fbf50046e55fb1ddb6a75f0b7e6873",
+      "title": "The Coronation of the Virgin with the Trinity",
+      "artist": "Master of Rubielos de Mora",
+      "url": "https://clevelandart.org/art/1947.208"
+    },
+    {
+      "id": "cma-130980",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "918b2bb2ac6aa5cd5fcfc52e463d14c1c831db7da53895addfd49ef77953161f",
+      "title": "The Annunciation and The Nativity",
+      "artist": "Jaume Ferrer the Younger",
+      "url": "https://clevelandart.org/art/1953.660"
+    },
+    {
+      "id": "cma-136922",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "bbe1f62fabdd4018dc99cb8ca8bcca662451cd566a237ecd4834a84052afbf60",
+      "title": "Virgin and Child with Saints",
+      "artist": "Ugolino di Nerio",
+      "url": "https://clevelandart.org/art/1961.40"
+    },
+    {
+      "id": "cma-138444",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "7b18fe56cecdd6ceb29cfe5824334dddbb98c35f1364119458e69aff086c5af5",
+      "title": "St. Francis Kneeling before Christ on the Cross",
+      "artist": "Sassetta",
+      "url": "https://clevelandart.org/art/1962.36"
+    },
+    {
+      "id": "cma-140148",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "9c4b503b069961ed89570b47bb527bab36c2d6b0d16a1f0aa0a9cc2f3f548b2f",
+      "title": "Pair of Panels from a Triptych: The Archangel Michael and St. Anthony Abbot",
+      "artist": "Fra Filippo Lippi",
+      "url": "https://clevelandart.org/art/1964.150"
+    },
+    {
+      "id": "cma-142472",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "114ef56e52c0f6a8ddc1c86afb91b888616b8d439d737aec6c1c85a004716871",
+      "title": "Virgin and Child with Saints",
+      "artist": "Berlinghiero",
+      "url": "https://clevelandart.org/art/1966.237"
+    },
+    {
+      "id": "cma-142473",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "8d23530f7c24d1a9b16bf6faa1584bee8fc283796af64e6de377ccd169acf17e",
+      "title": "Virgin and Child with Saints",
+      "artist": "Berlinghiero",
+      "url": "https://clevelandart.org/art/1966.237.a"
+    },
+    {
+      "id": "cma-143644",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+      "title": "Adoration of the Shepherds",
+      "artist": "Bernardo Cavallino",
+      "url": "https://clevelandart.org/art/1968.100"
+    },
+    {
+      "id": "cma-153406",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "a04db8f1205a0aeee237d29f17db19856c2beba06ecf6ad0e7da5075a92803b9",
+      "title": "Portrait of a Youth as Saint Sebastian",
+      "artist": "Marco d'Oggiono",
+      "url": "https://clevelandart.org/art/1986.9"
+    },
+    {
+      "id": "cma-94846",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "e76eab273a2ce74b4b0077ff517fbb94906ada94735a86225fe12f0e6c955415",
+      "title": "Pietà",
+      "artist": "Unknown old master",
+      "url": "https://clevelandart.org/art/1915.407"
+    },
+    {
+      "id": "cma-97143",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "bbd7a0d0f59e9accc3b5cf45017709895ef5b8e7e49f242d2f9c0f959241776d",
+      "title": "Adoration of the Shepherds",
+      "artist": "Unknown old master",
+      "url": "https://clevelandart.org/art/1916.782"
+    },
+    {
+      "id": "cma-97147",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "title": "The Crucifixion",
+      "artist": "Sodoma",
+      "url": "https://clevelandart.org/art/1916.786"
+    },
+    {
+      "id": "cma-97181",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "944ba04f66faaf903df9b945dc32952b8bf0b0f5e606eb45f7073c0739c7cc74",
+      "title": "Preparation for the Crucifixion",
+      "artist": "Unknown old master",
+      "url": "https://clevelandart.org/art/1916.816"
+    },
+    {
+      "id": "commons-debray-pentecost",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "8c7e68d71f4fb477be62ad877acbaaabad17833799e0b3ff675e13438acd620f",
+      "title": "Pentecost",
+      "artist": "Salomon de Bray",
+      "url": "https://commons.wikimedia.org/wiki/File:Pentecost,_by_Salomon_de_Bray_(1597-1664).jpg"
+    },
+    {
+      "id": "met-435584",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "f9293a3fe3c493805a59c912651cfbdc6ec6decbc75d0cf5c460638c1ad862e4",
+      "title": "The Nativity",
+      "artist": "Antoniazzo Romano",
+      "url": "https://www.metmuseum.org/art/collection/search/435584"
+    },
+    {
+      "id": "met-435616",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "72a40ba5f4f3136162e19ff40eb81d1f6562f25a64be325bd6791f1570892b38",
+      "title": "Saint Dominic Resuscitating Napoleone Orsini",
+      "artist": "Bartolomeo degli Erri",
+      "url": "https://www.metmuseum.org/art/collection/search/435616"
+    },
+    {
+      "id": "met-435617",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "34c851d253479b7346294ce68f908c637c3b01ab69115fb248c15a0c844b76cb",
+      "title": "Saint Thomas Aquinas Aided by Saints Peter and Paul",
+      "artist": "Bartolomeo degli Erri",
+      "url": "https://www.metmuseum.org/art/collection/search/435617"
+    },
+    {
+      "id": "met-435656",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "2cbb4291867ff44d99e3e81b8ed99b0f239ed212497e5502cb5c729453c6b19b",
+      "title": "The Assumption of the Virgin",
+      "artist": "Bergognone",
+      "url": "https://www.metmuseum.org/art/collection/search/435656"
+    },
+    {
+      "id": "met-435755",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "44529c53ef6f8d3643a391a9b49f28b01145fed9fd6fd2abe451265ff1b9e32a",
+      "title": "The Baptism of Christ",
+      "artist": "Sébastien Bourdon",
+      "url": "https://www.metmuseum.org/art/collection/search/435755"
+    },
+    {
+      "id": "met-435899",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "08375c7fbd4b1a7106f4bc0a4cd5070c38f5caf12d589599f33fff60451210ef",
+      "title": "The Annunciation",
+      "artist": "Petrus Christus",
+      "url": "https://www.metmuseum.org/art/collection/search/435899"
+    },
+    {
+      "id": "met-436050",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "db90c9082a8701fbccb7f0271a1bb14026a7d7dbe59ca156341fd414cf20288e",
+      "title": "Saint Lucy and Her Mother at the Shrine of Saint Agatha; Saint Lucy Giving Alms; Saint Lucy before Paschasius; Saint Lucy Resisting Efforts to Move Her",
+      "artist": "Giovanni di Bartolommeo Cristiani",
+      "url": "https://www.metmuseum.org/art/collection/search/436050"
+    },
+    {
+      "id": "met-436096",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "a5868af6037f575d05076c409bca27784cff735252bf3d7d2e6af2d01b13dbee",
+      "title": "The Annunciation",
+      "artist": "Gerard David",
+      "url": "https://www.metmuseum.org/art/collection/search/436096"
+    },
+    {
+      "id": "met-436098",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "5a6de0cc6c1a3e16c9a52d2bbe39dde87202fd678f3f029aeef472bdab5881fb",
+      "title": "The Crucifixion",
+      "artist": "Gerard David",
+      "url": "https://www.metmuseum.org/art/collection/search/436098"
+    },
+    {
+      "id": "met-436100",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "755de619133017096650118dba3c96f3cb0f1b6cca903baaaa057c94b7e8e4e0",
+      "title": "The Nativity",
+      "artist": "Gerard David",
+      "url": "https://www.metmuseum.org/art/collection/search/436100"
+    },
+    {
+      "id": "met-436104",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "c1cef22d2294b0f8574e30e0e90e2f9db8e70e7c226793ef1578fa1b6c79306b",
+      "title": "The Adoration of the Magi",
+      "artist": "Gerard David and Workshop",
+      "url": "https://www.metmuseum.org/art/collection/search/436104"
+    },
+    {
+      "id": "met-436115",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "22350106ae8a847e74a056f073b93be650796ba0e28e068e9ff0b5d022aa9e36",
+      "title": "The Good Samaritan",
+      "artist": "Alexandre-Gabriel Decamps",
+      "url": "https://www.metmuseum.org/art/collection/search/436115"
+    },
+    {
+      "id": "met-436302",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "9fc2875bc115caf055b8816a1519489a50651963b04bf5a37e445f0d6e93e0da",
+      "title": "The Good Samaritan",
+      "artist": "Workshop of Domenico Fetti",
+      "url": "https://www.metmuseum.org/art/collection/search/436302"
+    },
+    {
+      "id": "met-436513",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "7728e97a8b99a4a79cd27175311024f2b081b5739c445eba59df9be58bb44984",
+      "title": "The Presentation of Christ in the Temple",
+      "artist": "Giovanni di Paolo",
+      "url": "https://www.metmuseum.org/art/collection/search/436513"
+    },
+    {
+      "id": "met-436567",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "ae83f3ea09efd0540a86716d7bf215ad8251aad83b55d2842518e3aaa25bd852",
+      "title": "Scenes from the Life of Saint John the Baptist",
+      "artist": "Francesco Granacci",
+      "url": "https://www.metmuseum.org/art/collection/search/436567"
+    },
+    {
+      "id": "met-436672",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "36b3bed7dbe53ac4c32d2627c68f3d8bee159814d1b3105c42433e82e869a3f6",
+      "title": "Christ among the Doctors",
+      "artist": "Abraham Hondius",
+      "url": "https://www.metmuseum.org/art/collection/search/436672"
+    },
+    {
+      "id": "met-436801",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "45fa890f6d70b6a1aa4d22a120fe4c86deb752a4290740154385e177a1656400",
+      "title": "The Marriage Feast at Cana",
+      "artist": "Juan de Flandes",
+      "url": "https://www.metmuseum.org/art/collection/search/436801"
+    },
+    {
+      "id": "met-436982",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "285097a579f880e4478e10353b4d036fcecec7ff3111c27cda549e97d80990db",
+      "title": "Saint Anthony of Padua",
+      "artist": "Maso di Banco",
+      "url": "https://www.metmuseum.org/art/collection/search/436982"
+    },
+    {
+      "id": "met-437065",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "31af0f43daff866992d72ca5e7867bcde227f3740156205c52a6fbcb46a6759c",
+      "title": "Saint Paul",
+      "artist": "Lippo Memmi",
+      "url": "https://www.metmuseum.org/art/collection/search/437065"
+    },
+    {
+      "id": "met-437212",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "33ee04b680360b08047e09e6f9f0b72cdb886a2ba663d7f133c79b9b2ed80fcb",
+      "title": "The Adoration of the Magi",
+      "artist": "Netherlandish (Antwerp Mannerist) Painter",
+      "url": "https://www.metmuseum.org/art/collection/search/437212"
+    },
+    {
+      "id": "met-437273",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "0fb05964bc93c6dd84bd41affd5cf380fc0603f60eb347bfc9e417986af5a28c",
+      "title": "Saint John the Baptist; Saint Lucy",
+      "artist": "Perugino (Pietro di Cristoforo Vannucci)",
+      "url": "https://www.metmuseum.org/art/collection/search/437273"
+    },
+    {
+      "id": "met-437338",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "ccc4a3b12d18a15af2ff47fc6f30ba404e86e3a98764758aa7ac9ea94d9e0ba0",
+      "title": "The Crucifixion",
+      "artist": "Circle of Jan Provoost",
+      "url": "https://www.metmuseum.org/art/collection/search/437338"
+    },
+    {
+      "id": "met-437371",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "f8d08f533183a99c36d021f8e4bf089cc91204a5c5694bfd22676b1dd787e35f",
+      "title": "The Agony in the Garden",
+      "artist": "Raphael",
+      "url": "https://www.metmuseum.org/art/collection/search/437371"
+    },
+    {
+      "id": "met-437403",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "3c748a4137bae35764fa9fb607bf4af21366436db4c18594ec7aaba72427d108",
+      "title": "Christ and the Woman of Samaria",
+      "artist": "Style of Rembrandt",
+      "url": "https://www.metmuseum.org/art/collection/search/437403"
+    },
+    {
+      "id": "met-437490",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "4a5b21d087c1c827c792b89b0c37c689e1c72b0779cc1a3b8bea92a1de69a36a",
+      "title": "The Annunciation",
+      "artist": "Hans Memling",
+      "url": "https://www.metmuseum.org/art/collection/search/437490"
+    },
+    {
+      "id": "met-437542",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "artist": "Workshop of Peter Paul Rubens",
+      "url": "https://www.metmuseum.org/art/collection/search/437542"
+    },
+    {
+      "id": "met-437673",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "4dad30dbf33803fd4c79d07a1eed242bd757a8677bf72fdc91d1b05d502b2ff8",
+      "title": "The Assumption of the Virgin with Saints Michael and Benedict",
+      "artist": "Luca Signorelli",
+      "url": "https://www.metmuseum.org/art/collection/search/437673"
+    },
+    {
+      "id": "met-437743",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "93690bf1b31ed4b7459bacec00017dc9642a005744002dd57e9348e4ab106924",
+      "title": "The Trinity Adored by All Saints",
+      "artist": "Spanish Painter",
+      "url": "https://www.metmuseum.org/art/collection/search/437743"
+    },
+    {
+      "id": "met-437821",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "ce43ad89383b7d1526b2763d03638e6b9d17adbb4b8ee24a557fc09186c638ea",
+      "title": "The Miracle of the Loaves and Fishes",
+      "artist": "Jacopo Tintoretto (Jacopo Robusti)",
+      "url": "https://www.metmuseum.org/art/collection/search/437821"
+    },
+    {
+      "id": "met-437849",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "a4c2c2f6c7e1a844658f941a0fc1c14c58821db58e8be5f29c9390ef3c6f74e6",
+      "title": "The Flight into Egypt",
+      "artist": "Cosmè Tura",
+      "url": "https://www.metmuseum.org/art/collection/search/437849"
+    },
+    {
+      "id": "met-438462",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "315d83f40ce37d5a5816eb493c9b114295693cca1f1fffdc31164934fe57728f",
+      "title": "The Massacre of the Innocents",
+      "artist": "François Joseph Navez",
+      "url": "https://www.metmuseum.org/art/collection/search/438462"
+    },
+    {
+      "id": "met-438467",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "2ed2f5a5294815d7332c713eef824d2f616db12e5636ff5253908d87469832df",
+      "title": "The Birth and Naming of Saint John the Baptist; (reverse) Trompe-l'oeil with Painting of The Man of Sorrows",
+      "artist": "Bernard van Orley",
+      "url": "https://www.metmuseum.org/art/collection/search/438467"
+    },
+    {
+      "id": "met-438824",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "2cf40d7d5fe0c8a513b3054281d60ee5c31ce03adcb53be40f79d2d588b2929a",
+      "title": "Saint John the Baptist Preaching",
+      "artist": "Mattia Preti (Il Cavalier Calabrese)",
+      "url": "https://www.metmuseum.org/art/collection/search/438824"
+    },
+    {
+      "id": "met-441233",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "72c2c54a263ee67a0b7ed8ffc99474b64ce5c45096d75be0da16ca95ccab92d6",
+      "title": "The Annunciation",
+      "artist": "Peter Candid",
+      "url": "https://www.metmuseum.org/art/collection/search/441233"
+    },
+    {
+      "id": "met-442750",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "49073f2dae187f36439ba06a8832a872469bfa8b698b94233aa552ec0c3fa79c",
+      "title": "Saint Benedict",
+      "artist": "Segna di Buonaventura",
+      "url": "https://www.metmuseum.org/art/collection/search/442750"
+    },
+    {
+      "id": "met-458955",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "d5aed7ea083d8d8dbcd606cbebe95d2251547af8c577e81e54f423a5774cd4a5",
+      "title": "Saint Peter",
+      "artist": "Lippo Memmi",
+      "url": "https://www.metmuseum.org/art/collection/search/458955"
+    },
+    {
+      "id": "met-458961",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "23e130e69d12b38c6e414d4e1d521b0c1a638cdab3ced14206f8fa75cd7fc778",
+      "title": "The Coronation of the Virgin",
+      "artist": "Niccolò di Buonaccorso",
+      "url": "https://www.metmuseum.org/art/collection/search/458961"
+    },
+    {
+      "id": "met-458963",
+      "rating": 4,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "8a1138126560ff5087bfc2f9632b0f526171b7200e658652b504d03b0d968563",
+      "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+      "artist": "Paolo di Giovanni Fei",
+      "url": "https://www.metmuseum.org/art/collection/search/458963"
+    },
+    {
+      "id": "met-459016",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "054284b4a8e2e5d6cc89696f5ec6a9d7d3d8f44df0d23f08069fcc9d08ac1bf8",
+      "title": "The Annunciation",
+      "artist": "Sandro Botticelli",
+      "url": "https://www.metmuseum.org/art/collection/search/459016"
+    },
+    {
+      "id": "met-459044",
+      "rating": 2,
+      "wasSuperseded": true,
+      "originalRating": 3,
+      "sourceSha256": "55c27ba75d4760c142ad975b7550650664839c8b08d37db65858c1bb9b291be6",
+      "title": "Saints John the Evangelist and Mary Magdalene",
+      "artist": "Follower of Giotto",
+      "url": "https://www.metmuseum.org/art/collection/search/459044"
+    },
+    {
+      "id": "met-459055",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "944c9aa2d96068087c3015c2c134fe9707163e5a0662e3e90116499653382a1c",
+      "title": "The Annunciation",
+      "artist": "Hans Memling",
+      "url": "https://www.metmuseum.org/art/collection/search/459055"
+    },
+    {
+      "id": "met-459061",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "1af708834e149b6544a0e038ce187eeb99bbf86bc7e696f16f0ee49e89022fa0",
+      "title": "Christ Carrying the Cross, with the Crucifixion; The Resurrection, with the Pilgrims of Emmaus",
+      "artist": "Gerard David",
+      "url": "https://www.metmuseum.org/art/collection/search/459061"
+    },
+    {
+      "id": "met-459133",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "5a8b5c708e272daf9a34241c7f10489decc35236beb9534ef66887145b353fbb",
+      "title": "The Adoration of the Magi",
+      "artist": "Neapolitan Follower of Giotto",
+      "url": "https://www.metmuseum.org/art/collection/search/459133"
+    },
+    {
+      "id": "met-652416",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "dc5b87d8f35213f971f5baea844a43aaef6d05b1eacd5eeea3e7442a52f0116f",
+      "title": "The Crucifixion",
+      "artist": "Pedro Orrente",
+      "url": "https://www.metmuseum.org/art/collection/search/652416"
+    },
+    {
+      "id": "nga-1163",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "d0ea6e04cdec7e478508700297d4c610ecbfada4e05301aa71e699e013a0c974",
+      "title": "The Raising of Lazarus",
+      "artist": "Benozzo Gozzoli",
+      "url": "https://www.nga.gov/artworks/1163-raising-of-lazarus"
+    },
+    {
+      "id": "nga-12134",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "b25871f518f5c0c12128e177b6d53981404fd9886a06666febd5a03181196cdf",
+      "title": "The Coronation of the Virgin",
+      "artist": "Filippino Lippi",
+      "url": "https://www.nga.gov/artworks/12134-coronation-virgin"
+    },
+    {
+      "id": "nga-137505",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "698cb5de63454dbced72c21716ae6101e156ea49031210653d7b5252a478c580",
+      "title": "Christ Carrying the Cross",
+      "artist": "Cornelis van Poelenburch",
+      "url": "https://www.nga.gov/artworks/137505-christ-carrying-the-cross"
+    },
+    {
+      "id": "nga-171695",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "b21e70b7138d6286f8c97521953adf5266d841d6f28ac23155c1ee64f976dbe8",
+      "title": "Madonna and Child with Two Angels, Saint Rose, and Saint Catherine of Alexandria",
+      "artist": "Anonymous Artist; Pietro Perugino",
+      "url": "https://www.nga.gov/artworks/171695-madonna-and-child-with-two-angels-saint-rose-and-saint-catherine-of-alexandria"
+    },
+    {
+      "id": "nga-18",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "d7b4db7f94ee9432d250082edadd4b716e94002d00d157e55769594e9ffbde72",
+      "title": "The Annunciation",
+      "artist": "Masolino da Panicale",
+      "url": "https://www.nga.gov/artworks/18-annunciation"
+    },
+    {
+      "id": "nga-198424",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "f8fcb663be18b80aff466618caf66ae10143e676ecff20a5cfc5f7ab650ab490",
+      "title": "Scenes from the Passion of Christ: The Descent into Limbo [right panel]",
+      "artist": "Andrea di Vanni",
+      "url": "https://www.nga.gov/artworks/198424-scenes-from-the-passion-of-christ-the-descent-into-limbo-right-panel"
+    },
+    {
+      "id": "nga-364",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "84932116d6da6c1f2beb96f18e5fa629303b36c20d062b9450fca4b70859487c",
+      "title": "The Annunciation and Expulsion from Paradise",
+      "artist": "Giovanni di Paolo",
+      "url": "https://www.nga.gov/artworks/364-annunciation-and-expulsion-from-paradise"
+    },
+    {
+      "id": "nga-37635",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "50983c77d756e9fcacf799cf0fbba9a7da8cdc4ee8a71b8f28ab17a5f8760929",
+      "title": "Deacon Saint, with Saint Anthony Abbot [right panel]",
+      "artist": "Martino di Bartolomeo",
+      "url": "https://www.nga.gov/artworks/37635-deacon-saint-with-saint-anthony-abbot-right-panel"
+    },
+    {
+      "id": "nga-41582",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "a0dac54ea77edf5c116fb490281fbe779b100939bb93743e8320e553cc3066f3",
+      "title": "The Feast of Herod and the Beheading of Saint John the Baptist",
+      "artist": "Benozzo Gozzoli",
+      "url": "https://www.nga.gov/artworks/41582-feast-of-herod-and-the-beheading-of-saint-john-the-baptist"
+    },
+    {
+      "id": "nga-41661",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "90278d47f17cd2b153f62688e6d91e20f9c9c891a262c42a0b5bac440e98511e",
+      "title": "Christ among the Doctors [obverse]",
+      "artist": "Bernard van Orley",
+      "url": "https://www.nga.gov/artworks/41661-christ-among-doctors-obverse"
+    },
+    {
+      "id": "nga-41696",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "8dbcab042b04848af2eaf8ff0a723f4d38b8da9c933987ae83dd7c42145271ea",
+      "title": "The Flagellation of Christ",
+      "artist": "Bachiacca",
+      "url": "https://www.nga.gov/artworks/41696-flagellation-christ"
+    },
+    {
+      "id": "nga-45890",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "34f2926591360e82a617888cee1dd7707462998f03e85ac71aab72239787f208",
+      "title": "The Ascension",
+      "artist": "Johann Koerbecke",
+      "url": "https://www.nga.gov/artworks/45890-ascension"
+    },
+    {
+      "id": "nga-46170",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "9618fd9bb9bf44ff28352323108001e40edbf56657db0445c33866f3a8192f8f",
+      "title": "The Assumption of the Virgin with Busts of the Archangel Gabriel and the Virgin of the Annunciation",
+      "artist": "Paolo di Giovanni Fei",
+      "url": "https://www.nga.gov/artworks/46170-assumption-of-the-virgin-with-busts-of-the-archangel-gabriel-and-the-virgin-of-the-annunciation"
+    },
+    {
+      "id": "nga-46470",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "361e092842eae79c1bccf7a3552c09a52a210c5d0aa14c49d4407fd01aa1a0be",
+      "title": "The Assumption of the Virgin",
+      "artist": "Nicolas Poussin",
+      "url": "https://www.nga.gov/artworks/46470-assumption-virgin"
+    },
+    {
+      "id": "nga-50280",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "39b453f320609288e56c361c26c05721a4761ccc0cd6e3096ba51ced6ee57bc9",
+      "title": "The Assumption of the Virgin",
+      "artist": "Michel Sittow",
+      "url": "https://www.nga.gov/artworks/50280-assumption-of-the-virgin"
+    },
+    {
+      "id": "nga-50726",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "a9225bb7ebdcabbd9b8610d88576b8d24aa7e382173078e7181ae192be34d9a6",
+      "title": "The Temptation of Christ",
+      "artist": "Juan de Flandes",
+      "url": "https://www.nga.gov/artworks/50726-temptation-christ"
+    },
+    {
+      "id": "nga-56668",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "067c3f50117571d565ddd39f12fe494a8a935c6705d3580962e219fd099d13cd",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Adriaen Isenbrant",
+      "url": "https://www.nga.gov/artworks/56668-adoration-of-the-shepherds"
+    },
+    {
+      "id": "nga-6",
+      "rating": 3,
+      "wasSuperseded": false,
+      "originalRating": 3,
+      "sourceSha256": "7a98d8ad05454bf9ef5a3e9c43629b67f8962a3a703fb355e6f1a71bb15ebcab",
+      "title": "Saint Anthony Abbot [left panel]",
+      "artist": "Puccio di Simone; Allegretto Nuzi",
+      "url": "https://www.nga.gov/artworks/6-saint-anthony-abbot-left-panel"
+    },
+    {
+      "id": "commons-multscher-pentecost",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "662be382f179c06ca7e4e061d2a346b5df3c2671a7ed0d3d63db9fbc6c07e14d",
+      "title": "The Descent of the Holy Spirit (Pentecost)",
+      "artist": "Hans Multscher",
+      "url": "https://commons.wikimedia.org/wiki/File:Hans_Multscher_-_Au%C3%9Fenfl%C3%BCgel_des_Wurzacher_Altars_(links_unten)_-_Google_Art_Project.jpg"
+    },
+    {
+      "id": "met-437527",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "521b3051abc5f86aa0d069f884fb731cbd339160f1667d8472ee6b35dc72ca65",
+      "title": "The Glorification of the Eucharist",
+      "artist": "Peter Paul Rubens",
+      "url": "https://www.metmuseum.org/art/collection/search/437527"
+    },
+    {
+      "id": "met-435618",
+      "rating": 0,
+      "wasSuperseded": false,
+      "originalRating": 0,
+      "sourceSha256": "6a8c4112b9309924182d3e665e59ac0e8ba7bdadf565020ffad6a7480e55a0a1",
+      "title": "The Trinity",
+      "artist": "Bartolomeo di Giovanni",
+      "url": "https://www.metmuseum.org/art/collection/search/435618"
+    },
+    {
+      "id": "nga-357",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "d15af56ed1e568af7aeeda47251f0ab825ec4cc58d240d530ae9354a0b637803",
+      "title": "The Angel of the Annunciation",
+      "artist": "Simone Martini",
+      "url": "https://www.nga.gov/artworks/357-angel-of-the-annunciation"
+    },
+    {
+      "id": "cma-130377",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "0f76159593f7007b32959f94fd4db4b7b501bed04d7b19e4e6c1aa854c01b153",
+      "title": "The Baptism of Christ",
+      "artist": "Lucas Cranach",
+      "url": "https://clevelandart.org/art/1953.143"
+    },
+    {
+      "id": "met-437578",
+      "rating": 0,
+      "wasSuperseded": false,
+      "originalRating": 0,
+      "sourceSha256": "9b937183a1b0b65db29b1fca25b3337fbcb0618d42050e7496d37c06d724ee33",
+      "title": "Christ in Glory",
+      "artist": "Russian (Novgorod?) Painter",
+      "url": "https://www.metmuseum.org/art/collection/search/437578"
+    },
+    {
+      "id": "nga-206072",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "1f54124deae173160b0d95a92f122e2414cb5a335c5f22e865fefe23ba8bea04",
+      "title": "Scenes from the Passion of Christ: The Agony in the Garden, the Crucifixion, and the Descent into Limbo [entire triptych]",
+      "artist": "Andrea di Vanni",
+      "url": "https://www.nga.gov/artworks/206072-scenes-from-the-passion-of-christ-the-agony-in-the-garden-the-crucifixion-and-the-descent-into-"
+    },
+    {
+      "id": "cma-124117",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "04d7836ce5aa7a3b77d93afb274fcd4047dbd7235aa33db43551c77c42bdd71f",
+      "title": "Diptych with the Passion of Christ (left wing): Flagellation and Christ Before Pilate",
+      "artist": "Attribution pending inspection",
+      "url": "https://clevelandart.org/art/1945.115.a"
+    },
+    {
+      "id": "met-437639",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "6fb88aa0ef9d71a8fcf21bc0ba8d1897afcc172ed76b4fcd3da99ecefa63a72d",
+      "title": "Christ before Pilate; The Resurrection",
+      "artist": "Ludwig Schongauer",
+      "url": "https://www.metmuseum.org/art/collection/search/437639"
+    },
+    {
+      "id": "met-458978",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "45c3740f8ed373e46e9fb40b06dc7fe3bb42d1ce9ec1280ac5b4e9a1ce2d8b85",
+      "title": "Coronation of the Virgin",
+      "artist": "Giovanni di Paolo",
+      "url": "https://www.metmuseum.org/art/collection/search/458978"
+    },
+    {
+      "id": "nga-195513",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "f97ed5494eb80330a30f8881c99291dfb1c23d75e783ce86e52936840f57145d",
+      "title": "The Good Shepherd",
+      "artist": "Henry Ossawa Tanner",
+      "url": "https://www.nga.gov/artworks/195513-good-shepherd"
+    },
+    {
+      "id": "met-459007",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "31726ed6902185cc8d487659c331308d5072d412e33d5c4283e22c812161b681",
+      "title": "The Nativity",
+      "artist": "Lorenzo Monaco",
+      "url": "https://www.metmuseum.org/art/collection/search/459007"
+    },
+    {
+      "id": "met-435828",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "25091337842cffb185da13e54cab3d9807545b00b8f0ab2b3f6a8a989f8ca4a5",
+      "title": "The Presentation in the Temple",
+      "artist": "Byzantine Painter",
+      "url": "https://www.metmuseum.org/art/collection/search/435828"
+    },
+    {
+      "id": "met-437736",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "5442eb65643196738cf1654a30e81b083351fdc06069069d0c2addffe08ede5c",
+      "title": "Christ among the Doctors",
+      "artist": "Spanish (Catalan) Painter",
+      "url": "https://www.metmuseum.org/art/collection/search/437736"
+    },
+    {
+      "id": "cma-162322",
+      "rating": 0,
+      "wasSuperseded": false,
+      "originalRating": 0,
+      "sourceSha256": "2c25e59ad6f8e0b4c5a2cdd1210b8a1b076ba1a410be8971b68cfe2bf1bfd8cb",
+      "title": "Mater Dolorosa (The Virgin Mary Mourning)",
+      "artist": "Georges-Daniel de Monfreid",
+      "url": "https://clevelandart.org/art/2002.54"
+    },
+    {
+      "id": "kress-k0355",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "91c7a4fd4e5ed93721fddf45a4c17f2775afe2d6e95a6a007948e18d19105e09",
+      "title": "Saint John the Baptist",
+      "artist": "Vittore Carpaccio",
+      "url": "https://www.kressfoundation.org/kress-collection/artwork/61fd2920fc2ebf20a1fbb4205b36bbcea5a7707d09dcff52a61f0d55e9b4abf5"
+    },
+    {
+      "id": "commons-el-paso-sacred-heart-retablo",
+      "rating": 0,
+      "wasSuperseded": false,
+      "originalRating": 0,
+      "sourceSha256": "dc2bff1f0b3601394da268703bbd655e316bdf02e5d3471b49195967cf024681",
+      "title": "The Sacred Heart of Jesus",
+      "artist": "Anonymous Mexican artist",
+      "url": "https://commons.wikimedia.org/wiki/File:%27The_Sacred_Heart_of_Jesus%27,_anonymous_Mexican_retablo,_oil_on_tin,_mid_19th_century,_El_Paso_Museum_of_Art.JPG"
+    },
+    {
+      "id": "met-459021",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "877feffce162f92b440e65fe030ba5efc3d402d514e9aad8a033e8209f2c02f9",
+      "title": "The Flagellation",
+      "artist": "Master of Forlì",
+      "url": "https://www.metmuseum.org/art/collection/search/459021"
+    },
+    {
+      "id": "met-459005",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "c26c02b5aa57caaf0ffde33b539977e332eb6b9c2a72e2e6b35ae6259d6ff724",
+      "title": "The Crucifixion",
+      "artist": "Andrea di Cione (Orcagna)",
+      "url": "https://www.metmuseum.org/art/collection/search/459005"
+    },
+    {
+      "id": "cma-128075",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "8aa5c6f68dac839907b00f72a5ac44903c47c41b59b990384b306977dd468415",
+      "title": "The Visitation",
+      "artist": "Artist not identified in first API export",
+      "url": "https://clevelandart.org/art/1950.91"
+    },
+    {
+      "id": "nga-42494",
+      "rating": 0,
+      "wasSuperseded": false,
+      "originalRating": 0,
+      "sourceSha256": "1c6ff113797c015b4136a63a20fc2c1c45fc230c2aa463094f077c824f6eb73f",
+      "title": "Christ and the Woman of Samaria",
+      "artist": "American 18th Century",
+      "url": "https://www.nga.gov/artworks/42494-christ-and-the-woman-of-samaria"
+    },
+    {
+      "id": "cma-122338",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "aa6178b97052ec2dff5ad2f9da58269a23cabfd311983fce7c1f9d2b66b4075a",
+      "title": "The Annunciation",
+      "artist": "Albert Bouts",
+      "url": "https://clevelandart.org/art/1942.635"
+    },
+    {
+      "id": "cma-131820",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "2f8a22e7f3e9dffd9d70da4d490f2be318687da96ce1dfec41cdb4d104ae9c6f",
+      "title": "The Annunciation",
+      "artist": "Artist not identified in source API",
+      "url": "https://clevelandart.org/art/1954.393"
+    },
+    {
+      "id": "met-458966",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "93850d35216a47f7fb14613a31efe7885720992f7b8fe4f2b465a2d401923d2c",
+      "title": "The Annunciation",
+      "artist": "Sassetta",
+      "url": "https://www.metmuseum.org/art/collection/search/458966"
+    },
+    {
+      "id": "met-458998",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "3dd3b3ef433e7d549e34ff2383a18a061de42ebb0b1207bbbd3cffb1d60ec725",
+      "title": "The Assumption of the Virgin",
+      "artist": "Bernardo Daddi",
+      "url": "https://www.metmuseum.org/art/collection/search/458998"
+    },
+    {
+      "id": "nga-46145",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "f80258023f805c42c7b255fcbc8debdaed57005f027afd6193ff285ace00aeea",
+      "title": "The Assumption of the Virgin",
+      "artist": "Juan de Valdés Leal",
+      "url": "https://www.nga.gov/artworks/46145-assumption-virgin"
+    },
+    {
+      "id": "met-437272",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "a19493cf951a720a556bbf8fd880a5ab9d094739a8ac865a7ee5e8e3164b5c09",
+      "title": "The Resurrection",
+      "artist": "Perugino",
+      "url": "https://www.metmuseum.org/art/collection/search/437272"
+    },
+    {
+      "id": "met-436416",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "3adec9e8348ff88ef3dd7e88aa88e074802ecf807887bce30c9dc1ba823db3e3",
+      "title": "The Resurrection",
+      "artist": "Spanish (Aragonese) Painter",
+      "url": "https://www.metmuseum.org/art/collection/search/436416"
+    },
+    {
+      "id": "cma-132367",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "b0f9f949e793d804fd6708106212c6bfbdf77a89faddc8a81f5c6d438c0eef35",
+      "title": "Virgin and Child Enthroned",
+      "artist": "Battista di Biagio Sanguigni",
+      "url": "https://clevelandart.org/art/1954.834"
+    },
+    {
+      "id": "met-435766",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "3222b992841b7c4434e16f8c79c8baa55020f592310966de3aefe3f49df58cb9",
+      "title": "Virgin and Child",
+      "artist": "Dieric Bouts",
+      "url": "https://www.metmuseum.org/art/collection/search/435766"
+    },
+    {
+      "id": "cma-97166",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "91ccd2eb8d41170cefc15cfbe0891f9aae50218344a9a7c7efcfa8cddd1bce0c",
+      "title": "Virgin and Child with Angels",
+      "artist": "Fra Filippo Lippi",
+      "url": "https://clevelandart.org/art/1916.802"
+    },
+    {
+      "id": "cma-122339",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "6f78edf12f936f48c61687ae974cf1947caa9c802a91b3d0bf46c5dab96877b0",
+      "title": "Virgin and Child with Saints and Donors",
+      "artist": "Giovanni Battista Cima da Conegliano (workshop)",
+      "url": "https://clevelandart.org/art/1942.636"
+    },
+    {
+      "id": "cma-114684",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "e756ee46553f51efcc009b2200cd5ffe2adebc047e03523a9dc754e26727e54a",
+      "title": "Virgin and Child",
+      "artist": "Hans Memling",
+      "url": "https://clevelandart.org/art/1934.29"
+    },
+    {
+      "id": "met-459053",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "3b7d1a76ca63b3bd2fae1901d4e448c0efc75181501dde05ca73c4d8aee4c5d9",
+      "title": "Virgin and Child",
+      "artist": "Hans Memling",
+      "url": "https://www.metmuseum.org/art/collection/search/459053"
+    },
+    {
+      "id": "met-436795",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "e2d8035c55d43581b922a5428470afde12637bc8f94a98c2c41ca98250dcada6",
+      "title": "Virgin and Child",
+      "artist": "Joos van Cleve",
+      "url": "https://www.metmuseum.org/art/collection/search/436795"
+    },
+    {
+      "id": "cma-97139",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "311931317c549e5440aac67b48c79ac83bffa7b74063fab5ba881c16739ffaaa",
+      "title": "Virgin and Child",
+      "artist": "Leonardo da Vinci",
+      "url": "https://clevelandart.org/art/1916.779"
+    },
+    {
+      "id": "met-459065",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "b330d826719f69c1cceac4888c7d0eb71b44ce133488df07f30a818d963a0ce1",
+      "title": "Virgin and Child",
+      "artist": "Master of the Female Half-Lengths",
+      "url": "https://www.metmuseum.org/art/collection/search/459065"
+    },
+    {
+      "id": "met-459066",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "f4957572be074bff636115310541f9d0c62df701cfe0b101a573d5c97003bb46",
+      "title": "Virgin and Child",
+      "artist": "Netherlandish (Antwerp?)",
+      "url": "https://www.metmuseum.org/art/collection/search/459066"
+    },
+    {
+      "id": "cma-120995",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "e15a3643d991df6caaa4ee0d97602d7592347082f008ae438d9a7589c5ae8cf7",
+      "title": "Triptych with the Adoration of the Magi",
+      "artist": "Artist not identified in first-pass CMA metadata",
+      "url": "https://clevelandart.org/art/1941.68"
+    },
+    {
+      "id": "met-459064",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "5474002be1752a93ac6eec116dda10b986a7ec121faa7e06cd65afe4508da9fb",
+      "title": "Adoration of the Magi",
+      "artist": "Follower of Netherlandish Antwerp Mannerist",
+      "url": "https://www.metmuseum.org/art/collection/search/459064"
+    },
+    {
+      "id": "cma-128389",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "142317fe996175274c0611e0a354f0cfba21d8bce30be1a5b4af6608e98bab12",
+      "title": "The Adoration of the Magi",
+      "artist": "Geertgen tot Sint Jans",
+      "url": "https://clevelandart.org/art/1951.353"
+    },
+    {
+      "id": "cma-97142",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "593e798652fc21dd2ca886e1bb6163f36a294c3445590fb4e8fe0ea00f9cc932",
+      "title": "Adoration of the Shepherds",
+      "artist": "Artist not identified in source API",
+      "url": "https://clevelandart.org/art/1916.781"
+    },
+    {
+      "id": "nga-106787",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "03c0742ec06fba4e6f59191c48286109ceb881dac7ff49a27ab9454c1a9406d1",
+      "title": "Garland of Flowers with Adoration of the Shepherds",
+      "artist": "Frans Francken the Younger; Master HDB",
+      "url": "https://www.nga.gov/artworks/106787-garland-of-flowers-with-adoration-of-the-shepherds"
+    },
+    {
+      "id": "cma-124118",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "7fc3fbae0f44af0029f9b29b22b62210b933ab6b7bd5a881b5844200f355dfb6",
+      "title": "Diptych with the Passion of Christ (right wing): Crowning with Thorns and Agony in the Garden",
+      "artist": "Attribution pending inspection",
+      "url": "https://clevelandart.org/art/1945.115.b"
+    },
+    {
+      "id": "nga-41667",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "aa6811b8cf2a30934849e75ee21859b6ddbba3269d5580379498a3cd902a760b",
+      "title": "Christ Carrying the Cross",
+      "artist": "Benvenuto di Giovanni",
+      "url": "https://www.nga.gov/artworks/41667-christ-carrying-the-cross"
+    },
+    {
+      "id": "met-439977",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "ccc9e8353e3b9803a02852cab64e8d8d1dad6711f23af5b91e8b84448e556111",
+      "title": "Christ Carrying the Cross",
+      "artist": "Jan Gossart",
+      "url": "https://www.metmuseum.org/art/collection/search/439977"
+    },
+    {
+      "id": "cma-97136",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "e1d7ba6a79efa8d179b40131a5a70a9e370dbf48083738cd49dedfd88be3b0b3",
+      "title": "The Crucifixion",
+      "artist": "Andrea da Firenze",
+      "url": "https://clevelandart.org/art/1916.776"
+    },
+    {
+      "id": "nga-167923",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "971668734c33e005b3afd0cf873faeb43434ed002a32f33d543da410fdfe62ed",
+      "title": "Scenes from the Passion of Christ: The Crucifixion [middle panel]",
+      "artist": "Andrea di Vanni",
+      "url": "https://www.nga.gov/artworks/167923-scenes-from-the-passion-of-christ-the-crucifixion-middle-panel"
+    },
+    {
+      "id": "cma-127664",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "75cc02fe448b99a04a5a4ec5c43a8aae753e8c981008cbff8d32609b29eb6f19",
+      "title": "Crucifixion",
+      "artist": "Artist not identified in source API",
+      "url": "https://clevelandart.org/art/1950.345"
+    },
+    {
+      "id": "met-910391",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "b192547889db56e37f3a46d49fca02c78bbbc60b981380c309c8106696c8bb35",
+      "title": "Christ on the Cross",
+      "artist": "Cecco del Caravaggio (Francesco Buoneri)",
+      "url": "https://www.metmuseum.org/art/collection/search/910391"
+    },
+    {
+      "id": "cma-136864",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "0ffc0c53a851034486d2a442ba47f27f4ada34389eccd9b505da4dfc286ea6df",
+      "title": "Portable Triptych Icon: The Crucifixion",
+      "artist": "Unknown old master",
+      "url": "https://clevelandart.org/art/1961.35.b"
+    },
+    {
+      "id": "cma-140149",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "44de90f8daafa474561384874236bb65ca6efbcdda6e0840c032c31427c16f7d",
+      "title": "Panel from a Triptych: The Archangel Michael",
+      "artist": "Fra Filippo Lippi",
+      "url": "https://clevelandart.org/art/1964.150.1"
+    },
+    {
+      "id": "met-458984",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "2b4133fcf6012c34796fae2c134b0b9baeb804952675565e85c2e61007a717eb",
+      "title": "The Birth and Naming of Saint John the Baptist",
+      "artist": "Sano di Pietro",
+      "url": "https://www.metmuseum.org/art/collection/search/458984"
+    },
+    {
+      "id": "met-459041",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "61639d005dcb7e409c6e9b3452dafe384ffccc1062d4289aed09784a0401f53f",
+      "title": "The Last Judgment; The Virgin and Child with a Bishop-Saint and Saint Peter Martyr; The Crucifixion; The Glorification of Saint Thomas Aquinas; The Nativity",
+      "artist": "Master of the Dominican Effigies",
+      "url": "https://www.metmuseum.org/art/collection/search/459041"
+    },
+    {
+      "id": "cma-515375",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "5a10a6e845a77b3bc1c383af115d004308d745822ed526d0312611c558957655",
+      "title": "Triptych with The Lamentation of Christ, St. Barbara and St. Catherine of Alexandria",
+      "artist": "Master of the Krainburg Altar",
+      "url": "https://clevelandart.org/art/2022.86"
+    },
+    {
+      "id": "cma-142474",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "51625dce30cd831bc6e74f86cf12227b98ab4a46b4860aa48fa1ee27d63e7bd1",
+      "title": "The Crucifixion of St. Andrew, with St. Francis and St. Paul below",
+      "artist": "Berlinghiero",
+      "url": "https://clevelandart.org/art/1966.237.b"
+    },
+    {
+      "id": "cma-128842",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "69c46448fb6c915bcc285774411afb77a16ae26a3b7ec1ad98a1a0c61ddcf772",
+      "title": "Saint Peter Repentant",
+      "artist": "Georges de La Tour",
+      "url": "https://clevelandart.org/art/1951.454"
+    },
+    {
+      "id": "nga-41627",
+      "rating": 1,
+      "wasSuperseded": false,
+      "originalRating": 1,
+      "sourceSha256": "838c18059447e42812f4987c615ca7c28e7702207cb8e3a6e9d0f5e58c261c2f",
+      "title": "Madonna and Child with Saint Anthony Abbot and Saint Sigismund",
+      "artist": "Neroccio de' Landi",
+      "url": "https://www.nga.gov/artworks/41627-madonna-and-child-with-saint-anthony-abbot-and-saint-sigismund"
+    },
+    {
+      "id": "met-436565",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "d7ef90f5dfd3545d7fc64e7347891c1bff79b3415fa5909dbab975871b85b494",
+      "title": "Totila before Saint Benedict",
+      "artist": "Benozzo Gozzoli",
+      "url": "https://www.metmuseum.org/art/collection/search/436565"
+    },
+    {
+      "id": "met-435863",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "b4d8bc59fb81f7db5d5622dc67240bd33bedd7dc199333030d74ddbf0ab1b26a",
+      "title": "Saint Catherine Disputing and Two Donors",
+      "artist": "Cenni di Francesco di Ser Cenni",
+      "url": "https://www.metmuseum.org/art/collection/search/435863"
+    },
+    {
+      "id": "nga-440",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "600c3870d71812f4ff57abbcfdb34d47b51a7fffcddad2a75bdbadb52b8eec98",
+      "title": "Madonna and Child with Saint Jerome, Saint Catherine of Alexandria, and Angels",
+      "artist": "Matteo di Giovanni",
+      "url": "https://www.nga.gov/artworks/440-madonna-and-child-with-saint-jerome-saint-catherine-of-alexandria-and-angels"
+    },
+    {
+      "id": "met-458974",
+      "rating": 2,
+      "wasSuperseded": false,
+      "originalRating": 2,
+      "sourceSha256": "c035bc36e358f71e0f48dac67ee2bcf7024d252d7dc9481eb4bfcd4f5571a9bb",
+      "title": "Saint Catherine of Siena Receiving the Stigmata",
+      "artist": "Giovanni di Paolo",
+      "url": "https://www.metmuseum.org/art/collection/search/458974"
+    }
+  ],
+  "newW36RatedPortraits": [
+    {
+      "id": "W36-SNT-DC-01-90bde6f815fb",
+      "subjectId": "SNT-DC-01",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+      "artist": null,
+      "title": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg"
+    },
+    {
+      "id": "W36-SNT-DC-01-c110ca7b6f47",
+      "subjectId": "SNT-DC-01",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P26_St._Ambrose_(1695-1696).jpg",
+      "artist": null,
+      "title": "Michael Willman Opus Magnum 2019 P26 St. Ambrose (1695-1696).jpg"
+    },
+    {
+      "id": "W36-SNT-DC-09-1a42763e6883",
+      "subjectId": "SNT-DC-09",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_mei,_Santa_Caterina_da_Siena,_1641.jpg",
+      "artist": null,
+      "title": "Bernardino mei, Santa Caterina da Siena, 1641.jpg"
+    },
+    {
+      "id": "W36-SNT-DC-09-2001b4fdecbf",
+      "subjectId": "SNT-DC-09",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cristofano_Allori,_Saint_Catherine_of_Siena.jpg",
+      "artist": null,
+      "title": "Cristofano Allori, Saint Catherine of Siena.jpg"
+    },
+    {
+      "id": "W36-SNT-DC-12-4eb0554ff8e3",
+      "subjectId": "SNT-DC-12",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Bussy-Rabutin_-_Saint_Fran%C3%A7ois_de_Sales,_%C3%A9v%C3%AAque_de_Gen%C3%A8ve_(bgw19_0375).jpg",
+      "artist": null,
+      "title": "Château de Bussy-Rabutin - Saint François de Sales, évêque de Genève (bgw19 0375).jpg"
+    },
+    {
+      "id": "W36-SNT-DC-12-faa6ec8f702d",
+      "subjectId": "SNT-DC-12",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Sales,_de_Francisco_Bayeu_(Museo_del_Prado).jpg",
+      "artist": null,
+      "title": "San Francisco de Sales, de Francisco Bayeu (Museo del Prado).jpg"
+    },
+    {
+      "id": "W36-SNT-DC-03-95e393500a13",
+      "subjectId": "SNT-DC-03",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Antwerpen_Maagdenhuis_Antoon_van_Dyck_St._Hieronymus_2709.jpg",
+      "artist": null,
+      "title": "Antwerpen Maagdenhuis Antoon van Dyck St. Hieronymus 2709.jpg"
+    },
+    {
+      "id": "W36-SNT-DC-03-91cbe9d624ab",
+      "subjectId": "SNT-DC-03",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cornelis_Metsys_-_Paysage_avec_saint_J%C3%A9r%C3%B4me_-_ca_1545.jpg",
+      "artist": null,
+      "title": "Cornelis Metsys - Paysage avec saint Jérôme - ca 1545.jpg"
+    },
+    {
+      "id": "W36-SNT-DC-03-756125b4554f",
+      "subjectId": "SNT-DC-03",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Bellini_%E2%80%94_Saint_Jerome_Reading_in_the_Desert.jpg",
+      "artist": null,
+      "title": "Giovanni Bellini — Saint Jerome Reading in the Desert.jpg"
+    },
+    {
+      "id": "W36-SNT-DC-03-5106a211fa18",
+      "subjectId": "SNT-DC-03",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P29_St._Jerome_(1695).jpg",
+      "artist": null,
+      "title": "Michael Willman Opus Magnum 2019 P29 St. Jerome (1695).jpg"
+    },
+    {
+      "id": "W36-SNT-DC-08-4a0cadffec49",
+      "subjectId": "SNT-DC-08",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Antonio_Palomino._Santa_Teresa_de_Jes%C3%BAs_escribiendo.jpg",
+      "artist": null,
+      "title": "Antonio Palomino. Santa Teresa de Jesús escribiendo.jpg"
+    },
+    {
+      "id": "W36-SNT-DC-05-75d773c330b1",
+      "subjectId": "SNT-DC-05",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Antonio_e_giovanni_sarnelli,_san_tommaso_d'aquino,_1750_ca.jpg",
+      "artist": null,
+      "title": "Antonio e giovanni sarnelli, san tommaso d'aquino, 1750 ca.jpg"
+    },
+    {
+      "id": "W36-SNT-DC-05-03c9930b6d5a",
+      "subjectId": "SNT-DC-05",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:San_Tommaso_d'Aquino_(Jacopo_del_Casentino,_XIV_sec._-Mus%C3%A9e_du_Petit_Palais_-_Avignon).jpg",
+      "artist": null,
+      "title": "San Tommaso d'Aquino (Jacopo del Casentino, XIV sec. -Musée du Petit Palais - Avignon).jpg"
+    },
+    {
+      "id": "W36-SNT-AP-03-3e9d9be5f41a",
+      "subjectId": "SNT-AP-03",
+      "rating": 5,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+      "artist": null,
+      "title": "Guido Reni - Saint James the Greater - Google Art Project.jpg"
+    },
+    {
+      "id": "W36-SNT-AP-03-09e61d002bd2",
+      "subjectId": "SNT-AP-03",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Novelli_Pietro_-_Saint_Jacques_le_Majeur.jpg",
+      "artist": null,
+      "title": "Novelli Pietro - Saint Jacques le Majeur.jpg"
+    },
+    {
+      "id": "W36-SNT-AP-08-16b8b5ca0d8c",
+      "subjectId": "SNT-AP-08",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jusepe_de_ribera,_san_matteo,_01.jpg",
+      "artist": null,
+      "title": "Jusepe de ribera, san matteo, 01.jpg"
+    },
+    {
+      "id": "W36-SNT-AP-08-c5bdab70b9d1",
+      "subjectId": "SNT-AP-08",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Matthew,_by_Valentin_de_Boulogne.jpg",
+      "artist": null,
+      "title": "Saint Matthew, by Valentin de Boulogne.jpg"
+    },
+    {
+      "id": "W36-SNT-AP-12-4c84c04059fa",
+      "subjectId": "SNT-AP-12",
+      "rating": 1,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:1756_Palko_Heiliger_Paul_Kloster_Strahov_Prag_anagoria.jpg",
+      "artist": null,
+      "title": "1756 Palko Heiliger Paul Kloster Strahov Prag anagoria.jpg"
+    },
+    {
+      "id": "W36-SNT-AP-12-eb4c01bda35d",
+      "subjectId": "SNT-AP-12",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_-_Saint_Paul_-_Google_Art_Project.jpg",
+      "artist": null,
+      "title": "Annibale Carracci - Saint Paul - Google Art Project.jpg"
+    },
+    {
+      "id": "W36-SNT-AP-01-60edc21939b3",
+      "subjectId": "SNT-AP-01",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:1756_Palko_Heiliger_Peter_Kloster_Strahov_Prag_anagoria.jpg",
+      "artist": null,
+      "title": "1756 Palko Heiliger Peter Kloster Strahov Prag anagoria.jpg"
+    },
+    {
+      "id": "W36-SNT-AP-01-59018aa21ed9",
+      "subjectId": "SNT-AP-01",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jacob_Jordaens_-_Saint_Peter_(cropped).jpg",
+      "artist": null,
+      "title": "Jacob Jordaens - Saint Peter (cropped).jpg"
+    },
+    {
+      "id": "W36-SNT-AP-05-ad7aba169162",
+      "subjectId": "SNT-AP-05",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Philippius_St._Ursula_Unterlangkampfen-1.jpg",
+      "artist": null,
+      "title": "Philippius St. Ursula Unterlangkampfen-1.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-22-65da02a7c874",
+      "subjectId": "SNT-OT-22",
+      "rating": 1,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Andrea_da_Firenze_-_Saint_Agnes_-_Google_Art_Project.jpg",
+      "artist": null,
+      "title": "Andrea da Firenze - Saint Agnes - Google Art Project.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-06-b7683cc00a20",
+      "subjectId": "SNT-OT-06",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Pedro_obregon-san_antonio_de_padua-prado.jpg",
+      "artist": null,
+      "title": "Pedro obregon-san antonio de padua-prado.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-14-7ab28e45f078",
+      "subjectId": "SNT-OT-14",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Nicodemo_ferrucci,_san_benedetto,_1634_circa.jpg",
+      "artist": null,
+      "title": "Nicodemo ferrucci, san benedetto, 1634 circa.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-24-83c5417b978d",
+      "subjectId": "SNT-OT-24",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francesco_furini,_santa_caterina_d'alessandria,_1625-30_ca.jpg",
+      "artist": null,
+      "title": "Francesco furini, santa caterina d'alessandria, 1625-30 ca.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-23-e32e57b5f3c4",
+      "subjectId": "SNT-OT-23",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_mei,_santa_cecilia,_1650_circa.JPG",
+      "artist": null,
+      "title": "Bernardino mei, santa cecilia, 1650 circa.JPG"
+    },
+    {
+      "id": "W36-SNT-OT-23-3538f3078e54",
+      "subjectId": "SNT-OT-23",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg",
+      "artist": null,
+      "title": "Cavalier Arpino - santa cecilia.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-23-b6618ae05045",
+      "subjectId": "SNT-OT-23",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Cairo,_Santa_Cecilia.jpg",
+      "artist": null,
+      "title": "Francesco Cairo, Santa Cecilia.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-23-ea67147c879b",
+      "subjectId": "SNT-OT-23",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Guercino_-_Santa_Cecilia.JPG",
+      "artist": null,
+      "title": "Guercino - Santa Cecilia.JPG"
+    },
+    {
+      "id": "W36-SNT-OT-23-cd0d09565878",
+      "subjectId": "SNT-OT-23",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
+      "artist": null,
+      "title": "Hippolyte Fournier Saint Cécile.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-13-5387d641cce6",
+      "subjectId": "SNT-OT-13",
+      "rating": 5,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
+      "artist": null,
+      "title": "Claudio coello-santo domingo.JPG"
+    },
+    {
+      "id": "W36-SNT-OT-13-e1db7ffd5583",
+      "subjectId": "SNT-OT-13",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Gaspar_de_Crayer_-_Saint_Dominic.jpg",
+      "artist": null,
+      "title": "Gaspar de Crayer - Saint Dominic.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-15-08edb5c55195",
+      "subjectId": "SNT-OT-15",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_de_Caro_-_St_Francis_Xavier.jpg",
+      "artist": null,
+      "title": "Lorenzo de Caro - St Francis Xavier.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-16-4f99328b806b",
+      "subjectId": "SNT-OT-16",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:'Saint_Ignatius_Loyola',_anonymous_Mexican_oil_on_copper_painting,_c._18th_century,_El_Paso_Museum_of_Art.JPG",
+      "artist": null,
+      "title": "'Saint Ignatius Loyola', anonymous Mexican oil on copper painting, c. 18th century, El Paso Museum of Art.JPG"
+    },
+    {
+      "id": "W36-SNT-OT-16-377ced58de3c",
+      "subjectId": "SNT-OT-16",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_Saint_Ignatius_Loyola_-_Google_Art_Project.jpg",
+      "artist": null,
+      "title": "Miguel Cabrera - Saint Ignatius Loyola - Google Art Project.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-07-45a8e73c4d83",
+      "subjectId": "SNT-OT-07",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg",
+      "artist": null,
+      "title": "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-01-79879ed00670",
+      "subjectId": "SNT-OT-01",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jozef_van_Nazareth,_1864,_Musea_Brugge,_0020.GRO0159.III.jpg",
+      "artist": null,
+      "title": "Jozef van Nazareth, 1864, Musea Brugge, 0020.GRO0159.III.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-01-6ac7fd05f7db",
+      "subjectId": "SNT-OT-01",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jusepe_de_ribera,_san_giuseppe.jpg",
+      "artist": null,
+      "title": "Jusepe de ribera, san giuseppe.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-21-c1a62bfd80cf",
+      "subjectId": "SNT-OT-21",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francesco_conti,_santa_lucia.jpg",
+      "artist": null,
+      "title": "Francesco conti, santa lucia.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-21-9c0ed723dbf0",
+      "subjectId": "SNT-OT-21",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Pasquale_Ottino_-_Saint_Lucy_-_y1935-39_-_Princeton_University_Art_Museum.jpg",
+      "artist": null,
+      "title": "Pasquale Ottino - Saint Lucy - y1935-39 - Princeton University Art Museum.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-21-d44ec5fc2551",
+      "subjectId": "SNT-OT-21",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Lucy_1552_ca._by_Fermo_Ghisoni,_in_Cathedral_of_Mantua.jpg",
+      "artist": null,
+      "title": "Saint Lucy 1552 ca. by Fermo Ghisoni, in Cathedral of Mantua.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-21-9d8de5339e72",
+      "subjectId": "SNT-OT-21",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Santa_Lucia._Jusepe_de_Ribera._3166.jpg",
+      "artist": null,
+      "title": "Santa Lucia. Jusepe de Ribera. 3166.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-29-fb377ea215d8",
+      "subjectId": "SNT-OT-29",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Ca'_Rezzonico_-_Sala_Tiepolo_-_San_Martino_di_Tours_by_Giambattiasta_Tiepolo.jpg",
+      "artist": null,
+      "title": "Ca' Rezzonico - Sala Tiepolo - San Martino di Tours by Giambattiasta Tiepolo.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-25-b91d61b0316d",
+      "subjectId": "SNT-OT-25",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Circle_of_Josefa_de_%C3%93bidos_%E2%80%93_Penitent_Magdalene_%E2%80%93_c._1665%E2%80%931680_%E2%80%93_Oil_on_copper.jpg",
+      "artist": null,
+      "title": "Circle of Josefa de Óbidos – Penitent Magdalene – c. 1665–1680 – Oil on copper.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-20-729505071896",
+      "subjectId": "SNT-OT-20",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Corrado_Giaquinto_Saint_Nicolas_de_Bari.JPG",
+      "artist": null,
+      "title": "Corrado Giaquinto Saint Nicolas de Bari.JPG"
+    },
+    {
+      "id": "W36-SNT-OT-03-cf8194fc3064",
+      "subjectId": "SNT-OT-03",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael,_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+      "artist": null,
+      "title": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg"
+    },
+    {
+      "id": "W36-SNT-OT-03-4b4687c31df7",
+      "subjectId": "SNT-OT-03",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael,_Juan_de_Vald%C3%A9s_Leal.jpg",
+      "artist": null,
+      "title": "Arcángel San Rafael, Juan de Valdés Leal.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-03-d46e72fdfdad",
+      "subjectId": "SNT-OT-03",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Raphael_Aragon_-_Archangel_Saint_Raphael_(San_Raphael)_-_BF1067_-_Barnes_Foundation.jpg",
+      "artist": null,
+      "title": "José Raphael Aragon - Archangel Saint Raphael (San Raphael) - BF1067 - Barnes Foundation.jpg"
+    },
+    {
+      "id": "W36-SNT-OT-28-56864278453b",
+      "subjectId": "SNT-OT-28",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Anonymous_-_Portrait_de_saint_Vincent_de_Paul_(1581-1660)._-_P863_-_Mus%C3%A9e_Carnavalet.jpg",
+      "artist": null,
+      "title": "Anonymous - Portrait de saint Vincent de Paul (1581-1660). - P863 - Musée Carnavalet.jpg"
+    }
+  ],
+  "subjectDecisions75": [
+    {
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "group": "AP",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": false,
+      "selected5": [
+        {
+          "id": "ART-usepe-de-ibera-aint-eter-postolate",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Peter — Apostolate",
+          "rating": 5,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": "perfect_theme"
+        }
+      ],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-AP-01-60edc21939b3"
+      ],
+      "researchOnly3": [
+        "W36-SNT-AP-01-59018aa21ed9"
+      ],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-435617",
+          "rating": 2,
+          "title": "Saint Thomas Aquinas Aided by Saints Peter and Paul",
+          "fit": null
+        },
+        {
+          "id": "met-458955",
+          "rating": 2,
+          "title": "Saint Peter",
+          "fit": null
+        },
+        {
+          "id": "met-442491",
+          "rating": 5,
+          "title": "Saints Peter and Paul",
+          "fit": null
+        },
+        {
+          "id": "met-441971",
+          "rating": 4,
+          "title": "The Tears of Saint Peter",
+          "fit": null
+        },
+        {
+          "id": "met-438561",
+          "rating": 4,
+          "title": "The Denial of Saint Peter",
+          "fit": null
+        },
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "fit": "nowhere"
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 3,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-02",
+      "subject": "Saint Andrew",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "cma-148758",
+          "rating": 5,
+          "title": "The Crucifixion of Saint Andrew",
+          "fit": "perfect_theme"
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "group": "AP",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": true,
+      "selected5": [
+        {
+          "id": "W36-SNT-AP-03-3e9d9be5f41a",
+          "artist": null,
+          "title": "Guido Reni - Saint James the Greater - Google Art Project.jpg",
+          "rating": 5,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+          "fit": null
+        }
+      ],
+      "pending4": [
+        {
+          "id": "W36-SNT-AP-03-09e61d002bd2",
+          "artist": null,
+          "title": "Novelli Pietro - Saint Jacques le Majeur.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Novelli_Pietro_-_Saint_Jacques_le_Majeur.jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-459044",
+          "rating": 2,
+          "title": "Saints John the Evangelist and Mary Magdalene",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-AP-05-ad7aba169162"
+      ],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "group": "AP",
+      "state": "PENDING_USER_REVIEW_4",
+      "hasFive": false,
+      "hasFour": true,
+      "selected5": [],
+      "pending4": [
+        {
+          "id": "W36-SNT-AP-08-c5bdab70b9d1",
+          "artist": null,
+          "title": "Saint Matthew, by Valentin de Boulogne.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Saint_Matthew,_by_Valentin_de_Boulogne.jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [
+        "W36-SNT-AP-08-16b8b5ca0d8c"
+      ],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "ART-aravaggio-nspiration-of-aint-atthew",
+          "rating": 5,
+          "title": "Inspiration of Saint Matthew",
+          "fit": null
+        },
+        {
+          "id": "met-712946",
+          "rating": 4,
+          "title": "The Calling of Saint Matthew",
+          "fit": "elsewhere"
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-11",
+      "subject": "Saint Matthias",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "group": "AP",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": false,
+      "selected5": [
+        {
+          "id": "ART-usepe-de-ibera-aint-aul-postolate",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Paul — Apostolate",
+          "rating": 5,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": "perfect_theme"
+        }
+      ],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-AP-12-4c84c04059fa",
+        "W36-SNT-AP-12-eb4c01bda35d"
+      ],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-435617",
+          "rating": 2,
+          "title": "Saint Thomas Aquinas Aided by Saints Peter and Paul",
+          "fit": null
+        },
+        {
+          "id": "met-437065",
+          "rating": 2,
+          "title": "Saint Paul",
+          "fit": null
+        },
+        {
+          "id": "met-442491",
+          "rating": 5,
+          "title": "Saints Peter and Paul",
+          "fit": null
+        },
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "fit": "nowhere"
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 3,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-AP-13",
+      "subject": "Saint Jude Thaddeus",
+      "group": "AP",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "group": "EV",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "group": "EV",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-01",
+      "subject": "Saint Ambrose",
+      "group": "DC",
+      "state": "PENDING_USER_REVIEW_4",
+      "hasFive": false,
+      "hasFour": true,
+      "selected5": [],
+      "pending4": [
+        {
+          "id": "W36-SNT-DC-01-90bde6f815fb",
+          "artist": null,
+          "title": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [
+        "W36-SNT-DC-01-c110ca7b6f47"
+      ],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+          "rating": 5,
+          "title": "Saint Ambrose Barring Theodosius",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-02",
+      "subject": "Saint Augustine",
+      "group": "DC",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": false,
+      "selected5": [
+        {
+          "id": "ART-hilippe-de-hampaigne-aint-ugustine",
+          "artist": "Philippe de Champaigne",
+          "title": "Saint Augustine",
+          "rating": 5,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": "perfect_theme"
+        }
+      ],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-03",
+      "subject": "Saint Jerome",
+      "group": "DC",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": false,
+      "selected5": [
+        {
+          "id": "cma-136680",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Jerome",
+          "rating": 5,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": null
+        }
+      ],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-DC-03-91cbe9d624ab",
+        "W36-SNT-DC-03-5106a211fa18"
+      ],
+      "researchOnly3": [
+        "W36-SNT-DC-03-95e393500a13",
+        "W36-SNT-DC-03-756125b4554f"
+      ],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-437977",
+          "rating": 5,
+          "title": "The Last Communion of Saint Mary of Egypt",
+          "fit": null
+        },
+        {
+          "id": "met-435728",
+          "rating": 4,
+          "title": "The Last Communion of Saint Jerome",
+          "fit": null
+        },
+        {
+          "id": "met-436098",
+          "rating": 3,
+          "title": "The Crucifixion",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 5,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-437722",
+          "rating": 4,
+          "title": "The Mass of Saint Gregory",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-DC-05-75d773c330b1",
+        "W36-SNT-DC-05-03c9930b6d5a"
+      ],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-435617",
+          "rating": 2,
+          "title": "Saint Thomas Aquinas Aided by Saints Peter and Paul",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "group": "DC",
+      "state": "PENDING_USER_REVIEW_4",
+      "hasFive": false,
+      "hasFour": true,
+      "selected5": [],
+      "pending4": [
+        {
+          "id": "W36-SNT-DC-08-4a0cadffec49",
+          "artist": null,
+          "title": "Antonio Palomino. Santa Teresa de Jesús escribiendo.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Antonio_Palomino._Santa_Teresa_de_Jes%C3%BAs_escribiendo.jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-437542",
+          "rating": 3,
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "group": "DC",
+      "state": "PENDING_USER_REVIEW_4",
+      "hasFive": false,
+      "hasFour": true,
+      "selected5": [],
+      "pending4": [
+        {
+          "id": "W36-SNT-DC-09-1a42763e6883",
+          "artist": null,
+          "title": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_mei,_Santa_Caterina_da_Siena,_1641.jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-DC-09-2001b4fdecbf"
+      ],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "group": "DC",
+      "state": "PENDING_USER_REVIEW_4",
+      "hasFive": false,
+      "hasFour": true,
+      "selected5": [],
+      "pending4": [
+        {
+          "id": "W36-SNT-DC-12-faa6ec8f702d",
+          "artist": null,
+          "title": "San Francisco de Sales, de Francisco Bayeu (Museo del Prado).jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Sales,_de_Francisco_Bayeu_(Museo_del_Prado).jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-DC-12-4eb0554ff8e3"
+      ],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-14",
+      "subject": "Saint Basil the Great",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-17",
+      "subject": "Saint Isidore of Seville",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "group": "DC",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-OT-01-79879ed00670"
+      ],
+      "researchOnly3": [
+        "W36-SNT-OT-01-6ac7fd05f7db"
+      ],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "cma-150389",
+          "rating": 5,
+          "title": "The Holy Family on the Steps",
+          "fit": "nowhere"
+        },
+        {
+          "id": "cma-160143",
+          "rating": 5,
+          "title": "The Holy Family",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-459063",
+          "rating": 2,
+          "title": "Virgin and Child with Saint Joseph",
+          "fit": null
+        },
+        {
+          "id": "nga-41644",
+          "rating": 2,
+          "title": "The Expectant Madonna with Saint Joseph",
+          "fit": null
+        },
+        {
+          "id": "cma-113202",
+          "rating": 2,
+          "title": "The Holy Family with Saint John the Baptist and Saint Margaret",
+          "fit": null
+        },
+        {
+          "id": "cma-126768",
+          "rating": 3,
+          "title": "Holy Family with a Shepherd",
+          "fit": "nowhere"
+        },
+        {
+          "id": "cma-130392",
+          "rating": 5,
+          "title": "The Return of the Holy Family to Nazareth",
+          "fit": "nowhere"
+        },
+        {
+          "id": "cma-170814",
+          "rating": 2,
+          "title": "The Holy Family",
+          "fit": null
+        },
+        {
+          "id": "cma-370119",
+          "rating": 5,
+          "title": "Holy Family with the Mystic Marriage of Saint Catherine",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-436793",
+          "rating": 2,
+          "title": "The Holy Family",
+          "fit": null
+        },
+        {
+          "id": "met-436797",
+          "rating": 2,
+          "title": "The Holy Family",
+          "fit": null
+        },
+        {
+          "id": "met-437458",
+          "rating": 5,
+          "title": "The Holy Family with Angels",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-459059",
+          "rating": 2,
+          "title": "The Holy Family",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-02",
+      "subject": "Saint Michael Archangel",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "rating": 5,
+          "title": "Archangel Michael Defeating Satan",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-OT-03-d46e72fdfdad"
+      ],
+      "researchOnly3": [
+        "W36-SNT-OT-03-cf8194fc3064",
+        "W36-SNT-OT-03-4b4687c31df7"
+      ],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 3,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-04",
+      "subject": "Saint John the Baptist",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-OT-06-b7683cc00a20"
+      ],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "cma-150955",
+          "rating": 4,
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-436982",
+          "rating": 2,
+          "title": "Saint Anthony of Padua",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "group": "OT",
+      "state": "PENDING_USER_REVIEW_4",
+      "hasFive": false,
+      "hasFour": true,
+      "selected5": [],
+      "pending4": [
+        {
+          "id": "W36-SNT-OT-07-45a8e73c4d83",
+          "artist": null,
+          "title": "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-10",
+      "subject": "Saint Stephen",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-11",
+      "subject": "Saint Lawrence",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "nga-106362",
+          "rating": 5,
+          "title": "The Martyrdom of Saint Lawrence",
+          "fit": "perfect_theme"
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-12",
+      "subject": "Saint Francis of Assisi",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-13",
+      "subject": "Saint Dominic",
+      "group": "OT",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": true,
+      "selected5": [
+        {
+          "id": "W36-SNT-OT-13-5387d641cce6",
+          "artist": null,
+          "title": "Claudio coello-santo domingo.JPG",
+          "rating": 5,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
+          "fit": null
+        }
+      ],
+      "pending4": [
+        {
+          "id": "W36-SNT-OT-13-e1db7ffd5583",
+          "artist": null,
+          "title": "Gaspar de Crayer - Saint Dominic.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Gaspar_de_Crayer_-_Saint_Dominic.jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-435616",
+          "rating": 3,
+          "title": "Saint Dominic Resuscitating Napoleone Orsini",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 3
+      }
+    },
+    {
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-OT-14-7ab28e45f078"
+      ],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "cma-150955",
+          "rating": 4,
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-437673",
+          "rating": 3,
+          "title": "The Assumption of the Virgin with Saints Michael and Benedict",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-442750",
+          "rating": 2,
+          "title": "Saint Benedict",
+          "fit": null
+        },
+        {
+          "id": "met-436565",
+          "rating": 2,
+          "title": "Totila before Saint Benedict",
+          "fit": null
+        },
+        {
+          "id": "met-437970",
+          "rating": 3,
+          "title": "Saint Benedict",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-15",
+      "subject": "Saint Francis Xavier",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-OT-15-08edb5c55195"
+      ],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-16",
+      "subject": "Saint Ignatius of Loyola",
+      "group": "OT",
+      "state": "PENDING_USER_REVIEW_4",
+      "hasFive": false,
+      "hasFour": true,
+      "selected5": [],
+      "pending4": [
+        {
+          "id": "W36-SNT-OT-16-377ced58de3c",
+          "artist": null,
+          "title": "Miguel Cabrera - Saint Ignatius Loyola - Google Art Project.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_Saint_Ignatius_Loyola_-_Google_Art_Project.jpg",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [
+        "W36-SNT-OT-16-4f99328b806b"
+      ],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 2,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "group": "OT",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": false,
+      "selected5": [
+        {
+          "id": "ART-eter-aul-ubens-aint-ebastian",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Sebastian",
+          "rating": 5,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": "perfect_theme"
+        }
+      ],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "cma-153406",
+          "rating": 2,
+          "title": "Portrait of a Youth as Saint Sebastian",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-OT-20-729505071896"
+      ],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-459258",
+          "rating": 2,
+          "title": "Saint Nicholas of Bari",
+          "fit": null
+        },
+        {
+          "id": "nga-505",
+          "rating": 4,
+          "title": "The Visitation with Saint Nicholas and Saint Anthony Abbot",
+          "fit": "nowhere"
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "group": "OT",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": true,
+      "selected5": [
+        {
+          "id": "nga-12209",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Lucy",
+          "rating": 5,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": "perfect_theme"
+        }
+      ],
+      "pending4": [
+        {
+          "id": "nga-369",
+          "artist": "Francesco del Cossa",
+          "title": "Saint Lucy",
+          "rating": 4,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": "perfect_theme"
+        }
+      ],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-OT-21-c1a62bfd80cf",
+        "W36-SNT-OT-21-9c0ed723dbf0",
+        "W36-SNT-OT-21-d44ec5fc2551",
+        "W36-SNT-OT-21-9d8de5339e72"
+      ],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "nga-46147",
+          "rating": 4,
+          "title": "Saint Lucy and a Donor",
+          "fit": "perfect_theme"
+        },
+        {
+          "id": "cma-150955",
+          "rating": 4,
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-436050",
+          "rating": 2,
+          "title": "Saint Lucy and Her Mother at the Shrine of Saint Agatha; Saint Lucy Giving Alms; Saint Lucy before Paschasius; Saint Lucy Resisting Efforts to Move Her",
+          "fit": null
+        },
+        {
+          "id": "met-437273",
+          "rating": 2,
+          "title": "Saint John the Baptist; Saint Lucy",
+          "fit": null
+        },
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "fit": "nowhere"
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 6,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-OT-22-65da02a7c874"
+      ],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "cma-150955",
+          "rating": 4,
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "fit": "nowhere"
+        },
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "fit": "nowhere"
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-23",
+      "subject": "Saint Cecilia",
+      "group": "OT",
+      "state": "HAS_CONFIRMED_5",
+      "hasFive": true,
+      "hasFour": true,
+      "selected5": [
+        {
+          "id": "ART-ietro-da-ortona-aint-ecilia",
+          "artist": "Pietro da Cortona",
+          "title": "Saint Cecilia",
+          "rating": 5,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": "perfect_theme"
+        }
+      ],
+      "pending4": [
+        {
+          "id": "met-436198",
+          "artist": "Abraham van Diepenbeeck",
+          "title": "Saint Cecilia",
+          "rating": 4,
+          "format": "PRIOR_SOLO_PAINTING",
+          "sourceExport": "OCT13_BASELINE_RANKINGS_LATER_THAN_EARLY_RECON",
+          "fit": null
+        },
+        {
+          "id": "W36-SNT-OT-23-3538f3078e54",
+          "artist": null,
+          "title": "Cavalier Arpino - santa cecilia.jpg",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg",
+          "fit": null
+        },
+        {
+          "id": "W36-SNT-OT-23-ea67147c879b",
+          "artist": null,
+          "title": "Guercino - Santa Cecilia.JPG",
+          "rating": 4,
+          "format": "W36_PORTRAIT_REVIEW",
+          "sourceExport": "W36_20261014",
+          "commonsUrl": "https://commons.wikimedia.org/wiki/File:Guercino_-_Santa_Cecilia.JPG",
+          "fit": null
+        }
+      ],
+      "lowRatingDoNotShow": [
+        "W36-SNT-OT-23-b6618ae05045"
+      ],
+      "researchOnly3": [
+        "W36-SNT-OT-23-e32e57b5f3c4",
+        "W36-SNT-OT-23-cd0d09565878"
+      ],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 7,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-24",
+      "subject": "Saint Catherine of Alexandria",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-OT-24-83c5417b978d"
+      ],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [
+        "W36-SNT-OT-25-b91d61b0316d"
+      ],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "met-459044",
+          "rating": 2,
+          "title": "Saints John the Evangelist and Mary Magdalene",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-26",
+      "subject": "Saint Geneviève",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [
+        {
+          "id": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+          "rating": 4,
+          "title": "Miracle des Ardents",
+          "fit": null
+        }
+      ],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-OT-28-56864278453b"
+      ],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 0
+      }
+    },
+    {
+      "subjectId": "SNT-OT-29",
+      "subject": "Saint Martin of Tours",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [
+        "W36-SNT-OT-29-fb377ea215d8"
+      ],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 1,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-30",
+      "subject": "Saint Anne",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-31",
+      "subject": "Saint Rosalia",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    },
+    {
+      "subjectId": "SNT-OT-32",
+      "subject": "Saint Francis of Paola",
+      "group": "OT",
+      "state": "RESEARCH_GAP_NO_4_OR_5",
+      "hasFive": false,
+      "hasFour": false,
+      "selected5": [],
+      "pending4": [],
+      "lowRatingDoNotShow": [],
+      "researchOnly3": [],
+      "otherHistoricScoreContexts": [],
+      "counts": {
+        "humanRatedPortraits": 0,
+        "reportedUnscoredHistoric": 1
+      }
+    }
+  ],
+  "reviewGalleryPolicy": {
+    "renderScores": [
+      4,
+      null
+    ],
+    "score4": "NEEDS_USER_DECISION",
+    "score5": "CONFIRMED_INVENTORY",
+    "scores0to2": "PERMANENT_REJECTION_NO_REDISPLAY",
+    "score3": "INTERNAL_RESEARCH_SIGNAL_NO_REDISPLAY",
+    "noAutomaticPromotionOfUnnumberedApprovals": true,
+    "sameWorkVariantBan": true
+  }
+}
