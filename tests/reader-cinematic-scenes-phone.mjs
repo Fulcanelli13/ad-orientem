@@ -96,7 +96,7 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
       lastParagraphBottom:Math.max(0,...[...scroller.querySelectorAll(".ao-reader-paragraph")]
         .filter(el=>!el.hidden).map(el=>el.getBoundingClientRect().bottom)),
       cinematicBackground:getComputedStyle(cinema).backgroundColor,
-      priestVisibility:priest ? getComputedStyle(priest).visibility : null,
+      priestDisplay:priest ? getComputedStyle(priest).display : null,
       priestActive:priest?.dataset.active??"false",
       priestIcon:icon?.dataset.iconKey??null,
       gestureActive:gesture?.dataset.active??"false",
@@ -120,14 +120,14 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
       assert.ok(actual.cinematicHeight<=190,"Elevation replaced with full-screen takeover");
       assert.ok(actual.cinematicTop>=actual.lastParagraphBottom+2,
         "Large elevation art overlaps source words/rubrics: "+JSON.stringify(actual));
-      assert.equal(actual.priestVisibility,"hidden",
+      assert.equal(actual.priestDisplay,"none",
         "Major icon duplicated rather than replacing its right-rail source");
       assert.equal(actual.cinematicBackground,"rgba(0, 0, 0, 0)",
         "Elevation reintroduced opaque background over missal text");
     }else{
       assert.equal(actual.fullScreenVisible,false,
         "No spare room but a cinematic overlay covered source prayers");
-      assert.notEqual(actual.priestVisibility,"hidden",
+      assert.notEqual(actual.priestDisplay,"none",
         "No spare room and main priest icon disappeared");
     }
   }
