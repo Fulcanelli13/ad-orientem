@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-minimal-native-svg-staging-v1",
   "date": "2026-10-14",
-  "status": "RESEARCH_PROTOTYPES_ONLY_NOT_APPROVED_NOT_RUNTIME_BOUND",
+  "status": "REJECTED_STYLE_MISMATCH_HISTORY_ONLY_NOT_IN_REVIEW_SELECTION",
   "governingFamily": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
   "referenceAsset": "assets/active/mass-v46/priest_sedilia_rich.svg",
   "referenceRating": 5,
@@ -12,7 +12,7 @@
     "0_to_2": "REJECT_PREVIOUS_ORIGINAL",
     "UNRATED": "PENDING"
   },
-  "intent": "First actual geometry simplification, not a claim of successful artist-family replication. Minimal detail; gesture and silhouette first.",
+  "intent": "Historical unapproved geometric studies: user explicitly judged all as NOT matching the approved visual family. No reuse as style references, and no new artwork is selected.",
   "assetRoot": "reviews/mass-icon-candidates/minimal-20261014/",
   "format": {
     "viewBox": "0 0 128 128",
@@ -38,7 +38,7 @@
       ],
       "priorScore": 3,
       "priorDisposition": "RESEARCH",
-      "geometryStatus": "GEOMETRY_PROTOTYPE",
+      "geometryStatus": "REJECTED_FAMILY_MISMATCH",
       "stage": "INCENSE_ENABLED_ONLY",
       "passed": [
         "native nonembedded SVG shapes",
@@ -51,7 +51,10 @@
         "64px distinctness",
         "explicit user artwork rating"
       ],
-      "railAcceptance": "UNVERIFIED"
+      "railAcceptance": "REJECTED_STYLE_MISMATCH",
+      "reviewEligible": false,
+      "preserveOnlyForHistory": true,
+      "userApproved": false
     },
     {
       "id": "B16",
@@ -62,7 +65,7 @@
       ],
       "priorScore": 4,
       "priorDisposition": "USER_REVIEW",
-      "geometryStatus": "GEOMETRY_PROTOTYPE",
+      "geometryStatus": "REJECTED_FAMILY_MISMATCH",
       "stage": "ROMAN_CANON_AT_ALTAR_ONLY",
       "passed": [
         "native nonembedded SVG shapes",
@@ -75,7 +78,10 @@
         "match approved vestment style",
         "explicit user artwork rating"
       ],
-      "railAcceptance": "POSSIBLE_NOT_YET_APPROVED"
+      "railAcceptance": "REJECTED_STYLE_MISMATCH",
+      "reviewEligible": false,
+      "preserveOnlyForHistory": true,
+      "userApproved": false
     },
     {
       "id": "B13",
@@ -85,7 +91,7 @@
       ],
       "priorScore": 3,
       "priorDisposition": "RESEARCH",
-      "geometryStatus": "GEOMETRY_PROTOTYPE",
+      "geometryStatus": "REJECTED_FAMILY_MISMATCH",
       "stage": "PRIEST_COMMUNION",
       "passed": [
         "native nonembedded SVG shapes",
@@ -98,7 +104,10 @@
         "compare with established family",
         "explicit user artwork rating"
       ],
-      "railAcceptance": "FAIL_AT_64PX"
+      "railAcceptance": "REJECTED_STYLE_MISMATCH",
+      "reviewEligible": false,
+      "preserveOnlyForHistory": true,
+      "userApproved": false
     }
   ],
   "notIncluded": "Detailed high-contrast generated image sheet was rejected, not processed into new icon assets.",
@@ -107,5 +116,12 @@
     "assetBank": false,
     "approvedAssets": false,
     "frozenDonor": false
+  },
+  "styleAssessment": {
+    "result": "FAILED_ALL_THREE",
+    "ratingAssignedByUser": null,
+    "reason": "New circle-head/block-body priest iconography, generic altar geometry, and loss of original body/chasuble/linework identity; B13 also fails exact hand/Host recognition.",
+    "policy": "A user-rejected visual candidate is excluded from future review and must not be presented as a 4/5 candidate even if original subject had a 4-rated earlier concept.",
+    "remedy": "Return to 5/5 original actual asset and make derivative edits preserving visible donor proportions and limited established ornament, not reimagine in a new line family."
   }
 }
