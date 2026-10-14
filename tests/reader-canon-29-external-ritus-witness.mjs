@@ -53,6 +53,14 @@ for(const [n,kind] of [["001","DIRECT_CEREMONIAL_SEQUENCE"],
 }
 assert.equal(byId.get("011").shortLatinLocator,"palmæ sint apertæ");
 assert.equal(byId.get("044").scope,"SOURCE_ORTHOGRAPHY_NOT_FINAL");
+assert.equal(byId.get("044").earlyTextAnchorUnsafe,true);
+assert.equal(byId.get("044").sourceExactInlineOffsetVerified,false);
+assert.equal(byId.get("044").attestedCrossMarkLocation,
+ "BETWEEN_OMNI_BENEDICTIONE_AND_CAELESTI");
+assert.equal(byId.get("044").canonicalDonorOrthography,"coelésti");
+assert.equal(byId.get("044").parallelRubricOrthography,"cælesti");
+assert.equal(byId.get("001").separatelyLoweredBodyPart,"EYES_ONLY");
+assert.equal(byId.get("001").eyesVsHandsDisambiguated,true);
 assert.equal(byId.get("061").scope,"AMEN_RESPONDER_REQUIRES_ORDO");
 assert.equal(byId.get("008").scope,"PROPER_TEXT_REQUIRES_MISSAL_SELECTION");
 console.log("PASS: 29/29 separately inspected 1962 Latin witness locators; no facsimile or copy approvals and no LIVE publication.");
