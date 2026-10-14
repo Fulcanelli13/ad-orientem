@@ -1,0 +1,313 @@
+{
+  "schema": "ao-mass-icon-harmonization-16-repair-workorders-v1",
+  "date": "2026-10-14",
+  "phase": "PHASE_B_PENDING_SOURCE_AND_VISUAL_REVIEW",
+  "links": {
+    "semanticLedger": "data/presentation/mass-icon-harmonization-source-resolutions-20261014.v1.json",
+    "userReviewSHA256": "edbde2bf608646cd258351274b6e545d42d88952b393c40c66492800684bc4a0"
+  },
+  "policy": {
+    "ratedLessThan3": "DISCARD_NOT_SALVAGE",
+    "unrated": "PENDING_NO_AUTOMATIC_APPROVAL",
+    "minimumFamilyQuality": 4,
+    "allowedOutput": "APPROVED_SAME_FAMILY_MONOCHROME_VECTOR_OR_TINTABLE_ALPHA_MASK",
+    "reference": [
+      "priest_sedilia_rich",
+      "priest_centre_rich",
+      "priest_elevation"
+    ],
+    "requiredSizes": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "noLiveChanges": true,
+    "noImageGenerationBeforeReuse": true
+  },
+  "counts": {
+    "items": 16,
+    "family": 13,
+    "diagnose": 2,
+    "crop": 1
+  },
+  "workorders": [
+    {
+      "id": "A03",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_sedilia_rich"
+      ],
+      "defect": "Hanc igitur scene uses inconsistent priest/altar rendering and unverified palms-down geometry.",
+      "repair": "Reconstruct using exact approved altar template; arms forward close over oblations, palms downward, no object held.",
+      "repairClass": "VECTOR_REFINEMENT",
+      "acceptanceGate": "TWO_PALMS_DOWN_ABOVE_OFFERINGS",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "A06",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_elevation"
+      ],
+      "defect": "Per ipsum illustration uses mismatched family; generated attempts tend to show major Host elevation.",
+      "repair": "Produce correct minor elevation with right hand Host just above chalice, left hand grips chalice; modest height only.",
+      "repairClass": "EXACT_GESTURE_REBUILD",
+      "acceptanceGate": "HOST_ABOVE_SLIGHTLY_RAISED_CHALICE",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "B01",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_incense_altar_rich"
+      ],
+      "defect": "Blessing incense is confused with incensing and altar architecture varies.",
+      "repair": "Source-verify blessing over thurible; reuse existing master plus caption if action cannot read at 64px; match common altar.",
+      "repairClass": "REUSE_OR_TARGETED_REPAIR",
+      "acceptanceGate": "INCENSE_BLESSING_NOT_SWING",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "B02",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "cross",
+        "priest_centre_rich"
+      ],
+      "defect": "Unnecessary detailed priest scene for paten Sign of Cross; pictorial family inconsistent.",
+      "repair": "Reuse clear cross with exact VII.3 paten-gesture wording unless source-specific hand scene improves comprehension.",
+      "repairClass": "REUSE_SYMBOL_WITH_RUBRIC",
+      "acceptanceGate": "CROSS_WITH_PATEN_NOT_HAND",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "B03",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich"
+      ],
+      "defect": "Paten placement scene visually inconsistent and duplicative of source-owned text.",
+      "repair": "Use selected centre image plus concise paten placement rubric; no generated microaction.",
+      "repairClass": "REUSE_WITH_RUBRIC",
+      "acceptanceGate": "PATEN_PLACED_RIGHT_UNDER_CORPORAL",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "B04",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_incense_people_rich"
+      ],
+      "defect": "Receiving thurible scene differs from one-family priest silhouette.",
+      "repair": "Keep actor/minister handoff text and a generic approved priest icon; commission new pose only if needed at mobile size.",
+      "repairClass": "REUSE_OR_CONDITIONAL_VARIANT",
+      "acceptanceGate": "RECEIVES_THURIBLE_NOT_INCENSES",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "B16",
+      "track": "FAMILY",
+      "rating": 4,
+      "anchors": [
+        "priest_kiss_altar_rich",
+        "priest_centre_rich"
+      ],
+      "defect": "Promising profound-bow draft, but inconsistent with altar/priest reference.",
+      "repair": "Preserve waist angle while standardizing priest/altar; distinguish foot-of-altar Confiteor hands joined from Canon hands on altar; no kiss.",
+      "repairClass": "SALVAGE_POSE_REBUILD_FAMILY",
+      "acceptanceGate": "DEEP_BOW_NO_KISS",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "D06",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_incense_altar_rich",
+        "priest_sedilia_rich"
+      ],
+      "defect": "Thurifer depiction stylistically divergent; risks misidentifying priest as thurifer.",
+      "repair": "Create conditional kneeling thurifer incensing elevation only if text/incense cue is insufficient; maintain actual minister distinctions.",
+      "repairClass": "CONDITIONAL_MINISTER_REFERENCE",
+      "acceptanceGate": "THURIFER_NOT_PRIEST",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "S_priest_procession",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_ascending_rich",
+        "priest_centre_rich"
+      ],
+      "defect": "Vestment shape/weight differs from accepted Mass priest icon family.",
+      "repair": "Match figure, garment and stroke treatment; retain only for source-indicated procession, not generic motion.",
+      "repairClass": "TARGETED_ILLUSTRATION_REPAIR",
+      "acceptanceGate": "EXPLICIT_PROCESSION_ONLY",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "S_priest_incense_altar",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_sedilia_rich"
+      ],
+      "defect": "User specifically reports altar architecture differs from the rest of family.",
+      "repair": "Rebuild altar geometry using selected centre/host-elevation altar, keeping incensation action only if depicted accurately.",
+      "repairClass": "COMMON_ALTAR_BACKGROUND_REPAIR",
+      "acceptanceGate": "SAME_ALTAR",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "S_other_canon",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "response",
+        "bells",
+        "priest_centre_rich"
+      ],
+      "defect": "Generic Canon pictogram lacks style continuity.",
+      "repair": "Simplify into consistent monochrome utility symbol; avoid inventing a specific priest gesture for generic section.",
+      "repairClass": "ICON_LANGUAGE_NORMALIZATION",
+      "acceptanceGate": "GENERAL_CANON_NOT_EXACT_ACTION",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "S_other_lavabo",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "lavabo",
+        "priest_centre_rich"
+      ],
+      "defect": "Existing Lavabo artwork inconsistent, overlaps B05.",
+      "repair": "One shared Offertory Lavabo master fixed once; preserve separate Communion ablutions icon and cue IDs.",
+      "repairClass": "SHARED_B05_REPAIR",
+      "acceptanceGate": "OFFERTORY_LAVABO_ONLY",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "I_priest_blessing",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "cross"
+      ],
+      "defect": "Existing investigation blessing master has inconsistent priest/altar family.",
+      "repair": "Keep investigation status; rebuild with priest facing congregation giving final blessing if proven useful; never confuse incense blessing.",
+      "repairClass": "INVESTIGATE_BEFORE_APPROVAL",
+      "acceptanceGate": "FINAL_BLESSING_NOT_INCENSE",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "S_priest_elevate_chalice",
+      "track": "DIAGNOSE",
+      "rating": 3,
+      "anchors": [
+        "priest_elevation",
+        "priest_centre_rich"
+      ],
+      "defect": "User explicitly chose revise but did not identify the defect.",
+      "repair": "Compare chalice grip, height, vestments, altar and legibility to 4/5 Host elevation; record exact defect before adjusting.",
+      "repairClass": "DIAGNOSE_THEN_TARGETED_REPAIR",
+      "acceptanceGate": "CHALICE_MAJOR_ELEVATION",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "S_sound_schola",
+      "track": "DIAGNOSE",
+      "rating": 3,
+      "anchors": [
+        "bells",
+        "priest_audible",
+        "response"
+      ],
+      "defect": "User requests revision without a defect label.",
+      "repair": "Check recognition at 48/64px and sound-symbol family consistency; retain if legible, otherwise redraw with same stroke family.",
+      "repairClass": "DIAGNOSE_THEN_STYLE_REPAIR",
+      "acceptanceGate": "SCHOLA_AUDIO_CUE",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    },
+    {
+      "id": "B13",
+      "track": "CROP",
+      "rating": 3,
+      "anchors": [
+        "priest_communion_rich"
+      ],
+      "defect": "Crop includes neighbouring artwork, despite no explicitly flagged wrong gesture.",
+      "repair": "Recrop actual single priest scene with transparent margins; verify Host reaches mouth, not elevation, before considering promotion.",
+      "repairClass": "TECHNICAL_RECROP_THEN_VERIFY",
+      "acceptanceGate": "HOST_TO_MOUTH_NOT_ELEVATION",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT"
+    }
+  ],
+  "sharedFixes": [
+    {
+      "id": "ALTAR_TEMPLATE",
+      "targets": [
+        "A03",
+        "A06",
+        "B01",
+        "B16",
+        "S_priest_incense_altar",
+        "S_priest_procession"
+      ],
+      "strategy": "Sample and preserve one canonical altar/chasuble composition from accepted masters; rebuild only divergent background and anatomy."
+    },
+    {
+      "id": "LAVABO_SINGLE_MASTER",
+      "targets": [
+        "B05",
+        "S_other_lavabo"
+      ],
+      "strategy": "One common Offertory Lavabo illustration; do not confuse C0125 and C0248."
+    },
+    {
+      "id": "CANON_HANDS",
+      "targets": [
+        "A03",
+        "A06"
+      ],
+      "strategy": "Verify 1962 hand-object placement before matching style. No major-elevation substitutes."
+    },
+    {
+      "id": "MINISTER_ACTOR",
+      "targets": [
+        "D06"
+      ],
+      "strategy": "Source-verify whether thurifer action is present in selected Mass form; actor must not appear to be celebrant."
+    }
+  ]
+}
