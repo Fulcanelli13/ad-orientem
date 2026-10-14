@@ -27,6 +27,16 @@ assert.deepEqual(list.map(x=>x.ownerId),owner.sections.map(x=>x.sectionId),'Litu
 assert.equal(new Set(list.map(x=>x.ownerId)).size,39);
 const mb=new Set(list.flatMap(x=>x.existingMassBibleIds));
 assert.equal(mb.size,26);
+const passageRows=list.flatMap(x=>x.existingMassBiblePassages);
+assert.equal(passageRows.length,26);
+assert.equal(new Set(passageRows.map(x=>x.researchId)).size,26);
+for(const x of passageRows){
+ assert.ok(x.scriptureReference && x.relationship);
+ assert.ok(x.sourceChapterLinks.length && x.sourceChapterLinks.every(l=>l.url.startsWith('https://')));
+ assert.equal(x.approval,'SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED');
+}
+assert.equal(passageRows.filter(x=>x.properDependent).length,3);
+
 assert.deepEqual([...mb].sort(),Array.from({length:26},(_,i)=>'MB'+String(i+1).padStart(2,'0')).sort());
 const sourceIds=new Set(findings.records.map(x=>x.id));
 for(const x of research.biblicalChronology){
