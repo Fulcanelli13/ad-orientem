@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 117,
+  "source_count": 131,
   "sources": [
     {
       "id": "S01",
@@ -1409,6 +1409,174 @@
       "access": "original_CARA_religious_research_page_opened",
       "chapter_passage_certified": false,
       "annotation": "Proportionate original-passage or credible accurately attributed excerpt is sufficient for bounded proposition. Scope/independence matters."
+    },
+    {
+      "id": "S118",
+      "title": "Maxima redemptionis original Latin 1955 decree",
+      "author": "Sacred Congregation of Rites (approved by Pius XII)",
+      "year": "1955",
+      "role": "original_preconciliar_liturgical_law",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_19551116_maxima-redemptionis_la.html",
+      "scope": "16 Nov 1955, Holy Week prescribed from Palm Sunday 25 March 1956; contains retrospective of 1951 Easter Vigil experiment",
+      "access": "official_original_full_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S119",
+      "title": "Ottaviani and Bacci signed covering letter",
+      "author": "Cardinals Alfredo Ottaviani and Antonio Bacci",
+      "year": "1969",
+      "role": "first_person_liturgical_opposition_original",
+      "url": "https://apr.sspx.org/en/letter-cardinal-ottaviani-pope-paul-vi-30144",
+      "scope": "25 September 1969 original signed letter transmitting third-party theological Short Critical Study; NOT personal authorship of study",
+      "access": "original_letter_attributed_first_person",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S120",
+      "title": "Short Critical Study of the New Order of Mass, attributed group of Roman theologians",
+      "author": "Unnamed group of theologians and liturgists (with Campo and Guérard des Lauriers associated by historical research)",
+      "year": "1969",
+      "role": "theological_opposition_reproduction",
+      "url": "https://smac.edu/en/ottaviani-intervention-30257",
+      "scope": "actual study accompanying signed covering letter, historical distinction between transmitted objections and those signing foreword; source labelled as SSPX edited text",
+      "access": "original_group_treatise_reprinted_by_party",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S121",
+      "title": "How the Novus Ordo Mass Was Made",
+      "author": "Church Life Journal, University of Notre Dame, historical liturgy essay",
+      "year": "2021",
+      "role": "independent_scholarly_liturgical_history",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "scope": "analysis of 1967 draft, 1969 original GIRM §7, 1970 revisions and differing roles of cardinals and draft theologians; scholar perspective not official decree",
+      "access": "full_university_article_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S122",
+      "title": "Note accompanying 2024 Synod Final Document",
+      "author": "Francis",
+      "year": "24 Nov 2024, published 25 Nov",
+      "role": "papal_first_person_status_clarification",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/11/25/241125k.html",
+      "scope": "Pope approved 26 October 2024 and declared final document part of his ordinary Magisterium while expressly not strictly normative; implementation needs further forms of mediation",
+      "access": "full_official_first_person_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S123",
+      "title": "Final Document XVI Synod",
+      "author": "Synod of Bishops, approved by Francis",
+      "year": "2024",
+      "role": "synod_original_document_with_papal_approval",
+      "url": "https://www.synod.va/en/news/final-document-of-the-xvi-assembly.html",
+      "scope": "26 Oct 2024 synodal final document; exact legal/doctrinal weight depends on Francis's later explicit note S122, not merely consultative text",
+      "access": "official_synod_landing_original",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S124",
+      "title": "Guillaume Cuchet first-person academic description of 2018 book",
+      "author": "Guillaume Cuchet, UPEC research centre",
+      "year": "2018",
+      "role": "historian_first_person_publication_description",
+      "url": "https://crhec.u-pec.fr/publications/comment-notre-monde-a-cesse-d-etre-chretien",
+      "scope": "2018 publisher/university abstract identifies role of Vatican II as trigger of acceleration within long French dechristianisation; not a claim of sole cause or all nations",
+      "access": "author_university_summary_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S125",
+      "title": "Historical review of Cuchet analysis",
+      "author": "Yvon Tranvouez, Revue d'histoire de l'Église de France",
+      "year": "2018",
+      "role": "independent_scholarly_review",
+      "url": "https://www.persee.fr/doc/rhef_0048-7988_2018_num_104_253_5072_t17_0432_0000_3",
+      "scope": "recognises French sharp practice decline around 1965 and debates causation, draws on book; review not independent first-hand demographic dataset",
+      "access": "academic_review_original_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S126",
+      "title": "Official 2000 response regarding altar orientation",
+      "author": "Congregation for Divine Worship and Discipline of the Sacraments",
+      "year": "2000",
+      "role": "original_roman_liturgical_interpretation_translated",
+      "url": "https://www.ewtn.com/catholicism/library/responses-to-questions-29995",
+      "scope": "25 Sep 2000 reply on GIRM 299: facing apse not excluded, Latin expedit expresses recommendation not obligation; verify protocol number via original before exact citation",
+      "access": "translated_official_reply_reproduced",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S127",
+      "title": "Memoriale Domini 1969 original translated instruction",
+      "author": "Sacred Congregation for Divine Worship",
+      "year": "1969",
+      "role": "original_liturgical_discipline_reproduced",
+      "url": "https://origin.ewtn.com/catholicism/library/instruction-on-the-manner-of-distributing-holy-communion-28903",
+      "scope": "1969 episcopal consultation first question 597 yes, 1233 no, 315 conditional, 20 invalid; restricted derogation procedure for hand Communion",
+      "access": "original_direct_translation_reproduced",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S128",
+      "title": "Sacrosanctum Concilium",
+      "author": "Vatican II",
+      "year": "1963",
+      "role": "original_conciliar_constitution",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "scope": "§§21–23 organic continuity, §36 Latin/vernacular, §50 reform, §116 chant; Council text not identical to later implementing norms",
+      "access": "full_official_original_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S129",
+      "title": "Missale Romanum apostolic constitution",
+      "author": "Paul VI",
+      "year": "1969",
+      "role": "original_papal_liturgical_promulgation_same_as_S110",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "scope": "Paul VI 3 Apr 1969 papal promulgation; must distinguish edition from 1967 experimental scheme and pre-1970 GIRM changes",
+      "access": "full_official_original_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S130",
+      "title": "1964 Inter Oecumenici implementation instruction",
+      "author": "Sacred Congregation of Rites and Consilium",
+      "year": "1964",
+      "role": "original_transitional_liturgy_translated",
+      "url": "https://origin.ewtn.com/catholicism/library/inter-oecumenici--instruction-on-implementing-the-constitution-on-sacred-liturgy-28955",
+      "scope": "explicit stages of implementing Council before 1969 Missal; subsequent 1967 instruction distinct",
+      "access": "translated_original_reproduction",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S131",
+      "title": "1917 CIC canon 1262 and 1983 CIC canon 6 exact legal witnesses",
+      "author": "Codex Iuris Canonici",
+      "year": "1917 and 1983",
+      "role": "historical_canonical_law_comparison",
+      "url": "https://droitcanonique.fr/codes/cic-1983-1/c-1262-cic-1917-3026",
+      "scope": "1917 canon 1262 §2 headcoverings; 1983 canon 6 abrogation is separate and requires its own exact Code locator",
+      "access": "historical_code_link_grounded",
+      "chapter_passage_certified": false,
+      "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
     }
   ],
   "priority_questions": [
@@ -5011,12 +5179,422 @@
       "independent_outside_support_required": false,
       "risk": "ecclesial_governance_historical_empirical_scope",
       "review_state": "PARAGRAPH_SPOTCHECK_RESEARCH"
+    },
+    {
+      "id": "CR-ORG-01",
+      "source_ids": [
+        "S07",
+        "S128"
+      ],
+      "source_roles": [
+        "magisterial_preconciliar",
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ORG-02",
+      "source_ids": [
+        "S128"
+      ],
+      "source_roles": [
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ORG-03",
+      "source_ids": [
+        "S07",
+        "S128"
+      ],
+      "source_roles": [
+        "magisterial_preconciliar",
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ORG-04",
+      "source_ids": [
+        "S118",
+        "S128"
+      ],
+      "source_roles": [
+        "original_preconciliar_liturgical_law",
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ORG-05",
+      "source_ids": [
+        "S124",
+        "S125"
+      ],
+      "source_roles": [
+        "historian_first_person_publication_description",
+        "independent_scholarly_review"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ORG-06",
+      "source_ids": [
+        "S128"
+      ],
+      "source_roles": [
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ORG-07",
+      "source_ids": [
+        "S128"
+      ],
+      "source_roles": [
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ORG-08",
+      "source_ids": [
+        "S128"
+      ],
+      "source_roles": [
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ORG-09",
+      "source_ids": [
+        "S124",
+        "S125"
+      ],
+      "source_roles": [
+        "historian_first_person_publication_description",
+        "independent_scholarly_review"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-01",
+      "source_ids": [
+        "S118"
+      ],
+      "source_roles": [
+        "original_preconciliar_liturgical_law"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-02",
+      "source_ids": [
+        "S128",
+        "S129"
+      ],
+      "source_roles": [
+        "original_conciliar_constitution",
+        "original_papal_liturgical_promulgation_same_as_S110"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-03",
+      "source_ids": [
+        "S130",
+        "S129"
+      ],
+      "source_roles": [
+        "original_transitional_liturgy_translated",
+        "original_papal_liturgical_promulgation_same_as_S110"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-04",
+      "source_ids": [
+        "S119",
+        "S120",
+        "S121",
+        "S129"
+      ],
+      "source_roles": [
+        "first_person_liturgical_opposition_original",
+        "theological_opposition_reproduction",
+        "independent_scholarly_liturgical_history",
+        "original_papal_liturgical_promulgation_same_as_S110"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-05",
+      "source_ids": [
+        "S119",
+        "S120",
+        "S121",
+        "S129"
+      ],
+      "source_roles": [
+        "first_person_liturgical_opposition_original",
+        "theological_opposition_reproduction",
+        "independent_scholarly_liturgical_history",
+        "original_papal_liturgical_promulgation_same_as_S110"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-06",
+      "source_ids": [
+        "S119",
+        "S120",
+        "S129"
+      ],
+      "source_roles": [
+        "first_person_liturgical_opposition_original",
+        "theological_opposition_reproduction",
+        "original_papal_liturgical_promulgation_same_as_S110"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-07",
+      "source_ids": [
+        "S119",
+        "S120",
+        "S121"
+      ],
+      "source_roles": [
+        "first_person_liturgical_opposition_original",
+        "theological_opposition_reproduction",
+        "independent_scholarly_liturgical_history"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-08",
+      "source_ids": [
+        "S128"
+      ],
+      "source_roles": [
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-09",
+      "source_ids": [
+        "S128"
+      ],
+      "source_roles": [
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-10",
+      "source_ids": [
+        "S126",
+        "S128"
+      ],
+      "source_roles": [
+        "original_roman_liturgical_interpretation_translated",
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-11",
+      "source_ids": [
+        "S127"
+      ],
+      "source_roles": [
+        "original_liturgical_discipline_reproduced"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-LIT-12",
+      "source_ids": [
+        "S131",
+        "S128"
+      ],
+      "source_roles": [
+        "historical_canonical_law_comparison",
+        "original_conciliar_constitution"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "liturgical_history_original_attribution",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ECC-11",
+      "source_ids": [
+        "S122",
+        "S123"
+      ],
+      "source_roles": [
+        "papal_first_person_status_clarification",
+        "synod_original_document_with_papal_approval"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "CR-ECC-12",
+      "source_ids": [
+        "S122",
+        "S123"
+      ],
+      "source_roles": [
+        "papal_first_person_status_clarification",
+        "synod_original_document_with_papal_approval"
+      ],
+      "locator_level": "verified_source_to_bounded_topic_not_answer_full_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "church_history_juridical_claim",
+      "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
     }
   ],
   "counts": {
-    "sources": 117,
-    "mapped_questions": 199,
-    "church_crisis": 58,
+    "sources": 131,
+    "mapped_questions": 222,
+    "church_crisis": 81,
     "sexual_ethics": 141,
     "answer_audited": 0,
     "answer_certified": 0
@@ -5035,6 +5613,8 @@
     "In high-stakes clinical paragraphs do not equate a theological source with medical treatment evidence. WPATH/APA are actual clinical/professional proponent texts, not substitutes for independent outcome studies. Maintain the distinction between American Psychological Association and American Psychiatric Association.",
     "For survivor trauma, informed consent, and emergency pregnancy: do not infer consent from involuntary physiology, do not give therapeutic procedures as a standalone theological recommendation, and do not delay emergency care for moral debate.",
     "For GOV-09, May 2024 MONEYVAL follow-up is broadly positive with precisely measured technical improvement. Do not present the follow-up as a conviction or proof of generalized Vatican fraud.",
-    "For GOV-01, postconciliar responsibility must be dated and layered across legislation, Roman dicasteries, diocesan bishops and local implementation, not reduced to unrelated 2020s diplomatic event."
+    "For GOV-01, postconciliar responsibility must be dated and layered across legislation, Roman dicasteries, diocesan bishops and local implementation, not reduced to unrelated 2020s diplomatic event.",
+    "2024 synod: Francis formally approved the final document and included it in ordinary papal magisterium by his 24 Nov 2024 note, although explicitly not strictly normative. Never describe as only an unapproved consultation or as automatic legislation.",
+    "1969 Ottaviani/Bacci: the cardinals signed the forwarding letter; the Short Critical Study was authored by a separate group, with Campo and Guérard historically connected. Do not attribute all document text to cardinals' personal authorship."
   ]
 }
