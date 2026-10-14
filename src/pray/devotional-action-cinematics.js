@@ -92,6 +92,12 @@ export function createDevotionalActionCinematic(win=globalThis){
   function reset(){dismiss();lastKey=null;seenStationCues.clear();}
   function sync(scene,{mount,language="en",sessionKey=""}={}){
     const key=scene?norm(sessionKey)+"|"+scene.id+"|"+scene.sourceCue:null;
+    // Station scroll focus can briefly pass through an uncued paragraph.
+    // An already displayed posture instruction must remain visible until
+    // Continue, rather than disappearing/replacing itself mid-read. A new
+    // Station navigation or method change explicitly calls reset().
+    if(active?.isConnected && active.dataset.aoActionScene?.startsWith("STATIONS.") &&
+       (!scene || scene.id?.startsWith("STATIONS.")))return false;
     if(key===lastKey)return false;
     dismiss();lastKey=key;
     if(scene?.id?.startsWith("STATIONS.")&&seenStationCues.has(key))return false;
