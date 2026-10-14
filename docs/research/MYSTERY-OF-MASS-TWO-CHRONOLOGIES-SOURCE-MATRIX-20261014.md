@@ -10,6 +10,9 @@
 - **All 39 Mass source-first owners in actual 1962 Ordinary order**, each linked to its inherited deep Study owner, relevant September evidence IDs, direct source context URLs from existing MB records, optional Dujardin author passage IDs, and relevant biblical anchors.
 - **26 of 26 original MB Bible connections** preserve their distinct direct/adapted/figure/variable/thematic classifications and chapter URLs. Day-specific Epistles/Gospels and Last Gospel restrictions remain controlled by existing Proper/rite logic, **not** by a narrative timeline.
 - **402 of 422 archived September historical claims** assigned to exactly one research owner at the macro level; the remaining **20 remain held** rather than attached arbitrarily.
+- **All 48 pre-existing bilingual Mass research topics** (20 selected, 24 other explanatory topics, four supplements) now reference their exact owner ID in the liturgical matrix; they remain unpublished drafts.
+- **All 71 Guéranger cue drafts** are assigned one study owner (30 older French notes + 41 later structured records). One combined two-Consecration explanation FRG22 is owned under the Host and cross-referenced from the chalice; no duplicate commentary.
+- **36 distinct Lanslots source-candidate IDs** from the existing inventoried bilingual, critical, nonparenthetical Bible and Latin registers are preserved per current owner, not collapsed into generic prose.
 - **22 Dujardin source stages** (only 21 link inside the 39-body owners; DJ01 is pre-Mass), plus **26 Ferrer archival grouping rows drawn from his 30 original numbered sections**, plus **six groups in a Passion method attributed to Francis de Sales**. None becomes a 1962 action trigger or asserted historical cause.
 - **12 source findings** from Gihr (6), Le Brun (2), Languet (2, one secondhand + one bibliography), and Torma (2), with all original URLs/locations and substantive review cautions.
 
