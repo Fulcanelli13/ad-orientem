@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 92,
+  "source_count": 105,
   "sources": [
     {
       "id": "S01",
@@ -1109,6 +1109,162 @@
       "access": "full_firstperson_article_opened",
       "chapter_passage_certified": false,
       "annotation": "Retrospective self-report and a counterpoint to claimant-party record; do not make her private later legal judgement official Church law."
+    },
+    {
+      "id": "S93",
+      "title": "ASRM gestational carrier ethics opinion",
+      "author": "American Society for Reproductive Medicine Ethics Committee",
+      "year": "2023",
+      "role": "firstperson_opponent_professional_ethics",
+      "url": "https://prod.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/",
+      "scope": "Key Points, Counseling and Informed Consent, Conclusion; actual proponent of ethically acceptable surrogacy with autonomy and safeguards",
+      "access": "direct_original_2023_full_html",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S94",
+      "title": "Victim Sexual Arousal During Nonconsensual Sex: A Scoping Review",
+      "author": "M. Vandervoort et al.",
+      "year": "2024",
+      "role": "original_empirical_scoping_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38724699/",
+      "scope": "abstract; 13,894 records screened; 8 studies plus one book included; genital response occurs; no reliable prevalence estimate",
+      "access": "original_abstract_verified",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S95",
+      "title": "Clarification on procured abortion",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "2009-07-11",
+      "role": "magisterial_primary_original",
+      "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+      "scope": "explicit distinction direct abortion as end/means vs intervention directed to serious maternal condition with unintended side effect, quoting Pius XII",
+      "access": "full_english_original_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S96",
+      "title": "The Distinction Between Direct Abortion and Legitimate Medical Procedures",
+      "author": "USCCB Committee on Doctrine",
+      "year": "2010-06-23",
+      "role": "bishops_doctrinal_committee_statement",
+      "url": "https://www.usccb.org/resources/direct-abortion-statement2010-06-23",
+      "scope": "distinguishes direct abortion from treatment of pathology; Phoenix historical discussion, directives 45/47, not standalone medical protocol",
+      "access": "original_official_statement_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S97",
+      "title": "Ectopic Pregnancy patient information",
+      "author": "American College of Obstetricians and Gynecologists",
+      "year": "updated patient resource",
+      "role": "professional_clinical_patient_guidance",
+      "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+      "scope": "ectopic pregnancy emergency signs incl sudden severe pain shoulder pain weakness; clinical treatment separate from Catholic moral assessment of specific method",
+      "access": "official_clinical_guidance_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S98",
+      "title": "Donum veritatis on theologians and Magisterium",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "1990",
+      "role": "same_original_as_S41_reference_crosslink",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "scope": "§§23–31; sincere theological difficulties and limits of public dissent; used to distinguish CR-DOC-09/CR-AUT-05 owner scope",
+      "access": "original_already_opened_as_S41",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S99",
+      "title": "1983 Code of Canon Law, Rights and Obligations of all the Christian Faithful",
+      "author": "John Paul II",
+      "year": "1983",
+      "role": "universal_ecclesiastical_law_original",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-223_en.html",
+      "scope": "canon 212 §§1–3; obedience, needs, lawful expressed concerns with reverence and care for common good; 219 free selection of state",
+      "access": "official_original_locator",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S100",
+      "title": "Summa theologiae II-II q.104 Obedience",
+      "author": "St Thomas Aquinas",
+      "year": "13th c.",
+      "role": "doctor_of_church_original_translation",
+      "url": "https://www.newadvent.org/summa/3104.htm",
+      "scope": "a.5 limits of obedience to superior's competence and divine law, and a.6 Christians and temporal superiors",
+      "access": "original_translation_locator",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S101",
+      "title": "Summa theologiae II-II q.33 Fraternal correction",
+      "author": "St Thomas Aquinas",
+      "year": "13th c.",
+      "role": "doctor_of_church_original_translation",
+      "url": "https://www.newadvent.org/summa/3033.htm",
+      "scope": "a.4 public correction of prelates when public danger of faith, avoiding private deposition inference",
+      "access": "original_translation_locator",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S102",
+      "title": "Dignitas personae section on frozen embryos",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "2008",
+      "role": "same_original_as_S23_specific_locator",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "scope": "§19 unborn embryos, adoption proposed by some, acknowledged problems, unresolvable injustice. Same document as S23 not independent source",
+      "access": "original_full_html_verified",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S103",
+      "title": "Divini illius magistri on sex education",
+      "author": "Pius XI",
+      "year": "1929",
+      "role": "magisterial_education_primary",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_31121929_divini-illius-magistri.html",
+      "scope": "§§65–67 warnings about indiscriminate sex education and parent formation, not absolute ban on education",
+      "access": "original_html_known_locator",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S104",
+      "title": "Pius XI 1974 CDF Declaration on Procured Abortion",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "1974",
+      "role": "magisterial_primary_abortion_original",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19741118_declaration-abortion_en.html",
+      "scope": "§§6–14 embryo dignity and claim not dependent on precise theory of ensoulment",
+      "access": "original_source_text_locator",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
+    },
+    {
+      "id": "S105",
+      "title": "Dignitas personae biomedical fertility assistance",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "2008",
+      "role": "same_original_as_S23_specific_locator",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "scope": "§§12–13 distinction assisting fertility in conjugal act from replacing it; same original as S23",
+      "access": "original_full_html_verified",
+      "chapter_passage_certified": false,
+      "annotation": "Passage-level proportional checking; translations and different locators within same institutional text are not independent authors."
     }
   ],
   "priority_questions": [
@@ -1545,12 +1701,16 @@
       "source_ids": [
         "S03",
         "S10",
-        "S27"
+        "S27",
+        "S99",
+        "S100"
       ],
       "source_roles": [
         "magisterial_original",
         "holy_see_act",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "universal_ecclesiastical_law_original",
+        "doctor_of_church_original_translation"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1565,12 +1725,16 @@
       "source_ids": [
         "S10",
         "S14",
-        "S27"
+        "S27",
+        "S99",
+        "S100"
       ],
       "source_roles": [
         "holy_see_act",
         "sspx_original_proponent",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "universal_ecclesiastical_law_original",
+        "doctor_of_church_original_translation"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1584,11 +1748,15 @@
       "id": "CR-AUT-03",
       "source_ids": [
         "S03",
-        "S14"
+        "S14",
+        "S99",
+        "S101"
       ],
       "source_roles": [
         "magisterial_original",
-        "sspx_original_proponent"
+        "sspx_original_proponent",
+        "universal_ecclesiastical_law_original",
+        "doctor_of_church_original_translation"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1602,11 +1770,15 @@
       "id": "CR-AUT-04",
       "source_ids": [
         "S03",
-        "S07"
+        "S07",
+        "S41",
+        "S99"
       ],
       "source_roles": [
         "magisterial_original",
-        "magisterial_preconciliar"
+        "magisterial_preconciliar",
+        "magisterial_assent_and_theological_difficulties_original",
+        "universal_ecclesiastical_law_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1621,12 +1793,16 @@
       "source_ids": [
         "S03",
         "S07",
-        "S18"
+        "S18",
+        "S41",
+        "S99"
       ],
       "source_roles": [
         "magisterial_original",
         "magisterial_preconciliar",
-        "sedevacantist_original_proponent"
+        "sedevacantist_original_proponent",
+        "magisterial_assent_and_theological_difficulties_original",
+        "universal_ecclesiastical_law_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -2270,11 +2446,13 @@
       "id": "CSE110",
       "source_ids": [
         "S23",
-        "S35"
+        "S35",
+        "S102"
       ],
       "source_roles": [
         "magisterial_bioethics_original",
-        "magisterial_bioethics_original"
+        "magisterial_bioethics_original",
+        "same_original_as_S23_specific_locator"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -2288,11 +2466,13 @@
       "id": "CSE111",
       "source_ids": [
         "S21",
-        "S27"
+        "S27",
+        "S100"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "doctor_of_church_original_translation"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -2305,10 +2485,14 @@
     {
       "id": "CSE112",
       "source_ids": [
-        "S27"
+        "S27",
+        "S94",
+        "S100"
       ],
       "source_roles": [
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "original_empirical_scoping_review",
+        "doctor_of_church_original_translation"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -2321,10 +2505,14 @@
     {
       "id": "CSE113",
       "source_ids": [
-        "S27"
+        "S27",
+        "S94",
+        "S100"
       ],
       "source_roles": [
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "original_empirical_scoping_review",
+        "doctor_of_church_original_translation"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -2337,10 +2525,12 @@
     {
       "id": "CSE117",
       "source_ids": [
-        "S27"
+        "S27",
+        "S100"
       ],
       "source_roles": [
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "doctor_of_church_original_translation"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -2353,10 +2543,14 @@
     {
       "id": "CSE120",
       "source_ids": [
-        "S27"
+        "S27",
+        "S100",
+        "S94"
       ],
       "source_roles": [
-        "historical_moral_manual"
+        "historical_moral_manual",
+        "doctor_of_church_original_translation",
+        "original_empirical_scoping_review"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -2370,11 +2564,13 @@
       "id": "CSE123",
       "source_ids": [
         "S20",
-        "S21"
+        "S21",
+        "S104"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "magisterial_moral_original"
+        "magisterial_moral_original",
+        "magisterial_primary_abortion_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -2387,10 +2583,16 @@
     {
       "id": "CSE125",
       "source_ids": [
-        "S21"
+        "S21",
+        "S95",
+        "S96",
+        "S97"
       ],
       "source_roles": [
-        "magisterial_moral_original"
+        "magisterial_moral_original",
+        "magisterial_primary_original",
+        "bishops_doctrinal_committee_statement",
+        "professional_clinical_patient_guidance"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -3787,13 +3989,333 @@
       "independent_outside_support_required": false,
       "risk": "moral_and_clinical_distinct_claims",
       "review_state": "PENDING_PROPORTIONATE_ANSWER_REVIEW"
+    },
+    {
+      "id": "CSE102",
+      "source_ids": [
+        "S35",
+        "S105"
+      ],
+      "source_roles": [
+        "magisterial_bioethics_original",
+        "same_original_as_S23_specific_locator"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE103",
+      "source_ids": [
+        "S35"
+      ],
+      "source_roles": [
+        "magisterial_bioethics_original"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE104",
+      "source_ids": [
+        "S35",
+        "S93"
+      ],
+      "source_roles": [
+        "magisterial_bioethics_original",
+        "firstperson_opponent_professional_ethics"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE106",
+      "source_ids": [
+        "S105"
+      ],
+      "source_roles": [
+        "same_original_as_S23_specific_locator"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE107",
+      "source_ids": [
+        "S23"
+      ],
+      "source_roles": [
+        "magisterial_bioethics_original"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE108",
+      "source_ids": [
+        "S25"
+      ],
+      "source_roles": [
+        "magisterial_sexual_ethics_original"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE114",
+      "source_ids": [
+        "S100"
+      ],
+      "source_roles": [
+        "doctor_of_church_original_translation"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE115",
+      "source_ids": [
+        "S100"
+      ],
+      "source_roles": [
+        "doctor_of_church_original_translation"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE116",
+      "source_ids": [
+        "S52"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE118",
+      "source_ids": [
+        "S100"
+      ],
+      "source_roles": [
+        "doctor_of_church_original_translation"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE119",
+      "source_ids": [
+        "S99",
+        "S100"
+      ],
+      "source_roles": [
+        "universal_ecclesiastical_law_original",
+        "doctor_of_church_original_translation"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE121",
+      "source_ids": [
+        "S103"
+      ],
+      "source_roles": [
+        "magisterial_education_primary"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE122",
+      "source_ids": [
+        "S103"
+      ],
+      "source_roles": [
+        "magisterial_education_primary"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CSE124",
+      "source_ids": [
+        "S104"
+      ],
+      "source_roles": [
+        "magisterial_primary_abortion_original"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "reproductive_medicine_or_safeguarding",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CR-AUT-10",
+      "source_ids": [
+        "S99",
+        "S100"
+      ],
+      "source_roles": [
+        "universal_ecclesiastical_law_original",
+        "doctor_of_church_original_translation"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_obedience_disputed_authority",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CR-AUT-06",
+      "source_ids": [
+        "S11",
+        "S13"
+      ],
+      "source_roles": [
+        "holy_see_law_historical",
+        "holy_see_law_historical"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_obedience_disputed_authority",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CR-AUT-07",
+      "source_ids": [
+        "S11",
+        "S13"
+      ],
+      "source_roles": [
+        "holy_see_law_historical",
+        "holy_see_law_historical"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_obedience_disputed_authority",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CR-AUT-08",
+      "source_ids": [
+        "S100",
+        "S101"
+      ],
+      "source_roles": [
+        "doctor_of_church_original_translation",
+        "doctor_of_church_original_translation"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_obedience_disputed_authority",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
+    },
+    {
+      "id": "CR-AUT-09",
+      "source_ids": [
+        "S99",
+        "S101"
+      ],
+      "source_roles": [
+        "universal_ecclesiastical_law_original",
+        "doctor_of_church_original_translation"
+      ],
+      "locator_level": "bounded_source_candidate_not_whole_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": false,
+      "risk": "ecclesial_obedience_disputed_authority",
+      "review_state": "REVIEWED_IN_PARALLEL_35_BATCH"
     }
   ],
   "counts": {
-    "sources": 92,
-    "mapped_questions": 146,
-    "church_crisis": 43,
-    "sexual_ethics": 103,
+    "sources": 105,
+    "mapped_questions": 165,
+    "church_crisis": 48,
+    "sexual_ethics": 117,
     "answer_audited": 0,
     "answer_certified": 0
   },
@@ -3808,6 +4330,7 @@
     "Do not change live Q&A or add dossiers; this PR is research discovery only",
     "Charles Curran 2018 essay records his current argument and description of earlier dissent, not a verbatim witness for the 1968 group declaration.",
     "A section number must always be tied to the cited edition. For McHugh–Callan the app links to the revised Farrell 1958 digital edition where §1624 is about venereal acts of marriage, whereas the older unabridged Gutenberg edition treats the same subject at §2618 and §1624 concerns foolishness. Never declare an edition-specific citation wrong without checking the actual linked edition.",
-    "In high-stakes clinical paragraphs do not equate a theological source with medical treatment evidence. WPATH/APA are actual clinical/professional proponent texts, not substitutes for independent outcome studies. Maintain the distinction between American Psychological Association and American Psychiatric Association."
+    "In high-stakes clinical paragraphs do not equate a theological source with medical treatment evidence. WPATH/APA are actual clinical/professional proponent texts, not substitutes for independent outcome studies. Maintain the distinction between American Psychological Association and American Psychiatric Association.",
+    "For survivor trauma, informed consent, and emergency pregnancy: do not infer consent from involuntary physiology, do not give therapeutic procedures as a standalone theological recommendation, and do not delay emergency care for moral debate."
   ]
 }
