@@ -26,14 +26,13 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "FIRST: apply the 2026-10-14 major saints + Doctors + SOME patrons scope reconciliation; no exhaustive sanctoral/national-patrons list or one image per Doctor.",
-    "Resolve high-salience missing or low-quality saint slots from latest Oct13 ratings: Joseph, Thérèse, Vianney, Vincent de Paul, Louis IX, Benedict, Anthony Padua, key Apostles, and other devotional/patron subjects WITH APP USAGE. Reuse W16-W20 and current 281 library before external research.",
-    "Review cross-module reasons for bounded additional major figures found in broader target register (Philip Neri rated 4, John Bosco, Louis-Marie de Montfort, Peter Julian Eymard, and Blessed Père Laval); no automatic new required slots.",
-    "Prioritize 25 user-rated 5-star objects lacking source masters and 41 chosen reproduction preferences for identity, source photography, rights, legibility and mobile suitability.",
-    "Finish existing artwork Class I 53-date (~27-theme) visual review and major feasts/Prayer/Rosary/Stations priority before optional Bible Atlas details.",
-    "The old W16-W20 metric 63/107 source-linked and 44 remaining tracks only the 2026-10-13 existing 235-subject research cohort; not a target library denominator or release progress bar.",
-    "Preserve canonical older 222 research leads, 8 verified JPEG masters and 214 pending; separate W16-W20 candidate research until dedup. No score/image/licence/app publishing mutation.",
-    "Keep PR #887 draft; preserve newest Oct13 277 human ratings, 0–2 global refusals, style exclusions, historical rankings, source authorities and existing release gates."
+    "Wave21: recover usable source-original previews for Joseph (Georges de La Tour Louvre), Lisieux Carmel Thérèse originals, Anthony Padua (Murillo Seville and Van Dyck Brera), Benedict Zurbarán, Vianney, Vincent de Paul, Louis IX, and Margaret Mary. Exact figure fit separate from aesthetic 0-5 scores.",
+    "Wave21: use existing Rubens Prado Apostles W05, Ribalta shared Mark/Luke, Zurbarán Lucy NGA12209 user 5/5 and Carlo Dolci Philip Neri Met712539 user 4/5; never manufacture duplicate originals.",
+    "Wave21: guard against rejected artworks (0-2), Pittoni multi-saint false positives, Joseph of Cupertino vs Joseph spouse of Mary, school/workshop vs autograph and historical selected but unscored artworks.",
+    "Respect priority order: required major feasts/Calendar, devotions/Rosary/Stations, major saints and key Doctors plus SOME patrons, selective Bible stories; no exhaustive saints scope.",
+    "Recover latest Oct13 chosen reproduction sources and ranked five-star works without verified JPEG masters; do not ask user to search for pictures himself.",
+    "The legacy W16-W20 metric 63/107 old zero-option subjects and 44 remaining is not overall mandatory-scope progress or app release coverage.",
+    "Keep source images unapproved until exact full-resolution original, attribution, size, rights and device crop independently verified; maintain user's 277 scores and PR draft status."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -169,6 +168,12 @@
     "sourceLinkedLegacy107Metric": "LEGACY_RESEARCH_COHORT_ONLY_NOT_OVERALL_COMPLETENESS",
     "noNewRequiredSubjectsCreated": true,
     "doNotResearchObscureDoctorsAheadOfMajorSaints": true,
-    "doNotTurn207ExploratoryTargetsIntoRequirements": true
+    "doNotTurn207ExploratoryTargetsIntoRequirements": true,
+    "latestExecutionBatch": "data/calendar/sacred-art-major-saint-source-reuse-wave21-20261014.v1.json",
+    "latestMethodNote": "data/calendar/sacred-art-major-saints-reuse-wave21-20261014.v1.md",
+    "wave21ExistingSubjectsSourcePrioritized": 26,
+    "wave21NewMandatorySaints": 0,
+    "wave21SourceImagesAcquired": 0,
+    "wave21ExistingRatingMutations": 0
   }
 }
