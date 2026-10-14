@@ -51,16 +51,46 @@
       "subject": "Anthony of Padua",
       "ratingEvidence": "cma-150955:4; met-436982:2 EXCLUDED",
       "existingOfficialOriginalSource": "https://www.catedraldesevilla.es/en/historical-figures-who-form-the-soul-of-seville-cathedral/",
-      "note": "Murillo Vision Anthony exact; Van Dyck Brera W07-006; Pittoni figure identification NOT verified",
-      "sourceOnlyNotUserApproved": true
+      "note": "Murillo Vision Anthony exact; Van Dyck Brera W07-006; Pittoni CMA 1982.36 museum-certified figures include Anthony, Benedict, Agnes, Lucy, Scholastica, Veronica; one multi-saint original, 4/5 score remains",
+      "sourceOnlyNotUserApproved": true,
+      "iconographyCorrection20261014": {
+        "source": "https://www.clevelandart.org/art/1982.36",
+        "identifiedFigures": [
+          "Saint Lucy",
+          "Saint Agnes",
+          "Saint Scholastica",
+          "Saint Benedict",
+          "Saint Veronica",
+          "Saint Anthony of Padua"
+        ],
+        "certainty": "MUSEUM_EXPLICIT_SIX_FIGURES",
+        "existingScore": 4,
+        "onePhysicalOriginal": true,
+        "doNotTreatAsSoloPortrait": true
+      }
     },
     {
       "subjectId": "SNT-OT-14",
       "subject": "Benedict",
       "ratingEvidence": "met-437970:3; cma-150955:4 UNCERTAIN; met-442750:2 EXCLUDED; met-436565:2 EXCLUDED",
       "existingOfficialOriginalSource": "https://www.museodelprado.es/coleccion/obra-de-arte/san-benito-destruyendo-los-idolos/9df62082-273c-45fb-b107-e0f5025f086f",
-      "note": "Zurbaran 3/5 exact, Rizi exact event; 4/5 Pittoni multi-saint requires identification",
-      "sourceOnlyNotUserApproved": true
+      "note": "Zurbaran 3/5 exact, Rizi exact event; 4/5 Pittoni CMA multi-saint figure identities confirmed by museum; not solo portraits",
+      "sourceOnlyNotUserApproved": true,
+      "iconographyCorrection20261014": {
+        "source": "https://www.clevelandart.org/art/1982.36",
+        "identifiedFigures": [
+          "Saint Lucy",
+          "Saint Agnes",
+          "Saint Scholastica",
+          "Saint Benedict",
+          "Saint Veronica",
+          "Saint Anthony of Padua"
+        ],
+        "certainty": "MUSEUM_EXPLICIT_SIX_FIGURES",
+        "existingScore": 4,
+        "onePhysicalOriginal": true,
+        "doNotTreatAsSoloPortrait": true
+      }
     },
     {
       "subjectId": "SNT-OT-17",
