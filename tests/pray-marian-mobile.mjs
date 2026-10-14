@@ -125,6 +125,12 @@ try{
      body.scrollTop=Math.min(max,Math.max(0,body.scrollTop+target.top-bounds.top-body.clientHeight*.4));
      body.dispatchEvent(new Event("scroll",{bubbles:true}));
    },selector);
+   await page.waitForTimeout(180);
+   console.log("STATION_PHASE_DIAGNOSTIC "+JSON.stringify(await page.locator("#aoPray435930 .aoP435930Stations .aoDevoCardScroll").evaluate((body,selector)=>({
+     requested:selector,top:body.scrollTop,max:body.scrollHeight-body.clientHeight,
+     active:[...body.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']")].map(p=>({className:p.className,text:p.textContent.slice(0,35)})),
+     scene:document.querySelector("#aoPray435930 .aoDevotionalActionCinematic")?.dataset.aoActionScene??null
+   }),selector)));
  };
  await focusStationPhase(".aoP435930VRLine.leader");
  const stationCinema=page.locator("#aoPray435930 .aoDevotionalActionCinematic");
