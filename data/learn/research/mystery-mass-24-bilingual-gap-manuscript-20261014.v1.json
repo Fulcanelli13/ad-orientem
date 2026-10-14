@@ -757,8 +757,8 @@
         "fr": "L'Ange saint et l'autel céleste [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
       },
       "deep": {
-        "en": "Supplices te rogamus asks that the Eucharistic offering be accepted before God's majesty and that those who partake of the altar receive heavenly blessing and grace. Guéranger interprets the 'holy Angel' as Christ sent by the Father, while other commentators understand a created angel; the identity is not dogmatically defined by these words. This spiritual petition does not describe the consecrated Host being physically carried away from the earthly altar. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
-        "fr": "Dans le Supplices te rogamus, l'Église demande que l'offrande eucharistique soit agréée devant la majesté divine et que ceux qui participent à l'autel reçoivent la bénédiction et la grâce du ciel. Guéranger interprète l'« Ange saint » comme le Christ envoyé par le Père, tandis que d'autres commentateurs comprennent un ange créé ; cette identité n'est pas définie dogmatiquement par les paroles de la prière. La supplication ne décrit pas un transport matériel de l'Hostie consacrée hors de l'autel. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
+        "en": "In Supplices te rogamus the priest asks that the offering be borne before God's majesty by the hands of his holy Angel, so that communicants may receive heavenly blessing and grace. St Thomas Aquinas explains both an angel presenting the prayers of priest and people and a spiritual interpretation referring to Christ, the Angel of great counsel. These are interpretations, not a dogmatic identification imposed by the prayer. Aquinas explicitly denies that the consecrated species or Christ's true Body are physically carried from the altar to heaven. [Roman Canon](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [St Thomas, Summa theologiae III, q. 83, a. 4, ad 9](https://www.newadvent.org/summa/4083.htm#article4) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+        "fr": "Dans Supplices te rogamus, le prêtre demande que l'offrande soit portée devant la majesté divine par les mains du saint Ange de Dieu, afin que ceux qui communient reçoivent la bénédiction et la grâce célestes. Saint Thomas d'Aquin explique à la fois l'intervention d'un ange présentant les prières du prêtre et du peuple, et une interprétation spirituelle rapportant l'Ange au Christ, l'Ange du grand conseil. Il s'agit d'interprétations, non d'une identification dogmatique imposée par la prière. Saint Thomas exclut expressément que les espèces consacrées ou le vrai Corps du Christ soient matériellement transportés de l'autel au ciel. [Canon romain](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [Saint Thomas, Somme théologique III, q. 83, a. 4, ad 9](https://www.newadvent.org/summa/4083.htm#article4) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
       },
       "primarySourceHierarchy": [
         {
@@ -774,6 +774,12 @@
             "FRG44",
             "FRG45"
           ]
+        },
+        {
+          "kind": "PRIMARY_SCHOLASTIC_DOCTRINAL_INTERPRETATION",
+          "url": "https://www.newadvent.org/summa/4083.htm#article4",
+          "locator": "Thomas Aquinas, ST III q.83 a.4 ad 9",
+          "qualification": "States both angelic and Christological interpretations; denies literal transport of Eucharistic species; not a normative 1962 rubric."
         }
       ],
       "existingGuideOwner": "AO.CARD.017",
@@ -806,7 +812,9 @@
         "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
         "original1962TextCollation": "NOT_COMPLETE",
         "nativeFrenchApproval": false,
-        "publicReleaseApproved": false
+        "publicReleaseApproved": false,
+        "claimSpecificAquinasPassage": "ST_III_Q83_A4_AD9_REVIEWED",
+        "frenchDoctrinalNativeReview": "REQUIRED"
       }
     },
     {
