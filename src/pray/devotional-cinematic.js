@@ -3,11 +3,11 @@
  * Non-owning: does not advance canonical text, beads, or ritual state.
  * Approved Angelus artwork/shot metadata recovered from PR #1015.
  */
-import {TANNER_ANGELUS_MASTER,tannerScene} from "./angelus-tanner-storyboard.js";
+// Pending historical Tanner derivative remains provenance-only; no auto-approval.
 import {approvedOpeningArtworkPool,selectSessionArtwork} from "./devotional-action-cinematics.js";
 import "./devotional-cinematic-styles.js";
-export const DEVOTIONAL_CINEMATIC_VERSION="devotional-card-interstitial-v1";
-const shotId=Object.freeze({announcement:"annunciation",fiat:"fiat",incarnation:"incarnation",intercession:"collect"});
+export const DEVOTIONAL_CINEMATIC_VERSION="devotional-card-interstitial-v2";
+// No four-chapter art storyboard: only the prayer opening may show an approved painting.
 const timers=new WeakMap();
 const shown=new WeakSet();
 export function resetDevotionalOpening(doc=globalThis.document){
@@ -27,12 +27,11 @@ function reduced(win){
   win?.AO_RUNTIME_V8?.store?.getState?.()?.settings?.reducedMotion);
 }
 export function devotionalInterludePlan({form="angelus",card}={}){
- if(!card?.id||!card?.title)return null;
- const shot=form==="angelus"?tannerScene(shotId[card.id]||""):null;
+ if(form!=="angelus"||card?.id!=="announcement"||!card?.title)return null;
+ // Only verified artwork injected from the art-approval owner is displayed.
+ // No source-locked picture is automatically "approved" because it exists.
  return Object.freeze({id:card.id,title:card.title,latin:card.latin||"",
-  image:shot?TANNER_ANGELUS_MASTER.localPath:null,
-  shot:shot?Object.freeze({focus:shot.focus,begin:shot.begin,effect:shot.effect}):null,
-  durationMs:shot?Math.max(1900,shot.durationMs):1100});
+  image:null,shot:null,durationMs:1650});
 }
 function create(doc,tag,cls,text){
  const el=doc.createElement(tag);el.className=cls;
