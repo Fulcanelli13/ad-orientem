@@ -1,0 +1,97 @@
+name: Lanslots 1897 full OCR Scripture census (research only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - mass/342-lanslots-1897-crosswalk
+    paths:
+      - '.github/workflows/lanslots-1897-full-ocr-census.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lanslots-ocr-census-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-full-text-census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test research-only citation parser
+        run: node tools/mass/extract-lanslots-scripture.mjs --self-test
+      - name: Acquire unmodified Internet Archive original OCR
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/lanslots-1897-full-ocr
+          output="artifacts/lanslots-1897-full-ocr/illustratedexpla00lans_djvu.txt"
+          source_file="artifacts/lanslots-1897-full-ocr/source-url.txt"
+          for url in \
+            "https://archive.org/download/illustratedexpla00lans/illustratedexpla00lans_djvu.txt" \
+            "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt"
+          do
+            echo "Attempting $url"
+            if curl --fail --location --silent --show-error --retry 3 --retry-all-errors --connect-timeout 15 --max-time 150 "$url" -o "$output"; then
+              if node --input-type=module -e '
+                import { readFileSync } from "node:fs";
+                const s=readFileSync(process.argv[1],"utf8");
+                if(s.length<100000 || !s.includes("LANSLOTS") || !s.includes("CHAPTER") || /<html/i.test(s.slice(0,200)))process.exit(1);
+              ' "$output"; then
+                printf '%s\n' "$url" > "$source_file"
+                break
+              fi
+            fi
+            rm -f "$output"
+          done
+          test -s "$output" || {
+            echo "::error::No complete plain-text OCR source acquired; do not assert an exhaustive bibliography."
+            exit 1
+          }
+      - name: Extract candidate Bible citations without publication authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/mass/extract-lanslots-scripture.mjs \
+            artifacts/lanslots-1897-full-ocr/illustratedexpla00lans_djvu.txt \
+            artifacts/lanslots-1897-full-ocr/citation-candidates.unverified.json
+          node --input-type=module -e '
+            import {readFileSync,writeFileSync} from "node:fs";
+            import {createHash} from "node:crypto";
+            const dir="artifacts/lanslots-1897-full-ocr/";
+            const bytes=readFileSync(dir+"illustratedexpla00lans_djvu.txt");
+            const refs=JSON.parse(readFileSync(dir+"citation-candidates.unverified.json","utf8"));
+            const source=readFileSync(dir+"source-url.txt","utf8").trim();
+            const report={
+              schema:"ao-lanslots-1897-full-ocr-acquisition-v1",
+              access:"COMPLETE_DOWNLOADED_TEXT_VERIFIED_BY_MIN_SIZE_AND_CONTENT_MARKERS",
+              sourceUrl:source,
+              originalArchiveId:"illustratedexpla00lans",
+              bytes:bytes.length,
+              sha256:createHash("sha256").update(bytes).digest("hex"),
+              machineParserCandidateCount:refs.candidateCount,
+              includesFrontAndEndMarkers:true,
+              scannedPdfPagesVisuallyChecked:0,
+              absolutePrintedPageIndexValidated:false,
+              bibleVerseEditionChecked:false,
+              humanCitationCompletenessCertified:false,
+              runtimePublishingAuthority:false,
+              warning:"Machine candidate extraction is not an exhaustive Bible-reference inventory: OCR and citation spelling can defeat regex detection."
+            };
+            writeFileSync(dir+"acquisition-report.v1.json",JSON.stringify(report,null,2)+"\n");
+            console.log("LANSLOTS_OCR_REPORT="+JSON.stringify(report));
+          '
+      - name: Preserve unmodified OCR plus review-only machine candidates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lanslots-1897-unverified-full-ocr-census
+          path: artifacts/lanslots-1897-full-ocr/
+          retention-days: 30
+          if-no-files-found: warn
