@@ -1,0 +1,52 @@
+{
+  "schema": "AO_SACRED_ART_TWO_OPTIONS_W32_V1",
+  "date": "2026-10-14",
+  "ownerPR": 887,
+  "candidates": [
+    {
+      "id": "G32-001",
+      "subjectId": "SNT-DC-18",
+      "artist": "James Doyle Penrose",
+      "title": "The Last Chapter: Bede on his deathbed completing his translation of St John's Gospel",
+      "date": 1902,
+      "medium": "oil on canvas",
+      "institution": "Cambridge University Library",
+      "sourceUrl": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/KJV/lastcharpter.html",
+      "furtherPhotoEvidence": "https://commons.wikimedia.org/wiki/File:The_last_chapter_by_J._Doyle_Penrose_(1902).jpg",
+      "evidence": "Cambridge University Library says original hangs outside Anderson Room, by permission of Bible Society Trustees. Distinct from National Trust Wallington William Bell Scott Bede painting (1857).",
+      "imageGate": "Commons image only 794x628, better master required from custodian; commercial reproduction rights unknown.",
+      "counts": true
+    },
+    {
+      "id": "G32-002",
+      "subjectId": "SNT-DC-27",
+      "artist": "Francesco Netti",
+      "title": "Sant'Effremo",
+      "date": 1892,
+      "medium": "oil on canvas 208x114 cm",
+      "institution": "Pinacoteca Metropolitana Corrado Giaquinto, Bari",
+      "sourceUrl": "https://www.francesconetti.com/en-gb/newpage7d1e8e8d",
+      "evidence": "Francesco Netti's scholarly artist association specifies signed 1892 original, commissioned for Church Madonna della Pietà in Santeramo, stored Bari museum from 1930. A replacement copy by Bartolomeo Paradiso was subsequently stolen. Saint identified as Ephrem Syrian in Santeramo parish historical accounts.",
+      "imageGate": "Custodian catalogue/photo permissions and app-quality reproduction pending; portrait iconography possible, separate from Giuseppe Franchi original in prior W30.",
+      "counts": true
+    }
+  ],
+  "nonCounted": [
+    {
+      "subjectId": "SNT-DC-27",
+      "artist": "Emanuele Zanfurnari",
+      "title": "Death of Ephrem the Syrian",
+      "sourceUrl": "https://m.museivaticani.va/content/dam/museivaticani/pdf/collezioni/musei/pinacoteca/sala_icone_en.pdf",
+      "reason": "Vatican Museums physically own 17c painting in icon room; an icon-format piece, outside naturalistic-oil aesthetic, therefore reserve as Eastern-icon fallback; do not count toward required 2 naturalistic originals."
+    }
+  ],
+  "counts": {
+    "newSources": 2,
+    "subjectsUpgradedToTwo": 2,
+    "remainingWithoutTwoIfStartingAt71": 2,
+    "scoreChanges": 0,
+    "newMandatorySaints": 0,
+    "newImagesDownloaded": 0,
+    "productionChanges": 0
+  }
+}
