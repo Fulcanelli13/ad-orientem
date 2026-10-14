@@ -21,10 +21,16 @@ assert.equal(data.stages.reduce((n,s)=>n+s.claims.length,0),24);
 assert.equal(MASS_FORMATION_ROUTE,"learn.mass");
 assert.equal(MASS_FORMATION_VERSION,"mass-formation-campion-v1");
 
-assert.equal(MASS_FORMATION_SCRIPTURE_ANCHORS.length,16,
- "All 16 published-lesson biblical study references must be present");
+assert.equal(MASS_FORMATION_SCRIPTURE_ANCHORS.length,18,
+ "All 18 unique published-lesson biblical study passages must be present");
 assert.deepEqual([...new Set(MASS_FORMATION_SCRIPTURE_ANCHORS.map(x=>x.stageId))],
  data.stages.map(x=>x.id),"Each of the eight published lessons needs contextual Scripture reading");
+assert.equal(MASS_FORMATION_SCRIPTURE_ANCHORS.find(x=>x.id==="MFS12")?.reference,"Hebrews 7:1–17",
+ "Full researched Melchisedech epistle reference must not be arbitrarily truncated");
+for(const reference of ["Matthew 20:30–31","John 1:14"]){
+ assert.equal(MASS_FORMATION_SCRIPTURE_ANCHORS.filter(x=>x.reference===reference).length,1,
+   "Keep the missing contextual Bible witnesses available exactly once");
+}
 for(const item of MASS_FORMATION_SCRIPTURE_ANCHORS){
  const parsed=parseScriptureContext(item.reference);
  assert.ok(parsed,item.id+" must use the shared Catholic Bible parser");
