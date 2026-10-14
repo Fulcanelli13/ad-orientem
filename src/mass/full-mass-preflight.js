@@ -2,9 +2,14 @@
 // Ceremony FORM and the liturgical CELEBRATION are different axes. The latter
 // remains owned by the 1962 calendar/Proper resolver; NEVER substitute a Proper.
 import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
+import {resolveMassLiturgicalTheme} from "./reader-liturgical-theme.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
+import {retireLegacyMassChoiceGrids} from "./legacy-mass-choice-visibility.js";
+import {renderPrayerJourneyModes,PRAYER_JOURNEY_MODES} from "./prayer-journey-modes.js";
+import {renderAdjacentServices,toggleAdjacentService} from "./adjacent-service-context.js";
+import {arrangeMassEntryJourney,updateMassJourneyNotice,translateMassEntryJourney,updateMassJourneyReadiness,updateMassJourneyPhases,updateMassJourneyObserved,projectMassEntryLaunch,projectMassEntryEssentials,projectMassEntryReader,projectMassEntryDetails} from "./mass-entry-journey.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -65,10 +70,14 @@ export function mountFullMassPreflight({
   getCalendarState=()=>null,
   subscribeCalendarState=null,
   onOpenCalendar=null,
+  onOpenPreparation=()=>false,
+  getPrayerState=()=>null,
+  onPrayerModeChange=()=>false,
+  onOpenAdjacentService=()=>false,
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
-  let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
+  let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},adjacentChoices={},disposed=false,observer=null,startObserver=null,observedStart=null;
   const flow=()=>doc.getElementById("ao-mass-flow-v1");
   const anchor=()=>flow()?.querySelector(".aoFlowActions")??flow()?.querySelector("[data-ao-start-live]")?.parentElement;
   const french=()=>String(language()).startsWith("fr");
@@ -117,11 +126,14 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;adjacentChoices={};}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
-    if(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey)riteOverrides={};
+    if(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey){
+      riteOverrides={};
+      adjacentChoices={};
+    }
     lastCelebrationKey=celebrationKey;
     if(root&&!root.isConnected)root=null;
     if(!root){
@@ -177,8 +189,77 @@ export function mountFullMassPreflight({
 
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
-        '<p data-full-mass-note></p>';  
+        '<p data-full-mass-note></p>';
+      arrangeMassEntryJourney(root,{language:language()});
       root.addEventListener("click",e=>{
+        // A real-time Mass sequence is not a hidden accordion. Retain the
+        // historical summary node for compatibility, but never let it close
+        // the container holding the form and following-rite choices.
+        if(e.target?.closest?.("[data-full-mass-rite-summary]")){
+          e.preventDefault();return;
+        }
+        const beginButton=e.target?.closest?.("[data-mass-journey-start]");
+        if(beginButton){
+          e.preventDefault();
+          const actual=getResolvedMass();
+          const current=selectionFor(actual);
+          const gate=getSourceGate();
+          const originalStart=host.querySelector("[data-ao-start-live]");
+          if(!current.canStart||gate?.ready!==true||
+             !originalStart||originalStart.disabled||
+             originalStart.getAttribute("aria-disabled")==="true"){
+            refresh();return;
+          }
+          // Activation remains owned by the historical Mass host, whose
+          // canonical gate, plans, and event handlers remain untouched.
+          originalStart.click();
+          return;
+        }
+        const serviceButton=e.target?.closest?.("[data-mass-journey-open-adjacent]");
+        if(serviceButton){
+          e.preventDefault();
+          if(serviceButton.disabled)return;
+          const id=serviceButton.dataset.massJourneyOpenAdjacent;
+          if(adjacentChoices[id]!==true)return;
+          serviceButton.disabled=true;
+          const card=serviceButton.closest("[data-mass-journey-adjacent-active]");
+          let message=card?.querySelector("[data-mass-journey-adjacent-error]");
+          if(!message&&card){
+            message=doc.createElement("p");
+            message.dataset.massJourneyAdjacentError="";
+            message.setAttribute("role","alert");
+            message.hidden=true;card.append(message);
+          }
+          if(message)message.hidden=true;
+          void Promise.resolve().then(()=>onOpenAdjacentService(id,serviceButton))
+           .then(result=>{
+             if(result===true||result?.ok===true)return;
+             if(message){
+               message.textContent=french()?"Impossible d’ouvrir cet office.":
+                 "Unable to open this service.";
+               message.hidden=false;
+             }
+           })
+           .catch(error=>{
+             if(message){
+               message.textContent=(french()?"Ouverture impossible : ":"Unable to open service: ")+
+                String(error?.message??error);
+               message.hidden=false;
+             }
+           })
+           .finally(()=>{if(serviceButton.isConnected)serviceButton.disabled=false;});
+          return;
+        }
+        const prayerButton=e.target?.closest?.("[data-mass-journey-open-preparation]");
+        if(prayerButton){
+          e.preventDefault();
+          try{
+            const accepted=onOpenPreparation();
+            if(accepted!==false)return;
+          }catch(error){console.error("Before-Mass prayer entry failed",error)}
+          prayerButton.title=french()?"Préparation indisponible.":"Preparation unavailable.";
+          return;
+        }
         const calendarButton=e.target?.closest?.("[data-mass-calendar-open]");
         if(calendarButton){
           e.preventDefault();e.stopPropagation();
@@ -220,8 +301,28 @@ export function mountFullMassPreflight({
           }
         }
       });
+      root.addEventListener("keydown",e=>{
+        if(e.target?.closest?.("[data-full-mass-rite-summary]")&&
+          (e.key==="Enter"||e.key===" ")){e.preventDefault();}
+      });
       root.addEventListener("change",e=>{
         const el=e.target;
+        if(el?.matches?.("[data-mass-journey-prayer-mode]")){
+          const phase=el.dataset.massJourneyPrayerPhase,mode=el.value;
+          if(!["prepare","thanksgiving"].includes(phase)||!PRAYER_JOURNEY_MODES.includes(mode)){
+            refresh();return;
+          }
+          try{onPrayerModeChange(phase,mode)}catch(error){
+            console.error("Mass prayer depth change failed",error);
+          }
+          // Authoritative state, never the hopeful radio click, owns selection.
+          refresh();
+          return;
+        }
+        if(el?.matches?.("[data-mass-journey-adjacent-choice]")){
+          adjacentChoices=toggleAdjacentService(adjacentChoices,el.dataset.massJourneyAdjacentChoice,el.checked);
+          refresh();return;
+        }
         if(el?.matches?.("[data-full-mass-rite]")){
           const id=el.dataset.fullMassRite;
           const summary=selectionFor(getResolvedMass());
@@ -244,6 +345,16 @@ export function mountFullMassPreflight({
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
     const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},language(),{form:summary.form});
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
+    const commemorationDisclosure=root.querySelector("[data-mass-journey-commemoration-details]");
+    // Source uncertainty affects prayer selection and must not be hidden.
+    if(commemorationDisclosure&&["INCOMPLETE","FORM_RULES_UNVERIFIED"].includes(
+      context.commemorationOrations?.status))commemorationDisclosure.open=true;
+    root.dataset.massJourneyCalendarDiffers=String(context.differs);
+    root.dataset.massJourneySameCelebration=String(Boolean(!context.differs&&
+      context.calendar.title&&summary.actualTitle));
+    translateMassEntryJourney(root,{language:language()});
+    updateMassJourneyNotice(root,legacy,{language:language(),kind:summary.kind,form:summary.form});
+    updateMassJourneyObserved(root,legacy,{language:language()});
     const detailsLabel=root.querySelector("[data-mass-calendar-details-label]");
     if(detailsLabel)detailsLabel.textContent=fr?"Explorer le calendrier liturgique":"Explore the liturgical calendar";
     for(const button of root.querySelectorAll("[data-mass-calendar-view]")){
@@ -254,26 +365,54 @@ export function mountFullMassPreflight({
       const calendarOpen=root.querySelector("[data-mass-calendar-open]");
       if(calendarOpen)calendarOpen.hidden=true;
     }
-    const oldFormGrid=host.querySelector(".aoChoiceGrid:has([data-ao-form])");
-    if(oldFormGrid){
-      oldFormGrid.hidden=true;
-      oldFormGrid.style.display="none";
-      const header=oldFormGrid.previousElementSibling;
-      if(header?.classList.contains("aoFlowSection")){
-        header.hidden=true;header.style.display="none";
-      }
-    }
+    // The historic VOX/Missal and form widgets still belong to the host,
+    // but duplicating them alongside the native controls is misleading.
+    // Suppress presentation only; never erase host selection or listeners.
+    retireLegacyMassChoiceGrids(host,root);
     root.querySelectorAll("[data-full-mass-category]").forEach(button=>{
       button.textContent=button.dataset[fr?"labelFr":"labelEn"];
       const match=button.dataset.fullMassCategory===
         (legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY"?"SOURCE_DATE":summary.kind);
       button.setAttribute("aria-current",match?"true":"false");
     });
-    root.querySelector("[data-full-mass-title]").textContent=l("Prepare your Mass","Préparer votre messe");
+    root.querySelector("[data-full-mass-title]").textContent=summary.kind==="GOOD_FRIDAY"?
+      l("Prepare for the Good Friday liturgy","Préparer l'office du Vendredi saint"):
+      l("Prepare your Mass","Préparer votre messe");
     root.querySelector("[data-full-mass-form-title]").textContent=l("How is it celebrated?","Comment est-elle célébrée ?");
+    const kindKicker=root.querySelector("[data-mass-journey-kind]");
+    if(kindKicker)kindKicker.textContent=summary.kindLabel;
+    // A technical source ID (e.g. "nuptial" or "requiem") is not a
+    // user-facing feast title. Keep the bilingual category label instead.
+    const rawCelebrationId=String(legacy?.celebrationId??legacy?.requestedCelebrationId??"");
+    const actualIsBareId=Boolean(summary.actualTitle&&rawCelebrationId&&
+      summary.actualTitle===rawCelebrationId&&!/\s/.test(rawCelebrationId));
     root.querySelector("[data-full-mass-celebration]").textContent=
-      summary.kindLabel+(summary.actualTitle?" · "+summary.actualTitle:"");
+      actualIsBareId?summary.kindLabel:(summary.actualTitle||summary.kindLabel);
+    const entryTheme=resolveMassLiturgicalTheme({legacyResolvedMass:legacy});
+    const accent=entryTheme.key==="BLACK"?
+      entryTheme.tokens.accentText:entryTheme.tokens.accent;
+    root.style.setProperty("--ao-entry-accent",accent);
+    root.style.setProperty("--ao-entry-accent-soft",
+      "color-mix(in srgb, "+accent+" 11%, transparent)");
+    root.style.setProperty("--ao-entry-panel",entryTheme.tokens.panel);
+    root.dataset.massEntryColour=entryTheme.key;
+    root.dataset.massEntryColourSource=entryTheme.source;
     const sourceGate=getSourceGate();
+    updateMassJourneyReadiness(root,{ready:summary.canStart,sourceReady:sourceGate.ready,language:language()});
+    const originalStart=host.querySelector("[data-ao-start-live]");
+    if(originalStart!==observedStart){
+      startObserver?.disconnect();observedStart=originalStart;
+      const Observer=doc.defaultView?.MutationObserver;
+      startObserver=originalStart&&typeof Observer==="function"?
+        new Observer(()=>queueMicrotask(refresh)):null;
+      startObserver?.observe(originalStart,{attributes:true,attributeFilter:["disabled","aria-disabled"]});
+    }
+    projectMassEntryLaunch(root,{
+      ready:summary.canStart,sourceReady:sourceGate.ready,
+      hostStartAvailable:Boolean(originalStart&&!originalStart.disabled&&originalStart.getAttribute("aria-disabled")!=="true"),
+      formLabel:summary.formLabel,language:language(),
+      distinctLiturgy:summary.kind==="GOOD_FRIDAY"
+    });
     root.querySelector("[data-full-mass-resolver]").textContent=!sourceGate.ready?
       l("Finish choosing the other Proper, or return to the Mass of the day, before starting.",
         "Terminez le choix de l’autre propre, ou revenez à la messe du jour, avant de commencer.") :
@@ -295,7 +434,9 @@ export function mountFullMassPreflight({
       span.textContent=txt(LABELS[span.dataset.fullMassLabel],fr);
     });
     root.querySelector("[data-full-mass-form-fieldset]").disabled=!summary.formChangeAllowed;
-    root.querySelector("[data-full-mass-reader-heading]").textContent=l("How to follow the Mass","Comment suivre la messe");
+    root.querySelector("[data-full-mass-reader-heading]").textContent=summary.kind==="GOOD_FRIDAY"?
+      l("How to follow the liturgy","Comment suivre l'office"):
+      l("How to follow the Mass","Comment suivre la messe");
     root.querySelectorAll("[data-full-mass-reader-mode]").forEach(input=>{input.checked=input.value===summary.readerMode;});
     root.querySelectorAll("[data-full-mass-reader-label]").forEach(span=>{
       span.textContent=span.dataset[fr?"labelFr":"labelEn"];
@@ -313,23 +454,38 @@ export function mountFullMassPreflight({
     });
     renderSpecialMassContext(root.querySelector("[data-full-mass-special]"),presentation);
     const detail=root.querySelector("[data-full-mass-rites]");
-    detail.hidden=options.length===0;
-    root.querySelector("[data-full-mass-rite-summary]").textContent=l("Rites actually taking place",
-      "Rites effectivement célébrés");
-    root.querySelector("[data-full-mass-rite-intro]").textContent=l(
-      "Choose only ceremonies truly taking place at this celebration. A feast or date never activates a procession.",
-      "Indiquez uniquement les cérémonies effectivement célébrées. Une fête ou une date ne déclenche jamais une procession.");
+    // Always display the actual celebration order; optional ceremonies are
+    // contextual steps within it, not an expandable grab-bag of toggles.
+    detail.hidden=false;
+    detail.open=true;
+    root.querySelector("[data-full-mass-rite-summary]").textContent=l("Celebration sequence",
+      "Déroulement de la célébration");
+    root.querySelector("[data-full-mass-rite-intro]").textContent=options.length?
+      l("Confirm only ceremonies actually taking place. The date alone never activates a procession.",
+        "Confirmez seulement les cérémonies réellement célébrées. La date seule ne déclenche jamais une procession."):"";
     const list=root.querySelector("[data-full-mass-rite-list]");
     const shown=[...list.querySelectorAll("[data-full-mass-rite]")].map(x=>x.dataset.fullMassRite);
     const desired=options.map(x=>x.id);
-    if(shown.join("|")!==desired.join("|")){
-      list.replaceChildren(...options.map(rite=>{
+    const massStep=root.querySelector("[data-mass-journey-mass]");
+    const thanksgiving=root.querySelector("[data-mass-journey-after]");
+    const afterPhases=root.querySelector("[data-mass-journey-special-after]");
+    const adjacentAfter=root.querySelector("[data-mass-journey-adjacent-after]");
+    if(shown.join("|")!==desired.join("|")||list.querySelector("[data-mass-journey-mass]")!==massStep){
+      const existing=new Map([...list.querySelectorAll("[data-full-mass-rite]")].map(x=>[x.dataset.fullMassRite,x.closest("label")]));
+      const rows=options.map(rite=>{
+        if(existing.has(rite.id))return {rite,label:existing.get(rite.id)};
         const label=doc.createElement("label");label.className="aoFullMassRite";
         const checkbox=doc.createElement("input");checkbox.type="checkbox";
         checkbox.dataset.fullMassRite=rite.id;
         const text=doc.createElement("span");text.textContent=fr?rite.fr:rite.en;
-        label.append(checkbox,text);return label;
-      }));
+        label.append(checkbox,text);return {rite,label};
+      });
+      const preceding=rows.filter(x=>x.rite.position==="precedingRites").map(x=>x.label);
+      const following=rows.filter(x=>x.rite.position==="followingActions").map(x=>x.label);
+      // The Mass and thanksgiving elements are genuine ordered steps in the
+      // *same* visual sequence as real preceding and following ceremonies.
+      list.replaceChildren(...preceding,...(massStep?[massStep]:[]),
+        ...following,...(afterPhases?[afterPhases]:[]),...(adjacentAfter?[adjacentAfter]:[]),...(thanksgiving?[thanksgiving]:[]));
     }
     for(const rite of options){
       const input=[...list.querySelectorAll("[data-full-mass-rite]")]
@@ -339,6 +495,30 @@ export function mountFullMassPreflight({
       input.disabled=!rite.allowed;
       input.closest("label").querySelector("span").textContent=fr?rite.fr:rite.en;
     }
+    updateMassJourneyPhases(root,presentation,{language:language(),availableRiteIds:options.map(x=>x.id)});
+    projectMassEntryDetails(root,{
+      kind:summary.kind,optionCount:options.filter(rite=>rite.allowed&&
+        !(riteOverrides[rite.id]??rite.fromSource)).length,
+      language:language()
+    });
+    projectMassEntryEssentials(root,presentation,{
+      language:language(),kind:summary.kind,
+      availableRiteIds:options.map(x=>x.id),
+      confirmedRites:options.filter(rite=>rite.allowed&&
+        (riteOverrides[rite.id]??rite.fromSource))
+        .map(rite=>({label:fr?rite.fr:rite.en}))
+    });
+    projectMassEntryReader(root,{
+      mode:summary.readerMode,language:language(),
+      distinct:summary.kind==="GOOD_FRIDAY"
+    });
+    renderAdjacentServices(root,adjacentChoices,language());
+    const prayerState=getPrayerState?.()??{};
+    renderPrayerJourneyModes(root,{
+      prepare:prayerState?.prepare?.mode,
+      thanksgiving:prayerState?.thanksgiving?.mode,
+      language:language()
+    });
     // The compact review always reflects the *effective* Proper selected for
     // this Mass, not a stale host Calendar Proper from before a source change.
     const observed=legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY";
@@ -390,6 +570,8 @@ export function mountFullMassPreflight({
     root.dataset.aoCelebrationKind=summary.kind;
     root.dataset.aoSpecialMassVariant=presentation.variant;
     root.dataset.aoChosenMassForm=summary.form;
+    const multi=root.querySelector("[data-mass-journey-multiple]");
+    if(multi)multi.dataset.massSourceReady=String(summary.canStart&&sourceGate.ready);
     root.dataset.aoChosenReaderMode=summary.readerMode;
     root.dataset.aoProperReady=String(summary.canStart&&sourceGate.ready);
     return summary;
@@ -425,7 +607,8 @@ export function mountFullMassPreflight({
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
-      optionalRiteOverrides:Object.freeze({...riteOverrides})}),
-    dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();root?.remove();root=null;}
+      optionalRiteOverrides:Object.freeze({...riteOverrides}),
+      adjacentServices:Object.freeze({...adjacentChoices})}),
+    dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();startObserver?.disconnect();root?.remove();root=null;}
   });
 }
