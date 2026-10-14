@@ -347,8 +347,8 @@ export function mountFullMassPreflight({
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
     const commemorationDisclosure=root.querySelector("[data-mass-journey-commemoration-details]");
     // Source uncertainty affects prayer selection and must not be hidden.
-    if(commemorationDisclosure&&["INCOMPLETE","FORM_RULES_UNVERIFIED"].includes(
-      context.commemorationOrations?.status))commemorationDisclosure.open=true;
+    if(commemorationDisclosure)commemorationDisclosure.open=Boolean(
+      context.commemorations?.length||["INCOMPLETE","FORM_RULES_UNVERIFIED"].includes(context.commemorationOrations?.status));
     root.dataset.massJourneyCalendarDiffers=String(context.differs);
     root.dataset.massJourneySameCelebration=String(Boolean(!context.differs&&
       context.calendar.title&&summary.actualTitle));

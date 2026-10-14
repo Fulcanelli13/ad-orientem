@@ -301,7 +301,7 @@ try{
 
  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).readerMode,"LIVE");
 
- assert.equal(await page.locator("[data-full-mass-rites] summary").isVisible(),false,
+ assert.equal(await page.locator("[data-full-mass-rites] > summary").isVisible(),false,
   "The duplicate technical sequence heading must not appear");
 
  assert.equal(await page.locator("[data-full-mass-rites]").evaluate(el=>el.open),true,
