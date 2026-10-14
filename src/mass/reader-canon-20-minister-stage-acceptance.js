@@ -98,7 +98,7 @@ export function createCanon20MinisterSourceAcceptance(inputs){
       keepToCommunion?communicantsPresent?"004":fastDay1962?"005":"006":"003"):null;
   const selectedRows=audit.entries.filter(r=>{
     if(!r.forms.includes(selected))return false;
-    if(r.owner==="VIII8_ATTENDANTS_6"&&r.action==="EXTINGUISH_TORCHES")
+    if(r.owner==="VIII8_ATTENDANTS_6"&&new Set(["AO.CANON.VIII8.003","AO.CANON.VIII8.004","AO.CANON.VIII8.005","AO.CANON.VIII8.006"]).has(r.id))
       return r.id===extinguishId;
     // Actor-specific source: one acolyte light and one subdeacon genuflection
     // may be described without pretending their occurrence has been observed.
@@ -111,7 +111,7 @@ export function createCanon20MinisterSourceAcceptance(inputs){
     sourceEligibleByForm:true,
     conditionSourceContextVerified:r.conditional==="WHEN_REQUIRED"?
       matches.has(r.id):r.owner==="VIII8_ATTENDANTS_6"&&
-      r.action==="EXTINGUISH_TORCHES"?torchContextVerified:
+      new Set(["AO.CANON.VIII8.003","AO.CANON.VIII8.004","AO.CANON.VIII8.005","AO.CANON.VIII8.006"]).has(r.id)?torchContextVerified:
       r.actor==="SERVER"?false:null,
     exactStageVerified:false,observedNow:false,canPublish:false
   }));
