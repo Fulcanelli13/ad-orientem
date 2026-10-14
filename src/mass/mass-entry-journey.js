@@ -78,6 +78,7 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
   const summary=node(doc,"summary","",
     tr(fr,"How this affects the Mass","Conséquences pour la messe"));
   summary.dataset.massJourneyCommemorationSummary="";
+  details.open=true; // Source-relevant commemoration prayers remain visible on phone.
   details.append(summary,prayerText);
   commemorations.append(details);
  }
@@ -220,8 +221,9 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
  launch.append(beginHelp);
  const sources=node(doc,"details","aoMassJourneySources");
  sources.dataset.massJourneySources="";
- sources.append(node(doc,"summary","",tr(fr,"Calendar, Proper and sources","Calendrier, propre et sources")),calendar,review,resolver,note);
- root.replaceChildren(title,lead,focus,before,order,sources,launch);
+ sources.append(node(doc,"summary","",tr(fr,"Proper and sources","Propre et sources")),review,resolver,note);
+ // Keep Calendar directly reachable without first expanding another disclosure.
+ root.replaceChildren(title,lead,calendar,focus,before,order,sources,launch);
  root.dataset.massJourneyArranged="true";
  return true;
 }
