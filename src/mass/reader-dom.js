@@ -2641,8 +2641,11 @@ export function createReaderDomAdapter({
       const focusElevation=sceneId==="HOST_ELEVATION"||sceneId==="CHALICE_ELEVATION";
       // Final visibility is settled after paragraph layout. Keep the source
       // prayer measurable before deciding whether spare space permits big art.
-      cinematic.hidden=!visible;
-      cinematic.setAttribute?.("aria-hidden",String(!visible||focusElevation));
+      // A transient part-curtain must not obscure an already focused,
+      // independently source-owned Hanc, Gospel or Passion cue.
+      const sourceQuietScene=["HANC_IGITUR_HANDS","GOSPEL_CROSSES","PASSION_DEATH"].includes(sceneId);
+      cinematic.hidden=!visible||sourceQuietScene;
+      cinematic.setAttribute?.("aria-hidden",String(!visible||focusElevation||sourceQuietScene));
       cinematic.dataset.kind=kind;
       setText(root,"cinematic-title",visible ? current.cinematic.title : null);
       setText(root,"cinematic-sub",visible ? current.cinematic.subtitle : null);
