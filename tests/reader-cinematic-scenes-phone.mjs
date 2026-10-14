@@ -29,6 +29,8 @@ const SCENES=Object.freeze([
   ["AO.SM.C0179","CHALICE_WORDS"],
   ["AO.SM.C0181","CHALICE_ELEVATION"],
   ["AO.SM.C0096","INCARNATUS_GESTURE"],
+  ["AO.SM.C0161","HANC_IGITUR_HANDS"],
+  ["AO.SM.C0084","GOSPEL_CROSSES"],
 ]);
 async function atCue(page,cueId){
   return page.evaluate(async cue=>{
@@ -138,6 +140,11 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
   if(expected==="INCARNATUS_GESTURE"){
     assert.equal(actual.gestureActive,"true","Incarnatus cue lost faithful gesture rail");
     assert.equal(actual.fullScreenVisible,false,"Incarnatus obscured the actual prayer");
+  }
+  if(["HANC_IGITUR_HANDS","GOSPEL_CROSSES"].includes(expected)){
+    assert.equal(actual.fullScreenVisible,false,
+      "Ordinary Gospel/Hanc visual focus introduced an opaque overlay");
+    assert.equal(actual.priestActive,"true","Sourced priest-action cue disappeared");
   }
   if(reducedMotion)assert.equal(actual.reducedMotion,true);
   // Capture after the icon's opening animation, not its 0%-opacity keyframe.
