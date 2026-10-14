@@ -40,47 +40,32 @@ try{
    await cal.locator('.aoCalV2MonthGrid').waitFor({state:"visible",timeout:40000});
    const metrics=await page.evaluate(()=>{
     const el=document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root");
-    const tabs=el.querySelector(".aoCalV2Picker .aoCalMonthTabs");
-    const rows=[...tabs.querySelectorAll("button")].map(x=>{
-      const r=x.getBoundingClientRect(),c=getComputedStyle(x);
-      return {label:x.textContent.trim(),top:r.top,height:r.height,width:r.width,
-       font:parseFloat(c.fontSize),whiteSpace:c.whiteSpace};
-    });
-    const nav=[...el.querySelectorAll(".aoCalV2Picker .aoCalV2MonthNav button")]
-      .map(x=>({height:x.getBoundingClientRect().height,
-       font:parseFloat(getComputedStyle(x).fontSize)}));
-    const a=el.querySelector(".aoCalV2MonthGrid").getBoundingClientRect();
-    const v=tabs.getBoundingClientRect();
-    return {
-     embedded:el.dataset.aoCalendarEmbedded,calendarView:el.dataset.aoCalendarView,
-     tabDisplay:getComputedStyle(tabs).display,tabs:rows,tabScrollWidth:tabs.scrollWidth,
-     tabWidth:tabs.clientWidth,tabHeight:v.height,gridCount:el.querySelectorAll("[data-cal-pick-date]").length,
-     gridTop:a.top,nav,overflow:document.documentElement.scrollWidth-innerWidth,
-     month:el.querySelector(".aoCalV2YearHeading h2")?.textContent?.trim()||"",
-     state:el.querySelector("[data-cal-month-status]")?.textContent?.trim()||"",
-    };
+    const filter=el?.querySelector(".aoCalV2Picker .aoCalMonthFilter select");
+    const nav=[...(el?.querySelectorAll(".aoCalV2Picker .aoCalV2MonthNav button")||[])]
+      .map(x=>({height:x.getBoundingClientRect().height,font:parseFloat(getComputedStyle(x).fontSize)}));
+    const grid=el?.querySelector(".aoCalV2MonthGrid")?.getBoundingClientRect();
+    const rect=filter?.getBoundingClientRect();
+    return {calendarView:el?.dataset.aoCalendarView,filterOptions:[...(filter?.options||[])].map(o=>o.value),
+      filterHeight:rect?.height||0,filterFont:filter?parseFloat(getComputedStyle(filter).fontSize):0,
+      filterWidth:rect?.width||0,gridCount:el?.querySelectorAll("[data-cal-pick-date]").length||0,
+      gridTop:grid?.top||Infinity,nav,overflow:document.documentElement.scrollWidth-innerWidth};
    });
    assert.equal(metrics.calendarView,"picker");
    assert.equal(metrics.gridCount,42,"Never suppress unresolved liturgical days");
-   assert.equal(metrics.tabDisplay,"flex","Month views must stay on one horizontal rail");
-   assert.equal(metrics.tabs.length,5);
-   assert.ok(metrics.tabs.every(x=>Math.abs(x.top-metrics.tabs[0].top)<2),
-     "Month categories wrapped, hiding the calendar dates: "+JSON.stringify(metrics.tabs));
-   assert.ok(metrics.tabs.every(x=>x.height>=44&&x.font>=12&&x.whiteSpace==="nowrap"),
-     "Month categories are unreadable or too small: "+JSON.stringify(metrics.tabs));
+   assert.deepEqual(metrics.filterOptions,["calendar","major","temporale","sanctorale","practices"],
+     "Month filter must expose all five distinct source-backed categories");
+   assert.ok(metrics.filterHeight>=44&&metrics.filterFont>=12&&metrics.filterWidth>100,
+     "Canonical Month filter is not touch/phone legible: "+JSON.stringify(metrics));
    assert.ok(metrics.nav.length===3&&metrics.nav.every(x=>x.height>=44&&x.font>=13),
      "Previous/Today/Next controls too small: "+JSON.stringify(metrics.nav));
    assert.ok(metrics.gridTop<width*2,"Calendar grid pushed below the useful phone fold");
    assert.ok(metrics.overflow<=1,"Calendar caused global horizontal overflow: "+metrics.overflow);
-   assert.ok(metrics.tabScrollWidth>=metrics.tabWidth,
-     "Calendar horizontal month rail has invalid scroll geometry");
    await page.screenshot({path:resolve(output,"calendar-month-"+width+".png"),
      fullPage:false,animations:"disabled"});
-   const practices=cal.locator('[data-cal-month-view="practices"]');
-   await practices.click();
-   assert.equal(await practices.getAttribute("aria-current"),"page",
-     "Practices not keyboard/touch accessible in horizontal category rail");
-   await cal.locator('[data-cal-month-view="calendar"]').click();
+   const filter=cal.locator("[data-cal-month-filter]");
+   await filter.selectOption("practices");
+   assert.equal(await filter.inputValue(),"practices","Practices filter not accessible on phone");
+   await filter.selectOption("calendar");
    assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
    const original=await cal.locator(".aoCalV2YearHeading h2").innerText();
    await cal.locator('[data-cal-month-shift="1"]').click();
