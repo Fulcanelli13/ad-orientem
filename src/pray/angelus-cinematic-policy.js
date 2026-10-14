@@ -7,10 +7,11 @@
 export const ANGELUS_CINEMATIC_VERSION="angelus-devotional-cinematics-v2";
 
 // Curatorial identities come exclusively from the user's completed 13 Oct 2026
-// Sacred Art rating export: rating >= 3, perfect theme, retained. These are
+// Sacred Art rating export: rating 4/5, kept for further visual review only. These are
 // ANNUNCIATION paintings (the Angelus' central subject), not falsely labelled
 // as Visitation. The one rated Visitation candidate scored 2 and is not in
-// this higher-confidence opening shortlist. Artwork identities do not certify
+// this provisional review shortlist. A rating of 4 is NOT final approval.
+// Artwork identities do not certify
 // any remote image reproduction as an approved local derivative.
 export const ANGELUS_REVIEWED_OPENING_ART=Object.freeze([
  Object.freeze({id:"nga-46",title:"The Annunciation",artist:"Jan van Eyck",
@@ -35,7 +36,7 @@ export function selectAngelusOpeningArtwork({
   pool=ANGELUS_REVIEWED_OPENING_ART,lastId=null,random=Math.random,
 }={}){
   const eligible=(Array.isArray(pool)?pool:[]).filter(a=>
-    a?.rating>=3 && a.subject==="ANNUNCIATION" && a.sourceUrl &&
+    (a?.rating>=5 || a?.finalApproval==="APPROVED") && a.subject==="ANNUNCIATION" && a.sourceUrl &&
     (a.imageUrl||Number.isInteger(a.objectId))
   );
   if(!eligible.length)return null;
