@@ -126,16 +126,17 @@
       "title": "St Vincent Ferrer — The Life of Christ in the Mass",
       "authority": "dominican_rite_devotional_allegory",
       "application": "biblical_meditative_with_rite_distinction",
-      "recoveryState": "30_SOURCE_PARTS_26_COMPARISON_GROUPS",
+      "recoveryState": "THIRTY_NUMBERED_TRANSLATED_SOURCE_SECTIONS_DIRECTLY_ACCESSIBLE_TWENTY_SIX_ARCHIVE_GROUPS",
       "archivedEvidenceRows": 28,
       "repositoryPath": "data/research/archive/mass-compendium-20260921-comparisons.snapshot.v1.json",
-      "originalOrBibliographicUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "originalOrBibliographicUrl": "https://www.svfsermons.org/Parts%20of%20the%20Mass.htm",
       "publishedCopyApproved": false,
       "supplementaryEvidence": {
         "originalSections": 30,
         "septemberComparisonGroups": 26,
         "sourceRite": "DOMINICAN_NOT_1962_ROMAN"
-      }
+      },
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-32-legacy-meditation-group-crosswalk-20261014.v1.json"
     },
     {
       "id": "SFS",
@@ -283,11 +284,12 @@
       "title": "Pierre Le Brun — Explication littérale, historique et dogmatique",
       "authority": "history_dogma_source_criticism",
       "application": "study_liturgical",
-      "recoveryState": "LIMITED_ORIGINAL_METHOD_EXCERPT_LOCATED_NO_FULL_VOLUME_CLAIM_REGISTER",
+      "recoveryState": "1843_FACSIMILE_TOC_PLUS_ONE_ORIGINAL_FRENCH_CRITICAL_METHOD_PASSAGE",
       "archivedEvidenceRows": 0,
       "repositoryPath": "data/geography/research/mass-scripture-source-extractions-20261011.v1.json",
       "originalOrBibliographicUrl": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
-      "publishedCopyApproved": false
+      "publishedCopyApproved": false,
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
     },
     {
       "id": "DUR",
@@ -338,11 +340,12 @@
       "title": "Nicholas Gihr — Holy Sacrifice of the Mass",
       "authority": "dogmatic_liturgical_treatise",
       "application": "study_liturgical_and_biblical",
-      "recoveryState": "PRIOR_31_CLAIM_REVIEWS_REPORTED_NOT_LOCATED_HERE",
+      "recoveryState": "SIX_DIRECT_1902_TEXT_LOCATORS_ADDED_PRIOR_31_REVIEW_NOT_RECOVERED",
       "archivedEvidenceRows": 0,
       "repositoryPath": null,
-      "originalOrBibliographicUrl": null,
-      "publishedCopyApproved": false
+      "originalOrBibliographicUrl": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "publishedCopyApproved": false,
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
     },
     {
       "id": "JUNG",
@@ -360,22 +363,24 @@
       "title": "Jean-Joseph Languet de Gergy — Du véritable esprit de l'Église",
       "authority": "ceremonial_symbolism_method",
       "application": "study_liturgical",
-      "recoveryState": "BIBLIOGRAPHY_LOCATED_NO_PRIOR_EXCERPT_REGISTER",
+      "recoveryState": "1715_DIGITIZATION_IDENTIFIED_ONE_SECONDHAND_TEXTUAL_CITATION_IN_LEBRUN_NO_PRIMARY_CLAIM",
       "archivedEvidenceRows": 0,
       "repositoryPath": null,
-      "originalOrBibliographicUrl": "https://fr.wikipedia.org/wiki/Jean-Joseph_Languet_de_Gergy",
-      "publishedCopyApproved": false
+      "originalOrBibliographicUrl": "https://play.google.com/store/books/details?id=OXjkCUPQumgC",
+      "publishedCopyApproved": false,
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
     },
     {
       "id": "TORMA",
       "title": "Zac Torma — Traditional Latin Mass in a Year",
       "authority": "modern_expository_serial_copyrighted",
       "application": "study_liturgical_comparative",
-      "recoveryState": "PUBLIC_SERIES_LOCATED_NO_PRIOR_EXCERPT_REGISTER",
+      "recoveryState": "TWO_ORIGINAL_2026_ARTICLE_TOPIC_PASSAGES_NOT_EVIDENCE_OF_RITE_ORIGIN",
       "archivedEvidenceRows": 0,
       "repositoryPath": null,
       "originalOrBibliographicUrl": "https://tlminayear.substack.com/p/the-eighteenth-sunday-after-pentecost",
-      "publishedCopyApproved": false
+      "publishedCopyApproved": false,
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
     }
   ],
   "coverageWarning": "The 422 September evidence rows overlap later records and must never be added as unique commentaries; 39 liturgical owners do not constitute complete bibliographic coverage.",
@@ -388,5 +393,20 @@
     "older 35-part Passion manuscript precise standalone identity",
     "earlier narrative prototype text beyond the archived comparisons"
   ],
-  "integrationStatus": "RESEARCH_INVENTORY_ONLY_NO_APP_CHANGES"
+  "integrationStatus": "RESEARCH_INVENTORY_ONLY_NO_APP_CHANGES",
+  "crosswalks": {
+    "twoChronologies": "data/learn/research/mystery-mass-two-chronologies-evidence-crosswalk-20261014.v1.json",
+    "historicalMeditations": "data/learn/research/mystery-mass-32-legacy-meditation-group-crosswalk-20261014.v1.json",
+    "newOriginalAuthorPassages": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json",
+    "preserved422": "data/learn/research/mystery-mass-september422-to-canonical39-bridge-20261014.v1.json"
+  },
+  "remainingCriticalGaps": {
+    "gihrEarlier31ClaimReviewManuscript": "STILL_UNLOCATED_NEW_SIX_LOCATORS_NOT_SUBSTITUTE_FOR_OLD_31",
+    "lebrunFullBook": "1843_VOL1_TOC_AND_ONE_FRENCH_PASSAGE_LOCATED_COMPLETE_BODY_NOT_COLLATED",
+    "languetOriginalArgument": "1715_DIGITAL_EDITION_IDENTIFIED_BUT_ARGUMENT_ONLY_SECONDHAND_IN_LE_BRUN",
+    "torma": "CONTEMPORARY_COPYRIGHT_LIMIT_REFERENCE_ONLY",
+    "ferrer": "30_TRANSLATED_SECTIONS_AVAILABLE_ORIGINAL_LATIN_NOT_COLLATED",
+    "francisDeSales": "ATTRIBUTION_STILL_PENDING",
+    "narrativePublication": "NO_STORY_APPROVED_AND_NO_UI_INTEGRATION"
+  }
 }
