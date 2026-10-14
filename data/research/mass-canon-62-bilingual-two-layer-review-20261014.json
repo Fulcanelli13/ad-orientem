@@ -26,8 +26,9 @@
       "PRIEST_VOICE_STATE_ONLY": 3,
       "SERVER_RIBBON_ONLY": 3,
       "PRIEST_MULTI_STAGE_EDITORIAL": 15,
-      "INLINE_ATOMIC_EDITORIAL": 23,
-      "GUIDE_AND_FORM_CONTEXT": 1
+      "INLINE_ATOMIC_EDITORIAL": 21,
+      "GUIDE_AND_FORM_CONTEXT": 1,
+      "INDEPENDENT_STAGE_EDITORIAL_ONLY": 2
     }
   },
   "obligations": [
@@ -40,7 +41,8 @@
     "No text can enter live Missal, Simple or LIVE without separate source/form, reader and publication signoff.",
     "GUIDE_ONLY entries are not single-step cues; PRIEST_MULTI_STAGE_EDITORIAL requires a separately attested stage ID before any timed display.",
     "FOCUS_WORDS_NO_DUPLICATE protects the two Consecrations; do not overlay repeated caption on prominent Latin words.",
-    "SERVER_RIBBON_ONLY never inherits PRIEST action ownership. PRIEST_RIBBON_STATE_ONLY never becomes an instant repeated icon."
+    "SERVER_RIBBON_ONLY never inherits PRIEST action ownership. PRIEST_RIBBON_STATE_ONLY never becomes an instant repeated icon.",
+    "INDEPENDENT_STAGE_EDITORIAL_ONLY is used for consecration genuflection/elevation; no activation until distinct witnessed source stages are resolved."
   ],
   "rows": [
     {
@@ -842,7 +844,7 @@
       "readerDisplayText": null,
       "priestActionNow": null,
       "faithfulPosture": null,
-      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "reviewSurface": "INDEPENDENT_STAGE_EDITORIAL_ONLY",
       "currentlyVisible": false,
       "previewPermitted": true,
       "automaticallyTriggeredByScroll": false,
@@ -877,7 +879,7 @@
       "readerDisplayText": null,
       "priestActionNow": null,
       "faithfulPosture": null,
-      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "reviewSurface": "INDEPENDENT_STAGE_EDITORIAL_ONLY",
       "currentlyVisible": false,
       "previewPermitted": true,
       "automaticallyTriggeredByScroll": false,
