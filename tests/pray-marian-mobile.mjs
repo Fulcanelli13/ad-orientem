@@ -146,14 +146,10 @@ try{
  // Two navigation axes: timeline moves named cards, card-local scroll focuses
  // V/R paragraphs; native Prayer texts and translation controls stay intact.
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
- const opening=page.locator("body > .aoDevoCinematicOpening[data-ao-devotional-scene='opening']");
- await opening.waitFor({state:"attached",timeout:2200});
- assert.equal(await opening.getAttribute("data-ao-scene-art"),"none",
-   "Rating-4 Annunciations are under review, not automatically approved");
- assert.equal(await opening.locator("img.aoDevoCinematicArtwork").count(),0,
-   "Opening must not render a still-unapproved reproduction");
- await opening.locator(".aoDevoCinematicSkip").evaluate(x=>x.click());
- await opening.waitFor({state:"detached",timeout:2200});
+ assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
+   "The first card must not show a blank cinematic or a rating-4 painting");
+ // The prayer begins directly when no final-approved reproduction exists.
+ // Incarnation still receives its source-owned full posture cinematic.
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),4);
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),4);
  // Actual mobile presentation evidence: same current card at three widths.
