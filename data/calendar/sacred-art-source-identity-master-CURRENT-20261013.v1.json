@@ -26,12 +26,12 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Fill remaining 53 research subject gaps with high-fit original paintings, prioritizing Saints/Doctors then most-used Gospel and selected Old Testament; do not require separate paintings for every Bible scene.",
-    "Find inspectable clear artwork previews before presenting 54 W16-W19 newly source-linked subject slots for human ratings; verify visually exact original and multiple photographs per SAME painting.",
+    "Fill remaining 44 research subject gaps with high-fit original paintings, prioritizing Saints/Doctors then most-used Gospel and selected Old Testament; do not require separate paintings for every Bible scene.",
+    "Find inspectable clear artwork previews before presenting 63 W16-W20 newly source-linked subject slots for human ratings; verify visually exact original and multiple photographs per SAME painting.",
     "Prioritize image recovery of 25 user-rated 5/5 paintings lacking verified source masters; preserve 41 selected reproductions and all 277 latest ratings as independent source decisions.",
     "Respect artist/style exclusions and 0–2 global ratings, avoid falsely autographing 19th-century copies and studio paintings; maintain distinct scenes for walking water, storm, paralytic.",
     "Check photo rights and conservation/availability at French Ministry POP object records, which do NOT themselves license app photographs.",
-    "Preserve 222 original W01–W15 source queue / 8 SHA-verified research JPEGs / 214 missing unchanged; W16–W19 original-source suggestions are separate until canonical identity reconciliation.",
+    "Preserve 222 original W01–W15 source queue / 8 SHA-verified research JPEGs / 214 missing unchanged; W16–W20 original-source suggestions are separate until canonical identity reconciliation.",
     "Keep research PR #887 draft and avoid modifying production app art release without QA and human artistic clearance."
   ],
   "verifiedCounts": {
@@ -116,14 +116,14 @@
     "referenceBatch": "data/calendar/sacred-art-subject-gap-fill-wave16-20261013.v1.json",
     "baselinePreviouslyEmpty235SubjectSlots": 107,
     "ofPreviouslyEmptySourceSourcedForFurtherImageAndRatingReview": 21,
-    "remainingPreviouslyEmptyWithoutDocumentedBatchCandidate": 53,
+    "remainingPreviouslyEmptyWithoutDocumentedBatchCandidate": 44,
     "reusedExistingMasterSourceSubjectLinks": 12,
     "newMuseumOrFrenchHeritageOrCustodianResearchObjectLeads": 19,
     "importToResearchQueue222": false,
     "whySeparate": "Subject-first research suggestions must be user-vetted and deduplicated before conversion into canonical physical art master; source discovery must not imply production image or successful download.",
     "userRatingMutations": 0,
     "productionArtMutations": 0,
-    "latestWave": "data/calendar/sacred-art-subject-gap-fill-wave19-20261014.v1.json",
+    "latestWave": "data/calendar/sacred-art-subject-gap-fill-wave20-20261014.v1.json",
     "wave17NewOriginalCandidateResearchLeads": 21,
     "wave17NewlySourceLinkedPreviouslyEmptySubjectSlots": 11,
     "wave16And17SourceLinkedFormerlyEmptySubjects": 32,
@@ -148,6 +148,13 @@
     "wave16To19SourceLinkedFormerlyEmptySubjects": 54,
     "physicalArtSourceRecordTotalInWave16To19": 65,
     "wave19ResearchOnlyNoPhotoRightsApproval": true,
-    "wave19DistinctOriginalsQualifiers": "La Hyre depicts the viper aftermath rather than shipwreck itself; Fetti possibly an oil sketch; Hans III Jordaens Nîmes photo rights reserved; Van Dyck museum object indexed but individual page robot blocked."
+    "wave19DistinctOriginalsQualifiers": "La Hyre depicts the viper aftermath rather than shipwreck itself; Fetti possibly an oil sketch; Hans III Jordaens Nîmes photo rights reserved; Van Dyck museum object indexed but individual page robot blocked.",
+    "wave20NewOriginalResearchRecords": 12,
+    "wave20NewlySourceLinkedPreviouslyEmptySubjectSlots": 9,
+    "wave20AlternateOriginalsForAlreadySourceLinkedSubjects": 2,
+    "wave16To20SourceLinkedFormerlyEmptySubjects": 63,
+    "physicalArtSourceRecordTotalInWave16To20": 77,
+    "wave20ResearchOnlyNoPhotoRightsOrRatingsApprovals": true,
+    "wave20NegativeIdentificationHold": "PM40001103 titled Saint Albert le Grand is same historical canvas as IM40004012 re-identified as Saint Norbert scene; count zero toward Saint Albert."
   }
 }
