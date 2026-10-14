@@ -1,0 +1,36 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+const parse = path => JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
+const a = parse("../data/presentation/mass-icon-harmonization-source-resolutions-20261014.v1.json");
+const rubrics = parse("../data/presentation/reader-rubric-events.v1.json");
+const stations = parse("../data/presentation/reader-priest-positions.v1.json");
+const gestures = parse("../data/mass/gesture-matrix.v1.json");
+const current = readFileSync(new URL("../src/mass/reader-icons.js", import.meta.url),"utf8");
+assert.equal(a.status,"DRAFT_ONLY_NO_RUNTIME_CHANGES");
+assert.equal(a.review.hardDiscardRatingLessThan,3);
+assert.deepEqual(Object.values(a.counts),[90,71,12,59,19,24]);
+assert.deepEqual(Object.values(a.groups).map(x=>x.length),[8,13,2,1]);
+assert.equal(new Set(Object.values(a.groups).flat()).size,24);
+assert.equal(new Set(a.discardIds).size,12);
+assert.equal(new Set(a.unratedIds).size,19);
+assert.ok(a.discardIds.every(x=>!a.unratedIds.includes(x)));
+assert.equal(a.semantics.length,8);
+assert.deepEqual(a.semantics.map(x=>x.id),a.groups.semantic);
+const cues = new Set([...rubrics.items,...gestures.items,...stations.items].map(x=>x.cueId));
+for(const item of a.semantics){
+ assert.equal(item.runtimeChange,false);
+ assert.equal(item.visualApproval,"PENDING");
+ assert.ok(item.repair.length>=38);
+ assert.ok(item.defect.length>=28);
+ for(const id of item.cueIds) assert.ok(cues.has(id),item.id+" cue missing: "+id);
+}
+assert.match(a.semantics.find(x=>x.id==="A04").meaning,/holds the Host/);
+assert.match(a.semantics.find(x=>x.id==="B05").repair,/C0247–C0248/);
+assert.match(a.semantics.find(x=>x.id==="B09").repair,/C0174.04/);
+assert.match(a.semantics.find(x=>x.id==="S_priest_epistle").repair,/priest_gospel_rich/);
+assert.match(a.semantics.find(x=>x.id==="S_priest_gospel").repair,/priest_epistle_rich/);
+assert.ok(current.includes('"RAISES EYES":"priest_centre_arms_rich"'));
+assert.ok(current.includes('"WASHES / PURIFIES":"lavabo"'));
+assert.ok(current.includes('ALTAR_EPISTLE_MISSAL:"priest_epistle_rich"'));
+assert.ok(current.includes('ALTAR_GOSPEL_MISSAL:"priest_gospel_rich"'));
+console.log("PASS: 8 rubrical/semantic reviews; 12 discarded; 19 pending; zero reader changes.");
