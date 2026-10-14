@@ -83,6 +83,14 @@ export function validateCanonBilingualCopyReview({bilingual,french,trigger,triag
   if(row.reviewSurface==="FOCUS_WORDS_NO_DUPLICATE" &&
     !["AO.CANON.R62.022","AO.CANON.R62.032"].includes(row.actionId))
    throw Error(row.actionId+": sacramental-focus exception identity mismatch");
+  if(row.actionId==="AO.CANON.R62.044" &&
+     (row.reviewSurface!=="GUIDE_ONLY"||
+      !/croix après « omni benedictióne »/.test(f.shortFrenchRubricDraft)))
+   throw Error("Canon blessing Sign of Cross requires source-exact post-benedictione anchor before inline display");
+  if(row.actionId==="AO.CANON.R62.001" &&
+     (!/lève puis baisse les yeux/.test(f.shortFrenchRubricDraft)||
+      /lowers his hands and eyes/.test(row.shortDraft.en)))
+   throw Error("Te igitur eyes lowering must not be attributed to hands");
   if(row.actionId==="AO.CANON.R62.028"&&
     /^(Il découvre|He uncovers)/.test(f.shortFrenchRubricDraft+"|"+row.shortDraft.en))
    throw Error("Conditional deacon chalice uncovering cannot be the priest's universal action");
