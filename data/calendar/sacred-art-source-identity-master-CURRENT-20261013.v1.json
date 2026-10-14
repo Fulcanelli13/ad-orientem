@@ -26,13 +26,15 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Continue two different relevant physical oil painting requirement: 72/75 have 2 museum research alternatives, 3 Doctor exceptions still: Cyril of Alexandria has one contextual Rubens Met source; Cyril of Jerusalem none; Ephrem has one per W30. Never claim approved pictures.",
-    "Wave31: Cambridge University Library painting 1902 James Doyle Penrose The Last Chapter is a distinct Bede oil from National Trust 1857 William Bell Scott; metadata on Commons, Cambridge accession/license pending.",
-    "Wave31: Rubens Glorification of the Eucharist Met 37.160.12 includes Saint Cyril of Alexandria explicitly per Met official description, one contextual/group original; do not count as portrait.",
-    "Potential Ephrem Francesco Netti 1892 Bari oil remains HOLD until prove Sant'Effremo in original refers specifically to Ephrem the Syrian, rather than regional dedication.",
-    "Earlier concurrent Wave30 research includes 14 new museum original leads; 2 identity holds. Do not overwrite current W30 matrix, and do not duplicate its Nazarien or Isidore records with separate investigation dossier.",
-    "Ratings paused by user, 277 scores preserved. Source record does not mean human aesthetic/identity acceptance, clean original photo, rights or app delivery. No new compulsory saints beyond original 75.",
-    "Maintain PR #887 draft research-only, old W01-W15 queue 222, 8 downloaded SHA-verified and 214 pending. No production changes."
+    "Two-option source matrix W32 v6: 73/75 subjects have at least TWO distinct research source painting records, 2 Doctors Cyril of Alexandria and Cyril of Jerusalem remain WITHOUT acceptable source paintings. Historic user scores and other 73 subjects remain unmodified.",
+    "Critical scope: this is candidate source coverage, NOT 73/75 with two licensed original-master JPEGs or two user-approved paintings; prefer accomplished naturalistic historical oils to Byzantine icons, prints, doubtful portrait labels, derivative photos.",
+    "University of Cambridge confirmed 1902 Penrose The Last Chapter original about Venerable Bede, distinct Wallington National Trust Bell Scott painting; existing low-res public preview, source master reproduction/rights pending.",
+    "Rijksmuseum SK-A-4423 17c oil on copper Petrus Canisius exact inscription, distinct Munich WAF680A original; Seville Cathedral 1668 Murillo Saint Isidore chapter-house roundel distinct Murillo 1655 sacristy portrait.",
+    "Bari provincial Pinacoteca Metropolitana houses Francesco Netti signed 1892 oil Sant'Effremo, distinct Giuseppe Franchi portrait. Vatican Zanfurnari Death of St Ephrem is an icon-format art-only fallback outside normal Western oil aesthetic.",
+    "Do NOT promote conflicting French inventory Vervins IM02001844 allegedly Gregory Nazianzen but describing a Roman pope; held notwithstanding source title. Earlier W30 has other sourced Greg Nazianzen alternatives so two-option target unaffected.",
+    "Priority: research exact named physical oil portraits of Cyril of Alexandria and Cyril of Jerusalem, museum accession and named painted image provenance. If only Orthodox icons/gold-ground tempera exist, document as deliberate exception instead of forcing second.",
+    "Do not ask user for ratings now. Do not add every saint. Keep source queue 222/8 SHA mastered/214 pending and draft PR untouched by production modifications.",
+    "Other earlier subject-artwork corrections remain effective: Saint Patrick vs Louis IX, Mary of Egypt vs Jerome, Saint Matthias Rubens old alias vs W05 original."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -206,7 +208,7 @@
     ],
     "wave24ClevelandPhysicalOriginal": "cma-150955",
     "user20261014CurrentInstruction": "No ratings now; obtain at least TWO different relevant original source paintings where possible for EVERY existing Doctor, Apostle, Evangelist and selected major superstar saint; don't expand to all saints or weaker substitutes.",
-    "twoOptionSourceMatrix": "data/calendar/sacred-art-two-options-matrix-wave31-20261014.v6.json",
+    "twoOptionSourceMatrix": "data/calendar/sacred-art-two-options-matrix-wave32-20261014.v6.json",
     "twoOptionBase": "data/calendar/sacred-art-two-options-user-baseline-75-20261014.v1.json",
     "twoOptionResearchWaveDossiers": [
       "data/calendar/sacred-art-two-option-source-original-wave25-20261014.v1.json",
@@ -214,11 +216,14 @@
       "data/calendar/sacred-art-two-option-source-original-wave27-20261014.v1.json",
       "data/calendar/sacred-art-two-option-source-original-wave28-20261014.v1.json",
       "data/calendar/sacred-art-two-option-source-original-wave29-20261014.v1.json",
-      "data/calendar/sacred-art-doctor-two-options-source-wave30-20261014.v1.json"
+      "data/calendar/sacred-art-doctor-two-options-source-wave30-20261014.v1.json",
+      "data/calendar/sacred-art-two-option-source-original-wave30-20261014.v1.json",
+      "data/calendar/sacred-art-two-option-source-original-wave31-20261014.v1.json",
+      "data/calendar/sacred-art-two-option-source-original-wave32-20261014.v1.json"
     ],
-    "twoOptionSubjectsAtLeast2ResearchRecords": 72,
+    "twoOptionSubjectsAtLeast2ResearchRecords": 73,
     "twoOptionSubjectsTotal": 75,
-    "twoOptionDoctorsBelowTwo": 3,
+    "twoOptionDoctorsBelowTwo": 2,
     "twoOptionApostlesCovered": 13,
     "twoOptionEvangelistsCovered": 2,
     "twoOptionOtherMajorSaintsCovered": 32,
@@ -229,6 +234,12 @@
     "twoOptionDoctorsAtLeastTwoResearchOriginals": 24,
     "twoOptionW30OriginalObjectRecords": 14,
     "twoOptionW30RecordsCounted": 12,
-    "twoOptionW30IdentityOrQualityHolds": 2
+    "twoOptionW30IdentityOrQualityHolds": 2,
+    "twoOptionPriorMatrix": "data/calendar/sacred-art-two-options-matrix-wave29-20261014.v4.json",
+    "twoOptionDoctorShortages": [
+      "SNT-DC-25 Cyril of Alexandria",
+      "SNT-DC-26 Cyril of Jerusalem"
+    ],
+    "twoOptionDoctorSatisfied": 26
   }
 }
