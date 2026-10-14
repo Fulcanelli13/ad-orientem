@@ -1,4 +1,5 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
+import {formationSourceBibleMarkup} from "./formation-scripture-source.js";
 // Canonical study preview and full editorial QA share one source; draft is not certified teaching.
 // The records load from their canonical research JSON files; this view does not duplicate the answer corpus.
 export const RECOVERY_REVIEW_VERSION = "FORMATION_RECOVERY_REVIEW_V1";
@@ -81,6 +82,7 @@ const css = [
   "#ao-formation-recovery-review .rrList small{display:block;font:.7rem var(--ao-font-ui,system-ui);color:var(--ao-text-muted,#a9a5a0);margin-bottom:5px}",
   "#ao-formation-recovery-review .rrSources{display:flex;gap:5px 12px;flex-wrap:wrap;font:.72rem/1.6 var(--ao-font-ui,system-ui);margin:4px 0 15px}",
   "#ao-formation-recovery-review .rrSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;overflow-wrap:anywhere}",
+  "#ao-formation-recovery-review .rrBibleHandoff{display:inline-flex;flex-direction:column;gap:4px;max-width:100%;vertical-align:middle}.rrBibleHandoff .aoScriptureContextCapsule{min-height:44px}.rrBibleHandoff small{max-width:270px;color:var(--muted,#9ba5b1);font:400 .7rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}",
   "#ao-formation-recovery-review .rrNode{margin:12px 0 17px}",
   "#ao-formation-recovery-review .rrNode>h3{margin:12px 0 8px;font:500 .94rem var(--ao-font-display,Georgia,serif);color:var(--liturgical,#c9ad78)}",
   "#ao-formation-recovery-review .rrRole{color:var(--ao-text-muted,#a9a5a0);font:.7rem var(--ao-font-ui,system-ui);letter-spacing:.04em;margin-bottom:4px}",
@@ -224,7 +226,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     return '<nav class="rrSources" aria-label="Original sources">'+seen.map(id=>{
       const s=map.get(id);
       if(!s?.url?.startsWith("https://"))return '<span class="rrMuted">Unresolved source '+esc(id)+'</span>';
-      return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(s.title||id)+'">'+esc(s.title||id)+'</a>';
+      return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(s.title||id)+'">'+esc(s.title||id)+'</a>'+formationSourceBibleMarkup(s,{french:isFr(win)});
     }).join("")+'</nav>';
   };
   const renderNode=(value,map,depth=0)=>{
