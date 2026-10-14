@@ -1,0 +1,988 @@
+{
+  "schema": "AO_FORMATION_35_CANONICAL_QA_BATCH_REVIEW_V1",
+  "date": "2026-10-14",
+  "status": "LIMITED_PASSAGE_AND_SOURCE_ROLE_REVIEW_NOT_INDEPENDENT_CERTIFICATION",
+  "source_files": {
+    "src/learn/sexual-ethics-data/questions-001-050.js": "26f587dddda1634539641b0dc82275fb6ae2a393",
+    "src/learn/sexual-ethics-data/debates-001-031.js": "c8944cc6868e9c28965f98a225fe71ed2bbee6a6",
+    "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json": "29444ee1bab994f27e96e6bd879e8236c9ceec41",
+    "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json": "850b90144d010b631664f8949103dd9f796ce705",
+    "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json": "552072cc4f3bb246d79f168a6309cc22b9f022a1",
+    "data/learn/church-crisis-canonical.v1.json": "67476d576ae500d363773ef383ae48f8952d507f"
+  },
+  "scope": {
+    "sexual_ethics": [
+      "CSE001",
+      "CSE025"
+    ],
+    "church_crisis": [
+      "CR-DOC-01",
+      "CR-DOC-10"
+    ],
+    "total": 35,
+    "catechism_excluded": true
+  },
+  "count": {
+    "total": 35,
+    "CSE_short_answers_read": 25,
+    "CR_full_draft_four_sections_read": 10,
+    "CR_content_owner_drift_confirmed": 2,
+    "certified": 0,
+    "production_edits": 0
+  },
+  "methodology": [
+    "Read current English short answers and source-ID labels of all 25 CSE records, and inspect named full debate opposition sections where present",
+    "Read the English four-role draft sections of all ten CR-DOC owners and compare their subject to the canonical title",
+    "Original opening and specific source passages were verified for selected anchors via official Vatican documents, Aquinas and independent original philosophical texts; not every cited paragraph, translation or opponent claim has been collated",
+    "Accurate-looking answers do not become certified by the limited check; certification requires all EN/FR paragraphs, original opponents and chapter-passage pinpoint proof",
+    "No modification of source-of-truth answers, parallel provenance pipeline, canonical questions or live routes"
+  ],
+  "rows": [
+    {
+      "id": "CSE001",
+      "module": "sexual-ethics",
+      "canonical_title": "Why does the Church teach about sexuality?",
+      "existing_answer_en": "Because sexuality concerns human actions, marriage, family, children, justice and virtue. The Church treats it as a real human good that must be ordered by reason and God’s law, not as something dirty or merely private.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"SCR\",\"Mt 5:27–28; 1 Cor 6:18–20\"",
+      "observed_primary_or_opposition_locator": "Biblical moral scope and Trent Sixth Commandment",
+      "source_url": "https://en.wikisource.org/wiki/The_Catechism_of_the_Council_of_Trent/Part_3:_The_Sixth_Commandment",
+      "source_access_level": "primary_catechetical_locator_not_rechecked",
+      "disposition": "appropriate_concise_baseline",
+      "review_observation": "Retain positive treatment of sexuality; for an external audit pin the Roman Catechism's exact paragraph and avoid an inferred sociological assertion about all Church teaching.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE002",
+      "module": "sexual-ethics",
+      "canonical_title": "Isn’t sexuality a private matter?",
+      "existing_answer_en": "Often it is private, but private does not mean morally neutral. Catholic morality concerns voluntary human action whether public or hidden; the question is whether an act is good, not whether others see it.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"SCR\",\"Mt 5:27–28\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.18 aa.2–4",
+      "source_url": "https://www.newadvent.org/summa/2018.htm",
+      "source_access_level": "primary_passage_opened",
+      "disposition": "appropriate_concise_baseline",
+      "review_observation": "Keep moral-vs-privacy distinction; distinguish moral duties from legitimate civil intervention, using Mill's On Liberty I/IV as an actual liberty objection rather than claiming moral equivalence.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE003",
+      "module": "sexual-ethics",
+      "canonical_title": "Is Catholic sexual morality just a collection of Church rules?",
+      "existing_answer_en": "No. Catholic teaching distinguishes changeable ecclesiastical disciplines from moral norms rooted in divine and natural law. The Church claims to teach an order she receives and interprets, not to invent morality at will.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST94\",\"aa.1–2\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.94 a.2; Casti connubii",
+      "source_url": "https://www.newadvent.org/summa/2094.htm",
+      "source_access_level": "primary_passage_opened",
+      "disposition": "adequate_needs_historical_chain",
+      "review_observation": "Distinguish immutable norms, claims of doctrinal authority and discipline with at least one historical concrete example; validate the Casti connubii locator before certification.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE004",
+      "module": "sexual-ethics",
+      "canonical_title": "What is natural law?",
+      "existing_answer_en": "Natural law is the moral order human reason can recognize from human nature and genuine human goods. It does not mean that whatever happens spontaneously in nature is morally good.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST94\",\"aa.1–2\"]",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.94 a.2",
+      "source_url": "https://www.newadvent.org/summa/2094.htm",
+      "source_access_level": "primary_article_opened",
+      "disposition": "strong_passage_alignment",
+      "review_observation": "Keep: inclinations function as sources for rational moral reflection, not blind impulses. Distinguish nature as biological behavior from nature as human rational good.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE005",
+      "module": "sexual-ethics",
+      "canonical_title": "If something is natural, does that automatically make it morally good?",
+      "existing_answer_en": "No. Anger, fear and sexual desire can arise naturally, yet human beings must govern appetites by reason. “Natural law” does not mean “whatever I spontaneously want.”",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST94\",\"a.2\"]",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.94 a.2",
+      "source_url": "https://www.newadvent.org/summa/2094.htm",
+      "source_access_level": "primary_article_opened",
+      "disposition": "strong_passage_alignment",
+      "review_observation": "Keep: an observed natural desire is not a moral conclusion. Preserve reason-governed inclination distinction.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE006",
+      "module": "sexual-ethics",
+      "canonical_title": "If nobody is harmed, why is it wrong?",
+      "existing_answer_en": "Avoiding unjust harm is essential, but it is not the whole of morality. An action can violate fidelity, chastity, justice, the goods of marriage or the moral good of the person even when no immediate victim is obvious.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"ST18\",\"aa.2–4\"",
+      "observed_primary_or_opposition_locator": "Mill, On Liberty I and IV; Aquinas I-II q.18; Archard 2022",
+      "source_url": "https://www.gutenberg.org/cache/epub/34901/pg34901-images.html",
+      "source_access_level": "opposing_original_opened",
+      "disposition": "opponent_source_precision",
+      "review_observation": "Current answer rightly distinguishes harm from total moral evaluation. Pin Mill's On Liberty for coercion argument; Mill's Utilitarianism is not the exact source for the harm principle, and Mill must not be depicted as claiming all harmless sex is morally good.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE007",
+      "module": "sexual-ethics",
+      "canonical_title": "Isn’t consent all that matters?",
+      "existing_answer_en": "Consent is necessary, but it is not sufficient to make an act good. Consent tells us whether people voluntarily choose something; it does not yet tell us whether what they choose is morally good.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"ST18\",\"aa.2–4\"",
+      "observed_primary_or_opposition_locator": "Archard 2022 on consent-only views; Woodard 2026 on trust",
+      "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/1467-9752.12684",
+      "source_access_level": "opposing_independent_article_opened",
+      "disposition": "improve_actual_opposition",
+      "review_observation": "Current short reply separates voluntary agreement from broader moral goodness. Cite real consent theorists or acknowledged consent-only formulations; do not attribute sufficiency-of-consent to Planned Parenthood merely because it gives an operational consent definition.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE008",
+      "module": "sexual-ethics",
+      "canonical_title": "Can a good intention justify a sexual act?",
+      "existing_answer_en": "A good intention matters, but it cannot make every means good. Catholic morality examines both why a person acts and what the person deliberately chooses to do.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"SCR\",\"Rom 3:8\"",
+      "observed_primary_or_opposition_locator": "Veritatis splendor §§78–80; Aquinas I-II q.18",
+      "source_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "source_access_level": "magisterial_passage_opened",
+      "disposition": "strong_doctrinal_alignment_opponent_pending",
+      "review_observation": "Retain distinction between ends, intentions and objects. The deep debate names Fletcher and his six propositions; verify the exact edition/text of Situation Ethics before treating them as checked author quotations.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE009",
+      "module": "sexual-ethics",
+      "canonical_title": "Can circumstances make an otherwise wrong act right?",
+      "existing_answer_en": "Circumstances can affect gravity, culpability and sometimes the moral species of an act. But favourable circumstances cannot make every possible choice good if the object deliberately chosen is itself intrinsically disordered.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST18\",\"aa.10–11\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.18 aa.10–11; Veritatis splendor §§79–82",
+      "source_url": "https://www.newadvent.org/summa/2018.htm",
+      "source_access_level": "primary_article_opened",
+      "disposition": "strong_passage_alignment",
+      "review_observation": "Existing nuance is accurate: some circumstances specify moral species, but favorable external conditions cannot make an intrinsically disordered chosen object good.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE010",
+      "module": "sexual-ethics",
+      "canonical_title": "What does “intrinsically evil” mean?",
+      "existing_answer_en": "It means an act is wrong because of the kind of act deliberately chosen, not merely because it usually has bad consequences. This objective judgment must still be distinguished from the personal culpability of the person acting.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"VS\",\"§§79–82\"]",
+      "observed_primary_or_opposition_locator": "Veritatis splendor §§79–82; Joseph Fletcher original still to verify",
+      "source_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "source_access_level": "magisterial_passage_opened",
+      "disposition": "strong_doctrinal_alignment_opponent_pending",
+      "review_observation": "Keep the deliberate-object vs culpability distinction. Verify Fletcher's own propositions independently before relying on detailed opposition.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE011",
+      "module": "sexual-ethics",
+      "canonical_title": "Why should I trust the Church on sexual morality?",
+      "existing_answer_en": "Catholicism claims that Christ entrusted the Church with authority to teach faith and morals and that she also interprets a natural moral law accessible to reason. This does not remove the need to understand and test the arguments.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"SCR\",\"Lk 10:16; Mt 28:19–20\"",
+      "observed_primary_or_opposition_locator": "Casti connubii §§102–105; Lk 10:16",
+      "source_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "source_access_level": "original_document_available_locator_pending",
+      "disposition": "adequate_needs_primary_locator",
+      "review_observation": "Answer is intelligible, but claims about authority and natural law require separate original locators; the argument should distinguish scriptural ecclesial authority from particular moral applications.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE012",
+      "module": "sexual-ethics",
+      "canonical_title": "Jesus never mentioned many of these sexual sins. Why should Christians accept them?",
+      "existing_answer_en": "Jesus did teach on adultery, lust, divorce, marriage and sexual immorality. Christian moral teaching also includes apostolic teaching and moral truths knowable by natural law; it is not limited to modern acts explicitly named in the Gospels.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"SCR\",\"Mt 5:27–32; Mt 19:3–12; Mk 7:20–23; 1 Cor 6:9–20\"",
+      "observed_primary_or_opposition_locator": "Mt 5:27–32; 19:3–12; 1 Cor 6:9–20",
+      "source_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html",
+      "source_access_level": "scripture_book_navigation_only",
+      "disposition": "adequate_needs_inference_trace",
+      "review_observation": "Existing answer rightly rejects an argument from silence; however, each modern practice needs its own moral-object inference instead of treating a general Gospel term as proof about an unmentioned technique.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE013",
+      "module": "sexual-ethics",
+      "canonical_title": "Was St Paul simply repeating the sexual prejudices of his culture?",
+      "existing_answer_en": "Calling Paul “a man of his culture” does not by itself answer his argument. In 1 Corinthians 6 he grounds sexual morality in the body’s belonging to Christ; in Romans 1 he appeals to the created order of male and female; and in 1 Thessalonians 4 he presents chastity as part of God’s will. A cultural-context objection therefore has to explain why those reasons no longer apply, not merely point out that Paul lived in antiquity.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"SCR\",\"Rom 1:24–27; 1 Cor 6:12–20; 1 Thess 4:3–8\"",
+      "observed_primary_or_opposition_locator": "1 Cor 6:12–20, Rom 1:24–27, 1 Thess 4:3–8",
+      "source_url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html",
+      "source_access_level": "scripture_book_navigation_only",
+      "disposition": "historical_opponent_gap",
+      "review_observation": "A cultural-context reply must seriously examine original Pauline context and modern New Testament scholarship; simply quoting Paul is not an independent refutation of the historical objection.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE014",
+      "module": "sexual-ethics",
+      "canonical_title": "Hasn’t Catholic sexual teaching changed throughout history?",
+      "existing_answer_en": "Some things have changed: terminology, canonical penalties, pastoral discipline and the application of principles to new situations. But the central sexual norms treated here are not recent inventions. Christ condemns adultery and lust and reaffirms the indissolubility of marriage; St Paul condemns fornication and other sexual immorality; the Roman Catechism treats adultery and fornication under the Sixth Commandment; and Pius XI in 1930 explicitly condemns adultery, divorce and the deliberate frustration of the generative act.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"SCR\",\"Mt 5:27–32; Mt 19:3–9; 1 Cor 6:9–20\"",
+      "observed_primary_or_opposition_locator": "Roman Catechism; Casti connubii; Veritatis splendor",
+      "source_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "source_access_level": "original_document_available_locator_pending",
+      "disposition": "historical_scope_review",
+      "review_observation": "Do not count different disciplinary rules or medical applications as doctrinal contradictions. Need case-by-case historical original text chains and original dissenting argument.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE015",
+      "module": "sexual-ethics",
+      "canonical_title": "Can Catholic sexual doctrine develop?",
+      "existing_answer_en": "Yes. The Church can clarify principles, distinguish cases more precisely and apply old principles to new technologies. Development is not the same as reversing a definitive judgment about an intrinsically evil moral object.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"VS\",\"§§52–53,79–82\"]",
+      "observed_primary_or_opposition_locator": "Veritatis splendor §§52–53,79–82; Newman Development",
+      "source_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "source_access_level": "magisterial_passage_opened",
+      "disposition": "adequate_needs_doctrinal_definition",
+      "review_observation": "Existing principle is defensible. Test whether each proposed development is dogmatic clarification, disciplinary evolution, prudential evaluation or a disputed moral-object claim.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE016",
+      "module": "sexual-ethics",
+      "canonical_title": "What if my conscience tells me the Church is wrong?",
+      "existing_answer_en": "Conscience must be taken seriously, but it is not an infallible power that creates moral truth. It is a personal judgment about how objective moral truth applies here and now, and it can be mistaken.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"ST19\",\"aa.5–6\"",
+      "observed_primary_or_opposition_locator": "Veritatis splendor §§54–64; Donum veritatis §§24–31",
+      "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "source_access_level": "primary_document_paragraphs_opened",
+      "disposition": "strong_primary_alignment_needs_opponent_specifics",
+      "review_observation": "The sincere-conscience distinction is correct, and the CDF explicitly differentiates serious difficulty with non-irreformable teaching from treating subjective conscience as autonomous judge; include Curran's actual qualified dissent with source.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE017",
+      "module": "sexual-ethics",
+      "canonical_title": "What if I sincerely believe a sexual act is morally acceptable?",
+      "existing_answer_en": "Sincerity matters, but sincerity and truth are not identical. A genuinely unavoidable error can reduce or remove guilt; ignorance caused by negligence or refusal to learn does not automatically excuse.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST76\",\"aa.1–4\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.76; Veritatis splendor §§62–64",
+      "source_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "source_access_level": "magisterial_passage_opened",
+      "disposition": "adequate_requires_pastoral_precision",
+      "review_observation": "The objective act, sincere error and responsibility distinction should not be simplified to automatic excuse based on sincerity; contextual review of culpable/vincible ignorance remains necessary.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE018",
+      "module": "sexual-ethics",
+      "canonical_title": "What if Catholic theologians disagree?",
+      "existing_answer_en": "The first question is not how many theologians disagree, but what authority the disputed teaching has. Some questions are genuinely open. But where the Magisterium has authoritatively settled a moral point, theological dissent does not by itself make the opposite position permissible. Donum Veritatis explicitly distinguishes legitimate difficulty or further inquiry from treating the Magisterium as merely one opinion among others.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"DONUMVER\",\"§§23–31\"]",
+      "observed_primary_or_opposition_locator": "Donum veritatis §§23–31",
+      "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "source_access_level": "primary_document_paragraphs_opened",
+      "disposition": "strong_primary_alignment_actual_dissent_needed",
+      "review_observation": "Existing answer correctly asks what authority the disputed teaching has. Keep the distinction between difficulties and authoritative permission to dissent; opponents must be quoted in their original limited scope.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE019",
+      "module": "sexual-ethics",
+      "canonical_title": "What is the difference between grave matter and personal guilt?",
+      "existing_answer_en": "Grave matter describes the objective seriousness of an act. Mortal culpability additionally requires sufficient knowledge and deliberate consent, so the Church can judge an act’s gravity more readily than the interior guilt of a particular person.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"PIUSX\",\"conditions for mortal sin\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.76–77; grave matter vs deliberate consent",
+      "source_url": "https://www.newadvent.org/summa/2077.htm",
+      "source_access_level": "primary_aquinas_article_opened",
+      "disposition": "adequate_distinction_empirical_gap",
+      "review_observation": "Keep objective seriousness distinct from subjective culpability. Do not make categorical judgments about anyone's state of soul based on act-type alone.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE020",
+      "module": "sexual-ethics",
+      "canonical_title": "Does habit or addiction reduce responsibility?",
+      "existing_answer_en": "Sometimes, but not automatically. Compulsion or psychological disorder can diminish present freedom, while a freely cultivated bad habit can also make an act more deeply rooted in the will.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"ST77\",\"aa.6–8\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.77 aa.6–8 and q.78 a.2",
+      "source_url": "https://www.newadvent.org/summa/2077.htm",
+      "source_access_level": "primary_article_opened",
+      "disposition": "strong_classical_alignment_empirical_gap",
+      "review_observation": "Aquinas specifically distinguishes antecedent passion diminishing voluntariness from culpable habit/malice; clinical addiction claims additionally need independent competent empirical sources.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE021",
+      "module": "sexual-ethics",
+      "canonical_title": "Is chastity just sexual repression?",
+      "existing_answer_en": "No. Chastity is the virtue by which sexual desire is ordered according to reason and one’s state of life. It aims at governing sexuality, not eliminating it.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": true,
+      "deep_debate_read": "opposition_excerpt_and_role_reviewed",
+      "existing_source_registry_literal": "[\"ST151\",\"a.1\"",
+      "observed_primary_or_opposition_locator": "Aquinas II-II q.151 a.1; Pius XII Sacra virginitas",
+      "source_url": "https://www.newadvent.org/summa/3151.htm",
+      "source_access_level": "primary_aquinas_locator_not_reopened",
+      "disposition": "adequate_but_opponent_era_warning",
+      "review_observation": "The definition of chastity as virtue is classical. Freud 1908 in the deep debate is historically relevant but cannot be used as evidence about current psychological outcomes of religious chastity.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE022",
+      "module": "sexual-ethics",
+      "canonical_title": "Is sexual desire itself sinful?",
+      "existing_answer_en": "No. Sexual appetite belongs to human nature. The moral question concerns its object and what the will deliberately does with it; an attraction can arise without being chosen.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST151\",\"a.1\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.94 a.2 and II-II q.151 a.1",
+      "source_url": "https://www.newadvent.org/summa/2094.htm",
+      "source_access_level": "primary_article_opened",
+      "disposition": "needs_more_direct_locator",
+      "review_observation": "Distinguish sexual desire as natural appetite from morally chosen desire and its object; Aquinas q.94 a.2 directly relates sexual and parental goods to rational natural inclinations.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE023",
+      "module": "sexual-ethics",
+      "canonical_title": "What is the difference between temptation and sin?",
+      "existing_answer_en": "Temptation presents something attractive to the mind or appetite; sin requires culpable consent of the will. An unwanted thought, attraction or impulse is not automatically a sin.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST77\",\"aa.1–7\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.74 aa.6–8",
+      "source_url": "https://www.newadvent.org/summa/2074.htm",
+      "source_access_level": "more_precise_primary_article_opened",
+      "disposition": "improve_consent_specificity",
+      "review_observation": "The answer is useful but the existing broad q.77 citation concerns passion as a cause of sin; q.74 aa.6–8 is a more exact passage for consenting to interior delight or thoughts.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE024",
+      "module": "sexual-ethics",
+      "canonical_title": "Are involuntary bodily sexual reactions sinful?",
+      "existing_answer_en": "No, not merely because they occur. Personal moral responsibility concerns what a person knowingly and voluntarily chooses, not a bodily response that happens without deliberate consent.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST6\",\"aa.1–8\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.6, q.77",
+      "source_url": "https://www.newadvent.org/summa/2077.htm",
+      "source_access_level": "primary_article_opened",
+      "disposition": "adequate_voluntariness_only",
+      "review_observation": "Existing answer correctly addresses moral voluntariness. This theological source does not quantify frequency or physiology; no scientific claim should be inferred from it.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CSE025",
+      "module": "sexual-ethics",
+      "canonical_title": "Are unwanted sexual thoughts sinful?",
+      "existing_answer_en": "Not simply because they enter the mind. The moral question is whether the person deliberately accepts, cultivates or enjoys the thought after recognizing its character.",
+      "source_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+      "short_answer_read": true,
+      "deep_debate_present": false,
+      "deep_debate_read": "no_001_031_debate_record",
+      "existing_source_registry_literal": "[\"ST77\",\"aa.1–7\"",
+      "observed_primary_or_opposition_locator": "Aquinas I-II q.74 aa.6–8",
+      "source_url": "https://www.newadvent.org/summa/2074.htm",
+      "source_access_level": "more_precise_primary_article_opened",
+      "disposition": "improve_consent_specificity",
+      "review_observation": "The short answer should remain; add a direct locator on consent to thoughts rather than leaning only on q.77. Avoid making unwanted intrusive thoughts evidence of sin.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-01",
+      "module": "church-crisis",
+      "canonical_title": "What was Modernism, and did it really disappear after its condemnation?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "PASCENDI",
+          "PASCENDI-FR"
+        ],
+        "documented_position": [
+          "PASCENDI"
+        ],
+        "critical_response": [
+          "PASCENDI",
+          "SC63"
+        ],
+        "traditional_catholic_argument": [
+          "PASCENDI",
+          "PASCENDI-FR"
+        ]
+      },
+      "draft_answer_en_excerpt": "Pius X's Pascendi condemned Modernism as a connected family of errors concerning revelation, dogma, faith, historical criticism and the reduction of supernatural religion to religious experience. The condemnation did not abolish all biblical criticism or every later change in theological vocabulary. To establish that a",
+      "observed_primary_or_opposition_locator": "Pascendi §§4–5,28; later named author documents still required",
+      "source_url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "sound_general_structure",
+      "review_observation": "Pascendi explains the condemned system; existence or persistence of a later Modernist doctrine requires an identifiable author and attributed proposition, not labels alone.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-02",
+      "module": "church-crisis",
+      "canonical_title": "Can doctrine develop without contradicting earlier doctrine?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "EV56",
+          "CDFDEATH",
+          "CCC2267"
+        ],
+        "documented_position": [
+          "CCC2267",
+          "CDFDEATH",
+          "EV56",
+          "FESER"
+        ],
+        "critical_response": [
+          "CDFDEATH",
+          "CCC2267",
+          "EV56",
+          "FESER",
+          "LONG"
+        ],
+        "traditional_catholic_argument": [
+          "EV56",
+          "CDFDEATH",
+          "CCC2267"
+        ]
+      },
+      "draft_answer_en_excerpt": "Genuine doctrinal development makes explicit what was contained in the deposit of faith; it cannot turn a proposition definitively taught as true into its contradictory. A prudential judgement or disciplinary restriction can change without the same logical result. The death-penalty debate illustrates why identifying th",
+      "observed_primary_or_opposition_locator": "CDF 2018 death-penalty letter and Catechism §2267; John Paul II Evangelium vitae §56",
+      "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20180801_lettera-vescovi-penadimorte_en.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "sound_debate_requires_original_proponent_recheck",
+      "review_observation": "Original texts and actual dissent should be cited at exact sections. Feser's and Long's source passages must be separately checked; neither historical toleration nor current 'inadmissible' can be paraphrased as a simple declared intrinsic-evil judgement.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-03",
+      "module": "church-crisis",
+      "canonical_title": "Did Vatican II change doctrine, language, pastoral method—or all three?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "LG64",
+          "DV65",
+          "SC63",
+          "PF98"
+        ],
+        "documented_position": [
+          "DV65",
+          "PF98",
+          "SSPX2012-FOUR"
+        ],
+        "critical_response": [
+          "PF98",
+          "DV65",
+          "LG64",
+          "SSPX2012-FOUR"
+        ],
+        "traditional_catholic_argument": [
+          "DV65",
+          "PF98",
+          "LG64"
+        ]
+      },
+      "draft_answer_en_excerpt": "Vatican II changed pastoral priorities and modes of expression, and issued doctrinal teaching without defining a completely new creed. The degree of authority and novelty varies across its documents and even particular propositions. Calling the Council only 'pastoral' hides actual teaching; calling each sentence a newl",
+      "observed_primary_or_opposition_locator": "Dei verbum §10; Lumen gentium §25; 1998 CDF Professio fidei",
+      "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "appropriate_structure_needs_all_propositions",
+      "review_observation": "Avoid general assertion that all Vatican II statements have identical theological authority. The actual Council text and SSPX 2012 four-issues argument need exact collation.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-04",
+      "module": "church-crisis",
+      "canonical_title": "Religious liberty: development, correction or contradiction?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "DH65",
+          "LIB1888"
+        ],
+        "documented_position": [
+          "LIB1888",
+          "DH65"
+        ],
+        "critical_response": [
+          "LIB1888",
+          "DH65"
+        ],
+        "traditional_catholic_argument": [
+          "LIB1888",
+          "DH65"
+        ]
+      },
+      "draft_answer_en_excerpt": "Leo XIII in Libertas §§30–35 assesses religious freedom in a political order morally bound to truth and allows toleration of religious error for the common good. Dignitatis humanae §§1–2 says the duty of persons and societies to the true faith remains intact but declares a civil immunity from coercion, including within",
+      "observed_primary_or_opposition_locator": "Dignitatis humanae §§1–2; Leo XIII Libertas §§30–35; published SSPX objections",
+      "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "appropriate_scope_source_pair",
+      "review_observation": "Preserve authentic dispute between civil non-coercion and older theory of tolerance. Check the scope of civil actions, persons, just public order, and duties of political societies. Keep as sole canonical owner of liberty controversy.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-05",
+      "module": "church-crisis",
+      "canonical_title": "Church and State, Social Kingship and the postconciliar settlement",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "LIB1888",
+          "DH1965",
+          "RLFSSPX",
+          "SSPX2012-FOUR"
+        ],
+        "documented_position": [
+          "RLFSSPX",
+          "DH1965"
+        ],
+        "critical_response": [
+          "LIB1888",
+          "DH1965",
+          "RLFSSPX",
+          "SSPX2012-FOUR"
+        ],
+        "traditional_catholic_argument": [
+          "LIB1888",
+          "DH1965",
+          "LG64"
+        ]
+      },
+      "draft_answer_en_excerpt": "Leo XIII's Libertas distinguishes a true moral right from toleration of error for the common good, while Dignitatis humanae §2 states that every person possesses civil immunity from coercion in religious matters within due limits. The SSPX contends that treating this immunity as a natural right shifts the State from re",
+      "observed_primary_or_opposition_locator": "Pius XI Quas primas §§13–19,24–29; Leo XIII Immortale Dei §§3–6,35–37",
+      "source_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "high_priority_owner_drift",
+      "review_observation": "Current four sections repeat religious liberty while the question asks Church–State relations and Social Kingship. Replace draft's focus with Christ's kingship, duties of civil societies, Church/state competencies, change of political models and liberty crosslink to CR-DOC-04.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-06",
+      "module": "church-crisis",
+      "canonical_title": "Ecumenism and the claim that the Catholic Church is the one true Church",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "UR64",
+          "LG64",
+          "MA1928"
+        ],
+        "documented_position": [
+          "MA1928",
+          "UR64"
+        ],
+        "critical_response": [
+          "MA1928",
+          "UR64",
+          "DOMJES"
+        ],
+        "traditional_catholic_argument": [
+          "UR64",
+          "MA1928",
+          "LG64"
+        ]
+      },
+      "draft_answer_en_excerpt": "Catholic ecumenism seeks the restoration of full visible unity among Christians, not the declaration that denominational divisions or opposed doctrines do not matter. Unitatis redintegratio acknowledges elements of sanctification beyond Catholic visible bounds while locating the fullness of the means of salvation in th",
+      "observed_primary_or_opposition_locator": "Mortalium animos §§6–10; Unitatis redintegratio §§3–4,11",
+      "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "adequate_original_pair",
+      "review_observation": "Keep distinction between truth-claims and changed discipline of ecumenical encounter; no automatic equivalence of 1928 prohibited congresses with all later approved dialogue.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-07",
+      "module": "church-crisis",
+      "canonical_title": "Extra Ecclesiam nulla salus: did Catholic teaching on salvation outside the Church change?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "LG64",
+          "DOMJES"
+        ],
+        "documented_position": [
+          "LG64",
+          "DOMJES",
+          "CCC839",
+          "FEENEY-CR"
+        ],
+        "critical_response": [
+          "LG64",
+          "DOMJES",
+          "CCC839",
+          "FEENEY-CR"
+        ],
+        "traditional_catholic_argument": [
+          "DOMJES",
+          "LG64",
+          "CCC839"
+        ]
+      },
+      "draft_answer_en_excerpt": "The Church's necessity for salvation is a claim about Christ's one saving work, not an automatic judgement that every non-Catholic is damned. Lumen gentium distinguishes deliberate rejection from ignorance without personal fault, while affirming Catholic missionary responsibility.",
+      "observed_primary_or_opposition_locator": "Lumen gentium §§14–16; Dominus Iesus §§20–22; Feeney/Saint Benedict Center text",
+      "source_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "adequate_needs_original_opponent",
+      "review_observation": "Carefully separate necessity of Church, salvation of non-Catholics in inculpable ignorance and scope of original restrictive Feeney position. Cite original proponent rather than generalizing it to all traditionalists.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-08",
+      "module": "church-crisis",
+      "canonical_title": "Judaism, the Old Covenant and the mission of the Church",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "HEB8",
+          "ROM11",
+          "NOSTRA65"
+        ],
+        "documented_position": [
+          "ROM11",
+          "HEB8",
+          "NOSTRA65",
+          "MAIMON-CR",
+          "COVMISSION-CR"
+        ],
+        "critical_response": [
+          "ROM11",
+          "HEB8",
+          "NOSTRA65",
+          "CCC839",
+          "MAIMON-CR"
+        ],
+        "traditional_catholic_argument": [
+          "HEB8",
+          "ROM11",
+          "NOSTRA65"
+        ]
+      },
+      "draft_answer_en_excerpt": "The Christian proclamation is that Jesus Christ inaugurates the New Covenant and fulfils the Law and Prophets, not that God repudiates the Jewish people as an ethnicity. Romans 11:1–2 refuses the claim that God rejected his people, and 11:17–29 warns Gentile Christians against boasting while calling God's gifts and cal",
+      "observed_primary_or_opposition_locator": "Romans 11; Hebrews 8; Nostra aetate §4; Maimonides Mishneh Torah Kings 11:4",
+      "source_url": "https://www.vatican.va/content/dam/wss/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "adequate_requires_jewish_original_context",
+      "review_observation": "Avoid ethnic theological generalizations. Check Maimonides from original Jewish textual witness/translation and distinguish contemporary rabbinic Judaism from Second Temple religion and Christian interpretation.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-09",
+      "module": "church-crisis",
+      "canonical_title": "How may ambiguous or non-definitive magisterial teaching be questioned, clarified or corrected?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "MPF25",
+          "LG60"
+        ],
+        "documented_position": [
+          "MPF25",
+          "PIUSX1904"
+        ],
+        "critical_response": [
+          "MPF25",
+          "LG60",
+          "PIUSX1904"
+        ],
+        "traditional_catholic_argument": [
+          "LG60",
+          "MPF25",
+          "PIUSX1904"
+        ]
+      },
+      "draft_answer_en_excerpt": "The Dicastery for the Doctrine of the Faith's 2025 note Mater Populi Fidelis rejects the term Co-redemptrix as unsuitable for defining Mary's cooperation, while itself acknowledging earlier papal uses and affirming her unique dependent role. The theological point is not whether Mary stands beside Christ as an equal red",
+      "observed_primary_or_opposition_locator": "Donum veritatis §§24–31; Lumen gentium §25; CDF Professio fidei 1998",
+      "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "critical_wrong_dossier_subject",
+      "review_observation": "Entire four-section draft addresses Co-redemptrix, which does not answer canonical CR-DOC-09 on legitimate difficulties with non-definitive magisterial teaching. Move Marian material to an appropriate case/crosslink; draft an answer about assent, authority, requesting clarifications, and just limits of dissent.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    },
+    {
+      "id": "CR-DOC-10",
+      "module": "church-crisis",
+      "canonical_title": "Continuity and rupture: what is the right method for judging disputed teaching?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "original_canonical_title_read": true,
+      "draft_sections_read": [
+        "answer",
+        "documented_position",
+        "critical_response",
+        "traditional_catholic_argument"
+      ],
+      "draft_section_source_ids": {
+        "answer": [
+          "PASCENDI",
+          "SC63",
+          "V1"
+        ],
+        "documented_position": [
+          "RLFSSPX",
+          "DH1965",
+          "LIB1888"
+        ],
+        "critical_response": [
+          "RLFSSPX",
+          "DH1965",
+          "LIB1888"
+        ],
+        "traditional_catholic_argument": [
+          "V1",
+          "PASCENDI",
+          "LIB1888"
+        ]
+      },
+      "draft_answer_en_excerpt": "Judging continuity or rupture requires comparing propositions of equal scope and authority, not placing two short quotations side by side and treating different terminology as formal contradiction. One must distinguish defined doctrine, authentic non-definitive instruction, discipline, prudential policy, ritual form an",
+      "observed_primary_or_opposition_locator": "Vatican I, Pascendi, Dignitatis humanae/Libertas, CDF Professio fidei",
+      "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html",
+      "source_access_level": "selected_original_primary_passage_opened_or_identified_not_complete_four_section_proof",
+      "disposition": "sound_framework_too_narrow_case",
+      "review_observation": "Method is reasonable but nearly entirely illustrates liberty dispute, adding overlap with CR-DOC-04; expand with at least one distinct, properly classified doctrine and disciplinary case, not a second full religious-liberty dossier.",
+      "full_claim_citation_audit_complete": false,
+      "source_independent_certified": false,
+      "production_edit_applied": false
+    }
+  ],
+  "dispositions": {
+    "appropriate_concise_baseline": 2,
+    "adequate_needs_historical_chain": 1,
+    "strong_passage_alignment": 3,
+    "opponent_source_precision": 1,
+    "improve_actual_opposition": 1,
+    "strong_doctrinal_alignment_opponent_pending": 2,
+    "adequate_needs_primary_locator": 1,
+    "adequate_needs_inference_trace": 1,
+    "historical_opponent_gap": 1,
+    "historical_scope_review": 1,
+    "adequate_needs_doctrinal_definition": 1,
+    "strong_primary_alignment_needs_opponent_specifics": 1,
+    "adequate_requires_pastoral_precision": 1,
+    "strong_primary_alignment_actual_dissent_needed": 1,
+    "adequate_distinction_empirical_gap": 1,
+    "strong_classical_alignment_empirical_gap": 1,
+    "adequate_but_opponent_era_warning": 1,
+    "needs_more_direct_locator": 1,
+    "improve_consent_specificity": 2,
+    "adequate_voluntariness_only": 1,
+    "sound_general_structure": 1,
+    "sound_debate_requires_original_proponent_recheck": 1,
+    "appropriate_structure_needs_all_propositions": 1,
+    "appropriate_scope_source_pair": 1,
+    "high_priority_owner_drift": 1,
+    "adequate_original_pair": 1,
+    "adequate_needs_original_opponent": 1,
+    "adequate_requires_jewish_original_context": 1,
+    "critical_wrong_dossier_subject": 1,
+    "sound_framework_too_narrow_case": 1
+  }
+}
