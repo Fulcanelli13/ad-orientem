@@ -55,18 +55,19 @@ assert.equal(scene("AO.SM.C0161",{priestAction:{...hancAction,label:"BLESSES OFF
 assert.equal(scene("AO.SM.C0161",{mode:"MISSAL",priestAction:hancAction}),null);
 const gospelAction={cueId:"AO.SM.C0084",
   label:"SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST",
+  sourceGestureId:"GM.P.C0084.01",
   owner:"GESTURE_MATRIX_SOT",iconKey:"gospel_crosses"};
 const gospelStation={station:"ALTAR_GOSPEL_MISSAL"};
-assert.equal(scene("AO.SM.C0084",{priestAction:gospelAction,priestPosition:gospelStation})?.id,
+assert.equal(scene("AO.SM.C0084",{sourceGestureAction:gospelAction,priestPosition:gospelStation})?.id,
   "GOSPEL_CROSSES");
-assert.equal(scene("AO.SM.C0084",{priestAction:gospelAction}),null,
+assert.equal(scene("AO.SM.C0084",{sourceGestureAction:gospelAction}),null,
   "Generic Gospel title must not imply a Gospel-side location");
-assert.equal(scene("AO.SM.C0084",{priestAction:gospelAction,
+assert.equal(scene("AO.SM.C0084",{sourceGestureAction:gospelAction,
   priestPosition:{station:"ALTAR_EPISTLE_MISSAL"}}),null);
-assert.equal(scene("AO.SM.C0084",{priestAction:{...gospelAction,cueId:"AO.SM.C0081"},
+assert.equal(scene("AO.SM.C0084",{sourceGestureAction:{...gospelAction,cueId:"AO.SM.C0081"},
   priestPosition:gospelStation}),null);
 assert.equal(scene("AO.SM.C0084",{mode:"SIMPLE",
-  priestAction:gospelAction,priestPosition:gospelStation}),null);
+  sourceGestureAction:gospelAction,priestPosition:gospelStation}),null);
 const gf=projectGoodFridayDeathScene({
   recordId:"GF-PASS-320",deathPause:true,posture:"KNEEL",
 });
