@@ -104,12 +104,13 @@ export function createDevotionalActionCinematic(win=globalThis){
     if(!scene || !mount?.isConnected)return false;
     const doc=mount.ownerDocument;
     const host=mount.closest("#aoPray435930");
-    if(!host?.classList.contains("open"))return false;
+    if(!host?.classList.contains("open") || !doc.body?.classList.contains("aoP435930Open"))return false;
     const overlay=make(doc,"section","aoDevotionalActionCinematic");
     overlay.dataset.aoActionScene=scene.id;
     overlay.dataset.aoActionKind=scene.kind;
     overlay.dataset.aoReducedMotion=String(reduced());
-    overlay.setAttribute("role","group");
+    overlay.setAttribute("role","dialog");
+    overlay.setAttribute("aria-modal","true");
     overlay.setAttribute("aria-label",language==="fr"?"Indication de prière":"Prayer action cue");
     const inner=make(doc,"div","aoDevotionalActionInner");
     const kicker=make(doc,"small","aoDevotionalActionKicker",scene.kind==="POSTURE"
@@ -130,9 +131,17 @@ export function createDevotionalActionCinematic(win=globalThis){
     const button=make(doc,"button","aoDevotionalActionContinue",language==="fr"?"Continuer la prière":"Continue prayer");
     button.type="button";
     button.addEventListener("click",dismiss);
+    // A modal action cue must not expose underlying page or global navigation
+    // by keyboard while it is awaiting acknowledgement.
+    overlay.addEventListener("keydown",event=>{
+      if(event.key==="Escape"){event.preventDefault();dismiss();}
+      if(event.key==="Tab"){event.preventDefault();button.focus();}
+    });
     inner.append(button);overlay.append(inner);
     priorFocus=doc.activeElement;
-    host.querySelector(".aoP435930Sheet")?.append(overlay);
+    // The Prayer sheet is in a lower stacking context than the shell ribbon
+    // and side rails. A sheet-child overlay cannot be genuinely full-screen.
+    doc.body.append(overlay);
     active=overlay;
     if(scene.id.startsWith("STATIONS."))seenStationCues.add(key);
     button.focus?.({preventScroll:true});
