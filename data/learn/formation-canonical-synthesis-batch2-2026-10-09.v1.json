@@ -584,6 +584,46 @@
       "locator": "ST I q.2 a.2 on natural demonstration, limit to particular theological claim",
       "provenance": "formation-apologetics-six-owner-corrections-20261014.v1.json",
       "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_ORG_09_1",
+      "title": "original author research description",
+      "url": "https://crhec.u-pec.fr/publications/comment-notre-monde-a-cesse-d-etre-chretien",
+      "locator": "original author research description",
+      "provenance": "data/learn/formation-final-23-crisis-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_ORG_09_2",
+      "title": "bounded book-review account of 1965/1968 French data",
+      "url": "https://www.persee.fr/doc/rhef_0048-7988_2018_num_104_253_5072_t17_0432_0000_3",
+      "locator": "bounded book-review account of 1965/1968 French data",
+      "provenance": "data/learn/formation-final-23-crisis-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_LIT_07_1",
+      "title": "Historical liturgical reform treatment",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "locator": "Historical liturgical reform treatment",
+      "provenance": "data/learn/formation-final-23-crisis-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_LIT_07_2",
+      "title": "Signed cardinals' letter",
+      "url": "https://apr.sspx.org/en/letter-cardinal-ottaviani-pope-paul-vi-30144",
+      "locator": "Signed cardinals' letter",
+      "provenance": "data/learn/formation-final-23-crisis-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_LIT_07_3",
+      "title": "Critique of 1969 General Instruction",
+      "url": "https://smac.edu/en/ottaviani-intervention-30257",
+      "locator": "Critique of 1969 General Instruction",
+      "provenance": "data/learn/formation-final-23-crisis-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -1448,16 +1488,22 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Confounding simultaneous changes with an established causal mechanism produces false certainty. One must distinguish attendance, sacramental discipline, belief, catechesis and institutional trust, then ask what trends are documented before the Council and what changed afterwards. A single graph cannot explain the contribution of revised worship, clergy practice and wider secularisation.",
-            "fr": "Confondre des changements simultanés avec un mécanisme causal prouvé crée une fausse certitude. Il faut distinguer fréquentation, discipline sacramentelle, croyances, catéchèse et confiance institutionnelle, puis établir les tendances antérieures et les ruptures ultérieures. Une seule courbe ne suffit pas à mesurer les effets du culte réformé, des pratiques cléricales et de la sécularisation."
+            "en": "Confounding simultaneous changes with an established causal mechanism produces false certainty. One must distinguish attendance, sacramental discipline, belief, catechesis and institutional trust, then ask what trends are documented before the Council and what changed afterwards. A single graph cannot explain the contribution of revised worship, clergy practice and wider secularisation.\n\nThe existence of long secularising trends before 1962 does not disprove a sharp institutional acceleration after 1965. Cuchet has advanced the specific thesis that the Council was a triggering event for changes in French practice, a historical argument supported by the French documentation he studies but not an established explanation for every country or every form of belief. CR-ORG-05 owns the detailed French case. This broader dossier should compare jurisdictions and specify whether it alleges cause, acceleration, exposure of existing weakness or failed remedial action, instead of treating all four as interchangeable.",
+            "fr": "Confondre des changements simultanés avec un mécanisme causal prouvé crée une fausse certitude. Il faut distinguer fréquentation, discipline sacramentelle, croyances, catéchèse et confiance institutionnelle, puis établir les tendances antérieures et les ruptures ultérieures. Une seule courbe ne suffit pas à mesurer les effets du culte réformé, des pratiques cléricales et de la sécularisation.\n\nL'existence de tendances sécularisatrices avant 1962 ne réfute pas l'éventualité d'une accélération institutionnelle après 1965. Cuchet défend précisément l'hypothèse que le Concile fut un événement déclencheur de changements de pratique en France, interprétation historique étayée par les documents français qu'il étudie, mais non explication établie pour tous les pays ou pour toute forme de croyance. Le dossier CR-ORG-05 conserve la responsabilité du cas français détaillé. Le présent dossier, plus général, doit comparer les juridictions et distinguer cause, accélération, révélation d'une faiblesse antérieure et échec des remèdes proposés, sans confondre ces quatre notions."
           },
           "source_ids": [
             "BERTH22",
-            "CUCHET"
+            "CUCHET",
+            "INT_CR_ORG_09_1",
+            "INT_CR_ORG_09_2"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "INT_CR_ORG_09_1": "original author research description",
+            "INT_CR_ORG_09_2": "bounded book-review account of 1965/1968 French data"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -1477,7 +1523,10 @@
       "original_claim_by_claim_source_context_certified": false,
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
-      "publication_allowed": false
+      "publication_allowed": false,
+      "integration_status": "CORRECTION_STAGED_WITH_SOURCE_LINKS_UNPUBLISHED",
+      "correction_overlay": "data/learn/formation-final-23-crisis-owner-corrections-20261014.v1.json",
+      "preintegration_archive": "data/learn/formation-preintegration-21-church-crisis-originals-20261014.v1.json"
     },
     {
       "id": "CR-LIT-02",
@@ -1725,21 +1774,25 @@
         {
           "role": "answer",
           "text": {
-            "en": "The disputed reform must be judged on identified ritual texts rather than the slogan that either every change is Protestant or every promulgated change is pastorally harmless. Pius XII's Mediator Dei §§48–50 treats the liturgy as a doctrinal witness subject to the Church's Magisterium and distinguishes divine elements from mutable human forms; §§63–65 warns against simplistic antiquarianism and autonomous improvisation. Sacrosanctum Concilium §23 requires sound tradition and organic development. Paul VI's Missale Romanum promulgated the reform. These facts allow serious criticism of individual Offertory, Canon and rubrical changes without assuming that shortened wording automatically cancels the Eucharistic sacrifice or invalidates every celebration.",
-            "fr": "Il faut juger la réforme contestée sur des textes rituels identifiables, et non sur des slogans selon lesquels tout changement serait protestant ou toute modification promulguée serait pastoralement inoffensive. Mediator Dei de Pie XII (§§48–50) décrit la liturgie comme témoin doctrinal soumis au Magistère et distingue éléments divins et formes humaines modifiables ; les §§63–65 récusent l'archéologisme simpliste et l'improvisation privée. Sacrosanctum Concilium §23 impose la sauvegarde de la saine tradition et la croissance organique. Missale Romanum de Paul VI promulgua la réforme. Ces faits permettent de critiquer sérieusement les changements précis de l'Offertoire, du Canon et des rubriques sans prétendre qu'une formulation abrégée efface automatiquement le sacrifice eucharistique ou invalide toute célébration."
+            "en": "Yes, some changes substantially altered where and how explicitly particular sacrificial or penitential ideas were expressed, but this is not the same as proving that the revised Missal denied those doctrines. In the 1962 Roman Offertory, the priest offers the *immaculatam hostiam* in anticipation of the sacrifice and the chalice of salvation; in the revised preparation of the gifts the forms begin *Benedictus es, Domine, Deus universi*, giving thanks for bread and wine to become the offering. The traditional Roman Canon was retained as Eucharistic Prayer I, alongside newly provided Eucharistic Prayers. To assess total propitiatory and penitential emphasis one must compare the whole books and actual eucharistic texts, including penitential rites and sacrificial prayers, rather than judge from the Offertory alone.",
+            "fr": "Oui, certaines révisions ont profondément modifié la place et l'explicitation de certaines notions sacrificielles et pénitentielles, sans que cela démontre à soi seul une négation de ces doctrines par le Missel réformé. Dans l'Offertoire romain de 1962, le prêtre offre par anticipation l'*immaculatam hostiam* et le calice du salut ; dans la préparation des dons du Missel réformé, les formules commencent par *Benedictus es, Domine, Deus universi*, dans une action de grâce pour le pain et le vin destinés à l'offrande. Le Canon romain traditionnel demeure comme Prière eucharistique I, à côté des nouvelles Prières eucharistiques. Pour apprécier la place globale de la propitiation et de la pénitence, il faut confronter les livres entiers et les prières effectives, notamment les rites pénitentiels et les prières sacrificielles, sans tirer une conclusion générale du seul Offertoire."
           },
           "source_ids": [
             "JOHNXIII1962",
             "MR69",
-            "MD47"
+            "MD47",
+            "OFF1962",
+            "INT_CR_LIT_07_1"
           ],
           "attribution": null,
           "original_context_approved": false,
           "french_final_approved": false,
           "source_claim_locators": {
             "MD47": "Mediator Dei §§48–50, 63–65, liturgical doctrinal witness, mutable parts and anti-antiquarianism",
-            "MR69": "Paul VI Missale Romanum, papal promulgation of the revised Roman Missal",
-            "JOHNXIII1962": "1962 typical Missal, primary comparison baseline"
+            "MR69": "Revised Mass and multiple Eucharistic Prayers",
+            "JOHNXIII1962": "1962 typical Missal, primary comparison baseline",
+            "OFF1962": "Original 1962 Offertory Latin formulas",
+            "INT_CR_LIT_07_1": "Historical liturgical reform treatment"
           }
         },
         {
@@ -1765,17 +1818,25 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "A theological concern over clarity must distinguish textual omission, possible catechetical misunderstanding and genuine doctrinal negation. Later revisions to the General Instruction and the continued presence of the Roman Canon are relevant evidence, as is whether a cited criticism addresses the original 1969 text rather than an amended edition.",
-            "fr": "Un souci de clarté doctrinale doit distinguer omission textuelle, risque de méprise catéchétique et véritable négation doctrinale. Les modifications ultérieures de la Présentation générale et le maintien du Canon romain constituent des preuves pertinentes ; encore faut-il savoir si une critique vise le texte original de 1969 ou une édition amendée."
+            "en": "The 1969 *Short Critical Study* makes the historically specific objection that the new ritual as a whole and its introductory description risk obscuring Trent's sacrificial doctrine. The cardinals transmitted and endorsed the concern in their letter, but a different group composed the Study. Paul VI's clarification and the 1970 revised General Instruction articulated sacrificial doctrine more explicitly; those changes have to be assessed against the *original* 1969 introduction and the final published books. A weaker expression in one text is not proof that every new Eucharistic Prayer denies sacrifice, just as papal promulgation is not itself proof that no question of pastoral clarity remains.",
+            "fr": "Le *Bref examen critique* de 1969 formule l'objection historiquement précise selon laquelle le nouveau rite, considéré dans son ensemble et dans sa présentation introductive, risquait d'obscurcir la doctrine sacrificielle de Trente. Les cardinaux transmirent cette préoccupation et s'y associèrent par leur lettre, mais l'étude fut composée par un autre groupe. Les précisions de Paul VI et la révision de la Présentation générale en 1970 explicitèrent davantage la doctrine du sacrifice ; il faut donc confronter l'introduction de 1969 aux livres finalement publiés. Une expression moins explicite dans un passage ne démontre pas que chaque nouvelle Prière eucharistique nie le sacrifice, pas plus que la promulgation pontificale ne démontre l'absence de toute difficulté de clarté pastorale."
           },
           "source_ids": [
             "IGMR69_ORIGINAL",
             "GIRM75",
-            "MR69"
+            "MR69",
+            "INT_CR_LIT_07_2",
+            "INT_CR_LIT_07_3",
+            "INT_CR_LIT_07_1"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "INT_CR_LIT_07_2": "Signed cardinals' letter",
+            "INT_CR_LIT_07_3": "Critique of 1969 General Instruction",
+            "INT_CR_LIT_07_1": "Historical account 1969 and 1970 changes"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -1797,7 +1858,10 @@
       "original_claim_by_claim_source_context_certified": false,
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
-      "publication_allowed": false
+      "publication_allowed": false,
+      "integration_status": "CORRECTION_STAGED_WITH_SOURCE_LINKS_UNPUBLISHED",
+      "correction_overlay": "data/learn/formation-final-23-crisis-owner-corrections-20261014.v1.json",
+      "preintegration_archive": "data/learn/formation-preintegration-21-church-crisis-originals-20261014.v1.json"
     },
     {
       "id": "CR-LIT-08",
@@ -1811,8 +1875,8 @@
         {
           "role": "answer",
           "text": {
-            "en": "The postconciliar lectionary expanded the quantity and variety of biblical readings through multi-year Sunday cycles and broader weekday provision. Greater volume is a factual difference; whether the selection and arrangement teach particular doctrines more clearly is a separate editorial and theological question. Neither quantity nor antiquity alone determines a rite's overall value.",
-            "fr": "Le lectionnaire postconciliaire élargit la quantité et la variété des lectures bibliques par des cycles dominicaux sur plusieurs années et une provision quotidienne plus vaste. Ce volume accru est un fait ; la question de savoir si le choix et l'ordonnance expriment mieux telle doctrine exige un examen distinct. Ni la quantité ni l'ancienneté ne déterminent à elles seules la valeur globale d'un rite."
+            "en": "The postconciliar lectionary expanded the quantity and variety of biblical readings through multi-year Sunday cycles and broader weekday provision. Greater volume is a factual difference; whether the selection and arrangement teach particular doctrines more clearly is a separate editorial and theological question. Neither quantity nor antiquity alone determines a rite's overall value.\n\nThe reformed Roman Lectionary makes three readings normal for Sundays and major feasts and distributes Sunday passages across Years A, B and C, normally using Gospel material in a three-year cycle. In Ordinary Time, weekday Gospels follow an annual sequence, while the weekday first reading alternates between Years I and II. Advent, Christmas, Lent and Easter weekdays have their own seasonal cycles. The older Roman Sunday lectionary instead used a recurring annual selection, normally Epistle and Gospel. This changes the pedagogy: varied semi-continuous biblical exposure versus concentrated annual recurrence. It does not, by itself, establish that difficult texts were omitted or that the faithful heard all available readings.",
+            "fr": "Le lectionnaire postconciliaire élargit la quantité et la variété des lectures bibliques par des cycles dominicaux sur plusieurs années et une provision quotidienne plus vaste. Ce volume accru est un fait ; la question de savoir si le choix et l'ordonnance expriment mieux telle doctrine exige un examen distinct. Ni la quantité ni l'ancienneté ne déterminent à elles seules la valeur globale d'un rite.\n\nLe Lectionnaire romain réformé prévoit normalement trois lectures les dimanches et grandes fêtes et répartit les textes dominicaux entre les années A, B et C, avec un cycle triennal pour les Évangiles. En temps ordinaire, les Évangiles de semaine suivent une série annuelle, tandis que la première lecture alterne entre les années I et II. Les semaines de l'Avent, de Noël, du Carême et de Pâques obéissent à leurs cycles saisonniers. L'ancien lectionnaire dominical romain utilisait au contraire une sélection reprise annuellement, en général Épître et Évangile. La pédagogie change : une exposition biblique variée et semi-continue face à une récurrence annuelle concentrée. Cela ne démontre pas, à soi seul, l'omission de passages difficiles ni que les fidèles entendent effectivement toutes les lectures possibles."
           },
           "source_ids": [
             "SC63",
@@ -1820,7 +1884,11 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "LEC81": "General Introduction to the Lectionary §§65–69",
+            "SC63": "§§35,51 on Scripture and richer lectionary"
+          }
         },
         {
           "role": "documented_position",
@@ -1870,7 +1938,10 @@
       "original_claim_by_claim_source_context_certified": false,
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
-      "publication_allowed": false
+      "publication_allowed": false,
+      "integration_status": "CORRECTION_STAGED_WITH_SOURCE_LINKS_UNPUBLISHED",
+      "correction_overlay": "data/learn/formation-final-23-crisis-owner-corrections-20261014.v1.json",
+      "preintegration_archive": "data/learn/formation-preintegration-21-church-crisis-originals-20261014.v1.json"
     },
     {
       "id": "CR-LIT-09",
