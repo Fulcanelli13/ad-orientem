@@ -1,0 +1,483 @@
+{
+  "schema": "ao-mass-lanslots-1897-claim-differential-v1",
+  "date": "2026-10-14",
+  "status": "EDITORIAL_RESEARCH_NOT_APPROVED_NOT_DEPLOYED",
+  "source": {
+    "author": "Rev. D. I. Lanslots, O.S.B.",
+    "title": "Illustrated Explanation of the Prayers and Ceremonies of the Mass",
+    "year": 1897,
+    "pdf": "https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf",
+    "archiveItem": "illustratedexpla00lans",
+    "volumePdfPages": 404
+  },
+  "provenance": {
+    "note": "Differential against 422-item September Mass evidence ledger, FRG01-30 in first original-French audit, FRG31-71 microguide, eight Mass Formation stages, and certified 14-segment Canon structure. Only matches stated below were inspected; absence of a keyword does not prove uniqueness.",
+    "historicalEvidencePath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+    "frgFirstPath": "docs/research/MASS-FRENCH-GUERANGER-ORIGINAL-AUDIT-20261013.md",
+    "frgSecondPath": "data/research/mass-fr-gueranger-microguide-batch02.v1.json",
+    "canonSourcePath": "data/presentation/reader-canon-source-map.v1.json",
+    "formationPath": "data/learn/mass-formation-campion.v1.json"
+  },
+  "originalSourceAccess": {
+    "completePdfAcquired": false,
+    "completeOcrAcquired": false,
+    "webPdfTooLargeForInspection": true,
+    "restriction": "Do not upgrade provisional OCR excerpts to certified original-page witness; first seven rows reference previous indexed excerpts not fully revalidated.",
+    "fullCitationInventory": false,
+    "visualPageChecks": 0
+  },
+  "claimCount": 15,
+  "claims": [
+    {
+      "id": "LAN-001",
+      "claimTopic": "Incense as prayer of saints",
+      "sourceChapter": "VIII",
+      "printedPageHint": 70,
+      "printedPageLocatorStatus": "PRIOR_INDEXED_OCR_OR_INDEX_CLAIM_UNREVALIDATED",
+      "scriptureRefs": [
+        "Revelation 5:8"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.001",
+        "AO.CARD.002"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [],
+        "existingHistoricalEvidenceIds": [
+          "EV3-0223"
+        ],
+        "formationStageIds": []
+      },
+      "disposition": "POTENTIAL_SCRIPTURAL_ENRICHMENT",
+      "criticalNote": "Existing evidence describes the ceremony, not necessarily this biblical interpretation.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-002",
+      "claimTopic": "Magi bearing incense",
+      "sourceChapter": "VIII",
+      "printedPageHint": 70,
+      "printedPageLocatorStatus": "PRIOR_INDEXED_OCR_OR_INDEX_CLAIM_UNREVALIDATED",
+      "scriptureRefs": [
+        "Matthew 2:11"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [],
+        "existingHistoricalEvidenceIds": [
+          "EV3-0044"
+        ],
+        "formationStageIds": []
+      },
+      "disposition": "RELATED_BUT_DISTINCT_ALLEGORY",
+      "criticalNote": "Older St Vincent Ferrer record mentions the Magi at the altar, not the biblical basis of incensation; no historical-origin claim.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-003",
+      "claimTopic": "Levitical incense prescription",
+      "sourceChapter": "VIII",
+      "printedPageHint": 70,
+      "printedPageLocatorStatus": "PRIOR_INDEXED_OCR_OR_INDEX_CLAIM_UNREVALIDATED",
+      "scriptureRefs": [],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [],
+        "existingHistoricalEvidenceIds": [
+          "EV3-0223"
+        ],
+        "formationStageIds": []
+      },
+      "disposition": "NEEDS_EXACT_VERSE",
+      "criticalNote": "Book-level mention only in prior OCR excerpt; no verse should be invented.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-004",
+      "claimTopic": "Censer and angel at Offertory incense",
+      "sourceChapter": "XIV",
+      "printedPageHint": 134,
+      "printedPageLocatorStatus": "PRIOR_INDEXED_OCR_OR_INDEX_CLAIM_UNREVALIDATED",
+      "scriptureRefs": [
+        "Revelation 8:3–4"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.010"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [],
+        "existingHistoricalEvidenceIds": [
+          "EV3-0220",
+          "EV3-0223"
+        ],
+        "formationStageIds": []
+      },
+      "disposition": "SCRIPTURE_VERSE_ALLOCATION_UNVERIFIED",
+      "criticalNote": "Angel with censer was reportedly in prior OCR excerpt, but Revelation reference is editorial matching, not verified author's explicit citation.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-005",
+      "claimTopic": "The Lamb standing as slain after consecration",
+      "sourceChapter": "XX",
+      "printedPageHint": 221,
+      "printedPageLocatorStatus": "PRIOR_INDEXED_OCR_OR_INDEX_CLAIM_UNREVALIDATED",
+      "scriptureRefs": [
+        "Revelation 5:6"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.017"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG23",
+          "FRG40"
+        ],
+        "existingHistoricalEvidenceIds": [],
+        "formationStageIds": [
+          "MF05",
+          "MF06"
+        ]
+      },
+      "disposition": "RELATED_THEOLOGY_NEW_IMAGE_CANDIDATE",
+      "criticalNote": "Underlying doctrine already covered by Formation MF05-C02 and MF06-C01; differentiate typology from Christ dying again.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-006",
+      "claimTopic": "Abel Abraham Melchisedech in Supra quae",
+      "sourceChapter": "XX",
+      "printedPageHint": 222,
+      "printedPageLocatorStatus": "PRIOR_INDEXED_OCR_OR_INDEX_CLAIM_UNREVALIDATED",
+      "scriptureRefs": [
+        "Genesis 4:4",
+        "Genesis 22:1–19",
+        "Genesis 14:18"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.017"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "canonSegment": {
+        "id": "AO.CANON.09",
+        "blockIds": [
+          "AO.SM.B055"
+        ],
+        "cueStart": "AO.SM.C0186",
+        "cueEnd": "AO.SM.C0186"
+      },
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG41",
+          "FRG42",
+          "FRG43"
+        ],
+        "existingHistoricalEvidenceIds": [],
+        "formationStageIds": [
+          "MF06"
+        ]
+      },
+      "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
+      "criticalNote": "Canon is AO.CANON.09, AO.SM.B055, AO.SM.C0186; also Formation MF06-C02. Bible verses are editorial correspondences, not proof of author's individual verse citations.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-007",
+      "claimTopic": "Council of Trent on the Canon",
+      "sourceChapter": "XVI",
+      "printedPageHint": 162,
+      "printedPageLocatorStatus": "PRIOR_INDEXED_OCR_OR_INDEX_CLAIM_UNREVALIDATED",
+      "scriptureRefs": [],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.014"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG18"
+        ],
+        "existingHistoricalEvidenceIds": [],
+        "formationStageIds": []
+      },
+      "disposition": "NOT_SCRIPTURE_DOCTRINAL_AUTHORITY",
+      "criticalNote": "Session XXII chapter 4 is a separate doctrinal witness; verify exact quotation and interpretive scope.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-008",
+      "claimTopic": "Martyrs beneath the altar and altar relics",
+      "sourceChapter": "I",
+      "printedPageHint": 13,
+      "printedPageLocatorStatus": "CHAPTER_START_OR_UNVERIFIED_LOCALE_NOT_CLAIM_EXACT_PAGE",
+      "scriptureRefs": [
+        "Revelation 6:9"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG03"
+        ],
+        "existingHistoricalEvidenceIds": [],
+        "formationStageIds": []
+      },
+      "disposition": "RELATED_GUERANGER_SYMBOLISM_SCRIPTURE_NEW_CANDIDATE",
+      "criticalNote": "Existing FRG03 mentions relics and altar kiss; the Revelation association requires visual original-text check.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-009",
+      "claimTopic": "Prophet Isaiah purification before Gospel",
+      "sourceChapter": "XI",
+      "printedPageHint": 93,
+      "printedPageLocatorStatus": "CHAPTER_START_OR_UNVERIFIED_LOCALE_NOT_CLAIM_EXACT_PAGE",
+      "scriptureRefs": [
+        "Isaiah 6:6–7"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.007"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG09"
+        ],
+        "existingHistoricalEvidenceIds": [
+          "EV3-0120"
+        ],
+        "formationStageIds": []
+      },
+      "disposition": "RELATED_GOSPEL_CONTEXT_SCRIPTURE_NEW_CANDIDATE",
+      "criticalNote": "Check whether book explicitly identifies Isaiah in Munda cor meum explanation; existing evidence treats ceremonial Gospel preparation.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-010",
+      "claimTopic": "Sanctus as angelic adoration",
+      "sourceChapter": "XV",
+      "printedPageHint": 145,
+      "printedPageLocatorStatus": "CHAPTER_START_OR_UNVERIFIED_LOCALE_NOT_CLAIM_EXACT_PAGE",
+      "scriptureRefs": [
+        "Isaiah 6:3",
+        "Revelation 4:8"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.013"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [],
+        "existingHistoricalEvidenceIds": [],
+        "formationStageIds": []
+      },
+      "disposition": "POTENTIAL_SCRIPTURAL_ENRICHMENT",
+      "criticalNote": "Original-page citation not yet directly checked. Distinguish Sanctus proper from Benedictus.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-011",
+      "claimTopic": "Lavabo Psalm and interior purity",
+      "sourceChapter": "XIV",
+      "printedPageHint": 133,
+      "printedPageLocatorStatus": "CHAPTER_START_OR_UNVERIFIED_LOCALE_NOT_CLAIM_EXACT_PAGE",
+      "scriptureRefs": [
+        "Psalms 25:6–12 (Vulgate numbering)"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.010"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG13"
+        ],
+        "existingHistoricalEvidenceIds": [
+          "EV3-0233",
+          "EV3-0234"
+        ],
+        "formationStageIds": []
+      },
+      "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
+      "criticalNote": "The liturgical Psalm itself and FRG13 already connect washing and purity; count as evidence enrichment only.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-012",
+      "claimTopic": "Benedictus Hosanna Gospel acclamation",
+      "sourceChapter": "XV",
+      "printedPageHint": 145,
+      "printedPageLocatorStatus": "CHAPTER_START_OR_UNVERIFIED_LOCALE_NOT_CLAIM_EXACT_PAGE",
+      "scriptureRefs": [
+        "Matthew 21:9",
+        "Mark 11:9–10"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.013"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [],
+        "existingHistoricalEvidenceIds": [],
+        "formationStageIds": []
+      },
+      "disposition": "POTENTIAL_SCRIPTURAL_ENRICHMENT",
+      "criticalNote": "The relation of liturgical words to Gospel text is clear but attribution to Lanslots requires source verification.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-013",
+      "claimTopic": "Agnus Dei as Baptist's witness",
+      "sourceChapter": "XXIII",
+      "printedPageHint": 272,
+      "printedPageLocatorStatus": "CHAPTER_START_OR_UNVERIFIED_LOCALE_NOT_CLAIM_EXACT_PAGE",
+      "scriptureRefs": [
+        "John 1:29"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.021"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG58"
+        ],
+        "existingHistoricalEvidenceIds": [
+          "EV3-0453"
+        ],
+        "formationStageIds": []
+      },
+      "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
+      "criticalNote": "Do not create a second Agnus Dei explanation; reuse existing French content and source ownership.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-014",
+      "claimTopic": "Domine non sum dignus and the centurion",
+      "sourceChapter": "XXIV",
+      "printedPageHint": 287,
+      "printedPageLocatorStatus": "CHAPTER_START_OR_UNVERIFIED_LOCALE_NOT_CLAIM_EXACT_PAGE",
+      "scriptureRefs": [
+        "Matthew 8:8"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.024"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG63"
+        ],
+        "existingHistoricalEvidenceIds": [],
+        "formationStageIds": []
+      },
+      "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
+      "criticalNote": "FRG63 already explains the centurion's humility before celebrant Communion; assess priest/faithful difference.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-015",
+      "claimTopic": "Last Gospel as Johannine Incarnation",
+      "sourceChapter": "XXV",
+      "printedPageHint": 308,
+      "printedPageLocatorStatus": "CHAPTER_START_OR_UNVERIFIED_LOCALE_NOT_CLAIM_EXACT_PAGE",
+      "scriptureRefs": [
+        "John 1:1–14"
+      ],
+      "legacyGuideOwnerIds": [
+        "AO.CARD.030"
+      ],
+      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
+      "overlaps": {
+        "existingGuerangerIds": [
+          "FRG30",
+          "FRG71"
+        ],
+        "existingHistoricalEvidenceIds": [
+          "EV3-0582"
+        ],
+        "formationStageIds": []
+      },
+      "disposition": "ALREADY_COVERED_ADD_CORROBORATION",
+      "criticalNote": "1962 exceptions are normative; John 1 link is already present in the evidence ledger.",
+      "originalTextVerification": "REQUIRED",
+      "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    }
+  ],
+  "rules": [
+    "Never write new normative 1962 rubrics from Lanslots.",
+    "Keep Canon to AO.CANON.01-14 canonical segment IDs where precisely applicable.",
+    "Reuse existing French Guéranger claims and Mass Formation rather than duplicating canonically owned lessons.",
+    "Classify quoted biblical words, commentary, historical hypotheses, spiritual symbolism, dogma, and prescriptions separately.",
+    "Do not publish without original PDF/printed page verification, bilingual theological review and full source/reader tests."
+  ]
+}
