@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 44,
+  "source_count": 58,
   "sources": [
     {
       "id": "S01",
@@ -533,6 +533,174 @@
       "access": "full_text_opened",
       "chapter_passage_certified": false,
       "annotation": "Source opened and thematic locator observed; individual claims still require contextual collation, particularly EN/FR and any opposing interpretive arguments."
+    },
+    {
+      "id": "S45",
+      "title": "Pius XII, Address on Situation Ethics",
+      "author": "Pius XII",
+      "year": "1952",
+      "role": "magisterial_historical_preconciliar",
+      "url": "https://www.vatican.va/content/pius-xii/fr/speeches/1952/documents/hf_p-xii_spe_19520418_soyez-bienvenues.html",
+      "scope": "18 April 1952, 'La morale de situation'; direct pre-Vatican II contemporary dispute and moral norms",
+      "access": "original_french_full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S46",
+      "title": "Casti connubii official French edition",
+      "author": "Pius XI",
+      "year": "1930",
+      "role": "magisterial_translation_witness_not_independent",
+      "url": "https://www.vatican.va/content/pius-xi/fr/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "scope": "§§24–29, wording of primacy and dignity of spouses; linked to S19 as same document",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S47",
+      "title": "Mulieris dignitatem",
+      "author": "John Paul II",
+      "year": "1988",
+      "role": "magisterial_matrimony_original",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1988/documents/hf_jp-ii_apl_15081988_mulieris-dignitatem.html",
+      "scope": "§24 mutual subjection out of reverence for Christ, explicit interpretation of Ephesians 5",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S48",
+      "title": "1983 Code of Canon Law, marriage",
+      "author": "John Paul II, promulgated universal Latin Church law",
+      "year": "1983",
+      "role": "current_code_original_validate_later_amendments",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "scope": "can. 1055–57 consent/bond; can.1062 engagement; 1084 sterility; 1141 dissolution; 1153 separation",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S49",
+      "title": "Notification regarding Just Love by Margaret Farley",
+      "author": "CDF",
+      "year": "2012",
+      "role": "magisterial_assessment_and_reproduced_opponent_quotes",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
+      "scope": "2012 Notification quotations from Farley Just Love pages 293, 304–305, 310; excerpts selected by critical institution; not full book independent reading",
+      "access": "original_notification_full_text_opened_not_full_Farley_book",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S50",
+      "title": "How Religious Beliefs and Practices Influence the Psychological Health of Catholic Priests",
+      "author": "Anthony Isacco, Ethan Sahker, Elizabeth Krinock, Wonjin Sim, Deanna Hamilton",
+      "year": "2015 online, 2016 journal",
+      "role": "peer_reviewed_qualitative_original",
+      "url": "https://journals.sagepub.com/doi/10.1177/1557988314567325",
+      "scope": "study of 15 mid-Atlantic US priests, perceived effects of celibacy and obedience; nonrepresentative CQR design",
+      "access": "open_abstract_and_pubmed_verified_not_all_methods_tables",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S51",
+      "title": "Summa theologiae II-II q.152 Virginity",
+      "author": "Thomas Aquinas",
+      "year": "13th c.",
+      "role": "classical_moral_theology_original_translation",
+      "url": "https://www.newadvent.org/summa/3152.htm",
+      "scope": "a.4, virginity's objective excellence and individual married people who may be holier",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S52",
+      "title": "Summa theologiae II-II q.154 Lust",
+      "author": "Thomas Aquinas",
+      "year": "13th c.",
+      "role": "classical_moral_theology_original_translation",
+      "url": "https://www.newadvent.org/summa/3154.htm",
+      "scope": "aa.2,4,5—premarital relations, kisses/touches and moral species, nocturnal emissions independent of present will; nuance prior causes",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S53",
+      "title": "Summa theologiae II-II q.169 Modesty",
+      "author": "Thomas Aquinas",
+      "year": "13th c.",
+      "role": "classical_moral_theology_original_translation",
+      "url": "https://www.newadvent.org/summa/3169.htm",
+      "scope": "aa.1–2, outward apparel and contextual conventions/intent, applies to men too",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S54",
+      "title": "Reconciliatio et paenitentia",
+      "author": "John Paul II",
+      "year": "1984",
+      "role": "magisterial_original",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+      "scope": "§17 fundamental option and concrete mortal sin; doctrinal rebuttal does not identify individual original proponents",
+      "access": "original_url_identified_exact_locator",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S55",
+      "title": "Amoris laetitia",
+      "author": "Francis",
+      "year": "2016",
+      "role": "papal_original",
+      "url": "https://www.vatican.va/content/francesco/en/apost_exhortations/documents/papa-francesco_esortazione-ap_20160319_amoris-laetitia.html",
+      "scope": "chapter VIII §§300–305 and footnote 351; Vatican page currently offers a document/PDF navigation, specific paragraph crosschecked via linked pastoral guidelines not full pdf",
+      "access": "official_document_landing_opened_pdf_chapter_not_independently_collated",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S56",
+      "title": "Buenos Aires pastoral criteria and papal letter",
+      "author": "Buenos Aires bishops and Francis",
+      "year": "2016",
+      "role": "bishops_original_plus_papal_original_interpretation",
+      "url": "https://www.vatican.va/content/francesco/es/letters/2016/documents/papa-francesco_20160905_regione-pastorale-buenos-aires.html",
+      "scope": "criteria nn.5–10; Pope 5 September 2016 endorsement; original Spanish, clarifies sacramental discernment and limits",
+      "access": "entire_official_html_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S57",
+      "title": "Familiaris consortio official French",
+      "author": "John Paul II",
+      "year": "1981",
+      "role": "magisterial_translation_witness_not_independent",
+      "url": "https://www.vatican.va/content/john-paul-ii/fr/apost_exhortations/documents/hf_jp-ii_exh_19811122_familiaris-consortio.html",
+      "scope": "§84, pastoral care and sacramental discipline, French counterpart to S22",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
+    },
+    {
+      "id": "S58",
+      "title": "Declaration on Communion of divorced and remarried faithful",
+      "author": "Pontifical Council for Legislative Texts",
+      "year": "2000",
+      "role": "canonical_official_original",
+      "url": "https://www.vatican.va/roman_curia/pontifical_councils/intrptxt/documents/rc_pc_intrptxt_doc_20000706_declaration_en.html",
+      "scope": "Can. 915 and Familiaris consortio 84; earlier 2000 juridical explanation to compare with 2016 pastoral criteria rather than erasing either",
+      "access": "full_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Named original author/source. Exact whole-answer claim alignment, independent corroboration, and EN/FR editorial review remain pending."
     }
   ],
   "priority_questions": [
@@ -1262,11 +1430,15 @@
       "id": "CSE031",
       "source_ids": [
         "S25",
-        "S19"
+        "S19",
+        "S52",
+        "S48"
       ],
       "source_roles": [
         "magisterial_sexual_ethics_original",
-        "magisterial_moral_original"
+        "magisterial_moral_original",
+        "classical_moral_theology_original_translation",
+        "current_code_original_validate_later_amendments"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1280,11 +1452,13 @@
       "id": "CSE041",
       "source_ids": [
         "S19",
-        "S22"
+        "S22",
+        "S48"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "magisterial_pastoral_original"
+        "magisterial_pastoral_original",
+        "current_code_original_validate_later_amendments"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1299,12 +1473,18 @@
       "source_ids": [
         "S19",
         "S22",
-        "S04"
+        "S04",
+        "S46",
+        "S47",
+        "S48"
       ],
       "source_roles": [
         "magisterial_moral_original",
         "magisterial_pastoral_original",
-        "magisterial_original"
+        "magisterial_original",
+        "magisterial_translation_witness_not_independent",
+        "magisterial_matrimony_original",
+        "current_code_original_validate_later_amendments"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1318,11 +1498,15 @@
       "id": "CSE049",
       "source_ids": [
         "S19",
-        "S22"
+        "S22",
+        "S48",
+        "S49"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "magisterial_pastoral_original"
+        "magisterial_pastoral_original",
+        "current_code_original_validate_later_amendments",
+        "magisterial_assessment_and_reproduced_opponent_quotes"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1336,11 +1520,15 @@
       "id": "CSE050",
       "source_ids": [
         "S19",
-        "S22"
+        "S22",
+        "S48",
+        "S49"
       ],
       "source_roles": [
         "magisterial_moral_original",
-        "magisterial_pastoral_original"
+        "magisterial_pastoral_original",
+        "current_code_original_validate_later_amendments",
+        "magisterial_assessment_and_reproduced_opponent_quotes"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
       "section_and_quote_checked_for_question": false,
@@ -1847,13 +2035,419 @@
       "independent_outside_support_required": true,
       "risk": "moral_voluntariness_and_scruples",
       "review_state": "PENDING_PARAGRAPH_COLLLATION"
+    },
+    {
+      "id": "CSE027",
+      "source_ids": [
+        "S52"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE028",
+      "source_ids": [
+        "S51"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE029",
+      "source_ids": [
+        "S50"
+      ],
+      "source_roles": [
+        "peer_reviewed_qualitative_original"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE030",
+      "source_ids": [
+        "S53"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE032",
+      "source_ids": [
+        "S48"
+      ],
+      "source_roles": [
+        "current_code_original_validate_later_amendments"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE033",
+      "source_ids": [
+        "S52"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE034",
+      "source_ids": [
+        "S52"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE035",
+      "source_ids": [
+        "S52"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE036",
+      "source_ids": [
+        "S52"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE038",
+      "source_ids": [
+        "S52"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE040",
+      "source_ids": [
+        "S52"
+      ],
+      "source_roles": [
+        "classical_moral_theology_original_translation"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE042",
+      "source_ids": [
+        "S48"
+      ],
+      "source_roles": [
+        "current_code_original_validate_later_amendments"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE043",
+      "source_ids": [
+        "S49",
+        "S48"
+      ],
+      "source_roles": [
+        "magisterial_assessment_and_reproduced_opponent_quotes",
+        "current_code_original_validate_later_amendments"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE044",
+      "source_ids": [
+        "S48"
+      ],
+      "source_roles": [
+        "current_code_original_validate_later_amendments"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE046",
+      "source_ids": [
+        "S19"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CSE047",
+      "source_ids": [
+        "S19"
+      ],
+      "source_roles": [
+        "magisterial_moral_original"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "doctrinal_and_historical_comparison",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CR-MOR-01",
+      "source_ids": [
+        "S45",
+        "S27"
+      ],
+      "source_roles": [
+        "magisterial_historical_preconciliar",
+        "historical_moral_manual"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_theological_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CR-MOR-02",
+      "source_ids": [
+        "S21",
+        "S45"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_historical_preconciliar"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_theological_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CR-MOR-03",
+      "source_ids": [
+        "S20",
+        "S33"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "catholic_theological_dissent_original_argument"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_theological_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CR-MOR-04",
+      "source_ids": [
+        "S41",
+        "S33"
+      ],
+      "source_roles": [
+        "magisterial_assent_and_theological_difficulties_original",
+        "catholic_theological_dissent_original_argument"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_theological_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CR-MOR-05",
+      "source_ids": [
+        "S21",
+        "S43"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "classical_moral_object_and_circumstances_analysis"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_theological_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CR-MOR-06",
+      "source_ids": [
+        "S54",
+        "S21"
+      ],
+      "source_roles": [
+        "magisterial_original",
+        "magisterial_moral_original"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_theological_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CR-MOR-07",
+      "source_ids": [
+        "S21",
+        "S41"
+      ],
+      "source_roles": [
+        "magisterial_moral_original",
+        "magisterial_assent_and_theological_difficulties_original"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_theological_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
+    },
+    {
+      "id": "CR-MOR-08",
+      "source_ids": [
+        "S22",
+        "S55",
+        "S56",
+        "S58"
+      ],
+      "source_roles": [
+        "magisterial_pastoral_original",
+        "papal_original",
+        "bishops_original_plus_papal_original_interpretation",
+        "canonical_official_original"
+      ],
+      "locator_level": "topic_and_original_passage_candidates_not_full_QA_verification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": false,
+      "opposing_view_sourced": false,
+      "independent_outside_support_required": true,
+      "risk": "historical_and_theological_adversarial",
+      "review_state": "PENDING_PARAGRAPH_COLLATION"
     }
   ],
   "counts": {
-    "sources": 44,
-    "mapped_questions": 70,
-    "church_crisis": 25,
-    "sexual_ethics": 45,
+    "sources": 58,
+    "mapped_questions": 94,
+    "church_crisis": 33,
+    "sexual_ethics": 61,
     "answer_audited": 0,
     "answer_certified": 0
   },
