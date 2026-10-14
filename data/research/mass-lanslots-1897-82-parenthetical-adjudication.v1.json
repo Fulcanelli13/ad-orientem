@@ -1,0 +1,1818 @@
+{
+  "schema": "ao-mass-lanslots-1897-82-parenthetical-citation-adjudication-v1",
+  "date": "2026-10-14",
+  "status": "HUMAN_CONTEXT_SCREEN_ADJUDICATED_FROM_FULL_OCR_NOT_ALL_PAGE_IMAGES_VERIFIED",
+  "originalOcrPath": "data/research/archive/lanslots-1897-original-ocr.txt",
+  "originalOcrSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+  "sourceCandidateRegister": "data/research/mass-lanslots-1897-whole-ocr-parenthetical-screen.v1.json",
+  "researchOccurrenceInputs": [
+    "data/research/mass-lanslots-1897-ocr-scripture-batch01.v1.json",
+    "data/research/mass-lanslots-1897-ocr-scripture-batch02.v1.json",
+    "data/research/mass-lanslots-1897-fulltext-17-new-citations.v1.json",
+    "data/research/mass-lanslots-1897-fulltext-five-extra-parenthetical.v1.json"
+  ],
+  "census": {
+    "total": 82,
+    "scripture": 77,
+    "nonScripture": 5,
+    "verseLocators": 78,
+    "visuallyChecked": 5,
+    "distinctReferencedResearchIds": 78
+  },
+  "interpretation": "82 numeric parenthetical patterns: 5 nonbiblical references (Bonaventure, Peter Damian, St Thomas and two Council of Trent references), 77 genuine biblical citation parentheses. One Song of Songs citation carries two biblical locators, giving 78 parenthetical verse-reference locators. These are ORIGINAL TEXT citation occurrences, not distinct verses, and do not include nonparenthetical Bible references or allusions.",
+  "knownExceptions": [
+    "Psalm 25:8 appears twice in Chapter II, two distinct textual occurrences: raw OCR lines 470 and 670; original source record IDs must remain distinct.",
+    "1 Thessalonians 5:27 has book in prose, OCR parenthesis '1, v. 27'.",
+    "Psalm 96:11 and Malachi 1:11 have OCR numeral corruption; Malachi visually repaired from PDF p.19.",
+    "The biblical citation John 19:19 does not prove Lanslots's inferred T-shaped Cross history.",
+    "All five verified source images are a subset of the eleven total PDF images inspected; image verification applies only to these exact quotations."
+  ],
+  "entries": [
+    {
+      "candidateId": "L1897-PAREN-001",
+      "chapter": "INTRODUCTION",
+      "originalOcrRawLine": 248,
+      "exactCharacterOffset": 6910,
+      "asPrinted": "ii. 9",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "1 Peter 2:9"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-001"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": true,
+      "visuallyCheckedPdfPage": 16,
+      "visuallyCheckedPrintedPage": "10",
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-002",
+      "chapter": "INTRODUCTION",
+      "originalOcrRawLine": 303,
+      "exactCharacterOffset": 9139,
+      "asPrinted": "Ps. Ixxxiii. 2-4",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 83:2-4"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-001"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-003",
+      "chapter": "I",
+      "originalOcrRawLine": 328,
+      "exactCharacterOffset": 10083,
+      "asPrinted": "Mai. i. u",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Malachi 1:11"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-002"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": true,
+      "visuallyCheckedPdfPage": 19,
+      "visuallyCheckedPrintedPage": "13",
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-004",
+      "chapter": "I",
+      "originalOcrRawLine": 371,
+      "exactCharacterOffset": 11966,
+      "asPrinted": "Matt. xxi. 42",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 21:42"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-003"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-005",
+      "chapter": "I",
+      "originalOcrRawLine": 379,
+      "exactCharacterOffset": 12339,
+      "asPrinted": "1 Cor. x. 4",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "1 Corinthians 10:4"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-004"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-006",
+      "chapter": "I",
+      "originalOcrRawLine": 417,
+      "exactCharacterOffset": 14149,
+      "asPrinted": "vi. 9",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Revelation 6:9"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-005"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-007",
+      "chapter": "II",
+      "originalOcrRawLine": 470,
+      "exactCharacterOffset": 16124,
+      "asPrinted": "Ps. xxv. 8",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 25:8"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-006"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-008",
+      "chapter": "II",
+      "originalOcrRawLine": 533,
+      "exactCharacterOffset": 18951,
+      "asPrinted": "Ps. xcvi. n",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 96:11"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-002"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-009",
+      "chapter": "II",
+      "originalOcrRawLine": 538,
+      "exactCharacterOffset": 19207,
+      "asPrinted": "Matt. iv. 16",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 4:16"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-003"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-010",
+      "chapter": "II",
+      "originalOcrRawLine": 591,
+      "exactCharacterOffset": 21234,
+      "asPrinted": "Is. xi. 10",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Isaiah 11:10"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-002"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-011",
+      "chapter": "II",
+      "originalOcrRawLine": 624,
+      "exactCharacterOffset": 22786,
+      "asPrinted": "Ps. xci. 13",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 91:13"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-004"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-012",
+      "chapter": "II",
+      "originalOcrRawLine": 625,
+      "exactCharacterOffset": 22859,
+      "asPrinted": "Ecclus. xxiv. 18",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Sirach 24:18"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-005"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-013",
+      "chapter": "II",
+      "originalOcrRawLine": 627,
+      "exactCharacterOffset": 22962,
+      "asPrinted": "Cant. ii. 2",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Song of Songs 2:2"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-006"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-014",
+      "chapter": "II",
+      "originalOcrRawLine": 670,
+      "exactCharacterOffset": 25119,
+      "asPrinted": "Ps. xxv. 8",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 25:8"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR4-001"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-015",
+      "chapter": "III",
+      "originalOcrRawLine": 752,
+      "exactCharacterOffset": 28317,
+      "asPrinted": "Matt. xxvi. 39",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 26:39"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-007"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-016",
+      "chapter": "III",
+      "originalOcrRawLine": 756,
+      "exactCharacterOffset": 28580,
+      "asPrinted": "Matt. xx. 22",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 20:22"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-008"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-017",
+      "chapter": "III",
+      "originalOcrRawLine": 768,
+      "exactCharacterOffset": 29202,
+      "asPrinted": "Ps. cxv. 12, 13",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 115:12-13"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-009"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-018",
+      "chapter": "IV",
+      "originalOcrRawLine": 837,
+      "exactCharacterOffset": 32114,
+      "asPrinted": "Ex. xxviii. 2",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Exodus 28:2"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-010"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-019",
+      "chapter": "IV",
+      "originalOcrRawLine": 906,
+      "exactCharacterOffset": 35443,
+      "asPrinted": "Matt. xxvi. 68",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 26:68"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-007"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-020",
+      "chapter": "IV",
+      "originalOcrRawLine": 947,
+      "exactCharacterOffset": 37046,
+      "asPrinted": "Ap. vii. 14",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Revelation 7:14"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-003"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-021",
+      "chapter": "IV",
+      "originalOcrRawLine": 1049,
+      "exactCharacterOffset": 41766,
+      "asPrinted": "Matt, xxviii. 18",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 28:18"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-008"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-022",
+      "chapter": "IV",
+      "originalOcrRawLine": 1051,
+      "exactCharacterOffset": 41911,
+      "asPrinted": "John xx. 21",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "John 20:21"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-009"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-023",
+      "chapter": "IV",
+      "originalOcrRawLine": 1123,
+      "exactCharacterOffset": 45459,
+      "asPrinted": "Ecclus. 1. 6-1 1",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Sirach 50:6-11"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-011"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-024",
+      "chapter": "V",
+      "originalOcrRawLine": 1142,
+      "exactCharacterOffset": 46172,
+      "asPrinted": "Ezech. xvi. 8-13",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Ezekiel 16:8-13"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-012"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-025",
+      "chapter": "V",
+      "originalOcrRawLine": 1206,
+      "exactCharacterOffset": 49254,
+      "asPrinted": "Matt. xvii. 2",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 17:2"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-011"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-026",
+      "chapter": "V",
+      "originalOcrRawLine": 1210,
+      "exactCharacterOffset": 49453,
+      "asPrinted": "Apoc. vii. 9",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Revelation 7:9"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-012"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-027",
+      "chapter": "V",
+      "originalOcrRawLine": 1230,
+      "exactCharacterOffset": 50405,
+      "asPrinted": "Ps. cxvii. 24",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 117:24"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-010"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-028",
+      "chapter": "V",
+      "originalOcrRawLine": 1252,
+      "exactCharacterOffset": 51429,
+      "asPrinted": "Matt. xxv. 21",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 25:21"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-013"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-029",
+      "chapter": "V",
+      "originalOcrRawLine": 1269,
+      "exactCharacterOffset": 52316,
+      "asPrinted": "John xv. 13",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "John 15:13"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-014"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-030",
+      "chapter": "V",
+      "originalOcrRawLine": 1271,
+      "exactCharacterOffset": 52438,
+      "asPrinted": "1 John iii. 16",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "1 John 3:16"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-015"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-031",
+      "chapter": "V",
+      "originalOcrRawLine": 1313,
+      "exactCharacterOffset": 54406,
+      "asPrinted": "v. 10",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Song of Songs 5:10"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR4-002"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-032",
+      "chapter": "VII",
+      "originalOcrRawLine": 1685,
+      "exactCharacterOffset": 71206,
+      "asPrinted": "\"De Praeparatione ad Missam/' c. 5",
+      "classification": "NOT_SCRIPTURE_OTHER_AUTHOR_OR_COUNCIL",
+      "normalizedScriptureRefs": [],
+      "existingSourceRecordIds": [],
+      "nonBiblicalSource": "St Bonaventure, De Praeparatione ad Missam, ch.5",
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-033",
+      "chapter": "VIII",
+      "originalOcrRawLine": 2008,
+      "exactCharacterOffset": 85842,
+      "asPrinted": "v. 8",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Revelation 5:8"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-013"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-034",
+      "chapter": "IX",
+      "originalOcrRawLine": 2281,
+      "exactCharacterOffset": 99059,
+      "asPrinted": "Rom. iii. 23",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Romans 3:23"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-004"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-035",
+      "chapter": "IX",
+      "originalOcrRawLine": 2429,
+      "exactCharacterOffset": 105710,
+      "asPrinted": "John xvi. 23",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "John 16:23"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-005"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-036",
+      "chapter": "X",
+      "originalOcrRawLine": 2497,
+      "exactCharacterOffset": 108817,
+      "asPrinted": "iv. 16",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Colossians 4:16"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-015"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-037",
+      "chapter": "X",
+      "originalOcrRawLine": 2501,
+      "exactCharacterOffset": 109078,
+      "asPrinted": "1, v. 27",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "1 Thessalonians 5:27"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR4-003"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-038",
+      "chapter": "XI",
+      "originalOcrRawLine": 2701,
+      "exactCharacterOffset": 118615,
+      "asPrinted": "Is. xiv. 13",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Isaiah 14:13"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-016"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-039",
+      "chapter": "XI",
+      "originalOcrRawLine": 2703,
+      "exactCharacterOffset": 118726,
+      "asPrinted": "Jerem. i. 14",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Jeremiah 1:14"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-017"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-040",
+      "chapter": "XI",
+      "originalOcrRawLine": 2717,
+      "exactCharacterOffset": 119396,
+      "asPrinted": "vi.1-8",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Isaiah 6:1-8"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-018"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-041",
+      "chapter": "XI",
+      "originalOcrRawLine": 2779,
+      "exactCharacterOffset": 122404,
+      "asPrinted": "Luke ix. 26",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Luke 9:26"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-019"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-042",
+      "chapter": "XI",
+      "originalOcrRawLine": 2795,
+      "exactCharacterOffset": 122837,
+      "asPrinted": "Matt. x. 32",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 10:32"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-016"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-043",
+      "chapter": "XI",
+      "originalOcrRawLine": 2798,
+      "exactCharacterOffset": 123013,
+      "asPrinted": "Rom. x. 10",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Romans 10:10"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-020"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-044",
+      "chapter": "XI",
+      "originalOcrRawLine": 2807,
+      "exactCharacterOffset": 123548,
+      "asPrinted": "Luke iv. 16",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Luke 4:16"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-022"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-045",
+      "chapter": "XII",
+      "originalOcrRawLine": 3222,
+      "exactCharacterOffset": 141330,
+      "asPrinted": "Phil, ii. 7",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Philippians 2:7"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-006"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-046",
+      "chapter": "XIII",
+      "originalOcrRawLine": 3455,
+      "exactCharacterOffset": 150807,
+      "asPrinted": "Matt. v. 23",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 5:23"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-023"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-047",
+      "chapter": "XIII",
+      "originalOcrRawLine": 3545,
+      "exactCharacterOffset": 155128,
+      "asPrinted": "Ps. cix. 4",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 109:4"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-017"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-048",
+      "chapter": "XIII",
+      "originalOcrRawLine": 3565,
+      "exactCharacterOffset": 156043,
+      "asPrinted": "Ps. ciii. 13-15",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 103:13-15"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-018"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-049",
+      "chapter": "XIII",
+      "originalOcrRawLine": 3575,
+      "exactCharacterOffset": 156553,
+      "asPrinted": "1 Cor. x. 17",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "1 Corinthians 10:17"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-019"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-050",
+      "chapter": "XIII",
+      "originalOcrRawLine": 3646,
+      "exactCharacterOffset": 159807,
+      "asPrinted": "i Cor. v. 7, 8",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "1 Corinthians 5:7-8"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-024"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-051",
+      "chapter": "XIII",
+      "originalOcrRawLine": 3714,
+      "exactCharacterOffset": 163045,
+      "asPrinted": "Heb. vii. 27",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Hebrews 7:27"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-020"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-052",
+      "chapter": "XIII",
+      "originalOcrRawLine": 3795,
+      "exactCharacterOffset": 167072,
+      "asPrinted": "2 Pet. i. 4",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "2 Peter 1:4"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-007"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": true,
+      "visuallyCheckedPdfPage": 150,
+      "visuallyCheckedPrintedPage": "128",
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-053",
+      "chapter": "XV",
+      "originalOcrRawLine": 4362,
+      "exactCharacterOffset": 193345,
+      "asPrinted": "1 Pet. ii. 9",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "1 Peter 2:9"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-008"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": true,
+      "visuallyCheckedPdfPage": 173,
+      "visuallyCheckedPrintedPage": "147",
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-054",
+      "chapter": "XV",
+      "originalOcrRawLine": 4552,
+      "exactCharacterOffset": 202426,
+      "asPrinted": "Lam. iii. 41",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Lamentations 3:41"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-009"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": true,
+      "visuallyCheckedPdfPage": 179,
+      "visuallyCheckedPrintedPage": "153",
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-055",
+      "chapter": "XV",
+      "originalOcrRawLine": 4718,
+      "exactCharacterOffset": 210269,
+      "asPrinted": "vi. 3",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Isaiah 6:3"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-027"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-056",
+      "chapter": "XV",
+      "originalOcrRawLine": 4722,
+      "exactCharacterOffset": 210494,
+      "asPrinted": "iv. 8",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Revelation 4:8"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-028"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-057",
+      "chapter": "XV",
+      "originalOcrRawLine": 4756,
+      "exactCharacterOffset": 212085,
+      "asPrinted": "xxi. 9",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Matthew 21:9"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-029"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-058",
+      "chapter": "XVI",
+      "originalOcrRawLine": 4806,
+      "exactCharacterOffset": 214002,
+      "asPrinted": "session xxii. c. iv.",
+      "classification": "NOT_SCRIPTURE_OTHER_AUTHOR_OR_COUNCIL",
+      "normalizedScriptureRefs": [],
+      "existingSourceRecordIds": [],
+      "nonBiblicalSource": "Council of Trent, Session XXII, chapter IV",
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-059",
+      "chapter": "XVI",
+      "originalOcrRawLine": 5053,
+      "exactCharacterOffset": 225394,
+      "asPrinted": "xix. 19",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "John 19:19"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR4-004"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-060",
+      "chapter": "XVI",
+      "originalOcrRawLine": 5067,
+      "exactCharacterOffset": 225883,
+      "asPrinted": "2 Cor. i. 3",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "2 Corinthians 1:3"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-010"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-061",
+      "chapter": "XVI",
+      "originalOcrRawLine": 5089,
+      "exactCharacterOffset": 227018,
+      "asPrinted": "Cant. vi. 8",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Song of Songs 6:8"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-011"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-062",
+      "chapter": "XVII",
+      "originalOcrRawLine": 5297,
+      "exactCharacterOffset": 236250,
+      "asPrinted": "Lib. Dom., vol. i. cap. viii.",
+      "classification": "NOT_SCRIPTURE_OTHER_AUTHOR_OR_COUNCIL",
+      "normalizedScriptureRefs": [],
+      "existingSourceRecordIds": [],
+      "nonBiblicalSource": "Peter Damian, Liber Dominus vol.I, ch.VIII",
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-063",
+      "chapter": "XVIII",
+      "originalOcrRawLine": 6001,
+      "exactCharacterOffset": 268198,
+      "asPrinted": "Luke i. 74",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Luke 1:74"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-021"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-064",
+      "chapter": "XVIII",
+      "originalOcrRawLine": 6016,
+      "exactCharacterOffset": 269018,
+      "asPrinted": "2, 2 Qu. 83, art. 1 ad 2",
+      "classification": "NOT_SCRIPTURE_OTHER_AUTHOR_OR_COUNCIL",
+      "normalizedScriptureRefs": [],
+      "existingSourceRecordIds": [],
+      "nonBiblicalSource": "Thomas Aquinas, Summa II-II q.83 a.1 ad.2",
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-065",
+      "chapter": "XVIII",
+      "originalOcrRawLine": 6061,
+      "exactCharacterOffset": 271133,
+      "asPrinted": "Gen. ix. 6",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Genesis 9:6"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-012"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-066",
+      "chapter": "XX",
+      "originalOcrRawLine": 6906,
+      "exactCharacterOffset": 308895,
+      "asPrinted": "xi. 4",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Hebrews 11:4"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR4-005"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-067",
+      "chapter": "XX",
+      "originalOcrRawLine": 6969,
+      "exactCharacterOffset": 311797,
+      "asPrinted": "Ps. cix. 4",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 109:4"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-023"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-068",
+      "chapter": "XX",
+      "originalOcrRawLine": 7070,
+      "exactCharacterOffset": 316634,
+      "asPrinted": "v. 6",
+      "classification": "BIBLE_BOOK_EXPLICIT_IN_NEARBY_PROSE",
+      "normalizedScriptureRefs": [
+        "Revelation 5:6"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-031"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-069",
+      "chapter": "XX",
+      "originalOcrRawLine": 7089,
+      "exactCharacterOffset": 317477,
+      "asPrinted": "Apoc. v. 10",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Revelation 5:10"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-013"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-070",
+      "chapter": "XXI",
+      "originalOcrRawLine": 7361,
+      "exactCharacterOffset": 330254,
+      "asPrinted": "Ps. lxxii. 26",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Psalms 72:26"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-014"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-071",
+      "chapter": "XXIII",
+      "originalOcrRawLine": 8212,
+      "exactCharacterOffset": 369429,
+      "asPrinted": "Is. liii. 5",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Isaiah 53:5"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-033"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-072",
+      "chapter": "XXIII",
+      "originalOcrRawLine": 8249,
+      "exactCharacterOffset": 371152,
+      "asPrinted": "John vi. 52",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "John 6:52"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-034"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-073",
+      "chapter": "XXIII",
+      "originalOcrRawLine": 8329,
+      "exactCharacterOffset": 375164,
+      "asPrinted": "Col. i. 20",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Colossians 1:20"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-015"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-074",
+      "chapter": "XXIII",
+      "originalOcrRawLine": 8380,
+      "exactCharacterOffset": 377432,
+      "asPrinted": "sess. xiii. cap. 8",
+      "classification": "NOT_SCRIPTURE_OTHER_AUTHOR_OR_COUNCIL",
+      "normalizedScriptureRefs": [],
+      "existingSourceRecordIds": [],
+      "nonBiblicalSource": "Council of Trent, Session XIII, chapter VIII",
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-075",
+      "chapter": "XXIV",
+      "originalOcrRawLine": 8675,
+      "exactCharacterOffset": 391071,
+      "asPrinted": "Matt. xvi. 15",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 16:15"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-016"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-076",
+      "chapter": "XXIV",
+      "originalOcrRawLine": 8716,
+      "exactCharacterOffset": 392882,
+      "asPrinted": "Heb. ix. 14",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Hebrews 9:14"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-036"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-077",
+      "chapter": "XXIV",
+      "originalOcrRawLine": 8724,
+      "exactCharacterOffset": 393336,
+      "asPrinted": "1 Cor. xi. 26",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "1 Corinthians 11:26"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-037"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-078",
+      "chapter": "XXIV",
+      "originalOcrRawLine": 8766,
+      "exactCharacterOffset": 395396,
+      "asPrinted": "1 Cor. xi. 28, 29",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "1 Corinthians 11:28-29"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR2-026"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-079",
+      "chapter": "XXIV",
+      "originalOcrRawLine": 8883,
+      "exactCharacterOffset": 400950,
+      "asPrinted": "Matt. xi. 28",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Matthew 11:28"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-039"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-080",
+      "chapter": "XXIV",
+      "originalOcrRawLine": 8918,
+      "exactCharacterOffset": 402593,
+      "asPrinted": "Cant. ii. 16; iii. 4",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Song of Songs 2:16",
+        "Song of Songs 3:4"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-040",
+        "L1897-OCR-041"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-081",
+      "chapter": "XXIV",
+      "originalOcrRawLine": 9188,
+      "exactCharacterOffset": 414982,
+      "asPrinted": "Gal. ii. 20",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Galatians 2:20"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR3-017"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "candidateId": "L1897-PAREN-082",
+      "chapter": "XXIV",
+      "originalOcrRawLine": 9220,
+      "exactCharacterOffset": 416578,
+      "asPrinted": "Lev. xx. 7",
+      "classification": "BIBLE_BOOK_AND_REFERENCE_PRINTED",
+      "normalizedScriptureRefs": [
+        "Leviticus 20:7"
+      ],
+      "existingSourceRecordIds": [
+        "L1897-OCR-042"
+      ],
+      "nonBiblicalSource": null,
+      "originalPdfImageVerified": false,
+      "visuallyCheckedPdfPage": null,
+      "visuallyCheckedPrintedPage": null,
+      "originalSourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "humanClassificationMethod": "FULL_OCR_CANDIDATE_CONTEXT_REVIEW_AND_EXISTING_RECORD_RECONCILIATION",
+      "catholicBibleEditionCertification": "PENDING_UNLESS_SEPARATE_BIBLE_LEDGER",
+      "runtimePromotion": "BLOCKED"
+    }
+  ]
+}
