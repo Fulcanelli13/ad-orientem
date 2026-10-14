@@ -1,7 +1,7 @@
 {
   "schema": "AO_MYSTERY_OF_MASS_CANONICAL_EDITORIAL_INVENTORY_V1",
   "generatedDate": "2026-10-14",
-  "status": "PHASE1_EDITORIAL_CONSOLIDATION_COMPLETE_FOR_TRACKED_INPUTS_NOT_READY_TO_PUBLISH",
+  "status": "PHASE1_TRACKED_RESEARCH_INPUTS_MAPPED_PUBLICATION_UNAPPROVED",
   "productTarget": "One eight-chapter learn.mass course plus contextual teaching through existing canonical Mass source-first sections; not a second Mass reader.",
   "canonicalOwnershipRule": "One content owner per exact sectionId, reused by thematic lessons and a contextual Guide; no duplication, no alteration of normative 1962 rubrics.",
   "researchSourceBranches": {
@@ -113,7 +113,7 @@
         "AO.CARD.009"
       ],
       "crossCutting": false,
-      "currentMainStatus": "PUBLISHED_EXISTING_8_STAGE_INTRO",
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
       "editorialDirective": "SYNTHESIZE_ARCHITECTURE_NOT_30_SUBCARDS",
       "newBilingualDraftIds": [
         "MB01",
@@ -146,7 +146,7 @@
       "existingClaimCount": 3,
       "canonicalSectionIds": [],
       "crossCutting": true,
-      "currentMainStatus": "PUBLISHED_EXISTING_8_STAGE_INTRO",
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
       "editorialDirective": "DO_NOT_TREAT_POSTURES_AS_PRIEST_RUBRICS_FOR_LAITY; OVERLAY_ALL_SECTIONS",
       "newBilingualDraftIds": [],
       "requiresSourceApproval": true
@@ -172,7 +172,7 @@
         "AO.CARD.011"
       ],
       "crossCutting": false,
-      "currentMainStatus": "PUBLISHED_EXISTING_8_STAGE_INTRO",
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
       "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
       "newBilingualDraftIds": [
         "MB09",
@@ -209,7 +209,7 @@
         "AO.CANON.05"
       ],
       "crossCutting": false,
-      "currentMainStatus": "PUBLISHED_EXISTING_8_STAGE_INTRO",
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
       "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
       "newBilingualDraftIds": [
         "MB11",
@@ -239,7 +239,7 @@
         "AO.CANON.07"
       ],
       "crossCutting": false,
-      "currentMainStatus": "PUBLISHED_EXISTING_8_STAGE_INTRO",
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
       "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
       "newBilingualDraftIds": [
         "MB14",
@@ -273,7 +273,7 @@
         "AO.CANON.14"
       ],
       "crossCutting": false,
-      "currentMainStatus": "PUBLISHED_EXISTING_8_STAGE_INTRO",
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
       "editorialDirective": "ONE_THEOLOGY_OF_SACRIFICE_LINK_TO_TYPED_CANON_SECTIONS",
       "newBilingualDraftIds": [
         "MB16",
@@ -310,7 +310,7 @@
         "AO.CARD.025"
       ],
       "crossCutting": false,
-      "currentMainStatus": "PUBLISHED_EXISTING_8_STAGE_INTRO",
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
       "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
       "newBilingualDraftIds": [
         "MB21",
@@ -346,7 +346,7 @@
         "AO.CARD.030"
       ],
       "crossCutting": false,
-      "currentMainStatus": "PUBLISHED_EXISTING_8_STAGE_INTRO",
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
       "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
       "newBilingualDraftIds": [
         "MB26"
@@ -2532,7 +2532,8 @@
     "Every substantive final paragraph, in both languages, needs source citations. Original 1897 symbolism, original Scripture text and normative 1962 ceremony need separate provenance.",
     "Variable Propers, Mass conditions, priest-vs-faithful text, special rites, Requiem and historical local customs require explicit contextual ownership. No automatic historical ritual inference.",
     "Preserve source provenance by original branch and commit; PR #1179 and PR #1082 are open drafts, not merged source files in main.",
-    "NO reader code, Guide registry, image assets or publication flags are changed by this editorial inventory."
+    "NO reader code, Guide registry, image assets or publication flags are changed by this editorial inventory.",
+    "The eight-stage learn.mass reader exists on main; do not infer production-store visibility or public rollout from source-code presence alone."
   ],
   "nextReleaseSequence": [
     {
