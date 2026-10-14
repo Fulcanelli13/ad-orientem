@@ -27,12 +27,16 @@
     "cleanDownloadedFullResolutionFiles": 0
   },
   "objectiveGates": [
-    "A Commons category file is not a physical oil painting and cannot count until medium + subject depiction are established.",
-    "Separate photo variants of the same museum accession must be one original record. Even exact different URLs can be same original; this pass only removes exact URL duplicates.",
-    "Check all historic 277-rating sources for earlier candidates, scoring, and physical-original duplicates. Distinguish RE-DISPLAY to support comparison from re-importing photos as NEW distinct paintings. Do not suppress old selections merely because they were rated.",
-    "Reuse original source/candidate identifiers and preserve all human scores. For any portrait subject without a confirmed prior 4+/5, the next HTML MUST re-display all previously presented options for that subject (including <=3 and unscored), clearly marked with original ratings/status, together with genuinely new paintings; do not count repeats as new originals. Deliver the consolidated HTML in chat.",
-    "Never combine Philip Apostle with Philip Neri, Martin of Tours with a donor Martin, or Saint Vincent de Paul with unrelated named saints.",
-    "Current 13 reviewed gaps remain open until new 4+/5 user rating, irrespective of count of possible alternatives."
+    "Ratings 0, 1, 2 are permanently rejected forever. Never present these underlying physical works again in any future aesthetic review, regardless of filenames, photos or crop variants.",
+    "Rating 3 is solely a research deficit signal. Never present it to the user for re-review or selection. Find distinct better artworks for the affected subject.",
+    "Rating 4 is the ONLY scored tier awaiting explicit user decision. Show all past relevant 4-rated artworks for that decision, including when the same subject already has a different artwork rated 5.",
+    "Rating 5 is automatically confirmed and selected aesthetically. Include in the approved list; no further aesthetic confirmation. Original ownership, accurate identity and image rights still require technical checks.",
+    "Eligible, genuinely distinct, previously unscored new or historic paintings can be shown for the user's first score after image-quality/object-identity screening.",
+    "Subjects with no >=4 solo portrait need more research. A category with 4 but no 5 is user-decision pending, not a confirmed selection.",
+    "A Commons category file is not a physical painting and does not count until medium and depiction are established.",
+    "Collapse alternate images of one museum accession, enforce historical original-level rejection, and compare against the full historic 277-score corpus.",
+    "Never combine Philip Apostle with Philip Neri or similarly named saints; distinguish narrative scenes from solo-portrait coverage.",
+    "When a gallery is ready, deliver downloadable HTML directly in chat instead of only a repository link."
   ],
   "duplicatesCollapsed": [
     {
@@ -1501,19 +1505,52 @@
     }
   ],
   "reviewerGalleryPolicy": {
-    "coverageThreshold": 4,
-    "unresolvedSubjectGallery": "ALL_PREVIOUS_CANDIDATES_PLUS_NEW_CANDIDATES",
-    "reusePreviousRatings": true,
-    "previousScoreTreatment": {
-      "3": "previously provisional, shown again with prior score",
-      "0-2": "previously discarded/low-rated, re-shown only as context and re-rateable, never relabeled accepted",
-      "4-5": "already qualifies if an actual subject portrait; normally no urgent gap review required",
-      "unrated": "previously proposed and pending, shown again"
+    "permanentRejectRatings": [
+      0,
+      1,
+      2
+    ],
+    "researchSignalOnlyRating": 3,
+    "userDecisionRequiredRating": 4,
+    "automaticConfirmedSelectedRating": 5,
+    "eligibleUnratedCandidateIfArtworkVerified": true,
+    "showRated0to2EverAgain": false,
+    "showRated3EverAgain": false,
+    "show4EvenIfSubjectAlreadyHas5": true,
+    "show5AsConfirmedSelectionNotAsCandidateForRerating": true,
+    "preserveAllHistoricalScores": true,
+    "ratingBelongsToPhysicalOriginal": true,
+    "carryPriorUnratedLeadsForward": true,
+    "productionLicensingAndCropsStillSeparate": true,
+    "needsDedicatedReviewFor4": true
+  },
+  "ratingDecisionSemantics": {
+    "effectiveDate": "2026-10-14",
+    "scope": "All sacred-art user aesthetic ratings across previous and future review rounds",
+    "score0to2": {
+      "status": "PERMANENT_REJECTION",
+      "rule": "Immediately and permanently exclude from aesthetic gallery, re-review, shortlist, new candidate counts and final selections. Retain historical source/rating for audit only. New crop, resized source, file rename or photo is not a new work and cannot evade the rejection."
     },
-    "dedupPhysicalOriginal": true,
-    "noScoreReset": true,
-    "userConfirmOverridesOnly": true,
-    "showPriorCandidatesEvenIfNoNewResearch": true,
-    "doNotAutoPromoteContextualScenesToPortrait": true
+    "score3": {
+      "status": "RESEARCH_SIGNAL_ONLY",
+      "rule": "Insufficient; do not show for user re-rating or final selection. Use only internally to identify subject requiring further research, and source stronger distinct works. Preserve prior rating as evidence."
+    },
+    "score4": {
+      "status": "AWAITING_EXPLICIT_USER_DECISION",
+      "rule": "Present for the user's selection/confirmation review, even if another painting of the same subject has already been confirmed 5. Preserve 4 until explicitly changed; never automatically confirm, reject or suppress."
+    },
+    "score5": {
+      "status": "CONFIRMED_SELECTED",
+      "rule": "Automatically retain and select as aesthetically approved, no more aesthetic confirmation required. Technical identity, accurate depiction, reproducibility, licence and production checks remain separate."
+    },
+    "nullRating": {
+      "status": "NOT_YET_SCORED",
+      "rule": "Present only if a genuinely appropriate new candidate or previously proposed unscored painting and the source/image-quality gates pass; never infer approval."
+    },
+    "categoryResearchRule": "A subject/category with no qualifying subject-specific portrait scored 4 or 5 needs more paintings researched. A 4 removes the urgent research gap but is still awaiting user review; a 5 confirms a selection. Prior strong narrative scenes do not fulfill solo portrait coverage.",
+    "galleryRule": "Display 4-rated works requiring the user's decision and eligible unrated new/prior proposals; 5-rated works in already-confirmed selected section. Never show 0-3 rated works as options again, not even greyed out, side-by-side or 'previously seen'.",
+    "originalIdentityRule": "A rating belongs to the underlying original work. Copies, cropped photos, editions, and alternate files must not recreate rejected works as fresh candidates. Distinct physical originals only when their identifiers/provenance are established.",
+    "auditRule": "Preserve all prior 0-5 data in non-UI historical ledger; do not delete or overwrite ratings to implement filter.",
+    "confirmedVsRights": "5 automatically means aesthetic selection, not automatic commercial-use rights or publication."
   }
 }
