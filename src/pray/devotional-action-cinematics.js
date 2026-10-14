@@ -79,6 +79,7 @@ function make(doc,tag,cls,txt){
 }
 export function createDevotionalActionCinematic(win=globalThis){
   let lastKey=null,active=null,priorFocus=null;
+  const seenStationCues=new Set();
   const reduced=()=>Boolean(win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ||
     win.AO_CINEMATIC_V4312?.isReducedMotion?.());
   function dismiss(){
@@ -87,11 +88,12 @@ export function createDevotionalActionCinematic(win=globalThis){
     if(priorFocus?.isConnected)priorFocus.focus?.({preventScroll:true});
     priorFocus=null;
   }
-  function reset(){dismiss();lastKey=null;}
+  function reset(){dismiss();lastKey=null;seenStationCues.clear();}
   function sync(scene,{mount,language="en",sessionKey=""}={}){
     const key=scene?norm(sessionKey)+"|"+scene.id+"|"+scene.sourceCue:null;
     if(key===lastKey)return false;
     dismiss();lastKey=key;
+    if(scene?.id?.startsWith("STATIONS.")&&seenStationCues.has(key))return false;
     if(!scene || !mount?.isConnected)return false;
     const doc=mount.ownerDocument;
     const host=mount.closest("#aoPray435930");
@@ -125,6 +127,7 @@ export function createDevotionalActionCinematic(win=globalThis){
     priorFocus=doc.activeElement;
     host.querySelector(".aoP435930Sheet")?.append(overlay);
     active=overlay;
+    if(scene.id.startsWith("STATIONS."))seenStationCues.add(key);
     button.focus?.({preventScroll:true});
     return true;
   }
