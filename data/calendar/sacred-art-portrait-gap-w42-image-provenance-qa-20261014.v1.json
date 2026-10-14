@@ -45,6 +45,11 @@
       "subjectId": "SNT-OT-25",
       "status": "KIMBELL_ARTEMISIA_ORIGINAL_DISTINCT_FROM_COPIES",
       "detail": "Kimbell AP2024.02 recovered autograph object; historical copies inherit their own object provenance, not Kimbell original attribution."
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "status": "SKD_683_ATTRIBUTION_AND_SCENE_CORRECTION",
+      "detail": "Dresden Gal.-Nr.683 attribution contested: other SKD-linked source descriptions state 'Jusepe de Ribera (Schüler oder Nachahmer?)'; dated 1641 in catalogue whereas a photograph says 1647. This image has an angel helping Agnes and is not a clean solo portrait; hold outside strict 3–4 portrait tally."
     }
   ],
   "auditedPriorObjects": [
@@ -344,9 +349,9 @@
       "subjectId": "SNT-OT-22",
       "physicalObjectKey": "SKD:Gal-683",
       "museum": "Staatliche Kunstsammlungen Dresden",
-      "artist": "Jusepe de Ribera",
+      "artist": "Jusepe de Ribera, attribution disputed (pupil or imitator also recorded)",
       "title": "Saint Agnes",
-      "date": "1647 (caption; Commons object metadata wider date range)",
+      "date": "1641 traditionally; Commons camera caption has erroneous 1647; attribution and dating not institutionally certified",
       "medium": "oil on canvas",
       "sourceObjectURL": "https://skd-online-collection.skd.museum/Details/Index/378575",
       "commons": "https://commons.wikimedia.org/wiki/File:Dresden,_Gem%C3%A4ldegalerie_Alte_Meister,_Jusepe_de_Ribera,_heilige_Agnes.jpg",
@@ -355,10 +360,13 @@
         3847
       ],
       "license": "CC BY 4.0 by photographer Dguendel",
-      "stage": "DISTINCT_MUSEUM_ORIGINAL_PREVIEW_PHOTO_POSSIBLE",
+      "stage": "DISTINCT_DRESDEN_MUSEUM_ORIGINAL_ATTRIBUTION_HOLD",
       "flags": [
-        "Gallery photo and lighting to inspect before review; clean conservation image preferred"
-      ]
+        "Gallery photo and lighting to inspect before review; clean conservation image preferred",
+        "Dresden inventory Gal.-Nr.683 corroborated, but current cross-sources describe painter as Ribera pupil/imitator. Preserve contested label.",
+        "This is a narrative of Saint Agnes in prison with an angel holding white drapery, not a straightforward solo saint portrait. Classify as SAINT_CENTRED_SCENE and do not count toward portrait-only options until reviewed."
+      ],
+      "role": "SAINT_CENTRED_SCENE_WITH_ANGEL"
     },
     {
       "recordID": "W42-NEW-002",
@@ -376,9 +384,10 @@
         3674
       ],
       "license": "Commons PD-Art faithful 2D reproduction, territorial reuse caveat",
-      "stage": "MUSEUM_ACCESSION_ABSENT_HOLD",
+      "stage": "SOLD_PRIVATE_MARKET_ATTRIBUTION_AND_CUSTODY_HOLD",
       "flags": [
-        "Exact custodian/physical artwork identity and provenance not yet certified"
+        "Exact custodian/physical artwork identity and provenance not yet certified",
+        "Seller Galleria Giamblanco listing indicates painting sold, provenance and ownership not currently known."
       ]
     },
     {
