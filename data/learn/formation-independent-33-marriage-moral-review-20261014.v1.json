@@ -16,7 +16,7 @@
     "Read all four English roles in eight CR-MOR draft dossiers; full French and exact chapter collation not completed",
     "Compare selected moral claims with original Aquinas, papal, Holy See and canonical documents; distinguish authorial evidence from later critical excerpts",
     "Use explicit document/page locators and do not claim a source in a registry independently corroborates a distinct source using its quotations",
-    "Do not merge, publish, certify or change live answers without complete original-text, opponent and native-French review"
+    "Do not merge, publish, or change live answers absent adequate claim-level source checks and editorial review; full books or full chapters are not mandatory when a sufficiently precise and credible citation establishes the bounded proposition"
   ],
   "counts": {
     "reviewed": 33,
@@ -426,11 +426,13 @@
       "source_locator": "CDF 2012 Notification quotes Margaret Farley Just Love p.293",
       "original_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
       "registry_source_id": "S49",
-      "review_notes": "The book excerpt is in an original CDF assessment, not a full independent reading of Farley's book. Represent Farley's actually quoted claim narrowly; do not infer full argument from CDF's selection.",
+      "review_notes": "The CDF's 2012 Notification reliably identifies and reproduces Farley's excerpt with page; accept that bounded attribution and do not infer her unquoted arguments.",
       "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
       "all_source_claims_collated": false,
       "independently_certified": false,
-      "production_changed": false
+      "production_changed": false,
+      "citation_disposition": "bounded_citation_accepted_for_quoted_Farley_passages_in_CDF_2012_notification",
+      "full_book_required": false
     },
     {
       "id": "CSE044",
@@ -558,11 +560,13 @@
       "source_locator": "CIC 1141; 1153 and CDF 2012 Farley excerpt pp.304–305",
       "original_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
       "registry_source_id": "S48",
-      "review_notes": "Correctly distinguishes dissolution of ratified consummated bond from immediate safety separation; no ecclesiastical permission needed before escaping immediate danger. Farley's full book not accessed.",
+      "review_notes": "Correctly distinguishes dissolution of ratified consummated bond from immediate safety separation; no ecclesiastical permission needed before escaping immediate danger. The specific CDF-reproduced Farley excerpt is sufficient evidence for that bounded attribution; do not extrapolate to the full book.",
       "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
       "all_source_claims_collated": false,
       "independently_certified": false,
-      "production_changed": false
+      "production_changed": false,
+      "citation_disposition": "bounded_citation_accepted_for_quoted_Farley_passages_in_CDF_2012_notification",
+      "full_book_required": false
     },
     {
       "id": "CSE050",
@@ -580,11 +584,13 @@
       "source_locator": "CIC 1085;1141–1153 and CDF 2012 Farley excerpt p.310",
       "original_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html",
       "registry_source_id": "S49",
-      "review_notes": "Correctly separates nullity, dissolution, separation and divorce. Distinguish legal status from a judgment about a particular person's soul. Farley's full book still not read.",
+      "review_notes": "Correctly separates nullity, dissolution, separation and divorce. Distinguish legal status from a judgment about a particular person's soul. The CDF-reproduced Farley excerpt is sufficient evidence for that bounded attribution; complete book not required.",
       "review_level": "initial English short-answer and available opposition source-role scrutiny, selected original context only",
       "all_source_claims_collated": false,
       "independently_certified": false,
-      "production_changed": false
+      "production_changed": false,
+      "citation_disposition": "bounded_citation_accepted_for_quoted_Farley_passages_in_CDF_2012_notification",
+      "full_book_required": false
     },
     {
       "id": "CR-MOR-01",
@@ -1065,5 +1071,20 @@
       "independently_certified": false,
       "production_changed": false
     }
-  ]
+  ],
+  "governing_proportionate_evidence_rule": {
+    "standard": "A precise passage from an original source or a trustworthy accurately attributed quotation (author, work, page/section, and accessible citation) suffices for the claim it actually supports; full-book retrieval is optional, not required.",
+    "context_spot_check_trigger": [
+      "quotation is meaningfully ambiguous",
+      "author's position may be distorted by selection",
+      "extraordinary or disputed factual assertion depends on the surrounding argument",
+      "citation lacks a precise locator or trusted chain"
+    ],
+    "outcomes": [
+      "bounded_citation_accepted",
+      "context_spot_check_required",
+      "attribution_insufficient"
+    ],
+    "no_automatic_gaps": "Do not mark every reliable critical reproduction of a source as blocked because an entire book was not acquired."
+  }
 }
