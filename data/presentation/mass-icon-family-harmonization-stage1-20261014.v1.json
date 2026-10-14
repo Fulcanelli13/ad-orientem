@@ -121,5 +121,19 @@
     "passedRgbaAlphaCandidates": 3,
     "otherMissingArtwork": "NOT_YET_CERTIFIED"
   },
-  "deliveryNote": "Staging image binaries remain conversation artifacts outside repo. Do not change app source to reference their filesystem paths."
+  "deliveryNote": "Staging image binaries remain conversation artifacts outside repo. Do not change app source to reference their filesystem paths.",
+  "mobileQA": {
+    "testedSizesPx": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "source": "AO_Mass_Harmonization_Mobile_Sizes_QA.png",
+    "maskQA": "TRUE_ALPHA_AND_CSS_TINT_PREVIEW_WORK",
+    "gestureQA": "NOT_PASSED_AT_48_OR_64_FOR_FULL_ALTAR_SCENES",
+    "interpretation": "A scene showing a full altar and priest can read as a scene but cannot be relied upon to convey delicate Eucharistic hand geometry in the narrow mobile rail.",
+    "remedy": "Preserve detailed art for expanded rubric guide; in the rail use a simplified user-reviewed silhouette or source-owned short text cue, with a strict one-state-one-surface rule. Do not auto-promote whole-scene illustrations on colour and transparency alone.",
+    "ratingPreservation": "All existing user ratings unchanged."
+  }
 }
