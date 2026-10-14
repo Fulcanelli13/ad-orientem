@@ -52,7 +52,10 @@ assert.deepEqual(new Set([...work.workorders.map(x=>x.id),...a.groups.semantic])
 const standard=parse("../data/presentation/mass-icon-minimal-family-standard-20261014.v1.json");
 const production=parse("../data/presentation/mass-icon-three-by-three-production-backlog-20261014.v1.json");
 const stage=parse("../data/presentation/mass-icon-family-harmonization-stage1-20261014.v1.json");
-assert.equal(standard.status,"FAMILY_FIDELITY_CORRECTED_MASTER_DERIVATIVE_NOT_NEW_GEOMETRY");
+assert.equal(standard.status,"EXACT_FROZEN_V46_BLACK_FAMILY_LOCK_SOURCE_SPLIT_VERIFIED");
+assert.equal(standard.sourceVisualCorrection.currentAuthoritativeFamily.includes("Black monochrome"),true);
+assert.equal(standard.sourceVisualCorrection.exactAliasDefect.includes("byte-identical"),true);
+assert.equal(standard.sourceVisualCorrection.sourcePNG_SHA256,"9121458d217b075492a1bd50cd2c2b56bfb65877c7d69f21004577a4ad72dff2");
 assert.equal(standard.ratings.score0to2,"PERMANENTLY_REJECT_ORIGINAL_NO_REUSE_NO_HARMONIZE");
 assert.equal(standard.ratings.score3,"RESEARCH_REQUIRED_NOT_APPROVED");
 assert.equal(standard.ratings.score4,"USER_REVIEW_REQUIRED_NOT_AUTO_APPROVED");
