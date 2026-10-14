@@ -5,7 +5,8 @@
 const BASE=new URL("../../",import.meta.url);
 const WORKER_URL=new URL("sw.js",BASE);
 const TEST= new URL(globalThis.location?.href||BASE).searchParams.has("aoOfflineTest");
-const eligible=typeof navigator!=="undefined"&&"serviceWorker" in navigator&&
+const VERCEL_WEB_PREVIEW=/\.vercel\.app$/i.test(globalThis.location?.hostname||"");
+const eligible=!VERCEL_WEB_PREVIEW&&typeof navigator!=="undefined"&&"serviceWorker" in navigator&&
  (globalThis.location?.protocol==="https:"||
  (["localhost","127.0.0.1"].includes(globalThis.location?.hostname)&&TEST));
 let registered=false,version=null,pendingVersion=null,ready=false,error=null,lastChecked=0;
