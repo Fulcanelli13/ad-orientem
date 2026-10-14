@@ -33,3 +33,9 @@ No claim is advanced from `source linked` to `original print certified` based on
 - [Internet Archive identifier sp07mr62-editio-typica](https://archive.org/details/sp07mr62-editio-typica) has catalogued Latin OCR and PDF/download options. Its record has been read, but its actual Canon page images have not been inspected.
 
 **Newly visually certified Canon pages: 0.** To finish, retrieve just the required Canon page images from an edition with checked title page / imprint, then transcribe and compare them against the English/French claims. Do not extrapolate from sample Proper pages or OCR snippets.
+
+## Canon page access check — latest attempt
+
+The publisher/source page [Propria additional resources](https://propria.org/additional/) explicitly attributes its digitized Missal to the 1962 Typical Edition and says it includes St Joseph in the Canon. However, the linked [full PDF](https://propria.org/wp-content/uploads/2019/12/missale-romanum-1962.pdf) was directly requested and **the source retrieval failed because its 268,762,763-byte file exceeds the viewer's limit**. The Internet Archive catalog item likewise could not be opened with the available source viewer. These are accessibility failures, not reasons to downgrade or certify the text.
+
+**Certification control:** no Canon folio has been visually inspected through these links. Specifically leave Host and chalice Consecrations, `Quam oblationem`, `Unde et memores`, and `Supra quae` at `ORIGINAL_1962_FACSIMILE_NOT_COLLATED`; do not mark the 39 owners, 48 topical research units, or individual witness claims certified. A direct, bounded page-image or small extracted PDF from a bibliographically identified 1962 source is still required. Never use an index page, OCR snippet or a different Missal edition as evidence that the relevant photographic leaf was read.
