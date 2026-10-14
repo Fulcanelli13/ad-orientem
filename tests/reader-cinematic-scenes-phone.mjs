@@ -216,18 +216,36 @@ try{
       const scene=shell?.dataset.cinematicScene;
       const primary=[...shell.querySelectorAll(".ao-reader-paragraph")]
         .find(el=>el.dataset.cueId==="GF-PASS-320");
-      const visible=Boolean(primary && primary.querySelector(".ao-line-primary")?.textContent
-        .toLowerCase().includes("tradidit spiritum"));
+      const text=primary?.querySelector(".ao-line-primary");
+      const walk=text && document.createTreeWalker(text,NodeFilter.SHOW_TEXT);
+      let visible=false,wordTop=null;
+      if(walk){
+        let node;
+        while((node=walk.nextNode())){
+          const words=String(node.textContent??"").toLowerCase();
+          const at=words.lastIndexOf("tradidit spiritum");
+          if(at<0)continue;
+          const range=document.createRange();
+          range.setStart(node,at);
+          range.setEnd(node,at+"tradidit spiritum".length);
+          const rect=range.getBoundingClientRect(),bounds=shell.querySelector(".ao-prayer-card").getBoundingClientRect();
+          wordTop=rect.top;
+          visible=rect.height>0 && rect.bottom>bounds.top+5 && rect.top<bounds.bottom-5;
+          break;
+        }
+      }
       return {before,record:state.step.recordId,posture:state.posture,
         deathPause:window.AO_R17_NATIVE_READER_STATE?.deathPause,
-        scene,visible,reading:api.getCurrentCard()?.title};
+        scene,visible,wordTop,scrollTop:shell.querySelector(".ao-prayer-card").scrollTop,
+        reading:api.getCurrentCard()?.title};
     });
     assert.equal(actual.record,"GF-PASS-320");
     assert.equal(actual.scene,"PASSION_DEATH");
     assert.equal(actual.deathPause,true);
     assert.equal(actual.posture,"KNEEL");
     assert.equal(actual.visible,true,
-      "The authentic Passion death words must remain legible: "+JSON.stringify(actual));
+      "Exact 'tradidit spiritum' phrase is not inside the visible phone reading viewport: "+JSON.stringify(actual));
+    assert.ok(actual.scrollTop>0,"Explicit Passion death jump incorrectly stayed at the beginning of the Gospel");
     await page.screenshot({path:resolve(out,"390-en-good-friday-death.png")});
     const after=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
