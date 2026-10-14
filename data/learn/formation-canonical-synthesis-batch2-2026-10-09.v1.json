@@ -746,7 +746,8 @@
             "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-apologetics-six-owner-corrections-20261014.v1.json"
         },
         {
           "role": "documented_position",
@@ -769,7 +770,8 @@
             "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-apologetics-six-owner-corrections-20261014.v1.json"
         },
         {
           "role": "critical_response",
@@ -794,7 +796,8 @@
             "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-apologetics-six-owner-corrections-20261014.v1.json"
         },
         {
           "role": "traditional_catholic_argument",
@@ -819,7 +822,8 @@
             "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-apologetics-six-owner-corrections-20261014.v1.json"
         }
       ],
       "original_claim_by_claim_source_context_certified": false,
@@ -827,9 +831,111 @@
       "native_french_copyapproval": false,
       "publication_allowed": false,
       "integration_provenance": {
-        "origin": "PR #1198 source-linked correction",
         "date": "2026-10-14",
+        "research_pr": 1198,
         "not_published": true
+      },
+      "related_case_archive": {
+        "kind": "DISPLACED_RESEARCH_RETAINED",
+        "prior_sections": [
+          {
+            "role": "answer",
+            "text": {
+              "en": "Faith and reason are not rival sources of contradictory truth. The First Vatican Council's *Dei Filius*, chapter IV, distinguishes truths naturally knowable by reason from mysteries known through divine Revelation and teaches that there can be no genuine contradiction between them because God is the source of both. Reason can investigate nature and evaluate arguments for God's existence; faith receives truths that unaided investigation cannot discover, such as the Trinity and Incarnation. An apparent clash still demands scrutiny of the scientific claim, the biblical interpretation and the authority of the doctrinal proposition, not an automatic dismissal of evidence.",
+              "fr": "La foi et la raison ne sont pas deux sources rivales de vérités contradictoires. *Dei Filius* du premier concile du Vatican (chapitre IV) distingue les vérités accessibles à la raison naturelle des mystères connus par la Révélation et enseigne qu'aucune contradiction véritable n'est possible entre elles, puisque Dieu est la source de l'une et de l'autre. La raison peut étudier la nature et examiner les arguments sur l'existence de Dieu ; la foi accueille aussi des vérités qu'une enquête purement humaine ne peut découvrir, telles que la Trinité et l'Incarnation. Un conflit apparent exige donc l'examen de la conclusion scientifique, de l'interprétation biblique et de l'autorité de la proposition doctrinale, non le rejet automatique des preuves."
+            },
+            "source_ids": [
+              "AO26_APOL002_ANSWE_1",
+              "AO26_APOL002_ANSWE_2"
+            ],
+            "attribution": null,
+            "original_context_approved": false,
+            "french_final_approved": false,
+            "source_claim_locators": {
+              "AO26_APOL002_ANSWE_1": "Dei Filius chapter IV, faith and reason",
+              "AO26_APOL002_ANSWE_2": "Fides et ratio introduction; §§34,43"
+            },
+            "integration_revision": {
+              "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+              "date": "2026-10-14",
+              "editorial_approval_pending": true
+            }
+          },
+          {
+            "role": "documented_position",
+            "text": {
+              "en": "David Hume's *Dialogues Concerning Natural Religion* puts serious limits on inferences from experienced nature to an infinite and perfectly good God. In Parts IX and X, its speakers dispute the force of a priori demonstrations and the inference from a suffering world to divine attributes. This is a genuine philosophical challenge to the ability of reason to reach the claims of faith; it is not a scientific experiment proving God absent. John Paul II's *Fides et ratio* answers a different danger: that faith would dispense with rational inquiry or that unaided reason could pronounce Revelation unintelligible simply because it transcends investigation.",
+              "fr": "Les *Dialogues sur la religion naturelle* de David Hume soulèvent de sérieuses difficultés quant au passage de la nature observée à l'affirmation d'un Dieu infini et parfaitement bon. Dans les parties IX et X, les interlocuteurs discutent la valeur des démonstrations *a priori* et de l'inférence des souffrances du monde aux attributs divins. Il s'agit d'une objection philosophique réelle aux prétentions de la raison à rejoindre les vérités de la foi, non d'une expérience scientifique démontrant l'inexistence de Dieu. *Fides et ratio* de Jean-Paul II répond à un autre danger : prétendre que la foi dispense de la recherche rationnelle ou que la raison ne peut recevoir une Révélation qui la dépasse."
+            },
+            "source_ids": [
+              "AO26_APOL002_DOCUM_1",
+              "AO26_APOL002_DOCUM_2"
+            ],
+            "attribution": null,
+            "original_context_approved": false,
+            "french_final_approved": false,
+            "source_claim_locators": {
+              "AO26_APOL002_DOCUM_1": "Dialogues parts IX–X; speakers' arguments, not a direct Hume confession",
+              "AO26_APOL002_DOCUM_2": "Introduction; §§34,43"
+            },
+            "integration_revision": {
+              "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+              "date": "2026-10-14",
+              "editorial_approval_pending": true
+            }
+          },
+          {
+            "role": "critical_response",
+            "text": {
+              "en": "Hume is correct that reasoning from finite effects cannot simply assume every divine attribute; any philosophical demonstration must defend its causal premises and the route to its conclusion. But limitations of one inference do not show that all metaphysical reasoning is irrational or that revealed truth contradicts valid scientific knowledge. *Dei Filius* distinguishes the natural grounds of belief, the genuine autonomy of rational inquiry within its competence and the mysteries whose content is gratuitously disclosed. Likewise, scientific accounts of bodily evolution and the doctrine of original sin must be examined on their own precise terms rather than made a substitute for the whole subject of faith and reason.",
+              "fr": "Hume a raison de souligner qu'un raisonnement partant d'effets finis ne peut présupposer sans preuve tous les attributs divins ; toute démonstration philosophique doit justifier ses prémisses causales et sa conclusion. Toutefois, les limites d'une inférence ne démontrent pas que toute métaphysique serait irrationnelle ni que la Révélation contredirait les connaissances scientifiques établies. *Dei Filius* distingue les fondements rationnels de la croyance, l'autonomie légitime des recherches dans leur domaine et les mystères librement révélés. De même, l'évolution corporelle et la doctrine du péché originel doivent être examinées selon leurs propositions exactes, sans remplacer par ce cas particulier l'ensemble de la question de la foi et de la raison."
+            },
+            "source_ids": [
+              "AO26_APOL002_CRITI_1",
+              "AO26_APOL002_CRITI_2",
+              "AO26_APOL002_CRITI_3"
+            ],
+            "attribution": null,
+            "original_context_approved": false,
+            "french_final_approved": false,
+            "source_claim_locators": {
+              "AO26_APOL002_CRITI_1": "Chapter IV",
+              "AO26_APOL002_CRITI_2": "Part IX",
+              "AO26_APOL002_CRITI_3": "§§9,34,43"
+            },
+            "integration_revision": {
+              "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+              "date": "2026-10-14",
+              "editorial_approval_pending": true
+            }
+          },
+          {
+            "role": "traditional_catholic_argument",
+            "text": {
+              "en": "The same Creator gives human beings an intellect capable of knowing reality and offers supernatural Revelation for their salvation. The Church therefore has no need to fear genuine discoveries of science or rigorous philosophical criticism, but neither may she reduce revealed mysteries to hypotheses judged solely by laboratory methods. St Thomas's distinction between what can be demonstrated by reason and what must be received through faith permits reason to clarify the premises, answer objections and contemplate revealed truth without claiming to exhaust its mystery. Truth cannot contradict truth.",
+              "fr": "Le même Créateur donne à l'homme une intelligence capable de connaître le réel et lui offre la Révélation surnaturelle pour son salut. L'Église n'a donc à craindre ni les véritables découvertes scientifiques ni la critique philosophique rigoureuse ; elle ne saurait pourtant réduire les mystères révélés à des hypothèses évaluées exclusivement par les méthodes expérimentales. La distinction de saint Thomas entre ce qui peut être démontré par la raison et ce qui doit être reçu dans la foi permet d'éclairer les prémisses, de répondre aux objections et de contempler la vérité révélée sans prétendre en épuiser le mystère. La vérité ne peut contredire la vérité."
+            },
+            "source_ids": [
+              "AO26_APOL002_CRITI_1",
+              "AO26_APOL002_TRADI_2",
+              "AO26_APOL002_TRADI_3"
+            ],
+            "attribution": null,
+            "original_context_approved": false,
+            "french_final_approved": false,
+            "source_claim_locators": {
+              "AO26_APOL002_CRITI_1": "Chapter IV",
+              "AO26_APOL002_TRADI_2": "§§34,43",
+              "AO26_APOL002_TRADI_3": "ST I q.2 a.2 on natural demonstration, limit to particular theological claim"
+            },
+            "integration_revision": {
+              "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+              "date": "2026-10-14",
+              "editorial_approval_pending": true
+            }
+          }
+        ],
+        "visible_in_canonical_answer": false
       }
     },
     {
@@ -1341,7 +1447,8 @@
             "source": "formation-apologetics-six-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-apologetics-six-owner-corrections-20261014.v1.json"
         },
         {
           "role": "documented_position",
@@ -1396,8 +1503,8 @@
       "native_french_copyapproval": false,
       "publication_allowed": false,
       "integration_provenance": {
-        "origin": "PR #1198 source-linked correction",
         "date": "2026-10-14",
+        "research_pr": 1198,
         "not_published": true
       }
     },
@@ -1610,7 +1717,8 @@
             "source": "formation-final-23-crisis-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-final-23-crisis-owner-corrections-20261014.v1.json"
         },
         {
           "role": "traditional_catholic_argument",
@@ -1632,8 +1740,8 @@
       "native_french_copyapproval": false,
       "publication_allowed": false,
       "integration_provenance": {
-        "origin": "PR #1198 source-linked correction",
         "date": "2026-10-14",
+        "research_pr": 1198,
         "not_published": true
       }
     },
@@ -1903,7 +2011,8 @@
             "source": "formation-final-23-crisis-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-final-23-crisis-owner-corrections-20261014.v1.json"
         },
         {
           "role": "documented_position",
@@ -1948,7 +2057,8 @@
             "source": "formation-final-23-crisis-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-final-23-crisis-owner-corrections-20261014.v1.json"
         },
         {
           "role": "traditional_catholic_argument",
@@ -1972,8 +2082,8 @@
       "native_french_copyapproval": false,
       "publication_allowed": false,
       "integration_provenance": {
-        "origin": "PR #1198 source-linked correction",
         "date": "2026-10-14",
+        "research_pr": 1198,
         "not_published": true
       }
     },
@@ -2007,7 +2117,8 @@
             "source": "formation-final-23-crisis-owner-corrections-20261014.v1.json",
             "date": "2026-10-14",
             "editorial_approval_pending": true
-          }
+          },
+          "integration_source": "formation-final-23-crisis-owner-corrections-20261014.v1.json"
         },
         {
           "role": "documented_position",
@@ -2059,8 +2170,8 @@
       "native_french_copyapproval": false,
       "publication_allowed": false,
       "integration_provenance": {
-        "origin": "PR #1198 source-linked correction",
         "date": "2026-10-14",
+        "research_pr": 1198,
         "not_published": true
       }
     },
