@@ -99,7 +99,7 @@ for(const x of studies.items){
   assert.ok(raw.includes('viewBox="0 0 128 128"'));
   assert.ok(raw.includes("currentColor"));
   assert.ok(raw.includes("<mask "));
-  assert.ok(!/<image\\b|data:image|base64/i.test(raw),"embedded raster not permitted: "+x.file);
+  assert.ok(!/<image|data:image|base64/i.test(raw),"embedded raster not permitted: "+x.file);
   assert.ok(!/<filter|gradient|pattern|feGaussian/i.test(raw),"decorative rendering: "+x.file);
   assert.ok(/aria-label=/.test(raw));
 }
