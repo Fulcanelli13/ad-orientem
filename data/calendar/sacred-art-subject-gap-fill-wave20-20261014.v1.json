@@ -1,0 +1,377 @@
+{
+  "schema": "AO_SACRED_ART_SUBJECT_GAP_FILL_WAVE20_V1",
+  "asOf": "2026-10-14",
+  "ownerPR": 887,
+  "branch": "platform/885-sacred-art-candidates",
+  "baseline": {
+    "oct13FormerlyEmptySubjectSlots": 107,
+    "sourceLinkedPriorWaves16To19": 54,
+    "remainingBeforeWave20": 53
+  },
+  "counts": {
+    "newDistinctOriginalPaintingResearchRecords": 12,
+    "newlySourceLinkedFormerlyEmptySubjectIds": 9,
+    "newExistingCanonicalReuses": 0,
+    "existingSubjectAlternatePaintings": 2,
+    "formerEmptyNowSourceLinked": 63,
+    "remainingWithoutSourceCandidate": 44,
+    "sourceOriginalJpegsDownloaded": 0,
+    "commercialReproductionClearances": 0,
+    "humanRatingsEdited": 0,
+    "productionArtModifications": 0
+  },
+  "newSourceLinkedSubjectIds": [
+    "SNT-DC-18",
+    "SNT-DC-19",
+    "SNT-DC-23",
+    "SNT-DC-24",
+    "BIB-IS05",
+    "BIB-A07",
+    "BIB-XL01",
+    "BIB-IS02",
+    "BIB-OR05"
+  ],
+  "candidateOriginals": [
+    {
+      "candidateId": "G20-001",
+      "subjectIds": [
+        "SNT-DC-18"
+      ],
+      "artist": "William Bell Scott",
+      "title": "Bede finishes his Works and Life",
+      "institution": "National Trust, Wallington, Northumberland",
+      "inventory": "NT 584368",
+      "sourceUrl": "https://www.nationaltrustcollections.org.uk/object/584368",
+      "sourceEvidence": "1857 signed oil-on-canvas large narrative of Bede's final translation/dictation of John's Gospel. Bede is dying, supported by monks; exact saint, not generic monk.",
+      "iconography": "EXACT_SAINT_NARRATIVE",
+      "photoGate": "NATIONAL_TRUST_IMAGE_ORDER_RIGHTS_UNRESOLVED",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-002",
+      "subjectIds": [
+        "SNT-DC-19"
+      ],
+      "artist": "Unidentified painter",
+      "title": "Saint Anselme",
+      "institution": "Ancienne abbaye Saint-Martin, Marmoutier, Bas-Rhin",
+      "inventory": "PM67000164",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM67000164",
+      "sourceEvidence": "First quarter 18th-century canvas 118x94cm in presbytery, officially protected. Exact Saint Anselm identification per French Ministry, authorship and photographic evidence pending.",
+      "iconography": "EXACT_SAINT_RESEARCH_RECORD",
+      "photoGate": "PHOTO_LINK_EXISTS_BUT_RIGHTS_AND_PREVIEW_NOT_VERIFIED",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-003",
+      "subjectIds": [
+        "SNT-DC-23"
+      ],
+      "artist": "Monogrammist AE von 1546",
+      "title": "Bildnis des Petrus Canisius",
+      "institution": "Bayerische Staatsgemäldesammlungen, Alte Pinakothek München",
+      "inventory": "WAF 680 A",
+      "sourceUrl": "https://www.sammlung.pinakothek.de/de/artwork/JzG6RKJGWO",
+      "sourceEvidence": "Signed/datable 1546 painted lindenwood panel (59.8x40cm), holding museum classified Malerei; one of few early images of the exact saint. Conservation collection record offers CC BY-SA 4.0 image download; full license attribution/compatibility must be audited.",
+      "iconography": "EXACT_EARLY_CANISIUS_PORTRAIT",
+      "photoGate": "OFFICIAL_CC_BY_SA_4_0_SOURCE_IMAGE_NOT_ARCHIVED",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-004",
+      "subjectIds": [
+        "SNT-DC-24"
+      ],
+      "artist": "Anonymous 17th century (?)",
+      "title": "Portrait de saint Laurent de Brindisi",
+      "institution": "Alsace, French Ministry of Culture Inventaire heritage object",
+      "inventory": "IM68006112",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/IM68006112",
+      "sourceEvidence": "Oil-on-canvas unframed 97x75cm, painted portrait of César de Rossi (1559–1619), not the Roman deacon St Lawrence. Historical dating qualified 17th century (?) by inventory; damaged/incomplete right edge and flaking.",
+      "iconography": "EXACT_SAINT_WITH_CONDITION_HOLD",
+      "photoGate": "POSSIBLY_DAMAGED_IMAGE_RIGHTS_NOT_CHECKED",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-005",
+      "subjectIds": [
+        "BIB-IS05"
+      ],
+      "artist": "Erasme Quellin (attribution per custodian)",
+      "title": "Salomon offrant des sacrifices pour inaugurer le temple",
+      "institution": "Centre des monuments nationaux; Château d'Aulteribe, Sermentizon",
+      "inventory": "Aulteribe collection, no public accession observed",
+      "sourceUrl": "https://www.monuments-nationaux.fr/en/conservation-and-research/collections/a-spotlight-on-the-painting-collections-of-the-ecole-du-nord/17th-century-northern-school/erasme-quellin-solomon-offering-sacrifices-to-dedicate-the-temple",
+      "sourceEvidence": "Circa 1650 oil canvas 64.5x60.5cm. Identified by French public heritage curator as Solomon dedicating temple, correcting older Lairesse attribution; source text has internally inconsistent Quellin lifespan and needs authority check. Photograph © Philippe Berthé/CMN.",
+      "iconography": "EXACT_SOLOMON_TEMPLE_DEDICATION",
+      "photoGate": "FRENCH_PHOTOGRAPH_RESTRICTED_UNCLEARED",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-006",
+      "subjectIds": [
+        "BIB-A07"
+      ],
+      "artist": "Aubin Vouet",
+      "title": "Le Centurion Corneille aux pieds de saint Pierre",
+      "institution": "Cathédrale Notre-Dame de Paris",
+      "inventory": "Grand May 1639, cathedral historical original",
+      "sourceUrl": "https://www.notredamedeparis.fr/en/understand/paintings/the-centurion-cornelius-at-the-feet-of-saint-peter/",
+      "sourceEvidence": "Painted for Notre-Dame in 1639: Acts 10:25–26 Cornelius kneeling at Peter's feet in Caesarea. This is the INITIAL ENCOUNTER not the subsequent baptism; precise physical painting with cathedral's own catalogue.",
+      "iconography": "EXACT_CORNELIUS_CONVERSION_INITIAL_MEETING_NOT_BAPTISM",
+      "photoGate": "CATHEDRAL_SOURCE_INDEXED_BUT_FETCH_403_PHOTO_RIGHTS_PENDING",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-007",
+      "subjectIds": [
+        "BIB-A07"
+      ],
+      "artist": "Alberto Carlieri",
+      "title": "St Peter Baptizing the Centurion, Cornelius",
+      "institution": "Walters Art Museum, Baltimore",
+      "inventory": "37.503",
+      "sourceUrl": "https://art.thewalters.org/object/37.503/",
+      "sourceEvidence": "First quarter 18th-century oil canvas 97x73.4cm, Walters holdings records. Exact Acts 10 baptism scene, separate original from Aubin Vouet meeting; Walters photograph explicitly labelled CC0 on object page.",
+      "iconography": "EXACT_CORNELIUS_BAPTISM",
+      "photoGate": "OFFICIAL_CC0_MEDIA_AVAILABLE_NOT_DOWNLOADED",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-008",
+      "subjectIds": [
+        "BIB-XL01"
+      ],
+      "artist": "Rembrandt van Rijn",
+      "title": "Jeremiah Lamenting the Destruction of Jerusalem",
+      "institution": "Rijksmuseum, Amsterdam",
+      "inventory": "SK-A-3276",
+      "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Jeremiah-Lamenting-the-Destruction-of-Jerusalem--8e1adedeb8e339890121dc4228dce95d",
+      "sourceEvidence": "Signed RHL 1630 oil on panel 58x46cm. Jerusalem burns in background; biblical prophet laments its destruction. Supports Babylonian destruction narrative context, NOT AD70 Roman destruction of Second Temple. Separate from 1650s Poussin Roman siege scenes.",
+      "iconography": "EXACT_BABYLONIAN_DESTRUCTION_JEREMIAH_NARRATIVE",
+      "photoGate": "RIJKSMUSEUM_SOURCE_PHOTO_TO_VERIFY_NO_MASTER_ACQUISITION",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-009",
+      "subjectIds": [
+        "BIB-IS02"
+      ],
+      "artist": "François de Nomé",
+      "title": "Samuel Anointing Saul",
+      "institution": "Harvard Art Museums / Fogg Museum",
+      "inventory": "2012.62; object 340104",
+      "sourceUrl": "https://www.harvardartmuseums.org/collections/object/340104",
+      "sourceEvidence": "Circa 1625–1650 oil on canvas 118x152cm according to Harvard-supplied collection data as reproduced by Archaeological Exploration of Sardis and Commons original source credits. Exact Samuel anoints Saul; museum individual page robot blocked; verify institution direct for reuse.",
+      "iconography": "EXACT_SAMUEL_ANOINTS_SAUL_NOT_DAVID",
+      "photoGate": "OFFICIAL_HARVARD_OBJECT_ROBOT_BLOCKED_2400x1862_COMMONS_PREVIEW_EXISTS_RIGHTS_PENDING",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-010",
+      "subjectIds": [
+        "BIB-OR05"
+      ],
+      "artist": "Daniel Maclise",
+      "title": "Noah's Sacrifice",
+      "institution": "Leeds Art Gallery, Leeds Museums and Galleries",
+      "inventory": "LEEAG.PA.1888.0081; Art UK noahs-sacrifice-37513",
+      "sourceUrl": "https://artuk.org/discover/artworks/noahs-sacrifice-37513",
+      "sourceEvidence": "1847–1853 original 19th-century oil on canvas: Noah's sacrifice with rainbow and Ark; Met curatorial entry for 1849 engraving explicitly describes rainbow as divine covenant. Distinct original oil in Leeds, not the 1849 printed derivative.",
+      "iconography": "EXACT_NOAH_SACRIFICE_RAINBOW_COVENANT_SIGN",
+      "photoGate": "ART_UK_OFFICIAL_PARTNER_RECORD_AND_LOW_RES_COMMONS_PREVIEW_UNFRAMED_MASTER_NOT_VERIFIED",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-011",
+      "subjectIds": [
+        "BIB-A18"
+      ],
+      "artist": "Adam Elsheimer",
+      "title": "Saint Paul on Malta",
+      "institution": "National Gallery, London",
+      "inventory": "NG3535",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/adam-elsheimer-saint-paul-on-malta",
+      "sourceEvidence": "Circa 1600 oil on copper 16.8x21.3cm, exact viper-and-fire aftermath from Acts 28:1–6 with wreckage visible amid storm; physical original distinct from W19 Laurent de La Hyre. Does not show ship hitting coast in foreground.",
+      "iconography": "EXACT_ACTS28_MALTA_AFTERWRECK_WITH_SEA_CONTEXT",
+      "photoGate": "NATIONAL_GALLERY_OBJECT_IMAGE_REPRO_RIGHTS_PENDING",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    },
+    {
+      "candidateId": "G20-012",
+      "subjectIds": [
+        "BIB-A18"
+      ],
+      "artist": "Bonaventura Peeters",
+      "title": "St Paul Wrecked at Sea",
+      "institution": "UK Government Art Collection",
+      "inventory": "GAC 1472",
+      "sourceUrl": "https://artcollection.dcms.gov.uk/artwork/1472/",
+      "sourceEvidence": "Circa 1635 original oil canvas 52.5x98.5cm, depicting ST PAUL'S ACTUAL SHIPWRECK with ship and figures. Corrects insufficient visual coverage if W19 La Hyre image shows only viper aftermath.",
+      "iconography": "EXACT_SHIPWRECK_VESSEL_VISIBLE",
+      "photoGate": "GOVERNMENT_ART_COLLECTION_PHOTO_REUSE_UNVERIFIED",
+      "physicalOriginalDistinct": true,
+      "originalMediaCategory": "PAINTING",
+      "sourceRecordIdentified": true,
+      "originalImageAcquired": false,
+      "originalImageSHA256": null,
+      "verifiedPixelDimensions": null,
+      "licenseClearedForApp": false,
+      "numericUserRating": null,
+      "editorialHeroApproval": false,
+      "productionPublishApproval": false
+    }
+  ],
+  "exactnessAndSourceExclusions": [
+    {
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM40001103",
+      "secondaryRecord": "https://pop.culture.gouv.fr/notice/palissy/IM40004012",
+      "subjectId": "SNT-DC-21",
+      "status": "REJECT_IDENTIFICATION_AS_SAINT_ALBERT",
+      "reason": "2002 protection carried a Saint Albert the Great label. The authoritative detailed regional inventory reidentifies the original scene as more probably Saint Norbert receiving the rule from Pope Honorius II, and explicitly states the episode has no common features with the biography/iconography of Albert. Do not count the physically same canvas as Albert even if Palissy headline says Albert."
+    },
+    {
+      "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-anselm/abc33520-554d-4aee-b383-5e2b91c3dcea",
+      "status": "REJECT_WRONG_MEDIUM",
+      "reason": "Prado Anselm candidate is a drawing; prioritize physically documented Marmoutier painting."
+    },
+    {
+      "sourceUrl": "https://parismuseescollections.paris.fr/fr/petit-palais/oeuvres/ephrem",
+      "subjectId": "SNT-DC-27",
+      "status": "REJECT_AS_PAINTING",
+      "reason": "Petit Palais Saint Ephrem object GDUT10493 is engraved Sadeler/de Vos print, not oil painting despite matching portrait iconography."
+    },
+    {
+      "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010065353",
+      "subjectId": "SNT-DC-26",
+      "status": "HOLD_STYLE_AND_SUBJECT_VISIBILITY",
+      "reason": "The 1444 Sano di Pietro predella is true physical original portraying Cyril of Jerusalem in a marginal apparition, but miniature early-Sienese aesthetic and small section are not suitable frontispiece; avoid counting as full portrait coverage without user review."
+    },
+    {
+      "sourceUrl": "https://www.iconmuseum.org/collection/saint-cyril-of-alexandria/",
+      "subjectId": "SNT-DC-25",
+      "status": "ALTERNATE_MEDIUM_ONLY",
+      "reason": "Exact 16th-century Greek tempera icon, but outside requested naturalistic painting corpus, not silently counted as equivalent French-world oil."
+    },
+    {
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/700947",
+      "subjectId": "BIB-OR05",
+      "status": "PRINT_NOT_ORIGINAL_NOAH",
+      "reason": "Met owns 1849 newspaper print after Daniel Maclise; our candidate is original oil at Leeds, one original identity, not derivative print."
+    },
+    {
+      "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl020003512",
+      "subjectId": "BIB-A07",
+      "status": "DRAWING_NOT_ORIGINAL_PAINTING",
+      "reason": "Louvre Zuccaro paper study is a design for Vatican fresco, not substitute for original canvas; W20 has Notre Dame and Walters painted originals."
+    }
+  ],
+  "nextTargets": [
+    "Saint Albert the Great, Cyril of Alexandria, Cyril of Jerusalem and Ephrem still lack photo-credible stylistically suitable exact oil painting portraits.",
+    "Acquire working exact physical-original images, starting with CC0 Walters Cornelius (37.503) and CC BY-SA Munich Canisius (WAF 680 A), but preserve rights and attribution metadata, original pixel dimensions and hash.",
+    "Continue 44 remaining source gaps selectively: primary Acts (Tabitha, Lydia, Jerusalem Council) and Old Testament (Joshua/Jericho, covenant at Sinai already sourced W19); don't demand paintings for every narrative scene.",
+    "Photo quality and spiritual-art aesthetic remain human curator decisions, never derive 0-5 scores or auto-approve from institutional artwork existence."
+  ],
+  "allRatingsAndExistingSubjectRankingsIntact": true,
+  "existingQueue222Unchanged": true,
+  "productionChanges": false
+}
