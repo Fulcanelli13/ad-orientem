@@ -94,7 +94,7 @@ This path begins from the **actual 1962 Roman prayer or ceremony**, uses the *St
 | 38 | `AO.CARD.029` | Placeat & Final Blessing | 7 | — | `DJ21` | Context-only / variant proper |
 | 39 | `AO.CARD.030` | Last Gospel | 9 | `MB26` | `DJ22` | `SH13` |
 
-**Important reading of the zero rows:** six narrow Canon/source sections and the sermon have no *single unique* evidence item in the old 71-position grouping, because that old register often treated the post-Consecration Canon as one collective topic. They **still have source-first study drafts** and Guéranger/Lanslots/prayer-specific research; `0` is an archival event-to-owner count, not proof of no commentary or no content. The 20-held group E46 needs exact Canon prayer disaggregation before those 4 old claims can be attached.
+**Important reading of the zero rows:** six sections (the sermon plus five narrowly separated Canon prayers) have no *single unique* evidence item in the old 71-position grouping, because that old register often treated the post-Consecration Canon as one collective topic. They **still have source-first study drafts** and Guéranger/Lanslots/prayer-specific research; `0` is an archival event-to-owner count, not proof of no commentary or no content. The 20-held group E46 needs exact Canon prayer disaggregation before those 4 old claims can be attached.
 
 ## III. Source arguments that materially improve the stories
 
@@ -137,7 +137,7 @@ The [1843 first-volume table of contents](https://fr.wikisource.org/wiki/Page:Le
 
 The crosswalk is **substantively useful but still editorial**. The missing steps are:
 
-- Reconcile underlying source claims for the six older archive event/Canon ambiguities (20 records in five event groups) and recover the missing full Gihr 31-claim location; identify full Le Brun passages when they add real theological insight.
+- Reconcile underlying source claims for the five older archival event-group ambiguities (20 records) and recover the missing full Gihr 31-claim location; identify full Le Brun passages when they add real theological insight.
 - For each of the 24 biblical research anchors, select a small number of **substantial, exact author passages** and determine whether it truly warrants a main narrative scene, a supporting passage, or only a background link. Avoid forcing weak connections.
 - For each of 39 liturgical owners, link to actual existing *Study of the Mass* deep content (with source title, page/locus, and scope), then draft author-informed narrative *transitions* rather than a list of generic Mass meanings.
 - Match approved sacred artworks and canonical Bible event IDs, and test real Scripture expansion and return.
