@@ -344,4 +344,142 @@ assert.equal(controller.project("AO.SM.C0153").canPublish,false,
  "No short French draft may enable public Canon text");
 assert.equal(sources.frenchReview.rows.filter(x=>x.formReview==="FORM_OR_PASTORAL_REVIEW_PENDING").length,5,
  "Five source decisions do not constitute final pastoral/form approval");
+
+const iconPlan=read("../data/research/mass-canon-62-icon-ownership-review-20261014.json");
+const {R17_FROZEN_ACTIVE_ICON_ASSETS}=await import("../src/mass/reader-icon-bank.js");
+assert.equal(iconPlan.schema,"ao-canon-62-editorial-icon-ownership-v1");
+assert.equal(iconPlan.status,"EDITORIAL_ICON_AND_STAGE_REVIEW_NOT_ACTIVATED");
+assert.deepEqual(iconPlan.counts,{
+ sourceActions:62,priest:58,server:4,sourceWordAnchors:50,
+ nonTextOrStates:12,withFrozenAsset:50,noIconByDesign:5,requiresDistinctOrStageArtwork:7,
+ artworkSubjectsToReview:3,compositeStageSourceActions:4,sourceOwnedSubstages:12,frozenStageIconCandidates:5,
+ livePublishedByThisBatch:0,faithfulPosturesInferred:0
+});
+assert.deepEqual(iconPlan.rows.map(x=>x.actionId),trigger.rows.map(x=>x.id));
+const iconGaps=[],iconSeen=new Set();
+for(const item of iconPlan.rows){
+ const audit=trigger.rows.find(x=>x.id===item.actionId);
+ const copy=sources.frenchReview.rows.find(x=>x.id===item.actionId);
+ assert.ok(audit&&copy,item.actionId+": canonical Ritus action missing");
+ assert.ok(!iconSeen.has(item.actionId),item.actionId+": duplicate icon decision");
+ iconSeen.add(item.actionId);
+ assert.equal(item.cueId,audit.cueId);
+ assert.equal(item.actor,audit.actor);
+ assert.equal(item.sourceActionKey,audit.actionKey);
+ assert.equal(item.sourceAnchorType,audit.sourceAnchorType);
+ assert.equal(item.sourceVerifiedWords,audit.verifiedSourceWordAnchor);
+ assert.equal(item.ritusLocator,audit.rubricSource);
+ assert.deepEqual(item.stageIds,audit.stageSequence.map(s=>s.id));
+ assert.equal(item.shortFrenchDraftRef,copy.id);
+ assert.equal(item.requiresIndependentActorObservation,true);
+ assert.equal(item.readerDisplayApproval,"NOT_APPROVED");
+ assert.equal(item.observedNow,false);
+ assert.equal(item.faithfulPosture,null);
+ if(item.iconKey===null)iconGaps.push(item.actionId);
+ else assert.ok(Object.hasOwn(R17_FROZEN_ACTIVE_ICON_ASSETS,item.iconKey),
+   item.actionId+": icon is not in frozen v4.6 active assets");
+ assert.equal(item.sceneType,audit.sourceAnchorType==="SOURCE_LATIN_WORDS"
+   ?"SOURCE_WORD_REFERENCE_ONLY":"NOT_A_WORD_SYNCHRONISED_ACTION");
+}
+assert.equal(iconSeen.size,62);
+assert.deepEqual(iconGaps,[
+ "AO.CANON.R62.006","AO.CANON.R62.017","AO.CANON.R62.021",
+ "AO.CANON.R62.025","AO.CANON.R62.026","AO.CANON.R62.028",
+ "AO.CANON.R62.031","AO.CANON.R62.033","AO.CANON.R62.047",
+ "AO.CANON.R62.055","AO.CANON.R62.058","AO.CANON.R62.059",
+]);
+assert.deepEqual(iconPlan.knownGaps.map(x=>x.actionId),iconGaps);
+const byIconId=id=>iconPlan.rows.find(x=>x.actionId==="AO.CANON.R62."+id);
+assert.equal(byIconId("021").iconKey,null,
+ "Narrative fregit may never be displayed as actual Host fraction");
+assert.equal(byIconId("058").iconKey,null,
+ "Minor Per ipsum elevation must not borrow major Host/Chalice elevation");
+assert.equal(byIconId("024").iconKey,"priest_elevation");
+assert.equal(byIconId("034").iconKey,"priest_elevate_chalice_rich");
+assert.equal(byIconId("041").iconKey,"bow",
+ "Ritus IX.1 incline se does not certify a profound bow at Supplices");
+for(const id of ["027","035","062"]){
+ assert.equal(byIconId(id).iconKey,"bells");
+ assert.equal(byIconId(id).actor,"SERVER");
+ assert.notEqual(byIconId(id).sceneType,"SOURCE_WORD_REFERENCE_ONLY");
+}
+assert.equal(byIconId("061").iconKey,"response");
+assert.equal(byIconId("061").actor,"SERVER");
+assert.equal(byIconId("062").sourceVerifiedWords,null,
+ "The pre-consecration bell cannot be attached to Hanc igitur words");
+for(const id of ["055","059"]){
+ assert.equal(byIconId(id).iconKey,null,
+  "Conditional Solemn deacon and priest ceremonies need separate stage art");
+}
+
+const noIconForReason=id=>iconPlan.rows.find(x=>x.actionId==="AO.CANON.R62."+id);
+const expectedDecisions=new Map([
+ ["017","DISTINCT_ART_REQUIRED"],["025","EXISTING_STAGE_SPLIT_REQUIRED"],
+ ["026","NO_ICON_BY_DESIGN"],["028","DISTINCT_ART_AND_SOURCE_STAGE_SPLIT_REQUIRED"],
+ ["031","NO_ICON_BY_DESIGN"],["033","EXISTING_STAGE_SPLIT_REQUIRED"],
+ ["055","EXISTING_STAGE_SPLIT_REQUIRED"],["058","DISTINCT_ART_REQUIRED"],
+ ["059","EXISTING_STAGE_SPLIT_REQUIRED"],
+]);
+const originalStageIds=new Set(),visuallyMatchedStages=[];
+for(const [suffix,classification] of expectedDecisions){
+ const row=noIconForReason(suffix),decision=row?.visualStageReview;
+ assert.ok(row&&decision,"Missing source-owned gap adjudication "+suffix);
+ assert.equal(row.iconKey,null,"No new icon activated by gap review");
+ assert.equal(decision.classification,classification);
+ assert.equal(decision.readerDisplayApproval,"NOT_APPROVED");
+ assert.equal(decision.observedNow,false);
+ assert.equal(decision.faithfulPosture,null);
+ assert.equal(decision.sourceStageOnly,true);
+ assert.deepEqual(decision.inventedStageIds,[]);
+ const original=trigger.rows.find(x=>x.id===row.actionId);
+ assert.deepEqual(decision.stageVisualCandidates.map(x=>x.stageId),
+  original.stageSequence.map(x=>x.id),
+  row.actionId+": use original R62 canonical substage IDs only");
+ for(const stage of decision.stageVisualCandidates){
+  assert.ok(!originalStageIds.has(stage.stageId),stage.stageId+": duplicated stage ID");
+  originalStageIds.add(stage.stageId);
+  assert.equal(stage.observedNow,false);
+  assert.equal(stage.autoTriggeredByWord,false);
+  assert.equal(stage.readerDisplayApproval,"NOT_APPROVED");
+  if(stage.iconKey!==null){
+   assert.ok(Object.hasOwn(R17_FROZEN_ACTIVE_ICON_ASSETS,stage.iconKey));
+   visuallyMatchedStages.push(stage);
+  }
+ }
+}
+assert.equal(originalStageIds.size,12);
+assert.equal(visuallyMatchedStages.length,5,
+ "Existing bank is sufficient only for four staged genuflections and secret voice");
+assert.equal(visuallyMatchedStages.filter(x=>x.iconKey==="priest_genuflect").length,4);
+assert.equal(visuallyMatchedStages.filter(x=>x.iconKey==="priest_silent").length,1);
+assert.equal(noIconForReason("025").visualStageReview.stageVisualCandidates[1].iconKey,"priest_genuflect");
+assert.equal(noIconForReason("033").visualStageReview.stageVisualCandidates[2].iconKey,"priest_genuflect");
+assert.equal(noIconForReason("055").visualStageReview.stageVisualCandidates[1].iconKey,"priest_genuflect");
+assert.equal(noIconForReason("059").visualStageReview.stageVisualCandidates[2].iconKey,"priest_genuflect");
+for(const id of ["055","059"]){
+ const dec=noIconForReason(id).visualStageReview;
+ assert.equal(dec.formOwnerByMass.LOW,"PRIEST");
+ assert.equal(dec.formOwnerByMass.MISSA_CANTATA_SIMPLE,"PRIEST");
+ assert.equal(dec.formOwnerByMass.MISSA_CANTATA_INCENSE,"PRIEST");
+ assert.equal(dec.formOwnerByMass.SOLEMN,"DEACON_WHEN_REQUIRED");
+ const conditionalStages=dec.stageVisualCandidates.filter(x=>x.actor==="FORM_OWNER_UNRESOLVED");
+ assert.equal(conditionalStages.length,1);
+ assert.equal(conditionalStages[0].iconKey,null,"Deacon stage must never borrow priest art");
+}
+for(const id of ["026","031"]){
+ assert.equal(noIconForReason(id).visualStageReview.classification,"NO_ICON_BY_DESIGN",
+  "Continuing state does not require new icon art");
+}
+for(const id of ["017","028","058"]){
+ assert.ok(noIconForReason(id).visualStageReview.sourceArtSubject,
+  "Only genuine unique sacred gesture art should be shortlisted for external design");
+}
+assert.equal(noIconForReason("058").visualStageReview.stageVisualCandidates.length,0);
+assert.equal(noIconForReason("058").visualStageReview.sourceArtSubject,
+ "PER_IPSUM_MINOR_ELEVATION_HOST_OVER_CHALICE_NOT_MAJOR_ELEVATION");
+console.log("PASS: 9 Canon unresolved visuals classified as 3 original-art subjects, 4 stage sequences, 2 silent-state icon omissions; 12 original stage IDs, 5 frozen stage assets, no publication.");
+assert.equal(byIconId("026").iconKey,null,
+ "Thumb/index discipline is a continuing state, not a fired gesture");
+console.log("PASS: 62 source-owned Canon icons; 50 matched frozen art, 12 intentional no-icon/stage review cases, 0 live publication or inferred pew postures.");
+
 console.log("PASS: five Canon form-conditioned sources, exact 1962 actor constraints, two corrected French drafts, 0 published.");
