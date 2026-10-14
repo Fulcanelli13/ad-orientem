@@ -146,4 +146,41 @@ for(const x of secondary){
  assert.equal(x.witness.primary1962PrintedFacsimileVerified,false);
 }
 
+
+const originalEditionProvenanceFiles=[
+ "../data/research/mass-canon-14-ritus1962-french-microactions-20261013.json",
+ "../data/research/mass-canon-flagged-french-copy-triage-20261013.json",
+ "../data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json",
+ "../data/research/mass-canon-complex-23-ritus-source-review-20261013.json",
+ "../data/research/mass-canon-62-source-trigger-audit-20261013.json",
+ "../data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",
+ "../data/research/mass-canon-62-bilingual-two-layer-review-20261014.json",
+ "../data/research/mass-canon-29-flagged-bilingual-adjudication-20261014.json",
+ "../data/research/mass-canon-20-minister-stage-acceptance-20261014.json",
+];
+const latin1962="https://summorum-pontificum.de/z_archive/vorort/ritus_servandus_62.html";
+const parallelLatinFrench1962="https://fr.scribd.com/document/542057936/Ritus-Servandus-1962";
+for(const path of originalEditionProvenanceFiles){
+ const raw=readFileSync(new URL(path,import.meta.url),"utf8");
+ const obj=JSON.parse(raw);
+ assert.doesNotMatch(raw,/www\\.intratext\\.com\\/IXT\\/LAT0820\\/_P[J-K]\\.HTM/,
+  path+": pre-1962 rubrical witness cannot be cited as 1962 typical edition");
+ assert.ok(raw.includes(latin1962)||raw.includes(parallelLatinFrench1962),
+  path+": must link a separately labeled 1962 Latin witness");
+ assert.ok(obj.status&&obj.schema,path+": research document identity must survive");
+}
+const firstOwner=read("../data/research/mass-canon-14-ritus1962-french-microactions-20261013.json");
+assert.equal(firstOwner.microActions.length,62);
+assert.equal(firstOwner.sourceWitnesses.englishTranslationNotOriginalEdition,
+ "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/");
+assert.equal(firstOwner.sourceWitnesses.original1962TypicalEditionFacsimileVerified,false);
+assert.equal(firstOwner.sourceWitnesses.anachronisticIntraTextReferenceExcluded,true);
+assert.ok(!Object.hasOwn(firstOwner.sourceWitnesses,"officialPrimary"),
+ "English translated witness cannot be misdescribed as original official edition");
+assert.equal(french.rows.length,62);
+assert.equal(bilingual.rows.length,62);
+assert.equal(issues.rows.length,29);
+assert.equal(evidence.records.length,29);
+assert.ok(evidence.records.every(x=>x.canPublish===false));
+
 console.log("PASS: 29 original 1962 Ritus review cases independently page-located in English witness, 17 conditional/sequence checks, 0 facsimile/linguistic/source-clock approvals, 0 publication.");
