@@ -210,7 +210,7 @@ assert.throws(()=>validateCanonRubricAdjudication({
 const exactDrafts=new Map(frenchReview.rows.map(x=>[x.id,x]));
 const sourceByAction=new Map(triggerAudit.rows.map(x=>[x.id,x]));
 const copyRequirements=[
- ["017","AO.SM.C0168",/à « accépit panem »/,/découvre d’abord ce récipient/],
+ ["017","AO.SM.C0168",/[Àà] « accépit panem »/,/découvre d’abord ce récipient/],
  ["027","AO.SM.C0174",/le servant sonne trois fois ou continûment/,/repose l’Hostie sur le corporal/],
  ["035","AO.SM.C0181",/le servant sonne trois fois ou continûment/,/calice soit reposé sur le corporal/],
  ["040","AO.SM.C0186",/mains toujours étendues devant la poitrine/,/Il poursuit « Supra quæ »/],
@@ -223,6 +223,7 @@ for(const [n,cue,a,b] of copyRequirements){
  assert.equal(source?.cueId,cue,id+": Latin research must own cue");
  assert.match(fr.revisedFrenchRubric,a);
  assert.match(fr.revisedFrenchRubric,b);
+ if(n==="017")assert.ok(fr.revisedFrenchRubric.indexOf("découvre d’abord ce récipient")<fr.revisedFrenchRubric.indexOf("À « accépit panem »"),"Conditional uncovering must precede taking the Host");
  assert.equal(fr.reviewState,"ORIGINAL_FRENCH_SOURCE_RECHECK_DRAFT_NOT_APPROVED_FOR_USER_DISPLAY");
  assert.equal(fr.faithfulRubricInferred,false);
  assert.ok(fr.sourceURLs.length>=2&&fr.sourceURLs.every(u=>u.startsWith("https://")));

@@ -86,7 +86,19 @@ export function projectCanonInlineEditorialPlacements({
       let status,spans=FROZEN_EMPTY,surfaceField=null,canonicalCorrectionId=null;
       if(action.anchorKind!==WORD){
         status="NON_TEXT_SOURCE_EVENT";
-      }else if(ids.length!==1){
+      }else if(cueId==="AO.SM.C0190" &&
+        decision.candidateActionId==="AO.CANON.R62.044"){
+        // IX.1 marks the cross BEFORE cælesti, after omni benedictione.
+        // The frozen R17 donor has coelésti. This old fragment matching
+        // omni benedictióne is valid for locating text, NOT for placing the
+        // actual gesture. Guide-only until donor glyph offset is certified.
+        if(decision.placement!=="GUIDE_ONLY_PENDING_CROSS_SIGN_OFFSET" ||
+           decision.reviewGate!=="SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF"||
+           decision.sourceGestureOffsetReview!==
+            "DONOR_COELESTI_VS_1962_CAELESTI_SOURCE_CROSS_OFFSET_PENDING")
+          throw new Error("C0190 exact cross offset release gate missing");
+        status="SOURCE_GESTURE_OFFSET_UNVERIFIED";
+           }else if(ids.length!==1){
         status="COMPOSITE_PARAGRAPH_REQUIRES_SOURCE_SEGMENTATION";
       }else{
         const surface=certifiedLatinSurface(paragraph,sourceLatinByCue[cueId],cueId);
