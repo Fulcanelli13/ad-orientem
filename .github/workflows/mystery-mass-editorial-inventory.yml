@@ -16,6 +16,12 @@ on:
       - 'tests/mystery-mass-dual-chronology-source-crosswalk.mjs'
       - 'tests/mystery-mass-source-led-narrative-drafts.mjs'
       - 'tests/mystery-mass-bilingual-scripture-art-handoff.mjs'
+      - 'tests/mystery-mass-review-app-route.mjs'
+      - 'src/learn/mystery-mass-review-data.js'
+      - 'src/learn/mystery-mass-review.js'
+      - 'src/learn/presentation.js'
+      - 'src/learn/browser-entry.js'
+      - 'src/learn/lazy-module-registry.js'
       - 'data/learn/research/mystery-mass-*-20261014.v1.json'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
       - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
@@ -62,3 +68,5 @@ jobs:
         run: node tests/mystery-mass-source-led-narrative-drafts.mjs
       - name: Validate 24 French narratives and real Bible/curator handoffs
         run: node tests/mystery-mass-bilingual-scripture-art-handoff.mjs
+      - name: Validate gated in-app two-mode Mystery reader
+        run: node tests/mystery-mass-review-app-route.mjs
