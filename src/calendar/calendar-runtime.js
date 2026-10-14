@@ -226,9 +226,9 @@ function updateMonthStatusDom(monthId){
   const el=root()?.querySelector?.("[data-cal-month-status]");if(!el)return;
   const ids=monthGridIds(monthId),s=monthStatus.get(monthId),done=ids.filter(x=>weekCache.has(x)).length;
   const errors=ids.filter(x=>weekCache.has(x)&&(!weekCache.get(x)?.day||weekCache.get(x)?.status==="failed")).length;
-  el.textContent=monthVerified(monthId)?""
-    :monthReady(monthId)?L(`${errors} day(s) unavailable`,`${errors} jour(s) indisponible(s)`)
-    :L(`Loading · ${s?.done??done}/42`,`Chargement · ${s?.done??done}/42`);
+  el.textContent=monthVerified(monthId)?L("Calendar grid loaded · 42 dates","Grille du calendrier chargée · 42 dates")
+    :monthReady(monthId)?L(`1962 calendar · ${errors} day(s) unavailable`,`Calendrier 1962 · ${errors} jour(s) indisponible(s)`)
+    :L(`Resolving liturgical month · ${s?.done??done}/42`,`Résolution du mois liturgique · ${s?.done??done}/42`);
 }
 function hydrateMonthCell(id){
   if(calendarView!=="picker"||!pickerMonthId)return;
