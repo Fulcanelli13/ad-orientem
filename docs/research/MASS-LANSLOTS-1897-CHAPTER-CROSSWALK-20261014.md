@@ -116,6 +116,14 @@ The [seven complete bilingual mystagogy candidates](../../data/research/mass-lan
 
 A repository [source-critical focused regression test](../../tests/mass-lanslots-original-cue-audit.mjs) checks all 69 record IDs and ranges, 25 chapter groups, 39 current LIVE owners/14 Canon segments, exact Latin phrases, the centurion's priest-versus-faithful boundary and no premature publication. Its syntax was statically checked, and matching source assertions passed within the connected GitHub research session; **this is not a claim that Node, GitHub Actions, full browser tests or PDF-page image checks ran**.
 
+## Fourth research pass — 10 source-critical and dated historical corrections
+
+[Original-text critical review (10 structured records)](../../data/research/mass-lanslots-1897-doctrinal-historical-critical-review.v1.json) and the [source-linked English/French original-doctrinal memo](MASS-LANSLOTS-1897-ORIGINAL-DOCTRINAL-CORRECTIONS-20261014.md) resolve several important source-to-teaching distinctions: the inspired books of Scripture versus approved liturgical phrases (already distinguished in preconciliar Leo XIII and Pius XII, as well as Vatican II), Guéranger's interpretation of the holy Angel in `Supplices` versus created-angel alternatives, the sacramental *signification* of commingling, Old Testament analogy at `Hanc igitur`, historical Latin and papal-attribution claims, and distinctions in intercession for the dead.
+
+**Exact dated 1962 amendment:** Lanslots's 1897 `Communicantes` does not include St Joseph. The Sacred Congregation of Rites' decree *Novis hisce temporibus* (13 November 1962) added `sed et beati Ioseph eiusdem Virginis Sponsi`, effective **8 December 1962**. The current Canon's `AO.CANON.03` / `AO.SM.C0159` preserves it. This is a genuine historical *textual* difference, not evidence of a malformed 1962 reader. [Lanslots, ch. XVII](https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt) · [Sacred Congregation of Rites' decree, ICRSP French witness](https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret).
+
+A [focused ten-case reconciliation regression](../../tests/mass-lanslots-critical-reconciliation.mjs) checks source locators, present canonical ownership, inherited Guéranger source IDs, the normative Joseph insertion, and the promotion locks. **Research records are still draft**; neither the full Node suite nor 404-page scan-image collation has been certified in this batch.
+
 ## Integration disposition
 
 - **Documented now:** 25 original OCR chapter headings; 69 individual Scripture reference/allusion records across 18 chapters plus the introduction; seven additional chapter-level theological/source-context records with bilingual drafts; 16 reclassified first-pass topical claim records. The precise 39-step source-first mapping is preserved. Source authority, explicit quotations, allusions and editorially supplied parallels remain separated.
