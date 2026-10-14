@@ -411,6 +411,8 @@ export function updateMassJourneyObserved(root,legacy,{language="en"}={}){
  const target=root?.querySelector("[data-mass-journey-observed]");
  if(!target)return false;
  const reported=legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY";
+ // A selected alternative Proper must expose its source review on phone.
+ if(reported){const sources=root.querySelector("[data-mass-journey-sources]");if(sources)sources.open=true;}
  target.hidden=!reported;
  target.textContent=reported?
   tr(String(language).startsWith("fr"),
