@@ -540,8 +540,27 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="INCARNATUS_GESTURE"] .ao-rail-left .ao-rail-item[data-channel="gesture"][data-active="true"] .ao-icon-mask{
   transform-origin:50% 60%;animation:aoCinematicPostureCue .75s ease-out both;
 }
-.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HOST_ELEVATION"] .ao-cinematic,
-.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="CHALICE_ELEVATION"] .ao-cinematic{display:none!important}
+/* Existing approved icon becomes an in-stage focus illustration only if
+   a real unoccupied reading region is available. Otherwise retain rail art. */
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-cinematic[data-kind="ELEVATION"]{
+  position:absolute;inset:auto 0 clamp(26px,7vh,50px);height:186px;
+  display:grid;place-items:center;padding:0;z-index:17;
+  background:transparent;box-shadow:none;pointer-events:none;
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner{
+  width:min(43vw,174px);height:auto;aspect-ratio:1;filter:none;
+  background:radial-gradient(circle,rgba(208,192,151,.06),transparent 68%);
+  animation:aoElevation 3.35s cubic-bezier(.18,.72,.22,1) both;
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-icon{
+  width:84%;height:84%;
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-rail-right .ao-rail-item[data-channel="priest-action"]{
+  visibility:hidden;
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="RAIL"] .ao-cinematic[data-kind="ELEVATION"]{
+  display:none!important;
+}
 @keyframes aoCinematicIconHold{
   0%{opacity:.65;transform:translateY(3px) scale(.96)}
   20%{opacity:1;transform:translateY(-3px) scale(1.14)}
@@ -2576,7 +2595,9 @@ export function createReaderDomAdapter({
       // Major Elevations illuminate the existing reader rather than blacking
       // out the Latin Consecration and gesture rails.
       const focusElevation=sceneId==="HOST_ELEVATION"||sceneId==="CHALICE_ELEVATION";
-      cinematic.hidden=!visible||focusElevation;
+      // Final visibility is settled after paragraph layout. Keep the source
+      // prayer measurable before deciding whether spare space permits big art.
+      cinematic.hidden=!visible;
       cinematic.setAttribute?.("aria-hidden",String(!visible||focusElevation));
       cinematic.dataset.kind=kind;
       setText(root,"cinematic-title",visible ? current.cinematic.title : null);
@@ -2798,6 +2819,34 @@ export function createReaderDomAdapter({
     // doing so during a cue-only state update would briefly clamp scrollTop
     // and prevent short cards from ever reaching their next invocation.
     if(current.cardUpdate)ensureShortCardCueTravel();
+    // Never cover the missal to dramatize an Elevation. A source-first
+    // 48-card elevation action often leaves genuine empty space below
+    // its rubric; only use that space if measured geometry permits it.
+    const scene=current.cinematicScene?.id??null;
+    const majorScene=scene==="HOST_ELEVATION"||scene==="CHALICE_ELEVATION";
+    const stageCinema=root.querySelector('[data-role="cinematic"]');
+    const stageShell=root.querySelector("[data-ao-reader-shell]");
+    if(stageShell)stageShell.dataset.cinematicVisual="NONE";
+    if(majorScene && stageCinema){
+      const scroller=root.querySelector(".ao-prayer-card");
+      const bounds=scroller?.getBoundingClientRect?.();
+      const rows=[...(scroller?.querySelectorAll?.(".ao-reader-paragraph")??[])];
+      const lastTextBottom=rows.length
+        ? Math.max(...rows.filter(row=>!row.hidden).map(row=>row.getBoundingClientRect().bottom))
+        : bounds?.bottom??Infinity;
+      const schola=root.querySelector(".ao-schola-dock");
+      const dockBounds=schola?.getBoundingClientRect?.();
+      const visibleBottom=schola?.dataset?.active==="true" && dockBounds?.height>0
+        ? Math.min(bounds?.bottom??Infinity,dockBounds.top)
+        : bounds?.bottom??-Infinity;
+      const room=visibleBottom-lastTextBottom;
+      const iconAvailable=Boolean(current.priestActionIconKey &&
+        current.cinematic?.kind==="ELEVATION");
+      const canIllustrate=iconAvailable && room>=260 && bounds?.height>=420;
+      stageCinema.hidden=!canIllustrate;
+      stageCinema.setAttribute?.("aria-hidden","true");
+      if(stageShell)stageShell.dataset.cinematicVisual=canIllustrate?"ICON":"RAIL";
+    }
     syncReaderRitualHighlights(root,current.gesture);
     syncFaithfulParagraphIcons();
     return current;
