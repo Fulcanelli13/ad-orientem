@@ -362,9 +362,9 @@ try{
      ".aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source][data-ao-scripture-context]").first();
    await beadSource.waitFor({state:"visible",timeout:9000});
    const citedReference=await beadSource.getAttribute("data-ao-scripture-context");
-   assert.match(citedReference,/^[A-Za-z1-3 ]+\\s+\\d+:\\d+/,
+   assert.match(citedReference,/^[A-Za-z1-3 ]+\s+\d+:\d+/,
      "The same original bead reference must be used in the shared Bible reader");
-   assert.match(await beadSource.getAttribute("href"),/^https:\\/\\//,
+   assert.match(await beadSource.getAttribute("href"),/^https:\/\//,
      "Keep exact external Catholic source witness as fallback");
    await beadSource.click();
    const scripture=page.locator("#ao-scripture-overlay");
