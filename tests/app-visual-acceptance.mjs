@@ -1434,7 +1434,7 @@ try{
   const seasonalAlias=await page.evaluate(()=>globalThis.AO_MODULES?.open?.("learn.seasonal_rites",{returnContext:{surface:"learn"}}));
   assert.equal(seasonalAlias?.ok,true,"Seasonal compatibility route failed");
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:5000});
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Ring").count(),1,"Seasonal compatibility route did not reach the Liturgical Year surface");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoClockDial").count(),1,"Seasonal compatibility route did not reach the Liturgical Clock");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV384Companion").count(),0,"retired duplicate Traditional Liturgical Year companion returned");
   assert.equal(await page.locator("#ao-calendar-modular-root .v384SectionLabel").count(),0,"retired v38.4 full-year index leaked into the active Calendar");
   await shot("04f-seasonal-year-alias");
