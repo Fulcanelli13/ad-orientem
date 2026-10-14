@@ -1,0 +1,40 @@
+{
+  "schema": "AO_SACRED_ART_HILARY_ORIGINAL_W29_V1",
+  "date": "2026-10-14",
+  "ownerPR": 887,
+  "purpose": "Second genuine painting of Saint Hilary of Poitiers without mistaking Saint Jerome or another Hilaire.",
+  "candidate": {
+    "id": "G29-001",
+    "subjectId": "SNT-DC-28",
+    "artist": "Jérôme-Martin Langlois",
+    "title": "Saint Hilaire de Poitiers écrivant contre l'arianisme",
+    "institution": "Cathédrale Saint-André, Bordeaux, Gironde",
+    "inventory": "Palissy IM33002267",
+    "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/IM33002267",
+    "year": 1823,
+    "medium": "Oil on canvas",
+    "dimensionsCm": [
+      210,
+      149
+    ],
+    "sourceProof": "Ministry detailed heritage record explicitly names Saint Hilary, author and signature J.M. Langlois 1823, De Trinitate scroll, Arius underfoot. Original commission, not the 1846 Dubourdieu copy.",
+    "relation": "EXACT_DOCTOR_SAINT_HILARY",
+    "differentPhysicalOriginalFrom": "Juan Correa de Vivar Saint Lawrence / Saint Hilary two-sided panel in previous human selection",
+    "photoRightsPending": true,
+    "originalMasterDownloaded": false,
+    "releaseApproved": false
+  },
+  "unwantedCopies": [
+    {
+      "artist": "Jean-Baptiste Dubourdieu",
+      "year": 1846,
+      "place": "Saint-Hilaire de Paillet",
+      "status": "HOLD_DERIVATIVE_COPY_OF_LANGLOIS",
+      "source": "same IM33002267 custodian note"
+    }
+  ],
+  "identityGuard": "Older 1906 inventory miscalled the painting Saint Jerome. Modern state inventory identifies Saint Hilary of Poitiers, supported by De Trinitate and anti-Arian iconography. Do not source-link to Jerome.",
+  "newHumanRatings": 0,
+  "imagesAcquired": 0,
+  "newSubjects": 0
+}
