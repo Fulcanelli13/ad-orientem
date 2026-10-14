@@ -17,9 +17,11 @@
     "scriptureReferenceOccurrences": 69,
     "originalTextPdfPagesVisuallyChecked": 11,
     "completeBookLocalOcrExtracted": true,
-    "exhaustiveVerseCountKnown": false
+    "exhaustiveVerseCountKnown": false,
+    "totalResearchCitationOccurrenceRecords": 91,
+    "scriptureReferenceOccurrencesOriginalFirstTwoBatches": 69
   },
-  "interpretation": "100 percent chapter COVERAGE does not mean 100 percent chapter CONTENT has been transcribed or 100 percent of biblical references has been found. There may be further original Scripture passages and authoritative source corrections.",
+  "interpretation": "Full original OCR and 404-page PDF have been recovered. Twenty-five chapters have at least one source item; the first two source registers comprise 69 Scripture records across 18 chapters and introduction, with another 17 + 5 discovered later (91 total source occurrences). The separate complete-text screen adjudicates 82 parenthetical candidate strings (77 biblical, 5 nonbiblical), of which one carries two verses. These are different non-additive metrics. Eleven original PDF images inspected, 393 not checked. Not an exhaustive citation/allusion census.",
   "chapterCoverage": [
     {
       "chapter": "I",
@@ -554,9 +556,15 @@
   ],
   "additionalReview": {
     "wholeOcrParenPatternCandidates": 82,
-    "reviewedCitationOccurrencesIncludingNewBatch": 86,
+    "reviewedCitationOccurrencesIncludingNewBatch": 91,
     "visuallyCheckedOriginalPdfPages": 11,
     "originalPdfPages": 404,
-    "citationExhaustiveness": false
+    "citationExhaustiveness": false,
+    "adjudicatedParentheticalBibleCitations": 77,
+    "adjudicatedParentheticalBibleLocators": 78,
+    "adjudicatedNonBiblicalParentheses": 5,
+    "fiveAdditionalRecoveredSourceOccurrences": 5,
+    "distinctBibleVersesCountCertified": false,
+    "adjudicationLedger": "data/research/mass-lanslots-1897-82-parenthetical-adjudication.v1.json"
   }
 }
