@@ -47,7 +47,8 @@ try{
    await trigger.tap();
    const reader=page.locator("#ao-scripture-overlay");
    await reader.waitFor({state:"visible",timeout:10000});
-   assert.equal(await reader.locator(".aoScriptureReading h3").innerText(),"1 Corinthians 11:23–32");
+   assert.equal(await reader.locator(".aoScriptureReading h3").innerText(),"1Corinthians 11:23–32",
+     "The native Bible reader displays the canonical Catholic book ID without a space");
    await reader.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
    assert.equal(await reader.locator('[data-scripture-witness-unreviewed="dr-challoner"]').count(),1,
      "Uncollated historical edition disclosure may not be hidden");
