@@ -218,19 +218,19 @@ try{
    await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===732,
      null,{timeout:12000});
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ROME"]').tap();
-   await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
-     snapshot.count,{timeout:12000});
-   await page.locator("#ao-find-modular-root .aoExploreAdvancedFilters summary").tap();
-   const provider=page.locator('#ao-find-modular-root [data-find-affiliation="FSSP"]');
-   assert.equal(await provider.count(),1,"TLM community filter is inaccessible");
+   await page.waitForFunction(()=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===1022,
+     null,{timeout:12000});
+   const provider=page.locator('#ao-find-modular-root .aoTlmProviderStrip [data-find-affiliation="FSSP"]');
+   assert.equal(await provider.count(),1,"Institute filtering must be visible beside the map, not inside a hidden disclosure");
    await provider.tap();
-   await page.waitForFunction(()=>Boolean(document.querySelector('#ao-find-modular-root [data-find-affiliation="FSSP"].active')),
+   await page.waitForFunction(()=>Boolean(document.querySelector('#ao-find-modular-root .aoTlmProviderStrip [data-find-affiliation="FSSP"].active')),
      null,{timeout:12000});
    const fssp=Number(await page.locator("#ao-find-modular-root .aoFindResultMeta strong").innerText());
-   assert.ok(fssp<=snapshot.count,"FSSP filter incorrectly adds venues");
-   // Repainting on filter selection resets the disclosure to closed.
-   await page.locator("#ao-find-modular-root .aoExploreAdvancedFilters summary").tap();
-   await page.locator('#ao-find-modular-root [data-find-affiliation="FSSP"]').tap();
+   assert.ok(fssp<=1022,"FSSP filter incorrectly adds venues");
+   await page.locator('#ao-find-modular-root .aoTlmProviderStrip [data-find-affiliation="FSSP"]').tap();
+   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===1022,
+     null,{timeout:12000});
+   await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ALL"]').tap();
    await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
      snapshot.count,{timeout:12000});
   }
