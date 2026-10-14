@@ -108,6 +108,8 @@ The full JSON inventory also captures each section's Lanslots chapter mapping, a
 
 For the **Gradual, sermon, variable Preface and dismissal**, absence of a fixed Scripture explanation is largely appropriate. Do not manufacture a generic fixed proper reading. The Collect and faithful-Communion preparation require thoughtful concise treatment with actual conditionality.
 
+**Two historical/doctrinal topics remain intentionally lesson-level rather than prayer-level:** `L1897-DISC-04` (claims about apostolic Latin) belongs to the introductory historical explanation, and `L1897-DISC-09` (the one bread and one ecclesial body) belongs to theology of sacrifice and participation. Neither has an invented dynamic Mass cue. The other eight distinct Lanslots critical topics are assigned to their appropriate section(s), including one case relevant to both Consecrations.
+
 ## Mandatory merge and anti-duplication decisions
 
 1. **Psalm 42:** reuse polished `MB02` as the principal Bible study for `AO.CARD.001`; `MB01` is background/source input, not a duplicate second explanation. Preserve omissions for Requiem and relevant seasonal/preceding rites.
