@@ -78,4 +78,18 @@ const priest= audit.entries.find(x=>x.sourceChapter==="XXIV"&&x.scriptureReferen
 assert.equal(priest.cueId,"AO.SM.C0229","centurion's words must refer to priest's Communion, not faithful repetition");
 const melchi=audit.entries.find(x=>x.sourceChapter==="XX"&&x.scriptureReference==="Psalms 109:4");
 assert.equal(melchi.sourceFirstSectionId,"AO.CANON.09","Supra quae Canon source ownership");
-console.log("PASS Lanslots source-critical gate: 69 OCR occurrences; 25 chapter groups; 12 exact Sung anchors, 57 thematic; 39 current LIVE source steps, 14 Canon segments; no research promotion.");
+const bible=load("data/research/mass-lanslots-1897-independent-bible-spotchecks.v1.json");
+assert.equal(bible.checkedRecordCount,10);
+assert.equal(bible.checks.length,10);
+assert.equal(new Set(bible.checks.map(x=>x.linkedResearchRecordId)).size,10,"independent checks must not duplicate source record IDs");
+for(const check of bible.checks){
+  const originalRecord=original.get(check.linkedResearchRecordId);
+  assert(originalRecord,"independent Bible validation has no Lanslots source record "+check.id);
+  assert.equal(check.reference,originalRecord.normalizedScriptureRef,"independent Bible citation reference mismatch");
+  assert.equal(check.referenceAndContentMatch,true);
+  assert.equal(check.originalLanslotsAttributionVerifiedByThisCheck,false,"independent Bible text cannot certify Lanslots attribution");
+  assert.equal(check.originalLanslotsPrintedPageImageVerified,false,"cannot certify original PDF scan");
+  assert.equal(check.currentAppPromotion,"BLOCKED");
+  assert(check.primaryWitnessUrl.startsWith("https://"),"direct source witness required");
+}
+console.log("PASS Lanslots source-critical gate: 69 OCR occurrences; 25 chapter groups; 12 exact Sung anchors, 57 thematic; 39 current LIVE source steps, 14 Canon segments; no research promotion; 10 Bible-edition crosschecks.");
