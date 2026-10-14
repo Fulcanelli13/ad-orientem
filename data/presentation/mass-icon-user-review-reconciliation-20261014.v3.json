@@ -1,0 +1,204 @@
+{
+  "schema": "ao-mass-icon-user-review-reconciliation-v3",
+  "source": {
+    "filename": "Ad_Orientem_Full_Mass_Icon_Review_2026-10-14.json",
+    "sha256": "edbde2bf608646cd258351274b6e545d42d88952b393c40c66492800684bc4a0",
+    "exportedAt": "2026-10-14T07:38:34.399Z"
+  },
+  "status": "RESEARCH_ONLY_NO_ACTIVE_ART_ASSET_OR_RUNTIME_BINDING_CHANGES",
+  "reviewTotals": {
+    "records": 90,
+    "candidate": 36,
+    "selected": 42,
+    "investigate": 10,
+    "approvedExtra": 2,
+    "explicitDecisions": 38,
+    "undecided": 52
+  },
+  "userDecisionIds": {
+    "keep": [
+      "S_you_bow",
+      "S_you_breast_strike",
+      "S_you_genuflect",
+      "S_you_hands_joined",
+      "S_you_kneel",
+      "S_you_profound_bow",
+      "S_you_sit",
+      "S_you_stand",
+      "S_you_gospel_crosses",
+      "S_priest_ascending",
+      "S_priest_centre",
+      "S_priest_sedilia",
+      "S_priest_communion_rail",
+      "S_priest_ambo",
+      "S_priest_elevate_host",
+      "S_priest_kiss_altar"
+    ],
+    "revise": [
+      "B05",
+      "B06",
+      "B07",
+      "D06",
+      "S_priest_epistle",
+      "S_priest_facing_people",
+      "S_priest_gospel",
+      "S_priest_procession",
+      "S_priest_elevate_chalice",
+      "S_priest_incense_altar",
+      "S_priest_genuflect",
+      "S_sound_priest_silent",
+      "S_sound_schola",
+      "I_priest_blessing",
+      "I_other_commingling",
+      "I_other_communion",
+      "I_other_epistle",
+      "I_other_gospel"
+    ],
+    "reject": [
+      "S_you_head_bow",
+      "I_priest_foot",
+      "I_priest_return_altar"
+    ],
+    "reuse": [
+      "I_priest_profound_bow"
+    ]
+  },
+  "userFlags": {
+    "inconsistentFamily": [
+      "A03",
+      "A06",
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B09",
+      "B16",
+      "D06",
+      "S_priest_epistle",
+      "S_priest_facing_people",
+      "S_priest_gospel",
+      "S_priest_procession",
+      "S_priest_incense_altar",
+      "S_priest_genuflect",
+      "S_sound_priest_silent",
+      "S_other_canon",
+      "S_other_lavabo",
+      "I_priest_return_altar",
+      "I_priest_blessing",
+      "I_other_commingling",
+      "I_other_communion",
+      "I_other_gospel"
+    ],
+    "wrongSection": [
+      "A04",
+      "A05",
+      "B05",
+      "B06",
+      "B07",
+      "B09",
+      "I_priest_profound_bow"
+    ],
+    "gestureWrong": [
+      "A05",
+      "B05",
+      "B06",
+      "B07",
+      "B09"
+    ],
+    "badCrop": [
+      "B09",
+      "B13"
+    ]
+  },
+  "proposals": [
+    {
+      "id": "SEMANTIC.EPISTLE_GOSPEL",
+      "evidence": "User notes 'This is the gospel side, not epistle side' and 'this is epistle side, not gospel side'.",
+      "sourceIDs": [
+        "S_priest_epistle",
+        "S_priest_gospel",
+        "C03",
+        "C04"
+      ],
+      "current": "priest_epistle_rich assigned to Epistle; priest_gospel_rich assigned to Gospel",
+      "suggestion": "SHOW_SWAP_IN_REVIEW_ONLY",
+      "candidateEpistle": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "candidateGospel": "assets/active/mass-v46/priest_epistle_rich.svg",
+      "mustVerify": "Confirm viewer orientation, altar Missal placement and source cue ownership before changing mappings."
+    },
+    {
+      "id": "CROP.B09_B13",
+      "sourceIDs": [
+        "B09",
+        "B13"
+      ],
+      "status": "VISUAL_RECROP_PREVIEW_ONLY",
+      "reviewStatus": "GESTURE_STILL_UNVERIFIED"
+    },
+    {
+      "id": "STYLE.ALTAR_INCENSE",
+      "sourceIDs": [
+        "S_priest_incense_altar",
+        "B19"
+      ],
+      "evidence": "User identifies different altar architectural family.",
+      "action": "Compare against centre, sedilia and major Host elevation references; seek non-generative compositing or manual rebuild. Do not claim simple tinting corrects altar architecture."
+    },
+    {
+      "id": "FAMILY.MASTERS",
+      "sourceIDs": [
+        "S_priest_sedilia",
+        "S_priest_centre",
+        "S_priest_elevate_host",
+        "S_priest_communion_rail",
+        "S_priest_ambo"
+      ],
+      "reference": "User rates sedilia 5 and others selected/kept 3–4. These are candidate references, not proof of perfect one-family identity."
+    },
+    {
+      "id": "RUBRIC.ACTOR",
+      "sourceIDs": [
+        "A04",
+        "A05",
+        "B05",
+        "B06",
+        "B07",
+        "B09",
+        "I_priest_profound_bow",
+        "A05",
+        "B05",
+        "B06",
+        "B07",
+        "B09"
+      ],
+      "action": "SOURCE_RECHECK; preserve user marks, no artificial reassignment to a section."
+    },
+    {
+      "id": "REJECTED",
+      "sourceIDs": [
+        "S_you_head_bow",
+        "I_priest_foot",
+        "I_priest_return_altar"
+      ],
+      "action": "DO_NOT_PROMOTE; leave existing live assets untouched until fallback approved"
+    }
+  ],
+  "approvedFingerArt": {
+    "count": 2,
+    "assets": [
+      "assets/approved/mass/finger-contact-post-consecration.svg",
+      "assets/approved/mass/finger-ablutions-post-communion.svg"
+    ],
+    "status": "PREVIOUSLY_ARTWORK_APPROVED_RUNTIME_UNBOUND"
+  },
+  "noAutoSelection": true,
+  "upNext": [
+    "Run app-state contract tests for any proposed semantic reassignment on separate PR.",
+    "Resolve wrong-section and gesture reports using 1962 source cues and each Mass-form condition.",
+    "Manual or controlled vector redraw ONLY for the artworks failing family consistency that cannot be reused; user final selection gate required.",
+    "Keep existing 16 explicit 'keep' choices intact; no production icon mutation from this research branch."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema": "ao-mass-icon-family-harmonization-stage1-v1",
+  "date": "2026-10-14",
+  "status": "PALETTE_MASK_EXPERIMENT_ONLY_NOT_VISUAL_STYLE",
+  "basis": {
+    "userReview": "Ad_Orientem_Full_Mass_Icon_Review_2026-10-14.json",
+    "harmonization": "reviews/mass-icon-harmonization-24-workorders-20261014.md"
+  },
+  "rule": {
+    "discardOriginalIfRatingLessThan": 3,
+    "unrated": "NO_SELECTION",
+    "sourceCueActorMustMatch": true,
+    "existingBankImmutable": true
+  },
+  "lockedReferenceRoles": [
+    {
+      "role": "PRIEST_MODEL",
+      "asset": "assets/active/mass-v46/priest_sedilia_rich.svg",
+      "userRating": 5
+    },
+    {
+      "role": "ALTAR_CENTRE_REFERENCE",
+      "asset": "assets/active/mass-v46/priest_centre_rich.svg",
+      "userRating": 3
+    },
+    {
+      "role": "CONSECRATION_REFERENCE",
+      "asset": "assets/active/mass-v46/priest_elevation.svg",
+      "userRating": 4
+    },
+    {
+      "role": "COMMUNION_RAIL_REFERENCE",
+      "asset": "assets/active/mass-v46/priest_rail_after_rich.svg",
+      "userRating": 4
+    },
+    {
+      "role": "PREACHING_FIGURE_REFERENCE",
+      "asset": "assets/active/mass-v46/priest_ambo_rich.svg",
+      "userRating": 4
+    }
+  ],
+  "imageContract": {
+    "draftSquarePx": 1024,
+    "transparentAlphaRequired": true,
+    "colourPolicy": "UI_COLOUR_DRIVES_MASK",
+    "representations": {
+      "current": "single-channel transparent alpha mask; raster preview",
+      "target": "clean SVG shapes/paths, no embedded raster"
+    },
+    "cssRecipe": ".icon { background: currentColor; -webkit-mask: url(icon-mask.png) center / contain no-repeat; mask: url(icon-mask.png) center / contain no-repeat; }",
+    "reviewSizesPx": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "productionGate": [
+      "exact 1962 actor and gesture",
+      "vestment/altar/figure continuity",
+      "same visual baseline and density",
+      "verified alpha rather than checkerboard RGB",
+      "colour swap working on dark AND light surfaces",
+      "trace to real SVG and review path geometry",
+      "user visual acceptance before runtime use"
+    ]
+  },
+  "stageOneTechnicalWork": [
+    {
+      "id": "S_priest_incense_altar",
+      "source": "new standalone draft matching previous navy priest motif",
+      "newArtifact": "AO_Incense_Altar_Harmonization_Candidate_Tintable.png",
+      "intermediate": "Generated RGB image baked in grey checkerboard, converted by navy ink selection to transparent alpha mask",
+      "completed": [
+        "background checkerboard extracted",
+        "single dynamic tint tested",
+        "1024px centred mask"
+      ],
+      "notCompleted": [
+        "visually confirm altar exact match to accepted master",
+        "rubric and incensing action recheck",
+        "genuine vector path conversion",
+        "user artwork approval"
+      ]
+    },
+    {
+      "id": "B16",
+      "source": "AO_Mass_Icon_Review_v2_Assets/B16_tintable.png",
+      "newArtifact": "B16_mask_1024.png",
+      "completed": [
+        "normalised transparent mask",
+        "1024px centred art",
+        "palette compatibility"
+      ],
+      "notCompleted": [
+        "family harmonisation of priest/altar construction",
+        "confirmed Canon versus Confiteor hand position",
+        "actual SVG vector paths",
+        "user approval"
+      ]
+    },
+    {
+      "id": "B13",
+      "source": "AO_Mass_Icon_V3_Recropped/B13_tintable.png",
+      "newArtifact": "B13_mask_1024.png",
+      "completed": [
+        "cleaner recrop carried into common 1024px transparent mask",
+        "palette compatibility"
+      ],
+      "notCompleted": [
+        "verify true Host reception and hand placement",
+        "complete visual approval",
+        "actual SVG vector paths"
+      ]
+    }
+  ],
+  "remaining": {
+    "sourceCheckedSemantic": 8,
+    "familyStyleWorkorders": 13,
+    "diagnostic": 2,
+    "crop": 1,
+    "passedRgbaAlphaCandidates": 3,
+    "otherMissingArtwork": "NOT_YET_CERTIFIED",
+    "styleWorkordersStillOpen": 13,
+    "newIllustrationArtApproved": 0
+  },
+  "deliveryNote": "Staging masks cannot be visually approved by technical alpha/tint checks; keep discarded originals and old ornate candidates out of new selection.",
+  "mobileQA": {
+    "testedSizesPx": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "source": "AO_Mass_Harmonization_Mobile_Sizes_QA.png",
+    "maskQA": "TRUE_ALPHA_AND_CSS_TINT_PREVIEW_WORK",
+    "gestureQA": "NOT_PASSED_AT_48_OR_64_FOR_FULL_ALTAR_SCENES",
+    "interpretation": "A scene showing a full altar and priest can read as a scene but cannot be relied upon to convey delicate Eucharistic hand geometry in the narrow mobile rail.",
+    "remedy": "Preserve detailed art for expanded rubric guide; in the rail use a simplified user-reviewed silhouette or source-owned short text cue, with a strict one-state-one-surface rule. Do not auto-promote whole-scene illustrations on colour and transparency alone.",
+    "ratingPreservation": "All existing user ratings unchanged."
+  },
+  "lockedStyleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+  "visualReassessment": {
+    "oldDetailedDrafts": "POSE_REFERENCE_ONLY_NOT_VISUAL_BASELINE",
+    "confirmedPriestAnchor": "assets/active/mass-v46/priest_sedilia_rich.svg",
+    "rating5AutoConfirm": true,
+    "rating4RequiresReview": true,
+    "rating3RequiresResearch": true,
+    "rating0to2NeverReused": true,
+    "caveat": "The three alpha masks establish only tint and crop technical feasibility; their facial, vestment, altar and smoke detail fail the new minimal-family design direction. Do not promote as harmonized artwork."
+  }
+}

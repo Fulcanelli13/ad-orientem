@@ -1,0 +1,618 @@
+{
+  "schema": "ao-mass-icon-harmonization-16-repair-workorders-v1",
+  "date": "2026-10-14",
+  "phase": "PHASE_B_MASTER_DERIVATIVE_ONLY_REJECTED_GEOMETRIC_PROTOTYPES",
+  "links": {
+    "semanticLedger": "data/presentation/mass-icon-harmonization-source-resolutions-20261014.v1.json",
+    "userReviewSHA256": "edbde2bf608646cd258351274b6e545d42d88952b393c40c66492800684bc4a0"
+  },
+  "policy": {
+    "ratedLessThan3": "DISCARD_NOT_SALVAGE",
+    "unrated": "PENDING_NO_AUTOMATIC_APPROVAL",
+    "minimumFamilyQuality": 4,
+    "allowedOutput": "APPROVED_SAME_FAMILY_MONOCHROME_VECTOR_OR_TINTABLE_ALPHA_MASK",
+    "reference": [
+      "priest_sedilia_rich",
+      "priest_centre_rich",
+      "priest_elevation"
+    ],
+    "requiredSizes": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "noLiveChanges": true,
+    "noImageGenerationBeforeReuse": true,
+    "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+    "ratingThresholdRule": {
+      "3": "RESEARCH_ONLY",
+      "4": "USER_REVIEW",
+      "5": "CONFIRMED_AND_SELECTED",
+      "0-2": "REJECT_ORIGINAL"
+    },
+    "generatedDetailedDraftPolicy": "POSE_REFERENCE_ONLY_NOT_FAMILY_STANDARD",
+    "styleCorrection": "The approved family sits between hyper-detailed engraving and generic circle-head/trapezoid pictograms. All non-gesture visual parts must match the actual selected reference, including characteristic small structural detail.",
+    "designMethod": "SOURCE_EDIT_PRESERVE_DONOR_NOT_REINVENT_GENERIC_ART",
+    "prototypesRejected": [
+      "S_priest_incense_altar_min_v1.svg",
+      "B16_profound_bow_min_v1.svg",
+      "B13_receives_host_min_v1.svg"
+    ]
+  },
+  "counts": {
+    "items": 16,
+    "family": 13,
+    "diagnose": 2,
+    "crop": 1
+  },
+  "workorders": [
+    {
+      "id": "A03",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_sedilia_rich"
+      ],
+      "defect": "Hanc igitur scene uses inconsistent priest/altar rendering and unverified palms-down geometry.",
+      "repair": "Reconstruct using exact approved altar template; arms forward close over oblations, palms downward, no object held.",
+      "repairClass": "VECTOR_REFINEMENT",
+      "acceptanceGate": "TWO_PALMS_DOWN_ABOVE_OFFERINGS",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "MINIMAL_REBUILD",
+        "surface": "RAIL_GESTURE_PLUS_OPTIONAL_GUIDE_SCENE",
+        "gestureMustSurvive": "Bare hands close together, palms down directly over the offerings; sleeves 1 broad shape each.",
+        "detailsToRemove": "Do not invent additional details beyond the approved reference; retain its original structural ornaments, finger engraving, altar relief and surrounding decoration.",
+        "ceremonialGate": "Canon C0161; verify close hand spacing and downward palms before assessing style.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "A06",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_elevation"
+      ],
+      "defect": "Per ipsum illustration uses mismatched family; generated attempts tend to show major Host elevation.",
+      "repair": "Produce correct minor elevation with right hand Host just above chalice, left hand grips chalice; modest height only.",
+      "repairClass": "EXACT_GESTURE_REBUILD",
+      "acceptanceGate": "HOST_ABOVE_SLIGHTLY_RAISED_CHALICE",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "MINIMAL_REBUILD",
+        "surface": "RAIL_HOST_CHALICE_AND_GUIDE_SCENE",
+        "gestureMustSurvive": "Right hand holds Host just over chalice; left holds chalice at node; both low, no overhead elevation.",
+        "detailsToRemove": "No elaborate vessels, Host halo, carved altar or detailed face/hair.",
+        "ceremonialGate": "Canon C0204; show BOTH Host and chalice at correct relative height.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "B01",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_incense_altar_rich"
+      ],
+      "defect": "Blessing incense is confused with incensing and altar architecture varies.",
+      "repair": "Source-verify blessing over thurible; reuse existing master plus caption if action cannot read at 64px; match common altar.",
+      "repairClass": "REUSE_OR_TARGETED_REPAIR",
+      "acceptanceGate": "INCENSE_BLESSING_NOT_SWING",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_THEN_TEXT",
+        "surface": "RAIL_GENERIC_INCENSE_CUE",
+        "gestureMustSurvive": "One priest silhouette with restrained blessing hand over thurible, only if visually distinguishable.",
+        "detailsToRemove": "No tall plume, patterned thurible or full altar panorama.",
+        "ceremonialGate": "C0040/C0120 blessing, not incensation.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "B02",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "cross",
+        "priest_centre_rich"
+      ],
+      "defect": "Unnecessary detailed priest scene for paten Sign of Cross; pictorial family inconsistent.",
+      "repair": "Reuse clear cross with exact VII.3 paten-gesture wording unless source-specific hand scene improves comprehension.",
+      "repairClass": "REUSE_SYMBOL_WITH_RUBRIC",
+      "acceptanceGate": "CROSS_WITH_PATEN_NOT_HAND",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_PLUS_TEXT",
+        "surface": "RAIL_CROSS_ICON",
+        "gestureMustSurvive": "Preserve existing cross mark and state that paten is used.",
+        "detailsToRemove": "Do not build a new priest/altar scene for a brief micro-gesture.",
+        "ceremonialGate": "C0111 Sign of Cross with paten.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "B03",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich"
+      ],
+      "defect": "Paten placement scene visually inconsistent and duplicative of source-owned text.",
+      "repair": "Use selected centre image plus concise paten placement rubric; no generated microaction.",
+      "repairClass": "REUSE_WITH_RUBRIC",
+      "acceptanceGate": "PATEN_PLACED_RIGHT_UNDER_CORPORAL",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_PLUS_TEXT",
+        "surface": "RAIL_PRIEST_STATION",
+        "gestureMustSurvive": "Use accepted centre pose and exact textual paten placement; no distinct art.",
+        "detailsToRemove": "Remove the generated paten-setting scene entirely from redraw queue.",
+        "ceremonialGate": "C0111 paten placed on altar with correct location.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "B04",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_incense_people_rich"
+      ],
+      "defect": "Receiving thurible scene differs from one-family priest silhouette.",
+      "repair": "Keep actor/minister handoff text and a generic approved priest icon; commission new pose only if needed at mobile size.",
+      "repairClass": "REUSE_OR_CONDITIONAL_VARIANT",
+      "acceptanceGate": "RECEIVES_THURIBLE_NOT_INCENSES",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_THEN_TEXT",
+        "surface": "RAIL_INCENSE_CUE",
+        "gestureMustSurvive": "Priest receiving thurible; only add tiny simple server/chain handoff when readable.",
+        "detailsToRemove": "No multi-figure elaborate scene, embroidered costumes or swirling smoke.",
+        "ceremonialGate": "C0124 receives, not swings thurible.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "B16",
+      "track": "FAMILY",
+      "rating": 4,
+      "anchors": [
+        "priest_kiss_altar_rich",
+        "priest_centre_rich"
+      ],
+      "defect": "Promising profound-bow draft, but inconsistent with altar/priest reference.",
+      "repair": "Preserve waist angle while standardizing priest/altar; distinguish foot-of-altar Confiteor hands joined from Canon hands on altar; no kiss.",
+      "repairClass": "SALVAGE_POSE_REBUILD_FAMILY",
+      "acceptanceGate": "DEEP_BOW_NO_KISS",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "SIMPLIFY_EXISTING_POSE",
+        "surface": "RAIL_PROFOUND_BOW",
+        "gestureMustSurvive": "Preserve the 4/5 deep torso inclination geometry, simplify priest into one clean garment shape and featureless head.",
+        "detailsToRemove": "Do not invent additional details beyond the approved reference; retain its original structural ornaments, engraved vestments and extra detail; ensure no lip-to-altar kiss.",
+        "ceremonialGate": "Confiteor and Canon contexts have different hand placement; show the correct one or use rubric.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "AWAIT_USER_REVIEW",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "D06",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_incense_altar_rich",
+        "priest_sedilia_rich"
+      ],
+      "defect": "Thurifer depiction stylistically divergent; risks misidentifying priest as thurifer.",
+      "repair": "Create conditional kneeling thurifer incensing elevation only if text/incense cue is insufficient; maintain actual minister distinctions.",
+      "repairClass": "CONDITIONAL_MINISTER_REFERENCE",
+      "acceptanceGate": "THURIFER_NOT_PRIEST",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REUSE_PLUS_TEXT_OR_MINIMAL_MINISTER",
+        "surface": "RAIL_THURIBLE_SYMBOL",
+        "gestureMustSurvive": "Distinct simple kneeling thurifer silhouette only if needed; thurible one clear tear-drop/chain.",
+        "detailsToRemove": "No second detailed priest, incense cloud, decorative altar or full solemn panorama.",
+        "ceremonialGate": "Only at relevant incensed rites and exact minister actor.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "S_priest_procession",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_ascending_rich",
+        "priest_centre_rich"
+      ],
+      "defect": "Vestment shape/weight differs from accepted Mass priest icon family.",
+      "repair": "Match figure, garment and stroke treatment; retain only for source-indicated procession, not generic motion.",
+      "repairClass": "TARGETED_ILLUSTRATION_REPAIR",
+      "acceptanceGate": "EXPLICIT_PROCESSION_ONLY",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "SIMPLIFY_EXISTING_OR_MINIMAL_REBUILD",
+        "surface": "RAIL_PRIEST_WALKING",
+        "gestureMustSurvive": "One priest recognizable by the same minimal chasuble outline with walking direction, plus optional cross bearer if indispensable.",
+        "detailsToRemove": "No elaborate procession group, lace or church backdrop.",
+        "ceremonialGate": "Only explicit processions, not generic priest transitions.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "S_priest_incense_altar",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "priest_sedilia_rich"
+      ],
+      "defect": "User specifically reports altar architecture differs from the rest of family.",
+      "repair": "Rebuild altar geometry using selected centre/host-elevation altar, keeping incensation action only if depicted accurately.",
+      "repairClass": "COMMON_ALTAR_BACKGROUND_REPAIR",
+      "acceptanceGate": "SAME_ALTAR",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "REDRAW_MINIMAL_ALTAR_OVERLAY",
+        "surface": "RAIL_THURIBLE_GUIDE_MINIMAL_ALTAR",
+        "gestureMustSurvive": "Reconstruct same simplified altar outline as centre composition; one priest and one clear thurible motion.",
+        "detailsToRemove": "Do not invent additional details beyond the approved reference; retain its original structural ornaments, textile ornaments, hair strands, chasuble brocade, thick smoke clouds.",
+        "ceremonialGate": "Incenses altar, not incense blessing or people.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "S_other_canon",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "response",
+        "bells",
+        "priest_centre_rich"
+      ],
+      "defect": "Generic Canon pictogram lacks style continuity.",
+      "repair": "Simplify into consistent monochrome utility symbol; avoid inventing a specific priest gesture for generic section.",
+      "repairClass": "ICON_LANGUAGE_NORMALIZATION",
+      "acceptanceGate": "GENERAL_CANON_NOT_EXACT_ACTION",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "SIMPLIFY_UTILITY",
+        "surface": "RAIL_CANON_SYMBOL",
+        "gestureMustSurvive": "One sober monochrome Canon symbol or no pictogram if section title suffices.",
+        "detailsToRemove": "No illustrated altar, priest faces, icons inside borders.",
+        "ceremonialGate": "This represents the Canon section rather than a prescribed action.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "S_other_lavabo",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "lavabo",
+        "priest_centre_rich"
+      ],
+      "defect": "Existing Lavabo artwork inconsistent, overlaps B05.",
+      "repair": "One shared Offertory Lavabo master fixed once; preserve separate Communion ablutions icon and cue IDs.",
+      "repairClass": "SHARED_B05_REPAIR",
+      "acceptanceGate": "OFFERTORY_LAVABO_ONLY",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "SHARE_B05_MASTER",
+        "surface": "RAIL_HANDS_WATER",
+        "gestureMustSurvive": "A single minimalist hand-and-water/ewer cue shared with B05; priest fingertip washing at Offertory.",
+        "detailsToRemove": "No full decorated priest scene and no conflation with C0248 finger ablution.",
+        "ceremonialGate": "Identical semantic master for Offertory C0125 only.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "I_priest_blessing",
+      "track": "FAMILY",
+      "rating": 3,
+      "anchors": [
+        "priest_centre_rich",
+        "cross"
+      ],
+      "defect": "Existing investigation blessing master has inconsistent priest/altar family.",
+      "repair": "Keep investigation status; rebuild with priest facing congregation giving final blessing if proven useful; never confuse incense blessing.",
+      "repairClass": "INVESTIGATE_BEFORE_APPROVAL",
+      "acceptanceGate": "FINAL_BLESSING_NOT_INCENSE",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "RESEARCH_THEN_NEW_MINIMAL",
+        "surface": "RAIL_BLESSING_HAND",
+        "gestureMustSurvive": "Simple priest face-to-congregation silhouette with one blessing hand and minimal vestment cues, if usable; old 2/5 facing-people source NEVER reused.",
+        "detailsToRemove": "No anatomical portrait face, ornamental chasuble or excessive altar context.",
+        "ceremonialGate": "Final blessing, not blessing incense.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "S_priest_elevate_chalice",
+      "track": "DIAGNOSE",
+      "rating": 3,
+      "anchors": [
+        "priest_elevation",
+        "priest_centre_rich"
+      ],
+      "defect": "User explicitly chose revise but did not identify the defect.",
+      "repair": "Compare chalice grip, height, vestments, altar and legibility to 4/5 Host elevation; record exact defect before adjusting.",
+      "repairClass": "DIAGNOSE_THEN_TARGETED_REPAIR",
+      "acceptanceGate": "CHALICE_MAJOR_ELEVATION",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "DIAGNOSE_BEFORE_EDIT",
+        "surface": "RAIL_MAJOR_CHALICE_ELEVATION",
+        "gestureMustSurvive": "Compare selected Host elevation framing, verify chalice above priest and correct grip, keep same figure scale.",
+        "detailsToRemove": "Do not enhance details as default revision; only change demonstrated defect.",
+        "ceremonialGate": "Major chalice elevation, not drinking or minor elevation.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "S_sound_schola",
+      "track": "DIAGNOSE",
+      "rating": 3,
+      "anchors": [
+        "bells",
+        "priest_audible",
+        "response"
+      ],
+      "defect": "User requests revision without a defect label.",
+      "repair": "Check recognition at 48/64px and sound-symbol family consistency; retain if legible, otherwise redraw with same stroke family.",
+      "repairClass": "DIAGNOSE_THEN_STYLE_REPAIR",
+      "acceptanceGate": "SCHOLA_AUDIO_CUE",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "DIAGNOSE_BEFORE_EDIT",
+        "surface": "RAIL_SCHOLA_SYMBOL",
+        "gestureMustSurvive": "Test simple chorus/singing symbol against approved audible/response utility family at 48/64px.",
+        "detailsToRemove": "No faces, ornate sheet music, notes clouds or illustrated choir hall.",
+        "ceremonialGate": "Acoustic schola role, no bodily movement implied.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    },
+    {
+      "id": "B13",
+      "track": "CROP",
+      "rating": 3,
+      "anchors": [
+        "priest_communion_rich"
+      ],
+      "defect": "Crop includes neighbouring artwork, despite no explicitly flagged wrong gesture.",
+      "repair": "Recrop actual single priest scene with transparent margins; verify Host reaches mouth, not elevation, before considering promotion.",
+      "repairClass": "TECHNICAL_RECROP_THEN_VERIFY",
+      "acceptanceGate": "HOST_TO_MOUTH_NOT_ELEVATION",
+      "autoApproval": false,
+      "sourceUserReview": "2026-10-14_EXPORT",
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "repairMode": "TECHNICAL_ONLY_THEN_REVIEW",
+        "surface": "RAIL_HOST_COMMUNION",
+        "gestureMustSurvive": "Keep better single-pose crop only if Host actually contacts priest's mouth; may use text if action illegible.",
+        "detailsToRemove": "Do not invent additional details beyond the approved reference; retain its original structural ornaments, no new altar, no enlarged facial features.",
+        "ceremonialGate": "Host reception, not Host elevation.",
+        "face": "NO_PORTRAIT_FEATURES",
+        "vestments": "SIMPLE_MASTER_SILHOUETTE_ONLY",
+        "scene": "NO_ENGRAVING_OR_DECORATIVE_ALTAR",
+        "productionIconStatus": "NOT_APPROVED",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "masterParity": "MANDATORY_MUST_SHARE_VISUAL_DNA_WITH_ACTUAL_APPROVED_ORIGIN",
+        "designCorrection": "Preserve selected donor's real head/neck/chest/chaluble geometry, architectural composition and its characteristic restrained line detail. Remove excess only; do not redesign as plain circular head or anonymous cylinder body.",
+        "bannedPrototypeFamily": "reviews/mass-icon-candidates/minimal-20261014/"
+      }
+    }
+  ],
+  "sharedFixes": [
+    {
+      "id": "ALTAR_TEMPLATE",
+      "targets": [
+        "A03",
+        "A06",
+        "B01",
+        "B16",
+        "S_priest_incense_altar",
+        "S_priest_procession"
+      ],
+      "strategy": "Sample and preserve one canonical altar/chasuble composition from accepted masters; rebuild only divergent background and anatomy."
+    },
+    {
+      "id": "LAVABO_SINGLE_MASTER",
+      "targets": [
+        "B05",
+        "S_other_lavabo"
+      ],
+      "strategy": "One common Offertory Lavabo illustration; do not confuse C0125 and C0248."
+    },
+    {
+      "id": "CANON_HANDS",
+      "targets": [
+        "A03",
+        "A06"
+      ],
+      "strategy": "Verify 1962 hand-object placement before matching style. No major-elevation substitutes."
+    },
+    {
+      "id": "MINISTER_ACTOR",
+      "targets": [
+        "D06"
+      ],
+      "strategy": "Source-verify whether thurifer action is present in selected Mass form; actor must not appear to be celebrant."
+    },
+    {
+      "id": "DECORATION_STRIP",
+      "targets": [
+        "A03",
+        "A06",
+        "B16",
+        "S_priest_procession",
+        "S_priest_incense_altar",
+        "D06"
+      ],
+      "strategy": "Use approved silhouette grammar; eliminate facial modeling, hairs, lace, embroidery, carved architecture, decorative smoke and crosshatching."
+    },
+    {
+      "id": "RAIL_VS_GUIDE",
+      "targets": [
+        "A03",
+        "A06",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B16",
+        "D06",
+        "S_priest_procession",
+        "S_priest_incense_altar",
+        "S_other_canon",
+        "S_other_lavabo",
+        "I_priest_blessing",
+        "S_priest_elevate_chalice",
+        "S_sound_schola",
+        "B13"
+      ],
+      "strategy": "At 48–64px prioritize one large gesture or exact source text; keep optional minimally detailed scene in expanded rubric guide rather than shrinking a full altar illustration."
+    }
+  ]
+}

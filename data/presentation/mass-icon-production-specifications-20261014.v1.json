@@ -1,0 +1,471 @@
+{
+  "schema": "ao-mass-icon-production-spec-v1",
+  "date": "2026-10-14",
+  "pr": 1189,
+  "status": "DRAFT_SOURCE_REFERENCED_NO_ASSET_AUTHORIZATION",
+  "basis": "data/presentation/mass-icon-three-by-three-production-backlog-20261014.v1.json",
+  "sourceRefs": [
+    {
+      "id": "R62",
+      "title": "Missale Romanum (1962), Ritus servandus",
+      "url": "https://www.documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+      "authority": "NORMATIVE"
+    },
+    {
+      "id": "EN62",
+      "title": "English translation of 1962 Ritus servandus",
+      "url": "https://1962ordo.today/1962-rubrics/",
+      "authority": "READING_AID_CROSSCHECK_WITH_R62"
+    },
+    {
+      "id": "PRIEST_MATRIX",
+      "title": "Canonical source cue matrix",
+      "repoPath": "data/mass/gesture-matrix.v1.json",
+      "authority": "CUE_AUTHORITY"
+    },
+    {
+      "id": "MINISTER",
+      "title": "Conditional deacon/thurifer canon branches",
+      "repoPath": "data/research/mass-canon-minister-form-branches-20261013.json",
+      "authority": "EDITORIAL_ONLY"
+    }
+  ],
+  "workflow": {
+    "phases": [
+      {
+        "id": "G0",
+        "name": "REUSE_AUDIT",
+        "pass": "Compare candidate with selected masters and existing semantic aliases; if visually and ceremonially exact, reuse instead of redraw."
+      },
+      {
+        "id": "G1",
+        "name": "CUE_APPROVAL",
+        "pass": "For each gesture, confirm exact 1962 rubric subsection, actor, moment, Mass form and hand/object geometry; explicitly record what is prohibited."
+      },
+      {
+        "id": "G2",
+        "name": "SINGLE_IMAGE_DRAFT",
+        "pass": "Generate one standalone candidate image at a time, not an infographic, grid or text slide; reference the same approved priest/icon family; tag as unapproved."
+      },
+      {
+        "id": "G3",
+        "name": "VISUAL_ASSESSMENT",
+        "pass": "Inspect exact physical gesture, hand anatomy, style consistency, distinctness from adjacent cues, and readability at mobile sizes. Any liturgical failure rejects candidate."
+      },
+      {
+        "id": "G4",
+        "name": "VECTOR_PRODUCTION",
+        "pass": "Only after approval trace or manually construct genuine SVG paths/shapes; check transparency, absence of embedded raster, adaptable monochrome colour, and reproduction fidelity."
+      },
+      {
+        "id": "G5",
+        "name": "INTEGRATION_SEPARATE",
+        "pass": "Use explicit separately reviewed PR, source cue/minister owner/form/time condition, and mobile regressions. No original master overwritten."
+      }
+    ],
+    "batchSize": 3,
+    "remainingBatchSizes": [
+      3,
+      3,
+      2
+    ],
+    "batches": [
+      [
+        "B10",
+        "B11",
+        "B16"
+      ],
+      [
+        "A03",
+        "A06",
+        "B14"
+      ],
+      [
+        "D02",
+        "D06"
+      ]
+    ],
+    "changeControl": "Only generate another batch after comparing and approving the previous batch; each icon individually rejected or approved.",
+    "baseApprovedFamily": "42 user-selected images from mass-icon-user-selections-20261010.v1.json, only selected priest-at-altar exemplars are style references. Existing original masters must themselves be inspected for mismatched style.",
+    "noImageGeneratorShortcut": "Generated PNG or raster embedded inside SVG is not vector art; none enter runtime before vector/QA gate.",
+    "output": {
+      "conceptCanvas": "1024x1024",
+      "background": "TRUE_ALPHA",
+      "palette": "ONE_DARK_NAVY_PLUS_WHITE_OR_TRANSPARENT_SAMPLED_FROM_SELECTED_REFERENCE_NO_ASSUMED_HEX",
+      "character": "SAME_PRIEST_AS_APPROVED_MASTER",
+      "vestment": "UNCHANGED_ROMAN_CHASUBLE_ALB_AND_ILLUSTRATIVE_CROSS_AND_LACE_POSITION",
+      "altar": "IDENTICAL_HEIGHT_WIDTH_CRUCIFIX_AND_CANDLE_ARCHITECTURE_EXCEPT_ACTION_OBJECTS",
+      "camera": "REAR_OR_APPROVED_REAR_THREE_QUARTER_ONLY_IF_GESTURE_WOULD_OTHERWISE_BE_INVISIBLE",
+      "form": "SINGLE_ICON_NO_TEXT_NO_LEGEND_NO_MULTIPLE_FRAMES",
+      "framing": "REUSE_SELECTED_MASTER_PROPORTIONS_AND_NEGATIVE_SPACE",
+      "mobileChecksPx": [
+        48,
+        64,
+        96,
+        128
+      ],
+      "colourReactivity": "SINGLE_TINT_WITH_TRANSPARENCY_REQUIRED_AT_FINAL_VECTOR_STAGE"
+    },
+    "gates": {
+      "liturgicalCorrectness": "MANDATORY_5_OF_5",
+      "actorOwnership": "MANDATORY_5_OF_5",
+      "familyContinuity": "MIN_4_OF_5",
+      "handAndObjectClarity": "MIN_4_OF_5",
+      "mobileLegibility": "MIN_4_OF_5_AT_64PX",
+      "alphaCheck": "ACTUAL_TRANSPARENCY_NOT_PRINTED_CHECKERBOARD",
+      "vectorCheck": "REAL_PATHS_SHAPES_NO_IMAGE_EMBEDDING",
+      "status": "UNAPPROVED_UNTIL_USER_ACCEPTS"
+    },
+    "allowTextFallback": true,
+    "prohibitions": [
+      "NO_MAJOR_ELEVATION_AS_MINOR_ELEVATION",
+      "NO_HOST_HOLDING_IN_HANC_IGITUR",
+      "NO_GENERIC_COMMUNION_AS_FRACTION",
+      "NO_PRIEST_TREATED_AS_DEACON_OR_THURIFER",
+      "NO_GENERATED_INFOGRAPHIC_INSTEAD_OF_ICON",
+      "NO_NONCANONICAL_ATTRIBUTES_NO_UNREVIEWED_1962_RUBRICS"
+    ]
+  },
+  "icons": [
+    {
+      "id": "B10",
+      "name": "Fraction of the Host",
+      "batch": 1,
+      "cues": [
+        "AO.SM.C0216"
+      ],
+      "actor": "PRIEST",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA",
+        "SOLEMN"
+      ],
+      "section": "Ritus X.2",
+      "sourceAnchor": "While saying Per eumdem Dominum nostrum Jesum Christum Filium tuum, the priest takes the Host by thumb and index finger of each hand and breaks it in the middle over the chalice.",
+      "referenceAssets": [
+        "assets/active/mass-v46/fraction.svg",
+        "assets/active/mass-v46/commingling.svg",
+        "assets/active/mass-v46/communion.svg"
+      ],
+      "reuseFailure": "Current three named SVGs are byte-identical; require actual visual inspection rather than trusting filenames.",
+      "mustShow": [
+        "Same vested priest in altar-centre context",
+        "Both hands grasping a single consecrated Host between thumb and index finger",
+        "Host visibly opening into two equal halves during fracture",
+        "Open chalice directly below Host while priest breaks it, not elevated into the air",
+        "Paten on corporal only if clearly required for composition"
+      ],
+      "mustNotShow": [
+        "Host at eye/head height",
+        "Host being consumed",
+        "Particle dropping into chalice (that is B11)",
+        "Host exploding, crumb shower, invented halos",
+        "Chalice held in one of the same two hands holding the Host"
+      ],
+      "poseGuidance": "Prioritise Host fingers/hand geometry; modest rear three-quarter angle allowed if rear view hides action. Keep altar anchors identical.",
+      "visibilityTest": "At 64px distinguish two opposed thumb/index finger pairs and Host splitting ABOVE chalice.",
+      "sourceIds": [
+        "R62",
+        "EN62",
+        "PRIEST_MATRIX"
+      ],
+      "status": "CANDIDATE_NEW_ART_PENDING_VISUAL_REUSE_VERIFICATION"
+    },
+    {
+      "id": "B11",
+      "name": "Commingling of the Sacred Species",
+      "batch": 1,
+      "cues": [
+        "AO.SM.C0221"
+      ],
+      "actor": "PRIEST",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA",
+        "SOLEMN"
+      ],
+      "section": "Ritus X.2",
+      "sourceAnchor": "After three crosses with the small particle at Pax Domini, the priest places THAT PARTICLE into the chalice while saying Haec commixtio; the left hand holds the chalice by its node.",
+      "referenceAssets": [
+        "assets/active/mass-v46/commingling.svg",
+        "assets/active/mass-v46/fraction.svg"
+      ],
+      "reuseFailure": "Current commingling/fraction/communion all share identical bytes.",
+      "mustShow": [
+        "Same vested celebrant, identical altar and viewpoint as B10",
+        "Right thumb and index delicately releasing one SMALL Eucharistic particle inside rim of uncovered chalice",
+        "Left hand firmly steadying chalice at node, not holding Host",
+        "Tiny particle passing into cup, clearly different from breaking the larger Host",
+        "Object composition around priest's hands at altar level"
+      ],
+      "mustNotShow": [
+        "Both hands breaking Host",
+        "Whole round Host above chalice",
+        "Major/minor elevation",
+        "Particle floating far above rim",
+        "Priest drinking chalice (that is B14)",
+        "Two pieces being dropped"
+      ],
+      "poseGuidance": "Maintain full-size common figure but emphasise hand-to-rim spatial contact; controlled rear three-quarter angle only when required.",
+      "visibilityTest": "At 64px viewer understands small particle goes into chalice, not Host fracture or elevation.",
+      "sourceIds": [
+        "R62",
+        "EN62",
+        "PRIEST_MATRIX"
+      ],
+      "status": "CANDIDATE_NEW_ART_PENDING_VISUAL_REUSE_VERIFICATION"
+    },
+    {
+      "id": "B16",
+      "name": "Profound priest bow, distinct from altar kiss",
+      "batch": 1,
+      "cues": [
+        "AO.SM.C0016",
+        "AO.SM.C0150",
+        "AO.SM.C0187"
+      ],
+      "actor": "PRIEST",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA",
+        "SOLEMN"
+      ],
+      "section": "Ritus III.7, VIII.1, IX.1",
+      "sourceAnchor": "At Confiteor he bows profoundly at foot of altar with joined hands. At Te igitur and Supplices te rogamus he bows profoundly at altar, with hands placed on altar per the corresponding rite. These contexts differ.",
+      "referenceAssets": [
+        "assets/active/mass-v46/priest_profound_bow_rich.svg",
+        "assets/active/mass-v46/priest_kiss_altar_rich.svg",
+        "assets/active/mass-v46/profound_bow.svg"
+      ],
+      "reuseFailure": "Priest profound-bow-rich SVG is byte-identical to priest kiss-altar-rich; cannot certify distinct meaning.",
+      "mustShow": [
+        "Same priest and Roman vestment proportions",
+        "Clearly deep waist and head inclination",
+        "Sufficient distance from face to altar surface to show NO kissing/contact with lips",
+        "Maintain hands according to depicted context: for first Canon-stage variant, hands on altar; at Confiteor hands joined at chest",
+        "Bend visible from modest rear three-quarter view if strict rear hides angle"
+      ],
+      "mustNotShow": [
+        "Lips pressed against altar",
+        "Genuflection or knee lowered",
+        "Small head-only bow",
+        "Priest holding Host/chalice",
+        "One unqualified hand pose silently claimed accurate for both altar and foot-of-altar contexts"
+      ],
+      "poseGuidance": "Create Canon-context version first for C0150 and C0187, while C0016 uses text with existing posture icon or a separately reviewed hand-position variant; never claim identical hands across contexts.",
+      "visibilityTest": "At 64px torso is clearly bent, visually distinct from kiss-altar master.",
+      "sourceIds": [
+        "R62",
+        "EN62",
+        "PRIEST_MATRIX"
+      ],
+      "status": "CANDIDATE_CORRECTIVE_ART_PENDING_REUSE"
+    },
+    {
+      "id": "A03",
+      "name": "Hanc igitur hands over oblations",
+      "batch": 2,
+      "cues": [
+        "AO.SM.C0161"
+      ],
+      "actor": "PRIEST",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA",
+        "SOLEMN"
+      ],
+      "section": "Ritus VIII.4",
+      "sourceAnchor": "At Hanc igitur priest places hands close together over the offerings with bare palms downward towards Host and chalice, until Per Christum Dominum nostrum.",
+      "referenceAssets": [
+        "assets/active/mass-v46/priest_centre_rich.svg"
+      ],
+      "reuseFailure": "Earlier generated image was accepted as a STYLE DIRECTION; hand gesture and liturgical precision still require review.",
+      "mustShow": [
+        "Both hands close together, extended forward and above the oblations, palms downward",
+        "Neither Host nor chalice held",
+        "Same priest and same altar as approved icon family"
+      ],
+      "mustNotShow": [
+        "Arms widely spread or cruciform",
+        "Hands resting on altar ledge",
+        "Palms upward",
+        "Host held or elevated"
+      ],
+      "poseGuidance": "Same rear view; framing must not hide fingers at altar edge.",
+      "visibilityTest": "At 64px hands can be distinguished above altar, not merged into altar edge.",
+      "sourceIds": [
+        "R62",
+        "EN62",
+        "PRIEST_MATRIX"
+      ],
+      "status": "CANDIDATE_REFINE_ALREADY_STYLE_ACCEPTED_NOT_RUBRIC_APPROVED"
+    },
+    {
+      "id": "A06",
+      "name": "Minor elevation Per ipsum",
+      "batch": 2,
+      "cues": [
+        "AO.SM.C0204"
+      ],
+      "actor": "PRIEST",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA",
+        "SOLEMN"
+      ],
+      "section": "Ritus IX.3",
+      "sourceAnchor": "Right hand holds Host above open chalice, left hand holds chalice at node; BOTH raised only somewhat at omnis honor et gloria after preceding crosses with Host.",
+      "referenceAssets": [
+        "assets/active/mass-v46/priest_elevation.svg",
+        "assets/active/mass-v46/priest_elevate_host_rich.svg",
+        "assets/active/mass-v46/priest_elevate_chalice_rich.svg"
+      ],
+      "reuseFailure": "Prior generated drafts erroneously depicted MAJOR elevation; all rejected.",
+      "mustShow": [
+        "Host separately identifiable and just above a clearly visible chalice",
+        "Right hand holds Host, left hand holds chalice node",
+        "Both objects lifted only modestly over the altar at chest/altar height",
+        "No simultaneous holding of Host and chalice by both hands"
+      ],
+      "mustNotShow": [
+        "Host overhead above priest's head",
+        "Host elevated near crucifix",
+        "Chalice missing",
+        "Both hands holding Host as in major elevation",
+        "Large elevation gesture"
+      ],
+      "poseGuidance": "Rear-three-quarter hand closeup MAY be considered only if scene retains one-family altar silhouette.",
+      "visibilityTest": "At 64px Host above visibly separate chalice, and low height unmistakeable.",
+      "sourceIds": [
+        "R62",
+        "EN62",
+        "PRIEST_MATRIX"
+      ],
+      "status": "CANDIDATE_NEW_REQUIRES_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "B14",
+      "name": "Priest receives Precious Blood",
+      "batch": 2,
+      "cues": [
+        "AO.SM.C0234"
+      ],
+      "actor": "PRIEST",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA",
+        "SOLEMN"
+      ],
+      "section": "Ritus X.5",
+      "sourceAnchor": "Priest signs himself with chalice then raises the chalice to his lips to drink Precious Blood; paten supported beneath chalice in left hand.",
+      "referenceAssets": [
+        "assets/active/mass-v46/chalice_elevation.svg",
+        "assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+        "assets/active/mass-v46/priest_communion_rich.svg"
+      ],
+      "reuseFailure": "Elevation-of-chalice image is not the same as Communion from chalice.",
+      "mustShow": [
+        "Chalice lip touches celebrant's mouth as he drinks, not held in the air",
+        "Left hand supports paten beneath the chalice",
+        "Right hand at chalice stem/node, face inclined towards cup",
+        "Same alb/chasuble and context"
+      ],
+      "mustNotShow": [
+        "Chalice extended high to congregation",
+        "Host held in other hand",
+        "Second chalice",
+        "Modern communion vessel"
+      ],
+      "poseGuidance": "Rear-three-quarter view to reveal cup-to-mouth contact without changing character.",
+      "visibilityTest": "At 64px viewer reads drinking, not blessing/elevating chalice.",
+      "sourceIds": [
+        "R62",
+        "EN62"
+      ],
+      "status": "CANDIDATE_NEW_PENDING_EXISTING_COMMUNION_MASTER_CHECK"
+    },
+    {
+      "id": "D02",
+      "name": "Deacon lifts celebrant's chasuble",
+      "batch": 3,
+      "cues": [
+        "AO.SM.C0174",
+        "AO.SM.C0181"
+      ],
+      "actor": "DEACON",
+      "forms": [
+        "SOLEMN"
+      ],
+      "section": "Ritus VIII.8",
+      "sourceAnchor": "Deacon kneels at priest's right on upper step during elevations and raises rear fringes of celebrant's chasuble to assist.",
+      "referenceAssets": [
+        "assets/active/mass-v46/priest_elevate_host_rich.svg",
+        "assets/active/mass-v46/priest_elevate_chalice_rich.svg"
+      ],
+      "reuseFailure": "Single priest elevation cannot depict a second minister; Low Mass server may assist but is a distinct actor.",
+      "mustShow": [
+        "Same celebrant at altar with visibly separate deacon at his right",
+        "Deacon in dalmatic, not identical chasuble",
+        "Deacon kneeling on top step while lifting back of priest's chasuble",
+        "Celebrant's raised Host/chalice contextual elevation, selected one representative not both simultaneously"
+      ],
+      "mustNotShow": [
+        "Deacon replacing priest",
+        "Thurifer in place of deacon",
+        "Deacon wearing chasuble",
+        "Both Host and chalice held simultaneously",
+        "Universal attribution to Low Mass"
+      ],
+      "poseGuidance": "Maintain central altar composition, scale smaller secondary minister proportionally; if illegible at 64px, use short minister rubric instead.",
+      "visibilityTest": "Second minister and raised chasuble visibly distinct at 96px; at 64px may require text fallback.",
+      "sourceIds": [
+        "R62",
+        "EN62",
+        "MINISTER"
+      ],
+      "status": "EDITORIAL_ONLY_NO_LIVE_ACTION"
+    },
+    {
+      "id": "D06",
+      "name": "Thurifer incenses at elevations",
+      "batch": 3,
+      "cues": [
+        "AO.SM.C0174",
+        "AO.SM.C0181"
+      ],
+      "actor": "THURIFER",
+      "forms": [
+        "SOLEMN",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "section": "Ritus VIII.8",
+      "sourceAnchor": "Thurifer kneels at Epistle side and thrice incenses elevated Host and similarly elevated chalice in incense branch, not universally.",
+      "referenceAssets": [
+        "assets/active/mass-v46/priest_incense_altar_rich.svg",
+        "assets/active/mass-v46/priest_incense_people_rich.svg"
+      ],
+      "reuseFailure": "Existing priest incensation artworks depict a different minister/target.",
+      "mustShow": [
+        "Thurifer at Epistle side, kneeling, in surplice over cassock",
+        "Thurifer with thurible incensing toward raised Sacred Species",
+        "Celebrant background at altar, not turning to incense",
+        "One representative elevation context, not both simultaneously"
+      ],
+      "mustNotShow": [
+        "Priest as thurifer",
+        "Thurifer standing waving incense at congregation",
+        "Candles or Host substituted for thurible",
+        "Mandatory incense in Low Mass",
+        "Copied unrelated incensation master"
+      ],
+      "poseGuidance": "Contextual kneeling figure and clearly identifiable thurible; favor accuracy over extraneous detail.",
+      "visibilityTest": "At 64px thurible action distinct; if not readable at rail size, use simple existing incense cue + minister rubric rather than introduce misleading pictogram.",
+      "sourceIds": [
+        "R62",
+        "EN62",
+        "MINISTER"
+      ],
+      "status": "EDITORIAL_ONLY_NO_LIVE_ACTION"
+    }
+  ]
+}

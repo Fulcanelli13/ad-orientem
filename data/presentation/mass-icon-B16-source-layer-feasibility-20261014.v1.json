@@ -1,0 +1,34 @@
+{
+  "schema": "ao-b16-source-preserving-edit-feasibility-v1",
+  "date": "2026-10-14",
+  "status": "SOURCE_PIXEL_LAYERS_PRODUCED_EDIT_ATTEMPT_REJECTED_BLOCKED_BY_FLATTENED_SOURCE",
+  "source": {
+    "repo": "Fulcanelli13/ad-orientem",
+    "path": "assets/active/mass-v46/priest_kiss_altar_rich.svg",
+    "identicalAlias": "assets/active/mass-v46/priest_profound_bow_rich.svg",
+    "embeddedPNG_SHA256": "9121458d217b075492a1bd50cd2c2b56bfb65877c7d69f21004577a4ad72dff2",
+    "pixelSize": [
+      1024,
+      1024
+    ],
+    "confirmedByteIdentical": true
+  },
+  "familyCorrection": {
+    "reference": "Current v4.6 black-alpha priest_sedilia_rich (user 5/5)",
+    "excluded": "Older sepia priest family embedded in same v1.41 prototype."
+  },
+  "result": {
+    "sourceLayered": "AO_B16_Exact_v46_Source_Layers_UNAPPROVED.ora",
+    "containerOnly": true,
+    "imageReconstructionPixelExact": true,
+    "layers": [
+      "Head and collar",
+      "Priest body and vestments",
+      "Altar"
+    ],
+    "editTrial": "Localized head-lift with original altar held fixed tested, but visually failed; source face and hands cannot be separated convincingly without manually reconstructing shared contours.",
+    "newB16Accepted": false,
+    "productionBindingsChanged": false
+  },
+  "requiredNextAction": "Edit the head/neck and hand-to-altar boundary manually in a raster/vector editor while preserving source v4.6 pixel contours, then seek user rating. No generic redrawing or old sepia references; if exact hand geometry cannot be restored, use source rubric/text until approved."
+}

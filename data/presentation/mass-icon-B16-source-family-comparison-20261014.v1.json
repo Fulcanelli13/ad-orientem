@@ -1,0 +1,44 @@
+{
+  "schema": "ao-b16-source-family-comparison-v1",
+  "date": "2026-10-14",
+  "status": "NO_NEW_ICON_APPROVED_SOURCE_REUSE_REVIEW_ONLY",
+  "donorSource": {
+    "libraryFile": "Ad_Orientem_04Oct2026_Sung_Mass_DEFINITIVE_PROTO_v1.41_MOTION_HARDENING.html",
+    "embeddedAssetKeys": [
+      "priest_sedilia_rich",
+      "priest_centre_rich",
+      "priest_kiss_altar_rich"
+    ],
+    "note": "Real embedded PNGs from frozen prototype; not generated approximation."
+  },
+  "ratingProvenance": {
+    "priest_sedilia_rich": 5,
+    "priest_centre_rich": 3,
+    "priest_kiss_altar_rich": 3,
+    "rule": "The new B16 reuse assessment cannot overwrite these user ratings."
+  },
+  "target": {
+    "id": "B16",
+    "cueIds": [
+      "AO.SM.C0150",
+      "AO.SM.C0187"
+    ],
+    "gesture": "Profound bow at Roman Canon, hands placed on altar, face not kissing altar.",
+    "separateCue": "AO.SM.C0016 (Confiteor at foot of altar) requires separate hand/station handling"
+  },
+  "observations": [
+    "The authentic family is warm ivory with dark brown/black contour linework, restrained but real drapery/chasuble contour, original altar architecture, not navy geometric block pictograms.",
+    "The old priest_kiss_altar_rich master is the nearest in-family pose, but using it unchanged as profound bow would misrepresent distinct bow/kiss actions.",
+    "The generative B16 image recreated a new frontal altar composition and ornate lace/columns, inconsistent with actual donor altar and artist.",
+    "The next generative attempt reverted to a navy thurible image, not a B16 bow; excluded from candidate set.",
+    "A mechanically faithful image would retain the original priest and altar pixels outside the gesture regions and modify head/neck/hand contact deliberately, with the separation from altar visually readable at mobile size.",
+    "No new artwork has passed the family-parity or rubric-accuracy gate; no icon should be activated."
+  ],
+  "recommendation": "Use original visual donor for manual source-preserving edit or keep a short source-owned bow rubric until specific artwork is approved; no new generated family.",
+  "reviewArtifact": "AO_B16_Actual_Approved_Family_Review_2026-10-14.html (conversation artifact; self-contained, not pushed to repo)",
+  "productionMutations": {
+    "reader": false,
+    "iconBank": false,
+    "existingSvg": false
+  }
+}

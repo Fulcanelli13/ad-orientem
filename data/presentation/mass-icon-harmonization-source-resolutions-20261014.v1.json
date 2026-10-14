@@ -1,0 +1,297 @@
+{
+  "schema": "ao-mass-icon-harmonization-source-resolutions-v1",
+  "date": "2026-10-14",
+  "status": "DRAFT_SOURCE_CHECKED_MINIMAL_FAMILY_POLICY_ATTACHED_NO_RUNTIME_CHANGES",
+  "review": {
+    "file": "Ad_Orientem_Full_Mass_Icon_Review_2026-10-14.json",
+    "sha256": "edbde2bf608646cd258351274b6e545d42d88952b393c40c66492800684bc4a0",
+    "hardDiscardRatingLessThan": 3,
+    "ratingSemantics": {
+      "3": "RESEARCH_ONLY",
+      "4": "REQUIRES_USER_REVIEW",
+      "5": "AUTO_CONFIRMED_AND_SELECTED",
+      "0-2": "REJECT_PERMANENTLY_ORIGINAL"
+    }
+  },
+  "counts": {
+    "records": 90,
+    "rated": 71,
+    "discard": 12,
+    "retained": 59,
+    "unrated": 19,
+    "structuralRework": 24
+  },
+  "groups": {
+    "semantic": [
+      "A04",
+      "A05",
+      "B05",
+      "B06",
+      "B07",
+      "B09",
+      "S_priest_epistle",
+      "S_priest_gospel"
+    ],
+    "family": [
+      "A03",
+      "A06",
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B16",
+      "D06",
+      "S_priest_procession",
+      "S_priest_incense_altar",
+      "S_other_canon",
+      "S_other_lavabo",
+      "I_priest_blessing"
+    ],
+    "diagnostic": [
+      "S_priest_elevate_chalice",
+      "S_sound_schola"
+    ],
+    "crop": [
+      "B13"
+    ]
+  },
+  "discardIds": [
+    "S_you_head_bow",
+    "S_priest_facing_people",
+    "S_priest_genuflect",
+    "S_sound_priest_silent",
+    "S_other_ao_live_head_bow",
+    "I_priest_foot",
+    "I_priest_return_altar",
+    "I_priest_profound_bow",
+    "I_other_commingling",
+    "I_other_communion",
+    "I_other_epistle",
+    "I_other_gospel"
+  ],
+  "unratedIds": [
+    "B08",
+    "B10",
+    "B11",
+    "B12",
+    "B15",
+    "B17",
+    "B18",
+    "B19",
+    "B20",
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "D01",
+    "D03",
+    "D04",
+    "D05",
+    "I_other_fraction",
+    "I_other_incense"
+  ],
+  "semantics": [
+    {
+      "id": "A04",
+      "cueIds": [
+        "AO.SM.C0169"
+      ],
+      "rubricSection": "VIII.4",
+      "meaning": "The priest already holds the Host between thumb and index of both hands, briefly raises his eyes to heaven, then lowers them.",
+      "defect": "RAISES EYES falsely maps to an arms-raised priest image.",
+      "repair": "Use selected priest-centre artwork with an exact raised-eyes rubric until a faithful hand-and-eye illustration is approved.",
+      "route": "TEXT_WITH_APPROVED_GENERIC_PRIEST",
+      "userRating": 3,
+      "actor": "PRIEST",
+      "visualApproval": "PENDING",
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "REUSE_AND_TEXT",
+        "sceneSpecification": "One minimalist priest centre silhouette only; add precise eyes-up rubric. Do not depict raised hands.",
+        "forbid": "N/A — no new drawing for tiny eye shift.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
+    },
+    {
+      "id": "A05",
+      "cueIds": [
+        "AO.SM.C0193"
+      ],
+      "rubricSection": "IX.2",
+      "meaning": "Priest raises and joins hands near face while eyes are directed to the Sacrament on altar for remembrance of the dead.",
+      "defect": "priest_centre_hands_rich is visually identical to priest_centre_rich; wrong section and gesture flagged.",
+      "repair": "Use explicit Memento of Dead rubric, then seek one anatomically faithful hands-near-face variant if reusable art fails.",
+      "route": "TEXT_THEN_SINGLE_FAMILY_VARIANT",
+      "userRating": 3,
+      "actor": "PRIEST",
+      "visualApproval": "PENDING",
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "RESEARCH_THEN_MINIMAL_GESTURE",
+        "sceneSpecification": "If picture needed, minimalist priest with two joined hands near face and gaze toward the Sacrament, not a Canon scene.",
+        "forbid": "No portrait-level gaze details, no engraved altar.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
+    },
+    {
+      "id": "B05",
+      "cueIds": [
+        "AO.SM.C0125"
+      ],
+      "rubricSection": "VII.6",
+      "meaning": "At Epistle side the priest washes his fingertips while the minister pours water at Offertory Lavabo.",
+      "defect": "Generated B05 gesture and section wrong; generic WASHES / PURIFIES also conflates post-Communion ablutions.",
+      "repair": "Reuse existing Lavabo only after its pose/family correction; C0247–C0248 ablutions must have independent source-owned imagery.",
+      "route": "REUSE_WITH_CUE_AND_STAGE_GUARD",
+      "userRating": 3,
+      "actor": "PRIEST",
+      "visualApproval": "PENDING",
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "SHARED_MINIMAL_LAVABO",
+        "sceneSpecification": "If visual needed, separate hands/water over ewer, not an entire embroidered priest scene; same master reused for S_other_lavabo.",
+        "forbid": "No complete decorated sanctuary; no post-Communion ablution substitution.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
+    },
+    {
+      "id": "B06",
+      "cueIds": [
+        "AO.SM.C0115"
+      ],
+      "rubricSection": "VII.5",
+      "meaning": "After crossing with the chalice, priest sets it on centre of corporal behind Host.",
+      "defect": "Generated action/section wrong; chalice-elevation imagery is not chalice placement.",
+      "repair": "Retain nonprimary AO.RUB.C0115.02 with one-line rubric; no unique artwork needed.",
+      "route": "RUBRIC_WITH_CENTRE_ICON",
+      "userRating": 3,
+      "actor": "PRIEST",
+      "visualApproval": "PENDING",
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "STATION_REUSE_PLUS_TEXT",
+        "sceneSpecification": "Existing simple priest centre icon and short placement rubric; no special vessel drawing.",
+        "forbid": "No ornament or depicted chalice elevation.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
+    },
+    {
+      "id": "B07",
+      "cueIds": [
+        "AO.SM.C0115",
+        "AO.SM.C0181"
+      ],
+      "rubricSection": "VII.5 / VIII.7–8",
+      "meaning": "Offertory pall covering and post-Chalice-elevation pall covering are separate; at Solemn Mass an assigned deacon assists.",
+      "defect": "Wrong artwork and phase; combined label ignores form-specific priest/deacon ownership.",
+      "repair": "Keep AO.RUB.C0115.03 and C0181.04 separately, actor/form gated; use short rubric instead of unapproved action image.",
+      "route": "STAGE_AND_ACTOR_GATED_RUBRIC",
+      "userRating": 3,
+      "actor": "PRIEST",
+      "visualApproval": "PENDING",
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "STATION_REUSE_PLUS_TEXT",
+        "sceneSpecification": "Existing general station/Canon cue and explicitly source-owned pall action label, appropriate actor and form.",
+        "forbid": "No multi-person full sanctuary scene for microaction.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
+    },
+    {
+      "id": "B09",
+      "cueIds": [
+        "AO.SM.C0174"
+      ],
+      "rubricSection": "VIII.5–6",
+      "meaning": "After major elevation priest replaces Host with RIGHT hand on corporal before genuflection.",
+      "defect": "Artwork repeats elevation rather than showing descent, and crop is flagged.",
+      "repair": "Use distinct nonprimary AO.RUB.C0174.04 text; never show Host-elevation image as replacing Host.",
+      "route": "RUBRIC_NOT_FAKE_ELEVATION",
+      "userRating": 3,
+      "actor": "PRIEST",
+      "visualApproval": "PENDING",
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "STATION_REUSE_PLUS_TEXT",
+        "sceneSpecification": "Retain major elevation only at elevation moment. After it, minimal priest cue plus text 'Replaces Host' and then 'Genuflects'.",
+        "forbid": "No repeated raised-Host picture pretending to show descent.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
+    },
+    {
+      "id": "S_priest_epistle",
+      "cueIds": [
+        "AO.SM.C0042",
+        "AO.SM.C0072",
+        "AO.SM.C0112",
+        "AO.SM.C0113",
+        "AO.SM.C0253"
+      ],
+      "rubricSection": "ALTAR_EPISTLE_MISSAL",
+      "meaning": "Epistle station is on congregation RIGHT when facing altar.",
+      "defect": "User reports currently named Epistle illustration depicts Gospel side.",
+      "repair": "Preview the existing priest_gospel_rich artwork as Epistle without changing source station IDs; verify visual orientation before binding.",
+      "route": "RECIPROCAL_ART_SWAP_PREVIEW",
+      "userRating": 3,
+      "actor": "PRIEST",
+      "visualApproval": "PENDING",
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "CONDITIONAL_EXISTING_SWAP",
+        "sceneSpecification": "Use opposite existing pictorial master provisionally; validate priest and Missal appear on congregation's right before approval.",
+        "forbid": "No asset mirroring, ornate redraw or alteration of station identity.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
+    },
+    {
+      "id": "S_priest_gospel",
+      "cueIds": [
+        "AO.SM.C0082",
+        "AO.SM.C0267"
+      ],
+      "rubricSection": "ALTAR_GOSPEL_MISSAL",
+      "meaning": "Gospel station is on congregation LEFT when facing altar.",
+      "defect": "User reports currently named Gospel illustration depicts Epistle side.",
+      "repair": "Preview existing priest_epistle_rich artwork as Gospel without changing source station IDs; verify visual orientation before binding.",
+      "route": "RECIPROCAL_ART_SWAP_PREVIEW",
+      "userRating": 3,
+      "actor": "PRIEST",
+      "visualApproval": "PENDING",
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "CONDITIONAL_EXISTING_SWAP",
+        "sceneSpecification": "Use opposite existing pictorial master provisionally; validate priest and Missal appear on congregation's left before approval.",
+        "forbid": "No asset mirroring, ornate redraw or alteration of station identity.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
+    }
+  ],
+  "knownReaderHazards": [
+    "RAISES EYES maps to priest_centre_arms_rich: eyes-only cue has wrongly raised arms.",
+    "WASHES / PURIFIES maps all washing to lavabo: post-Communion ablutions must stay separate.",
+    "TURNS TO MISSAL maps to Epistle regardless of source-owned priest station.",
+    "TURNS TO ALTAR uses a 0/5 original.",
+    "GENUFLECTS uses a 2/5 original priest figure."
+  ],
+  "sources": {
+    "normativeLatin": "https://www.documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+    "englishReadingAid": "https://1962ordo.today/1962-rubrics/",
+    "stationOrientation": "https://www.austinlatinmass.org/wp-content/uploads/2021/08/IntroLatinMass-080621F.pdf"
+  }
+}
