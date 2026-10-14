@@ -41,6 +41,18 @@ for(const n of ["022","032"])
  assert.equal(by.get("AO.CANON.R62."+n).displaySurface,"FOCUS_WORDS_NO_DUPLICATE");
 for(const n of ["026","040"])
  assert.equal(by.get("AO.CANON.R62."+n).reviewCode,"PERSISTENT_STATE");
+for(const [n,word] of [
+ ["022","pronounces the words of consecration"],
+ ["025","then makes his second genuflection"],
+ ["027","server rings the bell"],
+ ["032","pronounces the words of consecration"],
+ ["033","first genuflection in adoration"],
+ ["062","server rings a warning bell"],
+]){
+ const copy=witnesses.bilingual.rows.find(x=>x.actionId==="AO.CANON.R62."+n);
+ assert.ok(copy.guideDraft.en.includes(word),"Substantive 1962 ceremonial English copy "+n);
+ assert.doesNotMatch(copy.guideDraft.en,/\\b(?:reader|scroll|source trigger|implementation|render|dashboard|not the priest's gesture)\\b/i);
+}
 const controller=createCanon29FlaggedAdjudicationController(witnesses);
 assert.equal(controller.project().rows.length,0);
 assert.equal(controller.project({editorialPreview:true,form:"INVALID"}).rows.length,0);
