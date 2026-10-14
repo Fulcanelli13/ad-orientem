@@ -9,7 +9,7 @@ on:
       - '.github/workflows/lanslots-1897-full-ocr-census.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: lanslots-ocr-census-${{ github.ref }}
@@ -91,31 +91,6 @@ jobs:
             writeFileSync(dir+"acquisition-report.v1.json",JSON.stringify(report,null,2)+"\n");
             console.log("LANSLOTS_OCR_REPORT="+JSON.stringify(report));
           '
-      - name: Preserve the verified public-domain OCR bytes in source-control research archive
-        if: github.event_name == 'push'
-        shell: bash
-        run: |
-          set -euo pipefail
-          dest="data/research/archive"
-          mkdir -p "$dest"
-          cp artifacts/lanslots-1897-full-ocr/illustratedexpla00lans_djvu.txt "$dest/lanslots-1897-original-ocr.txt"
-          cp artifacts/lanslots-1897-full-ocr/acquisition-report.v1.json "$dest/lanslots-1897-original-ocr-acquisition.v1.json"
-          node --input-type=module -e '
-            import {readFileSync} from "node:fs";
-            import {createHash} from "node:crypto";
-            const source=readFileSync("data/research/archive/lanslots-1897-original-ocr.txt");
-            const report=JSON.parse(readFileSync("data/research/archive/lanslots-1897-original-ocr-acquisition.v1.json","utf8"));
-            if(source.length!==report.bytes || createHash("sha256").update(source).digest("hex")!==report.sha256)process.exit(1);
-          '
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "$dest/lanslots-1897-original-ocr.txt" "$dest/lanslots-1897-original-ocr-acquisition.v1.json"
-          if git diff --cached --quiet; then
-            echo "Exact original OCR snapshot is already current."
-          else
-            git commit -m "research(mass): archive verified original public-domain Lanslots OCR with SHA-256"
-            git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
-          fi
       - name: Preserve unmodified OCR plus review-only machine candidates
         if: always()
         uses: actions/upload-artifact@v4
