@@ -17,7 +17,7 @@ assert.equal(audit.surfaceCounts.FOCUS_WORDS_NO_DUPLICATE,2);
 assert.equal(audit.surfaceCounts.SERVER_RIBBON_ONLY,3);
 assert.equal(audit.surfaceCounts.PRIEST_RIBBON_STATE_ONLY,2);
 assert.equal(audit.surfaceCounts.INDEPENDENT_STAGE_EDITORIAL_ONLY,2);
-assert.equal(audit.surfaceCounts.GUIDE_ONLY,13);
+assert.equal(audit.surfaceCounts.GUIDE_ONLY,14);
 assert.equal(audit.surfaceCounts.GUIDE_AND_FORM_CONTEXT,1);
 assert.equal(Object.values(audit.surfaceCounts).reduce((n,v)=>n+v,0),62);
 const byId=new Map(audit.rows.map(x=>[x.actionId,x]));
@@ -60,7 +60,7 @@ for(const [n,phraseEn] of [
 }
 const englishSourceParity={
   "001": [
-    "lowers his hands and eyes",
+    "lifts then lowers his eyes",
     "bows profoundly"
   ],
   "002": [
@@ -227,7 +227,7 @@ for(const row of audit.rows){
  assert.equal(row.guideFrenchOwnerId,canonical.id);
 }
 for(const [number,pattern] of [
- ["001",/les abaisse, joint les mains et s’incline profondément/],
+ ["001",/lève puis baisse les yeux, joint les mains et s’incline profondément/],
  ["011",/jusqu’à « Per Christum »/],
  ["026",/jusqu’à l’ablution des doigts/],
  ["028",/diacre à la messe solennelle/],
@@ -249,6 +249,13 @@ assert.equal(byId.get("AO.CANON.R62.032").reviewSurface,
 for(const n of ["027","035","062"])
  assert.equal(byId.get("AO.CANON.R62."+n).reviewSurface,"SERVER_RIBBON_ONLY");
 assert.equal(byId.get("AO.CANON.R62.061").reviewSurface,"GUIDE_ONLY");
+assert.equal(byId.get("AO.CANON.R62.044").reviewSurface,"GUIDE_ONLY",
+ "The Sign of the Cross must not fire at the early word omni benedictione");
+assert.match(byId.get("AO.CANON.R62.044").shortDraft.fr,/croix après « omni benedictióne »/);
+assert.match(byId.get("AO.CANON.R62.044").guideDraft.en,/cross following omni benedictione/);
+assert.match(byId.get("AO.CANON.R62.001").shortDraft.fr,/lève puis baisse les yeux/);
+assert.doesNotMatch(byId.get("AO.CANON.R62.001").shortDraft.en,
+ /lowers his hands and eyes/);
 for(const n of ["026","040","053"])
  assert.ok(!["INLINE_ATOMIC_EDITORIAL","INDEPENDENT_STAGE_EDITORIAL_ONLY"].includes(
   byId.get("AO.CANON.R62."+n).reviewSurface),"Persistent states cannot flash");

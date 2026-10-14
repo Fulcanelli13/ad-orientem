@@ -76,9 +76,16 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   assert.equal(packet.status,"COMPLETE_SOURCE_REFERENCED_EDITORIAL_PACKET_NOT_PUBLISHED");
   assert.equal(packet.reviewedCueCount,42);
   assert.equal(packet.publicationReady,0);
+  assert.equal(packet.sourceExactWordPlacements,39);
+  assert.equal(packet.sourceOffsetSignoffReady,false);
+  assert.deepEqual(packet.sourceOffsetReviewHolds,["AO.CANON.R62.044"]);
   assert.equal(packet.canPublish,false);
-  assert.equal(packet.rows.filter(r=>r.anchorStatus==="WORD_MATCH_EXACT").length,40);
+  assert.equal(packet.rows.filter(r=>r.anchorStatus==="WORD_MATCH_EXACT").length,39);
   assert.equal(packet.rows.filter(r=>r.anchorStatus==="NON_TEXT_SOURCE_EVENT").length,2);
+  const withheld=packet.rows.find(r=>r.actionId==="AO.CANON.R62.044");
+  assert.equal(withheld.anchorStatus,"SOURCE_GESTURE_OFFSET_UNVERIFIED");
+  assert.equal(withheld.placementPolicy,"GUIDE_ONLY_PENDING_CROSS_SIGN_OFFSET");
+  assert.equal(withheld.spans.length,0);
   assert.equal(new Set(packet.rows.map(r=>r.cueId)).size,42);
   assert.ok(packet.rows.every(r=>r.frenchCopyDraft.length>15&&
     r.sourceUrls.length>0&&r.sourceUrls.every(url=>url.startsWith("https://"))&&
@@ -109,6 +116,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
     e.faithfulPosture===null&&e.priestActionNow===null&&
     e.publication==="NOT_APPROVED_NOT_VISIBLE"));
   assert.ok(events.every(e=>e.status==="WORD_MATCH_EXACT"||
+     e.status==="SOURCE_GESTURE_OFFSET_UNVERIFIED"||
     e.status==="NON_TEXT_SOURCE_EVENT"||
     e.status==="RENDERED_LATIN_MISMATCH_REVALIDATION_REQUIRED"||
     e.status==="COMPOSITE_PARAGRAPH_REQUIRES_SOURCE_SEGMENTATION"));
@@ -124,7 +132,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
       assert.equal(latin.slice(span.start,span.end),span.latin,
         form+"/"+event.cueId+": inline placement must preserve exact rendered glyphs");
   }
-  assert.equal(exact.length,40,form+": all 40 Canon word-anchor gaps must be source-verified");
+  assert.equal(exact.length,39,form+": only 39 source word cues have safe word placement");
   assert.equal(nonWord.length,2,form+": two ceremonial actions must remain non-text");
   for(const [cue,correctionId] of [
     ["AO.SM.C0153","SRC-PARITY-002"],
@@ -140,7 +148,13 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
     form+": no other donor offsets may be silently accepted after text mutation");
   const deferred=events.filter(e=>e.status!=="WORD_MATCH_EXACT"&&
     e.status!=="NON_TEXT_SOURCE_EVENT");
-  assert.equal(deferred.length,0,form+": no unreviewed Canon word anchor may retain a stale donor span");
+  assert.equal(deferred.length,1,
+     form+": the C0190 Sign of the Cross must retain its unresolved exact offset");
+   assert.equal(deferred[0].cueId,"AO.SM.C0190");
+   assert.equal(deferred[0].actionId,"AO.CANON.R62.044");
+   assert.equal(deferred[0].status,"SOURCE_GESTURE_OFFSET_UNVERIFIED");
+   assert.equal(deferred[0].spans.length,0);
+   assert.equal(deferred[0].surfaceField,null);
   console.log("CANON_IN_TEXT_AUDIT",form,JSON.stringify({
     exact:exact.length,nonText:nonWord.length,
     deferred:deferred.map(e=>({cueId:e.cueId,status:e.status})),
