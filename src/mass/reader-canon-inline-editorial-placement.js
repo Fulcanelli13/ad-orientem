@@ -93,7 +93,8 @@ export function projectCanonInlineEditorialPlacements({
         // omni benedictióne is valid for locating text, NOT for placing the
         // actual gesture. Guide-only until donor glyph offset is certified.
         if(decision.placement!=="GUIDE_ONLY_PENDING_CROSS_SIGN_OFFSET" ||
-           decision.reviewGate!==
+           decision.reviewGate!=="SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF"||
+           decision.sourceGestureOffsetReview!==
             "DONOR_COELESTI_VS_1962_CAELESTI_SOURCE_CROSS_OFFSET_PENDING")
           throw new Error("C0190 exact cross offset release gate missing");
         status="SOURCE_GESTURE_OFFSET_UNVERIFIED";
