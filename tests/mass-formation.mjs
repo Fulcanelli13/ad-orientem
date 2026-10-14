@@ -1,6 +1,11 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
+ MASS_FORMATION_SCRIPTURE_ANCHORS,massFormationScriptureForStage,massFormationScriptureHtml,
+ MASS_FORMATION_SCRIPTURE_RELATIONSHIPS
+} from "../src/learn/mass-formation-scripture-context.js";
+import {parseScriptureContext} from "../src/scripture/context.js";
+import {
   MASS_FORMATION_ROUTE,
   MASS_FORMATION_VERSION,
   ensureMassFormationRegistry,
@@ -16,6 +21,34 @@ assert.equal(data.stages.reduce((n,s)=>n+s.claims.length,0),24);
 assert.equal(MASS_FORMATION_ROUTE,"learn.mass");
 assert.equal(MASS_FORMATION_VERSION,"mass-formation-campion-v1");
 
+assert.equal(MASS_FORMATION_SCRIPTURE_ANCHORS.length,16,
+ "All 16 published-lesson biblical study references must be present");
+assert.deepEqual([...new Set(MASS_FORMATION_SCRIPTURE_ANCHORS.map(x=>x.stageId))],
+ data.stages.map(x=>x.id),"Each of the eight published lessons needs contextual Scripture reading");
+for(const item of MASS_FORMATION_SCRIPTURE_ANCHORS){
+ const parsed=parseScriptureContext(item.reference);
+ assert.ok(parsed,item.id+" must use the shared Catholic Bible parser");
+ assert.ok(MASS_FORMATION_SCRIPTURE_RELATIONSHIPS[item.relationship]);
+ assert.ok(data.stages.some(x=>x.id===item.stageId));
+ assert.ok(!Object.hasOwn(item,"claimId"),
+   "Study passages must not claim one-to-one proof of lesson propositions");
+}
+for(const stage of data.stages){
+ const links=massFormationScriptureForStage(stage.id);
+ assert.ok(links.length>=1,"No Scripture study links for "+stage.id);
+ for(const french of [false,true]){
+  const html=massFormationScriptureHtml(stage.id,{french});
+  assert.equal((html.match(/data-ao-scripture-context=/g)||[]).length,links.length);
+  assert.equal((html.match(/data-ao-mass-formation-anchor=/g)||[]).length,links.length);
+  assert.ok(html.includes(french?"Approfondir dans la Bible":"Explore the Bible passages"));
+  assert.ok(html.includes(french?"Missel de 1962":"1962 Missal"),
+   "Scripture links must not claim to supersede the normative liturgical source");
+  assert.ok(html.includes(french?"non une citation du rite":"not a quotation from the rite")||!links.some(x=>x.relationship==="COMPARATIVE_PASSAGE"));
+ }
+}
+assert.equal(massFormationScriptureHtml("MF99"),"");
+assert.doesNotMatch(JSON.stringify(MASS_FORMATION_SCRIPTURE_ANCHORS),/sourceWitness|reviewed|enabled/,
+ "Teaching links may not grant textual editions or bypass provenance gates");
 const sources=new Map(data.sources.map(s=>[s.id,s]));
 assert.equal(sources.get("SRC-MR62").role,"NORMATIVE_1962");
 assert.equal(sources.get("SRC-CAMPION-1954").role,"DISCOVERY_AND_EXPLANATORY");
