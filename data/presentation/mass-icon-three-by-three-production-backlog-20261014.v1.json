@@ -3,7 +3,7 @@
   "date": "2026-10-14",
   "title": "One coherent Mass icon family: reuse-first production triage",
   "scope": "1962 Sung R17 Mass reader and separate research-only Canon minister branches, not all extraordinary feast modules",
-  "status": "REUSE_FIRST_TRIAGE_V2_NO_GENERATION_APPROVAL",
+  "status": "REUSE_AND_MINIMAL_FAMILY_GATED_NO_NEW_ART_GENERATION",
   "counts": {
     "total": 36,
     "drawOrRefine": 8,
@@ -29,6 +29,8 @@
     "faithful": "Ten pending faithful gesture rows use approved posture family or short cue text; no ten new illustrations"
   },
   "rules": [
+    "New icons in 3-by-3 batches are ON HOLD until the 24-item harmonization pass is completed and a genuine source-cue coverage audit identifies missing subjects.",
+    "All future generated gaps must use approved minimal priest silhouette and sparse altar/cue family. No faces, hair strokes, lace, carved altars, embroidered garments, etched linework or clouds.",
     "No new illustration for a simple micro-action when a concise source-owned rubric with a reusable station/actor icon communicates it accurately.",
     "Reuse-first gate: user-approved icons are preferred, with each semantic alias validated against what the image truly depicts. Existing asset status alone does not prove an exact gesture.",
     "One approved family of monochrome illustrations, no photographs or historical engraved plates as UI artwork.",
@@ -63,7 +65,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_centre_arms_rich",
       "dispositionReason": "Check exact raised eyes and hands; previous generated candidates wrong",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "A02",
@@ -80,7 +84,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_centre_hands_rich",
       "dispositionReason": "Existing hands name aliases unmodified priest centre, must visually verify",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "A03",
@@ -97,7 +103,9 @@
       "originalDraftStatus": "REFINE",
       "existingCandidate": "approved-style Hanc igitur prototype",
       "dispositionReason": "Palms down over offerings; preserve accepted family",
-      "generateOnlyIfUserApproves": true
+      "generateOnlyIfUserApproves": true,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "A04",
@@ -114,7 +122,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_centre_rich + cue text",
       "dispositionReason": "Eye direction too fine to distinguish reliably from rear view",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "A05",
@@ -131,7 +141,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "A02 Memento joined-hands family",
       "dispositionReason": "Potential shared Memento illustration plus explicit cue text",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "A06",
@@ -148,7 +160,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "new exact Host and chalice artwork",
       "dispositionReason": "Never confuse minor elevation with major Host elevation",
-      "generateOnlyIfUserApproves": true
+      "generateOnlyIfUserApproves": true,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B01",
@@ -166,7 +180,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_incense_altar_rich / priest_blessing_rich",
       "dispositionReason": "Blessing incense is not the same as incensing altar; verify",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B02",
@@ -183,7 +199,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "cross + paten rubric",
       "dispositionReason": "Sign made with paten can be explained with short rubric",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B03",
@@ -200,7 +218,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_centre_rich + rubric",
       "dispositionReason": "Paten placement is a micro-action",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B04",
@@ -217,7 +237,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_incense_people_rich",
       "dispositionReason": "Receiving incense differs from incensing, verify",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B05",
@@ -234,7 +256,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "lavabo",
       "dispositionReason": "Existing icon for Offertory Lavabo; not later ablutions",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B06",
@@ -251,7 +275,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_centre_rich + rubric",
       "dispositionReason": "Chalice placement is a minor substep",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B07",
@@ -269,7 +295,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_centre_rich + rubric",
       "dispositionReason": "Chalice-cover actor ownership is form-dependent",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B08",
@@ -288,7 +316,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "cross",
       "dispositionReason": "Reusable Cross icon plus text specifying triple crossings",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B09",
@@ -305,7 +335,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "priest_elevation + rubric",
       "dispositionReason": "Replacing Host is not a new major elevation",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B10",
@@ -322,7 +354,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "fraction (currently identical to commingling and communion)",
       "dispositionReason": "Must show fracture of Host distinctly",
-      "generateOnlyIfUserApproves": true
+      "generateOnlyIfUserApproves": true,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B11",
@@ -339,7 +373,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "commingling (currently identical to fraction and communion)",
       "dispositionReason": "Must show particle entering chalice distinctly",
-      "generateOnlyIfUserApproves": true
+      "generateOnlyIfUserApproves": true,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B12",
@@ -356,7 +392,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "communion",
       "dispositionReason": "Existing candidate may work for taking Host; inspect",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B13",
@@ -373,7 +411,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "communion / priest_communion_rich",
       "dispositionReason": "Host reception might use existing communion master if exact",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B14",
@@ -390,7 +430,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "new consumption-of-chalice action",
       "dispositionReason": "Chalice elevation is not reception of Precious Blood",
-      "generateOnlyIfUserApproves": true
+      "generateOnlyIfUserApproves": true,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B15",
@@ -411,7 +453,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_kiss_altar_rich (user selected)",
       "dispositionReason": "Actual image duplicates priest profound bow rich; retain selected artwork but verify kiss visible",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B16",
@@ -430,7 +474,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_profound_bow_rich (currently duplicates altar kiss)",
       "dispositionReason": "Profound bow must not be misrepresented as altar kiss",
-      "generateOnlyIfUserApproves": true
+      "generateOnlyIfUserApproves": true,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B17",
@@ -450,7 +496,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "genuflect (user-selected generic posture)",
       "dispositionReason": "A generic genuflect may be sufficient with actor label; do not imply vestments shown",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B18",
@@ -467,7 +515,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_blessing_rich",
       "dispositionReason": "User selection investigation pending; verify blessing gesture",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B19",
@@ -486,7 +536,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_incense_altar_rich (user selected)",
       "dispositionReason": "Use source-owned cue for incensing altar; no new artwork",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "B20",
@@ -501,7 +553,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_incense_people_rich (user selected)",
       "dispositionReason": "Use selected dedicated incense-people image, not generic incense alias",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "C01",
@@ -518,7 +572,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_foot_rich",
       "dispositionReason": "Existing candidate pending user visual review",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "C02",
@@ -536,7 +592,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_return_altar_rich / priest_turn_altar_move_rich",
       "dispositionReason": "Existing exact source and movement direction need review",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "C03",
@@ -557,7 +615,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_epistle_rich (user selected)",
       "dispositionReason": "Existing position icon; verify finer Missal-position variants",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "C04",
@@ -575,7 +635,9 @@
       "originalDraftStatus": "REVIEW",
       "existingCandidate": "priest_gospel_rich (user selected)",
       "dispositionReason": "Existing station master; no separate new drawing unless meaningful distinction",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "D01",
@@ -592,7 +654,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "minister rubric",
       "dispositionReason": "Conditional Solemn minister event, do not render the priest as deacon",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "D02",
@@ -610,7 +674,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "new conditional deacon-assistance gesture",
       "dispositionReason": "Requires distinct vested deacon; no substitute priest icon",
-      "generateOnlyIfUserApproves": true
+      "generateOnlyIfUserApproves": true,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "D03",
@@ -628,7 +694,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "minister rubric",
       "dispositionReason": "Uncovers chalice when required; no distinct icon necessary",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "D04",
@@ -646,7 +714,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "minister rubric",
       "dispositionReason": "Covers chalice when required; no distinct icon necessary",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "D05",
@@ -664,7 +734,9 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "genuflect + explicit deacon actor label",
       "dispositionReason": "Generic movement can be reused only if icon does not pretend to portray vested deacon",
-      "generateOnlyIfUserApproves": false
+      "generateOnlyIfUserApproves": false,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     },
     {
       "id": "D06",
@@ -682,7 +754,18 @@
       "originalDraftStatus": "DRAW",
       "existingCandidate": "new thurifer incense elevation gesture",
       "dispositionReason": "No priest icon for distinct thurifer; condition must indicate form",
-      "generateOnlyIfUserApproves": true
+      "generateOnlyIfUserApproves": true,
+      "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+      "productionGate": "NO_GENERATION_UNTIL_REUSE_RECONCILED_AND_CUE_MISSING"
     }
-  ]
+  ],
+  "styleStandard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+  "ratingsPolicy": {
+    "3": "RESEARCH_REQUIRED",
+    "4": "REVIEW_REQUIRED",
+    "5": "AUTOMATICALLY_CONFIRMED_AND_SELECTED",
+    "0-2": "REJECT_ORIGINAL_FOREVER",
+    "unrated": "PENDING"
+  },
+  "nextGenerationBatch": "PAUSED_PENDING_APPROVED_MINIMAL_FAMILY_AND_POST_REPAIR_GAP_AUDIT"
 }
