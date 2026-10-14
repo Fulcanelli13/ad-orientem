@@ -26,13 +26,14 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Fill remaining 44 research subject gaps with high-fit original paintings, prioritizing Saints/Doctors then most-used Gospel and selected Old Testament; do not require separate paintings for every Bible scene.",
-    "Find inspectable clear artwork previews before presenting 63 W16-W20 newly source-linked subject slots for human ratings; verify visually exact original and multiple photographs per SAME painting.",
-    "Prioritize image recovery of 25 user-rated 5/5 paintings lacking verified source masters; preserve 41 selected reproductions and all 277 latest ratings as independent source decisions.",
-    "Respect artist/style exclusions and 0–2 global ratings, avoid falsely autographing 19th-century copies and studio paintings; maintain distinct scenes for walking water, storm, paralytic.",
-    "Check photo rights and conservation/availability at French Ministry POP object records, which do NOT themselves license app photographs.",
-    "Preserve 222 original W01–W15 source queue / 8 SHA-verified research JPEGs / 214 missing unchanged; W16–W20 original-source suggestions are separate until canonical identity reconciliation.",
-    "Keep research PR #887 draft and avoid modifying production app art release without QA and human artistic clearance."
+    "FIRST: apply the 2026-10-14 major saints + Doctors + SOME patrons scope reconciliation; no exhaustive sanctoral/national-patrons list or one image per Doctor.",
+    "Resolve high-salience missing or low-quality saint slots from latest Oct13 ratings: Joseph, Thérèse, Vianney, Vincent de Paul, Louis IX, Benedict, Anthony Padua, key Apostles, and other devotional/patron subjects WITH APP USAGE. Reuse W16-W20 and current 281 library before external research.",
+    "Review cross-module reasons for bounded additional major figures found in broader target register (Philip Neri rated 4, John Bosco, Louis-Marie de Montfort, Peter Julian Eymard, and Blessed Père Laval); no automatic new required slots.",
+    "Prioritize 25 user-rated 5-star objects lacking source masters and 41 chosen reproduction preferences for identity, source photography, rights, legibility and mobile suitability.",
+    "Finish existing artwork Class I 53-date (~27-theme) visual review and major feasts/Prayer/Rosary/Stations priority before optional Bible Atlas details.",
+    "The old W16-W20 metric 63/107 source-linked and 44 remaining tracks only the 2026-10-13 existing 235-subject research cohort; not a target library denominator or release progress bar.",
+    "Preserve canonical older 222 research leads, 8 verified JPEG masters and 214 pending; separate W16-W20 candidate research until dedup. No score/image/licence/app publishing mutation.",
+    "Keep PR #887 draft; preserve newest Oct13 277 human ratings, 0–2 global refusals, style exclusions, historical rankings, source authorities and existing release gates."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -156,5 +157,18 @@
     "physicalArtSourceRecordTotalInWave16To20": 77,
     "wave20ResearchOnlyNoPhotoRightsOrRatingsApprovals": true,
     "wave20NegativeIdentificationHold": "PM40001103 titled Saint Albert le Grand is same historical canvas as IM40004012 re-identified as Saint Norbert scene; count zero toward Saint Albert."
+  },
+  "currentCuratorialScopeAndPriority": {
+    "date": "2026-10-14",
+    "researchDocument": "data/calendar/sacred-art-major-saints-doctors-selected-patrons-scope-20261014.v1.json",
+    "scope": "MAJOR_SAINTS_DOCTORS_AND_SOME_SELECTED_PATRONS_NOT_ALL_SAINTS",
+    "authority": "User 2026-10-14 explicit correction",
+    "oct13SaintLegacyReviewSlots": 75,
+    "oct13LegacyWithoutRankedOptions": 33,
+    "oct13LegacyWithThreeToFiveHumanScoredOption": 22,
+    "sourceLinkedLegacy107Metric": "LEGACY_RESEARCH_COHORT_ONLY_NOT_OVERALL_COMPLETENESS",
+    "noNewRequiredSubjectsCreated": true,
+    "doNotResearchObscureDoctorsAheadOfMajorSaints": true,
+    "doNotTurn207ExploratoryTargetsIntoRequirements": true
   }
 }
