@@ -42,6 +42,10 @@ assert.ok(ledger.sources.find(x=>x.id==="MARIAN_1958_HANC").rights.includes("UNV
 assert.ok(ledger.gestureMatrixPending.find(x=>x.matrixId==="GM.P.C0204.01").decision.includes("HOST_ABOVE"));
 
 // Independently checked photo candidates: no publication inference from Commons Public Domain Mark.
+assert.equal(ledger.counts.abbeySeriesNumberedCardsCatalogued,23);
+assert.deepEqual(ledger.abbeySeriesCoverage.missingInCategory,[20]);
+assert.equal(ledger.abbeySeriesCoverage.cataloguedNumbers.length,23);
+assert.ok(!ledger.abbeySeriesCoverage.cataloguedNumbers.includes(20));
 assert.equal(ledger.verifiedPhotographicCandidates.length,6);
 assert.equal(ledger.captionOnlyPictorialLeads.length,4);
 const refSet=new Set(ledger.sources.map(x=>x.id));

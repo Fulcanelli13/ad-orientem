@@ -21,7 +21,11 @@
     "approvedUnboundFingerArtwork": 2,
     "referenceBibliographySources": 14,
     "visuallyInspectedHistoricalPhotographs": 6,
-    "captionOnlyPictorialLeads": 4
+    "captionOnlyPictorialLeads": 4,
+    "abbeySeriesNumberedCardsCatalogued": 23,
+    "abbeySeriesUnlocatedNumber": [
+      20
+    ]
   },
   "sources": [
     {
@@ -116,12 +120,12 @@
     },
     {
       "id": "SAINT_ANDRE_ZEVENKERKEN_KUL_24",
-      "title": "Abbaye de Saint-André, Lophem-lez-Bruges: 24 numbered ceremonial Mass postcards",
+      "title": "Abbaye de Saint-André, Lophem-lez-Bruges: historic numbered Mass postcard sequence (23 catalogued, nos. 1–24 excluding 20)",
       "url": "https://commons.wikimedia.org/wiki/Category:Postcards_of_Sint-Andriesabdij_Zevenkerken_in_the_Leuven_University_Libraries",
       "kind": "HISTORICAL_PRIMARY_PHOTOGRAPHIC_MASS_SEQUENCE",
       "visualEvidence": "INDIVIDUAL_IMAGES_OPENED_AND_INSPECTED_2026_10_14",
       "rights": "WIKIMEDIA_PUBLIC_DOMAIN_MARK_FILE_BY_FILE_US_LEGAL_TAG_MISSING_GLOBAL_REUSE_NOT_CLEARED",
-      "note": "KU Leuven Library series includes at least 24 numbered French/Latin-titled Mass stage photographs in 2383x1576-class scans. Commons shows Public Domain Mark 1.0 but catalogue gives unknown original date/photographer and Commons requests US PD tag. Preserve file-level license and provenance reviews; do not import photographs as app icons automatically."
+      "note": "KU Leuven Library Commons category lists 23 distinct numbered French/Latin-titled Mass photographs (numbers 1–19 and 21–24; number 20 not visible in this category), some with two scans. The original publisher is Brussels: Thill; original photograph dates and author are unknown. Commons marks files as Public Domain Mark 1.0 while requesting US PD tagging; preserve individual provenance/license reviews before app reuse."
     },
     {
       "id": "ROMANITAS_1944_MASS_80",
@@ -1126,5 +1130,38 @@
       "usableAs": "SOLEMN_HANC_POSE_PHOTO_REQUIRES_INSPECTION",
       "publication": "REFERENCE_ONLY"
     }
-  ]
+  ],
+  "abbeySeriesCoverage": {
+    "categoryUrl": "https://commons.wikimedia.org/wiki/Category:Postcards_of_Sint-Andriesabdij_Zevenkerken_in_the_Leuven_University_Libraries",
+    "cataloguedNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24
+    ],
+    "missingInCategory": [
+      20
+    ],
+    "status": "NOMINAL_INDEX_FROM_WIKIMEDIA_CATEGORY_NO_NUMBER_20",
+    "rule": "Number 20 is missing from the currently browsed category; never infer that it did not exist or fabricate a file link."
+  }
 }
