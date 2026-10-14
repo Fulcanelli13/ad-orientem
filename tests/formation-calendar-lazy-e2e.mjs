@@ -93,73 +93,50 @@ try{
  assert.equal(calendar.status?.open,true);
  assert.equal(calendar.root,"ao-calendar-modular-root");
  assert.equal(calendar.week?.version,"43.45-modular-exact");
- // Liturgical Year is usable on first visit, with one proportional track
- // and navigable cards even before the whole year's Masses are loaded.
+ // The source-owned Liturgical Clock replaces the former ring/timeline. Its
+ // season controls remain accessible before the whole year's Masses resolve.
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("year")),true);
- await page.locator("#ao-calendar-modular-root .aoCalYearTrack").waitFor({state:"visible",timeout:5000});
- assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-segment]").count(),11);
- assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period]").count(),11);
+ await page.locator("#ao-calendar-modular-root .aoClockDial").waitFor({state:"visible",timeout:8000});
  const yearSize=await page.evaluate(()=>{
    const root=document.getElementById("ao-calendar-modular-root");
-   const track=root.querySelector(".aoCalYearTrack");
-   const pieces=[...root.querySelectorAll(".aoCalYearSegment")];
-   return {
-     horizontalOverflow:root.scrollWidth-root.clientWidth,
-     trackWidth:track?.getBoundingClientRect().width,
-     partsWidth:pieces.reduce((sum,x)=>sum+x.getBoundingClientRect().width,0),
-     expanded:root.querySelectorAll("[data-cal-year-period][aria-expanded=true]").length
-   };
+   const dial=root?.querySelector(".aoClockDial")?.getBoundingClientRect();
+   return {overflow:root.scrollWidth-root.clientWidth,dialWidth:dial?.width||0,
+     seasons:root.querySelectorAll(".aoClockSector[data-cal-clock-season]").length,
+     months:root.querySelectorAll(".aoClockMonthSegment").length};
  });
- assert.ok(yearSize.trackWidth>150,"Year timeline has no usable phone width");
- assert.ok(Math.abs(yearSize.partsWidth-yearSize.trackWidth)<5,"Period widths are not proportional inside track");
- assert.ok(yearSize.horizontalOverflow<=2,"Year view causes horizontal overflow on phone");
+ assert.equal(yearSize.seasons,8,"Clock must display the eight grouped liturgical seasons");
+ assert.ok(yearSize.months>=12,"Clock must preserve Advent-to-Advent month geometry");
+ assert.ok(yearSize.dialWidth>190,"Liturgical Clock has no usable touch surface");
+ assert.ok(yearSize.overflow<=2,"Year view causes horizontal overflow on phone");
  for(const width of [320,360,390,430]){
    await page.setViewportSize({width,height:844});
    const measure=await page.evaluate(()=>{
      const root=document.getElementById("ao-calendar-modular-root");
-     const ring=root?.querySelector(".aoCalV2Ring")?.getBoundingClientRect();
-     const timeline=root?.querySelector(".aoCalYearTrack")?.getBoundingClientRect();
-     const hero=root?.querySelector(".aoCalV2YearHeroGrid")?.getBoundingClientRect();
-     return {overflow:root.scrollWidth-root.clientWidth,ringWidth:ring?.width||0,trackWidth:timeline?.width||0,heroWidth:hero?.width||0};
+     const dial=root.querySelector(".aoClockDial").getBoundingClientRect();
+     return {overflow:root.scrollWidth-root.clientWidth,left:dial.left,right:dial.right,width:dial.width};
    });
-   assert.ok(measure.overflow<=2,"Year view overflows at "+width+"px: "+JSON.stringify(measure));
-   assert.ok(measure.ringWidth>100&&measure.ringWidth<165,"Year wheel is not compact at "+width+"px: "+JSON.stringify(measure));
-   assert.ok(measure.trackWidth>width*.7,"Year timeline is too narrow at "+width+"px");
+   assert.ok(measure.overflow<=2&&measure.left>=-3&&measure.right<=width+3,
+     "Liturgical Clock clips at "+width+"px: "+JSON.stringify(measure));
+   assert.ok(measure.width>190,"Year dial is not phone-legible at "+width+"px");
  }
  await page.setViewportSize({width:390,height:844});
- assert.equal(yearSize.expanded,1,"Only one year period may be expanded");
- await page.locator("#ao-calendar-modular-root [data-cal-year-period='advent']").click();
- assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period='advent']").getAttribute("aria-expanded"),"true","Year period tap did not expand details");
- assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period='after-pentecost']").getAttribute("aria-expanded"),"false","Previously expanded period was not collapsed");
- const firstMonth=await page.locator("#ao-calendar-modular-root [data-cal-year-id='advent'] [data-cal-year-month]").getAttribute("data-cal-year-month");
- await page.locator("#ao-calendar-modular-root [data-cal-year-id='advent'] [data-cal-year-month]").click();
- await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid").waitFor({state:"visible",timeout:5000});
- assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.status().pickerMonthId),firstMonth,"Year period Month navigation selected the wrong month");
-
- // Calendar must preserve working day/year/month controls on actual mobile DOM.
- assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("year")),true);
- await page.locator("#ao-calendar-modular-root [data-cal-view='year'].active").waitFor({timeout:8000});
- assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").count()>0);
- // Major milestones must open the Day surface, not update the year silently.
- const nextButton=page.locator("#ao-calendar-modular-root .aoCalV2YearHero [data-cal-year-open-day]").first();
- const targetDate=await nextButton.getAttribute("data-cal-year-open-day");
- assert.match(targetDate,/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/);
- await nextButton.click();
- await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:15000});
- await page.waitForFunction(date=>globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate===date,targetDate,{timeout:15000});
- assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"day");
- await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("year"));
- await page.locator("#ao-calendar-modular-root [data-cal-view='year'].active").waitFor({timeout:8000});
- await page.locator("#ao-calendar-modular-root [data-cal-open-month='major']").click();
- assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().pickerMonthId),targetDate.slice(0,7),"Major Month opened stale previously browsed month");
- await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").waitFor({timeout:8000});
- assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"picker");
- assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthView),"major");
- // The Today control is a navigation action, not merely a month-grid scroll.
+ await page.locator('#ao-calendar-modular-root [data-cal-clock-season="advent"] path').first().click();
+ assert.equal(await page.locator("#ao-calendar-modular-root .aoClockDetail").count(),1,
+   "Tapping Advent must disclose the liturgical season");
+ await page.locator("#ao-calendar-modular-root [data-cal-clock-close]").click();
+ assert.equal(await page.locator("#ao-calendar-modular-root .aoClockDetail").count(),0,
+   "Liturgical Clock season disclosure must be dismissible");
+ // A real source-calendar date must still navigate between Day and Month.
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-10-07")),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
+ await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid").waitFor({state:"visible",timeout:15000});
+ const filter=page.locator("#ao-calendar-modular-root [data-cal-month-filter]");
+ await filter.selectOption("major");
+ assert.equal(await filter.inputValue(),"major","Month's single source-backed filter did not select major days");
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.status().monthView),"major");
  await page.locator("#ao-calendar-modular-root [data-cal-today]").click();
  await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:8000});
- assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"day");
-
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.status().view),"day");
 
  // Month export must work from the visible Calendar, never from a second
  // hand-authored feast list. Select a fully audited 2026 month and wait
