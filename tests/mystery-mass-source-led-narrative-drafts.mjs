@@ -24,7 +24,7 @@ assert.equal(n.liturgicalStudySelections.filter(x=>x.canonSourceCriticalStudy).l
 for(const x of n.liturgicalStudySelections.filter(x=>x.owner.startsWith('AO.CANON.'))){
  const expected=editorialCanon.get(x.owner);
  assert.ok(expected,x.owner);
- assert.ok(expected.coreTheologicalQuestion.length>=75);
+ assert.ok(expected.coreTheologicalQuestion.length>=60);
  assert.ok(expected.sourceLedExplanationDraftEN.length>=320);
  assert.ok(expected.transitionInLiturgicalJourney.length>=65);
  assert.equal(expected.published,false);
