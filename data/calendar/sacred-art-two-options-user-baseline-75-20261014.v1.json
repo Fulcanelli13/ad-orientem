@@ -1,0 +1,1496 @@
+{
+  "schema": "AO_SACRED_ART_TWO_OPTIONS_USER_BASELINE_75_V1",
+  "date": "2026-10-14",
+  "policy": "Read-only snapshot of user export; do not ask user for ratings now. Excluded ratings 0–2 are never eligible. An unscored historically selected image is not a new approval.",
+  "sourceExport": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json",
+  "sourceSHA": {
+    "originalsSha256": "0280a05a850bc35d99d50e562ba2564b5f9f42cc112d57448d62b651543f0b6b",
+    "dateAssociationsSha256": "50ae491c6a5ad36ce84c75c8697e113d55b77a8650d99d767bc7fb4aec49f35b",
+    "subjectInventorySha256": "6d0f604505c4ed74ea03233b9f63f9ef93e46c9c7a02ee3d968370e3a287b206"
+  },
+  "counts": {
+    "slots": 75,
+    "byGroup": {
+      "AP": 13,
+      "EV": 2,
+      "DC": 28,
+      "OT": 32
+    },
+    "noRanked": 33,
+    "atLeastTwoNonRejected": 12,
+    "withAnyRated3To5": 22,
+    "withAtLeastTwoRated3To5": 9
+  },
+  "rows": [
+    {
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "group": "AP",
+      "historicallySelectedArtworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+      "rankedOptions": [
+        {
+          "id": "ART-usepe-de-ibera-aint-eter-postolate",
+          "rating": 5,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Peter — Apostolate"
+        },
+        {
+          "id": "met-435617",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Bartolomeo degli Erri",
+          "title": "Saint Thomas Aquinas Aided by Saints Peter and Paul"
+        },
+        {
+          "id": "met-458955",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Lippo Memmi",
+          "title": "Saint Peter"
+        },
+        {
+          "id": "met-442491",
+          "rating": 5,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Bartolomeo Manfredi",
+          "title": "Saints Peter and Paul"
+        },
+        {
+          "id": "met-441971",
+          "rating": 4,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Jusepe de Ribera",
+          "title": "The Tears of Saint Peter"
+        },
+        {
+          "id": "met-438561",
+          "rating": 4,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Ludovico Carracci",
+          "title": "The Denial of Saint Peter"
+        },
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-02",
+      "subject": "Saint Andrew",
+      "group": "AP",
+      "historicallySelectedArtworkId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+      "rankedOptions": [
+        {
+          "id": "cma-148758",
+          "rating": 5,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Caravaggio",
+          "title": "The Crucifixion of Saint Andrew"
+        },
+        {
+          "id": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Peter Paul Rubens",
+          "title": "Martyrdom of Saint Andrew"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "group": "AP",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "group": "AP",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation"
+        },
+        {
+          "id": "met-459044",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Follower of Giotto",
+          "title": "Saints John the Evangelist and Mary Magdalene"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "group": "AP",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "group": "AP",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "group": "AP",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "group": "AP",
+      "historicallySelectedArtworkId": "ART-aravaggio-nspiration-of-aint-atthew",
+      "rankedOptions": [
+        {
+          "id": "ART-aravaggio-nspiration-of-aint-atthew",
+          "rating": 5,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Caravaggio",
+          "title": "Inspiration of Saint Matthew"
+        },
+        {
+          "id": "met-712946",
+          "rating": 4,
+          "excluded": false,
+          "fit": "elsewhere",
+          "hasPreview": true,
+          "artist": "Giovanni Battista Caracciolo",
+          "title": "The Calling of Saint Matthew"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "group": "AP",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "group": "AP",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-11",
+      "subject": "Saint Matthias",
+      "group": "AP",
+      "historicallySelectedArtworkId": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "rankedOptions": [
+        {
+          "id": "ART-eter-aul-ubens-aint-atthias-postolate",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Matthias — Apostolate"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "group": "AP",
+      "historicallySelectedArtworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+      "rankedOptions": [
+        {
+          "id": "ART-usepe-de-ibera-aint-aul-postolate",
+          "rating": 5,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Paul — Apostolate"
+        },
+        {
+          "id": "met-435617",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Bartolomeo degli Erri",
+          "title": "Saint Thomas Aquinas Aided by Saints Peter and Paul"
+        },
+        {
+          "id": "met-437065",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Lippo Memmi",
+          "title": "Saint Paul"
+        },
+        {
+          "id": "met-442491",
+          "rating": 5,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Bartolomeo Manfredi",
+          "title": "Saints Peter and Paul"
+        },
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-AP-13",
+      "subject": "Saint Jude Thaddeus",
+      "group": "AP",
+      "historicallySelectedArtworkId": "ART-usepe-de-ibera-aint-udas-haddeus",
+      "rankedOptions": [
+        {
+          "id": "ART-usepe-de-ibera-aint-udas-haddeus",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Judas Thaddeus"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "group": "EV",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "group": "EV",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-01",
+      "subject": "Saint Ambrose",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "rankedOptions": [
+        {
+          "id": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+          "rating": 5,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Anthony van Dyck",
+          "title": "Saint Ambrose Barring Theodosius"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-02",
+      "subject": "Saint Augustine",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-hilippe-de-hampaigne-aint-ugustine",
+      "rankedOptions": [
+        {
+          "id": "ART-hilippe-de-hampaigne-aint-ugustine",
+          "rating": 5,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Philippe de Champaigne",
+          "title": "Saint Augustine"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-03",
+      "subject": "Saint Jerome",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-usepe-de-ibera-aint-erome-riting",
+      "rankedOptions": [
+        {
+          "id": "ART-usepe-de-ibera-aint-erome-riting",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Jerome Writing"
+        },
+        {
+          "id": "cma-136680",
+          "rating": 5,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Jerome"
+        },
+        {
+          "id": "met-437977",
+          "rating": 5,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Marcantonio Franceschini",
+          "title": "The Last Communion of Saint Mary of Egypt"
+        },
+        {
+          "id": "met-435728",
+          "rating": 4,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Sandro Botticelli",
+          "title": "The Last Communion of Saint Jerome"
+        },
+        {
+          "id": "met-436098",
+          "rating": 3,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Gerard David",
+          "title": "The Crucifixion"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "met-437722",
+          "rating": 4,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-arlo-rivelli-aint-homas-quinas",
+      "rankedOptions": [
+        {
+          "id": "ART-arlo-rivelli-aint-homas-quinas",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Carlo Crivelli",
+          "title": "Saint Thomas Aquinas"
+        },
+        {
+          "id": "met-435617",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Bartolomeo degli Erri",
+          "title": "Saint Thomas Aquinas Aided by Saints Peter and Paul"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+      "rankedOptions": [
+        {
+          "id": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Bonaventure at Council of Lyon"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "met-437542",
+          "rating": 3,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-iambattista-iepolo-aint-atherine-of-iena",
+      "rankedOptions": [
+        {
+          "id": "ART-iambattista-iepolo-aint-atherine-of-iena",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Giambattista Tiepolo",
+          "title": "Saint Catherine of Siena"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-14",
+      "subject": "Saint Basil the Great",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+      "rankedOptions": [
+        {
+          "id": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil — oil modello"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-17",
+      "subject": "Saint Isidore of Seville",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+      "rankedOptions": [
+        {
+          "id": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "Saint Isidore of Seville"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "group": "DC",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "group": "DC",
+      "historicallySelectedArtworkId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "rankedOptions": [
+        {
+          "id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Juan Correa de Vivar",
+          "title": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "cma-150389",
+          "rating": 5,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Nicolas Poussin",
+          "title": "The Holy Family on the Steps"
+        },
+        {
+          "id": "cma-160143",
+          "rating": 5,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Gaetano Gandolfi",
+          "title": "The Holy Family"
+        },
+        {
+          "id": "met-459063",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Netherlandish Painter",
+          "title": "Virgin and Child with Saint Joseph"
+        },
+        {
+          "id": "nga-41644",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "French 15th Century",
+          "title": "The Expectant Madonna with Saint Joseph"
+        },
+        {
+          "id": "cma-113202",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Filippino Lippi",
+          "title": "The Holy Family with Saint John the Baptist and Saint Margaret"
+        },
+        {
+          "id": "cma-126768",
+          "rating": 3,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Battista Dossi",
+          "title": "Holy Family with a Shepherd"
+        },
+        {
+          "id": "cma-130392",
+          "rating": 5,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Nicolas Poussin",
+          "title": "The Return of the Holy Family to Nazareth"
+        },
+        {
+          "id": "cma-170814",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Unknown old master",
+          "title": "The Holy Family"
+        },
+        {
+          "id": "cma-370119",
+          "rating": 5,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Maso da San Friano",
+          "title": "Holy Family with the Mystic Marriage of Saint Catherine"
+        },
+        {
+          "id": "met-436793",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Joos van Cleve",
+          "title": "The Holy Family"
+        },
+        {
+          "id": "met-436797",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Joos van Cleve",
+          "title": "The Holy Family"
+        },
+        {
+          "id": "met-437458",
+          "rating": 5,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Sebastiano Ricci",
+          "title": "The Holy Family with Angels"
+        },
+        {
+          "id": "met-459059",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Joos van Cleve",
+          "title": "The Holy Family"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-02",
+      "subject": "Saint Michael Archangel",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "rankedOptions": [
+        {
+          "id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "rating": 5,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-04",
+      "subject": "Saint John the Baptist",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-ierre-ignard-aint-ohn-the-aptist",
+      "rankedOptions": [
+        {
+          "id": "ART-ierre-ignard-aint-ohn-the-aptist",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Pierre Mignard",
+          "title": "Saint John the Baptist"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "cma-150955",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child"
+        },
+        {
+          "id": "met-436982",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Maso di Banco",
+          "title": "Saint Anthony of Padua"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+      "rankedOptions": [
+        {
+          "id": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "Joan of Arc at Coronation of Charles VII"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-10",
+      "subject": "Saint Stephen",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "rankedOptions": [
+        {
+          "id": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Juan de Juanes",
+          "title": "Martyrdom of Saint Stephen"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-11",
+      "subject": "Saint Lawrence",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+      "rankedOptions": [
+        {
+          "id": "nga-106362",
+          "rating": 5,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Jean Baptiste de Champaigne",
+          "title": "The Martyrdom of Saint Lawrence"
+        },
+        {
+          "id": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Jean-Baptiste de Champaigne",
+          "title": "Martyrdom of Saint Lawrence"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-12",
+      "subject": "Saint Francis of Assisi",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+      "rankedOptions": [
+        {
+          "id": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Anthony van Dyck",
+          "title": "Saint Francis in Ecstasy"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-13",
+      "subject": "Saint Dominic",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "rankedOptions": [
+        {
+          "id": "ART-laudio-oello-aint-ominic-of-uzm-n",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Claudio Coello",
+          "title": "Saint Dominic of Guzmán"
+        },
+        {
+          "id": "met-435616",
+          "rating": 3,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Bartolomeo degli Erri",
+          "title": "Saint Dominic Resuscitating Napoleone Orsini"
+        },
+        {
+          "id": "met-436054",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Carlo Crivelli",
+          "title": "Saint Dominic"
+        },
+        {
+          "id": "met-437336",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Giulio Cesare Procaccini",
+          "title": "Madonna and Child with Saints Francis and Dominic and Angels"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "cma-150955",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child"
+        },
+        {
+          "id": "met-437673",
+          "rating": 3,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Luca Signorelli",
+          "title": "The Assumption of the Virgin with Saints Michael and Benedict"
+        },
+        {
+          "id": "met-442750",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Segna di Buonaventura",
+          "title": "Saint Benedict"
+        },
+        {
+          "id": "met-436565",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Benozzo Gozzoli",
+          "title": "Totila before Saint Benedict"
+        },
+        {
+          "id": "met-437970",
+          "rating": 3,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Benedict"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-15",
+      "subject": "Saint Francis Xavier",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+      "rankedOptions": [
+        {
+          "id": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Peter Paul Rubens",
+          "title": "Miracles of Saint Francis Xavier"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-16",
+      "subject": "Saint Ignatius of Loyola",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "rankedOptions": [
+        {
+          "id": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Peter Paul Rubens",
+          "title": "Miracles of Saint Ignatius of Loyola"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-eter-aul-ubens-aint-ebastian",
+      "rankedOptions": [
+        {
+          "id": "ART-eter-aul-ubens-aint-ebastian",
+          "rating": 5,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Sebastian"
+        },
+        {
+          "id": "cma-153406",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Marco d'Oggiono",
+          "title": "Portrait of a Youth as Saint Sebastian"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "met-459258",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Pietro di Giovanni d'Ambrogio",
+          "title": "Saint Nicholas of Bari"
+        },
+        {
+          "id": "nga-505",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Piero di Cosimo",
+          "title": "The Visitation with Saint Nicholas and Saint Anthony Abbot"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "nga-12209",
+          "rating": 5,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Lucy"
+        },
+        {
+          "id": "nga-369",
+          "rating": 4,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Francesco del Cossa",
+          "title": "Saint Lucy"
+        },
+        {
+          "id": "nga-46147",
+          "rating": 4,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Veronese; Gabriele Caliari",
+          "title": "Saint Lucy and a Donor"
+        },
+        {
+          "id": "cma-150955",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child"
+        },
+        {
+          "id": "met-436050",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Giovanni di Bartolommeo Cristiani",
+          "title": "Saint Lucy and Her Mother at the Shrine of Saint Agatha; Saint Lucy Giving Alms; Saint Lucy before Paschasius; Saint Lucy Resisting Efforts to Move Her"
+        },
+        {
+          "id": "met-437273",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Perugino (Pietro di Cristoforo Vannucci)",
+          "title": "Saint John the Baptist; Saint Lucy"
+        },
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [
+        {
+          "id": "cma-150955",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child"
+        },
+        {
+          "id": "met-458963",
+          "rating": 4,
+          "excluded": false,
+          "fit": "nowhere",
+          "hasPreview": true,
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-23",
+      "subject": "Saint Cecilia",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-ietro-da-ortona-aint-ecilia",
+      "rankedOptions": [
+        {
+          "id": "ART-ietro-da-ortona-aint-ecilia",
+          "rating": 5,
+          "excluded": false,
+          "fit": "perfect_theme",
+          "hasPreview": true,
+          "artist": "Pietro da Cortona",
+          "title": "Saint Cecilia"
+        },
+        {
+          "id": "met-436198",
+          "rating": 4,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Abraham van Diepenbeeck",
+          "title": "Saint Cecilia"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-24",
+      "subject": "Saint Catherine of Alexandria",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-aravaggio-aint-atherine-of-lexandria",
+      "rankedOptions": [
+        {
+          "id": "ART-aravaggio-aint-atherine-of-lexandria",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Caravaggio",
+          "title": "Saint Catherine of Alexandria"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-uido-eni-aint-ary-agdalene",
+      "rankedOptions": [
+        {
+          "id": "ART-uido-eni-aint-ary-agdalene",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Guido Reni",
+          "title": "Saint Mary Magdalene"
+        },
+        {
+          "id": "met-459044",
+          "rating": 2,
+          "excluded": true,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Follower of Giotto",
+          "title": "Saints John the Evangelist and Mary Magdalene"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-26",
+      "subject": "Saint Geneviève",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+      "rankedOptions": [
+        {
+          "id": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+          "rating": 4,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": true,
+          "artist": "Gabriel-François Doyen",
+          "title": "Miracle des Ardents"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "group": "OT",
+      "historicallySelectedArtworkId": null,
+      "rankedOptions": [],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-29",
+      "subject": "Saint Martin of Tours",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+      "rankedOptions": [
+        {
+          "id": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Anthony van Dyck",
+          "title": "Saint Martin Dividing His Cloak"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-30",
+      "subject": "Saint Anne",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "rankedOptions": [
+        {
+          "id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Peter Paul Rubens",
+          "title": "Holy Family with Saint Anne"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-31",
+      "subject": "Saint Rosalia",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+      "rankedOptions": [
+        {
+          "id": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Anthony van Dyck",
+          "title": "Saint Rosalia Interceding for Palermo"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    },
+    {
+      "subjectId": "SNT-OT-32",
+      "subject": "Saint Francis of Paola",
+      "group": "OT",
+      "historicallySelectedArtworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+      "rankedOptions": [
+        {
+          "id": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+          "rating": null,
+          "excluded": false,
+          "fit": null,
+          "hasPreview": false,
+          "artist": "Peter Paul Rubens",
+          "title": "Miracles of Saint Francis of Paola"
+        }
+      ],
+      "sourceExportedAt": "2026-10-13T19:52:45.207Z"
+    }
+  ]
+}
