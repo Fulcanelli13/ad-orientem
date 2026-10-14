@@ -88,7 +88,7 @@ try{
  const picker=page.locator("[data-ao-observed-mass-picker]");
  assert.equal(await page.locator("[data-full-mass-source-slot] [data-ao-observed-mass-picker]").count(),1,
    "Different Proper picker is outside the unified Mass form/celebration module");
- await page.locator("[data-mass-journey-change] summary").click();
+ await page.locator("[data-mass-journey-change] > summary").click();
  await page.locator('[data-full-mass-category="SOURCE_DATE"]').click();
  assert.equal(await picker.locator("details").evaluate(el=>el.open),true,
    "Other Proper category failed to open the source-day selector");
@@ -169,7 +169,7 @@ try{
  assert.equal(await page.locator("[data-mass-journey-before]").count(),1);
  assert.equal(await page.locator("[data-mass-journey-mass]").count(),1);
  assert.equal(await page.locator("[data-mass-journey-after]").count(),1);
- await page.locator("[data-mass-journey-change] summary").click();
+ await page.locator("[data-mass-journey-change] > summary").click();
  assert.equal(await page.locator("[data-mass-journey-change]").evaluate(el=>el.open),false,
   "Rare celebration changes should not crowd the initial view");
  assert.equal(await page.locator("[data-mass-journey-sources]").evaluate(el=>el.open),false,
@@ -361,7 +361,7 @@ try{
  });
  for(const [kind,expected] of [["VOTIVE","votive"],["NUPTIAL","nuptial"],["REQUIEM","requiem"],["OTHER","other"],["CALENDAR","day"]]){
   if(!(await page.locator("[data-mass-journey-change]").evaluate(el=>el.open)))
-   await page.locator("[data-mass-journey-change] summary").click();
+   await page.locator("[data-mass-journey-change] > summary").click();
   await page.locator('[data-full-mass-category="'+kind+'"]').click();
   const clicked=await page.evaluate(()=>__categoryClicks.at(-1));
   assert.equal(clicked,expected,"Existing Mass selector not reached: "+kind);
