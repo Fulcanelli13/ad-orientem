@@ -987,7 +987,20 @@ export async function mountNativeReaderPreview({
         formulaKneelRecord=null;
         formulaKneelScrollTop=null;
         controller.goToRecord(id);
-        return showGoodFriday();
+        const card=showGoodFriday();
+        // An explicit jump to the already source-owned death pause must
+        // locate "tradidit spiritum". A long Passion paragraph can
+        // otherwise open at its beginning under a misleading death banner.
+        // Normal reading continues to trigger this stage only via the
+        // separate source-word focus detector in syncGoodFridayDeath.
+        if(id==="GF-PASS-320"){
+          const loc=deathPhraseRect();
+          if(loc){
+            const target=loc.viewport.top+loc.card.clientHeight*.39;
+            loc.card.scrollTop=Math.max(0,loc.card.scrollTop+loc.rect.top-target);
+          }
+        }
+        return card;
       },
       setWillReceiveCommunion:value=>{
         controller.setWillReceiveCommunion(value);
