@@ -264,6 +264,15 @@ Dans une vision, Isaïe entend les séraphins proclamer trois fois la sainteté 
 
 ## 14. Te igitur — `AO.CANON.01`
 
+**The interpretive problem:** If Christ's sacrifice is complete and infinitely acceptable, why does the priest first ask the Father to accept the offering?
+
+**Source-led explanation (new editorial draft):** The prayer addresses the Father through Christ, placing the sacrifice within the Church's visible communion. Guéranger reads its supplication as ecclesial action even while the celebrant speaks quietly. The mention of the Pope and appropriate bishop expresses communion; it is not merely administrative information added to a private devotion. The question of acceptance will return after the Consecration in Supra quae, but here the Canon is already concerned with the Church's peace, protection and unity.
+
+**Connection to the next prayer:** The sacred action belongs to Christ and His Church; silence of voice does not privatize the sacrifice.
+
+**Original author locators:** Guéranger FRG18; St Alphonsus —; Lanslots / Gihr / Torma critical passages —. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-NEW-08` · English**
 
 The opening petition of the Roman Canon seeks God's acceptance of the offering and peace, protection and unity for the Church. Naming the Pope and the local bishop expresses the ecclesial dimension of the sacrifice, not merely a list of private intentions. The priest prays at the altar while the faithful can unite their own prayers to his intercession; do not confuse his silent words with an obligatory congregational recitation. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Scripture](https://www.newadvent.org/bible/1ti002.htm).
@@ -281,6 +290,15 @@ La première supplication du Canon romain demande à Dieu d'agréer l'offrande e
 
 ## 15. Memento, Domine — Living — `AO.CANON.02`
 
+**The interpretive problem:** Whose sacrifice is this, and how can individual intentions belong to a single public offering?
+
+**Source-led explanation (new editorial draft):** The Memento brings particular persons before the Father and expressly names the faith and devotion of those around the altar. Guéranger's treatment notes how intercession extends to the circumstantes. The faithful's participation must be understood without confusing their spiritual union to the offering with the celebrant's power of sacramental Consecration. Private intentions enter the public liturgical prayer without turning the Canon into a collection of private liturgies.
+
+**Connection to the next prayer:** The passage from named persons to the company of saints prepares the next prayer, Communicantes.
+
+**Original author locators:** Guéranger FRG19, FRG31; St Alphonsus —; Lanslots / Gihr / Torma critical passages —. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-NEW-09` · English**
 
 In the Memento for the living, the Canon embraces particular persons and those who stand near the altar, whose faith and devotion are named in the prayer. This is a fitting moment to place one's family, benefactors and those in need before God. Their union with the offering is real, but it does not give them the ministerial priest's power to consecrate. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).
@@ -297,6 +315,15 @@ Dans le Mémento des vivants, le Canon englobe des personnes particulières et c
 
 
 ## 16. Communicantes — `AO.CANON.03`
+
+**The interpretive problem:** Why name the saints within a sacrificial prayer addressed to the Father?
+
+**Source-led explanation (new editorial draft):** Communicantes professes the Church's communion with Mary, Joseph, the apostles and martyrs; the faithful on earth are not a separate worshipping body from the saints in glory. Guéranger wrote before Joseph's insertion into the Roman Canon, and Lanslots's 1897 transcription likewise omits him. Both witnesses are valuable for historical comparison but cannot be presented as the wording of the liturgy after the 1962 insertion became effective. The Church's present text controls, while the history explains what changed.
+
+**Connection to the next prayer:** The Canon turns from those for whom the Church intercedes to the disposition of the offering now before God.
+
+**Original author locators:** Guéranger FRG32, FRG33; St Alphonsus —; Lanslots / Gihr / Torma critical passages L1897-DISC-10. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
 
 **Existing source-linked manuscript `MM-NEW-10` · English**
 
@@ -317,6 +344,15 @@ Le Communicantes invoque la communion avec la bienheureuse Vierge Marie, saint J
 
 ## 17. Hanc igitur — `AO.CANON.04`
 
+**The interpretive problem:** What do the priest's extended hands mean, and is the gesture derived from an Old Testament sacrificial act?
+
+**Source-led explanation (new editorial draft):** The prayer petitions acceptance, peace, deliverance from eternal condemnation and admission among the elect. Guéranger, St Alphonsus and Lanslots associate the extended hands with biblical imposition upon a victim. That is a meaningful traditional comparison, not proof that this Roman gesture originated by reenacting Leviticus. Leviticus 8:14 discusses hands upon the sin-offering bullock; Leviticus 16 also distinguishes the slain goat from the live scapegoat sent away. Torma's recent conflation requires correction rather than repetition.
+
+**Connection to the next prayer:** The petition for an acceptable offering narrows into a prayer for the offering's transformation at Quam oblationem.
+
+**Original author locators:** Guéranger FRG20, FRG34; St Alphonsus ALPX17; Lanslots / Gihr / Torma critical passages L1897-DISC-06, TORMA-01. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-NEW-11` · English**
 
 In Hanc igitur the celebrant asks God graciously to receive the offering and to order our days in peace, rescue us from eternal condemnation and admit us among the elect. The extended hands are a gesture prescribed by the Roman rite; similarities to Old Testament laying-on of hands may illuminate their meaning but do not prove the historical origin of the Christian gesture. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Scripture](https://www.newadvent.org/bible/lev008.htm).
@@ -334,6 +370,15 @@ Dans le Hanc igitur, le célébrant demande à Dieu d'accueillir l'offrande avec
 
 ## 18. Quam oblationem — `AO.CANON.05`
 
+**The interpretive problem:** Why does the Church ask God to make the offering 'reasonable' and acceptable immediately before Consecration?
+
+**Source-led explanation (new editorial draft):** Guéranger relates rationabilem to the spiritual worship enjoined in Romans 12:1. The prayer asks that the oblation become for us Christ's Body and Blood. The five pre-Consecration crosses emphasize the actual Latin petitions but do not cause transubstantiation by themselves. Torma's description of the signs can be compared with the 1962 text; speculative interpretations of the five wounds are distinct from their rubrical timing and historical origin.
+
+**Connection to the next prayer:** The act prayed for is about to occur at Christ's own words, not at the preceding crosses.
+
+**Original author locators:** Guéranger FRG21, FRG35, FRG36, FRG37; St Alphonsus —; Lanslots / Gihr / Torma critical passages TORMA-02. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-NEW-12` · English**
 
 In Quam oblationem the priest asks God to make the offering blessed, approved, confirmed, reasonable and acceptable, so that it may become for us the Body and Blood of Christ. Under the 1962 ceremonial directions, he makes three signs of the Cross over both offerings, one over the Host at Corpus, and one over the chalice at Sanguis. These five signs precede, and are not themselves, the separate sacramental consecrations of bread and wine. [Roman Canon text and rubrics](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [O’Connell, The Celebration of Mass (1962), p. 262](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf).
@@ -350,6 +395,15 @@ Dans Quam oblationem, le prêtre demande à Dieu de rendre l’offrande bénie, 
 
 
 ## 19. Consecration of the Sacred Host — `AO.CANON.06`
+
+**The interpretive problem:** At which instant is Christ truly present, and why are there several actions before and after it?
+
+**Source-led explanation (new editorial draft):** The institution narrative recalls the Last Supper, but the received Roman words and gestures are a liturgical text with history, not a verbatim transcript from one Evangelist. Guéranger comments on details such as Christ lifting His eyes. The Real Presence follows from the words of Consecration: the priest's immediate genuflection acknowledges what has already occurred. The elevation displays the consecrated Host for adoration; it does not make the bread become Christ's Body. Claims that every accompanying detail originates from a particular early Pope need manuscript evidence.
+
+**Connection to the next prayer:** The chalice Consecration completes the two-species sacramental sign of the one sacrifice.
+
+**Original author locators:** Guéranger FRG22, FRG38, FRG39; St Alphonsus —; Lanslots / Gihr / Torma critical passages L1897-DISC-01, L1897-DISC-08. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
 
 **Existing source-linked manuscript `MM-PRIMARY-MB14` · English**
 
@@ -370,6 +424,15 @@ At the Last Supper Jesus takes bread and declares, “This is my body,” comman
 
 ## 20. Consecration of the Chalice — `AO.CANON.07`
 
+**The interpretive problem:** How does Christ's Blood of the covenant become present without a second historical shedding of blood?
+
+**Source-led explanation (new editorial draft):** The Roman chalice formula relates the Blood of Christ to the new covenant and the forgiveness of sins. Its received 1962 wording includes mysterium fidei inside the consecratory formula. The Church's sacramental offering does not reproduce a second bloody death: the two species signify the sacrificial separation of Body and Blood while the whole risen Christ remains present under either species. Older commentators may offer symbolic explanations of cross-signs or narrative details, but no source may silently replace the 1962 formula with a harmonized Gospel paraphrase.
+
+**Connection to the next prayer:** Once both Consecrations have occurred, the Canon explicitly names what the Church remembers and offers.
+
+**Original author locators:** Guéranger FRG22; St Alphonsus —; Lanslots / Gihr / Torma critical passages L1897-DISC-01, L1897-DISC-08. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-PRIMARY-MB15` · English**
 
 In giving the chalice to the apostles, Christ reveals that his Blood is poured out for the new covenant and the forgiveness of sins (Luke 22:20; Matthew 26:28). The consecration of the chalice directs the Church to Christ's redeeming self-offering and the real presence of his Precious Blood. In the 1962 Roman Canon the words “mysterium fidei” occur within the formula pronounced over the chalice, although they are not a verbatim phrase from Luke's institution account. [Scripture](https://www.newadvent.org/bible/luk022.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/389.png). [Doctrinal or patristic source](https://www.newadvent.org/summa/4075.htm).
@@ -389,6 +452,15 @@ En donnant le calice aux Apôtres, le Christ révèle que son Sang est versé po
 
 ## 21. Unde et memores — `AO.CANON.08`
 
+**The interpretive problem:** Why remember Passion, Resurrection and Ascension within the sacrifice instead of stopping at Calvary?
+
+**Source-led explanation (new editorial draft):** The prayer does not isolate a moment of death. It explicitly commemorates the saving mysteries of Christ crucified, risen and ascended, and offers the gifts received from God. Guéranger explains that the signs made after Consecration do not bless Christ as though He required further sanctification; they recall His saving sacrifice. This is where a salvation-history narrative can reach beyond the historical Passion, while the liturgical commentary explains an actual Roman prayer rather than assigning arbitrary events to each cross.
+
+**Connection to the next prayer:** The Canon then invokes the sacrifices named in ancient Scripture, now after Christ's presence upon the altar.
+
+**Original author locators:** Guéranger FRG23, FRG40; St Alphonsus —; Lanslots / Gihr / Torma critical passages —. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-PRIMARY-MB16` · English**
 
 After the Consecration, the Canon remembers the Lord's blessed Passion, Resurrection and Ascension. St Paul teaches that by eating this Bread and drinking this Chalice the faithful proclaim the Lord's death until he comes (1 Corinthians 11:26). “Unde et memores” gives this living remembrance a place in the Church's offering: the whole Paschal victory of Christ is confessed within the one Eucharistic sacrifice. [Scripture](https://www.newadvent.org/bible/1co011.htm) · [Original 1962 Roman Missal page](https://gregobase.selapa.net/sources/42/390.png). [Doctrinal or patristic source](https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)).
@@ -405,6 +477,15 @@ Après la consécration, le Canon proclame la mémoire de la Passion bienheureus
 
 
 ## 22. Supra quae — `AO.CANON.09`
+
+**The interpretive problem:** Why ask that the Eucharistic offering be received like the gifts of Abel, Abraham and Melchisedech, if it is infinitely greater?
+
+**Source-led explanation (new editorial draft):** Guéranger and Gihr confront this as a real theological problem rather than a decorative list of Old Testament stories. Gihr, drawing on St Thomas, locates the comparison in the faith and devotion of the earlier offerers and God's favourable regard, not in equality between victims. Abel's faith, Abraham's obedience and Melchisedech's priesthood are distinct interpretive avenues. Genesis says Melchisedech brought forth bread and wine; Gihr's assertion that he sacrificed them is subsequent Christian interpretation, not the Bible's direct narration. His hypothesis of fire consuming Abel's offering likewise exceeds Genesis 4.
+
+**Connection to the next prayer:** The question of acceptance leads into the more difficult language of the angel, the heavenly altar and participation in heavenly blessing.
+
+**Original author locators:** Guéranger FRG41, FRG42, FRG43; St Alphonsus ALPX18; Lanslots / Gihr / Torma critical passages GIHR-03, GIHR-04, GIHR-05, L1897-DISC-07. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
 
 **Existing source-linked manuscript `MM-PRIMARY-MB17` · English**
 
@@ -439,6 +520,15 @@ Melchisédech, roi de Salem et prêtre du Dieu Très-Haut, accueille Abram avec 
 
 ## 23. Supplices te rogamus — `AO.CANON.10`
 
+**The interpretive problem:** Who is the holy Angel, and what does it mean for the offering to be borne to the heavenly altar?
+
+**Source-led explanation (new editorial draft):** Guéranger interprets the Angel christologically; Lanslots juxtaposes that account with other angelic readings and acknowledges uncertainty. St Alphonsus reports a Christological explanation from a French predecessor but favours the reading associated with St Thomas, concerning the angelic presentation of the Church's prayers. These are distinguishable authorial positions, not several synonyms. St Thomas expressly resists imagining that Christ's physical Body or the consecrated species leave the altar to be carried to heaven. The petition concerns heavenly communion and blessing, not Eucharistic relocation.
+
+**Connection to the next prayer:** From worship joined to heaven, the Canon turns to those who have died in faith and await the fulfilment of the promises.
+
+**Original author locators:** Guéranger FRG44, FRG45; St Alphonsus ALPX19; Lanslots / Gihr / Torma critical passages L1897-DISC-02. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-NEW-13` · English**
 
 In Supplices te rogamus the priest asks that the offering be borne before God's majesty by the hands of his holy Angel, so that communicants may receive heavenly blessing and grace. St Thomas Aquinas explains both an angel presenting the prayers of priest and people and a spiritual interpretation referring to Christ, the Angel of great counsel. These are interpretations, not a dogmatic identification imposed by the prayer. Aquinas explicitly denies that the consecrated species or Christ's true Body are physically carried from the altar to heaven. [Roman Canon](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [St Thomas, Summa theologiae III, q. 83, a. 4, ad 9](https://www.newadvent.org/summa/4083.htm#article4) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).
@@ -458,6 +548,15 @@ Dans Supplices te rogamus, le prêtre demande que l'offrande soit portée devant
 
 ## 24. Memento etiam, Domine — Dead — `AO.CANON.11`
 
+**The interpretive problem:** What can the Eucharistic Sacrifice mean for those who have died, and how does naming them differ from private prayer?
+
+**Source-led explanation (new editorial draft):** The Canon commends the faithful departed to God, asking for a place of refreshment, light and peace. Guéranger's interpretation of the signum fidei makes one historic link to Christian initiation; it should not displace the text's own wording. Lanslots distinguishes the rules and history of public liturgical naming from the possibility of private intercession. We should explain the Church's prayer for the dead without pretending the celebrant knows the final state of any particular soul or collapsing rubrical diptychs into the personal intentions of every attendee.
+
+**Connection to the next prayer:** The prayer next includes the still-living sinners who beg to share the saints' company.
+
+**Original author locators:** Guéranger FRG46, FRG47; St Alphonsus —; Lanslots / Gihr / Torma critical passages L1897-DISC-05. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-NEW-14` · English**
 
 The Memento for the dead prays for those who have gone before us in faith and rest in peace, asking God to grant light, refreshment and peace. To pray for the dead is an act of charity and hope in God's mercy, not an attempt to declare the final state of an individual soul. Historical rules about public naming in the Canon must be kept distinct from private intercession and from the normative rubrics of the particular celebration. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Scripture](https://www.newadvent.org/bible/1th004.htm).
@@ -474,6 +573,15 @@ Le Mémento des défunts prie pour ceux qui nous ont précédés dans la foi et 
 
 
 ## 25. Nobis quoque peccatoribus — `AO.CANON.12`
+
+**The interpretive problem:** Why does a Canon full of saints and divine glory return to the confession of one's own sinfulness?
+
+**Source-led explanation (new editorial draft):** The priest breaks the prevailing silence of the Canon at its opening words, strikes his breast, and asks for fellowship with apostles and martyrs. The decisive words reject the presumption of deserving such a reward through one's own merit. Guéranger observes the gesture and reports practices of the faithful, but historical custom must not be imposed as universal posture or action in a 1962 congregation. The theological logic is not embarrassment after Consecration: the Eucharistic offering establishes precisely the ground of hope for sinners.
+
+**Connection to the next prayer:** The Canon's closing sentences turn from petition to praise through the one mediator, Christ.
+
+**Original author locators:** Guéranger FRG24, FRG48, FRG49; St Alphonsus —; Lanslots / Gihr / Torma critical passages —. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
 
 **Existing source-linked manuscript `MM-NEW-15` · English**
 
@@ -492,6 +600,15 @@ Au Nobis quoque peccatoribus, le célébrant demande que les pécheurs qui espè
 
 ## 26. Per quem haec omnia — `AO.CANON.13`
 
+**The interpretive problem:** What are 'all these good things' and why does the priest make signs of the Cross after Consecration?
+
+**Source-led explanation (new editorial draft):** The words name God as the giver of creation, sanctification, life and blessing through Christ. Guéranger recalls a historical association with blessings of additional material gifts; this requires evidence rather than a confident reconstruction of what every ancient Mass celebrated. The three crosses belong to the actual 1962 ceremonial sequence but are not a repeated Consecration. This prayer therefore juxtaposes the whole created order and the Eucharistic gift without authorizing picturesque invented rites.
+
+**Connection to the next prayer:** The final doxology gathers the whole sacrifice into an act of honour and glory to the Father.
+
+**Original author locators:** Guéranger FRG50, FRG51; St Alphonsus —; Lanslots / Gihr / Torma critical passages —. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
+
 **Existing source-linked manuscript `MM-NEW-16` · English**
 
 Per quem haec omnia acknowledges that through Christ God creates, sanctifies, gives life, blesses and bestows all these good things. The priest makes three signs of the Cross over the Host and chalice at sanctificas, vivificas and benedicis; these do not consecrate again. The precise referent of haec omnia has received differing historical interpretations, including a possible association with blessings of material gifts in earlier usage. That proposed origin should not be taught as certain or imposed on the 1962 rite. [Roman Canon text and rubrics](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [Catholic Encyclopedia, Canon of the Mass (historical interpretation)](https://www.newadvent.org/cathen/03255c.htm).
@@ -508,6 +625,15 @@ Dans Per quem haec omnia, l'Église reconnaît que, par le Christ, Dieu crée, s
 
 
 ## 27. Per ipsum · Minor Elevation — `AO.CANON.14`
+
+**The interpretive problem:** Why does the Canon end with another elevation, and what is being offered to the Father?
+
+**Source-led explanation (new editorial draft):** The words glorify the Father through Christ, with Him and in Him, in the unity of the Holy Ghost. Guéranger distinguishes the small elevation associated with this doxology from the ostension immediately after each Consecration. The crosses and actions have exact 1962 positions; they neither reconsecrate the sacred species nor restage another event in Christ's earthly life. The theological movement is complete: the Church's prayer, united to Christ's own self-offering, reaches its doxological conclusion.
+
+**Connection to the next prayer:** The Pater noster now leads the celebration toward Communion, where sacrificial participation is received under the sacramental species.
+
+**Original author locators:** Guéranger FRG25, FRG52, FRG53; St Alphonsus —; Lanslots / Gihr / Torma critical passages —. [St Alphonsus printed claims](../../data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json) · [Other original author research](../../data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json). The source argument is not an overriding 1962 rubric.
+
 
 **Existing source-linked manuscript `MM-NEW-17` · English**
 
