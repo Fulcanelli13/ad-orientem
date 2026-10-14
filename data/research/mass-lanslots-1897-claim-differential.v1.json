@@ -11,7 +11,7 @@
     "volumePdfPages": 404
   },
   "provenance": {
-    "note": "Differential against 422-item September Mass evidence ledger, FRG01-30 in first original-French audit, FRG31-71 microguide, eight Mass Formation stages, and certified 14-segment Canon structure. Only matches stated below were inspected; absence of a keyword does not prove uniqueness.",
+    "note": "Differential against 422-item September Mass evidence ledger, FRG01-30 in first original-French audit, FRG31-71 microguide, eight Mass Formation stages, and certified 14-segment Canon structure. Only matches stated below were inspected; absence of a keyword does not prove uniqueness. Added LAN-016 from an indexed excerpt of the original 1897 PDF explicitly citing Malachi 1:11; page image not obtained.",
     "historicalEvidencePath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
     "frgFirstPath": "docs/research/MASS-FRENCH-GUERANGER-ORIGINAL-AUDIT-20261013.md",
     "frgSecondPath": "data/research/mass-fr-gueranger-microguide-batch02.v1.json",
@@ -24,9 +24,11 @@
     "webPdfTooLargeForInspection": true,
     "restriction": "Do not upgrade provisional OCR excerpts to certified original-page witness; first seven rows reference previous indexed excerpts not fully revalidated.",
     "fullCitationInventory": false,
-    "visualPageChecks": 0
+    "visualPageChecks": 0,
+    "indexedFullPdfChapterITextExcerptVerified": true,
+    "independentlyVisuallyVerifiedPageImages": 0
   },
-  "claimCount": 15,
+  "claimCount": 16,
   "claims": [
     {
       "id": "LAN-001",
@@ -468,6 +470,44 @@
       "criticalNote": "1962 exceptions are normative; John 1 link is already present in the evidence ledger.",
       "originalTextVerification": "REQUIRED",
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
+      "theologicalReview": "PENDING",
+      "frenchCopy": "NOT_AUTHORIZED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "LAN-016",
+      "claimTopic": "Altar and worldwide pure oblation as interpreted from the prophet Malachias",
+      "sourceChapter": "I",
+      "printedPageHint": 13,
+      "printedPageLocatorStatus": "CHAPTER_OPENING_PAGE_HINT_NOT_PAGE_IMAGE_VERIFIED",
+      "scriptureRefs": [
+        "Malachi 1:11"
+      ],
+      "scriptureCitationEvidence": "EXPLICIT_IN_WEB_SEARCH_INDEX_EXCERPT_OF_ORIGINAL_1897_PDF",
+      "sourceExcerptShort": "from the rising of the sun even to the going down, a clean oblation is offered (Mal. i. 11)",
+      "originalContextSummary": "At the beginning of Chapter I, Lanslots surveys patriarchal altars (Abel, Noe, Abraham) and connects their tradition to the Christian altar by applying Malachi 1:11 to the universally offered Eucharistic oblation.",
+      "proofUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_%28IA_illustratedexpla00lans%29.pdf",
+      "scriptureCitationClassification": "AUTHOR_EXPLICIT_REFERENCE_AND_CATHOLIC_TYPOLOGICAL_APPLICATION",
+      "theologicalHistoricalQualification": "Explicit authorial reading of Malachi 1:11 as prefiguration of worldwide Mass; do not assert without argument that this exclusively exhausts the verse's original prophetic context. The quoted first-page text supports the claimed authorial interpretation, but full page needs visual verification.",
+      "legacyGuideOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "sourceFirstLiveOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "source48LinkStatus": "CURRENT_SOURCE_FIRST39_BASE_MACRO_ID_CONFIRMED",
+      "overlaps": {
+        "existingGuerangerIds": [],
+        "existingHistoricalEvidenceIds": [],
+        "formationStageIds": [
+          "MF01",
+          "MF06"
+        ]
+      },
+      "disposition": "EXPLICIT_SCRIPTURAL_LINK_NEW_HISTORICAL_WITNESS",
+      "criticalNote": "The 422-entry evidence ledger has many Offertory/sacrificial claims but did not expose this precise book-author-verse association in the audited material. Not yet certified unique across all contextual theological sources.",
+      "originalTextVerification": "SEARCH_ENGINE_INDEXED_PDF_EXCERPT_ONLY_SCAN_PAGE_CHECK_REQUIRED",
+      "biblicalVerseAttributionToLanslots": "EXPLICIT_IN_SEARCH_INDEX_EXCERPT",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
       "runtimePromotion": "BLOCKED"
