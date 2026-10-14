@@ -1,0 +1,569 @@
+{
+  "schema": "AO_MASS_BIBLE_CANONICAL_SCRIPTURE_BRIDGE_V1",
+  "date": "2026-10-14",
+  "status": "SOURCE_RECONCILED_READER_ONLY_NO_EDITORIAL_PUBLICATION",
+  "owner": "learn.mass",
+  "pinnedInputs": {
+    "canonical39": {
+      "pr": 1193,
+      "sha": "5ac321bcd6b81b30bae01ad7f9e298c305e1184d",
+      "path": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json"
+    },
+    "massBible26": {
+      "pr": 1082,
+      "sha": "ebb854aef68433ce2aff250ac189797b25426f8f",
+      "path": "data/learn/mass-bible-source-layers.v1.json"
+    },
+    "visibleLinks": {
+      "pr": 1195,
+      "branch": "feature/mass-formation-scripture-context-20261014"
+    }
+  },
+  "counts": {
+    "canonicalOwnersAvailable": 39,
+    "records": 26,
+    "uniqueCanonicalOwners": 20,
+    "readerEligible": 20,
+    "displayedLinks": 18,
+    "containedSubverses": 2,
+    "held": 6,
+    "versionSensitivePsalms": 4,
+    "variableProper": 2,
+    "newManuscriptPublications": 0
+  },
+  "nonNegotiableGates": [
+    "Neither these links nor their citations certify historical narrative paragraphs, vernacular translations, source rights or exact 1962 liturgical wording.",
+    "The shared Bible owner renders passages, chapters and available commentary; the 1962 Mass Proper and 48-card LIVE engine remain independently authoritative.",
+    "The 48 manuscript units/16 new thematic paragraphs in PR #1193 are NOT publication approved; do not import their text into this bridge.",
+    "The Last Gospel is conditional; never infer its presence from a calendar date or a standalone formation link.",
+    "Psalm Vulgate/Hebrew crosswalks and two variable Epistle/Gospel examples may not be hardcoded as fixed passages.",
+    "One canonical section owns every explanation, with 20 study references shown using 18 distinct links (two are covered by a broader passage)."
+  ],
+  "rows": [
+    {
+      "id": "MB01",
+      "canonicalSectionId": "AO.CARD.001",
+      "canonicalLessonId": "MF01",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "MERGE_INTO_MB02",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "publicationApproved": false,
+      "scriptureStudyLink": null,
+      "heldReason": "EDITION_SPECIFIC_PSALM_NUMBERING",
+      "canonicalRiteFlags": [
+        "PSALM_42_CONDITIONAL_FOR_REQUIEM_AND_PASSIONTIDE",
+        "PRE_MASS_CONDITIONS_MUST_USE_NORMATIVE_SOURCE"
+      ],
+      "caveat": "NOT_A_FULL_PSALM_EDITION_MAPPING"
+    },
+    {
+      "id": "MB02",
+      "canonicalSectionId": "AO.CARD.001",
+      "canonicalLessonId": "MF01",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "publicationApproved": false,
+      "scriptureStudyLink": null,
+      "heldReason": "EDITION_SPECIFIC_PSALM_NUMBERING",
+      "canonicalRiteFlags": [
+        "PSALM_42_CONDITIONAL_FOR_REQUIEM_AND_PASSIONTIDE",
+        "PRE_MASS_CONDITIONS_MUST_USE_NORMATIVE_SOURCE"
+      ],
+      "caveat": "OMITTED_IN_SOME_LITURGICAL_CIRCUMSTANCES"
+    },
+    {
+      "id": "MB03",
+      "canonicalSectionId": "AO.CARD.001",
+      "canonicalLessonId": "MF01",
+      "originalResearchLessonId": "MF02",
+      "researchDisposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS04",
+        "displayLessonId": "MF02",
+        "reference": "Luke 18:13",
+        "upstreamReference": "Luke 18:13",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [
+        "PSALM_42_CONDITIONAL_FOR_REQUIEM_AND_PASSIONTIDE",
+        "PRE_MASS_CONDITIONS_MUST_USE_NORMATIVE_SOURCE"
+      ],
+      "caveat": "COMPARATIVE_NOT_LITURGICAL_CITATION"
+    },
+    {
+      "id": "MB04",
+      "canonicalSectionId": "AO.CARD.002",
+      "canonicalLessonId": "MF01",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS17",
+        "displayLessonId": "MF01",
+        "reference": "Matthew 20:30–31",
+        "upstreamReference": "Matthew 20:30–31",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "COMPARATIVE_NOT_SINGLE_EXACT_QUOTE"
+    },
+    {
+      "id": "MB05",
+      "canonicalSectionId": "AO.CARD.003",
+      "canonicalLessonId": "MF01",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS01",
+        "displayLessonId": "MF01",
+        "reference": "Luke 2:14",
+        "upstreamReference": "Luke 2:14",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [
+        "GLORIA_ONLY_WHEN_PRESCRIBED"
+      ],
+      "caveat": "ALTISSIMIS_VULGATE_VERSUS_EXCELSIS_MISSAL_NOT_WORD_FOR_WORD"
+    },
+    {
+      "id": "MB06",
+      "canonicalSectionId": "AO.CARD.005",
+      "canonicalLessonId": "MF01",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "VARIABLE_PROPER_EXAMPLE_NOT_FIXED_PRAYER",
+      "classification": "VARIABLE_PROPER_READING",
+      "publicationApproved": false,
+      "scriptureStudyLink": null,
+      "heldReason": "REQUIRES_SELECTED_PROPER_IDENTITY_AND_LATIN",
+      "canonicalRiteFlags": [
+        "VARIABLE_LESSON_DO_NOT_SUBSTITUTE_EXAMPLE_FOR_SELECTED_PROPER"
+      ],
+      "caveat": "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH"
+    },
+    {
+      "id": "MB07",
+      "canonicalSectionId": "AO.CARD.007",
+      "canonicalLessonId": "MF01",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "VARIABLE_PROPER_EXAMPLE_NOT_FIXED_PRAYER",
+      "classification": "VARIABLE_PROPER_READING",
+      "publicationApproved": false,
+      "scriptureStudyLink": null,
+      "heldReason": "REQUIRES_SELECTED_PROPER_IDENTITY_AND_LATIN",
+      "canonicalRiteFlags": [
+        "VARIABLE_GOSPEL_AND_LITURGICAL_FORM_CHECK"
+      ],
+      "caveat": "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH"
+    },
+    {
+      "id": "MB08",
+      "canonicalSectionId": "AO.CARD.009",
+      "canonicalLessonId": "MF01",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS18",
+        "displayLessonId": "MF01",
+        "reference": "John 1:14",
+        "upstreamReference": "John 1:14",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [
+        "CREDO_ONLY_WHEN_PRESCRIBED"
+      ],
+      "caveat": "NOT_VERBATIM_CREED_TEXT"
+    },
+    {
+      "id": "MB09",
+      "canonicalSectionId": "AO.CARD.010",
+      "canonicalLessonId": "MF03",
+      "originalResearchLessonId": "MF03",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "publicationApproved": false,
+      "scriptureStudyLink": null,
+      "heldReason": "EDITION_SPECIFIC_PSALM_NUMBERING",
+      "canonicalRiteFlags": [],
+      "caveat": "VULGATE_PSALM_NUMBERING"
+    },
+    {
+      "id": "MB10",
+      "canonicalSectionId": "AO.CARD.011",
+      "canonicalLessonId": "MF03",
+      "originalResearchLessonId": "MF03",
+      "researchDisposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS05",
+        "displayLessonId": "MF03",
+        "reference": "Romans 12:1",
+        "upstreamReference": "Romans 12:1",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "THEOLOGICAL_CONNECTION_NOT_LITERAL"
+    },
+    {
+      "id": "MB11",
+      "canonicalSectionId": "AO.CARD.013",
+      "canonicalLessonId": "MF04",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS02",
+        "displayLessonId": "MF01",
+        "reference": "Isaiah 6:3",
+        "upstreamReference": "Isaiah 6:3",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "VULGATE_EXERCITUUM_VERSUS_LITURGICAL_SABAOTH"
+    },
+    {
+      "id": "MB12",
+      "canonicalSectionId": "AO.CARD.013",
+      "canonicalLessonId": "MF04",
+      "originalResearchLessonId": "MF01",
+      "researchDisposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS03",
+        "displayLessonId": "MF01",
+        "reference": "Matthew 21:9",
+        "upstreamReference": "Matthew 21:9",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "LITURGICAL_COMPOSITION"
+    },
+    {
+      "id": "MB13",
+      "canonicalSectionId": "AO.CANON.01",
+      "canonicalLessonId": "MF04",
+      "originalResearchLessonId": "MF04",
+      "researchDisposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS06",
+        "displayLessonId": "MF04",
+        "reference": "1 Timothy 2:1–2",
+        "upstreamReference": "1 Timothy 2:1–2",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "COMPARATIVE_NOT_EXACT_QUOTATION"
+    },
+    {
+      "id": "MB14",
+      "canonicalSectionId": "AO.CANON.06",
+      "canonicalLessonId": "MF05",
+      "originalResearchLessonId": "MF05",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "NARRATIVE_SCRIPTURE_CONNECTION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS07",
+        "displayLessonId": "MF05",
+        "reference": "1 Corinthians 11:23–26",
+        "upstreamReference": "1 Corinthians 11:23–26",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [
+        "CONSECRATION_BREAD_NOT_COMBINED_WITH_CHALICE"
+      ],
+      "caveat": "NO_WORD_FOR_WORD_EQUIVALENCE"
+    },
+    {
+      "id": "MB15",
+      "canonicalSectionId": "AO.CANON.07",
+      "canonicalLessonId": "MF05",
+      "originalResearchLessonId": "MF05",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "NARRATIVE_SCRIPTURE_CONNECTION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS08",
+        "displayLessonId": "MF05",
+        "reference": "Luke 22:20",
+        "upstreamReference": "Luke 22:20",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [
+        "CONSECRATION_CHALICE_NOT_COMBINED_WITH_BREAD"
+      ],
+      "caveat": "MYSTERIUM_FIDEI_NOT_PROVEN_AS_EXACT_GOSPEL_WORDS"
+    },
+    {
+      "id": "MB16",
+      "canonicalSectionId": "AO.CANON.08",
+      "canonicalLessonId": "MF06",
+      "originalResearchLessonId": "MF06",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "DOCTRINAL_SCRIPTURE_CONNECTION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS07",
+        "displayLessonId": "MF05",
+        "reference": "1 Corinthians 11:23–26",
+        "upstreamReference": "1 Corinthians 11:26",
+        "alignment": "VERSE_WITHIN_LARGER_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "THEOLOGICAL_CONNECTION_NOT_LITERAL"
+    },
+    {
+      "id": "MB17",
+      "canonicalSectionId": "AO.CANON.09",
+      "canonicalLessonId": "MF06",
+      "originalResearchLessonId": "MF06",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS09",
+        "displayLessonId": "MF06",
+        "reference": "Genesis 4:4",
+        "upstreamReference": "Genesis 4:4",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "NAME_IN_MISSAL_NOT_READING"
+    },
+    {
+      "id": "MB18",
+      "canonicalSectionId": "AO.CANON.09",
+      "canonicalLessonId": "MF06",
+      "originalResearchLessonId": "MF06",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS10",
+        "displayLessonId": "MF06",
+        "reference": "Genesis 22:1–19",
+        "upstreamReference": "Genesis 22:1–19",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "ISAAC_NOT_KILLED"
+    },
+    {
+      "id": "MB19",
+      "canonicalSectionId": "AO.CANON.09",
+      "canonicalLessonId": "MF06",
+      "originalResearchLessonId": "MF06",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "EXPLICIT_BIBLICAL_FIGURE",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS11",
+        "displayLessonId": "MF06",
+        "reference": "Genesis 14:18–20",
+        "upstreamReference": "Genesis 14:18–20",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "GENESIS_PROFERENS_NOT_EXPLICIT_BREAD_WINE_SACRIFICE"
+    },
+    {
+      "id": "MB20",
+      "canonicalSectionId": "AO.CANON.09",
+      "canonicalLessonId": "MF06",
+      "originalResearchLessonId": "MF06",
+      "researchDisposition": "SUPPORT_MB19_BUT_DIFFERENT_SCRIPTURE_PASSAGE",
+      "classification": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS12",
+        "displayLessonId": "MF06",
+        "reference": "Hebrews 7:1–17",
+        "upstreamReference": "Hebrews 7:1–17",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "INTERPRETATION_NOT_MISSAL_WORDING"
+    },
+    {
+      "id": "MB21",
+      "canonicalSectionId": "AO.CARD.019",
+      "canonicalLessonId": "MF07",
+      "originalResearchLessonId": "MF07",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS13",
+        "displayLessonId": "MF07",
+        "reference": "Matthew 6:9–13",
+        "upstreamReference": "Matthew 6:9–13",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "CLEMENTINE_MATTHEW_SUPERSUBSTANTIALEM_VS_BENZIGER_1962_COTIDIANUM_LUKE_QUOTIDIANUM"
+    },
+    {
+      "id": "MB22",
+      "canonicalSectionId": "AO.CARD.020",
+      "canonicalLessonId": "MF07",
+      "originalResearchLessonId": "MF07",
+      "researchDisposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION",
+      "classification": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS13",
+        "displayLessonId": "MF07",
+        "reference": "Matthew 6:9–13",
+        "upstreamReference": "Matthew 6:13",
+        "alignment": "VERSE_WITHIN_LARGER_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [
+        "FRACTION_COMMIXTURE_NOT_SECOND_TRANSUBSTANTIATION"
+      ],
+      "caveat": "LITURGICAL_EMBOLISM"
+    },
+    {
+      "id": "MB23",
+      "canonicalSectionId": "AO.CARD.021",
+      "canonicalLessonId": "MF07",
+      "originalResearchLessonId": "MF07",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS14",
+        "displayLessonId": "MF07",
+        "reference": "John 1:29",
+        "upstreamReference": "John 1:29",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [],
+      "caveat": "MASS_INVOCATION_EXTENDS_VERSE"
+    },
+    {
+      "id": "MB24",
+      "canonicalSectionId": "AO.CARD.022",
+      "canonicalLessonId": "MF07",
+      "originalResearchLessonId": "MF07",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "SCRIPTURAL_WORDING_ADAPTED",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS15",
+        "displayLessonId": "MF07",
+        "reference": "Matthew 8:8",
+        "upstreamReference": "Matthew 8:8",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [
+        "PRIEST_DOMINE_NON_SUM_DIGNUS_NOT_FAITHFUL_RESPONSE"
+      ],
+      "caveat": "PUER_MEUS_VERSUS_ANIMA_MEA"
+    },
+    {
+      "id": "MB25",
+      "canonicalSectionId": "AO.CARD.023",
+      "canonicalLessonId": "MF07",
+      "originalResearchLessonId": "MF07",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "DIRECT_SCRIPTURAL_WORDING",
+      "publicationApproved": false,
+      "scriptureStudyLink": null,
+      "heldReason": "EDITION_SPECIFIC_PSALM_NUMBERING",
+      "canonicalRiteFlags": [],
+      "caveat": "CLEMENTINE_115_3_4_MODERN_116_12_13"
+    },
+    {
+      "id": "MB26",
+      "canonicalSectionId": "AO.CARD.030",
+      "canonicalLessonId": "MF08",
+      "originalResearchLessonId": "MF08",
+      "researchDisposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT",
+      "classification": "VARIABLE_RITE_SCRIPTURE_READING",
+      "publicationApproved": false,
+      "scriptureStudyLink": {
+        "state": "SOURCE_IDENTIFIED_READER_NAVIGATION_ONLY",
+        "id": "MFS16",
+        "displayLessonId": "MF08",
+        "reference": "John 1:1–14",
+        "upstreamReference": "John 1:1–14",
+        "alignment": "EXACT_PASSAGE",
+        "noMassTextEquivalence": true
+      },
+      "heldReason": null,
+      "canonicalRiteFlags": [
+        "LAST_GOSPEL_NOT_UNIVERSALLY_PRESENT"
+      ],
+      "caveat": "RITE_DEPENDENT_NOT_UNCONDITIONAL"
+    }
+  ]
+}
