@@ -5,7 +5,8 @@
   "sourceOfTruth": {
     "frenchGuide": "data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",
     "sourceAnchors": "data/research/mass-canon-62-source-trigger-audit-20261013.json",
-    "priorityFlags": "data/research/mass-canon-flagged-french-copy-triage-20261013.json"
+    "priorityFlags": "data/research/mass-canon-flagged-french-copy-triage-20261013.json",
+    "frenchShort": "data/research/mass-canon-french-rubric-62-original-redraft-20261013.json"
   },
   "counts": {
     "total": 62,
@@ -29,7 +30,8 @@
       "INLINE_ATOMIC_EDITORIAL": 21,
       "GUIDE_AND_FORM_CONTEXT": 1,
       "INDEPENDENT_STAGE_EDITORIAL_ONLY": 2
-    }
+    },
+    "shortFrenchCanonicalLinks": 62
   },
   "obligations": [
     "The canonical full French text is referenced by action ID, never duplicated.",
@@ -44,7 +46,9 @@
     "SERVER_RIBBON_ONLY never inherits PRIEST action ownership. PRIEST_RIBBON_STATE_ONLY never becomes an instant repeated icon.",
     "INDEPENDENT_STAGE_EDITORIAL_ONLY is used for consecration genuflection/elevation; no activation until distinct witnessed source stages are resolved.",
     "Guide drafts describe observable rites and legitimate variants directly; do not substitute implementation commentary for the rubric itself.",
-    "Final guide prose states the rite; source-cue and implementation limitations are preserved as editorial metadata rather than intrusive commentary."
+    "Final guide prose states the rite; source-cue and implementation limitations are preserved as editorial metadata rather than intrusive commentary.",
+    "The short French draft is read at preview time from the canonical R62 French owner; no second editable French short text exists in this bilingual registry.",
+    "If the canonical French source or its approval status is missing, the entire bilingual packet must fail closed rather than substitute an outdated local copy."
   ],
   "rows": [
     {
@@ -61,8 +65,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il élève les mains et les yeux, puis s’incline.",
-        "en": "He raises his hands and eyes, then bows."
+        "en": "He raises his hands and eyes, then bows.",
+        "frCanonicalActionId": "AO.CANON.R62.001"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.001",
@@ -96,8 +100,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il baise l’autel et joint les mains.",
-        "en": "He kisses the altar and joins his hands."
+        "en": "He kisses the altar and joins his hands.",
+        "frCanonicalActionId": "AO.CANON.R62.002"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.002",
@@ -131,8 +135,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace trois croix sur l’Hostie et le calice.",
-        "en": "He makes three crosses over the Host and chalice."
+        "en": "He makes three crosses over the Host and chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.003"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.003",
@@ -166,8 +170,8 @@
       "semanticKind": "CONDITIONAL_FORM",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il nomme le pape et l’ordinaire selon les rubriques.",
-        "en": "He names the Pope and local Ordinary as prescribed."
+        "en": "He names the Pope and local Ordinary as prescribed.",
+        "frCanonicalActionId": "AO.CANON.R62.004"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.004",
@@ -201,8 +205,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Meménto, il joint les mains et incline la tête.",
-        "en": "At Memento, he joins his hands and bows his head."
+        "en": "At Memento, he joins his hands and bows his head.",
+        "frCanonicalActionId": "AO.CANON.R62.005"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.005",
@@ -236,8 +240,8 @@
       "semanticKind": "SILENT_MEMORIAL",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il fait mémoire des vivants en silence.",
-        "en": "He silently commemorates the living."
+        "en": "He silently commemorates the living.",
+        "frCanonicalActionId": "AO.CANON.R62.006"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.006",
@@ -271,8 +275,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il reprend les mains étendues.",
-        "en": "He resumes with hands extended."
+        "en": "He resumes with hands extended.",
+        "frCanonicalActionId": "AO.CANON.R62.007"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.007",
@@ -306,8 +310,8 @@
       "semanticKind": "CONDITIONAL_FORM",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il récite Communicántes, les mains étendues.",
-        "en": "He recites Communicantes with hands extended."
+        "en": "He recites Communicantes with hands extended.",
+        "frCanonicalActionId": "AO.CANON.R62.008"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.008",
@@ -341,8 +345,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Au nom de Jésus-Christ, il incline la tête.",
-        "en": "At the name of Jesus Christ, he bows his head."
+        "en": "At the name of Jesus Christ, he bows his head.",
+        "frCanonicalActionId": "AO.CANON.R62.009"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.009",
@@ -376,8 +380,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Per eúndem, il joint les mains.",
-        "en": "At Per eundem, he joins his hands."
+        "en": "At Per eundem, he joins his hands.",
+        "frCanonicalActionId": "AO.CANON.R62.010"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.010",
@@ -411,8 +415,8 @@
       "semanticKind": "CONDITIONAL_FORM",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il étend les mains ouvertes sur les oblats.",
-        "en": "He extends his open hands over the offerings."
+        "en": "He extends his open hands over the offerings.",
+        "frCanonicalActionId": "AO.CANON.R62.011"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.011",
@@ -446,8 +450,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Per Christum, il joint les mains.",
-        "en": "At Per Christum, he joins his hands."
+        "en": "At Per Christum, he joins his hands.",
+        "frCanonicalActionId": "AO.CANON.R62.012"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.012",
@@ -481,8 +485,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace trois croix sur l’Hostie et le calice.",
-        "en": "He makes three crosses over the Host and chalice."
+        "en": "He makes three crosses over the Host and chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.013"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.013",
@@ -516,8 +520,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Corpus, il trace une croix sur l’Hostie.",
-        "en": "At Corpus, he crosses the Host."
+        "en": "At Corpus, he crosses the Host.",
+        "frCanonicalActionId": "AO.CANON.R62.014"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.014",
@@ -551,8 +555,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Sanguis, il trace une croix sur le calice.",
-        "en": "At Sanguis, he crosses the chalice."
+        "en": "At Sanguis, he crosses the chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.015"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.015",
@@ -586,8 +590,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il joint les mains et incline la tête.",
-        "en": "He joins his hands and bows his head."
+        "en": "He joins his hands and bows his head.",
+        "frCanonicalActionId": "AO.CANON.R62.016"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.016",
@@ -621,8 +625,8 @@
       "semanticKind": "CONDITIONAL_FORM",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À accépit panem, il prend l’Hostie.",
-        "en": "At accepit panem, he takes the Host."
+        "en": "At accepit panem, he takes the Host.",
+        "frCanonicalActionId": "AO.CANON.R62.017"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.017",
@@ -656,8 +660,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il lève les yeux au ciel, puis les abaisse.",
-        "en": "He looks heavenward, then lowers his eyes."
+        "en": "He looks heavenward, then lowers his eyes.",
+        "frCanonicalActionId": "AO.CANON.R62.018"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.018",
@@ -691,8 +695,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il incline la tête en rendant grâce.",
-        "en": "He bows his head in thanksgiving."
+        "en": "He bows his head in thanksgiving.",
+        "frCanonicalActionId": "AO.CANON.R62.019"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.019",
@@ -726,8 +730,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace une croix sur l’Hostie.",
-        "en": "He makes a cross over the Host."
+        "en": "He makes a cross over the Host.",
+        "frCanonicalActionId": "AO.CANON.R62.020"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.020",
@@ -761,8 +765,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il dit fregit sans rompre l’Hostie.",
-        "en": "He says fregit without breaking the Host."
+        "en": "He says fregit without breaking the Host.",
+        "frCanonicalActionId": "AO.CANON.R62.021"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.021",
@@ -796,8 +800,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il prononce secrètement les paroles de consécration.",
-        "en": "He quietly pronounces the words of consecration."
+        "en": "He quietly pronounces the words of consecration.",
+        "frCanonicalActionId": "AO.CANON.R62.022"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.022",
@@ -831,8 +835,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il fait la première génuflexion.",
-        "en": "He makes the first genuflection."
+        "en": "He makes the first genuflection.",
+        "frCanonicalActionId": "AO.CANON.R62.023"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.023",
@@ -866,8 +870,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il élève l’Hostie à l’adoration des fidèles.",
-        "en": "He elevates the Host for the faithful to adore."
+        "en": "He elevates the Host for the faithful to adore.",
+        "frCanonicalActionId": "AO.CANON.R62.024"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.024",
@@ -901,8 +905,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il repose l’Hostie, puis génuflecte.",
-        "en": "He replaces the Host, then genuflects."
+        "en": "He replaces the Host, then genuflects.",
+        "frCanonicalActionId": "AO.CANON.R62.025"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.025",
@@ -936,8 +940,8 @@
       "semanticKind": "PERSISTENT_STATE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il garde les pouces et index joints.",
-        "en": "He keeps his thumbs and index fingers joined."
+        "en": "He keeps his thumbs and index fingers joined.",
+        "frCanonicalActionId": "AO.CANON.R62.026"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.026",
@@ -971,8 +975,8 @@
       "semanticKind": "MINISTER_EVENT",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Le servant sonne pendant l’élévation de l’Hostie.",
-        "en": "The server rings during the Host elevation."
+        "en": "The server rings during the Host elevation.",
+        "frCanonicalActionId": "AO.CANON.R62.027"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.027",
@@ -1006,8 +1010,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Le calice est découvert ; le prêtre le soulève brièvement.",
-        "en": "The chalice is uncovered; the priest raises it briefly."
+        "en": "The chalice is uncovered; the priest raises it briefly.",
+        "frCanonicalActionId": "AO.CANON.R62.028"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.028",
@@ -1041,8 +1045,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À grátias agens, il incline la tête.",
-        "en": "At gratias agens, he bows his head."
+        "en": "At gratias agens, he bows his head.",
+        "frCanonicalActionId": "AO.CANON.R62.029"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.029",
@@ -1076,8 +1080,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace une croix sur le calice.",
-        "en": "He makes a cross over the chalice."
+        "en": "He makes a cross over the chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.030"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.030",
@@ -1111,8 +1115,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il tient le calice à deux mains.",
-        "en": "He holds the chalice with both hands."
+        "en": "He holds the chalice with both hands.",
+        "frCanonicalActionId": "AO.CANON.R62.031"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.031",
@@ -1146,8 +1150,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il prononce secrètement la consécration du calice.",
-        "en": "He quietly pronounces the chalice consecration."
+        "en": "He quietly pronounces the chalice consecration.",
+        "frCanonicalActionId": "AO.CANON.R62.032"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.032",
@@ -1181,8 +1185,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il repose le calice, puis l’adore.",
-        "en": "He replaces the chalice, then adores."
+        "en": "He replaces the chalice, then adores.",
+        "frCanonicalActionId": "AO.CANON.R62.033"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.033",
@@ -1216,8 +1220,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il élève le calice après la première génuflexion.",
-        "en": "He elevates the chalice after the first genuflection."
+        "en": "He elevates the chalice after the first genuflection.",
+        "frCanonicalActionId": "AO.CANON.R62.034"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.034",
@@ -1251,8 +1255,8 @@
       "semanticKind": "MINISTER_EVENT",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Le servant sonne pendant l’élévation du calice.",
-        "en": "The server rings during the chalice elevation."
+        "en": "The server rings during the chalice elevation.",
+        "frCanonicalActionId": "AO.CANON.R62.035"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.035",
@@ -1286,8 +1290,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il récite Unde et mémores, les mains étendues.",
-        "en": "He recites Unde et memores with hands extended."
+        "en": "He recites Unde et memores with hands extended.",
+        "frCanonicalActionId": "AO.CANON.R62.036"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.036",
@@ -1321,8 +1325,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À de tuis donis, il joint les mains.",
-        "en": "At de tuis donis, he joins his hands."
+        "en": "At de tuis donis, he joins his hands.",
+        "frCanonicalActionId": "AO.CANON.R62.037"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.037",
@@ -1356,8 +1360,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace trois croix sur l’Hostie et le calice.",
-        "en": "He makes three crosses over the Host and chalice."
+        "en": "He makes three crosses over the Host and chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.038"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.038",
@@ -1391,8 +1395,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace une croix sur l’Hostie, puis sur le calice.",
-        "en": "He crosses the Host, then the chalice."
+        "en": "He crosses the Host, then the chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.039"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.039",
@@ -1426,8 +1430,8 @@
       "semanticKind": "PERSISTENT_STATE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Supra quæ, il garde les mains étendues.",
-        "en": "At Supra quae, he keeps his hands extended."
+        "en": "At Supra quae, he keeps his hands extended.",
+        "frCanonicalActionId": "AO.CANON.R62.040"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.040",
@@ -1461,8 +1465,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Súpplices, il s’incline sur l’autel.",
-        "en": "At Supplices, he bows over the altar."
+        "en": "At Supplices, he bows over the altar.",
+        "frCanonicalActionId": "AO.CANON.R62.041"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.041",
@@ -1496,8 +1500,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il baise l’autel.",
-        "en": "He kisses the altar."
+        "en": "He kisses the altar.",
+        "frCanonicalActionId": "AO.CANON.R62.042"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.042",
@@ -1531,8 +1535,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace une croix sur l’Hostie, puis sur le calice.",
-        "en": "He crosses the Host, then the chalice."
+        "en": "He crosses the Host, then the chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.043"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.043",
@@ -1566,8 +1570,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il fait sur lui-même le signe de croix.",
-        "en": "He makes the Sign of the Cross upon himself."
+        "en": "He makes the Sign of the Cross upon himself.",
+        "frCanonicalActionId": "AO.CANON.R62.044"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.044",
@@ -1601,8 +1605,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Per eúndem, il joint les mains.",
-        "en": "At Per eundem, he joins his hands."
+        "en": "At Per eundem, he joins his hands.",
+        "frCanonicalActionId": "AO.CANON.R62.045"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.045",
@@ -1636,8 +1640,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Meménto étiam, il joint les mains et regarde l’autel.",
-        "en": "At Memento etiam, he joins his hands and looks towards the altar."
+        "en": "At Memento etiam, he joins his hands and looks towards the altar.",
+        "frCanonicalActionId": "AO.CANON.R62.046"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.046",
@@ -1671,8 +1675,8 @@
       "semanticKind": "SILENT_MEMORIAL",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il fait mémoire des défunts.",
-        "en": "He commemorates the departed."
+        "en": "He commemorates the departed.",
+        "frCanonicalActionId": "AO.CANON.R62.047"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.047",
@@ -1706,8 +1710,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il reprend les mains étendues.",
-        "en": "He resumes with hands extended."
+        "en": "He resumes with hands extended.",
+        "frCanonicalActionId": "AO.CANON.R62.048"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.048",
@@ -1741,8 +1745,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Per eúndem, il joint les mains et incline la tête.",
-        "en": "At Per eundem, he joins his hands and bows his head."
+        "en": "At Per eundem, he joins his hands and bows his head.",
+        "frCanonicalActionId": "AO.CANON.R62.049"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.049",
@@ -1776,8 +1780,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Nobis quoque, il hausse la voix et se frappe la poitrine.",
-        "en": "At Nobis quoque, he raises his voice and strikes his breast."
+        "en": "At Nobis quoque, he raises his voice and strikes his breast.",
+        "frCanonicalActionId": "AO.CANON.R62.050"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.050",
@@ -1811,8 +1815,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À fámulis tuis, il reprend la voix secrète.",
-        "en": "At famulis tuis, he resumes the quiet voice."
+        "en": "At famulis tuis, he resumes the quiet voice.",
+        "frCanonicalActionId": "AO.CANON.R62.051"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.051",
@@ -1846,8 +1850,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Per Christum, il joint les mains.",
-        "en": "At Per Christum, he joins his hands."
+        "en": "At Per Christum, he joins his hands.",
+        "frCanonicalActionId": "AO.CANON.R62.052"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.052",
@@ -1881,8 +1885,8 @@
       "semanticKind": "PERSISTENT_STATE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "À Per quem, il garde les mains jointes.",
-        "en": "At Per quem, he keeps his hands joined."
+        "en": "At Per quem, he keeps his hands joined.",
+        "frCanonicalActionId": "AO.CANON.R62.053"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.053",
@@ -1916,8 +1920,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace trois croix sur l’Hostie et le calice.",
-        "en": "He makes three crosses over the Host and chalice."
+        "en": "He makes three crosses over the Host and chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.054"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.054",
@@ -1951,8 +1955,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Le calice est découvert, puis le prêtre génuflecte.",
-        "en": "The chalice is uncovered; the priest then genuflects."
+        "en": "The chalice is uncovered; the priest then genuflects.",
+        "frCanonicalActionId": "AO.CANON.R62.055"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.055",
@@ -1986,8 +1990,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace trois croix au-dessus du calice avec l’Hostie.",
-        "en": "He makes three crosses over the chalice with the Host."
+        "en": "He makes three crosses over the chalice with the Host.",
+        "frCanonicalActionId": "AO.CANON.R62.056"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.056",
@@ -2021,8 +2025,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il trace deux croix avec l’Hostie devant le calice.",
-        "en": "He makes two crosses with the Host before the chalice."
+        "en": "He makes two crosses with the Host before the chalice.",
+        "frCanonicalActionId": "AO.CANON.R62.057"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.057",
@@ -2056,8 +2060,8 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il élève légèrement le calice, l’Hostie au-dessus.",
-        "en": "He slightly raises the chalice, holding the Host above."
+        "en": "He slightly raises the chalice, holding the Host above.",
+        "frCanonicalActionId": "AO.CANON.R62.058"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.058",
@@ -2091,8 +2095,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il repose les espèces, puis génuflecte.",
-        "en": "He replaces the sacred species, then genuflects."
+        "en": "He replaces the sacred species, then genuflects.",
+        "frCanonicalActionId": "AO.CANON.R62.059"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.059",
@@ -2126,8 +2130,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il dit Per ómnia d’une voix intelligible.",
-        "en": "He says Per omnia audibly."
+        "en": "He says Per omnia audibly.",
+        "frCanonicalActionId": "AO.CANON.R62.060"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.060",
@@ -2161,8 +2165,8 @@
       "semanticKind": "CONDITIONAL_FORM",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Le répondant dit Amen.",
-        "en": "The respondent says Amen."
+        "en": "The respondent says Amen.",
+        "frCanonicalActionId": "AO.CANON.R62.061"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.061",
@@ -2196,8 +2200,8 @@
       "semanticKind": "MINISTER_EVENT",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Le servant donne le signal avant la consécration.",
-        "en": "The server gives the warning bell before consecration."
+        "en": "The server gives the warning bell before consecration.",
+        "frCanonicalActionId": "AO.CANON.R62.062"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.062",
