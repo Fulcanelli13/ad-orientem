@@ -774,14 +774,47 @@ try{
     "native state projection dropped the Host elevation action after cue resolution");
   assert.equal(elevationState.projectedActionIconKey,"priest_elevation","Host elevation lost the reviewed v1.80 art");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
-  const elevationBackdrop=await page.locator("#ao-r17-native-reader-preview [data-role='cinematic']").evaluate(el=>({
-    backgroundColor:getComputedStyle(el).backgroundColor,
-    backgroundImage:getComputedStyle(el).backgroundImage,
-  }));
-  assert.equal(elevationBackdrop.backgroundColor,"rgb(7, 11, 8)",
-    "Host Elevation illustration is competing with the underlying RUBRIC through a transparent backdrop");
-  assert.match(elevationBackdrop.backgroundImage,/radial-gradient/,
-    "Host Elevation lost its restrained radial sacred-light treatment");
+  // The later source-first cinematic deliberately replaces the old opaque
+  // full-screen blackout with one rail-owned icon in MEASURED EMPTY SPACE.
+  // That is safe only when no Latin prayer, rubric, Schola or counter can be
+  // overlapped. Reject transparency without physical clearance.
+  const elevationBackdrop=await page.locator("#ao-r17-native-reader-preview [data-role='cinematic']").evaluate(el=>{
+    const shell=el.closest("[data-ao-reader-shell]");
+    const scroller=shell.querySelector(".ao-prayer-card");
+    const box=el.getBoundingClientRect();
+    const rows=[...scroller.querySelectorAll(".ao-reader-paragraph")].filter(row=>!row.hidden);
+    const textBottom=Math.max(0,...rows.map(row=>row.getBoundingClientRect().bottom));
+    const caption=el.querySelector(".ao-cinematic-sub")?.getBoundingClientRect();
+    const progress=shell.querySelector(".ao-reader-progress")?.getBoundingClientRect();
+    const viewport=shell.querySelector(".ao-card-viewport");
+    return {
+      visual:shell.dataset.cinematicVisual,
+      backgroundColor:getComputedStyle(el).backgroundColor,
+      readerAtmosphere:getComputedStyle(viewport).backgroundImage,
+      stageTop:box.top,textBottom,stageHeight:box.height,
+      captionBottom:caption?.bottom??Infinity,counterTop:progress?.top??-Infinity,
+      sourceVisible:rows.some(row=>{
+        const line=row.querySelector(".ao-line-primary");
+        const rect=line?.getBoundingClientRect();
+        const scrollRect=scroller.getBoundingClientRect();
+        return line && line.textContent.trim().length>0 &&
+          rect?.bottom>scrollRect.top && rect?.top<scrollRect.bottom &&
+          getComputedStyle(line).visibility!=="hidden";
+      }),
+    };
+  });
+  assert.equal(elevationBackdrop.visual,"ICON",
+    "Old visual acceptance expects an icon but the reader selected a rail-only fallback");
+  assert.equal(elevationBackdrop.backgroundColor,"rgba(0, 0, 0, 0)",
+    "New elevated Host icon must not reintroduce a full-screen opaque takeover");
+  assert.ok(elevationBackdrop.stageTop>=elevationBackdrop.textBottom+2,
+    "Host elevation icon actually overlaps source prayer or rubric: "+JSON.stringify(elevationBackdrop));
+  assert.ok(elevationBackdrop.captionBottom<=elevationBackdrop.counterTop-10,
+    "Host elevation caption competes with card controls: "+JSON.stringify(elevationBackdrop));
+  assert.ok(elevationBackdrop.stageHeight<=174&&elevationBackdrop.sourceVisible,
+    "Elevation either grew into a takeover or suppressed actual Latin source text");
+  assert.match(elevationBackdrop.readerAtmosphere,/radial-gradient/,
+    "Host Elevation lost its restrained radial sacred-light reader treatment");
   assert.equal(elevationState.cinematicTitle,"ELEVATION");
   assert.equal(elevationState.cinematicSub,"SACRED HOST");
   assert.equal(elevationState.cinematicIcon.hidden,false,"Host elevation master is hidden");

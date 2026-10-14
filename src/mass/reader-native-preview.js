@@ -60,6 +60,7 @@ import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./
 import { projectGloriaCredoFaithfulCue } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
+import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
@@ -855,6 +856,10 @@ export async function mountNativeReaderPreview({
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
         posture:sourcePosture ? Object.freeze({label:sourcePosture}) : null,
         postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[sourcePosture]??null,
+        cinematicScene:projectGoodFridayDeathScene({
+          recordId:step.recordId,deathPause:step.recordId==="GF-PASS-320",
+          posture:sourcePosture,
+        }),
         ritualTrigger:/^GF-SOP-\d\d-R$/.test(step.recordId)
           ? Object.freeze({
             canonicalCueId:step.recordId,anchorLat:"Levate.",
@@ -982,7 +987,20 @@ export async function mountNativeReaderPreview({
         formulaKneelRecord=null;
         formulaKneelScrollTop=null;
         controller.goToRecord(id);
-        return showGoodFriday();
+        const card=showGoodFriday();
+        // An explicit jump to the already source-owned death pause must
+        // locate "tradidit spiritum". A long Passion paragraph can
+        // otherwise open at its beginning under a misleading death banner.
+        // Normal reading continues to trigger this stage only via the
+        // separate source-word focus detector in syncGoodFridayDeath.
+        if(id==="GF-PASS-320"){
+          const loc=deathPhraseRect();
+          if(loc){
+            const target=loc.viewport.top+loc.card.clientHeight*.39;
+            loc.card.scrollTop=Math.max(0,loc.card.scrollTop+loc.rect.top-target);
+          }
+        }
+        return card;
       },
       setWillReceiveCommunion:value=>{
         controller.setWillReceiveCommunion(value);
@@ -1530,6 +1548,18 @@ export async function mountNativeReaderPreview({
                 : "R18_CUE_WAITING_FAIL_CLOSED",
       sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
+    // Decorative focus follows a certified exact LIVE cue; it is never
+    // evidence that the priest (or the faithful) performed an action.
+    const cinematicScene=projectLiveCinematicScene({
+      mode:readerModel?.presentationMode,
+      cueId:activeCueId,
+      cueNative,
+      cinematic:transient.cinematic,
+      faithfulGesture:focusedFaithful?.gesture??null,
+      priestAction,
+      priestPosition,
+      sourceGestureAction:gestureMatrixProjection?.primaryPriestAction??null,
+    });
     const attention=readerAttentionForState({priestVoice,response});
     // A native source transition may animate the selected posture owner.
     // Never issue a conflicting instruction when a local/observed profile
@@ -1567,6 +1597,7 @@ export async function mountNativeReaderPreview({
       attentionIconKey:attention?.iconKey??null,
       bell,
       cinematic,
+      cinematicScene,
       priestVoice,
       schola:scholaProjection.schola,
       priestAction,
