@@ -1,0 +1,1427 @@
+{
+  "schema": "AO_SACRED_ART_WIKIPEDIA_COMMONS_RESEARCH_WAVE32_V1",
+  "asOf": "2026-10-14",
+  "ownerPr": 887,
+  "sourceMatrix": "data/calendar/sacred-art-two-options-matrix-wave31-20261014.v6.json",
+  "scope": "All 75 already-established person subjects; Scripture and special feast subjects must be read from existing canonical IDs rather than redefined.",
+  "status": "RESEARCH_ONLY_NO_HUMAN_RATING_REQUEST_AND_NO_APP_PUBLICATION",
+  "targetPolicy": {
+    "people": {
+      "portraitDepictions": [
+        3,
+        4
+      ],
+      "biographicalOrTheologicalScenes": [
+        1,
+        2
+      ]
+    },
+    "scriptureEpisodes": {
+      "distinctNarrativePaintingOriginals": [
+        3,
+        4
+      ]
+    },
+    "specialFeasts": {
+      "distinctMysteryOrFeastPaintingOriginals": [
+        3,
+        4
+      ]
+    },
+    "interpretation": "Goals where genuinely suitable works exist; never pad with bad attributions/icons/prints/duplicates or low-quality sources",
+    "reproduction": "Exact original and high-resolution image, faithful clean painting-only crop, independent custodian verification, rights review, historical and liturgical matching, aesthetic user rating before release",
+    "historicalRatings": "READ_ONLY",
+    "excludedArtists": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "ratedBelowThree": "DO_NOT_RESURFACE_FOR_SAME_SUBJECT",
+    "deduplication": "Physical original primary key, never count Wikimedia photographic variants as separate artworks"
+  },
+  "counts": {
+    "existingPersonTargets": 75,
+    "wikipediaArticleLinksQueued": 75,
+    "articlePagesActuallyInspected": 5,
+    "newSourceLeadsTracked": 6,
+    "hashMastersDownloaded": 0,
+    "newUserRatings": 0
+  },
+  "articleQueue": [
+    {
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Peter",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 7,
+      "existingHumanRatings": 5,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-02",
+      "subject": "Saint Andrew",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Andrew_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/James_the_Great",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/John_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Philip_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Bartholomew_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Thomas_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Matthew_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 2,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/James_the_Less",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Simon_the_Zealot",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-11",
+      "subject": "Saint Matthias",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Matthias_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Paul_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 6,
+      "existingHumanRatings": 3,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-13",
+      "subject": "Saint Jude Thaddeus",
+      "group": "AP",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Jude_the_Apostle",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "group": "EV",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Mark_the_Evangelist",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "group": "EV",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Luke_the_Evangelist",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-01",
+      "subject": "Saint Ambrose",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Ambrose",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 6,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-02",
+      "subject": "Saint Augustine",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Augustine_of_Hippo",
+      "status": "ARTICLE_INSPECTED",
+      "existingResearchPaintingOptions": 5,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-03",
+      "subject": "Saint Jerome",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Jerome",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 10,
+      "existingHumanRatings": 3,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Pope_Gregory_I",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Thomas_Aquinas",
+      "status": "ARTICLE_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Bonaventure",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Bernard_of_Clairvaux",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Teresa_of_%C3%81vila",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Catherine_of_Siena",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/John_of_the_Cross",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 5,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Alphonsus_Liguori",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Francis_de_Sales",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Athanasius_of_Alexandria",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-14",
+      "subject": "Saint Basil the Great",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Basil_of_Caesarea",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Gregory_of_Nazianzus",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/John_Chrysostom",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-17",
+      "subject": "Saint Isidore of Seville",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Isidore_of_Seville",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Bede",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Anselm_of_Canterbury",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Peter_Damian",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Albertus_Magnus",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Robert_Bellarmine",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Peter_Canisius",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Lawrence_of_Brindisi",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Cyril_of_Alexandria",
+      "status": "ARTICLE_INSPECTED",
+      "existingResearchPaintingOptions": 1,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Cyril_of_Jerusalem",
+      "status": "ARTICLE_INSPECTED",
+      "existingResearchPaintingOptions": 0,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Ephrem_the_Syrian",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 1,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "group": "DC",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Hilary_of_Poitiers",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Joseph",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 9,
+      "existingHumanRatings": 6,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-02",
+      "subject": "Saint Michael Archangel",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Michael_(archangel)",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Raphael_(archangel)",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-04",
+      "subject": "Saint John the Baptist",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/John_the_Baptist",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Th%C3%A9r%C3%A8se_of_Lisieux",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Anthony_of_Padua",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 5,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Joan_of_Arc",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Louis_IX_of_France",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 5,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Patrick",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-10",
+      "subject": "Saint Stephen",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Stephen",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-11",
+      "subject": "Saint Lawrence",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Lawrence",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-12",
+      "subject": "Saint Francis of Assisi",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Francis_of_Assisi",
+      "status": "ARTICLE_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-13",
+      "subject": "Saint Dominic",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Dominic",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 5,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Benedict_of_Nursia",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 3,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-15",
+      "subject": "Saint Francis Xavier",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Francis_Xavier",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-16",
+      "subject": "Saint Ignatius of Loyola",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Ignatius_of_Loyola",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Margaret_Mary_Alacoque",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/John_Vianney",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Sebastian",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Nicholas",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Lucy",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 7,
+      "existingHumanRatings": 5,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Agnes_of_Rome",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 2,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-23",
+      "subject": "Saint Cecilia",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Cecilia",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 2,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-24",
+      "subject": "Saint Catherine of Alexandria",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Catherine_of_Alexandria",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Mary_Magdalene",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 6,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-26",
+      "subject": "Saint Geneviève",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Genevieve",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 5,
+      "existingHumanRatings": 1,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Denis_of_Paris",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Vincent_de_Paul",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 5,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-29",
+      "subject": "Saint Martin of Tours",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Martin_of_Tours",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-30",
+      "subject": "Saint Anne",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Anne",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 4,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-31",
+      "subject": "Saint Rosalia",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Saint_Rosalia",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 2,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-32",
+      "subject": "Saint Francis of Paola",
+      "group": "OT",
+      "wikipediaArticleUrl": "https://en.wikipedia.org/wiki/Francis_of_Paola",
+      "status": "ARTICLE_LINK_SEED_NOT_YET_INSPECTED",
+      "existingResearchPaintingOptions": 3,
+      "existingHumanRatings": 0,
+      "portraitResearchGoal": [
+        3,
+        4
+      ],
+      "sceneResearchGoal": [
+        1,
+        2
+      ]
+    }
+  ],
+  "firstWikipediaCommonsLeads": [
+    {
+      "subjectId": "SNT-DC-02",
+      "type": "portrait",
+      "artist": "Philippe de Champaigne",
+      "title": "Saint Augustine",
+      "date": "c. 1645–1650",
+      "institution": "LACMA",
+      "originalObjectId": "M.88.177",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+      "dimensionsPx": [
+        3135,
+        4000
+      ],
+      "rightsSource": "Commons PD-Art; verify local commercial reuse",
+      "canonicalDisposition": "EXISTING_5_OF_5_DO_NOT_RERATE",
+      "note": "Wikipedia infobox painting; multiple Commons variants are one painting, not multiple options."
+    },
+    {
+      "subjectId": "SNT-DC-02",
+      "type": "portrait",
+      "artist": "Sandro Botticelli",
+      "title": "Saint Augustine in His Study",
+      "date": "c. 1480",
+      "institution": "Ognissanti, Florence",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Sandro_botticelli,_sant'agostino_nello_studio,_1480_circa,_dall'ex-coro_dei_frati_umiliati,_06.jpg",
+      "dimensionsPx": [
+        3504,
+        5472
+      ],
+      "rightsSource": "Commons PD-Art status to recheck",
+      "canonicalDisposition": "RESEARCH_ONLY_CHECK_EXISTING_OBJECT_AND_STYLE",
+      "note": "Fresco, not oil. Multiple photographic copies of same original must count once."
+    },
+    {
+      "subjectId": "SNT-DC-05",
+      "type": "saint-life-scene",
+      "artist": "Diego Velázquez",
+      "title": "Temptation of Saint Thomas Aquinas",
+      "date": "c. 1632",
+      "institution": "Museo Diocesano de Arte Sacro, Orihuela",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_Diego_Velázquez.jpg",
+      "dimensionsPx": [
+        800,
+        956
+      ],
+      "rightsSource": "Commons PD-Art; alternative photo CC BY-SA 4.0",
+      "canonicalDisposition": "RESEARCH_ONLY_CLEAN_REPRODUCTION_HOLD",
+      "note": "Wikipedia biography image. 800×956 cleanish file insufficient for final; a separate 4549×3072 onsite Commons photo exists but its licence is CC BY-SA 4.0 and perspective needs scrutiny.",
+      "alternatePhoto": "https://commons.wikimedia.org/wiki/File:Temptació_de_Sant_Tomàs_d'Aquino,_Diego_Velázquez,_museu_Diocesà_d'Art_Sacre_d'Oriola.jpg"
+    },
+    {
+      "subjectId": "SNT-OT-12",
+      "type": "saint-life-scene",
+      "artist": "Theodoor Rombouts",
+      "title": "Saint Francis Receiving the Stigmata",
+      "date": "c. 1623–1624",
+      "institution": "Santi Simone e Giuda, Florence",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Theodoor_Rombouts_-_Saint_Francis_receiving_the_stigmata.jpg",
+      "dimensionsPx": [
+        4157,
+        6958
+      ],
+      "rightsSource": "Commons PD-Art; photography by listed Flickr contributor",
+      "canonicalDisposition": "RESEARCH_ONLY_CHECK_EXISTING_OBJECT_AND_MASTER",
+      "note": "Found through Commons paintings-of-stigmatisation gallery; original photographed at substantial resolution; assess color and crop."
+    },
+    {
+      "subjectId": "EVENT-TRANSFIGURATION-EXISTING_ID_TBD",
+      "type": "scriptural-scene",
+      "artist": "Raphael",
+      "title": "Transfiguration",
+      "date": "1518–1520",
+      "institution": "Vatican Pinacoteca, inventory 4",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Raphaël,_La_Transfiguration,_1518–1520,_huile_sur_bois,_405_×_278_cm,_Musées_du_Vatican,_Pinacothèque,_inv._4.jpg",
+      "dimensionsPx": [
+        6349,
+        9381
+      ],
+      "rightsSource": "Commons public-domain artwork; photography and Vatican reuse to review",
+      "canonicalDisposition": "RESEARCH_ONLY_CANONICAL_EVENT_LINK_AND_DUPLICATE_CHECK",
+      "note": "Shown on Transfiguration Wikipedia article; weaker 1067×1608 Commons files show the same painting, not alternatives."
+    },
+    {
+      "subjectId": "EVENT-PENTECOST-EXISTING_ID_TBD",
+      "type": "scriptural-scene-and-feast",
+      "artist": "Jean II Restout",
+      "title": "Pentecost",
+      "date": "1732",
+      "institution": "Louvre, INV 20303",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecôte.jpg",
+      "dimensionsPx": [
+        1000,
+        589
+      ],
+      "rightsSource": "Commons PD-Art; independent rights audit pending",
+      "canonicalDisposition": "RESEARCH_ONLY_RESOLUTION_HOLD",
+      "note": "Commons file is too small to count as publishable master; look for Louvre high-quality reproduction; do not duplicate its WGA file variant."
+    }
+  ],
+  "requiredNextPass": "For each seeded Wikipedia article inspect infobox, image captions, media files and linked Commons category (including relevant language editions). Classify works as portrait/saint scene/Scripture/feast, reconcile with all existing art catalogues and human scores, then use museum/Commons rights and fidelity gates. Scan canonical Scripture and feast IDs separately before claiming overall coverage."
+}
