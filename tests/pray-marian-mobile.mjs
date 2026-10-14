@@ -85,6 +85,8 @@ try{
   "https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html"].includes(
   await page.locator("#aoPray435930 .aoMercySource a").getAttribute("href")));
   // The same title/paragraph navigation contract now applies to Stations.
+ page.on("console",msg=>{if(msg.text().startsWith("STATION_RUNTIME_FOCUS"))console.log(msg.text())});
+ await page.evaluate(()=>window.__AO_STATIONS_DEBUG=true);
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930 .aoP435930Stations .aoDevoCardScroll",{timeout:9000});
  await page.waitForSelector("#aoPray435930 .aoP435930StationRail.aoDevoSequenceTimeline",{timeout:9000});
