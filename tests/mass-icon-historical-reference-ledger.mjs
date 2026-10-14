@@ -40,4 +40,31 @@ for(const s of ledger.sources){
 assert.ok(ledger.sources.find(x=>x.id==="BENZIGER_1945_HANC").rights.includes("UNVERIFIED"));
 assert.ok(ledger.sources.find(x=>x.id==="MARIAN_1958_HANC").rights.includes("UNVERIFIED"));
 assert.ok(ledger.gestureMatrixPending.find(x=>x.matrixId==="GM.P.C0204.01").decision.includes("HOST_ABOVE"));
+
+// Independently checked photo candidates: no publication inference from Commons Public Domain Mark.
+assert.equal(ledger.sources.length,14);
+assert.equal(ledger.verifiedPhotographicCandidates.length,6);
+assert.equal(ledger.captionOnlyPictorialLeads.length,4);
+const refSet=new Set(ledger.sources.map(x=>x.id));
+for(const photo of ledger.verifiedPhotographicCandidates){
+ assert.ok(photo.url.startsWith("https://commons.wikimedia.org/wiki/File:"));
+ assert.ok(photo.sourceEvidence.startsWith("VISUALLY_INSPECTED_"));
+ assert.ok(photo.rightsStatus.includes("NOT_CLEARED"));
+ assert.ok(photo.scannedDimensions[0]>2000);
+ assert.ok(photo.cueIds.every(x=>/^AO\\.SM\\.C\\d{4}$/.test(x)));
+}
+for(const lead of ledger.captionOnlyPictorialLeads){
+ assert.ok(refSet.has(lead.sourceId));
+ assert.ok(/NOT_VISUALLY_INSPECTED|NOT_OPENED/.test(lead.sourceEvidence));
+ assert.equal(lead.publication,"REFERENCE_ONLY");
+}
+const hanc=ledger.verifiedPhotographicCandidates.find(x=>x.id==="STANDRE_13_HANC");
+assert.deepEqual(hanc.cueIds,["AO.SM.C0161"]);
+assert.equal(hanc.usableAs,"STRONG_PRIEST_HANDS_OVER_OBLATIONS_POSE_REFERENCE");
+const quietEyes=ledger.verifiedPhotographicCandidates.find(x=>x.id==="STANDRE_14_QUI_PRIDIE");
+assert.match(quietEyes.usableAs,/EXCLUDE_AS_C0169_EYES_UP/);
+const perIpsum=ledger.verifiedPhotographicCandidates.find(x=>x.id==="STANDRE_17_PER_IPSUM");
+assert.match(perIpsum.sourceEvidence,/HOST_DETAIL_UNCERTAIN/);
+assert.match(ledger.authority.historicalPhotoLicenseRule,/not complete proof of global exploitation rights/);
+
 console.log("PASS: icon reference research links all 17 exact gesture gaps, 3 station identities, 11 minister cues, and 2 approved but unbound assets; no artwork activated.");

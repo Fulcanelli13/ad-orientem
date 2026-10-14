@@ -9,7 +9,9 @@
     "canonicalCueOwner": "SOURCE_CUE",
     "independentPriestClock": true,
     "automaticAssetActivation": false,
-    "policy": "No artwork generated, no rejected art revived, no source-uncleared photo or engraving republished. Older visual manuals describe historical practice but 1962 rubrics determine applicability."
+    "policy": "No artwork generated, no rejected art revived, no source-uncleared photo or engraving republished. Older visual manuals describe historical practice but 1962 rubrics determine applicability.",
+    "historicalPhotoLicenseRule": "Wikimedia Commons Public Domain Mark per file is evidence of Commons status, not complete proof of global exploitation rights; date, original author and missing US PD tags must be resolved before incorporation.",
+    "visualExactnessRule": "A source caption identifies its Mass stage but does not automatically verify the exact hand configuration or precise cue instant. Explicitly record counterexamples."
   },
   "counts": {
     "gestureMatrixPending": 17,
@@ -17,7 +19,9 @@
     "priestStationVariantReview": 3,
     "conditionalMinisterCandidates": 11,
     "approvedUnboundFingerArtwork": 2,
-    "referenceBibliographySources": 10
+    "referenceBibliographySources": 14,
+    "visuallyInspectedHistoricalPhotographs": 6,
+    "captionOnlyPictorialLeads": 4
   },
   "sources": [
     {
@@ -109,6 +113,42 @@
       "visualEvidence": "PRIEST_ACOLYTE_MASS_STAGE_ENGRAVING_SERIES_REFERENCED_EXACT_POSES_UNVERIFIED",
       "rights": "EARLY_ORIGINAL_ART_POTENTIALLY_PUBLIC_DOMAIN_DIGITAL_SCAN_RIGHTS_UNVERIFIED",
       "note": "A French illustrated Mass guide pairs priest/acolyte ceremonial actions with Passion imagery; the museum confirms its early date and engraving format. Do not treat a pre-1740 ceremonial pose as 1962 normative or copy exhibition scans without verifying image rights."
+    },
+    {
+      "id": "SAINT_ANDRE_ZEVENKERKEN_KUL_24",
+      "title": "Abbaye de Saint-André, Lophem-lez-Bruges: 24 numbered ceremonial Mass postcards",
+      "url": "https://commons.wikimedia.org/wiki/Category:Postcards_of_Sint-Andriesabdij_Zevenkerken_in_the_Leuven_University_Libraries",
+      "kind": "HISTORICAL_PRIMARY_PHOTOGRAPHIC_MASS_SEQUENCE",
+      "visualEvidence": "INDIVIDUAL_IMAGES_OPENED_AND_INSPECTED_2026_10_14",
+      "rights": "WIKIMEDIA_PUBLIC_DOMAIN_MARK_FILE_BY_FILE_US_LEGAL_TAG_MISSING_GLOBAL_REUSE_NOT_CLEARED",
+      "note": "KU Leuven Library series includes at least 24 numbered French/Latin-titled Mass stage photographs in 2383x1576-class scans. Commons shows Public Domain Mark 1.0 but catalogue gives unknown original date/photographer and Commons requests US PD tag. Preserve file-level license and provenance reviews; do not import photographs as app icons automatically."
+    },
+    {
+      "id": "ROMANITAS_1944_MASS_80",
+      "title": "The Mass: Up-Close in Pictures, 80 historic black-and-white Low Mass photographs (original 1944 cards; Romanitas Press reprint)",
+      "url": "https://www.romanitaspress.com/product-page/the-mass-up-close-in-pictures",
+      "kind": "HISTORICAL_PHOTOGRAPHIC_LOW_MASS_SEQUENCE",
+      "visualEvidence": "BOOK_CONTENT_CONFIRMED_IN_PUBLISHER_DESCRIPTION_IMAGE_IDS_36_52_FROM_AUTHORS_POSTS_ACTUAL_FRAMES_NOT_INSPECTED",
+      "rights": "REFERENCE_ONLY_1944_IMAGE_RIGHTS_AND_MODERN_REPRODUCTION_UNVERIFIED",
+      "note": "Strong source for 1962-comparable ceremonial motions but 1944 date requires 1962 rubric recheck. 36th image described at Qui pridie / eye raising; 52nd described immediately before minor elevation, NOT a certified precise elevation frame."
+    },
+    {
+      "id": "SSPX_DIAGRAM12_HANC",
+      "title": "How to Serve Low Mass, diagram no. 12, p.33 (Hanc igitur)",
+      "url": "https://sspxsingapore.org/wp-content/uploads/2020/10/howtoservelowmass.pdf",
+      "kind": "INSTRUCTIONAL_ILLUSTRATED_SERVER_MANUAL",
+      "visualEvidence": "TEXT_INDEXED_DIAGRAM_12_AT_PAGE_33_IMAGE_NOT_YET_INSPECTED",
+      "rights": "REFERENCE_ONLY_MANUAL_AND_DIAGRAM_COPYRIGHT_UNVERIFIED",
+      "note": "Text labels an illustration of hands open palms downward above chalice at Hanc igitur; diagram itself requires visual verification."
+    },
+    {
+      "id": "NLM_2023_FSSP_MASS_PHOTOS",
+      "title": "New Liturgical Movement: Photos of Solemn Pentecost Mass Offered by Newly Ordained FSSP Priest (Part 2), photo 26",
+      "url": "https://www.newliturgicalmovement.org/2023/06/photos-of-solemn-pentecost-mass-offered_01678527410.html",
+      "kind": "CONTEMPORARY_SOLEMN_MASS_PHOTOGRAPHIC_SEQUENCE",
+      "visualEvidence": "PHOTO_26_CAPTION_HANC_IGITUR_VERIFIED_IN_ARTICLE_PHOTO_NOT_INSPECTED",
+      "rights": "REFERENCE_ONLY_PHOTO_PUBLISHER_PERMISSION_NOT_GRANTED",
+      "note": "Photo 26 explicitly captioned hands over the offerings. Solemn form and actors must remain distinct from historical Low Mass photo series."
     }
   ],
   "gestureFamilies": [
@@ -218,7 +258,10 @@
         "RITUS_1962",
         "BENZIGER_1945_HANC",
         "MARIAN_1958_HANC",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "SAINT_ANDRE_ZEVENKERKEN_KUL_24",
+        "SSPX_DIAGRAM12_HANC",
+        "NLM_2023_FSSP_MASS_PHOTOS"
       ],
       "imageProof": "HANC_IGITUR_EXACT_POSE_VISUALLY_IDENTIFIED_RIGHTS_UNCLEARED",
       "rowCount": 1
@@ -233,7 +276,8 @@
         "RITUS_1962",
         "SCHMITZ_1960",
         "SANCTAMISSA_TUTORIALS",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "ROMANITAS_1944_MASS_80"
       ],
       "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "rowCount": 1
@@ -247,7 +291,9 @@
       "sourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "SAINT_ANDRE_ZEVENKERKEN_KUL_24",
+        "ROMANITAS_1944_MASS_80"
       ],
       "imageProof": "NO_CUE_EXACT_IMAGE_VERIFIED_DO_NOT_USE_MAJOR_ELEVATION",
       "rowCount": 1
@@ -565,7 +611,10 @@
         "RITUS_1962",
         "BENZIGER_1945_HANC",
         "MARIAN_1958_HANC",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "SAINT_ANDRE_ZEVENKERKEN_KUL_24",
+        "SSPX_DIAGRAM12_HANC",
+        "NLM_2023_FSSP_MASS_PHOTOS"
       ],
       "visualVerification": "HANC_IGITUR_EXACT_POSE_VISUALLY_IDENTIFIED_RIGHTS_UNCLEARED",
       "reuseCurrentMasters": [
@@ -587,7 +636,8 @@
         "RITUS_1962",
         "SCHMITZ_1960",
         "SANCTAMISSA_TUTORIALS",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "ROMANITAS_1944_MASS_80"
       ],
       "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED",
       "reuseCurrentMasters": [
@@ -608,7 +658,9 @@
       "referenceSourceIds": [
         "RITUS_1962",
         "SCHMITZ_1960",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "SAINT_ANDRE_ZEVENKERKEN_KUL_24",
+        "ROMANITAS_1944_MASS_80"
       ],
       "visualVerification": "NO_CUE_EXACT_IMAGE_VERIFIED_DO_NOT_USE_MAJOR_ELEVATION",
       "reuseCurrentMasters": [
@@ -632,7 +684,8 @@
       "referenceSourceIds": [
         "FORTESCUE_1918",
         "SANCTAMISSA_TUTORIALS",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "SAINT_ANDRE_ZEVENKERKEN_KUL_24"
       ],
       "rights": "NO_NEW_ARTWORK_CLEARED",
       "publication": "REVIEW_ONLY"
@@ -651,7 +704,8 @@
       "referenceSourceIds": [
         "FORTESCUE_1918",
         "SANCTAMISSA_TUTORIALS",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "SAINT_ANDRE_ZEVENKERKEN_KUL_24"
       ],
       "rights": "NO_NEW_ARTWORK_CLEARED",
       "publication": "REVIEW_ONLY"
@@ -667,7 +721,8 @@
       "referenceSourceIds": [
         "FORTESCUE_1918",
         "SANCTAMISSA_TUTORIALS",
-        "JOUENNE_FRANCE_PRE1740"
+        "JOUENNE_FRANCE_PRE1740",
+        "SAINT_ANDRE_ZEVENKERKEN_KUL_24"
       ],
       "rights": "NO_NEW_ARTWORK_CLEARED",
       "publication": "REVIEW_ONLY"
@@ -886,11 +941,190 @@
     }
   ],
   "nextResearchGates": [
+    "Investigate Leuven postcard 17 enlarged Host/chalice geometry at Per ipsum, and identify publication year/photographer of the 24-postcard series.",
     "Inspect and record actual page/frame per source and exact gesture; descriptions alone do not authorize art.",
     "Verify licensing per ORIGINAL artwork and usage region, not merely website availability.",
     "Cross-check each actor, orientation, chalice/Host configuration and form condition against 1962 rubrics.",
     "Prefer exact approved v4.6 reuse or textual guidance where new exact imagery is unavailable.",
     "Require explicit user visual approval and mobile resolution tests before any icon mapping or activation.",
-    "Do not imply priest or deacon is performing an action from prayer-reader scrolling."
+    "Do not imply priest or deacon is performing an action from prayer-reader scrolling.",
+    "Ask rightsholders for use or locate independently public-domain reproduction for Romanitas, FSSP photography and modern manuals."
+  ],
+  "verifiedPhotographicCandidates": [
+    {
+      "id": "STANDRE_01_CONFITEOR",
+      "itemNumber": 1,
+      "commonsFile": "Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._1_Confiteor_Deo_omnipotenti,_GP064031.jpg",
+      "scannedDimensions": [
+        2359,
+        1576
+      ],
+      "latinStage": "Confiteor Deo omnipotenti",
+      "cueIds": [
+        "AO.SM.C0021"
+      ],
+      "actorInImage": "PRIEST_AND_ACOLYTE",
+      "sourceEvidence": "VISUALLY_INSPECTED_ACTOR_MISMATCH",
+      "depicts": "Celebrant deeply bows at the altar foot; server stands/kneels next to him. Does not prove the congregation's bow.",
+      "usableAs": "PRIEST_BOW_REFERENCE_ONLY_NOT_FAITHFUL_CUE",
+      "visualLimits": "Rear image does not show hand detail. Cannot project the priest's posture onto the faithful.",
+      "rightsStatus": "PDM_1_0_BUT_US_TAG_MISSING_DATE_AUTHOR_UNKNOWN_NOT_CLEARED",
+      "url": "https://commons.wikimedia.org/wiki/File:Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._1_Confiteor_Deo_omnipotenti,_GP064031.jpg"
+    },
+    {
+      "id": "STANDRE_05_EPISTLE",
+      "itemNumber": 5,
+      "commonsFile": "Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._5_Lectio_Epistolae_beati_Pauli_Apostoli,_GP064035.jpg",
+      "scannedDimensions": [
+        2367,
+        1576
+      ],
+      "latinStage": "Lectio Epistolae beati Pauli Apostoli",
+      "cueIds": [
+        "AO.SM.C0075",
+        "AO.SM.C0042"
+      ],
+      "actorInImage": "PRIEST_AND_ACOLYTE",
+      "sourceEvidence": "VISUALLY_INSPECTED_EXACT_READING_SCENE",
+      "depicts": "Celebrant in chasuble reading from missal on Epistle side of altar; server to left in frontal image.",
+      "usableAs": "PRIEST_EPISTLE_STATION_REFERENCE_NOT_ACTOR_ACTION_CLOCK",
+      "visualLimits": "Rear view, position orientation historically specific and needs comparison with rubric map; not proof of every Epistle-side movement.",
+      "rightsStatus": "PDM_1_0_BUT_US_TAG_MISSING_DATE_AUTHOR_UNKNOWN_NOT_CLEARED",
+      "url": "https://commons.wikimedia.org/wiki/File:Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._5_Lectio_Epistolae_beati_Pauli_Apostoli,_GP064035.jpg"
+    },
+    {
+      "id": "STANDRE_13_HANC",
+      "itemNumber": 13,
+      "commonsFile": "Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._13_Hanc_igitur_servitutis_nostrae,_GP064043.jpg",
+      "scannedDimensions": [
+        2383,
+        1576
+      ],
+      "latinStage": "Hanc igitur servitutis nostrae",
+      "cueIds": [
+        "AO.SM.C0161"
+      ],
+      "actorInImage": "PRIEST_AND_ACOLYTE",
+      "sourceEvidence": "VISUALLY_INSPECTED_EXACT_STAGE_AND_ARM_OVER_OBLATIONS",
+      "depicts": "Priest in chasuble extends both hands across the altar over the oblations, palms inclined downward, in authentic side/rear photographic pose.",
+      "usableAs": "STRONG_PRIEST_HANDS_OVER_OBLATIONS_POSE_REFERENCE",
+      "visualLimits": "Palms and the Host's position partly occluded; photograph predates 1962 and copyright requires review.",
+      "rightsStatus": "PDM_1_0_BUT_US_TAG_MISSING_DATE_AUTHOR_UNKNOWN_NOT_CLEARED",
+      "url": "https://commons.wikimedia.org/wiki/File:Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._13_Hanc_igitur_servitutis_nostrae,_GP064043.jpg"
+    },
+    {
+      "id": "STANDRE_14_QUI_PRIDIE",
+      "itemNumber": 14,
+      "commonsFile": "Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._14_Qui_pridie_quam_pateretur_accepti_panem.,_GP064044.jpg",
+      "scannedDimensions": [
+        2383,
+        1576
+      ],
+      "latinStage": "Qui pridie ... accepit panem",
+      "cueIds": [
+        "AO.SM.C0168",
+        "AO.SM.C0169"
+      ],
+      "actorInImage": "PRIEST_AND_ACOLYTE",
+      "sourceEvidence": "VISUALLY_INSPECTED_WRONG_INSTANT_FOR_EYES_RAISED",
+      "depicts": "Celebrant inclined towards the altar and Host at the Qui pridie complex; no clear upward-facing head or eyes.",
+      "usableAs": "QUI_PRIDIE_CONTEXT_ONLY_EXCLUDE_AS_C0169_EYES_UP",
+      "visualLimits": "Illustrates a nearby movement, NOT the exact elevatis oculis eye-up instant.",
+      "rightsStatus": "PDM_1_0_BUT_US_TAG_MISSING_DATE_AUTHOR_UNKNOWN_NOT_CLEARED",
+      "url": "https://commons.wikimedia.org/wiki/File:Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._14_Qui_pridie_quam_pateretur_accepti_panem.,_GP064044.jpg"
+    },
+    {
+      "id": "STANDRE_16_SUPPLICES",
+      "itemNumber": 16,
+      "commonsFile": "Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._16_Supplices_te_rogamus._jube_hoc_perferri._in_sublime_altare_tuum,_GP064046.jpg",
+      "scannedDimensions": [
+        2383,
+        1576
+      ],
+      "latinStage": "Supplices te rogamus",
+      "cueIds": [
+        "AO.SM.C0187"
+      ],
+      "actorInImage": "PRIEST_AND_ACOLYTE",
+      "sourceEvidence": "VISUALLY_INSPECTED_EXACT_DEEP_BOW_STAGE_HANDS_OCCLUDED",
+      "depicts": "Priest deeply bent at the altar, server standing nearby, during Supplices.",
+      "usableAs": "PRIEST_PROFOUND_BOW_REF_NOT_FAITHFUL_POSTURE",
+      "visualLimits": "Hand position and contact with altar visually obscured.",
+      "rightsStatus": "PDM_1_0_BUT_US_TAG_MISSING_DATE_AUTHOR_UNKNOWN_NOT_CLEARED",
+      "url": "https://commons.wikimedia.org/wiki/File:Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._16_Supplices_te_rogamus._jube_hoc_perferri._in_sublime_altare_tuum,_GP064046.jpg"
+    },
+    {
+      "id": "STANDRE_17_PER_IPSUM",
+      "itemNumber": 17,
+      "commonsFile": "Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._17_Per_ispsum_et_cum_ipso_et_in_ipso_est_tibi_Deo_Patri.,_GP064047.jpg",
+      "scannedDimensions": [
+        2383,
+        1576
+      ],
+      "latinStage": "Per ipsum et cum ipso et in ipso",
+      "cueIds": [
+        "AO.SM.C0202",
+        "AO.SM.C0203",
+        "AO.SM.C0204"
+      ],
+      "actorInImage": "PRIEST_AND_ACOLYTE",
+      "sourceEvidence": "VISUALLY_INSPECTED_PER_IPSUM_WITH_RAISED_CHALICE_HOST_DETAIL_UNCERTAIN",
+      "depicts": "Chalice visibly raised slightly in priest's left hand; the precise placement and visibility of Host above chalice is not yet reliably distinguished from the print.",
+      "usableAs": "PARTIAL_REFERENCE_FOR_MINOR_ELEVATION_CHALICE_NOT_EXACT_NEW_ICON_APPROVAL",
+      "visualLimits": "Do not conflate the three Host crosses/two Host crosses, minor elevation, and major elevation. Need enlarged inspection of Host geometry.",
+      "rightsStatus": "PDM_1_0_BUT_US_TAG_MISSING_DATE_AUTHOR_UNKNOWN_NOT_CLEARED",
+      "url": "https://commons.wikimedia.org/wiki/File:Abbaye_de_St_Andr%C3%A9_-_Lophem_(lez-Bruges)._17_Per_ispsum_et_cum_ipso_et_in_ipso_est_tibi_Deo_Patri.,_GP064047.jpg"
+    }
+  ],
+  "captionOnlyPictorialLeads": [
+    {
+      "id": "ROMANITAS_36_QUI_PRIDIE",
+      "sourceId": "ROMANITAS_1944_MASS_80",
+      "url": "https://www.linkedin.com/pulse/first-picture-most-sacred-action-mass-published-romanitas-tofari",
+      "itemNumber": 36,
+      "cueIds": [
+        "AO.SM.C0169"
+      ],
+      "sourceEvidence": "AUTHOR_CAPTION_CONFIRMS_QUI_PRIDIE_EYES_UP_FRAME_NOT_VISUALLY_INSPECTED",
+      "usableAs": "C0169_CANDIDATE_SUBJECT_TO_IMAGE_AND_1962_RUBRIC_VERIFICATION",
+      "publication": "REFERENCE_ONLY"
+    },
+    {
+      "id": "ROMANITAS_52_BEFORE_PER_IPSUM",
+      "sourceId": "ROMANITAS_1944_MASS_80",
+      "url": "https://www.linkedin.com/pulse/end-roman-canon-depicted-louis-tofari",
+      "itemNumber": 52,
+      "cueIds": [
+        "AO.SM.C0204"
+      ],
+      "sourceEvidence": "AUTHOR_CAPTION_SAYS_MOMENT_BEFORE_MINOR_ELEVATION_NOT_ELEVATION_FRAME",
+      "usableAs": "SEQUENCE_CONTEXT_NOT_EXACT_C0204_POSE",
+      "publication": "REFERENCE_ONLY"
+    },
+    {
+      "id": "SSPX_DIAGRAM_12",
+      "sourceId": "SSPX_DIAGRAM12_HANC",
+      "url": "https://sspxsingapore.org/wp-content/uploads/2020/10/howtoservelowmass.pdf",
+      "itemNumber": 12,
+      "pageLabel": "printed p.33",
+      "cueIds": [
+        "AO.SM.C0161"
+      ],
+      "sourceEvidence": "TEXT_IDENTIFIES_DIAGRAM_AND_PALMS_DOWN_BUT_PDF_IMAGE_NOT_OPENED",
+      "usableAs": "SECONDARY_HANC_HAND_POSE_REFERENCE_ONLY",
+      "publication": "REFERENCE_ONLY"
+    },
+    {
+      "id": "NLM_FSSP_26",
+      "sourceId": "NLM_2023_FSSP_MASS_PHOTOS",
+      "url": "https://www.newliturgicalmovement.org/2023/06/photos-of-solemn-pentecost-mass-offered_01678527410.html",
+      "itemNumber": 26,
+      "cueIds": [
+        "AO.SM.C0161"
+      ],
+      "sourceEvidence": "ARTICLE_CAPTION_IDENTIFIES_HANC_PHOTO_NOT_VISUALLY_INSPECTED",
+      "usableAs": "SOLEMN_HANC_POSE_PHOTO_REQUIRES_INSPECTION",
+      "publication": "REFERENCE_ONLY"
+    }
   ]
 }
