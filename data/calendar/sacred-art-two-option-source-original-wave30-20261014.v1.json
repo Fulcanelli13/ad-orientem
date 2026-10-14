@@ -1,0 +1,86 @@
+{
+  "schema": "AO_SACRED_ART_DOCTORS_SOURCE_VERIFICATION_W30_V1",
+  "date": "2026-10-14",
+  "scope": "Two truly distinct original paintings for the preexisting 75 major saints and Doctors, without ratings or category expansion.",
+  "countable": [
+    {
+      "id": "G30-001",
+      "subjectId": "SNT-DC-17",
+      "artist": "Anonymous, late Baroque",
+      "title": "San Isidoro de Sevilla",
+      "museum": "Museo de Salamanca",
+      "inventory": "104",
+      "sourceUrl": "https://ceres.mcu.es/pages/ResultSearch?MuseumsRolSearch=2&MuseumsSearch=MACSE&hipertextSearch=1&listaMuseos=%5BMuseo+de+Artes+y+Costumbres+Populares+de+Sevilla%5D&search=simple&simpleSearch=0&txtSimpleSearch=San+Isidoro+de+Sevilla",
+      "medium": "oil painting on canvas",
+      "date": "1701–1800",
+      "evidence": "Spanish Ministry CER.es lists Museo de Salamanca inventory 104 as canvas painting explicitly Saint Isidore of Seville.",
+      "qualityGate": "MUSEUM_OBJECT_IDENTIFIED_BUT_INDIVIDUAL_DIRECT_RECORD_AND_PHOTO_PENDING"
+    },
+    {
+      "id": "G30-002",
+      "subjectId": "SNT-DC-17",
+      "artist": "Anonymous Andalusian church collection painter",
+      "title": "San Isidoro de Sevilla",
+      "museum": "Instituto Andaluz del Patrimonio Histórico: Church collection, Seville",
+      "inventory": "47113",
+      "sourceUrl": "https://repositorio.iaph.es/handle/11532/51488",
+      "medium": "oil on canvas",
+      "date": "Baroque period",
+      "evidence": "Andalusian heritage inventory depicts exact Archbishop Isidore, staff, book and authored titles; separately inventoried object 47113; not Isidore the Farmer.",
+      "qualityGate": "RESEARCH_OBJECT_ORIGINAL_AUTHOR_UNKNOWN_IMAGE_PHOTO_PENDING"
+    },
+    {
+      "id": "G30-003",
+      "subjectId": "SNT-DC-15",
+      "artist": "Anonymous French school, seventeenth century",
+      "title": "Saint Grégoire de Nazianze (in four Fathers ensemble)",
+      "museum": "Église Notre-Dame, Vervins, Aisne",
+      "inventory": "Palissy IM02001844",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/IM02001844",
+      "medium": "one of four separate oil-on-canvas originals, copied from earlier painted composition",
+      "date": "second half seventeenth century",
+      "evidence": "French official inventory corrects protection-order erroneous identification of Saint Denis to Saint Gregory Nazianzen; Saint Gregory is on a separate original canvas within four-painting ensemble, not the Louvre/Bazas Bertin B745.",
+      "qualityGate": "COPIED_COMPOSITION_REPAINTED_ICONOGRAPHY_CONFUSION: detailed description calls figure a Roman Pope despite Nazianzen label; research alternate only not premium art approval"
+    }
+  ],
+  "holds": [
+    {
+      "subjectId": "SNT-DC-17",
+      "artist": "Maestro de la Colección Pacully",
+      "title": "San Isidoro de Sevilla",
+      "sourceUrl": "https://ceres.mcu.es/pages/ResultSearch?MuseumsRolSearch=15&MuseumsSearch=MNEV%7C&hipertextSearch=1&listaMuseos=%5BMuseo+Nacional+de+Escultura%5D&search=simpleSelection&simpleSearch=0&txtSimpleSearch=San+Isidoro+de+Sevilla",
+      "reason": "Exact 1480–90 oil oak panel (CE0951/001), but Flemish-Gothic early style; historical fallback outside preferred naturalistic painting aesthetic."
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "artist": "Étienne-Joseph Camatte after Vien",
+      "title": "Saint Athanase ?",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002310",
+      "reason": "Exact title includes '?' and original canvas is explicitly a copy in bad condition; not counted."
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "artist": "Pietro da Cortona",
+      "title": "Saint Peter Damian Offering the Camaldolese Rule to the Virgin",
+      "sourceUrl": "https://www.grimaldiforum.com/medias/event/402-DP-2015_Point-Art-Monaco_Jewels-of-The-World-1.pdf",
+      "reason": "2015 dealer fair catalogue supports a specific oil painting (137×104cm) with claimed old English provenance; not museum or stable custodian, original identification/authorship and custody require independent verification before counting."
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "artist": "Hieronymus Wierix",
+      "title": "Pietro Canisio, engraved portrait",
+      "sourceUrl": "https://www.catalogo.beniculturali.it/search/period/post-1590-ca-1610",
+      "reason": "Print, not oil painting; exclude."
+    }
+  ],
+  "counts": {
+    "physicalOilOrCanvasResearchRecords": 3,
+    "highConfidenceIsidoreAlternatives": 2,
+    "conditionalNazianzenAlternative": 1,
+    "saintSubjectsAdded": 0,
+    "userScoresChanged": 0,
+    "imageMastersAcquired": 0,
+    "commercialReproductionsCleared": 0
+  },
+  "qualityPolicy": "Distinct physical original is not automatically a strong aesthetic option, a master file, or app approval. Existing score 0-2 globally excludes a painting."
+}
