@@ -8,28 +8,10 @@ import {getCanonicalAsset} from "../src/assets/asset-registry.js";
 
 assert.equal(DEVOTIONAL_ACTION_CINEMATIC_VERSION,"devotional-action-v1");
 const scene=props=>resolveDevotionalActionScene(props);
-const tuesday=resolveAngelusPosture({form:"angelus",weekday:2});
-const sunday=resolveAngelusPosture({form:"angelus",weekday:0});
-const saturdayMorning=resolveAngelusPosture({form:"angelus",weekday:6,saturdayAfterVespers:false});
-const saturdayVespers=resolveAngelusPosture({form:"angelus",weekday:6,saturdayAfterVespers:true});
-assert.equal(tuesday.posture,"kneel");
-assert.equal(sunday.posture,"stand");
-assert.equal(saturdayMorning.posture,"kneel");
-assert.equal(saturdayVespers.posture,"stand");
-const incarnation=posture=>scene({
-  view:"angelus",form:"angelus",cardId:"incarnation",cue:"profound-bow",posture,
-});
-assert.equal(incarnation(tuesday.posture)?.id,"ANGELUS.INCARNATION.KNEEL");
-assert.equal(incarnation(sunday.posture)?.id,"ANGELUS.INCARNATION.BOW");
-for(const x of [incarnation("kneel"),incarnation("stand")]){
- assert.equal(x.kind,"POSTURE");assert.ok(getCanonicalAsset(x.assetId));
- assert.equal(x.observedNow,false);assert.equal(x.assertsPerformedGesture,false);
- assert.equal(x.canonicalAuthority,false);assert.ok(Object.isFrozen(x));
-}
-assert.equal(incarnation("invalid"),null);
-assert.equal(scene({view:"angelus",form:"regina",cardId:"incarnation",cue:"profound-bow",posture:"stand"}),null);
-assert.equal(scene({view:"angelus",form:"angelus",cardId:"fiat",cue:"profound-bow",posture:"stand"}),null);
-assert.equal(scene({view:"angelus",form:"angelus",cardId:"incarnation",cue:null,posture:"stand"}),null);
+// The reviewed Angelus v2 policy is the only Incarnation gesture owner.
+// Shared postures must never duplicate its cinematic.
+assert.equal(scene({view:"angelus",form:"angelus",cardId:"incarnation",
+ cue:"profound-bow",posture:"stand"}),null);
 const ben=scene({view:"benediction",benedictionStage:"blessing"});
 assert.equal(ben.id,"BENEDICTION.BLESSING");
 assert.equal(ben.kind,"SOLEMN_ACTION");
@@ -66,13 +48,13 @@ assert.equal(createDevotionalActionCinematic({}).current(),null);
 const runtime=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 const opening=readFileSync(new URL("../src/pray/devotional-cinematic.js",import.meta.url),"utf8");
 const styles=readFileSync(new URL("../src/pray/devotional-action-cinematic-styles.js",import.meta.url),"utf8");
-assert.ok(runtime.includes("actionCinematics.sync(resolveDevotionalActionScene({"));
+assert.ok(runtime.includes("actionCinematics.sync(scene,{mount:m"));
 assert.ok(runtime.includes("benedictionStage:view==='benediction'?BEN_STAGES[BEN.step]?.[0]:null"));
 assert.ok(runtime.includes("stationRitual:null"));
-assert.ok(runtime.includes("view:'angelus',form,cardId:card?.id,cue"));
-assert.ok(opening.includes('card?.id!=="announcement"'));
-assert.ok(opening.includes("shown.has(sheet)"));
-assert.ok(opening.includes("approvedOpeningArtworkPool("));
+assert.ok(runtime.includes("resolveAngelusIncarnationCinematic({"));
+assert.ok(opening.includes("entry.openingShown"));
+assert.ok(opening.includes("selectAngelusOpeningArtwork("));
+assert.ok(opening.includes("resolveAngelusArtworkImage("));
 assert.ok(styles.includes("aoDevotionalActionIcon"));
 assert.ok(styles.includes("prefers-reduced-motion:reduce"));
-console.log("PASS: Angelus posture and Incarnation cue, Benediction exact stage, Eucharistic Visit arrival, Stations fail-closed, approved artwork selection, static accessible cinematic.");
+console.log("PASS: unique Angelus source owner, Benediction exact stage, Eucharistic Visit arrival, Stations fail-closed, approved artwork selection, static accessible cinematic.");
