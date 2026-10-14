@@ -19,14 +19,20 @@ for(const id of ["fiat","incarnation","intercession","faithful-departed"]){
    "Angelus artwork must not interrupt later cards: "+id);
 }
 assert.equal(devotionalInterludePlan({form:"regina",card:{id:"collect",title:"Oraison"}}),null);
-assert.equal(ANGELUS_REVIEWED_OPENING_ART.length,5);
+assert.equal(ANGELUS_REVIEWED_OPENING_ART.length,6);
 assert.ok(ANGELUS_REVIEWED_OPENING_ART.every(row=>
-  row.rating===4&&row.subject==="ANNUNCIATION"&&row.sourceUrl));
-// 4/5 means review, not final approval. Only a 5 or explicit confirmed
-// approval may appear in the opening carousel.
+  [4,5].includes(row.rating)&&row.subject==="ANNUNCIATION"&&row.sourceUrl));
+const champaigne=ANGELUS_REVIEWED_OPENING_ART.find(a=>a.id==="met-438724");
+assert.ok(champaigne&&champaigne.rating===5&&champaigne.rank===1&&
+  champaigne.selectedInPriorReview&&champaigne.finalApproval!=="APPROVED",
+  "The newest 13 Oct user ranking must retain the selected 5/5 Annunciation without falsely certifying it");
+// Neither a score of five nor a prior aesthetic selection is artwork-release approval.
 assert.equal(selectAngelusOpeningArtwork({random:()=>0}),null,
-  "Rated-4 shortlist was incorrectly promoted to approved artwork");
-const approved=ANGELUS_REVIEWED_OPENING_ART.slice(0,2).map(a=>({...a,rating:5}));
+  "Aesthetic scores were incorrectly promoted to publishable artwork");
+assert.equal(selectAngelusOpeningArtwork({pool:[{...champaigne,finalApproval:"APPROVED"}]}),null,
+  "An approved painting without approved reproduction was published");
+const approved=ANGELUS_REVIEWED_OPENING_ART.slice(1,3).map(a=>({
+ ...a,finalApproval:"APPROVED",reproductionApproval:"APPROVED"}));
 const picked=selectAngelusOpeningArtwork({pool:approved,random:()=>0});
 assert.equal(picked.id,"nga-46");
 assert.notEqual(selectAngelusOpeningArtwork({pool:approved,lastId:picked.id,random:()=>0}).id,picked.id);
