@@ -46,6 +46,8 @@ for(const n of ["023","024"])
  assert.equal(by.get("AO.CANON.R62."+n).reviewCode,"INDEPENDENT_EVENT");
 for(const n of ["022","032"])
  assert.equal(by.get("AO.CANON.R62."+n).displaySurface,"FOCUS_WORDS_NO_DUPLICATE");
+assert.equal(by.get("AO.CANON.R62.044").displaySurface,"GUIDE_ONLY");
+assert.match(by.get("AO.CANON.R62.044").unresolvedIssue.fr,/croix est placée avant/);
 for(const n of ["026","040"])
  assert.equal(by.get("AO.CANON.R62."+n).reviewCode,"PERSISTENT_STATE");
 for(const [n,word] of [
