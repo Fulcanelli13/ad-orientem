@@ -88,7 +88,11 @@
       "archivedEvidenceRows": 26,
       "repositoryPath": "docs/research/MASS-RESEARCH-ARCHIVE-INDEX-20261013.md",
       "originalOrBibliographicUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
-      "publishedCopyApproved": false
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "originalFrenchFirstPass": 30,
+        "originalFrenchSecondPass": 41
+      }
     },
     {
       "id": "A",
@@ -99,7 +103,12 @@
       "archivedEvidenceRows": 0,
       "repositoryPath": "data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json",
       "originalOrBibliographicUrl": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
-      "publishedCopyApproved": false
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "ceremonialLocatorRecords": 113,
+        "source": "data/mass/alphonsus-fortescue-direct-book-evidence-batch02.v1.json",
+        "caution": "Historical ceremonial passages, not 113 doctrinal expositions or normative 1962 cues."
+      }
     },
     {
       "id": "DJ",
@@ -121,7 +130,12 @@
       "archivedEvidenceRows": 28,
       "repositoryPath": "data/research/archive/mass-compendium-20260921-comparisons.snapshot.v1.json",
       "originalOrBibliographicUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
-      "publishedCopyApproved": false
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "originalSections": 30,
+        "septemberComparisonGroups": 26,
+        "sourceRite": "DOMINICAN_NOT_1962_ROMAN"
+      }
     },
     {
       "id": "SFS",
@@ -132,7 +146,11 @@
       "archivedEvidenceRows": 29,
       "repositoryPath": "data/research/archive/mass-compendium-20260921-comparisons.snapshot.v1.json",
       "originalOrBibliographicUrl": "https://www.newliturgicalmovement.org/2024/04/st-francis-de-sales-method-of-hearing.html",
-      "publishedCopyApproved": false
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "septemberComparisonGroups": 6,
+        "attribution": "NOT_CRITICALLY_CERTIFIED"
+      }
     },
     {
       "id": "SLPM",
@@ -242,7 +260,12 @@
       "archivedEvidenceRows": 0,
       "repositoryPath": "data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json",
       "originalOrBibliographicUrl": "https://archive.org/details/cu31924029398553",
-      "publishedCopyApproved": false
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "historicalThemeExcerpts": 27,
+        "originalTextLocators": 30,
+        "distinctRegistersMayOverlap": true
+      }
     },
     {
       "id": "L1897",
@@ -260,7 +283,7 @@
       "title": "Pierre Le Brun — Explication littérale, historique et dogmatique",
       "authority": "history_dogma_source_criticism",
       "application": "study_liturgical",
-      "recoveryState": "SIXTY_FOUR?",
+      "recoveryState": "LIMITED_ORIGINAL_METHOD_EXCERPT_LOCATED_NO_FULL_VOLUME_CLAIM_REGISTER",
       "archivedEvidenceRows": 0,
       "repositoryPath": "data/geography/research/mass-scripture-source-extractions-20261011.v1.json",
       "originalOrBibliographicUrl": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
