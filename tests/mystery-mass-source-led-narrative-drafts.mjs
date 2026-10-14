@@ -8,7 +8,7 @@ const n=json('data/learn/research/mystery-mass-source-led-narrative-drafts-20261
 const map=json('data/learn/research/mystery-mass-two-chronologies-evidence-crosswalk-20261014.v1.json');
 const p=json('data/learn/research/mystery-mass-selected20-bilingual-mystagogy-20261014.v1.json');
 const q=json('data/learn/research/mystery-mass-24-bilingual-gap-manuscript-20261014.v1.json');
-const a=json('data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json');
+const a=json('data/learn/research/mystery-mass-alphonsus-22-passage-source-snapshot-20261014.v1.json');
 assert.equal(n.status,'ENGLISH_BIBLICAL_SCENE_SCRIPT_DRAFT_AND_UNALTERED_DEEP_STUDY_CONTENT_UNPUBLISHED');
 assert.equal(n.biblicalNarrativeDrafts.length,24);
 assert.equal(n.liturgicalStudySelections.length,39);
