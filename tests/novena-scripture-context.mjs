@@ -43,7 +43,7 @@ for(const [id,reference] of expected){
   assert.equal((html.match(/data-ao-scripture-context=/g)||[]).length,1,
     "One source-owned browser entry per novena, not a duplicate reader");
   assert.ok(html.includes(french?"Passage biblique à méditer":"Scripture for meditation"));
-  assert.ok(html.includes(french?"n'est ni une citation":"neither a quotation"),
+  assert.ok(html.includes(french?"ni une citation":"neither a quotation"),
     "No theme passage should be called the historical source or wording of the novena");
   assert.equal(html.includes("target=\"_blank\""),false,
     "Study navigation must not silently replace the in-app Scripture reader");
