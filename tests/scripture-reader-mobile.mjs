@@ -266,6 +266,28 @@ try{
    reference:"Daniel 3:47–51",liturgicalArrangement:{...arrangement,liturgicalVerseOrder:["Daniel 3:47–51"]}
   }),{daniel,arrangement}),false,
   "Unproven liturgical verse order must never open a misleading Context");
+  // Explicit module return callbacks must not be shadowed by the reader's
+  // option parameter. Closing restores the invoking control exactly once.
+  assert.equal(await page.evaluate(()=>{
+    const origin=document.createElement("button");
+    origin.type="button";origin.id="ao-scripture-return-fixture";
+    origin.textContent="Return fixture";document.body.append(origin);origin.focus();
+    window.__scriptureReturnCount=0;
+    return globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:28",{
+      onCloseReturn:()=>{window.__scriptureReturnCount++;}
+    });
+  }),true);
+  await dialog.waitFor({state:"visible"});
+  await dialog.locator("[data-scripture-close]").click();
+  assert.deepEqual(await page.evaluate(()=>({
+    count:window.__scriptureReturnCount,
+    focus:document.activeElement?.id,
+    stillOpen:globalThis.AO_SCRIPTURE_APP_V1.status().open
+  })),{count:1,focus:"ao-scripture-return-fixture",stillOpen:false},
+  "A context return must invoke its callback once and restore the original control");
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.close()),false,
+    "Closing twice must not replay the return callback");
+  await page.evaluate(()=>document.getElementById("ao-scripture-return-fixture")?.remove());
   assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{
