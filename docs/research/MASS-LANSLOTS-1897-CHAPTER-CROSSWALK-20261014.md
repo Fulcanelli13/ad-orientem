@@ -82,6 +82,8 @@ Each `AO.CARD` designation here is a **topic-level bridge to existing 30 macro G
 7. Source display: title / author / 1897 / chapter / printed page / exact assertion / original scan link / Scripture book-chapter-verse / interpretation type / 1962 applicability / source status / bilingual reviewed text.
 
 
+For exact, automatically reconcilable chapter totals and underlying evidence IDs, consult the [25-chapter coverage census](../../data/research/mass-lanslots-1897-chapter-coverage.v1.json). This records **25/25 chapter groups with initial source evidence**, **18** with Scripture-reference samples and **seven** with separate theological/historical texts, including a zero count for original PDF page images reviewed. This is a research coverage gate only.
+
 ## Second research pass — comprehensive chapter-level coverage, not an exhaustive verse census
 
 The second [original-OCR Scripture batch](../../data/research/mass-lanslots-1897-ocr-scripture-batch02.v1.json) adds **26** directly inspected biblical reference/allusion records to the earlier 43, bringing the running total to **69** record occurrences. These are source occurrences, not unique verses. The passages now cover **18 of the 25 numbered chapters** plus the Introduction. The added associations include Exodus 26 and altar furnishings; Psalm 109:4, Psalm 103:13–15, 1 Corinthians 10:17 and Hebrews 7:27 in Offertory theology; Leviticus 8:14 and Luke 1:74 at `Hanc igitur`; Psalm 109:4 in `Supra quae`; the breaking of bread at Emmaus; and 1 Corinthians 11:28–29 before Communion.
