@@ -24,8 +24,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Test research-only citation parser
-        run: node tools/mass/extract-lanslots-scripture.mjs --self-test
+      - name: Verify archived original OCR, source locations and research-only holds
+        run: |
+          node tools/mass/extract-lanslots-scripture.mjs --self-test
+          node tests/mass-lanslots-original-cue-audit.mjs
+          node tests/mass-lanslots-critical-reconciliation.mjs
+          node tests/mass-lanslots-full-ocr-integrity.mjs
       - name: Acquire unmodified Internet Archive original OCR
         shell: bash
         run: |
