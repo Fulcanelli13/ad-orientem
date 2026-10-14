@@ -85,4 +85,23 @@ assert.equal(stage.remaining.newIllustrationArtApproved,0);
 assert.ok(stage.visualReassessment.caveat.includes("Do not promote"));
 assert.equal(standard.design.assets.includes("Never mutate"),true);
 
+
+const studies=parse("../data/presentation/mass-icon-minimal-native-svg-staging-20261014.v1.json");
+assert.equal(studies.status,"RESEARCH_PROTOTYPES_ONLY_NOT_APPROVED_NOT_RUNTIME_BOUND");
+assert.equal(studies.referenceRating,5);
+assert.equal(studies.items.length,3);
+assert.ok(studies.items.every(x=>x.geometryStatus==="GEOMETRY_PROTOTYPE"));
+assert.ok(studies.items.every(x=>x.needs.some(y=>y.includes("user artwork rating"))));
+assert.equal(studies.items.find(x=>x.id==="B13").railAcceptance,"FAIL_AT_64PX");
+assert.ok(Object.values(studies.productionChanges).every(x=>x===false));
+for(const x of studies.items){
+  const raw=readFileSync(new URL("../"+studies.assetRoot+x.file,import.meta.url),"utf8");
+  assert.ok(raw.includes('viewBox="0 0 128 128"'));
+  assert.ok(raw.includes("currentColor"));
+  assert.ok(raw.includes("<mask "));
+  assert.ok(!/<image\\b|data:image|base64/i.test(raw),"embedded raster not permitted: "+x.file);
+  assert.ok(!/<filter|gradient|pattern|feGaussian/i.test(raw),"decorative rendering: "+x.file);
+  assert.ok(/aria-label=/.test(raw));
+}
+
 console.log("PASS: 24 minimal-family repair workorders; 0–2 rejects / 3 research / 4 review / 5 confirmed; 36 subjects generation-gated, no runtime changes.");
