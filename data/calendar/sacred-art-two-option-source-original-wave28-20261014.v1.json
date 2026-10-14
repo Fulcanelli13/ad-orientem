@@ -1,0 +1,132 @@
+{
+  "schema": "AO_SACRED_ART_DOCTORS_SECOND_PAINTING_W28_V1",
+  "asOf": "2026-10-14",
+  "ownerPR": 887,
+  "scope": "No scores requested; original existing Doctors only.",
+  "candidates": [
+    {
+      "id": "G28-001",
+      "subjectId": "SNT-DC-14",
+      "artist": "Nicolas Bertin",
+      "title": "Saint Basile le Grand",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010057997",
+      "institution": "Musée du Louvre (deposited Bazas)",
+      "accession": "B 747",
+      "date": "18th century",
+      "medium": "oil painting on canvas",
+      "identity": "EXACT_BASIL_NAMED_ON_SCROLL",
+      "relation": "DISTINCT_PHYSICAL_FROM_SUBLEYRAS_MET_2007_166",
+      "photography": "Not obtained",
+      "countsTowardTwoOriginalResearchOptions": true,
+      "newImageAcquired": false,
+      "newHumanApproval": false,
+      "commercialPhotoRightsVerified": false
+    },
+    {
+      "id": "G28-002",
+      "subjectId": "SNT-DC-14",
+      "artist": "Pierre Hubert Subleyras",
+      "title": "La Messe de saint Basile et l'évanouissement de Valens",
+      "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010066366",
+      "institution": "Musée du Louvre",
+      "accession": "INV 8004",
+      "date": "1740–1743",
+      "medium": "oil on canvas",
+      "identity": "EXACT_BASIL_AT_LITURGY",
+      "relation": "DIFFERENT_PHYSICAL_LARGER_OIL_FROM_MET_2007_166",
+      "photography": "Not obtained",
+      "countsTowardTwoOriginalResearchOptions": true,
+      "newImageAcquired": false,
+      "newHumanApproval": false,
+      "commercialPhotoRightsVerified": false
+    },
+    {
+      "id": "G28-003",
+      "subjectId": "SNT-DC-11",
+      "artist": "Michele Lenzi",
+      "title": "Sant'Alfonso Maria de Liguori",
+      "sourceUrl": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/1500005082",
+      "institution": "Church, Bagnoli Irpino (Avellino)",
+      "accession": "1500005082",
+      "date": "1851",
+      "medium": "oil on canvas",
+      "identity": "EXACT_LIGUORI_NAME_IN_STATE_CATALOGUE",
+      "relation": "DISTINCT_FROM_MARINI_1838_PRATO",
+      "photography": "Not obtained",
+      "countsTowardTwoOriginalResearchOptions": true,
+      "newImageAcquired": false,
+      "newHumanApproval": false,
+      "commercialPhotoRightsVerified": false
+    },
+    {
+      "id": "G28-004",
+      "subjectId": "SNT-DC-11",
+      "artist": "Francesco Mensi (attributed)",
+      "title": "Sant'Alfonso de Liguori in preghiera illuminato dallo Spirito Santo",
+      "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0300005052",
+      "institution": "Church, Voghera (Pavia)",
+      "accession": "0300005052",
+      "date": "19th century",
+      "medium": "oil on canvas",
+      "identity": "EXACT_NAMED_LIGUORI",
+      "relation": "DISTINCT_FROM_MARINI_1838_PRATO",
+      "photography": "Not obtained",
+      "countsTowardTwoOriginalResearchOptions": true,
+      "newImageAcquired": false,
+      "newHumanApproval": false,
+      "commercialPhotoRightsVerified": false
+    },
+    {
+      "id": "G28-005",
+      "subjectId": "SNT-DC-13",
+      "artist": "Étienne-Joseph Camatte after Joseph-Marie Vien",
+      "title": "Saint Athanase ?",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002310",
+      "institution": "Église Saint-Théodule, Collonges, Ain",
+      "accession": "PM01002310",
+      "date": "1843",
+      "medium": "oil on canvas",
+      "identity": "QUESTION_MARK_SAINT_ID_IN_PROTECTION_TITLE",
+      "relation": "DIFFERENT_PHYSICAL_FROM_NICOLAS_BERTIN_LOUVRE_B746",
+      "photography": "Poor condition, not fit for hero; source identification uncertain",
+      "hold": "UNCERTAIN_SAINT_ID_POOR_CONDITION_COPY",
+      "countsTowardTwoOriginalResearchOptions": false,
+      "newImageAcquired": false,
+      "newHumanApproval": false,
+      "commercialPhotoRightsVerified": false
+    }
+  ],
+  "rejectedMismatchExamples": [
+    {
+      "subjectId": "SNT-DC-17",
+      "url": "https://www.museodelprado.es/en/the-collection/art-work/the-hermitage-of-saint-isidore-on-the-saints/f8da95a4-2437-4951-afb4-7a8c4fd94e59",
+      "reason": "Goya depicts Madrid's Saint Isidore the FARMER pilgrimage, not Doctor Saint Isidore of SEVILLE, and saint is not depicted. Wrong saint, do not count."
+    },
+    {
+      "subjectId": "SNT-DC-14",
+      "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-basilio/78edb86e-a365-4996-84d7-6d10649b31e0",
+      "reason": "Copy after El Greco, a user-excluded artistic family; do not count to reach two."
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "url": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/0900119548",
+      "reason": "Original Marini 1838 already in P0 under SAME institution ID. Do not treat artist's later 1855 copy mentioned in catalogue as a newly sourced current original unless located separately."
+    }
+  ],
+  "counts": {
+    "documentedSecondOriginalPaintingRecords": 5,
+    "identityUncertainAndNotCounted": 1,
+    "countedTowardResearchMinimum": 4,
+    "userRatingsChanged": 0,
+    "acquiredMasterFiles": 0,
+    "newSubjectsAdded": 0,
+    "productionChanges": 0
+  },
+  "remarks": [
+    "Original oil painting and source identity are necessary but NOT sufficient for user's refined naturalistic aesthetic or app release.",
+    "Bertin Basil Louvre B747 is same historical four-Greek-Doctors set as B744 Chrysostom, B745 Nazianzen, B746 Athanasius; each depicts DIFFERENT saint and is NOT a second option for them.",
+    "Subleyras Met oil modello 2007.166 is a separate physical painting from Louvre INV8004 and from the later huge Roman composition; no copies of the same photographed object counted twice.",
+    "Camatte painted physical original copy of a Vien design in poor condition, doubtful title Saint Athanase? and thus excluded from two-solid-options coverage.",
+    "Mensi and Lenzi have different record accession and custodial locations from original Marini 1838 portrait."
+  ]
+}
