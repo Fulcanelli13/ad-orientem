@@ -1,0 +1,768 @@
+{
+  "schema": "AO_MYSTERY_MASS_OLDER_AUTHOR_MEDITATION_GROUPS_V1",
+  "date": "2026-10-14",
+  "status": "EXACT_SEPTEMBER_ARCHIVE_ROW_PRESERVATION_LINKED_TO_TWO_ARCS_WITH_NON_NORMATIVE_FLAGS",
+  "counts": {
+    "vincentFerrerArchivalGroups": 26,
+    "francisDeSalesAttributedArchivalGroups": 6,
+    "groupTotal": 32,
+    "vincentFerrerPrimaryNumberedSections": 30,
+    "dujardinAlreadyCrosswalked": 22
+  },
+  "sources": {
+    "vincentFerrer": {
+      "id": "SVF",
+      "fullEnglishTranslationOnline": "https://www.svfsermons.org/Parts%20of%20the%20Mass.htm",
+      "title": "A Very Devout Contemplation Which Includes the Whole Lifetime of Jesus Christ Our Savior from the Parts of the Mass",
+      "numberedSourceUnits": 30,
+      "authorship": "St Vincent Ferrer, O.P. (historical translation witness)",
+      "riteScope": "Dominican ceremony and historical private contemplative correspondences, NOT 1962 Roman ritual",
+      "originalLatinSourceCollation": "NOT_COMPLETED",
+      "verifiedFullTextNumberedFrom1To30": true
+    },
+    "francisDeSalesAttributed": {
+      "id": "SFS",
+      "url": "https://www.newliturgicalmovement.org/2024/04/st-francis-de-sales-method-of-hearing.html",
+      "attribution": "ATTRIBUTED_NOT_CRITICALLY_PROVED",
+      "independentFullOriginalTextNotYetCollated": true
+    }
+  },
+  "oldSource": "data/research/archive/mass-compendium-20260921-comparisons.snapshot.v1.json :: Devotional",
+  "policy": "No symbolism is projected as an origin, cause, rubrical action, or universally prescribed lay posture; recast alternative historical meditation as opt-in author-attributed correspondence.",
+  "rows": [
+    {
+      "archivedDevotionalRow": 8,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Sacristy / vesting",
+      "biblicalOrChristLifeContemplation": "Incarnation",
+      "sourceSummary": "Priest entering/vesting in sacristy symbolizes the Word taking flesh in Mary's womb.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "1929 translation §§ I",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [],
+      "biblicalResearchAnchorIds": [
+        "SH13"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 9,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Procession from sacristy",
+      "biblicalOrChristLifeContemplation": "Nativity",
+      "sourceSummary": "Priest emerging from sacristy symbolizes Christ's birth/public manifestation.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ II",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [],
+      "biblicalResearchAnchorIds": [
+        "SH14"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 10,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Confiteor",
+      "biblicalOrChristLifeContemplation": "Circumcision / humility",
+      "sourceSummary": "Confiteor symbolizes Christ's voluntary humility under the law.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ III",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "biblicalResearchAnchorIds": [],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 11,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Approach/kiss altar",
+      "biblicalOrChristLifeContemplation": "Magi",
+      "sourceSummary": "Approach and altar kiss are interpreted through the Magi's adoration and offerings.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ IV",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "biblicalResearchAnchorIds": [],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 12,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Introit/Kyrie/Gloria/Collect complex",
+      "biblicalOrChristLifeContemplation": "Presentation",
+      "sourceSummary": "The opening chants/prayers are associated with the Presentation and Simeon's canticle.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ V",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.001",
+        "AO.CARD.002",
+        "AO.CARD.003",
+        "AO.CARD.004"
+      ],
+      "biblicalResearchAnchorIds": [],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 13,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Epistle → Gospel preparation",
+      "biblicalOrChristLifeContemplation": "Flight / return from Egypt",
+      "sourceSummary": "Seven actions around Epistle/interlection/Gospel preparation symbolize seven years of exile and return.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ VI",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.005",
+        "AO.CARD.006"
+      ],
+      "biblicalResearchAnchorIds": [],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 14,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Gospel / Credo",
+      "biblicalOrChristLifeContemplation": "Finding in Temple",
+      "sourceSummary": "Priest listening to Gospel symbolizes Christ among the doctors; Credo follows.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ VII",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.007",
+        "AO.CARD.009"
+      ],
+      "biblicalResearchAnchorIds": [],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 15,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Offertory preparation",
+      "biblicalOrChristLifeContemplation": "Hidden life at Nazareth",
+      "sourceSummary": "Preparation/service at altar symbolizes Christ's obedience and hidden service.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ VIII",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.010"
+      ],
+      "biblicalResearchAnchorIds": [],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 16,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Lavabo",
+      "biblicalOrChristLifeContemplation": "Baptism in Jordan",
+      "sourceSummary": "Washing symbolizes Christ's baptism and humility.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ IX",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.010"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH15"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 17,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "In spiritu humilitatis / Orate",
+      "biblicalOrChristLifeContemplation": "Fast/prayer in desert",
+      "sourceSummary": "Bowed secret prayer symbolizes Christ's prayer and fasting in desert.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ X",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.010",
+        "AO.CARD.011"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH19"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 18,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Sursum corda / Preface",
+      "biblicalOrChristLifeContemplation": "Public preaching",
+      "sourceSummary": "Raised voice/hands symbolize Christ's public preaching.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XI",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.012"
+      ],
+      "biblicalResearchAnchorIds": [],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 19,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Sanctus",
+      "biblicalOrChristLifeContemplation": "Miracles",
+      "sourceSummary": "Threefold Sanctus symbolizes Christ's miracles through the power of the Trinity.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XII",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.013"
+      ],
+      "biblicalResearchAnchorIds": [],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 20,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Secret Canon",
+      "biblicalOrChristLifeContemplation": "Last Supper",
+      "sourceSummary": "Secret Canon symbolizes the Paschal Supper, institution and private discourse to the Apostles.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XIII",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CANON.01"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH18"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 21,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Pre-Consecration / bells",
+      "biblicalOrChristLifeContemplation": "Gethsemane and seizure",
+      "sourceSummary": "Crosses/bells interpreted through Christ's prayer and tumult of His arrest.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§§ XIV–XV",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CANON.04",
+        "AO.CANON.05"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH19"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 22,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Major elevations",
+      "biblicalOrChristLifeContemplation": "Crucifixion",
+      "sourceSummary": "Host elevation symbolizes Christ raised on Cross; Chalice elevation His Blood offered for redemption.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XVI",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 23,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Per ipsum",
+      "biblicalOrChristLifeContemplation": "Five Wounds",
+      "sourceSummary": "Five crosses symbolize Five Wounds.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XVIII",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CANON.14"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 24,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Pater Noster",
+      "biblicalOrChristLifeContemplation": "Seven Words",
+      "sourceSummary": "Seven petitions correspond to Christ's Seven Words from the Cross.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XIX",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.019"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 25,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Fraction",
+      "biblicalOrChristLifeContemplation": "Death / division of Sacred Humanity",
+      "sourceSummary": "Three particles symbolize Body, Blood and Soul while divinity remains united.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XX",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.020"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 26,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Agnus Dei",
+      "biblicalOrChristLifeContemplation": "Conversions at Passion",
+      "sourceSummary": "Three petitions associated with conversion of sinner, rulers and Christian people.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XXI",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.021"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 27,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Commixture",
+      "biblicalOrChristLifeContemplation": "Descent into Limbo",
+      "sourceSummary": "Particle into Chalice symbolizes Christ's descent to Limbo.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XXII",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.020"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 28,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Pax / holding Host",
+      "biblicalOrChristLifeContemplation": "Burial / sorrow of Mary",
+      "sourceSummary": "Associated with burial and lamentation of Mary/holy women.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XXIII",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.020",
+        "AO.CARD.022"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 29,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Priest Communion",
+      "biblicalOrChristLifeContemplation": "Anointing / burial",
+      "sourceSummary": "Priest's heart should be like a new sepulchre.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XXIV",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.023"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 30,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Ablutions / movement after Communion",
+      "biblicalOrChristLifeContemplation": "Resurrection",
+      "sourceSummary": "Empty chalice and movement symbolize empty tomb/Resurrection.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XXV",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.026"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH21"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 31,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Postcommunion / Dominus vobiscum",
+      "biblicalOrChristLifeContemplation": "Appearances after Resurrection",
+      "sourceSummary": "Postcommunion and greeting symbolize consolations/appearances.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§§ XXVI–XXVII",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.027"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH21"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 32,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Ite missa est / final rites",
+      "biblicalOrChristLifeContemplation": "Mission / Petrine commission",
+      "sourceSummary": "Dismissal symbolizes missionary commission; Placeat/blessing receives further apostolic symbolism.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§§ XXVIII–XXIX",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [
+        "AO.CARD.028",
+        "AO.CARD.029"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH23"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 33,
+      "sourceCode": "SVF",
+      "authorAsArchived": "St Vincent Ferrer, O.P.",
+      "originalRiteOrDevotionalScope": "Dominican Rite",
+      "massMomentAsAuthorMeditates": "Return to sacristy",
+      "biblicalOrChristLifeContemplation": "Ascension",
+      "sourceSummary": "Return to sacristy symbolizes Ascension, completing the life-of-Christ schema.",
+      "historicalAuthorityNote": "Medieval symbolic devotion; rite-specific",
+      "originalSectionLocator": "§ XXX",
+      "originalSourceUrl": "https://www.ecatholic2000.com/cts/untitled-251.shtml",
+      "massResearchOwnerIds": [],
+      "biblicalResearchAnchorIds": [
+        "SH22"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 34,
+      "sourceCode": "SFS",
+      "authorAsArchived": "Attributed St Francis de Sales",
+      "originalRiteOrDevotionalScope": "Roman devotional method",
+      "massMomentAsAuthorMeditates": "Foot of altar → Confiteor",
+      "biblicalOrChristLifeContemplation": "Gethsemane",
+      "sourceSummary": "Opening movements and Confiteor are mapped to Christ entering/praying/prostrating in the garden.",
+      "historicalAuthorityNote": "Private Passion meditation; not rubrical",
+      "originalSectionLocator": "Tumblr + NLM reproduction",
+      "originalSourceUrl": "https://signum-crucis.tumblr.com/post/21191296333/meditations-on-the-traditional-latin-mass-by-st",
+      "massResearchOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH19"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 35,
+      "sourceCode": "SFS",
+      "authorAsArchived": "Attributed St Francis de Sales",
+      "originalRiteOrDevotionalScope": "Roman devotional method",
+      "massMomentAsAuthorMeditates": "Altar kiss → Gospel",
+      "biblicalOrChristLifeContemplation": "Arrest / trials before Annas, Pilate, Herod",
+      "sourceSummary": "Kiss, Epistle-side movement, Introit, Kyrie, Epistle, Munda, Gospel are mapped sequentially to the Passion narrative.",
+      "historicalAuthorityNote": "Private Passion meditation; not rubrical",
+      "originalSectionLocator": "Tumblr + NLM reproduction",
+      "originalSourceUrl": "https://www.newliturgicalmovement.org/2024/04/st-francis-de-sales-method-of-hearing.html",
+      "massResearchOwnerIds": [
+        "AO.CARD.001",
+        "AO.CARD.007"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH19",
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 36,
+      "sourceCode": "SFS",
+      "authorAsArchived": "Attributed St Francis de Sales",
+      "originalRiteOrDevotionalScope": "Roman devotional method",
+      "massMomentAsAuthorMeditates": "Offertory → Preface",
+      "biblicalOrChristLifeContemplation": "Stripping / scourging / crown / Pilate / condemnation",
+      "sourceSummary": "Offertory actions are mapped to stages of Christ's Passion before Calvary.",
+      "historicalAuthorityNote": "Private Passion meditation; not rubrical",
+      "originalSectionLocator": "Tumblr + NLM reproduction",
+      "originalSourceUrl": "https://www.newliturgicalmovement.org/2024/04/st-francis-de-sales-method-of-hearing.html",
+      "massResearchOwnerIds": [
+        "AO.CARD.010",
+        "AO.CARD.012"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 37,
+      "sourceCode": "SFS",
+      "authorAsArchived": "Attributed St Francis de Sales",
+      "originalRiteOrDevotionalScope": "Roman devotional method",
+      "massMomentAsAuthorMeditates": "Canon → elevations",
+      "biblicalOrChristLifeContemplation": "Way of Cross / Crucifixion",
+      "sourceSummary": "Memento, Communicantes, Consecration and elevations are mapped to carrying Cross, nailing and raising Christ, and Blood flowing.",
+      "historicalAuthorityNote": "Private Passion meditation; not rubrical",
+      "originalSectionLocator": "Tumblr + NLM reproduction",
+      "originalSourceUrl": "https://www.newliturgicalmovement.org/2024/04/st-francis-de-sales-method-of-hearing.html",
+      "massResearchOwnerIds": [
+        "AO.CANON.01",
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 38,
+      "sourceCode": "SFS",
+      "authorAsArchived": "Attributed St Francis de Sales",
+      "originalRiteOrDevotionalScope": "Roman devotional method",
+      "massMomentAsAuthorMeditates": "Memento dead → Agnus",
+      "biblicalOrChristLifeContemplation": "Prayer from Cross / good thief / Seven Words / death / Limbo / conversions",
+      "sourceSummary": "Later Canon and fraction/commixture/Agnus continue the Passion sequence.",
+      "historicalAuthorityNote": "Private Passion meditation; not rubrical",
+      "originalSectionLocator": "Tumblr + NLM reproduction",
+      "originalSourceUrl": "https://www.newliturgicalmovement.org/2024/04/st-francis-de-sales-method-of-hearing.html",
+      "massResearchOwnerIds": [
+        "AO.CANON.11",
+        "AO.CARD.021"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    },
+    {
+      "archivedDevotionalRow": 39,
+      "sourceCode": "SFS",
+      "authorAsArchived": "Attributed St Francis de Sales",
+      "originalRiteOrDevotionalScope": "Roman devotional method",
+      "massMomentAsAuthorMeditates": "Communion → conclusion",
+      "biblicalOrChristLifeContemplation": "Burial / embalming / Resurrection / Ascension / Pentecost",
+      "sourceSummary": "Communion and ablution are burial/embalming; concluding rites move through Resurrection, Ascension and blessing imagery.",
+      "historicalAuthorityNote": "Private Passion meditation; not rubrical",
+      "originalSectionLocator": "Tumblr + NLM reproduction",
+      "originalSourceUrl": "https://signum-crucis.tumblr.com/post/21191296333/meditations-on-the-traditional-latin-mass-by-st",
+      "massResearchOwnerIds": [
+        "AO.CARD.023",
+        "AO.CARD.030"
+      ],
+      "biblicalResearchAnchorIds": [
+        "SH20",
+        "SH21",
+        "SH22",
+        "SH23"
+      ],
+      "connectionType": "OPTIONAL_AUTHORIAL_MEDITATION_NOT_HISTORICAL_ORIGIN",
+      "sourceTextNotCopied": true,
+      "authorOriginalEditionTextFullyCertified": false,
+      "publicationApproved": false,
+      "doNotInfer1962Rubrics": true
+    }
+  ]
+}
