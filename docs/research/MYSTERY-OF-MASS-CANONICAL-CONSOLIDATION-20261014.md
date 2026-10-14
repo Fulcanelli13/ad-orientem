@@ -4,7 +4,9 @@
 
 **Canonical machine-readable matrix:** [39 section owners, eight formation chapters, all selected evidence IDs](../../data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json).
 
-## Decision
+> **14 October product-scope correction (later decision):** This Phase 1 report preserves a partial **Mass-explanation research inventory**, but its sentence below claiming `Mystery of the Mass` is *one eight-lesson curriculum integrated with `learn.mass`* is **superseded** by the user's three-destination architecture. **Mass** is the practical ritual reader; **Study of the Mass** is the full research-based liturgical reference; **Mystery of the Mass** is a separate dual-arc module (meditative biblical chronology and descriptive liturgical chronology) that reuses the Study corpus. See [full source recovery and corrected ownership](MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md). Do not overwrite the historical inventory numbers or confuse the editorial section map with product navigation.
+
+## Decision (historical Phase 1 scope; product framing superseded)
 
 There must be **one** Mystery of the Mass curriculum integrated with the existing `learn.mass` owner, not a new parallel Mass reader. The reader consists of an eight-lesson explanatory pathway and contextual, source-backed prayer/rite explanations that are **reused**, not reauthored independently, across the **39 current source-first presentation units** (30 historical Guide macro owners overlaid with 14 Canon refinements). Existing LIVE card ownership, rubrics and gestures remain untouched.
 
