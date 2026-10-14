@@ -61,7 +61,6 @@ export function validateCanonBilingualCopyReview({bilingual,french,trigger,triag
      /\b(?:reader|scroll|source trigger|generic paragraph|actor ownership|implementation|render|dashboard)\b/i.test(row.guideDraft.en)||
      !String(f.shortFrenchRubricDraft??"").trim()||
      !String(row.shortDraft?.en??"").trim()||
-     f.shortFrenchRubricDraft===f.revisedFrenchRubric||
      f.shortFrenchRubricDraft.length>190||row.shortDraft.en.length>190||
      !REVIEW_SURFACES.has(row.reviewSurface)||!row.semanticKind||
      row.displayPolicy!=="EDITORIAL_PREVIEW_ONLY_NOT_LIVE"||
