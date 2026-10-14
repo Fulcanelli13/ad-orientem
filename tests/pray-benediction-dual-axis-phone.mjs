@@ -71,6 +71,44 @@ try{
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  assert.equal((await snapshot()).card,"blessing");
  assert.match(await page.locator(rootSel+" .aoDevoCardScroll").innerText(),/Stop interacting|Receive the Eucharistic blessing/i);
+ const blessing=page.locator("body > .aoDevotionalActionCinematic");
+ await blessing.waitFor({state:"visible",timeout:4500});
+ const presentation=await blessing.evaluate(el=>({
+  id:el.dataset.aoActionScene,kind:el.dataset.aoActionKind,
+  icon:el.querySelector(".aoDevotionalActionIcon")?.hidden===false,
+  width:el.getBoundingClientRect().width,screen:window.innerWidth,
+  overlayOpacity:getComputedStyle(el).opacity,overlayAnimation:getComputedStyle(el).animationName,
+  innerAnimation:getComputedStyle(el.querySelector(".aoDevotionalActionInner")).animationName,
+  message:el.querySelector(".aoDevotionalActionTitle")?.textContent,
+ }));
+ assert.equal(presentation.id,"BENEDICTION.BLESSING");
+ assert.equal(presentation.kind,"SOLEMN_ACTION");
+ assert.equal(presentation.icon,true,"Blessing cinematic lost its approved icon");
+ assert.equal(presentation.overlayOpacity,"1","An entering cinematic lets the old reader bleed through");
+ assert.equal(presentation.overlayAnimation,"none","Fade only the contents, never the full-screen background");
+ assert.notEqual(presentation.innerAnimation,"none","The sacred action should still have a restrained content entrance");
+ assert.ok(presentation.width>=presentation.screen-60,"Benediction cinematic is a tiny badge, not a prominent action");
+ assert.match(presentation.message,/blessing|Bénédiction/i);
+ // The global ribbon and independent semantic rails must be covered by the
+ // modal at the top and bottom of the actual viewport, not merely the sheet.
+ const modal=await blessing.evaluate(el=>{
+  const r=el.getBoundingClientRect();
+  const covers=(x,y)=>{const h=document.elementFromPoint(x,y);return h===el||el.contains(h)};
+  return {parent:el.parentElement===document.body,role:el.getAttribute("role"),
+   ariaModal:el.getAttribute("aria-modal"),position:getComputedStyle(el).position,
+   top:r.top,bottom:r.bottom,height:innerHeight,
+   coversTop:covers(innerWidth/2,5),coversBottom:covers(innerWidth/2,innerHeight-5)};
+ });
+ assert.equal(modal.parent,true,"Cinematic remains imprisoned in the Prayer sheet");
+ assert.deepEqual([modal.role,modal.ariaModal,modal.position],["dialog","true","fixed"],
+  "Cinematic must be an accessible viewport-fixed dialog");
+ assert.ok(modal.top<=1&&modal.bottom>=modal.height-1,
+  "Cinematic does not cover the complete physical viewport");
+ assert.ok(modal.coversTop&&modal.coversBottom,
+  "Global ribbon or semantic rails can still appear above the cinematic");
+ await page.screenshot({path:resolve(captures,"benediction-390-full-cinematic.png"),animations:"disabled"});
+ await blessing.locator(".aoDevotionalActionContinue").click();
+ assert.equal(await blessing.count(),0,"Benediction cinematic did not yield to the unchanged prayer reader");
  await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
  assert.equal((await snapshot()).card,"praises");
  const praiseControl=page.locator(rootSel+" [data-p435930-ben-praises]");

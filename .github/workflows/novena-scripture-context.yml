@@ -1,0 +1,31 @@
+name: Novena Scripture context
+on:
+  pull_request:
+    paths:
+      - 'src/pray/novena-scripture-context.js'
+      - 'src/pray/novena-runtime.js'
+      - 'tests/novena-scripture-*.mjs'
+      - '.github/workflows/novena-scripture-context.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/pray/novena-scripture-context.js'
+      - 'src/pray/novena-runtime.js'
+      - 'tests/novena-scripture-*.mjs'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  bible-context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: node tests/novena-scripture-context.mjs
+      - run: npm run test:pray-novenas
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/novena-scripture-phone.mjs

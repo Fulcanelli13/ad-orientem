@@ -1,6 +1,7 @@
 import { ROSARY_MYSTERY_CONTEXT_V1 } from "./rosary-mystery-context.v1.js";
 import { ROSARY_GUIDED_BEAD_MEDITATIONS_V1 } from "./rosary-guided-bead-meditations.v1.js";
 import { ROSARY_GUIDED_BEAD_EVIDENCE_V1 } from "./rosary-guided-bead-evidence.v1.js";
+import { parseScriptureContext } from "../scripture/context.js";
 
 /**
  * Rosary Scripture display policy — editorial safety gate, 9 October 2026.
@@ -125,6 +126,20 @@ export function rosaryMeditationCitationLabel(witness,{french=false}={}){
   return match?ROSARY_CATHOLIC_BOOK_NAMES_FR[match[1]]+reference.slice(match[1].length):reference;
 }
 
+/**
+ * A Scripture bead opens the existing passage-first reader only when the
+ * original source registry explicitly identifies a Catholic biblical witness
+ * and its citation passes the shared Catholic verse-coordinate parser.
+ * Doctrinal/magisterial witnesses keep their original external destinations.
+ */
+export function rosaryBeadContextReference(witness){
+  const reference=typeof witness?.reference==="string"?witness.reference:null;
+  if(!reference ||
+     !String(witness.frenchPrimaryUrl||"").startsWith("https://fr.wikisource.org/wiki/Bible_Crampon_1923/") ||
+     !String(witness.primaryUrl||"").startsWith("https://www.biblegateway.com/passage/?"))return null;
+  return parseScriptureContext(reference)?reference:null;
+}
+
 const CATHOLIC_FRENCH_BOOKS=Object.freeze(new Set(["Luc","Matthieu","Jean","Marc","Actes","Apocalypse"]));
 export function rosaryScripturePassage(id){
   const item=ROSARY_SCRIPTURE_REFERENCE_V1[id];
@@ -185,6 +200,16 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
           :"Lire le document doctrinal d’origine ; cette méditation n’est pas une citation biblique.")
         :"Read the original Scripture or doctrinal witness; this meditation is not a verbatim quotation.";
       citation.textContent=rosaryMeditationCitationLabel(witness,{french});
+      const contextReference=rosaryBeadContextReference(witness);
+      if(contextReference){
+        // The already installed Scripture owner intercepts this original-source
+        // anchor, opens Passage / Full chapter / Commentary, and restores focus
+        // here when closed. Its href remains the exact-source fallback.
+        citation.dataset.aoScriptureContext=contextReference;
+        citation.title=french
+          ?"Ouvrir le passage, le chapitre et son commentaire dans la Bible ; lien vers la source originale conservé."
+          :"Open passage, chapter and commentary in the Bible reader; original source link retained.";
+      }
       if(french&&witness.frenchWitnessLanguage==="la"){
         citation.lang="la";
         citation.title="Texte latin original du Saint-Siège · ouvrir la source";

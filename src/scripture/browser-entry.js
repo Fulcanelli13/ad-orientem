@@ -35,11 +35,11 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(typeof restore==="function")try{restore()}catch(error){win.console?.error?.("Scripture return context failed",error)}
    return true;
  }
- function open({passage=null,language=null,context=null,onCloseReturn=null}={}){
+ function open({passage=null,language=null,context=null,onCloseReturn:restoreOnClose=null}={}){
    const node=overlay();if(!node)return false;
    installScriptureStyles(doc);
    if(!reader){previousFocus=doc.activeElement;previousOverflow=doc.body?.style?.overflow??"";}
-   onCloseReturn=typeof onCloseReturn==="function"?onCloseReturn:null;
+   onCloseReturn=typeof restoreOnClose==="function"?restoreOnClose:null;
    reader?.destroy?.();
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
    reader=mountScriptureLibrary(node,{

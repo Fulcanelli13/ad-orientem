@@ -1,0 +1,34 @@
+name: Mass Formation Scripture context
+on:
+  pull_request:
+    paths:
+      - 'src/learn/mass-formation.js'
+      - 'src/learn/mass-formation-scripture-context.js'
+      - 'tests/mass-formation.mjs'
+      - 'tests/mass-formation-scripture-phone.mjs'
+      - '.github/workflows/mass-formation-scripture-context.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/learn/mass-formation.js'
+      - 'src/learn/mass-formation-scripture-context.js'
+      - 'tests/mass-formation.mjs'
+      - 'tests/mass-formation-scripture-phone.mjs'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  contextual-bible-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: node tests/mass-formation.mjs
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/mass-formation-scripture-phone.mjs

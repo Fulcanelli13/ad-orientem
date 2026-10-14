@@ -109,12 +109,56 @@ try{
  await page.locator("#aoPray435930 [data-p435930-station-step='0']").evaluate(x=>x.click());
  await page.waitForSelector("#aoPray435930 .aoDevoCard[data-ao-devo-card='station-1']");
  await page.emulateMedia({reducedMotion:"no-preference"});
+ // Source-certified traditional public Stations is optional, not a global
+ // instruction for private users. Its cue is owned by the focused versicle.
+ await page.locator("#aoPray435930 details[data-ao-stations-options] > summary").evaluate(x=>x.click());
+ await page.locator("#aoPray435930 [data-p435930-station-public-posture]").evaluate(x=>{
+   x.checked=true;x.dispatchEvent(new Event("change",{bubbles:true}));
+ });
+ await page.waitForSelector("#aoPray435930 [data-p435930-station-public-posture]:checked");
+ assert.match(await page.locator("#aoPray435930 details[data-ao-stations-options] > summary small").innerText(),
+   /Guided.*Group|Guidé.*Groupe/,
+   "The explicitly selected public Stations method must display Guided and Group even with individual global preferences");
+ const focusStationPhase=async(selector)=>{
+   await page.locator("#aoPray435930 .aoP435930Stations .aoDevoCardScroll").evaluate((body,selector)=>{
+     const el=body.querySelector(selector);
+     if(!el)throw Error("Station source paragraph missing: "+selector);
+     const bounds=body.getBoundingClientRect(),target=el.getBoundingClientRect();
+     const max=Math.max(0,body.scrollHeight-body.clientHeight);
+     body.scrollTop=Math.min(max,Math.max(0,body.scrollTop+target.top-bounds.top-body.clientHeight*.4));
+     body.dispatchEvent(new Event("scroll",{bubbles:true}));
+   },selector);
+   await page.waitForTimeout(180);
+   console.log("STATION_PHASE_DIAGNOSTIC "+JSON.stringify(await page.locator("#aoPray435930 .aoP435930Stations .aoDevoCardScroll").evaluate((body,selector)=>({
+     requested:selector,top:body.scrollTop,max:body.scrollHeight-body.clientHeight,
+     active:[...body.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']")].map(p=>({className:p.className,text:p.textContent.slice(0,35)})),
+     scene:document.querySelector("body > .aoDevotionalActionCinematic")?.dataset.aoActionScene??null
+   }),selector)));
+ };
+ await focusStationPhase(".aoP435930VRLine.leader");
+ const stationCinema=page.locator("body > .aoDevotionalActionCinematic");
+ await stationCinema.waitFor({state:"visible",timeout:6000});
+ assert.equal(await stationCinema.getAttribute("data-ao-action-scene"),"STATIONS.0.GENUFLECT");
+ await page.screenshot({path:resolve(captures,"02b-stations-public-genuflect-390.png"),animations:"disabled"});
+ await stationCinema.locator(".aoDevotionalActionContinue").click();
+ await focusStationPhase(".aoP435930StationConsider p");
+ await stationCinema.waitFor({state:"visible",timeout:6000});
+ assert.equal(await stationCinema.getAttribute("data-ao-action-scene"),"STATIONS.0.STAND");
+ await stationCinema.locator(".aoDevotionalActionContinue").click();
+ await focusStationPhase(".aoP435930StationPrayer .aoP435930Flip");
+ await stationCinema.waitFor({state:"visible",timeout:6000});
+ assert.equal(await stationCinema.getAttribute("data-ao-action-scene"),"STATIONS.0.KNEEL");
+ await stationCinema.locator(".aoDevotionalActionContinue").click();
 
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{state:"attached",timeout:12000});
  // Two navigation axes: timeline moves named cards, card-local scroll focuses
  // V/R paragraphs; native Prayer texts and translation controls stay intact.
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-deck='v1']",{timeout:12000});
+ assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
+   "The first card must not show a blank cinematic or a rating-4 painting");
+ // The prayer begins directly when no final-approved reproduction exists.
+ // Incarnation still receives its source-owned full posture cinematic.
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),4);
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),4);
  // Actual mobile presentation evidence: same current card at three widths.
@@ -163,29 +207,31 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").getAttribute("data-ao-devo-jump"),"0",
   "Timeline did not return to the original prayer card");
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
- const shot=page.locator("body > .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation']");
- await shot.waitFor({state:"attached",timeout:2000});
- const shotStatus=await shot.evaluate(el=>({art:el.dataset.aoSceneArt,one:el.parentElement.querySelectorAll(".aoDevoCinematicInterstitial").length}));
- assert.deepEqual(shotStatus,{art:"tanner",one:1},"Cinematic overlay must reuse the single approved Tanner painting");
- await page.waitForFunction(()=>{
-  const x=document.querySelector("body > .aoDevoCinematicInterstitial[data-ao-devotional-scene='incarnation'] img");
-  return x?.complete&&x.naturalWidth>=1900;
- },null,{timeout:2500});
- // Capture the *visible midpoint* of the real CSS interstitial, rather
- // than an arbitrary fade-out frame influenced by CI screenshot timing.
- await shot.evaluate(el=>{
-   for(const animation of el.getAnimations({subtree:true})){
-     const duration=Number(animation.effect?.getTiming()?.duration)||1900;
-     animation.currentTime=duration*.5;
-     animation.pause();
-   }
- });
- await page.screenshot({path:resolve(captures,"11-angelus-incarnation-cinematic-390.png"),fullPage:false});
- await shot.waitFor({state:"detached",timeout:5000});
+ const shot=page.locator("body > .aoDevoPostureCinematic[data-ao-devotional-scene='incarnation-posture']");
+ await shot.waitFor({state:"attached",timeout:3000});
+ const shotStatus=await shot.evaluate(el=>({
+  action:el.dataset.aoPostureAction,
+  caption:el.querySelector(".aoDevoPostureLatin")?.textContent,
+  one:el.parentElement.querySelectorAll(".aoDevoPostureCinematic").length,
+  imageRepeats:el.parentElement.querySelectorAll(".aoDevoCinematicOpening").length,
+  iconSize:el.querySelector(".aoDevoPostureIcon")?.getBoundingClientRect().width,
+  continueHeight:el.querySelector("button")?.getBoundingClientRect().height,
+ }));
+ assert.ok(["HEAD_BOW","GENUFLECT"].includes(shotStatus.action));
+ assert.deepEqual(
+  {caption:shotStatus.caption,one:shotStatus.one,imageRepeats:shotStatus.imageRepeats},
+  {caption:"Et Verbum caro factum est",one:1,imageRepeats:0},
+  "Incarnation must use a distinct full posture scene, not repeat artwork");
+ assert.ok(shotStatus.iconSize>=100 && shotStatus.continueHeight>=44,
+  "Posture cinematic icon/action is too inconspicuous on a phone");
+ await page.screenshot({path:resolve(captures,"11-angelus-incarnation-cinematic-390.png"),
+   fullPage:false,animations:"disabled"});
+ await shot.locator(".aoDevoPostureContinue").click();
+ await shot.waitFor({state:"detached",timeout:2500});
  await page.emulateMedia({reducedMotion:"reduce"});
  await page.locator("#aoPray435930 [data-ao-devo-jump='3']").evaluate(x=>x.click());
- assert.equal(await page.locator("body > .aoDevoCinematicInterstitial").count(),0,
-  "Reduced-motion preference must suppress prayer-card cinematic transitions");
+ assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
+  "No opening art may recur on chapter change, even in reduced motion");
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
  await page.emulateMedia({reducedMotion:"no-preference"});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
