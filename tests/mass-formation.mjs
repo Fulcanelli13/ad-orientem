@@ -68,7 +68,7 @@ const idSet=new Set(),fromResearch=new Map();
 for(const row of bridge.rows){
  assert.ok(!idSet.has(row.id),"Each of 26 research connections must have one canonical owner: "+row.id);
  idSet.add(row.id);
- assert.match(row.canonicalSectionId,/^AO\\.(?:CARD|CANON)\\.\\d{2,3}$/);
+ assert.match(row.canonicalSectionId,/^AO\.(?:CARD|CANON)\.\d{2,3}$/);
  assert.equal(row.publicationApproved,false,"Do not promote unfinished historical manuscript claims");
  if(row.scriptureStudyLink){
   const target=MASS_FORMATION_SCRIPTURE_ANCHORS.find(x=>x.id===row.scriptureStudyLink.id);
