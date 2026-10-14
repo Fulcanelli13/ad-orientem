@@ -24,7 +24,8 @@ const PACKS = Object.freeze([
   ["Canonical source-first V","formation-canonical-sourcefirst-batch5-2026-10-09.v1.json"],
   ["Church Crisis source-first VI","formation-crisis-sourcefirst-batch6-2026-10-09.v1.json"],
   ["Church Crisis source-first VII","formation-crisis-sourcefirst-batch7-2026-10-09.v1.json"],
-  ["Church Crisis source-first VIII","formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"]
+  ["Church Crisis source-first VIII","formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"],
+  ["Retained owner cases","formation-retained-evolution-china-case-records-20261014.v1.json"]
 ]);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick = (win,en,fr) => isFr(win) ? fr : en;
@@ -161,6 +162,7 @@ export function buildRecoveryDossierCoverage(rows,packs) {
   if(apo.length!==60 || crisis.length!==81)throw new Error("Canonical Formation dossier inventory has changed");
   const evidence=packs.find(p=>p.label==="Dossier evidence")?.doc;
   const evidenceMap=new Map((evidence?.dossiers||[]).map(d=>[d.id,d]));
+  const retainedCases=new Map((packs.find(p=>p.label==="Retained owner cases")?.doc?.cases||[]).map(c=>[c.former_owner,c]));
   if(evidence && (evidence.dossiers?.length!==141 || evidenceMap.size!==141 || evidence.counts?.fully_certified!==0 || evidence.counts?.published_apologetics_or_crisis!==0))
     throw new Error("Unapproved dossier source status");
   const synthPacks=[
@@ -208,8 +210,8 @@ export function buildRecoveryDossierCoverage(rows,packs) {
     else external.push(record);
   }
   const dossiers=[
-    ...apo.map(d=>({...d,corpus:"apologetics",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null,synthesis:synthMap.get(d.id)||null})),
-    ...crisis.map(d=>({...d,corpus:"crisis",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null,synthesis:synthMap.get(d.id)||null}))
+    ...apo.map(d=>({...d,corpus:"apologetics",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null,synthesis:synthMap.get(d.id)||null,retainedCase:retainedCases.get(d.id)||null})),
+    ...crisis.map(d=>({...d,corpus:"crisis",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null,synthesis:synthMap.get(d.id)||null,retainedCase:retainedCases.get(d.id)||null}))
   ];
   return Object.freeze({dossiers,external,covered:dossiers.filter(d=>d.research.length).length,
     linked:dossiers.reduce((n,d)=>n+d.research.length,0)});
@@ -320,6 +322,24 @@ export function createFormationRecoveryReview(win=globalThis) {
       return ["Documented argument or position","Argument ou position documentée"];
     return null;
   };
+  // Related cases are preserved historical research, never a second canonical answer.
+  const retainedCaseReading=d=>{
+    const c=d.retainedCase;
+    if(!c)return "";
+    const sources=new Map((c.source_registry||[]).map(x=>[x.id,x]));
+    const heading=c.former_owner==="APOL-002"
+      ? pick(win,"Earlier research: evolution, Adam and polygenism","Recherches précédentes : évolution, Adam et polygénisme")
+      : pick(win,"Earlier research: Vatican–China governance","Recherches précédentes : gouvernance du Vatican et relations avec la Chine");
+    return '<details class="rrArticleSection" data-rr-retained-case="'+esc(c.id)+'">'+
+      '<summary>'+esc(heading)+'</summary>'+
+      '<p class="rrMuted">'+esc(pick(win,
+        "Related case study preserved from the previous draft. This is not the direct answer to the canonical question and has not been certified for publication.",
+        "Étude de cas connexe conservée de l'ancienne version. Elle ne répond pas directement à la question canonique et n'a pas été certifiée pour publication."))+'</p>'+
+      (c.original_draft||[]).map(sec=>'<section class="rrArticleSection">'+
+        '<h3>'+esc(sec.role.replaceAll("_"," "))+'</h3><p>'+
+        esc(asText(sec.text,win))+'</p>'+sourceLinks(sec.source_ids,sources)+'</section>').join("")+
+      '</details>';
+  };
   const synthesisReading=d=>{
     if(!d.synthesis)return "";
     const corpus=d.synthesis.sourceRegistry||new Map();
@@ -339,7 +359,7 @@ export function createFormationRecoveryReview(win=globalThis) {
       '<h3>'+esc(pick(win,...(synthesisRoleLabel(d,q.role)||labels[q.role]||[q.role,q.role])))+'</h3>'+
       (q.attribution?'<p class="rrMuted">'+esc(q.attribution)+'</p>':"")+
       '<p>'+esc(asText(q.text,win))+'</p>'+
-      sourceLinks(q.source_ids,corpus)+'</section>').join("")+'</section>';
+      sourceLinks(q.source_ids,corpus)+'</section>').join("")+retainedCaseReading(d)+'</section>';
   };
   const dossierDetail=()=>{
     const d=state.dossiers.find(x=>x.id===state.dossierId);
