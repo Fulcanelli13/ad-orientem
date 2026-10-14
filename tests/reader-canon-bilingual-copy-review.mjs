@@ -28,6 +28,8 @@ for(const x of audit.rows){
  assert.ok(x.sourceUrls.every(s=>s.startsWith("https://")));
  assert.equal(x.guideFrenchOwnerId,x.actionId);
  assert.equal(x.copyApproval,"NOT_APPROVED");
+ assert.doesNotMatch(x.guideDraft.en,/\\b(?:reader|scroll|source trigger|generic paragraph|actor ownership|implementation|render|dashboard)\\b/i,
+  "Guide copy must state the substantive rite rather than implementation commentary");
  assert.equal(x.canPublish,false);
  assert.equal(x.observedNow,false);
  assert.equal(x.faithfulPosture,null);
