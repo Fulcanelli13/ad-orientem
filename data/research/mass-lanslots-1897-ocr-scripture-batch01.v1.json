@@ -10,7 +10,8 @@
     "originalScanUrl": "https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf",
     "ocrTotalWebLines": 11057,
     "ocrAvailableViaInternetArchiveFullText": true,
-    "pdfPageImageVerified": false
+    "pdfPageImageVerified": false,
+    "bookTextVerifiedViaWeb": true
   },
   "recovery": "Internet Archive item's FULL TEXT download link routes to an indexable 11,057-line source. The OCR is web-readable but full payload cannot be downloaded inside this session. The references in this file were verified against local spans of that original OCR web rendering, not against PDF page images.",
   "citationPolicy": {
@@ -22,7 +23,7 @@
     "EXPLICIT_BOOK_CHAPTER_VERSE_NORMALIZED": "Book and chapter explicitly printed; verse span assigned editorially",
     "BIBLICAL_LITURGICAL_TEXT_MATCH": "Liturgical biblical text reproduced, but no verse string printed"
   },
-  "rowCount": 42,
+  "rowCount": 43,
   "records": [
     {
       "id": "L1897-OCR-001",
@@ -476,6 +477,24 @@
     },
     {
       "id": "L1897-OCR-026",
+      "chapter": "XIV",
+      "normalizedScriptureRef": "Psalms 25:6-12",
+      "asPrintedRefOrAllusion": "Psalm xxv. (no verse numbers)",
+      "webOcrLineRange": {
+        "start": 4164,
+        "end": 4180
+      },
+      "evidenceKind": "EXPLICIT_BOOK_CHAPTER_VERSE_NORMALIZED",
+      "canonicalMassTopicOwner": "AO.CARD.010",
+      "editorialCaution": "Lavabo inter innocentes; original prints Psalm 25, verse span mapped editorially, Vulgate numbering",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-027",
       "chapter": "XV",
       "normalizedScriptureRef": "Isaiah 6:3",
       "asPrintedRefOrAllusion": "Isaias vi. 3",
@@ -493,7 +512,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-027",
+      "id": "L1897-OCR-028",
       "chapter": "XV",
       "normalizedScriptureRef": "Revelation 4:8",
       "asPrintedRefOrAllusion": "Apocalypse iv. 8",
@@ -511,7 +530,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-028",
+      "id": "L1897-OCR-029",
       "chapter": "XV",
       "normalizedScriptureRef": "Matthew 21:9",
       "asPrintedRefOrAllusion": "Matthew xxi. 9",
@@ -529,7 +548,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-029",
+      "id": "L1897-OCR-030",
       "chapter": "XIX",
       "normalizedScriptureRef": "Exodus 12",
       "asPrintedRefOrAllusion": "Exodus chapter xii",
@@ -547,7 +566,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-030",
+      "id": "L1897-OCR-031",
       "chapter": "XX",
       "normalizedScriptureRef": "Revelation 5:6",
       "asPrintedRefOrAllusion": "Lamb as slain in Apocalypse (unnumbered)",
@@ -565,7 +584,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-031",
+      "id": "L1897-OCR-032",
       "chapter": "XX",
       "normalizedScriptureRef": "Malachi 1:11",
       "asPrintedRefOrAllusion": "clean oblation foretold by Malachias (unnumbered)",
@@ -583,7 +602,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-032",
+      "id": "L1897-OCR-033",
       "chapter": "XXIII",
       "normalizedScriptureRef": "Isaiah 53:5",
       "asPrintedRefOrAllusion": "Is. liii. 5",
@@ -601,7 +620,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-033",
+      "id": "L1897-OCR-034",
       "chapter": "XXIII",
       "normalizedScriptureRef": "John 6:52",
       "asPrintedRefOrAllusion": "John vi. 52",
@@ -619,7 +638,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-034",
+      "id": "L1897-OCR-035",
       "chapter": "XXIII",
       "normalizedScriptureRef": "John 1:29",
       "asPrintedRefOrAllusion": "St John Baptist's Lamb (unnumbered)",
@@ -637,7 +656,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-035",
+      "id": "L1897-OCR-036",
       "chapter": "XXIV",
       "normalizedScriptureRef": "Hebrews 9:14",
       "asPrintedRefOrAllusion": "Heb. ix. 14",
@@ -655,7 +674,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-036",
+      "id": "L1897-OCR-037",
       "chapter": "XXIV",
       "normalizedScriptureRef": "1 Corinthians 11:26",
       "asPrintedRefOrAllusion": "1 Cor. xi. 26",
@@ -673,7 +692,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-037",
+      "id": "L1897-OCR-038",
       "chapter": "XXIV",
       "normalizedScriptureRef": "Matthew 8:8",
       "asPrintedRefOrAllusion": "St Matthew's centurion (unnumbered)",
@@ -691,7 +710,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-038",
+      "id": "L1897-OCR-039",
       "chapter": "XXIV",
       "normalizedScriptureRef": "Matthew 11:28",
       "asPrintedRefOrAllusion": "Matt. xi. 28",
@@ -709,7 +728,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-039",
+      "id": "L1897-OCR-040",
       "chapter": "XXIV",
       "normalizedScriptureRef": "Song of Songs 2:16",
       "asPrintedRefOrAllusion": "Cant. ii. 16",
@@ -727,7 +746,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-040",
+      "id": "L1897-OCR-041",
       "chapter": "XXIV",
       "normalizedScriptureRef": "Song of Songs 3:4",
       "asPrintedRefOrAllusion": "Cant. iii. 4",
@@ -745,7 +764,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-041",
+      "id": "L1897-OCR-042",
       "chapter": "XXIV",
       "normalizedScriptureRef": "Leviticus 20:7",
       "asPrintedRefOrAllusion": "Lev. xx. 7",
@@ -763,7 +782,7 @@
       "production": "BLOCKED"
     },
     {
-      "id": "L1897-OCR-042",
+      "id": "L1897-OCR-043",
       "chapter": "XXV",
       "normalizedScriptureRef": "John 1:1-14",
       "asPrintedRefOrAllusion": "Last Gospel Johannine prologue (unnumbered)",
@@ -821,7 +840,7 @@
   ],
   "qualityGates": [
     "Visual source-page spot checking against PDF before publication",
-    "Full OCR grep not yet run; 41 selected references are not exhaustive",
+    "Full OCR grep not yet run; 43 selected references are not exhaustive",
     "Validate edition-specific book and Psalm numbering before creating Scripture routes",
     "Retain existing Guide and 1962 source ownership",
     "Deduplicate against Guéranger and 422-record September compendium before authoring new copy"
