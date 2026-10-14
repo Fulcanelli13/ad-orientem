@@ -3,7 +3,7 @@
   "date": "2026-10-14",
   "status": "RESEARCH_ONLY_NOT_LITURGICAL_NORM_OR_PUBLISHED_TEXT",
   "source": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
-  "count": 9,
+  "count": 10,
   "independentAuthorities": {
     "PD": {
       "title": "Leo XIII, Providentissimus Deus (1893)",
@@ -20,6 +20,13 @@
       "title": "Second Vatican Council, Dei Verbum §11 (1965)",
       "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
       "role": "POSTCONCILIAR_CANONICAL_SCRIPTURE_INSPIRATION"
+    },
+    "SRC62JOSEPH": {
+      "title": "Sacred Congregation of Rites, Novis hisce temporibus, 13 November 1962; effective 8 December 1962",
+      "url": "https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret",
+      "language": "French translation of contemporary original Latin decree",
+      "role": "SPECIFIC_1962_NORMATIVE_AMENDMENT_TO_ROMAN_CANON",
+      "supportingOfficialHistoricalNote": "https://www.usccb.org/prayer-and-worship/the-mass/order-of-mass/liturgy-of-the-eucharist/saint-joseph-in-the-eucharistic-prayers"
     }
   },
   "records": [
@@ -239,6 +246,35 @@
       "sourceFirstOwnerIds": [],
       "existingGuerangerOverlaps": [],
       "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED"
+    },
+    {
+      "id": "L1897-DISC-10",
+      "chapter": "XVII",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 5451,
+        "webLineEnd": 5480,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": false
+      },
+      "topic": "St Joseph omitted from the 1897 Communicantes, inserted in the Roman Canon in late 1962",
+      "authorArgument": "Lanslots transcribes the Communicantes names from the nineteenth-century Roman Canon, going directly from the Blessed Virgin to the apostles and martyrs without St Joseph.",
+      "criticalAnalysis": "The Sacred Congregation of Rites' Novis hisce temporibus (13 November 1962) directed the insertion of 'sed et beati Ioseph eiusdem Virginis Sponsi', effective 8 December 1962. Its absence in Lanslots or Guéranger is not evidence that the current 1962-form Mass should omit Joseph. The original 1962 Missal printing date and subsequent amendment must be distinguished.",
+      "frenchSubstantiveDraft": "Le Communicantes reproduit par Lanslots en 1897 ne nomme pas saint Joseph. Le décret Novis hisce temporibus du 13 novembre 1962 prescrivit son insertion, effective le 8 décembre 1962. Son absence dans un ouvrage antérieur n'est pas une rubrique pour la Messe célébrée selon l'usage romain de 1962 ainsi amendé.",
+      "classification": "EXACT_DATED_1962_PRAYER_TEXT_CORRECTION",
+      "sourceFirstOwnerIds": [
+        "AO.CANON.03"
+      ],
+      "existingGuerangerOverlaps": [
+        "FRG33"
+      ],
+      "independentAuthorityIds": [
+        "SRC62JOSEPH"
+      ],
+      "exactSourceCue": "AO.SM.C0159",
+      "requiredLatin": "sed et beati Ioseph",
       "originalImageAndIndependentFrenchApproved": false,
       "publication": "BLOCKED"
     }
