@@ -18,7 +18,17 @@
     "flaggedStillNeedsReview": 29,
     "linguisticallyApproved": 0,
     "ceremoniallyApproved": 0,
-    "published": 0
+    "published": 0,
+    "reviewSurfaces": {
+      "GUIDE_ONLY": 13,
+      "FOCUS_WORDS_NO_DUPLICATE": 2,
+      "PRIEST_RIBBON_STATE_ONLY": 2,
+      "PRIEST_VOICE_STATE_ONLY": 3,
+      "SERVER_RIBBON_ONLY": 3,
+      "PRIEST_MULTI_STAGE_EDITORIAL": 15,
+      "INLINE_ATOMIC_EDITORIAL": 23,
+      "GUIDE_AND_FORM_CONTEXT": 1
+    }
   },
   "obligations": [
     "The canonical full French text is referenced by action ID, never duplicated.",
@@ -27,7 +37,10 @@
     "Form-dependent actors may be the deacon at Solemn Mass; the server has a separate clock.",
     "A 1962 source citation and English translation do not imply independent French editorial approval.",
     "User postures and priest icons must not be derived directly from these rubric drafts.",
-    "No text can enter live Missal, Simple or LIVE without separate source/form, reader and publication signoff."
+    "No text can enter live Missal, Simple or LIVE without separate source/form, reader and publication signoff.",
+    "GUIDE_ONLY entries are not single-step cues; PRIEST_MULTI_STAGE_EDITORIAL requires a separately attested stage ID before any timed display.",
+    "FOCUS_WORDS_NO_DUPLICATE protects the two Consecrations; do not overlay repeated caption on prominent Latin words.",
+    "SERVER_RIBBON_ONLY never inherits PRIEST action ownership. PRIEST_RIBBON_STATE_ONLY never becomes an instant repeated icon."
   ],
   "rows": [
     {
@@ -58,7 +71,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.002",
@@ -71,7 +89,7 @@
         "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
         "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
       ],
-      "semanticKind": "SINGLE_STAGE",
+      "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
         "fr": "Il baise l’autel et joint les mains.",
@@ -88,7 +106,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.003",
@@ -118,7 +141,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.004",
@@ -148,7 +176,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.005",
@@ -161,7 +194,7 @@
         "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
         "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
       ],
-      "semanticKind": "SINGLE_STAGE",
+      "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
         "fr": "À Meménto, il joint les mains et incline la tête.",
@@ -178,7 +211,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.006",
@@ -208,7 +246,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.007",
@@ -238,7 +281,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.008",
@@ -268,7 +316,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.009",
@@ -298,7 +351,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.010",
@@ -328,7 +386,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.011",
@@ -358,7 +421,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_AND_FORM_CONTEXT",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.012",
@@ -388,7 +456,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.013",
@@ -418,7 +491,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.014",
@@ -448,7 +526,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.015",
@@ -478,7 +561,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.016",
@@ -508,7 +596,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.017",
@@ -538,7 +631,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.018",
@@ -551,7 +649,7 @@
         "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
         "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
       ],
-      "semanticKind": "SINGLE_STAGE",
+      "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
         "fr": "Il lève les yeux au ciel, puis les abaisse.",
@@ -568,7 +666,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.019",
@@ -598,7 +701,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.020",
@@ -628,7 +736,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.021",
@@ -658,7 +771,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.022",
@@ -688,7 +806,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "FOCUS_WORDS_NO_DUPLICATE",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.023",
@@ -718,7 +841,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.024",
@@ -748,7 +876,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.025",
@@ -778,7 +911,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.026",
@@ -808,7 +946,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.027",
@@ -838,7 +981,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "SERVER_RIBBON_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.028",
@@ -854,8 +1002,8 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "fr": "Il découvre le calice et le soulève brièvement.",
-        "en": "He uncovers the chalice and raises it briefly."
+        "fr": "Le calice est découvert ; le prêtre le soulève brièvement.",
+        "en": "The chalice is uncovered; the priest raises it briefly."
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.028",
@@ -868,7 +1016,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.029",
@@ -898,7 +1051,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.030",
@@ -928,7 +1086,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.031",
@@ -958,7 +1121,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.032",
@@ -988,7 +1156,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "FOCUS_WORDS_NO_DUPLICATE",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.033",
@@ -1018,7 +1191,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.034",
@@ -1048,7 +1226,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.035",
@@ -1078,7 +1261,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "SERVER_RIBBON_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.036",
@@ -1108,7 +1296,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.037",
@@ -1138,7 +1331,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.038",
@@ -1151,7 +1349,7 @@
         "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
         "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
       ],
-      "semanticKind": "SINGLE_STAGE",
+      "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
         "fr": "Il trace trois croix sur l’Hostie et le calice.",
@@ -1168,7 +1366,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.039",
@@ -1198,7 +1401,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.040",
@@ -1228,7 +1436,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_RIBBON_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.041",
@@ -1258,7 +1471,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.042",
@@ -1288,7 +1506,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.043",
@@ -1318,7 +1541,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.044",
@@ -1348,7 +1576,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.045",
@@ -1378,7 +1611,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.046",
@@ -1408,7 +1646,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.047",
@@ -1438,7 +1681,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.048",
@@ -1468,7 +1716,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.049",
@@ -1498,7 +1751,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.050",
@@ -1511,7 +1769,7 @@
         "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
         "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
       ],
-      "semanticKind": "SINGLE_STAGE",
+      "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
         "fr": "À Nobis quoque, il hausse la voix et se frappe la poitrine.",
@@ -1528,7 +1786,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_VOICE_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.051",
@@ -1558,7 +1821,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_VOICE_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.052",
@@ -1588,7 +1856,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.053",
@@ -1618,7 +1891,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_RIBBON_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.054",
@@ -1648,7 +1926,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.055",
@@ -1678,7 +1961,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.056",
@@ -1691,7 +1979,7 @@
         "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
         "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
       ],
-      "semanticKind": "SINGLE_STAGE",
+      "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
         "fr": "Il trace trois croix au-dessus du calice avec l’Hostie.",
@@ -1708,7 +1996,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.057",
@@ -1721,7 +2014,7 @@
         "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
         "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
       ],
-      "semanticKind": "SINGLE_STAGE",
+      "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
         "fr": "Il trace deux croix avec l’Hostie devant le calice.",
@@ -1738,7 +2031,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.058",
@@ -1768,7 +2066,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.059",
@@ -1798,7 +2101,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.060",
@@ -1828,7 +2136,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_VOICE_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.061",
@@ -1858,7 +2171,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     },
     {
       "actionId": "AO.CANON.R62.062",
@@ -1888,7 +2206,12 @@
       "canPublish": false,
       "readerDisplayText": null,
       "priestActionNow": null,
-      "faithfulPosture": null
+      "faithfulPosture": null,
+      "reviewSurface": "SERVER_RIBBON_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
     }
   ]
 }
