@@ -34,7 +34,7 @@ assert.ok(current.includes('"WASHES / PURIFIES":"lavabo"'));
 assert.ok(current.includes('ALTAR_EPISTLE_MISSAL:"priest_epistle_rich"'));
 assert.ok(current.includes('ALTAR_GOSPEL_MISSAL:"priest_gospel_rich"'));
 
-const work=load("../data/presentation/mass-icon-harmonization-16-workorders-20261014.v1.json");
+const work=parse("../data/presentation/mass-icon-harmonization-16-workorders-20261014.v1.json");
 assert.equal(work.phase,"PHASE_B_PENDING_SOURCE_AND_VISUAL_REVIEW");
 assert.equal(work.policy.noLiveChanges,true);
 assert.equal(work.policy.noImageGenerationBeforeReuse,true);
