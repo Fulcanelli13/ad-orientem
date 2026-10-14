@@ -1,0 +1,170 @@
+{
+  "schema": "ao-mass-canon-viii8-elevation-attendants-v1",
+  "date": "2026-10-14",
+  "status": "1962_RITUS_VIII8_ADDITIONAL_MINISTER_EVENTS_EDITORIAL_ONLY",
+  "sourceWitness": "1962 Missale Romanum Ritus servandus VIII.8, Latin/French transcription and page-15/16 English comparison",
+  "sourceUrls": [
+    "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+    "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+  ],
+  "counts": {
+    "addedSourceEvents": 6,
+    "acolyteEvents": 5,
+    "subdeaconEvents": 1,
+    "prefaceLightEvent": 1,
+    "conditionalExtinguishBranches": 4,
+    "livePublished": 0
+  },
+  "distinctions": [
+    "Torch lifecycle is a MINISTER/ACOLYTE event, never a PRIEST posture or source-text clock.",
+    "The normal torch stop is after chalice elevation; keep torches to Communion if there are communicants, it is a fast day or it is a Requiem. When conditions overlap there is one actual extinguishing, not three separate events.",
+    "The torch rule here is expressly for Solemn Mass; do not infer universal torches for Low or Missa Cantata, even with incense.",
+    "The subdeacon genuflects in his place as separately prescribed in VIII.8; source does not justify manufacturing repeated genuflections for every paragraph.",
+    "The existing 11 minister branches, including deacon, thurifer and the conditional pall, retain ownership; this supplemental table does not duplicate those events.",
+    "Cues are research location hints. Scroll position does not demonstrate that minister, acolyte or priest actions have occurred."
+  ],
+  "reusedExistingMinisterIDs": [
+    "AO.CANON.MIN.001",
+    "AO.CANON.MIN.002",
+    "AO.CANON.MIN.003",
+    "AO.CANON.MIN.004",
+    "AO.CANON.MIN.005",
+    "AO.CANON.MIN.006",
+    "AO.CANON.MIN.007",
+    "AO.CANON.MIN.008",
+    "AO.CANON.MIN.009",
+    "AO.CANON.MIN.010",
+    "AO.CANON.MIN.011"
+  ],
+  "conditionsRequired": [
+    "SOLEMN_MASS_CONFIRMED",
+    "COMMUNICANTS_PRESENT_EXPLICIT_BOOL",
+    "FAST_DAY_1962_CONFIRMED_EXPLICIT_BOOL",
+    "MASS_FOR_DEAD_CONFIRMED_EXPLICIT_BOOL",
+    "INDEPENDENT_MINISTER_ACTION_OBSERVED"
+  ],
+  "sourceApproval": "PENDING_INDEPENDENT_EDITORIAL_SIGNOFF",
+  "publication": "FORBIDDEN",
+  "rows": [
+    {
+      "id": "AO.CANON.VIII8.001",
+      "actor": "ACOLYTES",
+      "action": "LIGHT_MINIMUM_TWO_TORCHES",
+      "form": "SOLEMN",
+      "anchor": "AT_END_OF_PREFACE",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourcePhrase": "ad finem præfationis accenduntur duo saltem intorticia",
+      "cueId": null,
+      "stageTiming": "AT_END_OF_PREFACE_NOT_CANON_SCROLL",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "release": "EDITORIAL_ONLY",
+      "observedNow": false,
+      "publishable": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.002",
+      "actor": "SUBDEACON",
+      "action": "GENUFLECT_IN_HIS_PLACE",
+      "form": "SOLEMN",
+      "anchor": "CONSECRATION_ELEVATIONS",
+      "condition": "SOURCE_PRESCRIBED",
+      "sourcePhrase": "Subdiaconus genuflectit in loco suo",
+      "cueId": null,
+      "stageTiming": "INDEPENDENT_SUBDEACON_OBSERVATION",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "release": "EDITORIAL_ONLY",
+      "observedNow": false,
+      "publishable": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.003",
+      "actor": "ACOLYTES",
+      "action": "EXTINGUISH_TORCHES",
+      "form": "SOLEMN",
+      "anchor": "AFTER_CHALICE_ELEVATION",
+      "condition": "NO_COMMUNICANTS_AND_NOT_FAST_DAY_AND_NOT_REQUIEM",
+      "sourcePhrase": "exstinguuntur post elevationem calicis",
+      "cueId": "AO.SM.C0181",
+      "stageTiming": "AFTER_OBSERVED_CHALICE_ELEVATION",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "release": "EDITORIAL_ONLY",
+      "observedNow": false,
+      "publishable": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.004",
+      "actor": "ACOLYTES",
+      "action": "EXTINGUISH_TORCHES",
+      "form": "SOLEMN",
+      "anchor": "AFTER_COMMUNION",
+      "condition": "COMMUNICANTS_PRESENT",
+      "sourcePhrase": "nisi aliqui sint communicandi, et tunc exstinguuntur post Communionem",
+      "cueId": null,
+      "stageTiming": "AFTER_ACTUAL_COMMUNION",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "release": "EDITORIAL_ONLY",
+      "observedNow": false,
+      "publishable": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.005",
+      "actor": "ACOLYTES",
+      "action": "EXTINGUISH_TORCHES",
+      "form": "SOLEMN",
+      "anchor": "AFTER_COMMUNION",
+      "condition": "FAST_DAY",
+      "sourcePhrase": "In diebus etiam ieiuniorum ... usque ad Communionem",
+      "cueId": null,
+      "stageTiming": "AFTER_ACTUAL_COMMUNION",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "release": "EDITORIAL_ONLY",
+      "observedNow": false,
+      "publishable": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.006",
+      "actor": "ACOLYTES",
+      "action": "EXTINGUISH_TORCHES",
+      "form": "SOLEMN",
+      "anchor": "AFTER_COMMUNION",
+      "condition": "MASS_FOR_DEAD",
+      "sourcePhrase": "in Missis defunctorum tenentur accensa usque ad Communionem",
+      "cueId": null,
+      "stageTiming": "AFTER_ACTUAL_COMMUNION",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "release": "EDITORIAL_ONLY",
+      "observedNow": false,
+      "publishable": false,
+      "faithfulPosture": null
+    }
+  ]
+}
