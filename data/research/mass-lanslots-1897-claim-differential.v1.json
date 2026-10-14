@@ -16,7 +16,9 @@
     "frgFirstPath": "docs/research/MASS-FRENCH-GUERANGER-ORIGINAL-AUDIT-20261013.md",
     "frgSecondPath": "data/research/mass-fr-gueranger-microguide-batch02.v1.json",
     "canonSourcePath": "data/presentation/reader-canon-source-map.v1.json",
-    "formationPath": "data/learn/mass-formation-campion.v1.json"
+    "formationPath": "data/learn/mass-formation-campion.v1.json",
+    "sourceFirst39CrosswalkPath": "data/research/mass-lanslots-1897-source-first39-map.v1.json",
+    "liveModelCorrection": "Current src/mass/reader-live-source.js projects 39 source-first steps (30 base, 5 replaced Canon macro cards with 14 Canon segments). Historical 48 is optional archaeology, not live authority."
   },
   "originalSourceAccess": {
     "completePdfAcquired": false,
@@ -43,7 +45,6 @@
         "AO.CARD.001",
         "AO.CARD.002"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [],
         "existingHistoricalEvidenceIds": [
@@ -57,7 +58,9 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": []
     },
     {
       "id": "LAN-002",
@@ -71,7 +74,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.001"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [],
         "existingHistoricalEvidenceIds": [
@@ -85,7 +87,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.001"
+      ]
     },
     {
       "id": "LAN-003",
@@ -97,7 +103,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.001"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [],
         "existingHistoricalEvidenceIds": [
@@ -111,7 +116,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.001"
+      ]
     },
     {
       "id": "LAN-004",
@@ -125,7 +134,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.010"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [],
         "existingHistoricalEvidenceIds": [
@@ -140,7 +148,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.010"
+      ]
     },
     {
       "id": "LAN-005",
@@ -154,7 +166,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.017"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [
           "FRG23",
@@ -172,7 +183,9 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": []
     },
     {
       "id": "LAN-006",
@@ -188,7 +201,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.017"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "canonSegment": {
         "id": "AO.CANON.09",
         "blockIds": [
@@ -214,7 +226,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "PRECISE_CANON_SEGMENT_OWNERSHIP_VERIFIED",
+      "sourceFirst39SectionIds": [
+        "AO.CANON.09"
+      ]
     },
     {
       "id": "LAN-007",
@@ -226,7 +242,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.014"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [
           "FRG18"
@@ -240,7 +255,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CANON.01"
+      ]
     },
     {
       "id": "LAN-008",
@@ -254,7 +273,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.001"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [
           "FRG03"
@@ -268,7 +286,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.001"
+      ]
     },
     {
       "id": "LAN-009",
@@ -282,7 +304,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.007"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [
           "FRG09"
@@ -298,7 +319,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.007"
+      ]
     },
     {
       "id": "LAN-010",
@@ -313,7 +338,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.013"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [],
         "existingHistoricalEvidenceIds": [],
@@ -325,7 +349,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.013"
+      ]
     },
     {
       "id": "LAN-011",
@@ -339,7 +367,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.010"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [
           "FRG13"
@@ -356,7 +383,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.010"
+      ]
     },
     {
       "id": "LAN-012",
@@ -371,7 +402,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.013"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [],
         "existingHistoricalEvidenceIds": [],
@@ -383,7 +413,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.013"
+      ]
     },
     {
       "id": "LAN-013",
@@ -397,7 +431,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.021"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [
           "FRG58"
@@ -413,7 +446,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.021"
+      ]
     },
     {
       "id": "LAN-014",
@@ -427,7 +464,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.024"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [
           "FRG63"
@@ -441,7 +477,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.024"
+      ]
     },
     {
       "id": "LAN-015",
@@ -455,7 +495,6 @@
       "legacyGuideOwnerIds": [
         "AO.CARD.030"
       ],
-      "source48LinkStatus": "UNRESOLVED_NONCANON_OR_VIA_CANON_SOURCE_SEGMENT",
       "overlaps": {
         "existingGuerangerIds": [
           "FRG30",
@@ -472,7 +511,11 @@
       "biblicalVerseAttributionToLanslots": "UNVERIFIED_UNLESS_ORIGINAL_DIRECTLY_QUOTES",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "EDITORIAL_TOPIC_OWNER_ONLY_VERIFY_DIRECT_CUE_WHEN_FULL_ORIGINAL_AVAILABLE",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.030"
+      ]
     },
     {
       "id": "LAN-016",
@@ -495,7 +538,6 @@
       "sourceFirstLiveOwnerIds": [
         "AO.CARD.001"
       ],
-      "source48LinkStatus": "CURRENT_SOURCE_FIRST39_BASE_MACRO_ID_CONFIRMED",
       "overlaps": {
         "existingGuerangerIds": [],
         "existingHistoricalEvidenceIds": [],
@@ -510,7 +552,11 @@
       "biblicalVerseAttributionToLanslots": "EXPLICIT_IN_SEARCH_INDEX_EXCERPT",
       "theologicalReview": "PENDING",
       "frenchCopy": "NOT_AUTHORIZED",
-      "runtimePromotion": "BLOCKED"
+      "runtimePromotion": "BLOCKED",
+      "sourceFirst39LinkStatus": "CURRENT_BASE_MACRO_OWNERSHIP_VERIFIED",
+      "sourceFirst39SectionIds": [
+        "AO.CARD.001"
+      ]
     }
   ],
   "rules": [
