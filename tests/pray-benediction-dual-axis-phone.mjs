@@ -77,11 +77,16 @@ try{
   id:el.dataset.aoActionScene,kind:el.dataset.aoActionKind,
   icon:el.querySelector(".aoDevotionalActionIcon")?.hidden===false,
   width:el.getBoundingClientRect().width,screen:window.innerWidth,
+  overlayOpacity:getComputedStyle(el).opacity,overlayAnimation:getComputedStyle(el).animationName,
+  innerAnimation:getComputedStyle(el.querySelector(".aoDevotionalActionInner")).animationName,
   message:el.querySelector(".aoDevotionalActionTitle")?.textContent,
  }));
  assert.equal(presentation.id,"BENEDICTION.BLESSING");
  assert.equal(presentation.kind,"SOLEMN_ACTION");
  assert.equal(presentation.icon,true,"Blessing cinematic lost its approved icon");
+ assert.equal(presentation.overlayOpacity,"1","An entering cinematic lets the old reader bleed through");
+ assert.equal(presentation.overlayAnimation,"none","Fade only the contents, never the full-screen background");
+ assert.notEqual(presentation.innerAnimation,"none","The sacred action should still have a restrained content entrance");
  assert.ok(presentation.width>=presentation.screen-60,"Benediction cinematic is a tiny badge, not a prominent action");
  assert.match(presentation.message,/blessing|Bénédiction/i);
  // The global ribbon and independent semantic rails must be covered by the
