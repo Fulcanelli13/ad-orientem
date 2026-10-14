@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 131,
+  "source_count": 139,
   "sources": [
     {
       "id": "S01",
@@ -1577,6 +1577,102 @@
       "access": "historical_code_link_grounded",
       "chapter_passage_certified": false,
       "annotation": "Precise source supports bounded claim. Same primary act appearing twice is NOT another independent author. No entire-volume acquisition is required."
+    },
+    {
+      "id": "S132",
+      "title": "Dei Filius chapter IV original official conciliar witness",
+      "author": "First Vatican Council/Pius IX",
+      "year": "1870",
+      "role": "ecumenical_council_original",
+      "url": "https://www.vatican.va/content/pius-ix/it/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+      "scope": "chapter IV on faith and reason: supernatural mystery, freedom of disciplines within scope, no true contradiction between true faith and true reason",
+      "access": "original_Vatican_Italian_and_Latin",
+      "chapter_passage_certified": false,
+      "annotation": "Authentic bounded claim source, not proof of all claims. Original speakers and translations retained; full-book acquisition not required."
+    },
+    {
+      "id": "S133",
+      "title": "Fides et ratio original official English and French",
+      "author": "John Paul II",
+      "year": "1998",
+      "role": "papal_original_EN_FR",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html",
+      "scope": "introduction, §§34,43: relation of faith and reason, Aquinas, reason's nature; French version official at corresponding /fr/ URL",
+      "access": "original_Vatican_EN_FR",
+      "chapter_passage_certified": false,
+      "annotation": "Authentic bounded claim source, not proof of all claims. Original speakers and translations retained; full-book acquisition not required."
+    },
+    {
+      "id": "S134",
+      "title": "Dialogues Concerning Natural Religion",
+      "author": "David Hume",
+      "year": "1779",
+      "role": "first_person_philosopher_anti_proof_dialogue",
+      "url": "https://www.gutenberg.org/cache/epub/4583/pg4583-images.html",
+      "scope": "Parts II and IX on design/a priori demonstration and limits; Part X natural suffering; Philo is fictional voice in philosophical dialogue, not Hume's autobiographical confession",
+      "access": "full_author_text_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Authentic bounded claim source, not proof of all claims. Original speakers and translations retained; full-book acquisition not required."
+    },
+    {
+      "id": "S135",
+      "title": "Josephus Antiquities XX.9.1 (§200) on James and Jesus",
+      "author": "Flavius Josephus",
+      "year": "c.93–94",
+      "role": "ancient_nonchristian_historiography",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=J.+AJ+20.9.1",
+      "scope": "reports James as brother of Jesus called Christ; external attestation of identifiable people, not independent resurrection miracle evidence; translated by Whiston",
+      "access": "original_ancient_text_university_translation_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Authentic bounded claim source, not proof of all claims. Original speakers and translations retained; full-book acquisition not required."
+    },
+    {
+      "id": "S136",
+      "title": "Why Historians Can Talk About the Resurrection",
+      "author": "Bart D. Ehrman",
+      "year": "2013",
+      "role": "critical_historian_first_person_methodological",
+      "url": "https://ehrmanblog.org/why-historians-can-talk-about-the-resurrection/",
+      "scope": "historical inquiry can study claims and conviction but not prove divine supernatural resurrection under normal historical method",
+      "access": "original_author_blog_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Authentic bounded claim source, not proof of all claims. Original speakers and translations retained; full-book acquisition not required."
+    },
+    {
+      "id": "S137",
+      "title": "Why No One Can Prove the Resurrection",
+      "author": "Bart D. Ehrman",
+      "year": "2026",
+      "role": "critical_historian_original_recent",
+      "url": "https://www.bartehrman.com/why-no-one-can-prove-the-resurrection/",
+      "scope": "2 June 2026 original author site discussion of burial, empty tomb, appearances and historical method; same author as S136, not independent scholar",
+      "access": "original_author_podcast_page_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Authentic bounded claim source, not proof of all claims. Original speakers and translations retained; full-book acquisition not required."
+    },
+    {
+      "id": "S138",
+      "title": "Sublimis Deus original translated papal bull",
+      "author": "Paul III",
+      "year": "1537",
+      "role": "papal_historical_anti_enslavement_original",
+      "url": "https://www.papalencyclicals.net/paul03/p3subli.htm",
+      "scope": "expressly prohibits deprivation of native liberty/property or enslavement; requires conversion by preaching and example, not evidence universal obedience",
+      "access": "original_translation_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Authentic bounded claim source, not proof of all claims. Original speakers and translations retained; full-book acquisition not required."
+    },
+    {
+      "id": "S139",
+      "title": "Holy See joint statement repudiating doctrine of discovery",
+      "author": "Dicasteries for Culture and Education and Promoting Integral Human Development",
+      "year": "2023",
+      "role": "holy_see_original_historical_moral_assessment",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/03/30/230330b.html",
+      "scope": "§§5–8 acknowledges papal documents used by colonial powers, religious discrimination and injustices, cites 1537 Sublimis Deus and rejects doctrine of discovery",
+      "access": "original_Holy_See_statement_opened",
+      "chapter_passage_certified": false,
+      "annotation": "Authentic bounded claim source, not proof of all claims. Original speakers and translations retained; full-book acquisition not required."
     }
   ],
   "priority_questions": [
@@ -5589,11 +5685,117 @@
       "independent_outside_support_required": false,
       "risk": "church_history_juridical_claim",
       "review_state": "ACTUAL_DRAFT_20261014_REVIEWED"
+    },
+    {
+      "id": "APOL-001",
+      "source_ids": [
+        "S134"
+      ],
+      "source_roles": [
+        "first_person_philosopher_anti_proof_dialogue"
+      ],
+      "locator_level": "targeted_original_primary_passage_confirmed_not_full_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": true,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": false,
+      "risk": "historical_philosophical_apologetics",
+      "review_state": "SIX_OWNER_BILINGUAL_EDITORIAL_CORRECTION_PREPARED"
+    },
+    {
+      "id": "APOL-002",
+      "source_ids": [
+        "S132",
+        "S133",
+        "S134"
+      ],
+      "source_roles": [
+        "ecumenical_council_original",
+        "papal_original_EN_FR",
+        "first_person_philosopher_anti_proof_dialogue"
+      ],
+      "locator_level": "targeted_original_primary_passage_confirmed_not_full_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": true,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": false,
+      "risk": "critical_wrong_owner",
+      "review_state": "SIX_OWNER_BILINGUAL_EDITORIAL_CORRECTION_PREPARED"
+    },
+    {
+      "id": "APOL-007",
+      "source_ids": [
+        "S135"
+      ],
+      "source_roles": [
+        "ancient_nonchristian_historiography"
+      ],
+      "locator_level": "targeted_original_primary_passage_confirmed_not_full_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": true,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": false,
+      "risk": "historical_philosophical_apologetics",
+      "review_state": "SIX_OWNER_BILINGUAL_EDITORIAL_CORRECTION_PREPARED"
+    },
+    {
+      "id": "APOL-009",
+      "source_ids": [
+        "S136",
+        "S137"
+      ],
+      "source_roles": [
+        "critical_historian_first_person_methodological",
+        "critical_historian_original_recent"
+      ],
+      "locator_level": "targeted_original_primary_passage_confirmed_not_full_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": true,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": false,
+      "risk": "historical_philosophical_apologetics",
+      "review_state": "SIX_OWNER_BILINGUAL_EDITORIAL_CORRECTION_PREPARED"
+    },
+    {
+      "id": "APOL-053",
+      "source_ids": [
+        "S36",
+        "S37"
+      ],
+      "source_roles": [
+        "preconciliar_social_kingship_original",
+        "preconciliar_church_state_original"
+      ],
+      "locator_level": "targeted_original_primary_passage_confirmed_not_full_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": true,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": false,
+      "risk": "historical_philosophical_apologetics",
+      "review_state": "SIX_OWNER_BILINGUAL_EDITORIAL_CORRECTION_PREPARED"
+    },
+    {
+      "id": "APOL-058",
+      "source_ids": [
+        "S138",
+        "S139"
+      ],
+      "source_roles": [
+        "papal_historical_anti_enslavement_original",
+        "holy_see_original_historical_moral_assessment"
+      ],
+      "locator_level": "targeted_original_primary_passage_confirmed_not_full_QA_certification",
+      "section_and_quote_checked_for_question": false,
+      "actual_answer_checked": true,
+      "opposing_view_sourced": true,
+      "independent_outside_support_required": false,
+      "risk": "historical_harm_and_indigenous_sources",
+      "review_state": "SIX_OWNER_BILINGUAL_EDITORIAL_CORRECTION_PREPARED"
     }
   ],
   "counts": {
-    "sources": 131,
-    "mapped_questions": 222,
+    "sources": 139,
+    "mapped_questions": 228,
     "church_crisis": 81,
     "sexual_ethics": 141,
     "answer_audited": 0,
@@ -5615,6 +5817,8 @@
     "For GOV-09, May 2024 MONEYVAL follow-up is broadly positive with precisely measured technical improvement. Do not present the follow-up as a conviction or proof of generalized Vatican fraud.",
     "For GOV-01, postconciliar responsibility must be dated and layered across legislation, Roman dicasteries, diocesan bishops and local implementation, not reduced to unrelated 2020s diplomatic event.",
     "2024 synod: Francis formally approved the final document and included it in ordinary papal magisterium by his 24 Nov 2024 note, although explicitly not strictly normative. Never describe as only an unapproved consultation or as automatic legislation.",
-    "1969 Ottaviani/Bacci: the cardinals signed the forwarding letter; the Short Critical Study was authored by a separate group, with Campo and Guérard historically connected. Do not attribute all document text to cardinals' personal authorship."
+    "1969 Ottaviani/Bacci: the cardinals signed the forwarding letter; the Short Critical Study was authored by a separate group, with Campo and Guérard historically connected. Do not attribute all document text to cardinals' personal authorship.",
+    "APOL-002 source ownership fail: canonical question faith vs reason, previous draft instead evolution/polygenism. Preserve previous evolution four roles in research ledger and link as a case, do not overwrite the APOL faith/reason owner on promotion.",
+    "DIL 291 Q&A screened does not imply all are proofread bilingually, source-certified or live; every original question already has locally-declared source identifiers even if supplementary specialist register contains no matching S source."
   ]
 }
