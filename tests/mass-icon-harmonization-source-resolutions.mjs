@@ -35,7 +35,7 @@ assert.ok(current.includes('ALTAR_EPISTLE_MISSAL:"priest_epistle_rich"'));
 assert.ok(current.includes('ALTAR_GOSPEL_MISSAL:"priest_gospel_rich"'));
 
 const work=parse("../data/presentation/mass-icon-harmonization-16-workorders-20261014.v1.json");
-assert.equal(work.phase,"PHASE_B_MINIMAL_REPAIR_SPECIFIED_NO_ARTWORK_GENERATED");
+assert.equal(work.phase,"PHASE_B_MASTER_DERIVATIVE_ONLY_REJECTED_GEOMETRIC_PROTOTYPES");
 assert.equal(work.policy.noLiveChanges,true);
 assert.equal(work.policy.noImageGenerationBeforeReuse,true);
 assert.deepEqual(Object.values(work.counts),[16,13,2,1]);
@@ -52,7 +52,7 @@ assert.deepEqual(new Set([...work.workorders.map(x=>x.id),...a.groups.semantic])
 const standard=parse("../data/presentation/mass-icon-minimal-family-standard-20261014.v1.json");
 const production=parse("../data/presentation/mass-icon-three-by-three-production-backlog-20261014.v1.json");
 const stage=parse("../data/presentation/mass-icon-family-harmonization-stage1-20261014.v1.json");
-assert.equal(standard.status,"DESIGN_LOCK_FOR_REVIEW_NOT_RUNTIME_APPROVAL");
+assert.equal(standard.status,"FAMILY_FIDELITY_CORRECTED_MASTER_DERIVATIVE_NOT_NEW_GEOMETRY");
 assert.equal(standard.ratings.score0to2,"PERMANENTLY_REJECT_ORIGINAL_NO_REUSE_NO_HARMONIZE");
 assert.equal(standard.ratings.score3,"RESEARCH_REQUIRED_NOT_APPROVED");
 assert.equal(standard.ratings.score4,"USER_REVIEW_REQUIRED_NOT_AUTO_APPROVED");
@@ -84,15 +84,20 @@ assert.equal(stage.visualReassessment.newIllustrationArtApproved,undefined);
 assert.equal(stage.remaining.newIllustrationArtApproved,0);
 assert.ok(stage.visualReassessment.caveat.includes("Do not promote"));
 assert.equal(standard.design.assets.includes("Never mutate"),true);
+assert.equal(standard.familyParity.priority,"DONOR_DERIVATIVE_NOT_STYLE_IMITATION_FROM_TEXT");
+assert.ok(standard.familyParity.prohibitedNewStyle.some(x=>x.includes("pure circle head")));
+assert.ok(work.workorders.every(x=>x.minimalFamily?.masterParity?.startsWith("MANDATORY")));
 
 
 const studies=parse("../data/presentation/mass-icon-minimal-native-svg-staging-20261014.v1.json");
-assert.equal(studies.status,"RESEARCH_PROTOTYPES_ONLY_NOT_APPROVED_NOT_RUNTIME_BOUND");
+assert.equal(studies.status,"REJECTED_STYLE_MISMATCH_HISTORY_ONLY_NOT_IN_REVIEW_SELECTION");
 assert.equal(studies.referenceRating,5);
 assert.equal(studies.items.length,3);
-assert.ok(studies.items.every(x=>x.geometryStatus==="GEOMETRY_PROTOTYPE"));
+assert.equal(studies.styleAssessment.result,"FAILED_ALL_THREE");
+assert.equal(studies.styleAssessment.ratingAssignedByUser,null);
+assert.ok(studies.items.every(x=>x.geometryStatus==="REJECTED_FAMILY_MISMATCH"));
 assert.ok(studies.items.every(x=>x.needs.some(y=>y.includes("user artwork rating"))));
-assert.equal(studies.items.find(x=>x.id==="B13").railAcceptance,"FAIL_AT_64PX");
+assert.ok(studies.items.every(x=>x.railAcceptance==="REJECTED_STYLE_MISMATCH" && x.reviewEligible===false));
 assert.ok(Object.values(studies.productionChanges).every(x=>x===false));
 for(const x of studies.items){
   const raw=readFileSync(new URL("../"+studies.assetRoot+x.file,import.meta.url),"utf8");
