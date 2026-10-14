@@ -22,7 +22,8 @@ const names=[
   ["Canonical source-first V","formation-canonical-sourcefirst-batch5-2026-10-09.v1.json"],
   ["Church Crisis source-first VI","formation-crisis-sourcefirst-batch6-2026-10-09.v1.json"],
   ["Church Crisis source-first VII","formation-crisis-sourcefirst-batch7-2026-10-09.v1.json"],
-  ["Church Crisis source-first VIII","formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"]
+  ["Church Crisis source-first VIII","formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"],
+  ["Retained owner cases","formation-retained-evolution-china-case-records-20261014.v1.json"]
 ];
 const packs=names.map(([label,name])=>({label,doc:JSON.parse(readFileSync("data/learn/"+name,"utf8"))}));
 const legacyRows=buildRecoveryReviewRows(packs);
