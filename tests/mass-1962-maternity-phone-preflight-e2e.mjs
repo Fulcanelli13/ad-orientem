@@ -91,6 +91,18 @@ try{
   console.log("OCT11_PHONE_SOURCE_"+width,JSON.stringify(sourceDiagnostic));
   assert.match(await block.locator("[data-mass-calendar-commemoration-name]").innerText(),/Maternity of the Blessed Virgin Mary|Maternit/i);
   assert.match(await block.locator("[data-mass-calendar-commemoration-prayers]").innerText(),/prayers|prières|orations|oraisons|Collect|collecte|secrète|postcommunion/i);
+  if(!(await block.isVisible())){
+    const trace=await block.evaluate(el=>{
+      const out=[];for(let p=el;p&&out.length<14;p=p.parentElement){
+        const c=getComputedStyle(p),r=p.getBoundingClientRect();
+        out.push({tag:p.tagName,cls:String(p.className).slice(0,100),hidden:p.hidden,
+          display:c.display,visibility:c.visibility,rect:[r.width,r.height],
+          details:p.tagName==="DETAILS"?p.open:null,
+          role:p.getAttribute("data-mass-journey-identity")!==null?"journey-identity":null});
+      }return out;
+    });
+    console.log("MASS_OCT11_COMMEM_VISIBILITY_TRACE_"+width,JSON.stringify(trace));
+  }
   assert.equal(await block.isVisible(),true,"Commemoration visually hidden on phone");
   await block.scrollIntoViewIfNeeded();
   const data=await block.evaluate(el=>{
