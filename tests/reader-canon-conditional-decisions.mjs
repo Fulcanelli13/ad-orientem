@@ -351,7 +351,7 @@ assert.equal(iconPlan.schema,"ao-canon-62-editorial-icon-ownership-v1");
 assert.equal(iconPlan.status,"EDITORIAL_ICON_PREVIEW_NOT_ACTIVATED");
 assert.deepEqual(iconPlan.counts,{
  sourceActions:62,priest:58,server:4,sourceWordAnchors:50,
- nonTextOrStates:12,withFrozenAsset:50,requiresDistinctOrStageArtwork:12,
+ nonTextOrStates:12,withFrozenAsset:50,noIconByDesign:3,requiresDistinctOrStageArtwork:9,
  livePublishedByThisBatch:0,faithfulPosturesInferred:0
 });
 assert.deepEqual(iconPlan.rows.map(x=>x.actionId),trigger.rows.map(x=>x.id));
