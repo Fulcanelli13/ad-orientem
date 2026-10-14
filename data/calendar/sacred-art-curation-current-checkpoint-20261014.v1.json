@@ -1,0 +1,58 @@
+{
+  "schema": "AO_SACRED_ART_CURRENT_CURATION_CHECKPOINT_POST_W48_V1",
+  "lastUserExportAt": "2026-10-14T14:45:16.037Z",
+  "authoritativeHumanUploadSHA256": "c972a32ce297eac8b97061eb9b79621a64eb6c1cf9983d640ace3348b35b6e2f",
+  "sourceReviewSnapshot": "data/calendar/sacred-art-w48-user-full-snapshot-20261014.v1.json",
+  "ratingsAndCoverage": "data/calendar/sacred-art-w49-post-w48-ratings-and-gaps-20261014.v1.json",
+  "permanentRejectionBlocklist": "data/calendar/sacred-art-w49-permanent-original-rejection-blocklist-20261014.v1.json",
+  "previousResearchOnly": "data/calendar/sacred-art-portrait-gap-register-wave37-20261014.v1.json",
+  "previousInputOnly": "data/calendar/sacred-art-all-75-review-w48-source-index-20261014.v1.json",
+  "status": "CURATORIAL_AESTHETIC_DECISIONS_IMPORT_COMPLETE; IMAGE_IDENTITY_AND_REPRODUCTION_RELEASE_UNVERIFIED",
+  "scope": {
+    "canonicalSubjects": 75,
+    "reviewedSnapshotEntries": 481,
+    "subjectsInSnapshot": 73
+  },
+  "reviewOutcomes": {
+    "newExplicit5Ratings": 86,
+    "newExplicit4Ratings": 46,
+    "newExplicit3Ratings": 5,
+    "newExplicitRejections0to2": 7,
+    "effective5": 86,
+    "effective4": 66,
+    "effective3": 28,
+    "effectiveRejected": 7,
+    "effectiveUnrated": 294,
+    "originalIDsPermanentlyBlockedFromKnownPriorLedgerAndW48": 95
+  },
+  "coverageProjection": {
+    "subjectsWithAtLeastOneAesthetic5FromW48OrPrior": 66,
+    "subjectsWithOnly4": 4,
+    "subjectsWithNo4or5": 5,
+    "disclaimer": "Aesthetic rating coverage, not verified saint portrait attribution, distinct physical artwork count, rights or app production approval"
+  },
+  "remainingResearchSubjects": [
+    "Saint Mark the Evangelist",
+    "Saint Alphonsus Liguori",
+    "Saint Cyril of Alexandria",
+    "Saint Cyril of Jerusalem",
+    "Saint Hilary of Poitiers"
+  ],
+  "review4OnlySubjects": [
+    "Saint Bonaventure",
+    "Saint Catherine of Siena",
+    "Saint Robert Bellarmine",
+    "Saint Denis of Paris"
+  ],
+  "sourceIdentityHolds": "16 rated 4/5 records in W49 have possible displayed-photo vs catalogued-original mismatch or collision. Keep user's scores associated with displayed pictures, not assumed source descriptions.",
+  "latestRules": [
+    "0–2 reject permanently",
+    "3 signals more research; keep previous ratings",
+    "4 requires explicit review",
+    "5 automatically chosen aesthetically",
+    "5 elsewhere does not certify saint portrait",
+    "flag wrong identity blocks target mapping",
+    "distinct original, image source, attribution, reuse rights and app publication independently tested"
+  ],
+  "releaseGate": "Do NOT propagate selected5 candidate IDs automatically into live application until each underlying displayed photograph is mapped to canonical physical original and passed source and rights checks."
+}
