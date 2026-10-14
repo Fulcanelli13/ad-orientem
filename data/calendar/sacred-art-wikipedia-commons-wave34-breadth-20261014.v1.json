@@ -1,0 +1,1502 @@
+{
+  "schema": "AO_SACRED_ART_WIKIPEDIA_COMMONS_WAVE34_BREADTH_V1",
+  "asOf": "2026-10-14",
+  "ownerPR": 887,
+  "parentRegister": "data/calendar/sacred-art-wikipedia-common-source-pass-wave32-20261014.v1.json",
+  "canonicalPersonMatrix": "data/calendar/sacred-art-two-options-matrix-wave31-20261014.v6.json",
+  "status": "UNRATED_DISCOVERY_CANDIDATES_ONLY",
+  "purpose": "Bulk broaden the number of people and Scripture events represented by identifiable Wikimedia Commons file leads; do not confuse file counts with distinct paintings or canonical identity.",
+  "counts": {
+    "newCommonsFiles": 77,
+    "newPersonSubjects": 14,
+    "newScriptureSubjects": 2,
+    "sourceCategoryPages": 19,
+    "duplicateOrExcludedNamesSkipped": 0,
+    "sourceImageBytesAcquired": 0,
+    "cleanImageMastersVerified": 0,
+    "newUserRatings": 0,
+    "releaseApprovals": 0
+  },
+  "notes": [
+    "Source page was opened and individual names/pixels transcribed from category media lists; do not infer artist/museum from file title without file-page and custodian verification.",
+    "A few deliberately recorded small file leads are explicit quality holds, not eligible for user-reviewable gallery.",
+    "All physical-original identity, rights, faithful painting-only crop, and duplication checks remain pending. Some images are photographs of frescoes or onsite altarpieces; accept only after curatorial QA.",
+    "Saint Luke Zurbarán file variants may refer to the same painting; Francis de Sales portrait variants and original museum images likewise require canonical deduplication.",
+    "Event discovery keys are research handles only; map to existing Biblical Atlas/1962 Calendar IDs before any reuse.",
+    "Preserve historical 277 human scores, low-rated exclusions, artist exclusions Fra Angelico and El Greco, and canonical app content."
+  ],
+  "sources": [
+    {
+      "subjectKey": "SNT-DC-06",
+      "subjectName": "Saint Bonaventure",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Bonaventura",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Basilio_Santa_Cruz_Pumacallao_-_Saint_Bonaventure_and_Saint_Anthony_of_Padua_-_2018.652.1_-_Metropolitan_Museum_of_Art.jpg",
+      "commonsFilename": "Basilio Santa Cruz Pumacallao - Saint Bonaventure and Saint Anthony of Padua - 2018.652.1 - Metropolitan Museum of Art.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4000,
+        3799
+      ],
+      "depiction": "group-portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-06",
+      "subjectName": "Saint Bonaventure",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Bonaventura",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Heiliger_Bonaventura_Heiliger_Ludwig_von_Toulouse_(Ziegler-Schmid)-WUS07653.jpg",
+      "commonsFilename": "Heiliger Bonaventura Heiliger Ludwig von Toulouse (Ziegler-Schmid)-WUS07653.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2976,
+        4659
+      ],
+      "depiction": "group-portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-06",
+      "subjectName": "Saint Bonaventure",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Bonaventura",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Rebecca_Dulcibella_Orpen_(1830-1923)_-_Saint_Bonaventure_Inspired_to_Write_-_343200_-_National_Trust.jpg",
+      "commonsFilename": "Rebecca Dulcibella Orpen (1830-1923) - Saint Bonaventure Inspired to Write - 343200 - National Trust.jpg",
+      "pixelsReportedByCommonsCategory": [
+        876,
+        1200
+      ],
+      "depiction": "saint-writing",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-06",
+      "subjectName": "Saint Bonaventure",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Bonaventura",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_bonaventure_de_bagnoregio_%C3%89glise_Saint-Montain_(La_F%C3%A8re).jpg",
+      "commonsFilename": "Saint bonaventure de bagnoregio Église Saint-Montain (La Fère).jpg",
+      "pixelsReportedByCommonsCategory": [
+        4000,
+        6000
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-06",
+      "subjectName": "Saint Bonaventure",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Bonaventura",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG",
+      "commonsFilename": "Vision of St. Bonaventura - Domenico Vaccaro - San Lorenzo Maggiore (museum) - Naples - Italy 2015.JPG",
+      "pixelsReportedByCommonsCategory": [
+        3096,
+        4084
+      ],
+      "depiction": "mystical-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-05",
+      "subjectName": "Saint Thomas Aquinas",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Thomas_Aquinas",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Antonio_e_giovanni_sarnelli%2C_san_tommaso_d'aquino%2C_1750_ca.jpg",
+      "commonsFilename": "Antonio e giovanni sarnelli, san tommaso d'aquino, 1750 ca.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3904,
+        4928
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-05",
+      "subjectName": "Saint Thomas Aquinas",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Thomas_Aquinas",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Autor_k%C3%B3pie_nezn%C3%A1my_-_Saint_Thomas_Aquinas_-_O_1698_-_Slovak_National_Gallery.jpg",
+      "commonsFilename": "Autor kópie neznámy - Saint Thomas Aquinas - O 1698 - Slovak National Gallery.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4139,
+        5000
+      ],
+      "depiction": "portrait-after-original",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-05",
+      "subjectName": "Saint Thomas Aquinas",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Thomas_Aquinas",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_d_Aquin-Ary_Sheffer.jpg",
+      "commonsFilename": "Saint Thomas d Aquin-Ary Sheffer.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3497,
+        4127
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-05",
+      "subjectName": "Saint Thomas Aquinas",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Thomas_Aquinas",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:San_Tommaso_d'Aquino_(Jacopo_del_Casentino%2C_XIV_sec._-Mus%C3%A9e_du_Petit_Palais_-_Avignon).jpg",
+      "commonsFilename": "San Tommaso d'Aquino (Jacopo del Casentino, XIV sec. -Musée du Petit Palais - Avignon).jpg",
+      "pixelsReportedByCommonsCategory": [
+        1897,
+        3805
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-05",
+      "subjectName": "Saint Thomas Aquinas",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Thomas_Aquinas",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:SMN_Chiostro_Grande_e06_Mauro_Soderini%2C_San_Tommaso_d'Aquino_presenta_l'uffizio_del_Corpus_Domini_a_Urbano_IV.JPG",
+      "commonsFilename": "SMN Chiostro Grande e06 Mauro Soderini, San Tommaso d'Aquino presenta l'uffizio del Corpus Domini a Urbano IV.JPG",
+      "pixelsReportedByCommonsCategory": [
+        2592,
+        1944
+      ],
+      "depiction": "saint-life-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-05",
+      "subjectName": "Saint Thomas Aquinas",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Thomas_Aquinas",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:SMN_Chiostro_Grande_e09_Cosimo_Gamberucci%2C_San_Tommaso_viene_cinto_da_due_angeli_con_cingolo_di_perpetua_castit%C3%A0.JPG",
+      "commonsFilename": "SMN Chiostro Grande e09 Cosimo Gamberucci, San Tommaso viene cinto da due angeli con cingolo di perpetua castità.JPG",
+      "pixelsReportedByCommonsCategory": [
+        2592,
+        1944
+      ],
+      "depiction": "saint-life-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-12",
+      "subjectName": "Saint Francis de Sales",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_de_Sales",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse_%E2%80%93_Saint_Fran%C3%A7ois_de_Sales_remet_la_r%C3%A8gle_%C3%A0_sainte_Jeanne_de_Chantal_-_By_Bertrand_Fran%C3%A7ois_(1756-1805)_PM31001527.jpg",
+      "commonsFilename": "Cathédrale Saint-Étienne de Toulouse – Saint François de Sales remet la règle à sainte Jeanne de Chantal - By Bertrand François (1756-1805) PM31001527.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3861,
+        5569
+      ],
+      "depiction": "saint-life-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-12",
+      "subjectName": "Saint Francis de Sales",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_de_Sales",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Bussy-Rabutin_-_Saint_Fran%C3%A7ois_de_Sales%2C_%C3%A9v%C3%AAque_de_Gen%C3%A8ve_(bgw19_0375).jpg",
+      "commonsFilename": "Château de Bussy-Rabutin - Saint François de Sales, évêque de Genève (bgw19 0375).jpg",
+      "pixelsReportedByCommonsCategory": [
+        5068,
+        6000
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-12",
+      "subjectName": "Saint Francis de Sales",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_de_Sales",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Corrado_Giacquinto_-_Saint_Jane_Frances_of_Chantal_and_Saint_Francis_of_Sales_in_adoration_of_the_Heart_of_Jesus_-_Santa_B%C3%A1rbara%2C_Madrid.jpg",
+      "commonsFilename": "Corrado Giacquinto - Saint Jane Frances of Chantal and Saint Francis of Sales in adoration of the Heart of Jesus - Santa Bárbara, Madrid.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3024,
+        4032
+      ],
+      "depiction": "devotional-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-12",
+      "subjectName": "Saint Francis de Sales",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_de_Sales",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Marco_Antonio_Franceschini_-_Il_S._Francesco_di_Sales_nel_deserto.jpg",
+      "commonsFilename": "Marco Antonio Franceschini - Il S. Francesco di Sales nel deserto.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1527,
+        2000
+      ],
+      "depiction": "saint-life-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-12",
+      "subjectName": "Saint Francis de Sales",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_de_Sales",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Lyon_2e_-_%C3%89glise_Saint_Fran%C3%A7ois_de_Sales_-_Chapelle_Saint_Fran%C3%A7ois_de_Sales_-_Portrait_de_saint_Fran%C3%A7ois_de_Sales.jpg",
+      "commonsFilename": "Lyon 2e - Église Saint François de Sales - Chapelle Saint François de Sales - Portrait de saint François de Sales.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3024,
+        4032
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-12",
+      "subjectName": "Saint Francis de Sales",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_de_Sales",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Sales%2C_de_Francisco_Bayeu_(Museo_del_Prado).jpg",
+      "commonsFilename": "San Francisco de Sales, de Francisco Bayeu (Museo del Prado).jpg",
+      "pixelsReportedByCommonsCategory": [
+        1753,
+        2881
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-21",
+      "subjectName": "Saint Albert the Great",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Albertus_Magnus",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Albertus_Magnus_-_Parish_of_Guayaquil.jpg",
+      "commonsFilename": "Albertus Magnus - Parish of Guayaquil.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2448,
+        3264
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-21",
+      "subjectName": "Saint Albert the Great",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Albertus_Magnus",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Sermon_of_Saint_Albertus_Magnus_MET_DP164883.jpg",
+      "commonsFilename": "Sermon of Saint Albertus Magnus MET DP164883.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2372,
+        3876
+      ],
+      "depiction": "saint-life-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-DC-21",
+      "subjectName": "Saint Albert the Great",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Albertus_Magnus",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Albertus_Magnus_expounding_his_doctrines_of_physical_science_Wellcome_V0018152.jpg",
+      "commonsFilename": "Albertus Magnus expounding his doctrines of physical science Wellcome V0018152.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2150,
+        3327
+      ],
+      "depiction": "scientific-teaching-scene-verify-original-medium",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-03",
+      "subjectName": "Saint James the Greater",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_James_the_Greater_in_the_United_States",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+      "commonsFilename": "Guido Reni - Saint James the Greater - Google Art Project.jpg",
+      "pixelsReportedByCommonsCategory": [
+        5927,
+        8161
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-03",
+      "subjectName": "Saint James the Greater",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_James_the_Greater_in_the_United_States",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_James_Major_A17835.jpg",
+      "commonsFilename": "Saint James Major A17835.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2908,
+        4000
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-03",
+      "subjectName": "Saint James the Greater",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_James_the_Greater_in_France",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Augustins_-_Le_Martyre_de_Saint_Jacques_-_Thomas_Bosschaert_2004_1_67.jpg",
+      "commonsFilename": "Augustins - Le Martyre de Saint Jacques - Thomas Bosschaert 2004 1 67.jpg",
+      "pixelsReportedByCommonsCategory": [
+        5378,
+        6874
+      ],
+      "depiction": "martyrdom-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-03",
+      "subjectName": "Saint James the Greater",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_James_the_Greater_in_France",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Novelli_Pietro_-_Saint_Jacques_le_Majeur.jpg",
+      "commonsFilename": "Novelli Pietro - Saint Jacques le Majeur.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2630,
+        3233
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-05",
+      "subjectName": "Saint Philip",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Philip",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Philippius_St._Ursula_Unterlangkampfen-1.jpg",
+      "commonsFilename": "Philippius St. Ursula Unterlangkampfen-1.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2919,
+        4060
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-05",
+      "subjectName": "Saint Philip",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Philip",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Pleterje_Collection_08.jpg",
+      "commonsFilename": "Pleterje Collection 08.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3648,
+        5472
+      ],
+      "depiction": "portrait-identity-to-verify",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-05",
+      "subjectName": "Saint Philip",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Philip",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Sant_Felipe.jpg",
+      "commonsFilename": "Sant Felipe.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2215,
+        2953
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-05",
+      "subjectName": "Saint Philip",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Philip",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Simon_de_Vos_-_The_Martyrdom_of_St_Philip.jpg",
+      "commonsFilename": "Simon de Vos - The Martyrdom of St Philip.jpg",
+      "pixelsReportedByCommonsCategory": [
+        796,
+        651
+      ],
+      "depiction": "martyrdom-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-05",
+      "subjectName": "Saint Philip",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Philip",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Oberzell_Alte_Kirche_Apostel_Philipus_Thomas.jpg",
+      "commonsFilename": "Oberzell Alte Kirche Apostel Philipus Thomas.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1945,
+        2489
+      ],
+      "depiction": "group-portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-06",
+      "subjectName": "Saint Bartholomew",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Bartholomew_in_Italy",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Bartolomeo_Montagna_Madonna_in_trono_con_il_Bambino_tra_i_santi_Giovanni_Battista%2C_Bartolomeo%2C_Agostino_e_Sebastiano_e_tre_angeli_musici_Vicenza.jpg",
+      "commonsFilename": "Bartolomeo Montagna Madonna in trono con il Bambino tra i santi Giovanni Battista, Bartolomeo, Agostino e Sebastiano e tre angeli musici Vicenza.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3312,
+        4416
+      ],
+      "depiction": "secondary-saint-contextual",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-06",
+      "subjectName": "Saint Bartholomew",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Bartholomew_in_Italy",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:12_Lorenzo_Veneziano_a_saint-bartholomew-and-saint-anthony-the-abbot-_1368._Bologna%2C_Pinacoteca.jpg",
+      "commonsFilename": "12 Lorenzo Veneziano a saint-bartholomew-and-saint-anthony-the-abbot- 1368. Bologna, Pinacoteca.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1700,
+        1349
+      ],
+      "depiction": "group-portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-08",
+      "subjectName": "Saint Matthew",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Matthew",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jusepe_de_ribera%2C_san_matteo%2C_01.jpg",
+      "commonsFilename": "Jusepe de ribera, san matteo, 01.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3228,
+        4032
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-08",
+      "subjectName": "Saint Matthew",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Matthew",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_043.png",
+      "commonsFilename": "Guido Reni 043.png",
+      "pixelsReportedByCommonsCategory": [
+        2024,
+        2433
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-08",
+      "subjectName": "Saint Matthew",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Matthew",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P14_Matyrdom_of_St._Matthew_(1700).jpg",
+      "commonsFilename": "Michael Willman Opus Magnum 2019 P14 Matyrdom of St. Matthew (1700).jpg",
+      "pixelsReportedByCommonsCategory": [
+        3264,
+        3864
+      ],
+      "depiction": "martyrdom-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-08",
+      "subjectName": "Saint Matthew",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Matthew",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Matthew%2C_by_Valentin_de_Boulogne.jpg",
+      "commonsFilename": "Saint Matthew, by Valentin de Boulogne.jpg",
+      "pixelsReportedByCommonsCategory": [
+        9242,
+        7644
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-08",
+      "subjectName": "Saint Matthew",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Matthew",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:The_Calling_of_Saint_Matthew.jpg",
+      "commonsFilename": "The Calling of Saint Matthew.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4134,
+        5020
+      ],
+      "depiction": "scriptural-scene-original-identity-unverified",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-AP-08",
+      "subjectName": "Saint Matthew",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Matthew",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_-_The_Calling_of_St_Matthew_-_WGA22168.jpg",
+      "commonsFilename": "Hendrick ter Brugghen - The Calling of St Matthew - WGA22168.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1023,
+        830
+      ],
+      "depiction": "scriptural-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-EV-02",
+      "subjectName": "Saint Luke the Evangelist",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Luke_the_Evangelist",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Luke_the_Evangelist.jpg",
+      "commonsFilename": "Claude Vignon - Saint Luke the Evangelist.jpg",
+      "pixelsReportedByCommonsCategory": [
+        738,
+        900
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-EV-02",
+      "subjectName": "Saint Luke the Evangelist",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Luke_the_Evangelist",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg",
+      "commonsFilename": "Francisco de Zurbarán 046.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2495,
+        3051
+      ],
+      "depiction": "saint-life-scene-title-needs-file-verification",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-EV-02",
+      "subjectName": "Saint Luke the Evangelist",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Luke_the_Evangelist",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg",
+      "commonsFilename": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1100,
+        1364
+      ],
+      "depiction": "saint-life-scene-likely-same-original-as-other-Zurbaran",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-EV-02",
+      "subjectName": "Saint Luke the Evangelist",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Luke_the_Evangelist",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg",
+      "commonsFilename": "Luke the Evangelist, by Jan Jansz de Stomme.jpg",
+      "pixelsReportedByCommonsCategory": [
+        613,
+        799
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-EV-02",
+      "subjectName": "Saint Luke the Evangelist",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Luke_the_Evangelist",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Evangelistene_Matteus%2C_Lukas%2C_Johannes_og_Markus_malt_av_tr%C3%B8ndermaleren_Petter_Kontrafeier_(4543164398).jpg",
+      "commonsFilename": "Evangelistene Matteus, Lukas, Johannes og Markus malt av trøndermaleren Petter Kontrafeier (4543164398).jpg",
+      "pixelsReportedByCommonsCategory": [
+        4428,
+        2336
+      ],
+      "depiction": "group-portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-06",
+      "subjectName": "Saint Anthony of Padua",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Anthony_of_Padua_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "commonsFilename": "Aparición del Niño a San Antonio - Antonio del Castillo Saavedra.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3400,
+        4477
+      ],
+      "depiction": "mystical-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-06",
+      "subjectName": "Saint Anthony of Padua",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Anthony_of_Padua_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Apoteosis_de_san_Antonio_-_Juan_Carre%C3%B1o_de_Miranda_-_San_Antonio_de_los_Alemanes_(Madrid).jpg",
+      "commonsFilename": "Apoteosis de san Antonio - Juan Carreño de Miranda - San Antonio de los Alemanes (Madrid).jpg",
+      "pixelsReportedByCommonsCategory": [
+        3888,
+        5184
+      ],
+      "depiction": "saint-glorification-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-06",
+      "subjectName": "Saint Anthony of Padua",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Anthony_of_Padua_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:'Saint_Anthony_of_Padua_and_the_Christ_Child'_by_Francisco_Goya.jpg",
+      "commonsFilename": "'Saint Anthony of Padua and the Christ Child' by Francisco Goya.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2491,
+        3000
+      ],
+      "depiction": "mystical-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-06",
+      "subjectName": "Saint Anthony of Padua",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Anthony_of_Padua_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Herera_mozo_San_Antonio_de_Padua_1660-1670._Oleo_sobre_lienzo._105_x_104_cm._Museo_del_Prado.jpg",
+      "commonsFilename": "Herera mozo San Antonio de Padua 1660-1670. Oleo sobre lienzo. 105 x 104 cm. Museo del Prado.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1821,
+        2952
+      ],
+      "depiction": "portrait-or-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-06",
+      "subjectName": "Saint Anthony of Padua",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Anthony_of_Padua_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Pedro_obregon-san_antonio_de_padua-prado.jpg",
+      "commonsFilename": "Pedro obregon-san antonio de padua-prado.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2108,
+        2902
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-06",
+      "subjectName": "Saint Anthony of Padua",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Anthony_of_Padua_in_Italy",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cologna_Veneta%2C_chiesa_di_Santa_Maria_Nascente_-_Il_miracolo_della_mula.jpg",
+      "commonsFilename": "Cologna Veneta, chiesa di Santa Maria Nascente - Il miracolo della mula.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3328,
+        5528
+      ],
+      "depiction": "miracle-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-06",
+      "subjectName": "Saint Anthony of Padua",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Anthony_of_Padua_in_Italy",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Duomo_nuovo_San_Antonio_di_Padova_e_Bambino_Ges%C3%B9_Brescia.jpg",
+      "commonsFilename": "Duomo nuovo San Antonio di Padova e Bambino Gesù Brescia.jpg",
+      "pixelsReportedByCommonsCategory": [
+        7395,
+        13799
+      ],
+      "depiction": "saint-and-Christ-child-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-13",
+      "subjectName": "Saint Dominic",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Dominic_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Santo_Domingo_de_Guzman%2C_Museo_del_Prado%2C_Madrid.jpg",
+      "commonsFilename": "Ambrosius Benson - Santo Domingo de Guzman, Museo del Prado, Madrid.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1675,
+        3071
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-13",
+      "subjectName": "Saint Dominic",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Dominic_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
+      "commonsFilename": "Claudio coello-santo domingo.JPG",
+      "pixelsReportedByCommonsCategory": [
+        1908,
+        2969
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-13",
+      "subjectName": "Saint Dominic",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Dominic_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cristo_confortando_a_Santo_Domingo%2C_Alonso_Miguel_de_Tovar.jpg",
+      "commonsFilename": "Cristo confortando a Santo Domingo, Alonso Miguel de Tovar.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4427,
+        2490
+      ],
+      "depiction": "mystical-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-13",
+      "subjectName": "Saint Dominic",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Dominic_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Gaspar_de_Crayer_-_Saint_Dominic.jpg",
+      "commonsFilename": "Gaspar de Crayer - Saint Dominic.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1914,
+        2952
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-13",
+      "subjectName": "Saint Dominic",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Dominic_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Luis_Trist%C3%A1n_-_St_Dominic_in_Penitence_-_Google_Art_Project.jpg",
+      "commonsFilename": "Luis Tristán - St Dominic in Penitence - Google Art Project.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4069,
+        5121
+      ],
+      "depiction": "devotional-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-13",
+      "subjectName": "Saint Dominic",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Saint_Dominic_in_Spain",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Lactaci%C3%B3n_de_la_Virgen_a_Santo_Domingo%2C_Juan_Sim%C3%B3n_Guti%C3%A9rrez.jpg",
+      "commonsFilename": "Lactación de la Virgen a Santo Domingo, Juan Simón Gutiérrez.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4319,
+        2429
+      ],
+      "depiction": "mystical-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-14",
+      "subjectName": "Saint Benedict",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Benedict_of_Nursia",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francesco_solimena%2C_san_benedetto_accoglie_mauro_e_placido%2C_1697-1708_ca.jpg",
+      "commonsFilename": "Francesco solimena, san benedetto accoglie mauro e placido, 1697-1708 ca.jpg",
+      "pixelsReportedByCommonsCategory": [
+        6072,
+        4050
+      ],
+      "depiction": "saint-life-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-14",
+      "subjectName": "Saint Benedict",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Benedict_of_Nursia",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P59_Death_of_St._Benedict_(ca_1682).jpg",
+      "commonsFilename": "Michael Willman Opus Magnum 2019 P59 Death of St. Benedict (ca 1682).jpg",
+      "pixelsReportedByCommonsCategory": [
+        3024,
+        4476
+      ],
+      "depiction": "saint-death-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-14",
+      "subjectName": "Saint Benedict",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Benedict_of_Nursia",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Nicodemo_ferrucci%2C_san_benedetto%2C_1634_circa.jpg",
+      "commonsFilename": "Nicodemo ferrucci, san benedetto, 1634 circa.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2264,
+        4112
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-14",
+      "subjectName": "Saint Benedict",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Benedict_of_Nursia",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Benedict._Gouache_painting._Wellcome_V0031699.jpg",
+      "commonsFilename": "Saint Benedict. Gouache painting. Wellcome V0031699.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2244,
+        3439
+      ],
+      "depiction": "portrait-medium-held",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-14",
+      "subjectName": "Saint Benedict",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Benedict_of_Nursia",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_Monaco%2C_Saint_Benedict_admitting_Saints_into_the_Order%2C_1409%2C_London_NG.jpg",
+      "commonsFilename": "Lorenzo Monaco, Saint Benedict admitting Saints into the Order, 1409, London NG.jpg",
+      "pixelsReportedByCommonsCategory": [
+        5741,
+        4226
+      ],
+      "depiction": "saint-life-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-14",
+      "subjectName": "Saint Benedict",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Benedict_of_Nursia",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jean_Baptiste_de_Champaigne_(1631-1681)_(attributed_to)_-_Saint_Benedict_and_Saint_Scholastica_and_Two_Companions_in_a_Landscape_-_290251_-_National_Trust.jpg",
+      "commonsFilename": "Jean Baptiste de Champaigne (1631-1681) (attributed to) - Saint Benedict and Saint Scholastica and Two Companions in a Landscape - 290251 - National Trust.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1200,
+        871
+      ],
+      "depiction": "group-portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-15",
+      "subjectName": "Saint Francis Xavier",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_Xavier",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_de_Caro_-_St_Francis_Xavier.jpg",
+      "commonsFilename": "Lorenzo de Caro - St Francis Xavier.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2749,
+        3521
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-15",
+      "subjectName": "Saint Francis Xavier",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_Xavier",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_Saint_Francis_Xavier_-_Google_Art_Project.jpg",
+      "commonsFilename": "Miguel Cabrera - Saint Francis Xavier - Google Art Project.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1720,
+        2332
+      ],
+      "depiction": "portrait",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-15",
+      "subjectName": "Saint Francis Xavier",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_Xavier",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Interior_of_Chiesa_dei_Gesuiti_(Venice)_-_right_absidial_chapel_-_San_Francesco_Saverio_che_predica_in_Oriente_by_Pietro_Liberi.jpg",
+      "commonsFilename": "Interior of Chiesa dei Gesuiti (Venice) - right absidial chapel - San Francesco Saverio che predica in Oriente by Pietro Liberi.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4912,
+        7360
+      ],
+      "depiction": "missionary-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-15",
+      "subjectName": "Saint Francis Xavier",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_Xavier",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Painting_of_Francis_Xavier.jpg",
+      "commonsFilename": "Painting of Francis Xavier.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3648,
+        5472
+      ],
+      "depiction": "portrait-identity-unverified",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-15",
+      "subjectName": "Saint Francis Xavier",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_Xavier",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_St.Francis_Xaverius_in_the_Catholic_church_of_Qibao%2C_Hangzhou.jpg",
+      "commonsFilename": "Portrait of St.Francis Xaverius in the Catholic church of Qibao, Hangzhou.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4000,
+        6000
+      ],
+      "depiction": "portrait-photo-on-site",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-15",
+      "subjectName": "Saint Francis Xavier",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Francis_Xavier",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Preaching_St_Francis_Xavier_Carlone_Gesu_Rome.jpg",
+      "commonsFilename": "Preaching St Francis Xavier Carlone Gesu Rome.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3320,
+        1875
+      ],
+      "depiction": "missionary-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SNT-OT-02",
+      "subjectName": "Saint Michael Archangel",
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_Archangel_Michael_in_Italy",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Passignano%2C_miracolo_di_san_michele_e_il_bue_sul_gargano%2C_1601%2C_01.jpg",
+      "commonsFilename": "Passignano, miracolo di san michele e il bue sul gargano, 1601, 01.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1432,
+        2268
+      ],
+      "depiction": "apparition-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:PRESENTATION",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_presentation_of_Jesus_Christ_at_the_Temple",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:'The_Presentation_in_the_Temple'_by_David_Teniers_the_Younger.jpg",
+      "commonsFilename": "'The Presentation in the Temple' by David Teniers the Younger.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1594,
+        2000
+      ],
+      "depiction": "scriptural-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:PRESENTATION",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_presentation_of_Jesus_Christ_at_the_Temple",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Antiveduto_grammatica%2C_presentazione_di_ges%C3%B9_al_tmpio_da_s._agostino%2C_xvii_secolo_02.jpg",
+      "commonsFilename": "Antiveduto grammatica, presentazione di gesù al tmpio da s. agostino, xvii secolo 02.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3580,
+        2432
+      ],
+      "depiction": "scriptural-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:PRESENTATION",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_presentation_of_Jesus_Christ_at_the_Temple",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Anton_domenico_gabbiani%2C_presentazione_di_ges%C3%B9_al_tempio%2C_1709-19.jpg",
+      "commonsFilename": "Anton domenico gabbiani, presentazione di gesù al tempio, 1709-19.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2868,
+        3755
+      ],
+      "depiction": "scriptural-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:PRESENTATION",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_presentation_of_Jesus_Christ_at_the_Temple_in_Italy",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Andrea_pozzo_e_aiuti%2C_presentazione_di_ges%C3%B9_al_tempio%2C_1708_ca.%2C_da_s._francesco_saverio_a_trento.jpg",
+      "commonsFilename": "Andrea pozzo e aiuti, presentazione di gesù al tempio, 1708 ca., da s. francesco saverio a trento.jpg",
+      "pixelsReportedByCommonsCategory": [
+        2016,
+        2430
+      ],
+      "depiction": "scriptural-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:PRESENTATION",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_presentation_of_Jesus_Christ_at_the_Temple_in_Italy",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cesena_-_Pinacoteca_comunale_di_Cesena_-_Presentazione_di_Ges%C3%B9_al_tempio_e_purificazione_della_Vergine_(1510-13)_-_Francesco_Francia_-_2023-09-20_14-43-40_001.jpg",
+      "commonsFilename": "Cesena - Pinacoteca comunale di Cesena - Presentazione di Gesù al tempio e purificazione della Vergine (1510-13) - Francesco Francia - 2023-09-20 14-43-40 001.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3764,
+        5137
+      ],
+      "depiction": "scriptural-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:NATIVITY",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_nativity_of_Jesus_Christ",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:31885-Staatliche_Kunstsammlungen-1997-Carlo_Maratti-_Die_Heilige_Nacht-Br%C3%BCck_%26_Sohn_Kunstverlag.jpg",
+      "commonsFilename": "31885-Staatliche Kunstsammlungen-1997-Carlo Maratti- Die Heilige Nacht-Brück & Sohn Kunstverlag.jpg",
+      "pixelsReportedByCommonsCategory": [
+        4976,
+        3500
+      ],
+      "depiction": "scriptural-scene-scan-of-reproduction",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:NATIVITY",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_nativity_of_Jesus_Christ",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Adriaen_Isenbrant_-_Geboorte_van_Jezus_-_MMB.0035_-_Museum_Mayer_van_den_Bergh.tiff",
+      "commonsFilename": "Adriaen Isenbrant - Geboorte van Jezus - MMB.0035 - Museum Mayer van den Bergh.tiff",
+      "pixelsReportedByCommonsCategory": [
+        3433,
+        4090
+      ],
+      "depiction": "scriptural-scene",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "RESEARCH_DISCOVERY_ONLY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:NATIVITY",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_nativity_of_Jesus_Christ",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:The_Nativity_MET_DP207823.jpg",
+      "commonsFilename": "The Nativity MET DP207823.jpg",
+      "pixelsReportedByCommonsCategory": [
+        3909,
+        1710
+      ],
+      "depiction": "scriptural-scene-original-identity-unverified",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    },
+    {
+      "subjectKey": "SCRIPTURE:NATIVITY",
+      "subjectName": null,
+      "commonsCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_of_the_nativity_of_Jesus_Christ",
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Alnwick_Lanfranco_Bridgeman_507217.jpg",
+      "commonsFilename": "Alnwick Lanfranco Bridgeman 507217.jpg",
+      "pixelsReportedByCommonsCategory": [
+        1280,
+        888
+      ],
+      "depiction": "scriptural-scene-medium-resolution-hold",
+      "sourceTier": "CATEGORY_FILE_LISTING_NOT_INDIVIDUAL_FILE_AUDITED",
+      "originalObjectIdentity": "PENDING_MUSEUM_OR_CUSTODIAN",
+      "rightsState": "UNVERIFIED_FILE_AND_PHOTOGRAPH_RIGHTS",
+      "status": "HOLD_IMAGE_DIMENSIONS_OR_QUALITY",
+      "canonicalEventId": "NOT_YET_MAPPED_TO_EXISTING_ID",
+      "physicalOriginalDeduplication": "PENDING",
+      "masterSHA256": null,
+      "humanApproval": false
+    }
+  ]
+}
