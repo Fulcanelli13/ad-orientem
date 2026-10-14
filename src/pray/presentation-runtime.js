@@ -227,6 +227,10 @@ let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null};
 let SEVEN={step:0,sections:null,appendix:'',loading:false,error:'',srcToken:0,scriptToken:0};
 let FORTY={step:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false};
+// An explicitly selected public Stations method owns its local recitation/depth.
+// A shared Rosary or prayer-settings preference must not silently deactivate it.
+const stationReaderMode=()=>STATIONS.publicPosture?'guided':S.stations.mode;
+const stationRecitation=()=>STATIONS.publicPosture?'group':S.stations.recitation;
 let ANGELUS_CARD_INDEX=0,angelusOptionsOpen=false;
 let TEN={day:0,hour:'MATINS',step:0,face:'vernacular',model:null,loading:false,error:null,epoch:0};
 let lastStationsFxStep=null;
@@ -1683,7 +1687,7 @@ function stationFlip(la,vern,label){
  return `<article class="aoP435930Prayer aoP435930StationPrayer"><div class="aoP435930PrayerHead"><div><small>${esc(label||L('Pray','Prier'))}</small></div>${hasBoth?`<span>LA ↔ ${isFr()?'FR':'EN'}</span>`:''}</div>${hasBoth?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(la)}</span></button>`:`<div class="aoP435930Text">${nl(shown)}</div>`}</article>`
 }
 function stationResponse(vr){
- const la=vr.la||[],ve=vr[lang()]||vr.en||[],group=S.stations.recitation==='group';
+ const la=vr.la||[],ve=vr[lang()]||vr.en||[],group=stationRecitation()==='group';
  const line=(role,latin,vern)=>`<div class="aoP435930VRLine ${role}" data-role="${role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${role==='leader'?'versicle':'response'}">${role==='leader'?'℣.':'℟.'}</span><button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch response language','Changer la langue du répons'))}"><span data-face-v>${esc(String(vern||'').replace(/^[℣℟]\.\s*/,''))}</span><span data-face-la hidden>${esc(String(latin||'').replace(/^[℣℟]\.\s*/,''))}</span></button></div>`;
  return `<article class="aoP435930VR ${group?'group':'individual'}"><small>${esc(group?L('GROUP · VERSICLE & RESPONSE','GROUPE · VERSET & RÉPONS'):L('VERSICLE & RESPONSE','VERSET & RÉPONS'))}</small>${line('leader',la[0],ve[0])}${line('response',la[1],ve[1])}</article>`;
 }
@@ -1700,7 +1704,7 @@ function stationsFx(){
  return true;
 }
 function renderStations(){
- const i=Math.max(0,Math.min(13,STATIONS.step)),titles=STATION_DATA.stationTitles?.[lang()]||STATION_DATA.stationTitles?.en||[],a=STATION_DATA.alphonsus?.[lang()]||STATION_DATA.alphonsus?.en||[],ala=STATION_DATA.alphonsus?.la||[],vr=STATION_DATA.stationVR||{},title=titles[i]||L('Station','Station')+' '+(i+1),guided=S.stations.mode!=='simple';
+ const i=Math.max(0,Math.min(13,STATIONS.step)),titles=STATION_DATA.stationTitles?.[lang()]||STATION_DATA.stationTitles?.en||[],a=STATION_DATA.alphonsus?.[lang()]||STATION_DATA.alphonsus?.en||[],ala=STATION_DATA.alphonsus?.la||[],vr=STATION_DATA.stationVR||{},title=titles[i]||L('Station','Station')+' '+(i+1),guided=stationReaderMode()!=='simple';
  const consider=guided&&a[i]?.consider?`<section class="aoP435930StationConsider aoP435930HistoricalFocus"><small>${esc(L('CONSIDER','CONSIDÉREZ'))}</small><p>${esc(a[i].consider)}</p></section>`:'';
  const alph=guided&&a[i]?.prayer?stationFlip(ala[i]?.prayer||'',a[i].prayer,L('Prayer of St Alphonsus','Prière de saint Alphonse')):'';
  const stabat=(S.stations.stabat&&i<13)?stationFlip(STATION_DATA.stabat?.[i]||'',(isFr()?STATION_DATA.stabatFr:STATION_DATA.stabatEn)?.[i]||'',L('Stabat Mater · between stations','Stabat Mater · entre les stations')):'';
@@ -1711,7 +1715,7 @@ function renderStations(){
       'Récit évangélique éclairant cette méditation, sans prétendre que tous les détails soient bibliques'))+'</small></div>':'';
  const action=i===0?L('Begin the Way of the Cross. If you are physically moving between stations, face or approach the first station; otherwise recollect yourself before beginning.','Commencez le Chemin de Croix. Si vous vous déplacez physiquement entre les stations, tournez-vous vers la première station ou approchez-vous-en ; sinon recueillez-vous avant de commencer.'):L('Come to this station and become still before reading. Let the movement between stations end before you begin the text.','Arrivez à cette station et demeurez immobile avant de lire. Laissez s’achever le déplacement entre les stations avant de commencer.');
  const ordinary=guided?`<details class="aoP435930StationOrdinary"><summary>${esc(L('Traditional prayers · St Alphonsus method','Prières traditionnelles · méthode de saint Alphonse'))}</summary><p>${esc(L('Pray the Our Father, Hail Mary and Glory Be before moving on.','Récitez le Notre Père, le Je vous salue Marie et le Gloire au Père avant de poursuivre.'))}</p>${guidePrayers([{id:'foundations_our_father'},{id:'foundations_hail_mary'},{id:'foundations_glory_be'}])}</details>`:'';
- return `${head(L('Stations of the Cross','Chemin de Croix'),L('XIV Stations · St Alphonsus','XIV Stations · saint Alphonse'))}${stationRail(i)}<main class="aoP435930Body aoP435930Stations"><details class="aoP435930PrayerOptions" data-ao-stations-options ${STATIONS.optionsOpen?'open':''}><summary><span>${esc(L('Reading and recitation options','Options de lecture et de récitation'))}</span><small>${esc((S.stations.mode==='guided'?L('Guided','Guidé'):L('Simple','Simple'))+' · '+(S.stations.recitation==='group'?L('Group','Groupe'):L('Individual','Individuel'))+(S.stations.stabat?' · Stabat Mater':''))}</small></summary><div class="aoP435930PrayerOptionsBody"><div class="aoP435930ModeRow">${nav(L('Depth','Profondeur'),[['guided','Guided','Guidé'],['simple','Simple','Simple']],S.stations.mode)}${nav(L('Recitation','Récitation'),[['individual','Individual','Individuel'],['group','Group','Groupe']],S.stations.recitation)}</div><label class="aoP435930Toggle aoP435930StationPublicPosture"><input type="checkbox" data-p435930-station-public-posture ${STATIONS.publicPosture?'checked':''}><span><b>${esc(L('Traditional public Stations posture','Postures du Chemin de Croix public traditionnel'))}</b><small>${esc(L('Optional public method: genuflect at the versicle, stand during meditation, kneel for prayer. Source: Catholic Worship (1872).','Méthode publique facultative : génuflexion au verset, debout pendant la méditation, à genoux pour la prière. Source : Catholic Worship (1872).'))}</small></span></label><a href="${STATIONS_PUBLIC_POSTURE_SOURCE.url}" target="_blank" rel="noopener noreferrer" class="aoP435930SourceLink">${esc(L('Read the historical source','Lire la source historique'))}</a><label class="aoP435930Toggle aoP435930StationStabat"><input type="checkbox" data-p435930-station-stabat ${S.stations.stabat?'checked':''}><span><b>Stabat Mater</b><small>${esc(L('Include one stanza while moving between stations','Inclure une strophe pendant le déplacement entre les stations'))}</small></span></label>${devotionalGuide('stations')}</div></details><section class="aoDevoCard" data-ao-devo-card="station-${i+1}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / 14</small><h2 class="aoDevoCardTitle">${esc(title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${guideNow(title,action,L('Station '+(i+1)+' of 14','Station '+(i+1)+' sur 14'))}${stationResponse(vr)}${stationScripture}${consider}${alph}${ordinary}${stabat}${guideCue(i===13?L('FINISH','TERMINER'):L('MOVE TO THE NEXT STATION','ALLEZ À LA STATION SUIVANTE'),i===13?L('Remain briefly in silence after the Fourteenth Station.','Demeurez brièvement en silence après la quatorzième station.'):L('Move deliberately to the next station. If Stabat Mater is enabled, pray its stanza during the movement.','Allez délibérément à la station suivante. Si le Stabat Mater est activé, récitez sa strophe pendant le déplacement.'))}</div></section><div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-station-prev ${i===0?'disabled':''}>${esc(L('Previous station','Station précédente'))}</button><button type="button" class="aoP435930Primary" data-p435930-station-next>${esc(i===13?L('Finish devotion','Terminer la dévotion'):L('Next station','Station suivante'))}</button></div>${devotionalSource('St Alphonsus Liguori · traditional XIV Stations',L('Historical English printed method; French prayer rendering awaits independent comparison with a French edition.','Méthode conservée dans un livre anglais ancien ; le texte français reste à comparer avec une édition française.'),'stations')}</main>`
+ return `${head(L('Stations of the Cross','Chemin de Croix'),L('XIV Stations · St Alphonsus','XIV Stations · saint Alphonse'))}${stationRail(i)}<main class="aoP435930Body aoP435930Stations"><details class="aoP435930PrayerOptions" data-ao-stations-options ${STATIONS.optionsOpen?'open':''}><summary><span>${esc(L('Reading and recitation options','Options de lecture et de récitation'))}</span><small>${esc((stationReaderMode()==='guided'?L('Guided','Guidé'):L('Simple','Simple'))+' · '+(stationRecitation()==='group'?L('Group','Groupe'):L('Individual','Individuel'))+(S.stations.stabat?' · Stabat Mater':''))}</small></summary><div class="aoP435930PrayerOptionsBody"><div class="aoP435930ModeRow">${nav(L('Depth','Profondeur'),[['guided','Guided','Guidé'],['simple','Simple','Simple']],stationReaderMode())}${nav(L('Recitation','Récitation'),[['individual','Individual','Individuel'],['group','Group','Groupe']],stationRecitation())}</div><label class="aoP435930Toggle aoP435930StationPublicPosture"><input type="checkbox" data-p435930-station-public-posture ${STATIONS.publicPosture?'checked':''}><span><b>${esc(L('Traditional public Stations posture','Postures du Chemin de Croix public traditionnel'))}</b><small>${esc(L('Optional public method: genuflect at the versicle, stand during meditation, kneel for prayer. Source: Catholic Worship (1872).','Méthode publique facultative : génuflexion au verset, debout pendant la méditation, à genoux pour la prière. Source : Catholic Worship (1872).'))}</small></span></label><a href="${STATIONS_PUBLIC_POSTURE_SOURCE.url}" target="_blank" rel="noopener noreferrer" class="aoP435930SourceLink">${esc(L('Read the historical source','Lire la source historique'))}</a><label class="aoP435930Toggle aoP435930StationStabat"><input type="checkbox" data-p435930-station-stabat ${S.stations.stabat?'checked':''}><span><b>Stabat Mater</b><small>${esc(L('Include one stanza while moving between stations','Inclure une strophe pendant le déplacement entre les stations'))}</small></span></label>${devotionalGuide('stations')}</div></details><section class="aoDevoCard" data-ao-devo-card="station-${i+1}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / 14</small><h2 class="aoDevoCardTitle">${esc(title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${guideNow(title,action,L('Station '+(i+1)+' of 14','Station '+(i+1)+' sur 14'))}${stationResponse(vr)}${stationScripture}${consider}${alph}${ordinary}${stabat}${guideCue(i===13?L('FINISH','TERMINER'):L('MOVE TO THE NEXT STATION','ALLEZ À LA STATION SUIVANTE'),i===13?L('Remain briefly in silence after the Fourteenth Station.','Demeurez brièvement en silence après la quatorzième station.'):L('Move deliberately to the next station. If Stabat Mater is enabled, pray its stanza during the movement.','Allez délibérément à la station suivante. Si le Stabat Mater est activé, récitez sa strophe pendant le déplacement.'))}</div></section><div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-station-prev ${i===0?'disabled':''}>${esc(L('Previous station','Station précédente'))}</button><button type="button" class="aoP435930Primary" data-p435930-station-next>${esc(i===13?L('Finish devotion','Terminer la dévotion'):L('Next station','Station suivante'))}</button></div>${devotionalSource('St Alphonsus Liguori · traditional XIV Stations',L('Historical English printed method; French prayer rendering awaits independent comparison with a French edition.','Méthode conservée dans un livre anglais ancien ; le texte français reste à comparer avec une édition française.'),'stations')}</main>`
 }
 // Shared visual structure only. Scripture, historical texts, stage ownership
 // and completion/handoff remain with the original devotion modules.
@@ -2004,8 +2008,8 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     stationStep:view==='stations'?STATIONS.step:null,
     stationRitual:view==='stations'?certifiedPublicStationCue({
       stationStep:STATIONS.step,phase:'versicle',
-      enabled:STATIONS.publicPosture && S.stations.recitation==='group',
-      guided:S.stations.mode==='guided',
+      enabled:STATIONS.publicPosture,
+      guided:stationReaderMode()==='guided',
     }):null, // explicitly opening a public Station begins at its versicle
   });
   actionCinematics.sync(scene,{mount:m,language:lang(),sessionKey:view});
@@ -2146,17 +2150,11 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     // source paragraph, and actual user scroll may own a posture cinematic.
     const phase=stationPhaseOfFocusedParagraph(paragraph);
     const ritual=certifiedPublicStationCue({stationStep:STATIONS.step,phase,
-      enabled:STATIONS.publicPosture && S.stations.recitation==='group',
-      guided:S.stations.mode==='guided'});
+      enabled:STATIONS.publicPosture,
+      guided:stationReaderMode()==='guided'});
     const stationScene=resolveDevotionalActionScene({
       view:'stations',stationStep:STATIONS.step,stationRitual:ritual,
     });
-    if(window.__AO_STATIONS_DEBUG)console.log("STATION_RUNTIME_FOCUS",JSON.stringify({
-      phase,step:STATIONS.step,publicPosture:STATIONS.publicPosture,
-      recitation:S.stations.recitation,mode:S.stations.mode,
-      cue:ritual?.sourceCueId??null,scene:stationScene?.id??null,
-      active:paragraph?.className??null,
-    }));
     actionCinematics.sync(stationScene,{mount:m,language:lang(),sessionKey:'stations-public'});
    }
   });
@@ -2463,7 +2461,7 @@ function onChange(e){const x=e.target;
  if(x.matches('[data-p435930-station-stabat]')){S.stations.stabat=x.checked;save();return render()}
  if(x.matches('[data-p435930-station-public-posture]')){
   STATIONS.publicPosture=x.checked;
-  if(x.checked){S.stations.recitation='group';S.stations.mode='guided';save()}
+  // Effective public recitation and Guided depth are local to Stations.
   actionCinematics.reset();return render()
  }
  if(x.matches('[data-p435930-ff-intention]'))FF.intention=x.checked;
