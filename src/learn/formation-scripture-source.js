@@ -67,7 +67,7 @@ export function formationSourceScriptureContext(source){
  const reference=coordinates.book+" "+coordinates.chapter+":"+
   verses.start+(verses.end!==verses.start?"–"+verses.end:"");
  const parsed=parseScriptureContext(reference);
- if(!parsed||parsed.passage.book!==parsed.passage.book)return null;
+ if(!parsed)return null;
  return Object.freeze({reference,passage:parsed.passage,
    originalSourceUrl:String(source.url),
    state:"SOURCE_COORDINATES_ONLY_UNCOLLATED",
