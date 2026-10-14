@@ -6,7 +6,7 @@
 
 Rev. D. I. Lanslots, O.S.B., *Illustrated Explanation of the Prayers and Ceremonies of the Mass* (Benziger Brothers, 1897; preface by Archbishop F. Janssens). Original digitization: https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf ; underlying original: https://archive.org/details/illustratedexpla00lans . The Commons scan is 404 **PDF** pages, distinct from the **printed** page numbering used below.
 
-**Evidence-grade limitation:** Chapter headings and printed starting pages below are verified against the indexed *Contents* of the original volume. Several specific passages are verified against publicly indexed OCR excerpts; others are editorial search targets only. The 29 MB original PDF and complete OCR could not be fetched via the available reader for a consecutive, full-book verification; **do not state that all 25 chapters were read, all Scripture references extracted, or the bibliography exhaustively collated**. Original print pages must be checked visually before publication and in every case involving OCR uncertainty. There are no alterations to prayer text, the 1962 Missal, posture/minister cues, or native reader.
+**Evidence-grade limitation:** Chapter headings and printed starting pages below were carried from the earlier source-index research pass; they have **not been independently rechecked against all original contents-page images in this pass**, and remain a provisional structural map. Several specific passages are verified against publicly indexed OCR excerpts; others are editorial search targets only. The 29 MB original PDF and complete OCR could not be fetched via the available reader for a consecutive, full-book verification; **do not state that all 25 chapters were read, all Scripture references extracted, or the bibliography exhaustively collated**. Original print pages must be checked visually before publication and in every case involving OCR uncertainty. There are no alterations to prayer text, the 1962 Missal, posture/minister cues, or native reader.
 
 ## Canonical owner reconciliation
 
@@ -16,7 +16,7 @@ Rev. D. I. Lanslots, O.S.B., *Illustrated Explanation of the Prayers and Ceremon
 - `src/scripture/context.js`: single reference parser and shared Scripture owner; respects Catholic book names and Psalm numbering. No second Bible-text store; source/passage lookup must preserve card and reading position.
 - `docs/research/MASS-RESEARCH-ARCHIVE-INDEX-20261013.md`: retains Guéranger first/second pass, September evidence, 1962 normative witnesses and the Guéranger-vs-1962 correction register. Lanslots complements, never supersedes, those sources.
 
-## Full 25-chapter structural inventory (verified TOC; not certified full-text extraction)
+## Full 25-chapter structural inventory (provisional TOC transcription; not certified full-text extraction)
 
 Each `AO.CARD` designation here is a **topic-level bridge to existing 30 macro Guides**, not a final link to any of the 48 rendered moments. The eventual presentation mapping must be resolved via canonical per-card source and section IDs.
 
@@ -80,10 +80,14 @@ Use two evidence categories: **OCR_EXCERPT_REVIEWED** = the author's statement a
 6. Do not add contemporary or postconciliar Missal source links as if they explain 1962 mechanics. No implication that a common linked source is independent proof of each specific claim.
 7. Source display: title / author / 1897 / chapter / printed page / exact assertion / original scan link / Scripture book-chapter-verse / interpretation type / 1962 applicability / source status / bilingual reviewed text.
 
+## Companion differential screening (15 candidates)
+
+See [machine-readable 15-item differential](../../data/research/mass-lanslots-1897-claim-differential.v1.json). Its cross-reference IDs have been validated against the 422-row historical evidence snapshot, original-French FRG01–30 audit and 41 FRG31–71 entries. At least five candidates are already covered and should only gain another historical witness, not another explanation. The chapter and OCR page hints remain unapproved until visually verified; **none of these rows is ready for publication.**
+
 ## Integration disposition
 
 - **Documented now:** complete 25-chapter indexed structure; provisional connections to all 30 ordinary Mass macro moments and relevant pre-/post-Mass contexts; 15 candidate source-passage work items graded by evidence; source/authority separation and existing owner mapping.
-- **Not completed:** consecutive 404-PDF-page visual verification; full Scripture-citation extraction; item-by-item duplicate check against every original 422-record September evidence entry and 71 Guéranger topics; mapping to individual **48** LIVE card IDs; native French theological review and runtime/mobile integration.
+- **Not completed:** consecutive 404-PDF-page visual verification; full Scripture-citation extraction; complete claim-by-claim duplicate check against the original 422-record September evidence entries and all 71 Guéranger topics (a 15-item differential screening has now been added separately); mapping to individual **48** LIVE card IDs; native French theological review and runtime/mobile integration.
 - **Do not publish this ledger as new user-facing content.** Next research gate: acquire readable full OCR plus page images, mechanically extract all biblical citations and Mass-text phrases, classify them, then deduplicate at the *claim* level against existing records before any product change.
 - **No source or test assertions run by this documentation-only pass; no Mass reader modification.**
 
