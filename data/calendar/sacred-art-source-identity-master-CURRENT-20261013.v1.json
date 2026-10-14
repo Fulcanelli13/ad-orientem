@@ -26,15 +26,14 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Prioritize user's no-rating two-physical-original source requirement, measured against latest Oct13 file: 64/75 existing selected major Saints, Doctors, Apostles, Evangelists source-linked with at least TWO distinct research paintings; 11 remaining Doctor shortages in latest v4 matrix, 3 without suitable identified oils.",
-    "Matrix / correct owner: data/calendar/sacred-art-two-options-matrix-wave29-20261014.v4.json. Each subject retains status/sourceURL/artist, 0–2 exclusions, context-vs-portrait, photo-rights, qualified uncertainty; do not count derivative prints or same physical object twice.",
-    "High-priority Doctor shortages: Athanasius, Gregory Nazianzen, Isidore of Seville, Bede, Peter Damian, Albert, Bellarmine, Canisius, Cyril of Alexandria, Cyril of Jerusalem, Ephrem. Treat 3 Cyril/Ephrem source voids seriously but do not fabricate naturalistic portraits or permit copy after excluded El Greco.",
-    "Do NOT link saint Patrick to Saint Louis image W10-009; W27 RDS oil of Patrick lighting Paschal fire is valid separate narrative; Barry NGI4623 distinct.",
-    "Do NOT link Mary of Egypt and Zosimas 5/5 MET-437977 to Saint Jerome; user score survives for the actual painting, inaccurate subject join removed.",
-    "Do NOT duplicate St Matthias Rubens original through historical ART id and Prado W05-008; new original Sebastiàn Martínez Domedel Prado P007531 is distinct.",
-    "Do NOT duplicate 1925 Céline Thérèse, Juan Ribalta Mark/Luke shared original, Ribera Saint Jude alias or Jean-Baptiste de Champaigne Saint Lawrence originally selected and NGA modern entry.",
-    "Existing user Oct13 rankings and scores immutable. Research 2-option coverage ≠ human-approved, correctly licensed, source-JPEG-downloaded or publication-complete. No further score panels needed until user asks.",
-    "Before any commercial use secure museum/repro permissions and original SHA/pixel dimensions. Preserve prior 222 W01–15 source leads, 8 verified new masters and 214 pending as separate from W25–W29 source dossiers. PR #887 remains draft and unmerged."
+    "Source research W30 completed: 71/75 historical subjects have 2 distinct painting-candidate object records (Apostles 13/13, Evangelists 2/2, major selected saints 32/32, Doctors 24/28); NOT art-approved, quality-vetted, rights-cleared or JPEG-acquired.",
+    "Only FOUR Doctors below two: Bede the Venerable 1/2, Cyril of Alexandria 0/2 [institutionally inscribed oil on identity hold pending comparison with known Carmelite Cyrils], Cyril of Jerusalem 0/2 [Carmelite 1637 fresco label 'Jerusalem' potentially Cyril of Constantinople], and Ephrem the Syrian 1/2 [Ambrosiana Franchi inscribed 66 x 51.5 cm oil]. See W30 identity-hold register.",
+    "Retain official catalogue physical source links: Athanasius Franchi Ambrosiana, Gregory Nazianzen Garzi Roman oil and Franchi Ambrosiana, Peter Damian Pianoro & Visciano oils, Albert Uffizi Dell'Altissimo historic derivative oil and Voltaggio copper scene, Bellarmine c1621 Roman school portrait, Canisius Wuilleret c1635 Fribourg oil, University of Barcelona Baixeras Isidore oil sketch.",
+    "Do not promote partial murals/prints/tempera icons/stained glass as equivalent to desired naturalistic oil paintings. The Loano 0700018145 Cyril Alexandria canvas inscribed EPISC ALEX is a promising original but historically Carmelite iconographic conflation requires physical illustration comparison; pause numeric coverage.",
+    "Source group scenes (Tiarini Athanasius, Tiepolo Bellarmine low quality, university Isidore in council, Albert with Aquinas) are contextual not dedicated portraits. Do not say 2 excellent portraits per Doctor.",
+    "Search next for true second Bede painted original, correct Cyrils and additional Ephrem, but record credible 'unavailable' exception rather than fabricate, and do not expand all-saints target.",
+    "Do not ask user to rate now. Preserve 277 Oct13 scores, 0–2 bans, and old picks. Old 222 W01–W15 queue / 8 SHA verified masters / 214 pending unchanged until actual photo acquisition.",
+    "PR #887 remains DRAFT, branch isolated; no production artwork or authorisation changes."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -208,24 +207,29 @@
     ],
     "wave24ClevelandPhysicalOriginal": "cma-150955",
     "user20261014CurrentInstruction": "No ratings now; obtain at least TWO different relevant original source paintings where possible for EVERY existing Doctor, Apostle, Evangelist and selected major superstar saint; don't expand to all saints or weaker substitutes.",
-    "twoOptionSourceMatrix": "data/calendar/sacred-art-two-options-matrix-wave29-20261014.v4.json",
+    "twoOptionSourceMatrix": "data/calendar/sacred-art-two-options-matrix-wave30-20261014.v5.json",
     "twoOptionBase": "data/calendar/sacred-art-two-options-user-baseline-75-20261014.v1.json",
     "twoOptionResearchWaveDossiers": [
       "data/calendar/sacred-art-two-option-source-original-wave25-20261014.v1.json",
       "data/calendar/sacred-art-two-option-source-original-wave26-20261014.v1.json",
       "data/calendar/sacred-art-two-option-source-original-wave27-20261014.v1.json",
       "data/calendar/sacred-art-two-option-source-original-wave28-20261014.v1.json",
-      "data/calendar/sacred-art-two-option-source-original-wave29-20261014.v1.json"
+      "data/calendar/sacred-art-two-option-source-original-wave29-20261014.v1.json",
+      "data/calendar/sacred-art-doctor-two-options-source-wave30-20261014.v1.json"
     ],
-    "twoOptionSubjectsAtLeast2ResearchRecords": 64,
+    "twoOptionSubjectsAtLeast2ResearchRecords": 71,
     "twoOptionSubjectsTotal": 75,
-    "twoOptionDoctorsBelowTwo": 11,
+    "twoOptionDoctorsBelowTwo": 4,
     "twoOptionApostlesCovered": 13,
     "twoOptionEvangelistsCovered": 2,
     "twoOptionOtherMajorSaintsCovered": 32,
     "twoOptionScoreImageReleaseCoverageUnknown": true,
     "noFurtherHumanScoringRequested": true,
     "noNewRequiredSaintSubjects": true,
-    "twoOptionNewSHAVerifiedImages": 0
+    "twoOptionNewSHAVerifiedImages": 0,
+    "twoOptionDoctorsAtLeastTwoResearchOriginals": 24,
+    "twoOptionW30OriginalObjectRecords": 14,
+    "twoOptionW30RecordsCounted": 12,
+    "twoOptionW30IdentityOrQualityHolds": 2
   }
 }
