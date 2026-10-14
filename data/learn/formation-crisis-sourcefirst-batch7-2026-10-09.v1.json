@@ -13,30 +13,42 @@
         {
           "role": "answer",
           "text": {
-            "en": "Catholic moral theology faced methodological disputes before 1962: how to integrate law, conscience, virtue and pastoral judgement without reducing morality to a list of cases. The Council did not invent every later difficulty, but neither did older manuals guarantee perfect moral formation. The historical claims demand comparisons of texts and actual seminary practice.",
-            "fr": "La théologie morale catholique connut avant 1962 des disputes de méthode sur loi, conscience, vertu et jugement pastoral, sans réduire la morale à des cas énumérés. Le Concile n'inventa pas toutes les difficultés ultérieures, mais les anciens manuels ne garantissaient pas non plus une formation parfaite. L'histoire exige de comparer textes et pratiques réelles des séminaires."
+            "en": "Catholic moral theology faced methodological disputes before 1962: how to integrate law, conscience, virtue and pastoral judgement without reducing morality to a list of cases. The Council did not invent every later difficulty, but neither did older manuals guarantee perfect moral formation. The historical claims demand comparisons of texts and actual seminary practice.\n\nThe debate over Catholic moral methodology demonstrably predates the Second Vatican Council. On 18 April 1952, Pius XII publicly criticised what he called 'situation ethics': accounts in which a concrete decision of conscience no longer receives the governing force of universal moral law. This is a dated, first-party preconciliar witness, not a judgment inferred from the subsequent disputes of 1968 or 1971. The broader renewal of moral theology also had preconciliar strands, including Bernard Häring's *The Law of Christ* (1954), though the complete book has not been collated in this audit.",
+            "fr": "La théologie morale catholique connut avant 1962 des disputes de méthode sur loi, conscience, vertu et jugement pastoral, sans réduire la morale à des cas énumérés. Le Concile n'inventa pas toutes les difficultés ultérieures, mais les anciens manuels ne garantissaient pas non plus une formation parfaite. L'histoire exige de comparer textes et pratiques réelles des séminaires.\n\nLa controverse sur les méthodes de théologie morale est clairement antérieure au concile Vatican II. Le 18 avril 1952, Pie XII critiqua publiquement ce qu'il appelait la « morale de situation » : des conceptions dans lesquelles la décision concrète de la conscience ne se laisse plus guider par la loi morale universelle. Il s'agit d'un témoignage préconciliaire précis, et non d'une conclusion tirée des débats ultérieurs de 1968 ou 1971. Le renouveau de la théologie morale avait aussi commencé avant le Concile, notamment avec *La Loi du Christ* de Bernhard Häring (1954), dont l'ouvrage intégral n'a toutefois pas été collationné dans cet audit."
           },
           "source_ids": [
             "GS65",
-            "VS93"
+            "VS93",
+            "INT_CR_MOR_01_1",
+            "INT_CR_MOR_01_2"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "INT_CR_MOR_01_1": "Sections « La morale de situation » / « Les obligations fondamentales de la loi morale »",
+            "INT_CR_MOR_01_2": "Siker, historical chapter abstract, publication of The Law of Christ in 1954; secondary history only"
+          }
         },
         {
           "role": "documented_position",
           "text": {
-            "en": "In his own 1971 article, Josef Fuchs disputes whether the universality attributed to particular behavioural norms takes sufficient account of historical setting and the concrete moral act; he does not deny the need for objective moral judgment. The later Veritatis splendor explicitly corrects accounts that dissolve exceptionless moral prohibitions into comparisons of premoral goods. These first-person texts show a real debate within Catholic moral theology rather than a generic postconciliar abandonment of all rules.",
-            "fr": "Dans son article personnel de 1971, Josef Fuchs se demande si l'universalité attribuée à certaines normes de conduite tient suffisamment compte de l'histoire et de l'acte concret ; il ne nie pas la nécessité d'un jugement moral objectif. Veritatis splendor corrige ensuite les doctrines dissolvant les interdits moraux absolus dans le bilan de biens prémoraux. Ces textes de première main montrent une véritable dispute catholique, non un abandon général de toute règle après le Concile."
+            "en": "In his own 1971 article, Josef Fuchs disputes whether the universality attributed to particular behavioural norms takes sufficient account of historical setting and the concrete moral act; he does not deny the need for objective moral judgment. The later Veritatis splendor explicitly corrects accounts that dissolve exceptionless moral prohibitions into comparisons of premoral goods. These first-person texts show a real debate within Catholic moral theology rather than a generic postconciliar abandonment of all rules.\n\nPius XII's April 1952 address records his own criticism of moral approaches that make the concrete situation the decisive rule instead of universal negative precepts. His presentation describes these views from an official critic's perspective, not the verified words of a named supporter. To establish a full adversarial history, the original articles of preconciliar proponents and the 1954 Häring text must be reviewed on their own terms; Josef Fuchs's 1971 article cannot supply evidence of what an individual author wrote before 1962.",
+            "fr": "Dans son article personnel de 1971, Josef Fuchs se demande si l'universalité attribuée à certaines normes de conduite tient suffisamment compte de l'histoire et de l'acte concret ; il ne nie pas la nécessité d'un jugement moral objectif. Veritatis splendor corrige ensuite les doctrines dissolvant les interdits moraux absolus dans le bilan de biens prémoraux. Ces textes de première main montrent une véritable dispute catholique, non un abandon général de toute règle après le Concile.\n\nLe discours d'avril 1952 expose la critique de Pie XII contre des approches qui feraient de la situation concrète la règle déterminante, au détriment des préceptes moraux négatifs universels. Il décrit ces positions du point de vue d'une autorité qui les critique, et non dans les termes directement vérifiés d'un défenseur nommé. Pour établir l'histoire contradictoire complète, il faudra examiner les écrits originaux des auteurs d'avant 1962 ainsi que l'ouvrage de Häring de 1954 ; l'article de Josef Fuchs paru en 1971 ne prouve pas ce qu'un auteur aurait soutenu avant le Concile."
           },
           "source_ids": [
             "FUCHS71-FIRSTPERSON-REPRINT",
-            "VS93"
+            "VS93",
+            "INT_CR_MOR_01_1",
+            "INT_CR_MOR_01_2"
           ],
           "attribution": "Josef Fuchs, 1971 authored article and John Paul II, 1993 Veritatis splendor §§75–83",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "INT_CR_MOR_01_1": "1952 address, « La morale de situation »",
+            "INT_CR_MOR_01_2": "scholarly book abstract, preconciliar historical attribution, full text not accessed"
+          }
         },
         {
           "role": "critical_response",
@@ -70,7 +82,10 @@
       "original_claim_by_claim_source_context_certified": false,
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
-      "publication_allowed": false
+      "publication_allowed": false,
+      "integration_status": "CORRECTION_STAGED_WITH_SOURCE_LINKS_UNPUBLISHED",
+      "correction_overlay": "data/learn/formation-33-marriage-moral-editorial-overlays-20261014.v1.json",
+      "preintegration_archive": "data/learn/formation-preintegration-21-church-crisis-originals-20261014.v1.json"
     },
     {
       "id": "CR-MOR-02",
@@ -367,8 +382,8 @@
         {
           "role": "answer",
           "text": {
-            "en": "A person's fundamental orientation toward God matters to spiritual life, yet a knowingly and freely chosen grave act can destroy charity even without an explicit declaration of hatred toward God. Mortal sin requires grave matter, knowledge and deliberate consent. Reducing it to one ultimate formal rejection would obscure concrete moral responsibility.",
-            "fr": "L'orientation fondamentale de la personne vers Dieu importe à la vie spirituelle, mais un acte grave librement et consciemment choisi peut détruire la charité sans déclaration explicite de haine envers Dieu. Le péché mortel exige matière grave, connaissance et consentement. Le réduire à un rejet formel ultime masquerait la responsabilité concrète."
+            "en": "A person's fundamental orientation toward God matters to spiritual life, yet a knowingly and freely chosen grave act can destroy charity even without an explicit declaration of hatred toward God. Mortal sin requires grave matter, knowledge and deliberate consent. Reducing it to one ultimate formal rejection would obscure concrete moral responsibility.\n\nA person's fundamental orientation toward God is of real spiritual importance, but it does not nullify responsibility for freely chosen grave acts. *Reconciliatio et paenitentia* §17 and *Veritatis splendor* §§65–70 teach that a gravely wrong action committed with sufficient knowledge and deliberate consent may constitute mortal sin without a separate explicit act of rejecting God. The subjective conditions of culpability must still be assessed, and they cannot be presumed from the outward action alone.",
+            "fr": "L'orientation fondamentale de la personne vers Dieu importe à la vie spirituelle, mais un acte grave librement et consciemment choisi peut détruire la charité sans déclaration explicite de haine envers Dieu. Le péché mortel exige matière grave, connaissance et consentement. Le réduire à un rejet formel ultime masquerait la responsabilité concrète.\n\nL'orientation fondamentale d'une personne vers Dieu possède une véritable importance spirituelle, mais elle n'annule pas la responsabilité des actes gravement mauvais librement choisis. *Reconciliatio et paenitentia* (§17) et *Veritatis splendor* (§§65–70) enseignent qu'un acte grave commis avec connaissance suffisante et consentement délibéré peut constituer un péché mortel sans un acte distinct de rejet explicite de Dieu. Il faut néanmoins considérer les conditions subjectives de culpabilité, qu'on ne peut déduire automatiquement du seul acte extérieur."
           },
           "source_ids": [
             "RP84",
@@ -376,13 +391,17 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "RP84": "§17",
+            "VS93": "§§65–70"
+          }
         },
         {
           "role": "documented_position",
           "text": {
-            "en": "Josef Fuchs's own 1971 essay, The Absoluteness of Moral Terms, questions whether an action type described abstractly, without its full concrete intention and circumstances, can always be judged by the same absolute negative norm. This concern later intersects with some accounts of a person's fundamental option, but Fuchs's specific argument should not be simplified into the claim that every sinful act becomes harmless whenever a person generally desires God. The sharper question is whether the chosen object's moral character can be determined apart from the overall situation; John Paul II's Reconciliatio et paenitentia §17 rejects a different, strong thesis that mortal sin requires only an explicit total rejection of God.",
-            "fr": "Dans son essai de 1971, The Absoluteness of Moral Terms, Josef Fuchs se demande si un type d'acte décrit abstraitement, sans toute son intention et ses circonstances concrètes, relève toujours de la même norme négative absolue. Cette préoccupation recoupe ensuite certains modèles de l'option fondamentale, mais l'argument de Fuchs ne saurait être réduit à l'affirmation que tout acte coupable deviendrait inoffensif dès lors qu'une personne désire globalement Dieu. La question plus précise est de savoir si l'objet moral choisi peut être déterminé indépendamment de la situation entière ; dans Reconciliatio et paenitentia, §17, Jean-Paul II rejette une thèse plus forte exigeant un refus total explicite de Dieu pour qu'il y ait péché mortel."
+            "en": "Josef Fuchs's own 1971 essay, The Absoluteness of Moral Terms, questions whether an action type described abstractly, without its full concrete intention and circumstances, can always be judged by the same absolute negative norm. This concern later intersects with some accounts of a person's fundamental option, but Fuchs's specific argument should not be simplified into the claim that every sinful act becomes harmless whenever a person generally desires God. The sharper question is whether the chosen object's moral character can be determined apart from the overall situation; John Paul II's Reconciliatio et paenitentia §17 rejects a different, strong thesis that mortal sin requires only an explicit total rejection of God.\n\n*Veritatis splendor* §§65–70 presents and criticises theories that so separate a person's fundamental choice from particular acts that particular grave choices would not, as such, change that person's relation to God. This is an identifiable magisterial description of the disputed thesis, not a first-person statement by Josef Fuchs. Fuchs's 1971 argument about the moral specification of concrete actions is related but not identical. Attribution of the stronger fundamental-option thesis to a named advocate remains unresolved until an original text can be quoted in context.",
+            "fr": "Dans son essai de 1971, The Absoluteness of Moral Terms, Josef Fuchs se demande si un type d'acte décrit abstraitement, sans toute son intention et ses circonstances concrètes, relève toujours de la même norme négative absolue. Cette préoccupation recoupe ensuite certains modèles de l'option fondamentale, mais l'argument de Fuchs ne saurait être réduit à l'affirmation que tout acte coupable deviendrait inoffensif dès lors qu'une personne désire globalement Dieu. La question plus précise est de savoir si l'objet moral choisi peut être déterminé indépendamment de la situation entière ; dans Reconciliatio et paenitentia, §17, Jean-Paul II rejette une thèse plus forte exigeant un refus total explicite de Dieu pour qu'il y ait péché mortel.\n\n*Veritatis splendor* (§§65–70) expose et critique des théories séparant à tel point l'option fondamentale des actes particuliers que des choix concrètement graves ne modifieraient pas, en eux-mêmes, le rapport de la personne à Dieu. Il s'agit d'une présentation magistérielle identifiable de la thèse contestée, non d'une prise de position personnelle vérifiée de Josef Fuchs. L'argument de Fuchs publié en 1971 sur la qualification morale des actes concrets est apparenté, mais n'est pas identique. L'attribution de la thèse plus forte à un auteur déterminé reste à établir par son propre texte intégral."
           },
           "source_ids": [
             "RP84",
@@ -393,7 +412,9 @@
           "original_context_approved": false,
           "french_final_approved": false,
           "source_claim_locators": {
-            "FUCHS71-FIRSTPERSON-REPRINT": "Original Fuchs 1971 argument on moral specificity and context; not automatic identity with all fundamental-option theories"
+            "FUCHS71-FIRSTPERSON-REPRINT": "Original Fuchs 1971 argument on moral specificity and context; not automatic identity with all fundamental-option theories",
+            "VS93": "§§65–70",
+            "RP84": "§17"
           }
         },
         {
@@ -432,7 +453,10 @@
       "original_claim_by_claim_source_context_certified": false,
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
-      "publication_allowed": false
+      "publication_allowed": false,
+      "integration_status": "CORRECTION_STAGED_WITH_SOURCE_LINKS_UNPUBLISHED",
+      "correction_overlay": "data/learn/formation-33-marriage-moral-editorial-overlays-20261014.v1.json",
+      "preintegration_archive": "data/learn/formation-preintegration-21-church-crisis-originals-20261014.v1.json"
     },
     {
       "id": "CR-MOR-07",
@@ -888,6 +912,22 @@
       "locator": "Q1–Q5, unique subsistence, Eastern Churches with apostolic succession, Reformation ecclesial communities",
       "original_context_approved": false,
       "original_passage_status": "direct_issuer_document_editorially_inspected_not_independently_approved"
+    },
+    {
+      "id": "INT_CR_MOR_01_1",
+      "title": "Sections « La morale de situation » / « Les obligations fondamentales de la loi morale »",
+      "url": "https://www.vatican.va/content/pius-xii/fr/speeches/1952/documents/hf_p-xii_spe_19520418_soyez-bienvenues.html",
+      "locator": "Sections « La morale de situation » / « Les obligations fondamentales de la loi morale »",
+      "provenance": "data/learn/formation-33-marriage-moral-editorial-overlays-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_MOR_01_2",
+      "title": "Siker, historical chapter abstract, publication of The Law of Christ in 1954; secondary history only",
+      "url": "https://academic.oup.com/book/50107/chapter-abstract/422700434",
+      "locator": "Siker, historical chapter abstract, publication of The Law of Christ in 1954; secondary history only",
+      "provenance": "data/learn/formation-33-marriage-moral-editorial-overlays-20261014.v1.json",
+      "original_context_approved": false
     }
   ],
   "metrics": {
