@@ -1,11 +1,17 @@
 {
   "schema": "ao-mass-icon-harmonization-source-resolutions-v1",
   "date": "2026-10-14",
-  "status": "DRAFT_ONLY_NO_RUNTIME_CHANGES",
+  "status": "DRAFT_SOURCE_CHECKED_MINIMAL_FAMILY_POLICY_ATTACHED_NO_RUNTIME_CHANGES",
   "review": {
     "file": "Ad_Orientem_Full_Mass_Icon_Review_2026-10-14.json",
     "sha256": "edbde2bf608646cd258351274b6e545d42d88952b393c40c66492800684bc4a0",
-    "hardDiscardRatingLessThan": 3
+    "hardDiscardRatingLessThan": 3,
+    "ratingSemantics": {
+      "3": "RESEARCH_ONLY",
+      "4": "REQUIRES_USER_REVIEW",
+      "5": "AUTO_CONFIRMED_AND_SELECTED",
+      "0-2": "REJECT_PERMANENTLY_ORIGINAL"
+    }
   },
   "counts": {
     "records": 90,
@@ -98,7 +104,15 @@
       "userRating": 3,
       "actor": "PRIEST",
       "visualApproval": "PENDING",
-      "runtimeChange": false
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "REUSE_AND_TEXT",
+        "sceneSpecification": "One minimalist priest centre silhouette only; add precise eyes-up rubric. Do not depict raised hands.",
+        "forbid": "N/A — no new drawing for tiny eye shift.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
     },
     {
       "id": "A05",
@@ -113,7 +127,15 @@
       "userRating": 3,
       "actor": "PRIEST",
       "visualApproval": "PENDING",
-      "runtimeChange": false
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "RESEARCH_THEN_MINIMAL_GESTURE",
+        "sceneSpecification": "If picture needed, minimalist priest with two joined hands near face and gaze toward the Sacrament, not a Canon scene.",
+        "forbid": "No portrait-level gaze details, no engraved altar.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
     },
     {
       "id": "B05",
@@ -128,7 +150,15 @@
       "userRating": 3,
       "actor": "PRIEST",
       "visualApproval": "PENDING",
-      "runtimeChange": false
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "SHARED_MINIMAL_LAVABO",
+        "sceneSpecification": "If visual needed, separate hands/water over ewer, not an entire embroidered priest scene; same master reused for S_other_lavabo.",
+        "forbid": "No complete decorated sanctuary; no post-Communion ablution substitution.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
     },
     {
       "id": "B06",
@@ -143,7 +173,15 @@
       "userRating": 3,
       "actor": "PRIEST",
       "visualApproval": "PENDING",
-      "runtimeChange": false
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "STATION_REUSE_PLUS_TEXT",
+        "sceneSpecification": "Existing simple priest centre icon and short placement rubric; no special vessel drawing.",
+        "forbid": "No ornament or depicted chalice elevation.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
     },
     {
       "id": "B07",
@@ -159,7 +197,15 @@
       "userRating": 3,
       "actor": "PRIEST",
       "visualApproval": "PENDING",
-      "runtimeChange": false
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "STATION_REUSE_PLUS_TEXT",
+        "sceneSpecification": "Existing general station/Canon cue and explicitly source-owned pall action label, appropriate actor and form.",
+        "forbid": "No multi-person full sanctuary scene for microaction.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
     },
     {
       "id": "B09",
@@ -174,7 +220,15 @@
       "userRating": 3,
       "actor": "PRIEST",
       "visualApproval": "PENDING",
-      "runtimeChange": false
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "STATION_REUSE_PLUS_TEXT",
+        "sceneSpecification": "Retain major elevation only at elevation moment. After it, minimal priest cue plus text 'Replaces Host' and then 'Genuflects'.",
+        "forbid": "No repeated raised-Host picture pretending to show descent.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
     },
     {
       "id": "S_priest_epistle",
@@ -193,7 +247,15 @@
       "userRating": 3,
       "actor": "PRIEST",
       "visualApproval": "PENDING",
-      "runtimeChange": false
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "CONDITIONAL_EXISTING_SWAP",
+        "sceneSpecification": "Use opposite existing pictorial master provisionally; validate priest and Missal appear on congregation's right before approval.",
+        "forbid": "No asset mirroring, ornate redraw or alteration of station identity.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
     },
     {
       "id": "S_priest_gospel",
@@ -209,7 +271,15 @@
       "userRating": 3,
       "actor": "PRIEST",
       "visualApproval": "PENDING",
-      "runtimeChange": false
+      "runtimeChange": false,
+      "minimalFamily": {
+        "standard": "data/presentation/mass-icon-minimal-family-standard-20261014.v1.json",
+        "mode": "CONDITIONAL_EXISTING_SWAP",
+        "sceneSpecification": "Use opposite existing pictorial master provisionally; validate priest and Missal appear on congregation's left before approval.",
+        "forbid": "No asset mirroring, ornate redraw or alteration of station identity.",
+        "ratingDisposition": "RESEARCH_REQUIRED",
+        "artworkApproval": false
+      }
     }
   ],
   "knownReaderHazards": [
