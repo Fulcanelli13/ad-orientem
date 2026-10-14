@@ -1,0 +1,93 @@
+{
+  "schema": "AO_SACRED_ART_W43_AGNES_FIRST_PRIORITY_PORTRAIT_ORIGINALS_V1",
+  "asOf": "2026-10-14",
+  "parentQA": "data/calendar/sacred-art-portrait-gap-w42-image-provenance-qa-20261014.v1.json",
+  "status": "MUSEUM_ORIGINALS_VERIFIED_NO_USER_SCORE_NO_APP_APPROVAL",
+  "counts": {
+    "newDistinctMuseumOriginals": 3,
+    "subjectsAffected": 1,
+    "commonsPreviewFilesWithReportedPixels": 3,
+    "fullImageBinaryMastersSaved": 0,
+    "fullImageSHA256Verified": 0,
+    "new4PlusRatings": 0,
+    "gapsClosed": 0
+  },
+  "priorAgnesCandidates": "Existing Stanzione MNAC 065579-000 clean Google Art Project; Dresden SKD Gal.683 narrative saint with angel attribution disputed; Furini private-sale painting custody unclear. These are NOT duplicates of Prado Carducho, Rizi, or Pacheco.",
+  "curatorialRecommendation": "Agnes now has multiple physical painting alternatives: prioritize clean, naturalistic Stanzione and Carducho for eventual grouped aesthetic review; Rizi and Pacheco are narrow altar panels and may not meet desired style; Furini private-sale needs authentication; SKD disputed angel narrative should remain in scene-oriented queue.",
+  "records": [
+    {
+      "id": "W43-001",
+      "subjectId": "SNT-OT-22",
+      "artist": "Vicente Carducho (Vincenzo Carducci)",
+      "title": "Santa Inés",
+      "medium": "oil on canvas",
+      "date": 1637,
+      "physicalOriginalKey": "PRADO:P004917",
+      "institution": "Museo Nacional del Prado, on deposit",
+      "originalURL": "https://www.museodelprado.es/coleccion/obra-de-arte/santa-ines/177b8a10-9408-45fd-bfaa-02a7075f10f8/",
+      "commonsURL": "https://commons.wikimedia.org/wiki/File:Santa_In%C3%A9s,_de_Vicente_Carducho_(Museo_del_Prado).jpg",
+      "commonsPixels": [
+        1729,
+        2897
+      ],
+      "reuse": "Commons PD-Art designation; local territorial reuse review remains required",
+      "suitability": "SAINT_AGNES_SINGLE_FIGURE_WITH_LAMB_AND_PALM",
+      "confidence": "HIGH_ORIGINAL_ID_VERIFIED",
+      "note": "Portrait-style full-figure Saint Agnes, naturalistically modelled; independent of MNAC Stanzione, Prado Pacheco and Prado Rizi."
+    },
+    {
+      "id": "W43-002",
+      "subjectId": "SNT-OT-22",
+      "artist": "Francisco Rizi",
+      "title": "Santa Inés",
+      "medium": "oil on canvas",
+      "date": 1665,
+      "physicalOriginalKey": "PRADO:P007637",
+      "institution": "Museo Nacional del Prado",
+      "originalURL": "https://www.museodelprado.es/coleccion/obra-de-arte/santa-ines/0f8c1439-ae5c-47d6-bad3-757d086389fd",
+      "commonsURL": "https://commons.wikimedia.org/wiki/File:Rizi-santa_ines.jpg",
+      "commonsPixels": [
+        813,
+        1920
+      ],
+      "reuse": "Commons PD-Art designation, local territorial reuse review remains required",
+      "suitability": "SINGLE_SAINT_FIGURE_NARROW_ALTARPIECE_PANEL",
+      "confidence": "HIGH_ORIGINAL_ID_VERIFIED_PREVIEW_PIXEL_HOLD",
+      "note": "Prado verifies distinct oil P007637, not Juan Andrés Rizi. 813px-wide available Commons image is inadequate as final master. Earlier Valdés Leal attribution superseded by Prado Rizi attribution."
+    },
+    {
+      "id": "W43-003",
+      "subjectId": "SNT-OT-22",
+      "artist": "Francisco Pacheco",
+      "title": "Santa Inés",
+      "medium": "oil on panel",
+      "date": 1608,
+      "physicalOriginalKey": "PRADO:P001022",
+      "institution": "Museo Nacional del Prado",
+      "originalURL": "https://www.museodelprado.es/coleccion/obra-de-arte/santa-ines/b9c9a341-2606-4d1b-a72e-75ce03031747",
+      "commonsURL": "https://commons.wikimedia.org/wiki/File:Santa_In%C3%A9s,_Francisco_Pacheco.jpg",
+      "commonsPixels": [
+        1699,
+        3934
+      ],
+      "reuse": "Commons photo CC BY-SA 4.0; image editing and attribution obligations; verify institutional reproduction rights and painting-on-panel rules",
+      "suitability": "SINGLE_SAINT_FIGURE_ALTARPIECE_PART_EARLY_STYLE_HOLD",
+      "confidence": "HIGH_ORIGINAL_ID_VERIFIED_EARLY_ART_REVIEW_HOLD",
+      "note": "One of four paintings from Pacheco's Saint Ángel retable, physically separate original. Do not confuse with his 1614 Saint Agnes DRAWING, an ineligible different-medium object."
+    }
+  ],
+  "exclusions": [
+    {
+      "subjectId": "SNT-OT-22",
+      "work": "Alonso Cano Saint Agnes",
+      "reason": "Original destroyed in Berlin during WW2; reproductions/copies not eligible as present extant clean original."
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "work": "Francisco Pacheco Saint Agnes (1614) Uffizi drawing",
+      "reason": "Drawing, not oil painting; excluded from W43 physical-painting quota."
+    }
+  ],
+  "licenseStatus": "Review source licences file by file and regional art reproduction rules before any commercial app packaging; no permission inferred.",
+  "ratingsPreserved": true
+}
