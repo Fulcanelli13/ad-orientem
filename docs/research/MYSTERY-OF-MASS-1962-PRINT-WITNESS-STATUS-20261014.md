@@ -25,3 +25,11 @@ No claim is advanced from `source linked` to `original print certified` based on
 - The Isidore OCR PDF is rejected by the browsing interface for exceeding the 30 MB content limit; no PDF page image was obtained. Do not treat its search-index excerpts as original-print verification.
 - The linked third-party 1962 color-scan site exposes an index of individual images, but its host also contains unrelated polemical and unreliable material. **Do not use that site's commentary as editorial or doctrinal authority.** Scans, if independently authenticated against a bibliographical identity and the edition's title page, can serve only as photographic witnesses; neither the correct Canon folios nor the integrity of its 1962 edition have been established here.
 - Current disposition: **0 newly certified original 1962 Canon pages**. Retain open requirements for MB14–MB19 and MM-NEW-12. Seek a recognized library archive, securely identified facsimile, or vetted editorial photographic reproduction before certifying.
+
+## Alternative authenticated scan leads (14 October 2026)
+
+- [Propria / Usus Antiquior source list](https://propria.org/additional/) attributes a large PDF to the 1962 typical edition; it says this digitization includes St Joseph in the Canon and some later appendices (including 2008 material). Thus digitized compilation and original edition must be distinguished.
+- [Propria 11-page specimen PDF](https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf): **page image 0 was visually opened**, showing printed p. 533, the July Proper for the Precious Blood, not the Roman Canon. This confirms access to one photographic exemplar only; it does not certify the Canon.
+- [Internet Archive identifier sp07mr62-editio-typica](https://archive.org/details/sp07mr62-editio-typica) has catalogued Latin OCR and PDF/download options. Its record has been read, but its actual Canon page images have not been inspected.
+
+**Newly visually certified Canon pages: 0.** To finish, retrieve just the required Canon page images from an edition with checked title page / imprint, then transcribe and compare them against the English/French claims. Do not extrapolate from sample Proper pages or OCR snippets.
