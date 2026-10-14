@@ -73,7 +73,11 @@ export function showDevotionalInterlude({
   if(entry.openingShown)return false;
   entry.openingShown=true;
   const artwork=selectAngelusOpeningArtwork({lastId:lastArtworkId});
-  if(artwork)lastArtworkId=artwork.id;
+  // A title-only interstitial with a large empty image zone is an
+  // interruption without art. Skip the opening tableau until a final
+  // approved reproduction is available from the canonical catalogue.
+  if(!artwork)return false;
+  lastArtworkId=artwork.id;
   const doc=sheet.ownerDocument;
   const root=create(doc,"section","aoDevoCinematicInterstitial aoDevoCinematicOpening");
   root.dataset.aoDevotionalScene="opening";
