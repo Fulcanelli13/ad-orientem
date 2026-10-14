@@ -53,6 +53,7 @@ export function validateCanonBilingualCopyReview({bilingual,french,trigger,triag
      !row.sourceUrls.length||
      row.guideDraft?.frCanonicalActionId!==row.actionId||
      !String(row.guideDraft?.en??"").trim()||
+     /\\b(?:reader|scroll|source trigger|generic paragraph|actor ownership|implementation|render|dashboard)\\b/i.test(row.guideDraft.en)||
      !String(row.shortDraft?.fr??"").trim()||
      !String(row.shortDraft?.en??"").trim()||
      row.shortDraft.fr===f.revisedFrenchRubric||
