@@ -556,7 +556,9 @@ button.ao-schola-control{cursor:pointer}
   width:84%;height:84%;
 }
 .ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-rail-right .ao-rail-item[data-channel="priest-action"]{
-  visibility:hidden;
+  /* A visibility transition keeps both images on screen briefly. The
+     in-stage icon must own this action exclusively from its first frame. */
+  display:none!important;
 }
 .ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="RAIL"] .ao-cinematic[data-kind="ELEVATION"]{
   display:none!important;
