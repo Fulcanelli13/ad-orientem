@@ -26,13 +26,14 @@
   "currentScope": "222 object/study/source leads, including bounded 6/6 Prado Rubens Eucharist oil modelli and original Mauritshuis Assumption model; artist-wide oeuvre census incomplete.",
   "precedingSnapshots": "All prior 145/153/165/180/190/196/215 masters remain historical snapshots, not independent active owners.",
   "nextTasks": [
-    "Wave22 user-review HTML: compare 7 new exact major-saint/apostle candidate images with existing read-only scores; source-linked image urls require network and do not imply JPEG acquisition or commercial clearance. Export new decisions as JSON, reconcile without overwriting 277 Oct13 ratings.",
-    "Wave22 image holds: Carmel Lisieux 1925 Céline portrait (custodian photography and licensing) and Murillo Seville Cathedral Anthony (available unframed 464x697 image below quality threshold; large photo shows shrine/frame). No ratings on these holds.",
-    "Continue recover inspectable source-original artwork files for important Thérèse, Vianney, Vincent de Paul, Saint Louis IX, Margaret Mary and major devotional portraits; do not widen into obscure saints.",
-    "Preserve identity joins (Poussin Joseph contextual versus La Tour exact Joseph, Rubens Apostle W05 series existing physical objects, Pittoni ambiguous multi-saint identity, historic selected but unscored).",
-    "Preserve human 0–2 global refusals, 3–5 review eligibility and hard artist exclusions; never auto-approve from public-domain photography alone.",
-    "Legacy source-linked 63/107 subjects and 44 gaps refer to OLD cohort, not requirement completeness. Keep PR research-only draft.",
-    "Keep older 222 lead queue / 8 new SHA-verified research originals / 214 pending unchanged until separate verified acquisition operation."
+    "First await user's W22 and W23 0-5 rating exports; preserve separate browser namespaces; merge rating deltas only after explicit user approval, never infer ratings for source holds.",
+    "Newly sourced W23 primary image candidates: Musée Carnavalet P863 Saint Vincent circa 1660 (CC0), Paul Delaroche Yale 2017.65.1 preaching Vincent, Petit Palais PDUT1793 Saint Louis à Damiette (CC0), Noël Hallé PM75001042 Saint Francis de Sales and Jeanne de Chantal (modern photo license audit).",
+    "Keep W23 holds: Tours Saint Louis Le Sueur (Commons image copyright explicitly disputed and attribution problem), Ars Vianney 1843 historical painting (in situ framed photograph), Vatican Podesti Margaret Mary (800x600 and unverified object/provenance).",
+    "Keep Carmel Lisieux Céline Thérèse and Seville Cathedral Murillo Anthony on source-photo rights/size hold; no low-quality shrines or false originals in release.",
+    "Find actual full-res original file and compute SHA-256 for approved major-saint artworks in a distinct acquisition operation; visual previews do NOT count as acquired masters.",
+    "Respect prior human 277 scores (0-2 excluded globally), all earlier 5-star and 4-star decisions, all historical unscored subject choices, and user exclusions; no all-saints expansion.",
+    "Never present old W16-W20 63/107 research cohort as overall Sacred Art scope progress; draft PR remains isolated from production.",
+    "Keep existing 222 W01-W15 research queue with 8 SHA-verified and 214 pending unchanged until actual independently verified file acquisitions."
   ],
   "verifiedCounts": {
     "master": 222,
@@ -175,13 +176,20 @@
     "wave21NewMandatorySaints": 0,
     "wave21SourceImagesAcquired": 0,
     "wave21ExistingRatingMutations": 0,
-    "latestVisualReview": "data/calendar/sacred-art-major-saints-review-wave22-20261014.html",
+    "latestVisualReview": "data/calendar/sacred-art-major-saints-review-wave23-20261014.html",
     "wave22VisualItems": 15,
     "wave22UserRatedLockedItems": 6,
     "wave22NewReviewableItems": 7,
     "wave22SourceOrResolutionHolds": 2,
     "wave22ImagesAcquiredAndHashed": 0,
     "wave22CommercialUseCleared": 0,
-    "wave22ProductionArtworkMutations": 0
+    "wave22ProductionArtworkMutations": 0,
+    "latestSourcePreviewManifest": "data/calendar/sacred-art-major-saint-source-preview-wave23-20261014.v1.json",
+    "previousVisualReviewStillIndependent": "data/calendar/sacred-art-major-saints-review-wave22-20261014.html",
+    "wave23NewReviewableArtworks": 4,
+    "wave23ImageOrRightsHolds": 3,
+    "wave23VerifiedOriginalJpegNewAdditions": 0,
+    "wave23NewRequiredSaints": 0,
+    "wave23UserRatingsUnmodified": true
   }
 }
