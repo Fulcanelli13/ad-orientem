@@ -577,6 +577,45 @@ button.ao-schola-control{cursor:pointer}
   70%{transform:translateY(2px);opacity:1}
   100%{transform:none;opacity:1}
 }
+
+/* Second visual batch, using only certified cue ownership.
+   Hanc igitur has no approved exact hands master: do not fabricate art. */
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HANC_IGITUR_HANDS"] .ao-card-viewport{
+  background:radial-gradient(ellipse 43% 30% at 49% 37%,rgba(188,172,133,.065),transparent 78%);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HANC_IGITUR_HANDS"] .ao-reader-paragraph[data-active="true"]{
+  border-left:1px solid rgba(202,189,147,.35);padding-left:11px;
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="HANC_IGITUR_HANDS"] .ao-reader-paragraph[data-active="true"] .ao-line-primary{
+  color:#eee8db;text-shadow:0 0 11px rgba(204,186,145,.08);
+}
+/* Gospel: one source announcement, not three fake sequential cross events. */
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="GOSPEL_CROSSES"] .ao-card-viewport{
+  background:radial-gradient(ellipse 40% 28% at 50% 39%,rgba(188,192,170,.065),transparent 82%);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="GOSPEL_CROSSES"] .ao-reader-paragraph[data-active="true"] .ao-line-primary{
+  color:#f4f1e8;text-shadow:0 0 12px rgba(225,223,205,.09);
+}
+.ao-reader-shell[data-mode="LIVE"][data-cinematic-scene="GOSPEL_CROSSES"] .ao-rail-right .ao-rail-item[data-channel="priest-action"][data-active="true"] .ao-icon-mask{
+  animation:aoGospelIconCue .85s ease-out both;transform-origin:center;
+}
+@keyframes aoGospelIconCue{
+  0%{opacity:.68;transform:scale(.96)}
+  40%{opacity:1;transform:scale(1.10)}
+  100%{opacity:1;transform:none}
+}
+/* Good Friday is a distinct-rite R28 state, not an Ordinary Mass scene.
+   No countdown: the faithful's deliberate Continue action ends the pause. */
+.ao-reader-shell[data-cinematic-scene="PASSION_DEATH"] .ao-card-viewport{
+  background:radial-gradient(ellipse 54% 40% at 50% 42%,rgba(153,141,131,.055),transparent 80%);
+}
+.ao-reader-shell[data-cinematic-scene="PASSION_DEATH"] .ao-reader-paragraph[data-cue-id="GF-PASS-320"] .ao-line-primary{
+  color:#f3ede5;text-shadow:0 0 12px rgba(205,186,174,.09);
+}
+.ao-reader-shell[data-cinematic-scene="PASSION_DEATH"] .ao-state-cell[data-side="faithful"] [data-icon-slot="posture-top"]{
+  filter:drop-shadow(0 0 6px rgba(202,188,172,.24));
+}
+
 @media(prefers-reduced-motion:reduce){
   .ao-reader-shell[data-cinematic-scene] .ao-rail-item .ao-icon-mask{animation:none!important;transform:none!important}
   .ao-reader-shell[data-cinematic-scene] .ao-card-viewport{animation:none!important}
