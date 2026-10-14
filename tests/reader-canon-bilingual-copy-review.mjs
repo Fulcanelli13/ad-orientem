@@ -21,6 +21,15 @@ assert.equal(audit.surfaceCounts.GUIDE_ONLY,13);
 assert.equal(audit.surfaceCounts.GUIDE_AND_FORM_CONTEXT,1);
 assert.equal(Object.values(audit.surfaceCounts).reduce((n,v)=>n+v,0),62);
 const byId=new Map(audit.rows.map(x=>[x.actionId,x]));
+const canonicalShortById=new Map(witnesses.french.rows.map(x=>[x.id,x]));
+assert.equal(witnesses.bilingual.counts.shortFrenchCanonicalLinks,62);
+assert.equal(witnesses.bilingual.rows.filter(x=>Object.hasOwn(x.shortDraft,"fr")).length,0,
+ "A second French short-rubric text owner must not exist");
+for(const raw of witnesses.bilingual.rows){
+ assert.equal(raw.shortDraft.frCanonicalActionId,raw.actionId,
+  "Bilingual packet must link to exact source-owned French short text");
+ assert.ok(raw.shortDraft.en.length>4,"English short copy must remain present");
+}
 for(const x of audit.rows){
  assert.ok(x.shortDraft.fr.length>5&&x.shortDraft.en.length>5);
  assert.ok(x.guideDraft.fr.length>x.shortDraft.fr.length/2);
@@ -34,26 +43,41 @@ for(const x of audit.rows){
  assert.equal(x.observedNow,false);
  assert.equal(x.faithfulPosture,null);
 }
-for(const [n,phraseFr,phraseEn] of [
- ["011","mains ouvertes","open hands"],
- ["022","consécration","consecration"],
- ["024","élève l’Hostie","elevates the Host"],
- ["026","pouces et index","thumbs and index"],
- ["027","Le servant sonne","server rings"],
- ["028","Le calice est découvert","chalice is uncovered"],
- ["032","consécration du calice","chalice consecration"],
- ["035","Le servant sonne","server rings"],
- ["040","garde les mains étendues","keeps his hands extended"],
- ["050","hausse la voix","raises his voice"],
- ["058","l’Hostie au-dessus","Host above"],
- ["059","repose les espèces","replaces the sacred species"],
- ["061","Le répondant dit Amen","respondent says Amen"],
- ["062","Le servant donne le signal","server gives the warning bell"],
+for(const [n,phraseEn] of [
+ ["011","open hands"],["022","consecration"],["024","elevates the Host"],
+ ["026","thumbs and index"],["027","server rings"],
+ ["028","chalice is uncovered"],["032","chalice consecration"],
+ ["035","server rings"],["040","keeps his hands extended"],
+ ["050","raises his voice"],["058","Host above"],
+ ["059","replaces the sacred species"],["061","respondent says Amen"],
+ ["062","server gives the warning bell"],
 ]){
  const row=byId.get("AO.CANON.R62."+n);
  assert.ok(row,"Missing required form/actor/source cue "+n);
- assert.ok(row.shortDraft.fr.includes(phraseFr),n+": French copy semantics drift");
+ assert.equal(row.shortDraft.fr,canonicalShortById.get(row.actionId).shortFrenchRubricDraft,
+  n+": French short text must resolve from the canonical R62 source");
  assert.ok(row.shortDraft.en.includes(phraseEn),n+": English copy semantics drift");
+}
+for(const row of audit.rows){
+ const canonical=canonicalShortById.get(row.actionId);
+ assert.equal(row.shortDraft.fr,canonical.shortFrenchRubricDraft,
+  row.actionId+": Canon bilingual preview has a competing French short copy");
+ assert.equal(row.guideDraft.fr,canonical.revisedFrenchRubric,
+  row.actionId+": Canon bilingual preview has a competing French long copy");
+ assert.equal(row.shortFrenchOwnerId,canonical.id);
+ assert.equal(row.guideFrenchOwnerId,canonical.id);
+}
+for(const [number,pattern] of [
+ ["001",/les abaisse, joint les mains et s’incline profondément/],
+ ["011",/jusqu’à « Per Christum »/],
+ ["026",/jusqu’à l’ablution des doigts/],
+ ["028",/diacre à la messe solennelle/],
+ ["055",/diacre à la messe solennelle/],
+ ["058",/l’Hostie tenue au-dessus/],
+ ["059",/diacre à la messe solennelle/],
+]){
+ assert.match(byId.get("AO.CANON.R62."+number).shortDraft.fr,pattern,
+  number+": qualified 1962 French source action cannot be shortened by stale bilingual copy");
 }
 assert.equal(byId.get("AO.CANON.R62.023").reviewSurface,
  "INDEPENDENT_STAGE_EDITORIAL_ONLY");
@@ -108,7 +132,13 @@ assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
 })),/drift/);
 assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
  x.bilingual.rows[27].shortDraft.fr="Il découvre le calice.";
-})),/universal action/);
+})),/drift/,"An unauthorized second French owner must fail closed");
+assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
+ x.bilingual.rows[27].shortDraft.frCanonicalActionId="AO.CANON.R62.027";
+})),/drift/,"Cross-referencing a different French source action must fail closed");
+assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
+ x.french.rows[27].shortFrenchRubricDraft="Il découvre le calice.";
+})),/universal action/,"Canonical French cannot universalize Solemn deacon ownership");
 assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
  x.bilingual.rows[21].reviewSurface="INLINE_ATOMIC_EDITORIAL";
 })),/source|counts/);
@@ -130,4 +160,4 @@ assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
 assert.throws(()=>validateCanonBilingualCopyReview(mutated(x=>{
  x.triage.rows.pop();
 })),/unpublished source witnesses/);
-console.log("PASS: 62 source-linked bilingual Canon short/guide drafts, 29 flagged, 0 published, 4 form fail-closed and stage/actor separation.");
+console.log("PASS: 62 canonical French short/long references (0 duplicates), 62 English proposals, 29 flagged, 0 published, 4 form fail-closed and actor separation.");
