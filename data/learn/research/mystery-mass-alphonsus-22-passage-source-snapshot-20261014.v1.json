@@ -1,0 +1,482 @@
+{
+  "schema": "AO_MYSTERY_MASS_ALPHONSUS_22_CLAIM_SOURCE_SNAPSHOT_V1",
+  "date": "2026-10-14",
+  "sourceBranch": "research/biblical-people-genealogy-explorer-20261011",
+  "sourcePath": "data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json",
+  "edition": {
+    "volume": "The Complete Ascetical Works of St. Alphonsus, Volume XIII: The Holy Mass",
+    "editor": "Rev. Eugene Grimm, C.SS.R.",
+    "imprint": "Benziger English Centenary Edition 1889",
+    "primaryPdf": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+    "textMirror": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+    "separateAlphonsusTreatiseWikisource": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ",
+    "accessCaveat": "The user-provided PDF is too large for web-page fetch and failed independent download; full-volume 1889 printed-text witness inspected through transcription at Scribd, with line-level ranges recorded for Dujardin and selected Alphonsus passages; facsimile images not independently reviewed.",
+    "fullBodyTextWitness": {
+      "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+      "verification": "Twenty-two meditation paragraphs and selected St Alphonsus argument passages examined against transcription in printed 1889 pagination; primary linked PDF oversized and not page-image cross-checked.",
+      "publicationHold": "NO_USER_QUOTED_EXACT_WORDING_UNLESS_1889_FACSIMILE_REVIEWED"
+    }
+  },
+  "sourceAuthorshipRule": {
+    "dujardin": "Only editorial preface meditation §III is Dujardin. It is NOT written by St Alphonsus.",
+    "alphonsus": "The Sacrifice of Jesus Christ, Short Explanation, major practical/ascetical treatises originate with St Alphonsus; verify Grimm additions and later contributors individually.",
+    "anonymousFrenchAuthor": "St Alphonsus expressly acknowledges adapting a learned French author's work; Grimm speculates on Pierre de Condren/derivative published by Quesnel but does NOT conclusively identify original.",
+    "sourceDistinction": "Dujardin's Passion/Salvation-allegory is a voluntary meditation; Alphonsus biblical sacrifice is a theological synthesis; Fortescue is a historical-liturgical external check."
+  },
+  "publicationConstraints": [
+    "An original Mass ceremony is not necessarily instituted to dramatize a Bible event; no ritual-history causal claim from Dujardin's analogies.",
+    "The Eucharistic Sacrifice makes present the once-for-all offering of Christ sacramentally; do not claim that it repeats all of Scripture or literally re-performs all biblical events.",
+    "'Full Bible' means a curated Scripture-horizon reaching from Genesis through Revelation, not a forced link for every biblical book or verse.",
+    "Dujardin's dates (e.g. 4000 years) are meditation rhetoric not defensible scientific timeline.",
+    "Dujardin's descent to Limbo/Purgatory and remarks about Jesus not being on altar after Communion require Catholic doctrinal and 1962 rubric review before any presentation.",
+    "St Alphonsus's eighteenth-century rubrical notes and Grimm's nineteenth-century annotations may not describe 1962 practice.",
+    "Edition-aware Latin Vulgate/English Douay/French Crampon links and canonical 1962 prayer IDs required before publish.",
+    "Reproduce no full copyright-encumbered modern text; original-source links and attribution maintained; no external navigation substituting for existing Scripture reader."
+  ],
+  "status": "EXACT_PRESERVATION_OF_22_EXISTING_ATTRIBUTED_RESEARCH_CLAIMS_NOT_NEW_PUBLIC_TEXT",
+  "alphonsusPassageClaims": [
+    {
+      "id": "ALPX01",
+      "workSection": "Sacrifice treatise §I",
+      "printedLocation": "printed p.27–28",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1252,
+        "endLine": 1286,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Leviticus 16:8",
+        "Isaiah 53:6",
+        "Hebrews 13:13"
+      ],
+      "sourceRelation": "EXPLICIT_PATRISTIC_ASCETICAL_TYPOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Typology of scapegoat and Christ bearing sins outside the camp; first is sacrificial foreshadowing, not the historical origin of a named Roman gesture.",
+      "originalResearchId": "MS032",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX02",
+      "workSection": "Sacrifice treatise §I",
+      "printedLocation": "printed p.28–29",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1298,
+        "endLine": 1341,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Hebrews 10:5–10"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Old sacrificial categories superseded in the obedience of Christ; the author quotes Hebrews 10 directly.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX03",
+      "workSection": "Sacrifice treatise §I",
+      "printedLocation": "printed p.29",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1318,
+        "endLine": 1370,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Deuteronomy 15:21"
+      ],
+      "sourceRelation": "THEOLOGICAL_SYNTHESIS_NO_DIRECT_BIBLE_EQUATION",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Five sacrificial conditions listed by Alphonsus: sanctification, offering, immolation, consumption, participation; schema is the author's theological classification, not a law-text quotation naming all five.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX04",
+      "workSection": "Sacrifice treatise §I",
+      "printedLocation": "printed p.30",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1391,
+        "endLine": 1440,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Genesis 8:20–21",
+        "Exodus 12:3–14"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_TYPOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Noah's sweet-smelling holocaust and the Paschal Lamb are named for the sacrificial framework.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX05",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.31–32",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1443,
+        "endLine": 1489,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "John 10:36",
+        "Luke 1:35",
+        "Hebrews 10:5"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_TYPOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "The author treats the Incarnation as consecration of Christ the victim, with direct biblical citations of Jesus as sanctified by the Father and the Annunciation.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX06",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.32",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1491,
+        "endLine": 1539,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Hebrews 10:8–10"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_THEOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Christ's once-for-all self-offering; distinguishes the Incarnation as commencement of an offering from its sacrificial fulfilment.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX07",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.32",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1511,
+        "endLine": 1547,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Daniel 12:11"
+      ],
+      "sourceRelation": "ESCATHOLOGICAL_PRIVATE_INTERPRETATION_HOLD",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Alphonsus applies the 1290 days without the continual sacrifice to a future suspension of the Mass; this is an **historical interpretive claim under theological/eschatological review**, not a literal 1962 Mass passage or a chronology for the Atlas.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX08",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.33",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1548,
+        "endLine": 1595,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Psalms 109:4 (Vulgate",
+        "Psalm 110 modern)",
+        "John 17:5"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_TYPOLOGY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Christ's eternal priesthood according to Melchizedek; author draws on Davidic psalm and Christ's prayer for glorification.",
+      "originalResearchId": "MS047",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX09",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.33–34",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1560,
+        "endLine": 1601,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "John 17:5"
+      ],
+      "sourceRelation": "REPORTED_THIRD_PARTY_VIEW",
+      "attributedVoice": "ANONYMOUS_FRENCH_SOURCE_REPORTED_BY_ALPHONSUS",
+      "paraphrase": "Anonymous French source (as narrated by Alphonsus) interprets glorification at Resurrection as consumption and communion of sacrifice as beatific participation; **not** Alphonsus's preferred conclusion.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX10",
+      "workSection": "Sacrifice treatise §II",
+      "printedLocation": "printed p.34–36",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1602,
+        "endLine": 1668,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Luke 22:19",
+        "1 Corinthians 11:25"
+      ],
+      "sourceRelation": "ALPHONSUS_RESPONSE_TO_SOURCE_AND_MAGISTERIAL_CITATION",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Alphonsus explicitly prefers fulfilment of sacrificial consumption and Communion in the Eucharistic Sacrifice, quoting Trent XXII; distinction from anonymous French source must be preserved.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX11",
+      "workSection": "Short Explanation preface",
+      "printedLocation": "printed p.38–39",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 1792,
+        "endLine": 1834,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "AUTHORIAL_LITURGICAL_STRUCTURE_HISTORICAL_HOLD",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Alphonsus divides exposition into six parts including Canon+Pater noster; this is his explanatory structure, not a certified historical classification or present 1962 card count.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX12",
+      "workSection": "Short Explanation part II",
+      "printedLocation": "printed p.42–43",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2048,
+        "endLine": 2077,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Luke 2:14"
+      ],
+      "sourceRelation": "DIRECT_LITURGICAL_TEXT_SOURCE_AND_VARIABLE_PROPER",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "The angelic wording grounds the Gloria; the Collect reflects a feast/day, an important tie to source-owned Propers.",
+      "originalResearchId": "MS008",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX13",
+      "workSection": "Short Explanation part II",
+      "printedLocation": "printed p.43–44",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2100,
+        "endLine": 2125,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "ATTRIBUTED_LATER_LITURGICAL_ALLEGORY_HOLD",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Gospel procession from one side to the other is allegorically linked by author to Jews and Gentiles; not an objective causal history of movement or general claim about Jews.",
+      "originalResearchId": "MS012",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX14",
+      "workSection": "Short Explanation part III",
+      "printedLocation": "printed p.44–45",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2143,
+        "endLine": 2180,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "EXPLANATORY_THEOLOGICAL_DISTINCTION",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Offerings before consecration are discussed anticipatorily; do not suggest that ordinary bread and wine are already consecrated by saying Suscipe sancte Pater.",
+      "originalResearchId": "MS014",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX15",
+      "workSection": "Short Explanation part III",
+      "printedLocation": "printed p.45",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2181,
+        "endLine": 2213,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "ATTRIBUTED_SYMBOLISM_AND_MAGISTERIAL_CONTEXT",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Water and wine as humanity/divinity and Christian communion; expressly distinguishes ecclesiastical precept from divine institution and quotes Trent XXII ch.7.",
+      "originalResearchId": "MS015",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX16",
+      "workSection": "Short Explanation part III",
+      "printedLocation": "printed p.46",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2219,
+        "endLine": 2249,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [],
+      "sourceRelation": "HISTORICAL_REPORT_AND_LITURGICAL_WORDS",
+      "attributedVoice": "ST_ALPHONSUS_REPORTING_BONA_AND_FRENCH_AUTHOR",
+      "paraphrase": "Cardinal Bona and an anonymous French source provide historical explanations for evolving Offertory prayers; Alphonsus identifies In spiritu humilitatis and the Lavabo text; dates and underlying sources unverified.",
+      "originalResearchId": "MS018",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX17",
+      "workSection": "Short Explanation part IV",
+      "printedLocation": "printed p.50–51",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2475,
+        "endLine": 2504,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Leviticus 1:4 (editorial comparison only)"
+      ],
+      "sourceRelation": "AUTHORIAL_TYPOLOGY_EDITORIAL_BIBLE_CONTEXT",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Hanc igitur hand extension interpreted through laying hands on victim; page itself does not cite Lev 1:4 chapter and verse.",
+      "originalResearchId": "MS028",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX18",
+      "workSection": "Short Explanation part IV",
+      "printedLocation": "printed p.55–56",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2759,
+        "endLine": 2809,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Genesis 4:4",
+        "Genesis 22:1–19",
+        "Genesis 14:18–20"
+      ],
+      "sourceRelation": "CANON_EXPLICIT_FIGURES_AND_REPORTED_SCHOLASTIC_ALTERNATIVES",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Alphonsus names the three biblical sacrifices and gives a Christological typology; he also contrasts Innocent III and Aquinas on post-consecration signs of Cross.",
+      "originalResearchId": "MS033",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX19",
+      "workSection": "Short Explanation part IV",
+      "printedLocation": "printed p.56–57",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2810,
+        "endLine": 2841,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Revelation 8:3–4 (editorial parallel only)"
+      ],
+      "sourceRelation": "DISPUTED_AUTHORIAL_INTERPRETATION",
+      "attributedVoice": "ALPHONSUS_COMPARING_THOMAS_AND_FRENCH_SOURCE",
+      "paraphrase": "Supplices angel: French predecessor favours identifying Christ as Angel of Great Counsel; Alphonsus prefers Thomas's explanation of angelic presentation of church prayers. Do not falsely portray angel lifting physical hosts.",
+      "originalResearchId": "MS036",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX20",
+      "workSection": "Short Explanation part IV",
+      "printedLocation": "printed p.58–59",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 2899,
+        "endLine": 2951,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "1 John 3:1",
+        "Romans 8:15",
+        "Matthew 6:9–13"
+      ],
+      "sourceRelation": "AUTHOR_EXPLICIT_CITATION_AND_PRAYER_COMMENTARY",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Our Father understood through seven petitions and filial adoption; 1 John 3:1 directly cited, Romans 8:15 mentioned in commentary.",
+      "originalResearchId": "MS039",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX21",
+      "workSection": "Short Explanation part VI",
+      "printedLocation": "printed p.65–66",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 3307,
+        "endLine": 3332,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "Psalms 115:12–13 (Vulgate)",
+        "Romans 8:32"
+      ],
+      "sourceRelation": "DIRECT_PSALM_WORDS_PLUS_EPISTLE_THEMATIC",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "After-Communion thanksgiving Quid retribuam and Calicem salutaris draw on Psalm 115 and Romans 8:32, adding biblical source to a fixed post-Communion prayer.",
+      "originalResearchId": null,
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    },
+    {
+      "id": "ALPX22",
+      "workSection": "Short Explanation part VI",
+      "printedLocation": "printed p.67",
+      "webTextWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "startLine": 3384,
+        "endLine": 3400,
+        "transcriptionNotFacsimile": true
+      },
+      "scripture": [
+        "John 1:1–14"
+      ],
+      "sourceRelation": "DIRECT_BIBLE_TEXT_AND_HISTORICAL_ORIGIN_HOLD",
+      "attributedVoice": "ST_ALPHONSUS_AUTHORIAL",
+      "paraphrase": "Last Gospel is John 1; reported claim that Pius V made it universal should be historically checked (earlier late-medieval usages attest the text).",
+      "originalResearchId": "MS044",
+      "scriptureVerseStatus": "NEEDS_1962_VULGATE_CRAMpon_CONCORDANCE",
+      "published": false
+    }
+  ]
+}
