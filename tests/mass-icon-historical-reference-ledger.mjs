@@ -11,7 +11,7 @@ assert.equal(ledger.schema,"ao-mass-icon-historical-reference-ledger-v1");
 assert.equal(ledger.status,"RESEARCH_ONLY_IMAGE_RIGHTS_AND_CEREMONIAL_REVIEW_PENDING");
 assert.equal(ledger.authority.automaticAssetActivation,false);
 assert.equal(ledger.authority.banGeneratedSubstitutes,true);
-assert.equal(ledger.sources.length,10);
+assert.equal(ledger.sources.length,14);
 assert.ok(ledger.sources.some(x=>x.id==="JOUENNE_FRANCE_PRE1740" && x.url.includes("bridwell.omeka.net")));
 assert.equal(ledger.gestureMatrixPending.length,17);
 assert.equal(new Set(ledger.gestureMatrixPending.map(x=>x.matrixId)).size,17);
@@ -42,7 +42,6 @@ assert.ok(ledger.sources.find(x=>x.id==="MARIAN_1958_HANC").rights.includes("UNV
 assert.ok(ledger.gestureMatrixPending.find(x=>x.matrixId==="GM.P.C0204.01").decision.includes("HOST_ABOVE"));
 
 // Independently checked photo candidates: no publication inference from Commons Public Domain Mark.
-assert.equal(ledger.sources.length,14);
 assert.equal(ledger.verifiedPhotographicCandidates.length,6);
 assert.equal(ledger.captionOnlyPictorialLeads.length,4);
 const refSet=new Set(ledger.sources.map(x=>x.id));
@@ -51,7 +50,7 @@ for(const photo of ledger.verifiedPhotographicCandidates){
  assert.ok(photo.sourceEvidence.startsWith("VISUALLY_INSPECTED_"));
  assert.ok(photo.rightsStatus.includes("NOT_CLEARED"));
  assert.ok(photo.scannedDimensions[0]>2000);
- assert.ok(photo.cueIds.every(x=>/^AO\\.SM\\.C\\d{4}$/.test(x)));
+ assert.ok(photo.cueIds.every(x=>/^AO\.SM\.C\d{4}$/.test(x)));
 }
 for(const lead of ledger.captionOnlyPictorialLeads){
  assert.ok(refSet.has(lead.sourceId));
