@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { projectLiveCinematicScene } from "../src/mass/reader-cinematic-scenes.js";
+import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "../src/mass/reader-cinematic-scenes.js";
 import { buildReaderShellMarkup, normalizeReaderMoment } from "../src/mass/reader-dom.js";
 
 const scene=(cueId,rest={})=>projectLiveCinematicScene({mode:"LIVE",cueNative:true,cueId,...rest});
@@ -46,6 +46,39 @@ assert.equal(scene("AO.SM.C0096",{faithfulGesture:{...faithful,canonicalCueId:"A
 assert.equal(scene("AO.SM.C0096",{faithfulGesture:{...faithful,type:"KNEEL"}})?.id,"INCARNATUS_GESTURE");
 assert.equal(scene("AO.SM.C0096",{mode:"MISSAL",faithfulGesture:faithful}),null);
 
+// Second batch is gated by already-existing actor, cue and Gospel station.
+const hancAction={cueId:"AO.SM.C0161",label:"HANDS OVER OBLATIONS",
+  owner:"GESTURE_MATRIX_SOT",iconKey:null};
+assert.equal(scene("AO.SM.C0161",{priestAction:hancAction})?.id,"HANC_IGITUR_HANDS");
+assert.equal(scene("AO.SM.C0161"),null,"Hanc cannot invent a priest gesture");
+assert.equal(scene("AO.SM.C0161",{priestAction:{...hancAction,label:"BLESSES OFFERINGS"}}),null);
+assert.equal(scene("AO.SM.C0161",{mode:"MISSAL",priestAction:hancAction}),null);
+const gospelAction={cueId:"AO.SM.C0084",
+  label:"SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST",
+  owner:"GESTURE_MATRIX_SOT",iconKey:"gospel_crosses"};
+const gospelStation={station:"ALTAR_GOSPEL_MISSAL"};
+assert.equal(scene("AO.SM.C0084",{priestAction:gospelAction,priestPosition:gospelStation})?.id,
+  "GOSPEL_CROSSES");
+assert.equal(scene("AO.SM.C0084",{priestAction:gospelAction}),null,
+  "Generic Gospel title must not imply a Gospel-side location");
+assert.equal(scene("AO.SM.C0084",{priestAction:gospelAction,
+  priestPosition:{station:"ALTAR_EPISTLE_MISSAL"}}),null);
+assert.equal(scene("AO.SM.C0084",{priestAction:{...gospelAction,cueId:"AO.SM.C0081"},
+  priestPosition:gospelStation}),null);
+assert.equal(scene("AO.SM.C0084",{mode:"SIMPLE",
+  priestAction:gospelAction,priestPosition:gospelStation}),null);
+const gf=projectGoodFridayDeathScene({
+  recordId:"GF-PASS-320",deathPause:true,posture:"KNEEL",
+});
+assert.equal(gf?.id,"PASSION_DEATH");
+assert.equal(gf.owner,"R28_GF_PASSION_DEATH_SOURCE");
+assert.equal(gf.canonicalAuthority,false);
+assert.equal(gf.faithfulActionClaim,false);
+assert.equal(projectGoodFridayDeathScene({recordId:"GF-PASS-310",deathPause:true,posture:"KNEEL"}),null);
+assert.equal(projectGoodFridayDeathScene({recordId:"GF-PASS-320",deathPause:false,posture:"KNEEL"}),null);
+assert.equal(projectGoodFridayDeathScene({recordId:"GF-PASS-320",deathPause:true,posture:"STAND"}),null);
+assert.equal(projectGoodFridayDeathScene({recordId:"GF-PASS-330",deathPause:true,posture:"STAND"}),null);
+
 const initial=normalizeReaderMoment({id:"a",cinematicScene:host,paragraphs:[{
   id:"p",kind:"CONSECRATION_WORDS",primary:"HOC EST ENIM CORPUS MEUM",active:true,
 }]});
@@ -57,7 +90,8 @@ const shell=buildReaderShellMarkup({
  session:{resolvedMass:{presentationMode:"LIVE"}},
 });
 for(const id of ["HOST_WORDS","CHALICE_WORDS","HOST_ELEVATION",
-  "CHALICE_ELEVATION","INCARNATUS_GESTURE"]){
+  "CHALICE_ELEVATION","INCARNATUS_GESTURE",
+  "HANC_IGITUR_HANDS","GOSPEL_CROSSES","PASSION_DEATH"]){
  assert.ok(shell.includes('data-cinematic-scene="'+id+'"'),id+" lacked styling");
 }
 assert.ok(shell.includes('data-role="cinematic"'));
