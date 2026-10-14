@@ -90,9 +90,15 @@ The 422 rows distribute as follows (not 422 independent commentaries):
 - Separate historical, patristic, allegorical, devotional and normative material; rights and wording per edition remain individual release checks.
 - The two narratives need distinct author's connective prose, but their facts, extracted sources, Scripture citations and art links must be shared.
 
-## Real next deliverable, not another generic timeline
+## Source-to-owner recovery completed in this batch
 
-1. Map **every** of the 422 September evidence records to its original 71-event `E##` identity and either a validated `AO.CARD/AO.CANON` owner **or `UNMAPPED`**. Do not string-match event titles into dubious precise cue IDs.
+The [full 422-record owner bridge](../../data/learn/research/mystery-mass-september422-to-canonical39-bridge-20261014.v1.json) now crosswalks **all 71 September Mass event positions and all 422 evidence IDs** to the existing 39 editorial owners. Results: **402/422** archival evidence rows have a unique, defensible liturgical research owner; the remaining **20/422** are *explicit holds*, confined to five original event groupings: E01 priest arrival (4); E02 optional Asperges (2); E46 overly broad post-Consecration Canon (4); E55 Pax and preparation prayer ownership (7); E71 departure/post-Mass prayers (3). This is an editorial source-owner mapping, **not** precise paragraph timing or assertion of 1962 rite applicability.
+
+The [automated archive integrity test](../../tests/mystery-mass-complete-source-recovery.mjs) checks 422 exact distinct evidence IDs, all source codes and archived claim identities, 71 complete event identities, the 39 valid targets, these 20 intentional holds, the 28 source families and the three separate modules with two Mystery journeys. The research-only CI workflow includes this test. All original claim text remains in the frozen September snapshot.
+
+## Remaining recovery, not another generic timeline
+
+1. **Completed:** 422 archival evidence records are now reconciled by source-event identity to 39 canonical owners, with 20 held for external rites/multi-owner precision.
 2. Recover the early Gihr and larger Le Brun manuscripts, the remaining Ferrer original chapter text and other historical source files; record absent exact locations rather than silently treating a book citation as reviewed source text. Languet and Torma become explicit discoveries, not retrospectively “already integrated”.
 3. Build a genuinely **dual** source-first narrative schema: biblical event + Mass owner + evidence IDs + connection type (`DIRECT_WORDS`, `ADAPTED_WORDS`, `EXPLICIT_FIGURE`, `PATRISTIC_TYPOLOGY`, `HISTORICAL_CLAIM`, `AUTHORIAL_MEDITATION`, `SPECULATIVE`) and the two distinct script sequences.
 4. Draft narrative only after the source evidence has been assigned and quality-checked. Do not block inventory consolidation on full 1962 print-facsimile collation or independent French publication review.
