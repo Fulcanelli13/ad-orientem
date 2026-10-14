@@ -2,7 +2,7 @@ name: Visual acceptance capture
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
     branches: [main]
     paths:
       - "index.html"
@@ -34,7 +34,9 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    # Drafts opt in explicitly; ordinary draft PRs still skip costly visual E2E.
+    # This allows a visual-review request before making a PR merge-ready.
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false || contains(github.event.pull_request.labels.*.name, 'visual-review')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
