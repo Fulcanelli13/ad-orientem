@@ -35,6 +35,7 @@ jobs:
           node tests/mass-lanslots-critical-reconciliation.mjs
           node tests/mass-lanslots-full-ocr-integrity.mjs
           node tests/mass-lanslots-original-image-spotcheck.mjs
+          node tests/mass-lanslots-parenthetical-adjudication.mjs
       - name: Supply byte-verified archived OCR (push) or independently re-download (manual)
         shell: bash
         run: |
