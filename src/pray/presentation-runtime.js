@@ -6,7 +6,8 @@ import "./presentation-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
-import {showDevotionalInterlude,showDevotionalParagraphCue,resetDevotionalOpening} from "./devotional-cinematic.js";
+import {showDevotionalInterlude,showDevotionalParagraphCue,resetDevotionalCinematicSession} from "./devotional-cinematic.js";
+import {resolveAngelusIncarnationCinematic} from "./angelus-cinematic-policy.js";
 import {resolveDevotionalActionScene,createDevotionalActionCinematic} from "./devotional-action-cinematics.js";
 import "./devotional-methods-styles.js";
 import "./tenebrae-styles.js";
@@ -309,7 +310,6 @@ function shell(){
 function mount(){return shell().querySelector('.aoP435930Mount')}
 function open(id,opts={}){
   actionCinematics.reset();
-  resetDevotionalOpening(document);
   // Do not corrupt return context or Back state for an unsupported deep link.
   if(!supportedDirectPrayerRoute(id))return false;
   homeNavigationError=false;
@@ -317,7 +317,7 @@ function open(id,opts={}){
   returnContext=Object.prototype.hasOwnProperty.call(opts,'returnContext')?opts.returnContext:PRAY_CTX;returnFocus=opts.trigger||document.activeElement;
   navStack=[];familyId=null;
   if(id==='pray.hub')view='home';
-  else if(id==='pray.angelus'||id==='pray.angelus_regina'){view='angelus';ANGELUS_CARD_INDEX=0;}
+  else if(id==='pray.angelus'||id==='pray.angelus_regina'){view='angelus';ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
   else if(id==='pray.rosary'){
     ROSARY_FIFTEEN.active=false;
     window.AO_ROSARY_V381?.setMethod?.('ordinary');
@@ -348,7 +348,7 @@ function open(id,opts={}){
 }
 function close({silent=false,preserve=false}={}){
   actionCinematics.reset();
-  resetDevotionalOpening(document);
+  resetDevotionalCinematicSession({mount:mount(),win:window});
   stopTimer();const r=document.getElementById(ROOT_ID);r?.classList.remove('open');r?.setAttribute('aria-hidden','true');document.body.classList.remove('aoP435930Open');
   if(!preserve){
     // Privacy-sensitive preparation is memory-only and is cleared on a true close.
@@ -1993,16 +1993,15 @@ function installLibraryParagraphFocus(m,id){
 }
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});
- // Source-owned devotional stages already exist. We only project their
- // prominent visual treatment, without inventing a gesture or rite event.
+ // Source-owned public rite stages and private Visit arrival are projected,
+ // never interpreted as observed acts or additional liturgical requirements.
  if(view==='benediction'||view==='adoration'||view==='stations'){
   const scene=resolveDevotionalActionScene({
-   view,
-   benedictionStage:view==='benediction'?BEN_STAGES[BEN.step]?.[0]:null,
-   adorationMode:view==='adoration'?ADOR.mode:null,
-   visitStep:view==='adoration'?ADOR.visitStep:null,
-   stationStep:view==='stations'?STATIONS.step:null,
-   stationRitual:null, // St Alphonsus method has no certified per-station posture registry
+    view,benedictionStage:view==='benediction'?BEN_STAGES[BEN.step]?.[0]:null,
+    adorationMode:view==='adoration'?ADOR.mode:null,
+    visitStep:view==='adoration'?ADOR.visitStep:null,
+    stationStep:view==='stations'?STATIONS.step:null,
+    stationRitual:null, // no certified per-method posture graph yet
   });
   actionCinematics.sync(scene,{mount:m,language:lang(),sessionKey:view});
  }else if(view!=='angelus'){
@@ -2015,16 +2014,19 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    mount:m,form,language:lang(),historicalConclusion:form==='angelus'&&S.angelusHistoricalConclusion,
    appendixText:{vern:DATA.angelusAppendix?.[lang()],latin:DATA.angelusAppendix?.la},
    initialIndex:ANGELUS_CARD_INDEX,
-   onCardChange:(card,index)=>{
+   onCardChange:(_card,index)=>{
+    // Opening sacred artwork belongs only to prayer entry, never card changes.
     ANGELUS_CARD_INDEX=index;
-    // Opening art is presented once per prayer session, not on every card.
    },
-   onCue:(cue,{card}={})=>{
-    showDevotionalParagraphCue({mount:m,cue:cue==='profound-bow'&&posture.stand?cue:null});
-    actionCinematics.sync(resolveDevotionalActionScene({
-      view:'angelus',form,cardId:card?.id,cue,
-      posture:posture.stand?'stand':'kneel'
-    }),{mount:m,language:lang(),sessionKey:'angelus-'+form});
+   onCue:cue=>{
+    const action=cue==='profound-bow'?resolveAngelusIncarnationCinematic({
+      form,weekday:selectedWeekday(),
+      saturdayAfterVespers:angelusSaturdayVespersDate===selectedDateKey(),
+      language:lang(),
+    }):null;
+    // The full-screen cue deliberately remains salient even when the source
+    // posture state says the faithful are already kneeling on weekdays.
+    showDevotionalParagraphCue({mount:m,cue,action,language:lang(),win:window});
     const rail=m.querySelector('[data-ao-ritual-module="angelus"]');
     if(!rail)return;
     rail.querySelectorAll('[data-channel="gesture"]').forEach(el=>el.remove());
@@ -2033,9 +2035,8 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
       L('Bow profoundly','Inclination profonde'),{emphasis:true,value:'profound-bow'}));
    }
   });
-  if(cardDeck && ANGELUS_CARD_INDEX===0)
-    showDevotionalInterlude({mount:m,form,card:cardDeck.plan[0],
-      language:lang(),win:window});
+  if(cardDeck && form==='angelus' && ANGELUS_CARD_INDEX===0)
+    showDevotionalInterlude({mount:m,form,card:cardDeck.plan[0],language:lang(),win:window});
   if(!cardDeck)bindAngelusExactRail();
  });else stopAngelusExactRail();
  if((view==='library'&&LIB.open)||(view==='prayerOnly'&&prayerId))queueMicrotask(()=>installLibraryParagraphFocus(m,view==='library'?LIB.open:prayerId));
@@ -2174,7 +2175,7 @@ function routeOwn(id){
  if(!next)return false;
  view=next;
  if(next==='stations'){STATIONS.step=0;lastStationsFxStep=null}
- if(next==='angelus')ANGELUS_CARD_INDEX=0;
+ if(next==='angelus'){ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
  if(next==='mercy')MERCY.step=0;
  if(next==='rosaryMethods')ROSARY_CHOOSER.optionsOpen=false;
  if(id==='pray.visit_blessed_sacrament')ADOR.mode='visit';
