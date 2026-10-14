@@ -81,14 +81,28 @@ export function buildCanon42EditorialReviewPacket({
   }
   if(seen.size!==42||inlineProjection.unmatchedGapCueIds?.length!==0)
     throw new Error("Editorial Canon review needs all 42 gap cues exactly once");
+  const held=records.filter(r=>r.anchorStatus==="SOURCE_GESTURE_OFFSET_UNVERIFIED");
+  if(held.length!==1||held[0].cueId!=="AO.SM.C0190"||
+     held[0].actionId!=="AO.CANON.R62.044"||
+     held[0].placementPolicy!=="GUIDE_ONLY_PENDING_CROSS_SIGN_OFFSET"||
+     held[0].reviewGate!=="SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF"||
+     held[0].spans.length!==0||held[0].sourceLatinField!==null)
+    throw new Error("C0190 source-cross offset must be explicitly withheld, not silently certified");
   if(records.some(r=>(r.sourceAnchorKind==="SOURCE_LATIN_WORDS"&&
-     (r.anchorStatus!=="WORD_MATCH_EXACT"||r.spans.length===0))||
+     !((r.anchorStatus==="WORD_MATCH_EXACT"&&r.spans.length>0)||
+       (r.actionId==="AO.CANON.R62.044"&&
+        r.anchorStatus==="SOURCE_GESTURE_OFFSET_UNVERIFIED"&&r.spans.length===0)))||
     (r.sourceAnchorKind==="ORDERED_NON_TEXT_CEREMONY"&&
      (r.anchorStatus!=="NON_TEXT_SOURCE_EVENT"||r.spans.length!==0))))
-    throw new Error("Unverified Canon Latin word placement must not enter editorial signoff");
+    throw new Error("Unknown Canon Latin word placement must fail closed");
+  if(records.filter(r=>r.anchorStatus==="WORD_MATCH_EXACT").length!==39)
+    throw new Error("Exactly 39 distinct safe Canon word offsets expected");
   return Object.freeze({
     status:"COMPLETE_SOURCE_REFERENCED_EDITORIAL_PACKET_NOT_PUBLISHED",
     canPublish:false,publicationReady:0,reviewedCueCount:records.length,
+    sourceExactWordPlacements:39,
+    sourceOffsetSignoffReady:false,
+    sourceOffsetReviewHolds:Object.freeze(["AO.CANON.R62.044"]),
     rows:Object.freeze(records),
     approvalRequirements:Object.freeze([
       "INDEPENDENT_ORIGINAL_FRENCH_COPY_SIGNOFF",
