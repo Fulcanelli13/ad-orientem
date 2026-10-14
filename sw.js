@@ -7,6 +7,9 @@ const PREFIX="ao-bootstrap-snapshot-v1-";
 const STAGE="ao-bootstrap-staging-v1";
 const META="ao-bootstrap-meta-v1";
 const BASE=new URL(self.registration.scope);
+// On Vercel, browser sessions must always use the deployed network version.
+// The original transactional offline worker remains available on other hosts.
+const VERCEL_WEB_PREVIEW=/\.vercel\.app$/i.test(BASE.hostname);
 const ROOT=new URL("index.html",BASE).href;
 const KEY=new URL("__ao_bootstrap_state__",BASE).href;
 const READY=new URL("__ao_bootstrap_completed__",BASE).href;
@@ -177,14 +180,22 @@ async function useSnapshot(version,clientId=null){
  await broadcast("ACTIVE_VERSION",{version});
  return {ok:true,version};
 }
-self.addEventListener("install",event=>event.waitUntil(Promise.resolve()));
+self.addEventListener("install",event=>event.waitUntil(VERCEL_WEB_PREVIEW?self.skipWaiting():Promise.resolve()));
 self.addEventListener("activate",event=>{
- event.waitUntil((async()=>{await self.clients.claim();activeVersion=(await readState()).active})());
+ event.waitUntil((async()=>{
+  await self.clients.claim();
+  if(VERCEL_WEB_PREVIEW){
+    await self.registration.unregister();
+    return;
+  }
+  activeVersion=(await readState()).active;
+ })());
 });
 self.addEventListener("message",event=>{
  const m=event.data;
  if(m?.source!=="AO_OFFLINE_V1")return;
  const respond=body=>{try{event.ports?.[0]?.postMessage(body)}catch{}};
+ if(VERCEL_WEB_PREVIEW){respond({ok:false,error:"VERCEL_PREVIEW_NETWORK_ONLY"});return;}
  if(m.type==="CHECK_UPDATE")event.waitUntil(
    stageSnapshot().catch(error=>({ok:false,error:String(error?.message||error)})).then(respond)
  );
@@ -192,6 +203,8 @@ self.addEventListener("message",event=>{
  else if(m.type==="USE_SNAPSHOT")event.waitUntil(useSnapshot(m.version,event.source?.id).then(respond));
 });
 self.addEventListener("fetch",event=>{
+ // Old cached HTML or modules must never mask a new Vercel deployment.
+ if(VERCEL_WEB_PREVIEW)return;
  const request=event.request;
  if(request.method!=="GET")return;
  const u=new URL(request.url);
