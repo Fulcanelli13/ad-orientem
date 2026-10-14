@@ -21,13 +21,13 @@
     "ceremoniallyApproved": 0,
     "published": 0,
     "reviewSurfaces": {
-      "GUIDE_ONLY": 13,
+      "GUIDE_ONLY": 14,
       "FOCUS_WORDS_NO_DUPLICATE": 2,
       "PRIEST_RIBBON_STATE_ONLY": 2,
       "PRIEST_VOICE_STATE_ONLY": 3,
       "SERVER_RIBBON_ONLY": 3,
       "PRIEST_MULTI_STAGE_EDITORIAL": 15,
-      "INLINE_ATOMIC_EDITORIAL": 21,
+      "INLINE_ATOMIC_EDITORIAL": 20,
       "GUIDE_AND_FORM_CONTEXT": 1,
       "INDEPENDENT_STAGE_EDITORIAL_ONLY": 2
     },
@@ -48,7 +48,8 @@
     "Guide drafts describe observable rites and legitimate variants directly; do not substitute implementation commentary for the rubric itself.",
     "Final guide prose states the rite; source-cue and implementation limitations are preserved as editorial metadata rather than intrusive commentary.",
     "The short French draft is read at preview time from the canonical R62 French owner; no second editable French short text exists in this bilingual registry.",
-    "If the canonical French source or its approval status is missing, the entire bilingual packet must fail closed rather than substitute an outdated local copy."
+    "If the canonical French source or its approval status is missing, the entire bilingual packet must fail closed rather than substitute an outdated local copy.",
+    "R62.044: guide-only while the donor coelésti vs the parallel 1962 cælesti spelling and exact cross-sign offset remain unresolved; do not fire the Sign of the Cross at omni benedictione."
   ],
   "rows": [
     {
@@ -65,7 +66,7 @@
       "semanticKind": "MULTI_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "en": "He raises and lowers his hands and eyes, joins his hands, then bows profoundly.",
+        "en": "He raises his hands, lifts then lowers his eyes, joins his hands and bows profoundly.",
         "frCanonicalActionId": "AO.CANON.R62.001"
       },
       "guideDraft": {
@@ -1570,12 +1571,12 @@
       "semanticKind": "SINGLE_STAGE",
       "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
       "shortDraft": {
-        "en": "He makes the Sign of the Cross upon himself.",
+        "en": "At the cross after omni benedictione, he makes the Sign of the Cross upon himself.",
         "frCanonicalActionId": "AO.CANON.R62.044"
       },
       "guideDraft": {
         "frCanonicalActionId": "AO.CANON.R62.044",
-        "en": "At omni benedictione he makes the Sign of the Cross upon himself, from the forehead to the chest."
+        "en": "At the cross following omni benedictione, he makes the Sign of the Cross upon himself from forehead to chest, keeping his left hand below his chest."
       },
       "copyApproval": "NOT_APPROVED",
       "ritusFormApproval": "NOT_APPROVED",
@@ -1585,7 +1586,7 @@
       "readerDisplayText": null,
       "priestActionNow": null,
       "faithfulPosture": null,
-      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "reviewSurface": "GUIDE_ONLY",
       "currentlyVisible": false,
       "previewPermitted": true,
       "automaticallyTriggeredByScroll": false,
