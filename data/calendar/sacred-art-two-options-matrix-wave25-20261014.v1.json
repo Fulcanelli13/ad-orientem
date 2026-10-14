@@ -1,0 +1,3837 @@
+{
+  "schema": "AO_SACRED_ART_TWO_DISTINCT_ORIGINALS_SUBJECT_MATRIX_W25_V1",
+  "asOf": "2026-10-14",
+  "ownerPR": 887,
+  "authority": "Read-only Oct13 human rank export plus existing museum source queue, verified P0 records, Waves16-25; not artwork approval.",
+  "status": "RESEARCH_CANDIDATE_MATRIX_PRELIMINARY_DEDUP_REQUIRED",
+  "policy": {
+    "minimumTargetPerExistingSubject": 2,
+    "userRequiresRatingsNow": false,
+    "existingSubjects": 75,
+    "doNotAddEverySaint": true,
+    "excludeUserZeroToTwo": true,
+    "sourceRecordDoesNotEqualGoodImage": true,
+    "sourceOrCopyHoldRetained": true,
+    "doNotClaimTwoWithoutReviewingPhysicalOriginalIdentity": true,
+    "noProductionMutation": true
+  },
+  "counts": {
+    "byGroup": {
+      "AP": {
+        "total": 13,
+        "zero": 0,
+        "one": 0,
+        "twoPlus": 13
+      },
+      "EV": {
+        "total": 2,
+        "zero": 0,
+        "one": 0,
+        "twoPlus": 2
+      },
+      "DC": {
+        "total": 28,
+        "zero": 3,
+        "one": 13,
+        "twoPlus": 12
+      },
+      "OT": {
+        "total": 32,
+        "zero": 0,
+        "one": 4,
+        "twoPlus": 28
+      }
+    },
+    "overallSubjects": 75,
+    "atLeastTwoResearchCandidateRecords": 55,
+    "lessThanTwoResearchCandidateRecords": 20,
+    "sourceImageMastersNew": 0,
+    "userRatingsChanged": 0
+  },
+  "rows": [
+    {
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "group": "AP",
+      "historicalSelectionId": "ART-usepe-de-ibera-aint-eter-postolate",
+      "options": [
+        {
+          "key": "ART-usepe-de-ibera-aint-eter-postolate",
+          "id": "ART-usepe-de-ibera-aint-eter-postolate",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Peter — Apostolate",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/442491",
+          "id": "met-442491",
+          "artist": "Bartolomeo Manfredi",
+          "title": "Saints Peter and Paul",
+          "url": "https://www.metmuseum.org/art/collection/search/442491",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/441971",
+          "id": "met-441971",
+          "artist": "Jusepe de Ribera",
+          "title": "The Tears of Saint Peter",
+          "url": "https://www.metmuseum.org/art/collection/search/441971",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/438561",
+          "id": "met-438561",
+          "artist": "Ludovico Carracci",
+          "title": "The Denial of Saint Peter",
+          "url": "https://www.metmuseum.org/art/collection/search/438561",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/458963",
+          "id": "met-458963",
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "url": "https://www.metmuseum.org/art/collection/search/458963",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-peter/191fcaa5-1841-41dd-bcae-939be2f88437",
+          "id": "W05-001",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Peter",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-peter/191fcaa5-1841-41dd-bcae-939be2f88437",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://turismoroma.it/en/node/18610",
+          "id": "W05-027",
+          "artist": "Caravaggio",
+          "title": "The Crucifixion of Saint Peter",
+          "url": "https://turismoroma.it/en/node/18610",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-02",
+      "subject": "Saint Andrew",
+      "group": "AP",
+      "historicalSelectionId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+      "options": [
+        {
+          "key": "https://clevelandart.org/art/1976.2",
+          "id": "cma-148758",
+          "artist": "Caravaggio",
+          "title": "The Crucifixion of Saint Andrew",
+          "url": "https://clevelandart.org/art/1976.2",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+          "id": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+          "artist": "Peter Paul Rubens",
+          "title": "Martyrdom of Saint Andrew",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/3b512d00-0e07-47f9-944e-159058552dbf",
+          "id": "W05-004",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Andrew",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/3b512d00-0e07-47f9-944e-159058552dbf",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/68ed413d-2136-4d13-a03c-15f08ce59c1a",
+          "id": "W02-004",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Andrew",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/68ed413d-2136-4d13-a03c-15f08ce59c1a",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-03",
+      "subject": "Saint James the Greater",
+      "group": "AP",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-greater/72f76d59-fab7-4cea-8214-af0fb98fc293",
+          "id": "prado-rubens-p001648",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Greater",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-greater/72f76d59-fab7-4cea-8214-af0fb98fc293",
+          "sources": [
+            "P0_ORIGINAL",
+            "REUSE_W05-003"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-james/7e180004-49fc-430b-b292-f9ba10b97f00",
+          "id": "W01-002",
+          "artist": "Francisco de Zurbarán",
+          "title": "The Martyrdom of Saint James",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-james/7e180004-49fc-430b-b292-f9ba10b97f00",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "group": "AP",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/458963",
+          "id": "met-458963",
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "url": "https://www.metmuseum.org/art/collection/search/458963",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-the-evangelist/29bfd358-bfd3-43b4-a894-b57f6eb2d81f",
+          "id": "prado-rubens-p001647",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint John the Evangelist",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-the-evangelist/29bfd358-bfd3-43b4-a894-b57f6eb2d81f",
+          "sources": [
+            "P0_ORIGINAL",
+            "W17_REUSE",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-05",
+      "subject": "Saint Philip",
+      "group": "AP",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-philip/a0e78920-8f28-47f5-8cd5-f50ba1dfa8c5",
+          "id": "prado-rubens-p001650",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Philip",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-philip/a0e78920-8f28-47f5-8cd5-f50ba1dfa8c5",
+          "sources": [
+            "P0_ORIGINAL",
+            "REUSE_W05-005"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-felipe/793fd955-9312-436d-b5fd-2ab3bccc5f43",
+          "id": "G25-010",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Philip (Apostolado)",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-felipe/793fd955-9312-436d-b5fd-2ab3bccc5f43",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_APOSTLE_PORTRAIT",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-philip/a221ea0e-d38c-4018-be83-af9119458701",
+          "id": "W01-001",
+          "artist": "Jusepe de Ribera",
+          "title": "The Martyrdom of Saint Philip",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-philip/a221ea0e-d38c-4018-be83-af9119458701",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://collections.louvre.fr/ark:/53355/cl010060518",
+          "id": "W04-010",
+          "artist": "Philippe de Champaigne",
+          "title": "L'Apôtre saint Philippe",
+          "url": "https://collections.louvre.fr/ark:/53355/cl010060518",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "group": "AP",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/f49d896e-547c-40bd-ac5d-4cb537e429d8",
+          "id": "prado-rubens-p001652",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Bartholomew",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/f49d896e-547c-40bd-ac5d-4cb537e429d8",
+          "sources": [
+            "P0_ORIGINAL",
+            "REUSE_W05-007"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/4818e314-6b68-4828-8397-57c5e051507e",
+          "id": "W02-001",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Bartholomew (Apostolado series, 1630–35)",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/4818e314-6b68-4828-8397-57c5e051507e",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/279864d2-83ad-4cb3-bf73-949757fab0b0",
+          "id": "W02-002",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Bartholomew (penitent series, 1641)",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/279864d2-83ad-4cb3-bf73-949757fab0b0",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-07",
+      "subject": "Saint Thomas",
+      "group": "AP",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/629fe4f7-9fdd-4b8f-af15-653882a62493",
+          "id": "prado-rubens-p001654",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Thomas",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/629fe4f7-9fdd-4b8f-af15-653882a62493",
+          "sources": [
+            "P0_ORIGINAL",
+            "REUSE_W05-009"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/6cb0a2c8-ecf1-4702-8e8d-19c819c53ac2",
+          "id": "W02-005",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Thomas",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-thomas/6cb0a2c8-ecf1-4702-8e8d-19c819c53ac2",
+          "sources": [
+            "REUSE_W02-005",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "ORIGINAL_SOURCE_REUSE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.spsg.de/en/press-material-paintings",
+          "id": "W07-014",
+          "artist": "Caravaggio",
+          "title": "The Incredulity of Saint Thomas",
+          "url": "https://www.spsg.de/en/press-material-paintings",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "group": "AP",
+      "historicalSelectionId": "ART-aravaggio-nspiration-of-aint-atthew",
+      "options": [
+        {
+          "key": "ART-aravaggio-nspiration-of-aint-atthew",
+          "id": "ART-aravaggio-nspiration-of-aint-atthew",
+          "artist": "Caravaggio",
+          "title": "Inspiration of Saint Matthew",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/712946",
+          "id": "met-712946",
+          "artist": "Giovanni Battista Caracciolo",
+          "title": "The Calling of Saint Matthew",
+          "url": "https://www.metmuseum.org/art/collection/search/712946",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-matthew/e52ae737-7a03-4690-9709-4eb5eec3fa98",
+          "id": "W05-011",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Matthew",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-matthew/e52ae737-7a03-4690-9709-4eb5eec3fa98",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://turismoroma.it/en/node/18610",
+          "id": "W05-023",
+          "artist": "Caravaggio",
+          "title": "The Calling of Saint Matthew",
+          "url": "https://turismoroma.it/en/node/18610",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "group": "AP",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-less/02ef9e0d-b544-48cb-bcd0-89611b37f55b",
+          "id": "prado-rubens-p001651",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Less",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-less/02ef9e0d-b544-48cb-bcd0-89611b37f55b",
+          "sources": [
+            "P0_ORIGINAL",
+            "REUSE_W05-006"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/santiago-el-menor/c7c39f00-3eb2-47b6-81c3-55dbab26cd7b",
+          "id": "G25-011",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint James the Less (Apostolado)",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/santiago-el-menor/c7c39f00-3eb2-47b6-81c3-55dbab26cd7b",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_APOSTLE_PORTRAIT",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "group": "AP",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/0679cee8-ea16-47dc-81f8-179530faaa68",
+          "id": "prado-rubens-p001655",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Simon",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/0679cee8-ea16-47dc-81f8-179530faaa68",
+          "sources": [
+            "P0_ORIGINAL",
+            "REUSE_W05-010"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_TRADITIONAL_APOSTLE_IDENTITY",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-simon/76492e7e-5918-4087-a312-985cab6d7918",
+          "id": "G25-012",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Simon (Apostolado)",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-simon/76492e7e-5918-4087-a312-985cab6d7918",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_APOSTLE_PORTRAIT",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.khm.at/en/artworks/apostle-simon-1619-21-637",
+          "id": "W14-017",
+          "artist": "Anthony van Dyck",
+          "title": "Apostle Simon (Böhler series)",
+          "url": "https://www.khm.at/en/artworks/apostle-simon-1619-21-637",
+          "sources": [
+            "REUSE_W14-017",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "ORIGINAL_SOURCE_REUSE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/c407d683-796b-4e33-8cd0-2393590db4f0",
+          "id": "W02-003",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Simon",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/c407d683-796b-4e33-8cd0-2393590db4f0",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-11",
+      "subject": "Saint Matthias",
+      "group": "AP",
+      "historicalSelectionId": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "options": [
+        {
+          "key": "ART-eter-aul-ubens-aint-atthias-postolate",
+          "id": "ART-eter-aul-ubens-aint-atthias-postolate",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Matthias — Apostolate",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+          "id": "W05-008",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Matthias",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+          "sources": [
+            "REUSE_W05-008",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "ORIGINAL_SOURCE_REUSE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "group": "AP",
+      "historicalSelectionId": "ART-usepe-de-ibera-aint-aul-postolate",
+      "options": [
+        {
+          "key": "ART-usepe-de-ibera-aint-aul-postolate",
+          "id": "ART-usepe-de-ibera-aint-aul-postolate",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Paul — Apostolate",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/442491",
+          "id": "met-442491",
+          "artist": "Bartolomeo Manfredi",
+          "title": "Saints Peter and Paul",
+          "url": "https://www.metmuseum.org/art/collection/search/442491",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/458963",
+          "id": "met-458963",
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "url": "https://www.metmuseum.org/art/collection/search/458963",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-paul/d9ce01ba-2d87-4bb2-adc1-266482f24875",
+          "id": "W05-012",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Paul",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-paul/d9ce01ba-2d87-4bb2-adc1-266482f24875",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/joconde/50110000785",
+          "id": "W04-017",
+          "artist": "Jean Baptiste de Champaigne",
+          "title": "Saint Paul renversé et lapidé dans la ville de Lystre",
+          "url": "https://pop.culture.gouv.fr/notice/joconde/50110000785",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://turismoroma.it/en/node/18610",
+          "id": "W05-026",
+          "artist": "Caravaggio",
+          "title": "The Conversion of Saint Paul",
+          "url": "https://turismoroma.it/en/node/18610",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-AP-13",
+      "subject": "Saint Jude Thaddeus",
+      "group": "AP",
+      "historicalSelectionId": "ART-usepe-de-ibera-aint-udas-haddeus",
+      "options": [
+        {
+          "key": "ART-usepe-de-ibera-aint-udas-haddeus",
+          "id": "ART-usepe-de-ibera-aint-udas-haddeus",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Judas Thaddeus",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-judas-tadeo/2a57d413-633a-4bf8-bd02-a5b94f6b170a",
+          "id": "G25-013",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Jude Thaddeus (Apostolado)",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-judas-tadeo/2a57d413-633a-4bf8-bd02-a5b94f6b170a",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_APOSTLE_PORTRAIT",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.khm.at/en/artworks/apostle-judas-thaddaeus-635",
+          "id": "W14-016",
+          "artist": "Anthony van Dyck",
+          "title": "Apostle Judas Thaddeus (Böhler series)",
+          "url": "https://www.khm.at/en/artworks/apostle-judas-thaddaeus-635",
+          "sources": [
+            "REUSE_W14-016",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "ORIGINAL_SOURCE_REUSE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "group": "EV",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "id": "prado-juan-ribalta-p002965",
+          "artist": "Juan Ribalta",
+          "title": "Saint Mark and Saint Luke",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "BOTH_NAMED_EVANGELISTS_IN_SAME_PAINTED_PANEL",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/zanobi-machiavelli-saint-mark-and-saint-augustine",
+          "id": "G17-001",
+          "artist": "Zanobi Machiavelli",
+          "title": "Saint Mark and Saint Augustine",
+          "url": "https://www.nationalgallery.org.uk/paintings/zanobi-machiavelli-saint-mark-and-saint-augustine",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/antonio-vivarini-and-giovanni-d-alemagna-saints-francis-and-mark",
+          "id": "G17-020",
+          "artist": "Antonio Vivarini and Giovanni d'Alemagna",
+          "title": "Saints Francis and Mark",
+          "url": "https://www.nationalgallery.org.uk/paintings/antonio-vivarini-and-giovanni-d-alemagna-saints-francis-and-mark",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "group": "EV",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "id": "prado-juan-ribalta-p002965",
+          "artist": "Juan Ribalta",
+          "title": "Saint Mark and Saint Luke",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "BOTH_NAMED_EVANGELISTS_IN_SAME_PAINTED_PANEL",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/workshop-of-quinten-massys-saint-luke-painting-the-virgin-and-child",
+          "id": "G17-002",
+          "artist": "Workshop of Quinten Massys",
+          "title": "Saint Luke painting the Virgin and Child",
+          "url": "https://www.nationalgallery.org.uk/paintings/workshop-of-quinten-massys-saint-luke-painting-the-virgin-and-child",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-01",
+      "subject": "Saint Ambrose",
+      "group": "DC",
+      "historicalSelectionId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "options": [
+        {
+          "key": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+          "id": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Ambrose Barring Theodosius",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-ambrosio-negando-al-emperador-teodosio-la/768b4f80-3e1e-42ab-bdd3-ab9d96e75674",
+          "id": "G25-001",
+          "artist": "Juan de Valdés Leal",
+          "title": "Saint Ambrose Bars Theodosius from the Temple",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-ambrosio-negando-al-emperador-teodosio-la/768b4f80-3e1e-42ab-bdd3-ab9d96e75674",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SCENE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/nombramiento-de-san-ambrosio-como-gobernador-de/fe16b161-ca6c-48fa-aa94-c5a84593ece6",
+          "id": "G25-002",
+          "artist": "Juan de Valdés Leal",
+          "title": "Saint Ambrose Appointed Governor of Liguria and Emilia",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/nombramiento-de-san-ambrosio-como-gobernador-de/fe16b161-ca6c-48fa-aa94-c5a84593ece6",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SCENE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saints-ambrose-and-augustine/cc614489-75ba-4372-9ebb-31f3578ed0c8",
+          "id": "G25-004",
+          "artist": "Pedro Berruguete",
+          "title": "Saints Ambrose and Augustine",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saints-ambrose-and-augustine/cc614489-75ba-4372-9ebb-31f3578ed0c8/",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_GROUP_EARLY_STYLE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+          "id": "W02-017",
+          "artist": "Anthony van Dyck",
+          "title": "St Ambrose barring Theodosius from Milan Cathedral",
+          "url": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.khm.at/en/artworks/st-ambrose-and-emperor-theodosius-1618-1",
+          "id": "W14-001",
+          "artist": "Peter Paul Rubens",
+          "title": "St Ambrose and Emperor Theodosius",
+          "url": "https://www.khm.at/en/artworks/st-ambrose-and-emperor-theodosius-1618-1",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-02",
+      "subject": "Saint Augustine",
+      "group": "DC",
+      "historicalSelectionId": "ART-hilippe-de-hampaigne-aint-ugustine",
+      "options": [
+        {
+          "key": "ART-hilippe-de-hampaigne-aint-ugustine",
+          "id": "ART-hilippe-de-hampaigne-aint-ugustine",
+          "artist": "Philippe de Champaigne",
+          "title": "Saint Augustine",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-agustin/cf95015c-5744-4471-a529-84a3981719d6",
+          "id": "G25-003",
+          "artist": "Anonymous, possibly after Giovanni Lanfranco",
+          "title": "Saint Augustine",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-agustin/cf95015c-5744-4471-a529-84a3981719d6",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "COPY_ATTRIBUTION",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saints-ambrose-and-augustine/cc614489-75ba-4372-9ebb-31f3578ed0c8",
+          "id": "G25-004",
+          "artist": "Pedro Berruguete",
+          "title": "Saints Ambrose and Augustine",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saints-ambrose-and-augustine/cc614489-75ba-4372-9ebb-31f3578ed0c8/",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_GROUP_EARLY_STYLE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://kmska.be/en/masterpiece/saint-augustine-in-ecstasy-1",
+          "id": "W13-004",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Augustine in Ecstasy (large altarpiece)",
+          "url": "https://kmska.be/en/masterpiece/saint-augustine-in-ecstasy-1",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://kmska.be/en/masterpiece/saint-augustine-in-ecstasy-0",
+          "id": "W13-005",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Augustine in Ecstasy (preparatory oil study)",
+          "url": "https://kmska.be/en/masterpiece/saint-augustine-in-ecstasy-0",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-03",
+      "subject": "Saint Jerome",
+      "group": "DC",
+      "historicalSelectionId": "ART-usepe-de-ibera-aint-erome-riting",
+      "options": [
+        {
+          "key": "ART-usepe-de-ibera-aint-erome-riting",
+          "id": "ART-usepe-de-ibera-aint-erome-riting",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Jerome Writing",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://clevelandart.org/art/1961.219",
+          "id": "cma-136680",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Jerome",
+          "url": "https://clevelandart.org/art/1961.219",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/437977",
+          "id": "met-437977",
+          "artist": "Marcantonio Franceschini",
+          "title": "The Last Communion of Saint Mary of Egypt",
+          "url": "https://www.metmuseum.org/art/collection/search/437977",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/435728",
+          "id": "met-435728",
+          "artist": "Sandro Botticelli",
+          "title": "The Last Communion of Saint Jerome",
+          "url": "https://www.metmuseum.org/art/collection/search/435728",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/436098",
+          "id": "met-436098",
+          "artist": "Gerard David",
+          "title": "The Crucifixion",
+          "url": "https://www.metmuseum.org/art/collection/search/436098",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 3,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-gregorio-magno-y-san-jeronimo/53947e4c-2a68-43c0-abd0-18284082cd23",
+          "id": "G25-006",
+          "artist": "Pedro Berruguete",
+          "title": "Saints Gregory the Great and Jerome",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-gregorio-magno-y-san-jeronimo/53947e4c-2a68-43c0-abd0-18284082cd23",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_GROUP_EARLY_STYLE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/giovanni-girolamo-savoldo-saint-jerome",
+          "id": "W01-007",
+          "artist": "Giovanni Girolamo Savoldo",
+          "title": "Saint Jerome",
+          "url": "https://www.nationalgallery.org.uk/paintings/giovanni-girolamo-savoldo-saint-jerome",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-jerome-writing/ed0b9f12-8471-4d50-88ec-b3ea87667120",
+          "id": "W02-011",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Jerome writing (c. 1615)",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-jerome-writing/ed0b9f12-8471-4d50-88ec-b3ea87667120",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.collezionegalleriaborghese.it/en/opere/saint-jerome",
+          "id": "W07-007",
+          "artist": "Caravaggio",
+          "title": "Saint Jerome Writing (Borghese original)",
+          "url": "https://www.collezionegalleriaborghese.it/en/opere/saint-jerome",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio",
+          "id": "W07-012",
+          "artist": "Caravaggio",
+          "title": "Saint Jerome Writing (Valletta original)",
+          "url": "https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio/",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://visitmuseum.gencat.cat/en/museum/museu-de-montserrat/object/sant-jeroni-penitent",
+          "id": "W14-018",
+          "artist": "Caravaggio",
+          "title": "Saint Jerome Penitent (Montserrat original)",
+          "url": "https://visitmuseum.gencat.cat/en/museum/museu-de-montserrat/object/sant-jeroni-penitent",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/437722",
+          "id": "met-437722",
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory",
+          "url": "https://www.metmuseum.org/art/collection/search/437722",
+          "sources": [
+            "USER_OCT13",
+            "W17_REUSE"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/the-defenders-of-the-eucharist/c6a0ed37-f1ba-4781-9258-8eabd87ff1c2",
+          "id": "prado-rubens-defenders",
+          "artist": "Peter Paul Rubens",
+          "title": "The Defenders of the Eucharist",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/the-defenders-of-the-eucharist/c6a0ed37-f1ba-4781-9258-8eabd87ff1c2",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXTUAL_NAMED_GREGORY_IN_GROUP",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saints-gregory-the-great-and-jerome/53947e4c-2a68-43c0-abd0-18284082cd23",
+          "id": "G17-013",
+          "artist": "Pedro Berruguete",
+          "title": "Saints Gregory the Great and Jerome",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saints-gregory-the-great-and-jerome/53947e4c-2a68-43c0-abd0-18284082cd23",
+          "sources": [
+            "W17",
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-gregorio-magno/f0b0d534-63a4-480b-8ea8-0b123f50474b",
+          "id": "G25-005",
+          "artist": "Fray Juan Andrés Rizi",
+          "title": "Saint Gregory the Great",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-gregorio-magno/f0b0d534-63a4-480b-8ea8-0b123f50474b",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_PORTRAIT",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "group": "DC",
+      "historicalSelectionId": "ART-arlo-rivelli-aint-homas-quinas",
+      "options": [
+        {
+          "key": "ART-arlo-rivelli-aint-homas-quinas",
+          "id": "ART-arlo-rivelli-aint-homas-quinas",
+          "artist": "Carlo Crivelli",
+          "title": "Saint Thomas Aquinas",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "group": "DC",
+      "historicalSelectionId": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+      "options": [
+        {
+          "key": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+          "id": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Bonaventure at Council of Lyon",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-buenaventura/a1ae3b48-e94b-48f8-97e0-3f82e56d4f36",
+          "id": "G25-007",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Bonaventure",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-buenaventura/a1ae3b48-e94b-48f8-97e0-3f82e56d4f36",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_PORTRAIT",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-bonaventure-receiving-the-habit-from-saint/ca182669-0463-4267-9692-b481615aaa5e",
+          "id": "G25-008",
+          "artist": "Francisco de Herrera the Elder",
+          "title": "Saint Bonaventure Receiving the Habit from Saint Francis",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-bonaventure-receiving-the-habit-from-saint/ca182669-0463-4267-9692-b481615aaa5e",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SCENE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-07",
+      "subject": "Saint Bernard of Clairvaux",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+          "id": "prado-ribalta-p002804",
+          "artist": "Francisco Ribalta",
+          "title": "Christ embracing Saint Bernard",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+          "sources": [
+            "P0_ORIGINAL",
+            "REUSE_W01-010",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_BERNARD_WITH_CHRIST",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-bernardo-y-la-virgen/25b83887-3b11-4a99-a9b1-3b3050733d6a",
+          "id": "G25-009",
+          "artist": "Alonso Cano",
+          "title": "Saint Bernard and the Virgin",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-bernardo-y-la-virgen/25b83887-3b11-4a99-a9b1-3b3050733d6a",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_MIRACLE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/437542",
+          "id": "met-437542",
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "url": "https://www.metmuseum.org/art/collection/search/437542",
+          "sources": [
+            "USER_OCT13",
+            "P0_ORIGINAL",
+            "W17_REUSE"
+          ],
+          "userRating": 3,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "group": "DC",
+      "historicalSelectionId": "ART-iambattista-iepolo-aint-atherine-of-iena",
+      "options": [
+        {
+          "key": "ART-iambattista-iepolo-aint-atherine-of-iena",
+          "id": "ART-iambattista-iepolo-aint-atherine-of-iena",
+          "artist": "Giambattista Tiepolo",
+          "title": "Saint Catherine of Siena",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://kmska.be/en/masterpiece/christ-on-the-cross-with-saint-catherine-of-siena-saint-dominic-and-an-angel",
+          "id": "W13-003",
+          "artist": "Anthony van Dyck",
+          "title": "Christ on the Cross with Saint Catherine of Siena, Saint Dominic and an Angel",
+          "url": "https://kmska.be/en/masterpiece/christ-on-the-cross-with-saint-catherine-of-siena-saint-dominic-and-an-angel",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin",
+          "id": "celine-1894-john-cross",
+          "artist": "Céline Martin",
+          "title": "Saint John of the Cross",
+          "url": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_DEVOTIONAL_PAINTING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM95000976",
+          "id": "G17-004",
+          "artist": "Spanish School (artist unnamed)",
+          "title": "Saint Jean de la Croix en prière de profil",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM95000976",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM54000432",
+          "id": "G17-005",
+          "artist": "Author not yet read from Palissy record",
+          "title": "Le Christ apparaissant à saint Jean-de-la-Croix",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM54000432",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM87000188",
+          "id": "G17-019",
+          "artist": "Unknown (review pending)",
+          "title": "La Vision de saint Jean de la Croix",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM87000188",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM87000253",
+          "id": "G17-021",
+          "artist": "Maker not yet verified",
+          "title": "Saint Jean de la Croix",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM87000253",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+          "id": "italy-0900119548",
+          "artist": "Antonio Marini",
+          "title": "Sant'Alfonso Maria de Liguori",
+          "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SAINT_PAINTING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-12",
+      "subject": "Saint Francis de Sales",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://pop.culture.gouv.fr/notice/joconde/000PE032930",
+          "id": "brou-982243",
+          "artist": "Benoît Alhoste (attributed)",
+          "title": "Le Bon Pasteur, saint François de Sales et sainte Madeleine",
+          "url": "https://pop.culture.gouv.fr/notice/joconde/000PE032930",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "NAMED_SAINT_IN_GROUP",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+          "id": "G17-006",
+          "artist": "School of Philippe de Champaigne",
+          "title": "Saint François de Sales",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM73003446",
+          "id": "G17-007",
+          "artist": "Unattributed pending record inspection",
+          "title": "Saint François de Sales et deux Visitandines agenouillées",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM73003446",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM75001042",
+          "id": "paris-pm75001042-halle-sales",
+          "artist": "Noël Hallé",
+          "title": "Saint François de Sales donnant la règle de la Visitation à sainte Jeanne de Chantal",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM75001042",
+          "sources": [
+            "W23"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://collections.louvre.fr/ark:/53355/cl010057996",
+          "id": "louvre-b746-athanasius-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Athanase",
+          "url": "https://collections.louvre.fr/ark:/53355/cl010057996",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SAINT_ATHANASIUS_THEOLOGIAN_PAINTED_TONDO",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-14",
+      "subject": "Saint Basil the Great",
+      "group": "DC",
+      "historicalSelectionId": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+      "options": [
+        {
+          "key": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+          "id": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil — oil modello",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://collections.louvre.fr/ark:/53355/cl010057995",
+          "id": "louvre-b745-gregory-nazianzen-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Grégoire (de Nazianze)",
+          "url": "https://collections.louvre.fr/ark:/53355/cl010057995",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SAINT_GREGORY_NAZIANZEN_GREEK_FATHER_PAINTED_TONDO",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://collections.louvre.fr/ark:/53355/cl010057998",
+          "id": "louvre-b744-chrysostom-bertin",
+          "artist": "Nicolas Bertin",
+          "title": "Saint Chrysostome",
+          "url": "https://collections.louvre.fr/ark:/53355/cl010057998",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SAINT_JOHN_CHRYSOSTOM_GREEK_FATHER_PAINTED_TONDO",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-chrysostom/62f4944d-87c7-463d-855d-82333eac6316",
+          "id": "G17-003",
+          "artist": "Pedro de Orrente",
+          "title": "Saint John Chrysostom",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-chrysostom/62f4944d-87c7-463d-855d-82333eac6316",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-17",
+      "subject": "Saint Isidore of Seville",
+      "group": "DC",
+      "historicalSelectionId": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+      "options": [
+        {
+          "key": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+          "id": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "Saint Isidore of Seville",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-18",
+      "subject": "Saint Bede the Venerable",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.nationaltrustcollections.org.uk/object/584368",
+          "id": "G20-001",
+          "artist": "William Bell Scott",
+          "title": "Bede finishes his Works and Life",
+          "url": "https://www.nationaltrustcollections.org.uk/object/584368",
+          "sources": [
+            "W20"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://collections.louvre.fr/ark:/53355/cl010064462",
+          "id": "louvre-crespi-inv259",
+          "artist": "Giuseppe Maria Crespi",
+          "title": "L'Immaculée Conception avec saint Anselme et saint Martin",
+          "url": "https://collections.louvre.fr/ark:/53355/cl010064462",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXTUAL_NAMED_SAINT_ANSELM_IN_MARIAN_GROUP",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM67000164",
+          "id": "G20-002",
+          "artist": "Unidentified painter",
+          "title": "Saint Anselme",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM67000164",
+          "sources": [
+            "W20"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano",
+          "id": "zeri-45874-peter-damian",
+          "artist": "Venanzio l'Eremita",
+          "title": "San Pier Damiano",
+          "url": "https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SAINT_PAINTING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-21",
+      "subject": "Saint Albert the Great",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0060-00113",
+          "id": "italy-l0060-albert",
+          "artist": "Giuseppe Franchi",
+          "title": "Portrait of Saint Albert the Great",
+          "url": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0060-00113/",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SAINT_PROVISIONAL_CATALOGUE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0050-00042",
+          "id": "ambrosiana-L0050-00042",
+          "artist": "Carlo Perotti (attributed)",
+          "title": "Ritratto di Roberto Bellarmino",
+          "url": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0050-00042/",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_PORTRAIT_UNCERTAIN_DATE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.sammlung.pinakothek.de/de/artwork/JzG6RKJGWO",
+          "id": "G20-003",
+          "artist": "Monogrammist AE von 1546",
+          "title": "Bildnis des Petrus Canisius",
+          "url": "https://www.sammlung.pinakothek.de/de/artwork/JzG6RKJGWO",
+          "sources": [
+            "W20"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+          "id": "italy-banchero-0700031704",
+          "artist": "Angelo Giacinto Banchero",
+          "title": "San Lorenzo da Brindisi",
+          "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_LAWRENCE_BRINDISI",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/IM68006112",
+          "id": "G20-004",
+          "artist": "Anonymous 17th century (?)",
+          "title": "Portrait de saint Laurent de Brindisi",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/IM68006112",
+          "sources": [
+            "W20"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": []
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": []
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "group": "DC",
+      "historicalSelectionId": null,
+      "options": []
+    },
+    {
+      "subjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "group": "DC",
+      "historicalSelectionId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "options": [
+        {
+          "key": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+          "id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+          "artist": "Juan Correa de Vivar",
+          "title": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://clevelandart.org/art/1981.18",
+          "id": "cma-150389",
+          "artist": "Nicolas Poussin",
+          "title": "The Holy Family on the Steps",
+          "url": "https://clevelandart.org/art/1981.18",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://clevelandart.org/art/1998.10",
+          "id": "cma-160143",
+          "artist": "Gaetano Gandolfi",
+          "title": "The Holy Family",
+          "url": "https://clevelandart.org/art/1998.10",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://clevelandart.org/art/1949.185",
+          "id": "cma-126768",
+          "artist": "Battista Dossi",
+          "title": "Holy Family with a Shepherd",
+          "url": "https://clevelandart.org/art/1949.185",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 3,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://clevelandart.org/art/1953.156",
+          "id": "cma-130392",
+          "artist": "Nicolas Poussin",
+          "title": "The Return of the Holy Family to Nazareth",
+          "url": "https://clevelandart.org/art/1953.156",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://clevelandart.org/art/2019.168",
+          "id": "cma-370119",
+          "artist": "Maso da San Friano",
+          "title": "Holy Family with the Mystic Marriage of Saint Catherine",
+          "url": "https://clevelandart.org/art/2019.168",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/437458",
+          "id": "met-437458",
+          "artist": "Sebastiano Ricci",
+          "title": "The Holy Family with Angels",
+          "url": "https://www.metmuseum.org/art/collection/search/437458",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://collections.louvre.fr/en/ark:/53355/cl010063817",
+          "id": "louvre-rf-1948-27",
+          "artist": "Georges de La Tour",
+          "title": "Saint Joseph charpentier",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010063817",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_JOSEPH_CHILD",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-joseph-with-the-christ-child/4b2e19ce-6677-40eb-be99-41759e9ff8eb",
+          "id": "G17-011",
+          "artist": "Sebastián Martínez Domedel",
+          "title": "Saint Joseph with the Christ Child",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-joseph-with-the-christ-child/4b2e19ce-6677-40eb-be99-41759e9ff8eb",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://collections.louvre.fr/ark:/53355/cl010060517",
+          "id": "W04-009",
+          "artist": "Philippe de Champaigne",
+          "title": "Le songe de saint Joseph",
+          "url": "https://collections.louvre.fr/ark:/53355/cl010060517",
+          "sources": [
+            "W17_REUSE",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "ORIGINAL_SOURCE_REUSE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-02",
+      "subject": "Saint Michael Archangel",
+      "group": "OT",
+      "historicalSelectionId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "options": [
+        {
+          "key": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-03",
+      "subject": "Saint Raphael Archangel",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://collections.louvre.fr/ark:/53355/cl010062024",
+          "id": "louvre-inv-1736",
+          "artist": "Rembrandt",
+          "title": "L'Archange Raphaël quittant la famille de Tobie",
+          "url": "https://collections.louvre.fr/ark:/53355/cl010062024",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "NARRATIVE_TOBIT_12_RAPHAEL_NAMED",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/jan-lievens-a-landscape-with-tobias-and-the-angel",
+          "id": "G16-009",
+          "artist": "Jan Lievens",
+          "title": "A Landscape with Tobias and the Angel",
+          "url": "https://www.nationalgallery.org.uk/paintings/jan-lievens-a-landscape-with-tobias-and-the-angel",
+          "sources": [
+            "W16"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-04",
+      "subject": "Saint John the Baptist",
+      "group": "OT",
+      "historicalSelectionId": "ART-ierre-ignard-aint-ohn-the-aptist",
+      "options": [
+        {
+          "key": "ART-ierre-ignard-aint-ohn-the-aptist",
+          "id": "ART-ierre-ignard-aint-ohn-the-aptist",
+          "artist": "Pierre Mignard",
+          "title": "Saint John the Baptist",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.collezionegalleriaborghese.it/en/opere/saint-john-the-baptist",
+          "id": "W07-009",
+          "artist": "Caravaggio",
+          "title": "Saint John the Baptist (Borghese original)",
+          "url": "https://www.collezionegalleriaborghese.it/en/opere/saint-john-the-baptist",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio",
+          "id": "W07-011",
+          "artist": "Caravaggio",
+          "title": "The Beheading of Saint John the Baptist",
+          "url": "https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio/",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+          "id": "W08-009",
+          "artist": "Caravaggio",
+          "title": "Saint John the Baptist in the Wilderness",
+          "url": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2",
+          "id": "carmel-lisieux-1925-therese-aux-roses",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux roses (1925)",
+          "url": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "POSTHUMOUS_DEVOTIONAL_PAINTED_LIKENESS_SOURCE_AUTHENTICATED",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM33001074",
+          "id": "G16-016",
+          "artist": "François-Maurice Rozaneau",
+          "title": "Sainte Thérèse de l'Enfant-Jésus",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM33001074",
+          "sources": [
+            "W16"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM85001665",
+          "id": "G16-017",
+          "artist": "UNVERIFIED_AUTHOR",
+          "title": "Sainte Thérèse de l'Enfant Jésus en extase devant le Christ",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM85001665",
+          "sources": [
+            "W16"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://archives.carmeldelisieux.fr/naissance-dune-sainte/iconographie-theresienne/tableaux-2",
+          "id": "carmel-celine-therese-roses-1925",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux Roses — original oil painting",
+          "url": "https://archives.carmeldelisieux.fr/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "sources": [
+            "W24"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": true
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://clevelandart.org/art/1982.36",
+          "id": "cma-150955",
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "url": "https://clevelandart.org/art/1982.36",
+          "sources": [
+            "USER_OCT13",
+            "W24"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.catedraldesevilla.es/la-vision-de-san-antonio-la-historia-secreta-de-una-obra-maestra-de-murillo",
+          "id": "sevilla-murillo-vision-san-antonio",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "La visión de san Antonio de Padua",
+          "url": "https://www.catedraldesevilla.es/la-vision-de-san-antonio-la-historia-secreta-de-una-obra-maestra-de-murillo/",
+          "sources": [
+            "P0_ORIGINAL",
+            "W24"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_ANTHONY_VISION_OF_CHILD_JESUS",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ",
+          "id": "G17-012",
+          "artist": "Giuseppe Bazzani",
+          "title": "Saint Anthony of Padua with the Infant Christ",
+          "url": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pinacotecabrera.org/collezioni/collezione-on-line/la-madonna-col-bambino-e-santantonio-da-padova",
+          "id": "W07-006",
+          "artist": "Anthony van Dyck",
+          "title": "Madonna and Child with Saint Anthony of Padua",
+          "url": "https://pinacotecabrera.org/collezioni/collezione-on-line/la-madonna-col-bambino-e-santantonio-da-padova/",
+          "sources": [
+            "W17_REUSE",
+            "W24",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "ORIGINAL_SOURCE_REUSE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
+          "id": "sdma-48-3-pittoni-anthony",
+          "artist": "Giovanni Battista Pittoni",
+          "title": "The Vision of Saint Anthony of Padua",
+          "url": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
+          "sources": [
+            "W24"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "group": "OT",
+      "historicalSelectionId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+      "options": [
+        {
+          "key": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+          "id": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "Joan of Arc at Coronation of Charles VII",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-08",
+      "subject": "Saint Louis IX",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://pop.culture.gouv.fr/notice/joconde/000PE006521",
+          "id": "versailles-jouvenet-inv5501",
+          "artist": "Jean-Baptiste Jouvenet",
+          "title": "Saint Louis soignant les blessés après la bataille de Mansourah (1250)",
+          "url": "https://pop.culture.gouv.fr/notice/joconde/000PE006521",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_LOUIS_HISTORICAL_NARRATIVE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/joconde/000PE004229",
+          "id": "G16-012",
+          "artist": "Auguste de Creuse",
+          "title": "Louis IX, dit saint Louis, roi de France",
+          "url": "https://pop.culture.gouv.fr/notice/joconde/000PE004229",
+          "sources": [
+            "W16"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://parismuseescollections.paris.fr/en/node/223078",
+          "id": "paris-pdut1793-bergeret-louis",
+          "artist": "Pierre-Nolasque Bergeret",
+          "title": "Saint Louis à Damiette",
+          "url": "https://parismuseescollections.paris.fr/en/node/223078",
+          "sources": [
+            "W23"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": false
+        },
+        {
+          "key": "https://collections.louvre.fr/en/ark:/53355/cl010059095",
+          "id": "tours-793-1-3-lesueur-louis",
+          "artist": "Eustache Le Sueur / attribution to be independently checked",
+          "title": "Saint Louis soignant les malades",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010059095",
+          "sources": [
+            "W23"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": true
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://onlinecollection.nationalgallery.ie/objects/8798",
+          "id": "ngi-4623-barry-st-patrick-cashel",
+          "artist": "James Barry",
+          "title": "The Baptism of the King of Cashel by Saint Patrick",
+          "url": "https://onlinecollection.nationalgallery.ie/objects/8798",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_PATRICK_BAPTISING_KING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://collections-mba.nancy.fr/fr/notice/520-apotheose-de-saint-louis-4f4dd315-e13c-44cf-9b26-11f1d3009ce4",
+          "id": "W10-009",
+          "artist": "Jean-Honoré Fragonard (attributed)",
+          "title": "L'Apothéose de saint Louis",
+          "url": "https://collections-mba.nancy.fr/fr/notice/520-apotheose-de-saint-louis-4f4dd315-e13c-44cf-9b26-11f1d3009ce4",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-10",
+      "subject": "Saint Stephen",
+      "group": "OT",
+      "historicalSelectionId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "options": [
+        {
+          "key": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "id": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "artist": "Juan de Juanes",
+          "title": "Martyrdom of Saint Stephen",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/possibly-by-antonio-carracci-the-martyrdom-of-saint-stephen",
+          "id": "G25-014",
+          "artist": "Possibly Antonio Carracci",
+          "title": "The Martyrdom of Saint Stephen",
+          "url": "https://www.nationalgallery.org.uk/paintings/possibly-by-antonio-carracci-the-martyrdom-of-saint-stephen",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_MARTYRDOM_ATTRIBUTION_QUALIFIED",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/carlo-crivelli-saint-stephen",
+          "id": "G25-015",
+          "artist": "Carlo Crivelli",
+          "title": "Saint Stephen",
+          "url": "https://www.nationalgallery.org.uk/paintings/carlo-crivelli-saint-stephen",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_PORTRAIT_EARLY_STYLE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-11",
+      "subject": "Saint Lawrence",
+      "group": "OT",
+      "historicalSelectionId": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+      "options": [
+        {
+          "key": "https://www.nga.gov/artworks/106362-martyrdom-of-saint-lawrence",
+          "id": "nga-106362",
+          "artist": "Jean Baptiste de Champaigne",
+          "title": "The Martyrdom of Saint Lawrence",
+          "url": "https://www.nga.gov/artworks/106362-martyrdom-of-saint-lawrence",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+          "id": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+          "artist": "Jean-Baptiste de Champaigne",
+          "title": "Martyrdom of Saint Lawrence",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/el-martirio-de-san-lorenzo/ddd22152-fe21-475c-a9b6-911bd7736048",
+          "id": "G25-016",
+          "artist": "Valentin de Boulogne",
+          "title": "Martyrdom of Saint Lawrence",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/el-martirio-de-san-lorenzo/ddd22152-fe21-475c-a9b6-911bd7736048",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_MARTYRDOM",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-12",
+      "subject": "Saint Francis of Assisi",
+      "group": "OT",
+      "historicalSelectionId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+      "options": [
+        {
+          "key": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+          "id": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Francis in Ecstasy",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation-1",
+          "id": "W02-014",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Francis in Meditation (c. 1635–39)",
+          "url": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation-1",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
+          "id": "W02-015",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Francis in Meditation (1639)",
+          "url": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-13",
+      "subject": "Saint Dominic",
+      "group": "OT",
+      "historicalSelectionId": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "options": [
+        {
+          "key": "ART-laudio-oello-aint-ominic-of-uzm-n",
+          "id": "ART-laudio-oello-aint-ominic-of-uzm-n",
+          "artist": "Claudio Coello",
+          "title": "Saint Dominic of Guzmán",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/435616",
+          "id": "met-435616",
+          "artist": "Bartolomeo degli Erri",
+          "title": "Saint Dominic Resuscitating Napoleone Orsini",
+          "url": "https://www.metmuseum.org/art/collection/search/435616",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 3,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/436054",
+          "id": "met-436054",
+          "artist": "Carlo Crivelli",
+          "title": "Saint Dominic",
+          "url": "https://www.metmuseum.org/art/collection/search/436054",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/437336",
+          "id": "met-437336",
+          "artist": "Giulio Cesare Procaccini",
+          "title": "Madonna and Child with Saints Francis and Dominic and Angels",
+          "url": "https://www.metmuseum.org/art/collection/search/437336",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://kmska.be/en/masterpiece/christ-on-the-cross-with-saint-catherine-of-siena-saint-dominic-and-an-angel",
+          "id": "W13-003",
+          "artist": "Anthony van Dyck",
+          "title": "Christ on the Cross with Saint Catherine of Siena, Saint Dominic and an Angel",
+          "url": "https://kmska.be/en/masterpiece/christ-on-the-cross-with-saint-catherine-of-siena-saint-dominic-and-an-angel",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-14",
+      "subject": "Saint Benedict",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://clevelandart.org/art/1982.36",
+          "id": "cma-150955",
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "url": "https://clevelandart.org/art/1982.36",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/437673",
+          "id": "met-437673",
+          "artist": "Luca Signorelli",
+          "title": "The Assumption of the Virgin with Saints Michael and Benedict",
+          "url": "https://www.metmuseum.org/art/collection/search/437673",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 3,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/437970",
+          "id": "met-437970",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Benedict",
+          "url": "https://www.metmuseum.org/art/collection/search/437970",
+          "sources": [
+            "USER_OCT13",
+            "W17_REUSE"
+          ],
+          "userRating": 3,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/san-benito-destruyendo-los-idolos/9df62082-273c-45fb-b107-e0f5025f086f",
+          "id": "prado-rizi-saint-benedict-idols",
+          "artist": "Fray Juan Andrés Rizi",
+          "title": "Saint Benedict Destroying Idols",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-benito-destruyendo-los-idolos/9df62082-273c-45fb-b107-e0f5025f086f",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_BENEDICT_HAGIOGRAPHIC_EVENT",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-15",
+      "subject": "Saint Francis Xavier",
+      "group": "OT",
+      "historicalSelectionId": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+      "options": [
+        {
+          "key": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+          "id": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+          "artist": "Peter Paul Rubens",
+          "title": "Miracles of Saint Francis Xavier",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
+          "id": "W14-006",
+          "artist": "Peter Paul Rubens",
+          "title": "The Miracles of Saint Francis Xavier (oil modello)",
+          "url": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.khm.at/en/programme/die-sprache-der-zeichen-symbole-und-allegorien",
+          "id": "W14-007",
+          "artist": "Peter Paul Rubens (workshop execution under review)",
+          "title": "The Miracles of Saint Francis Xavier (large altarpiece)",
+          "url": "https://www.khm.at/en/programme/die-sprache-der-zeichen-symbole-und-allegorien",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-16",
+      "subject": "Saint Ignatius of Loyola",
+      "group": "OT",
+      "historicalSelectionId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "options": [
+        {
+          "key": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+          "id": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+          "artist": "Peter Paul Rubens",
+          "title": "Miracles of Saint Ignatius of Loyola",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.khm.at/fileadmin/pdf_KHM/online-publikationen/2025/ansichtssache_28/KHM_PointOfView_28.pdf",
+          "id": "W14-004",
+          "artist": "Peter Paul Rubens",
+          "title": "The Miracles of Saint Ignatius of Loyola (oil modello)",
+          "url": "https://www.khm.at/fileadmin/pdf_KHM/online-publikationen/2025/ansichtssache_28/KHM_PointOfView_28.pdf",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM74001769",
+          "id": "france-PM74001769-margaretmary",
+          "artist": "Bénédict Masson",
+          "title": "Apparition du Sacré-Cœur à sainte Marguerite-Marie Alacoque",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM74001769",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_APPARITION",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM83001926",
+          "id": "G17-008",
+          "artist": "Unattributed",
+          "title": "Sainte Marguerite-Marie Alacoque",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM83001926",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+          "id": "podesti-margaret-mary-source",
+          "artist": "Attributed on Commons to Francesco Podesti",
+          "title": "Apparizione a Marguerite Marie Alacoque",
+          "url": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+          "sources": [
+            "W23"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": true
+        },
+        {
+          "key": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=175041&methode=consulter&type=bien",
+          "id": "quebec-165636105-margaret-mary-1920",
+          "artist": "Élisabeth Martin, Sœur Marie-Hélène-de-la-Croix",
+          "title": "Apparition du Sacré-Cœur devant Marguerite-Marie Alacoque",
+          "url": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=175041&methode=consulter&type=bien",
+          "sources": [
+            "W24"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": true
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+          "id": "france-PM01002671-vianney",
+          "artist": "Unidentified 19th-century painter",
+          "title": "Guérison de saint Jean-Marie Vianney, curé d'Ars",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+          "sources": [
+            "P0_ORIGINAL",
+            "W16",
+            "W23"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_HISTORICAL_SCENE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/IM01000822",
+          "id": "ars-shelley-vianney-original",
+          "artist": "P. Shelley (original artist recorded as Shelley; given name not established by Palissy)",
+          "title": "Portrait du curé d’Ars",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/IM01000822",
+          "sources": [
+            "W24"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": true
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "group": "OT",
+      "historicalSelectionId": "ART-eter-aul-ubens-aint-ebastian",
+      "options": [
+        {
+          "key": "ART-eter-aul-ubens-aint-ebastian",
+          "id": "ART-eter-aul-ubens-aint-ebastian",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Sebastian",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/saint-sebastian/27da29bb-e8b4-4bab-8088-4bc589546326",
+          "id": "W02-006",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Sebastian",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saint-sebastian/27da29bb-e8b4-4bab-8088-4bc589546326",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://livres.louvre.fr/vandyck/cats/3",
+          "id": "W07-001",
+          "artist": "Anthony van Dyck",
+          "title": "Preparations for the Martyrdom of Saint Sebastian",
+          "url": "https://livres.louvre.fr/vandyck/cats/3/",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://livres.louvre.fr/vandyck/cats/15",
+          "id": "W07-005",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Sebastian Tended by Angels",
+          "url": "https://livres.louvre.fr/vandyck/cats/15/",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-20",
+      "subject": "Saint Nicholas",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.nga.gov/artworks/505-visitation-saint-nicholas-and-saint-anthony-abbot",
+          "id": "nga-505",
+          "artist": "Piero di Cosimo",
+          "title": "The Visitation with Saint Nicholas and Saint Anthony Abbot",
+          "url": "https://www.nga.gov/artworks/505-visitation-saint-nicholas-and-saint-anthony-abbot",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/paolo-veronese-the-consecration-of-saint-nicholas",
+          "id": "ng-26-veronese-nicholas",
+          "artist": "Paolo Veronese",
+          "title": "The Consecration of Saint Nicholas",
+          "url": "https://www.nationalgallery.org.uk/paintings/paolo-veronese-the-consecration-of-saint-nicholas",
+          "sources": [
+            "P0_ORIGINAL",
+            "W17_REUSE",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_NICHOLAS_BISHOP_CONSECRATION",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-21",
+      "subject": "Saint Lucy",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://www.nga.gov/artworks/12209-saint-lucy",
+          "id": "nga-12209",
+          "artist": "Francisco de Zurbarán",
+          "title": "Saint Lucy",
+          "url": "https://www.nga.gov/artworks/12209-saint-lucy",
+          "sources": [
+            "USER_OCT13",
+            "P0_ORIGINAL",
+            "W17_REUSE"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nga.gov/artworks/369-saint-lucy",
+          "id": "nga-369",
+          "artist": "Francesco del Cossa",
+          "title": "Saint Lucy",
+          "url": "https://www.nga.gov/artworks/369-saint-lucy",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nga.gov/artworks/46147-saint-lucy-and-a-donor",
+          "id": "nga-46147",
+          "artist": "Veronese; Gabriele Caliari",
+          "title": "Saint Lucy and a Donor",
+          "url": "https://www.nga.gov/artworks/46147-saint-lucy-and-a-donor",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://clevelandart.org/art/1982.36",
+          "id": "cma-150955",
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "url": "https://clevelandart.org/art/1982.36",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/458963",
+          "id": "met-458963",
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "url": "https://www.metmuseum.org/art/collection/search/458963",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
+          "id": "G17-010",
+          "artist": "Paolo Veronese",
+          "title": "The Martyrdom and Last Communion of Saint Lucy",
+          "url": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://barberinicorsini.org/evento/caravaggio-nel-patrimonio-del-f-e-c-il-doppio-e-la-copia",
+          "id": "W09-006",
+          "artist": "Caravaggio",
+          "title": "Seppellimento di Santa Lucia",
+          "url": "https://barberinicorsini.org/evento/caravaggio-nel-patrimonio-del-f-e-c-il-doppio-e-la-copia/",
+          "sources": [
+            "W17_REUSE",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "ORIGINAL_SOURCE_REUSE",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-22",
+      "subject": "Saint Agnes",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://clevelandart.org/art/1982.36",
+          "id": "cma-150955",
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "url": "https://clevelandart.org/art/1982.36",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/458963",
+          "id": "met-458963",
+          "artist": "Paolo di Giovanni Fei",
+          "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+          "url": "https://www.metmuseum.org/art/collection/search/458963",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/coleccion/obra-de-arte/santa-ines/0f8c1439-ae5c-47d6-bad3-757d086389fd",
+          "id": "prado-rizi-p007637",
+          "artist": "Francisco Rizi",
+          "title": "Santa Inés (Saint Agnes)",
+          "url": "https://www.museodelprado.es/coleccion/obra-de-arte/santa-ines/0f8c1439-ae5c-47d6-bad3-757d086389fd",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_AGNES",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-23",
+      "subject": "Saint Cecilia",
+      "group": "OT",
+      "historicalSelectionId": "ART-ietro-da-ortona-aint-ecilia",
+      "options": [
+        {
+          "key": "ART-ietro-da-ortona-aint-ecilia",
+          "id": "ART-ietro-da-ortona-aint-ecilia",
+          "artist": "Pietro da Cortona",
+          "title": "Saint Cecilia",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 5,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/436198",
+          "id": "met-436198",
+          "artist": "Abraham van Diepenbeeck",
+          "title": "Saint Cecilia",
+          "url": "https://www.metmuseum.org/art/collection/search/436198",
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-24",
+      "subject": "Saint Catherine of Alexandria",
+      "group": "OT",
+      "historicalSelectionId": "ART-aravaggio-aint-atherine-of-lexandria",
+      "options": [
+        {
+          "key": "ART-aravaggio-aint-atherine-of-lexandria",
+          "id": "ART-aravaggio-aint-atherine-of-lexandria",
+          "artist": "Caravaggio",
+          "title": "Saint Catherine of Alexandria",
+          "url": null,
+          "sources": [
+            "USER_OCT13",
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/raphael-saint-catherine-of-alexandria",
+          "id": "G25-017",
+          "artist": "Raphael",
+          "title": "Saint Catherine of Alexandria",
+          "url": "https://www.nationalgallery.org.uk/paintings/raphael-saint-catherine-of-alexandria",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_SAINT",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/artemisia-gentileschi-self-portrait-as-saint-catherine-of-alexandria",
+          "id": "G25-018",
+          "artist": "Artemisia Gentileschi",
+          "title": "Self Portrait as Saint Catherine of Alexandria",
+          "url": "https://www.nationalgallery.org.uk/paintings/artemisia-gentileschi-self-portrait-as-saint-catherine-of-alexandria",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "PORTRAIT_AS_SAINT",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "group": "OT",
+      "historicalSelectionId": "ART-uido-eni-aint-ary-agdalene",
+      "options": [
+        {
+          "key": "ART-uido-eni-aint-ary-agdalene",
+          "id": "ART-uido-eni-aint-ary-agdalene",
+          "artist": "Guido Reni",
+          "title": "Saint Mary Magdalene",
+          "url": null,
+          "sources": [
+            "USER_OCT13",
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nationalgallery.org.uk/paintings/giovanni-girolamo-savoldo-mary-magdalene",
+          "id": "W01-006",
+          "artist": "Giovanni Girolamo Savoldo",
+          "title": "Mary Magdalene",
+          "url": "https://www.nationalgallery.org.uk/paintings/giovanni-girolamo-savoldo-mary-magdalene",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/mary-magdalene-before-christs-tomb/64b942fb-5ac3-4efa-8f70-b730d6036bee",
+          "id": "W01-011",
+          "artist": "Francisco Ribalta",
+          "title": "Mary Magdalene before Christ's Tomb",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/mary-magdalene-before-christs-tomb/64b942fb-5ac3-4efa-8f70-b730d6036bee",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.museodelprado.es/en/the-collection/art-work/penitent-magdalen/1f0c2f5f-5eed-46cc-978f-a4a301b7dc55",
+          "id": "W02-007",
+          "artist": "Jusepe de Ribera",
+          "title": "Penitent Magdalen (1641)",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/penitent-magdalen/1f0c2f5f-5eed-46cc-978f-a4a301b7dc55",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.doriapamphilj.it/portfolio/caravaggio",
+          "id": "W08-001",
+          "artist": "Caravaggio",
+          "title": "Penitent Magdalene",
+          "url": "https://www.doriapamphilj.it/portfolio/caravaggio/",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.khm.at/en/artworks/penitent-st-magdalen-and-her-sister-martha-1629-1",
+          "id": "W14-002",
+          "artist": "Peter Paul Rubens",
+          "title": "Penitent Saint Magdalene and Her Sister Martha",
+          "url": "https://www.khm.at/en/artworks/penitent-st-magdalen-and-her-sister-martha-1629-1",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-26",
+      "subject": "Saint Geneviève",
+      "group": "OT",
+      "historicalSelectionId": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+      "options": [
+        {
+          "key": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+          "id": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+          "artist": "Gabriel-François Doyen",
+          "title": "Miracle des Ardents",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": 4,
+          "hasPreview": true,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://utpictura18.univ-amu.fr/notice/762-saint-denis-prechant-foi-en-france-joseph-marie-vien",
+          "id": "paris-st-roch-vien-st-denis-1767",
+          "artist": "Joseph-Marie Vien",
+          "title": "Saint Denis prêchant la foi en France",
+          "url": "https://utpictura18.univ-amu.fr/notice/762-saint-denis-prechant-foi-en-france-joseph-marie-vien",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_DENIS_OF_PARIS_PREACHING_TRADITION",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM01002382",
+          "id": "G17-009",
+          "artist": "Baronne Girod de l'Ain (Émilie Sivard de Beaulieu)",
+          "title": "Episode de la vie de saint Denis",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM01002382",
+          "sources": [
+            "W17"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-28",
+      "subject": "Saint Vincent de Paul",
+      "group": "OT",
+      "historicalSelectionId": null,
+      "options": [
+        {
+          "key": "https://commons.wikimedia.org/wiki/File:Saint_Vincent_de_Paule_-_Gerome.jpg",
+          "id": "vesoul-984-6-1-gerome-vincent",
+          "artist": "Jean-Léon Gérôme",
+          "title": "Saint Vincent de Paul",
+          "url": "https://commons.wikimedia.org/wiki/File:Saint_Vincent_de_Paule_-_Gerome.jpg",
+          "sources": [
+            "P0_ORIGINAL"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_NAMED_SAINT_FRENCH_CHARITY_SCENE",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM75000051",
+          "id": "G16-013",
+          "artist": "UNVERIFIED_AUTHOR",
+          "title": "Saint Vincent de Paul prêchant",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM75000051",
+          "sources": [
+            "W16"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://pop.culture.gouv.fr/notice/palissy/PM75000072",
+          "id": "G16-014",
+          "artist": "UNVERIFIED_AUTHOR",
+          "title": "Saint Vincent de Paul recueillant les enfants abandonnés",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/PM75000072",
+          "sources": [
+            "W16"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "SOURCE_EXACTNESS_REVIEW",
+          "sourceHold": false
+        },
+        {
+          "key": "https://parismuseescollections.paris.fr/en/node/77127",
+          "id": "paris-p863-vincent-1660",
+          "artist": "Anonymous, after a model by Simon François",
+          "title": "Portrait de saint Vincent de Paul",
+          "url": "https://parismuseescollections.paris.fr/en/node/77127",
+          "sources": [
+            "W23"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": false
+        },
+        {
+          "key": "https://artgallery.yale.edu/collections/objects/220005",
+          "id": "yale-2017-65-1-delaroche-vincent",
+          "artist": "Paul Delaroche",
+          "title": "Saint Vincent de Paul Preaching to the Court of Louis XIII on Behalf of the Abandoned Children",
+          "url": "https://artgallery.yale.edu/collections/objects/220005",
+          "sources": [
+            "W23"
+          ],
+          "userRating": null,
+          "hasPreview": true,
+          "relation": "EXACTNESS_FROM_MANIFEST",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-29",
+      "subject": "Saint Martin of Tours",
+      "group": "OT",
+      "historicalSelectionId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+      "options": [
+        {
+          "key": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+          "id": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Martin Dividing His Cloak",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.zaventem.be/sint-martinuskerk",
+          "id": "W13-001",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Martin Dividing his Cloak (Zaventem original)",
+          "url": "https://www.zaventem.be/sint-martinuskerk",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.rct.uk/collection/405878/st-martin-dividing-his-cloak",
+          "id": "W13-002",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Martin Dividing his Cloak (Windsor original)",
+          "url": "https://www.rct.uk/collection/405878/st-martin-dividing-his-cloak",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-30",
+      "subject": "Saint Anne",
+      "group": "OT",
+      "historicalSelectionId": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "options": [
+        {
+          "key": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+          "id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+          "artist": "Peter Paul Rubens",
+          "title": "Holy Family with Saint Anne",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nga.gov/artworks/56148-saint-anne-virgin-and-christ-child",
+          "id": "G25-019",
+          "artist": "Master of Frankfurt",
+          "title": "Saint Anne with Virgin and Christ Child",
+          "url": "https://www.nga.gov/artworks/56148-saint-anne-virgin-and-christ-child",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_ANNE_GROUP",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.nga.gov/artworks/46161-saint-anne-christ-child-virgin-and-saint-john-baptist",
+          "id": "G25-020",
+          "artist": "Hans Baldung Grien",
+          "title": "Saint Anne with the Christ Child, Virgin, and Saint John Baptist",
+          "url": "https://www.nga.gov/artworks/46161-saint-anne-christ-child-virgin-and-saint-john-baptist",
+          "sources": [
+            "W25"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "EXACT_ANNE_GROUP",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.collezionegalleriaborghese.it/en/opere/madonna-and-child-with-saint-anne-madonna-dei-palafrenieri",
+          "id": "W07-008",
+          "artist": "Caravaggio",
+          "title": "Madonna and Child with Saint Anne (Palafrenieri)",
+          "url": "https://www.collezionegalleriaborghese.it/en/opere/madonna-and-child-with-saint-anne-madonna-dei-palafrenieri",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-31",
+      "subject": "Saint Rosalia",
+      "group": "OT",
+      "historicalSelectionId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+      "options": [
+        {
+          "key": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+          "id": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Rosalia Interceding for Palermo",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        },
+        {
+          "key": "https://www.metmuseum.org/art/collection/search/436257",
+          "id": "W03-005",
+          "artist": "Anthony van Dyck",
+          "title": "Saint Rosalie Interceding for the Plague-stricken of Palermo",
+          "url": "https://www.metmuseum.org/art/collection/search/436257",
+          "sources": [
+            "PRIOR_QUEUE"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "CONTEXT_EXACT_LINK",
+          "sourceHold": false
+        }
+      ]
+    },
+    {
+      "subjectId": "SNT-OT-32",
+      "subject": "Saint Francis of Paola",
+      "group": "OT",
+      "historicalSelectionId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+      "options": [
+        {
+          "key": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+          "id": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+          "artist": "Peter Paul Rubens",
+          "title": "Miracles of Saint Francis of Paola",
+          "url": null,
+          "sources": [
+            "USER_OCT13"
+          ],
+          "userRating": null,
+          "hasPreview": false,
+          "relation": "USER_EXISTING_SUBJECT_RANKING",
+          "sourceHold": false
+        }
+      ]
+    }
+  ],
+  "shortageIds": [
+    {
+      "id": "SNT-DC-05",
+      "name": "Saint Thomas Aquinas",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-08",
+      "name": "Saint Teresa of Ávila",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-11",
+      "name": "Saint Alphonsus Liguori",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-13",
+      "name": "Saint Athanasius",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-14",
+      "name": "Saint Basil the Great",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-15",
+      "name": "Saint Gregory Nazianzen",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-17",
+      "name": "Saint Isidore of Seville",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-18",
+      "name": "Saint Bede the Venerable",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-20",
+      "name": "Saint Peter Damian",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-21",
+      "name": "Saint Albert the Great",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-22",
+      "name": "Saint Robert Bellarmine",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-23",
+      "name": "Saint Peter Canisius",
+      "count": 1
+    },
+    {
+      "id": "SNT-DC-25",
+      "name": "Saint Cyril of Alexandria",
+      "count": 0
+    },
+    {
+      "id": "SNT-DC-26",
+      "name": "Saint Cyril of Jerusalem",
+      "count": 0
+    },
+    {
+      "id": "SNT-DC-27",
+      "name": "Saint Ephrem",
+      "count": 0
+    },
+    {
+      "id": "SNT-DC-28",
+      "name": "Saint Hilary of Poitiers",
+      "count": 1
+    },
+    {
+      "id": "SNT-OT-02",
+      "name": "Saint Michael Archangel",
+      "count": 1
+    },
+    {
+      "id": "SNT-OT-07",
+      "name": "Saint Joan of Arc",
+      "count": 1
+    },
+    {
+      "id": "SNT-OT-26",
+      "name": "Saint Geneviève",
+      "count": 1
+    },
+    {
+      "id": "SNT-OT-32",
+      "name": "Saint Francis of Paola",
+      "count": 1
+    }
+  ]
+}
