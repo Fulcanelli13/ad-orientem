@@ -1,0 +1,481 @@
+{
+  "schema": "AO_SACRED_ART_SUBJECT_GAP_FILL_WAVE18_V1",
+  "asOf": "2026-10-14",
+  "source": {
+    "priorRatingExport": "Ad_Orientem_Sacred_Art_Rankings_2026-10-13.json",
+    "priorWaves": [
+      "data/calendar/sacred-art-subject-gap-fill-wave16-20261013.v1.json",
+      "data/calendar/sacred-art-subject-gap-fill-wave17-20261014.v1.json"
+    ]
+  },
+  "startingPositions": {
+    "originallyNoArtworkOptions": 107,
+    "wave16SourceLinked": 21,
+    "wave17SourceLinked": 11,
+    "sourceLinkedBeforeWave18": 32,
+    "remainingWithoutW18": 75
+  },
+  "counts": {
+    "newlySourceLinkedEmptySubjectIds": 14,
+    "sourceLinkedOriginalEmptySubjectsAfterWave18": 46,
+    "remainingNoSourceCandidateAfterWave18": 61,
+    "newInstitutionalPaintingSourceRecords": 15,
+    "existingPhysicalPaintingReuseLinks": 6,
+    "sharedGroupRecordDistinctOriginalWorks": 3,
+    "sourceRecordsNotAnIncrementOfCanonical222": true,
+    "originalJPEGFilesAcquired": 0,
+    "rightsApproved": 0,
+    "ratingChanges": 0,
+    "productionChanges": 0
+  },
+  "candidateOriginals": [
+    {
+      "candidateId": "G18-001",
+      "subjectIds": [
+        "BIB-G10"
+      ],
+      "title": "Le Sermon sur la montagne",
+      "attribution": "Peintre non identifié",
+      "location": "Église Saint-Victor, La Force, Dordogne",
+      "inventoryKey": "PM24002813",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM24002813",
+      "scopeAndEvidence": "Original oil canvas, circa turn 16th/17th century. French Ministry explicitly notes archival photograph missing; currently not a user-reviewable image.",
+      "holdOrQualification": "PREVIEW_MISSING",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-001"
+    },
+    {
+      "candidateId": "G18-002",
+      "subjectIds": [
+        "BIB-G10"
+      ],
+      "title": "Le Sermon sur la montagne",
+      "attribution": "Boizot (peintre)",
+      "location": "Église Notre-Dame, Vitry-le-François",
+      "inventoryKey": "PM51001212",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM51001212",
+      "scopeAndEvidence": "1758 oil on canvas, set in church workbench / woodworking furnishing; not an independent framed altarpiece. Exact narrative but phone hero uncertain.",
+      "holdOrQualification": "COMPOSITE_FURNISHING",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-002"
+    },
+    {
+      "candidateId": "G18-003",
+      "subjectIds": [
+        "BIB-G11"
+      ],
+      "title": "La Résurrection du fils de la veuve de Naïm",
+      "attribution": "Jean Jouvenet",
+      "location": "Cathédrale Saint-Louis, Versailles",
+      "inventoryKey": "PM78000613",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM78000613",
+      "scopeAndEvidence": "1708 signed oil on canvas 450×359cm, restored 1998, held in cathedral sacristy. Exact Luke 7:11–17 and particularly promising French painter.",
+      "holdOrQualification": "SOURCE_IDENTIFIED",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-003"
+    },
+    {
+      "candidateId": "G18-004",
+      "subjectIds": [
+        "BIB-G12"
+      ],
+      "title": "La Tempête apaisée",
+      "attribution": "Auguste Perrodin",
+      "location": "Cocathédrale Notre-Dame-de-l'Annonciation, Bourg-en-Bresse",
+      "inventoryKey": "PM01000682",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01000682",
+      "scopeAndEvidence": "1859 signed oil painting, Christ standing among 12 in distressed boat, torn lower right and noted poor condition.",
+      "holdOrQualification": "CONSERVATION_HOLD",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-004"
+    },
+    {
+      "candidateId": "G18-005",
+      "subjectIds": [
+        "BIB-G12"
+      ],
+      "title": "Le Christ apaisant la tempête",
+      "attribution": "Attributed to Xavier Sigalon (uncertain)",
+      "location": "Hôtel de ville, Saint-Pol-de-Léon",
+      "inventoryKey": "PM29001066",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM29001066",
+      "scopeAndEvidence": "First half 19th-century oil canvas, 115×87.5cm; attribution is marked question mark, not secured original by Sigalon.",
+      "holdOrQualification": "ATTRIBUTION_HOLD",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-005"
+    },
+    {
+      "candidateId": "G18-006",
+      "subjectIds": [
+        "BIB-G13"
+      ],
+      "title": "Le Christ marchant sur les eaux",
+      "attribution": "Pierre-André-Victor-Félix Cassel",
+      "location": "Église Saint-Julien, Rochechouart",
+      "inventoryKey": "PM87000293",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM87000293",
+      "scopeAndEvidence": "Signed original of 1836 Paris Salon, Christ catches Saint Peter with apostles watching from boat. 317 cm wide; cracking and canvas distortions.",
+      "holdOrQualification": "CONSERVATION_HOLD",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-006"
+    },
+    {
+      "candidateId": "G18-007",
+      "subjectIds": [
+        "BIB-G13"
+      ],
+      "title": "Jésus marchant sur les eaux tend la main à saint Pierre",
+      "attribution": "Eugène Isabey",
+      "location": "Église Saint-Sauveur, Bellême",
+      "inventoryKey": "PM61000994",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM61000994",
+      "scopeAndEvidence": "19th-century 150×125cm oil canvas original Isabey (marine specialist); exact event of Peter sinking, no copy claim.",
+      "holdOrQualification": "SOURCE_IDENTIFIED",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-007"
+    },
+    {
+      "candidateId": "G18-008",
+      "subjectIds": [
+        "BIB-G13"
+      ],
+      "title": "Tableau de la Vocation de saint Pierre (water rescue)",
+      "attribution": "Le Corre, dit Dupont",
+      "location": "Église Saint-Pierre, Trévé, Côtes-d'Armor",
+      "inventoryKey": "IM22004602",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/IM22004602",
+      "scopeAndEvidence": "Original signed 1711 oil, discovered under another altarpiece in 1990. Despite museum TITLE Vocation de Pierre, official ICONOGRAPHY is Christ rescuing Peter as he sinks on water, not calling fishing disciples.",
+      "holdOrQualification": "TITLE_EVENT_MISMATCH_RESOLVED",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-008"
+    },
+    {
+      "candidateId": "G18-009",
+      "subjectIds": [
+        "BIB-G13"
+      ],
+      "title": "Jésus marchant sur les eaux secourant Pierre",
+      "attribution": "Doze (peintre)",
+      "location": "Église de Marguerittes, Gard",
+      "inventoryKey": "PM30000694 :: component[2] WALK_ON_WATER",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM30000694",
+      "scopeAndEvidence": "Original individual 1877 oil within five-picture Peter life cycle, not five reproductions of one canvas; specific component image catalogue caption.",
+      "holdOrQualification": "GROUP_RECORD_DISTINCT_COMPONENT",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-009"
+    },
+    {
+      "candidateId": "G18-010",
+      "subjectIds": [
+        "BIB-G23",
+        "BIB-A20"
+      ],
+      "title": "Jésus en Bon Pasteur confiant à Pierre son troupeau",
+      "attribution": "Doze (peintre)",
+      "location": "Église de Marguerittes, Gard",
+      "inventoryKey": "PM30000694 :: component[1] SHEPHERD_FEED_MY_SHEEP",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM30000694",
+      "scopeAndEvidence": "Distinct 1877 original painting in five-picture Peter life cycle, Jesus entrusting sheep to Peter; exact John 21:15-19 devotional scene, SAME painting linked to Gospel and Apostle subjects.",
+      "holdOrQualification": "GROUP_RECORD_DISTINCT_COMPONENT",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-010"
+    },
+    {
+      "candidateId": "G18-011",
+      "subjectIds": [
+        "BIB-A02"
+      ],
+      "title": "Pierre guérissant un boiteux à la porte du temple",
+      "attribution": "Doze (peintre)",
+      "location": "Église de Marguerittes, Gard",
+      "inventoryKey": "PM30000694 :: component[5] PETER_LAME_GATE",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM30000694",
+      "scopeAndEvidence": "1877 original oil component of five-picture Peter life cycle; exact Acts 3:1-10 incident, not unrelated paralytic healed by Christ.",
+      "holdOrQualification": "GROUP_RECORD_DISTINCT_COMPONENT",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-011"
+    },
+    {
+      "candidateId": "G18-012",
+      "subjectIds": [
+        "BIB-G09"
+      ],
+      "title": "La Guérison du paralytique",
+      "attribution": "Joseph Chabord",
+      "location": "Cathédrale Saint-Étienne, Sens",
+      "inventoryKey": "PM89005094",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM89005094",
+      "scopeAndEvidence": "Original state-commissioned 1826 painting, Salon of 1827, restored 1997. Original CHABORD, not later copy.",
+      "holdOrQualification": "SOURCE_IDENTIFIED",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-012"
+    },
+    {
+      "candidateId": "G18-013",
+      "subjectIds": [
+        "BIB-G09"
+      ],
+      "title": "La Guérison du paralytique",
+      "attribution": "Arnould de Vuez",
+      "location": "Église Saint-André, Lille",
+      "inventoryKey": "IM59001254",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/IM59001254",
+      "scopeAndEvidence": "Original c. late-17th/early-18th century oil, 287x116cm portrait ratio, documented recovery from revolutionary confiscation. Exact paralytic healing but iconographic site-specific reading needs review.",
+      "holdOrQualification": "SOURCE_IDENTIFIED",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-013"
+    },
+    {
+      "candidateId": "G18-014",
+      "subjectIds": [
+        "BIB-G09"
+      ],
+      "title": "Le Christ et le Paralytique",
+      "attribution": "Charles Lenoir",
+      "location": "Cathédrale Saint-Louis, La Rochelle",
+      "inventoryKey": "IM17003682",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/IM17003682",
+      "scopeAndEvidence": "Original around 1890 by Lenoir, oil 144.5×114cm, regional/state acquisition; exact broad paralytic healing, Capernaum Mark2 vs other paralytic event still to check.",
+      "holdOrQualification": "PASSAGE_SPECIFICITY_REVIEW",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-014"
+    },
+    {
+      "candidateId": "G18-015",
+      "subjectIds": [
+        "BIB-G14"
+      ],
+      "title": "La Multiplication des pains",
+      "attribution": "Attributed to Jean François Sablet (uncertain)",
+      "location": "Collégiale Notre-Dame, Vernon",
+      "inventoryKey": "PM27003750",
+      "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM27003750",
+      "scopeAndEvidence": "Original first quarter 19th-century oil 200x320cm, attributed Jean-François Sablet but official question mark; subject might already have selected art in user's older export, OPTIONAL additional only.",
+      "holdOrQualification": "ALTERNATIVE_NOT_NEW_EMPTY_SUBJECT",
+      "physicalObjectType": "ORIGINAL_OIL_PAINTING_CANDIDATE",
+      "photographSHA256": null,
+      "imageSourceOriginalAcquired": false,
+      "unframedPhoneQualityApproved": false,
+      "commercialPhotoRightsApproved": false,
+      "humanRating": null,
+      "productionApproved": false,
+      "sourcePublisher": "French Ministry of Culture POP Palissy / Inventaire",
+      "originalObjectIdentity": "G18-015"
+    }
+  ],
+  "existingSourceOriginalReuses": [
+    {
+      "subjectId": "BIB-G03",
+      "canonicalOriginalId": "met-816629",
+      "relation": "EXACT_NARRATIVE_SUBJECT",
+      "note": "Carlo Maratti Flight into Egypt, exact physical acquired original; user earlier 4/5",
+      "doNotCopyOriginal": true,
+      "doNotOverrideRating": true,
+      "sourceFileVerificationPending": true
+    },
+    {
+      "subjectId": "BIB-G04",
+      "canonicalOriginalId": "met-440393",
+      "relation": "EXACT_NARRATIVE_SUBJECT",
+      "note": "Jacopo Bassano Baptism of Christ, acquired original, earlier user 4/5",
+      "doNotCopyOriginal": true,
+      "doNotOverrideRating": true,
+      "sourceFileVerificationPending": true
+    },
+    {
+      "subjectId": "BIB-G07",
+      "canonicalOriginalId": "met-436801",
+      "relation": "EXACT_NARRATIVE_SUBJECT",
+      "note": "Juan de Flandes Wedding at Cana, acquired original, earlier user 3/5",
+      "doNotCopyOriginal": true,
+      "doNotOverrideRating": true,
+      "sourceFileVerificationPending": true
+    },
+    {
+      "subjectId": "BIB-G08",
+      "canonicalOriginalId": "met-702752",
+      "relation": "EXACT_NARRATIVE_SUBJECT",
+      "note": "Benedetto Luti Christ and Samaritan Woman, acquired original, earlier user 4/5",
+      "doNotCopyOriginal": true,
+      "doNotOverrideRating": true,
+      "sourceFileVerificationPending": true
+    },
+    {
+      "subjectId": "BIB-G15",
+      "canonicalOriginalId": "W09-002",
+      "relation": "EXACT_NARRATIVE_SUBJECT",
+      "note": "Rubens La Transfiguration original at Nancy; high-res frame-free master missing; NOT Nain/Sermon, subject exact",
+      "doNotCopyOriginal": true,
+      "doNotOverrideRating": true,
+      "sourceFileVerificationPending": true
+    },
+    {
+      "subjectId": "BIB-G17",
+      "canonicalOriginalId": "met-436115",
+      "relation": "EXACT_NARRATIVE_SUBJECT",
+      "note": "Alexandre-Gabriel Decamps Good Samaritan, original in canonical Met registry; distinguish different CMA original same title",
+      "doNotCopyOriginal": true,
+      "doNotOverrideRating": true,
+      "sourceFileVerificationPending": true
+    }
+  ],
+  "originallyEmptySubjectsSourceLinkedNow": [
+    "BIB-G10",
+    "BIB-G11",
+    "BIB-G12",
+    "BIB-G13",
+    "BIB-G23",
+    "BIB-A20",
+    "BIB-A02",
+    "BIB-G09",
+    "BIB-G03",
+    "BIB-G04",
+    "BIB-G07",
+    "BIB-G08",
+    "BIB-G15",
+    "BIB-G17"
+  ],
+  "negativeSourceExclusions": [
+    {
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM76000835",
+      "reason": "TITLED Sermon on the Mount but ICONOGRAPHY and protection state Transfiguration; do not count Gospel sermon"
+    },
+    {
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM76005496",
+      "reason": "Church Healing Paralytic is explicit nineteenth century COPY AFTER Simon Vouet, not authentic Vouet original"
+    },
+    {
+      "source": "https://pop.culture.gouv.fr/notice/palissy/IM33002007",
+      "reason": "Church Walking on Water is REDUCED COPY of Giovanni Lanfranco; original painting elsewhere; cannot count autograph"
+    },
+    {
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM41000561",
+      "reason": "Vendôme Nain is reduced copy after historical original by Simon Guillebault; no autograph evidence"
+    },
+    {
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM50000912",
+      "reason": "Fouace Sermon on Mount preparatory oil sketch is based on Schnorr von Carolsfeld 1860 graphic and visually derivative, lower taste relevance"
+    },
+    {
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM27003750",
+      "reason": "Sablet attribution uncertain, not allowed to declare autograph Sablet"
+    }
+  ],
+  "editorialRules": [
+    "One physical artwork = one canonical object ID; three paintings in five-item Marguerittes cycle use distinct component discriminators despite same state register URL.",
+    "Subject visibility from source record is NOT user rating, art approval, complete narrative coverage, source JPEG photo, copyright clearance or app deployment.",
+    "Pictorially different events must remain distinct: Walking on Water (Peter sinks) not Calming Storm; Peter heals lame man Acts3 not Christ cures paralytic Mark2.",
+    "Sermon photograph absent means source identified only, NOT visual option ready for user review.",
+    "Do not silently launder historical workshop/copy paintings into autograph sources; maintain specified copy and attribution holds.",
+    "Preserve prior user zero-to-two exclusions and approved/ranked 277 scores; no updates to latest user export.",
+    "Existing paintings met/cma ids are reuse records; not new physical discoveries, not newly downloaded source masters.",
+    "Source owner photographs from French POP often all-rights-reserved, commercial reuse remains unresolved.",
+    "Do not treat Bible Atlas scene source records as a requirement for all 235 subject slots to each have unique paintings.",
+    "Current source-identity 222 research master count and eight verified JPEG acquisitions remain unchanged."
+  ],
+  "nextTargets": [
+    "P0 Doctors and major saints lacking authentic paintings (Athanasius, Alphonsus, Francis de Sales alternatives, Bede, Bellarmine, Peter Canisius, etc)",
+    "P1 exact high-leverage Gospel paintings: Temptation, Calling Fishermen, Feeding, Good Shepherd/Kingdom rather than weak copies",
+    "P1 iconic scenes in selective Old Testament: Joseph governs Egypt, Sinai, Elijah at Carmel, Judah Maccabeus, Revelation imagery",
+    "Make visually accessible preview choice cards for multiple exact compositions per subject and multiple actual photos of the same physical painting; use preferred user 5/5 and 0–2 exclusion gates before further curatorial decisions.",
+    "Verify full original image source and rights for gap painting before asset inclusion."
+  ]
+}
