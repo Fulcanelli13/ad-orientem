@@ -5,6 +5,7 @@ import {resolveDevotionalActionScene,approvedOpeningArtworkPool,
   DEVOTIONAL_ACTION_CINEMATIC_VERSION} from "../src/pray/devotional-action-cinematics.js";
 import {resolveAngelusPosture} from "../src/pray/angelus-guide-data.js";
 import {getCanonicalAsset} from "../src/assets/asset-registry.js";
+import {certifiedPublicStationCue,stationPhaseOfFocusedParagraph,STATIONS_PUBLIC_POSTURE_SOURCE} from "../src/pray/stations-posture-policy.js";
 
 assert.equal(DEVOTIONAL_ACTION_CINEMATIC_VERSION,"devotional-action-v1");
 const scene=props=>resolveDevotionalActionScene(props);
@@ -28,8 +29,32 @@ for(const [mode,step] of [["open",0],["holy",0],["four",0],["treasury",0],["visi
 }
 for(let i=0;i<14;i++)assert.equal(scene({view:"stations",stationStep:i}),null,
   "Unverified Stations posture cannot manufacture 14 genuflections");
+const publicActions=[["versicle","GENUFLECT"],["meditation","STAND"],["prayer","KNEEL"]];
+for(let station=0;station<14;station++){
+ for(const [phase,action] of publicActions){
+  const cue=certifiedPublicStationCue({stationStep:station,phase,enabled:true,guided:true});
+  assert.equal(cue.action,action);
+  assert.equal(cue.certified,true);
+  assert.equal(cue.performed,false);
+  const projected=scene({view:"stations",stationStep:station,stationRitual:cue});
+  assert.equal(projected.kind,"POSTURE");
+  assert.equal(projected.sourceCue,cue.sourceCueId);
+  assert.equal(projected.observedNow,false);
+  assert.ok(getCanonicalAsset(projected.assetId));
+ }
+}
+assert.ok(STATIONS_PUBLIC_POSTURE_SOURCE.url.includes("catholicworshipm00oake"));
+assert.equal(certifiedPublicStationCue({stationStep:1,phase:"versicle",enabled:false,guided:true}),null);
+assert.equal(certifiedPublicStationCue({stationStep:0,phase:"prayer",enabled:true,guided:false}),null);
+assert.equal(certifiedPublicStationCue({stationStep:13,phase:"meditation",enabled:true,guided:false}),null);
+assert.equal(certifiedPublicStationCue({stationStep:14,phase:"versicle",enabled:true,guided:true}),null);
 assert.equal(scene({view:"stations",stationStep:0,stationRitual:{
- certified:true,action:"GENUFLECT",sourceCueId:""} })?.kind,"POSTURE");
+ certified:true,action:"GENUFLECT",sourceCueId:""}}),null);
+assert.equal(stationPhaseOfFocusedParagraph({matches:s=>s===".aoP435930VRLine.leader"}),"versicle");
+assert.equal(stationPhaseOfFocusedParagraph({matches:()=>false,closest:s=>s===".aoP435930StationPrayer"}),"prayer");
+assert.equal(stationPhaseOfFocusedParagraph({matches:()=>false,closest:s=>s===".aoP435930StationConsider"}),"meditation");
+assert.equal(stationPhaseOfFocusedParagraph({matches:()=>false,closest:()=>null}),null);
+
 // Approved art selection excludes unapproved Tanner, new artists, out-of-domain and weak ratings.
 const paintings=[
  {id:"a",approval:"APPROVED",rating:4,subject:"ANNUNCIATION",localPath:"assets/art/a.webp",artist:"Approved A",title:"Annunciation A"},
