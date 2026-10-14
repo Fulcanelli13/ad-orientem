@@ -1,0 +1,2220 @@
+{
+  "schema": "ao-canon-62-bilingual-two-layer-editorial-review-v1",
+  "date": "2026-10-14",
+  "status": "ORIGINAL_BILINGUAL_COPY_DRAFT_REQUIRES_SOURCE_EDITORIAL_SIGNOFF_NOT_PUBLISHED",
+  "sourceOfTruth": {
+    "frenchGuide": "data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",
+    "sourceAnchors": "data/research/mass-canon-62-source-trigger-audit-20261013.json",
+    "priorityFlags": "data/research/mass-canon-flagged-french-copy-triage-20261013.json"
+  },
+  "counts": {
+    "total": 62,
+    "priest": 58,
+    "ministerOrRespondent": 4,
+    "shortFrench": 62,
+    "shortEnglish": 62,
+    "guideEnglish": 62,
+    "guideFrenchLinked": 62,
+    "flaggedStillNeedsReview": 29,
+    "linguisticallyApproved": 0,
+    "ceremoniallyApproved": 0,
+    "published": 0,
+    "reviewSurfaces": {
+      "GUIDE_ONLY": 13,
+      "FOCUS_WORDS_NO_DUPLICATE": 2,
+      "PRIEST_RIBBON_STATE_ONLY": 2,
+      "PRIEST_VOICE_STATE_ONLY": 3,
+      "SERVER_RIBBON_ONLY": 3,
+      "PRIEST_MULTI_STAGE_EDITORIAL": 15,
+      "INLINE_ATOMIC_EDITORIAL": 21,
+      "GUIDE_AND_FORM_CONTEXT": 1,
+      "INDEPENDENT_STAGE_EDITORIAL_ONLY": 2
+    }
+  },
+  "obligations": [
+    "The canonical full French text is referenced by action ID, never duplicated.",
+    "The short cue is a COPY proposal, not an observed priest stage and not automatically a trigger.",
+    "Multi-stage summaries cannot activate all sub-events together or inherit the paragraph scroll position.",
+    "Form-dependent actors may be the deacon at Solemn Mass; the server has a separate clock.",
+    "A 1962 source citation and English translation do not imply independent French editorial approval.",
+    "User postures and priest icons must not be derived directly from these rubric drafts.",
+    "No text can enter live Missal, Simple or LIVE without separate source/form, reader and publication signoff.",
+    "GUIDE_ONLY entries are not single-step cues; PRIEST_MULTI_STAGE_EDITORIAL requires a separately attested stage ID before any timed display.",
+    "FOCUS_WORDS_NO_DUPLICATE protects the two Consecrations; do not overlay repeated caption on prominent Latin words.",
+    "SERVER_RIBBON_ONLY never inherits PRIEST action ownership. PRIEST_RIBBON_STATE_ONLY never becomes an instant repeated icon.",
+    "INDEPENDENT_STAGE_EDITORIAL_ONLY is used for consecration genuflection/elevation; no activation until distinct witnessed source stages are resolved.",
+    "Guide drafts describe observable rites and legitimate variants directly; do not substitute implementation commentary for the rubric itself."
+  ],
+  "rows": [
+    {
+      "actionId": "AO.CANON.R62.001",
+      "cueId": "AO.SM.C0150",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il élève les mains et les yeux, puis s’incline.",
+        "en": "He raises his hands and eyes, then bows."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.001",
+        "en": "At the altar's centre the priest extends and slightly raises his hands, lifts his eyes to God and immediately lowers them. He joins his hands, places them on the altar and, bowing profoundly, begins the Canon in a low voice."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.002",
+      "cueId": "AO.SM.C0151",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il baise l’autel et joint les mains.",
+        "en": "He kisses the altar and joins his hands."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.002",
+        "en": "He kisses the centre of the altar, straightens and joins his hands before his chest."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.003",
+      "cueId": "AO.SM.C0152",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace trois croix sur l’Hostie et le calice.",
+        "en": "He makes three crosses over the Host and chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.003",
+        "en": "With his right hand he makes three Signs of the Cross over the Host and chalice together, at the corresponding three phrases."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.004",
+      "cueId": "AO.SM.C0153",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.1–2",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "CONDITIONAL_FORM",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il nomme le pape et l’ordinaire selon les rubriques.",
+        "en": "He names the Pope and local Ordinary as prescribed."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.004",
+        "en": "With hands extended, the priest commemorates the Pope unless the Apostolic See is vacant, then the diocesan Ordinary as prescribed. When the Ordinary has died, or when Mass is celebrated in Rome, the Ordinary's name is omitted. A bishop celebrating uses the appointed self-formula, while the Pope celebrating uses the special formula for the Supreme Pontiff."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.005",
+      "cueId": "AO.SM.C0154",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Meménto, il joint les mains et incline la tête.",
+        "en": "At Memento, he joins his hands and bows his head."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.005",
+        "en": "At Memento he joins his hands and raises them before his face or chest, his head slightly inclined."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.006",
+      "cueId": "AO.SM.C0155",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.3",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SILENT_MEMORIAL",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il fait mémoire des vivants en silence.",
+        "en": "He silently commemorates the living."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.006",
+        "en": "He pauses to remember the living. Names may be spoken quietly, but they are not obligatory."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.007",
+      "cueId": "AO.SM.C0156",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il reprend les mains étendues.",
+        "en": "He resumes with hands extended."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.007",
+        "en": "After the commemoration he resumes the prayer with hands extended."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.008",
+      "cueId": "AO.SM.C0157",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "CONDITIONAL_FORM",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il récite Communicántes, les mains étendues.",
+        "en": "He recites Communicantes with hands extended."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.008",
+        "en": "The priest recites Communicantes with hands extended, using the particular form prescribed for the liturgical day when one is appointed."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.009",
+      "cueId": "AO.SM.C0158",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Au nom de Jésus-Christ, il incline la tête.",
+        "en": "At the name of Jesus Christ, he bows his head."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.009",
+        "en": "At the name of Jesus Christ he bows his head towards the altar cross."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.010",
+      "cueId": "AO.SM.C0160",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Per eúndem, il joint les mains.",
+        "en": "At Per eundem, he joins his hands."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.010",
+        "en": "At Per eundem he joins his hands before his chest."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.011",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "CONDITIONAL_FORM",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il étend les mains ouvertes sur les oblats.",
+        "en": "He extends his open hands over the offerings."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.011",
+        "en": "At Hanc igitur he extends both hands, palms open towards the Host and chalice, maintaining them over the offerings until Per Christum. Particular forms of Hanc igitur depend on the selected Mass."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_AND_FORM_CONTEXT",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.012",
+      "cueId": "AO.SM.C0162",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Per Christum, il joint les mains.",
+        "en": "At Per Christum, he joins his hands."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.012",
+        "en": "At Per Christum he joins his hands before continuing."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.013",
+      "cueId": "AO.SM.C0164",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace trois croix sur l’Hostie et le calice.",
+        "en": "He makes three crosses over the Host and chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.013",
+        "en": "At benedictam, adscriptam and ratam he makes three separate Signs of the Cross over the Host and chalice."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.014",
+      "cueId": "AO.SM.C0165",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Corpus, il trace une croix sur l’Hostie.",
+        "en": "At Corpus, he crosses the Host."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.014",
+        "en": "At Corpus he makes one Sign of the Cross over the Host only."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.015",
+      "cueId": "AO.SM.C0166",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Sanguis, il trace une croix sur le calice.",
+        "en": "At Sanguis, he crosses the chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.015",
+        "en": "At Sanguis he makes one Sign of the Cross over the chalice only."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.016",
+      "cueId": "AO.SM.C0167",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il joint les mains et incline la tête.",
+        "en": "He joins his hands and bows his head."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.016",
+        "en": "He raises and then joins his hands, inclining his head towards the altar cross."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.017",
+      "cueId": "AO.SM.C0168",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "CONDITIONAL_FORM",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À accépit panem, il prend l’Hostie.",
+        "en": "At accepit panem, he takes the Host."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.017",
+        "en": "Continuing Qui pridie quietly, he takes the Host between thumbs and index fingers at accepit panem. If other Hosts are present in a covered vessel for consecration, he first uncovers that vessel."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.018",
+      "cueId": "AO.SM.C0169",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il lève les yeux au ciel, puis les abaisse.",
+        "en": "He looks heavenward, then lowers his eyes."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.018",
+        "en": "He lifts his eyes towards heaven and immediately lowers them."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.019",
+      "cueId": "AO.SM.C0170",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il incline la tête en rendant grâce.",
+        "en": "He bows his head in thanksgiving."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.019",
+        "en": "He slightly bows his head during the words of thanksgiving."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.020",
+      "cueId": "AO.SM.C0171",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace une croix sur l’Hostie.",
+        "en": "He makes a cross over the Host."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.020",
+        "en": "Holding the Host in his left hand, he makes a Sign of the Cross over it with his right."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.021",
+      "cueId": "AO.SM.C0172",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.4",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il dit fregit sans rompre l’Hostie.",
+        "en": "He says fregit without breaking the Host."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.021",
+        "en": "He says the narrative words fregit, deditque without actually breaking the Host at that moment. The physical fraction belongs later in Mass."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.022",
+      "cueId": "AO.SM.C0173",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il prononce secrètement les paroles de consécration.",
+        "en": "He quietly pronounces the words of consecration."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.022",
+        "en": "Bending over the altar with elbows resting upon it, he solemnly pronounces the words of consecration of the Host distinctly and in a low voice. The following elevation is a distinct action."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "FOCUS_WORDS_NO_DUPLICATE",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.023",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5–6",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il fait la première génuflexion.",
+        "en": "He makes the first genuflection."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.023",
+        "en": "Immediately after the words of consecration he makes the first genuflection, in adoration."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INDEPENDENT_STAGE_EDITORIAL_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.024",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5–6",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il élève l’Hostie à l’adoration des fidèles.",
+        "en": "He elevates the Host for the faithful to adore."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.024",
+        "en": "He rises and elevates the Host for the faithful to adore, keeping his eyes directed towards it; the elevation occurs after the first genuflection."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INDEPENDENT_STAGE_EDITORIAL_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.025",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5–6",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il repose l’Hostie, puis génuflecte.",
+        "en": "He replaces the Host, then genuflects."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.025",
+        "en": "He replaces the Host on the corporal, then makes a second genuflection. These are separate sequential stages."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.026",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.5",
+      "sourceAnchorType": "PERSISTENT_SOURCE_STATE",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "PERSISTENT_STATE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il garde les pouces et index joints.",
+        "en": "He keeps his thumbs and index fingers joined."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.026",
+        "en": "From the Consecration onwards, his thumbs and index fingers remain joined except when he handles the consecrated Host, until the ablution of his fingers."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.027",
+      "cueId": "AO.SM.C0174",
+      "actor": "SERVER",
+      "ritusLocator": "VIII.6",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MINISTER_EVENT",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Le servant sonne pendant l’élévation de l’Hostie.",
+        "en": "The server rings during the Host elevation."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.027",
+        "en": "During the elevation of the Host, the server rings the bell three times or continuously until the Host is replaced upon the corporal. This bell action is not the priest's gesture."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "SERVER_RIBBON_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.028",
+      "cueId": "AO.SM.C0175",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Le calice est découvert ; le prêtre le soulève brièvement.",
+        "en": "The chalice is uncovered; the priest raises it briefly."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.028",
+        "en": "After adoration of the Host, the chalice is uncovered, with form-dependent assistance of the deacon at Solemn Mass when required. At accipiens et hunc praeclarum Calicem the priest holds it near the knop with both hands, raises it slightly and immediately replaces it. This is not the major elevation."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.029",
+      "cueId": "AO.SM.C0176",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À grátias agens, il incline la tête.",
+        "en": "At gratias agens, he bows his head."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.029",
+        "en": "At item tibi gratias agens he bows his head."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.030",
+      "cueId": "AO.SM.C0177",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace une croix sur le calice.",
+        "en": "He makes a cross over the chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.030",
+        "en": "Holding the chalice in his left hand, he makes a Sign of the Cross over it with his right."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.031",
+      "cueId": "AO.SM.C0178",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il tient le calice à deux mains.",
+        "en": "He holds the chalice with both hands."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.031",
+        "en": "He holds the chalice with both hands, left at the foot and right at the knop, preparing for the consecration."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.032",
+      "cueId": "AO.SM.C0179",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il prononce secrètement la consécration du calice.",
+        "en": "He quietly pronounces the chalice consecration."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.032",
+        "en": "Bending towards the chalice with his elbows on the altar, he pronounces the consecratory words over the Precious Blood attentively, continuously and in a low voice. Adoration and elevation follow later."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "FOCUS_WORDS_NO_DUPLICATE",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.033",
+      "cueId": "AO.SM.C0180",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il repose le calice, puis l’adore.",
+        "en": "He replaces the chalice, then adores."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.033",
+        "en": "After the chalice consecration he replaces the chalice, quietly says Haec quotiescumque and then makes the first genuflection; these are distinct moments."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.034",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "ritusLocator": "VIII.7",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il élève le calice après la première génuflexion.",
+        "en": "He elevates the chalice after the first genuflection."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.034",
+        "en": "After the first genuflection he rises and elevates the uncovered chalice for adoration. He replaces it; the chalice is covered according to the Mass form, with the deacon assisting at Solemn Mass when required; then he makes the second genuflection."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.035",
+      "cueId": "AO.SM.C0181",
+      "actor": "SERVER",
+      "ritusLocator": "VIII.6–7",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MINISTER_EVENT",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Le servant sonne pendant l’élévation du calice.",
+        "en": "The server rings during the chalice elevation."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.035",
+        "en": "During the chalice elevation, the server rings three times or continuously until the chalice is placed back upon the corporal."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "SERVER_RIBBON_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.036",
+      "cueId": "AO.SM.C0182",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il récite Unde et mémores, les mains étendues.",
+        "en": "He recites Unde et memores with hands extended."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.036",
+        "en": "After replacing and adoring the chalice he continues Unde et memores in a low voice, standing with hands extended."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.037",
+      "cueId": "AO.SM.C0183",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À de tuis donis, il joint les mains.",
+        "en": "At de tuis donis, he joins his hands."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.037",
+        "en": "At de tuis donis ac datis he joins his hands before his chest."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.038",
+      "cueId": "AO.SM.C0184",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace trois croix sur l’Hostie et le calice.",
+        "en": "He makes three crosses over the Host and chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.038",
+        "en": "He makes three successive Signs of the Cross over the Host and chalice together."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.039",
+      "cueId": "AO.SM.C0185",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace une croix sur l’Hostie, puis sur le calice.",
+        "en": "He crosses the Host, then the chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.039",
+        "en": "He signs over the Host only at Panem sanctum, and separately over the chalice at Calicem salutis."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.040",
+      "cueId": "AO.SM.C0186",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "PERSISTENT_STATE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Supra quæ, il garde les mains étendues.",
+        "en": "At Supra quae, he keeps his hands extended."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.040",
+        "en": "The priest continues Supra quae standing with his hands extended before his chest."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_RIBBON_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.041",
+      "cueId": "AO.SM.C0187",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Súpplices, il s’incline sur l’autel.",
+        "en": "At Supplices, he bows over the altar."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.041",
+        "en": "At Supplices te rogamus he bows at the centre of the altar, resting his joined hands upon it."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.042",
+      "cueId": "AO.SM.C0188",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il baise l’autel.",
+        "en": "He kisses the altar."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.042",
+        "en": "At ex hac altaris participatione he kisses the altar, placing his hands on either side upon the corporal."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.043",
+      "cueId": "AO.SM.C0189",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace une croix sur l’Hostie, puis sur le calice.",
+        "en": "He crosses the Host, then the chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.043",
+        "en": "He makes a Sign of the Cross over the Host at Corpus, then separately over the chalice at Sanguinem."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.044",
+      "cueId": "AO.SM.C0190",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il fait sur lui-même le signe de croix.",
+        "en": "He makes the Sign of the Cross upon himself."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.044",
+        "en": "At omni benedictione he makes the Sign of the Cross upon himself, from the forehead to the chest."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.045",
+      "cueId": "AO.SM.C0191",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Per eúndem, il joint les mains.",
+        "en": "At Per eundem, he joins his hands."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.045",
+        "en": "At Per eundem he joins his hands."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.046",
+      "cueId": "AO.SM.C0192",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.2",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Meménto étiam, il joint les mains et regarde l’autel.",
+        "en": "At Memento etiam, he joins his hands and looks towards the altar."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.046",
+        "en": "At Memento etiam he joins and raises his hands before his face, looking towards the Blessed Sacrament on the altar."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.047",
+      "cueId": "AO.SM.C0193",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.2",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SILENT_MEMORIAL",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il fait mémoire des défunts.",
+        "en": "He commemorates the departed."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.047",
+        "en": "He commemorates the faithful departed according to his intention, as with the living."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.048",
+      "cueId": "AO.SM.C0194",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.2",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il reprend les mains étendues.",
+        "en": "He resumes with hands extended."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.048",
+        "en": "Once the commemoration ends, he resumes the prayer with hands extended."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.049",
+      "cueId": "AO.SM.C0195",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.2",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Per eúndem, il joint les mains et incline la tête.",
+        "en": "At Per eundem, he joins his hands and bows his head."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.049",
+        "en": "At Per eundem he joins his hands and bows his head."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.050",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Nobis quoque, il hausse la voix et se frappe la poitrine.",
+        "en": "At Nobis quoque, he raises his voice and strikes his breast."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.050",
+        "en": "At Nobis quoque peccatoribus he raises his voice slightly and strikes his breast once with his right hand, his left resting on the corporal. The rest of the prayer is not said aloud."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_VOICE_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.051",
+      "cueId": "AO.SM.C0197",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À fámulis tuis, il reprend la voix secrète.",
+        "en": "At famulis tuis, he resumes the quiet voice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.051",
+        "en": "At famulis tuis his voice returns to the secret register and he continues with hands extended."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_VOICE_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.052",
+      "cueId": "AO.SM.C0198",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Per Christum, il joint les mains.",
+        "en": "At Per Christum, he joins his hands."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.052",
+        "en": "At Per Christum he joins his hands."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.053",
+      "cueId": "AO.SM.C0199",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "PERSISTENT_STATE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "À Per quem, il garde les mains jointes.",
+        "en": "At Per quem, he keeps his hands joined."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.053",
+        "en": "At Per quem haec omnia he keeps his hands joined before his chest."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_RIBBON_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.054",
+      "cueId": "AO.SM.C0200",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace trois croix sur l’Hostie et le calice.",
+        "en": "He makes three crosses over the Host and chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.054",
+        "en": "He makes three successive Signs of the Cross over the Host and chalice together."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.055",
+      "cueId": "AO.SM.C0201",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Le calice est découvert, puis le prêtre génuflecte.",
+        "en": "The chalice is uncovered; the priest then genuflects."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.055",
+        "en": "At the conclusion of the Canon the chalice is uncovered by the celebrant at Low or Sung Mass, and by the deacon at Solemn Mass when required. The priest genuflects, rises and takes the Host between the thumb and index finger of his right hand."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.056",
+      "cueId": "AO.SM.C0202",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace trois croix au-dessus du calice avec l’Hostie.",
+        "en": "He makes three crosses over the chalice with the Host."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.056",
+        "en": "With the consecrated Host he makes three crosses over the chalice at Per ipsum, cum ipso and in ipso."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.057",
+      "cueId": "AO.SM.C0203",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il trace deux croix avec l’Hostie devant le calice.",
+        "en": "He makes two crosses with the Host before the chalice."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.057",
+        "en": "With the Host he makes two crosses between the chalice and his chest at Patri and Sancti."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_MULTI_STAGE_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.058",
+      "cueId": "AO.SM.C0204",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "SINGLE_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il élève légèrement le calice, l’Hostie au-dessus.",
+        "en": "He slightly raises the chalice, holding the Host above."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.058",
+        "en": "At omnis honor et gloria he holds the Host above the chalice with his right hand and slightly raises the chalice with the left, then replaces them. This minor elevation differs from the major elevations at the Consecration."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "INLINE_ATOMIC_EDITORIAL",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.059",
+      "cueId": "AO.SM.C0205",
+      "actor": "PRIEST",
+      "ritusLocator": "IX.3",
+      "sourceAnchorType": "ORDERED_NON_TEXT_CEREMONY",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il repose les espèces, puis génuflecte.",
+        "en": "He replaces the sacred species, then genuflects."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.059",
+        "en": "After the minor elevation the priest replaces the chalice and Host on the corporal. The chalice is covered with the pall; at Solemn Mass the deacon assists when required. The priest then genuflects."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.060",
+      "cueId": "AO.SM.C0206",
+      "actor": "PRIEST",
+      "ritusLocator": "X.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MULTI_STAGE",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Il dit Per ómnia d’une voix intelligible.",
+        "en": "He says Per omnia audibly."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.060",
+        "en": "After adoring the Sacrament he rises, extends his hands and places them on the altar on either side within the corporal, then says Per omnia saecula saeculorum audibly."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "PRIEST_VOICE_STATE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.061",
+      "cueId": "AO.SM.C0207",
+      "actor": "SERVER",
+      "ritusLocator": "X.1",
+      "sourceAnchorType": "SOURCE_LATIN_WORDS",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "CONDITIONAL_FORM",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Le répondant dit Amen.",
+        "en": "The respondent says Amen."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.061",
+        "en": "At the conclusion of the Canon, Per omnia saecula saeculorum is answered with Amen. At Low Mass the minister responds; in Sung Mass the appointed respondents give the answer."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "GUIDE_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    },
+    {
+      "actionId": "AO.CANON.R62.062",
+      "cueId": "AO.SM.C0161",
+      "actor": "SERVER",
+      "ritusLocator": "VIII.6",
+      "sourceAnchorType": "OBSERVED_ANTICIPATORY_EVENT",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "semanticKind": "MINISTER_EVENT",
+      "displayPolicy": "EDITORIAL_PREVIEW_ONLY_NOT_LIVE",
+      "shortDraft": {
+        "fr": "Le servant donne le signal avant la consécration.",
+        "en": "The server gives the warning bell before consecration."
+      },
+      "guideDraft": {
+        "frCanonicalActionId": "AO.CANON.R62.062",
+        "en": "Shortly before the consecration the server gives a warning bell; it is an anticipatory event, not an exact gesture at the word Hanc igitur."
+      },
+      "copyApproval": "NOT_APPROVED",
+      "ritusFormApproval": "NOT_APPROVED",
+      "stageTimingApproval": "NOT_APPROVED",
+      "mobileReaderAcceptance": "NOT_APPROVED",
+      "canPublish": false,
+      "readerDisplayText": null,
+      "priestActionNow": null,
+      "faithfulPosture": null,
+      "reviewSurface": "SERVER_RIBBON_ONLY",
+      "currentlyVisible": false,
+      "previewPermitted": true,
+      "automaticallyTriggeredByScroll": false,
+      "timedStageVerified": false
+    }
+  ]
+}
