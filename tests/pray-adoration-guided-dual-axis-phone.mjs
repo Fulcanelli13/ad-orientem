@@ -45,7 +45,7 @@ try{
   {mode:"visit",card:"visit-0",stops:7,current:1,overflow:"auto"});
  assert.equal(v.nav,"none","Old Previous/Next navigation duplicates the seven-stage timeline");
  assert.ok(v.active>=1,"Visit has no illuminated prayer or direction paragraph");
- const reverence=page.locator("#aoPray435930 .aoDevotionalActionCinematic");
+ const reverence=page.locator("body > .aoDevotionalActionCinematic");
  await reverence.waitFor({state:"visible",timeout:4500});
  const rCue=await reverence.evaluate(el=>({
   id:el.dataset.aoActionScene,kind:el.dataset.aoActionKind,
@@ -58,6 +58,9 @@ try{
  assert.equal(rCue.icon,true,"Visit arrival lost the approved reverence icon");
  assert.ok(rCue.width>=rCue.view-60,"Visit arrival still uses a small rail badge");
  assert.match(rCue.instruction,/reverence|révérence/i);
+ assert.equal(await reverence.evaluate(el=>el.parentElement===document.body&&
+  getComputedStyle(el).position==="fixed"&&el.getAttribute("aria-modal")==="true"),true,
+  "Visit reverence cue must hide global navigation as a true fullscreen modal");
  await page.screenshot({path:resolve(captures,"visit-390-full-reverence-cinematic.png"),animations:"disabled"});
  await reverence.locator(".aoDevotionalActionContinue").click();
  assert.equal(await reverence.count(),0,"Visit cinematic did not return to the existing prayer");
