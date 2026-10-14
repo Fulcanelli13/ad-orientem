@@ -1,0 +1,517 @@
+{
+  "schema": "ao-canon-20-minister-stage-acceptance-v1",
+  "date": "2026-10-14",
+  "status": "TWENTY_SOURCE_EVENT_CANDIDATES_INDEPENDENT_TIMING_NOT_VERIFIED",
+  "canonicalOwners": {
+    "ministers11": "data/research/mass-canon-minister-form-branches-20261013.json",
+    "attendants6": "data/research/mass-canon-viii8-elevation-attendants-20261014.json",
+    "server3": "data/research/mass-canon-french-rubric-62-original-redraft-20261013.json",
+    "serverSource": "data/research/mass-canon-62-source-trigger-audit-20261013.json"
+  },
+  "counts": {
+    "canonicalSourceEntries": 20,
+    "deacon": 9,
+    "thurifer": 2,
+    "acolyte": 5,
+    "subdeacon": 1,
+    "server": 3,
+    "candidateRowsWithUnknownActor": 0,
+    "independentlyTimed": 0,
+    "editoriallyApproved": 0,
+    "published": 0
+  },
+  "rules": [
+    "Each ID is a reference to an existing single canonical source record; no duplicate event implementation is created.",
+    "The stage is a candidate ceremonial phase, never a manufactured timeline, timestamp, or proof of observation.",
+    "The subdeacon's genuflection is NOT assigned a manufactured exact Latin word or R17 reader paragraph.",
+    "Conditional Solemn deacon pall work and its prescribed independent genuflection must remain separate.",
+    "The 4 alternative torch-stop records are mutually exclusive review candidates, with a single actual extinguishing after conditions are sourced.",
+    "Server anticipatory ringing cannot be triggered at the first word Hanc igitur. Bell practice per form remains subject to review.",
+    "No action is visible, observed, or published without independent source/form, observer-clock, bilingual-copy and mobile signoff."
+  ],
+  "rows": [
+    {
+      "id": "AO.CANON.MIN.001",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0163",
+      "stage": "PRE_CONSECRATION_DEACON_POSITION",
+      "conditional": "SOURCE_PRESCRIBED",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.009",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0175",
+      "stage": "CHALICE_CONSECRATION_PALL_REMOVAL",
+      "conditional": "WHEN_REQUIRED",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.002",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0174",
+      "stage": "HOST_ELEVATION_DEACON_ASSIST",
+      "conditional": "SOURCE_PRESCRIBED",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.003",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0181",
+      "stage": "CHALICE_ELEVATION_DEACON_ASSIST",
+      "conditional": "SOURCE_PRESCRIBED",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.004",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "THURIFER",
+      "clockDomain": "THURIFER_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "cueId": "AO.SM.C0174",
+      "stage": "HOST_ELEVATION_THURIFER",
+      "conditional": "INCENSE_BRANCH",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.005",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "THURIFER",
+      "clockDomain": "THURIFER_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "cueId": "AO.SM.C0181",
+      "stage": "CHALICE_ELEVATION_THURIFER",
+      "conditional": "INCENSE_BRANCH",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.010",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0181",
+      "stage": "CHALICE_ELEVATION_PALL_COVER",
+      "conditional": "WHEN_REQUIRED",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.006",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0199",
+      "stage": "MINOR_ELEVATION_DEACON_APPROACH",
+      "conditional": "SOURCE_PRESCRIBED",
+      "sourceSection": "IX.4",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.007",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0201",
+      "stage": "MINOR_ELEVATION_PALL_REMOVAL",
+      "conditional": "WHEN_REQUIRED",
+      "sourceSection": "IX.4",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.008",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0205",
+      "stage": "POST_MINOR_ELEVATION_PALL_COVER",
+      "conditional": "WHEN_REQUIRED",
+      "sourceSection": "IX.4",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.MIN.011",
+      "owner": "EXISTING_MINISTER_11",
+      "actor": "DEACON",
+      "clockDomain": "DEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0205",
+      "stage": "POST_MINOR_ELEVATION_DEACON_GENUFLECTION",
+      "conditional": "SOURCE_PRESCRIBED",
+      "sourceSection": "IX.4",
+      "sourceUrls": [
+        "https://documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.001",
+      "owner": "VIII8_ATTENDANTS_6",
+      "actor": "ACOLYTES",
+      "clockDomain": "ACOLYTES_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": null,
+      "stage": "AT_END_OF_PREFACE",
+      "conditional": "SOURCE_PRESCRIBED",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.002",
+      "owner": "VIII8_ATTENDANTS_6",
+      "actor": "SUBDEACON",
+      "clockDomain": "SUBDEACON_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": null,
+      "stage": "CONSECRATION_ELEVATIONS",
+      "conditional": "SOURCE_PRESCRIBED",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.003",
+      "owner": "VIII8_ATTENDANTS_6",
+      "actor": "ACOLYTES",
+      "clockDomain": "ACOLYTES_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0181",
+      "stage": "AFTER_CHALICE_ELEVATION",
+      "conditional": "NO_COMMUNICANTS_AND_NOT_FAST_DAY_AND_NOT_REQUIEM",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.004",
+      "owner": "VIII8_ATTENDANTS_6",
+      "actor": "ACOLYTES",
+      "clockDomain": "ACOLYTES_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": null,
+      "stage": "AFTER_COMMUNION",
+      "conditional": "COMMUNICANTS_PRESENT",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.005",
+      "owner": "VIII8_ATTENDANTS_6",
+      "actor": "ACOLYTES",
+      "clockDomain": "ACOLYTES_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": null,
+      "stage": "AFTER_COMMUNION",
+      "conditional": "FAST_DAY",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.VIII8.006",
+      "owner": "VIII8_ATTENDANTS_6",
+      "actor": "ACOLYTES",
+      "clockDomain": "ACOLYTES_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "SOLEMN"
+      ],
+      "cueId": null,
+      "stage": "AFTER_COMMUNION",
+      "conditional": "MASS_FOR_DEAD",
+      "sourceSection": "VIII.8",
+      "sourceUrls": [
+        "https://fr.scribd.com/document/542057936/Ritus-Servandus-1962",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.R62.027",
+      "owner": "CANONICAL_R62_SERVER_3",
+      "actor": "SERVER",
+      "clockDomain": "SERVER_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0174",
+      "stage": "HOST_ELEVATION_SERVER_BELL",
+      "conditional": "FORM_PRACTICE_REQUIRES_SEPARATE_VERIFICATION",
+      "sourceSection": "VIII.6",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.R62.035",
+      "owner": "CANONICAL_R62_SERVER_3",
+      "actor": "SERVER",
+      "clockDomain": "SERVER_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0181",
+      "stage": "CHALICE_ELEVATION_SERVER_BELL",
+      "conditional": "FORM_PRACTICE_REQUIRES_SEPARATE_VERIFICATION",
+      "sourceSection": "VIII.6–7",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    },
+    {
+      "id": "AO.CANON.R62.062",
+      "owner": "CANONICAL_R62_SERVER_3",
+      "actor": "SERVER",
+      "clockDomain": "SERVER_INDEPENDENT_OBSERVATION",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "cueId": "AO.SM.C0161",
+      "stage": "ANTICIPATORY_CONSECRATION_SERVER_BELL",
+      "conditional": "FORM_PRACTICE_REQUIRES_SEPARATE_VERIFICATION",
+      "sourceSection": "VIII.6",
+      "sourceUrls": [
+        "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+        "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+      ],
+      "sourceClock": "INDEPENDENT_REAL_WORLD_MINISTER_EVENT_NOT_READER_OR_TEXT",
+      "sourceIdentityReviewed": false,
+      "exactStageVerified": false,
+      "actualObserved": false,
+      "displayApproved": false,
+      "canPublish": false,
+      "faithfulPosture": null
+    }
+  ]
+}
