@@ -11,14 +11,14 @@ Rev. D. I. Lanslots, O.S.B., *Illustrated Explanation of the Prayers and Ceremon
 ## Canonical owner reconciliation
 
 - `data/presentation/guide-registry.v1.json`: 32 historical entries: AO.CARD.001–030 + PRE.ASPERGES + POST.MASS. The validator deliberately requires exactly 32; *do not* append Lanslots extracts as 33+ Guide records or mutate the registry's continuity status.
-- `src/mass/reader-guide.js`: `guideForPresentationCard` gives the **48** visible Sung LIVE presentation moments inherited macro context. The 48 moments **are not** 48 historically approved independent Guides.
+- `src/mass/reader-live-source.js` currently projects **39 source-first LIVE steps** from 30 base macro cards by replacing five Canon macro cards with 14 separately source-owned Canon segments. Historical **48** is optional parity/archaeological evidence, not the normative current mapping. `src/mass/reader-guide.js` can provide inherited Guide context; it does not certify 39 independent editorial Guides.
 - `data/learn/mass-formation-campion.v1.json`: existing eight sequential formation stages; deepen stage claims through reviewed, separately linked sources without duplicating the course.
 - `src/scripture/context.js`: single reference parser and shared Scripture owner; respects Catholic book names and Psalm numbering. No second Bible-text store; source/passage lookup must preserve card and reading position.
 - `docs/research/MASS-RESEARCH-ARCHIVE-INDEX-20261013.md`: retains Guéranger first/second pass, September evidence, 1962 normative witnesses and the Guéranger-vs-1962 correction register. Lanslots complements, never supersedes, those sources.
 
 ## Full 25-chapter structural inventory (provisional TOC transcription; not certified full-text extraction)
 
-Each `AO.CARD` designation here is a **topic-level bridge to existing 30 macro Guides**, not a final link to any of the 48 rendered moments. The eventual presentation mapping must be resolved via canonical per-card source and section IDs.
+Each `AO.CARD` designation here is a **topic-level bridge to existing 30 macro Guides**, not a direct page or phrase locator. The [39-step source-first crosswalk](../../data/research/mass-lanslots-1897-source-first39-map.v1.json) now assigns the **existing** macro IDs and certified Canon block/cue ownership; topic matches still require actual original-page verification.
 
 | Chapter | Printed start | Original chapter title | Provisional existing Guide owner(s) | Editorial extraction target |
 |---|---:|---|---|---|
@@ -80,16 +80,18 @@ Use two evidence categories: **OCR_EXCERPT_REVIEWED** = the author's statement a
 6. Do not add contemporary or postconciliar Missal source links as if they explain 1962 mechanics. No implication that a common linked source is independent proof of each specific claim.
 7. Source display: title / author / 1897 / chapter / printed page / exact assertion / original scan link / Scripture book-chapter-verse / interpretation type / 1962 applicability / source status / bilingual reviewed text.
 
-## Companion differential screening (15 candidates)
+| LAN-016 | I, chapter opening (printed p.13 *hint*) | Altar; Old Testament sacrifices and worldwide pure offering | Malachi 1:11 (*Mal. i. 11*, explicitly cited) | INDEXED_PDF_TEXT_EXCERPT | The original PDF is indexed with Lanslots's Chapter I opening interpreting Malachi as a prophecy applied to the Mass; this is evidence of the **author's theological reading**, not a critically verified visual page or an exclusively literal reading of the verse. |
 
-See [machine-readable 15-item differential](../../data/research/mass-lanslots-1897-claim-differential.v1.json). Its cross-reference IDs have been validated against the 422-row historical evidence snapshot, original-French FRG01–30 audit and 41 FRG31–71 entries. At least five candidates are already covered and should only gain another historical witness, not another explanation. The chapter and OCR page hints remain unapproved until visually verified; **none of these rows is ready for publication.**
+## Companion differential screening (16 candidates)
+
+See [machine-readable 16-item differential](../../data/research/mass-lanslots-1897-claim-differential.v1.json). Its cross-reference IDs have been validated against the 422-row historical evidence snapshot, original-French FRG01–30 audit and 41 FRG31–71 entries. At least five candidates are already covered and should only gain another historical witness, not another explanation. The chapter and OCR page hints remain unapproved until visually verified; **none of these rows is ready for publication.**
 
 ## Integration disposition
 
-- **Documented now:** complete 25-chapter indexed structure; provisional connections to all 30 ordinary Mass macro moments and relevant pre-/post-Mass contexts; 15 candidate source-passage work items graded by evidence; source/authority separation and existing owner mapping.
-- **Not completed:** consecutive 404-PDF-page visual verification; full Scripture-citation extraction; complete claim-by-claim duplicate check against the original 422-record September evidence entries and all 71 Guéranger topics (a 15-item differential screening has now been added separately); mapping to individual **48** LIVE card IDs; native French theological review and runtime/mobile integration.
+- **Documented now:** complete 25-chapter indexed structure; provisional connections to all 30 ordinary Mass macro moments and relevant pre-/post-Mass contexts; 16 candidate source-passage work items graded by evidence; source/authority separation and existing owner mapping.
+- **Not completed:** consecutive 404-PDF-page visual verification; full Scripture-citation extraction; complete claim-by-claim duplicate check against the original 422-record September evidence entries and all 71 Guéranger topics (a 16-item differential screening has now been added separately); topic-level mapping now references the certified **39** LIVE-step IDs, with exact source phrase mapping still incomplete; native French theological review and runtime/mobile integration.
 - **Do not publish this ledger as new user-facing content.** Next research gate: acquire readable full OCR plus page images, mechanically extract all biblical citations and Mass-text phrases, classify them, then deduplicate at the *claim* level against existing records before any product change.
-- **No source or test assertions run by this documentation-only pass; no Mass reader modification.**
+- **Source readback and source-owner assertions were performed in the research batch; no full Node/browser test suite or Mass reader modification.**
 
 ## Original source and work-in-repo cross references
 
