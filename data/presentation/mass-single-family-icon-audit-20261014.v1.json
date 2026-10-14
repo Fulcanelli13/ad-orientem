@@ -1,0 +1,285 @@
+{
+  "schema": "ao-mass-single-family-icon-audit-v1",
+  "asOf": "2026-10-14",
+  "publication": "REVIEW_ONLY_NO_RUNTIME_CHANGE",
+  "directive": "One coherent user-approved silhouette/icon family in the Mass reader. Photos and engravings are research witnesses only, not user-facing assets.",
+  "sourceOfTruth": {
+    "assets": "assets/active/mass-v46/manifest.v1.json",
+    "selections": "data/presentation/mass-icon-user-selections-20261010.v1.json",
+    "gestures": "data/mass/gesture-matrix.v1.json"
+  },
+  "counts": {
+    "masterNames": 67,
+    "distinctFileContents": 47,
+    "duplicateContentGroups": 14,
+    "approvedUserPicks": 42,
+    "selectedPicksInMassBank": 36,
+    "investigate": 10,
+    "gestureMatrixPending": 17,
+    "priestGesturePending": 7,
+    "faithfulGesturePending": 10
+  },
+  "policy": {
+    "sameFamilyOnly": true,
+    "photographsInMassReader": false,
+    "engravedBookPlatesInMassReader": false,
+    "generateNewIcons": false,
+    "autoReplaceMaster": false,
+    "automaticCueActivation": false,
+    "freezeExistingApprovedArtwork": true,
+    "fallback": "SOURCE_BACKED_SHORT_RUBRIC"
+  },
+  "duplicateContentGroups": [
+    [
+      "chalice_elevation.svg",
+      "priest_elevation.svg"
+    ],
+    [
+      "commingling.svg",
+      "communion.svg",
+      "fraction.svg"
+    ],
+    [
+      "cross.svg",
+      "gospel_crosses.svg"
+    ],
+    [
+      "epistle.svg",
+      "gospel.svg"
+    ],
+    [
+      "genuflect.svg",
+      "priest_genuflect.svg"
+    ],
+    [
+      "incense.svg",
+      "priest_incense_altar.svg",
+      "priest_incense_people.svg"
+    ],
+    [
+      "preaching.svg",
+      "priest_ambo_rich.svg"
+    ],
+    [
+      "priest_centre_hands_rich.svg",
+      "priest_centre_rich.svg"
+    ],
+    [
+      "priest_chair.svg",
+      "priest_sedilia.svg",
+      "priest_sedilia_rising_rich.svg",
+      "priest_sedilia_standing_rich.svg"
+    ],
+    [
+      "priest_communion_rich.svg",
+      "priest_rail_rich.svg"
+    ],
+    [
+      "priest_facing_people.svg",
+      "priest_facing_people_rich.svg",
+      "priest_turn_people_move_rich.svg",
+      "priest_turn_people_rich.svg"
+    ],
+    [
+      "priest_foot.svg",
+      "priest_foot_rich.svg"
+    ],
+    [
+      "priest_kiss_altar_rich.svg",
+      "priest_profound_bow_rich.svg"
+    ],
+    [
+      "priest_return_altar_rich.svg",
+      "priest_turn_altar_move_rich.svg"
+    ]
+  ],
+  "semanticReviewPairs": [
+    {
+      "assets": [
+        "cross.svg",
+        "gospel_crosses.svg"
+      ],
+      "issue": "GENERIC_CROSS_VERSUS_3_GOSPEL_SIGNS",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    },
+    {
+      "assets": [
+        "commingling.svg",
+        "communion.svg"
+      ],
+      "issue": "DISTINCT_EUCHARISTIC_ACTIONS",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    },
+    {
+      "assets": [
+        "commingling.svg",
+        "fraction.svg"
+      ],
+      "issue": "DISTINCT_EUCHARISTIC_ACTIONS",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    },
+    {
+      "assets": [
+        "epistle.svg",
+        "gospel.svg"
+      ],
+      "issue": "DIFFERENT_READING_STATIONS",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    },
+    {
+      "assets": [
+        "genuflect.svg",
+        "priest_genuflect.svg"
+      ],
+      "issue": "DIFFERENT_ACTOR_OWNERSHIP",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    },
+    {
+      "assets": [
+        "priest_centre_hands_rich.svg",
+        "priest_centre_rich.svg"
+      ],
+      "issue": "JOINED_HANDS_NOT_PICTORIALLY_DISTINCT",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    },
+    {
+      "assets": [
+        "priest_kiss_altar_rich.svg",
+        "priest_profound_bow_rich.svg"
+      ],
+      "issue": "KISS_AND_BOW_INDISCERNIBLE",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    },
+    {
+      "assets": [
+        "priest_incense_altar.svg",
+        "priest_incense_people.svg"
+      ],
+      "issue": "DIFFERENT_CENSING_TARGETS",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    },
+    {
+      "assets": [
+        "priest_incense_people.svg",
+        "incense.svg"
+      ],
+      "issue": "GENERIC_INCENSE_SUBSTITUTE",
+      "action": "VISUAL_REVIEW_BEFORE_SEMANTIC_PROMOTION"
+    }
+  ],
+  "priestUnresolved": [
+    {
+      "matrixId": "GM.P.C0117.01",
+      "cueId": "AO.SM.C0117",
+      "gesture": "RAISE_EYES_AND_HANDS",
+      "disposition": "MATCH_SAME_FAMILY_OR_USE_TEXT"
+    },
+    {
+      "matrixId": "GM.P.C0155.01",
+      "cueId": "AO.SM.C0155",
+      "gesture": "MEMENTO_HANDS",
+      "disposition": "MATCH_SAME_FAMILY_OR_USE_TEXT"
+    },
+    {
+      "matrixId": "GM.P.C0161.01",
+      "cueId": "AO.SM.C0161",
+      "gesture": "HANDS_OVER_OBLATIONS",
+      "disposition": "MATCH_SAME_FAMILY_OR_USE_TEXT"
+    },
+    {
+      "matrixId": "GM.P.C0169.01",
+      "cueId": "AO.SM.C0169",
+      "gesture": "RAISE_EYES",
+      "disposition": "MATCH_SAME_FAMILY_OR_USE_TEXT"
+    },
+    {
+      "matrixId": "GM.P.C0193.01",
+      "cueId": "AO.SM.C0193",
+      "gesture": "MEMENTO_HANDS",
+      "disposition": "MATCH_SAME_FAMILY_OR_USE_TEXT"
+    },
+    {
+      "matrixId": "GM.P.C0204.01",
+      "cueId": "AO.SM.C0204",
+      "gesture": "MINOR_ELEVATION",
+      "disposition": "MATCH_SAME_FAMILY_OR_USE_TEXT"
+    },
+    {
+      "matrixId": "GM.P.C0263.01",
+      "cueId": "AO.SM.C0263",
+      "gesture": "RAISE_EYES_AND_HANDS",
+      "disposition": "MATCH_SAME_FAMILY_OR_USE_TEXT"
+    }
+  ],
+  "faithfulUnresolved": [
+    {
+      "matrixId": "GM.F.C0021.01",
+      "cueId": "AO.SM.C0021",
+      "gesture": "PROFOUND_BOW",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0023.01",
+      "cueId": "AO.SM.C0023",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0056.01",
+      "cueId": "AO.SM.C0056",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0096.01",
+      "cueId": "AO.SM.C0096",
+      "gesture": "GENUFLECT",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0173.01",
+      "cueId": "AO.SM.C0173",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0174.01",
+      "cueId": "AO.SM.C0174",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0179.01",
+      "cueId": "AO.SM.C0179",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0235.01",
+      "cueId": "AO.SM.C0235",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0237.01",
+      "cueId": "AO.SM.C0237",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "disposition": "EXISTING_FAMILY_CONDITIONAL_REUSE"
+    },
+    {
+      "matrixId": "GM.F.C0242.01",
+      "cueId": "AO.SM.C0242",
+      "gesture": "REVERENT_ATTENTION",
+      "disposition": "TEXT_ONLY_NO_PRESCRIBED_POSTURE"
+    }
+  ],
+  "editorialPriorities": [
+    "Audit the previously selected 42 assets together for consistent proportion, edge quality, actor fidelity and gesture legibility; do not claim the 67 aliases are a unified style.",
+    "Separate byte-identical aliases that describe genuinely different actions, particularly Communion, fraction and commingling.",
+    "Where the existing image is exact, reuse it under actor/profile-specific cue logic; do not create one drawing per cue.",
+    "Only consider new manual same-family artwork for hands over oblations, Memento hands/eyes, eyes raised, and minor elevation, and minister-specific actions after source check.",
+    "Keep priest movement separate from reader scroll; icon cues must not imply observed motion.",
+    "No photo, engraving or image generator output is eligible for production artwork merely from reference research.",
+    "Never alter the existing v4.6 bank or approved finger artwork in this audit."
+  ]
+}
