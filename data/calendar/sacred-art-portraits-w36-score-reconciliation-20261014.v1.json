@@ -1,0 +1,487 @@
+{
+  "schema": "AO_SACRED_ART_W36_HUMAN_SCORE_RECONCILIATION_V1",
+  "asOf": "2026-10-14",
+  "sourceHumanExport": "data/calendar/sacred-art-portraits-w36-human-ratings-20261014.v1.json",
+  "canonicalSubjectMatrix": "data/calendar/sacred-art-two-options-matrix-wave31-20261014.v6.json",
+  "portraitGallery": "data/calendar/sacred-art-portraits-review-wave36-20261014.html",
+  "status": "HUMAN_AESTHETIC_RATINGS_RECEIVED_SOURCE_VERIFIED_NOT_ART_REPRODUCTION_OR_APP_APPROVED",
+  "counts": {
+    "allSelections": 50,
+    "matchedToBranchGallery": 50,
+    "distinctSubjects": 27,
+    "scores": {
+      "1": 2,
+      "2": 14,
+      "3": 21,
+      "4": 11,
+      "5": 2
+    },
+    "priorityFourOrFive": 13,
+    "reserveThree": 21,
+    "notShortlistedOneOrTwo": 16,
+    "subjectFitUnset": 50,
+    "flags": 0,
+    "changedPriorHumanRatings": 0,
+    "acquiredMasterImages": 0,
+    "releaseApprovals": 0
+  },
+  "governance": [
+    "Exact source export preserved without editing prior 277 historic human ratings. Branch source review score not automatically promoted to live art app or canonical master registry.",
+    "Uploaded candidate IDs differ from branch HTML candidate IDs; matching is by exact Commons file URL and canonical subject ID; both IDs retained in mapping.",
+    "Score 4–5 prioritizes art research and high-quality reproduction acquisition but DOES NOT imply rights, image-original identity or perfect thematic fit.",
+    "Score 3 is a reserve candidate; score 1–2 rejected for this subject under current curatorial shortlist policy, not deleted globally or reassigned without fit indication.",
+    "No subjectFit was supplied. Do not infer 'perfect theme' nor 'elsewhere'; flags and notes also blank."
+  ],
+  "matchedCandidates": [
+    {
+      "uploadId": "W36-SNT-DC-01-90bde6f815fb",
+      "branchGalleryId": "W36-SNT-DC-01-40b61a80",
+      "subjectId": "SNT-DC-01",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-01-c110ca7b6f47",
+      "branchGalleryId": "W36-SNT-DC-01-cd925d6c",
+      "subjectId": "SNT-DC-01",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P26_St._Ambrose_(1695-1696).jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-09-1a42763e6883",
+      "branchGalleryId": "W36-SNT-DC-09-24c2ee1a",
+      "subjectId": "SNT-DC-09",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_mei,_Santa_Caterina_da_Siena,_1641.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-09-2001b4fdecbf",
+      "branchGalleryId": "W36-SNT-DC-09-11fedfac",
+      "subjectId": "SNT-DC-09",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cristofano_Allori,_Saint_Catherine_of_Siena.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-12-4eb0554ff8e3",
+      "branchGalleryId": "W36-SNT-DC-12-302edfe7",
+      "subjectId": "SNT-DC-12",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Bussy-Rabutin_-_Saint_Fran%C3%A7ois_de_Sales,_%C3%A9v%C3%AAque_de_Gen%C3%A8ve_(bgw19_0375).jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-12-faa6ec8f702d",
+      "branchGalleryId": "W36-SNT-DC-12-7fd59cad",
+      "subjectId": "SNT-DC-12",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Sales,_de_Francisco_Bayeu_(Museo_del_Prado).jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-03-95e393500a13",
+      "branchGalleryId": "W36-SNT-DC-03-f8dd109d",
+      "subjectId": "SNT-DC-03",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Antwerpen_Maagdenhuis_Antoon_van_Dyck_St._Hieronymus_2709.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-03-91cbe9d624ab",
+      "branchGalleryId": "W36-SNT-DC-03-4648046c",
+      "subjectId": "SNT-DC-03",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cornelis_Metsys_-_Paysage_avec_saint_J%C3%A9r%C3%B4me_-_ca_1545.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-03-756125b4554f",
+      "branchGalleryId": "W36-SNT-DC-03-984b4aca",
+      "subjectId": "SNT-DC-03",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Bellini_%E2%80%94_Saint_Jerome_Reading_in_the_Desert.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-03-5106a211fa18",
+      "branchGalleryId": "W36-SNT-DC-03-9815258d",
+      "subjectId": "SNT-DC-03",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P29_St._Jerome_(1695).jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-08-4a0cadffec49",
+      "branchGalleryId": "W36-SNT-DC-08-5f36d3ff",
+      "subjectId": "SNT-DC-08",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Antonio_Palomino._Santa_Teresa_de_Jes%C3%BAs_escribiendo.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-05-75d773c330b1",
+      "branchGalleryId": "W36-SNT-DC-05-998631ef",
+      "subjectId": "SNT-DC-05",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Antonio_e_giovanni_sarnelli,_san_tommaso_d'aquino,_1750_ca.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-DC-05-03c9930b6d5a",
+      "branchGalleryId": "W36-SNT-DC-05-e5ca96be",
+      "subjectId": "SNT-DC-05",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:San_Tommaso_d'Aquino_(Jacopo_del_Casentino,_XIV_sec._-Mus%C3%A9e_du_Petit_Palais_-_Avignon).jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-03-3e9d9be5f41a",
+      "branchGalleryId": "W36-SNT-AP-03-69132f3b",
+      "subjectId": "SNT-AP-03",
+      "rating": 5,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-03-09e61d002bd2",
+      "branchGalleryId": "W36-SNT-AP-03-e3ca9319",
+      "subjectId": "SNT-AP-03",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Novelli_Pietro_-_Saint_Jacques_le_Majeur.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-08-16b8b5ca0d8c",
+      "branchGalleryId": "W36-SNT-AP-08-8bad6209",
+      "subjectId": "SNT-AP-08",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jusepe_de_ribera,_san_matteo,_01.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-08-c5bdab70b9d1",
+      "branchGalleryId": "W36-SNT-AP-08-d8f02d21",
+      "subjectId": "SNT-AP-08",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Matthew,_by_Valentin_de_Boulogne.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-12-4c84c04059fa",
+      "branchGalleryId": "W36-SNT-AP-12-06ccaef8",
+      "subjectId": "SNT-AP-12",
+      "rating": 1,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:1756_Palko_Heiliger_Paul_Kloster_Strahov_Prag_anagoria.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-12-eb4c01bda35d",
+      "branchGalleryId": "W36-SNT-AP-12-f3a09eb8",
+      "subjectId": "SNT-AP-12",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci_-_Saint_Paul_-_Google_Art_Project.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-01-60edc21939b3",
+      "branchGalleryId": "W36-SNT-AP-01-571d7a40",
+      "subjectId": "SNT-AP-01",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:1756_Palko_Heiliger_Peter_Kloster_Strahov_Prag_anagoria.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-01-59018aa21ed9",
+      "branchGalleryId": "W36-SNT-AP-01-7a97883f",
+      "subjectId": "SNT-AP-01",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jacob_Jordaens_-_Saint_Peter_(cropped).jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-AP-05-ad7aba169162",
+      "branchGalleryId": "W36-SNT-AP-05-a48166f2",
+      "subjectId": "SNT-AP-05",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Philippius_St._Ursula_Unterlangkampfen-1.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-22-65da02a7c874",
+      "branchGalleryId": "W36-SNT-OT-22-76a0071d",
+      "subjectId": "SNT-OT-22",
+      "rating": 1,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Andrea_da_Firenze_-_Saint_Agnes_-_Google_Art_Project.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-06-b7683cc00a20",
+      "branchGalleryId": "W36-SNT-OT-06-6164aca2",
+      "subjectId": "SNT-OT-06",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Pedro_obregon-san_antonio_de_padua-prado.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-14-7ab28e45f078",
+      "branchGalleryId": "W36-SNT-OT-14-9dd38fa7",
+      "subjectId": "SNT-OT-14",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Nicodemo_ferrucci,_san_benedetto,_1634_circa.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-24-83c5417b978d",
+      "branchGalleryId": "W36-SNT-OT-24-dcf5f5fb",
+      "subjectId": "SNT-OT-24",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francesco_furini,_santa_caterina_d'alessandria,_1625-30_ca.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-23-e32e57b5f3c4",
+      "branchGalleryId": "W36-SNT-OT-23-f0e794f8",
+      "subjectId": "SNT-OT-23",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_mei,_santa_cecilia,_1650_circa.JPG",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-23-3538f3078e54",
+      "branchGalleryId": "W36-SNT-OT-23-53113f46",
+      "subjectId": "SNT-OT-23",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-23-b6618ae05045",
+      "branchGalleryId": "W36-SNT-OT-23-e9b3f1f5",
+      "subjectId": "SNT-OT-23",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Cairo,_Santa_Cecilia.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-23-ea67147c879b",
+      "branchGalleryId": "W36-SNT-OT-23-065d2308",
+      "subjectId": "SNT-OT-23",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Guercino_-_Santa_Cecilia.JPG",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-23-cd0d09565878",
+      "branchGalleryId": "W36-SNT-OT-23-3f6f29fc",
+      "subjectId": "SNT-OT-23",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-13-5387d641cce6",
+      "branchGalleryId": "W36-SNT-OT-13-577158ac",
+      "subjectId": "SNT-OT-13",
+      "rating": 5,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-13-e1db7ffd5583",
+      "branchGalleryId": "W36-SNT-OT-13-53f24ca8",
+      "subjectId": "SNT-OT-13",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Gaspar_de_Crayer_-_Saint_Dominic.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-15-08edb5c55195",
+      "branchGalleryId": "W36-SNT-OT-15-7491990a",
+      "subjectId": "SNT-OT-15",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_de_Caro_-_St_Francis_Xavier.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-16-4f99328b806b",
+      "branchGalleryId": "W36-SNT-OT-16-52c01f7f",
+      "subjectId": "SNT-OT-16",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:'Saint_Ignatius_Loyola',_anonymous_Mexican_oil_on_copper_painting,_c._18th_century,_El_Paso_Museum_of_Art.JPG",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-16-377ced58de3c",
+      "branchGalleryId": "W36-SNT-OT-16-da4c8a01",
+      "subjectId": "SNT-OT-16",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_Saint_Ignatius_Loyola_-_Google_Art_Project.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-07-45a8e73c4d83",
+      "branchGalleryId": "W36-SNT-OT-07-c3e0c509",
+      "subjectId": "SNT-OT-07",
+      "rating": 4,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-01-79879ed00670",
+      "branchGalleryId": "W36-SNT-OT-01-69276696",
+      "subjectId": "SNT-OT-01",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jozef_van_Nazareth,_1864,_Musea_Brugge,_0020.GRO0159.III.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-01-6ac7fd05f7db",
+      "branchGalleryId": "W36-SNT-OT-01-ad8201c2",
+      "subjectId": "SNT-OT-01",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jusepe_de_ribera,_san_giuseppe.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-21-c1a62bfd80cf",
+      "branchGalleryId": "W36-SNT-OT-21-e0f0f3dc",
+      "subjectId": "SNT-OT-21",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Francesco_conti,_santa_lucia.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-21-9c0ed723dbf0",
+      "branchGalleryId": "W36-SNT-OT-21-df4a7b8f",
+      "subjectId": "SNT-OT-21",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Pasquale_Ottino_-_Saint_Lucy_-_y1935-39_-_Princeton_University_Art_Museum.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-21-d44ec5fc2551",
+      "branchGalleryId": "W36-SNT-OT-21-5c779efa",
+      "subjectId": "SNT-OT-21",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Saint_Lucy_1552_ca._by_Fermo_Ghisoni,_in_Cathedral_of_Mantua.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-21-9d8de5339e72",
+      "branchGalleryId": "W36-SNT-OT-21-6bbf291f",
+      "subjectId": "SNT-OT-21",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Santa_Lucia._Jusepe_de_Ribera._3166.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-29-fb377ea215d8",
+      "branchGalleryId": "W36-SNT-OT-29-ff13c137",
+      "subjectId": "SNT-OT-29",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Ca'_Rezzonico_-_Sala_Tiepolo_-_San_Martino_di_Tours_by_Giambattiasta_Tiepolo.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-25-b91d61b0316d",
+      "branchGalleryId": "W36-SNT-OT-25-68e7e1d9",
+      "subjectId": "SNT-OT-25",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Circle_of_Josefa_de_%C3%93bidos_%E2%80%93_Penitent_Magdalene_%E2%80%93_c._1665%E2%80%931680_%E2%80%93_Oil_on_copper.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-20-729505071896",
+      "branchGalleryId": "W36-SNT-OT-20-5f7aac74",
+      "subjectId": "SNT-OT-20",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Corrado_Giaquinto_Saint_Nicolas_de_Bari.JPG",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-03-cf8194fc3064",
+      "branchGalleryId": "W36-SNT-OT-03-ed32c56b",
+      "subjectId": "SNT-OT-03",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael,_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-03-4b4687c31df7",
+      "branchGalleryId": "W36-SNT-OT-03-a070ee74",
+      "subjectId": "SNT-OT-03",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael,_Juan_de_Vald%C3%A9s_Leal.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-03-d46e72fdfdad",
+      "branchGalleryId": "W36-SNT-OT-03-00b0b13e",
+      "subjectId": "SNT-OT-03",
+      "rating": 2,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Raphael_Aragon_-_Archangel_Saint_Raphael_(San_Raphael)_-_BF1067_-_Barnes_Foundation.jpg",
+      "fit": null,
+      "flagged": false
+    },
+    {
+      "uploadId": "W36-SNT-OT-28-56864278453b",
+      "branchGalleryId": "W36-SNT-OT-28-84158ca6",
+      "subjectId": "SNT-OT-28",
+      "rating": 3,
+      "commonsFileUrl": "https://commons.wikimedia.org/wiki/File:Anonymous_-_Portrait_de_saint_Vincent_de_Paul_(1581-1660)._-_P863_-_Mus%C3%A9e_Carnavalet.jpg",
+      "fit": null,
+      "flagged": false
+    }
+  ]
+}
