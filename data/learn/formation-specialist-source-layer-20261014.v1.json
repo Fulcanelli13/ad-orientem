@@ -4,7 +4,7 @@
   "status": "RESEARCH_DISCOVERY_NOT_EDITORIAL_APPROVAL",
   "repo_base": "main",
   "extends": "data/learn/formation-apologetics-25-book-topic-coverage-20261014.v1.json",
-  "source_count": 34,
+  "source_count": 35,
   "sources": [
     {
       "id": "S01",
@@ -413,6 +413,18 @@
       "access": "full_html_text_opened",
       "chapter_passage_certified": false,
       "annotation": "Defends general utilitarian theory; must not attribute contemporary Catholic sexual ethics positions to Mill without evidence."
+    },
+    {
+      "id": "S35",
+      "title": "Donum vitae",
+      "author": "Congregation for the Doctrine of the Faith",
+      "year": "1987",
+      "role": "magisterial_bioethics_original",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+      "scope": "Part II.B.5: moral evaluation of homologous in vitro fertilization, even without destruction of embryos; Part I on embryo protection",
+      "access": "direct_full_text_opened_and_II_B_5_located",
+      "chapter_passage_certified": false,
+      "annotation": "Use original explicit 'simple case' paragraph and note dignity of IVF-conceived children; this text is independent of the later Dignitas personae instruction only as an original promulgated text, not as an independent tradition."
     }
   ],
   "priority_questions": [
@@ -1415,9 +1427,11 @@
     {
       "id": "CSE101",
       "source_ids": [
-        "S23"
+        "S23",
+        "S35"
       ],
       "source_roles": [
+        "magisterial_bioethics_original",
         "magisterial_bioethics_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
@@ -1431,9 +1445,11 @@
     {
       "id": "CSE105",
       "source_ids": [
-        "S23"
+        "S23",
+        "S35"
       ],
       "source_roles": [
+        "magisterial_bioethics_original",
         "magisterial_bioethics_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
@@ -1447,9 +1463,11 @@
     {
       "id": "CSE109",
       "source_ids": [
-        "S23"
+        "S23",
+        "S35"
       ],
       "source_roles": [
+        "magisterial_bioethics_original",
         "magisterial_bioethics_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
@@ -1463,9 +1481,11 @@
     {
       "id": "CSE110",
       "source_ids": [
-        "S23"
+        "S23",
+        "S35"
       ],
       "source_roles": [
+        "magisterial_bioethics_original",
         "magisterial_bioethics_original"
       ],
       "locator_level": "document_or_subject_section_candidate_not_answer_verified",
@@ -1614,7 +1634,7 @@
     }
   ],
   "counts": {
-    "sources": 34,
+    "sources": 35,
     "mapped_questions": 65,
     "church_crisis": 25,
     "sexual_ethics": 40,
