@@ -61,7 +61,7 @@ for(let i=0;i<24;i++){
  for(const id of row.studyMassOwnerIds)assert.ok(ownerSet.has(id));
  assert.ok(!ed.has(row.sceneId));ed.add(row.sceneId);
 }
-assert.equal(links,49);
+assert.equal(links,51);
 assert.equal(atlCount,10);
 assert.equal(atlas151,9);
 assert.equal(subjectCount,16);
