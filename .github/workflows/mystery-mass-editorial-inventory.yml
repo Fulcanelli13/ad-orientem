@@ -15,6 +15,7 @@ on:
       - 'tests/mystery-mass-complete-source-recovery.mjs'
       - 'tests/mystery-mass-dual-chronology-source-crosswalk.mjs'
       - 'tests/mystery-mass-source-led-narrative-drafts.mjs'
+      - 'tests/mystery-mass-bilingual-scripture-art-handoff.mjs'
       - 'data/learn/research/mystery-mass-*-20261014.v1.json'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
       - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
@@ -28,6 +29,7 @@ on:
       - 'tests/mystery-mass-complete-source-recovery.mjs'
       - 'tests/mystery-mass-dual-chronology-source-crosswalk.mjs'
       - 'tests/mystery-mass-source-led-narrative-drafts.mjs'
+      - 'tests/mystery-mass-bilingual-scripture-art-handoff.mjs'
       - 'data/learn/research/mystery-mass-*-20261014.v1.json'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
       - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
@@ -58,3 +60,5 @@ jobs:
         run: node tests/mystery-mass-dual-chronology-source-crosswalk.mjs
       - name: Validate substantive sourced scene writing and exact earlier bilingual manuscript inheritance
         run: node tests/mystery-mass-source-led-narrative-drafts.mjs
+      - name: Validate 24 French narratives and real Bible/curator handoffs
+        run: node tests/mystery-mass-bilingual-scripture-art-handoff.mjs
