@@ -2002,7 +2002,11 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     adorationMode:view==='adoration'?ADOR.mode:null,
     visitStep:view==='adoration'?ADOR.visitStep:null,
     stationStep:view==='stations'?STATIONS.step:null,
-    stationRitual:null, // no certified per-method posture graph yet
+    stationRitual:view==='stations'?certifiedPublicStationCue({
+      stationStep:STATIONS.step,phase:'versicle',
+      enabled:STATIONS.publicPosture && S.stations.recitation==='group',
+      guided:S.stations.mode==='guided',
+    }):null, // explicitly opening a public Station begins at its versicle
   });
   actionCinematics.sync(scene,{mount:m,language:lang(),sessionKey:view});
  }else if(view!=='angelus'){
