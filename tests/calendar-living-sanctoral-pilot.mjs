@@ -43,6 +43,7 @@ assert.equal(byId.get("saint.carlo-acutis").observances.length, 0, "no invented 
 assert.equal(byId.get("saint.carlo-acutis").laterTraditionalMass.status, "UNIVERSAL_MEMORIAL_DATE_UNVERIFIED");
 assert.equal(byId.get("saint.therese-lisieux").calendar1962.principalId, "sancti:10-03");
 assert.equal(byId.get("saint.teresa-avila").calendar1962.protectedThirdClass, true);
-assert.equal(byId.get("saint.irenaeus-lyon").calendar1962.identityStatus, "MUST_CONFIRM_RESOLVER_ID_AND_DATE");
+assert.equal(byId.get("saint.irenaeus-lyon").calendar1962.principalId, "sancti:07-03r:3:r");
+assert.equal(byId.get("saint.teresa-avila").calendar1962.principalId, "sancti:10-15:3:w");
 
 console.log("Living-sanctoral pilot identity/source/precedence guard: PASS (6 research-only cases)");
