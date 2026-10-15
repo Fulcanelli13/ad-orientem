@@ -28,6 +28,18 @@ export function renderSaintPlaceSheet(vm){
       ?L(language,"Blessed · not canonized","Bienheureux · non canonisé")
       :L(language,"Canonized saint","Saint canonisé"))+'</small>';
     html+='<h3>'+esc(translated(saint,language,"name"))+'</h3>';
+    const observed=saint.calendar_context?.observed1962;
+    if(observed?.scope==="ACTUALLY_OBSERVED_ON_THIS_DATE_IN_2026_RESOLVER" &&
+       observed?.year===2026 && /^\d{4}-\d{2}-\d{2}$/.test(observed.civilDate) &&
+       /^sancti:\d{2}-\d{2}[a-z]?:[1-4]:[wr]$/.test(observed.principalSourceId)){
+      const date=new Date(observed.civilDate+"T12:00:00Z");
+      const label=new Intl.DateTimeFormat(language==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(date);
+      html+='<p class="aoSaintCalendarContext">'+esc(L(language,"Observed in the 1962-calendar cycle for 2026: ","Observé dans le calendrier de 1962 pour 2026 : "))+esc(label)+'</p>';
+      html+='<p class="aoSaintCalendarCaution">'+esc(L(language,
+        "This is the actual 2026 observance, not a timeless feast date or permission to select a Mass.",
+        "Il s’agit de l’observance effective en 2026, et non d’une date de fête valable pour toute année ni d’une autorisation de choisir une messe."))+'</p>';
+    }
+
     const classifications=saint.classification??{};
     const tags=[...arr(classifications.honours),...arr(classifications.roles)];
     if(tags.length)html+='<div class="aoSaintRoles" aria-label="'+esc(L(language,"Spiritual roles and titles","Rôles et titres spirituels"))+'">'+
@@ -76,6 +88,8 @@ export const SAINTS_SHEET_CSS=`
 .aoSaintBiography{padding:16px 0}.aoSaintPortraitHold{min-height:90px;display:flex;justify-content:center;align-items:center;border:1px solid rgba(217,197,154,.12);background:#0f1720;border-radius:10px;color:#a89b84;font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif);text-align:center;padding:12px}
 .aoSaintStatus{display:block;margin:14px 0 4px;color:#c1aa7e;font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.03em}
 .aoSaintBiography h3{font:550 clamp(22px,4vw,28px)/1.22 var(--ao-font-display,Georgia,serif);margin:5px 0;color:#efe4d1}
+.aoSaintCalendarContext{color:#d6c5a6;font:550 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);margin:8px 0 2px}
+.aoSaintCalendarCaution{color:#a99f90;font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);margin:0 0 12px}
 .aoSaintRoles{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 6px}
 .aoSaintRoles span{font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#d7c19d;padding:5px 9px;border:1px solid rgba(215,193,157,.27);border-radius:999px;background:rgba(215,193,157,.065)}
 .aoSaintExtraordinary{border-top:1px solid rgba(217,197,154,.2);padding:10px 0;margin:14px 0}
