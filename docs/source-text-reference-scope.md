@@ -5,7 +5,7 @@
 ## Canonical owners and strict responsibilities
 
 - `data/reference/canonical-works-pilot.v1.json` owns canonical work identities. This PR does not replace it or re-register works in a second catalogue.
-- `data/reference/formation-canonical-source-crosswalk.v1.json` owns Formation's 408 scoped source bindings and 304 exact-URL witnesses. The resolver reads them *as-is*, preserving source scope, titles, roles, existing locators and URL identities. A URL is not proof of passage/edition identity.
+- `data/reference/formation-canonical-source-crosswalk.v1.json` is Formation's **historical baseline** with 408 scoped source bindings and 304 exact-URL witnesses. **It is not the latest inventory**: the current owner reconciliation `data/reference/formation-current-source-reconciliation.v2.json` on `main` records **527 bindings and 332 URL witnesses**, including 119 additions made by the existing Formation pipelines; no historical binding removals and no newly independently certified claims. The resolver reads them *as-is*, preserving source scope, titles, roles, existing locators and URL identities. A URL is not proof of passage/edition identity.
 - `data/source-text/witness-profiles.v1.json` records **nine** external edition-specific locator patterns (official document paragraph, witnessed section, chapter, separately printed scan locator, etc.). It is metadata for linking to external editions, not a copied text corpus.
 - `src/source-text/reference-crosswalk.js` resolves existing references and returns link/display metadata. Its conservative default is an external **Read further** link; it never upgrades original-context approval, publishes source text, or infers claim-level citation verification.
 - `src/source-text/{contracts,parse,edition-adapters,witness-locators}.js` remain **selected-excerpt helpers** for records that a content-owning pipeline has actually inspected and explicitly cleared. They do not crawl, acquire, store or serve whole books.
@@ -18,7 +18,40 @@ All three staged Gutenberg ebooks and their 1,911-paragraph indexes; the bulk-im
 
 Ordinary cards and pages should remain uncluttered. For content with a *genuinely reviewed* source binding, show a succinct author/work reference or stable locator where available. Prefer a compact **Read further** area with durable primary links. Keep Edition/translation and exact passage details in deeper source information rather than in the primary reading zone. Never add Harvard/APA footnote clutter or entire books to the interface by default.
 
-**Importantly**, this PR does **not** automatically prove any of the 408 Formation bindings. Their existing `original_context_approved` flags remain unchanged; claims or quotations requiring exact source support must be handled by the pipeline owning that specific content. The Mass's 65-card reader, Formation text, Calendar, Prayer, Scripture and all production routes are untouched.
+**Importantly**, this PR does **not** automatically prove any of the current 527 Formation bindings. Their existing `original_context_approved` flags remain unchanged; claims or quotations requiring exact source support must be handled by the pipeline owning that specific content. The Mass's 65-card reader, Formation text, Calendar, Prayer, Scripture and all production routes are untouched.
+
+## Current-Formation owner reconciliation — completed audit
+
+Reviewed the **current** `main` Formation owner's `formation-current-source-reconciliation.v2.json` (Git blob `ba73286fa26f8564f0dc33048551ee527b597c27`) against its preserved historical baseline. The owner has **527 scoped bindings, 332 distinct HTTPS URL witnesses, 1,529 evidence edges, 119 additional bindings, and zero missing historical source bindings**. The earlier evidence screen's 12 uncited source-registry items are *not* automatically missing source citations; the Formation owner decides whether they serve as bibliography or need attachment.
+
+The nine edition/witness profiles in this PR were compared by **literal identical URL** with both the 408 historical bindings and the 119 current additions. Only **four** existing scoped bindings match a profiled URL:
+
+| Existing Formation binding | Matching external witness | Result |
+| --- | --- | --- |
+| `FORM-SYN-02::MD47` | Pius XII, *Mediator Dei*, Vatican English | URL identity only |
+| `FORM-SYN-03::MD47` | Same document, distinct source scope | URL identity only |
+| `FORM-SYN-06::MD47` | Same document, distinct source scope | URL identity only |
+| `FORM-SYN-02::HUME-MIRACLE-X` | Hume, *Of Miracles*, source edition | URL identity only; opposing philosophical source role preserved |
+
+These are four **existing references**, not four new claims or four certified quotations. The other 523 current Formation bindings still have their existing URLs; lack of a matching optional profile does **not** make them missing or incorrect. No automatic work identity, translation, paragraph scope or doctrinal approval is granted from a URL match.
+
+The Mass owner separately retains **15** printed/source-to-1962 comparison rows (`data/mass/ritus-1962-alphonsus-fortescue-parallels.v1.json`). Its normative hierarchy is the **1962 Missal**, with Alphonsus and Fortescue providing historical/ceremonial context. This PR does not redo those parallels, infer new 1962 gestures, or create a second Mass source authority.
+
+The audit pointer and four non-promoted match keys are recorded in `data/source-text/reference-owner-handoff.v1.json`. The current owner v2 is not copied into this feature branch: its source remains the version on `main` and the tests automatically validate that actual file when it is available in the integration checkout.
+
+## Compact presentation contract
+
+The source reference has **one default surface**: a brief source attribution at the point of a genuinely editor-approved claim. There is no Harvard/APA-style inline bibliography. If the user chooses to explore further, an optional **Read further** section contains the original authority/title and durable external link. Full edition provenance and detailed locators can sit in the expanded source detail.
+
+For example, a *future editorially approved* reference could be displayed compactly as **Pius XII — *Mediator Dei*, §§46–49**, with the official Vatican external link under Read further. This is **illustrative, not approval of the current three MD47 source bindings**. The existing Hume source must be identified in context as an *opposing philosophical position*, not presented as Catholic spiritual reading.
+
+`prepareReferencePresentation()` returns **draft-only** title, preserved raw locator, unchanged author/source role, exact URL and optional witness-profile leads. It returns `publicDisplayApproved:false`, `inlineCitation:null`, `quote:null`. No app UI is changed here: module owners retain responsibility for any eventual citation approval and display.
+
+### Genuine outstanding tasks, not blanket re-verification
+
+- Confirm exact **claim-to-source passage fit** only where the owning Formation/Mass editor needs a claim-level citation; reuse existing prior screens and amendment dispositions.
+- Resolve any *genuinely broken or inaccurate* locators specifically discovered during an owner's editorial review. A source lacking one of these nine optional profile records is **not** a reason for a new audit.
+- Implement the compact *Read further* presentation only in the existing reading interfaces, after the originating content owner approves the precise link.
 
 ## Check
 
