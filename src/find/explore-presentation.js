@@ -568,6 +568,16 @@ export function renderExploreToString(vm){
   html+='<nav class="aoFindViewTabs">'+pill("view","list",vm.lens==="traditions"?L(vm.language,"Practices","Pratiques"):L(vm.language,"List","Liste"),vm.view)+pill("view","map",vm.lens==="traditions"?L(vm.language,"Attested places","Lieux attestés"):L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+='</div>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
+  if(vm.lens==="saints"&&vm.view==="list"){
+    html+='<nav class="aoSaintCatalogueFacets" aria-label="'+esc(L(vm.language,"Saint categories","Catégories de saints"))+'">';
+    for(const [code,en,fr] of [
+      ["ALL","All","Tous"],["DOCTOR_OF_CHURCH","Doctors","Docteurs"],
+      ["MARTYR","Martyrs","Martyrs"],["MISSIONARY","Missionaries","Missionnaires"],
+      ["PASTOR","Pastors","Pasteurs"],["FOUNDER","Founders","Fondateurs"],
+      ["MYSTIC","Mystics","Mystiques"],["THEOLOGIAN","Theologians","Théologiens"]
+    ])html+=pill("saintCategory",code,L(vm.language,en,fr),f.saintCategory||"ALL");
+    html+='</nav>';
+  }
 
   const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="saints"?(vm.view==="list"?L(vm.language,"saint profiles","notices de saints"):L(vm.language,"places connected to saints","lieux associés aux saints")):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
