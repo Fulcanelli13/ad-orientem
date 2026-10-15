@@ -132,12 +132,44 @@ try{
   }
   await page.setViewportSize({width:390,height:844});
  }
+ // Deliberate selection persists its stable biblical event key, not an index.
+ const selected=stops.find(x=>x.geo?.key==="miletus"&&x.era==="APOSTLES");
+ assert.ok(selected);
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("ao:biblical-atlas:reading-place:v1"))?.eventKey),selected.eventKey);
+ await page.locator("#ao-find-modular-root [data-bible-atlas-close]").tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===false,null,{timeout:15000});
+ // Close/open and full-page reload should restore the same selected Scripture.
+ await page.locator("#ao-find-modular-root details.aoHeritageMore > summary").tap({timeout:15000});
+ await page.waitForTimeout(360);
+ await page.locator("#ao-find-modular-root [data-bible-atlas-open]").tap({timeout:15000});
+ await page.waitForFunction(index=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===true&&
+   globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===index,selected.index,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-detail] [data-ao-scripture-context]').count(),1);
+ assert.equal(await page.locator("#ao-find-modular-root [data-bible-context-open]").count(),1);
+ await page.locator("#ao-find-modular-root [data-bible-context-open]").tap({timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-landscape="miletus"]').getAttribute("open"),"");
+ await page.locator('#ao-find-modular-root [data-bible-chapter="0"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===0,null,{timeout:15000});
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("ao:biblical-atlas:reading-place:v1"))?.eventKey),stops[0].eventKey,
+  "Beginnings chapter must be a genuine user-controlled restart, not just a transient filter");
+ await page.locator("#ao-find-modular-root [data-bible-atlas-close]").tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===false,null,{timeout:15000});
+ await page.reload({waitUntil:"domcontentloaded",timeout:90000});
+ await page.waitForSelector('[data-ao-app-surface="find"]',{state:"visible",timeout:30000});
+ await page.locator('[data-ao-app-surface="find"]').tap();
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready",null,{timeout:60000});
+ await page.locator("#ao-find-modular-root details.aoHeritageMore > summary").tap({timeout:15000});
+ await page.waitForTimeout(360);
+ await page.locator("#ao-find-modular-root [data-bible-atlas-open]").tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===true&&
+  globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===0,null,{timeout:15000});
+ assert.equal(await page.locator("#ao-find-modular-root [data-bible-unlocated-note]").isVisible(),true);
  await page.locator("#ao-find-modular-root [data-bible-atlas-close]").tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===false,null,{timeout:15000});
  assert.ok(demResponses.length>0,"No public terrain elevation tiles requested: visual relief not integrated");
  assert.ok(demResponses.some(s=>s===200),"MapLibre elevation tiles never returned HTTP 200: "+JSON.stringify(demResponses));
  assert.equal(errors.length,0,"Browser runtime errors: "+errors.join(" | "));
- console.log("PASS normal URL: 151-event cinematic Atlas, context shortcut, historic harbour notes, mobile/Scripture and modern hillshade source");
+ console.log("PASS normal Atlas: 151 events, source notes, terrain, persistent Scripture resume and intentional Creation restart across full reload");
  console.log(JSON.stringify({stopCount:stops.length,chapterCount:chapters.length,panVerified,
   evidenceNote:panVerified?"MapLibre drag and Follow verified":"MapLibre drag was not confirmed in this runner; physical-phone gate remains"}));
  await context.close();
