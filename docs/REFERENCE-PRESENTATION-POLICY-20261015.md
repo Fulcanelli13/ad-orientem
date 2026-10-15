@@ -7,7 +7,7 @@ Evidence is not further reading. Every substantive claim keeps its precise sourc
 - `src/learn/mass-formation.js`: each of the 24 claims across eight Mass lessons has a row of visible source chips. Initial integration pilot removes those chips from the default reading path, preserving claim-to-source evidence in a collapsed section.
 - `src/learn/formation-research-preview.js`: research preview displays a list of references after each answer, objection and reply paragraph. A companion pilot can aggregate these at article scope. **Research remains unpublished.**
 - `src/learn/formation-recovery-review.js`: editorial research repeats visible source lists beneath paragraphs. This is an additional candidate for migration, not part of the Mass lesson release.
-- `src/learn/spiritual-life.js`: already has expandable lesson sources. Retain and converge its styling later, do not regress this behaviour.
+- `src/learn/spiritual-life.js`: 14 bilingual lessons previously showed inline source links beneath three teaching blocks and each practice, then repeated works at the end. The integration pilot keeps the original EWTN/CCEL/Vatican source targeting but moves the 56 link clusters inside one lesson-level disclosure with an 'Evidence by section' subpanel.
 - `src/learn/sexual-ethics.js`: already uses nested `<details>` for many debate-stage sources. Preserve opponent provenance and evidence scope; do not discard claim-level links.
 - `src/pray/novena-source-access.v1.js`: source-level original versus modern transcription notes already exist. Preserve edition cautions.
 - Sites and maps: provenance is essential for verification of pins and identities, but research links belong under an optional Information/Sources surface.
@@ -20,7 +20,7 @@ Evidence is not further reading. Every substantive claim keeps its precise sourc
 5. **Further-reading edge:** optional editorial selection per screen, no inference from number of citations.
 6. **Rights decision:** public-domain text, authorized licence, or explicitly held. A public URL is not republication permission.
 
-The initial four-record work registry at `data/reference/canonical-works-pilot.v1.json` is NOT complete and does not change existing research evidence or public app publication gates.
+The scoped pilot work registry at `data/reference/canonical-works-pilot.v1.json` now holds 13 work identities spanning 16 Mass Formation and Spiritual Life source IDs. `data/reference/source-witness-triage-pilot.v1.json` classifies each witness, links it to one work, records claim-locator and reproduction-rights holds, and distinguishes six reviewed public webpage URLs from unverified remaining destinations. The exact Code of Canon Law Book IV page and Tanquerey continuation were additionally opened. **This is NOT a full multi-module source migration or claim-by-claim passage certification.** Neither registry changes existing evidence edges or publication gates.
 
 ## Editorial and visual conventions
 - Mass MISSAL/SIMPLE/LIVE: no visible research citation UI in the live ritual; explain through Guide/Study instead.
@@ -35,7 +35,14 @@ The initial four-record work registry at `data/reference/canonical-works-pilot.v
 ## Acceptance gates
 - Every preexisting claim ID, source ID and source-to-claim edge remains intact.
 - Source list remains accessible with keyboard, touch and screen reader, and unresolved references remain explicitly held.
-- At most four editorially approved items appear as further reading for a section; this does not truncate evidence.
+- At most four editorially selected items appear as further reading for a section; this does not truncate evidence. Spiritual Life's source-work inventory is not itself a further-reading recommendation.
 - French and English treatment equivalent.
 - Native 65-card Mass structure untouched.
 - Source quality/URL/rights audits and phone/browser checks still needed before certification or wider release.
+
+## Pilot verification ledger
+- GitHub Actions validation: `source-reference-presentation.yml` checks Mass Formation, unpublished Formation research and Spiritual Life readers, keeping current canonical tests.
+- Official full-text webpages opened on 2026-10-15: Pius XII, *Mediator Dei*; Pius XI, *Miserentissimus Redemptor*; Paul VI, *Indulgentiarum Doctrina*; Code of Canon Law Book IV canons 959–997.
+- Third-party HTML works opened: EWTN Tanquerey primary and continuation excerpts, CCEL St Francis de Sales and St Ignatius. **Successful access verifies reachability only**, not textual accuracy or license.
+- Third-party PDFs and Archive.org facsimiles remain uninspected. No local reproduction, parsing or PDF rights clearance has been authorized. Their source link can remain in the evidence drawer while reading recommendations await editorial clearance.
+- Remaining scope: claim-level page numbers/paragraphs, full link durability audit, local passage parsing rights and translation policy, and church-shrine/map source triage.
