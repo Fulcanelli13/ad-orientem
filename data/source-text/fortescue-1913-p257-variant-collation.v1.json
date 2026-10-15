@@ -1,0 +1,165 @@
+{
+  "schema": "AO_SOURCE_TEXT_WITNESS_VARIANT_COLLATION_V1",
+  "date": "2026-10-15",
+  "status": "TARGETED_IMAGE_COMPARISON_PARTIAL__NOT_CHARACTER_BY_CHARACTER_EDITION_CERTIFICATION",
+  "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
+  "editionId": "ED-CE1913-V3-KOC-SPECIAL",
+  "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
+  "originalScanPage257": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
+  "originalScanPage258": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/306",
+  "secondary1908Base": "https://www.newadvent.org/cathen/03255c.htm",
+  "scope": "Print witness first. The secondary web transcription cannot overrule the examined 1913 scan, especially the Clement XL/XI reference, variant service/the service and Latin letterform differences. Candidate corrections do not represent human-approved full-page transcription.",
+  "comparisons": [
+    {
+      "id": "SC257-001",
+      "blockId": "P257-02a",
+      "field": "original_witness_wording",
+      "witnessReading": "before this service",
+      "secondaryReading": "before the service",
+      "secondary": "NEW_ADVENT_1908_BASED_TRANSCRIPTION",
+      "status": "SCAN_VISUAL_PRELIMINARY",
+      "decision": "PRESERVE_1913_WORDING",
+      "note": "Do not substitute New Advent wording for the examined 1913 printing."
+    },
+    {
+      "id": "SC257-002",
+      "blockId": "P257-02b",
+      "field": "ocr_segment",
+      "witnessReading": "at any rate outside Palestine",
+      "ocrReading": "at any ■ it side Palestine",
+      "status": "SCAN_VISUAL_PRELIMINARY",
+      "decision": "CANDIDATE_CORRECTION_ONLY",
+      "note": "Provisional draft normalized this damaged OCR phrase; human image proof remains required."
+    },
+    {
+      "id": "SC257-003",
+      "blockId": "P257-03",
+      "field": "patristic_reference",
+      "witnessReading": "(xl)",
+      "secondaryReading": "(xi)",
+      "secondary": "NEW_ADVENT_1908_BASED_TRANSCRIPTION",
+      "status": "PRINT_AND_INDEPENDENT_PRIMARY_TEXT_CORROBORATED",
+      "decision": "PRESERVE_1913_CHAPTER_XL",
+      "independentCheck": "https://ccel.org/ccel/clement_rome/first_epistle_to_the_corinthians/anf01.ii.ii.xl.html",
+      "note": "The high priest / priests / Levites statement is 1 Clement chapter 40, not chapter 11."
+    },
+    {
+      "id": "SC257-004",
+      "blockId": "P257-03",
+      "field": "early_church_quotation",
+      "witnessReading": "The high-priest",
+      "status": "SCAN_VISUAL_PRELIMINARY",
+      "decision": "ATTRIBUTED_CLEMENT_QUOTE_NOT_FORTESCUE_WORDS",
+      "note": "Quoted passage requires separate patristic witness/translation record if republished."
+    },
+    {
+      "id": "SC257-005",
+      "blockId": "P257-04",
+      "field": "justin_apology_locator",
+      "witnessReading": null,
+      "ocrReading": "(lxv-lxvil",
+      "secondaryReading": "(lxv-lxvi)",
+      "status": "UNRESOLVED_PRINT_PUNCTUATION_AND_NUMERALS",
+      "decision": "DO_NOT_AUTOCORRECT",
+      "note": "The draft claims (lxv–lxvii); printed ending needs high-resolution check before approving."
+    },
+    {
+      "id": "SC257-006",
+      "blockId": "P257-06",
+      "field": "physical_column_break",
+      "witnessReading": "(supposing that [column break] the Ps.-Cyprian",
+      "status": "ORIGINAL_PRINT_LAYOUT_CHECKED",
+      "decision": "ONE_CONTINUOUS_PARAGRAPH_WITHIN_SOURCE_TERRITORY",
+      "note": "Remove printer's bottom-left III.—17 from body; resume right column at top."
+    },
+    {
+      "id": "SC257-007",
+      "blockId": "P257-06",
+      "field": "historical_name",
+      "witnessReading": "Pope Victor I",
+      "ocrReading": "Pope Victot",
+      "status": "SCAN_VISUAL_PRELIMINARY",
+      "decision": "OCR_CORRECTION_CANDIDATE",
+      "note": "Keep historical author attribution; printed source gives Victor as early Latin-using bishop."
+    },
+    {
+      "id": "SC257-009",
+      "blockId": "P257-08",
+      "field": "latin_source_footnote",
+      "witnessReading": "Quæstiones V et N. Test.",
+      "ocrReading": "Qua-stiones Y et N. Test.",
+      "status": "SCAN_VISUAL_PRELIMINARY",
+      "decision": "PRESERVE_QUOTED_SOURCE_AS_PRINTED_WHEN_FULLY_CHECKED",
+      "note": "Bilingual inline citation, not a separate page footnote; critical text remains provisional."
+    },
+    {
+      "id": "SC257-010",
+      "blockId": "P257-09",
+      "field": "latin_text_first_clause",
+      "witnessReading": "quod figura est corporis et sanguinis Iesu Christi",
+      "secondaryReading": "quod figura est coporis et sanguinis Iesu Christi",
+      "status": "PRINT_AND_SECONDARY_VARIANT_REVIEWED_PRELIMINARY",
+      "decision": "KEEP_CORPORIS_NOT_COPORIS_IN_DRAFT",
+      "note": "New Advent has apparent transcription typo 'coporis'; candidate retains printed spelling corporis. Quote not independently letter-collated as a whole."
+    },
+    {
+      "id": "SC257-011",
+      "blockId": "P257-09",
+      "field": "latin_noun_case",
+      "witnessReading": null,
+      "secondaryReading": "hanc panem sanctum",
+      "status": "UNRESOLVED_NEEDS_MAGNIFIED_ORIGINAL",
+      "decision": "HOLD_HUNC_VS_HANC",
+      "note": "Current draft has hunc panem sanctum; New Advent gives hanc panem sanctum. Do not use grammar alone to determine 1913 reading."
+    },
+    {
+      "id": "SC257-012",
+      "blockId": "P257-09",
+      "field": "latin_diacritics",
+      "witnessReading": null,
+      "secondaryReading": "cælum",
+      "status": "UNRESOLVED_PRINT_ORTHOGRAPHY",
+      "decision": "HOLD_COELUM_VS_CAELUM_C_LIGATURE",
+      "note": "The draft uses coelum/cœlum inconsistently with secondary witness. Preserve precise 1913 typography before promotion."
+    },
+    {
+      "id": "SC257-013",
+      "blockId": "P257-10",
+      "field": "historical_citation",
+      "witnessReading": "455 sqq.",
+      "ocrReading": "too sqq.",
+      "status": "SCAN_VISUAL_PRELIMINARY",
+      "decision": "OCR_CORRECTION_CANDIDATE",
+      "note": "Reference to Probst needs bibliographic verification against printed source and work edition."
+    },
+    {
+      "id": "SC257-014",
+      "blockId": "P257-11",
+      "field": "patrologia_reference",
+      "witnessReading": "P. L., LXXVII, 956",
+      "ocrReading": "P L., LXXVEI, 956",
+      "status": "SCAN_VISUAL_PRELIMINARY",
+      "decision": "OCR_CORRECTION_CANDIDATE",
+      "note": "Check volume reference independently before exposing deep-linked edition."
+    },
+    {
+      "id": "SC257-015",
+      "blockId": "P257-11",
+      "field": "page_transition",
+      "witnessReading": "He also says that at [page break] Rome the names of persons for whom the celebrant prays are read in the Canon:",
+      "status": "SCAN_LAYOUT_CHECKED_TEXT_INCOMPLETE",
+      "decision": "HOLD_TEXT_JOIN_UNTIL_PROOFREAD",
+      "note": "Cross-page image indices 305→306, printed pp.257→258; never insert synthetic punctuation at break."
+    }
+  ],
+  "metrics": {
+    "comparisonCount": 14,
+    "primaryPatristicCrossChecks": 1,
+    "printEditionIdentityResolved": true,
+    "completePageWordByWordProofed": false,
+    "allLatinCharactersCompared": false,
+    "clearanceForProduction": false
+  },
+  "publicationApproved": false,
+  "originalDraftFile": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json"
+}
