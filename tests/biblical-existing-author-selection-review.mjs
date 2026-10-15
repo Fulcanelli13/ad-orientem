@@ -7,9 +7,9 @@ assert.equal(r.schema,"AO_BIBLICAL_EXISTING_AUTHOR_SELECTION_REVIEW_V1");
 assert.equal(r.status,"RESEARCH_ONLY_NO_PROSE_IMPORTED");
 for(const k of ["noAiNarrative","noAiTranslation","noAiBridges","verbatimExistingAuthorOnly","noPermissionRequests","metadataOnly"])assert.equal(r.policy[k],true);
 assert.equal(r.eventSelections.length,151);
-assert.equal(r.chapterCandidates.length,101);
+assert.equal(r.sections.length,101);
 assert.equal(r.works.length,4);
-const ids=new Set(r.chapterCandidates.map(s=>s.id));
+const ids=new Set(r.sections.map(s=>s.id));
 assert.equal(ids.size,101);
 const count={};
 for(const [i,row] of r.eventSelections.entries()) {
