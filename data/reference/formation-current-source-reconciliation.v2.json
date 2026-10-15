@@ -118,7 +118,10 @@
     "historical_preview_citation_count_unchanged_owners": 114,
     "historical_pass5_findings": 25,
     "historical_pass5_still_same_source_id": 22,
-    "historical_pass5_dispositions": 3
+    "historical_pass5_dispositions": 3,
+    "historical_cse_atomic_stage_total": 90,
+    "historical_cse_unchanged_atomic_stages_expected": 85,
+    "historical_cse_rewritten_stage_rescopes": 5
   },
   "added_source_bindings": [
     {
@@ -1979,7 +1982,8 @@
     "A retained original-opponent source inspected in an older role cannot be transferred to a newly rewritten magisterial position; retain original findings PSV1-002 and PSV1-016 as historical.",
     "Seven old Pass 4 findings are retained exactly; some original URLs survive under new scoped IDs and others pertain solely to superseded case material. None is automatically credited to a rewritten claim.",
     "The historic Charles Curran original proponent citation is retained in the source registry and same original article URL is still linked in the current documented-position role, but this does not certify the rewritten claim.",
-    "All 25 bounded Pass 5 editorial original-source findings remain historical records; three changed section-to-source relationships are precisely versioned, without inferred doctrinal certifications."
+    "All 25 bounded Pass 5 editorial original-source findings remain historical records; three changed section-to-source relationships are precisely versioned, without inferred doctrinal certifications.",
+    "Five historic CSE045 eight-stage debate paragraphs concerned the goods of marriage; current rewrite treats headship/mutual submission under the same broader question. Preserve the original atomic review as history, not a certification of the new text. The purposes/goods topic remains canonically linked to CSE046."
   ],
   "historical_bounded_primary_findings_superseded": [
     {
@@ -2448,6 +2452,63 @@
       ],
       "matching_url_successor_id": null,
       "disposition": "GIRM_REMAINS_AN_ANSWER_LEVEL_RULEBOOK__NO_LONGER_CITED_AS_THE_CURRENT_ORIGINAL_SPEAKER_DOCUMENTED_POSITION"
+    }
+  ],
+  "historical_cse_atomic_stage_rescopes": [
+    {
+      "owner": "CSE045",
+      "stage": "concession",
+      "historic_atomic_claim_source_id": "CASTI",
+      "old_en_fr_fingerprint": "8461a584",
+      "current_en_fr_fingerprint": "7c68ef39",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    },
+    {
+      "owner": "CSE045",
+      "stage": "breakpoint",
+      "historic_atomic_claim_source_id": "CASTI",
+      "old_en_fr_fingerprint": "6248357b",
+      "current_en_fr_fingerprint": "1960e474",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    },
+    {
+      "owner": "CSE045",
+      "stage": "catholicCase",
+      "historic_atomic_claim_source_id": "CIC",
+      "old_en_fr_fingerprint": "3a77db2b",
+      "current_en_fr_fingerprint": "1e33f8bd",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    },
+    {
+      "owner": "CSE045",
+      "stage": "response",
+      "historic_atomic_claim_source_id": "CASTI",
+      "old_en_fr_fingerprint": "c594a60d",
+      "current_en_fr_fingerprint": "f5ca37fc",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    },
+    {
+      "owner": "CSE045",
+      "stage": "bottom",
+      "historic_atomic_claim_source_id": "CASTI",
+      "old_en_fr_fingerprint": "22592e5f",
+      "current_en_fr_fingerprint": "19b4a7e8",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
     }
   ]
 }
