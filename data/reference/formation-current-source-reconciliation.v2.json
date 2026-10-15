@@ -3328,5 +3328,512 @@
         }
       ]
     }
+  },
+  "historical_claim_scope_matrix_reconciliation": {
+    "original_snapshot": "data/learn/formation-141-claim-scope-matrix-2026-10-09.v1.json",
+    "dated_amendment_files": [
+      "data/learn/formation-a1-20261010-source-role-amendment.v1.json",
+      "data/learn/formation-a2-20261010-source-role-amendment.v1.json",
+      "data/learn/formation-priority-original-opponents-source-amendment-2026-10-10.v1.json",
+      "data/learn/formation-priority-six-20261010-source-role-amendment.v1.json",
+      "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+      "data/learn/formation-crisis-editorial-bulk-2026-10-10.v1.json"
+    ],
+    "status": "VERSIONED_ONLY_NOT_REISSUED_PAST_CERTIFICATIONS",
+    "scope": {
+      "current_role_snapshot_reconciliations": 31,
+      "prior_six_amendments_still_match": 55,
+      "prior_amendments_explicitly_superseded": 8,
+      "new_owner_role_count_changes": 23
+    },
+    "changed_roles": [
+      {
+        "owner": "CR-LIT-04",
+        "role": "critical_response",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRLIT04_CRITI_1",
+          "AO26_CRLIT04_CRITI_2",
+          "AO26_CRLIT04_CRITI_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-LIT-05",
+        "role": "documented_position",
+        "historical_source_count": 3,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRLIT05_DOCUM_1",
+          "AO26_CRLIT05_DOCUM_2",
+          "AO26_CRLIT05_DOCUM_3"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 4,
+          "amended_source_ids": [
+            "BEN07",
+            "TC21",
+            "FR21",
+            "OTT69-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-09",
+        "role": "critical_response",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC09_CRITI_1",
+          "AO26_CRDOC09_ANSWE_1"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-09",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC09_TRADI_1",
+          "AO26_CRDOC09_TRADI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-002",
+        "role": "critical_response",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_APOL002_CRITI_1",
+          "AO26_APOL002_CRITI_2",
+          "AO26_APOL002_CRITI_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-002",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_APOL002_CRITI_1",
+          "AO26_APOL002_TRADI_2",
+          "AO26_APOL002_TRADI_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-ORG-05",
+        "role": "answer",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRORG05_ANSWE_1",
+          "AO26_CRORG05_ANSWE_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-ECC-09",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRECC09_CRITI_1",
+          "AO26_CRECC09_TRADI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-ECC-12",
+        "role": "critical_response",
+        "historical_source_count": 4,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRECC12_CRITI_1",
+          "AO26_CRECC12_CRITI_2",
+          "AO26_CRECC12_ANSWE_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-IDM-05",
+        "role": "answer",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRIDM05_ANSWE_1",
+          "AO26_CRIDM05_ANSWE_2",
+          "ECUM1993"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-IDM-05",
+        "role": "critical_response",
+        "historical_source_count": 3,
+        "current_source_count": 1,
+        "current_source_ids": [
+          "AO26_CRIDM05_CRITI_1"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-01",
+        "role": "critical_response",
+        "historical_source_count": 4,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRGOV01_CRITI_1",
+          "AO26_CRGOV01_DOCUM_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-01",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRGOV01_ANSWE_1",
+          "AO26_CRGOV01_TRADI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-06",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 1,
+        "current_source_ids": [
+          "AO26_CRGOV06_DOCUM_1"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-007",
+        "role": "documented_position",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_APOL007_DOCUM_1",
+          "AO26_APOL007_DOCUM_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-009",
+        "role": "critical_response",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_APOL009_CRITI_1",
+          "AO26_APOL009_CRITI_2",
+          "AO26_APOL009_CRITI_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-058",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 4,
+        "current_source_ids": [
+          "TRC-2015-OPP",
+          "NCTR-2022-OPP",
+          "AO26_APOL058_DOCUM_1",
+          "AO26_APOL058_DOCUM_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-05",
+        "role": "answer",
+        "historical_source_count": 4,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC05_ANSWE_1",
+          "AO26_CRDOC05_ANSWE_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-05",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRDOC05_DOCUM_1",
+          "AO26_CRDOC05_DOCUM_2",
+          "AO26_CRDOC05_DOCUM_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-05",
+        "role": "critical_response",
+        "historical_source_count": 4,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC05_CRITI_1",
+          "AO26_CRDOC05_CRITI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-05",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC05_TRADI_1",
+          "AO26_CRDOC05_TRADI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-AUT-05",
+        "role": "answer",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRAUT05_ANSWE_1",
+          "AO26_CRAUT05_ANSWE_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-AUT-05",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRAUT05_DOCUM_1",
+          "AO26_CRAUT05_DOCUM_2"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-editorial-bulk-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "CCC212",
+            "DV90",
+            "CURRAN86-ORIGINAL-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-AUT-05",
+        "role": "critical_response",
+        "historical_source_count": 3,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRAUT05_DOCUM_2",
+          "AO26_CRAUT05_CRITI_2",
+          "AO26_CRAUT05_CRITI_3"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-editorial-bulk-2026-10-10.v1.json",
+          "amended_source_count": 4,
+          "amended_source_ids": [
+            "DV90",
+            "PF98",
+            "CCC212",
+            "CURRAN86-ORIGINAL-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-MOR-06",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRMOR06_ANSWE_2",
+          "AO26_CRMOR06_ANSWE_1"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "RP84",
+            "VS93",
+            "FUCHS71-FIRSTPERSON-REPRINT"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-IDM-06",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRIDM06_DOCUM_1",
+          "AO26_CRIDM06_DOCUM_2",
+          "AO26_CRIDM06_DOCUM_3"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "EN75",
+            "AG65",
+            "FRANCIS-AUD23-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-IDM-06",
+        "role": "critical_response",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRIDM06_DOCUM_2",
+          "AO26_CRIDM06_CRITI_2"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 4,
+          "amended_source_ids": [
+            "EN75",
+            "AG65",
+            "DOMJES",
+            "FRANCIS-AUD23-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-02",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 5,
+        "current_source_ids": [
+          "OT65",
+          "PDV92",
+          "AO26_CRGOV02_DOCUM_1",
+          "AO26_CRGOV02_DOCUM_2",
+          "AO26_CRGOV02_DOCUM_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-03",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 6,
+        "current_source_ids": [
+          "PC65",
+          "ES66",
+          "AO26_CRGOV03_DOCUM_1",
+          "AO26_CRGOV03_DOCUM_2",
+          "AO26_CRGOV03_DOCUM_3",
+          "AO26_CRGOV03_DOCUM_4"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-09",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRGOV09_DOCUM_1",
+          "AO26_CRGOV09_DOCUM_2"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "CICADMIN",
+            "CICFIN",
+            "MONEYVAL-CR-2024"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-09",
+        "role": "critical_response",
+        "historical_source_count": 2,
+        "current_source_count": 1,
+        "current_source_ids": [
+          "AO26_CRGOV09_CRITI_1"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "CICADMIN",
+            "CICFIN",
+            "MONEYVAL-CR-2024"
+          ]
+        },
+        "new_claims_certified": 0
+      }
+    ],
+    "revision_policy": "Original 2026-10-09 141-owner review counts remain a historical snapshot; later corrected reader sources use the exact scoped references shown. A role rescope does not prove new claims."
   }
 }
