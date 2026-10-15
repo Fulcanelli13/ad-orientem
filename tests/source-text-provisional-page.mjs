@@ -1,0 +1,50 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {auditProvisionalPage} from "../src/source-text/provisional-page.js";
+import {packageSourceDocument} from "../src/source-text/package.js";
+const json=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
+const plan=json("data/source-text/fortescue-1908-print-page-plan.v1.json");
+const draft=json("data/source-text/fortescue-1913-p257-provisional-transcription.v1.json");
+const excerpt=json("data/source-text/fortescue-1908-print-excerpts.v1.json");
+const audit=auditProvisionalPage({plan,pageDraft:draft});
+assert.equal(audit.printedPage,257);
+assert.equal(audit.scanImagePage,305);
+assert.equal(audit.sourceUrl,plan.pages.find(x=>x.printedPage===257).url);
+assert.equal(audit.existingExcerptReferences,2);
+assert.equal(audit.transcribedDraftBlocks,10);
+assert.equal(audit.embeddedPrimaryQuoteBlocks,1);
+assert.equal(audit.crossPageContinuations,1);
+assert.ok(audit.pageWordCountProvisional>=1100);
+assert.equal(audit.eligibleForProduction,false);
+assert.equal(audit.publicationApproved,false);
+assert.equal(audit.humanReviewRequired,true);
+assert.equal(audit.reviewQueueMetrics.candidateCount,10);
+assert.equal(audit.heldItems.length,12);
+assert.ok(audit.heldItems.every(x=>x.status==="HELD"));
+assert.ok(audit.heldItems.some(x=>x.reviewFlags?.includes("PRIMARY_LATIN_QUOTATION_REQUIRES_COLLATION")));
+assert.ok(audit.heldItems.some(x=>x.reviewFlags?.includes("COLUMN_BREAK_REQUIRES_COLLATION")));
+assert.ok(audit.heldItems.some(x=>x.reviewFlags?.includes("PAGE_JOIN_REQUIRES_COLLATION")));
+assert.equal(draft.blocks.at(-1).text.trim().slice(-20),"He also says that at");
+assert.equal(draft.nextImageUrl,plan.pages.find(x=>x.printedPage===258).url);
+assert.equal(excerpt.records.length,4);
+assert.equal(excerpt.work.rights.approvedExcerpts.length,4);
+assert.equal(excerpt.work.rights.editorialPublicationApproval,"NOT_GRANTED");
+assert.ok(!JSON.stringify(audit).includes(draft.blocks[4].text.slice(0,80)),
+ "Raw unproofread text must not leak into exportable audit metadata");
+assert.throws(()=>packageSourceDocument(draft,{chunkSize:2}),/DOCUMENT_INVALID/);
+const mutate=fn=>{const d=structuredClone(draft);fn(d);return d;};
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.publicationApproved=true)}),/UNSAFE_OR_INVALID/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.fullTextProofread=true)}),/UNSAFE_OR_INVALID/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.passagePromotionAllowed=true)}),/UNSAFE_OR_INVALID/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.witnessId="WIT-WRONG")} ),/UNSAFE_OR_INVALID/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.imageUrl="https://fake.invalid/305")} ),/UNSAFE_OR_INVALID/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks[1].id=x.blocks[0].id)}),/BLOCK_INVALID/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks[0].anchors=[])}),/REFERENCE_INVALID/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks[9].text="x")}),/TEXT_INVALID/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks.at(-1).text="This sentence was completed artificially.")}),/UNVERIFIED_PAGE_JOIN/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks.find(b=>b.kind==="attributed-quotation").kind="body")}),/SCOPE_INCOMPLETE/);
+console.log("PASS 1913 source p257 OCR-assisted transcription: 10 text blocks, 2 existing excerpt references, one Latin quote held and p258 boundary protected");
+console.log(JSON.stringify({printedPage:257,provisionalWords:audit.pageWordCountProvisional,
+ draftBlocks:audit.transcribedDraftBlocks,
+ preservedOriginalApprovedExcerpts:4,independentFullPageProofs:0,
+ primaryQuoteHumanProofPending:true,publicationApproved:false}));
