@@ -430,7 +430,8 @@ assert.equal(maastricht.length,1);
 assert.equal(maastricht[0].map_publishable,true);
 assert.ok(maastricht[0].sections.some(section=>/Sterre der Zee diocesan-feast walking pilgrimage/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
-const fatima=filterExploreItems(projection.byLens.pilgrimages,{query:"Fátima"});
+// Name search now legitimately returns distinct global Fátima sanctuaries; anchor the Portugal-specific historic case by canonical Place.
+const fatima=filterExploreItems(projection.byLens.pilgrimages,{query:"Fátima"}).filter(item=>item.place_id==="place:PT:fatima-sanctuary");
 assert.equal(fatima.length,1);
 assert.equal(fatima[0].map_publishable,true);
 assert.ok(fatima[0].sections.some(section=>/13 May anniversary pilgrimage at Fátima/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
