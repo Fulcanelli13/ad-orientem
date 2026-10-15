@@ -20,14 +20,27 @@ assert.equal(registry.inventory.formationExactUrlWitnesses,formation.witness_ind
 assert.equal(registry.inventory.formationOriginallyApprovedContextBindings,
  formation.source_bindings.filter(x=>x.original_context_approved===true).length);
 assert.equal(registry.inventory.formationOriginallyApprovedContextBindings,0);
-assert.equal(registry.inventory.newCompleteElectronicWitnessStaged,1);
-assert.equal(registry.inventory.totalDistinctWorkIdsInThisSnapshot,24);
-assert.equal(new Set(registry.workIndex.map(x=>x.workId)).size,24);
-assert.equal(registry.workIndex.filter(x=>x.action==="COMPLETE_ELECTRONIC_WITNESS_STAGED_METADATA_ONLY").length,1);
+assert.equal(registry.inventory.newCompleteElectronicWitnessStaged,3);
+assert.equal(registry.inventory.totalDistinctWorkIdsInThisSnapshot,25);
+assert.equal(new Set(registry.workIndex.map(x=>x.workId)).size,25);
+assert.equal(registry.workIndex.filter(x=>x.action==="COMPLETE_ELECTRONIC_WITNESS_STAGED_METADATA_ONLY").length,2);
 assert.equal(registry.newBulkWitness.workId,index.workId);
 assert.equal(registry.newBulkWitness.editionId,index.editionId);
 assert.equal(registry.newBulkWitness.witnessId,index.witnessId);
 assert.equal(registry.newBulkWitness.expectedSections,index.chapterCount);
+assert.equal(registry.newBulkWitnesses.length,3);
+assert.equal(registry.inventory.completeElectronicallyStagedParagraphs,1911);
+assert.equal(registry.inventory.completeElectronicallyStagedWords,166441);
+assert.equal(registry.inventory.completeElectronicallyStagedSections,268);
+assert.equal(registry.inventory.completeElectronicallyStagedGradeA,0);
+assert.equal(registry.inventory.completeElectronicallyStagedGradeB,1911);
+assert.equal(registry.inventory.stagedExceptionCandidates,325);
+const canonicalSales=registry.workIndex.filter(x=>x.workId==="WORK-FRANCIS-SALES-DEVOUT-LIFE");
+assert.equal(canonicalSales.length,1);
+assert.equal(canonicalSales[0].action,"REUSE_CANONICAL_WORK_WITH_NEW_1832_FRENCH_WITNESS_STAGED");
+assert.equal(registry.newBulkWitnesses.find(x=>x.language==="fr").passages,943);
+assert.equal(registry.newBulkWitnesses.find(x=>x.language==="en"&&x.passages===786).words,61769);
+
 assert.equal(registry.newBulkWitness.status,"STAGED_NOT_PRODUCTION");
 assert.equal(registry.newBulkWitness.licenseNoticeRetained,true);
 assert.equal(registry.reuse.find(x=>x.owner==="scripture-catena").fragments,12692);
@@ -36,7 +49,7 @@ assert.equal(registry.reuse.find(x=>x.owner==="mass").action,"NO_REPLACEMENT_OR_
 assert.equal(registry.policy.pendingPassageLinks,"NO_NEW_CROSSMODULE_CLAIMS_VERIFIED_IN_THIS_PASS");
 assert.equal(registry.policy.approvedCitationRequiresA,true);
 assert.equal(registry.policy.reproductionRightsIndependentFromParsing,true);
-console.log("PASS whole-work inventory reconciliation: 24 distinct work IDs, 12,692 preexisting Catena fragments and 408 Formation links reused, no duplicate imports");
-console.log(JSON.stringify({canonicalWorkIds:13,candidateWorkIds:10,realNewElectronicWorksStaged:1,
+console.log("PASS whole-work inventory reconciliation: 25 distinct work IDs, 12,692 preexisting Catena fragments and 408 Formation links reused, no duplicate imports");
+console.log(JSON.stringify({canonicalWorkIds:13,candidateWorkIds:10,realNewElectronicWorksStaged:3,
  existingCatenaFragments:12692,formationBindings:408,witnessUrls:304,
  exactQuotedHistoricalPassagesApprovedFromNewWork:0,productionImports:0}));
