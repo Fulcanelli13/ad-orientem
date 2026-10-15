@@ -12,9 +12,11 @@ on:
       - 'tests/formation-recovery-review.mjs'
       - 'tests/formation-source-crosswalk.mjs'
       - 'tests/formation-evidence-relationship-ledger.mjs'
+      - 'tests/formation-prior-audit-reconciliation.mjs'
       - 'data/reference/canonical-works-pilot.v1.json'
       - 'data/reference/formation-canonical-source-crosswalk.v1.json'
       - 'data/reference/formation-evidence-relationship-ledger.v1.json'
+      - 'data/reference/formation-prior-audit-reconciliation.v1.json'
       - 'data/learn/formation-canonical-*.json'
       - 'data/learn/formation-crisis-sourcefirst-*.json'
       - '.github/workflows/source-reference-presentation.yml'
@@ -54,3 +56,5 @@ jobs:
         run: node tests/formation-source-crosswalk.mjs
       - name: Audit 1,541 claim-source edges without premature certification
         run: node tests/formation-evidence-relationship-ledger.mjs
+      - name: Reuse merged and independent editorial audits without new claim verifications
+        run: node tests/formation-prior-audit-reconciliation.mjs
