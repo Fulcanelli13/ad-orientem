@@ -46,6 +46,8 @@ assert.throws(()=>buildScanReviewQueue({plan,candidates:[candidates[0],candidate
 assert.throws(()=>buildScanReviewQueue({plan,candidates:[{...candidates[0],pages:[254]}]}),/OUTSIDE_PAGE_PLAN/);
 assert.throws(()=>buildScanReviewQueue({plan,candidates:[{...candidates[0],pages:[255,257]}]}),/NONCONTIGUOUS_SPAN/);
 assert.throws(()=>validatePrintPagePlan({...plan,pages:[plan.pages[0],plan.pages[2]]}),/SEQUENCE_GAP/);
+assert.throws(()=>validatePrintPagePlan({...plan,pages:[{...plan.pages[0],url:"https://fake.invalid/303"}]}),/PAGE_INVALID/);
+assert.throws(()=>validatePrintPagePlan({...plan,scanPageBaseUrl:"http://example.invalid"}),/PLAN_INVALID/);
 
 // Only pre-existing short 1908 scanned sentences qualify for real-source
 // excerpt packaging; no bulk OCR or synthetic text is promoted.
