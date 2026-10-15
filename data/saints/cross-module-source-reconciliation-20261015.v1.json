@@ -1,0 +1,4376 @@
+{
+  "schema": "ao.saints.cross-module-source-reconciliation.v1",
+  "scope": "EDITORIAL_CROSSWALK_UNMERGED",
+  "role": "Non-destructive links from exact existing saint strings into source owner records. Not a list of certified saints, biographies or liturgical day rulings.",
+  "owner_sources": [
+    {
+      "path": "data/saints/legacy-shrine-name-audit-20261015.v1.json",
+      "branch": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "953aa8930f3fcb3c27eb7e13ec3781c6c11a7355"
+    },
+    {
+      "path": "data/saints/holiness-first-editorial-pilot-20261015.v1.json",
+      "branch": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "92322c093975f5710ac50c377229a1a06244113f"
+    },
+    {
+      "path": "data/calendar/sacred-art-two-options-matrix-wave31-20261014.v6.json",
+      "branch": "platform/885-sacred-art-candidates",
+      "blob_sha": "7ef74e644ebdefb56c8908cd28796e34c7aeb380"
+    },
+    {
+      "path": "data/explore/worldwide-relic-subject-census.research.v1.json",
+      "branch": "main",
+      "blob_sha": "81da851c38056912c01f8a4cc7a353db82089e59"
+    },
+    {
+      "path": "data/explore/sacred-phenomena-seed.v1.json",
+      "branch": "main",
+      "blob_sha": "89648877a62720cf0a76ae51705a49fd118d0cb3"
+    },
+    {
+      "path": "data/pray/novena-sot.v1.json",
+      "branch": "main",
+      "blob_sha": "9ee8b761da6d8b47651d5bf8c87faaa633c82f02"
+    },
+    {
+      "path": "src/calendar/intelligence.js",
+      "branch": "main",
+      "blob_sha": "06825fb1a339f4eacd8f746ffb57741348f93bff"
+    },
+    {
+      "path": "data/calendar/1962-year-independent-checks-2026.v1.json",
+      "branch": "main",
+      "blob_sha": "5a6bfe62548c3fbbe4c78340e77999d978c222d3"
+    }
+  ],
+  "match_policy": {
+    "normalization": "diacritics + explicit honorific prefix + punctuation only",
+    "ambiguity": "Manual alias-equivalent candidate lookup, never short substring matching. All cross-source matches are editorial candidates; approval requires owner-source confirmation.",
+    "artwork": "Research artwork does not imply approved master, iconographical match or reproduction permission.",
+    "relics": "Relic subject record does not authenticate a relic or certify canonical saint status.",
+    "novenas": "Only direct devotional addressees manually joined; not feast/devotion analogies.",
+    "calendar": "Semantic keys are thematic/calendar bridge records. Neither saint's actual 1962 feast date, commemoration nor optional current-calendar observation is inferred.",
+    "shrine": "Exact old source place IDs only; no evidence the saint lived or died there."
+  },
+  "explicit_alias_lookup": [
+    {
+      "from": "Saint Dominic",
+      "to": "Saint Dominic de Guzmán",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Louis de Montfort",
+      "to": "Saint Louis-Marie Grignion de Montfort",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Louis-Marie de Montfort",
+      "to": "Saint Louis-Marie Grignion de Montfort",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Nicholas",
+      "to": "Saint Nicholas of Myra",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Michael the Archangel",
+      "to": "Saint Michael Archangel",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Wenceslas",
+      "to": "Saint Wenceslaus",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint John the Evangelist",
+      "to": "Saint John the Apostle",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint John the Evangelist",
+      "to": "Saint John",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Ambrose of Milan",
+      "to": "Saint Ambrose",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Augustine of Hippo",
+      "to": "Saint Augustine",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Benedict of Nursia",
+      "to": "Saint Benedict",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Jean-Marie Vianney",
+      "to": "Saint Jean Vianney",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Lucy of Syracuse",
+      "to": "Saint Lucy",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Peter the Apostle",
+      "to": "Saint Peter",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Paul the Apostle",
+      "to": "Saint Paul",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Andrew the Apostle",
+      "to": "Saint Andrew",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Bartholomew the Apostle",
+      "to": "Saint Bartholomew",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Thomas the Apostle",
+      "to": "Saint Thomas",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Matthew the Apostle",
+      "to": "Saint Matthew",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Matthias the Apostle",
+      "to": "Saint Matthias",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    },
+    {
+      "from": "Saint Louis IX",
+      "to": "Saint Louis IX",
+      "status": "EDITORIAL_CANDIDATE_ALIAS_NOT_CROSS_MODULE_MUTATION"
+    }
+  ],
+  "counts": {
+    "shrine_name_strings": 119,
+    "shrine_source_edges": 145,
+    "name_strings_matching_art_research": 41,
+    "distinct_art_subject_ids": 41,
+    "name_strings_matching_relic_subject_registry": 95,
+    "distinct_relic_subject_ids": 92,
+    "name_strings_with_direct_novena_bindings": 4,
+    "name_strings_with_calendar_semantic_candidates": 5,
+    "pilot_summaries": 6,
+    "unmatched_art_subject_records": 34,
+    "unmatched_relic_subject_records": 69
+  },
+  "rows": [
+    {
+      "legacy_name": "Blessed Bishop and Martyr Vasyl Velychkovsky",
+      "pilot_identity_id": null,
+      "identity_guard": "BEATIFIED_LABEL_SEPARATE_FROM_SAINT",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+          "shrine_id": "shrine:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+          "source_ids": [
+            "SG-R70-SITE-SG-INV-0422",
+            "SG-R70-CUSTODIAN-SG-INV-0422",
+            "SG-R70-GEO-SG-INV-0422"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Blessed Jacques-Désiré Laval",
+      "pilot_identity_id": "blessed:jacques-desire-laval",
+      "identity_guard": "BEATIFIED_LABEL_SEPARATE_FROM_SAINT",
+      "identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "shrine_places": [
+        {
+          "place_id": "place:MU:pere-laval-sainte-croix",
+          "shrine_id": "shrine:MU:pere-laval",
+          "source_ids": [
+            "SHR-PERE-LAVAL-CENTRE",
+            "PIL-PERE-LAVAL-ANNUAL"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Blessed Marie-Louise Trichet",
+      "pilot_identity_id": null,
+      "identity_guard": "BEATIFIED_LABEL_SEPARATE_FROM_SAINT",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-montfort-saint-laurent",
+          "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-montfort-saint-laurent",
+            "R63-MONTFORT-HISTORY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:blessed-marie-louise-trichet",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Adalbert of Prague",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:PL:gniezno-cathedral-adalbert",
+          "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+          "source_ids": [
+            "SHR-PL-gniezno-cathedral-adalbert"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-adalbert-of-prague",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Agatha of Sicily",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:cattedrale-sant-agata-catania",
+          "shrine_id": "shrine:IT:cattedrale-sant-agata-catania",
+          "source_ids": [
+            "SHR-IT-cattedrale-sant-agata-catania"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-agatha-of-sicily",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Alphonsus Liguori",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:sant-alfonso-pagani",
+          "shrine_id": "shrine:IT:sant-alfonso-pagani",
+          "source_ids": [
+            "SHR-IT-sant-alfonso-pagani"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:st-alphonsus-baltimore",
+          "shrine_id": "shrine:US:alphonsus-baltimore",
+          "source_ids": [
+            "SHR-ALPHONSUS-BALTIMORE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-alphonsus-liguori",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-11",
+          "subject": "Saint Alphonsus Liguori",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Ambrose of Milan",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-ambrose-of-milan",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-01",
+          "subject": "Saint Ambrose",
+          "candidate_count": 6,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint André Bessette",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CA:oratoire-saint-joseph-montreal",
+          "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+          "source_ids": [
+            "SHR-ORATOIRE-MONTREAL",
+            "SHR-ORATOIRE-MONTREAL-TOMB"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-andre-bessette",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Andrew Kaggwa",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:UG:munyonyo-martyrs",
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Andrew the Apostle",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:amalfi-sant-andrea",
+          "shrine_id": "shrine:IT:amalfi-sant-andrea",
+          "source_ids": [
+            "SHR-IT-amalfi-sant-andrea"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-andrew-the-apostle",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-02",
+          "subject": "Saint Andrew",
+          "candidate_count": 4,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Anne",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CA:sainte-anne-de-beaupre",
+          "shrine_id": "shrine:CA:sainte-anne-de-beaupre",
+          "source_ids": [
+            "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
+            "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:FR:sainte-anne-d-auray",
+          "shrine_id": "shrine:FR:sainte-anne-d-auray",
+          "source_ids": [
+            "SHR-SAINTE-ANNE-IDENTITY",
+            "PIL-SAINTE-ANNE-GRAND-PARDON"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:st-anne-fiskdale",
+          "shrine_id": "shrine:US:st-anne-fiskdale",
+          "source_ids": [
+            "SHR-ST-ANNE-FISKDALE",
+            "PIL-ST-ANNE-NOVENA"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-anne",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-30",
+          "subject": "Saint Anne",
+          "candidate_count": 4,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": [
+        {
+          "semantic_key": "feast.saint_anne",
+          "role": "SEMANTIC_CONTEXT_NOT_CERTIFIED_1962_OBSERVANCE"
+        }
+      ]
+    },
+    {
+      "legacy_name": "Saint Anthony of Padua",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:grottes-saint-antoine-brive",
+          "shrine_id": "shrine:20261009:FR:grottes-saint-antoine-brive",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-grottes-saint-antoine-brive"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:IT:basilica-sant-antonio-padova",
+          "shrine_id": "shrine:20261009:IT:basilica-sant-antonio-padova",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-basilica-sant-antonio-padova"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-anthony-of-padua",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-06",
+          "subject": "Saint Anthony of Padua",
+          "candidate_count": 5,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [
+        {
+          "novena_id": "st_anthony_nine_tuesdays",
+          "relation": "DIRECT_DEVOTIONAL_ADDRESSEE"
+        }
+      ],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Apollinaris",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:DE:st-apollinaris-frielingsdorf",
+          "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+          "source_ids": [
+            "SHR-ST-APOLLINARIS-FRIELINGSDORF",
+            "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": [
+        {
+          "semantic_key": "feast.saint_apollinaris",
+          "role": "SEMANTIC_CONTEXT_NOT_CERTIFIED_1962_OBSERVANCE"
+        }
+      ]
+    },
+    {
+      "legacy_name": "Saint Augustine of Hippo",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:san-pietro-ciel-doro",
+          "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+          "source_ids": [
+            "SHR-IT-san-pietro-ciel-doro"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-augustine-of-hippo",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-02",
+          "subject": "Saint Augustine",
+          "candidate_count": 5,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Bartholomew the Apostle",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:san-bartolomeo-isola",
+          "shrine_id": "shrine:IT:san-bartolomeo-isola",
+          "source_ids": [
+            "SHR-IT-san-bartolomeo-isola"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-bartholomew-the-apostle",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-06",
+          "subject": "Saint Bartholomew",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Bartolo Longo",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:pompei-rosary-shrine",
+          "shrine_id": "shrine:IT:pompei-rosary",
+          "source_ids": [
+            "SHR-POMPEI-CONTACT",
+            "PIL-POMPEI-SUPPLICA-MAY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Benedict of Nursia",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+          "shrine_id": "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-abbaye-fleury-saint-benoit-loire",
+            "R63-FLEURY-HISTORY",
+            "R63-FLEURY-PILGRIMAGE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:IT:montecassino-abbey",
+          "shrine_id": "shrine:IT:montecassino-abbey",
+          "source_ids": [
+            "SHR-IT-montecassino-abbey"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-benedict-of-nursia",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-14",
+          "subject": "Saint Benedict",
+          "candidate_count": 4,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Bernadette Soubirous",
+      "pilot_identity_id": "saint:bernadette-soubirous",
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:espace-bernadette-nevers",
+          "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-espace-bernadette-nevers"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+          "shrine_id": "shrine:FR:lourdes-our-lady",
+          "source_ids": [
+            "SHR-LOURDES-CONTACT",
+            "SHR-LOURDES-PILGRIMAGE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:lourdes-grotto-emmitsburg",
+          "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+          "source_ids": [
+            "SHR-GROTTO-LOURDES-EMMITSBURG",
+            "PIL-GROTTO-LOURDES-FEAST"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:lourdes-litchfield",
+          "shrine_id": "shrine:US:lourdes-litchfield",
+          "source_ids": [
+            "SHR-LOURDES-LITCHFIELD",
+            "PIL-LOURDES-LITCHFIELD"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-bernadette-soubirous",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Beuno",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:GB:holywell-st-winefride",
+          "shrine_id": "shrine:GB:holywell-st-winefride",
+          "source_ids": [
+            "SHR-HOLYWELL-CONTACT",
+            "PIL-HOLYWELL-FEAST",
+            "PIL-HOLYWELL-LMS"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Brigid of Kildare",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IE:solas-bhride-kildare",
+          "shrine_id": "shrine:IE:solas-bhride-kildare",
+          "source_ids": [
+            "SG-R65-IE-BRIGID-CENTRE",
+            "SG-R65-IE-BRIGID-PILGRIMAGE",
+            "SG-R65-IE-BRIGID-OSM",
+            "SG-R65-IE-BRIGID-CATHEDRAL",
+            "SG-R65-IE-BRIGID-2026"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-brigid-of-kildare",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Casimir",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:LT:vilnius-cathedral-st-casimir",
+          "shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+          "source_ids": [
+            "SHR-LT-vilnius-cathedral-st-casimir"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-casimir",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Catherine Labouré",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:rue-du-bac",
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:miraculous-medal-philadelphia",
+          "shrine_id": "shrine:US:miraculous-medal-philadelphia",
+          "source_ids": [
+            "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
+            "PIL-MIRACULOUS-MEDAL-NOVENA"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-catherine-laboure",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Catherine of Siena",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:santa-maria-minerva-rome",
+          "shrine_id": "shrine:IT:santa-maria-minerva-rome",
+          "source_ids": [
+            "SHR-IT-santa-maria-minerva-rome"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-catherine-of-siena",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-09",
+          "subject": "Saint Catherine of Siena",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Charbel Makhlouf",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:LB:monastery-saint-maron-annaya",
+          "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+          "source_ids": [
+            "SHR-LB-monastery-saint-maron-annaya"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-charbel-makhlouf",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Charles Borromeo",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:duomo-milano",
+          "shrine_id": "shrine:IT:duomo-milano",
+          "source_ids": [
+            "SHR-IT-duomo-milano"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-charles-borromeo",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Charles Lwanga",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:UG:namugongo-martyrs",
+          "shrine_id": "shrine:UG:namugongo-martyrs",
+          "source_ids": [
+            "SHR-NAMUGONGO-OFFICIAL",
+            "PIL-NAMUGONGO-MARTYRS-DAY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-charles-lwanga",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Clare of Assisi",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:santa-chiara-assisi",
+          "shrine_id": "shrine:IT:santa-chiara-assisi",
+          "source_ids": [
+            "SHR-IT-santa-chiara-assisi"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-clare-of-assisi",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Claude La Colombière",
+      "pilot_identity_id": "saint:claude-la-colombiere",
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Columbanus",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:abbey-san-colombano-bobbio",
+          "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+          "source_ids": [
+            "SHR-IT-abbey-san-colombano-bobbio"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-columbanus",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Denis of Paris",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-saint-denis",
+          "shrine_id": "shrine:FR:basilique-saint-denis",
+          "source_ids": [
+            "SHR-SAINT-DENIS-OFFICIAL"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:FR:basilique-saint-denys-argenteuil",
+          "shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
+          "source_ids": [
+            "SHR-FR-ARGENTEUIL-TUNIQUE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-denis-of-paris",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-27",
+          "subject": "Saint Denis of Paris",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Dominic",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CO:chiquinquira-basilica",
+          "shrine_id": "shrine:CO:chiquinquira",
+          "source_ids": [
+            "SHR-CHIQUINQUIRA-DIOCESE",
+            "PIL-CHIQUINQUIRA-JULY9"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-dominic-de-guzman",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-13",
+          "subject": "Saint Dominic",
+          "candidate_count": 5,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Dominic de Guzmán",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:basilica-san-domenico-bologna",
+          "shrine_id": "shrine:IT:basilica-san-domenico-bologna",
+          "source_ids": [
+            "SHR-IT-basilica-san-domenico-bologna"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-dominic-de-guzman",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Edward the Confessor",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:GB:westminster-abbey-st-edward",
+          "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+          "source_ids": [
+            "SHR-GB-westminster-abbey-st-edward"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-edward-the-confessor",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Elizabeth Ann Seton",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:seton-emmitsburg",
+          "shrine_id": "shrine:US:seton-emmitsburg",
+          "source_ids": [
+            "SHR-SETON-EMMITSBURG",
+            "PIL-SETON-SEA-SERVICES-2026"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-elizabeth-ann-seton",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Eusebius of Vercelli",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+          "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+          "source_ids": [
+            "SHR-IT-duomo-sant-eusebio-vercelli"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-eusebius-of-vercelli",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Faustina Kowalska",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:PL:divine-mercy-plock",
+          "shrine_id": "shrine:20261009:PL:divine-mercy-plock",
+          "source_ids": [
+            "SHR-PIL-BULK-PL-divine-mercy-plock"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:divine-mercy-stockbridge",
+          "shrine_id": "shrine:US:divine-mercy-stockbridge",
+          "source_ids": [
+            "SHR-DIVINE-MERCY-STOCKBRIDGE",
+            "PIL-DIVINE-MERCY-SUNDAY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Francis de Sales",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-visitation-annecy",
+          "shrine_id": "shrine:FR:basilique-visitation-annecy",
+          "source_ids": [
+            "SHR-FR-basilique-visitation-annecy"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-francis-de-sales",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-12",
+          "subject": "Saint Francis de Sales",
+          "candidate_count": 4,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Francis of Assisi",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:basilica-san-francesco-assisi",
+          "shrine_id": "shrine:20261009:IT:basilica-san-francesco-assisi",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-basilica-san-francesco-assisi"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-francis-of-assisi",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-12",
+          "subject": "Saint Francis of Assisi",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Francis Xavier",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IN:basilica-bom-jesus-old-goa",
+          "shrine_id": "shrine:20261009:IN:basilica-bom-jesus-old-goa",
+          "source_ids": [
+            "SHR-PIL-BULK-IN-basilica-bom-jesus-old-goa"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-francis-xavier",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-15",
+          "subject": "Saint Francis Xavier",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Francisco Marto",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:PT:fatima-sanctuary",
+          "shrine_id": "shrine:PT:fatima",
+          "source_ids": [
+            "SHR-FATIMA-CONTACT",
+            "PIL-FATIMA-MAY13"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-francisco-marto",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Gervasius of Milan",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-gervasius-of-milan",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Helena",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:scala-santa-rome",
+          "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+          "source_ids": [
+            "SHR-PIL-IT-scala-santa-rome"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:IT:santa-croce-gerusalemme-rome",
+          "shrine_id": "shrine:IT:santa-croce-rome",
+          "source_ids": [
+            "SHR-SANTA-CROCE-RELICS"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Hilary of Poitiers",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+          "shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+          "source_ids": [
+            "SHR-FR-saint-hilaire-le-grand-poitiers"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-hilary-of-poitiers",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-28",
+          "subject": "Saint Hilary of Poitiers",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Ignatius of Loyola",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:chiesa-gesu-rome",
+          "shrine_id": "shrine:IT:chiesa-gesu-rome",
+          "source_ids": [
+            "SHR-IT-chiesa-gesu-rome"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-ignatius-of-loyola",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-16",
+          "subject": "Saint Ignatius of Loyola",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Isaac Jogues",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CA:martyrs-shrine-midland",
+          "shrine_id": "shrine:CA:martyrs-midland",
+          "source_ids": [
+            "SHR-MARTYRS-CONTACT",
+            "SHR-MARTYRS-MINISTRY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:auriesville-martyrs",
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Jacinta Marto",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:PT:fatima-sanctuary",
+          "shrine_id": "shrine:PT:fatima",
+          "source_ids": [
+            "SHR-FATIMA-CONTACT",
+            "PIL-FATIMA-MAY13"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-jacinta-marto",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint James the Greater",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:ES:santiago-compostela-cathedral",
+          "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+          "source_ids": [
+            "SHR-PIL-ES-santiago-compostela-cathedral"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:BA:medjugorje-st-james-parish",
+          "shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+          "source_ids": [
+            "SG-R71-MEDJUGORJE-PARISH",
+            "SG-R71-MEDJUGORJE-DDF",
+            "SG-R71-MEDJUGORJE-GEO"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-james-the-greater",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-03",
+          "subject": "Saint James the Greater",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Jane Frances de Chantal",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-visitation-annecy",
+          "shrine_id": "shrine:FR:basilique-visitation-annecy",
+          "source_ids": [
+            "SHR-FR-basilique-visitation-annecy"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-jane-frances-de-chantal",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Jean de Brébeuf",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CA:martyrs-shrine-midland",
+          "shrine_id": "shrine:CA:martyrs-midland",
+          "source_ids": [
+            "SHR-MARTYRS-CONTACT",
+            "SHR-MARTYRS-MINISTRY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Jean-Marie Vianney",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-ars",
+          "shrine_id": "shrine:20261009:FR:basilique-ars",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-ars"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-jean-marie-vianney",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-18",
+          "subject": "Saint Jean Vianney",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Joachim",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:st-anne-fiskdale",
+          "shrine_id": "shrine:US:st-anne-fiskdale",
+          "source_ids": [
+            "SHR-ST-ANNE-FISKDALE",
+            "PIL-ST-ANNE-NOVENA"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-joachim",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Joan of Arc",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:bermont-greux",
+          "shrine_id": "shrine:FR:bermont-greux",
+          "source_ids": [
+            "SHR-BERMONT-GREUX"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-joan-of-arc",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-07",
+          "subject": "Saint Joan of Arc",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint John Bosco",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:maria-ausiliatrice-torino",
+          "shrine_id": "shrine:IT:maria-ausiliatrice-torino",
+          "source_ids": [
+            "SHR-IT-maria-ausiliatrice-torino"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-john-bosco",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint John de Lalande",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:auriesville-martyrs",
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint John Neumann",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:st-alphonsus-baltimore",
+          "shrine_id": "shrine:US:alphonsus-baltimore",
+          "source_ids": [
+            "SHR-ALPHONSUS-BALTIMORE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:st-john-neumann-philadelphia",
+          "shrine_id": "shrine:US:neumann-philadelphia",
+          "source_ids": [
+            "SHR-NEUMANN-PHILADELPHIA",
+            "PIL-NEUMANN-PHILADELPHIA"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-john-neumann",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint John of the Cross",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:ES:convento-san-juan-cruz-segovia",
+          "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+          "source_ids": [
+            "SHR-ES-convento-san-juan-cruz-segovia"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-john-of-the-cross",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-10",
+          "subject": "Saint John of the Cross",
+          "candidate_count": 5,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint John Paul II",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+          "shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
+          "source_ids": [
+            "SHR-JPII-KRAKOW-OFFICIAL"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-john-paul-ii",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint John the Baptist",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:DE:aachener-dom-four-textiles",
+          "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+          "source_ids": [
+            "SHR-DE-aachener-dom-four-textiles"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:FR:cathedrale-notre-dame-amiens",
+          "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+          "source_ids": [
+            "SHR-FR-AMIENS-JEAN-BAPTISTE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-john-the-baptist",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-04",
+          "subject": "Saint John the Baptist",
+          "candidate_count": 4,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint John the Evangelist",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IE:knock-shrine",
+          "shrine_id": "shrine:IE:knock",
+          "source_ids": [
+            "SHR-KNOCK-IDENTITY",
+            "PIL-KNOCK-ANNIVERSARY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-john-the-apostle",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-04",
+          "subject": "Saint John",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint José de Anchieta",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+          "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+          "source_ids": [
+            "SHR-BR-pateo-do-collegio-sao-paulo"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-jose-de-anchieta",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Joseph",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:saint-joseph-bessillon",
+          "shrine_id": "shrine:20261009:FR:saint-joseph-bessillon",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-saint-joseph-bessillon"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:CA:oratoire-saint-joseph-montreal",
+          "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+          "source_ids": [
+            "SHR-ORATOIRE-MONTREAL",
+            "SHR-ORATOIRE-MONTREAL-TOMB"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:IE:knock-shrine",
+          "shrine_id": "shrine:IE:knock",
+          "source_ids": [
+            "SHR-KNOCK-IDENTITY",
+            "PIL-KNOCK-ANNIVERSARY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-01",
+          "subject": "Saint Joseph",
+          "candidate_count": 9,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [
+        {
+          "novena_id": "st_joseph",
+          "relation": "DIRECT_DEVOTIONAL_ADDRESSEE"
+        }
+      ],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Josephine Bakhita",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+          "shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+          "source_ids": [
+            "SHR-IT-sacra-famiglia-bakhita-schio"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-josephine-bakhita",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Juan Diego",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:MX:basilica-guadalupe-mexico-city",
+          "shrine_id": "shrine:MX:guadalupe-tepeyac",
+          "source_ids": [
+            "SHR-GUADALUPE-MX-CONTACT",
+            "PIL-GUADALUPE-MX-FEAST"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:US:guadalupe-shrine-la-crosse",
+          "shrine_id": "shrine:US:guadalupe-la-crosse",
+          "source_ids": [
+            "SHR-GUADALUPE-SCHEDULE",
+            "SHR-GUADALUPE-PILGRIMAGE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-juan-diego",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Julienne of Cornillon",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+          "shrine_id": "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon",
+          "source_ids": [
+            "SHR-PIL-BULK-BE-sanctuaire-sainte-julienne-cornillon"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Junípero Serra",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:carmel-mission-basilica-serra",
+          "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+          "source_ids": [
+            "SHR-US-carmel-mission-basilica-serra"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-junipero-serra",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Kateri Tekakwitha",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:auriesville-martyrs",
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-kateri-tekakwitha",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Katharine Drexel",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+          "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+          "source_ids": [
+            "SHR-US-cathedral-katharine-drexel-philadelphia"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-katharine-drexel",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Kizito",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:UG:munyonyo-martyrs",
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-kizito",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Leonard of Noblac",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:DE:st-leonhard-nussdorf",
+          "shrine_id": "shrine:DE:st-leonhard-nussdorf",
+          "source_ids": [
+            "SHR-ST-LEONHARD-NUSSDORF",
+            "PIL-ST-LEONHARD-NUSSDORF"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Louis de Montfort",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:lourdes-litchfield",
+          "shrine_id": "shrine:US:lourdes-litchfield",
+          "source_ids": [
+            "SHR-LOURDES-LITCHFIELD",
+            "PIL-LOURDES-LITCHFIELD"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-louis-marie-grignion-de-montfort",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Louis-Marie de Montfort",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-montfort-saint-laurent",
+          "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-montfort-saint-laurent",
+            "R63-MONTFORT-HISTORY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-louis-marie-grignion-de-montfort",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Louise de Marillac",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:rue-du-bac",
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-louise-de-marillac",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Lucy of Syracuse",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+          "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+          "source_ids": [
+            "SHR-IT-san-geremia-santa-lucia-venezia"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-lucy-of-syracuse",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-21",
+          "subject": "Saint Lucy",
+          "candidate_count": 7,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Luke the Evangelist",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:santa-giustina-padova",
+          "shrine_id": "shrine:IT:santa-giustina-padova",
+          "source_ids": [
+            "SHR-IT-santa-giustina-padova"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-luke-the-evangelist",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-EV-02",
+          "subject": "Saint Luke the Evangelist",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Margaret Mary Alacoque",
+      "pilot_identity_id": "saint:margaret-mary-alacoque",
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-margaret-mary-alacoque",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-17",
+          "subject": "Saint Margaret Mary Alacoque",
+          "candidate_count": 4,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Mark the Evangelist",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:basilica-san-marco-venezia",
+          "shrine_id": "shrine:IT:basilica-san-marco-venezia",
+          "source_ids": [
+            "SHR-IT-basilica-san-marco-venezia"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-mark-the-evangelist",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-EV-01",
+          "subject": "Saint Mark the Evangelist",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Martha of Bethany",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+          "shrine_id": "shrine:FR:collegiale-sainte-marthe-tarascon",
+          "source_ids": [
+            "SHR-FR-collegiale-sainte-marthe-tarascon"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-martha-of-bethany",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Martin de Porres",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:PE:convento-santo-domingo-lima",
+          "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+          "source_ids": [
+            "SHR-PE-convento-santo-domingo-lima"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-martin-de-porres",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Martin of Tours",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-saint-martin-tours",
+          "shrine_id": "shrine:20261009:FR:basilique-saint-martin-tours",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-saint-martin-tours"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-martin-of-tours",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-29",
+          "subject": "Saint Martin of Tours",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Mary Magdalene",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-marie-madeleine-saint-maximin"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+          "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+          "source_ids": [
+            "SHR-FR-VEZELAY-MADELEINE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-mary-magdalene",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-25",
+          "subject": "Saint Mary Magdalene",
+          "candidate_count": 6,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Matthew the Apostle",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:salerno-duomo",
+          "shrine_id": "shrine:IT:salerno-duomo",
+          "source_ids": [
+            "SHR-IT-salerno-duomo"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-matthew-the-apostle",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-08",
+          "subject": "Saint Matthew",
+          "candidate_count": 4,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Matthias the Apostle",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:DE:trier-sankt-matthias",
+          "shrine_id": "shrine:DE:trier-sankt-matthias",
+          "source_ids": [
+            "SHR-DE-trier-sankt-matthias"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-matthias-the-apostle",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-11",
+          "subject": "Saint Matthias",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Maurice and the Theban martyrs",
+      "pilot_identity_id": null,
+      "identity_guard": "COLLECTIVE_OR_COMPOSITE_HOLD",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CH:abbaye-saint-maurice-agaune",
+          "shrine_id": "shrine:CH:abbaye-saint-maurice-agaune",
+          "source_ids": [
+            "SHR-CH-abbaye-saint-maurice-agaune"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-maurice-and-the-theban-martyrs",
+          "identity_kind": "COLLECTIVE_REQUIRES_RESOLUTION",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Maximin",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-marie-madeleine-saint-maximin"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Meinrad",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CH:einsiedeln-monastery",
+          "shrine_id": "shrine:CH:einsiedeln-our-lady",
+          "source_ids": [
+            "SHR-EINSIEDELN-PILGRIMAGE",
+            "SHR-EINSIEDELN-ENGELWEIHE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Michael the Archangel",
+      "pilot_identity_id": null,
+      "identity_guard": "ANGELIC_NOT_HUMAN",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:abbaye-mont-saint-michel",
+          "shrine_id": "shrine:20261009:FR:abbaye-mont-saint-michel",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-abbaye-mont-saint-michel"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:IT:san-michele-gargano",
+          "shrine_id": "shrine:20261009:IT:san-michele-gargano",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-san-michele-gargano"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-02",
+          "subject": "Saint Michael Archangel",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [
+        {
+          "novena_id": "st_michael",
+          "relation": "DIRECT_DEVOTIONAL_ADDRESSEE_ANGELIC_NOT_HUMAN"
+        }
+      ],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Monica",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:sant-agostino-campo-marzio",
+          "shrine_id": "shrine:IT:sant-agostino-campo-marzio",
+          "source_ids": [
+            "SHR-IT-sant-agostino-campo-marzio"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-monica",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Nicholas",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:basilica-san-nicola-bari",
+          "shrine_id": "shrine:20261009:IT:basilica-san-nicola-bari",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-basilica-san-nicola-bari"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-nicholas-of-myra",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-20",
+          "subject": "Saint Nicholas",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Nicholas of Myra",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-saint-nicolas-de-port",
+          "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+          "source_ids": [
+            "SHR-FR-basilique-saint-nicolas-de-port"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-nicholas-of-myra",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Oliver Plunkett",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+          "shrine_id": "shrine:IE:st-oliver-plunkett-drogheda",
+          "source_ids": [
+            "SG-R65-IE-OLIVER-ARMAGH",
+            "SG-R65-IE-OLIVER-RELIC",
+            "SG-R65-IE-OLIVER-TOURISM"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Oscar Romero",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:SV:catedral-metropolitana-san-salvador",
+          "shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+          "source_ids": [
+            "SHR-SV-catedral-metropolitana-san-salvador"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-oscar-romero",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Patrick",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+          "shrine_id": "shrine:IE:croagh-patrick-pilgrimage",
+          "source_ids": [
+            "SG-R65-IE-CROAGH-LOCAL",
+            "SG-R65-IE-CROAGH-TRAIL",
+            "SG-R65-IE-CROAGH-SAFETY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:IE:lough-derg-station-island",
+          "shrine_id": "shrine:IE:lough-derg",
+          "source_ids": [
+            "SHR-LOUGH-DERG-CONTACT",
+            "PIL-LOUGH-DERG-THREE-DAY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-patrick",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-09",
+          "subject": "Saint Patrick",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Paul the Apostle",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:saint-paul-outside-walls-rome",
+          "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+          "source_ids": [
+            "SHR-PIL-IT-saint-paul-outside-walls-rome"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-paul-the-apostle",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-12",
+          "subject": "Saint Paul",
+          "candidate_count": 6,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Peter Chanel",
+      "pilot_identity_id": "saint:peter-chanel",
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "shrine_places": [
+        {
+          "place_id": "place:NZ:st-peter-chanel-russell",
+          "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+          "source_ids": [
+            "SHR-ST-PETER-CHANEL-NZ",
+            "PIL-NGA-TAPUWAE"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": [
+        {
+          "semantic_key": "feast.saint_peter_chanel",
+          "role": "SEMANTIC_CONTEXT_NOT_CERTIFIED_1962_OBSERVANCE"
+        }
+      ]
+    },
+    {
+      "legacy_name": "Saint Peter the Apostle",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:VA:saint-peter-vatican",
+          "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+          "source_ids": [
+            "SHR-PIL-VA-saint-peter-vatican"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+          "shrine_id": "shrine:GH:kumasi-st-peter-cathedral-basilica",
+          "source_ids": [
+            "SG-R76-SITE-SG-INV-0726",
+            "SG-R76-GEO-SG-INV-0726"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+          "shrine_id": "shrine:MA:cathedrale-saint-pierre-rabat",
+          "source_ids": [
+            "SG-R70-SITE-SG-INV-0705",
+            "SG-R70-CUSTODIAN-SG-INV-0705",
+            "SG-R70-GEO-SG-INV-0705"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-peter-the-apostle",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-01",
+          "subject": "Saint Peter",
+          "candidate_count": 7,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Philip Neri",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:santa-maria-vallicella-rome",
+          "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+          "source_ids": [
+            "SHR-IT-santa-maria-vallicella-rome"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-philip-neri",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Pio of Pietrelcina",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:santuario-san-pio-rotondo",
+          "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-santuario-san-pio-rotondo"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-pio-of-pietrelcina",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Protasius of Milan",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-protasius-of-milan",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Quentin",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-saint-quentin-aisne",
+          "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+          "source_ids": [
+            "SHR-FR-basilique-saint-quentin-aisne"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-quentin",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint René Goupil",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:US:auriesville-martyrs",
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Rita of Cascia",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:basilica-santa-rita-cascia",
+          "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-basilica-santa-rita-cascia"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-rita-of-cascia",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Rose of Lima",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:PE:convento-santo-domingo-lima",
+          "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+          "source_ids": [
+            "SHR-PE-convento-santo-domingo-lima"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-rose-of-lima",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Saturninus",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-saint-sernin-toulouse",
+          "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+          "source_ids": [
+            "SHR-FR-basilique-saint-sernin-toulouse"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-saturninus",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Scholastica",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:montecassino-abbey",
+          "shrine_id": "shrine:IT:montecassino-abbey",
+          "source_ids": [
+            "SHR-IT-montecassino-abbey"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-scholastica",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens",
+      "pilot_identity_id": null,
+      "identity_guard": "COLLECTIVE_OR_COMPOSITE_HOLD",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:cathedrale-saint-etienne-sens",
+          "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+          "source_ids": [
+            "SHR-FR-cathedrale-saint-etienne-sens"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-siviard-saint-columba-of-sens-saint-lupus-of-sens",
+          "identity_kind": "COLLECTIVE_REQUIRES_RESOLUTION",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Stanislaus of Kraków",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:PL:wawel-cathedral-stanislaus",
+          "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+          "source_ids": [
+            "SHR-PL-wawel-cathedral-stanislaus"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-stanislaus-of-krakow",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Stephen of Hungary",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:HU:st-stephen-basilica-budapest",
+          "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+          "source_ids": [
+            "SHR-HU-st-stephen-basilica-budapest"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-stephen-of-hungary",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Teresa of Ávila",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:ES:carmel-alba-tormes",
+          "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+          "source_ids": [
+            "SHR-PIL-ES-carmel-alba-tormes"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-teresa-of-avila",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-08",
+          "subject": "Saint Teresa of Ávila",
+          "candidate_count": 4,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Thérèse of Lisieux",
+      "pilot_identity_id": "saint:therese-of-lisieux",
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:basilique-sainte-therese-lisieux",
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:FR:carmel-lisieux",
+          "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-carmel-lisieux"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-therese-of-lisieux",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-05",
+          "subject": "Saint Thérèse of Lisieux",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [
+        {
+          "novena_id": "st_therese",
+          "relation": "DIRECT_DEVOTIONAL_ADDRESSEE"
+        }
+      ],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Thomas Aquinas",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:couvent-jacobins-toulouse",
+          "shrine_id": "shrine:FR:couvent-jacobins-toulouse",
+          "source_ids": [
+            "SHR-FR-couvent-jacobins-toulouse"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-thomas-aquinas",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-DC-05",
+          "subject": "Saint Thomas Aquinas",
+          "candidate_count": 2,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Thomas the Apostle",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:IT:ortona-san-tommaso",
+          "shrine_id": "shrine:IT:ortona-san-tommaso",
+          "source_ids": [
+            "SHR-IT-ortona-san-tommaso"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-thomas-the-apostle",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-AP-07",
+          "subject": "Saint Thomas",
+          "candidate_count": 3,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Titus",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:GR:saint-titus-heraklion",
+          "shrine_id": "shrine:GR:saint-titus-heraklion",
+          "source_ids": [
+            "SHR-GR-saint-titus-heraklion"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-titus",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Turibius of Astorga",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:ES:santo-toribio-liebana",
+          "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+          "source_ids": [
+            "SHR-PIL-ES-santo-toribio-liebana"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Vincent de Paul",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:FR:rue-du-bac",
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-vincent-de-paul",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [
+        {
+          "subject_id": "SNT-OT-28",
+          "subject": "Saint Vincent de Paul",
+          "candidate_count": 5,
+          "photo_and_copyright_gate": "NOT_RELEASE_APPROVED",
+          "approval": "RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE"
+        }
+      ],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Wenceslas",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+          "shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
+          "source_ids": [
+            "SHR-STARA-BOLESLAV-OFFICIAL",
+            "PIL-ST-WENCESLAS-NATIONAL"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-wenceslaus",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": [
+        {
+          "semantic_key": "feast.saint_wenceslas",
+          "role": "SEMANTIC_CONTEXT_NOT_CERTIFIED_1962_OBSERVANCE"
+        }
+      ]
+    },
+    {
+      "legacy_name": "Saint Willibrord",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:LU:basilica-st-willibrord-echternach",
+          "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+          "source_ids": [
+            "SHR-LU-basilica-st-willibrord-echternach"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:saint-willibrord",
+          "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Saint Winefride",
+      "pilot_identity_id": null,
+      "identity_guard": "PERSON_NAME_NEEDS_REVIEW",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:GB:holywell-st-winefride",
+          "shrine_id": "shrine:GB:holywell-st-winefride",
+          "source_ids": [
+            "SHR-HOLYWELL-CONTACT",
+            "PIL-HOLYWELL-FEAST",
+            "PIL-HOLYWELL-LMS"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": [
+        {
+          "semantic_key": "observance.holywell_saint_winefride",
+          "role": "SEMANTIC_CONTEXT_NOT_CERTIFIED_1962_OBSERVANCE"
+        }
+      ]
+    },
+    {
+      "legacy_name": "The Three Magi",
+      "pilot_identity_id": null,
+      "identity_guard": "COLLECTIVE_OR_COMPOSITE_HOLD",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:DE:kolner-dom-three-kings",
+          "shrine_id": "shrine:DE:kolner-dom-three-kings",
+          "source_ids": [
+            "SHR-DE-kolner-dom-three-kings"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [
+        {
+          "subject_id": "subject:the-three-magi",
+          "identity_kind": "COLLECTIVE_REQUIRES_RESOLUTION",
+          "verification": "RELIC_OWNER_IDENTITY_NOT_YET_REVIEWED_FOR_SAINTS"
+        }
+      ],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    },
+    {
+      "legacy_name": "Uganda Martyrs",
+      "pilot_identity_id": null,
+      "identity_guard": "COLLECTIVE_OR_COMPOSITE_HOLD",
+      "identity_status": "UNRECONCILED",
+      "shrine_places": [
+        {
+          "place_id": "place:UG:munyonyo-martyrs",
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        },
+        {
+          "place_id": "place:UG:namugongo-martyrs",
+          "shrine_id": "shrine:UG:namugongo-martyrs",
+          "source_ids": [
+            "SHR-NAMUGONGO-OFFICIAL",
+            "PIL-NAMUGONGO-MARTYRS-DAY"
+          ],
+          "relation": "SHRINE_ASSOCIATION_NOT_LIFE_LOCATION"
+        }
+      ],
+      "relic_subjects": [],
+      "sacred_art_subjects": [],
+      "novenas": [],
+      "calendar_semantics": []
+    }
+  ],
+  "not_in_legacy_shrine_names": {
+    "sacred_art_subjects": [
+      {
+        "subject_id": "SNT-AP-05",
+        "subject": "Saint Philip",
+        "group": "AP"
+      },
+      {
+        "subject_id": "SNT-AP-09",
+        "subject": "Saint James the Less",
+        "group": "AP"
+      },
+      {
+        "subject_id": "SNT-AP-10",
+        "subject": "Saint Simon",
+        "group": "AP"
+      },
+      {
+        "subject_id": "SNT-AP-13",
+        "subject": "Saint Jude Thaddeus",
+        "group": "AP"
+      },
+      {
+        "subject_id": "SNT-DC-03",
+        "subject": "Saint Jerome",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-04",
+        "subject": "Saint Gregory the Great",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-06",
+        "subject": "Saint Bonaventure",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-07",
+        "subject": "Saint Bernard of Clairvaux",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-13",
+        "subject": "Saint Athanasius",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-14",
+        "subject": "Saint Basil the Great",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-15",
+        "subject": "Saint Gregory Nazianzen",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-16",
+        "subject": "Saint John Chrysostom",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-17",
+        "subject": "Saint Isidore of Seville",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-18",
+        "subject": "Saint Bede the Venerable",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-19",
+        "subject": "Saint Anselm",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-20",
+        "subject": "Saint Peter Damian",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-21",
+        "subject": "Saint Albert the Great",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-22",
+        "subject": "Saint Robert Bellarmine",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-23",
+        "subject": "Saint Peter Canisius",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-24",
+        "subject": "Saint Lawrence of Brindisi",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-25",
+        "subject": "Saint Cyril of Alexandria",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-26",
+        "subject": "Saint Cyril of Jerusalem",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-DC-27",
+        "subject": "Saint Ephrem",
+        "group": "DC"
+      },
+      {
+        "subject_id": "SNT-OT-03",
+        "subject": "Saint Raphael Archangel",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-08",
+        "subject": "Saint Louis IX",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-10",
+        "subject": "Saint Stephen",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-11",
+        "subject": "Saint Lawrence",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-19",
+        "subject": "Saint Sebastian",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-22",
+        "subject": "Saint Agnes",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-23",
+        "subject": "Saint Cecilia",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-24",
+        "subject": "Saint Catherine of Alexandria",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-26",
+        "subject": "Saint Geneviève",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-31",
+        "subject": "Saint Rosalia",
+        "group": "OT"
+      },
+      {
+        "subject_id": "SNT-OT-32",
+        "subject": "Saint Francis of Paola",
+        "group": "OT"
+      }
+    ],
+    "relic_subjects": [
+      {
+        "subject_id": "subject:our-lord-jesus-christ",
+        "label": "Our Lord Jesus Christ",
+        "identity_kind": "OUR_LORD"
+      },
+      {
+        "subject_id": "subject:friars-leo-masseo-rufino-and-angelo",
+        "label": "Friars Leo, Masseo, Rufino and Angelo",
+        "identity_kind": "COLLECTIVE_REQUIRES_RESOLUTION"
+      },
+      {
+        "subject_id": "subject:saint-dismas-traditional-name",
+        "label": "Saint Dismas (traditional name)",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-maximin-of-aix",
+        "label": "Saint Maximin of Aix",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saints-louis-and-zelie-martin",
+        "label": "Saints Louis and Zélie Martin",
+        "identity_kind": "COLLECTIVE_REQUIRES_RESOLUTION"
+      },
+      {
+        "subject_id": "subject:saint-matthew-the-apostle-and-evangelist",
+        "label": "Saint Matthew the Apostle and Evangelist",
+        "identity_kind": "COLLECTIVE_REQUIRES_RESOLUTION"
+      },
+      {
+        "subject_id": "subject:saint-jerome",
+        "label": "Saint Jerome",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:multiple-saints-collection",
+        "label": "Multiple saints (collection)",
+        "identity_kind": "COLLECTIVE_REQUIRES_RESOLUTION"
+      },
+      {
+        "subject_id": "subject:sister-lucia-dos-santos",
+        "label": "Sister Lúcia dos Santos",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:blessed-virgin-mary",
+        "label": "Blessed Virgin Mary",
+        "identity_kind": "BLESSED_VIRGIN"
+      },
+      {
+        "subject_id": "subject:saint-philip-the-apostle",
+        "label": "Saint Philip the Apostle",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-james-the-less",
+        "label": "Saint James the Less",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-jude-thaddeus",
+        "label": "Saint Jude Thaddeus",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-simon-the-zealot",
+        "label": "Saint Simon the Zealot",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-stephen-the-protomartyr",
+        "label": "Saint Stephen the Protomartyr",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-timothy",
+        "label": "Saint Timothy",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-lazarus-of-bethany",
+        "label": "Saint Lazarus of Bethany",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-ignatius-of-antioch",
+        "label": "Saint Ignatius of Antioch",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-polycarp-of-smyrna",
+        "label": "Saint Polycarp of Smyrna",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-justin-martyr",
+        "label": "Saint Justin Martyr",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-lawrence-of-rome",
+        "label": "Saint Lawrence of Rome",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-agnes-of-rome",
+        "label": "Saint Agnes of Rome",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-cecilia",
+        "label": "Saint Cecilia",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-sebastian",
+        "label": "Saint Sebastian",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-vincent-of-saragossa",
+        "label": "Saint Vincent of Saragossa",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-irenaeus-of-lyons",
+        "label": "Saint Irenaeus of Lyons",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-cyprian-of-carthage",
+        "label": "Saint Cyprian of Carthage",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-athanasius",
+        "label": "Saint Athanasius",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-basil-the-great",
+        "label": "Saint Basil the Great",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-gregory-nazianzen",
+        "label": "Saint Gregory Nazianzen",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-john-chrysostom",
+        "label": "Saint John Chrysostom",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-gregory-of-nyssa",
+        "label": "Saint Gregory of Nyssa",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-gregory-the-great",
+        "label": "Saint Gregory the Great",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-leo-the-great",
+        "label": "Saint Leo the Great",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-john-damascene",
+        "label": "Saint John Damascene",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-bernard-of-clairvaux",
+        "label": "Saint Bernard of Clairvaux",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-bonaventure",
+        "label": "Saint Bonaventure",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-catherine-of-alexandria",
+        "label": "Saint Catherine of Alexandria",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-bridget-of-sweden",
+        "label": "Saint Bridget of Sweden",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-columba-of-iona",
+        "label": "Saint Columba of Iona",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-david-of-wales",
+        "label": "Saint David of Wales",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-thomas-becket",
+        "label": "Saint Thomas Becket",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-thomas-more",
+        "label": "Saint Thomas More",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-john-fisher",
+        "label": "Saint John Fisher",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-edmund-campion",
+        "label": "Saint Edmund Campion",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-boniface",
+        "label": "Saint Boniface",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-elizabeth-of-hungary",
+        "label": "Saint Elizabeth of Hungary",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-hedwig-of-silesia",
+        "label": "Saint Hedwig of Silesia",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-olaf-of-norway",
+        "label": "Saint Olaf of Norway",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-genevieve-of-paris",
+        "label": "Saint Geneviève of Paris",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-remi-of-reims",
+        "label": "Saint Rémi of Reims",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-louis-ix",
+        "label": "Saint Louis IX",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-perpetua",
+        "label": "Saint Perpetua",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-felicity",
+        "label": "Saint Felicity",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-maurice-of-agaunum",
+        "label": "Saint Maurice of Agaunum",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-joseph-mukasa-balikuddembe",
+        "label": "Saint Joseph Mukasa Balikuddembe",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-mathias-mulumba",
+        "label": "Saint Mathias Mulumba",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:blessed-daudi-okello",
+        "label": "Blessed Daudi Okello",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:blessed-jildo-irwa",
+        "label": "Blessed Jildo Irwa",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-gonsalo-garcia",
+        "label": "Saint Gonsalo Garcia",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-andrew-kim-taegon",
+        "label": "Saint Andrew Kim Taegon",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-paul-chong-hasang",
+        "label": "Saint Paul Chong Hasang",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-laurent-imbert",
+        "label": "Saint Laurent Imbert",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-paul-miki",
+        "label": "Saint Paul Miki",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-pedro-calungsod",
+        "label": "Saint Pedro Calungsod",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-lorenzo-ruiz",
+        "label": "Saint Lorenzo Ruiz",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-john-de-britto",
+        "label": "Saint John de Britto",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-philip-of-jesus",
+        "label": "Saint Philip of Jesus",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      },
+      {
+        "subject_id": "subject:saint-mariana-de-jesus",
+        "label": "Saint Mariana de Jesús",
+        "identity_kind": "PERSON_CANONICAL_STATUS_UNREVIEWED"
+      }
+    ],
+    "novenas_without_person_target": [
+      {
+        "novena_id": "holy_ghost",
+        "title_en": "Novena to the Holy Ghost",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "christmas",
+        "title_en": "Christmas Novena",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "corpus_christi",
+        "title_en": "Corpus Christi Novena",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "sacred_heart",
+        "title_en": "Novena to the Sacred Heart",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "immaculate_conception",
+        "title_en": "Novena to the Immaculate Conception",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "annunciation",
+        "title_en": "Novena for the Annunciation",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "assumption",
+        "title_en": "Novena for the Assumption",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "seven_sorrows",
+        "title_en": "Novena of the Seven Sorrows",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "holy_souls",
+        "title_en": "Novena for the Holy Souls",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "perpetual_help",
+        "title_en": "Our Lady of Perpetual Help Novena",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "christ_the_king",
+        "title_en": "Novena to Christ the King",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      },
+      {
+        "novena_id": "immaculate_heart",
+        "title_en": "Novena to the Immaculate Heart of Mary",
+        "relationship": "NOT_DIRECT_SAINT_ADDRESSEE"
+      }
+    ]
+  },
+  "calendar_resolver_boundary": {
+    "inventory_kind": "72 partial 2026 fixture checks + 5 explicit semantic keys; not full sanctoral",
+    "independent_fixture_count": 72,
+    "semantic_keys": [
+      "feast.saint_apollinaris",
+      "feast.saint_anne",
+      "observance.holywell_saint_winefride",
+      "feast.saint_peter_chanel",
+      "feast.saint_wenceslas"
+    ],
+    "formal_feast_mapping_complete": false
+  }
+}
