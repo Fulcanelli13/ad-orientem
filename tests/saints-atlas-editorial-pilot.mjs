@@ -7,7 +7,7 @@ const pilot=read("data/saints/holiness-first-editorial-pilot-20261015.v1.json");
 assert.equal(audit.schema,"ao.saints.precanonical-shrine-name-audit.v1");
 assert.equal(audit.scope,"RESEARCH_ONLY_NOT_APP_VISIBLE");
 assert.equal(pilot.publication,"RESEARCH_ONLY_NOT_APP_VISIBLE");
-assert.equal(audit.counts.shrine_records,shrineSot.shrines.length);
+assert(shrineSot.shrines.length>=audit.counts.shrine_records,"Source snapshot must not lose historical shrine records; later parallel shrine additions are allowed");
 const originalEdges=shrineSot.shrines.flatMap(s=>(s.associated_saints||[]).map(name=>JSON.stringify([name,s.shrine_id,s.place_id,[...(s.source_ids||[])].sort()]))).sort();
 const auditEdges=audit.mentions.flatMap(m=>m.shrine_associations.map(link=>JSON.stringify([m.name_literal,link.shrine_id,link.place_id,[...link.source_ids].sort()]))).sort();
 assert.deepEqual(auditEdges,originalEdges,"Every existing name-shrine-place-source association must be preserved");
