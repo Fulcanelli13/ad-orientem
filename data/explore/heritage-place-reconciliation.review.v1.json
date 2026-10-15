@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 230,
-    "places_with_linked_records": 228,
+    "places": 237,
+    "places_with_linked_records": 235,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 184,
-    "shrines": 226,
-    "pilgrimages": 212,
+    "multicategory_heritage_places": 191,
+    "shrines": 233,
+    "pilgrimages": 219,
     "relic_claims": 122,
     "apparition_accounts": 33,
     "canonical_customs": 13,
@@ -492,6 +492,19 @@
       "record_ids": {
         "shrines": [
           "shrine:CL:sanctuary-of-our-lady-of-la-tirana-chile"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "display_name": "Basilica of Our Lady Help of Christians — Sheshan",
+      "record_ids": {
+        "shrines": [
+          "shrine:CN:sheshan-our-lady-help-christians"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CN:sheshan-our-lady-help-christians-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -1775,6 +1788,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "display_name": "Basílica del Santo Cristo Crucificado de Esquipulas",
+      "record_ids": {
+        "shrines": [
+          "shrine:GT:esquipulas-black-christ-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:GT:esquipulas-black-christ-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
       "display_name": "National Shrine of Our Lady of Marija Bistrica",
       "record_ids": {
@@ -1790,6 +1816,19 @@
       "record_ids": {
         "shrines": [
           "shrine:HR:national-shrine-of-saint-joseph-karlovac"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "display_name": "Máriapócs Kegytemplom — Greek Catholic Pilgrimage Basilica",
+      "record_ids": {
+        "shrines": [
+          "shrine:HU:mariapocs-greek-catholic-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:HU:mariapocs-greek-catholic-basilica-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2215,6 +2254,19 @@
         ],
         "relics": [
           "relic:IT:duomo-torino-sindone"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "display_name": "Santuario del Miracolo Eucaristico — Chiesa di San Francesco, Lanciano",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:lanciano-eucharistic-miracle"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:lanciano-eucharistic-miracle-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2978,6 +3030,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PH:manaoag-rosary-basilica",
+      "display_name": "Minor Basilica of Our Lady of the Rosary of Manaoag",
+      "record_ids": {
+        "shrines": [
+          "shrine:PH:manaoag-rosary-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PH:manaoag-rosary-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
       "display_name": "National Shrine of Our Lady of Fatima, Valenzuela",
       "record_ids": {
@@ -3224,6 +3289,32 @@
         ],
         "routes": [
           "route:PT:braga-cathedral-sameiro"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PT:santarem-santissimo-milagre",
+      "display_name": "Igreja de Santo Estêvão — Santuário do Santíssimo Milagre, Santarém",
+      "record_ids": {
+        "shrines": [
+          "shrine:PT:santarem-santissimo-milagre"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PT:santarem-santissimo-milagre-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "display_name": "Basílica Santuario Nuestra Señora de los Milagros de Caacupé",
+      "record_ids": {
+        "shrines": [
+          "shrine:PY:caacupe-our-lady-miracles"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PY:caacupe-our-lady-miracles-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3693,8 +3784,8 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 226,
-    "pilgrimages": 184,
+    "shrines": 233,
+    "pilgrimages": 191,
     "relics": 92,
     "apparitions": 30,
     "customs": 55,
@@ -3726,5 +3817,17 @@
       "apparition:BA:medjugorje"
     ],
     "scope": "Review ledger refreshed after a source-anchored canonical Place release; no unqualified relic, apparition-authenticity or TLM inference."
+  },
+  "georeference_tranche_20261015_r72": {
+    "new_sites": [
+      "place:IT:lanciano-eucharistic-miracle",
+      "place:PT:santarem-santissimo-milagre",
+      "place:HU:mariapocs-greek-catholic-basilica",
+      "place:CN:sheshan-our-lady-help-christians",
+      "place:PH:manaoag-rosary-basilica",
+      "place:GT:esquipulas-black-christ-basilica",
+      "place:PY:caacupe-our-lady-miracles"
+    ],
+    "rule": "One sourced physical pin per distinct major pilgrimage sanctuary; no religious authenticity inference."
   }
 }
