@@ -34,7 +34,7 @@ const altSource=alternateIsTract
 const gradualCombined=Object.fromEntries(["lat","en","fr"].map(lang=>[
   lang,gradualSource[lang]+"\n"+altSource[lang],
 ]));
-const preGospelChants=separatelyNamedChants?{
+const readerChantSourceProof=separatelyNamedChants?{
   status:"SOURCE_VERIFIED_EXACT",sourcePath:"Sancti/10-07",
   sourceOrder:["Graduale",altSection],
   aggregateVerifiedLanguages:["la","en","fr"],
@@ -45,7 +45,7 @@ const preGospelChants=separatelyNamedChants?{
 }:null;
 const proper={
   sourcePath:"Sancti/10-07",
-  ...(separatelyNamedChants?{preGospelChants}:{}),
+  ...(separatelyNamedChants?{readerChantSourceProof}:{}),
   introit:t("Gaudeámus omnes in Dómino","Let us all rejoice in the Lord","Réjouissons-nous ensemble dans le Seigneur"),
   collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son","Ô Dieu, dont le Fils unique")],
   epistle:t("Ab inítio et ante sǽcula","From the beginning and before the world","Dès le commencement et avant les siècles"),
