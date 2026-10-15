@@ -1283,6 +1283,26 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-tp381-route='pray.dying_companion']").isVisible(),true,
     "The urgent priest-first bedside exit must remain visible above optional private prayers");
   await shot("03i2-pray-good-death");
+  await page.locator("#aoPray435930 [data-tp381-route='pray.dying_companion']").evaluate(el=>el.click());
+  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")
+    ?.dataset?.aoTraditionalPrayRoute==="pray.dying_companion",null,{timeout:7000});
+  assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop").count(),3,
+    "Dying Companion must have one timeline for three canonical pastoral stages");
+  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),
+    "dying-now","Urgent bedside guide must start by calling a priest");
+  assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),
+    /Call a priest now|Appelez un prêtre maintenant/,
+    "Bedside guide has buried priest-first pastoral action");
+  assert.equal(await page.locator("#aoPray435930 [data-ao-dying-companion-options]").evaluate(el=>el.open),false,
+    "Pastoral explanations must not displace urgent priest-first guidance");
+  await shot("03i3-pray-dying-companion-priest-first");
+  // Leaving the full-screen Prayer owner must use its native Home control.
+  // Attempting to click the app dock through an open modal is not a supported
+  // navigation path and is correctly blocked by the backdrop.
+  await page.locator("#aoPray435930 [data-tp381-home]").click();
+  await page.waitForFunction(()=>!document.querySelector("#aoPray435930")?.classList?.contains("open"),null,{timeout:7000});
+
+
   await page.locator("[data-ao-app-surface='learn']").click();
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
   await waitForFxSettled();
