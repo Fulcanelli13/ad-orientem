@@ -37,6 +37,10 @@ assert.equal(falseProtectedId.status,"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REV
 assert.equal(go(newman,"2026-10-09",null,"III").status,"INDETERMINATE");
 assert.equal(go(newman,"2026-10-09","sancti:10-09:3:w",null).status,"INDETERMINATE");
 assert.equal(go(newman,"2026-10-09","sancti:10-09:3:w","III",{protectedFeasts:[]}).status,"INDETERMINATE");
+assert.equal(go(newman,"2026-10-09","sancti:10-09:3:w","III",{protectedFeasts:Array(70).fill(annex.feasts[0])}).status,"INDETERMINATE","70 duplicates must not pass as a complete annex");
+const unsourced=structuredClone(newman);
+unsourced.recognition.sourceIds=[];
+assert.equal(go(unsourced,"2026-10-09","sancti:10-09:3:w","III").reason,"SAINTHOOD_RECOGNITION_OR_SOURCE_UNVERIFIED");
 assert.equal(go(newman,"2026-10-09",":feria:4:w","IV").status,"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW");
 assert.equal(assess({date:"2026-10-09",saint:{id:"canon-group.carmelites-compiegne"},observedDay:{},protectedFeasts:annex.feasts}).reason,"CANONIZATION_GROUP_NOT_PERSON");
 assert.throws(()=>assess({date:"2026-02-30",saint:newman}),TypeError);
