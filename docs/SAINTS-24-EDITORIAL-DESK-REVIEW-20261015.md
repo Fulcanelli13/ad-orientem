@@ -149,3 +149,30 @@ Sources were checked against their original papal general audiences, letters, me
 The older `why_honoured` and three claim-linked fact records are retained **only as research evidence**. They must **not** be rendered as a second series of paragraphs or expandable 'Read more' within the profile. The user-approved profile instead displays the single continuous narrative and reserves 'Read further' for external biographies.
 
 Human/editorial certification is **not implied** by passing word-count, source-link or syntax checks. All 24 remain research-only, all 24 require a final EN/FR sentence-to-source copyedit, and exceptional dates/places remain explicitly qualified. Artwork selection and feast observances are owned by the pre-existing Art and Calendar pipelines. Public Pages unchanged.
+
+
+## Phase 17 — source-owned expansion beyond 30 biographies (15 October 2026)
+
+User direction: move on from repetitive historical biography reviews to **working application coverage**. The existing native Saints section now offers separate source-based browse lists:
+
+| Native Saints list section | Recorded coverage | Editorial meaning |
+| --- | ---: | --- |
+| Complete profile-shaped bilingual research lives | **30** | Six original Place-backed pilots + 24 source-linked drafts, no artwork promotion |
+| Historical sanctoral archive | **307 distinct source-subject IDs** from **311 components / 252 dates** | Archive index, **not** 307 unique canonized people or current observed feast rulings |
+| Official post-1960 canonization reference | **258 named people + 13 group records** | Source-index identification, not fabricated lives or inserted 1962 observances |
+| Doctors of the Church owner-roster | **38 source roster records** | Integrated read-only source bridge; titles and dates stay Calendar-owned |
+| Sacred Art five-star leads for first six | **2 candidate paintings** | User score retained; neither reproduction is approved to display |
+
+The shared read-only snapshot is `data/saints/read-only-calendar-art-index-20261015.v1.json`. It embeds the exact original Git blob SHAs and source branch IDs for the historical archive (Saints owner), the Calendar Doctors and post-1960 canonization registries (PR #1226), and Sacred Art five-star candidates (PR #1231). This is a **reproducible derived view**, not another canonical inventory: update/reconcile it when its owner sources advance.
+
+### What the user sees in the draft app
+
+In Explore > Saints > List, the source-provenance tabs are **30 biographies**, **Historical sanctoral**, and **Later canonizations**. Opening a source-only reference shows the exact source name, archived subject date or canonization date, group description where the Calendar owner supplied one, and original official links for post-1960 canonizations. It **does not show** invented birthplaces, holiness biographies, fake portraits, feast ranks or map pins. The earlier category chips operate only within the 30 actual biography profiles.
+
+The Explore > Saints > Map still uses the source-owned nine physical sites / eight published-precision pins, with the original six profiles linked to their associated Places. Historical subjects, newly canonized names and martyr collectives do not generate map points.
+
+The test `tests/saints-source-index.mjs` asserts exact **307**, **258+13**, **38**, **2** counts, unique references, scope rendering in EN/FR, no artwork or new pins, and no mass/feast inference. The established `tests/saints-catalogue-native.mjs` continues to protect the 30-profile catalogue.
+
+### Next integration boundary
+
+As source-owner projects deliver a source-backed life, an exact identity link, Calendar observance or an approved reproduction, attach it to that *one* canonical person's reader entry. Do not backfill biographies through AI prose, repeat the user's artwork ratings, or infer personal identities from saint names/regions/groups. No permissions requests. No unrelated pipeline mutation, PR auto-merge, or GitHub Pages release from this work.
