@@ -1,0 +1,57 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
+import {assertShrinesPilgrimagesRegistry} from "../src/find/shrines-contracts.js";
+import {projectExploreDataset} from "../src/find/explore-projection.js";
+import {exploreMapFeatures} from "../src/find/map-runtime.js";
+const read=p=>JSON.parse(readFileSync(p,"utf8"));
+const g=read("data/geography/seed-registry.v1.json"),s=read("data/shrines/shrines-pilgrimages-seed.v1.json"),sources=read("data/shrines/source-registry.v1.json"),phenomena=read("data/explore/sacred-phenomena-seed.v1.json");
+const r=read("data/geography/research/sacred-geography-coverage-first-r70.v1.json"),q=read("data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json"),h=read("data/explore/heritage-place-reconciliation.review.v1.json"),m=read("data/geography/research/sacred-geography-r74-essential-sites.v1.json");
+assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R74_ESSENTIAL_RECONCILIATION_V1");
+assert.deepEqual([m.published_new.length,m.existing_confirmed.length,m.existing_pilgrimage_enrichment.length,m.held.length],[1,13,1,1]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[247,243,230,421]);
+assert.equal(assertExploreGeographyRegistry(g).pass,true);
+assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
+assert.equal(r.candidates.length,750);
+assert.equal(q.rows.length,750);
+assert.deepEqual([r.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,r.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,r.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[95,70,585]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched,q.counts.essential_remaining],[89,70,591,21]);
+const places=new Map(g.places.map(x=>[x.place_id,x])),shrines=new Map(s.shrines.map(x=>[x.shrine_id,x])),pilgrimages=new Map(s.pilgrimages.map(x=>[x.pilgrimage_id,x])),ids=new Set(sources.sources.map(x=>x.id));
+assert.equal(places.size,247,"No duplicate physical-site identity");
+assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,243,"One shrine per physical pin");
+const projected=projectExploreDataset({directory:{records:[],communities:[]},geography:g,shrines:{...s,sources:sources.sources},sacredPhenomena:phenomena,customs:{customs:[],attestations:[],sources:[]},novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},media:{approved:[],gallery:[]}});
+for(const row of m.published_new){
+ const p=places.get(row.place_id),sh=shrines.get(row.shrine_id),pil=pilgrimages.get(row.pilgrimage_id);
+ assert.ok(p&&sh&&pil,"One new linked sanctuary and destination pilgrimage");
+ assert.equal(p.address.country_code,row.country);
+ assert.ok(isMapPublishablePlaceGeo(p.geo,row.country));
+ assert.deepEqual([p.geo.lat,p.geo.lng,p.geo.precision,p.geo.source_url],[row.lat,row.lng,row.precision,row.geo_source_url]);
+ assert.equal(sh.place_id,p.place_id);
+ assert.equal(pil.destination_shrine_id,sh.shrine_id);
+ assert.ok(sh.source_ids.every(x=>ids.has(x)));
+ assert.equal(sh.recognition_class,"UNKNOWN");
+ assert.ok(sh.origin_summary.length>60&&sh.origin_summary_fr.length>60);
+ assert.equal(exploreMapFeatures(projected.byLens.shrines.filter(x=>x.place_id===p.place_id)).length,1);
+ assert.equal(exploreMapFeatures(projected.byLens.pilgrimages.filter(x=>x.place_id===p.place_id)).length,1);
+ assert.ok(!phenomena.apparitions.some(x=>x.place_id===p.place_id));
+}
+for(const row of m.existing_confirmed){
+ const p=places.get(row.place_id),sh=shrines.get(row.shrine_id);
+ assert.ok(p&&sh&&sh.place_id===p.place_id,"No invented second Place: "+row.candidate_id);
+ assert.ok(isMapPublishablePlaceGeo(p.geo,p.address.country_code));
+ assert.equal(r.candidates.find(x=>x.candidate_id===row.candidate_id)?.confirmed_place_id,p.place_id);
+ assert.equal(q.rows.find(x=>x.candidate_id===row.candidate_id)?.status,"EXPLICIT_PROMOTED");
+ assert.equal(q.rows.find(x=>x.candidate_id===row.candidate_id)?.canonical_place_id,p.place_id);
+}
+const lv=m.existing_pilgrimage_enrichment[0];
+assert.equal(lv.place_id,"place:VN:our-lady-la-vang-national-shrine");
+assert.equal(g.places.filter(x=>x.place_id===lv.place_id).length,1);
+assert.equal(s.shrines.filter(x=>x.place_id===lv.place_id).length,1);
+assert.equal(pilgrimages.get(lv.pilgrimage_id)?.destination_shrine_id,lv.shrine_id);
+assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0673")?.name,"National Marian Shrine of Our Lady of La Vang");
+assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0746")?.status,"TEXT_HINT_REVIEW");
+assert.equal(places.get("place:NZ:st-peter-chanel-russell").geo.indicative_only,true);
+assert.equal(h.place_crosswalk.length,247);
+assert.equal(exploreMapFeatures(projected.byLens.shrines).length,243);
+assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,230);
+console.log("PASS R74: 14 essential dispositions, Rigaud, La Vang and no new revelation/relic claims");
