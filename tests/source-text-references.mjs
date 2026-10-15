@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
-import {readFileSync} from "node:fs";
-import {resolveFormationReference,resolveCanonicalWork,inspectReferenceInventory} from "../src/source-text/reference-crosswalk.js";
+import {readFileSync,existsSync} from "node:fs";
+import {resolveFormationReference,resolveCanonicalWork,inspectReferenceInventory,inspectCurrentFormationRevision,prepareReferencePresentation} from "../src/source-text/reference-crosswalk.js";
 import {normalizeWitnessLocator,validateExternalLocatorBinding,
  editionQualifiedCitation,extractReviewedWitnessDocument} from "../src/source-text/witness-locators.js";
 const json=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
@@ -59,4 +59,64 @@ assert.equal(passage.passages[0].editionQualifiedCitation,
 assert.throws(()=>extractReviewedWitnessDocument({profile:p,work:{...work,rights:{status:"UNREVIEWED"}},review,
  heading:"Synthetic",hostUrl:p.witnessUrl,records:[{locator:"23",text:"Synthetic sentence."}]}),
  /REPRODUCTION_NOT_CLEARED/);
+
+const md=prepareReferencePresentation({formation,key:"FORM-SYN-02::MD47",profiles});
+assert.equal(md.publicDisplayApproved,false);
+assert.equal(md.inlineCitation,null);
+assert.equal(md.quote,null);
+assert.equal(md.link.label,"Read further");
+assert.ok(md.link.url.includes("vatican.va"));
+assert.ok(md.compactTitle.includes("Mediator Dei"));
+assert.equal(md.deeperLocator,"Pius XII, Mediator Dei §§46–49, liturgy and faith");
+assert.deepEqual(md.potentialWitnessProfiles,["WIT-MEDIATOR-DEI-EN-VATICAN"]);
+assert.equal(md.witnessMatchStatus,"EXACT_URL_ONLY_NOT_VERIFIED_PASSAGE");
+const hume=prepareReferencePresentation({formation,key:"FORM-SYN-02::HUME-MIRACLE-X",profiles});
+assert.deepEqual(hume.potentialWitnessProfiles,["WIT-HUME-E10-ONLINE"]);
+assert.ok(hume.originalRole.includes("original philosophical opponent"));
+assert.equal(hume.publicDisplayApproved,false);
+const noProfile=prepareReferencePresentation({formation,key:"FORM-SYN-01::AQUINAS",profiles});
+assert.equal(noProfile.witnessMatchStatus,"NO_EDITION_PROFILE_MATCH");
+assert.equal(noProfile.publicDisplayApproved,false);
+// The old 408/304 registry is a HISTORICAL BASELINE. The current owner v2
+// was added to main after the branch fork. Test the real owner file whenever
+// it exists in checkout (e.g. PR merge CI), but do not copy it into this PR.
+const currentOwnerPath=new URL("../data/reference/formation-current-source-reconciliation.v2.json",import.meta.url);
+let currentTested=false;
+if(existsSync(currentOwnerPath)){
+ const v2=JSON.parse(readFileSync(currentOwnerPath,"utf8"));
+ const current=inspectCurrentFormationRevision({formation,revision:v2,profiles});
+ assert.equal(current.currentSourceBindings,527);
+ assert.equal(current.currentUrlWitnesses,332);
+ assert.equal(current.newlyAddedByOwner,119);
+ assert.equal(current.originalHistoricalBindingsRemoved,0);
+ assert.equal(current.newClaimCertifications,0);
+ assert.equal(current.productionDisplayApproved,false);
+ assert.equal(current.existingProfileUrlMatches.length,4);
+ assert.deepEqual(current.existingProfileUrlMatches.map(x=>x.bindingKey).sort(),
+ ["FORM-SYN-02::HUME-MIRACLE-X","FORM-SYN-02::MD47",
+  "FORM-SYN-03::MD47","FORM-SYN-06::MD47"].sort());
+ assert.ok(current.existingProfileUrlMatches.every(x=>x.publicDisplayApproved===false));
+ currentTested=true;
+}
+// Exercise revised-dataset consistency without manufacturing 119 owner records.
+const mock={
+ schema:"AO_FORMATION_CURRENT_SOURCE_RECONCILIATION_V2",
+ baseline:{historical_source_bindings:408},
+ added_source_bindings:[{key:"FORM-TEST::NO-MODULE-CLAIM",url:"https://example.invalid/draft-test",original_context_approved:false}],
+ old_identity_changes:[],missing_historical_bindings:[],
+ metrics:{source_bindings:409,url_witnesses:305,
+  scoped_source_bindings_added:1,scoped_source_bindings_removed:0,
+  currently_independently_certified_new_claims:0}
+};
+const future=inspectCurrentFormationRevision({formation,revision:mock,profiles});
+assert.equal(future.currentSourceBindings,409);
+assert.equal(future.currentUrlWitnesses,305);
+assert.equal(future.existingProfileUrlMatches.length,4);
+assert.throws(()=>inspectCurrentFormationRevision({formation,revision:
+ {...mock,metrics:{...mock.metrics,source_bindings:410}},profiles}),/COUNTS_OR_APPROVAL_CONTRADICTORY/);
+assert.throws(()=>inspectCurrentFormationRevision({formation,revision:
+ {...mock,old_identity_changes:[{bindingKey:"FORM-SYN-01::AQUINAS"}]},profiles}),/HISTORICAL_BINDINGS_CHANGED/);
+assert.throws(()=>inspectCurrentFormationRevision({formation,revision:
+ {...mock,added_source_bindings:[{...mock.added_source_bindings[0],original_context_approved:true}]},profiles}),/REVISION_ADDITION_INVALID/);
+console.log("PASS existing Formation citations: 4 exact URL-to-witness matches only, no invented editions or approved quotes; latest owner v2 checked="+currentTested);
 console.log("PASS reference-only scope: 13 canonical works, 408 existing Formation links, 304 URLs, 9 profiles; no books imported or fabricated citations");
