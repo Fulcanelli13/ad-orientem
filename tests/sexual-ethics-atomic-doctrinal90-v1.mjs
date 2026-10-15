@@ -81,8 +81,15 @@ assert.match(CSE_DEBATE_MAP.CSE031.catholicCase[0],/cann\. 1116 and 1127 §2/);
 assert.match(CSE_DEBATE_MAP.CSE031.catholicCase[1],/cann\. 1116 et 1127 §2/);
 assert.match(CSE_DEBATE_MAP.CSE044.catholicCase[0],/canon 1098/);
 assert.match(CSE_DEBATE_MAP.CSE044.catholicCase[1],/canon 1098/);
-assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[0],/historical ordering of matrimonial ends/);
-assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[1],/l'ordre traditionnel des fins/);
+const earlierCSE045=dossier.cases.find(x=>x.id==="CSE045").claims.find(x=>x.field==="catholicCase");
+assert.match(earlierCSE045.stage_live_en,/historical ordering of matrimonial ends/,
+  "Earlier marriage-goods answer must remain in the provenance ledger");
+assert.match(earlierCSE045.stage_live_fr,/l'ordre traditionnel des fins/);
+assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[0],/Casti connubii §§26–29.*Mulieris dignitatem §24/,
+  "Rewritten headship answer must name both original papal passages without pretending they say identical things");
+assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[1],/Casti connubii.*Mulieris dignitatem/,
+  "Revised dispute must have a substantive French reading");
+assert.equal(formerCSEStages.get("CSE045::catholicCase").whole_stage_certified,false);
 assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[0],/None of this diminishes/);
 assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[1],/Rien de cela ne diminue/);
 for(const [id,source] of [["CSE045","CIC"],["CSE064","MIDWIVES"]]){
