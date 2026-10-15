@@ -42,7 +42,7 @@ export function buildReviewedSanctoralCards({
       /^https:\/\/(?:press|www)\.vatican\.va\//.test(row.sourceUrl) &&
       (!row.publishedOn || row.publishedOn<=date);
     const us=jurisdiction==="US" &&
-      row.authorityScope.startsWith("USCCB_") &&
+      row.authorityScope==="USCCB_2026_CALENDAR_WITNESS" &&
       row.universalStatus==="NOT_INDEPENDENTLY_CERTIFIED" &&
       date.slice(0,4)==="2026" && /^https:\/\/bible\.usccb\.org\//.test(row.sourceUrl);
     if(!general&&!us)continue;
