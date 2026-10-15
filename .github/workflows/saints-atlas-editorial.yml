@@ -5,6 +5,11 @@ on:
       - 'data/saints/**'
       - 'src/find/**'
       - 'tests/saints-explore-native-lens.mjs'
+      - 'tests/saints-catalogue-native.mjs'
+      - 'src/find/saints-catalogue.js'
+      - 'src/find/explore-data-service.js'
+      - 'data/saints/holiness-first-eight-doctors-research-20261015.v1.json'
+      - 'data/saints/holiness-first-sixteen-cross-vocation-research.v1.json'
       - 'tests/saints-parallel-owner-bridge.mjs'
       - 'tests/saints-calendar-context-integration.mjs'
       - 'previews/saints-map-holiness-first-20261015.html'
@@ -23,6 +28,8 @@ jobs:
         run: node tests/saints-atlas-editorial-pilot.mjs
       - name: Check native Explore Saints lens and biography sheets
         run: node tests/saints-explore-native-lens.mjs
+      - name: Verify 30-person Saints reading catalogue and unchanged 8 physical pins
+        run: node tests/saints-catalogue-native.mjs
       - name: Reconcile Calendar, Relics and Sacred Art identities without merging owners
         run: node tests/saints-parallel-owner-bridge.mjs
       - name: Check observed 2026 Calendar context in native Saints lens
@@ -30,6 +37,7 @@ jobs:
       - name: Check native module syntax
         run: |
           node --check src/find/saints-lens.js
+          node --check src/find/saints-catalogue.js
           node --check src/find/saints-calendar-context.js
           node --check src/find/saints-presentation.js
           node --check src/find/explore-presentation.js
