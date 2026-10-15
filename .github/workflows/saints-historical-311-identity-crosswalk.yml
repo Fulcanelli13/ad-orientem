@@ -10,6 +10,7 @@ on:
       - 'tests/saints-eight-doctors-research.mjs'
       - 'data/saints/holiness-first-sixteen-cross-vocation-research.v1.json'
       - 'tests/saints-sixteen-vocations-research.mjs'
+      - 'tests/saints-thirty-life-owner-census.mjs'
       - 'data/saints/classification-taxonomy.v1.json'
       - 'data/saints/historical-v4333-311-components.recovered.v1.json'
       - 'data/saints/parallel-owner-identity-bridge-20261015.v1.json'
@@ -41,6 +42,8 @@ jobs:
         run: node tests/saints-eight-doctors-research.mjs
       - name: Verify 16 diverse bilingual saint lives and their 48 sourced facts
         run: node tests/saints-sixteen-vocations-research.mjs
+      - name: Verify thirty distinct biographies and explicit readiness states
+        run: node tests/saints-thirty-life-owner-census.mjs
       - name: Retain identity review artifact
         if: always()
         uses: actions/upload-artifact@v4
@@ -49,5 +52,6 @@ jobs:
           path: |
             artifacts/saints-calendar-census/saints-v4333-311-owner-identity-and-art-review.json
             artifacts/saints-calendar-census/saints-38-doctors-historical-id-review.json
+            artifacts/saints-calendar-census/saints-30-holiness-first-person-census.json
           if-no-files-found: warn
           retention-days: 14
