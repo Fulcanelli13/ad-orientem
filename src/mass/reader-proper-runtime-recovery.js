@@ -1,3 +1,4 @@
+import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 const PER_DOM=Object.freeze({
   la:"Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
   en:"Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
@@ -176,6 +177,22 @@ export async function recoverReaderProperOmissions(proper,{
   const path=String(data.sourcePath??envelope?.sourcePath??"").trim();
   if(!path)return proper;
 
+  // Only separately named [Graduale]+[Alleluia] or [Graduale]+[Tractus]
+  // that reconstruct the FLATTENED host text in la/en/fr may add cue-safe
+  // reader navigation. Never change an existing Proper's printed text.
+  let recoveredChants=null;
+  if(!data.preGospelChants && hasThreeLanguages(data.gradual)){
+    try{
+      const sources={};
+      for(const lang of ["la","en","fr"]){
+        sources[lang]=await hostResolver.resolveSource(path,lang,diagnostic);
+      }
+      recoveredChants=certifyPreGospelChantParts(
+        {...data,sourcePath:path},{sources,normalizeRows:cleanLines});
+    }catch(error){
+      diagnostic?.warnings?.push?.("PRE_GOSPEL_CHANT_SOURCE_UNAVAILABLE:"+String(error?.message??error));
+    }
+  }
   const recoveredPreface=await recoverContradictoryPreface(data,hostResolver,principalCelebrationId??data.principalCelebrationId??data.mainId,diagnostic);
   const needs={
     epistle:!textUsable(data.epistle),
@@ -192,9 +209,11 @@ export async function recoverReaderProperOmissions(proper,{
     /^sancti:06-30:3:/i.test(String(principalCelebrationId??data.principalCelebrationId??data.mainId??""));
   const needsApostolicSource=peterPaulOwner&&
     data.inseparableApostolicSources?.status!=="SOURCE_VERIFIED";
-  if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface&&!needsApostolicSource)return proper;
+  if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface&&
+     !needsApostolicSource&&!recoveredChants)return proper;
 
   const next={...data};
+  if(recoveredChants)next.preGospelChants=recoveredChants;
   if(recoveredPreface)next.preface=recoveredPreface;
   if(needs.epistle){
     const value=await recoverText(hostResolver,path,["Lectio"],diagnostic);
