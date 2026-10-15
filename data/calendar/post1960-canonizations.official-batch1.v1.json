@@ -10,17 +10,20 @@
   "coverage": {
     "scopeYears": [
       2014,
+      2016,
+      2017,
       2018,
       2019,
+      2021,
       2022,
       2024,
       2025
     ],
-    "reviewedYears": 6,
+    "reviewedYears": 9,
     "completeGlobal1960To2026": false,
-    "namedIndividualRecords": 49,
-    "unexpandedGroupRecords": 2,
-    "unexpandedGroupMembers": 27,
+    "namedIndividualRecords": 67,
+    "unexpandedGroupRecords": 3,
+    "unexpandedGroupMembers": 57,
     "knownCanonicalPersonIdReuse": [
       "saint.john-henry-newman",
       "saint.carlo-acutis"
@@ -54,6 +57,14 @@
       "unexpandedGroupMemberships": 0
     },
     {
+      "year": 2021,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2021.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
       "year": 2019,
       "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2019.html",
       "status": "YEAR_INDEX_REVIEWED",
@@ -67,6 +78,22 @@
       "status": "YEAR_INDEX_REVIEWED",
       "eventCount": 1,
       "namedIndividuals": 7,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 2017,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 7,
+      "unexpandedGroupMemberships": 30
+    },
+    {
+      "year": 2016,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 3,
+      "namedIndividuals": 10,
       "unexpandedGroupMemberships": 0
     },
     {
@@ -286,6 +313,98 @@
       ],
       "groupIds": [],
       "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2021-04-24",
+      "date": "2021-04-24",
+      "year": 2021,
+      "kind": "EQUIVALENT_CANONIZATION",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2021.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.margherita-citta-di-castello"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2017-05-13",
+      "date": "2017-05-13",
+      "year": 2017,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.francisco-marto",
+        "saint.jacinta-marto"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2017-10-15",
+      "date": "2017-10-15",
+      "year": 2017,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.cristobal-tlaxcala",
+        "saint.antonio-tlaxcala",
+        "saint.juan-tlaxcala",
+        "saint.faustino-miguez",
+        "saint.angelo-da-acri"
+      ],
+      "groupIds": [
+        "canon-group.martyrs-brazil-1645"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2016-06-05",
+      "date": "2016-06-05",
+      "year": 2016,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.stanislaw-of-jesus-mary",
+        "saint.maria-elisabeth-hesselblad"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2016-09-04",
+      "date": "2016-09-04",
+      "year": 2016,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.teresa-calcutta"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2016-10-16",
+      "date": "2016-10-16",
+      "year": 2016,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.salomone-leclercq",
+        "saint.jose-sanchez-del-rio",
+        "saint.manuel-gonzalez-garcia",
+        "saint.lodovico-pavoni",
+        "saint.alfonso-maria-fusco",
+        "saint.jose-gabriel-del-rosario-brochero",
+        "saint.elisabeth-of-trinity"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
     }
   ],
   "groups": [
@@ -313,6 +432,19 @@
         "Teresa of St Augustine"
       ],
       "note": "Sixteen persons; do not attach the group's event to one invented individual saint ID."
+    },
+    {
+      "id": "martyrs-brazil-1645",
+      "eventId": "canon-2017-10-15",
+      "label": "Thirty Martyrs of Brazil (André de Soveral, Ambrósio Francisco Ferro, Mateus Moreira and 27 companions)",
+      "memberCount": 30,
+      "memberIdentityStatus": "UNEXPANDED_IN_THIS_BATCH",
+      "namedLead": [
+        "André de Soveral",
+        "Ambrósio Francisco Ferro",
+        "Mateus Moreira"
+      ],
+      "note": "Thirty individual martyrs, not one saint. Expand named person records before individual map/art publication."
     }
   ],
   "persons": [
@@ -1245,6 +1377,348 @@
       },
       "sources": [
         "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      ]
+    },
+    {
+      "id": "saint.margherita-citta-di-castello",
+      "name": "Margherita di Città di Castello",
+      "canonizedOn": "2021-04-24",
+      "canonizationEventId": "canon-2021-04-24",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2021-04-24"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2021.html"
+      ]
+    },
+    {
+      "id": "saint.francisco-marto",
+      "name": "Francisco Marto",
+      "canonizedOn": "2017-05-13",
+      "canonizationEventId": "canon-2017-05-13",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2017-05-13"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      ]
+    },
+    {
+      "id": "saint.jacinta-marto",
+      "name": "Jacinta Marto",
+      "canonizedOn": "2017-05-13",
+      "canonizationEventId": "canon-2017-05-13",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2017-05-13"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      ]
+    },
+    {
+      "id": "saint.cristobal-tlaxcala",
+      "name": "Cristóbal of Tlaxcala",
+      "canonizedOn": "2017-10-15",
+      "canonizationEventId": "canon-2017-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2017-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      ]
+    },
+    {
+      "id": "saint.antonio-tlaxcala",
+      "name": "Antonio of Tlaxcala",
+      "canonizedOn": "2017-10-15",
+      "canonizationEventId": "canon-2017-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2017-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      ]
+    },
+    {
+      "id": "saint.juan-tlaxcala",
+      "name": "Juan of Tlaxcala",
+      "canonizedOn": "2017-10-15",
+      "canonizationEventId": "canon-2017-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2017-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      ]
+    },
+    {
+      "id": "saint.faustino-miguez",
+      "name": "Faustino Míguez",
+      "canonizedOn": "2017-10-15",
+      "canonizationEventId": "canon-2017-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2017-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      ]
+    },
+    {
+      "id": "saint.angelo-da-acri",
+      "name": "Angelo da Acri",
+      "canonizedOn": "2017-10-15",
+      "canonizationEventId": "canon-2017-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2017-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      ]
+    },
+    {
+      "id": "saint.stanislaw-of-jesus-mary",
+      "name": "Stanisław of Jesus and Mary",
+      "canonizedOn": "2016-06-05",
+      "canonizationEventId": "canon-2016-06-05",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-06-05"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.maria-elisabeth-hesselblad",
+      "name": "Maria Elisabeth Hesselblad",
+      "canonizedOn": "2016-06-05",
+      "canonizationEventId": "canon-2016-06-05",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-06-05"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.teresa-calcutta",
+      "name": "Teresa of Calcutta",
+      "canonizedOn": "2016-09-04",
+      "canonizationEventId": "canon-2016-09-04",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-09-04"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.salomone-leclercq",
+      "name": "Salomone Leclercq",
+      "canonizedOn": "2016-10-16",
+      "canonizationEventId": "canon-2016-10-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-10-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.jose-sanchez-del-rio",
+      "name": "José Sánchez del Río",
+      "canonizedOn": "2016-10-16",
+      "canonizationEventId": "canon-2016-10-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-10-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.manuel-gonzalez-garcia",
+      "name": "Manuel González García",
+      "canonizedOn": "2016-10-16",
+      "canonizationEventId": "canon-2016-10-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-10-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.lodovico-pavoni",
+      "name": "Lodovico Pavoni",
+      "canonizedOn": "2016-10-16",
+      "canonizationEventId": "canon-2016-10-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-10-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.alfonso-maria-fusco",
+      "name": "Alfonso Maria Fusco",
+      "canonizedOn": "2016-10-16",
+      "canonizationEventId": "canon-2016-10-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-10-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.jose-gabriel-del-rosario-brochero",
+      "name": "José Gabriel del Rosario Brochero",
+      "canonizedOn": "2016-10-16",
+      "canonizationEventId": "canon-2016-10-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-10-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.elisabeth-of-trinity",
+      "name": "Elisabeth of the Trinity",
+      "canonizedOn": "2016-10-16",
+      "canonizationEventId": "canon-2016-10-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2016-10-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
       ]
     }
   ]
