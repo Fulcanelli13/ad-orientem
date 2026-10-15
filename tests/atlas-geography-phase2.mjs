@@ -60,4 +60,62 @@ for(const p of ["src/find/bible-atlas.js","src/find/browser-entry.js","src/find/
  const content=readFileSync(root(p),"utf8");
  assert.ok(!content.includes("biblical-atlas-geography-phase2.research.v1.json"),"Research overlay imported into runtime "+p);
 }
+
+const blockedByPeriod=new Map([
+ ["jerusalem",["Aelia Capitolina","Col. Aelia Capitolina"]],
+ ["samaria",["Sebaste"]],
+ ["caesarea-maritima",["Stratonos Pyrgos"]],
+ ["banias",[]], // Paneas / Caesarea Philippi city context: no false event point
+ ["troas",["Antigoneia"]],
+ ["philippi",["Krenides"]],
+ ["tarsus",["Antiochia ad Cydnum"]],
+ ["corinth",[]] // Roman colonia: architecture distinction, not false name
+]);
+assert.equal(phase.metrics.independentlyAttestedNamingGuards,8);
+assert.equal(phase.policy.noAutomaticHistoricAliasPromotionAfterAttestation,true);
+assert.deepEqual(
+ [...new Set(phase.records.filter(p=>p.attestedNamingGuard).map(p=>p.anchorKey))].sort(),
+ [...blockedByPeriod.keys()].sort(),
+ "One in-place owner for exactly eight independently corroborated naming cases"
+);
+for(const [key,excluded] of blockedByPeriod){
+ const rec=phase.records.find(x=>x.anchorKey===key);
+ const base=baseByKey.get(key);
+ const gate=rec.attestedNamingGuard;
+ assert.equal(gate.status,"SOURCE_CORROBORATED_EDITORIAL_HOLD",key);
+ assert.equal(gate.existingDisplayLabelPreserved,true,key);
+ assert.equal(gate.publication,"NO_AUTOMATIC_NAME_SUBSTITUTION",key);
+ assert.equal(gate.eventCoordinatesChanged,false,key);
+ assert.equal(gate.cityIdentityIsNotExactEventLocation,true,key);
+ assert.equal(gate.independentSourceComparedToPleiades,true,key);
+ assert.equal(gate.reviewedNarrativeContext.length>2,true,key);
+ assert.equal(gate.contextualQualification.length>45,true,key);
+ assert.deepEqual(gate.excludedAutomaticAliases,excluded,key);
+ assert.ok(gate.independentEvidence.length>=1,key);
+ for(const ev of gate.independentEvidence){
+  assert.match(ev.url,/^https:\/\/(academic\.oup\.com|www\.attalus\.org|www\.perseus\.tufts\.edu|whc\.unesco\.org|www\.ascsa\.org)\//);
+  assert.ok(ev.title.length>12&&ev.establishes.length>35&&ev.category.length>12);
+ }
+ for(const name of excluded){
+  assert.ok(base.pleiades.candidateNames.some(n=>n.name===name),
+   "Block only original source-attested names; avoid synthetic historic names: "+key+" / "+name);
+ }
+ if(key==="banias")assert.ok(!labels.includes(key),"Do not introduce Caesarea Philippi city label from research");
+ else assert.ok(labels.includes(key),"Do not add a new label owner: "+key);
+}
+const aelia=baseByKey.get("jerusalem").pleiades.candidateNames
+ .find(n=>n.name==="Aelia Capitolina");
+assert.ok(aelia.after<0,"Pleiades range actually predates Hadrian, so independent source gate matters");
+assert.match(phase.records.find(r=>r.anchorKey==="jerusalem").attestedNamingGuard.pinnedGISDateCaveat,/Hadrian/);
+const sebaste=baseByKey.get("samaria").pleiades.candidateNames
+ .find(n=>n.name==="Sebaste");
+assert.ok(sebaste.after>0,"Pleiades range starts after Josephus's Herodian renaming");
+assert.match(phase.records.find(r=>r.anchorKey==="samaria").attestedNamingGuard.pinnedGISDateCaveat,/Josephus/);
+for(const p of ["src/find/bible-atlas.js","src/find/browser-entry.js","src/find/map-runtime.js"]){
+ const content=readFileSync(root(p),"utf8");
+ assert.ok(!content.includes("attestedNamingGuard"),
+  "Research gate must never be silently treated as a runtime name/date decision in "+p);
+}
+console.log("PASS eight independent name attestations: Josephus/Strabo/academic/archaeology, two GIS date conflicts, 0 runtime promotions");
+
 console.log("PASS Phase 2 research: 35 keyed / 22 label holds / 7 site exceptions / 6 distinct caveats / 0 promotions");
