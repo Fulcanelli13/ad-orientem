@@ -57,7 +57,7 @@ export function renderSaintPlaceSheet(vm){
        observed?.year===2026 && /^\d{4}-\d{2}-\d{2}$/.test(observed.civilDate) &&
        /^sancti:\d{2}-\d{2}[a-z]?:[1-4]:[wr]$/.test(observed.principalSourceId)){
       html+='<p class="aoSaintCalendarContext"><strong>'+esc(dateLabel(observed.civilDate))+'</strong>'
-        +' · '+esc(say("Observed 1962-calendar cycle (2026)","Cycle du calendrier de 1962 observé (2026)"))+'</p>';
+        +' · '+esc(say("Observed in the 1962-calendar cycle (2026)","Observé dans le calendrier de 1962 (2026)"))+'</p>';
       html+='<p class="aoSaintCalendarCaution">'+esc(say(
         "2026 observance; not a timeless feast date or authorization to select a Mass.",
         "Observance de 2026 ; ni date universelle permanente ni autorisation de choisir une messe."))+'</p>';
