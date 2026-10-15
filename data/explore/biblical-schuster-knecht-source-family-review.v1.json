@@ -2119,5 +2119,73 @@
     "initialImageFetchFailuresNowSuperseded": true,
     "subsequentSuccessfulImageAuditPath": "wikisource1910TerritoryReview.originalPrintImageSpotAudit",
     "printedImagePagesChecked": 25
+  },
+  "historicalAccessAndProvenanceReview": {
+    "date": "2026-10-15",
+    "purpose": "Protect the original-author reading path while resolving blocked physical historical edition page access; NOT a new narrative or chapter taxonomy.",
+    "authorIdentity": {
+      "canonicalPerson": "Ignaz Schuster",
+      "canonicalLifespan": "1813–1869",
+      "authorityIdentifier": "GND:117321656",
+      "authorityUrl": "https://www.deutsche-biographie.de/sfz79516.html",
+      "distinction": "Author of 1858 school Bible History; separately wrote 1861 longer two-volume Handbuch. These are distinct works even when later editions share topics.",
+      "knownCatalogueMisattribution": {
+        "url": "https://openlibrary.org/works/OL45818383W/Illustrated_Bible_history_of_the_Old_and_New_Testaments",
+        "catalogueLabel": "Ildefonso Schuster",
+        "disposition": "REJECT_FOR_AUTHOR_IDENTITY: names a different person; no automatic Saints or source-author entity join.",
+        "conflictingAuthority": "https://www.deutsche-biographie.de/sfz79516.html"
+      }
+    },
+    "alternativeWitnesses": [
+      {
+        "id": "SCHUSTER-DE-1873-HANDBUCH-VOL2",
+        "workLabel": "Handbuch zur biblischen Geschichte",
+        "bibliographicRelation": "DIFFERENT_WORK_FROM_1858_SCHOOL_BIBLE_HISTORY_NOT_VERBATIM_SUBSTITUTION",
+        "url": "https://commons.wikimedia.org/wiki/File:Dr._I._Schuster%27s_Handbuch_sur_biblischen_Geschichte_des_Alten_und_Neuen_Testaments_-_f%C3%BCr_den_Untericht_in_Kirche_und_Schule%2C_sowie_zur_Selbstbelehrung_(IA_drischustershand02schu).pdf",
+        "edition": "Herder Freiburg 1873, Volume II New Testament, later Holzammer edition family",
+        "digitalRecordObserved": true,
+        "digitalVolumePdfPages": 652,
+        "printedSourcePagesInspectedInThisPass": 0,
+        "permittedRole": "HISTORICAL_COMPARATIVE_REFERENCE_ONLY",
+        "prohibitedRole": "SCHUSTER_1925_ENGLISH_OR_COUISSINIER_1887_FRENCH_NARRATIVE_REPLACEMENT"
+      },
+      {
+        "id": "SCHUSTER-DE-1895-SCHOOLHISTORY-CBVK",
+        "workLabel": "Die biblische Geschichte des Alten und Neuen Testaments für allgemeine Volksschulen und Bürgerschulen",
+        "url": "https://katalog.cbvk.cz/arl-cbvk/cs/detail-cbvk_us_cat-0520265-Die-biblische-Geschichte-des-Alten-und-Neuen-Testaments-fur-allgemeine-Volkschulen-und-fur-Burgersch/",
+        "edition": "Vienna 1895 school edition; catalogue calls text unchanged from 1894; 203 pages, illustrations and 3 maps",
+        "digitalRecordObserved": true,
+        "printedSourcePagesInspectedInThisPass": 0,
+        "permittedRole": "POTENTIAL_SCHOOL_HISTORY_FAMILY_COMPARATIVE_CANDIDATE_AFTER_PRINT_INSPECTION",
+        "prohibitedRole": "AUTOMATIC_EQUIVALENCE_WITH_ENGLISH_1925_OR_FRENCH_1887"
+      }
+    ],
+    "primaryWitnessAccess": [
+      {
+        "id": "SCHUSTER-EN-1925-HERDER-LONDON-19TH",
+        "url": "https://archive.org/details/in.ernet.dli.2015.49638",
+        "availableEvidence": "Archive item and historic raw OCR/TOC already registered; original individual print-page images still inaccessible on attempted public routes in this pass",
+        "originalPrintedPagesNewlyRead": 0,
+        "completeVerbatimParagraphsCertified": 0,
+        "authorization": "HOLD_PRINT_IMAGE_COLLATION"
+      },
+      {
+        "id": "SCHUSTER-FR-1887-COUISSINIER",
+        "url": "https://play.google.com/store/books/details/I_Schuster_Histoire_biblique_de_l_Ancien_et_du_Nou?id=iuUejjayBWEC",
+        "independentBibliographicEvidence": "https://www.cageweb.be/catalog.html?f%5Blanguage_facet%5D%5B%5D=fre&f%5Bpub_date%5D%5B%5D=1887&q=schuster",
+        "availableEvidence": "1887 author-translator bibliographic record and free ebook listing, but no original printed page images opened",
+        "originalPrintedPagesNewlyRead": 0,
+        "completeVerbatimParagraphsCertified": 0,
+        "authorization": "HOLD_PRINT_IMAGE_COLLATION"
+      }
+    ],
+    "prohibitedFallbacks": [
+      "NEVER_REPLACE_SCHUSTER_SCHOOL_HISTORY_NARRATIVE_WITH_HANDBUCH_VOL2",
+      "NEVER_PROMOTE_CATALOGUE_OCR_OR_MODERN_REPRINT_TEXT_TO_VERIFIED_ORIGINAL_PARAGRAPH",
+      "NEVER_JOIN_IGNAZ_SCHUSTER_WITH_ILDEFONSO_SCHUSTER"
+    ],
+    "nextOperationalGate": "Acquire ORIGINAL page images from the 1925 or 1887 school-history witness (or an authentic matching historical edition), collate large contiguous narrative paragraph batches including footnotes, edition and translator, then publish only after editorial/rights review. Do not invent translation or narrative where witness is unreadable.",
+    "sourceParagraphsCertifiedNew": 0,
+    "appReleaseAffected": false
   }
 }
