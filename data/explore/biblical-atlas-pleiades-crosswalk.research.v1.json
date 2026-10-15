@@ -1,0 +1,2098 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_PLEIADES_RESEARCH_CROSSWALK_V1",
+  "date": "2026-10-15",
+  "integration": "RESEARCH_ONLY_NO_RUNTIME_IMPORT",
+  "source": {
+    "repository": "isawnyu/pleiades.datasets",
+    "revision": "d8c06f28656312eee6b7a0f76415b34a89e3c728",
+    "placesBlob": "7ba355133562bea6d9f91be2ec1b0d9e094574aa",
+    "namesBlob": "58484bd989af90f919c1a36a4f4cba60e132f36e",
+    "license": "CC BY 3.0; © Pleiades contributors",
+    "citationGuide": "https://pleiades.stoa.org/help/how-to-cite-pleiades",
+    "approach": "Selected *candidate* place URIs using GIS titles, place vicinity, and attested names. Period forms are source metadata, not app display authority; Pleiades representative geometry never overrides canonical Atlas pins."
+  },
+  "metrics": {
+    "ownerEntries": 38,
+    "distinctAnchorKeys": 35,
+    "candidates": 28,
+    "noDirectMatches": 7,
+    "runtimeNameChanges": 0,
+    "pinChanges": 0
+  },
+  "records": [
+    {
+      "anchorKey": "antioch-syria",
+      "owners": [
+        "antioch"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 36.226691,
+        "lng": 36.171743
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mbe432b",
+        "url": "https://www.openbible.info/geo/modern/mbe432b/antioch-on-the-orontes"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "658381",
+        "uri": "https://pleiades.stoa.org/places/658381",
+        "title": "Antiochia/Theoupolis",
+        "representativeCoordinate": {
+          "lat": 36.222551499999994,
+          "lng": 36.183214
+        },
+        "precision": "precise",
+        "distanceKm": 1.1,
+        "candidateNames": [
+          {
+            "name": "Antiochia",
+            "uri": "https://pleiades.stoa.org/places/658381/antiochia",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Theoupolis",
+            "uri": "https://pleiades.stoa.org/places/658381/theoupolis",
+            "certainty": "certain",
+            "after": 300,
+            "before": 640
+          },
+          {
+            "name": "Iopolis",
+            "uri": "https://pleiades.stoa.org/places/658381/iopolis",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Antiocheia epi Daphnē",
+            "uri": "https://pleiades.stoa.org/places/658381/antiocheia-epi-daphne",
+            "certainty": "certain",
+            "after": -330,
+            "before": -30
+          },
+          {
+            "name": "Antiocheia",
+            "uri": "https://pleiades.stoa.org/places/658381/antiocheia",
+            "certainty": "certain",
+            "after": -330,
+            "before": 1307
+          },
+          {
+            "name": "Antakya",
+            "uri": "https://pleiades.stoa.org/places/658381/antakya",
+            "certainty": "certain",
+            "after": -1750,
+            "before": 2000
+          },
+          {
+            "name": "Anṭākiya",
+            "uri": "https://pleiades.stoa.org/places/658381/antakiya",
+            "certainty": "certain",
+            "after": 632,
+            "before": 1500
+          },
+          {
+            "name": "Antiochia",
+            "uri": "https://pleiades.stoa.org/places/658381/antiochia-2",
+            "certainty": "certain",
+            "after": -1200,
+            "before": 1291
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "athens",
+      "owners": [
+        "athens"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 37.971851,
+        "lng": 23.726738
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "md70ac9",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "579885",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "title": "Athenae",
+        "representativeCoordinate": {
+          "lat": 37.97164747289856,
+          "lng": 23.723954796773654
+        },
+        "precision": "rough",
+        "distanceKm": 0.2,
+        "candidateNames": [
+          {
+            "name": "Athenae",
+            "uri": "https://pleiades.stoa.org/places/579885/athenae",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Athēnai",
+            "uri": "https://pleiades.stoa.org/places/579885/name.2015-09-02.2659017776",
+            "certainty": "certain",
+            "after": -550,
+            "before": -330
+          },
+          {
+            "name": "Athenas",
+            "uri": "https://pleiades.stoa.org/places/579885/athenas",
+            "certainty": "certain",
+            "after": 300,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": "Representative point classified ROUGH; not a precise archaeological coordinate."
+    },
+    {
+      "anchorKey": "babylon",
+      "owners": [
+        "babylon"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 32.543333,
+        "lng": 44.422222
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "md561de",
+        "url": "https://www.openbible.info/geo/modern/md561de/babylon"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "893951",
+        "uri": "https://pleiades.stoa.org/places/893951",
+        "title": "Babylon",
+        "representativeCoordinate": {
+          "lat": 32.53729695,
+          "lng": 44.42497815
+        },
+        "precision": "precise",
+        "distanceKm": 0.7,
+        "candidateNames": [
+          {
+            "name": "Babylon",
+            "uri": "https://pleiades.stoa.org/places/893951/babylon",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Babil",
+            "uri": "https://pleiades.stoa.org/places/893951/babil",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Babylon",
+            "uri": "https://pleiades.stoa.org/places/893951/babylona",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "Bābili",
+            "uri": "https://pleiades.stoa.org/places/893951/name.2018-01-06.8890273340",
+            "certainty": "certain",
+            "after": -1600,
+            "before": -100
+          },
+          {
+            "name": "Bābilim",
+            "uri": "https://pleiades.stoa.org/places/893951/name.2018-01-06.2223095271",
+            "certainty": "certain",
+            "after": -2000,
+            "before": -1600
+          },
+          {
+            "name": "Šuanna",
+            "uri": "https://pleiades.stoa.org/places/893951/name.2018-01-11.8769134339",
+            "certainty": "certain",
+            "after": -720,
+            "before": -100
+          },
+          {
+            "name": "Eridu",
+            "uri": "https://pleiades.stoa.org/places/893951/name.2018-01-16.9548338862",
+            "certainty": "certain",
+            "after": -720,
+            "before": -100
+          },
+          {
+            "name": "Ka-dingirra",
+            "uri": "https://pleiades.stoa.org/places/893951/name.2018-01-16.6274922030",
+            "certainty": "certain",
+            "after": -720,
+            "before": -100
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "banias",
+      "owners": [
+        "caesarea-philippi"
+      ],
+      "kind": "city_context",
+      "currentCoordinate": {
+        "lat": 33.246111,
+        "lng": 35.693333
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m518f8e",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "678324",
+        "uri": "https://pleiades.stoa.org/places/678324",
+        "title": "Paneas/Caesarea Philippi",
+        "representativeCoordinate": {
+          "lat": 33.247525499999995,
+          "lng": 35.6934605
+        },
+        "precision": "precise",
+        "distanceKm": 0.2,
+        "candidateNames": [
+          {
+            "name": "Paneas",
+            "uri": "https://pleiades.stoa.org/places/678324/paneas",
+            "certainty": "certain",
+            "after": -30,
+            "before": 640
+          },
+          {
+            "name": "Caesarea Philippi",
+            "uri": "https://pleiades.stoa.org/places/678324/caesarea-philippi",
+            "certainty": "certain",
+            "after": -30,
+            "before": 640
+          },
+          {
+            "name": "Kaisareia tes Philippou",
+            "uri": "https://pleiades.stoa.org/places/678324/kaisareia-tes-philippou",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "Cesarea Paneas",
+            "uri": "https://pleiades.stoa.org/places/678324/cesarea-paneas",
+            "certainty": "certain",
+            "after": 300,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "bethesda",
+      "owners": [
+        "bethesda"
+      ],
+      "kind": "site",
+      "currentCoordinate": {
+        "lat": 31.781389,
+        "lng": 35.235833
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m48007f",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "NO_DEFENSIBLE_DIRECT_MATCH",
+      "pleiades": null,
+      "caveat": "Jerusalem city or a nearby structure cannot verify the specific Bethesda pool."
+    },
+    {
+      "anchorKey": "bethlehem",
+      "owners": [
+        "bethlehem"
+      ],
+      "kind": "traditional",
+      "currentCoordinate": {
+        "lat": 31.704306,
+        "lng": 35.207583
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m9b8daa",
+        "url": "https://www.wikidata.org/wiki/Q194504"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "ANCIENT_PLACE_RECORD_DOES_NOT_VERIFY_TRADITIONAL_SITE",
+      "pleiades": {
+        "placeId": "687856",
+        "uri": "https://pleiades.stoa.org/places/687856",
+        "title": "Bethlehem",
+        "representativeCoordinate": {
+          "lat": 31.70699866360772,
+          "lng": 35.20315257930402
+        },
+        "precision": "precise",
+        "distanceKm": 0.5,
+        "candidateNames": [
+          {
+            "name": "Bethlehem",
+            "uri": "https://pleiades.stoa.org/places/687856/bethlehem",
+            "certainty": "certain",
+            "after": -30,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": "Settlement identification does not locate the exact Nativity site."
+    },
+    {
+      "anchorKey": "bethphage",
+      "owners": [
+        "bethphage"
+      ],
+      "kind": "traditional",
+      "currentCoordinate": {
+        "lat": 31.777619,
+        "lng": 35.250839
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m6bd6bd",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "NO_DEFENSIBLE_DIRECT_MATCH",
+      "pleiades": null,
+      "caveat": "Adjacent Bethany/Jerusalem sites do not verify Bethphage."
+    },
+    {
+      "anchorKey": "caesarea-maritima",
+      "owners": [
+        "caesarea-maritima"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 32.5,
+        "lng": 34.891667
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m11da12",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "678401",
+        "uri": "https://pleiades.stoa.org/places/678401",
+        "title": "Stratonos Pyrgos/Caesarea",
+        "representativeCoordinate": {
+          "lat": 32.5018388,
+          "lng": 34.8924472
+        },
+        "precision": "precise",
+        "distanceKm": 0.2,
+        "candidateNames": [
+          {
+            "name": "Stratonos Pyrgos",
+            "uri": "https://pleiades.stoa.org/places/678401/stratonos-pyrgos",
+            "certainty": "certain",
+            "after": -330,
+            "before": 300
+          },
+          {
+            "name": "Caesarea",
+            "uri": "https://pleiades.stoa.org/places/678401/caesarea",
+            "certainty": "certain",
+            "after": -30,
+            "before": 640
+          },
+          {
+            "name": "Kaisareia Paralios",
+            "uri": "https://pleiades.stoa.org/places/678401/kaisareia-paralios",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Cesarea Palestinae",
+            "uri": "https://pleiades.stoa.org/places/678401/cesarea-palestinae",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Kaisareia metropolis",
+            "uri": "https://pleiades.stoa.org/places/678401/kaisareia-metropolis",
+            "certainty": "certain",
+            "after": 300,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": "Modern disambiguating label is not necessarily the contemporary ancient toponym."
+    },
+    {
+      "anchorKey": "capernaum",
+      "owners": [
+        "capernaum"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 32.880999,
+        "lng": 35.575371
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m66efd0",
+        "url": "https://www.octagonproject.org/news/the-modern-church-at-capernaum"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "678231",
+        "uri": "https://pleiades.stoa.org/places/678231",
+        "title": "Kefar Nahum/Kapharnaoum",
+        "representativeCoordinate": {
+          "lat": 32.8808865882381,
+          "lng": 35.575890673455774
+        },
+        "precision": "precise",
+        "distanceKm": 0.1,
+        "candidateNames": [
+          {
+            "name": "Kefar Nahum",
+            "uri": "https://pleiades.stoa.org/places/678231/kefar-nahum",
+            "certainty": "certain",
+            "after": -30,
+            "before": 640
+          },
+          {
+            "name": "Kapharnaoum",
+            "uri": "https://pleiades.stoa.org/places/678231/kapharnaoum",
+            "certainty": "certain",
+            "after": -30,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "carmel",
+      "owners": [
+        "carmel"
+      ],
+      "kind": "mountain_region",
+      "currentCoordinate": {
+        "lat": 32.6725,
+        "lng": 35.023333
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mf9b7d7",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "MOUNTAIN_RECORD_DOES_NOT_VERIFY_EVENT",
+      "pleiades": {
+        "placeId": "678084",
+        "uri": "https://pleiades.stoa.org/places/678084",
+        "title": "Carmel (mountain)",
+        "representativeCoordinate": {
+          "lat": 32.7302954,
+          "lng": 35.0500532
+        },
+        "precision": "precise",
+        "distanceKm": 6.9,
+        "candidateNames": [
+          {
+            "name": "Carmel M.",
+            "uri": "https://pleiades.stoa.org/places/678084/Carmel-M",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Karmelos",
+            "uri": "https://pleiades.stoa.org/places/678084/karmelos",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "promunturium Carmelum",
+            "uri": "https://pleiades.stoa.org/places/678084/promunturium-carmelum",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          }
+        ]
+      },
+      "caveat": "Mountain feature does not identify Elijah's exact altar."
+    },
+    {
+      "anchorKey": "corinth",
+      "owners": [
+        "corinth"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 37.905785,
+        "lng": 22.878741
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "me0518f",
+        "url": "https://www.openbible.info/geo/modern/me0518f/corinth"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "570182",
+        "uri": "https://pleiades.stoa.org/places/570182",
+        "title": "Corinthus/Korinthos",
+        "representativeCoordinate": {
+          "lat": 37.90564164345828,
+          "lng": 22.878614390874485
+        },
+        "precision": "precise",
+        "distanceKm": 0,
+        "candidateNames": [
+          {
+            "name": "Corinthus",
+            "uri": "https://pleiades.stoa.org/places/570182/corinthus",
+            "certainty": "certain",
+            "after": -750,
+            "before": 300
+          },
+          {
+            "name": "Aigiales",
+            "uri": "https://pleiades.stoa.org/places/570182/aigiales",
+            "certainty": "certain",
+            "after": -750,
+            "before": 300
+          },
+          {
+            "name": "Aigialos",
+            "uri": "https://pleiades.stoa.org/places/570182/aigialos",
+            "certainty": "certain",
+            "after": -750,
+            "before": 300
+          },
+          {
+            "name": "Sicyonia",
+            "uri": "https://pleiades.stoa.org/places/570182/sicyonia",
+            "certainty": "certain",
+            "after": -750,
+            "before": 300
+          },
+          {
+            "name": "Korinthos",
+            "uri": "https://pleiades.stoa.org/places/570182/korinthos",
+            "certainty": "certain",
+            "after": -330,
+            "before": 300
+          },
+          {
+            "name": "Colonia Laus Iulia Corinthus",
+            "uri": "https://pleiades.stoa.org/places/570182/colonia-laus-iulia-corinthus",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "Corintho",
+            "uri": "https://pleiades.stoa.org/places/570182/corintho",
+            "certainty": "certain",
+            "after": 300,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "damascus",
+      "owners": [
+        "damascus"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 33.511112,
+        "lng": 36.30639
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m878978",
+        "url": "https://www.openbible.info/geo/modern/m878978/damascus"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "678106",
+        "uri": "https://pleiades.stoa.org/places/678106",
+        "title": "Damascus",
+        "representativeCoordinate": {
+          "lat": 33.511612,
+          "lng": 36.309102
+        },
+        "precision": "precise",
+        "distanceKm": 0.3,
+        "candidateNames": [
+          {
+            "name": "Damascus",
+            "uri": "https://pleiades.stoa.org/places/678106/damascus",
+            "certainty": "certain",
+            "after": -550,
+            "before": 640
+          },
+          {
+            "name": "Damaskene",
+            "uri": "https://pleiades.stoa.org/places/678106/damaskene",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "aš-Šām",
+            "uri": "https://pleiades.stoa.org/places/678106/as-sam",
+            "certainty": "certain",
+            "after": -720,
+            "before": 2000
+          },
+          {
+            "name": "Dimašq aš-Šām",
+            "uri": "https://pleiades.stoa.org/places/678106/dimasq-as-sam",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Damešeq",
+            "uri": "https://pleiades.stoa.org/places/678106/dameseq",
+            "certainty": "certain",
+            "after": -1200,
+            "before": -550
+          },
+          {
+            "name": "Damascos",
+            "uri": "https://pleiades.stoa.org/places/678106/damascos",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "Dimašqa",
+            "uri": "https://pleiades.stoa.org/places/678106/dimasqa-akk",
+            "certainty": "certain",
+            "after": -1344,
+            "before": -330
+          },
+          {
+            "name": "Dimašq",
+            "uri": "https://pleiades.stoa.org/places/678106/dimasq-1",
+            "certainty": "certain",
+            "after": -1200,
+            "before": 2000
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "ein-karem",
+      "owners": [
+        "ein-karem"
+      ],
+      "kind": "traditional",
+      "currentCoordinate": {
+        "lat": 31.764483,
+        "lng": 35.159454
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mc853b5",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "ANCIENT_PLACE_RECORD_DOES_NOT_VERIFY_TRADITIONAL_SITE",
+      "pleiades": {
+        "placeId": "601633374",
+        "uri": "https://pleiades.stoa.org/places/601633374",
+        "title": "Ein Karem",
+        "representativeCoordinate": {
+          "lat": 31.7676367,
+          "lng": 35.1639025
+        },
+        "precision": "precise",
+        "distanceKm": 0.5,
+        "candidateNames": []
+      },
+      "caveat": "Settlement does not independently verify the Visitation locus."
+    },
+    {
+      "anchorKey": "ephesus",
+      "owners": [
+        "ephesus"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 37.939125,
+        "lng": 27.3407
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m84025e",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "599612",
+        "uri": "https://pleiades.stoa.org/places/599612",
+        "title": "Ephesus/Arsinoe(ia)",
+        "representativeCoordinate": {
+          "lat": 37.940164271971945,
+          "lng": 27.34240298195866
+        },
+        "precision": "precise",
+        "distanceKm": 0.2,
+        "candidateNames": [
+          {
+            "name": "Ephesus",
+            "uri": "https://pleiades.stoa.org/places/599612/ephesus",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Arsinoeia",
+            "uri": "https://pleiades.stoa.org/places/599612/arsinoeia",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Arsinoe",
+            "uri": "https://pleiades.stoa.org/places/599612/arsinoe",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Arsinoē",
+            "uri": "https://pleiades.stoa.org/places/599612/arsinoe-1",
+            "certainty": "certain",
+            "after": -330,
+            "before": -140
+          },
+          {
+            "name": "Selçuk",
+            "uri": "https://pleiades.stoa.org/places/599612/selcuk",
+            "certainty": "certain",
+            "after": -1200,
+            "before": 2000
+          },
+          {
+            "name": "Apaša",
+            "uri": "https://pleiades.stoa.org/places/599612/apasa",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Apasa",
+            "uri": "https://pleiades.stoa.org/places/599612/apasa-1",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "ʾfss",
+            "uri": "https://pleiades.stoa.org/places/599612/2befss",
+            "certainty": "certain",
+            "after": -540,
+            "before": -330
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "gethsemane",
+      "owners": [
+        "gethsemane"
+      ],
+      "kind": "traditional",
+      "currentCoordinate": {
+        "lat": 31.779419,
+        "lng": 35.239425
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m835caa",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "NO_DEFENSIBLE_DIRECT_MATCH",
+      "pleiades": null,
+      "caveat": "No independent exact garden locus matched; do not equate Jerusalem."
+    },
+    {
+      "anchorKey": "hebron",
+      "owners": [
+        "hebron"
+      ],
+      "kind": "city_context",
+      "currentCoordinate": {
+        "lat": 31.525087,
+        "lng": 35.10222
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m86f941",
+        "url": "https://www.openbible.info/geo/modern/m86f941/tel-rumeida"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "687915",
+        "uri": "https://pleiades.stoa.org/places/687915",
+        "title": "Hebron",
+        "representativeCoordinate": {
+          "lat": 31.52481315,
+          "lng": 35.10218155
+        },
+        "precision": "precise",
+        "distanceKm": 0,
+        "candidateNames": [
+          {
+            "name": "Hebron",
+            "uri": "https://pleiades.stoa.org/places/687915/hebron",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Hevron",
+            "uri": "https://pleiades.stoa.org/places/687915/hevron",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "holy-sepulchre",
+      "owners": [
+        "golgotha",
+        "christ-tomb"
+      ],
+      "kind": "traditional",
+      "currentCoordinate": {
+        "lat": 31.778333,
+        "lng": 35.229722
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": null,
+        "url": "https://www.wikidata.org/wiki/Q187702"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "NO_DEFENSIBLE_DIRECT_MATCH",
+      "pleiades": null,
+      "caveat": "The traditional Golgotha/tomb locus is not proven by general Jerusalem records."
+    },
+    {
+      "anchorKey": "jericho",
+      "owners": [
+        "jericho"
+      ],
+      "kind": "city_context",
+      "currentCoordinate": {
+        "lat": 31.871719,
+        "lng": 35.444564
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m95349d",
+        "url": "https://www.openbible.info/geo/modern/m95349d/tell-es-sultan"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "687917",
+        "uri": "https://pleiades.stoa.org/places/687917",
+        "title": "Jericho",
+        "representativeCoordinate": {
+          "lat": 31.871016814381463,
+          "lng": 35.44414173292347
+        },
+        "precision": "precise",
+        "distanceKm": 0.1,
+        "candidateNames": [
+          {
+            "name": "Hierichous",
+            "uri": "https://pleiades.stoa.org/places/687917/hierichous",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Hierico",
+            "uri": "https://pleiades.stoa.org/places/687917/hierico",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Tall as-Sulṭān",
+            "uri": "https://pleiades.stoa.org/places/687917/tall-as-sultan",
+            "certainty": "certain",
+            "after": 300,
+            "before": 2000
+          },
+          {
+            "name": "Arīḥā",
+            "uri": "https://pleiades.stoa.org/places/687917/ariha-1",
+            "certainty": "certain",
+            "after": -18000,
+            "before": 2000
+          },
+          {
+            "name": "ar-Riḥā",
+            "uri": "https://pleiades.stoa.org/places/687917/ar-riha",
+            "certainty": "certain",
+            "after": -1400,
+            "before": -1200
+          },
+          {
+            "name": "ʿAin as-Sulṭān",
+            "uri": "https://pleiades.stoa.org/places/687917/2bfain-as-sultan",
+            "certainty": "certain",
+            "after": 300,
+            "before": 2000
+          },
+          {
+            "name": "Ierichous",
+            "uri": "https://pleiades.stoa.org/places/687917/ierichous",
+            "certainty": "certain",
+            "after": -330,
+            "before": 300
+          },
+          {
+            "name": "Ierichō",
+            "uri": "https://pleiades.stoa.org/places/687917/iericho",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "jerusalem",
+      "owners": [
+        "jerusalem-temple",
+        "cenacle",
+        "jerusalem-trial"
+      ],
+      "kind": "city_context",
+      "currentCoordinate": {
+        "lat": 31.776667,
+        "lng": 35.234167
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m66c5b8",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "687928",
+        "uri": "https://pleiades.stoa.org/places/687928",
+        "title": "Ierusalem/Hierosolyma/Col. Aelia Capitolina",
+        "representativeCoordinate": {
+          "lat": 31.7771895,
+          "lng": 35.234978
+        },
+        "precision": "precise",
+        "distanceKm": 0.1,
+        "candidateNames": [
+          {
+            "name": "Ierusalem",
+            "uri": "https://pleiades.stoa.org/places/687928/ierusalem",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Hierosolyma",
+            "uri": "https://pleiades.stoa.org/places/687928/hierosolyma",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Col. Aelia Capitolina",
+            "uri": "https://pleiades.stoa.org/places/687928/col-aelia-capitolina",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Colonia Aelia Capitolina",
+            "uri": "https://pleiades.stoa.org/places/687928/colonia-aelia-capitolina",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "Ailia",
+            "uri": "https://pleiades.stoa.org/places/687928/ailia",
+            "certainty": "certain",
+            "after": 300,
+            "before": 640
+          },
+          {
+            "name": "Aelia Capitolina",
+            "uri": "https://pleiades.stoa.org/places/687928/aelia-capitolina",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Yǝrušalayim",
+            "uri": "https://pleiades.stoa.org/places/687928/y1ddrusalayim",
+            "certainty": "certain",
+            "after": -720,
+            "before": -540
+          },
+          {
+            "name": "Īliyāʾ",
+            "uri": "https://pleiades.stoa.org/places/687928/iliya2be",
+            "certainty": "certain",
+            "after": 632,
+            "before": 750
+          }
+        ]
+      },
+      "caveat": "Shared city context must not be presented as Temple, Cenacle or trial coordinates."
+    },
+    {
+      "anchorKey": "joppa",
+      "owners": [
+        "joppa"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 32.054481,
+        "lng": 34.753039
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mcb49f3",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "687931",
+        "uri": "https://pleiades.stoa.org/places/687931",
+        "title": "Ioppe",
+        "representativeCoordinate": {
+          "lat": 32.053079,
+          "lng": 34.7499295
+        },
+        "precision": "precise",
+        "distanceKm": 0.3,
+        "candidateNames": [
+          {
+            "name": "Ioppe",
+            "uri": "https://pleiades.stoa.org/places/687931/ioppe",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Yafo",
+            "uri": "https://pleiades.stoa.org/places/687931/yafo",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Iope",
+            "uri": "https://pleiades.stoa.org/places/687931/iope",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "Jaffa",
+            "uri": "https://pleiades.stoa.org/places/687931/jaffa",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Flavia Ioppa",
+            "uri": "https://pleiades.stoa.org/places/687931/flavia-ioppa",
+            "certainty": "certain",
+            "after": -30,
+            "before": 226
+          },
+          {
+            "name": "Yappū",
+            "uri": "https://pleiades.stoa.org/places/687931/yappu",
+            "certainty": "certain",
+            "after": -720,
+            "before": -540
+          },
+          {
+            "name": "Yapu",
+            "uri": "https://pleiades.stoa.org/places/687931/yapu",
+            "certainty": "certain",
+            "after": -1344,
+            "before": -1212
+          },
+          {
+            "name": "Jappû",
+            "uri": "https://pleiades.stoa.org/places/687931/jappu",
+            "certainty": "certain",
+            "after": -720,
+            "before": -330
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "lystra",
+      "owners": [
+        "lystra"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 37.6017,
+        "lng": 32.3384
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "ma6f6dc",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "648699",
+        "uri": "https://pleiades.stoa.org/places/648699",
+        "title": "Lystra/Col. Iulia Felix Gemina",
+        "representativeCoordinate": {
+          "lat": 37.588278,
+          "lng": 32.344472499999995
+        },
+        "precision": "precise",
+        "distanceKm": 1.6,
+        "candidateNames": [
+          {
+            "name": "Lystra",
+            "uri": "https://pleiades.stoa.org/places/648699/lystra",
+            "certainty": "certain",
+            "after": -30,
+            "before": 640
+          },
+          {
+            "name": "Col. Iulia Felix Gemina",
+            "uri": "https://pleiades.stoa.org/places/648699/col-iulia-felix-gemina",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "miletus",
+      "owners": [
+        "miletus"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 37.531111,
+        "lng": 27.275556
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mcf7752",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "599799",
+        "uri": "https://pleiades.stoa.org/places/599799",
+        "title": "Miletus",
+        "representativeCoordinate": {
+          "lat": 37.53046444003695,
+          "lng": 27.27880848386269
+        },
+        "precision": "precise",
+        "distanceKm": 0.3,
+        "candidateNames": [
+          {
+            "name": "Millawa(n)da",
+            "uri": "https://pleiades.stoa.org/places/599799/millawa-n-da",
+            "certainty": "certain",
+            "after": -1450,
+            "before": -1200
+          },
+          {
+            "name": "Miletus",
+            "uri": "https://pleiades.stoa.org/places/599799/miletus",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Palatia",
+            "uri": "https://pleiades.stoa.org/places/599799/palatia",
+            "certainty": "certain",
+            "after": 500,
+            "before": 850
+          },
+          {
+            "name": "Balat",
+            "uri": "https://pleiades.stoa.org/places/599799/balat-ota",
+            "certainty": "certain",
+            "after": -1750,
+            "before": 1683
+          },
+          {
+            "name": "Balat",
+            "uri": "https://pleiades.stoa.org/places/599799/balat-tur",
+            "certainty": "certain",
+            "after": -1750,
+            "before": 1683
+          },
+          {
+            "name": "Miletos",
+            "uri": "https://pleiades.stoa.org/places/599799/miletos",
+            "certainty": "certain",
+            "after": -720,
+            "before": 1200
+          },
+          {
+            "name": "Milētos",
+            "uri": "https://pleiades.stoa.org/places/599799/miletos-1",
+            "certainty": "certain",
+            "after": -1750,
+            "before": 2000
+          },
+          {
+            "name": "Miléisioi",
+            "uri": "https://pleiades.stoa.org/places/599799/mileisioi",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "nain",
+      "owners": [
+        "nain"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 32.630694,
+        "lng": 35.350139
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m0b02a7",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "NO_DEFENSIBLE_DIRECT_MATCH",
+      "pleiades": null,
+      "caveat": "No matching Nain/Naim record established; neighboring sites are not substitutes."
+    },
+    {
+      "anchorKey": "nazareth",
+      "owners": [
+        "nazareth"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 32.70209,
+        "lng": 35.29779
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mb3f688",
+        "url": "https://www.openstreetmap.org/way/97417380"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "678299",
+        "uri": "https://pleiades.stoa.org/places/678299",
+        "title": "Nazareth",
+        "representativeCoordinate": {
+          "lat": 32.701029,
+          "lng": 35.300148
+        },
+        "precision": "precise",
+        "distanceKm": 0.3,
+        "candidateNames": [
+          {
+            "name": "Nazareth",
+            "uri": "https://pleiades.stoa.org/places/678299/nazareth",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "nineveh",
+      "owners": [
+        "nineveh"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 36.3594,
+        "lng": 43.1528
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m52bd87",
+        "url": "https://www.openbible.info/geo/modern/m52bd87/nineveh"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "874621",
+        "uri": "https://pleiades.stoa.org/places/874621",
+        "title": "Nineveh/Ninos",
+        "representativeCoordinate": {
+          "lat": 36.36076152375775,
+          "lng": 43.159936889690734
+        },
+        "precision": "precise",
+        "distanceKm": 0.7,
+        "candidateNames": [
+          {
+            "name": "Nȋnos",
+            "uri": "https://pleiades.stoa.org/places/874621/ninos",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Ninuwā",
+            "uri": "https://pleiades.stoa.org/places/874621/ninuwa",
+            "certainty": "certain",
+            "after": -2335,
+            "before": -540
+          },
+          {
+            "name": "Ninâ",
+            "uri": "https://pleiades.stoa.org/places/874621/nina",
+            "certainty": "certain",
+            "after": -1000,
+            "before": -540
+          }
+        ]
+      },
+      "caveat": "Different ancient Ninuwā/Ninos variants and modern naming have separate temporal contexts."
+    },
+    {
+      "anchorKey": "olives",
+      "owners": [
+        "olives"
+      ],
+      "kind": "mountain_region",
+      "currentCoordinate": {
+        "lat": 31.777946,
+        "lng": 35.245686
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "me461ba",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "NO_DEFENSIBLE_DIRECT_MATCH",
+      "pleiades": null,
+      "caveat": "A Jerusalem city centroid is not the Mount of Olives region."
+    },
+    {
+      "anchorKey": "philippi",
+      "owners": [
+        "philippi"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 41.012072,
+        "lng": 24.284576
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mec5201",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "501482",
+        "uri": "https://pleiades.stoa.org/places/501482",
+        "title": "Krenides/Philippi/Col. Augusta Iulia Philippensis",
+        "representativeCoordinate": {
+          "lat": 41.012651339626466,
+          "lng": 24.284637286816082
+        },
+        "precision": "precise",
+        "distanceKm": 0.1,
+        "candidateNames": [
+          {
+            "name": "Krenides",
+            "uri": "https://pleiades.stoa.org/places/501482/krenides",
+            "certainty": "certain",
+            "after": -550,
+            "before": -330
+          },
+          {
+            "name": "Philippi",
+            "uri": "https://pleiades.stoa.org/places/501482/philippi",
+            "certainty": "certain",
+            "after": -550,
+            "before": 640
+          },
+          {
+            "name": "Col. Augusta Iulia Philippensis",
+            "uri": "https://pleiades.stoa.org/places/501482/col-augusta-iulia-philippensis",
+            "certainty": "certain",
+            "after": -30,
+            "before": 640
+          },
+          {
+            "name": "Assyla",
+            "uri": "https://pleiades.stoa.org/places/501482/assyla",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Col. Victrix Philippensis",
+            "uri": "https://pleiades.stoa.org/places/501482/col-victrix-philippensis",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "rome",
+      "owners": [
+        "rome"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 41.8922,
+        "lng": 12.4852
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mb083bc",
+        "url": "https://www.openbible.info/geo/modern/mb083bc/rome"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "423025",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "title": "Roma",
+        "representativeCoordinate": {
+          "lat": 41.8899769864849,
+          "lng": 12.491258174554883
+        },
+        "precision": "rough",
+        "distanceKm": 0.6,
+        "candidateNames": [
+          {
+            "name": "Roma",
+            "uri": "https://pleiades.stoa.org/places/423025/roma",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Rhome",
+            "uri": "https://pleiades.stoa.org/places/423025/rhome",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "Romē",
+            "uri": "https://pleiades.stoa.org/places/423025/rome-coptic",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          },
+          {
+            "name": "Rūme",
+            "uri": "https://pleiades.stoa.org/places/423025/rume",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          }
+        ]
+      },
+      "caveat": "Representative point classified ROUGH; no exact urban site inference."
+    },
+    {
+      "anchorKey": "samaria",
+      "owners": [
+        "samaria"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 32.276111,
+        "lng": 35.195
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "me64af8",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "678370",
+        "uri": "https://pleiades.stoa.org/places/678370",
+        "title": "Samaria/Sebaste",
+        "representativeCoordinate": {
+          "lat": 32.27644536250876,
+          "lng": 35.19008143859431
+        },
+        "precision": "precise",
+        "distanceKm": 0.5,
+        "candidateNames": [
+          {
+            "name": "Samaria",
+            "uri": "https://pleiades.stoa.org/places/678370/samaria",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Sebaste",
+            "uri": "https://pleiades.stoa.org/places/678370/sebaste",
+            "certainty": "certain",
+            "after": 300,
+            "before": 640
+          },
+          {
+            "name": "Gabinia",
+            "uri": "https://pleiades.stoa.org/places/678370/gabinia",
+            "certainty": "certain",
+            "after": -330,
+            "before": -30
+          },
+          {
+            "name": "Samerīna",
+            "uri": "https://pleiades.stoa.org/places/678370/samerina",
+            "certainty": "certain",
+            "after": -1000,
+            "before": -540
+          },
+          {
+            "name": "Samerna",
+            "uri": "https://pleiades.stoa.org/places/678370/samerna",
+            "certainty": "certain",
+            "after": -1000,
+            "before": -540
+          },
+          {
+            "name": "Samarna",
+            "uri": "https://pleiades.stoa.org/places/678370/samarna",
+            "certainty": "certain",
+            "after": -720,
+            "before": -540
+          },
+          {
+            "name": "Samerīnāya",
+            "uri": "https://pleiades.stoa.org/places/678370/samerinaya",
+            "certainty": "certain",
+            "after": -1000,
+            "before": -540
+          },
+          {
+            "name": "Samernāya",
+            "uri": "https://pleiades.stoa.org/places/678370/samernaya",
+            "certainty": "certain",
+            "after": -1000,
+            "before": -540
+          }
+        ]
+      },
+      "caveat": "Use the Samaria/Sebaste settlement record, not Samaria province/region."
+    },
+    {
+      "anchorKey": "shiloh",
+      "owners": [
+        "shiloh"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 32.055703,
+        "lng": 35.289536
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m12f296",
+        "url": "https://www.openbible.info/geo/modern/m12f296/khirbet-seilun"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "688028",
+        "uri": "https://pleiades.stoa.org/places/688028",
+        "title": "Silo",
+        "representativeCoordinate": {
+          "lat": 32.053797,
+          "lng": 35.298335
+        },
+        "precision": "precise",
+        "distanceKm": 0.9,
+        "candidateNames": [
+          {
+            "name": "Silo",
+            "uri": "https://pleiades.stoa.org/places/688028/silo",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "siloam",
+      "owners": [
+        "siloam"
+      ],
+      "kind": "site",
+      "currentCoordinate": {
+        "lat": 31.770556,
+        "lng": 35.235
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m068207",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "NO_DEFENSIBLE_DIRECT_MATCH",
+      "pleiades": null,
+      "caveat": "Jerusalem and the nearby necropolis are not the Pool of Siloam."
+    },
+    {
+      "anchorKey": "tabor",
+      "owners": [
+        "transfiguration"
+      ],
+      "kind": "traditional",
+      "currentCoordinate": {
+        "lat": 32.68627,
+        "lng": 35.39242
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "m8e169f",
+        "url": "https://www.openstreetmap.org/way/255793567"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "ANCIENT_PLACE_RECORD_DOES_NOT_VERIFY_TRADITIONAL_SITE",
+      "pleiades": {
+        "placeId": "678419",
+        "uri": "https://pleiades.stoa.org/places/678419",
+        "title": "Thabor (mountain)",
+        "representativeCoordinate": {
+          "lat": 32.6871101,
+          "lng": 35.3896182
+        },
+        "precision": "precise",
+        "distanceKm": 0.3,
+        "candidateNames": [
+          {
+            "name": "Thabor",
+            "uri": "https://pleiades.stoa.org/places/678419/Thabor-M",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": "Mount Thabor record does not certify the Transfiguration occurred there."
+    },
+    {
+      "anchorKey": "tarsus",
+      "owners": [
+        "tarsus"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 36.913028,
+        "lng": 34.892056
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mc9df1a",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "648789",
+        "uri": "https://pleiades.stoa.org/places/648789",
+        "title": "Tarsus/Antiochia ad Cydnum",
+        "representativeCoordinate": {
+          "lat": 36.914043134149175,
+          "lng": 34.89646665894072
+        },
+        "precision": "precise",
+        "distanceKm": 0.4,
+        "candidateNames": [
+          {
+            "name": "Tarsus",
+            "uri": "https://pleiades.stoa.org/places/648789/tarsus",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Antiochia ad Cydnum",
+            "uri": "https://pleiades.stoa.org/places/648789/antiochia-ad-cydnum",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          },
+          {
+            "name": "Tarzu",
+            "uri": "https://pleiades.stoa.org/places/648789/tarzu",
+            "certainty": "certain",
+            "after": -1000,
+            "before": -330
+          },
+          {
+            "name": "Iouliopolis",
+            "uri": "https://pleiades.stoa.org/places/648789/iouliopolis",
+            "certainty": "certain",
+            "after": -140,
+            "before": 640
+          },
+          {
+            "name": "Antiocheia",
+            "uri": "https://pleiades.stoa.org/places/648789/antiocheia",
+            "certainty": "certain",
+            "after": -330,
+            "before": 640
+          },
+          {
+            "name": "Antiocheia pros Kydnō",
+            "uri": "https://pleiades.stoa.org/places/648789/antiocheia-pros-kydno",
+            "certainty": "certain",
+            "after": -330,
+            "before": -30
+          },
+          {
+            "name": "Tarša",
+            "uri": "https://pleiades.stoa.org/places/648789/tarsa",
+            "certainty": "certain",
+            "after": -1450,
+            "before": -330
+          },
+          {
+            "name": "Taršıš",
+            "uri": "https://pleiades.stoa.org/places/648789/tars131s",
+            "certainty": "certain",
+            "after": null,
+            "before": null
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "thessalonica",
+      "owners": [
+        "thessalonica"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 40.637771,
+        "lng": 22.945767
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mdadcc0",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "491741",
+        "uri": "https://pleiades.stoa.org/places/491741",
+        "title": "Thessalonica",
+        "representativeCoordinate": {
+          "lat": 40.628342,
+          "lng": 22.952885000000002
+        },
+        "precision": "precise",
+        "distanceKm": 1.2,
+        "candidateNames": [
+          {
+            "name": "Thessalonica",
+            "uri": "https://pleiades.stoa.org/places/491741/thessalonica",
+            "certainty": "certain",
+            "after": -750,
+            "before": 640
+          }
+        ]
+      },
+      "caveat": ""
+    },
+    {
+      "anchorKey": "troas",
+      "owners": [
+        "troas"
+      ],
+      "kind": "settlement",
+      "currentCoordinate": {
+        "lat": 39.751944,
+        "lng": 26.158611
+      },
+      "canonicalLocationEvidence": {
+        "sourceRecordId": "mf8cbc7",
+        "url": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"
+      },
+      "editorial": {
+        "status": "HOLD",
+        "publishAncientLabel": false,
+        "changeCoordinate": false,
+        "certifyExactEvent": false
+      },
+      "matchStatus": "TITLE_AND_VICINITY_CANDIDATE_UNCOLLATED",
+      "pleiades": {
+        "placeId": "550434",
+        "uri": "https://pleiades.stoa.org/places/550434",
+        "title": "Antigoneia/(Col. Augusta) Alexandria Troas",
+        "representativeCoordinate": {
+          "lat": 39.751699149014044,
+          "lng": 26.1575573012968
+        },
+        "precision": "precise",
+        "distanceKm": 0.1,
+        "candidateNames": [
+          {
+            "name": "Antigoneia",
+            "uri": "https://pleiades.stoa.org/places/550434/antigoneia",
+            "certainty": "certain",
+            "after": -330,
+            "before": -30
+          },
+          {
+            "name": "Col. Augusta Alexandria Troas",
+            "uri": "https://pleiades.stoa.org/places/550434/col-augusta-alexandria-troas",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          },
+          {
+            "name": "Alexandria Troas",
+            "uri": "https://pleiades.stoa.org/places/550434/alexandria-troas",
+            "certainty": "certain",
+            "after": -30,
+            "before": 300
+          }
+        ]
+      },
+      "caveat": ""
+    }
+  ]
+}
