@@ -5,12 +5,17 @@ export function createSourceTextReader({manifest,loadChunk}={}){
    !Array.isArray(manifest.passages)||!Array.isArray(manifest.chunks)||
    typeof loadChunk!=="function")throw new Error("SOURCE_TEXT_MANIFEST_INVALID");
  validateSourceWork(manifest.work,{requireReproduction:true});
- const files=new Set(manifest.chunks.map(x=>x.path)),ids=new Map(),cache=new Map(),byChunk=new Map();
+ const files=new Set(manifest.chunks.map(x=>x.path)),ids=new Map(),cache=new Map(),byChunk=new Map(),citations=new Set();
  if(!files.size||manifest.chunks.some(x=>!SAFE_CHUNK.test(x.path))||
     files.size!==manifest.chunks.length)throw new Error("SOURCE_TEXT_CHUNK_PATH_INVALID");
  manifest.passages.forEach((p,i)=>{
   if(!p?.id?.startsWith(manifest.work.id+"/")||ids.has(p.id)||!files.has(p.chunk))
    throw new Error("SOURCE_TEXT_INDEX_INVALID");
+  if(p.editionQualifiedCitation!==undefined){
+   if(typeof p.editionQualifiedCitation!=="string"||!p.editionQualifiedCitation.trim()||
+      citations.has(p.editionQualifiedCitation))throw new Error("SOURCE_TEXT_CITATION_DUPLICATE_OR_INVALID");
+   citations.add(p.editionQualifiedCitation);
+  }
   ids.set(p.id,{...p,index:i});
   if(!byChunk.has(p.chunk))byChunk.set(p.chunk,[]);
   byChunk.get(p.chunk).push(p.id);
@@ -30,9 +35,12 @@ export function createSourceTextReader({manifest,loadChunk}={}){
      throw new Error("SOURCE_TEXT_CHUNK_COUNT_MISMATCH");
     for(let i=0;i<parsed.passages.length;i++){
      const p=parsed.passages[i];
+     const expectedIndex=ids.get(expected[i]);
      if(p?.id!==expected[i]||p.workId!==manifest.work.id||
        p.editionId!==manifest.work.editionId||p.witnessId!==manifest.work.witnessId||
-       typeof p.text!=="string")
+       typeof p.text!=="string"||
+       ["sourceLocator","editionQualifiedCitation","sourcePage"].some(field=>
+        expectedIndex[field]!==undefined&&p[field]!==expectedIndex[field]))
       throw new Error("SOURCE_TEXT_CHUNK_IDENTITY_MISMATCH");
     }
     return new Map(parsed.passages.map(p=>[p.id,p]));
@@ -49,7 +57,7 @@ export function createSourceTextReader({manifest,loadChunk}={}){
  function searchMetadata(query,{limit=30}={}){
   const q=String(query??"").trim().toLocaleLowerCase();
   if(!q)return [];
-  return manifest.passages.filter(p=>(p.heading+" "+p.section+" "+p.locator).toLocaleLowerCase().includes(q))
+  return manifest.passages.filter(p=>(p.heading+" "+p.section+" "+p.locator+" "+(p.sourceLocator??"")+" "+(p.editionQualifiedCitation??"")).toLocaleLowerCase().includes(q))
    .slice(0,Math.max(1,Math.min(100,limit)));
  }
  async function searchFullText(query,{limit=30}={}){
