@@ -11,7 +11,7 @@ import {
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
-import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, atlasCinemaHideModernBasemapLayer, renderBibleAtlasToString } from "./bible-atlas.js";
+import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, atlasCinemaHideModernBasemapLayer, atlasCinemaBasemapTone, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
@@ -334,8 +334,11 @@ export function createFindOwner(win=globalThis){
           const quietHistoricContext=()=>{
             const layers=handle?.map?.getStyle?.()?.layers??[];
             for(const layer of layers){
-              if(!atlasCinemaHideModernBasemapLayer(layer))continue;
-              try{handle.map.setLayoutProperty(layer.id,"visibility","none");}catch{}
+              if(atlasCinemaHideModernBasemapLayer(layer)){
+                try{handle.map.setLayoutProperty(layer.id,"visibility","none");}catch{}
+              }
+              const tone=atlasCinemaBasemapTone(layer);
+              if(tone)try{handle.map.setPaintProperty(layer.id,tone.property,tone.value);}catch{}
             }
           };
           handle?.map?.on?.("load",quietHistoricContext);
@@ -664,7 +667,10 @@ export function createFindOwner(win=globalThis){
         try{
           map.setPaintProperty?.("ao-explore-points","circle-color",["case",["==",["get","item_id"],key],"#edcb86","#79909f"]);
           if(!bibleCinemaPreview||bibleCinemaFollow)
-           map.easeTo?.({center:[active.geo.lng,active.geo.lat],zoom:active.geo.key==="jerusalem"?10:active.era==="APOSTLES"?6:8,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});
+           map.easeTo?.({center:[active.geo.lng,active.geo.lat],
+             zoom:bibleCinemaPreview?(active.era==="APOSTLES"?5.3:active.geo.key==="jerusalem"?6.2:5.5)
+              :(active.geo.key==="jerusalem"?10:active.era==="APOSTLES"?6:8),
+             duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});
         }catch{}
       }
     };
