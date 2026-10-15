@@ -10,7 +10,7 @@ Status: **working branch / not approved / not deployed**. This is an auditable b
 - Safety branch: `archive/2026-10-15-phase12-pre-reconciliation` at that same SHA.
 - Working branch: `mass/phase12-curated65-reconciliation-20261015`. It is the only owner for this first reconciled change set.
 - Folio Core is a donor/evidence archive, not a parallel production app. Preserve its unmerged unique improvements for separate selective PRs.
-- The *actual served GitHub Pages commit and its phone/desktop appearance have not yet been independently inspected*. Do not mistake this source snapshot for a verified Pages deployment.
+- **Live Pages network source verified 15 October 2026**, [GitHub Actions run #38685515747](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38685515747): `index.html`, `sw.js`, `src/mass/browser-entry.js`, and `src/mass/reader-live-curated-cards.js` all match the same files on `main` at `169f740744700c65a7feabed242a5ce27d72331d` byte-for-byte (uncached HTTP 200 downloads). Thus the **GitHub Pages network source is already current**; there is no distinct Pages fork to transplant or switch. This network comparison does **not** certify the currently open user's browser tab or the complete dependency graph. The app's versioned `sw.js` is cache-first for completed offline snapshots, and `src/app/offline-boot.js` offers an explicit Update/Later choice instead of silently activating updates. A browser may therefore continue displaying an earlier offline snapshot despite current Pages network files. Do not clear site data; preserve Scripture/Prayer state and use in-app Update when offered.
 
 ## Agreed Mass reading product
 
