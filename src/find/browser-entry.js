@@ -706,7 +706,7 @@ export function createFindOwner(win=globalThis){
       }
       bibleCinemaFollow=true;bibleCinemaSheetExpanded=false;
       lastMapView=null;lastMapLens=null;
-      void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(0);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&!bibleCinemaPreview&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
+      void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(state.bibleIndex);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&!bibleCinemaPreview&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
     }
     if(target?.closest?.("[data-bible-atlas-close]")&&state.bibleAtlas){
       event.preventDefault?.();state.bibleAtlas=false;state.bibleIndex=0;
