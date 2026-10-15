@@ -5,18 +5,18 @@ const pilot=JSON.parse(readFileSync(new URL("../data/calendar/living-sanctoral-p
 assert.equal(census.schema,"AO_POST1960_CANONIZATION_EVENT_CENSUS_BATCH1_V1");
 assert.equal(census.publicationStatus,"RESEARCH_ONLY_NOT_RUNTIME");
 assert.equal(census.coverage.completeGlobal1960To2026,false);
-assert.deepEqual(census.coverage.scopeYears,[2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2021,2022,2024,2025]);
-assert.equal(census.years.length,20);
-assert.equal(census.events.length,38);
-assert.equal(census.persons.length,132);
-assert.equal(census.groups.length,4);
-assert.equal(census.groups.reduce((n,g)=>n+(g.memberCount||0),0),57);
+assert.deepEqual(census.coverage.scopeYears,[1999,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2021,2022,2024,2025]);
+assert.equal(census.years.length,24);
+assert.equal(census.events.length,51);
+assert.equal(census.persons.length,169);
+assert.equal(census.groups.length,5);
+assert.equal(census.groups.reduce((n,g)=>n+(g.memberCount||0),0),66);
 assert.equal(census.coverage.unverifiedApproximateGroupMembers,800);
 assert.equal(census.coverage.groupsWithApproximateCounts,1);
 const pIds=new Set(census.persons.map(p=>p.id));
 const eIds=new Set(census.events.map(e=>e.id));
 const gIds=new Set(census.groups.map(g=>"canon-group."+g.id));
-assert.equal(pIds.size,132);assert.equal(eIds.size,38);assert.equal(gIds.size,4);
+assert.equal(pIds.size,169);assert.equal(eIds.size,51);assert.equal(gIds.size,5);
 for(const p of census.persons){
   assert.match(p.id,/^saint\.[a-z0-9-]+$/);
   assert.equal(p.liturgicalDate.monthDay,null,"Never invent a universal memorial date");
@@ -57,4 +57,7 @@ assert.equal(census.persons.find(p=>p.id==="saint.hildegard-bingen").canonizedOn
 assert.equal(census.events.find(e=>e.date==="2013-05-12").groupIds.length,1);
 assert.equal(census.groups.find(g=>g.id==="martyrs-otranto-1480").estimatedMemberCount,800);
 assert.equal(census.groups.find(g=>g.id==="martyrs-otranto-1480").memberCount,null);
-console.log("Post-1960 official canonization census: PASS (38 events, 132 named persons, 4 groups; 57 exact and ~800 estimated martyrs)");
+assert.equal(census.persons.find(p=>p.id==="saint.pio-pietrelcina").canonizedOn,"2002-06-16");
+assert.equal(census.events.find(e=>e.date==="1999-11-21").groupIds.length,1);
+assert.equal(census.groups.find(g=>g.id==="martyrs-turon-lasallian-1934").memberCount,9);
+console.log("Post-1960 official canonization census: PASS (51 events, 169 named persons, 5 groups; 66 exact and ~800 estimated martyrs)");
