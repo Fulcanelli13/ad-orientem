@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 258,
-    "places_with_linked_records": 256,
+    "places": 261,
+    "places_with_linked_records": 259,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 209,
-    "shrines": 254,
-    "pilgrimages": 237,
+    "multicategory_heritage_places": 212,
+    "shrines": 257,
+    "pilgrimages": 240,
     "relic_claims": 122,
     "apparition_accounts": 33,
     "canonical_customs": 13,
@@ -1671,6 +1671,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "display_name": "Basilique du Sacré-Cœur de Montmartre — Paris",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:sacre-coeur-montmartre"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:sacre-coeur-montmartre-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
       "display_name": "Église Saint-Hilaire-le-Grand, Poitiers",
       "record_ids": {
@@ -1865,6 +1878,19 @@
         ],
         "relics": [
           "relic:GB:westminster-abbey-st-edward"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:westminster-cathedral",
+      "display_name": "Westminster Cathedral — Most Precious Blood",
+      "record_ids": {
+        "shrines": [
+          "shrine:GB:westminster-cathedral"
+        ],
+        "pilgrimages": [
+          "pilgrimage:GB:westminster-cathedral-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2343,6 +2369,19 @@
         ],
         "relics": [
           "relic:IT:duomo-milano"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:duomo-orvieto",
+      "display_name": "Duomo di Orvieto — Cattedrale di Santa Maria Assunta",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:duomo-orvieto"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:duomo-orvieto-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -4048,8 +4087,8 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 254,
-    "pilgrimages": 209,
+    "shrines": 257,
+    "pilgrimages": 212,
     "relics": 92,
     "apparitions": 30,
     "customs": 55,
