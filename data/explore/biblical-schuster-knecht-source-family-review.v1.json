@@ -1884,7 +1884,7 @@
     }
   },
   "wikisource1910SourceQualityReview": {
-    "status": "REVIEWABLE_TRANSCRIPTION_NOT_PRINT_IMAGE_VERIFIED",
+    "status": "23_ORIGINAL_PRINT_PAGE_IMAGES_SPOT_CHECKED_TWO_TRANSCRIPTION_DEFECTS_NO_WHOLE_PARAGRAPH_APPROVAL",
     "sourceEdition": "KNECHT-EN-1910-HERDER",
     "printScanSource": "https://commons.wikimedia.org/wiki/File:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu",
     "printScanSourceRights": "WIKIMEDIA_COMMONS_DECLARED_PUBLIC_DOMAIN_WITH_ORIGINAL_TRANSLATOR_UNKNOWN; JURISDICTION_AND_SCANNED_WITNESS_EDITORIAL_CHECK_NOT_REPLACED_BY_DECLARATION",
@@ -2014,6 +2014,9 @@
       "HEADING_OR_CHAPTER_REFERENCE",
       "EDITORIAL_SOURCE_CONTEXT"
     ],
-    "importGate": "NO_APP_SOURCE_TEXT_UNTIL_SOURCE_TEXT_PARSER_PR_1229_CONFIRMS_ORIGINAL_WITNESS_AND_RIGHTS"
+    "importGate": "NO_APP_SOURCE_TEXT_UNTIL_SOURCE_TEXT_PARSER_PR_1229_CONFIRMS_ORIGINAL_WITNESS_AND_RIGHTS",
+    "initialImageFetchFailuresNowSuperseded": true,
+    "subsequentSuccessfulImageAuditPath": "wikisource1910TerritoryReview.originalPrintImageSpotAudit",
+    "printedImagePagesChecked": 23
   }
 }
