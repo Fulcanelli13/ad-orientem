@@ -31,9 +31,9 @@
     "approved_hero_images": 18,
     "approved_supplemental_images": 6,
     "candidate_status": {
-      "CONFIRMED_EXISTING_PROMOTION": 161,
+      "CONFIRMED_EXISTING_PROMOTION": 163,
       "POTENTIAL_EXISTING_ID_REVIEW": 6,
-      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 583
+      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 581
     },
     "priorities": {
       "Essential": 64,
@@ -58,9 +58,9 @@
       "country": "IT",
       "curated_candidates": 58,
       "published_shrines": 39,
-      "confirmed_promotions": 18,
+      "confirmed_promotions": 19,
       "possible_reuses": 0,
-      "unresolved": 40
+      "unresolved": 39
     },
     {
       "country": "FR",
@@ -522,9 +522,9 @@
       "country": "NG",
       "curated_candidates": 3,
       "published_shrines": 2,
-      "confirmed_promotions": 0,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 3
+      "unresolved": 2
     },
     {
       "country": "NZ",
@@ -4043,15 +4043,16 @@
       "category": "Marian shrine",
       "priority": "Strong",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:NG:ugwogo-nike-national-marian-shrine",
       "possible_existing_place_id": null,
       "review_wave": 3,
       "review_order": 189,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE",
-      "identity_warning": "Enugu and Umuaka are geographically distinct shrines; Umuaka is not the Enugu National Shrine."
+      "identity_warning": "Enugu and Umuaka are geographically distinct shrines; Umuaka is not the Enugu National Shrine.",
+      "reconciliation_evidence": "R78_DIRECT_CORRECTED_CANONICAL_PLACE_RATHER_THAN_FALSE_ALIAS"
     },
     {
       "candidate_id": "SG-INV-0454",
@@ -8846,15 +8847,16 @@
       "category": "Christological / Eucharistic",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:IT:santa-maria-maggiore-rome",
       "possible_existing_place_id": null,
       "review_wave": 7,
       "review_order": 487,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE",
-      "identity_warning": "Santa Maria Maggiore is a distinct Roman papal basilica; the linked Chiesa del Gesù is a different church."
+      "identity_warning": "Santa Maria Maggiore is a distinct Roman papal basilica; the linked Chiesa del Gesù is a different church.",
+      "reconciliation_evidence": "R78_DIRECT_CORRECTED_CANONICAL_PLACE_RATHER_THAN_FALSE_ALIAS"
     },
     {
       "candidate_id": "SG-INV-0192",

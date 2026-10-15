@@ -5,9 +5,9 @@
   "policy": "Explicit promotion recorded as historical mapping; text-name matches are provisional; source cross-list counts do not prove church identity; never create a live pin from this queue automatically.",
   "counts": {
     "candidates": 750,
-    "explicit_promoted": 159,
+    "explicit_promoted": 161,
     "text_hint_review": 6,
-    "unmatched": 585,
+    "unmatched": 583,
     "zero_crosslist": 485,
     "essential_remaining": 6,
     "published_places": 258,
@@ -27,9 +27,9 @@
     {
       "country": "IT",
       "candidates": 58,
-      "promoted": 18,
+      "promoted": 19,
       "text_hint": 0,
-      "unmatched": 40,
+      "unmatched": 39,
       "essential_review": 0,
       "no_crosslist": 28
     },
@@ -747,9 +747,9 @@
     {
       "country": "NG",
       "candidates": 3,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 3,
+      "unmatched": 2,
       "essential_review": 0,
       "no_crosslist": 2
     },
@@ -1583,10 +1583,10 @@
       "country": "IT",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE_R78",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false,
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R78",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:IT:santa-maria-maggiore-rome",
+      "publish_approved": true,
       "identity_warning": "Santa Maria Maggiore is a distinct Roman papal basilica; the linked Chiesa del Gesù is a different church."
     },
     {
@@ -8904,10 +8904,10 @@
       "country": "NG",
       "priority": "Strong",
       "discovery_sources_count": 0,
-      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE_R78",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false,
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R78",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "publish_approved": true,
       "identity_warning": "Enugu and Umuaka are geographically distinct shrines; Umuaka is not the Enugu National Shrine."
     },
     {
