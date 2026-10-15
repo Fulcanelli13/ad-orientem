@@ -115,7 +115,10 @@
     "crisis_editorial_historical_amendments": 12,
     "crisis_editorial_role_corrections_requiring_rescope": 3,
     "historical_preview_citation_count_changed_owners": 27,
-    "historical_preview_citation_count_unchanged_owners": 114
+    "historical_preview_citation_count_unchanged_owners": 114,
+    "historical_pass5_findings": 25,
+    "historical_pass5_still_same_source_id": 22,
+    "historical_pass5_dispositions": 3
   },
   "added_source_bindings": [
     {
@@ -1975,7 +1978,8 @@
     "The document is solely structural provenance reconciliation: it does not independently assess the accuracy of corrected Q&A arguments.",
     "A retained original-opponent source inspected in an older role cannot be transferred to a newly rewritten magisterial position; retain original findings PSV1-002 and PSV1-016 as historical.",
     "Seven old Pass 4 findings are retained exactly; some original URLs survive under new scoped IDs and others pertain solely to superseded case material. None is automatically credited to a rewritten claim.",
-    "The historic Charles Curran original proponent citation is retained in the source registry and same original article URL is still linked in the current documented-position role, but this does not certify the rewritten claim."
+    "The historic Charles Curran original proponent citation is retained in the source registry and same original article URL is still linked in the current documented-position role, but this does not certify the rewritten claim.",
+    "All 25 bounded Pass 5 editorial original-source findings remain historical records; three changed section-to-source relationships are precisely versioned, without inferred doctrinal certifications."
   ],
   "historical_bounded_primary_findings_superseded": [
     {
@@ -2405,6 +2409,45 @@
       "distinct_local_sources_before": 3,
       "distinct_local_sources_now": 5,
       "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    }
+  ],
+  "historical_pass5_source_dispositions": [
+    {
+      "finding_id": "PSV5-001",
+      "owner": "CR-ORG-05",
+      "role": "documented_position",
+      "historic_source_id": "BERTH22",
+      "historic_url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene",
+      "current_source_ids": [
+        "AO26_CRORG05_DOCUM_1",
+        "AO26_CRORG05_DOCUM_2"
+      ],
+      "matching_url_successor_id": null,
+      "disposition": "HISTORICAL_BERTHE_ABSTRACT_SCOPE_RETAINED__CURRENT_DOCUMENTED_POSITION_USES_CUCHET_UNIVERSITY_DESCRIPTION_AND_INDEPENDENT_REVIEW__NO_VERDICT_TRANSFER"
+    },
+    {
+      "finding_id": "PSV5-024",
+      "owner": "CR-GOV-06",
+      "role": "documented_position",
+      "historic_source_id": "RS2004",
+      "historic_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20040423_redemptionis-sacramentum_en.html",
+      "current_source_ids": [
+        "AO26_CRGOV06_DOCUM_1"
+      ],
+      "matching_url_successor_id": "AO26_CRGOV06_DOCUM_1",
+      "disposition": "SAME_ORIGINAL_INSTRUCTION_URL_WITH_NARROWER_CURRENT_LOCATOR__PREVIOUS_BOUNDED_REVIEW_PRESERVED_NOT_CLAIM_CERTIFICATION"
+    },
+    {
+      "finding_id": "PSV5-025",
+      "owner": "CR-GOV-06",
+      "role": "documented_position",
+      "historic_source_id": "GIRM",
+      "historic_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
+      "current_source_ids": [
+        "AO26_CRGOV06_DOCUM_1"
+      ],
+      "matching_url_successor_id": null,
+      "disposition": "GIRM_REMAINS_AN_ANSWER_LEVEL_RULEBOOK__NO_LONGER_CITED_AS_THE_CURRENT_ORIGINAL_SPEAKER_DOCUMENTED_POSITION"
     }
   ]
 }
